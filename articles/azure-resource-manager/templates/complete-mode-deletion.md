@@ -3,12 +3,12 @@ title: Удаление ресурсов в полном режиме
 description: Здесь показано, как происходит удаление ресурсов в полном режиме в шаблонах Azure Resource Manager по типу ресурса.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: e288d3af080a96616026e94ac7be352a7684c181
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1e27960953aeb16486f893054c7653edb98bbdbc
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91327669"
+ms.locfileid: "91372467"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Удаление ресурсов Azure для развертываний в полном режиме
 
@@ -1502,11 +1502,8 @@ ms.locfileid: "91327669"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | workspaces | Да |
-> | рабочие области и Кодежобс | нет |
 > | workspaces / computes | нет |
 > | рабочие области и Евентгридфилтерс | Нет |
-> | рабочие области и Инференцеендпоинтс | Да |
-> | рабочие области, Инференцеендпоинтси и развертывания | Да |
 > | рабочие области и linkedServices | нет |
 
 ## <a name="microsoftmaintenance"></a>Microsoft.Maintenance

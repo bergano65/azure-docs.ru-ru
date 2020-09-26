@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 01/11/2019
 ms.author: annayak
-ms.openlocfilehash: 3e7469f0d53a154f605480b811d36937e3d4ad6c
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: c74f2ef9eed25719e722970671406c850b6a59b2
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88649863"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361863"
 ---
 # <a name="troubleshoot-classic-storage-resource-deletion-errors"></a>Устранение ошибок при удалении классических ресурсов хранилища
 В этой статье содержатся рекомендации по устранению неполадок при возникновении одной из приведенных ниже ошибок во время попытки удаления классической учетной записи хранения Azure, контейнера или VHD-файла страничного BLOB-объекта. 
@@ -36,7 +36,7 @@ ms.locfileid: "88649863"
 
 1. Удалите классическую виртуальную машину.
 2. Если установлен флажок "Диски", **аренда диска** (как показано на рисунке выше), связанная с VHD-файлом страничного BLOB-объекта, будет недействительной. Сам VHD-файл страничного BLOB-объекта по-прежнему будет существовать в учетной записи хранения.
-![Снимок экрана портала с открытой панелью ошибки удаления ("Delete") классической виртуальной машины](./media/storage-classic-cannot-delete-storage-account-container-vhd/steps_while_deleting_classic_vm.jpg) 
+![На снимке экрана показано диалоговое окно для подтверждения удаления виртуальной машины.](./media/storage-classic-cannot-delete-storage-account-container-vhd/steps_while_deleting_classic_vm.jpg) 
 
 3. После прекращения аренды дисков можно удалить и страничные BLOB-объекты. Учетную запись хранения или контейнер можно удалить только после удаления всех содержащихся в них ресурсов "Диск".
 
@@ -52,7 +52,7 @@ ms.locfileid: "88649863"
 
 С перечнем дисков, подключенных к виртуальной машине
 
-![Снимок экрана портала с открытой панелью ошибки удаления ("Delete") классической виртуальной машины](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_storage_account_disks_attached_portal.jpg) 
+![На снимке экрана отображается сообщение, объясняющее, почему невозможно удалить учетную запись хранения.](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_storage_account_disks_attached_portal.jpg) 
 
 
 С перечнем дисков, отключенных от виртуальной машины
@@ -93,12 +93,12 @@ ms.locfileid: "88649863"
 В зависимости от списка BLOB-объектов, выбранных для удаления, интерфейс портала будет выглядеть, как показано на одном из рисунков ниже.
 
 1. Если выбраны только арендуемые BLOB-объекты, кнопка удаления не отображается.
-![Снимок экрана портала с открытой панелью списка BLOB-объектов в контейнере](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_vhd_leased_portal.jpg)
+![Снимок экрана портала с открытой областью списка BLOB-объектов контейнера и выбранными только выделенными BLOB-объектами.](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_vhd_leased_portal.jpg)
 
 
 2. Если выбрано сочетание арендуемых и доступных BLOB-объектов, отобразится кнопка удаления. При этом операция удаления не затрагивает страничные BLOB-объекты, арендуемые ресурсами "Диск". 
-![Снимок экрана портала с открытой панелью списка BLOB-объектов в контейнере](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_vhd_leased_and_unleased_portal_1.jpg)
-![Снимок экрана портала с открытой панелью удаления выбранного BLOB-объекта](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_vhd_leased_and_unleased_portal_2.jpg)
+![Снимок экрана портала с открытой областью списка BLOB-объектов контейнера и выбранными как арендованными, так и доступными BLOB-объектами. ](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_vhd_leased_and_unleased_portal_1.jpg)
+ ![ Снимок экрана портала с открытой областью "Удалить" выбранного большого двоичного объекта](./media/storage-classic-cannot-delete-storage-account-container-vhd/unable_to_delete_vhd_leased_and_unleased_portal_2.jpg)
 
 #### <a name="azure-powershell"></a>Azure PowerShell 
 Если пользователь решит удалить контейнер с помощью PowerShell, появится следующая ошибка. 
@@ -114,10 +114,10 @@ ms.locfileid: "88649863"
 На портале Azure сделайте следующее:
 1.  Перейдите на [портал Azure](https://portal.azure.com).
 2.  Перейдите в раздел "Диски (классические)". 
-3.  Перейдите на вкладку диски. ![ Снимок экрана портала с открытой областью "список" BLOB-объектов контейнера](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_disks_tab.jpg)
+3.  Перейдите на вкладку диски. ![ На снимке экрана отображается портал Azure с выбранными дисками (классическая модель) и классическим именем диска и учетной записью хранения.](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_disks_tab.jpg)
  
 4.  Выберите диск данных, а затем нажмите кнопку "Удалить диск".
- ![Снимок экрана портала с открытой панелью списка BLOB-объектов в контейнере](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_delete_disk.jpg)
+ ![На снимке экрана отображается портал Azure с выбранными дисками (классическая модель) с выбранным диском данных и параметром для удаления.](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_delete_disk.jpg)
  
 5.  Повторите операцию удаления, которую не удавалось выполнить ранее.
 6.  Невозможно удалить учетную запись хранения или контейнер, пока они связаны хотя бы с одним диском.

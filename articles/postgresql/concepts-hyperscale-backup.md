@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 22bc3d6efca24a88b28217b2e06ac79d33f16b2e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2d781ca7293d4bd95ae62eadc50295ca14c2d381
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87030085"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314936"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---hyperscale-citus"></a>Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -35,7 +35,7 @@ ms.locfileid: "87030085"
 В базе данных Azure для PostgreSQL при восстановлении кластера (Цитус) создается новый кластер из резервных копий исходных узлов. 
 
 > [!IMPORTANT]
->Вы можете восстановить только кластер с масштабированием в пределах одной и той же подписки и группы ресурсов и с другим именем кластера.
+>Восстановить кластер Цитус можно только в пределах одной и той же подписки и группы ресурсов, а также с другим именем кластера.
 
 
 > [!IMPORTANT]

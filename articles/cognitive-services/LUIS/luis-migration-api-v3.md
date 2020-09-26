@@ -1,15 +1,17 @@
 ---
 title: Изменения конечной точки прогнозирования в API V3
 description: Интерфейсы API для конечной точки прогнозирования запросов изменились. В этом руководство вы узнаете, как выполнить миграцию на конечные точки API версии 3.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
 ms.author: diberry
-ms.openlocfilehash: d3d8f4d77793390484c64b03393fb528dfa643b7
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 3e4567eea02b3b7db9514f4e03c7f7f36496449b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85610886"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91309441"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Изменения конечной точки прогнозирования для v3
 
@@ -39,14 +41,14 @@ API V3 предоставляет следующие новые возможно
     * [OrdinalV1](luis-reference-prebuilt-ordinal.md)
     * [GeographyV2](luis-reference-prebuilt-geographyv2.md)
     * [DatetimeV2](luis-reference-prebuilt-datetimev2.md)
-    * Имя ключа измеряемого блока из `units` в`unit`
+    * Имя ключа измеряемого блока из `units` в `unit`
 
 * Изменение текста запроса JSON:
-    * от `preferExternalEntities` до`preferExternalEntities`
+    * от `preferExternalEntities` до `preferExternalEntities`
     * Необязательный `score` параметр для внешних сущностей
 
 * Изменения текста ответа JSON:
-    * `normalizedQuery`удален
+    * `normalizedQuery` удален
 
 ## <a name="suggested-adoption-strategy"></a>Предлагаемая стратегия внедрения
 
@@ -77,7 +79,7 @@ API-интерфейс прогнозирования версии 2 не буд
 
 Если вы хотите выполнить запрос по версии, сначала необходимо [ОПУБЛИКОВАТЬ API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3b) с помощью `"directVersionPublish":true` . Запросите конечную точку, ссылающуюся на идентификатор версии, а не на имя слота.
 
-|Допустимые значения для`SLOT-NAME`|
+|Допустимые значения для `SLOT-NAME`|
 |--|
 |`production`|
 |`staging`|
@@ -104,11 +106,11 @@ API-интерфейс прогнозирования версии 2 не буд
 
 |Свойство|Тип|Версия|По умолчанию|Назначение|
 |--|--|--|--|--|
-|`dynamicLists`|массиве|Только версия 3|Не требуется.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
-|`externalEntities`|массиве|Только версия 3|Не требуется.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
+|`dynamicLists`|массиве|Только версия 3|Необязательно.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
+|`externalEntities`|массиве|Только версия 3|Необязательно.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
 |`options.datetimeReference`|строка|Только версия 3|Нет значения по умолчанию|Используется для определения [смещения datetimeV2](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity). Формат для Датетимереференце — [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).|
 |`options.preferExternalEntities`|Логическое|Только версия 3|false|Указывает, используется ли [внешняя сущность пользователя (с тем же именем, что и существующая сущность)](schema-change-prediction-runtime.md#override-existing-model-predictions) , или существующая сущность в модели используется для прогнозирования. |
-|`query`|строка|Только версия 3|Обязательный элемент.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
+|`query`|строка|Только версия 3|Обязательный.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
 
 ## <a name="response-changes"></a>Изменения ответа
 

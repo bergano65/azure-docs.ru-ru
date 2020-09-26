@@ -3,12 +3,12 @@ title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
 ms.date: 09/24/2020
-ms.openlocfilehash: cd1d0a05fc1039d8e99b0af6fc8019face4516bf
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 29a35715115816d742103bd7556ded19f22b316e
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91284794"
+ms.locfileid: "91372414"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -37,7 +37,7 @@ ms.locfileid: "91284794"
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions);
 * [remediations](/azure/templates/microsoft.policyinsights/remediations);
 
-Для управления доступом на основе ролей используйте:
+Для управления доступом на основе ролей Azure (Azure RBAC) используйте:
 
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments);
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions).

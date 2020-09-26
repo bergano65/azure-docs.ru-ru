@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 08/26/2020
 ms.author: duau
-ms.openlocfilehash: 0cf44407ce3087a79a3f54caea1b33c52709d816
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 2177b37fe5723be64896fd5ee4e90c0137dc9be0
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90031997"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91370510"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению ExpressRoute и расположения пиринга
 
@@ -147,7 +147,7 @@ ms.locfileid: "90031997"
 | **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Поддерживается |Поддерживается |Чикаго, Гонконг, Гонконг 2, Лондон, Сингапур 2 |
 | **[ретелит](https://www.retelit.it/en/services/enterprises-and-public-sector/data-center-e-cloud/cloud-services/direct-cloud-4-azure-expressroute.aspx)** | Поддерживается | Поддерживается | Milan | 
 | **[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)** |Поддерживается |Поддерживается |Сеул |
-| **[SES](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)** | Поддерживается |Поддерживается | Вашингтон, округ Колумбия |
+| **[SES](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)** | Поддерживается |Поддерживается | London2, Вашингтон (округ Колумбия) |
 | **[SIFY](http://telecom.sify.com/azure-expressroute.html)** |Поддерживается |Поддерживается |Ченнаи, Мумбаи 2 |
 | **[SingTel](https://www.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |Поддерживается |Поддерживается |Гонконг, Kong2, Сингапур, Сингапур 2 |
 | **[Softbank](https://www.softbank.jp/biz/cloud/cloud_access/direct_access_for_az/)** |Поддерживается |Поддерживается |Осака, Токио |

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/08/2020
 ms.author: Zhchia
-ms.openlocfilehash: a6543c56f7170f674a227421575ba7f842fb29a8
-ms.sourcegitcommit: 4ce82b6df65ebd81157b6168d3aa4e7323355022
+ms.openlocfilehash: 221039ad1dc30e645d98ba6dd7e79c7b81ba3430
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90761526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91313082"
 ---
 # <a name="tutorial-configure-apple-school-manager-for-automatic-user-provisioning"></a>Учебник. Настройка Apple School Manager для автоматической подготовки пользователей
 
@@ -103,7 +103,7 @@ ms.locfileid: "90761526"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Apple School Manager**.
 
@@ -159,7 +159,8 @@ ms.locfileid: "90761526"
 * [Удаление учетных записей Azure AD, которые отображаются в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apdaa5798fbe)
 * [Просмотр активности SCIM в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apd1bfd8dfde)
 * [Управление существующими маркерами SCIM и подключениями в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apdc9a823611)
-* [Отключение подключения scim в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apd609be3a61)[Управление существующими маркерами scim и подключениями в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apdc9a8236e9)
+* [Отключение подключения SCIM в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apd609be3a61)
+* [Управление существующими маркерами SCIM и подключениями в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apdc9a8236e9)
 * [Устранение неполадок подключения SCIM в Apple School Manager](URL=https://support.apple.com/guide/apple-school-manager/apd403a0f3bd)
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/22/2020
 ms.author: kumud
-ms.openlocfilehash: 726bc34a309ac6a29c189f13037e059f200732ce
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 50b0324be8da8024dcbda140eff062f3ff712225
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91335924"
+ms.locfileid: "91371190"
 ---
 # <a name="azure-ddos-protection-standard-overview"></a>Общие сведения о защите от атак DDoS Azure уровня "Стандартный"
 
@@ -61,7 +61,7 @@ ms.locfileid: "91335924"
 
 Служба "Защита от атак DDoS" отслеживает фактическое использование трафика и постоянно сравнивает его с пороговыми значениями, определенными в политике DDoS. При превышении порогового значения трафика атака DDoS автоматически устраняется. Когда трафик опускается ниже порогового значения, устранение DDoS-атаки отключается.
 
-![Меры по снижению риска](./media/ddos-protection-overview/mitigation.png)
+![На схеме показан поток, начинающийся с клиента через портал Azure через стандарт защиты от атак DDoS, через общедоступные адреса I P за счет создания политики, заканчивая двумя общедоступными адресами I P.](./media/ddos-protection-overview/mitigation.png)
 
 В процессе устранения атаки служба "Защита от атак DDoS" перенаправляет весь трафик, нацеленный на защищаемый ресурс, и выполняет несколько проверок, включая следующие.
 

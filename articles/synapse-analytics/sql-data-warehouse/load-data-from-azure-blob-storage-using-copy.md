@@ -11,12 +11,12 @@ ms.date: 05/31/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 67392f965b3fddec7fc7a03bd328a224dad42208
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: d2c2673e6863725e064f3ad8561ab77eb1b051eb
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442987"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371530"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Учебник. Загрузка набора данных такси в Нью Йорк
 
@@ -58,7 +58,7 @@ ms.locfileid: "89442987"
 
    | Параметр            | Рекомендуемое значение       | Описание                                                  |
    | ------------------ | --------------------- | ------------------------------------------------------------ |
-   | *Название**            | mySampleDataWarehouse | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
+   | *Name**            | mySampleDataWarehouse | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
    | **Подписка**   | Ваша подписка     | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
    | **Группа ресурсов** | myResourceGroup       | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
    | **Выбрать источник**  | Пустая база данных        | Указывает, что требуется создать пустую базу данных. Обратите внимание, что хранилище данных — это один из типов базы данных. |
@@ -91,7 +91,7 @@ ms.locfileid: "89442987"
 
 11. На панели инструментов щелкните значок **Уведомления**, чтобы отслеживать процесс развертывания.
   
-     ![уведомление](./media/load-data-from-azure-blob-storage-using-polybase/notification.png)
+     ![На снимке экрана отображается портал Azure с открытой областью уведомлений в процессе развертывания.](./media/load-data-from-azure-blob-storage-using-polybase/notification.png)
 
 ## <a name="create-a-server-level-firewall-rule"></a>создадим правило брандмауэра на уровне сервера;
 
@@ -116,7 +116,7 @@ ms.locfileid: "89442987"
 
 5. На панели инструментов выберите **Добавить IP-адрес клиента**, чтобы добавить текущий IP-адрес в новое правило брандмауэра. С использованием правила брандмауэра можно открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
 
-6. Выберите **Сохранить**. Для текущего IP-адреса будет создано правило брандмауэра на уровне сервера, с помощью которого можно открыть порт 1433 на сервере.
+6. Щелкните **Сохранить**. Для текущего IP-адреса будет создано правило брандмауэра на уровне сервера, с помощью которого можно открыть порт 1433 на сервере.
 
 7. Нажмите кнопку **ОК** , а затем закройте страницу **Параметры брандмауэра** .
 
