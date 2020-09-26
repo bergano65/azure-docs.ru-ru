@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 12/20/2018
-ms.openlocfilehash: a45fc5f4e56ff3a5d7f0be167c5d758aa0e47caf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd9bc17db3eccc64f35d7295d57dc120364481dd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84196368"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332990"
 ---
 # <a name="best-practices-for-azure-sql-data-sync"></a>Best practices for SQL Data Sync (Preview) (Рекомендации по синхронизации данных SQL (предварительная версия)) 
 
@@ -118,7 +118,7 @@ ms.locfileid: "84196368"
 
 Примените предыдущие рекомендации к более сложным конфигурациям групп синхронизации, например со смешанными сценариями перемещения из предприятия в облако и из облака в облако.
 
-## <a name="sync"></a>Sync
+## <a name="sync"></a>Синхронизация
 
 ### <a name="avoid-slow-and-costly-initial-sync"></a><a name="avoid-a-slow-and-costly-initial-synchronization"></a> Избегайте медленной и дорогостоящей начальной синхронизации
 
@@ -228,7 +228,7 @@ ms.locfileid: "84196368"
 
 Чтобы устранить эту ошибку, увеличьте масштаб базы данных метаданных синхронизации, допуская более высокий номер SKU, например S3. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о синхронизации данных SQL см. в следующих материалах:
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-data-sync-data-sql-server-sql-database.md).

@@ -8,13 +8,13 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: d1258786ec6f611bea5f73f3cb1c176738733acd
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-js, devx-track-csharp
+ms.openlocfilehash: 3a67f16b53c2754e2ac5ae1df467aac7726f358e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88919069"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321005"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -45,7 +45,7 @@ QnA Maker позволяет добавлять метаданные в виде
 После публикации базы знаний либо с [портала QnA Maker](https://www.qnamaker.ai), либо с помощью [API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)можно получить сведения о конечной точке женератеансвер.
 
 Вот как это можно сделать.
-1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
+1. Выполните вход на странице [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В окне **Мои базы знаний**выберите **Просмотреть код** для своей базы знаний.
     ![Снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Получите сведения о конечной точке GenerateAnswer.
@@ -267,9 +267,9 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="common-http-errors"></a>Распространенные ошибки HTTP
 
-|Код|Пояснение|
+|Код|Объяснение|
 |:--|--|
-|"2xx"|Успех|
+|"2xx"|Успешно|
 |400|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|
 |400|Текст запроса указан неправильно. Это означает, что JSON отсутствует, имеет неправильный формат или слишком большой размер|
 |401|Недопустимый ключ|

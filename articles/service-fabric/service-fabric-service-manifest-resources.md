@@ -3,12 +3,12 @@ title: Указание конечных точек службы Service Fabric
 description: В этой статье поясняется, как описать ресурсы конечной точки в манифесте служб, включая настройку конечных точек HTTPS.
 ms.topic: conceptual
 ms.date: 09/16/2020
-ms.openlocfilehash: 8fdd95a7c0390c987b7c59663e0ee12e4a4a968e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c0c3c45c47447390901e5e0d60e77ab6b85a6a0d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91267811"
+ms.locfileid: "91354765"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
@@ -227,9 +227,9 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 В этой статье объясняется, как определить конечные точки в манифесте службы Service Fabric. Более подробные примеры см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Примеры манифестов приложений и служб](https://docs.microsoft.com/azure/service-fabric/service-fabric-manifest-examples.md)
+> [Примеры манифестов приложений и служб](service-fabric-manifest-examples.md)
 
 Пошаговое руководство по упаковке и развертыванию существующего приложения в кластере Service Fabric см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Упаковка и развертывание существующего исполняемого файла вручную](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app.md)
+> [Упаковка и развертывание существующего исполняемого файла вручную](service-fabric-deploy-existing-app.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/19/2019
 ms.author: zhchia
-ms.openlocfilehash: 68484d2047e09dc82d44e15e86b13c4c54c49b03
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: bf75c4fe2053483b94c5f645816422909645854a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88533815"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91286008"
 ---
 # <a name="tutorial-configure-starleaf-for-automatic-user-provisioning"></a>Учебник. Настройка Старлеаф для автоматической подготовки пользователей
 
@@ -52,15 +52,15 @@ ms.locfileid: "88533815"
 
 1. Войдите в [консоль администратора старлеаф](https://portal.starleaf.com/#page=login). Перейдите к разделу **интеграции**  >  **добавить интеграцию**.
 
-    ![Старлеаф добавить SCIM](media/starleaf-provisioning-tutorial/image00.png)
+    ![Снимок экрана консоли администрирования Старлеаф с интеграцией и добавлением вариантов интеграции.](media/starleaf-provisioning-tutorial/image00.png)
 
 2. Выберите **тип** для Microsoft Azure Active Directory. Введите подходящее имя в списке **имя**. Нажмите кнопку **Применить**.
 
-    ![Старлеаф добавить SCIM](media/starleaf-provisioning-tutorial/image01.png)
+    ![Снимок экрана: диалоговое окно "Добавление интеграции" с вызываемыми текстовыми полями "тип" и "имя".](media/starleaf-provisioning-tutorial/image01.png)
 
 3.  После этого будут отображены значения **базовый URL-адрес** и **маркер доступа** scim. Эти значения будут указаны в полях **URL-адрес клиента** и **секретный токен** на вкладке подготовка приложения старлеаф в портал Azure. 
 
-    ![Старлеаф создание токена](media/starleaf-provisioning-tutorial/image02.png)
+    ![Снимок экрана: диалоговое окно "изменение интеграции" с вызываемыми текстовыми полями "тип", "имя" и "базовый URL-адрес SCIM".](media/starleaf-provisioning-tutorial/image02.png)
 
 ## <a name="add-starleaf-from-the-gallery"></a>Добавление Старлеаф из коллекции
 
@@ -97,11 +97,11 @@ ms.locfileid: "88533815"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе Учетные данные администратора введите **базовый URL-адрес scim** и значения **маркера доступа** , полученные ранее в поле **URL-адрес клиента** и **секретный токен** соответственно. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к старлеаф. Если подключение не выполняется, убедитесь, что у учетной записи Старлеаф есть разрешения администратора, и повторите попытку.
 
@@ -111,15 +111,15 @@ ms.locfileid: "88533815"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с старлеаф**.
 
-    ![Старлеаф создание токена](media/starleaf-provisioning-tutorial/usermapping.png)
+    ![Снимок экрана: раздел "сопоставления" с параметром Synchronize Azure Active Directory Users to Старлеаф.](media/starleaf-provisioning-tutorial/usermapping.png)
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Старлеаф в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в старлеаф для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Старлеаф создание токена](media/starleaf-provisioning-tutorial/userattribute.png)
+    ![Снимок экрана с разделом сопоставления атрибутов, в котором показаны девять отображаемых сопоставлений.](media/starleaf-provisioning-tutorial/userattribute.png)
 
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).

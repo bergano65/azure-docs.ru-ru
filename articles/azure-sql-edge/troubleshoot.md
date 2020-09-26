@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/22/2020
-ms.openlocfilehash: d8da8bcf3d2bb6b2af2b5c69ce003289d83d3884
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 517fed0dd9eb1736344546bde9f79e52ee17182f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939389"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333109"
 ---
 # <a name="troubleshooting-azure-sql-edge-deployments"></a>Устранение неполадок при развертывании Azure SQL ребра 
 
@@ -138,32 +138,12 @@ docker exec -it <Container ID> /bin/bash
 
 После этого вы можете выполнять команды так, как если бы они выполнялись из терминала внутри контейнера. По завершении введите `exit`. В этом случае завершается интерактивный сеанс команд, однако контейнер продолжает работать.
 
-## <a name="troubleshooting-issues-with-data-streaming"></a>Устранение проблем с потоковой передачей данных
-
-По умолчанию журналы обработчика пограничных потоков Azure SQL записываются в файл с именем `current` в каталоге **/var/opt/MSSQL/log/Services/00000001-0000-0000-0000-000000000000** . Доступ к файлу можно получить непосредственно через сопоставленный том или контейнер томов данных либо путем запуска интерактивного сеанса командной строки в контейнере SQL. 
-
-Кроме того, если вы можете подключиться к экземпляру SQL Server с помощью клиентских средств, можно использовать следующую команду T-SQL для доступа к текущему журналу обработчика потоковой передачи. 
-
-```sql
-
-select value as log, try_convert(DATETIME2, substring(value, 0, 26)) as timestamp 
-from 
-    STRING_SPLIT
-    (
-        (
-            select BulkColumn as logs
-            FROM OPENROWSET (BULK '/var/opt/mssql/log/services/00000001-0000-0000-0000-000000000000/current', SINGLE_CLOB) MyFile
-        ),
-        CHAR(10)
-    ) 
-where datalength(value) > 0
-
-```
-
 ### <a name="enabling-verbose-logging"></a>Включение подробного ведения журнала
 
 Если уровень ведения журнала по умолчанию для обработчика потоковой передачи не предоставляет достаточно сведений, можно включить ведение журнала отладки для обработчика потоковой передачи в SQL Server. Чтобы включить ведение журнала отладки, добавьте `RuntimeLogLevel=debug` переменную среды в развертывание SQL Server. После включения ведения журнала отладки попытайтесь воспроизвести проблему и проверьте журналы на наличие соответствующих сообщений или исключений. 
 
+> [!NOTE]
+> Параметр подробного ведения журнала следует использовать только для устранения неполадок, а не для обычной рабочей нагрузки. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

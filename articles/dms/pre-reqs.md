@@ -9,14 +9,14 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/25/2020
-ms.openlocfilehash: 8d87052ecfe85fa35c41c8b306bb48551fd06be9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6002bb7995be1cfd1b2812b765835ff7af924e7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322837"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308543"
 ---
 # <a name="overview-of-prerequisites-for-using-the-azure-database-migration-service"></a>Предварительные требования для использования службы Azure Database Migration Service
 
@@ -140,6 +140,6 @@ ms.locfileid: "85322837"
    > [!NOTE]
    > Полный список предварительных требований, необходимых для использования Azure Database Migration Service для выполнения миграции с SQL Server на SQL Управляемый экземпляр, см. в руководстве [миграция SQL Server в sql управляемый экземпляр](https://aka.ms/migratetomiusingdms).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о службе Azure Database Migration Service и доступности по регионам см. в статье [Что такое Azure Database Migration Service](dms-overview.md).

@@ -7,12 +7,12 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: conceptual
 ms.date: 08/04/2020
-ms.openlocfilehash: 0b3e1b3bc296676c44eddf34b35a0d4e06d3b8c4
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: b51b44f3a3d0889836bb41e0bf2fa37234338cf4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90007338"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287089"
 ---
 # <a name="azure-boot-diagnostics"></a>Диагностика загрузки Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "90007338"
 - Диагностика загрузки не поддерживает учетные записи хранения класса Premium. Если для диагностики загрузки используется учетная запись хранения класса Premium, `StorageAccountTypeNotSupported` при запуске виртуальной машины будут появляться сообщения об ошибке. 
 - Управляемые учетные записи хранения поддерживаются в диспетчер ресурсов API версии "2020-06-01" и более поздних версий.
 - Последовательная консоль Azure в настоящее время несовместима с управляемой учетной записью хранения для диагностики загрузки. Дополнительные сведения о [последовательной консоли Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-overview).
+- Диагностика загрузки с использованием учетной записи хранения можно применить только с помощью портал Azure. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

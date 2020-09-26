@@ -10,16 +10,16 @@ ms.devlang: ''
 ms.topic: conceptual
 author: juliemsft
 ms.author: jrasnick
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 04/19/2020
-ms.openlocfilehash: f0a9e36113226a40f4bd21a7b171ca7a65930f95
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 7ee876b1d65e71657cb1af857cdad9f62a32100e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85987243"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333060"
 ---
-# <a name="monitoring-microsoft-azure-sql-database-and-azure-sql-managed-instance-performance-using-dynamic-management-views"></a>Наблюдение за производительностью База данных SQL Microsoft Azure и Azure SQL Управляемый экземпляр с помощью динамических административных представлений
+# <a name="monitoring-microsoft-azure-sql-database-and-azure-sql-managed-instance-performance-using-dynamic-management-views"></a>Наблюдение за производительностью Базы данных SQL Microsoft Azure и Управляемого экземпляра SQL Azure с помощью динамических административных представлений
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
 База данных SQL Microsoft Azure и Azure SQL Управляемый экземпляр позволяют подмножества динамических административных представлений для диагностики проблем с производительностью, которые могут быть вызваны блокированием или длительными запросами, узкими местами ресурсов, неудачными планами запросов и т. д. Этот раздел содержит информацию о том, как выявлять распространенные проблемы производительности с помощью динамических административных представлений.
@@ -769,6 +769,6 @@ CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS q
 ORDER BY highest_cpu_queries.total_worker_time DESC;
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Введение в базу данных SQL Azure и Управляемый экземпляр Azure SQL](sql-database-paas-overview.md)
