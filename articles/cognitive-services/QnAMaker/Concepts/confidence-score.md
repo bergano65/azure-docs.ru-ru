@@ -1,7 +1,7 @@
 ---
 title: Оценка достоверности — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: База знаний должна быть опубликована. После публикации база знаний запрашивается на конечной точке прогнозирования времени выполнения с помощью API Женератеансвер.
+description: Когда пользовательский запрос сопоставляется с базой знаний, API службы QnA Maker возвращает соответствующие ответы вместе с оценкой достоверности.
 services: cognitive-services
 manager: nitinme
 ms.service: cognitive-services
@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: faf24f11763ca2bcd9bb872b09b5d1b69e78bd06
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: abae83cee106feb553e8ced404d23ba5619ba416
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131163"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327159"
 ---
 # <a name="the-confidence-score-of-an-answer"></a>Оценка достоверности ответа
 Когда пользовательский запрос сопоставляется с базой знаний, API службы QnA Maker возвращает соответствующие ответы вместе с оценкой достоверности. Эта оценка означает степень достоверности того, что ответ соответствует этому запросу пользователя.

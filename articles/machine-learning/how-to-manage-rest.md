@@ -10,18 +10,18 @@ ms.subservice: core
 ms.date: 01/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 39000a34d1d19026ce406eeb996f89d1acc7ea04
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b733fbc44deefe46e3496e288ebad525346ef005
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897366"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322314"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
 
 
-Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
+Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
 
 Вы узнаете, как выполнять следующие задачи:
 

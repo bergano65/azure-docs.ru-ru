@@ -1,18 +1,18 @@
 ---
-title: Включение надстройки контроллера объекта ingress для имеющегося кластера AKS со Шлюзом приложений Azure
+title: Руководство по Включение надстройки контроллера объекта ingress для имеющегося кластера AKS со Шлюзом приложений Azure
 description: В этом учебнике описано, как включить надстройку контроллера объекта ingress для имеющегося кластера AKS со Шлюзом приложений Azure.
 services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 06/10/2020
+ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 35d9396ac1f4569002b95549a8752745537621cf
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: d0ce58c5bb6de4712117959f10b48ae3449f0b97
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89595977"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285662"
 ---
 # <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway-through-azure-cli-preview"></a>Руководство по включению надстройки контроллера объекта ingress для имеющегося кластера AKS со Шлюзом приложений с помощью Azure CLI (предварительная версия)
 
@@ -28,6 +28,8 @@ ms.locfileid: "89595977"
 > * Создание пирингового подключения между виртуальной сетью Шлюза приложений и виртуальной сетью кластера AKS.
 > * Развертывание примера приложения с использованием AGIC для объекта ingress в кластере AKS.
 > * Проверка доступности приложения через Шлюз приложений.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -151,7 +153,6 @@ az group delete --name myResourceGroup
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Сведения об отключении надстройки AGIC для кластера AKS](./ingress-controller-disable-addon.md)
-* [Сведения о том, какие заметки поддерживаются в AGIC](./ingress-controller-annotations.md)
-* [Устранение неполадок с AGIC](./ingress-controller-troubleshoot.md)
 
+> [!div class="nextstepaction"]
+> [Сведения об отключении надстройки AGIC для кластера AKS](./ingress-controller-disable-addon.md)

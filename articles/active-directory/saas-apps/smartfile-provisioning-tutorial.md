@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 675d9c76841ba1a4b94b666c7ff4ac4287fc5264
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3f480cb0d478ca60555fa15849d5fcbed6cda684
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88525196"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91286120"
 ---
 # <a name="tutorial-configure-smartfile-for-automatic-user-provisioning"></a>Учебник. Настройка Смартфиле для автоматической подготовки пользователей
 
@@ -58,9 +58,9 @@ ms.locfileid: "88525196"
 
 2. Чтобы создать токен носителя, скопируйте **ключ продукта** и **пароль продукта**. Вставьте их в блокнот с двоеточием.
     
-     ![Смартфиле добавить SCIM](media/smartfile-provisioning-tutorial/auth.png)
+     ![Снимок экрана раздела "ключ продукта" с вызываемыми текстовыми полями "ключ продукта" и "пароль продукта".](media/smartfile-provisioning-tutorial/auth.png)
 
-    ![Смартфиле добавить SCIM](media/smartfile-provisioning-tutorial/key.png)
+    ![Снимок экрана открытого текста с ключом продукта и паролем продукта, разделенными двоеточием.](media/smartfile-provisioning-tutorial/key.png)
 
 ## <a name="add-smartfile-from-the-gallery"></a>Добавление Смартфиле из коллекции
 
@@ -103,11 +103,11 @@ ms.locfileid: "88525196"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5.  В разделе **учетные данные администратора** введите `https://<SmartFile sitename>.smartfile.com/ftp/scim` **URL-адрес клиента**. Пример будет выглядеть так `https://demo1test.smartfile.com/ftp/scim` :. Введите значение **токена носителя** (ProductKey: продуктпассворд), полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к смартфиле. Если подключение не выполняется, убедитесь, что у учетной записи Смартфиле есть разрешения администратора, и повторите попытку.
 
@@ -117,7 +117,7 @@ ms.locfileid: "88525196"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с смартфиле**.
 

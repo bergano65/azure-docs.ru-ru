@@ -6,15 +6,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 08/03/2020
+ms.date: 09/22/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f8127b485d8fea5aedccd472e209a448e3076b5b
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 6115ca375c3e5bf2be3335fe2231628ec7bf309f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400081"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267743"
 ---
 # <a name="scenario-any-to-any"></a>Сценарий: "любой к любому"
 
@@ -24,7 +24,7 @@ ms.locfileid: "89400081"
 
 Чтобы определить, сколько таблиц маршрутов потребуется в сценарии виртуальной глобальной сети, можно создать матрицу подключения, где каждая ячейка показывает, может ли источник (строка) обмениваться данными с целевым объектом (столбцом). Матрица подключения в этом сценарии является тривиальной, но мы включили ее для обеспечения соответствия другим сценариям.
 
-| Исходный тип |   Кому |  *Виртуальных сетей* | *Ветви* |
+| От |   Кому |  *Виртуальных сетей* | *Ветви* |
 | -------------- | -------- | ---------- | ---|
 | Виртуальные сети     | &#8594;|      X     |     X    |
 | Ветви   | &#8594;|    X     |     X    |

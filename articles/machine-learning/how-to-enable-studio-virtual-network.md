@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 07/16/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: 5dce7cde3c46fbcf3f764819f730f42cace4a74c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 0c5f91f1423bc20b2202589c488c9b225ed3fbaa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897531"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333857"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Использование Машинное обучение Azure Studio в виртуальной сети Azure
 
@@ -56,8 +56,7 @@ ms.locfileid: "90897531"
 
 ## <a name="access-data-using-the-studio"></a>Доступ к данным с помощью студии
 
-Если данные хранятся в виртуальной сети, необходимо настроить учетные записи хранения для использования [управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) , чтобы предоставить Studio доступ к данным.
-
+После [добавления учетной записи хранения Azure в виртуальную сеть](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts)необходимо настроить учетную запись хранения для использования [управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) , чтобы предоставить Studio доступ к данным. Studio поддерживает учетные записи хранения, настроенные для использования конечных точек службы или частных конечных точек. По умолчанию учетные записи хранения используют конечные точки службы. Сведения о включении частных конечных точек для хранилища см. в статье [использование частных конечных точек для службы хранилища Azure](../storage/common/storage-private-endpoints.md)
 
 Если не включить управляемое удостоверение, появится сообщение об ошибке, `Error: Unable to profile this dataset. This might be because your data is stored behind a virtual network or your data does not support profile.` Кроме того, будут отключены следующие операции:
 
@@ -72,7 +71,6 @@ ms.locfileid: "90897531"
 * Хранилище Azure Data Lake Storage 1-го поколения
 * Azure Data Lake Storage 2-го поколения
 * База данных SQL Azure
-
 
 ### <a name="configure-datastores-to-use-managed-identity"></a>Настройка хранилищ данных для использования управляемого удостоверения
 

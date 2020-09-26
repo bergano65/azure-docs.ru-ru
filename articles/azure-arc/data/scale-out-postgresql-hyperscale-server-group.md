@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: e267a30d6f73b48f825c4b61b3bc1106133b8cdf
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: df0620308fab2e813fe3802dc7effb9dc1ce226c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938093"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285389"
 ---
 # <a name="scale-out-your-azure-arc-enabled-postgresql-hyperscale-server-group-by-adding-more-worker-nodes"></a>Масштабирование группы масштабируемых серверов PostgreSQL в службе "Дуга Azure" путем добавления дополнительных рабочих узлов
 В этом документе объясняется, как масштабировать группу серверов PostgreSQL с поддержкой дуги Azure. Это можно сделать, выполнив сценарий. **Если вы не хотите выполнять сценарий и хотите просто прочесть сведения о том, как масштабировать, перейдите к абзацу [масштабное](#scale-out)** развертывание.
@@ -151,7 +151,11 @@ SELECT COUNT(*) FROM github_events;
 azdata arc postgres server edit -n <server group name> -w <target number of worker nodes>
 ```
 
-Например, увеличьте число рабочих узлов от 2 до 4, выполнив следующую команду:
+> [!CAUTION]
+> Предварительный выпуск не поддерживает обратное масштабирование. Например, пока невозможно уменьшить количество рабочих узлов. Если это необходимо, необходимо извлечь или создать резервную копию данных, удалить группу серверов, создать новую группу серверов с меньшим количеством рабочих узлов, а затем импортировать данные.
+
+В этом примере мы увеличив число рабочих узлов с 2 до 4, выполнив следующую команду:
+
 ```console
 azdata arc postgres server edit -n postgres01 -w 4
 ```
@@ -196,7 +200,8 @@ kubectl get postgresql-12
 NAME         STATE   READY-PODS   EXTERNAL-ENDPOINT   AGE
 postgres01   Ready   4/4          10.0.0.4:31066      4d20h
 ```
-> **Примечание.** Если вы создали группу серверов версии 11 PostgreSQL, а не 12, выполните следующую команду: _kubectl Get PostgreSQL-11_ .
+> [!NOTE]
+> Если вы создали группу серверов версии 11 PostgreSQL, а не 12, выполните следующую команду: _kubectl Get PostgreSQL-11_ .
 
 #### <a name="with-a-sql-query"></a>С SQL-запросом:
 Подключитесь к группе серверов с помощью выбранного клиентского средства и выполните следующий запрос:
@@ -230,7 +235,6 @@ SELECT COUNT(*) FROM github_events;
 >* [Высокая производительность HTAP с помощью масштабирования PostgreSQL Azure (Цитус)](https://www.youtube.com/watch?v=W_3e07nGFxY)
 >* [Создание HTAP приложений с помощью Python & Azure PostgreSQL Scale (Цитус)](https://www.youtube.com/watch?v=YDT8_riLLs0)
 
-> Предварительный выпуск не поддерживает обратное масштабирование. Например, пока невозможно уменьшить количество рабочих узлов. Если это необходимо, необходимо извлечь или создать резервную копию данных, удалить группу серверов, создать новую группу серверов с меньшим количеством рабочих узлов, а затем импортировать данные.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

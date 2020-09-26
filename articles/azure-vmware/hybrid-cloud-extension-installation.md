@@ -3,12 +3,12 @@ title: Установка VMware ХККС
 description: Настройка решения VMware ХККС для частного облака решения Azure VMware
 ms.topic: how-to
 ms.date: 09/24/2020
-ms.openlocfilehash: 76a7432b78ec2141039dcdc5dd1d7572335b18e1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a101712f2d80e0d8e70d37bd5b7b08931f62ba3d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91263208"
+ms.locfileid: "91356559"
 ---
 # <a name="install-hcx-for-azure-vmware-solution"></a>Установка HCX для решения Azure VMware
 
@@ -40,7 +40,7 @@ ms.locfileid: "91263208"
 
 Изменение размера рабочих нагрузок для ресурсов вычислений и хранилища — важный шаг планирования при подготовке к использованию решения ХККС для решения Azure VMware для частного облака. Разрешать шаг изменения размера как часть первоначального планирования окружения частного облака. 
 
-Вы также можете масштабировать рабочие нагрузки, выполнив [оценку решения Azure VMware](https://docs.microsoft.com/azure/migrate/how-to-create-azure-vmware-solution-assessment) на портале службы "миграция Azure".
+Вы также можете масштабировать рабочие нагрузки, выполнив [оценку решения Azure VMware](../migrate/how-to-create-azure-vmware-solution-assessment.md) на портале службы "миграция Azure".
 
 ## <a name="software-version-requirements"></a>Требования к версиям программного обеспечения
 

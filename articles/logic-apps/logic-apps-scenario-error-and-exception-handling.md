@@ -7,12 +7,12 @@ author: hedidin
 ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 07/29/2016
-ms.openlocfilehash: 1bb6e28c9dcae01f3233178706d2a24156fa509a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fdf5f25ae6f89ccc06c95ee1be021691dab0047a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76902701"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322433"
 ---
 # <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий обработки исключений и ведения журнала ошибок для приложений логики
 
@@ -103,22 +103,22 @@ ms.locfileid: "76902701"
 
    **Добавление записи журнала**
 
-   ![Добавление записи журнала](media/logic-apps-scenario-error-and-exception-handling/lognewpatient.png)
+   ![Снимок экрана: конструктор приложений логики, отображающий параметры конфигурации для Insertlogentry для.](media/logic-apps-scenario-error-and-exception-handling/lognewpatient.png)
 
    **Добавление записи об ошибке**
 
-   ![Добавление записи журнала](media/logic-apps-scenario-error-and-exception-handling/insertlogentry.png)
+   ![Снимок экрана: конструктор приложений логики, отображающий параметры конфигурации для Креатирроррекорд.](media/logic-apps-scenario-error-and-exception-handling/insertlogentry.png)
 
    **Проверка на ошибку создания записи**
 
-   ![Условие](media/logic-apps-scenario-error-and-exception-handling/condition.png)
+   ![Снимок экрана: экран Креатирроррекорд в конструкторе приложений логики, отображающий поля для создания записи об ошибке.](media/logic-apps-scenario-error-and-exception-handling/condition.png)
 
 ## <a name="logic-app-source-code"></a>Исходный код приложения логики
 
 > [!NOTE]
 > Приведенные ниже фрагменты кода используется только в качестве примера. Так как в этом руководстве используется пример из реальной жизни, который уже реализован в рабочей среде, значения свойств **исходного узла**, связанные с планированием приемов, могут не отображаться. 
 
-### <a name="logging"></a>Ведение журнала
+### <a name="logging"></a>Logging
 
 В следующем примере кода приложения логики показано, как обрабатывать ведение журналов.
 
@@ -478,7 +478,7 @@ ms.locfileid: "76902701"
 
 Исходный код приложения API управления исключениями Logic Apps доступен в этом [репозитории GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi "API управления исключениями приложений логики").
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры приложений логики и распространенные сценарии](../logic-apps/logic-apps-examples-and-scenarios.md)
 * [Мониторинг приложений логики](../logic-apps/monitor-logic-apps.md)

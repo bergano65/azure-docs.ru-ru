@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/02/2019
 ms.author: Zhchia
-ms.openlocfilehash: ab2fd7f78373f9fee349e59c374088f67f165339
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 123f35154c3b87ff1ed479084f5e9dfa35043b9a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554210"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287242"
 ---
 # <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Учебник. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей
 
@@ -103,11 +103,11 @@ ms.locfileid: "88554210"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://<subdomain>.officespacesoftware.com/api/scim/v2/` Формат URL-адреса в поле **URL-адрес клиента**. Например, `https://contoso.officespacesoftware.com/api/scim/v2/`. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к программному обеспечению officespace Software. В случае сбоя подключения убедитесь, что учетная запись программного обеспечения Officespace Software имеет разрешения администратора, и повторите попытку.
 
@@ -117,7 +117,7 @@ ms.locfileid: "88554210"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с officespace Software Software**.
 

@@ -1,14 +1,14 @@
 ---
 title: Интеграция Центров событий Azure со службой "Приватный канал Azure"
 description: Сведения об интеграции Центров событий Azure со службой "Приватный канал Azure"
-ms.date: 07/29/2020
+ms.date: 08/22/2020
 ms.topic: article
-ms.openlocfilehash: 817ec7b9256829ace61a0d1dad98f1f34683c95e
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 59167635cfc0d8c1123a47410c87d6b9151f6f62
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88716797"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334248"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-via-private-endpoints"></a>Разрешить доступ к пространствам имен концентраторов событий Azure через частные конечные точки 
 Приватный канал Azure обеспечивает доступ к службам Azure (например, к Центрам событий Azure, службе хранилища Azure и Azure Cosmos DB), а также к размещенным в Azure службам клиентов или партнеров через **частную конечную точку** виртуальной сети.
@@ -24,10 +24,9 @@ ms.locfileid: "88716797"
 > 
 > Ниже приведены некоторые службы, которые не могут получить доступ к ресурсам концентраторов событий, если включены частные конечные точки. Обратите внимание, что список **не** является исчерпывающим.
 >
-> - Azure Stream Analytics
 > - Маршруты Центра Интернета вещей Azure.
 > - Device Explorer Интернета вещей Azure.
-> - Сетка событий Azure
+> - Сетка событий Azure.
 > - Azure Monitor (параметры диагностики)
 >
 > В качестве исключения можно разрешить доступ к ресурсам концентраторов событий из определенных доверенных служб, даже если включены частные конечные точки. Список доверенных служб см. в разделе [Доверенные службы](#trusted-microsoft-services).
@@ -58,14 +57,14 @@ ms.locfileid: "88716797"
     > [!NOTE]
     > Вкладка " **сеть** " отображается только для **стандартных** или **выделенных** пространств имен. 
 
-    :::image type="content" source="./media/private-link-service/selected-networks-page.png" alt-text="Вкладка сети — параметр выбранные сети" lightbox="./media/private-link-service/selected-networks-page.png":::    
+    :::image type="content" source="./media/private-link-service/selected-networks-page.png" alt-text="Вкладка "сети" — параметр "выбранные сети"" lightbox="./media/private-link-service/selected-networks-page.png":::    
 
     > [!NOTE]
     > По умолчанию выбран параметр **Выбранные сети** . Если не указать правило брандмауэра IP-адресов или добавить виртуальную сеть, доступ к пространству имен можно получить через общедоступный Интернет. 
 1. Выберите вкладку **Подключения к частным конечным точкам** в верхней части страницы. 
 1. Нажмите кнопку **+ Частная конечная точка** в верхней части страницы.
 
-    :::image type="content" source="./media/private-link-service/private-link-service-3.png" alt-text="Страница сеть — Вкладка подключения частной конечной точки — Добавление ссылки на частную конечную точку":::
+    :::image type="content" source="./media/private-link-service/private-link-service-3.png" alt-text="Страница "сеть" — Вкладка "подключения частной конечной точки" — Добавление ссылки на частную конечную точку":::
 7. На странице **Базовые** выполните следующие действия. 
     1. Выберите **подписку Azure**, в которой нужно создать частную конечную точку. 
     2. Выберите **группу ресурсов** для ресурса частной конечной точки.

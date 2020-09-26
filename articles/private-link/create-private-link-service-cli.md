@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 4312c6b89a7ba3e56e39050d76c673aa532f6f92
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2cfc746d883b565fe7a082a316ce314f385225df
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84737348"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358208"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
 В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
@@ -88,7 +88,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 az network vnet subnet update --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --disable-private-link-service-network-policies true 
 ```
  
-## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"  
+## <a name="create-a-private-link-service-using-standard-load-balancer"></a>Создание службы частной связи с помощью Load Balancer (цен. категория "Стандартный") 
  
 Создайте службу частной связи с помощью многосерверной IP-конфигурации Load Balancer (цен. категория "Стандартный") с помощью команды [AZ Network Private-Link-Service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create). В этом примере создается служба частной связи с именем *миплс* , использующая Load Balancer (цен. Категория "Стандартный") с именем *myLoadBalancer* в группе ресурсов с именем *myResourceGroup*. 
  
@@ -160,6 +160,6 @@ az network private-endpoint create \
 ```azurecli-interactive 
 az network private-link-service show --resource-group myResourceGroup --name myPLS 
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [службе частной связи Azure](private-link-service-overview.md)
  

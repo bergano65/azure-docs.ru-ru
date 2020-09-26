@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: rajosh
-ms.openlocfilehash: b2917c10e13f110d7ac9784da16a10fc61eb9298
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 192780f1340b09cd2579e31f4023acb101d0e1f9
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288861"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358089"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Создание оценки решения Azure VMware (AVS)
 
@@ -23,7 +23,7 @@ ms.locfileid: "87288861"
 
 - Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
 - Если вы уже создали проект, убедитесь, что вы [добавили](how-to-assess.md) средство Azure Migrate: Server для оценки серверов.
-- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md), которое обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее.](migrate-appliance.md)
+- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md), которое обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее](migrate-appliance.md).
 - Кроме того, можно [импортировать метаданные сервера](tutorial-assess-import.md) в формате значений с разделителями-запятыми (CSV).
 
 
@@ -56,7 +56,7 @@ ms.locfileid: "87288861"
 
 2. На вкладке **Серверы** на плитке **Azure Migrate: Server Assessment** (Миграция Azure: оценка сервера) щелкните **Оценка**.
 
-    ![Оценка](./media/how-to-create-assessment/assess.png)
+    ![Снимок экрана: миграция серверов Azure с выбранной оценкой в разделе средства оценки.](./media/how-to-create-assessment/assess.png)
 
 3. На странице **Оценка серверов**выберите тип оценки "решение Azure VMware (AVS)", выберите источник обнаружения и укажите имя оценки.
 

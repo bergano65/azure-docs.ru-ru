@@ -10,12 +10,12 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f0aa71b34818cf373d1bb58531ee5c68c8d3d5ec
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 187e44a40228adb62a1d97f4e0df8a7ad3a7e2d3
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89004329"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356073"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
 
@@ -61,7 +61,7 @@ ms.locfileid: "89004329"
 
 В терминале VS Code с помощью указаний в интерактивной командной строке подготовьте необходимые службы Azure.
 
-![cloud-provision](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/cloud-provision.png)
+![На снимке экрана показана интерактивная Командная строка терминала Visual Studio Code.](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/cloud-provision.png)
 
 > [!NOTE]
 > Если страница зависает в состоянии загрузки на этапе входа в Azure, ознакомьтесь с часто задаваемыми вопросами по IoT DevKit, [раздел о зависании страницы входа](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#page-hangs-when-log-in-azure).
@@ -80,7 +80,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Чтобы запустить `task cloud-deploy` и начать развертывание кода решения "Функции Azure", используйте команду `Ctrl+P` (`Cmd+P` в macOS).
 
-![cloud-deploy](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/cloud-deploy.png)
+![На снимке экрана показаны Visual Studio Code, где можно запустить задачу Cloud-Deploy для развертывания кода функций Azure.](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/cloud-deploy.png)
 
 > [!NOTE]
 > Иногда функция Azure может выполняться неправильно. Чтобы устранить эту проблему при ее возникновении, ознакомьтесь с разделом об [ошибке компиляции в часто задаваемых вопросах по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#compilation-error-for-azure-function).
@@ -115,7 +115,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 1. VS Code начнет проверку и отправку эскиза Arduino в DevKit.
 
-   ![device-upload](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/device-upload.png)
+   ![Снимок экрана показывает, Visual Studio Code проверит и отправку эскиза Arduino.](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/device-upload.png)
 
 2. DevKit перезагрузится и начнет выполнение кода.
 
@@ -154,7 +154,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 ## <a name="how-it-works"></a>Принцип работы
 
-![Схема](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/diagram.png)
+![На схеме показано мобильное устройство, отправляющее событие в центр Azure I T, которое запускает приложение-функцию Azure для запроса твита, который отправляется обратно в приложение и пересылается в центр и на мобильное устройство.](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/diagram.png)
 
 Эскиз Arduino отправляет событие в Центр Интернета вещей Azure. Это событие запускает приложение решения "Функции Azure". Приложение решения "Функции Azure" содержит логику для подключения к API Twitter и получения твитов. Полученный твит упаковывается в сообщение C2D (из облака на устройство) и отправляется на вызывающее устройство.
 
@@ -170,7 +170,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 4. На [портале Azure](https://portal.azure.com/){:target="_blank"} откройте **группу ресурсов** и найдите функцию Azure (тип: служба приложений) для проекта "Shake, Shake". Это имя обязательно содержит строку "shake...".
 
-   ![azure-function](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function.png)
+   ![Снимок экрана портал Azure показывает службу приложений для проекта.](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function.png)
 
 5. Измените код `run.csx` в разделе **Функции > shakeshake-cs**, включив в него собственный маркер:
 
@@ -178,7 +178,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
    string authHeader = "Bearer " + "[your own token]";
    ```
   
-   ![twitter-token](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/twitter-token.png)
+   ![На снимке экрана показан код C# для функции, в которой можно ввести маркер.](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/twitter-token.png)
 
 6. Сохраните файл и щелкните **Запустить**.
 
@@ -196,7 +196,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 2. Найдите созданное приложение решения "Функции Azure" на [портале Azure](https://portal.azure.com/) и перезапустите его:
 
-   ![azure-function-restart](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function-restart.png)
+   ![На снимке экрана показан портал Azure с помощью приложения "функции Azure" и кнопки "перезапустить".](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function-restart.png)
 
 Если вы столкнулись с другими проблемами, изучите [часто задаваемые вопросы по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или свяжитесь с нами по любому из доступных каналов:
 

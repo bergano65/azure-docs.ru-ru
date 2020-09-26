@@ -8,17 +8,17 @@ editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
 ms.custom: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/18/2020
 ms.author: mathoma
-ms.openlocfilehash: cbc6b2af98905a09324a58c92cafca0075d8a01d
-ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
+ms.openlocfilehash: 1b10489ef74e681eab59694d24c4babc3ce69163
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89055147"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91298717"
 ---
 # <a name="create-an-fci-with-a-premium-file-share-sql-server-on-azure-vms"></a>Создание FCI с общей папкой Premium (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -220,6 +220,6 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по [конфигурации кластера](hadr-cluster-best-practices.md). 
 
-Дополнительные сведения см. в разделе: 
+Дополнительные сведения можно найти в разделе 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
 - [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)

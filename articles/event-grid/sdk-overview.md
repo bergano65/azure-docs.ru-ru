@@ -3,12 +3,12 @@ title: Пакеты SDK для службы "Сетка событий Azure"
 description: Описывает пакеты SDK для службы "Сетка событий Azure". Эти пакеты SDK обеспечивают управление, публикацию и использование.
 ms.topic: reference
 ms.date: 07/07/2019
-ms.openlocfilehash: 2b21d8bf2c393b096e9046765e6cfadc76baffbf
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 5e93448ef703be88583cd59ae5eee9d1993c4054
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119112"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322535"
 ---
 # <a name="event-grid-sdks-for-management-and-publishing"></a>Пакеты SDK для управления службой "Сетка событий Azure" и публикации в ней
 
@@ -21,7 +21,7 @@ ms.locfileid: "86119112"
 * [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.EventGrid)
 * [GO](https://github.com/Azure/azure-sdk-for-go)
 * [Java](https://search.maven.org/#search%7Cga%7C1%7Cazure-mgmt-eventgrid)
-* [Узел](https://www.npmjs.com/package/azure-arm-eventgrid)
+* [Node](https://www.npmjs.com/package/azure-arm-eventgrid)
 * [Python](https://pypi.python.org/pypi/azure-mgmt-eventgrid)
 * [Ruby](https://rubygems.org/gems/azure_mgmt_event_grid)
 
@@ -29,12 +29,15 @@ ms.locfileid: "86119112"
 
 Пакеты SDK для плоскости данных позволяют публиковать события в разделы. Эти пакеты обеспечивают аутентификацию, формирование события и асинхронную публикацию на указанной конечной точке. Они также позволяют использовать события первой стороны. Сейчас доступны следующие пакеты SDK:
 
-* [.NET](https://www.nuget.org/packages/Microsoft.Azure.EventGrid)
-* [GO](https://github.com/Azure/azure-sdk-for-go)
-* [Java](https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventgrid)
-* [Узел](https://www.npmjs.com/package/azure-eventgrid)
-* [Python](https://pypi.python.org/pypi/azure-eventgrid)
-* [Ruby](https://rubygems.org/gems/azure_event_grid)
+| Язык программирования | Пакет SDK | 
+| -------------------- | ---------- | ---------- | 
+| .NET | Стабильный пакет SDK: [Microsoft. Azure. EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid)<p>Предварительная версия пакета SDK: [Azure. Messaging. EventGrid](https://www.nuget.org/packages/Azure.Messaging.EventGrid/) |
+| Java | Стабильный пакет SDK: [Azure-eventgrid](https://mvnrepository.com/artifact/com.microsoft.azure/azure-eventgrid)<p>Предварительная версия пакета SDK: [Azure-Messaging-eventgrid](https://search.maven.org/artifact/com.azure/azure-messaging-eventgrid/)</p> |  
+| Python | [Azure-eventgrid](https://pypi.org/project/azure-eventgrid/#history) (см. последние версии стабильных и предварительных версий на странице **журнала выпусков** ) |
+| JavaScript | [@azure/eventgrid](https://www.npmjs.com/package/@azure/eventgrid/) (перейдите на вкладку **версии** , чтобы просмотреть последние стабильные и бета-версии пакетов). | 
+| Go | [Пакет Azure SDK для Go](https://github.com/Azure/azure-sdk-for-go) | | 
+| Ruby | [azure_event_grid](https://rubygems.org/gems/azure_event_grid) | | 
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

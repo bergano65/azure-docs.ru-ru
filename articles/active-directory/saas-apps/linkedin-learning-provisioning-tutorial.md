@@ -2,21 +2,25 @@
 title: Руководство по настройке LinkedIn Learning для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как автоматически подготавливать и отзывать учетные записи пользователей из Azure AD в LinkedIn Learning.
 services: active-directory
+documentationcenter: ''
 author: Zhchia
 writer: Zhchia
-manager: CelesteDG
+manager: beatrizd
+ms.assetid: 21e2f470-4eb1-472c-adb9-4203c00300be
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 55b69fd33f9e891ed0b1cf1e8ae3051776a6791b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c788ca62baf15a64b157cef6f17a7ccee25720a8
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549846"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356083"
 ---
 # <a name="tutorial-configure-linkedin-learning-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Learning для автоматической подготовки пользователей
 
@@ -88,15 +92,15 @@ ms.locfileid: "88549846"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "Подготовка"](common/provisioning.png)
+    ![Снимок экрана параметров управления с вызываемым параметром подготовки.](common/provisioning.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
+    ![Снимок экрана: раскрывающийся список режима подготовки с вызываемым автоматическим параметром.](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** введите `https://api.linkedin.com/scim` **URL-адрес клиента**. Введите значение маркера доступа, полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к LinkedIn Learning. В случае сбоя подключения убедитесь, что учетная запись LinkedIn Learning имеет разрешения администратора, и повторите попытку.
 
-    ![Подготовка](./media/linkedin-learning-provisioning-tutorial/provisioning.png)
+    ![На снимке экрана отображается диалоговое окно учетные данные администратора, в котором можно ввести клиент U R и секретный маркер.](./media/linkedin-learning-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

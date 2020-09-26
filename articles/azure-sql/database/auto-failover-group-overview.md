@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/28/2020
-ms.openlocfilehash: 7b4a85077c8e0147f926f9a86fc8a003591ec8ac
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 469620456fecb7c0cb398988c4a4fc25da97f863
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "91277739"
+ms.locfileid: "91357715"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -153,7 +153,7 @@ ms.locfileid: "91277739"
 
 Группа автоматической отработки отказа должна быть настроена на сервере-источнике и будет подключаться к дополнительному серверу в другом регионе Azure. Группы могут содержать все или некоторые базы данных на этих серверах. На следующей схеме показана типичная конфигурация геоизбыточного облачного приложения, использующего несколько баз данных и активную георепликацию.
 
-![автоматическая отработка отказа](./media/auto-failover-group-overview/auto-failover-group.png)
+![На схеме показана типичная конфигурация геоизбыточного облачного приложения с использованием нескольких баз данных и группы автоматической отработки отказа.](./media/auto-failover-group-overview/auto-failover-group.png)
 
 > [!NOTE]
 > Подробное пошаговое руководство по добавлению базы данных SQL в группу отработки отказа см. в разделе [Добавление базы данных SQL в группу отработки отказа](failover-group-add-single-database-tutorial.md) .
