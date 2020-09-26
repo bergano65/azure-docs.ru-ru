@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 06/05/2020
+ms.date: 09/22/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9295b1d8a54d9c3c1a138a54f4b3706bd39227fd
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: e8a35902c198412f6e41c0cf39162836deb5e443
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89009548"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280102"
 ---
 # <a name="list-blobs-with-net"></a>Получение списка больших двоичных объектов с помощью .NET
 
@@ -59,7 +59,7 @@ ms.locfileid: "89009548"
 
 ### <a name="filter-results-with-a-prefix"></a>Фильтрация результатов с помощью префикса
 
-Чтобы отфильтровать список контейнеров, укажите строку для параметра `prefix`. Строка префикса может содержать один или несколько символов. Служба хранилища Azure возвращает только те большие двоичные объекты, имена которых начинаются с этого префикса.
+Чтобы отфильтровать список больших двоичных объектов, укажите строку для `prefix` параметра. Строка префикса может содержать один или несколько символов. Служба хранилища Azure возвращает только те большие двоичные объекты, имена которых начинаются с этого префикса.
 
 ### <a name="return-metadata"></a>Возврат метаданных
 

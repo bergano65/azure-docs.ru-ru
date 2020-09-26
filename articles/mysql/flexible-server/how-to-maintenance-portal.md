@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 6c3ad5fff6958bce72f876e3ff4701cf081abe60
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c8251eb2a89a7481ebc981f2b89668c363651b39
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940486"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91315020"
 ---
 # <a name="manage-scheduled-maintenance-settings-for-azure-database-for-mysql--flexible-server"></a>Управление параметрами запланированного обслуживания для базы данных Azure для MySQL — гибкого сервера
  
@@ -31,9 +31,9 @@ ms.locfileid: "90940486"
  
 ## <a name="notifications-about-scheduled-maintenance-events"></a>Уведомления о событиях запланированного обслуживания
  
-Службу работоспособности служб Azure можно использовать для [просмотра уведомлений](/azure/service-health/service-notifications.md) о предстоящем и запланированном обслуживании на гибком сервере. Вы также можете [настроить](/azure/service-health/resource-health-alert-monitor-guide.md) оповещения в службе "работоспособность служб Azure", чтобы получать уведомления о событиях обслуживания.
+Службу работоспособности служб Azure можно использовать для [просмотра уведомлений](../../service-health/service-notifications.md) о предстоящем и запланированном обслуживании на гибком сервере. Вы также можете [настроить](../../service-health/resource-health-alert-monitor-guide.md) оповещения в службе "работоспособность служб Azure", чтобы получать уведомления о событиях обслуживания.
  
 ## <a name="next-steps"></a>Дальнейшие действия  
  
 * Сведения о [плановом обслуживании в базе данных Azure для MySQL — гибком сервере](concepts-maintenance.md)
-* Экономичность [службы работоспособности служб Azure](/azure/service-health/overview.md)
+* Экономичность [службы работоспособности служб Azure](../../service-health/overview.md)

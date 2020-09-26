@@ -5,18 +5,18 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 04/07/2020
+ms.date: 09/25/2020
 ms.author: victorh
-ms.openlocfilehash: bbb78fd879bc5c6bb8c2624329a23d7137b11660
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: ba9f42bc932a37e1052f17db2ae00413e0769d59
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89651987"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355743"
 ---
 # <a name="azure-application-gateway-features"></a>Функции шлюза приложений Azure
 
-[Шлюз приложений Azure](overview.md) — это балансировщик нагрузки веб-трафика, который позволяет управлять трафиком к веб-приложениям.
+[Шлюз приложений Azure](overview.md) — это подсистема балансировки нагрузки веб-трафика, предназначенная для управления трафиком веб-приложений.
 
 ![Принцип работы Шлюза приложений](media/overview/figure1-720.png)
 
@@ -24,7 +24,7 @@ ms.locfileid: "89651987"
 
 - [Завершение запросов SSL/TLS](#secure-sockets-layer-ssltls-termination)
 - [Автомасштабирование](#autoscaling)
-- [Избыточность в пределах зоны](#zone-redundancy)
+- [Избыточность зоны](#zone-redundancy)
 - [Статический виртуальный IP-адрес](#static-vip)
 - [Брандмауэр веб-приложения](#web-application-firewall)
 - [Контроллер входящего трафика для AKS](#ingress-controller-for-aks)
@@ -147,9 +147,9 @@ ms.locfileid: "89651987"
 
 ## <a name="sizing"></a>Определение размера
 
-Standard_v2 шлюза приложений можно настроить для развертывания с автомасштабированием или с фиксированным размером. Этот SKU не поддерживает различные размеры экземпляров. Дополнительные сведения о производительности и ценах на v2 см. в разделе [Автомасштабирование v2](application-gateway-autoscaling-zone-redundant.md) и [Общие сведения о ценах](understanding-pricing.md).
+Standard_v2 шлюза приложений можно настроить для развертывания с автомасштабированием или с фиксированным размером. SKU версии 2 не поддерживает различные размеры экземпляров. Дополнительные сведения о производительности и ценах на v2 см. в разделе [Автомасштабирование v2](application-gateway-autoscaling-zone-redundant.md) и [Общие сведения о ценах](understanding-pricing.md).
 
-Стандарт шлюза приложений предлагается в трех размерах: **малый**, **средний**и **крупный**. Экземпляры малого размера предназначены для разработки и тестирования сценариев.
+Стандарт шлюза приложений (v1) предлагается в трех размерах: **малый**, **средний**и **большой**. Экземпляры малого размера предназначены для разработки и тестирования сценариев.
 
 Полный список ограничений шлюза приложений см. [здесь](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits).
 

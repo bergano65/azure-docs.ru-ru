@@ -1210,6 +1210,8 @@
           href: database/database-import-export-hang.md
     - name: Обновления службы
       items:
+        - name: Срок действия корневого сертификата SSL
+          href: updates/ssl-root-certificate-expiring.md
         - name: Обновления IP-адреса шлюза
           href: database/gateway-migration.md
         - name: События периодического обслуживания
