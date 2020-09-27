@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 1a829f4e5f45394d9c5bbed0db9289727b816917
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a73a2bc82c7f4e77808f751bb8ba24adcacd2e31
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91315037"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400389"
 ---
 # <a name="configure-and-access-slow-query-logs-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Настройка и доступ к журналам запросов для базы данных Azure для MySQL — гибкого сервера с помощью портал Azure
 
@@ -45,9 +45,6 @@ ms.locfileid: "91315037"
 
 ## <a name="set-up-diagnostics"></a>Настройка диагностики
 
-> [!NOTE]
-> Интеграция с Azure Monitor параметрами диагностики для доступа к журналам в ближайшее время будет доступна для развертывания и полной функциональности.
-
 Журналы слишком долго интегрируются с Azure Monitor параметрами диагностики, что позволяет передавать журналы в Azure Monitor журналы, концентраторы событий или службу хранилища Azure.
 
 1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**  >  **Добавить параметры диагностики**.
@@ -66,7 +63,7 @@ ms.locfileid: "91315037"
 
 1. Получите доступ к журналам запросов с задержкой, изучив их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-Если вы передаете журналы в Azure Monitor журналы (Log Analytics), ознакомьтесь с [примерами запросов](concepts-audit-logs.md#analyze-logs-in-azure-monitor-logs) , которые можно использовать для анализа. 
+Если вы передаете журналы в Azure Monitor журналы (Log Analytics), ознакомьтесь с [примерами запросов](concepts-slow-query-logs.md#analyze-logs-in-azure-monitor-logs) , которые можно использовать для анализа. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 <!-- - See [Access slow query Logs in CLI](howto-configure-server-logs-in-cli.md) to learn how to download slow query logs programmatically.-->

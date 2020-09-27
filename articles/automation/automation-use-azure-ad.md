@@ -4,12 +4,12 @@ description: В этой статье рассказывается, как в с
 services: automation
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: c17c9cdc02c87037a39b8d6029bc4506afa8ad28
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bbd1f977b548c2b8e7980709ea125c07e22b1fa2
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87064384"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400678"
 ---
 # <a name="use-azure-ad-to-authenticate-to-azure"></a>Аутентификация в Azure с помощью Azure AD
 
@@ -21,7 +21,7 @@ ms.locfileid: "87064384"
 
 * Azure Active Directory PowerShell для Graph (модули AzureRM и Az). В состав службы автоматизации Azure входит модуль AzureRM и его недавнее обновление, модуль Az. Его функциональные возможности включают неинтерактивную аутентификацию в Azure на основе учетных данных пользователя Azure AD (OrgId). См. [описание Azure AD 2.0.2.76](https://www.powershellgallery.com/packages/AzureAD/2.0.2.76).
 
-* Microsoft Azure Active Directory для Windows PowerShell (модуль MSOnline). Этот модуль обеспечивает взаимодействие с Microsoft Online, в том числе с Office 365.
+* Microsoft Azure Active Directory для Windows PowerShell (модуль MSOnline). Этот модуль обеспечивает взаимодействие с Microsoft Online, в том числе Microsoft 365.
 
 >[!NOTE]
 >PowerShell Core не поддерживает модуль MSOnline. Чтобы использовать командлеты этого модуля, необходимо запускать их из Windows PowerShell. Вместо модуля MSOnline мы рекомендуем использовать более новую версию модулей Azure Active Directory PowerShell для Graph. 
@@ -46,7 +46,7 @@ ms.locfileid: "87064384"
 ### <a name="install-the-msonline-module"></a>Установка модуля MSOnline
 
 >[!NOTE]
->Чтобы установить модуль MSOnline, нужно иметь роль администратора Office 365. Сведения о ролях администраторов см. [здесь](/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
+>Чтобы установить модуль MSOnline, необходимо быть членом роли администратора. Сведения о ролях администраторов см. [здесь](/microsoft-365/admin/add-users/about-admin-roles).
 
 1. Убедитесь, что на вашем компьютере включен компонент Microsoft .NET Framework 3.5.x. Вероятно, что на компьютере уже установлена более новая версия, но обратная совместимость платформы .NET Framework с более старыми версиями может быть включена или отключена. 
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: a6e5ae96d097dab9c416f7e1f737cf4fe8a62aea
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 2f606a2ff036c6bc3b4e3c508632d48ae8d40f15
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87279225"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400049"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple для программы поставщиков облачных решений — часто задаваемые вопросы
 
@@ -40,10 +40,10 @@ ms.locfileid: "87279225"
 
 Дополнительные сведения см. в [обзоре программы StorSimple](https://www.microsoft.com/en-us/server-cloud/products/storsimple/). 
 
-### <a name="is-storsimple-a-usage-based-or-based-on-seat-licenses-like-office-365-and-enterprise-mobility-suite-ems"></a>Оплачивается ли StorSimple на основе использования или по лицензиям на рабочие места, как Office 365 и Enterprise Mobility Suite (EMS)?
+### <a name="is-storsimple-a-usage-based-or-based-on-seat-licenses-like-microsoft-365-and-enterprise-mobility-suite-ems"></a>Используется ли в StorSimple лицензия на использование или на основе лицензий на рабочее место, таких как Microsoft 365 и Enterprise Mobility Suite (EMS)?
 Служба StorSimple оплачивается по факту использования. Пользователи, приобретающие виртуальный массив StorSimple по программе CSP, оплачивают использование виртуальных массивов и Azure, которые выделяются отдельными элементами в счете CSP. 
 
-### <a name="is-the-storsimple-business-model-similar-to-that-of-other-services-such-as-the-office-365-and-the-enterprise-mobility-suite"></a>Использует ли StorSimple такую же бизнес-модель, как и другие службы, например Office 365 и Enterprise Mobility Suite? 
+### <a name="is-the-storsimple-business-model-similar-to-that-of-other-services-such-as-the-microsoft-365-and-the-enterprise-mobility-suite"></a>Работает ли бизнес-модель StorSimple, аналогичная той, которая относится к другим службам, таким как Microsoft 365 и Enterprise Mobility Suite? 
 Да. Используется такая же модель оптовых скидок, как и для всех других служб на основе использования в Azure. На StorSimple предоставляются такие же оптовые скидки, как и на другие службы Azure. Эта модель позволяет партнерам CSP продавать больше и поощрять использование Azure через виртуальный массив StorSimple.  
 
 ### <a name="which-storsimple-skus-are-available-at-launch"></a>Какие номера SKU доступны для StorSimple при запуске?

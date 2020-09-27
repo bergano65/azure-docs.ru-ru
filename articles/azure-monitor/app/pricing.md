@@ -7,12 +7,12 @@ author: DaleKoetke
 ms.author: dalek
 ms.date: 5/7/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5dd1fd1209be29774d19a155b6e585fa6ebcc036
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: b695205c08f9039fbf91eaeddb7622b784d81d12
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88930491"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400593"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -264,7 +264,7 @@ requests | where timestamp > ago(1d)
 
 Чтобы изменить срок хранения, из своего ресурса Application Insights перейдите на страницу **Использование и ожидаемые затраты** и выберите параметр **Хранение данных**.
 
-![Настройка ограничения ежедневного объема данных телеметрии](./media/pricing/pricing-005.png)
+![Снимок экрана, на котором показано, где можно изменить срок хранения данных.](./media/pricing/pricing-005.png)
 
 Если срок хранения данных снижен, то перед удалением самых старых данных предоставляется льготный период в несколько дней.
 

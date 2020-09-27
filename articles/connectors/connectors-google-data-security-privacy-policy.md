@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: conceptual
 ms.date: 06/05/2020
-ms.openlocfilehash: b82b79d076871b961d5c496bc70beac1b5067b2d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 2a5204be638f108b40e431b148c9cb97788c4a52
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288108"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400763"
 ---
 # <a name="data-security-and-privacy-policies-for-google-connectors-in-azure-logic-apps"></a>Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps
 
@@ -40,7 +40,7 @@ ms.locfileid: "87288108"
 
 * Службы Google: Gmail, Google календарь, контакты Google, Google Drive, Google и задачи Google
 
-* Утвержденные службы Майкрософт: Dynamics 365, Excel Online, Microsoft Teams, Office 365, OneDrive и SharePoint Online
+* Утвержденные службы Майкрософт: Dynamics 365, Excel Online, Microsoft Teams, Microsoft 365, OneDrive и SharePoint Online
 
 * Соединители для управляемых клиентом источников данных: FTP, RSS, SFTP, SMTP и SQL Server
 
@@ -98,7 +98,7 @@ ms.locfileid: "87288108"
 
    ![Предоставление сведений о подключении](./media/connectors-google-data-security-privacy-policy/authentication-type-bring-your-own.png)
 
-   | Свойство | Значение | Описание: |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **Тип проверки подлинности** | **Перенесите свое приложение** | Указывает, что вы будете использовать собственное клиентское приложение для проверки подлинности. |
    | **Идентификатор клиента** | <*ИД клиента*> | Идентификатор клиента из клиентского приложения Google |
@@ -115,7 +115,7 @@ ms.locfileid: "87288108"
 
    Теперь соединитель Gmail можно использовать без ограничений в приложении логики.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [соединителе Gmail](/connectors/gmail/)
 

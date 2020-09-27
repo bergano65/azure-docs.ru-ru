@@ -6,14 +6,14 @@ author: alkohli
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 09/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 123fa86714ae3cefe7de5bebda9e0fccd385ecb4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 0e0bcde44ba28751761b7db3f6d6fcae8f7bd49c
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836604"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400556"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
 
@@ -74,7 +74,7 @@ ms.locfileid: "87836604"
 - [Общие сведения об AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
 - [Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell](../blobs/storage-quickstart-blobs-powershell.md)
 - [Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](../blobs/storage-quickstart-blobs-cli.md)
-- Вам необходимы дополнительные сведения о следующих аспектах:
+- Кроме того, вы узнаете о таких возможностях, как:
 
     - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](https://docs.microsoft.com/azure/databox/);
     - [Шлюз Azure Data Box и Azure Stack границы для передачи в сети](https://docs.microsoft.com/azure/databox-online/).

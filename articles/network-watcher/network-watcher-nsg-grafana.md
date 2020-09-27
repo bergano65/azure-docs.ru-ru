@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: damendo
-ms.openlocfilehash: 4d07feb54a689c32e119d997275416a5dd8f0aad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ec4b9343efab9ae501b2b3dcc606e6e3f5fe826
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84725092"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399692"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
 
@@ -199,13 +199,13 @@ sudo service grafana-server start
 
 На снимке экрана ниже показаны график и диаграмма с основными потоками и их частотой. Потоки представлены по правилам NSG и по принятым решениям. Grafana имеет широкие возможности настройки, поэтому мы рекомендуем создавать панели мониторинга в соответствии со своими потребностями мониторинга. Стандартная панель мониторинга выглядит следующим образом:
 
-![График панели мониторинга](./media/network-watcher-nsg-grafana/network-watcher-nsg-grafana-fig4.png)
+![Снимок экрана, на котором показан пример конфигурации диаграммы с потоками, сегментированными по правилу NSG.](./media/network-watcher-nsg-grafana/network-watcher-nsg-grafana-fig4.png)
 
 ## <a name="conclusion"></a>Заключение
 
 Интеграция наблюдателя за сетями с ElasticSearch и Grafana обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и другими данными, а также возможность их визуализации. Grafana располагает рядом других мощных графических возможностей, которые можно использовать для дальнейшего управления журналами потоков, а также анализа сетевого трафика. Теперь, когда вы настроили экземпляр Grafana и подключили его к Azure, можно продолжить изучение других функций, предлагаемых Grafana.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об использовании [наблюдателя за сетями](network-watcher-monitoring-overview.md).
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: d702a3cca6a24819d2d184dc6df09153c9dcc860
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 01213cd4d04783d0d877b4565493f06fa3718f8d
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91281887"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399641"
 ---
 # <a name="run-the-opc-vault-certificate-management-service-securely"></a>Безопасное выполнение службы управления сертификатами хранилища OPC
 
@@ -94,7 +94,7 @@ ms.locfileid: "91281887"
 
 ### <a name="security-monitoring"></a>Мониторинг безопасности
 
-Подпишитесь на или реализуйте соответствующий мониторинг безопасности. Например, подпишитесь на решение центра мониторинга (например, центр безопасности Azure или решение по мониторингу Office 365) и настройте его соответствующим образом, чтобы обеспечить передачу событий безопасности в решение для мониторинга.
+Подпишитесь на или реализуйте соответствующий мониторинг безопасности. Например, подпишитесь на центральное решение мониторинга (например, центр безопасности Azure или решение для мониторинга Microsoft 365) и настройте его соответствующим образом, чтобы обеспечить передачу событий безопасности в решение для мониторинга.
 
 > [!IMPORTANT]
 > По умолчанию служба хранилища OPC развертывается с [Application Insights Azure](https://docs.microsoft.com/azure/azure-monitor/app/devops) в качестве решения для мониторинга. Настоятельно рекомендуется добавить решение для обеспечения безопасности, такое как [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/) .

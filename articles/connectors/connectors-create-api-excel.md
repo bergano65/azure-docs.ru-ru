@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 08/23/2018
 tags: connectors
-ms.openlocfilehash: b1df1219590aa94331a4404b1315eb7231c59699
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 097db6683127b410e713be53e6de838cf7734ddc
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75445884"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400729"
 ---
 # <a name="manage-excel-online-data-with-azure-logic-apps"></a>Управление данными Excel Online с помощью Azure Logic Apps
 
@@ -33,7 +33,7 @@ ms.locfileid: "75445884"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* [Учетная запись Office 365](https://www.office.com/) для рабочей или пользовательской учетной записи Майкрософт.
+* [Рабочая или учебная учетная запись](https://www.office.com/) для вашей рабочей учетной записи или личной учетная запись Майкрософт
 
   Данные Excel могут существовать в качестве файла с разделителями-запятыми (CSV) в папке хранилища, например в OneDrive. 
   Этот же CSV-файл можно использовать с [соединителем неструктурированного файла](../logic-apps/logic-apps-enterprise-integration-flatfile.md).
@@ -53,7 +53,7 @@ ms.locfileid: "75445884"
    > [!NOTE]
    > Конструктор приложений логики не может загрузить таблицы, имеющие 100 или более столбцов. По возможности сократите число столбцов в выбранной таблице, чтобы конструктор мог загрузить таблицу.
 
-1. При появлении запроса войдите в учетную запись Office 365.
+1. При появлении запроса войдите в рабочую или учебную учетную запись.
 
    Ваши учетные данные авторизуют приложение логики, чтобы оно могло создать подключение к Excel Online и получить доступ к данным.
 

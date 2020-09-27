@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 05/18/2020
 ms.author: derekol
-ms.openlocfilehash: 6646016a4529f46431ecb622c7546140a93a5d88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 596f06d6dc3ad33f2794dfe0e3ed7822a4820adb
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84871484"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399021"
 ---
 # <a name="register-peering-service-by-using-the-azure-portal"></a>Регистрация службы пиринга с помощью портал Azure
 
-Служба пиринга Azure — это сетевая служба, расширяющая возможности клиентов по подключению к облачным службам Майкрософт, таким как Office 365, Dynamics 365, SaaS (программное обеспечение как услуга), Azure и любым службам корпорации Майкрософт, которые работают через общедоступный Интернет.
+Служба пиринга Azure — это сетевая служба, повышающая возможности подключения клиентов к облачным службам Майкрософт, таким как службы Microsoft 365, Dynamics 365, Software as Service (SaaS), Azure или любые службы Майкрософт, доступные через общедоступный Интернет.
 
 В этой статье вы узнаете, как зарегистрировать подключение службы пиринга с помощью портал Azure.
 

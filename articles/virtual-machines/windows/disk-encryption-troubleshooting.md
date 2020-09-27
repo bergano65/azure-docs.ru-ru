@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: b3b83899ad21cf125105881a7ffb526f5c607c6d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e48c6cfd1160406d55ffdc3c9bafe733a6e5e4a6
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322216"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400083"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "87322216"
 
 ### <a name="azure-key-vault-behind-a-firewall"></a>Azure Key Vault за брандмауэром
 
-При включении шифрования [учетных данных Azure AD](disk-encryption-windows-aad.md#) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
+При включении шифрования [учетных данных Azure AD](disk-encryption-windows-aad.md#) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 документации по [URL-адресам Microsoft 365 и диапазонам IP-адресов](/microsoft-365/enterprise/urls-and-ip-address-ranges) . Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
 Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.  Конфигурации прокси-сервера, которые изменяют локальный трафик HTTP к этому адресу (например, добавление заголовка X-Forwarded-For), не поддерживаются.

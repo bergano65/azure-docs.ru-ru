@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 05/2/2020
 ms.author: derekol
-ms.openlocfilehash: fbb9a6237aafe1c1b7c94d9dd23ad4c3665c0c73
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef573817927cf732da3426d802f8f26e2e9cd4ec
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84871464"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399029"
 ---
 # <a name="register-a-peering-service-connection-by-using-the-azure-cli"></a>Регистрация подключения к службе пиринга с помощью Azure CLI
 
-Служба пиринга Azure — это сетевая служба, расширяющая возможности клиентов по подключению к облачным службам Майкрософт, таким как Office 365, Dynamics 365, SaaS (программное обеспечение как услуга), Azure и любым службам корпорации Майкрософт, которые работают через общедоступный Интернет. В этой статье вы узнаете, как зарегистрировать подключение службы пиринга с помощью Azure CLI.
+Служба пиринга Azure — это сетевая служба, повышающая возможности подключения клиентов к облачным службам Майкрософт, таким как службы Microsoft 365, Dynamics 365, Software as Service (SaaS), Azure или любые службы Майкрософт, доступные через общедоступный Интернет. В этой статье вы узнаете, как зарегистрировать подключение службы пиринга с помощью Azure CLI.
 
 Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) прямо сейчас.
 
@@ -102,7 +102,7 @@ az peering service prefix create \
   --resource-group  -g myResourceGroup\
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключении службы пиринга см. в статье [Подключение к службе пиринга](connection.md).
 - Дополнительные сведения о телеметрии см. в статье [Телеметрия для подключения Службы пиринга](connection-telemetry.md).

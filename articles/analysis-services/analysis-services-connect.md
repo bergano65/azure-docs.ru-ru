@@ -8,12 +8,12 @@ ms.date: 09/04/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 71caad8ce650b86f4350b32974bb8d980538b223
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 10e091ed58146d992d7b9c1f65b8b64f881a41b9
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89489023"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400287"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -23,7 +23,7 @@ ms.locfileid: "89489023"
 
 [Получение последних версий клиентских библиотек](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
 
-Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются в ежемесячных выпусках. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, такое возможно, если обновление откладывается политикой либо если обновление Office 365 производится по отложенному каналу.
+Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются в ежемесячных выпусках. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, если политики откладывают обновления или Microsoft 365 обновления находятся на отложенном канале.
 
 > [!NOTE]
 > Клиентские библиотеки не могут подключаться к Azure Analysis Services через прокси-серверы, для которых требуется имя пользователя и пароль. 

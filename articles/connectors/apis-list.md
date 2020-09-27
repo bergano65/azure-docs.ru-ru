@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 06/11/2020
-ms.openlocfilehash: 4876c5cb0490a96d5a77da9ced83e1650e98379a
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 23e6834f4850cc8f44f563a12f4704fec2e13ef7
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89488836"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400814"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -136,7 +136,7 @@ Logic Apps предоставляет эти популярные стандар
 | [![Служебная шина Azure с управляемым соединителем служебной шины ][azure-service-bus-icon]<br> **Azure Service Bus**][azure-service-bus-doc] | Управление асинхронными сообщениями, сеансами и подписками на темы с помощью наиболее часто используемого соединителя в системе Logic Apps. |
 | [![SQL Server управляемого соединителя SQL Server ][sql-server-icon]<br> **SQL Server**][sql-server-doc] | Подключитесь SQL Server к локальной службе или базе данных SQL Azure в облаке, чтобы можно было управлять записями, выполнять хранимые процедуры или выполнять запросы. |
 | [![Хранилище BLOB-объектов Azure управляемого соединителя хранилища ][azure-blob-storage-icon]<br> **BLOB-объектов Azure <br> **][azure-blob-storage-doc] | Подключитесь к учетной записи хранения, чтобы можно было создавать и управлять содержимым больших двоичных объектов. |
-| [![Office 365 Outlook с управляемым соединителем ][office-365-outlook-icon]<br> **Office 365 <br> Outlook**][office-365-outlook-doc] | Подключитесь к учетной записи электронной почты Office 365, чтобы вы могли создавать и администрировать сообщения электронной почты, задачи, события календаря и собрания, контакты, запросы и многое другое. |
+| [![Office 365 Outlook с управляемым соединителем ][office-365-outlook-icon]<br> **Office 365 <br> Outlook**][office-365-outlook-doc] | Подключитесь к рабочей или учебной учетной записи электронной почты, чтобы вы могли создавать и администрировать сообщения электронной почты, задачи, события календаря и собрания, контакты, запросы и многое другое. |
 | [![SFTP — управляемые SSH-соединители ][sftp-ssh-icon]<br> **SFTP-SSH**][sftp-ssh-doc] | Подключитесь к SFTP-серверам, к которым можно получить доступ из Интернета с помощью SSH, чтобы можно было работать с файлами и папками. |
 | [![Управляемый соединитель SharePoint Online — ][sharepoint-online-icon]<br> **SharePoint <br> Online**][sharepoint-online-doc] | Подключитесь к SharePoint Online, чтобы можно было управлять файлами, вложениями, папками и т. д. |
 | [![Очереди Azure управляемые ][azure-queues-icon]<br> ** <br> ** соединители очереди Azure][azure-queues-doc] | Подключитесь к учетной записи хранения Azure, чтобы можно было создавать очереди и сообщения и управлять ими. |
@@ -588,7 +588,7 @@ Logic Apps предоставляет эти соединители предпр
 [instagram-doc]: ./connectors-create-api-instagram.md "Подключитесь к Instagram. Активировать или исдействовать события"
 [mandrill-doc]: ./connectors-create-api-mandrill.md "Подключение к Mandrill для обмена данными"
 [mysql-doc]: /connectors/mysql/ "Подключитесь к локальной базе данных MySQL, чтобы можно было читать и записывать данные."
-[office-365-outlook-doc]: ./connectors-create-api-office365-outlook.md "Подключитесь к учетной записи Office 365, чтобы вы могли отправлять и получать сообщения электронной почты, управлять календарем и контактами и многое другое."
+[office-365-outlook-doc]: ./connectors-create-api-office365-outlook.md "Подключитесь к рабочей или учебной учетной записи, чтобы вы могли отправлять и получать сообщения электронной почты, управлять календарем и контактами и многое другое."
 [onedrive-doc]: ./connectors-create-api-onedrive.md "Подключитесь к личному приложению Microsoft OneDrive, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
 [onedrive-for-business-doc]: ./connectors-create-api-onedriveforbusiness.md "Подключитесь к Microsoft OneDrive для бизнеса, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
 [oracle-db-doc]: ./connectors-create-api-oracledatabase.md "Подключение к базе данных Oracle, чтобы можно было добавлять, вставлять, удалять строки и многое другое."

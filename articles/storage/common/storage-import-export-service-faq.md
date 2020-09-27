@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: f3a41fbd3cbd5b7c8eccfbea8833fdfedee97510
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08c105bd8ae9b5e0667ef5279e6c9484c631bd48
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512395"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399046"
 ---
 # <a name="azure-importexport-service-frequently-asked-questions"></a>Служба "Импорт и экспорт Azure". Часто задаваемые вопросы
 
@@ -35,9 +35,9 @@ ms.locfileid: "85512395"
 
 Да. Служба "Импорт и экспорт Azure" поддерживает подписки поставщиков облачных решений (CSP).
 
-### <a name="can-i-use-the-azure-importexport-service-to-copy-pst-mailboxes-and-sharepoint-data-to-o365"></a>Можно ли использовать службу "Импорт и экспорт Azure" для копирования почтовых ящиков PST и данных SharePoint в Office 365?
+### <a name="can-i-use-the-azure-importexport-service-to-copy-pst-mailboxes-and-sharepoint-data-to-microsoft-365"></a>Можно ли использовать службу импорта и экспорта Azure для копирования почтовых ящиков PST и данных SharePoint в Microsoft 365?
 
-Да. Дополнительные сведения см. в статье [Import PST files or SharePoint data to Office 365](https://technet.microsoft.com/library/ms.o365.cc.ingestionhelp.aspx) (Общие сведения об импорте PST-файлов и данных SharePoint в Office 365).
+Да. Дополнительные сведения см. в статье [об импорте PST-файлов вашей организации](/microsoft-365/compliance/importing-pst-files-to-office-365).
 
 ### <a name="can-i-use-the-azure-importexport-service-to-copy-my-backups-offline-to-the-azure-backup-service"></a>Можно ли использовать службу "Импорт и экспорт Azure" для копирования резервных копий в службу Azure Backup в автономном режиме?
 
@@ -155,6 +155,6 @@ ms.locfileid: "85512395"
 
 Да. Служба импорта и экспорта Azure использует шифрование BitLocker AES-256.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое служба "Импорт и экспорт Azure"?](storage-import-export-service.md)

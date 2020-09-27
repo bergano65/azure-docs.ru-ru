@@ -1,23 +1,23 @@
 ---
 title: Ограничения Azure Cosmos DB Gremlin
 description: Справочная документация по ограничениям среды выполнения подсистемы Graph
-author: LuisBosquez
+author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: reference
 ms.date: 10/04/2019
-ms.author: lbosq
-ms.openlocfilehash: 76ad787990c355d29613c05ca9fce31885a2eccc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: sngun
+ms.openlocfilehash: 4ac5222e735e0699e507ca1392dc5dd42fc77105
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72029848"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400474"
 ---
 # <a name="azure-cosmos-db-gremlin-limits"></a>Ограничения Azure Cosmos DB для Gremlin
 В этой статье рассказывается об ограничениях Azure Cosmos DB Gremlin Engine и объясняется, как они могут повлиять на обход клиентов.
 
-Cosmos DB Gremlin построен на основе Cosmos DB инфраструктуры. Из-за этого все ограничения, описанные в [Azure Cosmos DB ограничениях службы](https://docs.microsoft.com/azure/cosmos-db/concepts-limits) , по-прежнему применяются. 
+Cosmos DB Gremlin построен на основе Cosmos DB инфраструктуры. Из-за этого все ограничения, описанные в [Azure Cosmos DB ограничениях службы](https://docs.microsoft.com/azure/cosmos-db/concepts-limits) , по-прежнему применяются.
 
 ## <a name="limits"></a>Ограничения
 
@@ -34,5 +34,5 @@ Cosmos DB Gremlin построен на основе Cosmos DB инфрастр�
 *Количество используемых маркеров ресурсов в час* | **100** | Число уникальных маркеров ресурсов, используемых клиентами Gremlin для подключения к учетной записи Gremlin в регионе. Когда приложение превышает почасовую уникальность маркера, `"Exceeded allowed resource token limit of 100 that can be used concurrently"` будет возвращено при следующем запросе проверки подлинности.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Заголовки ответа Azure Cosmos DB Gremlin](gremlin-headers.md) 
+* [Заголовки ответа Azure Cosmos DB Gremlin](gremlin-headers.md)
 * [Маркеры ресурса Azure Cosmos DB с Gremlin](how-to-use-resource-tokens-gremlin.md)

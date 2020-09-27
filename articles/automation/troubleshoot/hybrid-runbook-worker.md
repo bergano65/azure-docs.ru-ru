@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2149fd68cdf5f2991d6035f245f70515e920045c
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 4fcd3d143cf2dbb529a8c9c78a769165621e2e89
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187206"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400423"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Устранение неполадок с гибридной рабочей ролью runbook
 
@@ -234,11 +234,11 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Гибридные рабочие роли отправляют [выходные данные и сообщения Runbook](../automation-runbook-output-and-messages.md) в службу автоматизации Azure так же, как задания runbook, выполняемые в облаке, отправляют выходные данные и сообщения. Вы можете включить потоки Verbose и Progress точно так же, как и для модулей runbook.
 
-### <a name="scenario-orchestratorsandboxexe-cant-connect-to-office-365-through-proxy"></a><a name="no-orchestrator-sandbox-connect-O365"></a>Сценарий. Orchestrator.Sandbox.exe не удается подключиться к Office 365 через прокси-сервер
+### <a name="scenario-orchestratorsandboxexe-cant-connect-to-microsoft-365-through-proxy"></a>Сценарий: Orchestrator.Sandbox.exe не удается подключиться к Microsoft 365 через прокси-сервер
 
 #### <a name="issue"></a>Проблема
 
-Сценарий, выполняющийся в гибридной рабочей роли Runbook для Windows, не может ожидаемым образом подключиться к Office 365 в песочнице Orchestrator. Для подключения сценарий использует [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0). 
+Сценарий, выполняющийся в гибридной рабочей роли Runbook Windows, не может подключиться, как ожидалось, Microsoft 365 в песочнице Orchestrator. Для подключения сценарий использует [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0). 
 
 При настройке **Orchestrator.Sandbox.exe.config** для задания прокси-сервера и списка обхода песочница по-прежнему не подключается должным образом. Файл **Powershell_ise.exe.config** с теми же параметрами прокси-сервера и списка обхода работает ожидаемым образом. Журналы Service Management Automation (SMA) и журналы PowerShell не предоставляют никаких сведений о прокси-сервере.
 

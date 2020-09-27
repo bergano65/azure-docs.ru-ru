@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 09/22/2020
 ms.custom: generated
-ms.openlocfilehash: 973426c6d9d3a4c642e5f37aebe60acce54d581b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ade4a6b791a8aca963a056800bd8c58767aeb766
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326411"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400100"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -5098,7 +5098,7 @@ ms.locfileid: "91326411"
 
 ### <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
 
-Служба Azure: [машинное обучение Studio (классическая модель)](../machine-learning/studio/index.yml)
+Служба Azure: [машинное обучение Studio (классическая модель)](../machine-learning/classic/index.yml)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -5242,36 +5242,6 @@ ms.locfileid: "91326411"
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/службы/AKS/listkeys/действие | Перечисление ключей для AKS Services в рабочих областях Службы машинного обучения |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/службы/AKS/Delete | Удаление AKS Services в рабочих областях Службы машинного обучения |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/службы/AKS/Оценка/действие | Оценки AKS Services в рабочих областях Службы машинного обучения |
-
-
-### <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
-
-Служба Azure: [машинное обучение Studio (классическая модель)](../machine-learning/classic/index.yml)
-
-> [!div class="mx-tableFixed"]
-> | Действие | Описание |
-> | --- | --- |
-> | Microsoft.MachineLearning/register/action | Регистрирует подписку для поставщика ресурсов веб-службы машинного обучения и позволяет создавать веб-службы. |
-> | Microsoft.MachineLearning/webServices/action | Создает свойства региональной веб-службы для поддерживаемых регионов. |
-> | Microsoft.MachineLearning/commitmentPlans/read | Считывает план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/write | Создает или обновляет план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/delete | Удаляет план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/join/action | Присоединяет план предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/commitmentAssociations/read | Считывает связь плана предложения машинного обучения. |
-> | Microsoft.MachineLearning/commitmentPlans/commitmentAssociations/move/action | Перемещает связь плана предложения машинного обучения. |
-> | Microsoft.MachineLearning/locations/operationresults/read | Получение результата операции машинного обучения. |
-> | Microsoft.MachineLearning/locations/operationsstatus/read | Получение состояния текущей операции машинного обучения. |
-> | Microsoft.MachineLearning/operations/read | Получение операций машинного обучения. |
-> | Microsoft.MachineLearning/skus/read | Получение номеров SKU плана предложения машинного обучения. |
-> | Microsoft.MachineLearning/webServices/read | Считывает веб-службу машинного обучения. |
-> | Microsoft.MachineLearning/webServices/write | Создает или обновляет веб-службу машинного обучения. |
-> | Microsoft.MachineLearning/webServices/delete | Удаляет веб-службу машинного обучения. |
-> | Microsoft.MachineLearning/webServices/listkeys/read | Получает ключи к веб-службе машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/read | Считывает рабочую область машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/write | Создает или обновляет рабочую область машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/delete | Удаляет рабочую область машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/listworkspacekeys/action | Выводит список ключей для рабочей области машинного обучения. |
-> | Microsoft.MachineLearning/Workspaces/resyncstoragekeys/action | Повторно синхронизирует ключи учетной записи хранения, настроенной для рабочей области машинного обучения. |
 
 ## <a name="internet-of-things"></a>"Интернет вещей"
 
@@ -8239,7 +8209,7 @@ ms.locfileid: "91326411"
 > | Действие | Описание |
 > | --- | --- |
 > | Microsoft.Authorization/elevateAccess/action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
-> | Microsoft.Authorization/classicAdministrators/read | Считывает администраторов для подписки. |
+> | Microsoft.Authorization/classicAdministrators/read | Считывает администраторов для подписки. Не оказывает влияния, если используется как неизменность в пользовательской роли. |
 > | Microsoft.Authorization/classicAdministrators/write | Добавляет или изменяет администратора подписки. |
 > | Microsoft.Authorization/classicAdministrators/delete | Удаляет учетные данные администратора из подписки. |
 > | Microsoft.Authorization/classicAdministrators/operationstatuses/read | Получает сведения о состоянии операции администратора подписки. |

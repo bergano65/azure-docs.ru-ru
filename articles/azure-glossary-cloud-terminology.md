@@ -15,22 +15,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 8a06435d4b5a4c11f74073e67e3f48fd2ed0779d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 63adb5d6898fd467a0557aa147e54f814c167e72
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079576"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400141"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
-Словарь терминов Microsoft Azure — это краткий словарь терминов, связанных с облаком на платформе Azure. См. также
+Словарь терминов Microsoft Azure — это краткий словарь терминов, связанных с облаком на платформе Azure. См. также:
 
 * [Microsoft Azure и веб-службы Amazon](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) — определения служб Azure и их аналогов в AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
 * [Термины облачных вычислений](https://azure.microsoft.com/overview/cloud-computing-dictionary/) — общие термины облачной индустрии.
 
 ## <a name="account"></a>account
-Учетная запись, используемая для доступа к подписке Azure и управления ей. Зачастую она называется учетной записью Azure, хотя учетной записью может быть любая из следующих: существующая рабочая, учебная или личная учетная запись Майкрософт либо имя пользователя и пароль Office 365. Можно также создать учетную запись для управления подпиской Azure во время регистрации в [бесплатной пробной версии](https://azure.microsoft.com).  
+Учетная запись, используемая для доступа к подписке Azure и управления ей. Она часто называется учетной записью Azure, хотя учетная запись может быть любой из них: существующей рабочей, учебной или личной учетная запись Майкрософт. Можно также создать учетную запись для управления подпиской Azure во время регистрации в [бесплатной пробной версии](https://azure.microsoft.com).  
 См. статью [Регистрация в подписке Azure с учетной записью Microsoft 365](cost-management-billing/manage/microsoft-365-account-for-azure-subscription.md) и учетными [записями, которые можно использовать для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="api-app"></a>приложение API;
@@ -153,7 +153,7 @@ JSON-файл, который декларативно определяет од
 ## <a name="web-app"></a>Веб-приложение
 Другое название [приложения службы приложений](#app-service-app).
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 * [Начало работы с Azure](https://azure.microsoft.com/get-started/)
 * [Центр облачных ресурсов](https://azure.microsoft.com/resources/)  

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 05/30/2019
-ms.openlocfilehash: 6fca3429ab96a63b01eaa7e9d1f0ae83dc46e9c7
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 246fbcd9bc72683e41489daf105f174f9380c029
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119758"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400270"
 ---
 # <a name="company-work-accounts-and-partner-center"></a>Рабочие учетные записи компании и центр партнеров
 
@@ -20,7 +20,7 @@ ms.locfileid: "86119758"
 
 ## <a name="check-whether-your-company-already-has-a-work-account"></a>Проверьте, есть ли у вашей компании Рабочая учетная запись
 
-Если ваша компания подписалась на облачную службу Майкрософт, например Azure, Microsoft Intune или Office 365, у вас уже есть домен рабочей учетной записи электронной почты (также называемый клиентом Azure Active Directory), который можно использовать с центром партнеров.
+Если ваша компания подписалась на облачную службу Майкрософт, например Azure, Microsoft Intune или Microsoft 365, у вас уже есть домен рабочей учетной записи электронной почты (также называемый клиентом Azure Active Directory), который можно использовать с центром партнеров.
 
 Выполните следующие действия, чтобы проверить следующее:
 1. Войдите на портал администрирования Azure по адресу https://portal.azure.com .
