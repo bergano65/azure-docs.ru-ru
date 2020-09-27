@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 09/25/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 3f3c53d412105489a814f082bbc0fd209476ecf9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 7f6be959bf09cbe20bb37dfa3d17d64467758bd6
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90971395"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397901"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexers in Azure Cognitive Search (Индексаторы в службе "Когнитивный поиск Azure")
 
@@ -60,7 +60,7 @@ ms.locfileid: "90971395"
 
 Для каждого документа, который он принимает, индексатор реализует или координирует несколько шагов, от извлечения документа до завершающей поисковой системы для индексирования. При необходимости индексатор также Instrumental в ходе выполнения и выхода навыков, предполагая, что набор навыков определен.
 
-![Этапы индексатора](./media/search-indexer-overview/indexer-stages.png "этапы индексатора")
+:::image type="content" source="media/search-indexer-overview/indexer-stages.png" alt-text="Этапы индексатора" border="false":::
 
 ### <a name="stage-1-document-cracking"></a>Этап 1. взлом документов
 

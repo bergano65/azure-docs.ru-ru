@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 07/11/2020
-ms.openlocfilehash: 6a5a3634f1d5ddc7af2af2e27c2b1d7c8ce9a2af
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/25/2020
+ms.openlocfilehash: c3aa813c671e9755b6ab65ba1e2967876bd170ca
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88917998"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91398346"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Индексация больших двоичных объектов JSON с помощью индексатора больших двоичных объектов в Azure Когнитивный поиск
 
@@ -45,7 +45,7 @@ ms.locfileid: "88917998"
 
 На странице Обзор службы поиска можно [запустить мастер](search-import-data-portal.md) с панели команд.
 
-   ![Команда "Импорт данных" на портале](./media/search-import-data-portal/import-data-cmd2.png "Запуск мастера импорта данных")
+   :::image type="content" source="media/search-import-data-portal/import-data-cmd2.png" alt-text="Команда "Импорт данных" на портале" border="false":::
 
 ### <a name="3---set-the-data-source"></a>3. Настройка источника данных
 
@@ -63,7 +63,7 @@ ms.locfileid: "88917998"
    
 + Для параметра **Контейнер хранилища** укажите свою учетную запись хранения и контейнер или строку подключения, которая разрешается к контейнеру. Строки подключения можно получить на странице портала службы BLOB-объектов.
 
-   ![Определение источника данных BLOB-объектов](media/search-howto-index-json/import-wizard-json-data-source.png)
+   :::image type="content" source="media/search-howto-index-json/import-wizard-json-data-source.png" alt-text="Определение источника данных BLOB-объектов" border="false":::
 
 ### <a name="4---skip-the-enrich-content-page-in-the-wizard"></a>4. Пропустите страницу "обогащение содержимого" в мастере
 
@@ -81,7 +81,7 @@ ms.locfileid: "88917998"
 
 Просмотрите выбранные параметры. После запуска мастера создаются структуры физических данных и вы не сможете изменить эти поля без удаления и повторного создания всех объектов.
 
-   ![Определение индексов больших двоичных объектов](media/search-howto-index-json/import-wizard-json-index.png)
+   :::image type="content" source="media/search-howto-index-json/import-wizard-json-index.png" alt-text="Определение индексов больших двоичных объектов" border="false":::
 
 ### <a name="6---create-indexer"></a>6. Создание индексатора
 
@@ -89,7 +89,7 @@ ms.locfileid: "88917998"
 
 Если вы не знакомы с индексаторами, *индексатором* является ресурс в когнитивный Поиск Azure, который обходит внешний источник данных для поиска содержимого. Выходные данные мастера **импорта данных** — это индексатор, который обходит источник данных JSON, извлекает содержимое, доступное для поиска, и импортирует его в индекс на когнитивный Поиск Azure.
 
-   ![Определение индексатора больших двоичных объектов](media/search-howto-index-json/import-wizard-json-indexer.png)
+   :::image type="content" source="media/search-howto-index-json/import-wizard-json-indexer.png" alt-text="Определение индексатора больших двоичных объектов" border="false":::
 
 Нажмите кнопку **OK** для запуска мастера и создания всех объектов. Индексирование начинается немедленно.
 
@@ -291,7 +291,7 @@ ms.locfileid: "88917998"
 
 Большие двоичные объекты JSON могут полагаться на несколько форм. Параметр **parsingMode** индексатора JSON определяет способ синтаксического анализа и структурирования содержимого больших двоичных объектов JSON в индексе Azure когнитивный Поиск:
 
-| parsingMode | Description |
+| parsingMode | Описание |
 |-------------|-------------|
 | `json`  | Индексировать каждый BLOB-объект как отдельный документ. Это значение по умолчанию. |
 | `jsonArray` | Выберите этот режим, если большие двоичные объекты состоят из массивов JSON, и каждый элемент массива должен стать отдельным документом в Когнитивный поиск Azure. |
@@ -453,7 +453,7 @@ ms.locfileid: "88917998"
 >
 >
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 + [Индексирование хранилища BLOB-объектов Azure с помощью Azure Когнитивный поиск](search-howto-index-json-blobs.md)

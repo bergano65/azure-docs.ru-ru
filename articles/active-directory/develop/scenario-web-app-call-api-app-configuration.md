@@ -1,5 +1,6 @@
 ---
-title: Настройка веб-приложения, которое вызывает веб-API с помощью платформы удостоверений Майкрософт | Azure
+title: Настройка веб-приложения, вызывающего веб-API | Службы
+titleSuffix: Microsoft identity platform
 description: Сведения о настройке кода веб-приложения, которое вызывает веб-API
 services: active-directory
 author: jmprieur
@@ -8,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 07/14/2020
+ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 8827d413144d8bc6f00c3948a99be3ee3aa2264e
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 27926c687871180da78930be8e0968febcd77869
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88855433"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396320"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает веб-API. Конфигурация кода
 
@@ -33,7 +34,7 @@ ms.locfileid: "88855433"
 
 | Библиотека MSAL | Описание |
 |--------------|-------------|
-| ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддержка платформ .NET Framework и .NET Core. Не поддерживается универсальная платформа Windows (UWP), Xamarin.iOS и Xamarin.Android, так как эти платформы используются для создания общедоступных клиентских приложений. Для ASP.NET Core веб-приложений и веб-интерфейсов API MSAL.NET инкапсулируется в библиотеку более высокого уровня с именем [Microsoft. Identity. Web](https://aka.ms/ms-identity-web) .|
+| ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддержка платформ .NET Framework и .NET Core. Не поддерживается универсальная платформа Windows (UWP), Xamarin.iOS и Xamarin.Android, так как эти платформы используются для создания общедоступных клиентских приложений. <br/><br/>Для ASP.NET Core веб-приложений и веб-API MSAL.NET инкапсулируется в библиотеку более высокого уровня с именем [Microsoft. Identity. Web](https://aka.ms/ms-identity-web). |
 | ![MSAL Python](media/sample-v2-code/logo_python.png) <br/> MSAL для Python | Поддержка веб-приложений Python. |
 | ![MSAL Java](media/sample-v2-code/logo_java.png) <br/> MSAL для Java | Поддержка веб-приложений Java. |
 
@@ -41,32 +42,153 @@ ms.locfileid: "88855433"
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Чтобы разрешить веб-приложению вызывать защищенные интерфейсы API при использовании Microsoft.Identity.Web, необходимо вызвать только `AddWebAppCallsProtectedWebApi` и указать формат сериализации кэша маркеров (например, кэш маркеров в памяти):
+## <a name="client-secrets-or-client-certificates"></a>Секреты клиента или сертификаты клиента
 
-```C#
-// This method gets called by the runtime. Use this method to add services to the container.
-public void ConfigureServices(IServiceCollection services)
+Учитывая, что веб-приложение теперь вызывает нисходящий веб-API, необходимо предоставить секрет клиента или сертификат клиента в *appsettings.js* в файле. Можно также добавить раздел, который указывает:
+
+- URL-адрес подчиненного веб-API
+- Области, необходимые для вызова API
+
+В следующем примере `GraphBeta` эти параметры задаются в разделе.
+
+```JSON
 {
-    // more code here
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "ClientId": "[Client_id-of-web-app-eg-2ec40e65-ba09-4853-bcde-bcb60029e596]",
+    "TenantId": "common"
 
-    services.AddMicrosoftIdentityWebAppAuthentication(Configuration,
-                                                      "AzureAd")
-            .EnableTokenAcquisitionToCallDownstreamApi(
-                    initialScopes: new string[] { "user.read" })
-                .AddInMemoryTokenCaches();
-
-    // more code here
+   // To call an API
+   "ClientSecret": "[Copy the client secret added to the app from the Azure portal]",
+   "ClientCertificates": [
+  ]
+ },
+ "GraphBeta": {
+    "BaseUrl": "https://graph.microsoft.com/beta",
+    "Scopes": "user.read"
+    }
 }
 ```
 
-Дополнительные сведения о кэше маркеров см. в разделе о [параметрах сериализации кэша маркеров](#token-cache).
+Вместо секрета клиента можно предоставить сертификат клиента. В следующем фрагменте кода показано использование сертификата, хранящегося в Azure Key Vault.
+
+```JSON
+{
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "ClientId": "[Client_id-of-web-app-eg-2ec40e65-ba09-4853-bcde-bcb60029e596]",
+    "TenantId": "common"
+
+   // To call an API
+   "ClientCertificates": [
+      {
+        "SourceType": "KeyVault",
+        "KeyVaultUrl": "https://msidentitywebsamples.vault.azure.net",
+        "KeyVaultCertificateName": "MicrosoftIdentitySamplesCert"
+      }
+   ]
+  },
+  "GraphBeta": {
+    "BaseUrl": "https://graph.microsoft.com/beta",
+    "Scopes": "user.read"
+  }
+}
+```
+
+*Microsoft. Identity. Web* предоставляет несколько способов описания сертификатов как по конфигурации, так и по коду. Дополнительные сведения см. в [статье Microsoft. Identity. Web — использование сертификатов](https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates) на GitHub.
+
+## <a name="startupcs"></a>Startup.cs
+
+Веб-приложению потребуется получить маркер для подчиненного API. Его можно указать, добавив `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` . Эта строка предоставляет `ITokenAcquisition` службу, которую можно использовать в действиях контроллера и страницы. Однако, как вы увидите в следующих двух вариантах, это можно сделать более просто. Также необходимо выбрать реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS*:
+
+   ```csharp
+   using Microsoft.Identity.Web;
+
+   public class Startup
+   {
+     // ...
+     public void ConfigureServices(IServiceCollection services)
+     {
+     // ...
+     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddMicrosoftIdentityWebApp(Configuration, Configuration.GetSection("AzureAd"))
+               .EnableTokenAcquisitionToCallDownstreamApi(new string[]{"user.read" })
+               .AddInMemoryTokenCaches();
+      // ...
+     }
+     // ...
+   }
+   ```
+
+Области, передаваемые в `EnableTokenAcquisitionToCallDownstreamApi` , являются необязательными и позволяют веб-приложению запрашивать области и согласие пользователя на эти области при входе в систему. Если не указать области, *Microsoft. Identity. Web* предоставит возможность добавочного согласия.
+
+Если вы не хотите получать маркер самостоятельно, *Microsoft. Identity. Web* предоставляет два механизма вызова веб-API из веб-приложения. Выбор варианта зависит от того, требуется ли вызывать Microsoft Graph или другой API.
+
+### <a name="option-1-call-microsoft-graph"></a>Вариант 1. вызов Microsoft Graph
+
+Если вы хотите вызвать Microsoft Graph, *Microsoft. Identity. Web* позволяет напрямую использовать `GraphServiceClient` (предоставляется Microsoft Graph SDK) в действиях API. Чтобы предоставить Microsoft Graph:
+
+1. Добавьте в проект пакет NuGet [Microsoft. Identity. Web. MicrosoftGraph](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) .
+1. Добавьте `.AddMicrosoftGraph()` после `.EnableTokenAcquisitionToCallDownstreamApi()` в файл *Startup.CS* . `.AddMicrosoftGraph()` имеет несколько переопределений. При использовании переопределения, которое принимает раздел конфигурации в качестве параметра, код становится следующим:
+
+   ```csharp
+   using Microsoft.Identity.Web;
+
+   public class Startup
+   {
+     // ...
+     public void ConfigureServices(IServiceCollection services)
+     {
+     // ...
+     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddMicrosoftIdentityWebApp(Configuration, Configuration.GetSection("AzureAd"))
+               .EnableTokenAcquisitionToCallDownstreamApi(new string[]{"user.read" })
+                  .AddMicrosoftGraph(Configuration.GetSection("GraphBeta"))
+               .AddInMemoryTokenCaches();
+      // ...
+     }
+     // ...
+   }
+   ```
+
+### <a name="option-2-call-a-downstream-web-api-other-than-microsoft-graph"></a>Вариант 2. вызов подчиненного веб-интерфейса API, отличного от Microsoft Graph
+
+Для вызова веб-API, отличного от Microsoft Graph, *Microsoft. Identity. Web* предоставляет `.AddDownstreamWebApi()` , который запрашивает маркеры и вызывает нисходящий веб-API.
+
+   ```csharp
+   using Microsoft.Identity.Web;
+
+   public class Startup
+   {
+     // ...
+     public void ConfigureServices(IServiceCollection services)
+     {
+     // ...
+     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddMicrosoftIdentityWebApp(Configuration, "AzureAd")
+               .EnableTokenAcquisitionToCallDownstreamApi(new string[]{"user.read" })
+                  .AddDownstreamWebApi("MyApi", Configuration.GetSection("GraphBeta"))
+               .AddInMemoryTokenCaches();
+      // ...
+     }
+     // ...
+   }
+   ```
+
+### <a name="summary"></a>Сводка
+
+Как и в случае с веб-API, можно выбрать различные реализации кэша маркеров. Дополнительные сведения см. в [статье сериализация кэша маркеров в Microsoft. Identity. Web](https://aka.ms/ms-id-web/token-cache-serialization) .
+
+На следующем рисунке показаны различные возможности *Microsoft. Identity. Web* и их влияние на файл *Startup.CS* :
+
+:::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.png" alt-text="При создании веб-API можно выбрать вызов нисходящего API и реализаций кэша маркеров.":::
 
 > [!NOTE]
 > Чтобы полностью понять эти примеры кода, ознакомьтесь с [основами ASP.NET Core](/aspnet/core/fundamentals), в частности со сведениями о [параметрах](/aspnet/core/fundamentals/configuration/options) и [внедрении зависимостей](/aspnet/core/fundamentals/dependency-injection).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Поскольку вход пользователя делегируется в ПО промежуточного слоя Open ID Connect (OIDC), необходимо взаимодействовать с процессом OIDC. Взаимодействие зависит от используемой платформы.
+Поскольку вход пользователя делегируется на по промежуточного слоя OpenID Connect Connect (OIDC), необходимо взаимодействовать с процессом OIDC. Взаимодействие зависит от используемой платформы.
 
 Для ASP.NET необходимо подписаться на события ПО промежуточного слоя OIDC:
 

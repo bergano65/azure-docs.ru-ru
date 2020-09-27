@@ -1,5 +1,6 @@
 ---
-title: Вызов веб-API из веб-приложения — платформа Microsoft Identity | Службы
+title: Вызов веб-API из веб-приложения | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать веб-приложение, вызывающее веб-API (вызов защищенного веб-API).
 services: active-directory
 author: jmprieur
@@ -8,19 +9,19 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 07/14/2019
+ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 1e448f52f4e8c24dd8552cae873edac841e57fc6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 815b1789c54d1ce505c16dc89e199d451ae9a588
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87058431"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396133"
 ---
 # <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Веб-приложение, вызывающее веб-API: вызов веб-API
 
-Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
+Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API. Обычно подчиненный API вызывается из контроллера или страниц веб-приложения.
 
 ## <a name="call-a-protected-web-api"></a>Вызов защищенного веб-API
 
@@ -28,20 +29,103 @@ ms.locfileid: "87058431"
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Ниже приведен упрощенный код для действия `HomeController` . Этот код возвращает маркер для вызова Microsoft Graph. Добавлен код, демонстрирующий вызов Microsoft Graph как REST API. URL-адрес для Microsoft Graph API предоставляется в appsettings.jsв файле и считывается в переменной с именем `webOptions` :
+При использовании *Microsoft. Identity. Web*у вас есть три варианта использования для вызова API:
 
-```json
+- [Вариант 1. вызов Microsoft Graph с помощью пакета SDK для Microsoft Graph](#option-1-call-microsoft-graph-with-the-sdk)
+- [Вариант 2. вызов подчиненного веб-API с помощью вспомогательного класса](#option-2-call-a-downstream-web-api-with-the-helper-class)
+- [Вариант 3. вызов подчиненного веб-интерфейса API без вспомогательного класса](#option-3-call-a-downstream-web-api-without-the-helper-class)
+
+#### <a name="option-1-call-microsoft-graph-with-the-sdk"></a>Вариант 1. вызов Microsoft Graph с помощью пакета SDK
+
+Необходимо вызвать Microsoft Graph. В этом сценарии вы добавили `AddMicrosoftGraph` в *Startup.CS* , как указано в [конфигурации кода](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), и можете напрямую внедрить `GraphServiceClient` в контроллер или конструктор страницы для использования в действиях. В следующем примере на странице Razor отображается фотография пользователя, выполнившего вход.
+
+```CSharp
+[Authorize]
+[AuthorizeForScopes(Scopes = new[] { "user.read" })]
+public class IndexModel : PageModel
 {
-  "AzureAd": {
-    "Instance": "https://login.microsoftonline.com/",
-    ...
-  },
-  ...
-  "GraphApiUrl": "https://graph.microsoft.com"
+ private readonly GraphServiceClient _graphServiceClient;
+
+ public IndexModel(GraphServiceClient graphServiceClient)
+ {
+    _graphServiceClient = graphServiceClient;
+ }
+
+ public async Task OnGet()
+ {
+  var user = await _graphServiceClient.Me.Request().GetAsync();
+  try
+  {
+   using (var photoStream = await _graphServiceClient.Me.Photo.Content.Request().GetAsync())
+   {
+    byte[] photoByte = ((MemoryStream)photoStream).ToArray();
+    ViewData["photo"] = Convert.ToBase64String(photoByte);
+   }
+   ViewData["name"] = user.DisplayName;
+  }
+  catch (Exception)
+  {
+   ViewData["photo"] = null;
+  }
+ }
 }
 ```
 
-```csharp
+#### <a name="option-2-call-a-downstream-web-api-with-the-helper-class"></a>Вариант 2. вызов подчиненного веб-API с помощью вспомогательного класса
+
+Вы хотите вызвать веб-API, отличный от Microsoft Graph. В этом случае вы добавили `AddDownstreamWebApi` в *Startup.CS* , как указано в [конфигурации кода](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), и можете напрямую внедрить `IDownstreamWebApi` службу в контроллер или конструктор страниц и использовать ее в действиях:
+
+```CSharp
+[Authorize]
+[AuthorizeForScopes(ScopeKeySection = "TodoList:Scopes")]
+public class TodoListController : Controller
+{
+  private IDownstreamWebApi _downstreamWebApi;
+  private const string ServiceName = "TodoList";
+
+  public TodoListController(IDownstreamWebApi downstreamWebApi)
+  {
+    _downstreamWebApi = downstreamWebApi;
+  }
+
+  public async Task<ActionResult> Details(int id)
+  {
+    var value = await _downstreamWebApi.CallWebApiForUserAsync(
+      ServiceName,
+      options =>
+      {
+        options.RelativePath = $"me";
+      });
+      return View(value);
+  }
+}
+```
+
+`CallWebApiForUserAsync`Также имеет строго типизированные универсальные переопределения, позволяющие напрямую получить объект. Например, следующий метод получает `Todo` экземпляр, который является строго типизированным представлением JSON, возвращенного веб-API.
+
+```CSharp
+    // GET: TodoList/Details/5
+    public async Task<ActionResult> Details(int id)
+    {
+        var value = await _downstreamWebApi.CallWebApiForUserAsync<object, Todo>(
+            ServiceName,
+            null,
+            options =>
+            {
+                options.HttpMethod = HttpMethod.Get;
+                options.RelativePath = $"api/todolist/{id}";
+            });
+        return View(value);
+    }
+   ```
+
+#### <a name="option-3-call-a-downstream-web-api-without-the-helper-class"></a>Вариант 3. вызов подчиненного веб-интерфейса API без вспомогательного класса
+
+Вы решили получить маркер вручную с помощью `ITokenAcquisition` службы, и теперь необходимо использовать маркер. В этом случае следующий код продолжит пример кода, показанного в [веб-приложении, которое вызывает веб-API: получить маркер для приложения](scenario-web-app-call-api-acquire-token.md). Код вызывается в действиях контроллеров веб-приложений.
+
+После получения маркера используйте его в качестве токена носителя для вызова подчиненного API, в данном случае Microsoft Graph.
+
+ ```csharp
 public async Task<IActionResult> Profile()
 {
  // Acquire the access token.
@@ -65,11 +149,10 @@ public async Task<IActionResult> Profile()
   return View();
 }
 ```
-
 > [!NOTE]
 > Вы можете использовать тот же принцип для вызова любого веб-API.
 >
-> Большинство веб-API Azure предоставляют пакет SDK, упрощающий вызов API. Это также справедливо для Microsoft Graph. В следующей статье вы узнаете, где найти учебник, демонстрирующий использование API.
+> Большинство веб-API Azure предоставляют пакет SDK, который упрощает вызов API, как в случае Microsoft Graph. См., например, [Создание веб-приложения, которое разрешает доступ к хранилищу BLOB-объектов с помощью Azure AD](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=dotnet) , например, с помощью Microsoft. Identity. Web и пакета SDK службы хранилища Azure.
 
 # <a name="java"></a>[Java](#tab/java)
 

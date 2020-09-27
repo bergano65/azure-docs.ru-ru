@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 04/02/2020
-ms.openlocfilehash: f3699892471a1535cda5fc182a4c9121fd3c250c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2f34723bec6dc2212f8897eca849e6535d737fc8
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317609"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397425"
 ---
 # <a name="power-bi-app-creation-overview"></a>Общие сведения о создании приложения Power BI
 
@@ -23,7 +23,7 @@ ms.locfileid: "87317609"
 Преимущества публикации на коммерческой платформе:
 
 - Продвижение вашей компании за счет использования бренда Майкрософт.
-- Возможность достичь более чем 100 миллионов пользователей Office 365 и Dynamics 365 в AppSource, а также более чем 200 000 организаций с помощью Azure Marketplace.
+- Возможно достижение более 100 000 000 Microsoft 365 и Dynamics 365 пользователей в AppSource и более 200 000 организаций через Azure Marketplace.
 - Получение высококачественных потенциальных клиентов на этих коммерческих платформах.
 - Попросите своих служб, продвигаемых группами «Майкрософт» и «телепродажи».
 
@@ -76,6 +76,6 @@ ms.locfileid: "87317609"
 - Укажите содержимое, удовлетворяющее критериям предложения, которые будут перечислены в AppSource. Дополнительные сведения см [. в разделе приложение для перечисления в AppSource. Вот как это](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how)делать.
 - Примите условия и следуйте [заявлению о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement).
 
-## <a name="next-step"></a>Далее
+## <a name="next-step"></a>Дальнейшие действия
 
 - [Создание предложения Power BI приложения в центре партнеров](create-power-bi-app-offer.md)

@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 7dbb1b4a8b85350b8bf8a6df0c9035a19055444c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3af8a7de7dad3ce20d4f0247892bca83f06c9d22
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79409025"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397306"
 ---
 # <a name="azure-data-catalog-frequently-asked-questions"></a>Часто задаваемые вопросы о каталоге данных Azure
 Эта статья содержит ответы на часто задаваемые вопросы, связанные со службой каталога данных Azure.
@@ -55,7 +55,7 @@ ms.locfileid: "79409025"
 
 ## <a name="why-do-i-get-an-error-catalog-already-exists-when-i-try-to-create-a-new-catalog"></a>Почему при попытке создать новый каталог появляется *Каталог* ошибок?
 
-При приобретении Office 365 "~" с лицензией Power BI Pro Майкрософт автоматически создает каталог по умолчанию в регионе подписки. Этот каталог использует бесплатный номер SKU. Пользовательская лицензия Office 365/Power BI управляется на странице администрирования Office 365. 
+При приобретении Office 365 "~" с лицензией Power BI Pro Майкрософт автоматически создает каталог по умолчанию в регионе подписки. Этот каталог использует бесплатный номер SKU. Лицензия на пользователя Office 365/Power BI управляется на странице Администрирование. 
 
 Однако этот тип каталога данных не имеет **параметра администратора** и не отображается в **портал Azure**. Невозможно удалить этот тип каталога данных. Аналогично, вы не можете переименовать каталог данных, и вы не сможете переместить его в другой регион. 
 

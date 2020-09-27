@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/15/2020
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dc229b366a7816c861da665c73d6421e67545c6
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 06900483598e1c03bd56cd8ac8c905f885012f08
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985918"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91395895"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
 Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на службу Microsoft Online Service, например Microsoft 365 и Azure. Сведения о том, где хранятся данные удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
@@ -35,6 +35,10 @@ ms.locfileid: "90985918"
 * Запросы многофакторной проверки подлинности, использующие OATH-коды, полученные из центров обработки данных ЕС, проверяются в ЕС.
 
 Дополнительные сведения о том, какие сведения о пользователе собираются в Azure сервер Многофакторной идентификации (сервер MFA) и в облачной службе Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](../authentication/howto-mfa-reporting-datacollection.md).
+
+## <a name="password-based-single-sign-on-for-enterprise-applications"></a>Единый вход на основе пароля для корпоративных приложений
+ 
+Если клиент создает новое корпоративное приложение (с помощью коллекции Azure AD или без галереи) и включает единый вход на основе пароля, то URL-адрес входа приложения и поля пользовательского входа в систему сохраняются в США. Дополнительные сведения об этой функции см. в статье [Настройка единого входа на основе пароля](../manage-apps/configure-password-single-sign-on-non-gallery-applications.md) .
 
 ## <a name="microsoft-azure-active-directory-b2c-azure-ad-b2c"></a>Microsoft Azure Active Directory B2C (Active Directory B2C)
 

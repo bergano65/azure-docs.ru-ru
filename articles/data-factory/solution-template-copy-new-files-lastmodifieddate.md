@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 3/8/2019
-ms.openlocfilehash: 363af1012b327a55703cc6e35a02dc1f27869bd0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 99d90e4d93f0e4a70350a5a33a65700c3e14acb4
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82629071"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91398329"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "82629071"
     
 7. Теперь можно добавить триггер Windows "переворачивающегося" для автоматизации этого конвейера, чтобы конвейер всегда мог периодически копировать новые и измененные файлы только LastModifiedDate.  Выберите **добавить триггер**и щелкните **создать или изменить**.
 
-    ![Просмотр результатов](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate8.png)
+    ![Снимок экрана, посвященный пункту меню "создать/изменить", который отображается при выборе пункта "добавить триггер".](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate8.png)
     
 8. В окне **Add Triggers** (Добавление триггеров) выберите **+ Создать**.
 
@@ -103,7 +103,7 @@ ms.locfileid: "82629071"
 
 14. Просмотрите результаты. Вы увидите, что конвейер будет активирован автоматически каждые 15 минут, и только новые или измененные файлы из исходного хранилища будут скопированы в целевое хранилище в каждом выполнении конвейера.
 
-    ![Просмотр результатов](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate15.png)
+    ![Снимок экрана, на котором показаны результаты, возвращаемые при активации конвейера.](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate15.png)
     
 ## <a name="next-steps"></a>Дальнейшие действия
 

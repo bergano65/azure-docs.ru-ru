@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
-ms.openlocfilehash: 4232f4cd39c3f6dd6efa0bf78959798ea842e2dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b174e2631131e6bf26d7b1cb62442c8a99102e2e
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84676052"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397289"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-portal"></a>Управление обновлениями с помощью управления обслуживанием и портал Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "84676052"
 
 Вы также можете проверить конкретный узел, используя **виртуальные машины** или свойства выделенного узла. 
 
-![Снимок экрана, показывающий, как проверить обслуживание узла](media/virtual-machines-maintenance-control-portal/maintenance-configurations-pending-vm.png)
+![Снимок экрана, на котором показано выбранное состояние обслуживания.](media/virtual-machines-maintenance-control-portal/maintenance-configurations-pending-vm.png)
 
 ## <a name="apply-updates"></a>Применение обновлений
 
@@ -94,9 +94,9 @@ ms.locfileid: "84676052"
 
 Чтобы удалить конфигурацию, откройте сведения о конфигурации и нажмите кнопку **Удалить**.
 
-![Снимок экрана, показывающий, как проверить обслуживание узла](media/virtual-machines-maintenance-control-portal/maintenance-configurations-delete.png)
+![Снимок экрана, показывающий, как удалить конфигурацию.](media/virtual-machines-maintenance-control-portal/maintenance-configurations-delete.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

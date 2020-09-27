@@ -7,12 +7,12 @@ ms.date: 05/12/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 07e5ce5cb6fee11e3f55ce808da51ccad59b9ff2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 037598212773ca75abbdd086fe0577e0660f2218
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85801365"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91398584"
 ---
 # <a name="use-workflows-to-integrate-your-azure-iot-central-application-with-other-cloud-services"></a>Использование рабочих процессов для интеграции приложения Azure IoT Central с другими облачными службами
 
@@ -22,10 +22,10 @@ ms.locfileid: "85801365"
 
 Соединитель Azure IoT Central v3 для Power автоматизиру и Azure Logic Apps позволяет создавать более сложные правила для автоматизации операций в IoT Central.
 
-- Когда в приложении IoT Central Azure срабатывает правило, оно может активировать рабочий процесс в Power Automate или Azure Logic Apps. Эти рабочие процессы, в свою очередь, могут выполнять действия в других облачных службах, например Office 365 или службах сторонних разработчиков.
-- Событие в другой облачной службе, например Office 365, может активировать рабочий процесс в Power Automate или Azure Logic Apps. Эти рабочие процессы могут выполнять действия или извлекать данные из приложений IoT Central.
+- Когда в приложении IoT Central Azure срабатывает правило, оно может активировать рабочий процесс в Power Automate или Azure Logic Apps. Эти рабочие процессы могут выполнять действия в других облачных службах, таких как Microsoft 365 или сторонние службы.
+- Событие в другой облачной службе, например Microsoft 365, может активировать рабочий процесс в Power автоматизиру или Azure Logic Apps. Эти рабочие процессы могут выполнять действия или извлекать данные из приложений IoT Central.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом руководстве, вам потребуется активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

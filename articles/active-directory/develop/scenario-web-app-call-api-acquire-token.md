@@ -1,5 +1,6 @@
 ---
-title: Получение маркера в веб-приложении, вызывающем веб-API — платформа Microsoft Identity | Службы
+title: Получение маркера в веб-приложении, вызывающем веб-API | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как получить маркер для веб-приложения, которое вызывает веб-API.
 services: active-directory
 author: jmprieur
@@ -8,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 07/14/2020
+ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 4904cd95dc81aad959c88c1dfdb09416923046e6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4fe3744f3f8cb39a7493ce788ee9badc1b31b75e
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86518187"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396184"
 ---
 # <a name="a-web-app-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-API: получение маркера для приложения
 
@@ -27,7 +28,11 @@ ms.locfileid: "86518187"
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Методы контроллера защищены `[Authorize]` атрибутом, который заставляет пользователей проходить проверку подлинности для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph:
+*Microsoft. Identity. Web* добавляет методы расширения, которые предоставляют удобные службы для вызова Microsoft Graph или нисходящего веб-API. Эти методы подробно описаны в [веб-приложении, которое вызывает веб-API: вызов API](scenario-web-app-call-api-call-api.md). При использовании этих вспомогательных методов вам не нужно вручную получать маркер.
+
+Однако если вы хотите вручную получить маркер, в следующем коде показан пример использования *Microsoft. Identity. Web* для этого в контроллере home. Он вызывает Microsoft Graph с помощью REST API (вместо пакета SDK для Microsoft Graph). Чтобы получить маркер для вызова подчиненного API, необходимо внедрить `ITokenAcquisition` службу путем внедрения зависимостей в конструктор контроллера (или конструктор страницы при использовании блазор) и использовать его в действиях контроллера, получая маркер для пользователя ( `GetAccessTokenForUserAsync` ) или самого приложения ( `GetAccessTokenForAppAsync` ) в сценарии управляющей программы.
+
+Методы контроллера защищены `[Authorize]` атрибутом, который позволяет использовать веб-приложение только прошедшим проверку подлинности пользователям.
 
 ```csharp
 [Authorize]
@@ -82,7 +87,7 @@ public async Task<IActionResult> Profile()
 - Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` члена контроллера. (ASP.NET использует `HttpContext.User` .)
 - После этого он создает `IConfidentialClientApplication` объект MSAL.NET.
 - Наконец, он вызывает `AcquireTokenSilent` метод конфиденциального клиентского приложения.
-- Если требуется взаимодействие, веб-приложению необходимо выполнить запрос пользователя (повторное вход) и запросить дополнительные утверждения.
+- Если требуется взаимодействие, веб-приложению необходимо выполнить запрос пользователя (повторно войти в систему) и запросить дополнительные утверждения.
 
 Следующий фрагмент кода извлекается из [HomeController. CS # L157-L192](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/257c8f96ec3ff875c351d1377b36403eed942a18/WebApp/Controllers/HomeController.cs#L157-L192) в образце кода [MS-Identity-ASPNET-webapp-openidconnect](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect) ASP.NET MVC:
 

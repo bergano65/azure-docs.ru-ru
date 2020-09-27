@@ -5,12 +5,12 @@ author: EMaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: 5e1d772deb71e03311489ea61d012415860cbe54
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cf1b9db8de2c0f2c852a41d1e30343c5cef1b20b
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445327"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396694"
 ---
 # <a name="guide-to-setting-up-a-windows-template-machine-in-azure-lab-services"></a>Инструкции по настройке компьютера шаблона Windows в службах лаборатории Azure
 
@@ -61,7 +61,7 @@ Write-Host "Installing OneDrive..."
 
 Если виртуальная машина подключена к Active Directory, можно настроить компьютер-шаблон, чтобы автоматически запрашивать у учащихся перемещение известных папок в OneDrive.  
 
-Сначала необходимо получить идентификатор клиента Office.  Дальнейшие инструкции см. [в статье Поиск идентификатора клиента Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id).  Идентификатор клиента Office 365 также можно получить с помощью следующей команды PowerShell.
+Сначала необходимо получить идентификатор организации.  Дополнительные инструкции см. [в статье Поиск идентификатора Microsoft 365 организации](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id).  ИДЕНТИФИКАТОР организации также можно получить с помощью следующей команды PowerShell.
 
 ```powershell
 Install-Module MSOnline -Confirm
@@ -71,7 +71,7 @@ $officeTenantID = Get-MSOLCompanyInformation |
     Select-Object -expand Guid
 ```
 
-Получив идентификатор клиента Office 365, настройте в OneDrive запрос на перемещение известных папок в OneDrive с помощью следующей команды PowerShell.
+Получив идентификатор организации, укажите в OneDrive запрос на перемещение известных папок в OneDrive с помощью следующей команды PowerShell.
 
 ```powershell
 if ($officeTenantID -eq $null)
@@ -95,7 +95,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"
 
 ### <a name="silently-sign-in-users-to-onedrive"></a>Автоматический вход пользователей в OneDrive
 
-В OneDrive можно настроить автоматический вход с использованием учетных данных Windows вошедшего в систему пользователя.  Автоматический вход в систему полезен для классов, в которых учащийся входит в учебные учетные данные Office 365.
+В OneDrive можно настроить автоматический вход с использованием учетных данных Windows вошедшего в систему пользователя.  Автоматический вход в систему полезен для классов, в которых учащийся входит в учетные данные учебного заведения.
 
 ```powershell
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"
@@ -115,7 +115,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"
 
 ### <a name="set-the-maximum-size-of-a-file-that-to-be-download-automatically"></a>Задать максимальный размер файла для автоматического скачивания
 
-Этот параметр используется вместе с автоматическим входом пользователей в клиент синхронизации OneDrive с учетными данными Windows на устройствах, на которых не включены файлы OneDrive по запросу. Любой пользователь, имеющий OneDrive, размер которого превышает указанное пороговое значение (в МБ), будет получать запрос на выбор папок, которые требуется синхронизировать, прежде чем клиент синхронизации OneDrive (OneDrive.exe) загрузит эти файлы.  В нашем примере "1111-2222-3333-4444" — это идентификатор клиента Office 365, а 0005000 — пороговое значение 5 ГБ.
+Этот параметр используется вместе с автоматическим входом пользователей в клиент синхронизации OneDrive с учетными данными Windows на устройствах, на которых не включены файлы OneDrive по запросу. Любой пользователь, имеющий OneDrive, размер которого превышает указанное пороговое значение (в МБ), будет получать запрос на выбор папок, которые требуется синхронизировать, прежде чем клиент синхронизации OneDrive (OneDrive.exe) загрузит эти файлы.  В нашем примере "1111-2222-3333-4444" — это идентификатор организации, а 0005000 устанавливает пороговое значение 5 ГБ.
 
 ```powershell
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"
@@ -124,23 +124,23 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive\DiskSpaceChec
     -Name "1111-2222-3333-4444" -Value "0005000" -PropertyType DWORD
 ```
 
-## <a name="install-and-configure-microsoft-office-365"></a>Установка и настройка Microsoft Office 365
+## <a name="install-and-configure-microsoft-365"></a>Установка и настройка Microsoft 365
 
-### <a name="install-microsoft-office-365"></a>Установка Microsoft Office 365
+### <a name="install-microsoft-365"></a>Установка Microsoft 365
 
-Если компьютеру-шаблону требуется Office, рекомендуется установить Office с помощью [средства развертывания Office (ODT)](https://www.microsoft.com/download/details.aspx?id=49117 ). Необходимо создать файл конфигурации с возможностью повторного использования с помощью [службы настройки клиента Office 365](https://config.office.com/) , чтобы выбрать архитектуру, функции, необходимые для Office, и частоту обновления.
+Если компьютеру-шаблону требуется Office, рекомендуется установить Office с помощью [средства развертывания Office (ODT)](https://www.microsoft.com/download/details.aspx?id=49117). Вам потребуется создать файл конфигурации с возможностью повторного использования с помощью [центра администрирования Microsoft 365 Apps](https://config.office.com/) , чтобы выбрать архитектуру, функции, необходимые для Office, и частоту обновления.
 
-1. Перейдите в [службу настройки клиента Office 365](https://config.office.com/) и скачайте собственный файл конфигурации.
+1. Перейдите в [центр администрирования Microsoft 365 Apps](https://config.office.com/) и скачайте собственный файл конфигурации.
 2. Загрузите [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117).  Скачанный файл будет иметь расширение `setup.exe` .
 3. Запустите `setup.exe /download configuration.xml` , чтобы скачать компоненты Office.
 4. Выполните команду `setup.exe /configure configuration.xml` , чтобы установить компоненты Office.
 
-### <a name="change-the-microsoft-office-365-update-channel"></a>Изменение канала обновления Microsoft Office 365
+### <a name="change-the-microsoft-365-update-channel"></a>Изменение канала обновления Microsoft 365
 
-С помощью средства настройки Office можно задать частоту, с которой Office будет получать обновления. Однако если необходимо изменить частоту получения обновлений Office после установки, можно изменить URL-адрес канала обновления. URL-адреса каналов обновления можно найти по адресу [изменение канала обновления Office 365 профессиональный плюс для устройств в вашей организации](https://docs.microsoft.com/deployoffice/change-update-channels). В приведенном ниже примере показано, как настроить Office 365 для использования ежемесячного канала обновления.
+С помощью средства настройки Office можно задать частоту, с которой Office будет получать обновления. Однако если необходимо изменить частоту получения обновлений Office после установки, можно изменить URL-адрес канала обновления. URL-адреса каналов обновления можно найти по адресу [изменение канала обновления Microsoft 365Ных приложений для устройств в вашей организации](https://docs.microsoft.com/deployoffice/change-update-channels). В приведенном ниже примере показано, как настроить Microsoft 365 для использования ежемесячного канала обновления.
 
 ```powershell
-# Update to the Office 365 Monthly Channel
+# Update to the Microsoft 365 Monthly Channel
 Set-ItemProperty
     -Path "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl"
     -Name "CDNBaseUrl"
@@ -228,7 +228,7 @@ Get-AppxPackage -Name *xbox* | foreach { if (-not $_.NonRemovable) { Remove-Appx
 
 ## <a name="conclusion"></a>Заключение
 
-В этой статье показаны необязательные шаги по подготовке виртуальной машины шаблона Windows для эффективного класса.  Шаги включают установку OneDrive и установку Office 365, установку обновлений для Windows и установку обновлений для Microsoft Store приложений.  Мы также рассмотрели, как настроить обновления по расписанию, которое лучше подходит для вашего класса.  
+В этой статье показаны необязательные шаги по подготовке виртуальной машины шаблона Windows для эффективного класса.  Шаги включают установку OneDrive и установку Microsoft 365, установку обновлений для Windows и установку обновлений для приложений Microsoft Store.  Мы также рассмотрели, как настроить обновления по расписанию, которое лучше подходит для вашего класса.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. статью о том, как управлять поведением завершения работы Windows, чтобы упростить управление затратами: [руководство по управлению работой при завершении работы Windows](how-to-windows-shutdown.md)

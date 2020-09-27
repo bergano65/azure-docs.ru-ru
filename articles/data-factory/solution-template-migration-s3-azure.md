@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/07/2019
-ms.openlocfilehash: 23d799f84cb3ac3ca911a5669041b0a25394a7ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e25299c2ce5d31da8f3caa5b02ab8def816b31ee
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81414761"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91398226"
 ---
 # <a name="migrate-data-from-amazon-s3-to-azure-data-lake-storage-gen2"></a>Перенос данных из Amazon S3 в Azure Data Lake Storage 2-го поколения
 
@@ -109,23 +109,23 @@ ms.locfileid: "81414761"
 
 3. Перейдите к разделу **Миграция исторических данных из AWS S3 в шаблон Azure Data Lake Storage 2-го поколения** . Введите подключения к внешней таблице управления, AWS S3 в качестве хранилища источников данных и Azure Data Lake Storage 2-го поколения в качестве целевого хранилища. Имейте в виду, что внешняя таблица элемента управления и хранимая процедура ссылаются на одно и то же соединение.
 
-    ![Создание подключения](media/solution-template-migration-s3-azure/historical-migration-s3-azure1.png)
+    ![Снимок экрана, на котором показана миграция исторических данных из AWS S3 в шаблон Azure Data Lake Storage 2-го поколения.](media/solution-template-migration-s3-azure/historical-migration-s3-azure1.png)
 
 4. Щелкните **Использовать этот шаблон**.
 
-    ![Использовать этот шаблон](media/solution-template-migration-s3-azure/historical-migration-s3-azure2.png)
+    ![Снимок экрана, на котором выделена кнопка "использовать этот шаблон".](media/solution-template-migration-s3-azure/historical-migration-s3-azure2.png)
     
 5. Вы увидите два конвейера и 3 набора данных, как показано в следующем примере:
 
-    ![Проверка конвейера](media/solution-template-migration-s3-azure/historical-migration-s3-azure3.png)
+    ![Снимок экрана, на котором показаны два конвейера и три набора данных, созданные с помощью шаблона.](media/solution-template-migration-s3-azure/historical-migration-s3-azure3.png)
 
 6. Выберите **Отладка**, введите **Параметры**, а затем нажмите **Готово**.
 
-    ![Щелкните **Отладка**](media/solution-template-migration-s3-azure/historical-migration-s3-azure4.png)
+    ![Снимок экрана, на котором показано, где выбрать отладку, и введите параметры перед нажатием кнопки "Готово".](media/solution-template-migration-s3-azure/historical-migration-s3-azure4.png)
 
 7. Вы увидите результат, аналогичный приведенному ниже:
 
-    ![Просмотр результатов](media/solution-template-migration-s3-azure/historical-migration-s3-azure5.png)
+    ![Снимок экрана, на котором показаны возвращенные результаты.](media/solution-template-migration-s3-azure/historical-migration-s3-azure5.png)
 
 
 ### <a name="for-the-template-to-copy-changed-files-only-from-amazon-s3-to-azure-data-lake-storage-gen2"></a>Чтобы шаблон скопировал измененные файлы только из Amazon S3 в Azure Data Lake Storage 2-го поколения
@@ -192,7 +192,7 @@ ms.locfileid: "81414761"
 
 8. Вы также можете проверить результаты из управляющей таблицы с помощью запроса *"Select * from s3_partition_delta_control_table"*, вы увидите результат, аналогичный приведенному ниже.
 
-    ![Просмотр результатов](media/solution-template-migration-s3-azure/delta-migration-s3-azure6.png)
+    ![Снимок экрана, показывающий результаты из таблицы элементов управления после выполнения запроса.](media/solution-template-migration-s3-azure/delta-migration-s3-azure6.png)
     
 ## <a name="next-steps"></a>Дальнейшие действия
 

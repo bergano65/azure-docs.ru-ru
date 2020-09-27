@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 85ce79644ead939eaeffa5cfffeb495da15e7fe5
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: e701ac8cee15a338c363ec2697e02e82bb4f4e68
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88270671"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396439"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: часто задаваемые вопросы
 
@@ -29,9 +29,9 @@ ms.locfileid: "88270671"
 
 Azure AD и Azure AD B2C являются отдельными предложениями продуктов и не могут совместно существовать в одном клиенте. Клиент Azure AD представляет организацию. Клиент Azure AD B2C представляет коллекцию удостоверений для использования с приложениями проверяющей стороны. Добавив **Новый поставщик OpenID Connect Connect** в **Azure AD B2C > поставщиков удостоверений** или с пользовательскими политиками, Azure AD B2C сможет объединить в Azure AD, что позволит выполнять проверку подлинности сотрудников в Организации.
 
-### <a name="can-i-use-azure-ad-b2c-to-provide-social-login-facebook-and-google-into-office-365"></a>Можно ли использовать Azure AD B2C для входа в Office 365 с помощью учетных данных социальных сетей (Facebook и Google+)?
+### <a name="can-i-use-azure-ad-b2c-to-provide-social-login-facebook-and-google-into-microsoft-365"></a>Можно ли использовать Azure AD B2C для предоставления логинов социальных сетей (Facebook и Google +) в Microsoft 365?
 
-Azure AD B2C нельзя использовать для проверки подлинности пользователей Microsoft Office 365. Azure AD — это решение корпорации Майкрософт для управления доступом сотрудников к приложениям SaaS и обладающее функциями, предназначенными для таких целей, как лицензирование и условный доступ. Azure AD B2C предоставляет платформу управления удостоверениями и доступом для создания веб-и мобильных приложений. После настройки Azure AD B2C для включения в федерацию с клиентом Azure AD этот клиент может управлять доступом сотрудников к приложениям, которые используют Azure AD B2C.
+Azure AD B2C не может использоваться для проверки подлинности пользователей для Microsoft 365. Azure AD — это решение корпорации Майкрософт для управления доступом сотрудников к приложениям SaaS и обладающее функциями, предназначенными для таких целей, как лицензирование и условный доступ. Azure AD B2C предоставляет платформу управления удостоверениями и доступом для создания веб-и мобильных приложений. После настройки Azure AD B2C для включения в федерацию с клиентом Azure AD этот клиент может управлять доступом сотрудников к приложениям, которые используют Azure AD B2C.
 
 ### <a name="what-are-local-accounts-in-azure-ad-b2c-how-are-they-different-from-work-or-school-accounts-in-azure-ad"></a>Что такое локальные учетные записи в Azure AD B2C? Чем они отличаются от рабочих или учебных учетных записей в Azure AD?
 

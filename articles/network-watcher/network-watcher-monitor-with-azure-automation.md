@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: d833a4cf26ee8ab69d16cbd1d776ca49a2df4bc4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 273e9f7ce65cdd15000b1cc4ac7c19cde5992992
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738221"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396779"
 ---
 # <a name="monitor-vpn-gateways-with-network-watcher-troubleshooting"></a>Мониторинг VPN-шлюзов с помощью средства устранения неполадок Наблюдателя за сетями
 
@@ -42,7 +42,7 @@ ms.locfileid: "84738221"
 
 - Учетная запись службы автоматизации Azure. Убедитесь, что учетная запись службы автоматизации содержит последние версии модулей, а также модуль AzureRM.Network. Чтобы добавить модуль AzureRM.Network в учетную запись службы автоматизации Модуль, см. коллекцию модулей.
 - Набор учетных данных, настроенных в службе автоматизации Azure. См. дополнительные сведения о [безопасности службы автоматизации Azure](../automation/automation-security-overview.md).
-- Допустимый SMTP-сервер (Office 365, локальный или другой адрес электронной почты) и учетные данные, определенные в службе автоматизации Azure.
+- Допустимый SMTP-сервер (Microsoft 365, ваш локальный адрес электронной почты или другой) и учетные данные, определенные в службе автоматизации Azure.
 - Настроенный шлюз виртуальной сети в Azure.
 - Существующая учетная запись хранения с существующим контейнером для хранения журналов.
 
@@ -85,7 +85,7 @@ ms.locfileid: "84738221"
 
 ```powershell
 # Set these variables to the proper values for your environment
-$o365AutomationCredential = "<Office 365 account>"
+$automationCredential = "<work or school account>"
 $fromEmail = "<from email address>"
 $toEmail = "<to email address>"
 $smtpServer = "<smtp.office365.com>"
@@ -99,8 +99,8 @@ $storageAccountName = "<storage account name>"
 $storageAccountResourceGroup = "<resource group name>"
 $storageAccountContainer = "<container name>"
 
-# Get credentials for Office 365 account
-$cred = Get-AutomationPSCredential -Name $o365AutomationCredential
+# Get credentials for work or school account
+$cred = Get-AutomationPSCredential -Name $automationCredential
 
 # Get the connection "AzureRunAsConnection "
 $servicePrincipalConnection=Get-AutomationConnection -Name $runAsConnectionName
@@ -183,7 +183,7 @@ else
 
 ![Шаг 10][10]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как интегрировать средство устранения неполадок Наблюдателя за сетями со службой автоматизации Azure, научитесь активировать захват пакетов на основе предупреждений виртуальной машины. Инструкции см. в статье о том, как [с помощью Наблюдателя за сетями Azure создать захват пакетов, который активируется оповещениями](network-watcher-alert-triggered-packet-capture.md).
 

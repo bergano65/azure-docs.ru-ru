@@ -10,16 +10,16 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 62a2ffeea1d15a16c4ec4aa6a2b88c8e34763064
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 88069c6ac90fce7e33cac6ed3c30accb18ded8bf
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87480413"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396405"
 ---
 # <a name="resource-forest-concepts-and-features-for-azure-active-directory-domain-services"></a>Основные понятия и функции лесов ресурсов для доменных служб Azure Active Directory
 
-Azure Active Directory доменных служб (Azure AD DS) предоставляет возможность входа для устаревших локальных бизнес-приложений. Пользователи, группы и хэши паролей локальных и облачных пользователей синхронизируются с управляемым доменом Azure AD DS. Эти синхронизированные хэши паролей дают пользователям единый набор учетных данных, которые они могут использовать для локальных AD DS, Office 365 и Azure Active Directory.
+Azure Active Directory доменных служб (Azure AD DS) предоставляет возможность входа для устаревших локальных бизнес-приложений. Пользователи, группы и хэши паролей локальных и облачных пользователей синхронизируются с управляемым доменом Azure AD DS. Эти синхронизированные хэши паролей дают пользователям единый набор учетных данных, которые они могут использовать для локальных AD DS, Microsoft 365 и Azure Active Directory.
 
 Хотя это защищенный метод с дополнительными преимуществами безопасности, некоторые организации не могут синхронизировать эти хэши паролей пользователей с Azure AD или Azure AD DS. Пользователи в организации могут не знать свой пароль, так как используют только проверку подлинности с помощью смарт-карты. Эти ограничения не позволяют некоторым организациям использовать Azure AD DS для переноса локальных классических приложений в Azure методом lift-and-shift.
 

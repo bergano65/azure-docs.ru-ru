@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/28/2020
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: de41d9c1dc69726f5f7f031616462b2d1d330476
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a7edbbb50777cc2d91332260c9ebe72be042874b
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333194"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396252"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Аудит для базы данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -86,7 +86,7 @@ ms.locfileid: "91333194"
 2. Перейдите к разделу **Аудит** под заголовком безопасность в **базе данных SQL** или в области **SQL Server** .
 3. Если необходимо настроить политику аудита сервера, выберите ссылку **Просмотреть параметры сервера** на странице аудита базы данных. Вы можете затем просмотреть или изменить параметры аудита сервера. Политики аудита сервера применяются ко всем существующим и вновь созданным базам данных на этом сервере.
 
-    ![Область навигации](./media/auditing-overview/2_auditing_get_started_server_inherit.png)
+    ![Снимок экрана, на котором показана ссылка на просмотр параметров сервера, выделенная на странице аудита базы данных.](./media/auditing-overview/2_auditing_get_started_server_inherit.png)
 
 4. Если вам нужно включить аудит на уровне базы данных, установите для параметра **Аудит** значение **Вкл.** Если включен аудит сервера, настроенный аудит для базы данных будет существовать параллельно с ним.
 
@@ -163,7 +163,7 @@ ms.locfileid: "91333194"
 
 - Используйте [портал Azure](https://portal.azure.com).  Откройте соответствующую базу данных. В верхней области страницы базы данных **Аудит** щелкните **Ознакомиться с журналами аудита**.
 
-    ![Область навигации](./media/auditing-overview/7_auditing_get_started_blob_view_audit_logs.png)
+    ![Снимок экрана, на котором показана кнопка "Просмотр журналов аудита", выделенная на странице "Аудит базы данных".](./media/auditing-overview/7_auditing_get_started_blob_view_audit_logs.png)
 
     Откроется колонка **Записи аудита**, в которой можно просматривать журналы.
 
@@ -171,14 +171,14 @@ ms.locfileid: "91333194"
   - Можно переключаться между записями аудита, созданными *политикой аудита сервера* и *политикой аудита базы данных*, изменяя значение параметра **Источник аудита**.
   - Вы можете просматривать только записи аудита, связанные с внедрением кода SQL. Для этого установите флажок **Show only audit records for SQL injections** (Показывать только записи аудита для внедрения кода SQL).
 
-       ![Область навигации]( ./media/auditing-overview/8_auditing_get_started_blob_audit_records.png)
+       ![Снимок экрана, на котором показаны параметры просмотра записей аудита.]( ./media/auditing-overview/8_auditing_get_started_blob_audit_records.png)
 
 - Используйте системную функцию **sys.fn_get_audit_file** (T-SQL), чтобы вернуть данные журнала аудита в табличном формате. Дополнительные сведения об использовании этой функции см. в статье [sys.fn_get_audit_file (Transact-SQL)](/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql).
 
 - Используйте **объединение файлов аудита** в SQL Server Management Studio (начиная с SSMS 17):
     1. В меню SSMS выберите **Файл** > **Открыть** > **Объединение файлов аудита**.
 
-        ![Область навигации](./media/auditing-overview/9_auditing_get_started_ssms_1.png)
+        ![Снимок экрана, показывающий пункт меню "объединить файлы аудита".](./media/auditing-overview/9_auditing_get_started_ssms_1.png)
     2. Откроется диалоговое окно **Добавление файлов аудита**. Выберите один из способов **добавления**. Вы можете использовать объединение файлов аудита из локального диска или импортировать их из службы хранилища Azure. Необходимо предоставить сведения о службе хранилища Azure и ключ учетной записи.
 
     3. После добавления всех файлов для слияния нажмите кнопку **OK** для завершения операции слияния.
@@ -218,7 +218,7 @@ ms.locfileid: "91333194"
 
 1. Откройте раздел **Сведения о хранилище**. В поле **Ключ доступа к хранилищу** выберите **Вторичный**, а затем нажмите кнопку **OK**. Затем щелкните **Сохранить** в верхней области страницы настройки аудита.
 
-    ![Область навигации](./media/auditing-overview/5_auditing_get_started_storage_key_regeneration.png)
+    ![Снимок экрана, на котором показан процесс выбора вторичного ключа доступа к хранилищу данных.](./media/auditing-overview/5_auditing_get_started_storage_key_regeneration.png)
 2. Перейдите на страницу конфигурации хранилища и повторно создайте первичный ключ доступа.
 
     ![Область навигации](./media/auditing-overview/6_auditing_get_started_regenerate_key.png)

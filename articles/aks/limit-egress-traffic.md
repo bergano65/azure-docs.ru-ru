@@ -7,12 +7,12 @@ ms.author: jpalma
 ms.date: 06/29/2020
 ms.custom: fasttrack-edit
 author: palma21
-ms.openlocfilehash: 236b69b1e10eb80b9c0a5e27b213eb3972209346
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 67eeb181f64f5924a90fd2c03e39e1be9887dd2e
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361047"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397170"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Управление исходящим трафиком для узлов кластера в службе Azure Kubernetes (AKS)
 
@@ -205,10 +205,7 @@ ms.locfileid: "91361047"
 | `storage.googleapis.com` | **`HTTPS:443`** | Этот адрес используется для извлечения образов Helm и Tiller. |
 
 
-### <a name="azure-policy-preview"></a>Политика Azure (Предварительная версия)
-
-> [!CAUTION]
-> Некоторые из приведенных ниже функций предоставляются в предварительной версии.  Рекомендации в этой статье могут быть изменены по мере выпуска функций и перехода в режим общедоступной предварительной версии.
+### <a name="azure-policy"></a>Политика Azure
 
 #### <a name="required-fqdn--application-rules"></a>Требуемое полное доменное имя/правила приложения 
 
@@ -219,7 +216,6 @@ ms.locfileid: "91361047"
 | **`gov-prod-policy-data.trafficmanager.net`** | **`HTTPS:443`** | Этот адрес используется для правильной работы службы "Политика Azure" (сейчас предоставляется в AKS в предварительной версии). |
 | **`raw.githubusercontent.com`**               | **`HTTPS:443`** | Этот адрес используется для извлечения встроенных политик из GitHub, чтобы обеспечить правильную работу службы "Политика Azure" (сейчас предоставляется в AKS в предварительной версии). |
 | **`dc.services.visualstudio.com`**            | **`HTTPS:443`** | Надстройка службы "Политика Azure", которая отправляет данные телеметрии в конечную точку Application Insights. |
-
 
 ## <a name="restrict-egress-traffic-using-azure-firewall"></a>Ограничить трафик исходящего трафика с помощью брандмауэра Azure
 

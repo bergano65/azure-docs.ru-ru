@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 02/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: 0cc54bcc23e354ae8cc807e63a0039286e295181
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 1157a18954c30e1f1d93aa33dbea6104491b5353
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90970954"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396457"
 ---
 # <a name="azure-disk-encryption-on-an-isolated-network"></a>Шифрование дисков Azure в изолированной сети
 
@@ -43,7 +43,7 @@ ms.locfileid: "90970954"
 
 При использовании [шифрования дисков Azure с Azure AD (Предыдущая версия)](disk-encryption-overview-aad.md)необходимо вручную установить [библиотеку Azure Active Directory](../../active-directory/azuread-dev/active-directory-authentication-libraries.md) для всех дистрибутивов (в дополнение к пакетам, подходящим для дистрибутив, как [указано выше](#package-management)).
 
-При включении шифрования [учетных данных Azure AD](disk-encryption-linux-aad.md) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
+При включении шифрования [учетных данных Azure AD](disk-encryption-linux-aad.md) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 документации по [URL-адресам Microsoft 365 и диапазонам IP-адресов](/microsoft-365/enterprise/urls-and-ip-address-ranges) . Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/general/access-behind-firewall.md).
 
 ### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
 

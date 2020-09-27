@@ -7,12 +7,12 @@ author: danimir
 ms.author: danil
 ms.date: 09/19/2020
 ms.reviewer: carlrab
-ms.openlocfilehash: 663c852574667e45a39241575d6b50038495c33d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0015138f4da9f66e2f9148e468dd1b5543ae0c4b
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319594"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397085"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)
 
@@ -90,11 +90,11 @@ ms.locfileid: "91319594"
 
 После выбора плитки "Аналитика SQL Azure" для базы данных отобразится панель мониторинга.
 
-![Обзор службы "Аналитика SQL Azure"](./media/azure-sql/azure-sql-sol-overview.png)
+![Снимок экрана, показывающий панель мониторинга.](./media/azure-sql/azure-sql-sol-overview.png)
 
 При выборе любой плитки открывается подробный отчет о конкретной перспективе. Выбрав перспективу, вы увидите подробный отчет.
 
-![Время ожидания службы "Аналитика SQL Azure"](./media/azure-sql/azure-sql-sol-metrics.png)
+![Снимок экрана, показывающий детализированный отчет на конкретную перспективу.](./media/azure-sql/azure-sql-sol-metrics.png)
 
 Каждая перспектива в этом представлении предоставляет сводные данные по уровням подписки, сервера, эластичного пула и базы данных. Кроме того, справа в каждой перспективе отображается отчет о ней. Выбор подписки, сервера, пула или базы данных из списка позволяет продолжить подробное изучение.
 

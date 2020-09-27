@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b1582af2bbd97579852ead0d4462f80f3a50fe6a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 9212e99ae317a3abec4bebfc7fb131c6774f8e4d
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91257152"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396201"
 ---
 # <a name="a-web-api-that-calls-web-apis-call-an-api"></a>Веб-API, вызывающий веб-API: вызов API
 
@@ -28,11 +28,11 @@ ms.locfileid: "91257152"
 
 При использовании *Microsoft. Identity. Web*у вас есть три сценария использования:
 
-- [Вызов Microsoft Graph](#call-microsoft-graph)
-- [Вызов веб-API, отличного от Microsoft Graph](#call-web-api-other-than-microsoft-graph)
-- [Получение маркера вручную](#acquire-a-token-manually)
+- [Вариант 1. вызов Microsoft Graph с помощью пакета SDK для Microsoft Graph](#option-1-call-microsoft-graph-with-the-sdk)
+- [Вариант 2. вызов подчиненного веб-API с помощью вспомогательного класса](#option-2-call-a-downstream-web-api-with-the-helper-class)
+- [Вариант 3. вызов подчиненного веб-интерфейса API без вспомогательного класса](#option-3-call-a-downstream-web-api-without-the-helper-class)
 
-#### <a name="call-microsoft-graph"></a>Вызов Microsoft Graph
+#### <a name="option-1-call-microsoft-graph-with-the-sdk"></a>Вариант 1. вызов Microsoft Graph с помощью пакета SDK
 
 В этом сценарии вы добавили `.AddMicrosoftGraph()` в *Startup.CS* , как указано в [конфигурации кода](scenario-web-api-call-api-app-configuration.md#option-1-call-microsoft-graph), и можете напрямую внедрить `GraphServiceClient` в контроллер или конструктор страницы для использования в действиях. В следующем примере на странице Razor отображается фотография пользователя, выполнившего вход.
 
@@ -68,7 +68,7 @@ ms.locfileid: "91257152"
  }
 ```
 
-#### <a name="call-web-api-other-than-microsoft-graph"></a>Вызов веб-API, отличного от Microsoft Graph
+#### <a name="option-2-call-a-downstream-web-api-with-the-helper-class"></a>Вариант 2. вызов подчиненного веб-API с помощью вспомогательного класса
 
 В этом сценарии вы добавили `.AddDownstreamWebApi()` в *Startup.CS* , как указано в [конфигурации кода](scenario-web-api-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), и можете напрямую внедрить `IDownstreamWebApi` службу в контроллер или конструктор страниц и использовать ее в действиях:
 
@@ -115,7 +115,7 @@ ms.locfileid: "91257152"
  }
 ```
 
-#### <a name="acquire-a-token-manually"></a>Получение маркера вручную
+#### <a name="option-3-call-a-downstream-web-api-without-the-helper-class"></a>Вариант 3. вызов подчиненного веб-интерфейса API без вспомогательного класса
 
 Если вы решили получить маркер вручную с помощью `ITokenAcquisition` службы, теперь необходимо использовать токен. В этом случае следующий код продолжит пример кода, показанного в [веб-API, который вызывает веб-API: получить маркер для приложения](scenario-web-api-call-api-acquire-token.md). Код вызывается в действиях контроллеров API. Он вызывает нисходящий API с именем *ToDoList*.
 

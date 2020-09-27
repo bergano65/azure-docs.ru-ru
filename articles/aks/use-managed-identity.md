@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 07/17/2020
 ms.author: thomasge
-ms.openlocfilehash: 4e970f242d1c51218865fe459b8012f97add3d02
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 836a5a003268a98dd8e63eed9bfdba741abcf4ed
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91299295"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397051"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Использование управляемых удостоверений в службе Kubernetes Azure
 
@@ -30,6 +30,8 @@ ms.locfileid: "91299295"
 * Существующие кластеры AKS нельзя перенести в управляемые удостоверения.
 * Во время операций **обновления** кластера управляемое удостоверение временно недоступно.
 * Клиенты, перемещая и миграция управляемых удостоверений, поддерживают кластеры.
+* Если кластер `aad-pod-identity` включен, модули NMI, управляемые узлами, изменяют узлы iptables для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая конфигурация означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если Pod не используется `aad-pod-identity` . Азуреподидентитексцептион CRD можно настроить так, чтобы сообщать `aad-pod-identity` о том, что любые запросы к конечной точке метаданных, созданные из Pod, совпадающие с метками, определенными в CRD, должны быть прокси-серверами без обработки в NMI. Системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ должны быть исключены в `aad-pod-identity` с помощью настройки азуреподидентитексцептион CRD. Дополнительные сведения см. [в разделе Отключение AAD-Pod-Identity для конкретного Pod или приложения](https://github.com/Azure/aad-pod-identity/blob/master/docs/readmes/README.app-exception.md).
+  Чтобы настроить исключение, установите [YAML-исключение MIC](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
 
 ## <a name="summary-of-managed-identities"></a>Сводка по управляемым удостоверениям
 

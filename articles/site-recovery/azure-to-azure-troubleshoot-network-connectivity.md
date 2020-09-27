@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 8be0349bfff9ebc858d76928344039b6879d2b80
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 59bbca9461ff174ebe2451a6c01d84dee404cf56
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91357069"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91398312"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -51,16 +51,16 @@ ms.locfileid: "91357069"
 ### <a name="issue-2-site-recovery-configuration-failed-151196"></a>Проблема 2. Сбой при выполнении настройки Site Recovery (151196)
 
 > [!NOTE]
-> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard#create-outbound-rule-configuration).
+> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не имеет доступа к Microsoft 365ным IP-адресам, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard#create-outbound-rule-configuration).
 
 #### <a name="possible-cause"></a>Возможные причины
 
-Не удается установить подключение к конечным точкам проверки подлинности и IP4-удостоверений Office 365.
+Не удается установить подключение для Microsoft 365 конечных точек проверки подлинности и IP4-удостоверений.
 
 #### <a name="resolution"></a>Решение
 
-- Azure Site Recovery требуется доступ к диапазонам IP-адресов Office 365 для проверки подлинности.
-- Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы разрешите подключение к диапазонам IP-адресов Office 365. Создайте правило NSG на основе [тега службы Azure Active Directory (Azure AD)](../virtual-network/security-overview.md#service-tags) , которое разрешает доступ ко всем IP-адресам, СООТВЕТСТВУЮЩИМ Azure AD.
+- Azure Site Recovery требуется доступ к диапазонам IP-адресов Microsoft 365 для проверки подлинности.
+- Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы разрешите подключение к диапазонам IP-адресов Microsoft 365. Создайте правило NSG на основе [тега службы Azure Active Directory (Azure AD)](../virtual-network/security-overview.md#service-tags) , которое разрешает доступ ко всем IP-адресам, СООТВЕТСТВУЮЩИМ Azure AD.
 - Если в будущем в Azure AD добавляются новые адреса, необходимо создать новые правила NSG.
 
 ### <a name="example-nsg-configuration"></a>Конфигурация примера группы безопасности сети
