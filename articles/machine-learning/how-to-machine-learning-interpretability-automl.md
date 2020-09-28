@@ -10,12 +10,12 @@ ms.custom: how-to
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: 7cb40df6a4619e11694e65020bfcb560cf695795
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 35bf66549cedba22ec14999c4fea62a2c449416e
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897456"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91408021"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении (Предварительная версия)
 
@@ -31,9 +31,9 @@ ms.locfileid: "90897456"
 - Включите визуализации, чтобы видеть закономерности в данных и объяснениях.
 - Реализуйте интерпретируемость во время вывода или оценки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-- Функции интерпретации. Выполните команду `pip install azureml-interpret azureml-contrib-interpret` , чтобы получить необходимые пакеты.
+- Функции интерпретации. Выполните команду `pip install azureml-interpret` , чтобы получить необходимый пакет.
 - Знание создания автоматических экспериментов ML. Дополнительные сведения об использовании пакета SDK для Машинное обучение Azure см. в руководстве по [модели регрессии](tutorial-auto-train-models.md) или о [настройке автоматизированных экспериментов ML](how-to-configure-auto-train.md).
 
 ## <a name="interpretability-during-training-for-the-best-model"></a>Возможности интерпретации во время обучения для наилучшей модели
@@ -43,7 +43,7 @@ ms.locfileid: "90897456"
 > [!Warning]
 > Понятность, объяснение лучшей модели недоступна для экспериментов автоматического обучения, которые рекомендуют следующие алгоритмы в качестве наилучшей модели: 
 > * ForecastTCN
-> * Среднее значение 
+> * Среднее 
 > * Алгоритма
 > * Среднее значение по сезону 
 > * Сезонный Байес
@@ -53,7 +53,7 @@ ms.locfileid: "90897456"
 Вы можете использовать `ExplanationClient` для скачивания объяснений инженерных функций из хранилища артефактов `best_run` . 
 
 ```python
-from azureml.explain.model._internal.explanation_client import ExplanationClient
+from azureml.interpret import ExplanationClient
 
 client = ExplanationClient.from_run(best_run)
 engineered_explanations = client.download_model_explanation(raw=False)
@@ -99,7 +99,7 @@ automl_explainer_setup_obj = automl_setup_model_explanations(fitted_model, X=X_t
 Мимиквраппер также принимает объект, `automl_run` где будут передаваться инженерные объяснения.
 
 ```python
-from azureml.explain.model.mimic_wrapper import MimicWrapper
+from azureml.interpret import MimicWrapper
 
 # Initialize the Mimic Explainer
 explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator,

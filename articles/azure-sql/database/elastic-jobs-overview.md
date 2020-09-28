@@ -11,14 +11,14 @@ author: srinia
 ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 62202946193c111921c97dc95a7ec7955a63804f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2aa2c0c8cbd8b826444dc5420685aaa9731cddab
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85251194"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409597"
 ---
-# <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
+# <a name="create-configure-and-manage-elastic-jobs-preview"></a>Создание, Настройка и управление заданиями обработки эластичных БД (Предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 В этой статье вы узнаете, как создавать, настраивать задания обработки эластичных баз данных и управлять ими.
@@ -58,7 +58,7 @@ ms.locfileid: "85251194"
 
 ![Учетные данные заданий обработки эластичных баз данных](./media/elastic-jobs-overview/job-credentials.png)
 
-## <a name="security-best-practices"></a>Лучшие методики обеспечения безопасности
+## <a name="security-best-practices"></a>Рекомендации по безопасности
 
 Несколько рекомендаций по оптимальной работе с заданиями обработки эластичных баз данных
 
@@ -98,7 +98,7 @@ IF NOT EXISTS (some_object)
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell-create.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql-create-manage.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

@@ -1,5 +1,5 @@
 ---
-title: Распределенные транзакции по облачным базам данных
+title: Распределенные транзакции между облачными базами данных (Предварительная версия)
 description: Общие сведения о транзакциях эластичной базы данных с помощью базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -11,17 +11,17 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 5c94234644fcefb70a40ba0b2c21e6e205be0e65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60f6863bbe051338308c30e22c6969d84670dc64
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85829420"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409754"
 ---
-# <a name="distributed-transactions-across-cloud-databases"></a>Распределенные транзакции по облачным базам данных
+# <a name="distributed-transactions-across-cloud-databases-preview"></a>Распределенные транзакции между облачными базами данных (Предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-Транзакции эластичных баз данных для базы данных SQL Azure позволяют выполнять транзакции, охватывающие несколько баз данных в базе. Транзакции эластичных баз данных для базы данных SQL доступны для приложений .NET с помощью ADO .NET и интегрируются с привычным интерфейсом программирования с помощью классов [System. Transaction](https://msdn.microsoft.com/library/system.transactions.aspx) . Инструкции по подключению библиотеки см. в статье [Microsoft .NET Framework 4.6.1 (веб-установщик) для Windows 7 SP1, Windows 8, Windows 8.1, Windows 10, Windows Server 2008 R2 SP1, Windows Server 2012 и Windows Server 2012 R2](https://www.microsoft.com/download/details.aspx?id=49981).
+Транзакции эластичных баз данных для базы данных SQL Azure позволяют выполнять транзакции, охватывающие несколько баз данных в базе. Транзакции эластичных баз данных для базы данных SQL доступны для приложений .NET с помощью ADO.NET и интегрируются с привычным интерфейсом программирования с помощью классов [System. Transaction](https://msdn.microsoft.com/library/system.transactions.aspx) . Инструкции по подключению библиотеки см. в статье [Microsoft .NET Framework 4.6.1 (веб-установщик) для Windows 7 SP1, Windows 8, Windows 8.1, Windows 10, Windows Server 2008 R2 SP1, Windows Server 2012 и Windows Server 2012 R2](https://www.microsoft.com/download/details.aspx?id=49981).
 
 В локальной среде такой сценарий обычно требует запуска Microsoft координатор распределенных транзакций (MSDTC). Так как MSDTC недоступен для приложения типа "платформа как услуга" в Azure, возможность координировать распределенные транзакции теперь напрямую интегрирована в базу данных SQL. Приложения могут подключаться к любой базе данных в базе данных SQL для запуска распределенных транзакций, а одна из баз данных будет прозрачно координировать распределенную транзакцию, как показано на следующем рисунке.
 
@@ -162,7 +162,7 @@ Azure включает несколько предложений для разм
 * Поддерживаются только транзакции, которые осуществляются с помощью приложения .NET и которые координирует клиент. Сейчас выполнение запросов T-SQL на серверах (например, BEGIN DISTRIBUTED TRANSACTION) не поддерживается, но в будущем мы планируем добавить эту возможность.
 * Транзакции в службах WCF не поддерживаются. Например, если у вас есть метод службы WCF, выполняющий транзакцию, включение вызова в область транзакции завершится ошибкой с исключением [System.ServiceModel.ProtocolException](https://msdn.microsoft.com/library/system.servicemodel.protocolexception).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения вопросов обратитесь к нам на [странице Microsoft Q&A вопрос для базы данных SQL](https://docs.microsoft.com/answers/topics/azure-sql-database.html). Для запросов функций добавьте их на [Форум обратной связи базы данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
 

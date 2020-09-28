@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 06/18/2020
+ms.date: 09/28/2020
 ms.author: victorh
-ms.openlocfilehash: eb7cf1899b24ed225941f0a02040206504e6486b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16e128fd61c8b0aeae017e5298ae1d8aed6e97e9
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85095567"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91408513"
 ---
 # <a name="azure-firewall-features"></a>Функции службы "Брандмауэр Azure"
 
@@ -22,9 +22,9 @@ ms.locfileid: "85095567"
 
 Брандмауэр Azure включает следующие функции.
 
-- [высокую доступность;](#built-in-high-availability)
+- [Встроенная Высокая доступность](#built-in-high-availability)
 - [Зоны доступности](#availability-zones)
-- [неограниченную облачную масштабируемость;](#unrestricted-cloud-scalability)
+- [Неограниченная масштабируемость облака](#unrestricted-cloud-scalability)
 - [Правила фильтрации FQDN для приложений](#application-fqdn-filtering-rules)
 - [правила фильтрации трафика;](#network-traffic-filtering-rules)
 - [Теги FQDN](#fqdn-tags)
@@ -62,7 +62,7 @@ ms.locfileid: "85095567"
 
 ## <a name="application-fqdn-filtering-rules"></a>Правила фильтрации FQDN для приложений
 
-Можно ограничить исходящий трафик HTTP или HTTPS либо трафик Azure SQL (предварительная версия) указанным списком полных доменных имен (FQDN), включая подстановочные знаки. Эта функция не требует завершения TSL-запросов.
+Можно ограничить исходящий трафик HTTP/S или трафик Azure SQL указанным списком полных доменных имен (FQDN), включая подстановочные. Эта функция не требует завершения TSL-запросов.
 
 ## <a name="network-traffic-filtering-rules"></a>правила фильтрации трафика;
 
@@ -111,6 +111,6 @@ ms.locfileid: "85095567"
 
 Брандмауэр Azure соответствует требованиям стандартов Payment Card Industry Data Security Standard (PCI DSS), Международной организация по стандартизации (ISO) и ICSA Labs, а также требованиям к отчетам System and Organization Controls (SOC). Дополнительные сведения см. в статье о [сертификатах соответствия Брандмауэра Azure](compliance-certifications.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Логика обработки правил Брандмауэра Azure](rule-processing.md)

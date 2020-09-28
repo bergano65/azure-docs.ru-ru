@@ -1,14 +1,14 @@
 ---
 title: Управление подписанными образами
-description: Узнайте, как включить доверие к содержимому в Реестре контейнеров Azure, а также отправлять и извлекать подписанные образы. Отношение доверия содержимого — это функция уровня служб Premium.
+description: Узнайте, как включить доверие к содержимому в Реестре контейнеров Azure, а также отправлять и извлекать подписанные образы. Отношение доверия содержимого реализует отношение доверия DOCKER и является функцией уровня служб Premium.
 ms.topic: article
-ms.date: 09/06/2019
-ms.openlocfilehash: 36d2a8ddef184804facdace2d517d7e2fdf1b24c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 09/18/2020
+ms.openlocfilehash: cfe337a0f46e37ed616664e8e0645e319bcfb519
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91253485"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409170"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Доверие к содержимому в Реестре контейнеров Azure
 
@@ -71,8 +71,10 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 Только пользователи или системы с разрешением на подписывание могут отправлять доверенные образы в ваш реестр. Чтобы выдать такое разрешение пользователю (или системе через субъект-службу), назначьте ему роль `AcrImageSigner` в Azure Active Directory в дополнение к роли `AcrPush` (или ее аналогу), необходимой для отправки образов в реестр. Дополнительные сведения см. в разделе [Роли и разрешения реестра контейнеров Azure](container-registry-roles.md).
 
-> [!NOTE]
-> Вы не можете предоставить разрешение на отправку доверенного образа [учетной записи администратора](container-registry-authentication.md#admin-account) Реестра контейнеров Azure.
+> [!IMPORTANT]
+> Вы не можете предоставить надежное разрешение на принудительную отправку изображений следующим учетным записям администратора: 
+> * [учетная запись администратора](container-registry-authentication.md#admin-account) реестра контейнеров Azure
+> * Учетная запись пользователя в Azure Active Directory с [ролью "Классический системный администратор](../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)".
 
 Далее описано, как назначить роль `AcrImageSigner` на портале Azure и в инфраструктуре Azure CLI.
 
@@ -80,9 +82,9 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 Перейдите в свой реестр на портале Azure и последовательно выберите **Управление доступом (IAM)**  > **Добавление назначения ролей**. В разделе **Добавление назначения ролей** выберите `AcrImageSigner` в поле **Роль**, затем одного или нескольких пользователей либо один или несколько субъектов-служб в поле **Выбрать** и выберите **Сохранить**.
 
-В этом примере роль `AcrImageSigner` была назначена двум сущностям: субъекту-службе с именем service-principal и пользователю с именем Azure User.
+В этом примере роли назначены две сущности `AcrImageSigner` : субъект-служба с именем "Service – Principal" и пользователь с именем "пользователь Azure".
 
-![Включение доверия к содержимому в реестре на портале Azure][content-trust-02-portal]
+![Предоставление разрешений на подпись образа записи контроля доступа в портал Azure][content-trust-02-portal]
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -92,17 +94,16 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 az role assignment create --scope <registry ID> --role AcrImageSigner --assignee <user name>
 ```
 
-Например, чтобы назначить роль себе, выполните приведенные ниже команды в авторизованном сеансе Azure CLI. Измените значение `REGISTRY` в соответствии с именем реестра контейнеров Azure.
+Например, чтобы предоставить роли пользователя, не являющегося администратором, можно выполнить следующие команды в сеансе Azure CLI, прошедшем проверку подлинности. Измените значение `REGISTRY` в соответствии с именем реестра контейнеров Azure.
 
 ```bash
 # Grant signing permissions to authenticated Azure CLI user
 REGISTRY=myregistry
-USER=$(az account show --query user.name --output tsv)
 REGISTRY_ID=$(az acr show --name $REGISTRY --query id --output tsv)
 ```
 
 ```azurecli
-az role assignment create --scope $REGISTRY_ID --role AcrImageSigner --assignee $USER
+az role assignment create --scope $REGISTRY_ID --role AcrImageSigner --assignee azureuser@contoso.com
 ```
 
 Также можно выдать права на отправку образов в реестр [субъекту-службе](container-registry-auth-service-principal.md). Субъект-службу можно использовать для систем сборки и других автоматических систем, чтобы отправлять доверенные образы в ваш реестр. Действия аналогичны выдаче разрешения пользователю, только в значении `--assignee` указывается идентификатор субъекта-службы.
@@ -118,10 +119,11 @@ az role assignment create --scope $REGISTRY_ID --role AcrImageSigner --assignee 
 
 ## <a name="push-a-trusted-image"></a>Отправка доверенного образа
 
-Чтобы отправить доверенный тег образа в реестр контейнеров, включите функцию доверия к содержимому и отправьте образ с помощью `docker push`. При первой отправке создайте парольную фразу для корневого ключа подписывания и ключа подписывания репозитория. Оба ключа создаются и хранятся локально на вашем компьютере.
+Чтобы отправить доверенный тег образа в реестр контейнеров, включите функцию доверия к содержимому и отправьте образ с помощью `docker push`. После первого выполнения принудительной отправки с подписанным тегом вам будет предложено создать парольную фразу как для корневого ключа подписывания, так и для ключа подписывания репозитория. Оба ключа создаются и хранятся локально на вашем компьютере.
 
 ```console
 $ docker push myregistry.azurecr.io/myimage:v1
+[...]
 The push refers to repository [myregistry.azurecr.io/myimage]
 ee83fc5847cb: Pushed
 v1: digest: sha256:aca41a608e5eb015f1ec6755f490f3be26b48010b178e78c00eac21ffbe246f1 size: 524
@@ -156,16 +158,19 @@ Status: Downloaded newer image for myregistry.azurecr.io/myimage@sha256:0800d17e
 Tagging myregistry.azurecr.io/myimage@sha256:0800d17e37fb4f8194495b1a188f121e5b54efb52b5d93dc9e0ed97fce49564b as myregistry.azurecr.io/myimage:signed
 ```
 
-Если клиент с включенным доверием попытается извлечь неподписанный тег, программа вернет ошибку:
+Если клиент с включенным доверием содержимого пытается извлечь неподписанный тег, операция завершается ошибкой, как показано ниже.
 
 ```console
 $ docker pull myregistry.azurecr.io/myimage:unsigned
-No valid trust data for unsigned
+Error: remote trust data does not exist
 ```
 
 ### <a name="behind-the-scenes"></a>Сопутствующие ресурсы
 
 При выполнении `docker pull` клиент Docker использует ту же библиотеку, что и в [Notary CLI][docker-notary-cli], для запроса на сопоставление хэша извлекаемого тега с помощью SHA-256. После проверки подписей доверенных данных клиент выдает указание Docker Engine "извлечь по хэшу". При извлечении Engine использует контрольную сумму SHA-256 как адрес содержимого для запроса и проверки манифеста образа из реестра контейнеров Azure.
+
+> [!NOTE]
+> Реестр контейнеров Azure официально не поддерживает интерфейс командной строки Нотари, но совместим с API сервера Нотари, который входит в состав DOCKER Desktop. Сейчас рекомендуется Нотари версии **0.6.0** .
 
 ## <a name="key-management"></a>Управление ключами
 
@@ -196,7 +201,7 @@ umask 077; tar -zcvf docker_private_keys_backup.tar.gz ~/.docker/trust/private; 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Подробные сведения о функции доверия к содержимому см. в статье [Content trust in Docker][docker-content-trust] (Функция доверия к содержимому в Docker). В этой статье мы затронули лишь ключевые моменты обширной темы доверия к содержимому, которая более подробно рассматривается в документации Docker.
+* Дополнительные сведения о доверии содержимого, включая команды [доверия DOCKER](https://docs.docker.com/engine/reference/commandline/trust/) и [Делегирование доверия](https://docs.docker.com/engine/security/trust/trust_delegation/), см. в разделе " [доверие содержимого в DOCKER][docker-content-trust] ". В этой статье мы затронули лишь ключевые моменты обширной темы доверия к содержимому, которая более подробно рассматривается в документации Docker.
 
 * Пример того, как применяется функция доверия к содержимому при создании и отправке образа Docker, см. в документации по [Azure Pipelines](/azure/devops/pipelines/build/content-trust).
 
