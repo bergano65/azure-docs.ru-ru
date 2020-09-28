@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 27926c687871180da78930be8e0968febcd77869
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: c8d68a17b3b991b88e02cf056dcb46da2debfa71
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91396320"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403200"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает веб-API. Конфигурация кода
 
@@ -181,7 +181,7 @@ ms.locfileid: "91396320"
 
 На следующем рисунке показаны различные возможности *Microsoft. Identity. Web* и их влияние на файл *Startup.CS* :
 
-:::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.png" alt-text="При создании веб-API можно выбрать вызов нисходящего API и реализаций кэша маркеров.":::
+:::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.svg" alt-text="Блок-схема, показывающая параметры конфигурации службы в загрузочном точке C S для вызова Web API и указания реализации кэша маркеров":::
 
 > [!NOTE]
 > Чтобы полностью понять эти примеры кода, ознакомьтесь с [основами ASP.NET Core](/aspnet/core/fundamentals), в частности со сведениями о [параметрах](/aspnet/core/fundamentals/configuration/options) и [внедрении зависимостей](/aspnet/core/fundamentals/dependency-injection).

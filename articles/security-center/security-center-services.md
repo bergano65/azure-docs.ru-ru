@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: cece53544bfc8287f6ef542575d92b05032991f0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f5be0b43de8265b2b337c024117ae8f424e4a3bc
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318047"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403499"
 ---
 # <a name="feature-coverage-for-machines"></a>Покрытие компонентов для компьютеров
 
@@ -42,12 +42,12 @@ ms.locfileid: "91318047"
 |[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Да|
 |[& отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Да|
 |Рекомендации и защита от угроз в контейнерах IaaS, размещенных в DOCKER|-|-|-|Да|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Да|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
 |Оценка ненастроек безопасности|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
 |[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
-|Оценка шифрования диска|✔</br>(для [поддерживаемых сценариев](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Free|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Free|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
+|Оценка шифрования диска|✔</br>(для [поддерживаемых сценариев](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Нет|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Нет|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Нет|
 
 
 ### <a name="linux-machines"></a>[**Компьютеры Linux**](#tab/features-linux)
@@ -66,12 +66,12 @@ ms.locfileid: "91318047"
 |[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Да|
 |[& отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Да|
 |Рекомендации и защита от угроз в контейнерах IaaS, размещенных в DOCKER|✔|✔|✔|Да|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Да|
-|Оценка ненастроек безопасности|✔|✔|✔|Azure: Бесплатная<br><br>Не в Azure: Да|
-|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Free|
-|Оценка шифрования диска|✔</br>(для [поддерживаемых сценариев](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Free|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Free|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
+|Оценка ненастроек безопасности|✔|✔|✔|Azure: нет<br><br>Не в Azure: Да|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Нет|
+|Оценка шифрования диска|✔</br>(для [поддерживаемых сценариев](../virtual-machines/windows/disk-encryption-windows.md#unsupported-scenarios))|✔|-|Нет|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Нет|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Нет|
 
 --- 
 

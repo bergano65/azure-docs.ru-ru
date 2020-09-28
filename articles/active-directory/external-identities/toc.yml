@@ -2,11 +2,14 @@
   href: index.yml
   items:
     - name: Обзор
+      expanded: true
       items:
         - name: Сравнение решений для внешних удостоверений
           href: compare-with-b2c.md
         - name: Что собой представляет доступ гостевых пользователей B2B
           href: what-is-b2b.md
+        - name: Что собой представляет Azure AD B2C?
+          href: 'https://docs.microsoft.com/azure/active-directory-b2c/overview'
     - name: Краткие руководства
       items:
         - name: Добавление гостевых пользователей на портале
@@ -15,15 +18,15 @@
           href: b2b-quickstart-invite-powershell.md
     - name: Учебники
       items:
-        - name: Массовое приглашение с помощью PowerShell
+        - name: Массовое приглашение гостевых пользователей через PowerShell
           href: bulk-invite-powershell.md
-        - name: Массовое приглашение с помощью портала
+        - name: Массовое приглашение гостевых пользователей через портал
           href: tutorial-bulk-invite.md
-        - name: Применение многофакторной проверки подлинности
+        - name: Применение многофакторной проверки подлинности для гостевых пользователей
           href: b2b-tutorial-require-mfa.md
     - name: Примеры
       items:
-        - name: Примеры для самостоятельной регистрации
+        - name: Примеры самостоятельной регистрации гостевых пользователей
           href: code-samples-self-service-sign-up.md
         - name: Примеры кода и сценариев Azure PowerShell
           href: code-samples.md
@@ -63,9 +66,9 @@
     - name: Практические руководства
       expanded: true
       items:
-        - name: Настройка внешнего общего доступа
+        - name: Настройка параметров внешнего взаимодействия
           href: delegate-invitations.md
-        - name: Приглашение пользователей B2B
+        - name: Приглашение гостевых пользователей
           items:
             - name: Добавление B2B-пользователей администраторами
               href: add-users-administrator.md
@@ -91,7 +94,7 @@
               href: direct-federation-adfs.md
         - name: Аутентификация с использованием одноразового секретного кода
           href: one-time-passcode.md
-        - name: Самостоятельная регистрация (предварительная версия)
+        - name: Самостоятельная регистрация гостевых пользователей (предварительная версия)
           items:
             - name: Добавление потока для самостоятельной регистрации пользователей
               href: self-service-sign-up-user-flow.md
@@ -103,7 +106,7 @@
               href: self-service-sign-up-add-api-connector.md
             - name: Добавление пользовательской системы утверждения
               href: self-service-sign-up-add-approvals.md
-        - name: Управление гостевыми учетными записями
+        - name: Управление учетными записями гостевых пользователей
           items:
             - name: Добавление в роль B2B-пользователя
               href: add-guest-to-role.md
@@ -113,7 +116,7 @@
               href: user-properties.md
             - name: "B2B для интегрированных приложений Azure\_AD"
               href: configure-saas-apps.md
-        - name: Управление доступом в гибридной организации
+        - name: Управление гостевым доступом в гибридной организации
           items:
             - name: Предоставление локальным пользователям доступа к облачным приложениям
               href: hybrid-on-premises-to-cloud.md

@@ -250,7 +250,7 @@
           href: control-kubeconfig-access.md
         - name: Защита трафика для групп pod с помощью политик сети
           href: use-network-policies.md
-        - name: Защита групп pod с помощью Политики Azure (предварительная версия)
+        - name: Защита групп pod с помощью Политики Azure
           href: use-pod-security-on-azure-policy.md
         - name: Использование политик безопасности pod (предварительная версия)
           href: use-pod-security-policies.md

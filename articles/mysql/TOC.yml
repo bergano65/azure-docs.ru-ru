@@ -273,6 +273,10 @@
             - name: Azure PowerShell
               href: howto-configure-server-parameters-using-powershell.md
               displayName: 'server parameters, powershell'
+        - name: Запуск и остановка сервера
+          items:
+            - name: Остановка и запуск сервера MySQL
+              href: how-to-stop-start-server.md
         - name: Автоматическое увеличение хранилища
           items:
             - name: Портал Azure

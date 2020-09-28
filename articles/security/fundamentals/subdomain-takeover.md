@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/23/2020
 ms.author: memildin
-ms.openlocfilehash: faa61dc351bebd3d2a85ad229036e5b9fba9256e
-ms.sourcegitcommit: 7f62a228b1eeab399d5a300ddb5305f09b80ee14
+ms.openlocfilehash: c0494fe39f8ae64ba65db4e3cd728069aa4a5052
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89514617"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403217"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
@@ -92,7 +92,7 @@ ms.locfileid: "89514617"
 | хранилище BLOB-объектов Azure        | microsoft.storage/storageaccounts           | Properties. первичных. BLOB           | `abc. blob.core.windows.net`    |
 | Azure CDN                 | microsoft.cdn/profiles/endpoints            | Свойства. имя узла                        | `abc.azureedge.net`             |
 | Общедоступные IP-адреса       | microsoft.network/publicipaddresses         | Properties. dnsSettings. FQDN                | `abc.EastUs.cloudapp.azure.com` |
-| Диспетчер трафика Azure     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
+| Azure Traffic Manager     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
 | Экземпляр контейнера Azure  | microsoft.containerinstance/containergroups | Properties. ipAddress. FQDN                  | `abc.EastUs.azurecontainer.io`  |
 | Cлужба управления Azure API      | microsoft.apimanagement/service             | Properties. Хостнамеконфигуратионс. имя_узла | `abc.azure-api.net`             |
 | Служба приложений Azure         | microsoft.web/sites                         | Properties. параметром DefaultHostName                 | `abc.azurewebsites.net`         |
@@ -117,14 +117,7 @@ ms.locfileid: "89514617"
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
-Существует две версии сценария, обе имеют одинаковые входные параметры и получают аналогичные выходные данные:
-
-|Сценарий  |Сведения  |
-|---------|---------|
-|**Get-DanglingDnsRecordsPsCore.ps1**    |Параллельный режим поддерживается только в PowerShell версии 7 и выше, иначе будет выполняться последовательный режим.|
-|**Get-DanglingDnsRecordsPsDesktop.ps1** |Поддерживается только в PowerShell версии ниже 6, так как этот сценарий использует [Рабочий процесс Windows](https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/overview).|
-
-Узнайте больше и скачайте сценарии PowerShell из GitHub: https://aka.ms/DanglingDNSDomains .
+Дополнительные сведения о скрипте PowerShell **Get-DanglingDnsRecords.ps1**и его загрузке с сайта GitHub: https://aka.ms/DanglingDNSDomains .
 
 ## <a name="remediate-dangling-dns-entries"></a>Исправление висячих записей DNS 
 

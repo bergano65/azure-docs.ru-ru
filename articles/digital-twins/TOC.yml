@@ -1,4 +1,4 @@
-- name: Azure Digital Twins
+- name: Документация по Azure Digital Twins
   href: index.yml
 - name: Обзор
   items:
@@ -7,6 +7,7 @@
     - name: Отличия от предыдущего выпуска
       href: overview-differences.md
 - name: Краткое руководство
+  expanded: true
   items:
     - name: Изучение примера сценария
       href: quickstart-adt-explorer.md
@@ -162,6 +163,8 @@
               href: 'https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1'
             - name: Справочник по пакету SDK для JavaScript
               href: 'https://docs.microsoft.com/javascript/api/@azure/digital-twins/?view=azure-node-latest&preserve-view=true'
+            - name: Пакет SDK для Java (Maven)
+              href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar'
     - name: CLI Digital Twins
       items:
         - name: Справочник по CLI Digital Twins
@@ -222,31 +225,3 @@
           href: 'https://azure.microsoft.com/pricing/details/digital-twins'
         - name: Регионы и доступность
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
-- name: Сопутствующие материалы
-  items:
-    - name: Решения
-      items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-suite
-        - name: IoT Central
-          href: /azure/iot-central/core/overview-iot-central
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: IoT Plug and Play
-          href: /azure/iot-pnp
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Maps
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
-        - name: Аналитика временных рядов
-          href: /azure/time-series-insights
-    - name: Решения с Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств Интернета вещей
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks

@@ -474,7 +474,7 @@
       href: error-codes.md
     - name: Приложение расширений
       href: extensions-app.md
-    - name: Заметки о выпуске IEF
+    - name: Заметки о выпуске пользовательской политики (IEF)
       href: custom-policy-developer-notes.md
     - name: Операции Microsoft Graph API
       href: microsoft-graph-operations.md

@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 14846761535a77f28adbd0147d244817cb799d86
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: f9c01e8e31e78c277a7a3ec1e5d8d0c32b58f8bc
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935846"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403659"
 ---
 # <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью режима синтаксического анализа delimitedText и индексаторов BLOB-объектов в Azure Когнитивный поиск
 
@@ -49,7 +49,7 @@ id, datePublished, tags
 "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } } 
 ```
 
-Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Например:
+Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример:
 
 ```http
 "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextDelimiter" : "|" } }
@@ -97,4 +97,4 @@ id, datePublished, tags
 ```
 
 ## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
-Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/).
+Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/). Если вам нужна помощь с использованием существующего компонента, опубликуйте свой вопрос на [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).

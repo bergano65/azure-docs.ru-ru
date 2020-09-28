@@ -15,19 +15,18 @@
 - name: Учебники
   expanded: true
   items:
-    - name: "Python (день\_1)"
+    - name: "Начало работы с Python. День\_1"
       expanded: true
       items:
         - name: 1. Настройка локального компьютера
           href: tutorial-1st-experiment-sdk-setup-local.md
-        - name: '2. Здравствуй, мир'
+        - name: 2. "Hello world"
           href: tutorial-1st-experiment-hello-world.md
         - name: 3. Обучение модели
           href: tutorial-1st-experiment-sdk-train.md
         - name: 4. Предоставление своих данных
           href: tutorial-1st-experiment-bring-data.md
     - name: Jupyter Notebook
-      expanded: true
       items:
         - name: Классификация изображений (данные MNIST)
           items:
@@ -331,8 +330,13 @@
               displayName: parameter
               href: how-to-tune-hyperparameters.md
         - name: Работа с MLflow
-          displayName: 'log, monitor, deploy, metrics, Databricks, model registry, register'
-          href: how-to-use-mlflow.md
+          items:
+            - name: Отслеживание экспериментов с помощью потока ML
+              displayName: 'log, monitor, deploy, metrics,  model registry, register'
+              href: how-to-use-mlflow.md
+            - name: Отслеживание выполнений Azure Databricks с использованием MLflow
+              displayName: 'log, monitor, deploy, metrics, databricks'
+              href: how-to-use-mlflow-azure-databricks.md
         - name: Scikit-learn
           href: how-to-train-scikit-learn.md
         - name: TensorFlow
@@ -552,6 +556,9 @@
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md
+    - name: Курируемые среды
+      displayName: 'environments, curated environments'
+      href: resource-curated-environments.md
 - name: Ресурсы
   items:
     - name: Заметки о выпуске
@@ -578,6 +585,3 @@
     - name: Функции специальных возможностей в конструкторе
       displayName: 'accessibility, designer, visual interface, screen reader, keyboard shortcuts'
       href: designer-accessibility.md
-    - name: Курируемые среды
-      displayName: 'environments, curated environments'
-      href: resource-curated-environments.md

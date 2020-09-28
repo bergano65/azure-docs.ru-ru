@@ -4,7 +4,7 @@
   items:
     - name: Общие сведения об Azure NetApp Files
       href: azure-netapp-files-introduction.md
-    - name: Общие сведения об иерархии хранилища
+    - name: Иерархия хранилища Azure NetApp Files
       href: azure-netapp-files-understand-storage-hierarchy.md
 - name: Краткие руководства
   expanded: true
@@ -61,6 +61,8 @@
       href: azure-netapp-files-create-netapp-account.md
     - name: Настройка пула емкости
       href: azure-netapp-files-set-up-capacity-pool.md
+    - name: Управление пулом емкости качества обслуживания вручную
+      href: manage-manual-qos-capacity-pool.md
     - name: Делегирование подсети в Azure NetApp Files
       href: azure-netapp-files-delegate-subnet.md
     - name: Создание тома NFS и управление им
@@ -109,8 +111,12 @@
           href: azure-netapp-files-troubleshoot-resource-provider-errors.md
     - name: Устранение неполадок
       items:
+        - name: Устранение неполадок с пулами емкости
+          href: troubleshoot-capacity-pools.md
         - name: Устранение неполадок с репликацией между регионами
           href: troubleshoot-cross-region-replication.md
+        - name: Устранение неполадок с политиками моментальных снимков
+          href: troubleshoot-snapshot-policies.md
 - name: Справочник
   items:
     - name: REST

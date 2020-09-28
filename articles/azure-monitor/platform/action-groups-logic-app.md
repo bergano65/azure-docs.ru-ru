@@ -6,12 +6,12 @@ ms.author: dukek
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.subservice: alerts
-ms.openlocfilehash: f6d5cbfc8d781e96a4d348f31f4a5d175ebd5a3d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f76d28018fdf55314593dabc44ef1e9a1dab9494
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321893"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403132"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -108,7 +108,7 @@ ms.locfileid: "87321893"
 
     ![Действия Microsoft Teams](media/action-groups-logic-app/microsoft-teams-actions.png "Действия Microsoft Teams")
 
-12. Настройте действие Microsoft Teams. **Конструктор Logic Apps** предлагает пройти проверку подлинности для учетной записи Office 365. Выберите значения параметров **Идентификатор команды** и **Идентификатор канала** для отправки сообщения.
+12. Настройте действие Microsoft Teams. **Конструктор Logic Apps** предлагает выполнить аутентификацию в рабочей или учебной учетной записи. Выберите значения параметров **Идентификатор команды** и **Идентификатор канала** для отправки сообщения.
 
 13. Настройте сообщение, используя сочетание статического текста и ссылок на объект \<fields\> в динамическом содержимом. Скопируйте следующий текст и вставьте его в поле **Сообщение**:
 

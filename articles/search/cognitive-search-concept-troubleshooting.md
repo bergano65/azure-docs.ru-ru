@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 8347ca5a33790d0b35176be47a0fa4811a19e3f1
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 1ab366cddbabf7e6d574189892e779ab49f6fad8
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935472"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403387"
 ---
 # <a name="tips-for-ai-enrichment-in-azure-cognitive-search"></a>Советы по расширению искусственного интеллекта в Azure Когнитивный поиск
 
@@ -110,12 +110,11 @@ https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage
 ## <a name="tip-8-increase-indexing-throughput"></a>Совет 8. увеличение пропускной способности индексирования
 
 При [параллельном индексировании](search-howto-large-index.md) можно разместить данные в нескольких контейнерах или виртуальных папках в одном и том же контейнере. Затем можно создать несколько пар источника данных и индексатора. Все индексаторы могут использовать один и тот же набор навыков и выполнять запись в один и тот же целевой индекс поиска. Поэтому приложению поиска не нужно знать об этом секционировании.
-Дополнительные сведения см. в руководстве по [индексированию больших наборов данных](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
+
 + [Краткое руководство. создание конвейера обогащения искусственного интеллекта на портале](cognitive-search-quickstart-blob.md)
 + [Учебник. изучение API-интерфейсов для обогащения искусственного интеллекта](cognitive-search-tutorial-blob.md)
 + [Specifying data source credentials](search-howto-indexing-azure-blob-storage.md#how-to-specify-credentials) (Указание учетных данных источника данных)
-+ [Indexing Large Datasets](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets) (Индексирование больших наборов данных)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [How to map enriched fields to an index](cognitive-search-output-field-mapping.md) (Как сопоставить обогащенные поля с индексом)

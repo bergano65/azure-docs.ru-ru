@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 08/23/2019
 ms.author: genli
 ms.custom: has-adal-ref
-ms.openlocfilehash: 23523a3618ad31e34a81152e48d4ee0f606e5aac
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ac1105f1fce2ac04abfa8a809161580104952917
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088537"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91404907"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "87088537"
 
 ## <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, остановите и освободите виртуальную машину, а затем перезапустите ее. Эта операция заставляет виртуальную машину извлекать файл BEK из Azure Key Vault, а затем помещать его на зашифрованный диск. 
+Чтобы устранить эту проблему, закройте и отменяйте выделение виртуальной машины, а затем запустите ее. Эта операция заставляет виртуальную машину извлекать файл BEK из Azure Key Vault, а затем помещать его на зашифрованный диск. 
 
 Если с помощью этого метода не удается устранить проблему, выполните следующие действия для восстановления BEK-файла вручную.
 

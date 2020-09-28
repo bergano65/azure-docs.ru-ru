@@ -88,6 +88,8 @@
       href: firewall-diagnostics.md
     - name: Журналы Azure Monitor
       href: log-analytics-samples.md
+    - name: Книга Брандмауэра Azure
+      href: firewall-workbook.md
 - name: Справочник
   items:
     - name: Azure CLI

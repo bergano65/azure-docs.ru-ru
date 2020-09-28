@@ -40,6 +40,8 @@
       href: custom-event-to-eventhub.md
     - name: События Реестра контейнеров
       href: ../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - name: Обработка событий Служб коммуникации Azure
+      href: ../communication-services/quickstarts/telephony-sms/handle-sms-events.md?toc=%2fazure%2fevent-grid%2ftoc.json
 - name: Учебники
   items:
     - name: Сообщение электронной почты при изменении виртуальной машины
@@ -112,6 +114,8 @@
               href: event-schema-app-service.md
             - name: хранилище BLOB-объектов Azure
               href: event-schema-blob-storage.md
+            - name: Службы коммуникации Azure
+              href: event-schema-communication-services.md
             - name: Реестр контейнеров Azure
               href: event-schema-container-registry.md
             - name: Центры событий Azure
@@ -214,7 +218,7 @@
       href: auth0-how-to.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
-    - name: Обработка недоставленных сообщений и повторные попытки
+    - name: Задание расположения для недоставленных сообщений и политики повтора
       href: manage-event-delivery.md
     - name: События фильтра
       href: how-to-filter-events.md

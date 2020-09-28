@@ -11,13 +11,13 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 09/15/2020
-ms.openlocfilehash: ff56ef55066fd0f56b5b8dc7507bfb63b8b8baa0
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.date: 09/28/2020
+ms.openlocfilehash: 4ef569864b27eff7f57aa2b0a922034fa28f587c
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090607"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91405247"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -154,6 +154,10 @@ ms.locfileid: "90090607"
    * Если выбрать компонент **Звлечь Сеобалд Software** , то можно установить [звлечь — это](https://theobald-software.com/en/xtract-is/) набор соединителей для систем SAP (ERP, s/4HANA, BW) из сеобалд Software на Azure-SSIS IR. Для этого перетащите & Отгрузите или отправьте файл лицензии продукта, который вы приобрели заранее, в поле ввода **файла лицензии** . Текущая интегрированная версия — **6.1.1.3**.
 
    * Если вы выбрали компонент **службы интеграции аекорсофт** , то можете установить набор соединителей [службы интеграции](https://www.aecorsoft.com/en/products/integrationservice) для систем SAP и Salesforce из аекорсофт на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **3.0.00**.
+
+   * При выборе компонента **CDATA "Стандартный пакет служб SSIS** " можно установить набор [стандартных пакетов служб SSIS](https://www.cdata.com/kb/entries/ssis-adf-packages.rst#standard) для большинства популярных компонентов из раздела CDATA, например соединители Microsoft SharePoint, на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **19,7354**.
+
+   * Если выбрать компонент **расширенного пакета служб SSIS CDATA** , можно установить [Расширенный набор пакетов служб SSIS](https://www.cdata.com/kb/entries/ssis-adf-packages.rst#extended) для всех компонентов из раздела CDATA, например Microsoft Dynamics 365 Business Central Connectors и другие компоненты в **стандартном пакете служб SSIS**, на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **19,7354**. Из-за большого размера, чтобы избежать тайм-аута установки, убедитесь, что в Azure-SSIS IR имеется по крайней мере 4 ядра ЦП на узел.
 
 Добавленные экспресс-установки будут отображаться на странице **Дополнительные параметры** . Чтобы удалить их, установите соответствующие флажки, а затем выберите **Удалить**.
 
@@ -343,7 +347,7 @@ ms.locfileid: "90090607"
 
 1. После завершения стандартной пользовательской установки и запуска Azure-SSIS IR можно найти все журналы настраиваемой установки в папке *Main. cmd. log* контейнера. Они включают стандартные выходные данные файла *Main. cmd* и другие журналы выполнения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка выпуска Enterprise Azure-SSIS IR](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных компонентов для Azure-SSIS IR](how-to-develop-azure-ssis-ir-licensed-components.md)

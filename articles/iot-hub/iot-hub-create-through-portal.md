@@ -9,12 +9,12 @@ ms.date: 09/06/2018
 ms.author: robinsh
 ms.custom:
 - 'Role: Cloud Development'
-ms.openlocfilehash: 8f7555129f5f514d1954ac56cf87872a85ca91d0
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c7414728ab65258f73f80ee7fb303c7e6b961052
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326738"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91404966"
 ---
 # <a name="create-an-iot-hub-using-the-azure-portal"></a>Создание Центра Интернета вещей с помощью портала Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "87326738"
 
 Для выполнения шагов в этом руководстве вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
+## <a name="create-an-iot-hub"></a>Создание центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
@@ -78,7 +78,7 @@ ms.locfileid: "87326738"
 
 ![Снимок экрана добавления нового маршрута](./media/iot-hub-create-through-portal/iot-hub-add-route-storage-endpoint.png)
 
-Укажите имя центра. Имя должно быть уникальным в пределах списка маршрутов для этого центра. 
+Назовите маршрут. Имя маршрута должно быть уникальным в списке маршрутов для этого центра. 
 
 Для параметра **Конечная точка** можно выбрать существующую конечную точку из раскрывающегося списка или добавить новую. В этом примере учетная запись хранения и контейнер уже доступны. Чтобы добавить их в качестве конечной точки, нажмите кнопку **+ Добавить** рядом с раскрывающимся списком конечной точки и выберите **Хранилище BLOB-объектов**. На следующем экране показано, где заданы учетная запись хранения и контейнер.
 

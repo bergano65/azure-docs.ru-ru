@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/28/2020
+ms.date: 09/28/2020
 ms.author: jingwang
-ms.openlocfilehash: 2a0093ebb6e3214553cf5603151831d6ae53d862
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 96603de7014419b142cc35714b891f9e4b15ec99
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91332055"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91405092"
 ---
 # <a name="copy-data-from-the-hdfs-server-by-using-azure-data-factory"></a>Копирование данных с сервера HDFS с помощью фабрики данных Azure
 
@@ -279,6 +279,34 @@ ms.locfileid: "91332055"
 * Вариант 1. [Присоединение компьютера с локальной средой выполнения интеграции в области Kerberos](#kerberos-join-realm)
 * Вариант 2. [Включение взаимного доверия между доменом Windows и областью Kerberos](#kerberos-mutual-trust).
 
+Для любого из этих вариантов убедитесь, что вы включаете для кластера Hadoop поддержку:
+
+1. Создайте субъект HTTP и keytab для HDFS.
+
+    > [!IMPORTANT]
+    > Участник HTTP Kerberos должен начинаться с "**http/**" в соответствии со спецификацией Kerberos HTTP SPNEGO.
+
+    ```bash
+    Kadmin> addprinc -randkey HTTP/<namenode hostname>@<REALM.COM>
+    Kadmin> ktadd -k /etc/security/keytab/spnego.service.keytab HTTP/<namenode hostname>@<REALM.COM>
+    ```
+
+2. Параметры конфигурации HDFS: добавьте следующие три свойства в `hdfs-site.xml` .
+    ```xml
+    <property>
+        <name>dfs.webhdfs.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>dfs.web.authentication.kerberos.principal</name>
+        <value>HTTP/_HOST@<REALM.COM></value>
+    </property>
+    <property>
+        <name>dfs.web.authentication.kerberos.keytab</name>
+        <value>/etc/security/keytab/spnego.service.keytab</value>
+    </property>
+    ```
+
 ### <a name="option-1-join-a-self-hosted-integration-runtime-machine-in-the-kerberos-realm"></a><a name="kerberos-join-realm"></a>Вариант 1. Присоединение компьютера с локальной средой выполнения интеграции в области Kerberos
 
 #### <a name="requirements"></a>Требования
@@ -287,13 +315,24 @@ ms.locfileid: "91332055"
 
 #### <a name="how-to-configure"></a>Порядок настройки
 
+**На сервере KDC сделайте следующее:**
+
+Создайте субъект, который будет использоваться фабрикой данных Azure, и укажите пароль.
+
+> [!IMPORTANT]
+> Имя пользователя не должно содержать имя узла.
+
+```bash
+Kadmin> addprinc <username>@<REALM.COM>
+```
+
 **На компьютере, где размещена локальная среда выполнения интеграции:**
 
 1.  Запустите служебную программу Ksetup, чтобы настроить сервер центра распространения ключей (KDC) и область Kerberos.
 
     Компьютер должен быть настроен в качестве члена Рабочей группы, так как область Kerberos отличается от домена Windows. Эту конфигурацию можно достичь, задав область Kerberos и добавив сервер KDC, выполнив следующие команды. Замените *realm.com* именем своей области.
 
-    ```console
+    ```cmd
     C:> Ksetup /setdomain REALM.COM
     C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
     ```
@@ -302,7 +341,7 @@ ms.locfileid: "91332055"
 
 2.  Проверьте конфигурацию с помощью `Ksetup` команды. Результат должен выглядеть примерно так:
 
-    ```output
+    ```cmd
     C:> Ksetup
     default realm = REALM.COM (external)
     REALM.com:
@@ -392,7 +431,7 @@ ms.locfileid: "91332055"
 
 3.  Выберите алгоритм шифрования, используемый в Kerberos.
 
-    а. Выберите **Диспетчер сервера**  >  **Групповая политика**  >  **домен**управления  >  **Групповая политика**  >  **политики по умолчанию или активная политика домена**, а затем щелкните **изменить**.
+    a. Выберите **Диспетчер сервера**  >  **Групповая политика**  >  **домен**управления  >  **Групповая политика**  >  **политики по умолчанию или активная политика домена**, а затем щелкните **изменить**.
 
     b. На панели **редактор "Управление групповыми политиками"** выберите **Конфигурация компьютера**  >  **политики**параметры  >  **Windows настройки**  >  **безопасности**  >  **Локальные политики**  >  **Параметры безопасности**, а затем настройте **безопасность сети: Настройка типов шифрования, разрешенных для Kerberos**.
 
@@ -408,7 +447,7 @@ ms.locfileid: "91332055"
 
 4.  Создайте сопоставление между учетной записью домена и участником Kerberos, чтобы можно было использовать субъект Kerberos в домене Windows.
 
-    а. Выберите **Администрирование**  >  **Active Directory пользователи и компьютеры**.
+    a. Выберите **Администрирование**  >  **Active Directory пользователи и компьютеры**.
 
     b. Настройте дополнительные функции, выбрав **Вид** > **Дополнительные параметры**.
 

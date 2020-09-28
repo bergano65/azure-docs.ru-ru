@@ -16,6 +16,8 @@
       href: connectivity.md
     - name: Конфигурация хранилища
       href: storage-configuration.md
+    - name: Руководство по определению размера
+      href: sizing-guidance.md
 - name: Практические руководства
   items:
     - name: Средства установки
@@ -47,7 +49,7 @@
         - name: Создание контроллера данных (azdata)
           href: create-data-controller-using-azdata.md
         - name: Создание контроллера (Kubernetes)
-          href: create-data-controller-using-k8s-native-tools.md
+          href: create-data-controller-using-kubernetes-native-tools.md
     - name: "Распространенные возможности в службах данных с поддержкой Azure\_Arc"
       items:
         - name: Мониторинг с помощью панелей мониторинга (Azure Data Studio)
@@ -90,6 +92,8 @@
           href: create-postgresql-hyperscale-server-group.md
         - name: Создание группы серверов с Гипермасштабированием Postgres (Azure Data Studio)
           href: create-postgresql-hyperscale-server-group-azure-data-studio.md
+        - name: "Создание группы серверов с Гипермасштабированием Postgres\_— нативные средства Kubernetes"
+          href: create-postgresql-hyperscale-server-group-kubernetes-native-tools.md
         - name: Подключение
           href: get-connection-endpoints-and-connection-strings-postgres-hyperscale.md
     - name: Основные понятия
@@ -148,6 +152,8 @@
           href: create-sql-managed-instance.md
         - name: Создание Управляемого экземпляра SQL (Azure Data Studio)
           href: create-sql-managed-instance-azure-data-studio.md
+        - name: Создание с помощью средств Kubernetes
+          href: create-sql-managed-instance-using-kubernetes-native-tools.md
         - name: Подключение
           href: connect-managed-instance.md
     - name: Практическое руководство

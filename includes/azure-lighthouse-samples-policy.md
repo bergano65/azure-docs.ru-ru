@@ -5,15 +5,15 @@ services: lighthouse
 author: JnHs
 ms.service: lighthouse
 ms.topic: include
-ms.date: 07/07/2020
+ms.date: 09/24/2020
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 837e82131b17fa02fca87da067eac6d77903b31d
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: a9c9b5081232988cb4ab80bfcbb9f2d92d1d025f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86111676"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336584"
 ---
 В этих примерах показано, как использовать Политику Azure с подписками, подключенными к Azure Lighthouse.
 
@@ -21,6 +21,7 @@ ms.locfileid: "86111676"
 |---------|---------|
 | [policy-add-or-replace-tag](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-add-or-replace-tag) | Назначение политики, которая отвечает за добавление или удаление тега (с помощью действия изменения) в делегированной подписке. Дополнительные сведения см. в статье о [развертывании политики, которую можно исправить в рамках делегированной подписки](../articles/lighthouse/how-to/deploy-policy-remediation.md). |
 | [policy-audit-delegation](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-audit-delegation) | Назначение политики, которая отвечает за аудит для назначений делегирования. |
+| [policy-delegate-management-groups](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-delegate-management-groups) | Отвечает за назначение политики для подтверждения того, что подписки в группе управления делегированы управляющему клиенту. Если это не так, создается соответствующее назначение.
 | [policy-enforce-keyvault-monitoring](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-enforce-keyvault-monitoring) | Назначение политики для диагностики ресурсов Azure Key Vault в делегированных подписках (с использованием эффекта deployIfNotExists). Дополнительные сведения см. в статье о [развертывании политики, которую можно исправить в рамках делегированной подписки](../articles/lighthouse/how-to/deploy-policy-remediation.md). |
 | [policy-enforce-sub-monitoring](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-enforce-sub-monitoring) | Назначение нескольких политик для диагностики делегированной подписки, а также подключение всех виртуальных машин Windows и Linux к рабочей области Log Analytics, созданной с помощью политики. Дополнительные сведения см. в статье о [развертывании политики, которую можно исправить в рамках делегированной подписки](../articles/lighthouse/how-to/deploy-policy-remediation.md). |
 | [policy-initiative](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-initiative) | Применение инициативы (нескольких связанных определений политик) к делегированной подписке. |

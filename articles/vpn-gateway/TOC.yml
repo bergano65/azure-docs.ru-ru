@@ -138,8 +138,6 @@
               href: point-to-site-how-to-vpn-client-install-azure-cert.md
             - name: Создание и установка файлов конфигурации VPN-клиента
               href: point-to-site-vpn-client-configuration-azure-cert.md
-            - name: Управление сеансом
-              href: p2s-session-management.md
         - name: Проверка подлинности RADIUS
           items:
             - name: "Настройка VPN-подключений \"точка\_— сеть\""
@@ -170,6 +168,8 @@
               href: vpn-gateway-howto-openvpn-clients.md
             - name: Переход с протокола SSTP на OpenVPN или IKEv2
               href: ikev2-openvpn-from-sstp.md
+        - name: Настройка управления сеансами P2S
+          href: p2s-session-management.md
         - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
           href: vpn-gateway-point-to-site-gateway-public-ca.md
         - name: Настройка туннеля Always On VPN для устройства

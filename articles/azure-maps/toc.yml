@@ -1,4 +1,4 @@
-- name: Документация по службе Azure Maps
+- name: Документация по Azure Maps
   href: index.yml
 - name: Обзор
   items:

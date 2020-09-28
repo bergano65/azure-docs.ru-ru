@@ -9,6 +9,8 @@
   items:
     - name: Создание настраиваемого поставщика ресурсов
       href: create-custom-provider.md
+    - name: "Создание настраиваемого поставщика ресурсов\_— Azure PowerShell"
+      href: create-custom-provider-quickstart-powershell.md
 - name: Учебники
   items:
     - name: Начало работы с настраиваемыми поставщиками
@@ -45,7 +47,9 @@
       href: /rest/api/customproviders/
     - name: Azure CLI
       href: /cli/azure/ext/custom-providers/custom-providers/
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Azure PowerShell
+      href: /powershell/module/Az.CustomProviders/
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md
 - name: Ресурсы

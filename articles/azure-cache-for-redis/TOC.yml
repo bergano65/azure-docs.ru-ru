@@ -70,10 +70,14 @@
           href: cache-how-to-premium-clustering.md
         - name: Сохранение кэша с помощью функции сохраняемости данных Redis
           href: cache-how-to-premium-persistence.md
+        - name: Добавление дополнительных реплик
+          href: cache-how-to-multi-replicas.md
         - name: Защита кэша с помощью виртуальной сети
           href: cache-how-to-premium-vnet.md
         - name: Частное подключение к кэшу
           href: cache-private-link.md
+        - name: Включение избыточности зоны
+          href: cache-how-to-zone-redundancy.md
         - name: Настройка георепликации
           href: cache-how-to-geo-replication.md
         - name: Экономия средств за счет зарезервированной емкости

@@ -277,19 +277,19 @@
     - name: Получение платежей
       items:
         - name: Получение платежей
-          href: partner-center-portal/get-paid.md
+          href: /partner-center/marketplace-get-paid?context=/azure/marketplace/context/context
         - name: Настройка счета для выплат и налоговых форм
-          href: partner-center-portal/set-up-your-payout-account-tax-forms.md
-        - name: 'Пороговые значения, методы и сроки оплаты'
-          href: partner-center-portal/payment-thresholds-methods-timeframes.md
-        - name: Общие сведения о сводках по выплатам
-          href: partner-center-portal/payout-summary-overview.md
-        - name: Сводки по выплатам
-          href: partner-center-portal/payout-summary.md
+          href: /partner-center/set-up-your-payout-account?context=/azure/marketplace/context/context
+        - name: Пороги и сроки оплаты
+          href: /partner-center/payment-thresholds-methods-timeframes?context=/azure/marketplace/context/context
+        - name: Выписки о выплатах
+          href: /partner-center/payout-statement?context=/azure/marketplace/context/context
         - name: Сведения о политике выплат
-          href: partner-center-portal/payout-policy-details.md
+          href: /partner-center/payout-policy-details?context=/azure/marketplace/context/context
         - name: Сведения о налогах
-          href: partner-center-portal/tax-details-paid-transactions.md
+          href: /partner-center/tax-details-marketplace?context=/azure/marketplace/context/context
+        - name: Часто задаваемые вопросы о выплатах
+          href: /partner-center/payout-faq?context=/azure/marketplace/context/context
     - name: Справочные материалы по API-интерфейсам Портала Cloud Partner
       items:
         - name: Обзор

@@ -10,6 +10,8 @@
       href: event-hubs-capture-overview.md
     - name: Выделенные Центры событий
       href: event-hubs-dedicated-overview.md
+    - name: Реестр схем Azure в Центрах событий (предварительная версия)
+      href: schema-registry-overview.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -125,6 +127,8 @@
       maintainContext: true
 - name: Практические руководства
   items:
+    - name: Создание реестра схем
+      href: create-schema-registry.md
     - name: Переместить
       items:
         - name: Перемещение пространства имен в другой регион
@@ -219,6 +223,8 @@
           href: troubleshoot-authentication-authorization.md
         - name: Руководство по устранению неполадок с Kafka для Центров событий
           href: apache-kafka-troubleshooting-guide.md
+        - name: EventHubsException
+          href: exceptions-dotnet.md
         - name: Исключения .NET
           href: event-hubs-messaging-exceptions.md
         - name: Исключения Resource Manager

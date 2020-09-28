@@ -40,6 +40,10 @@
           href: costs/understand-work-scopes.md
         - name: Параметры группирования и фильтрации
           href: costs/group-filter.md
+        - name: Планирование затрат и управление ими
+          href: understand/plan-manage-costs.md
+        - name: Предотвращение непредвиденных расходов
+          href: understand/analyze-unexpected-charges.md
         - name: Автоматизация управления затратами
           href: costs/manage-automation.md
         - name: Управление затратами для партнеров
@@ -114,6 +118,8 @@
           href: understand/mca-overview.md
         - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
           href: understand/mpa-overview.md
+        - name: Сведения о передаче подписок
+          href: understand/subscription-transfer.md
         - name: Передача подписок между партнерами (предварительная версия)
           href: manage/azure-plan-subscription-transfer-partners.md
 - name: Практические руководства
@@ -124,7 +130,7 @@
           items:
             - name: Задачи администратора учетной записи
               href: manage/account-admin-tasks.md
-            - name: Изменение профиля
+            - name: Изменение контактной информации для выставления счетов
               href: manage/change-azure-account-profile.md
             - name: Решение проблемы просроченных платежей
               href: manage/resolve-past-due-balance.md
@@ -246,8 +252,6 @@
               href: manage/upgrade-azure-subscription.md
     - name: Выполнение основных задач управления затратами
       items:
-        - name: Предотвращение непредвиденных расходов
-          href: manage/getting-started.md
         - name: Расчет цены
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Выполнение распространенных задач с помощью анализа затрат

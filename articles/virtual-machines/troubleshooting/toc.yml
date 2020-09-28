@@ -115,6 +115,8 @@
           href: windows-stop-error-bad-system-config-info.md
         - name: 'STOP-ошибка Windows "Status No Memory" (Состояние: недостаточно памяти)'
           href: troubleshoot-windows-stop-error.md
+        - name: 'Ошибка, вызывающая прекращение работы Windows: системный процесс завершен'
+          href: windows-stop-error-system-process-terminated.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP

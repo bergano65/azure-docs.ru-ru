@@ -4,7 +4,7 @@
       href: oracle-overview.md
     - name: Решения для виртуальных машин Azure
       href: oracle-vm-solutions.md
-    - name: Что представляет собой Oracle WebLogic Server в Azure?
+    - name: Что такое решения для запуска Oracle WebLogic Server в Виртуальных машинах Azure?
       href: oracle-weblogic.md
     - name: Решения с использованием OCI
       href: oracle-oci-overview.md

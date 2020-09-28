@@ -18,8 +18,10 @@
       href: add-application-portal-configure.md
     - name: Назначение пользователей приложению
       href: add-application-portal-assign-users.md
-    - name: Настройка единого входа
+    - name: Настройка единого входа на основе SAML
       href: add-application-portal-setup-sso.md
+    - name: Настройка единого входа на основе OIDC
+      href: add-application-portal-setup-oidc-sso.md
     - name: Удаление приложения
       href: delete-application-portal.md
 - name: Учебники

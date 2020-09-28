@@ -197,6 +197,8 @@
       items:
         - name: Настройка или изменение политик
           href: set-edit-policies.md
+        - name: Политики отладки
+          href: api-management-debug-policies.md
         - name: Выражения политики
           href: api-management-policy-expressions.md
         - name: Настраиваемое кэширование
@@ -221,6 +223,8 @@
           href: api-management-cross-domain-policies.md
         - name: Политики преобразования
           href: api-management-transformation-policies.md
+        - name: Политики интеграции Distributed Application Runtime (Dapr)
+          href: api-management-dapr-policies.md
     - name: Управление в производственной среде
       items:
         - name: Экспорт интерфейсов API в Power Platform

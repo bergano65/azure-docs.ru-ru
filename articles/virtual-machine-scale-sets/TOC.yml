@@ -214,6 +214,9 @@
         - name: Квоты на виртуальные ЦП
           href: ../virtual-machines/windows/quotas.md
           maintainContext: true
+    - name: Вызовы PUT для операций создания или обновления
+      href: ../virtual-machines/put-calls-create-or-update.md
+      maintainContext: true
     - name: Вопросы и ответы о масштабируемых наборах
       href: virtual-machine-scale-sets-faq.md
 - name: Инструкции
@@ -274,6 +277,8 @@
             - name: Использование управляемых клиентом ключей
               displayName: 'SSE, CMK, encrypt'
               href: ../virtual-machines/image-version-encryption.md
+            - name: Регистрация приложения для совместного использования
+              href: share-images-across-tenants.md
     - name: Создание шаблона
       items:
         - name: Сведения о шаблонах масштабируемых наборов
@@ -326,6 +331,15 @@
           href: virtual-machine-scale-sets-placement-groups.md
         - name: Преобразование шаблона масштабируемого набора для использования управляемого диска
           href: virtual-machine-scale-sets-convert-template-to-md.md
+        - name: Использование выделенных узлов (предварительная версия)
+          href: ../virtual-machines/dedicated-hosts.md
+          items:
+            - name: CLI
+              href: ../virtual-machines/linux/dedicated-hosts-cli.md
+            - name: PowerShell
+              href: ../virtual-machines/windows/dedicated-hosts-powershell.md
+            - name: Портал
+              href: ../virtual-machines/dedicated-hosts-portal.md
         - name: Использование точечного экземпляра
           href: use-spot.md
     - name: Управление
@@ -358,18 +372,6 @@
           href: virtual-machine-scale-sets-scale-in-policy.md
         - name: Уведомления о прерывании работы при удалении
           href: virtual-machine-scale-sets-terminate-notification.md
-        - name: Общедоступные коллекции образов
-          items:
-            - name: Обзор
-              href: shared-image-galleries.md
-            - name: CLI
-              href: shared-images-cli.md
-            - name: PowerShell
-              href: shared-images-powershell.md
-            - name: Совместное использование образов в клиентах
-              href: share-images-across-tenants.md
-            - name: Устранение неполадок с общими образами
-              href: troubleshooting-shared-images.md
         - name: Создание группы размещения близкого взаимодействия
           href: proximity-placement-groups.md
         - name: Вертикальное масштабирование в масштабируемом наборе

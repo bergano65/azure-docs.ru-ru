@@ -81,12 +81,16 @@
       items:
         - name: Настройка шаблона устройства
           href: howto-set-up-template.md
+        - name: Использование свойств
+          href: howto-use-properties.md
         - name: "Подготовка и подключение пакета средств разработки Azure\_Sphere"
           href: howto-connect-sphere.md
         - name: Подготовка и подключение устройства RuuviTag
           href: howto-connect-ruuvi.md
         - name: Подготовка и подключение Rigado Cascade 500
           href: howto-connect-rigado-cascade-500.md
+        - name: Подключение устройств с использованием X.509
+          href: how-to-connect-devices-x509.md
         - name: Подключение других облаков Интернета вещей
           href: howto-build-iotc-device-bridge.md
     - name: Сохранение доступа

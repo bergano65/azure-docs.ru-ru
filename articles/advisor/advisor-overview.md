@@ -2,13 +2,13 @@
 title: Общие сведения об Azure Advisor
 description: Использование Azure Advisor для оптимизации развернутых служб Azure.
 ms.topic: article
-ms.date: 02/01/2019
-ms.openlocfilehash: 27e49fa28e7b02b873ca145d514920784689b407
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.date: 09/27/2020
+ms.openlocfilehash: 12e56bf44a29a32b2149bca14f7c99f319c9c4ea
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88654027"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91405213"
 ---
 # <a name="introduction-to-azure-advisor"></a>Общие сведения об Azure Advisor
 
@@ -24,7 +24,7 @@ ms.locfileid: "88654027"
 
 Вы можете получить доступ к помощнику через [портал Azure](https://aka.ms/azureadvisordashboard). Войдите на [портал](https://portal.azure.com), в меню навигации найдите **Помощник** или выполните поиск в меню **Все службы**.
 
-Панель мониторинга Помощника отображает персонализированные рекомендации для всех ваших подписок.  Вы можете применить фильтры, чтобы рекомендации отображались для определенных подписок и типов ресурсов.  Рекомендации делятся на пять категорий: 
+Панель мониторинга Помощника отображает персонализированные рекомендации для всех ваших подписок.  Вы можете применить фильтры, чтобы рекомендации отображались для определенных подписок и типов ресурсов.  Рекомендации разделены на пять следующих категорий. 
 
 * **Надежность (прежнее название — высокий уровень доступности)**: для обеспечения и улучшения непрерывности критически важных для бизнеса приложений. Дополнительные сведения см. в статье [рекомендации по обеспечению надежности помощника](advisor-high-availability-recommendations.md).
 * **Безопасность**: обнаружение угроз и уязвимостей, которые могут привести к нарушениям безопасности. Дополнительные сведения см. в разделе [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md).
@@ -68,7 +68,9 @@ Advisor предоставляет рекомендации для шлюза п
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 
 * [Начало работы с Помощником](advisor-get-started.md)
+* [Оценка Advisor](azure-advisor-score.md)
 * [Рекомендации по обеспечению надежности Advisor](advisor-high-availability-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
+* [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)

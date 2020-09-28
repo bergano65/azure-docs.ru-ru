@@ -145,6 +145,8 @@
       href: ../../network-watcher/security-baseline.md
     - name: Базовые средства безопасности Центра безопасности
       href: ../../security-center/security-baseline.md
+    - name: Базовые средства Служебной шины
+      href: ../../service-bus-messaging/security-baseline.md
     - name: Базовые средства безопасности Service Fabric
       href: ../../service-fabric/security-baseline.md
     - name: Базовые уровень безопасности Stream Analytics

@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 06/03/2019
-ms.openlocfilehash: 01daf0af039a00f6a81b850b07cfcf6d901a7732
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 606d3c78e96491a92b2e09aa74801247369ba0ab
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91284641"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403302"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -187,7 +187,7 @@ Write-Output $table
 
 - "Служба**автоматизации Azure — создание задания**" — используется для выполнения сценария PowerShell для получения рекомендаций по автоматической настройке в модуле Runbook службы автоматизации Azure.
 - "Служба**автоматизации Azure — получение выходных данных задания**" — используется для получения выходных данных из выполненного скрипта PowerShell.
-- "**Office 365 Outlook — Отправка сообщения электронной**почты" — используется для отправки электронной почты. Электронные сообщения отправляются с помощью учетной записи Office 365 пользователя, создавшего поток.
+- "**Office 365 Outlook — Отправка сообщения электронной**почты" — используется для отправки электронной почты. Сообщения электронной почты отправляются с помощью рабочей или учебной учетной записи пользователя, создающего последовательность.
 
 Чтобы узнать больше о возможностях Microsoft Flow, прочитайте статью [Начало работы с Microsoft Flow](https://docs.microsoft.com/flow/getting-started).
 

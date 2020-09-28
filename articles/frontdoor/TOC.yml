@@ -9,6 +9,10 @@
   items:
     - name: "Создание Front Door\_— портал"
       href: quickstart-create-front-door.md
+    - name: Создание Front Door (PowerShell)
+      href: quickstart-create-front-door-powershell.md
+    - name: Создание Front Door (CLI)
+      href: quickstart-create-front-door-cli.md
     - name: "Создание Front Door\_— шаблон ARM"
       href: quickstart-create-front-door-template.md
 - name: Учебники

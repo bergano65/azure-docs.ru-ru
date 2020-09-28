@@ -31,6 +31,8 @@
       href: plan-monitoring-and-reporting.md
     - name: Журналы аудита
       href: concept-audit-logs.md
+    - name: 'Новые журналы входа, предварительная версия'
+      href: concept-all-sign-ins.md
     - name: Журналы входа
       href: concept-sign-ins.md
     - name: Отчет об использовании и аналитике

@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 6606391d7fd5c2419714531e1220d97fb29aea4d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 76086dd7cccb042fdde3722b68b654343f2df012
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529596"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403591"
 ---
 # <a name="indexing-blobs-to-produce-multiple-search-documents"></a>Индексирование больших двоичных объектов для получения нескольких поисковых документов
 По умолчанию индексатор BLOB-объектов будет рассматривать содержимое большого двоичного объекта как единый поисковый документ. Определенные значения **parsingMode** поддерживают сценарии, в которых отдельный большой двоичный объект может привести к созданию нескольких документов поиска. Различные типы **parsingMode** , позволяющие индексатору извлекать более одного документа поиска из большого двоичного объекта:
@@ -108,6 +108,9 @@ _Blob2.jsна_
 
 > [!NOTE]
 > Подход, используемый для `AzureSearch_DocumentKey` обеспечения уникальности в извлеченной сущности, может изменяться, и поэтому не следует полагаться на его ценность для нужд вашего приложения.
+
+## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
+Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/). Если вам нужна помощь с использованием существующего компонента, опубликуйте свой вопрос на [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

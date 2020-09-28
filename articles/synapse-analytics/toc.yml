@@ -11,16 +11,16 @@
         - name: Введение
           href: get-started.md
           displayName: 'get, started'
-        - name: 1. Создание рабочей области Synapse
+        - name: 1. Создание рабочей области
           href: get-started-create-workspace.md
           displayName: 'get, started'
-        - name: 2. Анализ с использованием пула SQL
+        - name: 2. Использование пулов SQL
           href: get-started-analyze-sql-pool.md
           displayName: 'get, started'
-        - name: 3. Анализ с использованием Spark
+        - name: 3. Использование Spark
           href: get-started-analyze-spark.md
           displayName: 'get, started'
-        - name: 4. Анализ с использованием SQL по запросу
+        - name: 4. Использование SQL по запросу
           href: get-started-analyze-sql-on-demand.md
           displayName: 'get, started'
         - name: 5. Анализ данных в учетной записи хранения
@@ -84,6 +84,8 @@
   items:
     - name: Запуск приложений Apache Spark
       href: ./spark/intellij-tool-synapse.md
+    - name: Запуск приложений PySpark для пулов Spark
+      href: ./spark/vscode-tool-synapse.md
     - name: Определения заданий Spark
       href: ./spark/apache-spark-job-definitions.md
     - name: Power BI Desktop
@@ -210,6 +212,8 @@
               href: ../data-factory/concepts-data-flow-expression-builder.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Язык выражений
               href: ../data-factory/data-flow-expression-functions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Сравнение с Фабрикой данных Azure
+              href: ./data-integration/concepts-data-factory-differences.md
     - name: Spark
       items:
         - name: Обзор

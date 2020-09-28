@@ -312,6 +312,8 @@
               href: storage-blob-properties-metadata.md
             - name: Копирование большого двоичного объекта (SDK)
               href: storage-blob-copy.md
+            - name: Использование индекса BLOB-объектов
+              href: storage-blob-index-how-to.md
         - name: Авторизация доступа к данным больших двоичных объектов
           items:
             - name: Параметры авторизации для пользователей
@@ -460,8 +462,6 @@
           href: storage-custom-domain-name.md
         - name: Маршрутизация событий в пользовательскую конечную точку
           href: storage-blob-event-quickstart.md
-        - name: Использование индекса BLOB-объектов
-          href: storage-blob-index-how-to.md
         - name: Передача данных
           items:
             - name: AzCopy
