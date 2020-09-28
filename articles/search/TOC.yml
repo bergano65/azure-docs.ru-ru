@@ -118,6 +118,8 @@
           href: ./security-controls-policy.md
         - name: Защита ресурсов индексатора
           href: search-indexer-securing-resources.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Создание индексов и конструкций

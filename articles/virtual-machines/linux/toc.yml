@@ -311,8 +311,6 @@
           href: compute-benchmark-scores.md
     - name: Рекомендуемые дистрибутивы
       href: endorsed-distros.md
-    - name: Выделенные узлы
-      href: dedicated-hosts.md
     - name: Обслуживание и обновления
       href: ../maintenance-and-updates.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Хранилище дисков
@@ -391,11 +389,12 @@
         - name: Копирование или клонирование виртуальной машины
           href: copy-vm.md
         - name: Использование выделенных узлов
+          href: ../dedicated-hosts.md
           items:
             - name: CLI
               href: dedicated-hosts-cli.md
             - name: Портал
-              href: dedicated-hosts-portal.md
+              href: ../dedicated-hosts-portal.md
         - name: Развертывание точечных виртуальных машин
           items:
             - name: CLI
@@ -858,6 +857,7 @@
         - name: Изменение группы доступности
           href: ../windows/change-availability-set.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Создание группы размещения близкого взаимодействия
+          displayName: PPG aligned colocation co-location
           items:
             - name: CLI
               href: proximity-placement-groups.md
