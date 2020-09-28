@@ -552,10 +552,6 @@
               href: concepts-hyperscale-choose-distribution-column.md
             - name: Совместное размещение таблиц
               href: concepts-hyperscale-colocation.md
-            - name: Варианты настройки
-              href: concepts-hyperscale-configuration-options.md
-            - name: Предварительная оплата резервной мощности
-              href: concepts-hyperscale-reserved-pricing.md
         - name: Безопасность
           items:
             - name: Правила брандмауэра
@@ -577,6 +573,10 @@
           items:
             - name: Мониторинг и настройка
               href: concepts-hyperscale-monitoring.md
+        - name: Варианты настройки
+          href: concepts-hyperscale-configuration-options.md
+        - name: Предварительная оплата резервной мощности
+          href: concepts-hyperscale-reserved-pricing.md
         - name: Расширения PostgreSQL
           href: concepts-hyperscale-extensions.md
     - name: Справочник по API
