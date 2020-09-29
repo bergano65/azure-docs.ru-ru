@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/24/2020
+ms.date: 09/28/2020
 ms.author: b-juche
-ms.openlocfilehash: 972f9b1ac96ca180aa6eaeead7cde51b60ec0e93
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ce65d6f1806965a55a91117725d2232d4d6460bd
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91278500"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449630"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Создание тома с двумя протоколами (NFSv3 и SMB) для Azure NetApp Files
 
@@ -38,6 +38,8 @@ Azure NetApp Files поддерживает создание томов с по�
 * Убедитесь, что соблюдены [требования к Active Directoryным подключениям](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections). 
 * Создайте зону обратного просмотра на DNS-сервере, а затем добавьте запись указателя (PTR) компьютера узла Active Directory в эту зону обратного просмотра. В противном случае создание тома с двойным протоколом завершится ошибкой.
 * Убедитесь, что клиент NFS обновлен и на нем установлены последние обновления для операционной системы.
+* Убедитесь, что сервер LDAP Active Directory (AD) работает и работает на AD. Для этого необходимо установить и настроить роль [службы Active Directory облегченного доступа к каталогам (AD LDS)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831593(v=ws.11)) на компьютере AD.
+* Убедитесь, что в AD создан центр сертификации (ЦС), используя роль [служб сертификатов Active Directory (AD CS)](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority) для создания и экспорта самозаверяющего сертификата корневого ЦС.   
 
 ## <a name="create-a-dual-protocol-volume"></a>Создание тома с двумя протоколами
 
@@ -136,6 +138,11 @@ Azure NetApp Files поддерживает создание томов с по�
 
 ![Редактор Active Directoryных атрибутов](../media/azure-netapp-files/active-directory-attribute-editor.png) 
 
+Необходимо задать следующие атрибуты для пользователей LDAP и групп LDAP: 
+* Обязательные атрибуты для пользователей LDAP:   
+    `uid`: Алиса, `uidNumber` : 139, `gidNumber` : 555, `objectClass` : посиксаккаунт
+* Обязательные атрибуты для групп LDAP:   
+    `objectClass`: "Посиксграуп", `gidNumber` : 555
 
 ## <a name="configure-the-nfs-client"></a>Настройка клиента NFS 
 

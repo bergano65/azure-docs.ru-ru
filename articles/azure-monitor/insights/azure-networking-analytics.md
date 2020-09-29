@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: ccdf5885dd1199ff8ed8000e5feaf80662aae42a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4dc5b84ff127aef173deecfd2be705004d92ee0c
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318068"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449923"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения для мониторинга сетей Azure в Azure Monitor
 
@@ -87,10 +87,10 @@ ms.locfileid: "87318068"
 1. На портале Azure перейдите к ресурсу Шлюза приложений, который нужно отслеживать.
 2. Выберите *Журналы диагностики*, чтобы открыть следующую страницу.
 
-   ![снимок экрана: ресурс шлюза приложений Azure](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics01.png)
+   ![Снимок экрана со страницей "журналы диагностики" для ресурса шлюза приложений, в котором отображается параметр включения диагностики.](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics01.png)
 3. Щелкните *Включить диагностику*, чтобы открыть следующую страницу.
 
-   ![снимок экрана: ресурс шлюза приложений Azure](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics02.png)
+   ![Снимок экрана страницы для настройки параметров диагностики. Параметр "отправить в Log Analytics" выбран как три типа журналов и метрика.](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics02.png)
 4. Чтобы включить диагностику, щелкните *Вкл.* в разделе *Состояние*.
 5. Установите флажок *Отправить в Log Analytics*.
 6. Выберите существующую рабочую область Log Analytics или создайте рабочую область.
@@ -123,9 +123,9 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
   * работоспособность узла для шлюза приложений;
   * максимальное количество и 95-й процентиль для неудачных запросов шлюза приложений.
 
-![снимок экрана: панель мониторинга "Анализ шлюзов приложений Azure"](media/azure-networking-analytics/log-analytics-appgateway01.png)
+![Снимок экрана: панель мониторинга журналов доступа к шлюзу приложений с плитками, содержащими данные об ошибках шлюза, запросах и неудачных запросах.](media/azure-networking-analytics/log-analytics-appgateway01.png)
 
-![снимок экрана: панель мониторинга "Анализ шлюзов приложений Azure"](media/azure-networking-analytics/log-analytics-appgateway02.png)
+![Снимок экрана панели мониторинга "Журналы доступа к шлюзу приложений" с плитками, содержащими данные об ошибках агента пользователя, работоспособности узла и неудачных запросов.](media/azure-networking-analytics/log-analytics-appgateway02.png)
 
 На панели мониторинга **Azure Application Gateway analytics** (Анализ шлюзов приложений Azure) просмотрите сводные данные в колонках, а затем щелкните одну из них, чтобы просмотреть подробные сведения на странице поиска журналов.
 
@@ -158,10 +158,10 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 1. На портале Azure перейдите к ресурсу группы безопасности сети, который необходимо отслеживать.
 2. Выберите *Журналы диагностики*, чтобы открыть следующую страницу:
 
-   ![снимок экрана: ресурс группы безопасности сети Azure](media/azure-networking-analytics/log-analytics-nsg-enable-diagnostics01.png)
+   ![Снимок экрана: страница "журналы диагностики" для ресурса группы безопасности сети, в которой отображается параметр включения диагностики.](media/azure-networking-analytics/log-analytics-nsg-enable-diagnostics01.png)
 3. Щелкните *Включить диагностику*, чтобы открыть следующую страницу:
 
-   ![снимок экрана: ресурс группы безопасности сети Azure](media/azure-networking-analytics/log-analytics-nsg-enable-diagnostics02.png)
+   ![Снимок экрана страницы для настройки параметров диагностики. Параметр Status имеет значение ON, выбран параметр Send to Log Analytics и выбраны два типа журналов.](media/azure-networking-analytics/log-analytics-nsg-enable-diagnostics02.png)
 4. Чтобы включить диагностику, нажмите кнопку *Вкл.* в разделе *Состояние*.
 5. Установите флажок *Send to Log Analytics* (Отправить в Log Analytics).
 6. Выберите существующую рабочую область Log Analytics или создайте новую.
@@ -189,9 +189,9 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
   * правила группы безопасности сети с разрешенными потоками;
   * MAC-адреса c разрешенными потоками.
 
-![снимок экрана: панель мониторинга "Анализ групп безопасности сети Azure"](media/azure-networking-analytics/log-analytics-nsg01.png)
+![Снимок экрана с данными для заблокированных потоков группы безопасности сети, включая правила с заблокированными потоками и MAC-адресами с заблокированными потоками.](media/azure-networking-analytics/log-analytics-nsg01.png)
 
-![снимок экрана: панель мониторинга "Анализ групп безопасности сети Azure"](media/azure-networking-analytics/log-analytics-nsg02.png)
+![Снимок экрана с данными для разрешенных потоков группы безопасности сети, включая правила с разрешенными потоками и MAC-адресами с разрешенными последовательностями.](media/azure-networking-analytics/log-analytics-nsg02.png)
 
 На панели мониторинга **Azure Network Security Group analytics** (Анализ групп безопасности сети Azure) просмотрите сводные данные в колонках, а затем щелкните одну из них, чтобы просмотреть подробные сведения на странице поиска журналов.
 

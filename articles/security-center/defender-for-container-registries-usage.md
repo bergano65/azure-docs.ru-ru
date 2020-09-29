@@ -4,15 +4,15 @@ description: Сведения об использовании защитника
 author: memildin
 ms.author: memildin
 ms.date: 9/22/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 04a7b7f40e1591a919668e940a883dde9a6f4689
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1ff28b13d9adc120f8ee40bcd0119bf9b6883d6a
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91302015"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449122"
 ---
 # <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Использование защитника Azure для реестров контейнеров для проверки образов на наличие уязвимостей
 
@@ -24,7 +24,7 @@ ms.locfileid: "91302015"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробности|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Счет **за защитником Azure для реестров контейнеров** выставляется, как показано на [странице с ценами](security-center-pricing.md) .|
@@ -135,7 +135,7 @@ ms.locfileid: "91302015"
 - Категория
 - Проверка безопасности 
 - Оценки CVSS v3
-- Уровень серьезности 
+- Статус 
 - Состояние исправления 
 
 Чтобы создать правило, выполните следующие действия.
@@ -150,7 +150,7 @@ ms.locfileid: "91302015"
 1. Для просмотра, переопределения или удаления правила выполните следующие действия. 
     1. Выберите **Отключить правило**.
     1. В списке область подписки с активными правилами отображаются как **примененное правило**.
-        :::image type="content" source="./media/remediate-vulnerability-findings-vm/modify-rule.png" alt-text="Изменение или удаление существующего правила":::
+        :::image type="content" source="./media/remediate-vulnerability-findings-vm/modify-rule.png" alt-text="Создание правила отключения для полученных результатов в реестре":::
     1. Чтобы просмотреть или удалить правило, выберите меню с многоточием ("...").
 
 

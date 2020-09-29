@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: a25f28b19e0f00830fd0290ff0296c317b9a5ed9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 9de26246756f831ace57e7ed03a3a598ef020c91
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91371762"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451558"
 ---
 **Объем собираемых данных и срок их хранения** 
 
@@ -75,25 +75,25 @@ Azure Monitor — это высокомасштабируемая служба,
 Превышено ограничение на объем принимаемых данных
 ```Kusto
 Operation
-| where Category == "Ingestion"
+| where OperationCategory == "Ingestion"
 | where OperationKey == "Ingestion rate limit"
-| where Level == "Error"
+| where OperationStatus == "Error"
 ```
 
 Объем принимаемых данных превысил 80 % порогового объема
 ```Kusto
 Operation
-| where Category == "Ingestion"
+| where OperationCategory == "Ingestion"
 | where OperationKey == "Ingestion rate limit"
-| where Level == "Warning"
+| where OperationStatus == "Warning"
 ```
 
 Объем принимаемых данных превысил 70 % порогового объема
 ```Kusto
 Operation
-| where Category == "Ingestion"
+| where OperationCategory == "Ingestion"
 | where OperationKey == "Ingestion rate limit"
-| where Level == "Info"
+| where OperationStatus == "Info"
 ```
 
 >[!NOTE]

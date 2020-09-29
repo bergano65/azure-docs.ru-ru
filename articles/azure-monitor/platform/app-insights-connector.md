@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: 80e87d6fdab6ecf15c241581f8c19d36b30d7e30
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 09485d3279e4ca4fff5b6492bab432d8034d7e42
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327112"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449408"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -60,7 +60,7 @@ ms.locfileid: "87327112"
 1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../insights/solutions.md).
 2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
 3. В разделе **Подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя** выберите одно или несколько приложений.
-4. Щелкните **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 Приблизительно через 30 минут данные станут доступными, а на плитке Application Insights появятся данные, как показано на следующем изображении:
 
@@ -83,9 +83,9 @@ ms.locfileid: "87327112"
 
 Щелкните плитку **Application Insights**, чтобы открыть панель мониторинга **Application Insights** для просмотра следующих колонок.
 
-![Панель мониторинга Application Insights](./media/app-insights-connector/app-insights-dash01.png)
+![Снимок экрана панели мониторинга Application Insights, в которой показаны колонки для приложений, объем данных и доступность.](./media/app-insights-connector/app-insights-dash01.png)
 
-![Панель мониторинга Application Insights](./media/app-insights-connector/app-insights-dash02.png)
+![Снимок экрана панели мониторинга Application Insights, в которой показаны колонки для запросов сервера, сбоев и исключений.](./media/app-insights-connector/app-insights-dash02.png)
 
 Панель мониторинга содержит колонки, приведенные в таблице. В каждой колонке содержится максимум 10 элементов, соответствующих таким указанным критериям, как область действия и диапазон времени. Вы можете выполнить поиск по журналам, в результате которого возвращаются все записи, если щелкнуть заголовок колонки или **Показать все** в ее нижней части.
 
@@ -185,9 +185,9 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 | DeviceType | Устройство клиента |
 | ScreenResolution |   |
 | Continent | Континент, на котором создан запрос |
-| Страна или регион | Страна или регион, где был создан запрос |
+| Country | Страна или регион, где был создан запрос |
 | Province | Провинция, область или район, в котором создан запрос |
-| Город | Город, в котором создан запрос |
+| City | Город, в котором создан запрос |
 | isSynthetic | Указывает, был ли запрос создан пользователем или автоматически. True = автоматизированный метод или False = пользователь создан |
 | SamplingRate | Процентная доля данных телеметрии, созданных с помощью пакета SDK, отправленного на портал. Диапазон 0,0–100,0. |
 | SampledCount | 100/(частота выборки). Например, 4 = &gt; 25 %. |

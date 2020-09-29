@@ -3,12 +3,12 @@ title: Настройка устройства "миграция Azure" в Azure
 description: Узнайте, как настроить устройство для миграции Azure в Azure для государственных организаций.
 ms.topic: article
 ms.date: 04/16/2020
-ms.openlocfilehash: ffea966c58909ecaab0da13a4204295ecb193895
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 1060bda13cc593980850bc6563555cf5dd4b7fd9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936798"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91450022"
 ---
 # <a name="set-up-an-appliance-in-azure-government"></a>Настройка устройства в Azure для государственных организаций 
 
@@ -45,13 +45,13 @@ ms.locfileid: "88936798"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip SHA256```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip SHA256```.
 
 3. Проверьте последнюю версию и хэш-значение устройства:
 
     **Алгоритм** | **Загрузить** | **SHA256**
     --- | --- | ---
-    VMware (85 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140337) | 31b1bfdd4fc29b3eb923c7c6e7a898af79b7cac0404426bea18809def2284188
+    VMware (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140337) | 2daaa2a59302bf911e8ef195f8add7d7c8352de77a9af0b860e2a627979085ca
 
 
 ### <a name="run-the-script"></a>Выполнение скрипта
@@ -60,7 +60,7 @@ ms.locfileid: "88936798"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Дополнительные сведения](https://www.microsoft.com/download/details.aspx?id=7435).
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -99,13 +99,13 @@ ms.locfileid: "88936798"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip SHA256```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip SHA256```.
 
 3. Проверьте последнюю версию и хэш-значение устройства:
 
     **Сценарий** | **Загрузить** | **SHA256**
     --- | --- | ---
-    Hyper-V (85 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140424) |  db5311de3d1d4a1167183a94e8347456db9c5749c7332ff2eb4b777798765e48
+    Hyper-V (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140424) |  db5311de3d1d4a1167183a94e8347456db9c5749c7332ff2eb4b777798765e48
 
           
 
@@ -115,7 +115,7 @@ ms.locfileid: "88936798"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Дополнительные сведения](https://www.microsoft.com/download/details.aspx?id=7435).
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -154,13 +154,13 @@ ms.locfileid: "88936798"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip SHA256```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip SHA256```.
 
 3. Проверьте последнюю версию и хэш-значение устройства:
 
     **Сценарий** | **Загрузка*** | **Значение хэша**
     --- | --- | ---
-    Физический (85 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140338) | 1545f9ce8874cedef6347c1a1332f8b5eabd6811a017440a2382525fb0430309
+    Физическое (85 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140338) | cfed44bb52c9ab3024a628dc7a5d0df8c624f156ec1ecc3507116bae330b257f
           
 
 ### <a name="run-the-script"></a>Выполнение скрипта
@@ -169,7 +169,7 @@ ms.locfileid: "88936798"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Дополнительные сведения](https://www.microsoft.com/download/details.aspx?id=7435).
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг

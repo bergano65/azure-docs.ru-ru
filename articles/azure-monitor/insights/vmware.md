@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
-ms.openlocfilehash: dccd953d2a31b306994c06ae644959e18332f5da
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: be50deb836082354db899e84ef24d75c4d403432
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090182"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91450403"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Мониторинг VMware (не рекомендуется) решение в Azure Monitor
 
@@ -133,16 +133,16 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 Щелкнув имя узла ESXi, вы сможете просмотреть сведения, связанные с этим узлом ESXi. Чтобы отфильтровать результаты по типу события, добавьте `“ProcessName_s=EVENT TYPE”` в поисковом запросе. Можно выбрать **ProcessName** в фильтре поиска. Это поможет ограничить поиск.
 
-![Детализация](./media/vmware/eventhostdrilldown.png)
+![Снимок экрана ESXi узла с числом событий и разбивкой по типам событий в представлении панели мониторинга Мониторинг VMware.](./media/vmware/eventhostdrilldown.png)
 
 #### <a name="find-high-vm-activities"></a>Поиск активных действий ВМ
 Виртуальные машины могут создаваться и удаляться на любом узле ESXi. Администраторам часто требуется знать, сколько ВМ создается узлом ESXi. Это помогает оценить производительность и рассчитать использование ресурсов. При управлении средой очень важно отслеживать события действий ВМ.
 
-![Детализация](./media/vmware/vmactivities1.png)
+![Снимок экрана: колонка "действия виртуальной машины" на панели мониторинга Мониторинг VMware, в которой показан график создания и удаления виртуальных машин узлом ESXi.](./media/vmware/vmactivities1.png)
 
 Чтобы просмотреть дополнительные данные о создании ВМ узлом ESXi, щелкните имя узла ESXi.
 
-![Детализация](./media/vmware/createvm.png)
+![Снимок экрана панели Мониторинг VMware панели мониторинга, показывающей таблицу со строкой данных для каждого создания виртуальной машины узлом ESXi.](./media/vmware/createvm.png)
 
 #### <a name="common-log-queries"></a>Общие запросы журналов
 Решение включает и другие полезные запросы, которые помогают управлять узлами ESXi узлов. Сюда входят запросы к данным о переполнении дискового пространства, задержках хранилища и сбоях пути.
@@ -158,7 +158,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
 Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../platform/alerts-overview.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](/archive/blogs/msoms/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Что нужно настраивать для узла ESXi? Какое влияние это окажет на мою текущую среду?
 В решении используется встроенный механизм перенаправления системного журнала узла ESXi. Для ведения журналов на узле ESXi не нужно устанавливать дополнительное программное обеспечение Майкрософт. Существенное влияние на имеющуюся среду не оказывается. Тем не менее необходимо настроить перенаправление системного журнала, что является функцией ESXi.
 
@@ -196,7 +196,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
      d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [запросы журналов в Log Analytics](../log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md), отображающие данные об узле VMware.
 * [Создавайте оповещения](../platform/alerts-overview.md), информирующие о возникновении определенных событий узла VMware.

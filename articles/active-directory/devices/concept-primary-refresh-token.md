@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b55d8bcc2f2042dc36c6875750893a345deb552
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.openlocfilehash: 000bc150b1a4addb4b68bd86b8d72524ec1015fc
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89468612"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91450416"
 ---
 # <a name="what-is-a-primary-refresh-token"></a>Что такое основной маркер обновления?
 
@@ -199,6 +199,9 @@ PRT становится недействительным в следующих 
 | D | Подключаемый модуль CloudAP создаст файл cookie PRT, выполнит вход с помощью сеансового ключа, привязанного к модулю TPM, и отправит его обратно на узел собственного клиента. Так как файл cookie подписывается сеансовым ключом, он не может быть незаконно изменен. |
 | E | Узел собственного клиента вернет этот файл cookie PRT в браузер, который включит его в заголовок запроса с именем x-ms-RefreshTokenCredential и маркеры запроса из Azure AD. |
 | F | Azure AD проверяет подпись сеансового ключа в файле cookie PRT, анализирует специальное значение и допустимость устройства в клиенте, после чего выдает маркер идентификатора для веб-страницы и зашифрованный файл cookie сеанса для браузера. |
+
+> [!NOTE]
+> Поток единого входа браузера, описанный в приведенных выше шагах, не применяется для сеансов в частных режимах, таких как InPrivate в Microsoft ребра, или режиме инкогнито в Google Chrome (при использовании расширения учетных записей Майкрософт).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

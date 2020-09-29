@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 31f7e348a805c86964a8856fb81b83831c611de5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7ca15baffd3fac4a1f3635ac7377bac620673446
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91376427"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451624"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,7 +41,7 @@ ms.locfileid: "91376427"
 5. Откройте вкладку **Build Settings** (Параметры сборки) в редакторе параметров проекта и прокрутите к разделу **Search Paths** (Пути поиска). Добавьте новую запись **Framework Search Paths** (Пути поиска платформы) для каталога, содержащего **AzureCommunicationCalling.framework**.
     1. Добавьте еще одну запись путей поиска платформы, указывающую на папку с зависимостями.
 
-:::image type="content" source="../media/ios/xcode-framework-search-paths.png" alt-text="Снимок экрана с демонстрацией обновления путей для поиска платформы в Xcode.":::
+:::image type="content" source="../media/ios/xcode-framework-search-paths.png" alt-text="Снимок экрана с демонстрацией создания окна New Project (Новый проект) в Xcode.":::
 
 ### <a name="request-access-to-the-microphone"></a>Запрос доступа к микрофону
 
@@ -113,7 +113,7 @@ public func fetchTokenSync(then onCompletion: TokenRefreshOnCompletion) {
 callClient = ACSCallClient()
 callClient?.createCallAgent(userCredential!,
     withCompletionHandler: { (callAgent, error) in
-        if error != nil {
+        if error == nil {
             print("Create agent succeeded")
             self.callAgent = callAgent
         } else {
@@ -186,7 +186,7 @@ let call = self.callAgent?.join(with: groupCallContext, joinCallOptions: ACSJoin
 - Шаг 2. Xcode-> подписывание & возможностей — > добавить возможность — > "фоновые режимы"
 - Шаг 3. "фоновые режимы"-> выберите "голоса по IP" и "Удаленные уведомления"
 
-:::image type="content" source="../media/ios/xcode-push-notification.png" alt-text="Снимок экрана, показывающий, как добавить возможности в Xcode." lightbox="../media/ios/xcode-push-notification.png":::
+:::image type="content" source="../media/ios/xcode-push-notification.png" alt-text="Снимок экрана с демонстрацией создания окна New Project (Новый проект) в Xcode." lightbox="../media/ios/xcode-push-notification.png":::
 
 #### <a name="register-for-push-notifications"></a>Регистрация для получения push-уведомлений
 

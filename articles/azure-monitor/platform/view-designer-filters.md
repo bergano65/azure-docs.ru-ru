@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/22/2018
-ms.openlocfilehash: 4f4b914fe5851df0928df9ccc41ca3b20c5d3469
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: d428382493e15d2e0571f4cb4b6f090cf9056fe4
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85955961"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449308"
 ---
 # <a name="filters-in-azure-monitor-views"></a>Фильтры в представлениях Azure Monitor
 **Фильтр** в [представлении Azure Monitor](view-designer.md) позволяет пользователям фильтровать данные в представлении по значению определенного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
@@ -19,12 +19,12 @@ ms.locfileid: "85955961"
 ## <a name="using-a-filter"></a>Использование фильтра
 Щелкните диапазон дат и времени в верхней части представления, чтобы открыть раскрывающийся список, в котором можно изменить диапазон дат для представления.
 
-![Пример фильтра](media/view-designer-filters/filters-example-time.png)
+![Снимок экрана: раскрывающееся меню диапазона времени для представления в Azure Monitor, в котором выбран переключатель за последние 7 дней.](media/view-designer-filters/filters-example-time.png)
 
 Нажмите кнопку, **+** чтобы добавить фильтр с помощью настраиваемых фильтров, определенных для представления. Выберите значение для фильтра в раскрывающемся списке или введите его самостоятельно. Продолжайте добавлять фильтры, щелкая **+** . 
 
 
-![Пример фильтра](media/view-designer-filters/filters-example-custom.png)
+![Снимок экрана диалогового окна для добавления настраиваемого фильтра в Azure Monitor. Свойство Computers выбирается в раскрывающемся меню Выбор свойства.](media/view-designer-filters/filters-example-custom.png)
 
 Если удалить все значения для фильтра, то он больше не будет применяться.
 
@@ -37,7 +37,7 @@ ms.locfileid: "85955961"
 
 В следующей таблице описаны параметры фильтра.
 
-| Параметр | Описание: |
+| Параметр | Описание |
 |:---|:---|
 | Имя поля | Имя поля, используемого для фильтрации.  Это поле должно соответствовать полю суммирования в **запросе значений**. |
 | Запрос значений | Запрос, выполняемый для заполнения раскрывающегося списка фильтров для пользователя.  Для предоставления уникальных значений конкретному полю этот запрос должен использовать либо [Сводные данные](/azure/kusto/query/summarizeoperator) , либо [DISTINCT](/azure/kusto/query/distinctoperator) . оно должно совпадать с **именем поля**.  Можно использовать оператор [sort](/azure/kusto/query/sortoperator) для сортировки значений, отображаемых для пользователя. |
@@ -50,8 +50,8 @@ ms.locfileid: "85955961"
 | Имя поля | Запрос значений | Тег |
 |:--|:--|:--|
 | Компьютер   | Heartbeat &#124; distinct Computer &#124; sort by Computer asc | Компьютеры |
-| EventLevelName | Event &#124; distinct EventLevelName | Серьезность |
-| SeverityLevel | Syslog &#124; distinct SeverityLevel | Серьезность |
+| EventLevelName | Event &#124; distinct EventLevelName | Статус |
+| SeverityLevel | Syslog &#124; distinct SeverityLevel | Статус |
 | SvcChangeType | ConfigurationChange &#124; distinct svcChangeType | ChangeType |
 
 
@@ -75,5 +75,5 @@ Event | where ${Computers} | summarize count() by EventLevelName
 Event | where ${Computers} | where ${Severity} | summarize count() by EventLevelName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [элементах визуализации](view-designer-parts.md), которые можно добавить в представление.

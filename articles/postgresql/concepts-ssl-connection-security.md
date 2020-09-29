@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 872daf3a208452e8b7ec27b2326e394b416a1c5f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e54b8bc51817d2a56153dcc0c14f45e76b9ae88b
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902033"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91444936"
 ---
 # <a name="configure-tls-connectivity-in-azure-database-for-postgresql---single-server"></a>Настройка подключения TLS в базе данных Azure для PostgreSQL — один сервер
 
@@ -93,7 +93,18 @@ psql "sslmode=verify-full sslrootcert=BaltimoreCyberTrustRoot.crt host=mydemoser
 
 Сведения о настройке параметра TLS для отдельного сервера базы данных Azure для PostgreSQL см. в разделе [Настройка параметра TLS](howto-tls-configurations.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="cipher-support-by-azure-database-for-postgresql-single-server"></a>Поддержка шифра для одного сервера базы данных Azure для PostgreSQL
+
+При обмене данными по протоколу SSL или TLS комплекты шифров проходят проверку и поддерживают только масти шифров, которые могут обмениваться данными с Serer базы данных. Проверка комплекта шифров контролируется на [уровне шлюза](concepts-connectivity-architecture.md#connectivity-architecture) , а не на самом узле. Если комплекты шифров не соответствуют одному из перечисленных ниже пакетов, входящие клиентские соединения будут отклонены.
+
+### <a name="cipher-suite-supported"></a>Поддерживаемый набор шифров
+
+*   TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+*   TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+*   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+*   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с различными вариантами подключения приложений в [библиотеках подключений для базы данных Azure для PostgreSQL](concepts-connection-libraries.md).
 

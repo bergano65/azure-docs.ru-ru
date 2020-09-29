@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 06/27/2020
-ms.openlocfilehash: b310f195477f4cba83ef30c6fb5ea2fd24c4df9a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 46435ef773e90234538bb755e20035990bbf1066
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90897375"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91460039"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 
@@ -80,15 +80,20 @@ ms.locfileid: "90897375"
 1. Выберите целевой объект **вычислений** или создайте новый и дождитесь его запуска.
 1. Выберите значок **Open terminal** (Открыть терминал).
 
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/open-terminal.png" alt-text="Откройте терминал":::
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/open-terminal.png" alt-text="Создание файла":::
 
 1. Если значок не отображается, нажмите кнопку **...** справа от целевого объекта вычислений и выберите **Открыть терминал**.
 
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Открытие терминала с помощью меню "..."":::
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Создание файла":::
 
 
 Дополнительные сведения см. в разделе [Клонирование репозиториев Git в файловую систему рабочей области](concept-train-model-git-integration.md#clone-git-repositories-into-your-workspace-file-system).
 
+### <a name="copy-and-paste-in-terminal"></a>Копирование и вставка в терминале
+
+> * Windows: `Ctrl-Insert` копирование и использование `Ctrl-Shift-v` или `Shift-Insert` для вставки.
+> * Mac OS: `Cmd-c` для копирования и `Cmd-v` для вставки.
+> * Браузеры FireFox и IE могут не поддерживать разрешения буфера обмена корректно.
 
 ### <a name="share-notebooks-and-other-files"></a>Общий доступ к записным книжкам и другим файлам
 
@@ -121,7 +126,7 @@ ms.locfileid: "90897375"
 1. Выполните все ячейки записной книжки.
 1. Выберите ячейку, содержащую код, который нужно запустить для новой записной книжки. Например, код, который отправляет эксперимент или, возможно, код, регистрирующий модель.
 1. Выберите значок **сбор** , отображаемый на панели инструментов ячейки.
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/gather.png" alt-text="Снимок экрана: выбор значка сбора данных":::
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/gather.png" alt-text="Создание файла":::
 1. Введите имя новой записной книжки для собранных сведений.  
 
 Новая Записная книжка содержит только ячейки кода, при этом все ячейки должны получить те же результаты, что и выбранная ячейка для сбора.
@@ -132,7 +137,7 @@ ms.locfileid: "90897375"
 
 На панели инструментов записной книжки выберите меню, а затем **файл &gt; сохранить и контрольная точка** , чтобы вручную сохранить записную книжку, и она добавит файл контрольных точек, связанный с записной книжкой.
 
-:::image type="content" source="media/how-to-run-jupyter-notebooks/file-save.png" alt-text="Снимок экрана инструмента "сохранение" на панели инструментов записной книжки":::
+:::image type="content" source="media/how-to-run-jupyter-notebooks/file-save.png" alt-text="Создание файла":::
 
 Каждая Записная книжка автоматически сохраняется каждые 30 секунд.Функция автосохранения обновляет только исходный файл *ipynb*   , а не файл контрольных точек.
  

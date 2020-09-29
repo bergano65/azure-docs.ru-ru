@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30b673994e20f01dde504adb438aa1b199c96d88
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1166d2ad17aea97a4dd7fdda53c42d6b3df75936
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91264736"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91450365"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Управление административными единицами в Azure Active Directory
 
@@ -29,13 +29,10 @@ ms.locfileid: "91264736"
 
 1. Чтобы выполнить запросы из следующих инструкций с помощью [Graph Explorer](https://aka.ms/ge), выполните следующие действия.
 
-    а. На портале Azure перейдите к Azure AD. В списке приложений выберите **Graph Explorer**, а затем выберите **предоставить согласие администратора для проводника Graph**.
+    a. На портале Azure перейдите к Azure AD. В списке приложений выберите **Graph Explorer**, а затем выберите **предоставить согласие администратора для проводника Graph**.
 
     ![Снимок экрана со ссылкой на "предоставление согласия администратора"](./media/roles-admin-units-manage/select-graph-explorer.png)
 
-    b. В обозревателе Graph выберите **бета-** версию.
-
-    ![Снимок экрана, на котором показана выбранная бета-версия](./media/roles-admin-units-manage/select-beta-version.png)
 
 1. Используйте предварительную версию Azure AD PowerShell.
 
@@ -59,7 +56,7 @@ ms.locfileid: "91264736"
 
 ```powershell
 Connect-AzureAD
-New-AzureADAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
+New-AzureADMSAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
 ```
 
 При необходимости можно изменить значения, заключенные в кавычки.
@@ -91,8 +88,8 @@ Request body
 ### <a name="use-powershell"></a>Использование PowerShell
 
 ```powershell
-$delau = Get-AzureADAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
-Remove-AzureADAdministrativeUnit -ObjectId $delau.ObjectId
+$delau = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
+Remove-AzureADMSAdministrativeUnit -ObjectId $delau.ObjectId
 ```
 
 Можно изменить значения, заключенные в кавычки, в соответствии с требованиями конкретной среды.

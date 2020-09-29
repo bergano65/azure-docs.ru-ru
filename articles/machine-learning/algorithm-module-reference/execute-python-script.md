@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
-ms.date: 07/27/2020
-ms.openlocfilehash: 3a02581ab898fad0440f45626676ec6bdd7227eb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 09/29/2020
+ms.openlocfilehash: de372b9800f4b76b42624b30f05848bc570ae6e7
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318272"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91450128"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -56,6 +56,9 @@ if spec is None:
 
 > [!NOTE]
 > Если конвейер содержит несколько модулей выполнения скриптов Python, для которых требуются пакеты, отсутствующие в предварительно установленном списке, установите пакеты в каждом модуле.
+
+> [!WARNING]
+> Модуль скрипта Python екскуте не поддерживает установку пакетов, зависящих от дополнительных собственных библиотек, с помощью команды вроде "apt-get", например Java, PyODBC и т. д. Это происходит потому, что этот модуль выполняется в простой среде с предварительно установленным Python и с разрешениями, не являющимися администраторами.  
 
 ## <a name="upload-files"></a>Отправка файлов
 Модуль выполнение скрипта Python поддерживает отправку файлов с помощью [пакета SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true#upload-file-name--path-or-stream-).
@@ -140,7 +143,10 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
     В конструктор можно вернуть два набора данных, которые должны быть последовательностью типа `pandas.DataFrame` . Вы можете создавать другие выходные данные в коде Python и записывать их непосредственно в службу хранилища Azure.
 
-6. Отправьте конвейер или выберите модуль и выберите **Запуск выбран** , чтобы выполнить только скрипт Python.
+    > [!WARNING]
+    > **Не** рекомендуется подключаться к базе данных или другим внешним хранилищам в **модуле выполнение скрипта Python**. Вы можете использовать модуль [Импорт данных](./import-data.md) и [модуль экспорта данных](./export-data.md)     
+
+6. Отправьте конвейер.
 
     Все данные и код загружаются в виртуальную машину и выполняются с помощью указанной среды Python.
 

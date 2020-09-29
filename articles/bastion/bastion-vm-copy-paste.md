@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: charwen
-ms.openlocfilehash: ad1476847874f7cea53c6e9c0c3d9f142c949dac
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 6835c5e1ecbf0fc99a14754d17bb6e6380eda6c8
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90987714"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91445353"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копирование и вставка на виртуальную машину: Azure бастиона
 
@@ -35,13 +35,13 @@ ms.locfileid: "90987714"
 1. Копировать текст или содержимое с локального устройства в локальный буфер обмена.
 1. Во время удаленного сеанса откройте палитру средств доступа к буферу обмена бастиона, выбрав две стрелки. Стрелки расположены в левом центре сеанса.
 
-   ![Палитра инструментов](./media/bastion-vm-manage/left.png)
+   ![Снимок экрана, на котором показаны стрелки запуска для палитры инструментов, выделенной на левой стороне окна.](./media/bastion-vm-manage/left.png)
 
    ![На снимке экрана показан буфер обмена для текста, скопированного в бастиона.](./media/bastion-vm-manage/clipboard.png)
 1. Как правило, скопированный текст автоматически отображается в палитре «бастиона Copy Вклеить». Если текст отсутствует, вставьте текст в текстовое поле палитры.
 1. После того как текст появится в текстовой области, его можно вставить в удаленный сеанс.
 
-   ![вставка](./media/bastion-vm-manage/local.png)
+   ![Снимок экрана, на котором изображена Выделенная кнопка "копировать/вставить" и образец текстовой строки, скопированной в удаленный сеанс.](./media/bastion-vm-manage/local.png)
 
 ## <a name="copy-from-a-remote-session"></a><a name="from"></a>Копирование из удаленного сеанса
 

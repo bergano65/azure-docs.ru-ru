@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: cafde6ed66e5b636be60533abafcd6f221fe33a1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 6f819d9b6ba4d74612da304aafea0118f9094bde
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502523"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451534"
 ---
 Общие диски Azure — это новая функция для управляемых дисков Azure, которая позволяет подключать управляемые диски одновременно к нескольким виртуальным машинам. Подключение управляемого диска к нескольким виртуальным машинам позволяет разворачивать новые или переносить существующие кластеризованные приложения в Azure.
 
@@ -57,7 +57,7 @@ ms.locfileid: "86502523"
 - [SUSE SLE для SAP и SUSE SLE HA 15 с пакетом обновления 1 (SP1) и выше](https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/index.html)
 - [Ubuntu 18,04 и более поздние версии](https://discourse.ubuntu.com/t/ubuntu-high-availability-corosync-pacemaker-shared-disk-environments/14874)
 - [Предварительная версия RHEL Developer в любой версии RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/index)
-- [Oracle Enterprise Linux] (https://docs.oracle.com/en/operating-systems/oracle-linux/8/availability/hacluster-1.html)
+- [Oracle Enterprise Linux](https://docs.oracle.com/en/operating-systems/oracle-linux/8/availability/hacluster-1.html)
 
 Кластеры Linux могут использовать диспетчеры кластеров, например [Pacemaker](https://wiki.clusterlabs.org/wiki/Pacemaker). Pacemaker построен на основе [Corosync](http://corosync.github.io/corosync/) и обеспечивает связь с кластером для приложений, развернутых в средах с высокой доступностью. Некоторые распространенные кластерные файловые системы включают [ocfs2](https://oss.oracle.com/projects/ocfs2/) и [gfs2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/global_file_system_2/ch-overview-gfs2). Для арбитратинг доступа к диску можно использовать модели кластеризации постоянного резервирования SCSI (SCSI PR) и/или STONITH Block Device (SBD). При использовании интерфейса SCSI можно управлять резервированием и регистрацией с помощью таких служебных программ, как [fence_scsi](http://manpages.ubuntu.com/manpages/eoan/man8/fence_scsi.8.html) и [sg_persist](https://linux.die.net/man/8/sg_persist).
 
@@ -91,7 +91,7 @@ ms.locfileid: "86502523"
 
 Диски в ценовой категории "Ультра" предлагают дополнительный регулятор рабочей нагрузки, то есть всего два регулятора. Из-за этого поток резервирования дисков в ценовой категории "Ультра" может работать, как описано в предыдущем разделе, или он может выполнять более детальное регулирование и распределение производительности.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-reservation-table.png" alt-text="Изображение таблицы, описывающее доступ только для чтения или чтение/запись для владельца резервирования, зарегистрированного и других.":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-reservation-table.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
 
 ## <a name="performance-throttles"></a>Регулировки производительности
 
@@ -131,19 +131,19 @@ ms.locfileid: "86502523"
 
 Ниже приведен пример кластера WSFC с двумя узлами, использующего кластеризованные общие тома. В такой конфигурации обе виртуальные машины имеют одновременный доступ на запись к диску, что приводит к `ReadWrite` разбиению регулирования между двумя виртуальными машинами и `ReadOnly` неиспользуемым регулированием.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Пример CSV с двумя узлами (цен. категория Ультра)":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
 
 ##### <a name="two-node-cluster-without-cluster-share-volumes"></a>Кластер с двумя узлами без общих томов кластера
 
 Ниже приведен пример кластера WSFC с двумя узлами, не использующего кластеризованные общие тома. В такой конфигурации только одна виртуальная машина имеет доступ на запись к диску. В результате регулирование будет `ReadWrite` использоваться исключительно для основной виртуальной машины и `ReadOnly` регулирование используется только вторичной репликой.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Пример CSV с двумя узлами без диска CSV в цен. категории Ультра":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
 
 ##### <a name="four-node-linux-cluster"></a>Кластер с четырьмя узлами Linux
 
 Ниже приведен пример кластера Linux с 4 узлами с одним модулем записи и тремя модулями чтения с горизонтальным масштабированием. В такой конфигурации только одна виртуальная машина имеет доступ на запись к диску. В результате регулирование будет `ReadWrite` использоваться исключительно для основной виртуальной машины, а `ReadOnly` регулирование будет разбито на вторичные виртуальные машины.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Пример регулирования Ультра на четырех узлах":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Изображение таблицы, описывающее доступ &quot;только для чтения&quot; или &quot;чтение/запись&quot; для владельца резервирования, зарегистрированного и других.":::
 
 #### <a name="ultra-pricing"></a>Ultra ценах
 

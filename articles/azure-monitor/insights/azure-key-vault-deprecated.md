@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/27/2019
-ms.openlocfilehash: 286d8d8c202a4fc59a18501eff16a569e2d09047
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f6d8929c8fd59836ff297f226851890892c10acc
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318051"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91445132"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
 
@@ -42,10 +42,10 @@ ms.locfileid: "87318051"
 1. На портале Azure перейдите к ресурсу Key Vault, который необходимо отслеживать.
 2. Выберите *параметры диагностики* , чтобы открыть следующую страницу.
 
-   ![изображение плитки "Хранилище ключей Azure"](media/azure-key-vault/log-analytics-keyvault-enable-diagnostics01.png)
+   ![Снимок экрана со страницей "параметры диагностики" для Key Vault ресурса Контосоквскус. параметр включения диагностики выделен.](media/azure-key-vault/log-analytics-keyvault-enable-diagnostics01.png)
 3. Щелкните *Включить диагностику*, чтобы открыть следующую страницу:
 
-   ![изображение плитки "Хранилище ключей Azure"](media/azure-key-vault/log-analytics-keyvault-enable-diagnostics02.png)
+   ![Снимок экрана страницы для настройки параметров диагностики. Выбираются параметры для отправки в Log Analytics, журнал AuditEvent и Аллметрикс.](media/azure-key-vault/log-analytics-keyvault-enable-diagnostics02.png)
 4. Задайте имя для параметра диагностики.
 5. Установите флажок *Send to Log Analytics* (Отправить в Log Analytics).
 6. Выберите существующую рабочую область Log Analytics или создайте новую.
@@ -77,7 +77,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="use-azure-key-vault"></a>Использование хранилища ключей Azure
 После [установки решения](https://azuremarketplace.microsoft.com/en-usrketplace/marketplace/apps/Microsoft.KeyVaultAnalyticsOMS?tab=Overview)просмотрите Key Vault данные, щелкнув плитку **Аналитика Key Vault** на странице Azure Monitor **Обзор** . Откройте ее в меню **Azure Monitor**, щелкнув **Больше** в разделе **Аналитика**. 
 
-![изображение плитки "Хранилище ключей Azure"](media/azure-key-vault/log-analytics-keyvault-tile.png)
+![Снимок экрана с плиткой Аналитика Key Vault на странице обзора Azure Monitor с графиком объема операций хранилища ключей с течением времени.](media/azure-key-vault/log-analytics-keyvault-tile.png)
 
 Щелкнув плитку **аналитика Key Vault** , можно просмотреть сводные данные журналов, а затем детализировать сведения для следующих категорий:
 
@@ -86,9 +86,9 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 * среднее время задержки для каждой операции;
 * качество обслуживания для операций с количеством операций, выполнявшихся более 1000 мс, и списком этих операций.
 
-![изображение панели мониторинга хранилища ключей Azure](media/azure-key-vault/log-analytics-keyvault01.png)
+![Снимок экрана панели мониторинга Azure Key Vault, показывающей плитки с графическими данными для всех операций, неудачных операций и средней задержки эксплуатации.](media/azure-key-vault/log-analytics-keyvault01.png)
 
-![изображение панели мониторинга хранилища ключей Azure](media/azure-key-vault/log-analytics-keyvault02.png)
+![Снимок экрана панели мониторинга Azure Key Vault, показывающей плитки с данными для средней задержки работы, качества обслуживания и рекомендованных поисков.](media/azure-key-vault/log-analytics-keyvault02.png)
 
 ### <a name="to-view-details-for-any-operation"></a>Просмотр сведений об операциях
 1. На странице **Обзор** щелкните плитку **аналитика Key Vault** .
@@ -99,7 +99,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/general/logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
 
-| Свойство | Описание: |
+| Свойство | Описание |
 |:--- |:--- |
 | `Type` |*AzureDiagnostics* |
 | `SourceSystem` |*Azure* |
