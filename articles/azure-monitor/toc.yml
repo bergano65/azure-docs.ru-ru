@@ -292,7 +292,7 @@
               href: log-query/query-optimization.md
             - name: Анализ текстовых данных
               href: log-query/parse-text.md
-        - name: Рабочие области
+        - name: Рабочие области и кластеры
           items:
             - name: Проектирование развертывания рабочей области
               href: platform/design-logs-deployment.md
@@ -312,6 +312,8 @@
               href: platform/service-providers.md
             - name: Управление доступом
               href: platform/manage-access.md
+            - name: Кластеры категории "Выделенный"
+              href: log-query/logs-dedicated-clusters.md
     - name: Обозреватель метрик
       items:
         - name: Начало работы с обозревателем метрик

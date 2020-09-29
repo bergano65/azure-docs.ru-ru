@@ -8,17 +8,17 @@ manager: rkarlin
 ms.assetid: 9268b8dd-a327-4e36-918e-0c0b711e99d2
 ms.service: security-center
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: 17a3d0364f3085e4baf4e0faa40f117d9fbbb04f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 12140b71f8ef720a9e48b486a43e683b5766d102
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91268168"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439017"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -48,7 +48,7 @@ ms.locfileid: "91268168"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробности|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [защитник Azure для серверов](defender-for-servers-introduction.md)|
@@ -225,7 +225,7 @@ ms.locfileid: "91268168"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как использовать адаптивное управление приложениями в центре безопасности Azure для определения списков разрешенных приложений, выполняющихся на компьютерах с Azure и без Azure. Дополнительные сведения о других функциях защиты облачной рабочей нагрузки центра безопасности см. в следующих статьях:
 
 * [Основные сведения о JIT-доступе к виртуальной машине](just-in-time-explained.md)

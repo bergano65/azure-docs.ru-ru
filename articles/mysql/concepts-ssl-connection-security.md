@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 641ff13ec440bb8267e546c54b684ab4453f91a7
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 6807f3d4ef0596b4dbb51f6bc8c0348901e78d0e
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90052942"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439945"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mysql"></a>Подключение SSL/TLS в базе данных Azure для MySQL
 
@@ -62,7 +62,18 @@ ms.locfileid: "90052942"
 
 Сведения о настройке параметра TLS для базы данных Azure для MySQL см. в разделе [Настройка параметра TLS](howto-tls-configurations.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="cipher-support-by-azure-database-for-mysql-single-server"></a>Поддержка шифра для одного сервера базы данных Azure для MySQL
+
+При обмене данными по протоколу SSL или TLS комплекты шифров проходят проверку и поддерживают только масти шифров, которые могут обмениваться данными с Serer базы данных. Проверка комплекта шифров контролируется на [уровне шлюза](concepts-connectivity-architecture.md#connectivity-architecture) , а не на самом узле. Если комплекты шифров не соответствуют одному из перечисленных ниже пакетов, входящие клиентские соединения будут отклонены.
+
+### <a name="cipher-suite-supported"></a>Поддерживаемый набор шифров
+
+*   TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+*   TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+*   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+*   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+
+## <a name="next-steps"></a>Следующие шаги
 
 - [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md)
 - Узнайте, как [настроить SSL](howto-configure-ssl.md)

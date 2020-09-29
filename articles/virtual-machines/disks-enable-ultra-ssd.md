@@ -4,16 +4,16 @@ description: Дополнительные сведения о Ultra Disks для
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 681804eadc1f710eb5fbf6980fabca4beaaf5439
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e57317dce64b58e5c92684152d840955a30df660
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328243"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441190"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
 
@@ -155,7 +155,7 @@ UltraSSDAvailable                            True
 - Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
 - Нажмите кнопку **ОК** в обоих колонках.
 
-    :::image type="content" source="media/virtual-machines-disks-getting-started-ultra-ssd/ultra-disk-select-new-disk.png" alt-text="Снимок экрана: колонка "Выбор размера диска", выбран параметр "Ultra Disk" для типа хранилища, другие выделенные значения.":::
+    :::image type="content" source="media/virtual-machines-disks-getting-started-ultra-ssd/ultra-disk-select-new-disk.png" alt-text="Снимок экрана: создание колонки нового диска с выделенным изменением размера.":::
 
 - Продолжайте развертывание виртуальной машины, оно будет таким же, как и при развертывании любой другой виртуальной машины.
 
@@ -250,13 +250,7 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 - Измените **тип учетной записи** на **Ultra Disk**.
 - Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
 
-    :::image type="content" source="media/virtual-machines-disks-getting-started-ultra-ssd/ultra-disk-select-new-disk.png" alt-text="Снимок экрана: колонка "Выбор размера диска", выбран параметр "Ultra Disk" для типа хранилища, другие выделенные значения.":::
-
-- Нажмите кнопку **ОК** , а затем выберите **создать**.
-- После возврата в колонку диска нажмите кнопку **сохранить**.
-- Снова запустите виртуальную машину.
-
-![Снимок экрана: колонка "диски" на виртуальной машине.](media/virtual-machines-disks-getting-started-ultra-ssd/saving-and-attaching-new-ultra-disk.png)
+    :::image type="content" source="media/virtual-machines-disks-getting-started-ultra-ssd/ultra-disk-select-new-disk.png" alt-text="Снимок экрана: создание колонки нового диска с выделенным изменением размера." на виртуальной машине.](media/virtual-machines-disks-getting-started-ultra-ssd/saving-and-attaching-new-ultra-disk.png)
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -409,4 +403,5 @@ Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. статью [Использование Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)](../aks/use-ultra-disks.md).
+- [Используйте Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)](../aks/use-ultra-disks.md).
+- [Перенесите диск журнала на диск Ultra](../azure-sql/virtual-machines/windows/storage-migrate-to-ultradisk.md).

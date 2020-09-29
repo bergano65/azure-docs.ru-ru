@@ -8,17 +8,17 @@ manager: rkarlin
 ms.assetid: b85c0e93-9982-48ad-b23f-53b367f22b10
 ms.service: security-center
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
 ms.author: memildin
-ms.openlocfilehash: 43a6c10c8c73e8fb5189b6f085a6969c0d776593
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 6bbc38d79f51ba4ffcc3795718d276a7e9c0bf03
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534912"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440778"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье описывается, как управлять степенью безопасности Организации в масштабе, применяя политики безопасности ко всем подпискам Azure, связанным с вашим клиентом Azure Active Directory.
@@ -39,7 +39,7 @@ ms.locfileid: "87534912"
 Подписки упорядочиваются в группы управления. К ним применяются политики управления. Все подписки в группе управления автоматически наследуют применяемые к ней политики. Группы управления не обязательно связывать с центром безопасности. Однако мы советуем создать по крайней мере одну группу управления. Это позволит создать корневую группу управления. После создания группы с ней связываются все подписки в клиенте Azure AD. Инструкции относительно использования PowerShell и другие полезные сведения см. в статье [Создание групп управления для упорядочения ресурсов и управления ими](../azure-resource-manager/management-groups-create.md).
 
  
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Все службы** > **Группы управления**.
 3. На главной странице выберите **New Management group** (Создать группу управления). 
 
@@ -52,7 +52,7 @@ ms.locfileid: "87534912"
 5.  Нажмите кнопку **Сохранить**.
 
 ### <a name="view-management-groups-in-the-azure-portal"></a>Просмотр групп управления на портале Azure
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**.
 3. В разделе **Общие** выберите **Группы управления**.
 
@@ -93,7 +93,7 @@ ms.locfileid: "87534912"
 
 #### <a name="assign-azure-roles-to-users-through-the-azure-portal"></a>Назначьте роли Azure пользователям с помощью портал Azure: 
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**, а затем выберите **Группы управления**.
 1.  Выберите группу управления и щелкните **Сведения**.
 
@@ -101,7 +101,7 @@ ms.locfileid: "87534912"
  
 1. Щелкните **Управление доступом (IAM)**, а затем **Назначения ролей**.
 
-1. Щелкните **добавить назначение ролей**.
+1. Выберите команду **Добавить назначение ролей**.
 
 1. Выберите пользователя и роль для назначения, а затем щелкните **Сохранить**.  
    
@@ -140,7 +140,7 @@ ms.locfileid: "87534912"
 ### <a name="open-or-refresh-security-center"></a>Открытие или обновление центра безопасности
 После получения повышенных прав доступа откройте или обновите центр безопасности Azure, чтобы проверить, можете ли вы отслеживать все подписки в своем клиенте Azure AD. 
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 2. Убедитесь, что выбраны все подписки в селекторе подписки, который вы хотите просмотреть в центре безопасности Azure.
 
     ![Снимок экрана с селектором подписки](./media/security-center-management-groups/subscription-selector.png)

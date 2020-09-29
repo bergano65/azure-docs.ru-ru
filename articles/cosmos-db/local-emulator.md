@@ -6,13 +6,13 @@ ms.topic: how-to
 author: markjbrown
 ms.author: mjbrown
 ms.date: 09/22/2020
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 07a38e106b765fd28a8c3c1115e5fe84744ade62
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.custom: devx-track-csharp, contperfq1
+ms.openlocfilehash: eb148801011b2d1c8c1f975edb870ba594b085a7
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91303095"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440688"
 ---
 # <a name="install-and-use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Установка и использование эмулятора Cosmos Azure для локальной разработки и тестирования
 
@@ -80,13 +80,13 @@ ms.locfileid: "91303095"
 
 После запуска эмулятора в области уведомлений панели задач Windows появится значок. Он автоматически открывает обозреватель данных Azure Cosmos в браузере по этому URL- `https://localhost:8081/_explorer/index.html` адресу.
 
-:::image type="content" source="./media/local-emulator/database-local-emulator-taskbar.png" alt-text="Уведомление локального эмулятора Azure Cosmos DB на панели задач":::
+:::image type="content" source="./media/local-emulator/database-local-emulator-taskbar.png" alt-text="Нажмите кнопку Запуск или клавишу Windows, начните вводить эмулятор Azure Cosmos и выберите эмулятор из списка приложений.":::
 
 Можно также запускать и прекращать работу эмулятора из командной строки или команд PowerShell. Дополнительные сведения см. в [справочной статье программы командной строки](emulator-command-line-parameters.md) .
 
 По умолчанию эмулятор Azure Cosmos выполняется на локальном компьютере ("localhost"), слушающем порт 8081. В адресной строке отобразится адрес `https://localhost:8081/_explorer/index.html`. Если вы закроете обозреватель и хотите снова открыть его позже, можно либо открыть URL-адрес в браузере, либо запустить его из эмулятора Cosmos Azure в панели задач Windows, как показано ниже.
 
-:::image type="content" source="./media/local-emulator/database-local-emulator-data-explorer-launcher.png" alt-text="Запуск обозревателя данных из локального эмулятора Azure Cosmos":::
+:::image type="content" source="./media/local-emulator/database-local-emulator-data-explorer-launcher.png" alt-text="Нажмите кнопку Запуск или клавишу Windows, начните вводить эмулятор Azure Cosmos и выберите эмулятор из списка приложений.":::
 
 ## <a name="use-the-emulator-on-docker-for-windows"></a><a id="run-on-windows-docker"></a>Использование эмулятора на Docker для Windows
 
@@ -289,7 +289,7 @@ services:
 
 1. Откройте контекстное меню для этого конкретного элемента, выберите *Получить элемент* и в разделе *Доверие*, в параметре  > *When using this certificate* (Во время использовании этого сертификата) выберите *Always Trust* (Всегда доверять). 
 
-   :::image type="content" source="./media/local-emulator/mac-trust-certificate.png" alt-text="Откройте контекстное меню для этого конкретного элемента, выберите Get Item (Получить элемент) и в разделе Trust (Доверие) для параметра When using this certificate (Во время использовании этого сертификата) выберите Always Trust (Всегда доверять).":::
+   :::image type="content" source="./media/local-emulator/mac-trust-certificate.png" alt-text="Нажмите кнопку Запуск или клавишу Windows, начните вводить эмулятор Azure Cosmos и выберите эмулятор из списка приложений.":::
   
 ### <a name="option-2-disable-the-ssl-validation-in-the-application"></a><a id="disable-ssl-validation"></a>Вариант 2. Отключение проверки SSL в приложении
 

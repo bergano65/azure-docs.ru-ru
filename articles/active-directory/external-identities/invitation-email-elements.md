@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 04/15/2020
+ms.date: 09/28/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0429cfb62c319675806d76b4759b776a7b32dbcb
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: d03391ba5a82c128197c86ea6ed84389552fadb9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909340"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439849"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "87909340"
 
 Давайте рассмотрим основные элементы сообщения, чтобы понять, как лучше использовать их возможности.
 
-### <a name="subject"></a>Тема
+### <a name="subject"></a>Субъект
 
 Тема сообщения электронной почты соответствует следующему шаблону:
 
@@ -75,7 +75,21 @@ ms.locfileid: "87909340"
 Нижний колонтитул содержит дополнительные сведения о отправляемом приглашении. Всегда существует возможность блокировать будущие приглашения. Если в организации [задано заявление о конфиденциальности](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-properties-area), здесь отображается ссылка на эту инструкцию.  В противном случае заметка указывает, что Организация не установила заявление о конфиденциальности.
 
 ![Изображение раздела нижнего колонтитула в сообщении электронной почты](media/invitation-email-elements/footer-section.png)
- 
+
+### <a name="blocking-an-organization-unsubscribing"></a>Блокировка Организации (Отмена подписки)
+
+В приглашении Организации нижний колонтитул содержит параметр для **блокировки будущих приглашений**. Гостевой пользователь может выбрать эту ссылку, чтобы заблокировать все будущие приглашения от Организации. Это действие также добавляет организацию в список неподписанных пользователей в [https://invitations.microsoft.com/unsubscribe/manage](https://invitations.microsoft.com/unsubscribe/manage) .
+
+### <a name="viewing-organizations-youve-blocked"></a>Просмотр заблокированных организаций
+
+Гостевой пользователь может выполнить следующие действия, чтобы просмотреть или экспортировать заблокированные Организации:
+
+1. Перейдите по адресу [https://invitations.microsoft.com/unsubscribe/manage](https://invitations.microsoft.com/unsubscribe/manage).
+2. Введите свой адрес электронной почты и выполните действия по входу для проверки подлинности с помощью одноразового секретного кода.
+3. Просмотрите заблокированные организации или экспортируйте имена с помощью команды копировать и вставить.
+   > [!NOTE]
+   > Если вы хотите, чтобы Организация, которая уже заблокирована, могла пригласить вас еще раз, выберите организацию и нажмите кнопку **Далее**.
+
 ## <a name="how-the-language-is-determined"></a>Определение языка
 
 Язык, представляемый гостю в электронном письме с приглашением, определяется следующими параметрами. Эти параметры перечислены в порядке приоритета. Если параметр не настроен, язык определит следующий в списке параметр.

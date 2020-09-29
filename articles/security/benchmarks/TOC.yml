@@ -69,6 +69,8 @@
       href: ../../backup/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
+    - name: Базовая средства безопасности службы "Когнитивный поиск Azure"
+      href: ../../search/security-baseline.md
     - name: Базовые средства безопасности Azure Data Box
       href: ../../databox/security-baseline.md
     - name: Базовые средства безопасности Azure Data Explorer

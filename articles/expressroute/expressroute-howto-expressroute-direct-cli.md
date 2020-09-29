@@ -1,23 +1,23 @@
 ---
 title: 'Azure ExpressRoute: Настройка Direct для ExpressRoute: CLI'
-description: Узнайте, как с помощью Azure CLI настроить Azure ExpressRoute Direct для прямого подключения к глобальной сети Майкрософт в точках пиринга по всему миру.
+description: Узнайте, как использовать Azure CLI, чтобы настроить Azure ExpressRoute Direct для прямого подключения к глобальной сети Майкрософт.
 services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 05/20/2019
+ms.date: 09/28/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4eea79d6166ef4beae3b2d61e47e7df0bc82624c
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: e8c305da074f3090ced0dfc16b4a3faa4c757699
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89395967"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440209"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
-С помощью ExpressRoute Direct вы можете напрямую подключиться к глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).
+ExpressRoute Direct дает возможность напрямую подключаться к глобальной сети Майкрософт через равноправные расположения, стратегически распределенные по всему миру. Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).
 
 ## <a name="create-the-resource"></a><a name="resources"></a>Создание ресурса
 
@@ -209,7 +209,13 @@ ms.locfileid: "89395967"
    }  
    ```
 
-## <a name="change-adminstate-for-links"></a><a name="state"></a>Изменение AdminState для ссылок
+## <a name="generate-the-letter-of-authorization-loa"></a><a name="authorization"></a>Создание письма авторизации (определения гарантии)
+
+Введите недавно созданное имя ресурса прямого поиска ExpressRoute, имя группы ресурсов и имя клиента для записи определения гарантии в и (необязательно) Определите расположение файла для хранения документа. Если на путь к файлу нет ссылки, документ будет загружен в текущий каталог.
+
+```azurecli
+az network express-route port generate-loa -n Contoso-Direct -g Contoso-Direct-rg --customer-name Contoso --destination C:\Users\SampleUser\Downloads\LOA.pdf
+```
 
 Этот процесс позволяет провести тестирование уровня 1. Убедитесь, что все кроссовые подключения правильно подключены к маршрутизаторам на первичных и вторичных портах.
 
@@ -287,7 +293,8 @@ ms.locfileid: "89395967"
 
 **Скутиер** может быть локальным, стандартным или Premium.
 
-**Скуфамили** должен быть MeteredData только как неограниченный. в ExpressRoute Direct не поддерживается.
+**Скуфамили** может быть только MeteredData. Неограниченное число не поддерживается в ExpressRoute Direct.
+
 Создайте канал в ресурсе ExpressRoute Direct:
 
   ```azurecli
@@ -332,6 +339,6 @@ ms.locfileid: "89395967"
   }  
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [сведений о подключении ExpressRoute Direct](expressroute-erdirect-about.md).

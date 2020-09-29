@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 9ad0ad7b1ff2f0b706595daf8b8c93f480f0e00b
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 68d2ed0d6702a42f44e502f2f7d3a91c0221ff6a
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89421719"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440945"
 ---
 # <a name="about-point-to-site-vpn"></a>Сведения о VPN-подключениях типа "точка — сеть"
 
@@ -68,7 +68,7 @@ ms.locfileid: "89421719"
 
 Сервер RADIUS также можно интегрировать с другими системами внешних идентификаторов. Благодаря этой возможности для VPN-подключений "точка — сеть" доступно множество вариантов аутентификации, в том числе и варианты многофакторной аутентификации.
 
-![точка-сеть](./media/point-to-site-about/p2s.png "Точка-сеть")
+![Схема, показывающая VPN-подключение типа "точка — сеть" с локальным сайтом.](./media/point-to-site-about/p2s.png)
 
 ## <a name="what-are-the-client-configuration-requirements"></a>Требования к конфигурации клиента
 
@@ -178,7 +178,7 @@ ZIP-файл также содержит значения важных пара�
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell](point-to-site-how-to-radius-ps.md)
 

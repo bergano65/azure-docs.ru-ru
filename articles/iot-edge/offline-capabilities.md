@@ -7,12 +7,12 @@ ms.date: 11/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: e929463c33603c650bec2e9a49a13dde6965e39f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: bf8b8554aa2ea1d6d06f58f726ca65f77499ec5f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926660"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440039"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge
 
@@ -68,7 +68,7 @@ Azure IoT Edge поддерживает расширенную автоном�
 
 #### <a name="option-2-use-the-az-command-line-tool"></a>Вариант 2. Использование инструмента командной строки `az`
 
-Используя [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) с [расширением IoT](https://github.com/azure/azure-iot-cli-extension) (версия 0.7.0 или более поздняя), можно управлять отношениями "родитель — потомок" с помощью подкоманд [device-identity](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity?view=azure-cli-latest). В следующем примере запрос используется для назначения всех устройств не из IoT Edge в центре как дочерних устройств для устройства IoT Edge.
+Используя [интерфейс командной строки Azure](/cli/azure/) с [расширением IoT](https://github.com/azure/azure-iot-cli-extension) (версия 0.7.0 или более поздняя), можно управлять отношениями "родитель — потомок" с помощью подкоманд [device-identity](/cli/azure/ext/azure-iot/iot/hub/device-identity). В следующем примере запрос используется для назначения всех устройств не из IoT Edge в центре как дочерних устройств для устройства IoT Edge.
 
 ```azurecli
 # Set IoT Edge parent device

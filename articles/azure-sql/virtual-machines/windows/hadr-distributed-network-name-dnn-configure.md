@@ -116,10 +116,10 @@ Start-ClusterResource -Name dnn-demo
 
 1. Перейдите к ресурсу DNN в диспетчер отказоустойчивости кластеров. 
 1. Щелкните правой кнопкой мыши ресурс DNN и выберите пункт **Свойства**. 
-   :::image type="content" source="media/hadr-distributed-network-name-dnn-configure/fci-dnn-properties.png" alt-text="Контекстное меню для ресурса DNN с выделенной командой "Свойства".":::
+   :::image type="content" source="media/hadr-distributed-network-name-dnn-configure/fci-dnn-properties.png" alt-text="Контекстное меню для ресурса DNN с выделенной командой &quot;Свойства&quot;.":::
 1. Снимите флажки для всех узлов, которые не участвуют в экземпляре отказоустойчивого кластера. Список возможных владельцев для ресурса DNN должен соответствовать списку возможных владельцев для ресурса экземпляра SQL Server. Например, если data3 не участвует в FCI, на следующем рисунке приведен пример удаления data3 из списка возможных владельцев для ресурса DNN: 
 
-   :::image type="content" source="media/hadr-distributed-network-name-dnn-configure/clear-check-for-nodes-not-in-fci.png" alt-text="Снимите флажок рядом с узлами, которые не участвуют в FCI, для возможных владельцев ресурса DNN.":::
+   :::image type="content" source="media/hadr-distributed-network-name-dnn-configure/clear-check-for-nodes-not-in-fci.png" alt-text="Контекстное меню для ресурса DNN с выделенной командой &quot;Свойства&quot;.":::
 
 1. Нажмите кнопку **ОК**, чтобы сохранить параметры. 
 

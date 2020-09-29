@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: a70f7ccd1c3ca078bab0ff473283b505c0ded316
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 028250e25f4d67628c08970e25b4621e78526b6a
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89441567"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440826"
 ---
 # <a name="remote-work-using-azure-vpn-gateway-point-to-site"></a>Удаленная работа с использованием VPN-шлюза Azure "точка — сеть"
 
@@ -30,13 +30,13 @@ ms.locfileid: "89441567"
 
 В таблице ниже показаны клиентские операционные системы и доступные для них параметры проверки подлинности. Было бы полезно выбрать метод проверки подлинности на основе уже используемой клиентской ОС. Например, выберите Опенвпн с проверкой подлинности на основе сертификата, если у вас есть сочетание клиентских операционных систем, к которым необходимо подключиться. Кроме того, обратите внимание, что VPN типа "точка — сеть" поддерживается только для VPN-шлюзов на основе маршрутов.
 
-![точка-сеть](./media/working-remotely-support/ostable.png "OS")
+![Снимок экрана, на котором показаны клиентские операционные системы и доступные варианты проверки подлинности.](./media/working-remotely-support/ostable.png "OS")
 
 ## <a name="scenario-1---users-need-access-to-resources-in-azure-only"></a><a name="scenario1"></a>Сценарий 1. пользователям требуется доступ к ресурсам только в Azure
 
 В этом сценарии удаленные пользователи должны иметь доступ только к ресурсам, которые находятся в Azure.
 
-![точка-сеть](./media/working-remotely-support/scenario1.png "Сценарий 1")
+![Схема, на которой показан сценарий "точка — сеть" для пользователей, которым необходим доступ к ресурсам в Azure.](./media/working-remotely-support/scenario1.png "Сценарий 1")
 
 Чтобы пользователи могли безопасно подключаться к ресурсам Azure на высоком уровне, необходимо выполнить следующие действия:
 
@@ -55,7 +55,7 @@ ms.locfileid: "89441567"
 
 В этом сценарии удаленные пользователи должны иметь доступ к ресурсам в Azure и в локальных центрах обработки данных.
 
-![точка-сеть](./media/working-remotely-support/scenario2.png "Сценарий 2")
+![Схема, на которой показан сценарий "точка — сеть" для пользователей, которым требуется доступ к ресурсам в Azure.](./media/working-remotely-support/scenario2.png "Сценарий 2")
 
 Чтобы пользователи могли безопасно подключаться к ресурсам Azure на высоком уровне, необходимо выполнить следующие действия:
 
@@ -75,7 +75,7 @@ ms.locfileid: "89441567"
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка подключения P2S — проверка подлинности Azure AD](openvpn-azure-ad-tenant.md)
 

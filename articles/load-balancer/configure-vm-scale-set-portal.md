@@ -6,12 +6,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: how-to
 ms.date: 03/25/2020
-ms.openlocfilehash: e12532107ed554385ccf38531bb95b7b70298934
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cb7bfb9ac4b10b807ac186d087b0037953abd559
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333891"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439512"
 ---
 # <a name="configure-a-virtual-machine-scale-set-with-an-existing-azure-load-balancer-using-the-azure-portal"></a>Настройка масштабируемого набора виртуальных машин с использованием существующего Azure Load Balancer с помощью портал Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "91333891"
     | Подтверждение пароля               | Повторно введите пароль администратора |
 
 
-    :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-01.png" alt-text="Создайте масштабируемый набор виртуальных машин." border="true":::
+    :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-01.png" alt-text="На снимке экрана показана вкладка &quot;Создание базовых наборов масштабирования виртуальных машин&quot;." border="true":::
 
 4. Перейдите на вкладку **Сеть**.
 
@@ -79,7 +79,7 @@ ms.locfileid: "91333891"
     | Выберите подсистему балансировки нагрузки            | Выберите **myLoadBalancer** или имеющуюся подсистему балансировки нагрузки. |
     | Выберите серверный пул             | Выберите **myBackendPool** или существующий серверный пул.  |
 
-    :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-02.png" alt-text="Создайте масштабируемый набор виртуальных машин." border="true":::
+    :::image type="content" source="./media/vm-scale-sets/create-vm-scale-set-02.png" alt-text="На снимке экрана показана вкладка &quot;Создание базовых наборов масштабирования виртуальных машин&quot;." border="true":::
 
 6. Перейдите на вкладку **Управление** .
 
@@ -89,7 +89,7 @@ ms.locfileid: "91333891"
 
 9. Проверьте параметры и нажмите кнопку **создать** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы развернули масштабируемый набор виртуальных машин с существующим Azure Load Balancer.  Дополнительные сведения о масштабируемых наборах виртуальных машин и подсистеме балансировки нагрузки см. в следующих статьях:
 

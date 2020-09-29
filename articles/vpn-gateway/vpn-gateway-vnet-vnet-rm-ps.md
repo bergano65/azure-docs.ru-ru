@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 1b1cd0adb8581c7aa94f0de85a9f8beab38da112
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: edd9f9f3127178f168f6c768b092a7ec6311e7bf
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89398568"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440923"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью PowerShell
 
@@ -67,7 +67,7 @@ ms.locfileid: "89398568"
 
 * [Виртуальные сети в рамках одной подписки:](#samesub) в инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet4.
 
-  ![Схема подключения между виртуальными сетями](./media/vpn-gateway-vnet-vnet-rm-ps/v2vrmps.png)
+  ![Схема, в которой показаны действия V NET-V для поточностей с V, которые находятся в одной подписке.](./media/vpn-gateway-vnet-vnet-rm-ps/v2vrmps.png)
 
 * [Виртуальные сети в разных подписках:](#difsub) в инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet5.
 
@@ -75,7 +75,7 @@ ms.locfileid: "89398568"
 
 ## <a name="how-to-connect-vnets-that-are-in-the-same-subscription"></a><a name="samesub"></a>Подключение виртуальных сетей из одной подписки
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -203,7 +203,7 @@ ms.locfileid: "89398568"
    -VpnType RouteBased -GatewaySku VpnGw1
    ```
 
-После создания команды, создание этого шлюза займет до 45 минут. Если вы используете Azure Cloud Shell, вы можете перезапустить сеанс CloudShell, нажав кнопку в верхнем левом углу терминала Cloud Shell, а затем настроить TestVNet4. Нет необходимости ждать завершения шлюза TestVNet1.
+После создания команды, создание этого шлюза займет до 45 минут. Если вы используете Azure Cloud Shell, можно перезапустить сеанс Cloud Shell, щелкнув в левом верхнем углу окна терминала Cloud Shell, а затем настроив TestVNet4. Нет необходимости ждать завершения шлюза TestVNet1.
 
 ### <a name="step-3---create-and-configure-testvnet4"></a>Шаг 3. Создание и настройка TestVNet4
 
@@ -448,7 +448,7 @@ ms.locfileid: "89398568"
    PS C:\> $vnet5gw.Id
    /subscriptions/66c8e4f1-ecd6-47ed-9de7-7e530de23994/resourceGroups/TestRG5/providers/Microsoft.Network/virtualNetworkGateways/VNet5GW
    ```
-3. **[Подписка 1]**. Создайте подключение между TestVNet1 и TestVNet5. На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Разница здесь заключается в том, что вы не можете напрямую получить $vnet5gw, так как это значение используется в другой подписке. Вам необходимо создать новый объект PowerShell с помощью значений, переданных из подписки 1 на предыдущих этапах. Используйте пример ниже. Замените имя, идентификатор и общий ключ своими значениями. Важно, чтобы общий ключ в обоих подключениях был одинаковым. Создание подключения может занять некоторое время.
+3. **[Подписка 1]**. Создайте подключение между TestVNet1 и TestVNet5. На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Разница здесь заключается в том, что вы не можете напрямую получить $vnet5gw, так как это значение используется в другой подписке. Вам необходимо создать новый объект PowerShell с помощью значений, переданных из подписки 1 на предыдущих этапах. Используйте пример ниже. Замените имя, идентификатор и общий ключ собственными значениями. Важно, чтобы общий ключ в обоих подключениях был одинаковым. Создание подключения может занять некоторое время.
 
    Подключитесь к подписке 1, а затем выполните следующую команду:
 
@@ -475,7 +475,7 @@ ms.locfileid: "89398568"
 
 [!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
 
-[!INCLUDE [verify connections powershell](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
+[!INCLUDE [verify connections PowerShell](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
 ## <a name="vnet-to-vnet-faq"></a><a name="faq"></a>Часто задаваемые вопросы о подключениях типа "виртуальная сеть — виртуальная сеть"
 

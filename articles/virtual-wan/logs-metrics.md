@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: f0ff647581447ad4436daf6c8b1d2ecbf817f7f8
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 78165e9c14d4a83dbc20cbccd2f31dc8ac4c79ed
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90983633"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440871"
 ---
 # <a name="azure-virtual-wan-logs-and-metrics"></a>Журналы и метрики виртуальной глобальной сети Azure
 
@@ -62,11 +62,11 @@ ms.locfileid: "90983633"
 
 3. Выберите **Метрики**.
 
-   :::image type="content" source="./media/logs-metrics/metrics.png" alt-text="На снимке экрана показана панель "сайт-сайт" P N с представлением Azure Monitor выбрано.":::
+   :::image type="content" source="./media/logs-metrics/metrics.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
 
 4. На странице **метрики** можно просмотреть интересующие вас метрики.
 
-   :::image type="content" source="./media/logs-metrics/metrics-page.png" alt-text="страница «метрики»":::
+   :::image type="content" source="./media/logs-metrics/metrics-page.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
 
 ## <a name="diagnostic-logs"></a><a name="diagnostic"></a>Журналы диагностики
 
@@ -93,15 +93,15 @@ ms.locfileid: "90983633"
 
 1. На портале перейдите к виртуальному ресурсу глобальной сети. В разделе **Обзор** страницы Виртуальная глобальная сеть на портале выберите **Essentials** , чтобы развернуть представление и получить сведения о группе ресурсов. Скопируйте сведения о группе ресурсов.
 
-   :::image type="content" source="./media/logs-metrics/3.png" alt-text="страница «метрики»":::
+   :::image type="content" source="./media/logs-metrics/3.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
 
 2. В разделе Мониторинг перейдите к группе ресурсов. Выберите **параметры диагностики**, а затем введите сведения о ресурсах. Это сведения о ресурсах, скопированные на шаге 2 в разделе [Просмотр метрик шлюза](#metrics-steps) ранее в этой статье.
 
-   :::image type="content" source="./media/logs-metrics/4.png" alt-text="страница «метрики»":::
+   :::image type="content" source="./media/logs-metrics/4.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
 
 3. На странице Результаты выберите **+ Добавить параметр диагностики**, а затем выберите параметр. Вы можете отправить Log Analytics, поток в концентратор событий или просто архивировать его в учетную запись хранения.
 
-   :::image type="content" source="./media/logs-metrics/5.png" alt-text="страница «метрики»":::
+   :::image type="content" source="./media/logs-metrics/5.png" alt-text="На снимке экрана показана панель &quot;сайт-сайт&quot; P N с представлением Azure Monitor выбрано.":::
 
 ### <a name="log-analytics-sample-query"></a><a name="sample-query"></a>Log Analytics пример запроса
 

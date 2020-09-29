@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/13/2020
-ms.openlocfilehash: 2ef7095d186902425adb5065c470325be1283023
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: d06501abe69ce9b06656cfa8949c42bb53a03983
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475742"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439243"
 ---
 # <a name="azure-monitor-logs-connector-for-logic-apps-and-power-automate"></a>Соединитель Azure Monitor журналов для Logic Apps и автоматизации энергосбережения
 [Azure Logic Apps](../../logic-apps/index.yml) и [Power автоматизировать](https://flow.microsoft.com) позволяют создавать автоматизированные рабочие процессы с помощью сотен действий для различных служб. Соединитель Azure Monitor Logs позволяет создавать рабочие процессы, которые извлекают данные из Log Analytics рабочей области или приложения Application Insights в Azure Monitor. В этой статье описываются действия, входящие в соединитель, и приводится пошаговое руководство по созданию рабочего процесса с использованием этих данных.
@@ -68,7 +68,7 @@ ms.locfileid: "87475742"
 
 Щелкните **Azure Log Analytics – Run query and visualize results** (Azure Log Analytics – выполнить запрос и отобразить результаты).
 
-![Действие "выполнить запрос и визуализировать результаты"](media/logicapp-flow-connector/select-query-action-visualize.png)
+![Снимок экрана нового действия, добавляемого к шагу в конструкторе приложений логики. Azure Monitor журналы выделяются в разделе Выберите действие.](media/logicapp-flow-connector/select-query-action-visualize.png)
 
 
 ### <a name="add-azure-monitor-logs-action"></a>Действие "добавить Azure Monitor журналов"
@@ -87,7 +87,7 @@ Event
 
 Выберите *задать в запросе* для **диапазона времени** и **таблицы HTML** для **типа диаграммы**.
    
-![Действие "выполнить запрос и визуализировать результаты"](media/logicapp-flow-connector/run-query-visualize-action.png)
+![Снимок экрана параметров для нового действия "регистрация" Azure Monitor "выполнить запрос" и визуализировать результаты.](media/logicapp-flow-connector/run-query-visualize-action.png)
 
 Почта будет отправлена учетной записью, связанной с текущим соединением. Можно указать другую учетную запись, щелкнув **изменить подключение**.
 
@@ -122,7 +122,7 @@ Event
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о запросах журнала в Azure Monitor см. в [этой статье](../log-query/log-query-overview.md).
 - Дополнительные сведения о [Logic Apps](../../logic-apps/index.yml)
