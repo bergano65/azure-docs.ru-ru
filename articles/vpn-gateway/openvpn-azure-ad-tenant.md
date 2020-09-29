@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: 74df878baa6ed4e2ba902a73a7830c0b075c58ce
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 1905db8f28bde41dadbe619894cb76830efca992
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90981531"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91445821"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений "точка — сеть" по протоколу OpenVPN
 
@@ -47,7 +47,7 @@ ms.locfileid: "90981531"
 
 1. Укажите идентификатор каталога, который хотите использовать для проверки подлинности. Он указан в разделе свойств страницы Active Directory.
 
-    ![Идентификатор каталога](./media/openvpn-create-azure-ad-tenant/directory-id.png)
+    ![Снимок экрана, на котором показана страница "свойства каталога" с выделенным элементом "идентификатор каталога".](./media/openvpn-create-azure-ad-tenant/directory-id.png)
 
 2. Скопируйте идентификатор каталога.
 
@@ -89,7 +89,7 @@ ms.locfileid: "90981531"
 
 7. В Azure AD в разделе **корпоративные приложения**вы увидите список **VPN Azure** .
 
-    ![VPN Azure](./media/openvpn-create-azure-ad-tenant/azurevpn.png)
+    ![Снимок экрана, на котором показана страница "все приложения".](./media/openvpn-create-azure-ad-tenant/azurevpn.png)
     
 8. Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. раздел [Создание VPN-подключения](vpn-gateway-howto-point-to-site-resource-manager-portal.md) типа "точка — сеть" для создания и настройки VPN-шлюза типа "точка — сеть". 
 
@@ -112,6 +112,6 @@ ms.locfileid: "90981531"
 
 13. Запишите расположение файла "azurevpnconfig.xml". azurevpnconfig.xml содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).

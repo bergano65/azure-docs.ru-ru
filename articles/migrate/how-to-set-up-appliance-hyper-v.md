@@ -3,12 +3,12 @@ title: Настройка устройства "миграция Azure" для H
 description: Узнайте, как настроить устройство миграции Azure для оценки и миграции виртуальных машин Hyper-V.
 ms.topic: article
 ms.date: 03/23/2020
-ms.openlocfilehash: c53f82268bd1a5d94659a8b749a14fd026f91ce1
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 8841f934ba21fda6cc36b856ea773ed0f53cfe32
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90087156"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448082"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Настройка устройства для виртуальных машин Hyper-V
 
@@ -48,7 +48,7 @@ ms.locfileid: "90087156"
    ![Выделенные фрагменты области "Обнаружение компьютеров"](./media/tutorial-assess-hyper-v/servers-discover.png)
 
 
-   ![Выбранные параметры для пункта "Создать ключ"](./media/tutorial-assess-hyper-v/generate-key-hyperv.png)
+   ![Выделенный фрагмент области создания ключа](./media/tutorial-assess-hyper-v/generate-key-hyperv.png)
 
 
 ### <a name="verify-security"></a>Проверка безопасности
@@ -58,7 +58,7 @@ ms.locfileid: "90087156"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш VHD-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.vhd SHA256```
+    - Пример использования: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v3.20.09.25.zip -Algorithm SHA256```
 
 
 
@@ -130,7 +130,7 @@ ms.locfileid: "90087156"
 1. На виртуальной машине устройства выполните эту команду. HyperVHost1/HyperVHost2 — это примеры имен узлов.
 
     ```
-    Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force
+    Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com, HyperVHost2.contoso.com, HyperVHost1, HyperVHost2 -Force
     ```
 
 2. Кроме того, это можно сделать в редакторе локальных групповых политик на устройстве:
@@ -173,6 +173,6 @@ ms.locfileid: "90087156"
 2. На странице **Azure Migrate — Servers** > **Azure Migrate: Server Assessment** (Миграция Azure — серверы > Миграция Azure: оценка сервера) щелкните значок, отображающий количество **обнаруженных серверов**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Испытайте оценку [Hyper-V](tutorial-assess-hyper-v.md) с помощью службы "Миграция серверов Azure".

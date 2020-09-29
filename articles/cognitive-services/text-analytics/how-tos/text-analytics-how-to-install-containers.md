@@ -1,22 +1,23 @@
 ---
-title: Установка и запуск контейнеров — Анализ текста
+title: Установка и запуск контейнеров DOCKER для API анализа текста
 titleSuffix: Azure Cognitive Services
-description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры для Анализа текста.
+description: Используйте контейнеры DOCKER для API анализа текста для выполнения обработки естественного языка, например для анализа тональности в локальной среде.
 services: cognitive-services
 author: aahill
 manager: nitinme
-ms.custom: seodec18
+ms.custom: seodec18, cog-serv-seo-aug-2020
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 09/28/2020
 ms.author: aahi
-ms.openlocfilehash: 27881d6271fbedfb5763b293d5145e2f87cd1c13
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+keywords: локальный, Docker, контейнер, анализ тональности, обработка на естественном языке
+ms.openlocfilehash: 42b22c94f8f2eed0514906422fe9f1d5e7cd12e2
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91309321"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91461501"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
@@ -33,7 +34,7 @@ ms.locfileid: "91309321"
 > [!IMPORTANT]
 > Бесплатная учетная запись ограничена 5 000 транзакциями в месяц, а для контейнеров допустимы только <a href="https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics" target="_blank">ценовые <span class="docon docon-navigate-external x-hidden-focus"></span> категории</a> " **бесплатный** " и " **стандартный** ". Дополнительные сведения о тарифах запросов транзакций см. в разделе [ограничения данных](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview#data-limits).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы запустить любой из Анализ текста контейнеров, необходимо иметь главный компьютер и среды контейнеров.
 
@@ -41,7 +42,7 @@ ms.locfileid: "91309321"
 
 Прежде чем использовать контейнеры Анализа текста, необходимо выполнить следующие условия:
 
-|Обязательно|Назначение|
+|Обязательный|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 

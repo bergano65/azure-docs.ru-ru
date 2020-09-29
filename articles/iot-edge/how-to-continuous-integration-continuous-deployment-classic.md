@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 427d72b2a8531fa4dafa0040266249b138b6edf3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c4a9d7fbfbda568c07a528e5a7eafd70b85add45
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91291084"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447801"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices-classic-editor"></a>Непрерывная интеграция и непрерывное развертывание на Azure IoT Edge устройствах (классический редактор)
 
@@ -160,7 +160,7 @@ ms.locfileid: "91291084"
 >[!NOTE]
 >Если вы хотите использовать **многоуровневые развертывания** в конвейере, то многоуровневые развертывания еще не поддерживаются в задачах Azure IOT EDGE в Azure DevOps.
 >
->Однако вы можете использовать [задачу Azure CLI в Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli) , чтобы создать развертывание в качестве многоуровневого развертывания. Чтобы получить значение **встроенного скрипта** , можно использовать [команду AZ IOT ребр развертывания CREATE](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment):
+>Однако вы можете использовать [задачу Azure CLI в Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli) , чтобы создать развертывание в качестве многоуровневого развертывания. Чтобы получить значение **встроенного скрипта** , можно использовать [команду AZ IOT ребр развертывания CREATE](/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment):
 >
 >   ```azurecli-interactive
 >   az iot edge deployment create -d {deployment_name} -n {hub_name} --content modules_content.json --layered true
@@ -168,7 +168,7 @@ ms.locfileid: "91291084"
 
 [!INCLUDE [iot-edge-verify-iot-edge-continuous-integration-continuous-deployment](../../includes/iot-edge-verify-iot-edge-continuous-integration-continuous-deployment.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * IoT Edge DevOps рекомендации в [Azure DevOps Starter для IOT Edge](how-to-devops-starter.md)
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).

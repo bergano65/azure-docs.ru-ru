@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 11/14/2019
+ms.date: 09/28/2020
 ms.author: victorh
-ms.openlocfilehash: 7c65f143552aa14f9e309b68f484f9c0695e8dbd
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: c4d1d16d07aaf92a0bc3cc365ac094893fc41c79
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89596068"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446520"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью Azure PowerShell
 
@@ -333,11 +333,4 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как:
-
-> [!div class="checklist"]
-> * Создание самозаверяющего сертификата
-> * настройка сети;
-> * создание шлюза приложений с сертификатом;
-> * добавление прослушивателя и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+- [Перезапись заголовков HTTP и URL-адреса с помощью шлюза приложений](rewrite-http-headers-url.md)

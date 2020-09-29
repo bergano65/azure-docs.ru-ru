@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 07/28/2020
+ms.date: 09/28/2020
 ms.author: b-juche
-ms.openlocfilehash: da7aa0889940c560df705e3c47f5ccb1960aee2c
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: bed1375631c017d23ed53b6102c424533237099e
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361030"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447561"
 ---
 # <a name="delegate-a-subnet-to-azure-netapp-files"></a>Делегирование подсети в Azure NetApp Files 
 
@@ -33,7 +33,8 @@ ms.locfileid: "91361030"
    В виртуальной сети может быть только одна Делегированная подсеть. Учетная запись NetApp может развертывать тома в нескольких виртуальных сетей, каждый из которых имеет собственную делегированную подсеть.  
 * В делегированной подсети невозможно назначить группу безопасности сети или конечную точку службы. Попытка к сбою делегирования подсети.
 * Доступ к тому из глобальной одноранговой виртуальной сети в настоящее время не поддерживается.
-* Создание [определяемых пользователем пользовательских маршрутов](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) в ПОДСЕТЯХ виртуальных машин с префиксом адреса (назначением) к подсети, делегированной в Azure NetApp Files, не поддерживается. Это повлияет на подключение к виртуальной машине. Azure NetApp Files создает системный маршрут к делегированной подсети. Маршрут отображается в подразделах **действующие маршруты** в таблице маршрутов, если это необходимо для устранения неполадок.
+* [Определяемые пользователем маршруты](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) (определяемые пользователем маршруты) и группы безопасности сети (группы безопасности сети) не поддерживаются в делегированных подсетях для Azure NetApp Files. Но вы можете применять UDR и NSG к другим подсетям, в том числе к расположенным в той же виртуальной сети, что и делегированная подсеть Azure NetApp Files.  
+   Azure NetApp Files создает системный маршрут к делегированной подсети. Маршрут отображается в подразделах **действующие маршруты** в таблице маршрутов, если это необходимо для устранения неполадок.
 
 ## <a name="steps"></a>Шаги
 
@@ -50,7 +51,7 @@ ms.locfileid: "91361030"
     
 Можно также создать и делегировать подсеть при [создании тома для Azure NetApp Files](azure-netapp-files-create-volumes.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание тома для Azure NetApp Files](azure-netapp-files-create-volumes.md)
 * [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

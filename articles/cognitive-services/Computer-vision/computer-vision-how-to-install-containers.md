@@ -1,24 +1,25 @@
 ---
-title: Установка и запуск контейнеров — API компьютерного зрения
+title: Установка и запуск контейнеров DOCKER для Компьютерное зрениеного API чтения
 titleSuffix: Azure Cognitive Services
-description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры компьютерного зрения.
+description: Используйте контейнер DOCKER для Компьютерное зрение API чтения, чтобы обнаруживать и извлекать текст из изображений в локальной среде.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 09/03/2020
+ms.date: 09/28/2020
 ms.author: aahi
-ms.custom: seodec18
-ms.openlocfilehash: 2c21c872649e3b171f2658ef6bdb0476552f0e59
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.custom: seodec18, cog-serv-seo-aug-2020
+keywords: локальная среда, Docker, контейнер
+ms.openlocfilehash: 17aa0050ed3e2a2f5a2cc83964d032caa4b8c098
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91397201"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91460447"
 ---
-# <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
+# <a name="install-and-run-docker-containers-for-the-read-api-preview"></a>Установка и запуск контейнеров DOCKER для API чтения (Предварительная версия) 
 
 [!INCLUDE [container hosting on the Microsoft Container Registry](../containers/includes/gated-container-hosting.md)]
 
@@ -45,11 +46,11 @@ ms.locfileid: "91397201"
 
 При рассмотрении используемой версии контейнера Обратите внимание, что версия 3.1-Preview находится в более раннем состоянии предварительной версии. Если вы используете "Read 2,0 Containers" сегодня, ознакомьтесь с [руководством по миграции](read-container-migration-guide.md) , чтобы узнать об изменениях в новых версиях.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед использованием контейнеров необходимо выполнить следующие предварительные требования:
 
-|Обязательно|Назначение|
+|Обязательный|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 

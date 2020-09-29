@@ -11,25 +11,30 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 07/27/2020
+ms.date: 09/28/2020
 tags: azure-synapse
-ms.openlocfilehash: 15289727c3ee4d498fa50058ef98f0ae5b3d1b12
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e526b8e2e4f31187bb958ec37c2ffa4d30f0265b
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91277807"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91461161"
 ---
 # <a name="using-multi-factor-azure-active-directory-authentication"></a>Использование многофакторной проверки подлинности Azure Active Directory
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 База данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе Analytics поддерживают подключения из [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) с помощью *Azure Active Directory-Universal с* проверкой подлинности mfa. В этой статье обсуждаются различия между различными вариантами проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности в Azure Active Directory (Azure AD) для Azure SQL.
 
-**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx).
+**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://aka.ms/ssms). 
+
+> [!Note]
+> В декабре 2021 выпуски SSMS, выпущенные до 18,6, больше не будут проходить проверку подлинности с помощью Azure Active Directory с MFA. Чтобы продолжить использование проверки подлинности Azure Active Directory с MFA, установите или обновите среду SSMS 18,6 или более поздней версии.
 
 Для всех функций, описанных в этой статье, используйте по крайней мере версию 17.2 за июль 2017 года. Диалоговое окно "Последнее подключение" должно выглядеть следующим образом:
 
-  ![Снимок экрана: диалоговое окно подключения к серверу в SQL Server Management Studio, в котором отображаются параметры типа сервера, имени сервера и проверки подлинности.](./media/authentication-mfa-ssms-overview/1mfa-universal-connect.png)  
+  ![Снимок экрана: диалоговое окно подключения к серверу в SQL Server Management Studio, в котором отображаются параметры типа сервера, имени сервера и проверки подлинности.](./media/authentication-mfa-ssms-overview/1mfa-universal-connect.png)
+  
+    
 
 ## <a name="authentication-options"></a>Параметры проверки подлинности
 

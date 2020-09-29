@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
-ms.openlocfilehash: b24514ed477d1acd31dbc4ef0daa3aa89b8739f9
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 2e27b168087966701fb53cc8df19d264861257d6
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90530834"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448105"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Несколько внешних интерфейсов для Azure Load Balancer
 
@@ -64,12 +64,12 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 | Правило | Сопоставить внешний интерфейс | С внутренним пулом |
 | --- | --- | --- |
-| 1 |![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png)  DIP2:80 |
-| 2 |![Виртуальный IP-адрес](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png)  DIP2:81 |
+| 1 |![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![Зеленая Серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![Зеленая Серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png)  DIP2:80 |
+| 2 |![Виртуальный IP-адрес](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![Фиолетовая Серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![Фиолетовая Серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png)  DIP2:81 |
 
 Полное сопоставление в Azure Load Balancer теперь выглядит следующим образом:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |Выделенный IP-адрес (DIP) |80 |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |Выделенный IP-адрес (DIP) |81 |
@@ -143,12 +143,12 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 
 | Правило | Внешний интерфейс | Сопоставление с внутренним пулом |
 | --- | --- | --- |
-| 1 |![правило](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 (на виртуальной машине 1 и 2) |
-| 2 |![правило](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 (на виртуальной машине 1 и 2) |
+| 1 |![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![Зеленая Серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 (на виртуальной машине 1 и 2) |
+| 2 |![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![Фиолетовая Серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 (на виртуальной машине 1 и 2) |
 
 Следующая таблица демонстрирует полное сопоставление в балансировщике нагрузки:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.1) |такое, как у внешнего интерфейса (80) |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.2) |такое, как у внешнего интерфейса (80) |
@@ -167,6 +167,6 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 * Общедоступные IP-адреса оказывают влияние на выставление счетов. Дополнительные сведения см. в статье [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
 * Действуют ограничения подписки. Дополнительные сведения см. в разделе [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите статью [Исходящие подключения в Azure](load-balancer-outbound-connections.md), чтобы понять, как влияют несколько внешних интерфейсов на поведение исходящих подключений.

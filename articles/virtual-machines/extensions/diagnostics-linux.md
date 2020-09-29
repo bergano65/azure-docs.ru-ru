@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: 2ce2b7dab3e9eb4c9635ce4abc2933fd954844d5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a01f5d2d000ef6e177000828500ef2ab0e26c4ca
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326009"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448190"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -219,7 +219,7 @@ sinksConfig | Сведения об альтернативных местах н
 1. Заполните соответствующие разделы, как описано выше.
 1. Нажмите кнопку "Создать SAS".
 
-![Изображение](./media/diagnostics-linux/make_sas.png)
+![На снимке экрана показана страница подписанного URL-доступа с созданием S.](./media/diagnostics-linux/make_sas.png)
 
 Скопируйте созданный адрес SAS в поле storageAccountSasToken; удалите начальный вопросительный знак ("?").
 
@@ -777,7 +777,7 @@ Set-AzVMExtension -ResourceGroupName <resource_group_name> -VMName <vm_name> -Lo
 
 Для просмотра данных производительности или настройки оповещений используйте портал Azure:
 
-![Изображение](./media/diagnostics-linux/graph_metrics.png)
+![Снимок экрана показывает портал Azure с выбранным дисковым пространством для выбранной метрики и результирующей диаграммой.](./media/diagnostics-linux/graph_metrics.png)
 
 Данные `performanceCounters` всегда хранятся в таблице службы хранилища Azure. Интерфейсы API службы хранилища Azure доступны для множества языков и платформ.
 
@@ -786,7 +786,7 @@ Set-AzVMExtension -ResourceGroupName <resource_group_name> -VMName <vm_name> -Lo
 Для доступа к данным в службе хранилища Azure также можно использовать следующие средства пользовательского интерфейса:
 
 * Обозреватель сервера Visual Studio.
-* [Обозреватель службы хранилища Microsoft Azure](https://azurestorageexplorer.codeplex.com/ "Обозреватель службы хранилища Azure").
+* [На снимке экрана показаны контейнеры и таблицы в обозреватель службы хранилища Azure.](https://azurestorageexplorer.codeplex.com/ "Обозреватель службы хранилища Azure").
 
 На этом моментальном снимке сеанса обозревателя хранилищ Microsoft Azure показаны таблицы и контейнеры службы хранилища Azure, созданные в результате правильной настройки расширения LAD 3.0 в тестовой виртуальной машине. Это изображение не соответствует в точности [образцу конфигурации LAD 3.0](#an-example-lad-30-configuration).
 

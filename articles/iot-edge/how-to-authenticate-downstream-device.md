@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3ccb8d29d0ec52c31913a43358c7daa1c0693df7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a9d2116062dc45f3602bf5ee0efba31ad815c0c9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84308852"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447855"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -69,7 +69,7 @@ ms.locfileid: "84308852"
 az iot hub device-identity create -n {iothub name} -d {new device ID} --pd {existing gateway device ID}
 ```
 
-Дополнительные сведения о командах Azure CLI для создания устройств и управления родительскими и дочерними устройствами см. в справке по командам [az iot hub device-identity](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity?view=azure-cli-latest).
+Дополнительные сведения о командах Azure CLI для создания устройств и управления родительскими и дочерними устройствами см. в справке по командам [az iot hub device-identity](/cli/azure/ext/azure-iot/iot/hub/device-identity).
 
 Затем [получите и измените строку подключения](#retrieve-and-modify-connection-string), чтобы сообщить устройству о необходимости подключаться через этот шлюз.
 
@@ -126,7 +126,7 @@ az iot hub device-identity create -n {iothub name} -d {new device ID} --pd {exis
 az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway device ID} --am x509_thumbprint --ptp {primary thumbprint} --stp {secondary thumbprint}
 ```
 
-Дополнительные сведения о командах Azure CLI для создания устройств, создания сертификатов и управления родительскими и дочерними устройствами см. в справке по командам [az iot hub device-identity](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity?view=azure-cli-latest).
+Дополнительные сведения о командах Azure CLI для создания устройств, создания сертификатов и управления родительскими и дочерними устройствами см. в справке по командам [az iot hub device-identity](/cli/azure/ext/azure-iot/iot/hub/device-identity).
 
 Затем [получите и измените строку подключения](#retrieve-and-modify-connection-string), чтобы сообщить устройству о необходимости подключаться через этот шлюз.
 
@@ -172,7 +172,7 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway device ID} --am x509_ca
 ```
 
-Дополнительные сведения см. в справке по Azure CLI для команд [az iot hub device-identity](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity?view=azure-cli-latest).
+Дополнительные сведения см. в справке по Azure CLI для команд [az iot hub device-identity](/cli/azure/ext/azure-iot/iot/hub/device-identity).
 
 Затем [получите и измените строку подключения](#retrieve-and-modify-connection-string), чтобы сообщить устройству о необходимости подключаться через этот шлюз.
 
@@ -184,13 +184,21 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 * Центр Интернета вещей, к которому подключается устройство: `Hostname={iothub name}.azure-devices.net`
 * Идентификатор устройства, зарегистрированный в Центре Интернета вещей: `DeviceID={device ID}`
-* Основной или дополнительный ключ: `SharedAccessKey={key}`
+* Метод проверки подлинности, симметричный ключ или сертификаты X. 509
+  * Если используется проверка подлинности с симметричным ключом, укажите первичный или вторичный ключ: `SharedAccessKey={key}`
+  * Если используется проверка подлинности на основе сертификата X. 509, укажите флаг: `x509=true`
 * Шлюз, через который подключается устройство. Укажите значение параметра **hostname** из файла config.yaml для шлюза IoT Edge: `GatewayHostName={gateway hostname}`
 
 Таким образом, полная строка подключения выглядит следующим образом:
 
 ```
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz;GatewayHostName=myGatewayDevice
+```
+
+Или сделайте так:
+
+```
+HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;x509=true;GatewayHostName=myGatewayDevice
 ```
 
 Если для этого подчиненного устройства установлена связь "родитель-потомок", можно упростить строку подключения, вызвав шлюз непосредственно как узел подключения. Отношение "родитель-потомок" необходимо для проверки подлинности на основе сертификата X.509, но не является обязательным для проверки подлинности с использованием ключа содержимого. Пример:
@@ -201,7 +209,7 @@ HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
 
 Эта измененная строка подключения будет использоваться в следующей статье из серии прозрачных шлюзов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 На этом этапе у вас есть устройство IoT Edge, зарегистрированное в центре Интернета вещей и настроенное в качестве прозрачного шлюза. У вас также есть подчиненное устройство, зарегистрированное в центре Интернета вещей и указывающее на его устройство шлюза.
 

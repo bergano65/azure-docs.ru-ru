@@ -8,20 +8,20 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 09/28/2020
 ms.custom: seodec18
-ms.openlocfilehash: 33cafd058e55951f7da4e925a603c2c442d4aed1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 57c23ba4acdbde1a5dfac39d89a09dfcef6b25a1
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077660"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91460906"
 ---
-# <a name="azure-time-series-insights-gen2-data-ingestion-overview"></a>Обзор приема данных Gen2а временных рядов Azure
+# <a name="azure-time-series-insights-gen2-data-ingestion-overview"></a>Общие сведения о приеме данных в службе "Аналитика временных рядов Azure" 2-го поколения
 
 Среда Gen2 "аналитика временных рядов Azure" содержит *подсистему приема* для накопления, обработки и хранения данных временных рядов. По мере поступления данных в источники событий служба "аналитика временных рядов Azure" Gen2 будет потреблять и хранить данные практически в реальном времени.
 
-[![Обзор приема](media/concepts-ingress-overview/ingress-overview.png)](media/concepts-ingress-overview/ingress-overview.png#lightbox)
+[![Общие сведения о приеме данных](media/concepts-ingress-overview/ingress-overview.png)](media/concepts-ingress-overview/ingress-overview.png#lightbox)
 
 ## <a name="ingestion-topics"></a>Темы приема
 
@@ -37,4 +37,4 @@ ms.locfileid: "87077660"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Продолжите работу, чтобы узнать больше о [источниках событий](./concepts-streaming-ingestion-event-sources.md) для среды Gen2 "аналитика временных рядов Azure". 
+* Продолжите работу, чтобы узнать больше о [источниках событий](./concepts-streaming-ingestion-event-sources.md) для среды Gen2 "аналитика временных рядов Azure".

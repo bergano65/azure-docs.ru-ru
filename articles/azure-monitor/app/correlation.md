@@ -7,12 +7,12 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: b48b02d20ed3d0b731f04d2c6568274bc0262e2e
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: fd9299d49f42eb021d64ae25447fd13e7378ff3f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88933364"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447863"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -55,7 +55,7 @@ Application Insights определяет [модель данных](../../azur
 
 При вызове `GET /api/stock/value` внешней службы необходимо знать удостоверение этого сервера, чтобы можно было `dependency.target` правильно задать поле. Если внешняя служба не поддерживает мониторинг, то в качестве имени узла службы задается `target` (например, `stock-prices-api.com`). Но если служба идентифицирует себя, возвращая предопределенный заголовок HTTP, `target` содержит удостоверение службы, которое позволяет Application Insights создавать распределенную трассировку, запрашивая данные телеметрии из этой службы.
 
-## <a name="correlation-headers"></a>Заголовки корреляции
+## <a name="correlation-headers-using-w3c-tracecontext"></a>Заголовки корреляции с использованием W3C Трацеконтекст
 
 Application Insights переходит в [консорциум W3C Trace-context](https://w3c.github.io/trace-context/), который определяет:
 
@@ -70,6 +70,18 @@ Application Insights переходит в [консорциум W3C Trace-conte
 - `Correlation-Context`: Содержит коллекцию пар "имя-значение" для свойств распределенной трассировки.
 
 Application Insights также определяет [расширение](https://github.com/lmolkova/correlation/blob/master/http_protocol_proposal_v2.md) для протокола HTTP корреляции. Она использует пары "имя — значение" `Request-Context` для распространения коллекции свойств, используемых непосредственным вызывающим или вызываемым. Пакет SDK для Application Insights использует этот заголовок для задания `dependency.target` `request.source` полей и.
+
+Модель данных " [Трассировка W3C — контекст](https://w3c.github.io/trace-context/) и Application Insights" соответствует следующим образом:
+
+| Application Insights                   | W3C Трацеконтекст                                      |
+|------------------------------------    |-------------------------------------------------    |
+| `Request`, `PageView`                  | `SpanKind` сервер — если синхронный; `SpanKind` является потребителем, если асинхронный                    |
+| `Dependency`                           | `SpanKind` Клиент является синхронным; `SpanKind` является ли производитель асинхронным                   |
+| `Id` из `Request` и `Dependency`     | `SpanId`                                            |
+| `Operation_Id`                         | `TraceId`                                           |
+| `Operation_ParentId`                   | `SpanId` родительского диапазона этого диапазона. Если это корневой диапазон, это поле должно быть пустым.     |
+
+Дополнительные сведения см. в разделе [Application Insightsная модель данных телеметрии](../../azure-monitor/app/data-model.md).
 
 ### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
  
@@ -204,25 +216,11 @@ public void ConfigureServices(IServiceCollection services)
   </script>
   ```
 
-## <a name="opentracing-and-application-insights"></a>OpenTracing и Application Insights
-
-[Спецификации модели данных OpenTracing](https://opentracing.io/) и модели данных Application Insights сопоставлены следующим образом:
-
-| Application Insights                   | OpenTracing                                        |
-|------------------------------------    |-------------------------------------------------    |
-| `Request`, `PageView`                  | `Span` с `span.kind = server`                    |
-| `Dependency`                           | `Span` с `span.kind = client`                    |
-| `Id` из `Request` и `Dependency`     | `SpanId`                                            |
-| `Operation_Id`                         | `TraceId`                                           |
-| `Operation_ParentId`                   | `Reference` типа `ChildOf` (родительский диапазон)     |
-
-Дополнительные сведения см. в разделе [Application Insightsная модель данных телеметрии](../../azure-monitor/app/data-model.md).
-
-Определения концепций ОпентраЦинг см. в описании [спецификации](https://github.com/opentracing/specification/blob/master/specification.md) опентраЦинг и [семантических соглашений](https://github.com/opentracing/specification/blob/master/semantic_conventions.md).
-
 ## <a name="telemetry-correlation-in-opencensus-python"></a>Корреляция телеметрии в Опенценсус Python
 
-Опенценсус Python соответствует `OpenTracing` спецификациям модели данных, описанным выше. Она также поддерживает [контекст трассировки W3C](https://w3c.github.io/trace-context/) , не требуя настройки.
+Опенценсус Python поддерживает [контекст трассировки W3C](https://w3c.github.io/trace-context/) , не требуя дополнительной настройки.
+
+В качестве образца [можно найти модель](https://github.com/census-instrumentation/opencensus-specs/tree/master/trace)данных опенценсус.
 
 ### <a name="incoming-request-correlation"></a>Корреляция входящих запросов
 

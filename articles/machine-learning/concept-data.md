@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: ac0b3c151b379096ffb60e049d18b8f6219b1445
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: a36c7076de0c4db64b67f4eba38de4daf4213bca
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91359687"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446688"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "91359687"
 
 ## <a name="datasets"></a>Наборы данных
 
-Машинное обучение Azure наборы данных — это ссылки, указывающие на данные в службе хранилища. Они не являются копиями Датаби создания набора данных Машинное обучение Azure. вы создаете ссылку на расположение источника данных вместе с копией его метаданных. 
+Машинное обучение Azure наборы данных не копируются. Создавая набор данных, вы создаете ссылку на данные в своей службе хранилища вместе с копией его метаданных. 
 
 Поскольку наборы данных отложенно оцениваются, и данные остаются в существующем расположении,
 
@@ -121,7 +121,7 @@ ms.locfileid: "91359687"
 
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/work-with-data/).

@@ -11,17 +11,17 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 09/06/2020
-ms.openlocfilehash: 84a7a205e52ba37eb6fcb3b624e0f71a9b9bbc10
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.date: 09/29/2020
+ms.openlocfilehash: 158adb6b35b488c310bd2912d4076b86579383a4
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89505494"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446407"
 ---
 # <a name="manage-packages-with-azure-ssis-integration-runtime-package-store"></a>Управление пакетами с помощью Azure-SSIS Integration Runtime хранилища пакетов
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Чтобы претянуть & сдвиги локальных рабочих нагрузок SQL Server Integration Services (SSIS) в облако, вы можете подготавливать Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF). Дополнительные сведения см. в разделе [подготавливает Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure). Среда выполнения интеграции Azure-SSIS поддерживает следующие возможности:
 
@@ -148,7 +148,7 @@ for %f in (*.dtsx) do dtutil.exe /FILE %f /ENCRYPT FILE;Z:\%f;2;YourEncryptionPa
 
 Чтобы выполнить приведенные выше команды в пакетном файле, замените `%f` на `%%f` .
 
-Чтобы развернуть несколько пакетов из устаревших хранилищ пакетов служб SSIS на основе файловой системы в службе файлов Azure и одновременно переключить уровень защиты, можно использовать те же команды, но заменить их `YourLocalDrive:\...\YourPackageFolder` локальной папкой, используемой устаревшими хранилищами пакетов служб SSIS: `YourLocalDrive:\Program Files\Microsoft SQL Server\YourSQLServerDefaultCompatibilityLevel\DTS\Packages\YourPackageFolder` . Например, если устаревшее хранилище пакетов служб SSIS привязано к SQL Server 2016, перейдите по адресу `YourLocalDrive:\Program Files\Microsoft SQL Server\130\DTS\Packages\YourPackageFolder` .  Значение для можно найти `YourSQLServerDefaultCompatibilityLevel` в [списке уровней совместимости по умолчанию SQL Server](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#arguments).
+Чтобы развернуть несколько пакетов из устаревших хранилищ пакетов служб SSIS на основе файловой системы в службе файлов Azure и одновременно переключить уровень защиты, можно использовать те же команды, но заменить их `YourLocalDrive:\...\YourPackageFolder` локальной папкой, используемой устаревшими хранилищами пакетов служб SSIS: `YourLocalDrive:\Program Files\Microsoft SQL Server\YourSQLServerDefaultCompatibilityLevel\DTS\Packages\YourPackageFolder` . Например, если устаревшее хранилище пакетов служб SSIS привязано к SQL Server 2016, перейдите по адресу `YourLocalDrive:\Program Files\Microsoft SQL Server\130\DTS\Packages\YourPackageFolder` .  Для значения `YourSQLServerDefaultCompatibilityLevel` см. [список уровней совместимости SQL Server по умолчанию](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#arguments).
 
 Если вы настроили Azure-SSIS IR хранения пакетов на основе файлов Azure, развернутые пакеты будут отображаться в них при подключении к Azure-SSIS IR в среде SSMS 2019 или более поздней версии.
 
@@ -209,6 +209,6 @@ dtutil /SQL YourFolder\YourPackage3 /ENCRYPT FILE;Z:\YourFolder\YourPackage3.dts
 
 Если вы настроили Azure-SSIS IR хранения пакетов на основе файлов Azure, развернутые пакеты будут отображаться в них при подключении к Azure-SSIS IR в среде SSMS 2019 или более поздней версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете повторно выполнить или изменить автоматически созданные конвейеры ADF с помощью действия "выполнение пакета служб SSIS" или создать новые на портале ADF. Дополнительные сведения см. [в разделе Запуск пакетов служб SSIS как выполнение действий пакета служб SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

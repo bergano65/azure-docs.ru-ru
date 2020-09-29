@@ -1,19 +1,19 @@
 ---
 title: Дополнительные сведения о построителе образов Azure (Предварительная версия)
-description: Дополнительные сведения о построителе образов Azure.
+description: Узнайте больше о создании образов виртуальных машин в Azure с построителем образов Azure.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 16d67116ad1247b8cb1a8fa11ef5e4af9db265b8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a1d42314b126dd673d801b4176d4c3b143eb6a28
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999230"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447989"
 ---
-# <a name="preview-azure-image-builder-overview-in-windows"></a>Предварительная версия: Обзор построителя образов Azure в Windows
+# <a name="preview-azure-image-builder"></a>Предварительная версия: построитель образов Azure 
 
 [!INCLUDE [virtual-machines-image-builder-overview](../../../includes/virtual-machines-image-builder-overview.md)]

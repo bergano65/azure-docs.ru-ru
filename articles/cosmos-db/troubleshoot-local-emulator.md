@@ -6,12 +6,13 @@ ms.topic: troubleshooting
 author: markjbrown
 ms.author: mjbrown
 ms.date: 09/17/2020
-ms.openlocfilehash: 49c03b506441c93be57b24505b09524d72c2c8fb
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.custom: contperfq1
+ms.openlocfilehash: af9122aaa0233fe5248f31ffe805e01a98831eae
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90996983"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447416"
 ---
 # <a name="troubleshoot-issues-when-using-the-azure-cosmos-emulator"></a>Устранение неполадок при использовании эмулятора Cosmos для Azure
 
@@ -79,7 +80,7 @@ ms.locfileid: "90996983"
 
 1. Создайте запрос в службу поддержки на [портале Azure](https://portal.azure.com) и добавьте ETL-файл вместе с действиями по воспроизведению.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как отлаживать проблемы с локальным эмулятором. Теперь можно перейти к следующим статьям:
 

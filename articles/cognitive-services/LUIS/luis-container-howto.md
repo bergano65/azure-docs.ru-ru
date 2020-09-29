@@ -1,27 +1,29 @@
 ---
-title: Контейнеры DOCKER — LUIS
+title: Установка и запуск контейнеров DOCKER для LUIS
 titleSuffix: Azure Cognitive Services
-description: Контейнер LUIS загружает обученное или опубликованное приложение в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера.
+description: Используйте контейнер LUIS для загрузки обученного или опубликованного приложения и получения доступа к своим прогнозам в локальной среде.
 services: cognitive-services
 author: aahill
 manager: nitinme
-ms.custom: seodec18
+ms.custom: seodec18, cog-serv-seo-aug-2020
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 09/28/2020
 ms.author: aahi
-ms.openlocfilehash: bec96f45de69ab2698f3f0cf26f08222e4595ea5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+keywords: локальная среда, Docker, контейнер
+ms.openlocfilehash: c65a81d9daed85b5bf056d24949e36ec227c19c6
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90889514"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91460991"
 ---
-# <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
+# <a name="install-and-run-docker-containers-for-luis"></a>Установка и запуск контейнеров DOCKER для LUIS
 
 [!INCLUDE [container image location note](../containers/includes/image-location-note.md)]
 
+Контейнеры позволяют использовать LUIS в собственной среде. Контейнеры соответствуют конкретным требованиям к безопасности и управлению данными. В этой статье вы узнаете, как скачать, установить и запустить контейнер LUIS.
 
 Контейнер Language Understanding (LUIS) загружает подготовленную или опубликованную модель Language Understanding. Как [Luis приложение](https://www.luis.ai)контейнер DOCKER предоставляет доступ к прогнозам запросов из конечных точек API контейнера. Вы можете получать журналы запросов из контейнера и отправлять их обратно в Language Understandingное приложение, чтобы улучшить точность прогнозов приложения.
 
@@ -35,7 +37,7 @@ ms.locfileid: "90889514"
 
 Чтобы запустить контейнер LUIS, обратите внимание на следующие предварительные требования.
 
-|Обязательно|Назначение|
+|Обязательный|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
@@ -58,7 +60,7 @@ ms.locfileid: "90889514"
 
 В таблице ниже приведены минимальные и рекомендуемые значения для узла контейнера. Требования могут изменяться в зависимости от объема трафика.
 
-|Контейнер| Минимальные | Рекомендуемая | ПЛАТЫ<br>(Минимум, максимум)|
+|Контейнер| Минимальные | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |LUIS|1 ядро, 2 ГБ памяти|1 ядро, 4 ГБ памяти|20, 40|
 
@@ -121,7 +123,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Подробнее|
+|Требования к упаковке|Сведения|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей][unsupported-dependencies]. |
@@ -358,7 +360,7 @@ curl -X GET \
 
 Чтобы завершить работу контейнера, в среде командной строки, где выполняется контейнер, нажмите клавиши **CTRL+C**.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если контейнер запускается с выходным [подключением](luis-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 

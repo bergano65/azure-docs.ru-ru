@@ -16,12 +16,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 296aabdd79e1cd5c37248a0a44d57ebf17a4ea44
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 4ba90724f75635ea9fd5f72f75de6a46d7b6d288
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90979420"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447002"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
 
@@ -146,11 +146,11 @@ ms.locfileid: "90979420"
     | P1 | Определенные пользователи и группы в каталоге или в конкретных подключенных организациях |
     | P2 | Все элементы в каталоге (за исключением гостей) |
     | P3 | Все пользователи в вашем каталоге (включая гостей) или определенные подключенные Организации |
-    | P4 | Все подключенные организации или все пользователи (все подключенные Организации + все новые внешние пользователи) |
+    | P4 | Все настроенные подключенные организации или все пользователи (все подключенные Организации + все новые внешние пользователи) |
     
     Если любая политика имеет более высокий приоритет, категории с низким приоритетом не учитываются. Пример того, как в запрашивающей части отображается несколько политик с одинаковым приоритетом, см. в разделе [Выбор политики](entitlement-management-request-access.md#select-a-policy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Управление доступом для внешних пользователей](entitlement-management-external-users.md)
 - [Просмотр отчетов о том, как пользователи получили доступ в управлении назначениями](entitlement-management-reports.md)

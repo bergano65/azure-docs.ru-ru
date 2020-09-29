@@ -7,17 +7,17 @@ ms.service: sql-db-mi
 ms.subservice: data-movement
 ms.custom: sqldbrb=2
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: 9e7d2d08c7041b23f0eb02328367d07e72fe35eb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0b78419f4fb37bb96e2c71c89f740a35914ccede
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333075"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446392"
 ---
 # <a name="move-resources-to-new-region---azure-sql-database--azure-sql-managed-instance"></a>Перемещение ресурсов в новый регион — база данных SQL Azure & Управляемый экземпляр SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -170,7 +170,7 @@ ms.locfileid: "91333075"
 
 ### <a name="monitor-the-preparation-process"></a>Мониторинг процесса подготовки
 
-Вы можете периодически вызывать [Get-азсклдатабасефаиловерграуп](/powershell/module/az.sql/get-azsqldatabasefailovergroup?view=azps-2.3.2) для мониторинга репликации баз данных из источника в целевой объект. Выходной объект `Get-AzSqlDatabaseFailoverGroup` включает свойство для **ReplicationState**:
+Вы можете периодически вызывать [Get-азсклдатабасефаиловерграуп](/powershell/module/az.sql/get-azsqldatabasefailovergroup) для мониторинга репликации баз данных из источника в целевой объект. Выходной объект `Get-AzSqlDatabaseFailoverGroup` включает свойство для **ReplicationState**:
 
 - **ReplicationState = 2** (CATCH_UP) указывает, что база данных синхронизирована и для нее можно выполнить безопасную отработку отказа.
 - **ReplicationState = 0** (заполнение) указывает, что база данных еще не заполнена и попытка отработки отказа завершится ошибкой.
@@ -182,7 +182,7 @@ ms.locfileid: "91333075"
 ### <a name="initiate-the-move"></a>Начало перемещения
 
 1. Подключитесь к целевому управляемому экземпляру с помощью вторичной конечной точки `<fog-name>.secondary.database.windows.net` .
-1. Используйте [параметр Switch-азсклдатабасефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabasefailovergroup?view=azps-2.3.2) , чтобы перевести вторичный управляемый экземпляр в основной с полной синхронизацией. Эта операция будет выполнена, или будет выполнен откат.
+1. Используйте [параметр Switch-азсклдатабасефаиловерграуп](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) , чтобы перевести вторичный управляемый экземпляр в основной с полной синхронизацией. Эта операция будет выполнена, или будет выполнен откат.
 1. Убедитесь, что команда выполнена успешно, используя, `nslook up <fog-name>.secondary.database.windows.net` чтобы убедиться, что запись DNS CNAME указывает на IP-адрес целевого региона. Если команда Switch завершается неудачно, запись CNAME не обновляется.
 
 ### <a name="remove-the-source-managed-instances"></a>Удаление исходных управляемых экземпляров
@@ -193,6 +193,6 @@ ms.locfileid: "91333075"
 1. Удалите исходный управляемый экземпляр с помощью [Remove-азсклинстанце](/powershell/module/az.sql/remove-azsqlinstance).
 1. Удалите все дополнительные ресурсы в группе ресурсов, такие как виртуальный кластер, виртуальная сеть и группа безопасности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Управление](manage-data-after-migrating-to-database.md) базой данных после ее переноса.

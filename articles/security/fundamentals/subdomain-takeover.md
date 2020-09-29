@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/23/2020
+ms.date: 09/29/2020
 ms.author: memildin
-ms.openlocfilehash: c0494fe39f8ae64ba65db4e3cd728069aa4a5052
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.openlocfilehash: bde4b21f9dfff62ef43afc9c9d8e5a858631d304
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91403217"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447379"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
@@ -92,9 +92,9 @@ ms.locfileid: "91403217"
 | хранилище BLOB-объектов Azure        | microsoft.storage/storageaccounts           | Properties. первичных. BLOB           | `abc. blob.core.windows.net`    |
 | Azure CDN                 | microsoft.cdn/profiles/endpoints            | Свойства. имя узла                        | `abc.azureedge.net`             |
 | Общедоступные IP-адреса       | microsoft.network/publicipaddresses         | Properties. dnsSettings. FQDN                | `abc.EastUs.cloudapp.azure.com` |
-| Azure Traffic Manager     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
+| Диспетчер трафика Azure     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
 | Экземпляр контейнера Azure  | microsoft.containerinstance/containergroups | Properties. ipAddress. FQDN                  | `abc.EastUs.azurecontainer.io`  |
-| Cлужба управления Azure API      | microsoft.apimanagement/service             | Properties. Хостнамеконфигуратионс. имя_узла | `abc.azure-api.net`             |
+| Служба управления Azure API      | microsoft.apimanagement/service             | Properties. Хостнамеконфигуратионс. имя_узла | `abc.azure-api.net`             |
 | Служба приложений Azure         | microsoft.web/sites                         | Properties. параметром DefaultHostName                 | `abc.azurewebsites.net`         |
 | Служба приложений Azure — слоты | microsoft.web/sites/slots                   | Properties. параметром DefaultHostName                 | `abc-def.azurewebsites.net`     |
 
@@ -107,11 +107,13 @@ ms.locfileid: "91403217"
 - как минимум доступ на уровне чтения к подпискам Azure
 - доступ для чтения к графу ресурсов Azure
 
-Если вы являетесь глобальным администратором клиента организации, вы можете повысить свою учетную запись, чтобы получить доступ ко всем подпискам вашей организации, используя рекомендации в статье [повышение уровня доступа для управления всеми подписками и группами управления Azure](https://docs.microsoft.com/azure/role-based-access-control/elevate-access-global-admin).
+Если вы являетесь глобальным администратором клиента организации, вы можете повысить свою учетную запись, чтобы получить доступ ко всем подпискам вашей организации, используя рекомендации в статье [повышение уровня доступа для управления всеми подписками и группами управления Azure](../../role-based-access-control/elevate-access-global-admin.md).
 
 
 > [!TIP]
-> В графе ресурсов Azure есть ограничения на регулирование и разбиение на страницы, которые следует учитывать при наличии крупной среды Azure. Дополнительные [сведения](https://docs.microsoft.com/azure/governance/resource-graph/concepts/work-with-data) о работе с большими наборами данных ресурсов Azure. 
+> В графе ресурсов Azure есть ограничения на регулирование и разбиение на страницы, которые следует учитывать при наличии крупной среды Azure. 
+> 
+> Дополнительные [сведения о работе с большими наборами данных ресурсов Azure](../../governance/resource-graph/concepts/work-with-data.md).
 > 
 > Для предотвращения этих ограничений средство использует пакетирование подписок.
 
@@ -145,7 +147,7 @@ ms.locfileid: "91403217"
 
 ### <a name="use-azure-dns-alias-records"></a>Использование записей псевдонимов Azure DNS
 
-[Записи псевдонимов](https://docs.microsoft.com/azure/dns/dns-alias#scenarios) Azure DNS могут предотвратить висячие ссылки, связывая жизненный цикл записи DNS с ресурсом Azure. Например, рассмотрим запись DNS, которая является псевдонимом и указывает на общедоступный IP-адрес или профиль диспетчера трафика. Если удалить эти базовые ресурсы, запись псевдонима DNS станет пустым набором записей. Он больше не ссылается на удаленный ресурс. Важно отметить, что существует ряд ограничений, которые можно защищать с помощью записей псевдонимов. Сейчас список ограничен:
+[Записи псевдонимов](../../dns/dns-alias.md#scenarios) Azure DNS могут предотвратить висячие ссылки, связывая жизненный цикл записи DNS с ресурсом Azure. Например, рассмотрим запись DNS, которая является псевдонимом и указывает на общедоступный IP-адрес или профиль диспетчера трафика. Если удалить эти базовые ресурсы, запись псевдонима DNS станет пустым набором записей. Он больше не ссылается на удаленный ресурс. Важно отметить, что существует ряд ограничений, которые можно защищать с помощью записей псевдонимов. Сейчас список ограничен:
 
 - Azure Front Door
 - Профили диспетчера трафика
@@ -154,7 +156,7 @@ ms.locfileid: "91403217"
 
 Несмотря на использование ограниченных предложений служб, мы рекомендуем использовать записи псевдонимов для защиты от перенаправление поддоменов везде, где это возможно.
 
-Дополнительные [сведения](https://docs.microsoft.com/azure/dns/dns-alias#capabilities) о возможностях записей псевдонимов Azure DNS.
+Дополнительные [сведения о возможностях записей псевдонимов Azure DNS](../../dns/dns-alias.md#capabilities).
 
 
 
@@ -164,7 +166,7 @@ ms.locfileid: "91403217"
 
 Эти записи не запрещают пользователям создавать службу приложений Azure с тем же именем, что и запись CNAME. Без возможности доказательства владельца имени домена субъекты угроз не могут получить трафик или управлять содержимым.
 
-Дополнительные [сведения](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain) о сопоставлении существующего НАСТРАИВАЕМОГО DNS-имени с службой приложений Azure.
+Дополнительные [сведения о сопоставлении существующего настраиваемого DNS-имени с службой приложений Azure](../../app-service/app-service-web-tutorial-custom-domain.md).
 
 
 
@@ -178,13 +180,13 @@ ms.locfileid: "91403217"
 
     - Вставьте "удалить запись DNS" в списке обязательных проверок при списании службы.
 
-    - Разместите [блокировки удаления](https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources) для всех ресурсов, имеющих пользовательскую запись DNS. Блокировка удаления служит индикатором того, что сопоставление должно быть удалено до отмены наполнения ресурса. Такие меры могут работать только вместе с внутренними программами для образования.
+    - Разместите [блокировки удаления](../../azure-resource-manager/management/lock-resources.md) для всех ресурсов, имеющих пользовательскую запись DNS. Блокировка удаления служит индикатором того, что сопоставление должно быть удалено до отмены наполнения ресурса. Такие меры могут работать только вместе с внутренними программами для образования.
 
 - **Создание процедур для обнаружения:**
 
     - Регулярно просматривайте свои записи DNS, чтобы убедиться, что поддомены сопоставлены с ресурсами Azure, которые:
 
-        - Существует. запросите зоны DNS для ресурсов, указывающих на поддомены Azure, такие как *. azurewebsites.net или *. cloudapp.azure.com (см. [этот список ссылок](azure-domains.md)).
+        - Существует. запросите зоны DNS для ресурсов, указывающих на поддомены Azure, такие как *. azurewebsites.net или *. cloudapp.azure.com (см. [список ссылок на домены Azure](azure-domains.md)).
         - Вы сами подтверждаете, что являетесь владельцем всех ресурсов, на которые нацелены поддомены DNS.
 
     - Настройте каталог услуг конечных точек полного доменного имени (FQDN) Azure и владельцев приложений. Чтобы создать каталог услуг, выполните следующий скрипт запроса графа ресурсов Azure. Этот сценарий проецирует сведения о конечной точке FQDN ресурсов, к которым у вас есть доступ, и выводит их в CSV-файл. Если у вас есть доступ ко всем подпискам для клиента, сценарий учитывает все эти подписки, как показано в следующем примере скрипта. Чтобы ограничить результаты конкретным набором подписок, измените скрипт, как показано ниже.
@@ -196,12 +198,12 @@ ms.locfileid: "91403217"
     - Удалите запись DNS, если она больше не используется, или укажите правильный ресурс Azure (FQDN), принадлежащий вашей организации.
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о связанных службах и функциях Azure, которые можно использовать для защиты от перенаправление поддоменов, см. на следующих страницах.
 
-- [Azure DNS поддерживает использование записей псевдонимов для пользовательских доменов](https://docs.microsoft.com/azure/dns/dns-alias#prevent-dangling-dns-records)
+- [Предотвращение висячих записей DNS с Azure DNS](../../dns/dns-alias.md#prevent-dangling-dns-records)
 
-- [Использовать идентификатор проверки домена при добавлении пользовательских доменов в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain#get-domain-verification-id) 
+- [Использовать идентификатор проверки домена при добавлении пользовательских доменов в службе приложений Azure](../../app-service/app-service-web-tutorial-custom-domain.md#get-a-domain-verification-id)
 
-- [Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell](https://docs.microsoft.com/azure/governance/resource-graph/first-query-powershell)
+- [Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell](../../governance/resource-graph/first-query-powershell.md)

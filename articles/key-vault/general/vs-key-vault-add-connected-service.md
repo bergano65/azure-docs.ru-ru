@@ -9,12 +9,12 @@ ms.custom: vs-azure, devx-track-csharp
 ms.topic: how-to
 ms.date: 08/07/2019
 ms.author: ghogen
-ms.openlocfilehash: d0d0465e2e60945649958911c508e06aee877ac9
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: addccf337f82b1695c76ae975c4a33f44ba50f8a
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89378871"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448131"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -189,6 +189,9 @@ ms.locfileid: "89378871"
 | .NET; NuGet | Azure. Identity |
 | .NET; NuGet | Azure. Security. KeyVault. Keys |
 | .NET; NuGet | Azure. Security. KeyVault. Секреты |
+
+> [!IMPORTANT] 
+> По умолчанию Azure. Identity 1.1.1 установлен, что не поддерживает учетные данные Visual Studio. Ссылку на пакет можно обновить вручную до версии 1.2 и использовать учетные данные Visual Studio.
 
 ### <a name="added-files-for-aspnet-framework"></a>Добавлены файлы для ASP.NET Framework
 

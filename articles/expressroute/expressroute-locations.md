@@ -6,14 +6,14 @@ author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 08/26/2020
+ms.date: 09/28/2020
 ms.author: duau
-ms.openlocfilehash: 2177b37fe5723be64896fd5ee4e90c0137dc9be0
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 1721c2a9ede949bb6183c60e65f540869bb95e43
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91370510"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446142"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению ExpressRoute и расположения пиринга
 
@@ -86,10 +86,10 @@ ms.locfileid: "91370510"
 | **[BBIX](https://www.bbix.net/en/service/ix/)** | Поддерживается | Поддерживается | Токио |
 | **[BCX](https://www.bcx.co.za/solutions/connectivity/data-networks)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживается |Поддерживается |Квебек, Монреаль, Торонто |
-| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Гонконг, САР, Йоханнесбург, Лондон, Ньюпорт (штат Вашингтон), Сан--Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
+| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Гонконг, САР, Йоханнесбург, Лондон, Ньюпорт (штат Вашингтон), Париж, Сан--Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[C3ntro](https://www.c3ntro.com/data1/express-route1.php)** |Поддерживается |Поддерживается |Майами |
 | **CDC** | Поддерживается | Поддерживается | Канберра, Канберра 2 |
-| **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Амстердам 2, Чикаго, Франкфурт, Гонконг, Лас-Вегас, Лондон 2, Нью Йорк, Париж, Сан-Антонио, Кремниевая долина, Токио, Торонто, Вашингтон (округ Колумбия), Вашингтон (округ Колумбия) 2 |
+| **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Amsterdam2, Чикаго, Дублин, Франкфурт, Гонконг, Лас деньги, London2, Нью Йорк, Париж, Сан Сан Антонио, Silicon впадина, Токио, Торонто, Вашингтон (округ Колумбия), штат Вашингтон |
 | **[Chief Telecom](https://www.chief.com.tw/dispPageBox/ct.aspx?ddsPageID=ENCLOUDSERVICE&dbid=4852937342)** |Поддерживается |Поддерживается |Гонконг, Тайбэй |
 | **China Mobile International** |Поддерживается |Поддерживается | Гонконг, Гонконг, Kong2, Сингапур |
 | **China Telecom Global** |Поддерживается |Поддерживается |Гонконг, Гонконг 2 |
@@ -161,7 +161,7 @@ ms.locfileid: "91370510"
 | **[Telia Carrier](https://www.teliacarrier.com/)** | Поддерживается | Поддерживается |Амстердам, Чикаго, Даллас, Франкфурт, Гонконг, Лондон, Осло, Париж, Кремниевая долина, Стокгольм, Вашингтон (округ Колумбия) |
 | **Telmex Uninet**| Поддерживается | Поддерживается | Даллас |
 | **[Telstra Corporation](https://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** |Поддерживается |Поддерживается |Мельбурн, Сингапур, Сидней |
-| **[Telus](https://www.telus.com)** |Поддерживается |Поддерживается |Монреаль, Сиэтл, Торонто |
+| **[Telus](https://www.telus.com)** |Поддерживается |Поддерживается |Монреаль, Сиэтл, Торонто, Vancouver |
 | **[Teraco](https://www.teraco.co.za/services/africa-cloud-exchange/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург |
 | **[TIME dotCom](https://www.time.com.my/enterprise/connectivity/direct-cloud)** | Поддерживается | Поддерживается | Куала-Лумпур |
 | **[Transtelco](https://transtelco.net/enterprise-services/)** |Поддерживается |Поддерживается |Далласе, Куеретаро (Мексика)|

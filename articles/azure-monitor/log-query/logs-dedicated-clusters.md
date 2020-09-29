@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: e5ab3800e2d20bec34f321e0992240be8624404c
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 4ad3aa7169fcf7eeda6e56a2eab6669b8783d77d
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91400876"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91461467"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
 
@@ -65,16 +65,15 @@ Azure Monitor журналов выделенных кластеров — эт�
 
 Учетная запись пользователя, которая создает кластеры, должна иметь стандартное разрешение на создание ресурсов Azure `Microsoft.Resources/deployments/*` и разрешение на запись в кластер `(Microsoft.OperationalInsights/clusters/write)` .
 
-### <a name="create"></a>Создать 
+### <a name="create"></a>Создание 
 
 **PowerShell**
 
 ```powershell
-invoke-command -scriptblock { New-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} -ClusterName {cluster-name} -Location {region-name} -SkuCapacity {daily-ingestion-gigabyte} } -asjob
+New-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} -ClusterName {cluster-name} -Location {region-name} -SkuCapacity {daily-ingestion-gigabyte} -AsJob
 
 # Check when the job is done
-Get-Job
-
+Get-Job -Command "New-AzOperationalInsightsCluster*" | Format-List -Property *
 ```
 
 **REST**
@@ -106,13 +105,16 @@ Content-type: application/json
 
 ### <a name="check-provisioning-status"></a>Проверка состояния подготовки
 
-Подготовка кластера Log Analytics занимает некоторое время. Проверить состояние подготовки можно двумя способами.
+Подготовка кластера Log Analytics занимает некоторое время. Проверить состояние подготовки можно несколькими способами.
 
-1. Скопируйте значение URL-адреса Azure-AsyncOperation из ответа и выполните проверку состояния асинхронных операций.
+- Выполните команду PowerShell Get-Азоператионалинсигхтсклустер с именем группы ресурсов и проверьте свойство ProvisioningState. Значение *провисионингаккаунт* во время подготовки и *успешного* завершения.
+  ```powershell
+  New-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} 
+  ```
 
-   ИЛИ
+- Скопируйте значение URL-адреса Azure-AsyncOperation из ответа и выполните проверку состояния асинхронных операций.
 
-1. Отправьте запрос GET на ресурс *Кластер* и просмотрите значение *provisioningState*. Значение *провисионингаккаунт* во время подготовки и *успешного* завершения.
+- Отправьте запрос GET на ресурс *Кластер* и просмотрите значение *provisioningState*. Значение *провисионингаккаунт* во время подготовки и *успешного* завершения.
 
    ```rst
    GET https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
@@ -275,10 +277,10 @@ Content-type: application/json
 $clusterResourceId = (Get-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} -ClusterName {cluster-name}).id
 
 # Link the workspace to the cluster
-invoke-command -scriptblock { Set-AzOperationalInsightsLinkedService -ResourceGroupName {resource-group-name} -WorkspaceName {workspace-name} -LinkedServiceName cluster -WriteAccessResourceId $clusterResourceId } -asjob
+Set-AzOperationalInsightsLinkedService -ResourceGroupName {resource-group-name} -WorkspaceName {workspace-name} -LinkedServiceName cluster -WriteAccessResourceId $clusterResourceId -AsJob
 
 # Check when the job is done
-Get-Job
+Get-Job -Command "Set-AzOperationalInsightsLinkedService" | Format-List -Property *
 ```
 
 

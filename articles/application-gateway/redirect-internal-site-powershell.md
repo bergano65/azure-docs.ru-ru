@@ -6,18 +6,18 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 03/03/2020
+ms.date: 09/28/2020
 ms.author: victorh
-ms.openlocfilehash: 2e3f53cc14b22e7d689e246c3f0609ce80c29ec4
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: d838fe1d1015e1913c8aa28a122b06d108fb4676
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89594311"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446643"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внутреннего трафика с помощью Azure PowerShell
 
-С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www\.contoso.com* и *www\.contoso.org*.
+С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этой статье вы определите серверный пул с помощью масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этой статье предполагается, что вы владеете несколькими доменами и в них используются примеры *www \. contoso.com* и *www \. contoso.org*.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -33,7 +33,7 @@ ms.locfileid: "89594311"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально для работы с этой статьей, вам понадобится модуль Azure PowerShell 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -106,7 +106,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-first-listener-and-rule"></a>Создание первого прослушивателя и правила
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www\.contoso.com* и *www\.contoso.org*.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этой статье вы создадите два прослушивателя для двух доменов. В этом примере создаются прослушиватели для доменов *www\.contoso.com* и *www\.contoso.org*.
 
 Создайте первый прослушиватель *contosoComListener*, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *contosoComRule* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
@@ -299,11 +299,4 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали, как выполнять следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * добавление прослушивателей и правила перенаправления;
-> * Создание масштабируемого набора виртуальных машин с внутренними пулами.
-> * создание записи CNAME в домене.
+- [Общие сведения о перенаправлении для шлюза приложений](redirect-overview.md)

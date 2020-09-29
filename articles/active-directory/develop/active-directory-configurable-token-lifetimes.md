@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/17/2020
+ms.date: 09/25/2020
 ms.author: ryanwi
-ms.custom: aaddev, identityplatformtop40
+ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 2f6ade3a01022bf3bcc4d6b522e45ae98fe29b33
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c5866ddfee049499a4179505e0c1a206b1c68945
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91258426"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447302"
 ---
 # <a name="configurable-token-lifetimes-in-microsoft-identity-platform-preview"></a>Настраиваемое время существования маркеров в платформе Microsoft Identity (Предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "91258426"
 
 Значение Нотонорафтер можно изменить с помощью `AccessTokenLifetime` параметра в `TokenLifetimePolicy` . Для него будет задано время существования, настроенное в политике, если таковое имеется, а также коэффициент наклона часов, равный пяти минутам.
 
-Обратите внимание, что `<SubjectConfirmationData>` Конфигурация времени существования маркера не зависит от нотонорафтер подтверждения субъекта, указанного в элементе. 
+`<SubjectConfirmationData>`Конфигурация времени существования маркера не зависит от нотонорафтер подтверждения субъекта, указанного в элементе. 
 
 ### <a name="refresh-tokens"></a>Маркеры обновления
 
@@ -103,7 +103,7 @@ ms.locfileid: "91258426"
 | Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
 | Максимальный возраст маркеров обновления (выданных для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |Пока не будет отозван |
 
-* <sup>1</sup> Федеративные пользователи, имеющие недостаточную информацию об отзыве, включают всех пользователей, не имеющих синхронизированного атрибута "LastPasswordChangeTimestamp". Этим пользователям предоставляется короткий максимальный возраст, так как служба AAD не может проверить, когда отменять маркеры, привязанные к старым учетным данным (например, пароль, который был изменен), и должна проверять его чаще, чтобы гарантировать, что пользователь и связанные с ним маркеры все еще находятся в хорошем состоянии. Чтобы улучшить этот процесс, администраторы клиента должны убедиться, что они синхронизируют атрибут "LastPasswordChangeTimestamp" (этот параметр можно задать для объекта пользователя с помощью PowerShell или AADSync).
+* <sup>1</sup> Федеративные пользователи, имеющие недостаточную информацию об отзыве, включают всех пользователей, не имеющих синхронизированного атрибута "LastPasswordChangeTimestamp". Этим пользователям предоставляется этот короткий максимальный возраст, так как Azure Active Directory не удается проверить, когда следует отозвать маркеры, привязанные к старым учетным данным (например, измененный пароль), и необходимо чаще выполнять возврат, чтобы убедиться, что пользователь и связанные с ним маркеры все еще находятся в хорошем расположении. Чтобы улучшить этот процесс, администраторы клиента должны убедиться, что они синхронизируют атрибут "LastPasswordChangeTimestamp" (этот параметр можно задать для объекта пользователя с помощью PowerShell или AADSync).
 
 ### <a name="policy-evaluation-and-prioritization"></a>Оценка политики и ее приоритеты
 Политики времени жизни маркера можно создать и назначить для конкретного приложения, организации и субъектов-служб. К одному приложению могут применяться сразу несколько политик. Политики определяют время жизни маркеров в соответствии со следующими правилами:
@@ -382,170 +382,37 @@ ms.locfileid: "91258426"
 
 ## <a name="cmdlet-reference"></a>Справка по командлетам
 
+Это командлеты в [модуле предварительной версии Azure Active Directory PowerShell для Graph](/powershell/module/azuread/?view=azureadps-2.0-preview#service-principals&preserve-view=true&preserve-view=true).
+
 ### <a name="manage-policies"></a>Управление политиками
 
 Управлять политиками можно с помощью следующих командлетов.
 
-#### <a name="new-azureadpolicy"></a>New-AzureADPolicy
-
-Создает новую политику.
-
-```powershell
-New-AzureADPolicy -Definition <Array of Rules> -DisplayName <Name of Policy> -IsOrganizationDefault <boolean> -Type <Policy Type>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Definition</code> |Переведенный в строку массив JSON, который содержит все правила политики. | `-Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"20:00:00"}}')` |
-| <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
-| <code>&#8209;IsOrganizationDefault</code> |Если присвоено значение true, политика устанавливается как политика по умолчанию для организации. Если присвоено значение false — параметр игнорируется. |`-IsOrganizationDefault $true` |
-| <code>&#8209;Type</code> |Тип политики. Для политик времени жизни маркеров всегда используйте значение TokenLifetimePolicy. | `-Type "TokenLifetimePolicy"` |
-| <code>&#8209;AlternativeIdentifier</code> (необязательный параметр) |Задает альтернативный идентификатор политики. |`-AlternativeIdentifier "myAltId"` |
-
-</br></br>
-
-#### <a name="get-azureadpolicy"></a>Get-AzureADPolicy
-Возвращает полный список политик Azure AD или одну указанную политику.
-
-```powershell
-Get-AzureADPolicy
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> (необязательный параметр) |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
-
-</br></br>
-
-#### <a name="get-azureadpolicyappliedobject"></a>Get-AzureADPolicyAppliedObject
-Возвращает список приложений и субъектов-служб, связанных с политикой.
-
-```powershell
-Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
-
-</br></br>
-
-#### <a name="set-azureadpolicy"></a>Set-AzureADPolicy
-Обновляет существующую политику.
-
-```powershell
-Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
-| <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
-| <code>&#8209;Definition</code> (необязательный параметр) |Переведенный в строку массив JSON, который содержит все правила политики. |`-Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"20:00:00"}}')` |
-| <code>&#8209;IsOrganizationDefault</code> (необязательный параметр) |Если присвоено значение true, политика устанавливается как политика по умолчанию для организации. Если присвоено значение false — параметр игнорируется. |`-IsOrganizationDefault $true` |
-| <code>&#8209;Type</code> (необязательный параметр) |Тип политики. Для политик времени жизни маркеров всегда используйте значение TokenLifetimePolicy. |`-Type "TokenLifetimePolicy"` |
-| <code>&#8209;AlternativeIdentifier</code> (необязательный параметр) |Задает альтернативный идентификатор политики. |`-AlternativeIdentifier "myAltId"` |
-
-</br></br>
-
-#### <a name="remove-azureadpolicy"></a>Remove-AzureADPolicy
-Удаляет указанную политику.
-
-```powershell
- Remove-AzureADPolicy -Id <ObjectId of Policy>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. | `-Id <ObjectId of Policy>` |
-
-</br></br>
+| Командлет | Описание | 
+| --- | --- |
+| [New-AzureADPolicy](/powershell/module/azuread/new-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) | Создает новую политику. |
+| [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) | Возвращает полный список политик Azure AD или одну указанную политику. |
+| [Get-AzureADPolicyAppliedObject](/powershell/module/azuread/get-azureadpolicyappliedobject?view=azureadps-2.0-preview&preserve-view=true) | Возвращает список приложений и субъектов-служб, связанных с политикой. |
+| [Set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) | Обновляет существующую политику. |
+| [Remove-AzureADPolicy](/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) | Удаляет указанную политику. |
 
 ### <a name="application-policies"></a>Политики приложений
 Управлять политиками приложений можно с помощью следующих командлетов.</br></br>
 
-#### <a name="add-azureadapplicationpolicy"></a>Add-AzureADApplicationPolicy
-Связывает указанную политику с приложением.
-
-```powershell
-Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectId of Policy>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
-| <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
-
-</br></br>
-
-#### <a name="get-azureadapplicationpolicy"></a>Get-AzureADApplicationPolicy
-Возвращает политику, назначенную для приложения.
-
-```powershell
-Get-AzureADApplicationPolicy -Id <ObjectId of Application>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
-
-</br></br>
-
-#### <a name="remove-azureadapplicationpolicy"></a>Remove-AzureADApplicationPolicy
-Удаляет политику из приложения.
-
-```powershell
-Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectId of Policy>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
-| <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |
-
-</br></br>
+| Командлет | Описание | 
+| --- | --- |
+| [Add-AzureADApplicationPolicy](/powershell/module/azuread/add-azureadapplicationpolicy?view=azureadps-2.0-preview&preserve-view=true) | Связывает указанную политику с приложением. |
+| [Get-AzureADApplicationPolicy](/powershell/module/azuread/get-azureadapplicationpolicy?view=azureadps-2.0-preview&preserve-view=true) | Возвращает политику, назначенную для приложения. |
+| [Remove-AzureADApplicationPolicy](/powershell/module/azuread/remove-azureadapplicationpolicy?view=azureadps-2.0-preview&preserve-view=true) | Удаляет политику из приложения. |
 
 ### <a name="service-principal-policies"></a>Политики субъекта-службы
 Управлять политиками субъектов-служб можно с помощью следующих командлетов.
 
-#### <a name="add-azureadserviceprincipalpolicy"></a>Add-AzureADServicePrincipalPolicy
-Связывает указанную политику с субъектом-службой.
-
-```powershell
-Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectId <ObjectId of Policy>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
-| <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
-
-</br></br>
-
-#### <a name="get-azureadserviceprincipalpolicy"></a>Get-AzureADServicePrincipalPolicy
-Возвращает все политики, связанные с указанным субъектом-службой.
-
-```powershell
-Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
-
-</br></br>
-
-#### <a name="remove-azureadserviceprincipalpolicy"></a>Remove-AzureADServicePrincipalPolicy
-Удаляет политику из указанного субъекта-службы.
-
-```powershell
-Remove-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>  -PolicyId <ObjectId of Policy>
-```
-
-| Параметры | Описание | Пример |
-| --- | --- | --- |
-| <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
-| <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |
+| Командлет | Описание | 
+| --- | --- |
+| [Add-AzureADServicePrincipalPolicy](/powershell/module/azuread/add-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Связывает указанную политику с субъектом-службой. |
+| [Get-AzureADServicePrincipalPolicy](/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Возвращает все политики, связанные с указанным субъектом-службой.|
+| [Remove-AzureADServicePrincipalPolicy](/powershell/module/azuread/remove-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Удаляет политику из указанного субъекта-службы.|
 
 ## <a name="license-requirements"></a>Требования лицензий
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: 071b5786127af31a2ad3266c128dbfb7cacad656
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 4f2b338b8629209363acb7bbe0533831a089fe6f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942192"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447323"
 ---
 # <a name="windows-stop-error---0x00000074-bad-system-config-info"></a>Windows-ошибка завершения — 0x00000074 неверные сведения о конфигурации системы
 
@@ -36,7 +36,7 @@ ms.locfileid: "88942192"
 
   ![Код завершения Windows 0x00000074, который также отображается как "BAD_SYSTEM_CONFIG_INFO". Windows информирует пользователя о том, что на компьютере возникла проблема, и его необходимо перезапустить.](./media/windows-stop-error-bad-system-config-info/1.png)
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 **BAD_SYSTEM_CONFIG_INFO** код ошибки возникает, если куст **системного** реестра поврежден. Эта ошибка может быть вызвана любой из следующих причин:
 
@@ -61,10 +61,10 @@ ms.locfileid: "88942192"
 1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
 1. Проверьте наличие повреждений Hive.
 1. Используйте подключение к удаленному рабочему столу для подключения к виртуальной машине восстановления.
-1. Скопируйте `\windows\system32\config` папку и сохраните ее в работоспособном разделе диска или в другом надежном расположении. Создайте резервную копию этой папки в качестве меры предосторожности, так как вы будете изменять критически важные файлы реестра.
+1. Скопируйте `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` папку и сохраните ее в работоспособном разделе диска или в другом надежном расположении. Создайте резервную копию этой папки в качестве меры предосторожности, так как вы будете изменять критически важные файлы реестра. 
 
 > [!NOTE]
-> Создайте копию `\windows\system32\config` папки в качестве резервной копии на случай, если необходимо выполнить откат всех изменений, внесенных в реестр.
+> Создайте копию `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` папки в качестве резервной копии на случай, если необходимо выполнить откат всех изменений, внесенных в реестр.
 
 ### <a name="check-for-hive-corruption"></a>Проверка повреждения Hive
 
@@ -72,7 +72,7 @@ ms.locfileid: "88942192"
 
 1. На виртуальной машине восстановления откройте приложение **редактора реестра** . В панели поиска Windows введите "regedit", чтобы найти его.
 1. В редакторе реестра выберите **HKEY_LOCAL_MACHINE** , чтобы выделить его, а затем выберите **файл > загрузить Hive...**  в меню.
-1. Перейдите к `\windows\system32\config\SYSTEM` и выберите **Открыть**.
+1. Перейдите к `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM` и выберите **Открыть**.
 1. При появлении запроса на ввод имени введите **BROKENSYSTEM**.
 
    1. Если не удается открыть куст или он пуст, то куст поврежден. Если куст поврежден, [откройте запрос в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

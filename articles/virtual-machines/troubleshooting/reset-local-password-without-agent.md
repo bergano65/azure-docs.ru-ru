@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: cb2f08c4788c90f8bdb2af9c6ef95fd1ac43b994
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 42d994a9cdd0e2718d8c2288b6cc0b9618202b41
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87028674"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447454"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Сброс локального пароля Windows для виртуальной машины Azure вне сети
 Локальный пароль Windows для виртуальной машины Azure можно сбросить с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (если установлен гостевой агент Azure). Этот метод является основным способом сброса пароля для виртуальной машины Azure. Если в работе гостевого агента Azure возникают неполадки (агент не отвечает или не устанавливается после передачи пользовательского образа), то можно сбросить пароль Windows вручную. В этой статье описывается, как сбросить пароль локальной учетной записи, подключив исходный виртуальный диск операционной системы к другой виртуальной машине. Действия, описанные в этой статье, не применяются к контроллерам домена Windows. 
@@ -67,21 +67,21 @@ ms.locfileid: "87028674"
      
      ```
      [Startup]
-     0CmdLine=C:\Windows\System32\FixAzureVM.cmd
+     0CmdLine=FixAzureVM.cmd
      0Parameters=
      ```
      
-     ![Создание файла scripts.ini](./media/reset-local-password-without-agent/create-scripts-ini.png)
+     ![Создание файла scripts.ini](./media/reset-local-password-without-agent/create-scripts-ini-1.png)
 
-5. В расположении `\Windows\System32` создайте файл `FixAzureVM.cmd` со следующим содержимым, заменив `<username>` и `<newpassword>` своими значениями:
+5. В расположении `\Windows\System32\GroupPolicy\Machine\Scripts\Startup\` создайте файл `FixAzureVM.cmd` со следующим содержимым, заменив `<username>` и `<newpassword>` своими значениями:
    
     ```
-    net user <username> <newpassword> /add
+    net user <username> <newpassword> /add /Y
     net localgroup administrators <username> /add
     net localgroup "remote desktop users" <username> /add
     ```
 
-    ![Создание файла FixAzureVM.cmd](./media/reset-local-password-without-agent/create-fixazure-cmd.png)
+    ![Создание файла FixAzureVM.cmd](./media/reset-local-password-without-agent/create-fixazure-cmd-1.png)
    
     Создаваемый пароль должен удовлетворять настроенным требованиям к сложности пароля для виртуальной машины.
 
@@ -93,7 +93,7 @@ ms.locfileid: "87028674"
 
 9. В режиме удаленного сеанса на новой виртуальной машине удалите следующие файлы, чтобы очистить среду:
     
-    * Из расположения %windir%\System32
+    * Из%windir%\System32\GroupPolicy\Machine\Scripts\Startup
       * удалите файл FixAzureVM.cmd.
     * Из расположения %windir%\System32\GroupPolicy\Machine\Scripts
       * удалите файл scripts.ini.
@@ -113,31 +113,31 @@ ms.locfileid: "87028674"
    
    * На портале Azure выберите виртуальную машину и нажмите кнопку *Удалить*:
      
-     ![Удаление существующей виртуальной машины](./media/reset-local-password-without-agent/delete-vm-classic.png)
+     ![Удалить существующую классическую виртуальную машину](./media/reset-local-password-without-agent/delete-vm-classic.png)
 
 2. Подключите диск операционной системы исходной виртуальной машины к машине для устранения неполадок. Виртуальная машина для устранения неполадок должна находиться в том же регионе, что и диск операционной системы исходной виртуальной машины (например `West US`).
    
    1. Выберите виртуальную машину для устранения неполадок на портале Azure. Щелкните *Диски* | *Подключить существующий*:
      
-      ![Подключение существующего диска](./media/reset-local-password-without-agent/disks-attach-existing-classic.png)
+      ![Подключить существующий диск-классический](./media/reset-local-password-without-agent/disks-attach-existing-classic.png)
      
    2. Выберите *VHD-файл*, а затем выберите учетную запись хранения, которая содержит вашу исходную виртуальную машину:
      
-      ![Выбор учетной записи хранения](./media/reset-local-password-without-agent/disks-select-storage-account-classic.png)
+      ![Выбор учетной записи хранения — классическая модель](./media/reset-local-password-without-agent/disks-select-storage-account-classic.png)
      
    3. Установите флажок *Показать классические учетные записи хранения*, а затем выберите исходный контейнер. Как правило, исходный контейнер — *vhds*:
      
-      ![Выбор контейнера хранилища](./media/reset-local-password-without-agent/disks-select-container-classic.png)
+      ![Выбор контейнера хранилища — классический](./media/reset-local-password-without-agent/disks-select-container-classic.png)
 
-      ![Выбор контейнера хранилища](./media/reset-local-password-without-agent/disks-select-container-vhds-classic.png)
+      ![Выбор контейнера хранилища — классический виртуальный жесткий диск](./media/reset-local-password-without-agent/disks-select-container-vhds-classic.png)
      
    4. Выберите виртуальный жесткий диск операционной системы для подключения. Для завершения процесса нажмите кнопку *Выбрать*:
      
-      ![Выбор исходного виртуального диска](./media/reset-local-password-without-agent/disks-select-source-vhd-classic.png)
+      ![Выберите исходный виртуальный диск — классический](./media/reset-local-password-without-agent/disks-select-source-vhd-classic.png)
 
    5. Нажмите кнопку "ОК", чтобы подключить диск.
 
-      ![Подключение существующего диска](./media/reset-local-password-without-agent/disks-attach-okay-classic.png)
+      ![Присоединить имеющееся диалоговое окно Disk-ОК-классическая](./media/reset-local-password-without-agent/disks-attach-okay-classic.png)
 
 3. Подключитесь к виртуальной машине для устранения неполадок, используя удаленный рабочий стол, и убедитесь, что диск операционной системы исходной виртуальной машины отображается.
 
@@ -163,7 +163,7 @@ ms.locfileid: "87028674"
      Version=1
      ```
      
-     ![Создание файла gpt.ini](./media/reset-local-password-without-agent/create-gpt-ini-classic.png)
+     ![Создание gpt.ini-классической модели](./media/reset-local-password-without-agent/create-gpt-ini-classic.png)
 
 5. Создайте файл `scripts.ini` в расположении `\Windows\System32\GroupPolicy\Machines\Scripts\`. Убедитесь, что отображаются скрытые папки. При необходимости создайте папку `Machine` или `Scripts`.
    
@@ -171,21 +171,21 @@ ms.locfileid: "87028674"
 
      ```
      [Startup]
-     0CmdLine=C:\Windows\System32\FixAzureVM.cmd
+     0CmdLine=FixAzureVM.cmd
      0Parameters=
      ```
      
-     ![Создание файла scripts.ini](./media/reset-local-password-without-agent/create-scripts-ini-classic.png)
+     ![Создание scripts.ini-классической модели](./media/reset-local-password-without-agent/create-scripts-ini-classic-1.png)
 
-6. В расположении `\Windows\System32` создайте файл `FixAzureVM.cmd` со следующим содержимым, заменив `<username>` и `<newpassword>` своими значениями:
+6. В расположении `\Windows\System32\GroupPolicy\Machine\Scripts\Startup\` создайте файл `FixAzureVM.cmd` со следующим содержимым, заменив `<username>` и `<newpassword>` своими значениями:
    
     ```
-    net user <username> <newpassword> /add
+    net user <username> <newpassword> /add /Y
     net localgroup administrators <username> /add
     net localgroup "remote desktop users" <username> /add
     ```
 
-    ![Создание файла FixAzureVM.cmd](./media/reset-local-password-without-agent/create-fixazure-cmd-classic.png)
+    ![Создание Фиксазуревм. cmd-Classic](./media/reset-local-password-without-agent/create-fixazure-cmd-classic-1.png)
    
     Создаваемый пароль должен удовлетворять настроенным требованиям к сложности пароля для виртуальной машины.
 
@@ -195,17 +195,17 @@ ms.locfileid: "87028674"
    
    2. Выберите диск данных, подключенный на шаге 2, нажмите кнопку **Отключить**, затем нажмите кнопку **ОК**.
 
-     ![Отключение диска](./media/reset-local-password-without-agent/data-disks-classic.png)
+     ![Отключение диска — устранение неполадок виртуальной машины (классическая модель)](./media/reset-local-password-without-agent/data-disks-classic.png)
      
-     ![Отключение диска](./media/reset-local-password-without-agent/detach-disk-classic.png)
+     ![Отключение диска-устранение неполадок с диалоговым окном ВМ-ОК — классическая](./media/reset-local-password-without-agent/detach-disk-classic.png)
 
 8. Создайте виртуальную машину на основе диска операционной системы исходной виртуальной машины.
    
-     ![Создание виртуальной машины на основе шаблона](./media/reset-local-password-without-agent/create-new-vm-from-template-classic.png)
+     ![Создание виртуальной машины на основе шаблона — классическая модель](./media/reset-local-password-without-agent/create-new-vm-from-template-classic.png)
 
-     ![Создание виртуальной машины на основе шаблона](./media/reset-local-password-without-agent/choose-subscription-classic.png)
+     ![Создание виртуальной машины из шаблона — выбор подписки — классическая](./media/reset-local-password-without-agent/choose-subscription-classic.png)
 
-     ![Создание виртуальной машины на основе шаблона](./media/reset-local-password-without-agent/create-vm-classic.png)
+     ![Создание виртуальной машины на основе шаблона — создание виртуальной машины — классическая модель](./media/reset-local-password-without-agent/create-vm-classic.png)
 
 ## <a name="complete-the-create-virtual-machine-experience"></a>Завершение процедуры создания виртуальной машины
 
@@ -213,7 +213,7 @@ ms.locfileid: "87028674"
 
 2. В режиме удаленного сеанса на новой виртуальной машине удалите следующие файлы, чтобы очистить среду:
     
-    * Из расположения `%windir%\System32`
+    * Из расположения `%windir%\System32\GroupPolicy\Machine\Scripts\Startup\`
       * удалите `FixAzureVM.cmd`
     * Из расположения `%windir%\System32\GroupPolicy\Machine\Scripts`
       * удалите `scripts.ini`

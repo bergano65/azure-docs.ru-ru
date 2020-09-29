@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 9c6e99b81ce10cfabd4109bb18376b2579edef20
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: 6abfdb09fe16272e870fff517359759968417f79
+ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500340"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91461229"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -101,6 +101,10 @@ ms.locfileid: "89500340"
 База данных, [добавляемая в автозащищаемый экземпляр](backup-sql-server-database-azure-vms.md#enable-auto-protection) , может не сразу отображаться в разделе защищенные элементы. Это обусловлено тем, что обнаружение обычно выполняется раз в 8 часов. Однако вы можете сразу обнаружить и защитить новые базы данных, если вручную запустить обнаружение, выбрав команду повторно **обнаружить баз данных**, как показано на следующем рисунке.
 
   ![Обнаружение вновь добавленной базы данных вручную](./media/backup-azure-sql-database/view-newly-added-database.png)
+  
+## <a name="can-i-protect-databases-that-have-tde-transparent-data-encryption-turned-on-and-will-the-database-stay-encrypted-through-the-entire-backup-process"></a>Можно ли защитить базы данных с включенной TDE (прозрачное шифрование данных), и база данных останется зашифрованной по всему процессу резервного копирования?
+
+Да, Azure Backup поддерживает резервное копирование баз данных SQL Server или сервера с включенным TDE. Служба архивации поддерживает [TDE](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) с ключами, управляемыми Azure, или с ключами, управляемыми клиентом (BYOK).  Резервное копирование не выполняет шифрование SQL в рамках процесса резервного копирования, поэтому база данных остается зашифрованной при резервном копировании.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
