@@ -4,17 +4,17 @@ description: Как создать гостевых пользователей A
 ms.service: sql-db-mi
 ms.subservice: security
 ms.custom: azure-synapse
-ms.topic: conceptual
+ms.topic: how-to
 author: shohamMSFT
 ms.author: shohamd
 ms.reviewer: vanto
 ms.date: 07/27/2020
-ms.openlocfilehash: 2c8aa39b6819e135181e2d153825e89686359538
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: aa74489a962708a1d3d5e6835f684e5cb8fc548b
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88053768"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91444355"
 ---
 # <a name="create-azure-ad-guest-users-and-set-as-an-azure-ad-admin"></a>Создание гостевых пользователей Azure AD и предоставление им прав администратора Azure AD
 
@@ -33,7 +33,7 @@ ms.locfileid: "88053768"
 
 Дополнительные сведения о существующей поддержке гостевых пользователей с помощью групп Azure AD см. [в разделе Использование многофакторной проверки подлинности Azure Active Directory](authentication-mfa-ssms-overview.md).
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Предварительное требование
 
 - [AZ. SQL 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) Module или более поздней версии требуется при использовании PowerShell для задания гостевого пользователя в качестве администратора Azure AD для логического сервера Azure SQL.
 
@@ -139,6 +139,6 @@ ms.locfileid: "88053768"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка аутентификации Azure AD и управление ею с помощью Azure SQL](authentication-aad-configure.md)
+- [Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL](authentication-aad-configure.md)
 - [Использование многофакторной проверки подлинности Azure Active Directory](authentication-mfa-ssms-overview.md)
 - [CREATE USER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql)

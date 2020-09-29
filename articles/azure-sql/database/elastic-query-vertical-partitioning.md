@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: scale-out
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: 95964064200064dcc43449e1d939c1cdfd78cdb8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: daa1bbbace55281f81e04c4639b083b3e934b9f8
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84035985"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91443087"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "84035985"
 
 Базы данных с вертикальным секционированием используют разные наборы таблиц в разных базах данных. Это означает, что схемы разных баз данных различаются. Например, все таблицы, связанные с данными инвентаризации, хранятся в одной базе данных, а таблицы, связанные с учетом, — в другой.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Пользователь должен иметь разрешение ALTER ANY EXTERNAL DATA SOURCE. Это разрешение включено в разрешение ALTER DATABASE.
 * Для обращения к базовому источнику данных необходимы разрешения ALTER ANY EXTERNAL DATA SOURCE.
@@ -36,7 +36,7 @@ ms.locfileid: "84035985"
 > В отличие от горизонтального секционирования эти инструкции DDL не зависят от определения уровня данных с помощью карты сегментов через клиентскую библиотеку эластичной базы данных.
 >
 
-1. [СОЗДАТЬ ГЛАВНЫЙ КЛЮЧ](https://msdn.microsoft.com/library/ms174382.aspx)
+1. [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx)
 2. [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
 3. [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
 4. [CREATE EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
@@ -116,7 +116,7 @@ CREATE EXTERNAL TABLE [dbo].[customer]
 select * from sys.external_tables;
 ```
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Эластичные запросы расширяют существующий синтаксис доступа к внешним таблицам, позволяя определять внешние таблицы, использующие внешние источники данных типа реляционной СУБД. Определение внешней таблицы для вертикального секционирования содержит следующие элементы:
 
@@ -172,7 +172,7 @@ DROP EXTERNAL TABLE [ [ schema_name ] . | schema_name. ] table_name[;]
 
 Процедура sp\_execute\_remote использует внешний источник данных, указанный в параметрах вызова, для выполнения заданной инструкции T-SQL в удаленной базе данных. Она использует учетные данные внешнего источника данных для подключения к удаленной базе данных.  
 
-Пример.
+Пример:
 
 ```sql
     EXEC sp_execute_remote
@@ -189,7 +189,7 @@ DROP EXTERNAL TABLE [ [ schema_name ] . | schema_name. ] table_name[;]
 * Убедитесь, что базе данных конечной точки эластичного запроса предоставлен доступ к удаленной базе данных, включив доступ для служб Azure в конфигурации брандмауэра базы данных SQL Azure. Кроме того, убедитесь, что учетные данные, указанные в определении внешнего источника данных, позволяют войти в удаленную базу данных и имеют разрешения на доступ к удаленной таблице.  
 * Эластичные запросы оптимальны, когда основная часть вычислений может быть выполнена в удаленной базе данных. Обычно наиболее эффективны запросы с предикатами выборочных фильтров, дающие возможность вычисления в удаленных базах данных, или соединениями, которые могут быть полностью выполнены в удаленной базе данных. Для других шаблонов запросов может потребоваться загрузка больших объемов данных из удаленной базы данных, и эти шаблоны могут сработать неэффективно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](elastic-query-overview.md).
 * Руководств по вертикальному секционированию см. в статье [Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)](elastic-query-getting-started-vertical.md).

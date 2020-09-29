@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: scale-out
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/03/2019
-ms.openlocfilehash: 8dcaecb1e4eb91ee01e3ccb39000e087b3455ba2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ced546f8f4375433d9fcd59f7ce46f9604f72921
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85832361"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91443116"
 ---
 # <a name="reporting-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "85832361"
 
 Сведения для несегментированных баз данных см. в статье [Запрос к нескольким облачным базам данных с разными схемами](elastic-query-vertical-partitioning.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте карту сегментов с помощью клиентской библиотеки эластичной базы данных. Ознакомьтесь с [управлением картами сегментов](elastic-scale-shard-map-management.md). Можно также использовать пример приложения в статье [Приступая к работе с инструментами эластичных баз данных](elastic-scale-get-started.md).
 * Кроме того, можно ознакомиться с разделом [Перенос существующих баз данных для масштабирования](elastic-convert-to-use-elastic-tools.md).
@@ -40,7 +40,7 @@ ms.locfileid: "85832361"
 
 Эти инструкции позволяют представлять метаданные уровня сегментированных данных через запрос к эластичной базе данных.
 
-1. [СОЗДАТЬ ГЛАВНЫЙ КЛЮЧ](https://msdn.microsoft.com/library/ms174382.aspx)
+1. [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx)
 2. [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
 3. [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
 4. [CREATE EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
@@ -151,7 +151,7 @@ SELECT * from sys.external_tables;
 DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_name[;]
 ```
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Предложение DATA\_SOURCE определяет внешний источник данных (карту сегментов) для внешней таблицы.  
 
@@ -203,7 +203,7 @@ DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_n
 
 Процедура sp\_execute\_remote использует внешний источник данных, указанный в параметрах вызова, для выполнения заданной инструкции T-SQL в удаленных базах данных. Она использует учетные данные внешнего источника данных для подключения к базе данных диспетчера ShardMap и удаленным базам данных.  
 
-Пример.
+Пример:
 
 ```sql
     EXEC sp_execute_remote
@@ -222,7 +222,7 @@ DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_n
 * Функция эластичных запросов в настоящее время не позволяет исключать сегменты, когда предикаты для ключа сегментирования безопасно исключают определенные сегменты из процесса обработки.
 * Эластичные запросы оптимальны, когда основная часть вычислений может быть выполнена в сегментах. Обычно наиболее эффективны запросы с предикатами выборочных фильтров, дающие возможность вычисления в сегментах или соединениях путем секционирования ключей с выравниванием по секциям для всех сегментов. Для других шаблонов запросов может потребоваться загрузка больших объемов данных из сегментов в головной узел, что может стать причиной снижения производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](elastic-query-overview.md).
 * Руководств по вертикальному секционированию см. в статье [Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)](elastic-query-getting-started-vertical.md).

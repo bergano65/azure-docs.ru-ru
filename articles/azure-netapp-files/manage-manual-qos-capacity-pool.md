@@ -12,16 +12,16 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 09/28/2020
 ms.author: b-juche
-ms.openlocfilehash: 1bbd6ad9e33aab8d3564865b86485d70df5a108f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d2abb66684738e97ade2a2e67309a4e7b53c4734
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91345508"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442080"
 ---
-# <a name="manage-a-manual-qos-capacity-pool"></a>Управление пулом емкости QoS вручную
+# <a name="manage-a-manual-qos-capacity-pool"></a>Управление пулом емкости качества обслуживания вручную
 
 В этой статье описывается, как управлять пулом емкости, использующим тип QoS вручную.  
 
@@ -90,3 +90,12 @@ ms.locfileid: "91345508"
 * [Метрики для Azure NetApp Files](azure-netapp-files-metrics.md)
 * [Рекомендации по ускорению Azure NetApp Files](azure-netapp-files-performance-considerations.md)
 * [Устранение проблем с пулом ресурсов](troubleshoot-capacity-pools.md)
+* [Иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
+* [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
+* [Модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md)
+* [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
+* [Создание тома NFS](azure-netapp-files-create-volumes.md)
+* [Создание тома SMB](azure-netapp-files-create-volumes-smb.md)
+* [Создание тома с двумя протоколами](create-volumes-dual-protocol.md)
+
+

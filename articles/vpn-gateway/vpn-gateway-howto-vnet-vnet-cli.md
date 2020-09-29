@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8ffad738a8f10816f26760fa34c5ce686fac5bad
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 428c24236aad9a57a9d52eb0a6ff3a7aeb9fe541
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401152"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442149"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
 
@@ -70,7 +70,7 @@ ms.locfileid: "89401152"
 
 * [Виртуальных сетей, находящиеся в одной подписке:](#samesub) В действиях, описанных в этой конфигурации, используются TestVNet1 и TestVNet4.
 
-  ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-cli/v2vrmps.png)
+  ![Схема, в которой показаны действия V NET-V для поточностей с V, которые находятся в одной подписке.](./media/vpn-gateway-howto-vnet-vnet-cli/v2vrmps.png)
 
 * [Виртуальных сетей, которые находятся в разных подписках:](#difsub) В действиях, описанных в этой конфигурации, используются TestVNet1 и TestVNet5.
 
@@ -79,7 +79,7 @@ ms.locfileid: "89401152"
 
 ## <a name="connect-vnets-that-are-in-the-same-subscription"></a><a name="samesub"></a>Подключение виртуальных сетей из одной подписки
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
 Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure](/cli/azure/install-azure-cli).
 

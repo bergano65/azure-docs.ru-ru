@@ -4,12 +4,16 @@
   items:
     - name: Что такое Service Fabric?
       href: service-fabric-overview.md
+    - name: Управляемые кластеры Service Fabric
+      href: overview-managed-cluster.md
 - name: Краткие руководства
   expanded: true
   items:
     - name: Шаблон ARM
       displayName: Resource Manager
       href: quickstart-cluster-template.md
+    - name: Управляемый кластер
+      href: quickstart-managed-cluster-template.md
     - name: Создание приложения .NET
       href: service-fabric-quickstart-dotnet.md
     - name: Развертывание приложения-контейнера Linux
@@ -64,6 +68,16 @@
           href: service-fabric-tutorial-package-containers.md
         - name: 3. Отработка отказа и масштабирование
           href: service-fabric-tutorial-containers-failover.md
+    - name: Создание управляемого кластера Service Fabric
+      items:
+        - name: "1.\_Развертывание управляемого кластера Service Fabric"
+          href: tutorial-managed-cluster-deploy.md
+        - name: "2.\_Горизонтальное увеличение масштаба типа узла управляемого кластера"
+          href: tutorial-managed-cluster-scale.md
+        - name: "3.\_Добавление и удаление типов узлов управляемого кластера"
+          href: tutorial-managed-cluster-add-remove-node-type.md
+        - name: "4.\_Подключение к управляемому кластеру и развертывание приложения"
+          href: tutorial-managed-cluster-deploy-app.md
     - name: Создание кластера и управление им
       items:
         - name: 1. Создание кластера в Azure
@@ -155,7 +169,7 @@
           items:
             - name: Обзор контейнеров
               href: service-fabric-containers-overview.md
-            - name: Docker Compose (предварительная версия)
+            - name: Docker Compose
               href: service-fabric-docker-compose.md
             - name: Пробы
               href: probes-codepackage.md
@@ -430,7 +444,7 @@
               href: service-fabric-deploy-existing-app.md
         - name: Создание службы контейнеров
           items:
-            - name: Docker Compose (предварительная версия)
+            - name: Docker Compose
               href: service-fabric-docker-compose.md
             - name: Драйверы томов и драйверы ведения журналов
               href: service-fabric-containers-volume-logging-drivers.md
@@ -509,7 +523,7 @@
                   href: service-fabric-application-secret-management-windows.md
                 - name: Настройка шифрования секретов и сертификата шифрования в Linux
                   href: service-fabric-application-secret-management-linux.md
-                - name: Безопасное хранение секретов с помощью KeyVaultReference (предварительная версия)
+                - name: Безопасное хранение секретов с помощью KeyVaultReference
                   href: service-fabric-keyvault-references.md
             - name: Настройка обратного прокси-сервера для безопасного подключения
               href: service-fabric-reverseproxy-configure-secure-communication.md
@@ -675,6 +689,8 @@
                   href: service-fabric-how-to-remove-node-type.md
             - name: Обновление
               items:
+                - name: Добавление расширения масштабируемого набора виртуальных машин в тип узла управляемого кластера
+                  href: how-to-managed-cluster-vmss-extension.md
                 - name: Обновление версии Service Fabric
                   href: service-fabric-cluster-upgrade-version-azure.md
                 - name: Обновление конфигурации кластера
@@ -901,6 +917,8 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Часто задаваемые вопросы
       href: service-fabric-common-questions.md
+    - name: Распространенные вопросы об управляемых кластерах Service Fabric
+      href: faq-managed-cluster.md
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
       href: /answers/topics/azure-service-fabric.html
     - name: Ограничения при развертывании с помощью Azure Resource Manager

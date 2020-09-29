@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 78668eaadca872d7c25ab909fad5b9838bbc01d3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 0a368e54c940ff580b7e8f49dd108fafddde5b17
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90894813"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441487"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>Вопросы и ответы — сбор данных, агенты и рабочие области
 
@@ -166,7 +166,7 @@ ms.locfileid: "90894813"
 
 1. Если в вашей подписке включен Защитник Azure, откройте политику безопасности для этой подписки и выберите **отключить защитник Azure**.
 
-   ![Ценовая категория][1]
+    :::image type="content" source="./media/security-center-platform-migration-faq/pricing-tier.png" alt-text="Включение или отключение защитника Azure":::
 
 1. Далее отключите автоматическую подготовку, выбрав **Выкл.** на странице **Политика безопасности — сбор данных**.
    ![Сбор данных][2]
@@ -200,7 +200,7 @@ ms.locfileid: "90894813"
 
 Можно подключить агент к любой существующей пользовательской рабочей области или созданной рабочей области центра безопасности. Если в пользовательской рабочей области решения Security или SecurityCenterFree не включены, то потребуется применить решение. Для этого выберите пользовательскую рабочую область или подписку и примените ценовую категорию на странице **Политика безопасности — ценовая категория**.
 
-   ![Ценовая категория][1]
+:::image type="content" source="./media/security-center-platform-migration-faq/pricing-tier.png" alt-text="Включение или отключение защитника Azure":::
 
 Центр обеспечения безопасности включит правильное решение в рабочей области в зависимости от выбранной ценовой категории.
 
@@ -271,7 +271,6 @@ ms.locfileid: "90894813"
 
 
 <!--Image references-->
-[1]: ./media/security-center-platform-migration-faq/pricing-tier.png
 [2]: ./media/security-center-platform-migration-faq/data-collection.png
 [3]: ./media/security-center-platform-migration-faq/remove-the-agent.png
 [4]: ./media/security-center-platform-migration-faq/use-another-workspace.png

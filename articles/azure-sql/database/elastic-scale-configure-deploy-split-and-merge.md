@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: scale-out
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
-ms.openlocfilehash: 1cd03814e1590abebb74db490a2692d492a9207d
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 02ec24677519902c299babb72e089f75dcf8b34b
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88064950"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91443035"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Развертывание службы разбиения и объединения, чтобы перемещать данные между сегментированными базами данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "88064950"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Создайте базу данных SQL Azure, которая будет использоваться в качестве базы данных состояния разбиения и объединения. Перейдите на [портал Azure](https://portal.azure.com). Создайте новую **Базу данных SQL**. Присвойте базе данных имя и создайте администратор и пароль. Обязательно запишите имя и пароль для последующего использования.
+1. Создайте базу данных SQL Azure, которая будет использоваться в качестве базы данных состояния разбиения и объединения. Перейдите на [портал Microsoft Azure](https://portal.azure.com). Создайте новую **Базу данных SQL**. Присвойте базе данных имя и создайте администратор и пароль. Обязательно запишите имя и пароль для последующего использования.
 
 1. Убедитесь, что сервер разрешает службам Azure подключаться к ней. На портале в колонке **Параметры брандмауэра** задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.** Щелкните значок «Сохранить».
 
@@ -108,7 +108,7 @@ ms.locfileid: "88064950"
 
 ### <a name="upload-the-pfx-file-to-the-cloud-service"></a>Загрузите PFX-файл в облачную службу.
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Перейдите на [портал Microsoft Azure](https://portal.azure.com).
 2. Выберите **Облачные службы**.
 3. Выберите облачную службу, созданную ранее для службы Split/Merge.
 4. Щелкните **Сертификаты** в верхнем меню.

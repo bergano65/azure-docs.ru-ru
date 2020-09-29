@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: aec5a08bf56cd9a9ba18159ffc28a129163571b0
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: c7f71d24ab516044a0ce48ad40f78bc659268866
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89426288"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442166"
 ---
 # <a name="transition-to-openvpn-protocol-or-ikev2-from-sstp"></a>Переход на протокол Опенвпн или IKEv2 из SSTP
 
@@ -47,7 +47,7 @@ ms.locfileid: "89426288"
 
 Чтобы добавить IKEv2 в существующий шлюз, просто перейдите на вкладку "Конфигурация типа" точка — сеть "в разделе Шлюз виртуальной сети на портале, а затем в раскрывающемся списке выберите **IKEv2 и SSTP (SSL)** .
 
-![точка-сеть](./media/ikev2-openvpn-from-sstp/sstptoikev2.png "IKEv2")
+![Снимок экрана, на котором показана страница "Конфигурация типа" точка — сеть "с открытым раскрывающимся списком" Тип туннеля "и выбран параметр" IKEv2 и SSTP (SSL) ".](./media/ikev2-openvpn-from-sstp/sstptoikev2.png "IKEv2")
 
 
 ### <a name="option-2---remove-sstp-and-enable-openvpn-on-the-gateway"></a>Вариант 2. Удаление SSTP и включение Опенвпн в шлюзе
@@ -63,7 +63,7 @@ ms.locfileid: "89426288"
 Если вы используете Windows 10, вы также можете использовать [VPN-клиент Azure для Windows](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-client#to-download-the-azure-vpn-client) .
 
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 ### <a name="what-are-the-client-configuration-requirements"></a>Требования к конфигурации клиента
 
 >[!NOTE]

@@ -15,12 +15,12 @@ ms.date: 09/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: e504a3ed2d9193bdc85fc08b3ea91c4f4f2c160c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2f96e48d0c7b14178185f751b8c708e75ab3f322
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91329510"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441832"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
 
@@ -63,7 +63,7 @@ $ras.Count
 
     Существует два способа устранения этой ошибки. Первый способ — назначить роль " [читатели каталога](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) " субъекту-службе, чтобы она могла считывать данные в каталоге.
 
-    Второй способ устранения этой ошибки — создание назначения роли с помощью `--assignee-object-id` параметра, а не `--assignee` . С помощью `--assignee-object-id` Azure CLI пропустит Поиск Azure AD. Необходимо получить идентификатор объекта пользователя, группы или приложения, которым требуется назначить роль. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md#new-service-principal).
+    Второй способ устранения этой ошибки — создание назначения роли с помощью `--assignee-object-id` параметра, а не `--assignee` . С помощью `--assignee-object-id` Azure CLI пропустит Поиск Azure AD. Необходимо получить идентификатор объекта пользователя, группы или приложения, которым требуется назначить роль. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md#add-role-assignment-for-a-new-service-principal-at-a-resource-group-scope).
 
     ```azurecli
     az role assignment create --assignee-object-id 11111111-1111-1111-1111-111111111111  --role "Contributor" --scope "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
@@ -150,7 +150,7 @@ CanDelegate        : False
 }
 ```
 
-Не существует проблемы с тем, чтобы не выходить из этих назначений ролей, когда субъект безопасности был удален. При желании вы можете удалить эти назначения ролей, используя шаги, аналогичные другим назначениям ролей. Сведения об удалении назначений ролей см. в разделе [портал Azure](role-assignments-portal.md#remove-a-role-assignment), [Azure PowerShell](role-assignments-powershell.md#remove-a-role-assignment)или [Azure CLI](role-assignments-cli.md#remove-a-role-assignment)
+Не существует проблемы с тем, чтобы не выходить из этих назначений ролей, когда субъект безопасности был удален. При желании вы можете удалить эти назначения ролей, используя шаги, аналогичные другим назначениям ролей. Сведения об удалении назначений ролей см. в разделе [портал Azure](role-assignments-portal.md#remove-a-role-assignment), [Azure PowerShell](role-assignments-powershell.md#remove-a-role-assignment)или [Azure CLI](role-assignments-cli.md#remove-role-assignment)
 
 В PowerShell при попытке удаления назначений ролей с помощью идентификатора объекта и имени определения роли, а также нескольких назначений ролей, соответствующих Вашим параметрам, вы получите сообщение об ошибке: "указанные сведения не соответствуют назначению роли". Ниже приведен пример сообщения об ошибке.
 

@@ -1,18 +1,18 @@
 ---
 title: Установка между компьютером и виртуальной сетью подключения типа "точка — сеть" с использованием аутентификации RADIUS и PowerShell | Документация Майкрософт
-description: Установка безопасного подключения типа "точка — сеть" между клиентами Windows или Mac OS X и виртуальной сетью с использованием аутентификации RADIUS.
+description: Безопасное подключение клиентов Windows и OS X к виртуальной сети с помощью P2S и аутентификации RADIUS.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: cherylmc
-ms.openlocfilehash: 2a93f612f5aeb5c2d3a4b83d580b9548f45e4c05
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c8d7ae3cd40f118399e5ff60fa0738b07249c5ef
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91329165"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442407"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell
 
@@ -28,7 +28,7 @@ VPN-подключение "точка — сеть" устанавливает
 
 Из этой статьи вы узнаете, как настроить конфигурацию "точка — сеть" с аутентификацией при помощи сервера RADIUS. Если вы хотите проверить подлинность с помощью созданных сертификатов и собственной проверки подлинности сертификата VPN-шлюза, см. статью [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью собственного сертификата VPN-шлюза](vpn-gateway-howto-point-to-site-rm-ps.md) или [Создание клиента Azure Active Directory для подключений по протоколу P2S опенвпн](openvpn-azure-ad-tenant.md) для проверки подлинности Azure Active Directory.
 
-![Схема подключения — RADIUS](./media/point-to-site-how-to-radius-ps/p2sradius.png)
+![Схема, на которой показана конфигурация P2S с проверкой подлинности с помощью сервера RADIUS.](./media/point-to-site-how-to-radius-ps/p2sradius.png)
 
 Для подключения типа "точка — сеть" не требуется VPN-устройство или общедоступный IP-адрес. P2S создает VPN-подключение по протоколу SSTP (Secure Socket Tunneling Protocol), Опенвпн или IKEv2.
 
@@ -65,7 +65,7 @@ VPN-подключение "точка — сеть" устанавливает
 
 ### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
 
-[!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
+[!INCLUDE [PowerShell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
 ### <a name="example-values"></a><a name="example"></a>Примеры значений
 

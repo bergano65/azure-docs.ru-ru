@@ -7,17 +7,17 @@ ms.service: sql-database
 ms.subservice: development
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: e0a413847142ee516a06f924dd058578047fb3a8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 304ad51bc40c8165c2dc11bb70287491e3d6dfb9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84267517"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91444030"
 ---
 # <a name="connect-excel-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance-and-create-a-report"></a>Подключение Excel к базе данных в базе данных SQL Azure или Управляемый экземпляр SQL Azure и создание отчета
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -99,7 +99,7 @@ ms.locfileid: "84267517"
 
     ![Существующее подключение](./media/connect-excel/existing-connection.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [подключиться к SQL Server Management Studio и выполнить запросы](connect-query-ssms.md) к расширенным запросам и анализу.
 * Узнайте о преимуществах использования [пулов эластичных БД](elastic-pool-overview.md).

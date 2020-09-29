@@ -7,17 +7,17 @@ ms.service: sql-db-mi
 ms.subservice: high-availability
 ms.custom: sqldbrb=2
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 08/14/2019
-ms.openlocfilehash: a154f9a75a70ed46155424d676d2b2cd8c6df3bf
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 42326247117c0710c93b45c896bb6e7cb3a8120f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91277977"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91444388"
 ---
 # <a name="configure-a-failover-group-for-azure-sql-database"></a>Настройка группы отработки отказа для базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -675,7 +675,7 @@ ms.locfileid: "91277977"
 
 ![Строка подключения группы отработки отказа](./media/auto-failover-group-configure/find-failover-group-connection-string.png)
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 - Удаление группы отработки отказа для одной базы данных или в составе пула не приводит к ее удалению и не удаляет реплицированную базу данных. Необходимо вручную отключить георепликацию и удалить базу данных с сервера-получателя, если вы хотите добавить отдельную или реплицируемую базу данных обратно в группу отработки отказа после ее удаления. В противном случае может возникнуть ошибка, аналогичная `The operation cannot be performed due to multiple errors` попытке добавить базу данных в группу отработки отказа.
 

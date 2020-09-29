@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: migration
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/08/2020
-ms.openlocfilehash: 7d36984e7117305b22381e4266575e998c080ae5
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 9b34a2435486a905923e783153ccae97628193a2
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91360197"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91443757"
 ---
 # <a name="import-or-export-an-azure-sql-database-without-allowing-azure-services-to-access-the-server"></a>Импорт или экспорт базы данных SQL Azure без предоставления службам Azure доступа к серверу
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "91360197"
 
    ![На снимке экрана показана страница обзора виртуальной машины с кнопкой подключить.](./media/database-import-export-azure-services-off/vm.png)  
 
-2. Щелкните **Подключить**.
+2. Нажмите кнопку **Подключиться**.
 
    Для виртуальной машины отобразится форма файла протокола удаленного рабочего стола (RDP-файл), а также общедоступный IP-адрес и номер порта.
 

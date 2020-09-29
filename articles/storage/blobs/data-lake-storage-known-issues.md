@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/26/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: fd500b80f0c564fc0f4c7e311483790a83a4101a
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: c1e9e3d63e8a4f7fe461e2d33603da91d3d9bec6
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923744"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441782"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -113,11 +113,9 @@ Set-AzStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations read,wr
 
 ### <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 
-- Политики управления жизненным циклом для учетных записей хранения BlockBlobStorage категории "Премиум" пока не поддерживаются. 
+- Политики управления жизненным циклом поддерживаются только для учетных записей общего назначения версии 2. Они пока не поддерживаются в учетных записях хранения Premium Блоккблобстораже.
+- Перемещение данных с уровня "Премиум" на более низкие уровни не поддерживается.
 
-- Перемещение данных с уровня "Премиум" на более низкие уровни не поддерживается. 
-
-- Действие **удаления большого двоичного объекта** в настоящее время не поддерживается. 
 
 ### <a name="hdinsight-support"></a>Поддержка HDInsight
 

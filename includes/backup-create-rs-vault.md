@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 10/18/2018
 ms.author: dacurwin
 ms.custom: include file
-ms.openlocfilehash: 8586d90631e8d38fa020ff9dab3f626aaedb2760
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c111752dcca03781dfb2a11fb100dafc4bad90f7
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003827"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91401008"
 ---
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
 
@@ -54,7 +54,7 @@ ms.locfileid: "87003827"
 
 1. Указав значения, выберите **Просмотр и создание**.
 
-    ![Создание хранилища Служб восстановления](./media/backup-create-rs-vault/review-and-create.png)
+    ![Снимок экрана: кнопка "Просмотр и создание", отображаемая при создании хранилища Служб восстановления.](./media/backup-create-rs-vault/review-and-create.png)
 
 1. Когда все будет готово к созданию хранилища Служб восстановления, выберите **Создать**.
 

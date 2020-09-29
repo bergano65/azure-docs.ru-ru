@@ -6,14 +6,38 @@ metadata:
   ms.topic: landing-page
   author: erikadoyle
   ms.author: edoyle
-  ms.date: 12/04/2019
-  ms.openlocfilehash: a2651387a425439d09ad68b0e763ff0c6c3f7f27
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.date: 07/31/2020
+  ms.openlocfilehash: 9bce6570cef2703bf1ad63d92c55bb3794927a8b
+  ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "75452225"
+  ms.lasthandoff: 09/28/2020
+  ms.locfileid: "91408707"
 landingContent:
+- title: Управляемые кластеры Service Fabric (предварительная версия)
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Что собой представляют управляемые кластеры Service Fabric (предварительная версия)
+      url: overview-managed-cluster.md
+    - text: Развертывание управляемого кластера (предварительная версия)
+      url: quickstart-managed-cluster-template.md
+  - linkListType: tutorial
+    links:
+    - text: Создание управляемого кластера (предварительная версия)
+      url: tutorial-managed-cluster-deploy.md
+    - text: Горизонтальное увеличение масштаба типа узла управляемого кластера (предварительная версия)
+      url: tutorial-managed-cluster-scale.md
+    - text: Добавление и удаление типов узлов управляемого кластера (предварительная версия)
+      url: tutorial-managed-cluster-add-remove-node-type.md
+    - text: Развертывание приложения в управляемом кластере (предварительная версия)
+      url: tutorial-managed-cluster-deploy-app.md
+    - text: Добавление расширения масштабируемого набора виртуальных машин в тип узла управляемого кластера (предварительная версия)
+      url: how-to-managed-cluster-vmss-extension.md
+  - linkListType: whats-new
+    links:
+    - text: Часто задаваемые вопросы об управляемых кластерах Service Fabric
+      url: faq-managed-cluster.md
 - title: Сведения о Service Fabric
   linkLists:
   - linkListType: overview
@@ -102,7 +126,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Лучшие методики обеспечения безопасности
+    - text: Рекомендации по безопасности
       url: service-fabric-best-practices-security.md
     - text: Защита приложений
       url: service-fabric-application-and-service-security.md
@@ -138,7 +162,7 @@ landingContent:
       url: samples-cli.md
   - linkListType: whats-new
     links:
-    - text: Распространенные вопросы о Service Fabric
+    - text: Часто задаваемые вопросы о Service Fabric
       url: service-fabric-common-questions.md
 - title: Использование Service Fabric в локальной среде
   linkLists:

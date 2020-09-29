@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: 049c30613c358bf22616eaa2042a7fd6e42b9f61
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 489b4bfee1eaa2c381b16e88dbcc0bcb7fd8555f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326041"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441514"
 ---
 # <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией карт Azure Monitor для виртуальных машин
 
@@ -73,11 +73,11 @@ ms.locfileid: "87326041"
 
 6. Необязательно. Выберите пул ресурсов "все серверы управления" для взаимодействия с Log Analytics, а затем нажмите кнопку " **Добавить рабочую область**".
 
-    ![Настройка Operations Manager: пул ресурсов](media/service-map-scom/scom-config-pool.png)
+    ![Снимок экрана: экран пула серверов в диалоговом окне "Добавление Microsoft Operations Management Suite рабочей области со всеми серверами управления — пул ресурсов".](media/service-map-scom/scom-config-pool.png)
 
     Для настройки и регистрации рабочей области Log Analytics может потребоваться около минуты. После настройки Operations Manager инициирует первую синхронизацию карт.
 
-    ![Настройка Operations Manager: пул ресурсов](media/service-map-scom/scom-config-success.png)
+    ![Снимок экрана: экран завершения в Microsoft Operations Management Suite рабочей области "Добавить", подтверждающий Добавление рабочей области.](media/service-map-scom/scom-config-success.png)
 
 ## <a name="monitor-integration"></a>Мониторинг интеграции
 
@@ -98,11 +98,11 @@ ms.locfileid: "87326041"
 
 * **Представления зависимостей группы компьютеров**: перечисляет все группы компьютеров, синхронизированные из функции Map. Вы можете щелкнуть любую группу, чтобы просмотреть распределенные диаграммы приложения.
 
-    ![Схема распределенного приложения Operations Manager](media/service-map-scom/scom-group-dad.png)
+    ![Снимок экрана с Сопоставление служб отображение диаграммы с изображениями для каждой группы компьютеров и линий, указывающих зависимости между ними.](media/service-map-scom/scom-group-dad.png)
 
 * **Представления зависимостей сервера**: перечисляет все серверы, синхронизированные из функции Map. Вы можете щелкнуть любой сервер, чтобы просмотреть его схему распределенного приложения.
 
-    ![Схема распределенного приложения Operations Manager](media/service-map-scom/scom-dad.png)
+    ![Снимок экрана Сопоставление служб отображение диаграммы с изображениями для каждого сервера и линий, указывающих зависимости между ними.](media/service-map-scom/scom-dad.png)
 
 ## <a name="edit-or-delete-the-workspace"></a>Изменение или удаление рабочей области
 

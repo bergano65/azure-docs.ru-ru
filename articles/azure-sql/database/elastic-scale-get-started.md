@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: scale-out
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: 8a7efdee772c3a871fb8f26655dfc1160c275959
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46eee878ba8cf1d12edf262241d5df8ef8ccc82f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84029885"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442944"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "84029885"
 
 ## <a name="elastic-database-tools-for-java"></a>Инструменты эластичных баз данных для Java
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Java Developer Kit (JDK) версии 1.8 или более поздней
 * [Maven](https://maven.apache.org/download.cgi)
@@ -72,7 +72,7 @@ ms.locfileid: "84029885"
 
 ## <a name="elastic-database-tools-for-net"></a>Инструменты эластичных баз данных для .NET
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Visual Studio 2012 или более поздней версии с C#. Загрузите бесплатную версию на странице [Загрузок Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 * NuGet 2.7 или более поздней версии. Сведения о получении последней версии см. в разделе [Установка NuGet](https://docs.nuget.org/docs/start-here/installing-nuget).
@@ -116,7 +116,7 @@ ms.locfileid: "84029885"
 
 * **Объединение имеющихся сегментов.** Объединение сегментов также выполняется с помощью инструмента разбиения и объединения. Дополнительные сведения см. в статье [Перемещение данных между масштабируемыми облачными базами данных](elastic-scale-overview-split-and-merge.md).
 
-## <a name="cost"></a>Стоимость
+## <a name="cost"></a>Cost
 
 Библиотека инструментов эластичных баз данных предоставляется бесплатно. При использовании инструментов эластичных баз данных не взимаются какие-либо дополнительные платежи, помимо оплаты за работу на платформе Azure.
 
@@ -124,7 +124,7 @@ ms.locfileid: "84029885"
 
 Сведения о ценах см. в разделе [сведения о ценах на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об инструментах эластичных баз данных см. в приведенных ниже статьях.
 
