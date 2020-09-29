@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: a108459985f235f0280354ef7b4fa0cb181f5dda
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: b23783080e976f70ba8c5e02f67dcee36bbc9c34
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90054251"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91444965"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mariadb"></a>Подключение SSL/TLS в базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных к клиентским приложениям с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -56,6 +56,17 @@ ms.locfileid: "90054251"
 > После применения минимальной версии TLS вы не сможете позже отключить минимальную защиту версий.
 
 Сведения о настройке параметра TLS для базы данных Azure для MariaDB см. в разделе [Настройка параметра TLS](howto-tls-configurations.md).
+
+## <a name="cipher-support-by-azure-database-for-mariadb"></a>Поддержка шифра базой данных Azure для MariaDB
+
+При обмене данными по протоколу SSL или TLS комплекты шифров проходят проверку и поддерживают только масти шифров, которые могут обмениваться данными с Serer базы данных. Проверка комплекта шифров контролируется на [уровне шлюза](concepts-connectivity-architecture.md#connectivity-architecture) , а не на самом узле. Если комплекты шифров не соответствуют одному из перечисленных ниже пакетов, входящие клиентские соединения будут отклонены.
+
+### <a name="cipher-suite-supported"></a>Поддерживаемый набор шифров
+
+*   TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+*   TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+*   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+*   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера](concepts-firewall-rules.md)

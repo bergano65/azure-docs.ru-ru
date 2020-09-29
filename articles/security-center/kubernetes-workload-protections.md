@@ -5,15 +5,15 @@ services: security-center
 author: memildin
 manager: rkarlin
 ms.service: security-center
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: 138b3b35633b432193a1972421f05d0a8e52b90a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8a387adde6c74b8eb1ff950c5e6b5183e43d1f4f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91301371"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448659"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Защита рабочих нагрузок Kubernetes
 
@@ -33,7 +33,7 @@ ms.locfileid: "91301371"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробности|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Free|
@@ -58,7 +58,7 @@ ms.locfileid: "91301371"
 
     1. В любом из элементов управления безопасностью выберите рекомендацию, чтобы просмотреть ресурсы, на которых можно установить надстройку, и выберите **исправить**. 
 
-        :::image type="content" source="./media/defender-for-kubernetes-usage/recommendation-to-install-policy-add-on-for-kubernetes-details.png" alt-text="Страница сведений об рекомендации для * * надстройка политики Azure для Kubernetes должна быть установлена и включена в кластерах * *":::
+        :::image type="content" source="./media/defender-for-kubernetes-usage/recommendation-to-install-policy-add-on-for-kubernetes-details.png" alt-text="Рекомендация * * надстройка политики Azure для Kubernetes должна быть установлена и включена в кластерах * *":::
 
 1. Примерно через 30 минут после завершения установки надстройки центр безопасности отображает состояние работоспособности кластеров для следующих рекомендаций, каждое в соответствующем элементе управления безопасностью, как показано ниже.
 
@@ -99,21 +99,13 @@ ms.locfileid: "91301371"
 
     1. Откройте страницу сведений об рекомендации и выберите **запретить**:
 
-        :::image type="content" source="./media/defender-for-kubernetes-usage/enforce-workload-protection-example.png" alt-text="Параметр Deny для параметра политики Azure":::
-
-        Откроется область, где задается область. 
-
-    1. Завершив настройку области, выберите Изменить, **чтобы запретить**.
-
-1. Чтобы узнать, какие рекомендации применяются к кластерам:
-
-    1. Откройте страницу " [Инвентаризация активов](asset-inventory.md) " центра безопасности и используйте фильтр типов ресурсов для **Kubernetes Services**.
+        :::image type="content" source="./media/defender-for-kubernetes-usage/enforce-workload-protection-example.png" alt-text="Рекомендация * * надстройка политики Azure для Kubernetes должна быть установлена и включена в кластерах * *" центра безопасности и используйте фильтр типов ресурсов для **Kubernetes Services**.
 
     1. Выберите кластер для изучения и просмотрите доступные рекомендации. 
 
 1. При просмотре рекомендаций из набора защиты рабочей нагрузки вы увидите число затронутых модулей Pod ("компоненты Kubernetes"), перечисленных рядом с кластером. Для получения списка конкретных модулей Pod выберите кластер и нажмите кнопку **выполнить действие**.
 
-    :::image type="content" source="./media/defender-for-kubernetes-usage/view-affected-pods-for-recommendation.gif" alt-text="Просмотр затронутых модулей Pod для рекомендации по K8s"::: 
+    :::image type="content" source="./media/defender-for-kubernetes-usage/view-affected-pods-for-recommendation.gif" alt-text="Рекомендация * * надстройка политики Azure для Kubernetes должна быть установлена и включена в кластерах * *"::: 
 
 1. Чтобы протестировать принудительное применение, используйте два развертывания Kubernetes ниже:
 

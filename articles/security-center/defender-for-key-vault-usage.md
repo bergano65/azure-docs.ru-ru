@@ -4,15 +4,15 @@ description: Сведения о действиях, необходимых дл
 author: memildin
 ms.author: memildin
 ms.date: 9/22/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: dd153eb1b0e96165bccc807a72bc3614ded49428
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: e3eb6b750c805951a67a2e869c862f1285a342a8
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91301692"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448317"
 ---
 # <a name="respond-to-azure-defender-for-key-vault-alerts"></a>Azure Defender: реагирование на оповещения Key Vault
 При получении оповещения от защитника Azure для Key Vault мы рекомендуем исследовать и реагировать на это предупреждение, как описано ниже. Защитник Azure для Key Vault защищает приложения и учетные данные, поэтому даже если вы знакомы с приложением или пользователем, вызвавшим оповещение, важно проверить ситуацию, окружающую каждое оповещение.  

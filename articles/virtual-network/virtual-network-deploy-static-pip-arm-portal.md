@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: allensu
-ms.openlocfilehash: 745b12e2278c487ed49a9d2d726a760a7df8f276
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e06e4079a5118e0aa9dedb1fca719f0b28e5716
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84703173"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448628"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
@@ -60,13 +60,13 @@ ms.locfileid: "84703173"
 9. После развертывания виртуальной машины введите *myPublicIpAddress* в поле поиска в верхней части портала. При появлении пункта **myPublicIpAddress** в результатах поиска выберите его.
 10. Присвоенный общедоступный IP-адрес и присвоенный адрес виртуальной машины **myVM** можно просмотреть в колонке, как показано на следующем снимке экрана:
 
-    ![Просмотр общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/public-ip-overview.png)
+    ![На снимке экрана показана открытая панель адресов I P с адресом P и именем out. ](./media/virtual-network-deploy-static-pip-arm-portal/public-ip-overview.png)
 
     Платформа Azure присвоила общедоступный IP-адрес из адресов, используемых в регионе, в котором вы создали виртуальную машину. Вы можете загрузить список диапазонов (префиксов) для облаков Azure: [общедоступное](https://www.microsoft.com/download/details.aspx?id=56519), облако [правительства США](https://www.microsoft.com/download/details.aspx?id=57063), облако для [Китая](https://www.microsoft.com/download/details.aspx?id=57062) и [Германии](https://www.microsoft.com/download/details.aspx?id=57064).
 
 11. Выберите **Конфигурация**, чтобы убедиться, что выбрано значение **Статический**.
 
-    ![Просмотр общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/public-ip-configuration.png)
+    ![На снимке экрана показана открытая панель адресов I P с выбранным элементом конфигурации.](./media/virtual-network-deploy-static-pip-arm-portal/public-ip-configuration.png)
 
 > [!WARNING]
 > Не изменяйте параметры IP-адресов в операционной системе виртуальной машины. Общедоступные IP-адреса Azure не поддерживаются в операционной системе. Вы можете добавлять параметры частных IP-адресов в операционную систему, но это рекомендуется делать только при необходимости и только после прочтения раздела о [добавлении частных IP-адресов в операционную систему](virtual-network-network-interface-addresses.md#private).

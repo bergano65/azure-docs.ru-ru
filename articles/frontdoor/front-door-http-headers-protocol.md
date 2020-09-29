@@ -9,29 +9,29 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/10/2018
+ms.date: 09/28/2020
 ms.author: duau
-ms.openlocfilehash: 6864a854215d899043607b3d01cffbd343ee7751
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: e72443e33d1b6f097f61f4c027b5f547b43ee2a9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89399520"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449222"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door"></a>Поддержка протокола для заголовков HTTP в передней дверце Azure
 В этой статье описывается протокол, который поддерживает передняя дверь с частями пути вызова (см. изображение). В следующих разделах содержатся дополнительные сведения о заголовках HTTP, поддерживаемых передней дверцей.
 
-![Протокол заголовков HTTP для передней дверцы Azure][1]
+:::image type="content" source="./media/front-door-http-headers-protocol/front-door-protocol-summary.png" alt-text="Протокол заголовков HTTP для передней дверцы Azure":::
 
 >[!IMPORTANT]
 >Передняя дверца не удостоверяет все заголовки HTTP, которые здесь не описаны.
 
 ## <a name="client-to-front-door"></a>Клиент — Front Door
-Передняя дверца принимает большинство заголовков из входящего запроса, не изменяя их. Некоторые зарезервированные заголовки удаляются из входящего запроса, если он отправлен, включая заголовки с префиксом X-демон-*.
+Передняя дверца принимает большинство заголовков для входящего запроса, не изменяя их. Некоторые зарезервированные заголовки удаляются из входящего запроса, если он отправлен, включая заголовки с префиксом X-демон-*.
 
 ## <a name="front-door-to-backend"></a>Front Door — серверная система
 
-Передняя дверца включает заголовки входящего запроса, если они не удалены из-за ограничений. Передняя дверца также добавляет следующие заголовки:
+Передняя дверца включает заголовки для входящего запроса, если они не удалены из-за ограничений. Передняя дверца также добавляет следующие заголовки:
 
 | Header  | Пример и описание |
 | ------------- | ------------- |
@@ -52,12 +52,9 @@ ms.locfileid: "89399520"
 
 | Header  | Пример |
 | ------------- | ------------- |
-| X — Azure-ref |  *X-Azure-ref: 0zxV + XAAAAABKMMOjBv2NT4TY6SQVjC0zV1NURURHRTA2MTkANDM3YzgyY2QtMzYwYS00YTU0LTk0YzMtNWZmNzA3NjQ3Nzgz* </br> Это уникальная эталонная строка, которая идентифицирует запрос, обслуженный Front Door. Это важно для устранения неполадок, так как оно используется для поиска в журналах доступа.|
+| X — Azure-ref |  *X-Azure-ref: 0zxV + XAAAAABKMMOjBv2NT4TY6SQVjC0zV1NURURHRTA2MTkANDM3YzgyY2QtMzYwYS00YTU0LTk0YzMtNWZmNzA3NjQ3Nzgz* </br> Это уникальная строка ссылки, которая определяет запрос, обслуживаемый передней дверцей, который является критически важным для устранения неполадок, так как он используется для поиска в журналах доступа.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание профиля Front Door](quickstart-create-front-door.md)
+- [Создание передней дверцы](quickstart-create-front-door.md)
 - [Принцип работы передней дверцы](front-door-routing-architecture.md)
-
-<!--Image references-->
-[1]: ./media/front-door-http-headers-protocol/front-door-protocol-summary.png

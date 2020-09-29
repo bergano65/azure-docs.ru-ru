@@ -6,12 +6,12 @@ ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: chlound
-ms.openlocfilehash: 31dc1973af42a1785a2a65cb1887f479e44af162
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 61679e1ee3843ed866ef12138a0edeff8877b1e6
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553909"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448597"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "87553909"
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!IMPORTANT]
 > В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если включен брандмауэр, общедоступный IP-адрес инициатора запроса должен быть включен в правило брандмауэра.
@@ -40,7 +40,7 @@ ms.locfileid: "87553909"
  
     ![Импорт модуля](./media/analysis-services-refresh-azure-automation/2.png)
 
-4. Нажмите кнопку **OK**.
+4. Нажмите кнопку **ОК**.
  
 ### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -54,15 +54,15 @@ ms.locfileid: "87553909"
 
 1. В учетной записи службы автоматизации создайте ресурс **учетных данных** , который будет использоваться для безопасного хранения субъекта-службы.
 
-    ![Создание учетных данных](./media/analysis-services-refresh-azure-automation/6.png)
+    ![Снимок экрана, на котором показана страница "учетные данные" с выбранным действием "добавить учетные данные".](./media/analysis-services-refresh-azure-automation/6.png)
 
 2. Введите сведения для учетных данных. В поле **имя пользователя**введите идентификатор приложения субъекта-службы (AppID), а затем в поле **пароль**введите секрет субъекта-службы.
 
     ![Создание учетных данных](./media/analysis-services-refresh-azure-automation/7.png)
 
-3. Импорт модуля Runbook службы автоматизации
+3. Импортируйте Runbook службы автоматизации.
 
-    ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/8.png)
+    ![Снимок экрана, на котором показана страница "модули Runbook" с выбранным действием "Импорт Runbook".](./media/analysis-services-refresh-azure-automation/8.png)
 
 4. Найдите файл [Refresh-Model.ps1](#sample-powershell-runbook) , укажите **имя** и **Описание**, а затем нажмите кнопку **создать**.
 
@@ -71,7 +71,7 @@ ms.locfileid: "87553909"
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
-5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите кнопку **Опубликовать**.
+5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите **Публиковать**.
 
     ![Публикация модуля Runbook](./media/analysis-services-refresh-azure-automation/10.png)
 
@@ -80,7 +80,7 @@ ms.locfileid: "87553909"
 
 6. Протестируйте модуль Runbook, нажав кнопку **Пуск**.
 
-    ![Запуск модуля Runbook](./media/analysis-services-refresh-azure-automation/11.png)
+    ![Снимок экрана, на котором показана страница "Обзор" с выбранным действием "Запуск".](./media/analysis-services-refresh-azure-automation/11.png)
 
 7. Заполните параметры **DATABASENAME**, **аналисиссервер**и **REFRESHTYPE** , а затем нажмите кнопку **ОК**. Параметр **WEBHOOKDATA** не требуется при запуске модуля Runbook вручную.
 
@@ -110,7 +110,7 @@ ms.locfileid: "87553909"
 
     ![Настройка параметров](./media/analysis-services-refresh-azure-automation/16.png)
 
-5. Нажмите кнопку **OK**.
+5. Нажмите кнопку **ОК**.
 
 ## <a name="consume-with-data-factory"></a>Использование с фабрикой данных
 

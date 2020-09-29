@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 47e9b616a2a686a7ce82a592ee81966041371048
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 052fd0ea7619d566e78806580ee7b39e49cc85d2
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328009"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448612"
 ---
 # <a name="azure-monitor-insights-for-virtual-wan-preview"></a>Azure Monitor аналитических сведений для виртуальной глобальной сети (Предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "91328009"
 > Выполняется развертывание пункта меню **Insights** на виртуальном портале глобальной сети. Во время развертывания этого меню можно получить доступ к книге топология и метрики виртуальной глобальной сети с помощью Azure Monitor для сетей. Дополнительные сведения см. в разделе [Azure Monitor for Networks](../azure-monitor/insights/network-insights-overview.md). 
 >
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Чтобы выполнить действия, описанные в этой статье, необходимо иметь виртуальную сеть WAN с одним или несколькими концентраторами. Чтобы создать виртуальную глобальную сеть и концентратор, выполните действия, описанные в следующих статьях:
 
@@ -37,7 +37,7 @@ ms.locfileid: "91328009"
 
 **Рис. 1. меню мониторинга > Insights**
 
-:::image type="content" source="./media/azure-monitor-insights/monitor-menu.png" alt-text="Снимок экрана, показывающий пункт меню "аналитика"." lightbox="./media/azure-monitor-insights/monitor-menu.png":::
+:::image type="content" source="./media/azure-monitor-insights/monitor-menu.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/monitor-menu.png":::
 
 В представлении **Insights** можно просмотреть автообнаружение ресурсов виртуальной глобальной сети. К этим ресурсам относятся концентраторы, шлюзы, брандмауэры, подключения и периферийные виртуальные сети, сторонние NVA и ветви в сквозной виртуальной глобальной сети. Пример см. **на рис. 2**.
 
@@ -45,7 +45,7 @@ ms.locfileid: "91328009"
 
 **Рис. 2. представление Insights**
 
-:::image type="content" source="./media/azure-monitor-insights/insights-view.png" alt-text="Снимок экрана, на котором показано представление Insights." lightbox="./media/azure-monitor-insights/insights-view.png":::
+:::image type="content" source="./media/azure-monitor-insights/insights-view.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/insights-view.png":::
 
 ## <a name="dependency-view"></a><a name="dependency"></a>Представление зависимостей
 
@@ -53,7 +53,7 @@ ms.locfileid: "91328009"
 
 **Рис. 3. представление зависимостей ВВАН**
 
-:::image type="content" source="./media/azure-monitor-insights/dependency-map.png" alt-text="Снимок экрана, показывающий представление зависимостей." lightbox="./media/azure-monitor-insights/dependency-map.png":::
+:::image type="content" source="./media/azure-monitor-insights/dependency-map.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/dependency-map.png":::
 
 На карте представления **зависимостей** в качестве подключенного графа отображаются следующие ресурсы:
 
@@ -69,13 +69,13 @@ ms.locfileid: "91328009"
 
 **Рис. 4. Переход к информации, относящейся к ресурсам**
 
-:::image type="content" source="./media/azure-monitor-insights/resource-information.png" alt-text="Снимок экрана, показывающий, как переходить к сведениям о ресурсах.":::
+:::image type="content" source="./media/azure-monitor-insights/resource-information.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия).":::
 
 Панель поиска и фильтра в представлении **зависимостей** предоставляет простой способ поиска в графе. Различные фильтры позволяют упростить поиск до определенного пути и состояния.
 
 **Рис. 5. Поиск и фильтрация**
 
-:::image type="content" source="./media/azure-monitor-insights/search-filter.png" alt-text="Снимок экрана, на котором показаны панель поиска и фильтр." lightbox="./media/azure-monitor-insights/search-filter.png":::
+:::image type="content" source="./media/azure-monitor-insights/search-filter.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/search-filter.png":::
 
 ## <a name="detailed-metrics"></a><a name="detailed"></a>Подробные метрики
 
@@ -83,7 +83,7 @@ ms.locfileid: "91328009"
 
 **Рис. 6. панель мониторинга с подробными метриками**
 
-:::image type="content" source="./media/azure-monitor-insights/detailed-metrics.png" alt-text="Снимок экрана, на котором показана подробная панель мониторинга метрик." lightbox="./media/azure-monitor-insights/detailed-metrics.png":::
+:::image type="content" source="./media/azure-monitor-insights/detailed-metrics.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/detailed-metrics.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

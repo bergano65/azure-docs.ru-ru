@@ -6,17 +6,17 @@ ms.service: sql-db-mi
 ms.subservice: performance
 ms.custom: seoapril2019
 ms.devlang: sqldbrb=2
-ms.topic: conceptual
+ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 04/06/2020
-ms.openlocfilehash: 2c8c31219f014935c14371cf4dd30b61ba35819b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1442ca7957a458e1458c4815033bf5e79c67c32a
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319509"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448926"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-and-sql-managed-instance-diagnostic-telemetry"></a>Настройка потокового экспорта для базы данных SQL Azure и телеметрии диагностики SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -605,12 +605,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |Сообщение|Сообщение об ошибке в виде обычного текста. |
 |user_defined_b|Указывает, установлен ли бит ошибки пользователем. |
 |error_number_d|Код ошибки |
-|Уровень серьезности|Серьезность ошибки. |
+|Статус|Серьезность ошибки. |
 |state_d|Состояние ошибки. |
 |query_hash_s|Хэш запроса, завершившегося сбоем (при наличии) |
 |query_plan_hash_s|Хэш плана запроса для запроса, завершившегося сбоем (при наличии) |
 
-Дополнительные сведения о [сообщениях об ошибках SQL](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-ver15).
+Дополнительные сведения о [сообщениях об ошибках SQL](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors).
 
 #### <a name="database-wait-statistics-dataset"></a>Набор данных статистики времени ожидания базы данных
 

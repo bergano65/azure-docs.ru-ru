@@ -4,12 +4,12 @@ description: Узнайте, как настроить устройство "м�
 ms.service: azure-migrate
 ms.topic: article
 ms.date: 04/15/2020
-ms.openlocfilehash: bace4ab03051a9febfe14cc30143bd4a5cfa7c84
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 348c12e08a9bed98016ac825921b67836b32b9e9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085956"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448069"
 ---
 # <a name="set-up-an-appliance-for-physical-servers"></a>Настройка устройства для физических серверов
 
@@ -48,7 +48,7 @@ ms.locfileid: "90085956"
    ![Выделенные фрагменты области "Обнаружение компьютеров"](./media/tutorial-assess-physical/servers-discover.png)
 
 
-   ![Выбранные параметры для пункта "Создать ключ"](./media/tutorial-assess-physical/generate-key-physical.png)
+   ![Выделенный фрагмент области создания ключа](./media/tutorial-assess-physical/generate-key-physical.png)
 
 ### <a name="verify-security"></a>Проверка безопасности
 
@@ -59,7 +59,7 @@ ms.locfileid: "90085956"
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования для общедоступного облака: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public.zip SHA256 ```.
     - Пример использования для облака для государственных организаций: ```  C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip MD5 ```.
-3.  Проверьте последнюю версию устройства и параметры хэш-значений.
+3.  Проверьте последнюю версию устройства и параметры [хэш-значений](tutorial-discover-physical.md#verify-security) .
  
 
 ## <a name="run-the-azure-migrate-installer-script"></a>Запуск скрипта установщика службы "Миграция Azure"
@@ -158,6 +158,6 @@ ms.locfileid: "90085956"
 2. На странице **Azure Migrate — Servers** > **Azure Migrate: Server Assessment** (Миграция Azure — серверы > Миграция Azure: оценка сервера) щелкните значок, отображающий количество **обнаруженных серверов**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Испытайте [оценку физических серверов](tutorial-assess-physical.md) с помощью службы "Миграция серверов Azure".

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
 ms.custom: references_regions
-ms.openlocfilehash: 7412a28b53f3b17fb888e3877ecbe50a19c4a3d3
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: fd5c4043d417a99c7ffa57534fd7808f1710190a
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552243"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448582"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -29,7 +29,7 @@ ms.locfileid: "87552243"
 > [!IMPORTANT]
 > В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть список разрешений в брандмауэре Azure Analysis Services. Дополнительные сведения о Azure Logic Apps диапазонах IP-адресов для региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#configuration).
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 #### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -53,9 +53,9 @@ ms.locfileid: "87552243"
 
 2. Добавьте новый шаг и выполните поиск по запросу **http**.  
 
-   ![Добавление действия HTTP](./media/analysis-services-async-refresh-logic-app/9.png)
+   ![Снимок экрана: раздел "Выбор действия" с выбранной плиткой "HTTP".](./media/analysis-services-async-refresh-logic-app/9.png)
 
-   ![Добавление действия HTTP](./media/analysis-services-async-refresh-logic-app/10.png)
+   ![Снимок экрана окна "HTTP" с выбранной плиткой "HTTP-HTTP".](./media/analysis-services-async-refresh-logic-app/10.png)
 
 3. Выберите **http** , чтобы добавить это действие.
 
@@ -76,7 +76,7 @@ ms.locfileid: "87552243"
 |**Тип учетных данных**     |Секрет         |
 |**Секрет**     |Введите секретное имя субъекта-службы         |
 
-Пример.
+Пример:
 
 ![Завершенное действие HTTP](./media/analysis-services-async-refresh-logic-app/7.png)
 
@@ -98,15 +98,15 @@ ms.locfileid: "87552243"
 
 Используя приведенный выше пример, удалите первое действие и замените его действием **расписания** .
 
-![Действие по расписанию](./media/analysis-services-async-refresh-logic-app/12.png)
+![Снимок экрана, на котором показана страница "Logic Apps" с выбранной плиткой "Расписание".](./media/analysis-services-async-refresh-logic-app/12.png)
 
-![Действие по расписанию](./media/analysis-services-async-refresh-logic-app/13.png)
+![Снимок экрана, на котором показана страница "триггеры".](./media/analysis-services-async-refresh-logic-app/13.png)
 
 В этом примере будет использоваться **повторение**.
 
 После добавления действия настройте интервал и частоту, а затем добавьте новый параметр и выберите **эти часы**.
 
-![Действие по расписанию](./media/analysis-services-async-refresh-logic-app/16.png)
+![Снимок экрана, показывающий раздел "повторение" с выбранным параметром "в этом часовом".](./media/analysis-services-async-refresh-logic-app/16.png)
 
 Выберите желаемые часы.
 

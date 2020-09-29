@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: ba079e76ea806bb12bff16eb636d0fa21b0e152b
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 292e446d5b713a43f77ee5e579d7e6dd5905ff69
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461737"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91448525"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -86,11 +86,11 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**. Отобразится список рабочих областей с выбранными фильтром параметрами.
 3. Щелкните **Восстановить** в верхнем левом меню, чтобы открыть страницу с рабочими областями в состоянии обратимого удаления, которые можно восстановить.
 
-   ![Восстановление рабочей области](media/delete-workspace/recover-menu.png)
+   ![Снимок экрана Log Analytics рабочих областей в портал Azure с выделенным восстановлением в строке меню.](media/delete-workspace/recover-menu.png)
 
 4. Выберите рабочую область и щелкните **Восстановить**, чтобы восстановить эту рабочую область.
 
-   ![Восстановление рабочей области](media/delete-workspace/recover-workspace.png)
+   ![Снимок экрана: диалоговое окно восстановления удаленных Log Analytics рабочих областей в портал Azure с выделенной рабочей областью и выбранной кнопкой "восстановить".](media/delete-workspace/recover-workspace.png)
 
 
 ### <a name="powershell"></a>PowerShell
