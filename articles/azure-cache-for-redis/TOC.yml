@@ -4,6 +4,8 @@
   items:
     - name: Общие сведения о кэше Redis для Azure
       href: cache-overview.md
+    - name: Новые возможности
+      href: cache-whats-new.md
 - name: Краткие руководства
   expanded: true
   items:

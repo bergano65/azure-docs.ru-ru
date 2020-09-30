@@ -62,27 +62,27 @@ ms.locfileid: "91409669"
 
 2. В параметрах слева выберите `Features` колонку. Будут отображены функции уровня учетной записи, доступные для вашей учетной записи базы данных.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/2.png" alt-text="Обзор портал Azure с MongoDB учетной записью с выделенным колонкой "функции"" border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/2.png" alt-text="Общие сведения о портал Azure с учетной записью MongoDB" border="false":::
 
 3. Щелкните `Upgrade to Mongo server version 3.6` строку. Если этот параметр не отображается, ваша учетная запись может быть недоступна для этого обновления. Если это так, отправьте запрос [в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) .
 
-    :::image type="content" source="./media/mongodb-version-upgrade/3.png" alt-text="Колонка "функции" с параметрами." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/3.png" alt-text="Общие сведения о портал Azure с учетной записью MongoDB" border="false":::
 
 4. Ознакомьтесь со сведениями об этом конкретном обновлении. Обратите внимание, что обновление будет выполнено только до тех пор, пока приложения не будут использовать обновленную конечную точку, как видно в этом разделе. Щелкните `Enable` , как только вы будете готовы начать процесс.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/4.png" alt-text="Расширенное руководство по обновлению." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/4.png" alt-text="Общие сведения о портал Azure с учетной записью MongoDB" border="false":::
 
 5. После запуска процесса в меню отобразится `Features` состояние обновления. Состояние будет отправлено с `Pending` на в `In Progress` `Upgraded` . Этот процесс не влияет на существующие функции или операции учетной записи базы данных.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/5.png" alt-text="Состояние обновления после инициации." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/5.png" alt-text="Общие сведения о портал Azure с учетной записью MongoDB" border="false":::
 
 6. После завершения обновления состояние будет отображаться как `Upgraded` . Щелкните его, чтобы узнать больше о дальнейших действиях и действиях, которые необходимо выполнить для завершения процесса. Если при обработке запроса возникла ошибка, [обратитесь в службу поддержки](https://azure.microsoft.com/en-us/support/create-ticket/) .
 
-    :::image type="content" source="./media/mongodb-version-upgrade/6.png" alt-text="Состояние обновленной учетной записи." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/6.png" alt-text="Общие сведения о портал Azure с учетной записью MongoDB" border="false":::
 
 7. **Чтобы начать использовать обновленную версию учетной записи базы данных**, вернитесь в `Overview` колонку и скопируйте новую строку подключения для использования в приложении. Приложения начнут использовать обновленную версию сразу после подключения к новой конечной точке. Существующие подключения не будут прерываться и их можно будет обновить. Для обеспечения единообразия работы все приложения должны использовать новую конечную точку.
 
-    :::image type="content" source="./media/mongodb-version-upgrade/7.png" alt-text="Новая колонка обзора." border="false":::
+    :::image type="content" source="./media/mongodb-version-upgrade/7.png" alt-text="Общие сведения о портал Azure с учетной записью MongoDB" border="false":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

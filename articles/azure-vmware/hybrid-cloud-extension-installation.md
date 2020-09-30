@@ -77,13 +77,13 @@ ms.locfileid: "91370850"
 
 1. Выберите имя и расположение, а затем выберите ресурс или кластер, где требуется развернуть HCX. Затем просмотрите сведения и необходимые ресурсы.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-template.png" alt-text=" Выберите имя и расположение, а затем выберите ресурс или кластер, в котором необходимо развернуть ХККС. Затем просмотрите сведения и необходимые ресурсы.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-template.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Просмотрите условия лицензии и, если вы с ними согласны, выберите нужное хранилище и сеть. Выберите **Далее**.
 
 1. В разделе **Настройка шаблона** введите все необходимые сведения. 
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/customize-template.png" alt-text="В окне Настройка шаблона введите все необходимые сведения.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/customize-template.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Нажмите кнопку **Далее**, проверьте конфигурацию, а затем нажмите кнопку **Готово**, чтобы развернуть OVA-файл HCX.
 
@@ -98,59 +98,56 @@ ms.locfileid: "91370850"
 
 1. В разделе **Лицензирование** введите свой **расширенный ключ HCX**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-key.png" alt-text="В разделе Лицензирование введите дополнительный ключ ХККС.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-key.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
     
     > [!NOTE]
     > HCX Manager должен иметь открытый доступ к Интернету или настроенный прокси-сервер.
 
 1. В **vCenter**при необходимости измените сведения о vCenter.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-vcenter.png" alt-text="В vCenter при необходимости измените сведения о vCenter.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-vcenter.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. При необходимости измените расположение центра обработки данных в разделе **Расположение центра обработки данных**.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/system-location.png" alt-text="При необходимости в расположении центра обработки данных измените расположение центра обработки данных.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/system-location.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 ## <a name="configure-hcx"></a>Настройка HCX 
 
 1. Войдите в локальную службу vCenter и в разделе **Главная**выберите **хккс**.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-vcenter.png" alt-text="Войдите в локальную службу vCenter и в разделе Главная выберите ХККС.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-vcenter.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. В разделе **инфраструктура**выберите **Связывание сайтов**  >  **Добавить Связывание сайтов**.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/site-pairing.png" alt-text="В разделе Инфраструктура выберите Связывание сайтов > добавить Связывание сайтов.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/site-pairing.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Введите URL-адрес удаленного ХККС или IP-адрес, Azure VMware cloudadmin имя пользователя и пароль, а затем нажмите кнопку **подключить**.
 
    Система показывает подключенный сайт.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/site-connection.png" alt-text="Система показывает подключенный сайт.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/site-connection.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. В разделе **Infrastructure (инфраструктура**) выберите **Interconnect**  >  **межсайтовая служба**соединения  >  **Сетевые профили**  >  **создать сетевой профиль**.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/create-network-profile.png" alt-text="В разделе Инфраструктура выберите Interconnect > сеть многосайтовых услуг > сетевые профили > создать сетевой профиль.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/create-network-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Для нового сетевого профиля введите ХККС IX и NE диапазоны IP-адресов (для IX и NE устройства требуется минимум два IP-адреса).
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/enter-address-ranges.png" alt-text="Для нового сетевого профиля введите ХККС IX и NE диапазоны IP-адресов (для IX и NE устройства требуется минимум два IP-адреса).":::
-  
-   > [!NOTE]
-   > Устройство сетевого расширения (HCX-NE) имеет отношение "один к одному" с распределенным виртуальным коммутатором (DVS).  
+   :::image type="content" source="media/hybrid-cloud-extension-installation/enter-address-ranges.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter." с распределенным виртуальным коммутатором (DVS).  
 
 1. Теперь выберите **Вычислительный профиль** > **Создать вычислительный профиль**.
 
 1. Введите имя вычислительного профиля и нажмите кнопку **Продолжить**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/create-compute-profile.png" alt-text="Введите имя профиля вычислений и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/create-compute-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Выберите службы для включения, такие как миграция, расширение сети или аварийное восстановление, а затем нажмите кнопку **продолжить**.
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/select-services.png" alt-text="Выберите службы для включения, такие как миграция, расширение сети или аварийное восстановление, а затем нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-services.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. В разделе **Выбор ресурсов служб** выберите ресурсы служб, для которых должны быть включены выбранные службы HCX. Выберите **Continue** (Продолжить).
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/select-service-resources.png" alt-text="В окне Выбор ресурсов службы выберите один или несколько ресурсов службы, для которых должны быть включены выбранные службы ХККС. Нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-service-resources.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
   
    > [!NOTE]
    > Выберите конкретные кластеры, в которые назначены исходные виртуальные машины для миграции с использованием HCX.
@@ -159,13 +156,13 @@ ms.locfileid: "91370850"
       
    Выберите вычислительные ресурсы и ресурсы хранилища для развертывания устройств HCX Interconnect. Когда выбрано несколько ресурсов, HCX использует первый выбранный ресурс, пока его емкость не будет исчерпана.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/deployment-resources.png" alt-text="Выберите каждый ресурс вычислений и хранилища для развертывания устройств ХККС Interconnect. Если выбрано несколько ресурсов, ХККС использует первый выбранный ресурс, пока его емкость не будет исчерпана.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/deployment-resources.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Выберите сетевой профиль управления, созданный в разделе **Сетевые профили**, и нажмите **Продолжить**.  
       
    Выберите сетевой профиль, через который можно получить доступ к интерфейсу управления vCenter и узлам ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/management-network-profile.png" alt-text="Выберите сетевой профиль, через который можно достичь интерфейса управления vCenter и узлов ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/management-network-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Выберите **Сетевой канал исходящей связи** и нажмите **Продолжить**.
       
@@ -175,27 +172,27 @@ ms.locfileid: "91370850"
     
    Если у вас есть сети с соединениями "точка-точка", такие как сети прямого соединения, которые не используются совместно несколькими сайтами, этот шаг можно пропустить, так как вычислительные профили совместно используются несколькими сайтами. В таких случаях сетевые профили канала исходящей связи могут быть переопределены и заданы во время создания сетки службы межсоединения.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/uplink-network-profile.png" alt-text="Выберите сеть исходящей связи и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/uplink-network-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Выберите **Сетевой профиль vMotion** и нажмите **Продолжить**.
       
    Выберите сетевой профиль, через который будет доступен интерфейс vMotion узлов ESXi. Если вы еще не определили такой сетевой профиль, его можно создать здесь. Если сеть vMotion отсутствует, выберите **сетевой профиль управления**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Выберите пункт "профиль сети vMotion" и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/vmotion-network-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. В поле **выберите сетевой профиль для репликации vSphere**выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку **продолжить**.
       
    В большинстве случаев этот профиль совпадает с сетевым профилем управления.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/vsphere-replication-network-profile.png" alt-text="В поле выберите сетевой профиль для репликации vSphere выберите профиль сети, vSphere интерфейс репликации узлов ESXi, а затем нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/vsphere-replication-network-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. В окне **Выбор распределенных коммутаторов для сетевых расширений**выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Выберите **Continue** (Продолжить).  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/distributed-switches.png" alt-text="В окне Выбор распределенных коммутаторов для сетевых расширений выберите Программа DVS, в которой находятся сети, на которых будут интегрированы и подключены виртуальные машины.  Нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/distributed-switches.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Проверьте правила подключения и нажмите кнопку **продолжить**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/complete-compute-profile.png" alt-text="Проверьте правила подключения и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/complete-compute-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1.  Нажмите **Готово**, чтобы создать вычислительный профиль.
 
@@ -207,13 +204,11 @@ ms.locfileid: "91370850"
 
 1. Создайте сетевой профиль для исходящей связи ХККС в решении Azure VMware, которое можно использовать для подключения из локальной среды к Azure VMware.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/network-profile-uplink.png" alt-text="Создайте сетевой профиль для исходящей связи ХККС в решении Azure VMware, которое можно использовать для подключения из локальной среды к Azure VMware.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/network-profile-uplink.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 1. Введите имя для сетевого профиля и по крайней мере 4–5 свободных IP-адресов, исходя из необходимого расширения сети L2.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-uplink-profile.png" alt-text="Введите имя для сетевого профиля и по крайней мере 4–5 свободных IP-адресов, исходя из необходимого расширения сети L2.":::
-
-1. Щелкните " **создать** ", чтобы завершить настройку решения Azure VMware
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-uplink-profile.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter." **создать** ", чтобы завершить настройку решения Azure VMware
 
 ## <a name="configure-service-mesh"></a>Настройка сетки службы
 
@@ -223,54 +218,54 @@ ms.locfileid: "91370850"
 
 2. В разделе **инфраструктура**выберите **Interconnect**  >  **Сетка службы**Interconnect  >  **создать сеть службы** , чтобы настроить сеть и профили вычислений, созданные на предыдущих шагах.    
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-service-mesh.png" alt-text="В разделе Infrastructure (инфраструктура) выберите Interconnect > Service Network > создать сеть службы для настройки сети и профилей вычислений, созданных на предыдущих шагах.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/configure-service-mesh.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 3. Выберите парные сайты, чтобы включить гибридные возможности, и нажмите кнопку **продолжить**.   
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/select-paired-sites.png" alt-text="Выберите парные сайты, чтобы включить гибридные возможности, и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/select-paired-sites.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 4. Выберите исходные и удаленные профили вычислений, чтобы включить службы гибридной среды, и нажмите кнопку **продолжить**.
       
    Параметры определяют ресурсы, на которых виртуальные машины могут использовать службы ХККС Services.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/enable-hybridity.png" alt-text="Параметры определяют ресурсы, на которых виртуальные машины могут использовать службы ХККС Services.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/enable-hybridity.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 5. Выберите службы для включения и нажмите кнопку **продолжить**.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-services.png" alt-text="Выберите службы для включения и нажмите кнопку продолжить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/hcx-services.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 6. В разделе **Расширенная конфигурация — переопределение сетевых профилей каналов исходящей связи** нажмите **Продолжить**.  
       
    Сетевые профили исходящей связи используются для подключения к сети, через которую можно связаться с устройствами связи удаленного сайта.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/override-uplink-profiles.png" alt-text="Сетевые профили исходящей связи используются для подключения к сети, через которую можно связаться с устройствами связи удаленного сайта.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/override-uplink-profiles.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 7. Выберите **настройка Scale Out устройства расширения сети**. 
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/network-extension-scale-out.png" alt-text="Выберите Настройка Scale Out устройства расширения сети.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/network-extension-scale-out.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 8. Введите количество устройств, соответствующее количеству коммутаторов DVS.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/appliance-scale.png" alt-text="Введите количество устройств, соответствующее количеству коммутаторов DVS.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/appliance-scale.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 9. Выберите **продолжить** , чтобы пропустить.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/traffic-engineering.png" alt-text="Выберите продолжить, чтобы пропустить.":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/traffic-engineering.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 10. Проверьте предварительную версию топологии и нажмите **Продолжить**. 
 
 11. Введите понятное имя для этой сети службы и нажмите кнопку **"Готово"** для завершения.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/complete-service-mesh.png" alt-text="Полная сеть службы":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/complete-service-mesh.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
    Сетка службы развернута и настроена.  
 
-   :::image type="content" source="media/hybrid-cloud-extension-installation/deployed-service-mesh.png" alt-text="Развернутая сетка службы":::
+   :::image type="content" source="media/hybrid-cloud-extension-installation/deployed-service-mesh.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 ## <a name="check-appliance-status"></a>Проверка состояния устройств
 Чтобы проверить состояние устройства, выберите **Межсоединение** > **Устройства**. 
 
-:::image type="content" source="media/hybrid-cloud-extension-installation/appliance-status.png" alt-text="Проверьте состояние устройства.":::
+:::image type="content" source="media/hybrid-cloud-extension-installation/appliance-status.png" alt-text="Затем перейдите к локальному vCenter и выберите шаблон OVF для развертывания в локальном vCenter.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

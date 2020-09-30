@@ -69,8 +69,10 @@
       href: load-balancer-tcp-reset.md
     - name: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
       href: load-balancer-standard-availability-zones.md
-    - name: Встроенные средства управления безопасностью
-      href: load-balancer-security-controls.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Управление серверным пулом
       href: backend-pool-management.md
     - name: Load Balancer ценовой категории "Стандартный" и Масштабируемые наборы виртуальных машин
