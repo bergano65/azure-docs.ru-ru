@@ -12,32 +12,32 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: e50091750e01435912a2a5163cc786e79dc09f5c
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: cd1b03c8cecf84e75bac32be0570c2f4f3db9b2e
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985070"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575543"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-storage-gen1"></a>Доступ к журналам диагностики Azure Data Lake Storage 1-го поколения
 Узнайте, как включить ведение журнала диагностики для учетной записи Azure Data Lake Storage 1-го поколения и просматривать журналы, собранные для этой учетной записи.
 
 Организации могут включить ведение журнала диагностики для учетной записи Azure Data Lake Storage 1-го поколения для сбора журналов аудита доступа к данным, в котором содержатся такие сведения, как список пользователей, обращающихся к данным, как часто осуществляется доступ к данным, сколько данных хранится в учетной записи и т. д. Если этот параметр включен, диагностика и (или) запросы записываются в журнал на основе наилучшей силы. Записи запросов и диагностики журнала создаются только при получении запроса к конечной точке службы.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 1-го поколения**. Следуйте инструкциям в статье Начало [работы с Azure Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md).
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 
 ## <a name="enable-diagnostic-logging-for-your-data-lake-storage-gen1-account"></a>Включение ведения журнала диагностики для учетной записи Data Lake Storage 1-го поколения
 1. Войдите в новую [портал Azure](https://portal.azure.com).
 2. Откройте свою учетную запись Data Lake Storage 1-го поколения. В колонке учетной записи Data Lake Storage 1-го поколения щелкните **Параметры диагностики**.
 3. В колонке **Параметры диагностики** выберите **Включить диагностику**.
 
-    ![Включение ведения журналов диагностики](./media/data-lake-store-diagnostic-logs/turn-on-diagnostics.png "Включение журналов диагностики")
+    ![Снимок экрана учетной записи Data Lake Storage Gen 1 с параметром диагностики и параметром включить диагностику вызываемый.](./media/data-lake-store-diagnostic-logs/turn-on-diagnostics.png "Включение журналов диагностики")
 
 3. В колонке **Параметры диагностики** внесите следующие изменения, чтобы настроить ведение журнала диагностики.
    
-    ![Включение ведения журналов диагностики](./media/data-lake-store-diagnostic-logs/enable-diagnostic-logs.png "Включение журналов диагностики")
+    ![Снимок экрана раздела параметров диагностики с именем "текстовое поле" и параметром "Сохранить".](./media/data-lake-store-diagnostic-logs/enable-diagnostic-logs.png "Включение журналов диагностики")
    
    * В поле **Имя** введите значение конфигурации журнала диагностики.
    * Хранить и обрабатывать данные можно разными способами.
@@ -50,7 +50,7 @@ ms.locfileid: "85985070"
      
    * Укажите, что вы хотите получать: журналы аудита, журналы запросов либо и те, и другие журналы.
    * Укажите число дней, в течение которых должны храниться данные. Период удержания применяется, только если учетная запись хранения Azure используется для архивации данных журнала.
-   * Нажмите кнопку **Сохранить**.
+   * Выберите команду **Сохранить**.
 
 Включив параметры диагностики, вы сможете просматривать журналы на вкладке **Журналы диагностики** .
 
@@ -73,13 +73,13 @@ ms.locfileid: "85985070"
 ### <a name="from-the-azure-storage-account-that-contains-log-data"></a>Использование учетной записи хранения Azure, в которой хранятся данные
 1. Откройте колонку учетной записи хранения Azure, связанную с Data Lake Storage 1-го поколения для ведения журнала, и щелкните "BLOB-объекты". В колонке **Служба BLOB-объектов** отображается два контейнера.
    
-    ![Просмотр ведения журнала диагностики](./media/data-lake-store-diagnostic-logs/view-diagnostic-logs-storage-account.png "просмотр журналов диагностики;")
+    ![Снимок экрана: в колонке Data Lake Storage "Gen 1" выбран параметр "большие двоичные объекты", а в колонке службы блогов — имена двух вызываемых служб BLOB-объектов.](./media/data-lake-store-diagnostic-logs/view-diagnostic-logs-storage-account.png "просмотр журналов диагностики;")
    
    * В контейнере **insights-logs-audit** содержатся журналы аудита.
    * В контейнере **insights-logs-requests** содержатся журналы запросов.
 2. Журналы в этих контейнерах хранятся с использованием следующей структуры:
    
-    ![Просмотр ведения журнала диагностики](./media/data-lake-store-diagnostic-logs/view-diagnostic-logs-storage-account-structure.png "просмотр журналов диагностики;")
+    ![Снимок экрана структуры журнала в том виде, в котором он хранится в контейнере.](./media/data-lake-store-diagnostic-logs/view-diagnostic-logs-storage-account-structure.png "просмотр журналов диагностики;")
    
     Например, полный путь к журналу аудита может выглядеть таким образом: `https://adllogs.blob.core.windows.net/insights-logs-audit/resourceId=/SUBSCRIPTIONS/<sub-id>/RESOURCEGROUPS/myresourcegroup/PROVIDERS/MICROSOFT.DATALAKESTORE/ACCOUNTS/mydatalakestorage/y=2016/m=07/d=18/h=04/m=00/PT1H.json`
    
@@ -115,7 +115,7 @@ ms.locfileid: "85985070"
 ```
 
 #### <a name="request-log-schema"></a>Схема журнала запросов
-| Имя | Type | Описание: |
+| Имя | Тип | Description |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция. |
@@ -128,11 +128,11 @@ ms.locfileid: "85985070"
 | properties |JSON |Дополнительные сведения см. ниже. |
 
 #### <a name="request-log-properties-schema"></a>Схема свойств журнала запросов
-| Имя | Type | Описание: |
+| Имя | Тип | Description |
 | --- | --- | --- |
 | HttpMethod |Строка |Метод HTTP, использованный для операции. Например, GET. |
 | Path |Строка |Путь выполнения операции. |
-| RequestContentLength |INT |Длина содержимого HTTP-запроса. |
+| RequestContentLength |int |Длина содержимого HTTP-запроса. |
 | ClientRequestId |Строка |Идентификатор, однозначно определяющий данный запрос. |
 | StartTime |Строка |Время получения запроса сервером. |
 | EndTime |Строка |Время отправки ответа сервером. |
@@ -164,7 +164,7 @@ ms.locfileid: "85985070"
 ```
 
 #### <a name="audit-log-schema"></a>Схема журнала аудита
-| Имя | Type | Описание: |
+| Имя | Тип | Description |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция. |
@@ -177,7 +177,7 @@ ms.locfileid: "85985070"
 | properties |JSON |Дополнительные сведения см. ниже. |
 
 #### <a name="audit-log-properties-schema"></a>Схема свойств журнала аудита
-| Имя | Type | Описание: |
+| Имя | Тип | Description |
 | --- | --- | --- |
 | StreamName |Строка |Путь выполнения операции. |
 

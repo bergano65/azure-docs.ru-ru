@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 282ac6f87d5ecff75e77b075ee1092f79b4923ad
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: bcc561cd5eea4372d798fff4580362ba0879c3a4
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192855"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574200"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen1-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI
 В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных в Azure Data Lake Storage 1-го поколения.
@@ -27,7 +27,7 @@ ms.locfileid: "88192855"
 1. Запустите Power BI Desktop на своем компьютере.
 2. На ленте **Главная** нажмите кнопку **Получить данные**, а затем щелкните "Дополнительно". В диалоговом окне **Получение данных** выберите пункт **Azure**, а затем выберите пункт **Azure Data Lake Store** и нажмите кнопку **Подключиться**.
    
-    ![Подключение к Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account.png "Подключение к Data Lake Storage 1-го поколения")
+    ![Снимок экрана: диалоговое окно "получение данных" с выделенным параметром Azure Data Lake Store и вызываемым параметром Connect.](./media/data-lake-store-power-bi/get-data-lake-store-account.png "Подключение к Data Lake Storage 1-го поколения")
 3. Если появится диалоговое окно с сообщением о том, что соединитель находится в стадии разработки, выберите вариант "Продолжить".
 4. В диалоговом окне **Azure Data Lake Store** укажите URL-адрес для своей учетной записи Data Lake Storage 1-го поколения и нажмите кнопку **ОК**.
    
@@ -37,7 +37,7 @@ ms.locfileid: "88192855"
     ![Вход в Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-signin.png "Вход в Data Lake Storage 1-го поколения")
 6. Успешно выполнив вход, нажмите кнопку **Подключиться**.
    
-    ![Подключение к Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-connect.png "Подключение к Data Lake Storage 1-го поколения")
+    ![Снимок экрана диалогового окна Azure Data Lake Store с вызываемым параметром Connect.](./media/data-lake-store-power-bi/get-data-lake-store-account-connect.png "Подключение к Data Lake Storage 1-го поколения")
 7. В следующем диалоговом окне будет указан файл, который вы добавили в учетную запись Data Lake Storage 1-го поколения. Проверьте информацию и нажмите кнопку **Загрузить**.
    
     ![Загрузка данных из Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-load.png "Загрузка данных из Data Lake Storage 1-го поколения")
@@ -52,19 +52,19 @@ ms.locfileid: "88192855"
     В следующих шагах мы обновим запрос, чтобы преобразовать импортированные данные в нужный формат.
 9. На вкладке **Главная** ленты нажмите кнопку **Изменить запросы**.
    
-    ![Изменение запросов](./media/data-lake-store-power-bi/edit-queries.png "Изменить запросы")
+    ![Снимок экрана ленты "Главная" с вызываемым параметром "изменить запросы".](./media/data-lake-store-power-bi/edit-queries.png "Изменить запросы")
 10. В редакторе запросов в столбце **Содержимое** выберите вариант **Двоичные данные**.
     
-    ![Изменение запросов](./media/data-lake-store-power-bi/convert-query1.png "Изменить запросы")
+    ![Снимок экрана редактора запросов с вызываемым столбцом содержимого.](./media/data-lake-store-power-bi/convert-query1.png "Изменить запросы")
 11. Вы увидите значок, представляющий добавленный вами файл **Drivers.txt** . Щелкните файл правой кнопкой мыши и выберите пункт **CSV**.    
     
-    ![Изменение запросов](./media/data-lake-store-power-bi/convert-query2.png "Изменить запросы")
+    ![Снимок экрана редактора запросов с вызываемым параметром CSV.](./media/data-lake-store-power-bi/convert-query2.png "Изменить запросы")
 12. В результате вы увидите выходные данные, приведенные ниже. Данные теперь имеют формат, который можно использовать для создания визуализаций.
     
-    ![Изменение запросов](./media/data-lake-store-power-bi/convert-query3.png "Изменить запросы")
+    ![Снимок экрана редактора запросов, в котором отображаются ожидаемые выходные данные.](./media/data-lake-store-power-bi/convert-query3.png "Изменить запросы")
 13. На вкладке **Главная** ленты нажмите кнопку **Закрыть и применить** и выберите пункт **Закрыть и применить**.
     
-    ![Изменение запросов](./media/data-lake-store-power-bi/load-edited-query.png "Изменить запросы")
+    ![Снимок экрана домашней ленты с вызываемым параметром закрытия и применения.](./media/data-lake-store-power-bi/load-edited-query.png "Изменить запросы")
 14. После обновления запроса на вкладке **Поля** появятся новые поля, доступные для визуализации.
     
     ![Обновленные поля](./media/data-lake-store-power-bi/updated-query-fields.png "Обновленные поля")

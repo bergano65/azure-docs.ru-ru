@@ -3,14 +3,14 @@ title: Руководство по Kubernetes в Azure. Обновление п�
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющееся развертывание приложения для AKS с помощью новой версии кода приложения.
 services: container-service
 ms.topic: tutorial
-ms.date: 12/19/2018
+ms.date: 09/30/2020
 ms.custom: mvc
-ms.openlocfilehash: e9981f9df31f6de21262aedc9790dbf1a7725fc7
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 6619d7c9f7d2b0cd78f3941ce431e80342b6f563
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985344"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576444"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
@@ -79,7 +79,7 @@ az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginSe
 Используйте команду [docker tag][docker-tag], чтобы добавить тег для образа. Замените `<acrLoginServer>` именем сервера для входа ACR или именем узла общедоступного реестра и обновите версию образа до *:v2* следующим образом:
 
 ```console
-docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v2
+docker tag mcr.microsoft.com/azuredocs/azure-vote-front:v1 <acrLoginServer>/azure-vote-front:v2
 ```
 
 Теперь используйте команду [docker push][docker-push], чтобы передать образ в реестр. Замените `<acrLoginServer>` именем сервера для входа ACR.

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 03/06/2020
 ms.topic: how-to
-ms.openlocfilehash: dda2676f258705ed833068c966bcc57115434b0d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 2134dde0fa0b92bec4519c0d6a24dcaad3792baa
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90967221"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575186"
 ---
 # <a name="configure-the-model-conversion"></a>Настройка преобразования модели
 
@@ -33,7 +33,6 @@ ms.locfileid: "90967221"
         "scaling" : { "type" : "number", "exclusiveMinimum" : 0, "default" : 1.0 },
         "recenterToOrigin" : { "type" : "boolean", "default" : false },
         "opaqueMaterialDefaultSidedness" : { "type" : "string", "enum" : [ "SingleSided", "DoubleSided" ], "default" : "DoubleSided" },
-        "material-override" : { "type" : "string", "default" : "" },
         "gammaToLinearMaterial" : { "type" : "boolean", "default" : false },
         "gammaToLinearVertex" : { "type" : "boolean", "default" : false },
         "sceneGraphMode": { "type" : "string", "enum" : [ "none", "static", "dynamic" ], "default" : "dynamic" },
@@ -85,10 +84,6 @@ ms.locfileid: "90967221"
 
 * `opaqueMaterialDefaultSidedness` — подсистема визуализации предполагает, что непрозрачные материалы являются двусторонними.
 Если это допущение не верно для конкретной модели, для этого параметра следует задать значение "Синглесидед". Дополнительные сведения см. в разделе [ :::no-loc text="single sided"::: Подготовка к просмотру](../../overview/features/single-sided-rendering.md).
-
-### <a name="material-overrides"></a>Переопределение материалов
-
-* `material-override` — этот параметр позволяет [настроить обработку материалов во время преобразования](override-materials.md).
 
 ### <a name="material-de-duplication"></a>Дедупликация материалов
 
@@ -305,6 +300,8 @@ ms.locfileid: "90967221"
 
 Предоставление параметров с использованием имени файла, не относящегося к модели `conversionSettings.json` , по-прежнему поддерживается, но не рекомендуется.
 Вместо этого следует использовать имя файла, зависящее от модели `<modelName>.ConversionSettings.json` .
+
+Использование `material-override` параметра для определения [файла переопределения материалов](override-materials.md) в файле параметров преобразования по-прежнему поддерживается, но не рекомендуется. Вместо этого следует использовать имя файла, зависящее от модели `<modelName>.MaterialOverrides.json` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

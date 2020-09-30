@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: how-to
 ms.date: 05/20/2020
 ms.author: alkohli
-ms.openlocfilehash: 7b069d1bf16e8cbf4dfc245fbb3c66863cd0b994
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: c4b3479e5728c32e66bc40f950bc948bf61dce42
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90055583"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575169"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-disk-in-the-azure-portal"></a>Использование функции самоуправляемой доставки для Дисков Azure Data Box на портале Azure
 
@@ -37,13 +37,13 @@ ms.locfileid: "90055583"
 
 1. В заказе на Диск Azure Data Box в разделе **Контактные сведения** выберите **+ Добавить адрес доставки**.
 
-   ![Самоуправляемая доставка](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-1.png)
+   ![Снимок экрана: Мастер заказов, отображающий шаг контактных данных с вызываемым параметром добавить адрес доставки.](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-1.png)
 
 2. При выборе типа доставки выберите вариант **Самоуправляемая доставка**. Этот вариант доступен только в том случае, если вы находитесь в одном из поддерживаемых регионов, указанных в разделе "Предварительные требования".
 
-3. Указав адрес доставки, проверьте его и завершите заказ.
+3. После того как вы указали адрес доставки, проверьте его и завершите заказ.
 
-   ![Самоуправляемая доставка](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
+   ![Снимок экрана: диалоговое окно "Добавление адреса доставки" с параметрами "доставка с помощью" и "добавить адрес доставки".](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
 
 4. После подготовки устройства и получения уведомления по электронной почте можно запланировать отправку. В заказе на Диск Azure Data Box перейдите в раздел **Обзор** и выберите **Запланировать вывоз**.
 
@@ -55,7 +55,7 @@ ms.locfileid: "90055583"
 
 6. Если вы уже запланировали вызов устройств, вы сможете посмотреть код авторизации на панели **Планирование вывоза для Azure**.
 
-   ![Просмотр кода авторизации](media\data-box-disk-portal-customer-managed-shipping\data-box-disk-authcode-01b.png)
+   ![Снимок экрана: диалоговое окно "Выбор расписания для Azure" с вызываемым текстовым полем "код авторизации для отправки".](media\data-box-disk-portal-customer-managed-shipping\data-box-disk-authcode-01b.png)
 
    Запишите этот **код авторизации**.
 
@@ -78,7 +78,7 @@ ms.locfileid: "90055583"
 
 9. Если вы получили приглашение на сдачу устройства, ваш заказ на портале Azure должен находиться в состоянии **Все готово для получения в центре данных Azure**.
 
-   ![Просмотр кода авторизации](media\data-box-disk-portal-customer-managed-shipping\data-box-disk-authcode-dropoff-02b.png)
+   ![Снимок экрана: диалоговое окно "Добавление адреса доставки" с именем "доставка с использованием вариантов выхода" и "добавить адрес доставки".](media\data-box-disk-portal-customer-managed-shipping\data-box-disk-authcode-dropoff-02b.png)
 
 10. После проверки идентификатора и кода авторизации и сдачи устройства в центре обработки данных соответствующий заказ должен перейти в состояние **Получено**.
 

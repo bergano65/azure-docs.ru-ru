@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: d264ead87e7fa638830bf25fdb07983b164334b7
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 10f2b44d00361885778a523109a8fcb05dabe9dd
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83698669"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574353"
 ---
 # <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
@@ -24,9 +24,9 @@ ms.locfileid: "83698669"
 
 Ниже приведены некоторые часто задаваемые вопросы о настройке доступа из виртуальных сетей.
 
-### <a name="are-notebooks-and-mongo-shell-currently-compatible-with-virtual-network-enabled-accounts"></a>Совместимы ли в настоящее время записные книжки и оболочка Mongo с учетными записями с поддержкой виртуальной сети?
+### <a name="are-notebooks-and-mongocassandra-shell-currently-compatible-with-virtual-network-enabled-accounts"></a>Совместимы ли записные книжки и оболочка Mongo/Cassandra с учетными записями с поддержкой виртуальной сети?
 
-В настоящее время [интеграция оболочки Mongo в обозреватель данных Cosmos DB](https://devblogs.microsoft.com/cosmosdb/preview-native-mongo-shell/) и [службу Jupyter Notebook](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-jupyter-notebooks) не поддерживается для доступа VNET. В настоящее время эта возможность находится на стадии активной разработки.
+В настоящее время интеграция [оболочки Mongo](https://devblogs.microsoft.com/cosmosdb/preview-native-mongo-shell/) и [оболочки Cassandra](https://devblogs.microsoft.com/cosmosdb/announcing-native-cassandra-shell-preview/) в обозреватель данных Cosmos DB и [Служба записных книжек Jupyter](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-jupyter-notebooks)не поддерживаются при доступе к виртуальной сети. В настоящее время эта возможность находится на стадии активной разработки.
 
 ### <a name="can-i-specify-both-virtual-network-service-endpoint-and-ip-access-control-policy-on-an-azure-cosmos-account"></a>Можно ли указать политику конечной точки службы для виртуальной сети и политику контроля доступа к IP-адресу в учетной записи Azure Cosmos? 
 

@@ -7,29 +7,31 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ef29be53e776c4c185ac8430b3340c53ca85d855
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 8b5492a737b733f486455507a8a813b5d583d453
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88856054"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91573843"
 ---
 # <a name="iot-plug-and-play-conventions"></a>Соглашения IoT Plug and Play
 
-При обмене сообщениями с центром Интернета вещей на устройствах предварительной версии IoT Plug and Play должны следовать набору соглашений. Устройства с предварительной версией IoT Plug and Play используют протокол MQTT для обмена данными с центром Интернета вещей.
+Устройства IoT Plug and Play должны следовать набору соглашений при обмене сообщениями с центром Интернета вещей. Устройства IoT Plug and Play используют протокол MQTT для обмена данными с центром Интернета вещей.
+
+Устройства могут включать [модули](../iot-hub/iot-hub-devguide-module-twins.md)или быть реализованы в [модуле IOT Edge](../iot-edge/about-iot-edge.md) , размещенном в среде выполнения IOT Edge.
 
 Вы описываете телеметрию, свойства и команды, которые устройство IoT Plug and Play реализует с помощью _модели_ [Digital двойников Definition Language v2 (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl) . В этой статье есть два типа модели, на которые ссылается:
 
-- **Нет компонента** — модель без компонентов. Модель объявляет данные телеметрии, свойства и команды в качестве свойств верхнего уровня в разделе содержимого основного интерфейса.
-- **Несколько компонентов** — модель, состоящая из двух или более интерфейсов. Главный интерфейс с данными телеметрии, свойствами и командами. Один или несколько интерфейсов, объявленных как компоненты с дополнительными данными телеметрии, свойствами и командами.
+- **Нет компонента** — модель без компонентов. Модель объявляет данные телеметрии, свойства и команды в качестве свойств верхнего уровня в разделе содержимого основного интерфейса. В средстве Azure IoT Explorer эта модель отображается как отдельный _компонент по умолчанию_.
+- **Несколько компонентов** — модель, состоящая из двух или более интерфейсов. Основной интерфейс, который отображается как _компонент по умолчанию_с данными телеметрии, свойствами и командами. Один или несколько интерфейсов, объявленных как компоненты с дополнительными данными телеметрии, свойствами и командами.
 
 Дополнительные сведения см. [в разделе IoT Plug and Play Components in Models](concepts-components.md).
 
 ## <a name="identify-the-model"></a>Указание модели
 
-Чтобы объявить реализуемую модель, устройство IoT Plug and Play включает идентификатор модели в пакет подключения MQTT, добавляя `model-id` к `USERNAME` полю.
+Чтобы объявить реализуемую модель, устройство или модуль IoT Plug and Play включает идентификатор модели в пакет подключения MQTT, добавляя `model-id` к `USERNAME` полю.
 
-Для идентификации модели, реализованной устройством, служба может получить идентификатор модели из:
+Для идентификации модели, реализуемой устройством или модулем, служба может получить идентификатор модели из:
 
 - Поле двойникаа устройства `modelId` .
 - Поле Digital двойника `$metadata.$model` .
@@ -45,217 +47,296 @@ ms.locfileid: "88856054"
 
 ### <a name="sample-no-component-read-only-property"></a>Образец нет компонента свойство только для чтения
 
-Устройство может отправить любой допустимый код JSON, следующий за правилами ДТДЛ v2.
+Устройство или модуль могут отправить любой допустимый код JSON, следующий за правилами ДТДЛ v2.
 
-:::row:::
-   :::column span="":::
-      **DTDL**
+ДТДЛ:
 
-      ```json
-      "@context": "dtmi:dtdl:context;2",
-      "@id": "dtmi:example: Thermostat;1",
-      "@type": "Interface",
-      "contents": [
-        {
-          "@type": "Property",
-          "name": "temperature",
-          "schema": "double"
-        }
-      ]
-      ```
-   :::column-end:::
-   :::column span="":::
-      **Пример полезных данных**
+```json
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:example: Thermostat;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "temperature",
+      "schema": "double"
+    }
+  ]
+}
+```
 
-      ```json
-      "reported" :
-      {
-        "temperature" : 21.3
-      }
-      ```
-   :::column-end:::
-:::row-end:::
+Пример полезных данных свойства:
+
+```json
+"reported" :
+{
+  "temperature" : 21.3
+}
+```
 
 ### <a name="sample-multiple-components-read-only-property"></a>Пример использования нескольких компонентов свойство только для чтения
 
-Устройство должно добавить `{"__t": "c"}` маркер, чтобы указать, что элемент ссылается на компонент.
+Устройство или модуль должны добавить `{"__t": "c"}` маркер, чтобы указать, что элемент ссылается на компонент.
 
-:::row:::
-   :::column span="":::
-      **DTDL**
+ДТДЛ:
 
-      ```json
-      "@context": "dtmi:dtdl:context;2",
-      "@id": "dtmi:com:example:TemperatureController;1",
-      "@type": "Interface",
-      "displayName": "Temperature Controller",
-      "contents": [
-        {
-          "@type" : "Component",
-          "schema": "dtmi:com:example:Thermostat;1",
-          "name": "thermostat1"
-        }
-      ]
+```json
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:TemperatureController;1",
+  "@type": "Interface",
+  "displayName": "Temperature Controller",
+  "contents": [
+    {
+      "@type" : "Component",
+      "schema": "dtmi:com:example:Thermostat;1",
+      "name": "thermostat1"
+    }
+  ]
+}
 
-      "@context": "dtmi:dtdl:context;2",
-      "@id": "dtmi:com:example:Thermostat;1",
-      "@type": "Interface",
-      "contents": [
-        {
-          "@type": "Property",
-          "name": "temperature",
-          "schema": "double"
-        }
-      ]
-      ```
-   :::column-end:::
-   :::column span="":::
-      **Сообщаемое свойство**
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:Thermostat;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "temperature",
+      "schema": "double"
+    }
+  ]
+}
+```
 
-      ```json
-      "reported": {
-        "thermostat1": {
-          "__t": "c",
-          "temperature": 21.3
-        }
-      }
-      ```
-   :::column-end:::
-:::row-end:::
+Пример полезных данных свойства:
+
+```json
+"reported": {
+  "thermostat1": {
+    "__t": "c",
+    "temperature": 21.3
+  }
+}
+```
 
 ## <a name="writable-properties"></a>Доступные для записи свойства
 
-Устройство должно подтвердить, что оно получило свойство, отправив сообщаемое свойство. Сообщаемое свойство должно включать:
+Устройство или модуль должны подтвердить, что оно получило свойство, отправив сообщаемое свойство. Сообщаемое свойство должно включать:
 
 - `value` — фактическое значение свойства (обычно полученное значение, однако устройство может принять решение о другом значении).
 - `ac` — код подтверждения, использующий код состояния HTTP.
-- `av` — Версия подтверждения, относящаяся к `$version` требуемому свойству.
+- `av` — Версия подтверждения, относящаяся к `$version` требуемому свойству. Это значение можно найти в полезных данных JSON требуемого свойства.
 - `ad` — Необязательное описание подтверждения.
+
+Когда устройство запускается, оно должно запросить двойника устройства и проверить наличие обновлений свойств, доступных для записи. Если версия свойства, доступного для записи, увеличилась, когда устройство находится в автономном режиме, устройство должно отправить ответ сообщаемого свойства, чтобы подтвердить, что он получил обновление.
+
+Когда устройство запускается впервые, оно может отправить исходное значение для сообщаемого свойства, если оно не получает от концентратора начальное требуемое свойство. В этом случае устройству должно быть присвоено значение `av` `1` . Пример:
+
+```json
+"reported": {
+  "targetTemperature": {
+    "value": 20.0,
+    "ac": 200,
+    "av": 1,
+    "ad": "initialize"
+  }
+}
+```
+
+Устройство может использовать сообщаемое свойство для предоставления других сведений концентратору. Например, устройство может реагировать на ряд выполняющихся сообщений, таких как:
+
+```json
+"reported": {
+  "targetTemperature": {
+    "value": 35.0,
+    "ac": 202,
+    "av": 3,
+    "ad": "In-progress - reporting current temperature"
+  }
+}
+```
+
+Когда устройство достигает целевой температуры, оно отправляет следующее сообщение:
+
+```json
+"reported": {
+  "targetTemperature": {
+    "value": 20.0,
+    "ac": 200,
+    "av": 3,
+    "ad": "Reached target temperature"
+  }
+}
+```
+
+Устройство может сообщить об ошибке, например:
+
+```json
+"reported": {
+  "targetTemperature": {
+    "value": 120.0,
+    "ac": 500,
+    "av": 3,
+    "ad": "Target temperature out of range. Valid range is 10 to 99."
+  }
+}
+```
 
 ### <a name="sample-no-component-writable-property"></a>Пример свойства, доступного для записи без компонента
 
-Устройство может отправить любой допустимый код JSON, следующий за правилами ДТДЛ v2:
+Когда устройство получает несколько сообщаемых свойств в одной полезной нагрузке, оно может отправлять Отправленные ответы свойств в нескольких полезных данных.
 
-:::row:::
-   :::column span="":::
-      **DTDL**
+Устройство или модуль могут отправить любой допустимый код JSON, следующий за правилами ДТДЛ v2:
 
-      ```json
-      "@context": "dtmi:dtdl:context;2",
-      "@id": "dtmi:example: Thermostat;1",
-      "@type": "Interface",
-      "contents": [
-        {
-          "@type": "Property",
-          "name": "targetTemperature",
-          "schema": "double",
-          "writable": true
-        }
-      ]
-      ```
-   :::column-end:::
-   :::column span="":::
-      **Требуемое свойство**
+ДТДЛ:
 
-      ```json
-      "desired" :
-      {
-        "targetTemperature" : 21.3
-      },
-      "$version" : 3
-      ```
-   :::column-end:::
-   :::column span="":::
-      **Сообщаемое свойство**
+```json
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:example: Thermostat;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "targetTemperature",
+      "schema": "double",
+      "writable": true
+    }
+  ]
+}
+```
 
-      ```json
-      "reported": {
-        "targetTemperature": {
-          "value": 21.3,
-          "ac": 200,
-          "av": 3,
-          "ad": "complete"
-       }
-     }
-      ```
-   :::column-end:::
-:::row-end:::
+Пример полезных данных требуемого свойства:
+
+```json
+"desired" :
+{
+  "targetTemperature" : 21.3,
+  "targetHumidity" : 80
+},
+"$version" : 3
+```
+
+Первые полезные данные образца сообщаемого свойства:
+
+```json
+"reported": {
+  "targetTemperature": {
+    "value": 21.3,
+    "ac": 200,
+    "av": 3,
+    "ad": "complete"
+  }
+}
+```
+
+Образец полученного свойства, второй полезные данные:
+
+```json
+"reported": {
+  "targetHumidity": {
+    "value": 80,
+    "ac": 200,
+    "av": 3,
+    "ad": "complete"
+  }
+}
+```
 
 ### <a name="sample-multiple-components-writable-property"></a>Пример свойства, записываемого несколькими компонентами
 
-Устройство должно добавить `{"__t": "c"}` маркер, чтобы указать, что элемент ссылается на компонент.
+Устройство или модуль должны добавить `{"__t": "c"}` маркер, чтобы указать, что элемент ссылается на компонент.
 
-Маркер отправляется только для обновлений на уровне компонентов, поэтому устройства не должны проверку этого флага.
+Маркер отправляется только для обновлений свойств, определенных в компоненте. Обновления свойств, определенных в компоненте по умолчанию, не включают маркер, см. раздел [выборка без компонента для записи свойства](#sample-no-component-writable-property)
 
-Устройство должно подтвердить, что оно получило свойство, отправив сообщаемое свойство:
+Когда устройство получает несколько сообщаемых свойств в одной полезной нагрузке, оно может отправлять Отправленные ответы свойств в нескольких полезных данных.
 
-:::row:::
-   :::column span="":::
-      **DTDL**
+Устройство или модуль должны подтвердить, что они получили свойства, отправив сообщаемые свойства:
 
-      ```json
-      "@context": "dtmi:dtdl:context;2",
-      "@id": "dtmi:com:example:TemperatureController;1",
-      "@type": "Interface",
-      "displayName": "Temperature Controller",
-      "contents": [
-        {
-          "@type" : "Component",
-          "schema": "dtmi:com:example:Thermostat;1",
-          "name": "thermostat1"
-        }
-      ]
+ДТДЛ:
 
-      "@context": "dtmi:dtdl:context;2",
-      "@id": "dtmi:com:example:Thermostat;1",
-      "@type": "Interface",
-      "contents": [
-        {
-          "@type": "Property",
-          "name": "targetTemperature",
-          "schema": "double",
-          "writable": true
-        }
-      ]
-      ```
-   :::column-end:::
-   :::column span="":::
-      **Требуемое свойство**
+```json
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:TemperatureController;1",
+  "@type": "Interface",
+  "displayName": "Temperature Controller",
+  "contents": [
+    {
+      "@type" : "Component",
+      "schema": "dtmi:com:example:Thermostat;1",
+      "name": "thermostat1"
+    }
+  ]
+}
 
-      ```json
-      "desired": {
-        "thermostat1": {
-          "__t": "c",
-          "targetTemperature": 21.3
-        }
-      },
-      "$version" : 3
-      ```
-   :::column-end:::
-   :::column span="":::
-      **Сообщаемое свойство**
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:example:Thermostat;1",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "targetTemperature",
+      "schema": "double",
+      "writable": true
+    }
+  ]
+}
+```
 
-      ```json
-      "reported": {
-        "thermostat1": {
-          "__t": "c",
-          "targetTemperature": {
-            "value": 23,
-            "ac": 200,
-            "av": 3,
-            "ad": "complete"
-          }
-        }
-      }
-      ```
-   :::column-end:::
-:::row-end:::
+Пример полезных данных требуемого свойства:
+
+```json
+"desired": {
+  "thermostat1": {
+    "__t": "c",
+    "targetTemperature": 21.3,
+    "targetHumidity": 80
+  }
+},
+"$version" : 3
+```
+
+Первые полезные данные образца сообщаемого свойства:
+
+```json
+"reported": {
+  "thermostat1": {
+    "__t": "c",
+    "targetTemperature": {
+      "value": 23,
+      "ac": 200,
+      "av": 3,
+      "ad": "complete"
+    }
+  }
+}
+```
+
+Образец полученного свойства, второй полезные данные:
+
+```json
+"reported": {
+  "thermostat1": {
+    "__t": "c",
+    "targetHumidity": {
+      "value": 80,
+      "ac": 200,
+      "av": 3,
+      "ad": "complete"
+    }
+  }
+}
+```
 
 ## <a name="commands"></a>Команды
 
 Ни один из интерфейсов компонентов не использует имя команды без префикса.
 
-На устройстве интерфейсы с несколькими компонентами используют имена команд в следующем формате: `componentName*commandName` .
+На устройстве или модуле в интерфейсах с несколькими компонентами имена команд используются в следующем формате: `componentName*commandName` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

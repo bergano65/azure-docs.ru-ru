@@ -1,5 +1,5 @@
 ---
-title: Создание рабочей области Azure Synapse с помощью шаблона Azure Resource Manager
+title: Краткое руководство. Создание рабочей области Azure Synapse с помощью шаблона Azure Resource Manager
 description: Узнайте, как создать рабочую область Synapse с помощью шаблона Azure Resource Manager.
 services: azure-resource-manager
 author: julieMSFT
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: jrasnick
 ms.date: 08/07/2020
-ms.openlocfilehash: c64f3d835eeede79f937bbaadb0a54992176438d
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: dc6d36f2316e0ae19ce8b813fa9eb127b1a9cf1f
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500677"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91568999"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-using-a-deployment-template"></a>Краткое руководство. Создание рабочей области Azure Synapse с помощью шаблона развертывания
 
@@ -33,7 +33,7 @@ ms.locfileid: "89500677"
 
 Чтобы просмотреть шаблон, щелкните ссылку **Визуализация**:
 
-[![Визуализация](../media/template-deployments/template-visualize-button.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FSynapse%2Fmaster%2FManage%2FDeployWorkspace%2Fazuredeploy.json)
+[![Визуализация](../media/template-deployments/template-visualize-button.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FSynapse%2Fmaster%2FManage%2FDeployWorkspace%2Fazuredeploy.json)
 
 Шаблон определяет два ресурса:
 

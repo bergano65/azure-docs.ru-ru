@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 06/25/2020
 ms.author: mahain
-ms.openlocfilehash: 3469b612081f9cb96beec98a065e0827d1c04b4c
-ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
+ms.openlocfilehash: 400c2d91383b5f21fcd40fdbbe279bd83fcef51a
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88261843"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576546"
 ---
 # <a name="server-assessment-overview-migrate-to-azure-vmware-solution"></a>Обзор оценки сервера (миграция в решение VMware для Azure)
 
@@ -256,9 +256,9 @@ ms.locfileid: "88261843"
 ## <a name="migration-tool-guidance"></a>Руководство по средствам миграции
 
 В отчете о готовности к работе в Azure для оценки Решения Azure VMware приведены следующие рекомендуемые инструменты: 
-- **VMware хккс или Enterprise**: для виртуальных машин VMware — это рекомендуемое средство миграции, которое позволяет перенести локальную рабочую нагрузку в частное облако решения Azure VMware (AVS). [Подробнее](../azure-vmware/hybrid-cloud-extension-installation.md)
+- **VMware хккс или Enterprise**: для виртуальных машин VMware — это рекомендуемое средство миграции, которое позволяет перенести локальную рабочую нагрузку в частное облако решения Azure VMware (AVS). [Подробнее](../azure-vmware/tutorial-deploy-vmware-hcx.md)
 - **Неизвестно**: для виртуальных машин, импортированных с помощью CSV-файла, инструмент миграции по умолчанию неизвестен. Однако для компьютеров VMware рекомендуется использовать решение гибридного облака VMware (ХККС).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте оценку [виртуальных машин VMware для AVS](how-to-create-azure-vmware-solution-assessment.md).

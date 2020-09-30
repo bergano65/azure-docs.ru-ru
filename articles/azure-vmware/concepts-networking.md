@@ -3,16 +3,16 @@ title: Основные понятия — сетевое взаимодейст
 description: Узнайте о ключевых аспектах и вариантах использования сети и взаимосвязи в решении VMware для Azure.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 4ffcdd8ea42df127ee1480927f4fdf2eb8f137b8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f8e9ed143d53afe2f7a24c832c69390c6ffcb36b
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91316905"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575764"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Сети решения Azure VMware и основные понятия взаимодействия
 
-[!INCLUDE [avs-networking-description](includes/avs-networking-description.md)]
+[!INCLUDE [avs-networking-description](includes/azure-vmware-solution-networking-description.md)]
 
 Полезной перспективой взаимодействия является рассмотрение двух типов реализаций частных облаков решения Azure VMware:
 
@@ -53,7 +53,7 @@ ms.locfileid: "91316905"
 * Горячий/холодный кросс-vCenter vMotion
 * Доступ из локальной среды в Azure VMware решение для управления частным облаком
 
-:::image type="content" source="media/concepts/adjacency-overview-drawing-double.png" alt-text="Виртуальная сеть и локальное полное подключение к частному облаку" border="false":::
+:::image type="content" source="media/concepts/adjacency-overview-drawing-double.png" alt-text="Подключение базовой виртуальной сети к частному облаку" border="false":::
 
 Чтобы обеспечить полное взаимодействие с частным облаком, включите ExpressRoute Global Reach а затем запросите ключ авторизации и идентификатор частного пиринга для Global Reach в портал Azure. Ключ авторизации и идентификатор пиринга используются для установления Global Reach между каналом ExpressRoute в подписке и каналом ExpressRoute для нового частного облака. После связывания две цепи ExpressRoute направляют сетевой трафик между локальными средами в частное облако.  Инструкции по запросу и использованию ключа авторизации и идентификатора пиринга см. в [руководстве по созданию подключения ExpressRoute Global REACH к частному облаку](tutorial-expressroute-global-reach-private-cloud.md) .
 

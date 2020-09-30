@@ -5,12 +5,12 @@ author: malcolmtyrrell
 ms.author: matyrr
 ms.date: 03/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 529bfb61b3af7040f3656c04071683841f5abe86
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: 89ec0ad40822785457e988cf9e0f9bd6d00ed81f
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88870295"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576631"
 ---
 # <a name="get-information-about-conversions"></a>Получение сведений о преобразованиях
 
@@ -65,6 +65,10 @@ ms.locfileid: "88870295"
         "numMeshUsagesInScene": 236,
         "maxNodeDepth": 3
     },
+    "materialOverrides": {
+        "numOverrides": 4,
+        "numOverriddenMaterials": 4
+    },
     "outputInfo": {
         "conversionToolVersion": "3b28d840de9916f9d628342f474d38c3ab949590",
         "conversionHash": "CCDB1F7A4C09F565"
@@ -115,6 +119,13 @@ ms.locfileid: "88870295"
 * `sourceAssetFormatVersion`: Версия формата исходного файла.
 * `sourceAssetGenerator`: Имя инструмента, создавшего исходный файл, если он доступен.
 
+### <a name="the-materialoverrides-section"></a>Раздел *материаловерридес*
+
+В этом разделе приводятся сведения о [переопределении материалов](override-materials.md) при указании файла переопределения материалов для службы преобразования.
+В нем содержится следующая информация:
+* `numOverrides`: Число записей переопределения, считанных из файла переопределения материалов.
+* `numOverriddenMaterials`: Количество переопределенных материалов.
+
 ### <a name="the-inputstatistics-section"></a>Раздел *инпутстатистикс*
 
 В этом разделе содержатся сведения об исходной сцене. Часто возникают различия между значениями в этом разделе и эквивалентными значениями в средстве, которое создало исходную модель. Такие различия ожидаемы, поскольку модель изменяется во время экспорта и преобразования.
@@ -145,7 +156,7 @@ ms.locfileid: "88870295"
 * `recenteringOffset`: Если `recenterToOrigin` параметр в [конверсионсеттингс](configure-model-conversion.md) включен, это значение является переводом, который переместит преобразованную модель обратно в ее исходную точку.
 * `boundingBox`: Границы модели.
 
-## <a name="deprecated-features"></a>Устаревшие компоненты
+## <a name="deprecated-features"></a>Устаревшие функции
 
 Служба преобразования записывает файлы `stdout.txt` и `stderr.txt` в выходной контейнер, и они были единственным источником предупреждений и ошибок.
 Эти файлы теперь являются устаревшими. Вместо этого используйте [файлы результатов](#information-about-a-conversion-the-result-file) для этой цели.

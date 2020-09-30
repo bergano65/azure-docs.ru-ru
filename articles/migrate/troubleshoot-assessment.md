@@ -7,12 +7,12 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/02/2020
-ms.openlocfilehash: afc7e6c1ed41661c835a811a7cbcaa6f7771328e
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: a7b463394a6919dee56e0448997dbd6c59ac9cc6
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89645648"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576597"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок с визуализацией оценок и зависимостей
 
@@ -52,7 +52,7 @@ ms.locfileid: "89645648"
 
 ## <a name="suggested-migration-tool-in-import-based-avs-assessment-marked-as-unknown"></a>Предлагаемое средство миграции в оценке AVS на основе импорта помечено как неизвестное
 
-Для компьютеров, импортированных с помощью CSV-файла, средство миграции по умолчанию в и оценка AVS неизвестны. Однако для компьютеров VMware рекомендуется использовать решение гибридного облака VMware (ХККС). [Подробнее](../azure-vmware/hybrid-cloud-extension-installation.md)
+Для компьютеров, импортированных с помощью CSV-файла, средство миграции по умолчанию в и оценка AVS неизвестны. Однако для компьютеров VMware рекомендуется использовать решение гибридного облака VMware (ХККС). [Подробнее](../azure-vmware/tutorial-deploy-vmware-hcx.md)
 
 ## <a name="linux-vms-are-conditionally-ready-in-an-azure-vm-assessment"></a>Виртуальные машины Linux — "условно готовые" в оценке виртуальных машин Azure.
 

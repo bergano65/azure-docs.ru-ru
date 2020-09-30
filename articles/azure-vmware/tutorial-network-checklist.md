@@ -3,12 +3,12 @@ title: Учебник. Контрольный список для планиро
 description: Сведения о требованиях к сети, сетевых подключениях и сетевых портах для Решения Azure VMware.
 ms.topic: tutorial
 ms.date: 09/21/2020
-ms.openlocfilehash: c9a3c18d69cb81ed2810c0516820a9ef348402f1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5538f9c5d6543ca312835f4ef6437e413dea231b
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91254403"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576683"
 ---
 # <a name="networking-planning-checklist-for-azure-vmware-solution"></a>Контрольный список для планирования сети для Решения Azure VMware 
 
@@ -21,8 +21,6 @@ ms.locfileid: "91254403"
 > * требования к маршрутизации и подсети;
 > * требуемые сетевые порты для взаимодействия со службами;
 > * рекомендации по использованию DHCP и DNS в Решении Azure VMware.
-
-
 
 ## <a name="virtual-network-and-expressroute-circuit-considerations"></a>Рекомендации по использованию виртуальной сети и канала ExpressRoute
 При создании сетевого подключения к виртуальной сети в подписке канал ExpressRoute устанавливается через пиринг и использует ключ авторизации и идентификатор пиринга, который можно запросить на портале Azure. Пиринг — это частное одноранговое подключение между частным облаком и виртуальной сетью.
