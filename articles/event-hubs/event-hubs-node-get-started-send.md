@@ -3,13 +3,13 @@ title: Отправка и получение событий через Цент
 description: В статье описано, как создать приложение JavaScript, которое отправляет события или получает их из службы "Центры событий Azure" с помощью последнего пакета azure/event-hubs версии 5.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6f1fe30cad3a1bc0d5bce7a885650dd84fcb2215
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-js
+ms.openlocfilehash: 0acceffca79a36ceabf709aa6d7faf1bf79b0c83
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88933993"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282176"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью JavaScript (azure/event-hubs версии 5)
 В этом кратком руководстве показано, как отправлять и получать события через концентратор событий с помощью пакета JavaScript **azure/event-hubs версии 5**. 

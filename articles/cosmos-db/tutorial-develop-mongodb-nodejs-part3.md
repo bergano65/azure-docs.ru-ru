@@ -8,14 +8,14 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jopapa
-ms.custom: seodec18, devx-track-javascript
+ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
-ms.openlocfilehash: e9cb30ca64fe697f9b8304f55381709083b8fbd2
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c16d7ccba24680604bc7f083f7242edd53abe102
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424245"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91282907"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
 
@@ -62,7 +62,7 @@ ms.locfileid: "87424245"
 
 4. В той же папке откройте файл **app.module.ts** и обратите внимание, что компонент `HeroesComponent` добавлен к объявлениям в строке 5 и импортирован в строку 10.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/app-module-file.png" alt-text="Открытие файла app-module.ts":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/app-module-file.png" alt-text="Установка компонентов Hero":::
 
 5. Вернитесь к файлу **heroes.component.html** и скопируйте в него указанный ниже код. `<div>` — это контейнер для всей страницы. В контейнере содержится список компонентов Hero, которые нам нужно создать, чтобы при щелчке компонента можно было выбрать, изменить или удалить его в пользовательском интерфейсе. В HTML-коде есть несколько стилей, которые можно применить, чтобы выделить выбранный компонент. Также предусмотрена область редактирования для добавления нового компонента Hero или изменения существующего. 
 
@@ -394,7 +394,7 @@ ms.locfileid: "87424245"
 
 5. Щелкните левой кнопкой мыши термин `Hero`, и в Visual Studio отобразится значок лампочки в левой части блока кода. 
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/light-bulb.png" alt-text="Значок лампочки в Visual Studio Code":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/light-bulb.png" alt-text="Установка компонентов Hero":::
 
 6. Щелкните значок лампочки и выберите команду **Import Hero from "/app/hero"** (Импортировать компонент Hero из папки /app/hero). или **Import Hero from "./hero".** (Импортировать компонент Hero из ./hero.). Сообщение зависит от настроек.
 
@@ -490,7 +490,7 @@ ms.locfileid: "87424245"
 
 3. Теперь откройте браузер и перейдите по адресу **localhost:3000**. Как видите, приложение выполняется локально.
 
-     :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/azure-cosmos-db-mongodb-mean-app.png" alt-text="Приложение Hero, которое выполняется в локальной среде":::
+     :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part3/azure-cosmos-db-mongodb-mean-app.png" alt-text="Установка компонентов Hero":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
