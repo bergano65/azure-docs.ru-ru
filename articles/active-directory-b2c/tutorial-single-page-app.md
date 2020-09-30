@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.author: mimart
 ms.date: 04/04/2020
-ms.custom: mvc, seo-javascript-september2019, devx-track-javascript
+ms.custom: mvc, seo-javascript-september2019, devx-track-js
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: c8aca82567de0b564aadc355b198502450dd7a5c
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 42c2ca777a999a4d4387646110ed88af84631183
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87169809"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258920"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-with-azure-ad-b2c"></a>Руководство по Включение аутентификации в одностраничном приложении с помощью Azure AD B2C
 
@@ -150,13 +150,13 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов.
 
-    :::image type="content" source="media/tutorial-single-page-app/user-flow-sign-up-workflow-01.png" alt-text="Страница регистрации, отображаемая потоком пользователя Azure AD B2C":::
+    :::image type="content" source="media/tutorial-single-page-app/user-flow-sign-up-workflow-01.png" alt-text="Веб-браузер с отображением выполняющегося локально одностраничного приложения":::
 
 1. Щелкните **Создать**, чтобы создать локальную учетную запись в каталоге Azure AD B2C.
 
 При нажатии кнопки **Создать** приложение покажет имя выполнившего вход пользователя.
 
-:::image type="content" source="media/tutorial-single-page-app/web-app-spa-02-logged-in.png" alt-text="Веб-браузер с отображением одностраничного приложения с выполнившим вход пользователем":::
+:::image type="content" source="media/tutorial-single-page-app/web-app-spa-02-logged-in.png" alt-text="Веб-браузер с отображением выполняющегося локально одностраничного приложения":::
 
 Если вы хотите протестировать возможность входа, щелкните **Выйти** и **Войти** и войдите с адресом электронной почты и паролем, которые вы указали при регистрации.
 

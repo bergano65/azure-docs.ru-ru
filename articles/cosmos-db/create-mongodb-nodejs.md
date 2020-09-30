@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/21/2019
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 1603e2c0d76415b612e81f88990805b0bb1de732
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 5af929991e96d1307c32d219a9807c6e6a58387c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423683"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253383"
 ---
 # <a name="quickstart-migrate-an-existing-mongodb-nodejs-web-app-to-azure-cosmos-db"></a>Краткое руководство. Перенос имеющегося веб-приложения MongoDB на Node.js в Azure Cosmos DB 
 
@@ -212,7 +212,7 @@ npm start
 
 В поле поиска в верхней области введите **Azure Cosmos DB**. Когда откроется колонка учетной записи Cosmos, выберите свою учетную запись Cosmos. В левой области навигации щелкните **Обозреватель данных**. Разверните свою коллекцию на панели коллекций. Вы сможете увидеть документы в коллекции, запросить данные и даже создать и запустить хранимые процедуры, триггеры и определенные пользователем функции. 
 
-:::image type="content" source="./media/create-mongodb-nodejs/cosmosdb-connect-mongodb-data-explorer.png" alt-text="Обозреватель данных на портале Azure":::
+:::image type="content" source="./media/create-mongodb-nodejs/cosmosdb-connect-mongodb-data-explorer.png" alt-text="MEAN.js успешно подключается к базе данных MongoDB":::
 
 
 ## <a name="deploy-the-nodejs-application-to-azure"></a>Развертывание приложения Node.js в Azure

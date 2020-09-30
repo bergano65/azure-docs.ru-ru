@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/18/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 1fa481911be8eb91db498350e57e2ba42e4aedb5
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-js
+ms.openlocfilehash: 19039f8b87145d6bbb1a6b3636ea0892b06ccfe8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421014"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253434"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-nodejs-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Node.js и Azure Cosmos DB
 
@@ -173,7 +173,7 @@ ms.locfileid: "87421014"
 
 1. Нажмите кнопку :::image type="icon" source="./media/create-cassandra-nodejs/copy.png"::: в правой части экрана, чтобы скопировать верхнее значение "Contact point" (Контакт).
 
-    :::image type="content" source="./media/create-cassandra-nodejs/keys.png" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), "Пользователь" и "Пароль" на странице строки подключения на портале Azure":::
+    :::image type="content" source="./media/create-cassandra-nodejs/keys.png" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), &quot;Пользователь&quot; и &quot;Пароль&quot; на странице строки подключения на портале Azure":::
 
 1. Откройте файл `config.js` . 
 
@@ -212,14 +212,9 @@ ms.locfileid: "87421014"
 > 
 > Дважды щелкните CRT-файл, чтобы открыть его в средстве отображения сертификатов. 
 >
-> :::image type="content" source="./media/create-cassandra-nodejs/crtcer1.gif" alt-text="Просмотр и проверка выходных данных":::
+> :::image type="content" source="./media/create-cassandra-nodejs/crtcer1.gif" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), &quot;Пользователь&quot; и &quot;Пароль&quot; на странице строки подключения на портале Azure" и нажмите кнопку "Далее".
 >
-> Нажмите кнопку "Далее" в мастере сертификатов. Выберите элемент "Файлы X.509 (.CER) в кодировке Base-64" и нажмите кнопку "Далее".
->
-> :::image type="content" source="./media/create-cassandra-nodejs/crtcer2.gif" alt-text="Просмотр и проверка выходных данных":::
->
-> Нажмите кнопку "Обзор" (чтобы определить назначение) и введите имя файла.
-> Последовательно нажмите кнопки "Далее" и "Готово".
+> :::image type="content" source="./media/create-cassandra-nodejs/crtcer2.gif" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), &quot;Пользователь&quot; и &quot;Пароль&quot; на странице строки подключения на портале Azure" и "Готово".
 >
 > Теперь у вас должен быть правильно отформатированный CER-файл. Убедитесь, что путь в `uprofile.js` указывает на этот файл.
 
@@ -237,13 +232,13 @@ ms.locfileid: "87421014"
 
 4. Проверьте результаты из командной строки.
 
-    :::image type="content" source="./media/create-cassandra-nodejs/output.png" alt-text="Просмотр и проверка выходных данных":::
+    :::image type="content" source="./media/create-cassandra-nodejs/output.png" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), &quot;Пользователь&quot; и &quot;Пароль&quot; на странице строки подключения на портале Azure":::
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
 5. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
-    :::image type="content" source="./media/create-cassandra-nodejs/data-explorer.png" alt-text="Просмотр данных в обозревателе данных"::: 
+    :::image type="content" source="./media/create-cassandra-nodejs/data-explorer.png" alt-text="Просмотр и копирование значений параметров Contact point (Контакт), &quot;Пользователь&quot; и &quot;Пароль&quot; на странице строки подключения на портале Azure"::: 
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 
