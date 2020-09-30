@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.openlocfilehash: f15686cf07bae4aee41095c970cd8a474724c2ed
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 6825627b77e3ea227cad88e347dbbabd5e6f5d0c
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230982"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540342"
 ---
 # <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Визуализация данных из службы "аналитика временных рядов Azure" в Power BI
 
@@ -29,7 +29,7 @@ ms.locfileid: "89230982"
 
 Обязательно подпишитесь на [бесплатную подписку Azure](https://azure.microsoft.com/free/) , если у вас ее еще нет.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Скачайте и установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
 * Или создайте [среду Gen2 "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) ".
@@ -69,7 +69,7 @@ ms.locfileid: "89230982"
        > [!NOTE]
        > Существует ограничение числа событий 250 000 для необработанных данных на уровне событий.
 
-       [![Подключить](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
+       [![Соединиться](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
 
    1. Если вы не настроили среду "аналитика временных рядов Azure" с помощью " **горячего" хранилища**, вы получите предупреждение.
 
@@ -110,13 +110,13 @@ ms.locfileid: "89230982"
 
 1. Убедитесь, что в левой части окна выбрано представление **отчета** .
 
-    [![Выбор представления отчетов](media/how-to-connect-power-bi/select-the-report-view.png)](media/how-to-connect-power-bi/select-the-report-view.png#lightbox)
+    [![На снимке экрана показан значок представления отчетов.](media/how-to-connect-power-bi/select-the-report-view.png)](media/how-to-connect-power-bi/select-the-report-view.png#lightbox)
 
 1. В столбце **визуализации** выберите нужный визуальный элемент. Например, выберите **график**. В холст будет добавлена пустая графика.
 
 1. В списке **поля** выберите **_Timestamp** и перетащите его в поле **ось** , чтобы отобразить элементы вдоль оси X. Не забудьте переключиться на **_Timestamp** в качестве значения для **оси** (по умолчанию — **иерархия дат**).
 
-    [![Выбор представления отчетов](media/how-to-connect-power-bi/select-timestamp.png)](media/how-to-connect-power-bi/select-timestamp.png#lightbox)
+    [![На снимке экрана показано меню меток времени с выбранным _Timestamp.](media/how-to-connect-power-bi/select-timestamp.png)](media/how-to-connect-power-bi/select-timestamp.png#lightbox)
 
 1. Опять же, в списке **поля** выберите **тимесериесид** и перетащите его в поле **значения** , чтобы отобразить элементы вдоль оси Y.
 
@@ -144,7 +144,7 @@ ms.locfileid: "89230982"
 
 Теперь интерфейс будет отражать примененные необходимые изменения.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * Узнайте о [концепциях соединителей Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для Azure Time Series Insights.
 

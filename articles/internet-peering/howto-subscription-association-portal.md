@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: how-to
 ms.date: 5/18/2020
 ms.author: derekol
-ms.openlocfilehash: 57c38d3b6eeb26a38a36fb67da25bcf960cee2dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 22cb179925f95fd0762371cc904fcbd02675339a
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710853"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540274"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-the-portal"></a>Связывание однорангового узла ASN с подпиской Azure с помощью портала
 
@@ -70,12 +70,12 @@ ms.locfileid: "84710853"
 1. Затем щелкните **Проверить + создать** и убедитесь, что на портале выполняется базовая проверка введенной информации. Вверху на ленте будет указано *Идет окончательная проверка...* .
 
     > [!div class="mx-imgBorder"]
-    > Вкладка ![Проверка PeerAsn](./media/peerasn-review-tab-validation.png)
+    > ![Снимок экрана: связывание одноранговой вкладки "основы".](./media/peerasn-review-tab-validation.png)
 
 1. После того как сообщение на ленте изменится на *Проверка пройдена*, проверьте свои данные и отправьте запрос, нажав кнопку **Создать**. Если проверка не пройдена, щелкните **Назад** и повторите описанные выше действия, чтобы изменить запрос и убедиться, что введенные значения не содержат ошибок.
 
     > [!div class="mx-imgBorder"]
-    > Вкладка ![Проверка PeerAsn](./media/peerasn-review-tab.png)
+    > ![Снимок экрана: связывание одноранговой вкладки "основы" с пройденной проверкой.](./media/peerasn-review-tab.png)
 
 1. После отправки запроса дождитесь, пока он завершит развертывание. Если при развертывании произойдет сбой, обратитесь в [Пиринг Майкрософт](mailto:peering@microsoft.com). Успешное развертывание будет выглядеть, как показано ниже.
 

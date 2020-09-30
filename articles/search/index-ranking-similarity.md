@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/13/2020
-ms.openlocfilehash: ee788125a5710e5a8b9861c28c4af8e6d83d5d80
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 651e0635f0b556cd47adfccdbac59ef587570128
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88924543"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535735"
 ---
 # <a name="ranking-algorithm-in-azure-cognitive-search"></a>Алгоритм ранжирования в Azure Когнитивный поиск
 
@@ -61,7 +61,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 
 Свойство **подобия** полезно в этом временном периоде, когда оба алгоритма доступны, только в существующих службах. 
 
-| Свойство | Description |
+| Свойство | Описание |
 |----------|-------------|
 | подобие | Необязательный элемент. Допустимые значения: *"#Microsoft. Azure. Search. классиксимиларити"* или *"#Microsoft. Azure. Search. BM25Similarity"*. <br/> Требуется `api-version=2019-05-06-Preview` или более поздняя версия службы поиска, созданной до 15 июля 2020. |
 
@@ -103,9 +103,9 @@ BM25 подобие добавляет два настраиваемых пол�
 PUT https://[search service name].search.windows.net/indexes/[index name]?api-version=[api-version]&allowIndexDowntime=true
 ```
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
-+ [Справочник по REST API](/rest/api/searchservice/)   
-+ [Добавление профилей оценки в индекс](index-add-scoring-profiles.md)    
-+ [Создание API индекса](/rest/api/searchservice/create-index)   
-+ [Библиотеки службы "Поиск Azure" для .NET](/dotnet/api/overview/azure/search?view=azure-dotnet)
++ [Справочник по REST API](/rest/api/searchservice/)
++ [Добавление профилей оценки в индекс](index-add-scoring-profiles.md)
++ [Создание API индекса](/rest/api/searchservice/create-index)
++ [Библиотеки службы "Поиск Azure" для .NET](/dotnet/api/overview/azure/search)

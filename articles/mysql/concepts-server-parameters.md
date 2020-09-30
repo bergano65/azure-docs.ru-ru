@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/25/2020
-ms.openlocfilehash: e7ca86d0146f05d5171d5eae18aac81d75122bcc
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.openlocfilehash: bf87a61633706cb5db384e8a8ab957fa6a3f37f1
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88258543"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91533729"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Параметры сервера в базе данных Azure для MySQL
 
@@ -214,7 +214,7 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 Этот параметр можно задать на уровне сеанса с помощью `init_connect` . Чтобы задать **innodb_strict_mode** на уровне сеанса, см. [параметр](https://docs.microsoft.com/azure/mysql/howto-server-parameters#setting-parameters-not-listed)параметра, которого нет в списке.
 
 > [!NOTE]
-> Если у вас есть сервер реплики чтения, установка **INNODB_STRICT_MODE** Off на уровне сеанса на главном сервере приведет к прерыванию репликации. Мы рекомендуем оставить параметру значение OFF, если у вас есть реплики Read.
+> При наличии сервера реплики чтения установка **INNODB_STRICT_MODE** Off на уровне сеанса на исходном сервере приведет к нарушению репликации. Мы рекомендуем оставить параметру значение OFF, если у вас есть реплики Read.
 
 ### <a name="sort_buffer_size"></a>sort_buffer_size
 
@@ -274,7 +274,7 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 
 Другие переменные, не указанные здесь, устанавливаются в значения по умолчанию для стандартных значений MySQL. Значения по умолчанию см. в документации по MySQL для версий [8,0](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html), [5,7](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html)и [5,6](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [настроить параметры сервера с помощью портал Azure](./howto-server-parameters.md)
 - Узнайте, как [настроить параметры сервера с помощью Azure CLI](./howto-configure-server-parameters-using-cli.md)

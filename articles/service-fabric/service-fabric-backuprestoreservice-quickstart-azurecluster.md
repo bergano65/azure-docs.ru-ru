@@ -1,16 +1,14 @@
 ---
 title: Периодическое резервное копирование и восстановление в Azure Service Fabric
 description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
-author: hrushib
 ms.topic: conceptual
 ms.date: 5/24/2019
-ms.author: hrushib
-ms.openlocfilehash: 9a99a936b3e6cf53c30c0264b70046008dab283c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 18d10b365cb2e4f4b4e3592233d5f467714bd5b5
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261259"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91538676"
 ---
 # <a name="periodic-backup-and-restore-in-an-azure-service-fabric-cluster"></a>Периодическое резервное копирование и восстановление в кластере Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -45,7 +43,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 * Service Fabric кластер с структурой версии 6,4 или более поздней. Инструкции по созданию кластера Service Fabric с помощью шаблона ресурсов Azure см. в [этой статье](service-fabric-cluster-creation-via-arm.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Сведения о получении или создании сертификата X.509 см. в статье [Создание кластера Service Fabric в Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md).
 * Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Для приложений, предназначенных для .NET Core 2,0, приложение должно быть создано с помощью Service Fabric пакета SDK версии 3,1 или более поздней.

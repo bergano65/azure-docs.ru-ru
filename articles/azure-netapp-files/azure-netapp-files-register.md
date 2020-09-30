@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 06/09/2020
 ms.author: b-juche
-ms.openlocfilehash: b8707b6fb006a45d63f1b2b426530a7e25f5b497
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: e2838b759a611cb55b9fd3fadf834c84eb74210d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512930"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91533644"
 ---
 # <a name="register-for-azure-netapp-files"></a>Регистрация в службе Azure NetApp Files
 
@@ -50,13 +50,13 @@ ms.locfileid: "87512930"
 
       ![значок Azure Cloud Shell](../media/azure-netapp-files/azure-netapp-files-azure-cloud-shell.png)
 
-2. Если у вас несколько подписок в учетной записи Azure, выберите ту, которая была добавлена в список разрешений для Azure NetApp Files:
+2. Если у вас есть несколько подписок на учетную запись Azure, выберите ту, которая была утверждена для Azure NetApp Files:
     
     ```azurepowershell
     az account set --subscription <subscriptionId>
     ```
 
-3. В консоли Azure Cloud Shell введите следующую команду, чтобы проверить добавление подписки в список разрешений:
+3. В консоли Azure Cloud Shell введите следующую команду, чтобы убедиться, что подписка утверждена:
     
     ```azurepowershell
     az feature list | grep NetApp

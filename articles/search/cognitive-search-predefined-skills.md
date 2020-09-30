@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 59d181d8f4c176a8fc00ac0fb8ab0216c6ae27f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 417cc13c4a201a0dd86a846c347cb395b8d81c43
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080034"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535531"
 ---
 # <a name="built-in-cognitive-skills-for-text-and-image-processing-during-indexing-azure-cognitive-search"></a>Встроенные профессиональные навыки для обработки текста и изображений во время индексирования (Когнитивный поиск Azure)
 
@@ -31,14 +31,14 @@ ms.locfileid: "85080034"
 
 Некоторые навыки позволяют гибко регулировать свои входные и выходные данные. Как правило, большинство навыков основано на предварительно обученных моделях, поэтому вы не можете обучить модель, используя собственные обучающие данные. Приведенная ниже таблица перечисляет и описывает навыки, предоставляемые корпорацией Майкрософт. 
 
-| Навык | Описание: |
+| Навык | Описание |
 |-------|-------------|
 |[Microsoft. Skills. Text. Кустоментитилукупскилл](cognitive-search-skill-custom-entity-lookup.md)| Ищет текст из пользовательского списка слов и фраз, определяемого пользователем.|
 | [Microsoft.Skills.Text.KeyPhraseSkill](cognitive-search-skill-keyphrases.md) | Этот навык использует предварительно обученную модель для выявления важных фраз в зависимости от расположения терминов, лингвистических правил, близости к другим терминам и того, насколько необычным является термин в исходных данных. |
 | [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)  | Этот навык использует предварительно обученную модель, чтобы определить используемый язык (один идентификатор языка на документ). Если в одних сегментах текста используется несколько языков, выводится код основного используемого языка.|
 | [Microsoft.Skills.Text.MergeSkill](cognitive-search-skill-textmerger.md) | Объединяет текст из коллекции полей в одном поле.  |
 | [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md) | Этот навык использует предварительно обученную модель, чтобы установить сущности для фиксированного набора категорий: пользователей, расположений, организаций, электронных адресов, URL-адресов, полей даты и времени. |
-| [Microsoft.Skills.Text.PIIDetectionSkill](cognitive-search-skill-pii-detection.md)  | Этот навык использует предварительно обученную модель для извлечения личных сведений из заданного текста. Навык также предоставляет различные варианты маскирования обнаруженных личных сущностей в тексте.  |
+| [Microsoft.Skills.Text.PIIDetectionSkill](cognitive-search-skill-pii-detection.md)  | Этот навык использует предварительно обученную модель для извлечения персональных данных из заданного текста. Навык также предоставляет различные варианты маскирования обнаруженных сущностей личных сведений в тексте.  |
 | [Microsoft.Skills.Text.SentimentSkill](cognitive-search-skill-sentiment.md)  | Этот навык использует предварительно обученную модель, чтобы оценить положительную или отрицательную тональность отдельных записей. Оценка находится в пределах от 0 до 1. Нейтральные оценки применяются в неопределенных случаях, когда установить тональность не удается, а также для текста, считающегося нейтральным.  |
 | [Microsoft.Skills.Text.SplitSkill](cognitive-search-skill-textsplit.md) | Разбивает текст на страницы, чтобы можно было постепенно обогатить или дополнить содержимое. |
 | [Microsoft.Skills.Text.TranslationSkill](cognitive-search-skill-text-translation.md) | Этот навык использует предварительно обученную модель для перевода входного текста на различные языки для нормализации или использования при локализации. |
@@ -53,7 +53,7 @@ ms.locfileid: "85080034"
 
 Рекомендации по созданию [пользовательского навыка](cognitive-search-custom-skill-web-api.md)см. в разделе [Определение пользовательского интерфейса](cognitive-search-custom-skill-interface.md) и пример. [Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Определение интерфейса пользовательских навыков](cognitive-search-custom-skill-interface.md)

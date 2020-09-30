@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b297ee3d03d61b654e2b7fffa17141a1fd5268f3
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 93c97055c6e31050dbc545445ec144ba37abc865
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90971170"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539900"
 ---
 # <a name="assign-a-role-to-a-group-using-privileged-identity-management"></a>Назначение роли группе с помощью управление привилегированными пользователями
 
@@ -35,7 +35,7 @@ ms.locfileid: "90971170"
 
 1. Выберите роль, а затем выберите группу. Отображаются только группы, доступные для назначения ролей (группы, назначаемые ролью), а не все группы.
 
-    ![Выбор участника, которому назначается роль](./media/roles-groups-pim-eligible/select-member.png)
+    ![Снимок экрана, на котором показана страница "Добавление назначения" с выделенными разделами "Выбор роли" и "Выбор элементов".](./media/roles-groups-pim-eligible/select-member.png)
 
 1. Выберите нужный параметр членства. Для ролей, для которых необходимо активировать, выберите **право**. По умолчанию пользователь будет иметь постоянное право, но можно также задать время начала и окончания для права пользователя. По завершении нажмите кнопку Сохранить и добавить, чтобы завершить назначение роли.
 

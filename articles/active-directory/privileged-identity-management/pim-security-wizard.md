@@ -14,12 +14,12 @@ ms.date: 09/01/2020
 ms.author: curtand
 ms.custom: pim ; H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b826c6a1fd5a60247f8c69cb10cd24e7e001fe71
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: ff5d15ef66b597fdf56fefe90f35cbf122bb093f
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91335890"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91534443"
 ---
 # <a name="discovery-and-insights-preview-for-azure-ad-roles-formerly-security-wizard"></a>Обнаружение и аналитика (Предварительная версия) для ролей Azure AD (прежнее название — Мастер безопасности)
 
@@ -45,7 +45,7 @@ ms.locfileid: "91335890"
 
 1. Выберите **сократить число глобальных администраторов**.
 
-    ![Уменьшение глобальных администраторов — область ролей, показывающая все элементы](./media/pim-security-wizard/new-preview-page.png)
+    ![Снимок экрана, показывающий "обнаружение и аналитика (Предварительная версия)" с выбранным действием "сокращение числа глобальных администраторов".](./media/pim-security-wizard/new-preview-page.png)
 
 1. Проверьте список назначений ролей глобального администратора.
 

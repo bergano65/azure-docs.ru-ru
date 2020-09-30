@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
 ms.custom: references_regions
-ms.openlocfilehash: fd5c4043d417a99c7ffa57534fd7808f1710190a
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: c4908373035b1a3148cd77db513f4e6bd23a50d7
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/29/2020
-ms.locfileid: "91448582"
+ms.locfileid: "91540733"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -27,9 +27,9 @@ ms.locfileid: "91448582"
 ## <a name="design-the-logic-app"></a>Проектирование приложения логики
 
 > [!IMPORTANT]
-> В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть список разрешений в брандмауэре Azure Analysis Services. Дополнительные сведения о Azure Logic Apps диапазонах IP-адресов для региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#configuration).
+> В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть добавлен в список утверждений в брандмауэре Azure Analysis Services. Дополнительные сведения о Azure Logic Apps диапазонах IP-адресов для региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#configuration).
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 #### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -76,7 +76,7 @@ ms.locfileid: "91448582"
 |**Тип учетных данных**     |Секрет         |
 |**Секрет**     |Введите секретное имя субъекта-службы         |
 
-Пример:
+Пример
 
 ![Завершенное действие HTTP](./media/analysis-services-async-refresh-logic-app/7.png)
 

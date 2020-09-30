@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: article
 ms.date: 04/23/2020
 ms.author: cshoe
-ms.openlocfilehash: 37f79d717b7ea0e26717e7b51f9e66b908b96521
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 79aebf7ed80fea370ff7a5d5cc40911da4144414
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88640975"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537707"
 ---
 # <a name="manually-run-a-non-http-triggered-function"></a>Запуск функции, не активируемой HTTP-запросом, вручную
 
@@ -43,11 +43,11 @@ ms.locfileid: "88640975"
 
 1. В разделе **изменение ключа** скопируйте значение ключа в буфер обмена и нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-copy.png" alt-text="Скопируйте главный ключ в буфер обмена." border="true":::
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-copy.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
 1. После копирования ключа *_Master* выберите **код + тест**, а затем выберите **журналы**. Вы увидите сообщения из функции, которые записывались сюда, когда вы вручную запускали функцию из Postman.
 
-    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-function-log.png" alt-text="Просмотрите журналы, чтобы просмотреть результаты тестирования главного ключа." border="true":::
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-function-log.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
 > [!CAUTION]  
 > Главный ключ предоставляет высокий уровень разрешений в приложении-функции, поэтому никогда не передавайте этот ключ третьим лицам и не включайте его в состав приложения. Ключ должен быть отправлен только в конечную точку HTTPS.
@@ -62,22 +62,22 @@ ms.locfileid: "88640975"
 1. Введите **x-functions-Key** в качестве первого ключа и вставьте в качестве значения главный ключ (из буфера обмена).
 1. Введите **Content-Type** в качестве второго ключа и введите в качестве значения **Application/JSON** .
 
-    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-headers.png" alt-text="Параметры после заголовков." border="true":::
+    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-headers.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
 1. Откройте вкладку **Тело**.
 1. Введите **{"input": "Test"}** в качестве текста для запроса.
 
-    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-body.png" alt-text="Параметры тела сообщения." border="true":::
+    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-body.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
 1. Нажмите кнопку **Отправить**.
         
-    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-send.png" alt-text="Отправить запрос с помощью POST." border="true":::
+    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-send.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
     Postman затем сообщает о состоянии **202 — принято**.
 
 1. Далее перейдите к своей функции на портале Azure. Просмотрите журналы, и вы увидите сообщения, поступающие из ручного вызова функции.
 
-    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-logs.png" alt-text="Просмотрите журналы, чтобы просмотреть результаты тестирования главного ключа." border="true":::
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-logs.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

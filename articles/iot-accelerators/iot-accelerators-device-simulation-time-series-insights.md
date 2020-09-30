@@ -8,12 +8,12 @@ ms.date: 08/20/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 2bbd7911a40d6a256d478e2533ad2469b8fd6973
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88255e60593403951db5b984bb9c69b1060a93c2
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73889343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540580"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств
 
@@ -72,7 +72,7 @@ ms.locfileid: "73889343"
     | Sku |**S1** |
     | Capacity | **1** |
 
-    ![Создание службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/new-time-series-insights-create.png)
+    ![Создание среды Аналитики временных рядов](./media/iot-accelerators-device-simulation-time-series-insights/new-time-series-insights-create.png)
 
     > [!NOTE]
     > Добавление среды "Аналитика временных рядов Azure" в ту же группу ресурсов, что и акселератор решений, означает, что она будет удалена при удалении акселератора решений.
@@ -137,7 +137,7 @@ ms.locfileid: "73889343"
 
 1. На панели условий в левой части экрана выберите **температуру** в качестве **меры** и **iothub-connection-device-id** в качестве значения **Разделение по**:
 
-    ![Запрос в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-query1.png)
+    ![Снимок экрана, на котором показана панель "условия" аналитики временных рядов "с выделенными значениями" мера "и" разбиение по ".](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-query1.png)
 
 1. Щелкните правой кнопкой мыши диаграмму и выберите пункт **Просмотр событий**.
 
@@ -171,6 +171,6 @@ ms.locfileid: "73889343"
 
 Если вы добавили среду "Аналитика временных рядов" в группу ресурсов ускорителя решения, она автоматически удаляется при удалении ускорителя решения. В противном случае необходимо вручную удалить среду "Аналитика временных рядов" с портала Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения о том, как изучать и запрашивать данные в обозревателе службы "Аналитика временных рядов", см. в [этой статье](../time-series-insights/time-series-insights-explorer.md).

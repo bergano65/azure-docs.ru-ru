@@ -3,20 +3,18 @@ title: Экспорт & удаление данных — LUIS
 titleSuffix: Azure Cognitive Services
 description: Вы имеете полный контроль над просмотром, экспортом и удалением данных. Удаление данных клиента для обеспечения конфиденциальности и соответствия требованиям.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/02/2019
-ms.author: diberry
-ms.openlocfilehash: 4e3e0d04b0086905b80e26fb4f838c36b5b5545e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 868443e52b7159e6ee9478f64b7b2f376a10f604
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78273361"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541012"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 
@@ -66,7 +64,7 @@ ms.locfileid: "78273361"
 
 * Европа
 * Франция
-* United Kingdom
+* Соединенное Королевство
 
 При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в Европе Azure для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance).
 
@@ -87,7 +85,7 @@ ms.locfileid: "78273361"
 При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в США географии Azure для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по регионам LUIS](./luis-reference-regions.md)

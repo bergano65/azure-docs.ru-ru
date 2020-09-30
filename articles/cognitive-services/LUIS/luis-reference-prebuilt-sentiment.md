@@ -3,22 +3,20 @@ title: Анализ тональности — LUIS
 titleSuffix: Azure Cognitive Services
 description: Если настроен анализ тональности, он входит в ответ JSON LUIS.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 07/01/2020
-ms.author: diberry
-ms.openlocfilehash: 2d15170e3785d8978b9cb21eae3b94b002f9172e
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 7c3c0f603b9e7d83e40f43ab00d31f4ca63f2b4f
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85857180"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535378"
 ---
-# <a name="sentiment-analysis"></a>Анализ мнений
+# <a name="sentiment-analysis"></a>Анализ тональности
 Если настроен анализ тональности, он входит в ответ JSON LUIS. Дополнительные сведения об анализе тональности см. в документации по [анализу текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/).
 
 LUIS использует Анализ текста v2. 
@@ -49,7 +47,7 @@ LUIS использует Анализ текста v2.
 ```
 * * *
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

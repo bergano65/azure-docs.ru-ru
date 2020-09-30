@@ -3,20 +3,18 @@ title: Поддержка языков — LUIS
 titleSuffix: Azure Cognitive Services
 description: Служба LUIS имеет широкий набор функций. Не все компоненты имеют одинаковую языковую функциональную совместимость. Убедитесь, что функции, которые вас интересуют, поддерживаются для используемого языка и региональных параметров. Приложение LUIS учитывает конкретный язык и региональные параметры, которые нельзя изменять после установки.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 12/09/2019
-ms.author: diberry
-ms.openlocfilehash: b60a777960f3c6f8a2415ca551217d35b7f3497d
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: e377f910e1c1ddda864ea312b40fe3608c166376
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588028"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541396"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -30,7 +28,7 @@ ms.locfileid: "88588028"
 
 Служба LUIS распознает фрагменты речи на следующих языках:
 
-| Язык |Локаль  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Текстовая аналитика](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
+| Язык |Языковой стандарт  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Текстовая аналитика](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
 | Арабский (Предварительная версия — современные стандартные арабские) |`ar-AR`|-|-|-|-|
@@ -40,7 +38,7 @@ ms.locfileid: "88588028"
 | Французский (Канада) |`fr-CA` |-|-|-|✔|
 | Немецкий |`de-DE` |✔| ✔ |✔ |✔|
 | Гуджарати | `gu-IN`|-|-|-|-|
-| Hindi | `hi-IN`|-|✔|-|-|
+| Хинди | `hi-IN`|-|✔|-|-|
 | Итальянский |`it-IT` |✔| ✔ |✔|✔|
 | *[японский](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |✔|-|-|Только ключевая фраза|
@@ -94,7 +92,7 @@ ms.locfileid: "88588028"
 |Французский (fr-CA)|✔|||
 |Немецкий|✔||✔|
 |Гуджарати|✔|||
-|Hindi|✔|||
+|Хинди|✔|||
 |Итальянский|✔|||
 |Японский|||✔
 |Корейский||✔||
@@ -111,7 +109,7 @@ ms.locfileid: "88588028"
 
 Следующие языки и региональные параметры имеют пользовательские версии маркеров:
 
-|Культура|Версия|Назначение|
+|culture|Версия|Цель|
 |--|--|--|
 |Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь введет в `Ich fahre einen krankenwagen` качестве utterance, он будет включен `Ich fahre einen kranken wagen` . Разрешение пометки и независимо от того, `kranken` `wagen` как разные сущности.|
 |Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` в качестве utterance, он остается единственным маркером. Таким образом `krankenwagen` , помечается как единая сущность. |

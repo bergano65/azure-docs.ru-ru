@@ -1,17 +1,15 @@
 ---
 title: Создание первой надежной службы на Java
 description: Общие сведения о создании Microsoft Azure Service Fabric приложения с помощью служб без отслеживания состояния и с отслеживанием состояния в Java.
-author: suhuruli
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.custom: devx-track-java
-ms.author: suhuruli
-ms.openlocfilehash: f74265c7b774e4b471c8621e99377a009f939ee1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.custom: devx-track-javai
+ms.openlocfilehash: f67957d711958febdb01dfad0b3c44a92cb0bcfa
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250102"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535242"
 ---
 # <a name="get-started-with-reliable-services-in-java"></a>Приступая к работе с Reliable Services в Java
 > [!div class="op_single_selector"]

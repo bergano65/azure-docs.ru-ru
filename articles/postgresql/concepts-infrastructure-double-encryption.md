@@ -6,17 +6,14 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: d54bef277d80a178c45ce918290d46c11387b7d1
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 241c404eff1242c52520f94d5d955db7e260148c
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918100"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537911"
 ---
 # <a name="azure-database-for-postgresql-infrastructure-double-encryption"></a>Двойное шифрование базы данных Azure для инфраструктуры PostgreSQL
-
-> [!NOTE]
-> В настоящее время для использования этой возможности требуется запросить соответствующие права доступа. Для этого обратитесь к AskAzureDBforPostgreSQL@service.microsoft.com .
 
 База данных Azure для PostgreSQL использует [Шифрование хранилища неактивных данных](concepts-security.md#at-rest) для данных с помощью управляемых ключей Майкрософт. Данные, включая резервные копии, шифруются на диске, и это шифрование всегда включено и не может быть отключено. Шифрование использует проверенный криптографический модуль FIPS 140-2 и шифр AES 256-bit для шифрования службы хранилища Azure.
 

@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 937c5dbf3417e5914a0b4285c3bb114d7499e0fb
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: c7cc4065297c35164f1e37b187c6280b3d3546ee
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799066"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91538846"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory
 
@@ -112,7 +112,7 @@ ms.locfileid: "88799066"
 
 3. Последовательно выберите пункты [**Azure Active Directory > Лицензий > Все продукты**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) и выберите *Office 365 Корпоративный E5*, а затем **Лицензированные группы** для просмотра списка всех групп, которым назначен этот продукт.
 
-4. Щелкните группу, чтобы просмотреть ее (в этом случае *O365 E5 - Exchange only*). Откроется вкладка **Licenses (лицензии** ). Если щелкнуть лицензию "клавиша", откроется колонка со списком всех включенных служб.
+4. Щелкните группу, чтобы просмотреть ее (в этом случае *O365 E5 - Exchange only*). Откроется вкладка **лицензии** . При щелчке лицензии "вверх" откроется колонка со списком всех включенных служб.
    > [!NOTE]
    > Служба *Microsoft Stream* автоматически добавлена и включена в этой группе, помимо службы *Exchange Online*:
 
@@ -157,7 +157,7 @@ ms.locfileid: "88799066"
 
 Ниже приведен пример недавних изменений в лицензии для группы с подробными сведениями:
 
-![Снимок экрана изменений в лицензии для группы](./media/licensing-group-advanced/audit-group-license-change.png)
+![Снимок экрана, на котором показана страница "журналы аудита" с выбранным элементом списка и открытой область "журнал аудита сведений о действиях".](./media/licensing-group-advanced/audit-group-license-change.png)
 
 ### <a name="find-out-when-group-changes-started-and-finished-processing"></a>Определение того, когда началась и завершилась обработка изменений
 

@@ -3,20 +3,18 @@ title: Персоннаме предварительно созданная су
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана предварительно созданная сущность PersonName в службе "Распознавание речи" (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 05/07/2019
-ms.author: diberry
-ms.openlocfilehash: 768c719211e8a8f2133d3798343d076e795a3da0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7b0153d79aaf7b88fea958ab36183e57b41af204
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78273433"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535429"
 ---
 # <a name="personname-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность PersonName для приложения LUIS
 Предварительно созданная сущность PersonName определяет имена людей. Так как эта сущность уже обучена, добавлять в намерения приложения примеры высказываний, содержащие сущности PersonName, не нужно. Сущность personName поддерживается для английского и китайского [языков и региональных параметров](luis-reference-prebuilt-entities.md).
@@ -31,7 +29,7 @@ ms.locfileid: "78273433"
 #### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 
-Следующий код JSON имеет `verbose` параметр со значением: `false`
+Следующий код JSON имеет параметр со `verbose` значением `false` :
 
 ```json
 "entities": {
@@ -41,7 +39,7 @@ ms.locfileid: "78273433"
 }
 ```
 #### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
-Следующий код JSON имеет `verbose` параметр со значением: `true`
+Следующий код JSON имеет параметр со `verbose` значением `true` :
 
 ```json
 "entities": {
@@ -81,7 +79,7 @@ ms.locfileid: "78273433"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

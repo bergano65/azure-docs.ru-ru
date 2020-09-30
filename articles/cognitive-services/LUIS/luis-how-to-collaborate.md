@@ -3,20 +3,18 @@ title: Совместная работа с другими пользовате�
 titleSuffix: Azure Cognitive Services
 description: Владелец приложения может добавлять участников в ресурс разработки. Эти участники могут изменять модель, обучать и публиковать приложение.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/19/2019
-ms.author: diberry
-ms.openlocfilehash: d1f534b801ec3a71e891bf654628f9e49fc04b0d
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 30b4256b37dc3329801a730192e25f7c24a45594
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86055636"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540917"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
@@ -94,7 +92,7 @@ ms.locfileid: "86055636"
 Узнайте больше о пользователях и согласии Azure Active Directory.
 * [Ограничить приложение](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) набором пользователей
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-how-to-azure-subscription.md#authoring-key) и [участников](luis-how-to-azure-subscription.md#contributions-from-other-authors) этого ресурса.
