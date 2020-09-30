@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/16/2016
 ms.author: hermannd
-ms.openlocfilehash: 3efd92226b7c69590f3960458ffec49b63b8364f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56f5072c90a699270a92af317976c8f56bd3e2cb
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77616701"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91536534"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
 В этой статье описывается, как развернуть SAP IDES с SQL Server и Windows в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. На снимках экрана наглядно показан пошаговый процесс. Для развертывания другого решения выполните те же действия.
@@ -54,11 +54,11 @@ ms.locfileid: "77616701"
 
     b. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
-    ![Учетные записи CAL SAP](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic-2a.PNG)
+    ![На снимке экрана показаны учетные записи P CAL с Microsoft Azure вызываемыми.](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic-2a.PNG)
 
     Чтобы выполнить развертывание с использованием модели Resource Manager, выберите **Microsoft Azure**.
 
-    ![Учетные записи CAL SAP](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic3c.PNG)
+    ![На снимке экрана показаны учетные записи P CAL.](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic3c.PNG)
 
 1. Введите **идентификатор подписки** Azure, который можно найти на портале Azure. 
 

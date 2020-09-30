@@ -3,16 +3,16 @@ title: Производительность диска и виртуальной
 description: Узнайте больше о том, как виртуальные машины и их подключенные диски работают в сочетании с производительностью.
 author: albecker1
 ms.author: albecker
-ms.date: 07/07/2020
+ms.date: 09/25/2020
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: b3ef2c2c3b130478a8b2d3b3c3ce44a7c65b87fe
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 18c07fceb65623c286b31398314e2b6f124955a6
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89664663"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540043"
 ---
 # <a name="virtual-machine-and-disk-performance"></a>Производительность диска и виртуальной машины
 [!INCLUDE [VM and Disk Performance](../../../includes/virtual-machine-disk-performance.md)]

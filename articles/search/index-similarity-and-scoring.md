@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/08/2020
-ms.openlocfilehash: d980764b7151183b61657434afa6c472e5058d18
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 5bd1a9111528146224561995feaecf54612a1c78
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662265"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535667"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Сходство и оценка в Когнитивном поиске Azure
 
@@ -107,6 +107,4 @@ GET https://[service name].search.windows.net/indexes/[index name]/docs?sessionI
 
 ## <a name="see-also"></a>См. также раздел
 
- [Добавление профилей повышения в индекс службы Когнитивного поиска Azure](index-add-scoring-profiles.md) [Служба "Когнитивный поиск Azure REST"](/rest/api/searchservice/)   
- [Поиск документов (REST API Когнитивного поиска Azure)](/rest/api/searchservice/search-documents)   
- [Библиотеки службы "Поиск Azure" для .NET](/dotnet/api/overview/azure/search?view=azure-dotnet)
+ [Профили оценки](index-add-scoring-profiles.md) [REST API ссылки на](/rest/api/searchservice/) [поисковые документы API](/rest/api/searchservice/search-documents) [Azure когнитивный Поиск .NET SDK](/dotnet/api/overview/azure/search)

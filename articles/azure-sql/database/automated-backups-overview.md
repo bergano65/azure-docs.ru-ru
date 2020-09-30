@@ -7,16 +7,16 @@ ms.service: sql-db-mi
 ms.subservice: backup-restore
 ms.custom: references_regions
 ms.topic: conceptual
-author: anosov1960
-ms.author: sashan
-ms.reviewer: mathoma, carlrab, danil
+author: shkale-msft
+ms.author: shkale
+ms.reviewer: mathoma, stevestein, danil
 ms.date: 09/25/2020
-ms.openlocfilehash: b28c175656b0951980f861198c93ccd794605839
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 93370050b503875d670283b720088b0871377c09
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/29/2020
-ms.locfileid: "91444318"
+ms.locfileid: "91535106"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -415,6 +415,9 @@ Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01
 
 Дополнительные сведения см. в описании [Set-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabase)
 
+> [!NOTE]
+> Чтобы использовать параметр-BackupStorageRedundancy с восстановлением базы данных, копированием базы данных или созданием вторичных операций, используйте Azure PowerShell версии AZ. SQL 2.11.0. 
+
 
 #### <a name="sql-managed-instance"></a>[Управляемый экземпляр SQL](#tab/managed-instance)
 
@@ -425,6 +428,8 @@ New-AzSqlInstance -Name managedInstance2 -ResourceGroupName ResourceGroup01 -Loc
 ```
 
 Дополнительные сведения см. в описании [New-азсклинстанце](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstance).
+
+---
 
 ## <a name="use-azure-policy-to-enforce-backup-storage-redundancy"></a>Использование политики Azure для обеспечения избыточности хранилища резервных копий
 
@@ -440,11 +445,13 @@ New-AzSqlInstance -Name managedInstance2 -ResourceGroupName ResourceGroup01 -Loc
 
 Полный список определений встроенных политик для базы данных SQL и Управляемый экземпляр можно найти [здесь](https://docs.microsoft.com/azure/azure-sql/database/policy-reference).
 
-Чтобы применить требования местонахождение данных на уровне Организации, эти политики можно назначить подписке. После того как они будут назначены на уровне подписки, пользователи в данной подписке не смогут создать базу данных или управляемый экземпляр с геоизбыточным хранилищем резервных копий с помощью портал Azure или Azure PowerShell. Обратите внимание, что политики Azure не применяются при создании базы данных с помощью T-SQL. 
+Чтобы применить требования местонахождение данных на уровне Организации, эти политики можно назначить подписке. После того как они будут назначены на уровне подписки, пользователи в данной подписке не смогут создать базу данных или управляемый экземпляр с геоизбыточным хранилищем резервных копий с помощью портал Azure или Azure PowerShell. 
+
+> [!IMPORTANT]
+> Политики Azure не применяются при создании базы данных с помощью T-SQL. Чтобы принудительно применить местонахождение данных при создании базы данных с помощью T-SQL, [используйте в качестве входного аргумента "Local" или "Zone" для BACKUP_STORAGE_REDUNDANCY в инструкции CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current#create-database-using-zone-redundancy-for-backups).
 
 Сведения о назначении политик с помощью [портал Azure](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal) или [Azure PowerShell](https://docs.microsoft.com/azure/governance/policy/assign-policy-powershell)
 
----
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

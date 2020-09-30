@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fea05ada52ba4281acb3451769446d7f0bad790d
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: e548e99cc60d67b477fd087b993764bf7f223592
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448720"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541192"
 ---
 # <a name="view-and-assign-administrator-roles-in-azure-active-directory"></a>Просмотр и назначение ролей администратора в Azure Active Directory
 
@@ -55,7 +55,7 @@ ms.locfileid: "87448720"
 
 При просмотре членов роли нажмите **Описание**, чтобы просмотреть полный список разрешений для этой роли. Страница содержит ссылки на соответствующую документацию со сведениями об управлении ролями в каталоге.
 
-![список разрешений для роли администратора](./media/directory-manage-roles-portal/role-description.png)
+![Снимок экрана, на котором отображается страница "Глобальный администратор — описание".](./media/directory-manage-roles-portal/role-description.png)
 
 ## <a name="download-role-assignments"></a>Скачать назначения ролей
 
@@ -71,7 +71,7 @@ ms.locfileid: "87448720"
 
 1. Выберите роль, чтобы просмотреть ее назначения.
 
-    ![список разрешений для роли администратора](./media/directory-manage-roles-portal/member-list.png)
+    ![Снимок экрана, на котором показана страница "Администраторы пользователей" с выбранным действием "Управление в PIM".](./media/directory-manage-roles-portal/member-list.png)
 
 1. Выберите **добавить назначения** и выберите роли, которые необходимо назначить. Нажмите **Управление в PIM**, чтобы открыть дополнительные возможности управления. Если вы видите что-то другое на следующем рисунке, прочитайте примечание в разделе [Просмотр назначений для привилегированных ролей](#view-assignments-for-privileged-roles) , чтобы проверить, находитесь ли вы в PIM.
 

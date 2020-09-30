@@ -1,17 +1,15 @@
 ---
 title: Отладка приложения в Eclipse
 description: Повысьте надежность и производительность служб, разрабатывая их в Eclipse и локальном кластере разработки.
-author: suhuruli
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-java
-ms.author: suhuruli
-ms.openlocfilehash: 32472c6caafe62d629ee3a5ffb8c758624228efd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d321e0c10b66a15e6cb309cefe711602fa12957c
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87316619"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91534116"
 ---
 # <a name="debug-your-java-service-fabric-application-using-eclipse"></a>Отладка приложения Java Service Fabric с помощью Eclipse
 > [!div class="op_single_selector"]
@@ -40,7 +38,7 @@ ms.locfileid: "87316619"
 
 При сбое приложения можно также включить функцию coredumps. Выполните `ulimit -c` в оболочке. Если возвращается 0, то функция coredumps не включена. Чтобы функция coredumps работала без ограничений, выполните следующую команду: `ulimit -c unlimited`. Состояние функции можно проверить с помощью команды `ulimit -a`.  Если требуется обновить путь создания coredump, выполните следующую команду: `echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern`. 
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 
 * [Сбор журналов с помощью системы диагностики Azure](./service-fabric-diagnostics-event-aggregation-lad.md).
 * [Локальное отслеживание и диагностика служб](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md).

@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: d9a4f7aa270aa4ed2b02e61da984e14379a241a9
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 106600b608586175cbab1098cf0eb7ac6fad94fa
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289938"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540308"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Диагностика и устранение неполадок среды Gen2 "аналитика временных рядов Azure"
 
@@ -81,11 +81,11 @@ ms.locfileid: "87289938"
 
 Чтобы обновить среду Gen2 "аналитика временных рядов" с помощью нового ключа, откройте ресурс-концентратор в портал Azure и скопируйте новый ключ. Перейдите к ресурсу TSI и щелкните источники событий. 
 
-   [![Обновление ключа.](media/preview-troubleshoot/update-hub-key-step-1.png)](media/preview-troubleshoot/update-hub-key-step-1.png#lightbox)
+   [![Снимок экрана с вызываемым пунктом меню «ресурс с источниками событий».](media/preview-troubleshoot/update-hub-key-step-1.png)](media/preview-troubleshoot/update-hub-key-step-1.png#lightbox)
 
 Выберите источники событий, которые были остановлены при приеме, вставьте новый ключ и нажмите кнопку Сохранить.
 
-   [![Обновление ключа.](media/preview-troubleshoot/update-hub-key-step-2.png)](media/preview-troubleshoot/update-hub-key-step-2.png#lightbox)
+   [![На снимке экрана показан ресурс T S I, в котором введен ключ политики концентратора I o T.](media/preview-troubleshoot/update-hub-key-step-2.png)](media/preview-troubleshoot/update-hub-key-step-2.png#lightbox)
 
 ## <a name="problem-my-event-sources-timestamp-property-name-doesnt-work"></a>Проблема. имя свойства метки времени источника событий не работает
 
@@ -129,7 +129,7 @@ ms.locfileid: "87289938"
 
 Эта проблема может возникать, если в Power BI Desktop не используется последняя версия соединителя Power BI.
 
-[![Экземпляры, не являющиеся родительскими, будут отображать предупреждение.](media/preview-troubleshoot/power-bi-unable-to-connect.png)](media/preview-troubleshoot/power-bi-unable-to-connect.png#lightbox)
+[![На снимке экрана показано диалоговое окно "не удалось подключиться".](media/preview-troubleshoot/power-bi-unable-to-connect.png)](media/preview-troubleshoot/power-bi-unable-to-connect.png#lightbox)
 
 * Проверьте версию Power BI Desktop и убедитесь, что вы используете версию 2020 июля. В противном случае обновите Power BI Desktop и запустите соединитель еще раз. 
 

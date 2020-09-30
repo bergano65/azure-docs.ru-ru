@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 51d6920d9ab52b907f2cb51e29d85f82dc74d45b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 842d43c82875a1a8e5e45ba14f47ceb6eac26727
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250238"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91538812"
 ---
 # <a name="example-add-synonyms-for-azure-cognitive-search-in-c"></a>Пример. Добавление синонимов для Когнитивный поиск Azure в C #
 
@@ -23,8 +23,8 @@ ms.locfileid: "91250238"
 В Когнитивный поиск Azure синонимы определяются в сопоставлении *синонимов*с помощью *правил сопоставления* , связывающих эквивалентные термины. В этом примере рассматриваются основные шаги по добавлению и использованию синонимов с существующим индексом. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создайте карту синонимов с помощью класса  [SynonymMap](/dotnet/api/microsoft.azure.search.models.synonymmap?view=azure-dotnet) . 
-> * Задайте свойство [SynonymMaps](/dotnet/api/microsoft.azure.search.models.field.synonymmaps?view=azure-dotnet) для полей, которые должны поддерживать расширение запросов через синонимы.
+> * Создайте карту синонимов с помощью класса  [SynonymMap](/dotnet/api/microsoft.azure.search.models.synonymmap) . 
+> * Задайте свойство [SynonymMaps](/dotnet/api/microsoft.azure.search.models.field.synonymmaps) для полей, которые должны поддерживать расширение запросов через синонимы.
 
 Вы можете запросить поле с поддержкой синонимов как обычно. Для доступа к синонимам не требуется дополнительный синтаксис запроса.
 
@@ -33,7 +33,7 @@ ms.locfileid: "91250238"
 > [!NOTE]
 > Синонимы можно создавать программно, но не на портале. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Ниже приведены предварительные требования, описанные в этом руководстве.
 

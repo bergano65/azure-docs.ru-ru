@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5c943de87cbf53d4971e5cbf58768221bf2cf248
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: f6953f145621e11506a009fa59d67a5f40508a13
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462264"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539577"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
@@ -39,7 +39,7 @@ ms.locfileid: "89462264"
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 
-+ [Справочник по API для клиентской библиотеки](/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet)
++ [Справочник по API для клиентской библиотеки](/dotnet/api/overview/azure/search.documents-readme)
 
 ## <a name="client-differences"></a>Различия клиента
 
@@ -196,4 +196,4 @@ ms.locfileid: "89462264"
 
 + [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/)
 + [Примеры на GitHub](https://github.com/azure/azure-sdk-for-net/tree/Azure.Search.Documents_11.0.0/sdk/search/Azure.Search.Documents/samples)
-+ [ Справочник по APIAzure.Search.Docумент](/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet)
++ [ Справочник по APIAzure.Search.Docумент](/dotnet/api/overview/azure/search.documents-readme)

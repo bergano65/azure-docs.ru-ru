@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 491b3ecfc950fa5f76bfe78eec52e81433294c23
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 732db7fb9eaebb437dea60f98d6c85c855d1b109
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500084"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541600"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Создание реплик чтения и управление ими из Azure CLI REST API
 
@@ -32,15 +32,15 @@ ms.locfileid: "87500084"
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-- [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
+- [Сервер базы данных Azure для PostgreSQL](quickstart-create-server-up-azure-cli.md) , который будет основным сервером.
 
 
-### <a name="prepare-the-master-server"></a>Подготовка главного сервера
+### <a name="prepare-the-primary-server"></a>Подготовка сервера источника
 
-1. Проверьте значение главного сервера `azure.replication_support` . Для работы реплики чтения должна быть как минимум РЕПЛИКа.
+1. Проверьте значение сервера источника `azure.replication_support` . Для работы реплики чтения должна быть как минимум РЕПЛИКа.
 
    ```azurecli-interactive
    az postgres server configuration show --resource-group myresourcegroup --server-name mydemoserver --name azure.replication_support
@@ -66,7 +66,7 @@ ms.locfileid: "87500084"
 | --- | --- | --- |
 | resource-group | myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | name | mydemoserver — реплика | Имя нового сервера реплики, который создается. |
-| source-server | mydemoserver | Имя или идентификатор ресурса существующего главного сервера, с которого выполняется репликация. Используйте идентификатор ресурса, если требуется, чтобы группы ресурсов реплик и Master были разными. |
+| source-server | mydemoserver | Имя или идентификатор ресурса существующего первичного сервера, с которого выполняется репликация. Используйте идентификатор ресурса, если требуется, чтобы группы ресурсов реплик и Master были разными. |
 
 В следующем примере CLI реплика создается в том же регионе, что и Главная.
 
@@ -83,33 +83,33 @@ az postgres server replica create --name mydemoserver-replica --source-server my
 > [!NOTE]
 > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md). 
 
-Если параметр не задан `azure.replication_support` для **реплики** на общего назначения или на главном сервере, оптимизированном для памяти, и сервер перезагружен, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
+Если параметр не задан `azure.replication_support` для **реплики** на общего назначения или на сервере-источнике, оптимизированном для памяти, и сервер перезагружен, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
 
 > [!IMPORTANT]
 > Ознакомьтесь с [разделом рекомендации в обзоре реплики чтения](concepts-read-replicas.md#considerations).
 >
-> Перед обновлением параметра главного сервера до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
+> Перед обновлением параметра сервера-источника до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
 
 ### <a name="list-replicas"></a>Список реплик
-Список реплик главного сервера можно просмотреть с помощью команды [AZ postgres Server Replica List](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-list) .
+Список реплик сервера-источника можно просмотреть с помощью команды [AZ postgres Server Replica List](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-list) .
 
 ```azurecli-interactive
 az postgres server replica list --server-name mydemoserver --resource-group myresourcegroup 
 ```
 
 ### <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
-Репликацию между главным сервером и репликой чтения можно отключить с помощью команды [AZ postgres Server Replica](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-stop) .
+Вы можете отключить репликацию между сервером-источником и репликой чтения, выполнив команду [AZ postgres Server Replica](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-stop) .
 
-Остановленную репликацию отменить невозможно. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
+После того как репликация будет прервана на сервере-источнике и реплике чтения, ее нельзя будет отменить. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
 ```azurecli-interactive
 az postgres server replica stop --name mydemoserver-replica --resource-group myresourcegroup 
 ```
 
-### <a name="delete-a-master-or-replica-server"></a>Удаление главного или сервер-реплики
-Чтобы удалить главный или сервер-реплику, используйте команду [AZ postgres Server DELETE](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-delete) .
+### <a name="delete-a-primary-or-replica-server"></a>Удаление основного или сервер-реплики
+Чтобы удалить основной или сервер-реплику, используйте команду [AZ postgres Server DELETE](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-delete) .
 
-При удалении главного сервера репликация всех реплик чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
+При удалении сервера-источника репликация на все реплики чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
 ```azurecli-interactive
 az postgres server delete --name myserver --resource-group myresourcegroup
@@ -118,9 +118,9 @@ az postgres server delete --name myserver --resource-group myresourcegroup
 ## <a name="rest-api"></a>REST API
 Вы можете создавать реплики чтения и управлять ими с помощью [REST API Azure](/rest/api/azure/).
 
-### <a name="prepare-the-master-server"></a>Подготовка главного сервера
+### <a name="prepare-the-primary-server"></a>Подготовка сервера источника
 
-1. Проверьте значение главного сервера `azure.replication_support` . Для работы реплики чтения должна быть как минимум РЕПЛИКа.
+1. Проверьте значение сервера источника `azure.replication_support` . Для работы реплики чтения должна быть как минимум РЕПЛИКа.
 
    ```http
    GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{masterServerName}/configurations/azure.replication_support?api-version=2017-12-01
@@ -166,25 +166,25 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 > [!NOTE]
 > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md). 
 
-Если параметр не задан `azure.replication_support` для **реплики** на общего назначения или на главном сервере, оптимизированном для памяти, и сервер перезагружен, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
+Если параметр не задан `azure.replication_support` для **реплики** на общего назначения или на сервере-источнике, оптимизированном для памяти, и сервер перезагружен, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
 
-Реплика создается с использованием тех же параметров вычислений и хранилища, что и у главного сервера. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
+Реплика создается с использованием тех же параметров вычислений и хранилища, что и у главного сервера. После создания реплики некоторые параметры могут быть изменены независимо от сервера-источника: поколение вычислений, виртуальных ядер, хранилище и срок хранения резервной копии. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
 
 
 > [!IMPORTANT]
-> Перед обновлением параметра главного сервера до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
+> Перед обновлением параметра сервера-источника до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
 
 ### <a name="list-replicas"></a>Список реплик
-Список реплик главного сервера можно просмотреть с помощью [API списка реплик](/rest/api/postgresql/replicas/listbyserver).
+Список реплик сервера-источника можно просмотреть с помощью [API списка реплик](/rest/api/postgresql/replicas/listbyserver).
 
 ```http
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{masterServerName}/Replicas?api-version=2017-12-01
 ```
 
 ### <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
-Репликацию между главным сервером и репликой чтения можно отключить с помощью [API обновления](/rest/api/postgresql/servers/update).
+Вы можете отключить репликацию между сервером-источником и репликой чтения с помощью [API обновления](/rest/api/postgresql/servers/update).
 
-Остановленную репликацию отменить невозможно. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
+После того как репликация будет прервана на сервере-источнике и реплике чтения, ее нельзя будет отменить. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
 ```http
 PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{masterServerName}?api-version=2017-12-01
@@ -198,10 +198,10 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-### <a name="delete-a-master-or-replica-server"></a>Удаление главного или сервер-реплики
-Для удаления главного или сервер-реплики используется [API удаления](/rest/api/postgresql/servers/delete).
+### <a name="delete-a-primary-or-replica-server"></a>Удаление основного или сервер-реплики
+Чтобы удалить основной или сервер-реплику, используйте [API удаления](/rest/api/postgresql/servers/delete):
 
-При удалении главного сервера репликация всех реплик чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
+При удалении сервера-источника репликация на все реплики чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
 ```http
 DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}?api-version=2017-12-01

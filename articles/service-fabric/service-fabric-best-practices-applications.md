@@ -1,16 +1,14 @@
 ---
 title: Рекомендации по проектированию приложений Service Fabric Azure
 description: Рекомендации и вопросы проектирования для разработки приложений и служб с помощью Azure Service Fabric.
-author: markfussell
 ms.topic: conceptual
 ms.date: 06/18/2019
-ms.author: mfussell
-ms.openlocfilehash: 742cd9b1e7480fcc510b61d8987e42b499a1ff20
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: ddf846e9e3ac6add7cf3f584b702de5accfb22af
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261196"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91538504"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Рекомендации по проектированию приложений Service Fabric Azure
 
@@ -77,7 +75,7 @@ Service Fabric Reliable Actors позволяет легко создавать 
 Будьте в полной мере добавим [ведение журнала приложений](./service-fabric-diagnostics-event-generation-app.md) в вызовах служб. Она поможет в диагностике сценариев, в которых службы вызывают друг друга. Например, если вызов метода B вызывает C, то вызов может завершиться ошибкой в любом месте. Если ведение журнала не имеет достаточного количества, трудно диагностировать сбои. Если службы имеют слишком много записей из-за вызова томов, убедитесь, что по крайней мере ошибки в журнале и предупреждения.
 
 ## <a name="iot-and-messaging-applications"></a>Приложения IoT и Messaging
-При чтении сообщений из [центра Интернета вещей Azure](../iot-hub/index.yml) или [концентраторов событий Azure](../event-hubs/index.yml)используйте [сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/ServiceFabricProcessor). Сервицефабрикпроцессор интегрируется с Service Fabric Reliable Services для поддержания состояния чтения из разделов концентратора событий и отправки новых сообщений службам с помощью `IEventProcessor::ProcessEventsAsync()` метода.
+При чтении сообщений из [центра Интернета вещей Azure](../iot-hub/index.yml) или [концентраторов событий Azure](../event-hubs/index.yml)используйте  [сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/ServiceFabricProcessor). Сервицефабрикпроцессор интегрируется с Service Fabric Reliable Services для поддержания состояния чтения из разделов концентратора событий и отправки новых сообщений службам с помощью `IEventProcessor::ProcessEventsAsync()` метода.
 
 
 ## <a name="design-guidance-on-azure"></a>Руководство по проектированию в Azure

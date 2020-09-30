@@ -1,17 +1,15 @@
 ---
 title: Настройка среды разработки на macOS
 description: Установите среду выполнения, пакет SDK и инструменты и создайте локальный кластер разработки. После завершения установки вы будете готовы к созданию приложений на macOS.
-author: suhuruli
 ms.topic: conceptual
 ms.date: 11/17/2017
-ms.author: suhuruli
 ms.custom: devx-track-js
-ms.openlocfilehash: a0c9b552947f2a9dc0f3fee3d39829efdcea1b68
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0d5a31f22fb0472882e3854488fbd1c3249879d7
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91249932"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539866"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Настройка среды разработки для Mac OS X
 > [!div class="op_single_selector"]
@@ -23,7 +21,7 @@ ms.locfileid: "91249932"
 
 Вы можете собирать приложения Azure Service Fabric на базе Mac OS X, которые работают в кластерах Linux. Из этого документа вы узнаете, как настроить систему Mac для разработки приложений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Платформа Azure Service Fabric изначально не предназначена для работы в Mac OS X. Чтобы запустить локальный кластер Service Fabric, предоставляется предварительно настроенный образ контейнера Docker. Перед началом работы вам потребуются:
 
 * Не менее 4 ГБ ОЗУ.

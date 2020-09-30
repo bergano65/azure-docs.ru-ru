@@ -3,20 +3,18 @@ title: Шаблоны добавляют точность — LUIS
 titleSuffix: Azure Cognitive Services
 description: Добавьте шаблоны шаблонов для повышения точности прогнозов в приложениях Language Understanding (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.author: diberry
-ms.openlocfilehash: 4af8f90abf2a5581ec18ea550cbc5f1a5df50a4e
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 914ca77b18d0469c3ea926848be4c60aab04c9c6
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344906"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539110"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозов
 После того как приложение LUIS получит конечную точку фразы продолжительностью, используйте [шаблон](luis-concept-patterns.md) , чтобы улучшить точность прогнозов для фразы продолжительностью, чтобы показать шаблон в порядке слов и выбрать слово. В шаблонах используется специальный [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения [сущностей](luis-concept-entity-types.md), [ролей](luis-concept-roles.md)сущностей и необязательного текста.

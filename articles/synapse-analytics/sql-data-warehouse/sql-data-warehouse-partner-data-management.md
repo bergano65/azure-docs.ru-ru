@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 6214174cbec0b784ec0167c59f952478b2a14625
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: 8f2e41779e72d565e24b67fd8b18afd87a112e62
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89425672"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542107"
 ---
 # <a name="azure-synapse-analytics-data-management-partners"></a>Партнеры по управлению данными в Azure Synapse Analytics
 
@@ -25,6 +25,7 @@ ms.locfileid: "89425672"
 ## <a name="data-management-partners"></a>Партнеры по управлению данными
 | Партнер | Описание | Ссылка на веб-сайт или продукт |
 | ------- | ----------- | -------------------- |
+| ![агинити](./media/sql-data-warehouse-partner-data-management/aginity-logo.png) |**агинити**<br>Агинити — это средство разработки аналитики, которое обеспечивает полную мощь платформы синапсе Майкрософт в рамках аналитиков и инженеров. Широкая и интуитивно понятная среда разработки SQL позволяет членам группы подключаться к более десяти отраслевым ведущим аналитическим платформам, принимать данные в различных форматах и быстро создавать сложные расчеты бизнеса для предоставления результатов в бизнес-аналитику и Машинное обучение варианты использования. Все приложение основано на центральном каталоге, который делает совместную работу над группой аналитики реальной, а сложные возможности управления и детализированные средства обеспечения безопасности делают управление проще. |[Страница продукта](https://www.aginity.com/databases/microsoft/)<br> |
 | ![алатион](./media/sql-data-warehouse-partner-data-management/alation-logo.png) |**алатион**<br>Каталог данных алатион значительно повышает производительность, повышает точность и позволяет улучшить принятие решений на основе данных для аналитиков. Каталог данных алатион позволяет всем в Организации находить, анализировать и контролировать данные. |[Страница продукта](https://www.alation.com/product/data-catalog/)<br> |
 | ![Coffing Data Warehousing](./media/sql-data-warehouse-partner-data-management/coffing-data-warehousing-logo.png) |**Coffing Data Warehousing**<br>Coffing Data Warehousing предоставляет Nexus Chameleon, средство с 10-летней историей разработки систем создания запросов. Nexus предоставляется как средство работы с запросами для пула Azure Synapse SQL. Nexus позволяет создавать запросы для локальных и облачных систем и объединять данные между разными платформами. Выбери, щелкни, создай отчет! |[Страница продукта](https://www.coffingdw.com/software/nexus/)<br> |
 | ![Inbrein](./media/sql-data-warehouse-partner-data-management/inbrein-logo.png) |**Inbrein MicroERD**<br>Inbrein MicroERD предоставляет инструменты, с помощью которых вы можете создавать точные модели данных, снижать избыточность данных, повышать производительность и соблюдать стандарты. Используя пользовательский интерфейс, разработанный с учетом опыта работы пользователей, разработчик может легко создавать модели баз данных. Вы сможете использовать новые функции MicroERD благодаря регулярным и быстрым обновлениям. |[Страница продукта](http://microerd.com/)<br> |

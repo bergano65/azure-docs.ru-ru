@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1df576e3316a529ec38c4a53960ff817d129ffd8
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 260125b5e7aa4537c6e204d93263b65be042793a
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002262"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540750"
 ---
 # <a name="customize-remote-desktop-protocol-properties-for-a--windows-virtual-desktop-classic-host-pool"></a>Настройка свойств протокол удаленного рабочего стола для пула узлов виртуальных рабочих столов Windows (классическая модель)
 
@@ -34,7 +34,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 
 |Свойства RDP | Настольные системы | RemoteApps |
 |---|---| --- |
-| Режим с несколькими мониторами | Включено | Н/Д |
+| Режим с несколькими мониторами | Активировано | Н/Д |
 | Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
 | Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
 
@@ -49,7 +49,7 @@ Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](../media/singlecustomrdpproperty.png)
+> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с именем и FriendlyName, выделенным для редактирования пользовательского свойства R D P.](../media/singlecustomrdpproperty.png)
 
 ## <a name="add-or-edit-multiple-custom-rdp-properties"></a>Добавление или изменение нескольких настраиваемых свойств RDP
 
@@ -61,7 +61,7 @@ Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](../media/multiplecustomrdpproperty.png)
+> ![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и FriendlyName, выделенным для редактирования пользовательского свойства R D P.](../media/multiplecustomrdpproperty.png)
 
 ## <a name="reset-all-custom-rdp-properties"></a>Сброс всех настраиваемых свойств RDP
 

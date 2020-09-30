@@ -3,20 +3,18 @@ title: Публикация приложения — LUIS
 titleSuffix: Azure Cognitive Services
 description: После завершения создания и проверки рабочего приложения LUIS, сделайте его доступным для приложения клиента путем его публикации в конечной точке.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.author: diberry
-ms.openlocfilehash: e9c8b607b1dc3f7f67ee1fdad353d15023318947
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: b72f1fd64cca0fa77ebc486670a512c5228e1146
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84340697"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541481"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Публикация активного обученного приложения в промежуточной или рабочей конечной точке
 
@@ -37,8 +35,8 @@ ms.locfileid: "84340697"
 
 При отображении всплывающего окна выберите правильный слот:
 
-* Промежуточная
-* Производство
+* Промежуточный процесс
+* Рабочая среда
 
 При использовании обоих слотов публикации это позволяет использовать две различные версии приложения на опубликованных конечных точках или одну и ту же версию на двух разных конечных точках.
 
@@ -56,7 +54,7 @@ ms.locfileid: "84340697"
 
 После выбора слота настройте параметры публикации для:
 
-* Анализ мнений
+* Анализ тональности
 * [Исправление орфографии](luis-tutorial-bing-spellcheck.md) — только конечная точка прогнозирования версии 2
 * Подготовка речи
 
@@ -68,7 +66,7 @@ ms.locfileid: "84340697"
 
 Если требуется узнать URL-адрес конечной точки, выберите ссылку. Можно также перейти к URL-адресам конечной точки, выбрав **Управление** в верхнем меню, а затем щелкнув **ресурсы Azure** в меню слева.
 
-## <a name="sentiment-analysis"></a>Анализ мнений
+## <a name="sentiment-analysis"></a>Анализ тональности
 
 <a name="enable-sentiment-analysis"></a>
 

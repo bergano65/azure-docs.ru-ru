@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Применение GitOps для настройки кластера с поддержкой Azure Arc (предварительная версия)
 keywords: GitOps, Kubernetes, K8s, Azure, Arc, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: e25fdf3a51b3e9264c85707df31d3a4d107b25ea
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 142c131f0382eb887d51185db920511ccf4eb735
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87049980"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541634"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Развертывание конфигураций с помощью Гитопс в кластере Kubernetes с поддержкой ARC (Предварительная версия)
 
@@ -29,11 +29,13 @@ ms.locfileid: "87049980"
 
 В этом руководстве по началу работы будет рассмотрено применение набора конфигураций с областью администратора кластера.
 
+## <a name="before-you-begin"></a>Перед началом
+
+В этой статье предполагается, что у вас есть подключенный кластер Kubernetes с поддержкой Azure Arc. Если вам нужно создать подключенный кластер, см. это [краткое руководство](./connect-cluster.md).
+
 ## <a name="create-a-configuration"></a>Создание конфигурации
 
-- Пример репозитория: <https://github.com/Azure/arc-k8s-demo>
-
-Пример репозитория основан на операторе кластера, который хочет предоставить несколько пространств имен, развернуть общую рабочую нагрузку и предоставить некоторую конфигурацию для конкретной группы. Этот репозиторий создает в кластере следующие ресурсы:
+[Пример репозитория](https://github.com/Azure/arc-k8s-demo) , используемый в этом документе, структурирован вокруг персонажа оператора кластера, который хочет предоставить несколько пространств имен, развернуть общую рабочую нагрузку и предоставить некоторую конфигурацию для конкретной группы. Этот репозиторий создает в кластере следующие ресурсы:
 
 **Пространства имен:** `cluster-config`, `team-a`, `team-b`
 **Развертывание:** `cluster-config/azure-vote`
@@ -47,12 +49,7 @@ ms.locfileid: "87049980"
 Используя расширение Azure CLI для `k8sconfiguration` , свяжите подключенный кластер с [примером репозитория Git](https://github.com/Azure/arc-k8s-demo). Мы присвоим этой конфигурации имя `cluster-config`, укажем агенту развернуть оператор в пространстве имен `cluster-config` и предоставим оператору разрешения `cluster-admin`.
 
 ```console
-az k8sconfiguration create \
-    --name cluster-config \
-    --cluster-name AzureArcTest1 --resource-group AzureArcTest \
-    --operator-instance-name cluster-config --operator-namespace cluster-config \
-    --repository-url https://github.com/Azure/arc-k8s-demo \
-    --scope cluster --cluster-type connectedClusters
+az k8sconfiguration create --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/Azure/arc-k8s-demo --scope cluster --cluster-type connectedClusters
 ```
 
 **Выходные данные:**
@@ -159,7 +156,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 С помощью Azure CLI убедитесь, что `sourceControlConfiguration` успешно создан.
 
 ```console
-az k8sconfiguration show --resource-group AzureArcTest --name cluster-config --cluster-name AzureArcTest1 --cluster-type connectedClusters
+az k8sconfiguration show --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 
 Обратите внимание, что в ресурс `sourceControlConfiguration` сохраняются состояния соответствия, сообщения и отладочная информация.
@@ -198,7 +195,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
     * `config-agent` создает целевое пространство имен.
     * `config-agent` подготавливает учетную запись службы Kubernetes с соответствующим разрешением (область `cluster` или `namespace`).
     * `config-agent` развертывает экземпляр `flux`.
-    * `flux`Создание ключа SSH и запись в журнал открытого ключа
+    * `flux` Создание ключа SSH и запись в журнал открытого ключа
 1. `config-agent` сообщает о состоянии `sourceControlConfiguration`.
 
 Во время процесса подготовки состояние `sourceControlConfiguration` будет несколько раз меняться. Отслеживайте ход выполнения с помощью приведенной выше команды `az k8sconfiguration show ...`:
@@ -302,7 +299,7 @@ kubectl -n itops get all
 > Любые изменения в кластере, которые были результатом развертывания из репозитория отслеживаний Git, не удаляются при `sourceControlConfiguration` удалении.
 
 ```console
-az k8sconfiguration delete --name '<config name>' -g '<resource group name>' --cluster-name '<cluster name>' --cluster-type connectedClusters
+az k8sconfiguration delete --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 
 **Выходные данные:**

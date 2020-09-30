@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 09/27/2020
-ms.openlocfilehash: f6527a0c5712d68756310b699d214013e89f38e1
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: feb186fbe216305039fcc0a23a10419c44fd0483
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449580"
+ms.locfileid: "91535616"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -28,8 +28,8 @@ Azure HDInsight является одной из самых популярных
 Этот выпуск относится как к HDInsight 3,6, так и к HDInsight 4,0. Выпуск HDInsight предоставляется для разных регионов на протяжении нескольких дней. Указанная здесь дата выпуска обозначает дату выпуска для первого из регионов. Если вы не видите приведенных ниже изменений, дождитесь выхода выпуска в вашем регионе в течение нескольких дней.
 
 ## <a name="new-features"></a>новые функции;
-### <a name="llap-cluster-auto-scale-general-available"></a>Общий доступный режим автомасштабирования кластера LLAP
-Автоматическое масштабирование для типа кластера LLAP теперь доступно в общедоступной версии. Все кластеры LLAP, созданные после 27 августа 2020, будут иметь общедоступную поддержку автоматического масштабирования.
+### <a name="autoscale-for-interactive-query-with-hdinsight-40-is-now-generally-available"></a>Автомасштабирование для интерактивного запроса с помощью HDInsight 4,0 теперь общедоступно
+Тип кластера для интерактивного запроса "автоматическое масштабирование" теперь является общим доступным (общедоступным) для HDInsight 4,0. Все кластеры интерактивных запросов 4,0, созданные после 27 августа 2020, будут иметь общедоступную поддержку автоматического масштабирования.
 
 ### <a name="hbase-cluster-supports-premium-adls-gen2"></a>Кластер HBase поддерживает ADLS 2-го поколения Premium
 HDInsight теперь поддерживает ADLS 2-го поколения "Премиум" в качестве первичной учетной записи хранения для кластеров HDInsight HBase 3,6 и 4,0. Вместе с [ускоренными](./hbase/apache-hbase-accelerated-writes.md)операциями записи можно повысить производительность кластеров HBase.

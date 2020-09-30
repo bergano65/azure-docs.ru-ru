@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 87085d4a4911801933993720ae0ab23aeb19956d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 53132cc21b8298f951f2daa979ed433103ad0ac0
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90974363"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541294"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -129,7 +129,7 @@ ms.locfileid: "90974363"
 1. Введите в поле поиска текст "создать группу безопасности", а затем щелкните **Создать группу безопасности**.
 
    > [!div class="mx-imgBorder"]
-   > ![Создать группу безопасности](./media/workday-inbound-tutorial/wd_isu_03.png "Создать группу безопасности")
+   > ![Снимок экрана, показывающий «создание группы безопасности» в поле поиска, и «создание группы безопасности — задача», отображаемое в результатах поиска.](./media/workday-inbound-tutorial/wd_isu_03.png)
 2. Завершите задачу **создания группы безопасности**. 
 
    * Есть два типа групп безопасности в Workday:
@@ -154,7 +154,7 @@ ms.locfileid: "90974363"
 
 1. В поле поиска введите **Domain Security Configuration**, а затем перейдите по ссылке **Domain Security Configuration Report** (Отчет о конфигурации безопасности домена).  
    >[!div class="mx-imgBorder"]
-   >![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_06.png "Политики безопасности домена")  
+   >![Снимок экрана, показывающий "Конфигурация безопасности домена" в поле поиска, в результатах которого отображается "Конфигурация безопасности домена — отчет".](./media/workday-inbound-tutorial/wd_isu_06.png "Политики безопасности домена")  
 2. С помощью текстового поля **Domain** (Домен) найдите указанные ниже домены и добавьте их к фильтру по одному.  
    * *External Account Provisioning* (Подготовка внешних учетных записей)
    * *Worker Data: рабочие роли*
@@ -166,10 +166,10 @@ ms.locfileid: "90974363"
    * *Учетные записи Workday*
    
      >[!div class="mx-imgBorder"]
-     >![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_07.png "Политики безопасности домена")  
+     >![Снимок экрана, показывающий отчет о конфигурации безопасности домена с "внешней учетной записью" в текстовом поле "домен".](./media/workday-inbound-tutorial/wd_isu_07.png "Политики безопасности домена")  
 
      >[!div class="mx-imgBorder"]
-     >![Политики безопасности домена](./media/workday-inbound-tutorial/wd_isu_08.png "Политики безопасности домена") 
+     >![Снимок экрана, на котором показан отчет о конфигурации безопасности домена со списком выбранных доменов.](./media/workday-inbound-tutorial/wd_isu_08.png "Политики безопасности домена") 
 
      Нажмите кнопку **ОК**.
 
@@ -179,7 +179,7 @@ ms.locfileid: "90974363"
 
 4. Прокрутите страницу **Edit Domain Security Policy Permissions** (Изменение разрешений политики безопасности для домена) до раздела **Integration Permissions** (Разрешения интеграции). Нажмите значок "+", чтобы добавить группу системы интеграции в список групп безопасности с разрешениями интеграции **Get** и **Put**.
    >[!div class="mx-imgBorder"]
-   >![Изменить разрешение](./media/workday-inbound-tutorial/wd_isu_10.png "Изменить разрешение")  
+   >![Снимок экрана, на котором показан выделенный раздел "Integration разрешения".](./media/workday-inbound-tutorial/wd_isu_10.png "Изменить разрешение")  
 
 5. Нажмите значок "+", чтобы добавить группу системы интеграции в список групп безопасности с разрешениями интеграции **Get** и **Put**.
 
@@ -210,12 +210,12 @@ ms.locfileid: "90974363"
 1. Введите **Business Process Policy** в поле поиска и выберите задачу **Edit Business Process Security Policy** (Изменение политики безопасности бизнес-процессов).  
 
    >[!div class="mx-imgBorder"]
-   >![Политики безопасности бизнес-процессов](./media/workday-inbound-tutorial/wd_isu_12.png "Политики безопасности бизнес-процессов")  
+   >![Снимок экрана, на котором показана "политика бизнес-процесса" в поле поиска и выбран параметр "изменить политику безопасности бизнес-процессов — задача".](./media/workday-inbound-tutorial/wd_isu_12.png "Политики безопасности бизнес-процессов")  
 
 2. В текстовом поле **Тип бизнес-процесса** выполните поиск по запросу *Контакт*, выберите бизнес-процесс **Work Contact Change** (Изменение рабочего контакта) и нажмите кнопку **ОК**.
 
    >[!div class="mx-imgBorder"]
-   >![Политики безопасности бизнес-процессов](./media/workday-inbound-tutorial/wd_isu_13.png "Политики безопасности бизнес-процессов")  
+   >![Снимок экрана, на котором показана страница "изменение политики безопасности бизнес-процессов" и "изменение рабочего контакта", выбранные в меню "тип бизнес-процесса".](./media/workday-inbound-tutorial/wd_isu_13.png "Политики безопасности бизнес-процессов")  
 
 3. Прокрутите страницу **Edit Business Process Security Policy** (Изменение политики безопасности бизнес-процессов) до раздела **Change Work Contact Information (Web Service)** (Изменение рабочих контактных данных — веб-служба).
     
@@ -258,7 +258,7 @@ ms.locfileid: "90974363"
 > Если вы хотите ограничить агент подготовки только созданием и чтением пользователей из определенного подразделения для целей тестирования, мы рекомендуем делегировать элемент управления на соответствующем уровне подразделения во время выполнения теста.
 
 4. На экране приветствия нажмите кнопку **Далее** . 
-5. На экране **Выбор пользователей или групп** добавьте пользователя домена, созданного на шаге 2. Щелкните **Далее**.
+5. На экране **Выбор пользователей или групп** добавьте пользователя домена, созданного на шаге 2. Нажмите кнопку **Далее**.
    >[!div class="mx-imgBorder"]
    >![Добавить экран](./media/workday-inbound-tutorial/delegation-wizard-01.png "Добавить экран")
 
@@ -415,7 +415,7 @@ ms.locfileid: "90974363"
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае неудачи убедитесь, что учетные данные Workday и AD, заданные в настройках агента, действительны.
 
      >[!div class="mx-imgBorder"]
-     >![Портал Azure](./media/workday-inbound-tutorial/wd_1.png)
+     >![Снимок экрана, на котором показана страница "подготовка" с вводом учетных данных.](./media/workday-inbound-tutorial/wd_1.png)
 
    * После успешного сохранения учетных данных в разделе **Сопоставления** отобразится сопоставление по умолчанию **Synchronize Workday Workers to On Premises Active Directory** (Синхронизировать работников Workday с локальной средой Active Directory).
 
@@ -480,7 +480,7 @@ ms.locfileid: "90974363"
 
 1. Чтобы сохранить сопоставления, щелкните **Сохранить** в верхней части раздела "Сопоставление атрибутов".
    >[!div class="mx-imgBorder"]
-   >![Портал Azure](./media/workday-inbound-tutorial/wd_2.png)
+   >![Снимок экрана, на котором показана страница "сопоставление атрибутов" с выбранным действием "Сохранить".](./media/workday-inbound-tutorial/wd_2.png)
 
 #### <a name="below-are-some-example-attribute-mappings-between-workday-and-active-directory-with-some-common-expressions"></a>Ниже приведено несколько примеров сопоставлений атрибутов между Workday и Active Directory с некоторыми общими выражениями.
 
@@ -942,11 +942,11 @@ SelectUniqueValue(
 
   Найдите запись об HTTP-операции POST, соответствующую метке времени операции экспорта с *идентификатором события 2*. Эта запись будет содержать значения атрибутов, отправленные службой подготовки агенту подготовки.
 
-  [![Добавление SCIM](media/workday-inbound-tutorial/wd_event_viewer_05.png)](media/workday-inbound-tutorial/wd_event_viewer_05.png#lightbox)
+  :::image type="content" source="media/workday-inbound-tutorial/wd_event_viewer_05.png" alt-text="Снимок экрана, на котором показана запись &quot;HTTP POST&quot; в журнале &quot;агент подготовки&quot;." lightbox="media/workday-inbound-tutorial/wd_event_viewer_05.png":::
 
   Сразу после указанного выше события должно быть другое событие, которое фиксирует ответ операции создания учетной записи AD. Это событие возвращает новый идентификатор objectGuid, созданный в AD, который задается как атрибут TargetAnchor в службе подготовки.
 
-  [![Добавление SCIM](media/workday-inbound-tutorial/wd_event_viewer_06.png)](media/workday-inbound-tutorial/wd_event_viewer_06.png#lightbox)
+  :::image type="content" source="media/workday-inbound-tutorial/wd_event_viewer_06.png" alt-text="Снимок экрана, на котором показана запись &quot;HTTP POST&quot; в журнале &quot;агент подготовки&quot;." lightbox="media/workday-inbound-tutorial/wd_event_viewer_06.png":::
 
 ### <a name="understanding-logs-for-manager-update-operations"></a>Общие сведения о журналах операций обновления руководителя
 
@@ -1040,14 +1040,14 @@ SelectUniqueValue(
 
 5. Щелкните **External** (Внешний) и выберите WSDL-файл Human_Resources, скачанный на шаге 2.
 
-    ![Workday Studio](./media/workday-inbound-tutorial/wdstudio1.png)
+    ![Снимок экрана, на котором показан файл "Human_Resources", Открытый в Workday Studio.](./media/workday-inbound-tutorial/wdstudio1.png)
 
 6. Задайте для поля **Location** (Расположение) значение `https://IMPL-CC.workday.com/ccx/service/TENANT/Human_Resources`. Замените значение IMPL-CC фактическим типом экземпляра и значение TENANT (Клиент) реальным именем клиента.
 
 7. Задайте для параметра **Operation** значение **Get_Workers**.
 
 8.    Щелкните ссылку **configure** (Настроить) под областями Request/Response (Запрос/Ответ), чтобы задать учетные данные Workday. Установите флажок **Authentication** (Аутентификация), а затем введите имя пользователя и пароль учетной записи системы интеграции Workday. Убедитесь, что имя пользователя отформатировано как "имя\@клиент", и оставьте флажок возле параметра **WS-Security UsernameToken**.
-   ![Workday Studio](./media/workday-inbound-tutorial/wdstudio2.png)
+   ![Снимок экрана, на котором показана вкладка "безопасность" с указанными "Username" и "Password", и выбран параметр "WS-Security имяпользователя token".](./media/workday-inbound-tutorial/wdstudio2.png)
 
 9. Щелкните **ОК**.
 
@@ -1086,7 +1086,7 @@ SelectUniqueValue(
 
 13. В командной строке Workday Studio последовательно выберите **File (Файл) > Open File (Открыть файл)** и откройте только что сохраненный XML-файл. После этого в редакторе XML Workday Studio откроется файл.
 
-    ![Workday Studio](./media/workday-inbound-tutorial/wdstudio3.png)
+    ![Снимок экрана файла X M L, открытого в "редакторе Workday Studio X M L".](./media/workday-inbound-tutorial/wdstudio3.png)
 
 14. В дереве файлов перейдите к файлу **/env: Envelope > env: Body > wd:Get_Workers_Response > wd:Response_Data > wd: Worker**, чтобы найти данные пользователя.
 
@@ -1112,7 +1112,7 @@ SelectUniqueValue(
 
 5. Выберите ссылку **Изменить список атрибутов для Workday**.
 
-    ![Workday Studio](./media/workday-inbound-tutorial/wdstudio_aad1.png)
+    ![Снимок экрана, на котором показана страница подготовки рабочего дня к Azure A D — подготовка к работе с выделенным действием "изменить список атрибутов для Workday".](./media/workday-inbound-tutorial/wdstudio_aad1.png)
 
 6. Прокрутите страницу вниз до списка атрибутов, где находятся поля для заполнения.
 

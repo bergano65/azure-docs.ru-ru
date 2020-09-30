@@ -3,20 +3,18 @@ title: Справочник по электронной почте для пре
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность email в службе "Распознавание речи" (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/27/2019
-ms.author: diberry
-ms.openlocfilehash: f7aa2a341a82d30f7022af49e626a3cd358854b7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 806357670bead54658f0b501ca20473293275d58
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78273486"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91533372"
 ---
 # <a name="email-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность email для приложения LUIS
 При извлечении сущности email из фразы извлекается полный адрес электронной почты. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие адреса электронной почты, не нужно. Сущность email поддерживается только в `en-us` язычных и региональных параметрах.
@@ -29,7 +27,7 @@ ms.locfileid: "78273486"
 
 #### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со значением: `false`
+Следующий код JSON имеет параметр со `verbose` значением `false` :
 
 ```json
 "entities": {
@@ -40,7 +38,7 @@ ms.locfileid: "78273486"
 ```
 #### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
-Следующий код JSON имеет `verbose` параметр со значением: `true`
+Следующий код JSON имеет параметр со `verbose` значением `true` :
 
 ```json
 "entities": {
@@ -83,7 +81,7 @@ ms.locfileid: "78273486"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

@@ -3,20 +3,18 @@ title: Предварительно созданная сущность геог
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана предварительно созданная сущность GeographyV2 в службе "Распознавание речи" (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 10/04/2019
-ms.author: diberry
-ms.openlocfilehash: b2b2b0781abce59628660b669f43110bf91b15e6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ad6fd62178ec8e987e1e3b6e05cc961bbe15e377
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78273489"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541971"
 ---
 # <a name="geographyv2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность GeographyV2 для приложения LUIS
 Предварительно созданная сущность GeographyV2 определяет расположения. Так как эта сущность уже обучена, добавлять примеры высказываний, содержащие сущность GeographyV2, в намерения приложения не нужно. Сущность GeographyV2 поддерживает английский [язык и региональные параметры](luis-reference-prebuilt-entities.md).
@@ -24,7 +22,7 @@ ms.locfileid: "78273489"
 ## <a name="subtypes"></a>Подтипы
 Географические расположения имеют подтипы.
 
-|Subtype|Назначение|
+|Subtype|Цель|
 |--|--|
 |`poi`|достопримечательность|
 |`city`|название города|
@@ -41,7 +39,7 @@ ms.locfileid: "78273489"
 
 #### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со значением: `false`
+Следующий код JSON имеет параметр со `verbose` значением `false` :
 
 ```json
 "entities": {
@@ -74,7 +72,7 @@ ms.locfileid: "78273489"
 
 #### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
-Следующий код JSON имеет `verbose` параметр со значением: `true`
+Следующий код JSON имеет параметр со `verbose` значением `true` :
 
 ```json
 "entities": {
@@ -207,7 +205,7 @@ ms.locfileid: "78273489"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

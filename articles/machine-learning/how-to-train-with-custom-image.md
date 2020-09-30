@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: sagopal
 author: saachigopal
-ms.date: 08/11/2020
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: d90b56366cb22e80162983c982e861de608e4e9e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 8239d037d6bd68638998cbb36c47c7dac4bce30d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90893114"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537622"
 ---
 # <a name="train-a-model-using-a-custom-docker-image"></a>Обучение модели с помощью пользовательского образа DOCKER
 
@@ -25,11 +25,11 @@ ms.locfileid: "90893114"
 
 Хотя Машинное обучение Azure предоставляет базовый образ DOCKER по умолчанию, можно также использовать Машинное обучение Azure среды, чтобы указать конкретный базовый образ, например один из набора обслуживаемых [базовых образов машинного обучения Azure](https://github.com/Azure/AzureML-Containers) или собственного [пользовательского образа](how-to-deploy-custom-docker-image.md#create-a-custom-base-image). Пользовательские базовые образы позволяют тесно управлять зависимостями и поддерживать более строгий контроль версий компонентов при выполнении заданий обучения. 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 Запустите этот код в любой из этих сред:
 * Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
     * Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md) , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
-    * В [репозитории примеров](https://github.com/Azure/azureml-examples)машинное обучение Azure найдите готовую записную книжку, перейдя к этому каталогу: **записные книжки > фастаи > Train-pets-resnet34. ipynb** . 
+    * В [репозитории примеров](https://github.com/Azure/azureml-examples)машинное обучение Azure найдите готовую записную книжку, перейдя к этому каталогу: **как использовать-azureml > ML-Frameworks > фастаи > Learning-with-Custom-DOCKER** . 
 
 * Собственный сервер Jupyter Notebook
     * Создайте [файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
@@ -63,7 +63,7 @@ fastai_env = Environment("fastai2")
 fastai_env.docker.enabled = True
 ```
 
-Этот указанный базовый образ поддерживает библиотеку fast.ai, которая позволяет использовать распределенные возможности глубокого обучения. Дополнительные сведения см. в разделе [fast.AI DockerHub](https://hub.docker.com/u/fastdotai). 
+Указанный базовый образ ниже поддерживает библиотеку fast.ai, которая позволяет использовать распределенные возможности глубокого обучения. Дополнительные сведения см. в разделе [fast.AI DockerHub](https://hub.docker.com/u/fastdotai). 
 
 При использовании пользовательского образа DOCKER возможно, что среда Python уже настроена правильно. В этом случае установите `user_managed_dependencies` для флага значение true, чтобы использовать встроенную среду Python на основе пользовательского образа. По умолчанию служба машинного обучения Azure создает среду Conda с указанными зависимостями и выполняет запуск в этой среде вместо использования библиотек Python, установленных на базовом образе.
 
@@ -98,6 +98,8 @@ fastai_env.docker.base_dockerfile = dockerfile
 fastai_env.docker.base_image = None
 fastai_env.docker.base_dockerfile = "./Dockerfile"
 ```
+
+Дополнительные сведения о создании сред машинного обучения Azure и управлении ими см. в статье [создание & использование программных сред](how-to-use-environments.md). 
 
 ### <a name="create-or-attach-existing-amlcompute"></a>Создание или присоединение существующего Амлкомпуте
 Вам потребуется создать [целевой объект вычислений](concept-azure-machine-learning-architecture.md#compute-targets) для обучения модели. В этом руководстве вы создадите Амлкомпуте в качестве обучающего ресурса для учебных вычислений.
@@ -136,9 +138,10 @@ print(compute_target.get_status().serialize())
 ```python
 from azureml.core import ScriptRunConfig
 
-fastai_config = ScriptRunConfig(source_directory='fastai-example', script='train.py')
-fastai_config.run_config.environment = fastai_env
-fastai_config.run_config.target = compute_target
+src = ScriptRunConfig(source_directory='fastai-example',
+                      script='train.py',
+                      compute_target=compute_target,
+                      environment=fastai_env)
 ```
 
 ### <a name="submit-your-run"></a>Отправка выполнения
@@ -147,14 +150,12 @@ fastai_config.run_config.target = compute_target
 ```python
 from azureml.core import Experiment
 
-run = Experiment(ws,'fastai-custom-image').submit(fastai_config)
+run = Experiment(ws,'fastai-custom-image').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
 > [!WARNING]
 > Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py&preserve-view=true)данных.
-
-Дополнительные сведения о настройке среды Python см. в статье [создание & использование программных сред](how-to-use-environments.md). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы обучили модель с помощью пользовательского образа DOCKER. Дополнительные сведения о Машинное обучение Azure см. в других статьях.

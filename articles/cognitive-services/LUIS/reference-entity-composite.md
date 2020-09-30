@@ -3,19 +3,17 @@ title: Составной объект типа-LUIS
 titleSuffix: Azure Cognitive Services
 description: Составная сущность состоит из других сущностей, например готовых сущностей, простых, регулярных выражений и сущностей списка. Эти отдельные сущности формируют единую сущность.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
-ms.author: diberry
-ms.openlocfilehash: 81299751affe5f59e1132950ccb80844fcc1fae3
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 97bd079034a39f158e3ca438c484929cb6f00363
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681395"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542263"
 ---
 # <a name="composite-entity"></a>Составная сущность
 
@@ -180,7 +178,7 @@ ms.locfileid: "83681395"
 |Предварительно созданная сущность — число|"builtin.number"|"2"|
 |Предварительно созданная сущность — GeographyV2|"Location::ToLocation"|Каиро|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сущностях:
 

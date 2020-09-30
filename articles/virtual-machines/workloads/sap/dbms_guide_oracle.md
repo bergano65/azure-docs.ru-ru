@@ -15,14 +15,14 @@ ms.workload: infrastructure
 ms.date: 09/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d83c4ffe4e60ef2896e16b97e1ec34d71a022b9b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f953d87c53bc13af623c2bfd49ceb953280f8f2a
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91279014"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540716"
 ---
-# <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure для рабочей нагрузки SAP
+# <a name="azure-virtual-machines-oracle-dbms-deployment-for-sap-workload"></a>Виртуальные машины Azure развертывание СУБД Oracle для рабочей нагрузки SAP
 
 [767598]:https://launchpad.support.sap.com/#/notes/767598
 [773830]:https://launchpad.support.sap.com/#/notes/773830
@@ -389,12 +389,12 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA | Premium или Ultra Disk | None | Можно использовать для Premium  |
-| \oracle\<SID>\origlogaB | Premium или Ultra Disk | None | Можно использовать для Premium |
-| \oracle\<SID>\mirrlogAB | Premium или Ultra Disk | None | Можно использовать для Premium |
-| \oracle\<SID>\mirrlogBA | Premium или Ultra Disk | None | Можно использовать для Premium |
+| \oracle\<SID>\origlogaA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium  |
+| \oracle\<SID>\origlogaB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| \oracle\<SID>\mirrlogAB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| \oracle\<SID>\mirrlogBA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
 | \oracle\<SID>\sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| \oracle\SID\sapdata(n+1)* | Premium или Ultra Disk | None | Можно использовать для Premium |
+| \oracle\SID\sapdata(n+1)* | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
 | \oracle\<SID>\oraarch* | Premium или Ultra Disk | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 
@@ -482,12 +482,12 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | None | Можно использовать для Premium  |
-| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | None | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | None | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | None | Можно использовать для Premium |
+| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium  |
+| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
 | /oracle/\<SID>/sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | None | Можно использовать для Premium |
+| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
 | /oracle/\<SID>/oraarch* | Premium или Ultra Disk | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 

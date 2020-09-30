@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: ee23b2bc58f8c1f15a7e51b05dee954c1e584293
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5b96ac9cf43782764e88039d736ba61454d65911
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489628"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539203"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -203,7 +203,7 @@ Azure резервирует некоторые IP-адреса в каждой 
 
 ## <a name="control-plane-ip-addresses"></a><a name="control-plane-ips"> </a> IP-адреса уровня управления
 
-IP-адреса разделены **средой Azure**. При разрешении входящих запросов IP-адреса с отметкой **глобально** должны быть включены в список разрешенных адресов вместе с IP-адресом соответствующего **региона**.
+IP-адреса разделены **средой Azure**. При разрешении IP-адреса входящих запросов, помеченных как **глобальные** , должны быть разрешены вместе с IP-адресом конкретного **региона** .
 
 | **Среда Azure**|   **Регион**|  **IP-адрес**|
 |-----------------|-------------------------|---------------|

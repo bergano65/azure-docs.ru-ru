@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Устранение распространенных проблем с кластерами Kubernetes с поддержкой Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
-ms.openlocfilehash: 404516778255409d56dd5c3a7d1fd96711cc981f
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: 4a8f4c652f1ab73e0b9979f77d7de5014c8d31a8
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88723679"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540614"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Устранение неполадок Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -100,6 +100,34 @@ Command group 'connectedk8s' is in preview. It may be changed/removed in a futur
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
 This operation might take a while...
 ```
+
+### <a name="helm-issue"></a>Helm проблемы
+
+В версии Helm возникла ошибка, из-за `v3.3.0-rc.1` которой Helm Установка/обновление (используемое в расширении CLI с помощью интерфейса командной строки connectedk8s) приводит к запуску всех обработчиков, ведущих к следующей ошибке: [issue](https://github.com/helm/helm/pull/8527)
+
+```console
+$ az connectedk8s connect -n shasbakstest -g shasbakstest
+Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
+Ensure that you have the latest helm version installed before proceeding.
+This operation might take a while...
+
+Please check if the azure-arc namespace was deployed and run 'kubectl get pods -n azure-arc' to check if all the pods are in running state. A possible cause for pods stuck in pending state could be insufficientresources on the kubernetes cluster to onboard to arc.
+ValidationError: Unable to install helm release: Error: customresourcedefinitions.apiextensions.k8s.io "connectedclusters.arc.azure.com" not found
+```
+
+Чтобы устранить эту ошибку, выполните следующие действия.
+
+1. Удалите ресурс Kubernetes с включенной службой "Дуга Azure" в портал Azure.
+2. Выполните следующие команды на своем компьютере:
+    
+    ```console
+    kubectl delete ns azure-arc
+    kubectl delete clusterrolebinding azure-arc-operator
+    kubectl delete secret sh.helm.release.v1.azure-arc.v1
+    ```
+
+3. [Установите стабильную версию](https://helm.sh/docs/intro/install/) Helm 3 на компьютере, а не версию-кандидат.
+4. Выполните `az connectedk8s connect` команду с соответствующими значениями, чтобы подключить кластер к службе "Дуга Azure".
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 

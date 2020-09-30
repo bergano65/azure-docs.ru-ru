@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: ade326b7dda19478398de4ec3ab2be8996d98535
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 7f0e994cd41fc55824cf347a51ccfed25589a310
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923217"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539543"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-5"></a>Обновление до пакета SDK .NET для поиска Azure версии 5
 
@@ -35,7 +35,7 @@ ms.locfileid: "88923217"
 Версия 5 пакета SDK службы поиска Azure для .NET предназначена для последней общедоступной версии интерфейса REST API службы поиска Azure, в частности версии 2017-11-11. Это дает возможность использовать новые функции службы поиска Azure из приложений для .NET, включая следующие:
 
 * [Синонимы](search-synonyms.md).
-* Теперь вы можете осуществлять программный доступ к предупреждениям в журнале выполнения индексатора (дополнительные сведения см. в описании свойства `Warning` для `IndexerExecutionResult` в [справочнике по .NET](/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet)).
+* Теперь вы можете осуществлять программный доступ к предупреждениям в журнале выполнения индексатора (дополнительные сведения см. в описании свойства `Warning` для `IndexerExecutionResult` в [справочнике по .NET](/dotnet/api/microsoft.azure.search.models.indexerexecutionresult)).
 * Поддержка .NET Core 2.
 * Новая структура пакета поддерживает использование только необходимых вам частей пакета SDK (подробные сведения см. в разделе [Критические изменения в версии 5](#ListOfChanges)).
 

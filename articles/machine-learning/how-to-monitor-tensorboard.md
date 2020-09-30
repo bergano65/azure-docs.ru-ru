@@ -10,12 +10,12 @@ ms.author: minxia
 ms.date: 02/27/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: b6d4ac2727e558ed3d4538b6d325b7304d7928f8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2ed8910db8b903dab3b81d9db6c9b5798d2b6b69
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250884"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542059"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинного обучения Azure
 
@@ -39,8 +39,8 @@ ms.locfileid: "91250884"
     * Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
         * Пройдите [руководство по настройке среды и рабочей области](tutorial-1st-experiment-sdk-setup.md), чтобы создать выделенный сервер записных книжек, предварительно загруженный с пакетом SDK и репозиторием с примером.
         * В папке samples на сервере записных книжек найдите две готовые и развернутые записные книжки в следующих каталогах.
-            * **how-to-use-azureml > training-with-deep-learning > export-run-history-to-tensorboard > export-run-history-to-tensorboard.ipynb**
-            * **how-to-use-azureml > track-and-monitor-experiments > tensorboard.ipynb**
+            * **как использовать команду azureml > Track-and-Monitoring-эксперименты > tensorboard > Export-Run-History-to-tensorboard > Export-Run-History-to-tensorboard. ipynb**
+            * **как использовать-azureml > Track-and-Monitoring-эксперименты > tensorboard > tensorboard > tensorboard. ipynb**
     * Собственный сервер записных книжек Jupyter
        * [Установите пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) с дополнением `tensorboard`.
         * [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md).  

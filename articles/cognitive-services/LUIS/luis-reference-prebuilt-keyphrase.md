@@ -3,20 +3,18 @@ title: Кэйфрасе предварительно созданная сущн
 titleSuffix: Azure Cognitive Services
 description: В этой статье содержатся сведения о предварительно созданных сущностях keyPhrase в Интеллектуальной службе распознавания речи (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/27/2019
-ms.author: diberry
-ms.openlocfilehash: 53be1b13f1e2744e143a4be0777e3a8e3135460e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 02a48c8d106795b970d573bb71f52ba92e0a90ac
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78270527"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541991"
 ---
 # <a name="keyphrase-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность keyPhrase для приложения LUIS
 Сущность Кэйфрасе извлекает из utterance различные ключевые фразы. Вам не нужно добавлять в приложение пример фразы продолжительностью, содержащий Кэйфрасе. Сущность Кэйфрасе поддерживается во [многих культурах](luis-language-support.md#languages-supported) как часть функций [анализа текста](../text-analytics/overview.md) .
@@ -29,7 +27,7 @@ ms.locfileid: "78270527"
 
 #### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со значением: `false`
+Следующий код JSON имеет параметр со `verbose` значением `false` :
 
 ```json
 "entities": {
@@ -40,7 +38,7 @@ ms.locfileid: "78270527"
 }
 ```
 #### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
-Следующий код JSON имеет `verbose` параметр со значением: `true`
+Следующий код JSON имеет параметр со `verbose` значением `true` :
 
 ```json
 "entities": {
@@ -98,7 +96,7 @@ ms.locfileid: "78270527"
 ```
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

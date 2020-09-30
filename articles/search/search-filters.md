@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4d1e120073e5bf4306c89628fc4e2e9c9f7ed2cf
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 6c46dfb3f36c3ef7f67ce2f3b52c2ffe4c805a61
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89002425"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91534800"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
 
@@ -138,7 +138,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
-В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства- [фильтра](/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) соответствующего объекта [поля](/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение `true` . Это также можно сделать декларативно с помощью атрибута с [фильтрацией](/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` Свойства класса Model, который сопоставляется с определением индекса.
+В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства- [фильтра](/dotnet/api/microsoft.azure.search.models.field.isfilterable) соответствующего объекта [поля](/dotnet/api/microsoft.azure.search.models.field) значение `true` . Это также можно сделать декларативно с помощью атрибута с [фильтрацией](/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` Свойства класса Model, который сопоставляется с определением индекса.
 
 ```csharp
     [IsFilterable, IsSortable, IsFacetable]
@@ -196,7 +196,7 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 
 Дополнительные примеры можно найти в разделе [Примеры OData](./search-query-odata-filter.md#examples).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
 + [Поиск документов REST API](/rest/api/searchservice/search-documents)

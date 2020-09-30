@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: menchi
 ms.custom: amqp, devx-track-csharp
-ms.openlocfilehash: e990d122367581c785b411f3f6d3c39b334a14fb
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 3d683ada6401c4ba4f2e232948e9712643339fd8
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998583"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91533474"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-net"></a>Приступая к работе с удостоверениями модулей центра Интернета вещей и модулем двойника (.NET)
 
@@ -66,11 +66,11 @@ ms.locfileid: "88998583"
 
 1. Выберите **создать** , чтобы создать проект.
 
-1. В Visual Studio откройте **инструменты**  >  **Диспетчер пакетов NuGet**  >  **Управление пакетами NuGet для решения**. Откройте вкладку **Browse** (Обзор).
+1. В Visual Studio откройте **инструменты**  >  **Диспетчер пакетов NuGet**  >  **Управление пакетами NuGet для решения**. Выберите вкладку **Обзор**.
 
 1. Найдите и выберите **Microsoft. Azure. Devices. Client**, а затем нажмите кнопку **установить**.
 
-    ![Установка пакета SDK службы .NET для центра Интернета вещей Azure Текущая версия](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-client-sdk.png)
+    ![Снимок экрана, на котором показаны выбранные "Microsoft. Azure. Devices. Client" и кнопка "установить".](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-client-sdk.png)
 
 1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
 

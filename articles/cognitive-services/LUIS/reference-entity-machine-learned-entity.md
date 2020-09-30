@@ -3,19 +3,17 @@ title: Тип сущности машинного обучения — LUIS
 titleSuffix: Azure Cognitive Services
 description: Сущность машинного обучения — это предпочтительная сущность для создания LUIS приложений.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/30/2020
-ms.author: diberry
-ms.openlocfilehash: ddaf5c921f92aeaefd8a8b0cb13602bc70a4dd5d
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: f16f3ec445af777c3bde1cb2ab0735df4b6614f8
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684575"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542246"
 ---
 # <a name="machine-learning-entity"></a>Сущность машинного обучения
 
@@ -346,7 +344,7 @@ ms.locfileid: "83684575"
 Эта сущность недоступна в среде выполнения прогнозирования версии 2.
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о сущности машинного обучения, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
 

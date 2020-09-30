@@ -3,19 +3,17 @@ title: Простой тип сущности — LUIS
 titleSuffix: Azure Cognitive Services
 description: Простая сущность описывает одну концепцию из контекста машинного обучения. Добавьте список фраз при использовании простой сущности для улучшения результатов.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/29/2019
-ms.author: diberry
-ms.openlocfilehash: 1b5754be3c9941101a53f332841ace93caf9acdd
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 384d3df2de551e7c79f13a0fe47ffb26c7825f1b
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684556"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539292"
 ---
 # <a name="simple-entity"></a>Простая сущность
 
@@ -92,7 +90,7 @@ This is the JSON if `verbose=true` is set in the query string:
 |--|--|--|
 |Простая сущность|`Customer`|`bob jones`|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Изучение синтаксиса шаблона](reference-pattern-syntax.md)
