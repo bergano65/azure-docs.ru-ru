@@ -1,18 +1,18 @@
 ---
 title: 'Выполнение запроса на API Gremlin для Azure Cosmos DB с помощью консоли TinkerPop Gremlin: Учебник'
 description: Краткое руководство по созданию вершин, границ и запросов с помощью Gremlin API в Azure Cosmos DB.
-author: luisbosquez
+author: jasonwhowell
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/10/2020
-ms.author: lbosq
-ms.openlocfilehash: e1ce632a04269704b498a69e1a0dd4fe72e00c87
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.author: jasonh
+ms.openlocfilehash: ca1ca258296f5ac8f1fb7120d2965ccacf74b5d5
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543781"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409397"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -65,11 +65,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
    Для параметра hosts скопируйте значение **Gremlin URI** на странице **Обзор**.
 
-   :::image type="content" source="./media/create-graph-gremlin-console/gremlin-uri.png" alt-text="Просмотр и копирование значения Gremlin URI на странице Обзор на портале Azure":::
+   :::image type="content" source="./media/create-graph-gremlin-console/gremlin-uri.png" alt-text="Azure DB Cosmos в консоли Apache Gremlin":::
 
    Для параметра password скопируйте **первичный ключ** на странице **Ключи** страницы:
 
-   :::image type="content" source="./media/create-graph-gremlin-console/keys.png" alt-text="Просмотр и копирование первичного ключа на странице Ключи портала Azure":::
+   :::image type="content" source="./media/create-graph-gremlin-console/keys.png" alt-text="Azure DB Cosmos в консоли Apache Gremlin":::
 
    Файл remote-secure.yaml должен выглядеть следующим образом:
 

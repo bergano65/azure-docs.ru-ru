@@ -4,12 +4,12 @@ description: Управление производительностью и от
 ms.topic: overview
 ms.date: 06/03/2019
 ms.custom: mvc
-ms.openlocfilehash: 4576c8a7657ea3da1f8a732c2efd38302f33300c
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: f00eea37c43fba10e0a89498dd81366630852db7
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90974054"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371389"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Azure Application Insights, компонент [Azure Monitor](../overview.md), — это расширяемая служба управления производительностью приложений (APM) для разработчиков и специалистов по DevOps. Используйте ее для мониторинга ваших работающих приложений. Эта служба автоматически отслеживает аномалии производительности и предоставляет мощные аналитические инструменты, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Она работает с приложениями на разных платформах, включая .NET, Node.js, Java и Python, с размещением в локальной, гибридной или общедоступной облачной средах. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.
@@ -122,6 +122,7 @@ Application Insights — одна из многих служб, размещен
 * [Java](./java-get-started.md)
 * [Node.js](./nodejs.md)
 * [Python](./opencensus-python.md)
+* [JavaScript](./javascript.md)
 
 
 ## <a name="support-and-feedback"></a>Поддержка и обратная связь

@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 07/01/2020
-ms.openlocfilehash: 6adbd83ddfbdb82d1054d4e74dd9492d08583ede
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.date: 09/25/2020
+ms.openlocfilehash: b69feec7249c80fc63d803a14f360614bcf880fa
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89292543"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399828"
 ---
 # <a name="quickstart-create-a-demo-app-in-the-portal-azure-cognitive-search"></a>Краткое руководство. Создание демонстрационного приложения на портале (Когнитивный поиск Azure)
 
@@ -35,7 +35,7 @@ ms.locfileid: "89292543"
 
   При работе с этим кратким руководством используется встроенный пример данных об объектах недвижимости, который включает эскизные изображения, и индекс для него (мастер позволяет добавлять изображение на страницу результатов). Чтобы создать индекс для этого упражнения, запустите мастер **импорта данных**, выбрав источник данных *realestate-us-sample*.
 
-  ![Страница источника данных для примера данных](media/search-create-app-portal/import-data-realestate.png)
+  :::image type="content" source="media/search-create-app-portal/import-data-realestate.png" alt-text="Страница источника данных для примера данных" border="false":::
 
 Когда индекс будет готов к использованию, переходите к следующему шагу.
 
@@ -61,7 +61,7 @@ ms.locfileid: "89292543"
 
 1. Для параметра Description (Описание) выберите поле, которое содержит полезные сведения для выбора документа, который захочет просмотреть посетитель.
 
-   ![Настройка результатов для примера данных](media/search-create-app-portal/configure-results.png)
+   :::image type="content" source="media/search-create-app-portal/configure-results.png" alt-text="Страница источника данных для примера данных" border="false":::
 
 ## <a name="add-a-sidebar"></a>Добавление боковой панели
 
@@ -83,7 +83,7 @@ ms.locfileid: "89292543"
 
 На снимке экрана ниже представлены доступные в мастере варианты, наложенные на отображаемую в приложении страницу. Вы здесь видите, как используется выбор полей и параметр "Показать имя поля" для включения и исключения меток в предложении.
 
-![Настройка предложений по запросам](media/search-create-app-portal/suggestions.png)
+:::image type="content" source="media/search-create-app-portal/suggestions.png" alt-text="Страница источника данных для примера данных":::
 
 ## <a name="create-download-and-execute"></a>Создание, скачивание и выполнение
 
@@ -95,7 +95,7 @@ ms.locfileid: "89292543"
 
 Базовый индекс содержит вымышленные и случайным образом созданные данные, которые дублируются в разных документах, а описание часто не соответствует изображению. Вы можете ожидать более согласованные результаты, создав приложение на основе реальных индексов.
 
-![Запустите приложение](media/search-create-app-portal/run-app.png)
+:::image type="content" source="media/search-create-app-portal/run-app.png" alt-text="Страница источника данных для примера данных":::
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

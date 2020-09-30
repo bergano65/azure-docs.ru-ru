@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 06/23/2020
+ms.date: 09/25/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9c8647e28701316ecd7305e206918c53281deb6b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: e04c7da40719f77ca478f2ce577688af773f523d
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89004261"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91399233"
 ---
 # <a name="tutorial-index-azure-sql-data-using-the-net-sdk"></a>Руководство по Индексирование данных SQL Azure с помощью пакета SDK для .NET
 
@@ -57,7 +57,7 @@ ms.locfileid: "89004261"
 
 1. Щелкните или создайте **Базу данных SQL**. Вы можете использовать значения по умолчанию и самую низкую ценовую категорию. Одним из преимуществ создания сервера является то, что вы можете указать имя пользователя и пароль администратора, которые потребуются для создания и загрузки таблиц в дальнейшем.
 
-   ![Страница создания базы данных](./media/search-indexer-tutorial/indexer-new-sqldb.png "Страница создания базы данных")
+   :::image type="content" source="media/search-indexer-tutorial/indexer-new-sqldb.png" alt-text="Страница создания базы данных" border="false":::
 
 1. Щелкните **Проверить и создать**, чтобы развернуть новый сервер и базу данных. Дождитесь, пока завершится развертывание сервера и базы данных.
 
@@ -69,7 +69,7 @@ ms.locfileid: "89004261"
 
 1. Выберите файл и нажмите **Открыть**. Скрипт должен выглядеть, как на следующем снимке экрана:
 
-   ![Скрипт SQL](./media/search-indexer-tutorial/sql-script.png "Скрипт SQL")
+   :::image type="content" source="media/search-indexer-tutorial/sql-script.png" alt-text="Страница создания базы данных" border="false":::
 
 1. Нажмите **Выполнить** для выполнения запроса. В области результатов появится сообщение об успешном выполнении запроса для 3 строк.
 
@@ -99,7 +99,7 @@ ms.locfileid: "89004261"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+   :::image type="content" source="media/search-get-started-postman/get-url-key.png" alt-text="Страница создания базы данных" border="false":::
 
 ## <a name="2---set-up-your-environment"></a>2. Настройка среды
 
@@ -201,7 +201,7 @@ public string HotelName { get; set; }
 
 Нажмите клавишу F5 для сборки и запуска решения. Программа выполняется в режиме отладки. В окне консоли отображаются сведения о состоянии каждой операции.
 
-   ![Выходные данные консоли](./media/search-indexer-tutorial/console-output.png "Вывод на консоль")
+   :::image type="content" source="media/search-indexer-tutorial/console-output.png" alt-text="Страница создания базы данных" border="false":::
 
 Код выполняется локально в Visual Studio. Устанавливается подключение к службе поиска в Azure, которая в свою очередь подключается к Базе данных SQL Azure, чтобы получить набор данных. При таком большом количестве операций есть несколько возможных точек сбоя. Если поступает сообщение об ошибке, прежде всего проверьте следующее:
 
@@ -217,7 +217,7 @@ public string HotelName { get; set; }
 
 1. [Войдите на портал Azure](https://portal.azure.com/), откройте страницу **Обзор** для службы поиска и поочередно откройте каждый список, чтобы убедиться в том, что объект создан. В списках **Индексы**, **Индексаторы** и **Источники данных** должны присутствовать элементы hotels, azure-sql-indexer и azure-sql соответственно.
 
-   ![Плитки для индексаторов и источников данных](./media/search-indexer-tutorial/tiles-portal.png)
+   :::image type="content" source="media/search-indexer-tutorial/tiles-portal.png" alt-text="Страница создания базы данных" border="false":::
 
 1. Выберите индекс hotels. На странице индекса hotels на первой вкладке вы найдете **обозреватель поиска**. 
 
@@ -225,7 +225,7 @@ public string HotelName { get; set; }
 
    В индексе возвращаются три записи в виде документов JSON. Проводник поиска возвращает документы в формате JSON, чтобы можно было просматривать всю структуру.
 
-   ![Запрос индекса](./media/search-indexer-tutorial/portal-search.png "Запрос индекса")
+   :::image type="content" source="media/search-indexer-tutorial/portal-search.png" alt-text="Страница создания базы данных" border="false":::
    
 1. Затем введите строку поиска `search=river&$count=true`. 
 

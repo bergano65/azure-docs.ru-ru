@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 09/22/2020
-ms.openlocfilehash: 71cf11673756dcefb828ad1fad0412a791b43efd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 268eedf6f9d64d52539e20006322b6b1dd9964e8
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945572"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439962"
 ---
 # <a name="azure-database-for-postgresql---flexible-server"></a>Гибкий сервер Базы данных Azure для PostgreSQL
 
@@ -49,15 +49,14 @@ ms.locfileid: "90945572"
 1. Будет подготовлена новая виртуальная машина Linux для вычислений.
 2. Хранилище с файлами данных сопоставляется с новой виртуальной машиной.
 3. Ядро СУБД PostgreSQL переходит в режим "в сети" на новой виртуальной машине.
-4. Служба шлюза обеспечивает прозрачную отработку отказа, не требуя изменений на стороне приложения.
 
 На рисунке ниже показан переход виртуальной машины и сбой хранилища.
 
- :::image type="content" source="./media/overview/overview-azure-postgres-flex-virtualmachine-storage-failure.png" alt-text="Гибкий сервер — сбои виртуальных машин и хранилищ":::
+ :::image type="content" source="./media/overview/overview-azure-postgres-flex-virtualmachine.png" alt-text="Гибкий сервер — сбои виртуальных машин и хранилищ":::
 
 Если настроен высокий уровень доступности с избыточностью в пределах зоны, служба подготавливает и обслуживает сервер горячей замены в зоне доступности в одном и том же регионе Azure. Изменения данных на исходном сервере синхронно реплицируются на резервный сервер во избежание потери данных. При повышении уровня доступности с избыточностью в пределах зоны после запуска планового или внепланового события отработки отказа резервный сервер немедленно переходит в оперативный режим и становится доступным для обработки входящих транзакций. Это обеспечивает устойчивость службы к сбоям зон доступности в пределах региона Azure, который поддерживает несколько зон доступности, как показано на рисунке ниже.
 
- :::image type="content" source="./media/business-continuity/concepts-zone-redundant-high-availability-architecture.png" alt-text="Высокий уровень доступности с избыточностью в пределах зоны":::
+ :::image type="content" source="./media/business-continuity/concepts-zone-redundant-high-availability-architecture.png" alt-text="Гибкий сервер — сбои виртуальных машин и хранилищ":::
 
  Дополнительные сведения см. в документации [по высокому уровню доступности](./concepts-high-availability.md).
 

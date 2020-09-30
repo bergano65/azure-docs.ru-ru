@@ -7,13 +7,13 @@ author: dereklegenzoff
 ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 06/22/2020
-ms.openlocfilehash: e714c58827ebb4ee7e50696db27644fa65a73af1
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.date: 09/25/2020
+ms.openlocfilehash: ac7cee2c1d72b4102fb397aa8093c2d38686fc88
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89290316"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397272"
 ---
 # <a name="tutorial-create-a-custom-analyzer-for-phone-numbers"></a>Руководство по Создание пользовательского анализатора телефонных номеров
 
@@ -59,7 +59,7 @@ ms.locfileid: "89290316"
 
 1. Замените `<YOUR-ADMIN-API-KEY>` первичным или вторичным ключом службы поиска.
 
-  ![URL-адрес и заголовок запроса Postman](media/search-get-started-postman/postman-url.png "URL-адрес и заголовок запроса Postman")
+  :::image type="content" source="media/search-get-started-postman/postman-url.png" alt-text="URL-адрес и заголовок запроса Postman" border="false":::
 
 Если вы не работали с Postman, см. статью [Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Postman с помощью REST API](search-get-started-postman.md).
 
@@ -239,11 +239,11 @@ GET https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/tutorial-basic
 
 На схеме ниже можно видеть, как эти три компонента создают обрабатывают последовательность:
 
-  ![Схема процесса анализатора для разбивки предложения на лексемы](media/tutorial-create-custom-analyzer/analyzers-explained.png)
+  :::image type="content" source="media/tutorial-create-custom-analyzer/analyzers-explained.png" alt-text="URL-адрес и заголовок запроса Postman":::
 
 Затем эти маркеры сохраняются в инвертированном индексе, который позволяет выполнять быстрый полнотекстовый поиск.  Инвертированный индекс обеспечивает поддержку полнотекстового поиска благодаря сопоставлению всех уникальных терминов, извлеченных во время лексического анализа, с документами, в которых они встречаются. Пример можно видеть на схеме ниже:
 
-  ![Пример инвертированного индекса](media/tutorial-create-custom-analyzer/inverted-index-explained.png)
+  :::image type="content" source="media/tutorial-create-custom-analyzer/inverted-index-explained.png" alt-text="URL-адрес и заголовок запроса Postman":::
 
 Все операции поиска сводятся к поиску терминов в инвертированном индексе. Когда пользователь отправляет запрос:
 
@@ -251,7 +251,7 @@ GET https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/tutorial-basic
 1. В инвертированном индексе выполняется поиск документов с совпадающими терминами.
 1. Наконец, полученные документы ранжируются с применением [алгоритма сходства](index-ranking-similarity.md).
 
-  ![Схема процесса анализатора с ранжированием сходных элементов](media/tutorial-create-custom-analyzer/query-architecture-explained.png)
+  :::image type="content" source="media/tutorial-create-custom-analyzer/query-architecture-explained.png" alt-text="URL-адрес и заголовок запроса Postman":::
 
 Если термины запроса не соответствуют терминам в инвертированном индексе, запрос не возвращает результаты. Чтобы узнать больше о принципах работы запросов, см. статью о [полнотекстовом поиске](search-lucene-query-architecture.md).
 

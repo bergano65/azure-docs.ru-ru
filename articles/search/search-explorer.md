@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 06/07/2020
-ms.openlocfilehash: 8f004ff8118829ebf2d245a136cf22cdde23accc
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/25/2020
+ms.openlocfilehash: adcd07ad370ad9f1301caa41c494a33958743dd8
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88929794"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91398414"
 ---
 # <a name="quickstart-use-search-explorer-to-run-queries-in-the-portal"></a>Краткое руководство. Использование проводника поиска для выполнения запросов на портале
 
@@ -37,11 +37,11 @@ ms.locfileid: "88929794"
 
 1. Щелкните проводник поиска на панели команд:
 
-   ![Команда проводника поиска на портале](./media/search-explorer/search-explorer-cmd2.png "Команда проводника поиска на портале")
+   :::image type="content" source="media/search-explorer/search-explorer-cmd2.png" alt-text="Команда проводника поиска на портале" border="false":::
 
     Или используйте встроенную вкладку **проводника поиска** в открытом индексе:
 
-   ![Вкладка проводника поиска](./media/search-explorer/search-explorer-tab.png "Вкладка проводника поиска")
+   :::image type="content" source="media/search-explorer/search-explorer-tab.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="unspecified-query"></a>Неуказанный запрос
 
@@ -55,7 +55,7 @@ ms.locfileid: "88929794"
 
    **Результаты**
    
-   ![Пример запроса с пустыми условиями](./media/search-explorer/search-explorer-example-empty.png "Пример запроса поиска с неполными или пустыми условиями")
+   :::image type="content" source="media/search-explorer/search-explorer-example-empty.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="free-text-search"></a>Поиск произвольного текста
 
@@ -71,7 +71,7 @@ ms.locfileid: "88929794"
 
    С помощью клавиш CTRL-F можно искать определенные условия в результатах поиска.
 
-   ![Пример запроса поиска произвольного текста](./media/search-explorer/search-explorer-example-freetext.png "Пример запроса поиска произвольного текста")
+   :::image type="content" source="media/search-explorer/search-explorer-example-freetext.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="count-of-matching-documents"></a>Количество соответствующих документов 
 
@@ -83,7 +83,7 @@ ms.locfileid: "88929794"
 
    **Результаты**
 
-   ![Пример количества документов](./media/search-explorer/search-explorer-example-count.png "Количество соответствующих документов в индексе")
+   :::image type="content" source="media/search-explorer/search-explorer-example-count.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="limit-fields-in-search-results"></a>Ограничение полей в результатах поиска
 
@@ -95,7 +95,7 @@ ms.locfileid: "88929794"
 
    **Результаты**
 
-   ![Пример ограничения полей](./media/search-explorer/search-explorer-example-selectfield.png "Ограничение полей в результатах поиска")
+   :::image type="content" source="media/search-explorer/search-explorer-example-selectfield.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="return-next-batch-of-results"></a>Возвращение следующего пакета результатов
 
@@ -107,7 +107,7 @@ ms.locfileid: "88929794"
 
    **Результаты**
 
-   ![Пакет результатов поиска](./media/search-explorer/search-explorer-example-topskip.png "Возвращение следующего пакета результатов поиска")
+   :::image type="content" source="media/search-explorer/search-explorer-example-topskip.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="filter-expressions-greater-than-less-than-equal-to"></a>Выражения фильтра (больше, меньше, равно)
 
@@ -119,7 +119,7 @@ ms.locfileid: "88929794"
    
    **Результаты**
 
-   ![Выражение фильтра](./media/search-explorer/search-explorer-example-filter.png "Фильтрация по критериям")
+   :::image type="content" source="media/search-explorer/search-explorer-example-filter.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 ## <a name="order-by-expressions"></a>Выражения OrderBy
 
@@ -131,7 +131,7 @@ ms.locfileid: "88929794"
    
    **Результаты**
 
-   ![Выражение OrderBy](./media/search-explorer/search-explorer-example-ordery.png "Изменение порядка сортировки")
+   :::image type="content" source="media/search-explorer/search-explorer-example-ordery.png" alt-text="Команда проводника поиска на портале" border="false":::
 
 Выражения **$filter** и **$orderby** являются конструкциями OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 

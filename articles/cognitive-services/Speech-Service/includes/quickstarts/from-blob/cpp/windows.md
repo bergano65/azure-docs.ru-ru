@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/13/2020
 ms.author: trbye
-ms.openlocfilehash: 629fc5e3bc41377fe852a1648680d77b22395d02
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: e1d2493474736ebbcdb54aeb697716e1dc7d6ee6
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81400967"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91377409"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -17,7 +17,7 @@ ms.locfileid: "81400967"
 
 > [!div class="checklist"]
 > * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=linux&pivots=programmming-language-cpp).
-> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Создать ресурс службы "Речь" Azure.](../../../../overview.md#try-the-speech-service-for-free)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.

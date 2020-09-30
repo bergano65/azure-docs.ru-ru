@@ -8,14 +8,14 @@ ms.author: heidist
 ms.devlang: nodejs
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 06/23/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 2c97a770dc10168284bebbc038d8c48145c2a385
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 09/25/2020
+ms.custom: devx-track-js
+ms.openlocfilehash: ab3142426b12f86b9f8afa84ce0ea05fc1939eec
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88917896"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400610"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Node.js с помощью REST API
 > [!div class="op_single_selector"]
@@ -60,7 +60,7 @@ ms.locfileid: "88917896"
 
     Получите также ключ запроса. Мы рекомендуем создавать запросы с доступом только для чтения.
 
-![Получение имени службы, ключей запросов и администратора](media/search-get-started-nodejs/service-name-and-keys.png)
+:::image type="content" source="media/search-get-started-nodejs/service-name-and-keys.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 Для выполнения любого запроса к службе нужно включить ключ API в заголовок. Действительный ключ устанавливает для каждого запроса отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -473,7 +473,7 @@ run();
 
 Откройте **обзорные сведения** о службе Поиска Azure на портале Azure. Выберите вкладку **Индексы**. Вы должны увидеть нечто вроде этого:
 
-![Снимок экрана портала Azure, где открыта обзорная информация о Службе поиска на вкладке "Индексы"](media/search-get-started-nodejs/create-index-no-data.png)
+:::image type="content" source="media/search-get-started-nodejs/create-index-no-data.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 На следующем шаге вы добавите данные в индекс. 
 

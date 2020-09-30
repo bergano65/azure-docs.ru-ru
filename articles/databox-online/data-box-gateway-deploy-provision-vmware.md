@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 03/25/2019
+ms.date: 09/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 6488871067416b2cee533561bae47874413d9012
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 4818755e48a4d497d70920a62a9505346176ed73
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892122"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371292"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware
 
@@ -194,7 +194,7 @@ ms.locfileid: "88892122"
 
    ![Ввод пароля виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image23.png)
 
-6. Шаги 5–7 применяются только при загрузке в среде без DHCP. Если вы работаете в среде DHCP, пропустите эти шаги и перейдите к шагу 8. Если устройство загружено в среде без DHCP, появится соответствующее сообщение: **Используйте командлет Set-HcsIPAddress для настройки сети**. 
+6. Шаги 6–8 применяются только при загрузке в среде без DHCP. Если вы работаете в среде DHCP, пропустите эти шаги и перейдите к шагу 9. Если устройство загружено в среде без DHCP, появится соответствующее сообщение: **Используйте командлет Set-HcsIPAddress для настройки сети**. 
    
 7. Чтобы настроить сеть в командной строке, используйте команду `Get-HcsIpAddress` для получения списка сетевых интерфейсов, включенных на виртуальном устройстве. Если на устройстве включен один сетевой интерфейс, по умолчанию ему назначается имя `Ethernet`.
 

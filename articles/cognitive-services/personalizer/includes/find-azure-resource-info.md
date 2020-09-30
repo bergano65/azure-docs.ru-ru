@@ -5,15 +5,16 @@ services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
+ms.subservice: personalizer
 ms.topic: include
 ms.date: 08/25/2019
 ms.author: erhopf
-ms.openlocfilehash: eafc782f6244b73df1511466af07adad9bb4301d
-ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
+ms.openlocfilehash: 6a212cd931153574eb8a931c7394d39108852bef
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89055960"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91376920"
 ---
 > [!IMPORTANT]
 > Перейдите на портал Azure. Если ресурс Персонализатора, созданный в соответствии с указаниями в разделе **Предварительные требования**, успешно развернут, нажмите кнопку **Перейти к ресурсу** в разделе **Дальнейшие действия**. Ключ и конечная точка располагаются на странице **ключа и конечной точки** ресурса в разделе **управления ресурсами**. 
