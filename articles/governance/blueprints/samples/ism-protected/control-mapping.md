@@ -1,14 +1,14 @@
 ---
-title: Краткое описание примера схемы Australian Government ISM PROTECTED
-description: Общие сведения о примере схемы Australian Government ISM PROTECTED. Этот пример схемы помогает клиентам оценить определенные средства управления ISM PROTECTED.
-ms.date: 08/03/2020
+title: Элементы управления примера схемы Australian Government ISM PROTECTED
+description: Сопоставление элементов управления для примера схемы Australian Government ISM PROTECTED. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
+ms.date: 09/11/2020
 ms.topic: sample
-ms.openlocfilehash: 750cc5551f0bbf05e0da6ad41d46729231243f72
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 605e92b75da1e5363884fc6ef9457251cfbc6e4e
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760436"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90030112"
 ---
 # <a name="control-mapping-of-the-australian-government-ism-protected-blueprint-sample"></a>Сопоставление элементов управления для примера схемы Australian Government ISM PROTECTED
 
@@ -350,6 +350,10 @@ ms.locfileid: "87760436"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные статьи о схемах и способах их использования:
+
+> [!div class="nextstepaction"]
+> [Схема ISM PROTECTED — общие сведения](./index.md)
+> [Схема ISM PROTECTED — этапы развертывания](./deploy.md)
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../../concepts/parameters.md).

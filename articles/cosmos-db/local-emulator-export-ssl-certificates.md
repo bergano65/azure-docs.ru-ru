@@ -42,7 +42,7 @@ ms.locfileid: "91445284"
 
     :::image type="content" source="./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-3.png" alt-text="Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 1)":::
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
     :::image type="content" source="./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-4.png" alt-text="Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 1)":::
 
