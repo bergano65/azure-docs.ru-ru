@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 08/20/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 09273cf901830e850acca05c57c0b110ffd7e28a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 13e3f5a7d86d2e9b705fbeb104ba4f8eb690cb3a
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89002868"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91534119"
 ---
 # <a name="tutorial-ai-generated-searchable-content-from-azure-blobs-using-the-net-sdk"></a>Руководство по Работа с созданным ИИ содержимым с возможностью поиска из больших двоичных объектов Azure с использованием пакета SDK для .NET
 
@@ -170,7 +170,7 @@ ms.locfileid: "89002868"
       "AzureBlobConnectionString": "Put your Azure Blob connection string here",
     }
     ```
-    
+
 Укажите службу поиска и добавьте сведения об учетной записи хранения BLOB-объектов. Помните, что эти сведения можно получить во время выполнения действий по подготовке службы из предыдущего раздела.
 
 Для **SearchServiceName** введите краткое имя службы, а не полный URL-адрес.
@@ -586,11 +586,11 @@ private static Skillset CreateOrUpdateDemoSkillSet(SearchServiceClient serviceCl
 
 | Имена полей | Типы полей |
 | --- | --- |
-| идентификатор | Edm.String |
-| content | Edm.String |
-| languageCode | Edm.String |
-| keyPhrases | List<Edm.String> |
-| organizations | List<Edm.String> |
+| `id` | Edm.String |
+| `content` | Edm.String |
+| `languageCode` | Edm.String |
+| `keyPhrases` | List<Edm.String> |
+| `organizations` | List<Edm.String> |
 
 #### <a name="create-demoindex-class"></a>Создание класса DemoIndex
 
@@ -906,7 +906,7 @@ catch (Exception e)
 }
 ```
 
-Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью свойства [Select](/dotnet/api/microsoft.azure.search.models.searchparameters.select?view=azure-dotnet), используя разделенный запятыми список.
+Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью свойства [Select](/dotnet/api/microsoft.azure.search.models.searchparameters.select), используя разделенный запятыми список.
 
 <a name="reset"></a>
 

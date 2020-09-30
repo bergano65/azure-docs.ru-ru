@@ -2,20 +2,18 @@
 title: включить файл
 description: включить файл
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 09/01/2020
 ms.topic: include
 ms.custom: include file, devx-track-dotnet, cog-serv-seo-aug-2020
-ms.author: diberry
-ms.openlocfilehash: fff4e8c43263dfcc49be6cb6269078643118e8df
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 2a3129e6a4ce51d9c50d210c6ce87a8d6fbda6de
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89323118"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91544930"
 ---
 С помощью клиентских библиотек Распознавания речи (LUIS) для .NET вы можете:
 * Создание приложения
@@ -180,7 +178,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime --ver
 
 Добавьте примеры речевых фрагментов, создав список объектов [ExampleLabelObject](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring.models.examplelabelobject?view=azure-dotnet), по одному объекту для каждого примера высказывания. Каждый пример должен пометить все сущности словарем пар "имя — значение" имени и значения сущности. Значение сущности должно быть точно таким, как оно указано в тексте примера высказывания.
 
-:::image type="content" source="../media/quickstart-sdk/labeled-example-machine-learned-entity.png" alt-text="Снимок экрана: часть страницы с помеченным на портале примером речевого фрагмента.":::
+:::image type="content" source="../media/quickstart-sdk/labeled-example-machine-learned-entity.png" alt-text="Снимок экрана: часть страницы портала с созданной сущностью машинного обучения с вложенными сущностями и функциями, применяемыми к вложенным сущностям Quantity.":::
 
 Вызовите [Examples.AddAsync](https://docs.microsoft.com//dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring.examplesextensions.addasync?view=azure-dotnet) с идентификатором приложения, идентификатором версии и примером.
 

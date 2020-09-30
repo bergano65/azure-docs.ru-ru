@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 06/12/2020
+ms.date: 09/25/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 39891b69cdb8e7f392657514d255f5f85b3eba60
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 34265552122c1f8d1bcbbcfe95948683a5750a71
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936033"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91531009"
 ---
 # <a name="tutorial-use-python-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Руководство по использованию Python и искусственного интеллекта для создания доступного для поиска содержимого на основе больших двоичных объектов Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "88936033"
 
 1. Выполните поиск по строке *учетная запись хранения* и выберите "Учетная запись хранения Microsoft".
 
-   ![Создание учетной записи хранения](media/cognitive-search-tutorial-blob/storage-account.png "Создание учетной записи хранения")
+   :::image type="content" source="media/cognitive-search-tutorial-blob/storage-account.png" alt-text="Создание учетной записи хранения" border="false":::
 
 1. На вкладке "Основные сведения" нужно ввести следующие сведения. Сохраните значения по умолчанию для остальных параметров.
 
@@ -81,7 +81,7 @@ ms.locfileid: "88936033"
 
 1. Выберите *cog-search-demo* и щелкните **Отправить**, чтобы открыть папку с сохраненными файлами для скачивания. Выберите все файлы, не являющиеся изображениями. Их должно быть семь. Щелкните **ОК**, чтобы начать отправку.
 
-   ![Отправка образцов файлов](media/cognitive-search-tutorial-blob/sample-files.png "Отправка образцов файлов")
+   :::image type="content" source="media/cognitive-search-tutorial-blob/sample-files.png" alt-text="Создание учетной записи хранения" border="false":::
 
 1. Прежде чем выйти из службы хранилища Azure, получите строку подключения для создания подключения в Когнитивном поиске Azure. 
 
@@ -117,7 +117,7 @@ ms.locfileid: "88936033"
 
    Получите также ключ запроса. Мы рекомендуем создавать запросы с доступом только для чтения.
 
-   ![Получение имени службы, ключей запросов и администратора](media/search-get-started-nodejs/service-name-and-keys.png)
+   :::image type="content" source="media/search-get-started-nodejs/service-name-and-keys.png" alt-text="Создание учетной записи хранения" border="false":::
 
 Для выполнения любого запроса к службе нужно включить ключ API в заголовок. Действительный ключ устанавливает для каждого запроса отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -190,7 +190,7 @@ print(r.status_code)
 
 На портале Azure на странице панели мониторинга службы поиска убедитесь, что источник cogsrch-py-datasource присутствует в списке **Источники данных**. Щелкните **Обновить**, чтобы обновить страницу.
 
-![Плитка источников данных на портале](./media/cognitive-search-tutorial-blob-python/py-data-source-tile.png "Плитка источников данных на портале")
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-data-source-tile.png" alt-text="Создание учетной записи хранения" border="false":::
 
 ### <a name="step-2-create-a-skillset"></a>Шаг 2. Создание набора навыков
 
@@ -303,7 +303,7 @@ print(r.status_code)
 
 Графическое представление набора навыков показано ниже.
 
-![Общие сведения о наборе навыков](media/cognitive-search-tutorial-blob/skillset.png "Общие сведения о наборе навыков")
+:::image type="content" source="media/cognitive-search-tutorial-blob/skillset.png" alt-text="Создание учетной записи хранения" border="false":::
 
 Выходные данные могут быть сопоставлены с индексом, используемым в качестве входных данных для нисходящего навыка, или к обоим, как в случае с кодом языка. В индексе код языка полезен для фильтрации. В качестве входных данных код языка используется навыками анализа текста, чтобы указать лингвистические правила для разбивки слов.
 
@@ -315,7 +315,7 @@ print(r.status_code)
 
 В этом упражнении используются следующие поля и типы полей:
 
-| имена полей: | идентификатор         | content   | languageCode | keyPhrases         | organizations     |
+| имена полей: | ID         | content   | languageCode | keyPhrases         | organizations     |
 |--------------|----------|-------|----------|--------------------|-------------------|
 | типы полей: | Edm.String|Edm.String| Edm.String| List<Edm.String>  | List<Edm.String>  |
 
@@ -472,11 +472,11 @@ pprint(json.dumps(r.json(), indent=1))
 
 В ответе отслеживайте `"lastResult"` по значениям `"status"` и `"endTime"`. Периодически запускайте скрипт для проверки состояния. Когда индексатор завершит работу, состояние будет иметь значение success, будет указано значение endTime, а в ответ будут включены все ошибки и предупреждения, которые произошли во время обогащения.
 
-![Индексатор создан](./media/cognitive-search-tutorial-blob-python/py-indexer-is-created.png "Индексатор создан")
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-indexer-is-created.png" alt-text="Создание учетной записи хранения" border="false":::
 
 Предупреждения часто возникают с некоторыми исходными файлами и комбинациями навыков и не всегда указывают на проблему. Многие предупреждения являются безвредными. Например, если вы индексируете JPEG-файл без текста, на этом экране отобразится предупреждение.
 
-![Пример предупреждения индексатора](./media/cognitive-search-tutorial-blob-python/py-indexer-warning-example.png "Пример предупреждения индексатора")
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-indexer-warning-example.png" alt-text="Создание учетной записи хранения" border="false":::
 
 ## <a name="5---search"></a>5\. Поиск
 
@@ -493,7 +493,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 Результат должен выглядеть следующим образом: На снимке экрана показана только часть ответа.
 
-![Индекс запроса для всех полей](./media/cognitive-search-tutorial-blob-python/py-query-index-for-fields.png "Запрос индекса для всех полей")
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-query-index-for-fields.png" alt-text="Создание учетной записи хранения" border="false":::
 
 В результате будет возвращена схема индекса с именем и типом, а также атрибуты каждого поля.
 
@@ -508,7 +508,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 Результат должен выглядеть следующим образом: На снимке экрана показана только часть ответа.
 
-![Индекс запроса для содержимого организаций](./media/cognitive-search-tutorial-blob-python/py-query-index-for-organizations.png "Запрос индекса для возврата содержимого организаций")
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-query-index-for-organizations.png" alt-text="Создание учетной записи хранения" border="false":::
 
 Повторите эти действия для дополнительных полей: `content`, `languageCode`, `keyPhrases` и `organizations` в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
 
@@ -522,7 +522,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 Для удаления индексов, индексаторов, источников данных и наборов навыков можно использовать портал. Когда вы удаляете индексатор, вы можете по желанию одновременно выборочно удалить индекс, набор навыков и источник данных.
 
-![Удаление объектов поиска](./media/cognitive-search-tutorial-blob-python/py-delete-indexer-delete-all.png "Удаление объектов поиска на портале")
+:::image type="content" source="media/cognitive-search-tutorial-blob-python/py-delete-indexer-delete-all.png" alt-text="Создание учетной записи хранения" border="false":::
 
 Вы также можете удалить их, используя скрипт. В следующем сценарии показано, как удалить набор навыков. 
 

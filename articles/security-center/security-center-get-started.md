@@ -12,14 +12,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/3/2018
+ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: e51d0bfb79eab4db9bb571cc0f4ee70ada352d92
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b583e3d86ba193a92080f2da9cc0b16d07c5a993
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90895787"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447171"
 ---
 # <a name="quickstart-setting-up-azure-security-center"></a>Краткое руководство. Настройка Центра безопасности Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "90895787"
 
 1. На боковой панели Центра безопасности выберите **Начало работы**.
 
-    :::image type="content" source="./media/security-center-get-started/get-started-upgrade-tab.png" alt-text="Вкладка "Обновление" на странице начала работы"::: 
+    :::image type="content" source="./media/security-center-get-started/get-started-upgrade-tab.png" alt-text="Панель мониторинга с общими сведениями о Центре безопасности"::: 
 
     На вкладке **Обновление** отображается список подписок и рабочих областей, доступных для подключения.
 
@@ -82,7 +82,7 @@ ms.locfileid: "90895787"
 1. На странице **Сбор данных** выберите для параметра **Автоматическая подготовка** значение **Вкл.**
 1. Нажмите **Сохранить**.
 
-    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Включение автоматической подготовки агента Log Analytics":::
+    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Панель мониторинга с общими сведениями о Центре безопасности":::
 
 >[!TIP]
 > Если необходимо подготовить рабочую область, установка агента может занять до 25 минут.
@@ -109,7 +109,6 @@ ms.locfileid: "90895787"
 [2]: ./media/security-center-get-started/overview.png
 [4]: ./media/security-center-get-started/get-started.png
 [5]: ./media/security-center-get-started/pricing.png
-[6]: ./media/security-center-get-started/enable-automatic-provisioning.png
 [7]: ./media/security-center-get-started/security-alerts.png
 [8]: ./media/security-center-get-started/recommendations.png
 [9]: ./media/security-center-get-started/select-subscription.png

@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 3/18/2020
-ms.openlocfilehash: 2a44896ff7cabb9e44c02be9f3dba201298d4794
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 51c194ca9b091bc685f293320750da55925ad49d
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903949"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91565621"
 ---
 # <a name="what-is-azure-database-for-mysql"></a>Что такое база данных Azure для MySQL?
 
@@ -59,7 +59,16 @@ ms.locfileid: "90903949"
 
 Подробный обзор режима развертывания с гибким сервером см. [здесь](flexible-server/overview.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="contacts"></a>Контакты
+Если у вас возникли вопросы или предложения, связанные с использованием Базы данных Azure для MySQL, вы можете отправить электронное сообщение команде разработчиков Базы данных Azure для MySQL ([@AskБазы данных Azure для MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Учтите, что это не электронный адрес службы технической поддержки.
+
+Кроме того, попробуйте обратиться сюда:
+
+- Для обращения в службу поддержки Azure [отправьте запрос с портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+- Чтобы устранить проблему, связанную с учетной записью, отправьте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) на портале Azure.
+- Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/597982-azure-database-for-mysql).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее изучите два доступных режима развертывания Базы данных Azure для MySQL и выберите правильный вариант в зависимости от ваших потребностей.
 

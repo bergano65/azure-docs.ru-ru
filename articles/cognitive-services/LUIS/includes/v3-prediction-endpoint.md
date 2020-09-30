@@ -2,18 +2,17 @@
 title: Получение конечной точки прогнозирования V3
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: include
 ms.date: 05/05/2020
-ms.author: diberry
-ms.openlocfilehash: 18f5422202cf972d49349cc04b845c623cabffa3
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: a607ad71915606d6046b4c71291a49b8641bdcc9
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83589166"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91545234"
 ---
 1. На портале LUIS в разделе **Управление** (в верхнем правом меню) на странице **Ресурсы Azure** (меню слева) на вкладке **Ресурсы прогнозирования** скопируйте **пример запроса** в нижней части страницы.
 

@@ -10,16 +10,16 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 08/05/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ffcb2c741838b1292eaf0793cd625c99d252068c
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: e1a52a15012e367dc902992f7f7b905fc6c6a5eb
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462077"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541549"
 ---
 # <a name="quickstart-create-a-search-index-using-the-azuresearchdocuments-client-library"></a>Краткое руководство. Создание индекса поиска с помощью клиентской библиотеки Azure.Search.Documents
 
-С помощью новой [клиентской библиотеки Azure.Search.Documents (версия 11)](/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) вы можете создать консольное приложение .NET Core на языке C#, которое создает, загружает и запрашивает индекс поиска.
+С помощью новой [клиентской библиотеки Azure.Search.Documents (версия 11)](/dotnet/api/overview/azure/search.documents-readme) вы можете создать консольное приложение .NET Core на языке C#, которое создает, загружает и запрашивает индекс поиска.
 
 [Скачайте исходный код](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart/v11), чтобы начать работу с готовым проектом, или выполните описанные в этой статье действия, чтобы создать собственный проект.
 

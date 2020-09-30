@@ -2,20 +2,18 @@
 title: включить файл
 description: включить файл
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 09/01/2020
 ms.topic: include
-ms.custom: include file, devx-track-javascript, cog-serv-seo-aug-2020
-ms.author: diberry
-ms.openlocfilehash: b961bb0598a1f6e9cdc7b4df27af50e7af1d9d81
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.custom: include file, devx-track-js, cog-serv-seo-aug-2020
+ms.openlocfilehash: ca089ab973ceef876691a487bcb43c8582360d6a
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89323109"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91545527"
 ---
 С помощью клиентских библиотек Распознавания речи (LUIS) для Node.js вы можете выполнить приведенные ниже задачи.
 
@@ -202,7 +200,7 @@ npm install @azure/cognitiveservices-luis-runtime
 
 Добавьте примеры речевых фрагментов, создав список объектов [ExampleLabelObject](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/examplelabelobject?view=azure-node-latest), по одному объекту для каждого примера высказывания. Каждый пример должен пометить все сущности словарем пар "имя — значение" имени и значения сущности. Значение сущности должно быть точно таким, как оно указано в тексте примера высказывания.
 
-:::image type="content" source="../media/quickstart-sdk/labeled-example-machine-learned-entity.png" alt-text="Снимок экрана: часть страницы с помеченным на портале примером речевого фрагмента.":::
+:::image type="content" source="../media/quickstart-sdk/labeled-example-machine-learned-entity.png" alt-text="Снимок экрана: часть страницы портала с созданной сущностью машинного обучения с вложенными сущностями и функциями, применяемыми к вложенным сущностям Quantity.":::
 
 Вызовите [examples.add](https://docs.microsoft.com//javascript/api/@azure/cognitiveservices-luis-authoring/examples?view=azure-node-latest#add-string--string--examplelabelobject--models-examplesaddoptionalparams-) с идентификатором приложения, идентификатором версии и примером.
 
