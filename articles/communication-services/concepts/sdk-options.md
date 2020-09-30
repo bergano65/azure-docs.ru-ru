@@ -9,18 +9,18 @@ ms.author: mikben
 ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 2d5637be547b28c231ef757b5dd4355692dab88f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d5aba3638ce19c24841fe5b49b19b1139327b790
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318829"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578093"
 ---
 # <a name="client-libraries-and-rest-apis"></a>Клиентские библиотеки и интерфейсы REST API
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
-Возможности служб связи Azure концептуально организованы в шесть областей. Некоторые области имеют полностью открытые клиентские библиотеки с открытым кодом. Вызывающая клиентская библиотека использует частные сетевые интерфейсы и в настоящее время закрыто источником, а библиотека разговора включает в себя зависимость с закрытым исходным кодом. Ссылки на все пакеты SDK и примеры хранятся в [репозитории GitHub служб связи Azure](https://github.com/Azure/communication).
+Возможности служб связи Azure концептуально организованы в шесть областей. Некоторые области имеют полностью открытые клиентские библиотеки с открытым кодом. Вызывающая клиентская библиотека использует частные сетевые интерфейсы и в настоящее время закрыто источником, а библиотека разговора включает в себя зависимость с закрытым исходным кодом. Примеры и дополнительные технические сведения для клиентских библиотек публикуются в [репозитории GitHub служб связи Azure](https://github.com/Azure/communication).
 
 ## <a name="client-libraries"></a>Клиентские библиотеки
 
@@ -29,34 +29,26 @@ ms.locfileid: "91318829"
 | Azure Resource Manager | REST | Открыть            | Azure. ResourceManager. Обмен данными | Подготавливайте ресурсы служб связи и управляйте ими             |
 | Распространенные                 | REST | Открыть               | Azure. Communication. Common          | Предоставляет базовые типы для других клиентских библиотек |
 | Администрирование         | REST | Открыть               | Azure. Communication. admin  | Управление пользователями, маркерами доступа и номерами телефонов, выделение соответствующих стандартам СТУН и включение серверов |
-| Чат                   | ПРОЧее с собственными сигнализациями | Открыть с помощью пакета сигнальных пакетов с закрытым источником    | Azure. Communication. чат            | Добавление в приложения текста, основанного на режиме реального времени  |
+| Чат                   | ПРОЧее с собственными сигналами | Открыть с помощью сигнального пакета с закрытым источником    | Azure. Communication. чат            | Добавление в приложения текста, основанного на режиме реального времени  |
 | SMS                    | REST | Открыть              | Azure. Communication. SMS             | Отправка и получение текстовых сообщений |
 | Вызов                | Собственный транспорт | Закрытое |Azure. Communication. вызов         | Использование голоса, видео, совместного использования экрана и других возможностей обмена данными в реальном времени          |
 
-### <a name="client-library-language-support"></a>Поддержка языка клиентской библиотеки
+Обратите внимание, что клиентские библиотеки Azure Resource Manager, администрирования и SMS ориентированы на интеграцию служб, и во многих случаях проблемы безопасности возникают, если вы интегрируете эти функции в приложения для конечных пользователей. Клиентские библиотеки Common и Chat подходят для служб и клиентских приложений. Вызывающая клиентская библиотека разработана для клиентских приложений. Клиентская библиотека, нацеленная на сценарии службы, находится в разработке.
 
-Ниже описаны рекомендации и временные шкалы для отдельных пакетов клиентских библиотек. [Стратегия Azure](https://azure.microsoft.com/updates/) предоставляет дополнительные сведения о предстоящих функциях.
+### <a name="languages-and-publishing-locations"></a>Языки и расположения для публикации
+
+Сведения о расположении публикации для отдельных пакетов клиентских библиотек приведены ниже. 
+
 
 | Область           | JavaScript | .NET | Python | Java | SWIFT или obj-C | Java (Android) | Другое                          |
 | -------------- | ---------- | ---- | ------ | ---- | -------------- | -------------- | ------------------------------ |
-| Azure Resource Manager | ✔️         | ✔️    | ✔️      | -    | -              | *Еще не поддерживается*  | GO и Azure CLI *пока не поддерживаются* |
-| Распространенные         | ✔️         | ✔️    | -      | ✔️   | ✔️            | ✔️             | -                              |
-| Администрирование | ✔️         | ✔️    | ✔️      | ✔️   | -              | -              | CLI                            |
-| Чат           | ✔️         | ✔️    | ✔️      | ✔️   | *Еще не поддерживается*  | *Еще не поддерживается*  | -                              |
-| SMS            | ✔️         | ✔️    | ✔️      | ✔️   | -              | -              | -                              |
-| Вызов        | ✔️         | -      | -      | -     | (Obj-C) ✔️     | ✔️            | -                              |
-
-### <a name="client-library-public-repository-support"></a>Поддержка общедоступного репозитория клиентской библиотеки
-
-Службы связи публикуют построенные библиотеки в нескольких общедоступных репозиториях.
-
-| Язык       | Оптимизировано для...                       | Упаковка |
-| -------------- | ------------------------------------ | --------- |
-| .NET           | Поддержка разных платформ                       | NuGet     |
-| Python         | Серверы Windows & Linux              | PyPI      |
-| Java (J2EE)    | ВИРТУАЛЬНОЙ машины Java на серверах Windows или Linux      | Maven     |
-| Java (Android) | Клиентские приложения Android          | Maven     |
-| JavaScript     | Клиентские приложения и узел браузера | NPM       |
+| Azure Resource Manager | -         | [NuGet](https://www.NuGet.org/packages/Azure.ResourceManager.Communication)    |   [PyPi](https://pypi.org/project/azure-mgmt-communication/)    |  -  | -              | -  | [Подключиться через GitHub](https://github.com/Azure/azure-sdk-for-go/releases/tag/v46.3.0) |
+| Распространенные         | [npm](https://www.npmjs.com/package/@azure/communication-common)         | [NuGet](https://www.NuGet.org/packages/Azure.Communication.Common/)    | Недоступно      | [Maven](https://search.maven.org/search?q=a:azure-communication-common)   | [Swift через GitHub](https://github.com/Azure/azure-sdk-for-ios/releases/tag/1.0.0-beta.1)            | [Maven](https://search.maven.org/artifact/com.azure.android/azure-communication-common)             | -                              |
+| Администрирование | [npm](https://www.npmjs.com/package/@azure/communication-administration)         | [NuGet](https://www.NuGet.org/packages/Azure.Communication.Administration)    | [PyPi](https://pypi.org/project/azure-communication-administration/)      | [Maven](https://search.maven.org/search?q=a:azure-communication-administration)   | -              | -              | -                            |
+| Чат           | [npm](https://www.npmjs.com/package/@azure/communication-chat)        | [NuGet](https://www.NuGet.org/packages/Azure.Communication.Chat)     | [PyPi](https://pypi.org/project/azure-communication-chat/)     | [Maven](https://search.maven.org/search?q=a:azure-communication-chat)   | -  | -  | -                              |
+| SMS            | [npm](https://www.npmjs.com/package/@azure/communication-sms)         | [NuGet](https://www.NuGet.org/packages/Azure.Communication.Sms)    | [PyPi](https://pypi.org/project/azure-communication-sms/)       | [Maven](https://search.maven.org/artifact/com.azure/azure-communication-sms)   | -              | -              | -                              |
+| Вызов        | [npm](https://www.npmjs.com/package/@azure/communication-calling)         | -      | -      | -     | [Obj-C через GitHub](https://github.com/Azure/Communication/releases/tag/v1.0.0-beta.2)     | [Maven](https://search.maven.org/artifact/com.azure.android/azure-communication-calling/)            | -                              |
+| Справочная документация     | [docs](https://azure.github.io/azure-sdk-for-js/communication.html)         | [docs](https://azure.github.io/azure-sdk-for-net/communication.html)      | -      | [docs](http://azure.github.io/azure-sdk-for-java/communication.html)     | 
 
 ## <a name="rest-apis"></a>Интерфейсы REST API
 

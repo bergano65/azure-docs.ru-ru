@@ -1,5 +1,5 @@
 ---
-title: Использование расширения Интернета вещей Azure для Azure CLI для взаимодействия с устройствами IoT Plug and Play (предварительная версия) | Документация Майкрософт
+title: Использование расширения Интернета вещей Azure для Azure CLI взаимодействия с устройствами IoT Plug and Play | Документация Майкрософт
 description: Установите расширение Интернета вещей Azure для Azure CLI и используйте его для взаимодействия с устройствами IoT Plug and Play, подключенными к центру Интернета вещей.
 author: dominicbetts
 ms.author: dobett
@@ -7,18 +7,18 @@ ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: dadb1f044547acd6e5f0d274143123e89d7dae46
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 680cd4ef4f73c63850a2137b344fd0af6b27c673
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475487"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577464"
 ---
 # <a name="install-and-use-the-azure-iot-extension-for-the-azure-cli"></a>Установка и использование расширения Интернета вещей Azure для Azure CLI
 
-[Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, центр Интернета вещей). Эта Azure CLI доступна в Windows, Linux и macOS. Azure CLI позволяет управлять ресурсами центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными центрами без установки каких-либо расширений.
+[Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, центр Интернета вещей). Эта Azure CLI доступна в Windows, Linux и macOS. Azure CLI позволяет управлять ресурсами центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными центрами без установки каких-либо расширений.
 
-Расширение Интернета вещей Azure для Azure CLI — это программа командной строки для взаимодействия с устройствами IoT Plug and Play (предварительная версия) и их тестирования. Расширение можно использовать для выполнения следующих задач:
+Расширение Интернета вещей Azure для Azure CLI — это программа командной строки для взаимодействия с устройствами IoT Plug and Play и их тестирования. Расширение можно использовать для выполнения следующих задач:
 
 - подключение к устройству;
 - просмотр данных телеметрии с устройства;
@@ -34,11 +34,11 @@ ms.locfileid: "87475487"
 
 ### <a name="step-1---install-the-azure-cli"></a>Шаг 1. Установка Azure CLI
 
-Следуйте [инструкциям по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), чтобы настроить Azure CLI в своей среде. Для оптимальной работы Azure CLI версия должна быть версии 2.9.1 или выше. Для проверки используйте `az -–version`.
+Следуйте [инструкциям по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true), чтобы настроить Azure CLI в своей среде. Для оптимальной работы Azure CLI версия должна быть версии 2.9.1 или выше. Для проверки используйте `az -–version`.
 
 ### <a name="step-2---install-iot-extension"></a>Шаг 2. Установка расширения Интернета вещей
 
-В [файле сведений расширения Интернета вещей](https://github.com/Azure/azure-iot-cli-extension) описывается несколько способов установки расширения. Проще всего запустить `az extension add --name azure-iot`. После установки можно использовать `az extension list`, чтобы проверить установленные расширения, или `az extension show --name azure-iot` для просмотра сведений о расширении Интернета вещей. На момент написания статьи номер версии расширения имеет значение `0.9.7` .
+В [файле сведений расширения Интернета вещей](https://github.com/Azure/azure-iot-cli-extension) описывается несколько способов установки расширения. Проще всего запустить `az extension add --name azure-iot`. После установки можно использовать `az extension list`, чтобы проверить установленные расширения, или `az extension show --name azure-iot` для просмотра сведений о расширении Интернета вещей. На момент написания статьи номер версии расширения имеет значение `0.10.0` .
 
 Чтобы удалить расширение, можно использовать `az extension remove --name azure-iot`.
 

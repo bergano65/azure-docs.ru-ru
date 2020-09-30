@@ -1,26 +1,26 @@
 ---
-title: Ограничения и квоты Plug and Play предварительной версии IoT | Документация Майкрософт
-description: Ознакомьтесь с ограничениями, квотами и регулированием, которые применяются при использовании предварительной версии IoT Plug and Play.
+title: Ограничения и квоты IoT Plug and Play | Документация Майкрософт
+description: Сведения об ограничениях, квотах и регулированиях, которые применяются при использовании Интернета вещей Plug and Play.
 author: prashmo
 ms.author: prashmo
 ms.date: 07/21/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 5c4377120f61792b580225a22b9f5ff51b5e1b64
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: d965d9cb8b87ce0b67f4fe0c07b660fdfd69cc07
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337404"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577991"
 ---
-# <a name="iot-plug-and-play-preview-limits-quotas-and-throttles"></a>Ограничения предварительной версии, квоты и регулирования для Интернета вещей Plug and Play
+# <a name="iot-plug-and-play-limits-quotas-and-throttles"></a>Ограничения, квоты и регулировки для Интернета вещей Plug and Play
 
-В этой статье описываются ограничения, квоты и регулирование, которые применяются в общедоступной предварительной версии Plug and Play IoT. Существуют существующие [квоты и регулирование для центра Интернета вещей](../iot-hub/iot-hub-devguide-quotas-throttling.md) , которые также применяются.
+В этой статье объясняются ограничения, квоты и регулирование для Plug and Play Интернета вещей. Существуют существующие [квоты и регулирование для центра Интернета вещей](../iot-hub/iot-hub-devguide-quotas-throttling.md) , которые также применяются.
 
 ## <a name="iot-hub"></a>Центр Интернета вещей
 
-Для общедоступной предварительной версии следующие ограничения и квоты применяются к центру Интернета вещей:
+Для центра Интернета вещей применяются следующие ограничения и квоты:
 
 | Ограничения, ограничения и регулировки | Значение | Примечания |
 |-----|-----|-----|

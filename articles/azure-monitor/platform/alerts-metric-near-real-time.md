@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 8/20/2020
+ms.date: 9/30/2020
 ms.subservice: alerts
-ms.openlocfilehash: 8a608e43ef41abfb7002811df5629eb789c3ae22
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 96f0cda9bdf6a17adb4d8d50b63ef5588e52f700
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89595586"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578110"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -37,7 +37,9 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Automation/automationAccounts | Да| Нет | [Учетные записи автоматизации](./metrics-supported.md#microsoftautomationautomationaccounts) |
 |Microsoft. AVS/Приватеклаудс | Нет | Нет | |
 |Microsoft.Batch/batchAccounts | Да | Нет | [Ученые записи пакетной службы](./metrics-supported.md#microsoftbatchbatchaccounts) |
-|Microsoft.Cache/Redis; | Да | Нет | [Кэш Azure для Redis](./metrics-supported.md#microsoftcacheredis) |
+|Microsoft.Cache/Redis; | Да | Да | [Кэш Azure для Redis](./metrics-supported.md#microsoftcacheredis) |
+|Microsoft.ClassicCompute/domainNames/slots/roles | Нет | Нет | [Классические облачные службы](./metrics-supported.md#microsoftclassiccomputedomainnamesslotsroles) |
+|Microsoft.classicСompute/virtualMachines | Нет | Нет | [Классические виртуальные машины](./metrics-supported.md#microsoftclassiccomputevirtualmachines) |
 |Microsoft.ClassicStorage/storageAccounts | Да | Нет | [Учетные записи хранения (классические)](./metrics-supported.md#microsoftclassicstoragestorageaccounts) |
 |Microsoft.ClassicStorage/storageAccounts/blobServices | Да | Нет | |
 |Microsoft.ClassicStorage/storageAccounts/fileServices | Да | Нет | |
@@ -55,7 +57,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.DataShare/accounts | Да | Нет | |
 |Microsoft.DBforMariaDB/servers | Нет | Нет | [База данных для MariaDB](./metrics-supported.md#microsoftdbformariadbservers) |
 |Microsoft.DBforMySQL/servers | Нет | Нет |[База данных для MySQL](./metrics-supported.md#microsoftdbformysqlservers)|
-|Microsoft. Дбфорпостгрескл/Флексиблесерверс | Да | Нет | |
+|Microsoft.DBforPostgreSQL/flexibleServers | Да | Нет | |
 |Microsoft.DBforPostgreSQL/servers | Нет | Нет | [База данных для PostgreSQL](./metrics-supported.md#microsoftdbforpostgresqlservers)|
 |Microsoft.DBforPostgreSQL/serversv2 | Нет | Нет | [База данных для PostgreSQL v2](./metrics-supported.md#microsoftdbforpostgresqlserversv2)|
 |Microsoft. Дбфорпостгрескл/синглесерверс | Нет | Нет | [База данных для PostgreSQL (одиночные серверы)](./metrics-supported.md#microsoftdbforpostgresqlsingleservers)|

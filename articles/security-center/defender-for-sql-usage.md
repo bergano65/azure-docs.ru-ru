@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: ea0df1fb68697ceee55614510cc0295c73fec00e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6d19027cfd406f81d31696c5cd2c1a235574e400
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91301658"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577855"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -28,7 +28,7 @@ ms.locfileid: "91301658"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробности|
+|Аспект|Подробнее|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Счета **за использование защитника Azure для серверов SQL Server на компьютерах** выставляются, как показано на [странице с ценами](security-center-pricing.md) .|
@@ -48,7 +48,7 @@ ms.locfileid: "91301658"
 
 ### <a name="step-1-provision-the-log-analytics-agent-on-your-sql-servers-host"></a>Шаг 1. Подготавливаете агент Log Analytics на узле SQL Server:
 
-- **SQL Server на виртуальной машине Azure** . Если компьютер SQL размещается на виртуальной машине Azure, можно выполнить [автоматическую инициализацию агента log Analytics](security-center-enable-data-collection.md#workspace-configuration). Кроме того, можно выполнить ручную процедуру для [добавления Azure Stack компьютеров](quickstart-onboard-machines.md#add-non-azure-computers).
+- **SQL Server на виртуальной машине Azure** . Если компьютер SQL размещается на виртуальной машине Azure, можно выполнить [автоматическую инициализацию агента log Analytics](security-center-enable-data-collection.md#workspace-configuration). Кроме того, вы можете выполнить процедуру вручную, чтобы подключить [Azure Stack виртуальные машины](quickstart-onboard-machines.md#onboard-your-azure-stack-vms).
 - **SQL Server в службе "Дуга Azure** ". если ваша SQL Server размещена на компьютере [Arc Azure](https://docs.microsoft.com/azure/azure-arc/) , можно развернуть агент log Analytics с помощью рекомендации центра безопасности "log Analytics должен быть установлен на компьютерах Arc Azure на базе Windows (Предварительная версия)". Кроме того, можно выполнить процедуру вручную в [документации по службе Arc Azure](https://docs.microsoft.com/azure/azure-arc/servers/manage-vm-extensions#enable-extensions-from-the-portal).
 
 - **SQL Server локального** компьютера. если ваша SQL Server размещена на локальном компьютере Windows без дуги Azure, у вас есть два варианта подключения его к Azure:
@@ -97,7 +97,7 @@ ms.locfileid: "91301658"
 
     Отобразится подробное представление для этой рекомендации.
 
-    :::image type="content" source="./media/security-center-advanced-iaas-data/all-servers-view.png" alt-text="Подробное представление рекомендации":::
+    :::image type="content" source="./media/security-center-advanced-iaas-data/all-servers-view.png" alt-text="Необходимо исправить результаты оценки уязвимостей на серверах SQL Server на компьютерах (Предварительная версия)":::
 
 1. Дополнительные сведения см. в детализации:
 

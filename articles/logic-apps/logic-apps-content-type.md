@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/20/2018
-ms.openlocfilehash: 3a71c78dcbaa5fb02927e9a2cfdea40cd5b26130
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 04642e69adba82cf33b933829d72c51109ad2ee1
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91269103"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578197"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
 
@@ -61,7 +61,7 @@ ms.locfileid: "91269103"
   
   2. В разделе **Введение или вставка примера полезных данных JSON** предоставьте пример полезных данных, а затем выберите **Готово**. Пример: 
 
-     ![Снимок экрана, показывающий окно "при получении HTTP-запроса" с примером полезных данных JSON.](./media/logic-apps-content-type/request-trigger.png)
+     ![Снимок экрана, показывающий действие "при получении HTTP-запроса" с примером полезных данных JSON.](./media/logic-apps-content-type/request-trigger.png)
 
      Созданная схема теперь отображается в триггере.
 

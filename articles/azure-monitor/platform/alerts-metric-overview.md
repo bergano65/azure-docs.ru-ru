@@ -1,15 +1,15 @@
 ---
 title: Узнайте о работе оповещений о метриках в Azure Monitor.
 description: Ознакомьтесь с обзором действий, применимых к оповещениям о метриках, а также узнайте о том, как они работают в Azure Monitor.
-ms.date: 08/16/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 8e57ec698f96826f493d048490ac053672e45895
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 78ec5ff3fc87ef29d25e439b7d4c69bb3a10f3a7
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89595569"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578076"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
@@ -143,6 +143,7 @@ ms.locfileid: "89595569"
 | Пулы емкости NetApp файлов | **Да** | **Да** | **Да** |
 | Тома NetApp Files | **Да** | **Да** | **Да** |
 | Хранилища ключей | **Да** | **Да** | **Да** |
+| Кэш Redis для Azure | **Да** | **Да** | **Да** |
 | Устройства с пограничными ящиками данных | **Да** | **Да** | **Да** |
 
 <sup>1</sup> не поддерживается для метрик сети виртуальной машины (общая сеть, общий объем сети, входящие потоки, исходящие потоки, максимальная частота создания входящих потоков, максимальная скорость создания исходящих потоков).

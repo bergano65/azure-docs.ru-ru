@@ -7,22 +7,25 @@ ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 7d736721e2676a42da90aead3144f8016329f730
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: c82858294054b50d6edae42a3d41e9fcb89ca89d
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475504"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577804"
 ---
 # <a name="azure-iot-model-repository"></a>Репозиторий моделей Интернета вещей Azure
 
 Репозиторий моделей Интернета вещей Azure позволяет построителям устройств управлять моделями устройств IoT Plug and Play и предоставлять к ним общий доступ. Модели устройств — это документы JSON LD, определенные с помощью [языка двойников моделирования Digital (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Модели, хранящиеся в службе репозитория модели, можно совместно использовать с разработчиками решений в частном порядке благодаря контролю доступа или открытым без проверки подлинности для интеграции и разработки облачного решения IoT Plug and Play.
 
+> [!NOTE]
+> Построители устройств Интернета вещей могут реализовывать модели устройств IoT Plug and Play непосредственно на устройстве, использовать модули или в модуле IoT Edge.
+
 Доступ к репозиторию модели можно получить с помощью:
 
 - Портал [репозитория для модели Интернета вещей Azure](https://aka.ms/iotmodelrepo)
 - [REST API репозитория модели Интернета вещей Azure](https://docs.microsoft.com/rest/api/iothub/digitaltwinmodelrepositoryservice/getmodelasync/getmodelasync)
-- [Команды репозитория моделей IoT Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp?view=azure-cli-latest)
+- [Команды репозитория моделей IoT Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp?view=azure-cli-latest&preserve-view=true)
 
 ## <a name="public-models"></a>Открытые модели
 
@@ -45,10 +48,10 @@ var httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://repo.azureiotrepository.com");
 
 var modelId = "dtmi:com:mxchip:model;1";
-var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05-01-preview").ConfigureAwait(false);
+var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-09-30").ConfigureAwait(false);
 ```
 
-Чтобы просмотреть открытую модель с помощью интерфейса командной строки, см. команду Azure CLI [получить модель](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-show) .
+Чтобы просмотреть открытую модель с помощью интерфейса командной строки, см. команду Azure CLI [получить модель](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-show&preserve-view=true) .
 
 ## <a name="company-models"></a>Модели компании
 
@@ -115,10 +118,10 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("
 
 ```csharp
 var modelId = "dtmi:com:mxchip:model;1";
-var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05-01-preview").ConfigureAwait(false);
+var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-09-30").ConfigureAwait(false);
 ```
 
-Чтобы просмотреть модель компании или общую модель с помощью интерфейса командной строки, см. команду Azure CLI [получить модель](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-show) .
+Чтобы просмотреть модель компании или общую модель с помощью интерфейса командной строки, см. команду Azure CLI [получить модель](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-show&preserve-view=true) .
 
 ### <a name="manage-roles"></a>Управление ролями
 
@@ -161,10 +164,10 @@ var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05
 ```csharp
 var httpContent = new StringContent(jsonLdModel, Encoding.UTF8, "application/json");
 var modelId = "dtmi:com:mxchip:model;1";
-var response = await httpClient.PutAsync($"/models/{modelId}?api-version=2020-05-01-preview", httpContent).ConfigureAwait(false);
+var response = await httpClient.PutAsync($"/models/{modelId}?api-version=2020-09-30", httpContent).ConfigureAwait(false);
 ```
 
-Сведения о передаче модели с помощью интерфейса командной строки см. в разделе Azure CLI [Создание модели](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-create) .
+Сведения о передаче модели с помощью интерфейса командной строки см. в разделе Azure CLI [Создание модели](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-create&preserve-view=true) .
 
 ### <a name="publish-a-model"></a>Публикация модели
 
@@ -189,7 +192,10 @@ var response = await httpClient.PutAsync($"/models/{modelId}?api-version=2020-05
 
 Сведения о публикации модели с помощью REST API см. в документации [Публикация модели](https://docs.microsoft.com/rest/api/iothub/digitaltwinmodelrepositoryservice/createorupdateasync/createorupdateasync) REST API. Укажите параметр строки запроса `update-metadata=true` для публикации модели с помощью REST API. Сведения о передаче в заголовке авторизации JWT в HTTP-запросе см. [в разделе Передача маркера безопасности при доступе к моделям компании с помощью REST API](#passing-a-security-token-when-accessing-company-models-with-a-rest-api) .
 
-Сведения о публикации модели с помощью интерфейса командной строки см. в разделе Azure CLI [Публикация модели](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-publish) .
+Сведения о публикации модели с помощью интерфейса командной строки см. в разделе Azure CLI [Публикация модели](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-publish&preserve-view=true) .
+
+> [!NOTE]
+> Перед запуском тестов сертификации необходимо опубликовать модели в репозитории модели. Дополнительные сведения см. в статье [как сертифицировать устройства IoT Plug and Play](howto-certify-device.md).
 
 ### <a name="share-a-model"></a>Предоставление общего доступа к модели
 

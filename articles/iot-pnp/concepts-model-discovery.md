@@ -7,12 +7,12 @@ ms.date: 07/23/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 9752589c8863cc911369225d268035d9f61c0273
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 165f83e0f021d23c26333a294ffe992838bda6b0
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90032033"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577719"
 ---
 # <a name="use-iot-plug-and-play-models-in-an-iot-solution"></a>Использование моделей Plug and Play IoT в решении IoT
 
@@ -26,7 +26,7 @@ ms.locfileid: "90032033"
 
 Чтобы использовать модель Plug and Play IoT, решение IoT:
 
-1. Определяет идентификатор модели, реализованной с помощью устройства IoT Plug and Play, подключенного к решению.
+1. Определяет идентификатор модели, реализуемой средством Интернета вещей Plug and Play устройстве, модулем или IoT Edgeным модулем, подключенным к решению.
 
 1. Использует идентификатор модели для получения определения модели подключенного устройства из репозитория модели или пользовательского хранилища.
 
@@ -40,7 +40,10 @@ ms.locfileid: "90032033"
 
 ### <a name="get-device-twin-api"></a>Получение API Двойникаа устройства
 
-Решение может использовать API [Get Device двойника](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?view=azure-java-stable) для получения идентификатора модели для устройства IOT Plug and Play.
+Решение может использовать API [Get Device двойника](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.deviceclient.getdevicetwin?view=azure-java-stable&preserve-view=true) для получения идентификатора модели для устройства IOT Plug and Play.
+
+> [!TIP]
+> Для модулей и модулей IoT Edge используйте [модулеклиент. жеттвин](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient.gettwin?view=azure-java-stable&preserve-view=true).
 
 В следующем фрагменте ответа двойникаа устройства `modelId` СОДЕРЖИТСЯ идентификатор модели для устройства IoT Plug and Play:
 

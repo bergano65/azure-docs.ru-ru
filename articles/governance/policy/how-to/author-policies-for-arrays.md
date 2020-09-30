@@ -1,14 +1,14 @@
 ---
 title: Создание политик для свойств массива ресурсов
 description: Узнайте, как работать с параметрами массива и выражениями языка массива, оценивать псевдоним [*] и добавлять элементы с помощью правил определения Политики Azure.
-ms.date: 08/17/2020
+ms.date: 09/30/2020
 ms.topic: how-to
-ms.openlocfilehash: 5b9392a943e264ae5eca989ee87eb9ff09b36972
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: c67982197c0161d99f29747d6fd11166cba86079
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89048488"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576903"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Создание политик для свойств массива ресурсов Azure
 
@@ -194,18 +194,30 @@ ms.locfileid: "89048488"
 |`{<field>,"Equals":"127.0.0.1"}` |Ничего |Совпадают все |Один элемент массива вычисляется как true (127.0.0.1 == 127.0.0.1), а другой — как false (127.0.0.1 == 192.168.1.1), поэтому условие **Equals** имеет значение _false_ и действие не активируется. |
 |`{<field>,"Equals":"10.0.4.1"}` |Ничего |Совпадают все |Оба элемента массива вычисляются как false (10.0.4.1 == 127.0.0.1 и 10.0.4.1 == 192.168.1.1), поэтому условие **Equals** имеет значение _false_ и действие не активируется. |
 
-## <a name="the-append-effect-and-arrays"></a>Действие добавления и массивы
+## <a name="modifying-arrays"></a>Изменение массивов
 
-[Действие добавления](../concepts/effects.md#append) выполняется по-разному в зависимости от того, является ли **details.field** псевдонимом **\[\*\]** .
+Свойства [append](../concepts/effects.md#append) и [Modify](../concepts/effects.md#modify) ALTER для ресурса во время создания или обновления. При работе со свойствами массива поведение этих эффектов зависит от того, пытается ли операция изменить  **\[\*\]** псевдоним.
 
-- Если поле не является псевдонимом **\[\*\]** , действие добавления заменяет весь массив свойством **value**.
-- Если поле является псевдонимом **\[\*\]** , действие добавления добавляет свойство **value** в существующий массив или создает новый массив.
+> [!NOTE]
+> Использование этого `modify` действия с псевдонимами в настоящее время находится на **этапе предварительной версии**.
+
+|Псевдоним |Действие | Результат |
+|-|-|-|
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules` | `append` | Политика Azure добавляет весь массив, указанный в сведениях о результате, если он отсутствует. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules` | `modify` с `add` операцией | Политика Azure добавляет весь массив, указанный в сведениях о результате, если он отсутствует. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules` | `modify` с `addOrReplace` операцией | Политика Azure добавляет весь массив, указанный в сведениях о результате, если он отсутствует или заменяет существующий массив. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]` | `append` | Политика Azure добавляет элемент массива, указанный в сведениях о результате. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]` | `modify` с `add` операцией | Политика Azure добавляет элемент массива, указанный в сведениях о результате. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]` | `modify` с `addOrReplace` операцией | Политика Azure удаляет все существующие члены массива и добавляет элемент массива, указанный в сведениях о результате. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action` | `append` | Политика Azure добавляет значение к `action` свойству каждого члена массива. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action` | `modify` с `add` операцией | Политика Azure добавляет значение к `action` свойству каждого члена массива. |
+| `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action` | `modify` с `addOrReplace` операцией | Политика Azure добавляет или заменяет существующее `action` свойство каждого члена массива. |
 
 Дополнительные сведения см. в [примерах добавления](../concepts/effects.md#append-examples).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучите примеры на странице [примеров Политики Azure](../samples/index.md).
+- Рассмотрите [примеры для службы "Политика Azure"](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
 - Изучите [сведения о действии политик](../concepts/effects.md).
 - Узнайте о [программном создании политик](programmatically-create.md).

@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 1484c4bf17d5f437d681e32559b7e6ed4115f5f5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a48b30d83e3e7e1667552d107cb457e49494c575
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515132"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578518"
 ---
 # <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
 В этой статье вы узнаете, как интегрировать Azure Data Lake Storage 1-го поколения со службой "Каталог данных Azure", чтобы в организации можно было обнаруживать данные с помощью интеграции с каталогом данных. Дополнительные сведения о каталогизации данных см. в статье [Каталог данных Azure](../data-catalog/data-catalog-what-is-data-catalog.md). Чтобы понять, в каких сценариях можно использовать каталог данных, см. статью [Типичные сценарии каталога данных Azure](../data-catalog/data-catalog-common-scenarios.md).
@@ -20,7 +20,7 @@ ms.locfileid: "85515132"
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Включите свою подписку Azure** для Data Lake Storage 1-го поколения. См. [инструкции](data-lake-store-get-started-portal.md).
+* **Включите свою подписку Azure** для Data Lake Storage 1-го поколения. Ознакомьтесь с [инструкциями](data-lake-store-get-started-portal.md).
 * **Учетная запись Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md). В целях этого руководства создадим учетную запись Data Lake Storage 1-го поколения и назовем ее **datacatalogstore**.
 
     После создания учетной записи передайте в нее пример набора данных. В этом учебнике мы передадим CSV-файлы в папку **AmbulanceData** в [репозитории Git озера данных Azure](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData/). Чтобы передать данные в контейнер больших двоичных объектов, можно использовать различные клиенты, например [обозреватель хранилищ Azure](https://storageexplorer.com/).
@@ -46,18 +46,18 @@ ms.locfileid: "85515132"
     ![Подключение к источнику данных](./media/data-lake-store-with-data-catalog/connect-to-source.png "Подключение к источнику данных")
 1. Следующую страницу можно разделить на следующие области.
 
-    а. Поле **Иерархия серверов** представляет структуру папки учетной записи Data Lake Storage 1-го поколения. **$Root** представляет корень учетной записи Data Lake Storage 1-го поколения, а **AmbulanceData** — папку, созданную в корне учетной записи Data Lake Storage 1-го поколения.
+    a. Поле **Иерархия серверов** представляет структуру папки учетной записи Data Lake Storage 1-го поколения. **$Root** представляет корень учетной записи Data Lake Storage 1-го поколения, а **AmbulanceData** — папку, созданную в корне учетной записи Data Lake Storage 1-го поколения.
 
     b. В поле **Доступные объекты** перечислены файлы и папки, расположенные в папке **AmbulanceData**.
 
     c. В поле **регистрируемые объекты** перечислены файлы и папки, которые необходимо зарегистрировать в каталоге данных Azure.
 
-    ![Просмотр структуры данных](./media/data-lake-store-with-data-catalog/view-data-structure.png "Просмотр структуры данных")
+    ![Снимок экрана: диалоговое окно "Microsoft Azure каталога данных — учетная запись хранения".](./media/data-lake-store-with-data-catalog/view-data-structure.png "Просмотр структуры данных")
 1. В рамках этого учебника необходимо зарегистрировать все файлы в каталоге. Для этого нажмите кнопку (![Перемещение объектов](./media/data-lake-store-with-data-catalog/move-objects.png "Перемещение объектов")), чтобы переместить все файлы в поле **Объекты для регистрации** .
 
     Так как данные будут зарегистрированы в каталоге данных на уровне всей организации, рекомендуется добавить какие-либо метаданные, которые позже можно будет использовать для быстрого поиска данных. Скажем, можно добавить электронный адрес владельца данных (например, того, кто передает данные) или добавить тег для идентификации данных. На снимке экрана ниже показан тег, добавляемый к данным.
 
-    ![Просмотр структуры данных](./media/data-lake-store-with-data-catalog/view-selected-data-structure.png "Просмотр структуры данных")
+    ![Снимок экрана: диалоговое окно Microsoft Azure каталога данных — учетная запись хранения с тегом, который был добавлен к вызываемым данным.](./media/data-lake-store-with-data-catalog/view-selected-data-structure.png "Просмотр структуры данных")
 
     Щелкните **Зарегистрировать**.
 1. На следующем снимке экрана показано, что данные успешно зарегистрированы в каталоге данных.

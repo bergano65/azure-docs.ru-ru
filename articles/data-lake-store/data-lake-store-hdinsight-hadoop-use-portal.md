@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: fd49ddcb59e0d0f3a706f566cf0c011116b1501a
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 8b516180f09634dfa430275ef39370f0328a0927
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89229231"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577906"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "89229231"
 2. Общие сведения о создании кластеров HDInsight см. в разделе [Создание кластеров](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md#create-clusters).
 3. В колонке **Хранилище** в разделе **Тип первичного хранилища** выберите **Data Lake Storage 1-го поколения**, а затем введите указанные ниже сведения.
 
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.adls.storage.png "Добавление субъекта-службы в кластер HDInsight")
+    ![Снимок экрана: колонка "хранилище" с параметром "основной тип хранилища", выберите параметр Учетная запись Data Lake Store и параметр доступа Data Lake Store "вызываемый".](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.adls.storage.png "Добавление субъекта-службы в кластер HDInsight")
 
     * **Выбрать учетную запись Data Lake Store**: выберите существующую учетную запись Data Lake Storage 1-го поколения. Требуется существующая учетная запись Data Lake Storage 1-го поколения.  См. раздел [Предварительные требования](#prerequisites).
     * **Корневой путь**: введите путь к каталогу, в котором будут храниться файлы, связанные с кластером. На снимке экрана это путь __/clusters/myhdiadlcluster/__, в котором должна существовать папка __/clusters__ и в котором портал создает папку *myhdicluster*.  *myhdicluster* — это имя кластера.
@@ -68,7 +68,7 @@ ms.locfileid: "89229231"
 2. Общие сведения о создании кластеров HDInsight см. в разделе [Создание кластеров](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md#create-clusters).
 3. В колонке **Хранилище** в разделе **Тип первичного хранилища** выберите **Хранилище Azure**, а затем введите указанные ниже сведения.
 
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.png "Добавление субъекта-службы в кластер HDInsight")
+    ![Снимок экрана: колонка "хранилище" с параметром "основной тип хранилища" и параметром доступа Data Lake Store "вызываемый".](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.png "Добавление субъекта-службы в кластер HDInsight")
 
     * **Способ выбора** . чтобы указать учетную запись хранения, которая является частью подписки Azure, выберите **Мои подписки**, а затем выберите учетную запись хранения. Чтобы указать учетную запись хранения, не входящую в вашу подписку Azure, выберите **Ключ доступа**, а затем введите данные внешней учетной записи хранения.
 
@@ -95,7 +95,7 @@ ms.locfileid: "89229231"
 1. Выберите **субъект-служба**, а затем выберите субъект службы.
 1. Отправьте связанный с выбранным субъектом-службой сертификат (PFX-файл) и введите пароль этого сертификата.
 
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.5.png "Добавление субъекта-службы в кластер HDInsight")
+    ![Снимок экрана: колонка Data Lake Storage 1-го поколения доступа с параметром использовать существующий вариант, а также колонка выбор субъекта-службы с параметром h d Insights s p и выберите пункт вызываемый.](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.5.png "Добавление субъекта-службы в кластер HDInsight")
 
 1. Выберите **доступ** , чтобы настроить доступ к папке.  См. раздел [Настройка разрешений для файлов](#configure-file-permissions).
 
@@ -121,7 +121,7 @@ ms.locfileid: "89229231"
 1. В колонке **Data Lake Storage 1-го поколения доступ** выберите **доступ**. Откроется колонка **Выбор разрешений для файла**. В ней отображены все учетные записи Data Lake Storage 1-го поколения в вашей подписке.
 1. Наведите указатель мыши (но не щелкайте) на имя учетной записи Data Lake Storage 1-го поколения, чтобы отобразился флажок, а затем установите этот флажок.
 
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png "Добавление субъекта-службы в кластер HDInsight")
+    ![Снимок экрана: колонка разрешений на самостоятельные файлы с выделенной и выбранной учетной записью Data Lake Storage Gen 1.](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png "Добавление субъекта-службы в кластер HDInsight")
 
    По умолчанию выбраны значения __Чтение__, __запись__и __выполнение__ .
 
@@ -149,11 +149,11 @@ ms.locfileid: "89229231"
 
 * Чтобы убедиться, что связанное хранилище кластера является указанной учетной записью Data Lake Storage 1-го поколения, выберите **учетные записи хранения** в левой области.
 
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.6-1.png "Добавление субъекта-службы в кластер HDInsight")
+    ![Снимок экрана учетной записи Data Lake Storage Gen 1 с выделенным параметром "учетные записи хранения".](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.6-1.png "Добавление субъекта-службы в кластер HDInsight")
 
 * Чтобы убедиться, что субъект-служба правильно связан с кластером HDInsight, на левой панели выберите **Data Lake Storage 1-го поколения доступ** .
 
-    ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.6.png "Добавление субъекта-службы в кластер HDInsight")
+    ![Снимок экрана учетной записи Data Lake Storage "Gen 1" с выделенным параметром "Data Lake Storage" для доступа "Gen 1".](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.6.png "Добавление субъекта-службы в кластер HDInsight")
 
 ## <a name="examples"></a>Примеры
 

@@ -1,20 +1,20 @@
 ---
 title: Создание приложения .NET Framework, Core с помощью API Gremlin для Azure Cosmos DB
 description: В этой статье представлен пример кода .NET Framework или Core, который можно использовать для подключения и выполнения запросов к Azure Cosmos DB.
-author: luisbosquez
+author: jasonwhowell
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 02/21/2020
-ms.author: lbosq
+ms.author: jasonh
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: f781018fc5fc832be92de34c3ef220517ad28d75
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 72b3f8a4e4a6da434ef20c8e505718ccd3e2deff
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020428"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578396"
 ---
 # <a name="quickstart-build-a-net-framework-or-core-application-using-the-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB
 
@@ -110,7 +110,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
    **Конечная точка Gremlin** — это значение используется при подключении к учетной записи графа с помощью библиотеки Gremlin.Net.
 
-    :::image type="content" source="./media/create-graph-dotnet/endpoint.png" alt-text="Копирование конечной точки":::
+    :::image type="content" source="./media/create-graph-dotnet/endpoint.png" alt-text="Копирование конечной точки&quot;:::
 
    Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
 
@@ -119,8 +119,8 @@ Azure Cosmos DB — это глобально распределенная мн
 1. После того как вы скопировали URI и первичный ключ своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения <Your_Azure_Cosmos_account_URI> и <Your_Azure_Cosmos_account_PRIMARY_KEY>.
 
    ```console
-   setx EndpointUrl "<your Azure Cosmos account name>.gremlin.cosmosdb.azure.com"
-   setx PrimaryKey "<Your_Azure_Cosmos_account_PRIMARY_KEY>"
+   setx Host &quot;<your Azure Cosmos account name>.gremlin.cosmosdb.azure.com&quot;
+   setx PrimaryKey &quot;<Your_Azure_Cosmos_account_PRIMARY_KEY>"
    ```
 
 1. Откройте файл *Program.cs* и обновите переменные database и container, используя базу данных и контейнер (которые также являются именами графов), созданные выше.
@@ -147,7 +147,17 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Вы можете масштабировать граф, развернуть отображаемое пространство, указать дополнительные вершины и переместить их на поверхность отображения.
 
-    :::image type="content" source="./media/create-graph-dotnet/graph-explorer.png" alt-text="Просмотр графа в обозревателе данных на портале Azure":::
+    :::image type="content" source="./media/create-graph-dotnet/graph-explorer.png" alt-text="Копирование конечной точки&quot;:::
+
+   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
+
+1. Затем перейдите на вкладку **Ключи** и скопируйте значение **Первичный ключ** c портала Azure. 
+
+1. После того как вы скопировали URI и первичный ключ своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения <Your_Azure_Cosmos_account_URI> и <Your_Azure_Cosmos_account_PRIMARY_KEY>.
+
+   ```console
+   setx Host &quot;<your Azure Cosmos account name>.gremlin.cosmosdb.azure.com&quot;
+   setx PrimaryKey &quot;<Your_Azure_Cosmos_account_PRIMARY_KEY>":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

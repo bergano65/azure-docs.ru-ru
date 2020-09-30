@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: Operations'
-ms.openlocfilehash: 4ded10d9475c363c3f44032c7aa8cc7db03ab37f
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 725fc422bc11a19bebcbb8895cc0a9bedd58afed
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90033648"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577770"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -52,7 +52,7 @@ ms.locfileid: "90033648"
 | [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Да |
 | [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Да |
 | [Azure IoT Edge](../iot-edge/about-iot-edge.md) |   | Да |
-| [Предварительная версия IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md) |   | Да |
+| статье об [IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). |   | Да |
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный".
 
