@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a812155474b244682613b38b9b9379fa6cdcdcd8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 43ba14845765230b9a54c2b34dbc7ccd53af950b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "66117505"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90970008"
 ---
 # <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство. Обнаружение аномалий на пограничных устройствах с помощью акселератора решения для удаленного мониторинга
 
@@ -26,7 +26,7 @@ ms.locfileid: "66117505"
 
 На схеме ниже показаны ключевые компоненты сценария, который рассматривается в этом руководстве:
 
-![Обзор](media/iot-accelerators-remote-monitoring-edge/overview.png)
+![На схеме показан станок-качалка, подключенный к модулю IoT Edge Stream Analytics на устройстве IoT Edge для телеметрии и команд. Отфильтрованные данные телеметрии переходят на устройство IoT Edge в акселераторе решений для удаленного мониторинга в облаке. Облако также содержит развертывание и пакет. На устройстве развертывается среда выполнения IoT Edge.](media/iot-accelerators-remote-monitoring-edge/overview.png)
 
 Изучив это руководство, вы:
 
@@ -45,7 +45,7 @@ ms.locfileid: "66117505"
 
 При работе с этим руководством в качестве устройства IoT Edge используется виртуальная машина Linux. На ней устанавливается модуль Edge для имитации станка-качалки.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 
@@ -82,9 +82,9 @@ ms.locfileid: "66117505"
     | ------- | ----- |
     | Задание     | Теги  |
     | Имя задания | AddEdgeTag |
-    | Клавиши     | IsOilPump |
-    | Значение   | Да     |
-    | Тип    | текст  |
+    | Ключ     | IsOilPump |
+    | Значение   | Y     |
+    | Тип    | Текст  |
 
     [![Добавление тега](./media/iot-accelerators-remote-monitoring-edge/addtag-inline.png)](./media/iot-accelerators-remote-monitoring-edge/addtag-expanded.png#lightbox)
 
@@ -99,12 +99,12 @@ ms.locfileid: "66117505"
     | Имя    | OilPumps |
     | Поле   | Tags.IsOilPump |
     | Оператор | = Equals |
-    | Значение    | Да |
-    | Тип     | текст |
+    | Значение    | Y |
+    | Тип     | Текст |
 
     [![Создание группы устройств](./media/iot-accelerators-remote-monitoring-edge/createdevicegroup-inline.png)](./media/iot-accelerators-remote-monitoring-edge/createdevicegroup-expanded.png#lightbox)
 
-1. Выберите команду **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Теперь устройство IoT Edge входит в группу **OilPumps**.
 
@@ -161,10 +161,10 @@ ms.locfileid: "66117505"
     | Параметр | Значение |
     | ------ | ----- |
     | Имя задания | EdgeDeviceJob |
-    | Subscription | Ваша подписка Azure. |
-    | группа ресурсов. | IoTEdgeDevices |
-    | Location | Восточная часть США |
-    | Среда размещения | Edge |
+    | Подписка | Ваша подписка Azure. |
+    | Группа ресурсов | IoTEdgeDevices |
+    | Расположение | Восточная часть США |
+    | Среда размещения | Пограничный случай |
     | Единицы потоковой передачи | 1 |
 
 1. На портале откройте задание Stream Analytics **EdgeDeviceJob**, щелкните "Входные данные" и добавьте потоковые входные данные **центра IoT Edge** под названием **telemetry**.
@@ -209,11 +209,11 @@ ms.locfileid: "66117505"
 
 1. На странице **Создать развертывание > Добавить модули** щелкните **+ Добавить**. Выберите **Модуль IoT Edge**.
 
-1. На панели **IoT Edge Custom Modules** (Пользовательские модули IoT Edge) укажите имя **temperatureSensor** и URI образа **asaedgedockerhubtest/asa-edge-test-module:sensor-ad-linux-amd64**. Выберите команду **Сохранить**.
+1. На панели **IoT Edge Custom Modules** (Пользовательские модули IoT Edge) укажите имя **temperatureSensor** и URI образа **asaedgedockerhubtest/asa-edge-test-module:sensor-ad-linux-amd64**. Щелкните **Сохранить**.
 
 1. На странице **Создать развертывание > Добавить модули** щелкните **+ Добавить**, чтобы добавить второй модуль. Выберите **Модуль Azure Stream Analytics**.
 
-1. На панели **Развертывание Edge** выберите свою подписку и задание **EdgeDeviceJob**, созданное в предыдущем разделе. Выберите команду **Сохранить**.
+1. На панели **Развертывание Edge** выберите свою подписку и задание **EdgeDeviceJob**, созданное в предыдущем разделе. Щелкните **Сохранить**.
 
 1. На странице **Создать развертывание > Добавить модули** щелкните **Далее**.
 
@@ -303,7 +303,7 @@ ms.locfileid: "66117505"
 1. Перейдите на страницу **Device Explorer** и выберите устройство oil-pump.
 1. В разделе **Телеметрия** панели **Сведения об устройстве** щелкните **Температура**:
 
-    [![Просмотр данных телеметрии](./media/iot-accelerators-remote-monitoring-edge/viewtelemetry-inline.png)](./media/iot-accelerators-remote-monitoring-edge/viewtelemetry-expanded.png#lightbox)
+    [![Просмотр телеметрии](./media/iot-accelerators-remote-monitoring-edge/viewtelemetry-inline.png)](./media/iot-accelerators-remote-monitoring-edge/viewtelemetry-expanded.png#lightbox)
 
 Вы можете наблюдать за увеличением температуры до порогового значения. Модуль Edge Stream Analytics обнаруживает, когда температура достигает этого порогового значения, и отправляет на устройство команду для немедленного снижения температуры. Вся эта обработка данных происходит на устройстве без взаимодействия с облаком.
 
@@ -315,9 +315,9 @@ ms.locfileid: "66117505"
     | Параметр | Значение |
     | ------ | ----- |
     | Имя правила | Oil pump temperature (Температура станка-качалки) |
-    | Description | Oil pump temperature exceeded 300 (Температура станка-качалки превысила значение 300) |
+    | Описание | Oil pump temperature exceeded 300 (Температура станка-качалки превысила значение 300) |
     | Группа устройств | OilPumps |
-    | Вычисление | Мгновенное |
+    | Вычисление | Сразу же |
     | Поле | Температура |
     | Оператор | > |
     | Значение | 300 |
@@ -334,7 +334,7 @@ ms.locfileid: "66117505"
 Из этого руководства вы узнали, как добавить и настроить устройство IoT Edge в акселераторе решения для удаленного мониторинга. Дополнительные сведения о работе с пакетами IoT Edge в решении для удаленного мониторинга см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
-> [Import an IoT Edge package into your Remote Monitoring solution accelerator](iot-accelerators-remote-monitoring-import-edge-package.md) (Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга)
+> [Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга](iot-accelerators-remote-monitoring-import-edge-package.md)
 
 Дополнительные сведения об установке среды выполнения IoT Edge см. в статье [Установка среды выполнения Azure IoT Edge в Linux (x64)](../iot-edge/how-to-install-iot-edge-linux.md).
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/21/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: faedec24bc4b962044d55a47345739592e276b61
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4111752d949b7ed2b0ea14734e5d795564718611
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88554776"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89661916"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mapbox"></a>Руководство по интеграции единого входа Azure Active Directory с Mapbox
 
@@ -41,6 +41,9 @@ ms.locfileid: "88554776"
 
 * Mapbox поддерживает единый вход, инициируемый **поставщиком удостоверений**
 * После настройки Mapbox вы можете применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-mapbox-from-the-gallery"></a>Добавление Mapbox из коллекции
 
@@ -136,15 +139,15 @@ ms.locfileid: "88554776"
 
 1. Перейдите на вкладку **Settings** (Параметры).
 
-    ![Конфигурация Mapbox](./media/mapbox-tutorial/configure1.png)
+    ![Вкладка параметров в Mapbox](./media/mapbox-tutorial/configure1.png)
 
 1. Откройте вкладку **Security** (Безопасность) в области навигации слева.
 
-    ![Конфигурация Mapbox](./media/mapbox-tutorial/configure2.png)
+    ![Вкладка безопасности в Mapbox](./media/mapbox-tutorial/configure2.png)
 
 1. Выберите **Edit single sign-on** (Изменить единый вход).
 
-    ![Конфигурация Mapbox](./media/mapbox-tutorial/configure3.png)
+    ![Выбор параметра для изменения единого входа в Mapbox](./media/mapbox-tutorial/configure3.png)
 
 1. Прокрутите вниз до раздела **Шаг 3. Установка единого входа SAML для Mapbox** и выполните следующие действия:
 

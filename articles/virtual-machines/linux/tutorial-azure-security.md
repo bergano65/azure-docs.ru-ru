@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 24117e914afa0e443ce979ae71eb506156fa11b3
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 4fc8a0a4ea5063f52b6f9553018bddddd7bcf312
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830416"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90974610"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство по Использование Центра безопасности Azure для мониторинга виртуальных машин Linux
 
@@ -41,7 +41,7 @@ ms.locfileid: "87830416"
 
 Возможности центра безопасности Azure выходят за пределы обнаружения данных, так как он предоставляет рекомендации для выявленных проблем. Например, если виртуальная машина была развернута без группы безопасности сети, будет создана рекомендация, содержащая необходимые действия по исправлению. Эти рекомендации также дают возможность автоматизировать исправления, не покидая контекст центра безопасности Azure.  
 
-![Рекомендации](./media/tutorial-azure-security/recommendations.png)
+![Снимок экрана: страница "Рекомендации", которая включает описание, ресурс, состояние и уровень серьезности рекомендаций.](./media/tutorial-azure-security/recommendations.png)
 
 ## <a name="set-up-data-collection"></a>Настройка сбора данных
 

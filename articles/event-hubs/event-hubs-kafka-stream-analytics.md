@@ -3,12 +3,12 @@ title: Центры событий Azure. Обработка событий Apac
 description: Руководство по В этой статье показано, как обрабатывать события Kafka, которые принимаются через Центры событий, с помощью Azure Stream Analytics
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: 6dfca5b476dff1ee3367b5365c15869c8cff819b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1f0c7bf40b721a3f35fcf68c71cb38a4302a56f6
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074921"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90531293"
 ---
 # <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство по Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий и обработка этих данных с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
@@ -136,7 +136,7 @@ ms.locfileid: "87074921"
 3. Замените `[YourInputAlias]` псевдонимом входных данных, созданным ранее. 
 4. На панели инструментов щелкните **Сохранить**. 
 
-    ![Запрос](./media/event-hubs-kafka-stream-analytics/query.png)
+    ![Снимок экрана: окно запроса со значениями для входных и выходных переменных.](./media/event-hubs-kafka-stream-analytics/query.png)
 
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics

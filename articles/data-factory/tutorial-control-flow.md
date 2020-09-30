@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: 0330e72ad74726f97bfdfd78ef8d5f9b24a5d172
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 6eaf00679566aa8dfb7a90db95228349c81fcfec
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85513308"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90983412"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "85513308"
 
 Этот рисунок содержит общие сведения о сценарии:
 
-![Обзор](media/tutorial-control-flow/overview.png)
+![На схеме показано, что служба "Хранилище BLOB-объектов Azure" является целевым ресурсом копирования. В случае успешного выполнения копирования служба отправляет сообщение электронной почты с подробными сведениями, в случае ошибки — сообщение электронной почты с подробным описанием ошибки.](media/tutorial-control-flow/overview.png)
 
 В этом учебнике показано, как выполнять следующие задачи.
 

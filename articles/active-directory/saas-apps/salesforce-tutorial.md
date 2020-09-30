@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/17/2020
+ms.date: 09/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 7228f4fbf348b8112654ece91aa5e9e831ac1201
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 6d653594cce20439a6e1214f104d875ec76bf1a9
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543573"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979866"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство по Интеграция единого входа Azure Active Directory с Salesforce
 
@@ -25,8 +25,6 @@ ms.locfileid: "88543573"
 * С помощью Azure AD можно контролировать доступ к Salesforce.
 * Можно разрешить автоматический вход пользователей в Salesforce с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
-
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,24 +44,23 @@ ms.locfileid: "88543573"
 * Salesforce поддерживает подготовку пользователей **JIT**
 
 * Теперь для мобильного приложения "Salesforce" можно настроить Azure AD для обеспечения единого входа. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
-* После настройки Salesforce можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-salesforce-from-the-gallery"></a>Добавление Salesforce из коллекции
 
 Чтобы настроить интеграцию приложения Salesforce с Azure AD, вам нужно добавить Salesforce из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **Salesforce**.
 1. Выберите **Salesforce** в области результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-salesforce"></a>Настройка и проверка единого входа в Azure AD для Salesforce
+## <a name="configure-and-test-azure-ad-sso-for-salesforce"></a>Настройка и проверка единого входа Azure AD для Salesforce
 
 Настройте и проверьте единый вход Azure AD в Salesforce с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Salesforce.
 
-Чтобы настроить и проверить единый вход Azure AD в Salesforce выполните действия описанные в стандартных блоках ниже.
+Чтобы настроить и проверить единый вход Azure AD в Salesforce, выполните действия из следующих стандартных блоков:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
@@ -76,7 +73,7 @@ ms.locfileid: "88543573"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Salesforce** найдите раздел **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Salesforce** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -132,15 +129,9 @@ ms.locfileid: "88543573"
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Salesforce**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-salesforce-sso"></a>Настройка единого входа Salesforce
@@ -157,46 +148,46 @@ ms.locfileid: "88543573"
 
 1. Щелкните **Setup** (Настройка) под **значком параметров** в правом верхнем углу страницы.
 
-    ![Настройка единого входа](./media/salesforce-tutorial/configure1.png)
+    ![Значок настройки параметров единого входа](./media/salesforce-tutorial/configure1.png)
 
 1. В области навигации прокрутите вниз до элемента **Settings** (Параметры) и щелкните **Identity** (Удостоверение), чтобы развернуть соответствующий раздел. Затем щелкните **Параметры единого входа**.
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-admin-sso.png)
+    ![Настройка параметров единого входа](./media/salesforce-tutorial/sf-admin-sso.png)
 
 1. На странице **Single Sign-On Settings** (Параметры единого входа) нажмите кнопку **Edit** (Изменить).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-admin-sso-edit.png)
+    ![Изменение настройки единого входа](./media/salesforce-tutorial/sf-admin-sso-edit.png)
 
     > [!NOTE]
     > Если не удается включить параметры единого входа для своей учетной записи Salesforce, возможно, вам придется обратиться за помощью в [службу поддержки Salesforce](https://help.salesforce.com/support).
 
 1. Выберите **SAML Enabled** (SAML включен), а затем щелкните **Save** (Сохранить).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-enable-saml.png)
+    ![Настройка единого входа, параметр SAML Enabled (SAML включен)](./media/salesforce-tutorial/sf-enable-saml.png)
 
 1. Чтобы настроить параметры единого входа SAML, щелкните **New from Metadata File** (Создать из файла метаданных).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-admin-sso-new.png)
+    ![Настройка единого входа, параметр New from Metadata File (Создать из файла метаданных)](./media/salesforce-tutorial/sf-admin-sso-new.png)
 
 1. Щелкните **Выбрать файл** для отправки XML-файла метаданных, загруженного с портала Azure, и щелкните **Создать**.
 
-    ![Настройка единого входа](./media/salesforce-tutorial/xmlchoose.png)
+    ![Настройка единого входа, параметр Choose File (Выбрать файл)](./media/salesforce-tutorial/xmlchoose.png)
 
 1. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Установите флажок **User Provisioning Enabled** (Подготовка пользователей включена) и нажмите кнопку **Save** (Сохранить).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/salesforcexml.png)
+    ![Настройка единого входа, параметр User Provisioning Enabled (Подготовка пользователей включена)](./media/salesforce-tutorial/salesforcexml.png)
 
 1. В области навигации слева в Salesforce щелкните **Company Settings** (Параметры компании), чтобы развернуть соответствующий раздел, и выберите пункт **My Domain** (Мой домен).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-my-domain.png)
+    ![Настройка единого входа, параметр My Domain (Мой домен)](./media/salesforce-tutorial/sf-my-domain.png)
 
 1. Прокрутите страницу вниз до раздела **Authentication Configuration** (Конфигурация аутентификации) и нажмите кнопку **Edit** (Изменить).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-edit-auth-config.png)
+    ![Настройка единого входа, параметр Authentication Configuration (Конфигурация аутентификации)](./media/salesforce-tutorial/sf-edit-auth-config.png)
 
 1. В разделе **Authentication Configuration** (Конфигурация аутентификации), установите флажок **AzureSSO** (Единый вход Azure) для параметра **Authentication Service** (Служба проверки подлинности) конфигурации единого входа SAML и нажмите кнопку **Save** (Сохранить).
 
-    ![Настройка единого входа](./media/salesforce-tutorial/sf-auth-config.png)
+    ![Настройка единого входа, параметр Authentication Service (Служба проверки подлинности)](./media/salesforce-tutorial/sf-auth-config.png)
 
     > [!NOTE]
     > Если выбрано несколько служб проверки подлинности, то при попытке инициировать единый вход в среду Salesforce пользователям будет предложено уточнить, с помощью какой службы проверки подлинности нужно выполнить вход. Чтобы этого избежать, **снимите флажки для всех других служб проверки подлинности**.
@@ -207,44 +198,36 @@ ms.locfileid: "88543573"
 
 ## <a name="test-sso"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-При нажатии на плитку Salesforce на панели доступа вы автоматически войдете в Salesforce, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+1. Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Salesforce, где можно инициировать поток входа. 
+
+2. Перейдите по URL-адресу для входа в Salesforce и инициируйте поток входа.
+
+3. Вы можете использовать Панель доступа (Майкрософт). При нажатии на плитку Salesforce на панели доступа вы автоматически войдете в Salesforce, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="test-sso-for-salesforce-mobile"></a>Проверка единого входа для Salesforce (мобильный)
 
 1. Откройте мобильное приложение Salesforce. На странице входа нажмите **Использовать пользовательский домен**.
 
-    ![Мобильное приложение "Salesforce"](media/salesforce-tutorial/mobile-app1.png)
+    ![Мобильное приложение Salesforce, параметр "Использовать пользовательский домен"](media/salesforce-tutorial/mobile-app1.png)
 
 1. В текстовом поле **Пользовательский домен** введите зарегистрированное пользовательское доменное имя и нажмите **Продолжить**.
 
-    ![Мобильное приложение "Salesforce"](media/salesforce-tutorial/mobile-app2.png)
+    ![Мобильное приложение Salesforce, параметр "Пользовательский домен"](media/salesforce-tutorial/mobile-app2.png)
 
 1. Введите учетные данные Azure AD для входа в приложение "Salesforce" и нажмите **Далее**.
 
-    ![Мобильное приложение "Salesforce"](media/salesforce-tutorial/mobile-app3.png)
+    ![Мобильное приложение Salesforce, учетные данные Azure AD](media/salesforce-tutorial/mobile-app3.png)
 
 1. На странице **Разрешить доступ**, как показано ниже, нажмите **Разрешить**, чтобы предоставить доступ к приложению "Salesforce".
 
-    ![Мобильное приложение "Salesforce"](media/salesforce-tutorial/mobile-app4.png)
+    ![Мобильное приложение Salesforce, страница "Разрешить доступ"](media/salesforce-tutorial/mobile-app4.png)
 
 1. Наконец, после успешного входа на сайт отобразится домашняя страница приложения.
 
-    ![Мобильное приложение Salesforce](media/salesforce-tutorial/mobile-app5.png)![Мобильное приложение Salesforce](media/salesforce-tutorial/mobile-app6.png)
+    ![Домашняя страница мобильного приложения Salesforce](media/salesforce-tutorial/mobile-app5.png) ![Мобильное приложении Salesforce](media/salesforce-tutorial/mobile-app6.png)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="next-steps"></a>Next Steps
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
-- [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md)
-
-- [Пробное использование Salesforce с Azure AD](https://aad.portal.azure.com)
-
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/protect-salesforce)
+После настройки Salesforce вы можете применить функцию управления сеансами, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).

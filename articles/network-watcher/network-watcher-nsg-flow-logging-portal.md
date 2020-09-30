@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: da7d56a0fd8571e796567331a7543074f0bf1eda
-ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
+ms.openlocfilehash: 89258b05831170ff502cde80577f3a6851659bf2
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84808692"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90986321"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство по Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "84808692"
 4. В верхнем левом углу портала выберите **Все службы**. В текстовом поле **Фильтр** введите *Наблюдатель за сетями*. Когда в результатах поиска появится **Наблюдатель за сетями**, выберите его.
 5. В разделе **Журналы** выберите **Журналы последовательностей NSG**, как показано на следующем изображении.
 
-    ![Группы NSG](./media/network-watcher-nsg-flow-logging-portal/nsgs.png)
+    ![Снимок экрана: журнал потоков для групп безопасности сети Наблюдателя за сетями.](./media/network-watcher-nsg-flow-logging-portal/nsgs.png)
 
 6. В списке NSG выберите NSG с именем **myVm-nsg**.
 7. В разделе **Параметры журналов потоков** выберите **On** (Включить).

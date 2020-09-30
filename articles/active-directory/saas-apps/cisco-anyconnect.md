@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/30/2020
+ms.date: 09/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 93ae0b634969f2329a45f333437588f16d0a187d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4403d5470f96ead861196f7c9bcb0b9b6af088b0
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88528959"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90973115"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-anyconnect"></a>Руководство по интеграции единого входа Azure Active Directory с Cisco AnyConnect
 
@@ -25,8 +25,6 @@ ms.locfileid: "88528959"
 * С помощью Azure AD вы можете контролировать доступ к Cisco AnyConnect.
 * Вы можете включить автоматический вход пользователей в Cisco AnyConnect с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
-
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,24 +38,23 @@ ms.locfileid: "88528959"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Cisco AnyConnect поддерживает единый вход, инициируемый **поставщиком удостоверений**.
-* После настройки Cisco AnyConnect вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-cisco-anyconnect-from-the-gallery"></a>Добавление Cisco AnyConnect из коллекции
 
 Чтобы настроить интеграцию Cisco AnyConnect с Azure AD, необходимо добавить Cisco AnyConnect из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **Cisco AnyConnect**.
 1. Выберите **Cisco AnyConnect** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-cisco-anyconnect"></a>Настройка и проверка единого входа Azure AD для Cisco AnyConnect
+## <a name="configure-and-test-azure-ad-sso-for-cisco-anyconnect"></a>Настройка и проверка единого входа Azure AD для Cisco AnyConnect
 
 Настройте и проверьте единый вход Azure AD в Cisco AnyConnect с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и связанным пользователем в Cisco AnyConnect.
 
-Чтобы настроить и проверить единый вход Azure AD в Cisco AnyConnect, выполните действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Cisco AnyConnect, выполните действия из следующих стандартных блоков.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
@@ -70,7 +67,7 @@ ms.locfileid: "88528959"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Cisco AnyConnect** найдите раздел **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Cisco AnyConnect** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -115,15 +112,9 @@ ms.locfileid: "88528959"
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Cisco AnyConnect**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-cisco-anyconnect-sso"></a>Настройка единого входа в Cisco AnyConnect
@@ -181,25 +172,15 @@ ms.locfileid: "88528959"
 
 ### <a name="create-cisco-anyconnect-test-user"></a>Создание тестового пользователя Cisco AnyConnect
 
-В этом разделе описано, как создать пользователя B.Simon в Cisco AnyConnect. Обратитесь к  [группе поддержки Cisco AnyConnect](https://www.cisco.com/c/en/us/support/index.html) для добавления пользователей на платформу Cisco AnyConnect. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя B.Simon в Cisco AnyConnect. Обратитесь к [группе поддержки Cisco AnyConnect](https://www.cisco.com/c/en/us/support/index.html) для добавления пользователей на платформу Cisco AnyConnect. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов.
 
-Щелкнув плитку Cisco AnyConnect на Панели доступа, вы автоматически войдете в приложение Cisco AnyConnect, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+* Выберите элемент "Тестировать приложение" на портале Azure, и вы автоматически войдете в Cisco AnyConnect, для которого настроен единый вход.
+* Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Cisco AnyConnect на Панели доступа, вы автоматически войдете в приложение Cisco AnyConnect, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="next-steps"></a>Next Steps
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
-- [Пробное использование Cisco AnyConnect с Azure AD](https://aad.portal.azure.com/)
-
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
+После настройки Cisco AnyConnect вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

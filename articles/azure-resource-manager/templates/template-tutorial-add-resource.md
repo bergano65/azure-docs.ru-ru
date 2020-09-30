@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0163fcc62ea6c813af8e9e5693ca35fa0e650f96
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 9e841cccdfb3d304d63eb19b45be5555eea2a66c
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497534"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069413"
 ---
 # <a name="tutorial-add-a-resource-to-your-arm-template"></a>Руководство по добавлению ресурса в шаблон ARM
 
@@ -85,7 +85,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
+> Если развертывание завершилось сбоем, используйте параметр **verbose**, чтобы получить сведения о создаваемых ресурсах. Используйте параметр **отладки**, чтобы получить дополнительные сведения для отладки.
 
 Ниже приведены два возможных сбоя развертывания, с которыми вы можете столкнуться.
 

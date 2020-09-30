@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/20/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: f4a4c38cf079c22dbd2b8eda5e68cc3f147b1fc0
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 84db28348baebc4f6b62f9cacb0035b4df1f6145
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88535015"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660771"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-meraki-dashboard"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Meraki Dashboard
 
@@ -42,6 +42,9 @@ ms.locfileid: "88535015"
 * Meraki Dashboard поддерживает единый вход, инициированный **поставщиком удостоверений**.
 * После настройки Meraki Dashboard вы можете применить функцию управления сеансами, которая в режиме реального времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
+
 ## <a name="adding-meraki-dashboard-from-the-gallery"></a>Добавление Meraki Dashboard из коллекции
 
 Чтобы настроить интеграцию Meraki Dashboard с AAD, необходимо добавить Meraki Dashboard из коллекции в список управляемых приложений SaaS.
@@ -53,7 +56,7 @@ ms.locfileid: "88535015"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Meraki Dashboard**.
 1. Выберите **Meraki Dashboard** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-meraki-dashboard"></a>Настройка и проверка единого входа Azure AD для Meraki Dashboard
+## <a name="configure-and-test-azure-ad-sso-for-meraki-dashboard"></a>Настройка и проверка единого входа Azure AD для Meraki Dashboard
 
 Настройте и проверьте единый вход Azure AD в Meraki Dashboard с помощью тестового пользователя **B.Simon**. Для обеспечения единого входа необходимо установить связь между пользователем AAD и соответствующим пользователем в приложении Meraki Dashboard.
 
@@ -147,15 +150,15 @@ ms.locfileid: "88535015"
 
 1. Откройте раздел **Organization (Организация)**  -> **Settings (Параметры)** .
 
-    ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/configure1.png)
+    ![Вкладка параметров Meraki Dashboard](./media/meraki-dashboard-tutorial/configure1.png)
 
 1. В разделе Authentication (Проверка подлинности) установите для параметра **SAML SSO** (Единый вход SAML) значение **SAML SSO enabled** (Единый вход SAML включен).
 
-    ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/configure2.png)
+    ![Проверка подлинности Meraki Dashboard](./media/meraki-dashboard-tutorial/configure2.png)
 
 1. Щелкните **Add a SAML IdP** (Добавить поставщик удостоверений SAML).
 
-    ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/configure3.png)
+    ![Добавление поставщика удостоверений SAML в Meraki Dashboard](./media/meraki-dashboard-tutorial/configure3.png)
 
 1. В текстовое поле **Thumbprint** (Отпечаток) вставьте значение **отпечатка сертификата SHA1 X.590**, которое скопировали на портале Azure. Затем нажмите кнопку **Сохранить**. После сохранения здесь отобразится URL-адрес потребителя. Скопируйте значение "Consumer URL" (URL-адрес потребителя) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -167,15 +170,15 @@ ms.locfileid: "88535015"
 
 1. Перейдите в раздел **Organization (Организация)**  -> **Administrators (Администраторы)** .
 
-    ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/user1.png)
+    ![Администраторы Meraki Dashboard](./media/meraki-dashboard-tutorial/user1.png)
 
 1. В разделе ролей для администраторов SAML нажмите кнопку **Add SAML role** (Добавить роль SAML).
 
-    ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/user2.png)
+    ![Кнопка добавления роли SAML в Meraki Dashboard](./media/meraki-dashboard-tutorial/user2.png)
 
 1. Укажите роль **meraki_full_admin**, для параметра **Organization access** (Доступ к организации) отметьте вариант **Full** (Полный) и щелкните элемент **Create role** (Создать роль). Повторите эту процедуру для роли **meraki_readonly_admin**, но для параметра **Organization access** (Доступ к организации) отметьте вариант **Read-only** (Только для чтения).
  
-    ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/user3.png)
+    ![Создание пользователя в Meraki Dashboard](./media/meraki-dashboard-tutorial/user3.png)
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -194,6 +197,3 @@ ms.locfileid: "88535015"
 - [Попробуйте работу Meraki Dashboard с AAD](https://aad.portal.azure.com/)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Как защитить Meraki Dashboard с помощью расширенных средств визуального контроля и элементов управления](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-

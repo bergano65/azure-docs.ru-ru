@@ -9,12 +9,12 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 43ed46f56be1ad4fa2aa643a6ed06f8fbe094a5b
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: f8be96fb008471d040839141a230c13b8f1657a5
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87351944"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90708178"
 ---
 # <a name="monitor-your-synapse-workspace"></a>Мониторинг рабочей области Synapse
 
@@ -51,5 +51,4 @@ ms.locfileid: "87351944"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Azure Synapse Analytics (предварительная версия рабочих областей)](overview-what-is.md)
-
+> [Ознакомление с центром знаний](get-started-knowledge-center.md)

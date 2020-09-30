@@ -1,18 +1,18 @@
 ---
-title: Включение надстройки контроллера объекта ingress для нового кластера AKS с новым экземпляром Шлюза приложений Azure
+title: Руководство по Включение надстройки контроллера объекта ingress для нового кластера AKS с новым экземпляром Шлюза приложений Azure
 description: Узнайте, как с помощью Azure CLI включить надстройку контроллера объекта ingress для нового кластера AKS с новым экземпляром Шлюза приложений Azure.
 services: application-gateway
 author: caya
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 06/10/2020
+ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 620fe5851f9dbde01b2206595fa79b61f62deb66
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: ab917fe476a40eb8ea559bc08e52d4bbf16a8436
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89595926"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91285610"
 ---
 # <a name="tutorial-enable-the-ingress-controller-add-on-preview-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Руководство по включению надстройки контроллера объекта ingress (предварительная версия) для нового кластера AKS с новым экземпляром Шлюза приложений
 
@@ -30,11 +30,12 @@ ms.locfileid: "89595926"
 > * Разверните пример приложения с помощью AGIC для объекта ingress в кластере AKS.
 > * Убедитесь, что приложение доступно через Шлюз приложений.
 
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим учебником вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
@@ -134,7 +135,7 @@ az group delete --name myResourceGroup
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Сведения об отключении надстройки AGIC](./ingress-controller-disable-addon.md)
-* [Сведения о том, какие заметки поддерживаются в AGIC](./ingress-controller-annotations.md)
-* [Устранение неполадок с AGIC](./ingress-controller-troubleshoot.md)
+
+> [!div class="nextstepaction"]
+> [Сведения об отключении надстройки AGIC](./ingress-controller-disable-addon.md)
 

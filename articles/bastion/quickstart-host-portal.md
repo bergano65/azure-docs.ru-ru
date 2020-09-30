@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: quickstart
 ms.date: 03/11/2020
 ms.author: charwen
-ms.openlocfilehash: 3c2780c8c99fd4568a7213b625ce785d3a99129c
-ms.sourcegitcommit: 24f31287b6a526e23ff5b5469113522d1ccd4467
+ms.openlocfilehash: b0155ae92e3179918273d6a19773aa15b67949ea
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84743989"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985587"
 ---
 # <a name="quickstart-connect-to-a-virtual-machine-using-a-private-ip-address-and-azure-bastion"></a>Краткое руководство. Подключение к виртуальной машине с помощью частного IP-адреса и Бастиона Azure
 
@@ -72,7 +72,7 @@ ms.locfileid: "84743989"
 
 1. Введите имя пользователя и пароль для виртуальной машины. Затем щелкните **Connect** (Подключиться).
 
-   ![подключение](./media/quickstart-host-portal/connect.png)
+   ![Снимок экрана: подключения через диалоговое окно службы "Бастион Azure", в котором предлагается ввести имя пользователя и пароль.](./media/quickstart-host-portal/connect.png)
 1. Подключение по RDP к этой виртуальной машине через Бастион будет открываться непосредственно на портале Azure (через HTML5) с использованием порта 443 и службы "Бастион".
 
    ![Подключение по RDP](./media/quickstart-host-portal/443-rdp.png)

@@ -1,6 +1,6 @@
 ---
 title: Регистрация подписки Azure в Cloudyn
-description: В этом кратком руководстве описывается процесс регистрации, который необходимо пройти для создания пробной подписки Cloudyn и входа на портал Cloudyn.
+description: Узнайте, как зарегистрировать подписку Azure с помощью Cloudyn и войти на портал Cloudyn.
 author: bandersmsft
 ms.author: banders
 ms.date: 03/12/2020
@@ -10,12 +10,12 @@ ms.service: cost-management-billing
 ms.subservice: cloudyn
 ms.reviewer: benshy
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3a4501374ef6045170d380422763729372f0ec0c
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: bb7add199186ab54eb28131070e717e4298bedf1
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690108"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985557"
 ---
 # <a name="register-an-individual-azure-subscription-and-view-cost-data"></a>Регистрация индивидуальной подписки Azure и просмотр данных о затратах
 

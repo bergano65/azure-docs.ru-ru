@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 274d725a0e7987c8cb15363ba276aec7ebc541d5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 53304f14286577bf0bc25b2a66442286527c5140
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77426366"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90972426"
 ---
 # <a name="tutorial-create-a-connected-waste-management-application-in-iot-central"></a>Руководство по созданию приложения для интерактивного управления отходами с использованием IoT Central
 
@@ -131,13 +131,13 @@ ms.locfileid: "77426366"
 
 1. В приложении в IoT Central в области слева щелкните раздел **Шаблоны устройств**. 
 
-    ![Шаблон устройства](./media/tutorial-connectedwastemanagement/connectedwastemanagement-devicetemplate.png)
+    ![Снимок экрана: список шаблонов устройства в приложении](./media/tutorial-connectedwastemanagement/connectedwastemanagement-devicetemplate.png)
 
 2. В списке шаблонов устройств вы увидите запись для **подключенного мусорного контейнера**. Откройте шаблон, щелкнув его имя.
 
 3. Ознакомьтесь с возможностями шаблона устройства. Вы увидите определяемые шаблоном датчики, такие как *уровень заполнения*, *анализатор запаха*, *вес*, *расположение* и другие.
 
-   ![Шаблон устройства](./media/tutorial-connectedwastemanagement/connectedwastemanagement-devicetemplate-connectedbin.png)
+   ![Снимок экрана: подробности шаблона устройства подключенного мусорного контейнера](./media/tutorial-connectedwastemanagement/connectedwastemanagement-devicetemplate-connectedbin.png)
 
    
 
@@ -265,8 +265,9 @@ ms.locfileid: "77426366"
 1. Откройте вкладку "Администрирование" в приложении IoT Central на панели слева.
 2. Выберите параметры приложения и нажмите кнопку "Удалить" в нижней части страницы.
 
-  
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об [основных понятиях интерактивного приложения для управления отходами](./concepts-connectedwastemanagement-architecture.md)
+* Дополнительные сведения об
+ 
+> [!div class="nextstepaction"]
+> [эталонной архитектуре решения для интеллектуального мониторинга отходов](./concepts-connectedwastemanagement-architecture.md)

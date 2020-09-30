@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/15/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: ee5fe4a856e75e9833b9d69dd24efd932f760a91
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 443cd6ce3805dbd5ebc250556c6d8ec28161f50e
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88523342"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89658895"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-whimsical"></a>Руководство по интеграции единого входа Azure Active Directory с Whimsical
 
@@ -35,9 +35,6 @@ ms.locfileid: "88523342"
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Рабочая область команды Whimsical.
 
-> [!NOTE]
-> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
-
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
@@ -45,6 +42,9 @@ ms.locfileid: "88523342"
 * Whimsical поддерживает единый вход, который инициируют **поставщики услуг и удостоверений**.
 * Whimsical поддерживает **JIT**-подготовку пользователей.
 * После настройки Whimsical вы сможете применить функцию управления сеансом, которая защищает от кражи конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-whimsical-from-the-gallery"></a>Добавление Whimsical из коллекции
 
@@ -57,7 +57,7 @@ ms.locfileid: "88523342"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Whimsical**.
 1. В области результатов выберите **Whimsical** и затем добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-whimsical"></a>Настройка и проверка единого входа Azure AD для Whimsical
+## <a name="configure-and-test-azure-ad-sso-for-whimsical"></a>Настройка и проверка единого входа Azure AD для Whimsical
 
 Настройте и проверьте единый вход Azure AD в Whimsical с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Whimsical.
 
@@ -169,5 +169,3 @@ ms.locfileid: "88523342"
 - [Попробуйте поработать с Whimsical и Azure AD](https://aad.portal.azure.com/)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Как защитить Whimsical с помощью функции управления настройками условного доступа](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

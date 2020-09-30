@@ -6,12 +6,12 @@ ms.date: 06/10/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 140eb73cdf6d5bb701c08b0dd8d5f85b6f137df6
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 124df19287062a7fc8a6b9cf8b9d32eb3863b581
+ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497483"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90069243"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
@@ -178,7 +178,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
+> Если развертывание завершилось сбоем, используйте параметр **verbose**, чтобы получить сведения о создаваемых ресурсах. Используйте параметр **отладки**, чтобы получить дополнительные сведения для отладки.
 
 ## <a name="verify-deployment"></a>Проверка развертывания
 

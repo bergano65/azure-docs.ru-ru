@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/14/2020
 ms.author: jeedes
-ms.openlocfilehash: 81e02bdc483c4b68901d7e81b29f3a7f423480d9
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 48009246dd491ca3f4080cf85036c66605a73272
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88537606"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707002"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adobe-creative-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Adobe Creative Cloud
 
@@ -102,7 +102,7 @@ ms.locfileid: "88537606"
     | Email | user.mail |
 
     > [!NOTE]
-    > У пользователей должна быть действительная лицензия Office 365 ExO для заполнения значения утверждения из электронного письма в ответе SAML.
+    > У пользователей должна быть действительная лицензия Microsoft 365 ExO для заполнения значения утверждения из электронного письма в ответе SAML.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML-файл данных федерации** и нажмите кнопку **Скачать**, чтобы скачать XML-файл метаданных и сохранить его на компьютере.
 

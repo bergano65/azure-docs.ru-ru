@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 0ed50b8d128386008a73eb4d1a8b412a42fdb945
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 0364495d751465f644686824758992d47f0b8bdf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89485461"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91290659"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -133,6 +133,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
   * создание, изменение или удаление ключей или секретов;
   * подписывание, проверка, шифрование, расшифровка, упаковка и распаковка ключей, получение секретов и вывод списка ключей и секретов (и их версий);
 * непроверенные запросы, которые приводят к появлению ответа 401 (например, запросы без токена носителя, с недействительным токеном, а также запросы неправильного формата или просроченные запросы).  
+* Изменились события уведомлений Сетки событий, связанные с приближением истечения срока действия, истечением срока действия и политикой доступа к хранилищу (событие новой версии не регистрируются). События заносятся в журнал независимо от наличия подписки на события, созданной в хранилище ключей. См. статью [Использование Azure Key Vault в качестве источника Сетки событий](https://docs.microsoft.com/azure/event-grid/event-schema-key-vault).
 
 ## <a name="enable-logging-using-azure-cli"></a>Включение ведения журнала с помощью Azure PowerShell
 
@@ -289,6 +290,8 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 
 В следующей таблице перечислены значения **operationName** и соответствующие команды REST API.
 
+### <a name="operation-names-table"></a>Таблица имен операций
+
 | operationName | Команда REST API |
 | --- | --- |
 | **Аутентификация** |Аутентификация через конечную точку Azure Active Directory |
@@ -318,6 +321,13 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 | **SecretDelete** |[Удаление секрета](https://msdn.microsoft.com/library/azure/dn903613.aspx) |
 | **SecretList** |[Список секретов в хранилище](https://msdn.microsoft.com/library/azure/dn903614.aspx) |
 | **SecretListVersions** |[Список версий секрета](https://msdn.microsoft.com/library/azure/dn986824.aspx) |
+| **VaultAccessPolicyChangedEventGridNotification** | Опубликованное событие изменения политики доступа к хранилищу |
+| **SecretNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия секрета |
+| **SecretExpiredEventGridNotification** |Опубликованное событие истечения срока действия секрета |
+| **KeyNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия ключа |
+| **KeyExpiredEventGridNotification** |Опубликованное событие истечения срока действия ключа |
+| **CertificateNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия сертификата |
+| **CertificateExpiredEventGridNotification** |Опубликованное событие истечения срока действия сертификата |
 
 ## <a name="use-azure-monitor-logs"></a><a id="loganalytics"></a>Использование журналов Azure Monitor
 

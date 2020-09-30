@@ -7,12 +7,12 @@ keywords: изменение, отслеживание, отслеживание
 ms.date: 12/05/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 63fe36a51b69648039c3a16be4267fc0c72e8a58
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 05b99c7f010ad307956b70890ee45f649111b373
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185812"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530545"
 ---
 # <a name="troubleshoot-changes-on-an-azure-vm"></a>Устранение неполадок с изменениями на виртуальной машине Azure
 
@@ -220,7 +220,7 @@ ConfigurationChange
 
 19. В разделе **Создать правило** выберите **Тема электронного письма**, а затем — **Создать правило генерации оповещений**. Это оповещение уведомляет об успешном завершении развертывания обновления и предоставляет сведения о том, на каких компьютерах выполнялось развертывание. На следующем рисунке представлен пример сообщения, полученный при остановке службы W3SVC.
 
-    ![email](./media/automation-tutorial-troubleshoot-changes/email.png)
+    ![Снимок экрана: уведомление по электронной почте, полученное при остановке служб W3SVC.](./media/automation-tutorial-troubleshoot-changes/email.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

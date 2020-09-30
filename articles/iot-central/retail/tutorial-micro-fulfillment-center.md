@@ -5,14 +5,14 @@ author: avneet723
 ms.author: avneets
 ms.service: iot-central
 ms.subservice: iot-central-retail
-ms.topic: overview
+ms.topic: tutorial
 ms.date: 01/09/2020
-ms.openlocfilehash: 74deb4253a21445e21f7ef04f53f3bfe3f1fe0d0
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: 880d8ee0e6e2b3984f6bea4b994642724085d512
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81001273"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90980549"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-micro-fulfillment-center-application-template"></a>Руководство по Развертывание и использование шаблона приложения микроцентра исполнения заказов
 
@@ -62,11 +62,11 @@ ms.locfileid: "81001273"
    * Просматривать план этажей и расположение роботизированных операторов в структуре выполнения.
    * Активировать такие команды, как сброс системы управления, обновление встроенного ПО оператора и изменение конфигурации сети.
 
-     ![Снимок экрана с панелью мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard1.png)
+     ![Снимок экрана с верхней половиной панели мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard1.png)
    * См. пример панели мониторинга, которую оператор может использовать для наблюдения за условиями в центре выполнения. 
    * Осуществлять мониторинг работоспособности полезных данных, выполняемых на устройстве шлюза в центре выполнения.    
 
-     ![Снимок экрана с панелью мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard2.png)
+     ![Снимок экрана с нижней половиной панели мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard2.png)
 
 ## <a name="device-template"></a>Шаблон устройства
 Если выбрать вкладку "Шаблоны устройств", вы увидите, что в шаблоне есть два различных типа устройств: 
@@ -91,6 +91,9 @@ ms.locfileid: "81001273"
 ![Снимок экрана со страницей параметров приложения в микро-центре исполнения заказов](./media/tutorial-micro-fulfillment-center-app/delete.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения об [архитектуре для микроцентра исполнения заказов](./architecture-micro-fulfillment-center.md).
-* Дополнительные сведения о других [шаблонах Azure IoT Central для розничной торговли](./overview-iot-central-retail.md).
-* Прочитайте статью [What is Azure IoT Central?](../preview/overview-iot-central.md) (Что такое Azure IoT Central).
+
+Кроме того, вы можете узнать больше о:
+> [!div class="nextstepaction"]
+> [архитектура решения для микроцентра исполнения заказов](./architecture-micro-fulfillment-center.md).
+* Дополнительные сведения о шаблонах Azure IoT Central для розничной торговли см. [здесь](./overview-iot-central-retail.md).
+* Дополнительные сведения об Azure IoT Central см. в [этой статье](../preview/overview-iot-central.md).

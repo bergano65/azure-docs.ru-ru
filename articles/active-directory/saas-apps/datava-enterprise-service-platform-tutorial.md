@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/15/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: 67016d930e2cc40ccf38e89c8dfc7700db7d3109
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7d249005e77328460a0e7152e0a3ff125857534b
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536739"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89659489"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-datava-enterprise-service-platform"></a>Руководство по интеграции единого входа Azure Active Directory с Datava Enterprise Service Platform
 
@@ -35,9 +35,6 @@ ms.locfileid: "88536739"
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка с поддержкой единого входа на Datava Enterprise Service Platform.
 
-> [!NOTE]
-> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
-
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
@@ -45,6 +42,9 @@ ms.locfileid: "88536739"
 * Datava Enterprise Service Platform поддерживает единый вход, инициированный **поставщиком услуг**.
 * Datava Enterprise Service Platform поддерживает **JIT**-подготовку пользователей.
 * После настройки Datava Enterprise Service Platform можно применять элемент управления сеансами, который защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-datava-enterprise-service-platform-from-the-gallery"></a>Добавление Datava Enterprise Service Platform из коллекции
 
@@ -57,7 +57,7 @@ ms.locfileid: "88536739"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Datava Enterprise Service Platform**.
 1. Выберите **Datava Enterprise Service Platform** на панели результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-datava-enterprise-service-platform"></a>Настройка и проверка единого входа в Azure AD для Datava Enterprise Service Platform
+## <a name="configure-and-test-azure-ad-sso-for-datava-enterprise-service-platform"></a>Настройка и проверка единого входа в Azure AD для Datava Enterprise Service Platform
 
 Настройте и проверьте единый вход Azure AD в Datava Enterprise Service Platform с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Datava Enterprise Service Platform.
 
@@ -84,7 +84,7 @@ ms.locfileid: "88536739"
 
     а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://go.datava.com/<TENANT_NAME>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://go.datava.com/saml/module.php/saml/sp/saml2-acs.php/azure-sp`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://go.datava.com/saml/module.php/saml/sp/saml2-acs.php/azure-sp`.
 
     > [!NOTE]
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Datava Enterprise Service Platform](mailto:support@datava.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -148,5 +148,3 @@ ms.locfileid: "88536739"
 - [Попробуйте использовать Datava Enterprise Service Platform с Azure AD](https://aad.portal.azure.com/)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Защита приложения Datava Enterprise Service Platform с помощью расширенных функций, обеспечивающих видимость и возможности управления](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: quickstart
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: 7fa119db0c974c93aff667060d153b21b8de16bb
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 57ab6bca820c4c25a9a56e4a801aa7d917d317ec
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843493"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978589"
 ---
 # <a name="quickstart-deploy-open-source-fhir-server-using-azure-portal"></a>Краткое руководство. Развертывание сервера FHIR с открытым кодом с помощью портала Azure
 
@@ -25,17 +25,17 @@ ms.locfileid: "87843493"
 
 Перейдите на [страницу развертывания GitHub](https://github.com/Microsoft/fhir-server/blob/master/docs/DefaultDeployment.md) и найдите кнопки Deploy to Azure (Развернуть в Azure).
 
-![Страница развертывания ПО с открытым кодом](media/quickstart-oss-portal/deployment-page-oss.png)
+>[!div class="mx-imgBorder"]
+>![Страница развертывания ПО с открытым кодом](media/quickstart-oss-portal/deployment-page-oss.png)
 
 Нажмите кнопку развертывания, после чего откроется портал Azure.
 
 ## <a name="fill-in-deployment-parameters"></a>Укажите параметры развертывания
 
-Создайте новую группу ресурсов и присвойте ей имя. Еще один обязательный параметр — это имя службы.
+Создайте новую группу ресурсов и присвойте ей имя. Здесь присутствуют еще два обязательных параметра: имя службы и пароль администратора SQL.
 
-![Параметры настраиваемого развертывания](media/quickstart-oss-portal/deployment-custom-parameters.png)
-
-Обратите внимание, что при развертывании исходный код будет извлекаться непосредственно из репозитория ПО с открытым исходным кодом на GitHub. Если вы создали вилку репозитория, вы можете указать на нее и на конкретную ветвь.
+>[!div class="mx-imgBorder"]
+>![Параметры настраиваемого развертывания](media/quickstart-oss-portal/deployment-custom-parameters.png)
 
 Введя сведения, можно начать развертывание.
 

@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/26/2019
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70296dce5b9dcac738c17a4f2388a7eb37abd66f
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: d193637122cb388ea2c5012638526719d245f524
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89269341"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90968984"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-virtual-machine-scale-sets-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемых наборах виртуальных машин с помощью PowerShell
 
@@ -37,7 +37,9 @@ ms.locfileid: "89269341"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
+
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
+
 - Для выполнения операций управления, описанных в этой статье, учетной записи требуются следующие назначения управления доступом на основе ролей Azure:
 
     > [!NOTE]
@@ -46,7 +48,10 @@ ms.locfileid: "89269341"
     - [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) для создания масштабируемого набора виртуальных машин, а также для включения и удаления управляемого удостоверения, назначаемого системой, и (или) управляемого удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин.
     - Роль [Участник управляемого удостоверения](../../role-based-access-control/built-in-roles.md#managed-identity-contributor): для создания управляемого удостоверения, назначаемого пользователем.
     - Роль [Оператор управляемого удостоверения](../../role-based-access-control/built-in-roles.md#managed-identity-operator): для назначения и удаления управляемого удостоверения, назначаемого пользователем, в масштабируемом наборе виртуальных машин.
-- Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано. 
+
+- Выполнить примеры скриптов можно двумя способами:
+    - используйте службу [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **Попробовать** в правом верхнем углу блоков кода.
+    - Выполните скрипты локально, установив последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps), а затем войдите в Azure с помощью команды `Connect-AzAccount`. 
 
 ## <a name="system-assigned-managed-identity"></a>Управляемое удостоверение, назначаемое системой
 
@@ -58,48 +63,40 @@ ms.locfileid: "89269341"
 
 1. Инструкции по созданию масштабируемого набора виртуальных машин с управляемым удостоверением, назначаемым системой, приведены в *примере 1* в справочной статье по командлету [New-AzVmssConfig](/powershell/module/az.compute/new-azvmssconfig).  Добавьте параметр `-IdentityType SystemAssigned` в командлет `New-AzVmssConfig`:
 
-    ```powershell
+    ```azurepowershell-interactive
     $VMSS = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic" -NetworkInterfaceConfiguration $NetCfg -IdentityType SystemAssigned`
     ```
 
-
-
-## <a name="enable-system-assigned-managed-identity-on-an-existing-azure-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, в существующем масштабируемом наборе виртуальных машин Azure
+### <a name="enable-system-assigned-managed-identity-on-an-existing-azure-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, в существующем масштабируемом наборе виртуальных машин Azure
 
 Если нужно включить управляемое удостоверение, назначаемое системой, в существующем масштабируемом наборе виртуальных машин Azure, сделайте следующее.
 
-1. Войдите в Azure, используя команду `Connect-AzAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин. Учетная запись должна принадлежать роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин, например "Участник виртуальных машин".
+1. Убедитесь, что используемая учетная запись принадлежит роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин, например "Участник виртуальных машин".
+   
+1. Получите свойства масштабируемого набора виртуальных машин с помощью командлета [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss). Затем, чтобы включить управляемое удостоверение, назначаемое системой, используйте параметр `-IdentityType` в командлете [Update-AzVmss](/powershell/module/az.compute/update-azvmss).
 
-   ```powershell
-   Connect-AzAccount
-   ```
-
-2. Сначала получите свойства масштабируемого набора виртуальных машин с помощью командлета [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss). Затем, чтобы включить управляемое удостоверение, назначаемое системой, используйте параметр `-IdentityType` в командлете [Update-AzVmss](/powershell/module/az.compute/update-azvmss).
-
-   ```powershell
+   ```azurepowershell-interactive
    Update-AzVmss -ResourceGroupName myResourceGroup -Name -myVmss -IdentityType "SystemAssigned"
    ```
-
-
 
 ### <a name="disable-the-system-assigned-managed-identity-from-an-azure-virtual-machine-scale-set"></a>Отключение управляемого удостоверения, назначаемого системой, в масштабируемом наборе виртуальных машин Azure
 
 Если в масштабируемом наборе виртуальных машин не требуется управляемое удостоверение, назначаемое системой, но по-прежнему требуются управляемые удостоверения, назначаемые пользователем, используйте следующий командлет.
 
-1. Войдите в Azure, используя команду `Connect-AzAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит виртуальную машину. Учетная запись должна принадлежать роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин, например "Участник виртуальных машин".
+1. Убедитесь, что учетная запись принадлежит роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин, например "Участник виртуальных машин".
 
-2. Выполните следующий командлет:
+1. Выполните следующий командлет:
 
-   ```powershell
+   ```azurepowershell-interactive
    Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType "UserAssigned"
    ```
 
-Если имеется масштабируемый набор виртуальных машин, для которого не требуется управляемое удостоверение, назначаемое системой, и у которого нет управляемых удостоверений, назначаемых пользователем, используйте следующие команды.
+1. При наличии масштабируемого набора виртуальных машин, для которого не требуется управляемое удостоверение, назначаемое системой, и у которого нет управляемых удостоверений, назначаемых пользователем, используйте следующую команду:
 
-```powershell
-Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
-```
-
+    ```azurepowershell-interactive
+    Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
+    ```
+    
 ## <a name="user-assigned-managed-identity"></a>Управляемое удостоверение, назначаемое пользователем
 
 В этом разделе вы узнаете, как добавить и удалить управляемое удостоверение, назначаемое пользователем, в масштабируемом наборе виртуальных машин с помощью Azure PowerShell.
@@ -112,17 +109,13 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 
 Чтобы задать управляемое удостоверение, назначаемое пользователем, для существующего масштабируемого набора виртуальных машин Azure, выполните следующее.
 
-1. Войдите в Azure, используя команду `Connect-AzAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин. Учетная запись должна принадлежать роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин, например "Участник виртуальных машин".
+1. Убедитесь, что учетная запись принадлежит роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин, например "Участник виртуальных машин".
 
-   ```powershell
-   Connect-AzAccount
-   ```
-
-2. Сначала получите свойства масштабируемого набора виртуальных машин с помощью командлета `Get-AzVM`. Затем, чтобы задать управляемое удостоверение, назначаемое пользователем, для масштабируемого набора виртуальных машин, используйте параметры `-IdentityType` и `-IdentityID` в командлете [Update-AzVmss](/powershell/module/az.compute/update-azvmss). Замените `<VM NAME>`, `<SUBSCRIPTION ID>`, `<RESROURCE GROUP>`, `<USER ASSIGNED ID1>`, `USER ASSIGNED ID2` собственными значениями.
+1. Получите свойства масштабируемого набора виртуальных машин с помощью командлета `Get-AzVM`. Затем, чтобы задать управляемое удостоверение, назначаемое пользователем, для масштабируемого набора виртуальных машин, используйте параметры `-IdentityType` и `-IdentityID` в командлете [Update-AzVmss](/powershell/module/az.compute/update-azvmss). Замените `<VM NAME>`, `<SUBSCRIPTION ID>`, `<RESROURCE GROUP>`, `<USER ASSIGNED ID1>`, `USER ASSIGNED ID2` собственными значениями.
 
    [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
-   ```powershell
+   ```azurepowershell-interactive
    Update-AzVmss -ResourceGroupName <RESOURCE GROUP> -Name <VMSS NAME> -IdentityType UserAssigned -IdentityID "<USER ASSIGNED ID1>","<USER ASSIGNED ID2>"
    ```
 
@@ -130,17 +123,17 @@ Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 
 Если у масштабируемого набора виртуальных машин несколько управляемых удостоверений, назначаемых пользователем, с помощью приведенных ниже команд можно удалить все удостоверения, кроме последнего. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VIRTUAL MACHINE SCALE SET NAME>` собственными. `<USER ASSIGNED IDENTITY NAME>` — это имя управляемого удостоверения, назначаемого пользователем, которое следует оставить в масштабируемом наборе виртуальных машин. Эти сведения можно получить в разделе удостоверений масштабируемого набора виртуальных машин с помощью команды `az vmss show`.
 
-```powershell
+```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType UserAssigned -IdentityID "<USER ASSIGNED IDENTITY NAME>"
 ```
 Если в масштабируемом наборе виртуальных машин нет управляемого удостоверения, назначаемого системой, и вы хотите удалить из него все управляемые удостоверения, назначаемые пользователем, используйте следующую команду.
 
-```powershell
+```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType None
 ```
 Если в масштабируемом наборе виртуальных машин есть управляемые удостоверения, как назначаемое системой, так и назначаемые пользователем, вы можете удалить все управляемые удостоверения, назначаемые пользователем, переключившись на использование только управляемого удостоверения, назначаемого системой.
 
-```powershell 
+```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName myResourceGroup -Name myVmss -IdentityType "SystemAssigned"
 ```
 

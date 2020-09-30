@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/29/2020
 ms.custom: devx-track-csharp, seodec18
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: c1c3f52dafe63e3f829eb12d4fb872ed3ce85f36
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: abda26e359becb137d4c0c9f2965ebfbb5ee047c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88211705"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90982895"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство по Сквозная проверка подлинности и авторизации в Службе приложений Azure
 
@@ -145,7 +145,7 @@ http://<back-end-app-name>.azurewebsites.net
 http://<front-end-app-name>.azurewebsites.net
 ```
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/azure-run.png)
+:::image type="content" source="./media/tutorial-auth-aad/azure-run.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 > [!NOTE]
 > Если приложение перезапускается, возможно, вы заметили, что новые данные были удалены. Это сделано намеренно, так как пример приложения ASP.NET Core использует базу данных в памяти.
@@ -225,7 +225,7 @@ git push frontend master
 
 Перейдите к `http://<back-end-app-name>.azurewebsites.net`, чтобы просмотреть элементы, добавленные из интерфейсного приложения. Кроме того, добавьте несколько элементов, например `from back end 1` и `from back end 2`, а затем обновите интерфейсное приложение, чтобы проверить изменения.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/remote-api-call-run.png)
+:::image type="content" source="./media/tutorial-auth-aad/remote-api-call-run.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 ## <a name="configure-auth"></a>Настройка проверки подлинности
 
@@ -239,7 +239,7 @@ Azure Active Directory используется в качестве постав
 
 В разделе **Группы ресурсов** найдите и выберите свою группу ресурсов. В разделе **Обзор** выберите страницу управления внутреннего приложения.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/portal-navigate-back-end.png)
+:::image type="content" source="./media/tutorial-auth-aad/portal-navigate-back-end.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 В левом меню вашего внутреннего приложения выберите **Проверка подлинности или авторизация**, а затем включите проверку подлинности Службы приложений, выбрав **Включено**.
 
@@ -247,7 +247,7 @@ Azure Active Directory используется в качестве постав
 
 В разделе **Поставщики проверки подлинности** выберите **Azure Active Directory**.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/configure-auth-back-end.png)
+:::image type="content" source="./media/tutorial-auth-aad/configure-auth-back-end.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 Выберите **Экспресс**, затем примите настройки по умолчанию, чтобы создать приложение AD, и нажмите кнопку **ОК**.
 
@@ -259,9 +259,7 @@ Azure Active Directory используется в качестве постав
 
 Скопируйте **Идентификатор клиента** приложения Azure в Блокнот. Это значение понадобится позже.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/get-application-id-back-end.png)
-
-На этот момент у вас уже есть автономное приложение, которое защищено функциями аутентификации и авторизации в службе приложений. В остальных разделах показано, как защитить решение с несколькими приложениями, "проводя" данные аутентифицированного пользователя от внешнего интерфейса к серверной части. 
+:::image type="content" source="./media/tutorial-auth-aad/get-application-id-back-end.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел." данные аутентифицированного пользователя от внешнего интерфейса к серверной части. 
 
 ### <a name="enable-authentication-and-authorization-for-front-end-app"></a>Включение проверки подлинности и авторизации в интерфейсном приложении
 
@@ -284,13 +282,13 @@ Azure Active Directory используется в качестве постав
 
 Поочередно выберите **Регистрация приложений** > **Собственные приложения** > **View all applications in this directory** (Просмотреть все приложения в этом каталоге). Щелкните имя внешнего приложения, а затем выберите **Разрешения API**.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/add-api-access-front-end.png)
+:::image type="content" source="./media/tutorial-auth-aad/add-api-access-front-end.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 Выберите **Добавить разрешение**, а затем — **Интерфейсы API, используемые моей организацией** >  **\<back-end-app-name>** .
 
 На странице**Разрешения API запросов** серверного приложения выберите**Делегированные разрешения** и **user_impersonation**, а затем — **Добавить разрешения**.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/select-permission-front-end.png)
+:::image type="content" source="./media/tutorial-auth-aad/select-permission-front-end.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 ### <a name="configure-app-service-to-return-a-usable-access-token"></a>Настройка службы приложений для возвращения используемых маркеров доступа
 
@@ -300,7 +298,7 @@ Azure Active Directory используется в качестве постав
 
 Теперь [обозреватель ресурсов Azure](https://resources.azure.com) открывается с помощью интерфейсного приложения, выбранного в дереве ресурсов. В верхней части страницы щелкните **Чтение и запись**, чтобы внести изменения в обозревателе ресурсов Azure.
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/resources-enable-write.png)
+:::image type="content" source="./media/tutorial-auth-aad/resources-enable-write.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 В браузере слева перейдите к разделу **config** > **authsettings**.
 
@@ -310,7 +308,7 @@ Azure Active Directory используется в качестве постав
 "additionalLoginParams": ["response_type=code id_token","resource=<back-end-client-id>"],
 ```
 
-![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/additional-login-params-front-end.png)
+:::image type="content" source="./media/tutorial-auth-aad/additional-login-params-front-end.png" alt-text="Снимок экрана с примером REST API Службы приложений Azure в окне браузера, в котором отображается приложение списка дел.":::
 
 Сохраните настройки, щелкнув **PUT**.
 

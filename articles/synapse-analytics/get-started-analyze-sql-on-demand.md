@@ -9,16 +9,32 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 4011cd93879d9203d8231f24bbf531d14e6e815a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 93ebc1c5e89e54f4813f270b9f8b7b13f672fbe3
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093822"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90016118"
 ---
 # <a name="analyze-data-with-sql-on-demand"></a>Анализ данных с помощью SQL по запросу
 
 В этом учебнике вы узнаете, как анализировать данные с помощью SQL по запросу, используя данные, хранящиеся в базах данных Spark. 
+
+## <a name="analyze-nyc-taxi-data-in-blob-storage--using-sql-on-demand"></a>Анализ данных такси Нью-Йорка в Хранилище BLOB-объектов с помощью SQL по запросу
+
+1. В центре **Данные** в разделе **Связанный** щелкните правой кнопкой мыши элемент **Хранилище BLOB-объектов Azure > Sample Datasets (Образцы наборов данных) > nyc_tlc_yellow** и выберите **первые 100 строк**.
+1. Будет создан скрипт SQL со следующим кодом:
+
+    ```
+    SELECT
+        TOP 100 *
+    FROM
+        OPENROWSET(
+            BULK     'https://azureopendatastorage.blob.core.windows.net/nyctlc/yellow/puYear=*/puMonth=*/*.parquet',
+            FORMAT = 'parquet'
+        ) AS [result];
+    ```
+1. Нажмите кнопку **Выполнить**
 
 ## <a name="analyze-nyc-taxi-data-in-spark-databases-using-sql-on-demand"></a>Анализируйте данные нью-йоркского такси в базах данных Spark с помощью SQL по запросу
 

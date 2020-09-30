@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
-ms.openlocfilehash: d5457d790cd3c95bb23ec0c517097b443a2389ed
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e9981f9df31f6de21262aedc9790dbf1a7725fc7
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77593382"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985344"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
@@ -64,7 +64,7 @@ docker-compose up --build -d
 
 Чтобы убедиться, что обновленный образ контейнера показывает изменения, откройте в локальном веб-браузере `http://localhost:8080`.
 
-![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/vote-app-updated.png)
+:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated.png" alt-text="Снимок экрана с примером обновленного образа контейнера приложения Azure для голосования, открытого с помощью локального веб-браузера и локального узла.":::
 
 Обновленные значения, заданные в файле *config_file.cfg*, отображаются в запущенном приложении.
 
@@ -145,7 +145,7 @@ kubectl get service azure-vote-front
 
 Теперь откройте IP-адрес вашей службы в локальном веб-браузере.
 
-![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/vote-app-updated-external.png)
+:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated-external.png" alt-text="Снимок экрана с примером обновленного образа контейнера приложения Azure для голосования, открытого с помощью локального веб-браузера и локального узла.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

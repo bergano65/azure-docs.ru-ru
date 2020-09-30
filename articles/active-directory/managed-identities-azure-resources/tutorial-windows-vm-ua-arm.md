@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 01/14/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 030f2b893cd429bfdb451d24e799689fdb8a3cf8
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: d26c7f544c9754f455b67aadf9e923344cda3fdf
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89255721"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90968688"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство. Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows
 
@@ -48,19 +48,42 @@ ms.locfileid: "89255721"
 - [Создайте виртуальную машину Windows](../../virtual-machines/windows/quick-create-portal.md).
 
 - Для выполнения требуемых операций по созданию ресурсов и управлению ролями учетной записи в этом руководстве нужно предоставить учетной записи разрешения "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md), если нуждаетесь в помощи с назначением ролей.
-- [Установите модуль Azure PowerShell последней версии](/powershell/azure/install-az-ps). 
-- Выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
-- Установите [PowerShellGet последней версии](/powershell/scripting/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
-- Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `Az.ManagedServiceIdentity`).
-- Выполните команду `Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций назначаемого пользователем удостоверения в рамках этой статьи.
 
+- Выполнить примеры скриптов можно двумя способами:
+    - используйте службу [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **Попробовать** в правом верхнем углу блоков кода.
+    - выполните скрипты локально с помощью Azure PowerShell, как описано в следующем разделе.
+
+### <a name="configure-azure-powershell-locally"></a>Настройка Azure PowerShell в локальной среде
+
+Чтобы для примеров из этой статьи использовать Azure PowerShell локально (вместо Cloud Shell), сделайте следующее:
+
+1. Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
+
+1. Войдите в Azure.
+
+    ```azurepowershell
+    Connect-AzAccount
+    ```
+
+1. Установите [PowerShellGet последней версии](/powershell/scripting/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
+
+    ```azurepowershell
+    Install-Module -Name PowerShellGet -AllowPrerelease
+    ```
+
+    Возможно, после выполнения этой команды для перехода к следующему шагу потребуется выйти (`Exit`) из текущего сеанса PowerShell.
+
+1. Установите предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций с управляемыми удостоверениями, назначаемыми пользователем, в рамках этой статьи.
+
+    ```azurepowershell
+    Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease
+    ```
 
 ## <a name="enable"></a>Включить
 
 Для сценария, основанного на удостоверение пользователя, необходимо выполнить следующие шаги:
 
 - Создание удостоверения
- 
 - Назначьте вновь созданное удостоверение
 
 ### <a name="create-identity"></a>Создание удостоверения
@@ -163,4 +186,4 @@ CanDelegate: False
 Из этого руководства вы узнали, как создать назначаемое пользователем удостоверение и подключить его к виртуальной машине Azure, чтобы получить доступ к API Azure Resource Manager.  Сведения об Azure Resource Manager см. здесь:
 
 > [!div class="nextstepaction"]
->[Azure Resource Manager](../../azure-resource-manager/management/overview.md)
+>[Azure Resource Manager](../../azure-resource-manager/management/overview.md)

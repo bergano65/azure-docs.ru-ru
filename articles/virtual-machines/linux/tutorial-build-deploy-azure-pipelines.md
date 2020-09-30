@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops, devx-track-javascript
-ms.openlocfilehash: c83a67f7d524a062485f2c68e0adb7fdd2855a84
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 6025e1c257ad7b94586ceb4f89c02c3a44c59c3e
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462179"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090318"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
 
@@ -147,6 +147,7 @@ https://github.com/azure-devops/fabrikam-node
 Выберите **базовый** шаблон и скопируйте приведенный ниже фрагмент кода YAML, который компилирует проект Java и выполняет тесты с помощью Apache Maven.
 
 ```YAML
+jobs:
 - job: Build
   displayName: Build Maven Project
   steps:
@@ -209,7 +210,7 @@ https://github.com/azure-devops/fabrikam-node
 
 ## <a name="define-cd-steps-to-deploy-to-the-linux-vm"></a>Определение шагов CD для развертывания на виртуальной машине Linux
 
-1. Измените приведенный выше конвейер, добавив в него [задание развертывания](/azure/devops/pipelines/process/deployment-jobs) с использованием ссылки на среду и ресурсы виртуальной машины, которые вы подготовили ранее, и следующий синтаксис YAML:
+1. Измените файл YAML для приведенного выше конвейера, добавив в него [задание развертывания](/azure/devops/pipelines/process/deployment-jobs) с использованием ссылки на среду и ресурсы виртуальной машины, которые вы подготовили ранее, и следующий синтаксис YAML:
 
    ```YAML
    jobs:  
@@ -218,8 +219,7 @@ https://github.com/azure-devops/fabrikam-node
      environment:
        name:  <environment name>
        resourceType: VirtualMachine
-       tags: web1
-     strategy:
+       tags: web
    ```
 2. Вы можете выбрать из среды определенные наборы виртуальных машин, которые будут получать развертывание, указав **теги**, определенные в среде для каждой виртуальной машины.
 См. [полную схему YAML для задания развертывания](/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema#deployment-job).

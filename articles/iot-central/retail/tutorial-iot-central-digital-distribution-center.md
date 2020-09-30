@@ -5,14 +5,14 @@ author: KishorIoT
 ms.author: nandab
 ms.service: iot-central
 ms.subservice: iot-central-retail
-ms.topic: overview
+ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: cb40252460fe62deb94ce495bb41d38c326f10e2
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: a76df67d1ef9d203d5e5d54cb95bb8fc90f70180
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81001343"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90980752"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Руководство по развертыванию шаблона приложения цифрового центра дистрибуции и его использованию
 
@@ -35,7 +35,7 @@ ms.locfileid: "81001343"
 1. Перейдите на веб-сайт диспетчера приложений в Azure IoT Central. Выберите **Build** (Сборка) в области навигации слева, а затем перейдите на вкладку **Retail** (Розничная торговля).
 
     > [!div class="mx-imgBorder"]
-    > ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
+    > ![Снимок экрана: выбор шаблона приложения цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
 
 2. Выберите вкладку **Retail** (Розничная торговля) и щелкните **Create app** (Создать) в разделе **digital distribution center application** (Приложение цифрового центра дистрибуции).
 
@@ -46,10 +46,10 @@ ms.locfileid: "81001343"
    **Создание**. Выберите "Create" (Создать) в нижней части страницы, чтобы развернуть приложение.
 
     > [!div class="mx-imgBorder"]
-    > ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-create.png)
+    > ![Снимок экрана: создание приложения на основе шаблона приложения цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-create.png)
 
     > [!div class="mx-imgBorder"]
-    > ![Данные для выставления счетов в цифровом центре дистрибуции](./media/tutorial-iot-central-ddc/ddc-create-billinginfo.png)
+    > ![Снимок экрана: варианты выставления счетов при создании приложения](./media/tutorial-iot-central-ddc/ddc-create-billinginfo.png)
 
 ## <a name="walk-through-the-application-dashboard"></a>Знакомство с панелью мониторинга приложения 
 
@@ -62,31 +62,31 @@ ms.locfileid: "81001343"
    * Можно управлять всеми камерами, которые являются частью решения. 
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-dashboard.png)
+> ![Снимок экрана: панель мониторинга цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-dashboard.png)
 
 ## <a name="device-template"></a>Шаблон устройства
 
 Перейдите на вкладку "Device templates" (Шаблоны устройств), и вы увидите модель возможностей шлюза. Модель возможностей основана на двух интерфейсах, **Camera** (Камера) и **Digital Distribution Gateway** (Шлюз цифровой дистрибуции).
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-devicetemplate1.png)
+> ![Снимок экрана: шаблон устройства шлюза цифрового центра дистрибуции в приложении](./media/tutorial-iot-central-ddc/ddc-devicetemplate1.png)
 
 **Camera** (Камера). Этот интерфейс организовывает все возможности команд камеры. 
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-camera.png)
+> ![Снимок экрана: интерфейс камеры в шаблоне устройства шлюза цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-camera.png)
 
 **Digital Distribution Gateway** (Шлюз цифровой дистрибуции). Этот интерфейс представляет все данные телеметрии, поступающие от камеры, определяемые облаком свойства двойника устройства и сведения о шлюзе.
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-devicetemplate1.png)
+> ![Снимок экрана: интерфейс шлюза цифрового центра дистрибуции в шаблоне устройства шлюза цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-devicetemplate1.png)
 
 
 ## <a name="gateway-commands"></a>"Gateway Commands" (Команды шлюза)
 Этот интерфейс организовывает все возможности команд шлюза.
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-camera.png)
+> ![Снимок экрана: интерфейс команд шлюза в шаблоне устройства шлюза цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-camera.png)
 
 ## <a name="rules"></a>Правила
 Перейдите на вкладку "Rules" (Правила), чтобы просмотреть два правила в этом шаблоне приложения. Эти правила настроены для отправки уведомлений по электронной почте операторам для дальнейшего исследования.
@@ -96,7 +96,7 @@ ms.locfileid: "81001343"
 **Large package** (Большой пакет). Это правило активируется, если камера обнаруживает большой пакет, качество которого невозможно проверить. 
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-rules.png)
+> ![Снимок экрана: список правил в приложении цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-rules.png)
 
 ## <a name="jobs"></a>Задания
 Перейдите на вкладку "Jobs" (Задания), чтобы увидеть пять заданий, входящих в состав этого шаблона приложения. Функцию заданий можно использовать для выполнения операций уровня всего решения. Здесь задания центра дистрибуции используют команды устройства и возможности двойника для выполнения таких задач, как:
@@ -105,15 +105,17 @@ ms.locfileid: "81001343"
    * изменение интервала отправки данных телеметрии для управления передачей данных.
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-jobs.png)
+> ![Снимок экрана: список заданий в приложении цифрового центра дистрибуции](./media/tutorial-iot-central-ddc/ddc-jobs.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если вы не собираетесь в дальнейшем использовать это приложение, удалите шаблон приложения, выбрав **Administration** (Администрирование)  > **Application settings** (Параметры приложения) и щелкнув **Delete** (Удалить).
 
 > [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-cleanup.png)
+> ![Снимок экрана: удаление приложения после завершения работы с ним](./media/tutorial-iot-central-ddc/ddc-cleanup.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше об архитектуре решения цифрового центра дистрибуции и [его принципах действия](./architecture-digital-distribution-center.md).
+* См. сведения об архитектуре решения цифрового центра дистрибуции. 
+> [!div class="nextstepaction"]
+> [Понятия, связанные с цифровым центром дистрибуции](./architecture-digital-distribution-center.md)
 * Узнайте больше о других [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail.md).
 * См. сведения об [IoT Central](../core/overview-iot-central.md).

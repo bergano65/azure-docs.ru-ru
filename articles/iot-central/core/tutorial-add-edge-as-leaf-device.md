@@ -1,6 +1,6 @@
 ---
-title: Добавление устройства Azure IoT Edge в Azure IoT Central | Документация Майкрософт
-description: Как оператор вы можете добавить устройство Azure IoT Edge в приложение Azure IoT Central
+title: Учебник. Добавление устройства Azure IoT Edge в Azure IoT Central | Документация Майкрософт
+description: Учебник. Добавление устройства Azure IoT Edge в приложение Azure IoT Central (для операторов)
 author: rangv
 ms.author: rangv
 ms.date: 05/29/2020
@@ -11,12 +11,12 @@ ms.custom:
 - mvc
 - device-developer
 - iot-edge
-ms.openlocfilehash: cc612d5dc21594da855799ed965effeb4b547d00
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 9b4bb462c94ab5a59dbd9d8fdd4cf619e311df56
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90018668"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987023"
 ---
 # <a name="tutorial-add-an-azure-iot-edge-device-to-your-azure-iot-central-application"></a>Руководство по добавлению устройства Azure IoT Edge в приложение Azure IoT Central
 
@@ -99,7 +99,7 @@ ms.locfileid: "90018668"
 
 Интерфейс **Управление** теперь содержит типы телеметрии **machine**, **ambient** и **timeCreated**.
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/manage-interface.png" alt-text="Интерфейс с типами телеметрии компьютера и окружающей среды":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/manage-interface.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 ### <a name="add-views-to-template"></a>Добавление представлений в шаблон
 
@@ -115,7 +115,7 @@ ms.locfileid: "90018668"
 
 1. Щелкните **Сохранить**, чтобы сохранить представление **Просмотр телеметрии устройства IoT Edge**.
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/template-telemetry-view.png" alt-text="Шаблон устройства с представлением телеметрии":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/template-telemetry-view.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 ### <a name="publish-the-template"></a>Публикация шаблона
 
@@ -123,7 +123,7 @@ ms.locfileid: "90018668"
 
 Перейдите к шаблону **Устройство Edge с датчиком окружающей среды** и нажмите значок **Опубликовать**. На панели **Опубликовать этот шаблон устройства в приложении** щелкните **Опубликовать**, чтобы опубликовать шаблон:
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/publish-template.png" alt-text="Публикация шаблона устройства":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/publish-template.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 ## <a name="add-iot-edge-device"></a>Добавление устройства IoT Edge
 
@@ -135,7 +135,7 @@ ms.locfileid: "90018668"
 
 Теперь у вас есть новое устройство с состоянием **Зарегистрировано**:
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/new-device.png" alt-text="Новое зарегистрированное устройство":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/new-device.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 ### <a name="get-the-device-credentials"></a>Получение учетных данных устройства
 
@@ -181,7 +181,7 @@ ms.locfileid: "90018668"
 
 1. Просмотрите выбранные параметры и нажмите **Создать**:
 
-    :::image type="content" source="media/tutorial-add-edge-as-leaf-device/vm-deployment.png" alt-text="Создание виртуальной машины IoT Edge":::
+    :::image type="content" source="media/tutorial-add-edge-as-leaf-device/vm-deployment.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 Для завершения развертывания требуется несколько минут. После завершения развертывания перейдите к группе ресурсов **central-edge-rg** на портале Azure.
 
@@ -269,15 +269,15 @@ ms.locfileid: "90018668"
 
 Имитированное устройство IoT Edge теперь работает в виртуальной машине. В приложении IoT Central на странице **Устройства** теперь отображается состояние устройства **Подготовлено**:
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/provisioned-device.png" alt-text="Подготовленное устройство IoT Edge":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/provisioned-device.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 Данные телеметрии с устройства можно просмотреть на странице **Просмотр телеметрии устройства IoT Edge**:
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/device-telemetry-view.png" alt-text="Телеметрия устройства":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/device-telemetry-view.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 На странице **Модули** отображается состояние модулей IoT Edge на устройстве:
 
-:::image type="content" source="media/tutorial-add-edge-as-leaf-device/edge-module-status.png" alt-text="Состояние модулей устройства":::
+:::image type="content" source="media/tutorial-add-edge-as-leaf-device/edge-module-status.png" alt-text="Шаблон устройства, созданный на основе манифеста IoT Edge":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -286,14 +286,14 @@ ms.locfileid: "90018668"
 * Чтобы удалить виртуальную машину IoT Edge и связанные с ней ресурсы, удалите группу ресурсов **contoso-edge-rg** на портале Azure.
 * Чтобы удалить приложение IoT Central, перейдите на страницу **Ваше приложение** в разделе **Администрирование** и выберите **Удалить**.
 
+Теперь, когда вы как разработчик решений или оператор узнали, как управлять устройствами IoT Edge в IoT Central, ознакомьтесь со следующим руководством:
+
+> [!div class="nextstepaction"]
+> [Использование групп устройств для анализа телеметрии устройств](./tutorial-use-device-groups.md)
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы как разработчик устройства узнали, как управлять устройствами IoT Edge в IoT Central, ознакомьтесь со следующим руководством:
 
 > [!div class="nextstepaction"]
 > [Разработка модулей IoT Edge](../../iot-edge/tutorial-develop-for-linux.md)
-
-Теперь, когда вы как разработчик решений или оператор узнали, как управлять устройствами IoT Edge в IoT Central, ознакомьтесь со следующим руководством:
-
-> [!div class="nextstepaction"]
-> [Использование групп устройств для анализа телеметрии устройств](./tutorial-use-device-groups.md)

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/21/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: 280dda4d3864f2c659272ffb63d6ac2566524c45
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 64a95a14f6832e3f109335b5525b9a5dc1a9ec27
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549440"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662292"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-askspoke"></a>Руководство по интеграции единого входа Azure Active Directory с askSpoke
 
@@ -35,9 +35,6 @@ ms.locfileid: "88549440"
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка askSpoke с поддержкой единого входа.
 
-> [!NOTE]
-> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
-
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
@@ -45,6 +42,9 @@ ms.locfileid: "88549440"
 * askSpoke поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 * askSpoke поддерживает **JIT**-подготовку пользователей.
 * После настройки askSpoke вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-askspoke-from-the-gallery"></a>Добавление askSpoke из коллекции
 
@@ -57,7 +57,7 @@ ms.locfileid: "88549440"
 1. В разделе **Добавление из коллекции** в поле поиска введите **askSpoke**.
 1. Выберите **askSpoke** на панели результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-askspoke"></a>Настройка и проверка единого входа Azure AD для askSpoke
+## <a name="configure-and-test-azure-ad-sso-for-askspoke"></a>Настройка и проверка единого входа Azure AD для askSpoke
 
 Настройте и проверьте единый вход Azure AD в askSpoke с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в askSpoke.
 
@@ -146,15 +146,15 @@ ms.locfileid: "88549440"
 
 1. Перейдите на вкладку **Settings** (Параметры) в области навигации слева.
 
-    ![Конфигурация askSpoke](./media/askspoke-tutorial/configure1.png)
+    ![Вкладка параметров askSpoke](./media/askspoke-tutorial/configure1.png)
 
 1. Прокрутите вниз до раздела **SSO** (Единый вход) и нажмите кнопку **Connect** (Подключить).
 
-    ![Конфигурация askSpoke](./media/askspoke-tutorial/configure2.png)
+    ![Подключение askSpoke](./media/askspoke-tutorial/configure2.png)
 
 1. В разделе **Enable SAML & SCIM** (Включение SAML и SCIM) выполните следующие действия:
 
-    ![Конфигурация askSpoke](./media/askspoke-tutorial/configure3.png)
+    ![Раздел включения SAML и SCIM](./media/askspoke-tutorial/configure3.png)
 
     1. В текстовое поле **Sign on URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -187,6 +187,3 @@ ms.locfileid: "88549440"
 - [Попробуйте использовать askSpoke с Azure AD](https://aad.portal.azure.com/)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-

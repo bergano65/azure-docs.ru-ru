@@ -1,24 +1,24 @@
 ---
-title: Руководство по Переход с Google Карт на Azure Maps | Microsoft Azure Maps
-description: Руководство по переходу с Google Карт на Microsoft Azure Maps. Это руководство содержит инструкции по переходу на API-интерфейсы и пакеты средств разработки Azure Maps.
+title: Переход с Google Карт на Azure Maps | Microsoft Azure Maps
+description: Как перейти с Google Карт на Microsoft Azure Maps. Это руководство содержит инструкции по переходу на API-интерфейсы и пакеты средств разработки Azure Maps.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/17/2019
-ms.topic: tutorial
+ms.date: 09/23/2020
+ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 2422204a809e0b13f4e337d49b851a0338681853
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c60890b301ba650c95584e33b5326217086c08c4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249212"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91264173"
 ---
 # <a name="migrate-from-google-maps-to-azure-maps"></a>Переход с Google Карт на Azure Maps
 
-В этом руководстве содержатся сведения о переносе веб-приложений, мобильных и серверных программ из Google Карт на платформу Microsoft Azure Maps. Руководство предоставляет примеры кода для сравнения, а также предложения и рекомендации по переходу на Azure Maps.
+В этой статье содержатся сведения о переносе веб-приложений, мобильных и серверных программ из Google Карт на платформу Microsoft Azure Maps. Руководство предоставляет примеры кода для сравнения, а также предложения и рекомендации по переходу на Azure Maps.
 
 ## <a name="azure-maps-platform-overview"></a>Обзор платформы Azure Maps
 
@@ -80,6 +80,15 @@ Azure Maps предоставляет разработчикам из всех 
 5. Протестируйте перенесенное приложение.
 6. Разверните перенесенное приложение в рабочей среде.
 
+## <a name="create-an-azure-maps-account"></a>создание учетной записи службы Azure Maps
+
+Чтобы создать учетную запись Azure Maps и получить доступ к платформе Azure Maps, выполните следующие действия:
+
+1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+2. Войдите на [портал Azure](https://portal.azure.com/).
+3. Создайте [учетную запись службы Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys). 
+4. [Получите ключ подписки Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
+
 ## <a name="azure-maps-technical-resources"></a>Технические ресурсы по Azure Maps
 
 Ниже приведен список полезных технических ресурсов для Azure Maps.
@@ -98,15 +107,10 @@ Azure Maps предоставляет разработчикам из всех 
 
 Разработчики могут получить поддержку по миграции на [форумах](https://aka.ms/AzureMapsForums) или через любой из многих каналов поддержки Azure: [https://azure.microsoft.com/support/options](https://azure.microsoft.com/support/options)
 
-## <a name="next-steps"></a>Дальнейшие действия
+Вы можете научиться переносить приложение Google Карт, с помощью следующих ресурсов: 
 
-Узнайте, как перенести приложение Google Карт, изучив следующие статьи:
+[Перенос приложения Android](migrate-from-google-maps-android-app.md) 
 
-> [!div class="nextstepaction"]
-> [Перенос веб-приложения](migrate-from-google-maps-web-app.md)
+[Перенос веб-службы](migrate-from-google-maps-web-services.md) 
 
-> [!div class="nextstepaction"]
-> [Перенос приложения Android](migrate-from-google-maps-android-app.md)
-
-> [!div class="nextstepaction"]
-> [Перенос веб-службы](migrate-from-google-maps-web-services.md)
+[Перенос веб-приложения](migrate-from-google-maps-web-app.md)

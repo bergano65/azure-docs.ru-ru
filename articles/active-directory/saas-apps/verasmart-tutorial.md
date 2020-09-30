@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 1aa52c81b7abbfb355ef06f6ae93a5dd4c985042
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: f5b5f115ab2fb7036287c976a94b9e123bf6ed42
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88532438"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90982805"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-verasmart"></a>Руководство по интеграции единого входа Azure Active Directory с VeraSMART
 
@@ -131,7 +131,7 @@ ms.locfileid: "88532438"
 
 1. Последовательно выберите **Administration** -> **Security** -> **Authentication Configuration** (Администрирование > Безопасность > Конфигурация проверки подлинности).
 
-    ![Конфигурация](./media/verasmart-tutorial/configuration.png)
+    ![Снимок экрана, на котором показаны выбранные элементы VeraSMART, Administration > Security > Authentication Configuration (Администрирование > Безопасность > Конфигурация проверки подлинности).](./media/verasmart-tutorial/configuration.png)
 
 1. На следующей странице выполните приведенные ниже шаги.
 

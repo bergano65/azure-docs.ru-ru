@@ -8,25 +8,25 @@ ms.topic: include
 author: j-martens
 ms.author: jmartens
 ms.date: 12/04/2018
-ms.openlocfilehash: 00980cc69acbe0da8773aa798b693171d07cc1e1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9c6d29287f86cd6334692e2be5376caf9dd98bdd
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73476156"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372580"
 ---
 >[!IMPORTANT]
->Созданные ресурсы могут использоваться в качестве необходимых компонентов при работе с другими руководствами по Машинному обучению Azure. 
+>Созданные вами ресурсы могут использоваться в качестве необходимых компонентов при работе с другими руководствами по Машинному обучению Azure. 
 
 
-Если вы не планируете использовать созданные ресурсы, удалите их, чтобы с вас не взималась плата.
+Если вы не планируете использовать созданные вами ресурсы, удалите их, чтобы с вас не взималась плата:
 
 1. На портале Azure выберите **Группы ресурсов** в левой части окна.
  
-   [![Удаление ресурсов на портале Azure](./media/aml-delete-resource-group/delete-resources.png)](./media/aml-delete-resource-group/delete-resources-expanded.png)
-
-1. В списке выберите созданную группу ресурсов.
+1. Выберите созданную группу ресурсов из списка.
 
 1. Выберите **Удалить группу ресурсов**.
+
+   ![Снимок экрана с выбранными параметрами для удаления группы ресурсов на портале Azure.](./media/aml-delete-resource-group/delete-resources.png)
 
 1. Введите имя группы ресурсов. Теперь щелкните **Удалить**.

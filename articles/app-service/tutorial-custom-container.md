@@ -7,12 +7,12 @@ ms.author: msangapu
 keywords: служба приложений azure, веб-приложение, linux, windows, docker, контейнер
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: df46d61ddfba5f4da977b19db3158691c78168f8
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: fdc15ecd79a6672d2a46b4da284533965977d753
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88958496"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90982868"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Перенос пользовательского программного обеспечения в Службу приложений Azure с помощью пользовательского контейнера
 
@@ -56,7 +56,7 @@ ms.locfileid: "88958496"
 
 Введите `Ctrl+F5`, чтобы запустить приложение без отладки. Это приложение откроется в браузере по умолчанию. 
 
-![Диалоговое окно "Новый проект ASP.NET"](media/tutorial-custom-container/local-app-in-browser.png)
+:::image type="content" source="media/tutorial-custom-container/local-app-in-browser.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
 
 Так как приложение использует установленный шрифт, оно не может работать в песочнице службы приложений. Тем не менее его можно развернуть с помощью контейнера Windows, так как шрифт можно установить в контейнер Windows.
 
@@ -64,7 +64,7 @@ ms.locfileid: "88958496"
 
 В обозревателе решений щелкните правой кнопкой мыши проект **CustomFontSample** и выберите **Добавить** > **Container Orchestration Support** (Поддержка оркестрации контейнеров).
 
-![Диалоговое окно "Новый проект ASP.NET"](media/tutorial-custom-container/enable-container-orchestration.png)
+:::image type="content" source="media/tutorial-custom-container/enable-container-orchestration.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
 
 Выберите **Docker Compose** > **ОК**.
 
@@ -98,13 +98,13 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 Щелкните правой кнопкой мыши проект **CustomFontSample** в обозревателе решений и выберите **Опубликовать**.
 
-![Диалоговое окно "Новый проект ASP.NET"](media/tutorial-custom-container/open-publish-wizard.png)
+:::image type="content" source="media/tutorial-custom-container/open-publish-wizard.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
 
 ### <a name="create-registry-and-publish"></a>Создание реестра и публикация
 
 В мастере публикации выберите **Реестр контейнеров** > **Создать реестр контейнеров Azure** > **Опубликовать**.
 
-![Диалоговое окно "Новый проект ASP.NET"](media/tutorial-custom-container/create-registry.png)
+:::image type="content" source="media/tutorial-custom-container/create-registry.png" alt-text="Снимок экрана: приложение, отображаемое в браузере по умолчанию.":::
 
 ### <a name="sign-in-with-azure-account"></a>Вход с учетной записью Azure
 
@@ -211,7 +211,7 @@ https://<app-name>.scm.azurewebsites.net/api/logstream
 
 ::: zone pivot="container-linux"
 
-Служба приложений Azure использует технологию контейнеров Docker для размещения встроенных и пользовательских образов. Чтобы просмотреть список встроенных образов, выполните команду Azure CLI [az webapp list-runtimes --linux](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes). Если эти образы не соответствуют вашим требованиям, вы можете создать и развернуть пользовательский образ.
+Служба приложений Azure использует технологию контейнеров Docker для размещения встроенных и пользовательских образов. Чтобы просмотреть список встроенных образов, выполните команду Azure CLI [az webapp list-runtimes --linux](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az-webapp-list-runtimes). Если эти образы не соответствуют вашим требованиям, вы можете создать и развернуть пользовательский образ.
 
 В этом руководстве описано следующее:
 
@@ -346,7 +346,7 @@ ENTRYPOINT ["init.sh"]
 
 В этом и последующих разделах показано, как подготовить в Azure ресурсы, затем отправить в них образ и развернуть контейнер в Службе приложений Azure. Для начала создайте группу ресурсов, в которой будут собраны все эти ресурсы.
 
-Выполните команду [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create), чтобы создать группу ресурсов.
+Выполните команду [az group create](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az-group-create), чтобы создать группу ресурсов.
 
 ```azurecli-interactive
 az group create --name AppSvc-DockerTutorial-rg --location westus2
@@ -358,7 +358,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
 В этом разделе вы отправите образ в Реестр контейнеров Azure, откуда Служба приложений сможет его развернуть.
 
-1. Выполните команду [`az acr create`](/cli/azure/acr?view=azure-cli-latest#az-acr-create), чтобы создать Реестр контейнеров Azure.
+1. Выполните команду [`az acr create`](/cli/azure/acr?view=azure-cli-latest&preserve-view=true#az-acr-create), чтобы создать Реестр контейнеров Azure.
 
     ```azurecli-interactive
     az acr create --name <registry-name> --resource-group AppSvc-DockerTutorial-rg --sku Basic --admin-enabled true
@@ -366,7 +366,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
     
     Замените `<registry-name>` понятным именем реестра. Это имя может содержать только буквы и цифры и должно быть уникальным в пределах Azure.
 
-1. Выполните команду [`az acr show`](/cli/azure/acr?view=azure-cli-latest#az-acr-show), чтобы получить учетные данные для этого реестра.
+1. Выполните команду [`az acr show`](/cli/azure/acr?view=azure-cli-latest&preserve-view=true#az-acr-show), чтобы получить учетные данные для этого реестра.
 
     ```azurecli-interactive
     az acr credential show --resource-group AppSvc-DockerTutorial-rg --name <registry-name>
@@ -413,7 +413,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
 Чтобы развернуть контейнер в Службе приложений Azure, сначала создайте веб-приложение в Службе приложений, а затем подключите это веб-приложение к реестру контейнеров. При запуске веб-приложения Служба приложений автоматически извлечет этот образ из реестра.
 
-1. Создайте план Службы приложений с помощью команды [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create).
+1. Создайте план Службы приложений с помощью команды [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest&preserve-view=true#az-appservice-plan-create).
 
     ```azurecli-interactive
     az appservice plan create --name AppSvc-DockerTutorial-plan --resource-group AppSvc-DockerTutorial-rg --is-linux
@@ -421,7 +421,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
     План Службы приложений соответствует виртуальной машине, в которой размещено веб-приложение. По умолчанию предыдущая команда использует бюджетную [ценовую категорию B1](https://azure.microsoft.com/pricing/details/app-service/linux/), которая предоставляется в течение первого месяца бесплатно. Уровень можно изменить с помощью параметра `--sku`.
 
-1. Создайте веб-приложение с помощью команды [`az webpp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create).
+1. Создайте веб-приложение с помощью команды [`az webpp create`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az-webapp-create).
 
     ```azurecli-interactive
     az webapp create --resource-group AppSvc-DockerTutorial-rg --plan AppSvc-DockerTutorial-plan --name <app-name> --deployment-container-image-name <registry-name>.azurecr.io/appsvc-tutorial-custom-image:latest
@@ -429,7 +429,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
     
     Замените здесь `<app-name>` именем веб-приложения, которое должно быть уникальным в пределах Azure. Также замените `<registry-name>` именем реестра из предыдущего раздела.
 
-1. Используйте [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set), чтобы задать переменную среды `WEBSITES_PORT`, которую ожидает код приложения. 
+1. Используйте [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest&preserve-view=true#az-webapp-config-appsettings-set), чтобы задать переменную среды `WEBSITES_PORT`, которую ожидает код приложения. 
 
     ```azurecli-interactive
     az webapp config appsettings set --resource-group AppSvc-DockerTutorial-rg --name <app-name> --settings WEBSITES_PORT=8000
@@ -439,7 +439,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
     
     Дополнительные сведения об этой переменной среды см. в [файле сведений в репозитории этого примера](https://github.com/Azure-Samples/docker-django-webapp-linux) на сайте GitHub.
 
-1. Включите [управляемое удостоверение](./overview-managed-identity.md) для веб-приложения, выполнив команду [`az webapp identity assign`](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign).
+1. Включите [управляемое удостоверение](./overview-managed-identity.md) для веб-приложения, выполнив команду [`az webapp identity assign`](/cli/azure/webapp/identity?view=azure-cli-latest&preserve-view=true#az-webapp-identity-assign).
 
     ```azurecli-interactive
     az webapp identity assign --resource-group AppSvc-DockerTutorial-rg --name <app-name> --query principalId --output tsv
@@ -449,7 +449,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
     Управляемое удостоверение позволяет предоставить веб-приложению разрешения на доступ к другим ресурсам Azure, не создавая специальные учетные данные.
 
-1. Получите с помощью команды [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) идентификатор подписки, который вам понадобится на следующем шаге.
+1. Получите с помощью команды [`az account show`](/cli/azure/account?view=azure-cli-latest&preserve-view=true#az-account-show) идентификатор подписки, который вам понадобится на следующем шаге.
 
     ```azurecli-interactive
     az account show --query id --output tsv
@@ -472,7 +472,7 @@ az group create --name AppSvc-DockerTutorial-rg --location westus2
 
 Вы сможете выполнить эти шаги, когда образ будет передан в реестр контейнеров, а Служба приложений полностью подготовлена.
 
-1. С помощью команды [`az webapp config container set`](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set) укажите реестр контейнеров и образ, который нужно развернуть для веб-приложения.
+1. С помощью команды [`az webapp config container set`](/cli/azure/webapp/config/container?view=azure-cli-latest&preserve-view=true#az-webapp-config-container-set) укажите реестр контейнеров и образ, который нужно развернуть для веб-приложения.
 
     ```azurecli-interactive
     az webapp config container set --name <app-name> --resource-group AppSvc-DockerTutorial-rg --docker-custom-image-name <registry-name>.azurecr.io/appsvc-tutorial-custom-image:latest --docker-registry-server-url https://<registry-name>.azurecr.io

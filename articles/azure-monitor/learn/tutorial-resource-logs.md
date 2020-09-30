@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: f2c780ffb7705575bf1bb5cabb6a09d9dabc0690
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b68d4779d33d2f8a1f1c2bae35f438ad2ccccabb
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505845"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90090080"
 ---
 # <a name="tutorial-collect-and-analyze-resource-logs-from-an-azure-resource"></a>Руководство по Сбор и анализ журналов ресурсов из ресурса Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "86505845"
     > [!NOTE]
     > Если вы открыли раздел "Журналы" в меню Azure Monitor, в качестве области будет выбрана рабочая область Log Analytics. В этом случае запросы будут возвращать все записи из рабочей области.
    
-    ![Журналы](media/tutorial-resource-logs/logs.png)
+    ![Снимок экрана: журналы для приложения логики, в котором отображается новый запрос с выделенным именем приложения логики.](media/tutorial-resource-logs/logs.png)
 
 4. Служба, представленная в нашем примере, записывает журналы ресурсов в таблицу **AzureDiagnostics**, но другие службы могут сохранять данные в другие таблицы. См. сведения о таблицах, используемых разными службами Azure в описании [поддерживаемых служб, схем и категорий для журналов ресурсов Azure](../platform/resource-logs-schema.md).
 

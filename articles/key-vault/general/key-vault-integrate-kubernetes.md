@@ -6,12 +6,12 @@ ms.author: sudbalas
 ms.service: key-vault
 ms.topic: tutorial
 ms.date: 08/25/2020
-ms.openlocfilehash: bfcaf9d4b1d03457f2e4cddd2e0eaf9d9d58eee2
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.openlocfilehash: f77d197c30d00083b280a97079fe03146fcfeb82
+ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88869190"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90061807"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Руководство по настройке и запуску поставщика Azure Key Vault для драйвера CSI хранилища секретов в Kubernetes
 
@@ -70,7 +70,7 @@ az ad sp create-for-rbac --name contosoServicePrincipal --skip-assignment
     ```azurecli
     kubectl version
     ```
-1. Убедитесь, что используется версия Kubernetes 1.16.0 или более поздняя. Приведенная ниже команда обновит кластер Kubernetes и пул узлов. Выполнение команды может занять несколько минут. В этом примере группа ресурсов — *contosoResourceGroup*, а кластер Kubernetes — *contosoAKSCluster*.
+1. Убедитесь, что используется версия Kubernetes 1.16.0 или более поздняя. Убедитесь, что для кластеров Windows используется версия Kubernetes 1.18.0 или более поздняя. Приведенная ниже команда обновит кластер Kubernetes и пул узлов. Выполнение команды может занять несколько минут. В этом примере группа ресурсов — *contosoResourceGroup*, а кластер Kubernetes — *contosoAKSCluster*.
     ```azurecli
     az aks upgrade --kubernetes-version 1.16.9 --name contosoAKSCluster --resource-group contosoResourceGroup
     ```
@@ -110,18 +110,20 @@ az ad sp create-for-rbac --name contosoServicePrincipal --skip-assignment
 
 ## <a name="create-your-own-secretproviderclass-object"></a>Создание собственного объекта SecretProviderClass
 
-Используйте этот [шаблон](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/test/bats/tests/azure_v1alpha1_secretproviderclass.yaml), чтобы создать собственный пользовательский объект SecretProviderClass с заданными поставщиком параметрами для драйвера CSI хранилища секретов. Этот объект предоставит доступ к удостоверениям хранилища ключей.
+Используйте этот [шаблон](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/v1alpha1_secretproviderclass_service_principal.yaml), чтобы создать собственный пользовательский объект SecretProviderClass с заданными поставщиком параметрами для драйвера CSI хранилища секретов. Этот объект предоставит доступ к удостоверениям хранилища ключей.
 
 В файле YAML SecretProviderClass введите отсутствующие параметры. Требуются следующие параметры.
 
-* **userAssignedIdentityID:** идентификатор клиента субъекта-службы
+* **userAssignedIdentityID:** # [обязательно] если вы используете субъект-службу, задействуйте идентификатор клиента, чтобы указать, какое управляемое удостоверение, назначаемое пользователем, следует использовать. Если вы используете удостоверение, назначаемое пользователем, в качестве управляемого удостоверения виртуальной машины, укажите идентификатор клиента удостоверения. Если значение пустое, по умолчанию используется удостоверение, назначенное системой, на виртуальной машине. 
 * **KeyVaultName:** имя хранилища ключей.
 * **objects:** контейнер для содержимого секрета, которое необходимо подключить.
     * **objectName:** имя содержимого секрета.
     * **objectType:** тип объекта (секрет, ключ, сертификат).
-* **resourceGroup**. Имя группы ресурсов.
-* **subscriptionId**: идентификатор подписки для хранилища ключей.
+* **resourceGroup**. Имя группы ресурсов # [требуется для версии < 0.0.4] группа ресурсов KeyVault.
+* **subscriptionId**: Идентификатор подписки вашего хранилища ключей # [требуется для версии < 0.0.4] идентификатор подписки KeyVault.
 * **tenantID:** идентификатор клиента или идентификатор каталога хранилища ключей.
+
+Документация по всем обязательным полям доступна здесь: [Ссылка](https://github.com/Azure/secrets-store-csi-driver-provider-azure#create-a-new-azure-key-vault-resource-or-use-an-existing-one)
 
 Обновленный шаблон показан в следующем коде. Скачайте его как файл YAML и заполните обязательные поля. В этом примере хранилище ключей — **contosoKeyVault5**. Оно содержит два секрета: **secret1** и **secret2**.
 
@@ -210,6 +212,11 @@ az ad sp credential reset --name contosoServicePrincipal --credential-descriptio
 1. Чтобы создать, вывести или прочесть назначаемое пользователем управляемое удостоверение, кластеру AKS необходимо назначить роль [оператора управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator). Убедитесь, что **$clientId** является идентификатором клиента кластера Kubernetes. Для этой области он будет указан в службе подписки Azure, а именно в группе ресурсов узла, которая была создана при создании кластера AKS. Эта область гарантирует, что назначенные ниже роли применяются только к ресурсам в такой группе. 
 
     ```azurecli
+    RESOURCE_GROUP=contosoResourceGroup
+    az role assignment create --role "Managed Identity Operator" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$RESOURCE_GROUP
+
+    az role assignment create --role "Virtual Machine Contributor" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$RESOURCE_GROUP
+    
     az role assignment create --role "Managed Identity Operator" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
     
     az role assignment create --role "Virtual Machine Contributor" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
@@ -304,6 +311,8 @@ spec:
         readOnly: true
         volumeAttributes:
           secretProviderClass: azure-kvname
+          nodePublishSecretRef:
+              name: secrets-store-creds 
 ```
 
 Выполните следующую команду, чтобы развернуть шаблон:

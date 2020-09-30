@@ -5,14 +5,14 @@ author: KishorIoT
 ms.author: nandab
 ms.service: iot-central
 ms.subservice: iot-central-retail
-ms.topic: overview
+ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 430f477422e040e0e7e28fd69a1cbc18bce7d656
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: 827d571a6545d0aaffb0f96134fcf094eaa5f26b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81001283"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90980603"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Руководство по развертыванию шаблона приложения для интеллектуального управления запасами для IoT Central и его использованию
 
@@ -36,7 +36,7 @@ ms.locfileid: "81001283"
 1. Перейдите на веб-сайт диспетчера приложений в Azure IoT Central. Выберите **Build** (Сборка) в области навигации слева, а затем перейдите на вкладку **Retail** (Розничная торговля).
 
     > [!div class="mx-imgBorder"]
-    > ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/iotc_retail_homepage.png)
+    > ![Снимок экрана: выбор шаблона интеллектуального управления запасами managementapplication](./media/tutorial-iot-central-smart-inventory-management/iotc_retail_homepage.png)
 
 2. Выберите вкладку **Розничная торговля** и щелкните **Создать приложение** в разделе **Интеллектуальное управление запасами**
 
@@ -47,10 +47,10 @@ ms.locfileid: "81001283"
    **Создание**. Выберите "Create" (Создать) в нижней части страницы, чтобы развернуть приложение.
 
     > [!div class="mx-imgBorder"]
-    > ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_app_create.png)
+    > ![Снимок экрана: создание приложения на основе шаблона интеллектуального управления запасами managementapplication](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_app_create.png)
 
     > [!div class="mx-imgBorder"]
-    > ![Данные выставления счетов для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart-inventory-management-app-create-billinginfo.png)
+    > ![Снимок экрана: варианты выставления счетов при создании приложения](./media/tutorial-iot-central-smart-inventory-management/smart-inventory-management-app-create-billinginfo.png)
 
 ## <a name="walk-through-the-application"></a>ознакомиться с этим приложением. 
 
@@ -63,14 +63,14 @@ ms.locfileid: "81001283"
    * Просмотр расположения шлюзов, сведений о состоянии и связанных сведений 
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_dashboard1.png)
+> ![Снимок экрана: верхняя половина панели мониторинга интеллектуального управления запасами managementdashboard](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_dashboard1.png)
 
    * Вы можете легко отслеживать общее число шлюзов, активных и неизвестных радиожетонов.
    * Вы можете выполнять такие операции управления устройствами, как обновление встроенного ПО, отключение датчика, включение датчика, изменение порога датчика, изменение интервалов передачи телеметрии и обновление контрактов службы устройства.
    * Устройства шлюза могут выполнять управление запасами по запросу, осуществляя полное или добавочное сканирование.
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_dashboard2.png)
+> ![Снимок экрана: нижняя половина панели мониторинга интеллектуального управления запасами managementdashboard](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_dashboard2.png)
 
 ## <a name="device-template"></a>Шаблон устройства
 Перейдите на вкладку "Device templates" (Шаблоны устройств), и вы увидите модель возможностей шлюза. Модель возможностей основана на двух разных интерфейсах, **Gateway Telemetry & Property** (Телеметрия и свойства шлюза) и **Gateway Commands** (Команды шлюза).
@@ -78,13 +78,13 @@ ms.locfileid: "81001283"
 **Gateway Telemetry & Property** (Телеметрия и свойства шлюза). Этот интерфейс представляет все данные телеметрии, связанные с датчиками, расположением и сведениями об устройстве, а также возможностями свойств двойника устройства, такими как пороги и интервалы обновления шлюзов.
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_devicetemplate1.png)
+> ![Снимок экрана: шаблон устройства шлюза управления запасами в приложении](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_devicetemplate1.png)
 
 
 **Gateway Commands** (Команды шлюза). Этот интерфейс организовывает все возможности команд шлюза.
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_devicetemplate2.png)
+> ![Снимок экрана: интерфейс команд шлюза в шаблоне устройства шлюза управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_devicetemplate2.png)
 
 ## <a name="rules"></a>Правила
 Перейдите на вкладку "Rules" (Правила), чтобы просмотреть два правила в этом шаблоне приложения. Эти правила настроены для отправки уведомлений по электронной почте операторам для дальнейшего исследования.
@@ -94,7 +94,7 @@ ms.locfileid: "81001283"
 **Unknown tags** (Неизвестные радиожетоны): очень важно отслеживать все радиожетоны RFID и BLE, связанные с ресурсом. Если шлюз обнаруживает слишком много неизвестных радиожетонов, это указывает на проблемы синхронизации, связанные с приложениями для работы с радиожетонами.
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_rules.png)
+> ![Снимок экрана: список правил в шаблоне интеллектуального управления запасами managementapplication](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_rules.png)
 
 ## <a name="jobs"></a>Задания
 Перейдите на вкладку "Jobs" (Задания), чтобы увидеть пять заданий, входящих в состав этого шаблона приложения. Функцию заданий можно использовать для выполнения операций для всего решения. Здесь задания управления запасами используют команды устройства и возможности двойника для выполнения таких задач, как:
@@ -103,16 +103,18 @@ ms.locfileid: "81001283"
    * проверка запасов по запросу во всем решении.
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_jobs.png)
+> ![Снимок экрана: список заданий в шаблоне интеллектуального управления запасами managementapplication](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_jobs.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы не собираетесь в дальнейшем использовать это приложение, удалите шаблон приложения, выбрав **Administration** (Администрирование)  > **Application settings** (Параметры приложения) и щелкнув **Delete** (Удалить).
 
 > [!div class="mx-imgBorder"]
-> ![Панель управления для интеллектуального управления запасами](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_cleanup.png)
+> ![Снимок экрана: удаление приложения после завершения работы с ним](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_cleanup.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше об интеллектуальном управлении запасами и его [принципах](./architecture-smart-inventory-management.md).
+* См. сведения об интеллектуальном управлении запасами 
+> [!div class="nextstepaction"]
+> [Понятия, связанные с интеллектуальным управлением запасами](./architecture-smart-inventory-management.md)
 * Узнайте больше о других [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail.md).
 * См. сведения об [IoT Central](../core/overview-iot-central.md).

@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 06/25/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09a66f45fe3e20bedf5ff99ee924ac267b4fd869
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: a2b776ba64d96d092ad51ad2888b891e19e8b521
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89266805"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90968874"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-rest-api-calls"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью вызовов REST API
 
@@ -45,12 +45,9 @@ ms.locfileid: "89266805"
     - [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor): для создания масштабируемого набора виртуальных машин, а также для включения и удаления управляемого удостоверения, назначаемого системой, и (или) управляемого удостоверения, назначаемого пользователем, из масштабируемого набора виртуальных машин.
     - Роль [Участник управляемого удостоверения](../../role-based-access-control/built-in-roles.md#managed-identity-contributor): для создания управляемого удостоверения, назначаемого пользователем.
     - Роль [Оператор управляемого удостоверения](../../role-based-access-control/built-in-roles.md#managed-identity-operator): для назначения и удаления удостоверения, назначаемого пользователем, в масштабируемом наборе виртуальных машин.
-- Если вы используете Windows, установите [подсистему Windows для Linux](/windows/wsl/about) или используйте [Azure Cloud Shell](../../cloud-shell/overview.md) на портале Azure.
-- Если вы используете [подсистему Windows для Linux](/windows/wsl/about) или [ОС на базе дистрибутива Linux](/cli/azure/install-azure-cli-apt?view=azure-cli-latest), [установите локальную консоль Azure CLI](/cli/azure/install-azure-cli).
-- Если вы используете локальную консоль Azure CLI, войдите в Azure с помощью `az login` с учетной записью, привязанной к подписке Azure, в которой вы хотите управлять удостоверениями, назначаемые пользователями или назначаемыми системой.
-
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+- Все команды, приведенные в этой статье, можно выполнить в облаке или локально:
+    - для выполнения команд в облаке используйте [Azure Cloud Shell](../../cloud-shell/overview.md);
+    - для выполнения команд локально установите [curl](https://curl.haxx.se/download.html) и [Azure CLI](/cli/azure/install-azure-cli), войдите в Azure с помощью команды [az login](/cli/azure/reference-index#az-login) с учетной записью, связанной с подпиской Azure, в которой вы хотите управлять удостоверениями, назначаемыми пользователями или назначаемыми системой.
 
 ## <a name="system-assigned-managed-identity"></a>Управляемое удостоверение, назначаемое системой
 

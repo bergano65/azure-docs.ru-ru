@@ -7,94 +7,121 @@ author: duongau
 editor: ''
 ms.service: frontdoor
 ms.devlang: na
-ms.topic: overview
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 4/30/2020
+ms.date: 09/09/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1ff8ca7d7c5972869de4c0d394129c591c7f4a7c
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 3366f1a16777ecf46951296e4a1c2c28aed75feb
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89399078"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90031931"
 ---
-# <a name="configure-your-rules-engine"></a>Настройка обработчика правил
+# <a name="tutorial-configure-your-rules-engine"></a>Руководство по Настройка обработчика правил
 
-В этой статье описано, как создать конфигурацию обработчика правил и первое правило на портале Azure и в интерфейсе командной строки (CLI). 
+В этом учебнике описано, как создать конфигурацию обработчика правил и первое правило на портале Azure и в интерфейсе командной строки (CLI). 
+
+В этом руководстве описано следующее:
+> [!div class="checklist"]
+> - настройка обработчика правил с помощью портала;
+> - настройка обработчика правил с помощью Azure CLI.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Прежде чем перейти к выполнению шагов в этом руководстве, создайте службу Front Door. Дополнительные сведения см. в [кратком руководстве Создание профиля Front Door для высокодоступного глобального веб-приложения](quickstart-create-front-door.md).
 
 ## <a name="configure-rules-engine-in-azure-portal"></a>Настройка обработчика правил на портале Azure
-1. Перед созданием конфигурации обработчика правил [создайте профиль Front Door](quickstart-create-front-door.md).
+1. Во Front Door перейдите в раздел **Параметры** и выберите **Rule Engine configuration** (Конфигурация обработчика правил). Щелкните **Добавить**, присвойте имя конфигурации и приступите к созданию первой конфигурации обработчика правил.
 
-2. Во Front Door перейдите в раздел **Параметры** и выберите **Rule Engine configuration** (Конфигурация обработчика правил). Щелкните **Добавить**, присвойте имя конфигурации и приступите к созданию первой конфигурации обработчика правил.
+    ![Меню параметров Front Door](./media/front-door-rules-engine/rules-engine-tutorial-1.png)
 
-    ![Поиск обработчика правил](./media/front-door-rules-engine/rules-engine-tutorial-1.png)
-
-3. Щелкните **Добавить правило**, чтобы создать первое правило. Затем определите правило, щелкнув **Добавить условие** или **Добавить действие**.
+1. Щелкните **Добавить правило**, чтобы создать первое правило. Затем определите правило, щелкнув **Добавить условие** или **Добавить действие**.
     
     > [!NOTE]
     >- Чтобы удалить условие или действие из правила, используйте корзину в правой части определенного условия или действия.
     > - Чтобы создать правило, которое применяется ко всему входящему трафику, не указывайте никаких условий.
     > - Чтобы отключить обработку правил после выполнения первого условия соответствия, установите флажок **Stop evaluating remaining rule** (Остановить анализ оставшихся правил). Если флажок установлен и для какого-то правила выполнены все условия соответствия, то остальные правила в конфигурации выполняться не будут.  
 
-    ![Поиск обработчика правил](./media/front-door-rules-engine/rules-engine-tutorial-4.png) 
+    ![Конфигурации обработчика правил](./media/front-door-rules-engine/rules-engine-tutorial-4.png) 
 
-4. Определите приоритет правил в конфигурации с помощью кнопок "Вверх", "Вниз" и "На самый верх". Приоритет устанавливается в порядке создания, то есть правило, указанное первым, является самым важным.
+1. Определите приоритет правил в конфигурации с помощью кнопок "Вверх", "Вниз" и "На самый верх". Приоритет устанавливается в порядке создания, то есть правило, указанное первым, является самым важным.
 
-5. После создания одного или нескольких правил нажмите кнопку **Сохранить**. В результате будет создана конфигурация обработчика правил.
+1. После создания одного или нескольких правил нажмите кнопку **Сохранить**. В результате будет создана конфигурация обработчика правил.
 
-6. После создания одной или нескольких конфигураций свяжите конфигурацию обработчика правил с правилом маршрутизации. Хотя к нескольким правилам маршрутизации можно применить одну конфигурацию, правило маршрутизации может содержать только одну конфигурацию обработчика правил. Чтобы создать взаимосвязь, выберите **Front Door designer** (Конструктор Front Door) > **Route rules** (Правила маршрутизации). Выберите правило маршрутизации, к которому нужно добавить конфигурацию обработчика правил, выберите **Route details** (Сведения о маршрутизации) > **Rules engine configuration** (Конфигурация обработчика правил) и конфигурацию, которую нужно связать.
+1. После создания одной или нескольких конфигураций свяжите конфигурацию обработчика правил с правилом маршрутизации. Хотя к нескольким правилам маршрутизации можно применить одну конфигурацию, правило маршрутизации может содержать только одну конфигурацию обработчика правил. Чтобы создать взаимосвязь, выберите **Front Door designer** (Конструктор Front Door) > **Route rules** (Правила маршрутизации). Выберите правило маршрутизации, к которому нужно добавить конфигурацию обработчика правил, выберите **Route details** (Сведения о маршрутизации) > **Rules engine configuration** (Конфигурация обработчика правил) и конфигурацию, которую нужно связать.
 
-    ![Поиск обработчика правил](./media/front-door-rules-engine/rules-engine-tutorial-5.png)
+    ![Настройка правила маршрутизации](./media/front-door-rules-engine/rules-engine-tutorial-5.png)
 
 
 ## <a name="configure-rules-engine-in-azure-cli"></a>Настройка обработчика правил в Azure CLI
 
-1. Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), если это еще не сделано. Добавьте расширение "front-door":- az extension add --name front-door. Затем войдите в подписку az account set — <имя_или_ид> подписки.
+1. Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true), если это еще не сделано. Добавьте расширение "front-door":- az extension add --name front-door. Затем войдите в подписку az account set — <имя_или_ид> подписки.
 
-2. Начните с создания обработчика правил. В этом примере показано одно правило с одним действием на основе заголовка и одно условие соответствия. 
+1. Начните с создания обработчика правил. В этом примере показано одно правило с одним действием на основе заголовка и одно условие соответствия. 
 
-```azurecli-interactive
-az network front-door rules-engine rule create -f {front_door} -g {resource_group} --rules-engine-name {rules_engine} --name {rule1} --priority 1 --action-type RequestHeader --header-action Overwrite --header-name Rewrite --header-value True --match-variable RequestFilenameExtension --operator Contains --match-values jpg png --transforms Lowercase
-```
+    ```azurecli-interactive
+    az network front-door rules-engine rule create -f {front_door} -g {resource_group} --rules-engine-name {rules_engine} --name {rule1} --priority 1 --action-type RequestHeader --header-action Overwrite --header-name Rewrite --header-value True --match-variable RequestFilenameExtension --operator Contains --match-values jpg png --transforms Lowercase
+    ```
 
-3. Перечисление всех правил. 
+1. Перечисление всех правил. 
 
-```azurecli-interactive
-az network front-door rules-engine rule list -f {front_door} -g {rg} --name {rules_engine}
-```
+    ```azurecli-interactive
+    az network front-door rules-engine rule list -f {front_door} -g {rg} --name {rules_engine}
+    ```
 
-4. Добавление перенаправляемого действия переопределения маршрутизации. 
+1. Добавление перенаправляемого действия переопределения маршрутизации. 
 
-```azurecli-interactive
-az network front-door rules-engine rule action add -f {front_door} -g {rg} --rules-engine-name {rules_engine} --name {rule1} --action-type ForwardRouteOverride --backend-pool {backend_pool_name} --caching Disabled
-```
+    ```azurecli-interactive
+    az network front-door rules-engine rule action add -f {front_door} -g {rg} --rules-engine-name {rules_engine} --name {rule1} --action-type ForwardRouteOverride --backend-pool {backend_pool_name} --caching Disabled
+    ```
 
-5. Перечисление всех действий в правиле. 
+1. Перечисление всех действий в правиле. 
 
-```azurecli-interactive
-az network front-door rules-engine rule action list -f {front_door} -g {rg} -r {rules_engine} --name {rule1}
-```
+    ```azurecli-interactive
+    az network front-door rules-engine rule action list -f {front_door} -g {rg} -r {rules_engine} --name {rule1}
+    ```
 
-6. Связывание конфигурации обработчика правил с правилом маршрутизации.  
+1. Связывание конфигурации обработчика правил с правилом маршрутизации.  
 
-```azurecli-interactive
-az network front-door routing-rule update -g {rg} -f {front_door} -n {routing_rule_name} --rules-engine {rules_engine}
-```
+    ```azurecli-interactive
+    az network front-door routing-rule update -g {rg} -f {front_door} -n {routing_rule_name} --rules-engine {rules_engine}
+    ```
 
-7. Отмена связи с обработчиком правил. 
+1. Отмена связи с обработчиком правил. 
 
-```azurecli-interactive
-az network front-door routing-rule update -g {rg} -f {front_door} -n {routing_rule_name} --remove rulesEngine # case sensitive word ‘rulesEngine’
-```
+    ```azurecli-interactive
+    az network front-door routing-rule update -g {rg} -f {front_door} -n {routing_rule_name} --remove rulesEngine # case sensitive word ‘rulesEngine’
+    ```
 
-Полный список команд обработчика правил AFD можно найти [здесь](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/rules-engine?view=azure-cli-latest).   
+Полный список команд обработчика правил AFD можно найти [здесь](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/rules-engine?view=azure-cli-latest&preserve-view=true).   
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+На предыдущих шагах вы настроили конфигурацию обработчика правил и связали ее с правилами маршрутизации. Если вам больше не нужна конфигурация обработчика правил, связанная с Front Door, ее можно удалить, выполнив приведенные ниже действия.
+
+1. Отмените связывание всех правил маршрутизации с конфигурацией обработчика правил, щелкнув многоточие рядом с именем обработчика правил.
+
+    :::image type="content" source="./media/front-door-rules-engine/front-door-rule-engine-routing-association.png" alt-text="Связать правило маршрутизации":::
+
+1. Снимите флажки со всех правил маршрутизации, с которыми связана эта конфигурация обработчика правил, и нажмите "Сохранить".
+
+    :::image type="content" source="./media/front-door-rules-engine/front-door-routing-rule-association.png" alt-text="Связать правило маршрутизации":::
+
+1. Теперь вы можете удалить конфигурацию обработчика правил с Front Door.
+
+    :::image type="content" source="./media/front-door-rules-engine/front-door-delete-rule-engine-configuration.png" alt-text="Связать правило маршрутизации":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения об [обработчике правил AFD](front-door-rules-engine.md). 
-- Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).
-- Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).
-- Ознакомьтесь с дополнительными сведениями об обработчике правил AFD см. в [справочнике по CLI](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/rules-engine?view=azure-cli-latest). 
-- Ознакомьтесь с дополнительными сведениями об обработчике правил AFD в [справочнике по PowerShell](https://docs.microsoft.com/powershell/module/az.frontdoor/?view=azps-3.8.0). 
+В этом руководстве вы узнали, как выполнять следующие задачи:
+
+* Создание конфигурации обработчика правил
+* Свяжите конфигурацию с правилами маршрутизации Front Door.
+
+Чтобы узнать, как добавить заголовки безопасности с помощью обработчика правил, перейдите к следующему учебнику.
+
+> [!div class="nextstepaction"]
+> [Добавление заголовков безопасности с помощью обработчика правил](front-door-security-headers.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: jeedes
-ms.openlocfilehash: d20d527c35eac422efdc3719f153b6d7e8f4ef07
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 7e6b4524523d0659126bcd6cbe1294d700e79ed9
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017547"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707821"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-google-cloud-g-suite-connector"></a>Руководство по интеграции единого входа Azure Active Directory с Google Cloud (G Suite) Connector
 
@@ -72,9 +72,9 @@ ms.locfileid: "89017547"
 
     Атрибут электронной почты заполняется автоматически для любого пользователя с действующей лицензией Exchange. Эта ошибка может возникнуть, если пользователь не включил поддержку электронной почты, поскольку приложению необходимо получить этот атрибут для предоставления доступа.
 
-    Вы можете перейти на portal.office.com с помощью учетной записи администратора, щелкнуть "Центр администрирования" > выставление счетов > подписки, выбрать подписку на Office 365, а затем щелкнуть "Назначить для пользователей", выбрать пользователей, подписки которых нужно проверить, и на панели справа щелкнуть "Изменить лицензии".
+    Вы можете перейти на страницу portal.office.com с помощью учетной записи администратора, последовательно выбрать "Центр администрирования > Выставление счетов > Подписки", выбрать подписку Microsoft 365, а затем щелкнуть "Назначить для пользователей", выбрать пользователей, подписки которых нужно проверить, и на панели справа щелкнуть "Изменить лицензии".
 
-    После назначения лицензии O365 ее применение может занять несколько минут. После этого атрибут user.mail заполнится автоматически, и проблема будет решена.
+    После назначения лицензии Microsoft 365 ее применение может занять несколько минут. После этого атрибут user.mail заполнится автоматически, и проблема будет решена.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -240,7 +240,7 @@ ms.locfileid: "89017547"
 
 ### <a name="create-google-cloud-g-suite-connector-test-user"></a>Создание тестового пользователя Google Cloud (G Suite) Connector
 
-Цель этого раздела — [создать пользователя в Google Cloud (G Suite) Connector](https://support.google.com/a/answer/33310?hl=en) с именем B.Simon. После того как пользователь будет создан в Google Cloud (G Suite) Connector вручную, он сможет войти в систему, используя учетные данные для входа в Office 365.
+Цель этого раздела — [создать пользователя в Google Cloud (G Suite) Connector](https://support.google.com/a/answer/33310?hl=en) с именем B.Simon. После того как пользователь будет создан в Google Cloud (G Suite) Connector вручную, он сможет войти в систему, используя учетные данные для входа в Microsoft 365.
 
 Google Cloud (G Suite) Connector также поддерживает автоматическую подготовку пользователей. Чтобы настроить автоматическую подготовку пользователей, сначала необходимо [настроить ее в Google Cloud (G Suite) Connector](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-provisioning-tutorial).
 

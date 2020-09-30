@@ -1,5 +1,5 @@
 ---
-title: Определение нового типа устройства шлюза в Azure IoT Central | Документация Майкрософт
+title: Руководство. Определение нового типа устройства шлюза в Azure IoT Central | Документация Майкрософт
 description: В этом руководстве показано, как разработчики могут определить новый тип устройства шлюза Интернета вещей в своем приложении Azure IoT Central.
 author: rangv
 ms.author: rangv
@@ -9,14 +9,14 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 2411eab50cc921a09ba55780b3c6620744a78f3f
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.openlocfilehash: 58e481e34d9f798b73b72b114b071cf035c3319f
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81758130"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90967913"
 ---
-# <a name="define-a-new-iot-gateway-device-type-in-your-azure-iot-central-application"></a>Определение нового типа устройства шлюза Интернета вещей в приложении Azure IoT Central
+# <a name="tutorial---define-a-new-iot-gateway-device-type-in-your-azure-iot-central-application"></a>Руководство. Определение нового типа устройства шлюза Интернета вещей в приложении Azure IoT Central
 
 *Эта статья предназначена для создателей решений и разработчиков устройств.*
 
@@ -31,6 +31,9 @@ ms.locfileid: "81758130"
 * отправлять собственные данные телеметрии, например, о температуре;
 * отвечать на обновления свойств, которые может записать оператор. Например, оператор может изменить интервал отправки данных телеметрии;
 * отвечать на команды, например перезагрузку устройства.
+
+> [!div class="checklist"]
+> Создание шаблонов подчиненных устройств Создание шаблона для устройства шлюза Публикация шаблона устройства Создание имитации устройств
 
 ## <a name="prerequisites"></a>Предварительные требования
 

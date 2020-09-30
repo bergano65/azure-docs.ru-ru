@@ -1,19 +1,19 @@
 ---
-title: Руководство по Использование ASP.NET Core с Базой данных SQL
-description: Узнайте, как создать приложение .NET Core, работающее в службе приложений Azure, с подключением к базе данных SQL.
+title: Руководство по использованию приложения ASP.NET Core со службой "База данных SQL Azure"
+description: Узнайте, как создать приложение .NET Core, работающее в Службе приложений Azure, с подключением к службе "База данных SQL Azure".
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/20/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, seodec18
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 27b01a86d1bc44b5adb977f10339a0f2d56a64d4
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: b83dfbd715a6b27491fd5f5efd41213210092325
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88958564"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90982892"
 ---
-# <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
+# <a name="tutorial-build-an-aspnet-core-and-azure-sql-database-app-in-azure-app-service"></a>Руководство по созданию приложения ASP.NET Core с подключением к Базе данных SQL Azure в Службе приложений Azure
 
 ::: zone pivot="platform-windows"  
 

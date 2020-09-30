@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 8917c73474b81ee76e6acdf8c6f274e962ee1215
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: b337065f125d12e309dd1f7fcc56c2af72b1c28c
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874237"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90088363"
 ---
 # <a name="tutorial-get-started-with-log-analytics-queries"></a>Руководство по Начало работы с запросами Log Analytics
 
@@ -42,7 +42,7 @@ ms.locfileid: "87874237"
 
 Таблицы схемы отображаются на вкладке **Таблицы** в рабочей области Log Analytics. Таблицы содержат столбцы, в каждом из которых отображается тип данных в виде значка рядом с именем столбца. Например, таблица **Event** содержит текстовые столбцы, такие как **Computer**, и числовые столбцы, такие как **EventCategory**.
 
-![схема](media/get-started-portal/schema.png)
+![Снимок экрана со страницей журналов портала Azure с новым запросом, в котором выделяется область таблиц с выделенными столбцами Computer и EventCategory.](media/get-started-portal/schema.png)
 
 ## <a name="write-and-run-basic-queries"></a>Создание и выполнение основных запросов
 
@@ -120,7 +120,7 @@ Log Analytics ограничивает максимальное количест
    
 1. Нажмите кнопку **Фильтр**.
    
-   ![Filter](media/get-started-portal/filter.png)
+   ![Снимок экрана с таблицей результатов и контекстным меню для фильтрации результатов по столбцу EventLevelName.](media/get-started-portal/filter.png)
 
 ## <a name="sort-group-and-select-columns"></a>Сортировка, группировка и выбор столбцов
 Чтобы отсортировать результаты запроса по определенному столбцу, например **TimeGenerated [UTC]** , выберите заголовок столбца. Снова выберите заголовок, чтобы переключить упорядочивание с возрастающего на убывающее и наоборот.
@@ -129,7 +129,7 @@ Log Analytics ограничивает максимальное количест
 
 Другой способ упорядочить результаты — по группам. Чтобы сгруппировать результаты по определенному столбцу, перетащите заголовок столбца на панель над таблицей результатов с надписью **Drag a column header and drop it here to group by that column** (Перетащите заголовок столбца и поместите его сюда, чтобы сгруппировать по этому столбцу). Чтобы создать подгруппы, перетащите другие столбцы на верхнюю панель. Можно изменить иерархию и сортировку групп и подгрупп на панели.
 
-![Группы](media/get-started-portal/groups.png)
+![Снимок экрана с результатами запроса с подгруппами для столбцов EventLevelName и Computer.](media/get-started-portal/groups.png)
 
 Чтобы скрыть или показать столбцы в результатах, выберите меню **Столбцы** над таблицей, а затем выберите или отмените выбор нужных столбцов в раскрывающемся списке.
 

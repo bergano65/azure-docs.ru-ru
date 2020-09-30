@@ -11,12 +11,12 @@ ms.date: 06/10/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: e7dca9224fd213178aa9cee3a284f1eba39fb4fc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 8d11fada41d0152b44be6cb0cdef41e68808689b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001179"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90967517"
 ---
 # <a name="secure-access-to-application-data"></a>Безопасный доступ к данным приложения
 
@@ -160,7 +160,7 @@ public static async Task<List<string>> GetThumbNailUrls(AzureStorageConfig _stor
 
 [Шифрование службы хранилища Azure](../common/storage-service-encryption.md) помогает защитить данные путем шифрования неактивных данных и управления шифрованием и расшифровкой. Используется 256-битное [шифрование AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), самая надежная технология блочного шифрования на сегодняшний день.
 
-Вы можете делегировать корпорации Майкрософт управлять ключами шифрования или использовать собственные ключи с ключами, управляемыми клиентами, в Azure Key Vault. См. статью [Использование ключей, управляемых клиентом, в Azure Key Vault для управления шифрованием службы хранилища Azure](../common/encryption-customer-managed-keys.md).
+Вы можете делегировать корпорации Майкрософт управление ключами шифрования или использовать собственные ключи с ключами, управляемыми клиентами, хранящимися в Azure Key Vault или на устройстве HSM (Hardware Security Model), управляемом Key Vault (предварительная версия). Дополнительные сведения см. в статье [Ключи, управляемые клиентом, для шифрования службы хранилища Azure](../common/customer-managed-keys-overview.md).
 
 Шифрование службы хранилища Azure автоматически шифрует данные на всех уровнях производительности ("Стандартный" и "Премиум"), во всех моделях развертывания (Azure Resource Manager и классической) и во всех службах хранилища Azure (больших двоичных объектов, очередей, таблиц и файлов).
 

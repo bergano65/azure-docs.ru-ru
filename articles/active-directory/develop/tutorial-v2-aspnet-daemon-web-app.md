@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: b63aa2b2d98a12246d0dc2c35e015da872caff28
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 4b05bbf818676cc70f485dd94ece79141e8f01a4
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83641098"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90982853"
 ---
 # <a name="tutorial-build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
 
@@ -41,7 +41,7 @@ ms.locfileid: "83641098"
 
 Так как это мультитенантное приложение, предназначенное для использования любым корпоративным клиентом Майкрософт, оно должно предоставить клиентам возможность зарегистрироваться или подключить приложение к данным организации. В рамках потока подключения администратор компании сначала напрямую предоставляет *разрешения* приложению, чтобы оно могло получать доступ к данным компании неинтерактивным способом (при отсутствии пользователя, выполнившего вход). В большей части логики в этом примере показано, как реализовать этот поток подключения с помощью конечной точки предоставления [согласия администратора](v2-permissions-and-consent.md#using-the-admin-consent-endpoint) платформы удостоверений.
 
-![Топология](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
+![Схема, на которой показано приложение UserSync с тремя локальными элементами, подключенными к Azure: Startup.Auth с получением маркера в интерактивном режиме для подключения к Azure AD, AccountController с получением согласия администратора для подключения к Azure AD и SyncController со считыванием данных пользователя для подключения к Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 
 Дополнительные сведения об основных понятиях, используемых в этом примере, см. в [документации по протоколу учетных данных клиента для конечной точки платформы удостоверений](v2-oauth2-client-creds-grant-flow.md).
 

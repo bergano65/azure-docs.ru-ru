@@ -1,6 +1,6 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Samanage | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Samanage.
+title: Руководство по интеграции Azure Active Directory со SolarWinds Service Desk (ранее — Samanage) | Документация Майкрософт
+description: Сведения о том, как настроить единый вход Azure Active Directory в SolarWinds Service Desk (ранее — Samanage).
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -11,20 +11,20 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
-ms.openlocfilehash: 56018ff0be07a48cf9448b9b92de5694ebac18bc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8d4c19e1ce10ed618cda167cd6fa7efedf4111d0
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543539"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707583"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-samanage"></a>Руководство. Интеграция Azure Active Directory с Samanage
+# <a name="tutorial-azure-active-directory-integration-with-solarwinds-service-desk-previously-samanage"></a>Руководство по интеграции Azure Active Directory с SolarWinds Service Desk (ранее — Samanage)
 
-В этом руководстве описано, как интегрировать Samanage с Azure Active Directory (Azure AD).
-Интеграция Azure AD с приложением Samanage обеспечивает следующие преимущества.
+В этом руководстве описано, как интегрировать SolarWinds с Azure Active Directory (Azure AD).
+Интеграция Azure AD с приложением SolarWinds обеспечивает следующие возможности:
 
-* С помощью Azure AD вы можете контролировать доступ к Samanage.
-* Вы можете включить автоматический вход пользователей в Samanage (единый вход) с помощью их учетных записей Azure AD.
+* Контроль доступа к SolarWinds с помощью Azure AD.
+* Автоматический вход пользователей в SolarWinds (единый вход) с помощью учетных записей Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -32,7 +32,7 @@ ms.locfileid: "88543539"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-Чтобы настроить интеграцию Azure AD с приложением Samanage, вам потребуется:
+Чтобы настроить интеграцию Azure AD с приложением SolarWinds Service Desk (ранее Samanage), вам потребуется:
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Samanage с поддержкой единого входа.
@@ -41,15 +41,15 @@ ms.locfileid: "88543539"
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Samanage поддерживает единый вход инициированного **пакета обновления**.
+* SolarWinds поддерживает единый вход, инициируемый **поставщиком услуг**.
 
-## <a name="adding-samanage-from-the-gallery"></a>Добавление Samanage из коллекции.
+## <a name="adding-solarwinds-from-the-gallery"></a>Добавление приложения SolarWinds из коллекции
 
-Чтобы настроить интеграцию Samanage с Azure AD, необходимо добавить Samanage из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию SolarWinds с Azure AD, вам потребуется добавить приложение SolarWinds из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Samanage из коллекции, выполните следующие действия.**
+**Чтобы добавить SolarWinds из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева выберите значок **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -61,31 +61,31 @@ ms.locfileid: "88543539"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Samanage**, выберите **Samanage** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **SolarWinds**, выберите **SolarWinds** в области результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Samanage в списке результатов](common/search-new-app.png)
+     ![SolarWinds в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Samanage с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Samanage.
+В этом разделе описана настройка и проверка единого входа Azure AD в SolarWinds с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в SolarWinds.
 
-Чтобы настроить и проверить единый вход Azure AD в Samanage, вам потребуется выполнить действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в SolarWinds, вам потребуется выполнить действия из следующих стандартных блоков:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Samanage](#configure-samanage-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+2. **[Настройка единого входа в SolarWinds Service Desk](#configure-solarwinds-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Samanage](#create-samanage-test-user)** требуется для того, чтобы в Samanage существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+5. **[Создание тестового пользователя SolarWinds Service Desk](#create-solarwinds-test-user)** требуется для того, чтобы в приложении SolarWinds Service Desk существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Samanage, выполните следующие действия.
+Чтобы настроить единый вход Azure AD в SolarWinds, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Samanage** выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **SolarWinds** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -112,7 +112,7 @@ ms.locfileid: "88543539"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. Требуемый URL-адрес вы можете скопировать из раздела **Настройка Samanage**.
+6. Требуемые URL-адреса можно скопировать в разделе **Настройка SolarWinds**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -122,9 +122,11 @@ ms.locfileid: "88543539"
 
     c. URL-адрес выхода.
 
-### <a name="configure-samanage-single-sign-on"></a>Настройка единого входа Samanage
+<a name="configure-solarwinds-single-sign-on"></a>
 
-1. В другом окне веб-браузера войдите на сайт Samanage компании в качестве администратора.
+### <a name="configure-solarwinds-service-desk-single-sign-on"></a>Настройка единого входа для SolarWinds Service Desk
+
+1. В другом окне веб-браузера войдите на сайт SolarWinds своей компании в качестве администратора.
 
 2. Щелкните **Панель мониторинга** и выберите **Настройка** в левой области навигации.
    
@@ -150,7 +152,7 @@ ms.locfileid: "88543539"
  
     е) Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure, скопируйте содержимое сертификата в буфер обмена, а затем вставьте его в текстовое поле **Paste your Identity Provider x.509 Certificate below** (Скопируйте сюда сертификат x.509 своего поставщика удостоверений).
  
-    ж. Установите флажок **Create users if they do not exist in Samanage**(Создавать пользователей, если они не существуют в Samanage).
+    ж. Установите флажок **Создавать пользователей, если они не существуют в SolarWinds**.
  
     h. Нажмите кнопку **Обновить**.
 
@@ -181,15 +183,13 @@ ms.locfileid: "88543539"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Samanage.
+В этом разделе описано, как включить единый вход Azure для пользователя Britta Simon, предоставив этому пользователю доступ к SolarWinds.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Samanage**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **SolarWinds**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Samanage**.
-
-    ![Ссылка на Samanage в списке "Приложения"](common/all-applications.png)
+2. В списке приложений выберите **SolarWinds**.
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -205,24 +205,24 @@ ms.locfileid: "88543539"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-samanage-test-user"></a>Создание тестового пользователя в приложении Samanage
+### <a name="create-solarwinds-test-user"></a>Создание тестового пользователя SolarWinds
 
-Чтобы пользователи Azure AD могли выполнять вход в Samanage, они должны быть подготовлены в Samanage.  
-В случае Samanage подготовка выполняется вручную.
+Чтобы пользователи Azure AD могли выполнять вход в SolarWinds, они должны быть подготовлены в SolarWinds.  
+В случае с SolarWinds подготовка выполняется вручную.
 
 **Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
-1. Войдите на корпоративный сайт Samanage в качестве администратора.
+1. Войдите на сайт SolarWinds компании в качестве администратора.
 
 2. Щелкните **Dashboard** (Панель мониторинга) и выберите **Setup** (Настройка) в левой области навигации.
    
     ![Установка](./media/samanage-tutorial/tutorial_samanage_001.png "Настройка")
 
-3. Откройте вкладку **Пользователи** .
+3. Нажмите вкладку **Пользователи**
    
     ![Пользователи](./media/samanage-tutorial/tutorial_samanage_006.png "Пользователи")
 
-4. Щелкните **Новый пользователь**.
+4. Нажмите **Новый пользователь**.
    
     ![Новый пользователь](./media/samanage-tutorial/tutorial_samanage_007.png "Новый пользователь")
 
@@ -231,13 +231,13 @@ ms.locfileid: "88543539"
     ![Создание пользователя](./media/samanage-tutorial/tutorial_samanage_008.png "Создать пользователя")
    
    >[!NOTE]
-   >Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи. Вы можете использовать любые другие инструменты создания учетных записей пользователя Samanage или API, предоставляемые Samanage для подготовки учетных записей пользователя Azure Active Directory.
+   >Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи. Вы можете использовать любые другие инструменты создания учетных записей пользователя SolarWinds или API, предоставляемые SolarWinds для подготовки учетных записей пользователя Azure Active Directory.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "Samanage" на панели доступа, вы автоматически войдете в приложение Samanage, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку SolarWinds на Панели доступа, вы автоматически войдете в приложение SolarWinds, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

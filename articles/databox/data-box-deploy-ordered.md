@@ -2,18 +2,18 @@
 title: Учебник по заказу Azure Data Box | Документация Майкрософт
 description: Из этого руководства вы узнаете о гибридном решении Azure Data Box, которое позволяет импортировать локальные данные в Azure. Здесь также описано, как заказать Azure Data Box.
 services: databox
-author: twooley
+author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 07/21/2020
-ms.author: twooley
-ms.openlocfilehash: 2000ecc84a92bef5ad6b80fecde4aee0157e4bc5
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.date: 09/15/2020
+ms.author: alkohli
+ms.openlocfilehash: c2d971c2c9375f58fd5f41a46716fac4bff29f88
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88783575"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604314"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство по Заказ Azure Data Box
 
@@ -138,7 +138,7 @@ You have logged in. Now let us find all the subscriptions to which you have acce
 * Установка Windows PowerShell 6.2.4 или более поздней версии.
 * Установка модуля Azure PowerShell (AZ).
 * Установка модуля Azure Data Box (Az.DataBox).
-* Вход в Azure.
+* Войдите в Azure.
 
 #### <a name="install-azure-powershell-and-modules-locally"></a>Локальная установка Azure PowerShell и модулей
 
@@ -268,8 +268,21 @@ PS C:\Windows\System32>
     ![Заказ Data Box для управляемого диска](media/data-box-deploy-ordered/select-data-box-import-07b.png)
 
     Учетная запись хранения, указанная для управляемых дисков, используется в качестве промежуточной учетной записи хранения. Служба Data Box выгружает виртуальные жесткие диски в виде страничных BLOB-объектов в промежуточную учетную запись хранения, а затем преобразовывает их в управляемые диски и перемещает в группы ресурсов. Дополнительные сведения см. в разделе [Проверка передачи данных в Azure](data-box-deploy-picked-up.md#verify-data-upload-to-azure).
+   > [!NOTE]
+   > Если страничный BLOB-объект не удалось преобразовать в управляемый диск, он остается в учетной записи хранения и взимается плата за хранилище.
 
-    По завершении выберите **Next: Contact details** (Далее: контактные сведения), чтобы продолжить.
+    По завершении выберите **Next: Security** (Далее: безопасность), чтобы продолжить.
+
+1. Если вы хотите включить двойное шифрование на основе программного обеспечения, на вкладке **Безопасность** выберите **Enable double encryption for the order** (Включить двойное шифрование для заказа). 
+
+   Программное шифрование в Data Box выполняется в дополнение к шифрованию данных AES-256.
+
+   > [!NOTE]
+   > Включение этого параметра может привести к увеличению времени на обработку заказов и копирование данных. После создания заказа нельзя изменить этот параметр.
+
+   ![Экран безопасности для импорта Data Box, двойное шифрование](media/data-box-deploy-ordered/select-data-box-import-07c.png)
+
+   По завершении выберите **Next: Contact details** (Далее: контактные сведения), чтобы продолжить.
 
 8. На вкладке **Контактные сведения** выберите **+ Добавить адрес доставки**.
 

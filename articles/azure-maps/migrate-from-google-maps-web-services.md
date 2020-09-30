@@ -1,20 +1,20 @@
 ---
-title: Руководство по Миграция веб-служб из Google Карт | Microsoft Azure Maps
-description: Как перенести веб-службы из Google Карт в Microsoft Azure Maps.
+title: Миграция веб-служб из Google Карт | Microsoft Azure Maps
+description: Как перенести веб-службы из Google Карт в Microsoft Azure Maps
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/17/2019
-ms.topic: tutorial
+ms.date: 08/19/2020
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 8cc16e611002748dad2716a1c8dc914f297da9f1
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 57d71d517cb953a2a2c84b7e003fd08541416539
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90090556"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319577"
 ---
 # <a name="migrate-web-service-from-google-maps"></a>Миграция веб-службы из Google Карт
 
@@ -293,9 +293,8 @@ Azure Maps предоставляет API для отрисовки статич
 &markers=color:red|size:mid|45,-110
 ```
 
-<center>
 
-![Метка Google Карт](media/migrate-google-maps-web-services/google-maps-marker.png)</center>
+![Метка Google Карт](media/migrate-google-maps-web-services/google-maps-marker.png)
 
 **После: Azure Maps**
 
@@ -335,9 +334,8 @@ Azure Maps предоставляет API для отрисовки статич
 &pins=default|coFF0000|la15 50||'Space Needle' -122.349300 47.620180
 ```
 
-<center>
 
-![Метка Azure Maps](media/migrate-google-maps-web-services/azure-maps-marker.png)</center>
+![Метка Azure Maps](media/migrate-google-maps-web-services/azure-maps-marker.png)
 
 Добавьте три кнопки с надписями "1", "2" и "3".
 
@@ -345,9 +343,9 @@ Azure Maps предоставляет API для отрисовки статич
 &pins=default||'1'-122 45|'2'-119.5 43.2|'3'-121.67 47.12
 ```
 
-<center>
 
-![Несколько меток в Azure Maps](media/migrate-google-maps-web-services/azure-maps-multiple-markers.png)</center>
+
+![Несколько меток в Azure Maps](media/migrate-google-maps-web-services/azure-maps-multiple-markers.png)
 
 ### <a name="path-url-parameter-format-comparison"></a>Сравнение формата параметра URL-адреса пути
 
@@ -376,9 +374,7 @@ Azure Maps предоставляет API для отрисовки статич
 &path=color:0xFF000088|weight:4|45,-110|50,-100
 ```
 
-<center>
-
-![Ломаная линия в Google Картах](media/migrate-google-maps-web-services/google-maps-polyline.png)</center>
+![Ломаная линия в Google Картах](media/migrate-google-maps-web-services/google-maps-polyline.png)
 
 **После: Azure Maps**
 
@@ -405,9 +401,7 @@ Azure Maps предоставляет API для отрисовки статич
 &path=lcFF0000|la.5|lw4||-110 45|-100 50
 ```
 
-<center>
-
-![Ломаная линия в Azure Maps](media/migrate-google-maps-web-services/azure-maps-polyline.png)</center>
+![Ломаная линия в Azure Maps](media/migrate-google-maps-web-services/azure-maps-polyline.png)
 
 ## <a name="calculate-a-distance-matrix"></a>Вычисление матрицы расстояний
 
@@ -482,22 +476,5 @@ Azure Maps предоставляет клиентские библиотеки 
 - [Поиск адреса с помощью службы поиска Azure Maps](how-to-search-for-address.md)
 - [Рекомендации по построению маршрутов](how-to-use-best-practices-for-routing.md)
 - [Справочная документация по API службы REST Azure Maps](https://docs.microsoft.com/rest/api/maps/)
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Дополнительные сведения о службах REST Azure Maps.
-
-> [!div class="nextstepaction"]
-> [Рекомендации по использованию службы поиска Azure Maps](how-to-use-best-practices-for-search.md)
-
-> [!div class="nextstepaction"]
-> [Рекомендации по использованию службы построения маршрутов](how-to-use-best-practices-for-search.md)
-
-> [!div class="nextstepaction"]
-> [Сведения об использовании модуля служб Azure Maps](how-to-use-best-practices-for-routing.md)
-
-> [!div class="nextstepaction"]
-> [Справочная документация по API службы REST Azure Maps](https://docs.microsoft.com/rest/api/maps/)
-
-> [!div class="nextstepaction"]
-> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+- [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+- [Сведения об использовании модуля служб Azure Maps](how-to-use-best-practices-for-routing.md)

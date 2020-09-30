@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.openlocfilehash: dd9aee01edf45f89feb6a6010c8d958511bc3904
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 613ce41820dc5f388af441836bdb4a93e43e5d07
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185404"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987632"
 ---
 # <a name="tutorial-create-a-powershell-workflow-runbook"></a>Руководство по Создание runbook рабочего процесса PowerShell
 
@@ -109,21 +109,13 @@ ms.locfileid: "86185404"
 
 6. Вы увидите, что состояние задания отображается в разделе **Сводка по заданию**. Здесь поддерживаются те же состояния, что и ранее при тестировании runbook.
 
-   ![Сводные данные задания](../media/automation-tutorial-runbook-textual/job-pane-status-blade-jobsummary.png)
+   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-jobsummary.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенный раздел сводки по заданию.":::
 
 7. Как только состояние runbook изменится на "Выполнено", щелкните **Выходные данные**. Откроется область "Выходные данные", где отображается сообщение `Hello World`.
 
-   ![Сводные данные задания](../media/automation-tutorial-runbook-textual/job-pane-status-blade-outputtile.png)
+   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-outputtile.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенный раздел сводки по заданию." и "Ошибка", если этот модуль runbook записывает в них какие-то данные.
 
-8. Закройте страницу выходных данных.
-
-9. Щелкните **Все журналы** , чтобы открыть область "Потоки" для задания Runbook. В потоке выходных данных должно отобразиться только `Hello World`. Но не забывайте, что на панели "Потоки" могут присутствовать и другие потоки задания runbook, например потоки "Подробные сведения" и "Ошибка", если этот модуль runbook записывает в них какие-то данные.
-
-   ![Сводные данные задания](../media/automation-tutorial-runbook-textual/job-pane-status-blade-alllogstile.png)
-
-10. Закройте панель потоков и область заданий, чтобы вернуться на страницу MyFirstRunbook.
-
-11. Щелкните **Задания** в области **Ресурсы**, чтобы открыть страницу "Задания" для этого модуля runbook. Откроется страница со списком всех заданий, созданных этим модулем runbook. Список должен содержать одно задание, так как вы запустили задание только один раз.
+   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-alllogstile.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенный раздел сводки по заданию." для этого модуля runbook. Откроется страница со списком всех заданий, созданных этим модулем runbook. Список должен содержать одно задание, так как вы запустили задание только один раз.
 
    ![Задания](../media/automation-tutorial-runbook-textual/runbook-control-job-tile.png)
 

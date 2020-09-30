@@ -1,6 +1,6 @@
 ---
-title: Быстрое масштабирование и защита веб-приложения с помощью Azure Front Door и брандмауэра веб-приложения Azure (WAF) | Документация Майкрософт
-description: В этом руководстве описано, как использовать брандмауэр веб-приложения с Azure Front Door Service.
+title: Масштабирование и защита веб-приложения с использованием Azure Front Door и WAF
+description: В этом руководстве показано, как использовать Брандмауэр веб-приложений со службой Azure Front Door.
 services: frontdoor
 documentationcenter: ''
 author: duongau
@@ -11,58 +11,60 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2020
 ms.author: duau
-ms.openlocfilehash: 1958481193b66c8cec2cb6a1ac6648a6900d70ac
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 2d531289a1d6e8c484b0334e570d943acdb82268
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90531208"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91276279"
 ---
-# <a name="tutorial-quickly-scale-and-protect-a-web-application-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Руководство по Быстрое масштабирование и защита веб-приложения с помощью службы Azure Front Door и брандмауэра веб-приложения Azure (WAF)
+# <a name="tutorial-quickly-scale-and-protect-a-web-application-by-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Руководство по Быстрое масштабирование и защита веб-приложения с помощью службы Azure Front Door и Брандмауэра веб-приложений Azure (WAF)
 
-В последние недели многие веб-приложения столкнулись с быстрым ростом объема трафика из-за пандемии КОВИД-19. Кроме того, увеличился объем вредоносного трафика веб-приложений, в том числе трафика, связанного с DDoS-атаками. Чтобы эффективно обеспечить масштабирование с учетом возросшего объема трафика и защиту от атак, можно настроить для веб-приложения службу Azure Front Door с брандмауэром Azure WAF, которая гарантирует безопасность, эффективное кэширование и ускорение работы. В этой статье описывается, как можно быстро настроить Azure Front Door с Azure WAF для любых веб-приложений, запущенных в инфраструктуре Azure или за ее пределами. 
+В последние недели на работу многих веб-приложений влияет быстрое увеличение объема трафика из-за пандемии COVID-19. Кроме того, увеличился объем вредоносного трафика, в том числе связанного с атаками типа "отказ в обслуживании". Но существует эффективный способ одновременно горизонтально увеличить масштаб для возросшего объема трафика и обеспечить защиту от атак. Вам нужно просто настроить службу Azure Front Door с Azure WAF, которая ускорит работу, организует кэширование и создаст дополнительный уровень защиты перед вашим приложением. В этой статье описывается, как быстро настроить Azure Front Door с Azure WAF для любых веб-приложений, которые работают в инфраструктуре Azure или за ее пределами. 
 
-В этом руководстве для настройки WAF используется Azure CLI, однако эти действия также полностью поддерживаются на портале Azure, в Azure PowerShell, Azure ARM и API-интерфейсах Azure. 
+В этом руководстве показано, как настроить WAF через Azure CLI. То же самое можно выполнить на портале Azure, с помощью Azure PowerShell, Azure Resource Manager или Azure REST API. 
 
 В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 > - создать профиль Front Door;
 > - создать политику Azure WAF;
-> - настроить наборы правил для политики WAF;
-> - связывать политику WAF с Front Door;
-> - Настройка личного домена
+> - настроить набор правил для политики WAF;
+> - связать политику WAF с Front Door;
+> - настроить личный домен.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Инструкции в этом блоге предполагают использование интерфейса командной строки Azure (CLI). Просмотрите это руководство по [началу работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
+- Описанные в этом руководстве действия выполняются через Azure CLI. Просмотрите это руководство по [началу работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
 
-*Совет. Чтобы быстро и легко начать работать с Azure CLI, можно использовать [оболочку bash в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart)*
+  > [!TIP] 
+  > Чтобы быстро начать работу с Azure CLI, можно использовать [Bash в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart).
 
-Убедитесь, что в Azure CLI добавлено расширение front-door
+- Убедитесь, что в Azure CLI добавлено расширение `front-door`.
 
-```azurecli-interactive 
-az extension add --name front-door
-```
+   ```azurecli-interactive 
+   az extension add --name front-door
+   ```
 
-Примечание. Дополнительные сведения о командах, перечисленных ниже, см. в [справочнике по Azure CLI для работы со службой Front Door](https://docs.microsoft.com/cli/azure/ext/front-door/?view=azure-cli-latest).
+> [!NOTE] 
+> Дополнительные сведения о командах, используемых в этом руководстве, см. в [справочных материалах по Azure CLI для Front Door](https://docs.microsoft.com/cli/azure/ext/front-door/?view=azure-cli-latest).
 
-## <a name="create-an-azure-front-door-afd-resource"></a>Создание ресурса Azure Front Door (AFD)
+## <a name="create-an-azure-front-door-resource"></a>Создание ресурса Azure Front Door
 
 ```azurecli-interactive 
 az network front-door create --backend-address <>  --accepted-protocols <> --name <> --resource-group <>
 ```
 
-**--backend-address**: Параметр backend address содержит полное доменное имя приложения, для которого требуется настроить защиту. Например, myapplication.contoso.com
+`--backend-address`: полное доменное имя приложения, для которого нужно настроить защиту. Например, `myapplication.contoso.com`.
 
-**--accepted-protocols**: Параметр accepted protocols определяет, какие протоколы должны поддерживаться в AFD для вашего веб-приложения. Например, --accepted-protocols Http Https.
+`--accepted-protocols`: протоколы, которые должна поддерживать служба Azure Front Door для веб-приложения. Например, `--accepted-protocols Http Https`.
 
-**--name**: Укажите имя своего ресурса AFD
+`--name`: имя ресурса Azure Front Door.
 
-**--resource-group**: Группа ресурсов, в которую необходимо поместить ресурс AFD.  Дополнительные сведения о группах ресурсов см. в статье "Группы ресурсов" в Azure
+`--resource-group`: группа ресурсов, в которую нужно поместить ресурс Azure Front Door. Дополнительные сведения о группах ресурсов см. в статье [Управление группами ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal).
 
-В отклике, полученном после успешного выполнения этой команды, найдите ключ hostName и запишите его значение для использования в следующем шаге. Ключ hostName представляет собой имя DNS для созданного ресурса AFD
+В ответе от этой команды найдите ключ `hostName`. Это значение вам потребуется позже. `hostName` — это DNS-имя созданного ресурса Azure Front Door.
 
 ## <a name="create-an-azure-waf-profile-to-use-with-azure-front-door-resources"></a>Создание профиля Azure WAF, который будет использоваться с ресурсами Azure Front Door
 
@@ -70,71 +72,75 @@ az network front-door create --backend-address <>  --accepted-protocols <> --nam
 az network front-door waf-policy create --name <>  --resource-group <>  --disabled false --mode Prevention
 ```
 
---name Укажите имя своей политики Azure WAF
+`--name`: имя новой политики Azure WAF.
 
---resource-group Группа ресурсов, в которую необходимо поместить ресурс WAF. 
+`--resource-group`: группа ресурсов, в которую нужно поместить ресурс WAF. 
 
-Указанный выше код CLI создаст политику WAF, которая активирована и переведена в режим предотвращения. 
+Предыдущий код для командной строки создаст политику WAF, включит ее и установит в режим предотвращения. 
 
-Примечание. Возможно, вам также потребуется создать политику WAF в режиме обнаружения и определить, как она будет обнаруживать и регистрировать вредоносные запросы (не блокируя их), прежде чем принять решение о переходе в режим защиты.
+> [!NOTE] 
+> Возможно, вы предпочтете создать политику WAF в режиме обнаружения, чтобы сначала проверить, как она обнаруживает и регистрирует вредоносные запросы (не блокируя их), прежде чем переходить в режим защиты.
 
-В отклике, полученном после успешного выполнения этой команды, найдите ключ ID и запишите его значение для использования в следующем шаге. Поле ID должно иметь следующий формат.
+В ответе от этой команды найдите ключ `ID`. Это значение вам потребуется позже. 
+
+В поле `ID` должно быть значение в следующем формате:
 
 /subscriptions/**subscription id**/resourcegroups/**resource group name**/providers/Microsoft.Network/frontdoorwebapplicationfirewallpolicies/**WAF policy name**
 
-## <a name="add-managed-rulesets-to-this-waf-policy"></a>Добавление управляемых наборов правил в политику WAF
+## <a name="add-managed-rule-sets-to-the-waf-policy"></a>Добавление управляемых наборов правил в политику WAF
 
-В политике WAF можно добавить управляемые наборы правил, созданные и управляемые корпорацией Майкрософт, которые обеспечивают защиту от различных классов угроз. В этом наборе показано добавление двух таких наборов правил: (1) набор правил по умолчанию, обеспечивающий защиту от самых распространенных веб-угроз, и (2) набор правил для защиты от ботов, обеспечивающий защиту от вредоносных ботов.
+В политику WAF вы можете добавить управляемые наборы правил. Управляемый набор создается и управляется корпорацией Майкрософт для защиты от определенного класса угроз. В нашем примере добавляются следующие два набора правил:
+- Набор правил по умолчанию защищает от многих распространенных веб-угроз. 
+- Набор правил защиты от ботов предотвращает деятельность вредоносных ботов.
 
-(1) Добавление набора правил по умолчанию
+Добавьте набор правил по умолчанию:
 
-```azurecli-interactive 
-az network front-door waf-policy managed-rules add --policy-name <> --resource-group <> --type DefaultRuleSet --version 1.0
-```
+   ```azurecli-interactive 
+   az network front-door waf-policy managed-rules add --policy-name <> --resource-group <> --type DefaultRuleSet --version 1.0
+   ```
 
-(2) Добавление набора правил для диспетчера Bot
+Добавьте набор правил защиты от ботов:
 
-```azurecli-interactive 
-az network front-door waf-policy managed-rules add --policy-name <> --resource-group <> --type Microsoft_BotManagerRuleSet --version 1.0
-```
+   ```azurecli-interactive 
+   az network front-door waf-policy managed-rules add --policy-name <> --resource-group <> --type Microsoft_BotManagerRuleSet --version 1.0
+   ```
 
---policy-name Имя, заданное для ресурса Azure WAF
+`--policy-name`: имя, указанное ранее для ресурса Azure WAF.
 
---resource-group Группа ресурсов, в которую помещен ресурс WAF.
+`--resource-group`: группа ресурсов, в которую вы поместили ресурс WAF.
 
-## <a name="associate-the-waf-policy-with-the-afd-resource"></a>Привязка политики WAF к ресурсу AFD
+## <a name="associate-the-waf-policy-with-the-azure-front-door-resource"></a>Привязка политики WAF к ресурсу Azure Front Door
 
-В этом шаге мы будем настраивать связь политики WAF, созданную с ресурсом AFD, который помещен перед веб-приложением.
+На этом шаге мы свяжем политику WAF, созданную для ресурса Azure Front Door, который размещен перед веб-приложением:
 
 ```azurecli-interactive 
 az network front-door update --name <> --resource-group <> --set frontendEndpoints[0].webApplicationFirewallPolicyLink='{"id":"<>"}'
 ```
 
---name Имя, указанное для ресурса AFD.
+`--name`: имя, указанное ранее для ресурса Azure Front Door.
 
---resource-group Группа ресурсов, в которую помещен ресурс Azure Front Door.
+`--resource-group`: группа ресурсов, в которую вы поместили ресурс Azure Front Door.
 
---set Здесь обновляется атрибут WebApplicationFirewallPolicyLink свойства frontendEndpoint, связанного с ресурсом AFD с помощью созданной политики WAF. Идентификатор политики WAF указан в выходных данных, полученный в шаге 2 выше
+`--set`: Здесь вы сохраняете новую политику WAF в атрибуте `WebApplicationFirewallPolicyLink` для `frontendEndpoint`, который связан с ресурсом Azure Front Door. Идентификатор политики WAF вы получили из ответа, когда создавался профиль WAF.
 
-Примечание. Приведенный выше пример применим к ситуациям, когда не используется личный домен.
+ > [!NOTE] 
+> Приведенный выше пример относится к сценарию без использования личного домена. Если вы не используете личные домены для доступа к веб-приложениям, следующий раздел можно пропустить. В этом случае передайте клиентам значение `hostName`, полученное при создании ресурса Azure Front Door. Они будут использовать это значение `hostName` для входа в веб-приложение.
 
-Если вы не используете личные домены для доступа к веб-приложениям, можно пропустить шаг 5. В этом случае вы будете предоставлять конечным пользователям имя узла, полученное в шаге 1, для перехода к веб-приложению.
+## <a name="configure-the-custom-domain-for-your-web-application"></a>Настройка личного домена для веб-приложения
 
-## <a name="configure-custom-domain-for-your-web-application"></a>Настройка личного домена для веб-приложения
+Имя личного домена для веб-приложения выполняет роль адреса приложения, по которому его находят клиенты. Например, www.contoso.com. Изначально это имя личного домена указывало на расположение, настроенное до включения Azure Front Door. После добавления Azure Front Door и WAF перед этим приложением запись DNS для личного домена должна указывать на новый ресурс Azure Front Door. Для этого измените привязку записи на DNS-сервере на имя `hostName` ресурса Azure Front Door, который вы получили ранее при создании этого ресурса.
 
-Изначально имя личного домена для веб-приложения (имя, которое используют заказчики для ссылки на приложение, например, www.contoso.com) указывало на расположение, где оно было запущено до появления AFD. После изменения архитектуры путем добавления AFD+WAF перед приложением запись DNS, соответствующая этому личному домену, должна теперь указывать на этот ресурс AFD. Для этого можно повторно сопоставить эту запись на DNS-сервере с именем узла AFD, записанным в шаге 1.
+Шаги по изменению записей DNS будут разными в зависимости от используемого поставщика услуг DNS. Если для размещения доменного имени вы используете службу Azure DNS, см. документацию [по изменению записей DNS](https://docs.microsoft.com/azure/dns/dns-operations-recordsets-cli) и укажите имя узла `hostName` ресурса Azure Front Door. 
 
-Конкретные действия по обновлению записей DNS будут зависеть от поставщика службы DNS, однако если вы используете Azure DNS для размещения DNS-имени, то обратитесь к документации по [обновлению записей DNS](https://docs.microsoft.com/azure/dns/dns-operations-recordsets-cli) и укажите на параметр hostName AFD. 
+Если вам нужно, чтобы ваши клиенты могли переходить на веб-сайт с помощью вершины зоны (например, contoso.com), необходимо обратить внимание на одну важную вещь. В этом сценарии необходимо использовать для размещения имени DNS службу Azure DNS и [тип записи "псевдоним" (alias)](https://docs.microsoft.com/azure/dns/dns-alias). 
 
-Важно обратить внимание на следующую особенность: если нужно, чтобы пользователи могли переходить на веб-сайт, используя верхнюю точку зоны (например, contoso.com), необходимо использовать Azure DNS и [тип записи ALIAS](https://docs.microsoft.com/azure/dns/dns-alias) для размещения DNS-имени. 
+Также в конфигурацию Azure Front Door нужно [добавить личный домен](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain), чтобы служба знала об этом сопоставлении.
 
-Кроме того, необходимо обновить конфигурацию AFD и [добавить этот личный домен](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain), чтобы AFD приняла это сопоставление.
-
-Если вы используете личный домен для доступа к веб-приложению и хотите включить поддержку протокола HTTPS, потребуется [настроить в AFD сертификаты личного домена](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain-https). 
+Наконец, если вы используете для доступа к веб-приложению личный домен и хотите включить поддержку протокола HTTPS, потребуется [настроить сертификаты для личного домена в Azure Front Door](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain-https). 
 
 ## <a name="lock-down-your-web-application"></a>Блокировка веб-приложения
 
-Рекомендуется также настроить веб-приложение таким образом, чтобы оно могло обмениваться данными только с пограничными зонами AFD. Благодаря этому никто не сможет обойти защиту AFD и получить доступ напрямую к вашим приложениям. Для получения сведения по настройке такой блокировки перейдите в раздел [часто задаваемых вопросов об AFD](https://docs.microsoft.com/azure/frontdoor/front-door-faq) и ознакомьтесь с инструкциями по блокировке серверной части и разрешению доступа только для AFD.
+Мы рекомендуем сделать так, чтобы только граничные узлы Azure Front Door могли обращаться к вашему веб-приложению. Так вы будете уверены, что никто не сможет обойти защиту Azure Front Door и напрямую обращаться к приложению. Для настройки блокировки воспользуйтесь разделом [Как сделать, чтобы к моему серверу имела доступ только служба Azure Front Door?](https://docs.microsoft.com/azure/frontdoor/front-door-faq#how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -144,11 +150,14 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
   az group delete \
     --name <>
 ```
---name — имя группы ресурсов для всех ресурсов, развернутых при работе с этим руководством.
+`--name`: имя группы ресурсов для всех ресурсов, используемых в этом руководстве.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы получить сведения об устранении неполадок в работе Front Door, перейдите к практическим руководствам.
+Изучите следующие руководства по устранению неполадок с Front Door:
 
 > [!div class="nextstepaction"]
 > [Устранение распространенных проблем маршрутизации](front-door-troubleshoot-routing.md)
+
+> [!div class="nextstepaction"]
+> [Разрешенные центры сертификации](https://docs.microsoft.com/azure/frontdoor/front-door-troubleshoot-allowed-ca)

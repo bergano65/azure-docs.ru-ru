@@ -7,24 +7,23 @@ author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/20/2020
+ms.date: 09/14/2020
 ms.author: nitinme
 ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: f3d694a1e1eb368a97d994ebe9885c279ff44463
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.openlocfilehash: fc3d5237fc795a2a828e886172e5d15acd9a9fb7
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89505415"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978335"
 ---
-[Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
+[Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это инклюзивное решение, в котором реализованы проверенные методы, улучшающие понимание текста при чтении у людей, которые учатся читать или изучают язык, а также у людей, которые испытывают определенные трудности при обучении, например, из-за дислексии. Вы можете использовать иммерсивное средство чтения в своих приложениях, чтобы изолировать текст для фокусировки, отображать рисунки, связанные с часто используемыми словами, выделять части речи, читать вслух выделенный текст, переводить слова и фразы в реальном времени и многое другое.
 
-В рамках этого краткого руководства вы создадите веб-приложение с нуля и интегрируете иммерсивное средство чтения с помощью соответствующей клиентской библиотеки. Полностью рабочий пример этого краткого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-csharp).
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.
+В этом кратком руководстве показано, как создать веб-приложение с нуля и интегрировать иммерсивное средство чтения с помощью соответствующей клиентской библиотеки. Полностью рабочий пример этого краткого руководства доступен [на GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-csharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads)
 * Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](../../how-to-create-immersive-reader.md). Некоторые из этих созданных значений потребуются вам при настройке свойств примера проекта. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 
@@ -32,17 +31,17 @@ ms.locfileid: "89505415"
 
 В Visual Studio создайте проект с использованием шаблона веб-приложений ASP.NET Core со встроенным MVC и ASP.NET Core 2.1. Назовите проект "QuickstartSampleWebApp".
 
-![Создать проект](../../media/quickstart-csharp/1-createproject.png)
+![Новый проект — C#](../../media/quickstart-csharp/1-createproject.png)
 
-![Настройка нового проекта](../../media/quickstart-csharp/2-configureproject.png)
+![Настройка нового проекта — C#](../../media/quickstart-csharp/2-configureproject.png)
 
-![Новое веб-приложение ASP.NET Core](../../media/quickstart-csharp/3-createmvc.png)
+![Новое веб-приложение ASP.NET Core — C#](../../media/quickstart-csharp/3-createmvc.png)
 
 ## <a name="set-up-authentication"></a>Настройка проверки подлинности
 
 ### <a name="configure-authentication-values"></a>Настройка значений проверки подлинности
 
-Щелкните правой кнопкой мыши проект в _обозревателе решений_, а затем выберите **Управление секретами пользователей**. Откроется файл с именем _secrets.json_. Этот файл не возвращен в систему управления версиями. Дополнительные сведения см. [здесь](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=windows). Замените содержимое _secrets.json_ следующим параметром, указав значения, заданные при создании ресурса "Иммерсивное средство чтения".
+Щелкните правой кнопкой мыши проект в _обозревателе решений_, а затем выберите **Управление секретами пользователей**. Откроется файл с именем _secrets.json_. Этот файл не возвращен в систему управления версиями. Дополнительные сведения см. [здесь](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=windows&preserve-view=true). Замените содержимое _secrets.json_ следующим параметром, указав значения, заданные при создании ресурса "Иммерсивное средство чтения".
 
 ```json
 {
@@ -53,7 +52,7 @@ ms.locfileid: "89505415"
 }
 ```
 
-### <a name="add-the-microsoftidentitymodelclientsactivedirectory-nuget-package"></a>Добавление пакета NuGet Microsoft.IdentityModel.Clients.ActiveDirectory
+### <a name="install-active-directory"></a>Установка Active Directory
 
 В приведенном далее коде используется пакет NuGet **Microsoft.IdentityModel.Clients.ActiveDirectory**, поэтому необходимо добавить в проект ссылку на этот пакет.
 
@@ -216,7 +215,7 @@ public async Task<JsonResult> GetTokenAndSubdomain()
 
 Обратите внимание, что весь текст имеет атрибут **lang**, который описывает языки текста. Этот атрибут помогает Иммерсивному средству чтения предоставить соответствующие функции языка и грамматики.
 
-## <a name="add-javascript-to-handle-launching-the-immersive-reader"></a>Добавление JavaScript для обработки запуска Иммерсивного средства чтения
+## <a name="add-javascript-to-handle-launching-immersive-reader"></a>Добавление JavaScript для обработки запуска иммерсивного средства чтения
 
 Иммерсивное средство чтения предоставляет такие функциональные возможности, как запуск Иммерсивного средства чтения и рендеринг кнопок Иммерсивного средства чтения. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/cognitive-services/immersive-reader/reference).
 
@@ -296,18 +295,14 @@ public async Task<JsonResult> GetTokenAndSubdomain()
 
 В браузере вы уведите:
 
-![Пример приложения](../../media/quickstart-csharp/4-buildapp.png)
+![Пример приложения — C#](../../media/quickstart-csharp/4-buildapp.png)
 
 ## <a name="launch-the-immersive-reader"></a>Запуск Иммерсивного средства чтения
 
 При нажатии кнопки "иммерсивное средство чтения" появится запущенное иммерсивное средство чтения с содержимым на странице.
 
-![Иммерсивное средство чтения](../../media/quickstart-csharp/5-viewimmersivereader.png)
+![Иммерсивное средство чтения — C#](../../media/quickstart-csharp/5-viewimmersivereader.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с [кратким руководством для разработчиков Node.js](../../tutorial-nodejs.md), чтобы узнать о других возможностях клиентской библиотеки иммерсивного средства чтения при использовании Node.js.
-* Ознакомьтесь с [руководством для разработчиков Android](../../tutorial-android.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Java или Kotlin для Android.
-* Ознакомьтесь с [руководством для разработчиков iOS](../../tutorial-ios.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Swift для iOS.
-* Ознакомьтесь с [руководством для разработчиков Python](../../tutorial-python.md), чтобы узнать о других возможностях клиентской библиотеки иммерсивного средства чтения при использовании Python.
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](../../reference.md).

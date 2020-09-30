@@ -6,20 +6,33 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 08/01/2020
+ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 788b3f5e9f4012e418ece691ebb5fbc5d2f866af
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 4526e4916a89b53ae13a31bcdef6cd4715dd7e8c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88931851"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979594"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
 Узнайте о новых возможностях службы. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="feature-announcements-in-2020"></a>Объявления о новых возможностях за 2020 год
+
+### <a name="september-2020"></a>Сентябрь 2020 г.
+
+Создайте удостоверение для службы поиска в Azure Active Directory, а затем используйте разрешения RBAC, чтобы предоставить источникам данных Azure разрешения удостоверения только для чтения. При необходимости выберите возможность [исключения доверенных служб](search-indexer-howto-access-trusted-service-exception.md), если правила IP-адресов не подходят.
+
+
+|Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
+|------------------------------|----------|-------------|---------------|
+| [Управляемое удостоверение службы](search-howto-managed-identities-data-sources.md) | Индексаторы, безопасность | Создает удостоверение для службы поиска в Azure Active Directory, а затем использует разрешения RBAC, чтобы предоставить доступ к источникам данных Azure. Такой подход устраняет необходимость использования учетных данных в строке подключения. <br><br>Если правила IP-адресов не подходят, использовать управляемое удостоверение службы можно с помощью [исключения доверенных служб](search-indexer-howto-access-trusted-service-exception.md). | Общедоступная версия. Эта возможность доступна на портале или [при создании источника данных (REST)](https://docs.microsoft.com/rest/api/searchservice/create-data-source) с API версии 2020-06-30. |
+| [Отправка исходящих запросов с использованием приватного канала](search-indexer-howto-access-private.md) | Индексаторы, безопасность | Создает общий ресурс приватного канала, который могут использовать индексаторы при доступе к ресурсам Azure, защищенным с помощью Приватного канала Azure. Дополнительные сведения о способах защиты подключений индексаторов см. в статье о [защите ресурсов индексаторов с помощью функций сетевой безопасности Azure](search-indexer-securing-resources.md). | Общедоступная версия. Эта возможность доступна на портале или [при создании общего ресурса приватного канала](https://docs.microsoft.com/rest/api/searchmanagement/sharedprivatelinkresources) с API версии 2020-08-01. |
+| [REST API управления (2020-08-01)](https://docs.microsoft.com/rest/api/searchmanagement/management-api-versions) | REST | Новый стабильный REST API поддерживает создание общих ресурсов приватного канала. | Общедоступная версия. |
+| [REST API управления (2020-08-01, предварительная версия)](https://docs.microsoft.com/rest/api/searchmanagement/management-api-versions) | REST | Добавляет общий ресурс приватного канала для Функций Azure и Azure SQL для баз данных MySQL. | Общедоступная предварительная версия. |
+| [Пакет SDK .NET версии 4.0 для управления](https://docs.microsoft.com/dotnet/api/overview/azure/search/management) | Пакет SDK для .NET | Обновление пакета SDK Azure для пакета SDK управления, целевая версия REST API 2020-08-01. | Общедоступная версия. |
 
 ### <a name="august-2020"></a>Август 2020 г.
 
@@ -31,9 +44,9 @@ ms.locfileid: "88931851"
 
 |Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |---------|------------------|-------------|---------------|
-| [Клиентская библиотека Azure.Search.Documents](/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet) | Azure SDK для .NET | Клиентская библиотека .NET, выпущенная командой разработчиков пакетов SDK для Azure, которая предназначена для обеспечения согласованности с другими клиентскими библиотеками .NET. <br/><br/>Версия 11 нацелена на REST API службы "Поиск" версии 2020-06-30, но еще не поддерживает хранилище знаний, геопространственные типы или [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder?view=azure-dotnet). <br/><br/>Дополнительные сведения см. в статье [Краткое руководство. Создание индекса](search-get-started-dotnet.md) и [Обновление до Azure.Search.Documents (версия 11)](search-dotnet-sdk-migration-version-11.md). | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
-| [Клиентская библиотека Azure.Search.Documents](/python/api/overview/azure/search-documents-readme?view=azure-python)  | SDK Azure для Python| Клиентская библиотека Python, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками Python. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/) из PyPI. |
-| [Клиентская библиотека @azure/search-documents](/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest)  | Пакет Azure SDK для JavaScript | Клиентская библиотека JavaScript, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками JavaScript. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет @azure/search-documents](https://www.npmjs.com/package/@azure/search-documents) из npm. |
+| [Клиентская библиотека Azure.Search.Documents](/dotnet/api/overview/azure/search.documents-readme) | Azure SDK для .NET | Клиентская библиотека .NET, выпущенная командой разработчиков пакетов SDK для Azure, которая предназначена для обеспечения согласованности с другими клиентскими библиотеками .NET. <br/><br/>Версия 11 нацелена на REST API службы "Поиск" версии 2020-06-30, но еще не поддерживает хранилище знаний, геопространственные типы или [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder). <br/><br/>Дополнительные сведения см. в статье [Краткое руководство. Создание индекса](search-get-started-dotnet.md) и [Обновление до Azure.Search.Documents (версия 11)](search-dotnet-sdk-migration-version-11.md). | Общедоступная версия. </br> Установите [пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) из NuGet. |
+| [Клиентская библиотека Azure.Search.Documents](/python/api/overview/azure/search-documents-readme)  | SDK Azure для Python| Клиентская библиотека Python, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками Python. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/) из PyPI. |
+| [Клиентская библиотека @azure/search-documents](/javascript/api/overview/azure/search-documents-readme)  | Пакет Azure SDK для JavaScript | Клиентская библиотека JavaScript, выпущенная командой разработчиков пакетов Azure SDK и предназначенная для обеспечения согласованности с другими клиентскими библиотеками JavaScript. <br/><br/>Версия 11 нацелена на REST API поиска версии 2020-06-30. | Общедоступная версия. </br> Установите [пакет @azure/search-documents](https://www.npmjs.com/package/@azure/search-documents) из npm. |
 
 ### <a name="june-2020"></a>Июнь 2020 г.
 

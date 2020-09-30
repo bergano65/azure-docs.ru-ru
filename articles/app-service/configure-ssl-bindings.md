@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 6c3f4cfe7c896b317edc5897098a1c18c98dc826
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: f7301809b3befc41110a32062d6e478c412fa56e
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962644"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90981126"
 ---
 # <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Защита пользовательского DNS-имени с помощью привязки TLS/SSL в Службе приложений Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "88962644"
 
 В разных браузерах перейдите по адресу `https://<your.custom.domain>`, чтобы проверить, как он обслуживает ваше приложение.
 
-![Переход к приложению Azure на портале](./media/configure-ssl-bindings/app-with-custom-ssl.png)
+:::image type="content" source="./media/configure-ssl-bindings/app-with-custom-ssl.png" alt-text="Снимок экрана: пример перехода к странице личного домена с выделенным URL-адресом contoso.com.":::
 
 Код приложения может проверить протокол с помощью заголовка x-appservice-proto. Заголовок будет иметь значение `http` или `https`. 
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 06/04/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: 1e1ec1dc4d6982194fc10a8701629adba2c8b24c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 31e8533da91fdab86313e21c20c2ebb107eef848
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544319"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660606"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-edx-for-business-saml-integration"></a>Руководство по интеграции единого входа Azure Active Directory с edX for Business SAML Integration
 
@@ -43,6 +43,9 @@ ms.locfileid: "88544319"
 
 * После настройки edX for Business SAML Integration можно применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
+
 ## <a name="adding-edx-for-business-saml-integration-from-the-gallery"></a>Добавление edX for Business SAML Integration из коллекции
 
 Чтобы настроить интеграцию edX for Business SAML Integration с Azure AD, необходимо добавить edX for Business SAML Integration из коллекции в список управляемых приложений SaaS.
@@ -55,7 +58,7 @@ ms.locfileid: "88544319"
 1. Выберите **edX for Business SAML Integration** в области результатов, а затем добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-edx-for-business-saml-integration"></a>Настройка и проверка единого входа Azure AD для edX for Business SAML Integration
+## <a name="configure-and-test-azure-ad-sso-for-edx-for-business-saml-integration"></a>Настройка и проверка единого входа Azure AD для edX for Business SAML Integration
 
 Настройте и проверьте единый вход Azure AD в edX for Business SAML Integration, используя данные тестового пользователя **B. Simon**. Чтобы единый вход работал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в edX for Business SAML Integration.
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 06/04/2020
+ms.date: 08/20/2020
 ms.author: jeedes
-ms.openlocfilehash: dcf67ce9c9e63fdbba8db565113cf3380e4142dd
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3f8a0576ff9ea128aae0d63d4879fe66ed2bf549
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548677"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89660640"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sharevault"></a>Руководство по интеграции единого входа Azure Active Directory с ShareVault
 
@@ -41,7 +41,10 @@ ms.locfileid: "88548677"
 
 * ShareVault поддерживает единый вход, который инициируют **поставщики услуг и удостоверений**.
 * ShareVault поддерживает **JIT**-подготовку пользователей.
-* После настройки ShareVault вы сможете применить функцию управления сеансом, которая защищает от кражи конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки ShareVault вы сможете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-sharevault-from-the-gallery"></a>Добавление ShareVault из коллекции
 
@@ -54,7 +57,7 @@ ms.locfileid: "88548677"
 1. В разделе **Добавление из коллекции** в поле поиска введите **ShareVault**.
 1. В области результатов выберите **ShareVault** и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-sharevault"></a>Настройка и проверка единого входа Azure AD в ShareVault
+## <a name="configure-and-test-azure-ad-sso-for-sharevault"></a>Настройка и проверка единого входа Azure AD для ShareVault
 
 Настройте и проверьте единый вход Azure AD в ShareVault с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в ShareVault.
 

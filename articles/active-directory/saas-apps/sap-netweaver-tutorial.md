@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 08/14/2019
+ms.date: 09/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 38ac4f1bf6a1dd4656b4e7d5783051f3b381940c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d91ada217d54f424803abfeb31dcad237b5fe05c
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88546820"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979929"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-netweaver"></a>Руководство по Интеграция единого входа Azure Active Directory с SAP NetWeaver
 
@@ -25,8 +25,6 @@ ms.locfileid: "88546820"
 * С помощью AAD вы можете контролировать доступ к приложению SAP NetWeaver.
 * Вы можете включить автоматический вход пользователей в SAP NetWeaver с использованием учетных записей AAD.
 * Централизованное управление учетными записями через портал Azure.
-
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,7 +36,10 @@ ms.locfileid: "88546820"
 
 ## <a name="scenario-description"></a>Описание сценария
 
-SAP NetWeaver поддерживает **SAML** (**единый вход, инициированный поставщиком услуг**) и **OAuth**. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. 
+* SAP NetWeaver поддерживает **SAML** (**единый вход, инициированный поставщиком услуг**) и **OAuth**. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. 
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 > [!NOTE]
 > Настройте для приложения режим SAML или OAuth согласно требованиям вашей организации. 
@@ -47,18 +48,18 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 Чтобы настроить интеграцию SAP NetWeaver с Azure AD, необходимо добавить SAP NetWeaver из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **SAP NetWeaver**.
 1. Выберите **SAP NetWeaver** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-sap-netweaver"></a>Настройка и проверка единого входа в Azure AD для SAP NetWeaver
+## <a name="configure-and-test-azure-ad-sso-for-sap-netweaver"></a>Настройка и проверка единого входа Azure AD для SAP NetWeaver
 
 Настройте и проверьте единый вход AAD в SAP NetWeaver с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в SAP NetWeaver.
 
-Чтобы настроить и проверить единый вход Azure AD в SAP NetWeaver, выполните действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в SAP NetWeaver, выполните действия из следующих стандартных блоков.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя B.Simon.
@@ -99,7 +100,7 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
     c. Дважды щелкните соответствующий клиент, чтобы включить сеанс безопасности HTTP.
 
-    ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_profileparameter.png)
+    ![Сеанс безопасности HTTP ](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_profileparameter.png)
 
     d. Активируйте ниже службы SICF:
     ```
@@ -110,22 +111,22 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
     ```
 1. Перейдите к коду транзакции **SAML2** в бизнес-клиенте системы SAP [T01/122]. В браузере откроется пользовательский интерфейс. В этом примере предполагается, что 122 является бизнес-клиентом SAP.
 
-    ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_sapbusinessclient.png)
+    ![Код транзакции](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_sapbusinessclient.png)
 
 1. Укажите имя пользователя и пароль для входа в пользовательский интерфейс, затем нажмите кнопку **Изменить**.
 
-    ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_userpwd.png)
+    ![Имя пользователя и пароль](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_userpwd.png)
 
 1. Замените **Имя поставщика** T01122, указав `http://T01122`, и щелкните **Сохранить**.
 
     > [!NOTE]
     > Имя поставщика по умолчанию указывается в формате `<sid><client>`, но Azure AD ожидает имя в формате `<protocol>://<name>`, рекомендуя использовать имя поставщика в формате `https://<sid><client>`, чтобы разрешить многим обработчикам SAP NetWeaver ABAP выполнять настройку в Azure AD.
 
-    ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_providername.png)
+    ![Несколько обработчиков SAP NetWeaver ABAP](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_providername.png)
 
 1. **Создание метаданных поставщика служб.** После настройки **локального поставщика** и **надежных поставщиков** в пользовательском интерфейсе SAML 2.0 следующим шагом является создание файла метаданных поставщика служб (который будет содержать все параметры, контексты проверки подлинности и другие конфигурации в SAP). После создания этого файла необходимо отправить его в Azure AD.
 
-    ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_generatesp.png)
+    ![Создание метаданных поставщика услуг](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_generatesp.png)
 
     а. Перейдите на вкладку **Локальный поставщик**.
 
@@ -135,7 +136,7 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **SAP NetWeaver** найдите раздел **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **SAP NetWeaver** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -160,13 +161,13 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 1. Приложение SAP NetWeaver ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![Изображение](common/edit-attribute.png)
+    ![Изменение атрибутов](common/edit-attribute.png)
 
 1. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
     а. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Изображение](./media/sapnetweaver-tutorial/nameidattribute.png)
+    ![Значок редактирования](./media/sapnetweaver-tutorial/nameidattribute.png)
 
     ![Изображение](./media/sapnetweaver-tutorial/nameidattribute1.png)
 
@@ -203,13 +204,7 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **SAP NetWeaver**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
@@ -220,81 +215,81 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 2. Чтобы настроить конечные точки для доверенного поставщика удостоверений (Azure AD) перейдите на вкладку **Доверенные поставщики**.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_samlconfig.png)
+    ![Настройка надежных поставщиков с единым входом](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_samlconfig.png)
 
 3. Нажмите **Добавить** и выберите **Отправить файл метаданных** в контекстном меню.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_uploadmetadata.png)
+    ![Настройка единого входа 2](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_uploadmetadata.png)
 
 4. Отправьте файл метаданных, который вы скачали на портале Azure.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_metadatafile.png)
+    ![Настройка единого входа 3](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_metadatafile.png)
 
 5. На следующем экране введите псевдоним, например aadsts, и нажмите **Далее** для продолжения.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_aliasname.png)
+    ![Настройка единого входа 4](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_aliasname.png)
 
 6. **Алгоритм хэш-кода** должен быть **SHA-256**, он не требует внесения изменений. Затем нажмите **Далее**.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_identityprovider.png)
+    ![Настройка единого входа 5](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_identityprovider.png)
 
 7. В разделе **Конечные точки единого входа** укажите **HTTP POST** и нажмите **Далее** для продолжения.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_httpredirect.png)
+    ![Настройка единого входа 6](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_httpredirect.png)
 
 8. В разделе **Конечные точки единого выхода** выберите **HTTPRedirect** и нажмите **Далее** для продолжения.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_httpredirect1.png)
+    ![Настройка единого входа 7](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_httpredirect1.png)
 
 9. В разделе **Конечные точки артефакта** нажмите **Далее** для продолжения.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_artifactendpoint.png)
+    ![Настройка единого входа 8](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_artifactendpoint.png)
 
 10. В разделе **Требования к проверке подлинности** нажмите **Готово**.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_authentication.png)
+    ![Настройка единого входа 9](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_authentication.png)
 
 11. Перейдите на вкладку **Надежный поставщик** > **Федерация удостоверений** (из нижней части экрана). Нажмите кнопку **Изменить**.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_trustedprovider.png)
+    ![Настройка единого входа 10](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_trustedprovider.png)
 
 12. Нажмите **Добавить** на вкладке **Федерация удостоверений** (нижнее окно).
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_addidentityprovider.png)
+    ![Настройка единого входа 11](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_addidentityprovider.png)
 
 13. Во всплывающем окне выберите **Не указано** из списка **Поддерживаемые форматы NameID** и нажмите "ОК".
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameid.png)
+    ![Настройка единого входа 12](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameid.png)
 
 14. Обратите внимание, что значения **user ID Source** (источник идентификатора пользователя) и **user ID mapping mode** (режим сопоставления идентификатора пользователя) определяют связь между пользователем SAP и утверждением Azure AD.  
 
-    #### <a name="scenario-sap-user-to-azure-ad-user-mapping"></a>Сценарий: Сопоставление пользователя SAP и пользователя Azure AD.
+    #### <a name="scenario-sap-user-to-azure-ad-user-mapping"></a>Сценарий: сопоставление пользователя SAP и пользователя Azure AD.
 
-    а. Снимок экрана со сведениями о NameID в SAP.
+    a. Снимок экрана со сведениями о NameID в SAP.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/nameiddetails.png)
+    ![Настройка единого входа 13](./media/sapnetweaver-tutorial/nameiddetails.png)
 
     b. Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad1.png)
+    ![Настройка единого входа 14](./media/sapnetweaver-tutorial/claimsaad1.png)
 
     #### <a name="scenario-select-sap-user-id-based-on-configured-email-address-in-su01-in-this-case-email-id-should-be-configured-in-su01-for-each-user-who-requires-sso"></a>Сценарий: Выбор идентификатора пользователя SAP с учетом указанного адреса электронной почты в SU01. В этом случае идентификатор электронной почты должен быть настроен в SU01 для каждого пользователя, которому требуется единый вход.
 
-    а.  Снимок экрана со сведениями о NameID в SAP.
+    a.  Снимок экрана со сведениями о NameID в SAP.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameiddetails1.png)
+    ![Настройка единого входа 15](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameiddetails1.png)
 
     b. Снимок экрана, на котором упоминаются требуемые утверждения из Azure AD.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad2.png)
+    ![Настройка единого входа 16](./media/sapnetweaver-tutorial/claimsaad2.png)
 
 15. Последовательно выберите **Сохранить** и **Включить** для включения поставщика удостоверений.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/configuration1.png)
+    ![Настройка единого входа 17](./media/sapnetweaver-tutorial/configuration1.png)
 
 16. Нажмите **ОК** при появлении запроса.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/configuration2.png)
+    ![Настройка единого входа 18](./media/sapnetweaver-tutorial/configuration2.png)
 
     ### <a name="create-sap-netweaver-test-user"></a>Создание тестового пользователя SAP NetWeaver
 
@@ -315,7 +310,7 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 2. Указанный выше URL-адрес должен переадресовать вас на показанный ниже экран. Если вы можете открыть показанную ниже страницу, настройка единого входа Azure AD выполнена успешно.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/testingsso.png)
+    ![Проверка единого входа](./media/sapnetweaver-tutorial/testingsso.png)
 
 3. Если отобразится запрос на ввод имени пользователя и пароля, диагностируйте проблему путем включения трассировки, используя приведенный ниже URL-адрес.
 
@@ -327,17 +322,17 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 2. Перейдите к SPRO и найдите раздел **Activate and Maintain services** (Активация и обслуживание служб).
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth01.png)
+    ![Активация и обслуживание служб](./media/sapnetweaver-tutorial/oauth01.png)
 
 3. В этом примере мы хотим подключить службу OData: `DAAG_MNGGRP` к Azure AD SSO с использованием OAuth. Примените поиск имени технической службы для службы `DAAG_MNGGRP` и активируйте ее, если она еще не активна (состояние `green` на вкладке узлов ICF). Убедитесь в правильности системного псевдонима (подключенной серверной системы, где фактически работает служба).
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth02.png)
+    ![Служба OData](./media/sapnetweaver-tutorial/oauth02.png)
 
     * Затем нажмите кнопку **OAuth** на верхней панели кнопок и присвойте значение `scope` (сохраните предложенное по умолчанию имя).
 
 4. В нашем примере используется область `DAAG_MNGGRP_001`, которая автоматически создается из имени службы добавлением некоторого числа. Отчет `/IWFND/R_OAUTH_SCOPES` можно использовать для изменения имени области или создания области вручную.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth03.png)
+    ![Настройка OAuth](./media/sapnetweaver-tutorial/oauth03.png)
 
     > [!NOTE]
     > Сообщение `soft state status is not supported` можно спокойно игнорировать. Дополнительные сведения см. [здесь](https://help.sap.com/doc/saphelp_nw74/7.4.16/1e/c60c33be784846aad62716b4a1df39/content.htm?no_cache=true).
@@ -359,32 +354,26 @@ SAP NetWeaver поддерживает **SAML** (**единый вход, ини
 
 2. Перейдите к коду T-Code: **SOAUTH2** и предоставьте описание, а затем щелкните **Далее**.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth04.png)
+    ![SOAUTH2](./media/sapnetweaver-tutorial/oauth04.png)
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth05.png)
+    ![Идентификатор клиента OAuth 2.0](./media/sapnetweaver-tutorial/oauth05.png)
 
 3. Выберите уже добавленный элемент **SAML2 IdP – Azure AD** из раскрывающегося списка и сохраните изменения.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth06.png)
+    ![SAML2 IdP — Azure AD 1](./media/sapnetweaver-tutorial/oauth06.png)
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth07.png)
+    ![SAML2 IdP — Azure AD 2](./media/sapnetweaver-tutorial/oauth07.png)
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth08.png)
+    ![SAML2 IdP — Azure AD 3](./media/sapnetweaver-tutorial/oauth08.png)
 
 4. Щелкните **Добавить** в разделе назначения области, чтобы добавить созданную ранее область `DAAG_MNGGRP_001`.
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth09.png)
+    ![Область](./media/sapnetweaver-tutorial/oauth09.png)
 
-    ![Настройка единого входа](./media/sapnetweaver-tutorial/oauth10.png)
+    ![Область назначения](./media/sapnetweaver-tutorial/oauth10.png)
 
 5. Щелкните **Готово**.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="next-steps"></a>Next Steps
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
-- [Попробуйте SAP NetWeaver с Azure AD](https://aad.portal.azure.com/)
+После настройки Azure AD SAP NetWeaver вы можете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).

@@ -4,12 +4,12 @@ description: Хранение неструктурированных данны�
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: a242f1ffc0a7738ce7cdf33aeeef214fb4f63e61
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 2828bf14b6965e87ef9547020e870333c4e839af
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88210880"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987977"
 ---
 # <a name="store-unstructured-data-using-azure-functions-and-azure-cosmos-db"></a>Хранение неструктурированных данных с помощью Azure Cosmos DB и службы "Функции Azure"
 
@@ -42,11 +42,11 @@ ms.locfileid: "88210880"
 
 1. Последовательно выберите **Интеграция** и **Добавить вывод**.
 
-     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-add-output-binding.png" alt-text="Добавление выходной привязки к Azure Cosmos DB." border="true":::
+     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-add-output-binding.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
 1. Укажите приведенные в таблице значение в области **Добавить вывод**.
 
-     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-configure-cosmosdb-binding.png" alt-text="Настройка выходной привязки к Azure Cosmos B." border="true":::
+     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-configure-cosmosdb-binding.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
     | Параметр      | Рекомендуемое значение  | Описание                                |
     | ------------ | ---------------- | ------------------------------------------ |
@@ -138,23 +138,23 @@ module.exports = async function (context, req) {
     + `task`
     + `duedate`
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function.png" alt-text="Тестирование функции." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
 
 1. Щелкните **Выполнить** и убедитесь, что возвращается состояние 200.
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function-output.png" alt-text="Тестирование функции." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function-output.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
 
 1. На портале Azure найдите и выберите **Azure Cosmos DB**.
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-search-cosmos-db.png" alt-text="Поиск службы Cosmos DB." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-search-cosmos-db.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
 1. Выберите нужную учетную запись Azure Cosmos DB, а затем щелкните **Обозреватель данных**.
 
 1. Разверните узлы **TaskCollection**, выберите новый документ и убедитесь, что этот документ содержит ваши значения для строки запроса, а также некоторые дополнительные метаданные.
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-data-explorer-check-document.png" alt-text="Проверка строковых значений в документе." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-data-explorer-check-document.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
 Вы успешно добавили привязку к триггеру HTTP, которая сохраняет неструктурированные данные в Azure Cosmos DB.
 

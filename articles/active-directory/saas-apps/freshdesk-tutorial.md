@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/16/2020
+ms.date: 08/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 71c1bea58f17b457f417a5b050640d04d44019d5
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0bbfdc2463795770b52f5008fc633fe9e95244a0
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551070"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90056580"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Руководство по интеграции Azure Active Directory с FreshDesk
 
@@ -55,7 +55,7 @@ ms.locfileid: "88551070"
 1. В разделе **Добавление из коллекции** в поле поиска введите **FreshDesk**.
 1. Выберите **FreshDesk** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-freshdesk"></a>Настройка и проверка единого входа Azure AD для FreshDesk
+## <a name="configure-and-test-azure-ad-sso-for-freshdesk"></a>Настройка и проверка единого входа Azure AD для FreshDesk
 
 Настройте и проверьте единый вход с Azure AD в FreshDesk, используя тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем AAD и соответствующим пользователем в FreshDesk.
 
@@ -81,9 +81,11 @@ ms.locfileid: "88551070"
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://<tenant-name>.freshdesk.com` или любом другом, поддерживаемом Freshdesk.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в формате `https://<tenant-name>.freshdesk.com` или любом другом, поддерживаемом Freshdesk.
-
+     
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenant-name>.freshdesk.com/login/saml`.
+    
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь к [группе поддержки клиентов FreshDesk](https://freshdesk.com/helpdesk-software?utm_source=Google-AdWords&utm_medium=Search-IND-Brand&utm_campaign=Search-IND-Brand&utm_term=freshdesk&device=c&gclid=COSH2_LH7NICFVUDvAodBPgBZg). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, идентификатора и URL-адреса ответа. Для получения этих значений обратитесь к [группе поддержки клиентов FreshDesk](https://freshdesk.com/helpdesk-software?utm_source=Google-AdWords&utm_medium=Search-IND-Brand&utm_campaign=Search-IND-Brand&utm_term=freshdesk&device=c&gclid=COSH2_LH7NICFVUDvAodBPgBZg). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение FreshDesk ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **уникальный идентификатор пользователя** сопоставляется с **user.userprincipalname**. Но для FreshDesk требуется сопоставить это утверждение с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок "Изменить".
 

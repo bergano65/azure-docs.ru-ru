@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/20/2019
-ms.openlocfilehash: d9d2f29ffc34c203e5f3b3ebf094e73fb9cdfb75
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: c802fafa92ace2260002f7156b0df9841af8338c
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132404"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90029585"
 ---
 # <a name="tutorial-create-automated-approval-based-workflows-by-using-azure-logic-apps"></a>Руководство по созданию автоматических рабочих процессов на основе утверждений с помощью Azure Logic Apps
 
@@ -40,7 +40,7 @@ ms.locfileid: "87132404"
 
 * Учетная запись MailChimp, которая содержит список с именем test-members-ML, в который приложение логики будет добавлять адреса электронной почты утвержденных участников. Если у вас еще нет учетной записи, [зарегистрируйте бесплатную учетную запись](https://login.mailchimp.com/signup/) и узнайте, [как создать список MailChimp](https://us17.admin.mailchimp.com/lists/#).
 
-* Учетная запись электронной почты в службе Office 365 Outlook или Outlook.com, которая поддерживает рабочие процессы утверждения. В этой статье используется Office 365 Outlook. Если используется другая учетная запись электронной почты, общие шаги остаются неизменными, однако интерфейс может выглядеть несколько иначе.
+* Учетная запись электронной почты в службе Outlook для Microsoft 365 или Outlook.com, которая поддерживает рабочие процессы утверждения. В этой статье используется Office 365 Outlook. Если используется другая учетная запись электронной почты, общие шаги остаются неизменными, однако интерфейс может выглядеть несколько иначе.
 
 ## <a name="create-your-logic-app"></a>Создание приложения логики
 

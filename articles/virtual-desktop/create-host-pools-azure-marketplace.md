@@ -3,15 +3,15 @@ title: Пул узлов Виртуального рабочего стола Wi
 description: Сведения о том, как создать пул узлов Виртуального рабочего стола Windows с помощью портала Azure.
 author: Heidilohr
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b6d54c226dd3a156ff6164f87fc755aac3dd040c
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: da944f74fd6214e1b69a3ee7d230e72accd4e2e4
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89322591"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90084368"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Руководство по Создание пула узлов на портале Azure
 
@@ -188,6 +188,13 @@ ms.locfileid: "89322591"
      - ссылку на скачивание шаблона Resource Manager на основе заданной конфигурации.
 
 Теперь все готово!
+
+## <a name="run-the-azure-resource-manager-template-to-provision-a-new-host-pool"></a>Запуск шаблона Azure Resource Manager для подготовки нового пула узлов
+
+Если вы предпочитаете использовать автоматизированный процесс, то лучше [скачайте шаблон Azure Resource Manager](https://github.com/Azure/RDS-Templates/tree/master/ARM-wvd-templates), чтобы подготовить новый пул узлов.
+
+>[!NOTE]
+>Если вы используете автоматизированный процесс для создания среды, вам потребуется последняя версия файла конфигурации JSON. JSON-файл можно найти [здесь](https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts?restype=container&comp=list).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

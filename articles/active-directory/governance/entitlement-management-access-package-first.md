@@ -16,12 +16,12 @@ ms.date: 07/22/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b79a631ba82d0b4a420ef27684e5a62571ddf85a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e58a98f8503c271eec113298a7e7a0cab5e0003e
+ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034582"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90707498"
 ---
 # <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Руководство по созданию пакета для доступа в управлении правами Azure AD
 
@@ -41,6 +41,8 @@ ms.locfileid: "87034582"
 Пошаговую демонстрацию процесса развертывания функции управления правами Azure Active Directory и создания пакета для доступа см. в следующем видео.
 
 >[!VIDEO https://www.youtube.com/embed/zaaKvaaYwI4]
+
+Вы также можете создать пакет для доступа программным образом с помощью Microsoft Graph. Учебник, в котором описывается, как создать пакет для доступа программным способом, приведен в статье [Создание пакета для доступа с помощью API-интерфейсов Microsoft Graph](https://docs.microsoft.com/graph/tutorial-access-package-api?view=graph-rest-beta).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -106,7 +108,7 @@ ms.locfileid: "87034582"
 
 9. На панели "Выбор групп" найдите и выберите группу **Маркетинговые ресурсы**, созданную ранее.
 
-    По умолчанию вы увидите группы, входящие и не входящие в каталог **Общий**. Если выбрать группу, не входящую в каталог **Общий**, она добавится в каталог **Общий**.
+     По умолчанию вы увидите группы, входящие в каталог "Общий". Если выбрать группу, не входящую в каталог "Общий", которую можно увидеть, установив флажок **Показать все**, она добавится в этот каталог.
 
     ![Создание пакета для доступа на вкладке "Роли ресурсов"](./media/entitlement-management-access-package-first/resource-roles-select-groups.png)
 

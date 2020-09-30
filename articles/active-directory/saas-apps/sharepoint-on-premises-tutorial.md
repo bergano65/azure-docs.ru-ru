@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/15/2020
-ms.author: miguego
-ms.openlocfilehash: 996668751ee93d14b18e399035fd345f32c58fbe
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.date: 09/10/2020
+ms.author: jeedes
+ms.openlocfilehash: a3a5834cd63351b9bf61dc97c8d6e14d430b6284
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88552179"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90979707"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-sharepoint-on-premises"></a>Руководство по интеграции единого входа Azure Active Directory с локальной версией SharePoint
 
@@ -25,8 +25,6 @@ ms.locfileid: "88552179"
 * Управление доступом пользователей к локальной версии SharePoint в Azure AD.
 * Включение автоматического входа пользователей в локальную версию SharePoint (единый вход) с использованием учетных записей Azure AD.
 * Управление учетными записями через портал Azure.
-
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,7 +43,7 @@ ms.locfileid: "88552179"
 
 Чтобы добавить локальную версию SharePoint из коллекции, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com) в крайней слева области щелкните **Azure Active Directory**.
+1. На портале Azure в крайней слева области щелкните **Azure Active Directory**.
 
    > [!NOTE]
    > Если элемент недоступен, его можно также открыть по ссылке **Все службы** в верхней части крайней слева панели. В следующем обзоре ссылка **Azure Active Directory** будет доступна в разделе **Удостоверение**. Можно также найти ее, используя текстовое поле фильтра.
@@ -72,7 +70,7 @@ ms.locfileid: "88552179"
 
 Чтобы настроить и проверить единый вход Azure AD в локальной среде SharePoint, выполните такие стандартные блоки:
 
-- [Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on) необходима, чтобы пользователи могли использовать эту функцию.
+- [Настройка единого входа Azure AD](#configure-azure-ad-sso) необходима, чтобы пользователи могли использовать эту функцию.
 - [Настройка локальной среды SharePoint](#configure-sharepoint-on-premises) — необходима, чтобы настроить параметры единого входа на стороне приложения.
 - [Создание тестового пользователя Azure AD на портале Azure](#create-an-azure-ad-test-user-in-the-azure-portal) — необходимо, чтобы создать в Azure AD нового пользователя для единого входа.
 - [Создание группы безопасности Azure AD на портале Azure](#create-an-azure-ad-security-group-in-the-azure-portal) — требуется, чтобы создать группу безопасности в Azure AD и включить для нее единый вход.
@@ -81,13 +79,13 @@ ms.locfileid: "88552179"
 - [Предоставление учетной записи гостя доступа к локальной среде SharePoint на портале Azure](#grant-access-to-a-guest-account-to-sharepoint-on-premises-in-the-azure-portal) — необходимо, чтобы предоставить учетной записи гостя Azure AD разрешения в локальной среде SharePoint.
 - [Настройка доверенного поставщика удостоверений для нескольких веб-приложений](#configure-the-trusted-identity-provider-for-multiple-web-applications) — необходима для настройки одного доверенного поставщика удостоверений для нескольких веб-приложений.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
+### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure.
 
 Чтобы настроить единый вход Azure AD в локальной среде SharePoint, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com/) выберите **Azure Active Directory** > **Корпоративные приложения**. Выберите имя ранее созданного корпоративного приложения и щелкните **Единый вход**.
+1. На портале Azure выберите **Azure Active Directory** > **Корпоративные приложения**. Выберите имя ранее созданного корпоративного приложения и щелкните **Единый вход**.
 
 1. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
  
@@ -205,7 +203,7 @@ ms.locfileid: "88552179"
   > [!NOTE]
   > Вы можете добавить группы и без AzureCP, вручную добавив идентификатор группы Azure AD, но такой метод неудобен и ненадежен. Это выглядит так:
   > 
-  >![Добавление группы Azure AD в группу SharePoint](./media/sharepoint-on-premises-tutorial/adding-group-by-id.png)
+  >![Добавление группы Azure AD в группу SharePoint по идентификатору](./media/sharepoint-on-premises-tutorial/adding-group-by-id.png)
   
 ### <a name="grant-permissions-to-an-azure-ad-group-in-sharepoint-on-premises"></a>Предоставление разрешений группе Azure AD в локальной среде SharePoint
 
@@ -244,7 +242,7 @@ ms.locfileid: "88552179"
 
 1. Замените значение свойства **Атрибут источника** на **user.localuserprincipalname** и щелкните **Сохранить**.
 
-    ![Утверждения и атрибуты пользователя, исходное состояние](./media/sharepoint-on-premises-tutorial/manage-claim.png)
+    ![Утверждения и атрибуты пользователя, исходный атрибут](./media/sharepoint-on-premises-tutorial/manage-claim.png)
 
 1. С помощью ленты вернитесь к разделу **Вход на основе SAML**. Теперь раздел **Утверждения и атрибуты пользователя** выглядит следующим образом: 
 
@@ -287,9 +285,6 @@ ms.locfileid: "88552179"
 
 Возможно, вам понадобится предоставить внутренним пользователям доступ к локальному экземпляру SharePoint в других сценариях. В этом же сценарии необходимо развернуть Microsoft Azure Active Directory Connect, чтобы обеспечить синхронизацию локальных пользователей с Azure AD. Данная настройка обсуждается в другой статье.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="next-steps"></a>Next Steps
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-- [Что собой представляет гибридная идентификация с использованием Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
+После настройки локальной версии SharePoint вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).

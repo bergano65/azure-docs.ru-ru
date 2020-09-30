@@ -1,6 +1,6 @@
 ---
 title: Учебник. Пилотная подготовка облака Azure AD Connect для существующего синхронизированного леса AD
-description: Руководство.
+description: Узнайте о пилотной подготовке облака для тестового леса Active Directory, который уже синхронизирован с использованием службы синхронизации Azure Active Directory (Azure AD) Connect.
 services: active-directory
 author: billmath
 manager: daveba
@@ -11,12 +11,12 @@ ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd9eff90f144909b9746e85a9c42aae2fdf02ed6
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 43edb9ba6cdd73ce195a8b4eb60071b6831b7223
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146812"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526941"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
