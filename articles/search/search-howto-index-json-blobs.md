@@ -45,7 +45,7 @@ ms.locfileid: "91403642"
 
 На странице Обзор службы поиска можно [запустить мастер](search-import-data-portal.md) с панели команд.
 
-   :::image type="content" source="media/search-import-data-portal/import-data-cmd2.png" alt-text="Команда "Импорт данных" на портале" border="false":::
+   :::image type="content" source="media/search-import-data-portal/import-data-cmd2.png" alt-text="Команда &quot;Импорт данных&quot; на портале" border="false":::
 
 ### <a name="3---set-the-data-source"></a>3. Настройка источника данных
 
@@ -63,7 +63,7 @@ ms.locfileid: "91403642"
    
 + Для параметра **Контейнер хранилища** укажите свою учетную запись хранения и контейнер или строку подключения, которая разрешается к контейнеру. Строки подключения можно получить на странице портала службы BLOB-объектов.
 
-   :::image type="content" source="media/search-howto-index-json/import-wizard-json-data-source.png" alt-text="Определение источника данных BLOB-объектов" border="false":::
+   :::image type="content" source="media/search-howto-index-json/import-wizard-json-data-source.png" alt-text="Команда &quot;Импорт данных&quot; на портале" border="false":::
 
 ### <a name="4---skip-the-enrich-content-page-in-the-wizard"></a>4. Пропустите страницу "обогащение содержимого" в мастере
 
@@ -81,7 +81,7 @@ ms.locfileid: "91403642"
 
 Просмотрите выбранные параметры. После запуска мастера создаются структуры физических данных и вы не сможете изменить эти поля без удаления и повторного создания всех объектов.
 
-   :::image type="content" source="media/search-howto-index-json/import-wizard-json-index.png" alt-text="Определение индексов больших двоичных объектов" border="false":::
+   :::image type="content" source="media/search-howto-index-json/import-wizard-json-index.png" alt-text="Команда &quot;Импорт данных&quot; на портале" border="false":::
 
 ### <a name="6---create-indexer"></a>6. Создание индексатора
 
@@ -89,7 +89,7 @@ ms.locfileid: "91403642"
 
 Если вы не знакомы с индексаторами, *индексатором* является ресурс в когнитивный Поиск Azure, который обходит внешний источник данных для поиска содержимого. Выходные данные мастера **импорта данных** — это индексатор, который обходит источник данных JSON, извлекает содержимое, доступное для поиска, и импортирует его в индекс на когнитивный Поиск Azure.
 
-   :::image type="content" source="media/search-howto-index-json/import-wizard-json-indexer.png" alt-text="Определение индексатора больших двоичных объектов" border="false":::
+   :::image type="content" source="media/search-howto-index-json/import-wizard-json-indexer.png" alt-text="Команда &quot;Импорт данных&quot; на портале" border="false":::
 
 Нажмите кнопку **OK** для запуска мастера и создания всех объектов. Индексирование начинается немедленно.
 

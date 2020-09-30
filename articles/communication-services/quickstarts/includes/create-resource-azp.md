@@ -19,15 +19,15 @@ ms.locfileid: "90945937"
 
 Чтобы создать ресурс Служб коммуникации Azure, сначала войдите на [портал Azure](https://portal.azure.com). Выберите **+ Создать ресурс** в левом верхнем углу страницы. 
 
-:::image type="content" source="../media/create-a-communication-resource/create-resource-plus-sign.png" alt-text="Снимок экрана страницы портала Azure, на которой выделена кнопка "Создать ресурс"":::.
+:::image type="content" source="../media/create-a-communication-resource/create-resource-plus-sign.png" alt-text="Снимок экрана страницы портала Azure, на которой выделена кнопка &quot;Создать ресурс&quot;":::.
 
 Введите **коммуникации** в поле **Поиск в Marketplace** или в строке поиска в верхней части портала.
 
-:::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Снимок экрана, на котором показан поиск Служб коммуникации в строке поиска.":::
+:::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Снимок экрана страницы портала Azure, на которой выделена кнопка &quot;Создать ресурс&quot;":::
 
 В результатах выберите **Службы коммуникации**, а затем нажмите **Добавить**.
 
-:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Снимок экрана, на котором показана панель Azure с выделенной кнопкой "Добавить".":::
+:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Снимок экрана страницы портала Azure, на которой выделена кнопка &quot;Создать ресурс&quot;":::
 
 Теперь можно настроить ресурс Служб коммуникации. На первой странице процесса создания вам будет предложено указать следующее:
 

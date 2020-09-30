@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 08/06/2020
+ms.date: 09/29/2020
 ms.author: duau
-ms.openlocfilehash: 52aba71ba289a1b5479a6a9eaef7e07418b563fd
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: c4021fbf87cc7cff8dde8e759423eb52c705cf97
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90986377"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91568341"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "90986377"
 1. Получите доступ к параметрам подписки, как описано в разделе [поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md).
 1. В подписке для **поставщиков ресурсов**убедитесь, что поставщик **Microsoft. Network** отображает **зарегистрированное** состояние. Если поставщик ресурсов Microsoft. Network отсутствует в списке зарегистрированных поставщиков, добавьте его.
 
-## <a name="1-create-expressroute-direct"></a><a name="create-erdir"></a>1. Создание прямого канала ExpressRoute
+## <a name="create-expressroute-direct"></a><a name="create-erdir"></a>Создание прямого канала ExpressRoute
 
 1. В меню [портал Azure](https://portal.azure.com) или на **домашней** странице выберите **создать ресурс**.
 
@@ -38,7 +38,7 @@ ms.locfileid: "90986377"
 
 1. Начните с заполнения полей на странице **Основные сведения** .
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Страница "Основные"":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Страница &quot;Основные&quot;":::
 
     * **Подписка**. Подписка Azure, которую вы хотите использовать для создания нового канала ExpressRoute Direct. Ресурс ExpressRoute Direct и каналы ExpressRoute должны находиться в одной подписке.
     * **Группа ресурсов**. Группа ресурсов Azure, в которой будет создан новый прямой ресурс ExpressRoute. Если у вас нет группы ресурсов, можно создать новую.
@@ -47,7 +47,7 @@ ms.locfileid: "90986377"
 
 1. Затем заполните поля на странице **Конфигурация** .
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Страница "Конфигурация"":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Страница &quot;Основные&quot;":::
 
     * **Расположение пиринга**. расположение пиринга, в котором будет подключаться к ресурсу непосредственных подключений ExpressRoute. Дополнительные сведения о расположении пиринга см. в статье [расположения ExpressRoute](expressroute-locations-providers.md).
    * **Пропускная**способность. пропускная способность для пары портов, которую требуется зарезервировать. ExpressRoute Direct поддерживает параметры пропускной способности 10 ГБ и 100 ГБ. Если требуемая пропускная способность недоступна в указанном расположении пиринга, [откройте запрос в службу поддержки в портал Azure](https://aka.ms/azsupt).
@@ -61,21 +61,25 @@ ms.locfileid: "90986377"
 
 1. Укажите Теги ресурсов, а затем выберите **проверить и создать** , чтобы проверить параметры прямого ресурса ExpressRoute.
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/validate.png" alt-text="Просмотр и создание":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/validate.png" alt-text="Страница &quot;Основные&quot;":::
 
 1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 
-## <a name="2-change-admin-state-of-links"></a><a name="state"></a>2. изменение состояния администрирования ссылок
+## <a name="generate-the-letter-of-authorization-loa"></a><a name="authorization"></a>Создание письма авторизации (определения гарантии)
+
+В настоящее время создание письма авторизации на портале недоступно. Чтобы получить письмо авторизации, используйте **[Azure PowerShell](expressroute-howto-erdirect.md#authorization)** или **[Azure CLI](expressroute-howto-expressroute-direct-cli.md#authorization)** .
+
+## <a name="change-admin-state-of-links"></a><a name="state"></a>Изменение параметра AdminState для ссылок
 
 Этот процесс следует использовать для проведения тестирования уровня 1, что в свою очередь обеспечит правильное исправление перекрестных подключений в каждом маршрутизаторе для основного и дополнительного подключения.
 
 1. На странице **Обзор** прямого ресурса ExpressRoute в разделе **ссылки** выберите **link1**.
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/link.png" alt-text="Link 1" lightbox="./media/how-to-expressroute-direct-portal/link-expand.png":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/link.png" alt-text="Страница &quot;Основные&quot;" lightbox="./media/how-to-expressroute-direct-portal/link-expand.png":::
 
 1. Переключите параметр **состояния администратора** в значение **включено**, а затем нажмите кнопку **сохранить**.
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/state.png" alt-text="Состояние администратора":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/state.png" alt-text="Страница &quot;Основные&quot;":::
 
     >[!IMPORTANT]
     >Выставление счетов начнется, когда в любой из связей будет включено состояние администратора.
@@ -83,7 +87,7 @@ ms.locfileid: "90986377"
 
 1. Повторите тот же процесс для **Link2**.
 
-## <a name="3-create-a-circuit"></a><a name="circuit"></a>3. Создание канала
+## <a name="create-a-circuit"></a><a name="circuit"></a>Создание цепи
 
 По умолчанию можно создать до 10 каналов в подписке, в которой есть ресурс ExpressRoute Direct. Это число можно увеличить по поддержке. Вы несете ответственность за отслеживание как подготовленной, так и используемой пропускной способности. Подготовленная пропускная способность — это сумма пропускной способности всех цепей в прямом ресурсе ExpressRoute. Используемая пропускная способность описывает фактическое потребление базовых физических интерфейсов.
 
@@ -97,15 +101,13 @@ ms.locfileid: "90986377"
 
 1. В разделе **Параметры** прямого подключения к ExpressRoute выберите **каналы**, а затем щелкните **+ добавить**. 
 
-    :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="На снимке экрана показаны параметры ExpressRoute с выбранными каналами и добавлены выделенными." lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
+    :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="Страница &quot;Основные&quot;" lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
 
 1. Настройте параметры на странице **Конфигурация** .
 
-   :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration2.png" alt-text="Страница "Конфигурация"":::
+   :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration2.png" alt-text="Страница &quot;Основные&quot;" **проверить и создать** ".
 
-1. Чтобы проверить значения перед созданием ресурса, укажите все теги ресурсов, нажмите кнопку " **проверить и создать** ".
-
-   :::image type="content" source="./media/how-to-expressroute-direct-portal/review.png" alt-text="Просмотр и создание":::
+   :::image type="content" source="./media/how-to-expressroute-direct-portal/review.png" alt-text="Страница &quot;Основные&quot;":::
 
 1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 

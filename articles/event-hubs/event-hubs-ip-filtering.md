@@ -39,7 +39,7 @@ ms.locfileid: "91318540"
     > [!NOTE]
     > По умолчанию выбран параметр **Выбранные сети** , как показано на следующем рисунке. Если не указать правило брандмауэра IP-адресов или добавить виртуальную сеть на этой странице, доступ к пространству имен можно получить через **общедоступный Интернет** (с помощью ключа доступа).  
 
-    :::image type="content" source="./media/event-hubs-firewall/selected-networks.png" alt-text="Вкладка "сети" — параметр "выбранные сети"" lightbox="./media/event-hubs-firewall/selected-networks.png":::    
+    :::image type="content" source="./media/event-hubs-firewall/selected-networks.png" alt-text="Вкладка &quot;сети&quot; — параметр &quot;выбранные сети&quot;" lightbox="./media/event-hubs-firewall/selected-networks.png":::    
 
     Если выбран параметр **все сети** , концентратор событий принимает подключения с любого IP-адреса (с помощью ключа доступа). Такое значение параметра равноценно правилу, которое принимает диапазон IP-адресов 0.0.0.0/0. 
 

@@ -74,14 +74,11 @@ ms.locfileid: "91398312"
 
 1. Создайте правило безопасности для исходящего трафика HTTPS для NSG, как показано на следующем снимке экрана. В этом примере используется **тег целевой службы**: _Storage. EastUS_ и **диапазоны портов назначения**: _443_.
 
-     :::image type="content" source="./media/azure-to-azure-about-networking/storage-tag.png" alt-text="На снимке экрана показана панель Добавление правила безопасности для исходящего трафика для правила безопасности для точки подключения "Восток" (точка).":::
+     :::image type="content" source="./media/azure-to-azure-about-networking/storage-tag.png" alt-text="com-error":::
 
 1. Создайте правило безопасности для исходящего трафика HTTPS для NSG, как показано на следующем снимке экрана. В этом примере используется **тег целевой службы**: _AzureActiveDirectory_ и **диапазоны портов назначения**: _443_.
 
-     :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="На снимке экрана показана панель Добавление правила безопасности для исходящего трафика для правила безопасности Azure Active Directory.":::
-
-1. Аналогично приведенным выше правилам безопасности, создайте правило безопасности исходящего HTTPS (443) для "EventHub. CentralUS" на NSG, которое соответствует целевому расположению. Это позволяет получить доступ к Site Recovery мониторинга.
-1. Создайте правило безопасности исходящего трафика HTTPS (443) для "Азуреситерековери" на NSG. Это позволяет получить доступ к службам Site Recovery в любом регионе.
+     :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="com-error" на NSG. Это позволяет получить доступ к службам Site Recovery в любом регионе.
 
 #### <a name="nsg-rules---central-us"></a>Правила NSG. Центральная часть США
 

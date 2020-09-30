@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: a5f4ff3dade381cf1a68ac5e9e820be153acf5ee
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: e1d1ffbf198a4e4c2574f93919ef98e36a90004a
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89483751"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91566998"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-azure-vms"></a>Часто задаваемые вопросы о SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -56,7 +56,7 @@ ms.locfileid: "89483751"
 
 1. **Как подготовить виртуальную машину SQL Server Azure и использовать ее для развертывания новых виртуальных машин?**
 
-   Вы можете развернуть виртуальную машину Windows Server (без SQL Server) и использовать процесс [SQL Sysprep](/sql/database-engine/install-windows/install-sql-server-using-sysprep?view=sql-server-ver15) для подготовки SQL Server на виртуальной машине Azure (Windows) с помощью установочного носителя SQL Server. Клиенты, у которых есть программа [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot%3aprimaryr3), установочный носитель могут получить в [Центре корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Azure Marketplace SQL Server образ виртуальной машины с нужным выпуском.
+   Вы можете развернуть виртуальную машину Windows Server (без SQL Server) и использовать процесс [SQL Sysprep](/sql/database-engine/install-windows/install-sql-server-using-sysprep) для подготовки SQL Server на виртуальной машине Azure (Windows) с помощью установочного носителя SQL Server. Клиенты, у которых есть программа [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot%3aprimaryr3), установочный носитель могут получить в [Центре корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Azure Marketplace SQL Server образ виртуальной машины с нужным выпуском.
 
    Кроме того, можно использовать один из SQL Server образов из Azure Marketplace, чтобы обобщить SQL Server на виртуальной машине Azure. Обратите внимание, что перед созданием собственного образа необходимо удалить следующий раздел реестра в исходном образе. Если этого не сделать, установочная папка начальной загрузки SQL Server может раздуться, расширение IaaS для SQL будет находиться в состоянии сбоя.
 
@@ -179,13 +179,21 @@ ms.locfileid: "89483751"
    
    Да, если именованный экземпляр является единственным экземпляром в SQL Server, а исходный экземпляр по умолчанию был [удален правильно](sql-server-iaas-agent-extension-automate-management.md#install-on-a-vm-with-a-single-named-sql-server-instance). Если экземпляр по умолчанию отсутствует и на одной виртуальной машине SQL Server есть несколько именованных экземпляров, установка расширения агента IaaS для SQL Server не будет выполнена. 
 
-1. **Можно ли полностью удалить SQL Server с виртуальной машины SQL Server?**
+1. **Можно ли удалить SQL Server и связанные с ними счета на основе SQL Server виртуальной машины?**
 
-   Да, но с вас будет по-прежнему взиматься плата за виртуальную машину SQL Server, как описано в статье [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](pricing-guidance.md). Если вам больше не нужен SQL Server, можно развернуть новую виртуальную машину и перенести туда данные и приложения. Затем виртуальную машину SQL Server можно удалить.
+   Да, но вам потребуется выполнить дополнительные действия, чтобы избежать оплаты за экземпляр SQL Server, как описано в [руководстве по ценам](pricing-guidance.md). Если вы хотите полностью удалить SQL Server экземпляр, можно выполнить миграцию на другую виртуальную машину Azure без предварительной установки SQL Server на виртуальной машине и удалить текущую виртуальную машину SQL Server. Если вы хотите, чтобы виртуальная машина оставалась без SQL Server выставлении счетов, выполните следующие действия. 
+
+   1. При необходимости создайте резервную копию всех данных, включая системные базы данных. 
+   1. Полностью удалите SQL Server, включая расширение SQL IaaS (если оно есть).
+   1. Установите бесплатный [выпуск SQL Express](https://www.microsoft.com/sql-server/sql-server-downloads).
+   1. Зарегистрируйтесь в поставщике ресурсов виртуальной машины SQL в [упрощенном режиме](sql-vm-resource-provider-register.md).
+   1. используемых Отключите службу Express SQL Server, отключив запуск службы. 
 
 1. **Можно ли использовать портал Azure для управления несколькими экземплярами на одной виртуальной машине?**
+
    Нет. Управление порталом обеспечивается поставщиком ресурсов виртуальной машины SQL, который использует расширение агента SQL Server IaaS. Таким образом, те же ограничения применяются к поставщику ресурсов в качестве расширения. Портал может управлять только одним экземпляром по умолчанию или одним именованным экземпляром, если он правильно настроен. Дополнительные сведения см. в разделе [расширение агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md) 
-   
+
+
 ## <a name="updating-and-patching"></a>Обновление и установка исправлений
 
 1. **Разделы справки перейти на другую версию или выпуск SQL Server на виртуальной машине Azure?**

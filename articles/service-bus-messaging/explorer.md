@@ -51,7 +51,7 @@ Azure Service Bus Explorer расширяет функциональные во�
 
 Затем выберите элемент **Service Bus Explorer (предварительная версия)** в меню навигации слева.
 
-:::image type="content" source="./media/service-bus-explorer/left-navigation-menu-selected.png" alt-text="Меню навигации Service Bus Explorer":::
+:::image type="content" source="./media/service-bus-explorer/left-navigation-menu-selected.png" alt-text="Выбор сущности":::
 
 ### <a name="sending-a-message-to-a-queue-or-topic"></a>Отправление сообщения в очередь или раздел
 
@@ -66,17 +66,17 @@ Azure Service Bus Explorer расширяет функциональные во�
 
 После составления сообщения нажмите кнопку "Отправить".
 
-:::image type="content" source="./media/service-bus-explorer/send-experience.png" alt-text="Создание сообщения":::
+:::image type="content" source="./media/service-bus-explorer/send-experience.png" alt-text="Выбор сущности":::
 
 После успешного завершения операции отправки: 
 
 * При отправке в очередь значение счетчика метрик **Активные сообщения** будет увеличено.
 
-    :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="QueueAfterSendMetrics":::
+    :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="Выбор сущности":::
 
 * При отправке в раздел значение счетчика метрик **Активные сообщения** будет увеличено для подписки, в которую было направлено сообщение.
 
-    :::image type="content" source="./media/service-bus-explorer/topic-after-send-metrics.png" alt-text="TopicAfterSendMetrics":::
+    :::image type="content" source="./media/service-bus-explorer/topic-after-send-metrics.png" alt-text="Выбор сущности":::
 
 ### <a name="receiving-a-message-from-a-queue"></a>Получение сообщения из очереди
 
@@ -93,18 +93,18 @@ Azure Service Bus Explorer расширяет функциональные во�
 1. Перейдите на вкладку ***Получение*** в Service Bus Explorer.
 2. Проверьте метрики, чтобы узнать, есть ли для получения **активные сообщения** или **недоставленные сообщения**.
 
-    :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="QueueAfterSendMetrics":::
+    :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="Выбор сущности":::
 
 3. Выберите ***Очередь*** или подочередь ***Невостребованное***.
 
-    :::image type="content" source="./media/service-bus-explorer/queue-or-deadletter.png" alt-text="QueueOrDeadletter":::
+    :::image type="content" source="./media/service-bus-explorer/queue-or-deadletter.png" alt-text="Выбор сущности":::
 
 4. Нажмите кнопку ***Получить***, а затем ***Да***, чтобы подтвердить операцию "Получение и удаление".
 
 
 После успешного выполнения операции получения сведения о сообщении отобразятся в сетке как показано ниже. Вы можете выбрать сообщение из сетки, чтобы отобразить сведения о нем.
 
-:::image type="content" source="./media/service-bus-explorer/receive-message-from-queue-2.png" alt-text="Снимок экрана: окно "очереди" в обозревателе служебной шины Azure со сведениями о сообщении, отображаемым для активного сообщения, выбранного в очереди.":::
+:::image type="content" source="./media/service-bus-explorer/receive-message-from-queue-2.png" alt-text="Выбор сущности":::
 
 
 ### <a name="peeking-a-message-from-a-queue"></a>Просмотр сообщения из очереди
@@ -113,21 +113,21 @@ Azure Service Bus Explorer расширяет функциональные во�
 
 1. Чтобы просмотреть сообщение в очереди, выберите вкладку ***Обзор*** в окне Service Bus Explorer.
 
-    :::image type="content" source="./media/service-bus-explorer/peek-tab-selected.png" alt-text="PeekTab":::
+    :::image type="content" source="./media/service-bus-explorer/peek-tab-selected.png" alt-text="Выбор сущности":::
 
 2. Проверьте метрики, чтобы узнать, есть ли для просмотра **активные сообщения** или **недоставленные сообщения**.
 
-    :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="QueueAfterSendMetrics":::
+    :::image type="content" source="./media/service-bus-explorer/queue-after-send-metrics.png" alt-text="Выбор сущности":::
 
 3. Затем выберите ***Очередь*** или подочередь ***Невостребованное***.
 
-    :::image type="content" source="./media/service-bus-explorer/queue-or-deadletter.png" alt-text="QueueOrDeadletter":::
+    :::image type="content" source="./media/service-bus-explorer/queue-or-deadletter.png" alt-text="Выбор сущности":::
 
 4. Нажмите кнопку ***Обзор***. 
 
 После завершения операции просмотра в сетке будут отображаться до 32 сообщений, как показано ниже. Чтобы просмотреть подробные сведения о конкретном сообщении, выберите его в сетке. 
 
-:::image type="content" source="./media/service-bus-explorer/peek-message-from-queue-2.png" alt-text="PeekMessageFromQueue":::
+:::image type="content" source="./media/service-bus-explorer/peek-message-from-queue-2.png" alt-text="Выбор сущности":::
 
 > [!NOTE]
 >
@@ -146,17 +146,17 @@ Azure Service Bus Explorer расширяет функциональные во�
 
 1. Перейдите на вкладку ***Получение*** и в раскрывающемся списке выберите конкретную ***подписку***.
 
-    :::image type="content" source="./media/service-bus-explorer/receive-subscription-tab-selected.png" alt-text="ReceiveTabSelected":::
+    :::image type="content" source="./media/service-bus-explorer/receive-subscription-tab-selected.png" alt-text="Выбор сущности":::
 
 2. Затем выберите ***Подписка*** или подсущность ***Невостребованное***.
 
-    :::image type="content" source="./media/service-bus-explorer/subscription-or-deadletter.png" alt-text="SubscriptionOrDeadletter":::
+    :::image type="content" source="./media/service-bus-explorer/subscription-or-deadletter.png" alt-text="Выбор сущности":::
 
 3. Нажмите кнопку ***Получить***, а затем ***Да***, чтобы подтвердить операцию "Получение и удаление".
 
 После успешного выполнения операции получения в сетке как показано ниже отобразится полученное сообщение. Щелкните это сообщение, чтобы просмотреть подробные сведения о нем.
 
-:::image type="content" source="./media/service-bus-explorer/receive-message-from-subscription.png" alt-text="Снимок экрана: вкладка "получить" в обозревателе служебной шины Azure со сведениями о сообщении для активного сообщения, которое было получено.":::
+:::image type="content" source="./media/service-bus-explorer/receive-message-from-subscription.png" alt-text="Выбор сущности":::
 
 ### <a name="peeking-a-message-from-a-subscription"></a>Просмотр сообщения из подписки
 
@@ -164,17 +164,17 @@ Azure Service Bus Explorer расширяет функциональные во�
 
 1. Перейдите на вкладку ***Обзор*** и в раскрывающемся списке выберите конкретную ***подписку***.
 
-    :::image type="content" source="./media/service-bus-explorer/peek-subscription-tab-selected.png" alt-text="PeekTabSelected":::
+    :::image type="content" source="./media/service-bus-explorer/peek-subscription-tab-selected.png" alt-text="Выбор сущности":::
 
 2. Затем выберите ***Подписка*** или подсущность ***Невостребованное***.
 
-    :::image type="content" source="./media/service-bus-explorer/subscription-or-deadletter.png" alt-text="SubscriptionOrDeadletter":::
+    :::image type="content" source="./media/service-bus-explorer/subscription-or-deadletter.png" alt-text="Выбор сущности":::
 
 3. Нажмите кнопку ***Обзор***.
 
 После завершения операции просмотра в сетке будут отображаться до 32 сообщений, как показано ниже. Чтобы просмотреть подробные сведения о конкретном сообщении, выберите его в сетке. 
 
-:::image type="content" source="./media/service-bus-explorer/peek-message-from-subscription.png" alt-text="PeekMessageFromSubscription":::
+:::image type="content" source="./media/service-bus-explorer/peek-message-from-subscription.png" alt-text="Выбор сущности":::
 
 > [!NOTE]
 >

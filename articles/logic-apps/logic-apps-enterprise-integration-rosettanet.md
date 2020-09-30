@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
-ms.openlocfilehash: 833e2a6f64301c39ba2b9e7959585c3edeab9445
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f02cbdc7ca8822c5fcc91b106856d7f8f547536b
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072577"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91565111"
 ---
 # <a name="exchange-rosettanet-messages-for-b2b-enterprise-integration-in-azure-logic-apps"></a>Обмен сообщениями RosettaNet для интеграции B2B Enterprise в Azure Logic Apps
 
@@ -51,7 +51,7 @@ ms.locfileid: "87072577"
 
   Для однодействийной PIP единственным ответом является сообщение с подтверждением. Для последовательности двойных действий инициатор получает ответное сообщение и ответ с подтверждением в дополнение к потоку сообщений с одним действием.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [получите бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -81,7 +81,7 @@ ms.locfileid: "87072577"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **имя**; | Да | Имя PIP |
+   | **Имя** | Да | Имя PIP |
    | **Код PIP** | Да | Код с тремя цифрами PIP. Дополнительные сведения см. в разделе [RosettaNet пипс](/biztalk/adapters-and-accelerators/accelerator-rosettanet/rosettanet-pips). |
    | **Версия PIP** | Да | Номер версии PIP, доступный на основе выбранного кода PIP |
    ||||
@@ -112,7 +112,7 @@ ms.locfileid: "87072577"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **имя**; | Да | Имя соглашения |
+   | **Имя** | Да | Имя соглашения |
    | **Тип соглашения** | Да | Выберите **RosettaNet**. |
    | **"Host Partner" (Главный партнер)** | Да | Для соглашения нужно указать главного партнера и гостевого партнера. Главный партнер представляет организацию, которая настраивает соглашение. |
    | **"Host Identity" (Идентификатор главного партнера)** | Да | Идентификатор главного партнера. |
@@ -197,7 +197,7 @@ ms.locfileid: "87072577"
 
 1. Укажите сведения для свойств действия:
 
-   ![Укажите сведения о действии](media/logic-apps-enterprise-integration-rosettanet/decode-action-details.png)
+   ![Снимок экрана, на котором показано, где указывается информация о свойствах действия.](media/logic-apps-enterprise-integration-rosettanet/decode-action-details.png)
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: mjbrown
-ms.openlocfilehash: 0ae29039702a6f73a33f73afc366532077aa4b71
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: c248755c1f32d41b6926d4492dcc3d0eea2869b8
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432839"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91566879"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
@@ -19,7 +19,7 @@ ms.locfileid: "87432839"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этим разделом требуется Azure CLI версии 2.9.1 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.9.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="azure-cosmos-accounts"></a>Учетные записи Azure Cosmos
 
@@ -33,10 +33,10 @@ ms.locfileid: "87432839"
 * [Запустить отработку отказа вручную](#trigger-manual-failover)
 * [Вывод списка ключей учетной записи](#list-account-keys)
 * [Список ключей учетной записи только для чтения](#list-read-only-account-keys)
-* [Вывод списка строк подключения](#list-connection-strings)
+* [Вывод строк подключения](#list-connection-strings)
 * [Повторное создание ключей учетных записей](#regenerate-account-key)
 
-### <a name="create-an-azure-cosmos-db-account"></a>Создание учетной записи Azure Cosmos DB
+### <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 
 Создание учетной записи Azure Cosmos DB с помощью API SQL, согласованности сеансов в Западная часть США 2 и Восточная часть США 2.
 
@@ -87,10 +87,10 @@ az cosmosdb update --name $accountName --resource-group $resourceGroupName \
 
 ### <a name="enable-multiple-write-regions"></a>Включить несколько регионов записи
 
-Включение нескольких хозяев для учетной записи Cosmos
+Включение записи в несколько регионов для учетной записи Cosmos
 
 ```azurecli-interactive
-# Update an Azure Cosmos account from single to multi-master
+# Update an Azure Cosmos account from single write region to multiple write regions
 resourceGroupName='myResourceGroup'
 accountName='mycosmosaccount'
 
@@ -148,7 +148,7 @@ az cosmosdb failover-priority-change --ids $accountId \
     --failover-policies 'East US 2=0' 'South Central US=1' 'West US 2=2'
 ```
 
-### <a name="list-all-account-keys"></a><a id="list-account-keys"></a>Вывод всех ключей учетной записи
+### <a name="list-all-account-keys"></a><a id="list-account-keys"></a> Вывод всех ключей учетной записи
 
 Получение всех ключей для учетной записи Cosmos.
 

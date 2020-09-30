@@ -1,5 +1,5 @@
 ---
-title: Квоты и ограничения речевых служб
+title: Квоты и ограничения службы "Речь"
 titleSuffix: Azure Cognitive Services
 description: Краткий справочник, подробное описание и рекомендации по квотам и ограничениям служб распознавания речи в Azure
 services: cognitive-services
@@ -8,22 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 09/30/2020
 ms.author: alexeyo
-ms.openlocfilehash: 554dd0967979bc2457c3a9c8371152e09535381f
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 7e22b772ec35ff9b63c99acd81ad6bb5abe328a0
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690142"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91567168"
 ---
-# <a name="speech-services-quotas-and-limits"></a>Квоты и ограничения речевых служб
+# <a name="speech-services-quotas-and-limits"></a>Квоты и ограничения службы "Речь"
 
 Эта статья содержит краткий справочник и **подробное описание** квот и ограничений служб распознавания речи Azure [для всех ценовых категорий.](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/) Он также содержит некоторые рекомендации по предотвращению регулирования запросов. 
 
 ## <a name="quotas-and-limits-quick-reference"></a>Краткий справочник по квотам и ограничениям
 Переход к [квотам и ограничениям преобразования текста в речь](#text-to-speech-quotas-and-limits-per-speech-resource)
-### <a name="speech-to-text-quotas-and-limits-per-speech-resource"></a>Квоты и ограничения преобразования речи в текст для каждого ресурса речи
+### <a name="speech-to-text-quotas-and-limits-per-speech-resource"></a>Квоты и ограничения преобразования речи в текст для каждого ресурса службы "Речь"
 В таблице ниже параметры без "регулируемой" строки **не** поддаются регулировке для всех ценовых уровней.
 
 | Quota | Бесплатный (F0)<sup>1</sup> | Standard (S0) |
@@ -33,10 +33,11 @@ ms.locfileid: "88690142"
 | Регулировк | Нет<sup>2</sup> | Да<sup>2</sup> |
 | **Ограничение запросов REST API (конечные точки[управления API](../../api-management/api-management-key-concepts.md) )** | 100 запросов в течение 10 секунд | 100 запросов в течение 10 секунд |
 | **Максимальный размер файла набора данных для импорта данных** | 2 ГБ | 2 ГБ |
-| **Максимальный размер входного большого двоичного объекта для записи пакетов** | н/д | 2,5 ГБ |
-| **Максимальный размер контейнера больших двоичных объектов для записи пакетов** | н/д | 5 ГБ |
-| **Максимальное количество больших двоичных объектов на контейнер для записи пакетов** | н/д | 10000 |
-| **Максимальное количество одновременно выполняющихся заданий для записи пакетов** | н/д | 2000  |
+| **Максимальный размер входного большого двоичного объекта для записи пакетов** | Н/Д | 2,5 ГБ |
+| **Максимальный размер контейнера больших двоичных объектов для записи пакетов** | Н/Д | 5 ГБ |
+| **Максимальное количество больших двоичных объектов на контейнер для записи пакетов** | Н/Д | 10000 |
+| **Максимальное число файлов на запрос транскрипции для записи пакетов (при использовании нескольких URL-адресов содержимого в качестве входных данных)** | Н/Д | 1000  |
+| **Максимальное количество одновременно выполняющихся заданий для записи пакетов** | Н/Д | 2000  |
 
 <sup>1</sup> для **бесплатной ценовой категории (F0)** см. также ежемесячные скидки на [странице цен](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).<br/>
 <sup>2</sup> см. [дополнительные объяснения](#detailed-description-quota-adjustment-and-best-practices) [, рекомендации и](#general-best-practices-to-mitigate-throttling-during-autoscaling) [инструкции по настройке](#speech-to-text-increasing-online-transcription-concurrent-request-limit).<br/> 
@@ -93,9 +94,9 @@ ms.locfileid: "88690142"
 #### <a name="have-the-required-information-ready"></a>Необходимые сведения готовы:
 - Для **базовой модели**:
   - Идентификатор ресурса речи
-  - Регион
+  - Region
 - Для **настраиваемой модели**: 
-  - Регион
+  - Region
   - ИДЕНТИФИКАТОР пользовательской конечной точки
 
 - **Как получить сведения (базовая модель)**:  

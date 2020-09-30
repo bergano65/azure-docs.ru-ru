@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
-ms.openlocfilehash: e58cbe85f30ea09adde45d55bb7b80c710c45495
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8e3805fae5bf6cc5ad8cf759d3ba75220c6ddbd8
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74792444"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91565077"
 ---
 # <a name="add-trading-partners-to-integration-accounts-for-azure-logic-apps"></a>Добавление торговых партнеров в корпоративные учетные записи интеграции для Azure Logic Apps
 
@@ -47,7 +47,7 @@ ms.locfileid: "74792444"
 
 1. Выберите плитку **Партнеры**.
 
-   ![Выбор плитки "Партнеры"](./media/logic-apps-enterprise-integration-partners/choose-partners.png)
+   ![Снимок экрана, на котором показана плитка "Партнеры".](./media/logic-apps-enterprise-integration-partners/choose-partners.png)
 
 1. В разделе **Партнеры** выберите **Добавить**. В разделе **Добавление партнера**укажите сведения о партнере, как описано в таблице ниже.
 
@@ -55,7 +55,7 @@ ms.locfileid: "74792444"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Name** | Да | Имя партнера |
+   | **Имя** | Да | Имя партнера |
    | **Квалификатор** | Да | Основной текст для проверки подлинности, который предоставляет организациям уникальные бизнес-удостоверения, например **D-U-N-S (Dun & Bradstreet)**. <p>Партнеры могут выбрать взаимно определенную бизнес-идентификацию. Для этих **сценариев выберите параметр** для EDIFACT или **взаимного определения (X12)** для X12. <p>Для RosettaNet выберите только **Дунс**, который является стандартом. |
    | **Значение** | Да | Значение, идентифицирующее документы, получаемые приложениями логики. <p>Для RosettaNet это значение должно быть четырехзначным числом, которое соответствует номеру ДУНС. |
    ||||
@@ -100,12 +100,12 @@ ms.locfileid: "74792444"
 
 1. На [портале Azure](https://portal.azure.com) найдите и выберите свою учетную запись интеграции. Выберите плитку **Партнеры**.
 
-   ![Выбор плитки "Партнеры"](./media/logic-apps-enterprise-integration-partners/choose-partners-to-delete.png)
+   ![Снимок экрана, на котором показана плитка "Партнеры", которую вы выбрали, когда хотите удалить партнера.](./media/logic-apps-enterprise-integration-partners/choose-partners-to-delete.png)
 
 1. В разделе **Партнеры** выберите партнера, которого нужно удалить. Щелкните **Удалить**.
 
    ![Удаление партнера](./media/logic-apps-enterprise-integration-partners/delete-partner.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соглашениях](../logic-apps/logic-apps-enterprise-integration-agreements.md)

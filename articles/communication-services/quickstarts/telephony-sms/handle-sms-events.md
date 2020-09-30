@@ -65,11 +65,11 @@ ms.locfileid: "90945841"
 
 Просмотрите полный список [событий, поддерживаемых Службами коммуникации Azure](../../concepts/event-handling.md).
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Снимок экрана: выбранные типы событий "SMS получено" и "Получен отчет о доставке SMS".":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-eventsub.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
 Выберите значение **Веб-перехватчик** для параметра **Тип конечной точки**. 
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Снимок экрана: поле "Тип конечной точки", для которого задан веб-перехватчик.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-linkwebhook.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
 В разделе **Конечная точка** щелкните **Выбрать конечную точку** и введите URL-адрес веб-приложения.
 
@@ -77,7 +77,7 @@ ms.locfileid: "90945841"
 
 Нажмите кнопку **Подтвердить выбор**.
 
-:::image type="content" source="./media/handle-sms-events/select-events-create-selectwebhook-epadd.png" alt-text="Снимок экрана: подтверждение конечной точки веб-перехватчика.":::
+:::image type="content" source="./media/handle-sms-events/select-events-create-selectwebhook-epadd.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
 ## <a name="viewing-sms-events"></a>Просмотр событий SMS
 
@@ -94,9 +94,9 @@ ms.locfileid: "90945841"
 
 После выполнения любого из приведенных выше действий вы увидите, что события `SMS Received` и `SMS Delivery Report Received` отправляются в конечную точку. Эти события будут отображаться в [примере средства просмотра Сетки событий Azure](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/), который мы настроили в начале. Чтобы просмотреть все полезные данные, можно нажать значок глаза рядом с событием. События будут выглядеть следующим образом:
 
-:::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Снимок экрана: схема Сетки событий для события "SMS получено".":::
+:::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
-:::image type="content" source="./media/handle-sms-events/SMS-Delivery-Report-Received.png" alt-text="Снимок экрана: схема Сетки событий для события "Получен отчет о доставке SMS".":::
+:::image type="content" source="./media/handle-sms-events/SMS-Delivery-Report-Received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
 Дополнительные сведения о схемах и других концепциях событий см. [здесь](../../concepts/event-handling.md).
 

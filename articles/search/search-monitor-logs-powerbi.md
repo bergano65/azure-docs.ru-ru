@@ -27,12 +27,12 @@ ms.locfileid: "91400372"
     1. Перейдите к службе Когнитивный поиск Azure в портал Azure
     1. В разделе Мониторинг в левом столбце выберите **параметры диагностики** .
 
-        :::image type="content" source="media/search-monitor-logs-powerbi/diagnostic-settings.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе "Мониторинг" службы Когнитивный поиск Azure." border="false":::
+        :::image type="content" source="media/search-monitor-logs-powerbi/diagnostic-settings.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure." border="false":::
 
     1. Выберите **+ Добавить параметр диагностики**
     1. Проверьте **Архив в учетной записи хранения**, укажите сведения об учетной записи хранения и проверьте **OperationLogs** и **аллметрикс** .
 
-        :::image type="content" source="media/search-monitor-logs-powerbi/add-diagnostic-setting.png" alt-text="Снимок экрана, показывающий, как выбрать метрики и ведение журнала ресурсов на странице "параметры диагностики".":::
+        :::image type="content" source="media/search-monitor-logs-powerbi/add-diagnostic-setting.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
     1. Нажмите кнопку **Сохранить**.
 
 1. После включения ведения журнала используйте службу поиска, чтобы начать создавать журналы и метрики. Для отображения контейнеров в хранилище BLOB-объектов с этими журналами потребуется до часа. Вы увидите контейнер **Insights-Logs-operationlogs** для поиска журналов трафика и контейнер **Insights-метрики pt1m** для метрик.
@@ -41,48 +41,48 @@ ms.locfileid: "91400372"
 
 1. После установки приложения выберите приложение из списка приложений в Power BI.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/azure-search-app-tile.png" alt-text="Снимок экрана, показывающий приложение Когнитивный поиск Azure для выбора из списка приложений.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/azure-search-app-tile.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. Выберите **подключить** для подключения данных
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/get-started-with-your-new-app.png" alt-text="Снимок экрана, показывающий, как подключиться к данным в приложении Когнитивный поиск Azure.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/get-started-with-your-new-app.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. Введите имя учетной записи хранения, содержащей журналы и метрики. По умолчанию приложение будет просматривать данные за последние 10 дней, но это значение можно изменить с помощью параметра **dayss** .
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/connect-to-storage-account.png" alt-text="Снимок экрана, показывающий, как ввести имя учетной записи хранения и число дней для запроса на странице "подключение к Azure Когнитивный поиск".":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/connect-to-storage-account.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. Выберите **ключ** в качестве метода проверки подлинности и укажите ключ учетной записи хранения. Выберите **частный** в качестве уровня конфиденциальности. Щелкните Войти , чтобы начать процесс загрузки.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/connect-to-storage-account-step-two.png" alt-text="Снимок экрана, показывающий, как ввести метод проверки подлинности, ключ учетной записи и уровень конфиденциальности на странице Подключение к Когнитивный поиск Azure.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/connect-to-storage-account-step-two.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. Дождитесь обновления данных. Это может занять некоторое время в зависимости от объема данных. Вы можете увидеть, обновляются ли данные на основе индикатора ниже.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-refreshing.png" alt-text="Снимок экрана, показывающий, как прочитать сведения на странице "обновление данных".":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-refreshing.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. После завершения обновления данных выберите **когнитивный Поиск отчет Azure** , чтобы просмотреть отчет.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-select-report.png" alt-text="Снимок экрана, показывающий, как выбрать отчет Когнитивный поиск Azure на странице "обновление данных".":::![]()
+    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-select-report.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::![]()
 
 1. Обязательно обновите страницу после открытия отчета, чтобы он открывался с данными.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/powerbi-search.png" alt-text="Снимок экрана отчета Power BI Когнитивный поиск Azure.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/powerbi-search.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 ## <a name="how-to-change-the-app-parameters"></a>Изменение параметров приложения
 Если вы хотите визуализировать данные из другой учетной записи хранения или изменить число дней для запроса данных, выполните следующие действия, чтобы изменить параметры **Days** и **StorageAccount** .
 
 1. Перейдите к Power BIным приложениям, найдите приложение Azure Когнитивный поиск и нажмите кнопку **изменить приложение** , чтобы просмотреть рабочую область.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/azure-search-app-tile-edit.png" alt-text="Снимок экрана, показывающий, как выбрать кнопку "изменить приложение" для приложения Когнитивный поиск Azure.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/azure-search-app-tile-edit.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. Выберите **Параметры** в параметрах набора данных.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-select-settings.png" alt-text="Снимок экрана, показывающий, как выбрать параметры из параметров набора данных Когнитивный поиск Azure.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-select-settings.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. На вкладке Наборы данных измените значения параметров и нажмите кнопку **Применить**. При возникновении проблемы с подключением обновите учетные данные источника данных на той же странице.
 
 1. Вернитесь в рабочую область и выберите **Обновить сейчас** в параметрах набора данных.
 
-    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-select-refresh-now.png" alt-text="Снимок экрана, показывающий, как выбрать пункт "Обновить сейчас" в параметрах набора данных Azure Когнитивный поиск.":::
+    :::image type="content" source="media/search-monitor-logs-powerbi/workspace-view-select-refresh-now.png" alt-text="Снимок экрана, показывающий, как выбрать параметры диагностики в разделе &quot;Мониторинг&quot; службы Когнитивный поиск Azure.":::
 
 1. Откройте отчет, чтобы просмотреть обновленные данные. Также может потребоваться обновить отчет, чтобы просмотреть последние данные.
 

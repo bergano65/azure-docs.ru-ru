@@ -78,7 +78,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 >
 > Используйте [страницу портал Azure Azure Active Directory пользователей](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) , чтобы выбрать учетную запись пользователя и открыть сведения о ней. Скопируйте *ObjectID*пользователя:
 >
-> :::image type="content" source="media/includes/user-id.png" alt-text="Представление страницы пользователя в портал Azure выделение идентификатора GUID в поле "идентификатор объекта"" lightbox="media/includes/user-id.png":::
+> :::image type="content" source="media/includes/user-id.png" alt-text="командное окно с успешным созданием группы ресурсов и экземпляра Azure Digital двойников" lightbox="media/includes/user-id.png":::
 >
 > Затем повторите команду списка назначений ролей, используя *идентификатор объекта* пользователя для приведенного `assignee` выше параметра.
 
@@ -115,7 +115,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 Затем вы отправите этот файл в Cloud Shell. В окне Cloud Shell щелкните значок "Отправить/скачать файлы" и выберите "Отправить".
 
-:::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, в котором отображается выбор параметра отправки":::
+:::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="командное окно с успешным созданием группы ресурсов и экземпляра Azure Digital двойников":::
 Перейдите к только что созданному *manifest.js* и нажмите кнопку "Открыть".
 
 Затем выполните следующую команду, чтобы создать регистрацию приложения с *общедоступным клиентским или собственным (мобильный & Desktop)* URL-адресом ответа `http://localhost` . При необходимости замените заполнители:
@@ -126,7 +126,7 @@ az ad app create --display-name <name-for-your-app-registration> --native-app --
 
 Ниже приведен фрагмент выходных данных этой команды, в котором отображаются сведения о созданной регистрации:
 
-:::image type="content" source="media/how-to-set-up-instance/cloud-shell/new-app-registration.png" alt-text="Cloud Shell выходные данные новой регистрации приложения Azure AD":::
+:::image type="content" source="media/how-to-set-up-instance/cloud-shell/new-app-registration.png" alt-text="командное окно с успешным созданием группы ресурсов и экземпляра Azure Digital двойников":::
 
 ### <a name="verify-success"></a>Проверка успешного выполнения
 
@@ -140,7 +140,7 @@ az ad app create --display-name <name-for-your-app-registration> --native-app --
 
 Затем в строке меню выберите *Обзор* , чтобы просмотреть сведения о регистрации приложения:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Представление портала с важными значениями для регистрации приложения":::
+:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="командное окно с успешным созданием группы ресурсов и экземпляра Azure Digital двойников":::
 
 Запишите *идентификатор приложения (клиента)* и *идентификатор каталога (клиента)* , показанные на **странице.** Эти значения потребуются позже для [проверки подлинности клиентского приложения с помощью API цифровых двойников Azure](how-to-authenticate-client.md). Если вы не являетесь пользователем, который будет писать код для таких приложений, вам потребуется поделиться этими значениями с пользователем, который будет иметь значение.
 

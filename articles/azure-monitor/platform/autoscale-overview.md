@@ -4,12 +4,12 @@ description: Автомасштабирование в Microsoft Azure
 ms.subservice: autoscale
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: d9ba94d9990e494a8d3e68bbcd7c176bb30e6ce2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e89cf36e59ab26ec220d1125162a841fc10f0e47
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073493"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91567270"
 ---
 # <a name="overview-of-autoscale-in-microsoft-azure"></a>Общие сведения об автомасштабировании в Microsoft Azure
 В этой статье объясняется, что такое автомасштабирование Microsoft Azure, каковы преимущества этой функции и как начать ее использовать.  
@@ -102,11 +102,14 @@ ms.locfileid: "87073493"
 | Виртуальные машины: Классический |[Scaling Classic Virtual Machine Availability Sets (Масштабирование групп доступности классических виртуальных машин)](/archive/blogs/kaevans/autoscaling-azurevirtual-machines) |
 | Виртуальные машины: масштабируемые наборы Windows |[Масштабирование и масштабируемые наборы виртуальных машин в Windows](../../virtual-machine-scale-sets/tutorial-autoscale-powershell.md) |
 | Виртуальные машины: масштабируемые наборы Linux |[Масштабирование и масштабируемые наборы виртуальных машин в Linux](../../virtual-machine-scale-sets/tutorial-autoscale-cli.md) |
-| Виртуальные машины: пример Windows |[Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин](autoscale-virtual-machine-scale-sets.md) |
+| Виртуальные машины: пример Windows |[Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин](../../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md) |
+| Служба приложений Azure |[Масштабирование приложения в службе приложений Azure](../../app-service/manage-scale-up.md)|
 | Служба управления API|[Автоматическое масштабирование экземпляра службы управления API Azure](../../api-management/api-management-howto-autoscale.md)
 | Кластеры Azure Data Explorer|[Управление кластерами Azure Data Explorer с учетом меняющихся потребностей](/azure/data-explorer/manage-cluster-horizontal-scaling)|
-| Служба приложений Azure |[Масштабирование приложения в службе приложений Azure](../../app-service/manage-scale-up.md)|
 | Logic Apps |[Добавление емкости среды службы интеграции (ISE)](../../logic-apps/ise-manage-integration-service-environment.md#add-ise-capacity)|
+| Spring Cloud |[Настройка автомасштабирования для приложений, состоящих из микрослужб](../../spring-cloud/spring-cloud-tutorial-setup-autoscale.md)|
+| Служебная шина |[Автоматическое обновление единиц обмена сообщениями в пространстве имен Служебной шины Azure](../../service-bus-messaging/automate-update-messaging-units.md)|
+
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об автомасштабировании см. в пошаговых руководствах по автомасштабированию выше, а также в следующих статьях:
 

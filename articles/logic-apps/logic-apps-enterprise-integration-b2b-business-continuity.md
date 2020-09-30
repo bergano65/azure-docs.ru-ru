@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/10/2017
-ms.openlocfilehash: 3b618513965298889fb656750419dedd79729f7f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1e006dd690e9c008afada8a490da6c3238bc0791
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536476"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91565417"
 ---
 # <a name="set-up-cross-region-disaster-recovery-for-integration-accounts-in-azure-logic-apps"></a>Настройка аварийного восстановления в разных регионах для учетных записей интеграции в Azure Logic Apps
 
@@ -98,15 +98,15 @@ ms.locfileid: "86536476"
 
 3. Присвойте имя для подключения, выберите из списка свою *учетную запись интеграции для основного региона*, а затем выберите **Создать**.   
 
-   ![Имя учетной записи интеграции для основного региона](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn2.png)
+   ![Снимок экрана, на котором показано, где ввести имя подключения и выбрать учетную запись интеграции основного региона. ](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn2.png)
 
 4. Параметр **Дата и время начала синхронизации контрольного номера** является необязательным. Вы можете задать **частоту** с интервалом в **днях**, **часах**, **минутах** или **секундах**.   
 
-   ![Дата, время и частота](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn3.png)
+   ![Снимок экрана, на котором показана дата и время запуска параметра синхронизации контрольного номера.](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn3.png)
 
 5. Выберите **New step** (Новый шаг) > **Добавить действие**.
 
-   ![Выбор действий "Новый шаг" и "Добавить действие"](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn4.png)
+   ![Снимок экрана, на котором показана кнопка "создать шаг" и параметр "добавить действие".](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn4.png)
 
 6. Выполните поиск **X12** и выберите **X12 — добавление или изменение контрольных номеров**.   
 
@@ -114,11 +114,11 @@ ms.locfileid: "86536476"
 
 7. Чтобы подключить действие к учетной записи интеграции с дополнительным регионом, выберите **изменить подключение**  >  **Добавить новое подключение** , чтобы получить список доступных учетных записей интеграции. Введите имя для подключения, выберите из списка свою *учетную запись интеграции для дополнительного региона*, а затем выберите **Создать**. 
 
-   ![Имя учетной записи интеграции для дополнительного региона](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn6.png)
+   ![Снимок экрана, на котором показано, куда добавить имя учетной записи интеграции для дополнительного региона.](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn6.png)
 
 8. Переключитесь на необработанные входные данные, щелкнув значок в правом верхнем углу.
 
-   ![Переключение на необработанные входные данные](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12rawinputs.png)
+   ![Снимок экрана, на котором показан значок для переключения на необработанные данные.](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12rawinputs.png)
 
 9. Выберите "Текст" с помощью средства выбора динамического содержимого и сохраните приложение логики.
 
@@ -140,7 +140,7 @@ ms.locfileid: "86536476"
 
 Чтобы включить аварийное восстановление для входящих сообщений, выберите параметры проверки дублирования в разделе с настройками получения соглашения EDIFACT.
 
-![Выбор параметров проверки дублирования](./media/logic-apps-enterprise-integration-b2b-business-continuity/edifactdupcheck.png)  
+![Снимок экрана, на котором показаны параметры проверки дублирования в параметрах получения соглашения EDIFACT.](./media/logic-apps-enterprise-integration-b2b-business-continuity/edifactdupcheck.png)  
 
 1. Создайте [приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) в дополнительном регионе.    
 
@@ -157,27 +157,27 @@ ms.locfileid: "86536476"
 
 4. Параметр **Дата и время начала синхронизации контрольного номера** является необязательным. Вы можете задать **частоту** с интервалом в **днях**, **часах**, **минутах** или **секундах**.    
 
-   ![Дата, время и частота](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn3.png)
+   ![Снимок экрана, на котором показаны параметры даты и времени.](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn3.png)
 
 6. Выберите **New step** (Новый шаг) > **Добавить действие**.    
 
-   ![Выбор действий "Новый шаг" и "Добавить действие"](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn4.png)
+   ![Снимок экрана, на котором показано, где можно выбрать команду "добавить действие".](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn4.png)
 
 7. Выполните поиск **EDIFACT** и выберите **EDIFACT — добавление и изменение контрольных номеров**.   
 
-   ![Добавление или обновление контрольных номеров](./media/logic-apps-enterprise-integration-b2b-business-continuity/EdifactChooseAction.png)
+   ![Снимок экрана, на котором показано, куда добавлять или обновлять контрольные номера.](./media/logic-apps-enterprise-integration-b2b-business-continuity/EdifactChooseAction.png)
 
 8. Чтобы подключить действие к учетной записи интеграции с дополнительным регионом, выберите **изменить подключение**  >  **Добавить новое подключение** , чтобы получить список доступных учетных записей интеграции. Введите имя для подключения, выберите из списка свою *учетную запись интеграции для дополнительного региона*, а затем выберите **Создать**.
 
-   ![Имя учетной записи интеграции для дополнительного региона](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn6.png)
+   ![Создайте имя учетной записи интеграции с дополнительным регионом.](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn6.png)
 
 9. Переключитесь на необработанные входные данные, щелкнув значок в правом верхнем углу.
 
-   ![Переключение на необработанные входные данные](./media/logic-apps-enterprise-integration-b2b-business-continuity/Edifactrawinputs.png)
+   ![Снимок экрана, который выделяет значок для выбора при переключении на необработанные входные данные.](./media/logic-apps-enterprise-integration-b2b-business-continuity/Edifactrawinputs.png)
 
 10. Выберите "Текст" с помощью средства выбора динамического содержимого и сохраните приложение логики.   
 
-   ![Поля динамического содержимого](./media/logic-apps-enterprise-integration-b2b-business-continuity/X12CN7.png)
+   ![Снимок экрана, на котором показано средство выбора динамического содержимого, в котором можно выбрать текст из.](./media/logic-apps-enterprise-integration-b2b-business-continuity/X12CN7.png)
 
    В зависимости от интервала времени триггер выполняет опрос таблицы полученных контрольных номеров для основного региона и извлекает новые записи при их наличии,
    а действие обновляет сведения о записях в учетной записи интеграции дополнительного региона. 
@@ -205,7 +205,7 @@ ms.locfileid: "86536476"
    
 3. Присвойте имя для подключения, выберите из списка свою *учетную запись интеграции для основного региона*, а затем выберите **Создать**.
 
-   ![Имя учетной записи интеграции для основного региона](./media/logic-apps-enterprise-integration-b2b-business-continuity/as2messageid2.png)
+   ![Снимок экрана, на котором показано, где ввести имя подключения при создании значения MIC.](./media/logic-apps-enterprise-integration-b2b-business-continuity/as2messageid2.png)
 
 4. Параметр **DateTime to start MIC value sync** (Дата и время для запуска синхронизации значения MIC) является необязательным. Вы можете задать **частоту** с интервалом в **днях**, **часах**, **минутах** или **секундах**.   
 

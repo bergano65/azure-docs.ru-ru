@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: rosouz
-ms.openlocfilehash: 75ad602eb6b9a0ce52b2b4c4115f351668327c43
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d27eb4dc6c4e4bd8f0a744ad925d91aee0faa8d0
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91253197"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91567151"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Аналитическое хранилище Azure Cosmos DB (предварительная версия)?
 
@@ -52,7 +52,7 @@ Azure Cosmos DB Analytics Store — это полностью изолирова
 
 На следующем рисунке показано хранилище транзакций и хранилище аналитических столбцов в Azure Cosmos DB:
 
-:::image type="content" source="./media/analytical-store-introduction/transactional-analytical-data-stores.png" alt-text="Транзакционное хранилище строк и хранилище аналитических столбцов в Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/analytical-store-introduction/transactional-analytical-data-stores.png" alt-text="Пример операционной таблицы" border="false":::
 
 ### <a name="decoupled-performance-for-analytical-workloads"></a>Несвязанная производительность для аналитических рабочих нагрузок
 
@@ -91,7 +91,7 @@ Azure Cosmos DB Analytics Store — это полностью изолирова
 
 ##### <a name="schema-representation"></a>Представление схемы
 
-В аналитическом хранилище существует два режима представления схемы. Эти режимы имеют компромисс между простотой представления по столбцам, обработкой полиморфизма схем и простотой работы с запросами.
+В аналитическом хранилище существует два режима представления схемы. Эти режимы являются компромиссом между простым представлением по столбцам, обработкой полиморфных схем и упрощенной работой с запросами.
 
 * Четко определенное представление схемы
 * Полное представление схемы точности
@@ -146,7 +146,7 @@ salary: 1000000
 
 |Исходный тип данных  |Суффикс  |Пример  |
 |---------|---------|---------|
-| Тип Double |  ". float64" |    24,99|
+| Double |  ". float64" |    24,99|
 | Массив | ". Array" |    ["a", "b"]|
 |Двоичные данные | ". binary" |0|
 |Логическое    | ". bool"   |Верно|
@@ -155,7 +155,7 @@ salary: 1000000
 |NULL   | ". null"   | null|
 |Строка|    ". String" | "ABC"|
 |Отметка времени |    ". timestamp" |  Отметка времени (0, 0)|
-|Дата и время   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|
+|Дата/время   |". Date"    | Исодате ("2020-08-21T07:43:07.375 Z")|
 |ObjectId   |". objectId"    | ObjectId ("5f3f7b59330ec25c132623a2")|
 |Документ   |". Object" |    {"a": "a"}|
 
@@ -171,7 +171,7 @@ salary: 1000000
 
 ### <a name="security"></a>Безопасность
 
-Проверка подлинности для аналитического хранилища совпадает с проверкой для хранилища транзакций в заданной базе данных. Для проверки подлинности можно использовать главный ключ или ключи только для чтения. Чтобы не вставлять ключи Azure Cosmos DB в записные книжки Spark, можно использовать связанную службу в Synapse Studio. Доступ к этой связанной службе предоставляется всем, у кого есть доступ к рабочей области.
+Проверка подлинности для аналитического хранилища совпадает с проверкой для хранилища транзакций в заданной базе данных. Для проверки подлинности можно использовать первичный ключ или ключи только для чтения. Чтобы не вставлять ключи Azure Cosmos DB в записные книжки Spark, можно использовать связанную службу в Synapse Studio. Доступ к этой связанной службе предоставляется всем, у кого есть доступ к рабочей области.
 
 ### <a name="support-for-multiple-azure-synapse-analytics-runtimes"></a>Поддержка нескольких сред выполнения Azure Synapse Analytics
 

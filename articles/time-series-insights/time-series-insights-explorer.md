@@ -10,16 +10,19 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1bcf8ec2395dbc94154072c1c4d839bf45125a3e
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 49a763af8d936ec9fd15c59c908ba9015f803930
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89487306"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91568640"
 ---
 # <a name="azure-time-series-insights-gen1-explorer"></a>Обозреватель Gen1 временных рядов Azure
+
+> [!CAUTION]
+> Это Gen1 статья.
 
 В этой статье описываются функции и параметры [веб-приложения Gen1 Explorer](https://insights.timeseries.azure.com/)для службы "аналитика временных рядов Azure". Обозреватель службы "аналитика временных рядов Azure" демонстрирует мощные возможности визуализации данных, предоставляемые службой, и к ним можно обращаться в собственной среде.
 
@@ -108,7 +111,7 @@ ms.locfileid: "89487306"
 
 1. Используйте **тепловой карты** для быстрого выявления уникальных или аномальных рядов данных в определенном запросе. Только один поисковой запрос можно визуализировать в виде тепловой карты.
 
-    [![Диаграмма тепловой карты временных рядов Insights Explorer ](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png)](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png#lightbox)
+    [Обозреватель "аналитика временных рядов" тепловой карты "Диаграмма](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png)"] (Media/Time-Series-Insights-Explorer/tsi-ga-example-heatmap-charting.png # уменьшать)
 
 1. При просмотре событий путем выбора или щелчком правой кнопкой мыши панель **событий** становится доступной. Здесь можно просматривать все необработанные события и экспортировать события как файлы JSON или CSV. Служба "аналитика временных рядов Azure" хранит все необработанные данные.
 

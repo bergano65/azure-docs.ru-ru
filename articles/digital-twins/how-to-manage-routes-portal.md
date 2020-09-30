@@ -37,7 +37,7 @@ ms.locfileid: "91252839"
 
 Выберите экземпляр из результатов, чтобы просмотреть страницу сведений для своего экземпляра:
 
-:::image type="content" source="media/how-to-manage-routes-portal/instance-details.png" alt-text="Снимок экрана со сведениями об экземпляре ADT." border="false":::
+:::image type="content" source="media/how-to-manage-routes-portal/instance-details.png" alt-text="Снимок экрана портал Azure панели поиска." border="false":::
 
 ## <a name="create-an-endpoint-for-azure-digital-twins"></a>Создание конечной точки для Azure Digital двойников
 
@@ -62,11 +62,11 @@ ms.locfileid: "91252839"
 
 Затем создайте конечную точку, нажав _Save_.
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-grid.png" alt-text="Снимок экрана создания конечной точки сетки событий типа.":::
+:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-grid.png" alt-text="Снимок экрана портал Azure панели поиска.":::
 
 Чтобы убедиться, что конечная точка создана успешно, проверьте значок уведомления на верхней панели портал Azure: 
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-notifications.png" alt-text="Снимок экрана уведомления для проверки создания конечной точки." border="false":::
+:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-notifications.png" alt-text="Снимок экрана портал Azure панели поиска." border="false":::
 
 Вы также можете просмотреть конечную точку, созданную на странице *конечные точки* для своего экземпляра Digital двойников Azure.
 
@@ -88,7 +88,7 @@ ms.locfileid: "91252839"
 
 Затем создайте конечную точку, нажав _Save_.
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-hub.png" alt-text="Снимок экрана создания конечной точки для типа "концентраторы событий".":::
+:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-hub.png" alt-text="Снимок экрана портал Azure панели поиска.":::
 
 Чтобы убедиться, что конечная точка создана успешно, проверьте значок уведомления на верхней панели портал Azure. 
 
@@ -110,7 +110,7 @@ ms.locfileid: "91252839"
 
 Затем создайте конечную точку, нажав _Save_.
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-service-bus.png" alt-text="Снимок экрана создания конечной точки типа Service Bus.":::
+:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-service-bus.png" alt-text="Снимок экрана портал Azure панели поиска.":::
 
 Чтобы убедиться, что конечная точка создана успешно, проверьте значок уведомления на верхней панели портал Azure. 
 
@@ -149,7 +149,7 @@ ms.locfileid: "91252839"
 
 Чтобы включить маршрут, необходимо также **Добавить фильтр маршрутов событий** по крайней мере `true` . (Если значение по умолчанию — `false` , будет создан маршрут, но в него не будут отправляться никакие события.) Для этого переключите переключатель в _Расширенный редактор_ , чтобы включить его, и напишите `true` в поле *фильтра* .
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-event-route-no-filter.png" alt-text="Снимок экрана создания маршрута события для экземпляра." lightbox="media/how-to-manage-routes-portal/create-event-route-no-filter.png":::
+:::image type="content" source="media/how-to-manage-routes-portal/create-event-route-no-filter.png" alt-text="Снимок экрана портал Azure панели поиска." lightbox="media/how-to-manage-routes-portal/create-event-route-no-filter.png":::
 
 По завершении нажмите кнопку _Save (сохранить_ ), чтобы создать маршрут события.
 
@@ -175,7 +175,7 @@ ms.locfileid: "91252839"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-manage-routes-portal/create-event-route-filter-basic-1.png" alt-text="Снимок экрана создания маршрута события с базовым фильтром. Установка флажков событий.":::
+        :::image type="content" source="media/how-to-manage-routes-portal/create-event-route-filter-basic-1.png" alt-text="Снимок экрана портал Azure панели поиска.":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -185,7 +185,7 @@ ms.locfileid: "91252839"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-manage-routes-portal/create-event-route-filter-basic-2.png" alt-text="Снимок экрана создания маршрута события с базовым фильтром. Отображение автоматически заполняемого текста фильтра после выбора событий.":::
+        :::image type="content" source="media/how-to-manage-routes-portal/create-event-route-filter-basic-2.png" alt-text="Снимок экрана портал Azure панели поиска.":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -199,7 +199,7 @@ ms.locfileid: "91252839"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-manage-routes-portal/create-event-route-filter-advanced.png" alt-text="Снимок экрана создания маршрута события с расширенным фильтром.":::
+        :::image type="content" source="media/how-to-manage-routes-portal/create-event-route-filter-advanced.png" alt-text="Снимок экрана портал Azure панели поиска.":::
     :::column-end:::
     :::column:::
     :::column-end:::

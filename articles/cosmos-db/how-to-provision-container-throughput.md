@@ -32,7 +32,7 @@ ms.locfileid: "91282822"
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-provision-container-throughput/provision-container-throughput-portal-all-api.png" alt-text="Снимок экрана обозревателя данных с выделенным элементом "Новая коллекция"":::
+    :::image type="content" source="./media/how-to-provision-container-throughput/provision-container-throughput-portal-all-api.png" alt-text="Снимок экрана обозревателя данных с выделенным элементом &quot;Новая коллекция&quot;":::
 
 ## <a name="azure-cli-or-powershell"></a>Azure CLI или Azure PowerShell
 

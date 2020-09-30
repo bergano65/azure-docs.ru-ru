@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: djpmsft
 ms.author: daperlov
 ms.date: 08/31/2020
-ms.openlocfilehash: 96fba5c27115dab65f26be80ce03bef35abcdb92
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: a936fbec23a38c5b96c678b38b92eed9346b88bf
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89230842"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91567542"
 ---
 # <a name="global-parameters-in-azure-data-factory"></a>Глобальные параметры в фабрике данных Azure
 
@@ -25,11 +25,11 @@ ms.locfileid: "89230842"
 
 Чтобы создать глобальный параметр, перейдите на вкладку *глобальные параметры* в разделе *Управление* . Выберите **создать** , чтобы открыть боковую панель навигации.
 
-![Создание глобальных параметров](media/author-global-parameters/create-global-parameter-1.png)
+![Снимок экрана, посвященный новой кнопке, выбранной для создания глобальных параметров.](media/author-global-parameters/create-global-parameter-1.png)
 
 В боковой панели навигации введите имя, выберите тип данных и укажите значение параметра.
 
-![Создание глобальных параметров](media/author-global-parameters/create-global-parameter-2.png)
+![Снимок экрана, на котором показано, куда добавить имя, тип данных и значение для нового глобального параметра.](media/author-global-parameters/create-global-parameter-2.png)
 
 После создания глобального параметра его можно изменить, щелкнув имя параметра. Чтобы изменить сразу несколько параметров, выберите **изменить все**.
 

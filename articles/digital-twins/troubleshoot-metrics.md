@@ -28,18 +28,18 @@ ms.locfileid: "91322637"
 
     В меню экземпляра выберите **метрики**.
    
-    :::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников":::
+    :::image type="content" source="media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей &quot;метрики&quot; для Azure Digital двойников":::
 
     На этой странице отображаются метрики для вашего экземпляра Azure Digital двойников. Вы также можете создать настраиваемые представления метрик, выбрав из списка нужные сведения.
     
 3. Вы можете отправить данные метрик в конечную точку концентраторов событий или учетную запись хранения Azure, выбрав **параметры диагностики** в меню, а затем **добавив параметр диагностики**.
 
-    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей параметров диагностики и кнопкой "Добавить"":::
+    :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Снимок экрана со страницей &quot;метрики&quot; для Azure Digital двойников":::
 
     Дополнительные сведения об этом процессе см. в разделе [*Устранение неполадок: Настройка диагностики*](troubleshoot-diagnostics.md).
 
 4. Вы можете настроить оповещения для данных метрик, выбрав в меню пункт **оповещения** , а затем — **новое правило генерации оповещений**.
-    :::image type="content" source="media/troubleshoot-alerts/alerts-pre.png" alt-text="Снимок экрана, показывающий страницу предупреждений и добавляемую кнопку":::
+    :::image type="content" source="media/troubleshoot-alerts/alerts-pre.png" alt-text="Снимок экрана со страницей &quot;метрики&quot; для Azure Digital двойников":::
 
     Дополнительные сведения об этом процессе см. в разделе [*Устранение неполадок: Настройка оповещений*](troubleshoot-alerts.md).
 

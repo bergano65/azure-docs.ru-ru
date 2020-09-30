@@ -1,5 +1,5 @@
 ---
-title: Использование назначенного системой управляемого удостоверения для доступа к данным Azure Cosmos DB
+title: Использование назначаемого системой управляемого удостоверения для доступа к данным Azure Cosmos DB
 description: Узнайте, как настроить Azure Active Directory (Azure AD) управляемое удостоверение (управляемое удостоверение службы) для доступа к ключам из Azure Cosmos DB.
 author: j-patrick
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 25ec74f3638ce857e4472d73a51e45f24c4df5ec
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 07bfaabf051a016ca9617245ba8628ef6c7e80c0
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997733"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91566624"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Использование управляемых системой удостоверений для доступа к данным Azure Cosmos DB
 
@@ -35,7 +35,7 @@ ms.locfileid: "88997733"
 
 1. На вкладке **удостоверение** **включите** **состояние** удостоверения системы и нажмите кнопку **сохранить**. Панель **удостоверений** должна выглядеть следующим образом:  
 
-   :::image type="content" source="./media/managed-identity-based-authentication/identity-tab-system-managed-on.png" alt-text="Снимок экрана с состоянием удостоверения системы, установленным в значение ON.":::
+   :::image type="content" source="./media/managed-identity-based-authentication/identity-tab-system-managed-on.png" alt-text="Снимок экрана, показывающий функции платформы и параметры идентификации для приложения функции.":::
 
 ## <a name="grant-access-to-your-azure-cosmos-account"></a>Предоставление доступа к учетной записи Azure Cosmos
 
@@ -47,7 +47,7 @@ ms.locfileid: "88997733"
 |[Роль читателя учетных записей Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role)|Позволяет считывать данные учетных записей Azure Cosmos DB. Позволяет получать ключи чтения. |
 
 > [!IMPORTANT]
-> Поддержка управления доступом на основе ролей в Azure Cosmos DB применяется только к операциям управления плоскостью. Операции с плоскостью данных защищаются с помощью главных ключей или маркеров ресурсов. Дополнительные сведения см. в статье [безопасный доступ к данным](secure-access-to-data.md) .
+> Поддержка управления доступом на основе ролей в Azure Cosmos DB применяется только к операциям управления плоскостью. Операции с плоскостью данных защищаются с помощью первичных ключей или маркеров ресурсов. Дополнительные сведения см. в статье [безопасный доступ к данным](secure-access-to-data.md) .
 
 > [!TIP] 
 > При назначении ролей назначьте только необходимый доступ. Если службе требуется только чтение данных, назначьте управляемому удостоверению роль **читателя учетной записи Cosmos DB** . Дополнительные сведения о важности минимальных прав доступа см. в статье о [низком уровне уязвимости привилегированных учетных записей](../security/fundamentals/identity-management-best-practices.md#lower-exposure-of-privileged-accounts) .
@@ -58,19 +58,19 @@ ms.locfileid: "88997733"
 
 1. Войдите в портал Azure и перейдите к учетной записи Azure Cosmos DB. Откройте панель **управления доступом (IAM)** и перейдите на вкладку **назначения ролей** :
 
-   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab.png" alt-text="Снимок экрана, показывающий панель управления доступом и вкладку назначения ролей.":::
+   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab.png" alt-text="Снимок экрана, показывающий функции платформы и параметры идентификации для приложения функции.":::
 
 1. Выберите **+ Добавить** > **Добавить назначение ролей**.
 
 1. Справа откроется панель **Добавление назначения ролей** .
 
-   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Снимок экрана, показывающий панель Добавление назначения ролей.":::
+   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Снимок экрана, показывающий функции платформы и параметры идентификации для приложения функции.":::
 
    * **Роль**: выбор **участника учетной записи DocumentDB**
    * **Назначение доступа к**: в подразделе **Выбор управляемого системой удостоверения** выберите **приложение-функция**.
    * **SELECT**: область будет заполнена всеми приложениями-функциями в подписке, которые имеют **управляемое удостоверение системы**. В этом случае выберите приложение функции **фиштанктемпературесервице** : 
 
-      :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, на котором отображается панель Добавление назначения ролей, заполненная примерами.":::
+      :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, показывающий функции платформы и параметры идентификации для приложения функции.":::
 
 1. После выбора приложения функции нажмите кнопку **сохранить**.
 
