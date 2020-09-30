@@ -2,15 +2,15 @@
 title: Создание и развертывание спецификации шаблона
 description: Узнайте, как создать спецификацию шаблона на основе шаблона ARM. Затем разверните спецификацию шаблона в группе ресурсов в подписке.
 author: tfitzmac
-ms.date: 08/31/2020
+ms.date: 09/25/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: 47791455c63852bfc6f8a7e3152fabe18d303ecb
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: a4f24e69f29614de27947573d968d817dce4a57b
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89227735"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369221"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Краткое руководство. Создание и развертывание спецификации шаблона (предварительная версия)
 
@@ -55,7 +55,7 @@ ms.locfileid: "89227735"
       -Version "1.0" `
       -ResourceGroupName templateSpecRG `
       -Location westus2 `
-      -TemplateJsonFile "c:\Templates\azuredeploy.json"
+      -TemplateFile "c:\Templates\azuredeploy.json"
     ```
 
 # <a name="cli"></a>[CLI](#tab/azure-cli)
@@ -220,7 +220,7 @@ ms.locfileid: "89227735"
 1. Получите ИД ресурса спецификации шаблона.
 
     ```azurepowershell
-    $id = (Get-AzTemplateSpec -ResourceGroupName templateSpecRG -Name storageSpec -Version "1.0").Version.Id
+    $id = (Get-AzTemplateSpec -ResourceGroupName templateSpecRG -Name storageSpec -Version "1.0").Versions.Id
     ```
 
 1. Разверните спецификацию шаблона.

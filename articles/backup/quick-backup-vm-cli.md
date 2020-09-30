@@ -5,12 +5,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 01/31/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 98eff02dacb5b44839937f826cd676fe16670cbb
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 92990df3049f7fa1074d55fc34734e13d6673cd7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89017487"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328830"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-the-cli"></a>Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки
 
@@ -38,7 +38,7 @@ az backup vault create --resource-group myResourceGroup \
     --location eastus
 ```
 
-По умолчанию в качестве хранилища служб восстановления задано геоизбыточное хранилище. Геоизбыточное хранилище гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от первичного региона. Если вам необходимо изменить параметр избыточности хранилища, используйте командлет [az backup vault backup-properties set](/cli/azure/backup/vault/backup-properties?view=azure-cli-latest#az-backup-vault-backup-properties-set).
+По умолчанию в качестве хранилища служб восстановления задано геоизбыточное хранилище. Геоизбыточное хранилище гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от первичного региона. Если вам необходимо изменить параметр избыточности хранилища, используйте командлет [az backup vault backup-properties set](/cli/azure/backup/vault/backup-properties#az-backup-vault-backup-properties-set).
 
 ```azurecli
 az backup vault backup-properties set \
@@ -118,7 +118,7 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
-Если защита больше не нужна, вы можете отключить ее на виртуальной машине, удалить точки восстановления и хранилище служб восстановления, а затем удалить группу ресурсов и связанные ресурсы виртуальной машины. Если вы использовали существующую виртуальную машину, можете пропустить последнюю команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete), чтобы оставить группу ресурсов и виртуальную машину.
+Если защита больше не нужна, вы можете отключить ее на виртуальной машине, удалить точки восстановления и хранилище служб восстановления, а затем удалить группу ресурсов и связанные ресурсы виртуальной машины. Если вы использовали существующую виртуальную машину, можете пропустить последнюю команду [az group delete](/cli/azure/group#az-group-delete), чтобы оставить группу ресурсов и виртуальную машину.
 
 Если вы хотите ознакомиться с руководством по резервному копированию, в котором объясняется, как восстанавливать данные виртуальной машины, перейдите к [дальнейшим действиям](#next-steps).
 

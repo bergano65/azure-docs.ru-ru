@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 03/10/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 9cc00cfa9f44c69a5880d53c0b7ac623f60be16b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 6021bb4fa5d30de423ab56bfb5fdea6af2665a4a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945764"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334486"
 ---
 # <a name="calling-client-library-overview"></a>Общие сведения о клиентской библиотеке для вызовов
 
@@ -55,8 +55,7 @@ ms.locfileid: "90945764"
 |                   | Создать групповой вызов с участниками ТСОП                                                                           | ✔️   | ✔️            | ✔️
 |                   | Перевести индивидуальный вызов с участником ТСОП в групповой вызов                                                 | ✔️   | ✔️            | ✔️
 |                   | Возможность отключиться от группового вызова в качестве участника ТСОП                                                                    | ✔️   | ✔️            | ✔️   
-| Общие сведения           | Участие в групповом вызове, который состоит максимум из 350 участников                                                       |  ✔️  | ✔️            | ✔️    
-|                   | Проверьте микрофон, динамик и камеру с помощью службы проверки звука (доступна по вызову 8:echo123)                   |  ✔️  | ✔️            | ✔️   
+| Общие сведения           | Проверьте микрофон, динамик и камеру с помощью службы проверки звука (доступна по вызову 8:echo123)                   |  ✔️  | ✔️            | ✔️   
 
 ## <a name="calling-client-library-browser-support"></a>Поддержка браузера клиентской библиотеки для вызовов
 

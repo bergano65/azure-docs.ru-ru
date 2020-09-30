@@ -4,12 +4,12 @@ description: Дополнительные сведения о восстанов
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: d93f3d24762f4b9a3da4a9e725d28810f6700fe0
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 861c911e84c9de02467d443751902e71d2504422
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88890712"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324998"
 ---
 # <a name="restore-a-vm-with-azure-cli"></a>Восстановление виртуальной машины с помощью Azure CLI
 
@@ -43,13 +43,13 @@ ms.locfileid: "88890712"
 
 Чтобы восстановить диск, выберите точку восстановления в качестве источника данных восстановления. Поскольку политика по умолчанию создает точку восстановления каждый день и хранит все точки в течение 30 дней, вы можете сохранить набор точек восстановления, а затем выбрать определенный момент времени для восстановления.
 
-Чтобы просмотреть список доступных точек восстановления, используйте команду [az backup recoverypoint list](/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list). **Имя** точки восстановления используется для восстановления дисков. В рамках этого руководства нам требуется последняя доступная точка восстановления. Параметр `--query [0].name` выбирает имя самой последней точки восстановления следующим образом:
+Чтобы просмотреть список доступных точек восстановления, используйте команду [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). **Имя** точки восстановления используется для восстановления дисков. В рамках этого руководства нам требуется последняя доступная точка восстановления. Параметр `--query [0].name` выбирает имя самой последней точки восстановления следующим образом:
 
 ```azurecli-interactive
 az backup recoverypoint list \
     --resource-group myResourceGroup \
     --vault-name myRecoveryServicesVault \
-    --backup-management-type AzureIaasVM
+    --backup-management-type AzureIaasVM \
     --container-name myVM \
     --item-name myVM \
     --query [0].name \
@@ -65,7 +65,7 @@ az backup recoverypoint list \
 
 Если в виртуальной машине, для которой используется резервное копирование, есть управляемые диски и вы намерены восстанавливать эти управляемые диски из точки восстановления, вам необходимо предоставить учетную запись хранения Azure. Эта учетная запись хранения используется для сохранения конфигурации виртуальной машины и шаблона развертывания, которые позже можно применить для развертывания виртуальной машины с восстановленных дисков. Также предоставьте целевую группу ресурсов для восстановления управляемых дисков.
 
-1. Создайте учетную запись хранения с помощью команды [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
+1. Создайте учетную запись хранения с помощью команды [az storage account create](/cli/azure/storage/account#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
 
     ```azurecli-interactive
     az storage account create \
@@ -74,7 +74,7 @@ az backup recoverypoint list \
         --sku Standard_LRS
     ```
 
-2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list). ***Также предоставьте целевую группу ресурсов, в которую будут восстановлены управляемые диски***.
+2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](/cli/azure/backup/restore#az-backup-restore-restore-disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list). ***Также предоставьте целевую группу ресурсов, в которую будут восстановлены управляемые диски***.
 
     ```azurecli-interactive
     az backup restore restore-disks \
@@ -109,7 +109,7 @@ az backup recoverypoint list \
 
 Затем этот восстановленный диск используется для создания виртуальной машины.
 
-1. Создайте учетную запись хранения с помощью команды [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
+1. Создайте учетную запись хранения с помощью команды [az storage account create](/cli/azure/storage/account#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
 
     ```azurecli-interactive
     az storage account create \
@@ -118,7 +118,7 @@ az backup recoverypoint list \
         --sku Standard_LRS
     ```
 
-2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list):
+2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](/cli/azure/backup/restore#az-backup-restore-restore-disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](/cli/azure/backup/recoverypoint#az-backup-recoverypoint-list):
 
     ```azurecli-interactive
     az backup restore restore-disks \
@@ -145,7 +145,7 @@ az backup recoverypoint list \
 
 ## Monitor the restore job
 
-To monitor the status of restore job, use [az backup job list](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list):
+To monitor the status of restore job, use [az backup job list](/cli/azure/backup/job#az-backup-job-list):
 
 ```azurecli-interactive
 az backup job list \
@@ -181,7 +181,7 @@ az backup job show \
     -n 1fc2d55d-f0dc-4ca6-ad48-aca0fe5d0414
 ```
 
-Выходные данные этого запроса содержат подробные сведения, из которых нас интересует только содержимое учетной записи хранения. Для получения нужных сведений мы можем использовать [функцию запросов](/cli/azure/query-azure-cli?view=azure-cli-latest) в Azure CLI.
+Выходные данные этого запроса содержат подробные сведения, из которых нас интересует только содержимое учетной записи хранения. Для получения нужных сведений мы можем использовать [функцию запросов](/cli/azure/query-azure-cli) в Azure CLI.
 
 ```azurecli-interactive
 az backup job show \
@@ -258,7 +258,7 @@ az group deployment create \
   --template-uri $url?$token
 ```
 
-Чтобы убедиться, что виртуальная машина была создана на основе восстановленного диска, перечислите виртуальные машины в группе ресурсов с помощью команды [az vm list](/cli/azure/vm?view=azure-cli-latest#az-vm-list) следующим образом:
+Чтобы убедиться, что виртуальная машина была создана на основе восстановленного диска, перечислите виртуальные машины в группе ресурсов с помощью команды [az vm list](/cli/azure/vm#az-vm-list) следующим образом:
 
 ```azurecli-interactive
 az vm list --resource-group myResourceGroup --output table

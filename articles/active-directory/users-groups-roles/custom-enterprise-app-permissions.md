@@ -12,12 +12,12 @@ ms.date: 09/22/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 1d196ea33eafbfae0d9db68588c0adb131a383f4
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 2ebba2bb957a1c05fd591181f0a784ed778c6c57
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90998555"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333381"
 ---
 # <a name="enterprise-application-permissions-for-custom-roles-in-azure-active-directory"></a>Разрешения корпоративных приложений для пользовательских ролей в Azure Active Directory
 
@@ -138,7 +138,6 @@ microsoft.directory/servicePrincipals/appRoleAssignedTo/read | Чтение на
 microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение назначенных субъекту-службе ролей.
 microsoft.directory/servicePrincipals/appRoleAssignments/read | Чтение назначений ролей, назначенных субъекту-службе.
 microsoft.directory/servicePrincipals/audience/update | Изменение свойств целевой аудитории для субъектов-служб.
-microsoft.directory/servicePrincipals/authentication/read |  
 microsoft.directory/servicePrincipals/authentication/update | Изменение свойств проверки подлинности для субъектов-служб.
 microsoft.directory/servicePrincipals/basic/update | Изменение базовых свойств для субъектов-служб.
 microsoft.directory/servicePrincipals/create | Создание субъектов-служб.

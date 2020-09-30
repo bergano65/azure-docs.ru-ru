@@ -7,13 +7,13 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
-ms.custom: devx-track-javascript
-ms.openlocfilehash: c5afd7d912142dd8556e71ba9e0a522b2fa0da1c
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.custom: devx-track-js
+ms.openlocfilehash: 554a7504e4e72eb2b2921c56e535343398cfa8b6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684598"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333653"
 ---
 # <a name="deploy-server-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Развертывание веб-сайтов Next.js с рендерингом на стороне сервера в Статических веб-приложениях Azure (предварительная версия)
 
@@ -63,7 +63,7 @@ ms.locfileid: "88684598"
 
 Щелкнув платформу или библиотеку, вы увидите страницу со сведениями о выбранном элементе:
 
-:::image type="content" source="media/deploy-nextjs/start-nextjs-details.png" alt-text="Страница сведений":::
+:::image type="content" source="media/deploy-nextjs/start-nextjs-details.png" alt-text="Запуск приложения Next.js":::
 
 ## <a name="generate-a-static-website-from-nextjs-build"></a>Создание статического веб-сайта из сборки Next.js
 
@@ -146,7 +146,7 @@ ms.locfileid: "88684598"
 1. В раскрывающемся списке *Регион* выберите ближайший к вам регион.
 1. Из раскрывающегося списка номеров SKU выберите **Бесплатный**.
 
-   :::image type="content" source="media/deploy-nextjs/create-static-web-app.png" alt-text="Создание статического веб-приложения":::
+   :::image type="content" source="media/deploy-nextjs/create-static-web-app.png" alt-text="Запуск приложения Next.js":::
 
 ### <a name="add-a-github-repository"></a>Добавление репозитория GitHub
 
@@ -157,7 +157,7 @@ ms.locfileid: "88684598"
 1. Найдите и выберите имя созданного ранее репозитория.
 1. Выберите **master** в качестве ветви в раскрывающемся списке *Ветвь*.
 
-   :::image type="content" source="media/deploy-nextjs/connect-github.png" alt-text="Подключение GitHub":::
+   :::image type="content" source="media/deploy-nextjs/connect-github.png" alt-text="Запуск приложения Next.js":::
 
 ### <a name="configure-the-build-process"></a>Настройка процесса сборки
 
@@ -165,7 +165,7 @@ ms.locfileid: "88684598"
 
 1. Щелкните вкладку **Сборка**, чтобы настроить статическую выходную папку.
 
-   :::image type="content" source="media/deploy-nextjs/build-tab.png" alt-text="Вкладка Сборка":::
+   :::image type="content" source="media/deploy-nextjs/build-tab.png" alt-text="Запуск приложения Next.js":::
 
 2. Введите **out** в текстовом поле *App artifact location* (Расположение артефакта приложения).
 
@@ -195,7 +195,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nextjs-starter/actions
 
 Перейдите к только что развернутому сайту и щелкните один из логотипов платформы или библиотеки. Вместо страницы сведений вы получаете страницу с ошибкой 404.
 
-:::image type="content" source="media/deploy-nextjs/404-in-production.png" alt-text="Ошибка 404 для динамических маршрутов":::
+:::image type="content" source="media/deploy-nextjs/404-in-production.png" alt-text="Запуск приложения Next.js":::
 
 Причина этой ошибки заключается в том, что Next.js создает только домашнюю страницу на основе конфигурации приложения.
 
@@ -231,7 +231,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nextjs-starter/actions
 
 2. Отправьте новые изменения в репозиторий GitHub и подождите несколько минут, пока GitHub Actions еще раз выполнит сборку сайта. По завершении сборки ошибка 404 исчезнет.
 
-   :::image type="content" source="media/deploy-nextjs/404-in-production-fixed.png" alt-text="Ошибка 404 для динамических маршрутов устранена":::
+   :::image type="content" source="media/deploy-nextjs/404-in-production-fixed.png" alt-text="Запуск приложения Next.js":::
 
 > [!div class="nextstepaction"]
 > [Настройка личного домена](custom-domain.md)

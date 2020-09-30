@@ -1,15 +1,17 @@
 ---
 title: Руководство по Бот Распознавания речи версии 4 на Node.js
 description: Из этого руководства вы узнаете, как создавать чат-боты, интегрированные со службой распознавания речи (LUIS), используя Node.js. Для быстрой реализации решений ботов этот чат-бот использует приложение "Управление персоналом". Бот создается с помощью Bot Framework версии 4 и бота веб-приложения Azure.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 522502a043778d6f482c1756506063dfa6515ca3
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: d6ef0b0d437674d78064e6c5c5a91e1b2b89074a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405030"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324677"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-nodejs"></a>Руководство по совместному использованию бота веб-приложения и службы "Распознавание речи" в Node.js
 

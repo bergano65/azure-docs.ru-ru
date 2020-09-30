@@ -10,13 +10,13 @@ ms.subservice: bing-video-search
 ms.topic: tutorial
 ms.date: 02/03/2020
 ms.author: aahi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: c3515d6dc7556995c990180330212bffb1445ad2
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: 2bdd51218c098dcd778d9a72a98fe42b96357b4e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406237"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328723"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Руководство по Одностраничное приложение для поиска видео
 API Bing для поиска видео позволяет выполнять поиск в Интернете и получать результаты видео, относящиеся к поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска в Интернете для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript.

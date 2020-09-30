@@ -2,14 +2,16 @@
 title: Руководство по Проверка речевых фрагментов конечной точки — LUIS
 description: Из этого руководства вы узнаете, как повысить точность прогнозирования в приложении, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей.
 services: cognitive-services
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/02/2020
-ms.openlocfilehash: 082e625efeeb4764aaa1ac5101eb2b0013348b19
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: b8f8fa2cd3c9c22187bb95c55d9de2abb2e8caec
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959060"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324643"
 ---
 # <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого учебника вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Речевые фрагменты конечных точек необходимо проверять в рамках планового обслуживания LUIS.
@@ -82,7 +84,7 @@ ms.locfileid: "85959060"
 
 1. В разделе **Сборка** портала выберите **Review endpoint utterances** (Просмотреть речевые фрагменты конечной точки) на панели навигации слева. Список будет отфильтрован для намерения **ApplyForJob**.
 
-    :::image type="content" source="./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png" alt-text="Снимок экрана с кнопкой Review endpoint utterances (Просмотреть речевые фрагменты конечной точки) на панели навигации слева":::
+    :::image type="content" source="./media/luis-tutorial-review-endpoint-utterances/review-endpoint-utterances-with-entity-view.png" alt-text="Перейдите со страницы Версии на страницу Намерения.":::
 
     Этот речевой фрагмент, `I'm looking for a job with Natural Language Processing`, неправильно соотнесен с намерением, _GetJobInformation_. Он был неверно предсказан как _ApplyForJob_ из-за схожести имен заданий и глаголов в двух намерениях.
 

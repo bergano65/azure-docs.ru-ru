@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: cd10421ddcf752625b8040e1afa4e7b15f142ce2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 5892fd732a1e66b2b7dd4c1031cabfcbcc768c6d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90885683"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326156"
 ---
 # <a name="map-an-existing-custom-domain-to-azure-spring-cloud"></a>Сопоставление существующего личного домена с Azure Spring Cloud
 
@@ -58,12 +58,12 @@ ms.locfileid: "90885683"
 
 Получите идентификатор объекта с помощью следующей команды.
 ```
-az ad sp show --id 03b39d0f-4213-4864-a245-b1476ec03169 --query objectId
+az ad sp show --id <service principal id> --query objectId
 ```
 
 Предоставьте Azure Spring Cloud права на доступ на чтение к хранилищу ключей, заменив идентификатор объекта в следующей команде.
 ```
-az keyvault set-policy -g <key vault resource group> -n <key vault name>  --object-id <object id> --certificate-permissions get list --secret-permissions get list
+az keyvault set-policy -g <key vault resource group> -n <key vault name>  --object-id <object id> --certificate-permissions get list
 ``` 
 
 Чтобы импортировать сертификат в Azure Spring Cloud, сделайте следующее:
@@ -93,7 +93,7 @@ az keyvault set-policy -g <key vault resource group> -n <key vault name>  --obje
 Вы также можете использовать Azure CLI для отображения списка сертификатов.
 
 ```
-az spring-cloud certificate list
+az spring-cloud certificate list --resource-group <resource group name> --service <service name>
 ```
 
 > [!IMPORTANT] 
@@ -128,7 +128,7 @@ az spring-cloud certificate list
 
 Вы также можете использовать Azure CLI для добавления личного домена.
 ```
-az spring-cloud app custom-domain bind --domain-name <domain name> --app <app name> 
+az spring-cloud app custom-domain bind --domain-name <domain name> --app <app name> --resource-group <resource group name> --service <service name>
 ```
 
 У одного приложения может быть несколько доменов, но каждый домен может быть сопоставлен только с одним приложением. После успешного сопоставления личного домена с приложением вы увидите его в таблице личных доменов.
@@ -137,7 +137,7 @@ az spring-cloud app custom-domain bind --domain-name <domain name> --app <app na
 
 Вы также можете использовать Azure CLI для отображения списка личных доменов.
 ```
-az spring-cloud app custom-domain list --app <app name> 
+az spring-cloud app custom-domain list --app <app name> --resource-group <resource group name> --service <service name>
 ```
 
 > [!NOTE]
@@ -168,7 +168,7 @@ az spring-cloud app custom-domain update --domain-name <domain name> --certifica
 
 Вы также можете использовать Azure CLI для принудительного применения HTTPS.
 ```
-az spring-cloud app update -name <app-name> --https-only <true|false> -g <resource group> --service <service-name>
+az spring-cloud app custom-domain update --domain-name <domain name> --certificate <cert name> --app <app name> --resource-group <resource group name> --service <service name>
 ```
 
 По завершении операции перейдите по любому из URL-адресов HTTPS, которые указывают на ваше приложение. Обратите внимание, что URL-адреса HTTP теперь не работают.

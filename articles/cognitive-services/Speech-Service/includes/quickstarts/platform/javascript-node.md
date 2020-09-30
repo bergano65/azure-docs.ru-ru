@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/11/2019
 ms.author: erhopf
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e5c83b4b8e579223fa8bc00e1347e5cb2f92fca1
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: 6a7fbac72c73ae44d158d91653b3713b271f8da4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406433"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324785"
 ---
 Здесь также описано, как установить [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для JavaScript для использования с Node.js. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `npm install microsoft-cognitiveservices-speech-sdk` в существующем проекте.
 

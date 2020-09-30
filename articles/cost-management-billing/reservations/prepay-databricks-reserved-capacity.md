@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 699b3d9c9799b9d3a4ec148cbf395b212715f536
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: b7d7380114046fbeaaf4b6eb2660997d64168715
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686094"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91368572"
 ---
 # <a name="optimize-azure-databricks-costs-with-a-pre-purchase"></a>Оптимизация затрат на Azure Databricks с помощью предварительного приобретения
 
@@ -63,7 +63,7 @@ ms.locfileid: "88686094"
 После приобретения в резервирование можно внести следующие типы изменений:
 
 - Обновить область резервирования
-- Доступ на основе ролей
+- Управление доступом Azure на основе ролей (Azure RBAC)
 
 Вы не можете разделить или объединить предварительную покупку фиксированной единицы Databricks. Дополнительные сведения об управлении резервированиями см. в статье[Manage reservations after purchase](manage-reserved-vm-instance.md) (Управление резервированиями после покупки).
 

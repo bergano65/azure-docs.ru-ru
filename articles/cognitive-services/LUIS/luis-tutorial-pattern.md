@@ -1,14 +1,16 @@
 ---
 title: Руководство по Шаблоны — LUIS
 description: В этом учебнике вы примените шаблоны для улучшения прогнозирования намерений и сущностей, одновременно сокращая число примеров речевых фрагментов. Шаблон предоставляется в виде примера речевого фрагмента, который содержит синтаксис для идентификации сущностей и игнорируемый текст.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/06/2020
-ms.openlocfilehash: 3ca8bb15d19b0fa0dd6b33d35a380c0b1b07abe0
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 9814304aed4d7a5f307fb2179491b0fa9635fd68
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039506"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324660"
 ---
 # <a name="tutorial-add-common-pattern-template-utterance-formats-to-improve-predictions"></a>Руководство по Добавление шаблонов высказываний в стандартных форматах для улучшения прогнозирования
 

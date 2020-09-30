@@ -12,14 +12,14 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/06/2019
+ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 53fdea6a52cc02ddc9aaf22574a6bac5f5b7bca6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 2eee46f99af247ffd0e11b262ace0a96453270d4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945505"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323680"
 ---
 # <a name="what-is-azure-security-center"></a>Что такое Центр безопасности Azure?
 
@@ -67,7 +67,7 @@ ms.locfileid: "90945505"
 
 Центр безопасности помогает **определять подписки для использования теневых ИТ**. Взглянув на подписки с меткой **не защищены** на панели мониторинга, вы можете немедленно узнать о недавно созданных подписках и убедиться, что они защищаются политиками и Центром безопасности Azure.
 
-:::image type="content" source="./media/security-center-intro/sc-policy-dashboard.png" alt-text="Панель мониторинга политики Центра безопасности":::
+:::image type="content" source="./media/security-center-intro/sc-policy-dashboard.png" alt-text="Страница управления политиками":::
 
 ### <a name="continuous-assessments"></a>Непрерывные оценки
 
@@ -75,13 +75,13 @@ ms.locfileid: "90945505"
 
 Чтобы помочь вам понять, насколько важна каждая рекомендация для вашего общего состояния безопасности, в Центре безопасности рекомендации сгруппированы по средствам управления безопасностью, для которых указывается значение **оценки безопасности**. Очень важно **приоритизировать работу системы безопасности**.
 
-:::image type="content" source="./media/security-center-intro/sc-secure-score.png" alt-text="Оценка безопасности в Центре безопасности":::
+:::image type="content" source="./media/security-center-intro/sc-secure-score.png" alt-text="Страница управления политиками":::
 
 ### <a name="network-map"></a>Карта сети
 
 Одно из самых мощных средств Центра безопасности для постоянного мониторинга состояния защиты сети — это **карта сети**. Карта позволяет вам просмотреть топологию рабочих нагрузок, чтобы вы могли убедиться, что каждый узел настроен правильно. Вы можете увидеть, как соединены ваши узлы, что помогает блокировать нежелательные подключения, которые потенциально упрощают злоумышленнику проникновение в вашу сеть.
 
-:::image type="content" source="./media/security-center-intro/sc-net-map.png" alt-text="Карта сети Центра безопасности":::
+:::image type="content" source="./media/security-center-intro/sc-net-map.png" alt-text="Страница управления политиками":::
 
 
 ### <a name="optimize-and-improve-security-by-configuring-recommended-controls"></a>Оптимизация и повышение уровня безопасности путем настройки рекомендуемых элементов управления
@@ -92,7 +92,7 @@ ms.locfileid: "90945505"
 
 Рекомендации помогают снизить вероятность атак каждого из ваших ресурсов. Это включает виртуальные машины Azure, серверы за пределами Azure и службы Azure PaaS, такие как SQL и учетные записи хранения, и многое другое, где каждый тип ресурса оценивается иначе и имеет собственные стандарты.
 
-:::image type="content" source="./media/security-center-intro/sc-recommendation-example.png" alt-text="Пример рекомендации Центра безопасности":::
+:::image type="content" source="./media/security-center-intro/sc-recommendation-example.png" alt-text="Страница управления политиками":::
 
 ## <a name="protect-against-threats"></a>Защита от угроз
 
@@ -100,7 +100,7 @@ ms.locfileid: "90945505"
 
 Защита от угроз Центра безопасности включает объединение анализа цепочки отказов, который автоматически сопоставляет оповещения в среде на основе анализа цепочки отказов в киберсреде, чтобы помочь лучше понять полную историю кампании атаки, откуда она была запущена и какое влияние имела на ваши ресурсы.
 
-:::image type="content" source="./media/security-center-intro/sc-alerts.png" alt-text="Оповещения безопасности":::
+:::image type="content" source="./media/security-center-intro/sc-alerts.png" alt-text="Страница управления политиками":::
 
 ### <a name="integration-with-microsoft-defender-advanced-threat-protection"></a>Интеграция с Расширенной защитой от угроз в Microsoft Defender
 

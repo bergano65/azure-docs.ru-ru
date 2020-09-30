@@ -4,12 +4,12 @@ description: Из этого учебника вы узнаете, как вып
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: eb6b9f4d58a94cc8a4b9f70b5ead7d319a0d51b5
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: f11e01c6af18cac956d58b9c692d7b57c8fe653a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89007593"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91324966"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Резервное копирование баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
@@ -50,7 +50,7 @@ az backup vault create --resource-group saphanaResourceGroup \
     --location westus2
 ```
 
-По умолчанию в качестве хранилища служб восстановления задано геоизбыточное хранилище. Геоизбыточное хранилище обеспечивает репликацию данных резервного копирования во вторичный регион, который находится в сотнях километров от первичного региона. Если вам необходимо изменить параметр избыточности хранилища, используйте командлет [az backup vault backup-properties set](/cli/azure/backup/vault/backup-properties?view=azure-cli-latest#az-backup-vault-backup-properties-set).
+По умолчанию в качестве хранилища служб восстановления задано геоизбыточное хранилище. Геоизбыточное хранилище обеспечивает репликацию данных резервного копирования во вторичный регион, который находится в сотнях километров от первичного региона. Если вам необходимо изменить параметр избыточности хранилища, используйте командлет [az backup vault backup-properties set](/cli/azure/backup/vault/backup-properties#az-backup-vault-backup-properties-set).
 
 ```azurecli
 az backup vault backup-properties set \
@@ -59,7 +59,7 @@ az backup vault backup-properties set \
     --backup-storage-redundancy "LocallyRedundant/GeoRedundant"
 ```
 
-Чтобы убедиться, что хранилище успешно создано, используйте командлет [az backup vault list](/cli/azure/backup/vault?view=azure-cli-latest#az-backup-vault-list). Вы увидите следующий ответ:
+Чтобы убедиться, что хранилище успешно создано, используйте командлет [az backup vault list](/cli/azure/backup/vault#az-backup-vault-list). Вы увидите следующий ответ:
 
 ```output
 Location   Name             ResourceGroup
@@ -71,7 +71,7 @@ westus2    saphanaVault     saphanaResourceGroup
 
 Чтобы службы Azure смогли обнаружить экземпляр SAP HANA (виртуальную машину с установленной на ней SAP HANA), необходимо запустить на компьютере с SAP HANA [скрипт предварительной регистрации](https://aka.ms/scriptforpermsonhana). Перед запуском этого скрипта убедитесь, что выполнены все [предварительные требования](./tutorial-backup-sap-hana-db.md#prerequisites). Дополнительные сведения о работе этого скрипта см. в разделе [Функции скрипта предварительной регистрации](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does).
 
-После выполнения скрипта вы сможете зарегистрировать экземпляр SAP HANA в хранилище Служб восстановления, которое мы создали ранее. Чтобы зарегистрировать экземпляр, используйте командлет [az backup container register](/cli/azure/backup/container?view=azure-cli-latest#az-backup-container-register). *VMResourceId* обозначает идентификатор ресурса для виртуальной машины, которую вы создали для установки SAP HANA.
+После выполнения скрипта вы сможете зарегистрировать экземпляр SAP HANA в хранилище Служб восстановления, которое мы создали ранее. Чтобы зарегистрировать экземпляр, используйте командлет [az backup container register](/cli/azure/backup/container#az-backup-container-register). *VMResourceId* обозначает идентификатор ресурса для виртуальной машины, которую вы создали для установки SAP HANA.
 
 ```azurecli-interactive
 az backup container register --resource-group saphanaResourceGroup \
@@ -87,7 +87,7 @@ az backup container register --resource-group saphanaResourceGroup \
 
 При регистрации экземпляра SAP HANA на нем автоматически обнаруживаются все существующие базы данных. Однако для обнаружения новых баз данных, которые могут быть добавлены в будущем, выполните действия из раздела [об обнаружении новых баз данных, добавленных в зарегистрированный экземпляр SAP HANA](tutorial-sap-hana-manage-cli.md#protect-new-databases-added-to-an-sap-hana-instance).
 
-Чтобы убедиться, что экземпляр SAP HANA успешно зарегистрирован в хранилище, используйте командлет [az backup container list](/cli/azure/backup/container?view=azure-cli-latest#az-backup-container-list). Вы увидите следующий ответ:
+Чтобы убедиться, что экземпляр SAP HANA успешно зарегистрирован в хранилище, используйте командлет [az backup container list](/cli/azure/backup/container#az-backup-container-list). Вы увидите следующий ответ:
 
 ```output
 Name                                                    Friendly Name    Resource Group        Type           Registration Status
@@ -100,7 +100,7 @@ VMAppContainer;Compute;saphanaResourceGroup;saphanaVM   saphanaVM        saphana
 
 ## <a name="enable-backup-on-sap-hana-database"></a>Включение резервного копирования для базы данных SAP HANA
 
-Командлет [az backup protectable-item list](/cli/azure/backup/protectable-item?view=azure-cli-latest#az-backup-protectable-item-list) возвращает список всех баз данных, обнаруженных в экземпляре SAP HANA, который вы зарегистрировали на предыдущем шаге.
+Командлет [az backup protectable-item list](/cli/azure/backup/protectable-item#az-backup-protectable-item-list) возвращает список всех баз данных, обнаруженных в экземпляре SAP HANA, который вы зарегистрировали на предыдущем шаге.
 
 ```azurecli-interactive
 az backup protectable-item list --resource-group saphanaResourceGroup \
@@ -121,7 +121,7 @@ saphanadatabase;hxe;hxe        SAPHanaDatabase          HXE           hxehost   
 
 Как видно из приведенных выше выходных данных, идентификатор безопасности SAP HANA имеет значение HXE. В нашем примере мы настроим резервное копирование для базы данных *saphanadatabase;hxe;hxe*, которая находится на сервере *hxehost*.
 
-Чтобы защитить и настроить резервное копирование поочередно для каждой базы данных, мы применим командлет [az backup protection enable-for-azurewl](/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-enable-for-azurewl). Укажите имя политики, которую вы намерены использовать. Чтобы создать политику через интерфейс командной строки, используйте командлет [az backup policy create](/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-create). В этом учебнике мы будем использовать политику *sapahanaPolicy*.
+Чтобы защитить и настроить резервное копирование поочередно для каждой базы данных, мы применим командлет [az backup protection enable-for-azurewl](/cli/azure/backup/protection#az-backup-protection-enable-for-azurewl). Укажите имя политики, которую вы намерены использовать. Чтобы создать политику через интерфейс командной строки, используйте командлет [az backup policy create](/cli/azure/backup/policy#az-backup-policy-create). В этом учебнике мы будем использовать политику *sapahanaPolicy*.
 
 ```azurecli-interactive
 az backup protection enable-for-azurewl --resource-group saphanaResourceGroup \
@@ -133,7 +133,7 @@ az backup protection enable-for-azurewl --resource-group saphanaResourceGroup \
     --output table
 ```
 
-Вы можете проверить, завершена ли настройка резервного копирования, с помощью командлета [az backup job list](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list). Этот командлет возвращает следующий результат:
+Вы можете проверить, завершена ли настройка резервного копирования, с помощью командлета [az backup job list](/cli/azure/backup/job#az-backup-job-list). Этот командлет возвращает следующий результат:
 
 ```output
 Name                                  Operation         Status     Item Name   Start Time UTC
@@ -141,7 +141,7 @@ Name                                  Operation         Status     Item Name   S
 e0f15dae-7cac-4475-a833-f52c50e5b6c3  ConfigureBackup   Completed  hxe         2019-12-03T03:09:210831+00:00  
 ```
 
-Командлет [az backup job list](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list) возвращает список всех заданий резервного копирования (запланированных и по требованию), которые были выполнены или выполняются в текущий момент в защищенной базе данных, а также другие операции, такие как регистрация, настройка резервного копирования и удаление данных резервных копий.
+Командлет [az backup job list](/cli/azure/backup/job#az-backup-job-list) возвращает список всех заданий резервного копирования (запланированных и по требованию), которые были выполнены или выполняются в текущий момент в защищенной базе данных, а также другие операции, такие как регистрация, настройка резервного копирования и удаление данных резервных копий.
 
 >[!NOTE]
 >Azure Backup не учитывает переход на летнее время при создании резервных копий базы данных SAP HANA, работающей на виртуальной машине Azure.
@@ -173,7 +173,7 @@ Name                                  ResourceGroup
 e0f15dae-7cac-4475-a833-f52c50e5b6c3  saphanaResourceGroup
 ```
 
-В ответе вы получите имя задания. Это имя можно использовать для отслеживания состояния задания с помощью командлета [az backup job show](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
+В ответе вы получите имя задания. Это имя можно использовать для отслеживания состояния задания с помощью командлета [az backup job show](/cli/azure/backup/job#az-backup-job-show).
 
 >[!NOTE]
 >Вы можете не только запланировать создание полной или разностной резервной копии, но и активировать его вручную. Резервные копии журналов активируются и управляются SAP HANA самостоятельно и автоматически.

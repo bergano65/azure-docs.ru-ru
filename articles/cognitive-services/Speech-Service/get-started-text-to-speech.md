@@ -8,29 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 09/01/2020
+ms.date: 10/01/2020
 ms.author: trbye
-ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp, cog-serv-seo-aug-2020
-zone_pivot_groups: speech-full-stack
+ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
+zone_pivot_groups: speech-full-stack-objectivec-swift
 keywords: Преобразование текста в речь
-ms.openlocfilehash: 79409f95d698e015d15d9131dcf1f27b34b03343
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 91f7d9cd6393b7ce73dad53cc825ae98fb749f92
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400924"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332484"
 ---
 # <a name="get-started-with-text-to-speech"></a>Начало работы с преобразованием текста в речь
-
-Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
-
-* получение ответов в виде потоков в памяти;
-* настройка частоты выборки и скорости передачи выходных данных;
-* отправка запросов синтеза с помощью SSML (язык разметки синтеза речи);
-* использование нейронных голосовых моделей.
-
-> [!TIP]
-> Если вы хотите перейти к примерам кода, см. [примеры для краткого руководства](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart) на сайте GitHub.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# Basics include](includes/how-to/text-to-speech-basics/text-to-speech-basics-csharp.md)]
@@ -48,12 +38,16 @@ ms.locfileid: "89400924"
 [!INCLUDE [JavaScript Basics include](includes/how-to/text-to-speech-basics/text-to-speech-basics-javascript.md)]
 ::: zone-end
 
+::: zone pivot="programming-languages-objectivec-swift"
+[!INCLUDE [Objective-C and Swift Basics include](includes/how-to/text-to-speech-basics/text-to-speech-basics-objectivec-swift.md)]
+::: zone-end
+
 ::: zone pivot="programming-language-python"
 [!INCLUDE [Python Basics include](includes/how-to/text-to-speech-basics/text-to-speech-basics-python.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-spx"
-[!INCLUDE [CLI include](includes/how-to/text-to-speech-basics/text-to-speech-basics-cli.md)]
+[!INCLUDE [CLI Basics include](includes/how-to/text-to-speech-basics/text-to-speech-basics-cli.md)]
 ::: zone-end
 
 ## <a name="next-steps"></a>Дальнейшие действия

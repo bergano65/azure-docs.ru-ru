@@ -2,20 +2,20 @@
 title: Создание пользовательского модуля Python — Azure IoT Edge | Документация Майкрософт
 description: В этом руководстве показано, как создать модуль IoT Edge с кодом Python и его развертывание на пограничном устройстве.
 services: iot-edge
-author: shizn
+author: kgremban
 manager: philmea
 ms.reviewer: kgremban
-ms.author: xshi
+ms.author: kgremban
 ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 46e5a2119f05f3b4062044533352a6976a4ae4d8
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: c05124a1f5e5920b94d1925490b6714ba3b33c83
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87808787"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336774"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 

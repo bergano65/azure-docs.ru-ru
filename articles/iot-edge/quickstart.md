@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 73d9eed757acb4c58052a34811c490a70d306995
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: d56f17f6c60f30a38431ee347c7bdfc5b200b641
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88061495"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328601"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве с Windows
 
@@ -118,7 +118,7 @@ ms.locfileid: "88061495"
 2. Просмотрите строку подключения для устройства, которая связывает физическое устройство с его удостоверением в Центре Интернета вещей. Она содержит имя центра Интернета вещей и имя устройства, а также общий ключ, который используется для аутентификации подключений между ними.
 
    ```azurecli-interactive
-   az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {hub_name}
+   az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name {hub_name}
    ```
 
 3. Скопируйте значение ключа `connectionString` из выходных данных JSON и сохраните его. Это значение — строка подключения устройства. Эта строка потребуется для настройки среды выполнения IoT Edge в следующем разделе.

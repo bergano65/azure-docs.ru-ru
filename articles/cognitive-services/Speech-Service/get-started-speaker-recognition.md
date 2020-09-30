@@ -12,12 +12,12 @@ ms.date: 09/02/2020
 ms.author: trbye
 ms.custom: devx-track-csharp, cog-serv-seo-aug-2020
 keywords: распознавание говорящего, голосовая биометрия
-ms.openlocfilehash: f22eb02e6812bef73133b1778484f9f4640245cd
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: cfb16d95c0de7fabb7e939e53903f0a611f749e9
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89410549"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362560"
 ---
 # <a name="get-started-with-speaker-recognition"></a>Начало работы с Распознаванием говорящего
 
@@ -31,7 +31,7 @@ ms.locfileid: "89410549"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](get-started.md).
+В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](overview.md#try-the-speech-service-for-free).
 
 > [!IMPORTANT]
 > Распознавание говорящего в настоящее время поддерживается *только* в ресурсах распознавания речи Azure, созданных в регионе `westus`.
@@ -283,7 +283,7 @@ public static async Task SpeakerIdentification(SpeechConfig config, List<VoicePr
 
     Console.WriteLine("Speak some text to identify who it is from your list of enrolled speakers.");
     var result = await speakerRecognizer.RecognizeOnceAsync(model);
-    Console.WriteLine($"The most similiar voice profile is {profileMapping[result.ProfileId]} with similiarity score {result.Score}");
+    Console.WriteLine($"The most similar voice profile is {profileMapping[result.ProfileId]} with similarity score {result.Score}");
 }
 ```
 

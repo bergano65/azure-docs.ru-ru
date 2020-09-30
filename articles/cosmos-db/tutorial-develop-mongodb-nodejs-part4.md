@@ -8,14 +8,14 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.author: jopapa
-ms.custom: seodec18, devx-track-javascript
+ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
-ms.openlocfilehash: e4127024404489d0aa8478a9cbd073773f8b512a
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c3026ac25d8da0e21c72ffa2d36f90e44a691aea
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423938"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330525"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-cosmos-account"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание учетной записи Cosmos
 
@@ -64,11 +64,13 @@ az cosmosdb create --name <cosmosdb-name> --resource-group myResourceGroup --kin
 1. Щелкните логотип Azure Cosmos DB :::image type="icon" source="./media/tutorial-develop-mongodb-nodejs-part4/azure-cosmos-db-icon.png"::: на левой панели. Отобразятся все ваши базы данных Azure Cosmos DB.
 1. Выберите учетную запись Azure Cosmos DB, которую вы только что создали, перейдите на вкладку **Обзор** и прокрутите страницу вниз, чтобы просмотреть карту расположения базы данных. 
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part4/azure-cosmos-db-angular-portal.png" alt-text="Новая учетная запись Azure Cosmos DB на портале Azure":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part4/azure-cosmos-db-angular-portal.png" alt-text="Новая учетная запись Azure Cosmos DB на портале Azure&quot;:::
 
-4. Прокрутите вниз в области навигации слева и щелкните вкладку **Глобальная репликация данных**. Отобразится карта с регионами, в которые можно реплицировать данные. Например, можете щелкнуть регион "Юго-восточная Австралия" или "Восточная Австралия" и реплицировать свои данные в Австралию. Дополнительные сведения о глобальной репликации см. в статье [Как работает глобальное распределение данных в Azure с помощью Cosmos DB](distribute-data-globally.md). Пока что давайте просто сохраним один экземпляр, а если потребуется репликация, мы уже будем знать, как это сделать.
+4. Прокрутите вниз в области навигации слева и щелкните вкладку **Глобальная репликация данных**. Отобразится карта с регионами, в которые можно реплицировать данные. Например, можете щелкнуть регион &quot;Юго-восточная Австралия&quot; или &quot;Восточная Австралия" и реплицировать свои данные в Австралию. Дополнительные сведения о глобальной репликации см. в статье [Как работает глобальное распределение данных в Azure с помощью Cosmos DB](distribute-data-globally.md). Пока что давайте просто сохраним один экземпляр, а если потребуется репликация, мы уже будем знать, как это сделать.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part4/azure-cosmos-db-replicate-portal.png" alt-text="Новая учетная запись Azure Cosmos DB на портале Azure":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part4/azure-cosmos-db-replicate-portal.png" alt-text="Новая учетная запись Azure Cosmos DB на портале Azure&quot;:::
+
+4. Прокрутите вниз в области навигации слева и щелкните вкладку **Глобальная репликация данных**. Отобразится карта с регионами, в которые можно реплицировать данные. Например, можете щелкнуть регион &quot;Юго-восточная Австралия&quot; или &quot;Восточная Австралия":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
