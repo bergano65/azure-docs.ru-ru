@@ -8,14 +8,14 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jopapa
-ms.custom: seodec18, devx-track-javascript
+ms.custom: seodec18, devx-track-js
 ms.reviewer: sngun
-ms.openlocfilehash: a5d697465f811f468fb0047284126deae0c455dd
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 3116038939a07084f13db22819726dcbb2622a10
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424313"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292428"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
 
@@ -88,11 +88,11 @@ ms.locfileid: "87424313"
 
 6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу `http://localhost:3000` для просмотра вызовов по сети.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png" alt-text="Вкладка с параметрами сети в браузере Chrome с отображением действий в сети":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code":::
 
 7. Добавьте новый элемент hero, нажав кнопку **Add New Hero** (Добавить героя). Введите идентификатор 999, имя Fred и фразу Hello. Затем нажмите кнопку **Save** (Сохранить). На вкладке с параметрами сети вы увидите, отправленный запрос POST для нового элемента hero. 
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png" alt-text="Вкладка с параметрами сети в браузере Chrome с отображением функций Get и Post в сети":::
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code":::
 
     Теперь добавим в приложение функции Put и Delete.
 
@@ -177,11 +177,11 @@ ms.locfileid: "87424313"
 
     Теперь выберите идентификатор на вкладке с параметрами сети, чтобы отобразить полезные данные. Вы увидите в полезных данных, что фраза героя поменялась на "Bye".
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/put-hero-function.png" alt-text="Приложение Heroes на вкладке с параметрами сети с отображением полезных данных"::: 
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/put-hero-function.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code"::: 
 
     Вы можете удалить из пользовательского интерфейса один элемент hero, чтобы узнать, сколько времени занимает операция удаления. Попробуйте нажать кнопку Delete (Удалить) рядом с героем Fred.
 
-    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/times.png" alt-text="Приложение Heroes на вкладке с параметрами сети с отображением времени выполнения функций"::: 
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/times.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code"::: 
 
     Если обновить страницу, на вкладке с параметрами сети отобразится время, требуемое для получения элементов hero. Хотя эти операции выполняются быстро, многое зависит от расположения данных в мире и вашей возможности выполнять георепликацию в ближайшую к пользователям область. Дополнительные сведения о георепликации см. в следующем руководстве, которое скоро появится.
 

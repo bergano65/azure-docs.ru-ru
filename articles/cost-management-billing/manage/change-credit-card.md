@@ -9,18 +9,18 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 09/15/2020
 ms.author: banders
-ms.openlocfilehash: 0f1b4751ae2448b519387d57e4dbfa1eecf8a576
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 8366c0681f1ac29d9e265225dfaeeab44aa4b8ca
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90984273"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91252975"
 ---
 # <a name="add-or-update-a-credit-card-for-azure"></a>Добавление или обновление кредитной карты для Azure
 
 Этот документ адресуется тем пользователям, которые зарегистрировались в Azure в Интернете с помощью кредитной карты.
 
-На портале Azure вы можете указать в качестве метода оплаты по умолчанию новую кредитную карту и обновить ее данные. Чтобы внести изменения, необходимо быть [администратором учетной записи](billing-subscription-transfer.md#whoisaa).
+На портале Azure вы можете указать в качестве метода оплаты по умолчанию новую кредитную карту и обновить ее данные. Чтобы внести изменения, необходимо быть [администратором учетной записи](../understand/subscription-transfer.md#whoisaa).
 
 Сведения об удалении кредитной карты см. в статье [Удаление метода оплаты для выставления счетов в Azure (предварительная версия)](delete-azure-payment-method.md).
 

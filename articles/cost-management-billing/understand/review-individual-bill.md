@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: a91f3781b490ee6f724e7d28a6be9a96c853426f
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 0c93375abd57ff5e96906ef7befbbb546a3a1caf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684632"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270531"
 ---
 # <a name="tutorial-review-your-individual-azure-bill"></a>Учебник. Просмотр отдельного счета Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "88684632"
 
 Этот учебник относится только к клиентам Azure с отдельной подпиской. Самый распространенный пример — это подписки с оплатой по мере использования, приобретенные непосредственно на веб-сайте Azure.
 
-Если вам необходима помощь в том, чтобы разобраться с непредвиденными расходами, см. раздел [Анализ непредвиденных расходов](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started#analyze-unexpected-charges). Или если вам нужно отменить подписку Azure, см. статью [Отмена подписки Azure](../manage/cancel-azure-subscription.md).
+Если вам необходима помощь в том, чтобы разобраться с непредвиденными расходами, см. раздел [Анализ непредвиденных расходов](analyze-unexpected-charges.md). Или если вам нужно отменить подписку Azure, см. статью [Отмена подписки Azure](../manage/cancel-azure-subscription.md).
 
 В этом руководстве описано следующее:
 

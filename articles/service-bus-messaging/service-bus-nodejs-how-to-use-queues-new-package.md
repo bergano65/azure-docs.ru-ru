@@ -6,13 +6,13 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.custom: devx-track-javascript
-ms.openlocfilehash: c082eff4f70b0255b7701340ac6e8b377223c0b5
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.custom: devx-track-js
+ms.openlocfilehash: d1d0d2b57ec1ed23082101c9207c4700424dd7cc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88076869"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289758"
 ---
 # <a name="quickstart-how-to-use-service-bus-queues-with-nodejs-and-the-azureservice-bus-package"></a>Краткое руководство. Использование очередей служебной шины в Azure с помощью Node.js и пакета azure/service-bus
 Из этого учебника вы узнаете, как написать программу Node.js для отправки и получения сообщений через очередь служебной шины с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus). Этот пакет использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md) вместо [интерфейсов REST API для служебной шины](/rest/api/servicebus/service-bus-runtime-rest), как в старом пакете [azure-sb](https://www.npmjs.com/package/azure-sb). Примеры кода написаны на JavaScript.

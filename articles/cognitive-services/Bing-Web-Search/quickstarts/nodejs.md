@@ -10,17 +10,17 @@ ms.subservice: bing-web-search
 ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: aahi
-ms.custom: seodec2018, devx-track-javascript
-ms.openlocfilehash: 97d5c78264f9b2d9f21c618597ccd1c3709c9e0f
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: seodec2018, devx-track-js
+ms.openlocfilehash: ea78b90719200bd1176b90986b021d44b34e06e1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405931"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91298427"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Node.js
 
-Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение Node.js отправляет поисковый запрос к API и показывает ответ в формате JSON. Хотя приложение написано на JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение Node.js отправляет поисковый запрос к API и показывает ответ в формате JSON. Это приложение написано на JavaScript. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

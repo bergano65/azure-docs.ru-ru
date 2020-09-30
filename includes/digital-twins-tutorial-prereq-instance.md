@@ -5,18 +5,18 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 5/25/2020
 ms.author: baanders
-ms.openlocfilehash: 5c41f7516cecdb6bbc42a66d118a90986dd7de56
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 302a478dd32c93a555bb17e9d7d0f60bd7859a50
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827366"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292745"
 ---
 ### <a name="prepare-an-azure-digital-twins-instance"></a>Подготовка экземпляра Azure Digital Twins
 
 Для работы с этим учебником вам потребуется экземпляр **Azure Digital Twins** для программирования. Если у вас уже есть настроенный экземпляр Azure Digital Twins после предыдущих действий, можно использовать его.
 
-* В противном случае **настроить экземпляр и аутентификацию**, следуя инструкциям в разделе [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](../articles/digital-twins/how-to-set-up-instance-scripted.md). В этих инструкциях также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
+* В противном случае **настроить экземпляр и аутентификацию**, следуя инструкциям в разделе [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](../articles/digital-twins/how-to-set-up-instance-portal.md). В этих инструкциях также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
 
 В этом учебнике при настройке экземпляра потребуются следующие значения. Если вам нужно снова собрать эти значения, воспользуйтесь приведенными ниже ссылками в соответствующих разделах статьи о настройке, чтобы найти их на [портале Azure](https://portal.azure.com).
 * **_Имя_** экземпляра Azure Digital Twins ([как найти на портале](../articles/digital-twins/how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
