@@ -14,12 +14,12 @@ ms.date: 01/02/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95b0b026b75b9b77c94451245ac4f18d487fc2e4
-ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
+ms.openlocfilehash: bb102c23d80095b8eb79fc25d1c1fd9d7f374fce
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88783524"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91529700"
 ---
 # <a name="microsoft-graph-apis-for-privileged-identity-management-preview"></a>API-интерфейсы Microsoft Graph для управления привилегированными пользователями (предварительная версия)
 
@@ -51,7 +51,7 @@ ms.locfileid: "88783524"
 
 1. Щелкните **Изменить разрешения**.
 
-    ![Изменение разрешений в песочнице Graph](./media/pim-apis/graph-explorer.png)
+    ![Снимок экрана, на котором показана страница "Обозреватель диаграмм" с выбранным действием "изменить разрешения".](./media/pim-apis/graph-explorer.png)
 
 1. Установите флажки рядом с разрешениями, которые нужно указать. Песочница Graph еще не поддерживает `PrivilegedAccess.ReadWrite.AzureAD`.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 04/25/2019
-ms.openlocfilehash: 59a0989157a87c7fb951c8b6d9c7b70474626f42
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 01c0b6610968c8eaa493a63aa9004d8ea4c36ca2
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361880"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530772"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio-classic"></a>Модули PowerShell для Машинное обучение Azure Studio (классическая модель)
 
@@ -53,12 +53,12 @@ Az теперь является предполагаемым модулем Pow
 ## <a name="powershell-support-table"></a><a name="support-table"></a> Таблица поддержки PowerShell
 
 
-|  **AZ** |  **Классическая модель PowerShell** |
+| Задача | **AZ** |  **Классическая модель PowerShell** |
 | --- | --- | --- |
 | Создание и удаление рабочих областей | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
 | Управление планами обязательств рабочей области | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
 | Управление пользователями рабочей области |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
-| Управление веб-службами | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br>("новые" веб-службы)|| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>("классические" веб-службы) |
+| Управление веб-службами | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br>("новые" веб-службы)| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>("классические" веб-службы) |
 | Управление конечными точками или ключами веб-службы |  [Get-Азмлвебсервицекэй](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekey)|  [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint)|
 | Управление пользовательскими наборами данных и обученными моделями| | [Get-AmlDataset](https://github.com/hning86/azuremlps#manage-user-assets-dataset-trained-model-transform) |
 | Управление экспериментами пользователей |  | [Start-AmlExperiment](https://github.com/hning86/azuremlps#manage-experiment) |

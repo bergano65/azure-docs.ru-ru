@@ -7,18 +7,17 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: jordane
 author: jpe316
-ms.date: 07/24/2020
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e2f1eb50f6d878eecb4b5c448e683a3024e8c396
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 28401b5900640ed7228d7c7caad0cebbabf00a65
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250850"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532726"
 ---
-# <a name="build-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Создание scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
-
+# <a name="train-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Обучение scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
 
 В этой статье вы узнаете, как выполнять scikitные сценарии обучения с помощью Машинное обучение Azure.
 
@@ -26,22 +25,22 @@ ms.locfileid: "91250850"
 
 Если вы научитесь изучать модель машинного обучения scikit-учиться с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Запустите этот код в любой из этих сред:
  - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
 
     - Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md)  , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
-    - В папке Learning Samples на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > ML-frameworks > scikit-learning > learning > Train-i Parameter-Learning-Deploy-with-sklearn** Folder.
+    - В папке обучающие примеры на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > ML-frameworks > scikit-learning > Train-i Parameter-Learning-Deploy-with-sklearn** Folder.
 
  - Собственный сервер Jupyter Notebook
 
-    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
+    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) (>= 1.13.0).
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
 
-В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания эксперимента и отправки обучающих данных и сценариев обучения.
+В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, определения среды обучения и подготовки сценария обучения.
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
@@ -55,24 +54,23 @@ from azureml.core import Workspace
 ws = Workspace.from_config()
 ```
 
-
 ### <a name="prepare-scripts"></a>Подготовка скриптов
 
-В этом руководстве обучающий сценарий **train_iris. Корректировка** уже предоставлен [здесь](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn/train_iris.py). На практике вы можете использовать любой пользовательский сценарий обучения как есть и запускать его с помощью Azure ML без необходимости изменять код.
+В этом руководстве обучающий сценарий **train_iris. Корректировка** уже предоставлен [здесь](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/scikit-learn/train-hyperparameter-tune-deploy-with-sklearn/train_iris.py). На практике вы можете использовать любой пользовательский сценарий обучения как есть и запускать его с помощью Azure ML без необходимости изменять код.
 
 Примечания.
 - В предоставленном сценарии обучения показано, как регистрировать некоторые метрики в МАШИНном обучении Azure с помощью `Run` объекта в скрипте.
-- Предоставленный Скрипт обучения использует примеры данных из  `iris = datasets.load_iris()` функции.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md#data-upload) , чтобы сделать данные доступными во время обучения.
+- Предоставленный Скрипт обучения использует примеры данных из  `iris = datasets.load_iris()` функции.  Сведения об использовании и доступе к собственным данным см. в разделе [обучение с наборами](how-to-train-with-datasets.md) данных для обеспечения доступности данных во время обучения.
 
-### <a name="define-your-environment"></a>Определите среду.
+### <a name="define-your-environment"></a>Определение среды
 
-#### <a name="create-a-custom-environment"></a>Создайте пользовательскую среду.
+Чтобы определить [среду](concept-environments.md) машинного обучения Azure, в которой будут инкапсулированы зависимости сценария обучения, можно определить пользовательскую среду или использовать среду, проверенную в машинном обучении Azure.
 
-Создайте среду conda (склеарн-ЕНВ. yml).
-Чтобы записать среду conda из записной книжки, можно добавить строку ```%%writefile sklearn-env.yml``` в верхней части ячейки.
+#### <a name="create-a-custom-environment"></a>Создание пользовательской среды
+
+Чтобы создать собственную пользовательскую среду, Определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
 
 ```yaml
-name: sklearn-training-env
 dependencies:
   - python=3.6.2
   - scikit-learn
@@ -85,55 +83,70 @@ dependencies:
 ```python
 from azureml.core import Environment
 
-myenv = Environment.from_conda_specification(name = "myenv", file_path = "sklearn-env.yml")
-myenv.docker.enabled = True
+sklearn_env = Environment.from_conda_specification(name='sklearn-env', file_path='conda_dependencies.yml')
 ```
 
+Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
+
 #### <a name="use-a-curated-environment"></a>Использование проверенной среды
-Azure ML предоставляет готовые, проверенные среды контейнеров, если вы не хотите создавать собственный образ. Дополнительные сведения см. [здесь](resource-curated-environments.md).
+Кроме того, Azure ML предоставляет предварительно созданные и проверенные среды, если вы не хотите создавать собственный образ. Дополнительные сведения см. [здесь](resource-curated-environments.md).
 Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
 
 ```python
-env = Environment.get(workspace=ws, name="AzureML-Tutorial")
+sklearn_env = Environment.get(workspace=ws, name='AzureML-Tutorial')
 ```
 
-### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
+## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
 
-Эта Скриптрунконфиг отправит задание для выполнения на локальном целевом объекте вычислений.
+### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
+Создайте объект Скриптрунконфиг, чтобы указать сведения о настройке учебного задания, включая сценарий обучения, используемую среду и целевой объект вычислений.
+Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре.
+
+Следующий код настроит объект Скриптрунконфиг, чтобы отправить задание на выполнение на локальном компьютере.
 
 ```python
 from azureml.core import ScriptRunConfig
 
-sklearnconfig = ScriptRunConfig(source_directory='.', script='train_iris.py')
-sklearnconfig.run_config.environment = myenv
+src = ScriptRunConfig(source_directory='.',
+                      script='train_iris.py',
+                      arguments=['--kernel', 'linear', '--penalty', 1.0],
+                      environment=sklearn_env)
 ```
 
-Если вы хотите отправить в удаленный кластер, можно изменить run_config. Target на требуемый целевой объект вычислений.
+Если вы хотите вместо этого запустить задание в удаленном кластере, можно указать требуемый целевой объект вычислений в `compute_target` параметре скриптрунконфиг.
+
+```python
+from azureml.core import ScriptRunConfig
+
+compute_target = ws.compute_targets['<my-cluster-name>']
+src = ScriptRunConfig(source_directory='.',
+                      script='train_iris.py',
+                      arguments=['--kernel', 'linear', '--penalty', 1.0],
+                      compute_target=compute_target,
+                      environment=sklearn_env)
+```
 
 ### <a name="submit-your-run"></a>Отправка выполнения
 ```python
 from azureml.core import Experiment
 
-run = Experiment(ws,'train-sklearn').submit(config=sklearnconfig)
+run = Experiment(ws,'train-iris').submit(src)
 run.wait_for_completion(show_output=True)
-
 ```
 
 > [!WARNING]
-> Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py&preserve-view=true)данных.
+> Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [набора данных](how-to-train-with-datasets.md)машинного обучения Azure.
 
-Дополнительные сведения о настройке среды Python см. на [этой странице](how-to-use-environments.md). 
-
-## <a name="what-happens-during-run-execution"></a>Что происходит во время выполнения
+### <a name="what-happens-during-run-execution"></a>Что происходит во время выполнения
 При выполнении выполнения он проходит следующие этапы.
 
-- **Подготовка**. образ DOCKER создается в соответствии с оценкой TensorFlow. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения.
+- **Подготовка**. образ DOCKER создается в соответствии с определенной средой. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения. Если вместо этого указана проверенная среда, то будет использоваться кэшированный образ, в котором выполняется резервное копирование проверенной среды.
 
 - **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
 
-- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, а entry_script выполняется. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
+- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, и выполняется `script` . Выходные данные из STDOUT и папки **/логс** передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
 
-- **Пост-обработка**. папка/Outputs для выполнения копируется в журнал выполнения.
+- **Пост-обработка**. папка **/Outputs** для выполнения копируется в журнал выполнения.
 
 ## <a name="save-and-register-the-model"></a>Сохранение и регистрация модели
 
@@ -162,7 +175,7 @@ model = run.register_model(model_name='sklearn-iris',
 
 ## <a name="deployment"></a>Развертывание
 
-Только что зарегистрированная модель может быть развернута точно так же, как и любая другая Зарегистрированная модель в Машинное обучение Azure, независимо от того, какой механизм оценки использовался для обучения. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
+Только что зарегистрированная модель может быть развернута точно так же, как и любая другая Зарегистрированная модель в МАШИНном обучении Azure. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
 
 ### <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
 
@@ -190,4 +203,3 @@ web_service = Model.deploy(ws, "scikit-learn-service", [model])
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
-* [Эталонная архитектура для распределенного обучения глубокого обучения в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)

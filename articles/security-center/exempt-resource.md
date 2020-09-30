@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: f3ac2f82882dfd7eb1e15e9a5287cf1d6f5b32d2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 87c16207f312479dcfe083ad9494d75b3538e18c
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91301539"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532556"
 ---
 # <a name="exempt-a-resource-from-recommendations-and-secure-score"></a>Исключение ресурса из рекомендаций и безопасной оценки
 
@@ -28,11 +28,11 @@ ms.locfileid: "91301539"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробности|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Это функция политики Azure уровня "Премиум", предлагаемая для клиентов защитника Azure без дополнительных затрат. В будущем может взиматься плата за использование других пользователей.|
-|Необходимые роли и разрешения:|**Владелец подписки** или **участник политики** для создания исключения<br>Чтобы создать правило, необходимо иметь разрешения на изменение политик в политике Azure.<br>Дополнительные сведения см. в статье [разрешения RBAC в политике Azure](../governance/policy/overview.md#rbac-permissions-in-azure-policy).|
+|Необходимые роли и разрешения:|**Владелец подписки** или **участник политики** для создания исключения<br>Чтобы создать правило, необходимо иметь разрешения на изменение политик в политике Azure.<br>Дополнительные сведения см. в статье [разрешения RBAC в политике Azure](../governance/policy/overview.md#azure-rbac-permissions-in-azure-policy).|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
 |||
 
@@ -45,7 +45,7 @@ ms.locfileid: "91301539"
 
     Откроется область создание исключения.
 
-    :::image type="content" source="./media/exempt-resource/exemption-rule-options.png" alt-text="Создать панель исключения":::
+    :::image type="content" source="./media/exempt-resource/exemption-rule-options.png" alt-text="Создание параметра исключения из контекстного меню":::
 
 1. Введите критерии и выберите условия, по которым следует исключить этот ресурс:
     - **Устранение** . Эта проблема не относится к ресурсу, так как он обрабатывается другим средством или процессом, отличным от предлагаемого.
@@ -56,11 +56,11 @@ ms.locfileid: "91301539"
     - Ресурс указан на вкладке **неприменимо** на странице сведений об рекомендации.
     - В информационной панели в верхней части страницы сведений о рекомендациях отображается число исключенных ресурсов:
         
-        :::image type="content" source="./media/exempt-resource/info-banner.png" alt-text="Число исключенных ресурсов":::
+        :::image type="content" source="./media/exempt-resource/info-banner.png" alt-text="Создание параметра исключения из контекстного меню":::
 
 1. Чтобы проверить исключенные ресурсы, откройте вкладку **неприменимо** .
 
-    :::image type="content" source="./media/exempt-resource/modifying-exemption.png" alt-text="Изменение исключения":::
+    :::image type="content" source="./media/exempt-resource/modifying-exemption.png" alt-text="Создание параметра исключения из контекстного меню":::
 
     Причина каждого исключения включается в таблицу (1).
 
@@ -73,7 +73,7 @@ ms.locfileid: "91301539"
 
 Вы можете использовать политику Azure для трассировки исключения на странице **исключение** :
 
-:::image type="content" source="./media/exempt-resource/policy-page-exemption.png" alt-text="Страница исключения политики Azure":::
+:::image type="content" source="./media/exempt-resource/policy-page-exemption.png" alt-text="Создание параметра исключения из контекстного меню":::
 
 
 

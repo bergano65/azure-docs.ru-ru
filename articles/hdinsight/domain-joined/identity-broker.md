@@ -6,13 +6,13 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
-ms.date: 12/12/2019
-ms.openlocfilehash: 12d98406b21ed9a3ea27f9aa4abc0db6f536468d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 09/23/2020
+ms.openlocfilehash: 8f1e0a6aecc9702552a3dd66acc8dc7eb5bf1d85
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91251921"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91529949"
 ---
 # <a name="azure-hdinsight-id-broker-preview"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (Предварительная версия)
 
@@ -30,11 +30,13 @@ ms.locfileid: "91251921"
 
 На следующей схеме показан современный поток проверки подлинности на основе OAuth для всех пользователей, включая федеративных пользователей, после включения компонента ID Broker:
 
-![Поток проверки подлинности с брокером ИДЕНТИФИКАТОРов](./media/identity-broker/identity-broker-architecture.png)
+:::image type="content" source="media/identity-broker/identity-broker-architecture.png" alt-text="Поток проверки подлинности с брокером ИДЕНТИФИКАТОРов":::
 
 На этой схеме клиент (например, браузер или приложения) должен сначала получить маркер OAuth, а затем предоставить маркер шлюзу в HTTP-запросе. Если вы уже вошли в другие службы Azure, например портал Azure, вы можете войти в кластер HDInsight с помощью единого входа.
 
 По-прежнему может быть несколько устаревших приложений, поддерживающих только обычную проверку подлинности (например, имя пользователя и пароль). Для этих сценариев по-прежнему можно использовать обычную проверку подлинности HTTP для подключения к шлюзам кластера. В этой настройке необходимо обеспечить сетевое подключение между узлами шлюза и конечной точкой Федерации (конечная точка ADFS), чтобы обеспечить прямую отправку информации из узлов шлюза.
+
+:::image type="content" source="media/identity-broker/basic-authentication.png" alt-text="Поток проверки подлинности с брокером ИДЕНТИФИКАТОРов":::
 
 Используйте следующую таблицу, чтобы определить оптимальный вариант проверки подлинности в зависимости от потребностей Организации.
 

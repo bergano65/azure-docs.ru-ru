@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: 631f5afbac4337cd0852f46ac4a336107f042397
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b1ad4ead83c9e07966f921a5b192f2791838e6ef
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91331647"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530567"
 ---
 # <a name="connect-to-and-index-azure-sql-content-using-an-azure-cognitive-search-indexer"></a>Подключение к содержимому SQL Azure и его индексирование с помощью индексатора Azure Когнитивный поиск
 
@@ -39,7 +39,7 @@ ms.locfileid: "91331647"
 Индексатор SQL Azure можно установить и настроить с помощью:
 
 * мастера импорта данных на [портале Azure](https://portal.azure.com);
-* [Пакет SDK](/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet) Azure когнитивный Поиск для .NET
+* [Пакет SDK](/dotnet/api/microsoft.azure.search.models.indexer) Azure когнитивный Поиск для .NET
 * [REST API](/rest/api/searchservice/indexer-operations) когнитивный Поиск Azure
 
 В этой статье мы будем использовать REST API для создания **индексаторов** и **источников данных**.
@@ -47,7 +47,7 @@ ms.locfileid: "91331647"
 ## <a name="when-to-use-azure-sql-indexer"></a>Когда следует использовать индексатор SQL Azure
 Уместность использования индексатора Azure SQL зависит от нескольких факторов, связанных с данными. Если данные соответствуют следующим требованиям, вы можете использовать индексатор SQL Azure.
 
-| Критерии | Подробности |
+| Критерии | Сведения |
 |----------|---------|
 | Источником данных является отдельная таблица или представление | Если данные разбиты по нескольким таблицам, можно создать одно представление данных. Однако при использовании представления вы не сможете использовать интегрированное отслеживание изменений SQL Server для обновления индекса с помощью добавочных изменений. Дополнительные сведения см. в разделе [Запись измененных и удаленных строк](#CaptureChangedRows) ниже. |
 | Типы данных совместимы | В индексе Azure Когнитивный поиск поддерживаются большинство типов SQL, но не все. Список см. в разделе [Сопоставление типов данных](#TypeMapping). |
@@ -333,7 +333,7 @@ ms.locfileid: "91331647"
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Индексатор SQL предоставляет несколько параметров конфигурации.
 
-| Параметр | Тип данных | Назначение | Значение по умолчанию |
+| Параметр | Тип данных | Цель | Значение по умолчанию |
 | --- | --- | --- | --- |
 | queryTimeout |строка |Задает время ожидания для выполнения запроса SQL. |5 мин ("00:05:00") |
 | disableOrderByHighWaterMarkColumn |bool |Указывает SQL-запросу, используемому политикой верхнего предела, опустить предложение ORDER BY. Ознакомьтесь с [политикой верхнего предела](#HighWaterMarkPolicy). |false |
@@ -348,7 +348,7 @@ ms.locfileid: "91331647"
     }
 ```
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Вопрос. можно ли использовать индексатор SQL Azure с базами данных SQL, работающими на виртуальных машинах IaaS в Azure?**
 

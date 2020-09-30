@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: b77eaec0440aa4fcd22d7b35e7a205b0276164f2
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: dffa8393dcfebf1cb73e3ab72890999cfa633b80
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935829"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532573"
 ---
 # <a name="how-to-schedule-indexers-in-azure-cognitive-search"></a>Как планировать индексаторы в Azure Когнитивный поиск
 
@@ -110,10 +110,10 @@ ms.locfileid: "88935829"
 
 Для параметра **StartTime** можно задать время в прошлом. В этом случае первое выполнение планируется так, как если бы индексатор выполнялся непрерывно с момента заданной **StartTime**.
 
-Расписание определяется с помощью класса [индексингсчедуле](/dotnet/api/microsoft.azure.search.models.indexingschedule?view=azure-dotnet) . Для конструктора **индексингсчедуле** требуется параметр **Interval** , заданный с помощью объекта **TimeSpan** . Наименьшее допустимое значение интервала — 5 минут, а максимальное — 24 часа. Второй параметр **StartTime** , указанный в качестве объекта **DateTimeOffset** , является необязательным.
+Расписание определяется с помощью класса [индексингсчедуле](/dotnet/api/microsoft.azure.search.models.indexingschedule) . Для конструктора **индексингсчедуле** требуется параметр **Interval** , заданный с помощью объекта **TimeSpan** . Наименьшее допустимое значение интервала — 5 минут, а максимальное — 24 часа. Второй параметр **StartTime** , указанный в качестве объекта **DateTimeOffset** , является необязательным.
 
 Пакет SDK для .NET позволяет управлять операциями индексатора с помощью класса [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) и его свойства [индексаторов](/dotnet/api/microsoft.azure.search.searchserviceclient.indexers) , которые реализуют методы из интерфейса **ииндексерсоператионс** . 
 
 Индексатор можно запустить по запросу в любое время с помощью одного из методов [Run](/dotnet/api/microsoft.azure.search.indexersoperationsextensions.run), [RunAsync](/dotnet/api/microsoft.azure.search.indexersoperationsextensions.runasync)или [рунвисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.iindexersoperations.runwithhttpmessagesasync) .
 
-Дополнительные сведения о создании, обновлении и выполнении индексаторов см. в разделе [иииндексерсоператионс](/dotnet/api/microsoft.azure.search.iindexersoperations?view=azure-dotnet).
+Дополнительные сведения о создании, обновлении и выполнении индексаторов см. в разделе [иииндексерсоператионс](/dotnet/api/microsoft.azure.search.iindexersoperations).

@@ -6,17 +6,14 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: a2f319f7bbd3fa0c6c4efb7e225bfc85a76002f2
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: c087d5eea88a3329d5486afdd2158e80f7ebf778
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88919715"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91531032"
 ---
 # <a name="azure-database-for-mysql-infrastructure-double-encryption"></a>Двойное шифрование инфраструктуры базы данных Azure для MySQL
-
-> [!NOTE]
-> В настоящее время для использования этой возможности требуется запросить соответствующие права доступа. Для этого обратитесь к AskAzureDBforMySQL@service.microsoft.com .
 
 База данных Azure для MySQL использует [Шифрование неактивных данных в](concepts-security.md#at-rest) хранилище для данных с помощью управляемых ключей Майкрософт. Данные, включая резервные копии, шифруются на диске, и это шифрование всегда включено и не может быть отключено. Шифрование использует проверенный криптографический модуль FIPS 140-2 и шифр AES 256-bit для шифрования службы хранилища Azure.
 

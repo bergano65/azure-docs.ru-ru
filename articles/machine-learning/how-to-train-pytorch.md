@@ -1,54 +1,50 @@
 ---
 title: Обучение моделей PyTorch для глубокого обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика PyTorch Машинное обучение Azure.  Примеры сценариев классифицируют Chicken и Турция изображений для создания нейронной сети глубокого обучения на основе руководства по переносу PyTorch.
+description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.author: peterlu
-author: peterclu
+ms.author: minxia
+author: mx-iao
 ms.reviewer: peterlu
-ms.date: 08/01/2019
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 4b801552534bcb69afe426cce4aa109bf942000b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 99f249c9eba0e3d59fd687ac2c3886d037d1ff20
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90893152"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532777"
 ---
-# <a name="train-pytorch-deep-learning-models-at-scale-with-azure-machine-learning"></a>Обучить модели глубокого обучения Pytorch в масштабе с помощью Машинное обучение Azure
+# <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>Обучение моделей PyTorch в масштабе с помощью Машинное обучение Azure
 
+Из этой статьи вы узнаете, как выполнять сценарии обучения [PyTorch](https://pytorch.org/) в масштабе предприятия с помощью машинное обучение Azure.
 
-Из этой статьи вы узнаете, как выполнять сценарии обучения [PyTorch](https://pytorch.org/) в масштабе предприятия с помощью класса [оценщика PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py&preserve-view=true) машинное обучение Azure.  
-
-Примеры сценариев в этой статье используются для классификации образов Chicken и Турция для создания нейронной сети глубокого обучения на основе [руководства](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)по переносу PyTorch. 
+Примеры сценариев в этой статье используются для классификации образов Chicken и Турция для создания нейронной сети глубокого обучения (DNN) на основе [учебника](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)по переносу PyTorch. 
 
 Независимо от того, где вы изучаете модель PyTorch глубокого обучения или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
-Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
-
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Запустите этот код в любой из этих сред:
 
 - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
 
     - Пройдите [руководство по настройке среды и рабочей области](tutorial-1st-experiment-sdk-setup.md), чтобы создать выделенный сервер записных книжек, предварительно загруженный с пакетом SDK и репозиторием с примером.
-    - В папке примеры глубокого обучения на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > обучение с помощью-глубоко-learning > обучение-параметр-Настройка-Deploy-with-pytorch** . 
+    - В папке примеры глубокого обучения на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > ML-frameworks > pytorch > обучения-параметры-Настройка-Deploy-with-pytorch** Folder. 
  
  - Собственный сервер Jupyter Notebook
-
-    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
+    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) (>= 1.15.0).
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
-    - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/pytorch/deployment/train-hyperparameter-tune-deploy-with-pytorch)`pytorch_train.py`
+    - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/pytorch/train-hyperparameter-tune-deploy-with-pytorch)`pytorch_train.py`
      
-    Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/deployment/train-hyperparameter-tune-deploy-with-pytorch/train-hyperparameter-tune-deploy-with-pytorch.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
+    Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/train-hyperparameter-tune-deploy-with-pytorch/train-hyperparameter-tune-deploy-with-pytorch.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
 
-В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания эксперимента и отправки обучающих данных и сценариев обучения.
+В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания целевого объекта вычислений и определения среды обучения.
 
 ### <a name="import-packages"></a>Импорт пакетов
 
@@ -63,7 +59,6 @@ from azureml.core import Experiment
 
 from azureml.core.compute import ComputeTarget, AmlCompute
 from azureml.core.compute_target import ComputeTargetException
-from azureml.train.dnn import PyTorch
 ```
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
@@ -76,40 +71,28 @@ from azureml.train.dnn import PyTorch
 ws = Workspace.from_config()
 ```
 
-### <a name="create-a-deep-learning-experiment"></a>Создание эксперимента глубокого обучения
-
-Создайте эксперимент и папку для хранения сценариев обучения. В этом примере Создайте эксперимент с именем «pytorch-птиц».
-
-```Python
-project_folder = './pytorch-birds'
-os.makedirs(project_folder, exist_ok=True)
-
-experiment_name = 'pytorch-birds'
-experiment = Experiment(ws, name=experiment_name)
-```
-
 ### <a name="get-the-data"></a>Получение данных
 
 Набор данных состоит из примерно 120 учебных изображений для туркэйс и чиккенс с образами проверки 100 для каждого класса. Мы будем скачивать и извлекать набор данных в рамках нашего обучающего сценария `pytorch_train.py` . Изображения являются подмножеством [набора данных Open Images V5](https://storage.googleapis.com/openimages/web/index.html).
 
-### <a name="prepare-training-scripts"></a>Подготовка сценариев обучения
+### <a name="prepare-training-script"></a>Подготовка сценария обучения
 
 В этом руководстве обучающий сценарий `pytorch_train.py` уже предоставлен. На практике вы можете использовать любой пользовательский сценарий обучения, как есть, и запустить его с помощью Машинное обучение Azure.
 
-Отправьте сценарий обучения Pytorch, `pytorch_train.py` .
+Создайте папку для учебных сценариев.
 
-```Python
+```python
+project_folder = './pytorch-birds'
+os.makedirs(project_folder, exist_ok=True)
 shutil.copy('pytorch_train.py', project_folder)
 ```
 
-Тем не менее, если вы хотите использовать возможности отслеживания Машинное обучение Azure и метрик, вам придется добавить небольшой объем кода в сценарий обучения. Примеры отслеживания метрик можно найти в `pytorch_train.py` .
-
-## <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
+### <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
 
 Создайте целевой объект вычислений для выполнения задания PyTorch. В этом примере создайте кластерный Машинное обучение Azure вычислений с поддержкой GPU.
 
 ```Python
-cluster_name = "gpucluster"
+cluster_name = "gpu-cluster"
 
 try:
     compute_target = ComputeTarget(workspace=ws, name=cluster_name)
@@ -128,62 +111,127 @@ except ComputeTargetException:
 
 Дополнительные сведения о целевых объектах вычислений см. в статье [что такое целевые показатели вычислений](concept-compute-target.md) .
 
-## <a name="create-a-pytorch-estimator"></a>Создание средства оценки PyTorch
+### <a name="define-your-environment"></a>Определение среды
 
-Средство [оценки PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py&preserve-view=true) предоставляет простой способ запуска задания обучения PyTorch на целевом объекте вычислений.
+Чтобы определить [среду](concept-environments.md) машинного обучения Azure, в которой будут инкапсулированы зависимости сценария обучения, можно определить пользовательскую среду или использовать среду, проверенную в машинном обучении Azure.
 
-Оценщик PyTorch реализуется через универсальный [`estimator`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py&preserve-view=true) класс, который можно использовать для поддержки любой платформы. Дополнительные сведения об обучении моделей с помощью универсального оценщика см. в разделе [Обучение моделей с помощью оценщика Машинного обучения Azure](how-to-train-ml-models.md).
+#### <a name="create-a-custom-environment"></a>Создание пользовательской среды
 
-Если для выполнения сценария обучения требуются дополнительные пакеты PIP или conda, можно установить пакеты в полученном образе DOCKER, передав их имена с помощью `pip_packages` `conda_packages` аргументов и.
+Определите среду машинного обучения Azure, в которой инкапсулируются зависимости сценария обучения.
 
-```Python
-script_params = {
-    '--num_epochs': 30,
-    '--output_dir': './outputs'
-}
+Сначала определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
 
-estimator = PyTorch(source_directory=project_folder, 
-                    script_params=script_params,
-                    compute_target=compute_target,
-                    entry_script='pytorch_train.py',
-                    use_gpu=True,
-                    pip_packages=['pillow==5.4.1'])
+```yaml
+channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults
+  - torch==1.6.0
+  - torchvision==0.7.0
+  - future==0.17.1
+  - pillow
+```
+
+Создайте среду машинного обучения Azure из этой спецификации среды conda. Среда будет упакована в контейнер DOCKER во время выполнения.
+
+По умолчанию, если базовый образ не указан, Azure ML будет использовать образ ЦП в `azureml.core.runconfig.DEFAULT_CPU_IMAGE` качестве базового образа. Поскольку в этом примере выполняется обучение на кластере GPU, необходимо указать базовый образ GPU с необходимыми драйверами и зависимостями GPU. Служба машинного обучения Azure поддерживает набор базовых образов, опубликованных в реестре контейнеров Microsoft (мкр), которые можно использовать. Дополнительные сведения см. в репозитории GitHub [Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) .
+
+```python
+from azureml.core import Environment
+
+pytorch_env = Environment.from_conda_specification(name='pytorch-1.6-gpu', file_path='./conda_dependencies.yml')
+
+# Specify a GPU base image
+pytorch_env.docker.enabled = True
+pytorch_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04'
+```
+
+> [!TIP]
+> При необходимости можно просто захватить все зависимости непосредственно в пользовательском образе DOCKER или Dockerfile и создать среду из нее. Дополнительные сведения см. в разделе [обучение с помощью пользовательского образа](how-to-train-with-custom-image.md).
+
+Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
+
+#### <a name="use-a-curated-environment"></a>Использование проверенной среды
+Кроме того, Azure ML предоставляет предварительно созданные и проверенные среды, если вы не хотите создавать собственный образ. В МАШИНном обучении Azure имеется несколько проверенных сред ЦП и GPU для PyTorch, соответствующих разным версиям PyTorch. Дополнительные сведения см. [здесь](resource-curated-environments.md).
+
+Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
+
+```python
+curated_env_name = 'AzureML-PyTorch-1.6-GPU'
+pytorch_env = Environment.get(workspace=ws, name=curated_env_name)
+```
+
+Чтобы просмотреть пакеты, входящие в проверенную среду, можно записать зависимости conda на диск:
+```python
+pytorch_env.save_to_directory(path=curated_env_name)
+```
+
+Убедитесь, что проверенная среда включает все зависимости, необходимые для обучающего скрипта. В противном случае необходимо будет изменить окружение, включив недостающие зависимости. Обратите внимание, что при изменении среды потребуется присвоить ей новое имя, так как префикс AzureML зарезервирован для проверенных сред. Если вы изменили файл YAML Dependencies conda, можно создать новое окружение с новым именем, например:
+```python
+pytorch_env = Environment.from_conda_specification(name='pytorch-1.6-gpu', file_path='./conda_dependencies.yml')
+```
+
+Если вы изменили проверенный объект среды напрямую, вы можете клонировать эту среду с новым именем:
+```python
+pytorch_env = pytorch_env.clone(new_name='pytorch-1.6-gpu')
+```
+
+## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
+
+### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
+
+Создайте объект [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) , чтобы указать сведения о настройке учебного задания, включая сценарий обучения, используемую среду и целевой объект вычислений. Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре. 
+
+```python
+from azureml.core import ScriptRunConfig
+
+src = ScriptRunConfig(source_directory=project_folder,
+                      script='pytorch_train.py',
+                      arguments=['--num_epochs', 30, '--output_dir', './outputs'],
+                      compute_target=compute_target,
+                      environment=pytorch_env)
 ```
 
 > [!WARNING]
-> Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py&preserve-view=true)данных.
+> Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [набора данных](how-to-train-with-datasets.md)машинного обучения Azure.
 
-Дополнительные сведения о настройке среды Python см. на [этой странице](how-to-use-environments.md).
+Дополнительные сведения о настройке заданий с помощью Скриптрунконфиг см. в статье [Настройка и отправка обучающих запусков](how-to-set-up-training-targets.md).
 
-## <a name="submit-a-run"></a>Отправка запроса на выполнение
+> [!WARNING]
+> Если вы ранее использовали оценщик PyTorch для настройки заданий обучения PyTorch, обратите внимание, что оценивающие будут считаться устаревшими в будущих выпусках пакета Azure ML SDK. С помощью пакета SDK машинного обучения Azure >= 1.15.0, Скриптрунконфиг является рекомендуемым способом настройки заданий обучения, включая те, которые используют платформы DL.
+
+## <a name="submit-your-run"></a>Отправка выполнения
 
 [Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
 
 ```Python
-run = experiment.submit(estimator)
+run = Experiment(ws, name='pytorch-birds').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
+### <a name="what-happens-during-run-execution"></a>Что происходит во время выполнения
 При выполнении выполнения он проходит следующие этапы.
 
-- **Подготовка**. образ DOCKER создается в соответствии с оценкой PyTorch. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения.
+- **Подготовка**. образ DOCKER создается в соответствии с определенной средой. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения. Если вместо этого указана проверенная среда, то будет использоваться кэшированный образ, в котором выполняется резервное копирование проверенной среды.
 
 - **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
 
-- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, а entry_script выполняется. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
+- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, и выполняется `script` . Выходные данные из STDOUT и папки **/логс** передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
 
-- **Пост-обработка**. папка/Outputs для выполнения копируется в журнал выполнения.
+- **Пост-обработка**. папка **/Outputs** для выполнения копируется в журнал выполнения.
 
 ## <a name="register-or-download-a-model"></a>Регистрация или скачивание модели
 
 После обучения модели ее можно зарегистрировать в рабочей области. Регистрация модели позволяет хранить и редактировать версии моделей в рабочей области для упрощения [развертывания и управления моделями](concept-model-management-and-deployment.md).
 
 ```Python
-model = run.register_model(model_name='pt-dnn', model_path='outputs/')
+model = run.register_model(model_name='pytorch-birds', model_path='outputs/model.pt')
 ```
 
 > [!TIP]
-> Только что зарегистрированная модель развертывается точно так же, как и любая другая Зарегистрированная модель в Машинное обучение Azure, независимо от того, какой механизм оценки использовался для обучения. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
+> Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
 
 Вы также можете скачать локальную копию модели с помощью объекта Run. В обучающем скрипте `pytorch_train.py` объект PyTorch Save сохраняет модель в локальную папку (локальную для целевого объекта вычислений). Для скачивания копии можно использовать объект Run.
 
@@ -191,42 +239,83 @@ model = run.register_model(model_name='pt-dnn', model_path='outputs/')
 # Create a model folder in the current directory
 os.makedirs('./model', exist_ok=True)
 
-for f in run.get_file_names():
-    if f.startswith('outputs/model'):
-        output_file_path = os.path.join('./model', f.split('/')[-1])
-        print('Downloading from {} to {} ...'.format(f, output_file_path))
-        run.download_file(name=f, output_file_path=output_file_path)
+# Download the model from run history
+run.download_file(name='outputs/model.pt', output_file_path='./model/model.pt'), 
 ```
 
 ## <a name="distributed-training"></a>Распределенное обучение
 
-[`PyTorch`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py&preserve-view=true)Оценщик также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания PyTorch, а Машинное обучение Azure будет управлять согласованием.
+Машинное обучение Azure также поддерживает распределенные задания PyTorch с несколькими узлами, чтобы можно было масштабировать рабочие нагрузки для обучения. Вы можете легко выполнять распределенные задания PyTorch, и МАШИНное обучение Azure будет управлять согласованием.
+
+Azure ML поддерживает выполнение распределенных заданий PyTorch с помощью встроенного модуля Дистрибутеддатапараллел хоровод и PyTorch.
 
 ### <a name="horovod"></a>Horovod
-[Хоровод](https://github.com/uber/horovod) — это платформа с открытым исходным кодом, которая сокращает структуру для распределенного обучения, разработанного Uber. Он предоставляет простой путь к распределенным заданиям PyTorch GPU.
+[Хоровод](https://github.com/uber/horovod) — это платформа с открытым исходным кодом, которая сокращает структуру для распределенного обучения, разработанного Uber. Она предлагает простой путь для написания распределенного кода PyTorch для обучения.
 
-Чтобы использовать хоровод, укажите [`MpiConfiguration`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py&preserve-view=true) объект для `distributed_training` параметра в конструкторе PyTorch. Этот параметр обеспечивает установку библиотеки хоровод для использования в обучающем скрипте.
+Обучающий код должен быть оснащен хоровод для распределенного обучения. Дополнительные сведения об использовании хоровод с PyTorch см. в [документации по хоровод](https://horovod.readthedocs.io/en/stable/pytorch.html).
 
+Кроме того, убедитесь, что в среде обучения включен пакет **хоровод** . Если вы используете PyTorch проверенную среду, хоровод уже включен в качестве одной из зависимостей. Если вы используете собственную среду, убедитесь, что включена зависимость хоровод, например:
 
-```Python
-from azureml.train.dnn import PyTorch
+```yaml
+channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults
+  - torch==1.6.0
+  - torchvision==0.7.0
+  - horovod==0.19.5
+```
 
-estimator= PyTorch(source_directory=project_folder,
+Чтобы выполнить распределенное задание с использованием MPI или хоровод в МАШИНном обучении Azure, необходимо указать [мпиконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py&preserve-view=true) в `distributed_job_config` параметре конструктора скриптрунконфиг. Приведенный ниже код настроит распределенное задание с 2 узлами, выполняющее один процесс на каждом узле. Если вы также хотите запустить несколько процессов на одном узле (т. е. Если номер SKU кластера имеет несколько GPU), дополнительно укажите `process_count_per_node` параметр в мпиконфигуратион (значение по умолчанию — `1` ).
+
+```python
+from azureml.core import ScriptRunConfig
+from azureml.core.runconfig import MpiConfiguration
+
+src = ScriptRunConfig(source_directory=project_folder,
+                      script='pytorch_horovod_mnist.py',
                       compute_target=compute_target,
-                      script_params=script_params,
-                      entry_script='script.py',
-                      node_count=2,
-                      process_count_per_node=1,
-                      distributed_training=MpiConfiguration(),
-                      framework_version='1.4',
-                      use_gpu=True)
+                      environment=pytorch_env,
+                      distributed_job_config=MpiConfiguration(node_count=2))
 ```
-Хоровод и его зависимости будут установлены для вас, поэтому его можно импортировать в сценарий обучения `train.py` следующим образом:
 
-```Python
-import torch
-import horovod
+Полный учебник по запуску распределенных PyTorch с помощью хоровод в МАШИНном обучении Azure см. в разделе [Распределенная PyTorch с хоровод](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/distributed-pytorch-with-horovod).
+
+### <a name="distributeddataparallel"></a>дистрибутеддатапараллел
+При использовании встроенного модуля [Дистрибутеддатапараллел](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) PyTorch, созданного с помощью пакета **Torch. Distributed** в вашем обучающем коде, можно также запустить распределенное задание с помощью Azure ml.
+
+Чтобы запустить распределенное задание PyTorch с помощью Дистрибутеддатапараллел, укажите [питорчконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?view=azure-ml-py&preserve-view=true) в качестве `distributed_job_config` параметра конструктора скриптрунконфиг. Чтобы использовать серверную часть НККЛ для Torch. Distributed, укажите `communication_backend='Nccl'` в питорчконфигуратион. В приведенном ниже коде будет настроено распределенное задание с двумя узлами. Серверная часть НККЛ является рекомендуемой серверной частью для обучения распределенного GPU PyTorch.
+
+Для распределенных заданий PyTorch, настроенных с помощью Питорчконфигуратион, Azure ML установит следующие переменные среды на узлах целевого объекта вычислений:
+
+* `AZ_BATCHAI_PYTORCH_INIT_METHOD`: URL-адрес для инициализации общей файловой системы группы процессов
+* `AZ_BATCHAI_TASK_INDEX`: Глобальный ранг рабочего процесса
+
+Эти переменные среды можно указать для соответствующих аргументов обучающего скрипта с помощью `arguments` параметра скриптрунконфиг.
+
+```python
+from azureml.core import ScriptRunConfig
+from azureml.core.runconfig import PyTorchConfiguration
+
+args = ['--dist-backend', 'nccl',
+        '--dist-url', '$AZ_BATCHAI_PYTORCH_INIT_METHOD',
+        '--rank', '$AZ_BATCHAI_TASK_INDEX',
+        '--world-size', 2]
+
+src = ScriptRunConfig(source_directory=project_folder,
+                      script='pytorch_mnist.py',
+                      arguments=args,
+                      compute_target=compute_target,
+                      environment=pytorch_env,
+                      distributed_job_config=PyTorchConfiguration(communication_backend='Nccl', node_count=2))
 ```
+
+Если вы хотите использовать серверную часть глу для распределенного обучения, укажите `communication_backend='Gloo'` вместо этого. Для распределенного обучения ЦП рекомендуется использовать серверную часть глу.
+
+Полный учебник по запуску распределенной PyTorch в МАШИНном обучении Azure см. в разделе [Распределенная PyTorch с помощью дистрибутеддатапараллел](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/distributed-pytorch-with-nccl-gloo).
+
 ## <a name="export-to-onnx"></a>Экспорт в формат ONNX
 
 Чтобы оптимизировать вывод с помощью [среды выполнения ONNX](concept-onnx.md), преобразуйте обученную модель PyTorch в формат ONNX. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных. Пример см. в [руководстве](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) .
@@ -235,10 +324,8 @@ import horovod
 
 В этой статье вы обучили и зарегистрировали нейронную сеть глубокого обучения с помощью PyTorch на Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о развертывании модели.
 
-> [!div class="nextstepaction"]
-> [Как и где развертываются модели](how-to-deploy-and-where.md)
+* [Как и где развертываются модели](how-to-deploy-and-where.md)
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)
 * [Эталонная архитектура для распределенного обучения глубокого обучения в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)
-

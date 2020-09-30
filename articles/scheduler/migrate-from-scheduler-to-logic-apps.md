@@ -9,12 +9,12 @@ ms.author: deli
 ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 02/29/2020
-ms.openlocfilehash: dd61ac9751010d57cbf5b742a5081beb3ac560e9
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 5d161b287f9706473c96d25684fa23a2c94b8c3e
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826066"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532159"
 ---
 # <a name="migrate-azure-scheduler-jobs-to-azure-logic-apps"></a>Перемещение заданий из планировщика Azure в Azure Logic Apps
 
@@ -96,7 +96,7 @@ ms.locfileid: "83826066"
 
    Например, вы можете включить действие HTTP, которое отправляет запрос на URL-адрес, или действия, которые работают с очередями хранения, очередями или темами служебной шины:
 
-   ![Действие HTTP](./media/migrate-from-scheduler-to-logic-apps/request-http-action.png)
+   ![На снимке экрана показана задержка до действия, за которым следует действие H T P с методом POST.](./media/migrate-from-scheduler-to-logic-apps/request-http-action.png)
 
 1. Сохраните приложение логики, когда закончите.
 
@@ -155,7 +155,7 @@ ms.locfileid: "83826066"
 
    Например, вы можете включить действие HTTP, которое отправляет запрос на URL-адрес, или действия, которые работают с очередями хранения, очередями или темами служебной шины:
 
-   ![Действие HTTP](./media/migrate-from-scheduler-to-logic-apps/recurrence-http-action.png)
+   ![На снимке экрана показано действие H T P с методом POST.](./media/migrate-from-scheduler-to-logic-apps/recurrence-http-action.png)
 
 1. Сохраните приложение логики, когда закончите.
 

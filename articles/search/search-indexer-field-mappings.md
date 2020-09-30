@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fe4d42fd74b4efd67a01f32611bd170862ec84d0
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: a20b6509973c7dc7e54d2e4f702175ad61e88da8
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89007134"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532506"
 ---
 # <a name="field-mappings-and-transformations-using-azure-cognitive-search-indexers"></a>Сопоставления полей и преобразования с помощью индексаторов Когнитивный поиск Azure
 
@@ -201,7 +201,7 @@ api-key: [admin key]
 
 Azure Когнитивный поиск поддерживает URL-шифрование в кодировке Base64 и обычную кодировку Base64. Строка, которая кодируется в Base64 во время индексирования, должна быть декодирована позже с теми же параметрами кодировки, иначе результат не будет совпадать с исходным.
 
-Если `useHttpServerUtilityUrlTokenEncode` Параметры или `useHttpServerUtilityUrlTokenDecode` для кодирования и декодирования соответственно имеют значение `true` , то `base64Encode` ведет себя как [HttpServerUtility. UrlTokenEncode](/dotnet/api/system.web.httpserverutility.urltokenencode?view=netframework-4.8) и `base64Decode` ведет себя как [HttpServerUtility. урлтокендекоде](/dotnet/api/system.web.httpserverutility.urltokendecode?view=netframework-4.8).
+Если `useHttpServerUtilityUrlTokenEncode` Параметры или `useHttpServerUtilityUrlTokenDecode` для кодирования и декодирования соответственно имеют значение `true` , то `base64Encode` ведет себя как [HttpServerUtility. UrlTokenEncode](/dotnet/api/system.web.httpserverutility.urltokenencode) и `base64Decode` ведет себя как [HttpServerUtility. урлтокендекоде](/dotnet/api/system.web.httpserverutility.urltokendecode).
 
 > [!WARNING]
 > Если `base64Encode` используется для создания значений ключей, `useHttpServerUtilityUrlTokenEncode` необходимо установить значение true. Для значений ключей можно использовать только URL-шифрование в формате Base64. Полный набор ограничений на символы в значениях ключа см. в разделе [правила именования &#40;Azure Когнитивный поиск&#41;](/rest/api/searchservice/naming-rules) .

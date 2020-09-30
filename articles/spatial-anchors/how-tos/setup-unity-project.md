@@ -5,15 +5,15 @@ author: craigktreasure
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: crtreasu
-ms.date: 08/17/2020
+ms.date: 09/29/2020
 ms.topic: how-to
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 57ead9636b7218ecfc7d72bb605b469d6a7d1ac6
-ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
+ms.openlocfilehash: da983719dc66656aa28cab4aea0bae558c2a7162
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536367"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530428"
 ---
 # <a name="configuring-azure-spatial-anchors-in-a-unity-project"></a>Настройка пространственных привязок Azure в проекте Unity
 
@@ -33,8 +33,8 @@ ms.locfileid: "89536367"
 
 #### <a name="add-the-registry-to-your-unity-project"></a>Добавление реестра в проект Unity
 
-1. В проводнике перейдите к папке проекта Unity `Packages` . Откройте файл манифеста проекта `manifest.json` в текстовом редакторе.
-2. В верхней части файла на том же уровне, что и `dependencies` раздел, добавьте следующую запись, чтобы включить в проект реестр пространственных привязок Azure. `scopedRegistries`Запись указывает Unity, где искать пакеты SDK для пространственных привязок Azure.
+1. В проводнике перейдите к папке `Packages` проекта Unity. Откройте файл манифеста проекта `manifest.json` в текстовом редакторе.
+2. В верхней части файла на том же уровне, что и раздел `dependencies`, добавьте следующую запись, чтобы включить в проект реестр Пространственных привязок Azure. Запись `scopedRegistries` указывает Unity, где искать пакеты SDK Пространственных привязок Azure.
 
     [!code-json[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-scoped-registry-setup.md?range=9-19&highlight=2-10)]
 
@@ -50,14 +50,14 @@ ms.locfileid: "89536367"
 
     [!code-json[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-scoped-registry-setup.md?range=9-22&highlight=12-14)]
 
-2. Сохраните и закройте файл `manifest.json`. При возврате в Unity Unity должен автоматически обнаруживать изменения манифеста проекта и получать указанные пакеты. Вы можете развернуть `Packages` папку в представлении проекта, чтобы убедиться в том, что нужные пакеты импортированы.
+2. Сохраните и закройте файл `manifest.json`. Unity должен автоматически обнаруживать изменение манифеста проекта и получать указанные пакеты. Вы можете развернуть папку `Packages` в представлении проекта, чтобы убедиться, что импортированы необходимые пакеты.
 
 #### <a name="android-only-configure-the-maintemplategradle-file"></a>Только для Android: Настройка файла mainTemplate. gradle
 
 1. Выберите **Изменить** > **Параметры проекта** > **Проигрыватель**.
 2. На **панели инспектора** для **параметров проигрывателя**выберите значок **Android** .
 3. В разделе **Сборка** установите флажок **настраиваемый основной шаблон Gradle** , чтобы создать пользовательский шаблон Gradle по адресу `Assets\Plugins\Android\mainTemplate.gradle` .
-4. Откройте файл `mainTemplate.gradle` в текстовом редакторе. 
+4. Откройте файл `mainTemplate.gradle` в текстовом редакторе.
 5. В `dependencies` разделе вставьте следующие зависимости:
 
     ```gradle
@@ -72,10 +72,10 @@ ms.locfileid: "89536367"
 ### <a name="import-the-asset-package"></a>[Импорт пакета ресурсов](#tab/UnityAssetPackage)
 
 > [!WARNING]
-> Распределение пакета ресурсов Unity в пакете SDK пространственных привязок Azure будет признано устаревшим после пакета SDK версии 2.5.0.
+> Распределение пакета ресурсов Unity в пакете SDK пространственных привязок Azure устарело в версии 2.5.0 и больше не доступно в 2.6.0.
 
-1. Скачайте `AzureSpatialAnchors.unitypackage` файл для версии, которую вы хотите ориентировать, из [выпусков GitHub](https://github.com/Azure/azure-spatial-anchors-samples/releases). 
-2. Следуйте приведенным [здесь](https://docs.unity3d.com/Manual/AssetPackagesImport.html) инструкциям, чтобы импортировать пакет ресурсов Unity в проект.    
+1. Скачайте `AzureSpatialAnchors.unitypackage` файл для версии, которую вы хотите ориентировать, из [выпусков GitHub](https://github.com/Azure/azure-spatial-anchors-samples/releases).
+2. Следуйте приведенным [здесь](https://docs.unity3d.com/Manual/AssetPackagesImport.html) инструкциям, чтобы импортировать пакет ресурсов Unity в проект.
 
 ---
 

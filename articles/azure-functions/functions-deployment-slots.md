@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: f84dc17c6c074fc4dbda8a13fad3586a397fdf10
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0361ba7bc67948c25b842a3fb7406d2999fdd725
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87055418"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530618"
 ---
 # <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
@@ -73,15 +73,15 @@ ms.locfileid: "87055418"
 
 1. Выберите **Конфигурация**, а затем выберите имя параметра, которое нужно прикрепить к текущему слоту.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Настройте параметр приложения для слота в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 1. Выберите **параметр слот развертывания**и нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Настройте параметр слота развертывания." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 1. После того, как раздел настройки исчезнет, нажмите кнопку **сохранить** , чтобы сохранить изменения.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Сохраните параметр слота развертывания." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 ## <a name="deployment"></a>Развертывание
 
@@ -102,11 +102,11 @@ ms.locfileid: "87055418"
 
 1. Выберите **слоты развертывания**и щелкните **+ Добавить слот**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Добавление слота развертывания функций Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 1. Введите имя слота и нажмите кнопку **Добавить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Назовите слот развертывания функций Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 ## <a name="swap-slots"></a>Поменять местами слоты
 
@@ -115,11 +115,11 @@ ms.locfileid: "87055418"
 1. Перейдите к приложению-функции.
 1. Выберите **слоты развертывания**, а затем щелкните **заменить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Переключить слот развертывания." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 1. Проверьте параметры конфигурации для переключения и выберите **Переключение** .
     
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="Переключить слот развертывания." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 Операция может занять некоторое время, пока выполняется операция переключения.
 
@@ -135,17 +135,17 @@ ms.locfileid: "87055418"
 
     :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
-1. Выберите **Удалить**.
+1. Выберите команду **Удалить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Удалите слот развертывания в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 1. Введите имя слота развертывания, который необходимо удалить, и нажмите кнопку **Удалить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Удалите слот развертывания в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 1. Закройте панель подтверждение удаления.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Подтверждение удаления слота развертывания." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
 ## <a name="automate-slot-management"></a>Автоматизация управления слотами
 
@@ -174,9 +174,9 @@ ms.locfileid: "87055418"
 
 1. Выберите план, до которого требуется выполнить обновление, или создайте новый план.
 
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Измените план службы приложений в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ## <a name="limitations"></a>Ограничения
 

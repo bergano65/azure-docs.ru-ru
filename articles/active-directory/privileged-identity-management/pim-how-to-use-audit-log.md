@@ -14,12 +14,12 @@ ms.date: 01/07/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0a5a20498ccd0a133c6e02d366af690acf2665e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fe2f464791995b9168868f1661a3c303d46f7987
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84742272"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530125"
 ---
 # <a name="view-audit-history-for-azure-ad-roles-in-privileged-identity-management"></a>Просмотр журнала аудита для ролей Azure AD в управление привилегированными пользователями
 
@@ -32,7 +32,7 @@ ms.locfileid: "84742272"
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте **Azure AD privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/directory-roles-audit-history.png "Выберите вкладку для своей версии")](media/pim-how-to-use-audit-log/directory-roles-audit-history.png)
+    [![Снимок экрана, на котором показана страница "роли Azure AD — журнал аудита ролей каталога".](media/pim-how-to-use-audit-log/directory-roles-audit-history.png "Выберите вкладку для своей версии")](media/pim-how-to-use-audit-log/directory-roles-audit-history.png)
 
 # <a name="new-version"></a>[Новая версия](#tab/new)
 
@@ -93,7 +93,7 @@ ms.locfileid: "84742272"
     | Time | Когда произошло действие. |
     | Requestor | Пользователь, который запросил активацию или изменение роли. Если это значение является **системой Azure**, дополнительные сведения см. в журнале аудита Azure. |
     | Действие | Действия, предпринятые запрашивающей стороны. Действия могут включать назначение, отмену назначения, активацию, деактивацию или Аддедаутсидепим. |
-    | Член | Пользователь, который активирует или назначается роли. |
+    | Участник | Пользователь, который активирует или назначается роли. |
     | Роль | Роль, назначенная или активированная пользователем. |
     | Обоснование | Текст, который был указан в поле Reason во время активации. |
     | Окончание срока действия | По истечении срока действия активированной роли. Применяется только к подходящим назначениям ролей. |
@@ -123,11 +123,11 @@ ms.locfileid: "84742272"
     - См. причину события аудита в столбце **Причина состояния** .
     - См. утверждающего в столбце " **инициировано (субъект)** " для события "Добавление участника в запрос, утвержденное в роли".
 
-    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/filter-audit-logs.png "Фильтрация журнала аудита для службы PIM")](media/pim-how-to-use-audit-log/filter-audit-logs.png)
+    [![Снимок экрана, на котором отображается страница "журналы аудита" с выбранным меню "инициировано (субъект)" и "PIM".](media/pim-how-to-use-audit-log/filter-audit-logs.png "Фильтрация журнала аудита для службы PIM")](media/pim-how-to-use-audit-log/filter-audit-logs.png)
 
 1. Выберите событие журнала аудита, чтобы просмотреть номер билета на вкладке **действие** области **сведений** .
   
-    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/audit-event-ticket-number.png "Проверка номера билета для события аудита")](media/pim-how-to-use-audit-log/audit-event-ticket-number.png)
+    [![Снимок экрана, на котором показана страница "журналы аудита" с номером билета, выделенным в области "сведения".](media/pim-how-to-use-audit-log/audit-event-ticket-number.png "Проверка номера билета для события аудита")](media/pim-how-to-use-audit-log/audit-event-ticket-number.png)
 
 1. Вы можете просмотреть инициатор запроса (пользователя, который активирует роль) на вкладке **целевые объекты** области **сведений** для события аудита. Существует два типа целевых объектов для ролей Azure AD:
 
@@ -138,6 +138,6 @@ ms.locfileid: "84742272"
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр журнала активности и аудита для ролей ресурсов Azure в управление привилегированными пользователями](azure-pim-resource-rbac.md)

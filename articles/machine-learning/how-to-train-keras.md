@@ -5,50 +5,52 @@ description: Узнайте, как обучить и зарегистриров
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.author: maxluk
-author: maxluk
+ms.author: minxia
+author: mx-iao
 ms.reviewer: peterlu
-ms.date: 08/01/2019
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 7c049b56bd72a0b59862e655da3b79f63c264fbf
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: af31d909c0fbab7d873b2b583bb731f9d2e8e19e
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90882789"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532880"
 ---
-# <a name="train-and-register-a-keras-classification-model-with-azure-machine-learning"></a>Обучение и регистрация модели классификации keras с помощью Машинное обучение Azure
+# <a name="train-keras-models-at-scale-with-azure-machine-learning"></a>Обучение моделей keras в масштабе с помощью Машинное обучение Azure
 
+В этой статье вы узнаете, как выполнять сценарии обучения keras с Машинное обучение Azure.
 
-В этой статье показано, как обучить и зарегистрировать модель классификации keras, построенную на основе TensorFlow с помощью Машинное обучение Azure. Он использует популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью [библиотеки keras Python](https://keras.io) , работающей поверх [TensorFlow](https://www.tensorflow.org/overview).
+В примере кода в этой статье показано, как обучить и зарегистрировать модель классификации keras, созданную с помощью серверной части TensorFlow, с Машинное обучение Azure. Он использует популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью [библиотеки keras Python](https://keras.io) , работающей поверх [TensorFlow](https://www.tensorflow.org/overview).
 
 Keras — это высокоуровневый API нейронной сети, который может работать над другими популярными DNN платформами для упрощения разработки. С Машинное обучение Azure можно быстро масштабировать задания обучения с помощью эластичных облачных ресурсов. Вы также можете отвестись к обучающим запускам, моделям версий, развертыванию моделей и т. д.
 
 Независимо от того, разрабатываете ли вы модель keras с нуля или используете существующую модель в облаке, Машинное обучение Azure может помочь в создании моделей, готовых для производства.
 
-Сведения о различиях между машинным обучением и глубоким обучением см. в этой [статье](concept-deep-learning-vs-machine-learning.md) .
+> [!NOTE]
+> Если вы используете API keras **tf. keras** , встроенный в TensorFlow, а не в автономный пакет keras, вместо этого см. статью, чтобы [обучить модели TensorFlow](how-to-train-tensorflow.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Запустите этот код в любой из этих сред:
 
 - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
 
      - Пройдите [руководство по настройке среды и рабочей области](tutorial-1st-experiment-sdk-setup.md), чтобы создать выделенный сервер записных книжек, предварительно загруженный с пакетом SDK и репозиторием с примером.
-    - В папке Samples на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > обучающие материалы с-глубокими обучениями > Train-i Parameter-Настройка-Deploy-with-keras** .
+    - В папке Samples на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > машинного обучения ML-frameworks > keras > Learning-«Parameter-Learning-Deploy-with-keras** ».
 
  - Собственный сервер Jupyter Notebook
 
-    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true).
+    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true) (>= 1.15.0).
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
-    - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras) `mnist-keras.py` перетаскивани `utils.py`
+    - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/keras/train-hyperparameter-tune-deploy-with-keras) `keras_mnist.py` перетаскивани `utils.py`
 
-    Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
+    Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/keras/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
 
-В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания эксперимента и отправки обучающих данных и сценариев обучения.
+В этом разделе выполняется настройка обучающего эксперимента путем загрузки требуемых пакетов Python, инициализации рабочей области, создания Филедатасет для входных данных для обучения, создания целевого объекта вычислений и определения среды обучения.
 
 ### <a name="import-packages"></a>Импорт пакетов
 
@@ -73,15 +75,6 @@ from azureml.core.compute_target import ComputeTargetException
 ws = Workspace.from_config()
 ```
 
-### <a name="create-an-experiment"></a>Создание эксперимента
-
-Создайте эксперимент с именем "keras-mnist" в рабочей области.
-
-```Python
-exp = Experiment(workspace=ws, name='keras-mnist')
-```
-
-<a name="data-upload"></a>
 ### <a name="create-a-file-dataset"></a>Создание файлового набора данных
 
 Объект `FileDataset` ссылается на один или несколько файлов в хранилище данных рабочей области или общедоступных URL-адресов. Это могут быть файлы любого формата, и с помощью этого класса вы сможете скачивать их или подключать к вычислительной среде. Создавая `FileDataset`, вы одновременно создаете ссылку на расположение источника данных. Любые преобразования, примененные к такому набору данных, будут сохранены и в исходном наборе данных. Данные хранятся только в исходном расположении, а значит не потребуется лишних расходов на хранение. Дополнительные сведения см. в соответствующем [практическом руководстве](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets) по пакету `Dataset`.
@@ -98,21 +91,21 @@ web_paths = [
 dataset = Dataset.File.from_files(path=web_paths)
 ```
 
-Используйте `register()` метод, чтобы зарегистрировать набор данных в рабочей области, чтобы предоставить общий доступ другим пользователям, повторно использовать их в различных экспериментах и называть их по имени в обучающем скрипте.
+Вы можете использовать `register()` метод для регистрации набора данных в рабочей области, чтобы предоставить общий доступ другим пользователям, повторно использовать их в различных экспериментах и называть их в обучающем скрипте.
 
 ```python
 dataset = dataset.register(workspace=ws,
-                           name='mnist dataset',
+                           name='mnist-dataset',
                            description='training and test dataset',
                            create_new_version=True)
 ```
 
-## <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
+### <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
 
-Создайте целевой объект вычислений для выполнения задания TensorFlow. В этом примере создайте кластерный Машинное обучение Azure вычислений с поддержкой GPU.
+Создайте целевой объект вычислений для выполнения задания обучения. В этом примере создайте кластерный Машинное обучение Azure вычислений с поддержкой GPU.
 
 ```Python
-cluster_name = "gpucluster"
+cluster_name = "gpu-cluster"
 
 try:
     compute_target = ComputeTarget(workspace=ws, name=cluster_name)
@@ -131,71 +124,109 @@ except ComputeTargetException:
 
 Дополнительные сведения о целевых объектах вычислений см. в статье [что такое целевые показатели вычислений](concept-compute-target.md) .
 
-## <a name="create-a-tensorflow-estimator-and-import-keras"></a>Создание средства оценки TensorFlow и импорт keras
+### <a name="define-your-environment"></a>Определение среды
 
-Средство [оценки TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py&preserve-view=true) предоставляет простой способ запуска заданий обучения TensorFlow в целевом объекте вычислений. Так как keras выполняется поверх TensorFlow, вы можете использовать Оценщик TensorFlow и импортировать библиотеку keras с помощью `pip_packages` аргумента.
+Определите [среду](concept-environments.md) машинного обучения Azure, в которой инкапсулируются зависимости сценария обучения.
 
+Сначала определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
+
+```yaml
+channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults
+  - tensorflow-gpu==2.0.0
+  - keras<=2.3.1
+  - matplotlib
+```
+
+Создайте среду машинного обучения Azure из этой спецификации среды conda. Среда будет упакована в контейнер DOCKER во время выполнения.
+
+По умолчанию, если базовый образ не указан, Azure ML будет использовать образ ЦП в `azureml.core.runconfig.DEFAULT_CPU_IMAGE` качестве базового образа. Поскольку в этом примере выполняется обучение на кластере GPU, необходимо указать базовый образ GPU с необходимыми драйверами и зависимостями GPU. Служба машинного обучения Azure поддерживает набор базовых образов, опубликованных в реестре контейнеров Microsoft (мкр), которые можно использовать. Дополнительные сведения см. в репозитории GitHub [Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) .
+
+```python
+from azureml.core import Environment
+
+keras_env = Environment.from_conda_specification(name='keras-env', file_path='conda_dependencies.yml')
+
+# Specify a GPU base image
+keras_env.docker.enabled = True
+keras_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.0-cudnn7-ubuntu18.04'
+```
+
+Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
+
+## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
+
+### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
 Сначала получите данные из хранилища данных рабочей области с помощью `Dataset` класса.
 
 ```python
-dataset = Dataset.get_by_name(ws, 'mnist dataset')
+dataset = Dataset.get_by_name(ws, 'mnist-dataset')
 
-# list the files referenced by mnist dataset
+# list the files referenced by mnist-dataset
 dataset.to_path()
 ```
 
-Оценщик TensorFlow реализуется через универсальный [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py&preserve-view=true) класс, который можно использовать для поддержки любой платформы. Кроме того, создайте словарь `script_params` , содержащий настройки параметров DNN. Дополнительные сведения об обучении моделей с помощью универсального оценщика см. в разделе [Обучение моделей с помощью оценщика Машинного обучения Azure](how-to-train-ml-models.md).
+Создайте объект Скриптрунконфиг, чтобы указать сведения о настройке учебного задания, включая сценарий обучения, используемую среду и целевой объект вычислений.
+
+Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре. Датасетконсумптионконфиг для нашего Филедатасет передается в качестве аргумента в обучающий сценарий для `--data-folder` аргумента. МАШИНное обучение Azure разрешит эту Датасетконсумптионконфиг в точке подключения резервного хранилища данных, к которой затем можно получить доступ из обучающего скрипта.
 
 ```python
-from azureml.train.dnn import TensorFlow
+from azureml.core import ScriptRunConfig
 
-script_params = {
-    '--data-folder': dataset.as_named_input('mnist').as_mount(),
-    '--batch-size': 50,
-    '--first-layer-neurons': 300,
-    '--second-layer-neurons': 100,
-    '--learning-rate': 0.001
-}
+args = ['--data-folder', dataset.as_mount(),
+        '--batch-size', 50,
+        '--first-layer-neurons', 300,
+        '--second-layer-neurons', 100,
+        '--learning-rate', 0.001]
 
-est = TensorFlow(source_directory=script_folder,
-                 entry_script='keras_mnist.py',
-                 script_params=script_params,
-                 compute_target=compute_target,
-                 pip_packages=['keras', 'matplotlib'],
-                 use_gpu=True)
+src = ScriptRunConfig(source_directory=script_folder,
+                      script='keras_mnist.py',
+                      arguments=args,
+                      compute_target=compute_target,
+                      environment=keras_env)
 ```
 
-## <a name="submit-a-run"></a>Отправка запроса на выполнение
+Дополнительные сведения о настройке заданий с помощью Скриптрунконфиг см. в статье [Настройка и отправка обучающих запусков](how-to-set-up-training-targets.md).
+
+> [!WARNING]
+> Если вы ранее использовали оценщик TensorFlow для настройки заданий обучения keras, обратите внимание, что оценивающие будут считаться устаревшими в будущих выпусках пакета Azure ML SDK. С помощью пакета SDK машинного обучения Azure >= 1.15.0, Скриптрунконфиг является рекомендуемым способом настройки заданий обучения, включая те, которые используют платформы DL.
+
+### <a name="submit-your-run"></a>Отправка выполнения
 
 [Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
 
 ```Python
-run = exp.submit(est)
+run = Experiment(workspace=ws, name='keras-mnist').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
+### <a name="what-happens-during-run-execution"></a>Что происходит во время выполнения
 При выполнении выполнения он проходит следующие этапы.
 
-- **Подготовка**. образ DOCKER создается в соответствии с оценкой TensorFlow. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения.
+- **Подготовка**. образ DOCKER создается в соответствии с определенной средой. Образ отправляется в реестр контейнеров рабочей области и кэшируется для последующего выполнения. Журналы также передаются в журнал выполнения и могут быть просмотрены для отслеживания хода выполнения. Если вместо этого указана проверенная среда, то будет использоваться кэшированный образ, в котором выполняется резервное копирование проверенной среды.
 
 - **Масштабирование**. Кластер пытается выполнить масштабирование, если кластеру Batch AI требуется больше узлов для выполнения выполнения, чем в настоящее время доступно.
 
-- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, а entry_script выполняется. Выходные данные из STDOUT и папки/логс передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
+- **Выполняется**: все скрипты в папке Script передаются в целевой объект вычислений, хранилища данных подключаются или копируются, и выполняется `script` . Выходные данные из STDOUT и папки **/логс** передаются в журнал выполнения и могут использоваться для наблюдения за выполнением.
 
-- **Пост-обработка**. папка/Outputs для выполнения копируется в журнал выполнения.
+- **Пост-обработка**. папка **/Outputs** для выполнения копируется в журнал выполнения.
 
 ## <a name="register-the-model"></a>Регистрация модели
 
-После обучения модели DNN можно зарегистрировать ее в рабочей области. Регистрация модели позволяет хранить и редактировать версии моделей в рабочей области для упрощения [развертывания и управления моделями](concept-model-management-and-deployment.md).
+После обучения модели ее можно зарегистрировать в рабочей области. Регистрация модели позволяет хранить и редактировать версии моделей в рабочей области для упрощения [развертывания и управления моделями](concept-model-management-and-deployment.md).
 
 ```Python
-model = run.register_model(model_name='keras-dnn-mnist', model_path='outputs/model')
+model = run.register_model(model_name='keras-mnist', model_path='outputs/model')
 ```
 
 > [!TIP]
-> Только что зарегистрированная модель развертывается точно так же, как и любая другая Зарегистрированная модель в Машинное обучение Azure, независимо от того, какой механизм оценки использовался для обучения. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
+> Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
 
-Также можно скачать локальную копию модели. Это может быть полезно для выполнения дополнительной проверки модели локально. В скрипте обучения `mnist-keras.py` объект TensorFlow хранителя сохраняет модель в локальной папке (локальную для целевого объекта вычислений). Чтобы скачать копию из хранилища данных, можно использовать объект Run.
+Также можно скачать локальную копию модели. Это может быть полезно для выполнения дополнительной проверки модели локально. В скрипте обучения `keras_mnist.py` объект TensorFlow хранителя сохраняет модель в локальной папке (локальную для целевого объекта вычислений). Для скачивания копии из журнала выполнения можно использовать объект Run.
 
 ```Python
 # Create a model folder in the current directory
@@ -212,8 +243,7 @@ for f in run.get_file_names():
 
 В этой статье вы обучили и зарегистрировали модель keras на Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о развертывании модели.
 
-> [!div class="nextstepaction"]
-> [Как и где развертываются модели](how-to-deploy-and-where.md)
+* [Как и где развертываются модели](how-to-deploy-and-where.md)
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

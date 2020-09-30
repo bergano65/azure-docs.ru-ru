@@ -5,18 +5,18 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: cshoe
-ms.openlocfilehash: d57b230ceecc8e676eea6a1ab0855761e78f723b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: fdd046a855c4e2114e96e7911a928165f808710c
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242752"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530550"
 ---
 # <a name="azure-function-event-grid-trigger-local-debugging"></a>Локальная отладка триггера Сетки событий для функций Azure
 
 В этой статье показано, как отладить локальную функцию, которая обрабатывает событие в Сетке событий Azure, вызванное учетной записью хранения. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Создайте новое приложение-функцию или используйте существующее.
 - Создайте новую учетную запись хранения или используйте существующую.
@@ -52,7 +52,7 @@ ngrok http -host-header=localhost 7071
 ```
 Если программа настроена правильно, окно командной строки будет выглядеть примерно как на следующем снимке экрана.
 
-![Запуск ngrok](./media/functions-debug-event-grid-trigger-local/functions-debug-event-grid-trigger-local-ngrok.png)
+![Снимок экрана, показывающий командную строку после запуска программы "ngrok".](./media/functions-debug-event-grid-trigger-local/functions-debug-event-grid-trigger-local-ngrok.png)
 
 Скопируйте URL-адрес **HTTPS**, созданный при выполнении *ngrok*. Это значение используется при настройке конечной точки сетки событий.
 

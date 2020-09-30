@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: end-user-help
 ms.date: 08/12/2019
 ms.author: curtand
-ms.openlocfilehash: 76809a41400502ec48c2dd674f8976bb168ec9f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.openlocfilehash: 40af9ac692a226b12f984db447db9635cba655e4
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83735996"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530261"
 ---
 # <a name="set-up-a-mobile-device-as-your-two-factor-verification-method"></a>Настройка мобильного устройства в качестве метода двухфакторной проверки подлинности
 
@@ -30,7 +30,7 @@ ms.locfileid: "83735996"
 
 2. Выберите **Отправить код в текстовом сообщении** в области **Метод**, а затем нажмите кнопку **Далее**.
 
-    ![Страница дополнительной проверки безопасности с параметром "Телефон для проверки подлинности" и вариантом отправки текстового сообщения](media/multi-factor-authentication-verification-methods/multi-factor-authentication-text-message.png)
+    ![Снимок экрана, на котором отображается страница "дополнительная проверка безопасности" с выбранным параметром "Телефон проверки подлинности" и "отправить код по текстовому сообщению".](media/multi-factor-authentication-verification-methods/multi-factor-authentication-text-message.png)
 
 3. Введите код проверки из текстового сообщения, отправленного корпорацией Майкрософт, в область **Шаг 2. Мы отправили SMS вам на телефон по номеру**, а затем нажмите кнопку **Подтвердить**.
 

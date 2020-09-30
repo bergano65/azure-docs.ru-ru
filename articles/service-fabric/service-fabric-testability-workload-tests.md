@@ -1,17 +1,15 @@
 ---
 title: Моделирование ошибок в приложениях Service Fabric Azure
 description: Узнайте, как защитить службы Azure Service Fabric от корректного и нельготного сбоя.
-author: anmolah
 ms.topic: conceptual
 ms.date: 06/15/2017
-ms.author: anmola
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c193ef00d56b2d2fc7ad806cc795dcbe360db548
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: c714ae30c64ea073cbac521eac5e15a8d968b7ea
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022111"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91531316"
 ---
 # <a name="simulate-failures-during-service-workloads"></a>Моделирование ошибок во время рабочих нагрузок службы
 Сценарии тестирования в Azure Service Fabric позволяют разработчикам не беспокоиться об обработке отдельных ошибок. Однако есть сценарии, в которых может потребоваться явное чередование клиентской рабочей нагрузки и сбоев. Чередование клиентской рабочей нагрузки и сбоев обеспечивает выполнение службой необходимых действий в случае сбоя. Учитывая уровень управления тестированием, эти сбои могут наблюдаться именно в точках выполнения рабочей нагрузки. Вызывая таким образом ошибки при различных состояниях приложения, можно находить ошибки и улучшить качество.

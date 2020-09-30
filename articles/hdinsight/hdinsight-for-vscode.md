@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 04/07/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: bf31ad3311d6cbfd82ad1071d28bb7fee1bb9d2b
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: bb2fff699b31d8b3b311180c4b85e2bfd1da892c
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876790"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530159"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Использование Spark & средств Hive для Visual Studio Code
 
@@ -199,11 +199,11 @@ ms.locfileid: "87876790"
 
 4. Запрос на установку ядра PySpark отображается в правом нижнем углу окна. Можно нажать кнопку " **установить** ", чтобы перейти к установке PySpark. чтобы пропустить этот шаг, нажмите кнопку **пропустить** .
 
-   ![Установка ядра pyspark](./media/hdinsight-for-vscode/install-the-pyspark-kernel.png)
+   ![На снимке экрана показан параметр, позволяющий пропустить установку PySpark.](./media/hdinsight-for-vscode/install-the-pyspark-kernel.png)
 
 5. Если потребуется установить его позже, можно перейти к **File**  >  **Preference**  >  **параметрам настройки**файла, а затем снять флажок **Hdinsight: включить пропуск Pyspark установки** в параметрах. 
     
-    ![Установка ядра pyspark](./media/hdinsight-for-vscode/enable-skip-pyspark-installation.png)
+    ![На снимке экрана показан параметр включения Pyspark установки Skip.](./media/hdinsight-for-vscode/enable-skip-pyspark-installation.png)
 
 6. Если на шаге 4 Установка прошла успешно, в правом нижнем углу окна появится окно сообщения "PySpark успешно установлено". Нажмите кнопку " **перезагрузить** ", чтобы перезагрузить окно.
     ![pyspark успешно установлен](./media/hdinsight-for-vscode/pyspark-kernel-installed-successfully.png)
@@ -331,7 +331,7 @@ ms.locfileid: "87876790"
 
     **Опубликовать/батчес** Текст запроса
 
-    | name | description | type |
+    | name | description | тип |
     | --- | --- | --- |
     | файл | Файл, содержащий приложение для выполнения | Путь (обязательно) |
     | proxyUser | Пользователь, олицетворяемый при выполнении задания | Строка |
@@ -339,7 +339,7 @@ ms.locfileid: "87876790"
     | args | Аргументы командной строки для приложения | Список строк |
     | jars | JAR для использования в этом сеансе | Список строк | 
     | pyFiles | Файлы Python для использования в этом сеансе | Список строк |
-    | файлы | Файлы, используемые в этом сеансе | Список строк |
+    | files | Файлы, используемые в этом сеансе | Список строк |
     | driverMemory | Объем памяти, используемый для процесса драйвера | Строка |
     | driverCores | Число ядер, используемых для процесса драйвера | Int |
     | executorMemory | Объем памяти, используемый для каждого процесса исполнителя | Строка |
@@ -352,13 +352,13 @@ ms.locfileid: "87876790"
 
     Текст ответа созданного объекта пакета.
 
-    | name | description | type |
+    | name | description | тип |
     | --- | ---| --- |
     | ID | Идентификатор сеанса | Int |
     | appId | Идентификатор приложения для этого сеанса | Строка |
     | appInfo | Подробные сведения о приложении | Сопоставление key=val |
     | log | Строки журнала | Список строк |
-    | state |Пакетное состояние | Строка |
+    | Состояние |Пакетное состояние | Строка |
 
     > [!NOTE]
     > Назначенная конфигурация Livy отображается в области вывода при отправке скрипта.
@@ -473,6 +473,6 @@ ms.locfileid: "87876790"
 
 ![Известные проблемы](./media/hdinsight-for-vscode/known-issue.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Видеоролик, демонстрирующий использование Spark & Hive для Visual Studio Code, см. в разделе [spark & Hive для Visual Studio Code](https://go.microsoft.com/fwlink/?linkid=858706).

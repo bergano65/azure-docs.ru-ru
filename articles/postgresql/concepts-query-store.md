@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/01/2020
-ms.openlocfilehash: 49eea969f987a72872cda58ae6a7c41e50a14c10
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2cda79e1b08e67e10d42acb5093230ce8450d67d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830287"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530924"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
 
@@ -250,9 +250,9 @@ Query_store.staging_data_reset() returns void
 ## <a name="limitations-and-known-issues"></a>Ограничения и известные проблемы
 - Если на сервере PostgreSQL настроен параметр default_transaction_read_only, хранилище запросов не может записывать данные.
 - Операции хранилища запросов могут быть прерваны при обнаружении длинных запросов в Юникоде (>= 6000 байт).
-- [Чтение реплик](concepts-read-replicas.md) реплицирует данные хранилища запросов с главного сервера. Это означает, что хранилище запросов реплики чтения не предоставляет статистических данных о запросах, выполняемых в реплике чтения.
+- [Чтение реплик](concepts-read-replicas.md) реплицирует данные хранилища запросов с сервера источника. Это означает, что хранилище запросов реплики чтения не предоставляет статистических данных о запросах, выполняемых в реплике чтения.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [ситуациях, в которых хранилище запросов может быть особенно полезным](concepts-query-store-scenarios.md).
 - Дополнительные сведения о [рекомендациях по работе с хранилищем запросов](concepts-query-store-best-practices.md).

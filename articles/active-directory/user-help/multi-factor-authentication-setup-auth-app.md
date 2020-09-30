@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: end-user-help
 ms.date: 08/12/2019
 ms.author: curtand
-ms.openlocfilehash: 953f74a18ae7874c8772cdc8179e5e5bdd1a86d2
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 10b6b788077eccda522c9e8c6e631939ca1819fc
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83738648"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530346"
 ---
 # <a name="set-up-an-authenticator-app-as-your-two-factor-verification-method"></a>Настройка приложения Microsoft Authenticator в качестве метода двухфакторной проверки подлинности
 
@@ -33,7 +33,7 @@ ms.locfileid: "83738648"
 
 2. Выберите **Получить уведомления для проверки** в области **Как вы хотите использовать мобильное приложение?** , а затем нажмите кнопку **Настроить**.
 
-    ![Страница дополнительной проверки безопасности с параметрами "Мобильное приложение" и "Уведомления"](media/multi-factor-authentication-verification-methods/multi-factor-authentication-auth-app-notification.png)
+    ![Снимок экрана, на котором показана страница "дополнительная проверка безопасности" с выбранным параметром "мобильное приложение" и "получить уведомления для проверки".](media/multi-factor-authentication-verification-methods/multi-factor-authentication-auth-app-notification.png)
 
     Появится страница **Настроить мобильное приложение**.
 
@@ -48,7 +48,7 @@ ms.locfileid: "83738648"
 
 5. На странице **Дополнительная проверка безопасности** на компьютере убедитесь, что вы получили сообщение о том, что конфигурация прошла успешно, а затем нажмите кнопку **Далее**.
 
-    ![Страница дополнительной проверки безопасности с сообщением об успешном выполнении](media/multi-factor-authentication-verification-methods/multi-factor-authentication-auth-app-notification-confirm.png)
+    ![Снимок экрана, на котором показана страница "дополнительная проверка безопасности" с параметром "мобильное приложение настроено". выделенное сообщение об успешном выполнении.](media/multi-factor-authentication-verification-methods/multi-factor-authentication-auth-app-notification-confirm.png)
 
     Приложение Authenticator отправляет уведомление на ваше мобильное устройство в качестве теста.
 

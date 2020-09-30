@@ -9,30 +9,55 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 9c0d3d9c74be8dabaec20ff5d4c7e7cfc74d8eef
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 8d1c9027b6a9a7b295ce83e26281832beca1bc33
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939128"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91531961"
 ---
 # <a name="troubleshooting-postgresql-hyperscale-server-groups"></a>Устранение неполадок PostgreSQL в масштабируемых группах серверов
+В этой статье описываются некоторые методы, которые можно использовать для устранения неполадок в группе серверов. В дополнение к этой статье вы можете узнать, как использовать [Kibana](monitor-grafana-kibana.md) для Поиск журналов или использовать [Grafana](monitor-grafana-kibana.md) для визуализации метрик по вашей группе серверов. 
 
-Записные книжки могут документировать процедуры, включив содержимое Markdown, чтобы описать, что нужно сделать или как это сделать. Он также может предоставлять исполняемый код для автоматизации процедуры.  Этот шаблон полезен для всех, от стандартных операционных процедур до руководств по устранению неполадок.
+## <a name="getting-more-details-about-the-execution-of-an-azdata-command"></a>Получение дополнительных сведений о выполнении команды аздата
+Вы можете добавить параметр **--Debug** в любую выполняемую команду аздата. Это позволит отобразить в консоли дополнительные сведения о выполнении этой команды. Рекомендуется получить сведения, которые помогут понять поведение этой команды.
+Например, можно запустить
+```console
+azdata arc postgres server create -n postgres01 -w 2 --debug
+```
+
+или
+```console
+azdata arc postgres server edit -n postgres01 --extension SomeExtensionName --debug
+```
+
+Кроме того, вы можете использовать параметр--Help для любой команды аздата, чтобы отобразить некоторую справку, а также список параметров для конкретной команды. Пример:
+```console
+azdata arc postgres server create --help
+```
+
+
+## <a name="collecting-logs-of-the-data-controller-and-your-server-groups"></a>Сбор журналов контроллера данных и групп серверов
+Прочитайте статью о [получении журналов для служб данных с поддержкой ARC в Azure](troubleshooting-get-logs.md) .
+
+
+
+## <a name="interactive-troubleshooting-with-jupyter-notebooks-in-azure-data-studio"></a>Интерактивное устранение неполадок с записными книжками Jupyter в Azure Data Studio
+Включив в записные книжки содержимое Markdown для описания необходимых действий и порядка их выполнения, можно документировать в них процедуры. Это содержимое также может предоставлять исполняемый код для автоматизации процедуры.  Такая схема подходит для любых задач: от стандартных операционных процедур до руководств по устранению неполадок.
 
 Например, давайте устраняем неполадки в PostgreSQLной группе серверов, которая может привести к проблемам с Azure Data Studio.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="install-tools"></a>Средства установки
+### <a name="install-tools"></a>Средства установки
 
 Установите Azure Data Studio `kubectl` и `azdata` на клиентский компьютер, который используется для запуска записной книжки в Azure Data Studio. Для этого следуйте инструкциям в [статье Установка клиентских средств](install-client-tools.md) .
 
-## <a name="update-the-path-environment-variable"></a>Обновление переменной среды PATH
+### <a name="update-the-path-environment-variable"></a>Обновление переменной среды PATH
 
 Убедитесь, что эти средства можно вызывать из любого места на этом клиентском компьютере. Например, на клиентском компьютере Windows обновите переменную системной среды PATH и добавьте папку, в которую вы установили kubectl.
 
-## <a name="sign-in-with-azdata"></a>Войти с помощью `azdata`
+### <a name="sign-in-with-azdata"></a>Войти с помощью `azdata`
 
 Войдите в контроллер данных ARC с этого клиентского компьютера и перед запуском Azure Data Studio. Для этого выполните следующую команду:
 
@@ -46,7 +71,7 @@ azdata login --endpoint https://<IP address>:<port>
 azdata login --help
 ```
 
-## <a name="log-into-your-kubernetes-cluster-with-kubectl"></a>Войдите в кластер Kubernetes с помощью kubectl.
+### <a name="log-into-your-kubernetes-cluster-with-kubectl"></a>Войдите в кластер Kubernetes с помощью kubectl.
 
 Для этого может потребоваться использовать примеры команд, приведенные в [этой](https://blog.christianposta.com/kubernetes/logging-into-a-kubernetes-cluster-with-kubectl/) записи блога.
 Выполните такие команды, как:
@@ -59,7 +84,7 @@ kubectl config set-context default/my_kubeuser/ArcDataControllerAdmin --user=Arc
 kubectl config use-context default/my_kubeuser/ArcDataControllerAdmin
 ```
 
-### <a name="the-troubleshooting-notebook"></a>Записная книжка для устранения неполадок
+#### <a name="the-troubleshooting-notebook"></a>Записная книжка для устранения неполадок
 
 Запустите Azure Data Studio и откройте записную книжку устранение неполадок. 
 
@@ -70,18 +95,20 @@ kubectl config use-context default/my_kubeuser/ArcDataControllerAdmin
 3. Выберите **панель мониторинга [диагностика и устранение проблем]**
 4. Выберите **ссылку [Устранение неполадок]** .
 
-:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL":::
+:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
 
-Откроется **Записная книжка "TSG100" в службе "Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="неполадок PostgreSQL":::
+Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
 
-### <a name="run-the-scripts"></a>Выполнение сценариев
+Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** ":::
+
+#### <a name="run-the-scripts"></a>Выполнение сценариев
 Нажмите кнопку "запустить все" в верхней части, чтобы запустить записную книжку одновременно, или пошаговое выполнение каждой ячейки кода по одной.
 
 Просмотр результатов выполнения ячеек кода для любых потенциальных проблем.
 
 Мы добавим дополнительные сведения в записную книжку, чтобы узнать, как распознать распространенные проблемы и как их решить.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 - Ознакомьтесь со сведениями о [получении журналов для служб данных с поддержкой ARC в Azure](troubleshooting-get-logs.md) .
 - Прочитайте о [поиске журналов с помощью Kibana](monitor-grafana-kibana.md)
 - Сведения о [мониторинге с помощью Grafana](monitor-grafana-kibana.md)

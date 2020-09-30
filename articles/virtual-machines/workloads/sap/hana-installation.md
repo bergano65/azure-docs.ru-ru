@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ae4a7dc400b347a963e07a8c696e7581e2dcd703
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 60d889b232857ae69372df8ebabbd0edd01a2f17
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507851"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91529836"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -134,7 +134,7 @@ ms.locfileid: "86507851"
 
 Дополнительные сведения о Ethernet по архитектуре см. в разделе [Поддерживаемые сценарии для крупных экземпляров HANA](hana-supported-scenario.md).
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 Структура хранилища для SAP HANA в Azure (крупные экземпляры) настраивается SAP HANA в Azure с `service management` помощью рекомендуемых правил SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
 
@@ -179,7 +179,7 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 
 Выходные данные команды df -h в единице крупного экземпляра S72m HANA выглядят следующим образом.
 
-![fstab подключенных томов в единице крупного экземпляра HANA](./media/hana-installation/image2_df_output.PNG)
+![На снимке экрана показаны выходные данные команды для единицы крупных экземпляров HANA.](./media/hana-installation/image2_df_output.PNG)
 
 
 Контроллер хранилища и узлы в стеках больших экземпляров синхронизируются с NTP-серверами. Если выполняется синхронизация с NTP-сервером для единиц SAP HANA в Azure (крупные экземпляры) и виртуальных машин Azure, не должно быть заметного смещения времени между инфраструктурой и единицами вычислений в Azure или стеками крупных экземпляров.

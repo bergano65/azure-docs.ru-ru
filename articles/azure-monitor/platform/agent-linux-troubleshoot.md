@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 98ef2b416c809789307f946ed90fb3138d9a20c1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: c28a3b0f445ca905a882a7ede3fcfed2c1e673a4
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325378"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91531196"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -150,7 +150,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 ### <a name="probable-causes"></a>Возможные причины
 * При подключении указан недопустимый прокси-сервер.
-* Azure Monitor и конечные точки службы автоматизации Azure не список разрешений в вашем центре обработки данных 
+* Azure Monitor и конечные точки службы автоматизации Azure не включены в список утвержденных в вашем центре обработки данных 
 
 ### <a name="resolution"></a>Решение
 1. Повторно подключитесь Azure Monitor с агентом Log Analytics для Linux с помощью следующей команды с включенным параметром `-v` . Он позволяет получить подробные выходные данные агента, подключающегося к серверу через прокси-сервер, для Azure Monitor. 
@@ -211,7 +211,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 - Выполняется резервное копирование данных агента Log Analytics для Linux
 
 ### <a name="resolution"></a>Решение
-1. Проверьте, успешно ли Azure Monitor подключение, проверив, существует ли следующий файл:`/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`
+1. Проверьте, успешно ли Azure Monitor подключение, проверив, существует ли следующий файл: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`
 2. Повторно подключитесь, используя инструкции командной строки `omsadmin.sh`
 3. Если используется прокси-сервер, см. описанные выше шаги по разрешению прокси-сервера.
 4. Иногда сбой подключения между агентом Log Analytics для Linux и службой связан с тем, что в буфере достигнут максимальный размер запросов к данным агента (50 МБ). Перезапустите агент с помощью следующей команды: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]`. 
@@ -405,7 +405,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge
 ```
-Или
+либо
 
 ```
 sudo sh ./onboard_agent.sh --purge
@@ -444,4 +444,3 @@ sudo sh ./onboard_agent.sh --purge
     ```
 
 3. Обновите пакеты, выполнив команду `sudo sh ./omsagent-*.universal.x64.sh --upgrade`.
-
