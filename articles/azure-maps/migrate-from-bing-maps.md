@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 643e49bdba76051c873ed549d5f6c21487f34056
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: b0c23955248a3468ee6bd624ebf7281bc6c3c961
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90108372"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319611"
 ---
 # <a name="migrate-from-bing-maps-to-azure-maps"></a>Переход с Карт Bing на Azure Maps
 
@@ -81,6 +81,15 @@ ms.locfileid: "90108372"
 4.  Переместите код приложения.
 5.  Протестируйте перенесенное приложение.
 6.  Разверните перенесенное приложение в рабочей среде.
+
+## <a name="create-an-azure-maps-account"></a>создание учетной записи службы Azure Maps
+
+Чтобы создать учетную запись Azure Maps и получить доступ к платформе Azure Maps, выполните следующие действия:
+
+1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+2. Войдите на [портал Azure](https://portal.azure.com/).
+3. Создайте [учетную запись службы Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys). 
+4. [Получите ключ подписки Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
 
 ## <a name="azure-maps-technical-resources"></a>Технические ресурсы по Azure Maps
 

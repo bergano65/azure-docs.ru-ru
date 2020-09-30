@@ -7,12 +7,12 @@ ms.author: msangapu
 keywords: служба приложений azure, веб-приложение, linux, windows, docker, контейнер
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: fdc15ecd79a6672d2a46b4da284533965977d753
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: f4b2aea0a6782b5484b2f6d15066d71990348596
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90982868"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312062"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Перенос пользовательского программного обеспечения в Службу приложений Azure с помощью пользовательского контейнера
 
@@ -72,7 +72,7 @@ ms.locfileid: "90982868"
 
 В обозревателе решений откройте **Dockerfile**.
 
-Необходимо использовать [поддерживаемый родительский образ](quickstart-custom-container.md#use-a-different-parent-image). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом.
+Необходимо использовать [поддерживаемый родительский образ](configure-custom-container.md#supported-parent-images). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом.
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019
@@ -618,6 +618,8 @@ service ssh start
 az group delete --name AppSvc-DockerTutorial-rg
 ```
 
+::: zone-end
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
@@ -625,9 +627,13 @@ az group delete --name AppSvc-DockerTutorial-rg
 > [!div class="checklist"]
 > * Развертывание настраиваемого образа в частном реестре контейнеров.
 > * Развертывание и запуск пользовательского образа в Службе приложений
+::: zone pivot="container-linux"
 > * Обновление и повторное развертывание образа.
+::: zone-end
 > * Доступ к журналам диагностики
+::: zone pivot="container-linux"
 > * Подключение контейнера с помощью SSH.
+::: zone-end
 
 Перейдите к следующему руководству, в котором описано, как сопоставлять пользовательские DNS-имена с приложением.
 
@@ -639,7 +645,7 @@ az group delete --name AppSvc-DockerTutorial-rg
 > [!div class="nextstepaction"]
 > [Настройка пользовательского контейнера](configure-custom-container.md)
 
+::: zone pivot="container-linux"
 > [!div class="nextstepaction"]
 > [Руководство. по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)
-
 ::: zone-end

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: e1a66da52eea6d5da711fa6def58eba65d0960ed
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6cca34774038156cfb01e872e751338c1c96efaa
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74976746"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316006"
 ---
 # <a name="tutorial-provision-devices-across-load-balanced-iot-hubs"></a>Руководство по Подготовка устройств в Центрах Интернета вещей с балансировкой нагрузки
 
@@ -67,8 +67,6 @@ ms.locfileid: "74976746"
 4. На странице **Add link to IoT hub** (Добавление связи к Центру Интернета вещей) с помощью переключателей укажите, находится ли связанный Центр Интернета вещей в текущей подписке или в другой. Выберите имя Центра Интернета вещей в поле **Центр IoT**.
 5. Выберите команду **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
-
 В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
@@ -76,6 +74,8 @@ ms.locfileid: "74976746"
 > * добавлять запись списка регистрации на втором устройстве;
 > * Настройка для политики распределения службы подготовки устройств **равномерного распределения**
 > * Связывание Центра Интернета вещей со службой подготовки устройств
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 <!-- Advance to the next tutorial to learn how to 
  Replace this .md

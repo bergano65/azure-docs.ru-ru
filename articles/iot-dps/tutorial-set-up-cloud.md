@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 925d1178ad630699cfd3d9e48677c0f029fc75af
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f45c3def84c548ba12221efa59e9ebbd4699df71
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74976729"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316075"
 ---
 # <a name="tutorial-configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Руководство по Настройка облачных ресурсов для подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей
 
@@ -27,7 +27,7 @@ ms.locfileid: "74976729"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+## <a name="prerequisites"></a>Предварительные требования
 
 Войдите на [портал Azure](https://portal.azure.com/).
 

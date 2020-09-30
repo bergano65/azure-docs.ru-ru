@@ -8,13 +8,13 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: sngun
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 9554fa63d13c5da465653064d69d7950d91f0300
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-js
+ms.openlocfilehash: 005473fa02dda2e5466ffbc5a32499006c41292c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421881"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322705"
 ---
 # <a name="tutorial-build-a-nodejs-web-app-using-the-javascript-sdk-to-manage-a-sql-api-account-in-azure-cosmos-db"></a>Руководство по Создание веб-приложения Node.js с помощью пакета SDK для JavaScript для управления учетной записью API SQL в Azure Cosmos DB 
 
@@ -439,18 +439,11 @@ ms.locfileid: "87421881"
 
 1. Чтобы протестировать приложение на локальном компьютере, выполните `npm start` в терминале для запуска приложения, а затем обновите в браузере страницу `http://localhost:3000`. Теперь страница будет выглядеть, как показано на следующем снимке экрана:
    
-    :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-localhost.png" alt-text="Снимок экрана приложения My ToDo List в окне браузера":::
-
-    > [!TIP]
-    > Если появляется сообщение об ошибке отступа в файле layout.jade или index.jade, выровняйте две первые строки в этих двух файлах по левому краю без пробелов. Если перед первыми двумя строками есть пробелы, удалите их, сохраните оба файла и затем обновите окно браузера. 
-
-2. Используйте поля "Элемент", "Имя элемента" и "Категория", чтобы указать новую задачу, а затем выберите **Добавить элемент**. Будет создан документ в Azure Cosmos DB с заданными свойствами. 
+    :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-localhost.png" alt-text="Изучение Node.js — снимок экрана приложения Hello World в окне браузера" и "Категория", чтобы указать новую задачу, а затем выберите **Добавить элемент**. Будет создан документ в Azure Cosmos DB с заданными свойствами. 
 
 3. Страница должна обновиться, чтобы отобразить только что созданный элемент в списке ToDo.
    
-    :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-added-task.png" alt-text="Снимок экрана приложения с новым элементом в списке дел":::
-
-4. Чтобы завершить задачу, установите флажок в столбце "Завершено" и выберите **Обновить задачи**. После этого созданный документ будет обновлен и удален из представления.
+    :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-added-task.png" alt-text="Изучение Node.js — снимок экрана приложения Hello World в окне браузера" и выберите **Обновить задачи**. После этого созданный документ будет обновлен и удален из представления.
 
 5. Чтобы остановить приложение, нажмите клавиши CTRL+C в окне терминала и выберите **Y** для завершения пакетного задания.
 

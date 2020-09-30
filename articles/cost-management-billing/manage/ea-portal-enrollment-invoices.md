@@ -3,17 +3,17 @@ title: Счета по Соглашению о регистрации Azure Ente
 description: В этой статье описано, как управлять счетами Azure Enterprise и работать с ними.
 author: bandersmsft
 ms.author: banders
-ms.date: 09/03/2020
+ms.date: 09/18/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: ca7aaea1e0bac1c00a373c8847623606d629e800
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: fec013395af9aeb3d83f86ab47cc52b3fedd7a1f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442519"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316143"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Счета по Соглашению о регистрации Azure Enterprise
 
@@ -162,20 +162,6 @@ ms.locfileid: "89442519"
 ### <a name="enterprise-agreement-units-of-measure"></a>Единицы измерения Соглашения Enterprise
 
 Единицы измерения для Соглашений Enterprise часто отличаются от других программ, таких как программа соглашения Microsoft Online Subscription (MOSA). Это различие означает, что для ряда служб единица измерения вычисляется для формирования нормализованных цен. Единицей измерения, отображаемой в представлении сводки использования на портале Azure Enterprise Portal, всегда является единица Enterprise. Полный список текущих единиц измерения и преобразований для каждой службы предоставляется в файле Excel [Понятные имена служб](https://azurepricing.blob.core.windows.net/supplemental/Friendly_Service_Names.xlsx).
-
-### <a name="rounding-rules"></a>Правила округления
-
-Портал Azure Enterprise portal использует логику банковского округления (IEEE) или логику округления по Гауссу. Эта логика округляет половинные числа до ближайшей четной цифры. Более типичная логика округления "Половинное округление с увеличением" всегда округляет половинные цифры до следующей наибольшей цифры. Этот метод портала Azure Enterprise portal фактически предоставляет более точную общую сумму по группе по сравнению со стандартной логикой Excel.
-
-Для иллюстрации: если первая выпавшая цифра равна 5 и следующих цифр нет или следующие цифры равны нулям, выполняется округление до ближайшей четной цифры. Например: 2,315 и 2,325, округленные до ближайшей сотой, становятся 2,32.
-
-В следующей таблице приведены формулы Excel, которые можно использовать для моделирования правил для округления и преобразования на портале Azure Enterprise portal.
-
-| Сценарий | Формула банковского округления (округления до ближайшего четного) |
-| --- | --- |
-| Использование округления | =MROUND({_source_}, 0.0002) |
-| Округление цен (2 десятичных знака) | =MROUND({_source_}, 0.02) |
-| Округление цен (0 десятичных знаков) | =MROUND({_source_}, 2) |
 
 ### <a name="conversion-between-usage-detail-report-and-the-usage-summary-page"></a>Преобразование между подробным отчетом об использовании и страницей сводки по использованию
 

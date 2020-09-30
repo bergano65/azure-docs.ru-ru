@@ -1,6 +1,6 @@
 ---
 title: Добавочное копирование нескольких таблиц с помощью портала Azure
-description: В этом руководстве показано, как создать конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в базе данных SQL Server в базу данных в службе "База данных SQL Azure".
+description: В этом руководстве показано, как создать фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в базу данных в службе "База данных SQL Azure".
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: c215c2cb256ab37bcb096c018aefb3a410ab1e4f
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 83c29740bd535d9508e5458a66fc8592500ceaf3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85251161"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320981"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-a-database-in-azure-sql-database-using-the-azure-portal"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных в службе "База данных SQL Azure" с использованием портала Azure
 

@@ -9,14 +9,14 @@ ms.devlang: azurecli
 ms.topic: sample
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
+ms.reviewer: ''
 ms.date: 06/25/2019
-ms.openlocfilehash: 7da5e25624a0e3a323e60cdf91660b29f58f31d7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a71e3e05e486c09d148062eed210c9f4b21e8226
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514753"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319356"
 ---
 # <a name="use-the-azure-cli-to-move-a-database-in-sql-database-in-a-sql-elastic-pool"></a>Перемещение базы данных в службе "База данных SQL" в эластичном пуле SQL с помощью интерфейса командной строки Azure
 
