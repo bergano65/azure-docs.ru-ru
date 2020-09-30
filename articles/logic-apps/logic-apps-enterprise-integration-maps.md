@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/06/2019
-ms.openlocfilehash: ff6bd1a52e05d55d43969644141f39aed8c8eb63
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 62c3d4533dd04dbb5a2ce0c73afa52b81d433913
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072645"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570786"
 ---
 # <a name="transform-xml-with-maps-in-azure-logic-apps-with-enterprise-integration-pack"></a>Преобразование XML с помощью карт в Azure Logic Apps с использованием Пакета интеграции Enterprise
 
@@ -69,7 +69,7 @@ ms.locfileid: "87072645"
 
 1. Когда откроется страница **Сборки**, нажмите кнопку **Добавить**.
 
-   ![Кнопка "Добавить"](./media/logic-apps-enterprise-integration-maps/add-assembly.png)
+   ![Снимок экрана, на котором выделена кнопка "Добавить" на странице "сборки".](./media/logic-apps-enterprise-integration-maps/add-assembly.png)
 
 В зависимости от размера файла сборки выполните шаги по отправке сборки размером [до 2 МБ](#smaller-assembly) или [более 2 МБ, но до 8 МБ](#larger-assembly).
 Дополнительные сведения об ограничениях на количество сборок в учетных записях интеграции см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits).

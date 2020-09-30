@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 3dcadd77866a6c57542a43657a1942791cc4d179
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: fc3ca5fdde464ba63671512a6ebecd2c314cb192
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027776"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570831"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
 
@@ -25,7 +25,7 @@ ms.locfileid: "86027776"
 > [!NOTE]
 > Подключение к Azure Cosmos DB с помощью соединителя Power BI в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и Gremlin API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 Перед выполнением инструкций в этом руководстве по Power BI убедитесь в наличии доступа к следующим ресурсам:
 
 * [загруженной последней версии Power BI Desktop](https://powerbi.microsoft.com/desktop);
@@ -82,7 +82,7 @@ ms.locfileid: "86027776"
 
 4. Выберите **Azure**, затем — **Azure Cosmos DB (бета-версия)** и щелкните **Подключить**. 
 
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbigetdata.png" alt-text="Получение данных в Power BI Desktop — соединитель Power BI":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbigetdata.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 5. На странице **Предварительная версия соединителя** нажмите кнопку **Продолжить**. Откроется окно **Azure Cosmos DB**.
 
@@ -90,7 +90,7 @@ ms.locfileid: "86027776"
    
 7. При подключении к этой конечной точке в первый раз отображается запрос на введение ключа учетной записи. Для собственной учетной записи найдите ключ в поле **Первичный ключ** в колонке **Ключи только для чтения** на портале Azure. Введите соответствующий ключ и нажмите кнопку **Подключить**.
    
-   При создании отчетов мы рекомендуем использовать ключ только для чтения. Это защитит главный ключ от ненужных рисков безопасности. Ключ только для чтения доступен в колонке **Ключи** на портале Azure. 
+   При создании отчетов мы рекомендуем использовать ключ только для чтения. Это предотвращает нежелательное воздействие первичного ключа на потенциальные угрозы безопасности. Ключ только для чтения доступен в колонке **Ключи** на портале Azure. 
     
 8. После успешного подключения учетной записи откроется панель **Навигатор**. На панели **Навигатор** отображается список баз данных в учетной записи.
 
@@ -100,34 +100,32 @@ ms.locfileid: "86027776"
     
     В области «Предварительный просмотр» отображается список элементов **Запись** .  Документ представлен как тип **Запись** в Power BI. Точно так же вложенный блок JSON в документе является **Записью**.
     
-    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbinavigator.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — окно навигатора":::
+    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbinavigator.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 12. Нажмите кнопку **Изменить**, чтобы открыть в новом окне редактор запросов для преобразования данных.
 
 ## <a name="flattening-and-transforming-json-documents"></a>Преобразование документов JSON в плоскую структуру и их трансформация
 1. Переключитесь в окно редактора запросов Power BI, где по центру отображается столбец **Документ**.
 
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiqueryeditor.png" alt-text="Редактор запросов Power BI Desktop":::
-
-1. В правой части заголовка столбца **Документ** щелкните кнопку развертывания.  Отобразится контекстное меню со списком полей.  Выберите поля, необходимые для вашего отчета, например "Volcano Name", "Country", "Region", "Location", "Elevation", "Type", "Status" и "Last Know Eruption", а затем нажмите кнопку "ОK". Снимите флажок **Использовать исходное имя столбца как префикс** и щелкните **ОК**.
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiqueryeditor.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI" и "Last Know Eruption", а затем нажмите кнопку "ОK". Снимите флажок **Использовать исходное имя столбца как префикс** и щелкните **ОК**.
    
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiqueryeditorexpander.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — раскрыть документы":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiqueryeditorexpander.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 1. В центральной области отображается предварительный просмотр результата с выбранными полями.
    
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiresultflatten.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — сделать результаты более плоскими":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiresultflatten.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 1. В нашем примере свойство «Расположение» является блоком GeoJSON в документе.  Как видно, значение свойства «Расположение» представлено типом **Запись** в Power BI Desktop.  
 
 1. Щелкните элемент развертывания справа от заголовка столбца Document.Location.  Отобразится контекстное меню с полями типа и координат.  Выберите здесь поле координат, снимите флажок **Использовать исходное имя столбца как префикс** и щелкните **ОК**.
    
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbilocationrecord.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — запись о расположении":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbilocationrecord.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 1. Теперь в центральной области отображается столбец с координатами типа **Список** .  Как показано в начале этого руководства, данные GeoJSON в руководстве принадлежат типу «Точка» со значениями широты и долготы, записанными в массив координат.
    
    Элемент coordinates[0] представляет долготу, а элемент coordinates[1] — широту.
 
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiresultflattenlist.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — список координат":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbiresultflattenlist.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 1. Чтобы преобразовать массив координат в плоскую структуру, создайте **настраиваемый столбец** с именем LatLong.  Выберите **Добавление столбца** на ленте и щелкните **Настраиваемый столбец**.  Откроется окно **Настраиваемый столбец**.
 
@@ -137,46 +135,26 @@ ms.locfileid: "86027776"
    
    Дополнительные сведения о выражениях анализа данных (DAX), включая функции DAX, см. в статьях [основы DAX в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
    
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbicustomlatlong.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — добавление пользовательского столбца":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbicustomlatlong.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 1. Теперь в центральной области отображается новый столбец LatLong, заполненный значениями.
     
-    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbicolumnlatlong.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — пользовательский столбец LatLong":::
+    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbicolumnlatlong.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI" соответствуют указанным на следующем рисунке:
     
-    Если в новом столбце появляется сообщение об ошибке, убедитесь, что примененные шаги в разделе "Параметры запроса" соответствуют указанным на следующем рисунке:
-    
-    :::image type="content" source="./media/powerbi-visualize/power-bi-applied-steps.png" alt-text="Примененные шаги должны быть такими: источник, навигация, развернут документ, развернуто расположение документа, добавлен настраиваемый элемент":::
+    :::image type="content" source="./media/powerbi-visualize/power-bi-applied-steps.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
     
     Если ваши шаги отличаются, удалите лишние шаги и снова попробуйте добавить настраиваемый столбец. 
 
 1. Чтобы сохранить модель данных, нажмите кнопку **Закрыть и применить** .
 
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbicloseapply.png" alt-text="Power BI учебник по Azure Cosmos DB Power BI Connector — закрыть & применить":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbicloseapply.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 <a id="build-the-reports"></a>
 ## <a name="build-the-reports"></a>Создание отчетов
 
 Для создания отчетов, в которых наглядно представлены данные, используется представление отчета в Power BI Desktop.  Отчеты можно создавать путем перетаскивания полей на поле **Отчет** .
 
-:::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbireportview2.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
-
-В представлении «Отчет» найдите следующие элементы.
-
-1. В области **Поля** отображается список моделей данных с перечислением полей, которые можно использовать для отчетов.
-1. Область **Визуализации** . Отчет может содержать одну или несколько визуализаций.  В области **Визуализации** можно выбрать нужные типы визуальных элементов.
-1. Холст **Отчет** позволяет создавать визуальные элементы для отчета.
-1. Страница **Отчеты** . В Power BI Desktop можно добавить несколько страниц отчета.
-
-Ниже приведены основные этапы создания простого интерактивного отчета с представлением карты.
-
-1. В этом примере мы создадим представление карты, показывающей расположение каждого вулкана.  В области **Визуализации** выберите тип визуального элемента "Карта", который выделен на снимке экрана выше.  В области **Отчет** отобразится тип визуального элемента «Карта».  В области **Визуализация** также должен отобразиться набор свойств, связанных с этим типом визуального элемента.
-1. Теперь из области **Поля** перетащите поле "LatLong" в свойство **Location** в области **Визуализации**.
-1. Затем перетащите поле «Имя вулкана» в свойство **Условные обозначения** .  
-1. Затем перетащите поле "Высота" в свойство **Размер** .  
-1. Теперь на карте должны отображаться кружки, указывающие расположение каждого вулкана (размер пузырька соответствует высоте вулкана).
-1. Базовый отчет готов.  Его можно настроить, добавив дополнительные визуальные элементы.  В нашем случае мы добавили срез «Тип вулкана», чтобы сделать отчет интерактивным.  
-   
-1. В меню "Файл" щелкните **Сохранить** и сохраните файл с именем PowerBITutorial.pbix.
+:::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbireportview2.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI" щелкните **Сохранить** и сохраните файл с именем PowerBITutorial.pbix.
 
 ## <a name="publish-and-share-your-report"></a>Публикация и совместное использование отчета
 Для совместного использования отчета необходимо иметь учетную запись в службе PowerBI.com.
@@ -186,18 +164,18 @@ ms.locfileid: "86027776"
 1. После аутентификации учетных данных отчет публикуется в указанном вами расположении.
 1. Для просмотра и совместного использования отчета на сайте PowerBI.com щелкните **Открыть PowerBITutorial.pbix в Power BI** .
    
-   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_open_in_powerbi.png" alt-text="Публикация в Power BI успешно завершена! Откройте учебник в Power BI":::
+   :::image type="content" source="./media/powerbi-visualize/power_bi_connector_open_in_powerbi.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 ## <a name="create-a-dashboard-in-powerbicom"></a>Создание панели мониторинга на PowerBI.com
 Теперь, когда у вас уже есть отчет, используйте его совместно с другими пользователями на сайте PowerBI.com.
 
 При публикации отчета из Power BI Desktop на сайт PowerBI.com он создает **отчет** и **набор данных** в клиенте PowerBI.com. Например, после публикации на сайте PowerBI.com отчета **PowerBITutorial** его имя отобразится в разделах **Отчеты** и **Наборы данных** на PowerBI.com.
 
-   :::image type="content" source="./media/powerbi-visualize/powerbi-reports-datasets.png" alt-text="Снимок экрана нового отчета и набора данных на PowerBI.com":::
+   :::image type="content" source="./media/powerbi-visualize/powerbi-reports-datasets.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 Чтобы создать панель мониторинга для совместного использования, нажмите в своем отчете на PowerBI.com кнопку **Закрепление живой плитки** .
 
-   :::image type="content" source="./media/powerbi-visualize/power-bi-pin-live-tile.png" alt-text="Снимок экрана нового отчета и набора данных на PowerBI.com":::
+   :::image type="content" source="./media/powerbi-visualize/power-bi-pin-live-tile.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 Для создания новой панели мониторинга следуйте инструкциям в разделе [Закрепление плиток из отчета](https://powerbi.microsoft.com/documentation/powerbi-service-pin-a-tile-to-a-dashboard-from-a-report/#pin-a-tile-from-a-report) . 
 
@@ -208,13 +186,13 @@ There are two ways to refresh data, ad hoc and scheduled.
 
 For an ad hoc refresh, simply click on the eclipses (…) by the **Dataset**, e.g. PowerBITutorial. You should see a list of actions including **Refresh Now**. Click **Refresh Now** to refresh the data.
 
-:::image type="content" source="./media/powerbi-visualize/power-bi-refresh-now.png" alt-text="Screenshot of Refresh Now in PowerBI.com":::
+:::image type="content" source="./media/powerbi-visualize/power-bi-refresh-now.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 For a scheduled refresh, do the following.
 
 1. Click **Schedule Refresh** in the action list. 
 
-    :::image type="content" source="./media/powerbi-visualize/power-bi-schedule-refresh.png" alt-text="Screenshot of the Schedule Refresh in PowerBI.com":::
+    :::image type="content" source="./media/powerbi-visualize/power-bi-schedule-refresh.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 2. In the **Settings** page, expand **Data source credentials**. 
 3. Click on **Edit credentials**. 
    
@@ -223,7 +201,7 @@ For a scheduled refresh, do the following.
 5. Expand **Schedule Refresh** and set up the schedule you want to refresh the dataset. 
 6. Click **Apply** and you are done setting up the scheduled refresh.
 -->
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 * Дополнительные сведения об Azure Cosmos DB см. на [целевой странице документации по Azure Cosmos DB](https://azure.microsoft.com/documentation/services/cosmos-db/).
 

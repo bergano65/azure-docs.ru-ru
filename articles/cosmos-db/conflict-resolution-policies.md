@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/20/2020
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 91054318d4b030d9b2cb9bb80424ade80aeeca85
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 49400ad0da86eddf7bbbd51dd92101084cdf1ee1
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91395844"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570096"
 ---
 # <a name="conflict-types-and-resolution-policies-when-using-multiple-write-regions"></a>Типы конфликтов и политики разрешения при использовании нескольких регионов записи
 
@@ -50,6 +50,6 @@ Azure Cosmos DB предлагает гибкий механизм, управл
 
 Узнайте, как настроить политики разрешения конфликтов.
 
-* [Настройка нескольких источников в приложениях](how-to-multi-master.md)
+* [Настройка нескольких регионов записи для приложений](how-to-multi-master.md)
 * [Управление политиками разрешения конфликтов](how-to-manage-conflicts.md)
 * [Чтение из веб-канала конфликтов](how-to-manage-conflicts.md#read-from-conflict-feed)

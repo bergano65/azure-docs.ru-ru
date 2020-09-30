@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 05/29/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 02f868417ef9feea1771174e62152708c1257425
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d954f7cdda4cae65f822489828226e0364d0fc29
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502908"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570530"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Управление масштабируемым набором виртуальных машин с помощью Azure CLI
 На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. В этой статье подробно рассматриваются некоторые стандартные команды Azure CLI, которые позволяют выполнять эти задачи.
@@ -49,6 +49,20 @@ az vmss get-instance-view \
     --instance-id 0
 ```
 
+Вы также можете получить подробные сведения о *instanceView* для всех экземпляров в одном вызове API, что поможет избежать регулирования API для больших установок. Укажите собственные значения для `--resource-group` , `--subscription` и `--name` .
+
+```azurecli
+az vmss list-instances \
+    --expand instanceView \
+    --select instanceView \
+    --resource-group <resourceGroupName> \
+    --subscription <subID> \
+    --name <vmssName>
+```
+
+```rest
+GET "https://management.azure.com/subscriptions/<sub-id>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/virtualMachineScaleSets/<VMSSName>/virtualMachines?api-version=2019-03-01&%24expand=instanceView"
+```
 
 ## <a name="list-connection-information-for-vms"></a>Вывод сведений о подключении виртуальных машин
 Чтобы подключиться к виртуальным машинам в масштабируемом наборе, необходимо установить подключение по протоколу SSH или RDP по назначенному общедоступному IP адресу и номеру порта. По умолчанию правила преобразования сетевых адресов (NAT) добавляются в подсистему балансировки нагрузки Azure для переадресации трафика удаленного подключения на каждую виртуальную машину. Чтобы получить список адресов и портов для подключения к экземплярам виртуальных машин в масштабируемом наборе, введите команду [az vmss list-instance-connection-info](/cli/azure/vmss). Следующий пример выводит сведения о подключении экземпляров виртуальных машин в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Введите собственные значения для имен.

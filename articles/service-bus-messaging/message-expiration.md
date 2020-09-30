@@ -2,13 +2,13 @@
 title: Служебная шина Azure — срок действия сообщения
 description: В этой статье объясняется срок действия сообщений служебной шины Azure и время их жизни. После такого крайнего срока сообщение больше не будет доставлено.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 41711428711533a6ecac449f59d415e86474545b
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.date: 09/29/2020
+ms.openlocfilehash: 47f8bdb4440adfeb5197f90cdad5358a442ce6a7
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88064729"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569915"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 
@@ -29,7 +29,7 @@ ms.locfileid: "88064729"
 > [!NOTE]
 > Значение [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) по умолчанию для сообщения с посредником — [TimeSpan. Max](/dotnet/api/system.timespan.maxvalue) , если не указано иное.
 >
-> Для сущностей обмена сообщениями (очередей и разделов) время истечения срока действия по умолчанию равно также [TimeSpan. Max](/dotnet/api/system.timespan.maxvalue) для уровней "Стандартный" и "Премиум" служебной шины.  Для уровня "базовый" срок действия по умолчанию составляет 14 дней.
+> Для сущностей обмена сообщениями (очередей и разделов) время истечения срока действия по умолчанию равно также [TimeSpan. Max](/dotnet/api/system.timespan.maxvalue) для уровней "Стандартный" и "Премиум" служебной шины. Для уровня " **базовый** " значение по умолчанию (также максимальный) истекает **14 дней**.
 
 Просроченные сообщения при необходимости можно переместить в [очередь недоставленных сообщений](service-bus-dead-letter-queues.md), задав свойство [EnableDeadLetteringOnMessageExpiration](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enabledeadletteringonmessageexpiration#Microsoft_ServiceBus_Messaging_QueueDescription_EnableDeadLetteringOnMessageExpiration) или установив соответствующий флажок на портале. Если этот параметр оставить отключенным, то просроченные сообщения будут удаляться. Просроченные сообщения, перемещенные в очередь недоставленных сообщений, можно отличить от других недоставленных сообщений, оценивая свойство [DeadletterReason](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq), которое брокер сохраняет в разделе свойств пользователя. В данном случае оно имеет значение [TTLExpiredException](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq).
 

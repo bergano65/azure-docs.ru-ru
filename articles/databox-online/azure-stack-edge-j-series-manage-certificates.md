@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 08/28/2020
+ms.date: 09/29/2020
 ms.author: alkohli
-ms.openlocfilehash: 59924312fe0483d11d0f70ce83b8f6e4b0e198dc
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e5c8a496c60d3bba81040716c74bca7b5cb6095e
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90890752"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569421"
 ---
 # <a name="use-certificates-with-azure-stack-edge-pro-gpu-device"></a>Использование сертификатов с устройством GPU Azure Stack.
 
@@ -61,7 +61,7 @@ ms.locfileid: "90890752"
 - Корневые сертификаты должны быть сертификатами цепочки подписывания.
 - Корневые сертификаты можно передать на устройство в следующем формате: 
     - **Der** — они доступны в виде `.cer` расширения файла.
-    - **Base-64 Encoded или PEM** — они также доступны как `.cer` расширения.
+    - **Base-64 в кодировке** — они доступны в виде `.cer` расширения файла.
     - **P7b** — этот формат используется только для сертификатов цепочки подписывания, включающих корневой и промежуточный сертификаты.
 - Сертификаты цепочки подписывания всегда отправляются перед отправкой других сертификатов.
 
@@ -275,11 +275,11 @@ New-SelfSignedCertificate -Type Custom -DnsName "$AppName.$domain","$DeviceSeria
 
     1. Сначала отправьте корневые сертификаты. В локальном веб-ИНТЕРФЕЙСе перейдите к разделу **сертификаты > + добавить сертификат**.
 
-        ![Добавить сертификат цепочки подписывания](media/azure-stack-edge-series-manage-certificates/add-cert-1.png)
+        ![Добавить сертификат цепочки подписывания 1](media/azure-stack-edge-series-manage-certificates/add-cert-1.png)
 
     2. Затем отправьте сертификаты конечной точки. 
 
-        ![Добавить сертификат цепочки подписывания](media/azure-stack-edge-series-manage-certificates/add-cert-2.png)
+        ![Добавить сертификат цепочки подписывания 2](media/azure-stack-edge-series-manage-certificates/add-cert-2.png)
 
         Выберите файлы сертификатов в формате *PFX* и введите пароль, указанный при экспорте сертификата. Для применения сертификата Azure Resource Manager может потребоваться несколько минут.
 
@@ -370,7 +370,7 @@ New-SelfSignedCertificate -Type Custom -DnsName "$AppName.$domain","$DeviceSeria
 
     ![Экспорт сертификата 8](media/azure-stack-edge-series-manage-certificates/export-cert-pfx-8.png)
 
-9. Вы получите сообщение об успешном экспорте. Щелкните **ОК**.
+9. Вы получите сообщение об успешном экспорте. Нажмите кнопку **ОК**.
 
     ![Экспорт сертификата 9](media/azure-stack-edge-series-manage-certificates/export-cert-pfx-9.png)
 
@@ -383,20 +383,20 @@ New-SelfSignedCertificate -Type Custom -DnsName "$AppName.$domain","$DeviceSeria
 
 1. В хранилище личных сертификатов выберите корневой сертификат. Щелкните правой кнопкой мыши и выберите **все задачи > экспорт...**
 
-    ![Экспорт сертификата 1](media/azure-stack-edge-series-manage-certificates/export-cert-cer-1.png)
+    ![Экспорт сертификата, DER 1](media/azure-stack-edge-series-manage-certificates/export-cert-cer-1.png)
 
 2. Откроется мастер сертификатов. Выберите формат **binary X. 509 (. cer) в кодировке DER**. Выберите **Далее**.
 
-    ![Экспорт сертификата 2](media/azure-stack-edge-series-manage-certificates/export-cert-cer-2.png)
+    ![Экспорт сертификата, DER 2](media/azure-stack-edge-series-manage-certificates/export-cert-cer-2.png)
 
 3. Найдите и выберите расположение, в которое необходимо экспортировать файл форматирования CER.
 
-    ![Экспорт сертификата 3](media/azure-stack-edge-series-manage-certificates/export-cert-cer-3.png)
+    ![Экспорт сертификата в формате DER 3](media/azure-stack-edge-series-manage-certificates/export-cert-cer-3.png)
 
 
 4. Нажмите кнопку **Готово**.
 
-    ![Экспорт сертификата 4](media/azure-stack-edge-series-manage-certificates/export-cert-cer-4.png)
+    ![Экспорт сертификата, DER 4](media/azure-stack-edge-series-manage-certificates/export-cert-cer-4.png)
 
 
 ## <a name="supported-certificate-algorithms"></a>Поддерживаемые алгоритмы сертификатов
@@ -410,11 +410,11 @@ New-SelfSignedCertificate -Type Custom -DnsName "$AppName.$domain","$DeviceSeria
 
 Если вы перейдете в собственные сертификаты, срок действия сертификатов истечет через 1 год или 6 месяцев. Чтобы просмотреть дату окончания срока действия сертификата, перейдите на страницу **Сертификаты** в локальном веб-интерфейсе устройства. При выборе конкретного сертификата можно просмотреть дату истечения срока действия сертификата.
 
-## <a name="rotate-certificates"></a>Ротация сертификатов
+<!--## Rotate certificates
 
-В этом выпуске не реализовано вращение сертификатов. Вы также не получаете уведомления об ожидаемой дате окончания срока действия сертификата. 
+Rotation of certificates is not implemented in this release. You are also not notified of the pending expiration date on your certificate. 
 
-Просмотрите дату истечения срока действия сертификата на странице **Сертификаты** в локальном веб-интерфейсе устройства. После того как истечет срок действия сертификата, создайте и отправьте новые сертификаты в соответствии с подробными инструкциями в статье [Создание и передача сертификатов](azure-stack-edge-j-series-manage-certificates.md).
+View the certificate expiration date on the **Certificates** page in the local web UI of your device. Once the certificate expiration is approaching, create and upload new certificates as per the detailed instructions in [Create and upload certificates](azure-stack-edge-j-series-manage-certificates.md).-->
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

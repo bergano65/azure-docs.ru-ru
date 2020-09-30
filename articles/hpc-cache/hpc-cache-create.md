@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: v-erkel
-ms.openlocfilehash: 5b1062556f1f971690f835274be15c11b072eca9
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.openlocfilehash: 5e17c55f8321ba0ad9a9686ada41413d64879d6c
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89612078"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570884"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -98,7 +98,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 > [!NOTE]
 > Если кэш использует ключи шифрования, управляемые клиентом, то кэш может отображаться в списке ресурсов до того, как состояние развертывания изменится на завершено. Как только кэш находится в состоянии **ожидания ключа** , [его можно авторизовать](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) для использования хранилища ключей.
 
-## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 ## <a name="create-the-cache-with-azure-cli"></a>Создание кэша с помощью Azure CLI
 
@@ -132,11 +132,11 @@ nets/<cache_subnet_name>"``
 
   | Объем кэша | Standard_2G | Standard_4G | Standard_8G |
   |------------|-------------|-------------|-------------|
-  | 3072 ГБ    | да         | Нет          | Нет          |
-  | 6144 ГБ    | да         | да         | Нет          |
+  | 3072 ГБ    | да         | нет          | нет          |
+  | 6144 ГБ    | да         | да         | нет          |
   | 12288 ГБ   | да         | да         | да         |
-  | 24576 ГБ   | Нет          | да         | да         |
-  | 49152 ГБ   | Нет          | Нет          | да         |
+  | 24576 ГБ   | нет          | да         | да         |
+  | 49152 ГБ   | нет          | нет          | да         |
 
   Ознакомьтесь с разделом **Установка емкости кэша** на вкладке инструкции портала, чтобы получить важные сведения о ценах, пропускной способности и том, как правильно установить размер кэша для рабочего процесса.
 
@@ -188,6 +188,97 @@ az hpc-cache create --resource-group doc-demo-rg --name my-cache-0619 \
 
 * Адреса подключения клиентов. Используйте эти IP-адреса, когда будете готовы к подключению клиентов к кэшу. Дополнительные сведения см. в статье [Подключение кэша HPC для Azure](hpc-cache-mount.md) .
 * Состояние обновления — при выпуске обновления программного обеспечения это сообщение будет изменено. [Программное обеспечение для кэширования можно обновить](hpc-cache-manage.md#upgrade-cache-software) вручную в удобное время, иначе оно будет применено автоматически через несколько дней.
+
+## <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+> [!CAUTION]
+> Модуль PowerShell AZ. Хпккаче в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуется использовать для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или иметь ограниченные возможности. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="requirements"></a>Requirements (Требования)
+
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы решили использовать Cloud Shell, см. Дополнительные сведения в разделе [обзор Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) .
+
+> [!IMPORTANT]
+> Пока модуль PowerShell **AZ. хпккаче** находится на этапе предварительной версии, его необходимо установить отдельно с помощью `Install-Module` командлета. После того как этот модуль PowerShell станет общедоступным, он будет частью будущих выпусков AZ PowerShell, доступных в Azure Cloud Shell.
+
+```azurepowershell-interactive
+Install-Module -Name Az.HPCCache
+```
+
+## <a name="create-the-cache-with-azure-powershell"></a>Создание кэша с помощью Azure PowerShell
+
+> [!NOTE]
+> В настоящее время Azure PowerShell не поддерживает создание кэша с помощью управляемых клиентом ключей шифрования. воспользуйтесь порталом Azure.
+
+Используйте командлет [New-азпккаче](/powershell/module/az.hpccache/new-azhpccache) для создания нового кэша Azure HPC.
+
+Укажите следующие значения:
+
+* Имя группы ресурсов кэша
+* Имя кэша
+* Регион Azure
+* Подсеть кэша в следующем формате:
+
+  `-SubnetUri "/subscriptions/<subscription_id>/resourceGroups/<cache_resource_group>/providers/Microsoft.Network/virtualNetworks/<virtual_network_name>/sub
+nets/<cache_subnet_name>"`
+
+  Подсети кэша требуется по крайней мере 64 IP-адресов (/24) и не могут размещать другие ресурсы.
+
+* Емкость кэша. Два значения задают максимальную пропускную способность кэша HPC Azure:
+
+  * Размер кэша (в ГБ)
+  * Номер SKU виртуальных машин, используемых в инфраструктуре кэша
+
+  [Get-азпккаческу](/powershell/module/az.hpccache/get-azhpccachesku) показывает доступные номера SKU и допустимые параметры размера кэша для каждого из них. Размер кэша в диапазоне от 3 ТБ до 48 ТБ, но поддерживаются только некоторые значения.
+
+  На этой диаграмме показано, какие комбинации размера кэша и номера SKU действительны во время подготовки этого документа (Июль 2020).
+
+  | Объем кэша | Standard_2G | Standard_4G | Standard_8G |
+  |------------|-------------|-------------|-------------|
+  | 3072 ГБ    | да         | нет          | нет          |
+  | 6144 ГБ    | да         | да         | нет          |
+  | 12 288 ГБ   | да         | да         | да         |
+  | 24 576 ГБ   | нет          | да         | да         |
+  | 49 152 ГБ   | нет          | нет          | да         |
+
+  Ознакомьтесь с разделом **Установка емкости кэша** на вкладке инструкции портала, чтобы получить важные сведения о ценах, пропускной способности и том, как правильно установить размер кэша для рабочего процесса.
+
+Пример создания кэша:
+
+```azurepowershell-interactive
+$cacheParams = @{
+  ResourceGroupName = 'doc-demo-rg'
+  CacheName = 'my-cache-0619'
+  Location = 'eastus'
+  cacheSize = '3072'
+  SubnetUri = "/subscriptions/<subscription-ID>/resourceGroups/doc-demo-rg/providers/Microsoft.Network/virtualNetworks/vnet-doc0619/subnets/default"
+  Sku = 'Standard_2G'
+}
+New-AzHpcCache @cacheParams
+```
+
+Создание кэша занимает несколько минут. При успешном выполнении команда Create возвращает следующие выходные данные:
+
+```Output
+cacheSizeGb       : 3072
+health            : @{state=Healthy; statusDescription=The cache is in Running state}
+id                : /subscriptions/<subscription-ID>/resourceGroups/doc-demo-rg/providers/Microsoft.StorageCache/caches/my-cache-0619
+location          : eastus
+mountAddresses    : {10.3.0.17, 10.3.0.18, 10.3.0.19}
+name              : my-cache-0619
+provisioningState : Succeeded
+resourceGroup     : doc-demo-rg
+sku               : @{name=Standard_2G}
+subnet            : /subscriptions/<subscription-ID>/resourceGroups/doc-demo-rg/providers/Microsoft.Network/virtualNetworks/vnet-doc0619/subnets/default
+tags              :
+type              : Microsoft.StorageCache/caches
+upgradeStatus     : @{currentFirmwareVersion=5.3.42; firmwareUpdateDeadline=1/1/0001 12:00:00 AM; firmwareUpdateStatus=unavailable; lastFirmwareUpdate=4/1/2020 10:19:54 AM; pendingFirmwareVersion=}
+```
+
+Сообщение содержит некоторую полезную информацию, включая следующие:
+
+* Адреса подключения клиентов. Используйте эти IP-адреса, когда будете готовы к подключению клиентов к кэшу. Дополнительные сведения см. в статье [Подключение кэша HPC для Azure](hpc-cache-mount.md) .
+* Состояние обновления — при выпуске обновления программного обеспечения это сообщение изменяется. [Программное обеспечение для кэширования можно обновлять](hpc-cache-manage.md#upgrade-cache-software) вручную в удобное время или автоматически через несколько дней.
 
 ---
 

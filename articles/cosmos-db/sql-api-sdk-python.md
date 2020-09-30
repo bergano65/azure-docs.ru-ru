@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-python
-ms.openlocfilehash: e9f9daea2c0d570efb81603784ee730b11668426
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 03c8f5acfc10738401f61de099f946c33497d705
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88585990"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569807"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK для Azure Cosmos DB на Python для API SQL. Заметки о выпуске и материалы
 
@@ -40,7 +40,7 @@ ms.locfileid: "88585990"
 | |  |
 |---|---|
 |**Скачать пакет SDK**|[PyPI](https://pypi.org/project/azure-cosmos)|
-|**Документация по API**|[Справочная документация по API Python](https://docs.microsoft.com/python/api/azure-cosmos/?view=azure-python)|
+|**Документация по API**|[Справочная документация по API Python](https://docs.microsoft.com/python/api/azure-cosmos/?view=azure-python&preserve-view=true)|
 |**Инструкции по установке пакета SDK**|[Инструкции по установке пакета SDK для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)|
 |**Начало работы**|[Приступая к работе с пакетом SDK для Python](create-sql-api-python.md)|
 |**Текущая поддерживаемая платформа**|[Python 2.7](https://www.python.org/downloads/) и [Python 3.5.3+](https://www.python.org/downloads/)|
@@ -126,7 +126,7 @@ ms.locfileid: "88585990"
 
 * Конструктор `CosmosClient` обновлен.
 
-  * Параметр `auth` был переименован в `credential` и теперь будет принимать тип проверки подлинности напрямую. Это означает, что ему можно передать значение главного ключа, словарь маркеров ресурсов или список разрешений. Однако старый формат словаря по-прежнему поддерживается.
+  * Параметр `auth` был переименован в `credential` и теперь будет принимать тип проверки подлинности напрямую. Это означает, что можно передать значение первичного ключа, словарь маркеров ресурсов или список разрешений. Однако старый формат словаря по-прежнему поддерживается.
 
   * Параметр `connection_policy` был создан как параметр только для ключевых слов, и, хотя он по-прежнему поддерживается, каждый из отдельных атрибутов политики теперь можно передать в виде явных аргументов ключевого слова:
 

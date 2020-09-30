@@ -1,6 +1,6 @@
 ---
 title: Как настроить хранение в вашей среде — "аналитика временных рядов Azure" | Документация Майкрософт
-description: Узнайте, как настроить хранение в среде службы "аналитика временных рядов Azure Azure".
+description: Узнайте, как настроить хранение в среде службы "аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -8,20 +8,23 @@ ms.author: dpalled
 manager: diviso
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 09/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9ee06501134515d9369e98e724e55a66f040fffa
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 468b4f7ca7b0af4abc32df5d9ef64a74154d3de1
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495131"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569407"
 ---
 # <a name="configuring-retention-in-azure-time-series-insights-gen1"></a>Настройка хранения в Gen1 "аналитика временных рядов Azure"
 
+> [!CAUTION]
+> Это Gen1 статья.
+
 В этой статье описывается, как настроить **время хранения данных** и **поведение при превышении размера хранилища** в службе "Аналитика временных рядов Azure".
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 Каждая среда "аналитика временных рядов Azure" имеет параметр для настройки **времени хранения данных**. Это значение охватывает период от 1 до 400 дней. Данные удаляются по емкости хранилища среды или длительности хранения (1–400) в зависимости от того, какое из ограничений будет превышено первым.
 
@@ -32,7 +35,7 @@ ms.locfileid: "86495131"
 
 Подробные сведения о том, как лучше понять эти параметры, см. [в этой статьи](time-series-insights-concepts-retention.md).  
 
-## <a name="configure-data-retention"></a>Настройка хранения данных
+## <a name="configure-data-retention"></a>Настройка срока хранения данных
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 

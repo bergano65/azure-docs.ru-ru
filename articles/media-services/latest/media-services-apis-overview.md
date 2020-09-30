@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 371cfdc8bf2b09f703e1c7bd0153a433ff60ad16
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 4d1c68ba1e0b7db8afefa64abefc671d51e78bd4
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89298969"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569510"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Разработка с помощью API Служб мультимедиа версии 3
 
@@ -41,7 +41,7 @@ API Служб мультимедиа требует, чтобы у пользо
 
 ### <a name="azure-ad-service-principal"></a>Субъект-служба Azure AD
 
-Если вы создаете приложение Azure AD и субъект-службу, это приложение должно размещаться в собственном клиенте. После создания приложения назначьте ему роль **участника** или **владельца** для учетной записи Служб мультимедиа.
+Приложение Azure AD и субъект-служба должны находиться в одном клиенте. После создания приложения назначьте ему роль **участника** или **владельца** для учетной записи Служб мультимедиа.
 
 Если вы не уверены, что имеете достаточные полномочия для создания приложения Azure AD, изучите [описанные здесь требования](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 

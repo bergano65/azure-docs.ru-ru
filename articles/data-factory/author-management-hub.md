@@ -9,12 +9,12 @@ author: djpmsft
 ms.author: daperlov
 manager: anandsub
 ms.date: 06/02/2020
-ms.openlocfilehash: bba49014fd6b082ea015da259402a8e87bf4afff
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: df5a13b3d7c3fea98cd571a241b9d25e36ffeea6
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87851999"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570634"
 ---
 # <a name="management-hub-in-azure-data-factory"></a>Центр управления в фабрике данных Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "87851999"
 
 Триггеры определяют, когда следует запускать запуск конвейера. В настоящее время триггеры могут находиться в расписании часов стены, работать с периодической периодичностью или зависеть от события. Дополнительные сведения см. в статье о [выполнении триггеров](concepts-pipeline-execution-triggers.md#trigger-execution). В центре управления можно создавать, изменять, удалять и просматривать текущее состояние триггера.
 
-![Управление пользовательскими параметрами](media/author-management-hub/management-hub-triggers.png)
+![Снимок экрана, на котором показано, где создавать, изменять, удалять или просматривать текущее состояние триггера.](media/author-management-hub/management-hub-triggers.png)
 
 ### <a name="global-parameters"></a>Глобальные параметры
 
@@ -64,7 +64,7 @@ ms.locfileid: "87851999"
 
 ![Создание глобальных параметров](media/author-global-parameters/create-global-parameter-3.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить репозиторий Git](source-control.md) для ADF-файла.
 

@@ -10,12 +10,12 @@ ms.date: 08/11/2020
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: b8d3472eeedab72644456b4278d3b9f3625c5850
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 4a0c2813a45fab497173d0101f87b30288e93884
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078210"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91568920"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure
 
@@ -45,9 +45,9 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGr
 
 В следующей таблице приведены описания свойств, возвращаемых командлетом для среды выполнения интеграции Azure:
 
-| Свойство | Описание |
+| Свойство. | Описание |
 -------- | ------------- | 
-| Имя | Имя среды выполнения интеграции Azure. |  
+| Название | Имя среды выполнения интеграции Azure. |  
 | Состояние | Состояние среды выполнения интеграции Azure. | 
 | Расположение | Расположение среды выполнения интеграции Azure. Дополнительные сведения о расположении среды выполнения интеграции Azure см. в статье [Integration runtime in Azure Data Factory](concepts-integration-runtime.md) (Среда выполнения интеграции в фабрике данных Azure). |
 | DataFactoryName | Имя фабрики данных, к которой принадлежит среда выполнения интеграции Azure. | 
@@ -74,9 +74,9 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGr
 
 В следующей таблице приведены описания свойств наблюдения **каждого узла**:
 
-| Свойство | Описание | 
+| Свойство. | Описание | 
 | -------- | ----------- | 
-| Имя | Имя локальной среды выполнения интеграции и узлов, связанных с ней. Узел — это локальный компьютер с Windows, на котором установлена локальная среда выполнения интеграции. |  
+| Название | Имя локальной среды выполнения интеграции и узлов, связанных с ней. Узел — это локальный компьютер с Windows, на котором установлена локальная среда выполнения интеграции. |  
 | Состояние | Состояние локальной среды выполнения интеграции и каждого узла. Пример: оперативный/автономный/ограниченный/т. д. Сведения об этих состояниях см. в следующем разделе. | 
 | Версия | Версия локальной среды выполнения интеграции и каждого узла. Она определяется с учетом версии большинства узлов в группе. Если в локальной среды выполнения интеграции есть узлы разных версий, должным образом будут работать только те, версия которых совпадает с версией среды выполнения интеграции. Другие узлы находятся в ограниченном режиме и их необходимо обновлять вручную (только при сбое автоматического обновления). | 
 | Объем доступной памяти | Объем доступной памяти на узле среды выполнения интеграции. Это значение соответствует моментальному снимку в режиме, близком к реальному времени. | 
@@ -105,7 +105,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -ResourceGr
 | Автономная миграция | Узел находится в автономном режиме. |
 | Обновление | Узел автоматически обновляется. |
 | Ограниченный | Это состояние появляется при проблемах с подключением. Возможно, из-за проблем с портом 8050 HTTP, подключением к служебной шине или синхронизацией учетных данных. |
-| Неактивно | Конфигурация узла отличается от конфигурации большинства других узлов. |
+| Неактивный | Конфигурация узла отличается от конфигурации большинства других узлов. |
 
 Узел может быть неактивным, если он не может подключиться к другим узлам.
 
@@ -196,7 +196,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 | Тип                         | Тип IR (управляемый/локально размещенный) Azure-SSIS IR. |
 | ResourceGroupName            | Имя группы ресурсов Azure, в которой были созданы ADF и Azure-SSIS IR. |
 | DataFactoryName              | Имя ADF. |
-| Имя                         | Имя Azure-SSIS IR. |
+| Название                         | Имя Azure-SSIS IR. |
 | Описание                  | Описание Azure-SSIS IR. |
   
 #### <a name="status-per-azure-ssis-ir-node"></a>Состояние (для каждого Azure-SSIS IR узла)
@@ -258,13 +258,13 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 На плитке **Диагностика подключения** на странице "Мониторинг Azure-SSIS IR" можно выбрать ссылку **проверить подключение** , чтобы открыть окно, где можно проверить подключения между Azure-SSIS IR и соответствующими пакетами, конфигурациями, хранилищами данных, а также службами управления, используя полные доменные имена (FQDN)/IP адрес и назначенный порт (см. раздел [тестирование подключений из Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/ssis-integration-runtime-diagnose-connectivity-faq)).
 
-![Отслеживание Azure-SSIS IR. плитка диагностики](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-diagnose.png)
+![Снимок экрана, на котором показано, где можно проверить подключения между Azure-SSIS IR и соответствующими пакетами, конфигурациями и хранилищами данных.](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-diagnose.png)
 
 #### <a name="static-public-ip-addresses-tile"></a>Плитка "СТАТИЧЕСКИе общедоступные IP-адреса"
 
 Если вы используете для Azure-SSIS IR собственные статические общедоступные IP-адреса, на странице мониторинга Azure-SSIS IR вы увидите плитку **статических ОБЩЕдоступных IP** -адресов (см. раздел Использование [собственных статических ОБЩЕДОСТУПных IP-адресов для Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network#publicIP)). На этой плитке можно выбрать ссылки, обозначающие первые или вторые статические IP-адреса для Azure-SSIS IR для всплывающего окна, где можно скопировать идентификатор ресурса ( `/subscriptions/YourAzureSubscripton/resourceGroups/YourResourceGroup/providers/Microsoft.Network/publicIPAddresses/YourPublicIPAddress` ) из текстового поля. Во всплывающем окне можно также выбрать ссылку **просмотреть первые/вторые параметры статического общедоступного IP-адреса** для управления первым или вторым статическим общедоступным IP-адресом в портал Azure.
 
-![Отслеживание Azure-SSIS IR. плитка диагностики](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-static.png)
+![Снимок экрана, на котором показано, где можно назначить первые или вторые статические общедоступные IP-адреса.](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-static.png)
 
 #### <a name="package-stores-tile"></a>Плитка "хранилища пакетов"
 

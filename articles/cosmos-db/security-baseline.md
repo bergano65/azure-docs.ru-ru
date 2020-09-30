@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 051f6e6ef15cc94e2b607c74e666bae9c91c1160
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 75344204e03920c96d0868ad584b8701813fabf0
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89401628"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569518"
 ---
 # <a name="azure-security-baseline-for-cosmos-db"></a>Базовый план безопасности Azure для Cosmos DB
 
@@ -290,7 +290,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Вы также можете использовать модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов. 
 
-Кроме того, некоторые действия в Azure Cosmos DB можно контролировать с помощью Azure Active Directory и главных ключей учетной записи.  Используйте параметр учетной записи "Дисаблекэйбаседметадатавритеакцесс" для управления доступом к ключам.
+Кроме того, некоторые действия в Azure Cosmos DB можно контролировать с помощью Azure Active Directory и первичных ключей, связанных с учетной записью.  Используйте параметр учетной записи "Дисаблекэйбаседметадатавритеакцесс" для управления доступом к ключам.
 
 Общие сведения об управлении доступом на основе ролей в Azure Cosmos DB. https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
 
@@ -298,9 +298,9 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Создайте новую роль в Azure Active Directory: https://docs.microsoft.com/azure/role-based-access-control/custom-roles
 
-Как получить роль каталога в Azure Active Directory с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
+Как получить роль каталога в Azure Active Directory с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&preserve-view=true
 
-Как получить членов роли каталога в Azure Active Directory с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
+Как получить членов роли каталога в Azure Active Directory с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&preserve-view=true
 
 Ограничьте доступ пользователей только к операциям с данными: https://docs.microsoft.com/azure/cosmos-db/how-to-restrict-user-data
 
@@ -310,7 +310,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
-**Руководство**. понятие по умолчанию или пустые пароли не существуют по отношению к Azure AD или Azure Cosmos DB. Вместо этого Azure Cosmos DB использует два типа ключей для проверки подлинности пользователей и предоставления доступа к своим данным и ресурсам. главные ключи и маркеры ресурсов. Ключи можно создать повторно в любое время.
+**Руководство**. понятие по умолчанию или пустые пароли не существуют по отношению к Azure AD или Azure Cosmos DB. Вместо этого Azure Cosmos DB использует два типа ключей для проверки подлинности пользователей и предоставления доступа к своим данным и ресурсам. первичные ключи и токены ресурсов. Ключи можно создать повторно в любое время.
 
 Общие сведения о безопасном доступе к данным в Azure Cosmos DB: https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data
 
@@ -640,7 +640,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 Создание запросов с помощью Azure Resource Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
+Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0&preserve-view=true
 
 Общие сведения об управлении доступом на основе ролей в Azure: https://docs.microsoft.com/azure/role-based-access-control/overview
 
@@ -792,7 +792,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 - Служба Cosmos DB должна использовать конечную точку службы виртуальной сети.
 
-Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0&preserve-view=true
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -834,7 +834,7 @@ Azure Cosmos DB предоставляет встроенный RBAC для ра
 
 **Рекомендации**. Если вы используете пользовательские определения политики Azure для Cosmos DB или связанных ресурсов, используйте Azure Repos для безопасного хранения кода и управления им.
 
-Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devopshttps://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
+Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops&preserve-view=truehttps://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&preserve-view=true
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1003,7 +1003,7 @@ https://docs.microsoft.com/azure/cosmos-db/how-to-backup-and-restore
 
 Восстановление секретов Azure Key Vault:
 
-https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
+https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0&preserve-view=true
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

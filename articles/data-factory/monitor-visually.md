@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: b65b5b847712ce32c6723d725be9cf2ed1f99050
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fcbf48081484941fd93f209bee21eb14c2c38310
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85801549"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570145"
 ---
 # <a name="visually-monitor-azure-data-factory"></a>Визуальный мониторинг фабрики данных Azure
 
@@ -136,7 +136,7 @@ ms.locfileid: "85801549"
 
 Чтобы просмотреть ресурсы, потребляемые при выполнении конвейера, щелкните значок потребления рядом с выполнением. 
 
-![Мониторинг потребления](media/monitor-visually/monitor-consumption-1.png)
+![Снимок экрана, на котором показано, где можно просмотреть ресурсы, используемые конвейером.](media/monitor-visually/monitor-consumption-1.png)
 
 При щелчке значка откроется отчет о потреблении ресурсов, используемых при выполнении конвейера. 
 
@@ -190,7 +190,7 @@ ms.locfileid: "85801549"
 
     ![Поле для целевого критерия](media/monitor-visually/add-criteria-1.png)
 
-    ![Список критериев](media/monitor-visually/add-criteria-2.png)
+    ![Снимок экрана, на котором показано, где выбирается одна метрика для настройки условия оповещения.](media/monitor-visually/add-criteria-2.png)
 
     ![Список критериев](media/monitor-visually/add-criteria-3.png)
 

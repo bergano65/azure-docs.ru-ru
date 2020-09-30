@@ -3,14 +3,14 @@ title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой Реестра контейнеров Azure
 author: sajayantony
 ms.topic: article
-ms.date: 03/18/2020
+ms.date: 09/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 02facedda206a5621cabe62a07520303635dc3ff
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.openlocfilehash: 499ef509fc9f8d9365d8db3f7058d12352db9bb2
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88245372"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570510"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "88245372"
 Рекомендации по устранению неполадок в реестре см. в следующих разделах:
 * [Устранение неполадок при входе в реестр](container-registry-troubleshoot-login.md)
 * [Устранение проблем с сетью с помощью реестра](container-registry-troubleshoot-access.md)
-* [Устранение неполадок с производительностью реестра](container-registry-troubleshoot-performance.md)
+* [Устранение проблем с производительностью реестра](container-registry-troubleshoot-performance.md)
 
 ## <a name="resource-management"></a>Управление ресурсами
 
@@ -261,8 +261,8 @@ ACR поддерживает [пользовательские роли](contain
 
 Настройка анонимного (общего) доступа для извлечения для реестра контейнеров Azure в настоящее время является функцией предварительной версии. Если в реестре есть [ресурсы для сопоставления области (пользователя) или маркера](https://aka.ms/acr/repo-permissions) , удалите их перед вызовом запроса в службу поддержки (сопоставление области системы можно игнорировать). Чтобы включить общий доступ, отправьте запрос в службу поддержки по адресу https://aka.ms/acr/support/create-ticket. Подробные сведения см. на [форуме отзывов и предложений по Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
 
-
-
+> [!NOTE]
+> Анонимно можно получить доступ только к интерфейсам API, необходимым для извлечения известного образа. Никакие другие API для таких операций, как список тегов или список репозиториев, недоступны анонимно.
 
 ## <a name="diagnostics-and-health-checks"></a>Диагностика и проверки работоспособности
 
@@ -443,7 +443,7 @@ curl $redirect_url
 ### <a name="why-does-my-pull-or-push-request-fail-with-disallowed-operation"></a>Почему не удается выполнить запрос на вытягивание или отправку из-за неразрешенной операции?
 
 Ниже приведены некоторые сценарии, в которых операции могут быть запрещены.
-* Классические реестры больше не поддерживаются. Выполните обновление до поддерживаемого [уровня служб](https://aka.ms/acr/skus) с помощью команды [az acr update](/cli/azure/acr?view=azure-cli-latest#az-acr-update) или на портале Azure.
+* Классические реестры больше не поддерживаются. Выполните обновление до поддерживаемого [уровня служб](https://aka.ms/acr/skus) с помощью команды [az acr update](/cli/azure/acr#az-acr-update) или на портале Azure.
 * Образ или репозиторий может быть заблокирован, поэтому его нельзя удалить или обновить. Для просмотра текущих атрибутов можно воспользоваться командой [az acr show repository](./container-registry-image-lock.md).
 * Некоторые операции запрещены, если образ находится на карантине. Дополнительные сведения о [карантине](https://github.com/Azure/acr/tree/master/docs/preview/quarantine).
 * Возможно, ваш реестр достиг [предельного размера хранилища](container-registry-skus.md#service-tier-features-and-limits).

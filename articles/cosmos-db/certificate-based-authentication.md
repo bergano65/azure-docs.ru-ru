@@ -7,18 +7,18 @@ ms.topic: how-to
 ms.date: 06/11/2019
 ms.author: tvoellm
 ms.reviewer: sngun
-ms.openlocfilehash: ea8d4180a6e820e72f5ca0ce7e7acaf13348ae67
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0b1fdec12b99edc952d24b0b3cc21bad24ec7554
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262503"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569729"
 ---
 # <a name="certificate-based-authentication-for-an-azure-ad-identity-to-access-keys-from-an-azure-cosmos-db-account"></a>Проверка подлинности на основе сертификата для удостоверения Azure AD для доступа к ключам из учетной записи Azure Cosmos DB
 
 Проверка подлинности на основе сертификатов позволяет выполнить проверку подлинности клиентского приложения с помощью Azure Active Directory (Azure AD) на основе сертификата клиента. Вы можете выполнить проверку подлинности на основе сертификатов на компьютере, где требуется идентификатор, например на локальном компьютере или виртуальной машине в Azure. После этого приложение сможет считывать ключи Azure Cosmos DB без ключей непосредственно в приложении. В этой статье описывается, как создать пример приложения Azure AD, настроить его для проверки подлинности на основе сертификата, войти в Azure с помощью нового удостоверения приложения, а затем получить ключи из учетной записи Azure Cosmos. В этой статье используется Azure PowerShell для настройки удостоверений и предоставляется пример приложения на C#, которое проверяет подлинность ключей и обращается к ключам из учетной записи Azure Cosmos.  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите [последнюю версию](/powershell/azure/install-az-ps) Azure PowerShell.
 
@@ -40,13 +40,13 @@ ms.locfileid: "85262503"
    * **Поддерживаемые типы учетных записей** — выберите **учетные записи в этом каталоге организации (каталог по умолчанию)** , чтобы разрешить ресурсам в текущем каталоге доступ к этому приложению. 
    * **URL-адрес перенаправления** — выберите приложение типа **Web** и укажите URL-адрес, по которому размещено ваше приложение. это может быть любой URL-адрес. В этом примере можно указать тестовый URL-адрес, например, `https://sampleApp.com` даже если приложение не существует.
 
-   :::image type="content" source="./media/certificate-based-authentication/register-sample-web-app.png" alt-text="Регистрация примера веб-приложения":::
+   :::image type="content" source="./media/certificate-based-authentication/register-sample-web-app.png" alt-text="Регистрация нового приложения в Active Directory":::
 
 1. Нажмите кнопку **зарегистрировать** после заполнения формы.
 
 1. После регистрации приложения запишите **идентификатор приложения (клиента)** и **идентификатор объекта**. Эти сведения будут использоваться в следующих шагах. 
 
-   :::image type="content" source="./media/certificate-based-authentication/get-app-object-ids.png" alt-text="Получение идентификаторов приложения и объекта":::
+   :::image type="content" source="./media/certificate-based-authentication/get-app-object-ids.png" alt-text="Регистрация нового приложения в Active Directory":::
 
 ## <a name="install-the-azuread-module"></a>Установка модуля AzureAD
 
@@ -63,7 +63,7 @@ ms.locfileid: "85262503"
    Set-AzContext $context 
    ```
 
-1. Установка и импорт модуля [AzureAD](/powershell/module/azuread/?view=azureadps-2.0)
+1. Установка и импорт модуля [AzureAD](/powershell/module/azuread/?view=azureadps-2.0&preserve-view=true)
 
    ```powershell
    Install-Module AzureAD
@@ -99,7 +99,7 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
 
 Приведенная выше команда приводит к результату, как показано на снимке экрана ниже:
 
-:::image type="content" source="./media/certificate-based-authentication/certificate-based-credential-output.png" alt-text="Выходные данные создания учетных данных на основе сертификата":::
+:::image type="content" source="./media/certificate-based-authentication/certificate-based-credential-output.png" alt-text="Регистрация нового приложения в Active Directory":::
 
 ## <a name="configure-your-azure-cosmos-account-to-use-the-new-identity"></a>Настройка учетной записи Azure Cosmos для использования нового удостоверения
 
@@ -109,7 +109,7 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
 
 1. Выберите **Добавить** и **добавить назначение ролей**. Добавьте sampleApp, созданный на предыдущем шаге, с ролью **участника** , как показано на следующем снимке экрана:
 
-   :::image type="content" source="./media/certificate-based-authentication/configure-cosmos-account-with-identify.png" alt-text="Настройка учетной записи Azure Cosmos для использования нового удостоверения":::
+   :::image type="content" source="./media/certificate-based-authentication/configure-cosmos-account-with-identify.png" alt-text="Регистрация нового приложения в Active Directory":::
 
 1. Нажмите кнопку **сохранить** после заполнения формы.
 
@@ -125,7 +125,7 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
 
 1. Выберите **сертификаты & секреты** , а затем **отправьте сертификат**. Просмотрите файл сертификата, созданный на предыдущем шаге, чтобы отправить его.
 
-1. Выберите **Добавить**. После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
+1. Нажмите **Добавить**. После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
 
 ## <a name="access-the-keys-from-powershell"></a>Доступ к ключам из PowerShell
 
@@ -148,9 +148,9 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
       -Type "Keys"
    ```
 
-Предыдущая команда отобразит первичный и вторичный главные ключи учетной записи Azure Cosmos. Вы можете просмотреть журнал действий учетной записи Azure Cosmos, чтобы убедиться, что запрос на получение ключей выполнен, а событие инициировано приложением "sampleApp".
+В предыдущей команде будут показаны первичные и вторичные первичные ключи учетной записи Azure Cosmos. Вы можете просмотреть журнал действий учетной записи Azure Cosmos, чтобы убедиться, что запрос на получение ключей выполнен, а событие инициировано приложением "sampleApp".
 
-:::image type="content" source="./media/certificate-based-authentication/activity-log-validate-results.png" alt-text="Проверка вызова Get Keys в Azure AD":::
+:::image type="content" source="./media/certificate-based-authentication/activity-log-validate-results.png" alt-text="Регистрация нового приложения в Active Directory":::
 
 ## <a name="access-the-keys-from-a-c-application"></a>Доступ к ключам из приложения C# 
 
@@ -236,14 +236,14 @@ namespace TodoListDaemonWithCert
 }
 ```
 
-Этот сценарий выводит первичные и вторичные главные ключи, как показано на следующем снимке экрана:
+Этот сценарий выводит первичные и вторичные первичные ключи, как показано на следующем снимке экрана:
 
-:::image type="content" source="./media/certificate-based-authentication/csharp-application-output.png" alt-text="вывод приложения CSharp":::
+:::image type="content" source="./media/certificate-based-authentication/csharp-application-output.png" alt-text="Регистрация нового приложения в Active Directory":::
 
 Как и в предыдущем разделе, журнал действий учетной записи Azure Cosmos можно просмотреть, чтобы убедиться, что событие запроса GET Keys инициировано приложением "sampleApp". 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Защита ключей Azure Cosmos с помощью Azure Key Vault](access-secrets-from-keyvault.md)
 

@@ -6,13 +6,13 @@ ms.author: nimoolen
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 07/29/2020
-ms.openlocfilehash: d28cd7a7edd5d6405761bf21ee87ec39dc9ec9cb
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.date: 09/29/2020
+ms.openlocfilehash: 6802e3f6c0892993f9ffe4373f43274362b8a003
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448538"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569681"
 ---
 # <a name="data-flow-script-dfs"></a>Сценарий потока данных (DFS)
 
@@ -210,6 +210,14 @@ aggregate(updates = countIf(isUpdate(), 1),
 ```
 aggregate(groupBy(mycols = sha2(256,columns())),
     each(match(true()), $$ = first($$))) ~> DistinctRows
+```
+
+### <a name="check-for-nulls-in-all-columns"></a>Проверять наличие значений NULL во всех столбцах
+Это фрагмент кода, который можно вставить в поток данных для универсальной проверки всех столбцов на наличие значений NULL. Этот метод использует смещение схемы, чтобы просмотреть все столбцы во всех строках и использовать условное разбиение для разделения строк значениями NULL из строк без значений NULL. 
+
+```
+CreateColumnArray split(contains(array(columns()),isNull(#item)),
+    disjoint: false) ~> LookForNULLs@(hasNULLs, noNULLs)
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 7/14/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c6c5c9b00ec3309638a7c5618e5995c8c5f07b11
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: f64e959536b4abea4f2facb5ae3238b4843e4611
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90564378"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569954"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Интеграция Azure Digital двойников со службой "аналитика временных рядов Azure"
 
@@ -20,7 +20,7 @@ ms.locfileid: "90564378"
 
 Решение, описанное в этой статье, позволит собирать и анализировать исторические данные о решении IoT. Azure Digital двойников отлично подходит для передачи данных в службу "аналитика временных рядов", так как позволяет сопоставлять несколько потоков данных и стандартизировать информацию перед их отправкой в службу "аналитика временных рядов". 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем можно будет настроить связь со службой "аналитика временных рядов", необходимо иметь **экземпляр Digital двойников для Azure**. Этот экземпляр следует настроить с возможностью обновлять сведения о цифровом двойника на основе данных, так как вам потребуется обновить информацию двойника несколько раз, чтобы увидеть, что данные отписываются в службе "аналитика временных рядов". 
 
@@ -65,7 +65,7 @@ ms.locfileid: "90564378"
     az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from above> --eventhub-name <Twins event hub name from above> --name <name for your Twins auth rule>
     ```
 
-4. Создайте [конечную точку](concepts-route-events.md#create-an-endpoint) Azure Digital двойников, которая связывает раздел "Сетка событий" с вашим экземпляром Azure Digital двойников.
+4. Создайте [конечную точку](concepts-route-events.md#create-an-endpoint) цифрового двойников Azure, которая связывает концентратор событий с экземпляром Azure Digital двойников.
 
     ```azurecli
     az dt endpoint create eventhub --endpoint-name <name for your Event Hubs endpoint> --eventhub-resource-group <resource group name> --eventhub-namespace <Event Hubs namespace from above> --eventhub <Twins event hub name from above> --eventhub-policy <Twins auth rule from above> -n <your Azure Digital Twins instance name>
@@ -203,11 +203,11 @@ namespace SampleFunctionsApp
     1. Выберите ценовую категорию **PAYG (Предварительная версия)** .
     2. Для этого окружения необходимо выбрать **идентификатор временного ряда** . Идентификатор временных рядов может содержать до трех значений, которые будут использоваться для поиска данных в аналитике временных рядов. В этом руководстве можно использовать **$dtId**. Дополнительные сведения о выборе идентификатора [*временных рядов*](https://docs.microsoft.com/azure/time-series-insights/how-to-select-tsid)см. в этой статье.
     
-        :::image type="content" source="media/how-to-integrate-time-series-insights/create-twin-id.png" alt-text="Пользовательский интерфейс портала создания для среды аналитика временных рядов. Выбрана ценовая категория PAYG (Предварительная версия) и имя свойства идентификатора временных рядов $dtId":::
+        :::image type="content" source="media/how-to-integrate-time-series-insights/create-twin-id.png" alt-text="Представление служб Azure в комплексном сценарии, выделяющий аналитику временных рядов":::
 
 2. Выберите **Далее: источник события** и выберите сведения о концентраторах событий выше. Также потребуется создать группу потребителей концентраторов событий.
     
-    :::image type="content" source="media/how-to-integrate-time-series-insights/event-source-twins.png" alt-text="Пользовательский интерфейс портала создания для источника событий среды аналитика временных рядов. Вы создаете источник событий со сведениями о концентраторе событий, указанными выше. Вы также создаете новую группу потребителей.":::
+    :::image type="content" source="media/how-to-integrate-time-series-insights/event-source-twins.png" alt-text="Представление служб Azure в комплексном сценарии, выделяющий аналитику временных рядов":::
 
 ## <a name="begin-sending-iot-data-to-azure-digital-twins"></a>Начало отправки данных IoT в Azure Digital двойников
 
@@ -223,19 +223,19 @@ namespace SampleFunctionsApp
 
 1. Откройте экземпляр службы "аналитика временных рядов" в [портал Azure](https://portal.azure.com) (вы можете найти имя своего экземпляра на панели поиска портала). Посетите *URL-адрес обозревателя "аналитика временных рядов* ", показанный в обзоре экземпляра.
     
-    :::image type="content" source="media/how-to-integrate-time-series-insights/view-environment.png" alt-text="Выберите URL-адрес обозревателя аналитика временных рядов на вкладке Обзор среды аналитика временных рядов.":::
+    :::image type="content" source="media/how-to-integrate-time-series-insights/view-environment.png" alt-text="Представление служб Azure в комплексном сценарии, выделяющий аналитику временных рядов":::
 
 2. В обозревателе вы увидите три двойников из Azure Digital двойников, показанные слева. Выберите _**thermostat67**_, выберите **температура**и нажмите кнопку **добавить**.
 
-    :::image type="content" source="media/how-to-integrate-time-series-insights/add-data.png" alt-text="Выберите * * thermostat67 * *, выберите * * температура * * и нажмите * * Добавить * *.":::
+    :::image type="content" source="media/how-to-integrate-time-series-insights/add-data.png" alt-text="Представление служб Azure в комплексном сценарии, выделяющий аналитику временных рядов":::
 
 3. Теперь вы увидите начальное считывание температуры из термостата, как показано ниже. То же самое считывание температуры обновляется для *room21* и *floor1*, и вы можете визуализировать эти потоки данных совместно.
     
-    :::image type="content" source="media/how-to-integrate-time-series-insights/initial-data.png" alt-text="Начальные данные температуры отображаются в обозревателе TSI. Это строка случайных значений между 68 и 85":::
+    :::image type="content" source="media/how-to-integrate-time-series-insights/initial-data.png" alt-text="Представление служб Azure в комплексном сценарии, выделяющий аналитику временных рядов":::
 
 4. Если вы разрешаете выполнение симуляции намного дольше, Визуализация будет выглядеть примерно так:
     
-    :::image type="content" source="media/how-to-integrate-time-series-insights/day-data.png" alt-text="Данные температуры для каждого двойника отображаются в виде трех параллельных линий различных цветов.":::
+    :::image type="content" source="media/how-to-integrate-time-series-insights/day-data.png" alt-text="Представление служб Azure в комплексном сценарии, выделяющий аналитику временных рядов":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

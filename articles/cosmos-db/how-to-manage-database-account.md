@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 6b09c51c68586f6e55b4238b7420460f3f2b4ac3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 98210f26072504c129ba32f765cf6bab74fef604
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330576"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570713"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -69,7 +69,7 @@ ms.locfileid: "91330576"
 
 Откройте вкладку **Глобальная репликация данных** и выберите **Включить**, чтобы включить операции записи в нескольких регионах. После включения операций записи в нескольких регионах все регионы чтения, которые в текущий момент есть в вашей учетной записи, станут регионами как для чтения, так и для записи.
 
-:::image type="content" source="./media/how-to-manage-database-account/single-to-multi-master.png" alt-text="Снимок экрана: настройка нескольких источников в учетной записи Azure Cosmos":::
+:::image type="content" source="./media/how-to-manage-database-account/single-to-multi-master.png" alt-text="Меню добавления и удаления регионов":::
 
 ### <a name="azure-cli"></a><a id="configure-multiple-write-regions-cli"></a>Интерфейс командной строки Azure
 
@@ -77,11 +77,11 @@ ms.locfileid: "91330576"
 
 ### <a name="azure-powershell"></a><a id="configure-multiple-write-regions-ps"></a>Azure PowerShell
 
-См. раздел [Включение нескольких регионов записи с помощью PowerShell](manage-with-powershell.md#multi-master) .
+См. раздел [Включение нескольких регионов записи с помощью PowerShell](manage-with-powershell.md#multi-region-writes) .
 
 ### <a name="resource-manager-template"></a><a id="configure-multiple-write-regions-arm"></a>Шаблон Resource Manager
 
-Учетную запись можно преобразовать из записи с одним источником в учетную запись с несколькими источниками путем развертывания шаблона Resource Manager, используемого для создания учетной записи, и применения параметра `enableMultipleWriteLocations: true`. Следующий шаблон Azure Resource Manager — это самый простой шаблон, который позволяет развернуть учетную запись Azure Cosmos для API SQL с двумя регионами и несколькими включенными расположениями записи.
+Учетную запись можно перенести из одного региона записи в несколько регионов записи, развернув шаблон диспетчер ресурсов, используемый для создания учетной записи и настройки `enableMultipleWriteLocations: true` . Следующий шаблон Azure Resource Manager — это самый простой шаблон, который позволяет развернуть учетную запись Azure Cosmos для API SQL с двумя регионами и несколькими включенными расположениями записи.
 
 ```json
 {
@@ -149,13 +149,13 @@ ms.locfileid: "91330576"
 
 2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
 
-   :::image type="content" source="./media/how-to-manage-database-account/replicate-data-globally.png" alt-text="Меню глобальной репликации данных":::
+   :::image type="content" source="./media/how-to-manage-database-account/replicate-data-globally.png" alt-text="Меню добавления и удаления регионов":::
 
 3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
-   :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню автоматического перехода на другой ресурс на портале":::
+   :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню добавления и удаления регионов":::
 
 ### <a name="azure-cli"></a><a id="enable-automatic-failover-via-cli"></a>Интерфейс командной строки Azure
 
@@ -178,15 +178,15 @@ ms.locfileid: "91330576"
 
 2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
 
-   :::image type="content" source="./media/how-to-manage-database-account/replicate-data-globally.png" alt-text="Меню глобальной репликации данных":::
+   :::image type="content" source="./media/how-to-manage-database-account/replicate-data-globally.png" alt-text="Меню добавления и удаления регионов":::
 
 3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**.
 
 4. Чтобы изменить приоритет при отработке отказа, щелкните и перетащите регионы чтения, щелкнув три точки в левой части строки, которые появляются при наведении указателя мыши на строку.
 
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
-   :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню автоматического перехода на другой ресурс на портале":::
+   :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню добавления и удаления регионов":::
 
 ### <a name="azure-cli"></a><a id="set-failover-priorities-via-cli"></a>Интерфейс командной строки Azure
 
@@ -204,7 +204,7 @@ ms.locfileid: "91330576"
 Процесс выполнения перехода на другой ресурс вручную включает изменение региона записи учетной записи (приоритет отработки отказа = 0) на другой регион, настроенный для учетной записи.
 
 > [!NOTE]
-> Выполнить отработку отказа для учетной записи с несколькими источниками вручную невозможно. Для приложений, использующих пакет SDK для Azure Cosmos, пакет SDK будет определять, когда регион становится недоступным, а затем выполнять автоматическое перенаправление в следующий ближайший регион при использовании API множественной адресации в пакете SDK.
+> Для учетных записей с несколькими регионами записи невозможно выполнить отработку отказа вручную. Для приложений, использующих пакет SDK для Azure Cosmos, пакет SDK будет определять, когда регион становится недоступным, а затем выполнять автоматическое перенаправление в следующий ближайший регион при использовании API множественной адресации в пакете SDK.
 
 ### <a name="azure-portal"></a><a id="enable-manual-failover-via-portal"></a>Портал Azure
 
@@ -212,13 +212,13 @@ ms.locfileid: "91330576"
 
 2. В верхней части меню выберите **Переход на другой ресурс вручную**.
 
-   :::image type="content" source="./media/how-to-manage-database-account/replicate-data-globally.png" alt-text="Меню глобальной репликации данных":::
+   :::image type="content" source="./media/how-to-manage-database-account/replicate-data-globally.png" alt-text="Меню добавления и удаления регионов":::
 
 3. В меню **Переход на другой ресурс вручную** выберите новый регион записи. Установите флажок, чтобы указать, что вы понимаете, что этот параметр изменяет ваш регион записи.
 
 4. Нажмите кнопку **ОК**, чтобы активировать отработку отказа.
 
-   :::image type="content" source="./media/how-to-manage-database-account/manual-failover.png" alt-text="Меню перехода на другой ресурс вручную на портале":::
+   :::image type="content" source="./media/how-to-manage-database-account/manual-failover.png" alt-text="Меню добавления и удаления регионов":::
 
 ### <a name="azure-cli"></a><a id="enable-manual-failover-via-cli"></a>Интерфейс командной строки Azure
 

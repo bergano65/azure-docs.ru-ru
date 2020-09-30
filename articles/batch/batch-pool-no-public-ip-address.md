@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: 6c6207e7f52e49b88dc8dc99e0bd20a2c774339d
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: e6922abb48e19157e6905d9ceb71817cfbaff767
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91541906"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570865"
 ---
 # <a name="create-an-azure-batch-pool-without-public-ip-addresses"></a>Создание пула пакетной службы Azure без общедоступных IP-адресов
 
@@ -34,8 +34,11 @@ ms.locfileid: "91541906"
 - **Виртуальная сеть Azure**. Если вы создаете пул в [виртуальной сети](batch-virtual-network.md), следуйте этим требованиям и конфигурациям. Чтобы заранее подготовить виртуальную сеть с одной или несколькими подсетями, вы можете использовать портал Azure, Azure PowerShell, интерфейс командной строки Azure (CLI) или другие методы.
   - Виртуальная сеть должна находиться в тех же подписке и регионе, что и учетная запись пакетной службы, которую вы используете для создания пула.
   - Указанная для пула подсеть должна иметь достаточное количество свободных IP-адресов для всех виртуальных машин, предназначенных для пула, то есть сумму свойств `targetDedicatedNodes` и `targetLowPriorityNodes` этого пула. Если в подсети недостаточно свободных IP-адресов, пакетная служба ограничивает выделение вычислительных узлов для пула и генерирует ошибку изменения размера.
-  - Необходимо отключить политики службы частной связи и сети конечных точек. Это можно сделать с помощью Azure CLI. ```az network vnet subnet update --vnet-name <vnetname> -n <subnetname> --disable-private-endpoint-network-policies --disable-private-link-service-network-policies```
-  
+  - Необходимо отключить политики службы частной связи и сети конечных точек. Это можно сделать с помощью Azure CLI.
+    ```azurecli
+    az network vnet subnet update --vnet-name <vnetname> -n <subnetname> --disable-private-endpoint-network-policies --disable-private-link-service-network-policies
+    ```
+
 > [!IMPORTANT]
 > Для каждого 100 выделенных или узлов с низким приоритетом Пакетная служба выделяет одну службу частной связи и одну подсистему балансировки нагрузки. Эти ресурсы ограничены [квотами ресурсов](../azure-resource-manager/management/azure-subscription-service-limits.md) в подписке. Для больших пулов может потребоваться [запросить увеличение квоты](batch-quota-limit.md#increase-a-quota) для одного или нескольких из этих ресурсов. Кроме того, не следует применять блокировки ресурсов к любому ресурсу, созданному пакетной службой, так как это предотвращает очистку ресурсов в результате действий, инициированных пользователем, таких как Удаление пула или изменение размера до нуля.
 

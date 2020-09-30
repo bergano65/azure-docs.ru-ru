@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 2ebe4fbf776ffb3b4568f996f20ba721b0cc5fca
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c158bc176c329fb46d0acde64b043b1b3e669e18
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330520"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570682"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Управление политиками разрешения конфликтов в Azure Cosmos DB
 
@@ -513,9 +513,9 @@ while conflict:
 Узнайте больше о следующих понятиях Azure Cosmos DB.
 
 - [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
-- [Настройка нескольких источников в приложениях](how-to-multi-master.md)
+- [Настройка операций записи в несколько регионов в приложениях](how-to-multi-master.md)
 - [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-multiple-write-regions)
 - [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
-- [Настройка нескольких хозяев в приложениях](how-to-multi-master.md).
+- [Как конфигуремулти запись в приложения](how-to-multi-master.md).
 - [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
 - [Индексирование в Azure Cosmos DB](indexing-policies.md)

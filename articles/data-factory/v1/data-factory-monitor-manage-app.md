@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: de56ba1281d0f20c8be838fa1bc9ebc24905b26c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e378c1e25fb434e689eadd91e9e8562ffe7e61fd
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846913"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570079"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
 > [!div class="op_single_selector"]
@@ -124,7 +124,7 @@ ms.locfileid: "85846913"
 
 Чтобы просмотреть дополнительные сведения, в правой области перейдите на вкладку **Activity Window Explorer** (Обозреватель окон действий).
 
-![Activity Window Explorer](./media/data-factory-monitor-manage-app/ActivityWindowExplorer.png)
+![Снимок экрана, показывающий, как получить доступ к вкладке "Обозреватель окон действий".](./media/data-factory-monitor-manage-app/ActivityWindowExplorer.png)
 
 Вы также увидите **разрешенные переменные** для каждой попытки запуска действия в разделе **Попытки**.
 
@@ -159,10 +159,10 @@ ms.locfileid: "85846913"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Substatus</th><th align="left">Описание:</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
-    <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
+    <td rowspan="8">Ожидание</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
 </tr>
 <tr>
 <td>DatasetDependencies</td><td>Восходящие зависимости не готовы.</td>
@@ -193,7 +193,7 @@ ms.locfileid: "85846913"
 <td>Выполняется обработка окна действия.</td>
 </tr>
 <tr>
-<td rowspan="4">Ошибка</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Failed</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
 <td>Отменено</td><td>Окно действий отменено пользователем.</td>
@@ -210,14 +210,14 @@ ms.locfileid: "85846913"
 <td>Пропущено</td><td>-</td><td>Окно действий не обработано.</td>
 </tr>
 <tr>
-<td>Отсутствуют</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>
+<td>Нет</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>
 </tr>
 </table>
 
 
 При выборе окна действий в списке вы увидите сведения о нем на вкладке **Activity Windows Explorer** (Обозреватель окон действий) или в окне **Свойства** справа.
 
-![Activity Window Explorer](./media/data-factory-monitor-manage-app/ActivityWindowExplorer-2.png)
+![Снимок экрана, показывающий, как просмотреть сведения о окне действия.](./media/data-factory-monitor-manage-app/ActivityWindowExplorer-2.png)
 
 ### <a name="refresh-activity-windows"></a>Обновление окон действий
 Данные не обновляются автоматически, поэтому воспользуйтесь кнопкой "Обновить" (вторая по счету) на панели команд, чтобы обновить список окон действий вручную.  
@@ -238,7 +238,7 @@ ms.locfileid: "85846913"
 
 Чтобы повторно выполнить окно действий или обновить сведения, используйте кнопки панели инструментов в нижней области.
 
-### <a name="script"></a>Сценарий
+### <a name="script"></a>Скрипт
 Откройте вкладку **Скрипт**, чтобы просмотреть определение JSON выбранной сущности фабрики данных (связанную службу, набор данных или конвейер).
 
 ![Вкладка "Скрипт"](./media/data-factory-monitor-manage-app/ScriptTab.png)
