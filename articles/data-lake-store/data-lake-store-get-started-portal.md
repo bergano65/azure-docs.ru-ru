@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 7dac5976904263de40c7bc240bdb7deac1ec3df6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 428ed96c3223e644b0c78712723231a5fabbdc77
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509206"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578586"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-portal"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "85509206"
 
 Узнайте, как использовать портал Azure для создания учетной записи Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения см. в разделе Общие сведения о [Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством необходимо иметь следующее:
 
@@ -50,7 +50,7 @@ ms.locfileid: "85509206"
      * Для управления ключами шифрования с помощью ADLS 1-го поколения выберите пункт **Использовать ключи, управляемые Data Lake Storage 1-го поколения**.
      * **Использовать ключи из собственного хранилища ключей**. Вы можете выбрать существующее хранилище Azure Key Vault или создать новое. Чтобы использовать ключи из хранилища Key Vault, учетной записи ADLS 1-го поколения необходимо назначить разрешения на доступ к хранилищу Azure Key Vault. Инструкции см. в разделе, посвященном [назначению разрешений для Azure Key Vault](#assign-permissions-to-azure-key-vault).
 
-        ![Шифрование Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/adls-encryption-2.png "Шифрование Data Lake Storage 1-го поколения")
+        ![Снимок экрана: Новая колонка Data Lake Storage поколения 1 и колонка параметров шифрования.](./media/data-lake-store-get-started-portal/adls-encryption-2.png "Шифрование Data Lake Storage 1-го поколения")
 
         Нажмите кнопку **ОК** в колонке **Параметры шифрования**.
 
@@ -64,10 +64,10 @@ ms.locfileid: "85509206"
 
 1. Если вы использовали ключи из Azure Key Vault, вверху колонки учетной записи ADLS 1-го поколения отображается предупреждение. Щелкните предупреждение, чтобы открыть колонку **Шифрование**.
 
-    ![Шифрование Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/adls-encryption-3.png "Шифрование Data Lake Storage 1-го поколения")
+    ![Снимок экрана: колонка учетной записи Data Lake Storage 1-го поколения, в которой отображается предупреждение о том, что требуется настройка разрешений для хранилища ключей. Щелкните здесь, чтобы настроить.](./media/data-lake-store-get-started-portal/adls-encryption-3.png "Шифрование Data Lake Storage 1-го поколения")
 2. В колонке доступно два варианта настройки доступа.
 
-    ![Шифрование Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/adls-encryption-4.png "Шифрование Data Lake Storage 1-го поколения")
+    ![Снимок экрана колонки "шифрование".](./media/data-lake-store-get-started-portal/adls-encryption-4.png "Шифрование Data Lake Storage 1-го поколения")
 
    * В первом случае, чтобы настроить доступ, щелкните **Предоставить разрешения**. Этот вариант возможен, только если пользователь, который создал учетную запись ADLS 1-го поколения, также является администратором Azure Key Vault.
    * Другой вариант — выполнить командлет PowerShell, отображаемый в колонке. В этом случае нужно быть владельцем хранилища ключей Azure или иметь возможность предоставлять разрешения на него. Выполнив командлет, вернитесь в колонку и нажмите кнопку **Включить** для настройки доступа.
@@ -87,10 +87,10 @@ ms.locfileid: "85509206"
 1. Откройте созданную учетную запись ADLS 1-го поколения. В левой области щелкните **все ресурсы**, а затем в колонке **все ресурсы** щелкните имя учетной записи, в которой нужно создать папки. Если учетная запись была закреплена на начальной панели, щелкните элемент этой учетной записи.
 2. В колонке учетной записи Data Lake Storage 1-го поколения щелкните **Azure Data Explorer**.
 
-    ![Создание папок в учетной записи Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Create.Folder.png "Создание папок в учетной записи Data Lake Storage 1-го поколения")
+    ![Снимок экрана: колонка учетной записи Data Lake Storage Gen 1 с вызываемым параметром обозревателя данных.](./media/data-lake-store-get-started-portal/ADL.Create.Folder.png "Создание папок в учетной записи Data Lake Storage 1-го поколения")
 3. В колонке обозревателя данных щелкните **Создать папку**, введите имя новой папки и нажмите кнопку **ОК**.
 
-    ![Создание папок в учетной записи Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Folder.Name.png "Создание папок в учетной записи Data Lake Storage 1-го поколения")
+    ![Снимок экрана колонки "обозреватель данных" с параметром "создать папку" и текстовым полем "создать новую папку".](./media/data-lake-store-get-started-portal/ADL.Folder.Name.png "Создание папок в учетной записи Data Lake Storage 1-го поколения")
 
     Созданная папка появится в колонке **Обозреватель данных**. Вы можете создавать вложенные папки любого уровня.
 
@@ -123,7 +123,7 @@ ms.locfileid: "85509206"
 
 ![Удалить учетную запись Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Delete.Account.png "Удаление учетной записи озера данных")
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
