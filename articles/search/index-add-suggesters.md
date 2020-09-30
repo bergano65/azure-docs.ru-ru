@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/21/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4889e73e851e285c84d5d4429298e9a7cdacc140
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: e439f7d2b0232a2e1c36517f24723e4e16f7e6bb
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89014393"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537605"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Создание средства подбора для включения автозаполнения и предлагаемых результатов в запросе
 
@@ -26,7 +26,7 @@ ms.locfileid: "89014393"
 
 Эти функции можно использовать отдельно или вместе. Чтобы реализовать эти поведения в Azure Когнитивный поиск, существует компонент индекса и запроса. 
 
-+ В индексе добавьте предложение в индекс. Можно использовать портал, [REST API](/rest/api/searchservice/create-index)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). Оставшаяся часть этой статьи посвящена созданию средства подбора.
++ В индексе добавьте предложение в индекс. Можно использовать портал, [REST API](/rest/api/searchservice/create-index)или [пакет SDK для .NET](/dotnet/api/microsoft.azure.search.models.suggester). Оставшаяся часть этой статьи посвящена созданию средства подбора.
 
 + В запросе запроса вызовите один из [интерфейсов API, перечисленных ниже](#how-to-use-a-suggester).
 
@@ -111,7 +111,7 @@ ms.locfileid: "89014393"
 
 ## <a name="create-using-net"></a>Создание с помощью .NET
 
-В C# Определите [объект](/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)средства подбора. `Suggesters` является коллекцией, но может принимать только один элемент. 
+В C# Определите [объект](/dotnet/api/microsoft.azure.search.models.suggester)средства подбора. `Suggesters` является коллекцией, но может принимать только один элемент. 
 
 ```csharp
 private static void CreateHotelsIndex(SearchServiceClient serviceClient)
@@ -138,7 +138,7 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 |--------------|-----------------|
 |`name`        |Имя средства подбора.|
 |`searchMode`  |Стратегия, используемая для поиска фраз кандидата. В настоящее время поддерживается только режим `analyzingInfixMatching` , который в настоящее время соответствует началу термина.|
-|`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным анализатором из [этого списка](/dotnet/api/microsoft.azure.search.models.analyzername?view=azure-dotnet) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |
+|`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Поля должны иметь тип `Edm.String` и `Collection(Edm.String)` . Если в поле указан анализатор, он должен быть именованным анализатором из [этого списка](/dotnet/api/microsoft.azure.search.models.analyzername) (а не настраиваемого анализатора).<p/> Рекомендуется указывать только те поля, которые приведут себя к ожидаемому и соответствующему ответу, будь то заполненная строка в строке поиска или раскрывающемся списке.<p/>Имя отеля является хорошим кандидатом, поскольку имеет точность. Поля с подробными сведениями, такие как описания и комментарии, слишком сжимаются. Аналогичным образом, повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы все равно включаем «Category», чтобы показать, что можно включить несколько полей. |
 
 <a name="how-to-use-a-suggester"></a>
 
@@ -148,8 +148,8 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 + [Предложения REST API](/rest/api/searchservice/suggestions) 
 + [Автозаполнение REST API](/rest/api/searchservice/autocomplete) 
-+ [Метод Сугжествисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
-+ [Метод Аутокомплетевисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
++ [Метод Сугжествисхттпмессажесасинк] (/дотнет/АПИ/Микрософт.Азуре.СЕАРЧ.идокументсоператионс.сугжествисхттпмессажесасинк?
++ [Метод Аутокомплетевисхттпмессажесасинк](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync)
 
 В приложении поиска клиентский код должен использовать библиотеку, например [JQUERY UI Автозаполнение](https://jqueryui.com/autocomplete/) , для получения полного запроса и обеспечения соответствия. Дополнительные сведения об этой задаче см. [в разделе Добавление автозаполнения или предлагаемых результатов в клиентский код](search-autocomplete-tutorial.md).
 

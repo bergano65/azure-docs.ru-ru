@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 2cde352738c1aa545c77cbcf5d974030cd75b1e8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7365e4904bb8e1920e7d4c57c165e489f2ff302e
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326530"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540597"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -24,7 +24,7 @@ ms.locfileid: "91326530"
 
 Они также могут управляться с помощью [портал Azure](https://portal.azure.com). Версию этой статьи, которая использует портал, см. [*в разделе руководство. Управление конечными точками и маршрутами (портал)*](how-to-manage-routes-portal.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -58,7 +58,7 @@ az eventgrid topic create -g <your-resource-group-name> --name <your-topic-name>
 > az account list-locations -o table
 > ```
 
-После создания раздела его можно связать с Azure Digital двойников с помощью следующей команды:
+После создания раздела можно связать его с Azure Digital двойников, используя следующую [команду Azure Digital ДВОЙНИКОВ CLI](how-to-use-cli.md):
 
 ```azurecli
 az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
@@ -90,7 +90,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Чтобы фактически передавать данные из Azure Digital двойников в конечную точку, необходимо определить **маршрут события**. **API-интерфейсы** Azure Digital двойников евентраутес позволяют разработчикам связывать потоки событий во всей системе и в подчиненных службах. Дополнительные сведения о маршрутах событий см. в статье [*Маршрутизация событий цифровых двойников Azure*](concepts-route-events.md).
 
-В примерах в этом разделе используется пакет SDK для C#.
+В примерах в этом разделе используется [пакет SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core).
 
 **Предварительные требования**. прежде чем можно будет перейти к созданию маршрута, необходимо создать конечные точки, как описано ранее в этой статье. После завершения настройки конечных точек можно перейти к созданию маршрута события.
 
@@ -101,7 +101,7 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 ### <a name="create-an-event-route"></a>Создание маршрута события
 
-Маршруты событий определяются с помощью API-интерфейсов плоскости данных. 
+Маршруты событий определяются с помощью [API-интерфейсов плоскости данных](how-to-use-apis-sdks.md#overview-data-plane-apis). 
 
 Определение маршрута может содержать следующие элементы:
 * Имя маршрута, которое вы хотите использовать

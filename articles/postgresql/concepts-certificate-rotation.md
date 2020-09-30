@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 576ff4eb3a189b27a4c7743966ced0676ec67a9d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 976b423822fa667df713382b34d7208cb0e3b002
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90978903"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540665"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-postgresql-single-server"></a>Основные сведения об изменениях в корневом ЦС для одного сервера базы данных Azure для PostgreSQL
 
@@ -120,7 +120,7 @@ ms.locfileid: "90978903"
 ### <a name="10-how-often-does-microsoft-update-their-certificates-or-what-is-the-expiry-policy"></a>10. как часто Корпорация Майкрософт обновляет свои сертификаты или какова политика срока действия?
 Эти сертификаты, используемые базой данных Azure для PostgreSQL, предоставляются доверенными центрами сертификации (CA). Поэтому поддержка этих сертификатов в базе данных Azure для PostgreSQL связана с поддержкой этих сертификатов центром сертификации. Однако, как и в этом случае, в этих стандартных сертификатах могут воздержаться непредвиденные ошибки, которые должны быть исправлены самым ранним образом.
 
-### <a name="11-if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-master-server-or-the-read-replicas"></a>11. Если я использую для чтения реплики, нужно ли выполнять это обновление только на главном сервере или репликах чтения?
+### <a name="11-if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-the-primary-server-or-the-read-replicas"></a>11. Если я использую для чтения реплики, нужно ли выполнять это обновление только на основном сервере или репликах чтения?
 Так как это обновление является изменением на стороне клиента, если клиент использовался для считывания данных с сервера реплики, необходимо также применить изменения для этих клиентов. 
 
 ### <a name="12-do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>12. у нас есть запрос на стороне сервера, чтобы проверить, используется ли протокол SSL?

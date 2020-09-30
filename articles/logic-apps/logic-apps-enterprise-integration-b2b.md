@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/10/2020
-ms.openlocfilehash: 2fd96777a5fe74d44aeed5f6de82e54b2663a024
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: afae49cf6ee44b138a55f58f415fc761308b7894
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090388"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542382"
 ---
 # <a name="receive-and-confirm--b2b-as2-messages-by-using-azure-logic-apps-and-enterprise-integration-pack"></a>Получение и подтверждение сообщений AS2 для B2B с помощью Azure Logic Apps и Пакет интеграции Enterprise
 
@@ -21,7 +21,7 @@ ms.locfileid: "87090388"
 
 В этой статье показано, как создать приложение логики, которое получает HTTP-запрос с помощью триггера запроса, декодирует содержимое сообщения с помощью действий AS2 и X12, а затем возвращает ответ с помощью действия Response.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -111,7 +111,7 @@ ms.locfileid: "87090388"
 
    Теперь отображается форма условия, в том числе пути, где выполняется условие.
 
-   ![Форма условия с путями принятия решений](./media/logic-apps-enterprise-integration-b2b/added-condition-action.png)
+   ![На снимке экрана показана форма условия с пустыми путями.](./media/logic-apps-enterprise-integration-b2b/added-condition-action.png)
 
 1. Теперь укажите условие для вычисления. В поле **выберите значение** введите следующее выражение:
 
@@ -119,7 +119,7 @@ ms.locfileid: "87090388"
 
    В среднем поле убедитесь, что для операции сравнения задано значение `is equal to` . В правой части поля введите значение `Expected` . Чтобы получить выражение для разрешения в качестве маркера, переключитесь между конструктором и представлением кода.
 
-   ![Форма условия с путями принятия решений](./media/logic-apps-enterprise-integration-b2b/expression-for-evaluating-condition.png)
+   ![На снимке экрана показана форма условия с добавленным условием.](./media/logic-apps-enterprise-integration-b2b/expression-for-evaluating-condition.png)
 
 1. Теперь укажите ответы, которые будут возвращать результат операции **декодирования AS2** .
 

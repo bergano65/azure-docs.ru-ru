@@ -5,13 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.author: diberry
-ms.openlocfilehash: 3e4567eea02b3b7db9514f4e03c7f7f36496449b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a5760db2d6e453d631680d6154e6d9a03ce55cd6
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91309441"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541345"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Изменения конечной точки прогнозирования для v3
 
@@ -104,7 +103,7 @@ API-интерфейс прогнозирования версии 2 не буд
 }
 ```
 
-|Свойство|Тип|Версия|По умолчанию|Назначение|
+|Свойство|Type|Версия|По умолчанию|Цель|
 |--|--|--|--|--|
 |`dynamicLists`|массиве|Только версия 3|Необязательно.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
 |`externalEntities`|массиве|Только версия 3|Необязательно.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |

@@ -3,20 +3,18 @@ title: Импорт речевых фрагментов с использова�
 titleSuffix: Azure Cognitive Services
 description: Сведения о создании приложения LUIS программным образом из существующих данных в формате CSV с помощью API разработки LUIS.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18, devx-track-js
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/05/2019
-ms.author: diberry
-ms.openlocfilehash: 13e18e024c2200459e58474f53bed2431e3375a7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 58eb92f4d0bc3de4671ca2ece14a178a876e4a6b
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91298238"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541053"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
@@ -24,7 +22,7 @@ ms.locfileid: "91298238"
 
 [!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и в параметрах учетной записи найдите [ключ разработки](luis-how-to-azure-subscription.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.

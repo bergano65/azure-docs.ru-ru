@@ -3,20 +3,18 @@ title: Создание нового приложения — LUIS
 titleSuffix: Azure Cognitive Services
 description: Создание и настройка приложений на веб-странице службы "Распознавание речи" (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/18/2020
-ms.author: diberry
-ms.openlocfilehash: 304e76a2bf8bae3e6ee2120b892ef97d89c3decc
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: fcc803e87b2efd3e94b90eb17258ab3bb156359f
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86144397"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541444"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале LUIS или с помощью [API-интерфейсов](developer-reference-resource.md) разработки LUIS.
@@ -45,7 +43,7 @@ ms.locfileid: "86144397"
 
 ## <a name="create-new-app-in-luis"></a>Создание приложения в LUIS
 
-1. На странице **Мои приложения** выберите **подписку**и создайте **ресурс** , а затем — **создать**. 
+1. На странице **Мои приложения** выберите **подписку**и создайте  **ресурс** , а затем — **создать**. 
 
 > [!div class="mx-imgBorder"]
 > ![Список приложений LUIS](./media/create-app-in-portal.png)
@@ -69,7 +67,7 @@ ms.locfileid: "86144397"
 Контекстная панель инструментов предоставляет другие действия:
 
 * Переименование приложения
-* Импорт из файла с помощью `.lu` или`.json`
+* Импорт из файла с помощью `.lu` или `.json`
 * Экспорт приложения как `.lu` (для [лудовн](https://github.com/microsoft/botbuilder-tools/tree/master/packages/Ludown)), `.json` или `.zip` (для [контейнера Luis](luis-container-howto.md))
 * Импорт журналов конечной точки контейнера для просмотра конечной точки фразы продолжительностью
 * Экспорт журналов конечных точек как `.csv` для автономного анализа

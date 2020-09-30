@@ -6,20 +6,20 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/10/2020
-ms.openlocfilehash: 623b9c1eccefe5d7e6027ddbed61c89720d98e9a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d0de485158477496419dc394aaf6bdd1d28e772a
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90884471"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535820"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
 
-## <a name="prerequisites"></a>Предварительные требования
-[Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-database-portal.md) в качестве главного.
+## <a name="prerequisites"></a>Предварительные условия
+[Сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md) , который будет основным сервером.
 
 ## <a name="azure-replication-support"></a>Поддержка репликации Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "90884471"
 
 После изменения этого параметра сервер необходимо перезапустить. На внутреннем уровне этот параметр задает параметры postgres `wal_level` , `max_replication_slots` и `max_wal_senders` .
 
-## <a name="prepare-the-master-server"></a>Подготовка главного сервера
+## <a name="prepare-the-primary-server"></a>Подготовка сервера источника
 
 1. В портал Azure выберите существующий сервер базы данных Azure для PostgreSQL, который будет использоваться в качестве главного.
 
@@ -45,11 +45,11 @@ ms.locfileid: "90884471"
 
 4. Перезапустите сервер, чтобы применить изменение, выбрав **Да**.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/confirm-restart.png" alt-text="База данных Azure для PostgreSQL-Replication-подтверждение перезапуска":::
+   :::image type="content" source="./media/howto-read-replicas-portal/confirm-restart.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
 
 5. После завершения операции вы получите два портал Azure уведомлений. Для обновления параметра сервера существует одно уведомление. Еще одно уведомление о перезапуске сервера следует сразу же.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/success-notifications.png" alt-text="Уведомления об успешном выполнении":::
+   :::image type="content" source="./media/howto-read-replicas-portal/success-notifications.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
 
 6. Обновите страницу портал Azure, чтобы обновить панель инструментов репликации. Теперь можно создавать реплики чтения для этого сервера.
    
@@ -57,21 +57,21 @@ ms.locfileid: "90884471"
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
 Чтобы создать реплику чтения, выполните следующие действия:
 
-1. Выберите существующий сервер базы данных Azure для PostgreSQL для использования в качестве главного сервера. 
+1. Выберите существующий сервер базы данных Azure для PostgreSQL для использования в качестве сервера источника. 
 
 2. На боковой панели сервера в разделе **Параметры**выберите **репликация**.
 
 3. Выберите **Добавить реплику**.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/add-replica.png" alt-text="Добавление реплики":::
+   :::image type="content" source="./media/howto-read-replicas-portal/add-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
 
 4. Введите имя реплики чтения. 
 
-    :::image type="content" source="./media/howto-read-replicas-portal/name-replica.png" alt-text="Присвоение имени реплике":::
+    :::image type="content" source="./media/howto-read-replicas-portal/name-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
 
-5. Выберите расположение для реплики. Расположение по умолчанию совпадает с местоположением главного сервера.
+5. Выберите расположение для реплики. Расположение по умолчанию совпадает с местоположением сервера-источника.
 
-    :::image type="content" source="./media/howto-read-replicas-portal/location-replica.png" alt-text="Выберите расположение":::
+    :::image type="content" source="./media/howto-read-replicas-portal/location-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
 
    > [!NOTE]
    > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md). 
@@ -80,95 +80,95 @@ ms.locfileid: "90884471"
 
 Созданную реплику чтения можно просмотреть в окне **Репликация**:
 
-:::image type="content" source="./media/howto-read-replicas-portal/list-replica.png" alt-text="Просмотр новой реплики в окне "Репликация"":::
+:::image type="content" source="./media/howto-read-replicas-portal/list-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 
 > [!IMPORTANT]
 > Ознакомьтесь с [разделом рекомендации в обзоре реплики чтения](concepts-read-replicas.md#considerations).
 >
-> Перед обновлением параметра главного сервера до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
+> Перед обновлением параметра сервера-источника до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
 
 ## <a name="stop-replication"></a>Остановка репликации
-Вы можете остановить репликацию между главным сервером и репликой чтения.
+Можно отключить репликацию между сервером-источником и репликой чтения.
 
 > [!IMPORTANT]
-> Остановленную репликацию отменить невозможно. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
+> После того как репликация будет прервана на сервере-источнике и реплике чтения, ее нельзя будет отменить. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
-Чтобы остановить репликацию между главным сервером и репликой чтения на портале Azure, выполните следующие действия:
+Чтобы предотвратить репликацию между сервером-источником и репликой чтения из портал Azure, выполните следующие действия.
 
-1. На портале Azure выберите главный сервер Базы данных Azure для PostgreSQL.
+1. В портал Azure выберите основной сервер базы данных Azure для PostgreSQL.
 
 2. В меню сервера в разделе **Параметры** выберите **Репликация**.
 
 3. Выберите сервер-реплику, на котором нужно остановить репликацию.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/select-replica.png" alt-text="Выбор реплики":::
+   :::image type="content" source="./media/howto-read-replicas-portal/select-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 4. Щелкните **Остановить репликацию**.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/select-stop-replication.png" alt-text="Выберите пункт "отменить репликацию"":::
+   :::image type="content" source="./media/howto-read-replicas-portal/select-stop-replication.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 5. Нажмите кнопку **ОК**, чтобы подтвердить остановку репликации.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/confirm-stop-replication.png" alt-text="Подтверждение остановки репликации":::
+   :::image type="content" source="./media/howto-read-replicas-portal/confirm-stop-replication.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 
-## <a name="delete-a-master-server"></a>Удаление главного сервера
-Чтобы удалить главный сервер, выполните те же действия, что и для отдельного сервера службы "База данных Azure для PostgreSQL". 
+## <a name="delete-a-primary-server"></a>Удаление сервера-источника
+Чтобы удалить сервер-источник, выполните те же действия, что и для удаления автономной базы данных Azure для сервера PostgreSQL. 
 
 > [!IMPORTANT]
-> При удалении главного сервера репликация всех реплик чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
+> При удалении сервера-источника репликация на все реплики чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
 Чтобы удалить сервер на портале Azure, сделайте следующе:
 
-1. На портале Azure выберите главный сервер Базы данных Azure для PostgreSQL.
+1. В портал Azure выберите основной сервер базы данных Azure для PostgreSQL.
 
 2. Откройте страницу **Обзор** сервера. Выберите команду **Удалить**.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/delete-server.png" alt-text="Удаление главного сервера на странице "Обзор"":::
+   :::image type="content" source="./media/howto-read-replicas-portal/delete-server.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
-3. Введите имя главного сервера, который нужно удалить. Нажмите кнопку **Удалить**, чтобы подтвердить удаление главного сервера.
+3. Введите имя сервера, который нужно удалить. Выберите **Удалить** , чтобы подтвердить удаление сервера источника.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/confirm-delete.png" alt-text="Подтверждение удаления главного сервера":::
+   :::image type="content" source="./media/howto-read-replicas-portal/confirm-delete.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 
 ## <a name="delete-a-replica"></a>Удаление реплики
-Чтобы удалить реплику чтения, выполните те же действия, что и для удаления главного сервера
+Реплику чтения можно удалить аналогично удалению сервера-источника.
 
 - На портале Azure откройте страницу **Обзор** реплики чтения. Выберите команду **Удалить**.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/delete-replica.png" alt-text="Удаление реплики на странице "Обзор"":::
+   :::image type="content" source="./media/howto-read-replicas-portal/delete-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 Кроме того, реплику можно удалить из окна **Репликация**, выполнив следующие действия:
 
-1. На портале Azure выберите главный сервер Базы данных Azure для PostgreSQL.
+1. В портал Azure выберите основной сервер базы данных Azure для PostgreSQL.
 
 2. В меню сервера в разделе **Параметры** выберите **Репликация**.
 
 3. Выберите реплику чтения, которую нужно удалить.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/select-replica.png" alt-text="Выбор реплики, которую нужно удалить.":::
+   :::image type="content" source="./media/howto-read-replicas-portal/select-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 4. Выберите **удалить реплику**.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/select-delete-replica.png" alt-text="Выбор удаления реплики":::
+   :::image type="content" source="./media/howto-read-replicas-portal/select-delete-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 5. Введите имя реплики, которую нужно удалить. Нажмите кнопку **Удалить**, чтобы подтвердить удаление реплики.
 
-   :::image type="content" source="./media/howto-read-replicas-portal/confirm-delete-replica.png" alt-text="Подтверждение удаления реплики":::
+   :::image type="content" source="./media/howto-read-replicas-portal/confirm-delete-replica.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 
 ## <a name="monitor-a-replica"></a>Мониторинг реплики
 Выполнять мониторинг реплик чтения можно на основе двух метрик.
 
 ### <a name="max-lag-across-replicas-metric"></a>Метрика Max Lag Across Replicas (Максимальная задержка между репликами)
-Метрика **Max Lag Across Replicas** (Максимальная задержка между репликами) показывает задержку между главным сервером и репликой с наибольшей задержкой в байтах. 
+Метрика " **Максимальная задержка между репликами** " показывает задержку в байтах между сервером-источником и задержкой репликой. 
 
-1.  На портале Azure выберите главный сервер службы "База данных Azure для PostgreSQL".
+1.  В портал Azure выберите основной сервер базы данных Azure для PostgreSQL.
 
 2.  Выберите **Метрики**. В окне **Метрики** выберите **Max Lag Across Replicas** (Максимальная задержка между репликами).
 
-    :::image type="content" source="./media/howto-read-replicas-portal/select-max-lag.png" alt-text="Отслеживание максимальной задержки между репликами":::
+    :::image type="content" source="./media/howto-read-replicas-portal/select-max-lag.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 3.  Для параметра **агрегирования** установите значение **Макс.**
 
@@ -180,7 +180,7 @@ ms.locfileid: "90884471"
 
 2. Выберите **Метрики**. В окне **Метрики** выберите **Replica Lag** (Задержка реплики).
 
-   :::image type="content" source="./media/howto-read-replicas-portal/select-replica-lag.png" alt-text="Отслеживание задержки реплики":::
+   :::image type="content" source="./media/howto-read-replicas-portal/select-replica-lag.png" alt-text="База данных Azure для PostgreSQL — репликация — установка реплики и сохранение":::
  
 3. Для параметра **агрегирования** установите значение **Макс.** 
  

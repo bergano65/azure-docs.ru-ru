@@ -8,12 +8,12 @@ ms.author: magottei
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
-ms.openlocfilehash: 2b01b9a3782d25660462d0cc2bf3aec87baf0023
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.openlocfilehash: 417bdacc3ce8b619d5ec9618e6060ac071882471
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91403801"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91533931"
 ---
 # <a name="how-to-index-plain-text-blobs-in-azure-cognitive-search"></a>Индексирование больших двоичных объектов с обычным текстом в Azure Когнитивный поиск
 
@@ -61,9 +61,10 @@ ms.locfileid: "91403801"
 ```
 
 ## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
+
 Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/). Если вам нужна помощь с использованием существующего компонента, опубликуйте свой вопрос на [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 * [Настройка индексатора больших двоичных объектов](search-howto-indexing-azure-blob-storage.md)

@@ -1,14 +1,14 @@
 ---
 title: Определение причин несоответствия требованиям
 description: Если ресурс не соответствует требованиям, возможных причин этого множество. Узнайте, как находить то, что привело к несоответствию.
-ms.date: 07/06/2020
+ms.date: 09/30/2020
 ms.topic: how-to
-ms.openlocfilehash: 102a1a6a9573c73b4c1158a3c412be233e1a12b2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: df1eefec782835838add0beb8939bf4ff1a8a194
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334180"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541277"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -36,11 +36,11 @@ ms.locfileid: "91334180"
 
 1. На вкладке **Соответствие ресурса** страницы **Соответствие политике** щелкните правой кнопкой мыши или выберите многоточие ресурса с **состоянием соответствия** _Не соответствует_. Затем выберите **Просмотреть сведения о соответствии**.
 
-   :::image type="content" source="../media/determine-non-compliance/view-compliance-details.png" alt-text="Снимок экрана со ссылкой "Просмотр сведений о соответствии" на вкладке "соответствие ресурсов"." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/view-compliance-details.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
 1. Панель **Сведения о соответствии** отображает информацию от последней оценки ресурса до назначения текущей политики. В этом примере поле **Microsoft. SQL/Servers/Version** содержит _12.0_, в то время как определение политики ожидало _14.0_. Если ресурс не соответствует требованиям по нескольким причинам, каждая из них отображается на этой панели.
 
-   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Снимок экрана с областью сведений о соответствии и причинами несоответствия, что текущее значение равно двенадцати, а целевое значение — четырнадцать." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
    Для определения политики **auditIfNotExists** или **deployIfNotExists** сведения включают в себя свойство **details.type** и любые дополнительные свойства. Список см. в разделах [свойства auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) и [свойства deployIfNotExists](../concepts/effects.md#deployifnotexists-properties). **Последний оцененный ресурс** — это связанный ресурс из раздела **сведений** определения.
 
@@ -69,7 +69,7 @@ ms.locfileid: "91334180"
    }
    ```
 
-   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Снимок экрана области сведений о соответствии для Ифнотексистс, включая вычисленное количество ресурсов." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
 > [!NOTE]
 > Для защиты данных, если значение свойства является _секретом_, текущее значение отображает звездочки.
@@ -104,17 +104,17 @@ ms.locfileid: "91334180"
 |Текущее значение не должно соответствовать целевому значению без учета регистра. |notMatchInsensitively или **нет** matchInsensitively |
 |Нет связанных ресурсов, соответствующих сведениям о воздействии в определении политики. |Ресурс типа, определенный в **then.details.type** и связанный с ресурсом, определенным в части **if** правила политики, не существует. |
 
+## <a name="component-details-for-resource-provider-modes"></a>Сведения о компонентах для режимов поставщика ресурсов
+
+Для назначений в [режиме поставщика ресурсов](../concepts/definition-structure.md#resource-manager-modes)выберите _несоответствующий_ ресурс, чтобы открыть более глубокое представление. На вкладке **соответствие компонентов** представлены дополнительные сведения, относящиеся к режиму поставщика ресурсов в назначенной политике, отображающей _несоответствующий_ **компонент** и **идентификатор компонента**.
+
+:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
+
 ## <a name="compliance-details-for-guest-configuration"></a>Сведения о соответствии для гостевой конфигурации
 
 Для политик _помощью параметров auditifnotexists_ в категории _конфигурации "гость_ " в виртуальной машине может быть определено несколько параметров, поэтому необходимо просмотреть подробные сведения о параметрах. Например, если вы выполняете аудит для списка политик паролей и только одна из них имеет состояние _Не соответствует_, необходимо знать, какие конкретные политики паролей не соответствуют требованиям и почему.
 
 У вас также может не быть доступа для входа на виртуальную машину напрямую, но необходимо сообщить о том, почему виртуальная машина не _соответствует требованиям_.
-
-## <a name="compliance-details-for-resource-provider-modes"></a>Сведения о соответствии для режимов поставщика ресурсов
-
-Для назначений в [режиме поставщика ресурсов](../concepts/definition-structure.md#resource-manager-modes)выберите _несоответствующий_ ресурс, чтобы открыть более глубокое представление. На вкладке **соответствие компонентов** представлены дополнительные сведения, относящиеся к режиму поставщика ресурсов в назначенной политике, отображающей _несоответствующий_ **компонент** и **идентификатор компонента**.
-
-:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Снимок экрана с вкладкой соответствия компонентов и сведениями о соответствии для назначения режима поставщика ресурсов." border="false":::
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -122,11 +122,11 @@ ms.locfileid: "91334180"
 
 В области сведения о соответствии выберите ссылку **последний оцененный ресурс**.
 
-:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Снимок экрана: Просмотр сведений о соответствии определения помощью параметров auditifnotexists." border="false":::
+:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
 На странице **Назначение гостей** отображаются все доступные сведения о соответствии. Каждая строка в представлении представляет собой оценку выполненную внутри виртуальной машины. В столбце **Причина** отображается фраза, в которой описывается, почему назначение гостя _Не соответствует_ требованиям. Например, при аудите политик паролей в столбце **Причина** будет отображаться текст, включающий текущее значение для каждого параметра.
 
-:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Снимок экрана сведений о соответствии для назначения гостей." border="false":::
+:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -205,11 +205,11 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)** . После этого отобразится список обнаруженных изменений (при наличии).
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Снимок экрана вкладки "журнал изменений" и обнаружено время изменения на странице соответствия ресурсов." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
 1. Выберите одно из обнаруженных изменений. _Отличия между визуальными элементами_ для ресурса представлены на странице **Журнал изменений**.
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Снимок экрана: визуальное различие в журнале изменений для состояния "до" и "после" на странице "журнал изменений"." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Снимок экрана со ссылкой &quot;Просмотр сведений о соответствии&quot; на вкладке &quot;соответствие ресурсов&quot;." border="false":::
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаруженные изменения могут не быть связаны с текущим состоянием соответствия ресурса.
 

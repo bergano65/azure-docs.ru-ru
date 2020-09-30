@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/22/2020
-ms.openlocfilehash: 018c3fb08c7fa0ad35fa567bffbeae48b6fbbce9
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: bae4cb72201bbc1653db5bb549d67531bda71d50
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88928842"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537724"
 ---
 # <a name="query-types-and-composition-in-azure-cognitive-search"></a>Типы запросов и композиция в Azure Когнитивный поиск
 
@@ -88,11 +88,11 @@ ms.locfileid: "88928842"
 
 В таблице ниже представлены интерфейсы API и методы на основе инструментов для отправки запросов.
 
-| Методика | Description |
+| Методика | Описание |
 |-------------|-------------|
 | [Обозреватель поиска (портал)](search-explorer.md) | Предоставляет панель поиска и параметры для выбора индекса и значения api-version. Будут возвращены результаты в виде документов JSON. Рекомендуется для изучения, тестирования и проверки. <br/>[Подробнее.](search-get-started-portal.md#query-index) | 
 | [POST или другие средства для отдыха](search-get-started-postman.md) | Веб-инструменты тестирования идеально подходят для формирования вызовов REST. REST API поддерживает все возможные операции в Когнитивный поиск Azure. Из этой статьи вы узнаете, как настроить заголовок HTTP-запроса и текст для отправки запросов в Когнитивный поиск Azure.  |
-| [SearchIndexClient (.NET)](/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet) | Клиент, который можно использовать для запроса индекса Когнитивный поиск Azure.  <br/>[Подробнее.](search-howto-dotnet-sdk.md#core-scenarios)  |
+| [SearchIndexClient (.NET)](/dotnet/api/microsoft.azure.search.searchindexclient) | Клиент, который можно использовать для запроса индекса Когнитивный поиск Azure.  <br/>[Подробнее.](search-howto-dotnet-sdk.md#core-scenarios)  |
 | [Поиск по документам (REST API)](/rest/api/searchservice/search-documents) | Методы GET или POST для индекса, допускающие использование параметров запроса для ввода дополнительных данных.  |
 
 ## <a name="choose-a-parser-simple--full"></a>Выберите средство синтаксического анализа: simple (простое) или full (полное)
@@ -165,7 +165,7 @@ Azure Когнитивный поиск поддерживает широкий 
 ### <a name="hit-highlighting"></a>Выделение совпадений
 В Azure Когнитивный поиск с помощью **`highlight`** параметров, и можно легко подчеркнуть точную часть результатов поиска, соответствующую поисковому запросу **`highlightPreTag`** **`highlightPostTag`** . Можно указать, какие из полей с *возможностью поиска* должны быть выделены соответствующим текстом, а также указать точные Теги строк для добавления к началу и концу совпадающего текста, возвращаемого Azure когнитивный Поиск.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Как работает полнотекстовый поиск в Когнитивный поиск Azure (архитектура анализа запросов)](search-lucene-query-architecture.md)
 + [Обозреватель поиска](search-explorer.md)

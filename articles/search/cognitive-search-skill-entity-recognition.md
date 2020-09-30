@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: fd35f297e88c37aec39938b0bfd60288e591a62c
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: ddfca965ea32ca726df39f894ba45f9580225d9d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936084"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542467"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания сущностей
 
@@ -55,7 +55,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 > [!NOTE]
 > Для некоторых языков категории сущностей не поддерживаются. `"Person"` `"Location"` `"Organization"` Типы категорий сущностей, и поддерживаются для полного списка языков, описанных выше. При _de_извлечении _en_типов, _es_, и поддерживаются только de, EN, ES, _fr_и _zh-Ханс_ `"Quantity"` `"Datetime"` `"URL"` `"Email"` . Дополнительные сведения см. [в разделе Поддержка языков и регионов для API анализа текста](../cognitive-services/text-analytics/language-support.md).  
 
-| Имя вывода      | Description                   |
+| Имя вывода      | Описание                   |
 |---------------|-------------------------------|
 | `persons`       | Массив строк, где каждая строка представляет имя человека. |
 | `locations`  | Массив строк, где каждая строка представляет расположение. |
@@ -187,7 +187,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 }
 ```
 
-Обратите внимание, что смещения, возвращаемые для сущностей в выходных данных этого навыка, возвращаются непосредственно из [API анализа текста](../cognitive-services/text-analytics/overview.md). Это означает, что если вы используете их для индексации в исходной строке, следует использовать класс [StringInfo](/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) в .NET для извлечения правильного содержимого.  [Дополнительные сведения можно найти здесь.](../cognitive-services/text-analytics/concepts/text-offsets.md)
+Обратите внимание, что смещения, возвращаемые для сущностей в выходных данных этого навыка, возвращаются непосредственно из [API анализа текста](../cognitive-services/text-analytics/overview.md). Это означает, что если вы используете их для индексации в исходной строке, следует использовать класс [StringInfo](/dotnet/api/system.globalization.stringinfo) в .NET для извлечения правильного содержимого.  [Дополнительные сведения можно найти здесь.](../cognitive-services/text-analytics/concepts/text-offsets.md)
 
 ## <a name="error-cases"></a>Варианты ошибок
 Если код языка для документа не поддерживается, возвращается ошибка и сущности не извлекаются.

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: a52dd48bb97c8e7979771bdc2dbb50654493b088
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 3182f7fa913cd61e6c51ea91be6b46e83a1ab949
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90972600"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540108"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
 
@@ -119,7 +119,7 @@ ms.locfileid: "90972600"
 ### <a name="10-how-often-does-microsoft-update-their-certificates-or-what-is-the-expiry-policy"></a>10. как часто Корпорация Майкрософт обновляет свои сертификаты или какова политика срока действия?
 Эти сертификаты, используемые базой данных Azure для MariaDB, предоставляются доверенными центрами сертификации (CA). Поэтому поддержка этих сертификатов в базе данных Azure для MariaDB связана с поддержкой этих сертификатов центром сертификации. Однако, как и в этом случае, в этих стандартных сертификатах могут воздержаться непредвиденные ошибки, которые должны быть исправлены самым ранним образом.
 
-### <a name="11-if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-master-server-or-the-read-replicas"></a>11. Если я использую для чтения реплики, нужно ли выполнять это обновление только на главном сервере или репликах чтения?
+### <a name="11-if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-source-server-or-the-read-replicas"></a>11. Если я использую для чтения реплики, нужно ли выполнять это обновление только на исходном сервере или репликах чтения?
 Так как это обновление является изменением на стороне клиента, если клиент использовался для считывания данных с сервера реплики, необходимо также применить изменения для этих клиентов.
 
 ### <a name="12-if-i-am-using-data-in-replication-do-i-need-to-perform-any-action"></a>12. Если я использую репликацию данных, нужно ли выполнять какие-либо действия?
@@ -137,7 +137,7 @@ ms.locfileid: "90972600"
 
     Если вы видите сертификат для CA_file, SSL_Cert и SSL_Key, необходимо будет обновить файл, добавив [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
-*   Если репликация данных выполняется между двумя базами данных Azure для MySQL, потребуется сбросить реплику, выполнив **вызов MySQL. az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-the-master-and-replica-servers-to-start-data-in-replication).
+*   Если репликация данных выполняется между двумя базами данных Azure для MySQL, потребуется сбросить реплику, выполнив **вызов MySQL. az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication).
 
 ### <a name="13-do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>13. у нас есть запрос на стороне сервера, чтобы проверить, используется ли протокол SSL?
 Чтобы проверить, используется ли SSL-соединение для подключения к серверу, обратитесь к [проверке SSL](howto-configure-ssl.md#verify-the-ssl-connection).

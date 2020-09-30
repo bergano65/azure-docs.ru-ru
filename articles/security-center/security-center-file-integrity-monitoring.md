@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: da0eeafc9d92bf08a2475d7676f1da8a4fa30da5
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: b64ff51836f8d291acf57b1cd9ca100c4f87ebed
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/29/2020
-ms.locfileid: "91461434"
+ms.locfileid: "91541175"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 Узнайте, как настроить мониторинг целостности файлов (FIM) в центре безопасности Azure с помощью этого пошагового руководства.
@@ -116,7 +116,7 @@ FIM использует решение "Отслеживание изменен
 
     - ![Значок плана обновления ][4] обновите рабочую область, чтобы использовать защитник Azure. Этот значок указывает, что Рабочая область или подписка не защищены защитником Azure. Чтобы использовать функции FIM, ваша подписка должна быть защищена защитником Azure. [Дополнительные сведения](security-center-pricing.md).
 
-    - ![Значок включения][3] Включите FIM на всех компьютерах в рабочей области и настройте параметры FIM. Этот значок указывает, что FIM не включен для рабочей области. Используйте эту кнопку, чтобы:
+    - ![Значок включения][3] Включите FIM на всех компьютерах в рабочей области и настройте параметры FIM. Этот значок указывает, что FIM не включен для рабочей области.
 
         :::image type="content" source="./media/security-center-file-integrity-monitoring/workspace-list-fim.png" alt-text="Запуск FIM" отсутствует, а пробел пуст, это означает, что FIM уже включен в рабочей области.
 

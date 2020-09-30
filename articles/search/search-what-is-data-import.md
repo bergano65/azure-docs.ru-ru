@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 50c95dc9d045711cb6968b98957d255b4ca73d2c
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 148310419ad4f760219003514dbc078b7c675be6
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88932769"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91538793"
 ---
 # <a name="data-import-overview---azure-cognitive-search"></a>Общие сведения об импорте данных в Azure Когнитивный поиск
 
@@ -35,7 +35,7 @@ ms.locfileid: "88932769"
 Для загрузки одного или нескольких документов в индекс можно использовать следующие API-интерфейсы:
 
 + [добавление, обновление и удаление документов (REST API)](/rest/api/searchservice/AddUpdate-or-Delete-Documents);
-+ [класс indexAction](/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) или [клаcс indexBatch](/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet). 
++ [класс indexAction](/dotnet/api/microsoft.azure.search.models.indexaction) или [клаcс indexBatch](/dotnet/api/microsoft.azure.search.models.indexbatch). 
 
 Инструментов для передачи данных через портал пока не существует.
 
@@ -52,7 +52,7 @@ ms.locfileid: "88932769"
 В пакете SDK для .NET упакуйте данные в `IndexBatch` объект. `IndexBatch`Инкапсулирует коллекцию `IndexAction` объектов, каждая из которых содержит документ и свойство, которое сообщает Azure когнитивный Поиск, какое действие выполнять с этим документом. Пример кода см. в [кратком руководстве по C#](search-get-started-dotnet.md).
 
 
-| @search.action | Description | Необходимые поля для каждого документа | Примечания |
+| @search.action | Описание | Необходимые поля для каждого документа | Примечания |
 | -------------- | ----------- | ---------------------------------- | ----- |
 | `upload` |Операция `upload` аналогична операции upsert, которая добавляет документ, если он новый, и обновляет либо заменяет его, если он уже существует. |Поле key, а также другие поля, которые вы хотите определить. |При обновлении или замене существующего документа все поля, не указанные в запросе, получат значение `null`. Это происходит, даже если для поля указано непустое значение. |
 | `merge` |Обновляет существующий документ с использованием указанных полей. Если документ не существует в индексе, объединение завершится ошибкой. |Поле key, а также другие поля, которые вы хотите определить. |Поля, указанные в запросе на объединение, заменяют собой существующие поля документа. В пакет SDK для .NET входят поля типа `DataType.Collection(DataType.String)` . В REST API сюда входят поля типа `Collection(Edm.String)` . Например, если документ содержит поле `tags` со значением `["budget"]` и вы выполняете операцию объединения со значением `["economy", "pool"]` для поля `tags`, в итоге поле `tags` примет значение `["economy", "pool"]`, а не `["budget", "economy", "pool"]`. |
@@ -98,7 +98,7 @@ ms.locfileid: "88932769"
 > [!TIP]
 > Многочисленные [примеры кода когнитивный Поиск Azure](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=search) включают в себя встроенные или готовые наборы данных, предлагающие простой способ начать работу. На портале также доступен пример индексатора и источника данных, представленного небольшим набором данных, связанных с недвижимостью (realestate-us-sample). При запуске предварительно настроенного индексатора с примером источника данных создается и загружается индекс с документами. Затем вы можете создать запрос к этому индексу, используя проводник поиска или программные средства.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Обзор индексатора](search-indexer-overview.md)
 + [Руководство по созданию первого индекса службы поиска Azure на портале](search-get-started-portal.md)

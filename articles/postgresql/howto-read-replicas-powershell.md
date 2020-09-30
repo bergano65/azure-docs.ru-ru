@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/08/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 0caa8e2911046e18e63748fe5bde4b4c965eb965
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b57fe5879c45225f8ba22e2c94aceeb5b38369e3
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502548"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539458"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-postgresql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "87502548"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -38,7 +38,7 @@ ms.locfileid: "87502548"
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 > [!IMPORTANT]
-> Функция чтения реплики доступна только для серверов базы данных Azure для PostgreSQL в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
+> Функция чтения реплики доступна только для серверов базы данных Azure для PostgreSQL в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что сервер-источник находится в одной из этих ценовых категорий.
 
 ### <a name="create-a-read-replica"></a>Создание реплики чтения
 
@@ -54,7 +54,7 @@ Get-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| Название | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 
@@ -65,14 +65,14 @@ Get-AzPostgreSqlServer -Name mrdemoserver -ResourceGroupName myresourcegroup |
 
 Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md).
 
-По умолчанию реплики чтения создаются с той же конфигурацией сервера, что и у главного, если не указан параметр **SKU** .
+По умолчанию реплики чтения создаются с той же конфигурацией сервера, что и у источника, если не указан параметр **SKU** .
 
 > [!NOTE]
-> Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.
+> Рекомендуется, чтобы конфигурация сервера реплики оставалась равна или больше, чем база данных-источник, чтобы гарантировать, что реплика сможет поддерживать базу данных master.
 
-### <a name="list-replicas-for-a-master-server"></a>Перечисление реплик для главного сервера
+### <a name="list-replicas-for-a-primary-server"></a>Вывод списка реплик для сервера-источника
 
-Чтобы просмотреть все реплики для данного главного сервера, выполните следующую команду:
+Чтобы просмотреть все реплики для данного сервера-источника, выполните следующую команду:
 
 ```azurepowershell-interactive
 Get-AzMariaDReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
@@ -83,7 +83,7 @@ Get-AzMariaDReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
-| ServerName | mydemoserver | Имя или идентификатор главного сервера. |
+| ServerName | mydemoserver | Имя или идентификатор сервера источника. |
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
@@ -93,12 +93,12 @@ Get-AzMariaDReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
 Remove-AzPostgreSqlServer -Name mydemoreplicaserver -ResourceGroupName myresourcegroup
 ```
 
-### <a name="delete-a-master-server"></a>Удаление главного сервера
+### <a name="delete-a-primary-server"></a>Удаление сервера-источника
 
 > [!IMPORTANT]
-> Удаление главного сервера приводит к остановке репликации на все серверы-реплики и удалению самого главного сервера. Серверы-реплики становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
+> Удаление сервера-источника останавливает репликацию на все серверы-реплики и удаляет сам основной сервер. Серверы-реплики становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
-Чтобы удалить главный сервер, можно выполнить `Remove-AzPostgreSqlServer` командлет.
+Чтобы удалить сервер-источник, можно выполнить `Remove-AzPostgreSqlServer` командлет.
 
 ```azurepowershell-interactive
 Remove-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup

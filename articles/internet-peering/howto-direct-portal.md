@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: how-to
 ms.date: 5/19/2020
 ms.author: derekol
-ms.openlocfilehash: e49462612b58163c2ac51b78584761d0d8b8bd06
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a89ce873c53e94036aa4f8ac2c2870365924187
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700571"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537214"
 ---
 # <a name="create-or-modify-a-direct-peering-by-using-the-azure-portal"></a>Создание или изменение прямого пиринга с помощью портала Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "84700571"
 1. На странице **Create a Peering** (Создание пиринга) заполните поля на вкладке **Основные**, как показано ниже.
 
 
-    ![Регистрация в Службе пиринга](./media/setup-basics-tab.png)
+    ![На снимке экрана показана вкладка "Создание одноранговой страницы" с именем "создать новую ссылку".](./media/setup-basics-tab.png)
 
 2. Выберите свою подписку Azure.
 
@@ -59,7 +59,7 @@ ms.locfileid: "84700571"
 
 
 
-    ![Регистрация в Службе пиринга](./media/setup-direct-basics-filled-tab.png)
+    ![На снимке экрана показана вкладка "Создание одноранговой страницы" со всеми указанными значениями.](./media/setup-direct-basics-filled-tab.png)
 
 
 #### <a name="configure-connections-and-submit"></a>Настройка подключений и отправка

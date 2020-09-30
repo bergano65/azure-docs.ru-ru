@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.custom: dpalled
-ms.openlocfilehash: 43d3e80c66d54e3f7518246f7d75c5661995578c
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 4d4e7f4433171e593f5e61ab6f48afc640857d9b
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89489040"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91536585"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Добавление поддержки для типа данных Long в Azure Time Series Insights Gen2
 
@@ -72,11 +72,11 @@ ms.locfileid: "89489040"
 
 *Предыдущее определение переменной:*
 
-[![Предыдущее определение переменной](media/time-series-insights-long-data-type/var-def-previous.png)](media/time-series-insights-long-data-type/var-def-previous.png#lightbox)
+[![На снимке экрана показано диалоговое окно Добавление новой переменной для переменной PropertyValue numeric.](media/time-series-insights-long-data-type/var-def-previous.png)](media/time-series-insights-long-data-type/var-def-previous.png#lightbox)
 
 *Новое определение переменной:*
 
-[![Создать определение переменной](media/time-series-insights-long-data-type/var-def.png)](media/time-series-insights-long-data-type/var-def.png#lightbox)
+[![На снимке экрана показано диалоговое окно Добавление новой переменной для переменной PropertyValue с пользовательским значением numeric.](media/time-series-insights-long-data-type/var-def.png)](media/time-series-insights-long-data-type/var-def.png#lightbox)
 
 В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 
@@ -139,11 +139,11 @@ ms.locfileid: "89489040"
 
 *Предыдущее определение переменной:*
 
-[![Предыдущее определение переменной](media/time-series-insights-long-data-type/var-def-cat-previous.png)](media/time-series-insights-long-data-type/var-def-cat-previous.png#lightbox)
+[![На снимке экрана показано диалоговое окно Добавление новой переменной для переменной PropertyValue, Категория.](media/time-series-insights-long-data-type/var-def-cat-previous.png)](media/time-series-insights-long-data-type/var-def-cat-previous.png#lightbox)
 
 *Новое определение переменной:*
 
-[![Создать определение переменной](media/time-series-insights-long-data-type/var-def-cat.png)](media/time-series-insights-long-data-type/var-def-cat.png#lightbox)
+[![На снимке экрана показано диалоговое окно Добавление новой переменной для переменной PropertyValue с пользовательским значением по категориям.](media/time-series-insights-long-data-type/var-def-cat.png)](media/time-series-insights-long-data-type/var-def-cat.png#lightbox)
 
 В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)также можно использовать **объединение ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))** .
 

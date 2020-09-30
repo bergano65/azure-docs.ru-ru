@@ -8,15 +8,15 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 09/25/2020
+ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: f93b6ab43e1dbf9230c92d22f8fb22ca48eb720e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2f05ab2bc7e514f3e58f383faf47a74ef69f94b6
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91275767"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535099"
 ---
 # <a name="configure-and-submit-training-runs"></a>Настройка и отправка обучающих запусков
 
@@ -128,7 +128,7 @@ src = ScriptRunConfig(source_directory=project_folder,
 Если вы хотите переопределить максимально допустимое для выполнения значение по умолчанию, это можно сделать с помощью **`max_run_duration_seconds`** параметра. Система попытается автоматически отменить выполнение, если оно занимает больше времени, чем это значение.
 
 ### <a name="specify-a-distributed-job-configuration"></a>Укажите конфигурацию распределенного задания
-Если вы хотите выполнить распределенное задание обучения, предоставьте параметру конфигурацию распределенного задания **`distributed_job_config`** . Поддерживаемые типы конфигурации включают [мпиконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py&preserve-view=true), [тенсорфловконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration?view=azure-ml-py&preserve-view=true). 
+Если вы хотите выполнить распределенное задание обучения, предоставьте параметру конфигурацию распределенного задания **`distributed_job_config`** . Поддерживаются следующие типы конфигурации: [мпиконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py&preserve-view=true), [тенсорфловконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration?view=azure-ml-py&preserve-view=true)и [питорчконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?view=azure-ml-py&preserve-view=true). 
 
 Дополнительные сведения и примеры выполнения распределенных заданий хоровод, TensorFlow и PyTorch см. в следующих статьях:
 
@@ -154,7 +154,7 @@ run.wait_for_completion(show_output=True)
 >
 > Чтобы создать артефакты во время обучения (например, к файлам моделей, контрольным точкам, файлам данных или графическим изображениям), запишите их в папку `./outputs`.
 >
-> Аналогичным образом можно записать любые журналы выполнения обучения в папку `./logs`. Чтобы использовать [интеграцию TensorBoard](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/export-run-history-to-tensorboard/export-run-history-to-tensorboard.ipynb) Машинного обучения Azure, убедитесь, что вы записываете журналы TensorBoard в эту папку. Во время выполнения вы сможете запустить TensorBoard и выполнить потоковую передачу этих журналов.  Позже вы также сможете восстановить журналы из любого из ваших предыдущих запусков.
+> Аналогичным образом можно записать любые журналы выполнения обучения в папку `./logs`. Чтобы использовать [интеграцию TensorBoard](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/track-and-monitor-experiments/tensorboard/export-run-history-to-tensorboard/export-run-history-to-tensorboard.ipynb) Машинного обучения Azure, убедитесь, что вы записываете журналы TensorBoard в эту папку. Во время выполнения вы сможете запустить TensorBoard и выполнить потоковую передачу этих журналов.  Позже вы также сможете восстановить журналы из любого из ваших предыдущих запусков.
 >
 > Например, чтобы загрузить файл, записанный в папку *выходные данные* локального компьютера, после запуска удаленного обучения выполните такую команду: `run.download_file(name='outputs/my_output_file', output_file_path='my_destination_path')`
 
@@ -165,8 +165,8 @@ run.wait_for_completion(show_output=True)
 ## <a name="notebook-examples"></a>Примеры записных книжек
 
 В этих записных книжках приведены примеры настройки запусков для различных сценариев обучения.
-* [how-to-use-azureml/training](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)
-* [how-to-use-azureml/ml-frameworks](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks)
+* [Обучение различным целям вычислений](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)
+* [Обучение с помощью платформ ML](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks)
 * [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/image-classification-mnist-data/img-classification-part1-training.ipynb)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]

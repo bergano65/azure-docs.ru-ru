@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
-ms.openlocfilehash: f2531ebfd8b1eafc04fa6eda660b0eec3d1147f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5a662119d9ccf95eac23785c5fe9a787da882531
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81417075"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537401"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
@@ -23,7 +23,7 @@ ms.locfileid: "81417075"
 
 Можно сохранить учетные данные или секретные значения в Azure Key Vault и использовать их во время выполнения конвейера для передачи в действия.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что фабрика данных имеет одну связь.
 
@@ -35,7 +35,7 @@ ms.locfileid: "81417075"
 
 2. Откройте политики доступа к хранилищу ключей и добавьте разрешения управляемого удостоверения для получения и перечисления секретов.
 
-    ![Политики доступа Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies.png)
+    ![Снимок экрана, на котором показана страница "политики доступа" с выделенным действием "добавить политику доступа".](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies.png)
 
     ![Политики доступа Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies-2.png)
 
@@ -51,10 +51,10 @@ ms.locfileid: "81417075"
 
     |Свойство  |Значение  |
     |---------|---------|
-    |Безопасный вывод     |True         |
+    |Безопасный вывод     |Да         |
     |URL-адрес     |[Значение URI секрета]? API-Version = 7.0         |
     |Метод     |GET         |
-    |Проверка подлинности     |MSI         |
+    |Аутентификация     |MSI         |
     |Ресурс        |https://vault.azure.net       |
 
     ![Веб-действие](media/how-to-use-azure-key-vault-secrets-pipeline-activities/webactivity.png)

@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: how-to
 ms.date: 5/19/2020
 ms.author: derekol
-ms.openlocfilehash: 1eaf7413b01bceacbcbf3640bfe654fdad026672
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7e10cd91eadd338217845b1504e8e9160bccfc98
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700674"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537197"
 ---
 # <a name="create-or-modify-an-exchange-peering-with-route-server-in-azure-portal"></a>Создание или изменение пиринга Exchange с помощью сервера маршрутов в портал Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "84700674"
 1.  В разделе **прямое одноранговое соединение**введите следующие сведения о сеансе BGP:
 
     > [!div class="mx-imgBorder"]
-    > ![Настройка сервера маршрутизации с прямым пирингом](./media/setup-exchange-conf-tab-direct-route.png)
+    > ![На снимке экрана показана область подключения с прямым Пирингом с добавленными сведениями.](./media/setup-exchange-conf-tab-direct-route.png)
 
 
      * Средство пиринга выберите соответствующее физическое расположение для пиринга
@@ -99,19 +99,19 @@ ms.locfileid: "84700674"
 1. Выберите **зарегистрированный ASN** в разделе Параметры.
 
     > [!div class="mx-imgBorder"]
-    > ![Настройка сервера маршрутизации с прямым пирингом](./media/setup-exchange-registered-asn.png)
+    > ![На снимке экрана показана панель пиринга с зарегистрированным пунктом меню NS с именем out.](./media/setup-exchange-registered-asn.png)
 
 1. Выберите **Добавить зарегистрированный ASN** , чтобы создать нового клиента ASN в подписке Exchange.
 
     > [!div class="mx-imgBorder"]
-    > ![Настройка сервера маршрутизации с прямым пирингом](./media/setup-exchange-register-new-asn.png)
+    > ![На снимке экрана показана регистрация панели S N с текстовыми полями имя и S N.](./media/setup-exchange-register-new-asn.png)
 
 1. В разделе Регистрация ASN выберите имя, заполните поле ASN клиента и нажмите кнопку Сохранить.
 
 1. В разделе зарегистрированный ASN для каждого ASN будет назначен связанный ключ префикса. В качестве поставщика Exchange вам потребуется предоставить этот ключ префикса клиенту, чтобы он мог зарегистрировать службу пиринга в подписке.
 
     > [!div class="mx-imgBorder"]
-    > ![Настройка сервера маршрутизации с прямым пирингом](./media/setup-exchange-register-asn-prefixkey.png)
+    > ![На снимке экрана показана зарегистрированная панель NS с ключами префикса.](./media/setup-exchange-register-asn-prefixkey.png)
 
 
 

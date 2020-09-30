@@ -2,20 +2,18 @@
 title: Добавление сущностей — LUIS
 description: Создание сущностей для извлечения данных ключей из фразы продолжительностью пользователей в приложениях Language Understanding (LUIS). Извлеченные данные сущности используются клиентским приложением для фуллфил запросов клиентов.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
-ms.author: diberry
-ms.openlocfilehash: 61e53e6110e545d253dae81e94f8738ee17c4141
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: c5c6836c2d68036bf2b9c5abe191943537349b8d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344481"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540971"
 ---
 # <a name="add-entities-to-extract-data"></a>Добавление сущностей для извлечения данных
 
@@ -72,7 +70,7 @@ ms.locfileid: "84344481"
 1. Войдите на портал [LUIS](https://www.luis.ai) и выберите **Подписка** и **Ресурс для разработки**, чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
 1. Откройте приложение, выбрав его имя на странице " **Мои приложения** ".
 1. В разделе **Сборка** выберите **сущности** на левой панели, а затем щелкните **+ создать**.
-1. В диалоговом окне **Создание типа сущности** введите имя сущности и выберите **полученные от компьютера**, а затем выберите. Чтобы добавить подсущности, выберите **Добавить структуру**. Нажмите кнопку **создания**.
+1. В диалоговом окне **Создание типа сущности** введите имя сущности и выберите **полученные от компьютера**, а затем выберите. Чтобы добавить подсущности, выберите **Добавить структуру**. Выберите **Создать**.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана создания сущности, полученной от компьютера.](media/add-entities/machine-learned-entity-with-structure.png)
@@ -179,14 +177,14 @@ ms.locfileid: "84344481"
 1. Чтобы добавить метку к роли, выберите метку сущности (сплошная линия под текстом) в примере utterance, а затем в раскрывающемся списке выберите **Просмотр в области сущностей** .
 
     > [!div class="mx-imgBorder"]
-    > ![Снимок экрана: Выбор представления в палитре сущностей](media/add-entities/view-in-entity-pane.png)
+    > ![Снимок экрана: Отображение выбранного элемента меню области сущностей.](media/add-entities/view-in-entity-pane.png)
 
     Справа откроется палитра сущностей.
 
 1. Выберите сущность, затем перейдите в нижнюю часть палитры и выберите роль.
 
     > [!div class="mx-imgBorder"]
-    > ![Снимок экрана: Выбор представления в палитре сущностей](media/add-entities/select-role-in-entity-palette.png)
+    > ![На снимке экрана показано, где выбрать роль.](media/add-entities/select-role-in-entity-palette.png)
 
 <a name="add-pattern-any-entities"></a>
 <a name="add-a-patternany-entity"></a>

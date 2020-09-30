@@ -3,20 +3,18 @@ title: Намерения и сущности — LUIS
 titleSuffix: Azure Cognitive Services
 description: Одна цель представляет задачу или действие, которые пользователь хочет выполнить. Эта цель или задача выражаются в высказывании пользователя. Определите набор намерений, которые соответствуют действиям пользователей в вашем приложении.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.author: diberry
-ms.openlocfilehash: f2e4f91dbc03853d6f1a5240f693ea8ff510e8c4
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: cf138248e878b21531df2035dfeda1b90162ea99
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82101082"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91536109"
 ---
 # <a name="intents-in-your-luis-app"></a>Целей в приложении LUIS
 
@@ -27,9 +25,9 @@ ms.locfileid: "82101082"
 Намерения приложения для путешествий   |   Примеры высказываний   |
 ------|------|
  BookFlight     |   "Book me a flight to Rio next week" ("Забронировать авиаперелет в Рио на следующей неделе") <br/> "Fly me to Rio on the 24th" ("Найти авиаперелет в Рио 24-го числа") <br/> "I need a plane ticket next Sunday to Rio de Janeiro" ("Мне нужен билет на самолет в Рио-де-Жанейро на следующее воскресенье")    |
- Greeting     |   "Hi" ("Привет") <br/>"Hello" <br/>"Good morning" ("Доброе утро")  |
+ Приветствие     |   "Hi" ("Привет") <br/>"Hello" <br/>"Good morning" ("Доброе утро")  |
  CheckWeather | "What's the weather like in Boston?" ("Какая сейчас погода в Бостоне?") <br/> "Show me the forecast for this weekend" ("Покажите мне прогноз на эту неделю") |
- Нет         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
+ Отсутствуют         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
 
 Все приложения поставляются с предопределенной намерением «None» ([нет](#none-intent)), что является резервным условием.
 
@@ -41,7 +39,7 @@ ms.locfileid: "82101082"
 
 Если вы хотите получить баллы для всех целей для utterance, можно указать флаг в строке запроса API-интерфейса прогнозирования.
 
-|Версия API прогнозирования|Флаг|
+|Версия API прогнозирования|Flag|
 |--|--|
 |V2|`verbose=true`|
 |V3|`show-all-intents=true`|
@@ -53,9 +51,9 @@ ms.locfileid: "82101082"
 
  Создайте намерение в том случае, когда _намерение_ пользователя вызывает выполнения действия в вашем клиентском приложении, например вызов функции checkweather(). Затем создайте сущности для представления параметров, необходимых для выполнения действия.
 
-|Блокировка с намерением   | Объект | Пример фразы   |
+|Блокировка с намерением   | Сущность | Пример фразы   |
 |------------------|------------------------------|------------------------------|
-| CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | Что такое Погода, как в `Seattle` `tomorrow`? |
+| CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | Что такое Погода, как в `Seattle` `tomorrow` ? |
 | CheckWeather | { "type": "date_range", "entity": "this weekend" } | Show me the forecast for (Покажите мне прогноз на) `this weekend` |
 ||||
 
@@ -100,7 +98,7 @@ ms.locfileid: "82101082"
 ### <a name="request-help-for-apps-with-significant-number-of-intents"></a>Если намерений слишком много, обратитесь в службу поддержки
 Если уменьшение числа намерений или разделение намерений на несколько приложений не помогает добиться цели, обратитесь в службу поддержки. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с дополнительными сведениями о [сущностях](luis-concept-entity-types.md), важных словах, относящихся к намерениям
 * Узнайте, как [добавить намерения в приложение LUIS и управлять ими](luis-how-to-add-intents.md).

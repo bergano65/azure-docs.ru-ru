@@ -3,20 +3,18 @@ title: Предварительно построенные сущности URL-
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность url в службе "Распознавание речи" (LUIS).
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 10/04/2019
-ms.author: diberry
-ms.openlocfilehash: 49f145ce3e9022826abad5d274dd611bb2cc6530
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: bc33fd1b90306a016c419f227fb9e73e83e8ea83
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78270346"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535259"
 ---
 # <a name="url-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность url для приложения LUIS
 Сущность URL-адреса извлекает URL-адреса с доменными именами или IP-адресами. Поскольку эта сущность уже обучена, добавлять в приложения примеры фраз, содержащие URL-адреса, не нужно. Сущность URL-адреса поддерживается только для такого языка и региональных параметров: `en-us`.
@@ -32,7 +30,7 @@ ms.locfileid: "78270346"
 
 #### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий код JSON имеет `verbose` параметр со значением: `false`
+Следующий код JSON имеет параметр со `verbose` значением `false` :
 
 ```json
 "entities": {
@@ -43,7 +41,7 @@ ms.locfileid: "78270346"
 ```
 #### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
-Следующий код JSON имеет `verbose` параметр со значением: `true`
+Следующий код JSON имеет параметр со `verbose` значением `true` :
 
 ```json
 "entities": {
@@ -69,7 +67,7 @@ ms.locfileid: "78270346"
 ```
 #### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
-В следующем примере показано решение проблемы, https://www.luis.ai которая представляет собой хороший пример использования искусственных служб.
+В следующем примере показано решение проблемы, которая https://www.luis.ai представляет собой хороший пример использования искусственных служб.
 
 ```json
 "entities": [
@@ -84,7 +82,7 @@ ms.locfileid: "78270346"
 
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

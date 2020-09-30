@@ -8,12 +8,12 @@ ms.author: ramero
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: c32e1bc6e219ff645223cc34cf78991e229b86f0
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 97797e309c32c6ea996d5ae1901b9a266a683173
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935931"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537639"
 ---
 # <a name="add-scoring-profiles-to-an-azure-cognitive-search-index"></a>Добавление профилей повышения в индекс службы Когнитивного поиска Azure
 
@@ -227,7 +227,7 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 > [!NOTE]  
 >  Функция оценки может применяться только к фильтруемым полям.  
 
-|Атрибут|Описание|  
+|attribute|Описание|  
 |---------------|-----------------|  
 |`name`|Обязательный. Это имя профиля оценки. К нему применяются те же соглашения об именовании, что и к полям. Оно должно начинаться с буквы, не может содержать точки, двоеточия и символы "@", а также не может начинаться с фразы azureSearch (с учетом регистра).|  
 |`text`|Содержит свойство Weights.|  
@@ -254,7 +254,7 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 ##  <a name="set-interpolations"></a><a name="bkmk_interpolation"></a> Задание интерполяций  
  Интерполяции позволяют задать форму наклона, используемого для оценки. Так как оценка идет по убыванию, наклон всегда снижается, но интерполяция определяет кривую нисходящего наклона. Можно использовать следующие типы интерполяции.  
 
-| Интерполяции | Description |  
+| Интерполяции | Описание |  
 |-|-|  
 |`linear`|Для элементов, которые находятся в диапазоне от минимального до максимального значения, применяется постоянно убывающая величина. Линейная интерполяция — это интерполяция для оценки профиля по умолчанию.|  
 |`constant`|Для элементов, которые находятся между начальным и конечным диапазонами, к результатам ранжирования применяется постоянное повышение приоритета.|  
@@ -270,7 +270,7 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 
  Следующая таблица содержит несколько примеров.  
 
-|Duration|boostingDuration|  
+|Длительность|boostingDuration|  
 |--------------|----------------------|  
 |1 день|"P1D"|  
 |2 дня и 12 часов|"P2DT12H"|  
@@ -279,8 +279,8 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 
  Дополнительные примеры см. в [документе о типах данных в схеме XML (веб-сайт W3.org)](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration).  
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
-+ [Справочник по REST API](/rest/api/searchservice/)   
-+ [Создание API индекса](/rest/api/searchservice/create-index)   
-+ [Библиотеки службы "Поиск Azure" для .NET](/dotnet/api/overview/azure/search?view=azure-dotnet)
++ [Справочник по REST API](/rest/api/searchservice/)
++ [Создание API индекса](/rest/api/searchservice/create-index)
++ [Библиотеки службы "Поиск Azure" для .NET](/dotnet/api/overview/azure/search?)
