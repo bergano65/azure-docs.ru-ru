@@ -3,19 +3,17 @@ title: Шаблон. любой тип сущности — LUIS
 titleSuffix: Azure Cognitive Services
 description: Patterns.any — это местозаполнитель переменной длины, используемый только в высказывании шаблона для пометки начала и окончания сущности.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 09/29/2019
-ms.author: diberry
-ms.openlocfilehash: 5164bf55ef8233cf34a470524da3bc852678d79a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ec23be3709cebc534c059a21c52452abff683b18
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75979164"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542212"
 ---
 # <a name="patternany-entity"></a>Сущность Pattern.any
 
@@ -106,6 +104,6 @@ Patterns.any — это местозаполнитель переменной �
 
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом [руководстве](luis-tutorial-pattern.md)используется **шаблон. Любая** сущность для извлечения данных из фразы продолжительностью, где фразы продолжительностью хорошо отформатированы и где конец данных можно легко путать с остальными словами utterance.

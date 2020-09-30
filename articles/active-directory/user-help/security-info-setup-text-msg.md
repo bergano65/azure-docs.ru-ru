@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: 0fe191ac827c76afd497896611430f6efc6283aa
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: c68e01e0eb7c926f47c99b16efa87d23a10b6711
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747241"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537039"
 ---
 # <a name="set-up-text-messaging-as-your-verification-method"></a>Настройка текстовых сообщений в качестве метода проверки
 
@@ -52,7 +52,7 @@ ms.locfileid: "83747241"
 
 4. На странице **Телефон** введите номер телефона, который вы используете на мобильном устройстве, а затем выберите **Отправить мне код в SMS** и щелкните **Далее**.
 
-    ![Добавление номера телефона и выбор текстовых сообщений](media/security-info/securityinfo-myprofile-phonetext-addnumber.png)
+    ![Снимок экрана, на котором отображается страница "Phone" с выбранным параметром "текст с кодом".](media/security-info/securityinfo-myprofile-phonetext-addnumber.png)
 
 5. Введите код из текстового сообщения, отправленного на ваше мобильное устройство, а затем щелкните **Далее**.
 

@@ -3,20 +3,18 @@ title: Хранилище данных — LUIS
 titleSuffix: Azure Cognitive Services
 description: LUIS хранит данные в зашифрованном виде в хранилище данных Azure, соответствующем региону, который указан ключом.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.author: diberry
-ms.openlocfilehash: e3028a9f046edb4013d8a2d6ec88d8c3cb2ca489
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: b74621f357613bc60457ab4846b58f6f85009401
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84691719"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541889"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Хранение и удаление данных в службе "Распознавание речи" (LUIS) Cognitive Services
 LUIS хранит данные в зашифрованном виде в хранилище данных Azure, соответствующем региону, который указан ключом. Эти данные хранятся в течение 30 дней. 
@@ -64,7 +62,7 @@ LUIS хранит данные в зашифрованном виде в хра�
 * оно не имеет текущего назначенного ключа;
 * в него не входили пользователи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте больше об экспорте и удалении приложения](luis-how-to-start-new-app.md)

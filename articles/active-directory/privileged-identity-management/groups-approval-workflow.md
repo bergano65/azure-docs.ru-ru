@@ -15,12 +15,12 @@ ms.date: 07/27/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3fbb92c2e3623f5fd9571cd94ae521a41139dd6
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 0a3b6dad33ce678478a201dc8b7b612f4b8507c0
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87505865"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91536993"
 ---
 # <a name="approve-activation-requests-for-privileged-access-group-members-and-owners-preview"></a>Утверждение запросов на активацию для членов группы привилегированного доступа и владельцев (Предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "87505865"
 
 При наличии запроса роли ресурса Azure, ожидающего вашего утверждения, вы, как делегированное утверждающее лицо, получите уведомление по электронной почте. Ожидающие запросы можно просмотреть в управление привилегированными пользователями.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Откройте **Azure AD privileged Identity Management**.
 
@@ -46,7 +46,7 @@ ms.locfileid: "87505865"
 
 1. Найдите и выберите запрос, который требуется утвердить, и нажмите кнопку **утвердить**.
 
-    ![Утверждение запросов — область утверждения или запрета с данными и полем обоснования](./media/groups-approval-workflow/groups-confirm-approval.png)
+    ![Снимок экрана, на котором показана страница "утверждение запросов" с выделенными кнопками "утвердить" и "подтвердить".](./media/groups-approval-workflow/groups-confirm-approval.png)
 
 1. В поле **обоснование** введите коммерческое обоснование.
 

@@ -3,20 +3,18 @@ title: Корпоративные концепции — LUIS
 titleSuffix: Azure Cognitive Services
 description: Принципы разработки больших приложений LUIS или нескольких приложений, использующих LUIS и QnA Maker.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.author: diberry
-ms.openlocfilehash: efef3faf3cc4ff04235254f0ff6538d92a831196
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d8c88883b839ff47ef57a17378f43918e9ecf7e2
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79221065"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91536126"
 ---
 # <a name="enterprise-strategies-for-a-luis-app"></a>Корпоративные стратегии для разработки приложения LUIS
 Ознакомьтесь с этими стратегиями разработки корпоративных приложений.
@@ -74,9 +72,9 @@ Bot в чате получает utterance, а затем отправляет �
 * [Пакет SDK для Bot Framework](https://github.com/Microsoft/botframework)
 * [Учебник по модели диспетчеризации](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&branch=master&tabs=cs)
 * [Диспетчер CLI](https://github.com/Microsoft/botbuilder-tools)
-* Образец модели диспетчеризации — [.NET](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch), [node. js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch)
+* Образец модели подготовки к отправке — [.NET](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch), [Node.js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [выполнить пакетное тестирование](luis-how-to-batch-test.md)
 

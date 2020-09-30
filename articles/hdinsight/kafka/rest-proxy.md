@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: has-adal-ref, devx-track-python
 ms.date: 04/03/2020
-ms.openlocfilehash: 508d054bc4eed88867bb6e3282edbafaae9a5247
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 97bd71dd5a70a867f45915a5a5f95f6513f2a824
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89298051"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541736"
 ---
 # <a name="interact-with-apache-kafka-clusters-in-azure-hdinsight-using-a-rest-proxy"></a>Взаимодействие с кластерами Apache Kafka в Azure HDInsight через прокси-сервер REST
 
@@ -63,11 +63,11 @@ ms.locfileid: "89298051"
 
 1. В процессе создания кластера Kafka установите на вкладке **Безопасность и сеть** флажок **Включить прокси-сервер REST для Kafka**.
 
-     ![Включение прокси-сервера REST для Kafka и выбор группы безопасности](./media/rest-proxy/azure-portal-cluster-security-networking-kafka-rest.png)
+     ![На снимке экрана показана страница Создание кластера H D Insights с выбранной безопасностью и сетью.](./media/rest-proxy/azure-portal-cluster-security-networking-kafka-rest.png)
 
 1. Щелкните **Выбор группы безопасности**. Из предложенного списка выберите ту группу безопасности, которая должна иметь доступ к прокси-серверу REST. Чтобы найти нужную группу безопасности, можно воспользоваться полем поиска. В нижней части страницы нажмите кнопку **Выбрать**.
 
-     ![Включение прокси-сервера REST для Kafka и выбор группы безопасности](./media/rest-proxy/azure-portal-cluster-security-networking-kafka-rest2.png)
+     ![На снимке экрана показана страница Создание кластера H D Insights с возможностью выбора группы безопасности.](./media/rest-proxy/azure-portal-cluster-security-networking-kafka-rest2.png)
 
 1. Выполните остальные действия для создания кластера, как описано в статье [Создание кластера Apache Kafka в Azure HDInsight с помощью портала Azure](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-get-started).
 

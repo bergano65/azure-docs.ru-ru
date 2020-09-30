@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 08/03/2018
 ms.author: curtand
 ms.reviewer: jairoc
-ms.openlocfilehash: 146b867f1075a7eac1b6817f5fc8dbcd7ba04b02
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: efb3ee24add847baf8264eccdf71278be5ee9496
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333415"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91536976"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.
@@ -48,7 +48,7 @@ ms.locfileid: "91333415"
 
 4. На мобильном устройстве подтвердите устройство, чтобы оно могло получить доступ к вашей учетной записи. 
 
-    ![Окно уведомления на мобильном устройстве](./media/user-help-join-device-on-network/join-device-oobe-mobile.png)
+    ![Снимок экрана, на котором показан экран уведомления "введите пароль".](./media/user-help-join-device-on-network/join-device-oobe-mobile.png)
 
 5. Завершите процесс OOBE, включая настройку параметров конфиденциальности и Windows Hello (при необходимости).
 
@@ -63,7 +63,7 @@ ms.locfileid: "91333415"
 
 2. Выберите **доступ к рабочей или учебной**учетной записи и убедитесь, что вы видите текст с сообщением о **подключении к *\<your_organization>* Azure AD**.
 
-    ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-join-device-on-network/join-device-oobe-verify.png)
+    ![Снимок экрана с выбранным окном "доступ к рабочей или учебной организации" с выбранной учетной записью "подключено к Azure AD".](./media/user-help-join-device-on-network/join-device-oobe-verify.png)
 
 
 ## <a name="to-join-an-already-configured-windows-10-device"></a>Для присоединения уже настроенного устройства Windows 10

@@ -3,15 +3,14 @@ title: Извлечение данных — LUIS
 description: Извлечение данных из utterance текста с помощью целей и сущностей. Сведения о том, какие типы данных можно извлечь из Language Understanding (LUIS).
 ms.service: cognitive-services
 ms.subservice: language-understanding
-author: diberry
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: c69971b36bf945086d1a8f398043444071acea5c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 9bcc3d08fa29109cf4178f8eb0c3efe661323ef0
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91324830"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541787"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Извлечение данных из текста речевого фрагмента с помощью намерений и сущностей
 Служба LUIS дает возможность получать информацию из высказываний на естественном языке пользователя. Информация извлекается таким образом, который позволяет использовать ее программой, приложением или чат-ботом для выполнения определенных действий. В следующих разделах содержатся сведения о данных, возвращаемых из намерений и сущностей, с примерами JSON.
