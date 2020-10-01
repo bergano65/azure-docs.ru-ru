@@ -232,6 +232,8 @@
               href: how-to-use-perfinsights.md
             - name: Расширение для диагностики производительности
               href: performance-diagnostics-vm-extension.md
+            - name: 'Устранение неполадок, связанных с большой загрузкой ЦП для виртуальной машины Windows Azure'
+              href: troubleshoot-high-cpu-issues-azure-windows-vm.md
         - name: Linux
           items:
             - name: Как использовать PerfInsights

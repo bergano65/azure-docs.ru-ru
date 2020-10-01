@@ -4,6 +4,8 @@
   items:
     - name: Общие сведения о Базе данных Azure для PostgreSQL
       href: overview.md
+    - name: Какой выбрать вариант развертывания PostgreSQL?
+      href: overview-postgres-choose-server-options.md
     - name: Обновления службы
       items:
         - name: Срок действия корневого сертификата SSL

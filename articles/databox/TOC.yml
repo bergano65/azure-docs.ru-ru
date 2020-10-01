@@ -78,6 +78,8 @@
                   href: security-baseline.md
                 - name: Проверка состояния защиты
                   href: data-box-security.md
+            - name: Перемещение списков управления доступом и метаданных
+              href: data-box-file-acls-preservation.md
             - name: ВОПРОСЫ И ОТВЕТЫ
               href: data-box-faq.md
         - name: Практическое руководство

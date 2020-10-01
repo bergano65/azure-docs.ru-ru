@@ -1,23 +1,23 @@
 ### YamlMime:Landing
 title: Документация по управлению приложениями
-summary: Azure Active Directory предоставляет простой и безопасный доступ к облачным и локальным приложениям. Кроме того, вам не нужно управлять паролями. Конечные пользователи входят в систему только один раз и получают доступ к Microsoft 365 и тысячам других приложений. Узнайте, как развертывать приложения и управлять ими с помощью наших кратких инструкций, руководств и пособий.
+summary: Azure Active Directory — это система управления идентификацией и доступом (IAM). Она выполняет роль единого хранилища всех сведений о цифровых удостоверениях. Вы можете настроить программные приложения так, чтобы они использовали Azure AD для хранения информации о своих пользователях.
 metadata:
   title: Документация по управлению приложениями
-  description: Azure Active Directory предоставляет простой и безопасный доступ к облачным и локальным приложениям. Кроме того, вам не нужно управлять паролями. Конечные пользователи входят в систему только один раз и получают доступ к Microsoft 365 и тысячам других приложений. Узнайте, как развертывать приложения и управлять ими с помощью наших кратких инструкций, руководств и пособий.
+  description: Azure AD представляет собой Систему управления идентификацией и доступом (IAM). Она выполняет роль единого хранилища всех сведений о цифровых удостоверениях. Вы можете настроить программные приложения так, чтобы они использовали Azure AD для хранения информации о своих пользователях.
   ms.service: active-directory
   ms.subservice: app-mgmt
   ms.workload: identity
   ms.topic: landing-page
-  ms.date: 10/10/2019
+  ms.date: 09/28/2020
   author: kenwith
   ms.author: kenwith
   manager: celested
-  ms.openlocfilehash: dc056bbfb880b8cdfc2326edc3036657803f24d7
-  ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+  ms.openlocfilehash: e3232f319c14af6724bc5b844f71a5c6ff34bfa9
+  ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88209110"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91535004"
 landingContent:
 - title: Сведения об управлении приложениями
   linkLists:
@@ -27,75 +27,91 @@ landingContent:
       url: what-is-application-management.md
     - text: Сведения о едином входе
       url: what-is-single-sign-on.md
+- title: Начало работы
+  linkLists:
   - linkListType: quickstart
     links:
-    - text: Серия кратких руководств
+    - text: Просмотр приложений
       url: view-applications-portal.md
-- title: Управление облачными приложениями и единый вход
+    - text: Добавление приложения
+      url: add-application-portal.md
+- title: Добавление и настройка приложений
   linkLists:
-  - linkListType: concept
+  - linkListType: learn
     links:
-    - text: Общие сведения о едином входе
+    - text: Добавление приложения
+      url: add-application-portal.md
+    - text: Настройка приложения
+      url: add-application-portal-configure.md
+- title: Управление приложениями
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Рекомендации
+      url: application-management-fundamentals.md
+    - text: Распространенные сценарии
+      url: common-scenarios.md
+- title: Общие сведения о едином входе
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Основные понятия единого входа
       url: what-is-single-sign-on.md
-    - text: Возможности для пользователей
-      url: end-user-experiences.md
-  - linkListType: how-to-guide
-    links:
-    - text: Настройка единого входа
-      url: configure-saml-single-sign-on.md
-    - text: Назначение приложению пользователя или группы
-      url: assign-user-or-group-access-portal.md
-- title: Подготовка пользователей и групп к работе с приложением
+    - text: Варианты реализации единого входа
+      url: sso-options.md
+- title: Согласие для приложения
   linkLists:
-  - linkListType: overview
+  - linkListType: learn
     links:
-    - text: Что собой представляет подготовка приложения?
-      url: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
-  - linkListType: tutorial
-    links:
-    - text: Руководства по подготовке приложений SaaS
-      url: /azure/active-directory/saas-apps/
-  - linkListType: how-to-guide
-    links:
-    - text: Создаете приложение? Подготовка с помощью SCIM (документация по подготовке приложений)
-      url: /azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups
-    - text: Добавляете приложение из коллекции? Настройка процесса подготовки (документация по подготовке приложений)
-      url: /azure/active-directory/app-provisioning/configure-automatic-user-provisioning-portal
-- title: Публикация локальных приложений с помощью Application Proxy
+    - text: Настройка согласия пользователя
+      url: configure-user-consent.md
+    - text: Настройка согласия администратора
+      url: configure-admin-consent-workflow.md
+- title: Перенос приложений
   linkLists:
-  - linkListType: overview
+  - linkListType: learn
     links:
-    - text: Что такое Application Proxy?
+    - text: Ресурсы по миграции
+      url: migration-resources.md
+    - text: Перенос приложения AD FS в Azure
+      url: migrate-adfs-apps-to-azure.md
+- title: Использование локальных приложений
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Что такое прокси приложения?
       url: what-is-application-proxy.md
-  - linkListType: concept
-    links:
-    - text: Планирование использования функции Application Proxy
+    - text: Развертывание прокси приложения
       url: application-proxy-deployment-plan.md
-  - linkListType: tutorial
-    links:
-    - text: Добавление локального приложения
-      url: application-proxy-add-on-premises-application.md
-  - linkListType: how-to-guide
-    links:
-    - text: Настройка соединителей с помощью прокси-серверов
-      url: application-proxy-configure-connectors-with-proxy-servers.md
-    - text: Настройка пользовательской домашней страницы
-      url: application-proxy-configure-custom-home-page.md
-  - linkListType: deploy
-    links:
-    - text: Публикация удаленного рабочего стола с помощью Application Proxy
-      url: application-proxy-integrate-with-remote-desktop-services.md
-    - text: Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
-      url: application-proxy-integrate-with-sharepoint-server.md
-- title: Защита устаревших приложений с помощью контроллеров и сетей доставки приложений
+- title: Безопасные приложения
   linkLists:
-  - linkListType: overview
+  - linkListType: learn
     links:
-    - text: Безопасный гибридный доступ для устаревших приложений (облачных и локальных)
-      url: secure-hybrid-access.md
-  - linkListType: how-to-guide
+    - text: Управление доступом к приложениям
+      url: what-is-access-management.md
+    - text: Управление ограничениями клиентов
+      url: tenant-restrictions.md
+- title: Настройка раздела "Мои приложения"
+  linkLists:
+  - linkListType: learn
     links:
-    - text: Защита приложений с помощью F5 Big-IP APM
-      url: https://aka.ms/f5-hybridaccessguide
-    - text: Защита приложений с помощью ZPA от Zscaler
-      url: https://aka.ms/zscaler-hybridaccessguide
+    - text: Планирование развертывания "Мои приложения"
+      url: access-panel-deployment-plan.md
+    - text: Создание коллекций
+      url: access-panel-collections.md
+- title: Разработка новых приложений
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Рекомендации для разработчиков
+      url: developer-guidance-for-integrating-applications.md
+    - text: Основные сведения о с платформе
+      url: ../develop/v2-overview.md
+- title: Новое в документации
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Настройка единого входа на основе SAML
+      url: add-application-portal-setup-sso.md
+    - text: Настройка единого входа на основе OIDC
+      url: add-application-portal-setup-oidc-sso.md

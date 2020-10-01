@@ -97,6 +97,8 @@
       href: ../../azure-functions/security-baseline.md
     - name: Базовые средства безопасности Центра Интернета вещей Azure
       href: ../../iot-hub/security-baseline.md
+    - name: Базовые средства безопасности Azure Load Balancer
+      href: ../../load-balancer/security-baseline.md
     - name: Базовые показатели безопасности Azure Monitor
       href: ../../azure-monitor/security-baseline.md
     - name: Базовые средства безопасности Машинного обучения Azure

@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: 24bb7a1fcb1569922fb34034fb3c0d003cdd7061
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 9447cec55c53861ca57d5416a91ffefd35fdd20b
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67185754"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91571905"
 ---
 ## <a name="repeatability-during-copy"></a>Повторяемость во время копирования
 При копировании данных в SQL Azure или SQL Server из других хранилищ данных необходимо помнить о повторяемости, чтобы избежать незапланированных последствий. 
@@ -74,7 +74,7 @@ ID    Product        Quantity    ModifiedDate
 
 ### <a name="mechanism-2"></a>Механизм 2
 > [!IMPORTANT]
-> В настоящее время sliceIdentifierColumnName не поддерживается для хранилища данных Azure SQL. 
+> Сейчас Azure Synapse Analytics не поддерживает sliceIdentifierColumnName. 
 
 Второй способ достижения повторяемости — выделение отдельного столбца (**sliceIdentifierColumnName**) в целевой таблице. Этот столбец будет использовать фабрика данных Azure, чтобы синхронизировать источник и назначение. Такой подход работает при наличии гибкости в изменении или определении целевой схемы таблицы SQL. 
 

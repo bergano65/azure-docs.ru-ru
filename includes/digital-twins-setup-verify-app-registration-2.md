@@ -16,4 +16,4 @@ ms.locfileid: "87405608"
 
 Затем в строке меню выберите *разрешения API* , чтобы убедиться, что регистрация приложения содержит разрешения на чтение и запись для Azure Digital двойников. Вы должны увидеть запись следующего вида:
 
-:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом "чтение и запись" для Azure Digital двойников":::
+:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD":::

@@ -32,7 +32,7 @@ ms.locfileid: "88009676"
 
 Чтобы просмотреть роль в подписке, перейдите на [страницу "подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) " в портал Azure (вы можете использовать эту ссылку или найти *подписки* с помощью панели поиска портала). Найдите имя используемой подписки и просмотрите ее роль в столбце *Моя роль* :
 
-:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/subscriptions-role.png" alt-text="Представление страницы "подписки" в портал Azure, показывающее пользователя как владельца" lightbox="../articles/digital-twins/media/how-to-set-up-instance/portal/subscriptions-role.png":::
+:::image type="content" source="../articles/digital-twins/media/how-to-set-up-instance/portal/subscriptions-role.png" alt-text="Представление страницы &quot;подписки&quot; в портал Azure, показывающее пользователя как владельца" lightbox="../articles/digital-twins/media/how-to-set-up-instance/portal/subscriptions-role.png":::
 
 Если вы обнаружите, что значение *участника*или другая роль, не имеющая необходимых разрешений, вы можете связаться с пользователем в подписке, у которой есть такие разрешения (например *, у владельца* подписки или администратора учетной записи), и перейти к одному из следующих способов:
 * Запрос на выполнение действий, описанных в этой статье, от вашего имени

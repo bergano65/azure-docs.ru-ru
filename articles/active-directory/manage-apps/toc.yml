@@ -26,7 +26,7 @@
       href: delete-application-portal.md
 - name: Учебники
   items:
-    - name: 'Интегрированные приложения из коллекции (например, ServiceNow, Salesforce, Dropbox)'
+    - name: Список предварительно настроенных приложений
       href: /azure/active-directory/saas-apps/
     - name: Добавление локального приложения с помощью прокси приложения
       href: application-proxy-add-on-premises-application.md
@@ -142,7 +142,7 @@
       items:
         - name: Ресурсы по миграции
           href: migration-resources.md
-        - name: Миграция приложения ADFS в Azure
+        - name: "Перенос приложения AD\_FS в Azure"
           href: migrate-adfs-apps-to-azure.md
         - name: "Использование отчета о действиях приложения AD\_FS (предварительная версия)"
           href: migrate-adfs-application-activity.md

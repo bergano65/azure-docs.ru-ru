@@ -18,7 +18,7 @@ ms.locfileid: "87809013"
 
 На домашней странице портала найдите свой экземпляр Azure Digital двойников, чтобы получить сведения о нем. Выберите параметр **метрики** в меню навигации экземпляра Digital двойников в левой части экрана, чтобы открыть страницу *метрики* .
 
-:::image type="content" source="../articles/digital-twins/media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей "метрики" для Azure Digital двойников.":::
+:::image type="content" source="../articles/digital-twins/media/troubleshoot-metrics/azure-digital-twins-metrics.png" alt-text="Снимок экрана со страницей &quot;метрики&quot; для Azure Digital двойников.":::
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 

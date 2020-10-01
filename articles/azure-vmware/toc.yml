@@ -40,6 +40,8 @@
   items:
     - name: Включение Решения Azure VMware
       href: enable-azure-vmware-solution.md
+    - name: Экономия за счет приобретения зарезервированного экземпляра
+      href: reserved-instance.md
     - name: Оценка миграции
       href: ../migrate/how-to-create-azure-vmware-solution-assessment.md?context=/azure/migrate/context/migrate-context.json
     - name: Настройка HCX
