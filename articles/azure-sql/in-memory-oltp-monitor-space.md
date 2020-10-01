@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: performance
 ms.custom: sqldbrb=2
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: juliemsft
 ms.author: jrasnick
 ms.reviewer: genemi
 ms.date: 01/25/2019
-ms.openlocfilehash: a4747fcd3a68c91e10d13a03adcbc4930bd9d759
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2134cf1fda5f0f1699feb46582813d198304f92e
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84345263"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91616386"
 ---
 # <a name="monitor-in-memory-oltp-storage-in-azure-sql-database-and-azure-sql-managed-instance"></a>Мониторинг хранилища выполняющейся в памяти OLTP в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -67,6 +67,6 @@ ms.locfileid: "84345263"
 > [!NOTE]
 > В редких случаях ошибки 41823 и 41840 могут оказаться временными, то есть имеется достаточный объем хранилища выполняющейся в памяти OLTP, и повторное выполнение операции завершается успешно. Поэтому рекомендуется отслеживать общий доступный объем хранилища выполняющейся в памяти OLTP и повторять операцию при первом возникновении ошибки 41823 или 41840. Дополнительные сведения о логике повтора см. в разделе [Обнаружение конфликтов и логика повторных попыток](https://docs.microsoft.com/sql/relational-databases/In-memory-oltp/transactions-with-memory-optimized-tables#conflict-detection-and-retry-logic).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по мониторингу см. [в разделе Мониторинг с помощью динамических административных представлений](database/monitoring-with-dmvs.md).

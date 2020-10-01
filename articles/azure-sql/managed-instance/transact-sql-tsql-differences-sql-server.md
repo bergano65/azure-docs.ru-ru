@@ -5,18 +5,18 @@ services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: operations
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: reference
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 06/02/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 63aed3ce47a5499154041f067c292c656adcde6c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1298a1676d7a7ac0321ae768c3e596f481e80a8a
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323181"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91617882"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>Отличия T-SQL от SQL Server & SQL Azure Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -188,7 +188,7 @@ SQL Управляемый экземпляр не удается получит
 - [Резервное копирование главного ключа службы](/sql/t-sql/statements/backup-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 - [Восстановление главного ключа службы](/sql/t-sql/statements/restore-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="buffer-pool-extension"></a>Расширение буферного пула
 
@@ -306,7 +306,7 @@ SQL Управляемый экземпляр не удается получит
 - прокси-серверы;
 - Планирование заданий на неактивном ЦП
 - Включение или отключение агента
-- видны узлы
+- Предупреждения
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](/sql/ssms/agent/sql-server-agent).
 
@@ -405,7 +405,7 @@ SQL Управляемый экземпляр не может получить �
 
 Внешние таблицы, которые ссылаются на файлы в HDFS или хранилище BLOB-объектов Azure, не поддерживаются. Дополнительные сведения о Polybase см. в разделе [polybase](/sql/relational-databases/polybase/polybase-guide).
 
-### <a name="replication"></a>Replication
+### <a name="replication"></a>Репликация
 
 - Поддерживаются типы моментальных снимков и двунаправленной репликации. Репликация слиянием, одноранговая репликация и обновляемые подписки не поддерживаются.
 - [Репликация транзакций](replication-transactional-overview.md) доступна для общедоступной предварительной версии на SQL управляемый экземпляр с некоторыми ограничениями:

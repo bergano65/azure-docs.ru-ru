@@ -7,17 +7,17 @@ ms.service: sql-managed-instance
 ms.subservice: operations
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: bonova
 ms.author: bonova
 ms.reviewer: sstein
 ms.date: 09/05/2019
-ms.openlocfilehash: c5ee1f1fbd55bfa44f78f2d1f0129b60be8ea34c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5798220ad92a99f32f757ffa20f9233b8c79151b
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325187"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91617440"
 ---
 # <a name="deploy-azure-sql-managed-instance-to-an-instance-pool"></a>Развертывание Управляемый экземпляр SQL Azure в пуле экземпляров
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -256,8 +256,8 @@ $instanceOne | Set-AzSqlInstance -InstancePoolName "pool-mi-001" -PublicDataEndp
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о функциях и список сравнения см. в статье [Сравнение функций Базы данных SQL Azure и SQL Server](../database/features-comparison.md).
-- Дополнительные сведения о конфигурации виртуальной сети см. в разделе [Конфигурация SQL управляемый экземпляр vnet](connectivity-architecture-overview.md).
-- Краткое руководство по созданию управляемого экземпляра и восстановлению базы данных из файла резервной копии см. в разделе [Создание управляемого экземпляра](instance-create-quickstart.md).
-- Руководство по использованию Azure Database Migration Service для миграции см. в разделе [Миграция SQL управляемый экземпляр с помощью Database Migration Service](../../dms/tutorial-sql-server-to-managed-instance.md).
+- Дополнительные сведения о конфигурации виртуальной сети см. в разделе [Архитектура подключения к Управляемому экземпляру SQL Azure](connectivity-architecture-overview.md).
+- Сведения о создании управляемого экземпляра и восстановлении базы данных из файла резервной копии см. в разделе [Краткое руководство. Создание управляемого экземпляра Управляемого экземпляра SQL](instance-create-quickstart.md).
+- Сведения о миграции с помощью Azure Database Migration Service см. в разделе [Руководство. Миграция из SQL Server в Управляемый экземпляр базы данных SQL Azure в автономном режиме с помощью DMS](../../dms/tutorial-sql-server-to-managed-instance.md).
 - Дополнительные сведения о производительности базы данных SQL Управляемый экземпляр с помощью встроенных средств анализа устранения неполадок см. в статье [мониторинг управляемый экземпляр SQL с помощью аналитика SQL Azure](../../azure-monitor/insights/azure-sql.md).
 - Сведения о ценах см. на странице [цен на SQL управляемый экземпляр](https://azure.microsoft.com/pricing/details/sql-database/managed/).

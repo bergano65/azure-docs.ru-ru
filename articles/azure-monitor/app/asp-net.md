@@ -1,150 +1,358 @@
 ---
-title: Настройка аналитики веб-приложения для ASP.NET с помощью Azure Application Insights | Документация Майкрософт
+title: Настройка мониторинга для ASP.NET с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка средств аналитики производительности, доступности и поведения пользователей для веб-сайта ASP.NET, размещенного локально или в Azure.
 ms.topic: conceptual
-ms.date: 05/08/2019
-ms.openlocfilehash: c07e7c8e7bd710cb591719fe8d53a3bad6ca2ee0
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.date: 09/30/2020
+ms.custom: contperfq1
+ms.openlocfilehash: 5f52f1febcc69723dae76e31d17b5a9a7e8c67bb
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90973791"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91616760"
 ---
-# <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
+# <a name="configure-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
-Эта процедура настраивает веб-приложение ASP.NET для отправки данных телеметрии в службу [Azure Application Insights](./app-insights-overview.md). Она работает для приложений ASP.NET, размещенных на сервере IIS локально или в облаке. Она предоставляет диаграммы и эффективный язык запросов, который поможет определить производительность приложений и способ использования приложений пользователями, а также автоматические оповещения о сбоях или проблемах с производительностью. Многим разработчикам нравятся эти функции в изначальном виде, но при необходимости их можно расширить и настроить данные телеметрии.
-
-Настройка выполняется несколькими щелчками в Visual Studio. Вы можете избежать расходов, ограничив объем телеметрии. Эта функция позволяет экспериментировать и выполнять отладку или наблюдать за сайтом с небольшим числом пользователей. Если вы хотите отслеживать рабочий сайт, вы можете легко увеличить лимит позже.
+Эта процедура настраивает веб-приложение ASP.NET для отправки данных телеметрии в службу [Azure Application Insights](./app-insights-overview.md). Он работает для приложений ASP.NET, размещенных либо на локальных серверах IIS, либо в облаке. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы добавить Application Insights для веб-сайта ASP.NET, сделайте следующее:
 
-- Установите [Visual Studio 2019 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
-    - ASP.NET и веб-разработка (не снимайте флажки для дополнительных компонентов).
+- Установите последнюю версию [Visual Studio 2019 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
+    - ASP.NET и веб-разработка.
     - Разработка Azure.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="step-1-add-the-application-insights-sdk"></a><a name="ide"></a> Шаг 1. Добавление пакета SDK для Application Insights
+- Создайте [Application Insights ресурс на основе рабочей области](create-workspace-resource.md).
 
-> [!IMPORTANT]
-> Снимки экрана в этом примере основаны на Visual Studio 2017 версии 15.9.9 и более поздних версиях. Процесс добавления Application Insights зависит от конкретной версии Visual Studio, а также от типа шаблона ASP.NET. Более старые версии могут отображать другой текст, например "Настроить Application Insights".
+## <a name="create-a-basic-aspnet-web-app"></a>Создание базового веб-приложения ASP.NET
 
-В обозревателе решений щелкните правой кнопкой мыши и выберите **Добавить**  >  **Телеметрия Application Insights**.
+1. Запустите Visual Studio 2019.
+2. Выберите **File** > **New** > **Project** ( Файл > Создать > Проект).
+3. Выберите **веб-приложение ASP.NET (NET Framework) C#**.
+4. Введите имя проекта > **выберите создать**.
+5. Выберите **MVC**  >  **Create (создать**). 
 
-![Снимок экрана с окном обозревателя решений, где выделен параметр "Настроить Application Insights"](./media/asp-net/add-telemetry-new.png)
+## <a name="add-application-insights-automatically"></a>Автоматическое добавление Application Insights
 
-(Вам может быть предложено обновление до последней версии SDK. Это зависит от версии пакета SDK Application Insights. Когда появится запрос, выберите **Обновить пакет SDK**.)
+В этом разделе описано, как автоматически добавлять Application Insights в веб-приложение ASP.NET на основе шаблонов. В проекте веб-приложения ASP.NET в Visual Studio:
 
-![Снимок экрана с сообщением о доступности новой версии пакета SDK для Microsoft Application Insights. Выделен параметр "Обновить SDK"](./media/asp-net/0002-update-sdk.png)
+1. Выберите **Добавить телеметрия Application Insights**  >  **Application Insights SDK (локальный)**  >  **Далее**  >  **завершить**  >  **Закрыть**.
+2. Откройте файл `ApplicationInsights.config` . 
+3. Перед закрывающим `</ApplicationInsights>` тегом добавьте строку, содержащую ключ инструментирования для ресурса Application Insights.  Ключ инструментирования можно найти в области Обзор созданного ресурса Application Insights, созданного в рамках предварительных требований для этой статьи.
 
-Экран "Конфигурация Application Insights":
+    ```xml
+    <InstrumentationKey>your-instrumentation-key-goes-here</InstrumentationKey>
+    ```
+4. Выберите **проект**  >  **Управление**  >  **обновлениями** пакетов NuGet > Обновите каждый `Microsoft.ApplicationInsights` пакет NuGet до последнего стабильного выпуска.   
+5. Запустите приложение, выбрав **IIS Express**. Будет запущено базовое приложение ASP.NET. При переходе по страницам в телеметрии сайта будут отправлены Application Insights.
 
-Выберите **Начать**.
+## <a name="add-application-insights-manually"></a>Добавить Application Insights вручную
 
-![На снимке экрана показана страница Application Insights и кнопка "Начало работы".](./media/asp-net/00004-start-free.png)
+Этот раздел поможет вам вручную добавить Application Insights в веб-приложение ASP.NET на основе шаблонов. В этом разделе предполагается, что вы используете веб-приложение, основанное на стандартном шаблоне веб-приложения ASP.NET Framework MVC.
 
-Если вы хотите задать группу ресурсов или расположение, где будут храниться данные, щелкните **Настроить параметры**. Группы ресурсов используются для управления доступом к данным. Например, если имеется несколько приложений, которые являются частью одной системы, вы можете поместить их данные Application Insights в одну группу ресурсов.
+1. Добавьте в проект следующие пакеты NuGet и их зависимости:
 
- Выберите **Зарегистрировать**.
+    - [`Microsoft.ApplicationInsights.WindowsServer`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer)
+    - [`Microsoft.ApplicationInsights.Web`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)
+    - [`Microsoft.AspNet.TelemetryCorrelation`](https://www.nuget.org/packages/Microsoft.AspNet.TelemetryCorrelation)
 
-![Снимок экрана с окном страницы "Зарегистрировать приложение в Application Insights"](./media/asp-net/00005-register-ed.png)
+2. В некоторых случаях `ApplicationInsights.config` файл будет создан автоматически. Если файл уже существует, перейдите к шагу #4. Если он не создается автоматически, необходимо создать его самостоятельно. На том же уровне проекта, что и `Global.asax` файл, создайте новый файл с именем `ApplicationInsights.config`
 
- Выберите **Проект**  >  **Управление пакетами NuGet**  >  **Источник пакета: nuget.org** > Подтвердите, что у вас имеется последняя стабильная версия пакета SDK для Application Insights.
+3. Скопируйте следующую конфигурацию XML в созданный файл:
 
- Данные телеметрии будут отправляться на [портал Azure](https://portal.azure.com) как во время отладки, так и после публикации приложения.
-> [!NOTE]
-> Если вы не хотите отправлять данные телеметрии на портал во время отладки, просто добавьте пакет SDK Application Insights в приложение, но не настраивайте ресурс на портале. Во время отладки можно просмотреть данные телеметрии в Visual Studio. Позже вы сможете вернуться на эту страницу настроек или можете дождаться, когда приложение будет развернуто, и [переключиться на данные телеметрии во время выполнения](./status-monitor-v2-overview.md).
+     ```xml
+     <?xml version="1.0" encoding="utf-8"?>
+    <ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings">
+      <TelemetryInitializers>
+        <Add Type="Microsoft.ApplicationInsights.DependencyCollector.HttpDependenciesParsingTelemetryInitializer, Microsoft.AI.DependencyCollector" />
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.AzureRoleEnvironmentTelemetryInitializer, Microsoft.AI.WindowsServer" />
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.BuildInfoConfigComponentVersionTelemetryInitializer, Microsoft.AI.WindowsServer" />
+        <Add Type="Microsoft.ApplicationInsights.Web.WebTestTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.SyntheticUserAgentTelemetryInitializer, Microsoft.AI.Web">
+          <!-- Extended list of bots:
+                search|spider|crawl|Bot|Monitor|BrowserMob|BingPreview|PagePeeker|WebThumb|URL2PNG|ZooShot|GomezA|Google SketchUp|Read Later|KTXN|KHTE|Keynote|Pingdom|AlwaysOn|zao|borg|oegp|silk|Xenu|zeal|NING|htdig|lycos|slurp|teoma|voila|yahoo|Sogou|CiBra|Nutch|Java|JNLP|Daumoa|Genieo|ichiro|larbin|pompos|Scrapy|snappy|speedy|vortex|favicon|indexer|Riddler|scooter|scraper|scrubby|WhatWeb|WinHTTP|voyager|archiver|Icarus6j|mogimogi|Netvibes|altavista|charlotte|findlinks|Retreiver|TLSProber|WordPress|wsr-agent|http client|Python-urllib|AppEngine-Google|semanticdiscovery|facebookexternalhit|web/snippet|Google-HTTP-Java-Client-->
+          <Filters>search|spider|crawl|Bot|Monitor|AlwaysOn</Filters>
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.Web.ClientIpHeaderTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.AzureAppServiceRoleNameFromHostNameHeaderInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.OperationNameTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.OperationCorrelationTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.UserTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.AuthenticatedUserIdTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.AccountIdTelemetryInitializer, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.SessionTelemetryInitializer, Microsoft.AI.Web" />
+      </TelemetryInitializers>
+      <TelemetryModules>
+        <Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">
+          <ExcludeComponentCorrelationHttpHeadersOnDomains>
+            <!-- 
+            Requests to the following hostnames will not be modified by adding correlation headers.         
+            Add entries here to exclude additional hostnames.
+            NOTE: this configuration will be lost upon NuGet upgrade.
+            -->
+            <Add>core.windows.net</Add>
+            <Add>core.chinacloudapi.cn</Add>
+            <Add>core.cloudapi.de</Add>
+            <Add>core.usgovcloudapi.net</Add>
+          </ExcludeComponentCorrelationHttpHeadersOnDomains>
+          <IncludeDiagnosticSourceActivities>
+            <Add>Microsoft.Azure.EventHubs</Add>
+            <Add>Microsoft.Azure.ServiceBus</Add>
+          </IncludeDiagnosticSourceActivities>
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule, Microsoft.AI.PerfCounterCollector">
+          <!--
+          Use the following syntax here to collect additional performance counters:
+          
+          <Counters>
+            <Add PerformanceCounter="\Process(??APP_WIN32_PROC??)\Handle Count" ReportAs="Process handle count" />
+            ...
+          </Counters>
+          
+          PerformanceCounter must be either \CategoryName(InstanceName)\CounterName or \CategoryName\CounterName
+          
+          NOTE: performance counters configuration will be lost upon NuGet upgrade.
+          
+          The following placeholders are supported as InstanceName:
+            ??APP_WIN32_PROC?? - instance name of the application process  for Win32 counters.
+            ??APP_W3SVC_PROC?? - instance name of the application IIS worker process for IIS/ASP.NET counters.
+            ??APP_CLR_PROC?? - instance name of the application CLR process for .NET counters.
+          -->
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryModule, Microsoft.AI.PerfCounterCollector" />
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.AppServicesHeartbeatTelemetryModule, Microsoft.AI.WindowsServer" />
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.AzureInstanceMetadataTelemetryModule, Microsoft.AI.WindowsServer">
+          <!--
+          Remove individual fields collected here by adding them to the ApplicationInsighs.HeartbeatProvider 
+          with the following syntax:
+          
+          <Add Type="Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing.DiagnosticsTelemetryModule, Microsoft.ApplicationInsights">
+            <ExcludedHeartbeatProperties>
+              <Add>osType</Add>
+              <Add>location</Add>
+              <Add>name</Add>
+              <Add>offer</Add>
+              <Add>platformFaultDomain</Add>
+              <Add>platformUpdateDomain</Add>
+              <Add>publisher</Add>
+              <Add>sku</Add>
+              <Add>version</Add>
+              <Add>vmId</Add>
+              <Add>vmSize</Add>
+              <Add>subscriptionId</Add>
+              <Add>resourceGroupName</Add>
+              <Add>placementGroupId</Add>
+              <Add>tags</Add>
+              <Add>vmScaleSetName</Add>
+            </ExcludedHeartbeatProperties>
+          </Add>
+                
+          NOTE: exclusions will be lost upon upgrade.
+          -->
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.DeveloperModeWithDebuggerAttachedTelemetryModule, Microsoft.AI.WindowsServer" />
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule, Microsoft.AI.WindowsServer" />
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule, Microsoft.AI.WindowsServer">
+          <!--</Add>
+        <Add Type="Microsoft.ApplicationInsights.WindowsServer.FirstChanceExceptionStatisticsTelemetryModule, Microsoft.AI.WindowsServer">-->
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule, Microsoft.AI.Web">
+          <Handlers>
+            <!-- 
+            Add entries here to filter out additional handlers: 
+            
+            NOTE: handler configuration will be lost upon NuGet upgrade.
+            -->
+            <Add>Microsoft.VisualStudio.Web.PageInspector.Runtime.Tracing.RequestDataHttpHandler</Add>
+            <Add>System.Web.StaticFileHandler</Add>
+            <Add>System.Web.Handlers.AssemblyResourceLoader</Add>
+            <Add>System.Web.Optimization.BundleHandler</Add>
+            <Add>System.Web.Script.Services.ScriptHandlerFactory</Add>
+            <Add>System.Web.Handlers.TraceHandler</Add>
+            <Add>System.Web.Services.Discovery.DiscoveryRequestHandler</Add>
+            <Add>System.Web.HttpDebugHandler</Add>
+          </Handlers>
+        </Add>
+        <Add Type="Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule, Microsoft.AI.Web" />
+        <Add Type="Microsoft.ApplicationInsights.Web.AspNetDiagnosticTelemetryModule, Microsoft.AI.Web" />
+      </TelemetryModules>
+      <ApplicationIdProvider Type="Microsoft.ApplicationInsights.Extensibility.Implementation.ApplicationId.ApplicationInsightsApplicationIdProvider, Microsoft.ApplicationInsights" />
+      <TelemetrySinks>
+        <Add Name="default">
+          <TelemetryProcessors>
+            <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse.QuickPulseTelemetryProcessor, Microsoft.AI.PerfCounterCollector" />
+            <Add Type="Microsoft.ApplicationInsights.Extensibility.AutocollectedMetricsExtractor, Microsoft.ApplicationInsights" />
+            <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+              <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
+              <ExcludedTypes>Event</ExcludedTypes>
+            </Add>
+            <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+              <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
+              <IncludedTypes>Event</IncludedTypes>
+            </Add>
+          </TelemetryProcessors>
+          <TelemetryChannel Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel, Microsoft.AI.ServerTelemetryChannel" />
+        </Add>
+      </TelemetrySinks>
+      <!-- 
+        Learn more about Application Insights configuration with ApplicationInsights.config here: 
+        http://go.microsoft.com/fwlink/?LinkID=513840
+      -->
+      <InstrumentationKey>your-instrumentation-key-here</InstrumentationKey>
+    </ApplicationInsights>
+     ```
 
-## <a name="step-2-run-your-app"></a><a name="run"></a> Шаг 2. Запуск приложения для Android
-Запустите приложение, нажав клавишу F5. Откройте разные страницы, чтобы создать некоторый объем данных телеметрии.
+4. Перед закрывающим `</ApplicationInsights>` тегом добавьте ключ инструментирования для ресурса Application Insights.  Ключ инструментирования можно найти в области Обзор созданного ресурса Application Insights, созданного в рамках предварительных требований для этой статьи.
 
-В Visual Studio вы увидите число записанных в журнал событий.
+    ```xml
+    <InstrumentationKey>your-instrumentation-key-goes-here</InstrumentationKey>
+    ```
 
-![Снимок экрана, где отображается Visual Studio Кнопка Application Insights доступна во время отладки.](./media/asp-net/00006-Events.png)
+5. На том же уровне проекта, что и `ApplicationInsights.config` файл, создайте папку `ErrorHandler` с именем с новым файлом C# с именем `AiHandleErrorAttribute.cs` . Содержимое файла будет выглядеть следующим образом:
 
-## <a name="step-3-see-your-telemetry"></a>Шаг 3. Просмотр данных телеметрии
-Вы можете просмотреть данные телеметрии в Visual Studio или на веб-портале Application Insights. Выполните поиск данных телеметрии в Visual Studio для отладки приложения. Отслеживайте производительность и использование на веб-портале в режиме реального времени. 
+    ```csharp
+    using System;
+    using System.Web.Mvc;
+    using Microsoft.ApplicationInsights;
+    
+    namespace WebApplication10.ErrorHandler //namespace will vary based on your project name
+    {
+        [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = true)] 
+        public class AiHandleErrorAttribute : HandleErrorAttribute
+        {
+            public override void OnException(ExceptionContext filterContext)
+            {
+                if (filterContext != null && filterContext.HttpContext != null && filterContext.Exception != null)
+                {
+                    //If customError is Off, then AI HTTPModule will report the exception
+                    if (filterContext.HttpContext.IsCustomErrorEnabled)
+                    {   
+                        var ai = new TelemetryClient();
+                        ai.TrackException(filterContext.Exception);
+                    } 
+                }
+                base.OnException(filterContext);
+            }
+        }
+    }
+    
+    ```
 
-### <a name="see-your-telemetry-in-visual-studio"></a>Просмотр данных телеметрии в Visual Studio
+6. В `App_Start` папке откройте `FilterConfig.cs` файл и измените его в соответствии с образцом:
 
-Чтобы просмотреть данные Application Insights в Visual Studio, сделайте следующее.  Выберите **Обозреватель решений** > **Подключенные службы**, щелкните правой кнопкой мыши **Application Insights**, а затем выберите **Поиск действующей телеметрии**.
+    ```csharp
+    using System.Web;
+    using System.Web.Mvc;
+    
+    namespace WebApplication10 //Namespace will vary based on project name
+    {
+        public class FilterConfig
+        {
+            public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+            {
+                filters.Add(new ErrorHandler.AiHandleErrorAttribute());
+            }
+        }
+    }
+    ```
 
-В окне поиска Application Insights в Visual Studio вы увидите данные телеметрии приложения, созданные в серверной части приложения. Поэкспериментируйте с фильтрами и щелкните любое событие, чтобы просмотреть подробные сведения.
+7. Обновите файл Web.config следующим образом:
 
-![Снимок экрана, где показано представление данных, полученных в ходе сеанса отладки, в окне Application Insights.](./media/asp-net/55.png)
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <!--
+      For more information on how to configure your ASP.NET application, please visit
+      https://go.microsoft.com/fwlink/?LinkId=301880
+      -->
+    <configuration>
+      <appSettings>
+        <add key="webpages:Version" value="3.0.0.0" />
+        <add key="webpages:Enabled" value="false" />
+        <add key="ClientValidationEnabled" value="true" />
+        <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+      </appSettings>
+      <system.web>
+        <compilation debug="true" targetFramework="4.7.2" />
+        <httpRuntime targetFramework="4.7.2" />
+        <httpModules>
+          <add name="TelemetryCorrelationHttpModule" type="Microsoft.AspNet.TelemetryCorrelation.TelemetryCorrelationHttpModule, Microsoft.AspNet.TelemetryCorrelation" />
+          <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" />
+        </httpModules>
+      </system.web>
+      <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+          <dependentAssembly>
+            <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f" />
+            <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" />
+            <bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" />
+            <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" />
+            <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+            <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+            <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+            <bindingRedirect oldVersion="1.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
+          </dependentAssembly>
+          <dependentAssembly>
+            <assemblyIdentity name="System.Memory" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+            <bindingRedirect oldVersion="0.0.0.0-4.0.1.1" newVersion="4.0.1.1" />
+          </dependentAssembly>
+        </assemblyBinding>
+      </runtime>
+      <system.codedom>
+        <compilers>
+          <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:1659;1699;1701" />
+          <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" />
+        </compilers>
+      </system.codedom>
+      <system.webServer>
+        <validation validateIntegratedModeConfiguration="false" />
+        <modules>
+          <remove name="TelemetryCorrelationHttpModule" />
+          <add name="TelemetryCorrelationHttpModule" type="Microsoft.AspNet.TelemetryCorrelation.TelemetryCorrelationHttpModule, Microsoft.AspNet.TelemetryCorrelation" preCondition="managedHandler" />
+          <remove name="ApplicationInsightsWebTracking" />
+          <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" />
+        </modules>
+      </system.webServer>
+    </configuration>
+    
+    ```
 
-> [!Tip]
-> Если данные не отображаются, проверьте диапазон времени и щелкните значок поиска.
+Вы успешно настроили наблюдение за приложениями на стороне сервера. При запуске веб-приложения вы сможете увидеть, что данные телеметрии будут отображаться в Application Insights.
 
-[Дополнительные сведения о средствах Application Insights в Visual Studio](./visual-studio.md).
+## <a name="add-client-side-monitoring"></a>Добавление наблюдения на стороне клиента
 
-<a name="monitor"></a>
-### <a name="see-telemetry-in-web-portal"></a>Просмотр данных телеметрии на веб-портале
+В предыдущих разделах предоставлено руководство по методам автоматического и ручной настройки наблюдения на стороне сервера. Чтобы добавить наблюдение на стороне клиента, необходимо использовать [клиентский пакет JavaScript на стороне клиента](javascript.md). Вы можете отслеживать все транзакции на стороне клиента веб-страницы, добавив [фрагмент кода JavaScript](javascript.md#snippet-based-setup) перед закрывающим `</head>` тегом HTML страницы. 
 
-Вы можете также просматривать данные телеметрии на веб-портале Application Insights, если только не решили установить только пакет SDK. На портале представлено больше дополнительных диаграмм, средств анализа и представлений различных компонентов, чем в Visual Studio. На портале также доступны оповещения.
+Хотя можно вручную добавить фрагмент кода в заголовок каждой HTML-страницы, рекомендуется вместо этого добавить фрагмент кода на первичную страницу, что приведет к внедрению фрагмента на все страницы сайта. Для приложения ASP.NET, основанного на шаблонах, из этой статьи будет вызван файл, который необходимо изменить, `_Layout.cshtml` и он будет найден в разделе **представления**  >  **Shared (общие**).
 
-Откройте ресурс Application Insights. Войдите на [портал Azure](https://portal.azure.com/) и найдите его или выберите **Обозреватель решений** > **Подключенные службы**, щелкните правой кнопкой мыши **Application Insights** > **Открыть портал Application Insights**.
+Чтобы добавить наблюдение на стороне клиента, откройте `_Layout.cshtml` файл и следуйте [инструкциям по установке на основе фрагментов кода](javascript.md#snippet-based-setup) из статьи о настройке пакета SDK JavaScript на стороне клиента.
 
-На портале откроется представление данных телеметрии из приложения.
+## <a name="troubleshooting"></a>Устранение неполадок
 
-![Снимок экрана, где отображается страница с обзором Application Insights](./media/asp-net/007.png)
-
-На портале щелкните любую плитку, чтобы просмотреть подробные сведения.
-
-## <a name="step-4-publish-your-app"></a>Шаг 4. Публикация приложения
-Опубликуйте приложение на сервере IIS или в Azure. Просмотрите [динамический поток метрик](./live-stream.md), чтобы убедиться в бесперебойной работе приложения.
-
-Телеметрия создается на портале Application Insights, где можно отслеживать метрики и выполнять поиск данных телеметрии. Можно также использовать эффективный [язык запросов Kusto](/azure/kusto/query/) для анализа использования и производительности или поиска определенных событий.
-
-Кроме того, можно продолжить анализировать телеметрию в [Visual Studio](./visual-studio.md) с помощью таких средств, как поиск по журналу диагностики и [тренды](./visual-studio-trends.md).
-
-> [!NOTE]
-> Если приложение отправляет достаточно данных телеметрии для достижения [пределов регулирования](./pricing.md#limits-summary), включается автоматическая [выборка](./sampling.md). Выборка позволяет уменьшить количество данных телеметрии, отправляемых из приложения, сохраняя связанные данные в целях диагностики.
->
->
-
-## <a name="youre-all-set"></a><a name="land"></a>Все готово
-
-Поздравляем! Вы установили в приложение пакет Application Insights и настроили его для отправки данных телеметрии в службу Application Insights в Azure.
-
-Ресурс Azure, который получает данные телеметрии приложения, определяется *ключом инструментирования*. Вы найдете этот ключ в файле ApplicationInsights.config.
-
-
-## <a name="upgrade-to-future-sdk-versions"></a>Обновление до будущих версий пакета SDK
-
-* [Заметки о выпуске](./release-notes.md)
-
-Чтобы выполнить обновление до нового выпуска пакета SDK, откройте **Диспетчер пакетов NuGet**и выполните фильтрацию по установленным пакетам. Выберите элемент **Microsoft.ApplicationInsights.Web**, а затем — элемент **Обновить**.
-
-Если были выполнены какие-либо настройки файла ApplicationInsights.config, то прежде чем выполнять обновление, сохраните его копию. Затем объедините изменения в новой версии.
+Существует известная проблема в текущей версии Visual Studio 2019, при которой ключ инструментирования в секрете пользователя разрывается для приложений на основе .NET Framework, а ключ в конечном итоге должен быть жестко закодирован в applicationinsights.config файле, чтобы обойти эту ошибку. Эта статья предназначена для полного устранения этой проблемы без использования секретов пользователя.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Существуют и другие статьи, к которым можно обратиться, если вас интересуют такие темы, как:
+* Добавьте искусственные транзакции, чтобы проверить доступность веб-сайта по всему миру с [мониторингом доступности](monitor-web-app-availability.md).
+* [Настройка выборки](sampling.md) для уменьшения трафика телеметрии и затрат на хранение данных.
 
-* [инструментирование веб-приложения во время выполнения;](./monitor-performance-live-website-now.md)
-* [Oблачныe службы Azure2](./cloudservices.md)
-
-### <a name="more-telemetry"></a>Дополнительные данные телеметрии
-
-* **[Данные загрузки браузера и страниц](./javascript.md)**  — вставьте фрагмент кода в веб-страницы.
-* **[Более подробные зависимости и данные отслеживание исключений](./monitor-performance-live-website-now.md)**  — установите монитор состояния на сервере.
-* **[Добавьте в приложение код для пользовательских событий](./api-custom-events-metrics.md)** , чтобы считать, фиксировать время и измерять действия пользователя.
-* **[Получение данных журнала](./asp-net-trace-logs.md)**  — согласовывайте данные журналов с данными телеметрии.
-
-### <a name="analysis"></a>Анализ
-
-* **[Работа с Application Insights в Visual Studio](./visual-studio.md)**<br/>Содержит сведения об отладке с помощью телеметрии, о поиске по журналу диагностики и детализации кода.
-* **[Аналитика](../log-query/get-started-portal.md)**  — эффективный язык запросов.
-
-### <a name="alerts"></a>видны узлы
-
-* [Тесты доступности](./monitor-web-app-availability.md). Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
-* [Интеллектуальная диагностика](./proactive-diagnostics.md). Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
-* [Оповещения о метриках](../platform/alerts-log.md). Настройте оповещения, чтобы получать уведомления в случае, если метрика превысила пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
-
-### <a name="automation"></a>Служба автоматизации
-
-* [Создание ресурсов Application Insights с помощью PowerShell](./powershell.md)
 

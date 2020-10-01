@@ -7,16 +7,19 @@ ms.author: dpalled
 manager: diviso
 ms.service: time-series-insights
 ms.topic: article
-ms.date: 08/12/2020
+ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1a7a88e0db38f399dc47c030f3b97f6b26f4da07
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: b5723433cca20c934d4cb5b129d77c1c6d65feef
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88168241"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91617117"
 ---
 # <a name="shape-json-to-maximize-query-performance-in-your-gen1-environment"></a>Формирование JSON для повышения производительности запросов в среде Gen1
+
+> [!CAUTION]
+> Это Gen1 статья.
 
 В этой статье содержатся рекомендации по формированию JSON для повышения эффективности запросов службы "аналитика временных рядов Azure".
 
@@ -162,7 +165,7 @@ ms.locfileid: "88168241"
 
 - Таблица ссылочных данных с ключевыми свойствами **deviceId** и **Series. tagId**:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit |
+   | deviceId | series.tagId | messageId | deviceLocation | тип | unit |
    | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s |
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi |
@@ -171,7 +174,7 @@ ms.locfileid: "88168241"
 
 - Таблица событий "аналитика временных рядов Azure" после спрямления:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit | TIMESTAMP | series.value |
+   | deviceId | series.tagId | messageId | deviceLocation | тип | unit | TIMESTAMP | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 |
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
@@ -184,7 +187,7 @@ ms.locfileid: "88168241"
 
 > - Столбцы **deviceId** и **Series. tagId** служат заголовками столбцов для различных устройств и тегов на парке. Использование каждого из них в качестве собственного атрибута ограничивает запрос до 594 (для сред S1) или 794 (для сред S2) на общее количество устройств с шестью столбцами.
 > - Ненужные свойства были исправлены по причине, упомянутой в первом примере.
-> - Ссылочные данные используются для сокращения числа байтов, передаваемых по сети, путем введения **deviceId**, который используется для уникальной пары **MessageId** и **девицелокатион**. Составной **ряд ключей. tagId** используется для уникальной пары **типа** и **единицы**. Составной ключ позволяет использовать пару **deviceId** и **Series. tagId** для ссылки на четыре значения: **MessageId, девицелокатион, Type** и **Unit**. Эти данные соединяются с данными телеметрии во время приема. Затем он сохраняется в службе "аналитика временных рядов Azure" для запросов.
+> - Ссылочные данные используются для сокращения числа байтов, передаваемых по сети, путем введения **deviceId**, который используется для уникальной пары **MessageId** и **девицелокатион**. Составной **ряд ключей. tagId** используется для уникальной пары **типа** и **единицы**. Составной ключ позволяет использовать пару  **deviceId** и **Series. tagId** для ссылки на четыре значения: **MessageId, девицелокатион, Type** и **Unit**. Эти данные соединяются с данными телеметрии во время приема. Затем он сохраняется в службе "аналитика временных рядов Azure" для запросов.
 > - Используются два слоя вложенности, по причинам, указанным в первом примере.
 
 ### <a name="for-both-scenarios"></a>Для обоих сценариев

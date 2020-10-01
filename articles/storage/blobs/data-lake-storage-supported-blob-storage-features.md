@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: d25a44aa70b9638017856595c7431e897d035c33
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: a0cba1c3a7a3b713fa5f0603ad9e116068d8df66
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91576121"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91618477"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -50,7 +50,7 @@ ms.locfileid: "91576121"
 |Blobfuse|Preview (Предварительный просмотр)|Еще не поддерживается|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
 |Отработка отказа учетной записи|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Список управления доступом для контейнера больших двоичных объектов|Еще не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|Еще не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
-|Ключи, управляемые клиентом|Еще не поддерживается|Еще не поддерживается|[Управляемые клиентом ключи для шифрования службы хранилища Azure](../common/customer-managed-keys-overview.md)|
+|Ключи, предоставляемые клиентом|Еще не поддерживается|Еще не поддерживается|[Укажите ключ шифрования для запроса к хранилищу BLOB-объектов](encryption-customer-provided-keys.md)|
 |Личные домены|Еще не поддерживается|Еще не поддерживается|[Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|
 |Области шифрования|Еще не поддерживается|Еще не поддерживается|[Создание и управление областями шифрования (Предварительная версия)](encryption-scope-manage.md)|
 |Канал изменений|Еще не поддерживается|Еще не поддерживается|[Поддержка канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)|

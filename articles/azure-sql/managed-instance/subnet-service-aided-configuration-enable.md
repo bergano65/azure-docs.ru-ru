@@ -6,16 +6,16 @@ ms.service: sql-managed-instance
 ms.subservice: operations
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.date: 03/12/2020
-ms.openlocfilehash: b88740c71db6ae56621410ef41975a4616ff8ecd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 67b398194d9094cd99fccaa85ed0df3be362ce2b
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84711380"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91618035"
 ---
 # <a name="enabling-service-aided-subnet-configuration-for-azure-sql-managed-instance"></a>Включение конфигурации подсети с автоматизированной службой для Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "84711380"
 > Так как конфигурация подсети, разворачивающаяся в службе, является важнейшей для обслуживания соглашения об уровне обслуживания, начиная с 1 мая 2020, невозможно будет развернуть управляемые экземпляры в подсетях, которые не делегированы поставщику ресурсов управляемого экземпляра. 1 июля 2020. все подсети, содержащие управляемые экземпляры, будут автоматически делегированы поставщику ресурсов управляемого экземпляра. 
 
 ## <a name="enabling-subnet-delegation-for-new-deployments"></a>Включение делегирования подсети для новых развертываний
-Чтобы развернуть управляемый экземпляр в в пустой подсети, необходимо делегировать его `Microsoft.Sql/managedInstances` поставщику ресурсов, как описано в следующей [статье](../../virtual-network/manage-subnet-delegation.md). _Обратите внимание, что в указанной статье используется `Microsoft.DBforPostgreSQL/serversv2` поставщик ресурсов, например. `Microsoft.Sql/managedInstances`Вместо этого необходимо использовать поставщик ресурсов._
+Чтобы развернуть управляемый экземпляр в в пустой подсети, необходимо делегировать его `Microsoft.Sql/managedInstances` поставщику ресурсов, как описано в следующей [статье](../../virtual-network/manage-subnet-delegation.md). _Обратите внимание, что в указанной статье используется `Microsoft.DBforPostgreSQL/serversv2` поставщик ресурсов, например. `Microsoft.Sql/managedInstances` Вместо этого необходимо использовать поставщик ресурсов._
 
 ## <a name="enabling-subnet-delegation-for-existing-deployments"></a>Включение делегирования подсети для существующих развертываний
 
@@ -62,7 +62,7 @@ $mi = Get-AzSqlInstance -ResourceGroupName {rg-name} -Name {mi-name}
 $mi.SubnetId
 ```
 
-После обнаружения подсети управляемого экземпляра необходимо делегировать ее `Microsoft.Sql/managedInstances` поставщику ресурсов, как описано в следующей [статье](../../virtual-network/manage-subnet-delegation.md). _Обратите внимание, что в указанной статье используется `Microsoft.DBforPostgreSQL/serversv2` поставщик ресурсов, например. `Microsoft.Sql/managedInstances`Вместо этого необходимо использовать поставщик ресурсов._
+После обнаружения подсети управляемого экземпляра необходимо делегировать ее `Microsoft.Sql/managedInstances` поставщику ресурсов, как описано в следующей [статье](../../virtual-network/manage-subnet-delegation.md). _Обратите внимание, что в указанной статье используется `Microsoft.DBforPostgreSQL/serversv2` поставщик ресурсов, например. `Microsoft.Sql/managedInstances` Вместо этого необходимо использовать поставщик ресурсов._
 
 
 > [!IMPORTANT]

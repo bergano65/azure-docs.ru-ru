@@ -5,12 +5,12 @@ author: erscorms
 ms.author: erscor
 ms.date: 02/11/2020
 ms.topic: reference
-ms.openlocfilehash: e6b12c2bac4a9732f868f6a6ac3491ef993f54c3
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 61085a5d28fcd74bbf6a393ddc0731e36094a63f
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90976557"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91617504"
 ---
 # <a name="limitations"></a>Ограничения
 
@@ -28,10 +28,12 @@ ms.locfileid: "90976557"
 
 ## <a name="geometry"></a>Геометрия
 
-* Общее допустимое количество материалов в ресурсе: 65 535. Дополнительные сведения см. в разделе Отмена [дублирования материала](../how-tos/conversion/configure-model-conversion.md#material-de-duplication) .
-* Максимальная размерность одной текстуры: 16 384 x 16 384. Более крупные исходные текстуры будут масштабироваться по процессу преобразования.
+* **Анимация:** Анимация ограничивается анимацией отдельных преобразований игровых объектов. Анимации скелетообразных с обложками или анимацией вершин не поддерживаются. Дорожки анимации из исходного файла ресурса не сохраняются. Вместо этого анимация преобразования объектов должна управляться кодом клиента.
+* **Пользовательские шейдеры:** Создание пользовательских шейдеров не поддерживается. Можно использовать только встроенные [цветовые материалы](../overview/features/color-materials.md) или [материалы PBR](../overview/features/pbr-materials.md) .
+* **Максимальное число различных материалов** в ресурсе: 65 535. Дополнительные сведения об автоматическом уменьшении количества материалов см. в разделе «Удаление [дубликатов материалов](../how-tos/conversion/configure-model-conversion.md#material-de-duplication) ».
+* **Максимальная размерность одной текстуры**: 16 384 x 16 384. Размер больших исходных текстур будет уменьшен в процессе преобразования.
 
-## <a name="overall-number-of-polygons"></a>Общее число многоугольников
+### <a name="overall-number-of-polygons"></a>Общее число многоугольников
 
 Допустимое количество многоугольников для всех загруженных моделей зависит от размера виртуальной машины, обрабатывающей [REST API управления сеансами](../how-tos/session-rest-api.md#create-a-session).
 
@@ -40,7 +42,7 @@ ms.locfileid: "90976557"
 |standard| 20 млн |
 |Премиум| без ограничений |
 
-Более подробные сведения об этом ограничении см. в разделе " [Размер сервера](../reference/vm-sizes.md) ".
+Подробные сведения об этом ограничении см. в главе « [Размер сервера](../reference/vm-sizes.md) ».
 
 ## <a name="platform-limitations"></a>Ограничения платформы
 
@@ -48,6 +50,6 @@ ms.locfileid: "90976557"
 
 * Win32/x64 является единственной поддерживаемой платформой Win32. Win32/x86 не поддерживаются.
 
-**Hololens 2**
+**HoloLens 2**
 
 * Визуализация [данных с камеры](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-capture-for-developers#render-from-the-pv-camera-opt-in) не поддерживается.

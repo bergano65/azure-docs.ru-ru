@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: single-database
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 ms.date: 09/15/2020
-ms.openlocfilehash: 32c5135629bf56645ea39a8eee991de3cae6dca0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6589211839a5c1667a6b5cef22220fd917f7e4af
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325340"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91618967"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Ограничения ресурсов для базы данных SQL Azure и серверов Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "91325340"
 - Увеличение объема вычислительных ресурсов базы данных или эластичного пула для предоставления базе данных дополнительных вычислительных ресурсов. См. разделы [Масштабирование ресурсов отдельной базы данных](single-database-scale.md) и [Масштабирование ресурсов эластичного пула](elastic-pool-scale.md).
 - Оптимизация запросов для уменьшения использования ресурсов ЦП каждым запросом. Дополнительные сведения см. в разделе [Настройка запросов и указания на них](performance-guidance.md#query-tuning-and-hinting).
 
-### <a name="storage"></a>Память
+### <a name="storage"></a>Хранилище
 
 Когда используемое пространство базы данных достигает максимального размера, операции вставки и обновления, увеличивающие размер данных, завершаются сбоем и клиенты получают [сообщение об ошибке](troubleshoot-common-errors-issues.md). Инструкции SELECT и DELETE продолжают выполняться.
 

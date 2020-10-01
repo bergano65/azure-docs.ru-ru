@@ -3,12 +3,12 @@ title: Как управлять агентом Azure Monitor для конте�
 description: В этой статье описывается управление наиболее распространенными задачами обслуживания с помощью контейнерного агента Log Analytics, используемого решением "Azure Monitor для контейнеров".
 ms.topic: conceptual
 ms.date: 07/21/2020
-ms.openlocfilehash: 1a397dbc5ebc4952b09c504b70df6ad99c00b216
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b656b0cc89e40dd732def4ebf56dceae69a033b0
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87041264"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91618443"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 
@@ -75,23 +75,25 @@ $ helm upgrade --name myrelease-1 \
 >
 
 ```console
-$ helm upgrade --name myrelease-1 \
---set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<azureAroV4ResourceId> incubator/azuremonitor-containers
+curl -o upgrade-monitoring.sh -L https://aka.ms/upgrade-monitoring-bash-script
+export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
+bash upgrade-monitoring.sh --resource-id $ azureAroV4ClusterResourceId
 ```
+
+Дополнительные сведения об использовании субъекта-службы с этой командой см. в статье **Использование субъекта-службы** в разделе [Включение мониторинга кластера Kubernetes с поддержкой ARC в Azure](container-insights-enable-arc-enabled-clusters.md#enable-using-bash-script) .
 
 ### <a name="upgrade-agent-on-azure-arc-enabled-kubernetes"></a>Обновление агента в службе "Дуга" в Azure с включенной Kubernetes
 
-Выполните следующую команду, чтобы обновить агент в кластере Kubernetes с включенной службой "Дуга Azure" без конечной точки прокси-сервера.
+Выполните следующую команду, чтобы обновить агент в кластере Kubernetes с включенной службой "Дуга Azure".
 
 ```console
-$ helm upgrade --install azmon-containers-release-1  –set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<resourceIdOfAzureArcK8sCluster>
+curl -o upgrade-monitoring.sh -L https://aka.ms/upgrade-monitoring-bash-script
+export azureArcClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Kubernetes/connectedClusters/<clusterName>"
+bash upgrade-monitoring.sh --resource-id $azureArcClusterResourceId
 ```
 
-Выполните следующую команду, чтобы обновить агент, если указана конечная точка прокси-сервера. Дополнительные сведения о конечной точке прокси-сервера см. в разделе [Настройка конечной точки прокси-](container-insights-enable-arc-enabled-clusters.md#configure-proxy-endpoint)сервера.
+Дополнительные сведения об использовании субъекта-службы с этой командой см. в статье **Использование субъекта-службы** в разделе [Включение мониторинга кластера Kubernetes с поддержкой ARC в Azure](container-insights-enable-arc-enabled-clusters.md#enable-using-bash-script) .
 
-```console
-$ helm upgrade –name azmon-containers-release-1 –set omsagent.proxy=<proxyEndpoint>,omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<resourceIdOfAzureArcK8sCluster>
-```
 
 ## <a name="how-to-disable-environment-variable-collection-on-a-container"></a>Как отключить коллекцию переменных среды для контейнера
 

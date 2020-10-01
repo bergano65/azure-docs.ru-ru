@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: development
 ms.custom: sqldbrb=2
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: stevestein
 ms.author: sstein
 ms.reviewer: genemi
 ms.date: 01/25/2019
-ms.openlocfilehash: 01e1c63a4cfea367a0f721ac33986abade8b5b35
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 94f54e02de1b61cb05b4e41bb4c40118299cf20f
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343835"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91618647"
 ---
 # <a name="how-to-use-batching-to-improve-azure-sql-database-and-azure-sql-managed-instance-application-performance"></a>Как использовать пакетную обработку для улучшения производительности базы данных SQL Azure и приложения Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -99,7 +99,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 **Из локальной среды в Azure**:
 
-| Операции | Нет транзакций (МС) | С транзакциями (мс) |
+| Operations | Нет транзакций (МС) | С транзакциями (мс) |
 | --- | --- | --- |
 | 1 |130 |402 |
 | 10 |1208 |1226 |
@@ -108,7 +108,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 **Между средами в Azure (один центр обработки данных)**:
 
-| Операции | Нет транзакций (МС) | С транзакциями (мс) |
+| Operations | Нет транзакций (МС) | С транзакциями (мс) |
 | --- | --- | --- |
 | 1 |21 |26 |
 | 10 |220 |56 |
@@ -195,7 +195,7 @@ cmd.CommandType = CommandType.StoredProcedure;
 
 В следующей таблице показаны результаты нерегламентированных тестов для использования возвращающих табличное значение параметров в миллисекундах.
 
-| Операции | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
+| Operations | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
 | --- | --- | --- |
 | 1 |124 |32 |
 | 10 |131 |25 |
@@ -233,7 +233,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 Следующие нерегламентированные результаты теста показывают производительность пакетной обработки с **SqlBulkCopy** в миллисекундах.
 
-| Операции | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
+| Operations | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
 | --- | --- | --- |
 | 1 |433 |57 |
 | 10 |441 |32 |
@@ -276,7 +276,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 Следующие нерегламентированные результаты теста показывают производительность этого типа инструкции INSERT в миллисекундах.
 
-| Операции | Параметры, которые возвращают табличное значение (мс) | Один оператор INSERT (мс) |
+| Operations | Параметры, которые возвращают табличное значение (мс) | Один оператор INSERT (мс) |
 | --- | --- | --- |
 | 1 |32 |20 |
 | 10 |30 |25 |
@@ -666,6 +666,6 @@ WHEN NOT MATCHED THEN
 * Избегайте параллельного выполнения пакетов, которые используют одну таблицу в одной базе данных. Если вы решили разделить один пакет на несколько рабочих потоков, выполните тесты, чтобы определить оптимальное количество потоков. После достижения неопределенного порогового значения большее число потоков уменьшит производительность, а не повысит ее.
 * Рассмотрите буферизацию операций по количеству и времени в качестве способа реализации пакетной обработки для нескольких сценариев.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описывается, как методы проектирования и программирования базы данных, связанные с пакетной обработкой, могут повысить производительность и масштабируемость приложения. Но это всего лишь один фактор в общей стратегии. Дополнительные способы повышения производительности и масштабируемости см. в [статье Руководство по производительности базы данных](database/performance-guidance.md) и [вопросы цены и производительности для эластичного пула](database/elastic-pool-overview.md).

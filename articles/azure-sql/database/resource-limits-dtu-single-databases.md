@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: single-database
 ms.custom: references_regions, seo-lt-2019, sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/20/2019
-ms.openlocfilehash: fa15a5f95c2163309ecfd9cc0130d1860eb3b634
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 0bcc26c637e8ef6043589d963cfa9708b599a456
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542693"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91619072"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-purchasing-model---azure-sql-database"></a>Ограничения ресурсов для отдельных баз данных с использованием модели приобретения DTU — база данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -105,7 +105,7 @@ ms.locfileid: "87542693"
 > [!NOTE]
 > `tempdb`Ограничения см. в разделе [ограничения tempdb](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ограничения ресурсов Виртуальное ядро для отдельной базы данных см. [в разделе ограничения ресурсов для отдельных баз данных с использованием модели приобретения Виртуальное ядро](resource-limits-vcore-single-databases.md) .
 - Сведения об ограничениях ресурсов Виртуальное ядро для эластичных пулов см. [в статье ограничения ресурсов для эластичных пулов с использованием модели приобретения Виртуальное ядро](resource-limits-vcore-elastic-pools.md) .
