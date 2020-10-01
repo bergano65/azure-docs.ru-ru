@@ -6,17 +6,17 @@ ms.service: sql-database
 ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: reference
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: 7f0f50de3f74f0e8040118035e28b3e905ed5616
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8f73c0789cd0211deeb66af5c7300a81d7b1be0
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84033845"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91619820"
 ---
 # <a name="extended-events-in-azure-sql-database"></a>Расширенные события в базе данных SQL Azure 
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,10 +29,10 @@ ms.locfileid: "84033845"
 
 Дополнительные сведения о расширенных событиях можно найти по адресу:
 
-- [Быстрое начало: Расширенные события в SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
+- [Быстрое начало. Расширенные события в SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
 - [Расширенные события](/sql/relational-databases/extended-events/extended-events)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 
@@ -73,7 +73,7 @@ ms.locfileid: "84033845"
 
 Функцию расширенных событий поддерживают несколько [представлений каталога](https://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
 
-| Имя<br/>представления каталога | Описание: |
+| Имя<br/>представления каталога | Описание |
 |:--- |:--- |
 | **sys.database_event_session_actions** |Возвращает строку для каждого действия над каждым событием из сеанса событий. |
 | **sys.database_event_session_events** |Возвращает строку для каждого события в сеансе событий. |
@@ -87,7 +87,7 @@ ms.locfileid: "84033845"
 
 База данных SQL Azure включает [динамические административные представления (DMV)](https://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
 
-| Имя DMV | Описание: |
+| Имя DMV | Описание |
 |:--- |:--- |
 | **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях сеанса событий. |
 | **sys.dm_xe_database_session_events** |Возвращает сведения о событиях сеанса. |
@@ -165,7 +165,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 - запись
 - Список
 
-## <a name="performance-considerations"></a>Особенности производительности
+## <a name="performance-considerations"></a>Вопросы производительности
 
 Существуют сценарии, в которых интенсивное использование расширенных событий может задействовать больше активной памяти, чем допустимо для сохранения работоспособности всей системы. Поэтому база данных SQL Azure динамически устанавливает и корректирует ограничения на объем активной памяти, который может накапливаться в сеансе событий. Динамические расчеты выполняются с учетом множества факторов.
 

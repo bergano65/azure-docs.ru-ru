@@ -3,12 +3,12 @@ title: Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для 
 description: В этой статье описывается настройка мониторинга для кластера Kubernetes с Azure Monitor, размещенной в Azure Red Hat OpenShift версии 4 или более поздней.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 91b5644c13ac560910703454c4052e223f958014
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 63db888419ee691e83ea456fcd7fc28a4d9909fe
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499177"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620330"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров
 
@@ -20,7 +20,7 @@ Azure Monitor для контейнеров предоставляет широ�
 
 Вы можете включить Azure Monitor для контейнеров для одного или нескольких существующих развертываний Azure Red Hat OpenShift v4. x, используя Поддерживаемые методы, описанные в этой статье.
 
-Для существующего кластера запустите этот [скрипт Bash в Azure CLI](/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
+Для существующего кластера запустите этот [скрипт Bash в Azure CLI](/cli/azure/openshift?view=azure-cli-latest#az-openshift-create&preserve-view=true).
 
 ## <a name="supported-and-unsupported-features"></a>Поддерживаемые и неподдерживаемые функции
 
@@ -138,11 +138,11 @@ Azure Monitor для контейнеров поддерживает монит�
 Замените значения для `azureAroV4ClusterResourceId` `kubeContext` параметров и.
 
 ```bash
-export azureAroV4ClusterResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>”
+export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
 export kubeContext="<kubeContext name of your ARO v4 cluster>"
 ```
 
-Вот несколько примеров:
+Пример:
 
 `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext`
 

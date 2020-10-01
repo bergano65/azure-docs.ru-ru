@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: b1a228e9d15a349f032291fb0678bdd0ad9d95b3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 69cfe529f3d2b0f956bfbe9d002a5a220b37e19f
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87048849"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620019"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
 
@@ -77,7 +77,7 @@ ms.locfileid: "87048849"
     ```
 
    > [!NOTE]
-   > Если при регистрации поставщика ресурсов Data Lake Storage 1-го поколения появляется сообщение об ошибке, похожее на `Register-AzResourceProvider : InvalidResourceNamespace: The resource namespace 'Microsoft.DataLakeStore' is invalid`, это может означать, что ваша подписка отсутствует в списке разрешений для Data Lake Storage 1-го поколения. Убедитесь, что подписка Azure для Data Lake Storage 1-го поколения включена, выполнив указанные [инструкции](data-lake-store-get-started-portal.md).
+   > Если при регистрации поставщика ресурсов Data Lake Storage 1-го поколения появляется сообщение об ошибке, похожее на `Register-AzResourceProvider : InvalidResourceNamespace: The resource namespace 'Microsoft.DataLakeStore' is invalid` , то возможно, что подписка не утверждена для Data Lake Storage 1-го поколения. Убедитесь, что подписка Azure для Data Lake Storage 1-го поколения включена, выполнив указанные [инструкции](data-lake-store-get-started-portal.md).
    >
    >
 2. Учетная запись Data Lake Storage 1-го поколения связывается с группой ресурсов Azure. Для начала создайте группу ресурсов Azure.
@@ -136,10 +136,10 @@ ms.locfileid: "87048849"
 
 Чтобы настроить для Data Lake Storage 1-го поколения проверку подлинности в Active Directory, вам необходимо сделать следующее.
 
-* Создание самозаверяющего сертификата.
+* Создание самозаверяющего сертификата
 * создать приложение в Azure Active Directory и субъект-службу.
 
-### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
+### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
 Прежде чем выполнять дальнейшие действия, описанные в этом разделе, убедитесь, что на вашем компьютере установлен [пакет SDK Windows](https://dev.windows.com/en-us/downloads). Вам также необходимо создать каталог, например **C:\mycertdir**, в котором будет создан сертификат.
 

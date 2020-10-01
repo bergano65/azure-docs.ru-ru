@@ -6,19 +6,19 @@ ms.service: sql-managed-instance
 ms.subservice: security
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 f1_keywords:
 - mi.azure.sqlaudit.general.f1
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 05/26/2020
-ms.openlocfilehash: 213a4fdb0e064e1c36a04f7190f14fab80cb4daa
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: d8a6ead23e080b5e1e17403873e2dbaedc0ce177
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117353"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620364"
 ---
 # <a name="get-started-with-azure-sql-managed-instance-auditing"></a>Приступая к работе с аудитом Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "87117353"
 
 В следующем разделе описывается настройка аудита для управляемого экземпляра.
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Перейдите на [портал Microsoft Azure](https://portal.azure.com).
 2. Создайте **контейнер** службы хранилища Azure для хранения журналов аудита.
 
    1. Перейдите к учетной записи хранения Azure, в которой вы хотите хранить журналы аудита.
@@ -177,7 +177,7 @@ ms.locfileid: "87117353"
 
 5. Выберите назначение для событий аудита: концентраторы событий, журналы Azure Monitor или и то, и другое. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
 
-6. Нажмите кнопку **Сохранить**.
+6. Выберите команду **Сохранить**.
 
     ![Настройка параметров диагностики](./media/auditing-configure/9_mi_configure_diagnostics.png)
 

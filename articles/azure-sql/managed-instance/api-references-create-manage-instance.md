@@ -6,17 +6,17 @@ ms.service: sql-managed-instance
 ms.subservice: operations
 ms.custom: devx-track-azurecli
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 21239d868213df5d3208b8c790c67d675928d98a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2b98b11d85bde8dd49b6bbde5d048493493b73f5
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91283791"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620245"
 ---
 # <a name="managed-api-reference-for-azure-sql-managed-instance"></a>Справочник по управляемому API для Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -83,7 +83,7 @@ ms.locfileid: "91283791"
 > [!IMPORTANT]
 > Нельзя создать или удалить управляемый экземпляр с помощью Transact-SQL.
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 |[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true)|Создает новую базу данных экземпляра в SQL Управляемый экземпляр. Для создания новой базы данных необходимо подключение к базе данных master.|
 | [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true) |Изменяет экземпляр базы данных в Управляемый экземпляр SQL.|
@@ -92,7 +92,7 @@ ms.locfileid: "91283791"
 
 Чтобы создать и настроить управляемые экземпляры, используйте следующие запросы REST API.
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 |[Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)|Создает или обновляет управляемый экземпляр.|
 |[Управляемые экземпляры. Удаление](https://docs.microsoft.com/rest/api/sql/managedinstances/delete)|Удаляет управляемый экземпляр.|
