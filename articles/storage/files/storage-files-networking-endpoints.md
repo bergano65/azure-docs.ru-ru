@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 08/17/2020
 ms.author: rogarana
 ms.subservice: files
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 4e08c74e1fbc3da1ed11d6a2f7faeb26780d2a37
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b494e7f7f99394c7337d663ea9a9c7e1f74dacf3
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333551"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91612835"
 ---
 # <a name="configuring-azure-files-network-endpoints"></a>Настройка сетевых конечных точек Файлов Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "91333551"
 - В этой статье подразумевается, что вы уже создали подписку Azure. Если у вас еще нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - В этой статье предполагается, что вы уже создали файловый ресурс Azure в учетной записи хранения, к которой вы хотите подключиться из локальной среды. Чтобы узнать, как создать общую папку Azure, ознакомьтесь с [этой статьей](storage-how-to-create-file-share.md).
 - Если вы хотите использовать Azure PowerShell, [установите последнюю версию](https://docs.microsoft.com/powershell/azure/install-az-ps).
-- Если вы хотите использовать Azure CLI, [установите последнюю версию](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Если вы хотите использовать Azure CLI, [установите последнюю версию](/cli/azure/install-azure-cli).
 
 ## <a name="endpoint-configurations"></a>Конфигурации конечных точек
 

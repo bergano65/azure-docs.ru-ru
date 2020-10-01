@@ -8,13 +8,13 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: tamram
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: c80269c949ec97a09584d736371ccd11879fd82b
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 0054b6e9bb73ef2918a8e5c52c59a272bae5da26
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89069720"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91612512"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновление до учетной записи хранения общего назначения версии 2
 
@@ -49,7 +49,7 @@ Set-AzStorageAccount -ResourceGroupName <resource-group> -AccountName <storage-a
 ```
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 Затем вызовите следующую команду, чтобы обновить учетную запись, подставив имя группы ресурсов, имя учетной записи хранения и уровень доступа требуемой учетной записи.
 

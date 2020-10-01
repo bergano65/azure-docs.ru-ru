@@ -8,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
-ms.openlocfilehash: dd54dd17e5a9a828935ad0d6ac3d713aaedd9535
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b667254ece93c083de95728abe0ddecd5cfed197
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91251598"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91612376"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-azure-powershell"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure PowerShell
 
@@ -26,7 +26,6 @@ ms.locfileid: "91251598"
 - Значения ключей никогда не возвращаются в ответе вызывающему объекту.
 - Управлять ключами учетной записи хранения должно только решение Key Vault. Не управляйте ключами самостоятельно и избегайте конфликтов с процессами Key Vault.
 - Управлять ключами учетной записи хранения должен только один объект Key Vault. Не разрешайте управление ключами из нескольких объектов.
-- По запросу можно настроить хранилище Key Vault так, чтобы оно управляло учетной записью хранения с помощью субъекта-пользователя, а не субъекта-службы.
 - Создавайте ключи повторно только с помощью Key Vault. Не создавайте повторно ключи своей учетной записи хранения вручную.
 
 Мы рекомендуем использовать интеграцию службы хранилища Azure с Azure Active Directory (Azure AD), облачной службой корпорации Майкрософт для управления удостоверениями и доступом. Интеграция с Azure AD доступна для [BLOB-объектов и очередей Azure](../../storage/common/storage-auth-aad.md). Она обеспечивает доступ к службе хранилища Azure на основе токенов OAuth2 (точно так же, как Azure Key Vault).

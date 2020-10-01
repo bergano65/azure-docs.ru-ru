@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/05/2020
+ms.date: 09/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 6a18dbf5c00c3f3aba2b2d58f060856aba9fb080
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: 6e2daa60e99eb7aab34b11f240a2e2fb03c98582
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722904"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91612410"
 ---
 # <a name="frequently-asked-questions-faqs-about-azure-active-directory-ad-domain-services"></a>Часто задаваемые вопросы о доменных службах Azure Active Directory (AD)
 
@@ -34,7 +34,7 @@ ms.locfileid: "88722904"
 * [Можно ли включить доменные службы Azure AD с помощью PowerShell?](#can-i-enable-azure-ad-domain-services-using-powershell)
 * [Можно ли включить доменные службы Azure AD с помощью шаблона диспетчер ресурсов?](#can-i-enable-azure-ad-domain-services-using-a-resource-manager-template)
 * [Могу ли я добавить контроллеры домена в управляемый домен доменных служб Azure AD?](#can-i-add-domain-controllers-to-an-azure-ad-domain-services-managed-domain)
-* [Могут ли гостевые пользователи, приглашенные в каталог, использовать доменные службы Azure AD?](#can-guest-users-invited-to-my-directory-use-azure-ad-domain-services)
+* [Можно ли приглашать гостевых пользователей в моем каталоге использовать доменные службы Azure AD?](#can-guest-users-be-invited-to-my-directory-use-azure-ad-domain-services)
 * [Можно ли переместить существующий управляемый домен доменных служб Azure AD в другую подписку, группу ресурсов, регион или виртуальную сеть?](#can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network)
 * [Имеются ли в доменных службах Azure AD варианты высокой доступности?](#does-azure-ad-domain-services-include-high-availability-options)
 
@@ -67,12 +67,12 @@ ms.locfileid: "88722904"
 Да. Дополнительные сведения см. [в статье Включение доменных служб Azure AD с помощью PowerShell](powershell-create-instance.md).
 
 ### <a name="can-i-enable-azure-ad-domain-services-using-a-resource-manager-template"></a>Можно ли включить доменные службы Azure AD с помощью шаблона Resource Manager?
-Да, вы можете создать управляемый домен доменных служб Azure AD с помощью шаблона диспетчер ресурсов. Субъект-службу и группу Azure AD для администрирования необходимо создать с помощью портал Azure или Azure PowerShell перед развертыванием шаблона. Дополнительные сведения см. в статье [Создание управляемого домена AD DS Azure с помощью шаблона Azure Resource Manager](template-create-instance.md). При создании управляемого домена доменных служб Azure AD в портал Azure также есть возможность экспортировать шаблон для использования с дополнительными развертываниями.
+Да, вы можете создать управляемый домен доменных служб Azure AD с помощью шаблона диспетчер ресурсов. Субъект-службу и группу Azure AD для администрирования необходимо создать с помощью портал Azure или Azure PowerShell перед развертыванием шаблона. Дополнительные сведения см. в статье [Создание управляемого домена AD DS Azure с помощью шаблона Azure Resource Manager](template-create-instance.md). При создании управляемого домена доменных служб Azure AD в портал Azure также имеется возможность экспортировать шаблон для использования с дополнительными развертываниями.
 
 ### <a name="can-i-add-domain-controllers-to-an-azure-ad-domain-services-managed-domain"></a>Могу ли я добавить контроллеры домена в управляемый домен доменных служб Azure AD?
 Нет. Домен, предоставленный доменными службами Azure AD — это управляемый домен. Вам не нужно подготавливать, настраивать или иным образом управлять контроллерами домена для этого домена. Эти действия по управлению предоставляются корпорацией Майкрософт как услуга. Таким образом, невозможно добавить дополнительные контроллеры домена (для чтения и записи или только для чтения) для управляемого домена.
 
-### <a name="can-guest-users-invited-to-my-directory-use-azure-ad-domain-services"></a>Могут ли гостевые пользователи, приглашенные в каталог, использовать доменные службы Azure AD?
+### <a name="can-guest-users-be-invited-to-my-directory-use-azure-ad-domain-services"></a>Можно ли приглашать гостевых пользователей в моем каталоге использовать доменные службы Azure AD?
 Нет. Гостевые пользователи, приглашенные в каталог Azure AD с помощью процесса [Azure AD B2B](../active-directory/external-identities/what-is-b2b.md), синхронизируются в управляемом домене доменных служб Azure AD. Однако пароли для этих пользователей не хранятся в каталоге Azure AD. Таким образом, доменные службы Azure AD не позволяют синхронизировать хэши NTLM и Kerberos для этих пользователей с управляемым доменом. Такие пользователи не могут выполнять вход или присоединять компьютеры к управляемому домену.
 
 ### <a name="can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network"></a>Можно ли переместить существующий управляемый домен доменных служб Azure AD в другую подписку, группу ресурсов, регион или виртуальную сеть?
@@ -94,6 +94,7 @@ ms.locfileid: "88722904"
 * [Что из себя представляет политика времени существования пароля в управляемом домене?](#what-is-the-password-lifetime-policy-on-a-managed-domain)
 * [Предоставляют ли доменные службы Azure AD защиту учетной записи AD с помощью блокировки?](#does-azure-ad-domain-services-provide-ad-account-lockout-protection)
 * [Можно ли настроить распределенная файловая система (DFS) и репликацию в доменных службах Azure AD?](#can-i-configure-distributed-file-system-and-replication-within-azure-ad-domain-services)
+* [Как обновления Windows применяются в доменных службах Azure AD?](#how-are-windows-updates-applied-in-azure-ad-domain-services)
 
 ### <a name="can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop"></a>Можно ли подключиться к контроллеру управляемого домена с помощью удаленного рабочего стола?
 Нет. У вас нет разрешений на подключение к контроллерам домена для управляемого домена с помощью удаленный рабочий стол. Члены группы *администраторов контроллера домена AAD* могут администрировать управляемый домен с помощью средств администрирования AD, таких как центр администрирования Active Directory (ADAC) или AD PowerShell. Эти средства устанавливаются с помощью функции *средства удаленного администрирования сервера* на сервере Windows, присоединенном к управляемому домену. Дополнительные сведения см. [в статье Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure AD](tutorial-create-management-vm.md).
@@ -129,13 +130,16 @@ ms.locfileid: "88722904"
 ### <a name="can-i-configure-distributed-file-system-and-replication-within-azure-ad-domain-services"></a>Можно ли настроить распределенная файловая система и репликацию в доменных службах Azure AD?
 Нет. Распределенная файловая система (DFS) и репликация недоступны при использовании доменных служб Azure AD.
 
+### <a name="how-are-windows-updates-applied-in-azure-ad-domain-services"></a>Как обновления Windows применяются в доменных службах Azure AD?
+Контроллеры домена в управляемом домене автоматически применяют необходимые обновления Windows. Здесь нет ничего для настройки или администрирования. Убедитесь, что не созданы правила группы безопасности сети, которые блокируют исходящий трафик для обновлений Windows. Для собственных виртуальных машин, присоединенных к управляемому домену, вы несете ответственность за настройку и применение необходимых обновлений ОС и приложений.
+
 ## <a name="billing-and-availability"></a>Выставление счетов и доступность
 
 * [Являются ли доменные службы Azure AD платной службой?](#is-azure-ad-domain-services-a-paid-service)
 * [Существует ли бесплатная пробная версия для службы?](#is-there-a-free-trial-for-the-service)
 * [Можно ли приостановить управляемый домен доменных служб Azure AD?](#can-i-pause-an-azure-ad-domain-services-managed-domain)
-* [Можно ли выполнить отработку отказа доменных служб Azure AD с переходом в другой регион при аварийном восстановлении?](#can-i-pause-an-azure-ad-domain-services-managed-domain)
-* [Можно ли получить доменные службы Azure AD в составе Enterprise Mobility Suite (EMS)? Требуется Azure AD Premium для использования доменных служб Azure AD?](#can-i-failover-azure-ad-domain-services-to-another-region-for-a-dr-event)
+* [Можно ли выполнить отработку отказа доменных служб Azure AD в другой регион для события аварийного восстановления?](#can-i-pause-an-azure-ad-domain-services-managed-domain)
+* [Можно ли получить доменные службы Azure AD в составе Enterprise Mobility Suite (EMS)? Требуется Azure AD Premium для использования доменных служб Azure AD?](#can-i-fail-over-azure-ad-domain-services-to-another-region-for-a-dr-event)
 * [В каких регионах Azure доступна служба?](#can-i-get-azure-ad-domain-services-as-part-of-enterprise-mobility-suite-ems-do-i-need-azure-ad-premium-to-use-azure-ad-domain-services)
 
 ### <a name="is-azure-ad-domain-services-a-paid-service"></a>Являются ли доменные службы Azure AD платной службой?
@@ -147,7 +151,7 @@ ms.locfileid: "88722904"
 ### <a name="can-i-pause-an-azure-ad-domain-services-managed-domain"></a>Можно ли приостановить управляемый домен доменных служб Azure AD?
 Нет. После включения управляемого домена доменных служб Azure AD служба будет доступна в выбранной виртуальной сети, пока не будет удален управляемый домен. Приостановить работу службы невозможно. Счета выставляются на почасовой основе, пока вы не удалите управляемый домен.
 
-### <a name="can-i-failover-azure-ad-domain-services-to-another-region-for-a-dr-event"></a>Можно ли выполнить отработку отказа доменных служб Azure AD с переходом в другой регион при аварийном восстановлении?
+### <a name="can-i-fail-over-azure-ad-domain-services-to-another-region-for-a-dr-event"></a>Можно ли выполнить отработку отказа доменных служб Azure AD в другой регион для события аварийного восстановления?
 Нет. Доменные службы Azure AD в настоящее время не предоставляют геоизбыточную модель развертывания. Она ограничена одной виртуальной сетью в регионе Azure. Чтобы использовать несколько регионов Azure, необходимо запустить контроллеры домена Active Directory на виртуальных машинах IaaS Azure. Инструкции по архитектуре см. в статье [расширение локального домена Active Directory в Azure](/azure/architecture/reference-architectures/identity/adds-extend-domain).
 
 ### <a name="can-i-get-azure-ad-domain-services-as-part-of-enterprise-mobility-suite-ems-do-i-need-azure-ad-premium-to-use-azure-ad-domain-services"></a>Можно ли получить доменные службы Azure AD в составе Enterprise Mobility Suite (EMS)? Требуется ли Azure AD Premium для использования доменных служб Azure AD?

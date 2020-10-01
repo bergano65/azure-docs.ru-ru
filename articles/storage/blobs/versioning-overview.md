@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.date: 08/27/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 2e3cfd27d36558587ca35cc1c573999a48092b0d
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e4a13fb22fd826f82252383587bc4a273c43099f
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89297679"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613515"
 ---
 # <a name="blob-versioning"></a>Управление версиями BLOB-объектов
 
@@ -79,11 +79,11 @@ ms.locfileid: "89297679"
 
 На следующей схеме показан результат операции удаления для большого двоичного объекта с управлением версиями.
 
-:::image type="content" source="media/versioning-overview/delete-versioned-base-blob.png" alt-text="Схема удаления большого двоичного объекта с управлением версиями.":::
+:::image type="content" source="media/versioning-overview/delete-versioned-base-blob.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 При записи новых данных в большой двоичный объект создается новая версия большого двоичного объекта. Все существующие версии не затрагиваются, как показано на следующей схеме.
 
-:::image type="content" source="media/versioning-overview/recreate-deleted-base-blob.png" alt-text="Схема, демонстрирующая повторное создание BLOB-объекта с управлением версиями после удаления.":::
+:::image type="content" source="media/versioning-overview/recreate-deleted-base-blob.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 ### <a name="blob-types"></a>Типы BLOB-объектов
 
@@ -122,7 +122,7 @@ ms.locfileid: "89297679"
 
 На следующей схеме показано, как изменение большого двоичного объекта после отключения управления версиями создает большой двоичный объект, для которого не установлен контроль версий. Все существующие версии, связанные с большим двоичным объектом, сохраняются.
 
-:::image type="content" source="media/versioning-overview/modify-base-blob-versioning-disabled.png" alt-text="На схеме показано изменение базового большого двоичного объекта после отключения управления версиями.":::
+:::image type="content" source="media/versioning-overview/modify-base-blob-versioning-disabled.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 ## <a name="blob-versioning-and-soft-delete"></a>Управление версиями BLOB-объектов и обратимое удаление
 
@@ -138,7 +138,7 @@ ms.locfileid: "89297679"
 
 На следующей схеме показано, что происходит при удалении большого двоичного объекта или версии большого двоичного объекта.
 
-:::image type="content" source="media/versioning-overview/soft-delete-historical-version.png" alt-text="Диаграмма, показывающая удаление версии с включенным обратимым удалением.":::
+:::image type="content" source="media/versioning-overview/soft-delete-historical-version.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 Если в учетной записи хранения включены как управление версиями, так и обратимое удаление, то при изменении или удалении версии BLOB-объекта или большого двоичного объекта моментальный снимок не создается.
 
@@ -150,7 +150,7 @@ ms.locfileid: "89297679"
 
 На следующей схеме показано, как восстановить обратимо удаленные версии BLOB-объектов с помощью операции **отмены удаления больших двоичных объектов** , а также как восстановить текущую версию большого двоичного объекта с помощью операции **копирования BLOB-объектов** .
 
-:::image type="content" source="media/versioning-overview/undelete-version.png" alt-text="Схема восстановления версий с обратимым удалением.":::
+:::image type="content" source="media/versioning-overview/undelete-version.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 После истечения срока хранения обратимого удаления все обратимо удаленные версии больших двоичных объектов удаляются без возможности восстановления.
 
@@ -169,7 +169,7 @@ ms.locfileid: "89297679"
 
 На следующей схеме показано, что происходит при создании моментального снимка BLOB-объекта с версией. На схеме версии BLOB-объектов и моментальные снимки с ИДЕНТИФИКАТОРами версии 2 и 3 содержат идентичные данные.
 
-:::image type="content" source="media/versioning-overview/snapshot-versioned-blob.png" alt-text="Схема, показывающая моментальные снимки BLOB-объекта с версией.":::
+:::image type="content" source="media/versioning-overview/snapshot-versioned-blob.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 ## <a name="authorize-operations-on-blob-versions"></a>Авторизовать операции в версиях BLOB-объектов
 
@@ -269,7 +269,7 @@ ms.locfileid: "89297679"
 
 На следующей схеме показано, как выставляются счета за объекты при перемещении большого двоичного объекта на другой уровень.
 
-:::image type="content" source="media/versioning-overview/versioning-billing-tiers.png" alt-text="Диаграмма, показывающая, как взимается плата за объекты при явном уровне двоичного объекта с управлением версиями.":::
+:::image type="content" source="media/versioning-overview/versioning-billing-tiers.png" alt-text="Диаграмма, показывающая, как операции записи влияют на двоичные объекты с версиями.":::
 
 Явное задание уровня для большого двоичного объекта, версии или моментального снимка невозможно отменить. Если вы перемещаете большой двоичный объект на новый уровень и затем перемещаете его на исходный уровень, вы платите за полную длину содержимого объекта, даже если он разделяется на другие объекты на исходном уровне.
 

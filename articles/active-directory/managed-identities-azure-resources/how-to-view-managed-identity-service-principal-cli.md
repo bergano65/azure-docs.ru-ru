@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/29/2018
+ms.date: 09/30/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b8eec72666eadf90a401dc8f0adb77df77dbf782
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 1c0f167a36ceff6a9b62e2a3ccf24ca6e13e6294
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90969304"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611917"
 ---
 # <a name="view-the-service-principal-of-a-managed-identity-using-azure-cli"></a>Просмотр субъекта-службы управляемого удостоверения с помощью Azure CLI
 
@@ -34,16 +34,16 @@ ms.locfileid: "90969304"
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
 - [Включите назначенное системой удостоверение в виртуальной машине](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity) или [приложении](../../app-service/overview-managed-identity.md#add-a-system-assigned-identity).
-- Для выполнения примеров сценариев существует два варианта.
-    - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в верхнем правом углу блоков кода.
-    - Выполните скрипты локально, установив последнюю версию [Azure CLI](/cli/azure/install-azure-cli), а затем войдите в Azure с помощью команды [AZ login](/cli/azure/reference-index#az-login). Используйте учетную запись, связанную с подпиской Azure, в которой вы хотите создавать ресурсы.   
+- Выполнить примеры скриптов можно двумя способами:
+    - используйте службу [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **Попробовать** в правом верхнем углу блоков кода.
+    - Выполните скрипты локально, установив последнюю версию [Azure CLI](/cli/azure/install-azure-cli), а затем войдите в Azure с помощью команды [az login](/cli/azure/reference-index#az-login). Используйте учетную запись, связанную с подпиской Azure, в рамках которой нужно создать ресурсы.   
 
 ## <a name="view-the-service-principal"></a>Просмотр субъекта-службы
 
-Следующая команда позволяет просмотреть субъект-службу виртуальной машины или приложения с включенным управляемым удостоверением. Замените `<VM or application name>` собственными значениями. 
+Следующая команда позволяет просмотреть субъект-службу виртуальной машины или приложения с включенным управляемым удостоверением. Замените `<Azure resource name>` собственными значениями.
 
 ```azurecli-interactive
-az ad sp list --display-name <VM or application name>
+az ad sp list --display-name <Azure resource name>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

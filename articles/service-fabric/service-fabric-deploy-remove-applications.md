@@ -3,12 +3,12 @@ title: Развертывание Service Fabric Azure с помощью PowerSh
 description: Узнайте, как удалять и развертывать приложения в Service Fabric Azure и как выполнять эти действия в PowerShell.
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: e3fdd194f2949f1246e991968e02b3278f33f7db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a6f5411c30087e15d1164cd02d4e6eb66566388
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84699844"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611458"
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Развертывание и удаление приложений с помощью PowerShell
 
@@ -135,7 +135,7 @@ C:\USERS\USER\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\MYAPPLICATION\MYAPPLICATION\
 |2048|1000|00:01:04.3775554|1231|
 |5012|100|00:02:45.2951288|3074|
 
-При необходимости после сжатия пакет можно загрузить в один или несколько кластеров Service Fabric. Для сжатых и несжатых пакетов используется одинаковый механизм развертывания. Сжатые пакеты хранятся в неизменном виде в хранилище образов кластера. Пакеты распаковываются на узле перед запуском приложения.
+При необходимости после сжатия пакет можно загрузить в один или несколько кластеров Service Fabric. Механизм развертывания одинаков для сжатых и несжатых пакетов. Сжатые пакеты хранятся в неизменном виде в хранилище образов кластера. Пакеты распаковываются на узле перед запуском приложения.
 
 
 Следующий пример передает пакет в папку MyApplicationV1 хранилища образов:
@@ -347,7 +347,7 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 ### <a name="deploy-large-application-package"></a>Развертывание пакета приложения большего размера
 
 Проблема. Время ожидания выполнения команды [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) истекает для пакета большого приложения (несколько ГБ).
-Попробуйте выполнить следующее.
+Попробуйте следующее:
 - Задайте большее время ожидания для команды [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) с помощью параметра `TimeoutSec`. По умолчанию время ожидания составляет 30 минут.
 - Проверьте сетевое подключение между исходным компьютером и кластером. Если подключение медленное, рассмотрите возможность использовать машину с лучшим сетевым соединением.
 Возможно, клиентский компьютер находится не в одном регионе с кластером, тогда перейдите на компьютер, который находится с ним в одном регионе или в регионе поблизости.
@@ -373,7 +373,7 @@ DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 ### <a name="deploy-application-package-with-many-files"></a>Развертывание пакета приложения с несколькими файлами
 
 Проблема. Время ожидания для выполнения команды [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) истекает для пакета приложения с несколькими файлами (несколько тысяч).
-Попробуйте выполнить следующее.
+Попробуйте следующее:
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов. Сжатие уменьшает количество файлов.
 - Задайте большее время ожидания для выполнения команды [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) с помощью параметра `TimeoutSec`.
 - Задайте параметр `Async` для команды [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps). Эта команда возвращается, когда кластер принимает команду, и подготовка продолжается асинхронно.
@@ -390,7 +390,7 @@ Status                 : Available
 DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание пакета приложения](service-fabric-package-apps.md)
 

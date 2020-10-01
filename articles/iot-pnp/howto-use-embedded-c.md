@@ -7,12 +7,12 @@ ms.date: 09/23/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: a5b826bd76eb7e56620bcb5b5eec9464ebacffc6
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: edcfcda8de1fade605c409537155231d90d5849e
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580690"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91610081"
 ---
 # <a name="implement-iot-plug-and-play-on-constrained-devices"></a>Реализация Plug and Play Интернета вещей на ограниченных устройствах
 
@@ -39,7 +39,7 @@ ms.locfileid: "91580690"
 
 ## <a name="using-azure-rtos"></a>Использование Azure RTO
 
-Azure RTO включает упрощенный слой, который добавляет собственное подключение к облачным службам Azure IoT. Этот уровень предоставляет простой механизм подключения ограниченных устройств к Azure IoT с использованием дополнительных функций Azure RTO.
+Azure RTO включает упрощенный слой, который добавляет собственное подключение к облачным службам Azure IoT. Этот уровень предоставляет простой механизм подключения ограниченных устройств к Azure IoT с использованием дополнительных функций Azure RTO. Дополнительные сведения см. в разделе [что такое Microsoft Azure RTO](https://docs.microsoft.com/azure/rtos/overview-rtos).
 
 ### <a name="toolchains"></a>Цепочек инструментов
 

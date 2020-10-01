@@ -1,32 +1,28 @@
 ---
-title: Защита API с помощью OAuth 2,0 с AAD и службой управления API
+title: Защита серверной части API в службе управления API с помощью OAuth 2,0 и Azure AD
 titleSuffix: Azure API Management
-description: Информация о защите внутренней службы веб-API с помощью Azure Active Directory и службы управления API.
+description: Узнайте, как защитить доступ к серверной части веб-API в службе управления API Azure с помощью авторизации пользователя OAuth 2,0 и Azure Active Directory
 services: api-management
-documentationcenter: ''
 author: miaojiang
-manager: dcscontentpm
-editor: ''
 ms.service: api-management
-ms.workload: mobile
 ms.topic: article
-ms.date: 06/24/2020
+ms.date: 09/23/2020
 ms.author: apimpm
-ms.openlocfilehash: 455444fe78171e3e2b37a309fd5708f283121ed6
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 285a99bd47fa94940187aa0a4406e773a254dcb4
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86243415"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91612342"
 ---
-# <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
+# <a name="protect-a-web-api-backend-in-azure-api-management-by-using-oauth-20-authorization-with-azure-ad"></a>Защита серверной части веб-API в службе управления API Azure с помощью авторизации OAuth 2,0 в Azure AD 
 
-В этом руководстве показано, как настроить имеющийся экземпляр управления API Azure для защиты API с помощью протокола OAuth 2.0 в Azure Active Directory. 
+В этом руководство показано, как настроить экземпляр службы [управления API Azure](api-management-key-concepts.md) для защиты API с помощью [протокола OAuth 2,0 с Azure Active Directory (Azure AD)](../active-directory/develop/active-directory-v2-protocols.md). 
 
 > [!NOTE]
 > Эта функция доступна на уровнях **Developer**, **Basic**, **Standard**и **Premium** интерфейса управления API.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 
@@ -46,7 +42,7 @@ ms.locfileid: "86243415"
 
 ## <a name="register-an-application-in-azure-ad-to-represent-the-api"></a>Регистрация приложения в Azure Active Directory для представления API
 
-Чтобы защитить API с помощью Azure AD, сначала необходимо зарегистрировать в Azure AD приложение, которое представляет API. 
+Чтобы защитить API с помощью Azure AD, сначала необходимо зарегистрировать в Azure AD приложение, которое представляет API. В следующих шагах для регистрации приложения используется портал Azure. Дополнительные сведения о регистрации приложений см. в разделе [Краткое руководство. Настройка приложения для предоставления доступа к веб-API](../active-directory/develop/quickstart-configure-app-expose-web-apis.md).
 
 1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы зарегистрировать приложение. Найдите и выберите **Регистрация приложений**.
 
@@ -79,7 +75,7 @@ ms.locfileid: "86243415"
 
 1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы зарегистрировать приложение.
 
-1.  Найдите и выберите **Регистрация приложений**.
+1. Найдите и выберите **Регистрация приложений**.
 
 1. Выберите **Новая регистрация**.
 
@@ -156,7 +152,7 @@ ms.locfileid: "86243415"
 
 1. Далее в качестве типа предоставления кода авторизации указан **redirect_url**. Запишите этот URL-адрес.
 
-1. Нажмите кнопку **Создать**.
+1. Выберите **Создать**.
 
 1. Вернитесь к регистрации клиентского приложения в Azure Active Directory и выберите **Проверка подлинности**.
 
@@ -170,11 +166,11 @@ ms.locfileid: "86243415"
 
 1. Выберите API, который нужно защитить. Например, `Echo API`.
 
-1. Перейдите в раздел **Параметры**.
+1. Перейдите в меню **Параметры**.
 
 1. В разделе **безопасности** выберите **OAuth 2.0**, а также настроенный ранее сервер OAuth 2.0. 
 
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="successfully-call-the-api-from-the-developer-portal"></a>Удачный вызов API с портала разработчика
 

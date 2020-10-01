@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: dd2b9bc462a9d4bc11f49a7e3294e52f88a926fb
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7a9f4f165f457dfb902a4c0ecce3f4a9b13e2ec8
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86511846"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611543"
 ---
 # <a name="learn-how-to-deploy-modules-and-establish-routes-in-iot-edge"></a>Сведения о развертывании модулей и установлении маршрутов в IoT Edge
 
@@ -38,7 +38,7 @@ ms.locfileid: "86511846"
 
 В каждый манифест должны быть включены два обязательных модуля: `$edgeAgent` и `$edgeHub`. Эти модули являются частью среды выполнения IoT Edge, которая управляет устройством IoT Edge и запущенными на нем модулями. См. дополнительные сведения о [среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В дополнение к двум модулям среды выполнения можно добавить до 30 модулей для запуска на устройстве IoT Edge.
+В дополнение к двум модулям среды выполнения можно добавить до 50 модулей для запуска на устройстве IoT Edge.
 
 Манифест развертывания, который содержит только среду выполнения IoT Edge (модули edgeAgent и edgeHub), тоже считается допустимым.
 

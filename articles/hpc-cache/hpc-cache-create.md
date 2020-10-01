@@ -4,14 +4,14 @@ description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 5e17c55f8321ba0ad9a9686ada41413d64879d6c
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: bed158fb99654bd48184073b1266ae630255558b
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91570884"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613175"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -29,7 +29,7 @@ ms.locfileid: "91570884"
 
 ![снимок экрана: страница со сведениями о проекте на портале Azure](media/hpc-cache-create-basics.png)
 
-В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш.<!-- Make sure the subscription is on the [access](hpc-cache-prerequisites.md#azure-subscription) list.  -->
+В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш.
 
 В области **Сведения о службе** задайте имя кэша и следующие атрибуты:
 
@@ -98,7 +98,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 > [!NOTE]
 > Если кэш использует ключи шифрования, управляемые клиентом, то кэш может отображаться в списке ресурсов до того, как состояние развертывания изменится на завершено. Как только кэш находится в состоянии **ожидания ключа** , [его можно авторизовать](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) для использования хранилища ключей.
 
-## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ## <a name="create-the-cache-with-azure-cli"></a>Создание кэша с помощью Azure CLI
 

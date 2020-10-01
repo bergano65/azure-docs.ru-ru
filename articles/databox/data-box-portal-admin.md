@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: alkohli
-ms.openlocfilehash: 2fc869448bac8303acee902b5d8819fdd3f26138
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 8b36eee38275d18e6977c056192176f6fd54a917
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258518"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611662"
 ---
 # <a name="use-the-azure-portal-to-administer-your-azure-data-box-and-azure-data-box-heavy"></a>Используйте портал Azure для администрирования Azure Data Box и Azure Data Box Heavy
 
@@ -72,7 +72,7 @@ ms.locfileid: "86258518"
 
     ![Удаление заказа диска Data Box 1](media/data-box-portal-admin/delete-order1.png)
 
-3. Когда будет предложено подтвердить удаление, введите имя заказа. Щелкните **Delete** (Удалить).
+3. Когда будет предложено подтвердить удаление, введите имя заказа. Щелкните **Удалить**.
 
 ## <a name="download-shipping-label"></a>Скачивание транспортной этикетки
 
@@ -202,7 +202,7 @@ ms.locfileid: "86258518"
 
 Вы также можете просмотреть журналы обеспечения сохранности, которые включают журналы аудита и файлы спецификации.
 
-![Вход в учетные записи хранения](media/data-box-portal-admin/logs-in-storage-acct-1.png)
+![Журналы в учетных записях хранения 2](media/data-box-portal-admin/logs-in-storage-acct-1.png)
 
 ## <a name="view-order-status"></a>Просмотр состояния заказа
 

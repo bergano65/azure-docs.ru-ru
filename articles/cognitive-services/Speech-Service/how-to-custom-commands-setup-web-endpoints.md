@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 0197bb81fdba8bab20742d95aebaa2028bb90c18
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
-ms.translationtype: HT
+ms.openlocfilehash: 1b7b5e209329bd5dc4c95f81f61fecf48fb74e40
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027687"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362116"
 ---
 # <a name="set-up-web-endpoints"></a>Настройка конечных веб-точек
 
@@ -29,7 +29,7 @@ ms.locfileid: "86027687"
 ## <a name="prerequisites"></a>Предварительные требования
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-> * Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
+> * Ключ подписки Azure для служб "Речь". [Получите бесплатно](overview.md#try-the-speech-service-for-free) или создайте его на [портале Azure](https://portal.azure.com).
 > * Предварительно [созданное приложение Пользовательских голосовых команд](quickstart-custom-commands-application.md).
 > * Клиентское приложение с поддержкой пакета SDK службы "Речь". Узнайте, [как отправлять действия в клиентское приложение](./how-to-custom-commands-setup-speech-sdk.md).
 
