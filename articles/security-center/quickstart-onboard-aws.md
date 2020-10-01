@@ -174,7 +174,7 @@ ms.locfileid: "91250292"
 
 Чтобы просмотреть все активные рекомендации для ресурсов по типу ресурса, используйте страницу "Инвентаризация активов" центра безопасности и отфильтруйте тип ресурса AWS, который вас интересует:
 
-:::image type="content" source="./media/quickstart-onboard-aws/aws-resource-types-in-inventory.png" alt-text="Фильтр по типу ресурса на странице "Инвентаризация активов" с параметрами AWS"::: 
+:::image type="content" source="./media/quickstart-onboard-aws/aws-resource-types-in-inventory.png" alt-text="Фильтр по типу ресурса на странице Инвентаризация активов с параметрами AWS"::: 
 
 
 ## <a name="aws-in-security-center-faq"></a>Часто задаваемые вопросы о AWS в центре безопасности
