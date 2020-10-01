@@ -116,7 +116,7 @@ ms.locfileid: "91328315"
 
 Чтобы просмотреть все активные рекомендации для ресурсов по типу ресурса, используйте страницу "Инвентаризация активов" центра безопасности и отфильтруйте тип ресурса обеспечить, который вас интересует:
 
-:::image type="content" source="./media/quickstart-onboard-gcp/gcp-resource-types-in-inventory.png" alt-text="Фильтр по типу ресурса на странице "Инвентаризация активов" с параметрами обеспечить"::: 
+:::image type="content" source="./media/quickstart-onboard-gcp/gcp-resource-types-in-inventory.png" alt-text="Фильтр по типу ресурса на странице Инвентаризация активов с параметрами обеспечить"::: 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
