@@ -34,7 +34,7 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: "ASP.NET\_Core"
+        - name: ASP.NET Core
           href: quickstart-v2-aspnet-core-webapp.md
         - name: Node.js
           href: quickstart-v2-nodejs-webapp.md
@@ -418,6 +418,8 @@
               href: id-tokens.md
             - name: Маркеры доступа
               href: access-tokens.md
+            - name: Настройка времени существования маркеров
+              href: active-directory-configurable-token-lifetimes.md
             - name: Конечная точка UserInfo
               href: userinfo.md
             - name: Учетные данные сертификата
@@ -467,7 +469,7 @@
       items:
         - name: Обзор
           href: authentication-national-cloud.md
-        - name: Аутентификация
+        - name: Проверка подлинности
           href: msal-national-cloud.md
     - name: Автоматическая подготовка пользователей (SCIM)
       items:
@@ -522,7 +524,7 @@
         - name: Использование атрибутов расширения схемы каталога в утверждениях
           href: active-directory-schema-extensions.md
         - name: Настройка времени существования маркеров
-          href: active-directory-configurable-token-lifetimes.md
+          href: configure-token-lifetimes.md
         - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
           href: howto-handle-samesite-cookie-changes-chrome-browser.md
         - name: Работа с ITP в Safari
