@@ -43,7 +43,7 @@ ms.locfileid: "90946052"
 
 Сначала необходимо выбрать страну или регион (`Country/region`), где вы хотите подготовить номер телефона. Затем нужно выбрать план телефонии (`phone plan`), который лучше подходит для ваших потребностей. 
 
-:::image type="content" source="../media/manage-phone-azure-portal-get-numbers.png" alt-text="Снимок экрана: представление "Получение телефонных номеров".":::
+:::image type="content" source="../media/manage-phone-azure-portal-get-numbers.png" alt-text="Снимок экрана: представление Получение телефонных номеров.":::
 
 ### <a name="select-a-phone-plan"></a>Выбор плана телефонии
 
@@ -60,7 +60,7 @@ ms.locfileid: "90946052"
 
 В нашем примере мы выбрали тип номера `Toll-free` и план `Outbound calling`.
 
-:::image type="content" source="../media/manage-phone-azure-portal-select-plans.png" alt-text="Снимок экрана: представление "Выбор планов".":::
+:::image type="content" source="../media/manage-phone-azure-portal-select-plans.png" alt-text="Снимок экрана: представление Выбор планов.":::
 
 ### <a name="declare-purpose"></a>Объявление назначения
 
