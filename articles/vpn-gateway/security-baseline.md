@@ -1,0 +1,790 @@
+---
+title: Базовый уровень безопасности Azure для VPN-шлюза
+description: Базовый план безопасности VPN-шлюза содержит рекомендации и ресурсы для реализации рекомендаций по безопасности, указанных в статье о производительности системы безопасности Azure.
+author: msmbaldwin
+ms.service: vpn-gateway
+ms.topic: conceptual
+ms.date: 09/30/2020
+ms.author: mbaldwin
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 2ad40f83ece1a68fe49be39551aaa1a3b93ea064
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91614593"
+---
+# <a name="azure-security-baseline-for-vpn-gateway"></a>Базовый уровень безопасности Azure для VPN-шлюза
+
+Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](https://docs.microsoft.com/azure/security/benchmarks/overview) к VPN-шлюзу. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в средстве оценки безопасности Azure, и связанным рекомендациям, применимым к VPN-шлюзу. **Элементы управления** , неприменимые к VPN-шлюзу, были исключены.
+
+Чтобы увидеть, как VPN-шлюз полностью сопоставляется с тестовым показателем безопасности Azure, см. [полный базовый файл сопоставления безопасности шлюза VPN](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+
+## <a name="network-security"></a>Безопасность сети
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+
+### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
+
+**Рекомендации**. при работе с подсетями VPN-шлюза не следует привязать группу безопасности сети (NSG) к подсети шлюза. Связывание группы безопасности сети (NSG) с этой подсетью приведет к тому, что VPN-шлюз перестанет правильно функционировать.  Однако включите группы безопасности сети для других подсетей шлюза, не являющихся VPN-частными в виртуальной сети.
+
+- [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal) 
+
+- [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic) 
+
+- [Создание VPN-шлюза на основе маршрутов с помощью портала Azure](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-portal)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-network-interfaces"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых интерфейсов
+
+**Руководство**. Используйте центр безопасности Azure и следуйте рекомендациям по защите сети для защиты сетевых ресурсов в Azure. 
+
+- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="15-record-network-packets"></a>1,5: запись сетевых пакетов
+
+**Руководство**. Включение записи пакетов VPN-шлюза в шлюзе или определенного подключения в зависимости от требований.
+
+- [Настройка записи пакетов для VPN-шлюзов](https://docs.microsoft.com/azure/vpn-gateway/packet-capture)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
+
+**Руководство**. Определение и реализация стандартных конфигураций безопасности для сетевых ресурсов с помощью политики Azure.
+
+Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, назначения RBAC в Azure и назначения политик Azure, в одном определении схемы. Вы можете применить схему к новым или существующим подпискам, а также точно настроить управление и управление с помощью управления версиями.
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage) 
+
+- [Примеры политик Azure для работы в сети](https://docs.microsoft.com/azure/governance/policy/samples/#network) 
+
+- [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
+
+**Руководство**. Использование журнала действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в ресурсах виртуальной сети. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критически важных ресурсов, связанных с VPN-шлюзом.
+
+- [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+
+- [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
+
+*Дополнительные сведения см. в статье [производительность системы безопасности Azure: ведение журнала и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+
+### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
+
+**Рекомендации**. прием журналов действий и диагностики с помощью Azure Monitor для агрегирования данных безопасности, создаваемых сетевыми ресурсами, такими как ресурсы VPN-шлюза. Используйте Azure Monitor для запроса и выполнения анализа данных журнала. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения этих журналов. 
+
+Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
+
+- [Настройка оповещений о событиях журнала диагностики из VPN-шлюза](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log)
+
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+
+- [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
+
+**Мониторинг Центра безопасности Azure**. Да
+
+**Ответственность**: Customer
+
+### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
+
+**Руководство**. Включите параметры диагностики для ресурсов VPN-шлюза, чтобы получить доступ к журналам аудита, безопасности и диагностики. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы. 
+
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) 
+
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
+
+**Рекомендации**. в Azure Monitor задайте срок хранения log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения. 
+
+- [Изменение срока хранения данных в Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period) 
+
+- [Настройка политики хранения для журналов учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
+
+**Руководство**. анализ и мониторинг журналов для аномального поведения и регулярная проверка результатов. Используйте Azure Monitor и рабочую область Log Analytics для просмотра журналов и выполнения запросов к данным журнала. 
+
+Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
+
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard) 
+
+- [Приступая к работе с Log Analytics запросами](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) 
+
+- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
+
+**Руководство**. Использование центра безопасности Azure с рабочей областью log Analytics для мониторинга и оповещения о аномальных действиях, обнаруженных в журналах и событиях безопасности.
+
+Кроме того, вы можете включить и подключить данные в Azure Sentinel.
+
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+
+- [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+
+- [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
+
+**Руководство**. Внедрение решения стороннего производителя из Azure Marketplace для решения регистрации DNS в соответствии с требованиями Организации.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: идентификация и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+
+### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
+
+**Руководство**. Управление доступом на основе РОЛЕЙ (RBAC) в Azure позволяет управлять доступом к ресурсам Azure с помощью назначений ролей. Эти роли можно назначить пользователям, группам субъектов-служб и управляемым удостоверениям. Существуют предварительно определенные встроенные роли для определенных ресурсов, и эти роли могут быть учтены или запрошены с помощью таких средств, как Azure CLI, Azure PowerShell или портал Azure.
+
+- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0) 
+
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
+
+**Руководство**. Создайте стандартные операционные процедуры для использования выделенных административных учетных записей. 
+
+Вы также можете включить JIT-доступ с помощью Azure AD Privileged Identity Management и Azure Resource Manager. 
+
+- [Дополнительные сведения о управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4. Использование единого входа Azure Active Directory (SSO)
+
+**Рекомендации**. везде, где это возможно, используйте Azure Active Directory SSO вместо настройки отдельных автономных учетных данных для каждой службы. Использование удостоверений центра безопасности Azure и рекомендаций по доступу. 
+
+- [Общие сведения об использовании единого входа в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directory доступа
+
+**Руководство**. Включение Azure AD MFA и соблюдение рекомендаций по удостоверениям и доступу центра безопасности Azure. 
+
+- [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted) 
+
+- [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="36-use-secure-azure-managed-workstations-for-administrative-tasks"></a>3,6: используйте защищенные рабочие станции, управляемые Azure, для административных задач
+
+**Руководство**. используйте защищенную, управляемую Azure рабочую станцию (также называемую рабочей станцией привилегированного доступа или привилегированным доступом) для административных задач, требующих повышенных привилегий.
+
+- [Общие сведения о защищенных рабочих станциях под управлением Azure](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-managed-workstation)
+
+- [Как включить Azure AD MFA](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
+
+**Руководство**. Использование Azure Active Directory отчетов и мониторинга безопасности для обнаружения подозрительных или ненадежных действий в среде. Используйте Центр безопасности Azure для мониторинга действий идентификации и доступа.
+
+- [Как определить пользователей Azure AD, помеченных для события риска](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk)
+
+- [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**. Да
+
+**Ответственность**: Customer
+
+### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
+
+**Руководство**. Использование именованных расположений Azure AD для разрешения доступа только из конкретных логических групп диапазонов IP-адресов или стран и регионов. 
+
+- [Настройка именованных расположений Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
+
+**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей. 
+
+- [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
+
+**Руководство**. Azure Active Directory (Azure AD) предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверки подлинности и доступа Azure AD для эффективного управления членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи. 
+
+- [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/) 
+
+- [Как использовать проверки подлинности и доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: монитор пытается получить доступ к отключенным учетным данным
+
+**Руководство**. у вас есть доступ к источникам журналов событий входа в Azure AD, аудита и риску, которые позволяют интегрироваться с любым средством SIEM/Monitoring. 
+
+Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить нужные оповещения в Log Analytics рабочей области. 
+
+- [Как интегрировать журналы действий Azure с Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
+
+**Руководство**. использование функций защита идентификации Azure AD для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения. 
+
+- [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+
+- [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies) 
+
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+
+**Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
+
+**Ответственность**: Customer
+
+## <a name="data-protection"></a>Защита данных
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+
+### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
+
+**Руководство**. VPN-шлюзы имеют выделенные экземпляры виртуальных машин для каждой виртуальной сети клиента. Реализуйте изоляцию с помощью отдельных виртуальных сетей, подписок и групп управления для отдельных доменов безопасности, таких как тип среды и уровень конфиденциальности данных. Вы можете ограничить уровень доступа к ресурсам Azure, которые требуются для приложений и корпоративных сред. Доступ к ресурсам Azure можно контролировать с помощью Azure Active Directory управления доступом на основе ролей.
+
+- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+
+- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
+
+**Руководство**. Используйте стороннее решение из Azure Marketplace в периметре сети, чтобы отслеживать несанкционированную передачу конфиденциальной информации и блокировать такие передачи при оповещении специалистов по информационной безопасности. 
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и защищенным от потери и доступности данных клиентов. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных. 
+
+- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
+
+**Руководство**. VPN-шлюзы шифруют клиентские пакеты между VPN-шлюзами Azure и ЛОКАЛЬными VPN-устройствами (S2S) или VPN-клиентами (P2S). VPN-шлюзы также поддерживают шифрование между виртуальными сетями.
+
+Следуйте рекомендациям центра безопасности Azure по шифрованию неактивных данных и шифрованию при передаче для соответствующих ресурсов в виртуальной сети.
+
+- [О типах VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#vpntype)
+
+- [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices#ipsec)
+
+- [Требования к шифрованию и VPN-шлюзы Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-compliance-crypto)
+
+- [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell)
+
+- [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
+
+**Руководство**. Используйте средство активного обнаружения стороннего производителя для обнаружения всех конфиденциальных данных, которые хранятся, обрабатываются или передаются технологическими системами, включая те, которые находятся на сайте или на удаленном поставщике услуг, а также обновляют данные инвентаризации конфиденциальной информации Организации.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+
+**Руководство**. Использование RBAC для Azure AD для управления доступом к данным и ресурсам. в противном случае используйте специальные методы управления доступом к службам. Используйте встроенные роли управления доступом на основе ролей, такие как владелец, участник или участник сети, а затем назначьте роль соответствующей области. Назначьте определенные разрешения для подмножества возможностей виртуальной сети, создав настраиваемую роль и назначив ей определенные разрешения, необходимые для виртуальных сетей, подсетей, VPN-шлюзов, сетевых интерфейсов, групп безопасности сети и таблиц маршрутов для роли.
+
+- [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+
+- [Планирование виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm#permissions)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
+
+**Руководство**. Настройка оповещений Azure Monitor для активации журналов действий Azure, когда изменения выполняются в критически важных ресурсах Azure, таких как VPN-шлюзы. 
+
+- [Настройка оповещений для метрик VPN-шлюза](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric)
+
+- [Настройка оповещений о событиях журнала диагностики из VPN-шлюза](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log)
+
+- [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="vulnerability-management"></a>управление уязвимостями;
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Управление уязвимостью](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+
+### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
+
+**Руководство**. Используйте общую программу оценки рисков (например, общую систему оценки уязвимостей) или оценки рисков по умолчанию, предоставляемые сторонним средством сканирования.
+
+- [Публикация NIST — общая система оценки уязвимости](https://www.nist.gov/publications/common-vulnerability-scoring-system)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Инвентаризация и управление активами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+
+### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
+
+**Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов, связанных с VPN-шлюзами в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все ресурсы в ваших подписках. Кроме того, вы также можете использовать Azure CLI для перечисления ресурсов VPN-шлюза.
+
+- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+- [Azure CLI VPN-шлюза](https://docs.microsoft.com/cli/azure/network/vnet-gateway?view=azure-cli-latest)
+
+- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+
+- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
+
+**Руководство**. применение тегов к ресурсам VPN-шлюза для логической организации их в соответствии с определенной таксономией.
+
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
+
+**Руководство**. Использование тегов, групп управления и отдельных подписок там, где это необходимо, для Организации и мониторинга ресурсов VPN-шлюза. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки. 
+
+- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription) 
+
+- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create) 
+
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
+
+**Руководство**. Создание инвентаризации утвержденных ресурсов Azure и утвержденного программного обеспечения для ресурсов вычислений в соответствии с потребностями Организации.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
+
+**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в клиентских подписках, с помощью следующих встроенных определений политик:
+
+- Недопустимые типы ресурсов
+
+- Допустимые типы ресурсов
+
+Кроме того, используйте граф ресурсов Azure для запроса и обнаружения ресурсов в подписках. 
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+- [Пример политики Azure. встроенные надстройки для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/policy-samples)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7. Удаление неутвержденных ресурсов Azure и программных приложений
+
+**Руководство**. клиенты могут предотвратить создание или использование ресурсов, назначив определения политик Azure в соответствии с требованиями безопасности Организации. Однако для удаления неутвержденных или несанкционированных ресурсов необходимо реализовать собственный процесс.
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
+
+**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках, с помощью следующих встроенных определений политик:
+
+- Недопустимые типы ресурсов
+
+- Допустимые типы ресурсов
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+
+- [Пример политики Azure. встроенные надстройки для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/policy-samples)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
+
+**Руководство**. Использование условного доступа Azure AD для ограничения возможности пользователей взаимодействовать с диспетчером ресурсов Azure путем настройки "блокировать доступ" для приложения "Microsoft Azure управления". 
+
+- [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+## <a name="secure-configuration"></a>Безопасная конфигурация
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+
+### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
+
+**Руководство**. Использование псевдонимов политик Azure для создания настраиваемых политик для аудита или принудительного применения конфигурации сетевых ресурсов Azure, включая VPN-шлюз. Вы также можете использовать встроенные определения политик Azure.
+
+Azure Resource Manager может экспортировать шаблон в нотации объектов скриптов Java (JSON), который следует проверить, чтобы убедиться, что конфигурации соответствуют требованиям безопасности Организации или превышают их.
+
+Вы также можете использовать рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для ресурсов Azure.
+
+- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+
+- [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+- [Пример политики Azure. встроенные надстройки для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/policy-samples)
+
+- [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal)
+
+- [Рекомендации по безопасности — справочное руководство](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
+
+**Руководство**. использование шаблонов Azure Resource Manager и назначений политик Azure для безопасной настройки ресурсов Azure, связанных с VPN-шлюзом и связанными ресурсами. Azure Resource Manager шаблоны — это файлы на основе JSON, которые используются для развертывания виртуальной машины вместе с ресурсами Azure, и настраиваемый шаблон должен поддерживаться. Корпорация Майкрософт выполняет обслуживание базовых шаблонов.  Используйте политику Azure в режимах [запретить] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
+
+- [Сведения о создании шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/ps-template)
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+- [Действия политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+
+- [Примеры шаблонов Azure Resource Manager для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/template-samples)
+
+- [Пример политики Azure. встроенные надстройки для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/policy-samples)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
+
+**Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими определениями политик Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS. 
+
+- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops) 
+
+- [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
+
+**Руководство**. Определение и реализация стандартных конфигураций безопасности для ресурсов Azure с помощью политики Azure. Используйте псевдонимы политик Azure для создания настраиваемых политик для аудита или принудительного применения конфигураций ресурсов Azure. Можно также использовать встроенные определения политик, связанные с конкретными ресурсами. Кроме того, можно использовать службу автоматизации Azure для развертывания изменений конфигурации. 
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage) 
+
+- [Использование псевдонимов](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
+
+**Руководство**. Назначение определений политики Azure для измерения конфигураций ресурсов, связанных с ресурсами VPN-шлюза. Используйте службу "аналитика Azure" для аудита конфигураций ресурсов и оповещений о критических изменениях конфигурации.
+
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+- [Пример политики Azure. встроенные надстройки для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/policy-samples)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
+
+**Руководство**. служба VPN-шлюза внутренне сохраняет и передает общие ключи и сертификаты клиентов в зашифрованных формах. Клиентам необходимо защитить общие ключи или сертификаты в собственных системах.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
+
+**Руководство**. Azure P2S VPN поддерживает три метода проверки подлинности:
+
+- На основе сертификатов
+- RADIUS
+- Azure Active Directory (Azure AD)
+
+Рекомендуется использовать Azure AD, так как он позволяет применять управляемые удостоверения.
+
+- [Настройка клиента](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-tenant)
+
+- [Настройка арендатора с несколькими клиентскими приложениями](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-tenant-multi-app)
+
+- [Настройка многофакторной проверки подлинности](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-mfa)
+
+- [Настройка VPN-клиента](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-client)
+
+- [Настройка управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
+
+**Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault. 
+
+- [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="data-recovery"></a>Восстановление данных
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+
+### <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярное автоматическое резервное копирование
+
+**Руководство**. Использование Azure Resource Manager для развертывания ресурсов VPN-шлюза. Azure Resource Manager предоставляет возможность экспорта шаблонов, которые можно использовать в качестве резервных копий для восстановления ресурсов VPN-шлюза. Используйте службу автоматизации Azure для регулярного вызова API-интерфейса экспорта шаблона Azure Resource Manager.
+
+- [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)
+
+- [Примеры шаблонов Azure Resource Manager для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/template-samples)
+
+- [Группы ресурсов — Экспорт шаблона](https://docs.microsoft.com/rest/api/resources/resourcegroups/exporttemplate)
+
+- [Введение в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом
+
+**Руководство**. Использование Azure Resource Manager для развертывания ресурсов VPN-шлюза. Azure Resource Manager предоставляет возможность экспорта шаблонов, которые можно использовать в качестве резервных копий для восстановления VPN-шлюза и связанных ресурсов. Используйте службу автоматизации Azure для регулярного вызова API-интерфейса экспорта шаблона Azure Resource Manager.
+
+- [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal)
+
+- [Группы ресурсов — Экспорт шаблона](https://docs.microsoft.com/rest/api/resources/resourcegroups/exporttemplate)
+
+- [Введение в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
+
+**Руководство**. при необходимости обеспечить возможность регулярного развертывания шаблонов Azure Resource Manager в изолированной подписке.
+
+- [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal)
+
+- [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и ключей, управляемых клиентом
+
+**Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими определениями политик Azure и шаблонами Azure Resource Manager. Чтобы защитить ресурсы, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps.
+
+- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+
+- [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+
+- [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="incident-response"></a>Реагирование на инциденты
+
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+
+### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
+
+**Руководство**. Разработка руководства по реагированию на инциденты для вашей организации. Убедитесь, что имеются письменные планы реагирования на инциденты, которые определяют все роли персонала, а также этапы обработки инцидентов и управления обнаружением до проверки после инцидента. 
+
+- [Руководство по созданию собственного процесса реагирования на инциденты безопасности](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/) 
+
+- [Анатомия инцидента Центра Майкрософт по реагированию на угрозы](https://msrc-blog.microsoft.com/2019/06/27/inside-the-msrc-anatomy-of-a-ssirp-incident/) 
+
+- [Воспользуйтесь руководством по обработке инцидентов компьютерной безопасности NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
+
+**Руководство**. Центр безопасности Azure назначает серьезность каждому оповещению, чтобы определить, какие оповещения следует изучить первыми. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
+
+Кроме того, Пометьте подписки с помощью тегов и создайте систему именования для обнаружения и классификации ресурсов Azure, особенно для обработки конфиденциальных данных.  Ответственность за исправление предупреждений в зависимости от степени важности ресурсов и среды Azure, в которых произошел инцидент, лежит на вашем уровне. 
+
+- [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview) 
+
+- [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
+
+**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем с регулярным интервалом для защиты ресурсов Azure. Выявление слабых точек и пропусков, а затем при необходимости пересмотрите свой план ответа. 
+
+- [Публикация NIST — руководства по тестированию, обучению и выполнению упражнений для ИТ-планов и возможностей](https://csrc.nist.gov/publications/detail/sp/800-84/final)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
+
+**Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены. 
+
+- [Как задать контакт безопасности центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
+
+**Руководство**. Экспорт оповещений и рекомендаций центра безопасности Azure с помощью функции непрерывного экспорта для выявления рисков ресурсов Azure. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel. 
+
+- [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export) 
+
+- [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
+
+**Руководство**. Использование функции автоматизации рабочих процессов центр безопасности Azure для автоматического запуска ответов на оповещения системы безопасности и рекомендации по защите ресурсов Azure. 
+
+- [Настройка автоматизации рабочих процессов в центре безопасности](https://docs.microsoft.com/azure/security-center/workflow-automation)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
+
+*Дополнительные сведения см. в статье [тесты производительности системы безопасности Azure: испытания на проникновение и команды красных команд](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
+
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений. 
+
+- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
+
+- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Совмещаемая блокировка
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).

@@ -1,6 +1,6 @@
 ---
 title: Разрешенный ЦС для включения пользовательского HTTPS в передней дверце Azure
-description: Если вы используете собственный сертификат для включения HTTPS в домене 0custom для передней дверцы Azure, для его создания необходимо использовать разрешенный центр сертификации (ЦС).
+description: Если вы используете собственный сертификат, чтобы включить протокол HTTPS в пользовательском домене передней дверцы Azure, для его создания необходимо использовать разрешенный центр сертификации (ЦС).
 services: frontdoor
 documentationcenter: ''
 author: duongau
@@ -10,17 +10,17 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/23/2018
+ms.date: 09/30/2020
 ms.author: duau
-ms.openlocfilehash: 973df2505eefc2a46aa105b874f32b61fe6e8b36
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 20c5d611272ee2159ce8ddcc2865797a225a7ebb
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91269813"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613685"
 ---
 # <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-front-door"></a>Разрешенные центры сертификации для включения пользовательского HTTPS в передней дверце Azure
 
-Если вы [включили функцию HTTPS с помощью собственного сертификата](front-door-custom-domain-https.md?tabs=option-2-enable-https-with-your-own-certificate), то для пользовательского домена "Передняя дверца Azure" необходимо использовать разрешенный центр сертификации (ЦС) для создания сертификата TLS/SSL. В противном случае при использовании недопустимого ЦС или самозаверяющего сертификата ваш запрос будет отклонен.
+При [включении функции HTTPS с помощью собственного сертификата](front-door-custom-domain-https.md?tabs=option-2-enable-https-with-your-own-certificate) для пользовательского домена передней дверцы Azure. Для создания сертификата TLS/SSL требуется разрешенный центр сертификации (ЦС). В противном случае при использовании недопустимого ЦС или самозаверяющего сертификата ваш запрос будет отклонен.
 
 [!INCLUDE [cdn-front-door-allowed-ca](../../includes/cdn-front-door-allowed-ca.md)]

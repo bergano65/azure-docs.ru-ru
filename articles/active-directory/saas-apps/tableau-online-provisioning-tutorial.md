@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: da89bf6cb336087f97341ca57a9b2545c966a053
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 094a146f8e0e32667986a8e807955be1a5f66e39
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88533445"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613936"
 ---
 # <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство. Настройка Tableau Online для автоматической подготовки пользователей
 
@@ -133,7 +133,7 @@ ms.locfileid: "88533445"
 
 11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Tableau Online в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching**, используются для сопоставления учетных записей пользователей в Tableau Online для операций обновления. Нажмите **Сохранить**, чтобы сохранить все изменения.
 
-    ![Tableau сетевые соответствующие атрибуты пользователя](./media/tableau-online-provisioning-tutorial/UserAttributeMapping.png)
+    ![Tableau сетевые соответствующие атрибуты пользователя](./media/tableau-online-provisioning-tutorial/attribute.png)
 
 12. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Tableau Online**.
 
@@ -162,6 +162,9 @@ ms.locfileid: "88533445"
 В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчета о подготовке. В этом отчете описываются все действия, выполняемые службой подготовки Azure AD в Tableau Online.
 
 Сведения о журналах подготовки Azure AD см. в руководстве [по отчетам об автоматической подготовке учетных записей пользователей](../app-provisioning/check-status-user-account-provisioning.md).
+
+## <a name="change-log"></a>Журнал изменений
+* 09/30/2020 — добавлена поддержка атрибута «Ауссеттинг» для пользователей.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

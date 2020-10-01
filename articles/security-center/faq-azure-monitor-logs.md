@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 0f4552d6488ecd083b6ee5d4cae2ef2bd660efc7
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c4af0e8eda818fcb57ea9e050b760c3754c46e2c
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90906369"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613651"
 ---
 # <a name="faq-for-customers-already-using-azure-monitor-logs"></a>Вопросы и ответы для клиентов, уже использующих журналы Azure Monitor<a name="existingloganalyticscust"></a>
 
@@ -35,7 +35,6 @@ ms.locfileid: "90906369"
 Когда центр безопасности обнаруживает, что виртуальная машина уже подключена к созданной вами рабочей области, центр безопасности включает решения в этой рабочей области в соответствии с вашей конфигурацией цен. Решения применяются только к релевантным виртуальным машинам Azure с помощью функции [нацеливания решений](../operations-management-suite/operations-management-suite-solution-targeting.md). Поэтому счета выставляются без изменений.
 
 - **Защитник Azure отключен** — центр безопасности устанавливает решение "SecurityCenterFree" в рабочей области. Плата не взимается.
-- 
 - **Защитник Azure в** — центр безопасности устанавливает решение "безопасность" в рабочей области.
 
    ![Решения в рабочей области по умолчанию](./media/security-center-platform-migration-faq/solutions.png)

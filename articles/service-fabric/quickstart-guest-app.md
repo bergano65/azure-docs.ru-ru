@@ -4,12 +4,12 @@ description: Используйте кластер Azure Service Fabric, что�
 ms.topic: conceptual
 ms.date: 12/06/2017
 ms.custom: devx-track-js
-ms.openlocfilehash: 29278faa80340d17e9ed9093dd5f432fd24a3a2d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: dfd1fe9db54925bc17a53a7686fa34d5ea53cd5a
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91314289"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91614110"
 ---
 # <a name="host-a-nodejs-application-on-azure-service-fabric"></a>Размещение приложения Node.js в Azure Service Fabric
 
@@ -31,7 +31,7 @@ ms.locfileid: "91314289"
 
 В диалоговом окне **Создание проекта** выберите **Облако > Приложение Service Fabric**.
 
-Присвойте приложению имя **MyGuestApp** и нажмите кнопку **ОК**.
+Присвойте приложению имя **мигуестапп** и нажмите кнопку **создать**.
 
 >[!IMPORTANT]
 >Node.js может легко преодолеть лимит в 260 знаков для путей Windows. Используйте короткий путь для самого проекта, например **c:\code\svc1**. При необходимости можно выполнить **[эти инструкции](https://stackoverflow.com/a/41687101/1664231)** , чтобы включить длинные пути к файлам в Windows 10.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 0940521873b8d6746381acbd8e6c4c6d3a273c49
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0a632e8c57ab57869e4454b0d6a4018de6bd5548
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325765"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613770"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -111,6 +111,10 @@ ms.locfileid: "91325765"
 После создания подключения ITSM в инструменте ITSM можно создать рабочие элементы на основе оповещений Azure с помощью **действия ITSM** в **группах действий**.
 
 Группы действий предоставляют модульный и многократно используемый способ активации действий для оповещений Azure. Группы действий можно использовать с оповещениями о метриках, оповещениями журнала действий и Azure Log Analytics на портале Azure.
+
+> [!NOTE]
+> После создания подключения ITSM необходимо подождать 30 минут после создания соединителя, который будет создан для процесса синхронизации.
+> 
 
 Выполните перечисленные ниже действия.
 

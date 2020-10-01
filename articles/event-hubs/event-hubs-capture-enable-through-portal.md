@@ -3,12 +3,12 @@ title: Концентраторы событий — запись потоков
 description: В этой статье объясняется, как на портале Azure включить сбор событий потоковой передачи из Центров событий Azure.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 103aa4e3da84e41275bec6310035c117fe780a18
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2381bfa627d00a78ed91af0ba81579588ee016ce
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85315739"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613583"
 ---
 # <a name="enable-capturing-of-events-streaming-through-azure-event-hubs"></a>Включение сбора событий, передающихся потоком из Центров событий Azure
 
@@ -17,6 +17,9 @@ ms.locfileid: "85315739"
 Запись можно настроить при создании концентратора событий с помощью [портала Azure](https://portal.azure.com). Можно либо записать данные в контейнер [хранилища BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) Azure, либо в учетную запись [Azure Data Lake Storage Gen 1 или Gen 2](https://azure.microsoft.com/services/data-lake-store/) .
 
 Подробнее см. в статье [Общие сведения о функции "Сбор" в Центрах событий Azure][capture-overview].
+
+> [!IMPORTANT]
+> Целевая учетная запись хранилища (служба хранилища Azure или Azure Data Lake Storage) должна находиться в той же подписке, что и концентратор событий.
 
 ## <a name="capture-data-to-azure-storage"></a>Запись данных в службу хранилища Azure
 
@@ -93,7 +96,7 @@ ms.locfileid: "85315739"
 [3]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture3.png
 [4]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture4.png
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о функции "Сбор" в Центрах событий см. в [этой статье][capture-overview].
 - Функцию "Сбор" в Центрах событий можно также настроить с помощью шаблонов Azure Resource Manager. См. дополнительные сведения [о включении записи с помощью шаблона Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub-enable-capture.md).

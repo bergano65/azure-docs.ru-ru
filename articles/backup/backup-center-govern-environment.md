@@ -3,18 +3,20 @@ title: Управление пространством резервного ко
 description: Узнайте, как управлять средой Azure, чтобы гарантировать, что все ресурсы будут соответствовать требованиям с точки зрения резервного копирования с помощью центра архивации.
 ms.topic: conceptual
 ms.date: 09/01/2020
-ms.openlocfilehash: 009ee461b0372a3fb73ffb3b0ee5151b77bd8ef8
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 8a16769be827bf34e5be82409d5b8eb014cdcf1a
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90997664"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91614351"
 ---
 # <a name="govern-your-backup-estate-using-backup-center"></a>Управление пространством резервного копирования с помощью центра архивации
 
 Центр архивации позволяет управлять средой Azure, чтобы обеспечить соответствие всех ваших ресурсов с точки зрения резервного копирования. Ниже приведены некоторые возможности управления в центре архивации:
 
 * Просмотр и назначение политик Azure для архивации
+
+* Просмотрите сведения о соответствии ресурсов всем встроенным политикам Azure для резервного копирования.
 
 * Просмотр всех источников данных, которые не были настроены для резервного копирования.
 
@@ -29,6 +31,12 @@ ms.locfileid: "90997664"
 Выбор любого из определений позволяет [назначить политику](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage#assign-a-policy) для области.
 
 ![Выбор определений политик Azure](./media/backup-center-govern-environment/azure-policy-definitions.png)
+
+## <a name="backup-compliance"></a>Соответствие резервных копий
+
+Если щелкнуть пункт меню соответствие резервной копии, можно просмотреть сведения о [соответствии](https://docs.microsoft.com/azure/governance/policy/how-to/get-compliance-data) ресурсов в соответствии с различными встроенными политиками, назначенными среде Azure. Можно просмотреть процент ресурсов, соответствующих всем политикам, а также политики, которые имеют один или несколько ресурсов, не соответствующих требованиям.
+
+![Просмотр соответствия резервных копий](./media/backup-center-govern-environment/azure-policy-compliance.png)
 
 ## <a name="protectable-datasources"></a>Защищаемые источники данных
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2019
 ms.author: memildin
-ms.openlocfilehash: 1d452406b05a3ad6b2be2e31bce1063f20e6c622
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 742d7122c60b383e8ab7aa73f73b11b47843a9d5
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91575951"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613834"
 ---
 # <a name="cloud-smart-alert-correlation-in-azure-security-center-incidents"></a>Корреляция облачных интеллектуальных оповещений в центре безопасности Azure (инциденты)
 
@@ -39,7 +39,8 @@ ms.locfileid: "91575951"
 > [!TIP]
 > Список оповещений об инцидентах безопасности, которые могут быть созданы с помощью аналитики Fusion, см. в [справочной таблице оповещений](alerts-reference.md#alerts-fusion).
 
-![Снимок экрана с отчетом об обнаруженных инцидентах безопасности](./media/security-center-alerts-cloud-smart/security-incident.png)
+:::image type="content" source="./media/security-center-alerts-cloud-smart/security-incident.png" alt-text="Снимок экрана с отчетом об обнаруженных инцидентах безопасности":::
 
-Чтобы лучше понять инциденты безопасности, см. статью [как управлять инцидентами безопасности в центре безопасности Azure](security-center-incident.md).
+
+Чтобы лучше понять инциденты безопасности, см. статью [Управление инцидентами безопасности в центре безопасности Azure](security-center-incident.md).
 

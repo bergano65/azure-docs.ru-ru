@@ -3,13 +3,13 @@ title: Удаление группы ресурсов и ресурсов
 description: Описание удаления групп ресурсов и ресурсов. В нем описано, как Azure Resource Manager упорядочивает удаление ресурсов при удалении группы ресурсов. В этой статье описываются коды отклика и объясняется, как Resource Manager обрабатывает их для определения, успешно ли выполнено удаление.
 ms.topic: conceptual
 ms.date: 09/03/2019
-ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 2720a9ae8c0a67d8e6f9c1105b33c0a3c343cf47
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: seodec18
+ms.openlocfilehash: d6c38169916cc6c47d6f05c88645fa435bbdb146
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498503"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91614416"
 ---
 # <a name="azure-resource-manager-resource-group-and-resource-deletion"></a>Azure Resource Manager удаления группы ресурсов и ресурса
 
@@ -75,9 +75,9 @@ az group delete --name ExampleResourceGroup
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. На [портале](https://portal.azure.com)выберите группу ресурсов, которую нужно удалить.
+1. На [портале](https://portal.azure.com) выберите группу ресурсов, которую нужно удалить.
 
-1. Выберите команду **Удалить группу ресурсов**.
+1. Выберите **Удалить группу ресурсов**.
 
    ![Удалить группу ресурсов](./media/delete-resource-group/delete-group.png)
 
@@ -111,7 +111,7 @@ az resource delete \
 
 1. На [портале](https://portal.azure.com)выберите ресурс, который необходимо удалить.
 
-1. Выберите **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
+1. Выберите команду **Удалить**. На следующем снимке экрана показаны параметры управления для виртуальной машины.
 
    ![Удалить ресурс](./media/delete-resource-group/delete-resource.png)
 
@@ -123,4 +123,4 @@ az resource delete \
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Основные понятия Azure Resource Manager см. в [этой статье](overview.md).
-* Команды удаления см. в разделах [PowerShell](/powershell/module/az.resources/Remove-AzResourceGroup), [Azure CLI](/cli/azure/group?view=azure-cli-latest#az-group-delete) и [REST API](/rest/api/resources/resourcegroups/delete).
+* Команды удаления см. в разделах [PowerShell](/powershell/module/az.resources/Remove-AzResourceGroup), [Azure CLI](/cli/azure/group#az-group-delete) и [REST API](/rest/api/resources/resourcegroups/delete).

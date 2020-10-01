@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 09/24/2020
 ms.author: jlian
-ms.openlocfilehash: eb25fc0d7831bc06b708431ce3d47c73b36fe5c6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6c562f7a5d9c7c02c737898821eef5ee5271eea4
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91281256"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91613906"
 ---
 # <a name="iot-hub-support-for-virtual-networks-with-private-link-and-managed-identity"></a>Поддержка Центра Интернета вещей для виртуальных сетей с Приватным каналом и управляемым удостоверением
 
@@ -38,7 +38,7 @@ ms.locfileid: "91281256"
 
 Частная конечная точка — это частный IP-адрес, выделенный внутри виртуальной сети клиента, с помощью которого ресурс Azure становится доступным. С помощью Приватного канала Azure можно настроить частную конечную точку для Центра Интернета вещей, чтобы разрешить службам в виртуальной сети доступ к Центру Интернета вещей без необходимости отправлять трафик в общедоступную конечную точку Центра Интернета вещей. Аналогичным образом локальные устройства могут использовать [виртуальную частную сеть (VPN)](../vpn-gateway/vpn-gateway-about-vpngateways.md) или пиринг [ExpressRoute](https://azure.microsoft.com/services/expressroute/), чтобы получить возможность подключения к виртуальной сети и Центру Интернета вещей (через его частную конечную точку). В результате вы можете ограничить или полностью заблокировать подключение к общедоступным конечным точкам Центра Интернета вещей с помощью [фильтра IP-адресов Центра Интернета вещей](./iot-hub-ip-filtering.md) и [маршрутизации, исключающей отправку каких-либо данных во встроенную конечную точку](#built-in-event-hub-compatible-endpoint-doesnt-support-access-over-private-endpoint). Такой подход обеспечивает подключение к Центру с помощью частной конечной точки для устройств. Основной задачей этой установки является наличие устройств в локальной сети. Такая схема не рекомендуется для устройств, развернутых в глобальной сети.
 
-![Общедоступная конечная точка Центра Интернета вещей](./media/virtual-network-support/virtual-network-ingress.png)
+![Енгресс виртуальной сети центра Интернета вещей](./media/virtual-network-support/virtual-network-ingress.png)
 
 Прежде чем продолжать, убедитесь, что выполняются следующие необходимые условия.
 
@@ -92,7 +92,7 @@ ms.locfileid: "91281256"
 
 1. В разделе **Состояние**выберите **Включить**, а затем нажмите **Сохранить**.
 
-    :::image type="content" source="media/virtual-network-support/managed-identity.png" alt-text="Снимок экрана: включение управляемого удостоверения для Центра Интернета вещей":::
+    :::image type="content" source="media/virtual-network-support/managed-identity.png" alt-text="Снимок экрана: добавление частной конечной точки для Центра Интернета вещей":::
 
 ### <a name="assign-managed-identity-to-your-iot-hub-at-creation-time-using-arm-template"></a>Назначение управляемого удостоверения для центра Интернета вещей во время создания с помощью шаблона ARM
 
