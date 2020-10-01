@@ -13,12 +13,12 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 09/28/2020
 tags: azure-synapse
-ms.openlocfilehash: e526b8e2e4f31187bb958ec37c2ffa4d30f0265b
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: 2a3e1e7279e915c0c5992190ef0c8d1d83880dbb
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91461161"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91596134"
 ---
 # <a name="using-multi-factor-azure-active-directory-authentication"></a>Использование многофакторной проверки подлинности Azure Active Directory
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -27,14 +27,12 @@ ms.locfileid: "91461161"
 
 **Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://aka.ms/ssms). 
 
-> [!Note]
-> В декабре 2021 выпуски SSMS, выпущенные до 18,6, больше не будут проходить проверку подлинности с помощью Azure Active Directory с MFA. Чтобы продолжить использование проверки подлинности Azure Active Directory с MFA, установите или обновите среду SSMS 18,6 или более поздней версии.
+[!INCLUDE[ssms-connect-azure-ad](../includes/ssms-connect-azure-ad.md)]
+
 
 Для всех функций, описанных в этой статье, используйте по крайней мере версию 17.2 за июль 2017 года. Диалоговое окно "Последнее подключение" должно выглядеть следующим образом:
 
   ![Снимок экрана: диалоговое окно подключения к серверу в SQL Server Management Studio, в котором отображаются параметры типа сервера, имени сервера и проверки подлинности.](./media/authentication-mfa-ssms-overview/1mfa-universal-connect.png)
-  
-    
 
 ## <a name="authentication-options"></a>Параметры проверки подлинности
 

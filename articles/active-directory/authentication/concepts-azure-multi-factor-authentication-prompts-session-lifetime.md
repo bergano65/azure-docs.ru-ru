@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d5ffaf996f51348334f4adeeae150db9eb0defa
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: ab36eb9d5c66f61fbb320c91087659cc811eca85
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90052670"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91595545"
 ---
 # <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-multi-factor-authentication"></a>Оптимизация запросов на повторное аутентификацию и изучение времени существования сеанса для многофакторной идентификации Azure
 
@@ -121,7 +121,7 @@ Azure Active Directory (Azure AD) имеет несколько параметр
 1. Выберите **Безопасность**, а затем — **Условный доступ**.
 1. Настройте политику, используя Рекомендуемые параметры управления сеансами, описанные в этой статье.
 
-Чтобы проверить время существования маркеров, [Используйте Azure AD PowerShell для запроса любых политик Azure AD](../develop/active-directory-configurable-token-lifetimes.md#prerequisites). Отключите все политики, которые есть на месте.
+Чтобы проверить время существования маркеров, [Используйте Azure AD PowerShell для запроса любых политик Azure AD](../develop/configure-token-lifetimes.md#prerequisites). Отключите все политики, которые есть на месте.
 
 Если в клиенте включено несколько параметров, рекомендуется обновить параметры на основе доступных лицензий. Например, если у вас есть лицензии Azure AD Premium, следует использовать только политику условного доступа " *Частота входа* " и " *постоянный сеанс браузера*". Если у вас есть Microsoft 365 приложений или бесплатных лицензий Azure AD, следует использовать конфигурацию " *Продолжить вход* ".
 

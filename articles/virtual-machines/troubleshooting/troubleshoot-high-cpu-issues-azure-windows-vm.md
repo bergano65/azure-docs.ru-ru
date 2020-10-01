@@ -3,7 +3,7 @@ title: Устранение проблем с высокой производи�
 description: .
 services: virtual-machines-windows, azure-resource-manager
 documentationcenter: ''
-author: v-miegge
+author: mnanda
 manager: dcscontentpm
 editor: v-jesits
 tags: azure-resource-manager
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 9/24/2020
 ms.author: mnanda
-ms.openlocfilehash: 1cc1b6cc6e678e30b2d66d67cdc4aa438cd2058b
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 3bd19f301b1afd7dd1c35f03f6f6131a26b00708
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91543089"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91596833"
 ---
 # <a name="troubleshoot-high-cpu-issues-for-azure-windows-virtual-machines"></a>Устранение проблем с высокой производительностью ЦП для виртуальных машин Windows в Azure
 
@@ -229,7 +229,7 @@ PerfInsights собирает данные системного монитора
 
 1. Выберите **_Total**, который предоставляет статистику всех Объединенных ядер.
 
-1. Выберите **Добавить**. В окне отображается **% процессортиме** в разделе  **добавленных счетчиков**.
+1. Нажмите **Добавить**. В окне отображается **% процессортиме** в разделе  **добавленных счетчиков**.
 
   ![Добавить процессорное время](./media/troubleshoot-high-cpu-issues-azure-windows-vm/11-add-processor-time.png)
 

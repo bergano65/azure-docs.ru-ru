@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/04/2020
+ms.date: 09/29/2020
 ms.author: radeltch
-ms.openlocfilehash: a1e097692eade956446b46782bca5ecf3a17de75
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 4c444cb84f215ba4f42c14eb64f1d2f441e4280d
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800268"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91598293"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -66,6 +66,7 @@ ms.locfileid: "87800268"
 * Документация по RHEL для Azure:
   * [Политики поддержки для кластеров высокой доступности RHEL — виртуальные машины Microsoft Azure как члены кластера](https://access.redhat.com/articles/3131341)
   * [Установка и настройка кластера высокой доступности Red Hat Enterprise Linux 7.4 (и более поздних версий) в Microsoft Azure](https://access.redhat.com/articles/3252491)
+  * [Рекомендации по внедрению RHEL 8 — высокой доступности и кластеров](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/considerations_in_adopting_rhel_8/high-availability-and-clusters_considerations-in-adopting-rhel-8)
   * [Настройте SAP S/4HANA ASCS/ERS с помощью Standalone Enqueue Server 2 (ENSA2) в Pacemaker на RHEL 7.6](https://access.redhat.com/articles/3974941)
 
 ## <a name="cluster-installation"></a>Установка кластера
@@ -78,7 +79,7 @@ ms.locfileid: "87800268"
 
 Ниже приведены элементы с префиксами: **[A]**  — применяется ко всем узлам, **[1**] — применяется только к узлу 1, **[2]**  — применяется только к узлу 2.
 
-1. **[A]** Регистрация
+1. **[A]** зарегистрируйтесь. Этот шаг не является обязательным, если используются образы с поддержкой RHEL 8. x с высоким уровнем доступности.  
 
    Зарегистрируйте виртуальные машины и подключите их к пулу, содержащему репозитории для RHEL 7.
 
@@ -88,9 +89,9 @@ ms.locfileid: "87800268"
    sudo subscription-manager attach --pool=&lt;pool id&gt;
    </code></pre>
 
-   Обратите внимание, что, присоединив пул к образу PAYG RHEL Azure Marketplace, вы будете по сути дважды выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблему, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](../redhat/byos.md).
+   Присоединив пул к образу PAYG RHEL для Azure Marketplace, вы будете эффективно выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблему, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](../redhat/byos.md).
 
-1. **[A]** Включение RHEL для репозиториев SAP
+1. **[A]** включите RHEL для SAP репозиториев. Этот шаг не является обязательным, если используются образы с поддержкой RHEL 8. x с высоким уровнем доступности.  
 
    Чтобы установить необходимые пакеты, включите приведенные ниже репозитории.
 
@@ -108,6 +109,7 @@ ms.locfileid: "87800268"
 
    > [!IMPORTANT]
    > Мы рекомендуем следующие (или более поздние) версии агента ограждения Azure, позволяющие клиентам воспользоваться более быстрой отработкой отказа в случае сбоя остановки ресурса или неспособности узлов кластера связаться друг с другом.  
+   > RHEL 7,7 или более поздней версии используйте последнюю доступную версию пакета "ограждение — агенты"  
    > RHEL 7.6: fence-agents-4.2.1-11.el7_6.8  
    > RHEL 7.5: fence-agents-4.0.11-86.el7_5.8  
    > RHEL 7.4: fence-agents-4.0.11-66.el7_4.12  
@@ -165,15 +167,23 @@ ms.locfileid: "87800268"
 
 1. **[1]** Создание кластера Pacemaker
 
-   Чтобы выполнить проверку подлинности узлов и создать кластер, выполните приведенные ниже команды. Установите токен в значение 30 000, чтобы разрешить обслуживание с сохранением памяти. Дополнительные сведения см. в [этой статье для Linux][virtual-machines-linux-maintenance].
-
+   Чтобы выполнить проверку подлинности узлов и создать кластер, выполните приведенные ниже команды. Установите токен в значение 30 000, чтобы разрешить обслуживание с сохранением памяти. Дополнительные сведения см. в [этой статье для Linux][virtual-machines-linux-maintenance].  
+   
+   При создании кластера на **RHEL 7. x**используйте следующие команды:  
    <pre><code>sudo pcs cluster auth <b>prod-cl1-0</b> <b>prod-cl1-1</b> -u hacluster
    sudo pcs cluster setup --name <b>nw1-azr</b> <b>prod-cl1-0</b> <b>prod-cl1-1</b> --token 30000
    sudo pcs cluster start --all
+   </code></pre>
 
-   # Run the following command until the status of both nodes is online
+   При создании кластера на **RHEL 8. X**используйте следующие команды:  
+   <pre><code>sudo pcs host auth <b>prod-cl1-0</b> <b>prod-cl1-1</b> -u hacluster
+   sudo pcs cluster setup <b>nw1-azr</b> <b>prod-cl1-0</b> <b>prod-cl1-1</b> totem token=30000
+   sudo pcs cluster start --all
+   </code></pre>
+
+   Проверьте состояние кластера, выполнив следующую команду:  
+   <pre><code> # Run the following command until the status of both nodes is online
    sudo pcs status
-
    # Cluster name: nw1-azr
    # WARNING: no stonith devices and stonith-enabled is not false
    # Stack: corosync
@@ -188,17 +198,22 @@ ms.locfileid: "87800268"
    #
    # No resources
    #
-   #
    # Daemon Status:
    #   corosync: active/disabled
    #   pacemaker: active/disabled
    #   pcsd: active/enabled
    </code></pre>
 
-1. **[A]** Задание требуемых голосов
-
-   <pre><code>sudo pcs quorum expected-votes 2
+1. **[A]** задать ожидаемые голоса. 
+   
+   <pre><code># Check the quorum votes 
+    pcs quorum status
+    # If the quorum votes are not set to 2, execute the next command
+    sudo pcs quorum expected-votes 2
    </code></pre>
+
+   >[!TIP]
+   > При создании кластера с несколькими узлами, который является кластером с более чем двумя узлами, не устанавливайте голоса в значение 2.    
 
 1. **[1]** Разрешить одновременные действия ограждения
 
@@ -211,7 +226,7 @@ ms.locfileid: "87800268"
 
 1. Перейдите на сайт <https://portal.azure.com>.
 1. Откройте колонку "Azure Active Directory".  
-   Перейдите в колонку "Свойства" и запишите идентификатор каталога. Это **идентификатор клиента**.
+   Перейдите в раздел свойства и запишите идентификатор каталога. Это **идентификатор клиента**.
 1. Щелкните "Регистрация приложений".
 1. Щелкните "Новая регистрация".
 1. Введите имя и выберите "Учетные записи только из этого каталога организации". 
@@ -219,7 +234,7 @@ ms.locfileid: "87800268"
    URL-адрес входа не используется и может быть любым допустимым URL-адресом.
 1. Выберите "Сертификаты и секреты", а затем щелкните "Новый секрет клиента".
 1. Введите описание нового ключа, выберите "Срок действия не ограничен" и нажмите кнопку "Добавить".
-1. Запишите его значение. Он используется в качестве **пароля** субъекта-службы.
+1. Сделайте узел значением. Он используется в качестве **пароля** субъекта-службы.
 1. Щелкните "Обзор". Запишите идентификатор приложения. Он используется в качестве имени пользователя (**идентификатора для входа** в следующих шагах) субъекта-службы.
 
 ### <a name="1-create-a-custom-role-for-the-fence-agent"></a>**[1]** Создайте пользовательскую роль для агента ограждения.
@@ -276,12 +291,17 @@ ms.locfileid: "87800268"
 sudo pcs property set stonith-timeout=900
 </code></pre>
 
-Чтобы настроить устройство ограждения, выполните приведенную ниже команду.
-
 > [!NOTE]
 > Параметр pcmk_host_map требуется только в том случае, если имена узлов RHEL и Azure не совпадают. См. раздел команды, выделенный полужирным шрифтом.
 
+Для RHEL **7. X**используйте следующую команду для настройки устройства ограждения:    
 <pre><code>sudo pcs stonith create rsc_st_azure fence_azure_arm login="<b>login ID</b>" passwd="<b>password</b>" resourceGroup="<b>resource group</b>" tenantId="<b>tenant ID</b>" subscriptionId="<b>subscription id</b>" <b>pcmk_host_map="prod-cl1-0:10.0.0.6;prod-cl1-1:10.0.0.7"</b> \
+power_timeout=240 pcmk_reboot_timeout=900 pcmk_monitor_timeout=120 pcmk_monitor_retries=4 pcmk_action_limit=3 \
+op monitor interval=3600
+</code></pre>
+
+Для RHEL **8. X**используйте следующую команду для настройки устройства ограждения:  
+<pre><code>sudo pcs stonith create rsc_st_azure fence_azure_arm username="<b>login ID</b>" password="<b>password</b>" resourceGroup="<b>resource group</b>" tenantId="<b>tenant ID</b>" subscriptionId="<b>subscription id</b>" <b>pcmk_host_map="prod-cl1-0:10.0.0.6;prod-cl1-1:10.0.0.7"</b> \
 power_timeout=240 pcmk_reboot_timeout=900 pcmk_monitor_timeout=120 pcmk_monitor_retries=4 pcmk_action_limit=3 \
 op monitor interval=3600
 </code></pre>

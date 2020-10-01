@@ -10,14 +10,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/11/2020
+ms.date: 09/30/2020
 ms.author: radeltch
-ms.openlocfilehash: 030677276fa077c06a95e7c677fec956b9c2a947
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3a5238ec9e9bc30da330be206eb559acc3c2ec07
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88556405"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91598085"
 ---
 # <a name="high-availability-of-sap-hana-scale-up-with-azure-netapp-files-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA с Azure NetApp Files на Red Hat Enterprise Linux
 
@@ -197,7 +197,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 Чтобы удовлетворить минимальные требования к пропускной способности SAP для/Hana/Data и/Hana/log и рекомендации для/Hana/Shared, рекомендуется использовать следующие размеры:
 
-|    Громкость    | Размер уровня хранилища Premium | Размер Ultra Storage уровня | Поддерживаемый протокол NFS |
+|    Том    | Размер уровня хранилища Premium | Размер Ultra Storage уровня | Поддерживаемый протокол NFS |
 | :----------: | :--------------------------: | :------------------------: | :--------------------: |
 |  hana/log;   |            4 ТиБ             |           2 ТиБ            |          Версия 4.1          |
 |  hana/data;  |           6.3 ТиБ            |          3.2 ТиБ           |          Версия 4.1          |
@@ -548,13 +548,18 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
     ```
     pcs constraint location SAPHanaTopology_HN1_03-clone rule score=-INFINITY hana_nfs1_active ne true and hana_nfs2_active ne true
+    # On RHEL 7.x
     pcs constraint location SAPHana_HN1_03-master rule score=-INFINITY hana_nfs1_active ne true and hana_nfs2_active ne true
+    # On RHEL 8.x
+    pcs constraint location SAPHana_HN1_03-clone rule score=-INFINITY hana_nfs1_active ne true and hana_nfs2_active ne true
     # Take the cluster out of maintenance mode
     sudo pcs property set maintenance-mode=false
     ```
 
    Проверка состояния кластера и всех ресурсов
-
+   > [!NOTE]
+   > Эта статья содержит ссылки на термин « *Ведомый*» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+   
     ```
     sudo pcs status
     

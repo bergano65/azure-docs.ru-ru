@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1788eba0ef9be781fb7cf23f1eb86b48c9c360e1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cb12777a6a4fa1e75cd65bc597c87442d592aad5
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91287426"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91598121"
 ---
 # <a name="plan-your-azure-time-series-insights-gen2-environment"></a>Планирование среды Аналитики временных рядов Azure 2-го поколения
 
@@ -36,7 +36,6 @@ ms.locfileid: "91287426"
 ## <a name="the-gen2-environment"></a>Среда Gen2
 
 При подготовке среды Gen2 "аналитика временных рядов Azure" вы создадите два ресурса Azure:
-
 
 * Среда Gen2 "аналитика временных рядов Azure"
 * Учетная запись хранения Azure
@@ -94,8 +93,8 @@ ms.locfileid: "91287426"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
-- Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
-- Дополнительные сведения о приеме [данных см](./concepts-ingestion-overview.md) . в статье о службе "аналитика временных рядов Azure" Gen2.
-- Ознакомьтесь с статьей о [хранении данных](./concepts-storage.md) в службе "аналитика временных рядов Azure" Gen2.
-- Сведения о [моделировании данных](./concepts-model-overview.md) в Azure Time Series Insights Gen2.
+* Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
+* Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
+* Дополнительные сведения о приеме [данных см](./concepts-ingestion-overview.md) . в статье о службе "аналитика временных рядов Azure" Gen2.
+* Ознакомьтесь с статьей о [хранении данных](./concepts-storage.md) в службе "аналитика временных рядов Azure" Gen2.
+* Сведения о [моделировании данных](./concepts-model-overview.md) в Azure Time Series Insights Gen2.

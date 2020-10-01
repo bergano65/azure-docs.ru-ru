@@ -2,23 +2,19 @@
 title: Рекомендации по использованию Azure RBAC
 description: Рекомендации по использованию управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: mtillman
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/17/2020
+ms.date: 09/30/2020
 ms.author: rolyon
-ms.reviewer: bagovind
-ms.openlocfilehash: 053e86f3493c7a11a3cbbaad0871e45345697878
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4cb3e1fe0275c676e2ce54ff9201502fc3595937
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82735340"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91595491"
 ---
 # <a name="best-practices-for-azure-rbac"></a>Рекомендации по использованию Azure RBAC
 
@@ -28,7 +24,9 @@ ms.locfileid: "82735340"
 
 С помощью Azure RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач. Вместо того чтобы предоставить всем неограниченные разрешения для подписки Azure или ресурсов, можно разрешить только определенные действия в конкретной области.
 
-Когда вы разрабатываете стратегию управления доступом, предоставьте пользователям минимальные разрешения, чтобы они могли выполнять свои задачи. На следующей схеме показан предлагаемый шаблон для использования Azure RBAC.
+Когда вы разрабатываете стратегию управления доступом, предоставьте пользователям минимальные разрешения, чтобы они могли выполнять свои задачи. Старайтесь не назначать более широкие роли в более широких областях, даже если изначально это кажется более удобным. Ограничивая роли и области, вы ограничиваете ресурсы, подверженные риску, в случае компрометации субъекта безопасности.
+
+На следующей схеме показан предлагаемый шаблон для использования Azure RBAC.
 
 ![Azure RBAC и наименьшие права доступа](./media/best-practices/rbac-least-privilege.png)
 

@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: references_regions
-ms.openlocfilehash: e9da87f3b5f7cb513b4b5d51c93a59d1703d401d
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 9c54482dc188141c4fc697bd43628b81e0ddc29f
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89258662"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597124"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -27,7 +27,7 @@ ms.locfileid: "89258662"
 
 ## <a name="feature-availability-in-azure-clouds"></a>Доступность функций в облаках Azure
 
-| Компонент|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
+| Функция|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
 | [Azure EventGrid](reacting-to-media-services-events.md) | Доступно | Недоступно | Недоступно | Недоступно |
 | [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
@@ -40,14 +40,14 @@ ms.locfileid: "89258662"
 
 [Ливетранскриптион](live-transcription.md) доступен в следующих регионах:
 
-- Southeast Asia
+- Юго-Восточная Азия
 - Западная Европа
 - Северная Европа
 - Восточная часть США
-- Центральная часть США
+- Центральная часть США
 - Центрально-южная часть США
-- западная часть США 2
-- Brazil South
+- Западная часть США 2
+- Южная Бразилия
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
@@ -85,7 +85,7 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager |  `https://management.azure.com/` |
-| Аутентификация | `https://login.microsoftonline.com/` |
+| Проверка подлинности | `https://login.microsoftonline.com/` |
 | Аудитория токена | `https://management.core.windows.net/` |
 
 ### <a name="azure-government"></a>Azure для государственных организаций
@@ -93,15 +93,17 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
-| Аутентификация | `https://login.microsoftonline.us/` |
+| Проверка подлинности | `https://login.microsoftonline.us/` |
 | Аудитория токена | `https://management.core.usgovcloudapi.net/` |
+
+[!INCLUDE [Widevine is not available in the GovCloud region.](./includes/widevine-not-available-govcloud.md)]
 
 ### <a name="azure-germany"></a>Azure для Германии
 
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager | `https://management.cloudapi.de/` |
-| Аутентификация | `https://login.microsoftonline.de/` |
+| Проверка подлинности | `https://login.microsoftonline.de/` |
 | Аудитория токена | `https://management.core.cloudapi.de/`|
 
 ### <a name="azure-china-21vianet"></a>Azure China 21Vianet
@@ -109,7 +111,7 @@ az account list-locations
 | Служба | Конечная точка |
 | ------- | -------- |
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
-| Аутентификация | `https://login.chinacloudapi.cn/` |
+| Проверка подлинности | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
 ## <a name="see-also"></a>См. также

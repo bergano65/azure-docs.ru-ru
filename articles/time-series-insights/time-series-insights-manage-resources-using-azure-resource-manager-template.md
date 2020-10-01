@@ -9,16 +9,19 @@ manager: diviso
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3e9075014863e653a986dc4dbec7b9bc5e9f31bc
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: ee4d3957403e169d41fb9e3befa0d62e4b0d9075
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421201"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597866"
 ---
 # <a name="create-azure-time-series-insights-gen-1-resources-using-azure-resource-manager-templates"></a>Создание ресурсов "аналитика временных рядов Azure" с помощью шаблонов Azure Resource Manager
+
+> [!CAUTION]
+> Это Gen1 статья.
 
 В этой статье описывается, как создать и развернуть ресурсы службы "аналитика временных рядов Azure" с помощью [шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/), PowerShell и поставщика ресурсов Azure Time Series Insights.
 
@@ -29,7 +32,7 @@ ms.locfileid: "87421201"
    | Среда | Среда службы "аналитика временных рядов Azure" — это логическая группа событий, которые считываются из брокера событий, хранятся и становятся доступными для запроса. Дополнительные сведения см. в руководстве по [планированию среды "Аналитика временных рядов Azure"](time-series-insights-environment-planning.md). |
    | Источник события | Источник событий — это соединение с брокером событий, из которого Azure Time Series Insights считывает и принимает события в среде. Источники событий, поддерживаемые в настоящее время: Центр Интернета вещей и концентратор событий. |
    | Набор эталонных данных | Наборы эталонных данных предоставляют метаданные о событиях в среде. Метаданные в наборах эталонных данных во время приема будут соединены с событиями. Наборы эталонных данных определяются своими свойствами ключей событий как ресурсы. Фактические метаданные, составляющие набор эталонных данных, отправляются или изменяются через API плоскости данных. |
-   | Политика доступа | Политики доступа предоставляют разрешения для отправки запросов данных, обработки ссылочных данных в среде, а также предоставляют другим пользователям среды доступ к сохраненным запросам и перспективам. Дополнительные сведения см. в статье [предоставление доступа к данным в среде службы "аналитика временных рядов Azure" с помощью портал Azure](time-series-insights-data-access.md) |
+   | Политика доступа | Политики доступа предоставляют разрешения для отправки запросов данных, обработки ссылочных данных в среде, а также предоставляют другим пользователям среды доступ к сохраненным запросам и перспективам. Дополнительные сведения см. [в статье предоставление доступа к данным в среде службы "аналитика временных рядов Azure" с помощью портал Azure](time-series-insights-data-access.md) |
 
 Шаблоны Resource Manager являются файлами в формате JSON, определяющими инфраструктуру и конфигурацию ресурсов в группе ресурсов. В следующих документах файлы шаблонов описываются более подробно:
 
@@ -49,7 +52,7 @@ ms.locfileid: "87421201"
 
 1. Клонируйте или скопируйте шаблон [201-timeseriesinsights-environment-with-eventhub](https://github.com/Azure/azure-quickstart-templates/blob/master/201-timeseriesinsights-environment-with-eventhub/azuredeploy.json) из GitHub.
 
-   * Создание файла параметров
+   - Создание файла параметров
 
      Чтобы создать файл параметров, скопируйте файл [201-timeseriesinsights-environment-with-eventhub](https://github.com/Azure/azure-quickstart-templates/blob/master/201-timeseriesinsights-environment-with-eventhub/azuredeploy.parameters.json).
 
@@ -57,7 +60,7 @@ ms.locfileid: "87421201"
 
     <div id="required-parameters"></div>
 
-   * Необходимые параметры
+   - Необходимые параметры
 
      | Параметр | Описание |
      | --- | --- |
@@ -69,7 +72,7 @@ ms.locfileid: "87421201"
 
     <div id="optional-parameters"></div>
 
-   * Необязательные параметры
+   - Необязательные параметры
 
      | Параметр | Описание |
      | --- | --- |
@@ -84,7 +87,7 @@ ms.locfileid: "87421201"
      | accessPolicyReaderObjectIds | Список идентификаторов объектов пользователей или приложений в Azure AD, которые должны иметь доступ на чтение к среде. Идентификатор объекта субъекта-службы можно получить, вызвав командлет **Get-AzADUser** или **Get-AzADServicePrincipal**. Создание политики доступа для группы Azure AD еще не поддерживается. |
      | accessPolicyContributorObjectIds | Список идентификаторов объектов пользователей или приложений в Azure AD, которые должны иметь доступ участника к среде. Идентификатор объекта субъекта-службы можно получить, вызвав командлет **Get-AzADUser** или **Get-AzADServicePrincipal**. Создание политики доступа для группы Azure AD еще не поддерживается. |
 
-   * Например, следующий файл параметров будет использоваться для создания среды и источника событий, который считывает события из имеющегося концентратора событий. Он также создает две политики доступа, которые предоставляют доступ участника к среде.
+   - Например, следующий файл параметров будет использоваться для создания среды и источника событий, который считывает события из имеющегося концентратора событий. Он также создает две политики доступа, которые предоставляют доступ участника к среде.
 
      ```JSON
      {
@@ -114,12 +117,12 @@ ms.locfileid: "87421201"
                      "AGUID001-0000-0000-0000-000000000000",
                      "AGUID002-0000-0000-0000-000000000000"
                  ]
-             }    
+             }
          }
      }
      ```
 
-    * Дополнительные сведения см. в статье [Параметры](../azure-resource-manager/templates/parameter-files.md).
+   - Дополнительные сведения см. в статье [Параметры](../azure-resource-manager/templates/parameter-files.md).
 
 ## <a name="deploy-the-quickstart-template-locally-using-powershell"></a>Развертывание шаблона быстрого запуска локально с помощью PowerShell
 
@@ -128,19 +131,19 @@ ms.locfileid: "87421201"
 
 1. В PowerShell войдите в свою учетную запись Azure.
 
-    * В командной строке PowerShell выполните следующую команду:
+    - В командной строке PowerShell выполните следующую команду:
 
       ```powershell
       Connect-AzAccount
       ```
 
-    * Вам будет предложено войти в учетную запись Azure. Войдя в систему, выполните следующую команду, чтобы просмотреть доступные подписки:
+    - Вам будет предложено войти в учетную запись Azure. Войдя в систему, выполните следующую команду, чтобы просмотреть доступные подписки:
 
       ```powershell
       Get-AzSubscription
       ```
 
-    * Эта команда возвращает список доступных подписок Azure. Выберите подписку для текущего сеанса, выполнив приведенную ниже команду. Замените `<YourSubscriptionId>` идентификатором GUID подписки Azure, которую вы хотите использовать:
+    - Эта команда возвращает список доступных подписок Azure. Выберите подписку для текущего сеанса, выполнив приведенную ниже команду. Замените `<YourSubscriptionId>` идентификатором GUID подписки Azure, которую вы хотите использовать:
 
       ```powershell
       Set-AzContext -SubscriptionID <YourSubscriptionId>
@@ -148,13 +151,13 @@ ms.locfileid: "87421201"
 
 1. Создайте группу ресурсов, если ее еще нет.
 
-   * Если у вас нет группы ресурсов, создайте ее с помощью команды **New-AzResourceGroup**. Введите имя группы ресурсов и нужное расположение. Пример:
+   - Если у вас нет группы ресурсов, создайте ее с помощью команды **New-AzResourceGroup**. Введите имя группы ресурсов и нужное расположение. Пример:
 
      ```powershell
      New-AzResourceGroup -Name MyDemoRG -Location "West US"
      ```
 
-   * После успешного выполнения операции появится сводка по новой группе ресурсов.
+   - После успешного выполнения операции появится сводка по новой группе ресурсов.
 
      ```powershell
      ResourceGroupName : MyDemoRG
@@ -166,7 +169,7 @@ ms.locfileid: "87421201"
 
 1. Протестируйте развертывание.
 
-   * Проверьте развертывание, выполнив командлет `Test-AzResourceGroupDeployment`. При тестировании развернутой службы укажите точно такие же параметры, как и при ее выполнении.
+   - Проверьте развертывание, выполнив командлет `Test-AzResourceGroupDeployment`. При тестировании развернутой службы укажите точно такие же параметры, как и при ее выполнении.
 
      ```powershell
      Test-AzResourceGroupDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -TemplateParameterFile <path to parameters file>\azuredeploy.parameters.json
@@ -174,27 +177,27 @@ ms.locfileid: "87421201"
 
 1. Создание развертывания
 
-    * Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **Режим** не указан, используется стандартное значение **Добавочный**. Дополнительные сведения см. в статье [Добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
+    - Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **Режим** не указан, используется стандартное значение **Добавочный**. Дополнительные сведения см. в статье [Добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
 
-    * Следующая команда запрашивает пять обязательных параметров в окне PowerShell:
+    - Следующая команда запрашивает пять обязательных параметров в окне PowerShell:
 
       ```powershell
       New-AzResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json
       ```
 
-    * Чтобы использовать вместо этого файл параметров, выполните приведенную ниже команду:
+    - Чтобы использовать вместо этого файл параметров, выполните приведенную ниже команду:
 
       ```powershell
       New-AzResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -TemplateParameterFile <path to parameters file>\azuredeploy.parameters.json
       ```
 
-    * При выполнении командлета развертывания также можно использовать встроенные параметры. Команда выглядит следующим образом:
+    - При выполнении командлета развертывания также можно использовать встроенные параметры. Команда выглядит следующим образом:
 
       ```powershell
       New-AzResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -parameterName "parameterValue"
       ```
 
-    * Чтобы выполнить [полное](../azure-resource-manager/templates/deployment-modes.md) развертывание, установите для параметра **Режим** значение **Полный**.
+    - Чтобы выполнить [полное](../azure-resource-manager/templates/deployment-modes.md) развертывание, установите для параметра **Режим** значение **Полный**.
 
       ```powershell
       New-AzResourceGroupDeployment -Name MyDemoDeployment -Mode Complete -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json
@@ -202,7 +205,7 @@ ms.locfileid: "87421201"
 
 1. Проверка развертывания
 
-    * В случае успешного развертывания ресурсов в окне PowerShell будет приведена сводка по развертыванию.
+    - В случае успешного развертывания ресурсов в окне PowerShell будет приведена сводка по развертыванию.
 
       ```powershell
        DeploymentName          : MyDemoDeployment
@@ -243,7 +246,7 @@ ms.locfileid: "87421201"
 
 1. Развертывание шаблона быстрого запуска через портал Azure
 
-   * Домашняя страница шаблона быстрого запуска на GitHub также содержит кнопку **Развертывание в Azure**. При нажатии на нее открывается страница "Настраиваемое развертывание" на портале Azure. На этой странице можно ввести или выбрать значения для каждого параметра из таблиц [обязательных](#required-parameters) или [необязательных параметров](#optional-parameters). Если нажать кнопку **Приобрести** после заполнения параметров, начнется развертывание шаблона.
+   - Домашняя страница шаблона быстрого запуска на GitHub также содержит кнопку **Развертывание в Azure**. При нажатии на нее открывается страница "Настраиваемое развертывание" на портале Azure. На этой странице можно ввести или выбрать значения для каждого параметра из таблиц [обязательных](#required-parameters) или [необязательных параметров](#optional-parameters). Если нажать кнопку **Приобрести** после заполнения параметров, начнется развертывание шаблона.
     </br>
     </br>
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-timeseriesinsights-environment-with-eventhub%2Fazuredeploy.json" target="_blank">

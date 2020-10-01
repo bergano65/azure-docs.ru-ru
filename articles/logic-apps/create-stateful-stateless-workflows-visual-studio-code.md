@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: deli, rohitha, vikanand, hongzili, sopai, absaafan, logicappspm
 ms.topic: conceptual
 ms.date: 09/26/2020
-ms.openlocfilehash: 1595051c851d1c21242bcbb5368baa28a1da740d
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: cc52358af203bafc87c5f9ac3ae1f237c0c7ae6c
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409856"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597795"
 ---
 # <a name="create-stateful-or-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Создание рабочих процессов с отслеживанием состояния или без отслеживания состояния в Visual Studio Code с помощью расширения Azure Logic Apps (Предварительная версия)
 
@@ -112,7 +112,7 @@ ms.locfileid: "91409856"
 
 * В портал Azure нельзя создавать новые приложения логики с типом ресурсов " **приложение логики (Предварительная версия)** ". Эти приложения логики можно создавать только в Visual Studio Code. Однако после развертывания приложений логики с этим типом ресурса из Visual Studio Code в Azure можно [Добавить новые рабочие процессы в эти приложения логики](#add-workflows).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="access-and-connectivity"></a>Доступ и подключение
 
@@ -389,9 +389,11 @@ ms.locfileid: "91409856"
 
 1. Если необходимо удалить элемент в конструкторе, выполните следующие действия.
 
-   1. Выберите элемент в конструкторе.
+   1. В конструкторе выберите элемент, который открывает область сведений об элементе в правой части.
 
-   1. В области сведений об элементе, открывающейся с правой стороны, нажмите кнопку с многоточием (**...**) **>** **Удалить**. Чтобы подтвердить удаление, нажмите кнопку **ОК**.
+   1. Раскройте Visual Studio Code окно, чтобы рядом с именем триггера или действия в верхнем правом углу появилась кнопка с многоточием (**...**). 
+
+   1. Откройте меню с многоточием (**...**) и выберите **Удалить**. Чтобы подтвердить удаление, нажмите кнопку **ОК**.
 
       ![Снимок экрана, на котором показан выбранный элемент в конструкторе с открытой областью сведений и кнопкой с выбранными многоточиями и параметром "Удалить".](./media/create-stateful-stateless-workflows-visual-studio-code/delete-item-from-designer.png)
 

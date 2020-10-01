@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: 66dfd198b543ec49fabe381b50174b182cf070c7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 82bebcbda3110d51ae72df1fb4b18fedaa6c2f4e
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91336043"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597713"
 ---
 # <a name="repair-a-windows-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "91336043"
 1. Запуск Azure Cloud Shell
 2. Выполните команду az extension add/update.
 3. Выполните команду az vm repair create.
-4. Выполните команду az vm repair run.
+4. Выполните команду AZ VM Repair Run или выполните действия по устранению рисков.
 5. Выполните команду az vm repair restore.
 
 Дополнительную документацию и инструкции см. в разделе [az vm repair](/cli/azure/ext/vm-repair/vm/repair).
@@ -60,7 +60,7 @@ ms.locfileid: "91336043"
 
    Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду ``az --version``. Если вам необходимо установить или обновить Azure CLI, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
    
-   Если вам нужно войти в Cloud Shell с учетной записью, отличной от той, что в данный момент зарегистрирована в портал Azure, можно использовать команду ``az login`` [AZ login Reference](/cli/azure/reference-index?view=azure-cli-latest#az-login).  Для переключения между подписками, связанными с вашей учетной записью, можно использовать команду ``az account set --subscription`` [AZ Account Set Reference](/cli/azure/account?view=azure-cli-latest#az-account-set).
+   Если вам нужно войти в Cloud Shell с учетной записью, отличной от той, что в данный момент зарегистрирована в портал Azure, можно использовать команду ``az login`` [AZ login Reference](/cli/azure/reference-index?view=azure-cli-latest#az-login&preserve-view=true).  Для переключения между подписками, связанными с вашей учетной записью, можно использовать команду ``az account set --subscription`` [AZ Account Set Reference](/cli/azure/account?view=azure-cli-latest#az-account-set&preserve-view=true).
 
 2. Если вы используете команды `az vm repair` в первый раз, добавьте расширение CLI vm-repair.
 
@@ -80,11 +80,13 @@ ms.locfileid: "91336043"
    az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password 'password!234' --verbose
    ```
 
-4. Выполните `az vm repair run`. Эта команда запустит указанный скрипт исправления на подключенном диске через виртуальную машину для исправления. Если в руководстве по устранению неполадок указан идентификатор запуска, используйте его здесь. В противном случае можно использовать `az vm repair list-scripts`, чтобы просмотреть доступные скрипты исправления. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3.
+4. Выполните `az vm repair run`. Эта команда запустит указанный скрипт исправления на подключенном диске через виртуальную машину для исправления. Если в руководстве по устранению неполадок указан идентификатор запуска, используйте его здесь. В противном случае можно использовать `az vm repair list-scripts`, чтобы просмотреть доступные скрипты исправления. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3. Дополнительные сведения о сценариях восстановления можно найти в [библиотеке сценариев восстановления](https://github.com/Azure/repair-script-library).
 
    ```azurecli-interactive
    az vm repair run -g MyResourceGroup -n MyVM --run-on-repair --run-id win-hello-world --verbose
    ```
+   
+   При необходимости можно выполнить все необходимые действия по устранению неполадок вручную с помощью виртуальной машины восстановления, а затем перейти к шагу 5.
 
 5. Выполните `az vm repair restore`. Эта команда поменяет исходный диск ОС виртуальной машины на исправленный. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3.
 

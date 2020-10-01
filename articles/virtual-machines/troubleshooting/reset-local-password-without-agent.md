@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: 42d994a9cdd0e2718d8c2288b6cc0b9618202b41
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: c7e6772799d98cd2997a1fe6b48efe1c7632cfaa
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91447454"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91598390"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Сброс локального пароля Windows для виртуальной машины Azure вне сети
 Локальный пароль Windows для виртуальной машины Azure можно сбросить с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (если установлен гостевой агент Azure). Этот метод является основным способом сброса пароля для виртуальной машины Azure. Если в работе гостевого агента Azure возникают неполадки (агент не отвечает или не устанавливается после передачи пользовательского образа), то можно сбросить пароль Windows вручную. В этой статье описывается, как сбросить пароль локальной учетной записи, подключив исходный виртуальный диск операционной системы к другой виртуальной машине. Действия, описанные в этой статье, не применяются к контроллерам домена Windows. 
@@ -59,9 +59,9 @@ ms.locfileid: "91447454"
      Version=1
      ```
      
-     ![Создание файла gpt.ini](./media/reset-local-password-without-agent/create-gpt-ini.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/create-gpt-ini.png" alt-text="Создание файла gpt.ini":::
 
-4. Создайте файл `scripts.ini` в расположении `\Windows\System32\GroupPolicy\Machine\Scripts\`. Убедитесь, что отображаются скрытые папки. При необходимости создайте папку `Machine` или `Scripts`.
+4. Создайте файл `scripts.ini` в расположении `\Windows\System32\GroupPolicy\Machine\Scripts\`. Убедитесь, что отображаются скрытые папки. При необходимости создайте папку `Machine` или `Scripts`. 
    
    * В созданный файл `scripts.ini` добавьте следующие строки:
      
@@ -71,17 +71,10 @@ ms.locfileid: "91447454"
      0Parameters=
      ```
      
-     ![Создание файла scripts.ini](./media/reset-local-password-without-agent/create-scripts-ini-1.png)
-
-5. В расположении `\Windows\System32\GroupPolicy\Machine\Scripts\Startup\` создайте файл `FixAzureVM.cmd` со следующим содержимым, заменив `<username>` и `<newpassword>` своими значениями:
-   
-    ```
-    net user <username> <newpassword> /add /Y
-    net localgroup administrators <username> /add
-    net localgroup "remote desktop users" <username> /add
+     :::image type="content" source="./media/reset-local-password-without-agent/create-scripts-ini-1.png" alt-text="Создание файла gpt.ini" <username> /add
     ```
 
-    ![Создание файла FixAzureVM.cmd](./media/reset-local-password-without-agent/create-fixazure-cmd-1.png)
+    :::image type="content" source="./media/reset-local-password-without-agent/create-fixazure-cmd-1.png" alt-text="Создание файла gpt.ini":::
    
     Создаваемый пароль должен удовлетворять настроенным требованиям к сложности пароля для виртуальной машины.
 
@@ -113,31 +106,31 @@ ms.locfileid: "91447454"
    
    * На портале Azure выберите виртуальную машину и нажмите кнопку *Удалить*:
      
-     ![Удалить существующую классическую виртуальную машину](./media/reset-local-password-without-agent/delete-vm-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/delete-vm-classic.png" alt-text="Создание файла gpt.ini":::
 
 2. Подключите диск операционной системы исходной виртуальной машины к машине для устранения неполадок. Виртуальная машина для устранения неполадок должна находиться в том же регионе, что и диск операционной системы исходной виртуальной машины (например `West US`).
    
    1. Выберите виртуальную машину для устранения неполадок на портале Azure. Щелкните *Диски* | *Подключить существующий*:
      
-      ![Подключить существующий диск-классический](./media/reset-local-password-without-agent/disks-attach-existing-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-attach-existing-classic.png" alt-text="Создание файла gpt.ini":::
      
    2. Выберите *VHD-файл*, а затем выберите учетную запись хранения, которая содержит вашу исходную виртуальную машину:
      
-      ![Выбор учетной записи хранения — классическая модель](./media/reset-local-password-without-agent/disks-select-storage-account-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-storage-account-classic.png" alt-text="Создание файла gpt.ini":::
      
    3. Установите флажок *Показать классические учетные записи хранения*, а затем выберите исходный контейнер. Как правило, исходный контейнер — *vhds*:
      
-      ![Выбор контейнера хранилища — классический](./media/reset-local-password-without-agent/disks-select-container-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-container-classic.png" alt-text="Создание файла gpt.ini":::
 
-      ![Выбор контейнера хранилища — классический виртуальный жесткий диск](./media/reset-local-password-without-agent/disks-select-container-vhds-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-container-vhds-classic.png" alt-text="Создание файла gpt.ini":::
      
    4. Выберите виртуальный жесткий диск операционной системы для подключения. Для завершения процесса нажмите кнопку *Выбрать*:
      
-      ![Выберите исходный виртуальный диск — классический](./media/reset-local-password-without-agent/disks-select-source-vhd-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-source-vhd-classic.png" alt-text="Создание файла gpt.ini":::
 
    5. Нажмите кнопку "ОК", чтобы подключить диск.
 
-      ![Присоединить имеющееся диалоговое окно Disk-ОК-классическая](./media/reset-local-password-without-agent/disks-attach-okay-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-attach-okay-classic.png" alt-text="Создание файла gpt.ini":::
 
 3. Подключитесь к виртуальной машине для устранения неполадок, используя удаленный рабочий стол, и убедитесь, что диск операционной системы исходной виртуальной машины отображается.
 
@@ -147,7 +140,7 @@ ms.locfileid: "91447454"
 
    3. В проводнике найдите подключенный диск данных. Если виртуальный жесткий диск исходной виртуальной машины является единственным диском данных, подключенным к машине для устранения неполадок, то это должен быть диск F:
      
-      ![Просмотр подключенного диска данных](./media/reset-local-password-without-agent/troubleshooting-vm-file-explorer-classic.png)
+      :::image type="content" source="./media/reset-local-password-without-agent/troubleshooting-vm-file-explorer-classic.png" alt-text="Создание файла gpt.ini":::
 
 4. На диске исходной виртуальной машины создайте `gpt.ini` в `\Windows\System32\GroupPolicy` (если файл `gpt.ini` уже существует, то переименуйте его в `gpt.ini.bak`).
    
@@ -163,9 +156,9 @@ ms.locfileid: "91447454"
      Version=1
      ```
      
-     ![Создание gpt.ini-классической модели](./media/reset-local-password-without-agent/create-gpt-ini-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/create-gpt-ini-classic.png" alt-text="Создание файла gpt.ini":::
 
-5. Создайте файл `scripts.ini` в расположении `\Windows\System32\GroupPolicy\Machines\Scripts\`. Убедитесь, что отображаются скрытые папки. При необходимости создайте папку `Machine` или `Scripts`.
+5. Создайте файл `scripts.ini` в расположении `\Windows\System32\GroupPolicy\Machine\Scripts\`. Убедитесь, что отображаются скрытые папки. При необходимости создайте папку `Machine` или `Scripts`.
    
    * В созданный файл `scripts.ini` добавьте следующие строки:
 
@@ -175,17 +168,10 @@ ms.locfileid: "91447454"
      0Parameters=
      ```
      
-     ![Создание scripts.ini-классической модели](./media/reset-local-password-without-agent/create-scripts-ini-classic-1.png)
-
-6. В расположении `\Windows\System32\GroupPolicy\Machine\Scripts\Startup\` создайте файл `FixAzureVM.cmd` со следующим содержимым, заменив `<username>` и `<newpassword>` своими значениями:
-   
-    ```
-    net user <username> <newpassword> /add /Y
-    net localgroup administrators <username> /add
-    net localgroup "remote desktop users" <username> /add
+     :::image type="content" source="./media/reset-local-password-without-agent/create-scripts-ini-classic-1.png" alt-text="Создание файла gpt.ini" <username> /add
     ```
 
-    ![Создание Фиксазуревм. cmd-Classic](./media/reset-local-password-without-agent/create-fixazure-cmd-classic-1.png)
+    :::image type="content" source="./media/reset-local-password-without-agent/create-fixazure-cmd-1.png" alt-text="Создание файла gpt.ini":::
    
     Создаваемый пароль должен удовлетворять настроенным требованиям к сложности пароля для виртуальной машины.
 
@@ -195,17 +181,17 @@ ms.locfileid: "91447454"
    
    2. Выберите диск данных, подключенный на шаге 2, нажмите кнопку **Отключить**, затем нажмите кнопку **ОК**.
 
-     ![Отключение диска — устранение неполадок виртуальной машины (классическая модель)](./media/reset-local-password-without-agent/data-disks-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/data-disks-classic.png" alt-text="Создание файла gpt.ini":::
      
-     ![Отключение диска-устранение неполадок с диалоговым окном ВМ-ОК — классическая](./media/reset-local-password-without-agent/detach-disk-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/detach-disk-classic.png" alt-text="Создание файла gpt.ini":::
 
 8. Создайте виртуальную машину на основе диска операционной системы исходной виртуальной машины.
    
-     ![Создание виртуальной машины на основе шаблона — классическая модель](./media/reset-local-password-without-agent/create-new-vm-from-template-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/create-new-vm-from-template-classic.png" alt-text="Создание файла gpt.ini":::
 
-     ![Создание виртуальной машины из шаблона — выбор подписки — классическая](./media/reset-local-password-without-agent/choose-subscription-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/choose-subscription-classic.png" alt-text="Создание файла gpt.ini":::
 
-     ![Создание виртуальной машины на основе шаблона — создание виртуальной машины — классическая модель](./media/reset-local-password-without-agent/create-vm-classic.png)
+     :::image type="content" source="./media/reset-local-password-without-agent/create-vm-classic.png" alt-text="Создание файла gpt.ini":::
 
 ## <a name="complete-the-create-virtual-machine-experience"></a>Завершение процедуры создания виртуальной машины
 

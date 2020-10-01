@@ -7,16 +7,16 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: a899927166d7e1294ad89d48e5c646e6abb5ed76
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: 9b0eeda443aefc105fb36d6075c717fafae4cb61
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707617"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91598034"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Устранение неполадок службы файлов Azure в Windows (SMB)
 
-В этой статье приведен список распространенных проблем, возникающих в службе файлов Microsoft Azure при подключении из клиентов Windows. Кроме того, здесь представлены возможные причины этих проблем и способы их устранения. Помимо действий по устранению неполадок, описанных в этой статье, можно также использовать [AzFileDiagnostics](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows),   чтобы убедиться в том, что клиентская среда Windows имеет необходимые компоненты. AzFileDiagnostics автоматизирует обнаружение большинства симптомов, упомянутых в этой статье, и помогает настроить среду для достижения оптимальной производительности. Эти сведения также можно найти в [средстве устранения неполадок общих папок Azure](https://support.microsoft.com/help/4022301/troubleshooter-for-azure-files-shares) , в котором содержатся инструкции по устранению проблем с подключением, сопоставлением и подключением общих папок Azure.
+В этой статье приведен список распространенных проблем, возникающих в службе файлов Microsoft Azure при подключении из клиентов Windows. Кроме того, здесь представлены возможные причины этих проблем и способы их устранения. Помимо действий по устранению неполадок, описанных в этой статье, можно также использовать [AzFileDiagnostics](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows),   чтобы убедиться в том, что клиентская среда Windows имеет необходимые компоненты. AzFileDiagnostics автоматизирует обнаружение большинства симптомов, упомянутых в этой статье, и помогает настроить среду для достижения оптимальной производительности.
 
 > [!IMPORTANT]
 > Содержимое этой статьи относится только к общим ресурсам SMB. Дополнительные сведения о общих ресурсах NFS см. в разделе [Устранение неполадок файловых ресурсов NFS Azure](storage-troubleshooting-files-nfs.md).
@@ -141,7 +141,7 @@ TcpTestSucceeded : True
 <a id="error1816"></a>
 ## <a name="error-1816---not-enough-quota-is-available-to-process-this-command"></a>Ошибка 1816-недостаточно квоты для обработки этой команды
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Ошибка 1816 возникает при достижении верхнего предела параллельных открытых дескрипторов, разрешенных для файла или каталога в общем файловом ресурсе Azure. Дополнительные сведения см. в разделе [Целевые показатели масштабируемости службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-scale-targets#azure-files-scale-targets).
 
@@ -181,7 +181,7 @@ TcpTestSucceeded : True
 
 Указанный ресурс помечен для удаления клиентом SMB.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 Эта проблема обычно возникает, если файл или каталог имеет открытый обработчик. 
 
 ### <a name="solution"></a>Решение
@@ -226,7 +226,7 @@ TcpTestSucceeded : True
 
 Если вы сопоставили файловый ресурс Azure от имени администратора с помощью команды net use, то может показаться, что он отсутствует.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 По умолчанию проводник не запускается от имени администратора. При выполнении команды net use из командной строки администрирования пользователь подключает сетевой диск от имени администратора. Подключенные диски ориентированы на пользователя. Если для их подключения использовалась одна учетная запись, а пользователь вошел в систему с помощью другой, то диски отображаться не будут.
 
@@ -236,7 +236,7 @@ TcpTestSucceeded : True
 <a id="netuse"></a>
 ## <a name="net-use-command-fails-if-the-storage-account-contains-a-forward-slash"></a>Если учетная запись хранения содержит косую черту (/), то выполнение команды net use завершается сбоем
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Команда net use интерпретирует косую черту (/) как параметр командной строки. Если имя учетной записи пользователя начинается с косой черты, то сопоставление диска завершится сбоем.
 
@@ -257,7 +257,7 @@ TcpTestSucceeded : True
 <a id="cannotaccess"></a>
 ## <a name="application-or-service-cannot-access-a-mounted-azure-files-drive"></a>Приложение или служба не может получить доступ к подключенному диску службы файлов Azure
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Диски подключаются для каждого пользователя. Если приложение или служба выполняется не под той учетной записью, к которой относится подключенный диск, то приложение не увидит этот диск.
 
@@ -281,7 +281,7 @@ TcpTestSucceeded : True
 
 Когда файл копируется по сети, он расшифровывается на исходном компьютере, передается в виде обычного текста и повторно шифруется в месте назначения. Тем не менее при попытке скопировать зашифрованный файл может появиться следующее сообщение об ошибке: "Вы копируете файл в место, которое не поддерживает шифрование".
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 Эта проблема может возникнуть при использовании шифрованной файловой системы (EFS). Файлы с шифрованием BitLocker нельзя копировать в службу файлов Azure. Однако эта служба не поддерживает шифрованную файловую систему (EFS) NTFS.
 
 ### <a name="workaround"></a>Обходной путь
@@ -298,7 +298,7 @@ TcpTestSucceeded : True
 
 ## <a name="slow-enumeration-of-files-and-folders"></a>Медленное перечисление файлов и папок
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема может возникнуть, если на клиентском компьютере для больших каталогов недостаточно кэша.
 
@@ -315,7 +315,7 @@ TcpTestSucceeded : True
 
 ## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-azure-ad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка Ааддстенантнотфаунд при включении проверки подлинности Azure Active Directory службы домена (Azure AD DS) для файлов Azure "не удается нахождение активных клиентов с ИДЕНТИФИКАТОРом клиента AAD-клиент-ID"
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Ошибка Ааддстенантнотфаунд возникает при попытке [включить проверку подлинности Azure Active Directory доменных служб (azure AD DS) в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) в учетной записи хранения, где [Служба домена Azure ad (Azure AD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте Azure AD связанной подписки.  
 
@@ -343,7 +343,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 1. Чеккадобжектпассвордискоррект: Убедитесь, что пароль, настроенный для удостоверения AD, представляющего учетную запись хранения, совпадает с ключом kerb1 или kerb2 учетной записи хранения. Если пароль неверный, можно выполнить команду [Update-азсторажеаккаунтадобжектпассворд](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-update-password) , чтобы сбросить пароль. 
 2. Чеккадобжект: Убедитесь, что в Active Directory есть объект, который представляет учетную запись хранения и имеет правильное имя участника-службы (SPN). Если имя субъекта-службы не настроено правильно, выполните командлет Set AD, возвращенный в командлете Debug, чтобы настроить имя SPN.
 3. Чеккдомаинжоинед: Проверка того, что компьютер клиента присоединен к домену AD. Если компьютер не присоединен к домену AD, обратитесь к этой [статье](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain#:~:text=To%20join%20a%20computer%20to%20a%20domain&text=Navigate%20to%20System%20and%20Security,join%2C%20and%20then%20click%20OK) для участия в инструкции по присоединению к домену.
-4. CheckPort445Connectivity: Убедитесь, что для подключения SMB открыт порт 445. Если требуемый порт не открыт, обратитесь к средству устранения неполадок [AzFileDiagnostics.ps1](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5) для устранения проблем с подключением к службе файлов Azure.
+4. CheckPort445Connectivity: Убедитесь, что для подключения SMB открыт порт 445. Если требуемый порт не открыт, обратитесь к средству устранения неполадок [AzFileDiagnostics.ps1](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows) для устранения проблем с подключением к службе файлов Azure.
 5. Чекксидхасаадусер: Убедитесь, что вошедший в систему пользователь AD синхронизирован с Azure AD. Если вы хотите узнать, синхронизирован ли конкретный пользователь AD с Azure AD, можно указать параметры-UserName и-domain во входных параметрах. 
 6. Чеккжеткерберостиккет: попытка получить билет Kerberos для подключения к учетной записи хранения. Если нет допустимого маркера Kerberos, выполните командлет klist Get CIFS/Storage-Account-Name. File. Core. Windows. NET и изучите код ошибки, чтобы вызвать ошибку получения билета.
 7. Чекксторажеаккаунтдомаинжоинед: Проверка включения проверки подлинности AD и заполнение свойств учетной записи AD. Если [это](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-enable) не так, см. инструкции по включению AD DS проверки подлинности в службе файлов Azure. 

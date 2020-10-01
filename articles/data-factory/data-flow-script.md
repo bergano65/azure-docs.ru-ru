@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/29/2020
-ms.openlocfilehash: 6802e3f6c0892993f9ffe4373f43274362b8a003
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 8310c34e06d52dc12af42f8bc33f4a4d7e99d68d
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/30/2020
-ms.locfileid: "91569681"
+ms.locfileid: "91598101"
 ---
 # <a name="data-flow-script-dfs"></a>Сценарий потока данных (DFS)
 
@@ -176,13 +176,13 @@ aggregate(groupBy(movie),
 Используйте этот код в скрипте потока данных для создания нового производного столбца ```DWhash``` с именем, создающего ```sha1``` хэш трех столбцов.
 
 ```
-derive(DWhash = sha1(Name,ProductNumber,Color))
+derive(DWhash = sha1(Name,ProductNumber,Color)) ~> DWHash
 ```
 
 Этот скрипт также можно использовать для создания хэша строки с использованием всех столбцов, имеющихся в вашем потоке, без необходимости присвоить каждому столбцу имя.
 
 ```
-derive(DWhash = sha1(columns()))
+derive(DWhash = sha1(columns())) ~> DWHash
 ```
 
 ### <a name="string_agg-equivalent"></a>Эквивалент String_agg
@@ -191,7 +191,7 @@ derive(DWhash = sha1(columns()))
 ```
 source1 aggregate(groupBy(year),
     string_agg = collect(title)) ~> Aggregate1
-Aggregate1 derive(string_agg = toString(string_agg)) ~> DerivedColumn2
+Aggregate1 derive(string_agg = toString(string_agg)) ~> StringAgg
 ```
 
 ### <a name="count-number-of-updates-upserts-inserts-deletes"></a>Число обновлений, операции Upsert, вставок, удалений
@@ -216,7 +216,7 @@ aggregate(groupBy(mycols = sha2(256,columns())),
 Это фрагмент кода, который можно вставить в поток данных для универсальной проверки всех столбцов на наличие значений NULL. Этот метод использует смещение схемы, чтобы просмотреть все столбцы во всех строках и использовать условное разбиение для разделения строк значениями NULL из строк без значений NULL. 
 
 ```
-CreateColumnArray split(contains(array(columns()),isNull(#item)),
+split(contains(array(columns()),isNull(#item)),
     disjoint: false) ~> LookForNULLs@(hasNULLs, noNULLs)
 ```
 

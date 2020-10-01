@@ -1,5 +1,5 @@
 ---
-title: Запрос Azure Cosmos DB данных с помощью SQL по запросу в Azure синапсе Link (Предварительная версия)
+title: Запрос Azure Cosmos DB данных с помощью SQL Server не в связи с Azure синапсе (Предварительная версия)
 description: В этой статье вы узнаете, как запросить Azure Cosmos DB с помощью SQL по запросу в Azure синапсе Link (Предварительная версия).
 services: synapse analytics
 author: jovanpop-msft
@@ -9,27 +9,27 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8dd6ab5bcb42765c995e8cd767358be5e62aa0b6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 028f47fcfb4a6a4d94d672e950b4c37d739e672b
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91288399"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597313"
 ---
-# <a name="query-azure-cosmos-db-data-using-sql-on-demand-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью SQL по запросу в Azure синапсе Link (Предварительная версия)
+# <a name="query-azure-cosmos-db-data-using-sql-serverless-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью SQL Server не в связи с Azure синапсе (Предварительная версия)
 
-Без использования SQL Server (ранее SQL по запросу) позволяет анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью [ссылки Azure синапсе](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) , практически в режиме реального времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из [аналитического хранилища](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL.
+Без использования SQL Server (ранее SQL Server) позволяет анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью [ссылки Azure синапсе](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) , практически в режиме реального времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из [аналитического хранилища](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL.
 
 > [!NOTE]
-> Поддержка запросов Azure Cosmos DB аналитического хранилища с SQL по запросу в настоящее время доступна в предварительной версии. 
+> Поддержка запросов Azure Cosmos DB аналитического хранилища с SQL Server в настоящее время находится в режиме предварительной версии. 
 
-Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql.md?view=sql-server-ver15&preserve-view=true) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время вы не можете хранить результаты запросов SQL по запросу, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
+Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql.md?view=sql-server-ver15&preserve-view=true) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время нельзя хранить результаты запросов SQL Server, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
 
-В этой статье вы узнаете, как написать запрос с помощью SQL по запросу, который будет запрашивать данные из Azure Cosmos DB контейнеров, Синапсеных с включенной ссылкой. Затем вы можете узнать больше о создании представлений SQL по запросу в Azure Cosmos DB контейнерах и подключении их к Power BI моделям в [этом](./tutorial-data-analyst.md) руководстве. 
+В этой статье вы узнаете, как написать запрос с помощью SQL Server, который будет запрашивать данные из Azure Cosmos DB контейнеров, Синапсеных с включенной ссылкой. Затем вы можете узнать больше о создании бессерверных представлений SQL Server в Azure Cosmos DB контейнерах и их подключении к Power BI моделям в [этом](./tutorial-data-analyst.md) руководстве. 
 
 ## <a name="overview"></a>Обзор
 
-Для поддержки запросов и анализа данных в Azure Cosmos DB аналитическом хранилище SQL по запросу использует следующий `OPENROWSET` синтаксис:
+Для поддержки запросов и анализа данных в Azure Cosmos DB аналитическом хранилище SQL Server не использует следующий `OPENROWSET` синтаксис:
 
 ```sql
 OPENROWSET( 
@@ -47,7 +47,7 @@ OPENROWSET(
 Имя контейнера Azure Cosmos DB указывается без кавычек в `OPENROWSET` синтаксисе. Если имя контейнера содержит специальные символы (например, дефис "-"), имя должно быть заключено в `[]` квадратные скобки в `OPENROWSET` синтаксисе.
 
 > [!NOTE]
-> SQL по запросу не поддерживает запросы к Azure Cosmos DB хранилищу транзакций.
+> SQL Server без поддержки запросов Azure Cosmos DB хранилище транзакций.
 
 ## <a name="sample-data-set"></a>Пример набора данных
 
@@ -55,14 +55,14 @@ OPENROWSET(
 
 Вы можете просмотреть лицензию и структуру данных на этих страницах, а также загрузить демонстрационные данные для наборов данных [ЕКДК](https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.json) и [Cord19](https://azureopendatastorage.blob.core.windows.net/covid19temp/comm_use_subset/pdf_json/000b7d1517ceebb34e1e3e817695b6de03e2fa78.json) .
 
-Для работы с этой статьей, посвященной запросам Cosmos DB данных с помощью SQL по запросу, обязательно создайте следующие ресурсы:
+Для работы с этой статьей, посвященной запросам Cosmos DB данных с помощью SQL Server, убедитесь, что созданы следующие ресурсы:
 * Azure Cosmos DBная учетная запись базы данных [синапсе включена](../../cosmos-db/configure-synapse-link.md)
 * База данных Azure Cosmos DB с именем `covid`
 * Два контейнера Azure Cosmos DB с именами `EcdcCases` и `Cord19` с приведенными выше наборами данных выборки загружены.
 
 ## <a name="explore-azure-cosmos-db-data-with-automatic-schema-inference"></a>Просмотр Azure Cosmos DB данных с помощью автоматического вывода схемы
 
-Самый простой способ исследовать данные в Azure Cosmos DB заключается в использовании функции автоматического вывода схемы. Пропустив `WITH` предложение из `OPENROWSET` инструкции, можно указать SQL по запросу на автоматическое обнаружение (вывод) схемы аналитического хранилища контейнера Azure Cosmos DB.
+Самый простой способ исследовать данные в Azure Cosmos DB заключается в использовании функции автоматического вывода схемы. Пропуская `WITH` предложение из `OPENROWSET` инструкции, можно указать, что SQL Server не должен автоматически обнаруживать (выводить) схему аналитического хранилища контейнера Azure Cosmos DB.
 
 ```sql
 SELECT TOP 10 *
@@ -71,7 +71,7 @@ FROM OPENROWSET(
        'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
        EcdcCases) as documents
 ```
-В приведенном выше примере мы предписываете SQL по запросу на подключение к `covid` базе данных в Azure Cosmos DB учетной записи `MyCosmosDbAccount` , прошедшей проверку подлинности с помощью Azure Cosmos DB ключа (в примере выше). Затем осуществляется доступ к `EcdcCases` аналитическему хранилищу контейнера в `West US 2` регионе. Поскольку нет проекции конкретных свойств, функция возвратит `OPENROWSET` все свойства из Azure Cosmos DB элементов.
+В приведенном выше примере мы предписываете SQL Server не подключаться к `covid` базе данных в учетной записи Azure Cosmos DB `MyCosmosDbAccount` , прошедшей проверку подлинности с помощью Azure Cosmos DB ключа (в примере выше). Затем осуществляется доступ к `EcdcCases` аналитическему хранилищу контейнера в `West US 2` регионе. Поскольку нет проекции конкретных свойств, функция возвратит `OPENROWSET` все свойства из Azure Cosmos DB элементов.
 
 Если необходимо исследовать данные из другого контейнера в той же Azure Cosmos DB базе данных, можно использовать одну и ту же строку подключения и ссылку на необходимый контейнер в качестве третьего параметра:
 
@@ -118,7 +118,7 @@ FROM OPENROWSET(
 
 ## <a name="querying-nested-objects-and-arrays"></a>Запрос вложенных объектов и массивов
 
-Azure Cosmos DB позволяет представлять более сложные модели данных, составляя их как вложенные объекты или массивы. Функция автосинхронизации синапсе Link for Azure Cosmos DB управляет представлением схемы в расширенном хранилище, которое включает в себя обработку вложенных типов данных, позволяющих выполнять расширенные запросы из SQL по запросу.
+Azure Cosmos DB позволяет представлять более сложные модели данных, составляя их как вложенные объекты или массивы. Функция автосинхронизации ссылки синапсе для Azure Cosmos DB управляет представлением схемы в расширенном хранилище, которое включает в себя обработку вложенных типов данных, позволяющих выполнять расширенные запросы из SQL Server.
 
 Например, в наборе данных " [шнур-19](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/) " есть документы JSON, которые приведены в следующей структуре:
 
@@ -170,7 +170,7 @@ FROM
     ) AS docs;
 ```
 
-Дополнительные сведения о анализе [сложных типов данных в ссылках синапсе](../how-to-analyze-complex-schema.md) и [вложенных структурах в SQL по запросу](query-parquet-nested-types.md).
+Дополнительные сведения о анализе [сложных типов данных в ссылках синапсе](../how-to-analyze-complex-schema.md) и [вложенных структурах в SQL Server](query-parquet-nested-types.md).
 
 > [!IMPORTANT]
 > Если в тексте отображаются непредвиденные символы, например, `MÃƒÂ©lade` вместо этого `Mélade` Параметры сортировки базы данных не задаются в [кодировке UTF8](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support#utf8) . 
@@ -201,7 +201,7 @@ Azure Cosmos DB данные могут иметь вложенные вложе
 }
 ```
 
-В некоторых случаях может потребоваться "присоединить" к свойствам верхнего элемента (метаданных) со всеми элементами массива (авторы). SQL on-Demand позволяет выполнять сведение вложенных структур путем применения `OPENJSON` функции к вложенному массиву:
+В некоторых случаях может потребоваться "присоединить" к свойствам верхнего элемента (метаданных) со всеми элементами массива (авторы). SQL Server не позволяет выполнять сведение вложенных структур путем применения `OPENJSON` функции к вложенному массиву:
 
 ```sql
 SELECT
@@ -236,7 +236,7 @@ FROM
 
 ## <a name="azure-cosmos-db-to-sql-type-mappings"></a>Сопоставления типов SQL Azure Cosmos DB
 
-Важно отметить, что хотя Azure Cosmos DB хранилище транзакций не зависит от схемы, аналитическое хранилище схематизированных для оптимизации производительности аналитических запросов. С помощью функции автосинхронизации канала синапсе Azure Cosmos DB управляет представлением схемы в средстве аналитического хранилища, которое включает обработку вложенных типов данных. Так как SQL по запросу будет анализировать аналитическое хранилище, важно понимать, как сопоставлять Azure Cosmos DB входные типы данных с типами данных SQL.
+Важно отметить, что хотя Azure Cosmos DB хранилище транзакций не зависит от схемы, аналитическое хранилище схематизированных для оптимизации производительности аналитических запросов. С помощью функции автосинхронизации канала синапсе Azure Cosmos DB управляет представлением схемы в средстве аналитического хранилища, которое включает обработку вложенных типов данных. Поскольку SQL Server не запрашивает аналитическое хранилище, важно понимать, как сопоставлять типы входных данных Azure Cosmos DB с типами данных SQL.
 
 Учетные записи Azure Cosmos DB API SQL (Core) поддерживают типы свойств JSON чисел, строковых, логических, null, вложенных объектов или массивов. При использовании предложения в среде необходимо выбрать типы SQL, соответствующие этим типам JSON `WITH` `OPENROWSET` . См. ниже типы столбцов SQL, которые следует использовать для различных типов свойств в Azure Cosmos DB.
 

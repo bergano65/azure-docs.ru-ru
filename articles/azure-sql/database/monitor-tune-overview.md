@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jrasnick, sstein
-ms.date: 03/10/2020
-ms.openlocfilehash: 36a1be4f802292e62c98098508927b06a5851afa
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 09/30/2020
+ms.openlocfilehash: 6c8d048d43a16191cc7b1245ad2d686ba2ca22ab
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333092"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91596982"
 ---
 # <a name="monitoring-and-performance-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Мониторинг и настройка производительности Базы данных SQL Azure и Управляемого экземпляра SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -27,11 +27,14 @@ ms.locfileid: "91333092"
 
 База данных SQL Azure и Azure SQL Управляемый экземпляр обеспечивают расширенные возможности мониторинга и настройки с помощью искусственного интеллекта, чтобы помочь вам в устранении неполадок и максимальном производительности баз данных и решений. Вы можете настроить [потоковый экспорт](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) этих [Intelligent Insights](intelligent-insights-overview.md) и других журналов ресурсов базы данных и метрик в одно из нескольких назначений для использования и анализа, особенно с помощью [аналитики SQL](../../azure-monitor/insights/azure-sql.md). Аналитика SQL Azure — это расширенное решение для мониторинга в облаке для мониторинга производительности всех баз данных в масштабе и нескольких подписок в одном представлении. Список журналов и метрик, которые можно экспортировать, см. в статье [диагностические данные диагностики для экспорта](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#diagnostic-telemetry-for-export) .
 
-Наконец, SQL Server имеет собственные возможности мониторинга и диагностики, которые использует база данных SQL и SQL Управляемый экземпляр, такие как [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store) и [динамические административные представления (DMV)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views). В разделе [мониторинг с помощью динамических административных](monitoring-with-dmvs.md) сценариев для отслеживания различных проблем с производительностью.
+SQL Server имеет собственные возможности мониторинга и диагностики, которые использует база данных SQL и SQL Управляемый экземпляр, такие как [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store) и [динамические административные представления (DMV)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views). В разделе [мониторинг с помощью динамических административных](monitoring-with-dmvs.md) сценариев для отслеживания различных проблем с производительностью.
 
 ## <a name="monitoring-and-tuning-capabilities-in-the-azure-portal"></a>Возможности мониторинга и настройки в портал Azure
 
-В портал Azure база данных SQL Azure и Azure SQL Управляемый экземпляр обеспечивают мониторинг метрик ресурсов. Кроме того, база данных SQL Azure предоставляет помощники по базам данных и анализ производительности запросов предоставляет рекомендации по настройке запросов и анализ производительности запросов. Наконец, в портал Azure можно включить автоматический режим для [логических серверов SQL](logical-servers.md) и их отдельных баз данных и в составе пула.
+В портал Azure база данных SQL Azure и Azure SQL Управляемый экземпляр обеспечивают мониторинг метрик ресурсов. База данных SQL Azure предоставляет помощники по базам данных, а анализ производительности запросов предоставляет рекомендации по настройке запросов и анализ производительности запросов. В портал Azure можно включить автоматическую настройку для [логических серверов SQL](logical-servers.md) и их отдельных баз данных и пулов.
+
+> [!NOTE]
+> Базы данных с очень низким уровнем использования могут отображаться на портале с меньшей вероятностью использования. Из-за способа передачи данных телеметрии при преобразовании значения типа Double в ближайшее целое число, которое может быть меньше 0,5, будет округляться до 0, что приводит к снижению степени гранулярности порожденной телеметрии. Дополнительные сведения см. [в статье низкая метрика базы данных и эластичного пула с округлением до нуля](#low-database-and-elastic-pool-metrics-rounding-to-zero).
 
 ### <a name="azure-sql-database-and-azure-sql-managed-instance-resource-monitoring"></a>Мониторинг ресурсов базы данных SQL Azure и Azure SQL Управляемый экземпляр
 
@@ -46,6 +49,33 @@ ms.locfileid: "91333092"
 ### <a name="query-performance-insight-in-azure-sql-database"></a>анализ производительности запросов в базе данных SQL Azure
 
 [Анализ производительности запросов](query-performance-insight-use.md) показывает производительность в портал Azure самых ресурсоемких и наиболее длительных запросов для баз данных в одной и в составе пула.
+
+### <a name="low-database-and-elastic-pool-metrics-rounding-to-zero"></a>Низкая метрики базы данных и эластичного пула округляются до нуля
+
+Начиная с сентября 2020 базы данных с очень низким уровнем использования могут отображаться на портале с меньшей вероятностью использования. Из-за способа передачи данных телеметрии при преобразовании значения типа Double в ближайшее целое число, которое может быть меньше 0,5, будет округляться до 0, что приводит к снижению степени гранулярности порожденной телеметрии.
+
+Например, рассмотрим 1-минутное окно со следующими четырьмя точками данных: 0,1, 0,1, 0,1, 0,1, эти низкие значения округляются вниз до 0, 0, 0, 0 и представляют среднее значение 0. Если любая из точек данных больше 0,5, например 0,1, 0,1, 0,9, 0,1, они округляются в 0, 0, 1, 0 и показывают среднее значение по 0,25.
+
+Затронутые метрики базы данных:
+- cpu_percent
+- log_write_percent
+- workers_percent
+- sessions_percent
+- physical_data_read_percent
+- dtu_consumption_percent2
+- xtp_storage_percent
+
+Затронутые метрики эластичного пула:
+- cpu_percent
+- physical_data_read_percent
+- log_write_percent
+- memory_usage_percent
+- data_storage_percent
+- peak_worker_percent
+- peak_session_percent
+- xtp_storage_percent
+- allocated_data_storage_percent
+
 
 ## <a name="generate-intelligent-assessments-of-performance-issues"></a>Создание интеллектуальной оценки проблем производительности
 

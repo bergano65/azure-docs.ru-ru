@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 09/28/2020
 ms.author: rolyon
 ms.custom: contperfq1
-ms.openlocfilehash: 17a32b27fba4fcde2e148e44e9db768cc9270e01
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 16ead03af14da70b5aaedc21118488c6dd3012c6
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91441979"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597655"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-cli"></a>Добавление или удаление назначений ролей Azure с помощью Azure CLI
 
@@ -95,7 +95,7 @@ az role definition list --name "{roleName}"
  
 ### <a name="step-3-identify-the-needed-scope"></a>Шаг 3. Определение требуемой области
 
-Azure предоставляет четыре уровня области: ресурс, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups), подписка и [Группа управления](../governance/management-groups/overview.md). Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать роль в более широкой области.
+Azure предоставляет четыре уровня области: ресурс, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups), подписка и [Группа управления](../governance/management-groups/overview.md). Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать роль в более широкой области. Дополнительные сведения об области действия см. в разделе [сведения о области](scope-overview.md).
 
 **Область ресурса**
 
