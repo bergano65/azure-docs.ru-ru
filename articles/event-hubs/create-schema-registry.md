@@ -70,7 +70,7 @@ ms.locfileid: "91347648"
     :::image type="content" source="./media/create-schema-registry/select-schema.png" alt-text="Выбор схемы":::
 1. Отобразится страница « **Обзор схемы** » для схемы. 
 
-    :::image type="content" source="./media/create-schema-registry/schema-overview-page.png" alt-text="Страница "Обзор схемы"":::    
+    :::image type="content" source="./media/create-schema-registry/schema-overview-page.png" alt-text="Страница Обзор схемы":::    
 1. Если имеется несколько версий схемы, они отображаются в раскрывающемся списке **версии** . Выберите версию для переключения на эту схему версии. 
 
 ## <a name="create-a-new-version-of-schema"></a>Создать новую версию схемы
