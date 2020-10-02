@@ -4,22 +4,36 @@
   items:
     - name: О Решении Azure VMware
       href: introduction.md
+- name: Быстрый запуск
+  items:
+    - name: 'Процесс, выполняемый перед развертыванием'
+      href: production-ready-deployment-steps.md
+    - name: Контрольный список перед развертыванием
+      href: pre-deployment-checklist.md
+    - name: 1. Развертывание Решения Azure VMware
+      href: deploy-azure-vmware-solution.md
+    - name: 2. Подключение к локальному расположению
+      href: azure-vmware-solution-on-premises.md
+    - name: 3. Развертывание и настройка VMware HCX
+      href: tutorial-deploy-vmware-hcx.md
 - name: Учебники
   items:
-    - name: 1. Планирование сети
+    - name: 1. Контрольный список для планирования сети
       href: tutorial-network-checklist.md
     - name: 2. Создание частного облака
       href: tutorial-create-private-cloud.md
-    - name: 3. Настройка сети
-      href: tutorial-configure-networking.md
-    - name: 4. Получение доступа к частному облаку
+    - name: 3. Доступ к частному облаку
       href: tutorial-access-private-cloud.md
-    - name: 5. Масштабирование частного облака
-      href: tutorial-scale-private-cloud.md
-    - name: 6. Создание сегмента сети NSX-T
+    - name: 4. Настройка сети
+      href: tutorial-configure-networking.md
+    - name: 5. Создание сегмента сети NSX-T
       href: tutorial-nsx-t-network-segment.md
-    - name: 7. Пиринг между локальной средой и частным облаком
+    - name: 6. Пиринг между локальной средой и частным облаком
       href: tutorial-expressroute-global-reach-private-cloud.md
+    - name: 7. Развертывание и настройка VMware HCX
+      href: tutorial-deploy-vmware-hcx.md
+    - name: 8. Масштабирование частного облака
+      href: tutorial-scale-private-cloud.md
 - name: Основные понятия
   items:
     - name: Частные облака и кластеры
@@ -31,11 +45,9 @@
     - name: Получение доступа и использование удостоверений для частных облаков
       href: concepts-identity.md
     - name: Управление доступом на основе ролей
-      href: concepts-rbac.md
+      href: concepts-role-based-access-control.md
     - name: Обновления частного облака
       href: concepts-upgrades.md
-    - name: Мониторинг и восстановление частных облаков
-      href: concepts-monitor-repair-private-cloud.md
 - name: Практические руководства
   items:
     - name: Включение Решения Azure VMware
@@ -44,46 +56,34 @@
       href: reserved-instance.md
     - name: Оценка миграции
       href: ../migrate/how-to-create-azure-vmware-solution-assessment.md?context=/azure/migrate/context/migrate-context.json
-    - name: Настройка HCX
-      href: hybrid-cloud-extension-installation.md
     - name: Управление DHCP
       href: manage-dhcp.md
-    - name: Аварийное восстановление
-      href: disaster-recovery.md
+    - name: Развертывание аварийного восстановления для виртуальных машин
+      href: disaster-recovery-for-virtual-machines.md
     - name: Развертывание виртуальной машины с использованием библиотеки содержимого
-      href: deploy-vm-content-library.md
+      href: tutorial-deploy-vm-content-library.md
     - name: Интеграция платформенной функциональности Azure
       items:
         - name: Управление API
           href: concepts-api-management.md
         - name: Звездообразная модель
-          href: concepts-avs-hub-and-spoke-integration.md
+          href: concepts-hub-and-spoke.md
         - name: Azure Backup Server
           items:
             - name: Настройка Backup Server
-              href: set-up-mabs-for-avs.md
+              href: set-up-backup-server-for-azure-vmware-solution.md
             - name: Резервное копирование виртуальных машин частного облака с помощью Backup Server
-              href: backup-avs-vms-with-mabs.md
+              href: backup-azure-vmware-solution-virtual-machines.md
         - name: Управление жизненным циклом виртуальных машин
           href: lifecycle-management-of-azure-vmware-solution-vms.md
         - name: Шлюз приложений
-          href: protect-avs-web-apps-with-app-gateway.md
+          href: protect-azure-vmware-solution-with-application-gateway.md
         - name: Диспетчер трафика
-          href: deploy-traffic-manager-to-balance-avs-workloads.md
-        - name: NetApp Files
-          href: net-app-files.md
-    - name: GitHub Enterprise Server
-      href: github-enterprise-server.md
+          href: deploy-traffic-manager-balance-workloads.md
     - name: Решения VMware
       items:
         - name: Настройка vRealize Operations
-          href: vrealize-operations-for-avs.md
-    - name: Экосистема VMware
-      items:
-        - name: Решения для резервного копирования виртуальных машин
-          href: ecosystem-back-up-vms.md
-- name: Справочник
-  items: null
+          href: vrealize-operations-for-azure-vmware-solution.md
 - name: Ресурсы
   items:
     - name: Устранение неполадок

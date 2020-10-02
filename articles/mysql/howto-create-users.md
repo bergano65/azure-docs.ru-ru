@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
-ms.date: 4/2/2020
-ms.openlocfilehash: 9b79a0f21135e91ab72a4c8a9e604b84b67df0a9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.date: 10/1/2020
+ms.openlocfilehash: ed653ffb6fc24a75170d51d345c0c64724ff90f1
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902816"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651027"
 ---
 # <a name="create-databases-and-users-in-azure-database-for-mysql-server"></a>Создание баз данных и пользователей в базе данных Azure для сервера MySQL
 
@@ -35,7 +35,8 @@ ms.locfileid: "90902816"
 После создания сервера базы данных Azure для MySQL с помощью первой учетной записи администратора сервера можно создать дополнительных пользователей и предоставить им права администратора. Кроме того, учетная запись администратора сервера может использоваться для создания менее привилегированных пользователей, имеющих доступ к отдельным схемам базы данных.
 
 > [!NOTE]
-> Роль SUPER Privilege и DBA не поддерживаются. Проверьте [права](concepts-limits.md#privilege-support) в статье ограничения, чтобы понять, что не поддерживается в службе.
+> Роль SUPER Privilege и DBA не поддерживаются. Проверьте [права](concepts-limits.md#privileges--data-manipulation-support) в статье ограничения, чтобы понять, что не поддерживается в службе.<br><br>
+> Такие подключаемые модули паролей, как "validate_password" и "caching_sha2_password", не поддерживаются службой.
 
 ## <a name="how-to-create-database-with-non-admin-user-in-azure-database-for-mysql"></a>Создание базы данных с пользователем, не являющимся администратором, в базе данных Azure для MySQL
 
@@ -69,7 +70,7 @@ ms.locfileid: "90902816"
 
 5. Войдите на сервер, указав эту базу данных и введя новое имя пользователя и пароль. В этом примере показана командная строка MySQL. После ввода этой команды вам будет предложено ввести пароль для имени пользователя. Укажите собственные имя сервера, имя базы данных и имя пользователя.
 
-# <a name="single-server"></a>[Один сервер](#tab/single-server)
+# <a name="single-server"></a>[Отдельный сервер](#tab/single-server)
 
    ```azurecli-interactive
    mysql --host mydemoserver.mysql.database.azure.com --database testdb --user db_user@mydemoserver -p
@@ -107,7 +108,11 @@ ms.locfileid: "90902816"
    SHOW GRANTS FOR 'new_master_user'@'%';
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="azure_superuser"></a>azure_superuser
+
+Все серверы базы данных Azure для MySQL создаются с помощью пользователя с именем "azure_superuser". Это системная учетная запись, созданная корпорацией Майкрософт для управления сервером с целью проведения мониторинга, резервного копирования и другого регулярного обслуживания. Инженеры по вызову также могут использовать эту учетную запись для доступа к серверу во время инцидента с проверкой подлинности на основе сертификата и должны запрашивать доступ с помощью JIT-процессов.
+
+## <a name="next-steps"></a>Следующие шаги
 
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение:
 - [Создание правил брандмауэра на одном сервере и управление ими](howto-manage-firewall-using-portal.md) 

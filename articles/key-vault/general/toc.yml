@@ -43,6 +43,8 @@
       href: basic-concepts.md
     - name: Безопасность
       items:
+        - name: Основы проверки подлинности в Key Vault
+          href: authentication-fundamentals.md
         - name: Безопасность Azure Key Vault
           href: overview-security.md
         - name: "Рекомендации по использованию Key Vault\_— Azure Key Vault"
@@ -130,6 +132,8 @@
           href: access-behind-firewall.md
     - name: Обратимое удаление
       items:
+        - name: Восстановление в Key Vault (обратимое удаление и защита от очистки)
+          href: key-vault-recovery.md
         - name: Обратимое удаление с помощью CLI
           href: soft-delete-cli.md
         - name: Обратимое удаление с помощью PowerShell
@@ -156,7 +160,7 @@
       href: versions.md
     - name: Azure PowerShell
       href: /powershell/module/az.keyvault/?view=azps-1.2.0#key_vault
-    - name: Azure CLI;
+    - name: Azure CLI
       href: /cli/azure/keyvault
     - name: .NET
       href: /dotnet/api/overview/azure/keyvault/management?view=azure-dotnet

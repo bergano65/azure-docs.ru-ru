@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/01/2019
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 37f8903adbc676ae2e48e2ef5841d8f5b122842c
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 468c7a0113a4603f4f47bb529145261ff50d96d4
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89566251"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650550"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-azure-portal"></a>Настройка фильтров маршрутов для пиринга Майкрософт с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "89566251"
 
 Службы Microsoft 365, такие как Exchange Online, SharePoint Online и Skype для бизнеса, а также службы Azure, такие как хранилище и база данных SQL, доступны через пиринг Майкрософт. При настройке пиринга Майкрософт в канале ExpressRoute все префиксы, которые относятся к этим службам, объявляются через установленные сеансы BGP. Значение сообщества BGP подключается к каждому префиксу для идентификации службы, предлагаемой через него. Список значений сообщества BGP и служб, с которыми они сопоставляются, см. в разделе [Поддержка сообществ BGP](expressroute-routing.md#bgp).
 
-Если требуется подключение ко всем службам, большое число префиксов объявляется через BGP. Это значительно увеличивает размер таблиц маршрутов, которые обслуживают маршрутизаторы в вашей сети. Если вы планируете использовать только подмножество служб, предлагаемых через пиринг Майкрософт, размер таблиц маршрутизации можно уменьшить двумя способами. Можно сделать следующее:
+Если требуется подключение ко всем службам, большое число префиксов объявляется через BGP. Это значительно увеличивает размер таблиц маршрутов, которые обслуживают маршрутизаторы в вашей сети. Если вы планируете использовать только подмножество служб, предлагаемых через пиринг Майкрософт, размер таблиц маршрутизации можно уменьшить двумя способами. Можно сделать следующее.
 
 - Отфильтровывать нежелательные префиксы путем применения фильтров маршрутов к сообществам BGP. Это стандартная сетевая практика и обычно используется во многих сетях.
 
@@ -88,33 +88,33 @@ ms.locfileid: "89566251"
 ### <a name="1-create-a-route-filter"></a>1. Создание фильтра маршрутов
 Чтобы создать фильтр маршрута, необходимо выбрать команду создания ресурса. Щелкните **создать ресурс**  >  **Сетевые подключения**  >  **RouteFilter**, как показано на следующем рисунке.
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/CreateRouteFilter1.png)
+![Снимок экрана, на котором показана страница "фильтр маршрута".](./media/how-to-routefilter-portal/CreateRouteFilter1.png)
 
 Фильтр маршрута необходимо разместить в группе ресурсов. 
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/CreateRouteFilter.png)
+![Снимок экрана, на котором показана страница "Создание фильтра маршрута" с указанными значениями примеров.](./media/how-to-routefilter-portal/CreateRouteFilter.png)
 
 ### <a name="2-create-a-filter-rule"></a>2. Создание правила фильтра
 
 Можно добавлять и обновлять правила, выбрав вкладку "Управление правилами фильтра маршрута".
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/ManageRouteFilter.png)
+![Снимок экрана, на котором показана страница "Обзор" с выделенным действием "Управление правилом".](./media/how-to-routefilter-portal/ManageRouteFilter.png)
 
 
 В раскрывающемся списке можно выбрать службы, к которым необходимо подключиться, и сохранить правило после завершения.
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/AddRouteFilterRule.png)
+![Снимок экрана, показывающий окно "Управление правилом" со службами, выбранными в раскрывающемся списке "разрешенные сообщества служб".](./media/how-to-routefilter-portal/AddRouteFilterRule.png)
 
 
 ## <a name="step-3-attach-the-route-filter-to-an-expressroute-circuit"></a><a name="attach"></a>Шаг 3. Подключение фильтра маршрутов к каналу ExpressRoute
 
 Фильтр маршрута можно присоединить к каналу, нажав кнопку "добавить цепь" и выбрав канал ExpressRoute из раскрывающегося списка.
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/AddCktToRouteFilter.png)
+![Снимок экрана, на котором показана страница "Обзор" с выбранным действием "добавить цепь".](./media/how-to-routefilter-portal/AddCktToRouteFilter.png)
 
 Если поставщик услуг подключения настраивает пиринг для канала ExpressRoute, обновите канал из колонки канала ExpressRoute, прежде чем нажать кнопку Add circuit (Добавить канал).
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/RefreshExpressRouteCircuit.png)
+![Снимок экрана, на котором показана страница "Обзор" с выбранным действием "Обновить".](./media/how-to-routefilter-portal/RefreshExpressRouteCircuit.png)
 
 ## <a name="common-tasks"></a><a name="tasks"></a>Стандартные задачи
 
@@ -122,7 +122,7 @@ ms.locfileid: "89566251"
 
 Открыв ресурс на портале, можно просмотреть свойства фильтра маршрута.
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/ViewRouteFilter.png)
+![Снимок экрана, на котором показана страница "Обзор".](./media/how-to-routefilter-portal/ViewRouteFilter.png)
 
 
 ### <a name="to-update-the-properties-of-a-route-filter"></a><a name="updateproperties"></a>Обновление свойств фильтра маршрутов
@@ -130,16 +130,16 @@ ms.locfileid: "89566251"
 Нажав кнопку "Управление правилом", можно обновить список значений сообщества BGP, присоединенного к схеме.
 
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/ManageRouteFilter.png)
+![Снимок экрана, на котором показана страница "Обзор" с выделенным действием "Управление правилом".](./media/how-to-routefilter-portal/ManageRouteFilter.png)
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/AddRouteFilterRule.png) 
+![Снимок экрана, показывающий окно "Управление правилом" с выбранными службами.](./media/how-to-routefilter-portal/AddRouteFilterRule.png) 
 
 
 ### <a name="to-detach-a-route-filter-from-an-expressroute-circuit"></a><a name="detach"></a>Отсоединение фильтра маршрутов от канала ExpressRoute
 
 Чтобы отсоединить цепь от фильтра маршрутов, щелкните канал правой кнопкой мыши и выберите «разорвать связь».
 
-![Создание фильтра маршрута](./media/how-to-routefilter-portal/DetachRouteFilter.png) 
+![Снимок экрана, на котором показана страница "Обзор" с выделенным действием "Отмена связи".](./media/how-to-routefilter-portal/DetachRouteFilter.png) 
 
 
 ### <a name="to-delete-a-route-filter"></a><a name="delete"></a>Удаление фильтра маршрутов

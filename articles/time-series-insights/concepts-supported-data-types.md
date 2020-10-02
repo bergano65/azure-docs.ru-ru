@@ -8,13 +8,13 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/31/2020
-ms.openlocfilehash: 9dbc66e3331325e9b79d0434fb452d01d69d550a
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.date: 10/01/2020
+ms.openlocfilehash: 11199e5a283459d7d97f649322f9d41fc7b3e11d
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89482595"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650800"
 ---
 # <a name="supported-data-types"></a>Поддерживаемые типы данных
 
@@ -22,11 +22,11 @@ ms.locfileid: "89482595"
 
 | Тип данных | Описание | Пример | [Синтаксис выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) | Имя столбца свойств в Parquet
 |---|---|---|---|---|
-| **bool**; | Тип данных, имеющий одно из двух состояний: `true` или `false`. | `"isQuestionable" : true` | `$event.isQuestionable.Bool` или `$event['isQuestionable'].Bool` | `isQuestionable_bool`
+| **bool**; | Тип данных, имеющий одно из двух состояний: `true` или `false`. | `"isQuestionable" : true` | `$event.isQuestionable.Bool` либо `$event['isQuestionable'].Bool` | `isQuestionable_bool`
 | **datetime** | Представляет текущее время, обычно выраженное как дата и время суток. Выражено в формате [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html). Свойства DateTime всегда хранятся в формате UTC. Смещения часового пояса, если они правильно отформатированы, будут применены, а затем получится значение, хранящееся в формате UTC. Дополнительные сведения о свойстве timestamp среды и смещениях DateTime см. в [этом](concepts-streaming-ingestion-event-sources.md#event-source-timestamp) разделе. | `"eventProcessedLocalTime": "2020-03-20T09:03:32.8301668Z"` |  Если "Евентпроцесседлокалтиме" является меткой времени источника события: `$event.$ts` . Если это другое свойство JSON: `$event.eventProcessedLocalTime.DateTime` или `$event['eventProcessedLocalTime'].DateTime` | `eventProcessedLocalTime_datetime`
-| **double** | 64-разрядное число двойной точности  | `"value": 31.0482941` | `$event.value.Double` или `$event['value'].Double` |  `value_double`
-| **long** | 64-разрядное целое число со знаком  | `"value" : 31` | `$event.value.Long` или `$event['value'].Long` |  `value_long`
-| **string** | Текстовые значения должны состоять из допустимых UTF-8. Значения NULL и пустые строки считаются одинаковыми. |  `"site": "DIM_MLGGG"`| `$event.site.String` или `$event['site'].String`| `site_string`
+| **double** | 64-разрядное число двойной точности  | `"value": 31.0482941` | `$event.value.Double` либо `$event['value'].Double` |  `value_double`
+| **long** | 64-разрядное целое число со знаком  | `"value" : 31` | `$event.value.Long` либо `$event['value'].Long` |  `value_long`
+| **string** | Текстовые значения должны состоять из допустимых UTF-8. Значения NULL и пустые строки считаются одинаковыми. |  `"site": "DIM_MLGGG"`| `$event.site.String` либо `$event['site'].String`| `site_string`
 | **dynamic** | Сложный (не являющийся примитивом) тип, состоящий из массива или контейнера свойств (Dictionary). Сейчас только переведенные массивы JSON примитивов или массивов объектов, не содержащих идентификатор TS или свойство timestamp, будут храниться как динамические. Ознакомьтесь с этой [статьей](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как объекты будут сведены, а массивы можно будет отменить. Свойства полезных данных, хранящиеся в этом типе, доступны только при выборе `Explore Events` в обозревателе "аналитика временных рядов" для просмотра необработанных событий или через [`GetEvents`](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents)   API запросов для синтаксического анализа на стороне клиента. |  `"values": "[197, 194, 189, 188]"` | Ссылки на динамические типы в выражении временных рядов пока не поддерживаются | `values_dynamic`
 
 > [!NOTE]
@@ -51,7 +51,7 @@ ms.locfileid: "89482595"
 
 В качестве части полезных данных события можно передавать сложные типы, такие как объекты и массивы. Вложенные объекты будут плоскими, а массивы будут храниться как `dynamic` или сведены для создания нескольких событий в зависимости от конфигурации среды и фигуры JSON. Дополнительные сведения о [правилах плоской обработки и экранирования JSON](./concepts-json-flattening-escaping-rules.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

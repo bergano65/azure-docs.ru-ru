@@ -76,6 +76,8 @@
       href: upgrade-virtual-wan.md
     - name: Создание сетевого виртуального модуля в виртуальном концентраторе
       href: How-to-nva-hub.md
+    - name: Создание подключения к виртуальной сети для нескольких арендаторов
+      href: cross-tenant-vnet.md
     - name: ExpressRoute
       items:
         - name: Создание подключения ExpressRoute

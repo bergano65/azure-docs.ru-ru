@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: Документация по обновлению предварительной версии IoT Plug and Play
+title: Документация по IoT Plug and Play
 summary: С помощью IoT Plug and Play можно определять модель устройства, позволяя облачным решениям автоматически идентифицировать устройство и начать взаимодействовать с ним.
 metadata:
-  title: Архитектура IoT Plug and Play (предварительная версия)
-  description: IoT Plug and Play (предварительная версия) позволяет разработчикам решений интегрировать устройства в решения без необходимости выполнять настройку вручную. В этой статье показаны ключевые архитектурные элементы, которые делают это возможным.
+  title: Архитектура IoT Plug and Play
+  description: IoT Plug and Play позволяет разработчикам решений интегрировать устройства в решения без необходимости выполнять настройку вручную. В этой статье показаны ключевые архитектурные элементы, которые делают возможным выполнение этой задачи.
   services: iot-pnp
   ms.service: iot-pnp
   ms.topic: landing-page
@@ -11,12 +11,12 @@ metadata:
   ms.author: dobett
   manager: philmea
   ms.date: 10/31/2019
-  ms.openlocfilehash: 6fe77d059974bcc37fb0b0bbc6a171d371a93478
-  ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+  ms.openlocfilehash: 5b01154fa3e5821ca577e4a910facff8d9cb968a
+  ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87337370"
+  ms.lasthandoff: 09/30/2020
+  ms.locfileid: "91598038"
 landingContent:
 - title: Сведения об IoT Plug and Play
   linkLists:
@@ -24,8 +24,8 @@ landingContent:
     links:
     - text: Общие сведения об IoT Plug and Play
       url: overview-iot-plug-and-play.md
-    - text: Обновление предварительной версии за 2020 г.
-      url: overview-iot-plug-and-play-preview-updates.md
+    - text: Возможности текущего выпуска
+      url: overview-iot-plug-and-play-current-release.md
 - title: Устройства сборки
   linkLists:
   - linkListType: quickstart
@@ -43,11 +43,13 @@ landingContent:
   - linkListType: concept
     links:
     - text: Руководство разработчика
-      url: concepts-developer-guide.md
-    - text: Соглашения IoT Plug and Play
-      url: concepts-convention.md
+      url: concepts-developer-guide-device-csharp.md
     - text: Components
       url: concepts-components.md
+    - text: Соглашения IoT Plug and Play
+      url: concepts-convention.md
+    - text: Мост для IoT Plug and Play
+      url: concepts-iot-pnp-bridge.md
 - title: Создание решений
   linkLists:
   - linkListType: quickstart

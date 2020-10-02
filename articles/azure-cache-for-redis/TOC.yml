@@ -43,6 +43,8 @@
           href: cache-java-spring-boot-initializer-with-redis-cache.md
     - name: Создание списка лидеров
       href: cache-web-app-cache-aside-leaderboard.md
+    - name: Развертывание модели машинного обучения
+      href: cache-ml.md
     - name: Управление с помощью Azure PowerShell
       href: cache-how-to-manage-redis-cache-powershell.md
     - name: Управление с помощью Azure CLI
@@ -68,6 +70,8 @@
       items:
         - name: Выбор уровня кэша
           href: cache-overview.md#choosing-the-right-tier
+        - name: Настройка версии Redis
+          href: cache-how-to-version.md
         - name: Распределение кэша с помощью кластеризации
           href: cache-how-to-premium-clustering.md
         - name: Сохранение кэша с помощью функции сохраняемости данных Redis

@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: 268293fc1391346090c1423a4290e25a57fbe666
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 54109d5889ae2c08f444a3a089386d413bf4262b
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91637436"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650193"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-with-azure-cache-for-redis"></a>Развертывание модели машинного обучения в службе "функции Azure" с помощью кэша Azure для Redis 
 
@@ -23,7 +23,7 @@ ms.locfileid: "91637436"
 > Хотя функции Машинное обучение Azure и Azure общедоступны, возможность упаковать модель из службы Машинное обучение для функций доступна в предварительной версии.  
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * Подписка Azure — [создайте ее бесплатно](https://azure.microsoft.com/free/).
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace) .
 * [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
@@ -318,5 +318,5 @@ print(model_package.location)
 * Дополнительные сведения о [кэше Azure для Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview)
 * Научитесь настраивать приложение функций в документации по [функциям](/azure/azure-functions/functions-create-function-linux-custom-image) .
 * [Справочник по интерфейсам API](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py&preserve-view=true) 
-* [Создание приложения Python, в котором используется Azure Redis Cache](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-python-get-started)
+* Создание [приложения Python, использующего кэш Azure для Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-python-get-started)
 

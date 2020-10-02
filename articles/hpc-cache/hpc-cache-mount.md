@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: e29d031bc3461c4adab87b1d784ef19c89c7c12d
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 7f1d8d34d6351fc344fdb101ac8e9a96678df9d5
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91613018"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651434"
 ---
 # <a name="mount-the-azure-hpc-cache"></a>Mount the Azure HPC Cache (Подключение Azure HPC Cache)
 
@@ -79,7 +79,7 @@ ms.locfileid: "91613018"
 
 1. Выберите **путь к виртуальному пространству имен** , который будет использоваться для клиента. Эти пути связаны с экспортами в серверной системе хранения.
 
-   ![снимок экрана: поле "пути к пространству имен" с открытым селектором](media/mount-select-target.png)
+   ![Снимок экрана, показывающий поле "путь к виртуальному пространству имен" с открытым селектором.](media/mount-select-target.png)
 
    Просмотреть и изменить пути к виртуальному пространству имен можно на странице портала **пространства имен** . Чтобы увидеть, как это сделать, прочитайте раздел [Настройка агрегированного пространства имен](add-namespace-paths.md) .
 
@@ -115,7 +115,7 @@ root@test-client:/tmp#
 
 > mount-o жесткое, устанавливает = TCP, маунтпрото = TCP, Retry = 30 $ {CACHE_IP_ADDRESS}:/$ {NAMESPACE_PATH} $ {LOCAL_FILESYSTEM_MOUNT_POINT}
 
-| Рекомендуемые параметры команды подключения | Описание |
+| Рекомендуемые параметры команды подключения | Description |
 --- | ---
 ``hard`` | Мягкое подключение к кэшу Azure HPC связано с ошибками приложений и возможной потерей данных.
 ``proto=tcp`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок NFS.
@@ -135,6 +135,6 @@ root@test-client:/tmp#
 
 ![снимок экрана: страница параметров >ного пространства имен на портале с выделенным полем вокруг первого столбца таблицы "путь к пространству имен"](media/view-namespace-paths.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы переместить данные в целевые объекты хранилища кэша, прочитайте статью [заполнение нового хранилища BLOB-объектов Azure](hpc-cache-ingest.md).

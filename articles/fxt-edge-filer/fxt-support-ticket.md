@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: rohogue
-ms.openlocfilehash: 16b219afa329cc105fb70000d8a088d67883feed
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: a6630a04f3811aae0b75bc378a66e8a05e4f8203
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88184675"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650448"
 ---
 # <a name="open-a-support-ticket-for-the-azure-fxt-edge-filer"></a>Откройте запрос в службу поддержки для фильтр Azure ФКСТ.
 
@@ -23,7 +23,7 @@ ms.locfileid: "88184675"
 1. На панели слева прокрутите вниз и выберите **Справка и поддержка**.
 1. Щелкните **новый запрос в службу поддержки**. 
 
-   ![Снимок экрана: пустая форма запроса на поддержку](media/fxt-support-blank.png)
+   ![Снимок экрана, на котором отображается страница "Справка и поддержка" с выбранным параметром "новый запрос на поддержку".](media/fxt-support-blank.png)
 
 1. Заполните форму запроса.  
     1. На вкладке **Основные сведения** выберите **тип проблемы** ``Technical`` . 

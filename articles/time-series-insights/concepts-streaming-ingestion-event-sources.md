@@ -8,13 +8,13 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/31/2020
-ms.openlocfilehash: 9564611ee37c2aa2f104bbb14096a3b2f45fb7cd
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.date: 10/01/2020
+ms.openlocfilehash: 6bc238389ac470e6127a582eb174ec7bc438e36b
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89485375"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650874"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Источники событий Gen2 для службы "аналитика временных рядов Azure"
 
@@ -80,7 +80,7 @@ ms.locfileid: "89485375"
 ± ЧЧ: ММ</br>
 ± ЧЧ: ММЗ</br>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

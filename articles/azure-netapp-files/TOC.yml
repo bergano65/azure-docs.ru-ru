@@ -4,6 +4,8 @@
   items:
     - name: Общие сведения об Azure NetApp Files
       href: azure-netapp-files-introduction.md
+    - name: Новые возможности
+      href: whats-new.md
     - name: Иерархия хранилища Azure NetApp Files
       href: azure-netapp-files-understand-storage-hierarchy.md
 - name: Краткие руководства
@@ -27,6 +29,8 @@
           href: azure-netapp-files-performance-metrics-volumes.md
         - name: Тесты производительности для Linux
           href: performance-benchmarks-linux.md
+        - name: Производительность базы данных Oracle в отдельных томах Azure NetApp Files
+          href: performance-oracle-single-volumes.md
         - name: Часто задаваемые вопросы о производительности SMB
           href: azure-netapp-files-smb-performance.md
     - name: Модель затрат для Azure NetApp Files

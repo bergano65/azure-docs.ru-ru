@@ -407,7 +407,7 @@
           href: ps-template.md
         - name: Подключение к виртуальной машине
           href: connect-logon.md
-        - name: Подключение к виртуальным машинам Linux
+        - name: Подключение к виртуальным машинам Linux по протоколу SSH
           displayName: ssh keygen ssk-key putty
           items:
             - name: Просмотр на портале
@@ -595,7 +595,7 @@
               href: disk-encryption-troubleshooting.md
             - name: Часто задаваемые вопросы о шифровании дисков
               href: disk-encryption-faq.md
-            - name: "Шифрование диска\_— предыдущая версия (Azure AD)"
+            - name: "Шифрование дисков\_— предыдущая версия"
               items:
                 - name: Обзор
                   href: disk-encryption-overview-aad.md
@@ -774,7 +774,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Диагностика
+            - name: Устранение неполадок
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json

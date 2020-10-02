@@ -7,12 +7,12 @@ ms.topic: article
 author: emuench
 ms.author: navits
 ms.date: 07/17/2020
-ms.openlocfilehash: e512c233ccfd793b87f203f837b11e97966d8102
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 10137e59e0ea06fa785fccc215c867b6d8c0cb76
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90016254"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651162"
 ---
 # <a name="appsource-dynamics-365-finance-and-operations-functional-validation"></a>AppSource Dynamics 365 Финансы и функциональная проверка операций
 
@@ -56,9 +56,9 @@ ms.locfileid: "90016254"
 
       2. Выберите **LCS**  >  **Solution Management**  >  **пакет решения**для управления решением LCS. Используйте снимки экрана, которые включают в себя обзор пакета и содержимое, показанное в следующих примерах:
 
-    | Поле | Образ — <img src="" width="400px">|
+    | Поле | Изображение <img src="" width="400px">|
     | --- | --- |
-    | Основные сведения о пакете | [![Экран обзора пакета](media/dynamics-365-finance-operations/package-overview-45.png)](media/dynamics-365-finance-operations/package-overview.png#lightbox) |
+    | Основные сведения о пакете | [![Снимок экрана, на котором показано окно "Обзор пакета".](media/dynamics-365-finance-operations/package-overview-45.png)](media/dynamics-365-finance-operations/package-overview.png#lightbox) |
     | <ul><li>Утверждающие решения</li></ul> | [![Экран обзора пакета](media/dynamics-365-finance-operations/solution-approvers-45.png)](media/dynamics-365-finance-operations/solution-approvers.png#lightbox) |
     | Содержимое пакета<ul><li>Модель</li><li>Развертываемый пакет программного обеспечения</li></ul> | [![Первый экран содержимого пакета](media/dynamics-365-finance-operations/package-contents-1-45.png)](media/dynamics-365-finance-operations/package-contents-1.png#lightbox) |
     | <ul><li>Конфигурация GER</li><li>Резервная копия базы данных</li></ul><br>Артефакты не требуются в разделе **конфигурации GER** . | [![Два экрана содержимого пакета](media/dynamics-365-finance-operations/package-contents-2-45.png)](media/dynamics-365-finance-operations/package-contents-2.png#lightbox) |
@@ -74,6 +74,6 @@ ms.locfileid: "90016254"
 
     [![Отображает окно библиотеки проекта](media/dynamics-365-finance-operations/supplemental-content.png)](media/dynamics-365-finance-operations/supplemental-content.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о создании предложения см. в статье [Создание Dynamics 365 для операций с предложениями](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-operations-offer).

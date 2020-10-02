@@ -28,6 +28,10 @@
       href: tutorial-custom-role-cli.md
 - name: Основные понятия
   items:
+    - name: Определения ролей
+      href: role-definitions.md
+    - name: Область
+      href: scope-overview.md
     - name: Рекомендации
       href: best-practices.md
     - name: Условный доступ для управления Azure
@@ -40,11 +44,7 @@
 - name: Практические руководства
   items:
     - name: Вывод списка определений роли
-      items:
-        - name: Обзор
-          href: role-definitions.md
-        - name: Вывод списка определений роли
-          href: role-definitions-list.md
+      href: role-definitions-list.md
     - name: Список назначений ролей
       items:
         - name: Портал
@@ -57,6 +57,8 @@
           href: role-assignments-list-rest.md
     - name: Добавление или удаление назначений ролей
       items:
+        - name: Шаги для добавления назначения роли
+          href: role-assignments-steps.md
         - name: Портал
           href: role-assignments-portal.md
         - name: "Портал\_— гостевые пользователи"

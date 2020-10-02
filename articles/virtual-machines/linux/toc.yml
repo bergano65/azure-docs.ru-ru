@@ -595,10 +595,6 @@
                   href: ../../bastion/create-host-cli.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Использование службы "Бастион" для подключения
               href: ../../bastion/bastion-connect-vm-ssh.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-              items:
-                - name: Подключение SSH через бастион
-            - name: Подключение RDP через бастион
-              href: ../../bastion/bastion-connect-vm-rdp.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Шифрование
           items:
             - name: Сценарии шифрования дисков для Linux
@@ -625,7 +621,7 @@
               href: disk-encryption-troubleshooting.md
             - name: Часто задаваемые вопросы о шифровании дисков
               href: disk-encryption-faq.md
-            - name: "Шифрование диска\_— предыдущая версия (Azure AD)"
+            - name: "Шифрование дисков\_— предыдущая версия"
               items:
                 - name: Обзор
                   href: disk-encryption-overview-aad.md
@@ -640,6 +636,7 @@
         - name: Создание хранилища ключей
           href: key-vault-setup.md
         - name: Создание и использование ключей SSH
+          displayName: ssh keys ssh openssh
           items:
             - name: В Linux и macOS
               href: mac-create-ssh-keys.md
@@ -806,7 +803,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: Диагностика
+            - name: Устранение неполадок
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json

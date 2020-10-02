@@ -112,7 +112,7 @@
           displayName: 'request units, RUs, RU'
           href: scaling-throughput.md
         - name: Типы конфликтов и политики их разрешения
-          displayName: 'last write wins, custom, multi master, multi-master'
+          displayName: 'last write wins, custom, multi-region writes, multi-master'
           href: conflict-resolution-policies.md
         - name: Глобальное распределение (взгляд изнутри)
           href: global-dist-under-the-hood.md
@@ -584,7 +584,7 @@
         - name: Шифрование данных
           href: database-encryption-at-rest.md
         - name: Безопасный доступ к данным
-          displayName: 'master key, resource token, users, roles'
+          displayName: 'primary key, resource token, users, roles'
           href: secure-access-to-data.md
         - name: Брандмауэр IP-адресов
           href: firewall-support.md
@@ -977,7 +977,7 @@
           href: how-to-move-regions.md
     - name: Глобальное распределение
       items:
-        - name: Настройка нескольких источников
+        - name: Настройка записи в нескольких регионах
           href: how-to-multi-master.md
         - name: Управление уровнями согласованности
           displayName: 'session, consistency prefix, strong, eventual, bounded staleness'

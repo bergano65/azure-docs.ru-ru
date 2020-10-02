@@ -172,7 +172,7 @@
           href: connect-azure-stack.md
     - name: Включение аналитики поведения пользователей и сущностей
       href: enable-entity-behavior-analytics.md
-    - name: Использование нескольких клиентов (MSSP)
+    - name: Управление несколькими арендаторами (MSSP)
       href: multiple-tenants-service-providers.md
     - name: Работа с инцидентами в нескольких рабочих областях
       href: multiple-workspace-view.md

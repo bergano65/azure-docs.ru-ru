@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 88b1eb70814c349d488933179a16c084a0af803c
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.openlocfilehash: efdfc1c12191977c0422cda6c52eb9b73c95c55f
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91619973"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651196"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -37,7 +37,6 @@ ms.locfileid: "91619973"
 > Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md)v3, просмотреть v3 [Assets](assets-concept.md) and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. Для всех других задач управления (например, для управления преобразованиями и заданиями) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 >
 > Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
-
 
 ## <a name="august-2020"></a>Август 2020 г.
 
@@ -264,21 +263,21 @@ ms.locfileid: "91619973"
 
 ## <a name="november-2018"></a>Ноябрь 2018 г.
 
-Модуль CLI 2.0 теперь доступен для [Службы мультимедиа Azure, общедоступная версия 3](/cli/azure/ams?view=azure-cli-latest) — версия 2.0.50.
+Модуль CLI 2.0 теперь доступен для [Службы мультимедиа Azure, общедоступная версия 3](/cli/azure/ams?view=azure-cli-latest&preserve-view=true) — версия 2.0.50.
 
 ### <a name="new-commands"></a>Новые команды
 
-- [az ams account](/cli/azure/ams/account?view=azure-cli-latest)
-- [az ams account-filter](/cli/azure/ams/account-filter?view=azure-cli-latest)
-- [az ams asset](/cli/azure/ams/asset?view=azure-cli-latest)
-- [az ams asset-filter](/cli/azure/ams/asset-filter?view=azure-cli-latest)
-- [az ams content-key-policy](/cli/azure/ams/content-key-policy?view=azure-cli-latest)
-- [az ams job](/cli/azure/ams/job?view=azure-cli-latest)
-- [az ams live-event](/cli/azure/ams/live-event?view=azure-cli-latest)
-- [az ams live-output](/cli/azure/ams/live-output?view=azure-cli-latest)
-- [az ams streaming-endpoint](/cli/azure/ams/streaming-endpoint?view=azure-cli-latest)
-- [az ams streaming-locator](/cli/azure/ams/streaming-locator?view=azure-cli-latest)
-- [az ams account mru](/cli/azure/ams/account/mru?view=azure-cli-latest) позволяет управлять зарезервированными единицами мультимедиа. Дополнительные сведения см. в статье [Масштабирование при обработке мультимедиа](media-reserved-units-cli-how-to.md).
+- [az ams account](/cli/azure/ams/account?view=azure-cli-latest&preserve-view=true)
+- [az ams account-filter](/cli/azure/ams/account-filter?view=azure-cli-latest&preserve-view=true)
+- [az ams asset](/cli/azure/ams/asset?view=azure-cli-latest&preserve-view=true)
+- [az ams asset-filter](/cli/azure/ams/asset-filter?view=azure-cli-latest&preserve-view=true)
+- [az ams content-key-policy](/cli/azure/ams/content-key-policy?view=azure-cli-latest&preserve-view=true)
+- [az ams job](/cli/azure/ams/job?view=azure-cli-latest&preserve-view=true)
+- [az ams live-event](/cli/azure/ams/live-event?view=azure-cli-latest&preserve-view=true)
+- [az ams live-output](/cli/azure/ams/live-output?view=azure-cli-latest&preserve-view=true)
+- [az ams streaming-endpoint](/cli/azure/ams/streaming-endpoint?view=azure-cli-latest&preserve-view=true)
+- [az ams streaming-locator](/cli/azure/ams/streaming-locator?view=azure-cli-latest&preserve-view=true)
+- [az ams account mru](/cli/azure/ams/account/mru?view=azure-cli-latest&preserve-view=true) позволяет управлять зарезервированными единицами мультимедиа. Дополнительные сведения см. в статье [Масштабирование при обработке мультимедиа](media-reserved-units-cli-how-to.md).
 
 ### <a name="new-features-and-breaking-changes"></a>Новые функции и критические изменения
 

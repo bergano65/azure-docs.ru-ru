@@ -17,6 +17,9 @@
     - name: "Назначение политики\_— Azure PowerShell"
       displayName: 'assign, compliance'
       href: ./assign-policy-powershell.md
+    - name: "Назначение политики\_— .NET"
+      displayName: 'assign, compliance'
+      href: ./assign-policy-dotnet.md
     - name: "Назначение политики\_— JavaScript"
       displayName: 'assign, compliance'
       href: ./assign-policy-javascript.md
@@ -139,6 +142,9 @@
     - name: Создание политик для свойств массива
       displayName: 'array property, alias, aliases, in, notIn, type, defaultValue'
       href: ./how-to/author-policies-for-arrays.md
+    - name: Экспорт ресурсов Политики Azure
+      displayName: 'github, json, definition'
+      href: ./how-to/export-resources.md
     - name: Гостевая конфигурация
       items:
         - name: Создание политики гостевой конфигурации в Windows

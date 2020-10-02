@@ -4,16 +4,17 @@ description: включить файл
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 09/22/2020
+ms.date: 09/30/2020
 ms.author: dacoulte
-ms.openlocfilehash: 2707523947cae77dd800dd5f560ebe1c47f3893a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f3f706789e14cb20214bf17fd91f6ec1e503848f
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90905959"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91605935"
 ---
-Ниже приведено максимальное количество для каждого типа объекта для службы "Политика Azure". Запись _Область_ означает либо подписку, либо [группу управления](../articles/governance/management-groups/overview.md).
+Ниже приведено максимальное количество для каждого типа объекта для службы "Политика Azure". Для определений запись _Область_ означает [группу управления](../articles/governance/management-groups/overview.md) или подписку.
+Для назначений и исключений запись _Область_ означает [группу управления](../articles/governance/management-groups/overview.md), подписку, группу ресурсов или отдельный ресурс.
 
 | Where | Что | Максимальное количество |
 |---|---|---|

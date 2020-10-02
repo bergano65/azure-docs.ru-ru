@@ -57,10 +57,16 @@
           href: developer-guidance-for-integrating-applications.md
     - name: Единый вход
       items:
-        - name: Варианты реализации единого входа
-          href: sso-options.md
         - name: Планирование развертывания единого входа
           href: plan-sso-deployment.md
+        - name: Варианты реализации единого входа
+          href: sso-options.md
+        - name: Единый вход на основе SAML
+          href: configure-saml-single-sign-on.md
+        - name: Единый вход на основе пароля
+          href: configure-password-single-sign-on-non-gallery-applications.md
+        - name: Единый вход по ссылке
+          href: configure-linked-sign-on.md
         - name: Единый вход одним щелчком
           href: one-click-sso-tutorial.md
     - name: Защита приложений
@@ -102,14 +108,6 @@
 - name: Практические руководства
   expanded: false
   items:
-    - name: Настройка единого входа
-      items:
-        - name: Настройка единого входа на основе SAML
-          href: configure-saml-single-sign-on.md
-        - name: Настройка входа на основе пароля
-          href: configure-password-single-sign-on-non-gallery-applications.md
-        - name: Настройка связанного единого входа
-          href: configure-linked-sign-on.md
     - name: Назначение пользователей и управление доступом к приложениям
       items:
         - name: Настройка согласия пользователя

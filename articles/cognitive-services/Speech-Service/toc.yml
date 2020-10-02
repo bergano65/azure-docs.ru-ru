@@ -10,6 +10,10 @@
       href: language-support.md
     - name: Поддержка регионов
       href: regions.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
+    - name: Квоты и ограничения
+      href: speech-services-quotas-and-limits.md
     - name: Новые возможности в Документации Майкрософт
       href: whats-new.md
 - name: Преобразование речи в текст
@@ -347,6 +351,8 @@
       items:
         - name: Что такое голосовой помощник?
           href: voice-assistants.md
+        - name: Примеры голосового помощника (GitHub)
+          href: 'https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant'
     - name: Пользовательские команды
       items:
         - name: Что собой представляют пользовательские команды?
@@ -459,11 +465,58 @@
       items:
         - name: REST API службы "Распознавание говорящего"
           href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
-- name: Hosting
+- name: Инструменты
   items:
-    - name: Документация по размещению
-      href: index-hosting.yml
-    - name: Практические руководства
+    - name: Пакет SDK для службы "Речь"
+      items:
+        - name: Основные сведения о пакете SDK службы "Речь"
+          href: speech-sdk.md
+        - name: Настройка пакета SDK службы "Речь"
+          href: quickstarts/setup-platform.md
+        - name: Заметки о выпуске пакета SDK для службы "Речь"
+          href: releasenotes.md
+        - name: Справочник
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+            - name: C#
+              href: 'https://aka.ms/csspeech/csharpref'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+    - name: Интерфейс командной строки службы "Речь"
+      displayName: SPX
+      items:
+        - name: Обзор CLI службы "Речь"
+          displayName: What is SPX?
+          href: spx-overview.md
+        - name: Общие сведения об интерфейсе командной строки службы "Речь"
+          displayName: SPX basics
+          href: spx-basics.md
+    - name: Speech Studio
+      items:
+        - name: Обзор Speech Studio
+          href: 'https://speech.microsoft.com'
+        - name: Создание приложения пользовательских команд с помощью Speech Studio
+          href: quickstart-custom-speech-commands-create-new.md
+- name: Развертывание
+  items:
+    - name: Включение ведения журналов
+      href: how-to-use-logging.md
+    - name: Отслеживание использования памяти
+      href: how-to-track-speech-sdk-memory-usage.md
+    - name: Настройка OpenSSL для Linux
+      displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
+      href: how-to-configure-openssl-linux.md
+    - name: Настройка RHEL/CentOS 7
+      href: how-to-configure-rhel-centos-7.md
+      displayName: 'RHEL, CentOS 7, CentOS, Configure RHEL, Configure CentO'
+    - name: Контейнеры
       items:
         - name: Установка и запуск контейнеров службы "Речь"
           displayName: 'containers,install container,run container'
@@ -479,53 +532,8 @@
         - name: Использование контейнеров службы "Речь" с экземплярами контейнеров Azure
           displayName: 'ACI,azure container instances,container instances,containers'
           href: deploy-speech-on-container-instances.md
-    - name: Ресурсы
-      items:
         - name: Часто задаваемые вопросы о контейнерах
           href: speech-container-faq.md
-- name: Пакет SDK для службы "Речь"
-  items:
-    - name: Основные сведения о пакете SDK службы "Речь"
-      href: speech-sdk.md
-    - name: Настройка пакета SDK службы "Речь"
-      displayName: 'install the speech sdk, install the speech sdk java, install the speech sdk C#, install the speech sdk python, install the speech sdk C++, setup speech sdk, install, install C#, install C++, install Python, install Java, install Javascript'
-      href: quickstarts/setup-platform.md
-    - name: Практические руководства
-      items:
-        - name: Включение ведения журналов
-          href: how-to-use-logging.md
-        - name: Отслеживание использования памяти
-          href: how-to-track-speech-sdk-memory-usage.md
-        - name: Настройка OpenSSL для Linux
-          displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
-          href: how-to-configure-openssl-linux.md
-        - name: Настройка RHEL/CentOS 7
-          href: how-to-configure-rhel-centos-7.md
-          displayName: 'RHEL, CentOS 7, CentOS, Configure RHEL, Configure CentOS'
-    - name: Примеры
-      items:
-        - name: Примеры использования пакета SDK службы "Речь" (GitHub)
-          href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk'
-        - name: Примеры использования пакета SDK для речевых устройств (GitHub)
-          href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
-        - name: Примеры голосового помощника (GitHub)
-          href: 'https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant'
-    - name: Справочник
-      items:
-        - name: C++
-          href: 'https://aka.ms/csspeech/cppref'
-        - name: C#
-          href: 'https://aka.ms/csspeech/csharpref'
-        - name: Java
-          href: 'https://aka.ms/csspeech/javaref'
-        - name: JavaScript
-          href: 'https://aka.ms/csspeech/javascriptref'
-        - name: Objective-C
-          href: 'https://aka.ms/csspeech/objectivecref'
-        - name: Python
-          href: 'https://aka.ms/csspeech/pythonref'
-        - name: Заметки о выпуске пакета SDK для службы "Речь"
-          href: releasenotes.md
 - name: Устройства
   items:
     - name: 'Документация по устройствам, подключаемым к службе "Речь"'
@@ -536,6 +544,8 @@
           href: speech-devices-sdk.md
         - name: 'Получение пакета SDK для устройств, подключаемых к службе "Речь"'
           href: get-speech-devices-sdk.md
+        - name: Примеры использования пакета SDK для речевых устройств (GitHub)
+          href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
     - name: Оборудование
       items:
         - name: Рекомендации по микрофонной решетке
@@ -560,23 +570,6 @@
       items:
         - name: 'Заметки о выпуске пакета SDK для устройств, подключаемых к службе "Речь"'
           href: devices-sdk-release-notes.md
-- name: Инструменты
-  items:
-    - name: Интерфейс командной строки службы "Речь"
-      displayName: SPX
-      items:
-        - name: Об интерфейсе командной строки службы "Речь"
-          displayName: What is SPX?
-          href: spx-overview.md
-        - name: Общие сведения об интерфейсе командной строки службы "Речь"
-          displayName: SPX basics
-          href: spx-basics.md
-    - name: Speech Studio
-      items:
-        - name: Что такое Speech Studio?
-          href: 'https://speech.microsoft.com'
-        - name: Создание приложения пользовательских команд с помощью Speech Studio
-          href: quickstart-custom-speech-commands-create-new.md
 - name: Миграция
   items:
     - name: Из Распознавания речи Bing
@@ -595,12 +588,8 @@
     - name: Национальные облака
       displayName: 'fairfax,mooncake,compliant,secret,compliance,government,government cloud,dod,china'
       href: sovereign-clouds.md
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/#cognitive-services'
-    - name: Квоты и ограничения
-      href: speech-services-quotas-and-limits.md
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Шифрование
