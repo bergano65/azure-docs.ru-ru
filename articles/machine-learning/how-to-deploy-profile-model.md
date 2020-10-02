@@ -10,12 +10,12 @@ author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
 zone_pivot_groups: aml-control-methods
-ms.openlocfilehash: a3aed23441df225316f52eb3acb1387cbba6d807
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: aac5fba68c43892216cbd16dd99b0c6a9bf70217
+ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935591"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91660995"
 ---
 # <a name="profile-your-model-to-determine-resource-utilization"></a>Профилирование модели для определения использования ресурсов
 
@@ -24,6 +24,10 @@ ms.locfileid: "88935591"
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что модель обучена и зарегистрирована с помощью Машинное обучение Azure. Пример обучения и регистрации модели scikit с помощью Машинное обучение Azure см. в этом [руководстве](how-to-train-scikit-learn.md) .
+
+## <a name="limitations"></a>Ограничения
+
+* Профилирование не будет работать, если реестр контейнеров Azure (запись контроля доступа) для рабочей области находится за виртуальной сетью.
 
 ## <a name="run-the-profiler"></a>Запуск профилировщика
 

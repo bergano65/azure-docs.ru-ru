@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 087b021f088e344926a44f7e009f273d265dd82b
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: bfdda75c0826ed12fbce1eb47680f91abbde4934
+ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91397629"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91661063"
 ---
 # <a name="create-azure-arc-data-controller-using-kubernetes-tools"></a>Создание контроллера данных ARC в Azure с помощью средств Kubernetes
 
@@ -31,11 +31,11 @@ ms.locfileid: "91397629"
 > [!NOTE]
 > Для выполнения некоторых действий по созданию контроллера данных ARC в Azure, указанных ниже, требуются разрешения администратора кластера Kubernetes.  Если вы не являетесь администратором кластера Kubernetes, вам потребуется Администратор кластера Kubernetes выполнить эти действия от вашего имени.
 
-#### <a name="cleanup-from-past-installations"></a>Очистка от прошлых установок
+### <a name="cleanup-from-past-installations"></a>Очистка от прошлых установок
 
-Если вы установили контроллер данных ARC для Azure в прошлом в том же кластере и удалили контроллер данных ARC в Azure с помощью `azdata arc dc delete` команды, возможно, существуют некоторые объекты уровня кластера, которые по-прежнему потребуется удалить. Выполните следующие команды, чтобы удалить объекты уровня кластера для контроллера данных ARC в Azure:
+Если вы установили в прошлом контроллер данных ARC для Azure, в том же кластере и удалили контроллер данных ARC в Azure с помощью `azdata arc dc delete` команды, возможно, существуют некоторые объекты уровня кластера, которые по-прежнему потребуется удалить. Выполните следующие команды, чтобы удалить объекты уровня кластера для контроллера данных ARC в Azure:
 
-```
+```console
 # Cleanup azure arc data service artifacts
 kubectl delete crd datacontrollers.arcdata.microsoft.com 
 kubectl delete sqlmanagedinstances.sql.arcdata.microsoft.com 
