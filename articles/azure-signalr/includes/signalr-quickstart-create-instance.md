@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 09/14/2018
 ms.author: antchu
 ms.custom: include file
-ms.openlocfilehash: 0a228f6d8b4f72acd3783f27bf192fe6bd13f988
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f738daab7ddcf0403f546e7c9ffeaeccb66bc6b7
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75392141"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355655"
 ---
 ## <a name="create-an-azure-signalr-service-instance"></a>Создание экземпляра службы Azure SignalR
 
@@ -20,7 +20,7 @@ ms.locfileid: "75392141"
 
 1. Нажмите кнопку "Создать" в верхнем левом углу портала Azure. На экране "Создание" введите в поле поиска *Служба SignalR* и нажмите клавишу ВВОД.
 
-    ![Поиск службы SignalR Azure](../media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-new.png)
+    ![Этот снимок экрана демонстрирует поиск Службы SignalR на портале Azure.](../media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-new.png)
 
 1. Выберите **Служба SignalR** в результатах поиска и щелкните **Создать**.
 
@@ -36,7 +36,7 @@ ms.locfileid: "75392141"
     | **Число единиц** |  Неприменимо | Число единиц определяет количество подключений, которые поддерживает ваш экземпляр службы SignalR. Это можно настроить только для цен. категории "Стандартный". |
     | **Режим службы** |  Бессерверные приложения | Для использования с Функциями Azure или REST API. |
 
-    ![Создание службы SignalR](../media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-create.png)
+    ![На снимке экрана показана вкладка основных сведений SignalR со значениями.](../media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-create.png)
 
 1. Щелкните **Создать**, чтобы начать развертывание экземпляра службы SignalR.
 
