@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: 5657741a1496084b55d2f76aef12c5e84c274feb
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 6e3d87d613db63e05ddee47d43aead779eca75c3
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88918134"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91628015"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>Конфигурация DNS частной конечной точки Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "88918134"
 | Машинное обучение Azure (Microsoft.MachineLearningServices/workspaces)/Рабочая область | privatelink.api.azureml.ms | api.azureml.ms |
 | Центр Интернета вещей (Microsoft. Devices/IotHubs)/IotHub | privatelink.azure-devices.net | azure-devices.net |
 | SignalR (Microsoft. Сигналрсервице/SignalR)/SignalR | privatelink.service.signalr.net | service.signalr.net |
-| Azure Monitor (Microsoft. Insights/Привателинкскопес)/азуремонитор | privatelink.monitor.azure.com<br/> privatelink.oms.opinsights.azure.com <br/> privatelink.ods.opinsights.azure.com <br/> privatelink.agentsvc.azure-automation.com | monitor.azure.com<br/> oms.opinsights.azure.com<br/> ods.opinsights.azure.com<br/> agentsvc.azure-automation.com |
+| Azure Monitor (Microsoft. Insights/Привателинкскопес)/азуремонитор | privatelink.monitor.azure.com<br/> privatelink.oms.opinsights.azure.com <br/> privatelink.ods.opinsights.azure.com <br/> privatelink.agentsvc.azure-automation.net | monitor.azure.com<br/> oms.opinsights.azure.com<br/> ods.opinsights.azure.com<br/> agentsvc.azure-automation.net |
 | Cognitive Services (Microsoft. CognitiveServices/Accounts)/Account | privatelink.cognitiveservices.azure.com  | cognitiveservices.azure.com  |
 | Синхронизация файлов Azure (Microsoft. StorageSync/Сторажесинксервицес)/AFS |  privatelink.afs.azure.net  |  afs.azure.net  |
 
@@ -121,7 +121,7 @@ DNS является критически важным компонентом, �
 
 В этом сценарии используется [звездообразная](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) топология сети с периферийными сетями, которые совместно используют общую частную конечную точку. Все периферийные виртуальные сети связаны с одной частной зоной DNS. 
 
-:::image type="content" source="media/private-endpoint-dns/hub-and-spoke-azure-dns.png" alt-text="Модель звезда с DNS, предоставляемыми Azure":::
+:::image type="content" source="media/private-endpoint-dns/hub-and-spoke-azure-dns.png" alt-text="Одна виртуальная сеть и DNS, предоставляемые Azure":::
 
 ## <a name="on-premises-workloads-using-a-dns-forwarder"></a>Локальные рабочие нагрузки с использованием DNS-сервера переадресации
 
@@ -142,7 +142,7 @@ DNS является критически важным компонентом, �
 
 На следующей схеме показана последовательность разрешения DNS из локальной сети, в которой используется DNS-сервер пересылки, развернутый в Azure, где разрешение выполняется с помощью частной зоны DNS, [связанной с виртуальной сетью](../dns/private-dns-virtual-network-links.md).
 
-:::image type="content" source="media/private-endpoint-dns/on-premises-using-azure-dns.png" alt-text="Локальная среда с использованием Azure DNS":::
+:::image type="content" source="media/private-endpoint-dns/on-premises-using-azure-dns.png" alt-text="Одна виртуальная сеть и DNS, предоставляемые Azure":::
 
 Эту конфигурацию можно расширить для локальной сети, в которой уже есть решение DNS. 
 Локальное решение DNS необходимо настроить для переадресации трафика DNS в Azure DNS через [сервер условной пересылки](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server), ссылающийся на DNS-сервер пересылки, который развернут в Azure.
@@ -163,7 +163,7 @@ DNS является критически важным компонентом, �
 > [!IMPORTANT]
 > Условную переадресацию следует выполнять для рекомендуемого [сервера пересылки общедоступной зоны DNS](#azure-services-dns-zone-configuration). Например: `database.windows.net` вместо **privatelink**.database.windows.net.
 
-:::image type="content" source="media/private-endpoint-dns/on-premises-forwarding-to-azure.png" alt-text="Локальная переадресация в Azure DNS":::
+:::image type="content" source="media/private-endpoint-dns/on-premises-forwarding-to-azure.png" alt-text="Одна виртуальная сеть и DNS, предоставляемые Azure":::
 
 ## <a name="virtual-network-and-on-premises-workloads-using-a-dns-forwarder"></a>Рабочие нагрузки виртуальных сетей и локальные рабочие нагрузки с использованием DNS-сервера пересылки
 
@@ -190,7 +190,7 @@ DNS является критически важным компонентом, �
 
 На следующей схеме показана последовательность разрешения DNS из локальной и виртуальной сети, в которой используется DNS-сервер пересылки, развернутый в Azure, где разрешение выполняется с помощью частной зоны DNS,  [связанной с виртуальной сетью](../dns/private-dns-virtual-network-links.md).
 
-:::image type="content" source="media/private-endpoint-dns/hybrid-scenario.png" alt-text="Гибридный сценарий":::
+:::image type="content" source="media/private-endpoint-dns/hybrid-scenario.png" alt-text="Одна виртуальная сеть и DNS, предоставляемые Azure":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Узнайте больше о частных конечных точках](private-endpoint-overview.md)

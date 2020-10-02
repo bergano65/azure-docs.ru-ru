@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 7870b68ca931123d50e88e846aa066ce53972dbc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f557bb271c88b32a9b53cf9b41b911314427530a
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75349943"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629953"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о частной ссылке Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "75349943"
 Вы можете контролировать экспозицию с помощью конфигурации видимости в службе частной связи. Видимость поддерживает три параметра:
 
 - **Нет** — подписки с доступом RBAC могут определять размещение службы. 
-- **Restrictive** Для доступа к службе можно использовать только список разрешений подписки и доступ RBAC. 
+- **Restrictive** Для доступа к службе можно использовать только утвержденные подписки и доступ RBAC. 
 - **ALL — все** пользователи могут размещать службу. 
  
 ### <a name="can-i-create-a-private-link-service-with-basic-load-balancer"></a>Можно ли создать службу частной связи с базовым Load Balancer? 
@@ -77,6 +77,6 @@ ms.locfileid: "75349943"
 ### <a name="i-am-a-service-provider-using-azure-private-link-do-i-need-to-make-sure-all-my-customers-have-unique-ip-space-and-dont-overlap-with-my-ip-space"></a>Я являюсь поставщиком услуг, используя частную ссылку Azure. Нужно ли, чтобы все мои клиенты имели уникальные IP-пространство и не перекрывались с моим IP-адресом? 
 Нет. Частная ссылка Azure предоставляет эту функцию. Таким образом, не обязательно включать в адресное пространство клиента неперекрывающиеся адресные пространства. 
 
-##  <a name="next-steps"></a>Дальнейшие шаги
+##  <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [частной ссылке Azure](private-link-overview.md)

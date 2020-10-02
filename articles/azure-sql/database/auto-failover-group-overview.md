@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/28/2020
-ms.openlocfilehash: 023d6512a13e1add1e9980d450a91ed2183e7793
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 2035fa811ed6bb5760f2527f66e0f2ca48ccb2c9
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/01/2020
-ms.locfileid: "91614450"
+ms.locfileid: "91627233"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -359,7 +359,11 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 - Два экземпляра SQL Управляемый экземпляр должны находиться в разных регионах Azure.
 - Два экземпляра SQL Управляемый экземпляр должны быть одного уровня службы и иметь одинаковый размер хранения.
 - Вторичный экземпляр SQL Управляемый экземпляр должен быть пустым (без пользовательских баз данных).
-- Виртуальные сети, используемые экземплярами SQL Управляемый экземпляр, должны быть подключены через [VPN-шлюз](../../vpn-gateway/vpn-gateway-about-vpngateways.md) или [Express Route](../../expressroute/expressroute-howto-circuit-portal-resource-manager.md). Если две виртуальные сети подключаются через локальную сеть, убедитесь в отсутствии правил брандмауэра, блокирующих порты 5022 и 11000–11999. Пиринг глобальной виртуальной сети не поддерживается.
+- Виртуальные сети, используемые экземплярами SQL Управляемый экземпляр, должны быть подключены через [VPN-шлюз](../../vpn-gateway/vpn-gateway-about-vpngateways.md) или [Express Route](../../expressroute/expressroute-howto-circuit-portal-resource-manager.md). Если две виртуальные сети подключаются через локальную сеть, убедитесь в отсутствии правил брандмауэра, блокирующих порты 5022 и 11000–11999. Глобальные пиринга виртуальных сетей поддерживаются с ограничениями, описанными в примечании ниже.
+
+   > [!IMPORTANT]
+   > [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
+
 - Два виртуальных сетей SQL Управляемый экземпляр не могут иметь перекрывающиеся IP-адреса.
 - Вы должны настроить группы безопасности сети (NSG) так, чтобы порты 5022 и диапазон 11000–12000 были открыты для входящих и исходящих подключений из подсети или другого управляемого экземпляра. Это позволяет обеспечить трафик репликации между экземплярами.
 

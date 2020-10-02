@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/25/2020
-ms.openlocfilehash: bf87a61633706cb5db384e8a8ab957fa6a3f37f1
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 5415446e0211618cfbee917d0df91213d68b7097
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91533729"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627352"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Параметры сервера в базе данных Azure для MySQL
 
@@ -54,6 +54,12 @@ MySQL традиционно назначает поток для каждого
 
 > [!IMPORTANT]
 > Проверьте пул потоков перед его включением в рабочей среде. 
+
+### <a name="log_bin_trust_function_creators"></a>log_bin_trust_function_creators
+
+В базе данных Azure для MySQL Двоичные журналы всегда включены (т. е. параметр включен `log_bin` ). Если вы хотите использовать триггеры, появится сообщение об ошибке, похожее на отсутствие *привилегий суперпользователя и ведение журнала в двоичном формате (возможно, вы захотите использовать менее надежную `log_bin_trust_function_creators` переменную)*. 
+
+Двоичный формат ведения журнала всегда имеет значение **Row** , а все соединения с сервером **всегда** используют двоичное ведение журнала на основе строк. При ведении журнала в двоичном формате на основе строк проблемы безопасности не возникают, и регистрация в двоичном журнале не может быть нарушена, поэтому можно безопасно установить значение [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) **true**.
 
 ### <a name="innodb_buffer_pool_size"></a>innodb_buffer_pool_size
 

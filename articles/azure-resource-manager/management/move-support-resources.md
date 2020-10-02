@@ -3,12 +3,12 @@ title: Поддержка операции перемещения типом р�
 description: Список типов ресурсов Azure, подлежащих перемещению в новую группу ресурсов или подписку.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: e1e90a7cbc4f817f5dd6c854020e2711e8ac097b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 675f7bb11ed98dd17e8f4ee4a0197d05128af851
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91284981"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627114"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 
@@ -1416,7 +1416,7 @@ ms.locfileid: "91284981"
 > | frontdoors | нет | Нет |
 > | ипаллокатионс | Да | Да |
 > | ipgroups | Да | Да |
-> | loadbalancers | Да — Базовый SKU<br>Нет — Стандартный SKU | Да — Базовый SKU<br>Нет — Стандартный SKU |
+> | loadbalancers | Да — Базовый SKU<br> Да — SKU "Стандартный" | Да — Базовый SKU<br>Нет — Стандартный SKU |
 > | localnetworkgateways | Да | Да |
 > | natgateways | нет | нет |
 > | networkexperimentprofiles | нет | нет |
@@ -1435,7 +1435,7 @@ ms.locfileid: "91284981"
 > | privateendpointredirectmaps | нет | нет |
 > | privateendpoints | Да | Да |
 > | privatelinkservices | нет | нет |
-> | publicipaddresses | Да — Базовый SKU<br>Нет — Стандартный SKU | Да — Базовый SKU<br>Нет — Стандартный SKU |
+> | publicipaddresses | Да — Базовый SKU<br>Да — SKU "Стандартный" | Да — Базовый SKU<br>Нет — Стандартный SKU |
 > | publicipprefixes | Да | Да |
 > | routefilters | нет | нет |
 > | routetables | Да | Да |

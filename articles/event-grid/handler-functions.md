@@ -3,12 +3,12 @@ title: Использование функции Azure как обработчи
 description: Узнайте, как можно использовать функции Azure в качестве обработчиков событий Сетки событий Azure.
 ms.topic: conceptual
 ms.date: 09/18/2020
-ms.openlocfilehash: 87aeb78729dcc7bec9f193fab389e5c0952e63d5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: db06962c020eb954bf0c595e5a4019b1df774898
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91270336"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629694"
 ---
 # <a name="azure-function-as-an-event-handler-for-event-grid-events"></a>Использование функции Azure как обработчика событий Сетки событий
 
@@ -56,11 +56,13 @@ ms.locfileid: "91270336"
 ### <a name="azure-portal"></a>Портал Azure
 Когда вы создаете подписку в пользовательском интерфейсе, на странице **Создание подписки на события** перейдите на вкладку **Дополнительные функции** и задайте для параметра **Максимальное число событий в пакете** и **предпочтительный размер пакета в килобайтах**. 
     
-:::image type="content" source="./media/custom-event-to-function/enable-batching.png" alt-text="Включить пакетную обработку во время создания подписки":::
+:::image type="content" source="./media/custom-event-to-function/enable-batching.png" alt-text="Включить пакетную обработку во время создания подписки&quot;:::
 
-Вы можете обновить эти значения для существующей подписки на вкладке " **функции** " страницы **раздела "Сетка событий** ". 
+Вы можете обновить эти значения для существующей подписки на вкладке &quot; **функции** " страницы **раздела "Сетка событий** ". 
 
-:::image type="content" source="./media/custom-event-to-function/features-batch-settings.png" alt-text="Включить пакетную обработку после создания":::
+:::image type="content" source="./media/custom-event-to-function/features-batch-settings.png" alt-text="Включить пакетную обработку во время создания подписки&quot;:::
+
+Вы можете обновить эти значения для существующей подписки на вкладке &quot; **функции** ":::
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 **Максевентспербатч** и **преферредбатчсизеинкилобитес** можно задать в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблонам Microsoft. EventGrid eventSubscriptions](https://docs.microsoft.com/azure/templates/microsoft.eventgrid/eventsubscriptions).
@@ -70,9 +72,6 @@ ms.locfileid: "91270336"
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 С помощью командлета [New-азевентгридсубскриптион](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridsubscription) или [Update-азевентгридсубскриптион](https://docs.microsoft.com/powershell/module/az.eventgrid/update-azeventgridsubscription) можно настроить параметры, связанные с пакетной службой, используя следующие параметры: `-MaxEventsPerBatch` или `-PreferredBatchSizeInKiloBytes` .
-
-> [!NOTE]
-> Доставка событий в функцию Azure в **другом клиенте** не поддерживается. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

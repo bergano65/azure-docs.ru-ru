@@ -13,14 +13,14 @@ ms.topic: how-to
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/08/2020
+ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 63acffd16fa4374d4f8541a9d3327b29a3641f71
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c1df52f027c23b2e3618ad17494b06c2ccecfaf6
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90895806"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627148"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -45,17 +45,22 @@ Azure Sentinel поддерживает следующие методы подк
 
 - **Интеграция между службами**.<br> Некоторые службы подключены в собственном коде, например службы AWS и Майкрософт. Они используют платформу Azure для готовой интеграции. Следующие решения можно подключить несколькими щелчками мыши:
     - [Amazon Web Services — CloudTrail](connect-aws.md);
-    - [Действия Azure](connect-azure-activity.md)
     - [Azure Active Directory](connect-azure-active-directory.md) — журналы аудита и журналы входа
+    - [Действия Azure](connect-azure-activity.md)
     - [Защита идентификации Azure AD](connect-azure-ad-Identity-protection.md)
-    - [Защитник Майкрософт для идентификации](connect-azure-atp.md) (ранее — Azure Advanced Threat protection)
+    - [Защита от атак DDoS Azure](connect-azure-ddos-protection.md)
+    - [Защитник Azure для Интернета вещей](connect-asc-iot.md) (прежнее название — центр безопасности Azure для IOT)
     - [Azure Information Protection](connect-azure-information-protection.md)
+    - [Брандмауэр Azure](connect-azure-firewall.md)
     - [Центр безопасности Azure](connect-azure-security-center.md) — оповещения от решений защитника Azure
+    - [Брандмауэр веб-приложения Azure (WAF)](connect-azure-waf.md) (прежнее название — Microsoft WAF)
     - [Cloud App Security](connect-cloud-app-security.md)
     - [Сервер доменных имен](connect-dns.md)
-    - [Office 365](connect-office-365.md)
+    - [Защитник Microsoft 365](connect-microsoft-365-defender.md) — включает необработанные данные мдатп
     - [Защитник Майкрософт для конечной точки](connect-microsoft-defender-advanced-threat-protection.md) (прежнее название — Advanced Threat Protection в защитнике Майкрософт)
-    - [Брандмауэр веб-приложения (Майкрософт)](connect-microsoft-waf.md)
+    - [Защитник Майкрософт для идентификации](connect-azure-atp.md) (ранее — Azure Advanced Threat protection)
+    - [Защитник Microsoft для office 365](connect-office-365-advanced-threat-protection.md) (прежнее название — Office 365 Advanced Threat protection)
+    - [Office 365](connect-office-365.md) (теперь с командами!)
     - [Брандмауэр Windows](connect-windows-firewall.md)
     - [События безопасности Windows](connect-windows-security-events.md)
 
@@ -67,9 +72,14 @@ Azure Sentinel поддерживает следующие методы подк
     - [Citrix Analytics (модуль безопасности)](connect-citrix-analytics.md)
     - [F5 BIG-IP](connect-f5-big-ip.md)
     - [Forcepoint DLP](connect-forcepoint-dlp.md)
+    - [Okta SSO](connect-okta-single-sign-on.md)
+    - [Orca Security](connect-orca-security-alerts.md)
     - [Журналы Perimeter 81](connect-perimeter-81-logs.md)
+    - [Proofpoint TAP](connect-proofpoint-tap.md)
+    - [Qualys VM](connect-qualys-vm.md)
     - [Squadra Technologies secRMM](connect-squadra-secrmm.md)
     - [Symantec ICDX](connect-symantec.md)
+    - [VMware Carbon Black Cloud Endpoint Standard](connect-vmware-carbon-black.md)
     - [Zimperium](connect-zimperium-mtd.md)
 
 
@@ -79,7 +89,7 @@ Azure Sentinel поддерживает следующие методы подк
 
     Агент Sentinel Azure, который на самом деле является агентом Log Analytics, преобразует журналы в формате CEF в формат, который может быть получен Log Analytics. В зависимости от типа устройства агент устанавливается либо непосредственно на устройстве, либо на выделенном сервере пересылки журналов на основе Linux. Агент для Linux получает события из управляющей программы Syslog по протоколу UDP. Если компьютер Linux должен собирать большое количество событий Syslog, отправка производится по протоколу TCP из управляющей программы Syslog в агент, а затем — в Log Analytics.
 
-    - **Брандмауэры, прокси-серверы и конечные точки.**
+    - **Брандмауэры, прокси-серверы и конечные точки — CEF:**
         - [Vectra AI Detect](connect-ai-vectra-detect.md)
         - [Check Point](connect-checkpoint.md)
         - [Cisco ASA](connect-cisco.md)
@@ -87,15 +97,23 @@ Azure Sentinel поддерживает следующие методы подк
         - [F5 ASM](connect-f5.md)
         - [Продукты Forcepoint](connect-forcepoint-casb-ngfw.md)
         - [Fortinet](connect-fortinet.md)
-        - [Palo Alto Networks](connect-paloalto.md)
+        - [Illusive Networks AMS](connect-illusive-attack-management-system.md)
         - [One Identity Safeguard](connect-one-identity.md)
-        - [Другие устройства CEF](connect-common-event-format.md)
-        - [Другие устройства Syslog](connect-syslog.md)
+        - [Palo Alto Networks](connect-paloalto.md)
         - [Trend Micro Deep Security](connect-trend-micro.md)
         - [Zscaler](connect-zscaler.md)
+        - [Другие устройства на основе CEF](connect-common-event-format.md)
+    - **Брандмауэры, прокси-серверы и конечные точки — syslog:**
+        - [Infoblox NIOS](connect-infoblox.md)
+        - [Pulse Connect Secure](connect-pulse-connect-secure.md)
+        - [Sophos XG](connect-sophos-xg-firewall.md)
+        - [Symantec Proxy SG](connect-symantec-proxy-sg.md)
+        - [Symantec VIP](connect-symantec-vip.md)
+        - [Другие устройства на основе системного журнала](connect-syslog.md)
     - Решения DLP
     - [Поставщики Threat Intelligence](connect-threat-intelligence.md)
     - [Компьютеры DNS](connect-dns.md) — агент установлен непосредственно на компьютере DNS
+    - [Виртуальные машины Azure Stack](connect-azure-stack.md)
     - Серверы Linux
     - Другие облака
     

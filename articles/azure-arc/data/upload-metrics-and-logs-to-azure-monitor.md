@@ -9,16 +9,37 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 7c8e92604cc6188d17411a266f8b27db55c8fbad
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 3e3b804e2a3c43eb9579d1c6a1195511df528de2
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91317282"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91630006"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
-Мониторинг — это одна из многих встроенных возможностей, которые службы данных, включенные в службу "Дуга Azure", вместе с ней. 
+Периодически можно экспортировать сведения об использовании для выставления счетов, метрики мониторинга и журналы, а затем передать их в Azure.  При экспорте и передаче любого из этих трех типов данных также будут созданы и обновлены ресурсы контроллера данных, управляемого экземпляра SQL и PostgreSQL в Azure.
+
+> [!NOTE] 
+В течение периода действия предварительной версии не взимается плата за использование служб данных, включенных в службу Arc Azure.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Вам потребуются Azure CLI (AZ) и Azure Data CLI (аздата).  [Установите средства](./install-client-tools.md).
+
+Перед отправкой данных в Azure необходимо убедиться, что в подписке Azure зарегистрирован поставщик ресурсов Microsoft. Азуредата.
+
+Это можно проверить, выполнив следующую команду:
+
+```console
+az provider show -n Microsoft.AzureData -o table
+```
+
+Если поставщик ресурсов в настоящее время не зарегистрирован в вашей подписке, его можно зарегистрировать, выполнив следующую команду.  Выполнение этой команды займет одну или две минуты.
+
+```console
+az provider register -n Microsoft.AzureData --wait
+```
 
 ## <a name="upload-usage-data"></a>Отправка данных об использовании
 
@@ -292,7 +313,7 @@ echo $SPN_AUTHORITY
    >[!NOTE]
    >Подождите не менее 30 минут после создания экземпляров данных с поддержкой Arc Azure для первой отправки.
    >
-   >Убедитесь `upload` , что метрики сразу после `export` Azure Monitor принимают только метрики за последние 30 минут. [Дополнительные сведения](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)
+   >Убедитесь `upload` , что метрики сразу после `export` Azure Monitor принимают только метрики за последние 30 минут. [Подробнее](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)
 
 
 Если при экспорте отображаются ошибки, указывающие на неудачу получения метрик, ```true``` выполните следующую команду:

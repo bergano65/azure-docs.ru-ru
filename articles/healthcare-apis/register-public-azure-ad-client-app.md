@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: df1e6159baafc11c4b73c33feaf936784c05469e
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 6671b8aa60690bc1915e297bc31b19299be2b1da
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853047"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629086"
 ---
 # <a name="register-a-public-client-application-in-azure-active-directory"></a>Регистрация общедоступного клиентского приложения в Azure Active Directory
 
@@ -45,7 +45,8 @@ ms.locfileid: "87853047"
 
 1. Откройте **разрешения API**.
 
-    Если вы используете API Azure для FHIR, вы добавите разрешение для API здравоохранения Azure, выполнив поиск по API-интерфейсам Azure для здравоохранения в разделе API, которые **использует Моя организация** (см. рисунок ниже).
+    Если вы используете API Azure для FHIR, вы добавите разрешение для API здравоохранения Azure, выполнив поиск по API-интерфейсам Azure для здравоохранения в разделе API, которые **использует Моя организация**. Его можно найти, только если вы [развернули API Azure для FHIR](fhir-paas-powershell-quickstart.md).
+
     
     Если вы ссылаетесь на другое приложение ресурсов, выберите [регистрацию приложения API FHIR](register-resource-azure-ad-client-app.md) , созданную ранее в разделе **Мои API**:
 
@@ -59,7 +60,7 @@ ms.locfileid: "87853047"
 
 Если клиентское приложение настроено в другом клиенте Azure AD с сервера FHIR, необходимо будет обновить **центр**. В API Azure для FHIR вы устанавливаете центр в разделе "Параметры"--> проверки подлинности. Задайте для параметра центр сертификации значение **https://login.microsoftonline.com/\<TENANT-ID>** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как зарегистрировать общедоступное клиентское приложение в Azure Active Directory. Затем проверьте доступ к серверу FHIR с помощью процедуры POST.
  

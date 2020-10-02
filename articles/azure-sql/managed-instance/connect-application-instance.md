@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: 9d58a8c1dc79c10ed42fd1675115eb14f2ad4d3e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a59e498435aab7b3e3e2ecf2e6096c044550a1b8
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91283740"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91628372"
 ---
 # <a name="connect-your-application-to-azure-sql-managed-instance"></a>Connect your application to Azure SQL Managed Instance (Подключение приложения к управляемому экземпляру SQL Azure)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -45,10 +45,10 @@ ms.locfileid: "91283740"
 - [Пиринг виртуальной сети Azure](../../virtual-network/virtual-network-peering-overview.md)
 - VPN-шлюз между виртуальными сетями ([портал Azure](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md), [PowerShell](../../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md), [Azure CLI](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-cli.md)).
 
-Пиринг предпочтительнее, так как он использует магистральную сеть Майкрософт, поэтому с точки зрения подключения нет заметных различий в задержке между виртуальными машинами в одноранговой виртуальной сети и в той же виртуальной сети. Пиринг виртуальных сетей ограничен сетями в одном регионе.  
+Пиринг предпочтительнее, так как он использует магистральную сеть Майкрософт, поэтому с точки зрения подключения нет заметных различий в задержке между виртуальными машинами в одноранговой виртуальной сети и в той же виртуальной сети. Пиринг виртуальных сетей должен поддерживаться между сетями в одном регионе. Глобальный пиринг между виртуальными сетями также поддерживается с ограничением, описанным в примечании ниже.  
 
 > [!IMPORTANT]
-> Сценарий пиринга виртуальной сети для SQL Управляемый экземпляр ограничен сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
+> [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
 
 ## <a name="connect-from-on-premises"></a>Подключение из локальной среды 
 

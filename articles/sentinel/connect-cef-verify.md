@@ -12,20 +12,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/19/2020
+ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: f6892f4ebb250290a0faad546fd000530baf4479
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 643b28b2e88f233d2924270511d3c87fa4d9b767
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038177"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631636"
 ---
 # <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
 После развертывания сервера пересылки журналов (на шаге 1) и настройки решения безопасности для отправки сообщений CEF (на шаге 2) выполните следующие инструкции, чтобы проверить подключение между решением безопасности и Sentinel. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь повышенные разрешения (sudo) на компьютере сервера пересылки журналов.
 
@@ -54,7 +54,7 @@ ms.locfileid: "87038177"
 
 1. Проверяет, что файл содержит следующий текст:
 
-    ```console
+    ```bash
     <source>
         type syslog
         port 25226
@@ -72,24 +72,59 @@ ms.locfileid: "87038177"
     </filter>
     ```
 
+1. Проверяет, что анализ Cisco ASA для событий брандмауэра настроен ожидаемым образом:
+
+    ```bash
+    sed -i "s|return '%ASA' if ident.include?('%ASA')|return ident if ident.include?('%ASA')|g" 
+        /opt/microsoft/omsagent/plugin/security_lib.rb && 
+        sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    ```
+
+1. Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics:
+
+    ```bash
+    sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" 
+        -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/pl ugin/
+        filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    ```
+
 1. Проверяет наличие каких-либо улучшений безопасности на компьютере, которые могут блокировать сетевой трафик (например, брандмауэр узла).
 
-1. Проверяет, что управляющая программа системного журнала (rsyslog) правильно настроена для отправки сообщений, которые она идентифицирует как CEF (с помощью регулярного выражения) агенту Log Analytics через TCP-порт 25226:
+1. Проверяет, правильно ли настроена управляющая программа syslog (rsyslog) для отправки сообщений (которая идентифицируется как CEF) агенту Log Analytics через TCP-порт 25226:
 
-    - Файл конфигурации:`/etc/rsyslog.d/security-config-omsagent.conf`
+    - Файл конфигурации: `/etc/rsyslog.d/security-config-omsagent.conf`
 
-        ```console
-        :rawmsg, regex, "CEF"|"ASA"
-        *.* @@127.0.0.1:25226
+        ```bash
+        if $rawmsg contains "CEF:" or $rawmsg contains "ASA-" then @@127.0.0.1:25226 
         ```
-  
-1. Проверяет, что управляющая программа системного журнала получает данные через порт 514
 
-1. Проверяет, что установлены необходимые подключения: TCP 514 для получения данных, TCP 25226 для внутреннего взаимодействия между управляющей программой syslog и агентом Log Analytics
+1. Перезапускает управляющую программу системного журнала и агент Log Analytics:
+
+    ```bash
+    service rsyslog restart
+
+    /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    ```
+
+1. Проверяет, что установлены необходимые подключения: TCP 514 для получения данных, TCP 25226 для внутреннего взаимодействия между управляющей программой syslog и агентом Log Analytics:
+
+    ```bash
+    netstat -an | grep 514
+
+    netstat -an | grep 25226
+    ```
+
+1. Проверяет, что управляющая программа системного журнала получает данные через порт 514 и что агент получает данные через порт 25226:
+
+    ```bash
+    sudo tcpdump -A -ni any port 514 -vv
+
+    sudo tcpdump -A -ni any port 25226 -vv
+    ```
 
 1. Отправляет ФИКТИВные данные на порт 514 на localhost. Эти данные должны быть наблюдаемыми в рабочей области Sentinel Azure, выполнив следующий запрос:
 
-    ```console
+    ```kusto
     CommonSecurityLog
     | where DeviceProduct == "MOCK"
     ```
@@ -102,7 +137,7 @@ ms.locfileid: "87038177"
 
 1. Проверяет, что файл содержит следующий текст:
 
-    ```console
+    ```bash
     <source>
         type syslog
         port 25226
@@ -120,25 +155,61 @@ ms.locfileid: "87038177"
     </filter>
     ```
 
+1. Проверяет, что анализ Cisco ASA для событий брандмауэра настроен ожидаемым образом:
+
+    ```bash
+    sed -i "s|return '%ASA' if ident.include?('%ASA')|return ident if ident.include?('%ASA')|g" 
+        /opt/microsoft/omsagent/plugin/security_lib.rb && 
+        sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    ```
+
+1. Проверяет, что поле " *компьютер* " в источнике системного журнала правильно сопоставлено в агенте log Analytics:
+
+    ```bash
+    sed -i -e "/'Severity' => tags\[tags.size - 1\]/ a \ \t 'Host' => record['host']" 
+        -e "s/'Severity' => tags\[tags.size - 1\]/&,/" /opt/microsoft/omsagent/pl ugin/
+        filter_syslog_security.rb && sudo /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    ```
+
 1. Проверяет наличие каких-либо улучшений безопасности на компьютере, которые могут блокировать сетевой трафик (например, брандмауэр узла).
 
 1. Проверяет, правильно ли настроена управляющая программа syslog (syslog-ng) для отправки сообщений, идентифицированных как CEF (с помощью регулярного выражения), в агент Log Analytics через TCP-порт 25226:
 
-    - Файл конфигурации:`/etc/syslog-ng/conf.d/security-config-omsagent.conf`
+    - Файл конфигурации: `/etc/syslog-ng/conf.d/security-config-omsagent.conf`
 
-        ```console
+        ```bash
         filter f_oms_filter {match(\"CEF\|ASA\" ) ;};
         destination oms_destination {tcp(\"127.0.0.1\" port("25226"));};
         log {source(s_src);filter(f_oms_filter);destination(oms_destination);};
         ```
 
-1. Проверяет, что управляющая программа системного журнала получает данные через порт 514
+1. Перезапускает управляющую программу системного журнала и агент Log Analytics:
 
-1. Проверяет, что установлены необходимые подключения: TCP 514 для получения данных, TCP 25226 для внутреннего взаимодействия между управляющей программой syslog и агентом Log Analytics
+    ```bash
+    service syslog-ng restart
+
+    /opt/microsoft/omsagent/bin/service_control restart [workspaceID]
+    ```
+
+1. Проверяет, что установлены необходимые подключения: TCP 514 для получения данных, TCP 25226 для внутреннего взаимодействия между управляющей программой syslog и агентом Log Analytics:
+
+    ```bash
+    netstat -an | grep 514
+
+    netstat -an | grep 25226
+    ```
+
+1. Проверяет, что управляющая программа системного журнала получает данные через порт 514 и что агент получает данные через порт 25226:
+
+    ```bash
+    sudo tcpdump -A -ni any port 514 -vv
+
+    sudo tcpdump -A -ni any port 25226 -vv
+    ```
 
 1. Отправляет ФИКТИВные данные на порт 514 на localhost. Эти данные должны быть наблюдаемыми в рабочей области Sentinel Azure, выполнив следующий запрос:
 
-    ```console
+    ```kusto
     CommonSecurityLog
     | where DeviceProduct == "MOCK"
     ```

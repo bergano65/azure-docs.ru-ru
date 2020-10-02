@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/06/2019
 ms.author: trbye
-ms.openlocfilehash: 1b837797bf0baf025d350cec1918cf4a5b639416
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 9074b10b9bf7f8147f70d77bcfbe02749e39154b
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83650615"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91642775"
 ---
 ## <a name="reference-docs"></a>Справочная документация
 
@@ -24,12 +24,12 @@ ms.locfileid: "83650615"
 
 Используйте следующий список для поиска соответствующих справочных документов по пакету SDK для распознавания речи:
 
-- <a href="https://aka.ms/csspeech/csharpref" target="_blank" rel="noopener">ПАКЕТ SDK ДЛЯ C#<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/cppref" target="_blank" rel="noopener">ПАКЕТ SDK ДЛЯ C++<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/javaref" target="_blank" rel="noopener">Пакет SDK для Java<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/csharpref" target="_blank" rel="noopener">ПАКЕТ SDK ДЛЯ C# <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/cppref" target="_blank" rel="noopener">ПАКЕТ SDK ДЛЯ C++ <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/javaref" target="_blank" rel="noopener">Пакет SDK для Java <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/pythonref" target="_blank" rel="noopener">Пакет SDK для Python<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 - <a href="https://aka.ms/csspeech/javascriptref" target="_blank" rel="noopener">Пакет SDK для JavaScript<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/csspeech/objectivecref" target="_blank" rel="noopener">Пакет SDK цели-C<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/csspeech/objectivecref" target="_blank" rel="noopener">Пакет SDK цели-C <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 
 > [!TIP]
 > Пакет SDK речевой службы активно поддерживается и обновляется. Чтобы относить изменения, обновления и дополнения к функциям, см. [заметки о выпуске пакета SDK для распознавания речи](../releasenotes.md).
@@ -45,4 +45,4 @@ ms.locfileid: "83650615"
 - [REST API: Преобразование речи в текст](../rest-speech-to-text.md)
 - [REST API: Оценка произношения](../rest-speech-to-text.md#pronunciation-assessment-parameters)
 - [REST API: Преобразование текста в речь](../rest-text-to-speech.md)
-- <a href="https://cris.ai/swagger/ui/index" target="_blank" rel="noopener">REST API: транскрипция и настройка пакета<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0" target="_blank" rel="noopener">REST API: транскрипция и настройка пакета <span class="docon docon-navigate-external x-hidden-focus"></span></a>

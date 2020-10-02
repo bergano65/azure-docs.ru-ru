@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: 13b3d483e271ac220ae254891fe362e932746e87
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 7c429ad04a4c1e881c84c3af9dfa9ee553963917
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279505"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629800"
 ---
 # <a name="azure-operational-security-best-practices"></a>Рекомендации по обеспечению операционной безопасности Azure
 Эта статья содержит набор рекомендаций по защите данных, приложений и других ресурсов в Azure.
@@ -185,7 +185,7 @@ ms.locfileid: "89279505"
 Для [виртуальных машин Azure](../../virtual-machines/windows/overview.md) убедитесь, что архитектура виртуальных машин содержит несколько виртуальных машин, а также что каждая виртуальная машина входит в [группу доступности](../../virtual-machines/windows/tutorial-availability-sets.md). Мы рекомендуем использовать масштабируемый набор виртуальных машин, чтобы получить возможности автомасштабирования.
 
 **Рекомендация**. Иерархическое распределение способов защиты в приложении уменьшает вероятность успешной атаки. Внедряйте безопасные проекты для своих приложений через встроенные возможности платформы Azure.  
-**Сведения**. Например, риск атаки увеличивается с размером (контактной зоной) приложения. Уменьшить контактную зону можно с помощью списка разрешений для закрытия диапазона IP-адресов и прослушивающих портов, которые не нужны для подсистемы балансировки нагрузки ([Azure Load Balancer](/azure/load-balancer/load-balancer-get-started-internet-portal) и [шлюз приложений Azure](/azure/application-gateway/application-gateway-create-probe-portal)).
+**Сведения**. Например, риск атаки увеличивается с размером (контактной зоной) приложения. Вы можете уменьшить контактную зону, используя список утверждений, чтобы закрыть доступное пространство IP-адресов и порты прослушивания, которые не требуются для подсистем балансировки нагрузки ([Azure Load Balancer](/azure/load-balancer/load-balancer-get-started-internet-portal) и [шлюза приложений Azure](/azure/application-gateway/application-gateway-create-probe-portal)).
 
 [Группы безопасности сети](../../virtual-network/security-overview.md) также позволяют снизить возможность атак. С помощью [тегов служб](../../virtual-network/security-overview.md#service-tags) и [групп безопасности приложений](../../virtual-network/security-overview.md#application-security-groups) можно упростить создание правил безопасности и настроить сетевую безопасность как гармоничное расширение структуры приложения.
 

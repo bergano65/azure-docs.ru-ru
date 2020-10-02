@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 1dcc345260c6a0844344bb33dec94c40d1dd9a54
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 407160a5c315844003db4c5e371a03e6e25d2694
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89650873"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91630939"
 ---
 # <a name="configure-network-virtual-appliance-in-azure-hdinsight"></a>Настройка сетевого виртуального устройства в Azure HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "89650873"
 
 * Службы, поддерживающие конечную точку службы, можно настроить с помощью конечных точек службы, что приведет к обходу NVA, обычно в отношении затрат или соображений производительности.
 * Зависимости IP-адресов предназначены для трафика, отличного от HTTP и S (трафик TCP и UDP).
-* Полные доменные конечные точки HTTP и HTTPS могут быть список разрешений на устройстве NVA.
+* Полные доменные конечные точки HTTP и HTTPS могут быть утверждены на устройстве NVA.
 * Назначьте таблицу маршрутов, созданную в подсети HDInsight.
 
 ## <a name="service-endpoint-capable-dependencies"></a>Зависимости, поддерживающие конечную точку службы

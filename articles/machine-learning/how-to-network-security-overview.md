@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
-ms.date: 09/25/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperfq1
-ms.openlocfilehash: c1d351cf7a3d66f6051bf5c9d17672b054c2d862
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: d4690062dead8186022cc53ca47dbc7e17a9376f
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91538388"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631194"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -28,7 +28,7 @@ ms.locfileid: "91538388"
 
 **1. Обзор виртуальной сети**  >  [2. Обеспечьте безопасность рабочей области](how-to-secure-workspace-vnet.md)  >  [3. Обеспечьте безопасность среды обучения](how-to-secure-training-vnet.md)  >  [4. Обеспечьте безопасность окружения](how-to-secure-inferencing-vnet.md)  >  [5. Включить функциональные возможности студии](how-to-enable-studio-virtual-network.md)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы со следующими разделами:
 + [Виртуальные сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
@@ -80,19 +80,7 @@ ms.locfileid: "91538388"
 ### <a name="limitations"></a>Ограничения
 
 Защита рабочей области и связанных с ней ресурсов в виртуальной сети имеет следующие ограничения.
-- Частная ссылка на рабочую область доступна только в следующих регионах:
-    - **Восточная часть США**
-    - **Центрально-южная часть США**
-    - **западная часть США**
-    - **Западная часть США 2**
-    - **Центральная Канада**
-    - **Юго-Восточная Азия**
-    - **Восточная Япония**
-    - **Северная Европа**
-    - **Восточная Австралия**
-    - **южная часть Соединенного Королевства**
-    
-    Это ограничение не распространяется на связанные ресурсы. Например, можно включить виртуальную сеть для хранения данных в любом регионе Машинное обучение Azure.
+- Использование рабочей области Машинное обучение Azure с частной ссылкой недоступна в регионах Azure для государственных организаций и Azure для Китая.
 - Все ресурсы должны находиться за одной виртуальной сетью. Однако подсети в одной виртуальной сети разрешены.
 
 ## <a name="secure-the-training-environment"></a>Защита среды обучения

@@ -7,12 +7,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: raynew
-ms.openlocfilehash: 217e3b9de7c9a46174c6ce6d1a3b151c904a7bf2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 45baee286fede0ab16da62b7c2e84008d58690b1
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91314119"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91626502"
 ---
 # <a name="vmware-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из VMware в Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "91314119"
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
 
-Полный список URL-адресов, список разрешений для обмена данными между локальной инфраструктурой Azure Site Recovery и службами Azure, см. в [разделе Требования к сети статьи предварительные](vmware-azure-deploy-configuration-server.md#prerequisites)требования.
+Полный список URL-адресов, которые должны быть отфильтрованы для обмена данными между локальной инфраструктурой Azure Site Recovery и службами Azure, см. в [разделе Требования к сети статьи предварительные требования](vmware-azure-deploy-configuration-server.md#prerequisites).
 
 ## <a name="replication-process"></a>Процесс репликации
 

@@ -3,12 +3,12 @@ title: Использование концентратора событий ка
 description: Узнайте, как можно использовать концентраторы событий в качестве обработчиков событий Сетки событий Azure.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 5e6a84c1737c6b8a575f47576aeb1d3d9efae6eb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4fb8027290831dbfed4b6d202d61d2d689274828
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322569"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629630"
 ---
 # <a name="event-hub-as-an-event-handler-for-azure-event-grid-events"></a>Использование концентратора событий как обработчика событий Сетки событий Azure
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет действие для обработки события. Некоторые службы Azure автоматически настроены для обработки событий. Одна из них — это **Центры событий Azure**. 
@@ -81,9 +81,6 @@ ms.locfileid: "91322569"
     }
 }
 ```
-
-> [!NOTE]
-> Доставка событий в концентратор событий Azure в **другом клиенте** не поддерживается. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

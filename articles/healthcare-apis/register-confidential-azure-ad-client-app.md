@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: 756645d2df22f1222c3004a44e5a46c7a3bc1a2f
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: e74271119b581b2bb291b1a9ddd74ad0781855e6
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852554"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629157"
 ---
 # <a name="register-a-confidential-client-application-in-azure-active-directory"></a>Регистрация конфиденциального клиентского приложения в Azure Active Directory
 
@@ -23,55 +23,57 @@ ms.locfileid: "87852554"
 
 Чтобы зарегистрировать новое конфиденциальное приложение на портале, выполните следующие действия.
 
-## <a name="app-registrations-in-azure-portal"></a>Регистрация приложений в портал Azure
+## <a name="register-a-new-application"></a>Регистрация нового приложения
 
-1. На [портале Azure](https://portal.azure.com) в области навигации слева щелкните **Azure Active Directory**.
+1. В [портал Azure](https://portal.azure.com)перейдите к **Azure Active Directory**.
 
-2. В колонке **Azure Active Directory** щелкните **Регистрация приложений**:
+1. Щелкните **Регистрация приложений**.
 
     ![портал Azure. Регистрация нового приложения.](media/how-to-aad/portal-aad-new-app-registration.png)
 
-3. Щелкните **новую регистрацию**.
-
-## <a name="register-a-new-application"></a>Регистрация нового приложения
+1. Выберите **Новая регистрация**.
 
 1. Присвойте приложению отображаемое имя.
 
-2. Укажите URL-адрес ответа. Эти сведения можно изменить позже, но если вы знакомы с URL-адресом ответа приложения, введите его сейчас.
+1. Укажите URL-адрес ответа. Эти сведения можно изменить позже, но если вы знакомы с URL-адресом ответа приложения, введите его сейчас.
 
     ![Регистрация нового конфиденциального клиентского приложения.](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT.png)
+1. Выберите **Зарегистрировать**.
 
 ## <a name="api-permissions"></a>Разрешения API
 
-Далее добавьте разрешения API:
+Теперь, когда приложение зарегистрировано, необходимо выбрать, какие разрешения API должны быть запрошены этим приложением от имени пользователей:
 
-1. Откройте **разрешения API**:
+1. Выберите **Разрешения API**.
 
     ![Конфиденциальный клиент. Разрешения API](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-API-Permissions.png)
 
-2. Нажмите кнопку **Добавить разрешение** .
+1. Выберите **Добавить разрешение**.
 
-3. Выберите соответствующий API ресурсов:
+    Если вы используете API Azure для FHIR, вы добавите разрешение для API здравоохранения Azure, выполнив поиск по API-интерфейсам **Azure для здравоохранения** в разделе API, которые **использует Моя организация**. 
 
-    Для API Azure для FHIR (Управляемая служба) щелкните **интерфейсы API, используемые моей организацией** , и выполните поиск по запросу "API-интерфейсы Azure для здравоохранения". Для сервера FHIR с открытым исходным кодом для Azure выберите свой [ресурс API FHIR регистрация приложения](register-resource-azure-ad-client-app.md):
+    Если вы ссылаетесь на другое приложение ресурсов, выберите [регистрацию приложения API FHIR](register-resource-azure-ad-client-app.md) , созданную ранее в разделе **Мои API**.
 
-    ![Конфиденциальный клиент. Мои API](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-API-MyApis.png)
 
-4. Выберите области (разрешения), которые должны иметь конфиденциальное приложение для запроса от имени пользователя:
+    :::image type="content" source="media/conf-client-app/confidential-client-org-api.png" alt-text="Конфиденциальный клиент. Мои API-интерфейсы Организации" lightbox="media/conf-client-app/confidential-app-org-api-expanded.png":::
+    
 
-    ![Конфиденциальный клиент. Делегированные разрешения](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-API-DelegatedPermissions.png)
+3. Выберите области (разрешения), которые должны иметь конфиденциальное приложение для запроса от имени пользователя:
+
+    :::image type="content" source="media/conf-client-app/confidential-client-add-permission.png" alt-text="Конфиденциальный клиент. Мои API-интерфейсы Организации":::
 
 ## <a name="application-secret"></a>Секрет приложения
 
-1. Создайте секрет приложения (секрет клиента):
+1. Выберите **сертификаты & секреты**.
+1. Выберите **Новый секрет клиента**. 
 
     ![Конфиденциальный клиент. Секрет приложения](media/how-to-aad/portal-aad-register-new-app-registration-CONF-CLIENT-SECRET.png)
 
-2. Укажите описание и длительность секрета.
+2. Укажите описание и длительность секрета (1 год, 2 года или никогда).
 
 3. После создания он будет отображаться на портале только один раз. Запишите его и храните в безопасном месте.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как зарегистрировать конфиденциальное клиентское приложение в Azure Active Directory. Теперь вы готовы к развертыванию [API Azure для FHIR](fhir-paas-powershell-quickstart.md).
 

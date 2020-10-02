@@ -11,12 +11,12 @@ ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1177551b698bb2e295a71f6cd4a132411d1c5bea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f97b7cb836009683a689fc49882e61ce66abac58
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85210700"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627080"
 ---
 # <a name="optimize-performance-by-upgrading-azure-synapse-analytics-sql-pool"></a>Оптимизация производительности путем обновления пула SQL Azure синапсе Analytics
 
@@ -114,7 +114,7 @@ ms.locfileid: "85210700"
 
    > [!NOTE]
    > Если карта **Повысить до Gen2** не отображается на вкладке "Задачи", для типа вашей подписки действуют ограничения в текущем регионе.
-   > [Отправьте запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) на добавление вашей подписки в список разрешений.
+   > [Отправьте запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) , чтобы получить одобренную подписку.
 
 3. Перед обновлением убедитесь, что рабочая нагрузка завершена и приостановлена. В течение нескольких минут вы получите простой, прежде чем пул SQL будет восстановлен в сети как пул SQL Gen2 уровня, оптимизированного для вычислений. Выберите **Обновить**.
 
@@ -244,6 +244,6 @@ $GeoRestoredDatabase.status
 
 При возникновении проблем с пулом SQL создайте [запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) и в качестве возможной причины щелкните "Gen2 Upgrade".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Обновленный пул SQL находится в режиме "в сети". Чтобы воспользоваться преимуществами новой, усовершенствованной архитектуры, см. [Классы ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md).
