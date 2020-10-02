@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: dde4db7f3eb476b7645e910504e48fea8bb6df0c
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 4fb64a2ea55744d66b203ef4d901f22ae4695e1a
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91569716"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91630429"
 ---
 # <a name="backup-and-restore-for-azure-arc-enabled-postgresql-hyperscale-server-groups"></a>Резервное копирование и восстановление для PostgreSQLных групп серверов с поддержкой дуги Azure
 
@@ -93,8 +93,6 @@ azdata arc postgres backup create [--name <backup name>] --server-name <server g
 - __имя__ указывает имя резервной копии.
 - __имя сервера__ указывает на группу серверов.
 - __нет-Wait__ указывает, что Командная строка не будет ждать завершения резервного копирования, чтобы вы могли продолжить использовать это окно командной строки.
-
->**Примечание**. команда, позволяющая получить список резервных копий, доступных для восстановления, пока не отображается, даты и времени, когда была сделана резервная копия. Поэтому рекомендуется указать имя резервной копии (с помощью параметра--Name), включающее сведения о дате и времени.
 
 Эта команда координирует распределенное полное резервное копирование по всем узлам, составляющим группу серверов PostgreSQL с поддержкой дуги Azure. Иными словами, он будет создавать резервные копии всех данных в координаторе и рабочих узлах.
 

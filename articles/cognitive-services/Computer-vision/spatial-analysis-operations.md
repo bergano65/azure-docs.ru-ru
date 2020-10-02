@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: aahi
-ms.openlocfilehash: f9df17afe8b6d25df3d9dcc5f4eec0b9a028404f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 80f0d29de6b3013ad02ed1a5d34bebdf81a8766b
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91254012"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91628219"
 ---
 # <a name="spatial-analysis-operations"></a>Операции пространственного анализа
 
@@ -39,7 +39,7 @@ ms.locfileid: "91254012"
 | cognitiveservices. видение. спатиаланалисис-персонкроссингполигон. Debug | Отслеживает, когда пользователь пересекает определенную строку в поле зрения камеры. <br> Создает событие _персонлинивент_ , когда пользователь пересекает зону и предоставляет сведения о направлении. |
 | cognitiveservices. видение. спатиаланалисис-персондистанце. Debug | Отслеживает, когда люди нарушают правило расстояния. <br> Периодически создает _персондистанцеевент_ с расположением каждого нарушения расстояния. |
 
-Пространственный анализ также можно запустить с помощью функции [Live Video Analytics](https://azure.microsoft.com/services/media-services/live-video-analytics/) в качестве своего видеомодуля AI. 
+Пространственный анализ также можно запустить с помощью функции [Live Video Analytics](https://aka.ms/lva-spatial-analysis) в качестве своего видеомодуля AI. 
 
 <!--more details on the setup can be found in the [LVA Setup page](LVA-Setup.md). Below is the list of the operations supported with Live Video Analytics. -->
 
@@ -193,7 +193,7 @@ ms.locfileid: "91254012"
 | `type` | строка| Для **cognitiveservices. видение. спатиаланалисис-персондистанце** это должно быть `people_distance` .|
 | `trigger` | строка| Тип триггера для отправки события. Поддерживаемые значения — `event` для отправки событий при периодическом изменении числа или `interval` для периодической отправки событий независимо от того, изменился ли счетчик.
 | `interval` | строка | Время в секундах, в течение которого нарушения будут агрегированы до срабатывания события. Интервал агрегирования применим `event` и к, и к `interval` .|
-| `output_frequency` | INT | Скорость, с которой события егрессед. Если `output_frequency` = X, каждое событие x — егрессед, например, `output_frequency` = 2 означает, что каждое другое событие является выходным. Output_frequency применимо как к `event` , так и к `interval` .|
+| `output_frequency` | int | Скорость, с которой события егрессед. Если `output_frequency` = X, каждое событие x — егрессед, например, `output_frequency` = 2 означает, что каждое другое событие является выходным. Output_frequency применимо как к `event` , так и к `interval` .|
 | `minimum_distance_threshold` | FLOAT| Расстояние в футах, которое активирует событие "Туклосе", когда люди меньше этого расстояния.|
 | `maximum_distance_threshold` | FLOAT| Расстояние в футах, которое активирует событие "Туфар", когда люди больше этого расстояния.|
 
@@ -312,7 +312,7 @@ ms.locfileid: "91254012"
 | `properties` | коллекция| Коллекция значений|
 | `trackinId` | строка| Уникальный идентификатор обнаруженного человека|
 | `status` | строка| "Enter" или "Exit"|
-| `side` | INT| Номер стороны многоугольника, который пересекается лицом|
+| `side` | int| Номер стороны многоугольника, который пересекается лицом|
 | `zone` | строка | Поле Name (имя) многоугольника, представляющего пересечение зоны.|
 | `trigger` | строка| Тип триггера — "Event" или "Interval" в зависимости от значения `trigger` в SPACEANALYTICS_CONFIG|
 
@@ -329,9 +329,9 @@ ms.locfileid: "91254012"
 |---------|---------|---------|
 | `id` | строка| Camera ID (Идентификатор камеры)|
 | `timestamp` | Дата| Дата в формате UTC при выдаче полезных данных JSON|
-| `width` | INT | Ширина кадра видео|
-| `height` | INT | Высота кадра видео|
-| `frameId` | INT | Идентификатор кадра|
+| `width` | int | Ширина кадра видео|
+| `height` | int | Высота кадра видео|
+| `frameId` | int | Идентификатор кадра|
 | `cameraCallibrationInfo` | коллекция | Коллекция значений|
 | `status` | строка | Указывает, является ли Калибровка камеры в плоскости заземления "полной"|
 | `cameraHeight` | FLOAT | Высота камеры над заземлением в футах. Это выводится из автоматической калибровки. |
@@ -342,9 +342,9 @@ ms.locfileid: "91254012"
 |---------|---------|---------|
 | `id` | строка| Camera ID (Идентификатор камеры)|
 | `timestamp` | Дата| Дата в формате UTC при выдаче полезных данных JSON|
-| `width` | INT | Ширина кадра видео|
-| `height` | INT | Высота кадра видео|
-| `frameId` | INT | Идентификатор кадра|
+| `width` | int | Ширина кадра видео|
+| `height` | int | Высота кадра видео|
+| `frameId` | int | Идентификатор кадра|
 
 
 ### <a name="json-format-for-cognitiveservicesvisionspatialanalysis-personcrossingline-ai-insights"></a>Формат JSON для cognitiveservices. видение. спатиаланалисис-персонкроссинглине AI Insights
@@ -422,9 +422,9 @@ ms.locfileid: "91254012"
 |---------|---------|---------|
 | `id` | строка| Camera ID (Идентификатор камеры)|
 | `timestamp` | Дата| Дата в формате UTC при выдаче полезных данных JSON|
-| `width` | INT | Ширина кадра видео|
-| `height` | INT | Высота кадра видео|
-| `frameId` | INT | Идентификатор кадра|
+| `width` | int | Ширина кадра видео|
+| `height` | int | Высота кадра видео|
+| `frameId` | int | Идентификатор кадра|
 
 
 > [!IMPORTANT]
@@ -601,12 +601,12 @@ ms.locfileid: "91254012"
 | `type` | строка| Тип события|
 | `detectionsId` | массиве| Массив размера 1 уникального идентификатора обнаружения людей, вызвавшего это событие|
 | `properties` | коллекция| Коллекция значений|
-| `personCount` | INT| Число людей, обнаруженных при выдаче события|
+| `personCount` | int| Число людей, обнаруженных при выдаче события|
 | `averageDistance` | FLOAT| Среднее расстояние между всеми обнаруженными людьми в футах|
 | `minimumDistanceThreshold` | FLOAT| Расстояние в футах, которое активирует событие "Туклосе", когда люди меньше этого расстояния.|
 | `maximumDistanceThreshold` | FLOAT| Расстояние в футах, которое активирует событие "Туфар", когда люди больше расстояния.|
 | `eventName` | строка| Имя события соответствует `TooClose` `minimumDistanceThreshold` нарушению, `TooFar` когда `maximumDistanceThreshold` нарушается или `unknown` Если автоматическая калибровка не завершена|
-| `distanceViolationPersonCount` | INT| Число людей, обнаруженных нарушением `minimumDistanceThreshold` или `maximumDistanceThreshold`|
+| `distanceViolationPersonCount` | int| Число людей, обнаруженных нарушением `minimumDistanceThreshold` или `maximumDistanceThreshold`|
 | `zone` | строка | Поле Name (имя) многоугольника, представляющего зону, отслеживаемую для дистанЦинг между людьми|
 | `trigger` | строка| Тип триггера — "Event" или "Interval" в зависимости от значения `trigger` в SPACEANALYTICS_CONFIG|
 
@@ -624,9 +624,9 @@ ms.locfileid: "91254012"
 |---------|---------|---------|
 | `id` | строка| Camera ID (Идентификатор камеры)|
 | `timestamp` | Дата| Дата в формате UTC при выдаче полезных данных JSON|
-| `width` | INT | Ширина кадра видео|
-| `height` | INT | Высота кадра видео|
-| `frameId` | INT | Идентификатор кадра|
+| `width` | int | Ширина кадра видео|
+| `height` | int | Высота кадра видео|
+| `frameId` | int | Идентификатор кадра|
 | `cameraCallibrationInfo` | коллекция | Коллекция значений|
 | `status` | строка | Указывает, является ли Калибровка камеры в плоскости заземления "полной"|
 | `cameraHeight` | FLOAT | Высота камеры над заземлением в футах. Это выводится из автоматической калибровки. |
@@ -727,7 +727,7 @@ ms.locfileid: "91254012"
   ```
 | Имя | Тип| Описание|
 |---------|---------|---------|
-| `batch_size` | INT | Указывает число камер, которые будут использоваться в операции. |
+| `batch_size` | int | Указывает число камер, которые будут использоваться в операции. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

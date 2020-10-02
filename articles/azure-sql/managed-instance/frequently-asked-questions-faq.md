@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 74c603576016b72edddb4c0fe7aa970bd8626a4a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: fedbcf00512e2eb671656ca1c585df83560a8c02
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325221"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627624"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "91325221"
 
 Сведения о дефектах продукта и известных проблемах см. в статье [Известные проблемы](../database/doc-changes-updates-release-notes.md#known-issues).
 
-## <a name="new-features"></a>Новые возможности
+## <a name="new-features"></a>новые функции;
 
 **Где можно найти новейшие функции и функции в общедоступной предварительной версии?**
 
@@ -277,7 +277,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Что делать, если нет достаточного количества IP-адресов для выполнения операции обновления экземпляра?**
 
-Если в подсети, в которой подготовлен управляемый экземпляр, недостаточно [IP-адресов](connectivity-architecture-overview.md#network-requirements) , необходимо создать в нем новую подсеть и новый управляемый экземпляр. Кроме того, мы рекомендуем создать подсеть с дополнительными IP-адресами, чтобы будущие операции обновления не мешали подобным ситуациям. После подготовки нового экземпляра можно вручную создать резервную копию и восстановить данные между старыми и новыми экземплярами или выполнить [восстановление на момент времени](point-in-time-restore.md?tabs=azure-powershell).
+Если в подсети, в которой подготовлен управляемый экземпляр, недостаточно [IP-адресов](connectivity-architecture-overview.md#network-requirements) , необходимо создать в нем новую подсеть и новый управляемый экземпляр. Мы также рекомендуем создать подсеть с дополнительными выделенными IP-адресами, чтобы избежать подобных проблем в будущих операциях обновления. После подготовки нового экземпляра можно вручную создать резервную копию и восстановить данные между старыми и новыми экземплярами или выполнить [восстановление на момент времени](point-in-time-restore.md?tabs=azure-powershell).
 
 **Нужна ли пустая подсеть для создания Управляемый экземпляр?**
 
@@ -299,7 +299,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 Нет. Сейчас мы не поддерживаем размещение Управляемый экземпляр в подсети, которая уже содержит другие типы ресурсов.
 
-## <a name="connectivity"></a>Соединение 
+## <a name="connectivity"></a>Подключение 
 
 **Можно ли подключиться к управляемому экземпляру по IP-адресу?**
 
@@ -334,9 +334,12 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Каков рекомендуемый способ подключения управляемых экземпляров, размещенных в разных регионах?**
 
-Для этого предпочтительным способом является пиринг контура Express Route. Это не должно быть совместно с пирингом виртуальной сети между регионами, который не поддерживается из-за [ограничения](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview)внутренней подсистемы балансировки нагрузки.
+Для этого предпочтительным способом является пиринг контура Express Route. Глобальный пиринг между виртуальными сетями поддерживается с ограничением, описанным в примечании ниже.  
 
-Если пиринг контура Express Route невозможен, единственным другим вариантом является создание VPN-подключения типа "сеть — сеть" ([портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal), [PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell), [Azure CLI](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli)).
+> [!IMPORTANT]
+> [На 9/22/2020 мы объявили глобальный пиринг виртуальных сетей для вновь созданных виртуальных кластеров](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Это означает, что глобальный пиринг между виртуальными сетями поддерживается для управляемых экземпляров SQL, созданных в пустых подсетях после даты объявления, а также для всех последующих управляемых экземпляров, созданных в этих подсетях. Для всех остальных способов поддержки пиринга с управляемыми экземплярами SQL ограничены сетями в том же регионе из-за [ограничений глобального пиринга виртуальной сети](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения см. в разделе, посвященном [часто задаваемым вопросам о виртуальных сетях Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . 
+
+Если пиринг каналов Express и глобальная связь между виртуальными сетями невозможны, единственным другим вариантом является создание VPN-подключения типа "сеть — сеть" ([портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal), [PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell), [Azure CLI](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli)).
 
 ## <a name="mitigate-data-exfiltration-risks"></a>Устранение рисков утечка данных  
 

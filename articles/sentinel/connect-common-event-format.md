@@ -12,17 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/26/2019
+ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: cd84a4b50ba32ee3f562ace9b2583cf5e561be84
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d63893ab219854a270652da38c474e3ccad83abc
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91320393"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91630514"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
-
 
 При подключении внешнего решения, отправляющего сообщения CEF, необходимо выполнить три шага подключения с помощью Azure Sentinel:
 
@@ -43,29 +42,28 @@ ms.locfileid: "91320393"
 
  ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
-
 ## <a name="security-considerations"></a>Замечания по безопасности
 
 Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
 Чтобы использовать TLS-связь между источником syslog и сервером пересылки syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для взаимодействия в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS – syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
-
  
 ## <a name="prerequisites"></a>Предварительные требования
+
 Убедитесь, что компьютер Linux, используемый в качестве прокси-сервера, работает под управлением одной из следующих операционных систем:
 
 - 64-разрядная
-  - CentOS 6 и 7
+  - CentOS 7 и подверсии и выше (не 6)
   - Amazon Linux 2017.09
   - Oracle Linux 6 и 7
-  - Red Hat Enterprise Linux Server 6 и 7
+  - Red Hat Enterprise Linux (RHEL) Server 7 и подверсии и выше (не 6)
   - Debian GNU/Linux 8 и 9
   - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
   - SUSE Linux Enterprise Server 12
 - 32-битная
-   - CentOS 6
+   - CentOS 7
    - Oracle Linux 6
-   - Red Hat Enterprise Linux Server 6
+   - Red Hat Enterprise Linux Server 7
    - Debian GNU/Linux 8 и 9
    - Ubuntu Linux 14.04 LTS и 16.04 LTS
  
@@ -81,11 +79,10 @@ ms.locfileid: "91320393"
 - Разрешения
     - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
 - Требования к программному обеспечению
-    - Убедитесь, что на вашем компьютере установлен Python.
-
-
+    - Убедитесь, что на вашем компьютере установлен Python (2,7 или более поздней версии)
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

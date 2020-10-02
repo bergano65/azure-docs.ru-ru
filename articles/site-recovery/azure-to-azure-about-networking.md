@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/13/2020
 ms.author: harshacs
-ms.openlocfilehash: db4c3be7c79448e4cf0df39688959ae09a671dbd
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: f0a3ac0c81291a1231ef660481d8e31b38c0e212
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361421"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631347"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "91361421"
 При использовании прокси-сервера брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов в Site Recovery:
 
 >[!NOTE]
-> Список разрешений на основе IP-адреса не следует выполнять для управления исходящими подключениями.
+> Для управления исходящими подключениями не следует выполнять фильтрацию на основе IP-адресов.
 
 **URL-адрес** | **Сведения**
 --- | ---

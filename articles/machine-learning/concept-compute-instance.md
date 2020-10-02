@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 08/25/2020
-ms.openlocfilehash: 14229af9766f6604e71713f835935d43f6c7fcc6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 56febc6c2a0e88b2be547c71a2f90ccfa9b78f26
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330151"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91630837"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -91,6 +91,8 @@ ms.locfileid: "91330151"
 * Jupyter Lab:  выберите плитку **Terminal** (Терминал) под заголовком **Other** (Другое) на вкладке Launcher (Средства запуска).
 * Jupyter:  на вкладке Files (Файлы) в правом верхнем углу выберите **New > Terminal** (Создать > Терминал).
 * Подключитесь к компьютеру по протоколу SSH.  Установите пакеты Python в среде **Python 3.6 — AzureML**.  Установите пакеты R в среде **R**.
+
+При настройке вычислительного экземпляра убедитесь, что вы не удалили azureml_py36 среду conda или ядро Python 3,6-AzureML. Это необходимо для работы функции Jupyter/JupyterLab
 
 ### <a name="add-new-kernels"></a>Добавление новых ядер
 

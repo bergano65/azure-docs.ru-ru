@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: jmartens
 author: nishankgu
 ms.author: nigup
-ms.date: 05/08/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperfq4
-ms.openlocfilehash: a25dcc187c1bb172106a3972c1cb57dfd473bc2f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 4e5634633aacb56e7c7744b3afdb3aec0fe2b70f
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322382"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91629596"
 ---
 # <a name="manage--increase-quotas-for-resources-with-azure-machine-learning"></a>Управление квотами на ресурсы для Машинного обучения Azure и их увеличение
 
@@ -149,9 +149,9 @@ ms.locfileid: "91322382"
 
 1. [Создайте запрос в службу поддержки Azure](/azure/azure-portal/supportability/how-to-create-azure-support-request#create-a-support-request) и выберите следующие параметры в разделе " __Основные сведения__ ":
 
-    | Поле | Выбор |
+    | Поле | Выбранное |
     | ----- | ----- |
-    | Тип проблемы | Технический |
+    | Тип проблемы | Технические вопросы |
     | Служба | Мои службы. Выберите __машинное обучение__ в раскрывающемся списке. |
     | Тип проблемы | Настройка рабочей области, пакет SDK и интерфейс командной строки |
     | Подтип проблемы | Проблема при подготовке рабочей области или управлении ею |

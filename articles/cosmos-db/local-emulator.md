@@ -7,16 +7,22 @@ author: markjbrown
 ms.author: mjbrown
 ms.date: 09/22/2020
 ms.custom: devx-track-csharp, contperfq1
-ms.openlocfilehash: 2ee20035fbb7b417897290caba4500f2c3862fee
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 64da8084ec8d40e17a0005f2e70486c7d51bf640
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611815"
+ms.locfileid: "91627604"
 ---
 # <a name="install-and-use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Установка и использование эмулятора Cosmos Azure для локальной разработки и тестирования
 
-Эмулятор Azure Cosmos предоставляет локальную среду, которая эмулирует службу Azure Cosmos DB для целей разработки. С помощью эмулятора Cosmos Azure можно разрабатывать и тестировать приложения локально, не создавая подписку Azure или не тратя никаких затрат. Если вы удовлетворены работой приложения в эмуляторе Azure Cosmos, вы можете переключиться на использование учетной записи Azure Cosmos в облаке. Чтобы приступить к работе, скачайте и установите последнюю версию [эмулятора Azure Cosmos](https://aka.ms/cosmosdb-emulator) на локальном компьютере. В этой статье описывается, как установить и использовать эмулятор в средах Windows, Linux, macOS и Windows DOCKER.
+Эмулятор Azure Cosmos предоставляет локальную среду, которая эмулирует службу Azure Cosmos DB для целей разработки. С помощью эмулятора Cosmos Azure можно разрабатывать и тестировать приложения локально, не создавая подписку Azure или не тратя никаких затрат. Если вы удовлетворены работой приложения в эмуляторе Azure Cosmos, вы можете переключиться на использование учетной записи Azure Cosmos в облаке. В этой статье описывается, как установить и использовать эмулятор в средах Windows, Linux, macOS и Windows DOCKER.
+
+## <a name="download-the-emulator"></a>Скачать эмулятор
+
+Чтобы приступить к работе, скачайте и установите последнюю версию эмулятора Azure Cosmos на локальном компьютере. В статье [заметки о выпуске эмулятора](local-emulator-release-notes.md) перечислены все доступные версии и обновления компонентов, которые были сделаны в каждом выпуске.
+
+:::image type="icon" source="media/local-emulator/download-icon.png" border="false":::**[Скачайте эмулятор Cosmos для Azure](https://aka.ms/cosmosdb-emulator)**
 
 Вы можете разрабатывать приложения с помощью Azure Cosmos Emulator с учетными записями [SQL](local-emulator.md#sql-api), [Cassandra](local-emulator.md#cassandra-api), [MongoDB](local-emulator.md#azure-cosmos-dbs-api-for-mongodb), [Gremlin](local-emulator.md#gremlin-api)и API [таблиц](local-emulator.md#table-api) . В настоящее время обозреватель данных в эмуляторе полностью поддерживает просмотр только данных SQL; данные, созданные с помощью клиентских приложений MongoDB, Gremlin/Graph и Cassandra, в настоящее время недоступны для просмотра. Дополнительные сведения см. в разделе [Подключение к конечной точке эмулятора](#connect-with-emulator-apis) из разных интерфейсов API.
 
@@ -38,7 +44,7 @@ ms.locfileid: "91611815"
 
 * С помощью эмулятора вы можете создать учетную запись Azure Cosmos в режиме [подготовленной пропускной способности](set-throughput.md) . Сейчас он не поддерживает [бессерверный](serverless.md) режим.
 
-* Эмулятор не является масштабируемым сервисом и не поддерживает большое количество контейнеров. При использовании эмулятора Cosmos Azure по умолчанию можно создать до 25 контейнеров фиксированного размера в 400 единиц запросов в секунду (поддерживается только с помощью Azure Cosmos DB пакетов SDK) или 5 неограниченных контейнеров. Дополнительные сведения о том, как изменить это значение, см. в статье [Установка параметра PartitionCount value] Emulator-Command-Line-Parameters. md # Set-PartitionCount).
+* Эмулятор не является масштабируемым сервисом и не поддерживает большое количество контейнеров. При использовании эмулятора Cosmos Azure по умолчанию можно создать до 25 контейнеров фиксированного размера в 400 единиц запросов в секунду (поддерживается только с помощью Azure Cosmos DB пакетов SDK) или 5 неограниченных контейнеров. Дополнительные сведения о том, как изменить это значение, см. в статье [Установка значения PartitionCount](emulator-command-line-parameters.md#set-partitioncount) .
 
 * Эмулятор не предлагает различные [уровни согласованности Azure Cosmos DB](consistency-levels.md) , такие как облачная служба.
 
@@ -64,7 +70,7 @@ ms.locfileid: "91611815"
 
 Чтобы приступить к работе, скачайте и установите последнюю версию [эмулятора Azure Cosmos](https://aka.ms/cosmosdb-emulator) на локальном компьютере. Если при установке эмулятора возникнут проблемы, см. статью [Устранение неполадок эмулятора](troubleshoot-local-emulator.md) для отладки.
 
-В зависимости от требований к системе можно запустить эмулятор в [Windows](#run-on-windows), [DOCKER для Windows](#run-on-windows-docker), [Linux или [macOS](#run-on-linux-macos) , как описано в следующих разделах этой статьи.
+В зависимости от требований к системе можно запустить эмулятор в [Windows](#run-on-windows), [DOCKER для Windows](#run-on-windows-docker), [Linux или macOS](#run-on-linux-macos) , как описано в следующих разделах этой статьи.
 
 ## <a name="check-for-emulator-updates"></a>Проверить наличие обновлений для эмулятора
 

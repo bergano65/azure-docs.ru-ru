@@ -12,12 +12,12 @@ ms.date: 09/01/2020
 ms.author: erhopf
 ms.custom: devx-track-csharp, cog-serv-seo-aug-2020
 keywords: перевод речи
-ms.openlocfilehash: e4bc2f07fce3917bfa59f79305498bb91889344d
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: e54659b0d4504def272d3de40d5e953d98404a8d
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91359806"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91630076"
 ---
 # <a name="what-is-speech-translation"></a>Что такое перевод речи?
 
@@ -58,7 +58,7 @@ ms.locfileid: "91359806"
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: Пакетное транскрибирование и настройка](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

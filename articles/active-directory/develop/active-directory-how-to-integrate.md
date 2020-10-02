@@ -1,5 +1,6 @@
 ---
-title: Интеграция с платформой идентификации Майкрософт
+title: Интеграция с платформой идентификации Майкрософт | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте о преимуществах интеграции приложения с платформой идентификации Майкрософт и получите ресурсы для таких функций, как упрощенный вход, управление удостоверениями, многофакторная идентификация и контроль доступа.
 services: active-directory
 author: rwike77
@@ -8,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 04/08/2019
+ms.date: 10/01/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, seoapril2019
-ms.openlocfilehash: bdeb27f9e761fefc52c9c97b28d15770e22221f4
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: e9724bb2e5377f84904dc77c33375c39f3077dd4
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90706172"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631415"
 ---
 # <a name="integrating-with-microsoft-identity-platform"></a>Интеграция с платформой идентификации Майкрософт
 
@@ -45,9 +46,9 @@ ms.locfileid: "90706172"
 
 **Использование платформы Microsoft Identity для управления доступом на основе ролей.**  Администраторы и владельцы приложений могут назначать пользователям и группам роли, которые определяются при регистрации приложения на платформе Microsoft Identity. Сведения о ролях отправляются в приложение в токенах входа, и их также можно прочитать с помощью Microsoft Graph API. Дополнительные сведения об [использовании платформы идентификации Майкрософт для авторизации](https://cloudblogs.microsoft.com/enterprisemobility/2014/12/18/azure-active-directory-now-with-group-claims-and-application-roles/).
 
-### <a name="get-access-to-users-profile-calendar-email-contacts-files-and-more"></a>Получение доступа к профилю пользователя, календарю, электронной почте, контактам, файлам и др.
+### <a name="get-access-to-users-profile-calendar-email-contacts-files-and-more"></a>Получение доступа к профилю пользователей, календарю, электронной почте, контактам, файлам и др.
 
-**Платформа Microsoft Identity — это сервер авторизации для Microsoft 365 и других бизнес-служб Майкрософт.**  Если вы поддерживаете платформу Microsoft Identity для входа в приложение или поддерживаете связывание текущих учетных записей пользователей с учетными записями пользователей Azure AD с помощью OAuth 2,0, вы можете запросить доступ на чтение и запись к профилю пользователя, календарю, электронной почте, контактам, файлам и другим сведениям. Вы можете легко записывать события в календарь пользователя, а также считывать или записывать файлы в их службу OneDrive. Дополнительные сведения о [доступе к интерфейсам api Microsoft 365](/previous-versions/office/office-365-api/).
+**Платформа Microsoft Identity — это сервер авторизации для Microsoft 365 и других бизнес-служб Майкрософт.**  Если вы поддерживаете платформу Microsoft Identity для входа в приложение или поддерживаете связывание текущих учетных записей пользователей с учетными записями пользователей Azure AD с помощью OAuth 2,0, вы можете запросить доступ на чтение и запись к профилю пользователя, календарю, электронной почте, контактам, файлам и другим сведениям. Вы можете легко записывать события в календарь пользователя, а также считывать или записывать файлы в их службу OneDrive. Дополнительные сведения об [api Microsoft 365](/graph/overview).
 
 ### <a name="promote-your-application-in-the-azure-and-microsoft-365-marketplaces"></a>Продвижение приложения в Azure и Microsoft 365 Marketplace
 

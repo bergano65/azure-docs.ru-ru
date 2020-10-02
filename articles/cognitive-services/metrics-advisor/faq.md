@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
-ms.date: 09/10/2020
+ms.date: 09/30/2020
 ms.author: aahi
-ms.openlocfilehash: 0fde9a0f46073a2f3a24962ea58431581455f474
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e4a75bdd6147ee2189660c37062c5bec9d55d512
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939048"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631751"
 ---
 # <a name="metrics-advisor-frequently-asked-questions"></a>Рекомендации по метрикам часто задаваемые вопросы
 
@@ -74,9 +74,26 @@ ms.locfileid: "90939048"
 
 ### <a name="more-concepts-and-technical-terms"></a>Дополнительные понятия и технические термины
 
-Дополнительные сведения см. в [глоссарии](glossary.md) .
+См. также [Глоссарий](glossary.md) для получения дополнительных сведений.
 
-## <a name="how-do-i-detect-such-kinds-of-anomalies"></a>Разделы справки обнаруживать аномалии? 
+###  <a name="how-do-i-write-a-valid-query-for-ingesting-my-data"></a>Разделы справки написать допустимый запрос для приема моих данных?  
+
+Чтобы помощник по метрикам принимал данные, необходимо создать запрос, который будет возвращать измерения данных в одной метке времени. Помощник по метрикам запустит этот запрос несколько раз, чтобы получить данные из каждой метки времени. 
+
+Обратите внимание, что запрос должен возвращать не более одной записи для каждой комбинации измерений по заданной метке времени. Все возвращаемые записи должны иметь одинаковую метку времени. Запрос не должен содержать повторяющихся записей.
+
+Например, предположим, что вы создаете следующий запрос для ежедневной метрики: 
+ 
+`select timestamp, city, category, revenue from sampledata where Timestamp >= @StartTime and Timestamp < dateadd(DAY, 1, @StartTime)`
+
+Обязательно используйте правильную детализацию для временных рядов. Для почасовой метрики следует использовать: 
+
+`select timestamp, city, category, revenue from sampledata where Timestamp >= @StartTime and Timestamp < dateadd(hour, 1, @StartTime)`
+
+Обратите внимание, что эти запросы возвращают данные только в одной метке времени и содержат все комбинации измерений, которые будут использоваться помощником по метрикам. 
+
+:::image type="content" source="media/query-result.png" alt-text="Сообщение, если ресурс F0 уже существует" lightbox="media/query-result.png":::
+
 
 ### <a name="how-do-i-detect-spikes--dips-as-anomalies"></a>Разделы справки обнаруживать пики & DIP как аномалии?
 

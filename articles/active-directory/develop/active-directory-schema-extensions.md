@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 4450b0bcc06b048fd9ad42d2a7bf1c588816eae7
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 8861e641f5ee6a10576425a7702ba02da297a0bf
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115617"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631279"
 ---
 # <a name="using-directory-schema-extension-attributes-in-claims"></a>Использование атрибутов расширения схемы каталога в заявках
 
@@ -35,7 +35,7 @@ ms.locfileid: "88115617"
 Атрибуты расширения схемы каталога могут быть зарегистрированы и заполнены одним из двух способов:
 
 - Настроив AD Connect для создания и синхронизации данных в них из локальной службы AD. См. раздел [Azure AD Connect Синхронизация расширений каталогов](../hybrid/how-to-connect-sync-feature-directory-extensions.md).
-- Использование Microsoft Graph для регистрации, установки значений и чтения из атрибутов расширения схемы каталога [расширения схемы каталогов | API Graph основные понятия](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) и (или) PowerShell + [Управление атрибутами расширения с помощью командлетов PowerShell AzureAD](/powershell/azure/active-directory/using-extension-attributes-sample?view=azureadps-2.0).
+- С помощью Microsoft Graph для регистрации, установки значений и чтения из [расширений схемы](/graph/extensibility-overview). Также доступны [командлеты PowerShell](/powershell/azure/active-directory/using-extension-attributes-sample) .
 
 ### <a name="emitting-claims-with-data-from-directory-schema-extension-attributes-created-with-ad-connect"></a>Эмиссия утверждений с данными из атрибутов расширения схемы каталога, созданных с помощью AD Connect
 Атрибуты расширения схемы каталога, созданные и синхронизированные с помощью AD Connect, всегда связаны с ИДЕНТИФИКАТОРом приложения, используемым AD Connect. Их можно использовать в качестве источника для заявок, настроив их в качестве утверждений в конфигурации **корпоративных приложений** в пользовательском интерфейсе портала для приложений SAML, зарегистрированных с помощью коллекции, или с помощью политики сопоставления утверждений для **приложений, зарегистрированных**с помощью функции регистрации приложений.  После того как атрибут расширения каталога, созданный с помощью AD Connect, находится в каталоге, он будет отображаться в пользовательском интерфейсе настройки заявок единого входа SAML.
@@ -58,7 +58,7 @@ ms.locfileid: "88115617"
                 "Source": "User",
                 "ExtensionID": "extension_xxxxxxx_test",
                 "JWTClaimType": "http://schemas.contoso.com/identity/claims/exampleclaim"
-            }, 
+            },
         ]
     }
 }
@@ -72,5 +72,5 @@ ms.locfileid: "88115617"
 > Параметр ID в схеме утверждений, используемой для встроенных атрибутов каталога, — это "ExtensionID" для атрибутов расширения каталога.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте, как [добавить настраиваемые или дополнительные утверждения в токены SAML 2,0 и JSON Web tokens (JWT)](active-directory-optional-claims.md). 
+- Узнайте, как [добавить настраиваемые или дополнительные утверждения в токены SAML 2,0 и JSON Web tokens (JWT)](active-directory-optional-claims.md).
 - Узнайте, как [настроить утверждения, созданные в токенах для конкретного приложения](active-directory-claims-mapping.md).

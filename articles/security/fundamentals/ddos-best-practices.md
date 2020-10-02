@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2018
 ms.author: terrylan
-ms.openlocfilehash: 3b1a0d646c05be0de83837b33e77e34969c9254c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: c817608a9e015c69b252f69000d78437e918b8f8
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287811"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631517"
 ---
 # <a name="azure-ddos-protection---designing-resilient-solutions"></a>Azure от атак DDoS Protection. Проектирование отказоустойчивых решений
 
@@ -54,7 +54,7 @@ DDoS — это тип атаки, используемый в целях исч
 
 Целью глубинной защиты является управление риском с помощью различных защитных стратегий. Иерархическое распределение способов защиты в приложении уменьшает вероятность успешной атаки. Мы рекомендуем внедрять безопасные проекты для своих приложений через встроенные возможности платформы Azure.
 
-Например, риск атаки увеличивается с размером (*контактной зоной*) приложения. Уменьшить контактную зону можно с помощью списка разрешений для закрытия диапазона IP-адресов и прослушивающих портов, которые не нужны для подсистемы балансировки нагрузки ([Azure Load Balancer](/azure/load-balancer/load-balancer-get-started-internet-portal) и [шлюз приложений Azure](/azure/application-gateway/application-gateway-create-probe-portal)). [Группы безопасности сети (NSG)](/azure/virtual-network/security-overview) также позволяют снизить возможность атак.
+Например, риск атаки увеличивается с размером (*контактной зоной*) приложения. Вы можете уменьшить контактную зону, используя список утверждений, чтобы закрыть доступное пространство IP-адресов и порты прослушивания, которые не требуются для подсистем балансировки нагрузки ([Azure Load Balancer](/azure/load-balancer/load-balancer-get-started-internet-portal) и [шлюза приложений Azure](/azure/application-gateway/application-gateway-create-probe-portal)). [Группы безопасности сети (NSG)](/azure/virtual-network/security-overview) также позволяют снизить возможность атак.
 С помощью [тегов служб](/azure/virtual-network/security-overview#service-tags) и [групп безопасности приложений](/azure/virtual-network/security-overview#application-security-groups) можно упростить создание правил безопасности и настроить сетевую безопасность как гармоничное расширение структуры приложения.
 
 По возможности вы должны развертывать службы Azure в [виртуальной сети](/azure/virtual-network/virtual-networks-overview). Это позволит ресурсам службы взаимодействовать через частные IP-адреса. По умолчанию трафик служб Azure из виртуальной сети использует общедоступные IP-адреса в качестве исходных. При помощи [конечных точек служб](/azure/virtual-network/virtual-network-service-endpoints-overview) трафик службы в качестве исходных IP-адресов использует частные адреса виртуальной сети при обращении к службе Azure из виртуальной сети.
