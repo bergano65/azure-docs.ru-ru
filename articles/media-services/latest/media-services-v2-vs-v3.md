@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 08/31/2020
+ms.date: 10/01/2020
 ms.author: inhenkel
-ms.openlocfilehash: 061ae48de9a73270ed499282c9fc9a4f8f1dba90
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 515379a4207a582b441d132b1c28ff11bc83c714
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89298952"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651758"
 ---
 # <a name="media-services-v2-vs-v3"></a>Службы мультимедиа версии 2 и v3
 
@@ -30,18 +30,17 @@ ms.locfileid: "89298952"
 
 ## <a name="general-changes-from-v2"></a>Общие изменения из v2
 
-* Для ресурсов, созданных с помощью v3, службы мультимедиа поддерживают только [Шифрование хранилища на стороне сервера хранилища Azure](../../storage/common/storage-service-encryption.md).
-    * Вы можете использовать API версии 3 с ресурсами, созданными с помощью API версии 2, в которых есть [шифрование хранилища](../previous/media-services-rest-storage-encryption.md) (AES 256), предоставляемое Службами мультимедиа.
-    * Вы не можете создать ресурсы с устаревшим [шифрованием хранилища](../previous/media-services-rest-storage-encryption.md) AES 256 с помощью API версии 3.
-* Свойства [ресурса](assets-concept.md)в v3 отличаются от версии 2. см. [сведения о сопоставлении свойств](#map-v3-asset-properties-to-v2).
+* Сведения об изменениях, связанных с активом, см. в разделе об [изменениях в ресурсах](#asset-specific-changes) , приведенном ниже.
 * Пакеты SDK версии 3 теперь лишаются хранилища SDK, что обеспечивает больший контроль над используемой версией хранилища SDK и позволяет избежать проблем с управлением версиями. 
 * В API версии 3 вся скорость кодировки указана в битах за секунду. Это отличается от предустановок Media Encoder Standard версии 2. Например, скорость в версии 2 указывается как 128 (кбит/с), а в версии 3 она имела бы значение 128 000 (бит/с). 
 * Сущности AssetFiles, AccessPolicies и IngestManifests не существуют в версии 3.
-* Свойство IAsset.ParentAssets в версии 3 отсутствует.
 * ContentKeys — это больше не сущность, а свойство указателя потоковой передачи.
 * Служба "Сетка событий" заменяет NotificationEndpoints.
 * Следующие сущности были переименованы:
-    * Выходные данные задания заменяют задачу и теперь являются частью задания.
+
+   * v3 Жобаутпут заменяет задачу v2 и теперь является частью задания. Входные и выходные данные теперь находятся на уровне задания. Дополнительные сведения см. в разделе [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md). 
+
+       Чтобы получить историю хода выполнения задания, прослушайте события EventGrid. Дополнительные сведения см. в разделе [Обработка событий сетки событий](reacting-to-media-services-events.md).
     * Указатель потоковой передачи заменяет Locator.
     * Событие потоковой трансляции заменяет Channel.<br/>Выставление счетов за события потоковой трансляции основано на метриках динамического канала. Для получения дополнительных сведений ознакомьтесь с [выставлением счетов](live-event-states-billing.md) и [ценами](https://azure.microsoft.com/pricing/details/media-services/).
     * Выходные данные потоковой трансляции заменяют Program.
@@ -89,6 +88,12 @@ API версии 3 содержит следующие недочеты функ
 
 ## <a name="asset-specific-changes"></a>Изменения, относящиеся к ресурсу
 
+* Для ресурсов, созданных с помощью v3, службы мультимедиа поддерживают только [Шифрование хранилища на стороне сервера хранилища Azure](../../storage/common/storage-service-encryption.md).
+    * Вы можете использовать API версии 3 с ресурсами, созданными с помощью API версии 2, в которых есть [шифрование хранилища](../previous/media-services-rest-storage-encryption.md) (AES 256), предоставляемое Службами мультимедиа.
+    * Вы не можете создать ресурсы с устаревшим [шифрованием хранилища](../previous/media-services-rest-storage-encryption.md) AES 256 с помощью API версии 3.
+* Свойства [ресурса](assets-concept.md)в v3 отличаются от версии 2. см. [сведения о сопоставлении свойств](#map-v3-asset-properties-to-v2).
+* Свойство IAsset.ParentAssets в версии 3 отсутствует.
+
 ### <a name="map-v3-asset-properties-to-v2"></a>Свойства ресурса V3 на карте версии 2
 
 В следующей таблице показано, как свойства [ресурса](/rest/api/media/assets/createorupdate#asset)в v3 сопоставляются со свойствами ресурса в версии 2.
@@ -110,7 +115,7 @@ API версии 3 содержит следующие недочеты функ
 
 Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в Службах мультимедиа.
 
-|Вариант шифрования|Описание|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
+|Вариант шифрования|Description|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
 |---|---|---|---|
 |Шифрование хранилища Служб мультимедиа|Шифрование AES-256, ключ, управляемый службами мультимедиа.|Поддерживается<sup>(1)</sup>|Не поддерживается<sup>(2)</sup>|
 |[Шифрование службы хранилища для неактивных данных](../../storage/common/storage-service-encryption.md)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure, ключом, управляемым Azure или клиентом.|Поддерживается|Поддерживается|
@@ -124,7 +129,7 @@ API версии 3 содержит следующие недочеты функ
 
 Следующая таблица показывает разницу в коде между версией 2 и 3 в распространенных сценариях.
 
-|Сценарий|API версии 2|API версии 3|
+|Сценарий|API v2|API V3|
 |---|---|---|
 |Создайте ресурс и отправьте файл. |[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L113)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L169)|
 |Отправка задания|[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L146)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L298)<br/><br/>Показано, как сначала создать преобразование, а затем отправить задание.|

@@ -504,7 +504,7 @@
           href: 'https://speech.microsoft.com'
         - name: Создание приложения пользовательских команд с помощью Speech Studio
           href: quickstart-custom-speech-commands-create-new.md
-- name: Развертывание
+- name: Развернуть
   items:
     - name: Включение ведения журналов
       href: how-to-use-logging.md
@@ -581,8 +581,6 @@
     - name: Поддержка
       displayName: 'support,help,release notes,search,scoped search,azure support,github support,stack overflow,github issues,bugs,feedback,uservoice'
       href: support.md
-    - name: Регионы
-      href: regions.md
     - name: Документация по Swagger
       href: swagger-documentation.md
     - name: Национальные облака

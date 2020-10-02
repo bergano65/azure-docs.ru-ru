@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7764452d0e52a29204b276b4939c4a8a5c144ca4
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 4d335affa5a06bdb8e5c733c871654cf58947581
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89268661"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652964"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -48,6 +48,18 @@ ms.locfileid: "89268661"
 
 ## <a name="rest-api-version-history"></a><a name="rest_version_history"></a>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
+
+## <a name="september-2020"></a>Сентябрь 2020 г.
+
+Следующие свойства v2 больше не будут заполнены данными о ходе выполнения задания с предысторией:
+
+* [хисторикалевентс](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.historicalevents)
+* [перфмессаже](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.perfmessage)
+
+Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения можно найти в разделе
+
+* [Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-queues.md)
+* [Использование веб-перехватчиков Azure для мониторинга уведомлений о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-webhooks.md)
 
 ## <a name="february-2020"></a>Февраль 2020 г.
 

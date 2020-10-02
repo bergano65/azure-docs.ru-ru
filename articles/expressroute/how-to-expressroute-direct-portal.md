@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 09/29/2020
 ms.author: duau
-ms.openlocfilehash: c4021fbf87cc7cff8dde8e759423eb52c705cf97
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: dac9df23209fa93b8060ad80d58fd66f7a356ecd
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91568341"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651485"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
 
@@ -111,6 +111,6 @@ ms.locfileid: "91568341"
 
 1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании ExpressRoute Direct см. в [обзоре](expressroute-erdirect-about.md).

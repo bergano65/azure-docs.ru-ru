@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 711bcc06a65483921492aaad819b961fc09740d4
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 87314e38225d6e08f81ce6c3855f70a13db9c6bf
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067041"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653185"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -21,7 +21,7 @@ ms.locfileid: "88067041"
 
 - Размеры серий [NC](nc-series.md), серии [NCv2](ncv2-series.md), [NCv3](ncv3-series.md) и [NCT4_v3](nct4-v3-series.md) оптимизированы для ресурсоемких приложений и алгоритмов с большим объемом вычислительных ресурсов и сети. Примерами могут быть CUDA и OpenCL приложения и моделирование, AI и глубокое обучение. Серия NCT4v3 сосредоточена на рабочих нагрузках вывода, в которых используется процессор NVIDIA Tesla T4 GPU и AMD EPYC2 Рим. Серия NCv3 предназначена для высокопроизводительных вычислительных рабочих нагрузок на базе графического процессора NVIDIA Tesla V100. В серии NC используется процессор Intel Xeon 3-2690 v3 с частотой до ГГц v3 (Haswell), а виртуальные машины серии NCv2 и NCv3 используют процессор Intel Xeon-2690 V4 (Broadwell).
 
-- Размеры серий [ND](nd-series.md)и [NDv2](ndv2-series.md) ориентированы на сценарии обучения и вывода для глубокого обучения. Они используют процессор NVIDIA Tesla P40 GPU и Intel Xeon 2690 V4 (Broadwell). В серии NDv2 используется процессор Intel Xeon Platinum 8168 (Skylake).
+- Размеры серий [ND](nd-series.md)и [NDv2](ndv2-series.md) ориентированы на сценарии обучения и вывода для глубокого обучения. В серии ND используется GPU NVIDIA Tesla P40 и процессор Intel Xeon 2690 V4 (Broadwell). В серии NDv2 используется процессор NVIDIA Волта V100 и Intel Xeon Platinum 8168 (Skylake).
 
 - Размеры серий [NV](nv-series.md) и [NVv3](nvv3-series.md) оптимизированы и предназначены для удаленной визуализации, потоковой передачи, игр, кодирования и сценариев VDI с использованием таких платформ, как OpenGL и DirectX. Эти виртуальные машины работают на базе графического процессора NVIDIA Tesla M60.
 

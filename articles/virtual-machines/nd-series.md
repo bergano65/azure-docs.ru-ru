@@ -7,24 +7,22 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 8c229a72b706333a117645095bd96e44abbdf469
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 1dfd4185f077806d6b84376e786cfe5de1a8ffc3
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89418897"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653451"
 ---
 # <a name="nd-series"></a>Серия ND
 
 Виртуальные машины серии ND — это новое дополнение к семейству GPU, предназначенное для рабочих нагрузок ИИ и глубокого обучения. Они обеспечивают превосходную производительность для обучения и вывода. Экземпляры ND на базе процессоров [NVIDIA Tesla P40](https://images.nvidia.com/content/pdf/tesla/184427-Tesla-P40-Datasheet-NV-Final-Letter-Web.pdf) GPU и Intel Xeon 2690 V4 (Broadwell). Эти экземпляры обеспечивают высокую производительность для операций одиночной точности с числами с плавающей запятой, а также для рабочих нагрузок ИИ, в которых используются Microsoft Cognitive Toolkit, TensorFlow, Caffe и другие платформы. В серии ND значительно увеличен объем памяти GPU (24 ГБ), что позволяет работать с моделями нейронных сетей гораздо большего размера. Как и в серии NC, конфигурация серии ND предусматривает низкую задержку (менее секунды), высокую пропускную способность сети за счет использования RDMA и подключение InfiniBand. Это позволяет выполнять масштабные задания, связанные с обучением, в которых задействованы многочисленные GPU.
 
-Хранилище класса Premium: поддерживается
-
-Кэширование хранилища класса Premium: поддерживается
-
-Динамическая миграция: Не поддерживается
-
-Обновления с сохранением памяти: Не поддерживается
+[Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
+[Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
+[Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
+[Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 
 > [!IMPORTANT]
 > Для этой серии виртуальных машин значение квоты виртуальных ЦП (Core) для каждого региона в подписке изначально равно 0. [Запросите увеличение квоты виртуальных ЦП](../azure-portal/supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/).

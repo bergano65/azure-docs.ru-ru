@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 02/13/2019
 ms.author: duau
-ms.openlocfilehash: 8ac38c25821a9f636ac98903599ee7d3acfa5e17
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: ccbd9645ac7d331c06e528298b3a45a184c6cc49
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89395729"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652233"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>Создание и изменение пиринга для канала ExpressRoute
 
@@ -60,12 +60,12 @@ ms.locfileid: "89395729"
 
    **Состояние поставщика канала: не подготовлено**
 
-   [![Снимок экрана, показывающий страницу обзора для демонстрационного канала ExpressRoute с красной рамкой, выделяющая состояние поставщика "не подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-m.png)](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-m-lightbox.png#lightbox)
+   [![Снимок экрана, на котором показана страница обзора демонстрационного канала ExpressRoute с красной рамкой, в которой для параметра состояние поставщика установлено значение "не подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-m.png)](./media/expressroute-howto-routing-portal-resource-manager/not-provisioned-m-lightbox.png#lightbox)
 
 
    **Состояние поставщика канала: подготовлено**
 
-   [![Снимок экрана, на котором показана страница обзора демонстрационного канала ExpressRoute с красной рамкой, выделяющая состояние поставщика "подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/provisioned-m.png)](./media/expressroute-howto-routing-portal-resource-manager/provisioned-m-lightbox.png#lightbox)
+   [![Снимок экрана, на котором показана страница обзора демонстрационного канала ExpressRoute с красной рамкой, для которой задано состояние поставщика "подготовлено".](./media/expressroute-howto-routing-portal-resource-manager/provisioned-m.png)](./media/expressroute-howto-routing-portal-resource-manager/provisioned-m-lightbox.png#lightbox)
 
 2. Настройте пиринг Майкрософт для этого канала. Перед началом работы убедитесь, что у вас есть следующие сведения.
 
@@ -175,7 +175,7 @@ ms.locfileid: "89395729"
 ![Удаление частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/delete-p.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Следующий шаг: [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md)
 * Дополнительную информацию о рабочих процессах ExpressRoute см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: duau
-ms.openlocfilehash: b72126933c5454b8fabe19dda08ad5eb66edd1ba
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: f080f5011311101ed8f9faa2ee807c030a048409
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89392676"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653049"
 ---
 # <a name="performance-considerations-for-traffic-manager"></a>Рекомендации по безопасности для диспетчера трафика
 
@@ -50,7 +50,7 @@ ms.locfileid: "89392676"
 
     Одно из самых простых средств — это WebSitePulse. Введите URL-адрес, чтобы просмотреть время разрешения DNS, первый байт, последний байт и другую статистику производительности. Вы можете выбрать одно из трех тестовых расположений. В этом примере при первом запуске поиск DNS выполняется за 0,204 с.
 
-    ![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse.png)
+    ![Снимок экрана, на котором показано средство "Вебситепулсе" с выделенным результатом поиска "DNS".](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse.png)
 
     Так как результаты кэшируются, второй тестовый поиск DNS для той же конечной точки диспетчера трафика занимает 0,002 с.
 

@@ -19,6 +19,12 @@
     - name: "Создание группы управления с помощью Azure\_PowerShell"
       displayName: hierarchy
       href: ./create-management-group-powershell.md
+    - name: "Создание группы управления\_— .NET"
+      displayName: hierarchy
+      href: ./create-management-group-dotnet.md
+    - name: "Создание группы управления\_— JavaScript"
+      displayName: hierarchy
+      href: ./create-management-group-javascript.md
     - name: Создание группы управления с помощью REST
       displayName: hierarchy
       href: ./create-management-group-rest-api.md

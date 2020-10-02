@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 07/11/2019
 ms.author: duau
-ms.openlocfilehash: aef21ecbda26e47dc6ef8a915cbd4403c13430e4
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 731101b1a8236e20a9af07f1bbf5a7b70d53c0ac
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89395236"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653389"
 ---
 # <a name="optimize-expressroute-routing"></a>Оптимизация маршрутизации ExpressRoute
 При наличии нескольких каналов ExpressRoute к сети Майкрософт можно подключиться по нескольким маршрутам. Поэтому маршрутизация может быть неоптимальной, а это значит, что при передаче трафика из вашей сети в сеть Майкрософт и наоборот он будет проходить более длинный маршрут. А это, в свою очередь, может стать причиной возникновения длительной задержки, которая прямо влияет на производительность приложения и работу пользователей. В настоящей статье описана эта проблема и объясняется, как оптимизировать маршрутизацию с помощью стандартных технологий.
@@ -27,7 +27,7 @@ ms.locfileid: "89395236"
 
 Рассмотрим следующий пример сценария:
 
-![Проблема маршрутизации ExpressRoute 1. Неоптимальная маршрутизация от клиента к Майкрософт](./media/expressroute-optimize-routing/expressroute-localPreference.png)
+![Схема, на которой показана проблема с подключением ExpressRoute 1 — Неоптимальная Маршрутизация от клиента к корпорации Майкрософт](./media/expressroute-optimize-routing/expressroute-localPreference.png)
 
 В приведенном выше примере, чтобы предпочитать пути ExpressRoute, настройте локальную настройку следующим образом. 
 

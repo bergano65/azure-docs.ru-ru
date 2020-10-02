@@ -4,21 +4,21 @@ description: В этой статье показано, как создать р
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 691279ea4fbadf5a905de4bab0304a1ad526146d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 90556e0843cda94dc79330321d027f8d28eb7d20
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91347648"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652199"
 ---
 # <a name="create-an-azure-event-hubs-schema-registry-preview"></a>Создание реестра схемы концентраторов событий Azure (Предварительная версия)
 В этой статье показано, как создать группу схем с схемами в реестре схемы, размещенном в концентраторах событий Azure. Общие сведения о компоненте реестра схемы в концентраторах событий Azure см. в разделе [Реестр Azure Schema в концентраторах событий](schema-registry-overview.md).
 
 > [!NOTE]
-> - Функция **реестра схемы** сейчас доступна в **предварительной версии** и доступна только на **стандартных** и **выделенных** уровнях, а не на уровне **Basic** .
-> - Сейчас эта предварительная версия доступна только в регионе " **Западная Центральная часть США** ". 
+> - Функция **реестра схемы** сейчас доступна в **предварительной версии**и не рекомендуется для рабочих нагрузок.
+> - Эта функция доступна только в **стандартных** и **выделенных** уровнях, а не на уровне **Basic** .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 [Создайте пространство имен концентраторов событий](event-hubs-create.md#create-an-event-hubs-namespace). Можно также использовать существующее пространство имен. 
 
 ## <a name="create-a-schema-group"></a>Создание группы схем
@@ -33,10 +33,10 @@ ms.locfileid: "91347648"
     1. Затем выберите **создать** , чтобы создать группу схем. 
 1. Выберите имя **группы схем** в списке групп схем.
 
-    :::image type="content" source="./media/create-schema-registry/select-schema-group.png" alt-text="Выберите группу схем в списке.":::    
+    :::image type="content" source="./media/create-schema-registry/select-schema-group.png" alt-text="Страница реестра схемы":::    
 1. Отобразится страница **Группа схемы** для группы.
 
-    :::image type="content" source="./media/create-schema-registry/schema-group-page.png" alt-text="Страница «Группа схем»":::
+    :::image type="content" source="./media/create-schema-registry/schema-group-page.png" alt-text="Страница реестра схемы":::
     
 
 ## <a name="add-a-schema-to-the-schema-group"></a>Добавление схемы в группу схем
@@ -67,29 +67,29 @@ ms.locfileid: "91347648"
     1. Выберите **Создать**. 
 1. Выберите **схему** из списка схем. 
 
-    :::image type="content" source="./media/create-schema-registry/select-schema.png" alt-text="Выбор схемы":::
+    :::image type="content" source="./media/create-schema-registry/select-schema.png" alt-text="Страница реестра схемы":::
 1. Отобразится страница « **Обзор схемы** » для схемы. 
 
-    :::image type="content" source="./media/create-schema-registry/schema-overview-page.png" alt-text="Страница Обзор схемы":::    
+    :::image type="content" source="./media/create-schema-registry/schema-overview-page.png" alt-text="Страница реестра схемы":::    
 1. Если имеется несколько версий схемы, они отображаются в раскрывающемся списке **версии** . Выберите версию для переключения на эту схему версии. 
 
 ## <a name="create-a-new-version-of-schema"></a>Создать новую версию схемы
 
 1. Обновите схему в текстовом поле и выберите **проверить**. В следующем примере в схему добавлено новое поле `id` . 
 
-    :::image type="content" source="./media/create-schema-registry/update-schema.png" alt-text="Обновить схему":::    
+    :::image type="content" source="./media/create-schema-registry/update-schema.png" alt-text="Страница реестра схемы":::    
     
 1. Проверьте состояние проверки и изменения и нажмите кнопку **сохранить**. 
 
-    :::image type="content" source="./media/create-schema-registry/compare-save-schema.png" alt-text="Проверка состояния проверки, изменений и сохранение":::     
+    :::image type="content" source="./media/create-schema-registry/compare-save-schema.png" alt-text="Страница реестра схемы":::     
 1. Вы увидите, что `2` выбрано для **версии** на странице **Обзор схемы** . 
 
-    :::image type="content" source="./media/create-schema-registry/new-version.png" alt-text="Новая версия схемы":::    
+    :::image type="content" source="./media/create-schema-registry/new-version.png" alt-text="Страница реестра схемы":::    
 1. Выберите, `1` чтобы просмотреть схему версии 1. 
 
-    :::image type="content" source="./media/create-schema-registry/select-version.png" alt-text="Выбор версии":::    
+    :::image type="content" source="./media/create-schema-registry/select-version.png" alt-text="Страница реестра схемы":::    
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о реестре схем см. [в разделе реестр Azure Schema в концентраторах событий](schema-registry-overview.md).
 

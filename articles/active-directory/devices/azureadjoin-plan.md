@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8a70097cbae3bc5ebf48c0358faa32aea0a6be5
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: de383bfa9f943cd5644d35ed83db8a80ec8017bd
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91370183"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653219"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Инструкции. Планирование реализации присоединения к Azure AD
 
@@ -24,7 +24,7 @@ ms.locfileid: "91370183"
 
 В этой статье содержатся сведения, необходимые для планирования реализации присоединения к Azure AD.
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Предполагается, что вы ознакомлены с [общими сведениями об управлении устройствами в Azure Active Directory](./overview.md).
 
@@ -187,6 +187,7 @@ ms.locfileid: "91370183"
 Начиная с обновления Windows 10 2004, пользователи также могут использовать удаленный рабочий стол из зарегистрированного устройства Windows 10 Azure AD на устройстве, присоединенном к Azure AD. 
 
 ## <a name="understand-your-provisioning-options"></a>Изучение вариантов подготовки
+**Примечание**. устройства, присоединенные к Azure AD, не могут быть развернуты с помощью средства подготовки системы (Sysprep) или аналогичных средств работы с образами.
 
 Вы можете подготовить к работе присоединение к Azure AD, используя описанные ниже подходы.
 
@@ -293,7 +294,7 @@ MAM не применяется для присоединения к Azure AD.
 
 Эту реализацию можно использовать для использования [управляемых устройств для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Присоединение нового устройства Windows 10 к Azure AD во время первого запуска](azuread-joined-devices-frx.md) 

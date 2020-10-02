@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: jushiman
-ms.openlocfilehash: 2dea6ea292b4ed69d89a6e5e03c58f437446561d
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: fe63f9d5a9d215a31a56d7214170d86f46a4e4a2
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88654792"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653661"
 ---
 # <a name="m-series"></a>Серия M
 
@@ -20,17 +20,14 @@ ms.locfileid: "88654792"
 
 Виртуальная машина серии M — &reg; технология Intel Hyper-Threading.
 
-ACU: 160–180
-
-Хранилище класса "Премиум":  Поддерживается
-
-Кэширование в хранилище класса Premium:  Поддерживается
-
-Динамическая миграция: Не поддерживается
-
-Обновления с сохранением памяти: Не поддерживается
-
-Ускоритель записи: [поддерживается](./how-to-enable-write-accelerator.md)
+[ACU](acu.md): 160-180<br>
+[Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
+[Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
+[Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
+[Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+[Ускоритель записи](./how-to-enable-write-accelerator.md): поддерживается<br>
+<br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность кэшированного и временного хранилища: операций ввода-вывода в секунду (размер кэша в гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное число сетевых адаптеров|Ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|---|

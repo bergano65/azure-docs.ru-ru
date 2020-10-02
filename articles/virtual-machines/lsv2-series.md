@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 78d707c0b5afd745ae805c9513243f3791d47c60
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: dd755e1bc220d61aa540a0e7da9e3f174bde9d76
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88654758"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652930"
 ---
 # <a name="lsv2-series"></a>Серия Lsv2
 
@@ -25,17 +25,14 @@ ms.locfileid: "88654758"
 >
 > Дополнительные сведения см. в статье Оптимизация производительности на виртуальных машинах серии Lsv2 для [Windows](../virtual-machines/windows/storage-performance.md) или [Linux](../virtual-machines/linux/storage-performance.md).  
 
-ACU: 150-175
-
-Разбивка на пакеты: поддерживается
-
-Хранилище класса Premium: поддерживается
-
-Кэширование хранилища класса Premium: не поддерживается
-
-Динамическая миграция: Не поддерживается
-
-Обновления с сохранением памяти: Не поддерживается
+[ACU](acu.md): 150-175<br>
+[Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
+[Кэширование хранилища класса Premium](premium-storage-performance.md): не поддерживается<br>
+[Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
+[Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+Разбивка на пакеты: поддерживается<br>
+<br>
 
 | Размер | vCPU | Память, ГиБ | Временный диск <sup>1</sup> (ГиБ) | Диски NVMe <sup>2</sup> | Пропускная способность диска NVMe<sup>3</sup> (операций чтения в секунду/Мбит/с) | Пропускная способность диска с некэшированными данными (операций ввода-вывода в секунду)<sup>4</sup> | Максимальная пропускная способность некэшированного диска данных (операций ввода-вывода в секунду/Мбит/с)<sup>5</sup>| Максимальное число дисков данных | Максимальное число сетевых адаптеров | Ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|---|---|---|

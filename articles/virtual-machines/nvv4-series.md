@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 9b841b6422a4314b43a594cb0b22040f884228eb
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 21d44044250bacc95c4dbb0dde147e87f2fed6a5
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543900"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652753"
 ---
 # <a name="nvv4-series"></a>Серия NVv4 
 
@@ -21,15 +21,13 @@ ms.locfileid: "87543900"
 
 <br>
 
-ACU: 230-260
-
-Хранилище класса "Премиум":  Поддерживается
-
-Кэширование в хранилище класса Premium:  Поддерживается
-
-Динамическая миграция: Не поддерживается
-
-Обновления с сохранением памяти: Не поддерживается
+[ACU](acu.md): 230-260<br>
+[Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
+[Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
+[Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
+[Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
+<br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальное количество сетевых адаптеров/ожидаемая пропускная способность сети (Мбит/с) |
 | --- | --- | --- | --- | --- | --- | --- | --- |

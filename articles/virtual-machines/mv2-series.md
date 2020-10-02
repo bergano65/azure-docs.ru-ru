@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: jushiman
-ms.openlocfilehash: c91e9832e4b415a59c12b71964a0da580e9fda21
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 5bf6a17c1a4aa1c7f212045af0d1b750ddb2a906
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88651137"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653559"
 ---
 # <a name="mv2-series"></a>Серия Mv2
 
@@ -20,15 +20,13 @@ ms.locfileid: "88651137"
 
 Виртуальная машина серии Mv2 Intel® технология Hyper-Threading
 
-Хранилище класса Premium: поддерживается
-
-Кэширование хранилища класса Premium: поддерживается
-
-Динамическая миграция: Не поддерживается
-
-Обновления с сохранением памяти: Не поддерживается
-
-Ускоритель записи: [поддерживается](./how-to-enable-write-accelerator.md)
+[Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
+[Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
+[Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
+[Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+[Ускоритель записи](./how-to-enable-write-accelerator.md): поддерживается<br>
+<br>
 
 |Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода / Мбит/с (размер кэша в Гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное число сетевых адаптеров | Ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|---|

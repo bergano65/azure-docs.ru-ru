@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/31/2020
+ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 0fb50e01e86c00ac863352118eb36f7470251435
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: e9491757852b42faef40c107540e0ce3da3c7f99
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89489159"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91650907"
 ---
 # <a name="querying-data-from-azure-time-series-insights-gen2"></a>Запрос данных из Gen2 службы "аналитика временных рядов Azure"
 
@@ -70,7 +70,7 @@ Gen2 "аналитика временных рядов Azure" используе
 
   Метки времени, возвращаемые в наборе ответов, имеют левые границы интервала, а не события выборки из интервала.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о различных переменных, которые могут быть определены в [модели временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-tsm).
 * Узнайте больше о том, как запрашивать данные из обозревателя службы " [аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".

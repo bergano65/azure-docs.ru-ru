@@ -1,5 +1,5 @@
 ---
-title: Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)
+title: Перенос подписки Azure в другой каталог Azure AD
 description: Узнайте, как передавать подписку Azure и известные связанные ресурсы в другой каталог Azure Active Directory (Azure AD).
 services: active-directory
 author: rolyon
@@ -10,19 +10,14 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 08/31/2020
 ms.author: rolyon
-ms.openlocfilehash: ab004c11b46428c5fad28177b0d94edc04b95654
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 6d0c0333186655d4f105337021164814453ab47a
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89400550"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652390"
 ---
-# <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory-preview"></a>Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)
-
-> [!IMPORTANT]
-> Выполните следующие действия, чтобы переместить подписку на другой каталог Azure AD в настоящее время в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Перенос подписки Azure в другой каталог Azure AD
 
 Организации могут иметь несколько подписок Azure. Каждая подписка связана с определенным каталогом Azure Active Directory (Azure AD). Чтобы упростить управление, может потребоваться переместить подписку в другой каталог Azure AD. При передаче подписки в другой каталог Azure AD некоторые ресурсы не передаются в целевой каталог. Например, все назначения ролей и пользовательские роли в управлении доступом на основе ролей в Azure (Azure RBAC) **окончательно** удаляются из исходного каталога и не передаются в целевой каталог.
 
@@ -31,7 +26,7 @@ ms.locfileid: "89400550"
 > [!NOTE]
 > Для подписок поставщиков облачных служб Azure (CSP) изменение каталога Azure AD для подписки не поддерживается.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Передача подписки Azure в другой каталог Azure AD — это сложный процесс, который должен тщательно планироваться и выполняться. Многие службы Azure используют субъекты безопасности (удостоверения) для нормальной работы и даже управления другими ресурсами Azure. Эта статья посвящена большинству служб Azure, которые сильно зависят от субъектов безопасности, но не являются исчерпывающими.
 
@@ -87,11 +82,11 @@ ms.locfileid: "89400550"
 > [!WARNING]
 > Если для ресурса, например учетной записи хранения или базы данных SQL, используется шифрование неактивных ресурсов, которое зависит от хранилища ключей, которое **не** находится в той же подписке, которое передается, это может привести к неустранимому сценарию. В этом случае следует предпринять действия по использованию другого хранилища ключей или временно отключить ключи, управляемые клиентом, чтобы избежать такого неисправимого сценария.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этих действий потребуется:
 
-- [Bash в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure CLI](https://docs.microsoft.com/cli/azure)
+- [Bash в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure CLI](/cli/azure)
 - Администратор учетной записи подписки, которую вы хотите переместить в исходном каталоге
 - Роль [владельца](built-in-roles.md#owner) в целевом каталоге
 
@@ -101,13 +96,13 @@ ms.locfileid: "89400550"
 
 1. Войдите в Azure с правами администратора.
 
-1. Получите список подписок с помощью команды [AZ Account List](/cli/azure/account#az-account-list) .
+1. Получите список подписок с помощью команды [AZ Account List](/cli/azure/account#az_account_list) .
 
     ```azurecli
     az account list --output table
     ```
 
-1. Используйте команду [AZ Account Set](https://docs.microsoft.com/cli/azure/account#az-account-set) , чтобы задать активную подписку, которую требуется переместить.
+1. Используйте команду [AZ Account Set](/cli/azure/account#az_account_set) , чтобы задать активную подписку, которую требуется переместить.
 
     ```azurecli
     az account set --subscription "Marketing"
@@ -115,9 +110,9 @@ ms.locfileid: "89400550"
 
 ### <a name="install-the-resource-graph-extension"></a>Установка расширения Resource-Graph
 
- Расширение Resource-Graph позволяет использовать команду [AZ Graph](https://docs.microsoft.com/cli/azure/ext/resource-graph/graph) для запроса ресурсов, управляемых с помощью Azure Resource Manager. Эта команда будет использоваться в последующих шагах.
+ Расширение Resource-Graph позволяет использовать команду [AZ Graph](/cli/azure/ext/resource-graph/graph) для запроса ресурсов, управляемых с помощью Azure Resource Manager. Эта команда будет использоваться в последующих шагах.
 
-1. Используйте команду [AZ Extension List](https://docs.microsoft.com/cli/azure/extension#az-extension-list) , чтобы узнать, установлено ли расширение *Resource-Graph* .
+1. Используйте команду [AZ Extension List](/cli/azure/extension#az_extension_list) , чтобы узнать, установлено ли расширение *Resource-Graph* .
 
     ```azurecli
     az extension list
@@ -131,7 +126,7 @@ ms.locfileid: "89400550"
 
 ### <a name="save-all-role-assignments"></a>Сохранить все назначения ролей
 
-1. Используйте команду [AZ Role назначений](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-list) , чтобы вывести список всех назначений ролей (включая наследуемые назначения ролей).
+1. Используйте команду [AZ Role назначений](/cli/azure/role/assignment#az_role_assignment_list) , чтобы вывести список всех назначений ролей (включая наследуемые назначения ролей).
 
     Чтобы упростить просмотр списка, можно экспортировать выходные данные в виде JSON, TSV или таблицы. Дополнительные сведения см. в разделе [список назначений ролей с помощью Azure RBAC и Azure CLI](role-assignments-list-cli.md).
 
@@ -149,7 +144,7 @@ ms.locfileid: "89400550"
 
 ### <a name="save-custom-roles"></a>Сохранение пользовательских ролей
 
-1. Список пользовательских ролей можно получить с помощью [списка AZ Role Definition](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-list) . Дополнительные сведения см. в [статье Создание или обновление пользовательских ролей Azure с помощью Azure CLI](custom-roles-cli.md).
+1. Список пользовательских ролей можно получить с помощью [списка AZ Role Definition](/cli/azure/role/definition#az_role_definition_list) . Дополнительные сведения см. в [статье Создание или обновление пользовательских ролей Azure с помощью Azure CLI](custom-roles-cli.md).
 
     ```azurecli
     az role definition list --custom-role-only true --output json --query '[].{roleName:roleName, roleType:roleType}'
@@ -193,7 +188,7 @@ ms.locfileid: "89400550"
 
 1. Просмотрите [список служб Azure, поддерживающих управляемые удостоверения](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) , чтобы узнать, где можно использовать управляемые удостоверения.
 
-1. Используйте команду [AZ AD SP List](/cli/azure/identity?view=azure-cli-latest#az-identity-list) , чтобы получить список назначенных системой и назначенных пользователю управляемых удостоверений.
+1. Используйте команду [AZ AD SP List](/cli/azure/ad/sp#az_ad_sp_list) , чтобы получить список назначенных системой и назначенных пользователю управляемых удостоверений.
 
     ```azurecli
     az ad sp list --all --filter "servicePrincipalType eq 'ManagedIdentity'"
@@ -207,7 +202,7 @@ ms.locfileid: "89400550"
     | `alternativeNames` свойство не включает `isExplicit` | Назначено системой |
     | `alternativeNames` включает свойство `isExplicit=True` | Назначенные пользователем |
 
-    Можно также использовать команду [AZ Identity List](https://docs.microsoft.com/cli/azure/identity#az-identity-list) , чтобы просто вывести список назначенных пользователю управляемых удостоверений. Дополнительные сведения см. [в разделе Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md).
+    Можно также использовать команду [AZ Identity List](/cli/azure/identity#az_identity_list) , чтобы просто вывести список назначенных пользователю управляемых удостоверений. Дополнительные сведения см. [в разделе Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md).
 
     ```azurecli
     az identity list
@@ -224,7 +219,7 @@ ms.locfileid: "89400550"
 > [!WARNING]
 > Если для ресурса, например учетной записи хранения или базы данных SQL, используется шифрование неактивных ресурсов, которое зависит от хранилища ключей, которое **не** находится в той же подписке, которое передается, это может привести к неустранимому сценарию. В этом случае следует предпринять действия по использованию другого хранилища ключей или временно отключить ключи, управляемые клиентом, чтобы избежать такого неисправимого сценария.
 
-- Если у вас есть хранилище ключей, используйте команду [AZ keyvault для вывода](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-show) списка политик доступа. Дополнительные сведения см. [в разделе Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-cli.md).
+- Если у вас есть хранилище ключей, используйте команду [AZ keyvault для вывода](/cli/azure/keyvault#az_keyvault_show) списка политик доступа. Дополнительные сведения см. [в разделе Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-cli.md).
 
     ```azurecli
     az keyvault show --name MyKeyVault
@@ -232,7 +227,7 @@ ms.locfileid: "89400550"
 
 ### <a name="list-azure-sql-databases-with-azure-ad-authentication"></a>Вывод списка баз данных SQL Azure с помощью аутентификации Azure AD
 
-- Используйте команду [AZ SQL Server AD-Admin List](https://docs.microsoft.com/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-list) и расширение [AZ Graph](https://docs.microsoft.com/cli/azure/ext/resource-graph/graph) , чтобы узнать, используете ли вы базы данных SQL Azure с включенной интеграцией аутентификации Azure AD. Дополнительные сведения см. в разделе [Настройка проверки подлинности Azure Active Directory и управление ею с помощью SQL](../azure-sql/database/authentication-aad-configure.md).
+- Используйте команду [AZ SQL Server AD-Admin List](/cli/azure/sql/server/ad-admin#az_sql_server_ad_admin_list) и расширение [AZ Graph](/cli/azure/ext/resource-graph/graph) , чтобы узнать, используете ли вы базы данных SQL Azure с включенной интеграцией аутентификации Azure AD. Дополнительные сведения см. в разделе [Настройка проверки подлинности Azure Active Directory и управление ею с помощью SQL](../azure-sql/database/authentication-aad-configure.md).
 
     ```azurecli
     az sql server ad-admin list --ids $(az graph query -q 'resources | where type == "microsoft.sql/servers" | project id' -o tsv | cut -f1)
@@ -248,13 +243,13 @@ ms.locfileid: "89400550"
 
 ### <a name="list-other-known-resources"></a>Список других известных ресурсов
 
-1. Чтобы получить идентификатор подписки, используйте команду [AZ Account показывать](https://docs.microsoft.com/cli/azure/account#az-account-show) .
+1. Чтобы получить идентификатор подписки, используйте команду [AZ Account показывать](/cli/azure/account#az_account_show) .
 
     ```azurecli
     subscriptionId=$(az account show --query id | sed -e 's/^"//' -e 's/"$//')
     ```
 
-1. Используйте расширение " [AZ Graph](https://docs.microsoft.com/cli/azure/ext/resource-graph/graph) ", чтобы получить список других ресурсов Azure с известными зависимостями каталога Azure AD.
+1. Используйте расширение " [AZ Graph](/cli/azure/ext/resource-graph/graph) ", чтобы получить список других ресурсов Azure с известными зависимостями каталога Azure AD.
 
     ```azurecli
     az graph query -q \
@@ -286,13 +281,13 @@ ms.locfileid: "89400550"
 
     Только пользователь в новой учетной записи, который принял запрос на перемещение, будет иметь доступ к управлению ресурсами.
 
-1. Получите список подписок с помощью команды [AZ Account List](https://docs.microsoft.com/cli/azure/account#az-account-list) .
+1. Получите список подписок с помощью команды [AZ Account List](/cli/azure/account#az_account_list) .
 
     ```azurecli
     az account list --output table
     ```
 
-1. Используйте команду [AZ Account Set](https://docs.microsoft.com/cli/azure/account#az-account-set) , чтобы задать активную подписку, которую вы хотите использовать.
+1. Используйте команду [AZ Account Set](/cli/azure/account#az_account_set) , чтобы задать активную подписку, которую вы хотите использовать.
 
     ```azurecli
     az account set --subscription "Contoso"
@@ -300,7 +295,7 @@ ms.locfileid: "89400550"
 
 ### <a name="create-custom-roles"></a>Создание настраиваемых ролей
         
-- Используйте команду [AZ Role Definition Create](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-create) , чтобы создать каждую настраиваемую роль из файлов, созданных ранее. Дополнительные сведения см. в [статье Создание или обновление пользовательских ролей Azure с помощью Azure CLI](custom-roles-cli.md).
+- Используйте команду [AZ Role Definition Create](/cli/azure/role/definition#az_role_definition_create) , чтобы создать каждую настраиваемую роль из файлов, созданных ранее. Дополнительные сведения см. в [статье Создание или обновление пользовательских ролей Azure с помощью Azure CLI](custom-roles-cli.md).
 
     ```azurecli
     az role definition create --role-definition <role_definition>
@@ -308,7 +303,7 @@ ms.locfileid: "89400550"
 
 ### <a name="create-role-assignments"></a>Создание назначений ролей
 
-- Используйте команду [AZ Role назначение Create](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) , чтобы создать назначения ролей для пользователей, групп и субъектов-служб. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI](role-assignments-cli.md).
+- Используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) , чтобы создать назначения ролей для пользователей, групп и субъектов-служб. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI](role-assignments-cli.md).
 
     ```azurecli
     az role assignment create --role <role_name_or_id> --assignee <assignee> --resource-group <resource_group>
@@ -322,9 +317,9 @@ ms.locfileid: "89400550"
     | --- | --- |
     | Виртуальные машины | [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#system-assigned-managed-identity) |
     | Масштабируемые наборы виртуальных машин | [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#system-assigned-managed-identity) |
-    | Другие службы | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) |
+    | другие службы. | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) |
 
-1. Чтобы создать назначения ролей для управляемых удостоверений, назначенных системой, используйте команду [AZ Role назначение Create](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) . Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
+1. Чтобы создать назначения ролей для управляемых удостоверений, назначенных системой, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) . Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
 
     ```azurecli
     az role assignment create --assignee <objectid> --role '<role_name_or_id>' --scope <scope>
@@ -338,9 +333,9 @@ ms.locfileid: "89400550"
     | --- | --- |
     | Виртуальные машины | [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) |
     | Масштабируемые наборы виртуальных машин | [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#user-assigned-managed-identity) |
-    | Другие службы | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)<br/>[Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) |
+    | другие службы. | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)<br/>[Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) |
 
-1. Используйте команду [AZ Role Identity Create](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) , чтобы создать назначения ролей для назначаемых пользователем управляемых удостоверений. Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
+1. Используйте команду [AZ Role Identity Create](/cli/azure/role/assignment#az_role_assignment_create) , чтобы создать назначения ролей для назначаемых пользователем управляемых удостоверений. Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
 
     ```azurecli
     az role assignment create --assignee <objectid> --role '<role_name_or_id>' --scope <scope>
@@ -382,7 +377,7 @@ ms.locfileid: "89400550"
 
 1. Для ресурсов, использующих сертификаты, обновите сертификат.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Передача прав владения на выставление счетов для подписки Azure другой учетной записи](../cost-management-billing/manage/billing-subscription-transfer.md)
 - [Перенос подписок Azure между подписчиками и CSP](../cost-management-billing/manage/transfer-subscriptions-subscribers-csp.md)

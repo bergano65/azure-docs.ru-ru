@@ -7,24 +7,22 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: de118f7a4a29d306fe351199795a5a8cacb38fcd
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ab08d23fe7448e50db42ea126e8158ad284b3320
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289751"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653474"
 ---
 # <a name="ncv3-series"></a>Серия NCv3
 
 Виртуальные машины серии NCv3 созданы на базе GPU Tesla V100 от NVIDIA. Эти GPU могут увеличить производительность вычислений в 1,5 раза по сравнению с серией NCv2. Клиенты могут воспользоваться этими обновленными GPU для традиционных рабочих нагрузок HPC. Вы сможете реализовать такие сценарии, как пластовое моделирование, секвенирование ДНК, анализ белков, моделирование методом Монте-Карло и другие. Конфигурация NC24rs версии 3 обеспечивает низкую задержку и высокоскоростной сетевой интерфейс. Она оптимизирована для выполнения тесно взаимосвязанных параллельных вычислений Помимо графических процессоров, виртуальные машины серии NCv3 также работают на базе процессоров Intel Xeon Broadwell-2690 v4.
 
-Хранилище класса "Премиум":  Поддерживается
-
-Кэширование в хранилище класса Premium:  Поддерживается
-
-Динамическая миграция: Не поддерживается
-
-Обновления с сохранением памяти: Не поддерживается
+[Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
+[Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
+[Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
+[Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 
 > [!IMPORTANT]
 > Для этой серии виртуальных машин квота виртуальных ЦП (Core) в вашей подписке изначально равна 0 в каждом регионе. [Запросите увеличение квоты виртуальных ЦП](../azure-portal/supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/).

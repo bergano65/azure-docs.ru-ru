@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: eebdf053cc3eea1dfc91476bff3817891bec42a3
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 4a22602dd9638b981cfe3d8bae9b5cdaacbf90dc
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88959065"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652046"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -264,13 +264,13 @@ ms.locfileid: "88959065"
 
 1. Введите *queue* в качестве имени очереди, а затем нажмите кнопку **OK**.
 
-   ![Создание очереди](./media/webjobs-sdk-get-started/create-queue.png)
+   ![Снимок экрана, на котором показано, где создается очередь, и назовите ее "Queue". ](./media/webjobs-sdk-get-started/create-queue.png)
 
 1. Щелкните правой кнопкой мыши узел новой очереди, а затем выберите команду **Просмотреть очередь**.
 
 1. Выберите значок **Добавить сообщение**.
 
-   ![Создание очереди](./media/webjobs-sdk-get-started/create-queue-message.png)
+   ![Снимок экрана, на котором выделен значок добавления сообщения.](./media/webjobs-sdk-get-started/create-queue-message.png)
 
 1. В диалоговом окне **Добавить сообщение** введите *Здравствуй, мир!* в поле **Текст сообщения**, а затем нажмите кнопку **OK**. В очереди есть новое сообщение.
 

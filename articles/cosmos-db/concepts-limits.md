@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: e4d2da56146a14b295e08a1093fe62a50f87ecfa
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 2d14207bada52c937875bc62bdbde63d788c1aca
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91567559"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653593"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты для службы Azure Cosmos DB
 
@@ -216,7 +216,7 @@ Cosmos DB поддерживает протокол проводной связ
 | Максимальное время выполнения для операций MongoDB| 30 с |
 | Интервал ожидания неактивных подключений для закрытия соединений на стороне сервера * | 30 минут |
 
-\* Рекомендуется задать в параметрах драйвера клиентского приложения интервал ожидания неактивных подключений 2–3 минуты, так как [по умолчанию интервал ожидания для балансировщика нагрузки Azure составляет 4 минуты](../load-balancer/load-balancer-tcp-idle-timeout.md#tcp-idle-timeout).  Это гарантирует, что неактивные подключения не будут закрыты промежуточной подсистемой балансировки нагрузки между клиентским компьютером и Azure Cosmos DB.
+\* Рекомендуется задать в параметрах драйвера клиентского приложения интервал ожидания неактивных подключений 2–3 минуты, так как [по умолчанию интервал ожидания для балансировщика нагрузки Azure составляет 4 минуты](../load-balancer/load-balancer-tcp-idle-timeout.md).  Это гарантирует, что неактивные подключения не будут закрыты промежуточной подсистемой балансировки нагрузки между клиентским компьютером и Azure Cosmos DB.
 
 ## <a name="try-cosmos-db-free-limits"></a>Ограничения для версии Try Cosmos DB Free
 

@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 02/11/2020
 ms.topic: how-to
 manager: philmea
-ms.openlocfilehash: e7efda8efa27044168386e3ebbc557bf7fb74e8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0802169898cad51e9a5d208e546a004f7ea7b3c0
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80157931"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653338"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure
 
@@ -56,17 +56,17 @@ ms.locfileid: "80157931"
 
 Для перехода к приложению выберите **IOT Central URL-адрес приложения**:
 
-![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image3.png)
+![Снимок экрана, на котором показана страница "Обзор" с выделенным URL-адресом приложения IoT Central.](media/howto-manage-iot-central-from-portal/image3.png)
 
 Чтобы переместить приложение в другую группу ресурсов, выберите **изменить** рядом с группой ресурсов. На странице **Перемещение ресурсов** выберите группу ресурсов, в которую вы хотите переместить это приложение:
 
-![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image4a.png)
+![Снимок экрана, на котором показана страница "Обзор" с выделенным пунктом "Группа ресурсов (изменение)".](media/howto-manage-iot-central-from-portal/image4a.png)
 
-Чтобы переместить приложение в другую подписку, выберите **изменить** рядом с подпиской. На странице **Перемещение ресурсов** выберите подписку, в которую вы хотите переместить это приложение:
+Чтобы переместить приложение в другую подписку, выберите  **изменить** рядом с подпиской. На странице **Перемещение ресурсов** выберите подписку, в которую вы хотите переместить это приложение:
 
 ![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image5a.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали, как управлять приложениями Azure IoT Central на портале Azure, а значит, вы готовы к следующему шагу:
 

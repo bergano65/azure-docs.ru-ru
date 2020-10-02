@@ -1,59 +1,59 @@
 ---
-title: Защитник Azure для Key Vault — преимущества и возможности
-description: Узнайте о преимуществах и возможностях защитника Azure для Key Vault.
+title: Преимущества и функции Azure Defender для Key Vault
+description: Сведения о преимуществах и функциях Azure Defender для Key Vault.
 author: memildin
 ms.author: memildin
 ms.date: 9/22/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 78a522922f8580003e2d2ff588cbf10dbf5fff9d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: MT
+ms.openlocfilehash: 6649a8d470a75922aac423bf0b411163bdd79f71
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91301777"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449089"
 ---
-# <a name="introduction-to-azure-defender-for-key-vault"></a>Общие сведения о защитнике Azure для Key Vault
+# <a name="introduction-to-azure-defender-for-key-vault"></a>Общие сведения об Azure Defender для Key Vault
 
 Azure Key Vault — это облачная служба, которая обеспечивает защиту ключей шифрования и секретов (например, сертификатов, строк подключения и паролей). 
 
-Включите **защитник Azure для Key Vault** для Azure — собственная защита от угроз для Azure Key Vault, предоставляя дополнительный уровень анализа безопасности. 
+Включите **Azure Defender для Key Vault** для реализации расширенной системы защиты от угроз для Azure Key Vault, предоставляющей дополнительный уровень аналитики безопасности. 
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробности|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
-|Цены|Плата **за использование защитника Azure для Key Vault** оплачивается, как показано на [странице с ценами](security-center-pricing.md) .|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) National/независимых (US Gov, Китай gov, другое gov)|
+|Цены|Плата за использование **Azure Defender для Key Vault** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака).|
 |||
 
-## <a name="what-are-the-benefits-of-azure-defender-for-key-vault"></a>Каковы преимущества защитника Azure для Key Vault?
+## <a name="what-are-the-benefits-of-azure-defender-for-key-vault"></a>Каковы преимущества Azure Defender для Key Vault?
 
-Защитник Azure обнаруживает необычные и потенциально опасные попытки доступа или использования учетных записей Key Vault. Этот уровень защиты позволяет устранять угрозы даже при отсутствии экспертных знаний по безопасности и избавляет от необходимости управлять сторонними системами мониторинга безопасности.  
+Azure Defender выявляет необычные и потенциально опасные попытки получить доступ к учетным записям Key Vault или воспользоваться ими. Этот уровень защиты позволяет устранять угрозы даже при отсутствии экспертных знаний по безопасности и избавляет от необходимости управлять сторонними системами мониторинга безопасности.  
 
-При возникновении аномальных действий защитник Azure отображает предупреждения и при необходимости отправляет их по электронной почте соответствующим участникам Организации. Эти оповещения содержат сведения о подозрительных действиях и рекомендации о том, как определить причину угроз и устранить сами угрозы. 
+В случае аномальных действий Azure Defender отображает оповещения и при необходимости отправляет их по электронной почте соответствующим членам вашей организации. Эти оповещения содержат сведения о подозрительных действиях и рекомендации о том, как определить причину угроз и устранить сами угрозы. 
 
 ## <a name="azure-defender-for-key-vault-alerts"></a>Оповещения Azure Defender для Key Vault
-При получении оповещения от защитника Azure для Key Vault мы рекомендуем исследовать и реагировать на это предупреждение, как описано в разделе [реагирование на защитник Azure для Key Vault](defender-for-key-vault-usage.md). Защитник Azure для Key Vault защищает приложения и учетные данные, поэтому даже если вы знакомы с приложением или пользователем, вызвавшим оповещение, важно проверить ситуацию, окружающую каждое оповещение.
+Если вы получите оповещение от Azure Defender для Key Vault, мы рекомендуем проанализировать его и отреагировать на это оповещение, как описано в статье [Реагирование на оповещения Azure Defender для Key Vault](defender-for-key-vault-usage.md). Azure Defender для Key Vault защищает приложения и учетные данные, но даже если вы знакомы с приложением или пользователем, активировавшим это оповещение, изучите причины возникновения для каждого оповещения.
 
-Оповещения отображаются на странице **безопасность** Key Vault, на панели мониторинга защитника Azure и на странице оповещений центра безопасности.
+Оповещения отображаются на странице **Безопасность** в Key Vault, на панели мониторинга Azure Defender и на странице оповещений центра обеспечения безопасности.
 
-:::image type="content" source="./media/defender-for-key-vault-intro/key-vault-security-page.png" alt-text="Страница безопасности Azure Key Vault":::
+:::image type="content" source="./media/defender-for-key-vault-intro/key-vault-security-page.png" alt-text="Страница &quot;Безопасность&quot; в Azure Key Vault":::
 
 
 > [!TIP]
-> Вы можете имитировать службу "защитник Azure" для Key Vault предупреждений, следуя инструкциям в разделе [Проверка обнаружения угроз Azure Key Vault в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336).
+> Вы можете имитировать оповещения Azure Defender для Key Vault, выполнив инструкции из записи блога [Проверка обнаружения угроз Azure Key Vault в Центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали о защитнике Azure для Key Vault.
+Из этой статьи вы узнали об Azure Defender для Key Vault.
 
 Связанные материалы см. в следующих статьях: 
 
-- [Key Vault оповещениях системы безопасности](alerts-reference.md#alerts-azurekv)— Key Vault раздел ссылочной таблицы для всех оповещений центра безопасности Azure.
+- [Оповещения системы безопасности Key Vault](alerts-reference.md#alerts-azurekv) — раздел, в котором приведена справочная таблица со всеми оповещениями о Key Vault от Центра безопасности Azure.
 - [Экспорт оповещений в SIEM](continuous-export.md)
-- [Отключение оповещений от защитника Azure](alerts-suppression-rules.md)
+- [Отключение оповещений от Azure Defender](alerts-suppression-rules.md)

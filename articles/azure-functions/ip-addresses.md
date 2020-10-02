@@ -3,12 +3,12 @@ title: IP-адреса в Функциях Azure
 description: Узнайте, как найти входящий и исходящие IP-адреса для приложений-функций, и по каким причинам они изменяются.
 ms.topic: conceptual
 ms.date: 12/03/2018
-ms.openlocfilehash: 4b99855d8cc28a41d9eb91bdcf691747910ed4a1
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 1d2cf34ee4712705eaa1c0da5ad63712f9e649fe
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874084"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91652471"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-адреса в Функциях Azure
 
@@ -51,7 +51,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 ```
 
 > [!NOTE]
-> При масштабировании приложения-функции, которое выполняется в [плане потребления](functions-scale.md#consumption-plan), необходимо назначить новый диапазон исходящих IP-адресов. При выполнении в плане потребления может потребоваться добавить весь центр обработки данных в список разрешений.
+> При масштабировании приложения-функции, которое выполняется в [плане потребления](functions-scale.md#consumption-plan) или [плана Premium](functions-scale.md#premium-plan) , может быть назначен новый диапазон исходящих IP-адресов. При запуске в любом из этих планов может потребоваться добавить весь центр обработки данных в список разрешений.
 
 ## <a name="data-center-outbound-ip-addresses"></a>Исходящие IP-адреса центра обработки данных
 
@@ -89,7 +89,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 - удалите последнее приложение-функцию с некоторым сочетанием группы ресурсов и региона и создадите его заново;
 - Удалите привязку TLS, например во время [обновления сертификата](../app-service/configure-ssl-certificate.md#renew-certificate).
 
-Если приложение-функция выполняется в [плане потребления](functions-scale.md#consumption-plan), входящий IP-адрес может также изменяться даже в том случае, если вы не предоставили никаких действий, например [перечисленных выше](#inbound-ip-address-changes).
+Если приложение-функция работает в [плане потребления](functions-scale.md#consumption-plan) или в [плане Premium](functions-scale.md#premium-plan), входящий IP-адрес может также изменяться даже в том случае, если вы не сделали никаких действий, например [перечисленных выше](#inbound-ip-address-changes).
 
 ## <a name="outbound-ip-address-changes"></a>Изменения исходящих IP-адресов
 
@@ -98,7 +98,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 * выполните какое-либо действие, которое может изменить входящий IP-адрес;
 * измените ценовую категорию для плана служб приложений. Список всех возможных исходящих IP-адресов приложения для всех ценовых категорий указан в свойстве `possibleOutboundIPAddresses`. См. также раздел [Поиск исходящих IP-адресов](#find-outbound-ip-addresses).
 
-Если приложение-функция работает в [плане потребления](functions-scale.md#consumption-plan), исходящий IP-адрес может также изменяться даже в том случае, если вы не сделали никаких действий, например [перечисленных выше](#inbound-ip-address-changes).
+Если приложение-функция работает в [плане потребления](functions-scale.md#consumption-plan) или в [плане Premium](functions-scale.md#premium-plan), исходящий IP-адрес может также изменяться даже в том случае, если вы не сделали никаких действий, например [перечисленных выше](#inbound-ip-address-changes).
 
 Чтобы принудительно изменить исходящий IP-адрес, сделайте следующее.
 
@@ -129,6 +129,6 @@ az webapp show --resource-group <group_name> --name <app_name> --query sku --out
 
 Номер `sku` среды службы приложений — `Isolated`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Распространенная причина изменения IP-адреса — изменение масштаба приложения-функции. [Узнайте больше о масштабировании приложений-функций](functions-scale.md).

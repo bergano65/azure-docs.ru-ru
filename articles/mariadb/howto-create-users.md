@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: how-to
-ms.date: 4/2/2020
-ms.openlocfilehash: 34fcb8d28ae8deda88a6ce91261301ab5d08a743
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 10/1/2020
+ms.openlocfilehash: 7a3515850027963dcabbf2cef4efd8bf43802cbe
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86104560"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653066"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Создание пользователей в базе данных Azure для MariaDB 
 В этой статье описывается создание пользователей в базе данных Azure для MariaDB.
@@ -29,7 +29,8 @@ ms.locfileid: "86104560"
 После создания сервера базы данных Azure для MariaDB с помощью первой учетной записи администратора сервера можно создать дополнительных пользователей и предоставить им права администратора. Кроме того, учетная запись администратора сервера может использоваться для создания менее привилегированных пользователей, имеющих доступ к отдельным схемам базы данных.
 
 > [!NOTE]
-> Роль SUPER Privilege и DBA не поддерживаются. Проверьте [права](concepts-limits.md#privilege-support) в статье ограничения, чтобы понять, что не поддерживается в службе.
+> Роль SUPER Privilege и DBA не поддерживаются. Проверьте [права](concepts-limits.md#privileges--data-manipulation-support) в статье ограничения, чтобы понять, что не поддерживается в службе.<br><br>
+> Такие подключаемые модули паролей, как "validate_password" и "caching_sha2_password", не поддерживаются службой.
 
 ## <a name="create-additional-admin-users"></a>Создание дополнительных администраторов
 1. Получите сведения о подключении и имя пользователя администратора.
@@ -91,7 +92,11 @@ ms.locfileid: "86104560"
    ```
    Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://mariadb.com/kb/en/library/user-account-management/), [синтаксисом GRANT](https://mariadb.com/kb/en/library/grant/) и [привилегиями](https://mariadb.com/kb/en/library/grant/#privilege-levels) в документации по MariaDB.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="azure_superuser"></a>azure_superuser
+
+Все серверы базы данных Azure для MySQL создаются с помощью пользователя с именем "azure_superuser". Это системная учетная запись, созданная корпорацией Майкрософт для управления сервером с целью проведения мониторинга, резервного копирования и другого регулярного обслуживания. Инженеры по вызову также могут использовать эту учетную запись для доступа к серверу во время инцидента с проверкой подлинности на основе сертификата и должны запрашивать доступ с помощью JIT-процессов.
+
+## <a name="next-steps"></a>Следующие шаги
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью портала Azure](howto-manage-firewall-portal.md).  
 
 <!--or [Azure CLI](howto-manage-firewall-using-cli.md).-->

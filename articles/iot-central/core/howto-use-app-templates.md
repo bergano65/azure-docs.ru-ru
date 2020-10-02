@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 39bb129d6edba168ed1ed45b1de205a206c83ed2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aec72644f708d6363a80da28c5e571d0165fcdfa
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84678177"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651842"
 ---
 # <a name="export-your-application"></a>Экспорт приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "84678177"
 
 Нажмите **Копировать**. В диалоговом окне введите сведения о новом приложении. Затем выберите **Копировать** , чтобы подтвердить продолжение работы. Дополнительные сведения о полях в форме см. в кратком руководстве по [созданию приложения](quick-deploy-iot-central.md) .
 
-![Страница "Параметры приложения"](media/howto-use-app-templates/appcopy2.png)
+![Снимок экрана, на котором показана страница параметров "копирование приложения".](media/howto-use-app-templates/appcopy2.png)
 
 После завершения операции копирования приложения можно переходить к новому приложению, используя ссылку.
 
@@ -88,6 +88,6 @@ ms.locfileid: "84678177"
 
 Чтобы обновить шаблон приложения, измените имя или описание шаблона на странице **Экспорт шаблона приложения** . Затем снова нажмите кнопку **Экспорт** . Это действие создает новую **ссылку с общим доступом** и делает недействительным любой предыдущий URL-адрес **ссылки** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как использовать шаблоны приложений, предлагаем следующий шаг — Узнайте [, как отслеживать общую работоспособность устройств, подключенных к IOT Centralному приложению](howto-monitor-application-health.md) .
