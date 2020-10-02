@@ -50,6 +50,8 @@
       href: concepts-identity.md
     - name: Безопасность
       items:
+        - name: Основные способы защиты
+          href: security-baseline.md
         - name: Защита приложений и кластеров
           href: concepts-security.md
         - name: Элементы управления безопасностью службы "Политика Azure"
@@ -57,7 +59,7 @@
           href: ./security-controls-policy.md
     - name: Сеть
       href: concepts-network.md
-    - name: Память
+    - name: Хранилище
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md

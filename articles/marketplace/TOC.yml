@@ -327,7 +327,7 @@
     - name: Сведения о политиках и условиях
       href: policies-terms.md
     - name: Commercial marketplace certification policies (Политики сертификации коммерческой платформы Marketplace)
-      href: /legal/marketplace/offer-policies-change-history?context=/azure/marketplace/context/context
+      href: /legal/marketplace/certification-policies?context=/azure/marketplace/context/context
     - name: Политики проверки коммерческой платформы
       href: /legal/marketplace/rating-review-policies?context=/azure/marketplace/context/context
     - name: Политики участия в Azure Marketplace

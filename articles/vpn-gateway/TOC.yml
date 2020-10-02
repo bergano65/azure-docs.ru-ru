@@ -42,8 +42,10 @@
       href: vpn-gateway-about-point-to-site-routing.md
     - name: Сведения об избыточных между зонами шлюзах для Зон доступности
       href: about-zone-redundant-vnet-gateways.md
-    - name: Встроенные средства управления безопасностью
-      href: vpn-gateway-security-controls.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Взаимодействие компонентов при подключении к серверной части
       items:
         - name: Вводная часть и сведения о настройке теста

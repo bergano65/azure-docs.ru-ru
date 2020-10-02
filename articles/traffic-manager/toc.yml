@@ -44,6 +44,10 @@
       items:
         - name: 'Иерархия страны или региона, используемая диспетчером трафика'
           href: traffic-manager-geographic-regions.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Вложенные профили диспетчера трафика
       href: traffic-manager-nested-profiles.md
     - name: Типы конечных точек
