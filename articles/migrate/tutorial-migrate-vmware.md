@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: c9a7e76496c2851b90c8fd1d164645c46d02609b
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 37181246a20044f16414735e2247fa90fc36433b
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89376045"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530528"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -121,7 +121,7 @@ ms.locfileid: "89376045"
 
 11. В разделе **Диски** укажите, следует ли реплицировать диски виртуальных машин в Azure, и выберите тип диска (SSD или HDD (цен. категория "Стандартный") или управляемые диски (цен. категория "Премиум")) в Azure. Затем нажмите кнопку **Далее**.
    
-    ![Диски](./media/tutorial-migrate-vmware/disks.png)
+    ![Снимок экрана, на котором показана вкладка "Диски" диалогового окна "Репликация".](./media/tutorial-migrate-vmware/disks.png)
 
 12. В разделе **Review and start replication** (Просмотр и запуск репликации) просмотрите параметры и нажмите кнопку **Реплицировать**, чтобы начать первоначальную репликацию серверов.
 

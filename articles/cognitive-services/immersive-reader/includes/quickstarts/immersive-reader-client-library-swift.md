@@ -7,23 +7,22 @@ author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/20/2020
+ms.date: 09/14/2020
 ms.author: nitinme
-ms.openlocfilehash: 2455297cd9dd77d2b5f605bf36ed46b6240b3f4d
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.openlocfilehash: 7a298de40264a06e18aa4b7c77abfd622be4bb75
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89505414"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978254"
 ---
-[Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
+[Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это инклюзивное решение, в котором реализованы проверенные методы, улучшающие понимание текста при чтении у людей, которые учатся читать или изучают язык, а также у людей, которые испытывают определенные трудности при обучении, например, из-за дислексии. Вы можете использовать иммерсивное средство чтения в своих приложениях, чтобы изолировать текст для фокусировки, отображать рисунки, связанные с часто используемыми словами, выделять части речи, читать вслух выделенный текст, переводить слова и фразы в реальном времени и многое другое.
 
 В рамках этого краткого руководства вы создадите с нуля приложение iOS и интегрируете Иммерсивное средство чтения. Полностью рабочий пример этого краткого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/ios).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 * Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](../../how-to-create-immersive-reader.md). Некоторые из этих созданных значений потребуются вам при настройке свойств примера проекта. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 
@@ -31,21 +30,21 @@ ms.locfileid: "89505414"
 
 Создайте проект в Xcode.
 
-![Создать проект](../../media/ios/xcode-create-project.png)
+![Новый проект (Swift)](../../media/ios/xcode-create-project.png)
 
 Выберите **Приложение одного представления**.
 
-![Новое приложение одного представления](../../media/ios/xcode-single-view-app.png)
+![Новое приложение одного представления (Swift)](../../media/ios/xcode-single-view-app.png)
 
 ## <a name="set-up-authentication"></a>Настройка проверки подлинности
 
 В верхнем меню выберите **Продукт > Схема > Редактирование схемы...** .
 
-![Редактирование схемы](../../media/ios/quickstart-ios-edit-scheme.png)
+![Редактирование схемы (Swift)](../../media/ios/quickstart-ios-edit-scheme.png)
 
 В представлении **Запуск** щелкните вкладку **Аргументы**.
 
-![Редактирование схемы](../../media/ios/quickstart-ios-env-vars.png)
+![Изменение переменных среды схемы (Swift)](../../media/ios/quickstart-ios-env-vars.png)
 
 В разделе **Переменные среды** добавьте следующие имена и значения, указав значения, заданные при создании ресурса "Иммерсивное средство чтения".
 
@@ -557,19 +556,19 @@ function sendContentToReader(message) {
 
 Настройте схему архивации в Xcode, выбрав симулятор или цель устройства.
 
-![Схема архива](../../media/ios/xcode-archive-scheme.png)
+![Схема архивации (Swift)](../../media/ios/xcode-archive-scheme.png)
 
-![Выбор цели](../../media/ios/xcode-select-target.png)
+![Выбор цели (Swift)](../../media/ios/xcode-select-target.png)
 
 В Xcode нажмите сочетание клавиш **CTRL+R** или кнопку воспроизведения, чтобы запустить проект. Приложение должно запускаться на указанном симуляторе или устройстве.
 
 В приложении вы должны увидеть:
 
-![Пример приложения](../../media/ios/sample-app-ipad.png)
+![Пример приложения (Swift)](../../media/ios/sample-app-ipad.png)
 
 При нажатии кнопки **Иммерсивное средство чтения** появится запущенное Иммерсивное средство чтения с содержимым приложения.
 
-![Иммерсивное средство чтения](../../media/ios/immersive-reader-ipad.png)
+![Иммерсивное средство чтения (Swift)](../../media/ios/immersive-reader-ipad.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

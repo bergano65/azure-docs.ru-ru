@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/28/2020
+ms.date: 08/24/2020
 ms.author: jeedes
-ms.openlocfilehash: fdea1f3b2d4cff0203951b6ec5ef6b86b62cdf9c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a631ab7190891ae3716a28615bcdbfe4d219ea27
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88527571"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90053503"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство по интеграции единого входа Azure Active Directory со Slack
 
@@ -50,6 +50,9 @@ ms.locfileid: "88527571"
 * Slack поддерживает [**автоматическую** подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/slack-provisioning-tutorial).
 * После настройки Slack вы можете применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
+
 ## <a name="adding-slack-from-the-gallery"></a>Добавление Slack из коллекции.
 
 Чтобы настроить интеграцию Slack с Azure AD, необходимо добавить Slack из коллекции в список управляемых приложений SaaS.
@@ -61,7 +64,7 @@ ms.locfileid: "88527571"
 1. В разделе **Добавление из коллекции** введите **Slack** в поле поиска.
 1. Выберите **Slack** в области результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-slack"></a>Настройка и проверка единого входа Azure AD для Slack
+## <a name="configure-and-test-azure-ad-sso-for-slack"></a>Настройка и проверка единого входа Azure AD для Slack
 
 Настройте и проверьте единый вход Azure AD для Slack, используя тестового пользователя с именем **B. Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Slack.
 
@@ -86,13 +89,20 @@ ms.locfileid: "88527571"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://< DOMAIN NAME>.slack.com/sso/saml/start`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<DOMAIN NAME>.slack.com/sso/saml/start`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://slack.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://slack.com`.
+    
+    c. В качестве **URL-адреса ответа** введите один из следующих шаблонов URL-адреса:
+    
+    | URL-адрес ответа|
+    |----------|
+    | `https://<DOMAIN NAME>.slack.com/sso/saml` |
+    | `https://<DOMAIN NAME>.enterprise.slack.com/sso/saml` |
 
     > [!NOTE]
-    > Значение URL-адреса входа приведено только для примера. Для входа укажите фактический URL-адрес. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Slack](https://slack.com/help/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
-    
+    > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и URL-адресом ответа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Slack](https://slack.com/help/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+
     > [!NOTE]
     > Если один клиент требуется интегрировать с двумя или несколькими экземплярами Slack, значение **Идентификатор (сущности)** может быть переменной. Используйте шаблон `https://<DOMAIN NAME>.slack.com`. В этом сценарии также необходимо настроить связь с другим параметром в Slack, используя то же значение.
 
@@ -106,7 +116,6 @@ ms.locfileid: "88527571"
     | -----|---------|
     | emailaddress | user.userprincipalname |
     | email | user.userprincipalname |
-    | | |
 
    > [!NOTE]
    > Чтобы настроить конфигурацию поставщика услуг, щелкните **Развернуть** рядом с элементом **Дополнительные параметры** на странице конфигурации SAML. В поле **Service Provider Issuer** (Издатель поставщика услуг) введите URL-адрес рабочей области. Значение по умолчанию — slack.com. 
@@ -155,15 +164,15 @@ ms.locfileid: "88527571"
 
 2. Выберите **Microsoft Azure AD** > **Team Settings** (Параметры команды).
 
-     ![Настройка единого входа на стороне приложения](./media/slack-tutorial/tutorial-slack-team-settings.png)
+     ![Настройка и проверка единого входа в Microsoft Azure AD](./media/slack-tutorial/tutorial-slack-team-settings.png)
 
 3. В разделе **Team Settings** (Параметры команды) выберите вкладку **Authentication** (Проверка подлинности) и нажмите кнопку **Change Settings** (Изменить параметры).
 
-    ![Настройка единого входа на стороне приложения](./media/slack-tutorial/tutorial-slack-authentication.png)
+    ![Настройка параметров единого входа на странице "Team Settings" (Параметры команды)](./media/slack-tutorial/tutorial-slack-authentication.png)
 
 4. На странице **Параметры проверки подлинности SAML** сделайте следующее:
 
-    ![Настройка единого входа на стороне приложения](./media/slack-tutorial/tutorial-slack-save-authentication.png)
+    ![Настройка параметров единого входа на странице "Параметры проверки подлинности SAML"](./media/slack-tutorial/tutorial-slack-save-authentication.png)
 
     а.  В текстовое поле **SAML 2.0 Endpoint (HTTP)** (Конечная точка SAML 2.0 (HTTP)) вставьте **URL-адрес входа**, скопированный на портале Azure.
 

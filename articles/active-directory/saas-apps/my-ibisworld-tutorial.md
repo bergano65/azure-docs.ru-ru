@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/27/2020
+ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 92eecc419128b593dced0f9679dd02eb273cbb62
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7081babb66cc91a0d904bf46a31843b663c016e7
+ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88518261"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89662070"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-my-ibisworld"></a>Руководство по Интеграция единого входа Azure Active Directory с My IBISWorld
 
@@ -43,6 +43,9 @@ ms.locfileid: "88518261"
 * My IBISWorld поддерживает **JIT-подготовку** пользователей.
 * После настройки My IBISWorld вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
+
 ## <a name="adding-my-ibisworld-from-the-gallery"></a>Добавление My IBISWorld из коллекции
 
 Чтобы настроить интеграцию My IBISWorld с Azure AD, необходимо добавить My IBISWorld из коллекции в список управляемых приложений SaaS.
@@ -55,7 +58,7 @@ ms.locfileid: "88518261"
 1. Выберите **My IBISWorld** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-my-ibisworld"></a>Настройка и проверка единого входа Azure AD для My IBISWorld
+## <a name="configure-and-test-azure-ad-sso-for-my-ibisworld"></a>Настройка и проверка единого входа Azure AD для My IBISWorld
 
 Настройте и проверьте единый вход Azure AD в My IBISWorld с использованием данных тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в My IBISWorld.
 

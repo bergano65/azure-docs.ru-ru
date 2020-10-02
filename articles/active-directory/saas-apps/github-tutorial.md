@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 7153a1279785cfe79d23b2b5ba843ec9f5cd4965
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 007f4d0c0e56051c369d8d06cdd40c9251647673
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550751"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90985899"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство по Интеграция единого входа Azure Active Directory с GitHub
 
@@ -194,7 +194,7 @@ ms.locfileid: "88550751"
 
 2. Выберите параметр **Пользователи**.
 
-    ![Пользователи](./media/github-tutorial/people.png "Люди")
+    ![Снимок экрана, на котором показан сайт GitHub с выбранным разделом "People" (Люди).](./media/github-tutorial/people.png "Люди")
 
 3. Нажмите **Invite member** (Пригласить участника).
 

@@ -9,15 +9,15 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 8d1c9027b6a9a7b295ce83e26281832beca1bc33
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 8e91a611084d201e6609f7e203eaa08c81e19a00
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91531961"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569997"
 ---
 # <a name="troubleshooting-postgresql-hyperscale-server-groups"></a>Устранение неполадок PostgreSQL в масштабируемых группах серверов
-В этой статье описываются некоторые методы, которые можно использовать для устранения неполадок в группе серверов. В дополнение к этой статье вы можете узнать, как использовать [Kibana](monitor-grafana-kibana.md) для Поиск журналов или использовать [Grafana](monitor-grafana-kibana.md) для визуализации метрик по вашей группе серверов. 
+В этой статье описываются некоторые методы, которые можно использовать для устранения неполадок в группе серверов. В дополнение к этой статье вы можете узнать, как использовать [Kibana](monitor-grafana-kibana.md) для поиска в журналах или использовать [Grafana](monitor-grafana-kibana.md) для визуализации метрик по группе серверов. 
 
 ## <a name="getting-more-details-about-the-execution-of-an-azdata-command"></a>Получение дополнительных сведений о выполнении команды аздата
 Вы можете добавить параметр **--Debug** в любую выполняемую команду аздата. Это позволит отобразить в консоли дополнительные сведения о выполнении этой команды. Рекомендуется получить сведения, которые помогут понять поведение этой команды.
@@ -31,7 +31,7 @@ azdata arc postgres server create -n postgres01 -w 2 --debug
 azdata arc postgres server edit -n postgres01 --extension SomeExtensionName --debug
 ```
 
-Кроме того, вы можете использовать параметр--Help для любой команды аздата, чтобы отобразить некоторую справку, а также список параметров для конкретной команды. Пример:
+Кроме того, вы можете использовать параметр--Help для любой команды аздата, чтобы отобразить некоторую справку, а также список параметров для конкретной команды. Например:
 ```console
 azdata arc postgres server create --help
 ```
@@ -95,9 +95,9 @@ kubectl config use-context default/my_kubeuser/ArcDataControllerAdmin
 3. Выберите **панель мониторинга [диагностика и устранение проблем]**
 4. Выберите **ссылку [Устранение неполадок]** .
 
-:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;":::
+:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
 
-Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;":::
+Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
 
 Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** ":::
 

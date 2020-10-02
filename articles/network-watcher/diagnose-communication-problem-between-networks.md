@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2018
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 974e45b761fb45e4bc1c451fa6755e16cab49e11
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 25c58f99f56a4328527d1dd970e3ade21eb51819
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76834694"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90987175"
 ---
 # <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
 
@@ -73,12 +73,12 @@ ms.locfileid: "76834694"
 8. Во время выполнения теста отображается состояние **Выполняется** в столбце **Состояние устранения неполадок** (где на предыдущем изображении отображалось состояние **Не запущено**). Выполнение этого теста может занять несколько минут.
 9. Просмотрите состояние завершенного теста. На следующем изображении показаны результаты состояния завершенного теста диагностики.
 
-    ![Состояние](./media/diagnose-communication-problem-between-networks/status.png)
+    ![Снимок экрана, на котором показаны результаты диагностического теста, неработоспособного в этом примере, включая сводку и подробные сведения.](./media/diagnose-communication-problem-between-networks/status.png)
 
     На изображении видно, что в столбце **Состояние устранения неполадок** отображается значение **Неработоспособно**, а также **сводка** и **сведения** о проблеме на вкладке **Status** (Состояние).
 10. Если перейти на вкладку **Действие**, диагностика VPN предоставит дополнительные сведения. В примере, показанном на следующем изображении, из VPN-диагностики можно понять, что следует проверить работоспособность каждого подключения.
 
-    ![Действие](./media/diagnose-communication-problem-between-networks/action.png)
+    ![Снимок экрана, на котором показана вкладка "Действие", содержащая дополнительные сведения.](./media/diagnose-communication-problem-between-networks/action.png)
 
 ## <a name="diagnose-a-gateway-connection"></a>Диагностика подключения шлюза
 
@@ -86,7 +86,7 @@ ms.locfileid: "76834694"
 
 1. Выполите шаг 7 из раздела о [диагностике шлюза](#diagnose-a-gateway) еще раз. На этот раз выберите подключение. В следующем примере тестируется подключение с именем **VNet1toSite1**.
 
-    ![Соединение](./media/diagnose-communication-problem-between-networks/connection.png)
+    ![Снимок экрана, на котором показано, как начать устранение неполадок выбранного подключения.](./media/diagnose-communication-problem-between-networks/connection.png)
 
     Выполнение теста занимает несколько минут.
 2. После завершения тестирования подключения появляются результаты, аналогичные результатам, показанным на следующих изображениях вкладок **Состояние** и **Действие**.

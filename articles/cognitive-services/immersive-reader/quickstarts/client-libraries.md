@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Использование клиентской библиотеки иммерсивного средства чтения
+title: Краткое руководство. Клиентская библиотека иммерсивного средства чтения
 titleSuffix: Azure Cognitive Services
-description: API иммерсивного средства чтения предоставляет клиентские библиотеки, которые упрощают интеграцию функций поиска в приложения. В этом кратком руководстве описано, как отправлять поисковые запросы и получать результаты.
+description: Клиентская библиотека иммерсивного средства чтения упрощает интеграцию службы иммерсивного средства чтения в веб-приложения для повышения удобочитаемости. В этом кратком руководстве вы узнаете, как использовать иммерсивное средство чтения для выделения текста, распознавания частей речи, чтения вслух выделенного текста, перевода и многого другого.
 services: cognitive-services
 author: nitinme
 manager: nitinme
@@ -9,17 +9,18 @@ zone_pivot_groups: programming-languages-set-twenty
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: quickstart
-ms.date: 05/20/2020
+ms.date: 09/14/2020
 ms.author: nitinme
-ms.custom: devx-track-csharp
-ms.openlocfilehash: c5f02c473fb4a44fb8c0235658d3c8f6e3279844
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.custom: cog-serv-seo-aug-2020
+keywords: Отображение изображений, части речи, чтение выделенного текста, перевод слов, повышение удобочитаемости
+ms.openlocfilehash: 621be6293b4ac487cafafc14498524c97fdc6d82
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89505427"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978273"
 ---
-# <a name="quickstart-use-the-immersive-reader-client-library"></a>Краткое руководство. Использование клиентской библиотеки иммерсивного средства чтения
+# <a name="quickstart-get-started-with-immersive-reader"></a>Краткое руководство. Начало работы с иммерсивным средством чтения
 
 ::: zone pivot="programming-language-csharp"
 

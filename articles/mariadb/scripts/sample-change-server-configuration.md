@@ -1,6 +1,6 @@
 ---
 title: Скрипт CLI для изменения параметров сервера Базы данных Azure для MariaDB
-description: В этом примере скрипта CLI перечисляются все доступные конфигурации серверов и обновляется значение innodb_lock_wait_timeout.
+description: В этом примере сценария для интерфейса командной строки перечисляются все доступные конфигурации и обновления серверов Базы данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
 ms.date: 12/02/2019
-ms.openlocfilehash: 1425ee7b91ea1b357939c8953fdedc09df7864c6
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: ce27dc3008803faf548c10f4fc2ab3b579af2ba0
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502245"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90525037"
 ---
 # <a name="list-and-update-configurations-of-an-azure-database-for-mariadb-server-using-azure-cli"></a>Получение списка и обновление конфигураций сервера Базы данных Azure для MariaDB с помощью Azure CLI
 В этом примере скрипта CLI выводится список всех доступных параметров конфигурации и их допустимые значения для сервера Базы данных Azure для MariaDB. Кроме того, здесь задается значение *innodb_lock_wait_timeout*, отличное от значения по умолчанию.
@@ -44,5 +44,5 @@ ms.locfileid: "87502245"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для Базы данных Azure для MariaDB](../sample-scripts-azure-cli.md).
+- Дополнительные скрипты — [Примеры Azure CLI для Базы данных Azure для MariaDB](../sample-scripts-azure-cli.md)
 - Дополнительные сведения о параметрах сервера см. в статье [Как настроить параметры сервера в базе данных Azure для MariaDB с помощью портала Azure](../howto-server-parameters.md).

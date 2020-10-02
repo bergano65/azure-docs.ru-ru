@@ -7,24 +7,23 @@ author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/20/2020
+ms.date: 09/14/2020
 ms.author: nitinme
 ms.custom: devx-track-javascript
-ms.openlocfilehash: bbef435bc7cf0bf146009859044bcabe3c0f55ee
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.openlocfilehash: d485e95e0f41b323d1297c669c13fb1fe5886619
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89505416"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90978263"
 ---
-[Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
+[Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это инклюзивное решение, в котором реализованы проверенные методы, улучшающие понимание текста при чтении у людей, которые учатся читать или изучают язык, а также у людей, которые испытывают определенные трудности при обучении, например, из-за дислексии. Вы можете использовать иммерсивное средство чтения в своих приложениях, чтобы изолировать текст для фокусировки, отображать рисунки, связанные с часто используемыми словами, выделять части речи, читать вслух выделенный текст, переводить слова и фразы в реальном времени и многое другое.
 
-В рамках этого краткого руководства вы создадите веб-приложение с нуля и интегрируете иммерсивное средство чтения с помощью соответствующей клиентской библиотеки. Полностью рабочий пример этого краткого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-nodejs).
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/), прежде чем начинать работу.
+В этом кратком руководстве показано, как создать веб-приложение с нуля и интегрировать иммерсивное средство чтения с помощью соответствующей клиентской библиотеки. Полностью рабочий пример этого краткого руководства доступен [на GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-nodejs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 * Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](../../how-to-create-immersive-reader.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 * [Node.js](https://nodejs.org/) и [Yarn](https://yarnpkg.com).
 * Интегрированная среда разработки, такая как [Visual Studio Code](https://code.visualstudio.com/).
@@ -246,13 +245,13 @@ npm start
 
 Откройте веб-браузер и перейдите по адресу _http://localhost:3000_ . Вы увидите следующее:
 
-![Пример приложения](../../media/quickstart-nodejs/1-buildapp.png)
+![Пример приложения (Node.js)](../../media/quickstart-nodejs/1-buildapp.png)
 
 ## <a name="launch-the-immersive-reader"></a>Запуск Иммерсивного средства чтения
 
 При нажатии кнопки "иммерсивное средство чтения" появится запущенное иммерсивное средство чтения с содержимым на странице.
 
-![Иммерсивное средство чтения](../../media/quickstart-nodejs/2-viewimmersivereader.png)
+![Иммерсивное средство чтения (Node.js)](../../media/quickstart-nodejs/2-viewimmersivereader.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8b338f25e9771f5947fd494cfb00d0f6cb9ef67a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 897e36a6c5165549d7809512d0298fa2cfed2fa8
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75450832"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606403"
 ---
 1. Выберите пункт **Подключение сайтов VPN**, чтобы открыть страницу **Подключение сайтов**.
 
-    ![connect](./media/virtual-wan-tutorial-connect-vpn-site-include/connect.png "подключение")
+    ![Снимок экрана, на котором показана область "Connected Sites" (Подключенные сайты) для виртуального концентратора, готового к настройке общего ключа и связанных параметров.](./media/virtual-wan-tutorial-connect-vpn-site-include/connect.png "подключение")
 
    Заполните следующие поля.
 
@@ -28,7 +28,7 @@ ms.locfileid: "75450832"
 2. Выберите **Подключиться**.
 3. Через несколько минут на сайте отобразится состояние подключения и подключение.
 
-   ![status](./media/virtual-wan-tutorial-connect-vpn-site-include/status.png "status")
+   ![Снимок экрана, на котором показано VPN-подключение "сеть — сеть" и состояние этого подключения.](./media/virtual-wan-tutorial-connect-vpn-site-include/status.png "status")
 
    **Состояние подключения.** Это состояние ресурса Azure для подключения, которое соединяет VPN-сайт с VPN-шлюзом концентратора Azure. После успешного выполнения этой операции уровня управления VPN-шлюз Azure и локальное VPN-устройство продолжат установку подключения.
 

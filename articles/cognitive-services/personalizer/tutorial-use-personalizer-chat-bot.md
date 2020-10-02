@@ -4,12 +4,12 @@ description: Настройте чат-бот C# .NET с помощью цикл
 ms.topic: tutorial
 ms.date: 07/17/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ee037632b068b0d8d2f3ed3b6ea7a83d157c5083
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 2d95a6999186b964e59ff8f287d917b1f93e1813
+ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88935659"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90089893"
 ---
 # <a name="tutorial-use-personalizer-in-net-chat-bot"></a>Руководство по использованию Персонализатора в чат-боте .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "88935659"
 > [!div class="checklist"]
 > * Настройка ресурсов Azure
 > * Настройка и запуск бота.
-> * Взаимодействие с ботом с помощью эмулятора.
+> * Взаимодействие с ботом с помощью Bot Framework Emulator
 > * Получение сведений о том, где и как бот использует Персонализатор.
 
 
@@ -174,20 +174,20 @@ git clone https://github.com/Azure-Samples/cognitive-services-personalizer-sampl
 
 ## <a name="set-up-the-bot-emulator"></a>Настройка эмулятора бота
 
-1. Откройте эмулятор бота и выберите **Open Bot** (Открыть бот).
+1. Откройте Bot Framework Emulator и выберите **Open Bot** (Открыть бот).
 
-    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-startup.png" alt-text="Снимок экрана начального экрана эмулятора бота.":::
+    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-startup.png" alt-text="Снимок экрана: браузер, отображающий веб-сайт чат-бота.":::
 
 
 1. Настройте бот, используя следующий **URL-адрес бота**, а затем нажмите кнопку **Connect** (Подключить):
 
     `http://localhost:3978/api/messages`
 
-    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-open-bot-settings.png" alt-text="Снимок экрана эмулятора бота: параметры открытия бота.":::
+    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-open-bot-settings.png" alt-text="Снимок экрана: браузер, отображающий веб-сайт чат-бота.":::
 
     Эмулятор подключается к чат-боту и отображает пояснительный текст, а также данные журнала и отладки, полезные для локальной разработки.
 
-    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-bot-conversation-first-turn.png" alt-text="Снимок экрана эмулятора бота: начало диалога.":::
+    :::image type="content" source="media/tutorial-chat-bot/bot-emulator-bot-conversation-first-turn.png" alt-text="Снимок экрана: браузер, отображающий веб-сайт чат-бота.":::
 
 ## <a name="use-the-bot-in-the-bot-emulator"></a>Использование бота в эмуляторе бота
 

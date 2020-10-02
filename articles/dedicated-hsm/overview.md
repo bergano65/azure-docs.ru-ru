@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о службе выделенных устройств HSM Выделенное устройство HSM Azure | Документация Майкрософт
-description: Общие сведения о службе выделенных устройств HSM Azure, которая позволяет хранить криптографические ключи в Azure в соответствии со стандартом FIPS 140-2 уровня 3
+description: Узнайте, как служба выделенных устройств HSM (решение Azure) обеспечивает хранение криптографических ключей в Azure.
 services: dedicated-hsm
 author: msmbaldwin
 manager: rkarlin
@@ -13,12 +13,12 @@ ms.topic: overview
 ms.custom: mvc, seodec18
 ms.date: 12/07/2018
 ms.author: mbaldwin
-ms.openlocfilehash: dd5ce117645ef2b368bbf8f0e441770d6e746b5b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 6eb82400b2f598b4b54da4b238f4bce71d83de6b
+ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70881078"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90970210"
 ---
 # <a name="what-is-azure-dedicated-hsm"></a>Что такое служба выделенных устройств HSM Azure?
 
@@ -70,7 +70,7 @@ ms.locfileid: "70881078"
 
 Выделенное устройство HSM будет неудачным выбором для следующего типа сценариев. Облачные службы Майкрософт, поддерживающие шифрование с помощью управляемых пользователем ключей (Azure Information Protection, шифрование дисков Azure, Azure Data Lake Store, служба хранилища Azure, База данных SQL Azure и ключ клиента Office 365), не интегрируются со службой Выделенных устройств HSM Azure.
 
-### <a name="it-depends"></a>Сценарий, зависящий от обстоятельств
+### <a name="it-depends"></a>Зависит от обстоятельств
 
 Применимость Выделенного устройства HSM Azure будет зависеть от сложного сочетания требований и допустимых компромиссов. В качестве примера можно указать требование FIPS 140-2 уровня 3. Это довольно распространенное требование, и на данный момент его можно выполнить только с помощью Выделенного устройства HSM Azure. Если такие требования для вас не применимы, вы можете свободно выбирать между Azure Key Vault и Выделенным устройством HSM. Прежде чем принимать решение, тщательно оцените требования.
 
