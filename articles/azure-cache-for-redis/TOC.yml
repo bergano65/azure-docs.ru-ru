@@ -51,6 +51,8 @@
       href: cli-samples.md
 - name: Основные понятия
   items:
+    - name: Высокий уровень доступности
+      href: cache-high-availability.md
     - name: Отработка отказа и установка исправлений
       href: cache-failover.md
     - name: Рекомендации
@@ -90,8 +92,6 @@
           href: cache-reserved-pricing.md
         - name: Миграция в службу "Кэш Azure для Redis"
           href: cache-migration-guide.md
-        - name: Миграция из управляемой службы кэша (устарела)
-          href: cache-migrate-to-redis.md
         - name: Часто задаваемые вопросы о планировании
           href: cache-planning-faq.md
     - name: Сборка
