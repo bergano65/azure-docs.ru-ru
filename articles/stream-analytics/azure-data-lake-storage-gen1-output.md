@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: a642f7dfc470a695f96967cad0ed738d45b11efb
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 59b4a04231df3b93b093750cc6c9d70982a418a9
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90881925"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91665350"
 ---
 # <a name="azure-data-lake-storage-gen-1-output-from-azure-stream-analytics"></a>Azure Data Lake Storage вывода Gen 1 из Azure Stream Analytics
 
@@ -44,7 +44,7 @@ Azure Data Lake Storage выходные данные из Stream Analytics не
 
 ## <a name="output-batch-size"></a>Размер выходного пакета
 
-Максимальный размер сообщения см. в разделе [ограничения Data Lake Storage](../azure-resource-manager/management/azure-subscription-service-limits.md#data-lake-store-limits). Чтобы оптимизировать размер пакета, используйте до 4 МБ на операцию записи.
+Максимальный размер сообщения см. в разделе [ограничения Data Lake Storage](../azure-resource-manager/management/azure-subscription-service-limits.md#data-lake-storage-limits). Чтобы оптимизировать размер пакета, используйте до 4 МБ на операцию записи.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

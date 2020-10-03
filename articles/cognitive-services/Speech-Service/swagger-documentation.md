@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: reference
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 30e8224b6cb757f044a5eac598d834cee838391e
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 6bb50e427fa85a170c5ad23a63d67c01e898a17d
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91629987"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91665690"
 ---
 # <a name="swagger-documentation"></a>Документация по Swagger
 
@@ -30,10 +30,17 @@ ms.locfileid: "91629987"
 
 Необходимо настроить Swagger в том же регионе, что и подписка на службу распознавания речи. Вы можете подтвердить свой регион в портал Azure под Вашим ресурсом службы речи. Полный список поддерживаемых регионов см. в разделе [регионы](regions.md).
 
-1. В браузере перейдите к спецификации Swagger для вашего региона `https://<your-region>.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0` . На этой странице щелкните **Определение API**и щелкните **Swagger**. Скопируйте URL-адрес страницы, которая отображается.
+1. В браузере перейдите к спецификации Swagger для вашего региона:  
+       `https://<your-region>.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0`
+1. На этой странице щелкните **Определение API**и щелкните **Swagger**. Скопируйте URL-адрес страницы, которая отображается.
 1. В новом браузере перейдите по адресу https://editor.swagger.io
 1. Щелкните **файл**, щелкните **Импортировать URL-адрес**, вставьте URL-адрес и нажмите кнопку **ОК**.
-1. Щелкните **создать клиент** и выберите **Python**. Клиентская библиотека загружается на компьютер.
+1. Щелкните **создать клиент** и выберите **Python**. Клиентская библиотека загружается на компьютер в `.zip` файле.
+1. Извлеките все содержимое из скачиваемого файла. Вы можете использовать `tar -xf` для извлечения всех элементов.
+1. Установите извлеченный модуль в среду Python:  
+       `pip install path/to/package/python-client`
+1. Установленный пакет называется `swagger_client` . Убедитесь, что установка работала:  
+       `python -c "import swagger_client"`
 
 Вы можете использовать библиотеку Python, созданную с [примерами службы распознавания речи на GitHub](https://aka.ms/csspeech/samples).
 

@@ -8,14 +8,14 @@ ms.author: lyhughes
 manager: dpalled
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 08/12/2020
+ms.date: 10/02/2020
 ms.custom: lyhughes
-ms.openlocfilehash: 9a345661a50b18d53411d073ccf12375fe17cdb9
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 320d92ef0ad6d02dbe7c31b883eb7f73472378ce
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90088601"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91667815"
 ---
 # <a name="upcoming-changes-to-json-flattening-and-escaping-rules-for-new-environments"></a>Предстоящие изменения в правилах плоской обработки и экранирования JSON для новых сред
 
@@ -47,10 +47,11 @@ ms.locfileid: "90088601"
 ### <a name="if-your-payload-contains-nested-json-or-special-characters-and-you-automate-authoring-time-series-model-variable-expressions"></a>Если полезные данные содержат вложенные знаки JSON или специальные символы и автоматизируют создание выражений переменных [модели временных рядов](.\time-series-insights-update-tsm.md)
 
 Обновите код клиента, который выполняет [типесбатчпут](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput) в соответствии с новыми правилами приема. Например, необходимо обновить предыдущее [выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) `"value": {"tsx": "$event.series_value.Double"}` одним из следующих вариантов:
-  * `"value": {"tsx": "$event.series.value.Double"}`
-  * `"value": {"tsx": "$event['series']['value'].Double"}`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+* `"value": {"tsx": "$event.series.value.Double"}`
+* `"value": {"tsx": "$event['series']['value'].Double"}`
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [хранилище Gen2 и входных данных службы "аналитика временных рядов Azure](./time-series-insights-update-storage-ingress.md)".
 

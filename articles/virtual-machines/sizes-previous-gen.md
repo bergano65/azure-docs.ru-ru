@@ -6,14 +6,14 @@ ms.subservice: sizes
 author: mimckitt
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 02/20/2020
+ms.date: 10/02/2020
 ms.author: jushiman
-ms.openlocfilehash: 18389f3058bcc60c22f8598040f4fea4b036f1ee
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: afad68be53637cf258223eafab0a13f525a92f4c
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89298918"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666625"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
 
@@ -163,7 +163,7 @@ ACU: 225
 <sup>1</sup> Для приложений MPI в сети FDR InfiniBand включена выделенная внутренняя сеть RDMA, которая обеспечивает сверхнизкие задержки и высокую пропускную способность.  
 
 > [!NOTE]
-> Виртуальные машины A8 – A11 планируется выпустить в марте 2021 г. Дополнительные сведения см. в разделе [Руководство по миграции HPC](https://azure.microsoft.com/resources/hpc-migration-guide/).
+> Виртуальные машины A8 – A11 планируется выпустить в марте 2021 г. Настоятельно не рекомендуется создавать новые виртуальные машины A8 – A11. Перенесите все существующие виртуальные машины A8 – A11 в новые и мощные высокопроизводительные вычислительные системы, такие как H, хб, HC, HBv2, а также общие размеры вычислительных виртуальных машин, например D, E и F, для повышения производительности. Дополнительные сведения см. в разделе [Руководство по миграции HPC](https://azure.microsoft.com/resources/hpc-migration-guide/).
 
 <br>
 

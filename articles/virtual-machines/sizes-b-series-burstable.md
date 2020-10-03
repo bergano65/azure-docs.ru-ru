@@ -3,17 +3,17 @@ title: Пакет серии B — виртуальные машины Azure
 description: В этой статье описываются размеры виртуальных машин Azure серии B с накапливаемыми ресурсами.
 services: virtual-machines
 ms.subservice: sizes
-author: ayshakeen
+author: styli365
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
-ms.author: ayshak
-ms.openlocfilehash: 8591b703382049346fe019b89a5f31517380757f
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.author: sttsinar
+ms.openlocfilehash: 43e19df24de2f2c4e8e5334010ee788129cee68b
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/02/2020
-ms.locfileid: "91653423"
+ms.locfileid: "91666642"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -21,12 +21,14 @@ ms.locfileid: "91653423"
 
 Серия B имеет следующие размеры виртуальных машин:
 
+[Единица вычислений Azure (ACU)](https://docs.microsoft.com/azure/virtual-machines/acu?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json): зависит от *<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
 [Кэширование хранилища класса Premium](premium-storage-performance.md): не поддерживается<br>
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 <br>
+* Виртуальные машины серии B являются пакетными, поэтому ACU числа будут зависеть от рабочих нагрузок и основных показателей использования.
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Базовая производительность ЦП виртуальной машины | Максимальная производительность ЦП виртуальной машины | Первоначальные кредиты | Кредитов в банке/час | Максимальное число накопленных кредитов | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода в секунду / МБит/с | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное число сетевых адаптеров |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|

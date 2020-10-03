@@ -1,20 +1,20 @@
 ---
-title: Архитектура клиента и сервера
+title: Клиентская и серверная архитектура
 titleSuffix: An Azure Communication Services concept document
 description: Узнайте об архитектуре служб связи.
 author: mikben
 manager: mikben
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 38d6b131c972b4fd890af53624fdd6a36b3ecb6c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b844f61963081bf355837fd26254915112cbce11
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938141"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666948"
 ---
 # <a name="client-and-server-architecture"></a>Архитектура клиента и сервера
 
@@ -43,13 +43,13 @@ ms.locfileid: "90938141"
 
 Клиентские библиотеки JavaScript для связи Azure позволяют веб-приложениям с богатым текстом, голосовым и видео. Приложение напрямую взаимодействует со службами связи Azure через клиентскую библиотеку для доступа к плоскости данных и передачи текста, голоса и видео в режиме реального времени. Пример последовательности архитектуры можно найти ниже:
 
-:::image type="content" source="../media/scenarios/archdiagram-browser.png" alt-text="Схема, демонстрирующая архитектуру браузера для служб связи.":::
+:::image type="content" source="../media/scenarios/archdiagram-browser.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
 
 ## <a name="native-app-communication"></a>Взаимодействие собственного приложения
 
 Многие сценарии лучше обслуживаются в собственных приложениях. Службы связи Azure поддерживают взаимодействие "браузер-приложение" и "приложение-приложение".  При создании собственного приложения с помощью push-уведомлений пользователи могут получать вызовы, даже если приложение не выполняется. Службы связи Azure упрощают это с помощью интегрированных push-уведомлений в Google Firebase, Cлужба push-уведомлений Apple и Push-уведомления Windows. Пример последовательности архитектуры можно найти ниже:
 
-:::image type="content" source="../media/scenarios/archdiagram-app.png" alt-text="Схема, демонстрирующая архитектуру служб связи для взаимодействия с собственным приложением.":::
+:::image type="content" source="../media/scenarios/archdiagram-app.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
 
 ## <a name="voice-and-sms-over-the-public-switched-telephony-network-pstn"></a>Голосовой связи и SMS через общедоступную коммутируемую сеть (PSTN)
 
@@ -58,7 +58,7 @@ ms.locfileid: "90938141"
 > [!Note]
 > Во время общедоступной предварительной версии подготовка телефонных номеров США доступна клиентам с адресами для выставления счетов, расположенными в США и Канаде. 
 
-:::image type="content" source="../media/scenarios/archdiagram-pstn.png" alt-text="Схема, показывающая архитектуру PSTN служб связи.":::
+:::image type="content" source="../media/scenarios/archdiagram-pstn.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
 
 Дополнительные сведения о решениях PSTN и SMS см. в статье [Планирование решения PSTN и SMS](../concepts/telephony-sms/plan-solution.md) .
 
@@ -66,7 +66,7 @@ ms.locfileid: "90938141"
 
 Службы связи Azure поддерживают обмен данными между системами, а также текстовыми и голосовыми каналами со службами, которые напрямую обращаются к плоскости данных служб связи Azure. Например, программа-робот может отвечать на входящие телефонные звонки или участвовать в чате. Службы связи Azure предоставляют клиентские библиотеки, которые позволяют использовать эти сценарии для вызова и разговора. Пример последовательности архитектуры можно найти ниже:
 
-:::image type="content" source="../media/scenarios/archdiagram-bot.png" alt-text="Схема, показывающая архитектуру "службы связи" (Bot).":::
+:::image type="content" source="../media/scenarios/archdiagram-bot.png" alt-text="Схема, демонстрирующая архитектуру маркера доступа пользователя.":::
 
 ## <a name="networking"></a>Сеть
 
@@ -85,5 +85,5 @@ ms.locfileid: "90938141"
 - Дополнительные сведения о [проверке подлинности](../concepts/authentication.md)
 - Сведения о [решениях PSTN и SMS](../concepts/telephony-sms/plan-solution.md)
 
-- [Добавление разговора в приложение](../quickstarts/chat/get-started.md)
-- [Добавление в приложение речевого вызова](../quickstarts/voice-video-calling/getting-started-with-calling.md)
+- [Добавление чата в приложение](../quickstarts/chat/get-started.md)
+- [Добавление функции голосового вызова в приложение](../quickstarts/voice-video-calling/getting-started-with-calling.md)

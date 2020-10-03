@@ -15,12 +15,12 @@ ms.date: 09/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: 2f96e48d0c7b14178185f751b8c708e75ab3f322
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 415af4d71365a88a5998f6a9356d5240bc5e2518
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91441832"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91665998"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Устранение неполадок в Azure RBAC
 
@@ -86,7 +86,7 @@ $ras.Count
 
 ## <a name="transferring-a-subscription-to-a-different-directory"></a>Передача подписки в другой каталог
 
-- Сведения о том, как передавать подписку в другой каталог Azure AD, см. в статье [Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)](transfer-subscription.md).
+- Сведения о том, как передавать подписку в другой каталог Azure AD, см. в статье [Перенос подписки Azure в другой каталог Azure AD](transfer-subscription.md).
 - Если вы переносите подписку в другой каталог Azure AD, все назначения ролей **окончательно** удаляются из исходного каталога Azure AD и не переносятся в целевой каталог Azure AD. Необходимо повторно создать назначения ролей в целевом каталоге. Также необходимо вручную создать управляемые удостоверения для ресурсов Azure. Дополнительные сведения см. в разделе [часто задаваемые вопросы и известные проблемы с управляемыми удостоверениями](../active-directory/managed-identities-azure-resources/known-issues.md).
 - Если вы являетесь глобальным администратором Azure AD и у вас нет доступа к подписке после ее передачи между каталогами, используйте переключатель **Управление доступом для ресурсов Azure** , чтобы временно [повысить уровень доступа](elevate-access-global-admin.md) , чтобы получить доступ к подписке.
 

@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
-ms.openlocfilehash: 702ee5dd8d432582ce1df75ce71c220aa0507cba
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 53f10996a7f15e32261f151600163f41df4e58ca
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708218"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666795"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-the-azure-cli"></a>Управление данными утечка в учетные записи хранения Azure с помощью политик конечной точки службы виртуальной сети с использованием Azure CLI
 
@@ -252,7 +252,7 @@ az storage account network-rule add \
 
 Политики конечной точки службы Azure доступны только в службе хранилища Azure. Поэтому мы будем включать конечную точку службы для *Microsoft. Storage* в этой подсети для этого примера установки.
 
-Политики конечной точки службы применяются к конечным точкам службы. Начнем с создания политики конечной точки службы. Затем будут созданы определения политик в этой политике для учетных записей хранения Azure, которые будут список разрешений для этой подсети.
+Политики конечной точки службы применяются к конечным точкам службы. Начнем с создания политики конечной точки службы. Затем мы создадим определения политик в этой политике для того, чтобы учетные записи хранения Azure были утверждены для этой подсети.
 
 Создание политики конечной точки службы.
 
@@ -361,6 +361,6 @@ sudo mount --types cifs //notallowedstorageacc.file.core.windows.net/my-file-sha
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы применили политику конечной точки службы к службе хранилища Azure для конечной точки службы виртуальной сети Azure. Вы создали учетные записи хранения Azure и ограниченный сетевой доступ только к определенным учетным записям хранения (и, таким же, отклонили другие) из подсети виртуальной сети. Дополнительные сведения о политиках конечной точки службы см. в статье [Общие сведения о политиках конечных точек служб](virtual-network-service-endpoint-policies-overview.md).

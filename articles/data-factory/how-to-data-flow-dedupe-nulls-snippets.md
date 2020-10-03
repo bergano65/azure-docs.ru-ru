@@ -8,18 +8,20 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: makromer
-ms.openlocfilehash: 683d7ffe5549b86a587cd2dc3c9a86a36aee1bba
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 841484a647d2737d621c75ebe63f65f2de829a26
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91637400"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666515"
 ---
 # <a name="dedupe-rows-and-find-nulls-using-data-flow-snippets"></a>Декопия строк и поиск значений NULL с помощью фрагментов потока данных
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 С помощью фрагментов кода при сопоставлении потоков данных можно легко выполнять стандартные задачи, такие как дедупликация данных и фильтрация значений NULL. В этом пошаговом руководство объясняется, как добавлять эти функции в конвейеры очень просто с помощью фрагментов сценариев потока данных.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4GnhH]
 
 ## <a name="create-a-pipeline"></a>Создание конвейера
 

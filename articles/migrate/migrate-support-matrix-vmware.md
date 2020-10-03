@@ -3,12 +3,12 @@ title: Поддержка оценки VMware в службе "Миграция 
 description: Узнайте о поддержке оценки виртуальных машин VMware с помощью средства оценки сервера службы "Миграция Azure".
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 6716bea08347783d8c5728a4e346ffab8ea60a07
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: f672c90f6056cd735d5ddc8dd96de9e7007999ce
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89660275"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91667798"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Таблица поддержки для оценки виртуальных машин VMware 
 
@@ -40,12 +40,12 @@ ms.locfileid: "89660275"
 **VMware** | **Сведения**
 --- | ---
 **Виртуальные машины VMware** | Все операционные системы можно оценить для миграции. 
-**Хранилище** | Поддерживаются диски, подключенные к контроллерам SCSI, IDE и SATA.
+**Память** | Поддерживаются диски, подключенные к контроллерам SCSI, IDE и SATA.
 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Требования к устройству Миграции Azure
 
-Служба "Миграция Azure" использует [устройство Миграции Azure](migrate-appliance.md) для обнаружения и оценки. Вы можете развернуть устройство как виртуальную машину VMWare с помощью шаблона OVA, импортированного в vCenter Server, или с помощью [сценария PowerShell](deploy-appliance-script.md).
+Служба "Миграция Azure" использует [устройство Миграции Azure](migrate-appliance.md) для обнаружения и оценки. Вы можете развернуть устройство как виртуальную машину VMware с помощью шаблона OVA, импортированного в vCenter Server или с помощью [скрипта PowerShell](deploy-appliance-script.md).
 
 - Узнайте больше о [требованиях к устройству](migrate-appliance.md#appliance---vmware) для VMware.
 - В Azure для государственных организаций необходимо развернуть устройство [с помощью скрипта](deploy-appliance-script-government.md).
@@ -85,16 +85,15 @@ ms.locfileid: "89660275"
 --- | --- 
 **Перед развертыванием** | У вас должен быть проект "Миграция Azure" со средством оценки сервера.<br/><br/>  Визуализация зависимостей развертывается после настройки устройства миграции Azure для обнаружения локальных компьютеров VMware.<br/><br/> [Узнайте](create-manage-projects.md), как создать проект в первый раз.<br/> [Узнайте](how-to-assess.md), как добавить средство оценки в существующий проект.<br/> [Узнайте](how-to-set-up-appliance-vmware.md), как настроить устройство Миграции Azure для оценки виртуальных машин VMware.
 **Поддерживаемые компьютеры** | В настоящее время поддерживается только для виртуальных машин VMware.
-**Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядная версия).
+**Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядная версия).<br/>Microsoft Windows Server 2008 (32-bit). Убедитесь, что PowerShell установлен.
 **Учетные данные vCenter Server** | Для визуализации зависимостей требуется учетная запись vCenter Server с доступом только для чтения и разрешения для гостевых операций на виртуальных машинах.
 **Разрешения виртуальной машины Windows** |  Для анализа зависимостей устройству Миграции Azure требуется учетная запись администратора домена или учетная запись локального администратора для доступа к виртуальным машинам Windows.
-**Виртуальные машины Linux** | Red Hat Enterprise Linux 7, 6, 5<br/> Ubuntu Linux 14.04, 16.04<br/> Debian 7, 8.<br/> Oracle Linux 6, 7<br/> CentOS 5, 6, 7.
-**Учетная запись Linux** | Для анализа зависимостей на компьютерах Linux устройству Миграции Azure требуется учетная запись пользователя с правами root.<br/><br/> Или у учетной записи пользователя должны быть следующие разрешения для файлов /bin/netstat и /bin/ls: CAP_DAC_READ_SEARCH и CAP_SYS_PTRACE. Задайте эти возможности с помощью следующих команд: <br/> sudo сеткап CAP_DAC_READ_SEARCH, CAP_SYS_PTRACE = EP/бин/ЛС <br/> sudo сеткап CAP_DAC_READ_SEARCH, CAP_SYS_PTRACE = EP/бин/нетстат
+**Виртуальные машины Linux** | Red Hat Enterprise Linux 7, 6, 5<br/> Ubuntu Linux 14.04, 16.04<br/> Debian 7, 8.<br/> Oracle Linux 6, 7<br/> CentOS 5, 6, 7.<br/> SUSE Linux Enterprise Server 11 и более поздние версии
+**Учетная запись Linux** | Для анализа зависимостей на компьютерах Linux устройству "миграция Azure" требуется учетная запись привилегированного пользователя<br/><br/> Или у учетной записи пользователя должны быть следующие разрешения для файлов /bin/netstat и /bin/ls: CAP_DAC_READ_SEARCH и CAP_SYS_PTRACE. Задайте эти возможности с помощью следующих команд: <br/> sudo сеткап CAP_DAC_READ_SEARCH, CAP_SYS_PTRACE = EP/бин/ЛС <br/> sudo сеткап CAP_DAC_READ_SEARCH, CAP_SYS_PTRACE = EP/бин/нетстат
 **Необходимые агенты** | На компьютерах, которые вы хотите проанализировать, не требуется агент.
 **Средства VMware** | Средства VMware (после версии 10.2) должны быть установлены и запущены на каждой виртуальной машине, которую необходимо проанализировать.
-
-**PowerShell** | На виртуальных машинах Windows должна быть установлена оболочка PowerShell версии 2,0 или более поздней.
-**Доступ к портам** | На узлах ESXi, на которых выполняются анализируемые виртуальные машины, устройство миграции Azure должно иметь возможность подключения к TCP-порту 443.
+**PowerShell** | Для виртуальных машин Windows требуется PowerShell версии 2.0 или более поздней.
+**Доступ к портам** | На узлах ESXi, на которых нужно проанализировать виртуальные машины, устройство Миграции Azure должно иметь возможность подключения к TCP-порту 443.
 
 
 ## <a name="dependency-analysis-requirements-agent-based"></a>Требования к анализу зависимостей (на основе агентов)

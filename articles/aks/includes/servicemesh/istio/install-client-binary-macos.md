@@ -1,31 +1,30 @@
 ---
 author: paulbouwer
 ms.topic: include
-ms.date: 11/15/2019
+ms.date: 10/02/2020
 ms.author: pabouwer
-ms.openlocfilehash: 74f5b22ccc822a188059b29d9c661a15cf8412bf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5dc9686e4a9994a085cc9f4a4631e66b05d7949d
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77594022"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666739"
 ---
 ## <a name="download-and-install-the-istio-istioctl-client-binary"></a>Скачивание и установка двоичного файла клиента Istio истиоктл
 
-В оболочке на основе Bash в MacOS используйте `curl` для загрузки выпуска Istio, а затем извлеките с помощью `tar` следующим образом:
+В оболочке на основе Bash в macOS используйте `curl` для загрузки выпуска Istio, а затем извлеките с помощью `tar` следующим образом:
 
 ```bash
 # Specify the Istio version that will be leveraged throughout these instructions
-ISTIO_VERSION=1.4.0
+ISTIO_VERSION=1.7.3
 
-curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istio-$ISTIO_VERSION-osx.tar.gz" | tar xz
+curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istioctl-$ISTIO_VERSION-osx.tar.gz" | tar xz
 ```
 
-`istioctl`Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Istio. Используйте следующие команды для установки `istioctl` двоичного файла клиента Istio в оболочке на основе Bash в MacOS. Эти команды копируют двоичный файл клиента `istioctl` в стандартное расположение программ для пользователя в `PATH`.
+`istioctl`Клиентский двоичный файл выполняется на клиентском компьютере и позволяет устанавливать Istio в кластере AKS и управлять им. Используйте следующие команды для установки `istioctl` двоичного файла клиента Istio в оболочке на основе Bash в macOS. Эти команды копируют двоичный файл клиента `istioctl` в стандартное расположение программ для пользователя в `PATH`.
 
 ```bash
-cd istio-$ISTIO_VERSION
-sudo cp ./bin/istioctl /usr/local/bin/istioctl
+sudo mv ./istioctl /usr/local/bin/istioctl
 sudo chmod +x /usr/local/bin/istioctl
 ```
 

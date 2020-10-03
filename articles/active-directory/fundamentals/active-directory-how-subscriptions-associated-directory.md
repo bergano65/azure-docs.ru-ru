@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ddca4bc684646854ae8d308043b3de56ec65924
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.openlocfilehash: 747edfdb2a2709a842f767d2ace09662d139c827
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89426101"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666438"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -50,7 +50,7 @@ ms.locfileid: "89426101"
   - Если у вас есть хранилища ключей, они станут недоступными и их потребуется исправить после сопоставления.
   - Если у вас есть управляемые удостоверения для таких ресурсов, как виртуальные машины или Logic Apps, необходимо повторно включить или создать их заново после сопоставления.
   - Если у вас есть зарегистрированная Azure Stack, ее потребуется повторно зарегистрировать после связи
-  - Дополнительные сведения см. в статье [Передача подписки Azure в другой каталог Azure AD (предварительная версия)](../../role-based-access-control/transfer-subscription.md).
+  - Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD](../../role-based-access-control/transfer-subscription.md).
 
 - Войдите, используя учетную запись, которая:
 
@@ -93,7 +93,7 @@ ms.locfileid: "89426101"
 
 - Если вы зарегистрировали Azure Stack с помощью этой подписки, необходимо выполнить повторную регистрацию. Дополнительные сведения см. в статье [регистрация Azure Stack в Azure](/azure-stack/operator/azure-stack-registration).
 
-- Дополнительные сведения см. в статье [Передача подписки Azure в другой каталог Azure AD (предварительная версия)](../../role-based-access-control/transfer-subscription.md).
+- Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD](../../role-based-access-control/transfer-subscription.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

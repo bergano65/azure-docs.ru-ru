@@ -1,18 +1,18 @@
 ---
 title: Изоляция для виртуальных машин в Azure
 description: Узнайте, как работает изоляция виртуальных машин в Azure.
-author: ayshakeen
+author: styli365
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/18/2019
-ms.author: ayshak
-ms.openlocfilehash: 58b3f9c3655a2e15842f7fa28ad3e6921395beba
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.author: sttsinar
+ms.openlocfilehash: d6a77cac049ef32949eeba4cbd6fe9217100a360
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831453"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666846"
 ---
 # <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 
@@ -39,10 +39,10 @@ ms.locfileid: "87831453"
 
 | Размер | Дата выбытия изоляции | 
 | --- | --- |
-| Standard_DS15_v2<sup>1</sup> | 15 мая 2020 г. |
-| Standard_D15_v2<sup>1</sup>  | 15 мая 2020 г. |
+| Standard_DS15_v2<sup>1</sup> | 15 мая 2020 г. |
+| Standard_D15_v2<sup>1</sup>  | 15 мая 2020 г. |
 
-<sup>1</sup> дополнительные сведения о программе прекращения использования Standard_DS15_v2 и Standard_D15_v2 см. в разделе часто задаваемые вопросы
+<sup>1</sup>  дополнительные сведения о программе прекращения использования Standard_DS15_v2 и Standard_D15_v2 см. в разделе часто задаваемые вопросы
 
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
@@ -64,11 +64,11 @@ ms.locfileid: "87831453"
 ### <a name="q-what-are-the-milestones-for-d15_v2-or-ds15_v2-isolation-retirement"></a>Вопрос. Каковы вехи для D15_v2 или DS15_v2 выбытие изоляции? 
 **A**: 
  
-| Дата | Действие |
+| Date | Действие |
 |---|---| 
 | 18 ноября 2019 г. | Доступность D/DS15i_v2 (PAYG, 1 год, RI) | 
 | 14 мая 2020 г. | Последний день для покупки D/DS15i_v2 1-year RI | 
-| 15 мая 2020 г. | Гарантия изоляции D/DS15_v2 удалена | 
+| 15 мая 2020 г. | Гарантия изоляции D/DS15_v2 удалена | 
 | 15 мая 2021 г. | Снятие DS15_v2 с учета D/DS15i_v2 (все клиенты, кроме тех, которые приобрели 3-летний набор прав () до 18 ноября 2019 г.)| 
 | 17 ноября 2022 г. | Снятие с учета D/DS15i_v2 при выполнении 3-летний RIs (для клиентов, которые приобрели 3-летний набор данных (DS15_v2) до 18 ноября 2019) |
 

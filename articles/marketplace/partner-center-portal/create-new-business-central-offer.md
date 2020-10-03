@@ -7,12 +7,12 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 08/07/2020
-ms.openlocfilehash: d92dc562136ef20dac19e7ddfa4339c565793308
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: e42111de7d05f184e1153ddc351c3f1fa10cc86f
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91531825"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91665244"
 ---
 # <a name="create-a-dynamics-365-business-central-offer"></a>Создание предложения Dynamics 365 Business Central
 
@@ -256,9 +256,8 @@ ms.locfileid: "91531825"
 
 Требуется, если ваше предложение устанавливается вместе с другим расширением, которое не будет опубликовано в Marketplace. В таком случае отправьте соответствующий файл .app.
 
-#### <a name="dependency-package-file"></a>Файл пакета зависимости
-
-Требуется, если ваше предложение устанавливается вместе с другим расширением, которое уже опубликовано в Marketplace. В таком случае отправьте файл `.app` или `.zip`.
+>[!NOTE]
+>Файл пакета зависимостей больше не используется. Отправьте вместо этого файл пакета библиотеки.
 
 ### <a name="url-to-app-installation"></a>URL-адрес для установки приложения
 

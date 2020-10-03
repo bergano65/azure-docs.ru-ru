@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: twooley
-ms.openlocfilehash: b124f828c4a6a019c45243528ed2d957e3f781f3
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: fe5940083d04c1b5cc60b21834adf609e523e059
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88191415"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91666251"
 ---
 # <a name="high-availability-and-disaster-recovery-guidance-for-data-lake-storage-gen1"></a>Рекомендации по обеспечению высокого уровня доступности и аварийного восстановления для Data Lake Storage 1-го поколения
 
@@ -38,9 +38,7 @@ Data Lake Storage 1-го поколения предоставляет лока�
 
 Кроме того, можно включить [ведение журнала диагностики](data-lake-store-diagnostic-logs.md) для учетной записи Data Lake Storage 1-го поколения для сбора журналов аудита доступа к данным. Журнал аудита содержит сведения о том, кто мог удалить или обновить файл.
 
-Вы можете попытаться восстановить удаленный элемент с помощью модуля [AZ. data lake store](https://docs.microsoft.com/powershell/module/az.datalakestore/) Azure PowerShell для Data Lake Storage Gen 1. В частности, см. команду [RESTORE-аздаталакестоределетедитем](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem) . Перед использованием этой команды обязательно ознакомьтесь с [описанием](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem#description) раздела.
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Начало работы с Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 047e722a0e0ade60d1eb93a48e37333fffafd674
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6733e373b35dd160af94e3178cd11f657f362c1c
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76836462"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91665263"
 ---
 # <a name="limits-in-azure-database-for-postgresql---single-server"></a>Ограничения в базе данных Azure для PostgreSQL — один сервер
 В следующих разделах описываются действующие ограничения емкости и функциональных возможностей в службе базы данных. Дополнительные сведения о уровнях ресурсов (вычислений, памяти, хранилища) см. [в статье ценовые категории.](concepts-pricing-tiers.md)
@@ -67,7 +67,12 @@ PostgreSQL подключение, даже бездействующее, мож
 ### <a name="utf-8-characters-on-windows"></a>Символы UTF-8 в Windows
 - В некоторых сценариях символы UTF-8 не полностью поддерживаются в среде PostgreSQL с открытым исходным кодом в операционной системе Windows, что влияет на службу "База данных Azure для PostgreSQL". Дополнительные сведения см. в беседе об [ошибке 15476 в postgresql-archive](https://www.postgresql-archive.org/BUG-15476-Problem-on-show-trgm-with-4-byte-UTF-8-characters-td6056677.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="gss-error"></a>Ошибка GSS
+Если отображается сообщение об ошибке, связанное с **GSS**, скорее всего, вы используете более новую версию клиента или драйвера, которая еще не полностью поддерживается в Azure postgres Single Server. Эта ошибка известна как воздействие на [версии драйверов JDBC 42.2.15 и 42.2.16](https://github.com/pgjdbc/pgjdbc/issues/1868).
+   - Мы планируем завершить обновление до конца ноября. Рекомендуется использовать рабочую версию драйвера.
+   - Или попробуйте отключить запрос GSS.  Используйте параметр соединения, например `gssEncMode=disable` .
+
+## <a name="next-steps"></a>Дальнейшие действия
 - См. [доступные возможности в каждой ценовой категории](concepts-pricing-tiers.md).
 - См. [поддерживаемые версии базы данных PostgreSQL](concepts-supported-versions.md).
 - Узнайте [Как выполнить резервное копирование и восстановление сервера в службе "База данных Azure для PostgreSQL" с помощью портала Azure](howto-restore-server-portal.md).

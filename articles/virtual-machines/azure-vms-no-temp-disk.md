@@ -7,18 +7,15 @@ ms.topic: conceptual
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: 15b9495b95ec4efb4f8e9f315595ea6bfca6cd5a
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: 30587fac7d7be37d7595a78502b7999adee9a30f
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88191150"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91665316"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Размеры виртуальных машин Azure без локального временного диска 
 В этой статье приведены ответы на часто задаваемые вопросы о размерах виртуальных машин Azure, у которых нет локального временного диска (т. е. локальный временный диск отсутствует). Дополнительные сведения об этих размерах виртуальных машин см. в статьях [спецификации для dv4 и Dsv4 (общего назначения рабочих нагрузок)](dv4-dsv4-series.md) или [спецификации для Ev4 и Esv4 (рабочих нагрузок, оптимизированных для памяти)](ev4-esv4-series.md).
-
-> [!IMPORTANT]
-> Размеры виртуальных машин серии dv4, Dsv4, Ev4 и Esv4 теперь доступны в общедоступной предварительной версии. Чтобы зарегистрироваться в общедоступной предварительной версии, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRURE1ZSkdDUzg1VzJDN0cwWUlKTkcyUlo5Mi4u). 
 
 ## <a name="what-does-no-local-temp-disk-mean"></a>Что означает отсутствие локального временного диска? 
 Обычно у нас есть размеры виртуальных машин (например, Standard_D2s_v3, Standard_E48_v3), которые включают небольшой локальный диск (т. е. диск D:). Теперь с новыми размерами виртуальных машин этот маленький локальный диск больше не существует; Тем не менее можно присоединить HDD (цен. категория "Стандартный"), SSD (цен. категория "Премиум") или SSD (цен. категория "Ультра").
@@ -55,7 +52,7 @@ ms.locfileid: "88191150"
 ## <a name="have-questions-or-feedback"></a>Есть вопросы или предложения?
 Заполните [форму обратной связи]( https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRUMzdCQkw0OVVRTldFUUtXSTlLQVBPUkVHSy4u). 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 В этом документе вы узнали больше о наиболее часто встречающихся вопросах, связанных с виртуальными машинами Azure без локального временного диска. Дополнительные сведения об этих размерах виртуальных машин см. в следующих статьях:
 
 - [Спецификации для серии dv4 и Dsv4 (общего назначенияная Рабочая нагрузка)](dv4-dsv4-series.md)

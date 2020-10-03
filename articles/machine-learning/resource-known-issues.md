@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.custom: troubleshooting, contperfq4
-ms.date: 08/13/2020
-ms.openlocfilehash: 3a1d5c70913f7e2a56eaf04be333a931c1adbc3d
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.date: 10/02/2020
+ms.openlocfilehash: c4250be15b1c4fdc5df81c0f0ba3623dedf6488f
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91450063"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91667271"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -135,7 +135,7 @@ ms.locfileid: "91450063"
     
 * **Ошибка при установке пакетов в модулях**
 
-    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример:
+    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример
     
     ```python
     psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
@@ -387,9 +387,9 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
   
 * **Сбой импорта аутомлконфиг**: в автоматизированной версии машинного обучения были внесены изменения пакета, которые потребовали удаления предыдущей версии перед обновлением до новой версии. Если `ImportError: cannot import name AutoMLConfig` обнаружено после обновления с версии пакета SDK до 1.0.76 v 1.0.76 или более поздней, устраните ошибку, выполнив `pip uninstall azureml-train automl` команду `pip install azureml-train-auotml` . Сценарий automl_setup. cmd делает это автоматически. 
 
-* **Рабочая область. from_config завершается ошибкой**: при сбое вызывается WS = workspace. from_config ()
+* **сбой Workspace.from_config**: сбой вызова ws = Workspace.from_config ()
   1. Убедитесь, что Записная книжка Configuration. ipynb успешно запущена.
-  2. Если Записная книжка запускается из папки, которая не находится в папке, в которой выполнялась эта папка `configuration.ipynb` , скопируйте папку aml_config и файл config.jsна том, который она содержит, в новую папку. Рабочая область. from_config считывает config.jsдля папки записной книжки или ее родительской папки.
+  2. Если Записная книжка запускается из папки, которая не находится в папке, в которой выполнялась эта папка `configuration.ipynb` , скопируйте папку aml_config и файл config.jsна том, который она содержит, в новую папку. Workspace.from_config считывает config.jsдля папки записной книжки или ее родительской папки.
   3. Если используется новая подписка, Группа ресурсов, Рабочая область или регион, убедитесь, что вы повторно запускаете `configuration.ipynb` записную книжку. Изменение config.jsнапрямую будет работать только в том случае, если Рабочая область уже существует в указанной группе ресурсов в указанной подписке.
   4. Если вы хотите изменить регион, измените рабочую область, группу ресурсов или подписку. `Workspace.create` не будет создавать или обновлять рабочую область, если она уже существует, даже если указана другая область.
   
@@ -449,6 +449,10 @@ kubectl get secret/azuremlfessl -o yaml
 
 >[!Note]
 >Kubernetes сохраняет секреты в формате в кодировке Base-64. Необходимо сначала декодировать компоненты и для этих секретов в Base-64, `cert.pem` `key.pem` прежде чем предоставлять их в `attach_config.enable_ssl` . 
+
+### <a name="detaching-azure-kubernetes-service"></a>Отсоединение службы Kubernetes Azure
+
+Использование Машинное обучение Azure Studio, пакета SDK или расширения Azure CLI для отключения кластера AKS не приводит к удалению кластера AKS. Сведения об удалении кластера см. [в разделе использование Azure CLI с AKS](/azure/aks/kubernetes-walkthrough#delete-the-cluster).
 
 ### <a name="webservices-in-azure-kubernetes-service-failures"></a>Ошибки WebService в службе Kubernetes Azure
 

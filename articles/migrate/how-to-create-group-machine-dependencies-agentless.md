@@ -3,12 +3,12 @@ title: Настройка анализа зависимостей без аге�
 description: Настройка анализа зависимостей без агента в службе "миграция Azure" для оценки серверов.
 ms.topic: how-to
 ms.date: 6/08/2020
-ms.openlocfilehash: 164cc20632faa1d444d06da6688000e9b40d7e76
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 57e5add810cf4fac232bce08fc7ca96df0a7c3a0
+ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91275597"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91667475"
 ---
 # <a name="analyze-machine-dependencies-agentless"></a>Анализ зависимостей компьютера (без агентов)
 
@@ -137,12 +137,12 @@ ms.locfileid: "91275597"
 Если вы хотите запретить зависимость на нескольких компьютерах, для этого можно использовать [PowerShell](#start-or-stop-dependency-discovery-using-powershell) .
 
 
-### <a name="start-or-stop-dependency-discovery-using-powershell"></a>Запуск или завершение обнаружения зависимостей с помощью PowerShell
+## <a name="start-or-stop-dependency-discovery-using-powershell"></a>Запуск или завершение обнаружения зависимостей с помощью PowerShell
 
 Скачайте модуль PowerShell из репозитория [примеров Azure PowerShell](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/dependencies-at-scale) на сайте GitHub.
 
 
-#### <a name="log-in-to-azure"></a>Вход в Azure
+### <a name="log-in-to-azure"></a>Вход в Azure
 
 1. Войдите в подписку Azure с помощью командлета Connect-Азаккаунт.
 
@@ -166,7 +166,7 @@ ms.locfileid: "91275597"
     Import-Module .\AzMig_Dependencies.psm1
     ```
 
-#### <a name="enable-or-disable-dependency-data-collection"></a>Включение или отключение сбора данных о зависимостях
+### <a name="enable-or-disable-dependency-data-collection"></a>Включение или отключение сбора данных о зависимостях
 
 1. Получите список обнаруженных виртуальных машин VMware в проекте службы "миграция Azure" с помощью следующих команд. В приведенном ниже примере имя проекта — Фабрикамдемопрожект, а группа ресурсов, к которой он принадлежит, — Фабрикамдеморг. Список компьютеров будет сохранен в FabrikamDemo_VMs.csv
 
