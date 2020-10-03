@@ -449,12 +449,6 @@
               href: windows-voice-assistants-best-practices.md
             - name: Примеры и часто задаваемые вопросы
               href: windows-voice-assistants-faq.md
-    - name: Пользовательское ключевое слово
-      items:
-        - name: Общие сведения о настраиваемых ключевых словах
-          href: custom-keyword-overview.md
-        - name: Общие сведения об использовании настраиваемых ключевых слов
-          href: custom-keyword-basics.md
 - name: API Распознавания говорящего
   items:
     - name: Основные сведения о Распознавании говорящего
@@ -465,6 +459,12 @@
       items:
         - name: REST API службы "Распознавание говорящего"
           href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
+- name: Пользовательское ключевое слово
+  items:
+    - name: Общие сведения о настраиваемых ключевых словах
+      href: custom-keyword-overview.md
+    - name: Общие сведения об использовании настраиваемых ключевых слов
+      href: custom-keyword-basics.md
 - name: Инструменты
   items:
     - name: Пакет SDK для службы "Речь"
@@ -504,7 +504,7 @@
           href: 'https://speech.microsoft.com'
         - name: Создание приложения пользовательских команд с помощью Speech Studio
           href: quickstart-custom-speech-commands-create-new.md
-- name: Развернуть
+- name: Развертывание
   items:
     - name: Включение ведения журналов
       href: how-to-use-logging.md
