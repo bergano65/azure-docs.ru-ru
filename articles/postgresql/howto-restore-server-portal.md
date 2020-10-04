@@ -1,17 +1,17 @@
 ---
 title: Резервное копирование и восстановление — портал Azure — база данных Azure для PostgreSQL — один сервер
 description: В этой статье описывается, как восстановить сервер в базе данных Azure для PostgreSQL-Single Server с помощью портал Azure.
-author: rachel-msft
-ms.author: raagyema
+author: sr-msft
+ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 6/30/2020
-ms.openlocfilehash: 9ff62a568af4f60318ba0e5bdf2144bb43c9d2b1
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: debdbf6e08af7b9005336231abd6c998a871c525
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90884310"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708090"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL — один сервер с помощью портал Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "90884310"
 
 Если вы создаете сервер на портале Azure, тип резервного копирования (**локально избыточное** или **геоизбыточное**) задается в окне **Ценовая категория**. Кроме того, в этом окне указывается **срок хранения резервных копий** — период (в днях), в течение которого должны храниться резервные копии.
 
-   :::image type="content" source="./media/howto-restore-server-portal/pricing-tier.png" alt-text="Окно "Ценовая категория" — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/pricing-tier.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
 
 Дополнительные сведения о настройке этих значений при создании см. в [кратком руководстве по серверам службы "База данных Azure для PostgreSQL"](quickstart-create-server-database-portal.md).
 
@@ -37,7 +37,7 @@ ms.locfileid: "90884310"
 2. Выберите сервер базы данных Azure для PostgreSQL. Откроется страница **Обзор**.
 3. В меню в разделе **Параметры** выберите **Ценовая категория**. С помощью ползунка можно изменить **срок хранения резервных копий** в диапазоне от 7 до 35 дней.
 На приведенном ниже снимке экрана он увеличен до 34 дней.
-:::image type="content" source="./media/howto-restore-server-portal/3-increase-backup-days.png" alt-text="Увеличенный срок хранения резервных копий":::
+:::image type="content" source="./media/howto-restore-server-portal/3-increase-backup-days.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
 
 4. Нажмите кнопку **ОК**, чтобы подтвердить изменение.
 
@@ -53,11 +53,11 @@ ms.locfileid: "90884310"
 
 2. На панели инструментов на странице **Обзор** для сервера выберите **Восстановить**.
 
-   :::image type="content" source="./media/howto-restore-server-portal/2-server.png" alt-text="База данных Azure для PostgreSQL: колонка "Восстановление" в колонке "Обзор"":::
+   :::image type="content" source="./media/howto-restore-server-portal/2-server.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
 
 3. Заполните форму "Восстановление", указав следующие сведения.
 
-   :::image type="content" source="./media/howto-restore-server-portal/3-restore.png" alt-text="База данных Azure для PostgreSQL: информация для восстановления":::
+   :::image type="content" source="./media/howto-restore-server-portal/3-restore.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
    - **Точка восстановления.** Выберите точку во времени, до которой нужно восстановить сервер.
    - **Целевой сервер.** Укажите имя для нового сервера.
    - **Расположение.** Невозможно выбрать регион. По умолчанию он совпадает с исходным сервером.
@@ -77,17 +77,17 @@ ms.locfileid: "90884310"
 
 1. Нажмите кнопку **Создать ресурс** (+) в левом верхнем углу окна портала. Выберите **Базы данных** > **База данных Azure для PostgreSQL**.
 
-   :::image type="content" source="./media/howto-restore-server-portal/1-navigate-to-postgres.png" alt-text="Перейдите к базе данных Azure для PostgreSQL.":::
+   :::image type="content" source="./media/howto-restore-server-portal/1-navigate-to-postgres.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
 
 2. Выберите вариант развертывания **Отдельный сервер**.
 
-   :::image type="content" source="./media/howto-restore-server-portal/2-select-deployment-option.png" alt-text="Выберите вариант развертывания "база данных Azure для PostgreSQL-одиночный сервер".":::
+   :::image type="content" source="./media/howto-restore-server-portal/2-select-deployment-option.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
  
 3. Укажите подписку, группу ресурсов и имя нового сервера. 
 
 4. Выберите **резервное копирование** в качестве **источника данных**. Это действие загружает раскрывающееся меню, содержащее список серверов с включенными географически избыточными резервными копиями.
    
-   :::image type="content" source="./media/howto-restore-server-portal/4-geo-restore.png" alt-text="Выберите источник данных.":::
+   :::image type="content" source="./media/howto-restore-server-portal/4-geo-restore.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
     
    > [!NOTE]
    > Сразу после создания сервер может быть еще не готов к географическому восстановлению. Заполнение метаданных может занять несколько часов.
@@ -95,21 +95,17 @@ ms.locfileid: "90884310"
 
 5. Выберите раскрывающийся список **резервная копия** .
    
-   :::image type="content" source="./media/howto-restore-server-portal/5-geo-restore-backup.png" alt-text="Выберите раскрывающееся меню резервное копирование.":::
+   :::image type="content" source="./media/howto-restore-server-portal/5-geo-restore-backup.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
 
 6. Выберите исходный сервер для восстановления.
    
-   :::image type="content" source="./media/howto-restore-server-portal/6-select-backup.png" alt-text="Выберите резервное копирование.":::
+   :::image type="content" source="./media/howto-restore-server-portal/6-select-backup.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
 
 7. По умолчанию сервер будет иметь значения для параметра количество **виртуальных ядер**, **срок хранения резервной**копии, **параметр избыточности резервной копии**, **Версия подсистемы**и **учетные данные администратора**. Выберите **Continue** (Продолжить). 
    
-   :::image type="content" source="./media/howto-restore-server-portal/7-accept-backup.png" alt-text="Продолжайте резервное копирование.":::
+   :::image type="content" source="./media/howto-restore-server-portal/7-accept-backup.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования" или "С оптимизацией для операций в памяти") и объем **хранилища** во время восстановления нельзя.
 
-8. Заполните оставшиеся поля формы в соответствии со своими предпочтениями. Вы можете выбрать любое **расположение**.
-
-    Выбрав расположение, можно выбрать параметр **настроить сервер** , чтобы обновить **поколение вычислений** (если оно доступно в выбранном регионе), число **виртуальных ядер**, **срок хранения резервной копии**и **избыточность резервной копии**. Изменить **ценовую категорию** ("Базовый", "Общего назначения" или "С оптимизацией для операций в памяти") и объем **хранилища** во время восстановления нельзя.
-
-   :::image type="content" source="./media/howto-restore-server-portal/8-create.png" alt-text="Форма заливки."::: 
+   :::image type="content" source="./media/howto-restore-server-portal/8-create.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования"::: 
 
 9. Выберите **Просмотр и создание** , чтобы просмотреть выбранные элементы. 
 

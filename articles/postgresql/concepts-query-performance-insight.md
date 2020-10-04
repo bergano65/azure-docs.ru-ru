@@ -1,17 +1,17 @@
 ---
 title: Анализ производительности запросов — "база данных Azure для PostgreSQL — один сервер"
 description: В этой статье описывается функция анализ производительности запросов в базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: a7573e99de96e3d13509056c49bc24be7fe166bf
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: babf2c8208732a194184549dfa5ed3228b376d0f
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90906531"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710266"
 ---
 # <a name="query-performance-insight"></a>Анализ производительности запросов 
 
@@ -40,7 +40,7 @@ ms.locfileid: "90906531"
 
 Откройте вкладку **Статистика ожидания**, чтобы посмотреть визуализации ожидания на сервере.
 
-:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Статистика ожидания в анализе производительности запросов":::
+:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Анализ производительности медленно выполняющихся запросов":::
 
 ## <a name="considerations"></a>Рекомендации
 * Анализ производительности запросов недоступна для [реплик чтения](concepts-read-replicas.md).

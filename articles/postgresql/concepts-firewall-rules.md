@@ -1,17 +1,17 @@
 ---
 title: Правила брандмауэра — база данных Azure для PostgreSQL — один сервер
 description: В этой статье описывается, как использовать правила брандмауэра для подключения к базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 7048fac4804e16ae70145c8fadc1cd6e0859fcfc
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e677aef7a90e7372c5af4bfa48c6160c439b3ee8
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903915"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707971"
 ---
 # <a name="firewall-rules-in-azure-database-for-postgresql---single-server"></a>Правила брандмауэра в базе данных Azure для PostgreSQL — один сервер
 Брандмауэр сервера базы данных Azure для PostgreSQL предотвращает доступ к серверу базы данных, пока вы не укажете, какие компьютеры имеют разрешение. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -40,7 +40,7 @@ ms.locfileid: "90903915"
 > Параметр **Разрешить доступ к службам Azure** позволяет настроить брандмауэр для разрешения всех подключений из Azure, включая подключения из подписок других клиентов. При выборе этого параметра убедитесь, что используемое имя для входа и разрешения пользователя предоставляют доступ только авторизованным пользователям.
 > 
 
-:::image type="content" source="media/concepts-firewall-rules/allow-azure-services.png" alt-text="Настройка разрешения доступа к службам Azure на портале":::
+:::image type="content" source="media/concepts-firewall-rules/allow-azure-services.png" alt-text="Пример рабочего потока брандмауэра":::
 
 ### <a name="connecting-from-a-vnet"></a>Подключение из виртуальной сети
 Чтобы безопасно подключиться к серверу базы данных Azure для PostgreSQL из виртуальной сети, рассмотрите возможность использования [конечных точек службы виртуальной сети](./concepts-data-access-and-security-vnet.md). 

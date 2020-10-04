@@ -1,17 +1,17 @@
 ---
 title: Управление журналами — портал Azure — база данных Azure для PostgreSQL — один сервер
 description: В этой статье описывается, как настроить журналы сервера (файлы журнала) и получить доступ к ним в базе данных Azure для PostgreSQL-Single Server из портал Azure.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: cf22a165e9a6eadcd2e5d4cdb0efa301538be7e9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 3b52cea1d440506caf5b8244c9643719edd8755c
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90907534"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704276"
 ---
 # <a name="configure-and-access-azure-database-for-postgresql---single-server-logs-from-the-azure-portal"></a>Настройка журналов базы данных Azure для PostgreSQL и доступ к ним из портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "90907534"
 
    После изменения параметров нажмите кнопку **сохранить**. Вы также можете отменить изменения. 
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Снимок экрана параметров параметров сервера":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 На странице **Параметры сервера** можно вернуться к списку журналов, закрыв страницу.
 
@@ -50,18 +50,18 @@ ms.locfileid: "90907534"
 
 3. В разделе **мониторинг** на боковой панели выберите **журналы сервера**. На странице отображается список файлов журнала.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным списком журналов":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Снимок экрана параметров журналов сервера":::
 
    > [!TIP]
    > Действует следующее соглашение об именовании журналов: **postgresql-гггг-мм-дд_чч0000.log**. Дата и время, используемые в имени файла, — это время, когда был выдан журнал. Файлы журналов поворачиваются каждый час или 100 МБ, в зависимости от того, что происходит первым.
 
 4. При необходимости используйте поле поиска, чтобы быстро сократить до определенного журнала на основе даты и времени. Поиск осуществляется по имени журнала.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-search.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным полем поиска и результатами":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-search.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 5. Чтобы загрузить отдельные файлы журналов, щелкните значок со стрелкой вниз рядом с каждым файлом журнала в строке таблицы.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/6-download.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным значком "стрелка вниз"":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/6-download.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о загрузке журналов программным способом см. в разделе [Журналы доступа к серверу в интерфейсе командной строки](howto-configure-server-logs-using-cli.md) .

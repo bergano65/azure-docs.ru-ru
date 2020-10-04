@@ -1,17 +1,17 @@
 ---
 title: Управление правилами брандмауэра — портал Azure — "база данных Azure для PostgreSQL — один сервер"
 description: Создание правил брандмауэра для базы данных Azure для PostgreSQL-Single Server и управление ими с помощью портал Azure
-author: rachel-msft
-ms.author: raagyema
+author: niklarin
+ms.author: nlarin
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: b2cb6a5378afac74c971ba5429775782723bef09
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 02bd4927216b6b60d2720e6f32c5768499e310bb
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90882074"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710878"
 ---
 # <a name="create-and-manage-firewall-rules-for-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Создание правил брандмауэра для базы данных Azure для PostgreSQL-Single Server и управление ими с помощью портал Azure
 Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для PostgreSQL по указанному IP-адресу или диапазону IP-адресов.
@@ -25,24 +25,24 @@ ms.locfileid: "90882074"
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Создание правила брандмауэра на уровне сервера с помощью портала Azure
 1. На странице сервера PostgreSQL в разделе "Параметры" щелкните **Connection security** (Безопасность подключения), чтобы открыть соответствующую страницу базы данных Azure для PostgreSQL.
 
-   :::image type="content" source="./media/howto-manage-firewall-using-portal/1-connection-security.png" alt-text="Портал Azure: щелчок пункта "Безопасность подключения"":::
+   :::image type="content" source="./media/howto-manage-firewall-using-portal/1-connection-security.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
 
 2. Нажмите кнопку **Добавить мой IP-адрес** на панели инструментов. Автоматически будет создано правило брандмауэра с общедоступным IP-адресом компьютера, определенным системой Azure.
 
-   :::image type="content" source="./media/howto-manage-firewall-using-portal/2-add-my-ip.png" alt-text="Портал Azure: нажатие кнопки "Добавить Мой IP-адрес"":::
+   :::image type="content" source="./media/howto-manage-firewall-using-portal/2-add-my-ip.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
 
 3. Проверьте IP-адрес перед сохранением конфигурации. В некоторых случаях IP-адрес, определенный порталом Azure, может отличаться от IP-адреса, используемого для доступа к Интернету и серверам Azure. Поэтому может потребоваться изменить начальный IP-адрес и конечный IP-адрес для правила, чтобы оно функционировало ожидаемым образом.
    Используйте поисковую систему или другой сетевой инструмент, чтобы проверить собственный IP-адрес. Например, выполните поиск текста "какой у меня IP-адрес".
 
-   :::image type="content" source="./media/howto-manage-firewall-using-portal/3-what-is-my-ip.png" alt-text="Поиск текста "what is my IP" в Bing":::
+   :::image type="content" source="./media/howto-manage-firewall-using-portal/3-what-is-my-ip.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
 
 4. Добавьте дополнительные адресные пространства. В правилах брандмауэра базы данных Azure для PostgreSQL можно указать отдельный IP-адрес или диапазон адресов. Если вы хотите ограничить правило, указав отдельный IP-адрес, введите его в полях начального и конечного IP-адресов. Открытие брандмауэра позволяет администраторам, пользователям и приложениям получать доступ к любой базе данных на сервере PostgreSQL, к которой у них есть действительные учетные данные.
 
-   :::image type="content" source="./media/howto-manage-firewall-using-portal/4-specify-addresses.png" alt-text="Портал Azure-правила брандмауэра":::
+   :::image type="content" source="./media/howto-manage-firewall-using-portal/4-specify-addresses.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
 
 5. На панели инструментов нажмите кнопку **Сохранить**, чтобы сохранить это правило брандмауэра уровня сервера. Дождитесь подтверждения успешного обновления правил брандмауэра.
 
-   :::image type="content" source="./media/howto-manage-firewall-using-portal/5-save-firewall-rule.png" alt-text="Портал Azure: нажатие кнопки "Сохранить"":::
+   :::image type="content" source="./media/howto-manage-firewall-using-portal/5-save-firewall-rule.png" alt-text="Портал Azure: щелчок пункта &quot;Безопасность подключения&quot;":::
 
 ## <a name="connecting-from-azure"></a>Подключение из Azure
 Чтобы приложения из Azure могли подключаться к серверу Базы данных Azure для PostgreSQL, необходимо разрешить подключения Azure. Например, это необходимо для размещения веб-приложения Azure или приложения, которое выполняется на виртуальной машине Azure, либо для подключения из шлюза управления данными фабрики данных Azure. Чтобы разрешить эти подключения с помощью правила брандмауэра, ресурсы не обязательно должны находиться в одной и той же виртуальной сети или группе ресурсов. Когда приложение из Azure пытается подключиться к серверу базы данных, брандмауэр проверяет, разрешены ли подключения Azure. Такие подключения можно разрешить с помощью нескольких способов. Параметр брандмауэра с начальным и конечным адресом, равным 0.0.0.0, указывает, что эти подключения разрешены. Кроме того, можно установить параметр **Разрешить доступ к службам Azure** на **ON** портале из области **Безопасность подключения** и нажать кнопку **сохранить**. Если попытка подключения не разрешена, запрос не достигает сервера базы данных Azure для PostgreSQL.

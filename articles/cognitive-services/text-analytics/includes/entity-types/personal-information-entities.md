@@ -8,19 +8,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 07/16/2020
 ms.author: aahi
-ms.openlocfilehash: c50beef5c9c5dcae7edd487e8bf3d192ba557865
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 74586222bbd92b2d6182b34b4667cda0bc599b93
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89662804"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91709535"
 ---
 > [!NOTE]
 > Чтобы определить защищенную информацию о работоспособности (фи), используйте `domain=phi` параметр и версию модели `2020-04-01` или более поздней версии.
 >
-> Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/entities/recognition/pii?domain=phi&model-version=2020-04-01`
+> Пример: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/entities/recognition/pii?domain=phi&model-version=2020-07-01`
  
-При отправке запросов в конечную точку возвращаются следующие категории сущностей `/v3.1-preview.1/entities/recognition/pii` .
+При отправке запросов в конечную точку возвращаются следующие категории сущностей `/v3.1-preview.2/entities/recognition/pii` .
 
 | Категория   | Подкатегория | Описание                          | Начальная версия модели | Примечания |
 |------------|-------------|--------------------------------------|------------------------|---|
@@ -31,7 +31,7 @@ ms.locfileid: "89662804"
 |Организация | Медицина | Медицинские компании и группы. | `2020-04-01` |  |
 |Организация | Обмен на фондовой бирже | Группы обмена фондовой биржи. | `2020-04-01` |  |
 | Организация | Спорт | Организации, связанные с спортивными делами. | `2020-04-01` |  |
-| Адрес | Недоступно | Полные адреса электронной почты.  | `2020-04-01` | Также возвращается с `domain=phi` . |
+| Адрес | Н/Д | Полные адреса электронной почты.  | `2020-04-01` | Также возвращается с `domain=phi` . |
 | GPS-координаты в ЕС. | Недоступно | Координаты GPS для мест в Европейского союза.  | `2019-10-01` |  |
 | Адрес электронной почты | Недоступно | Адреса электронной почты. | `2019-10-01` | Также возвращается с `domain=phi` .   |
 | URL-адрес | Недоступно | URL-адреса веб-сайтов. | `2019-10-01` | Также возвращается с `domain=phi` . |

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/01/2020
 author: parthpandyaMSFT
 ms.author: parthp
-ms.openlocfilehash: 64788544971eaa7738013ab1a0475771c13bab88
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: 96a11caa93a925731ad2f24ac860b21301a29cdf
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89647644"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708192"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Создание коммерческой учетной записи Marketplace в центре партнеров
 
@@ -80,7 +80,7 @@ ms.locfileid: "89647644"
     
 1. Чтобы убедиться, что учетная запись коммерческого магазина указана как зарегистрированная, выберите **Параметры**настройки  >  **партнеров**  >  **программы**.
 
-Теперь вы создали коммерческую учетную запись Marketplace в центре партнеров. Дополнительные сведения см. в статье [Обзор коммерческого рынка](./commercial-marketplace-overview.md). Дополнительные сведения о добавлении издателей см. в статье [Добавление новых издателей в коммерческий](#add-new-publishers-to-the-commercial-marketplace-program)магазин.
+Теперь вы создали коммерческую учетную запись Marketplace в центре партнеров. Дополнительные сведения о добавлении издателей см. в статье [Добавление новых издателей в коммерческий](#add-new-publishers-to-the-commercial-marketplace-program)магазин.
 
 ## <a name="create-an-account-by-using-existing-microsoft-partner-center-enrollments"></a>Создание учетной записи с помощью существующих регистраций центра партнеров Майкрософт
 
@@ -129,7 +129,7 @@ ms.locfileid: "89647644"
     
 1. Чтобы убедиться, что учетная запись коммерческого магазина указана как зарегистрированная, выберите **Параметры**настройки  >  **партнеров**  >  **программы**.
 
-Теперь вы создали коммерческую учетную запись Marketplace в центре партнеров. Дополнительные сведения см. в статье [Обзор коммерческого рынка](./commercial-marketplace-overview.md). Дополнительные сведения о добавлении издателей см. в статье [Добавление новых издателей в коммерческий](#add-new-publishers-to-the-commercial-marketplace-program)магазин.
+Теперь вы создали коммерческую учетную запись Marketplace в центре партнеров. Дополнительные сведения о добавлении издателей см. в статье [Добавление новых издателей в коммерческий](#add-new-publishers-to-the-commercial-marketplace-program)магазин.
 
 ### <a name="what-if-im-already-enrolled-in-a-developer-program"></a>Что делать, если я уже зарегистрировался в программе разработчика?
 
@@ -157,7 +157,7 @@ ms.locfileid: "89647644"
     
 1. Чтобы убедиться, что учетная запись коммерческого магазина указана как зарегистрированная, выберите **Параметры**настройки  >  **партнеров**  >  **программы**.
 
-Теперь вы создали коммерческую учетную запись Marketplace в центре партнеров. Дополнительные сведения см. в статье [Обзор коммерческого рынка](./commercial-marketplace-overview.md). Дополнительные сведения о добавлении издателей см. в статье [Добавление новых издателей в коммерческий](#add-new-publishers-to-the-commercial-marketplace-program)магазин.
+Теперь вы создали коммерческую учетную запись Marketplace в центре партнеров. Дополнительные сведения о добавлении издателей см. в статье [Добавление новых издателей в коммерческий](#add-new-publishers-to-the-commercial-marketplace-program)магазин.
 
 ## <a name="for-publishers-who-moved-from-the-cloud-partner-portal"></a>Для издателей, которые перешли с Портал Cloud Partner
 
@@ -190,4 +190,5 @@ ms.locfileid: "89647644"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- [Что такое коммерческий магазин корпорации Майкрософт?](../overview.md)
 - [Управление учетной записью коммерческой платформы в Центре партнеров](./manage-account.md)

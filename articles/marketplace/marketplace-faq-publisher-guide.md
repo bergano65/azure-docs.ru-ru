@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 09/11/2020
-ms.openlocfilehash: 5bf94faff86edf954c687ca3024c63229829ca04
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: a706ced5c65b9de3cb3bfdb623d810bb1ea43623
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91369728"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707988"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Распространенные вопросы о коммерческом магазине Майкрософт
 
@@ -311,9 +311,8 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 Ниже приведены несколько ресурсов, которые вам помогут.
 
-- [Работа с коммерческой платформой Майкрософт](/azure/marketplace/marketplace-publishers-guide)
+- [Что такое коммерческий магазин корпорации Майкрософт?](overview.md)
 - [Вопросы и ответы о коммерческой платформе Майкрософт](https://partner.microsoft.com/asset/collection/commercial-marketplace#/)
-- [Вас приветствует коммерческая платформа](index.yml)
 
 ### <a name="how-can-i-engage-with-microsoft-and-other-partners"></a>Как связаться с корпорацией Майкрософт и другими партнерами?
 
@@ -324,7 +323,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 ### <a name="where-can-i-learn-more-about-partner-center"></a>Где можно подробнее узнать о Центре партнеров?
 
-- [Документация для разработчиков Центра партнеров](https://docs.microsoft.com/partner-center/)
+- [Документация для разработчиков Центра партнеров](/partner-center/)
 - [Вас приветствует коммерческая платформа](index.yml)
 
 ### <a name="where-can-i-learn-more-about-the-microsoft-admin-center"></a>Где можно узнать больше о Центре администрирования Майкрософт?

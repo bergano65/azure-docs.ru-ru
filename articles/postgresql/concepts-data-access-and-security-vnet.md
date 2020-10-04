@@ -1,17 +1,17 @@
 ---
 title: Правила виртуальной сети — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как использовать конечные точки службы виртуальной сети для подключения к базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: niklarin
+ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: d7ad1116f7c0168181dbf5b43f8f1595ce250949
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 170d5eaa4c14c6de54825bc08f3aef0fd0dfa0c5
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903932"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708005"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для PostgreSQL — один сервер
 
@@ -46,7 +46,7 @@ ms.locfileid: "90903932"
 
 Пока вы не выполните соответствующие действия, виртуальные машины в подсети не могут взаимодействовать с сервером Базы данных Azure для PostgreSQL. Создание правила виртуальной сети — это единственное действие, которое устанавливает подключение. Чтобы обосновать выбор подхода на основе правил виртуальной сети, требуется сравнить преимущества и недостатки этого подхода с конкурирующими функциями безопасности, предоставляемыми брандмауэром.
 
-### <a name="a-allow-access-to-azure-services"></a>A. Разрешение доступа службам Azure
+### <a name="a-allow-access-to-azure-services"></a>А. Разрешение доступа службам Azure
 
 На панели безопасности подключения есть кнопка **Вкл./Выкл.** с надписью **Разрешить доступ к службам Azure**. Значение **ON** (Вкл.) разрешает подключение со всех IP-адресов Azure и из всех подсетей Azure. Эти Azure IP-адреса и подсети могут принадлежать не вам. Возможно, значение **Вкл.** делает вашу систему более открытой, чем требуется для Базы данных Azure для PostgreSQL. Правила виртуальной сети обеспечивают более детализированный контроль.
 

@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e2cfa21bc5223af058d412bf3f17f53cb151fc5c
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: e756ff0133e3d3f0f86ea2f592005f2f2986488e
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89297643"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707767"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
@@ -39,7 +39,7 @@ ms.locfileid: "89297643"
 1. Войдите на портал Azure по адресу https://portal.azure.com.
 1. Перейдите к учетной записи служб мультимедиа в и щелкните **параметры диагностики** в разделе **монитор**. Здесь можно увидеть список всех ресурсов в подписке, создающих данные мониторинга с помощью Azure Monitor.
 
-    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs01.png)
+    ![Снимок экрана, в котором показаны параметры диагностики в разделе "Мониторинг".](media/media-services-diagnostic-logs/logs01.png)
 
 1. Щелкните **Добавить параметр диагностики**.
 
@@ -52,7 +52,7 @@ ms.locfileid: "89297643"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 

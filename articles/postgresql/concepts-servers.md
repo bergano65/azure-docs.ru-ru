@@ -1,17 +1,17 @@
 ---
 title: Серверы — база данных Azure для PostgreSQL — один сервер
 description: В этой статье приводятся рекомендации и рекомендации по настройке базы данных Azure для PostgreSQL-Single Server и управлению ею.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: d86170a53b4bfbe712bbca12db4d6063214aba21
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8ae129cbad56e3bb63e055f9d843cac1da22fb1
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74768169"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710470"
 ---
 # <a name="azure-database-for-postgresql---single-server"></a>База данных Azure для PostgreSQL — отдельный сервер
 В этой статье приводятся рекомендации и рекомендации по работе с базой данных Azure для PostgreSQL-Single Server.
@@ -39,9 +39,9 @@ ms.locfileid: "74768169"
 |||
 |:--|:--|
 | **Аутентификация и авторизация** | Сервер базы данных Azure для PostgreSQL поддерживает собственную аутентификацию PostgreSQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
-| **Протокол** | Служба поддерживает протокол на основе сообщений, используемый PostgreSQL. |
+| **протокол**; | Служба поддерживает протокол на основе сообщений, используемый PostgreSQL. |
 | **TCP/IP** | Протокол работает через TCP/IP, а также через сокеты домена Unix. |
-| **Брандмауэр**. | Для защиты данных правило брандмауэра запрещает любой доступ к серверу и базам данных, пока не будут указаны компьютеры, которые имеют разрешение. См. статью  [Правила брандмауэра сервера Базы данных Azure для PostgreSQL](concepts-firewall-rules.md). |
+| **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу и базам данных, пока не будут указаны компьютеры, которые имеют разрешение. См. статью  [Правила брандмауэра сервера Базы данных Azure для PostgreSQL](concepts-firewall-rules.md). |
 
 ## <a name="managing-your-server"></a>Управление сервером
 Вы можете управлять серверами базы данных Azure для PostgreSQL с помощью [портал Azure](https://portal.azure.com) или [Azure CLI](/cli/azure/postgres).
@@ -62,7 +62,7 @@ ms.locfileid: "74768169"
 Так как База данных Azure для PostgreSQL — это управляемая служба для Postgres, настраиваемые параметры в ней являются подмножеством параметров локального экземпляра Postgres. Дополнительные сведения о параметрах Postgres см. в [документации PostgreSQL](https://www.postgresql.org/docs/9.6/static/runtime-config.html). При создании сервера Базы данных Azure для PostgreSQL для его параметров устанавливаются стандартные значения. Пользователи не могут настраивать некоторые параметры, для изменения которых требуется перезагрузка сервера или права суперпользователя.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения о службе см. в статье [Обзор базы данных Azure для PostgreSQL](overview.md).
 - Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](concepts-pricing-tiers.md).
 - Сведения о подключении к службе см. в статье  [Библиотеки подключений для Базы данных Azure для PostgreSQL](concepts-connection-libraries.md).

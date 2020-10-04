@@ -11,19 +11,22 @@ ms.subservice: core
 ms.date: 08/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq1
-ms.openlocfilehash: 5345fd81e41bbb354e11e1be23329c3130d4d0c2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: c22593fbd1e1653efa98c760d5bbb73b03761059
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90898098"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708401"
 ---
 # <a name="create-compute-targets-for-model-training-and-deployment-in-azure-machine-learning-studio"></a>Создание целевых объектов вычислений для обучения и развертывания моделей в Машинное обучение Azure Studio
 
 Из этой статьи вы узнаете, как создавать целевые объекты вычислений и управлять ими в Azure Machine Studio.  Вы также можете создавать целевые объекты вычислений и управлять ими с помощью:
 
-* [Пакет SDK для машинное обучение Azure Learning](how-to-create-attach-compute-sdk.md) 
-* [Расширение CLI](reference-azure-machine-learning-cli.md#resource-management) для машинное обучение Azure
+* Машинное обучение Azure обучающий пакет SDK или расширение CLI для Машинное обучение Azure
+  * [Вычислительная операция](how-to-create-manage-compute-instance.md)
+  * [Кластер вычислений](how-to-create-attach-compute-cluster.md)
+  * [Кластер службы Kubernetes Azure](how-to-create-attach-kubernetes.md)
+  * [Другие ресурсы вычислений](how-to-attach-compute-targets.md)
 * [Расширение VS Code](how-to-manage-resources-vscode.md#compute-clusters) для машинное обучение Azure.
 
 
@@ -56,11 +59,11 @@ ms.locfileid: "90898098"
 
 1. Если целевые объекты вычислений отсутствуют, выберите  **создать** в середине страницы.
   
-    :::image type="content" source="media/how-to-create-attach-studio/create-compute-target.png" alt-text="Создание целевого объекта вычислений":::
+    :::image type="content" source="media/how-to-create-attach-studio/create-compute-target.png" alt-text="Просмотреть список целевых объектов вычислений":::
 
 1. Если отображается список ресурсов вычислений, выберите **+ создать** над списком.
 
-    :::image type="content" source="media/how-to-create-attach-studio/select-new.png" alt-text="Выберите "создать"":::
+    :::image type="content" source="media/how-to-create-attach-studio/select-new.png" alt-text="Просмотреть список целевых объектов вычислений":::
 
 
 1. Заполните форму для типа вычислений:
@@ -74,14 +77,14 @@ ms.locfileid: "90898098"
 
 1. Чтобы увидеть состояние операции создания, выберите целевой объект вычислений из списка.
 
-    :::image type="content" source="media/how-to-create-attach-studio/view-list.png" alt-text="Просмотр состояния вычислений из списка":::
+    :::image type="content" source="media/how-to-create-attach-studio/view-list.png" alt-text="Просмотреть список целевых объектов вычислений":::
 
 
 ### <a name="compute-instance"></a>Вычислительная операция
 
 Выполните [описанные выше действия](#portal-create) , чтобы создать вычислительный экземпляр.  Затем заполните форму следующим образом:
 
-:::image type="content" source="media/concept-compute-instance/create-compute-instance.png" alt-text="Создание нового вычислительного экземпляра":::
+:::image type="content" source="media/concept-compute-instance/create-compute-instance.png" alt-text="Просмотреть список целевых объектов вычислений":::
 
 
 |Поле  |Описание  |
@@ -107,7 +110,7 @@ ms.locfileid: "90898098"
 |Максимальное число узлов | Максимальное количество узлов, которые вы хотите подготавливать. Вычисление автоматически масштабируется до максимального значения этого числа узлов при отправке задания. |
 |Дополнительные параметры     |  Необязательный элемент. Настройте виртуальную сеть. Укажите **группу ресурсов**, **виртуальную сеть**и **подсеть** , чтобы создать вычислительный экземпляр в виртуальной сети Azure. Дополнительные сведения см. в описании этих [сетевых требований](how-to-enable-virtual-network.md#compute-instance) для виртуальной сети.   Также присоедините [управляемые удостоверения](#managed-identity) для предоставления доступа к ресурсам.     |
 
-#### <a name="set-up-managed-identity"></a><a id="managed-identity"></a> Настройка управляемого удостоверения
+#### <a name="set-up-managed-identity"></a><a name="managed-identity"></a> Настройка управляемого удостоверения
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-intro.md)]
 

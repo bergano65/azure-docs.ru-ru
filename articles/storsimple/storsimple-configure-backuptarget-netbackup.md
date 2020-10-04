@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/15/2017
 ms.author: matd
-ms.openlocfilehash: b186fadcc99c6cc538b61eaa94d5d84d649c233f
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 23afa82ffda5341242c01cbe024fb71f482345d5
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88184012"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710929"
 ---
 # <a name="storsimple-as-a-backup-target-with-netbackup"></a>Использование StorSimple в качестве целевого объекта архивации с помощью NetBackup
 
@@ -132,7 +132,7 @@ StorSimple предоставляет следующие преимуществ�
 
 Очень важно определить размер высокопроизводительного тома в соответствии с требованиями политики периода удержания к емкости и производительности.
 
-![Логическая схема использования StorSimple в качестве дополнительного целевого объекта архивации](./media/storsimple-configure-backup-target-using-netbackup/secondarybackuptargetlogicaldiagram.png)
+![Схема, на которой показана архитектура, в которой начальные резервные копии и восстановления предназначены для высокопроизводительного тома.](./media/storsimple-configure-backup-target-using-netbackup/secondarybackuptargetlogicaldiagram.png)
 
 ### <a name="secondary-target-backup-logical-steps"></a>Логическая процедура архивации дополнительного целевого объекта
 

@@ -1,17 +1,17 @@
 ---
 title: Рекомендации по производительности — база данных Azure для PostgreSQL — один сервер
 description: В этой статье описывается функция рекомендации по повышению производительности в базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: f0ce3843752ebd6ed56281f6699783181b52fdc6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d547844671e6485e71be7dd8c355de08f3dec5e6
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903880"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710572"
 ---
 # <a name="performance-recommendations-in-azure-database-for-postgresql---single-server"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL — один сервер
 
@@ -33,7 +33,7 @@ ms.locfileid: "90903880"
 
 В окне **рекомендации** отобразится список рекомендаций, если они были найдены.
 
-:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Новая страница рекомендаций по производительности":::
+:::image type="content" source="./media/concepts-performance-recommendations/performance-recommendations-result.png" alt-text="Целевая страница рекомендаций по повышению производительности":::
 
 Найденные рекомендации не применяются автоматически. Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору. Не забудьте протестировать и отследить результаты применения рекомендации, чтобы оценить ее. 
 

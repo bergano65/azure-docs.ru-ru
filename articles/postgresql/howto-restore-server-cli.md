@@ -1,19 +1,19 @@
 ---
 title: Резервное копирование и восстановление — Azure CLI — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как задать конфигурации резервного копирования и восстановить сервер в базе данных Azure для PostgreSQL-Single Server с помощью Azure CLI.
-author: rachel-msft
-ms.author: raagyema
+author: sr-msft
+ms.author: srranga
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 10/25/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 49acce96012df0a45bc1833ae0397a3d989142ef
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: c7e8f0fc3a90a0811d38840004f7ae12a9a225ce
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500646"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708515"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Как создать резервную копию и восстановить сервер в базе данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 

@@ -7,13 +7,13 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.custom: contperfq1
-ms.date: 08/25/2020
-ms.openlocfilehash: 7de882683248406e44a617dfb5d070e12879aea3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 10/2/2020
+ms.openlocfilehash: 5f109ad719ada9728938f6e37d4ec854d3950a24
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91317758"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708441"
 ---
 # <a name="outputs-from-azure-stream-analytics"></a>Выходные данные из Azure Stream Analytics
 
@@ -26,10 +26,10 @@ ms.locfileid: "91317758"
 | Тип выходных данных | Секционирование | Безопасность | 
 |-------------|--------------|----------|
 |[Azure Data Lake Storage 1-го поколения](azure-data-lake-storage-gen1-output.md)|Да|Пользователь Azure Active Directory </br> MSI|
-|[База данных SQL Azure](sql-database-output.md)|Да, необходимо включить.|Проверка подлинности пользователя SQL </br> MSI (Предварительная версия)|
-|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Нет|Проверка подлинности пользователя SQL|
+|[База данных SQL Azure](sql-database-output.md)|Да, необязательно.|Проверка подлинности пользователя SQL </br> MSI (Предварительная версия)|
+|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Да|Проверка подлинности пользователя SQL|
 |[Хранилище BLOB-объектов и Azure Data Lake Gen 2](blob-storage-azure-data-lake-gen2-output.md)|Да|MSI </br> Ключ доступа|
-|[Центры событий Azure](event-hubs-output.md)|Да|Ключ доступа|
+|[Центры событий Azure](event-hubs-output.md)|Да, необходимо задать ключевой столбец секции в выходной конфигурации.|Ключ доступа|
 |[Power BI](power-bi-output.md)|Нет|Пользователь Azure Active Directory </br> MSI|
 |[Хранилище таблиц Azure](table-storage-output.md)|Да|Ключ учетной записи|
 |[Очереди служебной шины Azure](service-bus-queues-output.md)|Да|Ключ доступа|
@@ -41,7 +41,7 @@ ms.locfileid: "91317758"
 
 Stream Analytics поддерживает секции для всех выходных данных, за исключением Power BI. Дополнительные сведения о ключах разделов и количестве модулей записи вывода см. в статье, посвященной определенному типу выхода. Все выходные статьи связаны в предыдущем разделе.  
 
-Количество модулей записи вывода можно контролировать с помощью `INTO <partition count>` предложения (см. [INTO](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics#into-shard-count)) в запросе, что может оказаться полезным при достижении требуемой топологии задания. Если выходной адаптер не секционирован, недостаток данных в одной входной секции приведет к задержке до наступления времени задержки. В таком случае выходные данные объединяются в общий модуль записи, что может привести к возникновению узких мест в конвейере. Дополнительные сведения о политике допустимого интервала поступления с задержкой см. в статье [Рассмотрение порядка событий Azure Stream Analytics](stream-analytics-out-of-order-and-late-events.md).
+Кроме того, для более сложной настройки секций количество модулей записи вывода можно контролировать с помощью `INTO <partition count>` предложения (см.) [INTO](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics#into-shard-count)в запросе, что может быть полезным при достижении требуемой топологии задания. Если выходной адаптер не секционирован, недостаток данных в одной входной секции приведет к задержке до наступления времени задержки. В таком случае выходные данные объединяются в общий модуль записи, что может привести к возникновению узких мест в конвейере. Дополнительные сведения о политике допустимого интервала поступления с задержкой см. в статье [Рассмотрение порядка событий Azure Stream Analytics](stream-analytics-out-of-order-and-late-events.md).
 
 ## <a name="output-batch-size"></a>Размер выходного пакета
 

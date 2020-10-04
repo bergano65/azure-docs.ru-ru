@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: dc1e8bfa9b747b9933762af1b6a5b59cf8cd98de
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 5b823b0429feffa87a05faadc78574287bc9b4a4
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88815782"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708345"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
@@ -78,9 +78,9 @@ ms.locfileid: "88815782"
 
 Ниже приведен ряд дополнительных ресурсов по управлению потенциальными клиентами.
 
-- [Общие сведения об управлении потенциальными клиентами](commercial-marketplace-get-customer-leads.md)
-- [Часто задаваемые вопросы по управлению интересами](../lead-management-for-cloud-marketplace.md#frequently-asked-questions))
-- [Распространенные ошибки конфигурации интересов](../lead-management-for-cloud-marketplace.md#publishing-config-errors))
+- [Потенциальные клиенты из предложения на коммерческой платформе](commercial-marketplace-get-customer-leads.md)
+- [Часто задаваемые вопросы об управлении потенциальными клиентами](../lead-management-faq.md#common-questions-about-lead-management)
+- [Устранение ошибок конфигурации интересов](../lead-management-faq.md#publishing-config-errors)
 - [Общие сведения об управлении потенциальными клиентами](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) (PDF-документ; убедитесь, что блокирование всплывающих окон отключено)
 
 Чтобы продолжить, выберите **Сохранить черновик**.
@@ -194,7 +194,7 @@ ms.locfileid: "88815782"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения не принимаются.
 
-[!INCLUDE [logostips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
@@ -242,7 +242,7 @@ ms.locfileid: "88815782"
 
 <br>Ниже приведен пример того, как в результатах поиска Azure Marketplace отображаются сведения о предложении.
 
-:::image type="content" source="media/example-iot-azure-marketplace-offer-search-results.png" alt-text="Показывает, как это предложение отображается в результатах поиска Azure Marketplace.":::
+:::image type="content" source="media/example-iot-azure-marketplace-offer-search-results.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -252,7 +252,7 @@ ms.locfileid: "88815782"
 
 <br>Ниже приведен пример того, как отображаются сведения о предложении в портал Azure:
 
-:::image type="content" source="media/example-iot-azure-portal-offer.png" alt-text="Показывает, как это предложение появляется в портал Azure.":::
+:::image type="content" source="media/example-iot-azure-portal-offer.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -263,7 +263,7 @@ ms.locfileid: "88815782"
 
 <br>Ниже приведен пример того, как сведения о предложении отображаются в результатах поиска портал Azure.
 
-:::image type="content" source="media/example-iot-azure-portal-offer-search-results.png" alt-text="Показывает, как это предложение появляется в результатах поиска портал Azure.":::
+:::image type="content" source="media/example-iot-azure-portal-offer-search-results.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -362,7 +362,7 @@ ms.locfileid: "88815782"
 
 Ниже приведен пример сведений о плане Azure Marketplace (все указанные цены приведены только для примера и не предназначены для отражения фактических затрат):
 
-:::image type="content" source="media/example-iot-azure-marketplace-plan.png" alt-text="Описание плана Azure Marketplace.":::
+:::image type="content" source="media/example-iot-azure-marketplace-plan.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -372,7 +372,7 @@ ms.locfileid: "88815782"
 
 <br>Ниже приведен пример сведений о плане портал Azure (все указанные цены приведены только для примера и не предназначены для отражения фактических затрат):
 
-:::image type="content" source="media/example-iot-azure-marketplace-plan-details.png" alt-text="Показывает портал Azure сведения о плане.":::
+:::image type="content" source="media/example-iot-azure-marketplace-plan-details.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -393,7 +393,7 @@ ms.locfileid: "88815782"
 
 ## <a name="technical-configuration"></a>Техническая конфигурация
 
-Тип предложения **Модуль IoT Edge** — это особый тип контейнера, работающего на устройстве IoT Edge. На вкладке **Техническая конфигурация** необходимо указать справочные сведения для репозитория образов контейнеров в [Реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/), а также параметры конфигурации, которые позволят клиентам с легкостью использовать этот модуль.
+Тип предложения **Модуль IoT Edge** — это особый тип контейнера, работающего на устройстве IoT Edge. На вкладке **Техническая конфигурация** вы получите справочные сведения о репозитории образов контейнеров в [реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/), а также параметры конфигурации, позволяющие пользователям легко использовать этот модуль.
 
 После публикации предложения образ контейнера IoT Edge копируется в Azure Marketplace в определенный общедоступный реестр контейнеров. Все запросы пользователей Azure на использование вашего модуля обслуживаются в общедоступном реестре контейнеров Azure Marketplace, а не частном реестре контейнеров.
 
@@ -413,7 +413,7 @@ ms.locfileid: "88815782"
 
 **Имя администратора для реестра контейнеров Azure**: укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
-:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
+:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-description"></a>Описание вызова
 
@@ -421,7 +421,7 @@ ms.locfileid: "88815782"
 
 <br>**Пароль для Реестра контейнеров Azure**. Укажите имя администратора, связанное с Реестром контейнеров Azure, в котором находится ваш образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить пароль на портале Azure, последовательно выберите **Реестр контейнеров** > **Ключи доступа** или воспользуйтесь в Azure CLI командой [show](https://docs.microsoft.com/cli/azure/acr/credential?view=azure-cli-latest#az-acr-credential-show).
 
-:::image type="content" source="media/example-iot-access-keys.png" alt-text="Показывает экран ключа доступа в портал Azure.":::
+:::image type="content" source="media/example-iot-access-keys.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -429,7 +429,7 @@ ms.locfileid: "88815782"
 2. Имя пользователя
 3. Пароль
 
-**Имя репозитория в Реестре контейнеров Azure**. Укажите имя репозитория в Реестре контейнеров Azure, в котором находится ваш образ. Имя репозитория указывается при принудительной отправке образа в реестр. Имя репозитория можно найти, перейдя на страницу [Реестр контейнеров](https://azure.microsoft.com/services/container-registry/) > **Репозитории**. Дополнительные сведения см. в статье [Просмотр списка репозиториев реестра контейнеров на портале Azure](../../container-registry/container-registry-repositories.md). Обратите внимание, что вы не сможете изменить это имя после того, как его зададите. Используйте уникальное имя для каждого предложения в вашей учетной записи.
+**Имя репозитория в Реестре контейнеров Azure**. Укажите имя репозитория в Реестре контейнеров Azure, в котором находится ваш образ. Имя репозитория указывается при принудительной отправке образа в реестр. Имя репозитория можно найти, перейдя на страницу [Реестр контейнеров](https://azure.microsoft.com/services/container-registry/) > **Репозитории**. Дополнительные сведения см. в статье [Просмотр списка репозиториев реестра контейнеров на портале Azure](../../container-registry/container-registry-repositories.md). Вы не сможете изменить это имя, однажды настроив его. Используйте уникальное имя для каждого предложения в вашей учетной записи.
 
 ### <a name="image-tags-for-new-versions-of-your-offer"></a>Теги образа для новых версий предложения
 
@@ -466,7 +466,7 @@ ms.locfileid: "88815782"
 - Имя № 1: ACCEPT_EULA
 - Значение № 1: Да
 
-**Параметры создания контейнера по умолчанию**. Параметры создания контейнера используются для создания контейнера Docker для модуля IoT Edge. IoT Edge поддерживает параметры создания контейнера API подсистемы Docker. Все параметры приведены в [списке контейнеров](https://docs.docker.com/engine/api/v1.30/#operation/ContainerList). Значение в поле параметров создания должно иметь допустимый формат JSON без escape-выражений и содержать менее 512 символов.
+**Параметры создания контейнера по умолчанию**. Параметры создания контейнера используются для создания контейнера Docker для модуля IoT Edge. IoT Edge поддерживает параметры создания контейнера API подсистемы Docker. Все параметры приведены в [списке контейнеров](https://docs.docker.com/engine/api/v1.30/#operation/ContainerList). Поле параметров создания должно быть допустимым JSON, не экранированным и содержать менее 512 символов.
 
 Например, если для модуля требуется привязка порта, определите следующие параметры создания:
 

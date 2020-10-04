@@ -7,12 +7,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: b4581b7e93cde9d6ba9a20d46ee263a879c05402
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 37c1854aeb1a1fa3d9283c00b07c665b213b306c
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88961879"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708158"
 ---
 # <a name="deployment-best-practices"></a>Рекомендации по развертыванию
 
@@ -47,7 +47,7 @@ ms.locfileid: "88961879"
 
 Непрерывное развертывание никогда не должно включаться для рабочего слота. Вместо этого Рабочая ветвь (часто главный) должна быть развернута в нерабочем слоте. Когда вы будете готовы выпустить базовую ветвь, переключайте ее в рабочий слот. Переключение в рабочую среду — вместо развертывания в рабочей среде — предотвращает время простоя и позволяет откатить изменения, переключаясь еще раз. 
 
-![Визуальный элемент использования слота](media/app-service-deploy-best-practices/slot_flow_code_diagam.png)
+![Схема, на которой показан поток между развернутыми, промежуточными и главными ветвями и слотами, в которых они развернуты.](media/app-service-deploy-best-practices/slot_flow_code_diagam.png)
 
 ### <a name="continuously-deploy-containers"></a>Непрерывное развертывание контейнеров
 

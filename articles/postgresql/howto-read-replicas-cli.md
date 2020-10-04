@@ -1,18 +1,18 @@
 ---
 title: Управление репликами чтения — Azure CLI, REST API, база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как управлять репликами чтения в базе данных Azure для PostgreSQL-Single Server из Azure CLI и REST API
-author: rachel-msft
-ms.author: raagyema
+author: sr-msft
+ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 732db7fb9eaebb437dea60f98d6c85c855d1b109
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 20bedf7e48b2e40cd67e33ea024a3ae0a9d305a6
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91541600"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707546"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Создание реплик чтения и управление ими из Azure CLI REST API
 
@@ -32,7 +32,7 @@ ms.locfileid: "91541600"
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - [Сервер базы данных Azure для PostgreSQL](quickstart-create-server-up-azure-cli.md) , который будет основным сервером.

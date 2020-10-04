@@ -1,17 +1,17 @@
 ---
 title: Расширенная защита от угроз — база данных Azure для PostgreSQL — один сервер
 description: Узнайте об использовании Advanced Threat Protection для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: fbb6a7dbe73444ac9049573705e4d04bd868a806
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: cfe565c45ea6aa0a4bcfecc95b1e1149b17542a2
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90884561"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708056"
 ---
 # <a name="advanced-threat-protection-in-azure-database-for-postgresql---single-server"></a>Расширенная защита от угроз в базе данных Azure для PostgreSQL — один сервер
 
@@ -29,7 +29,7 @@ ms.locfileid: "90884561"
 
 Отображая оповещения системы безопасности о подозрительных действиях, Расширенная защита от угроз Azure для Базы данных Azure для PostgreSQL предоставляет дополнительный уровень защиты, позволяя клиентам определять потенциальные угрозы по мере возникновения и реагировать на них. Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях и аномальных закономерностях в доступе к базам данных и шаблонам запросов. Служба "Расширенная защита от угроз" для Базы данных Azure для PostgreSQL интегрирует оповещения с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/), который предоставляет сведения о подозрительных операциях и дает рекомендации о том, как определить причину угрозы и устранить ее. Служба "Расширенная защита от угроз" для Базы данных Azure для PostgreSQL упрощает устранение потенциальных угроз безопасности базы данных, не требуя от пользователя экспертных навыков в сфере безопасности либо умения работать в сложных системах отслеживания угроз. 
 
-:::image type="content" source="media/concepts-data-access-and-security-threat-protection/advanced-threat-protection-concept.png" alt-text="Общее представление о службе "Расширенная защита от угроз"":::
+:::image type="content" source="media/concepts-data-access-and-security-threat-protection/advanced-threat-protection-concept.png" alt-text="Общее представление о службе &quot;Расширенная защита от угроз&quot;":::
 
 ## <a name="advanced-threat-protection-alerts"></a>Оповещения Расширенной защиты от угроз 
 Служба "Расширенная защита от угроз" для Базы данных Azure для PostgreSQL позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими, и может активировать следующие оповещения.

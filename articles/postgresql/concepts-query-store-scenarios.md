@@ -1,17 +1,17 @@
 ---
 title: Сценарии хранилища запросов — База данных Azure для PostgreSQL — один сервер
 description: В этой статье описываются некоторые сценарии для хранилища запросов в базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 31e3f82b6ea1b1fc15c0832dc03edce2a59f1e1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ad646e39e9b6a87611dc2f40330a77fe70c92c27
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74768356"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710555"
 ---
 # <a name="usage-scenarios-for-query-store"></a>Сценарии использования хранилища запросов
 
@@ -57,5 +57,5 @@ ms.locfileid: "74768356"
  
 Если вы контролируете код приложения, возможно, целесообразно переписать уровень доступа к данным, чтобы использовать хранимые процедуры или параметризованные запросы. Улучшить ситуацию можно и без внесения изменений в приложение: нужно принудительно реализовать параметризацию запросов для всей базы данных (всех запросов) или для отдельных шаблонов запросов с одним хэшем запроса. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в разделе [Рекомендации по использованию хранилища запросов](concepts-query-store-best-practices.md)

@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: 93b47d2147a7438ebd38a5ae36363950639ba414
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: 2679d24a9e8c821dae73114f32adbeb3d22a1458
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89381175"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708906"
 ---
 # <a name="how-to-create-a-saas-offer-in-the-commercial-marketplace"></a>Создание предложения SaaS в коммерческом магазине
 
@@ -69,7 +69,7 @@ ms.locfileid: "89381175"
 Подключайтесь к системе управления отношениями с клиентами (CRM) с предложением коммерческого магазина, чтобы вы могли получить контактные данные клиента, когда клиент выражает интерес или развертывает продукт. Это подключение можно изменить в любое время во время или после создания предложения.
 
 > [!NOTE]
-> Управление интересами необходимо настроить, если вы продаете предложение через корпорацию Майкрософт или выбрали вариант **связаться** со списком. Подробные инструкции см. [в статье управление интересами для коммерческого рынка](lead-management-for-cloud-marketplace.md).
+> Управление интересами необходимо настроить, если вы продаете предложение через корпорацию Майкрософт или выбрали вариант **связаться** со списком. Подробные инструкции см. в статье [клиентские интересы из предложения коммерческого рынка](partner-center-portal/commercial-marketplace-get-customer-leads.md).
 
 #### <a name="to-configure-the-connection-details-in-partner-center"></a>Настройка сведений о подключении в центре партнеров
 

@@ -1,17 +1,17 @@
 ---
 title: Логическое декодирование — база данных Azure для PostgreSQL — один сервер
 description: Описывает логическое декодирование и wal2json для отслеживания измененных данных в базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: sr-msft
+ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/22/2020
-ms.openlocfilehash: bd886bea90c1092e38fac191a60a118aab0bef1f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 4ab4a64fa395c105ced8e47cdcec019373f7f835
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903886"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708617"
 ---
 # <a name="logical-decoding"></a>Логическое декодирование
  
@@ -38,7 +38,7 @@ ms.locfileid: "90903886"
 
 ### <a name="using-azure-cli"></a>Использование Azure CLI
 
-1. Задайте для Azure. replication_support значение `logical` .
+1. Задайте для azure.replication_support значение `logical` .
    ```
    az postgres server configuration set --resource-group mygroup --server-name myserver --name azure.replication_support --value logical
    ``` 
@@ -56,7 +56,7 @@ ms.locfileid: "90903886"
 
 2. Перезапустите сервер, чтобы применить изменение, выбрав **Да**.
 
-   :::image type="content" source="./media/concepts-logical/confirm-restart.png" alt-text="База данных Azure для PostgreSQL-Replication-подтверждение перезапуска":::
+   :::image type="content" source="./media/concepts-logical/confirm-restart.png" alt-text="База данных Azure для PostgreSQL — репликация — поддержка репликации Azure":::
 
 
 ## <a name="start-logical-decoding"></a>Начать логическое декодирование
@@ -159,7 +159,7 @@ SELECT pg_drop_replication_slot('test_slot');
 ```
 
 > [!IMPORTANT]
-> Если вы перестаете использовать логическое декодирование, измените Azure. replication_support обратно на `replica` или `off` . Сведения о WAL, сохраняемые с помощью, `logical` являются более подробными и должны быть отключены, если не используется логическое декодирование. 
+> Если вы прекращаете использовать логическое декодирование, измените azure.replication_support обратно на `replica` или `off` . Сведения о WAL, сохраняемые с помощью, `logical` являются более подробными и должны быть отключены, если не используется логическое декодирование. 
 
  
 ## <a name="next-steps"></a>Дальнейшие действия

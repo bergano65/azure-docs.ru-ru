@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 06/17/2020
-ms.openlocfilehash: 12987ae687e9af59fdd71b3aa846612c947b9a90
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: cbaca0b9d608d7703beec559e5434f52308629ab
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89649269"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91709110"
 ---
 # <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
 
@@ -80,9 +80,9 @@ ms.locfileid: "89649269"
 
 Ниже приведен ряд дополнительных ресурсов по управлению потенциальными клиентами.
 
-- [Общие сведения об управлении потенциальными клиентами](commercial-marketplace-get-customer-leads.md)
-- [Раздел часто задаваемых вопросов об управлении потенциальными клиентами](../lead-management-for-cloud-marketplace.md#frequently-asked-questions)
-- [Распространенные ошибки конфигурации интересов во время публикации на Портале Cloud Partner](../lead-management-for-cloud-marketplace.md#publishing-config-errors)
+- [Потенциальные клиенты из предложения на коммерческой платформе](commercial-marketplace-get-customer-leads.md)
+- [Часто задаваемые вопросы об управлении потенциальными клиентами](../lead-management-faq.md#common-questions-about-lead-management)
+- [Устранение ошибок конфигурации интересов](../lead-management-faq.md#publishing-config-errors)
 - [Общие сведения об управлении потенциальными клиентами](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) (PDF-документ; убедитесь, что блокирование всплывающих окон отключено)
 
 Чтобы продолжить, выберите **Сохранить черновик**.
@@ -122,7 +122,7 @@ ms.locfileid: "89649269"
 
 ##### <a name="your-own-terms-and-conditions"></a>Собственные условия
 
-Чтобы предоставить собственные условия использования, введите их в поле **Условия**. В этом поле можно ввести текст с неограниченным количеством символов. Клиенты должны будут принять эти условия, прежде чем использовать ваше предложение.
+Чтобы предоставить собственные условия использования, введите их в поле **Условия**. В этом поле можно ввести неограниченное количество символов текста. Клиенты должны будут принять эти условия, прежде чем использовать ваше предложение.
 
 Выберите **Сохранить черновик**, прежде чем перейти к следующему разделу под названием "Описание предложения".
 
@@ -190,7 +190,7 @@ ms.locfileid: "89649269"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения не принимаются.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
@@ -223,19 +223,19 @@ ms.locfileid: "89649269"
 
 Здесь показана страница **Описание предложения** в Azure Marketplace.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-6-offer-listing-mkt-plc.png" alt-text="Показана страница Описание предложения в Azure Marketplace." :::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-6-offer-listing-mkt-plc.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт." :::
 
 Здесь показаны результаты поиска в Azure Marketplace.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-7-search-results-mkt-plc.png" alt-text="Показаны результаты поиска в Azure Marketplace.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-7-search-results-mkt-plc.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 Здесь показана страница **Описание предложения** на портале Azure.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-8-offer-listing-portal.png" alt-text="Показана страница Описание предложения на портале Azure.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-8-offer-listing-portal.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 Здесь показаны результаты поиска на портале Azure.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-9-search-results-portal.png" alt-text="Показаны результаты поиска на портале Azure":::.
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-9-search-results-portal.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::.
 
 ## <a name="preview"></a>Preview (Предварительный просмотр)
 
@@ -328,11 +328,11 @@ ms.locfileid: "89649269"
 
 Это поля в Azure Marketplace при просмотре сведений о плане.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-10-plan-details-mtplc.png" alt-text="Показаны поля, отображаемые при просмотре сведений о плане в Azure Marketplace.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-10-plan-details-mtplc.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 Это сведения о плане на портале Azure.
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-11-plan-details-portal.png" alt-text="Показаны сведения о плане на портале Azure.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-11-plan-details-portal.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 ### <a name="plan-availability"></a>Доступность плана
 
@@ -363,11 +363,11 @@ ms.locfileid: "89649269"
 
 **Имя администратора для реестра контейнеров Azure** — укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
- :::image type="content" source="media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
+ :::image type="content" source="media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 **Пароль для Реестра контейнеров Azure**. Укажите имя администратора, связанное с Реестром контейнеров Azure, в котором находится ваш образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить пароль на портале Azure, последовательно выберите **Реестр контейнеров** > **Ключи доступа** или воспользуйтесь в Azure CLI командой [show](https://docs.microsoft.com/cli/azure/acr/credential?view=azure-cli-latest#az-acr-credential-show).
 
-:::image type="content" source="media/azure-create-container-offer-images/azure-create-13-access-keys.png" alt-text="Показывает меню ключа доступа.":::
+:::image type="content" source="media/azure-create-container-offer-images/azure-create-13-access-keys.png" alt-text="Показано использование флажка Использовать Стандартный контракт для коммерческой платформы корпорации Майкрософт.":::
 
 **Имя репозитория в Реестре контейнеров Azure**. Укажите имя репозитория в Реестре контейнеров Azure, в котором находится ваш образ. При принудительной отправке образа в реестр укажите имя репозитория. Имя репозитория можно найти, перейдя на страницу [Реестр контейнеров](https://azure.microsoft.com/services/container-registry/) > **Репозитории**. Дополнительные сведения см. в статье [Просмотр списка репозиториев реестра контейнеров на портале Azure](../../container-registry/container-registry-repositories.md).
 

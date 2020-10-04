@@ -1,33 +1,35 @@
 ---
 title: Разработка для службы файлов Azure с помощью .NET | Документация Майкрософт
-description: Узнайте, как разрабатывать приложения и службы .NET, использующие службу файлов Azure для хранения файлов данных.
+description: Узнайте, как разрабатывать приложения и службы .NET, которые используют службу файлов Azure для хранения данных.
 author: roygara
 ms.service: storage
 ms.devlang: dotnet
-ms.topic: how-to
-ms.date: 10/7/2019
+ms.topic: conceptual
+ms.date: 10/02/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 53f96d8988adfea6e14e3eb349276199afc444d7
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: fbfc347e1b514f9f59e2f238d2b1bfbaf59f2172
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89461924"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710708"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
 
-В этом руководстве рассматриваются основы использования .NET для разработки приложений, использующих [службу файлов Azure](storage-files-introduction.md) для хранения данных файлов. В этом руководстве создается простое консольное приложение для основных действий с файлами .NET и Azure.
+Изучите основы разработки приложений .NET, использующих службы [файлов Azure](storage-files-introduction.md) для хранения данных. В этой статье показано, как создать простое консольное приложение для следующих действий с .NET и службой файлов Azure.
 
-* Получение содержимого файла.
-* Задайте максимальный размер или *квоту* для общей папки.
-* Создайте подписанный URL-адрес (ключ SAS) для файла, который использует хранимую политику доступа, определенную в общей папке.
-* Скопируйте файл в другой файл в той же учетной записи хранения
-* Скопируйте файл в BLOB-объект в той же учетной записи хранения
-* Используйте метрики службы хранилища Azure для устранения неполадок.
+- Получение содержимого файла.
+- Установите максимальный размер или квоту для файлового ресурса.
+- Создайте подписанный URL-адрес (SAS) для файла.
+- Скопируйте файл в другой файл в той же учетной записи хранения
+- Скопируйте файл в BLOB-объект в той же учетной записи хранения
+- Создайте моментальный снимок файлового ресурса.
+- Восстановление файла из моментального снимка общего ресурса.
+- Используйте метрики службы хранилища Azure для устранения неполадок.
 
 Дополнительные сведения о службе файлов Azure см. в статье [что такое служба файлов Azure?](storage-files-introduction.md)
 
@@ -35,14 +37,16 @@ ms.locfileid: "89461924"
 
 ## <a name="understanding-the-net-apis"></a>Основные сведения об API-интерфейсах .NET
 
-Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET API- `System.IO` интерфейсы и представляют собой `WindowsAzure.Storage` абстрактные подходы.
+Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET API- `System.IO` интерфейсы и представляют собой `Azure.Storage.Files.Shares` абстрактные подходы.
 
 API | Назначение | Примечания
 ----|-------------|------
 [System.IO](https://docs.microsoft.com/dotnet/api/system.io) | Требования вашего приложения: <ul><li>Требуется чтение и запись файлов с помощью SMB</li><li>выполнение на устройстве, которое получает доступ к учетной записи службы файлов Azure через порт 445;</li><li>не требуется управлять параметрами администрирования общей папки.</li></ul> | Файловый ввод-вывод, реализованный в службе файлов Azure по протоколу SMB, обычно аналогичен вводу-выводу с любым сетевым файловым ресурсом или локальным устройством хранения. Общие сведения о ряде функций .NET, включая ввод-вывод файлов, см. в руководстве по [консольному приложению](https://docs.microsoft.com/dotnet/csharp/tutorials/console-teleprompter) .
-[Microsoft.Azure.Storage.File](/dotnet/api/overview/azure/storage?view=azure-dotnet#version-11x) | Требования вашего приложения: <ul><li>Не удается получить доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета.</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье показано использование `Microsoft.Azure.Storage.File` операций файлового ввода-вывода с помощью функции RESTful вместо протокола SMB и управления файловым ресурсом.
+[Azure. Storage. Files. Shares](/dotnet/api/azure.storage.files.shares) | Требования вашего приложения: <ul><li>Не удается получить доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета.</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье показано использование `Azure.Storage.Files.Shares` операций файлового ввода-вывода с помощью функции RESTful вместо протокола SMB и управления файловым ресурсом.
 
 ## <a name="create-the-console-application-and-obtain-the-assembly"></a>Создание консольного приложения и получение сборки
+
+Клиентскую библиотеку службы файлов Azure можно использовать в любом типе приложения .NET. Эти приложения включают в себя облачные, веб-, классические и мобильные приложения Azure. В этом руководством мы создадим консольное приложение для простоты.
 
 В Visual Studio создайте новое консольное приложение Windows. Ниже показано, как создать консольное приложение в Visual Studio 2019. Эти же действия можно выполнить и в других версиях Visual Studio.
 
@@ -50,28 +54,40 @@ API | Назначение | Примечания
 1. В окне **Создание нового проекта**выберите **консольное приложение (.NET Framework)** для C#, а затем нажмите кнопку **Далее**.
 1. В окне **Настройка нового проекта**введите имя приложения и нажмите кнопку **создать**.
 
-Вы можете добавить все примеры кода из этого учебника в `Main()` метод файла консольного приложения `Program.cs` .
-
-Клиентскую библиотеку службы хранилища Azure можно использовать в любом типе приложения .NET. К этим типам относятся облачная служба Azure, веб-приложение, настольные и мобильные приложения. Для упрощения в этом руководстве мы будем использовать консольное приложение.
+Добавьте все примеры кода из этой статьи в `Program` класс в файле *Program.CS* .
 
 ## <a name="use-nuget-to-install-the-required-packages"></a>Установка необходимых пакетов с помощью NuGet
 
-Чтобы завершить работу с этим руководством, см. Эти пакеты в проекте.
+Ссылки на эти пакеты в проекте:
 
-* [Общая библиотека служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
-  
-  Этот пакет обеспечивает программный доступ к общим ресурсам в вашей учетной записи хранения.
-* [Библиотека BLOB-объектов служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-  Этот пакет обеспечивает программный доступ к ресурсам больших двоичных объектов в вашей учетной записи хранения.
-* [Библиотека файлов служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/)
+- [Библиотека ядра Azure для .NET](https://www.nuget.org/packages/Azure.Core/): Этот пакет является реализацией конвейера клиента Azure.
+- [Клиентская библиотека Azure Storage BLOB для .NET](https://www.nuget.org/packages/Azure.Storage.Blobs/): Этот пакет обеспечивает программный доступ к ресурсам больших двоичных объектов в вашей учетной записи хранения.
+- [Клиентская библиотека файлов службы хранилища Azure для .NET](https://www.nuget.org/packages/Azure.Storage.Files.Shares/): Этот пакет обеспечивает программный доступ к файловым ресурсам в вашей учетной записи хранения.
+- [Библиотека системных Configuration Manager для .NET](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/): Этот пакет предоставляет класс для хранения и извлечения значений в файле конфигурации.
 
-  Этот пакет обеспечивает программный доступ к файловым ресурсам в вашей учетной записи хранения.
-* [Библиотека Configuration Manager Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/)
+Для получения пакетов можно использовать NuGet. Выполните следующие действия.
 
-  Этот пакет предоставляет класс для синтаксического анализа строки подключения в файле конфигурации независимо от того, где выполняется приложение.
+1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
+1. В разделе **Диспетчер пакетов NuGet** выберите **Обзор**. Затем найдите и выберите **Azure. Core**, а затем нажмите кнопку **установить**.
 
-Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия.
+   На этом шаге выполняется установка пакета и его зависимостей.
+
+1. Найдите и установите такие пакеты:
+
+   - **Azure. Storage. BLOB**
+   - **Azure. Storage. Files. Shares**
+   - **System.Configuration.ConfigurationManager**
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+- [Служба хранилища Microsoft Azure общей библиотеки для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): Этот пакет обеспечивает программный доступ к общим ресурсам в вашей учетной записи хранения.
+- [Служба хранилища Microsoft Azure библиотека больших двоичных объектов для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/): Этот пакет обеспечивает программный доступ к ресурсам больших двоичных объектов в вашей учетной записи хранения.
+- [Библиотека файлов служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/): Этот пакет обеспечивает программный доступ к файловым ресурсам в вашей учетной записи хранения.
+- [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/): Этот пакет предоставляет класс для синтаксического анализа строки подключения в файле конфигурации во всех случаях, когда приложение выполняется.
+
+Для получения пакетов можно использовать NuGet. Выполните следующие действия.
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 1. В разделе **Диспетчер пакетов NuGet** выберите **Обзор**. Затем найдите и выберите **Microsoft. Azure. Storage. BLOB**, а затем нажмите кнопку **установить**.
@@ -79,32 +95,53 @@ API | Назначение | Примечания
    На этом шаге выполняется установка пакета и его зависимостей.
 1. Найдите и установите такие пакеты:
 
-   * **Microsoft.Azure.Storage.Common**
-   * **Microsoft.Azure.Storage.File**
-   * **Microsoft.Azure.ConfigurationManager**
+   - **Microsoft.Azure.Storage.Common**
+   - **Microsoft.Azure.Storage.File**
+   - **Microsoft.Azure.ConfigurationManager**
+
+---
 
 ## <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>Сохранение учетных данных учетной записи хранения в файл App.config
 
-Затем сохраните учетные данные в `App.config` файле проекта. В **Обозреватель решений**дважды щелкните `App.config` и измените файл, чтобы он был похож на следующий пример. Замените `myaccount` именем вашей учетной записи хранения и `mykey` ключом учетной записи хранения.
+Затем сохраните учетные данные в файле *App.config* проекта. В **Обозреватель решений**дважды щелкните `App.config` и измените файл, чтобы он был похож на следующий пример.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+Замените `myaccount` именем вашей учетной записи хранения и `mykey` ключом учетной записи хранения.
+
+:::code language="xml" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/app.config" highlight="5,6,7":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+Замените `myaccount` именем вашей учетной записи хранения и `StorageAccountKeyEndingIn==` ключом учетной записи хранения.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-    <startup>
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
-    </startup>
-    <appSettings>
-        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=StorageAccountKeyEndingIn==" />
-    </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+  </startup>
+  <appSettings>
+    <add key="StorageConnectionString"
+      value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=StorageAccountKeyEndingIn==" />
+  </appSettings>
 </configuration>
 ```
 
+---
+
 > [!NOTE]
-> Последние версии эмулятора хранения Azure и эмулятора с открытым исходным кодом Азурите не поддерживают службы файлов Azure. Для работы со службой файлов Azure необходимо, чтобы строка подключения указывала на учетную запись хранения Azure в облаке.
+> Эмулятор хранения Азурите в настоящее время не поддерживает службы файлов Azure. Для работы с файлами Azure ваша строка подключения должна быть нацелена на учетную запись хранения Azure в облаке.
 
 ## <a name="add-using-directives"></a>Добавление директив using
 
-В **Обозреватель решений**откройте `Program.cs` файл и добавьте следующие директивы using в начало файла.
+В **Обозреватель решений**откройте файл *Program.CS* и добавьте следующие директивы using в начало файла.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_UsingStatements":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 using Microsoft.Azure; // Namespace for Azure Configuration Manager
@@ -115,7 +152,19 @@ using Microsoft.Azure.Storage.File; // Namespace for Azure Files
 
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
 
+---
+
 ## <a name="access-the-file-share-programmatically"></a>Доступ к общей папке программным путем
+
+В файле *Program.CS* добавьте следующий код для программного доступа к общей папке.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+Следующий метод создает общую папку, если она еще не существует. Метод начинается с создания объекта [шареклиент](/dotnet/api/azure.storage.files.shares.shareclient) из строки подключения. Затем в примере выполняется попытка загрузить созданный ранее файл. Вызовите этот метод из `Main()` .
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CreateShare":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 Затем добавьте следующее содержимое в `Main()` метод после приведенного выше кода, чтобы получить строку подключения. Этот код получает ссылку на созданный ранее файл и выводит его содержимое.
 
@@ -153,13 +202,21 @@ if (share.Exists())
 
 Запустите консольное приложение и получите вывод.
 
+---
+
 ## <a name="set-the-maximum-size-for-a-file-share"></a>Установка максимального размера для файлового ресурса
 
-Начиная с версии 5. x клиентской библиотеки службы хранилища Azure, можно задать квоту (максимальный размер) для файлового ресурса. Можно также проверить, какой объем данных хранится в настоящее время в общей папке.
+Начиная с версии 5. x клиентской библиотеки файлов Azure, можно задать квоту (максимальный размер) для общей папки. Можно также проверить, какой объем данных хранится в настоящее время в общей папке.
 
-Задание квоты для общего ресурса ограничивает общий размер файлов, хранящихся в общей папке. Если общий размер файлов в общей папке превышает квоту, установленную в общей папке, клиенты не смогут увеличить размер существующих файлов. Клиенты не могут создавать новые файлы, если эти файлы не являются пустыми.
+Задание квоты для общего ресурса ограничивает общий размер файлов, хранящихся в общей папке. Если общий размер файлов в общей папке превышает квоту, клиенты не могут увеличить размер существующих файлов. Клиенты также не могут создавать новые файлы, если эти файлы не являются пустыми.
 
 В приведенном ниже примере показано, как проверить текущее использование данных в файловом ресурсе, а также задать для него квоту.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_SetMaxShareSize":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -191,11 +248,21 @@ if (share.Exists())
 }
 ```
 
+---
+
 ### <a name="generate-a-shared-access-signature-for-a-file-or-file-share"></a>Создание подписи общего доступа для файла или файлового ресурса
 
-Начиная с версии 5.x клиентской библиотеки хранилища Azure можно создать подпись общего доступа (SAS) для файлового ресурса или отдельного файла. Вы также можете создать хранимую политику доступа в общей папке для управления подписанными URL-доступом. Рекомендуется создать хранимую политику доступа, так как она позволяет отозвать SAS, если она будет скомпрометирована.
+Начиная с версии 5. x клиентской библиотеки службы файлов Azure вы можете создать подписанный URL-адрес (SAS) для общей папки или отдельного файла.
 
-В следующем примере создается хранимая политика доступа для общей папки. В примере эта политика используется для предоставления ограничений для SAS в файле в общей папке.
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+В следующем примере метод возвращает SAS для файла в указанной общей папке.
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_GetFileSasUri":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+Вы также можете создать хранимую политику доступа в общей папке для управления подписанными URL-доступом. Рекомендуется создать хранимую политику доступа, так как она позволяет отозвать SAS, если она будет скомпрометирована. В следующем примере создается хранимая политика доступа для общей папки. В примере эта политика используется для предоставления ограничений для SAS в файле в общей папке.
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -241,21 +308,28 @@ if (share.Exists())
 }
 ```
 
+---
+
 Дополнительные сведения о создании и использовании подписанных URL-отправок см. [в статье как работает подпись общего доступа](../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#how-a-shared-access-signature-works).
 
 ## <a name="copy-files"></a>Копирование файлов
 
-Начиная с версии 5.x клиентской библиотеки хранилища Azure можно скопировать файл в другой файл, файл в большой двоичный объект или BLOB-объект в файл. В следующих разделах мы покажем, как выполнять эти операции копирования программным способом.
+Начиная с версии 5. x клиентской библиотеки службы файлов Azure можно скопировать файл в другой файл, файл в большой двоичный объект или большой двоичный объект в файл.
 
 AzCopy также можно использовать для копирования одного файла в другой или для копирования большого двоичного объекта в файл или наоборот. См. подробнее о [начале работы с AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 > [!NOTE]
 > При копировании большого двоичного объекта в файл или файла в большой двоичный объект необходимо использовать подписанный URL-адрес (SAS) для авторизации доступа к исходному объекту, даже если копирование производится внутри одной и той же учетной записи хранения.
->
 
 ### <a name="copy-a-file-to-another-file"></a>Копирование файла в другой файл
 
-В приведенном ниже примере файл копируется в другой файл в той же общей папке. Так как эта операция копирования копирует между файлами в одной учетной записи хранения, для копирования можно использовать проверку подлинности с помощью общего ключа.
+В приведенном ниже примере файл копируется в другой файл в той же общей папке. Для копирования можно использовать [проверку подлинности с помощью общего ключа](/rest/api/storageservices/authorize-with-shared-key) , так как эта операция копирует файлы в одну и ту же учетную запись хранения.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CopyFile":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -299,9 +373,17 @@ if (share.Exists())
 }
 ```
 
+---
+
 ### <a name="copy-a-file-to-a-blob"></a>Копирование файла в большой двоичный объект
 
 В приведенном ниже примере файл создается и копируется в большой двоичный объект в пределах одной и той же учетной записи хранения. В примере для исходного файла создается SAS, который служба использует для авторизации доступа к исходному файлу во время операции копирования.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CopyFileToBlob":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 // Parse the connection string for the storage account.
@@ -347,15 +429,23 @@ Console.WriteLine("Source file contents: {0}", sourceFile.DownloadText());
 Console.WriteLine("Destination blob contents: {0}", destBlob.DownloadText());
 ```
 
+---
+
 Таким же образом можно скопировать BLOB-объект в файл. Если исходным объектом является большой двоичный объект, создайте SAS для авторизации доступа к этому объекту во время операции копирования.
 
 ## <a name="share-snapshots"></a>Моментальные снимки общих ресурсов
 
-Начиная с версии 8.5 клиентской библиотеки службы хранилища Azure, можно создавать моментальные снимки общих ресурсов. Можно также получить список моментальных снимков общих ресурсов, просмотреть и удалить их. Моментальные снимки общих ресурсов доступны только для чтения, поэтому для них запрещены операции записи.
+Начиная с версии 8,5 клиентской библиотеки файлов Azure, можно создать моментальный снимок общего ресурса. Можно также получить список моментальных снимков общих ресурсов, просмотреть и удалить их. После создания моментальные снимки общих ресурсов доступны только для чтения.
 
 ### <a name="create-share-snapshots"></a>Создание моментальных снимков общих ресурсов
 
 В следующем примере создается моментальный снимок общего файлового ресурса.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_CreateShareSnapshot":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 storageAccount = CloudStorageAccount.Parse(ConnectionString); 
@@ -366,17 +456,33 @@ var snapshotShare = myShare.Snapshot();
 
 ```
 
+---
+
 ### <a name="list-share-snapshots"></a>Вывод списка моментальных снимков общих ресурсов
 
-В следующем примере перечисляются моментальные снимки в общем ресурсе.
+В следующем примере перечисляются моментальные снимки в общей папке.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_ListShareSnapshots":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 var shares = fClient.ListShares(baseShareName, ShareListingDetails.All);
 ```
 
-### <a name="browse-files-and-directories-within-share-snapshots"></a>Просмотр файлов и каталогов в моментальных снимках общих ресурсов
+---
 
-В следующем примере показано, как просмотреть файлы и каталоги в моментальных снимках общих ресурсов.
+### <a name="list-files-and-directories-within-share-snapshots"></a>Вывод списка файлов и каталогов в моментальных снимках общего ресурса
+
+В следующем примере производится просмотр файлов и каталогов в моментальных снимках общего ресурса.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_ListSnapshotContents":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTime); 
@@ -384,11 +490,19 @@ var rootDirectory = mySnapshot.GetRootDirectoryReference();
 var items = rootDirectory.ListFilesAndDirectories();
 ```
 
-### <a name="list-shares-and-share-snapshots-and-restore-file-shares-or-files-from-share-snapshots"></a>Вывод списка общих ресурсов и их моментальных снимков и восстановление общих папок или файлов из моментальных снимков общих ресурсов
+---
 
-Создание снимка общего файлового ресурса позволяет в будущем восстановить отдельные файлы или весь файловый ресурс.
+### <a name="restore-file-shares-or-files-from-share-snapshots"></a>Восстановление общих файловых ресурсов или файлов из моментальных снимков общего ресурса
 
-Файл можно восстановить из моментального снимка, сделав запрос на моментальные снимки файлового ресурса. Затем можно получить файл, принадлежащий определенному моментальному снимку общего ресурса. Используйте эту версию для непосредственного чтения и сравнения либо для восстановления.
+Создание моментального снимка общей папки позволяет восстанавливать отдельные файлы или всю общую папку.
+
+Файл можно восстановить из моментального снимка, сделав запрос на моментальные снимки файлового ресурса. Затем можно получить файл, принадлежащий определенному моментальному снимку общего ресурса. Используйте эту версию для непосредственного чтения или восстановления файла.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_RestoreFileFromSnapshot":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 CloudFileShare liveShare = fClient.GetShareReference(baseShareName);
@@ -413,23 +527,39 @@ string sourceUri = (fileInSnapshot.Uri.ToString() + sasContainerToken + "&" + fi
 fileInliveShare.StartCopyAsync(new Uri(sourceUri));
 ```
 
+---
+
 ### <a name="delete-share-snapshots"></a>Удаление моментальных снимков общих ресурсов
 
 В следующем примере удаляется моментальный снимок общего файлового ресурса.
+
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_DeleteSnapshot":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
 ```csharp
 CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTime); mySnapshot.Delete(null, null, null);
 ```
 
+---
+
 ## <a name="troubleshoot-azure-files-by-using-metrics"></a>Устранение неполадок службы файлов Azure с помощью метрик<a name="troubleshooting-azure-files-using-metrics"></a>
 
-Аналитика службы хранилища Azure теперь поддерживает метрики для службы файлов Azure. Данные метрик позволяют отслеживать запросы и диагностировать проблемы.
+Аналитика Службы хранилища Azure поддерживает метрики для службы файлов Azure. Данные метрик позволяют отслеживать запросы и диагностировать проблемы.
 
-Вы можете включить метрики для службы файлов Azure из [портал Azure](https://portal.azure.com). Вы также можете включить метрики программно, вызвав операцию SET FILE Service Properties с REST API или одним из его аналогов в клиентской библиотеке хранилища.
+Вы можете включить метрики для службы файлов Azure из [портал Azure](https://portal.azure.com). Вы также можете включить метрики программно, вызвав операцию [Set File Service Properties](/rest/api/storageservices/set-file-service-properties) с REST API или одним из его аналогов в клиентской библиотеке файлов Azure.
 
-В следующем примере кода показано, как использовать клиентскую библиотеку хранилища для .NET, чтобы включить метрики для службы файлов Azure.
+В следующем примере кода показано, как использовать клиентскую библиотеку .NET для включения метрик для службы "файлы Azure".
 
-Сначала добавьте в файл следующие `using` директивы `Program.cs` , а также добавленные выше объекты.
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/files/howto/dotnet/dotnet-v12/FileShare.cs" id="snippet_UseMetrics":::
+
+# <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+Сначала добавьте следующие `using` директивы в файл *Program.CS* вместе с добавленными выше.
 
 ```csharp
 using Microsoft.Azure.Storage.File.Protocol;
@@ -479,6 +609,8 @@ Console.WriteLine(serviceProperties.MinuteMetrics.RetentionDays);
 Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 ```
 
+---
+
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -487,22 +619,15 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 ### <a name="conceptual-articles-and-videos"></a>Тематические статьи и видео
 
-* [Файлы Azure: удобная облачная файловая система SMB для Windows и Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
-* [Использование Файлов Azure в Linux](storage-how-to-use-files-linux.md)
+- [Файлы Azure: удобная облачная файловая система SMB для Windows и Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
+- [Использование Файлов Azure в Linux](storage-how-to-use-files-linux.md)
 
 ### <a name="tooling-support-for-file-storage"></a>Средства для работы с хранилищем файлов
 
-* [Начало работы с AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
-* [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
+- [Начало работы с AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
+- [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
 ### <a name="reference"></a>Справочник
 
-* [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
-* [REST API файловой службы](/rest/api/storageservices/File-Service-REST-API)
-
-### <a name="blog-posts"></a>Записи блога
-
-* [Общедоступная версия хранилища файлов Azure](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-* [Внутреннее хранилище файлов Azure](https://azure.microsoft.com/blog/inside-azure-file-storage/)
-* [Введение в службу Microsoft Azure Files](https://docs.microsoft.com/archive/blogs/windowsazurestorage/introducing-microsoft-azure-file-service)
-* [Сохраняемые подключения к файлам Microsoft Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/persisting-connections-to-microsoft-azure-files)
+- [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
+- [REST API файловой службы](/rest/api/storageservices/File-Service-REST-API)

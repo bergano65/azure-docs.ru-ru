@@ -7,16 +7,16 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 07/22/2020
-ms.openlocfilehash: f011f2703286cd7eb4e19588ae1ae1fe9319500f
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.openlocfilehash: e0dcd5db36e41093bf1cd75779770b04df2fc26a
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89646690"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710657"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
 
-В этой статье описывается порядок создания и публикации предложения приложения Power BI в Microsoft [AppSource](https://appsource.microsoft.com/).
+В этой статье описывается создание и публикация предложения Power BI приложения для [Microsoft AppSource](https://appsource.microsoft.com/).
 
 Сначала [создайте учетную запись на коммерческой платформе Marketplace в Центре партнеров](create-account.md), если вы еще этого не сделали. Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
 
@@ -55,10 +55,10 @@ ms.locfileid: "89646690"
 
 Также на ней представлены ссылки для выполнения операций с этим предложением, которые подбираются на основе сделанного выбора. Пример:
 
-- Если предложение является черновой версией предложения черновика- [Delete](update-existing-offer.md#delete-a-draft-offer))
-- Если предложение действует в режиме реального времени, не [выдаем предложение](update-existing-offer.md#stop-selling-an-offer-or-plan).
-- Если предложение находится в режиме предварительной версии — [Go-Live](publishing-status.md#publisher-approval))
-- Если вы еще не завершили выход из Publisher, [Отмените публикацию](update-existing-offer.md#cancel-publishing).
+- Если предложение является черновиком — [Удалить черновик предложения](update-existing-offer.md#delete-a-draft-offer).
+- Если это действующее предложение — [Остановить продажу предложения](update-existing-offer.md#stop-selling-an-offer-or-plan).
+- Если пока доступна только предварительная версия предложения — [Запустить](publishing-status.md#publisher-approval).
+- Если публикация еще не завершена — [Отмена публикации](update-existing-offer.md#cancel-publishing)
 
 ## <a name="offer-setup"></a>Настройка предложения
 
@@ -73,7 +73,7 @@ ms.locfileid: "89646690"
     - [Salesforce](commercial-marketplace-lead-management-instructions-salesforce.md)
 
     > [!NOTE]
-    > Если ваша система CRM не указана выше, используйте [таблицу Azure](commercial-marketplace-lead-management-instructions-azure-table.md) или [конечные точки HTTPS](commercial-marketplace-lead-management-instructions-https.md) для хранения данных о потенциальных клиентах. Затем экспортируйте данные в систему CRM.
+    > Если ваша система CRM не входит в этот список, используйте [таблицу Azure](commercial-marketplace-lead-management-instructions-azure-table.md) или [конечную точку HTTPS](commercial-marketplace-lead-management-instructions-https.md) для хранения данных интереса клиента. Затем экспортируйте данные в систему CRM.
 
 2. При публикации предложения в Центре партнеров подключите свое предложение к месту назначения данных о потенциальных клиентах.
 3. Убедитесь, что подключение к месту назначения данных о потенциальных клиентах настроено правильно. После публикации в Центре партнеров мы проверим подключение и отправим вам данные тестового потенциального клиента. На этапе предварительной версии предложения перед его публикацией вы также можете проверить подключение для передачи данных о потенциальных клиентах, приобретя предложение самостоятельно в предварительной версии среды.
@@ -81,9 +81,9 @@ ms.locfileid: "89646690"
 
 Ниже приведен ряд дополнительных ресурсов по управлению потенциальными клиентами.
 
-- [Общие сведения об управлении потенциальными клиентами](commercial-marketplace-get-customer-leads.md)
-- [Часто задаваемые вопросы по управлению интересами](../lead-management-for-cloud-marketplace.md#frequently-asked-questions))
-- [Распространенные ошибки конфигурации интересов](../lead-management-for-cloud-marketplace.md#publishing-config-errors))
+- [Потенциальные клиенты из предложения на коммерческой платформе](commercial-marketplace-get-customer-leads.md)
+- [Часто задаваемые вопросы об управлении потенциальными клиентами](../lead-management-faq.md#common-questions-about-lead-management)
+- [Устранение ошибок конфигурации интересов](../lead-management-faq.md#publishing-config-errors)
 - [Общие сведения об управлении потенциальными клиентами](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) (PDF-документ; убедитесь, что блокирование всплывающих окон отключено)
 
 Чтобы продолжить, выберите **Сохранить черновик**.
@@ -202,7 +202,7 @@ ms.locfileid: "89646690"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения не принимаются.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу `https://upload.xboxlive.com`, которую использует Центр партнеров.
@@ -218,7 +218,7 @@ ms.locfileid: "89646690"
 
 [!INCLUDE [logos-appsource-only](../includes/logos-appsource-only.md)]
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>Снимки экрана
 

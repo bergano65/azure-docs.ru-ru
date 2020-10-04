@@ -7,12 +7,12 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 10b5553bea1e275a3a3cc77380ed9e16898e903a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: a7a77cc18ddc1ab8664d49aa3c2ac049a683ed3d
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91533219"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710640"
 ---
 # <a name="create-a-dynamics-365-for-operations-offer"></a>Создание предложения Dynamics 365 for Operations
 
@@ -187,7 +187,7 @@ ms.locfileid: "91533219"
 
 В этом разделе вы можете указать логотипы и изображения, которые будут использоваться при отображении предложения для клиента. Все изображения должны быть в формате PNG.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.

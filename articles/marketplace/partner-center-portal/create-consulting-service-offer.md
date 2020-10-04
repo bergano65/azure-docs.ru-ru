@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 06/17/2020
-ms.openlocfilehash: 7b42c12499977b5f7bc1704c57904e90be2e8466
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 464e75e55bc67ce619134be01ba00f2606a271a4
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91398020"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91709076"
 ---
 # <a name="create-a-consulting-service-offer"></a>Создание предложения консультационных услуг
 
@@ -76,9 +76,9 @@ ms.locfileid: "91398020"
 
 Ниже приведены дополнительные ресурсы по управлению потенциальными клиентами.
 
-- [Общие сведения об управлении потенциальными клиентами](commercial-marketplace-get-customer-leads.md)
-- [Часто задаваемые вопросы по управлению интересами](../lead-management-for-cloud-marketplace.md#frequently-asked-questions))
-- [Распространенные ошибки конфигурации интересов](../lead-management-for-cloud-marketplace.md#publishing-config-errors))
+- [Потенциальные клиенты из предложения на коммерческой платформе](commercial-marketplace-get-customer-leads.md)
+- [Часто задаваемые вопросы об управлении потенциальными клиентами](../lead-management-faq.md#common-questions-about-lead-management)
+- [Устранение ошибок конфигурации интересов](../lead-management-faq.md#publishing-config-errors)
 - [Общие сведения об управлении потенциальными клиентами](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) (PDF-документ; убедитесь, что блокирование всплывающих окон отключено)
 
 Чтобы продолжить, выберите **Сохранить черновик**.
@@ -146,7 +146,7 @@ ms.locfileid: "91398020"
 
 <br>Ниже приведен пример того, как отображаются сведения о предложении в Microsoft AppSource (любые указанные цены приведены только для примера и не предназначены для отражения фактических затрат):
 
-:::image type="content" source="media/example-consulting-service-offer-appsource.png" alt-text="Показывает, как это предложение появляется в Microsoft AppSource.":::
+:::image type="content" source="media/example-consulting-service-offer-appsource.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -202,7 +202,7 @@ ms.locfileid: "91398020"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения не принимаются.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!Note]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.
@@ -247,7 +247,7 @@ ms.locfileid: "91398020"
 
 После того как все необходимые разделы предложения будут настроены, вы сможете отправить его для проверки и публикации.
 
-1. Когда вы будете готовы опубликовать свое предложение консультационных услуг, щелкните **Проверить и опубликовать**.
+1. Когда вы будете готовы опубликовать предложение консультационной службы, выберите **проверить и опубликовать**.
 2. Проверьте сведения на странице отправки окончательных сведений.
 3. Если вы считаете, что какие-либо данные требуют дополнительных пояснений, напишите короткое примечание для команды сертификации.
 4. Когда будете готовы, нажмите кнопку **Отправить**.

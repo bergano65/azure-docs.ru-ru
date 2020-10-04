@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/06/2019
-ms.openlocfilehash: 873f6beaa88e1631397827a94161ce4427b5f0bb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2e96ac5052221475d9aec11d4ed96e8f9c308d70
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323389"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710113"
 ---
 # <a name="troubleshooting-the-log-analytics-vm-extension-in-azure-monitor"></a>Troubleshooting the Log Analytics VM extension in Azure Monitor (Устранение неполадок с расширением Log Analytics для виртуальной машины в Azure Monitor)
 В этой статье содержатся сведения об устранении ошибок, которые могут возникнуть с расширением "Виртуальная машина Log Analytics" для виртуальных машин Windows и Linux, работающих на платформе Microsoft Azure, и предлагаются возможные решения для их устранения.
@@ -19,7 +19,7 @@ ms.locfileid: "87323389"
 Чтобы проверить состояние расширения, выполните следующие действия на портале Azure.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **виртуальные машины**. Элементы списка фильтруются автоматически по мере ввода символов. Выберите **Виртуальные машины**.
+2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **виртуальные машины**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Виртуальные машины**.
 3. В списке найдите и выберите виртуальную машину.
 3. В колонке виртуальной машины щелкните **Расширения**.
 4. Просмотрите список, чтобы проверить, включено ли расширение Log Analytics.  На виртуальных машинах Linux агент отображается как **OMSAgentforLinux**. На виртуальных машинах Windows он отображается как **MicrosoftMonitoringAgent**.
@@ -52,7 +52,7 @@ ms.locfileid: "87323389"
 
 1. Если состояние расширения *неизвестно*, убедитесь, что агент виртуальной машины Azure установлен и работает правильно, просмотрев файл журнала агента ВМ `/var/log/waagent.log`.
    * Если журнал не создан, значит агент виртуальной машины не установлен.
-   * [Установите агент виртуальной машины Azure на виртуальной машине Linux](../learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension).
+   * [Установите агент виртуальной машины Azure на виртуальной машине Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#installation).
 2. В случае возникновения других неполадок просмотрите файлы журналов расширения агента Log Analytics для Linux в папке `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`.
 3. Если расширение работает нормально, но данные не отправляются, просмотрите файлы журнала агента Log Analytics для Linux в папке `/var/opt/microsoft/omsagent/log/omsagent.log`.
 

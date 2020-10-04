@@ -10,12 +10,12 @@ ms.custom: how-to
 ms.author: jmartens
 author: j-martens
 ms.date: 09/03/2020
-ms.openlocfilehash: 2c7ff633705d3db327c563b41ce199a5342dda82
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 6ac116b315d4a11b51b37c5b51edf35aa0676713
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89461567"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708379"
 ---
 # <a name="connect-to-an-azure-machine-learning-compute-instance-in-visual-studio-code-preview"></a>Подключение к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code (Предварительная версия)
 
@@ -68,7 +68,7 @@ ms.locfileid: "89461567"
 Для полнофункциональной удаленной разработки потребуется несколько предварительных условий:
 
 * [Visual Studio Code удаленное расширение SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
-* Вычислительный экземпляр с поддержкой SSH. Дополнительные сведения см. [в разделе "создание вычислительного экземпляра"](concept-compute-instance.md#create).
+* Вычислительный экземпляр с поддержкой SSH. Дополнительные сведения см. [в разделе "создание вычислительного экземпляра"](how-to-create-manage-compute-instance.md).
 
 > [!NOTE]
 > На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. Выводимое значение не поддерживается в Windows, так как команда SSH должна находиться в пути.

@@ -1,17 +1,17 @@
 ---
 title: Безопасность в базе данных Azure для PostgreSQL — один сервер
 description: Обзор функций безопасности в базе данных Azure для PostgreSQL — Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: b95e02046b2f05dd89ec8fce5da438380a8894e9
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.openlocfilehash: be042a0ec076538cf0f0d155667acea6f1ae19cb
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89375798"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710487"
 ---
 # <a name="security-in-azure-database-for-postgresql---single-server"></a>Безопасность в базе данных Azure для PostgreSQL — один сервер
 
@@ -38,7 +38,7 @@ ms.locfileid: "89375798"
 Конечные точки службы виртуальной сети расширяют возможности подключения к виртуальной сети по магистрали Azure. С помощью правил виртуальной сети можно включить сервер базы данных Azure для PostgreSQL, чтобы разрешить подключения из выбранных подсетей в виртуальной сети. Дополнительные сведения см. в разделе [Общие сведения о конечной точке службы виртуальной сети](concepts-data-access-and-security-vnet.md).
 
 ### <a name="private-ip"></a>Частный IP-адрес
-Частная ссылка позволяет подключаться к базе данных Azure для PostgreSQL на одном сервере в Azure с помощью частной конечной точки. Приватный канал Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Доступ к ресурсам PaaS можно получить, используя частный IP-адрес, как и любой другой ресурс в виртуальной сети. Дополнительные сведения см. в статье [Общие сведения о частной ссылке](concepts-data-access-and-security-private-link.md) .
+Частная ссылка позволяет подключаться к базе данных Azure для PostgreSQL на одном сервере в Azure с помощью частной конечной точки. Приватный канал Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Доступ к ресурсам PaaS можно получить, используя закрытый IP-адрес и любой другой ресурс в виртуальной сети. Дополнительные сведения см. в статье [Общие сведения о частной ссылке](concepts-data-access-and-security-private-link.md) .
 
 
 ## <a name="access-management"></a>Управление доступом
@@ -54,6 +54,9 @@ ms.locfileid: "89375798"
 
 [Ведение журнала аудита](concepts-audit.md) доступно для наблюдения за действиями в базах данных. 
 
+## <a name="migrating-from-oracle"></a>Миграция с Oracle
+
+Oracle поддерживает прозрачное шифрование данных (TDE) для шифрования данных таблиц и табличных пространств. В Azure для PostgreSQL данные автоматически шифруются на разных уровнях. Ознакомьтесь с разделом "непрочее" на этой странице, а также с различными разделами безопасности, в том числе с [управляемыми клиентом ключами](./concepts-data-encryption-postgresql.md) и [двойным шифрованием инфраструктуры](./concepts-infrastructure-double-encryption.md). Вы также можете использовать расширение [пгкрипто](https://www.postgresql.org/docs/11/pgcrypto.html) , которое поддерживается в [Azure для PostgreSQL](./concepts-extensions.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)

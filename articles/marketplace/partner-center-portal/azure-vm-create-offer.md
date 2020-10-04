@@ -7,12 +7,12 @@ ms.topic: how-to
 author: emuench
 ms.author: mingshen
 ms.date: 08/07/2020
-ms.openlocfilehash: 9f48c06f075ccdc3c3c212e1ba7912707565cd87
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.openlocfilehash: 46749015d5141053eaea3f2f251bbba7d9455481
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91405060"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91709022"
 ---
 # <a name="create-an-azure-virtual-machine-offer-on-azure-marketplace"></a>Создание предложения виртуальной машины Azure в Azure Marketplace
 
@@ -242,7 +242,7 @@ ms.locfileid: "91405060"
 
 Предоставьте логотипы и изображения для использования с вашим предложением. Все изображения должны быть в формате PNG. Размытые изображения приведут к отклонению вашей заявки.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com , которую использует Центр партнеров.
@@ -547,7 +547,7 @@ ms.locfileid: "91405060"
 
 <br>Ниже приведен пример того, как в результатах поиска Azure Marketplace отображаются сведения о предложении.
 
-:::image type="content" source="media/example-azure-marketplace-virtual-machine-search-results.png" alt-text="Показывает, как это предложение отображается в результатах поиска Azure Marketplace.":::
+:::image type="content" source="media/example-azure-marketplace-virtual-machine-search-results.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -558,7 +558,7 @@ ms.locfileid: "91405060"
 
 <br>Ниже приведен пример сведений о плане Azure Marketplace.
 
-:::image type="content" source="media/example-azure-marketplace-virtual-machine-plan-details.png" alt-text="Описание плана Azure Marketplace.":::
+:::image type="content" source="media/example-azure-marketplace-virtual-machine-plan-details.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -568,7 +568,7 @@ ms.locfileid: "91405060"
 
 <br>Ниже приведен пример того, как отображаются сведения о предложении в портал Azure:
 
-:::image type="content" source="media/example-azure-portal-virtual-machine-offer.png" alt-text="Показывает, как это предложение появляется в портал Azure.":::
+:::image type="content" source="media/example-azure-portal-virtual-machine-offer.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -579,7 +579,7 @@ ms.locfileid: "91405060"
 
 <br>Ниже приведен пример того, как сведения о предложении отображаются в результатах поиска портал Azure.
 
-:::image type="content" source="media/example-azure-portal-virtual-machine-search-results.png" alt-text="Показывает, как это предложение появляется в результатах поиска портал Azure.":::
+:::image type="content" source="media/example-azure-portal-virtual-machine-search-results.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 
@@ -589,7 +589,7 @@ ms.locfileid: "91405060"
 
 <br>Ниже приведен пример сведений о плане портал Azure.
 
-:::image type="content" source="media/example-azure-portal-virtual-machine-plan-details.png" alt-text="Показывает портал Azure сведения о плане.":::
+:::image type="content" source="media/example-azure-portal-virtual-machine-plan-details.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
 
 #### <a name="call-out-descriptions"></a>Описания вызова
 

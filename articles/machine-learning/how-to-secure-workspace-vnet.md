@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 07/07/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: e593cfa06b160539a0d830b9149c9aa9a069a984
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: be476af3696e0753c8e36cfc34a024f8b585c605
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91542076"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708322"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
 
@@ -37,7 +37,7 @@ ms.locfileid: "91542076"
 > - Azure Key Vault
 > - Реестр контейнеров Azure
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -176,7 +176,7 @@ validate=False)
 
 * Реестр контейнеров Azure должен находиться в той же виртуальной сети и подсети, что и учетная запись хранения и целевые объекты вычислений, используемые для обучения или аналитики.
 
-* Рабочая область Машинного обучения Azure должна содержать [кластер вычислительных ресурсов Машинного обучения Azure](how-to-create-attach-compute-sdk.md#amlcompute).
+* Рабочая область Машинного обучения Azure должна содержать [кластер вычислительных ресурсов Машинного обучения Azure](how-to-create-attach-compute-cluster.md).
 
     Если ACR находится за виртуальной сетью, Машинное обучение Azure не может использовать его напрямую для создания образов Docker. Вместо этого для построения образов используется кластер вычислений.
 

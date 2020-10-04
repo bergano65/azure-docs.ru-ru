@@ -1,17 +1,17 @@
 ---
 title: мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 description: В этой статье описываются функции мониторинга и настройки в базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 2f57d20df6adbb7c1a0c73958cc10035126e29b8
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 4fd16e9dcf9f0b75b48311adf3e9282adbce2a25
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91530992"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708719"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для PostgreSQL предоставляет различные параметры мониторинга, дающие возможность получить полезные сведения о поведении сервера.

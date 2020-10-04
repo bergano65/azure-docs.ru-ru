@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2016
 ms.author: matd
-ms.openlocfilehash: 71a5434d985aad4033e4392dd31e6b7d112692de
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 052859e99ffd0082994d313508ebb6f0496d980b
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88183988"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710351"
 ---
 # <a name="storsimple-as-a-backup-target-with-veeam"></a>Использование StorSimple в качестве целевого объекта архивации с помощью Veeam
 
@@ -274,7 +274,7 @@ StorSimple является решением, интегрированным с 
 
 1.  В консоли Veeam Backup and Replication (Архивация и репликация Veeam) в разделе **Repository Tools** (Инструменты репозиториев) выберите **Backup Infrastructure** (Инфраструктура архивации). Щелкните правой кнопкой мыши **Backup Repositories** (Репозитории архивов) и выберите **Add Backup Repository** (Добавить репозиторий архивов).
 
-    ![Страница Backup Repository (Репозиторий архивов) в консоли управления Veeam](./media/storsimple-configure-backup-target-using-veeam/veeamimage1.png)
+    ![Снимок экрана, на котором показана консоль управления Veeam и выделен параметр "добавить репозиторий резервной копии".](./media/storsimple-configure-backup-target-using-veeam/veeamimage1.png)
 
 2.  В диалоговом окне **New Backup Repository** (Создание репозитория архивов) введите имя и описание репозитория. Выберите **Далее**.
 
@@ -295,7 +295,7 @@ StorSimple является решением, интегрированным с 
 
 6.  В диалоговом окне **New Backup Repository** (Создание репозитория архивов) установите флажок **Enable vPower NFS service on the mount server (recommended)** (Включить службу vPower NFS на сервере подключения (рекомендуется)). Выберите **Далее**.
 
-    ![Страница Backup Repository (Репозиторий архивов) в консоли управления Veeam](./media/storsimple-configure-backup-target-using-veeam/veeamimage6.png)
+    ![Снимок экрана, на котором показана консоль управления Veeam, на которой можно добавить новый репозиторий резервных копий.](./media/storsimple-configure-backup-target-using-veeam/veeamimage6.png)
 
 7.  Проверьте параметры и нажмите кнопку **Далее**.
 
@@ -335,11 +335,11 @@ StorSimple является решением, интегрированным с 
 
 2.  В диалоговом окне **New Backup Job** (Создание задания архивации) введите имя и описание ежедневного задания архивации.
 
-    ![Консоль управления Veeam, страница создания задания архивации](./media/storsimple-configure-backup-target-using-veeam/veeamimage9.png)
+    ![Снимок экрана консоли управления Veeam, в которую вы добавляете имя и описание.](./media/storsimple-configure-backup-target-using-veeam/veeamimage9.png)
 
 3.  Выберите виртуальную машину, на которую выполняется архивация.
 
-    ![Консоль управления Veeam, страница создания задания архивации](./media/storsimple-configure-backup-target-using-veeam/veeamimage10.png)
+    ![Снимок экрана, на котором показана консоль управления Veeam, в которой вы выбрали виртуальную машину.](./media/storsimple-configure-backup-target-using-veeam/veeamimage10.png)
 
 4.  Выберите необходимый **прокси-сервер архивации** и **репозиторий архивов**. Задайте необходимое количество **точек восстановления, которое нужно хранить на диске**, в соответствии с определениями RPO и RTO для среды в локальном хранилище. Выберите **Дополнительно**.
 
@@ -347,7 +347,7 @@ StorSimple является решением, интегрированным с 
 
 5. В диалоговом окне **Advanced Settings** (Дополнительные параметры) на вкладке **Backup** (Архивация) установите флажок **Incremental** (Добавочная). Снимите флажок **Create synthetic full backups periodically** (Периодически создавать искусственные полные резервные копии). Установите флажок **Create active full backups periodically** (Периодически создавать активные полные резервные копии). В разделе **Active full backup** (Активная полная архивация) установите флажок **Weekly on selected days** (Еженедельно по выбранным дням) и задайте для этого параметра значение "Суббота".
 
-    ![Консоль управления Veeam, страница дополнительных параметров создания задания архивации](./media/storsimple-configure-backup-target-using-veeam/veeamimage12.png)
+    ![Снимок экрана, на котором показана консоль управления Veeam, в частности, страница дополнительных параметров задания архивации](./media/storsimple-configure-backup-target-using-veeam/veeamimage12.png)
 
 6. На вкладке **Storage** (Хранилище) снимите флажок **Enable inline data deduplication** (Включить встроенную дедупликацию данных). Установите флажки **Exclude swap file blocks** (Исключить блоки файлов подкачки) и **Exclude deleted file blocks** (Исключить блоки удаленных файлов). Для параметра **Compression level** (Уровень сжатия) задайте значение **None**. Чтобы обеспечить сбалансированную производительность и дедупликацию, для параметра **Storage optimization** (Оптимизация хранилища) задайте значение **LAN Target** (Целевой объект LAN). Щелкните **ОК**.
 
@@ -408,11 +408,11 @@ StorSimple является решением, интегрированным с 
 
 1.  В консоли Veeam Backup and Replication (Архивация и репликация Veeam) выберите **Backup & Replication** (Архивация и репликация). Щелкните правой кнопкой мыши **Backup** (Архивация) и выберите **VMware** или **Hyper-V** (в зависимости от используемой среды).
 
-    ![Консоль управления Veeam, страница создания задания копирования резервных копий](./media/storsimple-configure-backup-target-using-veeam/veeamimage16.png)
+    ![Снимок экрана, на котором показана консоль управления Veeam с параметрами VMware и Hyper-V, которые можно выбрать.](./media/storsimple-configure-backup-target-using-veeam/veeamimage16.png)
 
 2.  В диалоговом окне **New Backup Copy Job** (Создание задания копирования резервных копий) введите имя и описание задания.
 
-    ![Консоль управления Veeam, страница создания задания копирования резервных копий](./media/storsimple-configure-backup-target-using-veeam/veeamimage17.png)
+    ![Снимок экрана, на котором показана консоль управления Veeam, в которой вы вводите имя и описание задания.](./media/storsimple-configure-backup-target-using-veeam/veeamimage17.png)
 
 3.  Выберите виртуальные машины для обработки. Выберите резервные копии и ежедневную резервную копию, созданную ранее.
 
@@ -422,13 +422,13 @@ StorSimple является решением, интегрированным с 
 
 5.  Выберите репозиторий архивов и определите количество **сохраняемых точек восстановления**. Установите флажок **Keep the following restore points for archival purposes** (Сохранить следующие точки восстановления для архивации). Определите частоту архивации и нажмите кнопку **Дополнительно**.
 
-    ![Консоль управления Veeam, страница создания задания копирования резервных копий](./media/storsimple-configure-backup-target-using-veeam/veeamimage19.png)
+    ![Снимок экрана, показывающий, где определяется периодичность резервного копирования.](./media/storsimple-configure-backup-target-using-veeam/veeamimage19.png)
 
 6.  Укажите следующие дополнительные параметры:
 
     * На вкладке **Maintenance** (Обслуживание) отключите защиту от повреждения данных на уровне хранилища.
 
-    ![Консоль управления Veeam, страница дополнительных параметров создания задания копирования резервных копий](./media/storsimple-configure-backup-target-using-veeam/veeamimage20.png)
+    ![Снимок экрана, на котором показана вкладка "обслуживание" в консоли управления Veeam.](./media/storsimple-configure-backup-target-using-veeam/veeamimage20.png)
 
     * На вкладке **Storage** (Хранилище) отключите дедупликацию и сжатие данных.
 

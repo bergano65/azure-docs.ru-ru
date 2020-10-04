@@ -1,24 +1,24 @@
 ---
 title: Управление репликами чтения — портал Azure — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как управлять репликами чтения базы данных Azure для PostgreSQL-Single Server из портал Azure.
-author: rachel-msft
-ms.author: raagyema
+author: sr-msft
+ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/10/2020
-ms.openlocfilehash: d0de485158477496419dc394aaf6bdd1d28e772a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 08d1d393b4ba52e6feeb36c0538f2664e1407d38
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91535820"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708294"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 [Сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md) , который будет основным сервером.
 
 ## <a name="azure-replication-support"></a>Поддержка репликации Azure

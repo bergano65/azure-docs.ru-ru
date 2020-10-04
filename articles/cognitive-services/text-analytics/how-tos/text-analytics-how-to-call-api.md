@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: b2c994d23e63f9e2118cd3e6571c5dcc0449a367
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: e17f2015ed4428cfd3c1a6c8a7bc4f92854a6b71
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601101"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710606"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -27,7 +27,9 @@ ms.locfileid: "90601101"
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
+
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
@@ -114,10 +116,10 @@ ms.locfileid: "90601101"
 
    В Postman ответ отображается в следующем расположенном ниже окне как один документ JSON с элементом для каждого идентификатора документа, предоставленного в запросе.
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также раздел 
 
  [Обзор Анализ текста](../overview.md)  
- [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
+ [Вопросы и ответы](../text-analytics-resource-faq.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

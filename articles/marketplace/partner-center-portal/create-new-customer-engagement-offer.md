@@ -7,12 +7,12 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 106ad6c1669506b5a8086afc1a74d967478e556c
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.openlocfilehash: bcb14c786ab652b1c51a3d3bf487e39fd0ebfdb6
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91597298"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710691"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement--powerapps-offer"></a>Создание предложения Dynamics 365 for Customer Engagement & PowerApps
 
@@ -191,7 +191,7 @@ ms.locfileid: "91597298"
 
 Предоставьте логотипы и изображения для вашего предложения. Все изображения должны быть в формате PNG.
 
-[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
+[!INCLUDE [logo tips](../includes/graphics-suggestions.md)]
 
 >[!NOTE]
 >Если при отправке файлов возникнет проблема, убедитесь, что ваша локальная сеть не блокирует службу https://upload.xboxlive.com, которую использует Центр партнеров.

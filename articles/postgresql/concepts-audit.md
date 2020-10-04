@@ -1,17 +1,17 @@
 ---
 title: Ведение журнала аудита — база данных Azure для PostgreSQL — один сервер
 description: Основные понятия для ведения журнала аудита Пгаудит в базе данных Azure для PostgreSQL-Single Server.
-author: rachel-msft
-ms.author: raagyema
+author: niklarin
+ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
-ms.openlocfilehash: 165e7984c21b74fa7730fc02756b9e75b4b33aa7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: efd4cb7c0c5db50729539373938ebccd689dee42
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82131248"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708991"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
 
@@ -66,7 +66,7 @@ ms.locfileid: "82131248"
 
 > [!NOTE]
 > Если задано значение `pgaudit.log_client` On, журналы перенаправляются в клиентский процесс (например, psql), а не записываются в файл. Этот параметр обычно следует отключать. <br> <br>
-> `pgaudit.log_level`включается, только если `pgaudit.log_client` включен.
+> `pgaudit.log_level` включается, только если `pgaudit.log_client` включен.
 
 > [!NOTE]
 > В базе данных Azure для PostgreSQL `pgaudit.log` не может быть задано с помощью `-` сочетания знака (минус), как описано в документации по пгаудит. Все необходимые классы операторов (READ, WRITE и т. д.) должны быть указаны отдельно.
@@ -74,7 +74,7 @@ ms.locfileid: "82131248"
 ### <a name="audit-log-format"></a>Формат журналов аудита
 Каждая запись аудита обозначается `AUDIT:` рядом с началом строки журнала. Формат остальной части записи подробно описан в [документации по пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
 
-Если вам нужны другие поля для удовлетворения требований аудита, используйте параметр postgres `log_line_prefix` . `log_line_prefix`Строка, которая выводится в начале каждой строки журнала postgres. Например, следующий `log_line_prefix` параметр предоставляет метку времени, имя пользователя, имя базы данных и идентификатор процесса:
+Если вам нужны другие поля для удовлетворения требований аудита, используйте параметр postgres `log_line_prefix` . `log_line_prefix` Строка, которая выводится в начале каждой строки журнала postgres. Например, следующий `log_line_prefix` параметр предоставляет метку времени, имя пользователя, имя базы данных и идентификатор процесса:
 
 ```
 t=%m u=%u db=%d pid=[%p]:
