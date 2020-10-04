@@ -6,21 +6,21 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 07/10/2020
-ms.openlocfilehash: fd741a9401a3936ec02939562e8e85046e829d31
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 09/16/2020
+ms.openlocfilehash: 4c8d2143d2b6e18de2669a6b45961e601cc394bb
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075919"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707563"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
 
 При использовании потоковой передачи в реальном времени необходимо выполнять операции с теми данными, которые содержатся во временных окнах. В Stream Analytics имеется встроенная поддержка функций управления окнами. Это позволяет разработчикам выполнять сложные задания по обработке потоков с минимальными усилиями.
 
-Есть четыре типа временных окон: [**переворачивающиеся**](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics), [**прыгающие**](https://docs.microsoft.com/stream-analytics-query/hopping-window-azure-stream-analytics), [**скользящие**](https://docs.microsoft.com/stream-analytics-query/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Можно также выполнять статистическую обработку событий в нескольких окнах с помощью [функции **Windows ()** ](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
+Существует пять видов временных окон: [**"переворачивающегося"**](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics), [**прыгающее»**](https://docs.microsoft.com/stream-analytics-query/hopping-window-azure-stream-analytics), [**скользящий**](https://docs.microsoft.com/stream-analytics-query/sliding-window-azure-stream-analytics), [**сеанс**](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics)и [**снимок**](https://docs.microsoft.com/stream-analytics-query/snapshot-window-azure-stream-analytics) окна.  Функции управления окнами используются в предложении [**GROUP BY**](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Можно также выполнять статистическую обработку событий в нескольких окнах с помощью [функции **Windows ()** ](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
 
-Все операции [управления окнами](https://docs.microsoft.com/stream-analytics-query/windowing-azure-stream-analytics) выводят результаты в **конце** окна. Результатом для окна будет единичное событие, полученное на основе выбранной статистической функции. Метка времени для выходного события соответствует времени завершения окна, и все функции управления окнами выполняются с фиксированной длительностью. 
+Все операции [управления окнами](https://docs.microsoft.com/stream-analytics-query/windowing-azure-stream-analytics) выводят результаты в **конце** окна. Обратите внимание, что при запуске задания Stream Analytics можно указать *время начала вывода задания* , и система будет автоматически получать предыдущие события во входящих потоках для вывода первого окна в указанное время. Например, если начать с параметра *Now* , он начнет немедленно выдавать данные. Результатом для окна будет единичное событие, полученное на основе выбранной статистической функции. Метка времени для выходного события соответствует времени завершения окна, и все функции управления окнами выполняются с фиксированной длительностью. 
 
 ![Концепции функций управления окнами в Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-conceptual.png)
 
@@ -30,7 +30,7 @@ ms.locfileid: "87075919"
 !["Переворачивающееся" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-tumbling-intro.png)
 
 ## <a name="hopping-window"></a>"Прыгающее" окно
-Функции "прыгающего" окна смещаются вперед на фиксированный отрезок времени. Эта концепция аналогична переворачивающимся окнам с тем исключением, что "прыгающие" окна могут пересекаться, то есть события могут принадлежать сразу к нескольким окнам из набора "прыгающих" окон. Если для "прыгающего" окна указать длину прыжка, точно совпадающую с размером окна, оно будет полностью идентично "переворачивающемуся" окну. 
+Функции "прыгающего" окна смещаются вперед на фиксированный отрезок времени. Их можно легко представить как "переворачивающегося" окна, которые могут перекрываться и выдаваться чаще, чем размер окна. События могут принадлежать более чем к одному результирующему набору окон прыгающее». Если для "прыгающего" окна указать длину прыжка, точно совпадающую с размером окна, оно будет полностью идентично "переворачивающемуся" окну. 
 
 !["Прыгающее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png)
 

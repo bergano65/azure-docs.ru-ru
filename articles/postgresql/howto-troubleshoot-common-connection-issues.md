@@ -2,17 +2,17 @@
 title: Устранение неполадок подключений — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как устранять проблемы с подключением к базе данных Azure для PostgreSQL-Single Server.
 keywords: подключение postgresql,строка подключения,проблемы с подключением, временная ошибка,ошибка подключения
-author: rachel-msft
-ms.author: raagyema
+author: niklarin
+ms.author: nlarin
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: c97e8e0d55a99e0b022bdc6e97edc778d7b6588a
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: bff930153dc8941fbfe561edf963d5b1c1e7811f
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86107603"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708022"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---single-server"></a>Устранение проблем с подключением к базе данных Azure для PostgreSQL — один сервер
 

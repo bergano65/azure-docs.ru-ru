@@ -12,18 +12,18 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 04/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 85c406fc561424d7b02d39dfd58dc3c8fe34aab2
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 8ec87a8d78f73af48b662c5971dfe1803717f88a
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88116093"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704554"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений
 
 С помощью Azure Active Directory (Azure AD) вы можете настроить тип утверждения для утверждения роли в токене ответа, который вы получаете после авторизации приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure AD с настроенным каталогом.
 - Подписка с поддержкой единого входа (SSO). Настроенный единый вход в приложении.
@@ -159,7 +159,7 @@ ms.locfileid: "88116093"
 
     а. Щелкните значок " **изменить** ", чтобы открыть диалоговое окно " **атрибуты пользователя & утверждения** ".
 
-      ![Кнопка "Добавить атрибут"](./media/active-directory-enterprise-app-role-management/editattribute.png)
+      ![Снимок экрана, на котором показан значок редактирования, используемый для открытия диалогового окна "атрибуты пользователя & утверждения".](./media/active-directory-enterprise-app-role-management/editattribute.png)
 
     b. В диалоговом окне **Управление утверждениями пользователей** добавьте атрибут токен SAML, щелкнув **Добавить новое утверждение**.
 
