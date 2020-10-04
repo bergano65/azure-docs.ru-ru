@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 926f4dd94ba5b1f864a002c282004b3a9f438dca
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.openlocfilehash: 280b7e051c4c9d87c504c1abf6aca0b04bfa1b29
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722744"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704605"
 ---
 # <a name="review-security-audit-events-in-azure-active-directory-domain-services-using-azure-monitor-workbooks"></a>Проверка событий аудита безопасности в Azure Active Directory доменных служб с помощью Azure Monitor книг
 
@@ -58,7 +58,7 @@ AD DS Azure содержит два следующих шаблона книги
 1. Выберите управляемый домен, например *aaddscontoso.com*
 1. В меню на левой стороне выберите **мониторинг > книги** .
 
-    ![Выберите пункт меню книги в портал Azure](./media/use-azure-monitor-workbooks/select-workbooks-in-azure-portal.png)
+    ![Снимок экрана, подсвечивает, где выбрать отчет "Обзор безопасности" и отчет "действия учетной записи".](./media/use-azure-monitor-workbooks/select-workbooks-in-azure-portal.png)
 
 1. Выберите **отчет "Обзор безопасности**".
 1. В раскрывающихся меню в верхней части книги выберите подписку Azure, а затем — рабочую область Azure Monitor.

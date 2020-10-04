@@ -1,17 +1,17 @@
 ---
 title: Управление базой данных Azure для PostgreSQL — портал Azure
 description: Узнайте, как управлять сервером базы данных Azure для PostgreSQL из портал Azure.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/20/2019
-ms.openlocfilehash: 02a50a94b0b07d1755abe78c567df7ff5c7eda92
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 393e67d1b690f7231b5bf298b44f4db7c489d184
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90907446"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704520"
 ---
 # <a name="manage-an-azure-database-for-postgresql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера PostgreSQL с помощью портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "90907446"
 
 2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/change-pricing-tier.png" alt-text="Снимок экрана портал Azure для выбора уровня "базовый", "общего назначения" или "оптимизировано для памяти" в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/change-pricing-tier.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Изменение уровней приводит к перезапуску сервера.
@@ -50,7 +50,7 @@ ms.locfileid: "90907446"
 
 2. Измените параметр **Виртуальное ядро**, переместив ползунок на нужное значение.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-compute.png" alt-text="Снимок экрана портал Azure выбор параметра Виртуальное ядро в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-compute.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Масштабирование виртуальных ядер приводит к перезапуску сервера.
@@ -63,7 +63,7 @@ ms.locfileid: "90907446"
 
 2. Измените параметр **хранилища** , переместив ползунок вверх до нужного значения.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-storage.png" alt-text="Снимок экрана портал Azure выбор масштаба хранилища в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-storage.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Невозможно масштабировать хранилище.
@@ -76,11 +76,11 @@ ms.locfileid: "90907446"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Сброс пароля**.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/overview-reset-password.png" alt-text="Снимок экрана портал Azure сброс пароля в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/overview-reset-password.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/reset-password.png" alt-text="Снимок экрана портал Azure сброс пароля и сохранение в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/reset-password.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
 3. Нажмите кнопку **ОК** , чтобы сохранить новый пароль.
 
@@ -90,11 +90,11 @@ ms.locfileid: "90907446"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/overview-delete.png" alt-text="Снимок экрана портал Azure для удаления сервера в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/overview-delete.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/confirm-delete.png" alt-text="Снимок экрана портал Azure для подтверждения удаления сервера в базе данных Azure для PostgreSQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/confirm-delete.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для PostgreSQL":::
 
    > [!NOTE]
    > Удаление сервера необратимо.

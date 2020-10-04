@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: c1ca14b8471ef6257c0603e61d78e789e846f0ae
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
+ms.openlocfilehash: e4a652b146286965c68154bd362525861158ecb2
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84142407"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704384"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример. Извлечение ключевых фраз с помощью Анализ текста
 
@@ -29,6 +29,8 @@ ms.locfileid: "84142407"
 > API анализа текста также предоставляет образ контейнера Docker под управлением Linux для извлечения ключевых фраз, поэтому вы можете [установить и запустить контейнер API анализа текста](text-analytics-how-to-install-containers.md) в непосредственной близости к своим данным.
 
 ## <a name="preparation"></a>Подготовка
+
+[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
 Извлечение ключевых фраз лучше всего работает с большими фрагментами текста, в отличие от анализа тональности, который эффективнее работает на маленьких блоках текста. Для получения наилучших результатов обеих операций советуем реструктуризировать входные данные соответствующим образом.
 
@@ -68,13 +70,13 @@ ms.locfileid: "84142407"
     }
 ```
 
-## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Дополнительные сведения об определении запроса см. в статье [How to call the Text Analytics API](text-analytics-how-to-call-api.md) (Как вызвать REST API службы "Анализ текста"). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Ознакомьтесь с документацией по API для этого запроса: [Ключевые фразы API](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases).
++ Создайте запрос **POST** . Ознакомьтесь с документацией по API для этого запроса: [Ключевые фразы API](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases).
 
-+ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v3.0/keyPhrases`. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v3.0/keyPhrases`. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
@@ -95,57 +97,66 @@ ms.locfileid: "84142407"
 
 Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими.
 
-Далее показан пример выходных данных для извлечения ключевой фразы:
+Ниже показан пример выходных данных для извлечения ключевых фраз из конечной точки v 3.1-Preview. 2:
 
 ```json
     {
-        "documents": [
-            {
-                "keyPhrases": [
-                    "year",
-                    "trail",
-                    "trip",
-                    "views"
-                ],
-                "id": "1"
-            },
-            {
-                "keyPhrases": [
-                    "marked trails",
-                    "Worst hike",
-                    "goners"
-                ],
-                "id": "2"
-            },
-            {
-                "keyPhrases": [
-                    "trail",
-                    "small children",
-                    "family"
-                ],
-                "id": "3"
-            },
-            {
-                "keyPhrases": [
-                    "spectacular views",
-                    "trail",
-                    "area"
-                ],
-                "id": "4"
-            },
-            {
-                "keyPhrases": [
-                    "places",
-                    "beautiful views",
-                    "favorite trail"
-                ],
-                "id": "5"
-            }
-        ],
-        "errors": []
+       "documents":[
+          {
+             "id":"1",
+             "keyPhrases":[
+                "year",
+                "trail",
+                "trip",
+                "views",
+                "hike"
+             ],
+             "warnings":[]
+          },
+          {
+             "id":"2",
+             "keyPhrases":[
+                "marked trails",
+                "Worst hike",
+                "goners"
+             ],
+             "warnings":[]
+          },
+          {
+             "id":"3",
+             "keyPhrases":[
+                "trail",
+                "small children",
+                "family"
+             ],
+             "warnings":[]
+          },
+          {
+             "id":"4",
+             "keyPhrases":[
+                "spectacular views",
+                "trail",
+                "Worth",
+                "area"
+             ],
+             "warnings":[]
+          },
+          {
+             "id":"5",
+             "keyPhrases":[
+                "places",
+                "beautiful views",
+                "favorite trail",
+                "rest"
+             ],
+             "warnings":[]
+          }
+       ],
+       "errors":[],
+       "modelVersion":"2020-07-01"
     }
-```
 
+```
 Как уже отмечалось, анализатор находит и отбрасывает слова, которые не представляют смысла и сохраняет одиночные термины или фразы, которые могут быть темой или объектом предложения.
 
 ## <a name="summary"></a>Сводка
@@ -159,10 +170,10 @@ ms.locfileid: "84142407"
 
 ## <a name="see-also"></a>См. также раздел
 
- API анализа текста: [общие сведения и ](../overview.md) [вопросы и ответы](../text-analytics-resource-faq.md)</br>
+ API "Анализ текста": [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
  [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)

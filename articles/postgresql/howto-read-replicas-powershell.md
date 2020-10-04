@@ -1,18 +1,18 @@
 ---
 title: Управление репликами чтения — Azure PowerShell — база данных Azure для PostgreSQL
 description: Узнайте, как настраивать реплики чтения и управлять ими в базе данных Azure для PostgreSQL с помощью PowerShell.
-author: rachel-msft
-ms.author: raagyema
+author: sr-msft
+ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/08/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b57fe5879c45225f8ba22e2c94aceeb5b38369e3
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 26c6f70f92e4c372c0ff6afbcbb3c0bb284e2f6c
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91539458"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704809"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-postgresql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "91539458"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -54,7 +54,7 @@ Get-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| Название | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 

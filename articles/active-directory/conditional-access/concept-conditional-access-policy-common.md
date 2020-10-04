@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbf4d7b9f622ff590eee401544bf62655fd8d096
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 114f26c71ee1aecdb1a0ad3d1c01e558843c0969
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024389"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91705064"
 ---
 # <a name="common-conditional-access-policies"></a>Распространенные политики условного доступа
 
@@ -38,18 +38,18 @@ ms.locfileid: "86024389"
 * [Требовать MFA для управления Azure](howto-conditional-access-policy-azure-management.md)\*
 * [Требовать MFA для всех пользователей](howto-conditional-access-policy-all-users-mfa.md)\*
 
-\*Эти четыре политики при совместной настройке, функции имитации, включенные [по умолчанию безопасности](../fundamentals/concept-fundamentals-security-defaults.md).
+\* Эти четыре политики при совместной настройке, функции имитации, включенные [по умолчанию безопасности](../fundamentals/concept-fundamentals-security-defaults.md).
 
 ## <a name="additional-policies"></a>Дополнительные политики
 
 * [Условный доступ на основе риска входа (требуется Azure AD Premium P2)](howto-conditional-access-policy-risk.md)
 * [Условный доступ пользователя на основе рисков (требуется Azure AD Premium P2)](howto-conditional-access-policy-risk-user.md)
 * [Запрос на доверенное расположение для регистрации MFA](howto-conditional-access-policy-registration.md)
-* [Блокировать доступ по расположению](howto-conditional-access-policy-location.md)
+* [Блокирование доступа по расположению](howto-conditional-access-policy-location.md)
 * [Требование использовать соответствующее устройство](howto-conditional-access-policy-compliant-device.md)
 * [Блокировать доступ, за исключением конкретных приложений](howto-conditional-access-policy-block-access.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моделирование поведения входа с помощью средства What If условного доступа.](troubleshoot-conditional-access-what-if.md)
 

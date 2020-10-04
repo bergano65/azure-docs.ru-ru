@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/30/2020
+ms.date: 10/01/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 450bd87c6dd1f55c58f4c8a620dbddcfdf42ec7f
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.openlocfilehash: 15581178dc1c00b6905763e8552062869f8378ce
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91596548"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704962"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -83,6 +83,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 ## <a name="change-log"></a>Журнал изменений
 
 - 09/30/2020: измените [высокий уровень доступности SAP HANA на виртуальных машинах Azure в RHEL](./sap-hana-high-availability-rhel.md), [HA для SAP HANA МАСШТАБИРОВАНИЯ с помощью использовании на RHEL](./sap-hana-high-availability-netapp-files-red-hat.md) и [Настройка Pacemaker в RHEL в Azure](./high-availability-guide-rhel-pacemaker.md) для адаптации инструкций для RHEL 8,1
+- 09/29/2020. ограничения и рекомендации по использованию ППГ более очевидны в статье [группы размещения Azure для обеспечения оптимальной сетевой задержки с приложениями SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-proximity-placement-scenarios) . 
 - 09/28/2020: Добавьте новое руководство по работе с хранилищем для SAP HANA с помощью Azure NetApp Files с документом [NFS версии 4.1 на Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 - 09/23/2020: добавьте новые сертифицированные номера SKU для ХЛИ в [доступных SKU для Хли](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-available-skus) 
 - 09/20/2020: изменения в документах, [касающиеся развертывания СУБД Azure для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general), SQL Server на виртуальных машинах [Azure развертывание СУБД SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sqlserver), [виртуальные машины Azure СУБД Oracle развертывание для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle), [развертывание СУБД IBM DB2 для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm) с целью адаптации к новым рекомендациям по настройке, которые рекомендуют разделение ДВОИЧных файлов СУБД и двоичных файлов SAP на разные диски Azure. Также добавляются рекомендации по использованию Ultra Disk для различных руководств.

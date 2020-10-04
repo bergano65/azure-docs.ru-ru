@@ -8,12 +8,12 @@ ms.author: nibaccam
 author: nibaccam
 ms.date: 08/05/2020
 ms.custom: how-to, tracking-python
-ms.openlocfilehash: c90d11ba630dbb1e37054715855ae5547a8a034b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: a80559761c8a3eba6045db5cd99a7719dd041fa8
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902714"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704401"
 ---
 # <a name="create-azure-machine-learning-datasets-from-azure-open-datasets"></a>Создание наборов данных Машинное обучение Azure из открытых наборов данных Azure
 
@@ -45,20 +45,20 @@ ms.locfileid: "90902714"
 
 * [Рабочая область машинное обучение Azure](../machine-learning/how-to-manage-workspace.md).
 
-* [Установленный пакет SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), который включает в себя `azureml-datasets` пакеты.
+* [Установленный пакет SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true ), который включает в себя `azureml-datasets` пакеты.
 
-    * Создание [машинное обучение Azure вычислительного экземпляра](../machine-learning/concept-compute-instance.md#managing-a-compute-instance), который представляет собой полностью настроенную и управляемую среду разработки, включающую интегрированные записные книжки и уже установленный пакет SDK.
+    * Создание [машинное обучение Azure вычислительного экземпляра](../machine-learning/how-to-create-manage-compute-instance.md), который представляет собой полностью настроенную и управляемую среду разработки, включающую интегрированные записные книжки и уже установленный пакет SDK.
 
     **OR**
 
-    * Вы можете работать с собственной средой Python и установить пакет SDK самостоятельно с помощью [этих инструкций](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+    * Вы можете работать с собственной средой Python и установить пакет SDK самостоятельно с помощью [этих инструкций](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true ).
 
 > [!NOTE]
 > Некоторые классы наборов данных имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket, который совместим только с 64-разрядным Python. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) и CentOS (7).
 
 ## <a name="create-datasets-with-the-sdk"></a>Создание наборов данных с помощью пакета SDK
 
-Чтобы создать Машинное обучение Azure наборы данных с помощью классов открытых наборов данных Azure в пакете SDK для Python, убедитесь, что пакет установлен с помощью `pip install azureml-opendatasets` . Каждый дискретный набор данных представлен собственным классом в пакете SDK, а некоторые классы доступны в виде машинное обучение Azure [ `TabularDataset` , `FileDataset` ](../machine-learning/how-to-create-register-datasets.md#dataset-types)или и того, и другого. Полный список классов см. в [справочной документации](https://docs.microsoft.com/python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py) `opendatasets` .
+Чтобы создать Машинное обучение Azure наборы данных с помощью классов открытых наборов данных Azure в пакете SDK для Python, убедитесь, что пакет установлен с помощью `pip install azureml-opendatasets` . Каждый дискретный набор данных представлен собственным классом в пакете SDK, а некоторые классы доступны в виде машинное обучение Azure [ `TabularDataset` , `FileDataset` ](../machine-learning/how-to-create-register-datasets.md#dataset-types)или и того, и другого. Полный список классов см. в [справочной документации](https://docs.microsoft.com/python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py&preserve-view=true ) `opendatasets` .
 
 Некоторые классы можно извлечь `opendatasets` как `TabularDataset` или `FileDataset` , что позволяет напрямую управлять файлами и/или скачивать их. Другие классы могут получить набор данных **только** с помощью `get_tabular_dataset()` функций или `get_file_dataset()` из `Dataset` класса в пакете SDK Python.
 
@@ -88,7 +88,7 @@ diabetes_tabular = Diabetes.get_tabular_dataset()
 
 Зарегистрируйте Машинное обучение Azure набор данных в рабочей области, чтобы вы могли поделиться ими с другими пользователями и использовать их в разных экспериментах в рабочей области. При регистрации Машинное обучение Azure набора данных, созданного из открытых наборов данных, данные сразу не загружаются, но при запросе к данным они будут доступны позже (например, во время обучения) из центрального хранилища.
 
-Чтобы зарегистрировать наборы данных в рабочей области, используйте [`register()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.abstract_dataset.abstractdataset?view=azure-ml-py#register-workspace--name--description-none--tags-none--create-new-version-false-) метод. 
+Чтобы зарегистрировать наборы данных в рабочей области, используйте [`register()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.abstract_dataset.abstractdataset?view=azure-ml-py#register-workspace--name--description-none--tags-none--create-new-version-false-&preserve-view=true ) метод. 
 ```Python
 titanic_ds = titanic_ds.register(workspace=workspace,
                                  name='titanic_ds',

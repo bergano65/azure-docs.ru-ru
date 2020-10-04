@@ -1,18 +1,18 @@
 ---
 title: Перемещение регионов Azure — портал Azure — "база данных Azure для PostgreSQL" — "один сервер"
 description: Переместите сервер базы данных Azure для PostgreSQL из одного региона Azure в другой с помощью реплики чтения и портал Azure.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/29/2020
-ms.openlocfilehash: c7c095aa710d97292afc7d2d8f633058c21fa4d0
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 0eaac8ac65b490e1b8de716d79bd36d2f7a7567c
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91539237"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707665"
 ---
 # <a name="move-an-azure-database-for-azure-database-for-postgresql---single-server-to-another-region-by-using-the-azure-portal"></a>Перемещение базы данных Azure для PostgreSQL — Single Server в другой регион с помощью портал Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "91539237"
 > [!NOTE]
 > В этой статье рассматривается перемещение сервера в другой регион. Если вы хотите переместить сервер в другую группу ресурсов или подписку, см. статью [Перемещение](https://docs.microsoft.com/azure/azure-resource-manager/management/move-resource-group-and-subscription) . 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Реплика чтения между регионами доступна только для базы данных Azure для PostgreSQL-Single Server в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что исходный сервер находится в одной из этих ценовых категорий.
 

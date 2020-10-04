@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: d9738d3abfdf30e133ae241c497823be349d25da
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: c5ee162a78ac5e8c3080cd33c89fcee507ecfe92
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86040084"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91704860"
 ---
 # <a name="administer-group-policy-in-an-azure-active-directory-domain-services-managed-domain"></a>Администрирование групповая политика в управляемом домене доменных служб Azure Active Directory
 
@@ -90,7 +90,7 @@ ms.locfileid: "86040084"
 
 1. Откроется средство редактор "Управление групповыми политиками", позволяющее настроить объект групповой политики, например *политики учетной записи*.
 
-    ![Настройка параметров объекта групповой политики при необходимости](./media/active-directory-domain-services-admin-guide/gp-editor.png)
+    ![Снимок экрана редактор "Управление групповыми политиками".](./media/active-directory-domain-services-admin-guide/gp-editor.png)
 
     По завершении выберите **файл > сохранить** , чтобы сохранить политику. По умолчанию компьютеры обновляют групповая политика каждые 90 минут и применяют внесенные изменения.
 
@@ -116,7 +116,7 @@ ms.locfileid: "86040084"
 
     По завершении выберите **файл > сохранить** , чтобы сохранить политику. По умолчанию компьютеры обновляют групповая политика каждые 90 минут и применяют внесенные изменения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных параметрах групповая политика, которые можно настроить с помощью консоль управления групповыми политиками, см. в разделе [Работа с элементами предпочтений групповая политика][group-policy-console].
 
