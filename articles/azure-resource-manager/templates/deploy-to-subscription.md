@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 09/24/2020
-ms.openlocfilehash: 29a35715115816d742103bd7556ded19f22b316e
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.date: 10/05/2020
+ms.openlocfilehash: 0673ea5260c7312395acde8a62b5d457657b9793
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91372414"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91729123"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -52,7 +52,9 @@ ms.locfileid: "91372414"
 
 Для управления подпиской используйте:
 
+* [Конфигурации Advisor](/azure/templates/microsoft.advisor/configurations)
 * [budgets](/azure/templates/microsoft.consumption/budgets);
+* [Изменить профиль анализа](/azure/templates/microsoft.changeanalysis/profile)
 * [supportPlanTypes](/azure/templates/microsoft.addons/supportproviders/supportplantypes);
 * [теги](/azure/templates/microsoft.resources/tags)
 

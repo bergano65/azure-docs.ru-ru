@@ -3,20 +3,20 @@ title: Настройка проверки подлинности
 titleSuffix: Azure Machine Learning
 description: Узнайте, как настроить проверку подлинности для различных ресурсов и рабочих процессов в Машинном обучении Azure. Существует несколько способов настройки и использования проверки подлинности в службе — от простой проверки подлинности на основе пользовательского интерфейса для разработки или тестирования до полной проверки подлинности субъекта-службы Azure Active Directory.
 services: machine-learning
-author: larryfr
-ms.author: larryfr
+author: cjgronlund
+ms.author: cgronlun
 ms.reviewer: larryfr
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-js
-ms.openlocfilehash: 0650b1c6364a187447ea3a378675df9d76eef4d9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 486f026f0d9b325f8e17a040c69f9d3e1da9b359
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91275733"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91729038"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Настройка проверки подлинности для ресурсов и рабочих процессов Машинного обучения Azure
 

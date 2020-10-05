@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
-ms.date: 09/25/2020
-ms.openlocfilehash: 93370050b503875d670283b720088b0871377c09
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.date: 10/05/2020
+ms.openlocfilehash: 43551ca17180cbb3614c670490a19aeaae6c7701
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91535106"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91728664"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -50,7 +50,7 @@ ms.locfileid: "91535106"
 > Хранилище, избыточное в виде зоны, в настоящее время доступно только в [определенных регионах](../../storage/common/storage-redundancy.md#zone-redundant-storage). 
 
 > [!NOTE]
-> Настраиваемая избыточность хранилища резервных копий базы данных SQL Azure сейчас доступна в общедоступной предварительной версии в регионе Azure Юго-Восточной Азии.  
+> Настраиваемая избыточность хранилища резервных копий для базы данных SQL Azure в настоящее время доступна в общедоступной предварительной версии в регионе Azure Юго-Восточной Азии. Эта функция пока недоступна для уровня "горизонтальный". 
 
 ### <a name="backup-usage"></a>Использование резервного копирования
 
@@ -439,9 +439,9 @@ New-AzSqlInstance -Name managedInstance2 -ResourceGroupName ResourceGroup01 -Loc
 
 Добавлены следующие новые встроенные политики, которые можно назначить на уровне подписки или группы ресурсов, чтобы заблокировать создание новых баз данных или экземпляров с геоизбыточным хранилищем резервных копий. 
 
-[База данных SQL не должна использовать избыточность резервных копий GRS](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb219b9cf-f672-4f96-9ab0-f5a3ac5e1c13)
+[База данных SQL не должна использовать избыточность GRS для резервных копий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb219b9cf-f672-4f96-9ab0-f5a3ac5e1c13)
 
-[Управляемые экземпляры SQL не должны использовать избыточность резервных копий GRS](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa9934fd7-29f2-4e6d-ab3d-607ea38e9079)
+[Управляемые экземпляры SQL не должны использовать избыточность GRS для резервных копий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa9934fd7-29f2-4e6d-ab3d-607ea38e9079)
 
 Полный список определений встроенных политик для базы данных SQL и Управляемый экземпляр можно найти [здесь](https://docs.microsoft.com/azure/azure-sql/database/policy-reference).
 

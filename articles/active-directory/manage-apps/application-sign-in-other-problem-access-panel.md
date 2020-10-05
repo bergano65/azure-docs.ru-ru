@@ -11,16 +11,16 @@ ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: bfb4d265a42fe1e4473af0f9bde4ebb76f0734a0
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: 3b9acc3f91a91527e96f450d825d06f6b909e15d
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707974"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91729157"
 ---
 # <a name="troubleshoot-problems-signing-in-to-an-application-from-azure-ad-my-apps"></a>Устранение неполадок при входе в приложение из моих приложений Azure AD
 
-Мои приложения — это веб-портал, который позволяет пользователю с рабочей или учебной учетной записью в Azure Active Directory (Azure AD) просматривать и запускать облачные приложения, к которым администратор Azure AD предоставил доступ. 
+Мои приложения — это веб-портал, который позволяет пользователю с рабочей или учебной учетной записью в Azure Active Directory (Azure AD) просматривать и запускать облачные приложения, к которым администратор Azure AD предоставил доступ. Доступ к моим приложениям осуществляется через веб-браузер по адресу [https://myapps.microsoft.com](https://myapps.microsoft.com) .
 
 Дополнительные сведения об использовании Azure AD в качестве поставщика удостоверений для приложения см. в статье [что такое управление приложениями в Azure AD](what-is-application-management.md). Чтобы быстро приступить к работе, ознакомьтесь с серией быстрого запуска [по управлению приложениями](view-applications-portal.md).
 
