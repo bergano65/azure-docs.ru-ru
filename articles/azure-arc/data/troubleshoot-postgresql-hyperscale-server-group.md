@@ -95,9 +95,9 @@ kubectl config use-context default/my_kubeuser/ArcDataControllerAdmin
 3. Выберите **панель мониторинга [диагностика и устранение проблем]**
 4. Выберите **ссылку [Устранение неполадок]** .
 
-:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
+:::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;":::
 
-Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;:::
+Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** " Azure Data Studio. Использование записной книжки для устранения :::image type="content" source="media/postgres-hyperscale/ads-controller-postgres-troubleshooting-notebook2.jpg" alt-text="Azure Data Studio — Открытие записной книжки для устранения неполадок PostgreSQL&quot;":::
 
 Откроется **Записная книжка &quot;TSG100&quot; в службе &quot;Дуга Azure с поддержкой PostgreSQL** ":::
 
