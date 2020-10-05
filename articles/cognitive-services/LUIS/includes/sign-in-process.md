@@ -2,20 +2,18 @@
 title: включить файл
 description: включить файл
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 05/05/2020
 ms.topic: include
-ms.author: diberry
-ms.openlocfilehash: da9388a3bd5f4d46ec34ed226e3ee23a96b2f494
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: fda9df6c7e9651bbd3b0b70ad9d47f23c0c19d01
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87374911"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91541443"
 ---
 ## <a name="sign-in-to-luis-portal"></a>Вход на портал LUIS
 
@@ -29,7 +27,7 @@ ms.locfileid: "87374911"
 
 1. Укажите сведения о ресурсе.
 
-    ![Создание ресурса для разработки](../media/migrate-authoring-key/choose-authoring-resource-form.png)
+    ![На снимке экрана показана область "Создание нового ресурса для разработки".](../media/migrate-authoring-key/choose-authoring-resource-form.png)
 
     При **создании ресурса для разработки** укажите следующие сведения:
 
@@ -42,8 +40,8 @@ ms.locfileid: "87374911"
 
 1. Отобразится сводка по создаваемому ресурсу. Выберите **Далее**.
 
-    ![Создание ресурса для разработки](../media/sign-in/sign-in-confirm-key-selection.png)
+    ![На снимке экрана показана страница приветствия с параметром "Связывание учетной записи Azure".](../media/sign-in/sign-in-confirm-key-selection.png)
 
 1. Подтвердите введенные данные, выбрав **Продолжить**.
 
-    ![Создание ресурса для разработки](../media/sign-in/sign-in-confirm-continue.png)
+    ![На снимке экрана показана страница приветствия после связывания учетной записи Azure.](../media/sign-in/sign-in-confirm-continue.png)

@@ -6,17 +6,17 @@ ms.service: sql-db-mi
 ms.subservice: features
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: overview
-author: jovanpop-msft
-ms.author: jovanpop
-ms.reviewer: carlr
+ms.topic: conceptual
+author: stevestein
+ms.author: sstein
+ms.reviewer: ''
 ms.date: 03/10/2020
-ms.openlocfilehash: 8c9bdb059008a3d9e33631c3101cb7b459660119
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 6b4b31ab4bc0cb1fe5bd9140870df86db6841ff3
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89436788"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91450341"
 ---
 # <a name="automate-management-tasks-using-database-jobs"></a>Автоматизация задач управления с помощью заданий базы данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -249,7 +249,7 @@ EXEC msdb.dbo.sp_update_job @job_name=N'Load data using SSIS',
 В **примере 4** показана целевая группа, которая содержит эластичный пул в качестве целевого объекта. Как и в *примере 2*, во время выполнения задания осуществляется динамическое перечисление ресурсов пула, чтобы определить список баз данных в нем.
 <br><br>
 
-![Примеры целевых групп](./media/job-automation-overview/targetgroup-examples2.png)
+![Дополнительные примеры целевых групп](./media/job-automation-overview/targetgroup-examples2.png)
 
 В **примерах 5** и **6** показаны расширенные сценарии, в которых серверы, эластичные пулы и базы данных могут быть объединены с использованием правил включения и исключения.<br>
 В **примере 7** показано, что сегменты в карте сегментов также могут быть оценены во время выполнения задания.
