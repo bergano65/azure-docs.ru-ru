@@ -3,17 +3,17 @@ title: Документация по Базе данных Azure для PostgreS
 summary: База данных Azure для PostgreSQL — это служба реляционных баз данных на основе СУБД PostgreSQL с открытым исходным кодом. Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование.
 metadata:
   description: База данных Azure для PostgreSQL — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом.
-  author: rachel-msft
-  ms.author: raagyema
+  author: sunilagarwal
+  ms.author: sunila
   ms.date: 09/21/2020
   ms.service: postgresql
   ms.topic: landing-page
-  ms.openlocfilehash: c14cab875ab017feb913269e277e8b5c12a3ee08
-  ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+  ms.openlocfilehash: 4931a50d2258902c551cb276a8b47b129a176551
+  ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/22/2020
-  ms.locfileid: "90895646"
+  ms.lasthandoff: 10/04/2020
+  ms.locfileid: "91704299"
 landingContent:
 - title: Сведения о Базе данных Azure для PostgreSQL
   linkLists:
