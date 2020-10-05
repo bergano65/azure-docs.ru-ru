@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 089c53c72ae2c4cf6216937e8977b64a7abf80fc
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: ff28bbf57ac77e1bc092d35e9bf493f75040cc9c
+ms.sourcegitcommit: 5b69ba21787c07547edfbfd5254eaf34315cfadd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90983215"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712312"
 ---
 # <a name="azure-activity-log"></a>Журнал действий Azure
 Журнал действий — это [Журнал платформы](platform-logs-overview.md) в Azure, который предоставляет подробные сведения о событиях уровня подписки. например об изменении ресурса или запуске виртуальной машины. Вы можете просмотреть журнал действий на портале Azure или получить записи с помощью PowerShell и CLI. Для дополнительной функциональности следует создать параметр диагностики для отправки журнала действий в [журналы Azure Monitor](data-platform-logs.md), в концентраторы событий Azure для пересылки за пределы Azure или в службу хранилища Azure для архивации. Эта статья содержит сведения о просмотре журнала действий и его отправке в различные назначения.
@@ -226,7 +226,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/00000000
    # Build the storage account Id from the settings above
    $storageAccountId = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccountName"
 
-   Add-AzLogProfile -Name $logProfileName -Location $locations -ServiceBusRuleId $serviceBusRuleId
+   Add-AzLogProfile -Name $logProfileName -Location $locations -StorageAccountId  $storageAccountId -ServiceBusRuleId $serviceBusRuleId
    ```
 
 
