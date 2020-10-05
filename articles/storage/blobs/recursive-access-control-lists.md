@@ -9,12 +9,12 @@ ms.date: 09/21/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 88349e90102bf3b0e4dc2868d5f65d476aac51f7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 794e89e75505d3c1c34bf2a15209c3218dfa3582
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91280374"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714105"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Рекурсивное задание списков управления доступом (ACL) для Azure Data Lake Storage 2-го поколения
 
@@ -138,7 +138,7 @@ Select-AzSubscription -SubscriptionId <subscription-id>
 
 ### <a name="option-1-obtain-authorization-by-using-azure-active-directory-ad"></a>Вариант 1. получение авторизации с помощью Azure Active Directory (AD)
 
-При таком подходе система гарантирует, что учетная запись пользователя имеет соответствующие назначения управления доступом на основе ролей (RBAC) и разрешения ACL. 
+При таком подходе система гарантирует, что ваша учетная запись пользователя имеет соответствующие разрешения на управление доступом на основе ролей Azure (Azure RBAC) и ACL. 
 
 ```powershell
 $ctx = New-AzStorageContext -StorageAccountName '<storage-account-name>' -UseConnectedAccount
@@ -153,7 +153,7 @@ $ctx = New-AzStorageContext -StorageAccountName '<storage-account-name>' -UseCon
 
 ### <a name="option-2-obtain-authorization-by-using-the-storage-account-key"></a>Вариант 2. получение авторизации с помощью ключа учетной записи хранения
 
-При таком подходе система не проверяет разрешения RBAC или ACL.
+При таком подходе система не проверяет разрешения Azure RBAC или ACL.
 
 ```powershell
 $storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>" -AccountName "<storage-account-name>"
@@ -174,7 +174,7 @@ $ctx = $storageAccount.Context
 using Azure.Identity;
 ```
 
-Получите идентификатор клиента, секрет клиента и идентификатор клиента. Для этого см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md). В рамках этого процесса необходимо присвоить субъекту безопасности одну из следующих ролей [RBAC (Управление доступом на основе ролей)](../../role-based-access-control/overview.md) . 
+Получите идентификатор клиента, секрет клиента и идентификатор клиента. Для этого см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md). В рамках этого процесса вам потребуется назначить одну из следующих ролей Azure [RBAC (Управление доступом на основе ролей)](../../role-based-access-control/overview.md) для субъекта безопасности. 
 
 |Роль|Возможность настройки ACL|
 |--|--|
@@ -229,7 +229,7 @@ public void GetDataLakeServiceClient(ref DataLakeServiceClient dataLakeServiceCl
 
 Для проверки подлинности приложения в Azure AD можно использовать [клиентскую библиотеку удостоверений Azure для Python](https://pypi.org/project/azure-identity/) .
 
-В этом примере создается экземпляр **даталакесервицеклиент** с использованием идентификатора клиента, секрета клиента и идентификатора клиента.  Чтобы получить эти значения, см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md). В рамках этого процесса необходимо присвоить субъекту безопасности одну из следующих ролей [RBAC (Управление доступом на основе ролей)](../../role-based-access-control/overview.md) . 
+В этом примере создается экземпляр **даталакесервицеклиент** с использованием идентификатора клиента, секрета клиента и идентификатора клиента.  Чтобы получить эти значения, см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md). В рамках этого процесса вам потребуется назначить одну из следующих ролей Azure [RBAC (Управление доступом на основе ролей)](../../role-based-access-control/overview.md) для субъекта безопасности. 
 
 |Роль|Возможность настройки ACL|
 |--|--|
@@ -345,7 +345,7 @@ public async void SetACLRecursively(DataLakeServiceClient serviceClient)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-Настройте список ACL рекурсивно, вызвав метод **даталакедиректориклиент. set_access_control_recursive** .
+Настройте список ACL рекурсивно, вызвав метод **DataLakeDirectoryClient.set_access_control_recursive** .
 
 В этом примере задается список ACL для каталога с именем `my-parent-directory` . Эти записи предоставляют владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ. Последняя запись списка управления доступом в этом примере предоставляет конкретному пользователю с ИДЕНТИФИКАТОРом объекта "" XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX "разрешения на чтение и выполнение.
 
@@ -423,7 +423,7 @@ public async void UpdateACLsRecursively(DataLakeServiceClient serviceClient)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-Рекурсивно обновите список ACL, вызвав метод **даталакедиректориклиент. update_access_control_recursive** . 
+Рекурсивно обновите список ACL, вызвав метод **DataLakeDirectoryClient.update_access_control_recursive** . 
 
 В этом примере обновляется запись ACL с разрешением на запись. 
 
@@ -498,7 +498,7 @@ public async void RemoveACLsRecursively(DataLakeServiceClient serviceClient)
 
 ### <a name="python"></a>[Python](#tab/python)
 
-Удалите записи ACL, вызвав метод **даталакедиректориклиент. remove_access_control_recursive** . 
+Удалите записи ACL, вызвав метод **DataLakeDirectoryClient.remove_access_control_recursive** . 
 
 В этом примере удаляется запись ACL из списка ACL каталога с именем `my-parent-directory` . 
 
@@ -650,7 +650,7 @@ def resume_set_acl_recursive(continuation_token):
 
 Вы можете отправить отзыв или сообщить о вопросе по адресу  [recursiveACLfeedback@microsoft.com](mailto:recursiveACLfeedback@microsoft.com) .
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
 - [Известные проблемы](data-lake-storage-known-issues.md)

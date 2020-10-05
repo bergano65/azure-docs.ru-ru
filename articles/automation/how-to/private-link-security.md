@@ -6,12 +6,12 @@ ms.author: magoedte
 ms.topic: conceptual
 ms.date: 07/09/2020
 ms.subservice: ''
-ms.openlocfilehash: c81d9774dccf8c02d2eab7b1ebbb69e6671869e8
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a4985784a17f2e0350a7b2c7a4f62f574862d50c
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423802"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714357"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-automation-preview"></a>Использование частной ссылки Azure для безопасного подключения сетей к службе автоматизации Azure (Предварительная версия)
 
@@ -53,7 +53,7 @@ ms.locfileid: "87423802"
 
 ### <a name="webhook-scenario"></a>Сценарий веб-перехватчика
 
-Вы можете запускать модули Runbook, выполняя POST по URL-адресу перехватчика. Например, URL-адрес выглядит следующим образом:`https://<automationAccountId>.webhooks.<region>.azure-automation.net/webhooks?token=gzGMz4SMpqNo8gidqPxAJ3E%3d`
+Вы можете запускать модули Runbook, выполняя POST по URL-адресу перехватчика. Например, URL-адрес выглядит следующим образом: `https://<automationAccountId>.webhooks.<region>.azure-automation.net/webhooks?token=gzGMz4SMpqNo8gidqPxAJ3E%3d`
 
 ### <a name="state-configuration-agentsvc-scenario"></a>Сценарий настройки состояния (agentsvc)
 
@@ -128,7 +128,7 @@ URL-адрес общедоступной конечной точки откры
 
 Аналогичным образом создается уникальное полное доменное имя (FQDN) для конфигурации состояния (agentsvc) и для среды выполнения задания гибридной рабочей роли Runbook (жрдс). Каждому из них назначается отдельный IP-адрес из виртуальной сети, а **состояние подключения** отображается как **утвержденное**.
 
-Если потребитель службы имеет разрешения RBAC для ресурса автоматизации, он может выбрать метод автоматического утверждения. В этом случае, когда запрос достигает ресурса поставщика автоматизации, никаких действий от поставщика услуг не требуется, и подключение автоматически утверждается.
+Если потребитель службы имеет разрешения RBAC Azure для ресурса автоматизации, он может выбрать метод автоматического утверждения. В этом случае, когда запрос достигает ресурса поставщика автоматизации, никаких действий от поставщика услуг не требуется, и подключение автоматически утверждается.
 
 ## <a name="set-public-network-access-flags"></a>Установка флагов доступа к общедоступной сети
 
@@ -160,6 +160,6 @@ $account | Set-AzResource -Force -ApiVersion "2020-01-13-preview"
 
 Дополнительные сведения см. в разделе [Конфигурация DNS для частной конечной точки Azure](../../private-link/private-endpoint-dns.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure?](../../private-link/private-endpoint-overview.md).

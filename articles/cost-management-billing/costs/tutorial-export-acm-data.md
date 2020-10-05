@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: c0fcc9d5753ce90365829fba658031e633819513
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 6ef5a457bac7b384dc1b4349b1782a752c41ea26
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88683272"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447609"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание задачи для экспорта данных и управление экспортированными данными
 
@@ -91,9 +91,9 @@ ms.locfileid: "88683272"
 
 1. Если группа управления еще не создана, создайте одну группу и назначьте ей подписки.
 1. В поле анализа затрат задайте область для группы управления и щелкните **Select this management group** (Выбрать эту группу управления).  
-    :::image type="content" source="./media/tutorial-export-acm-data/management-group-scope.png" alt-text="Пример параметра выбора группы управления" lightbox="./media/tutorial-export-acm-data/management-group-scope.png":::
+    :::image type="content" source="./media/tutorial-export-acm-data/management-group-scope.png" alt-text="Пример нового экспорта" lightbox="./media/tutorial-export-acm-data/management-group-scope.png":::
 1. Создайте операцию экспорта в этой области, чтобы получить данные по управлению затратами для подписок в этой группе управления.  
-    :::image type="content" source="./media/tutorial-export-acm-data/new-export-management-group-scope.png" alt-text="Пример параметра создания нового экспорта с областью группы управления":::
+    :::image type="content" source="./media/tutorial-export-acm-data/new-export-management-group-scope.png" alt-text="Пример нового экспорта":::
 
 ## <a name="verify-that-data-is-collected"></a>Проверка сбора данных
 
@@ -128,11 +128,11 @@ ms.locfileid: "88683272"
 
 Чтобы просмотреть журнал выполнения запланированного экспорта, выберите отдельный экспорт на странице со списком экспортов. На этой же странице вы можете быстро просмотреть время выполнения предыдущих операций экспорта, а также запустить следующий экспорт. Ниже приведен пример журнала выполнения.
 
-:::image type="content" source="./media/tutorial-export-acm-data/run-history.png" alt-text="Пример журнала выполнения экспорта":::
+:::image type="content" source="./media/tutorial-export-acm-data/run-history.png" alt-text="Пример нового экспорта":::
 
 Выберите экспорт, чтобы просмотреть его журнал выполнения.
 
-:::image type="content" source="./media/tutorial-export-acm-data/single-export-run-history.png" alt-text="Пример журнала выполнения экспорта":::
+:::image type="content" source="./media/tutorial-export-acm-data/single-export-run-history.png" alt-text="Пример нового экспорта":::
 
 ## <a name="access-exported-data-from-other-systems"></a>Доступ к экспортированным данным из других систем
 

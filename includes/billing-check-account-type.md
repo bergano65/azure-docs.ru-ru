@@ -4,18 +4,18 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 07/01/2019
 ms.author: amberb
-ms.openlocfilehash: bc60e7d39e6dbdf04744a10ef6c6f286e1b1ea52
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6787983421285122834479cb652fec52ee7bf72b
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75987789"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360703"
 ---
 1. Войдите на [портал Azure](https://portal.azure.com).
  
 2. Выполните поиск по **Управление затратами + выставление счетов**.
  
-   ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-check-account-type/billing-search-cost-management-billing.png)    
+   ![Снимок экрана: поиск на портале Azure по фразе "Управление затратами + выставление счетов".](./media/billing-check-account-type/billing-search-cost-management-billing.png)    
  
 3. Если у вас есть доступ только к одной области выставления счетов, выберите **Свойства** слева.
  

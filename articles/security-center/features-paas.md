@@ -1,6 +1,6 @@
 ---
-title: Возможности центра безопасности Azure для поддерживаемых ресурсов Azure PaaS.
-description: На этой странице показана доступность функций центра безопасности Azure для поддерживаемых ресурсов Azure PaaS.
+title: Функции Центра безопасности Azure для поддерживаемых ресурсов Azure PaaS.
+description: На этой странице содержатся сведения о доступности функций Центра безопасности Azure для поддерживаемых ресурсов Azure PaaS.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -8,28 +8,28 @@ manager: rkarlin
 ms.assetid: be2ab6d5-72a8-411f-878e-98dac21bc5cb
 ms.service: security-center
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/01/2020
 ms.author: memildin
-ms.openlocfilehash: 77bf0f4cd60ba6e85763334a4d864975945ec2c3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
-ms.translationtype: MT
+ms.openlocfilehash: 7087fb7b1de0b16480d0bb02043b40e0e97204f6
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90894772"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449949"
 ---
 # <a name="feature-coverage-for-azure-paas-services"></a>Покрытие компонентов для служб Azure PaaS <a name="paas-services"></a>
 
-В таблице ниже показана доступность функций центра безопасности Azure для поддерживаемых ресурсов Azure PaaS.
+В приведенной ниже таблице содержатся сведения о доступности функций Центра безопасности Azure для поддерживаемых ресурсов Azure PaaS.
 
-|Служба|Рекомендации (бесплатные)|Оповещения системы безопасности (защитник Azure)|Оценка уязвимостей (защитник Azure)|
+|Служба|Рекомендации (уровень "Бесплатный")|Оповещения системы безопасности (Azure Defender)|Оценка уязвимостей (Azure Defender)|
 |:----|:----:|:----:|:----:|
 |Служба приложений Azure|✔|✔|-|
 |Учетная запись службы автоматизации Azure|✔|-|-|
 |Учетная запись пакетной службы Azure|✔|-|-|
-|хранилище BLOB-объектов Azure|✔|✔|-|
+|Хранилище BLOB-объектов Azure|✔|✔|-|
 |Кэш Azure для Redis|✔|-|-|
 |Oблачныe службы Azure|✔|-|-|
 |Когнитивный поиск Azure|✔|-|-|
@@ -37,9 +37,9 @@ ms.locfileid: "90894772"
 |Azure Cosmos DB*|-|✔|-|
 |Аналитика озера данных Azure|✔|-|-|
 |Azure Data Lake Storage|✔|-|-|
-|База данных Azure для MySQL *|✔|✔|-|
-|База данных Azure для PostgreSQL *|✔|✔|-|
-|Пространство имен концентраторов событий Azure|✔|-|-|
+|База данных Azure для MySQL*|✔|✔|-|
+|База данных Azure для PostgreSQL*|✔|✔|-|
+|Пространство имен Центров событий Azure|✔|-|-|
 |Приложение Функции Azure|✔|-|-|
 |Azure Key Vault|✔|✔|-|
 |Служба Azure Kubernetes|✔|✔|-|
@@ -47,13 +47,13 @@ ms.locfileid: "90894772"
 |Azure Logic Apps|✔|-|-|
 |База данных SQL Azure|✔|✔|✔|
 |Управляемый экземпляр SQL Azure|✔|✔|✔|
-|Пространство имен служебной шины Azure|✔|-|-|
-|Учетная запись Service Fabric Azure|✔|-|-|
+|Пространство имен Служебной шины Azure|✔|-|-|
+|Учетная запись Azure Service Fabric|✔|-|-|
 |Учетные записи хранения Azure|✔|-|-|
 |Azure Stream Analytics|✔|-|-|
 |Подписка Azure|✔ **|✔|-|
 |Виртуальная сеть Azure</br> (включая подсети, сетевые карты и группы безопасности сети)|✔|-|-|
 
-\* В настоящее время эти функции поддерживаются в предварительной версии.
+\* Сейчас поддерживается в предварительная версия этих возможностей.
 
-\*\* Рекомендации по Azure Active Directory (Azure AD) доступны только для подписок с включенным защитником Azure.
+\*\* Рекомендации по Azure Active Directory (Azure AD) доступны только для подписок с включенной службой Azure Defender.

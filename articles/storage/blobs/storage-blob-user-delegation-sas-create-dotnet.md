@@ -10,12 +10,12 @@ ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: e499b27124ed5723fb19fecbe4091f17364aea5a
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 05ab666eff39412c1b169178e7ea4c68f3a81ca9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533994"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714548"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "87533994"
 
 ## <a name="assign-azure-roles-for-access-to-data"></a>Назначение ролей Azure для доступа к данным
 
-Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль Azure, которая предоставляет доступ к данным большого двоичного объекта в службе хранилища Azure. Сведения о назначении разрешений через RBAC см. в разделе **назначение ролей Azure для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights).
+Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль Azure, которая предоставляет доступ к данным большого двоичного объекта в службе хранилища Azure. Сведения о назначении разрешений с помощью Azure RBAC см. в разделе **назначение ролей Azure для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights).
 
 [!INCLUDE [storage-install-packages-blob-and-identity-include](../../../includes/storage-install-packages-blob-and-identity-include.md)]
 

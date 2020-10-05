@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 32a6284c7766f3b5d9413a76056dc915a8ac93dc
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 550be6c10402398b62af307281660b93981a0df3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686808"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308968"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Повторная активация отключенной подписки Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "88686808"
 > [!NOTE]
 > Если у вас есть бесплатная пробная подписка, после отключения предельной суммы расходов произойдет переход на отдельную подписку с оплатой по мере использования. После создания подписки оставшиеся деньги на счете хранятся в течение полных 30 дней. Кроме того, вам предоставляется доступ к бесплатным службам в течение 12 месяцев.
 
-Сведения об отслеживании действий по выставлению счетов для Azure и управлении этими действиями см. в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](getting-started.md).
+Сведения о мониторинге и контроле операций выставления счетов для Azure см. в статье [Планирование управления затратами на Azure](../understand/plan-manage-costs.md).
 
 
 ## <a name="your-bill-is-past-due"></a>Счет просрочен
@@ -60,4 +60,4 @@ ms.locfileid: "88686808"
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте, как [отслеживать и контролировать операции выставления счетов для Azure](getting-started.md).
+- См. статью [Планирование управления затратами на Azure](../understand/plan-manage-costs.md).

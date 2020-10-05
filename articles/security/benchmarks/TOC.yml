@@ -69,7 +69,7 @@
       href: ../../backup/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
-    - name: Базовая средства безопасности службы "Когнитивный поиск Azure"
+    - name: Базовые средства безопасности службы "Когнитивный поиск Azure"
       href: ../../search/security-baseline.md
     - name: Базовые средства безопасности Azure Data Box
       href: ../../databox/security-baseline.md
@@ -97,6 +97,8 @@
       href: ../../azure-functions/security-baseline.md
     - name: Базовые средства безопасности Центра Интернета вещей Azure
       href: ../../iot-hub/security-baseline.md
+    - name: Базовые средства безопасности Службы Azure Kubernetes
+      href: ../../aks/security-baseline.md
     - name: Базовые средства безопасности Azure Load Balancer
       href: ../../load-balancer/security-baseline.md
     - name: Базовые показатели безопасности Azure Monitor
@@ -117,6 +119,8 @@
       href: ../../sql-database/security-baseline.md
     - name: Базовые средства безопасности службы хранилища Azure
       href: ../../storage/common/security-baseline.md
+    - name: Базовые средства безопасности Диспетчера трафика Azure
+      href: ../../traffic-manager/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
     - name: Базовые показатели безопасности Cognitive Services
@@ -163,3 +167,7 @@
       href: ../../virtual-machines/linux/security-baseline.md
     - name: Базовые средства безопасности виртуальных машин Windows
       href: ../../virtual-machines/windows/security-baseline.md
+    - name: Базовые средства безопасности виртуальной сети
+      href: ../../virtual-network/security-baseline.md
+    - name: Базовые средства безопасности VPN-шлюза
+      href: ../../vpn-gateway/security-baseline.md

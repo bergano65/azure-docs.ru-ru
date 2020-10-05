@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: 2a66ef2f91715180ae84036fc7eead759e7ee00f
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 0174c8a0c96d884f42aea9b6fb1cb0d9c06ce400
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88685057"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447663"
 ---
 # <a name="analyze-cost-with-the-azure-cost-management-power-bi-app-for-enterprise-agreements-ea"></a>Анализ затрат с помощью приложения Power BI Azure Cost Management для Соглашений Enterprise (EA)
 
@@ -47,7 +47,7 @@ ms.locfileid: "88685057"
 9. В появившемся диалоговом окне введите номер регистрации EA в поле **BillingProfileIdOrEnrollmentNumber**. Укажите число месяцев для получения данных. Оставьте значение по умолчанию **Номер регистрации** в поле **Область**, а затем выберите **Далее**.  
   ![Ввод сведений о регистрации EA](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number.png)  
 10. Следующее диалоговое окно подключается к Azure и получает данные, необходимые для получения рекомендаций по зарезервированным экземплярам. *Оставьте значения по умолчанию* и выберите **Войти**.  
-  ![Подключение к Azure](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit.png)  
+  ![Снимок экрана: диалоговое окно подключения к приложению "Управление затратами Azure" со значениями по умолчанию.](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit.png)  
 11. На завершающем шаге установщик подключается к системе регистрации EA и требует учетную запись [администратора Enterprise](../manage/understand-ea-roles.md). Выберите **Войти**, чтобы пройти аутентификацию с помощью регистрации EA. На этом шаге также запускается действие обновления данных в Power BI.  
   ![Подключение к системе регистрации EA](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-auth.png)  
     > [!NOTE]
@@ -189,7 +189,7 @@ Failed to update data source credentials: The credentials provided for the Azure
 
 1. Подключитесь к данным.
 1. Введите соглашение о регистрации EA и количество месяцев, оставьте значение по умолчанию **Анонимный** для метода проверки подлинности и **Нет** для параметра "Уровень конфиденциальности".  
-  ![Подключение к Azure](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit-troubleshoot.png)  
+  ![Снимок экрана: диалоговое окно подключения к приложению "Управление затратами Azure" с введенными значениями "Анонимный" и "Нет".](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/autofit-troubleshoot.png)  
 1. На следующей странице задайте **OAuth2** для метода проверки подлинности и **Нет** для параметра "Уровень конфиденциальности". Затем войдите в систему, чтобы пройти проверку подлинности путем регистрации. На этом шаге также запускается обновление данных Power BI.
 
 

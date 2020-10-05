@@ -18,6 +18,8 @@
       items:
         - name: Добавление целевых объектов хранилища
           href: hpc-cache-add-storage.md
+        - name: Добавление путей пространств имен
+          href: add-namespace-paths.md
         - name: Перемещение данных в целевые расположения хранилищ (при необходимости)
           items:
             - name: Предварительная загрузка нового хранилища BLOB-объектов
@@ -42,8 +44,6 @@
   items:
     - name: Azure CLI
       href: /cli/azure/ext/hpc-cache/hpc-cache
-    - name: Azure PowerShell
-      href: /powershell/module/Az.HPCCache
 - name: Ресурсы
   items:
     - name: Открытие запроса в службу поддержки

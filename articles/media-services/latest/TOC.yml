@@ -118,6 +118,8 @@
           href: autogen-bitrate-ladder.md
         - name: Кодирование с учетом содержимого
           href: content-aware-encoding.md
+        - name: Зарезервированные единицы мультимедиа
+          href: concept-media-reserved-units.md
     - name: Анализ содержимого (Индексатор видео)
       items:
         - name: Обзор

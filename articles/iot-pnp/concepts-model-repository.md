@@ -7,12 +7,12 @@ ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: c82858294054b50d6edae42a3d41e9fcb89ca89d
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 5d07257d1e23ee792aa996e31a2c28c17bc23d34
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91577804"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715074"
 ---
 # <a name="azure-iot-model-repository"></a>Репозиторий моделей Интернета вещей Azure
 
@@ -48,7 +48,7 @@ var httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://repo.azureiotrepository.com");
 
 var modelId = "dtmi:com:mxchip:model;1";
-var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-09-30").ConfigureAwait(false);
+var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05-01-preview").ConfigureAwait(false);
 ```
 
 Чтобы просмотреть открытую модель с помощью интерфейса командной строки, см. команду Azure CLI [получить модель](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-show&preserve-view=true) .
@@ -118,7 +118,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("
 
 ```csharp
 var modelId = "dtmi:com:mxchip:model;1";
-var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-09-30").ConfigureAwait(false);
+var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05-01-preview").ConfigureAwait(false);
 ```
 
 Чтобы просмотреть модель компании или общую модель с помощью интерфейса командной строки, см. команду Azure CLI [получить модель](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-show&preserve-view=true) .
@@ -164,22 +164,22 @@ var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-09
 ```csharp
 var httpContent = new StringContent(jsonLdModel, Encoding.UTF8, "application/json");
 var modelId = "dtmi:com:mxchip:model;1";
-var response = await httpClient.PutAsync($"/models/{modelId}?api-version=2020-09-30", httpContent).ConfigureAwait(false);
+var response = await httpClient.PutAsync($"/models/{modelId}?api-version=2020-05-01-preview", httpContent).ConfigureAwait(false);
 ```
 
 Сведения о передаче модели с помощью интерфейса командной строки см. в разделе Azure CLI [Создание модели](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/pnp/model?view=azure-cli-latest#ext-azure-iot-az-iot-pnp-model-create&preserve-view=true) .
 
 ### <a name="publish-a-model"></a>Публикация модели
 
-Для публикации модели необходимо соблюдение следующих требований.
+Для публикации модели необходимо выполнить следующие требования.
 
-1. Для публикации модели ваша организация должна быть членом [Microsoft Partner Network](https://docs.microsoft.com/partner-center/) . Сведения о создании учетной записи центра партнеров см. в статье [Создание учетной записи центра партнеров](https://docs.microsoft.com/partner-center/mpn-create-a-partner-center-account). После утверждения учетной записи можно опубликовать модели. Дополнительные сведения см. в разделе [часто задаваемые вопросы центра партнеров](https://support.microsoft.com/help/4340639/partner-center-account-faqs).
+1. Для публикации модели ваша организация должна быть членом [Microsoft Partner Network](https://docs.microsoft.com/partner-center/). Дополнительные сведения см. в статье, посвященной [созданию учетной записи в Центре партнеров](https://docs.microsoft.com/partner-center/mpn-create-a-partner-center-account). Модели можно опубликовать после утверждения учетной записи. Дополнительные сведения см. в статье о [проверке права на участие в программе](https://support.microsoft.com/help/4340639/partner-center-account-faqs).
 
 2. Пользователь должен быть членом роли *издателя* клиента репозитория.
 
 Модели, создаваемые и опубликованные пользователями в вашей организации, отображаются как *опубликованные модели*. Эти модели являются общедоступными и могут быть найдены любым пользователем в рамках **общих моделей**.
 
-Чтобы опубликовать модель с помощью портала, выполните следующие действия.
+Публикация модели с помощью портала
 
 1. Войдите на [портал репозитория модели Интернета вещей Azure](https://aka.ms/iotmodelrepo).
 
@@ -231,6 +231,6 @@ var response = await httpClient.PutAsync($"/models/{modelId}?api-version=2020-09
 
 - Сведения о том, как получить токен JWT из Azure AD для использования при вызове интерфейсов API RESTFUL, см. в статье [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующим шагом является проверка [архитектуры Plug and Play IOT](concepts-architecture.md).

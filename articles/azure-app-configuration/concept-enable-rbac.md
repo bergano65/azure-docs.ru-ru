@@ -1,20 +1,20 @@
 ---
 title: Авторизация доступа к Конфигурации приложений Azure с помощью Azure Active Directory
-description: Включение RBAC для авторизации доступа к экземпляру Конфигурации приложений Azure
+description: Включение Azure RBAC для авторизации доступа к экземпляру конфигурации приложения Azure
 author: lisaguthrie
 ms.author: lcozzens
 ms.date: 02/13/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 8889e7270127aa3991adb3c0575a4bce96090db2
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 7e7b524f125eda406adc9be2300c94e5944e1819
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830077"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715958"
 ---
 # <a name="authorize-access-to-azure-app-configuration-using-azure-active-directory"></a>Авторизация доступа к Конфигурации приложений Azure с помощью Azure Active Directory
-Кроме использования код проверки подлинности сообщения на основе хэша (HMAC), конфигурация приложений Azure поддерживает использование Azure Active Directory (Azure AD) для авторизации запросов к экземплярам конфигурации приложения.  Azure AD поддерживает управление доступом на основе ролей (RBAC), чтобы предоставлять разрешения субъектам безопасности.  Субъект безопасности может быть пользователем, [управляемым удостоверением](../active-directory/managed-identities-azure-resources/overview.md) или [субъектом-службой приложения](../active-directory/develop/app-objects-and-service-principals.md).  См. сведения в статье [Дополнительные сведения о ролях](../role-based-access-control/overview.md).
+Кроме использования код проверки подлинности сообщения на основе хэша (HMAC), конфигурация приложений Azure поддерживает использование Azure Active Directory (Azure AD) для авторизации запросов к экземплярам конфигурации приложения.  Azure AD позволяет использовать управление доступом на основе ролей Azure (Azure RBAC) для предоставления разрешений субъекту безопасности.  Субъект безопасности может быть пользователем, [управляемым удостоверением](../active-directory/managed-identities-azure-resources/overview.md) или [субъектом-службой приложения](../active-directory/develop/app-objects-and-service-principals.md).  См. сведения в статье [Дополнительные сведения о ролях](../role-based-access-control/overview.md).
 
 ## <a name="overview"></a>Обзор
 Запросы, выполняемые субъектом безопасности для доступа к ресурсу конфигурации приложения, должны быть полномочными. В Azure AD доступ к ресурсу состоит из двух этапов:

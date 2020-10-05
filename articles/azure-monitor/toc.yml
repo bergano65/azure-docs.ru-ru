@@ -117,15 +117,10 @@
       items:
         - name: Обзор
           href: platform/data-platform.md
-        - name: Расположения данных
-          href: platform/data-locations.md
-        - name: Метрики
-          href: platform/data-platform-metrics.md
         - name: Журналы
           href: platform/data-platform-logs.md
-        - name: Время приема данных журналов
-          displayname: latency
-          href: platform/data-ingestion-time.md
+        - name: Метрики
+          href: platform/data-platform-metrics.md
         - name: Потоковая передача данных в Центры событий
           href: platform/stream-monitoring-data-event-hubs.md
     - name: Аналитика
@@ -144,7 +139,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -209,39 +204,42 @@
           href: platform/diagnostic-settings.md
     - name: Log Analytics
       items:
-        - name: Обзор запросов к журналу
-          displayname: 'log query, log queries, query, queries'
+        - name: Обзор
+          displayname: 'Log Analytics, log query, log queries, query, queries'
           href: log-query/log-query-overview.md
+        - name: Учебник
+          displayname: 'Log Analytics workspace, log query, log queries, query, queries'
+          href: log-query/get-started-portal.md
+        - name: Область запроса
+          href: log-query/scope.md
         - name: Простой интерфейс журналов
           href: log-query/simple-logs.md
-        - name: Запросы журнала аудита
-          href: log-query/query-audit.md
-        - name: Учебники
+        - name: Запросы журнала
           items:
-            - name: Руководство по Log Analytics
-              href: log-query/get-started-portal.md
-            - name: Руководство по запросам к журналу
-              href: log-query/get-started-queries.md
-        - name: Данные журнала
-          items:
-            - name: Область запроса
-              href: log-query/scope.md
             - name: Стандартные столбцы
               href: platform/log-standard-columns.md
+            - name: Аудит запросов
+              href: log-query/query-audit.md
+            - name: Оптимизация запросов
+              href: log-query/query-optimization.md
+            - name: Функции
+              href: log-query/functions.md
+            - name: Анализ текстовых данных
+              href: log-query/parse-text.md
+            - name: Примеры запросов
+              href: log-query/saved-queries.md
             - name: Группы компьютеров
               href: platform/computer-groups.md
         - name: Язык запросов
           items:
-            - name: Документация по языкам запросов
-              href: log-query/query-language.md
-            - name: Различия между языками
+            - name: Справочник по KQL
+              href: /azure/data-explorer/kusto/query/
+            - name: Отличие от Azure Data Explorer
               href: log-query/data-explorer-difference.md
-            - name: Полезные операторы
-              href: log-query/useful-operators.md
-            - name: Функции
-              href: log-query/functions.md
-            - name: Переход с поиска по журналам
-              href: log-query/log-search-transition.md
+            - name: Примеры
+              href: log-query/examples.md
+            - name: Примеры смарт-аналитики
+              href: log-query/smart-analytics.md
             - name: Занятия
               items:
                 - name: Операции со строками
@@ -268,9 +266,9 @@
                   href: log-query/sql-cheatsheet.md
                 - name: Splunk
                   href: log-query/splunk-cheatsheet.md
-        - name: Охват нескольких ресурсов
+        - name: Запросы между несколькими ресурсами
           items:
-            - name: Запросы к нескольким ресурсам
+            - name: Обзор
               href: log-query/cross-workspace-query.md
             - name: Выражение app
               href: log-query/app-expression.md
@@ -280,32 +278,25 @@
               href: log-query/resource-expression.md
             - name: Централизация ресурсов данных приложения
               href: log-query/unify-app-resource-data.md
-        - name: Примеры и руководства
-          items:
-            - name: Примеры запросов
-              href: log-query/saved-queries.md
-            - name: Примеры запросов к журналу
-              href: log-query/examples.md
-            - name: Примеры смарт-аналитики
-              href: log-query/smart-analytics.md
-            - name: Оптимизация запросов
-              href: log-query/query-optimization.md
-            - name: Анализ текстовых данных
-              href: log-query/parse-text.md
         - name: Рабочие области и кластеры
           items:
             - name: Проектирование развертывания рабочей области
               href: platform/design-logs-deployment.md
             - name: Создание рабочей области
               items:
-                - name: Использование портала Azure
+                - name: Портал Azure
                   href: learn/quick-create-workspace.md
-                - name: Использование Azure CLI
+                - name: Azure CLI
                   href: learn/quick-create-workspace-cli.md
-                - name: Использование PowerShell
+                - name: PowerShell
                   href: platform/powershell-workspace-configuration.md
+                - name: Шаблон Resource Manager
+                  href: platform/template-workspace-configuration.md
             - name: Удаление и восстановление рабочей области
               href: platform/delete-workspace.md
+            - name: Управление доступом
+              displayName: Log Analytics workspace
+              href: platform/manage-access.md
             - name: Перемещение рабочей области
               href: platform/move-workspace.md
             - name: Архитектура для поставщиков служб
@@ -328,6 +319,9 @@
       items:
         - name: Правила сбора данных
           href: platform/data-collection-rule-overview.md
+        - name: Время приема данных журналов
+          displayname: latency
+          href: platform/data-ingestion-time.md
         - name: Источники данных в агенте
           items:
             - name: Обзор
@@ -1167,12 +1161,18 @@
               href: platform/workbooks-time.md
             - name: Параметры текста
               href: platform/workbooks-text.md
+            - name: Параметры ресурсов
+              href: platform/workbooks-resources.md
         - name: Конфигурация
           items:
             - name: Управление доступом
               href: platform/workbooks-access-control.md
             - name: Развертывание с помощью Azure Resource Manager
               href: platform/workbooks-automate.md
+            - name: Группы
+              href: platform/workbooks-groups.md
+            - name: Преобразование данных JSON с использованием JSONPath
+              href: platform/workbooks-jsonpath.md
             - name: Перемещение книг в другой регион
               href: platform/workbooks-move-region.md
             - name: Перемещение шаблонов книг в другой регион

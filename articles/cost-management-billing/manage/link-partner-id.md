@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.openlocfilehash: dc4d319e0e6b55af8af460fa8a56b9ef24a53341
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 03953e210f1c4caf1541db272ce4c02c271dafaa
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89487357"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371836"
 ---
 # <a name="link-a-partner-id-to-your-azure-accounts"></a>Привязка идентификатора партнера к учетной записи Azure
 
@@ -151,9 +151,9 @@ C:\ az managementpartner delete --partner-id 12345
 
 Вы не видите клиента в отчетах по следующим причинам:
 
-1. Связанная учетная запись пользователя не имеет [доступ на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) ни на одном клиентском ресурсе Azure.
+1. Для связанной учетной записи пользователя не настроено [управление доступом на основе ролей (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) ни в одном клиентском ресурсе или подписке Azure.
 
-2. Абонентская плата Azure, к которой у пользователя есть доступ [Доступ на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview), не имеет никакого использования.
+2. Отсутствуют сведения об использовании подписки Azure, в которой пользователь имеет доступ на основе [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview).
 
 **Работает ли идентификатор партнера с Azure Stack?**
 

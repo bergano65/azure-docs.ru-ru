@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 739325f66594667c6973df356e2bcf26a3eb056d
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 50b3cae00110a64e4d95171822bf1d2a282d2cc1
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89300278"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715410"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
@@ -100,7 +100,7 @@ az resource update --resource-group <resource-group> --name scm --namespace Micr
 
 ### <a name="disable-access-to-the-api"></a>Отключить доступ к API
 
-API в предыдущем разделе является резервной системой управления доступом на основе ролей (RBAC) Azure. Это означает, что вы можете [создать пользовательскую роль](https://docs.microsoft.com/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role) и назначить ей пользователей с низкими привелджед, чтобы они не могли включить обычную проверку подлинности на всех сайтах. Чтобы настроить пользовательскую роль, [выполните следующие инструкции](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role).
+API в предыдущем разделе является резервной системой управления доступом на основе ролей Azure (Azure RBAC). Это означает, что вы можете [создать настраиваемую роль](https://docs.microsoft.com/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role) и назначить ей пользователей с низкими привелджедми, чтобы они не могли включить обычную проверку подлинности на всех сайтах. Чтобы настроить пользовательскую роль, [выполните следующие инструкции](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#create-a-custom-rbac-role).
 
 Можно также использовать [Azure Monitor](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#audit-with-azure-monitor) для аудита любых успешных запросов проверки подлинности и применения [политики Azure](https://azure.github.io/AppService/2020/08/10/securing-data-plane-access.html#enforce-compliance-with-azure-policy) для применения этой конфигурации ко всем сайтам в подписке.
 

@@ -39,6 +39,7 @@
         - name: Azure Defender для Службы приложений
           href: defender-for-app-service-introduction.md
         - name: Azure Defender для службы хранилища
+          displayName: 'blob, adls, files'
           href: defender-for-storage-introduction.md
         - name: Azure Defender для SQL
           displayName: database
@@ -46,7 +47,7 @@
         - name: Azure Defender для Интернета вещей
           href: defender-for-iot-introduction.md
         - name: Azure Defender для Key Vault
-          displayName: KV
+          displayName: 'KV, akv'
           href: defender-for-key-vault-introduction.md
         - name: Azure Defender для Kubernetes
           displayName: 'clusters, k8s'
@@ -65,13 +66,13 @@
   items:
     - name: Начало работы
       href: security-center-get-started.md
-    - name: Подключение сторонних компьютеров (не Azure)
-      displayName: 'azure stack, windows, linux'
-      href: quickstart-onboard-machines.md
-    - name: Подключение учетных записей AWS и GCP
+    - name: Настройка гибридной среды
       items:
+        - name: Подключение сторонних компьютеров (не Azure)
+          displayName: 'azure stack, ash, windows, linux, hybrid, arc'
+          href: quickstart-onboard-machines.md
         - name: Подключение учетных записей AWS
-          displayName: 'hybrid, multicloud, amazon'
+          displayName: 'hybrid, multicloud, amazon, arc'
           href: quickstart-onboard-aws.md
         - name: Подключение учетных записей GCP
           displayName: 'hybrid, multicloud, google'
@@ -90,7 +91,7 @@
       href: security-center-planning-and-operations-guide.md
     - name: Защита ресурсов
       href: tutorial-protect-resources.md
-    - name: Реагирование на инциденты
+    - name: Анализ оповещений системы безопасности и реагирование на них
       href: tutorial-security-incident.md
     - name: Обеспечение соответствия нормативным требованиям на высоком уровне
       href: security-center-compliance-dashboard.md
@@ -206,6 +207,7 @@
       items:
         - name: Настройка Azure Defender для SQL на виртуальных машинах Azure
           href: defender-for-sql-usage.md
+          displayName: 'hybrid, arc'
         - name: Настройка политики защиты информации
           href: security-center-info-protection-policy.md
     - name: Использование Azure Defender для реестров контейнеров
@@ -218,6 +220,7 @@
         - name: Создание правил подавления оповещений и управление ими
           href: alerts-suppression-rules.md
         - name: 'Azure Defender: реагирование на оповещения Key Vault'
+          displayName: 'akv, kv'
           href: defender-for-key-vault-usage.md
         - name: Управление инцидентами безопасности
           href: security-center-incident.md

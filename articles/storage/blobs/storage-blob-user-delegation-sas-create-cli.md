@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ddfa12bd758ffc362c51e10f63800665109d54a6
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 453eaa816ad48626b476fa392999f44e3c1a10cd
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534079"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714567"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью Azure CLI
 
@@ -36,7 +36,7 @@ ms.locfileid: "87534079"
 
 Войдите в Azure CLI с учетными данными Azure AD. Дополнительные сведения см. в разделе [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
 
-## <a name="assign-permissions-with-rbac"></a>Назначение разрешений с помощью RBAC
+## <a name="assign-permissions-with-azure-rbac"></a>Назначение разрешений с помощью Azure RBAC
 
 Чтобы создать SAS для делегирования пользователей из Azure PowerShell, учетной записи Azure AD, используемой для входа в Azure CLI, должна быть назначена роль, включающая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Это разрешение позволяет этой учетной записи Azure AD запрашивать *ключ делегирования пользователя*. Ключ делегирования пользователя используется для подписи SAS делегирования пользователя. Роль, предоставляющая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , должна быть назначена на уровне учетной записи хранения, группы ресурсов или подписки.
 
@@ -132,7 +132,7 @@ az storage account revoke-delegation-keys \
 > [!IMPORTANT]
 > Как ключ делегирования пользователя, так и назначение ролей Azure кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

@@ -1,33 +1,33 @@
 ---
-title: Учебник. Добавление базы данных в группу отработки отказа
-description: Добавьте базу данных в базу данных SQL Azure в группу автоперехода на другой ресурс с помощью портал Azure, PowerShell или Azure CLI.
+title: Руководство по Добавление базы данных в группу отработки отказа
+description: Добавление базы данных в службе "База данных SQL Azure" в группу автоматической отработки отказа с помощью портала Azure, PowerShell или Azure CLI.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
 ms.custom: sqldbrb=1, devx-track-azurecli
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: tutorial
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 06/19/2019
-ms.openlocfilehash: 23b78acb226b0d4de637dc653e6edb3bb4177219
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: MT
+ms.openlocfilehash: 5fca46e7bf80504632e0894deefa1805a080b3b9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91263595"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442739"
 ---
-# <a name="tutorial-add-an-azure-sql-database-to-an-autofailover-group"></a>Учебник. Добавление базы данных SQL Azure в группу автоперехода на другой ресурс
+# <a name="tutorial-add-an-azure-sql-database-to-an-autofailover-group"></a>Руководство по добавлению Базы данных SQL Azure в группу автоматической отработки отказа
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-[Группа отработки отказа](auto-failover-group-overview.md) — это декларативный слой абстракции, который позволяет группировать несколько геореплицированных баз данных. Узнайте, как настроить группу отработки отказа для базы данных SQL Azure и протестировать отработку отказа с помощью портал Azure, PowerShell или Azure CLI.  В этом руководстве вы узнаете, как:
+[Группа отработки отказа](auto-failover-group-overview.md) — это декларативный слой абстракции, в котором группируются несколько геореплицированных баз данных. Узнайте, как настроить группу отработки отказа для Базы данных SQL Azure и протестировать отработку отказа с помощью портала Azure, PowerShell или Azure CLI.  В этом руководстве вы узнаете, как:
 
 > [!div class="checklist"]
 >
 > - Создание базы данных в службе "База данных SQL Azure"
-> - Создайте группу отработки отказа для базы данных между двумя серверами.
-> - Тестовая отработка отказа.
+> - создать для базы данных группу отработки отказа между двумя серверами;
+> - выполнить тестовую отработку отказа.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,70 +35,70 @@ ms.locfileid: "91263595"
 
 В рамках этого руководства вам потребуются:
 
-- Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
+- Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/), если у вас ее еще нет.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
+Для работы с этим руководством требуется следующее:
 
-- Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
+- Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/), если у вас ее еще нет.
 - [Azure PowerShell](/powershell/azure/)
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
-Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
+Для работы с этим руководством требуется следующее:
 
-- Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
+- Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/), если у вас ее еще нет.
 - Последняя версия [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ---
 
-## <a name="1---create-a-database"></a>1. Создание базы данных
+## <a name="1---create-a-database"></a>1\. Создание базы данных.
 
 [!INCLUDE [sql-database-create-single-database](../includes/sql-database-create-single-database.md)]
 
-## <a name="2---create-the-failover-group"></a>2. Создание группы отработки отказа
+## <a name="2---create-the-failover-group"></a>2\. Создание группы отработки отказа.
 
-На этом шаге вы создадите [группу отработки отказа](auto-failover-group-overview.md) между существующим сервером и новым сервером в другом регионе. Затем добавьте пример базы данных в группу отработки отказа.
+На этом этапе вы создадите [группу отработки отказа](auto-failover-group-overview.md) между существующим сервером и новым сервером в другом регионе. Затем добавьте пример базы данных в группу отработки отказа.
 
 # <a name="the-portal"></a>[Портал](#tab/azure-portal)
 
-Создайте группу отработки отказа и добавьте в нее базу данных с помощью портал Azure.
+Создайте группу отработки отказа и добавьте в нее базу данных с помощью портала Azure.
 
-1. Выберите **Azure SQL** в меню слева [портал Azure](https://portal.azure.com). Если **Azure SQL** нет в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева.
-1. Выберите базу данных, созданную в разделе 1, например `mySampleDatabase` .
-1. Группы отработки отказа можно настроить на уровне сервера. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
+1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **Azure SQL** нет в списке, выберите элемент **Все службы** и введите "Azure SQL" в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева.
+1. Выберите базу данных, созданную в разделе 1, например `mySampleDatabase`.
+1. Группы отработки отказа можно настраивать на уровне сервера. Выберите имя сервера в разделе **Имя сервера**, чтобы открыть параметры для этого сервера.
 
-   ![Открыть сервер для базы данных](./media/failover-group-add-single-database-tutorial/open-sql-db-server.png)
+   ![Открытие сервера для базы данных](./media/failover-group-add-single-database-tutorial/open-sql-db-server.png)
 
-1. Выберите **группы отработки отказа** в области **Параметры** , а затем щелкните **Добавить группу** , чтобы создать новую группу отработки отказа.
+1. Выберите элемент **Группы отработки отказа** в области **Параметры**, а затем щелкните элемент **Добавить группу**, чтобы создать новую группу отработки отказа.
 
-   ![Добавить новую группу отработки отказа](./media/failover-group-add-single-database-tutorial/sqldb-add-new-failover-group.png)
+   ![Создание группы отработки отказа.](./media/failover-group-add-single-database-tutorial/sqldb-add-new-failover-group.png)
 
-1. На странице **Группа отработки отказа** введите или выберите следующие значения, а затем щелкните **создать**.
+1. На странице **Группа отработки отказа** введите или выберите следующие значения, а затем щелкните **Создать**:
 
-   - **Имя группы отработки отказа**: введите уникальное имя группы отработки отказа, например `failovergrouptutorial` .
-   - **Сервер-получатель**: выберите параметр для *настройки обязательных параметров* , а затем выберите **Создание нового сервера**. Кроме того, можно выбрать уже существующий сервер в качестве сервера-получателя. После ввода следующих значений нажмите **кнопку Выбрать**.
-      - **Имя сервера**: введите уникальное имя сервера-получателя, например `mysqlsecondary` .
-      - **Имя для входа администратора сервера**: введите `azureuser`
-      - **Пароль**. Введите сложный пароль, соответствующий требованиям к паролю.
-      - **Расположение**: выберите расположение из раскрывающегося списка, например `East US` . Это расположение не может совпадать с расположением основного сервера.
+   - **Имя группы отработки отказа.** Введите уникальное имя для группы отработки отказа, например `failovergrouptutorial`.
+   - **Сервер-получатель.** Выберите вариант *настройки обязательных параметров*, а затем щелкните элемент **Создать сервер**. Кроме того, вы можете выбрать в качестве сервера-получателя уже существующий сервер. После ввода указанных ниже значений щелкните элемент **Выбрать**.
+      - **Имя сервера**: Введите уникальное имя для сервера-получателя, например `mysqlsecondary`.
+      - **Имя для входа администратора сервера**. Введите `azureuser`.
+      - **Пароль**. Введите сложный пароль, который соответствует требованиям к паролю.
+      - **Расположение.** Выберите расположение из раскрывающегося списка, например `East US`. Это расположение не может совпадать с расположением основного сервера.
 
      > [!NOTE]
-     > Параметры имени для входа и брандмауэра сервера должны совпадать с именем сервера источника.
+     > Имя для входа и параметры брандмауэра на этом сервере должны совпадать с параметрами сервера-источника.
 
      ![Создание сервера-получателя для группы отработки отказа](./media/failover-group-add-single-database-tutorial/create-secondary-failover-server.png)
 
-   - **Базы данных в группе**. После выбора сервера-получателя этот параметр становится незаблокированным. Выберите его, чтобы **выбрать базы данных** , а затем выберите базу данных, созданную в разделе 1. Добавление базы данных в группу отработки отказа автоматически начнет процесс георепликации.
+   - **База данных в группе.** Этот параметр будет разблокирован после выбора сервера-получателя. Щелкните его, чтобы **выбрать базы данных для добавления**, а затем выберите созданную в разделе 1 базу данных. Добавление базы данных в группу отработки отказа автоматически активирует георепликацию.
 
-   ![Добавление базы данных SQL в группу отработки отказа](./media/failover-group-add-single-database-tutorial/add-sqldb-to-failover-group.png)
+   ![Добавление Базы данных SQL в группу отработки отказа](./media/failover-group-add-single-database-tutorial/add-sqldb-to-failover-group.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Создайте группу отработки отказа и добавьте в нее базу данных с помощью PowerShell.
 
    > [!NOTE]
-   > Параметры имени для входа и брандмауэра сервера должны совпадать с именем сервера источника.
+   > Имя для входа и параметры брандмауэра на этом сервере должны совпадать с параметрами сервера-источника.
 
    ```powershell-interactive
    # $subscriptionId = '<SubscriptionID>'
@@ -161,23 +161,23 @@ ms.locfileid: "91263595"
    Write-host "Successfully added the database to the failover group..."
    ```
 
-В этой части руководства используются следующие командлеты PowerShell:
+В этом разделе руководства используются следующие командлеты PowerShell:
 
 | Get-Help | Примечания |
 |---|---|
-| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер в базе данных SQL Azure, где размещаются отдельные базы данных и эластичные пулы. |
-| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создает правило брандмауэра для сервера в базе данных SQL Azure. |
-| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает новую отдельную базу данных в базе данных SQL Azure. |
-| [New-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/new-azsqldatabasefailovergroup) | Создает новую группу отработки отказа в базе данных SQL Azure. |
-| [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) | Возвращает одну или несколько баз данных в базе данных SQL Azure. |
-| [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup) | Добавляет одну или несколько баз данных в группу отработки отказа в базе данных SQL Azure. |
+| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Отвечает за создание сервера в Базе данных SQL Azure, на котором размещены отдельные базы данных и эластичные пулы. |
+| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Отвечает за создание правила брандмауэра для сервера в Базе данных SQL. |
+| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Отвечает за создание отдельной базы данных в Базе данных SQL Azure. |
+| [New-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/new-azsqldatabasefailovergroup) | Отвечает за создание группы отработки отказа в Базе данных SQL Azure. |
+| [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) | Отвечает за получение одной или нескольких баз данных из Базы данных SQL Azure. |
+| [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup) | Отвечает за добавление одной или нескольких баз данных в группу отработки отказа в Базе данных SQL Azure. |
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
-Создайте группу отработки отказа и добавьте в нее базу данных с помощью Azure CLI.
+Создайте группу отработки отказа и добавьте в нее базу данных с помощью Azure CLI.
 
    > [!NOTE]
-   > Параметры имени для входа и брандмауэра сервера должны совпадать с именем сервера источника.
+   > Имя для входа и параметры брандмауэра на этом сервере должны совпадать с параметрами сервера-источника.
 
    ```azurecli-interactive
    #!/bin/bash
@@ -193,7 +193,7 @@ ms.locfileid: "91263595"
    az sql failover-group create --name $failoverGroup --partner-server $failoverServer --resource-group $resourceGroup --server $server --add-db $database --failover-policy Automatic
    ```
 
-В этой части руководства используются следующие командлеты Azure CLI:
+В этом разделе руководства используются следующие командлеты Azure CLI:
 
 | Get-Help | Примечания |
 |---|---|
@@ -203,36 +203,36 @@ ms.locfileid: "91263595"
 
 ---
 
-## <a name="3---test-failover"></a>3. тестовая отработка отказа
+## <a name="3---test-failover"></a>3\. Тестовая отработка отказа
 
-На этом шаге группа отработки отказа перейдет на сервер-получатель, а затем завершится с помощью портал Azure.
+На этом этапе вы переключите группу отработки отказа на сервер-получатель, а затем восстановите размещение с помощью портала Azure.
 
 # <a name="the-portal"></a>[Портал](#tab/azure-portal)
 
-Тестовая отработка отказа с помощью портал Azure.
+Выполните тестовую отработку отказа с помощью портала Azure
 
-1. Выберите **Azure SQL** в меню слева [портал Azure](https://portal.azure.com). Если **Azure SQL** нет в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева.
-1. Выберите базу данных, созданную в разделе 2, например `mySampleDatbase` .
-1. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
+1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **Azure SQL** нет в списке, выберите элемент **Все службы** и введите "Azure SQL" в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева.
+1. Выберите базу данных, созданную в разделе 2, например `mySampleDatbase`.
+1. Выберите имя сервера в разделе **Имя сервера**, чтобы открыть параметры для этого сервера.
 
-   ![Открыть сервер для базы данных](./media/failover-group-add-single-database-tutorial/open-sql-db-server.png)
+   ![Открытие сервера для базы данных](./media/failover-group-add-single-database-tutorial/open-sql-db-server.png)
 
-1. Выберите **группы отработки отказа** в области **Параметры** , а затем выберите группу отработки отказа, созданную в разделе 2.
+1. Выберите элемент **Группы отработки отказа** в области **Параметры**, а затем выберите группу отработки отказа, созданную в разделе 2.
   
    ![Выбор группы отработки отказа на портале](./media/failover-group-add-single-database-tutorial/select-failover-group.png)
 
-1. Проверьте, какой сервер является основным, а какой — сервером-получателем.
-1. Выберите **отработка отказа** в области задач для переключения группы отработки отказа, содержащей образец базы данных.
-1. Нажмите кнопку **Да** в предупреждении, уведомляющее о том, что сеансы TDS будут отключены.
+1. Проверьте, какой сервер является основным, а какой — сервером-получателем.
+1. Щелкните элемент **Отработка отказа** в области задач, чтобы выполнить отработку отказа для группы отработки отказа с нашей тестовой базой данных.
+1. Выберите ответ **Да** в предупреждении о том, что сеансы TDS будут отключены.
 
-   ![Отработка отказа группы перехода на другой ресурс с базой данных](./media/failover-group-add-single-database-tutorial/failover-sql-db.png)
+   ![Отработка отказа для группы отработки отказа, которая содержит базу данных](./media/failover-group-add-single-database-tutorial/failover-sql-db.png)
 
-1. Проверьте, какой сервер является основным и какой сервер является вторичным. Если отработка отказа прошла успешно, у двух серверов должны быть переключенные роли.
-1. Снова установите флажок **отработка отказа** , чтобы вернуть серверы к исходным ролям.
+1. Проверьте, какой сервер теперь является основным, а какой — сервером-получателем. Если отработка отказа прошла успешно, роли этих двух серверов должны поменяться между собой.
+1. Снова щелкните элемент **Отработка отказа**, чтобы вернуть серверам исходные роли.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Тестовая отработка отказа с помощью PowerShell.
+Выполните тестовую отработку отказа с помощью PowerShell.
 
 Проверьте роль вторичной реплики:
 
@@ -250,7 +250,7 @@ ms.locfileid: "91263595"
       -ServerName $drServerName).ReplicationRole
    ```
 
-Отработка отказа на сервер-получатель:
+Выполните отработку отказа на сервер-получатель:
 
    ```powershell-interactive
    # Set variables
@@ -284,7 +284,7 @@ ms.locfileid: "91263595"
    Write-host "Failed failover group successfully back to" $serverName
    ```
 
-В этой части руководства используются следующие командлеты PowerShell:
+В этом разделе руководства используются следующие командлеты PowerShell:
 
 | Get-Help | Примечания |
 |---|---|
@@ -293,16 +293,16 @@ ms.locfileid: "91263595"
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
-Тестовая отработка отказа с помощью Azure CLI.
+Выполните тестовую отработку отказа с помощью Azure CLI.
 
-Проверьте, какой сервер является вторичным:
+Определите, какой сервер является сервером-получателем:
 
    ```azurecli-interactive
    echo "Verifying which server is in the secondary role..."
    az sql failover-group list --server $server --resource-group $resourceGroup
    ```
 
-Отработка отказа на сервер-получатель:
+Выполните отработку отказа на сервер-получатель:
 
    ```azurecli-interactive
    echo "Failing over group to the secondary server..."
@@ -318,7 +318,7 @@ ms.locfileid: "91263595"
    echo "Successfully failed failover group back to" $server
    ```
 
-В этой части руководства используются следующие командлеты Azure CLI:
+В этом разделе руководства используются следующие командлеты Azure CLI:
 
 | Get-Help | Примечания |
 |---|---|
@@ -329,15 +329,15 @@ ms.locfileid: "91263595"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Очистите ресурсы, удалив группу ресурсов.
+Удалите ресурсы, удалив группу ресурсов.
 
 # <a name="the-portal"></a>[Портал](#tab/azure-portal)
 
-Удалите группу ресурсов с помощью портал Azure.
+Удалите группу ресурсов с помощью портала Azure.
 
 1. На [портале Azure](https://portal.azure.com) перейдите к используемой группе ресурсов.
-1. Выберите  **Удалить группу ресурсов** , чтобы удалить все ресурсы в группе, а также саму группу ресурсов.
-1. Введите имя группы ресурсов, `myResourceGroup` в текстовом поле и нажмите кнопку **Удалить** , чтобы удалить группу ресурсов.  
+1. Щелкните элемент **Удалить группу ресурсов**, чтобы удалить все ресурсы в этой группе ресурсов, а также саму группу.
+1. Введите имя группы ресурсов (`myResourceGroup`) в соответствующем текстовом поле, а затем щелкните элемент **Удалить**, чтобы удалить группу ресурсов.  
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -353,7 +353,7 @@ ms.locfileid: "91263595"
    Write-host "Resource group removed =" $resourceGroupName
    ```
 
-В этой части руководства используются следующие командлеты PowerShell:
+В этом разделе руководства используются следующие командлеты PowerShell:
 
 | Get-Help | Примечания |
 |---|---|
@@ -361,7 +361,7 @@ ms.locfileid: "91263595"
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
-Удалите группу ресурсов с помощью Azure CLI.
+Удалите группу ресурсов с помощью Azure CLI.
 
    ```azurecli-interactive
    echo "Cleaning up resources by removing the resource group..."
@@ -369,7 +369,7 @@ ms.locfileid: "91263595"
    echo "Successfully removed resource group" $resourceGroup
    ```
 
-В этой части руководства используются следующие командлеты Azure CLI:
+В этом разделе руководства используются следующие командлеты Azure CLI:
 
 | Get-Help | Примечания |
 |---|---|
@@ -378,9 +378,9 @@ ms.locfileid: "91263595"
 ---
 
 > [!IMPORTANT]
-> Если вы хотите, чтобы группа ресурсов оставалась без базы данных-получателя, удалите ее из группы отработки отказа, прежде чем удалять ее. Удаление базы данных-получателя до ее удаления из группы отработки отказа может привести к непредсказуемому поведению.
+> Если вы намерены сохранить эту группу ресурсов, но база данных-получатель вам больше не нужна, удалите ее, сначала выполнив удаление из группы отработки отказа. Удаление базы данных-получателя без предварительного удаления ее из группы отработки отказа может привести к непредсказуемым последствиям.
 
-## <a name="full-scripts"></a>Полные скрипты
+## <a name="full-scripts"></a>Полный текст скриптов
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -391,15 +391,15 @@ ms.locfileid: "91263595"
 | Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер, на котором размещаются отдельные базы данных и эластичные пулы в базе данных SQL Azure. |
-| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создает правило брандмауэра для сервера в базе данных SQL Azure. |
-| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает новую базу данных в базе данных SQL Azure. |
-| [New-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/new-azsqldatabasefailovergroup) | Создает новую группу отработки отказа в базе данных SQL Azure. |
-| [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) | Возвращает одну или несколько баз данных в базе данных SQL Azure. |
-| [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup) | Добавляет одну или несколько баз данных в группу отработки отказа в базе данных SQL Azure. |
-| [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает или перечисляет группы отработки отказа в базе данных SQL Azure. |
-| [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup)| Выполняет отработку отказа группы отработки отказа в базе данных SQL Azure. |
-| [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов в базе данных SQL Azure.|
+| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Отвечает за создание в Базе данных SQL Azure сервера, на котором размещены отдельные базы данных и эластичные пулы. |
+| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Отвечает за создание правила брандмауэра для сервера в Базе данных SQL. |
+| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Отвечает за создание базы данных в Базе данных SQL Azure. |
+| [New-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/new-azsqldatabasefailovergroup) | Отвечает за создание группы отработки отказа в Базе данных SQL Azure. |
+| [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) | Отвечает за получение одной или нескольких баз данных из Базы данных SQL Azure. |
+| [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup) | Отвечает за добавление одной или нескольких баз данных в группу отработки отказа в Базе данных SQL Azure. |
+| [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Отвечает за возврат или перечисление групп отработки отказа для Базы данных SQL Azure. |
+| [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup)| Отвечает за отработку отказа для группы отработки отказа Базы данных SQL Azure. |
+| [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Отвечает за удаление группы ресурсов из Базы данных SQL.|
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -411,33 +411,33 @@ ms.locfileid: "91263595"
 |---|---|
 | [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) | Позволяет указать подписку в качестве текущей активной подписки. |
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Создает сервер, на котором размещаются отдельные базы данных и эластичные пулы в базе данных SQL Azure. |
-| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Создает правила брандмауэра IP на уровне сервера в базе данных SQL Azure. |
-| [az sql db create](/cli/azure/sql/db?view=azure-cli-latest) | Создает базу данных в базе данных SQL Azure. |
-| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create) | Создает группу отработки отказа в базе данных SQL Azure. |
-| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list) | Список групп отработки отказа на сервере в базе данных SQL Azure. |
+| [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Отвечает за создание в Базе данных SQL Azure сервера, на котором размещены отдельные базы данных и эластичные пулы. |
+| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Отвечает за создание правил брандмауэра для IP-адресов на уровне сервера в Базе данных SQL. |
+| [az sql db create](/cli/azure/sql/db?view=azure-cli-latest) | Отвечает за создание базы данных в Базе данных SQL Azure. |
+| [az sql failover-group create](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-create) | Отвечает за создание группы отработки отказа в Базе данных SQL Azure. |
+| [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list) | Отвечает за перечисление групп отработки отказа на сервере в Базе данных SQL. |
 | [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 # <a name="the-portal"></a>[Портал](#tab/azure-portal)
 
-Для портал Azure нет доступных скриптов.
+Скрипты для портала Azure не предоставляются.
 
 ---
 
-Другие скрипты базы данных SQL Azure можно найти здесь: [Azure PowerShell](powershell-script-content-guide.md) и [Azure CLI](az-cli-script-samples-content-guide.md).
+Вы можете получить скрипты Базы данных SQL Azure для [Azure PowerShell](powershell-script-content-guide.md) и [Azure CLI](az-cli-script-samples-content-guide.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы добавили базу данных в базу данных SQL Azure в группу отработки отказа и проверили отработку отказа. Вы ознакомились с выполнением следующих задач:
+В рамках этого руководства вы добавили базу данных, размещенную в службе "База данных SQL Azure", в группу отработки отказа и проверили отработку отказа. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 >
 > - Создание базы данных в службе "База данных SQL Azure"
-> - Создайте группу отработки отказа для базы данных между двумя серверами.
-> - Тестовая отработка отказа.
+> - создание для базы данных группы отработки отказа между двумя серверами;
+> - тестовая отработка отказа.
 
-Перейдите к следующему руководству по добавлению эластичного пула в группу отработки отказа.
+Перейдите к следующему руководству, которое посвящено добавлению эластичного пула в группу отработки отказа.
 
 > [!div class="nextstepaction"]
-> [Учебник. Добавление эластичного пула базы данных SQL Azure в группу отработки отказа](failover-group-add-elastic-pool-tutorial.md)
+> [Руководство. Добавление эластичного пула службы "База данных SQL Azure" в группу отработки отказа](failover-group-add-elastic-pool-tutorial.md)

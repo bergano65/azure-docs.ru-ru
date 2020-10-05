@@ -3,12 +3,12 @@ title: Подключение гибридных компьютеров к Azure
 description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC в Azure с помощью субъекта-службы.
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5976e2ff9aef5f68d119a5fdf5f7d4d4345287a4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: dc92b1cb96b61caa17f141ca9a78fb10fe59a2a9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91254947"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713424"
 ---
 # <a name="connect-hybrid-machines-to-azure-at-scale"></a>Подключение гибридных компьютеров к Azure в большом масштабе
 
@@ -67,7 +67,7 @@ ms.locfileid: "91254947"
 > Убедитесь, что для субъекта-службы используется свойство **ApplicationId**, а не **Id**.
 >
 
-Роль **Подключение Azure Connected Machine** содержит только разрешения, необходимые для подключения компьютера. Вы можете назначить субъекту-службе разрешение, чтобы добавить в его область группу ресурсов или подписку. Чтобы добавить назначение ролей, ознакомьтесь с разделом [Добавление или удаление назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md) или [Добавление или удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md).
+Роль **Подключение Azure Connected Machine** содержит только разрешения, необходимые для подключения компьютера. Вы можете назначить субъекту-службе разрешение, чтобы добавить в его область группу ресурсов или подписку. Чтобы добавить назначение ролей, см. статью [Добавление и удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md) или [Добавление или удаление назначений ролей azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
 ## <a name="install-the-agent-and-connect-to-azure"></a>Установка агента и подключение к Azure
 

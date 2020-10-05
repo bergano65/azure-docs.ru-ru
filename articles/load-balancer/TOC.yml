@@ -69,6 +69,8 @@
       href: load-balancer-tcp-reset.md
     - name: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
       href: load-balancer-standard-availability-zones.md
+    - name: Конфигурация с плавающим IP-адресом
+      href: load-balancer-floating-ip.md
     - name: Безопасность
       items:
         - name: Базовые средства безопасности

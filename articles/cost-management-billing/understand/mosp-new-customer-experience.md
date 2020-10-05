@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: banders
-ms.openlocfilehash: 27a6f8f0ed0d58deb64f768d2e47bafebc910edb
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: fce0ca7df3851aa0e96b6ee630a4a1b0b85eb070
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690431"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371748"
 ---
 # <a name="get-started-with-your-updated-azure-billing-account"></a>Начало работы с обновленной учетной записью выставления счетов Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "88690431"
 
 **Нет простоя служб** — службы Azure в вашей подписке будут работать без прерываний. Обновлен только интерфейс выставления счетов. На существующие ресурсы, группы ресурсов и группы управления это никак не повлияет.
 
-**Отсутствуют изменения в ресурсах Azure** — обновление не затрагивает изменение доступа к ресурсам Azure, заданным с помощью Azure RBAC (управление доступом на основе ролей).
+**Отсутствуют изменения в ресурсах Azure** — обновление не затрагивает изменение доступа к ресурсам Azure, заданным с помощью механизма управления доступом на основе ролей (Azure RBAC).
 
 **В новом интерфейсе доступны прошлые счета** — счета, созданные до обновления учетной записи, по-прежнему доступны на портале Azure.
 

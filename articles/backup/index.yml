@@ -9,12 +9,12 @@ metadata:
   author: dcurwin
   ms.author: dacurwin
   ms.date: 12/01/2019
-  ms.openlocfilehash: eeca42ea748c10970f312a84ea32c53fb904344a
-  ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+  ms.openlocfilehash: 4716d537a6a3e402a4f399be8d64c9fd51edc292
+  ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/22/2020
-  ms.locfileid: "90974430"
+  ms.lasthandoff: 10/01/2020
+  ms.locfileid: "91620126"
 landingContent:
 - title: См. дополнительные сведения о службе архивации Azure
   linkLists:
@@ -60,6 +60,12 @@ landingContent:
       url: backup-center-overview.md
     - text: Резервное копирование Базы данных Azure для PostgreSQL
       url: backup-azure-database-postgresql.md
+    - text: Выборочное резервное копирование и восстановление дисков для виртуальных машин Azure
+      url: selective-disk-backup-restore.md
+    - text: Восстановление между регионами для баз данных SQL Server на виртуальных машинах Azure
+      url: restore-sql-database-azure-vm.md#cross-region-restore
+    - text: Поддержка резервного копирования виртуальных машин с количеством дисков до 32
+      url: backup-support-matrix-iaas.md#vm-storage-support
     - text: Обратимое удаление для Azure Backup
       url: backup-azure-security-feature-cloud.md
     - text: Восстановление SQL Server на виртуальных машинах Azure в виде файлов

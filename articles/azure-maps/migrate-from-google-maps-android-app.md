@@ -1,20 +1,20 @@
 ---
-title: Учебник. Перенос приложения Android | Microsoft Azure Maps
-description: Как перенести приложение Android из Google Карт в Microsoft Azure Maps.
+title: Перенос приложения Android | Microsoft Azure Maps
+description: Как перенести приложение Android из Google Карт в Microsoft Azure Maps
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/17/2019
-ms.topic: tutorial
+ms.date: 08/19/2020
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: fe67364ef51248d04cbc6095eb691ffe255fa02c
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 96f68bdf58d9cc98815e4ae76ae01da87c38dc88
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085878"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319645"
 ---
 # <a name="migrate-an-android-app-from-google-maps"></a>Перенос приложения Android из Google Карт
 
@@ -30,35 +30,35 @@ ms.locfileid: "90085878"
 
 Загрузка карты в приложении Android с помощью Google Карт или Azure Maps состоит из аналогичных этапов. Для использования любого из пакетов SDK потребуется следующее:
 
-- Получить ключ API или подписки для доступа к любой из платформ.
-- Добавить XML-код в действие, чтобы указать, где должна отображаться карта и как она должна быть размещена.
-- Переопределить все методы жизненного цикла из действия, содержащего представление карты, соответствующими объектами в классе map. В частности, необходимо переопределить следующие методы.
-    - `onCreate(Bundle)`
-    - `onStart()`
-    - `onResume()`
-    - `onPause()`
-    - `onStop()`
-    - `onDestroy()`
-    - `onSaveInstanceState(Bundle)`
-    - `onLowMemory()`
-- Дождаться готовности схемы, прежде чем пытаться получить к ней доступ и программировать ее.
+* Получить ключ API или подписки для доступа к любой из платформ.
+* Добавить XML-код в действие, чтобы указать, где должна отображаться карта и как она должна быть размещена.
+* Переопределить все методы жизненного цикла из действия, содержащего представление карты, соответствующими объектами в классе map. В частности, необходимо переопределить следующие методы.
+    * `onCreate(Bundle)`
+    * `onStart()`
+    * `onResume()`
+    * `onPause()`
+    * `onStop()`
+    * `onDestroy()`
+    * `onSaveInstanceState(Bundle)`
+    * `onLowMemory()`
+* Дождаться готовности схемы, прежде чем пытаться получить к ней доступ и программировать ее.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 Чтобы отобразить карту с помощью пакета SDK для Android в Google Картах, необходимо сделать следующее:
 
-1.  Убедитесь, что службы Google Play установлены.
-2.  Добавьте зависимость для службы Google Карт в файл **gradle.build** модуля: 
+1. Убедитесь, что службы Google Play установлены.
+2. Добавьте зависимость для службы Google Карт в файл **gradle.build** модуля:
 
     `implementation 'com.google.android.gms:play-services-maps:17.0.0'`
 
-1.  Добавьте ключ API Google Карт в раздел приложения файла **google\_maps\_api.xml**:
-    
+3. Добавьте ключ API Google Карт в раздел приложения файла **google\_maps\_api.xml**:
+
     ```xml
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_GOOGLE_MAPS_KEY"/>
     ```
 
-1.  Добавьте фрагмент карты в основное действие:
+4. Добавьте фрагмент карты в основное действие:
 
     ```xml
     <com.google.android.gms.maps.MapView
@@ -67,13 +67,13 @@ ms.locfileid: "90085878"
             android:layout_height="match_parent"/>
     ```
 
-1.  В файле **MainActivity.java** потребуется импортировать пакет SDK для Google Карт. Перешлите все методы жизненного цикла из действия, содержащего представление карты, в соответствующие объекты в классе map. Извлеките экземпляр `MapView` из фрагмента карты с помощью метода `getMapAsync(OnMapReadyCallback)`. `MapView` автоматически инициализирует систему карт и представление. Измените файл **MainActivity.java** следующим образом:
+5. В файле **MainActivity.java** потребуется импортировать пакет SDK для Google Карт. Перешлите все методы жизненного цикла из действия, содержащего представление карты, в соответствующие объекты в классе map. Извлеките экземпляр `MapView` из фрагмента карты с помощью метода `getMapAsync(OnMapReadyCallback)`. `MapView` автоматически инициализирует систему карт и представление. Измените файл **MainActivity.java** следующим образом:
 
     ```java
     import com.google.android.gms.maps.GoogleMap;
     import com.google.android.gms.maps.MapView;
     import com.google.android.gms.maps.OnMapReadyCallback;
-    
+ 
     import android.support.v7.app.AppCompatActivity;
     import android.os.Bundle;
     
@@ -144,11 +144,9 @@ ms.locfileid: "90085878"
 
 При запуске приложения загружается элемент управления картой, как показано на следующем рисунке.
 
-<center>
+![Простые Google Карты](media/migrate-google-maps-android-app/simple-google-maps.png)
 
-![Простые Google Карты](media/migrate-google-maps-android-app/simple-google-maps.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Чтобы отобразить карту с помощью пакета SDK для Android в Azure Maps, необходимо сделать следующее:
 
@@ -161,7 +159,7 @@ ms.locfileid: "90085878"
     ```
 
 2. Обновите файл **app/build.gradle** и добавьте в него следующий код.
-    
+
     1. Убедитесь, что **minSdkVersion** проекта находится на уровне версии API 21 или более поздней.
 
     2. Добавьте в раздел Android следующий код:
@@ -172,6 +170,7 @@ ms.locfileid: "90085878"
             targetCompatibility JavaVersion.VERSION_1_8
         }
         ```
+
     3. Обновите блок зависимостей. Добавьте новую строку зависимости реализации для последнего пакета SDK Azure Maps для Android.
 
         ```java
@@ -180,10 +179,11 @@ ms.locfileid: "90085878"
 
         > [!Note]
         > Пакет SDK Azure Maps для Android регулярно обновляется и улучшается. Последний номер версии Azure Maps можно узнать в статье о [начале работы с элементом управления картой в Android](how-to-use-android-map-control-library.md). Кроме того, для номера версии можно задать значение с "0.2" до "0+", чтобы в вашем коде всегда использовалась последняя версия.
-    
+
     4. Перейдите в раздел **Файл** на панели инструментов, а затем щелкните **Sync Project with Gradle Files** (Синхронизировать проект с файлами Gradle).
-3. Добавьте фрагмент карты в основное действие (ресурсы \> макет \> activity\_main.xml):
-    
+
+3. Добавьте фрагмент карты в основное действие (пароль к ресурсам \> макет \> activity\_main.xml):
+
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <FrameLayout
@@ -202,7 +202,7 @@ ms.locfileid: "90085878"
     ```
 
 4. В файле **MainActivity.java** нужно сделать следующее:
-    
+
     * импортировать пакет SDK Azure Maps;
     * настроить сведения об аутентификации Azure Maps;
     * получить экземпляр элемента управления картой в методе **onCreate**;
@@ -221,7 +221,7 @@ ms.locfileid: "90085878"
     * `onLowMemory()`
 
     Измените файл **MainActivity.java** следующим образом:
-    
+
     ```java
     package com.example.myapplication;
 
@@ -234,7 +234,7 @@ ms.locfileid: "90085878"
     import com.microsoft.azure.maps.mapcontrol.source.DataSource;
 
     public class MainActivity extends AppCompatActivity {
-        
+     
         static {
             AzureMaps.setSubscriptionKey("<Your Azure Maps subscription key>");
         }
@@ -303,9 +303,8 @@ ms.locfileid: "90085878"
 
 При запуске приложения будет загружаться элемент управления картой, как показано ниже.
 
-<center>
 
-![Простые службы Azure Maps](media/migrate-google-maps-android-app/simple-azure-maps.png)</center>
+![Простые службы Azure Maps](media/migrate-google-maps-android-app/simple-azure-maps.png)
 
 Обратите внимание, что элемент управления Azure Maps поддерживает более масштабное отображение и предоставляет большее представление целого мира.
 
@@ -316,7 +315,7 @@ ms.locfileid: "90085878"
 
 Если ваша аудитория распределена по нескольким странам или регионам либо говорит на разных языках, то необходима локализация.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 Добавьте приведенный ниже код в метод `onCreate`, чтобы задать язык карты. Этот код должен размещаться перед фрагментом, который задает представление контекста карты. Код языка "fr" ограничивает язык французским.
 
@@ -332,11 +331,9 @@ getBaseContext().getResources().updateConfiguration(config,
 
 Ниже приведен пример использования Google Карт с языком, имеющим значение fr.
 
-<center>
+![Локализация Google Карт](media/migrate-google-maps-android-app/google-maps-localization.png)
 
-![Локализация Google Карт](media/migrate-google-maps-android-app/google-maps-localization.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Azure Maps предоставляет три разных способа настройки языка и регионального представления для карты. Первый вариант — передать сведения о языке и региональном представлении в класс `AzureMaps`. В этом случае глобально используются статические методы `setLanguage` и `setView`. Это позволяет задать язык и региональное представление по умолчанию для всех элементов управления Azure Maps, загруженных в приложение. В этом примере задается французский язык с помощью кода языка "fr-FR".
 
@@ -376,9 +373,7 @@ mapControl.onReady(map -> {
 
 Ниже приведен пример использования Azure Maps с языком, имеющим значение fr-FR.
 
-<center>
-
-![Локализация Azure Maps](media/migrate-google-maps-android-app/azure-maps-localization.png)</center>
+![Локализация Azure Maps](media/migrate-google-maps-android-app/azure-maps-localization.png)
 
 Просмотрите полный список [поддерживаемых языков](supported-languages.md).
 
@@ -386,7 +381,7 @@ mapControl.onReady(map -> {
 
 Динамические карты в Azure Maps и Google Картах можно программно перемещать в новые географические расположения путем вызова соответствующих методов. Давайте сделаем так, чтобы на карте отображались спутниковые аэроснимки, отцентрируем карту по местоположению с использованием координат и изменим масштаб. В этом примере мы используем широту 35,0272, долготу –111,0225 и коэффициент масштабирования 15.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 Камеру элемента управления картой в Google Картах можно программно перемещать с помощью метода `moveCamera`. Метод `moveCamera` позволяет указать центр карты и коэффициент масштабирования. Метод `setMapType` изменяет тип отображаемой карты.
 
@@ -400,14 +395,12 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
-
-![Заданное представление Google Карт](media/migrate-google-maps-android-app/google-maps-set-view.png)</center>
+![Заданное представление Google Карт](media/migrate-google-maps-android-app/google-maps-set-view.png)
 
 > [!NOTE]
-> В Google Картах используются фрагменты размером 256 пикселей, а в Azure Maps — более крупные фрагменты размером 512 пикселей. Благодаря этому сокращается количество сетевых запросов, необходимых Azure Maps для загрузки той же области карты, что и в Google Картах. Чтобы при использовании Azure Maps добиться видимой области, как у карты в Google Картах, из коэффициента масштабирования, используемого в Google Картах, необходимо вычесть единицу. 
+> В Google Картах используются фрагменты размером 256 пикселей, а в Azure Maps — более крупные фрагменты размером 512 пикселей. Благодаря этому сокращается количество сетевых запросов, необходимых Azure Maps для загрузки той же области карты, что и в Google Картах. Чтобы при использовании Azure Maps добиться видимой области, как у карты в Google Картах, из коэффициента масштабирования, используемого в Google Картах, необходимо вычесть единицу.
 
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Как отмечалось ранее, чтобы получить ту же видимую область в Azure Maps, вычтите из коэффициента масштабирования, используемого в Google Картах, единицу. В данном случае используйте коэффициент масштабирования 14.
 
@@ -437,19 +430,17 @@ mapControl.onReady(map -> {
 });
 ```
 
-<center>
-
-![Заданное представление Azure Maps](media/migrate-google-maps-android-app/azure-maps-set-view.png)</center>
+![Заданное представление Azure Maps](media/migrate-google-maps-android-app/azure-maps-set-view.png)
 
 **Дополнительные ресурсы:**
 
-- [Поддерживаемые стили карт](supported-map-styles.md)
+* [Поддерживаемые стили карт](supported-map-styles.md)
 
 ## <a name="adding-a-marker"></a>Добавление метки
 
 Данные точек часто отображаются на карте с помощью изображения. Эти изображения называются метками, вешками, кнопками или символами. В следующих примерах данные точек отображаются в виде меток на карте по координатам: широта — 51,5, долгота — −0,2.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 При использовании Google Карт метки добавляются с помощью метода `addMarker` карт.
 
@@ -462,11 +453,9 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
+![Метка Google Карт](media/migrate-google-maps-android-app/google-maps-marker.png)
 
-![Метка Google Карт](media/migrate-google-maps-android-app/google-maps-marker.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Чтобы отобразить данные точек на карте в Azure Maps, сначала добавьте эти данные в источник данных. Затем подключите этот источник данных к слою символов. Источник данных позволяет оптимизировать управление пространственными данными в элементе управления картой. Слой символов определяет способ отображения данных (в виде изображения или текста).
 
@@ -484,9 +473,7 @@ mapControl.onReady(map -> {
 });
 ```
 
-<center>
-
-![Метка Azure Maps](media/migrate-google-maps-android-app/azure-maps-marker.png)</center>
+![Метка Azure Maps](media/migrate-google-maps-android-app/azure-maps-marker.png)
 
 ## <a name="adding-a-custom-marker"></a>Добавление настраиваемой метки
 
@@ -499,7 +486,7 @@ yellow-pushpin.png</center>
 
 В обоих примерах приведенное выше изображение добавляется в папку с прорисовываемыми ресурсами приложений.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 В Google Картах пользовательские изображения можно использовать в качестве меток. Для этого загрузите их с помощью параметра `icon` метки. Параметр `anchor` позволяет сопоставить точку изображения с координатами. Привязка задается относительно размеров изображения. В этом случае привязка имеет ширину 0,2 единицы и высоту 1 единицу.
 
@@ -514,11 +501,9 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
+![Пользовательская метка Google Карт](media/migrate-google-maps-android-app/google-maps-custom-marker.png)
 
-![Пользовательская метка Google Карт](media/migrate-google-maps-android-app/google-maps-custom-marker.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Слои символов в Azure Maps также поддерживают пользовательские изображения, но для этого необходимо заранее загрузить изображение в ресурсы карты и назначить ему уникальный идентификатор. Затем слой символов должен ссылаться на этот идентификатор. Задайте смещение для символа, чтобы он указывал на нужную точку на изображении, используя параметр `iconOffset`. Смещение значка указывается в пикселях. По умолчанию смещение задается относительно нижней центральной точки изображения, но это можно изменить с помощью параметра `iconAnchor`. В этом примере для параметра `iconAnchor` задается значение `"center"`. Используется смещение значка для перемещения изображения на 5 пикселей вправо и на 15 пикселей вверх в соответствии с точкой изображения вешки.
 
@@ -542,15 +527,13 @@ mapControl.onReady(map -> {
 });
 ```
 
-<center>
-
-![Пользовательская метка Azure Maps](media/migrate-google-maps-android-app/azure-maps-custom-marker.png)</center>
+![Пользовательская метка Azure Maps](media/migrate-google-maps-android-app/azure-maps-custom-marker.png)
 
 ## <a name="adding-a-polyline"></a>Добавление ломаной линии
 
 Ломаные линии используются для представления линий или траекторий на карте. В следующих примерах показано, как создать пунктирную ломаную линию на карте.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 В Google Картах для отрисовки ломаной линии используется класс `PolylineOptions`. Добавить ломаную линию на карту можно с помощью метода `addPolyline`. Задать цвет штриха можно с помощью параметра `color`. Задать ширину штриха можно с помощью параметра `width`. Добавить массив штриха можно с помощью параметра `pattern`.
 
@@ -574,11 +557,9 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
+![Ломаная линия в Google Картах](media/migrate-google-maps-android-app/google-maps-polyline.png)
 
-![Ломаная линия в Google Картах](media/migrate-google-maps-android-app/google-maps-polyline.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 В Azure Maps ломаные линии называются объектами `LineString` или `MultiLineString`. Эти объекты можно добавлять в источник данных и отобразить с помощью слоя линий. Задать ширину штриха можно с помощью параметра `strokeWidth`. Добавить массив штриха можно с помощью параметра `strokeDashArray`.
 
@@ -607,15 +588,13 @@ mapControl.onReady(map -> {
 });
 ```
 
-<center>
-
-![Ломаная линия в Azure Maps](media/migrate-google-maps-android-app/azure-maps-polyline.png)</center>
+![Ломаная линия в Azure Maps](media/migrate-google-maps-android-app/azure-maps-polyline.png)
 
 ## <a name="adding-a-polygon"></a>Добавление многоугольника
 
 Многоугольники используются для представления области на карте. В следующих примерах показано, как создать многоугольник. Этот многоугольник образует треугольник вокруг координат центральной точки на карте.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 С помощью Google Карт можно отрисовать многоугольник, используя класс `PolygonOptions`. Добавить многоугольник на карту можно с помощью метода `addPolygon`. Чтобы задать цвета заливки и обводки, можно использовать параметры `fillColor` и `strokeColor` соответственно. Задать ширину штриха можно с помощью параметра `strokeWidth`.
 
@@ -639,11 +618,9 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
+![Многоугольник в Google Картах](media/migrate-google-maps-android-app/google-maps-polygon.png)
 
-![Многоугольник в Google Картах](media/migrate-google-maps-android-app/google-maps-polygon.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 В Azure Maps объекты `Polygon` и `MultiPolygon` можно добавить в источник данных и отобразить их на карте с помощью слоев. Область многоугольника можно отобразить на слое многоугольников. Контур многоугольника можно визуализировать с помощью слоя линий. Чтобы задать цвет и ширину обводки, используются параметры `strokeColor` и `strokeWidth`.
 
@@ -676,10 +653,7 @@ mapControl.onReady(map -> {
         strokeWidth(2f)));
 });
 ```
-
-<center>
-
-![Многоугольник в Azure Maps](media/migrate-google-maps-android-app/azure-maps-polygon.png)</center>
+![Многоугольник в Azure Maps](media/migrate-google-maps-android-app/azure-maps-polygon.png)
 
 ## <a name="overlay-a-tile-layer"></a>Наложение слоя фрагментов
 
@@ -687,7 +661,7 @@ mapControl.onReady(map -> {
 
 В приведенных ниже примерах накладывается слой фрагментов радара погоды из лаборатории окружающей среды Университета штата Айова. Размер фрагментов составляет 256 пикселей.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 С помощью Google Карт слой фрагментов можно разместить поверх карты. Для этого используется класс `TileOverlayOptions`. Добавить слой фрагментов на карту можно с помощью метода `addTileLauer`. Чтобы сделать фрагменты карты полупрозрачными, для параметра `transparency` необходимо задать значение 0,2 или 20 % прозрачности.
 
@@ -716,11 +690,9 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
+![Слой фрагментов в Google Картах](media/migrate-google-maps-android-app/google-maps-tile-layer.png)
 
-![Слой фрагментов в Google Картах](media/migrate-google-maps-android-app/google-maps-tile-layer.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Слой фрагментов можно добавить на карту почти так же, как любой другой слой. Форматированный URL-адрес с заполнителями значений x, y и масштаба (`{x}`, `{y}`, `{z}` соответственно) используется для указания уровню места доступа к фрагментам. Слои фрагментов в Azure Maps также поддерживают заполнители `{quadkey}`, `{bbox-epsg-3857}` и `{subdomain}`. Чтобы слой фрагментов был частично прозрачным, используется значение непрозрачности 0,8. Обратите внимание, что непрозрачность и прозрачность обозначают один и тот же параметр, но их значения противоположны. Чтобы преобразовать одно из них в другое, вычтите исходное значение из единицы.
 
@@ -738,15 +710,13 @@ mapControl.onReady(map -> {
 });
 ```
 
-<center>
-
-![Слой фрагментов в Azure Maps](media/migrate-google-maps-android-app/azure-maps-tile-layer.png)</center>
+![Слой фрагментов в Azure Maps](media/migrate-google-maps-android-app/azure-maps-tile-layer.png)
 
 ## <a name="show-traffic"></a>Отображение данных дорожного движения
 
 И в Azure Maps, и в Google Картах есть параметры для наложения данных дорожного движения.
 
-**До: Google Карты**
+### <a name="before-google-maps"></a>До: Google Карты
 
 В Google Картах данные дорожного движения можно переносить на карту, передавая значение true в метод `setTrafficEnabled` карты.
 
@@ -759,11 +729,9 @@ public void onMapReady(GoogleMap googleMap) {
 }
 ```
 
-<center>
+![Данные дорожного движения в Google Картах](media/migrate-google-maps-android-app/google-maps-traffic.png)
 
-![Данные дорожного движения в Google Картах](media/migrate-google-maps-android-app/google-maps-traffic.png)</center>
-
-**После: Azure Maps**
+### <a name="after-azure-maps"></a>После: Azure Maps
 
 Azure Maps предоставляет несколько различных вариантов отображения дорожного движения. Дорожно-транспортные происшествия, такие как закрытие дорог и аварии, можно отображать на карте в виде значков. На карту можно наложить сведения о транспортном потоке с цветовым кодированием сегментов дорог. Цвета сегментов можно изменять в соответствии с ограничениями скорости, относительно нормальной ожидаемой или абсолютной задержки. Данные о дорожно-транспортных происшествиях в Azure Maps обновляются каждую минуту, а данные о дорожном движении — каждые две минуты.
 
@@ -775,13 +743,8 @@ mapControl.onReady(map -> {
 });
 ```
 
-<center>
-
-![Данные дорожного движения в Azure Maps](media/migrate-google-maps-android-app/azure-maps-traffic.png)</center>
-
-## <a name="next-steps"></a>Дальнейшие действия
+![Данные дорожного движения в Azure Maps](media/migrate-google-maps-android-app/azure-maps-traffic.png)
 
 Узнайте больше о пакете SDK для Android в Azure Maps.
 
-> [!div class="nextstepaction"]
-> [Как использовать элемент управления картой в Android](how-to-use-android-map-control-library.md)
+[Как использовать элемент управления картой в Android](how-to-use-android-map-control-library.md)

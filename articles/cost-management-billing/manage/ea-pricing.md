@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: b4905b1aba11a2f8c457d4785897cbe70dd31f76
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 63e648681a63daafe1eaeb1d2e8e5a6cd607aa70
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88687422"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446339"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>Просмотр и скачивание сведений о ценах для вашей организации
 
@@ -28,17 +28,17 @@ ms.locfileid: "88687422"
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами администратора организации.
 1. Выполните поиск по фразе *Управление затратами + выставление счетов*.
 
-   ![Снимок экрана, показывающий поиск на портале Azure](./media/ea-pricing/portal-cm-billing-search.png)
+   ![Снимок экрана: поиск на портале Azure.](./media/ea-pricing/portal-cm-billing-search.png)
 
 1. В учетной записи выставления счетов выберите **Использование+расходы**.
 
    ![Снимок экрана с пунктом "Использование+расходы" в разделе "Выставление счетов"](./media/ea-pricing/ea-pricing-usage-charges-nav.png)
 
-1. Выберите ![Снимок экрана с поиском на портале Azure](./media/ea-pricing/download-icon.png) **Скачать** возле месяца.
+1. Щелкните ![значок скачивания](./media/ea-pricing/download-icon.png) **Скачать** для требуемого месяца.
 
 1. В разделе **Прейскурант** выберите **Скачать CSV-файл**.
 
-   ![Снимок экрана с кнопкой скачивания CSV-файла с прейскурантом](./media/ea-pricing/download-ea-price-sheet.png)
+   ![Снимок экрана: варианты скачивания в окне "Скачать сведения об использовании + расходы"](./media/ea-pricing/download-ea-price-sheet.png)
 
 ## <a name="download-pricing-for-an-mca-or-mpa-account"></a>Скачивание цен для учетной записи MCA или MPA
 
@@ -79,7 +79,7 @@ ms.locfileid: "88687422"
 1. В разделе **Programs and Offer** (Программы и предложения)  > **Программа лицензирования** выберите **Enterprise Agreement (EA)** (Соглашение Enterprise (EA)).
 1. В разделе **Programs and Offer** (Программы и предложения)  > **Selected agreement** (Выбранное соглашение) выберите **Ничего не выбрано**.
 
-    ![Снимок экрана с кнопкой скачивания CSV-файла с прейскурантом](./media/ea-pricing/ea-pricing-calculator-estimate.png)
+    ![Снимок экрана: доступные программы и предложения.](./media/ea-pricing/ea-pricing-calculator-estimate.png)
 
 1. Выберите организацию.
 1. Нажмите кнопку **Применить**.

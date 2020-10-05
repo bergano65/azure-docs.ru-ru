@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.author: rogarana
-ms.openlocfilehash: 3f2fd9f2b75faeeb2d40bd71d074a929e86eebdf
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: be308a91b5b583f96406f10675344ab263150a81
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91358378"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716075"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-options-for-smb-access"></a>Обзор параметров проверки подлинности на основе удостоверений службы файлов Azure для доступа к SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "91358378"
 
 -   **Управление доступом Azure на основе ролей (Azure RBAC)**
 
-    Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. С помощью RBAC можно управлять доступом к ресурсам, предоставляя пользователям минимальные разрешения, необходимые для выполнения поставленных задач. Дополнительные сведения о RBAC см. [в статье что такое управление доступом на основе ролей Azure (Azure RBAC) в Azure?](../../role-based-access-control/overview.md).
+    Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. С помощью Azure RBAC можно управлять доступом к ресурсам, предоставляя пользователям минимальные разрешения, необходимые для выполнения их заданий. Дополнительные сведения об Azure RBAC см. в статье [что такое управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ## <a name="common-use-cases"></a>Распространенные варианты использования
 
@@ -144,7 +144,7 @@ ms.locfileid: "91358378"
 ## <a name="pricing"></a>Цены
 Для включения проверки подлинности на основе удостоверений через SMB в вашей учетной записи хранения дополнительная плата за обслуживание не взимается. Дополнительные сведения о ценах см. в статье цены на службу [файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о службе файлов Azure и аутентификации на основе удостоверений по протоколу SMB см. в следующих ресурсах:
 
 - [Планирование развертывания Файлов Azure](storage-files-planning.md)

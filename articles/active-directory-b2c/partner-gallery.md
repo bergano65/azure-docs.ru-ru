@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 21498f9117ac25356c9381d632644bbaa4d5a74b
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: 9e83fcd6a8e6a7b0c81f47cc3ad97b7f55da1b3b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90706689"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713181"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C партнеров независимых поставщиков программного обеспечения
 
@@ -43,7 +43,7 @@ ms.locfileid: "90706689"
 | ![логотип](./media/partner-gallery/typingdna-logo.png) | [Типингдна](./partner-typingdna.md) — это поставщик проверки личности, основанный на шаблоне ввода данных, предоставляет решения для проверки кода, которые принудительно проходят многофакторную проверку подлинности и помогают соблюдать требования к SCA для директивы оплаты 2 (PSD2). |
 | ![логотип](./media/partner-gallery/whoiam-logo.png) | [Вхоиам](./partner-whoiam.md) — это приложение системы управления удостоверениями (бримс), которое позволяет организациям проверять свою базу пользователей с помощью голоса, SMS и электронной почты. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Выберите партнера в таблице выше, чтобы узнать, как интегрировать свое решение с Azure AD B2C.
 

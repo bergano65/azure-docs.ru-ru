@@ -4,12 +4,12 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 02/28/2019
 ms.author: amberb
-ms.openlocfilehash: 0cdcc26ca0ae64455f8a27b13c2e4bc87e0ecb68
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 18f36664b670c7c19ac3783c1e9699d61ff354d7
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74222654"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361196"
 ---
 Проверьте тип соглашения, чтобы узнать, есть ли у вас доступ к учетной записи выставления счетов для Соглашения с партнером Майкрософт.
  
@@ -17,7 +17,7 @@ ms.locfileid: "74222654"
  
 2. Выполните поиск по **Управление затратами + выставление счетов**.
  
-   ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-check-mpa/search-cmb.png)
+   ![Снимок экрана: поиск на портале Azure по фразе "Управление затратами + выставление счетов".](./media/billing-check-mpa/search-cmb.png)
  
 3. Если у вас есть доступ только к одной области выставления счетов, выберите **Свойства** слева. Если тип учетной записи выставления счетов — **Соглашение с партнером Майкрософт**, то у вас есть доступ к учетной записи выставления счетов для Соглашения с партнером Майкрософт.
  

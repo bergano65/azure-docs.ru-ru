@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: f81c33f3b49352933801c8b89a2c3a1787c2356a
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 203a3b93f200a54ec40c96ee79c7fc822fac140b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88682932"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270616"
 ---
 # <a name="avoid-charges-with-your-azure-free-account"></a>Экономия благодаря использованию бесплатной учетной записи Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "88682932"
 
 ## <a name="you-used-some-services-that-arent-free"></a>Вы использовали некоторые платные службы
 
-После обновления учетной записи выставление счетов за использование служб, не входящих в бесплатную учетную запись Azure, будет осуществляться в рамках модели оплаты по мере использования. Дополнительные сведения о службах, входящих в бесплатную учетную запись, см. в разделе [Вопросы и ответы о бесплатной учетной записи Azure](https://azure.microsoft.com/free/free-account-faq/). Показатели использования можно проверить на портале Azure. Дополнительные сведения, см. в разделе [Отслеживание распределения затрат и темп работ](getting-started.md#costs).
+После обновления учетной записи выставление счетов за использование служб, не входящих в бесплатную учетную запись Azure, будет осуществляться в рамках модели оплаты по мере использования. Дополнительные сведения о службах, входящих в бесплатную учетную запись, см. в разделе [Вопросы и ответы о бесплатной учетной записи Azure](https://azure.microsoft.com/free/free-account-faq/). Показатели использования можно проверить на портале Azure. Дополнительные сведения см. в статье [Анализ непредвиденных расходов](../understand/analyze-unexpected-charges.md).
 
 ## <a name="you-reached-the-end-of-your-free-12-months"></a>Вы достигли конца бесплатного 12-месячного периода
 

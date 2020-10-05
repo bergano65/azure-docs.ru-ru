@@ -73,7 +73,7 @@
           href: time-series-insights-update-query-data-csharp.md
         - name: Запрашивание данных с помощью C# (1-е поколение)
           href: time-series-insights-query-data-csharp.md
-        - name: Управление эталонными данными с помощью C#
+        - name: Управление эталонными данными с помощью C# (1-е поколение)
           href: time-series-insights-manage-reference-data-csharp.md
         - name: Совместное использование пользовательского представления
           href: time-series-insights-parameterized-urls.md

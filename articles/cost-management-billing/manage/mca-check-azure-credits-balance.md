@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.author: banders
-ms.openlocfilehash: 334193f64c49b546bab5f44840df5b3f59e32c4f
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: ebe750440528e40feaf0b4700c018a612b482e34
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690584"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447628"
 ---
 # <a name="track-microsoft-customer-agreement-azure-credit-balance"></a>Отслеживание кредитного баланса Azure для Клиентского соглашения Майкрософт
 
@@ -35,11 +35,11 @@ ms.locfileid: "88690584"
 
 2. Выполните поиск по фразе **Управление затратами + выставление счетов**.
 
-    ![Снимок экрана с изображением поиска на портале по фразе "Управление затратами + выставление счетов"](./media/mca-check-azure-credits-balance/billing-search-cost-management-billing.png)
+    ![Снимок экрана: поиск на портале по фразе "Управление затратами + выставление счетов".](./media/mca-check-azure-credits-balance/billing-search-cost-management-billing.png)
 
 3. На странице областей выставления счетов выберите учетную запись выставления счетов, для которой вам нужно проверить остаток денег на счете. Учетная запись выставления счетов должна иметь тип **Клиентское соглашение Майкрософт**.
 
-    ![Снимок экрана с изображением поиска на портале по фразе "Управление затратами + выставление счетов"](./media/mca-check-azure-credits-balance/list-of-scopes.png)
+    ![Снимок экрана: страница "Области выставления счетов".](./media/mca-check-azure-credits-balance/list-of-scopes.png)
 
     > [!NOTE]
     >
@@ -47,7 +47,7 @@ ms.locfileid: "88690584"
 
 3. В меню слева щелкните **Методы оплаты** и выберите **Деньги на счете в Azure**.
 
-   ![Снимок экрана с информацией об остатке денег на счете в профиле выставления счетов](./media/mca-check-azure-credits-balance/mca-payment-methods.png)
+   ![Снимок экрана: предполагаемый и текущий остаток на счете.](./media/mca-check-azure-credits-balance/mca-payment-methods.png)
 
 4. На странице сведений о деньгах на счете в Azure присутствуют следующие разделы:
 
