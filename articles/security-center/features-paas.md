@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/01/2020
 ms.author: memildin
-ms.openlocfilehash: 7087fb7b1de0b16480d0bb02043b40e0e97204f6
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 4c56f8cba232220844a8a8f9c408a60c89c581cd
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449949"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613634"
 ---
 # <a name="feature-coverage-for-azure-paas-services"></a>Покрытие компонентов для служб Azure PaaS <a name="paas-services"></a>
 
@@ -29,16 +29,16 @@ ms.locfileid: "91449949"
 |Служба приложений Azure|✔|✔|-|
 |Учетная запись службы автоматизации Azure|✔|-|-|
 |Учетная запись пакетной службы Azure|✔|-|-|
-|Хранилище BLOB-объектов Azure|✔|✔|-|
+|хранилище BLOB-объектов Azure|✔|✔|-|
 |Кэш Azure для Redis|✔|-|-|
 |Oблачныe службы Azure|✔|-|-|
-|Когнитивный поиск Azure|✔|-|-|
+|Когнитивный поиск Azure|✔|-|-|
 |Реестр контейнеров Azure|-|-|✔|
 |Azure Cosmos DB*|-|✔|-|
 |Аналитика озера данных Azure|✔|-|-|
-|Azure Data Lake Storage|✔|-|-|
-|База данных Azure для MySQL*|✔|✔|-|
-|База данных Azure для PostgreSQL*|✔|✔|-|
+|Azure Data Lake Storage|✔|✔|-|
+|База данных Azure для MySQL*|-|✔|-|
+|База данных Azure для PostgreSQL*|-|✔|-|
 |Пространство имен Центров событий Azure|✔|-|-|
 |Приложение Функции Azure|✔|-|-|
 |Azure Key Vault|✔|✔|-|
@@ -49,7 +49,7 @@ ms.locfileid: "91449949"
 |Управляемый экземпляр SQL Azure|✔|✔|✔|
 |Пространство имен Служебной шины Azure|✔|-|-|
 |Учетная запись Azure Service Fabric|✔|-|-|
-|Учетные записи хранения Azure|✔|-|-|
+|Учетные записи хранения Azure|✔|✔|-|
 |Azure Stream Analytics|✔|-|-|
 |Подписка Azure|✔ **|✔|-|
 |Виртуальная сеть Azure</br> (включая подсети, сетевые карты и группы безопасности сети)|✔|-|-|
