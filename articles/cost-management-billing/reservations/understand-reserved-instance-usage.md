@@ -9,12 +9,12 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: b1b5a344da20bff31f85a2d3cb20a0a35e4c4bde
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 2b00c90abce915ae6fd645cbcce3536870609558
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681929"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447888"
 ---
 # <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования
 
@@ -74,7 +74,7 @@ ms.locfileid: "88681929"
 
 В качестве фильтра **использования зарезервированных экземпляров** следует использовать имя средства измерения, а затем выбрать требуемую **категорию учета** — База данных Azure SQL или Azure Cosmos DB. Вы должны увидеть примерно следующее:
 
-![CSV-файл для резервной мощности Базы данных SQL](./media/understand-reserved-instance-usage/billing-payg-sql-db-reserved-capacity-csv-statements.png)
+![Снимок экрана: запись "Категория учета".](./media/understand-reserved-instance-usage/billing-payg-sql-db-reserved-capacity-csv-statements.png)
 
 В строке **Reserved Instance Usage** (Использование зарезервированных экземпляров) указано общее количество часов использования ядра, покрываемых резервированием. Цена для этой строки составляет 0 долларов США, так как резервирование покрывает затраты.
 
@@ -82,7 +82,7 @@ ms.locfileid: "88681929"
 
 Отфильтруйте по столбцу **Additional Info** (Дополнительные сведения) и введите свой **идентификатор резервирования**. На следующем снимке экрана показаны поля, связанные с резервированием Базы данных SQL Azure с получением резервной мощности.
 
-![CSV-файл для резервной мощности Базы данных SQL](./media/understand-reserved-instance-usage/billing-payg-sql-db-reserved-capacity-csv-details.png)
+![Снимок экрана: сведения о CSV-файле для зарезервированной емкости.](./media/understand-reserved-instance-usage/billing-payg-sql-db-reserved-capacity-csv-details.png)
 
 1. **ReservationId** (Идентификатор резервирования) в поле **Additional Info** (Дополнительные сведения) — это резервирование Базы данных SQL Azure с получением резервной мощности, которое было применено к ресурсу Базы данных SQL.
 2. **ConsumptionMeter** (Средство измерения потребления) представляет значение идентификатора средства измерения для ресурса Базы данных SQL.

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
-ms.openlocfilehash: 287bd02a11c71fbdd29b28b5ec9fc8424a477fea
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: af88f0b3403fb80acbb7dacebe293ac583e35799
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91320359"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716038"
 ---
 # <a name="part-two-assign-share-level-permissions-to-an-identity"></a>Часть 2. Назначение удостоверениям разрешений на уровне общего ресурса
 
@@ -52,7 +52,7 @@ ms.locfileid: "91320359"
 
 ### <a name="powershell"></a>PowerShell
 
-В следующем примере PowerShell показано, как назначить роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с помощью PowerShell см. в статье [Управление доступом с использованием RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+В следующем примере PowerShell показано, как назначить роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с помощью PowerShell см. [в статье Добавление и удаление назначений ролей Azure с использованием модуля Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
 Перед запуском следующего примера скрипта замените значения заполнителей, включая квадратные скобки, значениями.
 
@@ -67,7 +67,7 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 
 ### <a name="cli"></a>CLI
   
-Следующая команда CLI 2,0 назначает роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с Azure CLI см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md). 
+Следующая команда CLI 2,0 назначает роль Azure удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей Azure с Azure CLI см. [в разделе Добавление и удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md). 
 
 Перед запуском следующего примера сценария не забудьте заменить значения заполнителей, включая квадратные скобки, собственными значениями.
 
@@ -76,7 +76,7 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 az role assignment create --role "<role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshares/<share-name>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы назначили разрешения уровня общего доступа, необходимо настроить разрешения на уровне каталога и файла. Перейдите к следующей статье.
 

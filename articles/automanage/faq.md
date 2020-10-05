@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: troubleshooting
 ms.date: 09/04/2020
 ms.author: deanwe
-ms.openlocfilehash: 348106c405e6e096f7bfd9a225fc783c4454b1ad
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 003f97c99de7dd4be79e820e822b6071f45ed146
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449767"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714975"
 ---
 # <a name="frequently-asked-questions-for-azure-automanage-for-vms"></a>Часто задаваемые вопросы об управлении Azure для виртуальных машин
 
@@ -35,7 +35,7 @@ ms.locfileid: "91449767"
 - Виртуальные машины не должны ссылаться на рабочую область log Analytics в другой подписке
 - В настоящее время Автоуправление не поддерживает подписки "песочницы"
 
-**Какое разрешение RBAC требуется для включения автоуправления?**
+**Какое разрешение Azure RBAC требуется для включения автоуправления?**
 
 Если вы включаете управление на виртуальной машине с помощью существующей учетной записи для управления, вам потребуется роль участника для группы ресурсов, в которой находится виртуальная машина.
 
@@ -113,7 +113,7 @@ ms.locfileid: "91449767"
 Вы можете обменять [билет обращения в службу технической поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). Для параметра **Служба** найдите *и выберите пункт Управление для* управления в разделе *мониторинг и управление* .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте включить Автоуправление для виртуальных машин в портал Azure.
 

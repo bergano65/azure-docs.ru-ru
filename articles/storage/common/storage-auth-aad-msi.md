@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2927cbe9a586d8e7a35cea1b523122f9c1c3fed7
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 4b37e2530d8716f48eae696fef8f856e8334e24b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085643"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713668"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "90085643"
 
 ### <a name="assign-azure-roles-for-access-to-data"></a>Назначение ролей Azure для доступа к данным
 
-Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта или очереди, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль Azure, которая предоставляет доступ к данным большого двоичного объекта или очереди в службе хранилища Azure. Сведения о назначении разрешений через RBAC см. в разделе **назначение ролей Azure для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights).
+Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта или очереди, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль Azure, которая предоставляет доступ к данным большого двоичного объекта или очереди в службе хранилища Azure. Сведения о назначении разрешений с помощью Azure RBAC см. в разделе **назначение ролей Azure для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights).
 
 ### <a name="authenticate-the-user-in-the-development-environment"></a>Проверка подлинности пользователя в среде разработки
 
@@ -163,6 +163,6 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).
+- [Управление правами доступа к данным хранилища с помощью Azure RBAC](storage-auth-aad-rbac.md).
 - [Используйте Azure AD с приложениями службы хранилища](storage-auth-aad-app.md).
 - [Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным большого двоичного объекта](../blobs/authorize-active-directory-powershell.md)

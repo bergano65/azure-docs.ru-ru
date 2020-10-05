@@ -1,7 +1,7 @@
 ---
 title: Назначение роли Azure для доступа к данным с помощью PowerShell
 titleSuffix: Azure Storage
-description: Узнайте, как использовать PowerShell для назначения разрешений участнику безопасности Azure Active Directory с помощью управления доступом на основе ролей (RBAC). Служба хранилища Azure поддерживает встроенные и пользовательские роли Azure для проверки подлинности с помощью Azure AD.
+description: Узнайте, как использовать модуль Azure PowerShell для назначения разрешений субъекту безопасности Azure Active Directory с помощью управления доступом на основе ролей Azure (Azure RBAC). Служба хранилища Azure поддерживает встроенные и пользовательские роли Azure для проверки подлинности с помощью Azure AD.
 services: storage
 author: tamram
 ms.service: storage
@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 28f5be6d48b673f3148f05e14a92cf906aca4d81
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: d750e1f287ff7dfc5259b704355e026011fa872a
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89077047"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715812"
 ---
 # <a name="use-powershell-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>Назначение роли Azure для доступа к данным BLOB-объектов и очередей с помощью PowerShell
 
@@ -134,8 +134,8 @@ New-AzRoleAssignment -SignInName <email> `
     -Scope  "/subscriptions/<subscription>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Azure CLI](storage-auth-aad-rbac-cli.md)
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC на портале Azure](storage-auth-aad-rbac-portal.md)
+- [Добавление или удаление назначений ролей Azure с помощью модуля Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
+- [Используйте Azure CLI, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](storage-auth-aad-rbac-cli.md)
+- [Используйте портал Azure, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](storage-auth-aad-rbac-portal.md)

@@ -4,18 +4,18 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 02/28/2019
 ms.author: amberb
-ms.openlocfilehash: 58bf7c300d7f52807bd255da62bf1cc452883811
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 70139f6dc051cc0aa6b6a65ab76f0f2db3b94a13
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75779354"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362782"
 ---
 Проверьте тип соглашения, чтобы узнать, есть ли у вас доступ к учетной записи выставления счетов для клиентского соглашения Майкрософт.
  
 1. Перейдите на [портал Azure](https://portal.azure.com), чтобы проверить наличие доступа к учетной записи выставления счетов. Найдите и выберите пункт **Управление затратами + выставление счетов**.
 
-   ![Поиск параметра "Управление затратами + выставление счетов" на портале Microsoft Azure](./media/billing-check-mca/billing-search-cost-management-billing.png)
+   ![Снимок экрана: поиск на портале Azure по фразе "Управление затратами + выставление счетов".](./media/billing-check-mca/billing-search-cost-management-billing.png)
  
 2. Если у вас есть доступ только к одной области выставления счетов, в меню выберите **Свойства**. Если тип учетной записи выставления счетов — **Клиентское соглашение Майкрософт**, то у вас есть доступ к учетной записи выставления счетов для клиентского соглашения Майкрософт.
  

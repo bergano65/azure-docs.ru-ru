@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/28/2020
 ms.author: apimpm
-ms.openlocfilehash: 068f15cc06a76412836176dc13237741ea14d135
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.openlocfilehash: 3642b95f5bd6d0207508ca85f1d22ce20b44eae3
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614065"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715460"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика в службе управления API Azure
 
@@ -172,7 +172,7 @@ CORS можно также включить вручную.
 
 ### <a name="what-permissions-do-i-need-to-edit-the-developer-portal"></a>Какие разрешения требуются для изменения портала разработчика?
 
-Если вы видите `Oops. Something went wrong. Please try again later.` ошибку при открытии портала в административном режиме, возможно, отсутствуют необходимые разрешения (RBAC).
+Если вы видите `Oops. Something went wrong. Please try again later.` ошибку при открытии портала в административном режиме, возможно, отсутствуют необходимые разрешения (Azure RBAC).
 
 Устаревшие порталы требовали разрешения `Microsoft.ApiManagement/service/getssotoken/action` в области службы ( `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>` ), чтобы предоставить администратору пользователей доступ к порталам. Новому порталу требуется разрешение `Microsoft.ApiManagement/service/users/token/action` в области `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1` .
 
@@ -222,7 +222,7 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
  <small><sup>1</sup> поддерживается в двух последних рабочих версиях.</small>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о новом портале разработчика:
 

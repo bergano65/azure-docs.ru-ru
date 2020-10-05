@@ -9,12 +9,12 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0f81ffb5279e10c71f7d7cccfb6b738bc12e5cf4
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 6072c71fa675bd203e94f3f42814a1183b12ae8e
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90086782"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91597983"
 ---
 # <a name="create-sas-definition-and-fetch-shared-access-signature-tokens-in-code"></a>Создание определения SAS и получение маркеров SAS в коде
 
@@ -42,6 +42,9 @@ ms.locfileid: "90086782"
 Если срок действия маркера подписанного URL-адреса истекает, можно снова получить тот же секрет, чтобы создать новый.
 
 Сведения об использовании полученных данных из маркера SAS Key Vault для доступа к службам хранилища Azure см. в разделе [Использование SAS учетной записи из клиента](https://docs.microsoft.com/azure/storage/common/storage-account-sas-create-dotnet#use-an-account-sas-from-a-client).
+
+> [!NOTE]
+> Приложение должно быть подготовлено к обновлению SAS на тот случай, если оно получит ошибку 403 от службы хранилища. Это требуется для тех ситуаций, когда ключ скомпрометирован и вам нужно сменить его быстрее, чем обычно. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../../storage/common/storage-sas-overview.md)

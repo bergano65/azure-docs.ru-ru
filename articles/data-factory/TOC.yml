@@ -700,6 +700,8 @@
               href: how-to-data-flow-error-rows.md
             - name: Перенос из Базы данных SQL Azure в Azure Cosmos DB
               href: how-to-sqldb-to-cosmosdb.md
+            - name: Дедупликация и проверка значений NULL с помощью фрагментов кода
+              href: how-to-data-flow-dedupe-nulls-snippets.md
         - name: Перенос рабочих нагрузок SSIS из локальных систем
           items:
             - name: Обзор переноса рабочих нагрузок SSIS

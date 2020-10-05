@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 09/04/2020
 ms.author: jushiman
-ms.openlocfilehash: 7a716ed9bca6d34ad4dbcd2566837a839f71153b
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 377677c9e5e81487059241db68baff639a3de033
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91450317"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715044"
 ---
 # <a name="create-a-custom-preference-in-azure-automanage-for-vms"></a>Создание настраиваемого предпочтения в управлении Azure для виртуальных машин
 
@@ -34,7 +34,7 @@ ms.locfileid: "91450317"
 > Учетные записи бесплатной пробной версии не предоставляют доступа к виртуальным машинам, которые используются в этом руководстве. Перейдите на подписку с оплатой по мере использования.
 
 > [!IMPORTANT]
-> Следующие разрешения RBAC необходимы для включения функции управления: роли **владельца** или **участника** вместе с ролями **администратора доступа пользователей** .
+> Для включения функции "Управление: **владелец** " или " **участник** " вместе с ролями " **администратор доступа пользователей** " требуется следующее разрешение Azure RBAC.
 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
@@ -69,7 +69,7 @@ ms.locfileid: "91450317"
         1. Подписка
         1. Группа ресурсов
         1. Имя предпочтения
-        1. Region
+        1. Регион
 
     :::image type="content" source="media\virtual-machine-custom-preferences\create-preference.png" alt-text="Выбор существующей виртуальной машины в списке доступных виртуальных машин.":::
 

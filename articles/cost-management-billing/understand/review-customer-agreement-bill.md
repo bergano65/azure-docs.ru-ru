@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 4adb3bb1408357d40e3869c2a0d251b11d015195
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 619dec1b2246b7e74b058e570df4021888196b0c
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88689530"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91447549"
 ---
 # <a name="tutorial-review-your-microsoft-customer-agreement-invoice"></a>Руководство. Просмотр счета в рамках Клиентского соглашения Майкрософт
 
@@ -47,7 +47,7 @@ ms.locfileid: "88689530"
 
 На портале Azure введите *cost management + billing* (Управление затратами и выставление счетов) в поле поиска, а затем выберите **Cost Management + Billing** (Управление затратами + выставление счетов).
 
-![Снимок экрана с изображением поиска на портале Azure по фразе " cost management + billing" (Управление затратами + выставление счетов)](./media/review-customer-agreement-bill/billing-search-cost-management-billing.png)
+![Снимок экрана: поиск на портале Azure по фразе "Управление затратами + выставление счетов".](./media/review-customer-agreement-bill/billing-search-cost-management-billing.png)
 
 Если у вас есть доступ только к одной области выставления счетов, выберите **Свойства** слева. Если тип учетной записи выставления счетов — **Клиентское соглашение Майкрософт**, то у вас есть доступ к учетной записи выставления счетов для Клиентского соглашения Майкрософт.
 
@@ -106,7 +106,7 @@ ms.locfileid: "88689530"
 
 В разделе расходов отображаются расходы за текущий и прошлый месяцы.
 
-![Снимок экрана с изображением поиска на портале Azure по фразе " cost management + billing" (Управление затратами + выставление счетов)](./media/review-customer-agreement-bill/mca-billing-profile-summary.png)
+![Снимок экрана: сводка для профиля выставления счетов.](./media/review-customer-agreement-bill/mca-billing-profile-summary.png)
 
 Расходы за текущий месяц являются ожидаемыми и счета по ним выставляются при создании счета за месяц. Если счет за прошлый месяц еще не создан, расходы за прошлый месяц также являются ожидаемыми и появятся в следующем счете.
 
@@ -138,7 +138,7 @@ ms.locfileid: "88689530"
 
 На странице подписок Azure для каждой подписки в профиле выставления счетов отображаются расходы за текущий и последний месяцы. Расходы за текущий месяц являются ожидаемыми и счета по ним выставляются при создании счета за месяц. Если счет за прошлый месяц еще не создан, расходы за прошлый месяц также являются ожидаемыми.
 
-![Снимок экрана, на котором показан список подписок Azure для профиля выставления счетов](./media/review-customer-agreement-bill/mca-billing-profile-subscriptions-list.png)
+![Снимок экрана: подписки и сведения о расходах за текущий месяц и за прошлый месяц.](./media/review-customer-agreement-bill/mca-billing-profile-subscriptions-list.png)
 
 ## <a name="analyze-your-azure-usage-charges"></a>Анализ расходов на использование Azure
 
@@ -172,7 +172,7 @@ ms.locfileid: "88689530"
 
 На следующем изображении показан список подписок на портале Azure.
 
-![Снимок экрана, на котором показан список подписок Azure для профиля выставления счетов](./media/review-customer-agreement-bill/mca-billing-profile-subscriptions-list-highlighted.png)
+![Снимок экрана: список подписок на портале Azure с одной выделенной подпиской.](./media/review-customer-agreement-bill/mca-billing-profile-subscriptions-list-highlighted.png)
 
 Отфильтруйте столбец **subscriptionName** в CSV-файле с данными об использовании и расходах Azure по **WA_Subscription**, чтобы просмотреть подробные сведения о плате за использование WA_Subscription.
 

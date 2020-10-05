@@ -1,6 +1,6 @@
 ---
 title: Получение права владения на выставление счетов в подписках Azure по Соглашению с партнером Майкрософт (MPA)
-description: Узнайте о запросе прав владения на выставление счетов в подписках Azure от других пользователей.
+description: Сведения о том, как запросить права на выставление счетов в подписках Azure от других пользователей по Соглашению с партнером Майкрософт (MPA).
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: eef36726db735cfdd42f5a103073303cf3b3a632
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: bb2a58b76445f2cfd14a905de1fb66dbff3eee7e
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88684955"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371020"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-to-your-mpa-account"></a>Получение права владения на выставление счетов в подписках Azure по учетной записи MPA
 
@@ -35,7 +35,7 @@ ms.locfileid: "88684955"
 
 1. Войдите на [портал Azure](https://portal.azure.com), используя учетные данные агента администрирования CSP в арендаторе CSP.
 1. Выполните поиск по фразе **Управление затратами + выставление счетов**.  
-    ![Снимок экрана: портал Azure, где выполняется поиск раздела "Управление затратами и выставление счетов"](./media/mpa-request-ownership/search-cmb.png)
+    ![Снимок экрана: портал Azure, где выполняется поиск запроса на право на выставление счетов в разделе "Управление затратами и выставление счетов".](./media/mpa-request-ownership/search-cmb.png)
 1. В меню слева щелкните **Клиенты**, а затем выберите клиента из списка.  
     [![Снимок экрана: выбор клиентов](./media/mpa-request-ownership/mpa-select-customers.png)](./media/mpa-request-ownership/mpa-select-customers.png#lightbox)
 1. Слева внизу выберите **Запросы на перемещение** и нажмите кнопку **Добавить запрос**.  
@@ -56,7 +56,7 @@ ms.locfileid: "88684955"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните поиск по фразе **Управление затратами + выставление счетов**.  
-    ![Снимок экрана: портал Azure, где выполняется поиск раздела "Управление затратами и выставление счетов"](./media/mpa-request-ownership/billing-search-cost-management-billing.png)
+    ![Снимок экрана: портал Azure, где выполняется поиск запроса на состояние передачи в разделе "Управление затратами и выставление счетов".](./media/mpa-request-ownership/billing-search-cost-management-billing.png)
 1. Слева выберите **Клиенты**.  
     [![Снимок экрана: выбор клиентов](./media/mpa-request-ownership/mpa-select-customers.png)](./media/mpa-request-ownership/mpa-select-customers.png#lightbox)
 1. В списке выберите клиента, для которого отправлен запрос на перемещение.
@@ -127,7 +127,7 @@ Azure Reserved Virtual Machine Instances не перемещаются с под
 
 ### <a name="access-to-azure-services"></a>Доступ к службам Azure
 
-Переход не влияет на доступ для существующих пользователей, групп или субъектов-служб, которые были назначены с помощью [Azure RBAC (управление доступом на основе ролей)](../../role-based-access-control/overview.md). Партнер не получит новых прав доступа к подпискам в рамках RBAC.
+Переход не влияет на доступ для существующих пользователей, групп или субъектов-служб, которые были назначены с помощью [механизма управления доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md). Партнер не получит новых прав доступа к подпискам в рамках Azure RBAC.
 
 Партнеры должны организовать доступ к подпискам совместно с клиентом. Партнерам необходимо открыть запрос в службу поддержки на доступ [делегированного администратора (AOBO)](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO) либо [Azure Lighthouse](https://docs.microsoft.com/azure/lighthouse/concepts/cloud-solution-provider).
 
@@ -174,4 +174,4 @@ Azure Reserved Virtual Machine Instances не перемещаются с под
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Вам передается право владения на выставление счетов в подписках Azure. Следите за расходами в этих подписках на [портале Azure.](https://portal.azure.com)
-* Доступ к переданным подпискам нужно организовать совместно с клиентом. [Управление доступом к ресурсам Azure с использованием RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+* Доступ к переданным подпискам нужно организовать совместно с клиентом. [Добавление и удаление назначений ролей Azure с помощью портала Azure.](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)

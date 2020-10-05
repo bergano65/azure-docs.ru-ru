@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
 ms.custom: contperfq1
-ms.openlocfilehash: 4a9f243ce32dee9948cd2f2410b5c7f1382bf7c8
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: a4c32877ddb260e90fb4121b16a9b318616c2a4d
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90088856"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715833"
 ---
 # <a name="choose-how-to-authorize-access-to-blob-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным BLOB-объектов в портал Azure
 
@@ -26,11 +26,11 @@ ms.locfileid: "90088856"
 
 ## <a name="permissions-needed-to-access-blob-data"></a>Разрешения, необходимые для доступа к данным большого двоичного объекта
 
-В зависимости от того, как вы хотите авторизовать доступ к данным большого двоичного объекта в портал Azure, вам потребуются определенные разрешения. В большинстве случаев эти разрешения предоставляются с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о RBAC см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
+В зависимости от того, как вы хотите авторизовать доступ к данным большого двоичного объекта в портал Azure, вам потребуются определенные разрешения. В большинстве случаев эти разрешения предоставляются через Управление доступом на основе ролей Azure (Azure RBAC). Дополнительные сведения об Azure RBAC см. в статье [что такое управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="use-the-account-access-key"></a>Использование ключа доступа к учетной записи
 
-Чтобы получить доступ к данным большого двоичного объекта с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие RBAC **Microsoft. Storage/storageAccounts/listkeys/Action**. Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
+Чтобы получить доступ к данным большого двоичного объекта с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие**). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
 
 - Роль [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager
 - Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
@@ -75,11 +75,11 @@ ms.locfileid: "90088856"
 
 Если проверка подлинности выполняется с помощью ключа доступа к учетной записи, вы увидите **ключ доступа** , указанный в качестве метода проверки подлинности на портале:
 
-:::image type="content" source="media/authorize-blob-access-portal/auth-method-access-key.png" alt-text="Снимок экрана с пользовательским доступом к контейнерам с помощью ключа учетной записи":::
+:::image type="content" source="media/authorize-blob-access-portal/auth-method-access-key.png" alt-text="Снимок экрана, показывающий, как переходить к данным большого двоичного объекта в портал Azure":::
 
 Чтобы переключиться на использование учетной записи Azure AD, щелкните ссылку, выделенную на изображении. При наличии соответствующих разрешений через назначенные вам роли Azure вы сможете продолжать работу. Однако если у вас нет нужных разрешений, появится сообщение об ошибке следующего вида:
 
-:::image type="content" source="media/authorize-blob-access-portal/auth-error-azure-ad.png" alt-text="Ошибка отображается, если учетная запись Azure AD не поддерживает доступ":::
+:::image type="content" source="media/authorize-blob-access-portal/auth-error-azure-ad.png" alt-text="Снимок экрана, показывающий, как переходить к данным большого двоичного объекта в портал Azure":::
 
 Обратите внимание, что в списке нет BLOB-объектов, если у вашей учетной записи Azure AD нет разрешений на их просмотр. Щелкните ссылку **Переключение на ключ доступа** , чтобы снова использовать ключ доступа для проверки подлинности.
 
@@ -87,11 +87,11 @@ ms.locfileid: "90088856"
 
 Если вы выполняете проверку подлинности с помощью учетной записи Azure AD, вы увидите на портале **учетную запись пользователя Azure AD** , указанную в качестве метода проверки подлинности:
 
-:::image type="content" source="media/authorize-blob-access-portal/auth-method-azure-ad.png" alt-text="Снимок экрана с пользовательским доступом к контейнерам с помощью учетной записи Azure AD":::
+:::image type="content" source="media/authorize-blob-access-portal/auth-method-azure-ad.png" alt-text="Снимок экрана, показывающий, как переходить к данным большого двоичного объекта в портал Azure":::
 
 Чтобы переключиться на использование ключа доступа к учетной записи, щелкните ссылку, выделенную на изображении. Если у вас есть доступ к ключу учетной записи, вы сможете продолжать работу. Однако если у вас отсутствует доступ к ключу учетной записи, вы увидите сообщение об ошибке следующего вида:
 
-:::image type="content" source="media/authorize-blob-access-portal/auth-error-access-key.png" alt-text="Если у вас нет доступа к ключу учетной записи, отображается ошибка":::
+:::image type="content" source="media/authorize-blob-access-portal/auth-error-access-key.png" alt-text="Снимок экрана, показывающий, как переходить к данным большого двоичного объекта в портал Azure":::
 
 Обратите внимание, что в списке нет BLOB-объектов, если у вас нет доступа к ключам учетной записи. Щелкните ссылку **Переключение на учетную запись пользователя Azure AD** , чтобы снова использовать учетную запись Azure AD для проверки подлинности.
 
@@ -106,11 +106,11 @@ ms.locfileid: "90088856"
 1. Разверните раздел **Дополнительно** , чтобы отобразить дополнительные свойства большого двоичного объекта.
 1. В поле **тип проверки подлинности** укажите, следует ли авторизовать операцию отправки с помощью учетной записи Azure AD или ключа доступа к учетной записи, как показано на следующем рисунке:
 
-    :::image type="content" source="media/authorize-blob-access-portal/auth-blob-upload.png" alt-text="Снимок экрана, показывающий, как изменить метод авторизации при передаче BLOB-объекта":::
+    :::image type="content" source="media/authorize-blob-access-portal/auth-blob-upload.png" alt-text="Снимок экрана, показывающий, как переходить к данным большого двоичного объекта в портал Azure":::
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md)
-- [Предоставление доступа к контейнерам и очередям Azure с RBAC в портал Azure](../common/storage-auth-aad-rbac-portal.md)
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Azure CLI](../common/storage-auth-aad-rbac-cli.md)
-- [Предоставление доступа к BLOB-объектам Azure и создание очереди данных с использованием RBAC с помощью Powershell](../common/storage-auth-aad-rbac-powershell.md)
+- [Используйте портал Azure, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](../common/storage-auth-aad-rbac-portal.md)
+- [Используйте Azure CLI, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](../common/storage-auth-aad-rbac-cli.md)
+- [Использование модуля Azure PowerShell для назначения роли Azure доступа к данным BLOB-объектов и очередей](../common/storage-auth-aad-rbac-powershell.md)

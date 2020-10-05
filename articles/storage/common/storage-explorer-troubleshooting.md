@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: b57a57f05853b9f8c291dc2ac352db7b1e679260
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: f24fb6c4d83da0d443702afaf673079363a9ffb0
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534861"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714457"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -21,13 +21,13 @@ ms.locfileid: "87534861"
 
 В этом пошаговом руководством описаны решения проблем, которые обычно встречаются в Обозреватель службы хранилища.
 
-## <a name="rbac-permissions-issues"></a>Проблемы разрешений RBAC
+## <a name="azure-rbac-permissions-issues"></a>Проблемы с разрешениями RBAC в Azure
 
-Управление доступом на основе ролей [RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) обеспечивает строгое управление доступом к ресурсам Azure, объединяя наборы разрешений в _роли_. Ниже приведены некоторые стратегии обеспечения оптимальной работы RBAC в Обозреватель службы хранилища.
+Управление доступом на основе ролей Azure с помощью [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) обеспечивает строгое управление доступом к ресурсам Azure, объединяя наборы разрешений в _роли_. Ниже приведены некоторые стратегии, позволяющие обеспечить оптимальную работу Azure RBAC в Обозреватель службы хранилища.
 
 ### <a name="how-do-i-access-my-resources-in-storage-explorer"></a>Разделы справки получить доступ к моим ресурсам в Обозреватель службы хранилища?
 
-Если возникают проблемы с доступом к ресурсам хранилища через RBAC, возможно, вам не были назначены соответствующие роли. В следующих разделах описываются разрешения Обозреватель службы хранилища, которые в настоящее время требуются для доступа к ресурсам хранилища. Если вы не уверены, что у вас есть соответствующие роли или разрешения, обратитесь к администратору учетной записи Azure.
+Если у вас возникли проблемы с доступом к ресурсам хранилища через Azure RBAC, возможно, вам не были назначены соответствующие роли. В следующих разделах описываются разрешения Обозреватель службы хранилища, которые в настоящее время требуются для доступа к ресурсам хранилища. Если вы не уверены, что у вас есть соответствующие роли или разрешения, обратитесь к администратору учетной записи Azure.
 
 #### <a name="read-listget-storage-accounts-permissions-issue"></a>Проблемы с разрешениями "чтение: список/получить учетные записи хранения"
 
@@ -65,7 +65,7 @@ ms.locfileid: "87534861"
 3. Выберите учетную запись пользователя и клиента, связанные с ресурсом, к которому вы подключаетесь. Нажмите кнопку "Далее".
 4. Выберите тип ресурса, введите URL-адрес ресурса и введите уникальное отображаемое имя для соединения. Нажмите кнопку "Далее". Нажмите кнопку "Подключить".
 
-Для других типов ресурсов в настоящее время нет решения, связанного с RBAC. В качестве обходного решения можно запросить URI SAS для [подключения к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-shared-access-signature-uri).
+Для других типов ресурсов в настоящее время нет решения, связанного с Azure RBAC. В качестве обходного решения можно запросить URI SAS для [подключения к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-shared-access-signature-uri).
 
 ### <a name="recommended-azure-built-in-roles"></a>Рекомендуемые встроенные роли Azure
 
@@ -405,7 +405,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 * Google Chrome;
 * Microsoft Internet Explorer
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если ни одно из этих решений не работает, [откройте вопрос в GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues). Это можно также сделать, нажав кнопку **сообщить об ошибке в GitHub** в левом нижнем углу.
 

@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 9f5e69a609931f4f8ead62f4d5c5ba2a1064a6ea
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 6424fc0ff49566fad949b3fba4718acb2bad4cd3
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88683017"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362783"
 ---
 # <a name="organize-costs-by-customizing-your-billing-account"></a>Упорядочивание расходов с помощью учетной записи выставления счетов
 
@@ -53,19 +53,19 @@ ms.locfileid: "88683017"
 |---------|---------|
 |Джек регистрируется в Azure и ему нужен один ежемесячный счет. | Профиль выставления счетов и раздел счета. Эта структура автоматически настраивается для Джека при регистрации в Azure и не требует дополнительных действий. |
 
-![Информационное изображение для простого сценария выставления счетов](./media/mca-section-invoice/organize-billing-scenario1.png)
+![Инфографика для простого сценария выставления счетов.](./media/mca-section-invoice/organize-billing-scenario1.png)
 
 |Сценарий  |Структура  |
 |---------|---------|
 |Contoso — это небольшая организация, которой требуется один месячный счет, в котором затраты группируются по отделам — маркетинг и инженерия.  | Профиль выставления счетов для Contoso и раздел счета для маркетинговых и инженерных отделов. |
 
-![Информационное изображение для простого сценария выставления счетов](./media/mca-section-invoice/organize-billing-scenario2.png)
+![Инфографика для сложного сценария выставления счетов.](./media/mca-section-invoice/organize-billing-scenario2.png)
 
 |Сценарий  |Структура  |
 |---------|---------|
 |Fabrikam — это организация среднего размера, которой требуются отдельные счета для отделов по инженерии и маркетингу. Для инженерного отдела им нужно сгруппировать затраты по средам — производству и разработке.  | Профиль выставления счетов для отделов маркетинга и инженерии. Для инженерного отдела — раздел счета для рабочей среды разработки и эксплуатации. |
 
-![Информационное изображение для простого сценария выставления счетов](./media/mca-section-invoice/organize-billing-scenario3.png)
+![Инфографика для сложного сценария выставления счетов с раздельным выставлением счетов для рабочей среды и среды разработки.](./media/mca-section-invoice/organize-billing-scenario3.png)
 
 ## <a name="create-a-new-invoice-section"></a>Создание нового раздела счета
 
@@ -79,7 +79,7 @@ ms.locfileid: "88683017"
 
 3. Выберите раздел **Профили выставления счетов** на панели слева. Выберите профиль выставления счетов в списке. Для выбранного профиля выставления счетов буде показан новый раздел.
 
-   [![Снимок экрана, на котором показан вариант "Профиль выставления счетов" в списке](./media/mca-section-invoice/mca-select-profile.png)](./media/mca-section-invoice/mca-select-profile-zoomed-in.png#lightbox)
+   [![Снимок экрана: список профилей выставления счетов.](./media/mca-section-invoice/mca-select-profile.png)](./media/mca-section-invoice/mca-select-profile-zoomed-in.png#lightbox)
 
 4. Выберите **Разделы счетов** в левой области, а затем **Добавить** в верхней части страницы.
 
@@ -107,7 +107,7 @@ ms.locfileid: "88683017"
 
 3. Выберите **Профили выставления счетов** на левой панели, а затем **Добавить** в верхней части страницы.
 
-   [![Снимок экрана, на котором показан вариант "Профиль выставления счетов" в списке](./media/mca-section-invoice/mca-list-profiles.png)](./media/mca-section-invoice/mca-list-profiles-zoomed-in.png#lightbox)
+   [![Снимок экрана: список профилей выставления счетов с выбранной кнопкой "Добавить".](./media/mca-section-invoice/mca-list-profiles.png)](./media/mca-section-invoice/mca-list-profiles-zoomed-in.png#lightbox)
 
     > [!Note]
     >
@@ -136,15 +136,15 @@ ms.locfileid: "88683017"
 
 2. Выполните поиск по запросу **Подписки**.
 
-   [![Снимок экрана: поиск подписок на портале](./media/mca-section-invoice/search-subscriptions.png)](./media/mca-section-invoice/search-subscriptions.png#lightbox)
+   [![Снимок экрана: поиск подписки на портале Azure.](./media/mca-section-invoice/search-subscriptions.png)](./media/mca-section-invoice/search-subscriptions.png#lightbox)
 
 3. В верхней части страницы выберите **Добавить**.
 
-   ![Снимок экрана: кнопка "Добавить" в представлении "Подписки"](./media/mca-section-invoice/subscription-add.png)
+   ![Снимок экрана: кнопка "Добавить" в представлении "Подписки" для новой подписки.](./media/mca-section-invoice/subscription-add.png)
 
 4. Если у вас есть доступ к нескольким учетным записям выставления счетов, выберите учетную запись выставления счетов Клиентского соглашения Майкрософт.
 
-   ![Снимок экрана: кнопка "Добавить" в представлении "Подписки"](./media/mca-section-invoice/mca-create-azure-subscription.png)
+   ![Снимок экрана: область создания подписки.](./media/mca-section-invoice/mca-create-azure-subscription.png)
 
 5. Выберите профиль выставления счетов, для которого будет выставлен счет за использование подписки. Плата за использование Azure и другие покупки для этой подписки будет взиматься по выбранному счету профиля выставления счетов.
 
@@ -166,7 +166,7 @@ ms.locfileid: "88683017"
 
 2. Выполните поиск по фразе **Управление затратами + выставление счетов**.
 
-   ![Снимок экрана: поиск подписок на портале](./media/mca-section-invoice/search-cmb.png)
+   ![Снимок экрана: поиск на портале Azure по фразе "управление затратами + выставление счетов".](./media/mca-section-invoice/search-cmb.png)
 
 3. Чтобы связать подписку с новым разделом счета, выберите **Подписки Azure** в левой части экрана. Для других продуктов, таких как Azure Marketplace и исходных ресурсов приложений, выберите **Повторяющиеся платежи**.
 

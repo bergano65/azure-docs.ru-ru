@@ -9,12 +9,12 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: cffb753d515c4d066c8ce52e7dacebe5a8f6f8ca
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 12b20f7556a460506067305401fb2379678ee58e
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88682643"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371700"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
 
@@ -88,9 +88,9 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 
 Получите список всех резервирований, доступных пользователю, с помощью [API списка операций резервирования](/rest/api/reserved-vm-instances/reservationorder/list). Чтобы предоставить доступ к резервированию программно, просмотрите следующие статьи:
 
-- [Управление доступом с помощью RBAC и REST API](../../role-based-access-control/role-assignments-rest.md)
-- [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
-- [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+- [Добавление и удаление назначений ролей Azure с помощью REST API](../../role-based-access-control/role-assignments-rest.md)
+- [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
+- [Добавление и удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md)
 
 ## <a name="split-or-merge-reservation"></a>Разделение или объединение резервирования
 

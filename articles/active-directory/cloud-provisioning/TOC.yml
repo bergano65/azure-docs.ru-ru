@@ -34,6 +34,10 @@
           href: how-to-install.md
         - name: Конфигурация подготовки облака
           href: how-to-configure.md
+        - name: Подготовка по запросу
+          href: how-to-on-demand-provision.md
+        - name: Сопоставление атрибутов
+          href: how-to-attribute-mapping.md
         - name: Использование единого входа
           href: how-to-sso.md
     - name: Планирование и проектирование
@@ -56,7 +60,7 @@
           href: how-to-troubleshoot.md
         - name: повторяющиеся атрибуты
           href: /office365/troubleshoot/administration/duplicate-attributes-prevent-dirsync
-- name: Справочник
+- name: Ссылка
   items:
     - name: Журнал версий агента подготовки облака Azure AD Connect
       href: ../app-provisioning/provisioning-agent-release-version-history.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context

@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: b18e08f93df143f9844fe774eee59452978d7437
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 42d9c2b4b1edac62449fa4120463a384400d6d27
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686400"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360704"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Учетные записи и области выставления счетов на портале Azure
 
@@ -80,11 +80,11 @@ ms.locfileid: "88686400"
 
 2. Выполните поиск по фразе **Управление затратами + выставление счетов**.
 
-   ![Снимок экрана, показывающий поиск на портале Azure](./media/view-all-accounts/billing-search-cost-management-billing.png)
+   ![Снимок экрана: поиск на портале Azure по фразе "Управление затратами + выставление счетов".](./media/view-all-accounts/billing-search-cost-management-billing.png)
 
 3. На странице обзорных сведений выберите **Переключите область**.
 
-   ![Снимок экрана, на котором показаны области выставления счетов](./media/view-all-accounts/overview-select-scopes.png)
+   ![Снимок экрана, на котором показаны области выставления счетов.](./media/view-all-accounts/overview-select-scopes.png)
 
    > [!Note]
     >
@@ -92,7 +92,7 @@ ms.locfileid: "88686400"
 
 4. Выберите область для просмотра сведений.
 
-   ![Снимок экрана, на котором показаны области выставления счетов](./media/view-all-accounts/list-of-scopes.png)
+   ![Снимок экрана: области выставления счетов, которые можно выбрать для просмотра подробных сведений.](./media/view-all-accounts/list-of-scopes.png)
 
 ## <a name="check-the-type-of-your-account"></a>Проверка типа учетной записи
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-account-type.md)]

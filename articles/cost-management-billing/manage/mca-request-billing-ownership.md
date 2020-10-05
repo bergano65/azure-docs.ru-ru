@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 233cc5330096b9b6419c8024205a41646ddd9519
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 2aae71836a4eaba845e4752edf708607977763fa
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88682966"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91371870"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-from-other-accounts"></a>Получение права владения на выставление счетов в подписках Azure от других пользователей
 
@@ -152,7 +152,7 @@ ms.locfileid: "88682966"
 
 ### <a name="access-to-azure-services"></a>Доступ к службам Azure
 
-Доступ для существующих пользователей, групп или субъектов-служб, которые были назначены с помощью (RBAC Azure (управление доступом на основе ролей))[../role-based-access-control/overview.md], не затрагивается при передаче.
+Переход не влияет на доступ для существующих пользователей, групп или субъектов-служб, которые были назначены с помощью [механизма управления доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md).
 
 ### <a name="azure-support-plan"></a>План поддержки Azure
 

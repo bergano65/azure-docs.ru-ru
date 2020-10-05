@@ -1,29 +1,29 @@
 ---
-title: Дополнительная защита от угроз в центре безопасности Azure
-description: Дополнительные сведения о защите от угроз, доступных в центре безопасности Azure, за пределами защитника Azure
+title: Дополнительная защита от угроз в Центре безопасности Azure
+description: Сведения о средствах защиты от угроз, которые доступны в Центре безопасности Azure помимо Azure Defender
 services: security-center
 documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.assetid: 33c45447-3181-4b75-aa8e-c517e76cd50d
 ms.service: security-center
-ms.topic: conceptual
+ms.topic: overview
 ms.date: 09/15/2020
 ms.author: memildin
-ms.openlocfilehash: 0f4a849af2be9f02187dc3cda526c9c4727cab1b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
-ms.translationtype: MT
+ms.openlocfilehash: 377c68cd2f0b0c132fc690cb03d7c3c5694bb52e
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938658"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438909"
 ---
-# <a name="additional-threat-protections-in-azure-security-center"></a>Дополнительные средства защиты от угроз в центре безопасности Azure
-Кроме встроенных средств [защиты защитника Azure](azure-defender.md), центр безопасности Azure также предоставляет следующие возможности защиты от угроз.
+# <a name="additional-threat-protections-in-azure-security-center"></a>Дополнительные средства защиты от угроз в Центре безопасности Azure
+Кроме встроенных [средств защиты Azure Defender](azure-defender.md), Центр безопасности Azure предоставляет описанные ниже возможности защиты от угроз.
 
 > [!TIP]
-> Чтобы включить возможности защиты от угроз для центра безопасности, необходимо включить защитник Azure в подписке, содержащей применимые рабочие нагрузки.
+> Чтобы реализовать возможности Центра безопасности для защиты от угроз, необходимо включить Azure Defender в подписке, содержащей соответствующие рабочие нагрузки.
 >
-> Включить защиту от угроз для **базы данных Azure для MariaDB/MySQL/PostgreSQL** можно только на уровне ресурсов.
+> Для **Базы данных Azure для MariaDB, MySQL и PostgreSQL** защиту от угроз можно включить только на уровне ресурсов.
 
 
 ## <a name="threat-protection-for-azure-network-layer"></a>Защита от угроз для уровня сети Azure <a name="network-layer"></a>
@@ -37,7 +37,7 @@ ms.locfileid: "90938658"
 Список оповещений на уровне сети Azure см. в [справочной таблице оповещений](alerts-reference.md#alerts-azurenetlayer).
 
 
-## <a name="threat-protection-for-azure-resource-manager-preview"></a>Защита от угроз для Azure Resource Manager (Предварительная версия)<a name ="management-layer"></a>
+## <a name="threat-protection-for-azure-resource-manager-preview"></a>Защита от угроз для Azure Resource Manager (предварительная версия)<a name ="management-layer"></a>
 Уровень защиты Центра безопасности на основе Azure Resource Manager в настоящее время находится на этапе предварительной версии.
 
 Центр безопасности предлагает дополнительный уровень защиты с помощью событий Azure Resource Manager, который считается уровнем управления для Azure. Анализируя записи Azure Resource Manager, Центр безопасности обнаруживает необычные или потенциально опасные операции в среде подписки Azure.
@@ -51,18 +51,18 @@ ms.locfileid: "90938658"
 > 1. В главном меню Центра безопасности выберите **Цены и параметры**.
 > 1. Выберите подписку, которую требуется изменить.
 > 1. Выберите **Обнаружение угроз**.
-> 1. Снимите флажок **разрешить Microsoft Cloud App Security доступ к моим данным**и нажмите кнопку **сохранить**.
+> 1. Снимите флажок **Разрешить Microsoft Cloud App Security доступ к моим данным** и нажмите кнопку **Сохранить**.
 
 
 >[!NOTE]
 >Центр безопасности хранит данные клиентов, связанные с безопасностью, в том же географическом расположении, что и свои ресурсы. Если корпорация Майкрософт еще не развернула Центр безопасности в географическом расположении ресурса, данные сохраняются в США. Если решение Cloud App Security включено, эти сведения хранятся в соответствии с правилами географического расположения Cloud App Security. Дополнительные сведения см. на странице [хранилища данных для нерегиональных служб](https://azuredatacentermap.azurewebsites.net/).
 
-1. Укажите рабочую область, в которой вы устанавливаете агент. Убедитесь, что рабочая область находится в той же подписке, которая используется в центре безопасности, а у вас есть разрешения на чтение и запись в этой рабочей области.
+1. Укажите рабочую область, в которой устанавливаете агент. Убедитесь, что рабочая область находится в той же подписке, которая используется в центре безопасности, а у вас есть разрешения на чтение и запись в этой рабочей области.
 
-1. Включите **защитник Azure**и нажмите кнопку **сохранить**.
+1. Включите **Azure Defender** и нажмите кнопку **Сохранить**.
 
 
-## <a name="threat-protection-for-azure-cosmos-db-preview"></a>Защита от угроз для Azure Cosmos DB (Предварительная версия)<a name="cosmos-db"></a>
+## <a name="threat-protection-for-azure-cosmos-db-preview"></a>Защита от угроз для Azure Cosmos DB (предварительная версия)<a name="cosmos-db"></a>
 
 Оповещения Azure Cosmos DB создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям Azure Cosmos DB или использовать их.
 
