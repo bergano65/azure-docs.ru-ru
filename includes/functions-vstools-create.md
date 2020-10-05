@@ -9,10 +9,10 @@ ms.date: 06/04/2020
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: 164620bdcee7ac546468354f999dcb3ad96ecf4b
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
-ms.translationtype: MT
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "84731055"
 ---
 С помощью шаблона проекта Функций Azure в Visual Studio можно создать проект, а затем опубликовать его в приложении-функции в Azure. Приложение-функция позволяет группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими.

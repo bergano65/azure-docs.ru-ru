@@ -3,12 +3,12 @@ title: Создание политик гостевой конфигурации
 description: Узнайте, как создать политику гостевой конфигурации в службе "Политика Azure" для Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 36e71f00a4613e1723645f48d9e57aed9e1e9a8a
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 3c8ab71b4ffc87209d190bc7ede0257f1377ff2b
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88719399"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91728936"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Создание политик гостевой конфигурации для Windows
 
@@ -23,8 +23,6 @@ ms.locfileid: "88719399"
 Используйте следующие действия, чтобы создать собственную конфигурацию для проверки состояния виртуальной машины Azure или виртуальной машины, отличной от Azure.
 
 > [!IMPORTANT]
-> Настраиваемые политики с гостевой конфигурацией доступны в предварительной версии.
->
 > Для аудита виртуальных машин Azure требуется расширение гостевой конфигурации.
 > Чтобы развернуть расширение в масштабе на всех компьютерах Windows, назначьте следующие определения политик: `Deploy prerequisites to enable Guest Configuration Policy on Windows VMs`
 
@@ -403,13 +401,22 @@ New-AzRoleDefinition -Role $role
 В следующем примере создается определение политики для аудита службы, для которого пользователь выбирает значение из списка во время назначения политики.
 
 ```azurepowershell-interactive
+# This DSC Resource text:
+Service 'UserSelectedNameExample'
+      {
+          Name = 'ParameterValue'
+          Ensure = 'Present'
+          State = 'Running'
+      }
+
+# Would require the following hashtable:
 $PolicyParameterInfo = @(
     @{
         Name = 'ServiceName'                                            # Policy parameter name (mandatory)
         DisplayName = 'windows service name.'                           # Policy parameter display name (mandatory)
         Description = "Name of the windows service to be audited."      # Policy parameter description (optional)
         ResourceType = "Service"                                        # DSC configuration resource type (mandatory)
-        ResourceId = 'windowsService'                                   # DSC configuration resource property name (mandatory)
+        ResourceId = 'UserSelectedNameExample'                                   # DSC configuration resource id (mandatory)
         ResourcePropertyName = "Name"                                   # DSC configuration resource property name (mandatory)
         DefaultValue = 'winrm'                                          # Policy parameter default value (optional)
         AllowedValues = @('BDESVC','TermService','wuauserv','winrm')    # Policy parameter allowed values (optional)

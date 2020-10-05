@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о службе "Цент�
 description: В этой статье содержится список часто задаваемых вопросов о службе "Центры событий Azure" и ответы на эти вопросы.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: aa108d961fca3819b0747332c363b324c05b7994
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 65b6fd40c66ec055a5b80ccea9d2dd9ba1510d54
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91318506"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91729106"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы о Центрах событий
 
@@ -270,6 +270,20 @@ bootstrap.servers=dummynamespace.servicebus.windows.net:9093 request.timeout.ms=
 Техническая поддержка для концентраторов событий доступна на [Странице Майкрософт с вопросами и ответами для Служебной шины Azure](/answers/topics/azure-service-bus.html). Поддержка по выставлению счетов и управлению подпиской предоставляется бесплатно.
 
 Дополнительные сведения о соглашении об уровне обслуживания см. на странице [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
+
+## <a name="azure-stack-hub"></a>Azure Stack Hub
+
+### <a name="how-can-i-target-a-specific-version-of-azure-storage-sdk-when-using-azure-blob-storage-as-a-checkpoint-store"></a>Как можно выбрать конкретную версию пакета SDK службы хранилища Azure при использовании хранилища BLOB-объектов Azure в качестве хранилища контрольных точек?
+Если запустить этот код в центре Azure Stack, вы получите ошибки во время выполнения, если вы не планируете использовать конкретную версию API хранилища. Это связано с тем, что пакет SDK для концентраторов событий использует последний доступный API службы хранилища Azure, доступный в Azure, который может быть недоступен на вашей платформе Azure Stack концентратора. Центр Azure Stack может поддерживать другую версию пакета SDK для большого двоичного объекта хранилища, чем обычно они доступны в Azure. Если вы используете хранилище блогов Azure в качестве хранилища контрольных точек, проверьте [поддерживаемую версию API службы хранилища Azure для сборки Azure Stackного центра](/azure-stack/user/azure-stack-acs-differences?#api-version) и нацеливание на эту версию в коде. 
+
+Например, если вы используете Azure Stack Hub версии 2005, самая высокая доступная версия для службы хранилища — версия 2019-02-02. По умолчанию клиентская библиотека пакета SDK для концентраторов событий использует самую новую доступную версию в Azure (2019-07-07 на момент выпуска пакета SDK). В этом случае, помимо выполнения действий, описанных в этом разделе, необходимо также добавить код для API службы хранилища версии 2019-02-02. Пример назначения конкретной версии API хранилища см. в следующих примерах для C#, Java, Python и JavaScript/TypeScript.  
+
+Пример назначения определенной версии API хранилища из кода см. в следующих примерах на сайте GitHub: 
+
+- [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs)
+- [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithCustomStorageVersion.java)
+- Python — [синхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob/samples/receive_events_using_checkpoint_store_storage_api_version.py), [асинхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/receive_events_using_checkpoint_store_storage_api_version_async.py)
+- [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript/receiveEventsWithApiSpecificStorage.js) и [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript/src/receiveEventsWithApiSpecificStorage.ts)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
