@@ -10,20 +10,24 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 10/21/2019
+ms.date: 09/21/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: cf1fdd3feff76454f0e801d7bd53c63702000014
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b83a44db98907f505c7bf0d8302470cf3031a967
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91271993"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761266"
 ---
 # <a name="register-multiple-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация нескольких виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальных машин SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 Эта статья содержит сведения о массовой регистрации виртуальных машин SQL Server в Azure с помощью поставщика ресурсов виртуальной машины SQL, используя командлет PowerShell `Register-SqlVMs`.
+
+В этой статье содержатся инструкции по регистрации виртуальных машин SQL Server. Кроме того, можно зарегистрировать [все SQL Server виртуальные машины автоматически](sql-vm-resource-provider-automatic-registration.md) или [отдельные SQL Server ВМ](sql-vm-resource-provider-register.md). 
+
+## <a name="overview"></a>Обзор
 
 Командлет `Register-SqlVMs` можно использовать для регистрации всех виртуальных машин в заданном списке подписок, групп ресурсов или в списке конкретных виртуальных машин. Командлет зарегистрирует виртуальные машины в режиме _упрощенного_ управления, а затем создаст [отчет и файл журнала](#output-description). 
 

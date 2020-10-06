@@ -3,12 +3,12 @@ title: Службы обмена сообщениями Azure — Service Manage
 description: Эта статья содержит сведения о нерекомендуемых Service Manager Azure REST API & командлетах PowerShell для диспетчер ресурсов REST API командлетов PowerShell.
 ms.topic: article
 ms.date: 09/25/2020
-ms.openlocfilehash: 30842023004246a71f28ff4093d70a5bb015c05a
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 84335d534c229f40381b913dfca54f42e2da250b
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91367773"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761181"
 ---
 # <a name="deprecation-of-azure-service-manager-support-for-azure-service-bus-relay-and-event-hubs"></a>Нерекомендуемая поддержка Azure Service Manager для служебной шины, ретранслятора и концентраторов событий Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "91367773"
 | **Евенсубскруд — Листевенсубсасинк**<br/>[Список концентраторов событий](/rest/api/eventhub/list-event-hubs)<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/eventhubs?$skip={skip}&$top={top}``` | &nbsp; | [list](/rest/api/servicebus/stable/eventhubs/listbynamespace) | &nbsp; | 
 | **Евенсубскруд — Жетевенсубасинк**<br/>[Получение концентраторов событий](/rest/api/eventhub/get-event-hub)<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/eventhubs/{eventHubPath}``` | &nbsp; | [get](/rest/api/eventhub/get-event-hub) | &nbsp; | 
 | **Намеспацеаусоризатионрулес — Делетенамеспацеаусоризатионрулеасинк**<br/>Служебная шина, концентратор событий/ретранслятор<br/>```DELETE https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/AuthorizationRules/{rule name}``` | [делетеаусоризатионруле](/rest/api/servicebus/stable/namespaces%20-%20authorization%20rules/deleteauthorizationrule) | [делетеаусоризатионруле](/rest/api/eventhub/2017-04-01/authorization%20rules%20-%20namespaces/deleteauthorizationrule) | [делетеаусоризатионруле](/rest/api/relay/namespaces/deleteauthorizationrule) |
-| **Намеспацеаусоризатионрулес — Жетнамеспацеаусоризатионрулесасинк**<br/>Служебная шина/EventHub/ретранслятор<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/AuthorizationRules``` | [листаусоризатионрулес](/rest/api/servicebus/namespaces/listauthorizationrules) | [листаусоризатионрулес](/rest/api/eventhub/2017-04-01/authorization%20rules%20-%20namespaces/listauthorizationrules) | [листаусоризатионрулес](/rest/api/relay/namespaces/listauthorizationrules) |
+| **Намеспацеаусоризатионрулес — Жетнамеспацеаусоризатионрулесасинк**<br/>Служебная шина/EventHub/ретранслятор<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/AuthorizationRules``` | [листаусоризатионрулес](/rest/api/relay/namespaces/listauthorizationrules) | [листаусоризатионрулес](/rest/api/eventhub/2017-04-01/authorization%20rules%20-%20namespaces/listauthorizationrules) | [листаусоризатионрулес](/rest/api/relay/namespaces/listauthorizationrules) |
 | **Намеспацеаваилабилити — Иснамеспацеаваилабле**<br/>[Доступность пространства имен служебной шины](/rest/api/servicebus/check-namespace-availability)<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/CheckNamespaceAvailability/?namespace=<namespaceValue>``` | [checknameavailability](/rest/api/servicebus/stable/namespaces%20-%20checkname%20availability/checknameavailability) | [checknameavailability](/rest/api/eventhub/2017-04-01/check%20name%20availability%20-%20namespaces/checknameavailability) | [checknameavailability](/rest/api/relay/namespaces/checknameavailability) |
 | **Пространства имен — Креатеорупдатенамеспацеасинк**<br/>Служебная шина, концентратор событий/ретранслятор<br/>```PUT https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}``` | [createorupdate](/rest/api/servicebus/stable/namespaces/createorupdate) | [createorupdate](/rest/api/eventhub/2017-04-01/namespaces/createorupdate) | [createorupdate](/rest/api/relay/namespaces/createorupdate) | 
 | **Темы — Жеттопикасинк**<br/>```GET https://management.core.windows.net/{subscription ID}/services/ServiceBus/Namespaces/{namespace name}/topics/{topicPath}``` | [get](/rest/api/servicebus/stable/topics/get) | &nbsp; | &nbsp; |

@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 04/22/2020
-ms.openlocfilehash: 83281a9dde0b29a9f8bfc2bd90114227bf9e769f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 4908f66dbc699a449b7b94febac8133bacc9f669
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90886381"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760975"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Что такое автоматизированное машинное обучение (AutoML)?
 
@@ -39,7 +39,7 @@ ms.locfileid: "90886381"
 
 Основной целью моделей классификации является прогнозирование того, к каким категориям будут относиться новые данные в зависимости от результатов изучения обучающих данных. К общим примерам классификации относятся обнаружение мошенничества, распознавание рукописного текста и обнаружение объектов. Дополнительные сведения см. в примере по [созданию модели классификации с помощью автоматизированного ML](tutorial-first-experiment-automated-ml.md).
 
-Ознакомьтесь с примерами классификации и автоматизированного машинного обучения в следующих записных книжках по Python: [Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb), [Маркетинговое прогнозирование](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [Классификация данных группы новостей](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-text-dnn/auto-ml-classification-text-dnn.ipynb)
+Ознакомьтесь с примерами классификации и автоматизированного машинного обучения в следующих записных книжках по Python: [Обнаружение мошенничества](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb), [Маркетинговое прогнозирование](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) и [Классификация данных группы новостей](https://towardsdatascience.com/automated-text-classification-using-machine-learning-3df4f4f9570b)
 
 ### <a name="regression"></a>Регрессия
 
@@ -275,7 +275,7 @@ ms.locfileid: "90886381"
 
  + **Сведения о низком или недоступном коде**см. в [руководстве по созданию автоматизированных моделей классификации ML с помощью машинное обучение Azure Studio](tutorial-first-experiment-automated-ml.md).
 
-В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. Например, примененная к объекту директива 
+В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. Например, 
 
 + Настройка параметров для экспериментов автоматического обучения
     + В Студии машинного обучения Azure выполните [эти инструкции](how-to-use-automated-ml-for-ml-models.md). 

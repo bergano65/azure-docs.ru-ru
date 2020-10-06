@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: 4a5203a91ba528328dce7036d4690c6dea137c33
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: b524b0d8f24f011065772495bc2bb283a3c90d4a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90054268"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760259"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -430,7 +430,7 @@ WireData
 
 ### <a name="can-i-send-telemetry-to-the-application-insights-portal"></a>Можно ли отправлять данные телеметрии на портал Application Insights?
 
-Мы рекомендуем использовать наши пакеты SDK, а также [API пакета SDK](app/api-custom-events-metrics.md). Существуют разновидности пакетов SDK для разных [платформ](app/platforms.md). Эти пакеты SDK управляют буферизацией, сжатием, регулированием, повторными попытками и другими операциями. Однако [схема приема](https://github.com/microsoft/ApplicationInsights-dotnet/tree/master/BASE/Schema/PublicSchema) и [протокол конечной точки](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/ENDPOINT-PROTOCOL.md) являются открытыми.
+Мы рекомендуем использовать наши пакеты SDK, а также [API пакета SDK](app/api-custom-events-metrics.md). Существуют разновидности пакетов SDK для разных [платформ](app/platforms.md). Эти пакеты SDK управляют буферизацией, сжатием, регулированием, повторными попытками и другими операциями. Однако [схема приема](https://github.com/microsoft/ApplicationInsights-dotnet/tree/master/BASE/Schema/PublicSchema) и [протокол конечной точки](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/EndpointSpecs/ENDPOINT-PROTOCOL.md) являются открытыми.
 
 ### <a name="can-i-monitor-an-intranet-web-server"></a>Можно ли отслеживать веб-сервер в интрасети?
 

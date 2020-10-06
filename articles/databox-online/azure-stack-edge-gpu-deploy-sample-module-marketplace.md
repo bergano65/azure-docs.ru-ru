@@ -1,6 +1,6 @@
 ---
 title: Развертывание модуля GPU на устройстве Microsoft Azure Stack ребра Pro из Azure Marketplace | Документация Майкрософт
-description: В этой статье описывается, как включить функцию "вычисление" и сделать устройство Azure Stack пограничной Pro готовым для вычислений через локальный пользовательский интерфейс.
+description: В этой статье описывается, как развернуть модуль IoT с поддержкой GPU на устройстве Azure Stack ребра Pro GPU.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/09/2020
 ms.author: alkohli
-ms.openlocfilehash: a15e74dd2a1a2737675ef66284f348f33cd753dd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 64d028892298a70e7588863bf9a3f4fc6f4ca609
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90899954"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760065"
 ---
 # <a name="deploy-a-gpu-enabled-iot-module-from-azure-marketplace-on-azure-stack-edge-pro-gpu-device"></a>Развертывание модуля IoT с поддержкой GPU из Azure Marketplace на устройстве Azure Stack с помощью GPU Pro
 
@@ -28,7 +28,7 @@ ms.locfileid: "90899954"
 
 Пример модуля GPU в этой статье включает в себя пример кода для ЦП PyTorch и TensorFlow.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы убедитесь, что у вас есть следующие ресурсы:
 
@@ -55,7 +55,7 @@ ms.locfileid: "90899954"
 
 4. Нажмите кнопку **продолжить** , чтобы подтвердить условия использования и политику конфиденциальности поставщика. 
 
-    ![Получение примера модуля](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/terms-of-use-1.png)
+    ![Получение примера модуля 2](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/terms-of-use-1.png)
 
 5. Выберите подписку, которая использовалась для развертывания устройства Azure Stack ребра Pro.
 
@@ -89,7 +89,7 @@ ms.locfileid: "90899954"
 
 13. Убедитесь, что модуль развернут в центре Интернета вещей в портал Azure. Выберите устройство, щелкните **задать модули**,   и модуль должен быть указан в разделе **модули IOT Edge**   .
 
-    ![Выбор кнопки "Создать"](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/running-module-iotres-1.png)
+    ![Выберите создать 2.](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/running-module-iotres-1.png)
 
 ## <a name="monitor-the-module"></a>Мониторинг модуля  
 

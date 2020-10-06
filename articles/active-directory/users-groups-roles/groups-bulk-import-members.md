@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89b8097aa288be710e95e835bb66904ef2c6ab56
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: add8a533f2b4fba9a9e881442e43030adb7e2b53
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421677"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762014"
 ---
 # <a name="bulk-add-group-members-in-azure-active-directory"></a>Массовое добавление участников в группу в Azure Active Directory
 
@@ -75,7 +75,7 @@ ms.locfileid: "87421677"
 
 ## <a name="bulk-import-service-limits"></a>Ограничения службы массового импорта
 
-Каждое массовое действие для импорта списка участников группы может выполняться в течение одного часа. Это позволяет выполнять импорт списков с не менее чем 40 000 участников.
+Каждое массовое действие для импорта списка участников группы может выполняться в течение одного часа. Это позволяет выполнять импорт списка не более 40 000 членов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

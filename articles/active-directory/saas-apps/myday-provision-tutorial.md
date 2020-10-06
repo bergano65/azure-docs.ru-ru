@@ -15,16 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2020
 ms.author: Zhchia
-ms.openlocfilehash: 15119a76e1e59b339a9012896a525a0ecc91f34d
-ms.sourcegitcommit: 4ce82b6df65ebd81157b6168d3aa4e7323355022
+ms.openlocfilehash: e8d8f2af0350a8b4457f70632341f070c890cba0
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90761536"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761062"
 ---
 # <a name="tutorial-configure-myday-for-automatic-user-provisioning"></a>Учебник. Настройка мидай для автоматической подготовки пользователей
 
-В этом руководстве описываются действия, которые необходимо выполнить в мидай и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп для [мидай](https://www.mydaycloud.com) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
+В этом руководстве описываются действия, которые необходимо выполнить в мидай и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп для [мидай](https://go.mydaycloud.com) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
@@ -125,7 +125,7 @@ ms.locfileid: "90761536"
    |phoneNumbers[type eq "work"].value|Строка|
    |роли [основной EQ "true"]. Отображение|Строка|
    |роли [основной EQ "true"]. Type|Строка|
-   |роли [первичный EQ "true"]. Value|Строка|
+   |roles[primary eq "True"].value|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: rogarana
-ms.openlocfilehash: 50753950556531ed3915292f44668073b88be45b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 03b569422b6ce9e74f77637a514c1c0b28011bed
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91716017"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761147"
 ---
 # <a name="part-three-configure-directory-and-file-level-permissions-over-smb"></a>Часть 3. Настройка разрешений на уровне каталога и файлов по протоколу SMB 
 
@@ -85,7 +85,7 @@ else
 
 ```
 
-Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
+Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://azure.microsoft.com/blog/new-troubleshooting-diagnostics-for-azure-files-mounting-errors-on-windows/). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
 
 ## <a name="configure-windows-acls"></a>Настройка списков управления доступом Windows
 
@@ -116,7 +116,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 Дополнительные сведения об использовании icacls для задания списков управления доступом Windows и различных типов поддерживаемых разрешений см. [в справочнике по командной строке для icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда эта функция включена и настроена, перейдите к следующей статье, в которой вы подключаете файловый ресурс Azure с виртуальной машины, присоединенной к домену.
 

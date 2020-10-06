@@ -1,5 +1,5 @@
 ---
-title: Руководство по выбору размера
+title: Руководство по определению размера
 description: Спланируйте размер развертывания служб данных, поддерживающих службу "Дуга Azure".
 services: azure-arc
 ms.service: azure-arc
@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 7afe00746b133e8376cf32ba874831c7962e85b1
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 3bd54d8a23aca7e493cd3c0ddb7f057a6e1f5362
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90940763"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761487"
 ---
 # <a name="sizing-guidance"></a>Руководство по выбору размера
 
@@ -27,7 +27,7 @@ ms.locfileid: "90940763"
 ## <a name="general-sizing-requirements"></a>Общие требования к размерам
 
 > [!NOTE]
-> Если вы не знакомы с понятиями, изложенными в этой статье, вы можете ознакомиться с дополнительными сведениями о [Kubernetes ресурсов](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) и [нотации размера Kubernetes](https://kubernetes.io/docs/concepts/configuration/.manage-resources-containers/#resource-units-in-kubernetes).
+> Если вы не знакомы с понятиями, изложенными в этой статье, вы можете ознакомиться с дополнительными сведениями о [Kubernetes ресурсов](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) и [нотации размера Kubernetes](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-units-in-kubernetes).
 
 Числа ядер должны быть целым числом, которое больше или равно единице.
 
@@ -60,7 +60,7 @@ ms.locfileid: "90940763"
 |**метриксуи**|20 млн|200Mi|500m|200Mi||
 |**мгмтпрокси**|200m|250Mi|500m|500Mi||
 
-Вы можете переопределить параметры по умолчанию для контролдб и управления модулями Pod в файле профиля развертывания или YAML контроллера.  Пример:
+Вы можете переопределить параметры по умолчанию для контролдб и управления модулями Pod в файле профиля развертывания или YAML контроллера.  Пример.
 
 ```yaml
   resources:

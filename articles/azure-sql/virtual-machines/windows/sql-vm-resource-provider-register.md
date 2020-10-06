@@ -10,21 +10,27 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 11/13/2019
+ms.date: 09/21/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: a197f8a11186d799f320c03a5bbe980b1f38e126
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b48f0429525822d09f08965128df0ceb1e32898a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91272078"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761317"
 ---
 # <a name="register-a-sql-server-vm-in-azure-with-the-sql-vm-resource-provider-rp"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины (RP) SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-В этой статье описывается, как зарегистрировать виртуальную машину SQL Server в Azure с помощью поставщика ресурсов виртуальной машины (RP) SQL. При регистрации с помощью поставщика ресурсов в рамках подписки создается отдельный _ресурс_ **виртуальной машины SQL**. При отмене регистрации виртуальной машины SQL Server в поставщике ресурсов будет удален _ресурс_ **виртуальной машины SQL**, но не будет удалена фактическая виртуальная машина. 
+В этой статье описывается, как зарегистрировать виртуальную машину SQL Server в Azure с помощью поставщика ресурсов виртуальной машины (RP) SQL. 
+
+В этой статье описывается регистрация одной SQL Server виртуальной машины с помощью поставщика ресурсов виртуальной машины SQL. Кроме того, можно зарегистрировать все SQL Server виртуальные машины [автоматически](sql-vm-resource-provider-automatic-registration.md) или [создать скрипты в пакетном](sql-vm-resource-provider-bulk-register.md)режиме.
+
+## <a name="overview"></a>Обзор
+
+При регистрации с помощью поставщика ресурсов в рамках подписки создается отдельный _ресурс_ **виртуальной машины SQL**. При отмене регистрации виртуальной машины SQL Server в поставщике ресурсов будет удален _ресурс_ **виртуальной машины SQL**, но не будет удалена фактическая виртуальная машина.
 
 Развертывание образа виртуальной машины SQL Server из Azure Marketplace через портал Azure предусматривает автоматическую регистрацию виртуальной машины SQL Server в поставщике ресурсов. Однако, если вы решили самостоятельно установить SQL Server на виртуальной машине Azure или подготовили виртуальную машину Azure из пользовательского виртуального жесткого диска, вы должны зарегистрировать виртуальную машину SQL Server в поставщике ресурсов, чтобы получить следующие возможности:
 
@@ -58,7 +64,7 @@ ms.locfileid: "91272078"
 Для регистрации виртуальной машины SQL Server с помощью поставщика ресурсов понадобится: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
-- [Виртуальная машина SQL Server](create-sql-vm-portal.md) модели ресурсов Azure, развернутая в общедоступном облаке или в облаке Azure для государственных организаций. 
+- Модель ресурсов Azure — [Виртуальная машина Windows](../../../virtual-machines/windows/quick-create-portal.md) с [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) , развернутая в общедоступном облаке или Azure для государственных организаций. 
 - Последняя версия [Azure CLI](/cli/azure/install-azure-cli) или [PowerShell](/powershell/azure/new-azureps-module-az). 
 
 ## <a name="management-modes"></a>Режимы управления
@@ -328,11 +334,11 @@ SQL Server 2008 и 2008 R2, установленные в Windows Server 2008 
 
 1. Выберите команду **Удалить**. 
 
-   ![Удаление поставщика ресурсов виртуальной машины SQL](./media/sql-vm-resource-provider-register/delete-sql-vm-resource-provider.png)
+   ![Выберите Удалить в верхней области навигации.](./media/sql-vm-resource-provider-register/delete-sql-vm-resource-provider.png)
 
 1. Введите имя виртуальной машины SQL и **снимите флажок рядом с этой виртуальной машиной**.
 
-   ![Удаление поставщика ресурсов виртуальной машины SQL](./media/sql-vm-resource-provider-register/confirm-delete-of-resource-uncheck-box.png)
+   ![Снимите флажок для виртуальной машины, чтобы предотвратить удаление реальной виртуальной машины, а затем нажмите кнопку Удалить, чтобы продолжить удаление ресурса виртуальной машины SQL.](./media/sql-vm-resource-provider-register/confirm-delete-of-resource-uncheck-box.png)
 
    >[!WARNING]
    > Если не снять флажок рядом с именем виртуальной машины, то она будет *удалена* полностью. Снимите флажок, чтобы отменить регистрацию виртуальной машины SQL Server в поставщике ресурсов и *не удалить фактическую виртуальную машину*. 
@@ -342,7 +348,7 @@ SQL Server 2008 и 2008 R2, установленные в Windows Server 2008 
 ### <a name="command-line"></a>Командная строка
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-Чтобы отменить регистрацию SQL Server виртуальной машины в поставщике ресурсов с помощью Azure CLI, используйте команду [AZ SQL VM Delete](/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-delete) . Это приведет к удалению *ресурса* виртуальной машины SQL Server, но не удалит виртуальную машину. 
+Чтобы отменить регистрацию SQL Server виртуальной машины в поставщике ресурсов с помощью Azure CLI, используйте команду [AZ SQL VM Delete](/cli/azure/sql/vm?view=azure-cli-latest&preserve-view=true#az-sql-vm-delete) . Это приведет к удалению *ресурса* виртуальной машины SQL Server, но не удалит виртуальную машину. 
 
 
 ```azurecli-interactive
@@ -400,7 +406,7 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 
 Да, при регистрации в поставщике ресурсов виртуальной машины SQL на виртуальной машине будет установлен агент.
 
-Расширение SQL Server IaaS использует агент для запроса метаданных SQL Server. Единственный момент, когда агент не установлен, — это то, что поставщик ресурсов виртуальной машины SQL регситеред в режиме "без агента".
+Расширение SQL Server IaaS использует агент для запроса метаданных SQL Server. Агент не устанавливается, когда поставщик ресурсов виртуальной машины SQL регистрируется в режиме "без агента".
 
 **Будет ли регистрация с помощью SQL Server перезапуска поставщика ресурсов виртуальной машины SQL на моей виртуальной машине?**
 
@@ -457,7 +463,7 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 Использование *упрощенного* режима управления и *NoAgent* не влияет на производительность. При использовании режима *полного* управления есть минимальное влияние двух служб, установленных в операционной системе. Их можно отслеживать с помощью диспетчера задач и просматривать во встроенной консоли служб Windows. 
 
 Имена этих двух служб:
-- `SqlIaaSExtensionQuery` (отображаемое имя — `Microsoft SQL Server IaaS Query Service`);
+- `SqlIaaSExtensionQuery` (отображаемое имя — `Microsoft SQL Server IaaS Query Service`).
 - `SQLIaaSExtension` (отображаемое имя — `Microsoft SQL Server IaaS Agent`).
 
 

@@ -8,14 +8,14 @@ ms.service: role-based-access-control
 ms.devlang: na
 ms.topic: how-to
 ms.workload: identity
-ms.date: 08/31/2020
+ms.date: 10/06/2020
 ms.author: rolyon
-ms.openlocfilehash: 6d0c0333186655d4f105337021164814453ab47a
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: fd8192b48f6923a8fe68abf674d6100c8b8e5a00
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91652390"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761878"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Перенос подписки Azure в другой каталог Azure AD
 
@@ -82,7 +82,7 @@ ms.locfileid: "91652390"
 > [!WARNING]
 > Если для ресурса, например учетной записи хранения или базы данных SQL, используется шифрование неактивных ресурсов, которое зависит от хранилища ключей, которое **не** находится в той же подписке, которое передается, это может привести к неустранимому сценарию. В этом случае следует предпринять действия по использованию другого хранилища ключей или временно отключить ключи, управляемые клиентом, чтобы избежать такого неисправимого сценария.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этих действий потребуется:
 
@@ -377,7 +377,7 @@ ms.locfileid: "91652390"
 
 1. Для ресурсов, использующих сертификаты, обновите сертификат.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Передача прав владения на выставление счетов для подписки Azure другой учетной записи](../cost-management-billing/manage/billing-subscription-transfer.md)
 - [Перенос подписок Azure между подписчиками и CSP](../cost-management-billing/manage/transfer-subscriptions-subscribers-csp.md)

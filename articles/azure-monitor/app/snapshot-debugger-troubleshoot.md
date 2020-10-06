@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 935e1832629827b0286a79ab8ea6d1dfbb143e1c
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: bb2ac221169cea84205d087cbe0aadfd035d22db
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707838"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760518"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
 Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Существует множество причин, по которым моментальные снимки могут не создаваться. Проверку работоспособности моментальных снимков можно выполнить для определения некоторых возможных распространенных причин.
@@ -62,7 +62,7 @@ ms.locfileid: "90707838"
 
 ## <a name="upgrade-to-the-latest-version-of-the-nuget-package"></a>Обновление пакета NuGet до последней версии
 
-Если Snapshot Debugger был включен с помощью [панели Application Insights на портале](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json), то в приложении должен быть уже установлен последний пакет NuGet. Если Snapshot Debugger был включен, включив пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) , используйте диспетчер пакетов NuGet Visual Studio, чтобы убедиться, что вы используете последнюю версию Microsoft. ApplicationInsights. SnapshotCollector. Заметки о выпуске можно найти на странице https://github.com/Microsoft/ApplicationInsights-Home/issues/167
+Если Snapshot Debugger был включен с помощью [панели Application Insights на портале](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json), то в приложении должен быть уже установлен последний пакет NuGet. Если Snapshot Debugger был включен, включив пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) , используйте диспетчер пакетов NuGet Visual Studio, чтобы убедиться, что вы используете последнюю версию Microsoft. ApplicationInsights. SnapshotCollector.
 
 ## <a name="check-the-uploader-logs"></a>Проверьте журналы отправителя
 

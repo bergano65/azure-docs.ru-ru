@@ -9,18 +9,18 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 8651921dafd5727f79e4ab3919e188d4b8612465
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: a405a7a32b1f54732589fb14e34ff52db4992028
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939946"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761691"
 ---
 # <a name="create-azure-arc-data-controller-using-the-azure-data-cli-azdata"></a>Создание контроллера данных ARC в Azure с помощью Azure Data CLI (аздата)
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ознакомьтесь с разделом [Создание контроллера данных ARC в Azure](create-data-controller.md) для получения общих сведений.
 
@@ -30,7 +30,7 @@ ms.locfileid: "90939946"
 
 Независимо от выбранной целевой платформы перед созданием учетной записи администратора контроллера данных необходимо задать следующие переменные среды. Эти учетные данные можно предоставить другим пользователям, которым требуется доступ администратора к контроллеру данных по мере необходимости.
 
-**AZDATA_USERNAME** — имя пользователя, выбранного для администратора контроллера данных. Например, `arcadmin`.
+**AZDATA_USERNAME** — имя пользователя, выбранного для администратора контроллера данных. Пример: `arcadmin`
 
 **AZDATA_PASSWORD** — пароль, выбранный для пользователя администратора контроллера данных. Длина пароля должна составлять не менее восьми символов и содержать символы из трех из следующих четырех наборов: прописные буквы, строчные буквы, числа и символы.
 
@@ -155,7 +155,7 @@ azdata arc dc create --profile-name azure-arc-aks-hci --namespace arc --name arc
 > [!NOTE]
 >   Используйте то же пространство имен здесь и в `azdata arc dc create` приведенной ниже команде. Пример: `arc` .
 
-Сначала скачайте настраиваемое ограничение контекста безопасности (SCC) из [GitHub](https://raw.githubusercontent.com/microsoft/azure_arc/master/data_services/deployment/yaml/arc-data-scc.yaml) и примените его к кластеру.
+Сначала скачайте настраиваемое ограничение контекста безопасности (SCC) из [GitHub](https://github.com/microsoft/azure_arc/tree/master/arc_data_services/deploy/yaml) и примените его к кластеру.
 
 Для создания контроллера данных можно выполнить следующую команду:
 > [!NOTE]

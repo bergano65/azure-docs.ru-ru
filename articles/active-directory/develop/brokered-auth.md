@@ -13,12 +13,12 @@ ms.date: 09/17/2020
 ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman, hahamil, brianmel
-ms.openlocfilehash: 2bb48971e86c2b61742735020469865fa969bee3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5042bfad2cfe06c7c368c6b476aa1b02d67bcc9c
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91258419"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760760"
 ---
 # <a name="brokered-authentication-in-android"></a>Проверка подлинности через посредника в Android
 
@@ -95,7 +95,7 @@ keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.k
 
 После создания хэша подписи с помощью *keytool*используйте портал Azure, чтобы создать URI перенаправления:
 
-1. Войдите в [портал Azure](https://protal.azure.com) и выберите приложение Android в **Регистрация приложений**.
+1. Войдите в [портал Azure](https://portal.azure.com) и выберите приложение Android в **Регистрация приложений**.
 1. Выберите **Проверка подлинности**  >  **Добавить платформу**  >  **Android**.
 1. В открывшейся области **Настройка приложения Android** введите созданный ранее **хэш подписи** и **имя пакета**.
 1. Нажмите кнопку **настроить** .

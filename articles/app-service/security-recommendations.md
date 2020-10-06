@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: eba08211355b0f57dd9dd11ec4c18d5912208ec8
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 9f8fba617eb0274a8db7adc5d36c6ff50be10924
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962219"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761385"
 ---
 # <a name="security-recommendations-for-app-service"></a>Рекомендации по безопасности для службы приложений
 
 Эта статья содержит рекомендации по безопасности для службы приложений Azure. Реализация этих рекомендаций поможет вам выполнить обязательства по обеспечению безопасности, как описано в нашей модели общей ответственности, и повысит общую безопасность решений веб-приложений. Дополнительные сведения о том, что делает корпорация Майкрософт для выполнения обязанностей поставщиков услуг, см. в статье [Безопасность инфраструктуры Azure](../security/fundamentals/infrastructure.md).
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 | Рекомендация | Комментарии |
 |-|-|----|
@@ -56,7 +56,7 @@ ms.locfileid: "88962219"
 
 | Рекомендация | Комментарии |
 |-|-|
-|Использование центра безопасности Azure уровня "Стандартный" | [Центр безопасности Azure](../security-center/security-center-app-services.md) встроен в интегрированную службу приложений Azure. Он может выполнять оценки и предоставлять рекомендации по безопасности. |
+|Использование центра безопасности Azure уровня "Стандартный" | [Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/defender-for-app-service-introduction) встроен в интегрированную службу приложений Azure. Он может выполнять оценки и предоставлять рекомендации по безопасности. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

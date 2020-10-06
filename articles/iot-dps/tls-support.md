@@ -7,12 +7,12 @@ ms.service: iot-dps
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: wesmc
-ms.openlocfilehash: 2adda858e6d39d41de49fa843d1ba226b300f8e7
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 3a8910cf0e81bd041d74ef95f45220f1c1e0b34c
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743545"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761300"
 ---
 # <a name="tls-support-in-azure-iot-hub-device-provisioning-service-dps"></a>Поддержка TLS в службе подготовки устройств для центра Интернета вещей Azure (DPS)
 
@@ -73,7 +73,7 @@ az deployment group create -g <your resource group name> --template-file templat
 Экземпляры DPS, настроенные для приема только TLS 1,2, также будут применять следующие комплекты шифров:
 
 
-| Комплекты шифров TLS 1,2 |
+| Рекомендуемые комплекты шифров TLS 1,2 |
 | :--- |
 | `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`<br>`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` |
 

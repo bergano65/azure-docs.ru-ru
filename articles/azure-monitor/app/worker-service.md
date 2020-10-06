@@ -4,12 +4,12 @@ description: Мониторинг приложений .NET Core/. NET Framework
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/11/2020
-ms.openlocfilehash: 2ca5fc2d8f5e9e399fd7dfd3238d0ec16056d537
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 12be39e36c003531b815e137cbd1d360ca7f0fd6
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90007219"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760484"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 
@@ -21,7 +21,7 @@ Application Insights выпускает новый пакет SDK с имене�
 
 Пакет [SDK Application Insights для службы рабочей роли](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) лучше всего подходит для приложений, отличных от HTTP, независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Этот пакет можно использовать в новой добавленной [службе рабочей роли .NET Core 3,0](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [фоновых задачах в ASP.NET Core 2.1/2.2](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true), консольных приложениях (.NET Core/.NET Framework) и т. д.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](./create-new-resource.md).
 
@@ -44,7 +44,7 @@ Application Insights выпускает новый пакет SDK с имене�
 
 ## <a name="net-core-30-worker-service-application"></a>Приложение рабочей службы для .NET Core 3,0
 
-Полный [Пример общего доступа](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights)
+Полный [Пример общего доступа](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights)
 
 1. Загрузка и установка [.NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 2. Создание нового проекта рабочей службы с помощью нового шаблона проекта или командной строки Visual Studio `dotnet new worker`
@@ -124,7 +124,7 @@ Application Insights выпускает новый пакет SDK с имене�
 Кроме того, можно указать ключ инструментирования в любой из следующих переменных среды.
 `APPINSIGHTS_INSTRUMENTATIONKEY` или `ApplicationInsights:InstrumentationKey`
 
-Например: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
+Пример: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 НИ `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
 Как правило, `APPINSIGHTS_INSTRUMENTATIONKEY` указывает ключ инструментирования для приложений, развернутых в веб-приложениях в виде веб-заданий.
@@ -136,7 +136,7 @@ Application Insights выпускает новый пакет SDK с имене�
 
 В [этом](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-2.2&preserve-view=true) документе описывается создание фоновых задач в приложении ASP.NET Core 2.1/2.2.
 
-Полный [Пример общего доступа](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService)
+Полный [Пример общего доступа](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService)
 
 1. Установите Microsoft. ApplicationInsights. Воркерсервице ( https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) пакет приложения).
 2. Добавьте `services.AddApplicationInsightsTelemetryWorkerService();` в `ConfigureServices()` метод, как показано в следующем примере:
@@ -223,7 +223,7 @@ Application Insights выпускает новый пакет SDK с имене�
 
 Как упоминалось в начале этой статьи, новый пакет можно использовать для включения телеметрия Application Insights даже из обычного консольного приложения. Этот пакет предназначен [`NetStandard2.0`](/dotnet/standard/net-standard) для использования и поэтому может использоваться для консольных приложений в .NET Core 2,0 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
 
-Полный [Пример общего доступа](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/ConsoleAppWithApplicationInsights)
+Полный [Пример общего доступа](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/ConsoleAppWithApplicationInsights)
 
 1. Установите Microsoft. ApplicationInsights. Воркерсервице ( https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) пакет приложения).
 
@@ -532,11 +532,11 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 ## <a name="sample-applications"></a>Примеры приложений
 
-[Консольное приложение .NET Core](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/ConsoleAppWithApplicationInsights) Используйте этот пример, если вы используете консольное приложение, написанное на .NET Core (2,0 или более поздней версии) или .NET Framework (4.7.2 или более поздней версии).
+[Консольное приложение .NET Core](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/ConsoleAppWithApplicationInsights) Используйте этот пример, если вы используете консольное приложение, написанное на .NET Core (2,0 или более поздней версии) или .NET Framework (4.7.2 или более поздней версии).
 
-[Фоновые задачи ASP .NET Core с хостедсервицес](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService) Используйте этот пример, если вы используете Asp.Net Core 2.1/2.2 и создаете фоновые задачи в соответствии с [официальным руководством.](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true)
+[Фоновые задачи ASP .NET Core с хостедсервицес](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/BackgroundTasksWithHostedService) Используйте этот пример, если вы используете Asp.Net Core 2.1/2.2 и создаете фоновые задачи в соответствии с [официальным руководством.](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true)
 
-[Рабочая служба .NET Core 3,0](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) Используйте этот пример, если у вас есть приложение рабочей службы .NET Core 3,0 в соответствии с [официальным руководством](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.0&preserve-view=true#worker-service-template)
+[Рабочая служба .NET Core 3,0](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) Используйте этот пример, если у вас есть приложение рабочей службы .NET Core 3,0 в соответствии с [официальным руководством](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.0&preserve-view=true#worker-service-template)
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 

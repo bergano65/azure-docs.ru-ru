@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d06ec62f2ef1438657a4406b0f9a5b2c85feee16
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 30444523bfc26fc0f4eb410957bcc9ee46aff725
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611645"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760875"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Защита доступа к данным в Azure Cosmos DB
 
@@ -104,11 +104,11 @@ CosmosClient client = new CosmosClient(endpointUrl, authorizationKey);
 
     :::image type="content" source="./media/secure-access-to-data/resourcekeyworkflow.png" alt-text="Управление доступом (IAM) на портале Azure: демонстрация безопасности базы данных NoSQL" border="false":::
 
-Создание маркеров ресурсов и управление ими осуществляется собственными клиентскими библиотеками Cosmos DB. Однако если используется REST, то необходимо создать заголовки запросов и проверки подлинности. Дополнительные сведения о создании заголовков проверки подлинности для RESTFUL см. в статье [Управление доступом к Cosmos DB ресурсам](/rest/api/cosmos-db/access-control-on-cosmosdb-resources) или исходный код [пакета SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/AuthorizationHelper.cs) или [ пакета SDK дляNode.js](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts).
+Создание маркеров ресурсов и управление ими осуществляется собственными клиентскими библиотеками Cosmos DB. Однако если используется REST, то необходимо создать заголовки запросов и проверки подлинности. Дополнительные сведения о создании заголовков проверки подлинности для RESTFUL см. в статье [Управление доступом к Cosmos DB ресурсам](/rest/api/cosmos-db/access-control-on-cosmosdb-resources) или исходный код [пакета SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/Authorization/AuthorizationHelper.cs) или [ пакета SDK дляNode.js](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts).
 
 Пример службы среднего уровня, используемой для создания маркеров ресурсов или в качестве брокера, см. в [репозитории приложения ResourceTokenBroker](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers).
 
-## <a name="users"></a>Пользователей<a id="users"></a>
+## <a name="users"></a>Пользователи<a id="users"></a>
 
 Azure Cosmos DB пользователи связаны с базой данных Cosmos.  Каждая база данных может содержать несколько пользователей Cosmos DB или не содержать ни одного. В следующем примере кода показано, как создать Cosmos DB пользователя с помощью [пакета SDK для Azure Cosmos DB .NET v3](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/UserManagement).
 
@@ -122,7 +122,7 @@ User user = await database.CreateUserAsync("User 1");
 > [!NOTE]
 > Каждый Cosmos DB пользователь имеет метод ReadAsync (), который можно использовать для получения списка [разрешений](#permissions) , связанных с пользователем.
 
-## <a name="permissions"></a>Разрешения<a id="permissions"></a>
+## <a name="permissions"></a>Чтение<a id="permissions"></a>
 
 Ресурс разрешения связывается с пользователем и назначается в контейнере, а также на уровне ключа секции. Каждый пользователь может содержать не более одного разрешения. Ресурс разрешения предоставляет доступ к маркеру безопасности, который необходим пользователю при попытке доступа к определенному контейнеру или данным в указанном ключе секции. Существует два уровня доступа, предоставляемых ресурсом разрешения:
 
@@ -168,7 +168,7 @@ CosmosClient client = new CosmosClient(accountEndpoint: "MyEndpoint", authKeyOrR
 4. В **поле назначить доступ к**выберите **пользователь, группа или приложение Azure AD**.
 5. В каталоге выберите пользователя, группу или приложение, которым нужно предоставить доступ.  Каталог можно искать по отображаемому имени, адресу электронной почты или идентификатору объектов.
     Выбранный пользователь, группа или приложение появятся в списке выбранных участников.
-6. Нажмите кнопку **Сохранить**.
+6. Выберите команду **Сохранить**.
 
 Теперь сущность может считывать ресурсы Azure Cosmos DB.
 

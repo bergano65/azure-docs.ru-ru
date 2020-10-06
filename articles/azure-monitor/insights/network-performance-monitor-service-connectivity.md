@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: b7b6a7202392e083aaaa5cdc8adcf0c81cfb0e0d
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.openlocfilehash: 18c07266cec68aaf6e95fe4085b9d21244fecff4
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91403710"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761045"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -29,7 +29,7 @@ ms.locfileid: "91403710"
 ![Монитор подключений службы](media/network-performance-monitor-service-endpoint/service-endpoint-intro.png)
 
 
-## <a name="configuration"></a>Параметр Configuration 
+## <a name="configuration"></a>Конфигурация 
 Чтобы открыть конфигурацию для Монитор производительности сети, откройте [решение монитор производительности сети](network-performance-monitor.md) и выберите **Настройка**.
 
 ![Настройка Монитора производительности сети](media/network-performance-monitor-service-endpoint/npm-configure-button.png)
@@ -99,7 +99,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 Определив, что проблема кроется в сети, щелкните ссылку на представление **Топология**, чтобы определить проблемный прыжок на карте топологии. Пример показан на следующем рисунке. Общая задержка между узлом и конечной точкой приложения составляет 105 мс, а снижение на 96 мс произошло из-за прыжка, помеченного красным цветом. После определения проблемного прыжка можно выполнить корректирующее действие. 
 
-![Тесты монитора подключений службы](media/network-performance-monitor-service-endpoint/service-endpoint-topology.png)
+![Топология конечной точки монитора подключения службы](media/network-performance-monitor-service-endpoint/service-endpoint-topology.png)
 
 ## <a name="diagnostics"></a>Диагностика 
 

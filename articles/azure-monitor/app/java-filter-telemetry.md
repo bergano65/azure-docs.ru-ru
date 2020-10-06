@@ -4,12 +4,12 @@ description: Уменьшите трафик телеметрии с помощ�
 ms.topic: conceptual
 ms.date: 3/14/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 825c807d9af542e8776e3b6361b8f6b6dd08f164
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: e450cf0de7dce4f626fd41252bfeed5fba294c70
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372184"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761011"
 ---
 # <a name="filter-telemetry-in-your-java-web-app"></a>Фильтрация данных телеметрии в веб-приложении Java
 
@@ -78,10 +78,7 @@ ms.locfileid: "87372184"
 
 ```
 
-
-
-
-[Просмотрите полный набор встроенных обработчиков](https://github.com/Microsoft/ApplicationInsights-Java/tree/master/core/src/main/java/com/microsoft/applicationinsights/internal/processor).
+[Просмотрите полный набор встроенных обработчиков](https://github.com/Microsoft/ApplicationInsights-Java/tree/master/core/src/main/java/com/microsoft/applicationinsights/internal).
 
 ## <a name="built-in-filters"></a>Встроенные фильтры
 
@@ -261,7 +258,7 @@ public TelemetryProcessor successFilter() {
 Для `application.properties` передачи этих параметров в пользовательский фильтр необходимо создать собственные параметры фильтра в и использовать внешнюю инфраструктуру конфигурации с пружинной загрузкой. 
 
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 *Мой фильтр не работает.*
 

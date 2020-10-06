@@ -3,12 +3,12 @@ title: Мониторинг производительности веб-прил
 description: Расширенный мониторинг производительности приложений на веб-сайте Java с подключаемым модулем CollectD для Application Insights.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 648d0e5adc289dfeb83a54c3dcb9ab7d25fc1cc4
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: fd061d6dd1f87456b92a61c9a62caaf3ef3189b2
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322607"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761028"
 ---
 # <a name="collectd-linux-performance-metrics-in-application-insights"></a>collectd: метрики производительности Linux в Application Insights
 
@@ -28,7 +28,7 @@ ms.locfileid: "87322607"
 На компьютерах с сервером Unix выполните следующие действия.
 
 1. Установите [collectd](https://collectd.org/) 5.4.0 или более поздней версии.
-2. Загрузите [подключаемый модуль записи Application Insights collectd](https://github.com/microsoft/ApplicationInsights-Java/tree/master/collectd/src/main/java/com/microsoft/applicationinsights/collectd/internal). Запишите номер версии.
+2. Загрузите [подключаемый модуль записи Application Insights collectd](https://github.com/microsoft/ApplicationInsights-Java/tree/master/core/src/main/java/com/microsoft/applicationinsights/internal). Запишите номер версии.
 3. Скопируйте подключаемый модуль JAR в `/usr/share/collectd/java`.
 4. Отредактируйте файл `/etc/collectd/collectd.conf`:
    * Убедитесь, что [подключаемый модуль Java](https://collectd.org/wiki/index.php/Plugin:Java) включен.
