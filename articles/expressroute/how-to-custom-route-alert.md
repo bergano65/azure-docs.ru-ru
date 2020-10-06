@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: e546963a7ca90c7494164af7afefbb4e78b2259b
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 67591e9227ff32e81b973c181da2c1374f0ded47
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91651944"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766673"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
 
@@ -52,7 +52,7 @@ ms.locfileid: "91651944"
 
 ## <a name="create-and-configure-accounts"></a><a name="accounts"></a>Создание и Настройка учетных записей
 
-При создании учетной записи службы автоматизации в портал Azure автоматически создается учетная запись [запуска от имени](../automation/manage-runas-account.md#types-of-run-as-accounts) . Эта учетная запись принимает следующие действия:
+При создании учетной записи службы автоматизации в портал Azure автоматически создается учетная запись [запуска от имени](../automation/automation-security-overview.md#run-as-accounts) . Эта учетная запись принимает следующие действия:
 
 * Создает приложение Azure Active Directory (Azure AD) с самозаверяющим сертификатом. Сама учетная запись запуска от имени имеет сертификат, который необходимо обновлять по умолчанию каждый год.
 
@@ -453,6 +453,6 @@ Logic Apps предоставляет много соединителей эле
 
 :::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Добавить учетную запись службы автоматизации":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке рабочего процесса см. в разделе [Azure Logic Apps](../logic-apps/logic-apps-overview.md).

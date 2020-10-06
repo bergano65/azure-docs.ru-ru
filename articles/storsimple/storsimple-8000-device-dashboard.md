@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: ed624fd5fb86b95e0b79c1c7ed4de50749ec7046
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93d230656fd7ef34e76a143fb3186d23f8d3afed
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512042"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766248"
 ---
 # <a name="use-the-device-summary-in-storsimple-device-manager-service"></a>Использование сводки по устройству в службе диспетчера устройств StorSimple
 
@@ -86,14 +86,14 @@ ms.locfileid: "85512042"
 
 * Элемент **Емкость** содержит сведения о подготовленной и оставшейся емкости основного хранилища на устройстве относительно общего объема хранилища для устройства. В разделе **Подготовлено** приведены сведения о подготовленной и выделенной для использования емкости хранилища, а в разделе **Осталось** — сведения об оставшейся емкости, которую можно подготовить для этого устройства. 
 
-    ![Плитка "Использование"](./media/storsimple-8000-device-dashboard/device-summary8.png)
+    ![Плитка использования 2](./media/storsimple-8000-device-dashboard/device-summary8.png)
 
     Щелкните этот элемент, чтобы просмотреть, как емкость предоставляется через многоуровневые и локально закрепленные тома. Элемент **Оставшаяся многоуровневая емкость** содержит сведения о доступной емкости, которую можно подготовить, в том числе в облаке, а элемент **Оставшаяся локальная емкость** — сведения о емкости, которая осталась на дисках, присоединенных к устройству.
 
     ![Щелкните диаграмму использования](./media/storsimple-8000-device-dashboard/device-summary13.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [использовании колонки сводки службы StorSimple](storsimple-8000-service-dashboard.md)
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

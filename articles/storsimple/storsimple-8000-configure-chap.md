@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: TBD
 ms.date: 05/09/2018
 ms.author: alkohli
-ms.openlocfilehash: 5f0c022de69823aedbbb34eb369de350b4999c69
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 694d63dacedd8ffcd075e73bb91b5ab0a089b58c
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514358"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766495"
 ---
 # <a name="configure-chap-for-your-storsimple-device"></a>Настроить CHAP для устройства StorSimple.
 
@@ -58,8 +58,8 @@ CHAP лучше всего использовать для повышения б
    
    3. Подтвердите пароль.
 
-       ![Инициатор CHAP](./media/storsimple-8000-configure-chap/configure-chap6.png)
-3. Нажмите кнопку **Сохранить**. Вы увидите сообщение с подтверждением. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+       ![Инициатор CHAP 2](./media/storsimple-8000-configure-chap/configure-chap6.png)
+3. Выберите команду **Сохранить**. Вы увидите сообщение с подтверждением. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
 #### <a name="to-configure-one-way-authentication-on-the-windows-host-server"></a>Для настройки односторонней проверки подлинности на сервере узла Windows выполните следующие действия.
 1. Запустите инициатор iSCSI на сервере узла Windows.
@@ -72,7 +72,7 @@ CHAP лучше всего использовать для повышения б
 3. в диалоговом окне **Обнаружить целевой портал**:
    
    1. Укажите IP-адрес устройства.
-   2. Нажмите кнопку **Дополнительно**.
+   2. Щелкните **Дополнительно**.
       
        ![Обнаружение целевого портала](./media/storsimple-configure-chap/IC740945.png)
 4. В диалоговом окне **Дополнительные параметры**:
@@ -112,8 +112,8 @@ CHAP лучше всего использовать для повышения б
    2. Укажите **пароль** для вашего устройства.
    3. Подтвердите пароль.
 
-       ![Инициатор CHAP](./media/storsimple-8000-configure-chap/configure-chap11.png)
-4. Нажмите кнопку **Сохранить**. Вы увидите сообщение с подтверждением. Чтобы сохранить изменения, нажмите кнопку **ОК**.
+       ![Инициатор CHAP 3](./media/storsimple-8000-configure-chap/configure-chap11.png)
+4. Выберите команду **Сохранить**. Вы увидите сообщение с подтверждением. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
 #### <a name="to-configure-bidirectional-authentication-on-the-windows-host-server"></a>Для настройки двунаправленной проверки подлинности на сервере узла Windows выполните следующие действия.
 
@@ -167,7 +167,7 @@ CHAP лучше всего использовать для повышения б
    
     ![Сведения об избранном целевом устройстве](./media/storsimple-configure-chap/IC740952.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [безопасности StorSimple](storsimple-8000-security.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

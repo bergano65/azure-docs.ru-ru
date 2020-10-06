@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 10/05/2020
+ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: 3a61bd16d127afadc2dc4d968b3492f3c8491d29
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 59b2307bb2e1f4effce9f68530be86e9ca625c9c
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743222"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766291"
 ---
 # <a name="manage-an-azure-stack-edge-pro-gpu-device-via-windows-powershell"></a>Управление устройством GPU Azure Stack с помощью Windows PowerShell
 
@@ -430,7 +430,16 @@ DEBUG 2020-05-14T20:42:14Z: loop process - 0 events, 0.000s
 Контроллер управления основной платой (BMC) используется для удаленного мониторинга и управления устройством. В этом разделе описываются командлеты, которые можно использовать для управления конфигурацией контроллера BMC. Перед запуском любого из этих командлетов [подключитесь к интерфейсу PowerShell устройства](#connect-to-the-powershell-interface).
 
 - `Get-HcsNetBmcInterface`: Используйте этот командлет для получения свойств конфигурации сети контроллера BMC, например,,, `IPv4Address` `IPv4Gateway` `IPv4SubnetMask` `DhcpEnabled` : 
-
+    
+    Пример выходных данных:
+    
+    ```powershell
+    [10.100.10.10]: PS>Get-HcsNetBmcInterface
+    IPv4Address   IPv4Gateway IPv4SubnetMask DhcpEnabled
+    -----------   ----------- -------------- -----------
+    10.128.53.186 10.128.52.1 255.255.252.0        False
+    [10.100.10.10]: PS>
+    ```
 - `Set-HcsNetBmcInterface`. Этот командлет можно использовать в следующих двух случаях.
 
     - Используйте командлет, чтобы включить или отключить конфигурацию DHCP для BMC с помощью соответствующего значения `UseDhcp` параметра. 

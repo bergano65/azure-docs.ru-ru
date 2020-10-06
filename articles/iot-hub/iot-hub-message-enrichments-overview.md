@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: 08eb5fd4d28421105988d64b99afb441a0b824f4
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 792486a78dfed606ce8317d9bc037221ae33d508
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290305"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91767203"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages"></a>Дополнения сообщений для сообщений центра Интернета вещей, отправляемых с устройства в облако
 
@@ -86,7 +86,7 @@ ms.locfileid: "87290305"
 
 * Общий размер сообщения, включая дополнения, не может превышать 256 КБ. Если размер сообщения превышает 256 КБ, то центр Интернета вещей удаляет сообщение. [Метрики центра Интернета вещей](iot-hub-metrics.md) можно использовать для обнаружения и отладки ошибок при удалении сообщений. Например, можно отслеживать D2C. телеметрии. исходящем. недопустимый.
 
-* Обогащение сообщений не применяется к событиям изменения цифровых двойника (в составе [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md)).
+* Обогащения сообщений не применяются к событиям изменения цифровых двойника.
 
 ## <a name="pricing"></a>Цены
 

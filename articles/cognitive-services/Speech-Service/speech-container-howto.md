@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 09/28/2020
+ms.date: 10/05/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: локальная среда, Docker, контейнер
-ms.openlocfilehash: 45edd1b13d4fe6f78eb127e7aad8feb611bce1d1
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: ed14b0b90fadf02ee23852ebce9a60b758b82573
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91460056"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766468"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Установка и запуск контейнеров DOCKER для API-интерфейсов речевой службы 
 
@@ -54,7 +54,7 @@ ms.locfileid: "91460056"
 
 Перед использованием речевых контейнеров выполните следующие предварительные требования.
 
-| Обязательный | Цель |
+| Обязательно | Назначение |
 |--|--|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
@@ -80,7 +80,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера речи.
 
-| Контейнер | Минимальные | Рекомендуется |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
@@ -138,6 +138,9 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 | Пользовательский текст в речь | `mcr.microsoft.com/azure-cognitive-services/speechservices/custom-text-to-speech:latest` |
 
 # <a name="speech-language-detection"></a>[Речь распознавание языка](#tab/lid)
+
+> [!TIP]
+> Для получения наилучших результатов мы рекомендуем использовать контейнер обнаружения языка распознавания речи с текстовыми или пользовательскими контейнерами преобразования речи в текст. 
 
 | Контейнер | Хранилище |
 |-----------|------------|
@@ -303,7 +306,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер преобразования *речи в текст* из образа контейнера.
 * Выделяет 4 ядра ЦП и 4 гигабайта (ГБ) памяти.
@@ -331,7 +334,7 @@ CloudAI:SentimentAnalysisSettings:TextAnalyticsHost={TEXT_ANALYTICS_HOST} \
 CloudAI:SentimentAnalysisSettings:SentimentAnalysisApiKey={SENTIMENT_APIKEY}
 ```
 
-Эта команда:
+Команда:
 
 * Выполняет те же действия, что и приведенная выше команда.
 * Хранит API анализа текстаную конечную точку и ключ для отправки запросов анализа тональности. 
@@ -379,7 +382,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Выполняет *пользовательское распознавание речиный* контейнер из образа контейнера.
 * Выделяет 4 ядра ЦП и 4 гигабайта (ГБ) памяти.
@@ -401,7 +404,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Выполняет стандартный контейнер преобразования *текста в речь* из образа контейнера.
 * Выделяется 1 ядро ЦП и 2 гигабайта (ГБ) памяти.
@@ -420,7 +423,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер *нейронного текста в речь* из образа контейнера.
 * Выделяет 6 ядер ЦП и 12 гигабайт (ГБ) памяти.
@@ -460,7 +463,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Выполняет пользовательский контейнер преобразования *текста в речь* из образа контейнера.
 * Выделяется 1 ядро ЦП и 2 гигабайта (ГБ) памяти.
@@ -482,7 +485,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда: 
+Команда: 
 
 * Запускает контейнер обнаружения языка распознавания речи из образа контейнера. В настоящее время вам не придется начисляться на выполнение этого образа.
 * Выделяет 1 ядро ЦП и 1 гигабайт (ГБ) памяти.
@@ -652,7 +655,7 @@ speech_config.set_service_property(
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 При запуске или запуске контейнера могут возникнуть проблемы. Используйте [Подключение](speech-container-configuration.md#mount-settings) к выходным данным и включите ведение журнала. Это позволит контейнеру создавать файлы журналов, которые полезны при устранении неполадок.
 
@@ -670,7 +673,7 @@ speech_config.set_service_property(
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску речевых контейнеров. В разделе "Сводка" сделайте следующее.
 

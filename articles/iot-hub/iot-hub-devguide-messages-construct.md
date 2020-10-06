@@ -11,12 +11,12 @@ ms.author: asrastog
 ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: dd2b88d923d0398dc42362242b94b978ccd24252
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 06db7b46d095a79177b80bba6df3d5e9aadad16b
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87336724"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766971"
 ---
 # <a name="create-and-read-iot-hub-messages"></a>Создание и чтение сообщений Центра Интернета вещей
 
@@ -61,16 +61,16 @@ ms.locfileid: "87336724"
 | iothub-connection-module-id |Центр Интернета вещей устанавливает этот идентификатор в сообщениях, отправляемых с устройства в облако. Содержит идентификатор **moduleId** устройства, с которого было отправлено сообщение. | нет | connectionModuleId |
 | iothub-connection-auth-generation-id |Центр Интернета вещей устанавливает этот идентификатор в сообщениях, отправляемых с устройства в облако. Содержит идентификатор **generationId** устройства, с которого было отправлено сообщение (согласно разделу [Свойства удостоверений устройств](iot-hub-devguide-identity-registry.md#device-identity-properties)). | нет |connectionDeviceGenerationId |
 | iothub-connection-auth-method |Центр Интернета вещей устанавливает этот метод проверки подлинности в сообщениях, отправляемых с устройства в облако. Это свойство содержит сведения о методе проверки подлинности, используемом для аутентификации устройства, отправляющего сообщение.| нет | connectionAuthMethod |
-| DT — схема схемы | Это значение задается центром Интернета вещей в сообщениях, отправляемых с устройства в облако. Он содержит идентификатор модели устройства, заданный в подключении устройства. Эта функция доступна как часть [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). | Нет | Недоступно |
-| DT-subject | Имя компонента, отправляющего сообщения, отправляемые с устройства в облако. Эта функция доступна как часть [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). | Да | Н/Д |
+| DT — схема схемы | Это значение задается центром Интернета вещей в сообщениях, отправляемых с устройства в облако. Он содержит идентификатор модели устройства, заданный в подключении устройства. | Нет | Недоступно |
+| DT-subject | Имя компонента, отправляющего сообщения, отправляемые с устройства в облако. | Да | Н/Д |
 
 ## <a name="system-properties-of-c2d-iot-hub-messages"></a>Системные свойства сообщений Центра Интернета вещей **C2D**
 
 | Свойство | Описание  |Задается пользователем?|
 | --- | --- | --- |
 | message-id |Задаваемый пользователем идентификатор сообщения, используемый для шаблонов типа "запрос-ответ". Формат: Строка с учетом регистра (длиной до 128 символов), состоящая из букв и цифр в 7-битовом формате ASCII + `{'-', ':', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}`.  |Да|
-| sequence-number |Число (уникальное для каждой очереди устройства), которое Центр Интернета вещей назначает каждому сообщению, отправленному из облака на устройство. |Нет|
-| значение |Место назначения, которое указывается в сообщениях, отправляемых [из облака на устройство](iot-hub-devguide-c2d-guidance.md) . |Нет|
+| sequence-number |Число (уникальное для каждой очереди устройства), которое Центр Интернета вещей назначает каждому сообщению, отправленному из облака на устройство. |нет|
+| значение |Место назначения, которое указывается в сообщениях, отправляемых [из облака на устройство](iot-hub-devguide-c2d-guidance.md) . |нет|
 | absolute-expiry-time |Дата и время истечения срока действия сообщения. |нет|   |
 | correlation-id |Строковое свойство в сообщении ответа, которое обычно содержит идентификатор сообщения запроса в шаблонах "запрос-ответ". |Да|
 | user-id |Идентификатор, используемый для указания источника сообщений. Если сообщения создает центр Интернета вещей, для этого параметра задается значение `{iot hub name}`. |Да|
@@ -90,7 +90,7 @@ ms.locfileid: "87336724"
 |Метод проверки подлинности подключения|iothub-connection-auth-method|connectionAuthMethod|iothub-connection-auth-method|iothub-connection-auth-method|
 |сontentType|content-type|сontentType|ContentType|iothub-content-type|
 |contentEncoding|content-encoding|contentEncoding|ContentEncoding|iothub-content-encoding|
-|iothub-enqueuedtime|iothub-enqueuedtime|enqueuedTime| Н/Д |iothub-enqueuedtime|
+|iothub-enqueuedtime|iothub-enqueuedtime|enqueuedTime| Недоступно |iothub-enqueuedtime|
 |CorrelationId|correlation-id|correlationId|CorrelationId|correlation-id|
 |DT — схема схемы|DT — схема схемы|DT — схема схемы|DT — схема схемы|DT — схема схемы|
 |DT-subject|DT-subject|DT-subject|DT-subject|DT-subject|

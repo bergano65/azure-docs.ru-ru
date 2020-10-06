@@ -13,12 +13,12 @@ ms.custom:
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
 - contperfq1
-ms.openlocfilehash: 0a5cf5ad4a7cbf7d732d1fafdcafd434cba20d13
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.openlocfilehash: 720d8f3b1f3d13427cda56ee68596d190ac40dc7
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91664942"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91767316"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -119,7 +119,7 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 
 * DeviceTwinMQTTWin32: содержит код для запроса событий двойника устройства в центре Интернета вещей на компьютере Windows и подписки на них.
 
-* PnPMQTTWin32: содержит код для отправки сообщения телеметрии с возможностями устройства IoT Plug and Play (предварительная версия) в центр Интернета вещей Azure, который создается и запускается на компьютере Windows. Дополнительные сведения см. в статье [Plug & Play](https://docs.microsoft.com/azure/iot-pnp/overview-iot-plug-and-play) .
+* PnPMQTTWin32: содержит код для отправки сообщения телеметрии с помощью возможностей устройств IoT Plug and Play в центр Интернета вещей Azure, которые создаются и запускаются на компьютере Windows. Дополнительные сведения см. в статье [IoT Plug and Play](https://docs.microsoft.com/azure/iot-pnp/overview-iot-plug-and-play)
 
 **Для Linux.**
 

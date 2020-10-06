@@ -3,14 +3,14 @@ title: Управление переменными в службе автома�
 description: В этой статье рассказывается, как работать с переменными в модулях runbook и конфигурациях DSC.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 09/10/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 300bfa2ed801b810bcaaeb5bc4d04775d590015b
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: 4749fcb6698ff1716f2cae257cc0efad458bf9a9
+ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90004571"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91766187"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Управление переменными в службе автоматизации Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "90004571"
 
 Переменная не ограничена указанным типом данных. Если значение должно иметь другой тип, следует задать его с помощью Windows PowerShell. Если указать `Not defined`, значение переменной будет задано равным NULL. Значение задается с помощью командлета [Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) или внутреннего командлета `Set-AutomationVariable`.
 
-Создать или изменить значение сложной переменной на портале Azure невозможно. Однако с помощью Windows PowerShell можно указать значение любого типа. Сложные типы возвращаются в виде [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject).
+Создать или изменить значение сложной переменной на портале Azure невозможно. Однако с помощью Windows PowerShell можно указать значение любого типа. Сложные типы извлекаются в виде [Newtonsoft.Js. LINQ. Жпроперти](https://www.newtonsoft.com/json/help/html/N_Newtonsoft_Json_Linq.htm) для сложного типа объекта вместо типа PSObject [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject).
 
 Можно сохранить несколько значений в отдельной переменной, создав массив или хэш-таблицу и сохранив ее в переменную.
 
@@ -56,7 +56,7 @@ ms.locfileid: "90004571"
 
 | Командлет | Описание |
 |:---|:---|
-|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable) | Получает значение существующей переменной. Если значение простого типа, возвращается тот же тип. Если это сложный тип, возвращается тип `PSCustomObject`. <br>**Примечание.**  Этот командлет нельзя использовать для получения значения зашифрованной переменной. Единственный способ получить такое значение — использовать внутренний командлет `Get-AutomationVariable` в модуле runbook или конфигурации DSC. См. раздел [Внутренние командлеты для доступа к переменным](#internal-cmdlets-to-access-variables). |
+|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable) | Получает значение существующей переменной. Если значение простого типа, возвращается тот же тип. Если это сложный тип, возвращается тип `PSCustomObject`. <br>**Примечание.** Этот командлет нельзя использовать для получения значения зашифрованной переменной. Единственный способ получить такое значение — использовать внутренний командлет `Get-AutomationVariable` в модуле runbook или конфигурации DSC. См. раздел [Внутренние командлеты для доступа к переменным](#internal-cmdlets-to-access-variables). |
 |[New-AzAutomationVariable](/powershell/module/az.automation/new-azautomationvariable) | Создает новую переменную и устанавливает ее значение.|
 |[Remove-AzAutomationVariable](/powershell/module/az.automation/remove-azautomationvariable)| Удаляет существующую переменную.|
 |[Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable)| Получает значение существующей переменной. |
@@ -74,7 +74,7 @@ ms.locfileid: "90004571"
 > Не следует использовать переменные в параметре `Name` командлета `Get-AutomationVariable`, вызываемого из runbook или конфигурации DSC. Такие переменные могут усложнить обнаружение зависимостей между модулями runbook и переменными службы автоматизации во время разработки.
 
 Командлет `Get-AutomationVariable` не работает в PowerShell. Он работает только в модуле runbook или конфигурации DSC. Например, чтобы увидеть значение зашифрованной переменной, можно создать модуль runbook для получения переменной, а затем записать ее в выходной поток:
- 
+
 ```powershell
 $mytestencryptvar = Get-AutomationVariable -Name TestVariable
 Write-output "The encrypted value of the variable is: $mytestencryptvar"
@@ -123,18 +123,18 @@ $string = (Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
 ```
 
-В приведенном ниже примере показано, как создать переменную сложного типа и вернуть ее свойства. В данном случае используется объект виртуальной машины из [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM).
+В приведенном ниже примере показано, как создать переменную сложного типа и вернуть ее свойства. В этом случае используется объект виртуальной машины из [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM) , указывающий подмножество его свойств.
 
 ```powershell
-$vm = Get-AzVM -ResourceGroupName "ResourceGroup01" –Name "VM01"
-New-AzAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable" –Encrypted $false –Value $vm
+$vm = Get-AzVM -ResourceGroupName "ResourceGroup01" –Name "VM01" | Select Name, Location, Extensions
+New-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable" –Encrypted $false –Value $vm
 
-$vmValue = (Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
-–AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable").Value
+$vmValue = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
+–AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable"
+
 $vmName = $vmValue.Name
-$vmIpAddress = $vmValue.IpAddress
+$vmExtensions = $vmValue.Extensions
 ```
-
 ## <a name="textual-runbook-examples"></a>Примеры текстовых модулей runbook
 
 ### <a name="retrieve-and-set-a-simple-value-from-a-variable"></a>Получение и задание простого значения переменной
