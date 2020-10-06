@@ -9,14 +9,14 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: a51799334749963a4771108857f448c5d081e7ea
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 31832c13ddee848864dcfe0d796deb7fcdcd8359
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323100"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90526550"
 ---
-# <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-java-device-sdk-for-azure-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства доверенного платформенного модуля с помощью пакета SDK службы устройства Java для службы подготовки устройств Центра Интернета вещей Azure
+# <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-java-device-sdk-for-azure-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства доверенного платформенного модуля с помощью пакета SDK Java для Службы подготовки устройств к добавлению в Центр Интернета вещей.
 
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-tpm](../../includes/iot-dps-selector-quick-create-simulated-device-tpm.md)]
 
@@ -24,7 +24,7 @@ ms.locfileid: "87323100"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ознакомление со статьей о [принципах автоматической подготовки устройств](concepts-auto-provisioning.md).
+- Ознакомьтесь с принципами [подготовки к работе](about-iot-dps.md#provisioning-process).
 - Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 - Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Пакет SDK для Java SE 8](https://aka.ms/azure-jdks).
@@ -98,8 +98,8 @@ ms.locfileid: "87323100"
 
 Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
 
-- [Группы регистрации](concepts-service.md#enrollment-group). Используются для регистрации нескольких связанных устройств.
-- [Индивидуальные регистрации.](concepts-service.md#individual-enrollment) Предназначены для регистрации одного устройства.
+- [группы регистрации](concepts-service.md#enrollment-group) — используются для регистрации нескольких связанных устройств;
+- [индивидуальная регистрация](concepts-service.md#individual-enrollment) — используется для регистрации одного устройства.
 
 В этой статье описана индивидуальная регистрация.
 

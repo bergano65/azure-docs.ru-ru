@@ -7,15 +7,15 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 360af0406a816a02540881962ed8794d69ce3bbb
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 2d67d3d695ce6ba90e01603e262fb014fffc9709
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531818"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90561590"
 ---
-# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
-В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
+# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
+В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие папки Azure поддерживают стандартный отраслевой протокол SMB и протокол NFS (предварительная версия), а также позволяют совместно использовать файлы на нескольких компьютерах, в нескольких приложениях и экземплярах. 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -40,7 +40,7 @@ New-AzResourceGroup `
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 Учетная запись хранения представляет собой общий пул носителей, который можно использовать для развертывания общих папок Azure. Учетная запись хранения может содержать любое количество общих ресурсов, а общий ресурс может содержать любое количество файлов, насколько позволяет емкость учетной записи хранения. В этом примере создается версия 2 общего назначения (учетная запись хранения GPv2), которая может хранить общие папки Azure ценовой категории "Стандартный" или другие ресурсы хранения, такие как большие двоичные объекты или очереди, на вращающемся носителе жесткого диска (HDD). Служба "Файлы Azure" также поддерживает твердотельные накопители (SSD) ценовой категории "Премиум". Общие папки Azure этой категории можно создать в учетных записях хранения Файлов.
 
-В этом примере создается учетная запись хранения с помощью командлета [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Учетная запись хранения называется *mystorageaccount\<random number>* , и к переменной **$storageAcct** добавляется ссылка на эту учетную запись. Имена учетных записей хранения должны быть уникальными. Чтобы сделать имя уникальным, используйте команду `Get-Random` для добавления к нему номера. 
+В этом примере создается учетная запись хранения с помощью командлета [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Учетная запись хранения называется *mystorageaccount\<random number>*, и к переменной **$storageAcct** добавляется ссылка на эту учетную запись. Имена учетных записей хранения должны быть уникальными. Чтобы сделать имя уникальным, используйте команду `Get-Random` для добавления к нему номера. 
 
 ```azurepowershell-interactive 
 $storageAccountName = "mystorageacct$(Get-Random)"
@@ -66,6 +66,7 @@ $shareName = "myshare"
 New-AzRmStorageShare `
     -StorageAccount $storageAcct `
     -Name $shareName `
+    -EnabledProtocol SMB `
     -QuotaGiB 1024 | Out-Null
 ```
 
@@ -161,6 +162,7 @@ $otherShareName = "myshare2"
 New-AzRmStorageShare `
     -StorageAccount $storageAcct `
     -Name $otherShareName `
+    -EnabledProtocol SMB `
     -QuotaGiB 1024 | Out-Null
   
 New-AzStorageDirectory `

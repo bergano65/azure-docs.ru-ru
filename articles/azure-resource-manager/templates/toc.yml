@@ -379,7 +379,7 @@
           href: key-vault-parameter.md
     - name: CI/CD
       items:
-        - name: Проект Visual Studio с конвейерами
+        - name: Шаблоны ARM с конвейерами
           href: add-template-to-azure-pipelines.md
         - name: "Развертывание\_— GitHub Actions"
           href: deploy-github-actions.md

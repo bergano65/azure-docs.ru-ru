@@ -14,14 +14,14 @@ ms.author: dbradish
 ms.reviewer: thsomasu
 ms.lastreviewed: 03/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f1829b6d8ab7b2cab0734ffd3cbab295e6c39678
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 5361931328ed107c7cc130b633a40b1582828aa1
+ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87761116"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90024144"
 ---
-# <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Краткое руководство. Создание концентратора уведомлений Azure с помощью Azure CLI
+# <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Создание концентратора уведомлений Azure с помощью Azure CLI
 
 Центры уведомлений Azure обеспечивают простой в использовании и масштабируемый механизм отправки push-уведомлений, который позволяет отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle, Baidu и т. д.) из любой серверной части (облачной или локальной). Дополнительные сведения о службе см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
@@ -29,37 +29,30 @@ ms.locfileid: "87761116"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Для работы с концентраторами уведомлений требуется Azure CLI версии не ниже 2.0.67. Запустите `az --version`, чтобы узнать установленную версию и зависимые библиотеки. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
+> [!IMPORTANT]
+> Для работы с концентраторами уведомлений требуется Azure CLI версии не ниже 2.0.67. Запустите `az --version`, чтобы узнать установленную версию и зависимые библиотеки. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
 
-## <a name="prepare-your-environment"></a>Подготовка среды
+## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
 
-1. Выполните вход с помощью команды [az login](/cli/azure/reference-index#az-login), если вы используете локальную установку CLI.
+При работе со ссылками на расширения для Azure CLI необходимо сначала установить расширение. Расширения Azure CLI предоставляют доступ к экспериментальным командам и предварительным выпускам команд, которые еще не поставлялись как часть основного CLI. Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
 
-    ```azurecli
-    az login
-    ```
+Установите расширение Azure CLI для Центров уведомлений.
 
-    Выполните аутентификацию, следуя инструкциям в окне терминала.
+```azurecli
+az extension add --name notification-hub
+```
 
-2. При работе со ссылками на расширения для Azure CLI необходимо сначала установить расширение. Расширения Azure CLI предоставляют доступ к экспериментальным командам и предварительным выпускам команд, которые еще не поставлялись как часть основного CLI. Дополнительные сведения о расширениях, включая обновление и удаление, см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-   Установите [расширение для Центров уведомлений](/cli/azure/ext/notification-hub/notification-hub), выполнив следующую команду:
+Центры уведомлений Microsoft Azure, как и все ресурсы Azure, должны быть развернуты в группе ресурсов.  Группы ресурсов позволяют организовать соответствующие ресурсы Azure и управлять ими.  Дополнительные сведения о группе ресурсов см. в статье [Azure Resource Manager](/azure/azure-resource-manager/management/overview).
 
-    ```azurecli
-    az extension add --name notification-hub
-   ```
+Для работы с этим кратким руководством создайте группу ресурсов с именем **spnhubrg** в регионе **eastus** с помощью следующей команды [az group create](/cli/azure/group#az-group-create).
 
-3. Создайте группу ресурсов.
-
-   Центры уведомлений Microsoft Azure, как и все ресурсы Azure, должны быть развернуты в группе ресурсов. Группы ресурсов позволяют организовать соответствующие ресурсы Azure и управлять ими.
-
-   Для этого краткого руководства создайте группу ресурсов с именем _spnhubgr_ в регионе _eastus_ с помощью следующей команды [az group create](/cli/azure/group#az-group-create):
-
-   ```azurecli
-   az group create --name spnhubrg --location eastus
-   ```
+```azurecli
+az group create --name spnhubrg --location eastus
+```
 
 ## <a name="create-a-notification-hubs-namespace"></a>Создание пространства имен Центров уведомлений
 
@@ -109,7 +102,7 @@ ms.locfileid: "87761116"
 
 2. Получите список пространств имен.
 
-   Чтобы просмотреть сведения о новом пространстве имен, выполните команду [az notification-hub namespace list](/cli/azure/ext/notification-hub/notification-hub/namespace?view=azure-cli-latest#ext-notification-hub-az-notification-hub-namespace-list). Параметр `--resource-group` является необязательным, если требуется просмотреть все пространства имен для подписки.
+   Чтобы просмотреть сведения о новом пространстве имен, выполните команду [az notification-hub namespace list](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-list). Параметр `--resource-group` является необязательным, если требуется просмотреть все пространства имен для подписки.
 
    ```azurecli
    az notification-hub namespace list --resource-group spnhubrg
@@ -135,7 +128,7 @@ ms.locfileid: "87761116"
 
 3. Получите список концентраторов уведомлений.
 
-   С каждой выполненной командой Azure CLI возвращает либо успешное сообщение, либо сообщение об ошибке. Тем не менее, вы всегда можете запросить список концентраторов уведомлений. Для этой цели была разработана команда [az notification-hub list](/cli/azure/ext/notification-hub/notification-hub?view=azure-cli-latest#ext-notification-hub-az-notification-hub-list).
+   С каждой выполненной командой Azure CLI возвращает либо успешное сообщение, либо сообщение об ошибке. Тем не менее, вы всегда можете запросить список концентраторов уведомлений. Для этой цели была разработана команда [az notification-hub list](/cli/azure/ext/notification-hub/notification-hub#ext-notification-hub-az-notification-hub-list).
 
    ```azurecli
    az notification-hub list --resource-group spnhubrg --namespace-name spnhubns --output table

@@ -214,6 +214,8 @@
               href: functions-create-scheduled-function.md
         - name: Добавление привязок
           items:
+            - name: Как добавить привязку
+              href: add-bindings-existing-function.md
             - name: "Azure Cosmos DB\_— портал"
               href: functions-integrate-store-unstructured-data-cosmosdb.md
             - name: "Хранилище\_— Python"

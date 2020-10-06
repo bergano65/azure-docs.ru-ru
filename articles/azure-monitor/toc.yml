@@ -976,6 +976,8 @@
           href: insights/vminsights-maps.md
         - name: Мониторинг производительности
           href: insights/vminsights-performance.md
+        - name: Мониторинг изменений
+          href: insights/vminsights-change-analysis.md
         - name: Анализ данных с помощью запросов к журналу
           href: insights/vminsights-log-search.md
         - name: Визуализация данных с помощью книг

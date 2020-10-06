@@ -1,121 +1,117 @@
 - name: Документация по коммерческой платформе
   href: index.yml
+  items: null
+- name: О коммерческой платформе Marketplace
+  href: overview.md
+- name: Управление учетными записями
   items:
-    - name: Обновления коммерческой платформы
-      href: marketplace-roadmap.md
-    - name: 'Коммерческая платформа: общие сведения и преимущества'
-      href: marketplace-publishers-guide.md
+    - name: Создание учетной записи Центра партнеров
+      href: partner-center-portal/create-account.md
+    - name: Управление учетной записью
+      href: partner-center-portal/manage-account.md
+    - name: Поиск или создание учетной записи компании
+      href: partner-center-portal/company-work-accounts.md
+    - name: Перенос учетной записи из CPP в Центр партнеров
+      href: partner-center-portal/account-migration-from-cpp-to-pc.md
+- name: Основные понятия
+  items:
+    - name: Варианты публикации и рекомендации
+      href: determine-your-listing-type.md
+    - name: Транзакции на коммерческой платформе
+      href: marketplace-commercial-transaction-capabilities-and-considerations.md
+    - name: Частные предложения
+      href: private-offers.md
+    - name: Планы и цены
+      href: plans-pricing.md
+    - name: Стандартный контракт
+      href: standard-contract.md
+    - name: Требования к листингу Azure Marketplace
+      href: marketplace-criteria-content-validation.md
+    - name: Управление потенциальными клиентами
+      href: partner-center-portal/commercial-marketplace-get-customer-leads.md
+    - name: Тестовые выпуски
       items:
-        - name: Два онлайн-магазина на одной площадке
-          href: comparing-appsource-azure-marketplace.md
-        - name: Варианты публикации и рекомендации
-          href: determine-your-listing-type.md
-          items:
-            - name: Управление потенциальными клиентами
-              href: lead-management-for-cloud-marketplace.md
-            - name: Транзакции на коммерческой платформе
-              href: marketplace-commercial-transaction-capabilities-and-considerations.md
-            - name: Планы и цены
-              href: plans-pricing.md
-            - name: Частные предложения
-              href: private-offers.md
-            - name: Стандартный контракт
-              href: standard-contract.md
-            - name: Определение потребления услуг Azure клиентами партнеров
-              href: azure-partner-customer-usage-attribution.md
-            - name: Поддерживаемые страны и регионы
-              href: sell-from-countries.md
-        - name: Руководство по публикации разных типов предложений
-          href: publisher-guide-by-offer-type.md
-          items:
-            - name: Планирование предложения SaaS
-              href: plan-saas-offer.md
-            - name: Виртуальные машины
-              href: marketplace-virtual-machines.md
-            - name: Шаблоны решений приложений Azure
-              href: marketplace-solution-templates.md
-            - name: Управляемые приложения Azure
-              href: marketplace-managed-apps.md
-            - name: Контейнеры
-              href: marketplace-containers.md
-            - name: Модули IoT Edge
-              href: iot-edge-module.md
-            - name: Консультационные услуги
-              href: consulting-services.md
-            - name: "Microsoft\_365, Dynamics\_365 и Power\_BI"
-              href: appsource-offer-publishing-guide.md
-            - name: Включение аутентификации предложения с помощью Azure AD
-              href: enable-appsource-marketplace-using-azure-ad.md
-            - name: Интегрированные решения
-              href: integrated-solutions-for-publishers.md
-        - name: Рекомендации по маркетингу
-          href: gtm-marketing-best-practices.md
-          items:
-            - name: Рекомендации по размещению предложений
-              href: gtm-offer-listing-best-practices.md
-            - name: Получить подборку
-              href: gtm-how-to-get-featured.md
-            - name: Проверка содержимого Marketplace
-              href: marketplace-criteria-content-validation.md
-            - name: Поставщики облачных решений
-              href: cloud-solution-providers.md
-            - name: Руководство по регистрации для участия в программе Connect
-              href: business-applications-isv-program.md
+        - name: Что такое тестовый выпуск?
+          href: what-is-test-drive.md
+        - name: Техническая конфигурация тестового выпуска
+          href: test-drive-technical-configuration.md
+        - name: Тестовый выпуск для Azure Resource Manager
+          href: azure-resource-manager-test-drive.md
+    - name: Определение потребления услуг Azure клиентами партнеров
+      href: azure-partner-customer-usage-attribution.md
+    - name: Варианты выхода на рынок
+      items:
         - name: Преимущества использования Marketplace
           href: gtm-your-marketplace-benefits.md
-          items:
-            - name: Преимущество обязательства потребления Azure
-              href: azure-consumption-commitment-benefit.md
-            - name: Участие партнеров в совместных продажах
-              href: marketplace-co-sell.md
-            - name: Предпочтительные решения
-              href: preferred-solutions.md
-            - name: Интегрированные решения
-              href: integrated-solutions.md
-        - name: Поддержка коммерческой платформы
-          href: support-azure-marketplace.md
-          items:
-            - name: Вопросы и ответы о коммерческой платформе
-              href: marketplace-faq-publisher-guide.md
-            - name: Географическая доступность и валюты
-              href: marketplace-geo-availability-currencies.md
-- name: Коммерческая платформа в Центре партнеров
+        - name: Участие партнеров в совместных продажах
+          href: marketplace-co-sell.md
+        - name: Вариант совместной продажи в Центре партнеров
+          href: partner-center-portal/commercial-marketplace-co-sell.md
+        - name: Перепродажа через партнеров CSP
+          href: cloud-solution-providers.md
+        - name: Руководство по регистрации для участия в программе Connect
+          href: business-applications-isv-program.md
+        - name: Преимущество обязательства потребления Azure
+          href: azure-consumption-commitment-benefit.md
+        - name: Предпочтительные решения
+          href: preferred-solutions.md
+        - name: Интегрированные решения
+          href: integrated-solutions-for-publishers.md
+    - name: Активация Marketplace Rewards
+      href: partner-center-portal/marketplace-rewards.md
+    - name: Получение платежей
+      items:
+        - name: Получение платежей
+          href: /partner-center/marketplace-get-paid?context=/azure/marketplace/context/context
+        - name: Настройка счета для выплат и налоговых форм
+          href: /partner-center/set-up-your-payout-account?context=/azure/marketplace/context/context
+        - name: Пороги и сроки оплаты
+          href: /partner-center/payment-thresholds-methods-timeframes?context=/azure/marketplace/context/context
+        - name: Выписки о выплатах
+          href: /partner-center/payout-statement?context=/azure/marketplace/context/context
+        - name: Сведения о политике выплат
+          href: /partner-center/payout-policy-details?context=/azure/marketplace/context/context
+        - name: Сведения о налогах
+          href: /partner-center/tax-details-marketplace?context=/azure/marketplace/context/context
+        - name: Часто задаваемые вопросы о выплатах
+          href: /partner-center/payout-faq?context=/azure/marketplace/context/context
+- name: Создание предложений и управление ими
   items:
-    - name: Обзор коммерческой платформы
-      href: partner-center-portal/commercial-marketplace-overview.md
-    - name: Вопросы и ответы по миграции
-      href: cloud-partner-portal-migration-faq.md
-    - name: Управление учетными записями
+    - name: Руководство по публикации разных типов предложений
+      href: publisher-guide-by-offer-type.md
+    - name: Включение аутентификации предложения с помощью Azure AD
+      href: enable-appsource-marketplace-using-azure-ad.md
+    - name: Предложения для приложений Azure
       items:
-        - name: Создание учетной записи Центра партнеров
-          href: partner-center-portal/create-account.md
-        - name: Управление учетной записью Центра партнеров
-          href: partner-center-portal/manage-account.md
-        - name: Поиск или создание учетной записи компании
-          href: partner-center-portal/company-work-accounts.md
-        - name: Перенос учетной записи из CPP в Центр партнеров
-          href: partner-center-portal/account-migration-from-cpp-to-pc.md
-    - name: Создание нового предложения
+        - name: Планирование предложения шаблона решения
+          href: marketplace-solution-templates.md
+        - name: Планирование предложения управляемого приложения
+          href: marketplace-managed-apps.md
+        - name: Создание и публикация предложения приложения Azure
+          href: partner-center-portal/create-new-azure-apps-offer.md
+        - name: Выставление счетов по тарифу за приложение Azure
+          href: partner-center-portal/azure-app-metered-billing.md
+        - name: Обработка отзывов по результатам проверки
+          href: partner-center-portal/azure-apps-review-feedback.md
+        - name: API приложений Azure
+          href: partner-center-portal/azure-app-apis.md
+    - name: Предложения по контейнерам Azure
       items:
-        - name: Предложения для приложений Azure
-          items:
-            - name: Создание предложения приложения Azure
-              href: partner-center-portal/create-new-azure-apps-offer.md
-            - name: Выставление счетов по тарифу за приложение Azure
-              href: partner-center-portal/azure-app-metered-billing.md
-            - name: Обработка отзывов по результатам проверки
-              href: partner-center-portal/azure-apps-review-feedback.md
-            - name: Использование API для подключения
-              href: partner-center-portal/azure-app-apis.md
-        - name: Предложения по контейнерам Azure
+        - name: Планирование предложения контейнера Azure
+          href: marketplace-containers.md
+        - name: Создание и публикация предложения контейнера Azure
           items:
             - name: Подготовка технических ресурсов
               href: partner-center-portal/create-azure-container-technical-assets.md
             - name: Создание предложения по контейнерам Azure
               href: partner-center-portal/create-azure-container-offer.md
-        - name: Предложение по виртуальным машинам
+    - name: Предложения виртуальных машин Azure
+      items:
+        - name: Планирование предложения виртуальной машины
+          href: marketplace-virtual-machines.md
+        - name: Создание и публикация предложения виртуальной машины
           items:
-            - name: Создание предложения по виртуальным машинам Azure
+            - name: Создание предложения виртуальной машины Azure
               href: partner-center-portal/azure-vm-create-offer.md
             - name: Создание технического ресурса виртуальной машины Azure
               items:
@@ -133,15 +129,23 @@
                       href: partner-center-portal/get-sas-uri.md
                     - name: 'Универсальный код ресурса SAS: вопросы и ответы'
                       href: partner-center-portal/common-sas-uri-issues.md
-        - name: Консультационные услуги
+    - name: Консультационные услуги
+      items:
+        - name: Планирование предложения консультационных услуг
+          href: consulting-services.md
+        - name: Создание и публикация предложения консультационных услуг
           items:
             - name: Предварительные требования
               href: partner-center-portal/consulting-service-prerequisites.md
             - name: Создание предложения консультационных услуг
               href: partner-center-portal/create-consulting-service-offer.md
-        - name: "Предложения для Dynamics\_365"
+    - name: "Предложения для Dynamics\_365"
+      items:
+        - name: "Планирование предложения Dynamics\_365"
+          href: appsource-offer-publishing-guide.md
+        - name: "Создание и публикация предложения Dynamics\_365"
           items:
-            - name: "Создание предложения Dynamics\_365 for Customer Engagement & Power Apps"
+            - name: "Создание предложения Dynamics\_365 Customer Engagement & Power Apps"
               href: partner-center-portal/create-new-customer-engagement-offer.md
             - name: Создание предложения Dynamics 365 for Operations
               items:
@@ -153,150 +157,123 @@
               href: partner-center-portal/create-new-business-central-offer.md
         - name: Предложения модуля IoT Edge
           items:
+            - name: Планирование предложения модуля IoT Edge
+              href: iot-edge-module.md
             - name: Создание предложения модуля IoT Edge
               href: partner-center-portal/azure-iot-edge-module-creation.md
             - name: Подготовка технических ресурсов для модуля IoT Edge
               href: partner-center-portal/create-iot-edge-module-asset.md
-        - name: Предложения управляемых служб
+    - name: Предложения управляемых служб
+      items:
+        - name: Создание предложения управляемой службы
+          href: partner-center-portal/create-new-managed-service-offer.md
+    - name: Предложения приложений Power BI
+      items:
+        - name: "Планирование предложения приложения Power\_BI"
+          href: partner-center-portal/create-power-bi-app-overview.md
+        - name: "Создание предложения приложения Power\_BI"
+          href: partner-center-portal/create-power-bi-app-offer.md
+    - name: Предложения SaaS
+      items:
+        - name: Планирование предложения SaaS
+          href: plan-saas-offer.md
+        - name: Проверка подлинности Azure AD для SaaS
           items:
-            - name: Создание предложения управляемой службы
-              href: partner-center-portal/create-new-managed-service-offer.md
-        - name: Предложения приложений Power BI
+            - name: "Обзор Azure\_AD и SaaS"
+              href: azure-ad-saas.md
+            - name: Целевая страница для предложений с поддержкой транзакций
+              href: azure-ad-transactable-saas-landing-page.md
+            - name: Целевая страница для предложений с бесплатной или пробной версией
+              href: azure-ad-free-or-trial-landing-page.md
+        - name: Контроль потребления с помощью SaaS
+          href: partner-center-portal/saas-metered-billing.md
+        - name: Создание и публикация предложения SaaS
           items:
-            - name: Общие сведения о публикации
-              href: partner-center-portal/create-power-bi-app-overview.md
-            - name: Создание предложения приложения Power BI
-              href: partner-center-portal/create-power-bi-app-offer.md
-        - name: Предложения SaaS
-          items:
-            - name: Планирование предложения SaaS
-              href: plan-saas-offer.md
-            - name: Проверка подлинности Azure AD для SaaS
-              items:
-                - name: "Обзор Azure\_AD и SaaS"
-                  href: azure-ad-saas.md
-                - name: Целевая страница для предложений с поддержкой транзакций
-                  href: azure-ad-transactable-saas-landing-page.md
-                - name: Целевая страница для предложений с бесплатной или пробной версией
-                  href: azure-ad-free-or-trial-landing-page.md
-            - name: Контроль потребления с помощью SaaS
-              href: partner-center-portal/saas-metered-billing.md
-            - name: Создание и публикация предложения SaaS
-              items:
-                - name: Создание предложения SaaS
-                  href: create-new-saas-offer.md
-                - name: Настройка свойств предложения SaaS
-                  href: create-new-saas-offer-properties.md
-                - name: Настройка листинга предложения SaaS
-                  href: create-new-saas-offer-listing.md
-                - name: Добавление предварительной версии аудитории
-                  href: create-new-saas-offer-preview.md
-                - name: Добавление технических сведений
-                  href: create-new-saas-offer-technical.md
-                - name: Создание планов
-                  href: create-new-saas-offer-plans.md
-                - name: Тестирование и публикация предложения SaaS
-                  href: test-publish-saas-offer.md
-            - name: Вывод на рынок предложения SaaS
-              href: create-new-saas-offer-marketing.md
-            - name: API исполнения SaaS
-              href: partner-center-portal/pc-saas-fulfillment-apis.md
-              items:
-                - name: Регистрация приложения SaaS
-                  href: partner-center-portal/pc-saas-registration.md
-                - name: "API исполнения SaaS версии\_2"
-                  href: partner-center-portal/pc-saas-fulfillment-api-v2.md
-                - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
-                  href: partner-center-portal/pc-saas-fulfillment-api-v1.md
-                - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
-                  href: partner-center-portal/saas-fulfillment-apis-faq.md
-        - name: Общие сведения об управлении потенциальными клиентами
-          href: partner-center-portal/commercial-marketplace-get-customer-leads.md
-          items:
-            - name: Большой двоичный объект Azure
-              href: partner-center-portal/commercial-marketplace-lead-management-instructions-azure-blob.md
-            - name: таблице Azure
-              href: partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table.md
-            - name: Dynamics 365 for Customer Engagement
-              href: partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md
-            - name: Конечная точка HTTPS
-              href: partner-center-portal/commercial-marketplace-lead-management-instructions-https.md
-            - name: Marketo
-              href: partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md
-            - name: Salesforce
-              href: partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
-        - name: Служба из Marketplace для контроля потребления
-          items:
-            - name: Стратегии аутентификации
-              href: partner-center-portal/marketplace-metering-service-authentication.md
-            - name: API-интерфейсы службы из Marketplace для контроля потребления
-              href: partner-center-portal/marketplace-metering-service-apis.md
-            - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
-              href: partner-center-portal/marketplace-metering-service-apis-faq.md
-        - name: Тестовый выпуск
-          items:
-            - name: Что такое тестовый выпуск?
-              href: what-is-test-drive.md
-            - name: Техническая конфигурация тестового выпуска
-              href: test-drive-technical-configuration.md
-            - name: Тестовый выпуск для Azure Resource Manager
-              href: azure-resource-manager-test-drive.md
-        - name: Возможность совместных продаж
-          href: partner-center-portal/commercial-marketplace-co-sell.md
-          items:
-            - name: Коды стран и регионов
-              href: partner-center-portal/commercial-marketplace-co-sell-countries.md
-            - name: Коды штатов
-              href: partner-center-portal/commercial-marketplace-co-sell-states.md
-    - name: Проверка и публикация
+            - name: Создание предложения SaaS
+              href: create-new-saas-offer.md
+            - name: Настройка свойств предложения SaaS
+              href: create-new-saas-offer-properties.md
+            - name: Настройка листинга предложения SaaS
+              href: create-new-saas-offer-listing.md
+            - name: Добавление предварительной версии аудитории
+              href: create-new-saas-offer-preview.md
+            - name: Добавление технических сведений
+              href: create-new-saas-offer-technical.md
+            - name: Создание планов
+              href: create-new-saas-offer-plans.md
+            - name: Тестирование и публикация предложения SaaS
+              href: test-publish-saas-offer.md
+        - name: Вывод на рынок предложения SaaS
+          href: create-new-saas-offer-marketing.md
+    - name: Проверка и публикация предложений
       href: review-publish-offer.md
     - name: Обновление существующих предложений
       href: partner-center-portal/update-existing-offer.md
-    - name: Активация Marketplace Rewards
-      href: partner-center-portal/marketplace-rewards.md
-    - name: Аналитика Центра партнеров
+- name: Продажа и маркетинг предложений
+  items:
+    - name: Рекомендации по маркетингу
+      href: gtm-marketing-best-practices.md
+    - name: Рекомендации по размещению предложений
+      href: gtm-offer-listing-best-practices.md
+    - name: Получить подборку
+      href: gtm-how-to-get-featured.md
+    - name: Настройка управления потенциальными клиентами
       items:
-        - name: Аналитика для коммерческой платформы
-          href: partner-center-portal/analytics.md
-        - name: Панель мониторинга "Сводка"
-          href: partner-center-portal/summary-dashboard.md
-        - name: Панель мониторинга заказов
-          href: partner-center-portal/orders-dashboard.md
-        - name: Панель мониторинга использования
-          href: partner-center-portal/usage-dashboard.md
-        - name: Панель мониторинга клиентов
-          href: partner-center-portal/customer-dashboard.md
-        - name: Панель мониторинга аналитики Marketplace
-          href: partner-center-portal/insights-dashboard.md
-        - name: Панель мониторинга скачиваний
-          href: partner-center-portal/downloads-dashboard.md
-        - name: Панель мониторинга оценок и рецензий
-          href: partner-center-portal/ratings-reviews.md
-        - name: Часто задаваемые вопросы и терминология
-          href: partner-center-portal/faq-terminology.md
-    - name: Получение платежей
-      items:
-        - name: Получение платежей
-          href: /partner-center/marketplace-get-paid?context=/azure/marketplace/context/context
-        - name: Настройка счета для выплат и налоговых форм
-          href: /partner-center/set-up-your-payout-account?context=/azure/marketplace/context/context
-        - name: Пороги и сроки оплаты
-          href: /partner-center/payment-thresholds-methods-timeframes?context=/azure/marketplace/context/context
-        - name: Выписки о выплатах
-          href: /partner-center/payout-statement?context=/azure/marketplace/context/context
-        - name: Сведения о политике выплат
-          href: /partner-center/payout-policy-details?context=/azure/marketplace/context/context
-        - name: Сведения о налогах
-          href: /partner-center/tax-details-marketplace?context=/azure/marketplace/context/context
-        - name: Часто задаваемые вопросы о выплатах
-          href: /partner-center/payout-faq?context=/azure/marketplace/context/context
+        - name: Большой двоичный объект Azure
+          href: partner-center-portal/commercial-marketplace-lead-management-instructions-azure-blob.md
+        - name: таблице Azure
+          href: partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table.md
+        - name: Dynamics 365 for Customer Engagement
+          href: partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md
+        - name: Конечная точка HTTPS
+          href: partner-center-portal/commercial-marketplace-lead-management-instructions-https.md
+        - name: Marketo
+          href: partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md
+        - name: Salesforce
+          href: partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
+        - name: Вопросы и ответы по управлению потенциальными клиентами
+          href: lead-management-faq.md
+- name: Данные и аналитика
+  items:
+    - name: Аналитика коммерческой платформы
+      href: partner-center-portal/analytics.md
+    - name: Панель мониторинга "Сводка"
+      href: partner-center-portal/summary-dashboard.md
+    - name: Панель мониторинга заказов
+      href: partner-center-portal/orders-dashboard.md
+    - name: Панель мониторинга использования
+      href: partner-center-portal/usage-dashboard.md
+    - name: Панель мониторинга клиентов
+      href: partner-center-portal/customer-dashboard.md
+    - name: Панель мониторинга аналитики Marketplace
+      href: partner-center-portal/insights-dashboard.md
+    - name: Панель мониторинга скачиваний
+      href: partner-center-portal/downloads-dashboard.md
+    - name: Панель мониторинга оценок и рецензий
+      href: partner-center-portal/ratings-reviews.md
+    - name: Аналитика Центра партнеров (терминология)
+      href: partner-center-portal/faq-terminology.md
+- name: Политики и условия
+  items:
+    - name: Сведения о политиках и условиях
+      href: policies-terms.md
+    - name: Commercial marketplace certification policies (Политики сертификации коммерческой платформы Marketplace)
+      href: /legal/marketplace/certification-policies?context=/azure/marketplace/context/context
+    - name: Политики проверки коммерческой платформы
+      href: /legal/marketplace/rating-review-policies?context=/azure/marketplace/context/context
+    - name: Политики участия в Azure Marketplace
+      href: /legal/marketplace/participation-policy?context=/azure/marketplace/context/context
+    - name: Условия Azure Marketplace
+      href: /legal/marketplace/terms?context=/azure/marketplace/context/context
+- name: Справочник
+  items:
     - name: Справочные материалы по API-интерфейсам Портала Cloud Partner
       items:
-        - name: Обзор
+        - name: Обзор API CPP
           href: cloud-partner-portal-api-overview.md
-        - name: Предварительные требования
+        - name: Предварительные требования для API
           href: cloud-partner-portal-api-prerequisites.md
-        - name: Рекомендации
+        - name: "Важные аспекты\_API"
           href: cloud-partner-portal-api-considerations.md
         - name: Управление параллелизмом
           href: cloud-partner-portal-api-concurrency-control.md
@@ -320,21 +297,44 @@
           href: cloud-partner-portal-api-setting-price.md
         - name: Устранение неполадок с аутентификацией
           href: cloud-partner-portal-api-troubleshooting-authentication-errors.md
-    - name: Варианты поддержки
-      href: partner-center-portal/support.md
-- name: Политики и условия коммерческой платформы
-  items:
-    - name: Сведения о политиках и условиях
-      href: policies-terms.md
-    - name: Commercial marketplace certification policies (Политики сертификации коммерческой платформы Marketplace)
-      href: /legal/marketplace/certification-policies?context=/azure/marketplace/context/context
-    - name: Политики проверки коммерческой платформы
-      href: /legal/marketplace/rating-review-policies?context=/azure/marketplace/context/context
-    - name: Политики участия в Azure Marketplace
-      href: /legal/marketplace/participation-policy?context=/azure/marketplace/context/context
-    - name: Условия Azure Marketplace
-      href: /legal/marketplace/terms?context=/azure/marketplace/context/context
+    - name: Служба из Marketplace для контроля потребления
+      items:
+        - name: Стратегии аутентификации
+          href: partner-center-portal/marketplace-metering-service-authentication.md
+        - name: API-интерфейсы службы из Marketplace для контроля потребления
+          href: partner-center-portal/marketplace-metering-service-apis.md
+        - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
+          href: partner-center-portal/marketplace-metering-service-apis-faq.md
+    - name: API исполнения SaaS
+      items:
+        - name: Обзор API исполнения SaaS
+          href: partner-center-portal/pc-saas-fulfillment-apis.md
+          items:
+            - name: Регистрация приложения SaaS
+              href: partner-center-portal/pc-saas-registration.md
+            - name: "API исполнения SaaS версии\_2"
+              href: partner-center-portal/pc-saas-fulfillment-api-v2.md
+            - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
+              href: partner-center-portal/pc-saas-fulfillment-api-v1.md
+            - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
+              href: partner-center-portal/saas-fulfillment-apis-faq.md
 - name: Ресурсы
   items:
+    - name: Вопросы и ответы о коммерческой платформе
+      href: marketplace-faq-publisher-guide.md
+    - name: Вопросы и ответы о миграции на Портал Cloud Partner
+      href: cloud-partner-portal-migration-faq.md
+    - name: Варианты поддержки Центра партнеров
+      href: partner-center-portal/support.md
+    - name: Географическая доступность и валюты
+      href: marketplace-geo-availability-currencies.md
+    - name: Поддерживаемые страны и регионы
+      href: sell-from-countries.md
     - name: Поддерживаемые теги HTML
       href: supported-html-tags.md
+    - name: Коды стран и регионов для совместной продажи
+      href: partner-center-portal/commercial-marketplace-co-sell-countries.md
+    - name: Коды состояния для совместной продажи
+      href: partner-center-portal/commercial-marketplace-co-sell-states.md
+    - name: 'Форумы, блоги и быстрые ссылки'
+      href: marketplace-roadmap.md

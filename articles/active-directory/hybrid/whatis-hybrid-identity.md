@@ -13,12 +13,12 @@ ms.date: 05/17/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f74798eeed4764bf2f7b71cb5049fb1c6b3ae077
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 895355b5acebffe6ad24b15b0c709d21e8f20be4
+ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89278655"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90016654"
 ---
 # <a name="what-is-hybrid-identity-with-azure-active-directory"></a>Что собой представляет гибридная идентификация с использованием Azure Active Directory
 
@@ -30,9 +30,9 @@ ms.locfileid: "89278655"
 
 Обеспечить гибридную идентификацию с использованием Azure AD можно с помощью одного из трех методов проверки подлинности в зависимости от сценария.   Доступны следующие методы: 
 
-- **[синхронизация хэша паролей](whatis-phs.md)** ;  
-- **[сквозная проверка подлинности](how-to-connect-pta.md)** ;  
-- **[федерация AD FS](whatis-fed.md)** . 
+- **[синхронизация хэша паролей](whatis-phs.md)**;  
+- **[сквозная проверка подлинности](how-to-connect-pta.md)**;  
+- **[федерация AD FS](whatis-fed.md)**. 
 
 Эти методы проверки подлинности также предоставляют возможности [единого входа](how-to-connect-sso.md).  Единый вход обеспечивает пользователям автоматический вход в систему, когда они работают на корпоративных устройствах, подключенных к корпоративной сети.
 
@@ -45,7 +45,7 @@ ms.locfileid: "89278655"
 |Мне нужно:|PHS и SSO<sup>1</sup>| PTA и SSO<sup>2</sup> | AD FS<sup>3</sup>| 
 |-----|-----|-----|-----| 
 |Автоматически синхронизировать с облаком новые учетные записи пользователей, контакты и группы, создаваемые в моем локальном каталоге Active Directory|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
-|Настроить мой клиент для гибридных сценариев Office 365.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
+|Настроить клиент для гибридных сценариев Microsoft 365.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
 |Разрешить моим пользователям выполнять вход и обращаться к облачным службам с помощью локального пароля.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
 |Реализовать единый вход с использованием учетных данных организации.|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| ![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png) |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)|  
 |Обеспечить хранение хэша паролей вне облака.| |![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)|![Рекомендуемая](./media/whatis-hybrid-identity/ic195031.png)| 
@@ -67,7 +67,7 @@ ms.locfileid: "89278655"
 
 [!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
 
-## <a name="next-steps"></a>Next Steps 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Использование Azure AD Connect с расширением Azure AD Connect Health](whatis-azure-ad-connect.md) 
 - [Использование синхронизации хэша паролей](whatis-phs.md) 

@@ -88,6 +88,8 @@
           href: specify-marketplace-images.md
         - name: Указание сведений о поддержке (владелец учетной записи лаборатории)
           href: lab-account-owner-support-information.md
+        - name: Отправка пользовательского образа в Общую коллекцию образов
+          href: upload-custom-image-shared-image-gallery.md
     - name: Создание и настройка лабораторий для аудитории (преподаватель)
       items:
         - name: Создание и администрирование лабораторий для аудитории

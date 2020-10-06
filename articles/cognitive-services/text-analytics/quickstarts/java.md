@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Использование Java для вызова REST API службы "Анализ текста"
+title: Использование Java для вызова REST API службы "Анализ текста"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как получить информацию и примеры кода, которые помогут вам приступить к работе с API "Анализ текста" в Azure Cognitive Services.
+description: В этом кратком руководстве показано, как с помощью Java получить информацию и примеры кода для начала работы с API "Анализ текста" в Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,14 +11,14 @@ ms.topic: quickstart
 ms.date: 07/06/2020
 ms.author: aahi
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: f8f9d76e5f1584ce54897950d7e35e2b22ba958e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 6c3c613f8733c8f786d121ab33b09afab244b09e
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319785"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90532279"
 ---
-# <a name="quickstart-use-java-to-call-the-azure-text-analytics-cognitive-service"></a>Краткое руководство. Использование Java для вызова API "Анализ текста" Cognitive Services в Azure
+# <a name="quickstart-use-java-to-call-the-azure-text-analytics-cognitive-service"></a>Использование Java для вызова API "Анализ текста" Cognitive Services в Azure
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities), используя  [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) и Java.

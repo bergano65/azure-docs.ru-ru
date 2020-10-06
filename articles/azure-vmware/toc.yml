@@ -62,6 +62,8 @@
       href: disaster-recovery-for-virtual-machines.md
     - name: Развертывание виртуальной машины с использованием библиотеки содержимого
       href: tutorial-deploy-vm-content-library.md
+    - name: Настройка сервера GitHub Enterprise
+      href: github-enterprise-server.md
     - name: Интеграция платформенной функциональности Azure
       items:
         - name: Управление API
@@ -84,6 +86,8 @@
       items:
         - name: Настройка vRealize Operations
           href: vrealize-operations-for-azure-vmware-solution.md
+        - name: Развертывание VMware Horizon
+          href: azure-vmware-solution-horizon.md
 - name: Ресурсы
   items:
     - name: Устранение неполадок

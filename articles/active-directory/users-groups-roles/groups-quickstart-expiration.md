@@ -14,14 +14,14 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 178f6a2c1a71d088eeb1a3ea6f7e39198d401ff4
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: 9fa15a9134fdc49d87baea48490854c1289a662a
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213721"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90054404"
 ---
-# <a name="quickstart-set-microsoft-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Microsoft 365 в Azure Active Directory
+# <a name="quickstart-set-microsoft-365-groups-to-expire-in-azure-active-directory"></a>Задание срока действия групп Microsoft 365 в Azure Active Directory
 
 В этом кратком руководстве описано, как задать политику срока действия групп Microsoft 365. Если у пользователя есть возможность настройки собственных групп, количество неиспользуемых групп увеличивается. Первый способ управления неиспользуемыми группами — задание срока действия этих групп, чтобы сократить обслуживание при их удалении вручную.
 
@@ -33,9 +33,9 @@ ms.locfileid: "88213721"
 - Владелец группы или администратор Azure AD может восстановить удаленную группу Microsoft 365 в течение 30 дней
 
 > [!NOTE]
-> Теперь группы используют средства искусственного интеллекта Azure AD для автоматического продления в зависимости от того, использовались ли они в последнее время. Это решение об обновлении основано на активности пользователя в группах служб Office 365, таких как Outlook, SharePoint, Teams, Yammer и другие.
+> Теперь группы используют средства искусственного интеллекта Azure AD для автоматического продления в зависимости от того, использовались ли они в последнее время. Это решение об обновлении основано на активности пользователя в группах служб Microsoft 365, таких как Outlook, SharePoint, Teams, Yammer и другие.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisite"></a>Предварительные требования
 

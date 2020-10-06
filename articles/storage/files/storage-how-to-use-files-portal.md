@@ -7,17 +7,17 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: f68d9f620b686ab20e93584bdd7c024d8a943577
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 7e703137b7954dd152f976069770a0c8c4a0f34c
+ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036544"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90564174"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В этом руководстве рассматриваются основы работы с файловыми ресурсами Azure с помощью [портала Azure](https://portal.azure.com/).
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 [!INCLUDE [storage-files-create-storage-account-portal](../../../includes/storage-files-create-storage-account-portal.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88036544"
 Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata).
 
 ## <a name="use-your-azure-file-share"></a>Использование общего файлового ресурса Azure
-Служба файлов Azure обеспечивает два способа работы с файлами и папками в общем файловом ресурсе Azure: стандартный отраслевой [протокол Server Message Block (SMB)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) и [протокол File REST](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api). 
+Служба "Файлы Azure" обеспечивает три способа работы с файлами и папками в общей папке Azure: стандартный отраслевой [протокол SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx), протокол NFS (предварительная версия) и [протокол File REST](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api). 
 
 Чтобы установить общий файловый ресурс с помощью SMB, ознакомьтесь со следующим документом (с учетом вашей ОС):
 - [Windows](storage-how-to-use-files-windows.md)

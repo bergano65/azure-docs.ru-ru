@@ -265,8 +265,8 @@
                     - name: Подготовка дисков для импорта (версия 2)
         - name: Наблюдение
           items:
-            - name: Мониторинг учетной записи хранения
-              href: ../common/monitor-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Мониторинг хранилища BLOB-объектов
+              href: monitor-blob-storage.md
             - name: Переход с классических метрик
               href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Мониторинг (классический)
@@ -554,7 +554,7 @@
           displayName: ARM
           href: /azure/templates/microsoft.storage/allversions
         - name: Данные мониторинга
-          href: ../common/monitor-storage-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+          href: monitor-blob-storage-reference.md
         - name: Встроенные компоненты Политики Azure
           displayName: 'samples, policies, definitions'
           href: ../common/policy-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -701,7 +701,7 @@
               href: data-lake-storage-supported-open-source-platforms.md
         - name: Наблюдение
           items:
-            - name: Мониторинг учетной записи хранения
+            - name: Мониторинг хранилища BLOB-объектов
               href: ../common/monitor-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Переход с классических метрик
               href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json

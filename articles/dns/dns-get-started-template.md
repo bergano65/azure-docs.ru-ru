@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание записи и зоны Azure DNS с помощью шаблона Azure Resource Manager (ARM)
+title: Создание записи и зоны Azure DNS с помощью шаблона Azure Resource Manager (ARM)
 titleSuffix: Azure DNS
 description: Узнайте, как создать зону и запись DNS в службе DNS Azure. В этом пошаговом руководстве описано, как создать зону и запись DNS, а также как управлять ими с помощью шаблона Azure Resource Manager (ARM).
 services: dns
@@ -8,14 +8,14 @@ ms.service: dns
 ms.topic: quickstart
 ms.date: 09/8/2020
 ms.author: duau
-ms.openlocfilehash: 4fd87cb17fc222f5014585e8f1e87e3f58a58574
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.openlocfilehash: 8e53e8ad26ddac1006a28fea2ddee9990533e8c9
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89596412"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89647893"
 ---
-# <a name="quickstart-create-an-azure-dns-zone-and-record-using-an-arm-template"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью шаблона ARM
+# <a name="quickstart-create-an-azure-dns-zone-and-record-using-an-arm-template"></a>Создание зоны и записи Azure DNS с помощью шаблона ARM
 
 В этом руководстве объясняется, как создать зону DNS, содержащую запись A, с использованием шаблона Azure Resource Manager (ARM).
 
@@ -87,11 +87,11 @@ ms.locfileid: "89596412"
 
 1. Группа ресурсов должна содержать следующие ресурсы:
 
-    :::image type="content" source="./media/dns-getstarted-template/resource-group-dns-zone.png" alt-text="Группа ресурсов развертывания зоны DNS":::
+    :::image type="content" source="./media/dns-getstarted-template/resource-group-dns-zone.png" alt-text="Результаты развертывания шаблона Resource Manager зоны Azure DNS в PowerShell":::
 
 1. Выберите зону DNS с суффиксом **<span>azurequickstart.</span>org**, чтобы убедиться, что зона создана правильно с записью **A**, ссылающейся на значения **1.2.3.4** и **1.2.3.5**.
 
-    :::image type="content" source="./media/dns-getstarted-template/dns-zone-overview.png" alt-text="Развертывание зоны DNS":::
+    :::image type="content" source="./media/dns-getstarted-template/dns-zone-overview.png" alt-text="Результаты развертывания шаблона Resource Manager зоны Azure DNS в PowerShell":::
 
 1. Скопируйте имя одного из серверов из данных, полученных на предыдущем этапе.
 
@@ -101,7 +101,7 @@ ms.locfileid: "89596412"
    nslookup www.<dns zone name> <name server name>
    ```
 
-   Пример:
+   Например, такое:
 
    ```
    nslookup www.2lwynbseszpam.azurequickstart.org ns1-09.azure-dns.com.
@@ -109,13 +109,13 @@ ms.locfileid: "89596412"
 
    Результат будет подобен приведенному на следующем снимке экрана.
 
-    :::image type="content" source="./media/dns-getstarted-template/dns-zone-validation.png" alt-text="nslookup зоны DNS":::
+    :::image type="content" source="./media/dns-getstarted-template/dns-zone-validation.png" alt-text="Результаты развертывания шаблона Resource Manager зоны Azure DNS в PowerShell":::
 
 Имя узла **www<span>.2lwynbseszpam.azurequickstart.</span>org** разрешается в **1.2.3.4** и **1.2.3.5**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам уже не нужны ресурсы, созданные вместе с каналом ExpressRoute, удалите эту группу ресурсов. Это приведет к удалению канала ExpressRoute и всех связанных с ним ресурсов.
+Если вам уже не нужны ресурсы, созданные с использованием зоны DNS, удалите группу ресурсов. При этом будет удалена зона DNS и все связанные с ней ресурсы.
 
 Чтобы удалить группу ресурсов, вызовите командлет `Remove-AzResourceGroup`:
 
@@ -127,7 +127,7 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 В этом кратком руководстве вы узнали, как создать:
 * Зона DNS
-* Запись A
+* Запись А
 
 Теперь, когда вы создали свою первую зону и запись DNS с помощью шаблона Azure Resource Manager, можно создать записи для веб-приложения в личном домене.
 

@@ -1,30 +1,28 @@
 ---
-title: 'Заметки о выпуске: Azure Synapse Analytics (рабочие области)'
-description: Заметки о выпуске Azure Synapse Analytics (рабочие области)
+title: 'Заметки о выпуске: Azure Synapse Analytics (предварительная версия рабочих областей)'
+description: Заметки о выпуске Azure Synapse Analytics (предварительная версия рабочих областей).
 services: synapse-analytics
 author: julieMSFT
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
+ms.subservice: overview
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: add5c89e83f33980803bf571239023859653c4f1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f2050bf671af35df4faec8b0b1d53f4c10a9075e
+ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87059619"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90031676"
 ---
-# <a name="azure-synapse-analytics-preview-release-notes"></a>Заметки о выпуске Azure Synapse Analytics (предварительная версия)
+# <a name="azure-synapse-analytics-workspaces-preview-release-notes"></a>Заметки о выпуске Azure Synapse Analytics (предварительная версия рабочих областей)
 
 В этой статье описаны ограничения Azure Synapse Analytics (рабочие области) и проблемы, которые могут возникать с этой службой. Дополнительные сведения см. в статье об [Azure Synapse Analytics (рабочие области)](overview-what-is.md).
 
 [!INCLUDE [preview](includes/note-preview.md)]
 
-## <a name="azure-synapse-workspaces"></a>Azure Synapse (рабочие области) 
-
-### <a name="azure-synapse-cli"></a>Azure Synapse CLI
+## <a name="azure-cli"></a>Azure CLI
 
 - Проблема и последствия для клиентов: Рабочие области, созданные пакетом SDK, не могут запустить Synapse Studio
 
@@ -36,8 +34,6 @@ ms.locfileid: "87059619"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание рабочей области](quickstart-create-workspace.md)
-* [Использование Synapse Studio](quickstart-synapse-studio.md)
-* [Создание пула SQL](quickstart-create-sql-pool-portal.md)
-* [Использование службы SQL по запросу](quickstart-sql-on-demand.md)
-* [Создание пула Apache Spark](quickstart-create-apache-spark-pool-portal.md)
+* [Что представляет собой Azure Synapse?](overview-what-is.md)
+* [Приступая к работе](get-started.md)
+* [Часто задаваемые вопросы](overview-faq.md)

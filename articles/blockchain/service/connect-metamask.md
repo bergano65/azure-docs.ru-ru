@@ -4,14 +4,14 @@ description: Подключение к сети службы "Блокчейн A
 ms.date: 09/12/2019
 ms.topic: quickstart
 ms.reviewer: janders
-ms.openlocfilehash: abb2479b81d4811b311d27fb0be9900f2827e939
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 4a45e02a861ff20a4dc774668a4e008f9b42aeea
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85920574"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530443"
 ---
-# <a name="quickstart-use-metamask-to-connect-and-deploy-a-smart-contract"></a>Краткое руководство. Подключение и развертывание смарт-контрактов с использованием MetaMask
+# <a name="quickstart-use-metamask-to-connect-and-deploy-a-smart-contract"></a>Подключение и развертывание смарт-контрактов с использованием MetaMask
 
 Из этого краткого руководства вы узнаете как использовать MetaMask, чтобы подключиться к сети службы "Блокчейн Azure", а с помощью Remix развернуть смарт-контракт. Metamask — это расширение браузера для управления кошельком Ether и выполнения действий со смарт-контрактами.
 
@@ -89,7 +89,7 @@ Remix — это среда разработки на языке Solidity, за
     В **простом контракте** объявлена переменная состояния с именем **balance**. Также в нем определены две функции. Функция **add** позволяет добавить число для переменной **balance**. А функция **get** отвечает за возврат значения переменной **balance**.
 1. Чтобы скомпилировать контракт, сначала выберите область компилятора Solidity, а затем **Compile simple.sol** (Компилировать simple.sol).
 
-    ![Компиляция](./media/connect-metamask/compile.png)
+    ![Снимок экрана: компилируемый контракт.](./media/connect-metamask/compile.png)
 
 1. В разделе **Deploy & Run** (Развертывание и запуск) задайте параметру **Environment** (Среда) значение **Injected Web3**, чтобы подключиться к своему участнику блокчейна с помощью MetaMask.
 
@@ -97,7 +97,7 @@ Remix — это среда разработки на языке Solidity, за
 
 1. Выберите контракт **simple** и щелкните **Развернуть**.
 
-    ![Развертывание](./media/connect-metamask/deploy.png)
+    ![Снимок экрана, на котором показано развертывание и выполнение транзакций с выбранным контрактом и выделена кнопка "Развернуть".](./media/connect-metamask/deploy.png)
 
 
 1. Появится уведомление MetaMask о том, что для выполнения транзакции недостаточно средств.

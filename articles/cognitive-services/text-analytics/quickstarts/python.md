@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Использование Python для вызова API анализа текста
+title: Краткое руководство по использованию Python для вызова API анализа текста
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как получить информацию и примеры кода, которые помогут вам приступить к работе с API "Анализ текста" в Azure Cognitive Services.
+description: В этом кратком руководстве показано, как с помощью Python получить информацию и примеры кода для начала работы с API "Анализ текста" в Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,14 +11,14 @@ ms.topic: quickstart
 ms.date: 07/20/2020
 ms.author: aahi
 ms.custom: devx-track-python
-ms.openlocfilehash: 34d1b62ed97b966c000ff81e8f7676c30338b6a1
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 0ef870b6b2d3b88b13c16c8c2acbfcee7ed551c1
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876773"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527247"
 ---
-# <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python 
+# <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python 
 <a name="HOLTop"></a>
 
 В этом кратком руководстве содержатся сведения об анализе языка с помощью REST API "Анализ текста" и Python. В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities).

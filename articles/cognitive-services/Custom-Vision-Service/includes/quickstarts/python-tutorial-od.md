@@ -2,15 +2,18 @@
 author: areddish
 ms.author: areddish
 ms.service: cognitive-services
-ms.date: 08/17/2020
-ms.openlocfilehash: f54b5c7bec7d2b9af67b967ff34ab43bd1818a7d
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.date: 09/15/2020
+ms.openlocfilehash: 16fbffa31563920e28538a961e621c894d105173
+ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88511325"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90604907"
 ---
-В этой статье показано, как приступить к работе с клиентской библиотекой Пользовательского визуальное распознавания в Python и создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Python.
+Это руководство содержит инструкции и пример кода, которые помогут вам приступить к работе с клиентской библиотекой службы "Пользовательское визуальное распознавание" для Python и создать модель обнаружения объекта. Здесь объясняется, как создать проект, добавить теги, обучить проект и использовать URL-адрес конечной точки прогнозирования проекта для программного тестирования. Этот пример можно использовать как шаблон при создании своего приложения для распознавания изображений.
+
+> [!NOTE]
+> Если вы хотите создать и обучить модель обнаружения объекта _без_ написания кода, см. руководство по [работе со средствами на основе браузера](../../get-started-build-detector.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -20,7 +23,7 @@ ms.locfileid: "88511325"
 
 ## <a name="install-the-custom-vision-client-library"></a>Установка клиентской библиотеки Пользовательского визуального распознавания
 
-Чтобы установить клиентскую библиотеку Пользовательского визуального распознавания для Python, выполните следующую команду в PowerShell:
+Чтобы написать приложение для анализа изображений с помощью службы "Пользовательское визуальное распознавание" для Python, вам потребуется клиентская библиотека этой службы. Выполните следующую команду в PowerShell:
 
 ```powershell
 pip install azure-cognitiveservices-vision-customvision
@@ -36,11 +39,11 @@ pip install azure-cognitiveservices-vision-customvision
 
 Создайте файл с именем *sample.py* в необходимом каталоге проекта.
 
-### <a name="create-the-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
+## <a name="create-the-custom-vision-project"></a>Создание проекта в службе "Пользовательское визуальное распознавание"
 
 Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения. Кроме того, получите URL-адрес конечной точки на странице параметров веб-сайта службы "Пользовательское визуальное распознавание".
 
-Ознакомьтесь с методом [create_project](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin?view=azure-python#create-project-name--description-none--domain-id-none--classification-type-none--target-export-platforms-none--custom-headers-none--raw-false----operation-config-), чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию средства обнаружения объектов с помощью веб-портала](../../get-started-build-detector.md)).  
+Ознакомьтесь с методом **[create_project](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin?view=azure-python#create-project-name--description-none--domain-id-none--classification-type-none--target-export-platforms-none--custom-headers-none--raw-false----operation-config-&preserve-view=true)** , чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию средства обнаружения](../../get-started-build-detector.md) с помощью веб-портала).  
 
 ```Python
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
@@ -67,7 +70,7 @@ print ("Creating project...")
 project = trainer.create_project("My Detection Project", domain_id=obj_detection_domain.id)
 ```
 
-### <a name="create-tags-in-the-project"></a>Создание тегов в проекте
+## <a name="create-tags-in-the-project"></a>Создание тегов в проекте
 
 Чтобы создать теги объекта в проекте, добавьте следующий код в конец файла *sample.py*.
 
@@ -77,7 +80,7 @@ fork_tag = trainer.create_tag(project.id, "fork")
 scissors_tag = trainer.create_tag(project.id, "scissors")
 ```
 
-### <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
+## <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
 
 При добавлении тегов к изображениям в проектах обнаружения объектов вам нужно указать регион каждого помеченного объекта, используя нормализированные координаты.
 
@@ -170,7 +173,7 @@ if not upload_result.is_batch_successful:
     exit(-1)
 ```
 
-### <a name="train-the-project-and-publish"></a>Обучение проекта и публикация
+## <a name="train-and-publish-the-project"></a>Обучение и публикация проекта
 
 Этот код создает первую итерацию модели прогнозирования и публикует итерацию в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
@@ -189,7 +192,12 @@ trainer.publish_iteration(project.id, iteration.id, publish_iteration_name, pred
 print ("Done!")
 ```
 
-### <a name="get-and-use-the-published-iteration-on-the-prediction-endpoint"></a>Получение и использование опубликованной итерации в конечной точке прогнозирования
+> [!TIP]
+> Обучение с использованием выбранных тегов
+>
+> При необходимости вы можете выполнить обучение с использованием только некоторых из примененных тегов. Это может потребоваться, если вы еще не применили достаточное количество определенных тегов, но у вас достаточно других. В вызове **[train_project](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin?view=azure-python#train-project-project-id--training-type-none--reserved-budget-in-hours-0--force-train-false--notification-email-address-none--selected-tags-none--custom-headers-none--raw-false----operation-config-&preserve-view=true)** задайте для необязательного параметра *selected_tags* список строк с идентификаторами тегов, которые хотите использовать. Модель будет обучаться с распознаванием только тегов в этом списке.
+
+## <a name="use-the-prediction-endpoint"></a>Использование конечной точки прогнозирования
 
 Чтобы отправить изображение в конечную точку прогнозирования и извлечь прогнозирование, добавьте в конец файла следующий код:
 
@@ -218,13 +226,16 @@ for prediction in results.predictions:
 python sample.py
 ```
 
-Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/** ) помечено соответствующим образом и что область обнаружения верна.
+Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/**) помечено соответствующим образом и что область обнаружения верна.
 
 [!INCLUDE [clean-od-project](../../includes/clean-od-project.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы узнали, как выполнять в коде каждый шаг процесса обнаружения объектов. В этом примере выполняется одна итерация обучения, но часто нужно несколько раз обучать и тестировать модель, чтобы сделать ее более точной. В следующем руководстве объясняется классификация изображений, но ее принципы сходны с поиском объекта.
+Вы выполнили в коде каждый шаг процесса обнаружения объектов. В этом примере выполняется одна итерация обучения, но часто нужно несколько раз обучать и тестировать модель, чтобы сделать ее более точной. В следующем руководстве объясняется классификация изображений, но ее принципы сходны с поиском объекта.
 
 > [!div class="nextstepaction"]
 > [Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания](../../test-your-model.md)
+
+* Что собой представляет Пользовательское визуальное распознавание
+* [Справочная документация по пакету SDK](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customvision?view=azure-python)

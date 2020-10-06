@@ -9,14 +9,14 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: python
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 53590344a45990187b5ca8aba4eca18da526f308
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 6e778541023befc756e61be9b9646bf37c82c47c
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87872622"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90530613"
 ---
-# <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Python для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
+# <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка к работе имитированного устройства X.509 с помощью пакета SDK Python для устройств для Службы подготовки устройств к добавлению в Центр Интернета вещей.
 
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-tpm](../../includes/iot-dps-selector-quick-create-simulated-device-tpm.md)]
 
@@ -24,7 +24,7 @@ ms.locfileid: "87872622"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ознакомление со статьей о [принципах автоматической подготовки устройств](concepts-auto-provisioning.md).
+- Ознакомьтесь с принципами [подготовки к работе](about-iot-dps.md#provisioning-process).
 - Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 - Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/vs/) с разработкой классических приложений на C++.
@@ -77,14 +77,14 @@ ms.locfileid: "87872622"
 
 Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
 
-- [Группы регистрации](concepts-service.md#enrollment-group). Используются для регистрации нескольких связанных устройств.
-- [Индивидуальные регистрации.](concepts-service.md#individual-enrollment) Предназначены для регистрации одного устройства.
+- [группы регистрации](concepts-service.md#enrollment-group) — используются для регистрации нескольких связанных устройств;
+- [индивидуальная регистрация](concepts-service.md#individual-enrollment) — используется для регистрации одного устройства.
 
 В этой статье описана индивидуальная регистрация.
 
 1. Откройте решение `azure_iot_sdks.sln`, созданное в папке *cmake*, и соберите его в Visual Studio.
 
-1. Щелкните проект **tpm_device_provision** правой кнопкой мыши и выберите параметр **Назначить запускаемым проектом**. Запустите решение. Окно выходных данных отображает **_ключ подтверждения_** и **_идентификатор регистрации_** , необходимые для регистрации устройства. Запишите эти значения. 
+1. Щелкните проект **tpm_device_provision** правой кнопкой мыши и выберите параметр **Назначить запускаемым проектом**. Запустите решение. Окно выходных данных отображает **_ключ подтверждения_** и **_идентификатор регистрации_**, необходимые для регистрации устройства. Запишите эти значения. 
 
     ![Настройка TPM](./media/python-quick-create-simulated-device/tpm-setup.png)
 

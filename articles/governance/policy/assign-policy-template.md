@@ -1,17 +1,17 @@
 ---
-title: Краткое руководство. Создание назначения политики с помощью шаблонов
+title: Создание назначения политики с помощью шаблонов
 description: В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать назначение политики для обнаружения ресурсов, не соответствующих требованиям.
 ms.date: 08/17/2020
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.openlocfilehash: 2f012f9cc8f986f8f887096098961e44c4b7dffb
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: c32f833520a811d47129196ae4d67c92bad7e21f
+ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88689853"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89651427"
 ---
-# <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-an-arm-template"></a>Краткое руководство. Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона ARM
+# <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-an-arm-template"></a>Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона ARM
 
 Чтобы понять, соответствуют ли ресурсы требованиям в Azure, прежде всего нужно определить их состояние.
 В этом кратком руководстве описано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать назначение политики для определения виртуальных машин, которые не используют управляемые диски. Завершив работу, вы узнаете, какие виртуальные машины не используют управляемые диски, так как _не соответствуют_ назначению политики.
@@ -20,7 +20,7 @@ ms.locfileid: "88689853"
 
 Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
-:::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание шаблона ARM для назначения Политики Azure в Azure" border="false" link="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json":::
+:::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Кнопка для развертывания шаблона ARM для назначения политики Azure в Azure." border="false" link="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json":::
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,7 +45,7 @@ ms.locfileid: "88689853"
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон:
 
-   :::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание шаблона ARM для назначения Политики Azure в Azure" border="false" link="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json":::
+   :::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Кнопка для развертывания шаблона ARM для назначения политики Azure в Azure." border="false" link="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json":::
 
 1. Введите или выберите следующие значения.
 
@@ -55,7 +55,7 @@ ms.locfileid: "88689853"
    | Группа ресурсов | Выберите **Создать**, укажите имя, а затем выберите **OK**. На снимке экрана ниже группа ресурсов называется _mypolicyquickstart\<Date in MMDD\>rg_. |
    | Расположение | Выберите регион. Например, **центральная часть США**. |
    | Имя назначения политики | Укажите имя назначения политики. При необходимости можно использовать отображаемое имя определения политики. Например, _Аудит виртуальных машин, которые не используют управляемые диски_. |
-   | Имя группы ресурсов | Укажите имя группы ресурсов, для которой вы хотите назначить политику. В этом кратком руководстве используйте значение по умолчанию **[resourceGroup().name]** . **[resourceGroup()](../../azure-resource-manager/templates/template-functions-resource.md#resourcegroup)**  — это функция шаблона, которая извлекает группу ресурсов. |
+   | Имя группы ресурсов | Укажите имя группы ресурсов, для которой вы хотите назначить политику. В этом кратком руководстве используйте значение по умолчанию **[resourceGroup().name]**. **[resourceGroup()](../../azure-resource-manager/templates/template-functions-resource.md#resourcegroup)**  — это функция шаблона, которая извлекает группу ресурсов. |
    | Идентификатор определения политики | Укажите **/providers/Microsoft.Authorization/policyDefinitions/0a914e76-4921-4c19-b460-a2d36003525a**. |
    | Я принимаю указанные выше условия | Установите этот флажок. |
 
@@ -72,7 +72,7 @@ ms.locfileid: "88689853"
 
 Выберите **Соответствие** в левой части страницы и найдите ранее созданное назначение политики _Аудит виртуальных машин, которые не используют управляемые диски_.
 
-:::image type="content" source="./media/assign-policy-template/policy-compliance.png" alt-text="Страница сведений о соответствии политике" border="false":::
+:::image type="content" source="./media/assign-policy-template/policy-compliance.png" alt-text="Кнопка для развертывания шаблона ARM для назначения политики Azure в Azure." border="false":::
 
 Существующие ресурсы, которые не соответствуют новому назначению, отображаются в разделе **Несоответствующие ресурсы**.
 
@@ -86,7 +86,7 @@ ms.locfileid: "88689853"
 
 1. Щелкните правой кнопкой мыши назначение политики _Аудит виртуальных машин, которые не используют управляемые диски_ и выберите **Удалить назначение**.
 
-   :::image type="content" source="./media/assign-policy-template/delete-assignment.png" alt-text="Удаление назначения на странице сведений о соответствии" border="false":::
+   :::image type="content" source="./media/assign-policy-template/delete-assignment.png" alt-text="Кнопка для развертывания шаблона ARM для назначения политики Azure в Azure." border="false":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

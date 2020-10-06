@@ -119,6 +119,8 @@
           href: troubleshoot-capacity-pools.md
         - name: Устранение неполадок с репликацией между регионами
           href: troubleshoot-cross-region-replication.md
+        - name: Устранение неполадок с томами с двумя протоколами
+          href: troubleshoot-dual-protocol-volumes.md
         - name: Устранение неполадок с политиками моментальных снимков
           href: troubleshoot-snapshot-policies.md
 - name: Справочник

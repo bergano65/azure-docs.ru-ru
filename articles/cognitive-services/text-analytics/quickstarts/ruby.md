@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Вызов API анализа текста с использованием Ruby
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как получить информацию и примеры кода, которые помогут вам приступить к работе с API "Анализ текста" в Azure Cognitive Services.
+description: В этом кратком руководстве показано, как с помощью Ruby получить информацию и примеры кода для начала работы с API "Анализ текста" в Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,14 +10,14 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 07/06/2020
 ms.author: aahi
-ms.openlocfilehash: 92a80dc69afbda76d57a09e01efc9b91ecb286ba
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 076276068b62ed1b7b30864e9a4227cd449c680e
+ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027920"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90527230"
 ---
-# <a name="quickstart-using-ruby-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Ruby для вызова API анализа текста Cognitive Services
+# <a name="quickstart-using-ruby-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Вызов API анализа текста Cognitive Services с использованием Ruby
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities), используя  [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) и Ruby.

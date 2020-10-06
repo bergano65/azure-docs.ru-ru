@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5b54af39401ba8c3fede4c9ad80ec8edc963b1d
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: de0212739f5cd24cec9ab58bdaf4d2b272f31200
+ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213678"
+ms.lasthandoff: 09/13/2020
+ms.locfileid: "90054370"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "88213678"
 * Помочь классифицировать группы в адресной книге.
 * Запретить использование конкретных слов в именах и псевдонимах групп.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="configure-the-group-naming-policy-in-the-azure-portal"></a>Настройка политики именования групп на портале Azure
 
@@ -68,6 +68,6 @@ ms.locfileid: "88213678"
 
 Из этого краткого руководства вы узнали, как настроить политику именования для организации Azure AD с помощью портала Azure.
 
-Перейдите к следующей статье, чтобы просмотреть дополнительные сведения, в том числе о командлетах PowerShell для политики именования, технических ограничениях, добавлении списка настраиваемых запрещенных слов или работе пользователя в приложениях Office 365 см.
+Перейдите к следующей статье, чтобы просмотреть дополнительные сведения, в том числе о командлетах PowerShell для политики именования, технических ограничениях, добавлении списка настраиваемых запрещенных слов или работе пользователя в приложениях Microsoft 365.
 > [!div class="nextstepaction"]
 > [PowerShell для политики именования](groups-naming-policy.md)
