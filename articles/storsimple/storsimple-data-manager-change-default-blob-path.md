@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 0a7dab1129eb88d7e58bab8a827d745596bc218d
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.openlocfilehash: 6af095c7abdb9aa61e57d543ff2ab2f9192dadc8
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88183723"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743579"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Изменение пути к большому двоичному объекту по умолчанию
 
@@ -25,7 +25,7 @@ ms.locfileid: "88183723"
 
 Для создания функции Azure выполните следующие действия:
 
-1. Перейдите на [портал Azure](https://portal.azure.com/).
+1. Перейдите на [портал Microsoft Azure](https://portal.azure.com/).
 
 2. Щелкните **Создать ресурс**. В поле **Поиск** введите **приложение-функция** и нажмите клавишу **ВВОД**. В появившемся списке приложений выберите и щелкните **Приложение-функция**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "88183723"
      
 10. В окне функции выполните файл _CSX_.
 
-    ![Создание функции C#](./media/storsimple-data-manager-change-default-blob-path/new-function-run-csx.png)
+    ![Создать новую функцию C# 2](./media/storsimple-data-manager-change-default-blob-path/new-function-run-csx.png)
     
     Выполните следующие действия.
 
@@ -191,7 +191,7 @@ ms.locfileid: "88183723"
 
     2. Выберите **+ Добавить**.
         
-        ![Ссылка "Просмотреть файлы"](./media/storsimple-data-manager-change-default-blob-path/new-function-add-file.png)
+        ![Добавить новую функцию Добавить файл](./media/storsimple-data-manager-change-default-blob-path/new-function-add-file.png)
     
     3. Введите **project.js**, а затем нажмите клавишу **Ввод**. В файле **project.json** скопируйте следующий код:
 
@@ -211,7 +211,7 @@ ms.locfileid: "88183723"
     
     4. Выберите команду **Сохранить**.
 
-        ![Ссылка "Просмотреть файлы"](./media/storsimple-data-manager-change-default-blob-path/new-function-project-json.png)
+        ![Новый проект функции JSON](./media/storsimple-data-manager-change-default-blob-path/new-function-project-json.png)
 
 Вы создали функцию Azure. Эта функция запускается каждый раз, когда задание преобразования данных создает большой двоичный объект.
 

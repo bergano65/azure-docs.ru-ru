@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/22/2019
+ms.date: 10/05/2020
 ms.author: b-juche
-ms.openlocfilehash: 818b3b59b1113875b6486ffe64bc8d2d30d613d3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b5c576211fe7bb202e7a27bee5ee3bfd90d74cf9
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325472"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743103"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
 Уровни обслуживания являются атрибутами пула ресурсов. Уровни обслуживания определяются и отличаются максимально допустимой пропускной способностью для тома в пуле ресурсов на основе квоты, назначенной тому.
@@ -66,7 +66,7 @@ Azure NetApp Files поддерживает три уровня обслужив
 * SAP HANA объем данных: размер 4 ТБ (до 704 MiB/с)
 * SAP HANA объем журнала: размер 0,5 ТБ и до 256 MiB/с
 * SAP HANA общий том: размер 1 ТБ до 64 MiB/с
-* SAP HANA объем резервной копии: размер 4,5 ТБ и до 256 MiB/с
+* SAP HANA объем резервной копии: размер 6,5 ТБ и до 256 MiB/с
 
 На схеме ниже показаны сценарии для SAP HANAных томов:
 

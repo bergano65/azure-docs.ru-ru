@@ -2,14 +2,14 @@
 author: ccompy
 ms.service: app-service-web
 ms.topic: include
-ms.date: 04/15/2020
+ms.date: 10/01/2020
 ms.author: ccompy
-ms.openlocfilehash: c31a5aaa9866a4ce97cd3cd59a8e363834f70587
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 481bd4f50eb527bcad2ba79b5ba4b9df4b872bfc
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81312840"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91739920"
 ---
 * Многоклиентские системы, поддерживающие весь спектр планов ценообразования, за исключением изолированных.
 * Среда службы приложений, который развертывается в виртуальной сети и поддерживает приложения с планом расчета цен.
@@ -23,7 +23,7 @@ ms.locfileid: "81312840"
 
 Функции интеграции с виртуальной сетью:
 
-* Требуется план ценообразования "Стандартный", "Премиум", категории премиум v2 или эластичный Premium.
+* Требуется план ценообразования "Стандартный", "Премиум", категории премиум v2, PremiumV3 или эластичный Premium.
 * Поддержка TCP и UDP.
 * Работа с приложениями службы приложений Azure и приложениями функций.
 

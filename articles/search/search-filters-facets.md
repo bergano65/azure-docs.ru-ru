@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 10/05/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a9d508afac64e448ca220a36b2be983da85d96b0
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 9360fc000e01e1c52561cbaa3e2f2968e67e2fa2
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89002629"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91740876"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-cognitive-search"></a>Как создать фильтр аспекта в Azure Когнитивный поиск 
 
@@ -29,7 +29,8 @@ ms.locfileid: "89002629"
 
 Аспекты являются динамическими и возвращаются в запросе. В ответах поиска приводятся фасетные категории, используемые для навигации по результатам. Если вы не знакомы с аспектами, ниже приведен пример структуры фасетной навигации.
 
-  ![Изображение, показывающее диалоговое окно поиска с отфильтрованными результатами поиска, сгруппированными по бизнес-наименованиям. Стрелка указывает, что результаты представляют собой аспекты, отображаемые в структуре навигации аспекта.](./media/search-filters-facets/facet-nav.png)
+:::image type="complex" source="media/search-filters-facets/facet-nav.png" alt-text="отфильтрованные результаты поиска&quot;:::
+&quot;Изображение, показывающее диалоговое окно поиска с отфильтрованными результатами поиска, сгруппированными по бизнес-наименованиям. Стрелка указывает, что результаты представляют собой аспекты, отображаемые в структуре навигации аспекта " :::image-end:::
 
 Хотите подробнее узнать о фасетной навигации? См. статью [как реализовать аспектную навигацию в Azure когнитивный Поиск](search-faceted-navigation.md).
 

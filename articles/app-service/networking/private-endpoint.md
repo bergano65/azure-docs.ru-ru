@@ -9,19 +9,19 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 16ce03ad8d6af1908a9ea4d3b7759bb5eb3c1139
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 9f593bd5e1d4970b43b25c434abfa87177b72066
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88961556"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743018"
 ---
 # <a name="using-private-endpoints-for-azure-web-app-preview"></a>Использование частных конечных точек для веб-приложения Azure (предварительная версия)
 
 > [!Note]
 > После обновления предварительной версии мы выпустили функцию защиты от утечки данных.
 >
-> Предварительная версия доступна во всех общедоступных регионах для веб-приложений Windows и Linux PremiumV2 и приложений-функций эластичной базы данных (цен. категория "Премиум"). 
+> Предварительная версия доступна во всех общедоступных регионах для категории премиум v2 и PremiumV3 приложений Windows и Linux и эластичных функций Premium. 
 
 Вы можете использовать закрытую конечную точку для веб-приложения Azure, чтобы разрешить клиентам, находящимся в частной сети, безопасный доступ к приложению по приватному каналу. Частная конечная точка использует IP-адрес из адресного пространства Azure VNet. Сетевой трафик между клиентом и вашей частной сетью проходит через VNet и приватный канал в магистральной сети Майкрософт, что позволяет избежать рисков общедоступного Интернета.
 
@@ -70,7 +70,7 @@ ms.locfileid: "88961556"
 По умолчанию без частной конечной точки общедоступное имя веб-приложения является каноническим именем кластера.
 Например, разрешение имен будет следующим:
 
-|Имя |Type |Значение |
+|Имя |Тип |Значение |
 |-----|-----|------|
 |mywebapp.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
 |clustername.azurewebsites.windows.net|CNAME|cloudservicename.cloudapp.net|
@@ -80,7 +80,7 @@ ms.locfileid: "88961556"
 При развертывании частной конечной точки мы обновляем запись DNS, чтобы она указывала на каноническое имя mywebapp.privatelink.azurewebsites.net.
 Например, разрешение имен будет следующим:
 
-|Имя |Type |Значение |Комментарий |
+|Имя |Тип |Значение |Комментарий |
 |-----|-----|------|-------|
 |mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
 |mywebapp.privatelink.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
@@ -91,7 +91,7 @@ ms.locfileid: "88961556"
 Необходимо создать зону DNS: **privatelink.azurewebsites.NET**. Зарегистрируйте запись для веб-приложения, используя запись A и IP-адрес частной конечной точки.
 Например, разрешение имен будет следующим:
 
-|Имя |Type |Значение |Комментарий |
+|Имя |Тип |Значение |Комментарий |
 |-----|-----|------|-------|
 |mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
 |mywebapp.privatelink.azurewebsites.net|Объект|10.10.10.8|<--вы управляете этой записью в системе DNS, чтобы указать IP-адрес частной конечной точки.|
@@ -103,7 +103,7 @@ ms.locfileid: "88961556"
 
 Для консоли KUDU или KUDU REST API (например, развертывание с помощью собственных агентов Azure DevOps) необходимо создать две записи в Azure DNS частной зоне или пользовательском DNS-сервере. 
 
-| Имя | Type | Значение |
+| Имя | Тип | Значение |
 |-----|-----|-----|
 | mywebapp.privatelink.azurewebsites.net | Объект | приватиндпоинтип | 
 | mywebapp.scm.privatelink.azurewebsites.net | Объект | приватиндпоинтип | 

@@ -7,13 +7,13 @@ author: tchristiani
 ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/19/2020
-ms.openlocfilehash: b428ff4a9a4f4b9110e88dba57cfad20f2221cf1
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.date: 10/05/2020
+ms.openlocfilehash: 941d7f54bcb44653280abe264ff1cffbeae33679
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936169"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743188"
 ---
 # <a name="debug-sessions-in-azure-cognitive-search"></a>Сеансы отладки в Azure Когнитивный поиск
 
@@ -35,8 +35,7 @@ ms.locfileid: "88936169"
 
 Для запуска сеанса отладки необходим существующий конвейер обогащения с помощью ИИ, включая источник данных, набор навыков, индексатор и индекс. Чтобы настроить сеанс отладки, необходимо присвоить сеансу имя и предоставить учетную запись хранения общего назначения, которая будет использоваться для кэширования выполнения навыков во время выполнения индексатора. Также потребуется выбрать индексатор, который будет выполняться. Индексатор содержит сохраненные ссылки на источник данных, набор навыков и индекс. Сеанс отладки будет по умолчанию использовать первый документ в источнике данных, либо можно указать документ в источнике данных для пошаговой обработки.
 
-> [!div class="mx-imgBorder"]
-> ![Создание сеанса отладки](media/cognitive-search-debug/debug-session-new.png)
+> :::image type="content" source="media/cognitive-search-debug/debug-session-new.png" alt-text="Создание сеанса отладки":::
 
 ## <a name="debug-session-features"></a>Функции сеансов отладки
 
@@ -52,8 +51,7 @@ ms.locfileid: "88936169"
 
 При выборе навыка на графе будут выделяться связанные с ним навыки, узлы, которые создают входные данные, и узлы, принимающие его выходные данные. Каждый узел навыка отображает его тип, ошибки или предупреждения, а также счетчики выполнения. Именно на **графе навыков** вы выбираете, какой навык следует отлаживать или улучшать. При выборе навыка сведения о нем отображаются в области сведений о навыках справа от графа.
 
-> [!div class="mx-imgBorder"]
-> ![Граф навыков](media/cognitive-search-debug/skills-graph.png)
+> :::image type="content" source="media/cognitive-search-debug/skills-graph.png" alt-text="Создание сеанса отладки":::
 
 ## <a name="skill-details"></a>Сведения о навыках
 
@@ -75,8 +73,7 @@ ms.locfileid: "88936169"
 
 Область **Обогащенная структура данных** отображает обогащения документа с помощью набора навыков, подробно описывая контекст для каждого обогащения и исходного навыка. Также можно использовать **вычислитель выражений** для просмотра содержимого каждого обогащения.
 
-> [!div class="mx-imgBorder"]
-> ![Обогащенная структура данных](media/cognitive-search-debug/enriched-data-structure-display.png)
+> :::image type="content" source="media/cognitive-search-debug/enriched-data-structure-display.png" alt-text="Создание сеанса отладки":::
 
 ## <a name="expression-evaluator"></a>Вычислитель выражений
 

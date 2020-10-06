@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: b7054b520d31c6c5363c8784bb9a4839e9249c88
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 3891d1730648fea3c480cd03921a76fe005c308f
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902867"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91740060"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql"></a>Настройка оповещений на основе метрик для базы данных Azure для MySQL на портале Azure 
 
@@ -40,19 +40,19 @@ ms.locfileid: "90902867"
 
 4. Откроется страница **Создание правила**, как показано ниже. Заполните необходимые сведения:
 
-   :::image type="content" source="./media/howto-alert-on-metric/4-add-rule-form.png" alt-text="Форма добавления оповещения для метрики":::
+   :::image type="content" source="./media/howto-alert-on-metric/4-add-rule-form.png" alt-text="Выбор правил оповещений":::
 
 5. В разделе **Условие** выберите **Добавить условие**.
 
 6. Выберите из списка сигналов метрику, для которой необходимо создать оповещение. В этом примере выберите Storage percent (Процент хранилища).
    
-   :::image type="content" source="./media/howto-alert-on-metric/6-configure-signal-logic.png" alt-text="Выбор метрики":::
+   :::image type="content" source="./media/howto-alert-on-metric/6-configure-signal-logic.png" alt-text="Выбор правил оповещений":::
 
 7. Настройте логику оповещения, в том числе **условие** (например, "Больше чем"), **пороговое значение** (например, 85 %), **агрегат времени**, **период**, в течение которого должно быть выполнено правило метрики, прежде чем будет активировано оповещение (например, "За последние 30 минут") и **частотой**.
    
    По завершении нажмите кнопку **Готово**.
 
-   :::image type="content" source="./media/howto-alert-on-metric/7-set-threshold-time.png" alt-text="Выбор метрики":::
+   :::image type="content" source="./media/howto-alert-on-metric/7-set-threshold-time.png" alt-text="Выбор правил оповещений":::
 
 8. В разделе **Группы действий** выберите **Создать**, чтобы создать группу для получения уведомлений об оповещении.
 
@@ -66,11 +66,11 @@ ms.locfileid: "90902867"
 
     По завершении нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/howto-alert-on-metric/10-action-group-type.png" alt-text="Группа действий":::
+    :::image type="content" source="./media/howto-alert-on-metric/10-action-group-type.png" alt-text="Выбор правил оповещений":::
 
 11. Укажите имя правила генерации оповещений, описание и уровень серьезности.
 
-    :::image type="content" source="./media/howto-alert-on-metric/11-name-description-severity.png" alt-text="Группа действий"::: 
+    :::image type="content" source="./media/howto-alert-on-metric/11-name-description-severity.png" alt-text="Выбор правил оповещений"::: 
 
 12. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение.
 

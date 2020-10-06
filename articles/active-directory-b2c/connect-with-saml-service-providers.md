@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/09/2020
+ms.date: 10/05/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 09edfc91f98e51a7dce7e98b48f2970ccba33586
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.openlocfilehash: 9e67f24cf670024432f64487df20b9fca515c006
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89611617"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91740383"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -252,6 +252,9 @@ Azure AD B2C обеспечивает взаимодействие с SAML од�
   </RelyingParty>
 </TrustFrameworkPolicy>
 ```
+
+> [!NOTE]
+> При реализации других типов потоков пользователя (например, для входа, сброса пароля или редактирования профиля) процесс по сути аналогичен описанному в этом разделе. На шаге 4 выше вы измените последний шаг пути взаимодействия пользователя с `JWTIssuer` на `Saml2AssertionIssuer` . И на шаге 6 выше в разделе проверяющей стороны вы измените **протокол** с `OpenIdConnect` на `SAML2` .
 
 ### <a name="32-upload-and-test-your-policy-metadata"></a>3.2 Отправка и тестирование метаданных политики
 

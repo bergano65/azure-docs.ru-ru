@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 6/10/2020
-ms.openlocfilehash: 41e99d11199ae0f2a411b6e2c0b93ea8efcebca2
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 5faed87995d1c49ab635f39264354a791f729b57
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91542535"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91742865"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -116,7 +116,7 @@ ms.locfileid: "91542535"
 
 3. Введите имя исходного сервера и нажмите кнопку **Удалить** , чтобы подтвердить удаление исходного сервера.  
 
-   ![База данных Azure для MariaDB — Удаление главного сервера](./media/howto-read-replica-portal/delete-master-confirm.png)
+   ![База данных Azure для MariaDB — подтверждение удаления главного сервера](./media/howto-read-replica-portal/delete-master-confirm.png)
 
 ## <a name="monitor-replication"></a>Мониторинг репликации
 
@@ -134,7 +134,7 @@ ms.locfileid: "91542535"
 
 5. Просмотрите задержку репликации для выбранного диапазона времени. На следующем рисунке показана последняя 30 минут для большой рабочей нагрузки.
 
-   ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
+   ![Выберите диапазон времени 30 минут](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

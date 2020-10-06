@@ -4,12 +4,12 @@ description: Узнайте, как масштабировать ресурсы 
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: f784ce9eb4c465c83bea28e05e7f423e0b55c947
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b8d16b4e112c9aebe86c60dc01d380d591fc7624
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91294256"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743528"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Начало работы с автомасштабированием в Azure
 В этой статье описывается, как настроить автомасштабирование для ресурса на портале Microsoft Azure.
@@ -116,6 +116,8 @@ Azure Monitor дает возможность обнаружить все рес
 ## <a name="route-traffic-to-healthy-instances-app-service"></a>Маршрутизация трафика в работоспособные экземпляры (служба приложений)
 
 При масштабировании на несколько экземпляров служба приложений может выполнять проверки работоспособности экземпляров для маршрутизации трафика только в работоспособные экземпляры. Для этого откройте портал в службе приложений, а затем выберите **Проверка работоспособности** в разделе **мониторинг**. Выберите **включить** и укажите допустимый путь URL-адреса в приложении, например `/health` или `/api/health` . Выберите команду **Сохранить**.
+
+Чтобы включить функцию с шаблонами ARM, задайте для `healthcheckpath` свойства `Microsoft.Web/sites` ресурса путь проверки работоспособности на сайте, например: `"/api/health/"` . Чтобы отключить эту функцию, снова задайте для свойства пустую строку `""` .
 
 ### <a name="health-check-path"></a>Путь проверки работоспособности
 

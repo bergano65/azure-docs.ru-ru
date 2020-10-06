@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: a57ea081bf6fef8c0778af2a6254b3f61564027e
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.openlocfilehash: 1ba3f49c9016d71acf162efb07cd6120b1dcc1ec
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
-ms.locfileid: "91711467"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743562"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
 
@@ -40,7 +40,7 @@ ms.locfileid: "91711467"
 
 * [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
-## <a name="create"></a>Создание
+## <a name="create"></a>Создать
 
 **Оценка времени**: приблизительно 5 минут.
 
@@ -108,7 +108,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 ### <a name="create-on-behalf-of-preview"></a>Создание от имени (Предварительная версия)
 
 Как администратор вы можете создать вычислительный экземпляр от имени анализу данных и присвоить ему экземпляр с помощью:
-* [Шаблон Azure Resource Manager](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/preview/2020-09-01-preview/examples/createComputeInstance.json).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
+* [Шаблон Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
 * REST API
 
 Анализу данных, для которых создается вычислительный экземпляр, должны быть предоставлены следующие разрешения [управления доступом на основе ролей (RBAC) Azure](../role-based-access-control/overview.md) . 
@@ -138,7 +138,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.get_status()
     ```
 
-* Остановить
+* Стоп
 
     ```python
     # stop() is used to stop the ComputeInstance
@@ -161,7 +161,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.restart(wait_for_completion=True, show_output=True)
     ```
 
-* Удалить
+* DELETE
 
     ```python
     # delete() is used to delete the ComputeInstance target. Useful if you want to re-use the compute name 
@@ -172,7 +172,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 В приведенных ниже примерах имя вычислительного экземпляра — **instance** .
 
-* Остановить
+* Стоп
 
     ```azurecli-interactive
     az ml computetarget stop computeinstance -n instance -v
@@ -196,7 +196,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в статье [AZ ML computetarget Restart компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart).
 
-* Удалить
+* DELETE
 
     ```azurecli-interactive
     az ml computetarget delete -n instance -v

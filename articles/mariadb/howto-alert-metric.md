@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 5687255057fdd5e73478626721c789c98b2ea366
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 6ed890fca9dddcbc7f04914a6f920d530d18ed0f
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120081"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91742848"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mariadb"></a>Настройка оповещений на основе метрик для Базы данных Azure для MariaDB на портале Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "86120081"
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
 * [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
 * [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
-* [Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/metricalerts)
+* [REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric"></a>Создание правила генерации оповещений на основе метрики
 1. На [портале Azure](https://portal.azure.com/) выберите сервер Базы данных Azure для MariaDB, который нужно отследить.
@@ -52,7 +52,7 @@ ms.locfileid: "86120081"
    
    По завершении нажмите кнопку **Готово**.
 
-   ![Выбор метрики](./media/howto-alert-metric/7-set-threshold-time.png)
+   ![Выбор метрики 2](./media/howto-alert-metric/7-set-threshold-time.png)
 
 8. В разделе **Группы действий** выберите **Создать**, чтобы создать группу для получения уведомлений об оповещении.
 
@@ -70,7 +70,7 @@ ms.locfileid: "86120081"
 
 11. Укажите имя правила генерации оповещений, описание и уровень серьезности.
 
-    ![Группа действий](./media/howto-alert-metric/11-name-description-severity.png) 
+    ![Группа действий 2](./media/howto-alert-metric/11-name-description-severity.png) 
 
 12. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение.
 

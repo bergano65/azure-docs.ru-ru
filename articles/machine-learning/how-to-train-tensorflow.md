@@ -10,12 +10,12 @@ author: mx-iao
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 618889f40816ec8ccc64487778bf1f6fbdd3b886
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 21a0672db5a7038fbcdeb01e4cf07bcd760cf7ef
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91536551"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743001"
 ---
 # <a name="train-tensorflow-models-at-scale-with-azure-machine-learning"></a>Обучение моделей TensorFlow в масштабе с помощью Машинное обучение Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "91536551"
 
 Независимо от того, разрабатываете ли вы модель TensorFlow с нуля или используете [существующую модель](how-to-deploy-existing-model.md) в облаке, вы можете использовать машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом для создания, развертывания, контроля версий и мониторинга моделей производственного уровня.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
 
@@ -127,45 +127,10 @@ except ComputeTargetException:
 
 ### <a name="define-your-environment"></a>Определение среды
 
-Чтобы определить [среду](concept-environments.md) машинного обучения Azure, в которой будут инкапсулированы зависимости сценария обучения, можно определить пользовательскую среду или использовать среду, проверенную в машинном обучении Azure.
-
-#### <a name="create-a-custom-environment"></a>Создание пользовательской среды
-
-Определите среду машинного обучения Azure, в которой инкапсулируются зависимости сценария обучения.
-
-Сначала определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
-
-```yaml
-channels:
-- conda-forge
-dependencies:
-- python=3.6.2
-- pip:
-  - azureml-defaults
-  - tensorflow-gpu==2.2.0
-```
-
-Создайте среду машинного обучения Azure из этой спецификации среды conda. Среда будет упакована в контейнер DOCKER во время выполнения.
-
-По умолчанию, если базовый образ не указан, Azure ML будет использовать образ ЦП в `azureml.core.runconfig.DEFAULT_CPU_IMAGE` качестве базового образа. Поскольку в этом примере выполняется обучение на кластере GPU, необходимо указать базовый образ GPU с необходимыми драйверами и зависимостями GPU. Служба машинного обучения Azure поддерживает набор базовых образов, опубликованных в реестре контейнеров Microsoft (мкр), которые можно использовать. Дополнительные сведения см. в репозитории GitHub [Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) .
-
-```python
-from azureml.core import Environment
-
-tf_env = Environment.from_conda_specification(name='tensorflow-2.2-gpu', file_path='./conda_dependencies.yml')
-
-# Specify a GPU base image
-tf_env.docker.enabled = True
-tf_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04'
-```
-
-> [!TIP]
-> При необходимости можно просто захватить все зависимости непосредственно в пользовательском образе DOCKER или Dockerfile и создать среду из нее. Дополнительные сведения см. в разделе [обучение с помощью пользовательского образа](how-to-train-with-custom-image.md).
-
-Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
+Чтобы определить [среду](concept-environments.md) машинного обучения Azure, которая инкапсулирует зависимости сценария обучения, можно либо определить пользовательскую среду, либо использовать проверенную среду машинного обучения Azure.
 
 #### <a name="use-a-curated-environment"></a>Использование проверенной среды
-Кроме того, Azure ML предоставляет предварительно созданные и проверенные среды, если вы не хотите создавать собственный образ. В МАШИНном обучении Azure имеется несколько проверенных сред ЦП и GPU для TensorFlow, соответствующих разным версиям TensorFlow. Дополнительные сведения см. [здесь](resource-curated-environments.md).
+Azure ML предоставляет готовые, проверенные среды, если вы не хотите определять собственную среду. В МАШИНном обучении Azure имеется несколько проверенных сред ЦП и GPU для TensorFlow, соответствующих разным версиям TensorFlow. Дополнительные сведения см. [здесь](resource-curated-environments.md).
 
 Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
 
@@ -188,6 +153,41 @@ tf_env = Environment.from_conda_specification(name='tensorflow-2.2-gpu', file_pa
 ```python
 tf_env = tf_env.clone(new_name='tensorflow-2.2-gpu')
 ```
+
+#### <a name="create-a-custom-environment"></a>Создание пользовательской среды
+
+Вы также можете создать собственную среду машинного обучения Azure, которая инкапсулирует зависимости обучающего сценария.
+
+Сначала определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
+
+```yaml
+channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults
+  - tensorflow-gpu==2.2.0
+```
+
+Создайте среду машинного обучения Azure из этой спецификации среды conda. Среда будет упакована в контейнер DOCKER во время выполнения.
+
+По умолчанию, если базовый образ не указан, Azure ML будет использовать образ ЦП в `azureml.core.environment.DEFAULT_CPU_IMAGE` качестве базового образа. Поскольку в этом примере выполняется обучение на кластере GPU, необходимо указать базовый образ GPU с необходимыми драйверами и зависимостями GPU. Служба машинного обучения Azure поддерживает набор базовых образов, опубликованных в реестре контейнеров Microsoft (мкр), которые можно использовать. Дополнительные сведения см. в репозитории GitHub [Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) .
+
+```python
+from azureml.core import Environment
+
+tf_env = Environment.from_conda_specification(name='tensorflow-2.2-gpu', file_path='./conda_dependencies.yml')
+
+# Specify a GPU base image
+tf_env.docker.enabled = True
+tf_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04'
+```
+
+> [!TIP]
+> При необходимости можно просто захватить все зависимости непосредственно в пользовательском образе DOCKER или Dockerfile и создать среду из нее. Дополнительные сведения см. в разделе [обучение с помощью пользовательского образа](how-to-train-with-custom-image.md).
+
+Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
 
 ## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
 
