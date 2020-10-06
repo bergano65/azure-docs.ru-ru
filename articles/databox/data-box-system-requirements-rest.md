@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 04/19/2019
+ms.date: 10/05/2020
 ms.author: alkohli
-ms.openlocfilehash: 71e0ebf7d7851ae65a6fba67a1695d755fd98bb1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac5f2de383066d6ee399dac3b0ad8c365b2e72bc
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61436500"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744116"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Data Box
 
@@ -30,40 +30,27 @@ ms.locfileid: "61436500"
 |    Шифрование службы для неактивных данных                  |    256-битное шифрование AES                             |    256-битное шифрование AES |
 |    Тип учетной записи хранения                                 |    Учетные записи хранения общего назначения и учетные записи хранения BLOB-объектов Azure    |    Только общего назначения версии 1|
 |    Имя большого двоичного объекта                                            |    1024 символов (2048 байт)                     |    880 символов (1760 байт)|
-|    Максимальный размер блока большого двоичного объекта                              |    4,75 ТБ (100 МБ х 50 000 блоков)                   |    4,75 ТБ (100 МБ х 50 000 блоков) для Azure Data Box версии 1.8 и более поздних.|
+|    Максимальный размер блока большого двоичного объекта                              |    4,75 ТБ (100 МБ х 50 000 блоков)                   |    4,75 ТБ (100 МБ x 50 000 блоков) для Azure Data Box v 3,0.|
 |    Максимальный размер страничного BLOB-объекта                               |    8 ТБ                                               |    1 TБ                   |
 |    Размер страницы страничного BLOB-объекта                                  |    512 байт                                          |    4 КБ                   |
 
 ## <a name="supported-api-versions"></a>Поддерживаемые версии API
 
-Следующие версии API служб хранилища Azure поддерживаются с хранилищем BLOB-объектов Data Box:
+В хранилище BLOB-объектов Data Box поддерживаются следующие версии API службы хранилища Azure.
 
-Azure Data Box версии 1.8 и более поздние
+### <a name="azure-data-box-30-onwards"></a>Azure Data Box 3,0 в сторону
 
-- [2017-11-09](/rest/api/storageservices/version-2017-11-09)
-- [2017-07-29](/rest/api/storageservices/version-2017-07-29)
-- [2017-04-17](/rest/api/storageservices/version-2017-04-17)
-- [2016-05-31](/rest/api/storageservices/version-2016-05-31);
-- [2015-12-11](/rest/api/storageservices/version-2015-12-11)
-- [2015-07-08](/rest/api/storageservices/version-2015-07-08);
-- [2015-04-05](/rest/api/storageservices/version-2015-04-05) |
+[!INCLUDE [data-box-rest-supported-api-versions](../../includes/data-box-rest-supported-api-versions.md)]
+
 ## <a name="supported-azure-client-libraries"></a>Поддерживаемые клиентские библиотеки Azure
 
-Для хранилища BLOB-объектов службы Data Box существуют определенные клиентские библиотеки и определенные требования к суффиксу конечной точки. Конечные точки хранилища BLOB-объектов Data Box не имеют полного соответствия с последней версией REST API хранилища BLOB-объектов Azure. Сведения см. в разделе [Поддерживаемые версии API](#supported-api-versions). Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
+Для хранилища BLOB-объектов службы Data Box существуют определенные клиентские библиотеки и определенные требования к суффиксу конечной точки. Конечные точки хранилища BLOB-объектов Data Box не имеют полной четности с последней версией REST API хранилища BLOB-объектов Azure; Ознакомьтесь с [поддерживаемыми версиями для Azure Data Box 3,0, начиная с версии](#supported-api-versions). Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
 
-### <a name="azure-data-box-18-onwards"></a>Azure Data Box версии 1.8 и более поздние
+### <a name="azure-data-box-30-onwards"></a>Azure Data Box 3,0 в сторону
 
-| Клиентская библиотека     |Поддерживаемая версия хранилища BLOB-объектов службы Data Box     | Ссылка   |     Спецификация конечной точки      |
-|--------------------|--------------------------------------------|--------|---------------------------------|
-|    .NET                |    9.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0    <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0                                                                                                                                                                                               |    Файл app.config                 |
-|    Java                |    7.0.0                                           |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0                                                                                                                                                                              |    Настройка строки подключения         |
-|    Node.js             |    2.8.3                                           |    Ссылка на NPM: https://www.npmjs.com/package/azure-storage (Run: `npm install azure-storage@2.7.0` )   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Объявление экземпляра службы    |
-|    C++                 |    5.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/5.2.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases/tag/v5.2.0                                                                                                                                                                                                     |    Настройка строки подключения         |
-|    PHP                 |    1.2.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob      <br>Установка через компоновщик (дополнительные сведения см. ниже)                                                                                                             |    Настройка строки подключения         |
-|    Python              |    1.1.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common <br>Большой двоичный объект: https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-blob                                                                                                                                                                          |    Объявление экземпляра службы    |
-|    Ruby                |    1.0.1                                           |    Пакет RubyGems:<br>Общая версия: https://rubygems.org/gems/azure-storage-common/versions/1.0.1   <br>Большой двоичный объект: https://rubygems.org/gems/azure-storage-blob/versions/1.0.1         <br>Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-blob          |    Настройка строки подключения         |
+Для хранилища BLOB-объектов Data Box поддерживаются следующие версии клиентской библиотеки Azure.
 
-
+[!INCLUDE [data-box-rest-supported-azure-client-libraries](../../includes/data-box-rest-supported-azure-client-libraries.md)]
 
 ### <a name="install-php-client-via-composer---current"></a>Установка клиента PHP через компоновщик — текущая версия
 
@@ -83,7 +70,7 @@ Azure Data Box версии 1.8 и более поздние
 
 ### <a name="endpoint-declaration"></a>Объявление конечной точки
 
-Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакете SDK для хранилища BLOB-объектов Data Box конечная точка по умолчанию — `\<serial no. of the device>.microsoftdatabox.com` .  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
+В пакете SDK для хранилища BLOB-объектов Data Box суффикс конечной точки — `<device serial number>.microsoftdatabox.com` идентифицирует домен Data Box. Чтобы получить дополнительные сведения о конечной точке службы BLOB-объектов, перейдите к разделу [подключение через Data Box хранилище BLOB-объектов](data-box-deploy-copy-data-via-rest.md).
  
 ## <a name="examples"></a>Примеры
 

@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 38b4b701329cf35088d797b095fa3caca46f55b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e941007ddc27f809de7d43cd33e44c5b521a6bd
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84338980"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743834"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-data-box-gateway"></a>Управление пользователями в Шлюзе Azure Data Box с помощью портала Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "84338980"
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Добавление пользователей
+> * Добавление пользователя
 > * Изменение пользователя
 > * Удаление пользователя
 
@@ -35,7 +35,7 @@ ms.locfileid: "84338980"
 
 Сначала разрешения пользователя определяются при его создании во время создания общей папки. Изменение разрешений на уровне общего ресурса сейчас не поддерживается.
 
-## <a name="add-a-user"></a>Добавление пользователей
+## <a name="add-a-user"></a>Добавление пользователя
 
 Выполните на портале Azure шаги ниже, чтобы добавить пользователя.
 
@@ -45,7 +45,7 @@ ms.locfileid: "84338980"
 
 2. Укажите имя и пароль для пользователя, которого вы хотите добавить. Подтвердите пароль и щелкните **Добавить**.
 
-    ![Нажатие кнопки "Добавить пользователя"](media/data-box-gateway-manage-users/add-user-2.png)
+    ![Нажмите кнопку Добавить пользователя 2.](media/data-box-gateway-manage-users/add-user-2.png)
 
     > [!IMPORTANT] 
     > Эти пользователи зарезервированы системой и не должны использоваться: Administrator, EdgeUser, EdgeSupport, HcsSetupUser, WDAGUtilityAccount, CLIUSR, DefaultAccount, Guest.  
@@ -70,11 +70,11 @@ ms.locfileid: "84338980"
 
 2. При появлении запроса подтвердите удаление. 
 
-   ![Удаление пользователя](media/data-box-gateway-manage-users/delete-user-2.png)
+   ![Удаление пользователя 2](media/data-box-gateway-manage-users/delete-user-2.png)
 
 Список пользователей обновляется с учетом удаления.
 
-![Удаление пользователя](media/data-box-gateway-manage-users/delete-user-3.png)
+![Удаление пользователя 3](media/data-box-gateway-manage-users/delete-user-3.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

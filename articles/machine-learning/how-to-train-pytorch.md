@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 99f249c9eba0e3d59fd687ac2c3886d037d1ff20
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 22e834ccc31e2d01646250c973080848173661de
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91532777"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743783"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>Обучение моделей PyTorch в масштабе с помощью Машинное обучение Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "91532777"
 
 Независимо от того, где вы изучаете модель PyTorch глубокого обучения или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
 
@@ -113,48 +113,10 @@ except ComputeTargetException:
 
 ### <a name="define-your-environment"></a>Определение среды
 
-Чтобы определить [среду](concept-environments.md) машинного обучения Azure, в которой будут инкапсулированы зависимости сценария обучения, можно определить пользовательскую среду или использовать среду, проверенную в машинном обучении Azure.
-
-#### <a name="create-a-custom-environment"></a>Создание пользовательской среды
-
-Определите среду машинного обучения Azure, в которой инкапсулируются зависимости сценария обучения.
-
-Сначала определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
-
-```yaml
-channels:
-- conda-forge
-dependencies:
-- python=3.6.2
-- pip:
-  - azureml-defaults
-  - torch==1.6.0
-  - torchvision==0.7.0
-  - future==0.17.1
-  - pillow
-```
-
-Создайте среду машинного обучения Azure из этой спецификации среды conda. Среда будет упакована в контейнер DOCKER во время выполнения.
-
-По умолчанию, если базовый образ не указан, Azure ML будет использовать образ ЦП в `azureml.core.runconfig.DEFAULT_CPU_IMAGE` качестве базового образа. Поскольку в этом примере выполняется обучение на кластере GPU, необходимо указать базовый образ GPU с необходимыми драйверами и зависимостями GPU. Служба машинного обучения Azure поддерживает набор базовых образов, опубликованных в реестре контейнеров Microsoft (мкр), которые можно использовать. Дополнительные сведения см. в репозитории GitHub [Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) .
-
-```python
-from azureml.core import Environment
-
-pytorch_env = Environment.from_conda_specification(name='pytorch-1.6-gpu', file_path='./conda_dependencies.yml')
-
-# Specify a GPU base image
-pytorch_env.docker.enabled = True
-pytorch_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04'
-```
-
-> [!TIP]
-> При необходимости можно просто захватить все зависимости непосредственно в пользовательском образе DOCKER или Dockerfile и создать среду из нее. Дополнительные сведения см. в разделе [обучение с помощью пользовательского образа](how-to-train-with-custom-image.md).
-
-Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
+Чтобы определить [среду](concept-environments.md) машинного обучения Azure, которая инкапсулирует зависимости сценария обучения, можно либо определить пользовательскую среду, либо использовать проверенную среду машинного обучения Azure.
 
 #### <a name="use-a-curated-environment"></a>Использование проверенной среды
-Кроме того, Azure ML предоставляет предварительно созданные и проверенные среды, если вы не хотите создавать собственный образ. В МАШИНном обучении Azure имеется несколько проверенных сред ЦП и GPU для PyTorch, соответствующих разным версиям PyTorch. Дополнительные сведения см. [здесь](resource-curated-environments.md).
+Azure ML предоставляет готовые, проверенные среды, если вы не хотите определять собственную среду. В МАШИНном обучении Azure имеется несколько проверенных сред ЦП и GPU для PyTorch, соответствующих разным версиям PyTorch. Дополнительные сведения см. [здесь](resource-curated-environments.md).
 
 Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
 
@@ -177,6 +139,44 @@ pytorch_env = Environment.from_conda_specification(name='pytorch-1.6-gpu', file_
 ```python
 pytorch_env = pytorch_env.clone(new_name='pytorch-1.6-gpu')
 ```
+
+#### <a name="create-a-custom-environment"></a>Создание пользовательской среды
+
+Вы также можете создать собственную среду машинного обучения Azure, которая инкапсулирует зависимости обучающего сценария.
+
+Сначала определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
+
+```yaml
+channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults
+  - torch==1.6.0
+  - torchvision==0.7.0
+  - future==0.17.1
+  - pillow
+```
+
+Создайте среду машинного обучения Azure из этой спецификации среды conda. Среда будет упакована в контейнер DOCKER во время выполнения.
+
+По умолчанию, если базовый образ не указан, Azure ML будет использовать образ ЦП в `azureml.core.environment.DEFAULT_CPU_IMAGE` качестве базового образа. Поскольку в этом примере выполняется обучение на кластере GPU, необходимо указать базовый образ GPU с необходимыми драйверами и зависимостями GPU. Служба машинного обучения Azure поддерживает набор базовых образов, опубликованных в реестре контейнеров Microsoft (мкр), которые можно использовать. Дополнительные сведения см. в репозитории GitHub [Azure/AzureML-Containers](https://github.com/Azure/AzureML-Containers) .
+
+```python
+from azureml.core import Environment
+
+pytorch_env = Environment.from_conda_specification(name='pytorch-1.6-gpu', file_path='./conda_dependencies.yml')
+
+# Specify a GPU base image
+pytorch_env.docker.enabled = True
+pytorch_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04'
+```
+
+> [!TIP]
+> При необходимости можно просто захватить все зависимости непосредственно в пользовательском образе DOCKER или Dockerfile и создать среду из нее. Дополнительные сведения см. в разделе [обучение с помощью пользовательского образа](how-to-train-with-custom-image.md).
+
+Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
 
 ## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
 

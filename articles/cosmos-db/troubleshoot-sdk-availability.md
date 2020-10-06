@@ -3,17 +3,17 @@ title: Диагностика и устранение неполадок с до
 description: Узнайте все о принципах доступности пакета SDK для Azure Cosmos при работе в разных регионах.
 author: ealsur
 ms.service: cosmos-db
-ms.date: 09/24/2020
+ms.date: 10/05/2020
 ms.author: maquaran
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 8dd7ced2dfcfd3c555555d6f0a197623bd8726f2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 400795d20b6e7ad919f5cbbfa6078987bb65297e
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330440"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743970"
 ---
 # <a name="diagnose-and-troubleshoot-the-availability-of-azure-cosmos-sdks-in-multiregional-environments"></a>Диагностика и устранение неполадок с доступностью пакетов SDK для Cosmos Azure в многорегионовых средах
 
@@ -24,7 +24,7 @@ ms.locfileid: "91330440"
 * Свойство [ConnectionPolicy. PreferredLocations](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.preferredlocations) в пакете SDK для .NET v2.
 * Свойства [космосклиентоптионс. аппликатионрегион](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.applicationregion) или [космосклиентоптионс. аппликатионпреферредрегионс](/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.applicationpreferredregions) в пакете SDK для .NET v3.
 * Метод [космосклиентбуилдер. преферредрегионс](/java/api/com.azure.cosmos.cosmosclientbuilder.preferredregions) в пакете SDK для Java v4.
-* Параметр [космосклиент. preferred_locations](/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient) в пакете SDK для Node.
+* Параметр [CosmosClient.preferred_locations](/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient) в пакете SDK для Python.
 * Параметр [космосклиентоптионс. ConnectionPolicy. preferredLocations](/javascript/api/@azure/cosmos/connectionpolicy#preferredlocations) в пакете SDK для JS.
 
 При задании региональных настроек клиент будет подключаться к региону, как упоминалось в следующей таблице.
@@ -49,6 +49,8 @@ ms.locfileid: "91330440"
 * Свойство *рекуестдиагностиксстринг* для ответов в пакете SDK для .NET v2.
 * Свойство *Diagnostics* в ответах и исключениях в пакете SDK для .NET v3.
 * Метод *Diagnostic ()* для ответов и исключений в пакете SDK для Java версии 4.
+
+При определении следующего региона в порядке предпочтения клиент SDK будет использовать список регионов учетной записи, определяя приоритеты предпочитаемых регионов (если они есть).
 
 Подробные сведения о гарантиях SLA во время этих событий см. в разделе соглашения об уровне обслуживания [для обеспечения доступности](high-availability.md#slas-for-availability).
 

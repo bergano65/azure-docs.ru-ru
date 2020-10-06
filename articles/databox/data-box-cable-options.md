@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 10/24/2018
 ms.author: alkohli
-ms.openlocfilehash: 1a1ce22cd700368d630d70912ea266d16fd772bf
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: bab81809f42c9afa3d2c701398fa5ff8ffc2800d
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925215"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744174"
 ---
 # <a name="cabling-options-for-your-azure-data-box"></a>Варианты подключения кабелей к устройству Azure Data Box
 
@@ -105,7 +105,7 @@ ms.locfileid: "87925215"
    - **IP-адрес**: 192.168.100.5.
    - **Подсеть**: 255.255.255.0.
 
-     ![Настройка двух портов с использованием коммутатора](media/data-box-cable-options/cabling-with-switch-static-ip.png)
+     ![Настройка двух портов с коммутатором 2](media/data-box-cable-options/cabling-with-switch-static-ip.png)
 
 3. Перейдите к локальному пользовательскому веб-интерфейсу на устройстве по адресу: 192.168.100.10. Войдите в систему и разблокируйте Data Box, используя пароль разблокировки с портала Azure.
 4. Назначьте статические IP-адреса для настроенных портов данных.
@@ -125,7 +125,7 @@ ms.locfileid: "87925215"
 
 1. Используйте кабель RJ45 или SFP+ для подключения к серверу с помощью коммутатора (где доступен DHCP-сервер).
 
-    ![Настройка двух портов с использованием коммутатора](media/data-box-cable-options/cabling-dhcp-data-only.png)
+    ![Настройка двух портов с коммутатором 3](media/data-box-cable-options/cabling-dhcp-data-only.png)
 2. Для определения IP-адреса используйте DHCP-сервер или DNS-сервер.
 3. С сервера в той же сети обратитесь к локальному веб-интерфейсу устройства, используя IP-адрес, назначенный сервером DHCP. Войдите в систему и разблокируйте Data Box, используя пароль разблокировки с портала Azure.
 

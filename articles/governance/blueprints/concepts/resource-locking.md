@@ -1,14 +1,14 @@
 ---
 title: Концепция блокировки ресурсов
 description: Сведения о вариантах блокировки в схемах Azure для защиты ресурсов при назначении схемы.
-ms.date: 08/27/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 30d5528b4613dc04d1e825d10e11b7eeadc57698
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 8ac5c918a3c370b9d8e88800e05f83e585550e3c
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91534868"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744021"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
 
@@ -109,8 +109,8 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
 |Режим |Permissions. Actions |Разрешения. без изменений |Участники [i]. Тип |ЕксклудепринЦипалс [i]. Удостоверения | донотапплиточилдскопес |
 |-|-|-|-|-|-|
-|Только для чтения |**\*** |**\*/реад** |Системдефинед (все) |Назначение схемы и определяемые пользователем данные в **ексклудедпринЦипалс** |Группа ресурсов — _true_; Ресурс — _false_ |
-|Не удалять |**\*/Delete** | |Системдефинед (все) |Назначение схемы и определяемые пользователем данные в **ексклудедпринЦипалс** |Группа ресурсов — _true_; Ресурс — _false_ |
+|Только для чтения |**\*** |**\*/реад**<br />**Microsoft.Authorization/locks/delete**<br />**Microsoft. Network/virtualNetwork/подсети/соединение/действие** |Системдефинед (все) |Назначение схемы и определяемые пользователем данные в **ексклудедпринЦипалс** |Группа ресурсов — _true_; Ресурс — _false_ |
+|Не удалять |**\*/Delete** | **Microsoft.Authorization/locks/delete**<br />**Microsoft. Network/virtualNetwork/подсети/соединение/действие** |Системдефинед (все) |Назначение схемы и определяемые пользователем данные в **ексклудедпринЦипалс** |Группа ресурсов — _true_; Ресурс — _false_ |
 
 > [!IMPORTANT]
 > Azure Resource Manager кэширует сведения о назначении роли на срок до 30 минут. Это означает, что действие запрета назначений для ресурсов схемы может не сразу вступать в полную силу. В течение этого периода сохраняется возможность удалить ресурс, который должен быть защищен блокировками схемы.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: albecker1
 ms.author: albecker
 ms.date: 03/12/2020
-ms.openlocfilehash: f2b960c2198800e04da77ad6b5be78d7b4762354
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 623d9385b9ae6b13c8964f655fb973fe67a0918a
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79299807"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743715"
 ---
 # <a name="disk-metrics-deprecation-in-the-azure-portal"></a>Устаревшие метрики диска в портал Azure
 
@@ -44,38 +44,38 @@ ms.locfileid: "79299807"
 1. В портал Azure найдите **оповещения**. Затем в разделе **службы** выберите **оповещения**.
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/alert-service-azure-portal.png)
+   > ![Служба оповещений](./media/portal-disk-metrics-deprecation/alert-service-azure-portal.png)
 
 2. На странице **оповещения** нажмите кнопку **Управление правилами генерации оповещений** . 
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/manage-alert-rules-button.png)
+   > ![Управление правилами генерации оповещений](./media/portal-disk-metrics-deprecation/manage-alert-rules-button.png)
 
 3. В раскрывающемся списке **Группа ресурсов** установите флажок **виртуальные машины** и в раскрывающемся списке **Тип сигнала** установите флажок **метрики** . 
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/filter-alerts.png)
+   > ![Фильтрация оповещений](./media/portal-disk-metrics-deprecation/filter-alerts.png)
 
 4. В списке метрик Найдите условия, связанные с дисками. Щелкните имя правила. 
 
    Имя отображается в виде гиперссылки в столбце **имя** таблицы.
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/find-disk-conditions.png)
+   > ![Найти условия диска](./media/portal-disk-metrics-deprecation/find-disk-conditions.png)
 
 5. В разделе **условия** на странице **Управление правилами** щелкните условие оповещения. 
 
    Условие отображается как гиперссылка.  
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/adjust-condition.png)
+   > ![Настройка условий](./media/portal-disk-metrics-deprecation/adjust-condition.png)
 
    Откроется страница **Настройка логики сигнала** , а параметры условия отобразятся в разделе **логика оповещений** этой страницы.
 
 6. Запишите эти параметры, так как они исчезнут при удалении нерекомендуемой метрики.
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/condition-rules.png)
+   > ![Правила условий](./media/portal-disk-metrics-deprecation/condition-rules.png)
 
    > [!TIP] 
    > Рассмотрите возможность захвата этих параметров на снимке экрана или в текстовом файле. 
@@ -83,7 +83,7 @@ ms.locfileid: "79299807"
 7. Щелкните ссылку **назад к сигналу о выборе** .
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/back-to-signal-selection.png)
+   > ![Вернуться к выбору сигнала](./media/portal-disk-metrics-deprecation/back-to-signal-selection.png)
 
 8. На странице **Настройка логики сигнала** выберите подходящую метрику замены (новая метрика). Используйте [таблицу](#update-metrics) , приведенную выше в этой статье, чтобы идентифицировать имя новой метрики.
 
@@ -91,17 +91,17 @@ ms.locfileid: "79299807"
    > Начните вводить строку поиска, чтобы сократить список имен метрик. 
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/choose-new-metric.png)
+   > ![Выбор новой метрики](./media/portal-disk-metrics-deprecation/choose-new-metric.png)
 
 9. Нажмите кнопку **Готово** . 
 
    > [!div class="mx-imgBorder"]
-   > ![Описание образа](./media/portal-disk-metrics-deprecation/set-new-metric.png)
+   > ![Задать новую метрику](./media/portal-disk-metrics-deprecation/set-new-metric.png)
 
 10. Зафиксируйте изменения, нажав кнопку **сохранить** . 
 
     > [!div class="mx-imgBorder"]
-    > ![Описание образа](./media/portal-disk-metrics-deprecation/save-new-metric.png)
+    > ![Сохранить новую метрику](./media/portal-disk-metrics-deprecation/save-new-metric.png)
 
 
 

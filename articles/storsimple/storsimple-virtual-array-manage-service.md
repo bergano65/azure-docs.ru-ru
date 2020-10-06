@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 2ff987448e3900c2a533789b2f38fd3ced71ce72
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 29ea9300b2f86f442d95c96d4a5df3364628d866
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84698943"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744140"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
 
@@ -73,7 +73,7 @@ ms.locfileid: "84698943"
 1. Перейдите ко **всем ресурсам**. Найдите службу диспетчера устройств StorSimple. Выберите службу, которую требуется удалить.
    
     ![Выбор службы, которую необходимо удалить](./media/storsimple-virtual-array-manage-service/deleteservice2.png)
-2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Щелкните **Delete** (Удалить).
+2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Щелкните **Удалить**.
    
     ![Удаление службы](./media/storsimple-virtual-array-manage-service/deleteservice3.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "84698943"
 #### <a name="to-regenerate-the-service-registration-key"></a>Повторное создание ключа регистрации службы
 1. В колонке **Диспетчер устройств StorSimple** выберите **Управление &gt;** **Ключи**.
    
-   ![Колонка "Ключи"](./media/storsimple-virtual-array-manage-service/getregkey2.png)
+   ![Колонка "ключи"](./media/storsimple-virtual-array-manage-service/getregkey2.png)
 2. В колонке **Ключи** нажмите кнопку **Повторно создать**.
    
    ![Кнопка повторного создания](./media/storsimple-virtual-array-manage-service/getregkey5.png)
@@ -118,11 +118,11 @@ ms.locfileid: "84698943"
    ![Подтверждение повторного создания ключа](./media/storsimple-virtual-array-manage-service/getregkey3.png)
 4. Появится новый ключ регистрации службы.
    
-    ![Подтверждение повторного создания ключа](./media/storsimple-virtual-array-manage-service/getregkey4.png)
+    ![Дополнительная подтверждение повторного создания ключа](./media/storsimple-virtual-array-manage-service/getregkey4.png)
    
    Скопируйте этот ключ и сохраните его для регистрации новых устройств в службе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [приступить к работе](storsimple-virtual-array-deploy1-portal-prep.md) с виртуальным массивом StorSimple.
 * Узнайте, как [администрировать устройство StorSimple](storsimple-ova-web-ui-admin.md).
 

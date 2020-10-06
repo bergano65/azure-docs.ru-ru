@@ -5,12 +5,12 @@ ms.assetid: f7091b25-b2b6-48da-8d4a-dcf9b7baccab
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8085cbd3d19bd60c50de38950625de2fcd1e5c27
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 617a2717a1d1265d067cb3e1f26531d135d47941
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962491"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743919"
 ---
 # <a name="scale-up-an-app-in-azure-app-service"></a>Вертикальное увеличение масштаба приложения в Службе приложений Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "88962491"
 ## <a name="scale-up-your-pricing-tier"></a>Увеличение масштаба ценовой категории
 
 > [!NOTE]
-> Для масштабирования до ценовой категории **PremiumV2** см. раздел [Настройка ценовой категории PremiumV2 для службы приложений](app-service-configure-premium-tier.md).
+> Сведения о масштабировании до уровня **PremiumV3** см. в статье [Настройка уровня PremiumV3 для службы приложений](app-service-configure-premium-tier.md).
 >
 
 1. В браузере откройте [портал Azure][portal].
@@ -78,7 +78,7 @@ ms.locfileid: "88962491"
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
 [Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/platform/autoscale-get-started.md)  
-[Настройка ценовой категории "Премиум V2" для Службы приложений Azure](app-service-configure-premium-tier.md)
+[Настройка уровня PremiumV3 для службы приложений](app-service-configure-premium-tier.md)
 
 <!-- LINKS -->
 [vmsizes]:https://azure.microsoft.com/pricing/details/app-service/

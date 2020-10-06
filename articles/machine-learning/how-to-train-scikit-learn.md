@@ -10,12 +10,12 @@ author: jpe316
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 28401b5900640ed7228d7c7caad0cebbabf00a65
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: f0c923bcb7df930ed4b1380d487ededc6c160844
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91532726"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743749"
 ---
 # <a name="train-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Обучение scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "91532726"
 
 Если вы научитесь изучать модель машинного обучения scikit-учиться с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
  - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
@@ -66,9 +66,17 @@ ws = Workspace.from_config()
 
 Чтобы определить [среду](concept-environments.md) машинного обучения Azure, в которой будут инкапсулированы зависимости сценария обучения, можно определить пользовательскую среду или использовать среду, проверенную в машинном обучении Azure.
 
+#### <a name="use-a-curated-environment"></a>Использование проверенной среды
+Кроме того, Azure ML предоставляет предварительно созданные и проверенные среды, если вы не хотите определять собственную среду. Дополнительные сведения см. [здесь](resource-curated-environments.md).
+Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
+
+```python
+sklearn_env = Environment.get(workspace=ws, name='AzureML-Tutorial')
+```
+
 #### <a name="create-a-custom-environment"></a>Создание пользовательской среды
 
-Чтобы создать собственную пользовательскую среду, Определите зависимости conda в файле YAML. в этом примере файл называется `conda_dependencies.yml` .
+Вы также можете создать собственную пользовательскую среду. Определите зависимости conda в файле YAML; в этом примере файл называется `conda_dependencies.yml` .
 
 ```yaml
 dependencies:
@@ -87,14 +95,6 @@ sklearn_env = Environment.from_conda_specification(name='sklearn-env', file_path
 ```
 
 Дополнительные сведения о создании и использовании сред см. [в разделе Создание и использование программных сред в машинное обучение Azure](how-to-use-environments.md).
-
-#### <a name="use-a-curated-environment"></a>Использование проверенной среды
-Кроме того, Azure ML предоставляет предварительно созданные и проверенные среды, если вы не хотите создавать собственный образ. Дополнительные сведения см. [здесь](resource-curated-environments.md).
-Если вы хотите использовать проверенную среду, то вместо этого можно выполнить следующую команду:
-
-```python
-sklearn_env = Environment.get(workspace=ws, name='AzureML-Tutorial')
-```
 
 ## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
 

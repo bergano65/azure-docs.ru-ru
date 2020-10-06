@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 25f74fb78979313acc068320d842d09a982d8d16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8ccc9725ffe5304942b740d460a67129f9c1c5d8
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84339150"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743851"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-data-box-gateway"></a>Управление расписаниями пропускной способности в Шлюзе Azure Data Box с помощью портала Azure  
 
@@ -40,13 +40,13 @@ ms.locfileid: "84339150"
 
 3. В разделе **Добавить расписание** выполните действия ниже. 
 
-   1. Укажите **день запуска**, **день окончания**, **время запуска** и **время окончания** расписания. 
+   1. Укажите **начальный день**, **день окончания**, **время начала**и **время окончания** расписания. 
    2. Если расписание должно выполняться целый день, вы можете выбрать параметр **Весь день**. 
-   3. **Скорость пропускной способности** — это значение пропускной способности в Мбит/с, которое используется устройством в операциях с облаком (скачивание и передача). Укажите в этом поле число от 1 до 1000. 
+   3. **Пропускная способность** — это пропускная способность в мегабит в секунду (Мбит/с), используемая устройством в операциях, в которых участвует облако (отправка и загрузка). Укажите в этом поле число от 1 до 1000. 
    4. Установите флажок в поле **Неограниченная пропускная способность**, чтобы избежать регулирования передачи и скачивания данных. 
    5. Нажмите кнопку **Добавить**.
 
-      ![Нажатие кнопки "Добавить пользователя"](media/data-box-gateway-manage-bandwidth-schedules/add-schedule-2.png)
+      ![Нажмите кнопку Добавить пользователя 2.](media/data-box-gateway-manage-bandwidth-schedules/add-schedule-2.png)
 
 3. Расписание будет создано с указанными параметрами. Это расписание затем появится в списке расписаний пропускной способности на портале.
 
@@ -61,11 +61,11 @@ ms.locfileid: "84339150"
 
 3. Внесите необходимые изменения и сохраните их.
 
-    ![Изменение пользователя](media/data-box-gateway-manage-bandwidth-schedules/modify-schedule-2.png)
+    ![Изменение пользователя 2](media/data-box-gateway-manage-bandwidth-schedules/modify-schedule-2.png)
 
 4. После изменения расписания список расписаний обновится.
 
-    ![Изменение пользователя](media/data-box-gateway-manage-bandwidth-schedules/modify-schedule-3.png)
+    ![Изменение пользователя 3](media/data-box-gateway-manage-bandwidth-schedules/modify-schedule-3.png)
 
 
 ## <a name="delete-a-schedule"></a>Удаление расписания

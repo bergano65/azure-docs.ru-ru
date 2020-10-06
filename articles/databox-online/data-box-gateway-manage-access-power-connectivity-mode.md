@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: how-to
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 1035b0afee9821020673acbc813b31cba3e2fd90
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 27b6d8ca61ed10b5c7362e089fe94d8d64164878
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90893940"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743868"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>Управление доступом, питанием и режимом подключения для Шлюз Azure Data Box
 
@@ -53,7 +53,7 @@ ms.locfileid: "90893940"
  
 2. Введите новый пароль и подтвердите его. Длина пароля должна быть не меньше 8 и не больше 16 знаков. Пароль должен содержать 3 знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки. Выберите **Сбросить**.
 
-    ![Сброс пароля](media/data-box-gateway-manage-access-power-connectivity-mode/reset-password-2.png)
+    ![Сброс пароля 2](media/data-box-gateway-manage-access-power-connectivity-mode/reset-password-2.png)
 
 ## <a name="manage-resource-access"></a>Управление доступом к ресурсам
 
@@ -119,7 +119,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
  
 4. Чтобы запустить устройство в автономном режиме, включите **управление порталом Azure**. Теперь устройством можно управлять только через локальный пользовательский веб-интерфейс.
 
-    ![Режим подключения](media/data-box-gateway-manage-access-power-connectivity-mode/connectivity-mode-2.png)
+    ![Режим подключения 2](media/data-box-gateway-manage-access-power-connectivity-mode/connectivity-mode-2.png)
 
 ## <a name="manage-power"></a>Управление питанием
 

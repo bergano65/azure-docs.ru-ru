@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: how-to
 ms.date: 05/24/2019
 ms.author: alkohli
-ms.openlocfilehash: d4622ae1fa87a47915094b7ab90390c753b82dbb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0c45626016049424c8028eea7ffbd7f281e9012
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84609120"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744157"
 ---
 # <a name="open-a-support-ticket-for-azure-data-box"></a>Открытие запроса в службу поддержки для Azure Data Box
 
@@ -76,7 +76,7 @@ ms.locfileid: "84609120"
 
 2. Список **недавних запросов в службу поддержки** в виде таблицы отображается в разделе **Справка и поддержка**.
 
-    ![Управление запросами на поддержку](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket2.png)
+    ![Управление запросами в службу поддержки 2](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket2.png)
 
 3. Выберите и щелкните запрос на поддержку. Для запроса можно просмотреть состояние и подробные сведения. Щелкните **+ Новое сообщение**, если нужно следить за этим запросом.
 

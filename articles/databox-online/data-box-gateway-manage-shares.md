@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 785fcbbcde0c4efe3c2d1cd84bf19bd03371ab06
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 847c8a07bfa245d0c9859bb3cf6f6ed233934250
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90883545"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743885"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-your-azure-data-box-gateway"></a>Управление общими папками в Шлюзе Azure Data Box с помощью портала Azure 
 
@@ -94,7 +94,7 @@ ms.locfileid: "90883545"
 
 1. На портале Azure перейдите к разделу **Общие папки**. Выберите и щелкните общую папку, которую требуется обновить.
 
-   ![Выбор общей папки](media/data-box-gateway-manage-shares/refresh-1.png)
+   ![Выберите общий ресурс 2](media/data-box-gateway-manage-shares/refresh-1.png)
 
 2. Нажмите кнопку **Обновить**. 
 
@@ -124,11 +124,11 @@ ms.locfileid: "90883545"
 1. В своем ресурсе перейдите к разделу **Обзор**. 
 2. В списке общих папок выберите и щелкните общую папку, связанную с учетной записью хранения, которую необходимо синхронизировать. Щелкните **синхронизировать ключ хранилища**. 
 
-     ![Синхронизация ключа хранилища 1](media/data-box-gateway-manage-shares/sync-storage-key-1.png)
+     ![Синхронизация ключа хранилища](media/data-box-gateway-manage-shares/sync-storage-key-1.png)
 
 3. Нажмите кнопку **ОК** в запросе на подтверждение. После синхронизации закройте диалоговое окно.
 
-     ![Синхронизация ключа хранилища 1](media/data-box-gateway-manage-shares/sync-storage-key-2.png)
+     ![Ключ хранилища синхронизации 2](media/data-box-gateway-manage-shares/sync-storage-key-2.png)
 
 >[!NOTE]
 > Это действие достаточно выполнить один раз для каждой учетной записи хранения. Не нужно повторять это действие для всех общих папок, связанных с одной учетной записью.

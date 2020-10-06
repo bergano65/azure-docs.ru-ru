@@ -2,13 +2,13 @@
 title: Настройка приватного канала
 description: Настройте закрытую конечную точку в реестре контейнеров и разрешите доступ через частную ссылку в локальной виртуальной сети. Доступ к частным ссылкам является компонентом уровня служб Premium.
 ms.topic: article
-ms.date: 06/26/2020
-ms.openlocfilehash: da07d35ad944db8e9b8a7bac0602fff23cd222d8
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.date: 10/01/2020
+ms.openlocfilehash: 793003edea853922f78b36f0dc1a6e35205cdadb
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89488751"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743647"
 ---
 # <a name="connect-privately-to-an-azure-container-registry-using-azure-private-link"></a>Подключение в частном порядке к реестру контейнеров Azure с помощью частной ссылки Azure
 
@@ -79,7 +79,7 @@ az network vnet subnet update \
 
 ### <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS
 
-Создайте частную зону DNS для домена частного реестра контейнеров Azure. На следующих шагах вы создадите записи DNS для вашего домена реестра в этой зоне DNS.
+Создайте [закрытую зону DNS](../dns/private-dns-privatednszone.md) для закрытого домена реестра контейнеров Azure. На следующих шагах вы создадите записи DNS для вашего домена реестра в этой зоне DNS.
 
 Чтобы использовать частную зону для переопределения стандартного разрешения DNS для реестра контейнеров Azure, зона должна иметь имя **privatelink.azurecr.io**. Чтобы создать частную зону, выполните следующую команду [az network private-dns zone create][az-network-private-dns-zone-create].
 
@@ -306,28 +306,46 @@ az acr update --name $REGISTRY_NAME --public-network-enabled false
 
 Чтобы проверить подключение приватного канала, подключитесь по протоколу SSH к виртуальной машине, которую вы настроили в виртуальной сети.
 
-Воспользуйтесь командой `nslookup`, чтобы разрешить IP-адрес реестра через приватный канал.
+Запустите служебную программу, например `nslookup` или, `dig` чтобы найти IP-адрес реестра по частному каналу. Пример:
 
 ```bash
-nslookup $REGISTRY_NAME.azurecr.io
+dig $REGISTRY_NAME.azurecr.io
 ```
 
 В примере выходных данных показан IP-адрес реестра в адресном пространстве подсети.
 
 ```console
 [...]
-myregistry.azurecr.io       canonical name = myregistry.privatelink.azurecr.io.
-Name:   myregistry.privatelink.azurecr.io
-Address: 10.0.0.6
+; <<>> DiG 9.11.3-1ubuntu1.13-Ubuntu <<>> myregistry.azurecr.io
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52155
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;myregistry.azurecr.io.         IN      A
+
+;; ANSWER SECTION:
+myregistry.azurecr.io.  1783    IN      CNAME   myregistry.privatelink.azurecr.io.
+myregistry.privatelink.azurecr.io. 10 IN A      10.0.0.7
+
+[...]
 ```
 
-Сравните этот результат с общедоступным IP-адресом в выходных данных `nslookup` для того же реестра с подключением через общедоступную конечную точку.
+Сравните этот результат с общедоступным IP-адресом в выходных данных `dig` для того же реестра с подключением через общедоступную конечную точку.
 
 ```console
 [...]
-Non-authoritative answer:
-Name:   myregistry.westeurope.cloudapp.azure.com
-Address: 40.78.103.41
+;; ANSWER SECTION:
+myregistry.azurecr.io.  2881    IN  CNAME   myregistry.privatelink.azurecr.io.
+myregistry.privatelink.azurecr.io. 2881 IN CNAME xxxx.xx.azcr.io.
+xxxx.xx.azcr.io.    300 IN  CNAME   xxxx-xxx-reg.trafficmanager.net.
+xxxx-xxx-reg.trafficmanager.net. 300 IN CNAME   xxxx.westeurope.cloudapp.azure.com.
+xxxx.westeurope.cloudapp.azure.com. 10  IN A 20.45.122.144
+
+[...]
 ```
 
 ### <a name="registry-operations-over-private-link"></a>Выполнение операций с реестром по приватному каналу
@@ -361,9 +379,15 @@ az acr private-endpoint-connection list \
 
 ## <a name="add-zone-records-for-replicas"></a>Добавление записей зоны для реплик
 
-Как показано в этой статье, при добавлении подключения к частной конечной точке в реестр в зоне `privatelink.azurecr.io` создаются записи DNS для реестра и его конечных точек данных в регионах, в которые [реплицирован](container-registry-geo-replication.md) реестр. 
+Как показано в этой статье, при добавлении подключения к частной конечной точке в реестр создаются записи DNS в `privatelink.azurecr.io` зоне для реестра и его конечных точек данных в регионах, где выполняется [репликация](container-registry-geo-replication.md)реестра. 
 
 Если позднее будет добавлена новая реплика, потребуется вручную добавить новую запись зоны для конечной точки данных в этом регионе. Например, если вы создаете реплику *myregistry* в расположении *northeurope*, добавьте запись зоны для `myregistry.northeurope.data.azurecr.io`. Инструкции см. в этой статье в разделе [Создание записей DNS в частной зоне](#create-dns-records-in-the-private-zone).
+
+## <a name="dns-configuration-options"></a>Параметры конфигурации DNS
+
+Частная конечная точка в этом примере интегрируется с частной зоной DNS, связанной с базовой виртуальной сетью. Эта программа установки использует службу DNS, предоставляемую Azure, чтобы разрешить общедоступное полное доменное имя реестра для его частного IP-адреса в виртуальной сети. 
+
+Частная ссылка поддерживает дополнительные сценарии настройки DNS, которые используют частную зону, включая пользовательские решения DNS. Например, у вас может быть пользовательское решение DNS, развернутое в виртуальной сети или локально в сети, которое подключается к виртуальной сети с помощью VPN-шлюза. Чтобы разрешить общедоступное полное доменное имя в реестре для частного IP-адреса в этих сценариях, необходимо настроить сервер пересылки на уровне сервера в службе Azure DNS (168.63.129.16). Точные параметры конфигурации и действия зависят от имеющихся сетей и DNS. Примеры см. в разделе [Конфигурация DNS для частной конечной точки Azure](../private-link/private-endpoint-dns.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
