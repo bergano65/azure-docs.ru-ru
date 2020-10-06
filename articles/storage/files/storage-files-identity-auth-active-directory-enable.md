@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: fd80f7b4a62380b62acb52543b49f5640cc5d365
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: bb408c762c33e4d146a2f0ef36f32e525b3859bd
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91627982"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758274"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "91627982"
 > - [Замена локальных файловых серверов файлами Azure (включая установку на частном канале для файлов и аутентификации Active Directory)](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)
 > - [Использование файлов Azure в качестве контейнера профилей для виртуальных рабочих столов Windows (включая установку на основе проверки подлинности AD и конфигурации Фслогикс)](https://www.youtube.com/embed/9S5A1IJqfOQ)
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Перед включением проверки подлинности AD DS для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 
@@ -54,7 +54,9 @@ ms.locfileid: "91627982"
 
     Убедитесь, что учетная запись хранения, содержащая общие файловые ресурсы, еще не настроена для проверки подлинности Azure AD DS. Если в учетной записи хранения включена проверка подлинности AD DS Azure для службы "файлы Azure", ее необходимо отключить, прежде чем переходить к использованию локальной AD DS. Это означает, что существующие списки управления доступом, настроенные в среде AD DS Azure, необходимо будет перенастроить для надлежащего применения разрешений.
 
-    Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
+
+    Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://azure.microsoft.com/blog/new-troubleshooting-diagnostics-for-azure-files-mounting-errors-on-windows/). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
+
 
 - Перед включением и настройкой проверки подлинности AD DS в общих файловых ресурсах Azure выполните все необходимые настройки сети. Дополнительные сведения см. в статье рекомендации по работе с [сетью в службе файлов Azure](storage-files-networking-overview.md) .
 

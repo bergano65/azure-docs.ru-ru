@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9d36cee1ebf9f58991db6fd40fd6aa9422546b61
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.openlocfilehash: 6f4dd0836ba04d0e07ada8aced964317498b1f22
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
-ms.locfileid: "91710759"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757601"
 ---
 # <a name="query-azure-cosmos-db-data-using-sql-serverless-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью SQL Server не в связи с Azure синапсе (Предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "91710759"
 > [!NOTE]
 > Поддержка запросов Azure Cosmos DB аналитического хранилища с SQL Server в настоящее время находится в режиме предварительной версии. 
 
-Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql.md?view=sql-server-ver15&preserve-view=true) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время нельзя хранить результаты запросов SQL Server, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
+Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время нельзя хранить результаты запросов SQL Server, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
 
 В этой статье вы узнаете, как написать запрос с помощью SQL Server, который будет запрашивать данные из Azure Cosmos DB контейнеров, Синапсеных с включенной ссылкой. Затем вы можете узнать больше о создании бессерверных представлений SQL Server в Azure Cosmos DB контейнерах и их подключении к Power BI моделям в [этом](./tutorial-data-analyst.md) руководстве. 
 
@@ -245,7 +245,7 @@ FROM
 | Логическое значение | bit |
 | Целое число | BIGINT |
 | Decimal | FLOAT |
-| Строковый | varchar (параметры сортировки базы данных UTF8) |
+| Строка | varchar (параметры сортировки базы данных UTF8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
 | Дата и время (метка времени Unix) | BIGINT |
 | NULL | `any SQL type` 

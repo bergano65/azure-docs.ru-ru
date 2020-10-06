@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/08/2020
 ms.author: Zhchia
-ms.openlocfilehash: 7d946c2b1d6e13897667fd58b784575e6f44aa1d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5cfd355941a7fae211f3abb9b5dd31e86ba1d14b
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333534"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757509"
 ---
 # <a name="tutorial-configure-apple-business-manager-for-automatic-user-provisioning"></a>Учебник. Настройка Apple Business Manager для автоматической подготовки пользователей
 
@@ -55,7 +55,7 @@ ms.locfileid: "91333534"
 1. В Apple Business Manager войдите в систему, используя учетную запись с ролью администратора или менеджера людей.
 2. В нижней части боковой панели щелкните Параметры источник данных ниже параметров Организации, а затем щелкните подключиться к источнику данных.
 3. Щелкните Подключиться рядом с SCIM, внимательно прочитайте предупреждение, нажмите кнопку Копировать, а затем кнопку Закрыть.
-[Окно подключения к SCIM, в котором есть маркер и кнопка копирования.] Оставьте это окно открытым, чтобы скопировать URL-адрес клиента из Apple Business Manager в Azure AD. это: https://federation.apple.com/feeds/business/scim
+[Окно подключения к SCIM, в котором есть маркер и кнопка копирования.] Оставьте это окно открытым, чтобы скопировать URL-адрес клиента из Apple Business Manager в Azure AD: " https://federation.apple.com/feeds/business/scim "
 
     ![Apple Business Manager;](media/applebusinessmanager-provisioning-tutorial/scim-token.png)
 
@@ -151,15 +151,15 @@ ms.locfileid: "91333534"
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Проверка требований SCIM для Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdd88331cd6)
-* [Использование идентификатора пользователя в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd69e1e48e9)
-* [Использование SCIM для импорта пользователей в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd3ec7b95ad)
-* [Разрешение конфликтов учетной записи пользователя SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd313013d12)
-* [Удаление учетных записей Azure AD, которые отображаются в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdaa5798fbe)
-* [Просмотр действий SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd1bfd8dfde)
-* [Управление существующими маркерами SCIM и подключениями в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdc9a823611)
-* [Отключение подключения SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd609be3a61)
-* [Управление существующими маркерами SCIM и подключениями в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apdc9a8236e9)
+* [Проверка требований SCIM для Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apdd88331cd6)
+* [Использование идентификатора пользователя в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apd69e1e48e9)
+* [Использование SCIM для импорта пользователей в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apd3ec7b95ad)
+* [Разрешение конфликтов учетной записи пользователя SCIM в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apd313013d12)
+* [Удаление учетных записей Azure AD, которые отображаются в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apdaa5798fbe)
+* [Просмотр действий SCIM в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apd1bfd8dfde)
+* [Управление существующими маркерами SCIM и подключениями в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apdc9a823611)
+* [Отключение подключения SCIM в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apd609be3a61)
+* [Управление существующими маркерами SCIM и подключениями в Apple Business Manager](https://support.apple.com/guide/apple-business-manager/apdc9a8236e9)
 * [Устранение неполадок подключения SCIM в Apple Business Manager](URL=https://support.apple.com/guide/apple-business-manager/apd403a0f3bd)
 
 ## <a name="next-steps"></a>Дальнейшие действия

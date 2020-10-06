@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 3e3b804e2a3c43eb9579d1c6a1195511df528de2
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: d508e2e24ac35171d87cdba9cb79981dfb8764e3
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91630006"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757475"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
@@ -23,7 +23,7 @@ ms.locfileid: "91630006"
 > [!NOTE] 
 В течение периода действия предварительной версии не взимается плата за использование служб данных, включенных в службу Arc Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Вам потребуются Azure CLI (AZ) и Azure Data CLI (аздата).  [Установите средства](./install-client-tools.md).
 
@@ -77,7 +77,7 @@ az provider register -n Microsoft.AzureData --wait
 
 Если у вас есть несколько сайтов со службами данных Arc Azure, вы можете использовать Azure Monitor в качестве центрального расположения для сбора всех журналов и метрик на сайтах.
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
 Чтобы включить сценарии отправки журналов и метрик, необходимо выполнить несколько однократных действий по настройке.
 
@@ -95,7 +95,7 @@ az provider register -n Microsoft.AzureData --wait
 Чтобы создать субъект-службу, выполните следующую команду:
 
 > [!NOTE]
-> Для создания субъекта-службы требуются [определенные разрешения в Azure](/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+> Для создания субъекта-службы требуются [определенные разрешения в Azure](/azure/active-directory/develop/howto-create-service-principal-portal#permissions-required-for-registering-an-app).
 
 ```console
 az ad sp create-for-rbac --name <a name you choose>

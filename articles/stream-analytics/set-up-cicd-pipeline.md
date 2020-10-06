@@ -8,20 +8,20 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: 23ac1e241c0811944a943c3c3fef3116eff68a67
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d9b6dfc977aab7d8907b5d3c3851a22f96227d78
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90937901"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757764"
 ---
 # <a name="use-azure-devops-to-create-a-cicd-pipeline-for-a-stream-analytics-job"></a>Создание конвейера CI/CD для Stream Analytics задания с помощью Azure DevOps
 
-Из этой статьи вы узнаете, как создавать конвейеры [сборки](/devops/pipelines/get-started-designer) и [выпуска](/devops/pipelines/release/define-multistage-release-process) Azure DevOps с помощью средств Azure Stream Analytics CI/CD.
+Из этой статьи вы узнаете, как создавать конвейеры [сборки](/azure/devops/pipelines/get-started/pipelines-get-started) и [выпуска](/azure/devops/pipelines/release/define-multistage-release-process) Azure DevOps с помощью средств Azure Stream Analytics CI/CD.
 
 ## <a name="commit-your-stream-analytics-project"></a>Фиксация проекта Stream Analytics
 
-Прежде чем начать, Зафиксируйте все Stream Analytics проекты как исходные файлы в репозитории [Azure DevOps](/devops/user-guide/source-control) . Вы можете ссылаться на этот [Пример репозитория](https://dev.azure.com/wenyzou/azure-streamanalytics-cicd-demo) и [Stream Analytics исходный код проекта](https://dev.azure.com/wenyzou/_git/azure-streamanalytics-cicd-demo?path=%2FmyASAProject) в Azure pipelines.
+Прежде чем начать, Зафиксируйте все Stream Analytics проекты как исходные файлы в репозитории [Azure DevOps](/azure/devops/user-guide/source-control) . Вы можете ссылаться на этот [Пример репозитория](https://dev.azure.com/wenyzou/azure-streamanalytics-cicd-demo) и [Stream Analytics исходный код проекта](https://dev.azure.com/wenyzou/_git/azure-streamanalytics-cicd-demo?path=%2FmyASAProject) в Azure pipelines.
 
 В действиях, описанных в этой статье, используется проект Stream Analytics Visual Studio Code. Если вы используете проект Visual Studio, выполните действия, описанные в разделе [Автоматизация сборок, тестов и развертываний задания Azure Stream Analytics с помощью средств CI/CD](cicd-tools.md).
 
@@ -39,7 +39,7 @@ ms.locfileid: "90937901"
 
 1. Выберите тип источника, командный проект и репозиторий. Затем выберите **продолжить**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/select-repo.png" alt-text="Выбор проекта Azure Stream Analytics":::
+   :::image type="content" source="media/set-up-cicd-pipeline/select-repo.png" alt-text="Создание нового конвейера Azure":::
 
 1. На странице **Выбор шаблона** выберите **пустое задание**.
 
@@ -47,7 +47,7 @@ ms.locfileid: "90937901"
 
 1. На странице **задачи** щелкните знак «плюс» рядом с **заданием агента 1**. Введите *NPM* в поле поиска задач и выберите **NPM**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/search-npm.png" alt-text="Выбор задачи NPM":::
+   :::image type="content" source="media/set-up-cicd-pipeline/search-npm.png" alt-text="Создание нового конвейера Azure":::
 
 2. Присвойте задаче **Отображаемое имя**. Измените параметр **команды** на *Custom* и введите следующую команду в **команде и аргументах**. Оставьте остальные параметры по умолчанию.
 
@@ -55,7 +55,7 @@ ms.locfileid: "90937901"
    install -g azure-streamanalytics-cicd
    ```
 
-   :::image type="content" source="media/set-up-cicd-pipeline/npm-config.png" alt-text="Введите конфигурации для задачи NPM":::
+   :::image type="content" source="media/set-up-cicd-pipeline/npm-config.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="add-a-build-task"></a>Добавление задачи сборки
 
@@ -77,7 +77,7 @@ ms.locfileid: "90937901"
 
    На приведенном ниже рисунке в качестве примера используется проект Stream Analytics Visual Studio Code.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-build.png" alt-text="Ввод конфигураций для задачи командной строки Visual Studio Code":::
+   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-build.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="add-a-test-task"></a>Добавление тестовой задачи
 
@@ -85,9 +85,9 @@ ms.locfileid: "90937901"
 
    |Имя переменной|Значение|
    |-|-|
-   |тестпас|Тест|
+   |тестпас|Проверка|
 
-   :::image type="content" source="media/set-up-cicd-pipeline/pipeline-variables-test.png" alt-text="Добавить переменные конвейера":::
+   :::image type="content" source="media/set-up-cicd-pipeline/pipeline-variables-test.png" alt-text="Создание нового конвейера Azure":::
 
 2. На странице **задачи** щелкните знак «плюс» рядом с **заданием агента 1**. Найдите **командную строку**.
 
@@ -99,7 +99,7 @@ ms.locfileid: "90937901"
    azure-streamanalytics-cicd test -project $(projectRootPath)/asaproj.json -outputpath $(projectRootPath)/$(outputPath)/$(testPath) -testConfigPath $(projectRootPath)/test/testConfig.json 
    ```
 
-   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-test.png" alt-text="Введите настройки для задачи командной строки":::
+   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-test.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="add-a-copy-files-task"></a>Задача "Добавление файлов копирования"
 
@@ -116,7 +116,7 @@ ms.locfileid: "90937901"
 
 2. Разверните узел **Параметры управления**. Выберите **, даже если предыдущая задача завершилась сбоем, если только сборка не была отменена** в ходе **выполнения этой задачи**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/copy-config.png" alt-text="Введите конфигурации для задачи копирования":::
+   :::image type="content" source="media/set-up-cicd-pipeline/copy-config.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="add-a-publish-build-artifacts-task"></a>Добавление задачи «публикация артефактов сборки»
 
@@ -124,7 +124,7 @@ ms.locfileid: "90937901"
 
 2. Разверните узел **Параметры управления**. Выберите **, даже если предыдущая задача завершилась сбоем, если только сборка не была отменена** в ходе **выполнения этой задачи**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/publish-config.png" alt-text="Введите конфигурации для задачи публикации":::
+   :::image type="content" source="media/set-up-cicd-pipeline/publish-config.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="save-and-run"></a>Сохранение и запуск
 
@@ -134,9 +134,9 @@ ms.locfileid: "90937901"
 
 Файл сводки теста и файлы шаблонов Azure Resource Manager можно найти в **опубликованной** папке.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/check-build-test-result.png" alt-text="Проверка результатов сборки и теста":::
+   :::image type="content" source="media/set-up-cicd-pipeline/check-build-test-result.png" alt-text="Создание нового конвейера Azure":::
 
-   :::image type="content" source="media/set-up-cicd-pipeline/check-drop-folder.png" alt-text="Проверить артефакты":::
+   :::image type="content" source="media/set-up-cicd-pipeline/check-drop-folder.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="release-with-azure-pipelines"></a>Выпуск с Azure Pipelines
 
@@ -150,7 +150,7 @@ ms.locfileid: "90937901"
 
 3. В поле **артефакты** выберите **+ Добавить артефакт**. В разделе **источник**выберите созданный конвейер сборки и нажмите кнопку **Добавить**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/build-artifact.png" alt-text="Введите артефакт конвейера сборки":::
+   :::image type="content" source="media/set-up-cicd-pipeline/build-artifact.png" alt-text="Создание нового конвейера Azure":::
 
 4. Измените имя **этапа 1** , чтобы **развернуть задание в тестовую среду**.
 
@@ -196,7 +196,7 @@ ms.locfileid: "90937901"
 
 Чтобы создать выпуск, выберите **создать выпуск** в правом верхнем углу.
 
-:::image type="content" source="media/set-up-cicd-pipeline/create-release.png" alt-text="Создание выпуска с помощью Azure Pipelines":::
+:::image type="content" source="media/set-up-cicd-pipeline/create-release.png" alt-text="Создание нового конвейера Azure":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

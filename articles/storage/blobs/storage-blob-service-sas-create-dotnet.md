@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/07/2020
+ms.date: 10/05/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 16179ae730e81ff1ff7c107e3af70b5ce24e8813
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 6ebb81e6f5adce1dbc301ac905fed5af1ee6a825
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001950"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758311"
 ---
 # <a name="create-a-service-sas-for-a-container-or-blob-with-net"></a>Создание SAS службы для контейнера или большого двоичного объекта с помощью .NET
 
@@ -30,7 +30,7 @@ ms.locfileid: "89001950"
 
 ### <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-Создайте новый [блобсасбуилдер](/dotnet/api/azure.storage.sas.blobsasbuilder). Затем вызовите метод [тосаскуерипараметерс](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) , чтобы получить строку токена SAS. 
+Подписанный URL-адрес службы подписывается ключом доступа учетной записи. Используйте класс [сторажешаредкэйкредентиал](/dotnet/api/azure.storage.storagesharedkeycredential) для создания учетных данных, которые используются для подписания SAS. Затем создайте новый объект [блобсасбуилдер](/dotnet/api/azure.storage.sas.blobsasbuilder) и вызовите метод [тосаскуерипараметерс](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) , чтобы получить строку токена SAS.
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetContainerSasUri":::
 
@@ -86,7 +86,7 @@ private static string GetContainerSasUri(CloudBlobContainer container, string st
 
 ### <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-Создайте новый [блобсасбуилдер](/dotnet/api/azure.storage.sas.blobsasbuilder). Затем вызовите метод [тосаскуерипараметерс](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) , чтобы получить строку токена SAS. 
+Подписанный URL-адрес службы подписывается ключом доступа учетной записи. Используйте класс [сторажешаредкэйкредентиал](/dotnet/api/azure.storage.storagesharedkeycredential) для создания учетных данных, которые используются для подписания SAS. Затем создайте новый объект [блобсасбуилдер](/dotnet/api/azure.storage.sas.blobsasbuilder) и вызовите метод [тосаскуерипараметерс](/dotnet/api/azure.storage.sas.blobsasbuilder.tosasqueryparameters) , чтобы получить строку токена SAS.
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetBlobSasUri":::
 
@@ -136,6 +136,7 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
     return blob.Uri + sasBlobToken;
 }
 ```
+
 ---
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]

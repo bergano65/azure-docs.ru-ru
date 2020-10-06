@@ -1,44 +1,37 @@
 ---
-title: 'Создание и изменение канала ExpressRoute: Azure CLI'
-description: В этой статье описывается создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute с помощью CLI.
+title: 'Краткое руководство. Создание и изменение канала ExpressRoute: Azure CLI'
+description: В этом кратком руководстве показано, как создавать, подготавливать, проверять, обновлять, удалять и отменять предоставление канала ExpressRoute с помощью Azure CLI.
 services: expressroute
 author: duongau
 ms.service: expressroute
-ms.topic: how-to
-ms.date: 11/13/2019
+ms.topic: quickstart
+ms.date: 10/05/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5f3270bbed5042ef89d5818523005dfc31589945
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
-ms.translationtype: MT
+ms.openlocfilehash: eebb2693d3bc0f65059c6c3c377f1afb7ae7eccd
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89566149"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757611"
 ---
-# <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
+# <a name="quickstart-create-and-modify-an-expressroute-circuit-using-azure-cli"></a>Краткое руководство. Создание и изменение канала ExpressRoute с помощью Azure CLI
 
+В этом кратком руководстве описывается создание канала Azure ExpressRoute с помощью интерфейса командной строки (CLI). а также показано, как проверить состояние, обновить или удалить и отозвать канал.
 
-В этой статье описывается, как создать канал ExpressRoute Azure с помощью интерфейса командной строки (CLI), а также показано, как проверить состояние, обновить или удалить и отозвать канал. Если вы хотите использовать другой метод для работы с каналами ExpressRoute, выберите подходящую статью из списка ниже:
+## <a name="prerequisites"></a>предварительные требования
 
-> [!div class="op_single_selector"]
-> * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
-> * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Azure CLI](howto-circuit-cli.md)
-> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
-> * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
-> * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
->
-
-## <a name="before-you-begin"></a>Перед началом
-
-* Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). См. дополнительные сведения об [установке Azure CLI 2.0](/cli/azure/install-azure-cli) и [начале работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli).
 * Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+* Установите последнюю версию команд интерфейса командной строки (версии 2.0 или более позднюю). См. дополнительные сведения об [установке Azure CLI 2.0](/cli/azure/install-azure-cli) и [начале работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli).
+
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-and-provision-an-expressroute-circuit"></a><a name="create"></a>Создание и предоставление канала ExpressRoute
 
-### <a name="1-sign-in-to-your-azure-account-and-select-your-subscription"></a>1. Войдите в учетную запись Azure и выберите подписку.
+### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 
-Чтобы начать настройку, войдите в свою учетную запись Azure. Если вы используете Cloud Shell ознакомительной версии, вход выполняется автоматически. Для подключения используйте следующие примеры:
+Чтобы начать настройку, войдите в свою учетную запись Azure. Если вы используете Cloud Shell "попробовать", вы вошли автоматически. Для подключения используйте следующие примеры:
 
 ```azurecli-interactive
 az login
@@ -56,7 +49,7 @@ az account list
 az account set --subscription "<subscription ID>"
 ```
 
-### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. получите список поддерживаемых поставщиков, расположений и пропускной способности.
+### <a name="get-the-list-of-supported-providers-locations-and-bandwidths"></a>Получение списка поддерживаемых поставщиков, расположений и значений пропускной способности
 
 Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности. Команда CLI `az network express-route list-service-providers` возвращает эти сведения, которые будут использоваться в последующих шагах:
 
@@ -117,7 +110,7 @@ az network express-route list-service-providers
   },
 ```
 
-Проверьте, указан ли в ответе ваш поставщик услуг подключения. Запишите следующие сведения, которые потребуются при создании канала:
+Проверьте, указан ли в ответе ваш поставщик услуг подключения. Запишите следующие сведения, которые понадобятся при создании канала:
 
 * Имя
 * PeeringLocations
@@ -125,7 +118,7 @@ az network express-route list-service-providers
 
 Теперь все готово к созданию канала ExpressRoute.
 
-### <a name="3-create-an-expressroute-circuit"></a>3. Создание канала ExpressRoute
+### <a name="create-an-expressroute-circuit"></a>Создание канала ExpressRoute
 
 > [!IMPORTANT]
 > Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Выполните эту операцию, когда поставщик услуг подключения будет готов предоставить канал.
@@ -138,12 +131,12 @@ az network express-route list-service-providers
 az group create -n ExpressRouteResourceGroup -l "West US"
 ```
 
-В приведенном ниже примере показано, как создать канал ExpressRoute со скоростью 200 Мбит/с каналом через Equinix в Кремниевой долине. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
+В приведенном ниже примере показано, как создать канал ExpressRoute со скоростью 200 Мбит/с каналом через Equinix в Кремниевой долине. Если вы используете другой поставщик и другие параметры, замените эти сведения при выполнении запроса.
 
 Убедитесь, что указаны правильный уровень SKU и семейство SKU:
 
-* Уровень SKU определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*. Нельзя изменить номер SKU с *Standard/Premium* на *локальный*.
-* Семейство SKU определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
+* Уровень SKU определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, * Standard или *Premium*. Нельзя изменить номер SKU с *Standard/Premium* на *локальный*.
+* Семейство SKU определяет тип выставления счетов. Вы можете указать *MeteredData* для тарифного тарифного плана и *UnlimitedData* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *MeteredData* на *UnlimitedData*, но нельзя изменить тип с *UnlimitedData* на *MeteredData*. *Локальный* канал — только *UnlimitedData* .
 
 
 Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Ниже приведен пример запроса нового ключа службы:
@@ -154,7 +147,7 @@ az network express-route create --bandwidth 200 -n MyCircuit --peering-location 
 
 Ответ будет содержать ключ службы.
 
-### <a name="4-list-all-expressroute-circuits"></a>4. Вывод списка всех каналов ExpressRoute
+### <a name="list-all-expressroute-circuits"></a>Получение списка всех каналов ExpressRoute
 
 Чтобы получить список всех созданных каналов ExpressRoute, выполните `az network express-route list` команду. Вы можете получить эти сведения в любое время с помощью этой команды. Чтобы получить список всех каналов, сделайте вызов без параметров.
 
@@ -199,7 +192,7 @@ az network express-route list
 az network express-route list -h
 ```
 
-### <a name="5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>5. Отправьте ключ службы поставщику услуг подключения для подготовки
+### <a name="send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>Отправка ключа службы поставщику услуг подключения для подготовки
 
 Параметр ServiceProviderProvisioningState предоставляет сведения о текущем состоянии подготовки на стороне поставщика услуг. Параметр Status предоставляет состояние на стороне Майкрософт. Дополнительные сведения см. в разделе [Состояния подготовки канала ExpressRoute](expressroute-workflows.md#expressroute-circuit-provisioning-states).
 
@@ -210,23 +203,23 @@ az network express-route list -h
 "circuitProvisioningState": "Enabled"
 ```
 
-Когда поставщик услуг подключения находится в процессе его включения, канал переходит в следующее состояние:
+Канал переходит в следующее состояние, когда поставщик услуг подключения в данный момент включает его автоматически:
 
 ```output
 "serviceProviderProvisioningState": "Provisioning"
 "circuitProvisioningState": "Enabled"
 ```
 
-Для того чтобы канал ExpressRoute можно было использовать, он должен находиться в следующем состоянии:
+Чтобы использовать канал ExpressRoute, он должен находиться в следующем состоянии:
 
 ```output
 "serviceProviderProvisioningState": "Provisioned"
 "circuitProvisioningState": "Enabled
 ```
 
-### <a name="6-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>6. периодически проверяйте состояние и состояние ключа канала
+### <a name="periodically-check-the-status-and-the-state-of-the-circuit-key"></a>Периодическая проверка состояния и статуса ключа канала
 
-Проверка состояния и состояния ключа канала позволит вам узнать, когда поставщик активирует ваш канал. После настройки канала значение параметра ServiceProviderProvisioningState изменится на Provisioned, как показано в примере ниже:
+Проверка состояния и состояния ключа службы позволит вам получить сведения о том, когда поставщик предоставил ваш канал. После настройки канала значение параметра *ServiceProviderProvisioningState* изменится на *Provisioned*, как показано в примере ниже.
 
 ```azurecli-interactive
 az network express-route show --resource-group ExpressRouteResourceGroup --name MyCircuit
@@ -263,7 +256,7 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 "type": "Microsoft.Network/expressRouteCircuits]
 ```
 
-### <a name="7-create-your-routing-configuration"></a>7. Создание конфигурации маршрутизации
+### <a name="create-your-routing-configuration"></a>Создание конфигурации маршрутизации
 
 Пошаговые инструкции по созданию и изменению пиринга каналов см. в статье [Создание и изменение маршрутизации для канала ExpressRoute](howto-routing-cli.md).
 
@@ -272,7 +265,7 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 >
 >
 
-### <a name="8-link-a-virtual-network-to-an-expressroute-circuit"></a>8. Связывание виртуальной сети с каналом ExpressRoute
+### <a name="link-a-virtual-network-to-an-expressroute-circuit"></a>Связывание виртуальной сети с каналом ExpressRoute
 
 Теперь свяжите виртуальную сеть с каналом ExpressRoute. Дополнительные сведения см. в статье [Connect a virtual network to an ExpressRoute circuit using CLI](howto-linkvnet-cli.md) (Подключение виртуальной сети к каналу ExpressRoute с помощью CLI).
 
@@ -281,8 +274,8 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 Некоторые свойства канала ExpressRoute можно изменить, не повлияв на подключение. Можно вносить следующие изменения без простоя:
 
 * Включать и отключать надстройку ExpressRoute "Премиум" для канала ExpressRoute. Изменение номера SKU с *Standard/Premium* на *Local* не поддерживается.
-* Увеличивать пропускную способность канала ExpressRoute при условии, что в порту имеется доступная емкость. Однако снижение уровня пропускной способности канала не поддерживается.
-* Перейти с тарифного плана с оплатой за трафик на безлимитный тарифный план. Однако переход с безлимитного тарифного плана на тарифный план с оплатой за трафик не поддерживается.
+* Вы можете увеличить пропускную способность канала ExpressRoute, если имеется доступная емкость порта. Однако понижение пропускной способности канала не поддерживается.
+* Перейти с тарифного плана с оплатой за трафик на безлимитный тарифный план. Однако изменение плана измерения с неограниченными данными на отслеживаемые данные не поддерживается.
 * Параметр *Allow Classic Operations*(Разрешить классические операции) можно включать и отключать.
 
 Дополнительные сведения об ограничениях см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
@@ -306,9 +299,9 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 
 Перед отключением надстройки ExpressRoute "Премиум" ознакомьтесь со следующими требованиями:
 
-* Перед переходом с надстройки "Премиум" на "Стандартный", убедитесь, что к каналу привязано меньше 10 виртуальных сетей. Если у вас их больше 10, запрос на обновление завершится ошибкой и мы будем выставлять вам счета по тарифам ценовой категории "Премиум".
-* Все связи с виртуальными сетями в других геополитических регионах необходимо разорвать. Если вы не отсоедините все ваши виртуальные сети, запрос обновления завершится ошибкой и мы будем выставлять вам счета по тарифам ценовой категории "Премиум".
-* Для частного пиринга таблица маршрутов должна содержать менее 4000 маршрутов. Если таблица маршрутов содержит больше 4000 маршрутов, сеанс BGP будет сброшен. Его можно будет снова включить только после того, как количество объявленных префиксов станет меньше 4000.
+* Прежде чем переходить с канала "Премиум" на "Стандартный", убедитесь, что к каналу привязано менее 10 виртуальных сетей. Если этого не сделать, запрос на обновление завершится ошибкой и мы будем выставлять вам счета по тарифам ценовой категории "Премиум".
+* Все виртуальные сети в других регионах геоадминистративной связи должны быть первыми несвязанными. Если вы не удалите эту ссылку, запрос на обновление завершится ошибкой, и мы продолжим выставлять счета по тарифам Premium.
+* Для частного пиринга таблица маршрутов должна содержать менее 4000 маршрутов. Если размер таблицы маршрутов превышает 4 000 маршрутов, то сеанс BGP будет удален. Сеанс BGP не будет повторно включен, пока число объявленных префиксов не станет меньше 4 000.
 
 Вы можете отключить надстройку ExpressRoute "Премиум" для имеющегося канала с помощью следующей команды:
 
@@ -332,7 +325,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --bandwidth 1000
 ```
 
-Размер канала изменяется со стороны Майкрософт. Затем свяжитесь с поставщиком услуг подключения и попросите обновить конфигурации с его стороны в соответствии с этим изменением. Когда вы сообщите поставщику услуг об изменении размера канала, мы будем выставлять счета за обновленную пропускную способность.
+Ваш канал будет обновлен на стороне Майкрософт. Затем свяжитесь с поставщиком услуг подключения и попросите обновить конфигурации с его стороны в соответствии с этим изменением. Когда вы сообщите поставщику услуг об изменении размера канала, мы будем выставлять счета за обновленную пропускную способность.
 
 ### <a name="to-move-the-sku-from-metered-to-unlimited"></a>Перевод SKU с измеряемых на неограниченные данные
 
@@ -346,13 +339,15 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 
 Инструкции см. в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).
 
-## <a name="deprovisioning-and-deleting-an-expressroute-circuit"></a><a name="delete"></a>отзыве и удалении канала ExpressRoute
+## <a name="deprovisioning-an-expressroute-circuit"></a><a name="delete"></a>Отменяется инициализация канала ExpressRoute
 
 Чтобы отменить подготовку и удалить канал ExpressRoute, ознакомьтесь со следующими требованиями:
 
-* Связь между ExpressRoute и всеми виртуальными сетями необходимо разорвать. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
-* Если состояние подготовки поставщика службы канала ExpressRoute — **Подготовка** или **Подготовка**, необходимо обратиться к поставщику услуг, чтобы отменить подготовку канала к своей стороне. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
-* Канал можно удалить, если поставщик услуг отозвал его. При отозванном канале состояние подготовки поставщика услуг получает значение **Не подготовлено**. Это приостанавливает выставление счетов для канала.
+* Все виртуальные сети должны быть разотроены из канала ExpressRoute. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
+* Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
+* Если поставщик услуг отменяет подготовку канала, что означает, что состояние подготовки поставщика услуг **не подготовлено**, можно удалить цепь. После этого выставление счетов для канала будет прервано.
+
+## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
 
 Для удаления канала ExpressRoute выполните следующую команду:
 
@@ -362,7 +357,7 @@ az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После создания канала обязательно выполните задачи, описанные в следующих статьях:
+После создания канала и подготовки его к работе с поставщиком перейдите к следующему шагу, чтобы настроить пиринг:
 
-* [Создание и изменение маршрутизации для канала ExpressRoute](howto-routing-cli.md)
-* [Связывание виртуальной сети с каналом ExpressRoute](howto-linkvnet-cli.md)
+> [!div class="nextstepaction"]
+> [Создание и изменение маршрутизации для канала ExpressRoute](howto-routing-cli.md)

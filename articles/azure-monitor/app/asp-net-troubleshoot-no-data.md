@@ -4,12 +4,12 @@ description: Не отображаются данные в Azure Application Ins
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: 7cf3371dc60f97b8bba61012e87b7b4bd4899aa6
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 2bf9b50c9b378d8624c311af5935b8cd0a28a31a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88936475"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757985"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET/.NET Core не отображаются данные
 
@@ -246,7 +246,7 @@ PerfView.exe collect -MaxCollectSec:300 -NoGui /onlyProviders=*Microsoft-Applica
 
 Дополнительные сведения см.:
 - [Запись трассировок производительности с помощью PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
-- [Источники событий в Application Insights](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/ETW)
+- [Источники событий в Application Insights](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/ETW)
 
 ## <a name="collect-logs-with-dotnet-trace"></a>Получение журналов с помощью dotnet-trace
 

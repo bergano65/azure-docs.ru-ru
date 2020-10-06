@@ -9,24 +9,24 @@ ms.subservice: custom-vision
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: pafarley
-ms.openlocfilehash: 5285dfb23476662a13162788b2ec497b4fe49228
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 78ae0fc94e74755b481f80724ca26b34da99122c
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90532701"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758580"
 ---
 # <a name="copy-and-move-your-custom-vision-projects"></a>Копирование и перемещение проектов Пользовательское визуальное распознавание
 
 После создания и обучения проекта Пользовательское визуальное распознавание может потребоваться скопировать проект в другой ресурс. Например, может потребоваться переместить проект из среды разработки в рабочую среду или создать резервную копию проекта в учетной записи в другом регионе Azure для повышения безопасности данных.
 
-API-интерфейсы **[експортпрожект](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3])** и **[импортпрожект](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc7548b571998fddee3)** позволяют копировать проекты из одной учетной записи пользовательское визуальное распознавание в другие. В этом руководство показано, как использовать эти API-интерфейсы RESTFUL с фигурными скобками. Можно также использовать службу HTTP-запросов, например POST, чтобы выдать запросы.
+API-интерфейсы **[експортпрожект](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)** и **[импортпрожект](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc7548b571998fddee3)** позволяют копировать проекты из одной учетной записи пользовательское визуальное распознавание в другие. В этом руководство показано, как использовать эти API-интерфейсы RESTFUL с фигурными скобками. Можно также использовать службу HTTP-запросов, например POST, чтобы выдать запросы.
 
 ## <a name="business-scenarios"></a>Бизнес-сценарии
 
 Если приложение или бизнес зависит от использования Пользовательское визуальное распознавание проекта, рекомендуется скопировать модель в другую учетную запись Пользовательское визуальное распознавание в другом регионе. Затем, если происходит региональный сбой, вы можете получить доступ к проекту в регионе, в котором он был скопирован.
 
-##  <a name="prerequisites"></a>Предварительные условия
+##  <a name="prerequisites"></a>предварительные требования
 
 - Два Пользовательское визуальное распознавание ресурсов Azure. Если у вас их нет, перейдите к портал Azure и [Создайте новый ресурс пользовательское визуальное распознавание](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision?azure-portal=true).
 - Ключи обучения и URL-адреса конечных точек для ресурсов Пользовательское визуальное распознавание. Эти значения можно найти на вкладке **Обзор** ресурса на портал Azure.
@@ -136,7 +136,7 @@ curl -v -X POST "{endpoint}/customvision/v3.3/Training/projects/import?token={to
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как копировать и перемещать проект между Пользовательское визуальное распознаваниеными ресурсами. Затем изучите документацию по API, чтобы узнать, что еще можно сделать с помощью Пользовательское визуальное распознавание.
 * [Справочная документация по REST API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 8a29dbbf365304240283fe4fd5899b58e3bc227c
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: e7447d03fc231d8d96b71c7d944a380c10add0d0
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91741413"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757942"
 ---
 # <a name="security-control-v2-identity-management"></a>Управление безопасностью v2: Управление удостоверениями
 
@@ -169,7 +169,7 @@ Azure Advanced Threat protection (ATP) — это решение для обес
 
 - [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../../security-center/security-center-identity-access.md)
 
-- [Оповещения в модуле защиты "аналитика угроз" центра безопасности Azure](//azure/security-center/alerts-reference)
+- [Оповещения в модуле защиты "аналитика угроз" центра безопасности Azure](/azure/security-center/alerts-reference)
 
 - [Как интегрировать журналы действий Azure в Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 

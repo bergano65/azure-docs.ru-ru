@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/16/2020
+ms.date: 10/05/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 474b3c4261b412c0c875f7a05802095c9e0c2cd9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: b936460d98ce772e49f281a06f95da09fa34ccfb
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91320376"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758818"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -379,7 +379,7 @@ ms.locfileid: "91320376"
 | Центры событий Azure         | Microsoft.EventHub         | Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview) |
 | Служба синхронизации файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для общих папок Azure. Таким образом создается возможность многосайтовой синхронизации, быстрого аварийного восстановления и резервного копирования на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Подробнее](/azure/hdinsight/hdinsight-hadoop-use-blob-storage). |
-| Импорт и экспорт Azure      | Microsoft.ImportExport     | Импорт данных в Azure и экспорт данных из Azure с помощью службы импорта и экспорта. [Подробнее](/azure/storage/common/storage-import-export-service).  |
+| Импорт и экспорт Azure      | Microsoft.ImportExport     | Позволяет импортировать данные в службу хранилища Azure или экспортировать данные из хранилища Azure с помощью службы импорта и экспорта хранилища Azure. [Подробнее](/azure/storage/common/storage-import-export-service).  |
 | Azure Monitor            | Microsoft.Insights         | Позволяет записывать в защищенную учетную запись хранения данные мониторинга, в том числе журналы ресурсов, журналы входа и аудита Azure Active Directory, а также журналы Microsoft Intune. [Подробнее](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security). |
 | Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика, в том числе с помощью наблюдателя за сетями и служб Аналитика трафика. [Подробнее](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). |
 | Azure Site Recovery      | Microsoft.SiteRecovery     | Включение репликации для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Подробнее](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
@@ -388,7 +388,7 @@ ms.locfileid: "91320376"
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Cлужба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy). |
+| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](/azure/api-management/api-management-authentication-policies#use-managed-identity-in-send-request-policy). |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду ADF. |

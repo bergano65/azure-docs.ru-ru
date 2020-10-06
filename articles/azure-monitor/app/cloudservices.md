@@ -4,19 +4,19 @@ description: Эффективное отслеживание веб-ролей �
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: 1662b45d8243217357d1e69124832c499d587812
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 676d3543cbcbf86feb67cad4bd2b9709c2b81437
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89437332"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759379"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](../platform/diagnostics-extension-overview.md) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com) . Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -42,7 +42,7 @@ ms.locfileid: "89437332"
 * добавить пользовательские данные телеметрии из своего приложения.
 
 ## <a name="sample-app-instrumented-with-application-insights"></a>Пример приложения, инструментированного с помощью Application Insights
-В этом [примере приложения](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) служба Application Insights добавлена в облачную службу с двумя рабочими ролями, размещенными в Azure. 
+В этом [примере приложения](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) служба Application Insights добавлена в облачную службу с двумя рабочими ролями, размещенными в Azure. 
 
 В следующем разделе описано, как адаптировать собственный проект облачной службы аналогичным образом.
 
@@ -93,7 +93,7 @@ ms.locfileid: "89437332"
 
 ![Настройка Application Insights](./media/cloudservices/configure-azure-diagnostics.png)
 
-Это приведет к добавлению ключей инструментирования Application Insights в файлы *ServiceConfiguration.\*.cscfg*. Вот [пример кода](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/AzureEmailService/ServiceConfiguration.Cloud.cscfg).
+Это приведет к добавлению ключей инструментирования Application Insights в файлы *ServiceConfiguration.\*.cscfg*. Вот [пример кода](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/AzureEmailService/ServiceConfiguration.Cloud.cscfg).
 
 Если требуется изменить уровень диагностических сведений, отправляемых в Application Insights, это можно сделать, [напрямую изменив файлы *.cscfg*](../platform/diagnostics-extension-to-application-insights.md).
 
@@ -123,9 +123,9 @@ ms.locfileid: "89437332"
    
     b. Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
    
-    * [Веб-роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Global.asax.cs#L27)
-    * [Рабочая роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L232)
-    * [Веб-страницы](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Views/Shared/_Layout.cshtml#L13) 
+    * [Веб-роль](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Global.asax.cs#L27)
+    * [Рабочая роль](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L232)
+    * [Веб-страницы](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Views/Shared/_Layout.cshtml#L13) 
 
 1. Настройте для файла *ApplicationInsights.config* копирование в выходной каталог.
 
@@ -150,7 +150,7 @@ ms.locfileid: "89437332"
     </Startup>
     ```
     
-2. Скачайте [InstallAgent.bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [InstallAgent.ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), вставьте их в `AppInsightsAgent` папку в каждом проекте роли. Не забудьте скопировать их в выходной каталог с помощью свойств файла Visual Studio или скриптов сборки.
+2. Скачайте [InstallAgent.bat](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [InstallAgent.ps1](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), вставьте их в `AppInsightsAgent` папку в каждом проекте роли. Не забудьте скопировать их в выходной каталог с помощью свойств файла Visual Studio или скриптов сборки.
 
 3. Добавьте переменные среды для всех рабочих ролей: 
 
@@ -199,26 +199,26 @@ ms.locfileid: "89437332"
 В следующих разделах описано, как получать дополнительные данные телеметрии по разным аспектам приложения.
 
 ## <a name="track-requests-from-worker-roles"></a>Отслеживание запросов из рабочих ролей
-В веб-ролях модуль запросов собирает данные об HTTP-запросах автоматически. Примеры переопределения поведения коллекции по умолчанию см. на странице с [примером роли MVCWebRole](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole). 
+В веб-ролях модуль запросов собирает данные об HTTP-запросах автоматически. Примеры переопределения поведения коллекции по умолчанию см. на странице с [примером роли MVCWebRole](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole). 
 
 Производительность вызовов для рабочих ролей можно регистрировать, отслеживая их таким же образом, как запросы HTTP. В Application Insights тип телеметрии запроса определяет единицу работы для указанного сервера, которую можно учесть и которая может быть независимо выполнена или не выполнена. HTTP-запросы автоматически перехватываются пакетом SDK, но вы можете добавить собственный код для отслеживания запросов к рабочим ролям.
 
 Ознакомьтесь с двумя примерами рабочих ролей, которые инструментированы для отправки отчетов по запросам: 
-* [WorkerRoleA](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/WorkerRoleA)
-* [WorkerRoleB](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/WorkerRoleB)
+* [WorkerRoleA](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/WorkerRoleA)
+* [WorkerRoleB](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/WorkerRoleB)
 
 ## <a name="exceptions"></a>Исключения
 Сведения о сборе необработанных исключений от веб-приложений разных типов см. в руководстве по [настройке Application Insights и диагностике исключений](./asp-net-exceptions.md).
 
 Образец веб-роли имеет контроллеры MVC5 и веб-API 2. Необработанные исключения, поступающие из них, регистрируются следующими обработчиками:
 
-* объектом [AiHandleErrorAttribute](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiHandleErrorAttribute.cs), [настроенным для контроллеров MVC5](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/FilterConfig.cs#L12); 
-* объектом [AiWebApiExceptionLogger](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiWebApiExceptionLogger.cs), [настроенным для контроллеров веб-API 2](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/WebApiConfig.cs#L25). 
+* объектом [AiHandleErrorAttribute](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiHandleErrorAttribute.cs), [настроенным для контроллеров MVC5](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/FilterConfig.cs#L12); 
+* объектом [AiWebApiExceptionLogger](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Telemetry/AiWebApiExceptionLogger.cs), [настроенным для контроллеров веб-API 2](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/App_Start/WebApiConfig.cs#L25). 
 
 Для рабочих ролей есть два способа отслеживать исключения.
 
 * TrackException(ex)
-* Если вы добавили пакет NuGet прослушивателя трассировки Application Insights, вы можете [вносить исключения в журнал с помощью System.Diagnostics.Trace](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L107).
+* Если вы добавили пакет NuGet прослушивателя трассировки Application Insights, вы можете [вносить исключения в журнал с помощью System.Diagnostics.Trace](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L107).
 
 ## <a name="performance-counters"></a>Счетчики производительности
 По умолчанию собираются приведенные ниже счетчики.
@@ -236,7 +236,7 @@ ms.locfileid: "89437332"
 * \ASP.NET Applications(??APP_W3SVC_PROC??)\Время выполнения запросов
 * \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросы в очереди приложений
 
-Можно указать дополнительные пользовательские или другие счетчики производительности Windows, изменив *ApplicationInsights.config* [, как показано в этом примере](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
+Можно указать дополнительные пользовательские или другие счетчики производительности Windows, изменив *ApplicationInsights.config* [, как показано в этом примере](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
 
   ![Счетчики производительности](./media/cloudservices/002-servers.png)
 
@@ -245,11 +245,11 @@ ms.locfileid: "89437332"
 
 Для рабочих ролей вы можете использовать пользовательский инициализатор телеметрии, чтобы задать атрибут общего контекста Operation.Id для всех данных телеметрии. Это позволит с первого взгляда понять, связаны ли сбой или задержка с некоторой зависимостью или ошибкой в коде. 
 
-Это делается так.
+Вот как это сделать.
 
-* [Настройте идентификатор корреляции в объекте CallContext](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L36). В нашем примере мы используем идентификатор запроса как идентификатор корреляции.
-* Добавьте пользовательскую реализацию TelemetryInitializer, которая сохраняет в Operation.Id заданное ранее значение correlationId. Пример: [ItemCorrelationTelemetryInitializer](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/Telemetry/ItemCorrelationTelemetryInitializer.cs#L13).
-* Добавьте пользовательский инициализатор телеметрии. Это можно сделать в файле *ApplicationInsights.config* или [в коде](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L233).
+* [Настройте идентификатор корреляции в объекте CallContext](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L36). В нашем примере мы используем идентификатор запроса как идентификатор корреляции.
+* Добавьте пользовательскую реализацию TelemetryInitializer, которая сохраняет в Operation.Id заданное ранее значение correlationId. Пример: [ItemCorrelationTelemetryInitializer](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/Telemetry/ItemCorrelationTelemetryInitializer.cs#L13).
+* Добавьте пользовательский инициализатор телеметрии. Это можно сделать в файле *ApplicationInsights.config* или [в коде](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L233).
 
 ## <a name="client-telemetry"></a>Данные телеметрии клиента
 [Добавьте пакет SDK JavaScript на веб-страницы][client], чтобы получать браузерные данные телеметрии, такие как число просмотров страниц, время загрузки страницы, исключения скриптов, и записывать пользовательскую телеметрию в скрипты страниц.
@@ -264,8 +264,8 @@ ms.locfileid: "89437332"
 
 Если у вас есть клиентское мобильное приложение, воспользуйтесь [Центром приложений](../learn/mobile-center-quickstart.md). Создайте запросы в [Аналитике](../log-query/log-query-overview.md) для отображения числа событий и закрепите эти показатели на панели мониторинга.
 
-## <a name="example"></a>Пример
-[примере](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) отслеживается служба, которая имеет веб-роль и две рабочие роли.
+## <a name="example"></a>Например, .
+[примере](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) отслеживается служба, которая имеет веб-роль и две рабочие роли.
 
 ## <a name="exception-method-not-found-on-running-in-azure-cloud-services"></a>Исключение "метод не найден" при выполнении в облачных службах Azure
 Выполняется сборка для .NET 4.6? .NET 4.6 не поддерживается автоматически в ролях облачных служб Azure. [Установите .NET 4.6 в каждой роли](../../cloud-services/cloud-services-dotnet-install-dotnet.md), прежде чем выполнять приложение.

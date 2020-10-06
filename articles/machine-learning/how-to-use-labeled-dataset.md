@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 9ffc134c2bded747346f3639119dde4a6f14231b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7f21d3ed3d5e71c2f87777316e7584011490043a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91250714"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757781"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных с метками в Машинном обучении Azure
 
@@ -61,13 +61,20 @@ pip install azureml-contrib-dataset
 >[!NOTE]
 >Пространство имен azureml.contrib часто изменяется, так как мы работаем над улучшением службы. Поэтому все, что доступно в этом пространстве имен, считается предварительными версиями компонентов, поддержка которых корпорацией Майкрософт ограничена.
 
-Мы предлагаем следующие средства обработки файлов для создания файловых потоков при преобразовании в кадры данных Pandas.
+Машинное обучение Azure предоставляет следующие параметры обработки файлов для потоковых файлов при преобразовании в кадр данных Pandas.
 * Скачать: скачайте файлы данных в локальный каталог.
 * Подключение. Подключите файлы данных к точке подключения. Подключение работает только для вычислительных ресурсов на основе Linux, включая виртуальные машины для записных книжек Машинного обучения Azure и Вычислительную среду Машинного обучения.
 
+В следующем коде `animal_labels` набор данных — это выходные данные проекта меток, ранее сохраненного в рабочей области.
+
 ```Python
+import azureml.core
 import azureml.contrib.dataset
+from azureml.core import Dataset, Workspace
 from azureml.contrib.dataset import FileHandlingOption
+
+# get animal_labels dataset from the workspace
+animal_labels = Dataset.get_by_name(workspace, 'animal_labels')
 animal_pd = animal_labels.to_pandas_dataframe(file_handling_option=FileHandlingOption.DOWNLOAD, target_path='./download/', overwrite_download=True)
 
 import matplotlib.pyplot as plt
@@ -82,8 +89,18 @@ imgplot = plt.imshow(img)
 
 Вы можете выгрузить наборы данных с метками в набор данных Torchvision с помощью метода [to_torchvision()](https://docs.microsoft.com/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?view=azure-ml-py&preserve-view=true#&preserve-view=trueto-torchvision--), который также размещен в классе `azureml-contrib-dataset`. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/). 
 
+В следующем коде `animal_labels` набор данных — это выходные данные проекта меток, ранее сохраненного в рабочей области.
+
 ```python
+import azureml.core
+import azureml.contrib.dataset
+from azureml.core import Dataset, Workspace
+from azureml.contrib.dataset import FileHandlingOption
+
 from torchvision.transforms import functional as F
+
+# get animal_labels dataset from the workspace
+animal_labels = Dataset.get_by_name(workspace, 'animal_labels')
 
 # load animal_labels dataset into torchvision dataset
 pytorch_dataset = animal_labels.to_torchvision()

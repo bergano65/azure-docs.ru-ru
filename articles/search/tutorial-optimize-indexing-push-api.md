@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 08/21/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bfb2598fb3a207bbdfaade9086efd07827b077dd
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: cb012fcc701e9dd18dbe1db5304807b4d96c2a86
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998430"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757798"
 ---
 # <a name="tutorial-optimize-indexing-with-the-push-api"></a>Руководство по Оптимизация индексирования с помощью API Push
 
@@ -325,7 +325,7 @@ do
 
 А здесь мы поместим код реализации экспоненциальной задержки в функцию, чтобы его было проще вызывать.
 
-Кроме того, создается еще одна функция для управления активными потоками. Для простоты мы не приводим здесь эту функцию, но вы можете найти ее в файле [ExponentialBackoff.cs](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/optimize-data-indexing/OptimizeDataIndexing/ExponentialBackoff.cs). Эту функцию можно вызвать с помощью следующей команды, где `hotels` — это данные для передачи, `1000` означает размер пакета, а `8` — количество параллельных потоков:
+Кроме того, создается еще одна функция для управления активными потоками. Для простоты мы не приводим здесь эту функцию, но вы можете найти ее в файле [ExponentialBackoff.cs](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/optimize-data-indexing/v10/OptimizeDataIndexing/ExponentialBackoff.cs). Эту функцию можно вызвать с помощью следующей команды, где `hotels` — это данные для передачи, `1000` означает размер пакета, а `8` — количество параллельных потоков:
 
 ```csharp
 ExponentialBackoff.IndexData(indexClient, hotels, 1000, 8).Wait();

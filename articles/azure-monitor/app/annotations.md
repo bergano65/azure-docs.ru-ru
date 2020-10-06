@@ -3,12 +3,12 @@ title: Заметки о выпуске для Application Insights | Докум
 description: Добавление маркеров развертывания или сборки для диаграмм обозревателя метрик в Application Insights.
 ms.topic: conceptual
 ms.date: 08/14/2020
-ms.openlocfilehash: e21981f134f6a78109d70b1edf6d61e204b64e12
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.openlocfilehash: 58f6603687838713fafbf4cd5cc3f100e22b7401
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
-ms.locfileid: "88258407"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758189"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
@@ -96,9 +96,9 @@ ms.locfileid: "88258407"
 Выберите любой маркер заметки, чтобы открыть сведения о выпуске, включая запрашивающей стороны, ветвь системы управления версиями, конвейер выпуска и среду.
 
 ## <a name="create-custom-annotations-from-powershell"></a>Создание настраиваемых заметок в PowerShell
-Вы можете использовать сценарий PowerShell [креатерелеасеаннотатион](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1) из GitHub для создания заметок из любого процесса, не используя Azure DevOps. 
+Вы можете использовать сценарий PowerShell [креатерелеасеаннотатион](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1) из GitHub для создания заметок из любого процесса, не используя Azure DevOps. 
 
-1. Создайте локальную копию [CreateReleaseAnnotation.ps1](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).
+1. Создайте локальную копию [CreateReleaseAnnotation.ps1](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).
    
 1. Выполните действия, описанные в предыдущей процедуре, чтобы получить идентификатор Application Insights и создать ключ API на вкладке **доступ к api** Application Insights.
    
@@ -117,7 +117,7 @@ ms.locfileid: "88258407"
 
 Можно изменить скрипт, например, чтобы создать заметки в прошлом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание рабочих элементов](./diagnostic-search.md#create-work-item)
 * [Автоматизация с помощью PowerShell](./powershell.md)

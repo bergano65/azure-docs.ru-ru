@@ -4,12 +4,12 @@ description: Мониторинг производительности веб-с
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 603cbde20ae6e8d19e4ad3ae290bbfc925483595
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 6c27c78bf8e3f3b8af342a14a38c9be3821d781a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88923829"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758669"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -85,7 +85,7 @@ ms.locfileid: "88923829"
 4. Восстановите изменения, внесенные в CONFIG-файл.
 
 
-## <a name="troubleshooting"></a><a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshooting"></a><a name="troubleshoot"></a>Диагностика
 
 ### <a name="confirm-a-valid-installation"></a>Подтверждение правильности установки 
 
@@ -130,7 +130,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 </dependentAssembly>
 ```
 
-Мы отслеживаем эту ошибку [здесь](https://github.com/Microsoft/ApplicationInsights-Home/issues/301).
+Мы отслеживаем эту ошибку [здесь](https://github.com/MohanGsk/ApplicationInsights-Home).
 
 
 ### <a name="application-diagnostic-messages"></a>Диагностические сообщения приложения
@@ -178,7 +178,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
 * Windows Server 2008
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
@@ -306,7 +306,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 [Подробнее](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 

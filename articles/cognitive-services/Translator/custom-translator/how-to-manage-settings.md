@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 488ca52abdd5f8d6cfd1f92a5f91861a17a77d19
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.openlocfilehash: 184073ef3ee1b6a67c844754f7da81f88bbbdf62
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88510514"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91757033"
 ---
 # <a name="how-to-manage-settings"></a>Как управлять параметрами
 
@@ -51,6 +51,8 @@ ms.locfileid: "88510514"
 
     ![Диалоговое окно "Создать рабочую область"](media/how-to/create-new-workspace-dialog.png)
 
+>[!Note]
+>Настраиваемый транслятор не поддерживает создание рабочей области для API перевода текстов ресурса (то есть Ключ подписки Azure), созданный в [включенной виртуальной сети](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet).
 
 ### <a name="modify-existing-key"></a>Изменить существующий ключ
 
@@ -61,7 +63,7 @@ ms.locfileid: "88510514"
 
 3. В диалоговом окне введите ключ для подписки на транслятор, а затем нажмите кнопку "Сохранить".
 
-    ![Как добавить ключ подписки](media/how-to/how-to-add-subscription-key-dialog.png)
+    ![Добавление диалогового окна "ключ подписки"](media/how-to/how-to-add-subscription-key-dialog.png)
 
 ## <a name="manage-your-workspace"></a>Управление рабочей областью
 
@@ -113,6 +115,6 @@ ms.locfileid: "88510514"
 
     ![Закрепить рабочую область](media/how-to/how-to-pin-workspace.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения [о создании рабочей области и проектов](workspace-and-project.md)
