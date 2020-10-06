@@ -263,8 +263,6 @@
       href: release-notes-archive.md
     - name: Блог о стратегии развития Azure
       href: 'https://azure.microsoft.com/updates/?product=security-center'
-    - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
-      href: security-center-features-retirement-july2019.md
     - name: Оценка защиты конечной точки и рекомендации
       href: security-center-endpoint-protection.md
 - name: Ресурсы

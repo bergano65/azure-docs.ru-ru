@@ -544,6 +544,8 @@
           href: data-flow-new-branch.md
         - name: Сведение
           href: data-flow-pivot.md
+        - name: Рейтинг
+          href: data-flow-rank.md
         - name: Выберите пункт
           href: data-flow-select.md
         - name: Приемник
