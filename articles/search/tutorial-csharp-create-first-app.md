@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 06/20/2020
+ms.date: 09/25/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: adcd6aa2c232bf87dc82284acbe2815484660ca7
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 49dc551039e0fd82ddb4374713c59fca2f493b62
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998566"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397952"
 ---
 # <a name="tutorial-create-your-first-search-app-using-the-net-sdk"></a>Руководство по Создание первого приложения поиска с помощью пакета SDK для .NET
 
@@ -42,7 +42,7 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 
 Этот вызов запускает поиск по данным в Azure и возвращает результаты.
 
-![Поиск по слову pool](./media/tutorial-csharp-create-first-app/azure-search-pool.png)
+:::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-pool.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -58,7 +58,7 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 1. В Visual Studio откройте базовую страницу поиска этого решения и выберите **Запуск без отладки** (или нажмите клавишу F5).
 1. Выполните поиск по нескольким словам (например, wifi, view, bar, parking) и изучите результаты.
 
-    ![Поиск по слову wifi](./media/tutorial-csharp-create-first-app/azure-search-wifi.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-wifi.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 Мы надеемся, что проблем с проектом не возникло и приложение Azure успешно работает. В этом приложении присутствует ряд основных компонентов расширенных поисковых функций, поэтому рекомендуется последовательно выполнить все инструкции из этого руководства.
 
@@ -68,15 +68,15 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 
 1. В Visual Studio 2017 или более поздней версии выберите **Новый проект**, а затем — **Веб-приложение ASP.NET Core**. Присвойте проекту имя, например FirstAzureSearchApp.
 
-    ![Создание облачного проекта](./media/tutorial-csharp-create-first-app/azure-search-project1.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-project1.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 2. Когда вы щелкнете **ОК**, вам будет предложен второй набор параметров для проекта этого типа. Выберите **Веб-приложение (модель-представление-контроллер)** .
 
-    ![Создание проекта MVC](./media/tutorial-csharp-create-first-app/azure-search-project2.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-project2.png" alt-text="Поиск по запросу &quot;бассейн&quot;":::
 
 3. Далее в меню **Средства** выберите **Диспетчер пакетов NuGet**, а затем **Manage NuGet Packages for Solution...** (Управление пакетами NuGet для решения...). Нам нужно установить один пакет. На вкладке **Browse** (Обзор) введите в поле поиска Azure Cognitive Search. В результатах поиска выберите **Microsoft.Azure.Search** (версии 9.0.1 или более поздней) и установите эту службу. Для завершения установки нужно указать сведения в еще нескольких диалоговых окнах.
 
-    ![Добавление библиотек Azure с помощью NuGet](./media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 ### <a name="initialize-azure-cognitive-search"></a>Инициализация Когнитивного поиска Azure
 
@@ -93,7 +93,7 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 
 2. Мы еще не закончили работу с этим файлом. Выберите его свойства и укажите для параметра **Копировать в выходной каталог** значение **Копировать, если новее**.
 
-    ![Копирование параметров приложения в выходные данные](./media/tutorial-csharp-create-first-app/azure-search-copy-if-newer.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-copy-if-newer.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 ## <a name="model-data-structures"></a>Моделирование структур данных
 
@@ -513,11 +513,11 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 
 1. Выберите команду **Отладка/Запуск без отладчика** или нажмите клавишу F5. Если вы все создали правильно, откроется стартовое представление Index.
 
-     ![Открытие приложения](./media/tutorial-csharp-create-first-app/azure-search-index.png)
+     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-index.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 2. Введите текст для поиска, например beach (пляж) или любой другой вариант, который придет вам в голову, и щелкните значок поиска. Вы получите некоторый набор результатов.
 
-     ![Поиск по слову beach](./media/tutorial-csharp-create-first-app/azure-search-beach.png)
+     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-beach.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
 3. Попробуйте ввести five star (пятизвездочный). Вы сразу заметите, что результаты отсутствуют. Более сложный поиск будет воспринимать "пятизвездочный" как синоним слова "первоклассный" и возвратит соответствующие результаты. Когнитивный поиск Azure поддерживает использование синонимов, но мы не будем обсуждать этот вопрос в учебниках для начинающих.
  
@@ -533,7 +533,7 @@ DocumentSearchResult<Hotel> results  = await _indexClient.Documents.SearchAsync<
 
 2. Откройте приложение, введите для поиска слово bar и щелкните значок поиска. Исключение сразу откроет представление ошибки.
 
-     ![Принудительный вызов ошибки](./media/tutorial-csharp-create-first-app/azure-search-error.png)
+     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-error.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="false":::
 
     > [!Important]
     > Считается, что отображение внутренних номеров ошибок на страницах ошибок, несет угрозу безопасности. Если вы планируете сделать это приложение общедоступным, изучите рекомендации по безопасности для отображения сообщений об ошибках.

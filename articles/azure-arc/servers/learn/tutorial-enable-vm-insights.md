@@ -2,17 +2,17 @@
 title: Учебник. Мониторинг гибридной виртуальной машины с помощью Azure Monitor для виртуальных машин
 description: Сведения о сборе и анализе данных с гибридной виртуальной машины в Azure Monitor.
 ms.topic: tutorial
-ms.date: 08/12/2020
-ms.openlocfilehash: 76df7d403fdce6fc3ac77c0b24849aedffb57ce0
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.date: 09/23/2020
+ms.openlocfilehash: 97ab390570f434295a5aa836ef994640f6dc14f8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88213160"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335421"
 ---
 # <a name="tutorial-monitor-a-hybrid-machine-with-azure-monitor-for-vms"></a>Руководство по мониторингу виртуальной гибридной машины с помощью Azure Monitor для виртуальных машин
 
-[Azure Monitor](../overview.md) может собирать данные напрямую из гибридных виртуальных машин в рабочую область Log Analytics для подробного анализа данных и корреляции. Обычно это влечет за собой установку [агента Log Analytics](../../../azure-monitor/platform/agents-overview.md#log-analytics-agent) на машине с помощью сценария, вручную или автоматически в соответствии со стандартами управления конфигурацией. Серверы с поддержкой Arc (предварительная версия) недавно представили поддержку для установки [расширений виртуальных машин](../manage-vm-extensions.md) Log Analytics и Dependency Agent для Windows и Linux, что позволяет Azure Monitor собирать данные с виртуальных машин, не относящихся к Azure.
+[Azure Monitor](../overview.md) может собирать данные напрямую из гибридных виртуальных машин в рабочую область Log Analytics для подробного анализа данных и корреляции. Обычно это влечет за собой установку [агента Log Analytics](../../../azure-monitor/platform/agents-overview.md#log-analytics-agent) на машине с помощью сценария, вручную или автоматически в соответствии со стандартами управления конфигурацией. На серверах с поддержкой Arc недавно появилась возможность устанавливать [расширения виртуальных машин](../manage-vm-extensions.md) Log Analytics и Dependency Agent для Windows и Linux, что позволяет Azure Monitor собирать данные с виртуальных машин, не относящихся к Azure.
 
 В этом руководстве показано, как настроить и собрать данные с виртуальных машин Linux или Windows, включив Azure Monitor для виртуальных машин, выполнив набор шагов, которые упрощают работу и занимают меньше времени.  
 
@@ -34,21 +34,21 @@ ms.locfileid: "88213160"
 
 1. Запустите службу Azure Arc на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Компьютеры — Azure Arc**.
 
-    :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Поиск серверов с поддержкой Arc в разделе Все службы" border="false":::
+    :::image type="content" source="./media/quick-enable-hybrid-vm/search-machines.png" alt-text="Поиск серверов с поддержкой Arc в разделе &quot;Все службы&quot;" border="false":::
 
 1. На странице **Компьютеры — Azure Arc** выберите подключенный компьютер, созданный при изучении [краткого руководства](quick-enable-hybrid-vm.md).
 
 1. На левой панели в разделе **Мониторинг** выберите **Аналитические сведения**, а затем **Включить**.
 
-    :::image type="content" source="./media/tutorial-enable-vm-insights/insights-option.png" alt-text="Выбор параметра Аналитические сведения в меню слева" border="false":::
+    :::image type="content" source="./media/tutorial-enable-vm-insights/insights-option.png" alt-text="Поиск серверов с поддержкой Arc в разделе &quot;Все службы&quot;" border="false":::
 
 1. На странице **Переход на Insights** в Azure Monitor вам будет предложено создать рабочую область. Для работы с этим учебником мы не рекомендуем выбирать имеющуюся рабочую область Log Analytics. Подтвердите вариант по умолчанию — рабочую область с уникальным именем в том же регионе, где расположен зарегистрированный подключенный компьютер. Это рабочая область создана и настроена для вас.
 
-    :::image type="content" source="./media/tutorial-enable-vm-insights/enable-vm-insights.png" alt-text="Страница включения Azure Monitor для виртуальных машин" border="false":::
+    :::image type="content" source="./media/tutorial-enable-vm-insights/enable-vm-insights.png" alt-text="Поиск серверов с поддержкой Arc в разделе &quot;Все службы&quot;" border="false":::
 
 1. При выполнении настройки вы будете получать сообщения о состоянии. Этот процесс занимает несколько минут, так как на подключенном компьютере установлены расширения.
 
-    :::image type="content" source="./media/tutorial-enable-vm-insights/onboard-vminsights-vm-portal-status.png" alt-text="Сообщение о состоянии включения Azure Monitor для виртуальных машин" border="false":::
+    :::image type="content" source="./media/tutorial-enable-vm-insights/onboard-vminsights-vm-portal-status.png" alt-text="Поиск серверов с поддержкой Arc в разделе &quot;Все службы&quot;" border="false":::
 
     После завершения вы получите сообщение об успешном подключении компьютера и развертывании аналитических сведений.
 
@@ -56,11 +56,11 @@ ms.locfileid: "88213160"
 
 После завершения развертывания и настройки выберите **Аналитические сведения**, а затем перейдите на вкладку **Производительность**. На вкладке "Производительность" отобразится группа счетчиков производительности, собираемых из операционной системы виртуальной машины. Прокрутите вниз, чтобы просмотреть дополнительные счетчики, и наведите указатель мыши на график, чтобы просмотреть среднее значение и процентили, полученные с момента установки расширения виртуальной машины Log Analytics на компьютер.
 
-:::image type="content" source="./media/tutorial-enable-vm-insights/insights-performance-charts.png" alt-text="Диаграммы производительности Azure Monitor для виртуальных машин для выбранного компьютера" border="false":::
+:::image type="content" source="./media/tutorial-enable-vm-insights/insights-performance-charts.png" alt-text="Поиск серверов с поддержкой Arc в разделе &quot;Все службы&quot;" border="false":::
 
 Щелкните **Карта**, чтобы открыть функцию отображения процессов, запущенных на виртуальной машине, и их зависимостей в формате карты. Щелкните **Свойства**, чтобы открыть панель свойств, если она еще не открыта.
 
-:::image type="content" source="./media/tutorial-enable-vm-insights/insights-map.png" alt-text="Карта Azure Monitor для виртуальных машин для выбранного компьютера" border="false":::
+:::image type="content" source="./media/tutorial-enable-vm-insights/insights-map.png" alt-text="Поиск серверов с поддержкой Arc в разделе &quot;Все службы&quot;" border="false":::
 
 Разверните процессы, выполняемые на виртуальной машине. Выберите любой из процессов, чтобы просмотреть сведения о нем и выделить его зависимости.
 

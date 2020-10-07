@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: ddd57bfe653766d133824f42098d9ad9adb1e56b
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 5aa563e55c64893d57522dd1154a64c7e90a1690
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88962202"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91397442"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -84,7 +84,8 @@ ms.locfileid: "88962202"
 1. В нижней части конструктора щелкните **Новый шаг**, введите **Gmail** в поле поиска действий, найдите и выберите **Отправка электронной почты (v2)** .
     
     > [!TIP]
-    > Вы можете найти другие типы интеграции, например SendGrid, MailChimp, Office 365 и SalesForce. См. сведения в документации по [Logic Apps](../logic-apps/index.yml).
+    > Вы можете найти другие типы интеграции, например SendGrid, MailChimp, Microsoft 365 и SalesForce. См. сведения в документации по [Logic Apps](../logic-apps/index.yml).
+
 1. В диалоговом окне **Gmail** щелкните **Вход** и войдите в учетную запись Gmail, из которой нужно отправить электронное письмо.
 
     ![Снимок экрана: диалоговое окно Gmail, используемое для входа в учетную запись Gmail, из которой необходимо отправить электронное письмо.](./media/tutorial-send-email/gmail-sign-in.png)

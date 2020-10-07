@@ -8,23 +8,23 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/19/2020
 ms.author: aahi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7cf28df4f009b017699c926d1ca54b7e5320a179
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: fa1ecb24649d9355e6104bff8add5430fdd64c3c
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87404126"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91377108"
 ---
 Используйте это краткое руководство, чтобы начать поиск новостей с помощью клиентской библиотеки Поиска видео Bing для JavaScript. Поскольку REST API Поиска видео Bing совместим с большинством языков программирования, клиентская библиотека обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/videoSearch.js). Он содержит больше аннотаций и функций.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Node.js](https://www.nodejs.org/)
-
-Чтобы установить консольное приложение с помощью клиентской библиотеки для Поиска видео Bing, сделайте следующее.
-* Выполните команду `npm install ms-rest-azure` в своей среде разработки.
-* Выполните команду `npm install azure-cognitiveservices-videosearch` в своей среде разработки.
+* Последняя версия [Node.js](https://nodejs.org/en/download/).
+* [Пакет SDK для Поиска видео Bing для JavaScript](https://www.npmjs.com/package/@azure/cognitiveservices-videosearch).
+     *  Чтобы установить его, выполните такую команду. `npm install @azure/cognitiveservices-videosearch`
+* Класс `CognitiveServicesCredentials` из пакета `@azure/ms-rest-azure-js` для аутентификации клиента.
+     * Чтобы установить его, выполните такую команду. `npm install @azure/ms-rest-azure-js`
 
 [!INCLUDE [cognitive-services-bing-video-search-signup-requirements](~/includes/cognitive-services-bing-video-search-signup-requirements.md)]
 
@@ -33,8 +33,8 @@ ms.locfileid: "87404126"
 1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и добавьте оператор `require()` для клиентской библиотеки Поиска видео Bing и модуль `CognitiveServicesCredentials`. Создайте переменную для ключа подписки. 
     
     ```javascript
-    const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
-    const VideoSearchAPIClient = require('azure-cognitiveservices-videosearch');
+    const CognitiveServicesCredentials = require('@azure/ms-rest-azure-js').CognitiveServicesCredentials;
+    const VideoSearchAPIClient = require('@azure/cognitiveservices-videosearch');
     ```
 
 2. Создайте экземпляр `CognitiveServicesCredentials` с помощью ключа. Затем используйте его для создания экземпляра клиента для поиска видео.

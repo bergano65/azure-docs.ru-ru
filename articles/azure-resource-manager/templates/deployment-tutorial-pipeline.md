@@ -4,12 +4,12 @@ description: Узнайте, как непрерывно создавать, т�
 ms.date: 08/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: c793c8bcbc01cbef99de13ef6dd2f6ce61a50773
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 433811cb632aae0d7370fc8e401c01fe36621a5b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892683"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91333243"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines
 
@@ -180,7 +180,7 @@ Azuredeploy.json был добавлен в локальный репозито�
     * **Deployment mode** (Режим развертывания): выберите значение **Добавочный**.
     * **Deployment name** (Имя развертывания): введите **DeployPipelineTemplate**. Чтобы можно было увидеть **Имя развертывания**, нажмите кнопку**Advanced** (Дополнительно).
 
-    ![Azure Resource Manager, Azure DevOps, шаг Azure Pipelines](./media/deployment-tutorial-pipeline/resource-manager-template-pipeline-configure.png)
+    ![Снимок экрана: страница развертывания шаблона Resource Manager, где указаны требуемые значения](./media/deployment-tutorial-pipeline/resource-manager-template-pipeline-configure.png)
 
 1. Выберите **Добавить**.
 
@@ -188,7 +188,7 @@ Azuredeploy.json был добавлен в локальный репозито�
 
     YML-файл должен иметь аналогичный вид:
 
-    ![YAML Azure Resource Manager, Azure DevOps, Azure Pipelines](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-yml.png)
+    ![Снимок экрана: страница проверки нового конвейера с заголовком "Просмотр YAML конвейера"](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-yml.png)
 
 1. Выберите **Сохранить и запустить**.
 1. В области **Save and run** (Сохранить и запустить) щелкните **Save and run** (Сохранить и запустить) еще раз. Копия файла YAML сохраняется в подключенном хранилище. Вы можете увидеть файл YAML, перейдя в свой репозиторий.

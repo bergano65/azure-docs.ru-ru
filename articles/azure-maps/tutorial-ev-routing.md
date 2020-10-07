@@ -1,6 +1,6 @@
 ---
 title: Руководство по Маршрутизация электрических транспортных средств с помощью Записных книжек Azure (Python) | Microsoft Azure Maps
-description: Маршрутизация электрических транспортных средств с помощью API маршрутизации Microsoft Azure Maps и Записных книжек Azure.
+description: Руководство по маршрутизации электрических транспортных средств с помощью API маршрутизации Microsoft Azure Maps и Записных книжек Azure
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 506429f51ac442b73adea98058a833f52a728c72
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 28fcdc992f98ff380467718314148984559a7fee
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88639755"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335234"
 ---
 # <a name="tutorial-route-electric-vehicles-by-using-azure-notebooks-python"></a>Руководство по Маршрутизация электрических транспортных средств с помощью Записных книжек Azure (Python)
 
@@ -387,8 +387,6 @@ display(Image(staticMapImage))
 
 ![Карта с маршрутом](./media/tutorial-ev-routing/route.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
-
 В рамках этого руководства вы узнали, как напрямую вызывать REST API Azure Maps и визуализировать данные Azure Maps с помощью Python.
 
 Для изучения API-интерфейсов Azure Maps, используемых в этом руководстве, прочтите следующие статьи:
@@ -399,7 +397,11 @@ display(Image(staticMapImage))
 * [Render — Get Map Image](https://docs.microsoft.com/rest/api/maps/render/getmapimage) (Отрисовка — получение изображения карты)
 * [Route — Post Route Matrix Preview](https://docs.microsoft.com/rest/api/maps/route/postroutematrix) (Маршрут — предварительная версия запроса Post матрицы маршрута)
 * [Route — Get Route Directions](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) (Маршрут — получение направлений маршрута)
+* [Интерфейсы REST API для Azure Maps](https://docs.microsoft.com/azure/azure-maps/consumption-model)
 
-Полный список API-интерфейсов Azure Maps вы найдете на [этой странице](https://docs.microsoft.com/azure/azure-maps/consumption-model).
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о службе "Записные книжки Azure" см. в [этой статье](https://docs.microsoft.com/azure/notebooks).
+Дополнительные сведения о службе "Записные книжки Azure" см. в следующей статье:
+
+> [!div class="nextstepaction"]
+> [Записные книжки Azure](https://docs.microsoft.com/azure/notebooks)

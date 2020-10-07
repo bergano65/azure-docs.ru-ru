@@ -4,12 +4,12 @@ description: Общие сведения о службе "Блокчейн Azure
 ms.date: 05/22/2020
 ms.topic: overview
 ms.reviewer: ravastra
-ms.openlocfilehash: 2a28baeb6de3c8ca1e8ad89e11d45b492f33588c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e82916d7366ad82746d2d3ddfc979264e113619b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076953"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334826"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Что собой представляет служба "Блокчейн Azure"?
 
@@ -45,7 +45,7 @@ ms.locfileid: "87076953"
 
 Кроме того, служба "Блокчейн Azure" предоставляет информативные метрики на основе службы Azure Monitor, обеспечивая аналитические сведения о загрузке ЦП, использовании памяти и хранилищ узлов,  а также полезные сведения об операциях сети блокчейна, таких как транзакции и вычисленные блоки, глубина очереди транзакций, а также активные подключения.  Метрики можно настроить для получения представлений с аналитическими сведениями, важными для приложения блокчейна.  Кроме того, можно определить пороги с использованием оповещений, позволяющих пользователям активировать такие действия, как отправка электронного сообщения или SMS, выполнение приложения логики, функции Azure или перенаправление в пользовательский веб-перехватчик.
 
-![Метрики](./media/overview/metrics.png)
+![Снимок экрана: процесс мониторинга с указанными значениями для блоков, транзакций, транзакций в очереди и обработанных запросов](./media/overview/metrics.png)
 
 С помощью журналов Azure Monitor пользователи могут просматривать журналы, связанные с протоколом Quorum, или другие важные сведения, например число попыток подключения к узлам транзакций.
 
@@ -77,7 +77,7 @@ ms.locfileid: "87076953"
 
 * [Страница с вопросами о службе "Блокчейн Azure" (раздел вопросов и ответов на сайте Майкрософт)](/answers/topics/azure-blockchain-service.html)
 * [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain)
-* [Stack Overflow](https://stackoverflow.com/questions/tagged/AzureBlockchainService)
+* [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-blockchain-service)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

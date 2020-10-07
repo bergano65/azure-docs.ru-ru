@@ -8,13 +8,13 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: aahi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 953648f5cf83d5ffd22683ba0ce02335a637f18a
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: 72c520b0ff135e9f48cd74f0024197ae8606f206
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407236"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91377346"
 ---
 Воспользуйтесь сведениями из краткого руководства и выполните первый поиск изображения с помощью клиентской библиотеки Поиска изображений Bing. Эта библиотека является оболочкой для API и содержит те же функции. Это простое приложение JavaScript отправляет запрос на поиск изображения, анализирует ответ JSON и отображает URL-адрес первого возвращенного изображения.
 
@@ -22,10 +22,11 @@ ms.locfileid: "87407236"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Пакет SDK по поиску изображений Cognitive Services для Node.js](https://www.npmjs.com/package/@azure/cognitiveservices-imagesearch)
-    * Установка с помощью `npm install @azure/cognitiveservices-imagesearch`
-* Модуль [Node.js Azure Rest](https://www.npmjs.com/package/ms-rest-azure)
-    * Установка с помощью `npm install ms-rest-azure`
+* Последняя версия [Node.js](https://nodejs.org/en/download/).
+* [Пакет SDK для Поиска изображений Bing для JavaScript](https://www.npmjs.com/package/@azure/cognitiveservices-imagesearch).
+     *  Чтобы установить его, выполните такую команду. `npm install @azure/cognitiveservices-imagesearch`
+* Класс `CognitiveServicesCredentials` из пакета `@azure/ms-rest-azure-js` для аутентификации клиента.
+     * Чтобы установить его, выполните такую команду. `npm install @azure/ms-rest-azure-js`
 
 [!INCLUDE [cognitive-services-bing-image-search-signup-requirements](~/includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
@@ -36,7 +37,7 @@ ms.locfileid: "87407236"
     ```javascript
     'use strict';
     const ImageSearchAPIClient = require('@azure/cognitiveservices-imagesearch');
-    const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
+    const CognitiveServicesCredentials = require('@azure/ms-rest-azure-js').CognitiveServicesCredentials;
     ```
 
 2. В главном методе проекта необходимо создать переменные для действующего ключа подписки, после чего результаты поиска изображения и поиск термина будут возвращены Bing. Затем с помощью ключа создайте экземпляр клиента для поиска образа.

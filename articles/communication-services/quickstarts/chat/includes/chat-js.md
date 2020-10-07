@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: a50f09dd52ccf4d35fd3803967898a4a25e3299f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d0754ea2d7e8f8f59ec475be8e27fcffd058c11f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945628"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91377576"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы нужно сделать следующее:
@@ -90,6 +90,8 @@ npm install webpack webpack-cli webpack-dev-server --save-dev
 ### <a name="create-a-chat-client"></a>Создание клиента чата
 
 Чтобы создать клиент чата в веб-приложении, вы будете использовать конечную точку службы связи и маркер доступа, который был создан в рамках предварительных требований. Маркеры доступа пользователей позволяют создавать клиентские приложения, которые напрямую проходят проверку подлинности в Службах коммуникации Azure. После создания этих маркеров на сервере передайте их обратно клиентскому устройству. Для передачи маркера клиенту чата необходимо использовать класс `AzureCommunicationUserCredential` из `Common client library`.
+
+Создайте файл **client.js** в корневом каталоге проекта. Мы будем использовать этот файл для добавления возможностей чата с помощью клиентской библиотеки чата Служб коммуникации Azure для JavaScript.
 
 ```JavaScript
 

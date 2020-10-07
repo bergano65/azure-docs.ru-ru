@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/19/2017
 ms.custom: mvc
-ms.openlocfilehash: b656774762f5930c5665166a701bda7333940307
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: af8479f6460a6cc555d7ea67dcfe65c779878624
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322437"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357868"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -97,7 +97,7 @@ Application Insights собирает сведения об ошибках в в
 
     ![Код](media/tutorial-runtime-exceptions/codelens.png)
 
-1. Выберите **Анализировать влияние**, чтобы открыть аналитику Application Insights.  Она содержит несколько запросов, предоставляющих сведения о неудачных запросах, например сведения о затронутых пользователях, браузерах и регионах.<br><br>![Analytics](media/tutorial-runtime-exceptions/analytics.png)<br>
+1. Выберите **Анализировать влияние**, чтобы открыть аналитику Application Insights.  Она содержит несколько запросов, предоставляющих сведения о неудачных запросах, например сведения о затронутых пользователях, браузерах и регионах.<br><br>![Снимок экрана: окно Application Insights с несколькими запросами](media/tutorial-runtime-exceptions/analytics.png)<br>
 
 ## <a name="add-work-item"></a>Добавление рабочего элемента
 Если подключить Application Insights к системе отслеживания, например Azure DevOps или GitHub, можно создать рабочий элемент непосредственно в Application Insights.

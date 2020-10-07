@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 06/07/2020
-ms.openlocfilehash: 8fba7245475c9873a3e2d3abeda4806d1376e7ca
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.date: 09/25/2020
+ms.openlocfilehash: be45292552a7ac62c7131c637b044edc477328e2
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89300040"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91396796"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-cognitive-skillset-in-the-azure-portal"></a>Краткое руководство. Создание набора навыков Когнитивного поиска на портале Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "89300040"
 
 1. В контейнере щелкните **Отправить**, чтобы отправить примеры файлов, скачанные на первом шаге. Обратите внимание, что имеется широкий спектр типов содержимого, включая изображения и файлы приложений, которые не поддерживают полнотекстовый поиск в собственных форматах.
 
-   ![Исходные файлы в хранилище BLOB-объектов Azure](./media/cognitive-search-quickstart-blob/sample-data.png)
+   :::image type="content" source="media/cognitive-search-quickstart-blob/sample-data.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 Теперь можно перейти к мастеру импорта данных.
 
@@ -60,13 +60,13 @@ ms.locfileid: "89300040"
 
 1. [Найдите службу поиска](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) и на странице обзора щелкните **Импорт данных** на панели команд, чтобы настроить когнитивное обогащение за четыре шага.
 
-   ![Команда импорта данных](media/cognitive-search-quickstart-blob/import-data-cmd2.png)
+   :::image type="content" source="media/cognitive-search-quickstart-blob/import-data-cmd2.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 ### <a name="step-1---create-a-data-source"></a>Шаг 1. Создание источника данных
 
 1. В разделе **Подключение к данным** выберите **Хранилище BLOB-объектов Azure**, затем выберите учетную запись хранения и созданный контейнер. Присвойте источнику данных имя, а для остальных параметров используйте значения по умолчанию. 
 
-   ![Конфигурация больших двоичных объектов Azure](./media/cognitive-search-quickstart-blob/blob-datasource.png)
+   :::image type="content" source="media/cognitive-search-quickstart-blob/blob-datasource.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
     Перейдите к следующей странице.
 
@@ -76,7 +76,7 @@ ms.locfileid: "89300040"
 
 1. В этом кратком руководстве мы используем ресурс Cognitive Services уровня **Бесплатный**. Демонстрационные данные состоят из 14 файлов, поэтому для этого краткого руководства достаточно бесплатного набора из 20 транзакций на Cognitive Services. 
 
-   ![Подключение Cognitive Services: подключение базовой службы](media/cognitive-search-quickstart-blob/cog-search-attach.png)
+   :::image type="content" source="media/cognitive-search-quickstart-blob/cog-search-attach.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 1. Разверните элемент **Добавить обогащения** и выберите четыре значения. 
 
@@ -86,7 +86,7 @@ ms.locfileid: "89300040"
 
    Выберите навыки распознавания сущностей (людей, организаций и расположений) и анализа изображений.
 
-   ![Подключение Cognitive Services: выбор служб для набора навыков](media/cognitive-search-quickstart-blob/skillset.png)
+   :::image type="content" source="media/cognitive-search-quickstart-blob/skillset.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
    Перейдите к следующей странице.
 
@@ -102,7 +102,7 @@ ms.locfileid: "89300040"
 
 + По умолчанию устанавливаются атрибуты **Доступный для получения** и **Доступный для поиска**. **С возможностью поиска** разрешает полнотекстовый поиск по этому полю. **Доступный для поиска** означает, что значения поля можно возвращать в результатах. Мастер предполагает, что вы хотите, чтобы эти поля были доступны для получения и поиска, потому что вы создали их с помощью набора навыков.
 
-  ![Поля индекса](media/cognitive-search-quickstart-blob/index-fields.png)
+  :::image type="content" source="media/cognitive-search-quickstart-blob/index-fields.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 Обратите внимание на зачеркивание и вопросительный знак в атрибуте **Доступный для получения** в поле `content`. Для документов с большим количеством текста в поле `content` содержится основная часть файла, которая может достигать тысячи строк. Это поле плохо подходит для результатов поиска и его следует исключить из нашего примера. 
 
@@ -118,7 +118,7 @@ ms.locfileid: "89300040"
 
 1. На странице **Индексатор** вы можете подтвердить имя по умолчанию и щелкнуть функцию планирования **Однократно**, чтобы выполнить его немедленно. 
 
-   ![Определение индексатора](media/cognitive-search-quickstart-blob/indexer-def.png)
+   :::image type="content" source="media/cognitive-search-quickstart-blob/indexer-def.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 1. Щелкните **Отправить**, чтобы создать и немедленно запустить индексатор.
 
@@ -126,7 +126,7 @@ ms.locfileid: "89300040"
 
 Индексирование с использованием когнитивных навыков занимает больше времени, чем обычное индексирование на основе текста, особенно при распознавании текста и анализе изображений. Чтобы отслеживать ход выполнения, перейдите на страницу обзора и щелкните **Индексатор** посредине страницы.
 
-  ![Уведомление Когнитивного поиска Azure](./media/cognitive-search-quickstart-blob/indexer-notification.png)
+  :::image type="content" source="media/cognitive-search-quickstart-blob/indexer-notification.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 Наличие предупреждений можно считать нормальным, учитывая широкое разнообразие типов содержимого. Некоторые типы содержимого недопустимы для некоторых навыков, а на низких уровнях регулярно нарушаются [ограничения индексатора](search-limits-quotas-capacity.md#indexer-limits). Например, уведомления об усечении до 32 000 символов означают, что достигнут предел возможностей индексатора на уровне "Бесплатный". Если вы запустите этот пример на более высоком уровне, многие предупреждения об усечении исчезнут.
 
@@ -134,11 +134,11 @@ ms.locfileid: "89300040"
 
 На этой странице снова щелкните состояние предупреждения, чтобы просмотреть список предупреждений, аналогичный представленному ниже. 
 
-  ![Список предупреждений индексатора](./media/cognitive-search-quickstart-blob/indexer-warnings.png)
+  :::image type="content" source="media/cognitive-search-quickstart-blob/indexer-warnings.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 Чтобы отобразить подробные сведения, щелкните любую строку состояния. Это предупреждение сообщает, что слияние остановлено из-за достижения максимального порогового значения (для особенно большого документа PDF).
 
-  ![Сведения о предупреждении](./media/cognitive-search-quickstart-blob/warning-detail.png)
+  :::image type="content" source="media/cognitive-search-quickstart-blob/warning-detail.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 ## <a name="query-in-search-explorer"></a>Запросы в обозревателе поиска
 
@@ -157,7 +157,7 @@ ms.locfileid: "89300040"
 
 в строках запроса учитывается регистр, поэтому при получении сообщения "неизвестное поле" проверьте правильность написания и регистр в значениях **Fields** (поля) **Index Definition (JSON)** (определение индекса). 
 
-  ![Пример с обозревателем решений](./media/cognitive-search-quickstart-blob/search-explorer.png)
+  :::image type="content" source="media/cognitive-search-quickstart-blob/search-explorer.png" alt-text="Исходные файлы в хранилище BLOB-объектов Azure" border="false":::
 
 ## <a name="takeaways"></a>Общие выводы
 

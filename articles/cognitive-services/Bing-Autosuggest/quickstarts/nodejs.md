@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Node.js
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing и Node.js.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,13 +10,13 @@ ms.subservice: bing-autosuggest
 ms.topic: quickstart
 ms.date: 05/06/2020
 ms.author: aahi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6a78c2ae4145a65739d5db56a70dca498d7d6a82
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: b61427f39f508413e33ce67f90bfecb8ac202e1f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406492"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332650"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-nodejs"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Node.js
 

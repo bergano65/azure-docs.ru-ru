@@ -8,26 +8,23 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/06/2020
 ms.author: aahi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f5a3b48fd6be48d468b66009a77de100962be10d
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: b145cc1689ad2c1a39591df0e39bb8d0445333c7
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91376425"
 ---
 Используйте это краткое руководство, чтобы начать поиск сущностей с помощью клиентской библиотеки Поиска сущностей Bing для JavaScript. Поскольку REST API Поиска сущностей Bing совместим с большинством языков программирования, клиентская библиотека обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/entitySearch.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
-
-* [Пакет SDK Поиска сущностей Bing для Node.js](https://www.npmjs.com/package/@azure/cognitiveservices-entitysearch)
-
-Чтобы установить пакет SDK Поиска сущностей Bing, сделайте следующее:
-
-1. Выполните команду `npm install ms-rest-azure` в своей среде разработки.
-2. Выполните команду `npm install @azure/cognitiveservices-entitysearch` в своей среде разработки.
+* [Пакет SDK для Поиска сущностей Bing для JavaScript](https://www.npmjs.com/package/@azure/cognitiveservices-entitysearch).
+     *  Чтобы установить его, выполните такую команду. `npm install @azure/cognitiveservices-entitysearch`
+* Класс `CognitiveServicesCredentials` из пакета `@azure/ms-rest-azure-js` для аутентификации клиента.
+     * Чтобы установить его, выполните такую команду. `npm install @azure/ms-rest-azure-js`
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](~/includes/cognitive-services-bing-entity-search-signup-requirements.md)]
 
@@ -37,7 +34,7 @@ ms.locfileid: "87405078"
 1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и добавьте следующие требования.
 
     ```javascript
-    const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
+    const CognitiveServicesCredentials = require('@azure/ms-rest-azure-js').CognitiveServicesCredentials;
     const EntitySearchAPIClient = require('@azure/cognitiveservices-entitysearch');
     ```
 

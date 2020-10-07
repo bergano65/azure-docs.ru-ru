@@ -1,6 +1,6 @@
 ---
 title: Пример сценария Azure PowerShell (Linux) для журналов Azure Monitor
-description: Пример скрипта Azure PowerShell. Журналы Azure Monitor
+description: Пример скрипта Azure PowerShell (Linux) для журналов Azure Monitor
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 03/01/2017
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 6c41e0ffc9d90fca8b492e854fdada31b1c46267
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 354f7fad2d7c0b4de273f9fe3420addb464472b8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89078883"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336077"
 ---
 # <a name="create-an-azure-monitor-vm-with-powershell"></a>Создание виртуальной машины Azure Monitor с помощью PowerShell
 

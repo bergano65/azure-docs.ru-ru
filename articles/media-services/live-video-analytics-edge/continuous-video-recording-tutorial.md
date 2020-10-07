@@ -3,12 +3,12 @@ title: Руководство по непрерывной записи виде�
 description: Из этого руководства мы узнаем, как с помощью службы Аналитики видеотрансляции Azure в Azure IoT Edge осуществлять непрерывную запись видео в облако и транслировать произвольные фрагменты этого видео в режиме потоковой передачи с помощью Служб мультимедиа Azure.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: c94f87068d003fc260d861cb99c60326d4a53258
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: a5cb857dcd5f457a68b947d2ece5d78c158e78f0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89566808"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91336485"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство по Непрерывная запись видео в облако и его воспроизведение
 
@@ -164,7 +164,7 @@ ms.locfileid: "89566808"
 1. В узле **GraphTopologySet** внесите следующие изменения:
 
     `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json" `
-1. Затем убедитесь, что в узлах **GraphInstanceSet** и **GraphTopologyDelete** значение **topologyName** соответствует значению свойства **name** в топологии вышеприведенного графа:
+1. Затем убедитесь, что в узле **GraphInstanceSet** значение **topologyName** соответствует значению свойства **name** в топологии вышеприведенного графа:
 
     `"topologyName" : "CVRToAMSAsset"`  
 1. Откройте [топологию](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json) в браузере и найдите параметр assetNamePattern. Чтобы название ресурса было уникальным, можно изменить название экземпляра графа в файле operations.json (по умолчанию он называется Sample-Graph-1).

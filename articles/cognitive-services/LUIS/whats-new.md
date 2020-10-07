@@ -1,14 +1,16 @@
 ---
 title: Новые возможности службы "Распознавание речи" (LUIS)
 description: Эта статья регулярно обновляется последними сведениями об API Распознавания речи в Azure Cognitive Services.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 06/15/2020
-ms.openlocfilehash: d178ee2f5db74949f4a8ad68df93bf3c4407c58a
-ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
-ms.translationtype: MT
+ms.openlocfilehash: fffe337a59ff343164a155fcd0f4d5616a32bf41
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84789214"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334622"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
@@ -18,16 +20,16 @@ ms.locfileid: "84789214"
 
 ### <a name="june-2020"></a>Июнь 2020 г.
 
-* [Предварительная версия 3,0. Разработка](luis-migration-authoring-entities.md) Tool
-    * Версия 3.2.0-Preview. 3 — [.NET — NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)
-    * Версия 4.0.0-Preview. 3- [JS-NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)
+* [Предварительная версия 3.0 (разработка)](luis-migration-authoring-entities.md), пакет SDK:
+    * Версия 3.2.0-preview.3: [.NET — NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)
+    * Версия 4.0.0-preview.3: [JS — NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)
 * Применение методик DevOps в LUIS
     * Основные понятия
-        * [Рекомендации по DevOps для LUIS](luis-concept-devops-sourcecontrol.md)
+        * [Рекомендации по использованию DevOps с LUIS](luis-concept-devops-sourcecontrol.md)
         * [Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps](luis-concept-devops-automation.md)
         * [Тестирование для LUIS DevOps](luis-concept-devops-testing.md)
     * Практическое руководство
-        * [Применение DevOps к разработке приложений LUIS с помощью действий GitHub](luis-how-to-devops-with-github.md)
+        * [Применение DevOps при разработке приложений LUIS с помощью GitHub Actions](luis-how-to-devops-with-github.md)
     * [Полный репозиторий кода GitHub](https://github.com/Azure-Samples/LUIS-DevOps-Template)
 
 ### <a name="may-2020---build"></a>Май 2020 года — //Build

@@ -1,6 +1,6 @@
 ---
 title: Руководство по Создание приложения для поиска магазинов с помощью Azure Maps | Microsoft Azure Maps
-description: Сведения о том, как создать веб-приложения указателя магазинов. Для создания веб-страницы, отправки запросов к службе поиска и отображения результатов на карте используйте веб-пакет SDK Azure Maps.
+description: Учебник по созданию веб-приложений указателя магазинов. Для создания веб-страницы, отправки запросов к службе поиска и отображения результатов на карте используйте веб-пакет SDK Azure Maps.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 08/11/2020
@@ -8,18 +8,18 @@ ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 61c085cb721f9e1a8d9c44146a9d96cd5a08562c
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: 9c2160a241243b59ca7adda99fe2100d416c55be
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085320"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335268"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Руководство по Создание указателя магазинов с помощью Azure Maps
 
 Это руководство поможет вам создать простой указатель магазинов с помощью Azure Maps. Указатели магазинов сейчас используются довольно широко. Большинство принципов, реализованных в приложении этого типа, применимы и ко многим другим приложениям. Указатели магазинов являются обязательным условием для множества предприятий, занимающихся прямой продажей потребителям. В этом руководстве описано следующее:
-    
+
 > [!div class="checklist"]
 > * Создание веб-страницы с помощью API Map Control Azure.
 > * Загрузка пользовательских данных из файла и их отображение на карте.
@@ -924,34 +924,21 @@ ms.locfileid: "90085320"
 
 ![Снимок экрана указателя магазинов, адаптированного к небольшому экрану](./media/tutorial-create-store-locator/FinishedSimpleStoreLocatorSmallScreen.png)
 
+Из этого учебника вы узнали, как создать базовый указатель магазинов с помощью Azure Maps. Возможно, созданный в рамках этого руководства указатель магазинов будет обладать всеми нужными вам функциями. Но вы можете добавить в указатель магазинов и другие функции или расширить существующие, чтобы персонализировать пользовательский интерфейс: 
+
+ * Включите в поле поиска [предложения при вводе](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20Autosuggest%20and%20JQuery%20UI).  
+ * Добавьте [поддержку нескольких языков](https://azuremapscodesamples.azurewebsites.net/?sample=Map%20Localization). 
+ * Предоставьте пользователю возможность [фильтровать расположения по маршруту](https://azuremapscodesamples.azurewebsites.net/?sample=Filter%20Data%20Along%20Route). 
+ * Добавьте возможность [настраивать фильтры](https://azuremapscodesamples.azurewebsites.net/?sample=Filter%20Symbols%20by%20Property). 
+ * Добавьте возможность указывать исходное значение поиска с помощью строки запроса. Если включить этот параметр в указатель магазинов, пользователи смогут создавать закладки для поисковых запросов и совместно использовать их. Кроме того, это обеспечит простой способ передачи поисковых запросов к определенной странице с другой страницы.  
+ * Разверните свой указатель магазинов как [веб-приложение Службы приложений Azure](https://docs.microsoft.com/azure/app-service/quickstart-html). 
+ * Храните свои данные в базе данных и выполняйте поиск ближайших расположений. Дополнительные сведения см. в статьях [Основные сведения о типах пространственных данных](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-types-overview?view=sql-server-2017&preserve-view=true) и [Запросы пространственных данных для ближайшего соседа](https://docs.microsoft.com/sql/relational-databases/spatial/query-spatial-data-for-nearest-neighbor?view=sql-server-2017&preserve-view=true).
+
+Вы можете [просмотреть весь исходный код](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator), [просмотреть работающий пример](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Store%20Locator) и узнать больше об охвате и возможностях Azure Maps, используя [уровни увеличения и сетку фрагментов](zoom-levels-and-tile-grid.md). Вы также можете [использовать стилистические выражения на основе данных](data-driven-style-expressions-web-sdk.md) для применения бизнес-логики.
+
 ## <a name="next-steps"></a>Дальнейшие действия
-
-Из этого руководства вы узнали, как создать базовый указатель магазинов с помощью Azure Maps. Возможно, созданный в рамках этого руководства указатель магазинов будет обладать всеми нужными вам функциями. Но вы можете добавить в указатель магазинов и другие функции или расширить существующие, чтобы персонализировать пользовательский интерфейс: 
-
-> [!div class="checklist"]
-> * Включите в поле поиска [предложения при вводе](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20Autosuggest%20and%20JQuery%20UI).  
-> * Добавьте [поддержку нескольких языков](https://azuremapscodesamples.azurewebsites.net/?sample=Map%20Localization). 
-> * Предоставьте пользователю возможность [фильтровать расположения по маршруту](https://azuremapscodesamples.azurewebsites.net/?sample=Filter%20Data%20Along%20Route). 
-> * Добавьте возможность [настраивать фильтры](https://azuremapscodesamples.azurewebsites.net/?sample=Filter%20Symbols%20by%20Property). 
-> * Добавьте возможность указывать исходное значение поиска с помощью строки запроса. Если включить этот параметр в указатель магазинов, пользователи смогут создавать закладки для поисковых запросов и совместно использовать их. Кроме того, это обеспечит простой способ передачи поисковых запросов к определенной странице с другой страницы.  
-> * Разверните свой указатель магазинов как [веб-приложение Службы приложений Azure](https://docs.microsoft.com/azure/app-service/quickstart-html). 
-> * Храните свои данные в базе данных и выполняйте поиск ближайших расположений. Дополнительные сведения см. в статьях [Основные сведения о типах пространственных данных](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-types-overview) и [Запросы пространственных данных для ближайшего соседа](https://docs.microsoft.com/sql/relational-databases/spatial/query-spatial-data-for-nearest-neighbor).
-
-> [!div class="nextstepaction"]
-> [Просмотр полного исходного кода](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator)
-
-> [!div class="nextstepaction"]
-> [Просмотр примера, работающего в реальном времени](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Store%20Locator)
-
-Дополнительные сведения о времени сервисного обслуживания и возможностях службы Azure Maps см. здесь:
-
-> [!div class="nextstepaction"]
-> [Уровни увеличения и параметры сетки](zoom-levels-and-tile-grid.md)
 
 Дополнительные примеры кода и сведения о возможностях интерактивного программирования см. здесь:
 
 > [!div class="nextstepaction"]
 > [Как использовать библиотеку Map Control в службе "Карты Azure"](how-to-use-map-control.md)
-
-> [!div class="nextstepaction"]
-> [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md)

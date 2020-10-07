@@ -1,17 +1,17 @@
 ---
 title: Создание устойчивой функции в Azure с помощью JavaScript
-description: Создание и публикация устойчивой функции Azure с помощью Visual Studio Code.
+description: Создание и публикация устойчивой функции в службе "Функции Azure" с помощью JavaScript и Visual Studio Code.
 author: anthonychu
 ms.topic: quickstart
 ms.date: 05/07/2020
 ms.reviewer: azfuncdf, antchu
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7614cec43fd9b2f294a04ed266cb0614f6cde872
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-js
+ms.openlocfilehash: f8ffa90ba0f1ac32d4691165fabf3d8eb9fb7605
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87291829"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335455"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 

@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 02/27/2020
-ms.openlocfilehash: 4adec4579cf1a413aeac54782b4f9a833d557ad9
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: 38b4713383368f0c64983738f2ed65f60edb9e67
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90029976"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334095"
 ---
 # <a name="tutorial-automate-tasks-to-process-emails-by-using-azure-logic-apps-azure-functions-and-azure-storage"></a>Руководство по Автоматизация задач обработки сообщений электронной почты с помощью Azure Logic Apps, Функций Azure и службы хранилища Azure
 
@@ -323,7 +323,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
    1. В первой строке в разделе **И** щелкните поле слева. В появившемся списке динамического содержимого выберите свойство **С вложением**.
 
-      ![Добавление условия](./media/tutorial-process-email-attachments-workflow/build-condition.png)
+      ![Снимок экрана, на котором показано свойство "И" для условия и выбор свойства "С вложением".](./media/tutorial-process-email-attachments-workflow/build-condition.png)
 
    1. В среднем поле укажите для оператора значение **равно**.
 
@@ -389,7 +389,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
    ![Добавление действия внутри ветви "Если истинно"](./media/tutorial-process-email-attachments-workflow/if-true-add-action.png)
 
-1. В поле поиска введите "функции azure" и выберите действие: **Choose an Azure function — Azure Functions** (Выбор функции Azure — Функции Azure).
+1. В поле поиска введите "Функции Azure" и выберите действие **Choose an Azure function — Azure Functions** (Выбор функции Azure — Функции Azure).
 
    ![Выбор действия "Выберите функцию Azure"](./media/tutorial-process-email-attachments-workflow/add-action-azure-function.png)
 
@@ -458,7 +458,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
    В итоге действие должно выглядеть приблизительно так, как показано в примере ниже:
 
-   ![Выполненное действие "Создать BLOB-объект"](./media/tutorial-process-email-attachments-workflow/create-blob-for-email-body-done.png)
+   ![Снимок экрана: пример завершенного действия "Создать BLOB-объект".](./media/tutorial-process-email-attachments-workflow/create-blob-for-email-body-done.png)
 
 1. Сохраните приложение логики.
 

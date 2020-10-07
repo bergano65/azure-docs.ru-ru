@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/25/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 3589aeb21053525e481f3448270d236265dd698e
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: aca16e334e594f8adf0c0a3b0354db827fc475fe
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052038"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334005"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-powershell"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell для распределения нагрузки между виртуальными машинами
 
@@ -61,7 +61,7 @@ New-AzResourceGroup -Name $rg -Location $loc
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
 
-## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
+## <a name="create-a-public-ip-address-in-the-standard-sku"></a>Создание общедоступного IP-адреса в SKU ценовой категории "Стандартный"
 
 Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. 
 
@@ -215,7 +215,7 @@ $lb =
 New-AzLoadBalancer -ResourceGroupName $rg -Name $lbn -SKU $sku -Location $loc -FrontendIpConfiguration $feip -BackendAddressPool $bepool -Probe $probe -LoadBalancingRule $rule
 ```
 
-## <a name="configure-virtual-network"></a>Настройка виртуальной сети
+## <a name="configure-virtual-network-in-the-standard-sku"></a>Настройка виртуальной сети в SKU ценовой категории "Стандартный"
 
 Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы виртуальной сети.
 
@@ -712,7 +712,7 @@ $nic | Set-AzNetworkInterfaceIpConfig -Name $ipc -LoadBalancerBackendAddressPool
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
 
-## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
+## <a name="create-a-public-ip-address-in-the-basic-sku"></a>Создание общедоступного IP-адреса в SKU ценовой категории "Базовый"
 
 Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. 
 
@@ -854,7 +854,7 @@ $lb =
 New-AzLoadBalancer -ResourceGroupName $rg -Name $lbn -SKU $sku -Location $loc -FrontendIpConfiguration $feip -BackendAddressPool $bepool -Probe $probe -LoadBalancingRule $rule
 ```
 
-## <a name="configure-virtual-network"></a>Настройка виртуальной сети
+## <a name="configure-virtual-network-in-the-basic-sku"></a>Настройка виртуальной сети в SKU ценовой категории "Базовый"
 
 Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы виртуальной сети.
 

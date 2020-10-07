@@ -1,14 +1,16 @@
 ---
 title: Учебник по извлечению структурированных данных с помощью сущности, прошедшей машинное обучение (LUIS)
 description: Извлечение структурированных данных из речевого фрагмента с помощью сущности, прошедшей машинное обучение. Для повышения точности извлечения добавьте вложенные сущности с признаками.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 05/08/2020
-ms.openlocfilehash: eb9761a3d3a98a3318fe0adc6fa170652639a9a1
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 01262ee0271849793c4393b1ea8e18c4179ad4e0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045609"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91334738"
 ---
 # <a name="tutorial-extract-structured-data-from-user-utterance-with-machine-learning-entities-in-language-understanding-luis"></a>Руководство по извлечению структурированных данных из речевого фрагмента пользователя с помощью сущностей, прошедших машинное обучение, в службе "Распознавание речи" (LUIS)
 
@@ -79,12 +81,12 @@ ms.locfileid: "86045609"
 
 1. В поле **Choose an entity type** (Выберите тип сущности) выберите **Add Structure** (Добавить структуру), а затем **Далее**. Структура необходима для добавления вложенных сущностей, например размера и количества.
 
-    ![Добавление структуры в сущность](media/tutorial-machine-learned-entity/add-structure-to-entity.png)
+    ![Снимок экрана: страница "Выбор типа сущности" с установленным флажком "Добавить структуру".](media/tutorial-machine-learned-entity/add-structure-to-entity.png)
 
 1. В поле **Add subentities (optional)** (Добавить вложенные сущности (необязательно)) выберите **+** в строке `Order`, а затем добавьте в качестве вложенных сущностей `Size` и `Quantity` и нажмите кнопку **Create** (Создать).
 
     > [!div class="mx-imgBorder"]
-    > ![Добавление структуры в сущность](media/tutorial-machine-learned-entity/add-subentities-when-creating-machine-learned-entity.png)
+    > ![Снимок экрана: страница "Добавление вложенных сущностей (необязательно)" с выделенными вложенными сущностями.](media/tutorial-machine-learned-entity/add-subentities-when-creating-machine-learned-entity.png)
 
 ## <a name="edit-subentities-to-improve-extraction"></a>Изменение вложенных сущностей для улучшения извлечения
 
@@ -121,7 +123,7 @@ ms.locfileid: "86045609"
 
 
     > [!div class="mx-imgBorder"]
-    > ![Добавление структуры в сущность](media/tutorial-machine-learned-entity/size-list-entity-with-synonyms.png)
+    > ![Снимок экрана: страница "SizeList" с вкладкой "Элементы списка" и выбранным элементом XLarge.](media/tutorial-machine-learned-entity/size-list-entity-with-synonyms.png)
 
 ### <a name="add-feature-of-sizelist-entity"></a>Добавить компонент сущности SizeList
 
@@ -160,7 +162,7 @@ ms.locfileid: "86045609"
 На странице Entity detail (Сведения о сущности) для сущности **Order** выберите звездочку `*` для компонентов **@ SizeList** и **@ number**. Звездочка отображается в той же метке, что и имя компонента.
 
 > [!div class="mx-imgBorder"]
-> ![Добавление структуры в сущность](media/tutorial-machine-learned-entity/set-required-feature-on-subentity.png)
+> ![Снимок экрана: функция @SizeList со значком звездочки и предупреждением "Требовать".](media/tutorial-machine-learned-entity/set-required-feature-on-subentity.png)
 
 <a name="label-text-as-entities-in-example-utterances"></a>
 <a name="label-example-utterance-to-teach-luis-about-the-entity"></a>
@@ -200,7 +202,7 @@ ms.locfileid: "86045609"
 1. Чтобы преобразовать прогноз в сущность с меткой, установите флажок в той же строке.
 
     > [!div class="mx-imgBorder"]
-    > ![Частичный снимок экрана с новым примером речевого фрагмента, спрогнозированным с помощью сущности](media/tutorial-machine-learned-entity/confirm-entity-prediction-for-new-example-utterance-added.png)
+    > ![Снимок экрана: пример речевого фрагмента с выделенным флажком.](media/tutorial-machine-learned-entity/confirm-entity-prediction-for-new-example-utterance-added.png)
 
     На этом этапе прошедшая машинное обучение сущность успешно работает, то есть может находить сущность в новом примере речевого фрагмента. Если при добавлении очередного примера речевого фрагмента сущность не будет спрогнозирована правильно, вручную пометьте сущность и вложенные в нее сущности. Если сущность спрогнозирована правильно, не забудьте подтвердить прогнозы.
 

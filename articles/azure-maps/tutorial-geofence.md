@@ -1,20 +1,20 @@
 ---
-title: Руководство по Создание геозоны и отслеживание устройств в Azure Maps
-description: Сведения о настройке геозоны. Узнайте, как отслеживать положение устройств относительно геозон, с помощью пространственной службы Azure Maps.
+title: Руководство по Создание геозоны и отслеживание устройств в Microsoft Azure Maps
+description: Учебник по настройке геозоны. Узнайте, как отслеживать положение устройств относительно геозон, с помощью пространственной службы Azure Maps.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 8/11/2020
+ms.date: 8/20/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: b374bbe086281c7f7914334be6ca275f0fd05b7f
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 7a0c39b6d2369a1279fee3905083f0660a4aabb8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90056515"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91335200"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Руководство по Настройка геозоны с использованием Azure Maps
 
@@ -429,14 +429,14 @@ Azure Maps поддерживает [три типа событий](https://doc
 
 В предыдущем ответе GeoJSON видно, что оборудование оставалось в основной геозоне объекта, но вышло из дополнительной геозоны. Однако обратите внимание, что значение `userTime` превышает значение `expiredTime`, определенное в данных о геозоне. Поэтому параметр `isEventPublished` получает значение `false`, и уведомление по электронной почте руководителю не отправляется.
 
-### <a name="location-547637988-1221338344"></a>Расположение 5(47,637988,-122,1338344)
+### <a name="location-5-4763799--122134505"></a>Расположение 5(47,63799,-122,134505)
 
 1. В верхней части приложения Postman выберите элемент **Создать**. В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **Имя запроса** для запроса. Назначьте его *расположением 5*. Выберите коллекцию, созданную в разделе [Отправка данных о геозоне в формате GeoJSON](#upload-geofencing-geojson-data) и щелкните **Save** (Сохранить).
 
 2. Выберите HTTP-метод **GET** на вкладке конструктора и введите следующий URL-адрес. Обязательно замените `{Azure-Maps-Primary-Subscription-key}` значением первичного ключа подписки, а `{udid}` — значением `udid`, которое вы сохранили при прохождении раздела [Отправка данных о геозоне в формате GeoJSON](#upload-geofencing-geojson-data).
 
     ```HTTP
-    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udid={udid}&lat=47.637988&lon=-122.1338344&searchBuffer=5&isAsync=True&mode=EnterAndExit
+    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udid={udid}&lat=47.63799&lon=-122.134505&searchBuffer=5&isAsync=True&mode=EnterAndExit
     ```
 
 3. Нажмите кнопку **Отправить**. В окне ответа появится следующий текст в формате GeoJSON:
@@ -469,13 +469,10 @@ Azure Maps поддерживает [три типа событий](https://doc
 
 В предыдущем ответе GeoJSON видно, что оборудование покинуло основную геозону объекта. Это означает, что параметр `isEventPublished` получает значение `true`, и руководителю строительного объекта будет отправлено по электронной почте уведомление о том, что оборудование вышло из геозоны.
 
+
+Вы также можете [отправлять уведомления по электронной почте с помощью Сетки событий и Logic Apps](https://docs.microsoft.com/azure/event-grid/publish-iot-hub-events-to-logic-apps) и проверять [поддерживаемые обработчики событий в Сетке событий](https://docs.microsoft.com/azure/event-grid/event-handlers) с помощью Azure Maps.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Обработка типов содержимого в Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-content-type)
-
-> [!div class="nextstepaction"]
-> [Руководство по отправке уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Сетки событий и Logic Apps](https://docs.microsoft.com/azure/event-grid/publish-iot-hub-events-to-logic-apps)
-
-> [!div class="nextstepaction"]
-> [Поддерживаемые обработчики событий в Сетке событий](https://docs.microsoft.com/azure/event-grid/event-handlers)
