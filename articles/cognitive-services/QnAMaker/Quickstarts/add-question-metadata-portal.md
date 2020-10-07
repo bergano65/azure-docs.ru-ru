@@ -1,14 +1,16 @@
 ---
 title: Краткое руководство. Добавление вопросов и ответов на портале QnA Maker
 description: В этом кратком руководстве описано, как добавить пары вопросов и ответов с метаданными, чтобы пользователи могли найти правильный ответ на свой вопрос.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: a832d9f421d3a1851401c286f129e29d0196ec99
-ms.sourcegitcommit: 79508e58c1f5c58554378497150ffd757d183f30
+ms.openlocfilehash: 930acbd3bbdb8f63b6aa888b292025a76435b289
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84331395"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776754"
 ---
 # <a name="quickstart-add-questions-and-answer-with-qna-maker-portal"></a>Краткое руководство. Добавление вопросов и ответов с помощью портала QnA Maker
 

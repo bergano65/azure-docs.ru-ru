@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/24/2020
 ms.author: tisande
-ms.openlocfilehash: d292b7cfcda73cb4cd6ac2535c7e27fc675e1030
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f4ee0c0af6939e71f696fc900ec2ab1343ca91df
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87308191"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91802520"
 ---
-# <a name="getting-started-with-sql-queries"></a>Getting started with SQL queries (Начало работы с запросами SQL)
+# <a name="getting-started-with-sql-queries"></a>Начало работы с запросами SQL Server
 
 В Azure Cosmos DB учетных записей API SQL есть два способа чтения данных:
 
@@ -25,10 +25,10 @@ ms.locfileid: "87308191"
 
 Ниже приведены некоторые примеры того, как выполнять операции чтения с каждым пакетом SDK.
 
-- [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.readitemasync?view=azure-dotnet)
-- [пакет SDK для Java](https://docs.microsoft.com/java/api/com.azure.cosmos.cosmoscontainer.readitem?view=azure-java-stable#com_azure_cosmos_CosmosContainer__T_readItem_java_lang_String_com_azure_cosmos_models_PartitionKey_com_azure_cosmos_models_CosmosItemRequestOptions_java_lang_Class_T__)
-- [Пакет SDK для Node.js](https://docs.microsoft.com/javascript/api/@azure/cosmos/item?view=azure-node-latest#read-requestoptions-)
-- [Пакет SDK для Python](https://docs.microsoft.com/python/api/azure-cosmos/azure.cosmos.containerproxy?view=azure-python#read-item-item--partition-key--populate-query-metrics-none--post-trigger-include-none----kwargs-)
+- [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.readitemasync?view=azure-dotnet&preserve-view=true)
+- [пакет SDK для Java](https://docs.microsoft.com/java/api/com.azure.cosmos.cosmoscontainer.readitem?view=azure-java-stable&preserve-view=true#com_azure_cosmos_CosmosContainer__T_readItem_java_lang_String_com_azure_cosmos_models_PartitionKey_com_azure_cosmos_models_CosmosItemRequestOptions_java_lang_Class_T__)
+- [Пакет SDK для Node.js](https://docs.microsoft.com/javascript/api/@azure/cosmos/item?view=azure-node-latest&preserve-view=true#read-requestoptions-)
+- [Пакет SDK для Python](https://docs.microsoft.com/python/api/azure-cosmos/azure.cosmos.containerproxy?view=azure-python&preserve-view=true#read-item-item--partition-key--populate-query-metrics-none--post-trigger-include-none----kwargs-)
 
 Оставшаяся часть документа показывает, как приступить к написанию SQL запросов в Azure Cosmos DB. SQL-запросы можно выполнять с помощью пакета SDK или портал Azure.
 
@@ -166,7 +166,7 @@ ms.locfileid: "87308191"
     ]
 ```
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 
 В предыдущих примерах показано несколько аспектов языка запросов Cosmos DB:  
 
@@ -180,6 +180,6 @@ ms.locfileid: "87308191"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Предложение SELECT](sql-query-select.md)

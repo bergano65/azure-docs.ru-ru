@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e1359fd2a59b49f10bb3b2daa4bcbadae921e188
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 22fcee69c32388c764434bedac04465bbc3e28cb
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89012455"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91801330"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Оптимизируйте стоимость подготовленной пропускной способности в базе данных Azure Cosmos DB
 
@@ -80,7 +80,7 @@ HTTP Status 429,
 
 При наличии более чем одного клиента, постоянно работающего над частотой запросов, количество повторных попыток по умолчанию, которое в настоящее время равно 9, может быть недостаточным. В таких случаях клиент создает в приложении исключение `RequestRateTooLargeException` с кодом состояния 429. Число повторных попыток по умолчанию можно изменить, задав свойство `RetryOptions` в экземпляре ConnectionPolicy. По умолчанию значение `RequestRateTooLargeException` с кодом состояния 429 возвращается после совокупного времени ожидания 30 секунд, если запрос будет продолжать работать выше скорости запросов. Это происходит, даже если текущее значение количества повторных попыток (по умолчанию (9) или определенное пользователем) меньше максимального значения. 
 
-[Максретряттемптсонсроттледрекуестс](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?view=azure-dotnet) имеет значение 3, поэтому в этом случае, если частота операции запроса ограничена путем превышения зарезервированной пропускной способности для контейнера, операция запроса повторяет попытку три раза, прежде чем вызывать исключение для приложения. [Максретриваиттимеинсекондс](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?view=azure-dotnet#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) имеет значение 60, поэтому в этом случае, если совокупное время ожидания повтора в секундах с момента, когда первый запрос превышает 60 секунд, возникает исключение.
+[Максретряттемптсонсроттледрекуестс](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?view=azure-dotnet&preserve-view=true) имеет значение 3, поэтому в этом случае, если частота операции запроса ограничена путем превышения зарезервированной пропускной способности для контейнера, операция запроса повторяет попытку три раза, прежде чем вызывать исключение для приложения. [Максретриваиттимеинсекондс](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) имеет значение 60, поэтому в этом случае, если совокупное время ожидания повтора в секундах с момента, когда первый запрос превышает 60 секунд, возникает исключение.
 
 ```csharp
 ConnectionPolicy connectionPolicy = new ConnectionPolicy(); 

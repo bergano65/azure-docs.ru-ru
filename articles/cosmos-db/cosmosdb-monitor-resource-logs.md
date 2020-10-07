@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: sngun
-ms.openlocfilehash: 881ddfec587df61201f2c251fd0dd0a8164496c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9284fca6a96441ad5e6c23f9c6920ba184e03086
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85549976"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91801424"
 ---
 # <a name="monitor-azure-cosmos-db-data-by-using-diagnostic-settings-in-azure"></a>Мониторинг Azure Cosmos DB данных с помощью параметров диагностики в Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "85549976"
 Подробные сведения о создании параметров диагностики с помощью портал Azure, интерфейса командной строки или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../azure-monitor/platform/diagnostic-settings.md) .
 
 
-## <a name="troubleshoot-issues-with-diagnostics-queries"></a><a id="diagnostic-queries"></a>Устранение неполадок с помощью диагностических запросов
+## <a name="troubleshoot-issues-with-diagnostics-queries"></a><a id="diagnostic-queries"></a> Устранение неполадок с помощью диагностических запросов
 
 1. Как запросить выполнение операций, для выполнения которых требуется больше 3 миллисекунд:
 
@@ -99,12 +99,12 @@ ms.locfileid: "85549976"
    | render timechart
    ```
     
-1. Получение статистики ключа секции для вычисления смещения по основным трем секциям для учетной записи базы данных:
+1. Получение статистики ключа секции для вычисления смещения по основным трем секциям для учетной записи базы данных.
 
    ```Kusto
    AzureDiagnostics 
    | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="PartitionKeyStatistics" 
-   | project SubscriptionId, regionName_s, databaseName_s, collectionname_s, partitionkey_s, sizeKb_s, ResourceId 
+   | project SubscriptionId, regionName_s, databaseName_s, collectionName_s, partitionKey_s, sizeKb_d, ResourceId 
    ```
 
 1. Как получить плату за запросы для ресурсоемких запросов?
@@ -214,14 +214,6 @@ ms.locfileid: "85549976"
    | where todouble(sizeKb_d) > 800000
    ```
 
-1. Как получить статистику ключа секции для вычисления смещения между тремя верхними секциями для учетной записи базы данных?
-
-   ```Kusto
-   AzureDiagnostics 
-   | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="PartitionKeyStatistics" 
-   | project SubscriptionId, regionName_s, databaseName_s, collectionName_s, partitionKey_s, sizeKb_d, ResourceId
-   ```
-
 1. Как получить задержки репликации P99 или P50 для операций, запросить оплату или длину ответа?
 
    ```Kusto
@@ -238,7 +230,7 @@ ms.locfileid: "85549976"
  
 1. Как получить журналы Контролплане?
  
-   не забудьте включить флаг on, как описано в разделе [Отключение доступа на запись для метаданных на основе ключа](audit-control-plane-logs.md#disable-key-based-metadata-write-access) артиклеанд выполнение операций с помощью Azure POWERSHELL, CLI или ARM.
+   Не забудьте переключиться на флаг, как описано в статье [Отключение доступа для записи метаданных на основе ключей](audit-control-plane-logs.md#disable-key-based-metadata-write-access) , и выполните операции с помощью Azure PowerShell, Azure CLI или Azure Resource Manager.
  
    ```Kusto  
    AzureDiagnostics 
@@ -247,7 +239,7 @@ ms.locfileid: "85549976"
    ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Monitor для Azure Cosmos DB](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

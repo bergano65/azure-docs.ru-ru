@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: allensu
-ms.openlocfilehash: c844b25394d865453e653bfc3ac6bff396d97a47
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 90fc35249daea51a08cb83143c6be024e78964a7
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035082"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804016"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
 
 Общие сведения о префиксе общедоступного IP-адреса, а также о его создании, изменении и удалении. Префикс общедоступного IP-адреса — это непрерывный диапазон адресов на основе указанного количества общедоступных IP-адресов. Адреса назначаются для вашей подписки. При создании ресурса общедоступного IP-адреса можно присвоить префиксу статический общедоступный адрес и связать его с виртуальными машинами, подсистемами балансировки нагрузки или другими ресурсами, чтобы обеспечить подключение к Интернету. Если вы не знакомы с префиксами общедоступных IP-адресов, см. раздел [Обзор префикс общедоступного IP-адреса](public-ip-address-prefix.md)
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -56,7 +56,7 @@ ms.locfileid: "88035082"
 
 **Команды**
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
 |PowerShell|[New-АзпублиЦиппрефикс](/powershell/module/az.network/new-azpublicipprefix)|
@@ -73,11 +73,11 @@ ms.locfileid: "88035082"
    |---|---|---|
    |Имя|Да|Имя общедоступного IP-адреса должно быть уникальным в пределах выбранной группы ресурсов.|
    |Время ожидания простоя (в минутах)|Нет|Время (в минутах), в течение которого подключение TCP или HTTP остается открытым без привязки к клиентам при отправке запросов для проверки активности. |
-   |Метка DNS-имени|нет|Должна быть уникальной в пределах региона Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение), к имени, которое вы предоставили, для создания полного имени DNS. Дополнительные сведения см. в разделе [Использование Azure DNS с общедоступным IP-адресом Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
+   |Метка DNS-имени|Нет|Должна быть уникальной в пределах региона Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение), к имени, которое вы предоставили, для создания полного имени DNS. Дополнительные сведения см. в разделе [Использование Azure DNS с общедоступным IP-адресом Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
 
 Кроме того, для создания ресурса общедоступного IP-адреса можно использовать приведенные ниже команды CLI и PS с параметрами--public-IP-prefix (CLI) и-ПублиЦиппрефикс (PS). 
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)|
 |PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=azps-2.0.0)|
@@ -88,11 +88,11 @@ ms.locfileid: "88035082"
 2. Выберите из списка имя префикса общедоступного IP-адреса для просмотра, изменения параметров или удаления.
 3. Выполните одно из следующих действий (в зависимости от того, нужно ли просмотреть, удалить или изменить этот префикс общедоступного IP-адреса).
    - **Просмотр**. В разделе **Обзор** отображаются основные параметры префикса общедоступного IP-адреса, такие как префикс.
-   - **Удаление**. Чтобы удалить префикс общедоступного IP-адреса, в разделе **Обзор** щелкните **Удалить**. Если адреса в пределах префикса связаны с ресурсами общедоступных IP-адресов, необходимо сначала удалить ресурсы общедоступных IP-адресов. См. раздел [Удаление общедоступного IP-адреса](virtual-network-public-ip-address.md#view-change-settings-for-or-delete-a-public-ip-address).
+   - **Удаление**. Чтобы удалить префикс общедоступного IP-адреса, в разделе **Обзор** щелкните **Удалить**. Если адреса в пределах префикса связаны с ресурсами общедоступных IP-адресов, необходимо сначала удалить ресурсы общедоступных IP-адресов. См. раздел [Удаление общедоступного IP-адреса](virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address).
 
 **Команды**
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|Команда [az network public-ip prefix list](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-list) выводит список общедоступных IP-адресов, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-show) — отображает параметры, [az network public-ip prefix update](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-update) — обновляет, а [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-delete) — удаляет|
 |PowerShell|[Get-азпублиЦиппрефикс](/powershell/module/az.network/get-azpublicipprefix) для получения объекта общедоступного IP-адреса и просмотра его параметров, [Set-азпублиЦиппрефикс](/powershell/module/az.network/set-azpublicipprefix) для обновления параметров; [Remove-азпублиЦиппрефикс](/powershell/module/az.network/remove-azpublicipprefix) to delete|

@@ -1,14 +1,16 @@
 ---
 title: Краткое руководство. Создание, обучение и публикация базы знаний QnA Maker
 description: Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этой статье описано, как создать базу знаний QnA Maker на основе простой веб-страницы с часто задаваемыми вопросами, чтобы ответить на вопросы QnA Maker.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: 3cc38ca49820b1a97ec11c890bfd0ef1670f6eef
-ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
+ms.openlocfilehash: 1646666244eb2247d6e7127c4d4e8d39cb0af5ff
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89535855"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777681"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -64,7 +66,7 @@ ms.locfileid: "89535855"
 
     ` * Azure QnA Maker service\n* Azure Cognitive Search\n* Azure web app\n* Azure app plan`
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/add-question-and-answer.png" alt-text="Добавьте вопрос в виде текста и ответа, отформатированного с помощью markdown.":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/add-question-and-answer.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
 
     Символ markdown (`*`) используется для пунктов маркированного списка. Символ `\n` используется для новой строки.
 
@@ -81,7 +83,7 @@ ms.locfileid: "89535855"
 
     `How many Azure services are used by a knowledge base?`
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="В текстовом поле введите пример пользовательского запроса.":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
 
 1. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед публикацией своей базы знаний.
 
@@ -131,7 +133,7 @@ ms.locfileid: "89535855"
 
     Чат-бот ответит, используя ответ из базы знаний.
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-web-chat.png" alt-text="Введите запрос пользователя в тестовый веб-чат.":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-web-chat.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
 
 ## <a name="what-did-you-accomplish"></a>Что вы сделали
 

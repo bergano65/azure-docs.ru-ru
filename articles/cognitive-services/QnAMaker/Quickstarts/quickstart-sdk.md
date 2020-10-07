@@ -1,16 +1,18 @@
 ---
 title: Краткое руководство. Использование пакета SDK для создания базы знаний и управления ей в QnA Maker
 description: В этом кратком руководстве показано, как создать базу знаний и управлять ею с использованием клиентского пакета SDK.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 06/18/2020
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
 zone_pivot_groups: programming-languages-set-sixteen
-ms.openlocfilehash: aae9bce5542dc4c610df91d8176916adc459fe86
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 36a38c69c68613e912e7c598495b9370044f13a6
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91253943"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777452"
 ---
 # <a name="quickstart-qna-maker-client-library"></a>Краткое руководство. Клиентская библиотека QnA Maker
 

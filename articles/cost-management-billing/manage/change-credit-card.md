@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 09/15/2020
 ms.author: banders
-ms.openlocfilehash: 8366c0681f1ac29d9e265225dfaeeab44aa4b8ca
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6b4b5fe5d7dffbcacc804500cc1f3f8f07f0090d
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91252975"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758546"
 ---
 # <a name="add-or-update-a-credit-card-for-azure"></a>Добавление или обновление кредитной карты для Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "91252975"
 
 ## <a name="manage-credit-cards-for-an-azure-subscription"></a>Управление кредитными картами для подписки Azure
 
-Следующие разделы касаются клиентов, у которых есть учетная запись выставления счетов по программе Microsoft Online Services. Узнайте, как [проверить тип учетной записи выставления счетов](#check-the-type-of-your-account). Если учетная запись выставления счетов имеет тип "Программа Microsoft Online Services", методы оплаты в ней сопоставляются с отдельными подписками Azure. Если после добавления кредитной карты появится ошибка, см. статью [Банковская или кредитная карта отклонена при регистрации в Azure](/troubleshoot-declined-card.md).
+Следующие разделы касаются клиентов, у которых есть учетная запись выставления счетов по программе Microsoft Online Services. Узнайте, как [проверить тип учетной записи выставления счетов](#check-the-type-of-your-account). Если учетная запись выставления счетов имеет тип "Программа Microsoft Online Services", методы оплаты в ней сопоставляются с отдельными подписками Azure. Если после добавления кредитной карты появится ошибка, см. статью [Банковская или кредитная карта отклонена при регистрации в Azure](/azure/cost-management-billing/manage/troubleshoot-declined-card).
 
 ### <a name="change-credit-card-for-a-subscription-by-adding-a-new-credit-card"></a>Изменение кредитной карты для подписки путем добавления новой кредитной карты
 

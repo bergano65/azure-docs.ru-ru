@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
-ms.openlocfilehash: e8dcb188dc5aad59738e3eab4169bf9dbd3679ec
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: d1655b42b57edaeeaaaada802a248f56e0ba1470
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449352"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91801466"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Расположения партнеров и виртуального концентратора Виртуальной глобальной сети
 
@@ -58,7 +58,7 @@ ms.locfileid: "91449352"
 |Участники|Руководство по настройке и развертыванию|
 |---|---|
 |[Barracuda Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/barracudanetworks.barracuda_cloudgenwan_gateway?tab=Overviewus/marketplace/apps/barracudanetworks.barracuda_cloudgenwan_gateway?tab=Overview)| [Инструкции по развертыванию Barracuda Клауджен WAN](https://campus.barracuda.com/product/cloudgenwan/doc/91980640/deployment/)|
-|[Маршрутизатор облачной службы Cisco (CSR) ВВАН](https://aka.ms/ciscoMarketPlaceOffer)| Чтобы развернуть WAN Cloud Services (CSR) в виртуальном концентраторе, отправьте сообщение электронной почты. vwan_public_preview@cisco.com |
+|[Маршрутизатор облачной службы Cisco (CSR) ВВАН](https://aka.ms/ciscoMarketPlaceOffer)| Во время общедоступной предварительной версии глобальной сети Cisco Cloud Services (CSR) в центре ВВАН, компания Cisco требует, чтобы клиент зарегистрировался в качестве клиента Cisco EFT (пробная версия для раннего поля), отправив сообщение электронной почты по адресу vwan_public_preview@external.cisco.com и запросите его. |
 
 Следующие партнеры приносят NVA в виртуальные концентраторы в ближайшем будущем: Citrix, беспроводные сети и Велоклауд.
 

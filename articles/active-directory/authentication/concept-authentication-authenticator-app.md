@@ -5,21 +5,21 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/02/2020
+ms.date: 10/09/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79870bcfc3b2cacb856141841a1f018eb1c50641
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 1520f3ef77353e653dca10779228e70488bcbd75
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90532766"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91801755"
 ---
 # <a name="authentication-methods-in-azure-active-directory---microsoft-authenticator-app"></a>Методы проверки подлинности в приложении Azure Active Directory Microsoft Authenticator
 
-Microsoft Authenticator приложение обеспечивает дополнительный уровень безопасности для рабочей или учебной учетной записи Azure AD или учетная запись Майкрософт и доступен для [Android](https://go.microsoft.com/fwlink/?linkid=866594), [iOS](https://go.microsoft.com/fwlink/?linkid=866594)и [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6). С помощью приложения Microsoft Authenticator пользователи могут проходить проверку подлинности без пароля во время входа в систему или использовать его как дополнительный вариант проверки во время самостоятельного сброса пароля (SSPR) или событий многофакторной идентификации Azure.
+Microsoft Authenticator приложение предоставляет дополнительный уровень безопасности для вашей рабочей или учебной учетной записи Azure AD или вашей учетная запись Майкрософт и доступен для [Android](https://go.microsoft.com/fwlink/?linkid=866594) и [iOS](https://go.microsoft.com/fwlink/?linkid=866594). С помощью приложения Microsoft Authenticator пользователи могут проходить проверку подлинности без пароля во время входа в систему или использовать его как дополнительный вариант проверки во время самостоятельного сброса пароля (SSPR) или событий многофакторной идентификации Azure.
 
 Пользователи могут получить уведомление через мобильное приложение (которое они могут принять или отклонить) или использовать приложение Authenticator для создания кода проверки OATH, который можно ввести в интерфейсе входа в систему. Если включить и уведомление, и проверочный код, пользователи, регистрирующие приложение Authenticator, могут использовать для подтверждения личности любой способ.
 
@@ -58,7 +58,7 @@ Microsoft Authenticator приложение обеспечивает допол
 >
 > Если требуется использовать два метода, то пользователи смогут сбросить пароль с помощью уведомления или кода проверки в дополнение к любым другим включенным методам.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к входу без пароля, см. статью [Включение входа без пароля с помощью приложения Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 

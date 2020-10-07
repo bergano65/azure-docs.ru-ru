@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: jawilley
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 9d50ed62343a7fd0aafb1fed97c0f33f2caaec12
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: f8e610531eaf3e7e5dbee9c40c88683a05029303
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89019935"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91802996"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 
@@ -39,7 +39,7 @@ Azure Cosmos DB — это быстрая, гибкая распределенн
 
 Четыре типа приложений, перечисленные здесь, по умолчанию используют 32-разрядную обработку узла. Чтобы изменить обработку узла до 64-разрядной обработки для типа приложения, выполните следующие действия.
 
-- **Для исполняемых приложений**: в окне **Свойства проекта** на панели **Сборка** задайте для параметра [Целевая платформа](https://docs.microsoft.com/visualstudio/ide/how-to-configure-projects-to-target-platforms?view=vs-2019) значение **x64**.
+- **Для исполняемых приложений**: в окне **Свойства проекта** на панели **Сборка** задайте для параметра [Целевая платформа](https://docs.microsoft.com/visualstudio/ide/how-to-configure-projects-to-target-platforms?view=vs-2019&preserve-view=true) значение **x64**.
 
 - **Для тестовых проектов на основе VSTest**: в меню **тест** Visual **Studio выберите пункт**  >  **Параметры**тестирования, а затем задайте для параметра **архитектура процессора по умолчанию** значение **x64**.
 
@@ -126,7 +126,7 @@ new CosmosClientOptions
 
 Вы можете получить наименьшую возможную задержку, убедившись, что вызывающее приложение находится в том же регионе Azure, что и подготовленная Azure Cosmos DBная конечная точка. Список доступных регионов см. на странице с [регионами Azure](https://azure.microsoft.com/regions/#services).
 
-:::image type="content" source="./media/performance-tips/same-region.png" alt-text="Выровнять клиенты в одном регионе." border="false":::
+:::image type="content" source="./media/performance-tips/same-region.png" alt-text="Установите подключение к Azure Cosmos DB с различными режимами подключения и протоколами." border="false":::
 
    <a id="increase-threads"></a>
 
@@ -199,7 +199,7 @@ itemResponse.Resource
 
 Во время тестирования производительности следует увеличить нагрузку до тех пор, пока не будет отрегулировано небольшое количество запросов. Если запросы регулируемы, клиентское приложение должно отменить регулирование для указанного сервером интервала повторных попыток. В связи с этим переходом гарантируется минимальное количество времени, затрачиваемого на ожидание между повторными попытками. 
 
-Дополнительные сведения см. в разделе [RetryAfter](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosexception.retryafter?view=azure-dotnet#Microsoft_Azure_Cosmos_CosmosException_RetryAfter).
+Дополнительные сведения см. в разделе [RetryAfter](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosexception.retryafter?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Cosmos_CosmosException_RetryAfter).
     
 Существует механизм записи дополнительных диагностических сведений и устранения проблем задержки, как показано в следующем примере. Можно зарегистрировать строку диагностики для запросов с более высокой задержкой чтения. Захваченная строка диагностики поможет понять, сколько раз была получена ошибка *429* для данного запроса.
 

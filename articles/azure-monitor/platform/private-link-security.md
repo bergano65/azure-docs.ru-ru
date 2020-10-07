@@ -4,20 +4,16 @@ description: Использование Приватного канала Azure 
 author: nkiest
 ms.author: nikiest
 ms.topic: conceptual
-ms.date: 05/20/2020
+ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 2b94c782b5d7139fae7a01233bffd3b17cf43c7c
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 0c7838b291ca5ba1747b08d7e8fcc6d17cc35f7d
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91570403"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91802231"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
-
-> [!IMPORTANT]
-> В настоящее время для использования этой возможности требуется **запросить соответствующие права доступа**. Заявку на доступ можно отправить через [форму регистрации](https://aka.ms/AzMonPrivateLinkSignup).
-
 
 [Приватный канал Azure](../../private-link/private-link-overview.md) позволяет безопасно связать службы Azure PaaS с виртуальной сетью с помощью частных конечных точек. Для многих служб достаточно настроить конечную точку для каждого ресурса. Однако Azure Monitor — это совокупность различных взаимосвязанных служб, которые работают вместе для отслеживания рабочих нагрузок. В результате мы создали ресурс, называемый областью Приватного канала Azure Monitor (AMPLS), который позволяет определить границы сети мониторинга и подключиться к виртуальной сети. В этой статье описано, когда использовать и как настроить область Приватного канала Azure Monitor.
 

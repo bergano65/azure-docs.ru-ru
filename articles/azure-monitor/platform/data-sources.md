@@ -5,13 +5,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 12/19/2019
-ms.openlocfilehash: d469566d7ae5feda37944dda5a0702dca6fca19b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 10/06/2020
+ms.openlocfilehash: 8ef498a51f25a6b084a0d048661f3d18a5881644
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86515586"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91802075"
 ---
 # <a name="sources-of-monitoring-data-for-azure-monitor"></a>Источники данных мониторинга для Azure Monitor
 Azure Monitor основан на [общей платформе данных мониторинга](data-platform.md) , которая включает [журналы](data-platform-logs.md) и [метрики](data-platform-metrics.md). Сбор данных в эту платформу позволяет анализировать данные из нескольких ресурсов вместе с помощью общего набора средств в Azure Monitor. Данные мониторинга могут также отправляться в другие расположения для поддержки определенных сценариев, а некоторые ресурсы могут выполнять запись в другие расположения, прежде чем их можно будет собрать в журналы или метрики.
@@ -60,10 +60,10 @@ Azure Monitor основан на [общей платформе данных м
 
 
 
-## <a name="azure-subscription"></a>Подписка Azure
+## <a name="azure-subscription"></a>Подписка Azure.
 Данные телеметрии, связанные с работоспособностью и эксплуатацией подписки Azure.
 
-![Подписка Azure](media/data-sources/azure-subscription.png)
+![Подписка Azure.](media/data-sources/azure-subscription.png)
 
 ### <a name="azure-activity-log"></a>Журнал действий Azure 
 [Журнал действий Azure](platform-logs-overview.md) включает записи о работоспособности службы, а также записи о любых изменениях конфигурации, внесенных в ресурсы в подписке Azure. Журнал действий доступен всем ресурсам Azure и является их _внешним_ представлением.
@@ -83,10 +83,10 @@ Azure Monitor основан на [общей платформе данных м
 | Журнал действий<br>Журналы Azure Monitor | Записи о работоспособности службы хранятся в журнале действий Azure, поэтому их можно просмотреть в портал Azure или выполнить другие действия, которые можно выполнить с помощью журнала действий. | [Просмотр уведомлений о работоспособности служб на портале Azure](../../service-health/service-notifications.md) |
 
 
-## <a name="azure-resources"></a>ресурсов Azure
+## <a name="azure-resources"></a>Ресурсы Azure
 Метрики и журналы ресурсов предоставляют сведения о _внутренней_ работе ресурсов Azure. Они доступны для большинства служб Azure, а решения для мониторинга и анализа собираются дополнительные данные для конкретных служб.
 
-![Коллекция ресурсов Azure](media/data-sources/azure-resources.png)
+![Коллекция ресурсов Azure](media/data-sources/data-source-azure-resources.svg)
 
 
 ### <a name="platform-metrics"></a>Метрики платформы 
@@ -94,7 +94,7 @@ Azure Monitor основан на [общей платформе данных м
 
 | Назначение | Описание | Справочник |
 |:---|:---|:---|
-| Метрики Azure Monitor | Метрики платформы будут записывать в базу данных метрик Azure Monitor без конфигурации. Доступ к метрикам платформы из обозреватель метрик.  | [Начало работы с обозревателем метрик Azure](metrics-getting-started.md)<br>[Метрики, поддерживаемые Azure Monitor](metrics-supported.md) |
+| Метрики Azure Monitor | Метрики платформы будут записывать в базу данных метрик Azure Monitor без конфигурации. Доступ к метрикам платформы из обозреватель метрик.  | [Начало работы с обозревателем метрик Azure](metrics-getting-started.md)<br>[Поддерживаемые метрики с Azure Monitor](metrics-supported.md) |
 | Журналы Azure Monitor | Копирование метрик платформы в журналы для анализа тенденций и других анализов с помощью Log Analytics. | [Направление диагностики Azure в Log Analytics](./resource-logs.md#send-to-log-analytics-workspace) |
 | Центры событий | Потоковая передача метрик в другие расположения с помощью концентраторов событий. |[Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](stream-monitoring-data-event-hubs.md) |
 
@@ -106,7 +106,7 @@ Azure Monitor основан на [общей платформе данных м
 | Назначение | Описание | Справочник |
 |:---|:---|:---|
 | Журналы Azure Monitor | Отправка журналов ресурсов в журналы Azure Monitor для анализа с другими собранными данными журнала. | [Получение журналов ресурсов Azure в Log Analytics рабочей области в Azure Monitor](./resource-logs.md#send-to-azure-storage) |
-| Хранилище | Отправка журналов ресурсов в службу хранилища Azure для архивирования. | [Архивация журналов ресурсов Azure](./resource-logs.md#send-to-log-analytics-workspace) |
+| Память | Отправка журналов ресурсов в службу хранилища Azure для архивирования. | [Архивация журналов ресурсов Azure](./resource-logs.md#send-to-log-analytics-workspace) |
 | Центры событий | Потоковая передача журналов ресурсов в другие расположения с помощью концентраторов событий. |[Потоковая передача журналов ресурсов Azure в концентратор событий](./resource-logs.md#send-to-azure-event-hubs) |
 
 ## <a name="operating-system-guest"></a>Операционная система (гость)
@@ -119,7 +119,7 @@ Azure Monitor основан на [общей платформе данных м
 
 | Назначение | Описание | Справочник |
 |:---|:---|:---|
-| Хранилище | Расширение системы диагностики Azure всегда записывает данные в учетную запись хранения Azure. | [Установка и настройка расширения "Диагностика Microsoft Azure" (WAD)](diagnostics-extension-windows-install.md)<br>[Отслеживание метрик и журналов с помощью расширения диагностики для Linux](../../virtual-machines/extensions/diagnostics-linux.md) |
+| Память | Расширение системы диагностики Azure всегда записывает данные в учетную запись хранения Azure. | [Установка и настройка расширения "Диагностика Microsoft Azure" (WAD)](diagnostics-extension-windows-install.md)<br>[Отслеживание метрик и журналов с помощью расширения диагностики для Linux](../../virtual-machines/extensions/diagnostics-linux.md) |
 | Метрики Azure Monitor | При настройке расширения диагностики для сбора счетчиков производительности они записываются в базу данных метрик Azure Monitor. | [Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона диспетчер ресурсов для виртуальной машины Windows](collect-custom-metrics-guestos-resource-manager-vm.md) |
 | Центры событий | Настройте расширение системы диагностики для потоковой передачи данных в другие расположения с помощью концентраторов событий.  | [Потоковая передача данных система диагностики Azure с помощью концентраторов событий](diagnostics-extension-stream-event-hubs.md)<br>[Отслеживание метрик и журналов с помощью диагностического расширения Linux](../../virtual-machines/extensions/diagnostics-linux.md) |
 | Журналы Application Insights | Собирайте журналы и счетчики производительности из ресурсов вычислений, которые поддерживают приложение для анализа с другими данными приложений. | [Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric](diagnostics-extension-to-application-insights.md) |
@@ -180,7 +180,7 @@ Azure Monitor основан на [общей платформе данных м
 |:---|:---|:---|
 | Журналы Azure Monitor | Хранит данные мониторинга для AKS, включая инвентаризацию, журналы и события. Данные метрик также хранятся в журналах, чтобы использовать функции анализа на портале. | [Общие сведения о производительности кластера AKS с Azure Monitor для контейнеров](../insights/container-insights-analyze.md) |
 | Метрики Azure Monitor | Данные метрик хранятся в базе данных метрики для управления визуализацией и оповещениями. | [Просмотр метрик контейнера в обозревателе метрик](../insights/container-insights-analyze.md#view-container-metrics-in-metrics-explorer) |
-| Служба Azure Kubernetes | Предоставляет прямой доступ к журналам контейнеров Azure Kubernetes Service (stdout/stderr), событиям и метрикам Pod на портале. | [Просмотр журналов Kubernetes, событий и метрик Pod в режиме реального времени](../insights/container-insights-livedata-overview.md) |
+| Служба Azure Kubernetes | Предоставляет прямой доступ к журналам контейнеров Azure Kubernetes Service (stdout/stderr), событиям и метрикам Pod на портале. | [Просмотр журналов Kubernetes, событий и метрик Pod в режиме реального времени ](../insights/container-insights-livedata-overview.md) |
 
 ### <a name="azure-monitor-for-vms"></a>Azure Monitor для виртуальных машин
 [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) предоставляет настраиваемый интерфейс для мониторинга виртуальных машин. Описание данных, собранных Azure Monitor для виртуальных машин, содержится в разделе об [операционной системе (Guest)](#operating-system-guest) выше.

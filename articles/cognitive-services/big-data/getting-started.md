@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: quickstart
 ms.date: 07/06/2020
 ms.author: marhamil
-ms.openlocfilehash: 7f4849c75b36b1663416ad1a97e3264fabcdaa67
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 5256db4547f8c19960a6f470ce3c84b2eef25e24
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201742"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776618"
 ---
 # <a name="getting-started"></a>Начало работы
 
@@ -60,7 +60,7 @@ Azure Databricks — это платформа для аналитики на �
 1. Установка Cognitive Services для больших данных
     * Создайте библиотеку в рабочей области Databricks.  
        <img src="media/create-library.png" alt="Create library" width="50%"/>
-    * Введите следующие координаты Maven:  `com.microsoft.ml.spark:mmlspark_2.11:1.0.0-rc1`. Репозиторий: `https://mmlspark.azureedge.net/maven`.  
+    * Введите следующие координаты Maven:  `com.microsoft.ml.spark:mmlspark_2.11:1.0.0-rc3`. Репозиторий: `https://mmlspark.azureedge.net/maven`.  
       <img src="media/library-coordinates.png" alt="Library Coordinates" width="50%"/>
     * Установите библиотеку в кластере.  
       <img src="media/install-library.png" alt="Install Library on Cluster" width="50%"/>

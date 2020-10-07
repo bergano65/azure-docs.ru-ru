@@ -7,14 +7,14 @@ ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: bdf512c66958338992c5959f8e00b4589850ff33
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: efedfb9701d12548b80eccda9cd2aa29bc644ac2
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89008375"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91802146"
 ---
-# <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB и .NET SDK v2
+# <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB и пакета SDK для .NET версии 2
 
 > [!div class="op_single_selector"]
 > * [Пакет SDK версии 3 для .NET](performance-tips-dotnet-sdk-v3-sql.md)
@@ -42,7 +42,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
 Для повышения производительности рекомендуется использовать Windows 64-разрядную обработку узлов. Пакет SDK для SQL содержит собственный файл ServiceInterop.dll для локального анализа и оптимизации запросов. ServiceInterop.dll поддерживается только на платформе Windows x64. Для Linux и других неподдерживаемых платформ, в которых ServiceInterop.dll недоступна, к шлюзу создается дополнительный сетевой вызов для получения оптимизированного запроса. В следующих типах приложений по умолчанию используется обработка на узле по 32 бит. Чтобы изменить обработку узла до 64-разрядной обработки, выполните следующие действия в зависимости от типа приложения:
 
-- Для исполняемых приложений можно изменить обработку узла, задав для параметра [Целевая платформа](https://docs.microsoft.com/visualstudio/ide/how-to-configure-projects-to-target-platforms?view=vs-2019) значение **x64**  в окне **Свойства проекта** на вкладке **Сборка** .
+- Для исполняемых приложений можно изменить обработку узла, задав для параметра [Целевая платформа](https://docs.microsoft.com/visualstudio/ide/how-to-configure-projects-to-target-platforms?view=vs-2019&preserve-view=true) значение **x64**  в окне **Свойства проекта** на вкладке **Сборка** .
 
 - Для тестовых проектов на основе VSTest можно изменить обработку узла **, выбрав в**  >  **Test Settings**  >  меню **тест** Visual Studio пункт Параметры тестирования**архитектура процессора по умолчанию как x64** .
 
@@ -203,7 +203,7 @@ readDocument.RequestDiagnosticsString
 > [!NOTE] 
 > `maxItemCount`Свойство не должно использоваться только для разбиения на страницы. Его основное использование — повышение производительности запросов за счет уменьшения максимального числа элементов, возвращаемых на одной странице.  
 
-Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример:
+Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet&preserve-view=true) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример:
     
 ```csharp
 IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });

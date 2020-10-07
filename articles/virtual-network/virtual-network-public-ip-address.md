@@ -17,12 +17,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: kumud
-ms.openlocfilehash: 7beff39ed2c37eeb0f07571ba6d611d23a3221e7
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 92e71a8c08ef2c64509d7e00b0c43abdd58cf036
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89292033"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804033"
 ---
 # <a name="manage-public-ip-addresses"></a>Управление общедоступными IP-адресами
 
@@ -30,7 +30,7 @@ ms.locfileid: "89292033"
 - Входящий трафик из Интернета к ресурсам, таким как виртуальные машины Azure, шлюзы приложений Azure, подсистемы балансировки нагрузки Azure, VPN-шлюзы Azure и другие. Можно по-прежнему взаимодействовать с некоторыми ресурсами из Интернета, такими как виртуальные машины, если виртуальная машина не имеет назначенного ей общего IP-адреса. Пока виртуальная машина является частью пула внутренней подсистемы балансировки нагрузки, то взаимодействовать невозможно, потому что подсистема балансировки нагрузки имеет назначенный общедоступный IP-адрес. Чтобы определить, можно ли ресурсу для определенной службы Azure назначить общедоступный IP-адрес или он может обращаться через общедоступный IP-адрес другого ресурса Azure, см. документацию для службы.
 - Исходящие подключения к Интернету используют предсказуемый IP-адрес. Например, виртуальная машина может отправлять данные в Интернет, не имея назначенного общедоступного IP-адреса. Ее адресом по умолчанию будет сетевой адрес, преобразуемый Azure в непредсказуемый общедоступный адрес. Назначение ресурсу общедоступного IP-адреса позволяет узнать, какой IP-адрес используется для исходящих соединений. Хоть адрес и предсказуемый, он может измениться в зависимости от выбранного метода назначения. Дополнительные сведения см. в разделе [Создание общедоступного IP-адреса](#create-a-public-ip-address). Дополнительную информацию об исходящих подключениях ресурсов Azure см. в разделе [Основные сведения об исходящих подключениях](../load-balancer/load-balancer-outbound-connections.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -47,10 +47,16 @@ ms.locfileid: "89292033"
 
 ## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 
-1. На **домашней странице** или в меню портала Azure выберите **Создать ресурс**.
-2. В поле *Поиск в Marketplace* введите *общедоступный IP-адрес*. Когда в результатах поиска появится пункт **Общедоступный IP-адрес**, щелкните его.
-3. В колонке **Общедоступный IP-адрес** щелкните **Создать**.
-4. Введите или выберите значения для перечисленных ниже параметров в разделе **Создать общедоступный IP-адрес**, а затем щелкните **Создать**.
+Инструкции по созданию общедоступных IP-адресов с помощью портала, PowerShell или CLI см. на следующих страницах:
+
+ * [Создание общедоступного IP-адреса — портал](https://docs.microsoft.com/azure/virtual-network/create-public-ip-portal?tabs=option-create-public-ip-standard-zones)
+ * [Создание общедоступного IP-адреса — PowerShell](https://docs.microsoft.com/azure/virtual-network/create-public-ip-powershell?tabs=option-create-public-ip-standard-zones)
+ * [Создание общедоступного IP-адреса — Azure CLI](https://docs.microsoft.com/azure/virtual-network/create-public-ip-cli?tabs=option-create-public-ip-standard-zones)
+
+>[!NOTE]
+>Хотя портал предоставляет возможность создания двух общедоступных IP-адресов (один IPv4 и один IPv6), команды PowerShell и CLI создают один ресурс с адресом для одной или другой IP-версии. Если требуется два ресурса общедоступного IP-адреса, по одному для каждой версии IP, необходимо дважды выполнить команду, указав другие имена и IP-версии для ресурсов общедоступного IP-адреса.
+
+Дополнительные сведения о конкретных атрибутах общедоступного IP-адреса во время создания см. в таблице ниже.
 
    |Параметр|Необходим?|Сведения|
    |---|---|---|
@@ -67,49 +73,53 @@ ms.locfileid: "89292033"
    |Расположение|Да|Должно находиться в том же [расположении](https://azure.microsoft.com/regions), которое также называется регионом, как ресурс, к которому вы свяжете общедоступный IP-адрес.|
    |Зона доступности| Нет | Этот параметр отображается только в том случае, если выбрано поддерживаемое расположение. Список поддерживаемых расположений см. в статье [Общие сведения о зонах доступности в Azure (предварительная версия)](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). При выборе номера SKU **Базовый**, значение *Нет* будет выбрано автоматически. Если нужно гарантировать наличие определенной зоны, можно выбрать ее. Ни один вариант нельзя считать избыточным между зонами. При выборе номера SKU **Стандартный** автоматически выбирается избыточность между зонами, благодаря чему путь к данным становится устойчивым к сбоям зоны. Если нужно обеспечить определенную зону, неустойчивую к сбоям зоны, можно выбрать ее.
 
-**Команды**
+## <a name="view-modify-settings-for-or-delete-a-public-ip-address"></a>Просмотр, изменение параметров или удаление общедоступного IP-адреса
 
-Хотя на портале предоставляется возможность создания двух ресурсов общедоступных IP-адресов (IPv4 и IPv6), следующие команды PowerShell и интерфейса командной строки создают один ресурс с адресом для одной или другой версии IP. Если требуется два ресурса общедоступного IP-адреса, по одному для каждой версии IP, необходимо дважды выполнить команду, указав другие имена и IP-версии для ресурсов общедоступного IP-адреса.
-
-|Инструмент|Get-Help|
-|---|---|
-|CLI|[az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create)|
-|PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress)|
-
-## <a name="view-change-settings-for-or-delete-a-public-ip-address"></a>Просмотр, изменение параметров или удаление общедоступного IP-адреса
-
-1. В верхней части портала Azure в поле с текстом *Поиск ресурсов* введите *общедоступный IP-адрес*. Когда в результатах поиска появится пункт **Общедоступные IP-адреса**, щелкните его.
-2. Выберите из списка имя общедоступного IP-адреса для просмотра, изменения параметров или удаления.
-3. Выполните одно из следующих действий (в зависимости от того, нужно ли просмотреть, удалить или изменить этот общедоступный IP-адрес).
-   - **Просмотр**. В разделе **Обзор** отображаются основные параметры общедоступного IP-адреса, например сетевой интерфейс, с которым он связан (если адрес связан с сетевым интерфейсом). На портале не отображается версия адреса (IPv4 или IPv6). Чтобы просмотреть сведения о версии, выполните команду PowerShell или интерфейса командной строки для просмотра общедоступного IP-адреса. Если версия IP-адреса IPv6, назначенный адрес не отображается на портале, в PowerShell или интерфейсе командной строки.
-   - **Удаление**. Чтобы удалить общедоступный IP-адрес, в разделе **Обзор** щелкните **Удалить**. Если адрес связан с IP-конфигурацией, удалить его не получится. В таком случае щелкните **Отменить связь**, чтобы разорвать связь с конфигурацией IP.
-   - **Изменение**. Выберите **Конфигурация**. Измените параметры, используя сведения, описанные в шаге 4 в разделе [Создание общедоступного IP-адреса](#create-a-public-ip-address). Чтобы изменить назначение IPv4-адреса со статического на динамическое, необходимо сначала разорвать связь между общедоступным IPv4-адресом и IP-конфигурацией. Затем можно изменить способ назначения на динамическое и щелкнуть **Связать**, чтобы связать IP-адрес с той же или другой конфигурацией IP либо оставить его несвязанным. Чтобы удалить связь с общедоступным IP-адресом, в разделе **Обзор** щелкните **Отменить связь**.
-
+   - **Представление/список**: Просмотр параметров общедоступного IP-адреса, включая SKU, адрес, любые применимые ассоциации (например, сетевой адаптер виртуальной машины, Load Balancer интерфейсный сервер).
+   - **Изменение**. чтобы изменить параметры с помощью сведений на шаге 4, [Создайте общедоступный IP-адрес](#create-a-public-ip-address), например время ожидания ПРОСТОЯ, метку DNS-имени или метод назначения.
    >[!WARNING]
-   >Изменив способ назначения со статического на динамический, вы потеряете IP-адрес, который был назначен общедоступному IP-адресу. В Azure общедоступные DNS-серверы поддерживают сопоставление между статическими или динамическими адресами и метками (определенными) имени DNS. При этом динамический IP-адрес можно изменить при запуске виртуальной машины, которая была остановлена (освобождена). Чтобы предотвратить изменение адреса, назначьте статический IP-адрес.
+   >Чтобы изменить назначение для общедоступного IP-адреса со статического на динамический, необходимо сначала отменить связь адреса из любых применимых IP-конфигураций (см. раздел **Delete** ).  Также обратите внимание, что при изменении метода назначения со статического на динамический вы теряете IP-адрес, назначенный общедоступному IP-адресу. В Azure общедоступные DNS-серверы поддерживают сопоставление между статическими или динамическими адресами и метками (определенными) имени DNS. При этом динамический IP-адрес можно изменить при запуске виртуальной машины, которая была остановлена (освобождена). Чтобы предотвратить изменение адреса, назначьте статический IP-адрес.
+   
+|Операция|Портал Azure|Azure PowerShell|Azure CLI|
+|---|---|---|---|
+|Представление | В разделе **Обзор** общедоступного IP-адреса |[Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) для получения объекта общедоступного IP-адреса и просмотра его параметров| [AZ Network public-IP демонстрация](/cli/azure/network/public-ip#az-network-public-ip-show) для отображения параметров|
+|List | В категории **общедоступные IP-адреса** |[Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) для получения одного или нескольких объектов общедоступного IP-адреса и просмотра его параметров|[AZ Network public-IP List](/cli/azure/network/public-ip#az-network-public-ip-list) для вывода списка общедоступных IP-адресов|
+|Изменить | Для несвязанного IP-адреса выберите **Конфигурация** , чтобы изменить время ожидания простоя, метку DNS-имени или изменить назначение базового IP-адреса со статического на динамический.  |[Set-азпублиЦипаддресс](/powershell/module/az.network/set-azpublicipaddress) для обновления параметров |[AZ Network public-IP-обновление](/cli/azure/network/public-ip#az-network-public-ip-update) для обновления |
 
-**Команды**
+   - **Удаление**: для удаления общедоступных IP-адресов необходимо, чтобы объект общедоступного объекта не был связан с IP-конфигурацией или сетевым адаптером виртуальной машины. Дополнительные сведения см. в таблице ниже.
 
-|Инструмент|Get-Help|
-|---|---|
-|CLI|Команда [az network public-ip list](/cli/azure/network/public-ip#az-network-public-ip-list) выводит список общедоступных IP-адресов, [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az-network-public-ip-update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az-network-public-ip-delete) — удаляет IP-адрес.|
-|PowerShell|[Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) для получения объекта общедоступного IP-адреса и просмотра его параметров, [Set-азпублиЦипаддресс](/powershell/module/az.network/set-azpublicipaddress) для обновления параметров; [Remove-азпублиЦипаддресс](/powershell/module/az.network/remove-azpublicipaddress) to delete|
+|Ресурс|Портал Azure|Azure PowerShell|Azure CLI|
+|---|---|---|---|
+|[Виртуальная машина](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm)|Выберите отменить связь **, чтобы отрвать связь с IP** -адресом из конфигурации сетевого адаптера, а затем выберите **Удалить**.|[Set-азпублиЦипаддресс](/powershell/module/az.network/set-azpublicipaddress) , чтобы отменить связь IP-адреса с КОНФИГУРАЦИЕЙ сетевого адаптера; [Remove-азпублиЦипаддресс](/powershell/module/az.network/remove-azpublicipaddress) to delete|[AZ Network общедоступное обновление IP-адрес — удалите](/cli/azure/network/public-ip#az-network-public-ip-update) , чтобы отменить связь IP-адреса с КОНФИГУРАЦИЕЙ сетевого адаптера. [AZ Network public-IP Delete](/cli/azure/network/public-ip#az-network-public-ip-delete) для удаления |
+|Интерфейс Load Balancer | Перейдите к неиспользуемому общедоступному IP-адресу и выберите " **сопоставить** " и укажите Load Balancer с соответствующей конфигурацией ИНТЕРФЕЙСНЫХ IP-адресов, чтобы заменить ее (затем старый IP может быть удален с помощью того же метода, что и для виртуальной машины).  | [Set-азлоадбаланцерфронтендипконфиг](/powershell/module/az.network/set-azloadbalancerfrontendipconfig) , чтобы связать новый интерфейс конфигурации внешнего IP-адреса с общедоступной Load Balancer; [Remove-азпублиЦипаддресс](/powershell/module/az.network/remove-azpublicipaddress) для удаления; также может использовать [Remove-азлоадбаланцерфронтендипконфиг](/powershell/module/az.network/remove-azloadbalancerfrontendipconfig) для удаления внешней IP-конфигурации, если имеется более одного |[AZ Networking переднего плана IP-адреса](/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az_network_lb_frontend_ip_update) , чтобы связать новый интерфейс конфигурации внешнего IP-адреса с общедоступной Load Balancer; [Remove-азпублиЦипаддресс](/powershell/module/az.network/remove-azpublicipaddress) для удаления; также можно использовать команду [AZ Network фунтов интерфейса-IP Delete](/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az_network_lb_frontend_ip_delete) для удаления внешней IP-конфигурации, если имеется более одного.|
+|Брандмауэр|Недоступно| [Освобождение ()](https://docs.microsoft.com/azure/firewall/firewall-faq#how-can-i-stop-and-start-azure-firewall) для отмены выделения брандмауэра и удаления всех IP-конфигураций | [AZ Network Firewall IP-Config удаление](/cli/azure/ext/azure-firewall/network/firewall/ip-config#ext_azure_firewall_az_network_firewall_ip_config_delete) для удаления IP-адреса (но необходимо использовать PowerShell для отмены выделения памяти)|
+
+>[!NOTE]
+>После создания некоторых ресурсов их общедоступные IP-адреса не могут быть изменены или удалены.  Это: шлюз Azure NAT, VPN-шлюз Azure, шлюз приложений Azure.
+
+## <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
+
+При использовании масштабируемого набора виртуальных машин с общедоступными IP-адресами не существует отдельных общедоступных объектов, связанных с отдельными экземплярами виртуальных машин. Однако [для создания IP-адресов экземпляра можно использовать](https://azure.microsoft.com/resources/templates/101-vmms-with-public-ip-prefix/)объект префикса общедоступного протокола IP.
+
+Чтобы получить список общедоступных IP-адресов в масштабируемом наборе виртуальных машин, можно использовать PowerShell ([Get-азпублиЦипаддресс-виртуалмачинескалесетнаме](/powershell/module/az.network/get-azpublicipaddress)) или CLI ([AZ vmss List-instance-public-IP](/cli/azure/vmss?view=azure-cli-latest#az_vmss_list_instance_public_ips)).
+
+Дополнительные сведения см. в статье [Сеть для масштабируемых наборов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking#public-ipv4-per-virtual-machine).
 
 ## <a name="assign-a-public-ip-address"></a>Назначение общедоступного IP-адреса
 
 Узнайте, как назначать общедоступные IP-адреса следующим ресурсам:
 
-- виртуальной машине [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) при создании или [существующей виртуальной машине](virtual-network-network-interface-addresses.md#add-ip-addresses);
-- [Load Balancer с выходом в Интернет](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Шлюз приложений Azure](../application-gateway/application-gateway-create-gateway-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [подключения типа "сеть — сеть" с помощью VPN-шлюза Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json);
-- [масштабируемого набора виртуальных машин Azure](../virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- Виртуальная машина [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (при создании) или на [существующую виртуальную машину](virtual-network-network-interface-addresses.md#add-ip-addresses)
+- [Общедоступные Load Balancer](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [Шлюз приложений](../application-gateway/application-gateway-create-gateway-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [Подключение типа "сеть — сеть" с помощью VPN-шлюза](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [Масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 
 ## <a name="permissions"></a>Разрешения
 
 Для выполнения задач с общедоступными IP-адресами учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
-| Действие                                                             | name                                                           |
+| Действие                                                             | Имя                                                           |
 | ---------                                                          | -------------                                                  |
 | Microsoft.Network/publicIPAddresses/read                           | Чтение общедоступного IP-адреса.                                          |
 | Microsoft.Network/publicIPAddresses/write                          | Создание или обновление общедоступного IP-адреса.                           |
