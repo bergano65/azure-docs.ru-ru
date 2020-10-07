@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
-ms.date: 09/30/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperfq1
-ms.openlocfilehash: d4690062dead8186022cc53ca47dbc7e17a9376f
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 7bc56f6296bf41933348fad9ea4aeb640b9afbf0
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91631194"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776023"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -28,7 +28,7 @@ ms.locfileid: "91631194"
 
 **1. Обзор виртуальной сети**  >  [2. Обеспечьте безопасность рабочей области](how-to-secure-workspace-vnet.md)  >  [3. Обеспечьте безопасность среды обучения](how-to-secure-training-vnet.md)  >  [4. Обеспечьте безопасность окружения](how-to-secure-inferencing-vnet.md)  >  [5. Включить функциональные возможности студии](how-to-enable-studio-virtual-network.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что вы знакомы со следующими разделами:
 + [Виртуальные сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
@@ -70,7 +70,7 @@ ms.locfileid: "91631194"
 
 1. Создайте [рабочую область с поддержкой частной связи](how-to-secure-workspace-vnet.md#secure-the-workspace-with-private-endpoint) , чтобы обеспечить взаимодействие между виртуальной сетью и рабочей областью.
 1. Добавьте Azure Key Vault в виртуальную сеть с [конечной точкой службы](../key-vault/general/overview-vnet-service-endpoints.md) или [частной конечной точкой](../key-vault/general/private-link-service.md). Задайте для параметра Key Vault значение ["разрешить доверенным службам Майкрософт обход этого брандмауэра"](how-to-secure-workspace-vnet.md#secure-azure-key-vault).
-1. Добавление учетной записи хранения Azure в виртуальную сеть с [конечной точкой службы](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts) или [частной конечной точкой](../storage/common/storage-private-endpoints.md)
+1. Добавьте учетную запись хранения Azure в виртуальную сеть с [конечной точкой службы](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) или [частной конечной точкой](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints).
 1. [Настройте реестр контейнеров Azure для использования частной конечной точки](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr) и [включите делегирование подсети в службе "экземпляры контейнеров Azure](how-to-secure-inferencing-vnet.md#enable-azure-container-instances-aci)".
 
 ![Схема архитектуры, показывающая, как Рабочая область и связанные ресурсы взаимодействуют друг с другом через конечные точки службы или частные конечные точки в виртуальной сети.](./media/how-to-network-security-overview/secure-workspace-resources.png)
@@ -141,17 +141,17 @@ ms.locfileid: "91631194"
 
 [Защита рабочей области](#secure-the-workspace-and-associated-resources)  >  [Защита среды обучения](#secure-the-training-environment)  >  [Защита окружения](#secure-the-inferencing-environment)  >  **Включить функциональные возможности студии**  >  [Настройка параметров брандмауэра](#configure-firewall-settings)
 
-Хотя Studio может получать доступ к данным в учетной записи хранения, настроенной с конечной точкой службы, некоторые функции по умолчанию отключены.
+Если хранилище находится в виртуальной сети, сначала необходимо выполнить дополнительные действия по настройке, чтобы включить полную функциональность в [студии](overview-what-is-machine-learning-studio.md). По умолчанию отключены следующие компоненты:
 
 * Предварительный просмотр данных в студии.
 * Визуализируйте данные в конструкторе.
 * Отправьте Аутомл эксперимент.
 * Запустите проект меток.
 
-Сведения о включении полной функциональности при использовании конечной точки службы хранилища см. [в статье использование машинное обучение Azure Studio в виртуальной сети](how-to-enable-studio-virtual-network.md#access-data-using-the-studio). Studio поддерживает как конечные точки службы, так и частные конечные точки для учетных записей хранения.
+Сведения о включении полной функциональности Studio в виртуальной сети см. в статье [использование машинное обучение Azure Studio в виртуальных сетях](how-to-enable-studio-virtual-network.md#access-data-using-the-studio). Studio поддерживает учетные записи хранения, используя конечные точки службы или частные конечные точки.
 
 ### <a name="limitations"></a>Ограничения
-- Studio не удается получить доступ к данным в учетных записях хранения, настроенных для использования частных конечных точек. Для полной функциональности необходимо использовать конечные точки службы для хранения и использовать управляемое удостоверение.
+- Многоязыковая [маркировка данных](how-to-create-labeling-projects.md#use-ml-assisted-labeling) в службе ML не поддерживает учетные записи хранения по умолчанию, защищенные за пределы виртуальной сети. Необходимо использовать учетную запись хранения, не используемую по умолчанию, для добавления меток к данным, помогающим в ML. Обратите внимание, что учетная запись хранения, не используемая по умолчанию, может быть защищена за счет виртуальной сети. 
 
 ## <a name="configure-firewall-settings"></a>Настройка параметров брандмауэра
 

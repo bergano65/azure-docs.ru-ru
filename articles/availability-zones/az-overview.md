@@ -1,5 +1,5 @@
 ---
-title: Регионы и Зоны доступности в Azure
+title: Регионы и зоны доступности в Azure
 description: Сведения о регионах и Зоны доступности в Azure в соответствии с вашими техническими и нормативными требованиями.
 author: cynthn
 ms.service: azure
@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: b9a400862280cbbc219e87695e363c0ec2e75ee6
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 9a9cdef27276aa589a4aadd853185b0e3fb4be61
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018677"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91773745"
 ---
-# <a name="regions-and-availability-zones-in-azure"></a>Регионы и Зоны доступности в Azure
+# <a name="regions-and-availability-zones-in-azure"></a>Регионы и зоны доступности в Azure
 
 Службы Microsoft Azure доступны глобально, чтобы обеспечить оптимальный уровень обслуживания облачных операций. Вы можете выбрать оптимальный регион в соответствии с техническими и нормативными соображениями: возможностями служб, местонахождение данных, требованиями к соответствию и задержкой.
 
@@ -78,8 +78,8 @@ ms.locfileid: "89018677"
 
 | Тип области | Не региональный | Основное | Основной | Специализированный | Зоны доступности | Местонахождение данных |
 | --- | --- | --- | --- | --- | --- | --- |
-| Рекомендуется | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
-| Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Н/Д | :heavy_check_mark: |
+| Рекомендуемая | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
+| Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Недоступно | :heavy_check_mark: |
 
 ### <a name="services-by-category"></a>Службы по категориям
 
@@ -92,11 +92,11 @@ ms.locfileid: "89018677"
 > | Основное | Основной | Специализированный |
 > | --- | --- | --- |
 > | Хранилище учетных записей | Управление API | Azure API для FHIR |
-> | Шлюз приложений | Конфигурация приложений | Azure Analysis Services |
+> | Шлюз приложений | Конфигурация приложений | Службы Azure Analysis Services |
 > | Azure Backup | Служба приложений | Служба Блокчейн Azure |
-> | Azure Cosmos DB | Служба автоматизации | Azure Blueprints |
+> | Azure Cosmos DB | Автоматизация | Azure Blueprints |
 > | Azure Data Lake Storage 2-го поколения | Доменные службы Azure Active Directory | База данных Azure для MariaDB |
-> | Azure ExpressRoute. | Бастион Azure | Выделенное устройство HSM Azure |
+> | Azure ExpressRoute | Бастион Azure | Выделенное устройство HSM Azure |
 > | База данных SQL Azure | Кэш Azure для Redis | Azure Dev Spaces |
 > | Облачные службы | Когнитивный поиск Azure | Azure Digital Twins |
 > | Облачные службы: серия Av2 | Azure Data Explorer | Службы лабораторий Azure |
@@ -111,9 +111,9 @@ ms.locfileid: "89018677"
 > | Подсистема балансировки нагрузки | Диспетчер брандмауэра Azure | Cognitive Services: Распознавание говорящего |
 > | Служебная шина | Функции Azure | Data Box Heavy |
 > | Service Fabric | Azure HPC Cache | Каталог данных |
-> | Масштабируемые наборы виртуальных машин Microsoft Azure | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
+> | Масштабируемые наборы виртуальных машин | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
 > | Виртуальные машины | Служба Azure Kubernetes (AKS) | Data Lake Analytics |
-> | Виртуальные машины: серия Av2 | Машинное обучение Azure | Студия машинного обучения |
+> | Виртуальные машины: серия Av2 | Машинное обучение Azure | Машинное обучение Azure Studio (классическая модель)|
 > | Виртуальные машины: серия "BS" | Приватный канал Azure | Microsoft Genomics |
 > | Виртуальные машины: серия DSv2 | Azure Red Hat OpenShift | Удаленная отрисовка |
 > | Виртуальные машины: серия DSv3 | Служба Azure SignalR | Пространственные привязки |

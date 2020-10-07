@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: ff28bbf57ac77e1bc092d35e9bf493f75040cc9c
-ms.sourcegitcommit: 5b69ba21787c07547edfbfd5254eaf34315cfadd
+ms.openlocfilehash: 6543b629af8d67658afe61ef81e22eb7355e1de7
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712312"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772810"
 ---
 # <a name="azure-activity-log"></a>Журнал действий Azure
 Журнал действий — это [Журнал платформы](platform-logs-overview.md) в Azure, который предоставляет подробные сведения о событиях уровня подписки. например об изменении ресурса или запуске виртуальной машины. Вы можете просмотреть журнал действий на портале Azure или получить записи с помощью PowerShell и CLI. Для дополнительной функциональности следует создать параметр диагностики для отправки журнала действий в [журналы Azure Monitor](data-platform-logs.md), в концентраторы событий Azure для пересылки за пределы Azure или в службу хранилища Azure для архивации. Эта статья содержит сведения о просмотре журнала действий и его отправке в различные назначения.
@@ -399,4 +399,5 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/00000000
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей [Общие сведения о журналах платформы Azure](platform-logs-overview.md).
+* [Проверка схемы событий журнала действий](activity-log-schema.md)
 * См. статью о [создании параметра диагностики для отправки журналов действий в другие целевые расположения](diagnostic-settings.md).

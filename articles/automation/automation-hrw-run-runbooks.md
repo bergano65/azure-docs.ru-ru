@@ -3,14 +3,14 @@ title: Выполнение runbook службы автоматизации Azur
 description: В этой статье описывается, как запускать модули Runbook на компьютерах в локальном центре обработки данных или другом поставщике облачных служб с помощью гибридной рабочей роли Runbook.
 services: automation
 ms.subservice: process-automation
-ms.date: 09/22/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: ab3daedcb2222f8d639522d1afa6d4e9acbe1626
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2f1c703f2bd2e90e15c566b7e04e8a878c16f6de
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323351"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772827"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей Runbook в гибридной рабочей роли Runbook
 
@@ -24,7 +24,7 @@ Runbook, которые выполняются в [гибридной рабоч
 
 Задания для гибридных рабочих ролей Runbook выполняются под локальной **системной** учетной записью Windows или учетной записью **нксаутоматион** в Linux. Для Linux убедитесь, что учетная запись **нксаутоматион** имеет доступ к расположению, в котором хранятся модули Runbook. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) обязательно укажите значение AllUsers для параметра `Scope`, чтобы предоставить необходимый доступ для учетной записи **nxautomation**. Дополнительные сведения об использовании PowerShell в среде Linux см. в разделе [Известные проблемы с PowerShell на платформах, отличных от Windows](/powershell/scripting/whats-new/known-issues-ps6#known-issues-for-powershell-on-non-windows-platforms).
 
-## <a name="set-up-runbook-permissions"></a>Настройка разрешений для runbook
+## <a name="configure-runbook-permissions"></a>Настройка разрешений Runbook
 
 Разрешения для работы runbook в гибридной рабочей роли Runbook можно определить следующими способами:
 
@@ -32,7 +32,7 @@ Runbook, которые выполняются в [гибридной рабоч
 * Настройте аутентификацию через [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
 * Укажите учетную запись запуска от имени, чтобы предоставить контекст пользователя для всех последовательностей runbook.
 
-## <a name="use-runbook-authentication-to-local-resources"></a>Использование аутентификации runbook для доступа к локальным ресурсам
+### <a name="use-runbook-authentication-to-local-resources"></a>Использование аутентификации runbook для доступа к локальным ресурсам
 
 Для подготовки runbook, который самостоятельно выполняет аутентификацию для доступа к ресурсам, включите в этот runbook [учетные данные](./shared-resources/credentials.md) и [сертификат](./shared-resources/certificates.md) для нужных ресурсов. Существует несколько командлетов, которые поддерживают работу с учетными данными, что позволяет выполнять аутентификацию для доступа к разным ресурсам. В следующем примере показана часть модуля Runbook, предназначенная для перезапуска компьютера. Он извлекает учетные данные из ресурса учетных данных, а также получает имя компьютера из ресурса переменной, после чего использует эти значения в командлете `Restart-Computer`.
 
@@ -45,7 +45,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 Можно также использовать действие [InlineScript](automation-powershell-workflow.md#use-inlinescript). `InlineScript` позволяет запускать блоки кода на другом компьютере с использованием учетных данных.
 
-## <a name="use-runbook-authentication-with-managed-identities"></a><a name="runbook-auth-managed-identities"></a>Аутентификация runbook на основе управляемых удостоверений
+### <a name="use-runbook-authentication-with-managed-identities"></a><a name="runbook-auth-managed-identities"></a>Аутентификация runbook на основе управляемых удостоверений
 
 Гибридные рабочие роли Runbook на виртуальных машинах Azure могут использовать управляемые удостоверения при аутентификации для доступа к ресурсам Azure. Использование управляемых удостоверений вместо учетных записей запуска от имени дает некоторые преимущества, а точнее избавляет от выполнения следующих операций:
 
@@ -72,7 +72,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
     > [!NOTE]
     > `Connect-AzAccount -Identity` применяется для гибридной рабочей роли Runbook с использованием двух удостоверений: назначаемого системой и назначаемого пользователем. Если для гибридной рабочей роли Runbook используется несколько назначаемых пользователем удостоверений, в runbook нужно указать параметр `AccountId` для `Connect-AzAccount`, чтобы выбрать одно из них.
 
-## <a name="use-runbook-authentication-with-run-as-account"></a>Аутентификация runbook с помощью учетной записи запуска от имени
+### <a name="use-runbook-authentication-with-run-as-account"></a>Аутентификация runbook с помощью учетной записи запуска от имени
 
 Вы можете не настраивать в runbook собственную аутентификацию для доступа к локальным ресурсам, а указать для группы гибридных рабочих ролей Runbook учетную запись запуска от имени. Чтобы указать учетную запись запуска от имени, необходимо определить [ресурс учетных данных](./shared-resources/credentials.md) , который имеет доступ к локальным ресурсам. К этим ресурсам относятся хранилища сертификатов и все runbook, которые выполняются с этими учетными данными в гибридных рабочих ролях Runbook, входящих в эту группу.
 
@@ -182,7 +182,7 @@ Get-AzAutomationAccount | Select-Object AutomationAccountName
 
 ## <a name="work-with-signed-runbooks-on-a-windows-hybrid-runbook-worker"></a>Работа с подписанными runbook в гибридной рабочей роли Runbook для Windows
 
-Вы можете настроить гибридную рабочую роль Runbook для Windows так, чтобы она выполняла только подписанные runbook. 
+Вы можете настроить гибридную рабочую роль Runbook для Windows так, чтобы она выполняла только подписанные runbook.
 
 > [!IMPORTANT]
 > После того как вы настроите выполнение только подписанных runbook в гибридной рабочей роли Runbook, последовательности runbook без подписи не смогут в ней выполняться.
@@ -194,14 +194,13 @@ Get-AzAutomationAccount | Select-Object AutomationAccountName
 ```powershell
 # Create a self-signed certificate that can be used for code signing
 $SigningCert = New-SelfSignedCertificate -CertStoreLocation cert:\LocalMachine\my `
-                                        -Subject "CN=contoso.com" `
-                                        -KeyAlgorithm RSA `
-                                        -KeyLength 2048 `
-                                        -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
-                                        -KeyExportPolicy Exportable `
-                                        -KeyUsage DigitalSignature `
-                                        -Type CodeSigningCert
-
+    -Subject "CN=contoso.com" `
+    -KeyAlgorithm RSA `
+    -KeyLength 2048 `
+    -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
+    -KeyExportPolicy Exportable `
+    -KeyUsage DigitalSignature `
+    -Type CodeSigningCert
 
 # Export the certificate so that it can be imported to the hybrid workers
 Export-Certificate -Cert $SigningCert -FilePath .\hybridworkersigningcertificate.cer
@@ -247,6 +246,13 @@ Set-AuthenticodeSignature .\TestRunbook.ps1 -Certificate $SigningCert
 > [!IMPORTANT]
 > После того как вы настроите выполнение только подписанных runbook в гибридной рабочей роли Runbook, последовательности runbook без подписи не смогут в ней выполняться.
 
+Чтобы завершить эту настройку, выполните следующие действия.
+
+* Создание набора и пары ключей GPG
+* Предоставление доступа к набору ключей для гибридной рабочей роли Runbook
+* Проверка включения проверки подписи
+* Подпись модуля runbook
+
 ### <a name="create-a-gpg-keyring-and-keypair"></a>Создание набора и пары ключей GPG
 
 Чтобы создать набор ключей и пару ключей, используйте учетную запись [nxautomation](automation-runbook-execution.md#log-analytics-agent-for-linux) в гибридной рабочей роли Runbook.
@@ -271,10 +277,10 @@ Set-AuthenticodeSignature .\TestRunbook.ps1 -Certificate $SigningCert
 
 ### <a name="make-the-keyring-available-to-the-hybrid-runbook-worker"></a>Предоставление доступа к набору ключей для гибридной рабочей роли Runbook
 
-Создав набор ключей, сделайте его доступным для гибридной рабочей роли Runbook. Измените файл настроек **/var/opt/microsoft/omsagent/state/automationworker/diy/worker.conf**, включив приведенный ниже пример кода в раздел `[worker-optional]`.
+Создав набор ключей, сделайте его доступным для гибридной рабочей роли Runbook. Измените файл Settings **Home/нксаутоматион/штат/Worker. conf** , чтобы включить следующий пример кода в раздел File `[worker-optional]` .
 
 ```bash
-gpg_public_keyring_path = /var/opt/microsoft/omsagent/run/.gnupg/pubring.kbx
+gpg_public_keyring_path = /home/nxautomation/run/.gnupg/pubring.kbx
 ```
 
 ### <a name="verify-that-signature-validation-is-on"></a>Проверка включения проверки подписи

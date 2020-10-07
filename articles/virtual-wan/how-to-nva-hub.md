@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to create a Network Virtual Appliance (NVA) in my Virtual WAN hub.
-ms.openlocfilehash: 83267b1bebd501871277ea3e40b7fa9ba38f33cd
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 014339b02167a1bb4cba11cc10c9740b8fa53f2c
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91313762"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91773252"
 ---
 # <a name="how-to-create-a-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Создание сетевого виртуального устройства в виртуальном концентраторе глобальной сети Azure (Предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "91313762"
 
 Действия, описанные в этой статье, помогут создать виртуальное устройство **Barracuda КЛАУДЖЕН WAN** Network в виртуальном КОНЦЕНТРАТОРе глобальной сети. Для выполнения этого упражнения необходимо иметь Barracuda Cloud Device (CPE) и лицензию для устройства Barracuda Клауджен WAN, которое развертывается в концентраторе перед началом работы.
 
-Документацию по развертыванию **Cisco SD-WAN** в виртуальной глобальной сети Azure см. по следующему адресу электронной почты: vwan_public_preview@cisco.com .
+Документацию по развертыванию **Cisco SD-WAN** в виртуальной глобальной сети Azure можно отправить по адресу электронной почты Cisco: vwan_public_preview@external.cisco.com
 
 
 ## <a name="before-you-begin"></a>Перед началом
@@ -66,15 +66,14 @@ ms.locfileid: "91313762"
 
 1. Перейдите к виртуальному концентратору глобальной сети, созданному на предыдущем шаге, и откройте его.
 
-   :::image type="content" source="./media/how-to-nva-hub/nva-hub.png" alt-text="Виртуальный концентратор":::
+   :::image type="content" source="./media/how-to-nva-hub/nva-hub.png" alt-text="Основы":::
 1. Найдите плитку сетевые виртуальные устройства и щелкните ссылку **создать** .
 1. В колонке **Сетевое виртуальное устройство** выберите **Barracuda клауджен WAN**, а затем нажмите кнопку **создать** .
 
-   :::image type="content" source="./media/how-to-nva-hub/select-nva.png" alt-text="Выбор NVA":::
+   :::image type="content" source="./media/how-to-nva-hub/select-nva.png" alt-text="Основы":::
 1. Вы перейдете к предложению Azure Marketplace для шлюза Barracuda Клауджен WAN. Прочтите условия, а затем нажмите кнопку **создать** , когда будете готовы.
 
-   :::image type="content" source="./media/how-to-nva-hub/barracuda-create-basics.png" alt-text="Основы Barracuda NVA":::
-1. На странице " **основные** сведения" необходимо указать следующую информацию:
+   :::image type="content" source="./media/how-to-nva-hub/barracuda-create-basics.png" alt-text="Основы" необходимо указать следующую информацию:
 
    * **Подписка** — выберите подписку, которая использовалась для развертывания виртуальной глобальной сети и концентратора.
    * **Группа ресурсов** — выберите ту же группу ресурсов, которая использовалась для развертывания виртуальной глобальной сети и концентратора.
@@ -83,7 +82,7 @@ ms.locfileid: "91313762"
    * **Управляемая группа ресурсов** — это имя управляемой группы ресурсов, в которой Barracuda будет развертывать управляемые ими ресурсы. Для этого необходимо предварительно заполнить имя.
 1. Нажмите кнопку **Далее: клауджен WAN Gateway (шлюз глобальной сети** ).
 
-   :::image type="content" source="./media/how-to-nva-hub/barracuda-cloudgen-wan.png" alt-text="Шлюз Клауджен WAN":::
+   :::image type="content" source="./media/how-to-nva-hub/barracuda-cloudgen-wan.png" alt-text="Основы":::
 1. Укажите следующие сведения:
 
    * **Виртуальный концентратор глобальной сети** — виртуальный концентратор глобальной сети, в который требуется развернуть этот NVA.

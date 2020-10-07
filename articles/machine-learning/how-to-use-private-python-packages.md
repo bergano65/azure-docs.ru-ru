@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 1afa9173c2ca3704bf4408c271e3cf950ef79077
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 58bb08cad111e0744f7831783169901cd76caef4
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91302222"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772640"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Использование частных пакетов Python с Машинное обучение Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "91302222"
 
 Частные пакеты используются через класс [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment) . В среде вы объявляете, какие пакеты Python следует использовать, включая частные. Дополнительные сведения о среде в Машинное обучение Azure см. в разделе [использование сред](how-to-use-environments.md). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
  * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)
  * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
@@ -58,7 +58,7 @@ myenv.python.conda_dependencies=conda_dep
 
  1. [Создайте личный маркер доступа (PAT)](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&preserve-view=true&tabs=preview-page#create-a-pat) для своего экземпляра Azure DevOps. Задайте область токена для __упаковки > чтения__. 
 
- 2. Добавьте URL-адрес Azure DevOps и PAT как свойства рабочей области с помощью метода [Workspace. set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
+ 2. Добавьте URL-адрес Azure DevOps и PAT в качестве свойств рабочей области с помощью метода [Workspace.set_connection](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py&preserve-view=true#&preserve-view=trueset-connection-name--category--target--authtype--value-) .
 
      ```python
     from azureml.core import Workspace
@@ -91,7 +91,7 @@ myenv.python.conda_dependencies=conda_dep
 
 Вы можете использовать пакеты из учетной записи хранения Azure в брандмауэре вашей организации. Учетная запись хранения может содержать проверенный набор пакетов или внутреннее зеркало общедоступных пакетов.
 
-Сведения о настройке этого частного хранилища см. в статье [защита машинное обучение Azure рабочей области и связанных ресурсов](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts). Также необходимо [разместить реестр контейнеров Azure (запись контроля доступа) за виртуальной](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr)сетью.
+Сведения о настройке этого частного хранилища см. в статье [защита машинное обучение Azure рабочей области и связанных ресурсов](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints). Также необходимо [разместить реестр контейнеров Azure (запись контроля доступа) за виртуальной](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr)сетью.
 
 > [!IMPORTANT]
 > Необходимо выполнить этот шаг, чтобы иметь возможность обучать или развертывать модели с помощью частного репозитория пакетов.

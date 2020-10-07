@@ -5,24 +5,24 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: how-to
-ms.date: 06/05/2020
+ms.date: 10/06/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06335798addadcd8591625e25ed2eafe8469ae48
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c297e1a4f6443e584f04914712314d33df23b119
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84463966"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776108"
 ---
 # <a name="remediate-risks-and-unblock-users"></a>Устранение рисков и разблокирование пользователей
 
 После завершения [расследования](howto-identity-protection-investigate-risk.md)необходимо предпринять действия по устранению риска или разблокированию пользователей. Организации также могут включить автоматическое исправление с помощью их [политик риска](howto-identity-protection-configure-risk-policies.md). Организациям следует попытаться закрыть все обнаруженные им риски за период времени, в течение которого ваша организация знакома с. Корпорация Майкрософт рекомендует закрывать события как можно скорее, так как при работе с риском важно время.
 
-## <a name="remediation"></a>Исправление
+## <a name="remediation"></a>Серверы
 
 Все активные обнаружения рисков участвуют в вычислении значения, именуемого уровнем риска пользователя. Уровень риска для пользователя является индикатором (низким, средним, высоким) вероятности того, что учетная запись была скомпрометирована. Как администратор, вы хотите получить все обнаружения рисков, чтобы затронутые пользователи перестали быть подвержены риску.
 
@@ -89,6 +89,10 @@ ms.locfileid: "84463966"
 1. **Исключите пользователя из политики** . Если вы думаете, что текущая конфигурация политики входа вызывает проблемы для конкретных пользователей, вы можете исключить пользователей из нее. Дополнительные сведения см. в разделе исключения в статье [как настроить и включить политики риска](howto-identity-protection-configure-risk-policies.md#exclusions).
 1. **Отключение политики**. Если вы считаете, что конфигурация политики является причиной проблем всех пользователей, то ее можно отключить. Дополнительные сведения см. в статье [Настройка и включение политик риска](howto-identity-protection-configure-risk-policies.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="powershell-preview"></a>Предварительная версия PowerShell
+
+Используя модуль предварительной версии SDK для Microsoft Graph PowerShell, организации могут управлять рисками с помощью PowerShell. Модули предварительной версии и примеры кода можно найти в [репозитории GitHub Azure AD](https://github.com/AzureAD/IdentityProtectionTools).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [защите идентификации Azure AD](overview-identity-protection.md).

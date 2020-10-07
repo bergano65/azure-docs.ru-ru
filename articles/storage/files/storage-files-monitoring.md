@@ -10,12 +10,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: e0c5e6041da933b4a42bc438900f8c4c91cc6dbc
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.openlocfilehash: 4b2f819edd875130c57d487536691b4588dcc71f
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
-ms.locfileid: "91711608"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772674"
 ---
 # <a name="monitoring-azure-files"></a>Мониторинг файлов Azure
 
@@ -71,6 +71,8 @@ ms.locfileid: "91711608"
 | StorageRead | Операции чтения с объектами. |
 | StorageWrite | Операции записи в объекты. |
 | StorageDelete | Удаление операций с объектами. |
+
+Чтобы получить список регистрируемых операций SMB и RESTFUL, см. раздел [операции с зарегистрированными хранилищами и сообщения о состоянии](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [Справочник по данным мониторинга службы файлов Azure](storage-files-monitoring-reference.md).
 
 ## <a name="analyzing-metrics"></a>Анализ метрик
 
@@ -276,7 +278,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 Доступ к журналам ресурсов можно получить с помощью большого двоичного объекта в учетной записи хранения, данных событий или запросов Log Analytic.
 
-Подробные справочные сведения о полях, которые отображаются в этих журналах, см. в [справочнике по данным мониторинга файлов](storage-files-monitoring-reference.md)Azure.
+Чтобы получить список регистрируемых операций SMB и RESTFUL, см. раздел [операции с зарегистрированными хранилищами и сообщения о состоянии](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [Справочник по данным мониторинга службы файлов Azure](storage-files-monitoring-reference.md).
 
 > [!NOTE]
 > Журналы службы хранилища Azure в Azure Monitor предоставляются в общедоступной предварительной версии. Они также доступны для предварительного тестирования во всех регионах общедоступного облака. Чтобы зарегистрироваться для использования предварительной версии, см. [эту страницу](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUM0E0MFdPRFpOVTRYVklDSE1WUTcyTVAwOC4u). Эта предварительная версия включает журналы для больших двоичных объектов (в том числе Azure Data Lake Storage 2-го поколения), файлов, очередей, таблиц, учетных записей хранения класса Premium общего назначения версии 1 и учетных записей хранения общего назначения версии 2. Классические учетные записи хранения не поддерживаются.
@@ -292,7 +294,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 - Запросы, в которых используется подписанный URL-адрес (SAS) или OAuth, в том числе неудачные и успешные запросы.
 - Запросы к данным аналитики (классические данные журнала в контейнере **$logs** и данные метрик класса в таблицах **$metric**).
 
-Запросы, выполняемые самой службой файлов Azure, например создание или удаление журнала, не регистрируются. Полный список регистрируемых данных приведен на страницах об [операциях с протоколированием и сообщениях о состоянии службы хранилища](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [формате журналов службы хранилища](storage-files-monitoring-reference.md).
+Запросы, выполняемые самой службой файлов Azure, например создание или удаление журнала, не регистрируются. Полный список заносимых запросов SMB и RESTFUL см. в разделе операции с [зарегистрированным хранилищем и сообщения о состоянии](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [Справочник по данным мониторинга службы файлов Azure](storage-files-monitoring-reference.md).
 
 ### <a name="log-anonymous-requests"></a>Ведение журналов анонимных запросов
 
@@ -303,7 +305,7 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 - Ошибки времени ожидания для клиента и сервера.
 - Неудачные запросы GET с кодом ошибки 304 (не изменено).
 
-Остальные неудачные анонимные запросы не регистрируются. Полный список регистрируемых данных приведен на страницах об [операциях с протоколированием и сообщениях о состоянии службы хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [формате журналов службы хранилища](storage-files-monitoring-reference.md).
+Остальные неудачные анонимные запросы не регистрируются. Полный список заносимых запросов SMB и RESTFUL см. в разделе операции с [зарегистрированным хранилищем и сообщения о состоянии](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) и [Справочник по данным мониторинга службы файлов Azure](storage-files-monitoring-reference.md).
 
 ### <a name="accessing-logs-in-a-storage-account"></a>Доступ к журналам в учетной записи хранения
 
@@ -377,7 +379,7 @@ StorageFileLogs
 
 Дополнительные сведения о написании запросов см. в разделе [учебник. Начало работы с log Analytics запросами](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>видны узлы
 
 Azure Monitor оповещения заблаговременно уведомляют Вас при обнаружении важных условий в данных мониторинга. Они позволяют выявление и устранение проблем в системе до того, как ваши клиенты заметят их. Вы можете настроить оповещения для [метрик](/azure/azure-monitor/platform/alerts-metric-overview), [журналов](/azure/azure-monitor/platform/alerts-unified-log)и [журнала действий](/azure/azure-monitor/platform/activity-log-alerts). 
 
@@ -484,7 +486,7 @@ Azure Monitor оповещения заблаговременно уведомл
 - [Справочник по данным мониторинга файлов Azure](storage-files-monitoring.md)
 - [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md)
 - [Миграция метрик службы хранилища Azure](../common/storage-metrics-migration.md)
-- [Планирование развертывания Файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-planning)
+- [Планирование развертывания службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-planning)
 - [Как развернуть службу файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-deployment-guide)
 - [Устранение неполадок в работе службы "Файлы Azure" в Windows](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems)
 - [Устранение неполадок в работе службы "Файлы Azure" в Linux](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-linux-file-connection-problems)
