@@ -4,10 +4,10 @@ description: Краткое руководство. В этой статье о�
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.openlocfilehash: bfe1ca1a45f7b33d7431aed13446d8d72f79fb90
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85315668"
 ---
 # <a name="quickstart-send-events-to-azure-event-hubs-using-c"></a>Краткое руководство. Отправка событий в Центры событий Azure с помощью C

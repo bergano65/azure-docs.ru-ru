@@ -12,10 +12,10 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 07/16/2020
 ms.openlocfilehash: eb423ebd354adeb8273755d34323b283d53eb8b5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "87283900"
 ---
 # <a name="quickstart-create-an-azure-data-factory-using-arm-template"></a>Краткое руководство. Создание фабрики данных в службе "Фабрика данных Azure" с помощью шаблона ARM
@@ -78,7 +78,7 @@ Jane, Doe
 
 2. Введите или выберите следующие значения.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-deploy-arm-template.png" alt-text="Развертывание шаблона ARM для службы "Фабрика данных Azure"":::.
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-deploy-arm-template.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::.
 
     Если значение не указано, используйте значения по умолчанию для создания ресурсов службы "Фабрика данных Azure".
 
@@ -94,23 +94,20 @@ Jane, Doe
 
 1. Выберите **Перейти к группе ресурсов**.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-go-to-resource-group.png" alt-text="Группа ресурсов":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-go-to-resource-group.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;" имеет формат datafactory\<uniqueid\>.
 
-2.  Убедитесь, что Фабрика данных Azure успешно создана.
-    1. Имя фабрики данных в службе "Фабрика данных Azure" имеет формат datafactory\<uniqueid\>.
-
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-sample.png" alt-text="Пример фабрики данных":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-sample.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 2. Убедитесь, что учетная запись хранения успешно создана.
     1. Имя учетной записи хранения имеет формат storage\<uniqueid\>.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-storage-account.png" alt-text="Учетная запись хранения":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-storage-account.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 3. Выберите созданную учетную запись хранения и щелкните **Контейнеры**.
     1. На странице **Контейнеры** выберите созданный контейнер больших двоичных объектов.
         1. Имя контейнера BLOB-объектов имеет формат blob\<uniqueid\>.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-blob-container.png" alt-text="Контейнер BLOB-объектов":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-blob-container.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 ### <a name="upload-a-file"></a>Отправка файла
 
@@ -126,7 +123,7 @@ Jane, Doe
 
 6. Щелкните **Закрыть** значок (**X**), чтобы закрыть страницу **Отправка BLOB-объектов**.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-upload-blob-file.png" alt-text="Отправка файла в папку входных данных":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-upload-blob-file.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 Не закрывайте страницу контейнера, так как здесь вы сможете проверить выходные данные в конце этого краткого руководства.
 
@@ -136,17 +133,17 @@ Jane, Doe
 
 2. Щелкните плитку **Создание и мониторинг**. 
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-author-monitor-tile.png" alt-text="Создание и мониторинг":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-author-monitor-tile.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 2. Перейдите на вкладку **Создание** :::image type="icon" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-author.png" border="false":::.
 
 3. Выберите созданный конвейер (ArmtemplateSampleCopyPipeline).
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-pipelines.png" alt-text="Конвейер шаблона ARM":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-pipelines.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 4. Выберите **Добавить триггер** > **Trigger Now** (Активировать сейчас).
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-trigger-now.png" alt-text="Триггер":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-trigger-now.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 5. На панели справа в разделе **Запуск конвейера** щелкните **ОК**.
 
@@ -156,7 +153,7 @@ Jane, Doe
 
 2. Вы увидите, что выполняется действие, связанное с выполнением конвейера. В этом кратком руководстве конвейер содержит только один тип действия: копирование. Поэтому вы видите выполнение именно этого действия.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-successful-run.png" alt-text="Успешное выполнение":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-successful-run.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 ### <a name="verify-the-output-file"></a>Проверка файла выходных данных
 
@@ -168,7 +165,7 @@ Jane, Doe
 
 3. Убедитесь, что файл **emp.txt** скопирован в папку output. 
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-output.png" alt-text="Выходные данные":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-output.png" alt-text="Развертывание шаблона ARM для службы &quot;Фабрика данных Azure&quot;":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

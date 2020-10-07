@@ -8,17 +8,17 @@ ms.service: azure-education
 ms.subservice: education-hub
 ms.date: 06/30/2020
 ms.openlocfilehash: cf378e0676d39adf8eaddb8a2173d32c2cfda431
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "87101166"
 ---
 # <a name="getting-started-with-azure-education-hub"></a>Приступая к работе с Центром образования Azure
 
 На странице "Начало работы" Центра образования представлены быстрые ссылки для начала работы. Здесь можно найти сведения о том, как настроить курс, узнать о различных службах с помощью Microsoft Learn или легко развернуть свои первые службы с помощью шаблонов быстрого запуска.
 
-:::image type="content" source="media/get-started-education-hub/get-started-page.png" alt-text="Страница "Начало работы" в Центре образования Azure." border="false":::
+:::image type="content" source="media/get-started-education-hub/get-started-page.png" alt-text="Страница &quot;Начало работы&quot; в Центре образования Azure." border="false":::
 
 В дальнейшем после входа по умолчанию будет отображаться страница обзора. 
 

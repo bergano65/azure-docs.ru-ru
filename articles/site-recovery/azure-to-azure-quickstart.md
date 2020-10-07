@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 03/27/2020
 ms.custom: mvc
 ms.openlocfilehash: 8681ccaac30402927005e5e8802d7da2bddc2c5c
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "86135714"
 ---
 # <a name="quickstart-set-up-disaster-recovery-to-a-secondary-azure-region-for-an-azure-vm"></a>Краткое руководство. Настройка аварийного восстановления виртуальной машины Azure в дополнительный регион Azure
@@ -48,7 +48,7 @@ ms.locfileid: "86135714"
 1. В разделе **Операции** выберите элемент **Аварийное восстановление**.
 1. Чтобы просмотреть сведения о репликации, в разделе **Общие сведения** выберите элемент **Основное**. Дополнительные сведения см. в разделах **Работоспособность и состояние**, **Готовность к отработке отказа** и на карте **Представление инфраструктуры**.
 
-   :::image type="content" source="media/azure-to-azure-quickstart/replication-status.png" alt-text="Состояние репликации.":::
+   :::image type="content" source="media/azure-to-azure-quickstart/replication-status.png" alt-text="Включение репликации.":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -65,7 +65,7 @@ ms.locfileid: "86135714"
 1. В разделе **Общие сведения** выберите элемент **Отключить репликацию**.
 1. Чтобы удалить расширение Site Recovery, перейдите к виртуальной машине и последовательно выберите элементы **Параметры** > **Расширения**.
 
-   :::image type="content" source="media/azure-to-azure-quickstart/disable2-replication.png" alt-text="Отключение репликации.":::
+   :::image type="content" source="media/azure-to-azure-quickstart/disable2-replication.png" alt-text="Включение репликации.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

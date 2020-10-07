@@ -4,10 +4,10 @@ description: Быстро входите в предварительную ве�
 ms.topic: quickstart
 ms.date: 04/15/2019
 ms.openlocfilehash: 8a2d9836cd005ab11106c569929a6776d605da50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85830423"
 ---
 # <a name="quickstart-sign-in-and-set-a-user-id-for-azure-notebooks-preview"></a>Краткое руководство. Вход и установление идентификатора пользователя для предварительной версии службы "Записные книжки Microsoft Azure"

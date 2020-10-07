@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/28/2020
 ms.author: sngun
-ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 88a98c05b09d8e76159199fd5035a15d62bc293b
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: a430af4bd0cb8ec0db468ed4bfe605ce1fd3b8c2
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85115121"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "87322794"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-table-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API таблиц Azure Cosmos DB
 

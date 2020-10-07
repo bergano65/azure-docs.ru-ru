@@ -8,10 +8,10 @@ ms.service: azure-education
 ms.subservice: education-hub
 ms.date: 06/30/2020
 ms.openlocfilehash: edb0de9f235565d09c81ce4466de59698a321f56
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "87101185"
 ---
 # <a name="enroll-or-renew-an-azure-dev-tools-for-teaching-subscription"></a>Регистрация или продление подписки Azure Dev Tools for Teaching
@@ -33,19 +33,19 @@ ms.locfileid: "87101185"
 
 1. Заполните раздел **Institution Information** (Данные об учебном заведении), если регистрация выполняется в первый раз. При продлении эта информация будет заполнена автоматически.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-institution-information.png" alt-text="Ввод сведений об учебном заведении." border="false":::
+    :::image type="content" source="media/enroll-renew-subscription/application-institution-information.png" alt-text="Сообщение об ошибке при входе." border="false":::
     
 1. Заполните поле **Billing Information** (Данные для выставления счетов). Если ваше учебное заведение действует в рамках соглашения о корпоративном лицензировании, введите номер этого соглашения. Если вы регистрируетесь для получения новой подписки и для оплаты используете любой метод, кроме кредитной карты, возможна некоторая задержка на обработку платежа, прежде чем вы получите доступ к подписке. Вы будете получать сообщения по электронной почте с информацией о состоянии процесса оплаты.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-billing-information.png" alt-text="Ввод данных для выставления счетов." border="false":::
+    :::image type="content" source="media/enroll-renew-subscription/application-billing-information.png" alt-text="Сообщение об ошибке при входе." border="false":::
     
 1. Выберите **Subscription Plan** (План подписки) и подтвердите личность **Subscription Administrator** (Администратор подписки). Домен электронной почты администратора подписки позволит учащимся с адресами в том же домене легко получить доступ для скачивания предоставляемого пакета программного обеспечения.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-select-subscription-plan.png" alt-text="Выбор плана подписки." border="false":::
+    :::image type="content" source="media/enroll-renew-subscription/application-select-subscription-plan.png" alt-text="Сообщение об ошибке при входе." border="false":::
     
 1. Подтвердите все сведения о приобретении и нажмите кнопку **Place Order** (Разместить заказ). Вам будут отправлены несколько сообщений электронной почты с подтверждением, информацией о состоянии процесса оплаты и вариантами дальнейших действий.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-confirm-place-order.png" alt-text="Подтверждение заказа." border="false":::
+    :::image type="content" source="media/enroll-renew-subscription/application-confirm-place-order.png" alt-text="Сообщение об ошибке при входе." border="false":::
 
 ## <a name="renew-an-existing-subscription"></a>Продление существующей подписки
 
