@@ -70,7 +70,7 @@
         - name: Создание рабочих процессов с отслеживанием или без отслеживания состояния в Visual Studio Code
           href: create-stateful-stateless-workflows-visual-studio-code.md
         - name: "Вызов приложений логики из Power Automate и Power\_Apps"
-          href: call-logic-apps-from-power-automate-power-apps.md
+          href: call-from-power-automate-power-apps.md
         - name: Управление выполнением рабочих процессов
           items:
             - name: Условные операторы
