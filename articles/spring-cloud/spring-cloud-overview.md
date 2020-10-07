@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: f622042c9a2e8cc5bc11c8dc909d02afe38e5c78
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: b03bedd9abbe59ed3bc1b0ec1439aa27af57e6da
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908370"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758903"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Что представляет собой Azure Spring Cloud?
 
@@ -32,7 +32,7 @@ Azure Spring Cloud, как часть экосистемы Azure, позволя
 
 ## <a name="spring-cloud-config-server"></a>Сервер конфигурации Spring Cloud
 
-Сервер конфигурации Azure Spring Cloud предоставляет возможности внешней конфигурации в распределенной системе с поддержкой на стороне сервера и клиента.  Azure Spring Cloud — это центральное расположение для управления свойствами приложения во всех средах. См. сведения о [конфигурации Spring Cloud](https://spring.io/projects/spring-cloud-config.md). 
+Сервер конфигурации Azure Spring Cloud предоставляет возможности внешней конфигурации в распределенной системе с поддержкой на стороне сервера и клиента.  Azure Spring Cloud — это центральное расположение для управления свойствами приложения во всех средах. См. сведения о [конфигурации Spring Cloud](https://spring.io/projects/spring-cloud-config). 
 
 ## <a name="bluegreen-deployments"></a>Развертывания по схеме Blue-Green
 

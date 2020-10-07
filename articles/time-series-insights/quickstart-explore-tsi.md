@@ -9,13 +9,13 @@ manager: diviso
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 07/07/2020
-ms.openlocfilehash: 135fbe914a1bf99f1cc32bd9291658f60282aa0e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 10/02/2020
+ms.openlocfilehash: 9cd1a6059360c948229a1da00780cd6cb40b7f35
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87101289"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91666540"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-gen2-demo-environment"></a>Краткое руководство. Общие сведения о демонстрационной среде службы "Аналитика временных рядов Azure" 2-го поколения
 
@@ -100,7 +100,7 @@ ms.locfileid: "87101289"
 
       [![Расширьте интервал времени до 60 дней](media/v2-update-quickstart/quick-start-expand-interval-range.png)](media/v2-update-quickstart/quick-start-expand-interval-range.png#lightbox)
 
-1. Чтобы получить более полный контекст, можно давить точки данных других датчиков. Чем больше датчиков мы видим, тем полнее наше понимание проблемы. Давайте разместим маркер, чтобы отобразились фактические значения. 
+1. Чтобы получить более полный контекст, можно давить точки данных других датчиков. Чем больше датчиков мы видим, тем полнее наше понимание проблемы. Давайте разместим маркер, чтобы отобразились фактические значения.
 
     1. Выберите **Generator System** (Система генерации), а затем выберите три датчика: **GridVoltagePhase1** (Сеточное напряжение, фаза 1), **GridVoltagePhase2** (Сеточное напряжение, фаза 2) и **GridVoltagePhase3** (Сеточное напряжение, фаза 3).
     1. Разместите маркер на последней точке данных в видимой области.

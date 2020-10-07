@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: cd618cf5f2f82b9c87981e961ed401f3409ec9d4
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 0f43b667b94e39548d81e6c6258d987f47074cb1
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580805"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761334"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-java"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью Java
 
@@ -71,12 +71,12 @@ git clone https://github.com/Azure/azure-iot-sdk-java.git
 Во время прохождения статьи [Настройка среды для кратких руководств и учебников IoT Plug and Play](set-up-environment.md) вы создали две переменные среды, чтобы настроить пример для подключения к центру Интернета вещей и устройству:
 
 * **IOTHUB_CONNECTION_STRING**: строка подключения центра Интернета вещей, которую вы записали ранее.
-* **DEVICE_ID**: `"my-pnp-device"`.
+* **IOTHUB_DEVICE_ID**: `"my-pnp-device"`.
 
 С помощью этого краткого руководства вы примените пример решения Интернета вещей на языке Java для взаимодействия с настроенным примером устройства.
 
 > [!NOTE]
-> В этом образце используется пространство имен **com.microsoft.azure.sdk.iot.service.*;** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об извлечении идентификатора модели см. в [руководстве разработчика](concepts-developer-guide-device-csharp.md).
+> В этом образце используется пространство имен **com.microsoft.azure.sdk.iot.service.*;** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об извлечении идентификатора модели см. в [руководстве разработчика](concepts-developer-guide-service.md).
 
 1. Откройте другое окно терминала, которое будет терминалом **службы**.
 

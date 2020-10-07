@@ -7,13 +7,13 @@ author: tchristiani
 ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/16/2020
-ms.openlocfilehash: 246cdb458b4529c60f61c3ddcb26280c1e3223af
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.date: 10/05/2020
+ms.openlocfilehash: 713199dc6b1eb1330b49c320022af137d0d1402e
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91268372"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91741012"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Краткое руководство. Создание службы "Когнитивный поиск Azure" на портале
 
@@ -47,7 +47,7 @@ ms.locfileid: "91268372"
 
 1. Используйте панель поиска, чтобы найти Когнитивный поиск Azure, или перейдите к ресурсу, выбрав **Веб** > **Azure Cognitive Search** (Когнитивный поиск Azure).
 
-![Создание ресурса на портале](./media/search-create-service-portal/find-search3.png "Создание ресурса на портале")
+:::image type="content" source="media/search-create-service-portal/find-search3.png" alt-text="Создание ресурса на портале" border="false":::
 
 ## <a name="choose-a-subscription"></a>Выберите подписку.
 
@@ -59,11 +59,11 @@ ms.locfileid: "91268372"
 
 Если вы не объединяете ресурсы в одну группу или если существующие группы ресурсов заполнены ресурсами, используемыми в несвязанных решениях, создайте новую группу ресурсов только для своего ресурса Когнитивный поиск Azure. 
 
-![Создание группы ресурсов](./media/search-create-service-portal/new-resource-group.png "Создание новой группы ресурсов")
+:::image type="content" source="media/search-create-service-portal/new-resource-group.png" alt-text="Создание ресурса на портале" border="false":::
 
 Со временем вы можете контролировать текущие и запланированные затраты, а также просматривать расходы по отдельным ресурсам. На следующем снимке экрана показан тип сведений о затратах, которые можно увидеть при объединении нескольких ресурсов в одну группу.
 
-![Управление затратами на уровне группы ресурсов](./media/search-create-service-portal/resource-group-cost-management.png "Управление затратами на уровне группы ресурсов")
+:::image type="content" source="media/search-create-service-portal/resource-group-cost-management.png" alt-text="Создание ресурса на портале" border="false":::
 
 > [!TIP]
 > Группы ресурсов упрощают очистку, поскольку при удалении группы также удаляются все службы внутри нее. Если проект прототипа использует нескольких служб, то, поместив их все в одну группу ресурсов, можно упростить очистку после завершения этого проекта.
@@ -114,11 +114,11 @@ ms.locfileid: "91268372"
 
 Когда вы предоставите необходимые входные данные, переходите к созданию службы. 
 
-![Проверка и создание службы](./media/search-create-service-portal/new-service3.png "Проверка и создание службы")
+:::image type="content" source="media/search-create-service-portal/new-service3.png" alt-text="Создание ресурса на портале" border="false":::
 
 Служба развертывается в течение нескольких минут. Ход выполнения можно отслеживать с помощью уведомлений Azure. Рассмотрите возможность закрепления службы на панели мониторинга для быстрого доступа в будущем.
 
-![Мониторинг и закрепление службы](./media/search-create-service-portal/monitor-notifications.png "Мониторинг и закрепление службы")
+:::image type="content" source="media/search-create-service-portal/monitor-notifications.png" alt-text="Создание ресурса на портале" border="false":::
 
 ## <a name="get-a-key-and-url-endpoint"></a>Получение ключа и конечной точки URL-адреса
 
@@ -128,7 +128,7 @@ ms.locfileid: "91268372"
 
 2. На странице **Ключи** скопируйте любой из ключей администратора (они равноценны). API-ключи администратора необходимы для создания, обновления и удаления объектов в службе. Ключи запроса, напротив, предоставляют доступ для чтения к содержимому индекса.
 
-   ![Страница обзора службы с конечной точкой URL-адреса](./media/search-create-service-portal/get-url-key.png "Конечная точка URL-адреса и другие сведения о службе")
+   :::image type="content" source="media/search-create-service-portal/get-url-key.png" alt-text="Создание ресурса на портале" border="false":::
 
 Конечная точка и ключ не нужны для задач портала. Портал уже связан с вашим ресурсом службы "Когнитивный поиск Azure" с правами администратора. Для изучения пошагового руководства портала, начните с [краткого руководства. Создание индекса службы "Когнитивный поиск Azure" на портале](search-get-started-portal.md).
 
@@ -149,7 +149,7 @@ ms.locfileid: "91268372"
 2. В области навигации слева щелкните **Параметры** > **Масштаб**.
 3. Используйте ползунок, чтобы добавить ресурсы любого типа.
 
-![Добавление емкости](./media/search-create-service-portal/settings-scale.png "Добавление емкости через реплики и секции")
+:::image type="content" source="media/search-create-service-portal/settings-scale.png" alt-text="Создание ресурса на портале" border="false":::
 
 > [!Note]
 > Хранение на уровне раздела и скорость увеличивается на более высоких уровнях. Дополнительные сведения см. в разделе [Service limits in Azure Search](search-limits-quotas-capacity.md) (Ограничения службы поиска Azure).

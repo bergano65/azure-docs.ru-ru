@@ -82,6 +82,8 @@
           href: protect-azure-vmware-solution-with-application-gateway.md
         - name: Диспетчер трафика
           href: deploy-traffic-manager-balance-workloads.md
+        - name: Использование общедоступных IP-адресов
+          href: public-ip-usage.md
     - name: Решения VMware
       items:
         - name: Настройка vRealize Operations

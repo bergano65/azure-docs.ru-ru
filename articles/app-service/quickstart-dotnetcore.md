@@ -3,15 +3,15 @@ title: Краткое руководство. Создание приложен�
 description: Узнайте, как запустить веб-приложение в Службе приложений Azure, развернув первое приложение ASP.NET Core.
 ms.assetid: b1e6bd58-48d1-4007-9d6c-53fd6db061e3
 ms.topic: quickstart
-ms.date: 08/01/2020
-ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18
+ms.date: 09/24/2020
+ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18, contperfq1
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 95f877c9030d51e68b97a21875ff3ff05b383457
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: aa8eb945ba77e1a4ac5215acf3bdbc12cac0c4c9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90973764"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91661131"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Краткое руководство. Создание веб-приложения ASP.NET Core в Azure
 
@@ -175,6 +175,8 @@ ms.locfileid: "90973764"
 * <a href="https://git-scm.com/" target="_blank">установите Git</a>;
 * <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">установите пакет SDK для .NET Core 3.1 с последними обновлениями</a>.
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
 ## <a name="create-the-app-locally"></a>Локальное создание приложения
 
 В окне терминала на компьютере создайте каталог `hellodotnetcore` и перейдите в него.
@@ -214,13 +216,23 @@ git add .
 git commit -m "first commit"
 ```
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
 [!INCLUDE [Configure deployment user](../../includes/configure-deployment-user.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
 [!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group-linux.md)]
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
 [!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan-linux.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
@@ -265,6 +277,8 @@ To https://&lt;app-name&gt;.scm.azurewebsites.net:443/&lt;app-name&gt;.git
    d87e6ca..d6b5447  master -> master
 </pre>
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
 Перейдите в развертываемое приложение с помощью веб-браузера.
@@ -278,6 +292,8 @@ http://<app_name>.azurewebsites.net
 ![Пример приложения, выполняющегося в Azure](media/quickstart-dotnetcore/dotnet-browse-azure.png)
 
 **Поздравляем!** Вы развернули свое первое приложение .NET Core в службе приложений в Linux.
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
 ## <a name="update-and-redeploy-the-code"></a>Обновление и повторное развертывание кода
 
@@ -298,6 +314,8 @@ git push azure master
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-dotnetcore/dotnet-browse-azure-updated.png)
 
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
 ## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
 Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением.
@@ -313,6 +331,8 @@ git push azure master
 В меню слева доступно несколько страниц для настройки приложения. 
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
+
+[Возникли проблемы? Сообщите нам!](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: f8be403a9aa095a24ec4802aad0364b535ed7c5a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e214607b82a44fb1b6859a3c73d58907fbb279d9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902909"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91710742"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -63,7 +63,7 @@ ms.locfileid: "90902909"
 
 Начните обучение на локальном компьютере с помощью <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a> или <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакета SDK для R</a> для службы "Машинное обучение Microsoft Azure". Затем можно выполнить горизонтальное увеличение масштаба в облаке. 
 
-С большинством доступных [целевых объектов вычислений](how-to-create-attach-compute-sdk.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
+С большинством доступных [целевых объектов вычислений](how-to-create-attach-compute-studio.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
 
 Также с помощью пакета SDK можно [автоматизировать обучение и настройку модели](tutorial-auto-train-models.md).
 

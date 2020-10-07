@@ -6,15 +6,15 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2020
+ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 1dd3781b18f82a96f388b0e619ce62b45752a870
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f33d7efd1c136619767c3eadd93740442ae7239a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91292478"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762048"
 ---
 # <a name="chat-concepts"></a>Понятия, связанные с чатами
 
@@ -128,7 +128,7 @@ ms.locfileid: "91292478"
 
 Одним из способов реализации этих возможностей является создание доверенной службы, которая выступает в качестве участника цепочки чата. Предположим, вы хотите включить перевод на несколько языков. Эта служба будет прослушивать сообщения, которыми обмениваются другие участники [1], вызывать API Cognitive Services для перевода содержимого на нужный язык [2, 3] и отправлять переведенный текст в виде сообщения в цепочку чата [4]. 
 
-Это означает, что в журнале сообщений будут содержаться как исходные, так и переведенные сообщения. В клиентском приложении можно добавить логику для отображения исходных или переведенных сообщений. В [этом кратком руководстве](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-translate) показано, как использовать API Cognitive Services для перевода текста на разные языки. 
+Это означает, что в журнале сообщений будут содержаться как исходные, так и переведенные сообщения. В клиентском приложении можно добавить логику для отображения исходных или переведенных сообщений. В [этом кратком руководстве](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-translator) показано, как использовать API Cognitive Services для перевода текста на разные языки. 
 
 :::image type="content" source="../media/chat/cognitive-services.png" alt-text="Схема архитектуры чата в Службах коммуникации.":::
 

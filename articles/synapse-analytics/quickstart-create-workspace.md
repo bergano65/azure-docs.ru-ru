@@ -2,19 +2,19 @@
 title: Краткое руководство. Создание рабочей области Synapse
 description: Создайте рабочую область Synapse, выполнив действия, описанные в этом руководстве.
 services: synapse-analytics
-author: pimorano
+author: saveenr
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: ''
 ms.date: 09/03/2020
-ms.author: pimorano
+ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: cbf7fb8deba86dd966ccb8087823c76b20413db8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 04bbab477f20ec25ccb0e975dad2b30a511346d2
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91260365"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91667764"
 ---
 # <a name="quickstart-create-a-synapse-workspace"></a>Краткое руководство. Создание рабочей области Synapse
 В этом кратком руководстве описаны действия по созданию рабочей области Azure Synapse с помощью портала Azure.

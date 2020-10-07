@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Python
 description: В этом кратком руководстве представлены примеры кода Python, которые можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
-author: rachel-msft
-ms.author: raagyema
+author: mksuni
+ms.author: sumuth
 ms.service: postgresql
 ms.custom: mvc, devcenter, devx-track-python
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 11/07/2019
-ms.openlocfilehash: 9fb0c02bcf040b1d27831e72d31ff07a7c38ad0a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 6452934828c4e74563daf001271b3ce018ab58e3
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90901825"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91707903"
 ---
 # <a name="quickstart-use-python-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Python
 
@@ -46,7 +46,7 @@ ms.locfileid: "90901825"
    
    Кроме того, потребуется пароль администратора. Если вы не помните этот пароль, вы можете сбросить его на этой странице. 
    
-   :::image type="content" source="./media/connect-python/1-connection-string.png" alt-text="Имя сервера службы "База данных Azure для PostgreSQL"":::
+   :::image type="content" source="./media/connect-python/1-connection-string.png" alt-text="Имя сервера службы &quot;База данных Azure для PostgreSQL&quot;":::
 
 ## <a name="how-to-run-the-python-examples"></a>Выполнение примеров кода Python
 
@@ -105,7 +105,7 @@ conn.close()
 
 При успешном выполнении кода возвращаются следующие данные:
 
-:::image type="content" source="media/connect-python/2-example-python-output.png" alt-text="Вывод командной строки":::
+:::image type="content" source="media/connect-python/2-example-python-output.png" alt-text="Имя сервера службы &quot;База данных Azure для PostgreSQL&quot;":::
 
 ## <a name="read-data"></a>Чтение данных
 Приведенный ниже пример кода подключается к базе данных службы "База данных Azure для PostgreSQL" и считывает данные с помощью функции [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) и инструкции SQL **SELECT**. Эта функция принимает запрос и возвращает результирующий набор для итерации с помощью [cursor.fetchall()](http://initd.org/psycopg/docs/cursor.html#cursor.fetchall). 

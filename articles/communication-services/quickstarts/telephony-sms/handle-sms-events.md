@@ -6,19 +6,19 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2020
+ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 02a0a5dd5cfe3a1ecaa264f1e81c848a8da6c58d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 072e885ec1c618229141dea477cd598d8db34ce7
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945841"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756770"
 ---
 # <a name="quickstart-handle-sms-events"></a>Краткое руководство. Обработка событий SMS
 
-[!INCLUDE [Private Preview Notice](../../includes/private-preview-include.md)]
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 Начало работы со Службами коммуникации Azure с помощью службы "Сетка событий Azure" для обработки событий SMS Служб коммуникации. 
 
@@ -96,7 +96,7 @@ ms.locfileid: "90945841"
 
 :::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
-:::image type="content" source="./media/handle-sms-events/SMS-Delivery-Report-Received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
+:::image type="content" source="./media/handle-sms-events/sms-delivery-report-received.png" alt-text="Снимок экрана: нажатие кнопки подписки на события на странице событий ресурса.":::
 
 Дополнительные сведения о схемах и других концепциях событий см. [здесь](../../concepts/event-handling.md).
 

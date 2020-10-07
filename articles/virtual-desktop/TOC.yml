@@ -34,6 +34,8 @@
           href: connect-macos.md
         - name: Подключение с помощью клиента iOS
           href: connect-ios.md
+        - name: Подключение к клиенту Microsoft Store
+          href: connect-microsoft-store.md
     - name: Настройка модуля PowerShell
       href: powershell-module.md
     - name: Создание пула узлов и узлов сеансов

@@ -28,6 +28,8 @@
           href: tutorial-discover-physical.md
         - name: Обнаружение экземпляров AWS
           href: tutorial-discover-aws.md
+        - name: Обнаружение экземпляров GCP
+          href: tutorial-discover-gcp.md
     - name: Оценка
       items:
         - name: Оценка готовности виртуальных машин VMware к переносу на виртуальные машины Azure
@@ -40,6 +42,8 @@
           href: tutorial-assess-physical.md
         - name: Оценка готовности экземпляров AWS к переносу в Azure
           href: tutorial-assess-aws.md
+        - name: Оценка готовности экземпляров GCP к переносу в Azure
+          href: tutorial-assess-gcp.md
         - name: Оценка импортированных серверов
           href: tutorial-discover-import.md
     - name: Миграция
@@ -58,6 +62,8 @@
           href: tutorial-migrate-physical-virtual-machines.md
         - name: Перенос экземпляров AWS
           href: tutorial-migrate-aws-virtual-machines.md
+        - name: Перенос экземпляров GCP
+          href: tutorial-migrate-gcp-virtual-machines.md
 - name: Основные понятия
   items:
     - name: Создание плана миграции с помощью службы "Миграция Azure"

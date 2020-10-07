@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure PowerShell
 description: Краткое руководство по созданию базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure PowerShell.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.devlang: azurepowershell
 ms.topic: quickstart
 ms.date: 06/08/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 082adc0753cb8e41bc61f5703445e6b8507202b5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 7f04c4c52b2c1e2b347699168b3255d2f809278b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902678"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91705319"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql---single-server-using-powershell"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure PowerShell
 
@@ -165,27 +165,11 @@ pgAdmin — это средство с открытым кодом, которо
 
 1. На вкладке **General** (Общее) в диалоговом окне **Create — Server** (Создание сервера) введите уникальное понятное имя сервера, например **mydemoserver**.
 
-   :::image type="content" source="./media/quickstart-create-postgresql-server-database-using-azure-powershell/9-pgadmin-create-server.png" alt-text="Вкладка "Общие"":::
+   :::image type="content" source="./media/quickstart-create-postgresql-server-database-using-azure-powershell/9-pgadmin-create-server.png" alt-text="Вкладка &quot;Общие&quot;":::
 
 1. На вкладке **Connection** (Подключение) в диалоговом окне **Create — Server** (Создание сервера) заполните таблицу настроек.
 
-   :::image type="content" source="./media/quickstart-create-postgresql-server-database-using-azure-powershell/10-pgadmin-create-server.png" alt-text="Вкладка "Подключение"":::
-
-    параметр pgAdmin |Значение|Описание
-    ---|---|---
-    Имя узла и адрес | Имя сервера | Значение имени сервера, которое вы использовали раньше при создании базы данных Azure для сервера PostgreSQL. В нашем примере используется имя сервера **mydemoserver.postgres.database.azure.com**. Используйте полное доменное имя ( **\*.postgres.database.azure.com**), как показано в примере. Если вы не помните имя своего сервера, выполните действия из предыдущего раздела, чтобы получить сведения о подключении.
-    Порт | 5432 | Порт, используемый при подключении к базе данных Azure для сервера PostgreSQL.
-    База данных обслуживания | *postgres* | Имя базы данных по умолчанию, созданное системой.
-    Имя пользователя | Имя для входа администратора сервера | Имя для входа администратора сервера, которое вы использовали раньше при создании базы данных Azure для сервера PostgreSQL. Если вы не помните имя пользователя, выполните действия из предыдущего раздела, чтобы получить сведения о подключении. Формат *имя пользователя\@имя сервера*.
-    Пароль | Ваш пароль администратора | Пароль, выбранный при создании сервера во время работы с этим руководством.
-    Роль | Не указывайте | Указывать роль на этом шаге не нужно. Оставьте поле пустым.
-    Режим SSL | *Require* (Требовать) | На вкладке pgAdmin SSL можно настроить режим TLS или SSL. По умолчанию все серверы службы "База данных Azure для PostgreSQL" создаются с включенным применением TLS. Чтобы отключить применение TLS, см. раздел [Настройка принудительного применения TLS](./concepts-ssl-connection-security.md#configure-enforcement-of-tls).
-
-1. Щелкните **Сохранить**.
-
-1. В области **Браузер** слева разверните узел **Серверы**. Выберите свой сервер, например **mydemoserver**. Щелкните, чтобы подключиться к нему.
-
-1. Разверните узел сервера, а затем разверните раздел **Базы данных** под ним. Список должен включать существующую базу данных *postgres* и еще одну базу данных, созданную вами. С помощью службы "База данных Azure для PostgreSQL" для сервера можно создать несколько баз данных.
+   :::image type="content" source="./media/quickstart-create-postgresql-server-database-using-azure-powershell/10-pgadmin-create-server.png" alt-text="Вкладка &quot;Общие&quot;" для сервера можно создать несколько баз данных.
 
 1. Щелкните правой кнопкой мыши **Базы данных**, выберите меню **Создать**, а затем щелкните **База данных**.
 
@@ -193,7 +177,7 @@ pgAdmin — это средство с открытым кодом, которо
 
 1. Выберите **владельца** базы данных из списка. Выберите имя администратора сервера для входа (например, **my admin**).
 
-   :::image type="content" source="./media/quickstart-create-postgresql-server-database-using-azure-powershell/11-pgadmin-database.png" alt-text="Создание базы данных в pgAdmin":::
+   :::image type="content" source="./media/quickstart-create-postgresql-server-database-using-azure-powershell/11-pgadmin-database.png" alt-text="Вкладка &quot;Общие&quot;":::
 
 1. выберите **Сохранить**, чтобы создать пустую базу данных.
 

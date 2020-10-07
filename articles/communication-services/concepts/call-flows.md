@@ -6,15 +6,15 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2020
+ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 7172e3319e60603d46dc2af87f3818a5c3664285
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 9fe5cb13ee352b2c49ab6ae57cabd6116cdfa720
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945892"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91667679"
 ---
 # <a name="call-flows"></a>Потоки вызовов
 
@@ -44,13 +44,13 @@ ms.locfileid: "90945892"
 
 Для Анны это устройство NAT в кафе, а для Олега — устройство NAT дома. Устройства Анны и Олега обменяются внешними адресами своих устройств NAT. Клиентские библиотеки узнают свои внешние адреса из службы STUN, которую Службы коммуникации Azure предоставляют бесплатно. Логика обработки подтверждения между устройствами Анны и Олега внедрена в клиентские библиотеки, предоставляемые Службой коммуникации Azure. (Дополнительная настройка не требуется.)
 
-:::image type="content" source="./media/call-flows/about-voice-case-2.png" alt-text="Схема вызова VoIP с подключением STUN.":::
+:::image type="content" source="./media/call-flows/about-voice-case-2.png" alt-text="Схема, демонстрирующая прямой вызов VoIP между пользователями и Службами коммуникации.":::
 
 ### <a name="case-3-voip-where-neither-a-direct-nor-nat-connection-is-possible"></a>Случай 3. VoIP с невозможностью подключения напрямую или через NAT
 
 Если одно из клиентских устройств или оба они размещены за симметричным NAT, требуется отдельная облачная служба для ретрансляции мультимедиа между двумя клиентскими библиотеками. Для этого Службы коммуникации также предоставляют службу TURN. В клиентской библиотеке, которая обращается к Службам коммуникации, служба TURN применяется автоматически с учетом обнаруженных сетевых требований. Использование службы TURN от Майкрософт оплачивается отдельно.
 
-:::image type="content" source="./media/call-flows/about-voice-case-3.png" alt-text="Схема вызова VoIP с подключением TURN.":::
+:::image type="content" source="./media/call-flows/about-voice-case-3.png" alt-text="Схема, демонстрирующая прямой вызов VoIP между пользователями и Службами коммуникации.":::
  
 ### <a name="case-4-group-calls-with-pstn"></a>Вариант 4. Групповые вызовы через ТСОП
 
@@ -58,7 +58,7 @@ ms.locfileid: "90945892"
 
 Поток мультимедийного трафика ТСОП проходит через специальный компонент — обработчик мультимедиа.
 
-:::image type="content" source="./media/call-flows/about-voice-pstn.png" alt-text="Схема группового вызова ТСОП через Службы коммуникации.":::
+:::image type="content" source="./media/call-flows/about-voice-pstn.png" alt-text="Схема, демонстрирующая прямой вызов VoIP между пользователями и Службами коммуникации.":::
 
 > [!NOTE]
 > Наш обработчик мультимедиа является одновременно и агентом B2BUA, как определено в стандарте [RFC 3261 SIP о протоколе инициации сеанса](https://tools.ietf.org/html/rfc3261) (информация для тех, кто знаком с обработкой мультимедиа). Это означает, что он может выполнять преобразование кодеков при обработке вызовов между сетями Майкрософт и других операторов. Контроллер сигнализации Служб коммуникации Azure — это реализация прокси-сервера SIP согласно тому же стандарту RFC от Майкрософт.
@@ -70,11 +70,11 @@ ms.locfileid: "90945892"
 > [!NOTE]
 > Обработчик мультимедиа может выполнять роль MCU или SFU.
 
-:::image type="content" source="./media/call-flows/about-voice-group-calls.png" alt-text="Схема потока передачи мультимедиа через UDP в Службах коммуникации.":::
+:::image type="content" source="./media/call-flows/about-voice-group-calls.png" alt-text="Схема, демонстрирующая прямой вызов VoIP между пользователями и Службами коммуникации.":::
 
 Если клиентская библиотека не может использовать UDP для передачи мультимедиа из-за ограничений брандмауэра, будет предпринята попытка использовать протокол TCP. Обратите внимание, что обработчик мультимедиа работает с UDP, поэтому в описанном выше случае с групповым вызовом включается служба TURN из Служб коммуникации, которая будет выполнять преобразование из TCP в UDP. В этом случае будет взиматься плата за службу TURN, если вы не отключите ее вручную.
 
-:::image type="content" source="./media/call-flows/about-voice-group-calls-2.png" alt-text="Схема потока передачи мультимедиа через TCP в Службах коммуникации.":::
+:::image type="content" source="./media/call-flows/about-voice-group-calls-2.png" alt-text="Схема, демонстрирующая прямой вызов VoIP между пользователями и Службами коммуникации.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -10,11 +10,9 @@
   items:
     - name: С использованием портала QnA Maker
       items:
-        - name: 1. Создание базы знаний
+        - name: Создание базы знаний
           href: Quickstarts/create-publish-knowledge-base.md
-        - name: 2. Добавление вопросов с использованием метаданных
-          href: Quickstarts/add-question-metadata-portal.md
-        - name: 3. Получение ответа с помощью Postman или cURL
+        - name: Запрос к базе знаний
           href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: Использование REST
       href: Quickstarts/quickstart-rest-curl.md
@@ -32,10 +30,8 @@
   items:
     - name: Планирование реализации базы знаний
       href: Concepts/plan.md
-    - name: Ресурсы Azure
+    - name: Планирование ресурсов QnA Maker
       href: Concepts/azure-resources.md
-    - name: Совместная работа с другими пользователями
-      href: Concepts/role-based-access-control.md
     - name: Разработка базы знаний
       items:
         - name: Для языков
@@ -48,22 +44,12 @@
           href: Concepts/knowledge-base.md
         - name: Импортированные типы содержимого
           href: Concepts/content-types.md
-        - name: Пары вопросов и ответов
-          href: Concepts/question-answer-set.md
-    - name: Жизненный цикл базы знаний
-      items:
-        - name: Жизненный цикл разработки
-          href: Concepts/development-lifecycle-knowledge-base.md
-          displayName: 'version control, test, index, publish, monitor usage, create'
-        - name: Улучшение с помощью функции "Предложения для активного обучения"
-          href: Concepts/active-learning-suggestions.md
-    - name: Обращение к базе знаний
-      items:
-        - name: Получение ответов
-          displayName: 'DefaultAnswer, Default answer'
-          href: Concepts/query-knowledge-base.md
-        - name: Оценка надежности
-          href: Concepts/confidence-score.md
+    - name: Процесс ранжирования
+      displayName: 'DefaultAnswer, Default answer'
+      href: Concepts/query-knowledge-base.md
+    - name: Жизненный цикл разработки
+      href: Concepts/development-lifecycle-knowledge-base.md
+      displayName: 'version control, test, index, publish, monitor usage, create'
     - name: Рекомендации
       href: Concepts/best-practices.md
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
@@ -93,7 +79,7 @@
         - name: Миграция на новую базу знаний
           href: Tutorials/migrate-knowledge-base.md
           displayName: 'metadata, pair'
-        - name: Тестирование базы знаний
+        - name: Тест
           href: How-To/test-knowledge-base.md
     - name: Управление наборами вопросов и ответов
       items:
@@ -105,50 +91,11 @@
         - name: Получение предлагаемых альтернативных вопросов
           href: How-to/improve-knowledge-base.md
           displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
-        - name: Добавление защищенных файлов SharePoint
-          href: How-To/add-sharepoint-datasources.md
-          displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
     - name: Обращение к базе знаний
       href: How-To/metadata-generateanswer-usage.md
       displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
     - name: Аналитика и телеметрия
       href: How-To/get-analytics-knowledge-base.md
-    - name: С помощью REST API
-      items:
-        - name: Создание базы знаний
-          items:
-            - name: C#
-              href: Quickstarts/create-new-kb-csharp.md
-            - name: Go
-              href: Quickstarts/create-new-kb-go.md
-            - name: Java
-              href: Quickstarts/create-new-kb-java.md
-            - name: Python
-              href: Quickstarts/create-new-kb-python.md
-        - name: Публикация базы знаний
-          items:
-            - name: C#
-              href: Quickstarts/publish-kb-csharp.md
-            - name: Go
-              href: Quickstarts/publish-kb-go.md
-            - name: Java
-              href: Quickstarts/publish-kb-java.md
-            - name: Node.js
-              href: Quickstarts/publish-kb-nodejs.md#publish-a-knowledge-base
-            - name: Python
-              href: Quickstarts/publish-kb-python.md
-        - name: Получение ответов
-          items:
-            - name: C#
-              href: Quickstarts/get-answer-from-knowledge-base-csharp.md
-            - name: Go
-              href: Quickstarts/get-answer-from-knowledge-base-go.md
-            - name: Java
-              href: Quickstarts/get-answer-from-knowledge-base-java.md
-            - name: Node.js
-              href: Quickstarts/get-answer-from-knowledge-base-nodejs.md
-            - name: Python
-              href: Quickstarts/get-answer-from-knowledge-base-python.md
 - name: Справочник
   items:
     - name: Поддержка языков
@@ -156,9 +103,18 @@
     - name: Ограничения
       href: limits.md
     - name: Управление доступом на основе ролей (RBAC)
-      href: reference-role-based-access-control.md
-    - name: Устранение неполадок
+      href: Concepts/role-based-access-control.md
+    - name: Активное обучение
+      href: Concepts/active-learning-suggestions.md
+    - name: Оценка надежности
+      href: Concepts/confidence-score.md
+    - name: Диагностика
       href: troubleshooting.md
+    - name: Пары вопросов и ответов
+      href: Concepts/question-answer-set.md
+    - name: Добавление защищенных файлов SharePoint
+      href: How-To/add-sharepoint-datasources.md
+      displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
     - name: Конфигурация службы
       href: reference-app-service.md
     - name: Форматы содержимого и данных
@@ -173,6 +129,8 @@
       href: reference-markdown-format.md
     - name: Формат пакетного тестирования
       href: reference-tsv-format-batch-testing.md
+    - name: Шифрование
+      href: qna-maker-encryption-of-data-at-rest.md
     - name: Справочник по REST API
       items:
         - name: Разработка API-интерфейсов
@@ -181,10 +139,6 @@
           href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer'
         - name: API обучения
           href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train'
-    - name: Примеры
-      items:
-        - name: Бот-помощник QnA Maker
-          href: 'https://aka.ms/qnamakerhelpbotsample'
     - name: Пакеты SDK
       items:
         - name: C#
@@ -231,8 +185,6 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-    - name: Шифрование
-      href: qna-maker-encryption-of-data-at-rest.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены и ограничения

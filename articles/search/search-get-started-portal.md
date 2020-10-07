@@ -8,12 +8,12 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 09/16/2020
-ms.openlocfilehash: 0a28bd0d4101fc9d49413adaaccc0a6d38ec64ed
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 460c37107ac2dbd8bc3377d3716e708331db9904
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91307727"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91740939"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "91307727"
 
 Разделы на информационной панели службы содержат сведения о количестве имеющихся индексов, индексаторов и источников данных. 
 
-![Список индексов, индексаторов и источников данных](media/search-get-started-portal/tiles-indexers-datasources.png)
+:::image type="content" source="media/search-get-started-portal/tiles-indexers-datasources.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 ## <a name="create-an-index-and-load-data"></a><a name="create-index"></a> Создание индекса и загрузка данных
 
@@ -49,11 +49,11 @@ ms.locfileid: "91307727"
 
 1. [Найдите службу поиска](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) и на странице обзора щелкните **Импорт данных** на панели команд, чтобы создать и заполнить индекс поиска.
 
-   ![Команда импорта данных](media/search-get-started-portal/import-data-cmd.png)
+   :::image type="content" source="media/search-get-started-portal/import-data-cmd.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 1. В окне мастера щелкните **Connect to your data** (Подключиться к данным)  > **Примеры** > **hotels-sample**. Это встроенный источник данных. Чтобы создать собственный источник данных, вам нужно будет ввести для него имя, тип и сведения о подключении. После создания он становится существующим источником данных, который можно повторно использовать в других операциях импорта.
 
-   ![Пример набора данных](media/search-get-started-portal/import-datasource-sample.png)
+   :::image type="content" source="media/search-get-started-portal/import-datasource-sample.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 1. Перейдите к следующей странице.
 
@@ -63,7 +63,7 @@ ms.locfileid: "91307727"
 
 Пропустите пока этот шаг и переходите сразу к **настройке целевого индекса**.
 
-   ![Пропуск шага когнитивных навыков](media/search-get-started-portal/skip-cog-skill-step.png)
+   :::image type="content" source="media/search-get-started-portal/skip-cog-skill-step.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 > [!TIP]
 > Можно пошагово выполнить пример индексирования ИИ из [краткого руководства](cognitive-search-quickstart-blob.md) или [руководства](cognitive-search-tutorial-blob.md).
@@ -87,7 +87,7 @@ ms.locfileid: "91307727"
 
    При повторном запуске мастера с использованием существующего источника данных hotels в индексе не будут заданы атрибуты по умолчанию. Вам потребуется вручную выбрать атрибуты для следующего импорта. 
 
-   ![Созданный индекс hotels](media/search-get-started-portal/hotelsindex.png)
+   :::image type="content" source="media/search-get-started-portal/hotelsindex.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 2. Перейдите к следующей странице.
 
@@ -100,7 +100,7 @@ ms.locfileid: "91307727"
 
 Щелкните **Отправить**, чтобы создать и немедленно запустить индексатор.
 
-  ![Индексатор hotels](media/search-get-started-portal/hotels-indexer.png)
+  :::image type="content" source="media/search-get-started-portal/hotels-indexer.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 ## <a name="monitor-progress"></a>Отслеживание хода выполнения
 
@@ -108,7 +108,7 @@ ms.locfileid: "91307727"
 
 Обновление страницы на портале может занять несколько минут, а затем вы увидите в списке только что созданный индексатор с состоянием, указывающим на выполнение или завершение, а также количество проиндексированных документов.
 
-   ![Сообщение о ходе обработки индексатором](media/search-get-started-portal/indexers-inprogress.png)
+   :::image type="content" source="media/search-get-started-portal/indexers-inprogress.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 ## <a name="view-the-index"></a>Просмотр индекса
 
@@ -116,13 +116,13 @@ ms.locfileid: "91307727"
 
 Дождитесь обновления страницы портала. Через несколько минут вы увидите индекс с количеством документов и размером хранилища.
 
-   ![Список индексов на панели мониторинга службы](media/search-get-started-portal/indexes-list.png)
+   :::image type="content" source="media/search-get-started-portal/indexes-list.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 В этом списке можно щелкнуть индекс *hotels-sample*, который вы только что создали, чтобы просмотреть схему индекса. и при необходимости добавить новые поля. 
 
 На вкладке **Поля** отображается схема индекса. Прокрутите до нижней части списка, чтобы добавить новое поле. В большинстве случаев существующие поля нельзя изменить. Существующие поля имеют физическое представление в службе "Когнитивный поиск Azure". Поэтому они не изменяются даже в коде. Чтобы существенным образом изменить существующее поле, создайте новый индекс и уделите старый.
 
-   ![Пример определения индексов](media/search-get-started-portal/sample-index-def.png)
+   :::image type="content" source="media/search-get-started-portal/sample-index-def.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 Другие конструкции, такие как профили оценки и параметры CORS, можно добавить в любое время.
 
@@ -140,15 +140,15 @@ ms.locfileid: "91307727"
 
 1. Щелкните **Проводник поиска** на панели команд.
 
-   ![Команда обозревателя поиска](media/search-get-started-portal/search-explorer-cmd.png)
+   :::image type="content" source="media/search-get-started-portal/search-explorer-cmd.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 2. В раскрывающемся списке **Индекс** выберите *hotels-sample-index*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2020-06-30).
 
-   ![Команды индекса и API](media/search-get-started-portal/search-explorer-changeindex.png)
+   :::image type="content" source="media/search-get-started-portal/search-explorer-changeindex.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 3. В строке поиска введите приведенные ниже строки запроса и нажмите кнопку **Поиск**.
 
-   ![Строка запроса и кнопка поиска](media/search-get-started-portal/search-explorer-query-string-example.png)
+   :::image type="content" source="media/search-get-started-portal/search-explorer-query-string-example.png" alt-text="Список индексов, индексаторов и источников данных":::
 
 ## <a name="example-queries"></a>Примеры запросов
 

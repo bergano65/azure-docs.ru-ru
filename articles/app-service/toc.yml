@@ -226,7 +226,7 @@
       items:
         - name: Увеличение емкости сервера
           href: manage-scale-up.md
-        - name: Настройка уровня PremiumV2
+        - name: Настройка уровня Премиум (версия 3)
           href: app-service-configure-premium-tier.md
         - name: Горизонтальное увеличение масштаба до нескольких экземпляров
           href: ../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json

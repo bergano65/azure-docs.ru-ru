@@ -139,7 +139,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Предупреждения
+    - name: видны узлы
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -301,8 +301,6 @@
               href: platform/move-workspace.md
             - name: Архитектура для поставщиков служб
               href: platform/service-providers.md
-            - name: Управление доступом
-              href: platform/manage-access.md
             - name: Кластеры категории "Выделенный"
               href: log-query/logs-dedicated-clusters.md
     - name: Обозреватель метрик
@@ -751,8 +749,6 @@
             - name: Оповещения о доступности
               displayname: 'alerts, global, alerting'
               href: app/availability-alerts.md
-            - name: Тестирование производительности
-              href: app/performance-testing.md
             - name: Устранение неполадок
               displayname: 'availability, troubleshoot, troubleshoot availability'
               href: app/troubleshoot-availability.md
@@ -1326,6 +1322,8 @@
       href: samples/policy-reference.md
     - name: Прекращение поддержки функций и API
       items:
+        - name: API OperationalInsights
+          href: platform/operationalinsights-api-retirement.md
         - name: Классический API автомасштабирования и метрик
           href: ./platform/classic-api-retirement-metrics-autoscale.md
         - name: Классические оповещения и мониторинг
