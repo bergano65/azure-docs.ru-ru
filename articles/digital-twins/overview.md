@@ -8,10 +8,10 @@ ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
 ms.openlocfilehash: ea08843dc73ed7603181eee1cf36495fda82b8d4
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "89003853"
 ---
 # <a name="what-is-azure-digital-twins"></a>Что такое Azure Digital Twins?
@@ -88,7 +88,7 @@ Azure Digital Twins обычно используется в сочетании 
 
 На следующей схеме показано место Azure Digital Twins в контексте более крупного решения Интернета вещей Azure.
 
-:::image type="content" source="media/overview/solution-context.png" alt-text="Схема, на которой показаны источники входных данных, службы вывода и двустороннее взаимодействие с клиентскими приложениями и внешними вычислительными ресурсами." border="false" lightbox="media/overview/solution-context.png":::
+:::image type="content" source="media/overview/solution-context.png" alt-text="Снимок экрана примера приложения обозревателя Azure Digital Twins с изображением графа узлов, представляющего цифровых двойников" border="false" lightbox="media/overview/solution-context.png":::
 
 ## <a name="service-limits-in-public-preview"></a>Ограничения службы в общедоступной предварительной версии
 

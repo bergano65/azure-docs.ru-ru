@@ -6,10 +6,10 @@ ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: subject-armqs
 ms.openlocfilehash: 362ff5cd59982c1d848ed59af8381090344f5c5e
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88642271"
 ---
 # <a name="quickstart-create-and-deploy-azure-functions-resources-from-an-arm-template"></a>Краткое руководство. Создание и развертывание ресурсов Функций Azure с помощью шаблона ARM
@@ -117,7 +117,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 1. После завершения публикации скопируйте **URL-адрес сайта**.
 
-    :::image type="content" source="media/functions-create-first-function-arm/publish-summary-site-url.png" alt-text="Копирование URL-адреса сайта из сводки публикации":::
+    :::image type="content" source="media/functions-create-first-function-arm/publish-summary-site-url.png" alt-text="Выбор существующего целевого объекта публикации":::
 
 1. Добавьте путь `/api/<FUNCTION_NAME>?name=Functions`, где `<FUNCTION_NAME>` соответствует имени функции. URL-адрес для вызова функции, активируемой HTTP-запросом, указывается в следующем формате:
 

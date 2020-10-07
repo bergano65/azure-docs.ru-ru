@@ -10,10 +10,10 @@ ms.date: 03/19/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 6d50a8e2c9d0263616b25e25958be6a6f0fb7fe1
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88929281"
 ---
 Используйте это краткое руководство, чтобы начать поиск новостей с помощью клиентской библиотеки Поиск видео Bing для C#. Поскольку REST API Поиска видео Bing совместим с большинством языков программирования, клиентская библиотека обеспечивает простой способ интеграции службы в ваши приложения. Исходный код этого примера можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingVideoSearch) с дополнительными возможностями и заметками.

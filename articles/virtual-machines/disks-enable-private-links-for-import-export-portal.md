@@ -9,10 +9,10 @@ ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
 ms.openlocfilehash: ab861b3ed265da9060e2367bdfdeeeee7047c584
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88815867"
 ---
 # <a name="use-the-azure-portal-to-restrict-importexport-access-for-managed-disks-with-private-links"></a>Использование портала Azure для ограничения доступа на импорт и экспорт управляемых дисков с помощью Приватного канала
@@ -52,7 +52,7 @@ ms.locfileid: "88815867"
 
 Когда ресурс будет создан, перейдите непосредственно к нему.
 
-:::image type="content" source="media/disks-enable-private-links-for-import-export-portal/screenshot-resource-button.png" alt-text="Снимок экрана: кнопка перехода к ресурсу на портале.":::
+:::image type="content" source="media/disks-enable-private-links-for-import-export-portal/screenshot-resource-button.png" alt-text="Снимок экрана: колонка создания ресурса доступа к диску. Введите нужное имя, выберите регион, выберите группу ресурсов и продолжайте.":::
 
 ## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
 
@@ -61,13 +61,13 @@ ms.locfileid: "88815867"
 1. В ресурсе доступа к диску выберите **Подключения к частной конечной точке**.
 1. Щелкните **+ Добавить частную конечную точку**.
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-main-private-blade.png" alt-text="Снимок экрана: колонка обзора для ресурса доступа к диску. Выделен пункт Подключения к частным конечным точкам.":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-main-private-blade.png" alt-text="Снимок экрана: колонка создания ресурса доступа к диску. Введите нужное имя, выберите регион, выберите группу ресурсов и продолжайте.":::
 
 1. Выбор группы ресурсов
 1. Введите имя и выберите тот же регион, в котором был создан ресурс доступа к диску.
 1. По завершении выберите **Next: Ресурс >**
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-first-blade.png" alt-text="Снимок экрана: рабочий процесс создания частной конечной точки, первая колонка. Если вы не выберете здесь правильный регион, позже могут возникнуть проблемы.":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-first-blade.png" alt-text="Снимок экрана: колонка создания ресурса доступа к диску. Введите нужное имя, выберите регион, выберите группу ресурсов и продолжайте.":::
 
 1. В колонке **Ресурс** выберите **Подключиться к ресурсу Azure в моем каталоге**.
 1. В поле **Тип ресурса** выберите **Microsoft.Compute/diskAccesses**.
@@ -75,7 +75,7 @@ ms.locfileid: "88815867"
 1. В поле **Целевой подресурс** сохраните значение **Диски**.
 1. Выберите **Далее: Конфигурация >** .
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-second-blade.png" alt-text="Снимок экрана: рабочий процесс создания частной конечной точки, вторая колонка. Здесь выделены все нужные значения (тип ресурса, ресурс, целевой подресурс).":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-second-blade.png" alt-text="Снимок экрана: колонка создания ресурса доступа к диску. Введите нужное имя, выберите регион, выберите группу ресурсов и продолжайте.":::
 
 1. Выберите виртуальную сеть, из которой будет возможен экспорт диска. Все остальные виртуальные сети не будут поддерживать эту возможность.
 
@@ -85,7 +85,7 @@ ms.locfileid: "88815867"
 1. Выбор нужной подсети
 1. Выберите **Review + create** (Просмотреть и создать).
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-third-blade.png" alt-text="Снимок экрана: рабочий процесс создания частной конечной точки, третья колонка. Выделены поля Виртуальная сеть и Подсеть.":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-private-endpoint-third-blade.png" alt-text="Снимок экрана: колонка создания ресурса доступа к диску. Введите нужное имя, выберите регион, выберите группу ресурсов и продолжайте.":::
 
 ## <a name="enable-private-endpoint-on-your-disk"></a>Включение частной конечной точки для диска
 
@@ -94,7 +94,7 @@ ms.locfileid: "88815867"
 1. Щелкните **Частная конечная точка (через доступ к диску)** и выберите созданный ранее ресурс доступа к диску.
 1. Щелкните **Сохранить**.
 
-    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-managed-disk-networking-blade.png" alt-text="Снимок экрана: колонка сетевых настроек для управляемого диска. Выделены выбранные значения частной конечной точки и доступа к диску. Сохранение этих значений открывает доступ к диску.":::
+    :::image type="content" source="media/disks-enable-private-links-for-import-export-portal/disk-access-managed-disk-networking-blade.png" alt-text="Снимок экрана: колонка создания ресурса доступа к диску. Введите нужное имя, выберите регион, выберите группу ресурсов и продолжайте.":::
 
 Итак, вы завершили настройку Приватных каналов, которые можно использовать при импорте и экспорте управляемого диска.
 

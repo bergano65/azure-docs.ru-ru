@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 04/29/2020
 ms.openlocfilehash: 62bfe71c397367282c696eecdf55ab9c900c69a1
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88684122"
 ---
 # <a name="quickstart-create-a-recovery-services-vault-using-an-arm-template"></a>Краткое руководство. Создание хранилища Служб восстановления с помощью шаблона ARM
@@ -63,7 +63,7 @@ ms.locfileid: "88684122"
 
 1. Чтобы начать развертывание хранилища, нажмите кнопку **Приобрести**. После успешного развертывания отобразится уведомление.
 
-   :::image type="content" source="media/quickstart-create-vault-template/deployment-success.png" alt-text="Развертывание хранилища успешно выполнено.":::
+   :::image type="content" source="media/quickstart-create-vault-template/deployment-success.png" alt-text="Шаблон для создания хранилища Служб восстановления.":::
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
