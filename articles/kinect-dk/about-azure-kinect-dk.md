@@ -8,10 +8,10 @@ ms.topic: overview
 ms.date: 06/26/2019
 keywords: Azure, Kinect, обзор, комплект разработчика, DK, устройство, глубина, отслеживание тела, речь, Cognitive Services, пакеты средств разработки, пакет SDK, встроенное ПО
 ms.openlocfilehash: 6b3215ba6761521214ebffa2a100c5a1a030ab4c
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85277865"
 ---
 # <a name="about-azure-kinect-dk"></a>Сведения об Azure Kinect DK

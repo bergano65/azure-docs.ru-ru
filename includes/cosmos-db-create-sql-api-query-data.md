@@ -9,10 +9,10 @@ ms.date: 04/05/2019
 ms.author: sngun
 ms.custom: include file
 ms.openlocfilehash: 609b62312329b3a8f9f16d15458a0a47f5eb377f
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85115219"
 ---
 Вы можете применить запросы в обозревателе данных для получения и фильтрации данных.
@@ -23,11 +23,11 @@ ms.locfileid: "85115219"
    
 1. Чтобы изменить запрос, выберите **Изменить фильтр**, замените запрос по умолчанию на `ORDER BY c._ts DESC`, а затем выберите **Применить фильтр**.
    
-   :::image type="content" source="./media/cosmos-db-create-sql-api-query-data/azure-cosmosdb-data-explorer-edit-query.png" alt-text="Изменение запроса по умолчанию с добавлением предиката ORDER BY c._ts DESC и применение фильтра":::
+   :::image type="content" source="./media/cosmos-db-create-sql-api-query-data/azure-cosmosdb-data-explorer-edit-query.png" alt-text="Стандартный запрос SELECT * FROM c в обозревателе данных":::
 
    Измененный запрос отображает все документы в порядке убывания метки времени, поэтому теперь первым в списке будет второй документ. 
    
-   :::image type="content" source="./media/cosmos-db-create-sql-api-query-data/azure-cosmosdb-data-explorer-edited-query.png" alt-text="Изменение запроса на предикат ORDER BY c._ts DESC и применение фильтра":::
+   :::image type="content" source="./media/cosmos-db-create-sql-api-query-data/azure-cosmosdb-data-explorer-edited-query.png" alt-text="Стандартный запрос SELECT * FROM c в обозревателе данных":::
 
 Если вы знакомы с синтаксисом SQL, используйте в этом поле предиката запроса любой поддерживаемый [SQL-запрос](../articles/cosmos-db/sql-api-sql-query.md). Вы также можете использовать обозреватель данных для создания хранимых процедур, определяемых пользователем функций и триггеров для бизнес-логики на стороне сервера. 
 
