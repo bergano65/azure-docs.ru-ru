@@ -1,17 +1,17 @@
 ---
-title: Экспорт ресурсов политики Azure
+title: Экспорт ресурсов Политики Azure
 description: Узнайте, как экспортировать ресурсы политики Azure в GitHub, такие как определения политик и назначения политик.
 ms.date: 09/30/2020
 ms.topic: how-to
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 17f0322390cd2cd89ba182a9e3c7c95843cc135e
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.openlocfilehash: 691e0a026c5f4f1a0a68c744ee81b1da8da9e70b
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91604434"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777094"
 ---
-# <a name="export-azure-policy-resources"></a>Экспорт ресурсов политики Azure
+# <a name="export-azure-policy-resources"></a>Экспорт ресурсов Политики Azure
 
 В этой статье содержатся сведения о том, как экспортировать существующие ресурсы политики Azure. Экспорт ресурсов полезен и рекомендуется для резервного копирования, но он также является важным шагом в вашем пути к управлению облаком и рассматривая вашу [политику как код](../concepts/policy-as-code.md). Ресурсы политики Azure можно экспортировать с помощью [портал Azure](#export-with-azure-portal), [Azure CLI](#export-with-azure-cli), [Azure PowerShell](#export-with-azure-powershell)и каждого из поддерживаемых пакетов SDK.
 
@@ -84,7 +84,7 @@ az policy definition show --name 'VirtualMachineStorage'
 Ниже приведен пример получения JSON для определения политики с **именем** _виртуалмачинестораже_:
 
 ```azurepowershell-interactive
-Get-AzPolicyDefinition --Name 'VirtualMachineStorage'
+Get-AzPolicyDefinition -Name 'VirtualMachineStorage'
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

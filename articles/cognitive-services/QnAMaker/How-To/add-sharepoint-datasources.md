@@ -1,14 +1,16 @@
 ---
 title: Файлы SharePoint — QnA Maker
 description: Добавьте защищенные источники данных SharePoint в базу знаний, чтобы расширить базу знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: 93f17e79834b412ce0babf220ba13649ae07718c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 0f49621d44b99412b9a6ab0360c30c894a71e5d1
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660313"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776873"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление защищенного источника данных SharePoint в базу знаний
 
@@ -18,10 +20,10 @@ ms.locfileid: "83660313"
 
 Если QnA Maker диспетчер базы знаний не является диспетчером Active Directory, необходимо установить связь с диспетчером Active Directory, чтобы завершить этот процесс.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * В облачном SharePoint-QnA Maker для разрешений используется Microsoft Graph. Если SharePoint находится в локальной среде, вы не сможете извлечь из SharePoint, так как Microsoft Graph не сможет определить разрешения.
-* Формат URL-QnA Maker поддерживает только URL-адреса SharePoint, которые создаются для общего доступа и имеют формат`https://\*.sharepoint.com`
+* Формат URL-QnA Maker поддерживает только URL-адреса SharePoint, которые создаются для общего доступа и имеют формат `https://\*.sharepoint.com`
 
 ## <a name="add-supported-file-types-to-knowledge-base"></a>Добавить Поддерживаемые типы файлов в базу знаний
 
@@ -183,7 +185,7 @@ Use the **@microsoft.graph.downloadUrl** from the previous section as the `fileu
 
 -->
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Совместная работа с базой знаний](collaborate-knowledge-base.md)

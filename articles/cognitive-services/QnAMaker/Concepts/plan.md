@@ -1,14 +1,16 @@
 ---
 title: Планирование приложения — QnA Maker
 description: Узнайте, как спланировать приложение QnA Maker. Узнайте, как работает QnA Maker и взаимодействует с другими службами Azure и некоторыми основными понятиями в базе знаний.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/2/2020
-ms.openlocfilehash: 19499aceed96155fa42c78865b1d673a3830f5cc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 84e4d6907c9036503f43cd607b54577fd3d97444
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87054207"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776941"
 ---
 # <a name="plan-your-qna-maker-app"></a>Планирование приложения QnA Maker
 

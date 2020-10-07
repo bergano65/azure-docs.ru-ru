@@ -1,14 +1,16 @@
 ---
 title: Совместная работа с базой знаний — QnA Maker
 description: QnA Maker позволяет нескольким пользователям совместно работать с базой знаний. Эта функция предоставляется с помощью управления доступом на основе ролей в Azure (Azure RBAC).
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 0d59ca83e6067c083e4bfebdb7afaaf6669dda8a
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 8adc02d4b397c2b0bdaf5d3998cfbe229c896d41
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926853"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776856"
 ---
 # <a name="collaboration-with-authors-and-editors"></a>Совместная работа с авторами и редакторами
 
@@ -36,7 +38,7 @@ QnA Maker позволяет нескольким пользователям с�
 
     ![IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam.png)
 
-1. Нажмите кнопку **Добавить**.
+1. Нажмите **Добавить**.
 
     ![Добавление IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add.png)
 
@@ -50,7 +52,7 @@ QnA Maker позволяет нескольким пользователям с�
     |Редактор Cognitive Services QnA Maker|
     |Пользователь служб Cognitive Services|
 
-    :::image type="content" source="../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-add-role-iam.png" alt-text="QnA Maker Добавление роли IAM.":::
+    :::image type="content" source="../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-add-role-iam.png" alt-text="QnA Maker Добавление роли IAM.&quot;:::
 
 1. Введите адрес электронной почты пользователя и нажмите кнопку " **сохранить**".
 
@@ -62,7 +64,9 @@ QnA Maker позволяет нескольким пользователям с�
 
 При выборе базы знаний ее текущая роль на этом QnA Makerном ресурсе отображается рядом с именем базы знаний.
 
-:::image type="content" source="../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-knowledge-base-role-name.png" alt-text="Снимок экрана базы знаний в режиме редактирования с именем роли в круглых скобках рядом с именем базы знаний в левом верхнем углу веб-страницы.":::
+:::image type="content" source="../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-knowledge-base-role-name.png" alt-text="QnA Maker Добавление роли IAM.&quot;:::
+
+1. Введите адрес электронной почты пользователя и нажмите кнопку ":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

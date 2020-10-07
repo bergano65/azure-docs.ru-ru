@@ -1,14 +1,16 @@
 ---
 title: Рекомендации по формату импорта документов — QnA Maker
 description: Используйте эти рекомендации для импорта документов, чтобы получить лучшие результаты для вашего содержимого.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 04/06/2020
-ms.openlocfilehash: b94c8b3fd4d4c082e0bc49c6bd42d3b37e963988
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: d35ea57a68e500deffa99033b83114ec518dd5e3
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90530783"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776737"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Формат рекомендаций для импортированных документов и URL-адресов
 
@@ -114,6 +116,6 @@ Answer2
 
 **Образцы документов**:<br>[Surface Pro (DOCX)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/multi-turn.docx)<br>[Преимущества Contoso (DOCX)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.docx)<br>[Преимущества Contoso (PDF)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.pdf)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. полный список [типов содержимого и примеры](./Concepts/content-types.md#file-and-url-data-types)

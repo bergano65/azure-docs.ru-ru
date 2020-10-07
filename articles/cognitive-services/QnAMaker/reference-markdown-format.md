@@ -1,14 +1,16 @@
 ---
 title: Формат Markdown — QnA Maker
 description: Ниже приведен список форматов Markdown, которые можно использовать в тексте ответа QnA Maker.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 03/19/2020
-ms.openlocfilehash: d5bf8342b3e595ed4b381ec5104a0c82f0d7ecc9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f5f640f8895cd6defe31a68b790ce841c4679a6f
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91321039"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777362"
 ---
 # <a name="markdown-format-supported-in-qna-maker-answer-text"></a>Формат Markdown, поддерживаемый в тексте ответа QnA Maker
 

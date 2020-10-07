@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 64163011506380eec87457a2d8a2f699ec56dc68
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 07d108306fdca9bfe8f793b61660550e43151d71
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91249643"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777821"
 ---
 # <a name="deactivate-and-delete-a-storsimple-device"></a>Отключение и удаление устройства StorSimple
 
@@ -63,16 +63,16 @@ ms.locfileid: "91249643"
         ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate1.png)
    2. В колонке **Отключение** введите имя устройства для подтверждения и щелкните **Отключить**. Начнется процесс отключения, который займет несколько минут.
 
-        ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate2.png)
+        ![Отключение устройства StorSimple 2](./media/storsimple-8000-deactivate-and-delete-device/deactivate2.png)
 
 3. После отключения вы можете полностью удалить устройство. При этом устройство удаляется из списка устройств, подключенных к службе. После удаления устройства служба больше не сможет управлять им. Вот как можно удалить устройство:
    
    1. В службе диспетчера устройств StorSimple выберите **Устройства**. В колонке **Устройства** выберите отключенное устройство, которое необходимо удалить, щелкните правой кнопкой мыши и выберите **Удалить**.
 
-        ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate5.png)
+        ![Отключение устройства StorSimple 3](./media/storsimple-8000-deactivate-and-delete-device/deactivate5.png)
    2. В колонке **Удаление** введите имя устройства для подтверждения и щелкните **Удалить**. Удаление занимает несколько минут.
 
-        ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate6.png)
+        ![Деактивация устройства StorSimple 4](./media/storsimple-8000-deactivate-and-delete-device/deactivate6.png)
    3. После успешного удаления вы получите уведомление. Список также будет обновлен с учетом удаления.
 
 ## <a name="deactivate-and-retain-data"></a>Отключение и сохранение данных
@@ -85,19 +85,19 @@ ms.locfileid: "91249643"
    
    1. В службе диспетчера устройств StorSimple выберите **Устройства**. В колонке **Устройства** выберите устройство, которое необходимо отключить, щелкните правой кнопкой мыши и выберите **Отключить**.
 
-         ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate1.png)
+         ![Деактивация устройства StorSimple 5](./media/storsimple-8000-deactivate-and-delete-device/deactivate1.png)
    2. В колонке **Отключение** введите имя устройства для подтверждения и щелкните **Отключить**. Начнется процесс отключения, который займет несколько минут.
 
-         ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate2.png)
+         ![Деактивация устройства StorSimple 6](./media/storsimple-8000-deactivate-and-delete-device/deactivate2.png)
 2. Теперь вы можете выполнить отработку отказа для контейнеров томов и связанных моментальных снимков. Сведения о том, как это сделать, см. в статье [Отработка отказа и аварийное восстановление для устройства StorSimple](storsimple-8000-device-failover-disaster-recovery.md).
 3. После отключения и отработки отказа вы можете полностью удалить устройство. При этом устройство удаляется из списка устройств, подключенных к службе. После удаления устройства служба больше не сможет управлять им. Чтобы удалить устройство, выполните следующие действия:
    
    1. В службе диспетчера устройств StorSimple выберите **Устройства**. В колонке **Устройства** выберите отключенное устройство, которое необходимо удалить, щелкните правой кнопкой мыши и выберите **Удалить**.
 
-       ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate5.png)
+       ![Деактивация устройства StorSimple 7](./media/storsimple-8000-deactivate-and-delete-device/deactivate5.png)
    2. В колонке **Удаление** введите имя устройства для подтверждения и щелкните **Удалить**. Удаление занимает несколько минут.
 
-       ![Отключение устройства StorSimple](./media/storsimple-8000-deactivate-and-delete-device/deactivate6.png)
+       ![Деактивация устройства StorSimple 8](./media/storsimple-8000-deactivate-and-delete-device/deactivate6.png)
    3. После успешного удаления вы получите уведомление. Список также будет обновлен с учетом удаления.
 
 ## <a name="deactivate-and-delete-a-cloud-appliance"></a>Отключение и удаление облачного устройства

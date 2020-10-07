@@ -1,14 +1,16 @@
 ---
 title: Устранение неполадок — QnA Maker
 description: Проверенный список наиболее часто задаваемых вопросов о службе QnA Maker поможет вам быстрее приработать службу и с лучшими результатами.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: troubleshooting
 ms.date: 03/25/2020
-ms.openlocfilehash: 50823e29eb5c276c00a1c8f0e3227ec67999a703
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 06747e2d053171749bfc5c9c394dab3d48674d67
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502585"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776244"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для QnA Maker
 

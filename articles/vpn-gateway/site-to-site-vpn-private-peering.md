@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/08/2020
+ms.date: 10/06/2020
 ms.author: cherylmc
-ms.openlocfilehash: effbe8e771922ea07ad908dd4871f8dcdb7c1d19
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 016741606bad5536985a38b0e0664b39006e1df5
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90938998"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776567"
 ---
 # <a name="configure-a-site-to-site-vpn-connection-over-expressroute-private-peering-preview"></a>Настройка VPN-подключения типа "сеть — сеть" через частный пиринг ExpressRoute (Предварительная версия)
 
@@ -72,18 +72,18 @@ ms.locfileid: "90938998"
 
 ## <a name="portal-steps"></a><a name="portal"></a>Шаги на портале
 
-1. Настройте подключение типа "сеть — сеть". Инструкции см. в статье [Конфигурация "сеть — сеть](vpn-gateway-howto-site-to-site-resource-manager-portal.md) ". Не забудьте выбрать для шлюза SKU шлюза, избыточное в зоне. Избыточные в зонах номера SKU имеют значение AZ в конце номера SKU. Например, VpnGw1AZ.
+1. Настройте подключение типа "сеть — сеть". Инструкции см. в статье [Конфигурация "сеть — сеть](vpn-gateway-howto-site-to-site-resource-manager-portal.md) ". Не забудьте выбрать для шлюза SKU шлюза, избыточное в зоне. 
 
-   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway.png" alt-text="Частные IP-адреса шлюза":::
+   Избыточные в зонах номера SKU имеют значение AZ в конце номера SKU. Например, **VpnGw1AZ**. Шлюзы, избыточные в зонах, доступны только в регионах, где доступна служба зоны доступности. Сведения о регионах, в которых поддерживаются зоны доступности, см. в разделе [регионы, поддерживающие зоны доступности](../availability-zones/az-region.md).
+
+   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway.png" alt-text="Рис. 1":::
 1. Включите частные IP-адреса в шлюзе. Выберите **Конфигурация**, а затем задайте для параметра **частные IP-адреса шлюза** значение **включено**. Выберите **Сохранить**, чтобы сохранить изменения.
 1. На странице **Обзор** выберите **Дополнительные** сведения для просмотра частного IP-адреса. Запишите эти сведения для дальнейшего использования в шагах настройки.
 
-   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway-overview.png" alt-text="Страница "Обзор"" lightbox="media/site-to-site-vpn-private-peering/gateway-overview.png":::
+   :::image type="content" source="media/site-to-site-vpn-private-peering/gateway-overview.png" alt-text="Рис. 1" lightbox="media/site-to-site-vpn-private-peering/gateway-overview.png":::
 1. Чтобы включить **Использование частного IP-адреса Azure** для подключения, выберите  **Конфигурация**. Задайте для параметра **использовать частный IP-адрес Azure** значение **включено**, а затем нажмите кнопку **сохранить**.
 
-   :::image type="content" source="media/site-to-site-vpn-private-peering/connection.png" alt-text="Частные IP-адреса шлюза — включено":::
-1. В брандмауэре проверьте связь с частным IP-адресом, записанным на шаге 3. Частный IP-адрес должен быть доступен через частный пиринг ExpressRoute.
-1. Используйте этот частный IP-адрес в качестве удаленного IP-адреса в локальном брандмауэре, чтобы установить туннель "сеть — сеть" через частный пиринг ExpressRoute.
+   :::image type="content" source="media/site-to-site-vpn-private-peering/connection.png" alt-text="Рис. 1" через частный пиринг ExpressRoute.
 
 ## <a name="powershell-steps"></a><a name="powershell"></a>PowerShell, шаги
 

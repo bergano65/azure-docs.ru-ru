@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 5542ca2f50152e7588f32e9ac8717f691fdb4d63
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: eaa7efe761490a639acabd9fd6d91378e1259a67
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91376330"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91779489"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -72,9 +72,9 @@ const oneToOneCall = callAgent.call([CommunicationUser]);
 ```
 
 ### <a name="place-a-1n-call-with-users-and-pstn"></a>Поместите вызов 1: n с помощью пользователей и PSTN
-> [!WARNING]
-> Вызов PSTN в настоящее время находится в закрытой предварительной версии. Для доступа [применяется к программе раннего внедрения](https://aka.ms/ACS-EarlyAdopter).
+
 Чтобы разместить вызов 1: n для пользователя и номер PSTN, необходимо указать Коммуникатионусер и номер телефона для обоих вызываемые.
+
 Для ресурса служб связи необходимо настроить разрешение на вызов PSTN.
 ```js
 

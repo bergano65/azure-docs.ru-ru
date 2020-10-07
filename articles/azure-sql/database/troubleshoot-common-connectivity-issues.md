@@ -12,12 +12,12 @@ author: dalechen
 ms.author: ninarn
 ms.reviewer: sstein, vanto
 ms.date: 01/14/2020
-ms.openlocfilehash: d6635696422c22dfdb4250516a9c3dfc8c577e12
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.openlocfilehash: 46d8aab74f658b039fe07acab82f324ec6ad731f
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91619888"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777077"
 ---
 # <a name="troubleshoot-transient-connection-errors-in-sql-database-and-sql-managed-instance"></a>Устранение временных ошибок подключения в базе данных SQL и Управляемый экземпляр SQL
 
@@ -126,7 +126,7 @@ ms.locfileid: "91619888"
 
 ## <a name="net-sqlconnection-parameters-for-connection-retry"></a>Параметры .NET SqlConnection для повторной попытки подключения
 
-Если клиентская программа подключается к базе данных в базе данных SQL с помощью .NET Framework класса **System. Data. SqlClient. SqlConnection**, используйте .NET 4.6.1 или более поздней версии (или .NET Core), чтобы можно было использовать функцию повторного подключения. Дополнительные сведения об этой функции см. на [этой веб-странице](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection).
+Если клиентская программа подключается к базе данных в базе данных SQL с помощью .NET Framework класса **System. Data. SqlClient. SqlConnection**, используйте .NET 4.6.1 или более поздней версии (или .NET Core), чтобы можно было использовать функцию повторного подключения. Дополнительные сведения об этой функции см. в разделе [свойство SqlConnection. ConnectionString](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring?view=netframework-4.8&preserve-view=true).
 
 <!--
 2015-11-30, FwLink 393996 points to dn632678.aspx, which links to a downloadable .docx related to SqlClient and SQL Server 2014.

@@ -1,16 +1,18 @@
 ---
 title: Краткое руководство. Создание базы знаний — REST, Go — QnA Maker
 description: Из этого краткого руководства по использованию REST в Go вы узнаете, как программным способом создать пример базы знаний QnA Maker, которая затем появится на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.date: 12/16/2019
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: how-to
-ms.openlocfilehash: 38bfada87701533002a2dcf304af573da4c87766
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: be314ad74fbb58709f5707e84b193f8ca69b47d9
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89259903"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777694"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-go"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Go
 
@@ -24,7 +26,7 @@ ms.locfileid: "89259903"
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Go 1.10.1.](https://golang.org/dl/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure.

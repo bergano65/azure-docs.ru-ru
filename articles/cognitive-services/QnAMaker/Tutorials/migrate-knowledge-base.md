@@ -1,14 +1,16 @@
 ---
 title: Перенос баз знаний с помощью QnA Maker
 description: Чтобы перенести базу знаний, необходимо экспортировать одну базы знаний, а затем импортировать ее в другую базу знаний.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: how-to
 ms.date: 03/25/2020
-ms.openlocfilehash: 4148431ebb4de288ac517c7c006a925e36c5f460
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9ba5f1d3d240867a8f6da52b9666c500c5b6446e
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542927"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777375"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
@@ -20,7 +22,7 @@ ms.locfileid: "88542927"
 
 Для миграции базы знаний необходимо экспортировать из существующей базы знаний, а затем импортировать в другую.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * Настройте новую [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md).

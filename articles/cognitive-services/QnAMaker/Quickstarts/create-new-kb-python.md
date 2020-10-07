@@ -1,16 +1,18 @@
 ---
 title: Краткое руководство. Создание базы знаний — REST, Python — QnA Maker
 description: Из этого краткого руководства по использованию REST в Python вы узнаете, как программным способом создать пример базы знаний QnA Maker, которая затем появится на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.date: 12/16/2019
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27, devx-track-python
 ms.topic: how-to
-ms.openlocfilehash: afee82b66f9803333e27f029ecb487a47ba5dd9e
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 6155722b81b32e426a91a283910e8bdce926e342
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89259733"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777653"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-python"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Python
 
@@ -24,9 +26,9 @@ ms.locfileid: "89259733"
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* [Python 3.7](https://www.python.org/downloads/)
+* [Python 3,7](https://www.python.org/downloads/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure.
 
 ## <a name="create-a-knowledge-base-python-file"></a>Создание файла базы знаний на Python

@@ -1,16 +1,18 @@
 ---
 title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (C#)
 description: В этом кратком руководстве по C# для REST описывается, как программным способом получить ответ из базы знаний.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27, devx-track-csharp
 ms.topic: how-to
-ms.openlocfilehash: 886a4643210efa95c46cd997eb231601641c5b43
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 547b3377d8c4404026e35c949ea7ccb7b243365c
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89259784"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777640"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-c"></a>Краткое руководство. получение ответов на вопрос из базы знаний с помощью C #
 

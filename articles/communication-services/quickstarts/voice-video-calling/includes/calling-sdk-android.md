@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: aec9d2049a69aebc7102a70274e5fb2a3ef865a8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: bed2a4ccbe87aef9afa395ed789da393e885cc89
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91377281"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91779815"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ allprojects {
 ```groovy
 dependencies {
     ...
-    implementation 'com.azure.android:azure-communication-calling:1.0.0-beta.1'
+    implementation 'com.azure.android:azure-communication-calling:1.0.0-beta.2'
     ...
 }
 
@@ -109,7 +109,7 @@ Context appContext = this.getApplicationContext();
 Call groupCall = callAgent.call(participants, startCallOptions);
 ```
 
-### <a name="place-a-11-call-with-with-video-camera"></a>Поместите вызов 1:1 с помощью видеокамеры
+### <a name="place-a-11-call-with-video-camera"></a>Размещение 1:1 звонка с помощью видеокамеры
 > [!WARNING]
 > Сейчас поддерживается только один исходящий поток видео для вызова с помощью видео. необходимо перечислить локальные камеры, используя `deviceManager` `getCameraList` API.
 После выбора нужной камеры используйте ее для создания `LocalVideoStream` экземпляра и передайте его в `videoOptions` качестве элемента `localVideoStream` массива в `call` метод.
@@ -136,17 +136,17 @@ JoinCallOptions joinCallOptions = new JoinCallOptions();
 call = callAgent.join(context, groupCallContext, joinCallOptions);
 ```
 
-## <a name="push-notification"></a>Push-уведомление
+## <a name="push-notifications"></a>Push-уведомления
 
 ### <a name="overview"></a>Обзор
-Мобильное push-уведомление — это всплывающее уведомление, которое вы получаете на мобильном устройстве. Для вызова мы будем сосредоточиться на push-уведомлениях VoIP (голосовой через Интернет). Мы предлагаем вам возможности для регистрации push-уведомлений, управления Push-уведомлениями и отмены регистрации push-уведомлений.
+Мобильные push-уведомления — это всплывающие уведомления, отображаемые на мобильных устройствах. Для вызова мы будем сосредоточиться на push-уведомлениях VoIP (голосовой через Интернет). Мы будем регистрироваться для получения push-уведомлений, обработайте push-уведомления, а затем отменяют регистрацию push-уведомлений.
 
-### <a name="prerequisite"></a>Предварительное требование
+### <a name="prerequisites"></a>предварительные требования
 
-В этом учебнике предполагается, что у вас есть настройка учетной записи Firebase с включенной облачной службой сообщений (FCM), а Firebase облачные сообщения подключены к экземпляру центра уведомлений Azure (АНХ). Дополнительные сведения см. в статье [Connect Firebase to Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started) .
-Кроме того, в учебнике предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.
+Чтобы завершить работу с этим разделом, создайте учетную запись Firebase и включите облачные службы обмена сообщениями (FCM). Убедитесь, что Firebase Cloud Messaging подключен к экземпляру центра уведомлений Azure (АНХ). Инструкции см. [в статье Connect Firebase to Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started) .
+В этом разделе также предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.
 
-Чтобы приложение Android могло получать сообщения уведомлений от FCM, требуется набор разрешений. В файле AndroidManifest.xml добавьте следующий набор разрешений сразу после * манифеста<... >* или под *</application>* тегом.
+Для приложения Android требуется набор разрешений, чтобы получать уведомления от Firebase Cloud Messaging. В `AndroidManifest.xml` файле добавьте следующий набор разрешений сразу после * манифеста<... >* или под *</application>* тегом.
 
 ```XML
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -154,39 +154,41 @@ call = callAgent.join(context, groupCallContext, joinCallOptions);
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 ```
 
-### <a name="register-for-push-notification"></a>Регистрация для получения push-уведомления
+### <a name="register-for-push-notifications"></a>Регистрация для получения push-уведомлений
 
-- Чтобы зарегистрироваться для получения push-уведомления, приложению необходимо вызвать Регистерпушнотификатион () в экземпляре *каллажент* с маркером регистрации устройства.
+Чтобы зарегистрироваться для получения push-уведомлений, приложению необходимо вызвать `registerPushNotification()` в экземпляре *каллажент* с маркером регистрации устройства.
 
-- Получение маркера регистрации устройства
-1. Не забудьте добавить клиентскую библиотеку Firebase в файл *Build. gradle* модуля приложения, добавив следующие строки в раздел *зависимостей* , если это еще не сделано:
+Чтобы получить маркер регистрации устройства, добавьте клиентскую библиотеку Firebase в файл *Build. gradle* модуля приложения, добавив следующие строки в `dependencies` раздел, если он еще не создан:
+
 ```
     // Add the client library for Firebase Cloud Messaging
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
 ```
 
-2. В файле *Build. gradle* на уровне проекта добавьте следующий фрагмент в раздел *зависимостей* , если он еще не создан
+В файле *Build. gradle* на уровне проекта добавьте следующий фрагмент в `dependencies` раздел, если он еще не создан:
+
 ```
     classpath 'com.google.gms:google-services:4.3.3'
 ```
 
-3. Добавьте следующий подключаемый модуль в начало файла, если он еще не создан
+Добавьте следующий подключаемый модуль в начало файла, если он еще не создан:
+
 ```
 apply plugin: 'com.google.gms.google-services'
 ```
 
-4. Выберите " *Синхронизировать сейчас* " на панели инструментов
+Выберите *Синхронизировать сейчас* на панели инструментов. Добавьте следующий фрагмент кода, чтобы получить маркер регистрации устройства, созданный клиентской библиотекой Firebase Cloud Messaging для экземпляра клиентского приложения, и добавьте приведенные ниже импортируемые элементы в заголовок главного действия для экземпляра. Они необходимы для получения маркера фрагмента:
 
-5. Добавьте следующий фрагмент кода, чтобы получить маркер регистрации устройства, созданный клиентской библиотекой FCM для экземпляра клиентского приложения. 
-- Добавьте эти операции импорта в заголовок основного действия для экземпляра. Они необходимы для получения маркера фрагментом.
 ```
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 ```
-- Добавьте этот фрагмент для получения токена
+
+Добавьте следующий фрагмент для получения маркера:
+
 ```
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
@@ -204,7 +206,7 @@ import com.google.firebase.iid.InstanceIdResult;
                     }
                 });
 ```
-6. Регистрация маркера регистрации устройства в клиентской библиотеке вызывающих служб для входящих вызовов push-уведомлений
+Зарегистрируйте маркер регистрации устройства в клиентской библиотеке вызывающих служб для входящих push-уведомлений о вызовах:
 
 ```java
 String deviceRegistrationToken = "some_token";
@@ -218,10 +220,9 @@ catch(Exception e) {
 
 ### <a name="push-notification-handling"></a>Обработка push-уведомлений
 
-- Чтобы получать входящие push-уведомления о вызовах, вызовите *хандлепушнотификатион ()* в экземпляре *каллажент* с полезной нагрузкой.
+Чтобы получать входящие push-уведомления о вызовах, вызовите *хандлепушнотификатион ()* в экземпляре *каллажент* с полезной нагрузкой.
 
-1. Чтобы получить полезные данные из FCM, выполните следующие действия.
-- Создайте новую службу (файл > новую службу > службы >), которая расширяет класс клиентской библиотеки *фиребасемессагингсервице* Firebase и убедитесь, что переопределяете метод *онмессажерецеивед* . Этот метод является обработчиком событий, который вызывается, когда FCM доставляет push-уведомление в приложение.
+Чтобы получить полезные данные из Firebase Cloud Messaging, начните с создания новой службы (файл > новая служба > Service > Service), которая расширяет класс клиентской библиотеки *фиребасемессагингсервице* Firebase и переопределяет `onMessageReceived` метод. Этот метод является обработчиком событий, который вызывается, когда Firebase Cloud Messaging доставляет push-уведомление в приложение.
 
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -239,7 +240,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 }
 ```
-- Также добавьте следующее определение службы в файл AndroidManifest.xml внутри <application> тега.
+Добавьте следующее определение службы в `AndroidManifest.xml` файл внутри <application> тега:
 
 ```
         <service
@@ -251,7 +252,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         </service>
 ```
 
-- После извлечения полезных данных их можно передать в клиентскую библиотеку *служб Communication Services* , вызвав метод *хандлепушнотификатион* в экземпляре *каллажент* .
+После получения полезных данных их можно передать в клиентскую библиотеку служб Communication Services, чтобы обработать ее путем вызова `handlePushNotification` метода в `CallAgent` экземпляре.
 
 ```java
 java.util.Map<String, String> pushNotificationMessageDataFromFCM = remoteMessage.getData();
@@ -262,11 +263,12 @@ catch(Exception e) {
     System.out.println("Something went wrong while handling the Incoming Calls Push Notifications.");
 }
 ```
+
 Если обработка сообщения push-уведомления прошла успешно и все обработчики событий зарегистрированы должным образом, приложение будет звонить.
 
-### <a name="unregister-push-notification"></a>Отмена регистрации push-уведомления
+### <a name="unregister-push-notifications"></a>Отмена регистрации push-уведомлений
 
-- Приложения могут отменить регистрацию push-уведомлений в любое время. Вызовите `unregisterPushNotification()` метод для каллажент, чтобы отменить регистрацию.
+Приложения могут отменить регистрацию push-уведомлений в любое время. Вызовите `unregisterPushNotification()` метод для каллажент, чтобы отменить регистрацию.
 
 ```java
 try {
@@ -281,25 +283,31 @@ catch(Exception e) {
 Вы можете получить доступ к свойствам вызова и выполнить различные операции во время вызова для управления параметрами, связанными с видео и аудио.
 
 ### <a name="call-properties"></a>Свойства вызова
-* Получите уникальный идентификатор для этого вызова.
+
+Получите уникальный идентификатор для этого вызова:
+
 ```java
 String callId = call.getCallId();
 ```
 
-* Чтобы узнать о других участниках в коллекции проверки вызовов `remoteParticipant` на `call` экземпляре, выполните следующие действия.
+Чтобы узнать о других участниках в коллекции проверки вызовов `remoteParticipant` на `call` экземпляре, выполните следующие действия.
+
 ```java
 List<RemoteParticipant> remoteParticipants = call.getRemoteParticipants();
 ```
 
-* Удостоверение вызывающего объекта, если вызов является входящим.
+Удостоверение вызывающего объекта, если вызов является входящим:
+
 ```java
 CommunicationIdentifier callerId = call.getCallerId();
 ```
 
-* Возвращает состояние вызова.
+Получить состояние вызова: 
+
 ```java
 CallState callState = call.getState();
 ```
+
 Он возвращает строку, представляющую текущее состояние вызова:
 * "None" — состояние начального вызова
 * "Входящий" — указывает, что вызов является входящим, он должен быть либо принят, либо отклонен.
@@ -312,39 +320,45 @@ CallState callState = call.getState();
 * "Disconnected" — окончательное состояние вызова
 
 
-* Чтобы узнать, почему вызов завершился, проверьте `callEndReason` свойство.
-Он содержит код/код (ссылка TODO на документацию)
+Чтобы узнать, почему вызов завершился, проверьте `callEndReason` свойство. Он содержит код/код: 
+
 ```java
 CallEndReason callEndReason = call.getCallEndReason();
 int code = callEndReason.getCode();
 int subCode = callEndReason.getSubCode();
 ```
 
-* Чтобы узнать, является ли текущий вызов входящим вызовом, проверьте `isIncoming` свойство:
+Чтобы узнать, является ли текущий вызов входящим вызовом, проверьте `isIncoming` свойство:
+
 ```java
 boolean isIncoming = call.getIsIncoming();
 ```
 
-*  Чтобы проверить, отключен ли текущий микрофон, проверьте `muted` свойство:
+Чтобы проверить, отключен ли текущий микрофон, проверьте `muted` свойство:
+
 ```java
 boolean muted = call.getIsMicrophoneMuted();
 ```
 
-* Чтобы проверить активные видеопотоки, проверьте `localVideoStreams` коллекцию:
+Чтобы проверить активные видеопотоки, проверьте `localVideoStreams` коллекцию:
+
 ```java
 List<LocalVideoStream> localVideoStreams = call.getLocalVideoStreams();
 ```
 
 ### <a name="mute-and-unmute"></a>Отключить и включить звук
+
 Чтобы отключить или включить выключение локальной конечной точки, можно использовать `mute` `unmute` асинхронные API и.
+
 ```java
 call.mute().get();
 call.unmute().get();
 ```
 
 ### <a name="start-and-stop-sending-local-video"></a>Запуск и отмена отправки локального видео
-Чтобы запустить видео, необходимо перечислить камеры с помощью `getCameraList` API для `deviceManager` объекта.
-Затем создайте новый экземпляр `LocalVideoStream` , передающий нужную камеру, и передайте его в `startVideo` API в качестве аргумента.
+
+Чтобы запустить видео, необходимо перечислить камеры с помощью `getCameraList` API для `deviceManager` объекта. Затем создайте новый экземпляр `LocalVideoStream` , передающий нужную камеру, и передайте его в `startVideo` API в качестве аргумента:
+
 ```java
 VideoDeviceInfo desiredCamera = <get-video-device>;
 Context appContext = this.getApplicationContext();
@@ -355,11 +369,13 @@ startVideoFuture.get();
 ```
 
 После успешного начала отправки видео `LocalVideoStream` экземпляр будет добавлен в `localVideoStreams` коллекцию в экземпляре вызова.
+
 ```java
 currentVideoStream == call.getLocalVideoStreams().get(0);
 ```
 
 Чтобы отключить локальное видео, передайте `localVideoStream` экземпляр, доступный в `localVideoStreams` коллекции:
+
 ```java
 call.stopVideo(localVideoStream).get();
 ```
@@ -383,7 +399,7 @@ List<RemoteParticipant> remoteParticipants = call.getRemoteParticipants(); // [r
 С каждым указанным удаленным участником связан набор свойств и коллекций, связанных с ним:
 
 * Получите идентификатор для этого удаленного участника.
-Идентификатором является один из типов "идентификатор"
+Identity является одним из типов "идентификатор"
 ```java
 CommunicationIdentifier participantIdentity = remoteParticipant.getIdentifier();
 ```
@@ -452,7 +468,9 @@ MediaStreamType streamType = remoteParticipantStream.getType(); // of type Media
 ```
  
 Чтобы подготовиться к просмотру `RemoteVideoStream` из удаленного участника, необходимо подписываться на `OnVideoStreamsUpdated` событие.
-В рамках события изменение `isAvailable` Свойства на true указывает на то, что удаленный участник в настоящий момент отправляет поток по мере того, как это происходит, создает новый экземпляр `Renderer` , затем создает новый `RendererView` с помощью асинхронного `createView` API и подключается `view.target` в любом месте пользовательского интерфейса приложения.
+
+В рамках события изменение `isAvailable` Свойства на true указывает на то, что удаленный участник в настоящий момент отправляет поток. После этого создайте новый экземпляр `Renderer` , а затем создайте новый `RendererView` с помощью асинхронного `createView` API и ПОДКЛЮЧИТЕСЬ `view.target` в пользовательском интерфейсе приложения.
+
 При каждом изменении доступности удаленного потока можно удалить весь модуль подготовки отчетов, конкретный `RendererView` или оставить его, но это приведет к отображению пустого кадра видео.
 
 ```java

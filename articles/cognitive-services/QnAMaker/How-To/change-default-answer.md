@@ -1,14 +1,16 @@
 ---
 title: Получить ответ по умолчанию — QnA Maker
 description: Ответ по умолчанию возвращается в случае отсутствия соответствующего вопроса. Может потребоваться изменить ответ по умолчанию из стандартного ответа по умолчанию.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: how-to
 ms.date: 07/13/2020
-ms.openlocfilehash: d37e63d84be58e6ccd2f1e23a1344961d39ffa01
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 14954f89fcdcbbc1ef4b8654582a3274f4bb0923
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87054179"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776822"
 ---
 # <a name="change-default-answer-for-a-qna-maker-resource"></a>Изменить ответ по умолчанию для ресурса QnA Maker
 
@@ -21,7 +23,7 @@ ms.locfileid: "87054179"
 
 |Тип вопроса|Описание ответа|
 |--|--|
-|Ответ в базе знаний, если ответ не определен|`No good match found in KB.`— Если [ЖЕНЕРАТЕАНСВЕР API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer) не находит соответствующего ответа на вопрос, `DefaultAnswer` возвращается значение службы приложений. Все базы знаний в одном ресурсе QnA Maker используют один и тот же текст ответа по умолчанию.<br>Вы можете управлять параметром в портал Azure, через службу приложений или с помощью интерфейсов API для [получения](https://docs.microsoft.com/rest/api/appservice/webapps/listapplicationsettings) или [обновления](https://docs.microsoft.com/rest/api/appservice/webapps/updateapplicationsettings) параметра.|
+|Ответ в базе знаний, если ответ не определен|`No good match found in KB.` — Если [ЖЕНЕРАТЕАНСВЕР API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer) не находит соответствующего ответа на вопрос, `DefaultAnswer` возвращается значение службы приложений. Все базы знаний в одном ресурсе QnA Maker используют один и тот же текст ответа по умолчанию.<br>Вы можете управлять параметром в портал Azure, через службу приложений или с помощью интерфейсов API для [получения](https://docs.microsoft.com/rest/api/appservice/webapps/listapplicationsettings) или [обновления](https://docs.microsoft.com/rest/api/appservice/webapps/updateapplicationsettings) параметра.|
 |Текст инструкций для дальнейших действий|При использовании дальнейших действий в потоке беседы может не потребоваться ответ в паре QnA, так как вы хотите, чтобы пользователь выберет следующие запросы. В этом случае задайте конкретный текст, задав текст ответа по умолчанию, который будет возвращен с каждым прогнозом для последующих запросов. Текст предназначен для вывода в качестве пояснительного текста к выбору запросов к исполнению. Пример для этого текста ответа по умолчанию — `Please select from the following choices` . Эта конфигурация описана в следующих разделах этого документа. Также может быть задан как часть определения базы знаний `defaultAnswerUsedForExtraction` с помощью [REST API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create).|
 
 ### <a name="client-application-integration"></a>Интеграция клиентского приложения

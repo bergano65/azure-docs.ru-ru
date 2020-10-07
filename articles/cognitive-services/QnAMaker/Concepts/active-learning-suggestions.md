@@ -1,14 +1,16 @@
 ---
 title: Активные варианты обучения — QnA Maker
 description: Активные предложения по обучению позволяют повысить качество базы знаний, предлагая альтернативные вопросы на основе отправленных пользователем данных в пару вопросов и ответов.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/19/2020
-ms.openlocfilehash: edbe06b12fbb97473b28ccca968fd3e7d8366152
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e8cdb1d471ceef2aef790c426424b9224faac5ec
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80804227"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777043"
 ---
 # <a name="active-learning-suggestions"></a>Активные предложения по обучению
 
@@ -129,7 +131,7 @@ QnA Maker нуждается в явном отзыве о том, какой и
 
 Используйте [API обучения](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train) , чтобы отправить правильный ответ на QnA Maker, после того как пользователь выберет его.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 > [!div class="nextstepaction"]
-> [Запрос к базе знаний](query-knowledge-base.md)
+> [Отправка запроса в базу знаний](query-knowledge-base.md)

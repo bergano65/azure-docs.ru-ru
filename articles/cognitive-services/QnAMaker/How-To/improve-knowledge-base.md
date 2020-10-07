@@ -1,15 +1,17 @@
 ---
 title: Рекомендуемые вопросы об активном обучении — QnA Maker
 description: Улучшите качество базы знаний с помощью активного обучения. Просмотр, принятие или отклонение, добавление без удаления или изменения существующих вопросов.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: bd90ea3cd73fcd6a545d925e3897c6053184d98c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7d7dc8564ee35bcd8bfd92d996d07e1d0c365806
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91321022"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776499"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -142,7 +144,7 @@ Content-Type: application/json
 |--|--|--|--|
 |`feedbackRecords`|массиве|Список отзывов.|
 |`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный элемент.|
-|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный.|
+|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный элемент.|
 |`qnaID`|number|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
 Пример текста JSON выглядит следующим образом:

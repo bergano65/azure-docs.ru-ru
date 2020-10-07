@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: cc9c7dda86d39d31b8c9a6329ac29970888f12d1
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d7ff32b33a8eab5c6729d84d38fec2e5b2c87449
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90904476"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777213"
 ---
-# <a name="use-the-azure-portal-to-manage-shares-on-your-azure-stack-edge-pro"></a>Использование портал Azure для управления общими папками на Azure Stack крае Pro
+# <a name="use-the-azure-portal-to-manage-shares-on-azure-stack-edge-pro"></a>Использование портал Azure для управления общими папками на Azure Stack крае Pro
 
 В этой статье описывается, как управлять общими папками на Azure Stack пограничных Pro. Вы можете управлять Azure Stack пограничным Pro через портал Azure или через локальный веб-интерфейс. С помощью портала Azure можно добавлять, удалять и обновлять общие папки или синхронизировать ключ хранилища для учетной записи хранения, связанной с общими папками.
 
@@ -74,7 +74,7 @@ ms.locfileid: "90904476"
 
 1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите в раздел **> шлюзы Общие ресурсы**. На панели команд щелкните **+ Добавление общего файлового ресурса**.
 
-   ![Выбор команды "Добавление общего файлового ресурса"](media/azure-stack-edge-manage-shares/add-local-share-1.png)
+   ![Выберите Добавить общий ресурс 2](media/azure-stack-edge-manage-shares/add-local-share-1.png)
 
 2. В разделе **Добавление общего файлового ресурса** укажите параметры общей папки. Укажите уникальное имя для общей папки.
     
@@ -106,7 +106,7 @@ ms.locfileid: "90904476"
 
 1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите в раздел **> шлюзы Общие ресурсы**. В списке общих папок выберите ту, которую необходимо подключить. Для выбранной общей папки в столбце **Используется для вычислений** отобразится состояние **Отключено**.
 
-   ![Выбор общей папки](media/azure-stack-edge-manage-shares/select-share-mount.png)
+   ![Выберите общий ресурс 3](media/azure-stack-edge-manage-shares/select-share-mount.png)
 
 2. Выберите **Подключить**.
 
@@ -130,7 +130,7 @@ ms.locfileid: "90904476"
 
 1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите в раздел **> шлюзы Общие ресурсы**.
 
-   ![Выбор общей папки](media/azure-stack-edge-manage-shares/select-share-unmount.png)
+   ![Выберите общий доступ 4](media/azure-stack-edge-manage-shares/select-share-unmount.png)
 
 2. В списке общих папок выберите папку, которую требуется отключить. Убедитесь, что она не используется модулем. Если же общая папка используется модулем, это приведет к возникновению проблем с модулем. Выберите **Отключить**.
 
@@ -150,7 +150,7 @@ ms.locfileid: "90904476"
 
 1. В списке общих папок выберите и щелкните папку, которую требуется удалить.
 
-   ![Выбор общей папки](media/azure-stack-edge-manage-shares/delete-share-1.png)
+   ![Выберите общий ресурс 5.](media/azure-stack-edge-manage-shares/delete-share-1.png)
 
 2. Щелкните **Удалить**.
 
@@ -175,7 +175,7 @@ ms.locfileid: "90904476"
 
 1. На портале Azure перейдите к разделу **Общие папки**. Выберите и щелкните общую папку, которую требуется обновить.
 
-   ![Выбор общей папки](media/azure-stack-edge-manage-shares/refresh-share-1.png)
+   ![Выберите общий доступ 6.](media/azure-stack-edge-manage-shares/refresh-share-1.png)
 
 2. Нажмите кнопку **Обновить**.
 

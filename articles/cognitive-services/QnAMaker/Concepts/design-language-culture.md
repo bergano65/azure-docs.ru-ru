@@ -1,14 +1,16 @@
 ---
 title: Разработка для языка — QnA Maker
 description: Ресурс QnA Maker и все базы знаний в этом ресурсе поддерживают один язык. Один язык необходим для предоставления лучших результатов ответа на запрос.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: 5cb1dcd35649debbafd2e234606ad4c9d6906ea6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e09e15f71b0574a5612e7f9bacd8aaa4739a441c
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76843426"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777009"
 ---
 # <a name="design-knowledge-base-for-content-language"></a>Проектирование базы знаний для языка содержимого
 
@@ -39,6 +41,6 @@ QnA Maker рекомендации по поддержке языков:
 * Добавлять только файлы и URL-адреса для этого языка
 * Используйте соглашение об именовании для ресурса, чтобы указать язык. Пример `qna-maker-fr` для всех баз знаний для французских документов
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [основными понятиями](query-knowledge-base.md) о том, как запросить ответ в базе знаний.

@@ -6,15 +6,16 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
+ms.subservice: text-analytics
 ms.topic: include
 ms.date: 04/29/2020
 ms.author: aahi
-ms.openlocfilehash: f1f36cc730ceca9a961769775d17de6be8d26948
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 1ac035e669ae6d5fcec8dfa8faee12d34039004b
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90906053"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91779413"
 ---
 Чтобы запустить контейнер *распознавание языка* , выполните следующую `docker run` команду. Замените заполнители ниже собственными значениями:
 
@@ -32,7 +33,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер *распознавание языка* из образа контейнера.
 * выделяет одно ядро ЦП и 4 ГБ памяти;

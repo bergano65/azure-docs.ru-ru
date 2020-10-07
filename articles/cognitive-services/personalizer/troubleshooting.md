@@ -1,14 +1,16 @@
 ---
 title: Устранение неполадок — Персонализация
 description: Эта статья содержит ответы на часто задаваемые вопросы об устранении неполадок персонализации.
+ms.service: cognitive-services
+ms.subservice: personalizer
 ms.topic: troubleshooting
 ms.date: 02/26/2020
-ms.openlocfilehash: 55b9068dbd7bfbb3ea3972c3381fda6d9cde5076
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: b5f7ed1f2ded8f6ec0320d417b59bab016d75028
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87126114"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777281"
 ---
 # <a name="personalizer-troubleshooting"></a>Устранение неполадок персонализации
 
@@ -26,7 +28,7 @@ ms.locfileid: "87126114"
 
 ## <a name="transaction-errors"></a>Ошибки транзакций
 
-### <a name="i-get-an-http-429-too-many-requests-response-from-the-service-what-can-i-do"></a>Я получаю ответ HTTP 429 (слишком много запросов) от службы. Что я могу сделать?
+### <a name="i-get-an-http-429-too-many-requests-response-from-the-service-what-can-i-do"></a>Я получаю ответ HTTP 429 (слишком много запросов) от службы. Что можно сделать?
 
 Если вы выбрали бесплатную ценовую категорию при создании экземпляра персонализации, то квота на количество запросов ранжирования будет ограничена. Проверьте частоту вызовов API для API ранжирования (на панели метрик в портал Azure ресурса персонализации) и настройте ценовую категорию (в области ценовая категория), если объем вызовов превышает порог для выбранной ценовой категории.
 
@@ -85,7 +87,7 @@ ms.locfileid: "87126114"
 
 ## <a name="security"></a>Безопасность
 
-### <a name="the-api-key-for-my-loop-has-been-compromised-what-can-i-do"></a>Ключ API для моего цикла был скомпрометирован. Что я могу сделать?
+### <a name="the-api-key-for-my-loop-has-been-compromised-what-can-i-do"></a>Ключ API для моего цикла был скомпрометирован. Что можно сделать?
 
 Вы можете повторно создать один ключ после замены клиентов на использование другого ключа. Наличие двух ключей позволяет передавать ключ отложенным образом без простоев. Мы рекомендуем сделать это на регулярном цикле в качестве меры безопасности.
 

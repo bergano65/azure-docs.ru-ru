@@ -6,15 +6,16 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
+ms.subservice: text-analytics
 ms.topic: include
 ms.date: 04/29/2020
 ms.author: aahi
-ms.openlocfilehash: d4ae9d793168a41930a51047caca6e0fb7e923b2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 97efad40b28b1736658ffcbe468fb448edb1dacc
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90906051"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91779420"
 ---
 Чтобы запустить контейнер *Извлечение ключевых фраз* , выполните следующую `docker run` команду. Замените заполнители ниже собственными значениями:
 
@@ -32,7 +33,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер *Извлечение ключевых фраз* из образа контейнера.
 * выделяет одно ядро ЦП и 4 ГБ памяти;

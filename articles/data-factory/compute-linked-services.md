@@ -10,12 +10,12 @@ author: nabhishek
 ms.author: abnarain
 manager: anandsub
 ms.date: 05/08/2019
-ms.openlocfilehash: 3d8e667cd96cc6d7091682a4530633588591d3a4
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 5f02a38059ebd27879a3c8d44eee7e473711d0e7
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89483195"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776516"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure
 
@@ -29,8 +29,7 @@ ms.locfileid: "89483195"
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Кластер HDInsight по запросу](#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](#azure-hdinsight-linked-service) | [Hive](transform-data-using-hadoop-hive.md), [Pig](transform-data-using-hadoop-pig.md), [Spark](transform-data-using-spark.md), [MapReduce](transform-data-using-hadoop-map-reduce.md), [потоковая передача Hadoop](transform-data-using-hadoop-streaming.md) |
 | [Пакетная служба Azure](#azure-batch-linked-service)                   | [Custom](transform-data-using-dotnet-custom-activity.md)     |
-| [Студия машинного обучения Azure](#azure-machine-learning-studio-linked-service) | [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md) |
-| [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Выполнение конвейера в Машинном обучении Azure](transform-data-machine-learning-service.md) |
+| [Машинное обучение Azure Studio (классическая модель)](#azure-machine-learning-studio-classic-linked-service) | [Действия Машинное обучение Studio (классическая модель): выполнение пакета и обновление ресурса](transform-data-using-machine-learning.md) |
 | [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Выполнение конвейера в Машинном обучении Azure](transform-data-machine-learning-service.md) |
 | [Azure Data Lake Analytics](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md) |
 | [Azure SQL](#azure-sql-database-linked-service), [Azure синапсе Analytics (ранее — хранилище данных SQL)](#azure-synapse-analytics-linked-service), [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
@@ -113,7 +112,7 @@ ms.locfileid: "89483195"
 
 #### <a name="properties"></a>Свойства
 
-| Свойство                     | Описание                              | Обязательно |
+| Свойство.                     | Описание                              | Обязательно |
 | ---------------------------- | ---------------------------------------- | -------- |
 | type                         | Свойству type необходимо присвоить значение **HDInsightOnDemand**. | Да      |
 | clusterSize                  | Общее количество рабочих узлов и узлов данных в кластере. Кластер HDInsight создается с 2 головными узлами и количеством рабочих узлов, заданным в этом свойстве. Узлы имеют размер Standard_D3 с 4 ядрами, то есть кластер с 4 рабочими узлами использует 24 ядра (4\*4 = 16 для рабочих узлов + 2\*4 = 8 для головных узлов). Дополнительные сведения см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md). | Да      |
@@ -298,7 +297,7 @@ ms.locfileid: "89483195"
 ```
 
 ### <a name="properties"></a>Свойства
-| Свойство          | Описание                                                  | Обязательно |
+| Свойство.          | Описание                                                  | Обязательно |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | type              | Свойству type необходимо присвоить значение **HDInsight**.            | Да      |
 | clusterUri        | Универсальный код ресурса (URI) кластера HDInsight.                            | Да      |
@@ -358,7 +357,7 @@ ms.locfileid: "89483195"
 
 
 ### <a name="properties"></a>Свойства
-| Свойство          | Описание                              | Обязательно |
+| Свойство.          | Описание                              | Обязательно |
 | ----------------- | ---------------------------------------- | -------- |
 | type              | Свойству type необходимо присвоить значение **AzureBatch**. | Да      |
 | accountName       | Имя учетной записи пакетной службы Azure         | Да      |
@@ -368,8 +367,8 @@ ms.locfileid: "89483195"
 | linkedServiceName | Имя связанной службы хранилища Azure, которая ассоциируется с этой связанной пакетной службой Azure. Эта связанная служба используется для промежуточных файлов, необходимых для выполнения действий. | Да      |
 | connectVia        | Среда выполнения интеграции, используемая для отправки действий в связанную службу. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет       |
 
-## <a name="azure-machine-learning-studio-linked-service"></a>Связанная служба Студии машинного обучения Azure
-Создайте связанную службу Студии машинного обучения Azure, чтобы зарегистрировать конечную точку пакетной оценки показателей машинного обучения оценки в фабрике данных.
+## <a name="azure-machine-learning-studio-classic-linked-service"></a>Связанная служба Машинное обучение Azure Studio (классическая модель)
+Вы создаете связанную службу Машинное обучение Azure Studio (классическая модель) для регистрации конечной точки пакетной оценки Машинное обучение Studio (классической) для фабрики данных.
 
 ### <a name="example"></a>Пример
 
@@ -394,12 +393,12 @@ ms.locfileid: "89483195"
 ```
 
 ### <a name="properties"></a>Свойства
-| Свойство               | Описание                              | Обязательно                                 |
+| Свойство.               | Описание                              | Обязательно                                 |
 | ---------------------- | ---------------------------------------- | ---------------------------------------- |
 | Тип                   | Свойству type необходимо присвоить значение **AzureML**. | Да                                      |
 | mlEndpoint             | URL-адрес пакетной оценки.                   | Да                                      |
 | apiKey                 | API модели опубликованной рабочей области.     | Да                                      |
-| updateResourceEndpoint | URL-адрес обновления ресурса для конечной точки веб-службы машинного обучения Azure, используемый для обновления прогнозной веб-службы с помощью файла обученной модели. | Нет                                       |
+| updateResourceEndpoint | URL-адрес ресурса обновления для конечной точки веб-службы Машинное обучение Azure Studio (классическая), используемой для обновления прогнозной веб-службы с помощью файла обученной модели | Нет                                       |
 | servicePrincipalId     | Укажите идентификатора клиента приложения.     | Требуется, если задано свойство updateResourceEndpoint |
 | servicePrincipalKey    | Укажите ключ приложения.           | Требуется, если задано свойство updateResourceEndpoint |
 | tenant                 | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Требуется, если задано свойство updateResourceEndpoint |
@@ -438,7 +437,7 @@ ms.locfileid: "89483195"
 ```
 
 ### <a name="properties"></a>Свойства
-| Свойство               | Описание                              | Обязательно                                 |
+| Свойство.               | Описание                              | Обязательно                                 |
 | ---------------------- | ---------------------------------------- | ---------------------------------------- |
 | Тип                   | Свойству type необходимо присвоить значение **AzureMLService**. | Да                                      |
 | subscriptionId         | Идентификатор подписки Azure.              | Да                                      |
@@ -481,7 +480,7 @@ ms.locfileid: "89483195"
 
 ### <a name="properties"></a>Свойства
 
-| Свойство             | Описание                              | Обязательно                                 |
+| Свойство.             | Описание                              | Обязательно                                 |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
 | type                 | Свойству type необходимо присвоить значение **AzureDataLakeAnalytics**. | Да                                      |
 | accountName          | Имя учетной записи аналитики озера данных Azure.  | Да                                      |
@@ -543,7 +542,7 @@ ms.locfileid: "89483195"
 
 ### <a name="properties"></a>Свойства
 
-| Свойство             | Описание                              | Обязательно                                 |
+| Свойство.             | Описание                              | Обязательно                                 |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
 | name                 | Имя связанной службы               | Да   |
 | type                 | Свойству type необходимо присвоить значение **Azure Databricks**. | Да                                      |

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: 59b2307bb2e1f4effce9f68530be86e9ca625c9c
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: e0b02f8d6a46c26b8927b4bac4d2089d3b57c295
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766291"
+ms.locfileid: "91777766"
 ---
 # <a name="manage-an-azure-stack-edge-pro-gpu-device-via-windows-powershell"></a>Управление устройством GPU Azure Stack с помощью Windows PowerShell
 
@@ -429,7 +429,7 @@ DEBUG 2020-05-14T20:42:14Z: loop process - 0 events, 0.000s
 
 Контроллер управления основной платой (BMC) используется для удаленного мониторинга и управления устройством. В этом разделе описываются командлеты, которые можно использовать для управления конфигурацией контроллера BMC. Перед запуском любого из этих командлетов [подключитесь к интерфейсу PowerShell устройства](#connect-to-the-powershell-interface).
 
-- `Get-HcsNetBmcInterface`: Используйте этот командлет для получения свойств конфигурации сети контроллера BMC, например,,, `IPv4Address` `IPv4Gateway` `IPv4SubnetMask` `DhcpEnabled` : 
+- `Get-HcsNetBmcInterface`: Используйте этот командлет для получения свойств конфигурации сети контроллера BMC, например,,, `IPv4Address` `IPv4Gateway` `IPv4SubnetMask` `DhcpEnabled` . 
     
     Пример выходных данных:
     
@@ -476,7 +476,7 @@ DEBUG 2020-05-14T20:42:14Z: loop process - 0 events, 0.000s
         [10.100.10.10]: PS>
         ```    
 
-- `Set-HcsBmcPassword`: Используйте этот командлет, чтобы изменить пароль контроллера BMC для `EdgeUser` . 
+- `Set-HcsBmcPassword`: Используйте этот командлет, чтобы изменить пароль контроллера BMC для `EdgeUser` . Имя пользователя- `EdgeUser` -чувствительно к регистру.
 
     Пример выходных данных: 
 

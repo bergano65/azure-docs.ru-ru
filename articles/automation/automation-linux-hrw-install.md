@@ -3,14 +3,14 @@ title: Развертывание гибридной рабочей роли Run
 description: В этой статье рассказывается, как установить гибридную рабочую роль Runbook службы автоматизации Azure для запуска модулей Runbook на компьютерах под управлением Linux в локальном центре обработки данных или в облачной среде.
 services: automation
 ms.subservice: process-automation
-ms.date: 09/15/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: fb975305e18315fa8d0a39e4fe0ab6902c98b7e7
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 8295b6bba9703c276bf60a0360ded6f0e195369e
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90987219"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776278"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -18,7 +18,7 @@ ms.locfileid: "90987219"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы начать, у вас должны быть следующие компоненты:
 
@@ -45,6 +45,10 @@ ms.locfileid: "90987219"
 ### <a name="log-analytics-agent"></a>Агент Log Analytics
 
 Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/platform/log-analytics-agent.md) для поддерживаемой операционной системы Linux.
+
+>[!NOTE]
+>После установки агента Log Analytics для Linux не следует изменять разрешения `sudoers.d` папки или ее владельца. Для учетной записи **нксаутоматион** требуется разрешение sudo, то есть пользовательский контекст, в котором выполняется Гибридная Рабочая роль Runbook. Не следует удалять разрешения. Это может привести к критическим изменениям в определенных папках или командах.
+>
 
 ### <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
 
@@ -86,7 +90,7 @@ ms.locfileid: "90987219"
 
 Гибридные рабочие роли Runbook Linux поддерживают ограниченный набор типов Runbook в службе автоматизации Azure, и они описаны в следующей таблице.
 
-|Тип Runbook | Поддерживается |
+|Тип Runbook | Поддерживаются: |
 |-------------|-----------|
 |Python 2; |Да |
 |PowerShell |Да<sup>1</sup> |

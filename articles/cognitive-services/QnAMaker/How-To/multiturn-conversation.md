@@ -1,14 +1,16 @@
 ---
 title: Множественная перевращение диалогов — QnA Maker
 description: Используйте приглашения и контекст для управления несколькими процессами, называемыми многоповоротными, для программы-робота с одного вопроса на другой. Множественная передача — это возможность иметь обратную и сквозную беседу, когда контекст предыдущего вопроса влияет на следующий вопрос и ответ.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: eff2eccac55bc05784636ecd9d2dfb784f86c4ef
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 57e878f11f5857f4c5b629a8069f64de259e8e7a
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322841"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777805"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Использование дальнейших подсказок для создания диалога с несколькими шагами
 
@@ -92,7 +94,7 @@ ms.locfileid: "91322841"
 
 Контекст множественной переворачивания отображается в первом столбце.
 
-:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="На снимке экрана показан выделенный раздел контекста." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
+:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="На снимке экрана показан пример структуры в руководстве пользователя." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
 
 На предыдущем рисунке **#1** обозначает полужирный текст в столбце, который обозначает текущий вопрос. Родительский вопрос — это верхний элемент в строке. Все приведенные ниже вопросы являются связанными парами вопросов и ответов. Эти элементы доступны для выбора, поэтому можно сразу же переходить к другим элементам контекста.
 
@@ -167,7 +169,7 @@ ms.locfileid: "91322841"
 
     Родительский вопрос отображает новый вопрос в качестве одного из вариантов.
 
-    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="На снимке экрана показан контекстный столбец для обоих вопросов." lightbox="../media/conversational-context/child-prompt-created.png":::
+    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="На снимке экрана показан пример структуры в руководстве пользователя." lightbox="../media/conversational-context/child-prompt-created.png":::
 
 1. После добавления дальнейших действий выберите **сохранить и обучить** на верхней панели навигации.
 
