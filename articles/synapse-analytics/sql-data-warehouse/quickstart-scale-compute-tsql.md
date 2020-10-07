@@ -1,5 +1,5 @@
 ---
-title: Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
+title: Краткое руководство. Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
 description: Масштабируйте вычислительные ресурсы в Azure Synapse Analytics с использованием T-SQL и SQL Server Management Studio. Горизонтально увеличивайте масштаб вычислительных ресурсов, чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить расходы.
 services: synapse-analytics
 author: Antvgski
@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: cb813c9a30b644459f3e586ed4313ca070b5a746
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: d11474a3f3b5d8c314f67260fddbbe0a98fe5196
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85212927"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569899"
 ---
 # <a name="quickstart-scale-compute-in-azure-synapse-analytics-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
 
@@ -132,7 +132,7 @@ ms.locfileid: "85212927"
 
 ## <a name="check-data-warehouse-state"></a>Проверка состояния хранилища данных
 
-Если хранилище данных остановлено, вы не сможете подключиться к нему с помощью T-SQL. Чтобы просмотреть текущее состояние хранилища данных, используйте командлет PowerShell. Пример см. в разделе о [проверке состояния хранилища данных с помощью Powershell](quickstart-scale-compute-powershell.md#check-data-warehouse-state).
+Если хранилище данных остановлено, вы не сможете подключиться к нему с помощью T-SQL. Чтобы просмотреть текущее состояние хранилища данных, используйте командлет PowerShell. Пример см. в разделе [Проверка состояния хранилища данных](quickstart-scale-compute-powershell.md#check-data-warehouse-state).
 
 ## <a name="check-operation-status"></a>Проверка состояния операции
 

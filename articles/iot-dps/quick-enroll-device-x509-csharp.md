@@ -1,20 +1,20 @@
 ---
-title: Регистрация устройств X.509 в службе подготовки устройств Azure с помощью C#
+title: Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств Azure с помощью C#
 description: В этом кратком руководстве используется групповая регистрация. С помощью этого краткого руководства вы можете зарегистрировать устройства X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью C#.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/08/2019
+ms.date: 09/28/2020
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 89d98cdf6f635cab3b85462adf5c6695f7c4482e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 618b2c6acb8792382adb4c067aa8f33003227091
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89020938"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532590"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-c"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью C#
 
@@ -159,12 +159,15 @@ ms.locfileid: "89020938"
    }
    ```
 
-1. Осталось заменить текст метода `Main` следующими строками:
+1. Осталось заменить метод `Main` следующими строками:
 
    ```csharp
-   RunSample().GetAwaiter().GetResult();
-   Console.WriteLine("\nHit <Enter> to exit ...");
-   Console.ReadLine();
+    static async Task Main(string[] args)
+    {
+        await RunSample();
+        Console.WriteLine("\nHit <Enter> to exit ...");
+        Console.ReadLine();
+    }
    ```
 
 1. Создайте решение.

@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: timlt
-ms.openlocfilehash: 1a27d748e16f892a748cf18569c13ca3f9ead1dd
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: a8314fed43c8282c536fc6e95e6c3aa877408b09
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "71309519"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542501"
 ---
 # <a name="what-are-azure-iot-solution-accelerators"></a>Что такое акселераторы решений Интернета вещей Azure?
 
@@ -46,7 +46,7 @@ ms.locfileid: "71309519"
 
 Панель мониторинга подключенного производства можно использовать для отслеживания и управления производственными устройствами.
 
-[![Панель мониторинга решений подключенного производства](./media/about-iot-accelerators/cf-dashboard-inline.png)](./media/about-iot-accelerators/cf-dashboard-expanded.png#lightbox)
+:::image type="content" source="./media/about-iot-accelerators/cf-dashboard-inline.png" alt-text="Снимок экрана: панель мониторинга подключенного производства" lightbox="./media/about-iot-accelerators/cf-dashboard-expanded.png":::
 
 ### <a name="predictive-maintenance"></a>Прогнозное обслуживание
 
@@ -54,7 +54,7 @@ ms.locfileid: "71309519"
 
 Панель мониторинга диагностического обслуживания можно использовать для просмотра аналитики диагностического обслуживания.
 
-[![Панель мониторинга решений подключенного производства](./media/about-iot-accelerators/pm-dashboard-inline.png)](./media/about-iot-accelerators/pm-dashboard-expanded.png#lightbox)
+:::image type="content" source="./media/about-iot-accelerators/pm-dashboard-inline.png" alt-text="Снимок экрана: панель мониторинга подключенного производства" lightbox="./media/about-iot-accelerators/pm-dashboard-expanded.png":::
 
 ### <a name="device-simulation"></a>Имитация устройства
 

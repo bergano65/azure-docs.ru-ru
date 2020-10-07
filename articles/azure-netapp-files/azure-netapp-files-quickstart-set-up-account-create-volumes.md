@@ -6,14 +6,14 @@ ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: quickstart
-ms.date: 06/09/2020
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 92d92072fbc8ceebdd4fd9253620e5fba89bfb54
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.date: 09/22/2020
+ms.custom: devx-track-azurecli, subject-armqs
+ms.openlocfilehash: d118bef4a7ccc263010fe176432a5301c4104118
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87987517"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91533916"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
@@ -53,7 +53,7 @@ ms.locfileid: "87987517"
 
 Для работы с этой статьей требуется модуль Azure PowerShell Az 2.6.0 или более поздней версии. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). При желании вместо сеанса PowerShell можно использовать консоль Cloud Shell.
 
-1. В командной строке PowerShell (или сеансе Cloud Shell PowerShell) укажите подписку, которая была добавлена в список разрешений для Azure NetApp Files:
+1. В командной строке PowerShell (или сеансе Cloud Shell PowerShell) укажите подписку, которая была утверждена для Azure NetApp Files:
     ```powershell-interactive
     Select-AzSubscription -Subscription <subscriptionId>
     ```
@@ -66,6 +66,14 @@ ms.locfileid: "87987517"
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [!INCLUDE [azure-netapp-files-cloudshell-include](../../includes/azure-netapp-files-azure-cloud-shell-window.md)]
+
+# <a name="template"></a>[Шаблон](#tab/template)
+
+Отсутствует.  
+
+Для регистрации Azure NetApp Files и поставщика ресурсов NetApp используйте портал Azure, PowerShell или Azure CLI.  
+
+Дополнительные сведения см. в статье [Регистрация в службе Azure NetApp Files](azure-netapp-files-register.md). 
 
 ---
 
@@ -151,6 +159,17 @@ ms.locfileid: "87987517"
         --location $LOCATION \
         --account-name $ANF_ACCOUNT_NAME
     ```
+
+# <a name="template"></a>[Шаблон](#tab/template)
+
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+В следующем фрагменте кода показано, как создать учетную запись NetApp в шаблоне Azure Resource Manager (ARM) с помощью ресурса [Microsoft.NetApp/netAppAccounts](https://docs.microsoft.com/azure/templates/microsoft.netapp/netappaccounts). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
+
+:::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="177-183":::
+
+<!-- Block begins with "type": "Microsoft.NetApp/netAppAccounts", -->
+
 ---
 
 ## <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
@@ -167,14 +186,15 @@ ms.locfileid: "87987517"
 
 3. Щелкните **+ Добавить пулы**. 
 
-    ![Выбор "+ Добавить пулы"](../media/azure-netapp-files/azure-netapp-files-click-add-pools.png)  
+    ![Выбор "+ Добавить пулы"](../media/azure-netapp-files/azure-netapp-files-new-capacity-pool.png)  
 
 4. Укажите сведения о пуле емкости. 
-    1. Введите имя пула **mypool1**.
-    2. Выберите уровень обслуживания **Премиум**. 
-    3. Укажите размер пула **4 (Тиб)** . 
+    * Введите имя пула **mypool1**.
+    * Выберите уровень обслуживания **Премиум**. 
+    * Укажите размер пула **4 (Тиб)** . 
+    * Используйте тип качества обслуживания **Авто**.
 
-5. Нажмите кнопку **ОК**.
+5. Нажмите кнопку **Создать**.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -213,6 +233,16 @@ ms.locfileid: "87987517"
         --size $POOL_SIZE_TiB \
         --service-level $SERVICE_LEVEL
     ```
+
+# <a name="template"></a>[Шаблон](#tab/template)
+
+<!-- [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)] -->
+
+В следующем фрагменте кода показано, как создать пул емкости в шаблоне Azure Resource Manager (ARM) с помощью ресурса [Microsoft.NetApp/netAppAccounts/capacityPools](https://docs.microsoft.com/azure/templates/microsoft.netapp/netappaccounts/capacitypools). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
+
+:::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="184-196":::
+
+<!-- LN 185, block begins with  "type": "Microsoft.NetApp/netAppAccounts/capacityPools", -->
 
 ---
 
@@ -353,6 +383,20 @@ ms.locfileid: "87987517"
         --protocol-types "NFSv3"
     ```
 
+# <a name="template"></a>[Шаблон](#tab/template)
+
+<!-- [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)] --> 
+
+В следующих фрагментах кода показано, как настроить виртуальную сеть и создать том Azure NetApp Files в шаблоне Azure Resource Manager (ARM). Для настройки виртуальной сети требуется ресурс [Microsoft.Network/virtualNetworks](https://docs.microsoft.com/azure/templates/Microsoft.Network/virtualNetworks). Для создания тома используется ресурс [Microsoft.NetApp/netAppAccounts/capacityPools/volumes](https://docs.microsoft.com/azure/templates/microsoft.netapp/netappaccounts/capacitypools/volumes). Чтобы запустить код, скачайте [полный шаблон ARM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-anf-nfs-volume/azuredeploy.json) из нашего репозитория GitHub.
+
+:::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="148-176":::
+
+<!-- Block begins with  "type": "Microsoft.Network/virtualNetworks", -->
+
+:::code language="json" source="~/quickstart-templates/101-anf-nfs-volume/azuredeploy.json" range="197-229":::
+
+<!-- Block begins with  "type": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes", -->
+
 ---
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -373,13 +417,13 @@ ms.locfileid: "87987517"
 
 3. На странице группы ресурсов выберите команду **Удалить группу ресурсов**.
 
-    ![Удалить группу ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-delete-resource-group.png) 
+    ![Снимок экрана, на котором выделена кнопка "Удалить группу ресурсов".](../media/azure-netapp-files/azure-netapp-files-azure-delete-resource-group.png) 
 
     Откроется окно с предупреждением о ресурсах, которые будут удалены вместе с группой ресурсов.
 
 4. Введите имя группы ресурсов (myRG1) для подтверждения того, что вы хотите окончательно удалить группу ресурсов и все входящие в нее ресурсы, а затем нажмите кнопку **Удалить**.
 
-    ![Удалить группу ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-confirm-resource-group-deletion.png ) 
+    ![Подтверждение удаления группы ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-confirm-resource-group-deletion.png ) 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -407,6 +451,13 @@ ms.locfileid: "87987517"
     az group delete \
         --name $RESOURCE_GROUP
     ```
+
+# <a name="template"></a>[Шаблон](#tab/template)
+
+Отсутствует.
+
+Чтобы удалить группу ресурсов, используйте портал Azure, PowerShell или Azure CLI.   
+
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия  

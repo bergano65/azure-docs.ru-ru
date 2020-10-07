@@ -1,81 +1,64 @@
 ---
-title: Подключение примера кода устройства IoT Plug and Play (предварительная версия) компонента C# к Центру Интернета вещей | Документация Майкрософт
-description: Создание и запуск примера кода C# устройства IoT Plug and Play (предварительная версия), который использует несколько компонентов и подключается к Центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Подключение примера кода C# устройства IoT Plug and Play к Центру Интернета вещей | Документация Майкрософт
+description: Создание и запуск примера кода C# устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 67b71399332fb29a277381a8c2806dbe7fb31d85
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: f6f87ed4ba74c3f7750e56d4bb8473cf4b1a4341
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552159"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575390"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-multiple-component-device-application-running-on-windows-to-iot-hub-c"></a>Руководство по подключению приложения устройства IoT Plug and Play с несколькими компонентами в Windows к Центру Интернета вещей (C#)
 
 [!INCLUDE [iot-pnp-tutorials-device-selector.md](../../includes/iot-pnp-tutorials-device-selector.md)]
 
-В этом учебнике показано, как создать пример приложения устройства IoT Plug and Play с компонентами и корневым интерфейсом, подключить его к центру Интернета вещей и с помощью обозревателя центра Интернета вещей Azure просмотреть сведения, отправляемые в центр. Пример приложения написан на языке C# и включен в пакет SDK для устройств центра Интернета вещей Azure для C#. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+В этом руководстве показано, как создать пример приложения устройства IoT Plug and Play с компонентами, подключить его к центру Интернета вещей и с помощью обозревателя Интернета вещей Azure просмотреть сведения, отправляемые в центр. Пример приложения написан на языке C# и включен в пакет SDK для устройств центра Интернета вещей Azure для C#. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [iot-pnp-prerequisites](../../includes/iot-pnp-prerequisites.md)]
 
 Для выполнения инструкций из этого учебника в ОС Windows установите в локальной среде Windows такое программное обеспечение:
 
 * [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/).
 * [Git](https://git-scm.com/download/).
-* [CMake](https://cmake.org/download/).
 
-### <a name="azure-iot-explorer"></a>Обозреватель Интернета вещей Azure
+### <a name="clone-the-sdk-repository-with-the-sample-code"></a>Клонирование репозитория пакета SDK с помощью примера кода
 
-Для взаимодействия с примером устройства во второй части этого учебника используется **обозреватель Интернета вещей Azure**. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
+Если вы ознакомились с [Кратким руководством по подключению примера приложения устройства IoT Plug and Play в Windows к Центру Интернета вещей (C#)](quickstart-connect-device-csharp.md), значит вы уже клонировали репозиторий.
 
-[!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
-
-Выполните следующую команду, чтобы получить _строку подключения к Центру Интернета вещей_ для вашего концентратора. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим учебником.
-
-```azurecli-interactive
-az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
-```
-
-> [!TIP]
-> Вы также можете использовать обозреватель Интернета вещей, чтобы найти строку подключения для центра Интернета вещей.
-
-Выполните указанную ниже команду, чтобы получить _строку подключения устройства_, добавленного в центр. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим учебником.
-
-```azurecli-interactive
-az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output table
-```
-
-[!INCLUDE [iot-pnp-download-models.md](../../includes/iot-pnp-download-models.md)]
-
-## <a name="download-the-code"></a>Загрузка кода
-
-С помощью этого учебника вы подготовите среду разработки, которую можно использовать для клонирования и сборки пакета SDK для устройств Центра Интернета вещей Azure для C#.
-
-Откройте командную строку в выбранном каталоге. Выполните следующую команду для клонирования репозитория GitHub [пакетов SDK и библиотек Интернета вещей Azure для C#](https://github.com/Azure/azure-iot-sdk-csharp) в это расположение:
+Клонируйте примеры из репозитория пакета SDK для Интернета вещей Microsoft Azure для .NET на сайте GitHub. Откройте командную строку в выбранной папке. С помощью следующей команды клонируйте репозиторий примеров [Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp) с сайта GitHub.
 
 ```cmd
-git clone https://github.com/Azure/azure-iot-sdk-csharp.git
+git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 ```
 
-## <a name="build-the-code"></a>Сборка кода
+## <a name="run-the-sample-device"></a>Запуск примера устройства
 
-Откройте файл решения **azureiot.sln** в Visual Studio 2019 и задайте проект **TemperatureController** в качестве запускаемого проекта. В **Обозревателе решений** этот файл проекта можно найти в разделе **iothub > Примеры > Устройства**.
+С помощью этого краткого руководства вы сможете использовать пример устройства котроллера температуры, написанный на C#, как устройство IoT Plug and Play. Чтобы запустить пример устройства, сделайте следующее:
 
-Теперь можно создать пример в Visual Studio и запустить его в режиме отладки.
+1. Откройте файл проекта *azure-iot-samples-csharp\iot-hub\Samples\device\PnpDeviceSamples\TemperatureController\TemperatureController.csproj* в Visual Studio 2019.
 
-## <a name="run-the-device-sample"></a>Запуск примера устройства
+1. В Visual Studio последовательно выберите **Проект > TemperatureController Properties (Свойства контроллера температуры) > Отладка**. Затем добавьте в проект следующие переменные среды:
 
-Создайте переменную среды с именем **IOTHUB_DEVICE_CONNECTION_STRING**, чтобы сохранить строку подключения устройства, которую вы записали ранее.
+    | Имя | Значение |
+    | ---- | ----- |
+    | IOTHUB_DEVICE_SECURITY_TYPE | DPS |
+    | IOTHUB_DEVICE_DPS_ENDPOINT | global.azure-devices-provisioning.net |
+    | IOTHUB_DEVICE_DPS_ID_SCOPE | Значение, которое записали после завершения [настройки среды](set-up-environment.md). |
+    | IOTHUB_DEVICE_DPS_DEVICE_ID | my-pnp-device |
+    | IOTHUB_DEVICE_DPS_DEVICE_KEY | Значение, которое записали после завершения [настройки среды](set-up-environment.md). |
 
-Для трассировки выполнения кода в Visual Studio в Windows добавьте точку останова в функцию `main` в файле program.cs.
 
-Теперь устройство готово к получению команд и обновлений свойств и начало отправлять данные телеметрии в концентратор. Продолжите работу примера, после того как выполните следующие действия.
+1. Теперь можно создать пример в Visual Studio и запустить его в режиме отладки.
+
+1. Отобразится сообщение о том, что устройство отправило определенные сведения и находится в сети. Эти сообщения означают, что устройство начало отправлять в концентратор данные телеметрии и теперь готово получать команды и обновления свойств. Не закрывайте этот экземпляр Visual Studio, он понадобится вам, чтобы проверить работу примера службы.
 
 ## <a name="use-azure-iot-explorer-to-validate-the-code"></a>Проверка кода с помощью обозревателя Интернета вещей Azure
 
@@ -90,52 +73,57 @@ git clone https://github.com/Azure/azure-iot-sdk-csharp.git
 Код устройства подключается к центру Интернета вещей с помощью стандартного метода `CreateFromConnectionString`. Устройство отправляет идентификатор модели DTDL, которую он реализует в запросе на подключение. Устройство, отправляющее идентификатор модели, — это устройство IoT Plug and Play:
 
 ```csharp
-private static void InitializeDeviceClientAsync()
+private static DeviceClient InitializeDeviceClient(string hostname, IAuthenticationMethod authenticationMethod)
 {
-  var options = new ClientOptions
-  {
-      ModelId = ModelId,
-  };
-  s_deviceClient = DeviceClient.CreateFromConnectionString(s_deviceConnectionString, TransportType.Mqtt, options);
-  s_deviceClient.SetConnectionStatusChangesHandler((status, reason) =>
-  {
-      s_logger.LogDebug($"Connection status change registered - status={status}, reason={reason}.");
-  });
+    var options = new ClientOptions
+    {
+        ModelId = ModelId,
+    };
+
+    var deviceClient = DeviceClient.Create(hostname, authenticationMethod, TransportType.Mqtt, options);
+    deviceClient.SetConnectionStatusChangesHandler((status, reason) =>
+    {
+        s_logger.LogDebug($"Connection status change registered - status={status}, reason={reason}.");
+    });
+
+    return deviceClient;
 }
 ```
 
 Идентификатор модели хранится в коде, как показано в следующем фрагменте кода:
 
 ```csharp
-private const string ModelId = "dtmi:com:example:Thermostat;1";
+private const string ModelId = "dtmi:com:example:TemperatureController;1";
 ```
 
-После подключения устройства к центру Интернета вещей код начнет регистрировать обработчики команд. Команда `reboot` указана в корневом интерфейсе. Команда `getMaxMinReport` указана в каждом из двух компонентов термостата:
+После подключения устройства к центру Интернета вещей код начнет регистрировать обработчики команд. Команда `reboot` определяется в компоненте по умолчанию. Команда `getMaxMinReport` указана в каждом из двух компонентов термостата:
 
 ```csharp
-await s_deviceClient.SetMethodHandlerAsync("reboot", HandleRebootCommandAsync, s_deviceClient);
-await s_deviceClient.SetMethodHandlerAsync("thermostat1*getMaxMinReport", HandleMaxMinReportCommandAsync, Thermostat1);
-await s_deviceClient.SetMethodHandlerAsync("thermostat2*getMaxMinReport", HandleMaxMinReportCommandAsync, Thermostat2);
+await _deviceClient.SetMethodHandlerAsync("reboot", HandleRebootCommandAsync, _deviceClient, cancellationToken);
+await _deviceClient.SetMethodHandlerAsync("thermostat1*getMaxMinReport", HandleMaxMinReportCommandAsync, Thermostat1, cancellationToken);
+await _deviceClient.SetMethodHandlerAsync("thermostat2*getMaxMinReport", HandleMaxMinReportCommandAsync, Thermostat2, cancellationToken);
+
 ```
 
 На двух компонентах термостата имеются отдельные обработчики для обновления требуемых свойств:
 
 ```csharp
-s_desiredPropertyUpdateCallbacks.Add(Thermostat1, TargetTemperatureUpdateCallbackAsync);
-s_desiredPropertyUpdateCallbacks.Add(Thermostat2, TargetTemperatureUpdateCallbackAsync);
+_desiredPropertyUpdateCallbacks.Add(Thermostat1, TargetTemperatureUpdateCallbackAsync);
+_desiredPropertyUpdateCallbacks.Add(Thermostat2, TargetTemperatureUpdateCallbackAsync);
+
 ```
 
 Пример кода отправляет данные телеметрии из каждого компонента термостата:
 
 ```csharp
-await SendTemperatureAsync(Thermostat1);
-await SendTemperatureAsync(Thermostat2);
+await SendTemperatureAsync(Thermostat1, cancellationToken);
+await SendTemperatureAsync(Thermostat2, cancellationToken);
 ```
 
-Метод `SendTemperature` использует класс `PnpHhelper` для создания сообщений для каждого компонента:
+Метод `SendTemperatureTelemetryAsync` использует класс `PnpHhelper` для создания сообщений для каждого компонента:
 
 ```csharp
-Message msg = PnpHelper.CreateIothubMessageUtf8(telemetryName, JsonConvert.SerializeObject(currentTemperature), componentName);
+using Message msg = PnpHelper.CreateIothubMessageUtf8(telemetryName, JsonConvert.SerializeObject(currentTemperature), componentName);
 ```
 
 Класс `PnpHelper` содержит другие примеры методов, которые можно использовать с многокомпонентной моделью.
@@ -144,13 +132,11 @@ Message msg = PnpHelper.CreateIothubMessageUtf8(telemetryName, JsonConvert.Seria
 
 :::image type="content" source="media/tutorial-multiple-components-csharp/multiple-component.png" alt-text="Многокомпонентное устройство в обозревателе Интернета вещей Azure":::
 
-Кроме того, средство обозревателя Интернета вещей Azure можно использовать для вызова команд в одном из двух компонентов термостата или в корневом интерфейсе.
-
-[!INCLUDE [iot-pnp-clean-resources.md](../../includes/iot-pnp-clean-resources.md)]
+Кроме того, средство обозревателя Интернета вещей Azure можно использовать для вызова команд в одном из двух компонентов термостата или в компоненте по умолчанию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого учебника вы узнали, как подключить устройство IoT Plug and Play с компонентами к центру Интернета вещей. Дополнительные сведения о моделях устройства IoT Plug and Play см. в статье
 
 > [!div class="nextstepaction"]
-> [Руководство для разработчиков IoT Plug and Play (предварительная версия)](concepts-developer-guide.md)
+> [Руководство разработчика IoT Plug and Play](concepts-developer-guide-device-csharp.md)

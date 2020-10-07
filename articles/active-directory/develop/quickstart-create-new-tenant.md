@@ -1,6 +1,7 @@
 ---
-title: Создание клиента Azure Active Directory
-description: Узнайте, как создать клиент Azure Active Directory для регистрации и создания приложений.
+title: Краткое руководство. Создание клиента Azure Active Directory
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как создать клиент Azure Active Directory для использования в разрабатываемых приложениях, применяющих платформу удостоверений Майкрософт для проверки подлинности и авторизации.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -12,12 +13,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: df873e49e1bc581a32bcb4e4b40b2b24db98cee5
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 60d789c4297c400b812cd6c5c19c8c6148cb347d
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120819"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575985"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -26,6 +27,10 @@ ms.locfileid: "88120819"
 Клиент представляет организацию. Это выделенный экземпляр службы Azure AD, который организация или разработчик приложения получает после начала сотрудничества с корпорацией Майкрософт, то есть после регистрации в Azure, Microsoft Intune или Microsoft 365.
 
 Каждый клиент Azure AD отличается и отделяется от других клиентов Azure AD и имеет собственное представление рабочих и учебных учетных записей, удостоверений потребителей (если это клиент Azure AD B2C) и регистрации приложений. Регистрация приложения в клиенте может позволить осуществить проверку подлинности из учетных записей только в своем клиенте или во всех клиентах.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 ## <a name="determining-environment-type"></a>Определение типа среды
 
@@ -71,6 +76,5 @@ ms.locfileid: "88120819"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Зарегистрируйте приложение](quickstart-register-app.md) и выполните интеграцию с платформой идентификации Майкрософт. 
-* Ознакомьтесь с [основами аутентификации](./authentication-vs-authorization.md).
-* Для получения сведений о том, как подписки Azure связаны с клиентом Azure AD см. статью [Привязка или добавление подписки Azure к клиенту Azure Active Directory](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
+> [!div class="nextstepaction"]
+> [Зарегистрируйте приложение](quickstart-register-app.md), чтобы выполнить интеграцию с платформой удостоверений Майкрософт.

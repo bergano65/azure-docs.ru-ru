@@ -1,51 +1,44 @@
 ---
-title: Использование MQTT для создания клиента устройства IoT Plug and Play (предварительная версия) | Документация Майкрософт
-description: Используя протокол MQTT напрямую, вы можете создать клиент устройства IoT Plug and Play (предварительная версия), не применяя пакеты SDK для устройств Azure IoT.
+title: Использование MQTT для создания клиента устройства IoT Plug and Play | Документация Майкрософт
+description: Используя протокол MQTT напрямую, вы можете создать клиент устройства IoT Plug and Play, не применяя пакеты SDK для устройств Azure IoT.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 05/13/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 56463b03fe633959585e14271050bcdaacb25663
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 2e05165a78a54d6aaa49c28a649a97235891f927
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87535210"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577923"
 ---
-# <a name="use-mqtt-to-develop-an-iot-plug-and-play-preview-device-client"></a>Использование MQTT для разработки клиента устройства IoT Plug and Play (предварительная версия)
+# <a name="use-mqtt-to-develop-an-iot-plug-and-play-device-client"></a>Использование MQTT для разработки клиента устройства IoT Plug and Play
 
 При возможности в процессе создания клиентов устройств IoT Plug and Play вы должны использовать один из пакетов SDK для устройств Azure IoT. Но в некоторых сценариях, например при ограниченном объеме памяти на устройстве, возможно, потребуется использовать библиотеку MQTT для обмена данными с центром Интернета вещей.
 
 В примере в этом руководстве используется библиотека MQTT [Eclipse Mosquitto](http://mosquitto.org/) и Visual Studio. В инструкциях этого руководства предполагается, что на компьютере разработки вы используете Windows.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [iot-pnp-prerequisites](../../includes/iot-pnp-prerequisites.md)]
 
 Для выполнения инструкций из этого учебника в ОС Windows установите в локальной среде Windows такое программное обеспечение:
 
-* [Visual Studio (Community, Professional или Enterprise).](https://visualstudio.microsoft.com/downloads/) При [установке](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019) Visual Studio обязательно добавьте рабочую нагрузку **Разработка классических приложений на C++** .
+* [Visual Studio (Community, Professional или Enterprise).](https://visualstudio.microsoft.com/downloads/) При [установке](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019&preserve-view=true) Visual Studio обязательно добавьте рабочую нагрузку **Разработка классических приложений на C++** .
 * [Git](https://git-scm.com/download/);
 * [CMake](https://cmake.org/download/).
-* [Обозреватель Интернета вещей Azure](howto-install-iot-explorer.md)
 
-[!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
-
-Выполните следующую команду, чтобы получить подписанный URL-адрес для подключения устройства к центру. Запишите эту строку. Вы будете использовать ее позже при работе с этим руководством:
-
-```azurecli-interactive
-az iot hub generate-sas-token -d <YourDeviceID> -n <YourIoTHubName>
-az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
-```
-
-Используйте строку подключения к центру Интернета вещей, чтобы настроить**обозреватель Интернета вещей Azure**:
+Используйте средство *обозревателя Интернета вещей Azure* для добавления нового устройства к Центру Интернета вещей. После завершения работы со статьей [Настройка среды для кратких руководств и учебников IoT Plug and Play](set-up-environment.md) вы настроите центр Интернета вещей и средство обозревателя Интернета вещей Azure:
 
 1. Запустите **обозреватель Интернета вещей Azure**.
-1. На странице **Параметры** вставьте строку подключения к центру Интернета вещей в параметры **Конфигурации приложений**.
-1. Выберите **Сохранить и подключиться**.
-1. Добавленное ранее устройство будет доступно в списке устройств на главной странице.
+1. На странице **Центры Интернета вещей** выберите **View devices in this hub** (Просмотр устройств в этом центре).
+1. На странице **Устройства** выберите **+ Создать**.
+1. Создайте устройство с именем *my-mqtt-device*, которое использует автоматически сформированный симметричный ключ.
+1. На странице **Device identity** (Удостоверение устройства) разверните **Connection string with SAS token** (Строка подключения с маркером SAS).
+1. Выберите **Первичный ключ** для использования в качестве **симметричного ключа**, установите срок действия 60 минут и щелкните **Создать**.
+1. Скопируйте созданную **строку подключения маркера SAS**, это значение будет использоваться позже в этом учебнике.
 
 ## <a name="clone-sample-repo"></a>Клонирование примера репозитория
 
@@ -89,11 +82,11 @@ cd vcpkg
 
 В **Обозревателе решений** щелкните правой кнопкой мыши проект **TelemetryMQTTWin32** и выберите **Назначить запускаемым проектом**.
 
-В проекте **TelemetryMQTTWin32** откройте исходный файл **MQTT_Mosquitto.cpp**. Внесите в определения данных о подключениях сведения об устройстве, которые вы записали ранее. Замените заполнитель строки маркера для:
+В проекте **TelemetryMQTTWin32** откройте исходный файл **MQTT_Mosquitto.cpp**. Внесите в определения данных о подключениях сведения об устройстве, которые вы записали ранее. Замените заполнители строк маркера для:
 
-* идентификатора `IOTHUBNAME` именем созданного вами центра Интернета вещей;
-* идентификатора `DEVICEID` именем созданного устройства;
-* идентификатора `PWD` значением подписанного URL-адреса, которое вы создали для устройства.
+* Идентификатора `IOTHUBNAME` на имя центра Интернета вещей.
+* Идентификатора `DEVICEID` на `my-mqtt-device`.
+* Идентификатора `PWD` на правильную часть созданной для устройства строки подключения маркера SAS. Используйте часть строки подключения от `SharedAccessSignature sr=` и до конца.
 
 Убедитесь, что код работает правильно, запустив обозреватель Интернета вещей Azure и начав прослушивание телеметрии.
 
@@ -103,18 +96,18 @@ cd vcpkg
 
 В обозревателе Интернета вещей Azure вы увидите, что устройство не является устройством IoT Plug and Play:
 
-:::image type="content" source="media/tutorial-use-mqtt/non-pnp-iot-explorer.png" alt-text="Устройство, не относящееся к IoT Plug and Play, в обозревателе Интернета вещей Azure":::
+:::image type="content" source="media/tutorial-use-mqtt/non-pnp-iot-explorer.png" alt-text="Выходные данные примера приложения MQTT":::
 
 ### <a name="make-the-device-an-iot-plug-and-play-device"></a>Включение IoT Plug and Play для устройства
 
 Устройство IoT Plug and Play должно соответствовать ряду простых соглашений. Если устройство отправляет идентификатор модели при подключении, оно становится устройством IoT Plug and Play.
 
-В этом примере вы добавите идентификатор модели** к пакету подключения MQTT. Вы передадите идентификатор модели в качестве параметра querystring в `USERNAME` и измените `api-version` на `2020-05-31-preview`:
+В этом примере вы добавите идентификатор модели к пакету подключения MQTT. Вы передадите идентификатор модели в качестве параметра querystring в `USERNAME` и измените `api-version` на `2020-09-30`:
 
 ```c
 // computed Host Username and Topic
 //#define USERNAME IOTHUBNAME ".azure-devices.net/" DEVICEID "/?api-version=2018-06-30"
-#define USERNAME IOTHUBNAME ".azure-devices.net/" DEVICEID "/?api-version=2020-05-31-preview&model-id=dtmi:com:example:Thermostat;1"
+#define USERNAME IOTHUBNAME ".azure-devices.net/" DEVICEID "/?api-version=2020-09-30&model-id=dtmi:com:example:Thermostat;1"
 #define PORT 8883
 #define HOST IOTHUBNAME //".azure-devices.net"
 #define TOPIC "devices/" DEVICEID "/messages/events/"
@@ -124,16 +117,13 @@ cd vcpkg
 
 Двойник устройства теперь включает идентификатор модели:
 
-:::image type="content" source="media/tutorial-use-mqtt/model-id-iot-explorer.png" alt-text="Просмотр идентификатора модели в обозревателе Azure IoT":::
+:::image type="content" source="media/tutorial-use-mqtt/model-id-iot-explorer.png" alt-text="Выходные данные примера приложения MQTT":::
 
 Теперь вы можете перейти к компоненту IoT Plug and Play:
 
-:::image type="content" source="media/tutorial-use-mqtt/components-iot-explorer.png" alt-text="Просмотр компонентов в обозревателе Интернета вещей Azure":::
+:::image type="content" source="media/tutorial-use-mqtt/components-iot-explorer.png" alt-text="Выходные данные примера приложения MQTT":::
 
 Теперь вы можете изменить код устройства для реализации телеметрии, свойств и команд, определенных в вашей модели. Пример реализации устройства термостата с использованием библиотеки Mosquitto см. на странице [Использование MQTT PnP с Центром Интернета вещей Azure без пакета SDK для Интернета вещей в Windows](https://github.com/Azure-Samples/IoTMQTTSample/tree/master/src/Windows/PnPMQTTWin32) на сайте GitHub.
-
-> [!NOTE]
-> По умолчанию срок действия подписанного URL-адреса составляет 60 минут.
 
 > [!NOTE]
 >Клиент использует файл корневого сертификата `IoTHubRootCA_Baltimore.pem` для проверки удостоверения центра Интернета вещей, к которому он подключается.
@@ -147,9 +137,7 @@ cd vcpkg
 * `DEVICE_TELEMETRY_MESSAGE` определяет тему, которую устройство использует для отправки телеметрии в центр Интернета вещей.
 
 Дополнительные сведения об MQTT см. на странице с [примерами MQTT для Интернета вещей Azure](https://github.com/Azure-Samples/IoTMQTTSample/) в репозитории GitHub.
-
-[!INCLUDE [iot-pnp-clean-resources.md](../../includes/iot-pnp-clean-resources.md)]
-
+  
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как изменить клиент устройства MQTT для соответствия соглашениям IoT Plug and Play. Дополнительные сведения см. в

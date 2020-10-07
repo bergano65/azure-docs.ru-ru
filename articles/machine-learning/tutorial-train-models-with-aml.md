@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 03/18/2020
+ms.date: 09/28/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 1af5ab33497ad8694752db17e874b883e60c942c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 40ee7ad74d1a1daaf6df5e76b5e51db52feea304
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90906670"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91535075"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 
@@ -37,7 +37,7 @@ ms.locfileid: "90906670"
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) версии 1.0.83.
+> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) версии 1.13.0.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -117,7 +117,7 @@ from azureml.core.compute import ComputeTarget
 import os
 
 # choose a name for your cluster
-compute_name = os.environ.get("AML_COMPUTE_CLUSTER_NAME", "cpucluster")
+compute_name = os.environ.get("AML_COMPUTE_CLUSTER_NAME", "cpu-cluster")
 compute_min_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MIN_NODES", 0)
 compute_max_nodes = os.environ.get("AML_COMPUTE_CLUSTER_MAX_NODES", 4)
 
@@ -223,7 +223,7 @@ plt.show()
 Для выполнения этой задачи запустите задание в кластере удаленного обучения, который мы настроили ранее.  Чтобы отправить задание, нужно:
 * Создание каталога
 * Создание сценария обучения
-* Создание объекта оценщика
+* создать конфигурацию выполнения скрипта;
 * отправить задание.
 
 ### <a name="create-a-directory"></a>Создание каталога
@@ -307,19 +307,19 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
   shutil.copy('utils.py', script_folder)
   ```
 
-### <a name="create-an-estimator"></a>Создание оценщика
+### <a name="configure-the-training-job"></a>Настройка задания обучения
 
-Объект оценщика используется для отправки потокового выполнения. Машинное обучение Azure содержит предварительно настроенные оценщики для распространенных платформ машинного обучения, а также универсальный оценщик. Создайте оценщик, указав следующее:
+Создайте объект [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true), чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание. Настройте ScriptRunConfig, указав следующее:
 
-
-* Имя оценщика — `est`.
 * Выберите каталог, который содержит скрипт. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Целевой объект вычисления. В этом примере используется созданный вычислительный кластер Службы машинного обучения Azure.
 * Имя скрипта обучения — **train.py**.
 * Среду, содержащую библиотеки, необходимые для выполнения скрипта.
-* Параметры, требуемые от скрипта обучения.
+* Аргументы, требуемые от скрипта обучения.
 
-В этом руководстве целевой средой является AMLCompute. Все файлы в папке скриптов передаются для выполнения в узлы кластера. Параметр **data_folder** настраивается на использование хранилища данных. "Сначала создайте среду, содержащую: библиотеку scikit-learn, azureml-dataprep, необходимые для доступа к набору данных, и azureml-defaults, которые содержат зависимости для метрик ведения журнала. azureml-defaults также содержат зависимости, необходимые для развертывания модели в качестве веб-службы далее во 2 части руководства.
+В этом руководстве целевой средой является AMLCompute. Все файлы в папке скриптов передаются для выполнения в узлы кластера. Параметр **--data_folder** настраивается на использование хранилища данных.
+
+Сначала создайте среду, содержащую: библиотеку scikit-learn, azureml-dataset-runtime для доступа к набору данных и azureml-defaults с зависимостями для метрик ведения журнала. azureml-defaults также содержат зависимости, необходимые для развертывания модели в качестве веб-службы далее во 2 части руководства.
 
 После определения среды зарегистрируйте ее в рабочей области, чтобы повторно использовать ее во 2 части этого руководства.
 
@@ -329,38 +329,34 @@ from azureml.core.conda_dependencies import CondaDependencies
 
 # to install required packages
 env = Environment('tutorial-env')
-cd = CondaDependencies.create(pip_packages=['azureml-dataprep[pandas,fuse]>=1.1.14', 'azureml-defaults'], conda_packages = ['scikit-learn==0.22.1'])
+cd = CondaDependencies.create(pip_packages=['azureml-dataset-runtime[pandas,fuse]', 'azureml-defaults'], conda_packages=['scikit-learn==0.22.1'])
 
 env.python.conda_dependencies = cd
 
 # Register environment to re-use later
-env.register(workspace = ws)
+env.register(workspace=ws)
 ```
 
-Затем создайте эмулятор со следующим кодом.
+Затем создайте ScriptRunConfig, указав скрипт обучения, целевой объект вычислений и среду.
 
 ```python
-from azureml.train.estimator import Estimator
+from azureml.core import ScriptRunConfig
 
-script_params = {
-    # to mount files referenced by mnist dataset
-    '--data-folder': mnist_file_dataset.as_named_input('mnist_opendataset').as_mount(),
-    '--regularization': 0.5
-}
+args = ['--data-folder', mnist_file_dataset.as_mount(), '--regularization', 0.5]
 
-est = Estimator(source_directory=script_folder,
-              script_params=script_params,
-              compute_target=compute_target,
-              environment_definition=env,
-              entry_script='train.py')
+src = ScriptRunConfig(source_directory=script_folder,
+                      script='train.py', 
+                      arguments=args,
+                      compute_target=compute_target,
+                      environment=env)
 ```
 
 ### <a name="submit-the-job-to-the-cluster"></a>Отправка задания в кластер
 
-Запустите эксперимент, отправив объект оценщика.
+Запустите эксперимент, отправив объект ScriptRunConfig:
 
 ```python
-run = exp.submit(config=est)
+run = exp.submit(config=src)
 run
 ```
 
@@ -372,7 +368,7 @@ run
 
 Что происходит, пока вы ожидаете завершения?
 
-- **Создание образа**. Создается образ Docker, который соответствует среде Python, указанной в оценщике. Изображение загружается в рабочую область. Создание и отправка изображений занимает **около пяти минут**.
+- **Создание образа**. Будет создан образ Docker, которые соответствует среде Python, указанной средой Машинного обучения Azure. Изображение загружается в рабочую область. Создание и отправка изображений занимает **около пяти минут**.
 
   Этот этап выполняется один раз для каждой среды Python, а для последующих запусков контейнер помещается в кэш. Во время создания образа журналы будут отправлены в журнал выполнения. С помощью этих журналов вы можете отслеживать ход создания образа.
 

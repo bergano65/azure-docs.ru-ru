@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/1/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 8fb9f422f2d2c4ed035b04b4abe4141bbb8ebfc7
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 81fceb210981e5755bcdd8e241b381d161d4f637
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89299853"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570213"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 
@@ -36,7 +36,7 @@ Azure Cosmos DB реализует протокол проводной сети 
 * Сохранение переносимости приложения и независимости от поставщика облачной платформы.
 * Лучшие в отрасли и подкрепленные финансовыми обязательствами Соглашения об уровне обслуживания для распространенных API NoSQL на базе Cosmos DB.
 * Гибкое масштабирование подготовленной пропускной способности и хранилища для баз данных Cosmos с учетом текущих потребностей, что позволяет оплачивать только необходимую пропускную способность и хранилище. Все это приводит к значительному снижению затрат.
-* Глобальное распространение "под ключ" с репликацией нескольких источников.
+* Глобальное распространение "под ключ" с репликацией и выполнением операций записи в нескольких регионах.
 
 ## <a name="cosmos-dbs-api-for-mongodb"></a>API Cosmos DB для MongoDB
 

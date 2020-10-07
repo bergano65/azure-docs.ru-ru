@@ -7,12 +7,12 @@ services: iot-fundamentals
 ms.topic: overview
 ms.date: 01/15/2020
 ms.author: dobett
-ms.openlocfilehash: 0b04b5170c13f6f6c3fd74976461f03e4367060a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: dedb799121fcdbc6bab38865132ae46a78aa6494
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77046059"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578190"
 ---
 # <a name="azure-technologies-and-services-for-creating-iot-solutions"></a>Технологии и службы Azure для создания решений Интернета вещей
 
@@ -57,7 +57,7 @@ Azure IoT Central является полностью управляемой п
 
 Разрабатывайте устройства Интернета вещей с помощью любого из [начальных наборов Azure IoT](https://catalog.azureiotsolutions.com/kits) или выберите готовое устройство в [каталоге Azure Certified for IoT](https://catalog.azureiotsolutions.com). Реализуйте внедренный код с помощью [пакетов средств разработки](../iot-hub/iot-hub-devguide-sdks.md) с открытым кодом. Пакеты средств разработки поддерживают несколько операционных систем, включая Linux, Windows и операционные системы реального времени. Доступны также пакеты средств разработки для нескольких языков программирования, включая [C](https://github.com/Azure/azure-iot-sdk-c), [Node.js](https://github.com/Azure/azure-iot-sdk-node), [Java](https://github.com/Azure/azure-iot-sdk-java), [.NET](https://github.com/Azure/azure-iot-sdk-csharp) и [Python](https://github.com/Azure/azure-iot-sdk-python).
 
-Вы можете упростить создание внедренного кода для устройств с помощью службы [IoT Plug and Play (предварительная версия)](../iot-pnp/overview-iot-plug-and-play.md). IoT Plug and Play позволяет разработчикам решений интегрировать устройства без создания внедренного кода. В основу IoT Plug and Play положена схема _модели возможностей устройства_, которая описывает возможности устройства. Используйте модель возможностей устройства для создания внедренного кода и настройки облачного решения, например приложения IoT Central.
+Вы можете упростить создание внедренного кода для устройств с помощью службы [IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). IoT Plug and Play позволяет разработчикам решений интегрировать устройства без создания внедренного кода. В основу IoT Plug and Play положена схема _модели возможностей устройства_, которая описывает возможности устройства. Используйте модель возможностей устройства для создания внедренного кода и настройки облачного решения, например приложения IoT Central.
 
 [Azure IoT Edge](../iot-edge/about-iot-edge.md) позволяет вынести некоторые элементы рабочей нагрузки Интернета вещей из облачных служб Azure на устройства. Благодаря IoT Edge вы сможете снизить сетевые задержки в решении и объем данных, передаваемых между устройствами и облаком, а также поддерживать сценарии работы без подключения к Интернету. Вы можете управлять устройствами IoT Edge через IoT Central или некоторые ускорители решений.
 

@@ -1,17 +1,15 @@
 ---
 title: Настройка Jenkins для приложения Java в Service Fabric в Azure
 description: Из этого руководства вы узнаете, как настроить непрерывную интеграцию с помощью Jenkins для развертывания приложения Java Service Fabric.
-author: suhuruli
 ms.topic: tutorial
 ms.date: 08/27/2018
-ms.author: suhuruli
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 42efc13d37ccfdaf60896f338b1a38384ef06568
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4e29104f0586a8e18afb7a640903c57ce988b692
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320720"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91531978"
 ---
 # <a name="tutorial-configure-a-jenkins-environment-to-enable-cicd-for-a-java-application-on-service-fabric"></a>Руководство по Настройка среды Jenkins для включения непрерывной интеграции и непрерывного развертывания для приложения Java в Service Fabric
 
@@ -109,7 +107,7 @@ Jenkins можно настроить внутри или за пределам�
 
     Кроме того, можно предоставить дополнительные сведения, необходимые для развертывания приложения. Ниже приведен снимок экрана с примером дополнительных сведений о приложении.
 
-    ![Действие при сборке Jenkins для Service Fabric](./media/service-fabric-tutorial-java-jenkins/sfjenkins.png)
+    ![Диалоговое окно Post-Build Actions (Действия после сборки) с дополнительными параметрами Deploy Service Fabric Project (Развернуть проект Service Fabric)](./media/service-fabric-tutorial-java-jenkins/sfjenkins.png)
 
     > [!NOTE]
     > Если образ контейнера Jenkins развертывается с помощью Service Fabric, можно использовать тот же кластер, на котором размещается приложение-контейнер Jenkins.

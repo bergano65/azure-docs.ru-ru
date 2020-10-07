@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 8b6faa6e2e8928e008370cb0eca00595712a679d
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 4677426337a48d4fde74f61b8a4ad6fcb695f420
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449030"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91577821"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Общие сведения об Azure Defender для службы хранилища
 
@@ -27,7 +27,7 @@ ms.locfileid: "91449030"
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Плата за использование **Azure Defender для службы хранилища** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
-|Типы защищенного хранилища|[Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/)<br>[Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)<br>[Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)|
+|Типы защищенного хранилища:|[Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/)<br>[Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)<br>[Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака|
 |||
 

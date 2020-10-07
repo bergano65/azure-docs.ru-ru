@@ -8,13 +8,13 @@ ms.topic: overview
 ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
-ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: fd4cc4cfa7b7be9085ac404cab7fc7447b6d66a7
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.reviewer: jrasnick
+ms.openlocfilehash: 182ab55f8e86d972293222f8a3bcf32dada89328
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87987143"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449466"
 ---
 # <a name="control-storage-account-access-for-sql-on-demand-preview"></a>Управление доступом к учетной записи хранения в SQL по запросу (предварительная версия)
 
@@ -53,7 +53,7 @@ SQL по запросу позволяет создавать запросы д�
 >
 > Маркер SAS: ?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D
 
-Чтобы разрешить доступ с помощью маркера SAS, необходимо создать учетные данные уровня базы данных или уровня сервера.
+Чтобы разрешить доступ с помощью маркера SAS, необходимо создать учетные данные уровня базы данных или уровня сервера. 
 
 ### <a name="managed-identity"></a>[Управляемое удостоверение](#tab/managed-identity)
 
@@ -119,7 +119,7 @@ GRANT REFERENCES ON CREDENTIAL::[storage_credential] TO [specific_user];
 
 ## <a name="server-scoped-credential"></a>Учетные данные уровня сервера
 
-Учетные данные уровня сервера используются при вызове функции `OPENROWSET` из процесса входа в SQL без `DATA_SOURCE` для чтения файлов в определенной учетной записи хранения. Имя учетных данных уровня сервера **должно** совпадать с URL-адресом службы хранилища Azure. Для добавления учетных данных выполните инструкцию [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Необходимо указать аргумент CREDENTIAL NAME. Он должен соответствовать пути к данным в хранилище или некоторой части этого пути (см. ниже).
+Учетные данные уровня сервера используются при вызове функции `OPENROWSET` из процесса входа в SQL без `DATA_SOURCE` для чтения файлов в определенной учетной записи хранения. Имя учетных данных уровня сервера **должно** совпадать с URL-адресом службы хранилища Azure. Для добавления учетных данных выполните инструкцию [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Необходимо указать аргумент CREDENTIAL NAME. Он должен соответствовать пути к данным в хранилище или некоторой части этого пути (см. ниже).
 
 > [!NOTE]
 > Аргумент `FOR CRYPTOGRAPHIC PROVIDER` не поддерживается.
@@ -155,7 +155,7 @@ GO
 
 ### <a name="managed-identity"></a>[Управляемое удостоверение](#tab/managed-identity)
 
-Следующий скрипт создает учетные данные уровня сервера, которые могут использоваться функцией `OPENROWSET` для доступа к любому файлу в службе хранилища Azure через управляемое удостоверение рабочей области.
+Следующий скрипт создает учетные данные уровня сервера, которые могут использоваться функцией `OPENROWSET` для доступа к любому файлу в службе хранилища Azure через управляемое рабочей областью удостоверение.
 
 ```sql
 CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]
@@ -268,7 +268,7 @@ WITH ( LOCATION = 'parquet/user-data/*.parquet',
 SELECT TOP 10 * FROM dbo.userPublicData;
 GO
 SELECT TOP 10 * FROM OPENROWSET(BULK 'parquet/user-data/*.parquet',
-                                DATA_SOURCE = [mysample],
+                                DATA_SOURCE = 'mysample',
                                 FORMAT='PARQUET') as rows;
 GO
 ```
@@ -314,7 +314,7 @@ WITH ( LOCATION = 'parquet/user-data/*.parquet',
 ```sql
 SELECT TOP 10 * FROM dbo.userdata;
 GO
-SELECT TOP 10 * FROM OPENROWSET(BULK 'parquet/user-data/*.parquet', DATA_SOURCE = [mysample], FORMAT='PARQUET') as rows;
+SELECT TOP 10 * FROM OPENROWSET(BULK 'parquet/user-data/*.parquet', DATA_SOURCE = 'mysample', FORMAT='PARQUET') as rows;
 GO
 ```
 

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
-ms.openlocfilehash: 4b291dcc95e0beecb1fd9fbf038055d8a77c7b79
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 50e6ce9b4c206650de72d9cdd41bdd6dd555acd2
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85254979"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91566607"
 ---
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство по Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -171,7 +171,7 @@ ms.locfileid: "85254979"
 
 1. Убедитесь, что обе службы (**AzureStorageLinkedService** и **HDInsightOnDemandLinkedService**) отображаются в представлении в виде дерева слева.
 
-    ![Иерархическое представление со связанными службами](./media/data-factory-build-your-first-pipeline-using-editor/tree-view-linked-services.png)
+    ![Снимок экрана: связанные службы AzureStorageLinkedService и HDInsightOnDemandLinkedService](./media/data-factory-build-your-first-pipeline-using-editor/tree-view-linked-services.png)
 
 ## <a name="create-datasets"></a>Создание наборов данных
 На этом шаге вы создадите наборы данных, которые представляют входные и выходные данные для обработки Hive. Эти наборы данных ссылаются на службу AzureStorageLinkedService, созданную ранее в ходе работы с этим руководством. Связанная служба указывает на учетную запись хранения. Наборы данных указывают контейнер, папку и имя файла в хранилище, которое содержит входные и выходные данные.   

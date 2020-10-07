@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: b78c2b93a9427105ce2cc0ad8bd5d2b995c834ae
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 536d233a9c135b0b7dde6d6d80c705d2008226e6
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90976296"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569649"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan"></a>Руководство по созданию связи ExpressRoute с помощью Виртуальной глобальной сети Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "90976296"
 
 * Получите диапазон IP-адресов для вашего региона концентратора. Концентратор — это виртуальная сеть, которая создается и используется Виртуальной глобальной сетью. Диапазон адресов, который вы указываете для концентратора, не может пересекаться с любой из существующих виртуальных сетей, к которым вы подключаетесь. Она также не может пересекаться с диапазонами адресов, к которым вы подключаетесь локально. Если вы не знаете диапазоны IP-адресов в своей конфигурации локальной сети, найдите того, кто сможет предоставить вам нужную информацию.
 
-* Для подключения к шлюзу концентратора требуется канал ExpressRoute ценовой категории "Премиум".
+* Для подключения к шлюзу концентратора требуется канал ExpressRoute ценовой категории "Премиум" или "Стандартный".
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -105,7 +105,7 @@ ms.locfileid: "90976296"
 
 ## <a name="connect-your-circuit-to-the-hub-gateway"></a><a name="connectcircuit"></a>Подключение канала к шлюзу концентратора
 
-После создания шлюза можно подключить к нему канал [ExpressRoute](../expressroute/expressroute-howto-circuit-portal-resource-manager.md). Каналы ExpressRoute ценовой категории "Премиум", которые находятся в поддерживаемых расположениях ExpressRoute Global Reach, могут подключаться к шлюзу ExpressRoute Виртуальной глобальной сети.
+После создания шлюза можно подключить к нему канал [ExpressRoute](../expressroute/expressroute-howto-circuit-portal-resource-manager.md). Если каналы ExpressRoute ценовой категории "Премиум" и "Стандартный" размещены в расположениях, которые поддерживает ExpressRoute Global Reach, они могут подключаться к шлюзу ExpressRoute виртуальной глобальной сети и использовать все возможности передачи данных по виртуальной глобальной сети (VPN — VPN, VPN и ExpressRoute). Если каналы ExpressRoute ценовой категории "Премиум" и "Стандартный" размещены в расположениях, которые ExpressRoute Global Reach не поддерживает, они могут подключаться к шлюзу ExpressRoute виртуальной глобальной сети, но не смогут использовать все возможности передачи данных по виртуальной глобальной сети.
 
 ### <a name="to-connect-the-circuit-to-the-hub-gateway"></a>Подключение канала к шлюзу концентратора
 

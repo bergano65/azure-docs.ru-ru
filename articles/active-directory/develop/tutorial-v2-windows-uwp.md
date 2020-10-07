@@ -1,6 +1,7 @@
 ---
-title: Начало работы с UWP на платформе удостоверений Майкрософт | Azure
-description: Сведения о том, как приложения для универсальной платформы Windows (UWP) могут вызвать API, которому требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
+title: Руководство по Создание приложения универсальной платформы Windows (UWP), которое использует платформу удостоверений Майкрософт для аутентификации | Azure
+titleSuffix: Microsoft identity platform
+description: В этом учебнике показано, как создать приложение UWP, которое использует платформу удостоверений Майкрософт для реализации входа пользователей, и как получить маркер доступа для вызова API Microsoft Graph от имени пользователей.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,26 +12,31 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: acdc23c664f84882916b91b8f8698ee36b1e6cd3
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: bee6f832476537a6d7dba3db98d9aada6c61a476
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88165555"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574251"
 ---
-# <a name="call-the-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
-
-> [!div renderon="docs"]
+# <a name="call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
 В этом руководстве объясняется, как собственное приложение универсальной платформы Windows (UWP) может запросить маркер доступа. Затем приложение вызывает API Microsoft Graph. Руководство также применимо к другим API, которым требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 
 В конце этого руководства приложение вызывает защищенный API-интерфейс с использованием личных учетных записей, таких как outlook.com, live.com и другие. Приложение также вызывает рабочие и учебные учетные записи из любой компании или организации, использующей Azure Active Directory (Azure AD).
 
->[!NOTE]
-> Для работы с этим руководством требуется Visual Studio с установленным компонентом "Разработка приложений для универсальной платформы Windows". Ознакомьтесь с инструкциями по скачиванию и [настройке](/windows/uwp/get-started/get-set-up) Visual Studio для разработки приложений для универсальной платформы Windows.
+В этом руководстве рассматриваются следующие темы:
 
->[!NOTE]
-> Если вы не знакомы с платформой удостоверений Майкрософт, начните со статьи [Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)](quickstart-v2-uwp.md).
+> [!div class="checklist"]
+> * создание проекта *универсальной платформы Windows (UWP)* в Visual Studio;
+> * регистрация приложения на портале Azure;
+> * добавление кода для поддержки входа и выхода пользователей;
+> * добавление кода для вызова API Microsoft Graph;
+> * Тестирование приложения
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с установленной рабочей нагрузкой [Разработка приложений для универсальной платформы Windows](/windows/uwp/get-started/get-set-up).
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 
@@ -115,7 +121,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
     ```csharp
     public sealed partial class MainPage : Page
     {
-       
+
         //Set the scope for API call to user.read
         private string[] scopes = new string[] { "user.read" };
 
@@ -427,16 +433,15 @@ private async Task DisplayMessageAsync(string message)
             }
            ...
     }
-  
+
     ```
 
-    Запустите это приложение и скопируйте значение `redirectUri`, когда сработает точка останова. Это значение должно выглядеть примерно так:  
-    `ms-app://s-1-15-2-1352796503-54529114-405753024-3540103335-3203256200-511895534-1429095407/`
+    Запустите это приложение и скопируйте значение `redirectUri`, когда сработает точка останова. Это значение должно выглядеть примерно так: `ms-app://s-1-15-2-1352796503-54529114-405753024-3540103335-3203256200-511895534-1429095407/`
 
-    После этого добавленную строку кода можно удалить, так как она нужна только для получения этого значения. 
+    После этого добавленную строку кода можно удалить, так как она нужна только для получения этого значения.
 
 3. На портале регистрации приложений добавьте полученное значение в поле **RedirectUri** на панели **Проверка подлинности**.
-   
+
 ## <a name="test-your-code"></a>Тестирование кода
 
 Чтобы протестировать приложение, запустите проект в Visual Studio с помощью клавиши **F5**. Откроется главное окно:
@@ -496,3 +501,10 @@ private async Task DisplayMessageAsync(string message)
 **Решение:** Выберите **Sign in with other options** (Вход с другими параметрами). Затем выберите **Sign in with a username and password** (Вход с использованием имени пользователя и пароля). Выберите **Provide your password** (Ввести пароль). После этого пройдите процесс проверки подлинности по телефону.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Подробнее об использовании библиотеки аутентификации Майкрософт (MSAL) для авторизации и аутентификации в приложениях .NET:
+
+> [!div class="nextstepaction"]
+> [Обзор библиотеки аутентификации Майкрософт (MSAL)](msal-overview.md)

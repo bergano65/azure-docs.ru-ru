@@ -1,7 +1,7 @@
 ---
-title: Добавление функции входа в веб-приложение ASP.NET платформы удостоверений Майкрософт
+title: Руководство по Создание веб-приложения ASP.NET, которое использует платформу удостоверений Майкрософт для аутентификации | Azure
 titleSuffix: Microsoft identity platform
-description: Реализация входа в решение ASP.NET с использованием учетной записи Майкрософт, традиционного браузерного приложения и стандарта OpenID Connect
+description: В этом учебнике описано, как создать веб-приложение ASP.NET, которое использует платформу удостоверений Майкрософт и ПО промежуточного слоя OWIN для поддержки входа пользователя.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 740d62136393cf0c9cf31d367735bffed1c05276
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.openlocfilehash: 6a5fb517b3ea6626a929da10954bd58cc8e39ef0
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88165589"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574234"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -25,10 +25,18 @@ ms.locfileid: "88165589"
 
 Завершив работу, вы получите приложение, которое поддерживает вход с использованием личных учетных записей служб outlook.com, live.com и т. п. Для входа в это приложение можно также использовать рабочие и учебные учетные записи любой компании или организации, интегрированной с платформой удостоверений Майкрософт.
 
-> Для работы с этим руководством требуется Microsoft Visual Studio 2019.  У вас его нет?  [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
+В этом руководстве рассматриваются следующие темы:
 
->[!NOTE]
-> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Добавление функции входа платформы удостоверений Майкрософт в веб-приложение ASP.NET](quickstart-v2-aspnet-webapp.md).
+> [!div class="checklist"]
+> * создание проекта *веб-приложения ASP.NET* в Visual Studio;
+> * добавление компонентов ПО промежуточного слоя Open Web Interface for .NET (OWIN);
+> * добавление кода для поддержки входа и выхода пользователей;
+> * регистрация приложения на портале Azure;
+> * Тестирование приложения
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с установленной рабочей нагрузкой **Разработка приложений ASP.NET и веб-приложений**.
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
@@ -264,7 +272,7 @@ ms.locfileid: "88165589"
     ```
 
 ### <a name="more-information"></a>Дополнительные сведения
-С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](./howto-add-branding-in-azure-ad-apps.md "Рекомендации по фирменной символике").
+С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Вход с помощью кнопки с логотипом Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](./howto-add-branding-in-azure-ad-apps.md "Рекомендации по фирменной символике").
 
 ## <a name="add-a-controller-to-display-users-claims"></a>Добавление контроллера для отображения утверждений пользователя
 Этот контроллер демонстрирует использование атрибута `[Authorize]` для защиты. Этот атрибут разрешает доступ к контроллеру только тем пользователям, которые прошли аутентификацию. В приведенном ниже коде этот атрибут используется для отображения утверждений пользователя, полученных при выполнении входа:
@@ -392,7 +400,7 @@ ms.locfileid: "88165589"
 
 Когда вы будете готовы начать тестирование, войдите в учетную запись Azure AD (рабочую или учебную) или личную учетную запись Майкрософт (<span>live.com</span> или <span>outlook.</span>com).
 
-![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin.png)
+![Вход с помощью кнопки с логотипом Майкрософт, которая отображается на странице входа в браузере](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin.png)
 <br/><br/>
 ![Войдите в учетную запись Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
 
@@ -470,20 +478,11 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 
 Пользовательский метод можно реализовать для проверки издателей с помощью параметра **IssuerValidator**. Дополнительные сведения о том, как использовать этот параметр, представлены в описании класса [TokenValidationParameters](/dotnet/api/microsoft.identitymodel.tokens.tokenvalidationparameters).
 
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о том, как веб-приложения вызывают веб-API.
-
-### <a name="learn-how-to-create-the-application-used-in-this-quickstart"></a>Узнайте, как создавать приложения, используемые в этом кратком руководстве.
-
-Узнайте, как веб-приложения вызывают веб-API платформы идентификации Майкрософт:
+Узнайте больше о вызове защищенных веб-API из веб-приложений с помощью платформы удостоверений Майкрософт:
 
 > [!div class="nextstepaction"]
 > [Веб-приложения, которые вызывают веб-API](scenario-web-app-sign-user-overview.md)
-
-Узнайте, как создавать веб-приложения, вызывающие Microsoft Graph:
-
-> [!div class="nextstepaction"]
-> [Руководство по Microsoft Graph для ASP.NET](/graph/tutorials/aspnet)
-
-[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

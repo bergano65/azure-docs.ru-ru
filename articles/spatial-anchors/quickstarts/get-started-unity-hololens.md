@@ -5,15 +5,15 @@ author: craigktreasure
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: crtreasu
-ms.date: 07/31/2020
+ms.date: 09/29/2020
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3d5a5d7ec07587b20a8a6285deafa6215db990a5
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 0557ef45f1a18d3e51be5df3f28d35f421c3981d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810383"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540471"
 ---
 # <a name="quickstart-create-a-unity-hololens-app-that-uses-azure-spatial-anchors"></a>Краткое руководство. Создание приложения HoloLens в Unity с использованием службы "Пространственные привязки Azure"
 
@@ -80,7 +80,12 @@ ms.locfileid: "87810383"
 
 Выберите **Debug** > **Start debugging** (Отладка > Начать отладку), чтобы развернуть приложение и запустить отладку.
 
-Следуйте инструкциям в программе для размещения и отзыва привязки.
+Используя стрелки, в приложении выберите **BasicDemo** и нажмите кнопку **Go!** , чтобы запустить демонстрацию. Следуйте инструкциям для размещения и отзыва привязки.
+
+![Снимок экрана 1](./media/get-started-unity-hololens/screenshot-1.jpg)
+![Снимок экрана 2](./media/get-started-unity-hololens/screenshot-2.jpg)
+![Снимок экрана 3](./media/get-started-unity-hololens/screenshot-3.jpg)
+![Снимок экрана 4](./media/get-started-unity-hololens/screenshot-4.jpg)
 
 В Visual Studio остановите приложение, выбрав **Остановить отладку** или нажав клавиши SHIFT+F5.
 

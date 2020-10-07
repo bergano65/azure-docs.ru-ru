@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 03/10/2020
-ms.openlocfilehash: 21376eb40fb40abe67f7e03d15aabd7d89ea62f8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 40f8c36b197b0c68b9f04a02dc7731877b27ddd2
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80081903"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541668"
 ---
 # <a name="tutorial-configure-apache-ambari-email-notifications-in-azure-hdinsight"></a>Руководство по настройке уведомлений по электронной почте Apache Ambari в Azure HDInsight
 
@@ -54,7 +54,7 @@ ms.locfileid: "80081903"
 
 1. В окне **Manage Alert Notifications** (Управление уведомлениями об оповещениях) выберите значок **+** .
 
-    ![Создание уведомления об оповещениях Ambari](./media/apache-ambari-email/azure-portal-create-notification.png)
+    ![Снимок экрана: диалоговое окно Manage Alert Notifications (Управление уведомлениями об оповещениях)](./media/apache-ambari-email/azure-portal-create-notification.png)
 
 1. В диалоговом окне **Create Alert Notification** (Создание уведомления об оповещениях) укажите следующие сведения:
 
@@ -75,7 +75,7 @@ ms.locfileid: "80081903"
     |Подтверждение паролем|Введите пароль еще раз.|
     |Запустите TLS|Установите этот флажок|
 
-    ![Создание уведомления об оповещениях Ambari](./media/apache-ambari-email/ambari-create-alert-notification.png)
+    ![Снимок экрана: диалоговое окно Create Alert Notification (Создание уведомления об оповещениях)](./media/apache-ambari-email/ambari-create-alert-notification.png)
 
     Щелкните **Сохранить**. Вы вернетесь в окно **Manage Alert Notifications** (Управление уведомлениями об оповещениях).
 

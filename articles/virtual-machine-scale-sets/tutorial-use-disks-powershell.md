@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurepowershell
-ms.openlocfilehash: 0334b13fa73eb2fd648184f44bf0856c0d2a9ed9
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: bcd06ce879282ab9897d7e22006bac19a5c22b8e
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89076826"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91565094"
 ---
 # <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure PowerShell
 
@@ -87,6 +87,8 @@ ms.locfileid: "89076826"
 
 ## <a name="create-and-attach-disks"></a>Создание и подключение дисков
 Диски можно создать и присоединить к создаваемому или существующему масштабируемому набору.
+
+Начиная с версии API `2019-07-01`, можно задать размер диска операционной системы в масштабируемом наборе виртуальных машин с помощью свойства [storageProfile.osDisk.diskSizeGb](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosdisk). После подготовки может потребоваться расширить или повторно секционировать диск, чтобы использовать все его пространство. Дополнительные сведения см. в разделе [Расширение тома в ОС](https://docs.microsoft.com/azure/virtual-machines/windows/expand-os-disk#expand-the-volume-within-the-os).
 
 ### <a name="attach-disks-at-scale-set-creation"></a>Присоединение дисков при создании масштабируемого набора
 Создайте масштабируемый набор виртуальных машин с помощью командлета [New-AzVmss](/powershell/module/az.compute/new-azvmss). Когда отобразится запрос, введите имя и пароль для экземпляров виртуальных машин. Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985.

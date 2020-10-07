@@ -1,17 +1,15 @@
 ---
 title: Мониторинг приложений в Service Fabric с использованием ELK в Azure
 description: Из этого руководства вы узнаете, как настроить ELK и отслеживать работу приложений Service Fabric.
-author: suhuruli
 ms.topic: tutorial
 ms.date: 02/26/2018
-ms.author: suhuruli
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b27711158c10b0f7fa78875aec7f9c63c166258c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 5faf26230618161a5b908c9a544a43ec5c33b807
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327180"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532028"
 ---
 # <a name="tutorial-monitor-your-service-fabric-applications-using-elk"></a>Руководство. Мониторинг приложений Service Fabric с помощью ELK
 
@@ -142,7 +140,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
 
 8. Перейдите на панель мониторинга Kibana по адресу **http:\//SERVER-IP** и введите имя пользователя и пароль для Kibana. Если вы использовали образ ELK в Azure, имя пользователя по умолчанию — user, а пароль такой же, как полученный на вкладке **Диагностика загрузки**.
 
-    ![Kibana](./media/service-fabric-tutorial-java-elk/kibana.png)
+    ![Снимок экрана: журналы платформы и приложений на панели мониторинга Kibana](./media/service-fabric-tutorial-java-elk/kibana.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

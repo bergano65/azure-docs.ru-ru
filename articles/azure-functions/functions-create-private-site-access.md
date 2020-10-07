@@ -6,12 +6,12 @@ ms.author: cshoe
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 06/17/2020
-ms.openlocfilehash: eb3096cadc8197aeda9258bd3123c2eb760a44af
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 948e4f74763efd641bc0f089c679cdaf7c2f784e
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540287"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530074"
 ---
 # <a name="tutorial-establish-azure-functions-private-site-access"></a>Руководство по установке закрытого доступа к сайту для Функций Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "86540287"
 1. Перейдите на вкладку _Сетевые подключения_ и выберите **Создать**, чтобы настроить новую виртуальную сеть.
 
     >[!div class="mx-imgBorder"]
-    >![Создание новой виртуальной сети для новой виртуальной машины](./media/functions-create-private-site-access/create-vm-networking.png)
+    >![Снимок экрана: вкладка "Сетевые подключения" с выделенной командой "Создать" в разделе "Виртуальная сеть"](./media/functions-create-private-site-access/create-vm-networking.png)
 
 1. В разделе _Создание виртуальной сети_ задайте параметры, указанные в таблице под изображением.
 

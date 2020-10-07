@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/2/2020
 ms.author: derekol
 Customer intent: With Azure Peering service enhancing the customer connectivity to Microsoft cloud services .
-ms.openlocfilehash: f04ae0d2e541be0a7984e944298fa8d7b47fd126
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: f8f0ee71a8dd00498d868bb6dc11b3fa083df766
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "84870578"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91530225"
 ---
 # <a name="tutorial-create-a-peering-service-connection"></a>Руководство по Создание подключения Службы пиринга
 
@@ -43,13 +43,13 @@ ms.locfileid: "84870578"
 
 1. Выберите **Prefix Key** (Ключ префикса) и добавьте ключ префикса, предоставленный вам поставщиком (ISP или IXP). Этот ключ позволяет корпорации Майкрософт проверять префикс и поставщика, который выделил вам этот префикс IP-адресов.
 
-    ![Вкладка конфигурации для регистрации Службы пиринга](./media/peering-service-portal/peering-serviceconfiguration.png)
+    ![Снимок экрана: вкладка "Конфигурация" на странице "Create a peering service connection" (Создание подключения Службы пиринга), на которой можно ввести ключ префикса.](./media/peering-service-portal/peering-serviceconfiguration.png)
 
 1. Нажмите кнопку **Просмотр и создание** в левом нижнем углу страницы. Откроется страница **Просмотр и создание**, и в Azure произойдет проверка вашей конфигурации.
 
  1. Когдая появится сообщение **Проверка пройдена**, щелкните **Создать**.
 
-> ![Вкладка конфигурации для регистрации Службы пиринга](./media/peering-service-portal/peering-service-prefix.png)
+> ![Снимок экрана: вкладка "Просмотр и создание" на странице "Create a peering service connection" (Создание подключения Службы пиринга).](./media/peering-service-portal/peering-service-prefix.png)
 
 1. После регистрации подключения Службы пиринга выполняется дополнительная проверка для включенных в нее префиксов. Состояние проверки можно узнать в разделе **Префиксы** для имени ресурса. Если проверка завершается неудачно, отображается одно из следующих сообщений об ошибке:
 

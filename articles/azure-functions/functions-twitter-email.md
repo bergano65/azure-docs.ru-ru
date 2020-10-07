@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/27/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, mvc, cc996988-fb4f-47
-ms.openlocfilehash: 29b35493342b92813aa808069ebdd7ca8a7bbc56
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: feb6b36f8e5e7bbec83d8882552484f68abfd56d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88208555"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537758"
 ---
 # <a name="create-a-function-that-integrates-with-azure-logic-apps"></a>Создание функции, интегрируемой с Azure Logic Apps
 
@@ -182,7 +182,7 @@ API-интерфейсы Cognitive Services доступны как отдель
 
 2. На странице **выбора действия** введите **Текстовая аналитика** и выберите действие **Определить тональность**.
     
-    ![Выбор действий "Новый шаг" и "Добавить действие"](media/functions-twitter-email/11-detect-sentiment.png)
+    ![Снимок экрана: раздел "Выбор действия" со строкой "Анализ текста" в поле поиска и выбранным действием "Обнаружить тональность". ](media/functions-twitter-email/11-detect-sentiment.png)
 
 3. Введите имя подключения, такое как `MyCognitiveServicesConnection`, вставьте значение ключа API Cognitive Services и конечной точки Cognitive Services, которые вы вводили для дальнейшего использования в текстовый редактор, а затем нажмите кнопку **Создать**.
 
@@ -202,7 +202,7 @@ API-интерфейсы Cognitive Services доступны как отдель
   
 4. Выберите созданное ранее приложение-функцию.
 
-    ![Выбор функции](media/functions-twitter-email/15-select-function.png)
+    ![Снимок экрана: раздел "Выбор действия" с выбранным приложением-функцией.](media/functions-twitter-email/15-select-function.png)
 
 5. Выберите функцию, которую вы создали при работе с этим руководством.
 
@@ -228,7 +228,7 @@ API-интерфейсы Cognitive Services доступны как отдель
 
 3. В разделе **Если истинно** нажмите кнопку **Add an action** (Добавить действие), найдите `outlook.com`, щелкните **Send an email** (Отправить электронное письмо) и выполните вход в учетную запись Outlook.com.
 
-    ![Настройка электронной почты для действия "Отправить электронное письмо".](media/functions-twitter-email/20-add-outlook.png)
+    ![Снимок экрана: раздел "Если true" со строкой "outlook.com" в поле поиска и выбранным действием "Отправить сообщение электронной почты".](media/functions-twitter-email/20-add-outlook.png)
 
     > [!NOTE]
     > Если у вас нет учетной записи Outlook.com, можно выбрать другой соединитель, например Gmail или Office 365 Outlook

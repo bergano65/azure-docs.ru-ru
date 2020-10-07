@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: 4b79ee0999db0a19794cc167ae79ed6e58193b30
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 4b629ddeb1db8dd94c1c96ecb62fafb9ca7bfc60
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90946217"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569657"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Гибкий сервер Базы данных Azure для MySQL (предварительная версия)
 
@@ -20,7 +20,7 @@ ms.locfileid: "90946217"
 - Одиночный сервер 
 - Гибкий сервер (предварительная версия)
 
-В этой статье приводится обзор и основные понятия модели развертывания гибкого сервера. 
+В этой статье приводится обзор и основные понятия модели развертывания гибкого сервера. Сведения о том, как решить, какой вариант развертывания подходит для вашей рабочей нагрузки, см. в статье [Выбор подходящего варианта для сервера MySQL в Azure](./../select-right-deployment-type.md).
 
 ## <a name="overview"></a>Обзор
 
@@ -50,7 +50,7 @@ ms.locfileid: "90946217"
 
 Дополнительные сведения см. в документации с [основными понятиями высокого уровня доступности](concepts-high-availability.md).
 
-:::image type="content" source="media/overview/3-flexible-server-overview-zone-redundant-ha.png" alt-text="Концептуальная схема высокой доступности с избыточностью в пределах зоны"::: 
+:::image type="content" source="media/overview/3-flexible-server-overview-zone-redundant-ha.png" alt-text="Концептуальная схема высокого уровня доступности в рамках одной зоны"::: 
 
 ## <a name="automated-patching-with-managed-maintenance-window"></a>Автоматизированное исправление с управляемым периодом обслуживания
 
@@ -113,7 +113,16 @@ ms.locfileid: "90946217"
 - **Создание резервной копии и восстановление**. Для миграций в автономной среде, где допустим некоторый простой для пользователей, самым быстрым способом миграции будет создание резервной копии с последующим восстановлением, для которой применяются такие средства сообщества, как mysqldump/mydumper. Дополнительные сведения см. в статье "Миграция с использованием дампа и восстановления". 
 - **Azure Database Migration Service**. Чтобы без проблем выполнить простую миграцию на отдельный сервер с минимальным временем простоя, можно применить [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="contacts"></a>Контакты
+Если у вас возникли вопросы или предложения, связанные с использованием Базы данных Azure для MySQL, вы можете отправить электронное сообщение команде разработчиков Базы данных Azure для MySQL ([@AskБазы данных Azure для MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Учтите, что это не электронный адрес службы технической поддержки.
+
+Кроме того, попробуйте обратиться сюда:
+
+- Для обращения в службу поддержки Azure [отправьте запрос с портала Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+- Чтобы устранить проблему, связанную с учетной записью, отправьте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) на портале Azure.
+- Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/597982-azure-database-for-mysql).
+
+## <a name="next-steps"></a>Дальнейшие действия
 Итак, вы завершили знакомство с режимом развертывания Базы данных Azure для MySQL с отдельным сервером и теперь готовы
 
 - создать свой первый сервер. 

@@ -1,6 +1,6 @@
 ---
 title: Добавочное копирование нескольких таблиц с помощью PowerShell
-description: В этом руководстве показано, как создать конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в базе данных SQL Server в базу данных в службе "База данных SQL Azure".
+description: С помощью этого руководства вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: e7846ae0f52dfee4260838302d55213d2791eb07
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: d32c4da4604307bca406f7f5d5e5a94b69efe7ac
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85250967"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541838"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-azure-sql-database-using-powershell"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure с использованием PowerShell
 
@@ -821,11 +821,11 @@ END
 4. На странице **Фабрика данных** выберите **Создание и мониторинг**, чтобы запустить Фабрику данных Azure на отдельной вкладке.
 
 5. На странице **Начало работы** выберите **Мониторинг** слева. 
-![Запуски конвейера](media/doc-common-process/get-started-page-monitor-button.png)    
+![Снимок экрана: страница "Начало работы" Фабрики данных Azure](media/doc-common-process/get-started-page-monitor-button.png)    
 
 6. Вы можете увидеть все запуски конвейеров и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, щелкните ссылку в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**.
 
-    ![Запуски конвейера](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-4.png)    
+    ![Снимок экрана: выполнение конвейеров для фабрики данных, включая ваш конвейер.](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-4.png)    
 7. Если щелкнуть ссылку в столбце **Действия**, вы увидите все выполняемые действия в конвейере. 
 
 8. Выберите **All Pipeline Runs** (Все запуски конвейера), чтобы вернуться к представлению **Pipeline Runs** (Запуски конвейера). 

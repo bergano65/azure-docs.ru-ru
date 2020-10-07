@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 09/08/2020
+ms.date: 09/29/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: cf7719487d4f03b8d9524234e1a58cf792a4843b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e1cb4555b1eab930286e7a27988b3b372b109070
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90899873"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570910"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-with-gpu"></a>Руководство по подготовке к развертыванию Azure Stack Edge Pro с GPU 
 
@@ -66,14 +66,16 @@ ms.locfileid: "90899873"
 
 Перед тем как начать, убедитесь в следующем.
 
-- Для ресурса Azure Stack Edge включена подписка Microsoft Azure. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются.
+- Для ресурса Azure Stack Edge включена подписка Microsoft Azure. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются. Сведения о том, как определить тип своей подписки Azure, см. в разделе [Что такое предложение Azure](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer).
 - У вас должен быть доступ с правами владельца или участника на уровне группы ресурсов к Azure Stack Edge Pro или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
 
-    - Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
-    - Для создания ресурсов Центра Интернета вещей нужно зарегистрировать поставщик Microsoft.Devices. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
+    - Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. 
+    - Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Чтобы создать любой ресурс Центра Интернета вещей, необходимо зарегистрировать поставщик `Microsoft.Devices`. 
+        - Чтобы зарегистрировать поставщик ресурсов, на портале Azure выберите **Главная > Подписки > ваша_подписка > Поставщики ресурсов**. 
+        - Найдите поставщик ресурсов `Microsoft.DataBoxEdge` и зарегистрируйте его. 
     - Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
-- У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
-- Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
+- У вас должны быть права администратора или пользователя на доступ к API Graph Azure Active Directory для создания ключей активации или операций с учетными данными, таких как создание общих ресурсов, в которых используется учетная запись хранения. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
+
 
 ### <a name="for-the-azure-stack-edge-pro-device"></a>Для устройства Azure Stack Edge Pro
 

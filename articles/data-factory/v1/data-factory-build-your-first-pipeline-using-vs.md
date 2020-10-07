@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: vs-azure
 ms.date: 01/22/2018
-ms.openlocfilehash: f3c6364226288ffb6796664e89d0b7c2cc4dadf6
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 65309bbd70a6fda2bf725ce96cc5595cd9b55083
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543152"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569060"
 ---
 # <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство: создание фабрики данных с помощью Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
@@ -91,7 +91,7 @@ ms.locfileid: "87543152"
 #### <a name="create-azure-storage-linked-service"></a>Создание связанной службы хранения Azure
 1. Щелкните правой кнопкой мыши **Связанные службы** в обозревателе решений, наведите указатель мыши на команду **Добавить** и выберите **Новый элемент**.      
 2. В диалоговом окне **Добавление нового элемента** выберите в списке пункт **Azure Storage Linked Service** (Связанная служба хранилища Azure) и нажмите кнопку **Добавить**.
-    ![Связанная служба хранения Azure](./media/data-factory-build-your-first-pipeline-using-vs/new-azure-storage-linked-service.png)
+    ![Снимок экрана: связанная служба хранилища Azure выделена в списке](./media/data-factory-build-your-first-pipeline-using-vs/new-azure-storage-linked-service.png)
 3. Замените `<accountname>` и `<accountkey>` именем и ключом учетной записи хранения Azure. Сведения о том, как получить ключ доступа к хранилищу, см. в статье [Управление ключами доступа к хранилищу](../../storage/common/storage-account-keys-manage.md).
     ![Связанная служба хранения Azure](./media/data-factory-build-your-first-pipeline-using-vs/azure-storage-linked-service.png)
 4. Сохраните файл **AzureStorageLinkedService1.json** .
@@ -368,7 +368,7 @@ ms.locfileid: "87543152"
 7. Щелкните **X**, чтобы закрыть колонку **AzureBlobInput**.
 8. В **представлении схемы** дважды щелкните набор данных **AzureBlobOutput**. Вы увидите срез, который сейчас обрабатывается.
 
-   ![Dataset](./media/data-factory-build-your-first-pipeline-using-vs/dataset-blade.png)
+   ![Снимок экрана: выделенный набор данных AzureBlobOutput](./media/data-factory-build-your-first-pipeline-using-vs/dataset-blade.png)
 9. Как только обработка завершится, срез перейдет в состояние **Готово** .
 
    > [!IMPORTANT]

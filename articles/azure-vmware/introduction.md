@@ -3,14 +3,14 @@ title: Введение
 description: Сведения о преимуществах и возможностях решения Azure VMware для развертывания рабочих нагрузок на основе VMware и управления ими в Azure.
 ms.topic: overview
 ms.date: 05/04/2020
-ms.openlocfilehash: 3d6801a6cdec7600cc6003711a08e6af8c86483e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: b71427402e08167e5868128ed1e553c69bef425d
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89005060"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574469"
 ---
-# <a name="what-is-azure-vmware-solution-preview"></a>Что такое решение Azure VMware (предварительная версия)?
+# <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
 
 Решение Azure VMware предоставляет частные облака на платформе Azure. Эти частные облака содержат кластеры vSphere, созданные на основе выделенной инфраструктуры Azure без операционной системы. Кластеры частных облаков могут содержать от 3 до 16 узлов, а в одном частном облаке можно разместить несколько кластеров. Все частные облака подготавливаются к работе через vCenter Server, vSAN, vSphere и NSX-T. Вы можете перенести рабочие нагрузки из локальных сред, создать или развернуть новые виртуальные машины и использовать службы Azure из частных облаков.
 
@@ -28,9 +28,7 @@ ms.locfileid: "89005060"
 
 ## <a name="networking"></a>Сеть
 
-При развертывании частного облака создаются частные сети для управления, подготовки и vMotion. Эти частные сети используются для доступа к vCenter и диспетчеру NSX-T, а также для vMotion или развертывания виртуальной машины. Все частные сети доступны из виртуальной сети в Azure или из локальных сред. ExpressRoute Global Reach позволяет подключать частные облака к локальным средам, используя для этого виртуальную сеть с каналом ExpressRoute в вашей подписке.
-
-Доступ к Интернету и службам Azure подготавливается в процессе развертывания частного облака. Этот доступ предоставляется для того, чтобы виртуальные машины в сетях выполнения производственных рабочих нагрузок могли использовать размещенные в Azure или Интернете службы. По умолчанию доступ к Интернету отключен для новых частных облаков, но его можно включить или отключить в любое время.
+[!INCLUDE [avs-networking-description](includes/azure-vmware-solution-networking-description.md)]
 
 Дополнительные сведения о сетях и подключениях см. в статье [Основные понятия о сетях](concepts-networking.md).
 
@@ -46,7 +44,7 @@ ms.locfileid: "89005060"
 
 ## <a name="monitoring-your-private-cloud"></a>Мониторинг частного облака
 
-Вы можете использовать [журналы в Azure Monitor](../azure-monitor/overview.md), чтобы собирать журналы с виртуальных машин, которые выполняются в частном облаке решения Azure VMware. Вы можете [скачать агент MMA и установить его](../azure-monitor/platform/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows, которые работают в частных облаках решения Azure VMware, используя те же запросы, что и на локальных виртуальных машинах. Просто выполняйте те же запросы, что и обычно на виртуальных машинах. Дополнительные сведения о создании запросов см. в [этой статье](../azure-monitor/log-query/log-query-overview.md#how-can-i-learn-how-to-write-queries).
+После развертывания Решения Azure VMware в вашей подписке [журналы Azure Monitor](../azure-monitor/overview.md) будут созданы автоматически. Кроме того, вы можете выполнять сбор журналов на каждой виртуальной машине в частном облаке. Вы можете [скачать агент MMA и установить его](../azure-monitor/platform/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows, которые работают в частных облаках Решения Azure VMware, а также включить [расширение диагностики Azure](../azure-monitor/platform/diagnostics-extension-overview.md). Вы даже можете выполнять на виртуальных машинах те же запросы, что и обычно. Дополнительные сведения о создании запросов см. в [этой статье](../azure-monitor/log-query/log-query-overview.md#how-can-i-learn-how-to-write-queries). Шаблоны мониторинга в Решении Azure VMware аналогичны шаблонам Виртуальных машин Azure на платформе IaaS. Дополнительные сведения и практические руководства см. в статье [Мониторинг виртуальных машин Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

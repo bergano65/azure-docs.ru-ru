@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 7f86d0a090409385497715b70e8199bdf48c6995
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: 6b4b4b8bcf5a69fdae9f29284fe965a30d634788
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88640333"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539730"
 ---
 # <a name="quickstart-create-ml-services-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера служб машинного обучения ML Services в Azure HDInsight с помощью шаблона ARM
 
@@ -73,7 +73,7 @@ ms.locfileid: "88640333"
 
 На портале Azure перейдите в свой кластер и выберите **Удалить**.
 
-![Шаблон Resource Manager HBase](./media/quickstart-resource-manager-template/azure-portal-delete-rserver.png)
+![Снимок экрана: кластер HDInsight с удаляемой группой ресурсов](./media/quickstart-resource-manager-template/azure-portal-delete-rserver.png)
 
 Кроме того, можно выбрать имя группы ресурсов, чтобы открыть страницу группы ресурсов, а затем щелкнуть **Удалить группу ресурсов**. Вместе с группой ресурсов вы также удалите кластер HDInsight и учетную запись хранения по умолчанию.
 

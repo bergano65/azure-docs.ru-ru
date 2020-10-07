@@ -1,20 +1,20 @@
 ---
-title: Руководство. Получение доступа к частному облаку
+title: Учебник. Получение доступа к частному облаку
 description: Узнайте, как получить доступ к частному облаку Решения Azure VMware
 ms.topic: tutorial
-ms.date: 08/21/2020
-ms.openlocfilehash: 73226c6aa567dc5fbe18251bed4812637664a02c
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.date: 09/21/2020
+ms.openlocfilehash: b7f21dbba5256712607241bb1258962fc22418fb
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "88750535"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578430"
 ---
-# <a name="tutorial-learn-how-to-access-an-azure-vmware-solution-private-cloud"></a>Руководство по Узнайте, как получить доступ к частному облаку Решения Azure VMware
+# <a name="tutorial-access-an-azure-vmware-solution-private-cloud"></a>Руководство по получению доступа к частному облаку Решения Azure VMware
 
-На этапе предварительной версии Решение Azure VMware не поддерживает управление частным облаком с помощью локального экземпляра vCenter. Вам потребуется выполнить дополнительную настройку и подключение к локальному экземпляру vCenter через инсталляционный сервер. 
+Решение Azure VMware не поддерживает управление частным облаком с помощью локального экземпляра vCenter. Вам потребуется выполнить дополнительную настройку и подключение к локальному экземпляру vCenter через инсталляционный сервер. 
 
-В этом руководстве описано, как создать виртуальную машину Windows для инсталляционного сервера в группе ресурсов, созданной с помощью предыдущего руководства по [ настройке сетевых подключений для частного облака VMware в Azure](tutorial-configure-networking.md), и войти в vCenter. Это виртуальная машина в той же виртуальной сети, которую вы создали ранее. Она предоставляет доступ к vCenter и NSX Manager. 
+В этом учебнике описано, как создать инсталляционный сервер в группе ресурсов, созданной с помощью [предыдущего учебника](tutorial-configure-networking.md), и войти в vCenter. Инсталляционный сервер — это виртуальная машина Windows в той же виртуальной сети, которую вы создали.  Он предоставляет доступ к vCenter и NSX Manager. 
 
 В этом руководстве описано следующее:
 
@@ -24,51 +24,35 @@ ms.locfileid: "88750535"
 
 ## <a name="create-a-new-windows-virtual-machine"></a>Создание виртуальной машины Windows
 
-1. В группе ресурсов щелкните **+ Добавить**, найдите и выберите **Microsoft Windows 10**, а затем щелкните **Создать**.
-
-   :::image type="content" source="./media/tutorial-access-private-cloud/ss8-azure-w10vm-create.png" alt-text="Добавьте новую виртуальную машину Windows 10 для Jumpbox." border="true":::
-
-1. Заполните необходимые поля и щелкните **Проверка и создание**. Дополнительные сведения о полях приведены в таблице ниже.
-
-   | Поле | Значение |
-   | --- | --- |
-   | **Подписка** | В этом поле уже указаны сведения о подписке, к которой принадлежит группа ресурсов. |
-   | **Группа ресурсов** | В этом поле уже указаны сведения о текущей группе ресурсов. Это должна быть группа ресурсов, которую вы создали в ходе работы с предыдущим руководством. |
-   | **Имя виртуальной машины** | Введите уникальное имя виртуальной машины. |
-   | **Регион** | Выберите географическое расположение виртуальной машины. |
-   | **Параметры доступности** | Оставьте значение по умолчанию. |
-   | **Изображение** | Выберите образ виртуальной машины. |
-   | **Размер** | Оставьте значение по умолчанию. |
-   | **Тип проверки подлинности**  | выберите **Пароль**. |
-   | **Имя пользователя** | Введите имя пользователя для входа в виртуальную машину. |
-   | **Пароль** | Введите пароль для входа в виртуальную машину. |
-   | **Подтверждение пароля** | Введите пароль для входа в виртуальную машину. |
-   | **Общедоступные входящие порты** | Выберите **Отсутствует**. Выбрав значение "Отсутствует", вы сможете использовать [JIT-доступ](../security-center/security-center-just-in-time.md#jit-configure) для получения доступа к виртуальной машине только при необходимости.  |
-
-1. После ввода данных щелкните **Проверка и создание**. 
-1. После завершения проверки щелкните **Создать**, чтобы создать виртуальную машину.
-
-   :::image type="content" source="./media/tutorial-access-private-cloud/ss11-review-create-wjb01.png" alt-text="Создайте новую виртуальную машину Windows 10 для Jumpbox." border="true":::
+[!INCLUDE [create-avs-jump-box-steps](includes/create-jump-box-steps.md)]
 
 ## <a name="connect-to-the-local-vcenter-of-your-private-cloud"></a>Подключение к локальному экземпляру vCenter частного облака
 
-1. На инсталляционном сервере войдите в vSphere Client с помощью единого входа VMware vCenter. Войдите в vSphere Client, используя имя пользователя администратора облака. Подтвердите, что вы ознакомились с предупреждением о потенциальной угрозе безопасности и войдите в VMware vCenter с учетными данными для единого входа. Затем убедитесь, что пользовательский интерфейс отображается надлежащим образом.
+1. На инсталляционном сервере войдите в клиент vSphere с помощью единого входа VMware vCenter. Используйте для этого имя пользователя облачного администратора и убедитесь, что отобразился пользовательский интерфейс.
 
-1. На портале Azure выберите частное облако, а затем в представлении **Обзор** щелкните **Удостоверение > По умолчанию**. Отобразятся URL-адреса и данные для входа в vCenter и NSX-T Manager частного облака.
+1. На портале Azure выберите частное облако, а затем в представлении **Обзор** щелкните **Удостоверение > По умолчанию**. 
 
-   :::image type="content" source="./media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="Отобразите URL-адреса и учетные данные частного облака vCenter и NSX Manager." border="true":::
+   Отобразятся URL-адреса и учетные данные пользователя в vCenter и NSX-T Manager частного облака.
 
-1. Перейдите к виртуальной машине, созданной на предыдущем этапе, и подключитесь к ней. См. сведения о [подключении к виртуальной машине](../virtual-machines/windows/connect-logon.md#connect-to-the-virtual-machine).
+   :::image type="content" source="media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="Отобразите URL-адреса и учетные данные частного облака vCenter и NSX Manager." border="true":::
 
-1. На виртуальной машине Windows откройте браузер и перейдите на URL-адреса vCenter и NSX-T Manger на двух вкладках. На вкладке vCenter введите учетные данные пользователя `cloudadmin@vmcp.local`, полученные на предыдущем этапе.
+1. Перейдите к виртуальной машине, созданной на предыдущем этапе, и подключитесь к ней. 
 
-   :::image type="content" source="./media/tutorial-access-private-cloud/ss5-vcenter-login.png" alt-text="Войдите в экземпляр vCenter частного облака." border="true":::
+   Если вам нужна помощь с подключением к виртуальной машине, ознакомьтесь со сведениями в [соответствующем разделе](../virtual-machines/windows/connect-logon.md#connect-to-the-virtual-machine).
 
-   :::image type="content" source="./media/tutorial-access-private-cloud/ss6-vsphere-client-home.png" alt-text="Портал vCenter." border="true":::
+1. На виртуальной машине Windows откройте браузер и перейдите на URL-адреса vCenter и NSX-T Manger на двух вкладках. 
+
+1. На вкладке vCenter введите учетные данные пользователя `cloudadmin@vmcp.local`, полученные на предыдущем этапе.
+
+   :::image type="content" source="media/tutorial-access-private-cloud/ss5-vcenter-login.png" alt-text="Отобразите URL-адреса и учетные данные частного облака vCenter и NSX Manager." border="true":::
+
+   :::image type="content" source="media/tutorial-access-private-cloud/ss6-vsphere-client-home.png" alt-text="Отобразите URL-адреса и учетные данные частного облака vCenter и NSX Manager." border="true":::
 
 1. На второй вкладке браузера войдите в NSX-T Manager.
 
-   :::image type="content" source="./media/tutorial-access-private-cloud/ss10-nsx-manager-home.png" alt-text="На второй вкладке браузера войдите в NSX-T Manager." border="true":::
+   :::image type="content" source="media/tutorial-access-private-cloud/ss10-nsx-manager-home.png" alt-text="Отобразите URL-адреса и учетные данные частного облака vCenter и NSX Manager." border="true":::
+
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -78,7 +62,9 @@ ms.locfileid: "88750535"
 > * Создание виртуальной машины Windows, которая будет использоваться для подключения к vCenter.
 > * Вход в vCenter с виртуальной машины.
 
-Перейдите к следующему руководству, чтобы узнать, как масштабировать частное облако Решения Azure VMware.
+Перейдите к следующему учебнику, где объясняется, как создать виртуальную сеть, чтобы настроить локальное управление для кластеров частного облака.
 
 > [!div class="nextstepaction"]
-> [Масштабирование частного облака Решения Azure VMware](tutorial-scale-private-cloud.md)
+> [Создание виртуальной сети](tutorial-configure-networking.md)
+
+

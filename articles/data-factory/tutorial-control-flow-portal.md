@@ -1,6 +1,6 @@
 ---
 title: Ветвление и создание цепочки действий в конвейере с помощью портала Azure
-description: Узнайте, как контролировать поток данных в фабрике данных Azure с помощью ветвления и создания цепочки действий.
+description: Сведения о том, как управлять потоком данных в конвейере Фабрики данных Azure с помощью портала Azure.
 services: data-factory
 author: djpmsft
 ms.author: daperlov
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/11/2018
-ms.openlocfilehash: c046d2e437004146b5ee4c53dd98942ca1781ad4
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: b1b766e3cb337151c5ca9b35e2040a2a47124151
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90983729"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91568533"
 ---
 # <a name="branching-and-chaining-activities-in-an-azure-data-factory-pipeline-using-the-azure-portal"></a>Ветвление и создание цепочки действий в конвейере Фабрики данных Azure с помощью портала Azure
 
@@ -184,7 +184,7 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
    ![Перетаскивание действия копирования](./media/tutorial-control-flow-portal/drag-drop-copy-activity.png)
 5. В окне **Свойства** для второго действия **Копирование** в нижней части страницы перейдите на вкладку **Источник** и щелкните **+ Создать**. На этом шаге вы создаете исходный набор данных для действия копирования.
 
-   ![Исходный набор данных](./media/tutorial-control-flow-portal/new-source-dataset-button.png)
+   ![Снимок экрана: как создать исходный набор данных для действия копирования.](./media/tutorial-control-flow-portal/new-source-dataset-button.png)
 6. В окне **Новый набор данных** выберите **Хранилище BLOB-объектов Azure** и щелкните **Готово**.
 
    ![Выбор хранилища BLOB-объектов Azure](./media/tutorial-control-flow-portal/select-azure-blob-storage.png)
@@ -273,7 +273,7 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
         ![Настройки для второго веб-действия](./media/tutorial-control-flow-portal/web-activity2-settings.png)         
 22. Выберите действие **Копирование** в конструкторе конвейера и нажмите кнопку **+->** , затем выберите **Ошибка**.  
 
-    ![Настройки для второго веб-действия](./media/tutorial-control-flow-portal/select-copy-failure-link.png)
+    ![Снимок экрана: как выбрать пункт "Ошибка" для действия "Копирование" в конструкторе конвейера.](./media/tutorial-control-flow-portal/select-copy-failure-link.png)
 23. Перетащите **красную** кнопку, расположенную рядом с действием копирования, на второе веб-действие **SendFailureEmailActivity**. Переставьте действия в области конструктора, чтобы конвейер выглядел примерно так:
 
     ![Готовый конвейер с настроенными действиями](./media/tutorial-control-flow-portal/full-pipeline.png)
@@ -304,7 +304,7 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
     ![Успешный запуск конвейера](./media/tutorial-control-flow-portal/monitor-success-pipeline-run.png)
 2. Чтобы **просмотреть запуски действий**, связанные с этим запуском конвейера, щелкните первую ссылку в столбце **Действия**. Вы можете переключиться к предыдущему представлению, щелкнув раздел **Конвейеры** вверху страницы. Нажмите кнопку **Обновить**, чтобы обновить этот список.
 
-    ![Выполнение действия](./media/tutorial-control-flow-portal/activity-runs-success.png)
+    ![Снимок экрана: как просмотреть список выполнений действия.](./media/tutorial-control-flow-portal/activity-runs-success.png)
 
 ## <a name="trigger-a-pipeline-run-that-fails"></a>Запуск конвейера, который завершится сбоем
 1. Перейдите на вкладку **Правка** слева.

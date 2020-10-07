@@ -7,14 +7,14 @@ author: lisaguthrie
 ms.service: azure-app-configuration
 ms.custom: devx-track-csharp
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 09/28/2020
 ms.author: lcozzens
-ms.openlocfilehash: 6795d10950ddd7b03dfa505ab44d2f43837c9045
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 4edf48b73ee4d50679cbec377ed47749d2c94776
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590274"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569617"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "88590274"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/dotnet).
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs)
 - [.NET Framework 4.7.2](https://dotnet.microsoft.com/download)
 
@@ -88,23 +88,15 @@ ms.locfileid: "88590274"
         string message = System.Configuration.ConfigurationManager.AppSettings["TestApp:Settings:Message"];
 
         Console.WriteLine(message);
+        Console.ReadKey();
     }
     ```
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
-1. Задайте переменную среды с именем **ConnectionString** для строки подключения к хранилищу службы "Конфигурация приложений". При использовании командной строки Windows выполните следующую команду:
+1. Обновите файл **App.config**, заменив `${ConnectionString}` фактической строкой подключения для экземпляра службы "Конфигурация приложений". Эту строку можно найти на вкладке **Ключи доступа** для ресурса службы "Конфигурация приложений" на портале Azure.
 
-    ```cmd
-        setx ConnectionString "connection-string-of-your-app-configuration-store"
-    ```
-
-    Если вы используете Windows PowerShell, выполните следующую команду:
-
-    ```azurepowershell
-        $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
-    ```
-1. Перезапустите Visual Studio, чтобы изменение вступило в силу. Нажмите клавиши CTRL+F5, чтобы скомпилировать и запустить консольное приложение.
+1. Нажмите клавиши CTRL+F5, чтобы скомпилировать и запустить консольное приложение.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -9,12 +9,12 @@ ms.date: 08/03/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, amqp, devx-track-csharp
-ms.openlocfilehash: b904fcd03247f6e6ae01f51c5048c29826bb8e5a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 24a63a167f640646b9e07126a038663f4da3e23b
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018473"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449597"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -311,11 +311,11 @@ ms.locfileid: "89018473"
 
 ## <a name="deploy-modules-to-device"></a>Развертывание модулей на устройстве
 
-Разверните проект модуля на устройство IoT Edge с помощью обозревателя Visual Studio Cloud Explorer и расширения Azure IoT Edge Tools. У вас уже есть манифест развертывания, подготовленный для вашего сценария (файл **deployment.windows-amd64.json** в папке config). Теперь вам осталось выбрать устройство для получения развертывания.
+Разверните проект модуля на устройство IoT Edge с помощью Visual Studio Cloud Explorer и расширения Azure IoT Edge Tools. У вас уже есть манифест развертывания, подготовленный для вашего сценария (файл **deployment.windows-amd64.json** в папке config). Теперь вам осталось выбрать устройство для получения развертывания.
 
 Убедитесь, что устройство IoT Edge работает.
 
-1. В Visual Studio Cloud Explorer разверните ресурсы, чтобы увидеть список устройств IoT.
+1. В Visual Studio Cloud Explorer разверните ресурсы, чтобы увидеть список устройств Интернета вещей.
 
 2. Щелкните правой кнопкой мыши имя устройства IoT Edge, на котором необходимо выполнить развертывание.
 
@@ -323,7 +323,7 @@ ms.locfileid: "89018473"
 
 4. В проводнике выберите файл **deployment.windows-amd64.json** из папки config решения.
 
-5. Обновите Cloud Explorer для просмотра развернутых модулей, перечисленных для устройства.
+5. Обновите Cloud Explorer, чтобы отобразился список развернутых модулей для устройства.
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 

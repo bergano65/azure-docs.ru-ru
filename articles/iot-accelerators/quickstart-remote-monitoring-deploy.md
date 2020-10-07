@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/25/2019
 ms.author: dobett
-ms.openlocfilehash: 32e2d3f9e8bbd63944188355774558ca5ea7bd9d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8d007fa7100a9880878e0b748c2c38402e5ea192
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "60890166"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540240"
 ---
 # <a name="quickstart-try-a-cloud-based-remote-monitoring-solution"></a>Краткое руководство. Использование облачного решения для удаленного мониторинга
 
@@ -133,7 +133,7 @@ ms.locfileid: "60890166"
 
 Если акселератор решений больше не нужен, удалите его на странице [Подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard). Для этого выберите его, а затем щелкните **Удалить решение**:
 
-![Удаление решения](media/quickstart-remote-monitoring-deploy/deletesolution.png)
+![Снимок экрана: страница "Подготовленные решения" с выделенным акселератором решений](media/quickstart-remote-monitoring-deploy/deletesolution.png)
 
 
 ![Удаление решения](media/quickstart-remote-monitoring-deploy/deletesolution-page.png)

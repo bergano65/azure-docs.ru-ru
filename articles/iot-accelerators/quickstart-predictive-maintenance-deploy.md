@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: cecf23d61d6a12c20aa3e64e4ee0ddacddbe7823
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 7266f110069155e2a9f7804d53c6e1088768ec8d
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "62106819"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541855"
 ---
 # <a name="quickstart-try-a-cloud-based-solution-to-run-a-predictive-maintenance-analysis-on-my-connected-devices"></a>Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах
 
@@ -52,7 +52,7 @@ ms.locfileid: "62106819"
 
 На странице **Подготовленные решения** выберите новый акселератор решения для прогнозного обслуживания.
 
-![Панель решения](./media/quickstart-predictive-maintenance-deploy/solution.png)
+![Снимок экрана: страница "Подготовленные решения" с выделенным акселератором решений прогнозного обслуживания](./media/quickstart-predictive-maintenance-deploy/solution.png)
 
  Вы можете просмотреть сведения об акселераторе решения на отобразившейся странице. Чтобы просмотреть акселератор решения для прогнозного обслуживания, выберите **Go to your solution accelerator** (Перейти к акселератору решений).
 

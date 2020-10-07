@@ -1,5 +1,6 @@
 ---
 title: Общие сведения о платформе удостоверений Майкрософт — Azure
+titleSuffix: Microsoft identity platform
 description: Узнайте о компонентах платформы удостоверений Майкрософт и о том, как с их помощью обеспечить поддержку Системы управления идентификацией и доступом (IAM) в приложениях.
 services: active-directory
 author: rwike77
@@ -12,14 +13,14 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40
-ms.openlocfilehash: e34eeeca3b17087fb5bd43ae353e43b5ab355831
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 831af87159b909ca744839d2997aa2b70cbc72e3
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88119561"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91627131"
 ---
-# <a name="microsoft-identity-platform-overview"></a>Общие сведения о платформе удостоверений Майкрософт
+# <a name="what-is-the-microsoft-identity-platform"></a>Что такое платформа удостоверений Майкрософт?
 
 Платформа удостоверений Майкрософт поможет вам создавать приложения, в которые пользователи и клиенты могут входить с использованием своих удостоверений Майкрософт или учетных записей социальных сетей, и обеспечит авторизованный доступ к вашим API или API Майкрософт, таким как Microsoft Graph.
 

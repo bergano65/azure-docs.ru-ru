@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: dech
-ms.openlocfilehash: 9992d6f1f9f1d0aad6f451d6a974f4df9f655881
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 66eee67ae191d764228a85aaf1e63eae43208cc3
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89255993"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537741"
 ---
 # <a name="tutorial-use-data-migration-tool-to-migrate-your-data-to-azure-cosmos-db"></a>Руководство по Использование средства переноса данных для переноса данных в Azure Cosmos DB
 
@@ -128,7 +128,7 @@ dt.exe /s:JsonFile /s.Files:D:\\CompanyData\\Companies.json /t:DocumentDBBulk /t
 
 Функция импорта из исходной базы данных MongoDB позволяет импортировать одну коллекцию MongoDB. При этом дополнительно можно отфильтровать документы с помощью запроса и изменить структуру документа с использованием проекции.  
 
-:::image type="content" source="./media/import-data/mongodbsource.png" alt-text="Снимок экрана: параметры источника MongoDB":::
+:::image type="content" source="./media/import-data/mongodbsource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Строка подключения представляется в стандартном формате MongoDB:
 
@@ -156,7 +156,7 @@ dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<po
 
 Параметр импорта JSON-файлов экспорта MongoDB позволяет импортировать файлы JSON, созданные с помощью служебной программы mongoexport.  
 
-:::image type="content" source="./media/import-data/mongodbexportsource.png" alt-text="Снимок экрана: параметры источника экспорта MongoDB":::
+:::image type="content" source="./media/import-data/mongodbexportsource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 При добавлении для импорта папок, содержащих JSON-файлы экспорта MongoDB, вы можете выполнить рекурсивный поиск файлов во вложенных папках.
 
@@ -170,7 +170,7 @@ dt.exe /s:MongoDBExport /s.Files:D:\mongoemployees.json /t:DocumentDBBulk /t.Con
 
 Параметр импорта из источника SQL позволяет импортировать данные из отдельной базы данных SQL Server и фильтровать записи для импорта с помощью запроса. Кроме того, можно изменить структуру документа, указав разделитель вложения (подробнее об этом чуть позже).  
 
-:::image type="content" source="./media/import-data/sqlexportsource.png" alt-text="Снимок экрана: параметры источника SQL — средства миграции базы данных":::
+:::image type="content" source="./media/import-data/sqlexportsource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Формат строки подключения — это стандартный формат строки подключения SQL.
 
@@ -183,11 +183,7 @@ dt.exe /s:MongoDBExport /s.Files:D:\mongoemployees.json /t:DocumentDBBulk /t.Con
 
 Он возвращает следующие результаты (показаны частичные результаты):
 
-:::image type="content" source="./media/import-data/sqlqueryresults.png" alt-text="Снимок экрана: результаты запроса SQL":::
-
-Обратите внимание на псевдонимы, например Address.AddressType и Address.Location.StateProvinceName. Если указать разделитель вложения ., средство импорта создаст вложенные документы Address и Address.Location во время импорта. Ниже приведен пример полученного документа в Azure Cosmos DB.
-
-*{ "id": "956", "Name": "Finer Sales and Service", "Address": { "AddressType": "Main Office", "AddressLine1": "#500-75 O'Connor Street", "Location": { "City": "Ottawa", "StateProvinceName": "Ontario" }, "PostalCode": "K4B 1S2", "CountryRegionName": "Canada" } }*
+:::image type="content" source="./media/import-data/sqlqueryresults.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных" } }*
 
 Ниже приведены некоторые примеры команд для импорта данных из SQL Server:
 
@@ -203,22 +199,11 @@ dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=Adventur
 
 Параметр импорта из CSV-файла позволяет импортировать один или несколько CSV-файлов. При добавлении для импорта папок, содержащих CSV-файлы, вы можете выполнить рекурсивный поиск файлов во вложенных папках.
 
-:::image type="content" source="media/import-data/csvsource.png" alt-text="Снимок экрана: параметры источника CSV — преобразование CSV в JSON":::
+:::image type="content" source="media/import-data/csvsource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Как и для источника SQL, свойство разделителя вложения можно использовать для создания иерархических связей (вложенных документов) во время импорта. Рассмотрим следующую строку заголовков и строки данных CSV:
 
-:::image type="content" source="./media/import-data/csvsample.png" alt-text="Снимок экрана: примеры записей CSV — преобразование CSV в JSON":::
-
-Обратите внимание на псевдонимы, например DomainInfo.Domain_Name и RedirectInfo.Redirecting. Если указать разделитель вложения ., средство импорта создаст вложенные документы DomainInfo и RedirectInfo во время импорта. Ниже приведен пример полученного документа в Azure Cosmos DB.
-
-*{ "DomainInfo": { "Domain_Name": "ACUS.GOV", "Domain_Name_Address": "https:\//www.ACUS.GOV" }, "Federal Agency": "Administrative Conference of the США", "RedirectInfo": { "Redirecting": "0", "Redirect_Destination": "" }, "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d" }*
-
-При импорте из CSV-файлов средство импорта попытается определить сведения о типе для значений, которые не заключены в кавычки (значения, заключенные в кавычки, считаются строками).  Типы определяются в таком порядке: номер, дата и время, логическое значение.  
-
-Следует отметить еще кое-что об импорте CSV-файлов.
-
-1. По умолчанию значения, не заключенные в кавычки, очищаются от табуляции и пробелов, а значения, заключенные в кавычки, остаются в нетронутом виде. Вы можете переопределить это поведение, установив флажок "Обрезать значения, заключенные в кавычки" или воспользовавшись параметром командной строки /s.TrimQuoted.
-2. По умолчанию объект null, не заключенный в кавычки, считается значением null. Вы можете переопределить это поведение (то есть сделать так, чтобы объект null, не заключенный в кавычки, считался строкой null). Для этого установите флажок "Считать объект NULL, не заключенный в кавычки, строкой" или настройте параметр командной строки /s.NoUnquotedNulls.
+:::image type="content" source="./media/import-data/csvsample.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных" или настройте параметр командной строки /s.NoUnquotedNulls.
 
 Далее показан пример команды для импорта CSV:
 
@@ -232,7 +217,7 @@ dt.exe /s:CsvFile /s.Files:.\Employees.csv /t:DocumentDBBulk /t.ConnectionString
 
 Можно вывести данные, импортированные из Хранилища таблиц Azure, в таблицы и сущности Azure Cosmos DB для использования с API таблиц. Импортированные данные также можно вывести в коллекции и документы для использования с API SQL. Но API таблиц доступен в качестве целевого объекта только в служебной программе командной строки. Пользовательский интерфейс средства переноса данных не позволяет выполнять экспорт в API таблиц. Дополнительные сведения см. в статье [Import data for use with the Azure Cosmos DB Table API](table-import.md) (Импорт данных для использования с помощью API таблицы Azure DB Cosmos).
 
-:::image type="content" source="./media/import-data/azuretablesource.png" alt-text="Снимок экрана: параметры источника Хранилища таблиц Azure":::
+:::image type="content" source="./media/import-data/azuretablesource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Для строки подключения табличного хранилища Azure используется следующий формат:
 
@@ -262,9 +247,9 @@ dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;Account
 
 Функция импорта из Amazon DynamoDB позволяет выполнять импорт из отдельной таблицы Amazon DynamoDB. Дополнительно можно отфильтровать импортируемые сущности. Чтобы максимально упростить настройку импорта, представлено несколько шаблонов.
 
-:::image type="content" source="./media/import-data/dynamodbsource1.png" alt-text="Снимок экрана: параметры источника DynamoDB Amazon — средства миграции базы данных":::
+:::image type="content" source="./media/import-data/dynamodbsource1.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
-:::image type="content" source="./media/import-data/dynamodbsource2.png" alt-text="Снимок экрана: параметры источника DynamoDB Amazon — средства миграции базы данных":::
+:::image type="content" source="./media/import-data/dynamodbsource2.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Формат строки подключения Amazon DynamoDB выглядит следующим образом:
 
@@ -283,19 +268,14 @@ dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.ama
 
 JSON-файл, файл экспорта MongoDB и параметры импорта источника файла CSV позволяют импортировать из хранилища больших двоичных объектов Azure один или несколько файлов. Чтобы выбрать файлы для импорта, предоставьте регулярное выражение после указания URL-адреса или ключа учетной записи для контейнера больших двоичных объектов.
 
-:::image type="content" source="./media/import-data/blobsource.png" alt-text="Снимок экрана: параметры источника файла больших двоичных объектов":::
-
-Ниже приведен пример команды для импорта JSON-файлов из хранилища больших двоичных объектов Azure:
-
-```console
-dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net:443/importcontainer/.*" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /t.Collection:doctest
+:::image type="content" source="./media/import-data/blobsource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /t.Collection:doctest
 ```
 
 ## <a name="import-from-a-sql-api-collection"></a><a id="SQLSource"></a>Импорт из коллекции API SQL
 
 С помощью импортера источников Azure Cosmos DB можно импортировать данные из контейнеров Azure Cosmos и при необходимости фильтровать документы с помощью запроса.  
 
-:::image type="content" source="./media/import-data/documentdbsource.png" alt-text="Снимок экрана: параметры источника Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/documentdbsource.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Для строки подключения Azure Cosmos DB используется следующий формат:
 
@@ -320,7 +300,7 @@ dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net
 3. Retry Interval (Интервал повтора). Указывает время ожидания между повторными попытками подключения к Azure Cosmos DB при временном сбое (например, прерывание сетевого подключения).
 4. Connection Mode (Режим подключения). Указывает режим подключения для Azure Cosmos DB. Доступны варианты: DirectTcp, DirectHttps и Gateway. Режимы прямого подключения быстрее, а режим шлюза более удобен для брандмауэра, так как использует только порт 443.
 
-:::image type="content" source="./media/import-data/documentdbsourceoptions.png" alt-text="Снимок экрана: дополнительные параметры источника Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/documentdbsourceoptions.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 > [!TIP]
 > Средство импорта по умолчанию использует режим подключения DirectTcp. При возникновении проблем с брандмауэром перейдите на режим шлюза, так как он использует только порт 443.
@@ -345,9 +325,9 @@ dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;Ac
 
 Параметр импортера источника HBase позволяет импортировать данные из таблицы HBase и фильтровать данные при необходимости. Чтобы максимально упростить настройку импорта, представлено несколько шаблонов.
 
-:::image type="content" source="./media/import-data/hbasesource1.png" alt-text="Снимок экрана: параметры источника HBase":::
+:::image type="content" source="./media/import-data/hbasesource1.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
-:::image type="content" source="./media/import-data/hbasesource2.png" alt-text="Снимок экрана: параметры источника HBase":::
+:::image type="content" source="./media/import-data/hbasesource2.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Формат строки подключения HBase Stargate выглядит следующим образом:
 
@@ -366,7 +346,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Средство массового импорта Azure Cosmos DB позволяет импортировать данные из любого доступного источника, используя хранимую процедуру Azure Cosmos DB для повышения эффективности. Средство поддерживает импорт в один контейнер Azure Cosmos, содержащий один раздел. Оно также поддерживает сегментированный импорт, когда данные распределяются между несколькими контейнерами Azure Cosmos, каждый из которых содержит один раздел. Дополнительные сведения о секционировании данных см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md). Кроме того, это средство создает, выполняет и удаляет хранимую процедуру из целевых коллекций.  
 
-:::image type="content" source="./media/import-data/documentdbbulk.png" alt-text="Снимок экрана: параметры массового импорта Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/documentdbbulk.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Для строки подключения Azure Cosmos DB используется следующий формат:
 
@@ -396,11 +376,11 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Во время импорта доступны ряд дополнительных параметров. Во-первых, хотя средство и предоставляет хранимую процедуру массового импорта по умолчанию (BulkInsert.js), вы можете указать собственную хранимую процедуру:
 
- :::image type="content" source="./media/import-data/bulkinsertsp.png" alt-text="Снимок экрана: параметр хранимой процедуры массового импорта Azure Cosmos DB":::
+ :::image type="content" source="./media/import-data/bulkinsertsp.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Кроме того, при импорте типов даты (например, из SQL Server или MongoDB) можно выбрать три параметра импорта:
 
- :::image type="content" source="./media/import-data/datetimeoptions.png" alt-text="Снимок экрана: параметры импорта даты и времени Azure Cosmos DB":::
+ :::image type="content" source="./media/import-data/datetimeoptions.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 * Строка. Сохраняется как строковое значение.
 * Эпоха. Сохраняется как числовое значение эпохи.
@@ -416,7 +396,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 6. Retry Interval (Интервал повтора). Указывает время ожидания между повторными попытками подключения к Azure Cosmos DB при временном сбое (например, прерывание сетевого подключения).
 7. Connection Mode (Режим подключения). Указывает режим подключения для Azure Cosmos DB. Доступны варианты: DirectTcp, DirectHttps и Gateway. Режимы прямого подключения быстрее, а режим шлюза более удобен для брандмауэра, так как использует только порт 443.
 
-:::image type="content" source="./media/import-data/docdbbulkoptions.png" alt-text="Снимок экрана: дополнительные параметры массового импорта Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/docdbbulkoptions.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 > [!TIP]
 > Средство импорта по умолчанию использует режим подключения DirectTcp. При возникновении проблем с брандмауэром перейдите на режим шлюза, так как он использует только порт 443.
@@ -425,7 +405,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Средство последовательного импорта записей Azure Cosmos DB позволяет импортировать данные из доступного источника по одной записи. Этот параметр можно выбрать при импорте в существующую коллекцию, для которой достигнута квота хранимых процедур. Средство поддерживает импорт в один контейнер Azure Cosmos (состоящий из одного или нескольких разделов). Оно также поддерживает сегментированный импорт, когда данные распределяются между несколькими контейнерами Azure Cosmos, каждый из которых содержит один или несколько разделов. Дополнительные сведения о секционировании данных см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md).
 
-:::image type="content" source="./media/import-data/documentdbsequential.png" alt-text="Снимок экрана: параметры последовательного импорта записей Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/documentdbsequential.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 Для строки подключения Azure Cosmos DB используется следующий формат:
 
@@ -455,7 +435,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Во время импорта доступны ряд дополнительных параметров. При импорте типов даты (например, из SQL Server или MongoDB) можно выбрать три параметра импорта:
 
- :::image type="content" source="./media/import-data/datetimeoptions.png" alt-text="Снимок экрана: параметры импорта даты и времени Azure Cosmos DB":::
+ :::image type="content" source="./media/import-data/datetimeoptions.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 * Строка. Сохраняется как строковое значение.
 * Эпоха. Сохраняется как числовое значение эпохи.
@@ -470,7 +450,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 5. Retry Interval (Интервал повтора). Указывает время ожидания между повторными попытками подключения к Azure Cosmos DB при временных сбоях (например, при прерывании подключения).
 6. Connection Mode (Режим подключения). Указывает режим подключения для Azure Cosmos DB. Доступны варианты: DirectTcp, DirectHttps и Gateway. Режимы прямого подключения быстрее, а режим шлюза более удобен для брандмауэра, так как использует только порт 443.
 
-:::image type="content" source="./media/import-data/documentdbsequentialoptions.png" alt-text="Снимок экрана: дополнительные параметры последовательного импорта записей Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/documentdbsequentialoptions.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 > [!TIP]
 > Средство импорта по умолчанию использует режим подключения DirectTcp. При возникновении проблем с брандмауэром перейдите на режим шлюза, так как он использует только порт 443.
@@ -479,16 +459,9 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Если вы разрешили средству переноса создавать коллекции API SQL в Azure Cosmos DB во время импорта, можно указать политику индексирования коллекций. В разделе дополнительных параметров массового импорта Azure Cosmos DB и параметров последовательной записи Azure Cosmos DB перейдите в раздел "Политика индексации".
 
-:::image type="content" source="./media/import-data/indexingpolicy1.png" alt-text="Снимок экрана: дополнительные параметры политики индексации Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/indexingpolicy1.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных" или "Хэш".
 
-С помощью дополнительного параметра политики индексации можно выбрать файл политики индексации, вручную ввести политику индексации или выбрать из набора шаблонов по умолчанию (щелкнув правой кнопкой в текстовом поле политики индексации).
-
-Шаблоны политик, предоставляемые средством:
-
-* По умолчанию. Эта политика лучше всего подходит для запросов с проверкой равенства строк. Она также подходит при использовании выражения ORDER BY, диапазона и запросов с проверкой равенства чисел. Эта политика имеет более низкий индекс служебных данных хранилища, чем "Диапазон".
-* Диапазон. Эта политика лучше всего подходит при использовании выражения ORDER BY, диапазона и запросов с проверкой равенства чисел и строк. Эта политика имеет более высокий индекс служебных данных хранилища, чем "По умолчанию" или "Хэш".
-
-:::image type="content" source="./media/import-data/indexingpolicy2.png" alt-text="Снимок экрана: дополнительные параметры политики индексации Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/indexingpolicy2.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 > [!NOTE]
 > Если не указать политику индексации, будет применена политика по умолчанию. Дополнительные сведения о политиках индексации Azure Cosmos DB см. в [этой статье](index-policy.md).
@@ -497,43 +470,9 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Средство экспорта JSON Azure Cosmos DB позволяет экспортировать любые доступные источники в JSON-файл, содержащий массив документов JSON. Средство выполняет экспорт автоматически. Также можно просмотреть полученную команду миграции и выполнить ее самостоятельно. Результирующий JSON-файл может храниться локально или в хранилище больших двоичных объектов Azure.
 
-:::image type="content" source="./media/import-data/jsontarget.png" alt-text="Снимок экрана: параметры экспорта локального файла JSON в Azure Cosmos DB":::
+:::image type="content" source="./media/import-data/jsontarget.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
-:::image type="content" source="./media/import-data/jsontarget2.png" alt-text="Снимок экрана: параметр экспорта JSON в Хранилище BLOB-объектов Azure Cosmos DB ":::
-
-Дополнительно полученный объект JSON можно отформатировать для чтения. Эта операция увеличивает размер полученного документа, но делает его более удобным для чтения.
-
-* Стандартный экспорт JSON
-
-  ```JSON
-  [{"id":"Sample","Title":"About Paris","Language":{"Name":"English"},"Author":{"Name":"Don","Location":{"City":"Paris","Country":"France"}},"Content":"Don's document in Azure Cosmos DB is a valid JSON document as defined by the JSON spec.","PageViews":10000,"Topics":[{"Title":"History of Paris"},{"Title":"Places to see in Paris"}]}]
-  ```
-
-* Экспорт JSON, отформатированный для чтения
-
-  ```JSON
-    [
-     {
-    "id": "Sample",
-    "Title": "About Paris",
-    "Language": {
-      "Name": "English"
-    },
-    "Author": {
-      "Name": "Don",
-      "Location": {
-        "City": "Paris",
-        "Country": "France"
-      }
-    },
-    "Content": "Don's document in Azure Cosmos DB is a valid JSON document as defined by the JSON spec.",
-    "PageViews": 10000,
-    "Topics": [
-      {
-        "Title": "History of Paris"
-      },
-      {
-        "Title": "Places to see in Paris"
+:::image type="content" source="./media/import-data/jsontarget2.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных"
       }
     ]
     }]
@@ -556,23 +495,23 @@ dt.exe /ErrorDetails:All /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<Cos
 3. Если выбрать существующий файл, то этот файл будет перезаписан. Добавление в конец файла не поддерживается.
 4. Затем укажите, какие сообщение об ошибках необходимо регистрировать в журнале — все, критические или никакие. И наконец, решите, как часто будет обновляться сообщение о переносе данных на экране.
 
-   :::image type="content" source="./media/import-data/AdvancedConfiguration.png" alt-text="Снимок экрана: окно расширенной конфигурации":::
+   :::image type="content" source="./media/import-data/AdvancedConfiguration.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 ## <a name="confirm-import-settings-and-view-command-line"></a>Подтверждение параметров импорта и просмотр командной строки
 
 1. Указав сведения об источнике данных и целевом объекте миграции, а также дополнительные параметры, просмотрите сводку миграции или (при необходимости) скопируйте полученную команду миграции. (Копирование команды может понадобиться, если вы выполняете автоматизацию операций импорта.)
 
-    :::image type="content" source="./media/import-data/summary.png" alt-text="Снимок экрана: окно сводки":::
+    :::image type="content" source="./media/import-data/summary.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
-    :::image type="content" source="./media/import-data/summarycommand.png" alt-text="Снимок экрана: окно сводки":::
+    :::image type="content" source="./media/import-data/summarycommand.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 2. После проверки источника и назначения нажмите кнопку **Импорт**. Затраченное время, число передаваемых объектов и сведения об ошибках (если вы не указали имя файла при настройке расширенной конфигурации) обновляются в процессе импорта. После завершения вы можете экспортировать результаты (например, для обработки ошибок импорта).
 
-    :::image type="content" source="./media/import-data/viewresults.png" alt-text="Снимок экрана: параметры экспорта JSON в Azure Cosmos DB":::
+    :::image type="content" source="./media/import-data/viewresults.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 3. Также можно начать новую операцию импорта, сбросив все значения или сохранив существующие параметры. (Например, можно сохранить сведения о строке подключения, источнике данных, целевом объекте и т. п.)
 
-    :::image type="content" source="./media/import-data/newimport.png" alt-text="Снимок экрана: параметры экспорта JSON в Azure Cosmos DB":::
+    :::image type="content" source="./media/import-data/newimport.png" alt-text="Снимок экрана: параметры исходного файла JSON — средства миграции базы данных":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: 76e72e8fd134c65cc9334e635375cc25e9b09a75
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: dea009d6d246d68f0686c3dc85f3518ccb13705c
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88719076"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575203"
 ---
 # <a name="tutorial-monitor-and-manage-a-video-analytics---object-and-motion-detection-application"></a>Руководство по мониторингу и управлению видео с помощью приложения "Видеоаналитика — распознавание объектов и движения"
 
@@ -27,7 +27,7 @@ ms.locfileid: "88719076"
 Перед началом работы необходимо изучить следующие ресурсы:
 
 * [руководство по созданию приложения для аналитики видеотрансляций в Azure IoT Central](./tutorial-video-analytics-create-app.md);
-* одно из предыдущих руководств: [Создание экземпляра IoT Edge для аналитики видеотрансляций (виртуальная машина Linux)](tutorial-video-analytics-iot-edge-vm.md) или [Создание экземпляра IoT Edge для аналитики видеотрансляций (Intel NUC)](tutorial-video-analytics-iot-edge-nuc.md).
+* [Руководство по созданию экземпляра IoT Edge для видеоаналитики (виртуальная машина Linux)](tutorial-video-analytics-iot-edge-vm.md) или [Руководство по созданию экземпляра IoT Edge для видеоаналитики (Intel NUC)](tutorial-video-analytics-iot-edge-nuc.md).
 
 Чтобы запустить приложение для просмотра видео, на локальном компьютере необходимо установить [Docker](https://www.docker.com/products/docker-desktop).
 
@@ -61,7 +61,7 @@ ms.locfileid: "88719076"
 
 Выберите вкладку **Downstream Devices** (Подчиненные устройства) для устройства **LVA Gateway 001**, чтобы увидеть только что добавленные камеры:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/inspect-downstream.png" alt-text="Проверить":::
+:::image type="content" source="media/tutorial-video-analytics-manage/inspect-downstream.png" alt-text="Добавление камеры":::
 
 Камеры также появятся в списке на странице **Devices** (Устройства) в приложении.
 
@@ -98,7 +98,7 @@ ms.locfileid: "88719076"
 
 Через несколько секунд появится подтверждающее сообщение **Accepted** (Принято) для каждого параметра:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/object-detection.png" alt-text="Обнаружение объектов":::
+:::image type="content" source="media/tutorial-video-analytics-manage/object-detection.png" alt-text="Добавление камеры":::
 
 ## <a name="start-lva-processing"></a>Начало обработки LVA
 
@@ -108,13 +108,13 @@ ms.locfileid: "88719076"
 
 Когда выполнение этой команды завершится, проверьте журнал команд на наличие ошибок.
 
-:::image type="content" source="media/tutorial-video-analytics-manage/start-processing.png" alt-text="Команда начала обработки LVA":::
+:::image type="content" source="media/tutorial-video-analytics-manage/start-processing.png" alt-text="Добавление камеры":::
 
 ## <a name="monitor-the-cameras"></a>Мониторинг камер
 
 Перейдите к устройству **camera-003** и выберите вкладку **Dashboard** (Панель мониторинга).
 
-:::image type="content" source="media/tutorial-video-analytics-manage/camera-dashboard.png" alt-text="Панель мониторинга камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/camera-dashboard.png" alt-text="Добавление камеры":::
 
 На плитке **Detection Count** (Счетчик обнаружений) отображается среднее число обнаружений для каждого из выбранных объектов классов обнаружения за интервал длительностью в одну секунду.
 
@@ -157,7 +157,7 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
 
 Перейдите к устройству **camera-003** и выберите вкладку **Dashboard** (Панель мониторинга). Затем щелкните одну из захваченных гиперссылок обнаружения объектов на плитке **Inference Event Video** (Видео событий вывода). Видеоконтент появится на странице, которую отображает локальный видеопроигрыватель:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Фрагмент видео":::
+:::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Добавление камеры":::
 
 ## <a name="change-the-simulated-devices-in-application-dashboards"></a>Изменение имитированных устройств на панелях мониторинга приложения
 
@@ -182,7 +182,7 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
 
 Панель мониторинга **Real Camera Monitor** (Мониторинг реальной камеры) теперь отображает значения, полученные от реальной камеры:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/update-real-cameras.png" alt-text="Панель мониторинга приложения для реальных камер":::
+:::image type="content" source="media/tutorial-video-analytics-manage/update-real-cameras.png" alt-text="Добавление камеры":::
 
 ## <a name="pause-processing"></a>Приостановка обработки
 

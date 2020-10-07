@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/14/2020
+ms.date: 09/29/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17cdebb1291f78706178e129a62b932d45f38537
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 6b571b2b8e0d334a02631e3f443ec54398117ee9
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89263082"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91532675"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к Azure Cosmos DB
 
@@ -80,6 +80,10 @@ ms.locfileid: "89263082"
 $spID = (Get-AzVM -ResourceGroupName myRG -Name myVM).identity.principalid
 New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Reader Role" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.DocumentDb/databaseAccounts/<COSMOS DB ACCOUNT NAME>"
 ```
+
+>[!NOTE]
+> Помните, что, если вы не можете выполнить операцию, возможно, у вас нет нужных разрешений. Если требуется доступ на запись к ключам, необходимо использовать роль RBAC (например, участника учетной записи DocumentDB) или создать настраиваемую роль. Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure Cosmos DB](../../cosmos-db/role-based-access-control.md).
+
 ## <a name="access-data"></a>Доступ к данным
 
 В этом разделе показано, как вызывать Azure Resource Manager с помощью маркера доступа для назначенного системой управляемого удостоверения ВМ Windows. Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали. 

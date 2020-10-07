@@ -9,15 +9,18 @@ manager: diviso
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 06/30/2020
-ms.openlocfilehash: 2140cbbc43af7f80c0c5fc2d7cea85cb31bd7bfe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 09/30/2020
+ms.openlocfilehash: dd5ed52187a7cd23142b59e20c91c6d125946a72
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87059361"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613787"
 ---
 # <a name="quickstart-explore-azure-time-series-insights-gen1"></a>Краткое руководство. Знакомство с Аналитикой временных рядов Azure 1-го поколения
+
+> [!CAUTION]
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 Это краткое руководство по Обозревателю Аналитики временных рядов Azure поможет приступить к работе с Аналитикой временных рядов Azure в бесплатной демонстрационной среде. С его помощью вы узнаете, как использовать веб-браузер для визуализации больших объемов данных Интернета вещей, и ознакомитесь с текущими ключевыми возможностями общедоступной версии.
 

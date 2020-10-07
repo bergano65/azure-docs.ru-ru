@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019, devx-track-azurepowershell
 ms.date: 01/22/2018
-ms.openlocfilehash: 6fab092b0467228fd4fcdbcf95f99fd0981fb1e4
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 3bd18f697c25f7e81f227e7e1456ba0b3d2150c6
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89079233"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541753"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information-using-powershell"></a>Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений и PowerShell
 
@@ -453,10 +453,10 @@ Invoke-AzDataFactoryV2Pipeline -PipelineName "FullCopyPipeline" -ResourceGroup $
     ![Плитка Monitor & Manage (Мониторинг и управление)](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-monitor-manage-tile-3.png)    
 5. На отдельной вкладке будет запущено **приложение интеграции данных**. Вы можете увидеть все **запуски конвейеров**  и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, перейдите по ссылке в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**. Щелкните ссылку в столбце **Действия**.
 
-    ![Запуски конвейера](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-pipeline-runs-4.png)    
+    ![Снимок экрана: выполнение конвейера для фабрики данных.](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-pipeline-runs-4.png)    
 6. Если щелкнуть ссылку в столбце **Действия**, вы увидите следующую страницу. На ней отображаются все **выполняемые действия** в конвейере.
 
-    ![Выполнение действия](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-activity-runs-5.png)
+    ![Снимок экрана: выполнения действий для фабрики данных с активированной ссылкой "Конвейеры".](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-activity-runs-5.png)
 7. Чтобы вернуться к представлению **Запуски конвейера**, щелкните ссылку **Конвейеры**, как показано на рисунке.
 
 
@@ -632,10 +632,10 @@ Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -Resource
 ### <a name="monitor-the-incremental-copy-pipeline"></a>Мониторинг конвейера добавочного копирования
 1. В **приложении интеграции данных** обновите представление **запусков конвейера**. Вы должны увидеть в списке конвейер IncrementalCopyPipeline. Щелкните ссылку в столбце **Действия**.  
 
-    ![Запуски конвейера](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-pipeline-runs-6.png)    
+    ![Снимок экрана: выполнение конвейеров для фабрики данных, включая ваш конвейер.](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-pipeline-runs-6.png)    
 2. Если щелкнуть ссылку в столбце **Действия**, вы увидите следующую страницу. На ней отображаются все **выполняемые действия** в конвейере.
 
-    ![Выполнение действия](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-activity-runs-7.png)
+    ![Снимок экрана: выполнения конвейера для фабрики данных, несколько из которых отмечены как успешные.](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-activity-runs-7.png)
 3. Чтобы вернуться к представлению **Запуски конвейера**, щелкните ссылку **Конвейеры**, как показано на рисунке.
 
 ### <a name="review-the-results"></a>Просмотр результатов

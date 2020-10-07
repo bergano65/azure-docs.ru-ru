@@ -5,15 +5,15 @@ author: craigktreasure
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: crtreasu
-ms.date: 07/31/2020
+ms.date: 09/29/2020
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 608b488a04eafd01e6702850445801705f6dac81
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: c84ebfe9752b8594e97c7c72d706ee25c4852f6e
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810366"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91538167"
 ---
 # <a name="quickstart-create-a-unity-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Unity с помощью Пространственных привязок Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "87810366"
 
 В рамках этого краткого руководства вам потребуются:
 
-- Компьютер macOS или Windows с <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.4 (LTS)</a>, включая Android Build Support, средства NDK и пакет SDK для Android.
+- Компьютер Windows или macOS с <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.4 (LTS)</a>, включая **Android Build Support** с **пакетом SDK для Android и средствами NDK**, а также модулями **OpenJDK**.
   - Если вы используете ОС Windows, вам также потребуется <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a> и <a href="https://git-lfs.github.com/">Git LFS</a>.
   - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git` и `brew install git-lfs`.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
@@ -57,6 +57,12 @@ ms.locfileid: "87810366"
 [!INCLUDE [Export Unity Project](../../../includes/spatial-anchors-unity-export-project-snip.md)]
 
 В окне **Run Device** (Запуск устройства) выберите свое устройство и щелкните **Build And Run** (Сборка и запуск). Вам будет предложено сохранить файл `.apk`, для которого можно выбрать любое имя.
+
+Используя стрелки, в приложении выберите **BasicDemo** и нажмите кнопку **Go!** , чтобы запустить демонстрацию. Следуйте инструкциям для размещения и отзыва привязки.
+
+![Снимок экрана 1](./media/get-started-unity-android/screenshot-1.jpg)
+![Снимок экрана 2](./media/get-started-unity-android/screenshot-2.jpg)
+![Снимок экрана 3](./media/get-started-unity-android/screenshot-3.jpg)
 
 Следуйте инструкциям в программе для размещения и отзыва привязки.
 

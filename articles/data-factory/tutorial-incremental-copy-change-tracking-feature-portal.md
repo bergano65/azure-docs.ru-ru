@@ -1,6 +1,6 @@
 ---
 title: Добавочное копирование данных с помощью решения "Отслеживание изменений" и портала Azure
-description: В этом руководстве показано, как создать конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в базе данных SQL Server в базу данных в службе "База данных SQL Azure".
+description: Из этого руководства вы узнаете, как создать Фабрику данных Azure с конвейером, который загружает в Хранилище BLOB-объектов Azure разностные данные на основе сведений об отслеживании изменений из базы данных-источника в службе "База данных SQL Azure".
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/12/2018
-ms.openlocfilehash: c28489c2fa502f0ba1283abdea19219ed7438a99
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 78b9d3f30ebc8f74433f04c4474121682c4a3f36
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085826"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542025"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information-using-the-azure-portal"></a>Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений и портала Azure
 
@@ -285,10 +285,10 @@ ms.locfileid: "86085826"
 
 1. Щелкните значок **+ (плюс)** на панели слева и выберите **Конвейер**.
 
-    ![Меню создания конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/new-pipeline-menu.png)
+    ![Снимок экрана: параметр конвейера для фабрики данных.](./media/tutorial-incremental-copy-change-tracking-feature-portal/new-pipeline-menu.png)
 2. Вы увидите новую вкладку для настройки конвейера. Также этот конвейер появится в отображении дерева. В окне **Свойства** укажите имя **FullCopyPipeline** для нового конвейера.
 
-    ![Меню создания конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/full-copy-pipeline-name.png)
+    ![Снимок экрана: конвейер с указанным именем.](./media/tutorial-incremental-copy-change-tracking-feature-portal/full-copy-pipeline-name.png)
 3. На панели элементов **Действия** разверните узел **Поток данных** и перетащите действие **Копирование** в область конструктора конвейера, затем присвойте этому действию имя **FullCopyActivity**.
 
     ![Действие полного копирования — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/full-copy-activity-name.png)
@@ -303,7 +303,7 @@ ms.locfileid: "86085826"
     ![Проверка конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/full-copy-pipeline-validate.png)
 7. Чтобы опубликовать сущности (связанные службы, наборы данных и конвейеры), щелкните **Опубликовать**. Подождите, пока публикация успешно завершится.
 
-    ![Кнопка "Опубликовать"](./media/tutorial-incremental-copy-change-tracking-feature-portal/publish-button.png)
+    ![Снимок экрана: фабрика данных с активированной кнопкой Publish All (Опубликовать все).](./media/tutorial-incremental-copy-change-tracking-feature-portal/publish-button.png)
 8. Дождитесь сообщения **Successfully published** (Публикация выполнена).
 
     ![Публикация выполнена](./media/tutorial-incremental-copy-change-tracking-feature-portal/publishing-succeeded.png)
@@ -315,16 +315,16 @@ ms.locfileid: "86085826"
 ### <a name="run-the-full-copy-pipeline"></a>Запуск конвейера полного копирования
 Щелкните **Триггер** на панели инструментов конвейера, а затем **Trigger Now** (Активировать сейчас).
 
-![Меню Trigger Now (Активировать сейчас)](./media/tutorial-incremental-copy-change-tracking-feature-portal/trigger-now-menu.png)
+![Снимок экрана: параметр Trigger Now (Активировать сейчас), выбранный в меню "Триггер".](./media/tutorial-incremental-copy-change-tracking-feature-portal/trigger-now-menu.png)
 
 ### <a name="monitor-the-full-copy-pipeline"></a>Мониторинг конвейера полного копирования
 
 1. Щелкните вкладку **Мониторинг** слева. В открывшемся списке вы увидите запуск конвейера и его текущее состояние. Щелкните **Refresh** (Обновить), чтобы обновить этот список. Ссылки в столбце действий позволяют просмотреть выполнения действий, связанных с этим запуском конвейера, и (или) повторно запустить конвейер.
 
-    ![Запуски конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/monitor-full-copy-pipeline-run.png)
+    ![Снимок экрана: выполнение конвейера для фабрики данных.](./media/tutorial-incremental-copy-change-tracking-feature-portal/monitor-full-copy-pipeline-run.png)
 2. Чтобы просмотреть сведения о выполнении действий, связанных с этим запуском конвейера, щелкните ссылку **View Activity Runs** (Просмотр сведений о выполнении действий) в столбце **Действия**. В этом конвейере определено только одно действие, поэтому в списке вы увидите только одну запись. Чтобы вернуться к представлению запусков конвейера, щелкните ссылку **Pipelines** (Конвейеры) в верхней части окна.
 
-    ![Выполнение действия](./media/tutorial-incremental-copy-change-tracking-feature-portal/activity-runs-full-copy.png)
+    ![Снимок экрана: выполнения действий для фабрики данных с активированной ссылкой "Конвейеры".](./media/tutorial-incremental-copy-change-tracking-feature-portal/activity-runs-full-copy.png)
 
 ### <a name="review-the-results"></a>Просмотр результатов
 Вы увидите файл с именем `incremental-<GUID>.txt` в папке `incchgtracking` контейнера `adftutorial`.
@@ -362,19 +362,19 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 
 1. В пользовательском интерфейсе фабрики данных переключитесь на вкладку **Правка**. Щелкните значок **+ (плюс)** в левой панели и выберите **Конвейер**.
 
-    ![Меню создания конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/new-pipeline-menu-2.png)
+    ![Снимок экрана: создание конвейера в фабрике данных.](./media/tutorial-incremental-copy-change-tracking-feature-portal/new-pipeline-menu-2.png)
 2. Вы увидите новую вкладку для настройки конвейера. Также этот конвейер появится в отображении дерева. В окне **Свойства** укажите имя **IncrementalCopyPipeline** для нового конвейера.
 
     ![Имя конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/incremental-copy-pipeline-name.png)
 3. Разверните элемент **Общие** на панели **Действия** и перетащите действие **Поиск** в область конструктора конвейера. Задайте для этого действия имя **LookupLastChangeTrackingVersionActivity**. Это действие возвращает версию отслеживания изменений, использованную для последней операции копирования, которая хранится в таблице **table_store_ChangeTracking_version**.
 
-    ![Действие поиска — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/first-lookup-activity-name.png)
+    ![Снимок экрана: конвейер с действием поиска.](./media/tutorial-incremental-copy-change-tracking-feature-portal/first-lookup-activity-name.png)
 4. Перейдите на вкладку **Настройки** в окне **Свойства** и выберите **ChangeTrackingDataset** в поле **Source Dataset** (Исходный набор данных).
 
-    ![Действие поиска — настройки](./media/tutorial-incremental-copy-change-tracking-feature-portal/first-lookup-activity-settings.png)
+    ![Снимок экрана: вкладка параметров в окне свойств.](./media/tutorial-incremental-copy-change-tracking-feature-portal/first-lookup-activity-settings.png)
 5. Перетащите элемент **Поиск** с панели элементов **Действия** в область конструктора конвейера. Задайте для этого действия имя **LookupCurrentChangeTrackingVersionActivity**. Это действие возвращает текущую версию отслеживания изменений.
 
-    ![Действие поиска — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-name.png)
+    ![Снимок экрана: конвейер с двумя действиями поиска.](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-name.png)
 6. Перейдите на вкладку **Настройки** в окне **Свойства** и выполните здесь следующие действия.
 
    1. Выберите **SourceDataset** в поле **Source Dataset** (Исходный набор данных).
@@ -385,7 +385,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
        SELECT CHANGE_TRACKING_CURRENT_VERSION() as CurrentChangeTrackingVersion
        ```
 
-      ![Действие поиска — настройки](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-settings.png)
+      ![Снимок экрана: запрос, добавленный на вкладке параметров в окне свойств.](./media/tutorial-incremental-copy-change-tracking-feature-portal/second-lookup-activity-settings.png)
 7. На панели элементов **Действия** разверните узел **Поток данных** и перетащите действие **Копирование** в область конструктора конвейера. Присвойте этому действию имя **IncrementalCopyActivity**. Это действие копирует в целевое хранилище данных все данные, изменившиеся за период между предыдущей и текущей версиями отслеживания изменений.
 
     ![Действие копирования — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/incremental-copy-activity-name.png)
@@ -432,21 +432,21 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
     ![Кнопка проверки](./media/tutorial-incremental-copy-change-tracking-feature-portal/validate-button.png)
 16. Опубликуйте сущности (связанные службы, наборы данных и конвейеры) в службе фабрики данных, нажав кнопку **Опубликовать все**. Дождитесь сообщения **Публикация успешно выполнена**.
 
-       ![Кнопка "Опубликовать"](./media/tutorial-incremental-copy-change-tracking-feature-portal/publish-button-2.png)    
+       ![Снимок экрана: кнопка Publish All (Опубликовать все) для фабрики данных.](./media/tutorial-incremental-copy-change-tracking-feature-portal/publish-button-2.png)    
 
 ### <a name="run-the-incremental-copy-pipeline"></a>Запуск конвейера добавочного копирования
 1. Щелкните **Триггер** на панели инструментов конвейера, а затем **Trigger Now** (Активировать сейчас).
 
-    ![Меню Trigger Now (Активировать сейчас)](./media/tutorial-incremental-copy-change-tracking-feature-portal/trigger-now-menu-2.png)
+    ![Снимок экрана: конвейер с действиями и параметром Trigger Now (Активировать сейчас), выбранным в меню "Триггер".](./media/tutorial-incremental-copy-change-tracking-feature-portal/trigger-now-menu-2.png)
 2. На странице **Запуск конвейера** нажмите кнопку **Готово**.
 
 ### <a name="monitor-the-incremental-copy-pipeline"></a>Мониторинг конвейера добавочного копирования
 1. Щелкните вкладку **Мониторинг** слева. В открывшемся списке вы увидите запуск конвейера и его текущее состояние. Щелкните **Refresh** (Обновить), чтобы обновить этот список. Ссылки в столбце **Действия** позволяют просмотреть запуски действий, связанные с этим запуском конвейера, и (или) повторно запустить конвейер.
 
-    ![Запуски конвейера](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-pipeline-runs.png)
+    ![Снимок экрана: выполнение конвейеров для фабрики данных, включая ваш конвейер.](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-pipeline-runs.png)
 2. Чтобы просмотреть сведения о выполнении действий, связанных с этим запуском конвейера, щелкните ссылку **View Activity Runs** (Просмотр сведений о выполнении действий) в столбце **Действия**. В этом конвейере определено только одно действие, поэтому в списке вы увидите только одну запись. Чтобы вернуться к представлению запусков конвейера, щелкните ссылку **Pipelines** (Конвейеры) в верхней части окна.
 
-    ![Выполнение действия](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-activity-runs.png)
+    ![Снимок экрана: выполнения конвейера для фабрики данных, несколько из которых отмечены как успешные.](./media/tutorial-incremental-copy-change-tracking-feature-portal/inc-copy-activity-runs.png)
 
 
 ### <a name="review-the-results"></a>Просмотр результатов

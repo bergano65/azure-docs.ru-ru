@@ -1,6 +1,6 @@
 ---
-title: Подключение примера кода устройства Python IoT Plug and Play (предварительная версия) к Центру Интернета вещей | Документация Майкрософт
-description: Использование Python для создания и запуска примера кода устройства IoT Plug and Play (предварительная версия), который подключается к Центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Подключение примера кода устройства Python IoT Plug and Play к Центру Интернета вещей | Документация Майкрософт
+description: Узнайте, как использовать Python для создания и запуска примера кода устройства IoT Plug and Play, который подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 7/14/2020
@@ -8,22 +8,22 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 84ef7ff18c294097da20640c1de237b41900cb40
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 187a0598dfc26394d1fd48e67d83ef7e98ef6226
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87352700"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574041"
 ---
-# <a name="quickstart-connect-a-sample-iot-plug-and-play-preview-device-application-to-iot-hub-python"></a>Краткое руководство. Подключение примера приложения IoT Plug and Play (предварительная версия) к Центру Интернета вещей (Python)
+# <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-to-iot-hub-python"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play к Центру Интернета вещей (Python)
 
 [!INCLUDE [iot-pnp-quickstarts-device-selector.md](../../includes/iot-pnp-quickstarts-device-selector.md)]
 
 В этом кратком руководстве показано, как создать пример приложения устройства IoT Plug and Play, подключить его к Центру Интернета вещей и с помощью обозревателя Интернета вещей Azure просмотреть данные телеметрии, которые он отправляет. Пример приложения написан на языке Python и включен в пакет SDK для устройств Центра Интернета вещей Azure для Python. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [iot-pnp-prerequisites](../../includes/iot-pnp-prerequisites.md)]
 
 Для выполнения инструкций, приведенных в этом кратком руководстве, на компьютере для разработки необходимо установить Python 3.7. Вы можете скачать последнюю рекомендуемую версию для нескольких платформ на сайте [python.org](https://www.python.org/). Проверить версию Python можно с помощью следующей команды:  
 
@@ -31,34 +31,7 @@ ms.locfileid: "87352700"
 python --version
 ```
 
-### <a name="azure-iot-explorer"></a>Обозреватель Интернета вещей Azure
-
-Для взаимодействия с примером устройства во второй части этого краткого руководства используется **обозреватель Интернета вещей Azure**. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
-
-[!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
-
-Выполните следующую команду, чтобы получить _строку подключения к Центру Интернета вещей_ для вашего концентратора. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
-
-```azurecli-interactive
-az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
-```
-
-> [!TIP]
-> Вы также можете использовать обозреватель Интернета вещей, чтобы найти строку подключения для центра Интернета вещей.
-
-Выполните указанную ниже команду, чтобы получить _строку подключения устройства_, добавленного в центр. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
-
-```azurecli-interactive
-az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output table
-```
-
-[!INCLUDE [iot-pnp-download-models.md](../../includes/iot-pnp-download-models.md)]
-
-## <a name="set-up-your-environment"></a>Настройка среды
-
-Этот пакет опубликован в качестве PIP для обновления общедоступной предварительной версии. Версия пакета должна быть последней или `2.1.4`
-
-В локальной среде Python установите файл следующим образом:
+В локальной среде Python установите пакет следующим образом:
 
 ```cmd/sh
 pip install azure-iot-device
@@ -72,11 +45,9 @@ git clone https://github.com/Azure/azure-iot-sdk-python
 
 ## <a name="run-the-sample-device"></a>Запуск примера устройства
 
-В папке *azure-iot-sdk-python\azure-iot-device\samples\pnp* содержится пример кода для устройства IoT Plug and Play. В этом кратком руководстве используется файл *ppnp_thermostat.py*. Этот пример кода реализует устройство, совместимое с IoT Plug and Play, и использует клиентскую библиотеку устройства Python для Интернета вещей Azure.
+В папке *azure-iot-sdk-python\azure-iot-device\samples\pnp* содержится пример кода для устройства IoT Plug and Play. В этом кратком руководстве используется файл *simple_thermostat.py*. Этот пример кода реализует устройство, совместимое с IoT Plug and Play, и использует клиентскую библиотеку устройства Python для Интернета вещей Azure.
 
-Создайте переменную среды с именем **IOTHUB_DEVICE_CONNECTION_STRING**, чтобы сохранить строку подключения устройства, которую вы записали ранее.
-
-Откройте файл **pnp_thermostat.py** в текстовом редакторе. Обратите внимание на следующее:
+Откройте файл **simple_thermostat.py** в текстовом редакторе. Обратите внимание на следующее:
 
 1. Определяет один идентификатор модели двойника устройства (DTMI), который является уникальным идентификатором [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json). DTMI должен быть известным пользователю и изменяться в зависимости от сценария реализации устройства. Для текущего примера модель представляет термостат с данными телеметрии, свойствами и командами, связанными с температурой мониторинга.
 
@@ -92,7 +63,7 @@ git clone https://github.com/Azure/azure-iot-sdk-python
 
     1. Обновляет свойства. Используемая модель, **Thermostat**, определяет в качестве свойств Thermostat `targetTemperature` и `maxTempSinceLastReboot`, поэтому мы будем использовать их. Свойства обновляются с помощью метода `patch_twin_reported_properties`, определенного в `device_client`.
 
-    1. Начинает прослушивание запросов команд с помощью функции **execute_command_listener**. Функция настраивает прослушиватель на ожидание передачи данных от команд службы. При настройке прослушивателя вы предоставляете параметры `method_name`, `user_command_handler`, а также `create_user_response_handler`. 
+    1. Начинает прослушивание запросов команд с помощью функции **execute_command_listener**. Функция настраивает прослушиватель на ожидание передачи данных от команд службы. При настройке прослушивателя вы предоставляете параметры `method_name`, `user_command_handler`, а также `create_user_response_handler`.
         - Функция `user_command_handler` определяет действия устройства при получении команды. Например, если будильник отключается, результатом получения этой команды будут сведения о том, что вы проснулись. Считайте это "эффектом" вызываемой команды.
         - Функция `create_user_response_handler` создает ответ, который будет отправлен в центр Интернета вещей при успешном выполнении команды. Например, если вы отключаете будильник или откладываете сигнал, что является отзывом о службе. Это можно рассматривать как ответ, предоставленный службе. Этот ответ можно просмотреть на портале.
 
@@ -100,16 +71,19 @@ git clone https://github.com/Azure/azure-iot-sdk-python
 
     1. Отключает все прослушиватели и задачи и выходит из цикла при нажатии кнопки **Q** или **q**.
 
+[!INCLUDE [iot-pnp-environment](../../includes/iot-pnp-environment.md)]
+
+Дополнительные сведения о примере конфигурации см. в [образце файла сведений](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-device/samples/pnp/README.md).
+
 Теперь, когда вы просмотрели код, выполните следующую команду, чтобы запустить пример:
 
 ```cmd/sh
-python pnp_thermostat.py
+python simple_thermostat.py
 ```
 
 Вы увидите приведенный ниже результат, который указывает на то, что устройство отправляет телеметрию в центр и готово к получению команд и обновлений свойств.
 
 ```cmd/sh
-Connecting using Connection String HostName=<your hub name>.azure-devices.net;DeviceId=<your device id>;SharedAccessKey=<your device shared access key>
 Listening for command requests and property updates
 Press Q to quit
 Sending telemetry for temperature
@@ -124,11 +98,9 @@ Sent message
 
 [!INCLUDE [iot-pnp-iot-explorer.md](../../includes/iot-pnp-iot-explorer.md)]
 
-[!INCLUDE [iot-pnp-clean-resources.md](../../includes/iot-pnp-clean-resources.md)]
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как подключить устройство IoT Plug and Play к Центру Интернета вещей. Дополнительные сведения о создании решения, взаимодействующего с устройствами IoT Plug and Play, см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Взаимодействие с устройством IoT Plug and Play (предварительная версия), подключенным к решению](quickstart-service-python.md)
+> [Взаимодействие с подключенным к решению устройством IoT Plug and Play](quickstart-service-python.md)

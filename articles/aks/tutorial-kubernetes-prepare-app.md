@@ -3,14 +3,14 @@ title: Руководство по Kubernetes в Azure. Подготовка п�
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как подготовить и создать многоконтейнерное приложение с помощью Docker Compose, которое можно затем развернуть в AKS.
 services: container-service
 ms.topic: tutorial
-ms.date: 12/19/2018
+ms.date: 09/30/2020
 ms.custom: mvc
-ms.openlocfilehash: feab8495536b3306fd96793323d51644570b401b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 15bf29c676c4ca41fc2d005f3500a89ed6b9c380
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77593166"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91576342"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство. Подготовка приложения для Службы Azure Kubernetes (AKS)
 
@@ -63,15 +63,15 @@ cd azure-voting-app-redis
 docker-compose up -d
 ```
 
-После завершения выполните команду [docker images][docker-images], чтобы увидеть созданные образы. Было создано или скачано три образа. Образ *azure-vote-front* содержит интерфейсное приложение и использует образ `nginx-flask` в качестве основы. Образ `redis` используется для запуска экземпляра Redis.
+После завершения выполните команду [docker images][docker-images], чтобы увидеть созданные образы. Было создано или скачано три образа. Образ *azure-vote-front* содержит интерфейсное приложение и использует образ *nginx-flask* в качестве основы. Образ *redis* используется для запуска экземпляра Redis.
 
 ```
 $ docker images
 
-REPOSITORY                   TAG        IMAGE ID            CREATED             SIZE
-azure-vote-front             latest     9cc914e25834        40 seconds ago      694MB
-redis                        latest     a1b99da73d05        7 days ago          106MB
-tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
+REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE
+mcr.microsoft.com/azuredocs/azure-vote-front   v1                  84b41c268ad9        9 seconds ago       944MB
+mcr.microsoft.com/oss/bitnami/redis            6.0.8               3a54a920bb6c        2 days ago          103MB
+tiangolo/uwsgi-nginx-flask                     python3.6           a16ce562e863        6 weeks ago         944MB
 ```
 
 Выполните команду [docker ps][docker-ps], чтобы просмотреть выполняемые контейнеры:
@@ -79,9 +79,9 @@ tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE             COMMAND                  CREATED             STATUS              PORTS                           NAMES
-82411933e8f9        azure-vote-front  "/usr/bin/supervisord"   57 seconds ago      Up 30 seconds       443/tcp, 0.0.0.0:8080->80/tcp   azure-vote-front
-b68fed4b66b6        redis             "docker-entrypoint..."   57 seconds ago      Up 30 seconds       0.0.0.0:6379->6379/tcp          azure-vote-back
+CONTAINER ID        IMAGE                                             COMMAND                  CREATED             STATUS              PORTS                           NAMES
+d10e5244f237        mcr.microsoft.com/azuredocs/azure-vote-front:v1   "/entrypoint.sh /sta…"   3 minutes ago       Up 3 minutes        443/tcp, 0.0.0.0:8080->80/tcp   azure-vote-front
+21574cb38c1f        mcr.microsoft.com/oss/bitnami/redis:6.0.8         "/opt/bitnami/script…"   3 minutes ago       Up 3 minutes        0.0.0.0:6379->6379/tcp          azure-vote-back
 ```
 
 ## <a name="test-application-locally"></a>Локальное тестирование приложения

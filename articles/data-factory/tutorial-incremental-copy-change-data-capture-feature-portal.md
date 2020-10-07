@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: ''
 ms.date: 05/04/2020
-ms.openlocfilehash: e15ac501a0598ae81a295d5a04074beb33c860f6
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 6e41109c65a047990577d1f2c77bdcd5219b6ed3
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085724"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537462"
 ---
 # <a name="incrementally-load-data-from-azure-sql-managed-instance-to-azure-storage-using-change-data-capture-cdc"></a>Добавочная загрузка данных из управляемого экземпляра SQL Azure в хранилище Azure с использованием технологии "Отслеживание измененных данных" (CDC)
 
@@ -127,10 +127,10 @@ ms.locfileid: "86085724"
 7. Нажмите кнопку **Создать**.
 8. Когда развертывание будет завершено, выберите **Перейти к ресурсу**
 
-   ![Домашняя страница фабрики данных](./media/tutorial-incremental-copy-change-data-capture-feature-portal/data-factory-deploy-complete.png)
+   ![Снимок экрана: сообщение о том, что развертывание выполнено, с возможностью перейти к ресурсу.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/data-factory-deploy-complete.png)
 9. Когда завершится создание, откроется страница **Фабрика данных**, как показано на рисунке ниже.
 
-   ![Домашняя страница фабрики данных](./media/tutorial-incremental-copy-change-data-capture-feature-portal/data-factory-home-page.png)
+   ![Снимок экрана: развернутая фабрика данных.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/data-factory-home-page.png)
 10. Щелкните плитку **Создание и мониторинг**, чтобы открыть на отдельной вкладке пользовательский интерфейс фабрики данных Azure.
 11. На странице **начала работы** откройте вкладку **Изменить** на панели слева, как показано на следующем рисунке:
 
@@ -289,10 +289,10 @@ ms.locfileid: "86085724"
 
 11. Нажмите кнопку предварительного просмотра, чтобы убедиться, что запрос правильно возвращает измененные строки.
 
-    ![Действие копирования — настройки приемника](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-source-preview.png)
+    ![Снимок экрана: предварительный просмотр для проверки запроса.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-source-preview.png)
 12. Перейдите на вкладку **Приемник** и укажите набор данных Хранилища Azure в поле **Sink Dataset** (Целевой набор данных).
 
-    ![Действие копирования — настройки приемника](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-sink-settings.png)
+    ![Снимок экрана: вкладка "Приемник".](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-sink-settings.png)
 13. Нажмите кнопку назад на главном холсте конвейера и подключите действие **Поиск** к действию **If Condition** по одному. Перетащите **зеленую кнопку**, присоединенную к действию **Поиск**, на блок действия **If Condition**.
 
     ![Соединение действий поиска и копирования](./media/tutorial-incremental-copy-change-data-capture-feature-portal/connect-lookup-if.png)
@@ -333,7 +333,7 @@ ms.locfileid: "86085724"
     ```
 4. Перейдите на вкладку **Приемник** действия **Копирование** и щелкните кнопку **Открыть**, чтобы изменить свойства набора данных. Перейдите на вкладку **Параметры** и добавьте новый параметр с именем **triggerStart**    
 
-    ![Конфигурация набора данных приемника — 3](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-configuration-2.png)
+    ![Снимок экрана: добавление нового параметра на вкладке "Параметры".](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-configuration-2.png)
 5. Затем настройте свойства набора данных для хранения данных в подкаталоге **клиенты/добавочный** с разделением по данным.
    1. Перейдите на вкладку **Подключение** в свойствах набора данных и добавьте динамическое содержимое для разделов **Каталог** и **Файл**. 
    2. Введите следующее выражение в разделе **Каталог**, щелкнув на динамическое содержимое в текстовом поле:

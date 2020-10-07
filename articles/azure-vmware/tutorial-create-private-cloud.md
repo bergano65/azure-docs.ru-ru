@@ -2,19 +2,19 @@
 title: Руководство. Развертывание кластера vSphere в Azure
 description: Узнайте, как развернуть в Azure кластер vSphere с помощью Решения Azure VMWare
 ms.topic: tutorial
-ms.date: 09/07/2020
-ms.openlocfilehash: 2aa9d64dfa143e77b0edcc0c32a853645803ef67
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.date: 09/21/2020
+ms.openlocfilehash: 3fab49640364ef1b2e68953d366b20f77556b486
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90985952"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91578328"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Руководство по Развертывание частного облака Решения Azure VMware в Azure
 
 Решение Azure VMware позволяет развернуть в Azure кластер vSphere. Минимальное первоначальное развертывание должно включать три узла. Далее можно по одному добавлять дополнительные узлы, но не более 16 узлов на кластер. 
 
-Так как Решение Azure VMware не позволяет при запуске управлять частным облаком из локального экземпляра vCenter, нужно выполнить дополнительную настройку, подключение к локальному экземпляру vCenter, виртуальной сети и другие действия. Такие процедуры и соответствующие требования описаны в этом учебнике.
+Так как Решение Azure VMware не позволяет при запуске управлять частным облаком из локального экземпляра vCenter, нужно выполнить дополнительную настройку. Такие процедуры и соответствующие требования описаны в этом учебнике.
 
 В этом руководстве описано следующее:
 
@@ -39,28 +39,28 @@ ms.locfileid: "90985952"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-[!INCLUDE [create-avs-private-cloud-azure-portal](includes/create-avs-private-cloud-azure-portal-steps.md)]
+[!INCLUDE [create-avs-private-cloud-azure-portal](includes/create-private-cloud-azure-portal-steps.md)]
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Вместо создания частного облака Решения Azure VMware на портале Azure можно использовать Azure CLI в Azure Cloud Shell. Это бесплатная интерактивная оболочка, в которой предустановлены и настроены для использования с вашей учетной записью стандартные средства Azure. 
+Вместо создания частного облака Решения Azure VMware на портале Azure можно использовать Azure CLI в Azure Cloud Shell.  Список команд, которые можно использовать с Решением Azure VMware, см. в статье [Команды Azure VMware](https://docs.microsoft.com/cli/azure/ext/vmware/vmware).
 
 #### <a name="open-azure-cloud-shell"></a>Открытие Azure Cloud Shell
 
-Чтобы открыть Cloud Shell, выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
+Нажмите кнопку **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу **ВВОД**, чтобы выполнить его.
 
 #### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
-```
-azurecli-interactive
+```azurecli-interactive
+
 az group create --name myResourceGroup --location eastus
 ```
 
 #### <a name="create-a-private-cloud"></a>Создание частного облака
 
-Необходимо указать имя группы ресурсов, имя частного облака, расположение и размер кластера.
+Укажите имя для группы ресурсов и частного облака, расположение и размер кластера.
 
 | Свойство  | Описание  |
 | --------- | ------------ |
@@ -71,8 +71,7 @@ az group create --name myResourceGroup --location eastus
 | **--network-block**     | IP-адрес блока сети CIDR, используемый для частного облака. Блок адресов не должен пересекаться с блоками адресов, используемыми в других виртуальных сетях, находящихся в вашей подписке и локальных сетях.        |
 | **--sku** | Значение SKU: AV36 |
 
-```
-azurecli-interactive
+```azurecli-interactive
 az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --location eastus --cluster-size 3 --network-block xx.xx.xx.xx/22 --sku AV36
 ```
 
@@ -95,6 +94,10 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
  
 3. Введите имя частного облака и выберите **Да**. Через несколько часов процесс удаления будет завершен.  
 
+## <a name="azure-vmware-commands"></a>Команды Azure VMware
+
+Список команд, которые можно использовать с Решением Azure VMware, см. в статье [Команды Azure VMware](https://docs.microsoft.com/cli/azure/ext/vmware/vmware).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
@@ -104,7 +107,8 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
 > * проверка развертывания частного облака.
 > * Удаление частного облака Решения Azure VMware
 
-Перейдите к следующему руководству, где объясняется, как создать виртуальную сеть для использования с частным облаком при настройке локального управления для кластеров частного облака.
+Перейдите к следующему учебнику, чтобы узнать, как создать переходную среду. Вы будете использовать переходную среду для подключения к своей среде, чтобы вы могли управлять частным облаком локально.
+
 
 > [!div class="nextstepaction"]
-> [Создание виртуальной сети](tutorial-configure-networking.md)
+> [Доступ к частному облаку Решения Azure VMware](tutorial-access-private-cloud.md)

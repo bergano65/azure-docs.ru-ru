@@ -7,13 +7,13 @@ ms.service: private-link
 ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
-ms.custom: fasttrack-edit
-ms.openlocfilehash: 2d2a520540ad69697da869833d52ab10e63a7730
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.custom: fasttrack-edit, references_regions
+ms.openlocfilehash: c8d4696f2e7d181783d62df2e414329eaa246dce
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90527196"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91529864"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -40,18 +40,18 @@ ms.locfileid: "90527196"
 
 |Поддерживаемые службы  |Доступные регионы | Дополнительные сведения | Состояние  |
 |:-------------------|:-----------------|:----------------|:--------|
-|Службы Приватного канала за Azure Load Balancer (цен. категория "Стандартный") | Все общедоступные регионы<br/> Регионы для государственных организаций  | Поддерживается в Load Balancer (цен. категория "Стандартный") | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/private-link/private-link-service-overview) |
-| Хранилище BLOB-объектов Azure (включая Data Lake Storage 2-го поколения)       |  Все общедоступные регионы       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
-| Файлы Azure | Все общедоступные регионы      | |   GA <br/> [Дополнительные сведения](/azure/storage/files/storage-files-networking-endpoints)   |
+|Службы Приватного канала за Azure Load Balancer (цен. категория "Стандартный") | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая  | Поддерживается в Load Balancer (цен. категория "Стандартный") | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/private-link/private-link-service-overview) |
+| Хранилище BLOB-объектов Azure (включая Data Lake Storage 2-го поколения)       |  Все общедоступные регионы<br/> Регионы для государственных организаций       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
+| Файлы Azure | Все общедоступные регионы<br/> Регионы для государственных организаций      | |   GA <br/> [Дополнительные сведения](/azure/storage/files/storage-files-networking-endpoints)   |
 | Служба синхронизации файлов Azure | Все общедоступные регионы      | |   GA <br/> [Дополнительные сведения](/azure/storage/files/storage-sync-files-networking-endpoints)   |
-| Хранилище очередей Azure       |  Все общедоступные регионы       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
-| табличное хранилище Azure;       |  Все общедоступные регионы       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
-|  База данных SQL Azure         | Все общедоступные регионы <br/> Регионы для государственных организаций      |  Поддерживается для [политики подключения](https://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policyhttps://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policy) прокси-сервера | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)      |
+| Хранилище очередей Azure       |  Все общедоступные регионы<br/> Регионы для государственных организаций       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
+| табличное хранилище Azure;       |  Все общедоступные регионы<br/> Регионы для государственных организаций       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
+|  База данных SQL Azure         | Все общедоступные регионы <br/> Регионы для государственных организаций<br/>Все регионы Китая      |  Поддерживается для [политики подключения](https://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policyhttps://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policy) прокси-сервера | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)      |
 |Azure Synapse Analytics (прежнее название — Хранилище данных SQL)| Все общедоступные регионы <br/> Регионы для государственных организаций |  Поддерживается для [политики подключения](https://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policyhttps://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policy) прокси-сервера |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)|
-|Azure Cosmos DB|  Все общедоступные регионы<br/> Регионы для государственных организаций | |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints)|
-|  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы <br/> Регионы для государственных организаций     | Поддерживается для ценовых уровней общего назначения и c оптимизацией для операций в памяти. | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-private-link)      |
-|  База данных Azure для MySQL         | Все общедоступные регионы<br/> Регионы для государственных организаций      |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link)     |
-|  База данных Azure для MariaDB         | Все общедоступные регионы<br/> Регионы для государственных организаций     |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link)      |
+|Azure Cosmos DB|  Все общедоступные регионы<br/> Регионы для государственных организаций</br> Все регионы Китая | |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints)|
+|  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы <br/> Регионы для государственных организаций<br/>Все регионы Китая     | Поддерживается для ценовых уровней общего назначения и c оптимизацией для операций в памяти. | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-private-link)      |
+|  База данных Azure для MySQL         | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая      |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link)     |
+|  База данных Azure для MariaDB         | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая     |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link)      |
 |  Azure Key Vault         | Все общедоступные регионы<br/> Регионы для государственных организаций      |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/key-vault/private-link-service)   |
 |Служба Azure Kubernetes — API Kubernetes | Все общедоступные регионы      |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/aks/private-clusters)   |
 |Поиск Azure | Все общедоступные регионы <br/> Регионы для государственных организаций | Поддерживается службой в частном режиме. | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/search/search-security-overview#endpoint-access)    |
@@ -63,12 +63,15 @@ ms.locfileid: "90527196"
 |Ретранслятор Azure | Все общедоступные регионы      |  | Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/service-bus-relay/private-link-service)  |
 |Сетка событий Azure| Все общедоступные регионы<br/> Регионы для государственных организаций       |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/event-grid/network-security) |
 |Веб-приложения Azure | Все общедоступные регионы      | Поддерживается для приложений-функций эластичной базы данных (цен. категория "Премиум") Windows и Linux PremiumV2.  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/app-service/networking/private-endpoint)   |
-|Машинное обучение Azure | Восточная часть США, центрально-южная часть США, западная часть США 2      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
+|Машинное обучение Azure | ВОСТОЧНАЯ ЧАСТЬ США, ЦЕНТРАЛЬНО-ЮЖНАЯ ЧАСТЬ США,<br/>ЗАПАДНАЯ ЧАСТЬ США, ЗАПАДНАЯ ЧАСТЬ США 2,<br/>ЦЕНТРАЛЬНАЯ КАНАДА, ЮГО-ВОСТОЧНАЯ АЗИЯ,<br/>ВОСТОЧНАЯ ЯПОНИЯ, СЕВЕРНАЯ ЕВРОПА,<br/>ЮЖНАЯ ЧАСТЬ СОЕДИНЕННОГО КОРОЛЕВСТВА, ВОСТОЧНАЯ АВСТРАЛИЯ     |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
 | Служба автоматизации Azure  | Все общедоступные регионы |  | Preview (Предварительный просмотр) | |
 | Центр Интернета вещей Azure | Все общедоступные регионы    |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ) |
-| Azure SignalR | Восточная часть США, западная часть США 2, центрально-южная часть США      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://aka.ms/asrs/privatelink)   |
+| Azure SignalR | ВОСТОЧНАЯ ЧАСТЬ США, ЦЕНТРАЛЬНО-ЮЖНАЯ ЧАСТЬ США,<br/>ЗАПАДНАЯ ЧАСТЬ США 2, все регионы Китая      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://aka.ms/asrs/privatelink)   |
 | Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security)   | 
-| Пакетная служба Azure | Восточная часть США, западная часть США 2, центрально-южная часть США, центрально-западная часть США, Центральная Франция, Восточная Азия, южная часть Соединенного Королевства, US Gov (Вирджиния), US Gov (Айова)  | | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/batch/private-connectivity) |
+| Пакетная служба Azure | Все общедоступные регионы, кроме: ЦЕНТРАЛЬНАЯ ГЕРМАНИЯ, СЕВЕРО-ВОСТОЧНАЯ ГЕРМАНИЯ <br/> Регионы для государственных организаций  | | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/batch/private-connectivity) |
+|Фабрика данных Azure | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая    | Учетные данные должны храниться в хранилище ключей Azure| GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/data-factory/data-factory-private-link)   |
+
+
 
 Самые актуальные уведомления доступны на странице [обновлений Приватного канала Azure](https://azure.microsoft.com/updates/?product=private-link).
 

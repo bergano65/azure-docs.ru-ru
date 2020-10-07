@@ -10,24 +10,27 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: pim
 ms.topic: overview
-ms.date: 08/08/2020
+ms.date: 09/29/2020
 ms.author: curtand
-ms.custom: pim
+ms.custom: pim ; azuread-video-2020
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4a081bc5a8040fa3ccd0599341eb2671bbe2d4d
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: a0b7bcfa6569edd93373f493cfaa7deff2976d35
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89047825"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540835"
 ---
 # <a name="what-is-azure-ad-privileged-identity-management"></a>Что такое Azure AD Privileged Identity Management?
 
- Privileged Identity Management (PIM) — это служба в Azure Active Directory (Azure AD), которая позволяет администрировать и отслеживать доступ к важным ресурсам в организации. Эти ресурсы включают ресурсы в Azure AD, Azure и других веб-службах Microsoft, таких как Office 365 или Microsoft Intune.
+ Privileged Identity Management (PIM) — это служба в Azure Active Directory (Azure AD), которая позволяет администрировать и отслеживать доступ к важным ресурсам в организации. Эти ресурсы включают ресурсы в Azure AD, Azure и других веб-службах Microsoft, таких как Microsoft 365 или Microsoft Intune. В следующем видео описаны важные понятия и возможности PIM.
+<br><br>
+
+> [!VIDEO https://www.youtube.com/embed/f-0K7mRUPpQ]
 
 ## <a name="reasons-to-use"></a>Причины использования
 
-Организациям необходимо свести к минимуму число пользователей, имеющих доступ к защищенным сведениям или ресурсам. Это снижает вероятность того, что такой доступ получит вредоносный субъект или что авторизованный пользователь непреднамеренно повлияет на критический ресурс. Однако пользователям иногда требуется выполнять привилегированные операции в приложениях Azure AD, Azure, Office 365 или SaaS. Организации могут предоставлять пользователям привилегированный JIT-доступ к ресурсам Azure и Azure AD. Необходимо наблюдать за действиями пользователей с правами администратора.
+Организациям необходимо свести к минимуму число пользователей, имеющих доступ к защищенным сведениям или ресурсам. Это снижает вероятность того, что такой доступ получит вредоносный субъект или что авторизованный пользователь непреднамеренно повлияет на критический ресурс. Однако пользователям иногда требуется выполнять привилегированные операции в приложениях Azure AD, Azure, Microsoft 365 или SaaS. Организации могут предоставлять пользователям привилегированный JIT-доступ к ресурсам Azure и Azure AD. Необходимо наблюдать за действиями пользователей с правами администратора.
 
 ## <a name="what-does-it-do"></a>Функция
 

@@ -4,10 +4,10 @@ description: Использование шаблона службы "Сетка 
 ms.date: 07/07/2020
 ms.topic: quickstart
 ms.openlocfilehash: fc6216142c6bec99cb12bf4e0bdae920f27f1bf2
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "91598347"
 ---
 # <a name="quickstart-route-blob-storage-events-to-web-endpoint-by-using-an-arm-template"></a>Краткое руководство. Маршрутизация событий хранилища больших двоичных объектов в конечную веб-точку с помощью шаблона ARM

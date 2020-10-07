@@ -7,14 +7,14 @@ author: TheovanKraay
 ms.author: thvankra
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 05/18/2020
+ms.date: 10/01/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f17385307995d87f2d5792a7e9ce19ad0260cbcc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 7389136d5f08c7efd0c0443387744ce4c5816f00
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89010255"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91627403"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB
 
@@ -158,13 +158,13 @@ Azure Cosmos DB — это глобально распределенная мн
     ```
 3. Нажмите клавиши CTRL + F5 для запуска приложения. Приложение откроется в окне консоли. 
 
-    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и проверка выходных данных":::
+    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
     
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные.
 
-    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр данных в обозревателе данных":::
+    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

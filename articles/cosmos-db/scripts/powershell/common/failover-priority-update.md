@@ -1,19 +1,19 @@
 ---
-title: Скрипт PowerShell для изменения приоритета при отработке отказа для учетной записи Azure Cosmos с одним источником
-description: Пример скрипта Azure PowerShell — изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos DB с одним источником
+title: Скрипт PowerShell для изменения приоритета при отработке отказа для учетной записи Azure Cosmos с одним регионом записи
+description: Пример скрипта Azure PowerShell — изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos с одним регионом записи
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
 ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: a81938675e72d9ec3a18c920121951e38580b91e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 07561de8236a06a3ac34aa8867a07890aaf0656f
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87505271"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91570599"
 ---
-# <a name="change-failover-priority-or-trigger-failover-for-an-azure-cosmos-db-single-master-account-using-powershell"></a>Изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos DB с одним источником с помощью PowerShell
+# <a name="change-failover-priority-or-trigger-failover-for-an-azure-cosmos-account-with-single-write-region-by-using-powershell"></a>Изменение приоритета для отработки отказа или запуск отработки отказа для учетной записи Azure Cosmos с одним регионом записи с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 

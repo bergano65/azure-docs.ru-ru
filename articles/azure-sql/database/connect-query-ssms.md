@@ -12,13 +12,13 @@ ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 05/29/2020
-ms.openlocfilehash: f1fad6554a347acb1de72bfe1e5c3413e6f74d9f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 09/28/2020
+ms.openlocfilehash: 60977b9388af3a93d0ebbbc6aad50628b79e0e44
+ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004164"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91598274"
 ---
 # <a name="quickstart-use-ssms-to-connect-to-and-query-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование SSMS для подключения к Базе данных SQL Azure или Управляемому экземпляру SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -64,6 +64,8 @@ ms.locfileid: "87004164"
 
 ## <a name="connect-to-your-database"></a>Подключение к базе данных
 
+[!INCLUDE[ssms-connect-azure-ad](../includes/ssms-connect-azure-ad.md)]
+
 В среде SSMS подключитесь к серверу.
 
 > [!IMPORTANT]
@@ -83,6 +85,9 @@ ms.locfileid: "87004164"
    ||||
 
    ![подключение к серверу](./media/connect-query-ssms/connect.png)  
+
+> [!NOTE]
+> В этом руководстве используется аутентификация SQL Server.
 
 3. Выберите **Параметры** в диалоговом окне **Подключение к серверу**. В раскрывающемся меню **Подключение к базе данных** выберите **mySampleDatabase**. После выполнения [предварительных требований](#prerequisites) краткого руководства у вас будет база данных AdventureWorksLT с именем mySampleDatabase. Если рабочая копия базы данных AdventureWorks имеет имя, отличное от mySampleDatabase, выберите ее.
 
@@ -155,7 +160,7 @@ ms.locfileid: "87004164"
 
 ### <a name="update-data"></a>Обновление данных
 
-Запустите код Transact-SQL [UPDATE](/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15), чтобы обновить новый продукт.
+Запустите код Transact-SQL [UPDATE](/sql/t-sql/queries/update-transact-sql), чтобы обновить новый продукт.
 
 1. Замените предыдущий запрос текущим, который возвращает созданную ранее запись:
 

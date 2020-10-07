@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 19bf43cfd305e74aadaf16dddc7bce318e193c84
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.openlocfilehash: f08b7a49d961c3408af6e5360344bdf500a8ac07
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88640248"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542331"
 ---
 # <a name="quickstart-create-interactive-query-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера Interactive Query в Azure HDInsight с помощью шаблона ARM
 
@@ -73,7 +73,7 @@ ms.locfileid: "88640248"
 
 На портале Azure перейдите в свой кластер и выберите **Удалить**.
 
-![Шаблон Resource Manager HBase](./media/quickstart-resource-manager-template/azure-portal-delete-hive.png)
+![Снимок экрана: кластер HDInsight с удаляемой группой ресурсов](./media/quickstart-resource-manager-template/azure-portal-delete-hive.png)
 
 Кроме того, можно выбрать имя группы ресурсов, чтобы открыть страницу группы ресурсов, а затем щелкнуть **Удалить группу ресурсов**. Вместе с группой ресурсов вы также удалите кластер HDInsight и учетную запись хранения по умолчанию.
 

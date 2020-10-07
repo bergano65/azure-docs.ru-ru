@@ -8,14 +8,14 @@ ms.author: heidist
 ms.devlang: java
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 06/23/2020
+ms.date: 09/25/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e9a2ff5d46557ddf8f5f62b456e8a3d54bf90c55
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: ed44431af6d99daa5549d019f42efda4bbf9912b
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89290357"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91540359"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "89290357"
 > * [Python](search-get-started-python.md)
 > * [Postman](search-get-started-postman.md)
 
-Создайте консольное приложение Java, которое создает, загружает и опрашивает индекс поиска с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/?view=azure-java-stable) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Эта статья содержит пошаговые инструкции по созданию приложения. Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
+Создайте консольное приложение Java, которое создает, загружает и опрашивает индекс поиска с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Эта статья содержит пошаговые инструкции по созданию приложения. Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -37,7 +37,7 @@ ms.locfileid: "89290357"
 
 + [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
-+ [Пакет SDK для Java 11](/java/azure/jdk/?view=azure-java-stable)
++ [Пакет SDK для Java 11](/java/azure/jdk/)
 
 + [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
@@ -53,7 +53,7 @@ ms.locfileid: "89290357"
 
    Создайте также ключ запросов. Мы рекомендуем создавать запросы с доступом только для чтения.
 
-![Получение имени службы, ключей запросов и администратора](media/search-get-started-nodejs/service-name-and-keys.png)
+:::image type="content" source="media/search-get-started-nodejs/service-name-and-keys.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 Для любого запроса, отправляемого к службе, требуется ключ API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -67,7 +67,7 @@ ms.locfileid: "89290357"
 1. Выберите **Maven**.
 1. В списке **Project SDK** (Пакет SDK проекта) выберите Java 11 SDK (Пакет SDK для Java 11).
 
-    ![Создание проекта Maven](media/search-get-started-java/java-quickstart-create-new-maven-project.png) 
+    :::image type="content" source="media/search-get-started-java/java-quickstart-create-new-maven-project.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 1. Для параметров **GroupId** и **ArtifactId** введите значение `AzureSearchQuickstart`.
 1. Для остальных параметров подтвердите значения по умолчанию, чтобы открыть проект.
@@ -78,7 +78,7 @@ ms.locfileid: "89290357"
 1. В окне **Settings** (Параметры) выберите **Build, Execution, Deployment** (Сборка, выполнение, развертывание) > **Build Tools** (Средства сборки) > **Maven** > **Importing** (Импорт).
 1. Установите флажок **Import Maven projects automatically**(Импортировать проекты Maven автоматически) и щелкните **OK**, чтобы закрыть это окно. Подключаемые модули Maven и другие зависимости теперь автоматически синхронизируются, когда вы обновите файл pom.xml на следующем шаге.
 
-    ![Параметры импорта Maven в настройках IntelliJ](media/search-get-started-java/java-quickstart-settings-import-maven-auto.png)
+    :::image type="content" source="media/search-get-started-java/java-quickstart-settings-import-maven-auto.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 1. Откройте файл pom.xml и замените его содержимое следующими параметрами настройки Maven. Сюда входят ссылки на [подключаемый модуль Exec Maven](https://www.mojohaus.org/exec-maven-plugin/) и [API интерфейса JSON](https://javadoc.io/doc/org.glassfish/javax.json/1.0.2).
 
@@ -140,7 +140,7 @@ ms.locfileid: "89290357"
 
     По завершении дерево проектов должно выглядеть как на следующем изображении.
 
-    ![Структура каталогов проекта](media/search-get-started-java/java-quickstart-basic-code-tree.png)
+    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 1. Нажмите кнопку **ОК** , чтобы закрыть окно.
 
@@ -148,7 +148,7 @@ ms.locfileid: "89290357"
 
 1. В окне **Project** (Проект) разверните дерево источников, чтобы просмотреть содержимое папки `src` >  `main` >`resources` > `app`, и добавьте в нее файл `config.properties`. Для этого выберите папку `app`, нажмите сочетание клавиш ALT+INSERT, выберите вариант **File** (Файл) и введите имя файла.
 
-1. Скопируйте в новый файл следующие параметры и замените значения `<YOUR-SEARCH-SERVICE-NAME>`, `<YOUR-ADMIN-KEY>` и `<YOUR-QUERY-KEY>` именем и ключами вашей службы. Если конечная точка службы имеет имя `https://mydemo.search.windows.net`, значит служба называется mydemo.
+1. Скопируйте в новый файл следующие параметры и замените значения `<YOUR-SEARCH-SERVICE-NAME>`, `<YOUR-ADMIN-KEY>` и `<YOUR-QUERY-KEY>` именем и ключами вашей службы. Если конечная точка службы имеет имя `https://mydemo.search.windows.net`, значит служба называется `"mydemo"`.
 
     ```java
         SearchServiceName=<YOUR-SEARCH-SERVICE-NAME>
@@ -373,10 +373,10 @@ ms.locfileid: "89290357"
 
 1. Убедитесь, что проект имеет следующую структуру.
 
-    ![Структура каталогов и классы проекта](media/search-get-started-java/java-quickstart-basic-code-tree-plus-classes.png)
+    :::image type="content" source="media/search-get-started-java/java-quickstart-basic-code-tree-plus-classes.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 1. Откройте окно инструментов **Maven** и выполните такую цель Maven: `verify exec:java`
-![Execute maven goal: verify exec:java](media/search-get-started-java/java-quickstart-execute-maven-goal.png)
+:::image type="content" source="media/search-get-started-java/java-quickstart-execute-maven-goal.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 Когда обработка завершится, найдите сообщение BUILD SUCCESS с нулевым (0) кодом выхода после него.
 

@@ -3,14 +3,14 @@ title: Запуск параллельной рабочей нагрузки с 
 description: Руководство. Перекодировка медиафайлов параллельно с ffmpeg в пакетной службе с помощью клиентской библиотеки пакетной службы для .NET
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 09/29/2020
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: f57354a6eb52b3439cf298f66b706f53d101371e
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 8c8dcd01c7e97f77e994d021e39ce6a5e591ff9f
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88930236"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91537588"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
@@ -35,7 +35,7 @@ ms.locfileid: "88930236"
 
 * учетная запись пакетной службы и связанная учетная запись службы хранилища Azure. Чтобы создать эти учетные записи, см. примеры быстрого начала работы с пакетной службой с помощью [портала Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md).
 
-* [64-разрядная версия ffmpeg 3.4 для Windows](https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-3.4-win64-static.zip) (.zip). Загрузите ZIP-файл на локальный компьютер. Для этого руководства вам нужен только ZIP-файл. Вам не нужно распаковывать или локально устанавливать файл.
+* [64-разрядная версия ffmpeg 4.3.1 для Windows](https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-4.3.1-2020-09-21-full_build.zip) (.zip). Загрузите ZIP-файл на локальный компьютер. Для этого руководства вам нужен только ZIP-файл. Вам не нужно распаковывать или локально устанавливать файл.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "88930236"
 
 1. На портале Azure выберите **Дополнительные службы** > **Учетные записи пакетной службы** и щелкните имя учетной записи пакетной службы.
 3. Выберите **Приложения** > **Добавить**.
-4. В поле **Идентификатор приложения** введите *ffmpeg* и версию пакета *3.4*. Выберите файл zfmpeg zip, который вы загрузили ранее, и нажмите кнопку **ОК**. Пакет приложений ffmpeg добавляется в учетную запись пакетной службы.
+4. В поле **Идентификатор приложения** введите *ffmpeg* и версию пакета *4.3.1*. Выберите файл zfmpeg zip, который вы загрузили ранее, и нажмите кнопку **ОК**. Пакет приложений ffmpeg добавляется в учетную запись пакетной службы.
 
 ![Добавление пакета приложения](./media/tutorial-parallel-dotnet/add-application.png)
 
@@ -84,7 +84,7 @@ private const string StorageAccountKey  = "xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfw
 
 ```csharp
 const string appPackageId = "ffmpeg";
-const string appPackageVersion = "3.4";
+const string appPackageVersion = "4.3.1";
 ```
 
 ### <a name="build-and-run-the-sample-project"></a>Создание и запуск примера проекта
@@ -263,7 +263,7 @@ for (int i = 0; i < inputFiles.Count; i++)
     string outputMediaFile = String.Format("{0}{1}",
         System.IO.Path.GetFileNameWithoutExtension(inputMediaFile),
         ".mp3");
-    string taskCommandLine = String.Format("cmd /c {0}\\ffmpeg-3.4-win64-static\\bin\\ffmpeg.exe -i {1} {2}", appPath, inputMediaFile, outputMediaFile);
+    string taskCommandLine = String.Format("cmd /c {0}\\ffmpeg-4.3.1-2020-09-21-full_build\\bin\\ffmpeg.exe -i {1} {2}", appPath, inputMediaFile, outputMediaFile);
 
     // Create a cloud task (with the task ID and command line)
     CloudTask task = new CloudTask(taskId, taskCommandLine);

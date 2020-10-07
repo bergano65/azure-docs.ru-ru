@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e4236952bd41c4955e337813ff6d706263b8ef47
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 432386809596fb2ef040a05d1fe0d12294a1abef
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73890904"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91534528"
 ---
 # <a name="tutorial-configure-devices-connected-to-your-monitoring-solution"></a>Руководство по настройке устройств, подключенных к решению для мониторинга
 
@@ -66,7 +66,7 @@ ms.locfileid: "73890904"
 
 Чтобы изменить расположение модуля, задайте имя задания **UpdateEngineLocation**, укажите долготу **-122,15**, расположение **Фабрика 2**, широту **47,62**, а затем нажмите кнопку **Применить**:
 
-[![Обновление значения для свойства устройства](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigurephysical-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigurephysical-expanded.png#lightbox)
+[![Снимок экрана: страница "Device Explorer" с выделенным окном "Задания"](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigurephysical-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigurephysical-expanded.png#lightbox)
 
 Для отслеживания состояния задания щелкните **Просмотреть состояние задания**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "73890904"
 
 Создайте текстовый фильтр, который использует имя тега **FieldService** и значение **ConnectedVehicle** в условии. Сохраните фильтр как **Connected Vehicle** (Подключенный автомобиль).
 
-[![Создание фильтра Connected Vehicle](./media/iot-accelerators-remote-monitoring-manage/connectedvehiclefilter-inline.png)](./media/iot-accelerators-remote-monitoring-manage/connectedvehiclefilter-expanded.png#lightbox)
+[![Снимок экрана: страница "Device Explorer" с выделенным окном "Управление группами устройств"](./media/iot-accelerators-remote-monitoring-manage/connectedvehiclefilter-inline.png)](./media/iot-accelerators-remote-monitoring-manage/connectedvehiclefilter-expanded.png#lightbox)
 
 Теперь оператор Contoso может запрашивать устройства на основе рабочей группы.
 

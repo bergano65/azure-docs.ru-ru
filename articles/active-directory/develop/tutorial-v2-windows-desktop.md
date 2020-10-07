@@ -1,6 +1,7 @@
 ---
-title: Начало работы с классическими приложениями Windows на платформе удостоверений Майкрософт
-description: Из этой статьи вы узнаете, как классическое приложение .NET для Windows (XAML) может получить маркер доступа и вызвать API, защищенный платформой удостоверений Майкрософт.
+title: Руководство по Создание приложения Windows Presentation Foundation (WPF), использующего платформу удостоверений Майкрософт для проверки подлинности | Azure
+titleSuffix: Microsoft identity platform
+description: В этом руководстве показано, как создать приложение WPF, которое использует платформу удостоверений Майкрософт для реализации входа пользователей и как получить маркер доступа для вызова API Microsoft Graph от имени пользователей.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,24 +12,32 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: a865bab690c79288bdffcd7cebe424d1bb1969c0
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 7effb1592fb19f92958353a3333edf6fdf9a51af
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "82181548"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91574268"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Вызов API Microsoft Graph из классического приложения для Windows
 
-В этом руководстве показано, как в классическом приложении .NET для Windows (XAML) используется маркер доступа для вызова API Microsoft Graph. Приложению также доступны другие API, которым требуются маркеры доступа из конечной точки платформы удостоверений Microsoft для разработчиков версии 2.0. Эта платформа ранее именовалась Azure AD.
+В этом руководстве показано, как в классическом приложении .NET для Windows (XAML) используется маркер доступа для вызова API Microsoft Graph. Приложению также доступны другие API, которым требуются маркеры доступа от платформы удостоверений Майкрософт.
 
 Когда вы завершите работу с руководством, ваше приложение сможет вызывать защищенный API, использующий личные учетные записи (в том числе outlook.com, live.com и другие). Приложение будет также использовать рабочие и учебные учетные записи из любой компании или организации, использующей Azure Active Directory.
 
-> [!NOTE]
-> Для работы с руководством требуется Visual Studio 2015 с обновлением 3, Visual Studio 2017 или Visual Studio 2019. У вас нет ни одной из этих версий? [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
+В этом руководстве рассматриваются следующие темы:
 
->[!NOTE]
-> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](quickstart-v2-windows-desktop.md).
+> [!div class="checklist"]
+> * создание проекта *Windows Presentation Foundation (WPF)* в Visual Studio;
+> * установка библиотеки аутентификации Майкрософт (MSAL) для .NET;
+> * регистрация приложения на портале Azure;
+> * добавление кода для поддержки входа и выхода пользователей;
+> * добавление кода для вызова API Microsoft Graph;
+> * Тестирование приложения
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
@@ -367,3 +376,10 @@ private void DisplayBasicTokenInfo(AuthenticationResult authResult)
 После входа пользователя MSAL получает идентификатор маркера в дополнение к маркеру доступа, который используется для вызова Microsoft Graph API. Этот маркер содержит небольшое подмножество сведений, имеющие отношение к пользователям. Метод `DisplayBasicTokenInfo` отображает основные сведения, содержащиеся в маркере. Например, он показывает отображаемое имя и идентификатор пользователя, а также дату истечения срока действия маркера и строку, представляющую сам маркер доступа. Нажав кнопку *вызова API Microsoft Graph* несколько раз, вы увидите, что для последующих запросов повторно используется тот же маркер. Вы также можете увидеть, что библиотека MSAL продлила срок действия.
 
 [!INCLUDE [5. Test and Validate](../../../includes/active-directory-develop-guidedsetup-windesktop-test.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Из нашей серии сценариев узнайте, как создавать классические приложения, вызывающие защищенные веб-API.
+
+> [!div class="nextstepaction"]
+> [Сценарий: Классическое приложение, которое вызывает веб-API](scenario-desktop-overview.md)

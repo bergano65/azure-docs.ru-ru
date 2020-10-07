@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 676f1133a516174478a456a97bc467e7770fe6e7
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 695d1b1124c042b61837f0a1257ac2a201ae4860
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "84712519"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91539407"
 ---
 # <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Учебник. Выявление проблем с устройствами, подключенными к решению для мониторинга
 
@@ -122,7 +122,7 @@ ms.locfileid: "84712519"
 
 Чтобы окончательно удалить правило, удалите его из списка правил. Выберите правило для удаления и щелкните **Удалить**.
 
-[![Удаление правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdelete-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdelete-expanded.png#lightbox)
+[![Снимок экрана: страница "Правила" с выделенным окном "Удаление правила"](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdelete-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdelete-expanded.png#lightbox)
 
 Когда вы подтвердите удаление правила, вы сможете также удалить все оповещения, связанные с правилом, на странице **Обслуживание**.
 

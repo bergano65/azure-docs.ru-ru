@@ -3,12 +3,12 @@ title: Обзор Azure Blueprints
 description: Описание службы Azure Blueprints, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.
 ms.date: 08/27/2020
 ms.topic: overview
-ms.openlocfilehash: e5c08f4211f03ddc6d2f48eee4fc84a824732e43
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 499f2c4afa55913b6af714d20ec1d52e2ecbbc47
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89050783"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91541770"
 ---
 # <a name="what-is-azure-blueprints"></a>Что такое Azure Blueprint?
 
@@ -78,7 +78,9 @@ ms.locfileid: "89050783"
 
 ## <a name="permissions-in-azure-blueprints"></a>Разрешения в Azure Blueprint
 
-Чтобы использовать схемы, вам должны быть предоставлены разрешения с помощью [управления доступом на основе ролей](../../role-based-access-control/overview.md) (RBAC). Для создания схем ваша учетная запись должна иметь следующие разрешения:
+Чтобы использовать схемы, вам должны быть предоставлены разрешения с помощью механизма [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md). Для чтения или просмотра схемы на портале Azure у вашей учетной записи должен быть доступ на чтение к области, в которой находится определение схемы.
+
+Для создания схем ваша учетная запись должна иметь следующие разрешения:
 
 - `Microsoft.Blueprint/blueprints/write` — создание определения схемы
 - `Microsoft.Blueprint/blueprints/artifacts/write` — создание артефактов в определении схемы

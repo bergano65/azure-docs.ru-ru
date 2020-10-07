@@ -1,62 +1,39 @@
 ---
-title: Подключение примера кода устройства IoT Plug and Play (предварительная версия) компонента Java к Центру Интернета вещей | Документация Майкрософт
-description: Создание и запуск примера кода Java устройства IoT Plug and Play (предварительная версия), который использует несколько компонентов и подключается к Центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Подключение примера кода Java устройства IoT Plug and Play к Центру Интернета вещей | Документация Майкрософт
+description: Создание и запуск примера кода Java устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 1d16d8c54939c4f659b6a1530e2d360b957a09ad
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: a7c1f0d207a113b2c12010cbc0a8876edd9269bc
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87351888"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91577260"
 ---
-# <a name="tutorial-connect-a-sample-iot-plug-and-play-preview-multiple-component-device-application-to-iot-hub-java"></a>Руководство по подключению примера приложения многокомпонентного устройства IoT Plug and Play (предварительная версия) к Центру Интернета вещей (Java)
+# <a name="tutorial-connect-a-sample-iot-plug-and-play-multiple-component-device-application-to-iot-hub-java"></a>Руководство по подключению примера приложения многокомпонентного устройства IoT Plug and Play к Центру Интернета вещей (Java)
 
 [!INCLUDE [iot-pnp-tutorials-device-selector.md](../../includes/iot-pnp-tutorials-device-selector.md)]
 
 В этом учебнике показано, как создать многокомпонентный пример приложения устройства IoT Plug and Play, подключить его к Центру Интернета вещей и с помощью обозревателя IoT Azure просмотреть телеметрию, которую он отправляет. Пример приложения написан на языке Java и включен в пакет SDK для устройств центра Интернета вещей Azure для Java. Разработчик решения может использовать Azure CLI, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
-В этом учебнике показано, как создать пример приложения устройства IoT Plug and Play с компонентами и корневым интерфейсом, подключить его к центру Интернета вещей и с помощью обозревателя центра Интернета вещей Azure просмотреть сведения, отправляемые в центр. Пример приложения написан на языке Java и включен в пакет SDK для устройств центра Интернета вещей Azure для Java. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+В этом руководстве показано, как создать пример приложения устройства IoT Plug and Play с компонентами, подключить его к центру Интернета вещей и с помощью обозревателя Интернета вещей Azure просмотреть сведения, отправляемые в центр. Пример приложения написан на языке Java и включен в пакет SDK для устройств центра Интернета вещей Azure для Java. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+[!INCLUDE [iot-pnp-prerequisites](../../includes/iot-pnp-prerequisites.md)]
+
 Для выполнения инструкций из этого учебника в ОС Windows установите в локальной среде Windows такое программное обеспечение:
 
-* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
+* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
 * [Apache Maven 3](https://maven.apache.org/download.cgi).
-
-### <a name="azure-iot-explorer"></a>Обозреватель Интернета вещей Azure
-
-Для взаимодействия с примером устройства во второй части этого краткого руководства используется **обозреватель Интернета вещей Azure**. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
-
-[!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
-
-Выполните следующую команду, чтобы получить _строку подключения к Центру Интернета вещей_ для вашего концентратора. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
-
-```azurecli-interactive
-az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
-```
-
-> [!TIP]
-> Вы также можете использовать обозреватель Интернета вещей, чтобы найти строку подключения для центра Интернета вещей.
-
-Выполните указанную ниже команду, чтобы получить _строку подключения устройства_, добавленного в центр. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим кратким руководством.
-
-```azurecli-interactive
-az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output table
-```
-
-[!INCLUDE [iot-pnp-download-models.md](../../includes/iot-pnp-download-models.md)]
 
 ## <a name="download-the-code"></a>Загрузка кода
 
-С помощью этого учебника вы подготовите среду разработки, которую можно использовать для клонирования и сборки пакета SDK для устройств Центра Интернета вещей Azure для Java.
+Если вы ознакомились с [Кратким руководством по подключению примера приложения устройства IoT Plug and Play в Windows к Центру Интернета вещей (Java)](quickstart-connect-device-java.md), значит вы уже клонировали репозиторий.
 
 Откройте командную строку в выбранном каталоге. Выполните следующую команду для клонирования репозитория GitHub [пакетов SDK и библиотек Интернета вещей Azure для Java](https://github.com/Azure/azure-iot-sdk-java) в это расположение:
 
@@ -68,21 +45,19 @@ git clone https://github.com/Azure/azure-iot-sdk-java.git
 
 ## <a name="build-the-code"></a>Сборка кода
 
-В Windows перейдите к корневой папке клонированного репозитория пакета SDK для Java. Затем перейдите к папке *\device\iot-device-samples\pnp-device-sample\temerature-controller-device-sample*.
+В Windows перейдите к корневой папке клонированного репозитория пакета SDK для Java. Выполните следующую команду, чтобы создать зависимости:
 
-Запустите сборку примера приложения с помощью следующей команды.
-
-```java
-mvn clean package
+```cmd/sh
+mvn install -T 2C -DskipTests
 ```
 
 ## <a name="run-the-device-sample"></a>Запуск примера устройства
 
-Создайте переменную среды с именем **IOTHUB_DEVICE_CONNECTION_STRING**, чтобы сохранить строку подключения устройства, которую вы записали ранее.
+[!INCLUDE [iot-pnp-environment](../../includes/iot-pnp-environment.md)]
 
-Чтобы запустить пример приложения, выполните следующую команду:
+Чтобы запустить пример приложения, перейдите в папку *\device\iot-device-samples\pnp-device-sample\temperature-controller-device-sample* и выполните следующую команду:
 
-```java
+```cmd/sh
 mvn exec:java -Dexec.mainClass="samples.com.microsoft.azure.sdk.iot.device.TemperatureController"
 ```
 
@@ -166,7 +141,7 @@ Message message = PnpHelper.createIotHubMessageUtf8(telemetryName, currentTemper
 
 :::image type="content" source="media/tutorial-multiple-components-java/multiple-component.png" alt-text="Многокомпонентное устройство в обозревателе Интернета вещей Azure":::
 
-Кроме того, средство обозревателя Интернета вещей Azure можно использовать для вызова команд в одном из двух компонентов термостата или в корневом интерфейсе.
+Кроме того, средство обозревателя Интернета вещей Azure можно использовать для вызова команд в одном из двух компонентов термостата или в компоненте по умолчанию.
 
 [!INCLUDE [iot-pnp-clean-resources.md](../../includes/iot-pnp-clean-resources.md)]
 
@@ -175,4 +150,4 @@ Message message = PnpHelper.createIotHubMessageUtf8(telemetryName, currentTemper
 Из этого учебника вы узнали, как подключить устройство IoT Plug and Play с компонентами к центру Интернета вещей. Дополнительные сведения о моделях устройства IoT Plug and Play см. в статье
 
 > [!div class="nextstepaction"]
-> [Руководство для разработчиков IoT Plug and Play (предварительная версия)](concepts-developer-guide.md)
+> [Руководство разработчика IoT Plug and Play](concepts-developer-guide-device-csharp.md)

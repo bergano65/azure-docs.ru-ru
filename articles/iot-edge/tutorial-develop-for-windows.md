@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: d4846a69f548c99de735cc9d9e06bd6bb263b4bd
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: a0bc934d32a2d09fcd6b52ec1f186855bf0da92c
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439700"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91449612"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Руководство по разработке модулей IoT Edge для устройств с Windows
 
@@ -295,7 +295,7 @@ ms.locfileid: "87439700"
 
 Код IotEdgeModule1 получает сообщения через свою очередь входящих сообщений и передает их через свою очередь выходящих сообщений. В манифесте развертывания объявлены маршруты, которые передают сообщения из SimulatedTemperatureSensor в IotEdgeModule1, а затем пересылают сообщения из IotEdgeModule1 в Центр Интернета вещей. Средства Azure IoT Edge для Visual Studio позволяют просматривать сообщения по мере их поступления в Центр Интернета вещей с ваших отдельных устройств.
 
-1. В Visual Studio Cloud Explorer выберите имя устройства IoT Edge, в котором выполнено развертывание.
+1. В Visual Studio Cloud Explorer выберите имя устройства IoT Edge, на котором выполнено развертывание.
 
 2. В меню **Действия** выберите **Начать мониторинг встроенной конечной точки событий**.
 

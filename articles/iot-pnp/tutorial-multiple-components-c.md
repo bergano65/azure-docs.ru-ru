@@ -1,28 +1,28 @@
 ---
-title: Подключение примера кода устройства C IoT Plug and Play (предварительная версия) к Центру Интернета вещей | Документация Майкрософт
-description: Создание и запуск примера кода устройства C IoT Plug and Play (предварительная версия), который использует несколько компонентов и подключается к Центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
+title: Подключение примера кода C устройства IoT Plug and Play к Центру Интернета вещей | Документация Майкрософт
+description: Создание и запуск примера кода C устройства IoT Plug and Play, который использует несколько компонентов и подключается к центру Интернета вещей. С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
 author: ericmitt
 ms.author: ericmitt
 ms.date: 07/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 29017ec11429b26018093980ca71c317b12085b5
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.openlocfilehash: 1873d2acb96c0c94c7e0d678e450596c60ca51fb
+ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89505759"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91575407"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-multiple-component-device-applications-running-on-linux-or-windows-to-iot-hub-c"></a>Руководство по подключению приложений устройства IoT Plug and Play с несколькими компонентами в Linux или Windows к Центру Интернета вещей (C)
 
 [!INCLUDE [iot-pnp-tutorials-device-selector.md](../../includes/iot-pnp-tutorials-device-selector.md)]
 
-В этом учебнике показано, как создать пример приложения устройства IoT Plug and Play с компонентами и корневым интерфейсом, подключить его к Центру Интернета вещей и с помощью обозревателя Центра Интернета вещей Azure просмотреть сведения, отправляемые в центр. Пример приложения написан на языке C и включен в пакет SDK для устройств Azure IoT для C. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+В этом руководстве показано, как создать пример приложения устройства IoT Plug and Play с компонентами, подключить его к центру Интернета вещей и с помощью обозревателя Интернета вещей Azure просмотреть сведения, отправляемые в центр. Пример приложения написан на языке C и включен в пакет SDK для устройств Azure IoT для C. Разработчик решения может использовать обозреватель Интернета вещей Azure, чтобы ознакомиться с возможностями устройства IoT Plug and Play, не просматривая код устройства.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [iot-pnp-prerequisites](../../includes/iot-pnp-prerequisites.md)]
 
 Операции, описанные в этом учебнике, можно выполнить в Linux или Windows. Команды оболочки в этом учебнике соответствуют требованиям соглашения Linux для разделителей пути "`/`". Если вы используете Windows, не забудьте изменить эти разделители на "`\`".
 
@@ -52,34 +52,13 @@ gcc --version
 
 Для выполнения инструкций из этого учебника в ОС Windows установите в локальной среде Windows такое программное обеспечение:
 
-* [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). При [установке](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019) Visual Studio обязательно добавьте рабочую нагрузку **Разработка классических приложений на C++** .
+* [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). При [установке](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019&preserve-view=true) Visual Studio обязательно добавьте рабочую нагрузку **Разработка классических приложений на C++** .
 * [Git](https://git-scm.com/download/).
 * [CMake](https://cmake.org/download/).
 
-### <a name="azure-iot-explorer"></a>Обозреватель Интернета вещей Azure
-
-Для взаимодействия с примером устройства во второй части этого учебника используется **обозреватель Интернета вещей Azure**. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
-
-[!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
-
-Выполните следующую команду, чтобы получить _строку подключения к Центру Интернета вещей_ для вашего концентратора. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим учебником.
-
-```azurecli-interactive
-az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
-```
-
-> [!TIP]
-> Вы также можете использовать обозреватель Интернета вещей, чтобы найти строку подключения для центра Интернета вещей.
-
-Выполните указанную ниже команду, чтобы получить _строку подключения устройства_, добавленного в центр. Запишите эту строку подключения. Вы будете использовать ее позже при работе с этим учебником.
-
-```azurecli-interactive
-az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output table
-```
-
-[!INCLUDE [iot-pnp-download-models.md](../../includes/iot-pnp-download-models.md)]
-
 ## <a name="download-the-code"></a>Загрузка кода
+
+Если вы уже выполнили действия, описанные в [кратком руководстве подключению примера приложения устройства IoT Plug and Play в Linux или Windows к Центру Интернета вещей (C)](quickstart-connect-device-c.md), значит вы уже скачали код.
 
 С помощью этого учебника вы подготовите среду разработки, которую можно использовать для клонирования и сборки пакета SDK для устройств Центра Интернета вещей Azure для C.
 
@@ -102,7 +81,7 @@ git submodule update --init
 1. Откройте корневую папку клонированного репозитория. Через пару секунд поддержка **CMake** в Visual Studio создаст все, что необходимо для выполнения и отладки проекта.
 1. Когда среда Visual Studio в **Обозревателе решений** готова, перейдите к примеру *iothub_client/samples/pnp/pnp_temperature_controller/* .
 1. Щелкните правой кнопкой мыши файл *pnp_temperature_controller.c* и выберите **Add Debug Configuration** (Добавить конфигурацию отладки). Выберите **По умолчанию**.
-1. Visual Studio откроет файл *launch.vs.json*. Измените этот файл, как показано в следующем фрагменте кода, чтобы задать необходимые переменные среды:
+1. Visual Studio откроет файл *launch.vs.json*. Измените этот файл, как показано в следующем фрагменте кода, чтобы задать необходимые переменные среды. Во время работы со статьей [Настройка среды для кратких руководств и учебников IoT Plug and Play](set-up-environment.md) вы записали идентификатор области и первичный ключ регистрации:
 
     ```json
     {
@@ -115,8 +94,10 @@ git submodule update --init
           "projectTarget": "",
           "name": "pnp_temperature_controller.c",
           "env": {
-            "IOTHUB_DEVICE_SECURITY_TYPE": "connectionString",
-            "IOTHUB_DEVICE_CONNECTION_STRING": "<Your device connection string>"
+            "IOTHUB_DEVICE_SECURITY_TYPE": "DPS",
+            "IOTHUB_DEVICE_DPS_ID_SCOPE": "<Your ID scope>",
+            "IOTHUB_DEVICE_DPS_DEVICE_ID": "my-pnp-device",
+            "IOTHUB_DEVICE_DPS_DEVICE_KEY": "<Your enrollment primary key>"
           }
         }
       ]
@@ -148,12 +129,11 @@ git submodule update --init
     cmake --build .
     ```
 
+[!INCLUDE [iot-pnp-environment](../../includes/iot-pnp-environment.md)]
+
+Дополнительные сведения о примере конфигурации см. в [образце файла сведений](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/samples/pnp/readme.md).
+
 Запуск примера:
-
-1. Создайте две переменные среды, чтобы настроить приложение для подключения к центру Интернета вещей с помощью строки подключения:
-
-    * **IOTHUB_DEVICE_SECURITY_TYPE** со значением `"connectionString"`.
-    * **IOTHUB_DEVICE_CONNECTION_STRING**, чтобы сохранить строку подключения устройства, которую вы записали ранее.
 
 1. Из папки _cmake_ перейдите к папке, содержащей исполняемый файл, и запустите его:
 
@@ -165,7 +145,8 @@ git submodule update --init
 
     ```cmd
     REM Windows
-    iothub_client\samples\pnp\pnp_temperature_controller\Debug\pnp_temperature_controller.exe
+    cd iothub_client\samples\pnp\pnp_temperature_controller\Debug
+    pnp_temperature_controller.exe
     ```
 
 Теперь устройство готово к получению команд и обновлений свойств и начало отправлять данные телеметрии в концентратор. Продолжите работу примера, после того как выполните следующие действия.
@@ -316,4 +297,4 @@ iothubResult = IoTHubDeviceClient_LL_SendEventAsync(deviceClientLL, messageHandl
 Из этого учебника вы узнали, как подключить устройство IoT Plug and Play с компонентами к центру Интернета вещей. Дополнительные сведения о моделях устройства IoT Plug and Play см. в статье
 
 > [!div class="nextstepaction"]
-> [Руководство для разработчиков IoT Plug and Play (предварительная версия)](concepts-developer-guide.md)
+> [Руководство разработчика IoT Plug and Play](concepts-developer-guide-device-csharp.md)

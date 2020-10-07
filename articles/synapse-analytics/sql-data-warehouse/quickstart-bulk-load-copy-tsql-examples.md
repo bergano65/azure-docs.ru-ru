@@ -4,17 +4,17 @@ description: Описание способов проверки подлинно
 services: synapse-analytics
 author: kevinvngo
 ms.service: synapse-analytics
-ms.topic: overview
+ms.topic: quickstart
 ms.subservice: sql-dw
 ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6f54a8993b602110e35c410338b6f0a51109738f
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: e3b22b831deca47eece70d337a99346ae472c7ee
+ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88603899"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91569480"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Безопасная загрузка данных с помощью Synapse SQL
 
@@ -76,7 +76,7 @@ WITH (
 3. Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](../../storage/common/storage-network-security.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#exceptions).
 #### <a name="steps"></a>Шаги
 
-1. В PowerShell **зарегистрируйте свой сервер SQL** в каталоге Azure Active Directory (AAD).
+1. В PowerShell **зарегистрируйте свой сервер SQL** в Azure Active Directory.
 
    ```powershell
    Connect-AzAccount
@@ -110,10 +110,10 @@ WITH (
     )
     ```
 
-## <a name="d-azure-active-directory-authentication-aad"></a>Г. Проверка подлинности Azure Active Directory (AAD)
+## <a name="d-azure-active-directory-authentication"></a>Г. Аутентификация Azure Active Directory
 #### <a name="steps"></a>Шаги
 
-1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте пользователю AAD одну из следующих ролей Azure: **владелец данных BLOB-объектов хранилища, участник для данных BLOB-объектов хранилища или читатель данных BLOB-объектов хранилища**. 
+1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте пользователю Azure AD одну из следующих ролей Azure: **владелец, участник или читатель данных BLOB-объектов хранилища**. 
 
     > [!IMPORTANT]
     > Укажите одну из следующих ролей Azure: владелец, участник или читатель **данных BLOB-объектов** **хранилища**. Эти роли отличаются от встроенных ролей Azure владельца, участника и читателя.
@@ -136,11 +136,11 @@ WITH (
 ## <a name="e-service-principal-authentication"></a>Д. Проверка подлинности на основе субъекта-службы
 #### <a name="steps"></a>Шаги
 
-1. [Создайте приложение Azure Active Directory (AAD).](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application)
+1. [Создание приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application)
 2. [Получите идентификатор приложения.](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)
 3. [Получите ключ проверки подлинности.](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
 4. [Получите конечную точку маркера OAuth 2.0 версии V1.](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications)
-5. В учетной записи хранения [назначьте приложению AAD разрешения на чтение, запись и выполнение](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder).
+5. В учетной записи хранения [назначьте приложению Azure AD разрешения на чтение, запись и выполнение](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder).
 6. Выполните инструкцию COPY.
 
     ```sql

@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e2858daaa834552da5a85063fd9973d2c35209d7
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: f41584194f8f5e8afde630405116b8b169cb5656
+ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88005624"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91542042"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop-classic"></a>Руководство по созданию арендатора в Виртуальном рабочем столе Windows (классическом)
 
@@ -126,7 +126,7 @@ ms.locfileid: "88005624"
 1. В том же сеансе [портала Azure](https://portal.azure.com) найдите и выберите **Подписки**.
 
    > [!div class="mx-imgBorder"]
-   > ![Снимок экрана результатов поиска для "Azure Active Directory" на портале Azure. Результат поиска под разделом "Службы" будет выделен.](../media/tenant-search-subscription.png)
+   > ![Снимок экрана результатов поиска для "Azure Active Directory" на портале Azure. Выделены результаты поиска по запросу "Службы"](../media/tenant-search-subscription.png)
 
 2. Выберите подписку Azure, которую вы хотите использовать для получения уведомлений от службы виртуального рабочего стола Windows.
 3. Найдите **Идентификатор подписки**, а затем наведите указатель мыши над значением пока не появится значок буфера обмена. Выберите значок буфера обмена и вставьте его в удобное расположение, чтобы его можно было использовать позже как значение **AzureSubscriptionId**.
