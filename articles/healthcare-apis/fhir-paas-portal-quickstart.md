@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 03/15/2020
 ms.author: matjazl
 ms.openlocfilehash: 8c0448d31cd89e2ca969b81361b30bac3f9610e9
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "87851942"
 ---
 # <a name="quickstart-deploy-azure-api-for-fhir-using-azure-portal"></a>Краткое руководство. Развертывание Azure API для FHIR с помощью портала Azure
@@ -37,13 +37,13 @@ ms.locfileid: "87851942"
 
 Чтобы создать учетную запись Azure API для FHIR, выберите **Создать**.
 
-:::image type="content" source="media/quickstart-paas-portal/portal-create-healthcare-apis.png" alt-text="Создание учетной записи Azure API для FHIR":::
+:::image type="content" source="media/quickstart-paas-portal/portal-create-healthcare-apis.png" alt-text="Поиск интерфейсов API для здравоохранения":::
 
 ## <a name="enter-account-details"></a>Ввод данных для учетной записи
 
 Выберите существующую группу ресурсов или создайте новую, выберите имя учетной записи и щелкните **Просмотр и создание**:
 
-:::image type="content" source="media/quickstart-paas-portal/portal-new-healthcareapi-details.png" alt-text="Сведения о новом API для здравоохранения":::
+:::image type="content" source="media/quickstart-paas-portal/portal-new-healthcareapi-details.png" alt-text="Поиск интерфейсов API для здравоохранения":::
 
 Подтвердите создание и дождитесь, пока завершится развертывание API для FHIR.
 
@@ -51,7 +51,7 @@ ms.locfileid: "87851942"
 
 Вы также можете щелкнуть **Далее: Дополнительные параметры**, чтобы просмотреть параметры аутентификации. Конфигурация по умолчанию для Azure API для FHIR включает [использование Azure RBAC для назначения ролей плоскости данных](configure-azure-rbac.md). При настройке в этом режиме параметру "Центр авторизации" для службы FHIR будет задано значение арендатора Azure Active Directory подписки:
 
-:::image type="content" source="media/rbac/confirm-azure-rbac-mode-create.png" alt-text="Параметры аутентификации по умолчанию":::
+:::image type="content" source="media/rbac/confirm-azure-rbac-mode-create.png" alt-text="Поиск интерфейсов API для здравоохранения":::
 
 Обратите внимание, что поле для ввода допустимых идентификаторов объектов неактивно, так как для настройки назначений ролей в этом случае используется Azure RBAC.
 

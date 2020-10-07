@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 08/04/2020
 ms.custom: seodec18, mvc
 ms.openlocfilehash: ace1030923ea226376369941badafafa662d25ce
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88031830"
 ---
 # <a name="quickstart-create-an-azure-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание реестра контейнеров Azure с помощью портала Azure
@@ -31,7 +31,7 @@ ms.locfileid: "88031830"
 
 На вкладке **Основные сведения** введите значения в поле **Группа ресурсов** и **Имя реестра**. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В целях этого руководства создайте группу ресурсов в регионе `West US` в расположении с именем `myResourceGroup`. Для **SKU** задайте значение "Базовый".
 
-:::image type="content" source="media/container-registry-get-started-portal/qs-portal-03.png" alt-text="Создание реестра контейнеров на портале":::
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-03.png" alt-text="Переход к реестру контейнеров на портале":::
 
 Примите значения по умолчанию для остальных параметров. Щелкните **Просмотр и создание**. Проверив параметры, нажмите кнопку **Создать**.
 
@@ -39,7 +39,7 @@ ms.locfileid: "88031830"
 
 Когда появится сообщение **Развертывание прошло успешно**, выберите реестр контейнеров на портале. 
 
-:::image type="content" source="media/container-registry-get-started-portal/qs-portal-05.png" alt-text="Страница обзора реестра контейнеров на портале":::
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-05.png" alt-text="Переход к реестру контейнеров на портале":::
 
 Запишите имя реестра и значение **сервера входа**. Эти значения используются в следующих шагах при отправке и извлечении образов с помощью Docker.
 
@@ -65,7 +65,7 @@ az acr login --name mycontainerregistry
 
 Чтобы вывести список образов в вашем реестре, перейдите в реестр на портале и выберите **Репозитории**, а затем выберите репозиторий **hello-world**, созданный с помощью `docker push`.
 
-:::image type="content" source="media/container-registry-get-started-portal/qs-portal-09.png" alt-text="Список образов контейнеров на портале":::
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-09.png" alt-text="Переход к реестру контейнеров на портале":::
 
 Выбрав репозиторий **hello-world**, вы увидите образ с тегом `v1` в разделе **Теги**.
 
@@ -75,7 +75,7 @@ az acr login --name mycontainerregistry
 
 Чтобы очистить ресурсы, перейдите к группе ресурсов **myResourceGroup** на портале. После загрузки группы ресурсов щелкните пункт **Удалить группу ресурсов**, чтобы удалить группу ресурсов, реестр контейнеров и сохраненные образы контейнеров.
 
-:::image type="content" source="media/container-registry-get-started-portal/qs-portal-08.png" alt-text="Удаление группы ресурсов на портале":::
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-08.png" alt-text="Переход к реестру контейнеров на портале":::
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

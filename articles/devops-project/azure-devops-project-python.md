@@ -14,10 +14,10 @@ ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc, devx-track-python
 ms.openlocfilehash: 891b8a5a844691d46c121c254e04b73f2b8c2d62
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "87872741"
 ---
 # <a name="create-a-cicd-pipeline-for-python-with-azure-devops-starter"></a>Создание конвейера CI/CD для Python с помощью Azure DevOps Starter

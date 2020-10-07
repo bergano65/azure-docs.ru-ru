@@ -14,10 +14,10 @@ ms.reviewer: jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 8cb426239fe9f3dea207df06b6f2bafbdb54058a
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88117674"
 ---
 # <a name="azure-active-directory-for-developers-v10-overview"></a>Общие сведения об Azure Active Directory (версии 1.0) для разработчиков

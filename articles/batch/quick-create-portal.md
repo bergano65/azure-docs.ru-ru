@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 08/17/2020
 ms.custom: mvc
 ms.openlocfilehash: cf65a681764a848f8132ec44b8ba313ef1a83235
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88511377"
 ---
 # <a name="quickstart-run-your-first-batch-job-in-the-azure-portal"></a>Краткое руководство по выполнению первого пакетного задания на портале Azure
@@ -97,7 +97,7 @@ ms.locfileid: "88511377"
 
 Созданные вами примеры задач будут выполнены в течение нескольких минут. Чтобы просмотреть выходные данные завершенной задачи, выберите ее, а затем нажмите **Файлы на узле**. Выберите файл `stdout.txt`, чтобы просмотреть стандартные выходные данные задачи. Его содержимое должно выглядеть следующим образом:
 
-:::image type="content" source="media/quick-create-portal/task-output.png" alt-text="Снимок экрана, на котором показаны выходные данные завершенной задачи.":::
+:::image type="content" source="media/quick-create-portal/task-output.png" alt-text="Снимок экрана с изображением пакетной службы в Azure Marketplace.":::
 
 В этом файле содержатся сведения о переменных среды пакетной службы, установленных на узле. При создании пакетных заданий и задач вы можете ссылаться на них в командных строках задач, а также в приложениях и скриптах, запускаемых этими командными строками.
 

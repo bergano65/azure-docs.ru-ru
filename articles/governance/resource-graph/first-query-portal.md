@@ -4,10 +4,10 @@ description: В этом кратком руководстве описано, �
 ms.date: 08/10/2020
 ms.topic: quickstart
 ms.openlocfilehash: 4d68366005ad6379669d29fb8264f78d1b8f4972
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88056386"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-resource-graph-explorer"></a>Краткое руководство. Выполнение запроса Resource Graph с помощью обозревателя Azure Resource Graph
@@ -94,7 +94,7 @@ ms.locfileid: "88056386"
 
 - [Обозреватель Resource Graph — пример панели мониторинга 2](https://github.com/Azure-Samples/Governance/blob/master/src/resource-graph/portal-dashboards/sample-2/resourcegraphexplorer-sample-2.json)
 
-  :::image type="content" source="./media/arge-sample2-small.png" alt-text="Пример изображения для примера панели мониторинга 2" lightbox="./media/arge-sample2-large.png":::
+  :::image type="content" source="./media/arge-sample2-small.png" alt-text="Пример изображения для примера панели мониторинга 1" lightbox="./media/arge-sample2-large.png":::
 
 > [!NOTE]
 > Счетчики и диаграммы на приведенных выше снимках экрана с примерами панелей мониторинга возвращают результаты с учетом среды Azure.
