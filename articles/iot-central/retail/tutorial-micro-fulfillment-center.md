@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 01/09/2020
-ms.openlocfilehash: 880d8ee0e6e2b3984f6bea4b994642724085d512
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 28afa98313ef1c9577e90ed161a1d20cbf5faf75
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90980549"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91440205"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-micro-fulfillment-center-application-template"></a>Руководство по Развертывание и использование шаблона приложения микроцентра исполнения заказов
 
@@ -62,11 +62,11 @@ ms.locfileid: "90980549"
    * Просматривать план этажей и расположение роботизированных операторов в структуре выполнения.
    * Активировать такие команды, как сброс системы управления, обновление встроенного ПО оператора и изменение конфигурации сети.
 
-     ![Снимок экрана с верхней половиной панели мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard1.png)
+     ![Снимок экрана: верхняя половина панели мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard1.png)
    * См. пример панели мониторинга, которую оператор может использовать для наблюдения за условиями в центре выполнения. 
    * Осуществлять мониторинг работоспособности полезных данных, выполняемых на устройстве шлюза в центре выполнения.    
 
-     ![Снимок экрана с нижней половиной панели мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard2.png)
+     ![Снимок экрана: нижняя половина панели мониторинга для микроцентра исполнения заказов Northwind Traders](./media/tutorial-micro-fulfillment-center-app/mfc-dashboard2.png)
 
 ## <a name="device-template"></a>Шаблон устройства
 Если выбрать вкладку "Шаблоны устройств", вы увидите, что в шаблоне есть два различных типа устройств: 

@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 08/17/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 365fe8c330cadcc01fcd24de28b663cd80b55117
-ms.sourcegitcommit: c52e50ea04dfb8d4da0e18735477b80cafccc2cf
+ms.openlocfilehash: 8c9e6462beb48e3326de3c2348b73053f717e032
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89535890"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441266"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
@@ -204,11 +204,11 @@ ms.locfileid: "89535890"
 
 Получив идентификатор, ключ и домен для учетной записи службы "Пространственные привязки Azure", перейдите и вставьте `Account Id` в `SpatialAnchorsAccountId`, `Account Key` в `SpatialAnchorsAccountKey` и `Account Domain` в `SpatialAnchorsAccountDomain`.
 
-Наконец, соединим все компоненты. Добавьте указанный ниже код в метод `SpawnNewAnchoredObject()`. Он будет вызывать метод `CreateAnchorAsync()` сразу после создания сферы. После завершения работы метода указанный ниже код выполнит последнее обновление параметров сферы, изменив ее цвет на синий.
+Наконец, соединим все компоненты. Добавьте указанный ниже код в метод `CreateAndSaveSphere()`. Он будет вызывать метод `CreateAnchorAsync()` сразу после создания сферы. После завершения работы метода указанный ниже код выполнит последнее обновление параметров сферы, изменив ее цвет на синий.
 
 [!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=320-397&highlight=26-77)]
 
-Запустите приложение из **Visual Studio** еще раз. Покрутите головой, а затем коснитесь, чтобы разместить сферу. Когда будет собрано достаточное количество кадров, цвет сферы станет желтым и начнется передача данных в облако. Когда отправка данных завершится, цвет сферы станет синим. При желании вы можете воспользоваться окном вывода в **Visual Studio** для мониторинга сообщений, которые приложение отправляет в журнал. Вы можете просмотреть `RecommendedForCreateProgress`, а после завершения передачи — увидеть идентификатор привязки, возвращенный из облака.
+Запустите приложение из **Visual Studio** еще раз. Покрутите головой, а затем коснитесь, чтобы разместить сферу. Когда будет собрано достаточное количество кадров, цвет сферы станет желтым и начнется передача данных в облако. Когда отправка данных завершится, цвет сферы станет синим. Как вариант, для мониторинга сообщений, которые приложение отправляет в журнал, вы можете воспользоваться [окном вывода](https://docs.microsoft.com/visualstudio/ide/reference/output-window) при отладке в **Visual Studio**. Чтобы просмотреть сообщения журнала, убедитесь, что вы развертываете конфигурацию `Debug` приложения в Visual Studio. Вы можете просмотреть `RecommendedForCreateProgress`, а после завершения передачи — увидеть идентификатор привязки, возвращенный из облака.
 
 > [!NOTE]
 > Если вы получаете сообщение DllNotFoundException: Unable to load DLL 'AzureSpatialAnchors': The specified module could not be found. (DllNotFoundException. Не удается загрузить DLL "AzureSpatialAnchors": не найден указанный модуль.) необходимо **очистить** и снова **создать** решение.

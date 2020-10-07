@@ -9,12 +9,12 @@ ms.subservice: queues
 ms.topic: tutorial
 ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7474cfbd0182797bd62e97979e83e2aeb5244cbc
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 23684dbbc5cb8c2d5fc4880ae8fe1999450928e0
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89008800"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400576"
 ---
 # <a name="tutorial-work-with-azure-storage-queues-in-net"></a>Руководство по работе с очередями службы хранилища Azure в .NET.
 
@@ -227,6 +227,8 @@ ms.locfileid: "89008800"
    # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
    Этот метод получает сообщение из очереди, вызывая [ReceiveMessagesAsync](/dotnet/api/azure.storage.queues.queueclient.receivemessagesasync) со значением "1" в первом параметре, чтобы получить только одно следующее сообщение из очереди. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](/dotnet/api/azure.storage.queues.queueclient.deletemessageasync).
+
+   Когда сообщение отправляется в очередь с помощью пакета SDK до версии 12, оно автоматически кодируется в Base64. Начиная с версии 12, кодировка не применяется. При извлечении сообщения с помощью пакета SDK версии 12 оно не декодируется автоматически. Необходимо явным образом выполнить для содержимого [декодирование из Base64](/dotnet/api/system.convert.frombase64string).
 
    :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Initial.cs" id="snippet_InitialRetrieveMessage":::
 

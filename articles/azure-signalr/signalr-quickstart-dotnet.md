@@ -6,25 +6,26 @@ ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.date: 04/20/2019
+ms.date: 09/28/2020
 ms.author: zhshang
-ms.openlocfilehash: 8797d17ac439882415a9f5360fded28cb55484d5
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: 8c7d7f84e02cdd2cd4f53bc9eb42c78f936146ae
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89050545"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91408375"
 ---
 # <a name="quickstart-create-a-chat-room-with-aspnet-and-signalr-service"></a>Краткое руководство. Создание комнаты чата с помощью ASP.NET и Службы SignalR
 
-Служба Azure SignalR основана на экземпляре [SignalR для ASP.NET Core 2.0](https://docs.microsoft.com/aspnet/core/signalr/introduction), который совместим с ASP.NET SignalR **не** на 100 %. В Службе Azure SignalR повторно реализован протокол данных ASP.NET SignalR, основанный на последних технологиях ASP.NET Core. При использовании Службы Azure SignalR для ASP.NET SignalR некоторые функции ASP.NET SignalR больше не поддерживаются, например, Azure SignalR не отвечает на сообщения при повторном подключении клиента. Кроме того, транспортировка Forever Frame и JSONP не поддерживается. Чтобы приложение ASP.NET SignalR работало со Службой SignalR, нужно внести некоторые изменения в код и использовать подходящую версию зависимых библиотек. 
+Служба Azure SignalR основана на экземпляре [SignalR для ASP.NET Core 2.1](https://docs.microsoft.com/aspnet/core/signalr/introduction?preserve-view=true&view=aspnetcore-2.1), который совместим с ASP.NET SignalR **не** на 100 %. В Службе Azure SignalR повторно реализован протокол данных ASP.NET SignalR, основанный на последних технологиях ASP.NET Core. При использовании Службы Azure SignalR для ASP.NET SignalR некоторые функции ASP.NET SignalR больше не поддерживаются, например, Azure SignalR не отвечает на сообщения при повторном подключении клиента. Кроме того, транспортировка Forever Frame и JSONP не поддерживается. Чтобы приложение ASP.NET SignalR работало со Службой SignalR, нужно внести некоторые изменения в код и использовать подходящую версию зависимых библиотек.
 
-Полный список сравнения функций ASP.NET SignalR и Службы ASP.NET Core см. в [документе об отличиях версий](https://docs.microsoft.com/aspnet/core/signalr/version-differences?view=aspnetcore-2.2).
+Полный список сравнения функций ASP.NET SignalR и Службы ASP.NET Core см. в [документе об отличиях версий](https://docs.microsoft.com/aspnet/core/signalr/version-differences?preserve-view=true&view=aspnetcore-3.1).
 
 В этом кратком руководстве вы узнаете, как приступить к работе с ASP.NET и Службой Azure SignalR для аналогичного [приложения комнаты чата](./signalr-quickstart-dotnet-core.md).
 
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note-dotnet.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
@@ -71,7 +72,7 @@ ms.locfileid: "89050545"
 
 1. Выберите и скопируйте основную строку подключения.
 
-1. Теперь задайте строку подключения в файле web.config.
+1. Теперь задайте строку подключения в файле *web.config*.
 
     ```xml
     <configuration>
@@ -82,7 +83,7 @@ ms.locfileid: "89050545"
     </configuration>
     ```
 
-1. В файле *Startup.cs* вместо вызова метода `MapSignalR()` необходимо вызвать `MapAzureSignalR({your_applicationName})` и передать строку подключения, чтобы приложение подключилось к службе, а не самостоятельно размещало SignalR. Замените `{YourApplicationName}` на имя приложения. Это уникальное имя. Оно нужно, чтобы отличать это приложение от других приложений. Вы можете использовать `this.GetType().FullName` как значение.
+1. В файле *Startup.cs* вместо вызова метода `MapSignalR()` необходимо вызвать `MapAzureSignalR({YourApplicationName})` и передать строку подключения, чтобы приложение подключилось к службе, а не самостоятельно размещало SignalR. Замените `{YourApplicationName}` на имя приложения. Это уникальное имя. Оно нужно, чтобы отличать это приложение от других приложений. Вы можете использовать `this.GetType().FullName` как значение.
 
     ```cs
     public void Configuration(IAppBuilder app)
@@ -103,24 +104,19 @@ ms.locfileid: "89050545"
     > [!NOTE]
     > В реализации конечная точка `/signalr/negotiate` предоставляется для согласования с помощью пакета SDK для Службы Azure SignalR. Когда клиенты попытаются подключиться, будет возвращен специальный ответ о согласовании и клиенты будут перенаправлены в конечную точку службы, определенную в строке подключения.
 
-1. Нажмите клавишу **F5**, чтобы запустить проект в режиме отладки. Вы увидите, что приложение запущено локально. Вместо размещения среды выполнения SignalR самим приложением, оно теперь подключается к Службе Azure SignalR.
+1. Нажмите клавишу <kbd>F5</kbd>, чтобы запустить проект в режиме отладки. Вы увидите, что приложение запущено локально. Вместо размещения среды выполнения SignalR самим приложением, оно теперь подключается к Службе Azure SignalR.
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-
-
 > [!IMPORTANT]
 > Удаление группы ресурсов — необратимая операция, и все соответствующие ресурсы удаляются окончательно. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. Если ресурсы для размещения этого примера созданы в имеющейся группе ресурсов, содержащей ресурсы, которые следует сохранить, можно удалить каждый ресурс отдельно в соответствующих колонках вместо удаления группы ресурсов.
-> 
-> 
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях к этому краткому руководству была использована группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
-   
 ![DELETE](./media/signalr-quickstart-dotnet-core/signalr-delete-resource-group.png)
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
@@ -135,4 +131,3 @@ ms.locfileid: "89050545"
 > [Краткое руководство. Создание чата с помощью Службы SignalR](./signalr-quickstart-dotnet-core.md)
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
-

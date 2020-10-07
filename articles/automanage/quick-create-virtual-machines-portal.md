@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: quickstart
 ms.date: 09/04/2020
 ms.author: jushiman
-ms.openlocfilehash: 43e0805a828a2ed32d23984b6ffef95a7e710953
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d66c19ce3a9786a5ca0f1390acb398c2a9cf502f
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945404"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91445799"
 ---
 # <a name="quickstart-enable-azure-automanage-for-virtual-machines-in-the-azure-portal"></a>Краткое руководство. Включение службы "Автоматическое управление Azure для виртуальных машин" на портале Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "90945404"
 > Учетные записи бесплатной пробной версии не предоставляют доступа к виртуальным машинам, которые используются в этом руководстве. Перейдите на подписку с оплатой по мере использования.
 
 > [!IMPORTANT]
-> Для включения Автоматического управления требуется следующее разрешение RBAC: роль **Владелец** или **Участник** вместе с ролью **Администратор доступа пользователей**.
+> Вы должны иметь роль **Участник**, чтобы включить Автоматическое управление с помощью существующей учетной записи Автоматического управления. Если вы включаете Автоматическое управление с помощью новой учетной записи, вам потребуются следующие разрешения: роль **Владелец** или **Участник** вместе с ролью **Администратор доступа пользователей**.
 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
@@ -49,34 +49,36 @@ ms.locfileid: "90945404"
     1. Установите флажок для каждой виртуальной машины, которую требуется подключить.
     1. Нажмите кнопку **Выбрать**.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\existing-vm-select-machine.png" alt-text="Выбор существующей виртуальной машины в списке доступных виртуальных машин.":::
+    :::image type="content" source="media\quick-create-virtual-machine-portal\existing-vm-select-machine.png" alt-text="Enable on existing VM":::
 
 4. В разделе **Профиль конфигурации** щелкните **Browse and change profiles and preferences** (Найти и изменить профили и настройки).
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\existing-vm-quick-create.png" alt-text="Просмотр и изменение профилей и настроек.":::
+    :::image type="content" source="media\quick-create-virtual-machine-portal\existing-vm-quick-create.png" alt-text="Enable on existing VM":::
 
 5. В колонке **Select configuration profile + preferences** (Выбор профиля конфигурации и настроек):
     1. Выберите профиль слева: *Разработка и тестирование* для тестирования, *Prod* (Производство) для производственных задач.
     1. Нажмите кнопку **Выбрать**.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\browse-production-profile.png" alt-text="Просмотр профиля конфигурации рабочей среды.":::
+    :::image type="content" source="media\quick-create-virtual-machine-portal\browse-production-profile.png" alt-text="Enable on existing VM":::
 
 6. Нажмите кнопку **Включить**.
 
 
 ## <a name="enable-automanage-for-vms-on-a-new-vm"></a>Включение Автоматического управления для виртуальных машин на новой виртуальной машине
 
+Войдите на портал Azure [здесь](https://aka.ms/automanageportalnextstep), чтобы создать виртуальную машину и включить Автоматическое управление.
+
 1. Выполните инструкции, описанные в статье [Краткое руководство. Создание виртуальной машины Windows с помощью портала Azure](..\virtual-machines\windows\quick-create-portal.md), чтобы создать ВМ.
 
 2. После развертывания виртуальной машины внизу на странице состояния развертывания появятся рекомендуемые **дальнейшие действия**.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\create-next-steps.png" alt-text="Раздел дальнейших действий, расположенный в нижней части страницы развертывания.":::
+    :::image type="content" source="media\quick-create-virtual-machine-portal\create-next-steps.png" alt-text="Enable on existing VM":::
 
 3. В разделе **Дальнейшие действия** выберите **Enable Automanage virtual machine best practices** (Включить рекомендации для Автоматического управления виртуальными машинами).
 
 4. На странице **Automanage — Azure virtual machine best practices** (Автоматическое управление — Рекомендации для виртуальных машин Azure) поле **Компьютеры** автоматически заполнится созданной виртуальной машиной.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\create-new-enable-overview.png" alt-text="Созданная виртуальная машина будет отображаться как выбранный компьютер.":::
+    :::image type="content" source="media\quick-create-virtual-machine-portal\create-new-enable-overview.png" alt-text="Enable on existing VM":::
 
 5. В разделе **Профиль конфигурации** щелкните **Browse and change profiles and preferences** (Найти и изменить профили и настройки).
 
@@ -84,16 +86,15 @@ ms.locfileid: "90945404"
     1. Выберите профиль слева: *Разработка и тестирование* для тестирования, *Prod* (Производство) для производственных задач.
     1. Нажмите кнопку **Выбрать**.
 
-    :::image type="content" source="media\quick-create-virtual-machine-portal\browse-production-profile.png" alt-text="Просмотр профиля конфигурации рабочей среды.":::
+    :::image type="content" source="media\quick-create-virtual-machine-portal\browse-production-profile.png" alt-text="Enable on existing VM":::
 
 7. Нажмите кнопку **Включить**.
-
 
 ## <a name="disable-automanage-for-vms"></a>Отключение Автоматического управления для виртуальных машин
 
 Быстро остановить использование службы Автоматического управления Azure для виртуальных машин можно, отключив Автоматическое управление.
 
-:::image type="content" source="media\automanage-virtual-machines\disable-step-1.png" alt-text="Отключение автоуправления для виртуальной машины.":::
+:::image type="content" source="media\automanage-virtual-machines\disable-step-1.png" alt-text="Enable on existing VM":::
 
 1. Перейдите на страницу **Automanage — Azure virtual machine best practices** (Автоматическое управление — Рекомендации для виртуальных машин Azure), где перечислены все автоматически управляемые виртуальные машины.
 1. Установите флажок рядом с виртуальной машиной, для которой необходимо отключить автоматическое управление.

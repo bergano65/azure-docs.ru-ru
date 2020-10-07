@@ -1,5 +1,5 @@
 ---
-title: Создание агента заданий обработки эластичных баз данных с помощью PowerShell
+title: Создание агента заданий обработки эластичных баз данных с помощью PowerShell (предварительная версия)
 description: Дополнительные сведения о создании агента заданий обработки эластичных баз данных с помощью PowerShell.
 services: sql-database
 ms.service: sql-database
@@ -11,14 +11,14 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 03/13/2019
-ms.openlocfilehash: 0fe6a3b1d0e5216d923cfe3997826e7a727f1a2b
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: aaf749708b49c57d08a63581f3d911b04aba2103
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89077353"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91408673"
 ---
-# <a name="create-an-elastic-job-agent-using-powershell"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell
+# <a name="create-an-elastic-job-agent-using-powershell-preview"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 [Задания обработки эластичных баз данных (предварительная версия)](job-automation-overview.md#elastic-database-jobs-preview) позволяют выполнять скрипты Transact-SQL (T-SQL) в нескольких базах данных одновременно.

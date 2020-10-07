@@ -7,38 +7,18 @@ ms.topic: overview
 ms.custom: devx-track-dotnet
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: d5dd765dd9b174ffbfec35b63ad5e55ce84193ad
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 5d6b46e288007bc0bbac53a97b1bdd5e727b8ac8
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89489567"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91405128"
 ---
 # <a name="azure-signalr-service-faq"></a>Вопросы и ответы о Службе SignalR Azure
 
 ## <a name="is-azure-signalr-service-ready-for-production-use"></a>Готова ли Служба Azure SignalR для использования в рабочей среде?
 
-Да.
-Объявление об общедоступной версии см. в статье [Общедоступная версия Службы Azure SignalR](https://azure.microsoft.com/blog/azure-signalr-service-now-generally-available/). 
-
-Обеспечивается полная поддержка [ASP.NET Core SignalR](https://docs.microsoft.com/aspnet/core/signalr/introduction).
-
-Поддержка ASP.NET SignalR все еще предоставляется в *общедоступной предварительной версии*. [Здесь приведен пример кода](https://github.com/aspnet/AzureSignalR-samples/tree/master/aspnet-samples/ChatRoom).
-
-## <a name="the-client-connection-closes-with-the-error-message-no-server-available-what-does-it-mean"></a>Клиентское подключение завершается сообщением об ошибке "Нет доступных серверов". Что это означает?
-
-Эта ошибка возникает, только когда клиенты отправляют сообщения в Службу Azure SignalR.
-
-Если у вас нет сервера приложений и вы используете только REST API Службы Azure SignalR, это *нормальное* поведение.
-В бессерверной архитектуре клиентские подключения осуществляются в режиме *ожидания передачи данных* и не отправляют сообщения в Службу Azure SignalR.
-[Ознакомьтесь с дополнительными сведениями о REST API](./signalr-quickstart-rest-api.md).
-
-Если у вас есть серверы приложений, это сообщение об ошибке означает, что сервер не подключен к вашему экземпляру Службы Azure SignalR.
-
-Возможные причины:
-- Сервер приложений не подключен к Службе Azure SignalR. Проверьте журналы сервера приложений на наличие возможных ошибок подключения. Этот случай является редким при использовании конфигурации с несколькими серверами приложений с высокой доступностью.
-- Существуют проблемы с подключением экземпляров Службы Azure SignalR. Эта проблема является временной и экземпляры будут автоматически восстановлены.
-Если такое состояние продолжается более часа, [сообщите о проблеме на GitHub](https://github.com/Azure/azure-signalr/issues/new) или [создайте запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+Да, поддержка SignalR для [ASP.NET Core](https://dotnet.microsoft.com/apps/aspnet/signalr) и [ASP.NET](https://docs.microsoft.com/aspnet/signalr/overview/getting-started/introduction-to-signalr) является общедоступной.
 
 ## <a name="when-there-are-multiple-application-servers-are-client-messages-sent-to-all-servers-or-just-one-of-them"></a>При наличии нескольких серверов приложений клиентские сообщения отправляются на все серверы или только на один из них?
 
@@ -68,7 +48,7 @@ ms.locfileid: "89489567"
 
 Служба Azure SignalR предоставляет все три типа транспортировки, которые поддерживает ASP.NET Core SignalR по умолчанию. Этот параметр не настраивается. Служба Azure SignalR будет обрабатывать подключения и транспортировки для всех клиентских подключений.
 
-Настройка транспортировок на стороне клиента описана в статье [Конфигурация SignalR для ASP.NET Core](https://docs.microsoft.com/aspnet/core/signalr/configuration?view=aspnetcore-2.1&tabs=dotnet#configure-allowed-transports-2).
+Настройка транспортировок на стороне клиента описана в статье [Конфигурация SignalR для ASP.NET Core](https://docs.microsoft.com/aspnet/core/signalr/configuration#configure-allowed-transports-1).
 
 ## <a name="what-is-the-meaning-of-metrics-like-message-count-or-connection-count-shown-in-the-azure-portal-which-kind-of-aggregation-type-should-i-choose"></a>Что означают такие метрики, как количество сообщений или количество подключений, отображаемые на портале Azure? Какой тип агрегирования мне выбрать?
 
@@ -78,19 +58,22 @@ ms.locfileid: "89489567"
 
 ## <a name="what-is-the-meaning-of-the-default-serverless-and-classic-service-modes-how-can-i-choose"></a>Что означают режимы службы `Default`, `Serverless` и `Classic`? Как его выбрать?
 
-Дополнительные сведения о режимах:
-* Для режима `Default` *требуется* сервер-концентратор. В этом режиме Служба Azure SignalR направляет клиентский трафик на подключения сервера-концентратора. Служба Azure SignalR проверяет наличие подключенного сервера-концентратора. Если служба не может найти подключенный сервер-концентратор, она отклоняет входящие клиентские подключения. Вы также можете использовать *API управления* в этом режиме для управления подключенными клиентами непосредственно через Службу Azure SignalR.
-* В режиме `Serverless` *не* разрешаются какие-либо подключения к серверу. То есть он отклоняет все подключения к серверу. Все клиенты должны работать в бессерверном режиме. Клиенты подключаются к Службе Azure SignalR, а пользователи обычно используют бессерверные технологии, такие как *Функции Azure*, для обработки логики концентратора. [См. простой пример](https://docs.microsoft.com/azure/azure-signalr/signalr-quickstart-azure-functions-javascript?WT.mc_id=signalrquickstart-github-antchu), в котором используется бессерверный режим в Службе Azure SignalR.
-* Режим `Classic` — смешанное состояние. Если в концентраторе имеется подключение к серверу, новый клиент будет перенаправлен на сервер-концентратор. В противном случае клиент перейдет в бессерверный режим. 
+Для новых приложений следует использовать только режим по умолчанию и бессерверный режим. Основное различие заключается в том, есть ли у вас серверы приложений, которые устанавливают серверные соединения со службой (т. е. для подключения к службе используются `AddAzureSignalR()`). Если да, используйте режим по умолчанию, в противном случае используйте бессерверный режим.
 
-  Это может привести к проблеме. Например, если все подключения к серверу на мгновение будут потеряны, некоторые клиенты перейдут в бессерверный режим вместо маршрутизации к серверу-концентратору.
+Классический режим разработан для обеспечения обратной совместимости с имеющимися приложениями, поэтому его не следует использовать для новых приложений.
 
-Вот некоторые рекомендации по выбору режима:
-- При отсутствии сервера-концентратора выберите `Serverless`.
-- Если у всех центров есть серверы-концентраторы, выберите `Default`.
-- Если у некоторых центров есть серверы-концентраторы, а у других — нет, выберите `Classic`. Однако такое действие может привести к некоторым проблемам. Лучше всего создать два экземпляра: один — `Serverless`, а второй — `Default`.
+Дополнительные сведения о режиме службы см. в [этом документе](concept-service-mode.md).
+
+## <a name="can-i-send-message-from-client-in-serverless-mode"></a>Могу ли я отправить сообщение от клиента в бессерверном режиме?
+
+Вы можете отправить сообщение от клиента, если настроите восходящий поток в своем экземпляре SignalR. Восходящий поток — это набор конечных точек, которые могут получать сообщения и события подключения от службы SignalR. Если восходящий поток не настроен, сообщения от клиента будут игнорироваться.
+
+Дополнительные сведения о восходящем потоке см. в [этом документе](concept-upstream.md).
+
+Сейчас восходящий поток предоставляется в режиме общедоступной предварительной версии.
 
 ## <a name="are-there-any-feature-differences-in-using-azure-signalr-service-with-aspnet-signalr"></a>Различаются ли функции при использовании Службы Azure SignalR с ASP.NET SignalR?
+
 При использовании Службы Azure SignalR некоторые API-интерфейсы и функции ASP.NET SignalR не поддерживаются:
 - Возможность передачи произвольного состояния между клиентами и концентратором (часто называемого `HubState`) не поддерживается.
 - Класс `PersistentConnection` не поддерживается.

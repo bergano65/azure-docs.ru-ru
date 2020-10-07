@@ -4,12 +4,12 @@ description: Узнайте, как обнаружить локальные ви
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: eb17ba9fc1b68f09f60e857cd20a3f0885bfdb05
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: e62effc31ab5dbc687e0509617b89561c5f2a3b6
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90603957"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91442330"
 ---
 # <a name="tutorial-discover-hyper-v-vms-with-server-assessment"></a>Руководство по обнаружению виртуальных машин Hyper-V с помощью средства оценки серверов
 
@@ -39,7 +39,7 @@ ms.locfileid: "90603957"
 **Требование** | **Сведения**
 --- | ---
 **Узел Hyper-V** | Узлы Hyper-V, на которых размещены виртуальные машины, могут быть изолированными или находиться в кластере.<br/><br/> Узел должен работать под управлением Windows Server 2019, Windows Server 2016 или Windows Server 2012 R2.<br/><br/> Убедитесь, что входящие подключения разрешены на порте WinRM 5985 (HTTP), чтобы обеспечить подключение устройства для запроса метаданных виртуальной машины и данных о производительности с помощью сеанса модели CIM.
-**Развертывание устройства** | Чтобы выделить ВМ для устройства службы, серверу vCenter Server понадобятся такие ресурсы:<br/><br/> — Windows Server 2016<br/><br/> — 32 ГБ ОЗУ.<br/><br/> — Восемь виртуальных ЦП.<br/><br/> — Около 80 ГБ дискового пространства.<br/><br/> — Внешний виртуальный коммутатор.<br/><br/> — Доступ к Интернету для виртуальной машины (напрямую или через прокси-сервер).
+**Развертывание устройства** | Чтобы выделить виртуальную машину для устройства, узлу Hyper-v понадобятся такие ресурсы:<br/><br/> — Windows Server 2016<br/><br/> — 16 ГБ ОЗУ.<br/><br/> — Восемь виртуальных ЦП.<br/><br/> — Около 80 ГБ дискового пространства.<br/><br/> — Внешний виртуальный коммутатор.<br/><br/> — Доступ к Интернету для виртуальной машины (напрямую или через прокси-сервер).
 **Виртуальные машины** | Виртуальные машины могут работать под управлением ОС Windows или Linux. 
 
 Прежде чем начать, [просмотрите данные](migrate-appliance.md#collected-data---hyper-v), собранные устройством во время обнаружения.
@@ -72,6 +72,8 @@ ms.locfileid: "90603957"
 8. В разделе **Параметры пользователя** проверьте, смогут ли пользователи Azure AD регистрировать приложения (по умолчанию задано значение **Да**).
 
     ![Проверка того, могут ли пользователи регистрировать приложения Active Directory в разделе "Параметры пользователя"](./media/tutorial-discover-hyper-v/register-apps.png)
+
+9. Кроме того, администратор клиента и глобальный администратор могут назначить учетной записи роль **Разработчик приложений**, позволяющую регистрировать приложения Azure AD. [Подробнее](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 ## <a name="prepare-hyper-v-hosts"></a>Подготовка узлов Hyper-V
 
@@ -135,7 +137,7 @@ ms.locfileid: "90603957"
 
 2. Выполните следующую команду PowerShell, чтобы создать хэш ZIP-файла.
     - ```C:\>Get-FileHash -Path <file_location> -Algorithm [Hashing Algorithm]```
-    - Пример использования: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v1.19.06.27.zip -Algorithm SHA256```
+    - Пример использования: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v3.20.09.25.zip -Algorithm SHA256```
 
 3.  Проверьте последние версии и хэш-значения устройств:
 
@@ -143,13 +145,13 @@ ms.locfileid: "90603957"
 
         **Сценарий** | **Загрузить** | **SHA256**
         --- | --- | ---
-        Hyper-V (10,4 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140422) |  79c151588de049cc102f61b910d6136e02324dc8d8a14f47772da351b46d9127
+        Hyper-V (8,91 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140422) |  40aa037987771794428b1c6ebee2614b092e6d69ac56d48a2bbc75eeef86c99a
 
     - Для Azure для государственных организаций:
 
         **Сценарий*** | **Загрузить** | **SHA256**
         --- | --- | ---
-        Hyper-V (85 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140424) |  0769c5f8df1e8c1ce4f685296f9ee18e1ca63e4a111d9aa4e6982e069df430d7
+        Hyper-V (85,8 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2140424) |  cfed44bb52c9ab3024a628dc7a5d0df8c624f156ec1ecc3507116bae330b257f
 
 ### <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
 
@@ -214,7 +216,7 @@ ms.locfileid: "90603957"
 1. На виртуальной машине устройства выполните эту команду. HyperVHost1/HyperVHost2 — это примеры имен узлов.
 
     ```
-    Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force
+    Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com, HyperVHost2.contoso.com, HyperVHost1, HyperVHost2 -Force
     ```
 
 2. Кроме того, это можно сделать в редакторе локальных групповых политик на устройстве:

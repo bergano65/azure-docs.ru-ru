@@ -8,14 +8,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 06/28/2020
+ms.date: 09/28/2020
 ms.custom: designer
-ms.openlocfilehash: 55d950435522a18eafda69d152619426fe54d87f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d9422cfb9bd8e5539f1a9b43d6fb7b137778f3d4
+ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90896698"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91404924"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer"></a>Руководство по прогнозированию цен на автомобили с помощью конструктора
 
@@ -75,7 +75,7 @@ ms.locfileid: "90896698"
     Если у вас уже есть доступный целевой объект вычислений, его можно выбрать для запуска этого конвейера.
 
     > [!NOTE]
-    > Конструктор может выполнять обучающие эксперименты только с целевыми объектами вычислительной среды и вычислительных операций Машинного обучения Azure, а другие целевые объекты вычислений не будут отображаться.
+    > Конструктор может выполнять обучающие эксперименты только в Вычислительной среде Машинного обучения Azure. При этом другие целевые объекты вычислений не будут отображаться.
 
 1. Укажите имя вычислительного ресурса.
 
@@ -221,11 +221,7 @@ ms.locfileid: "90896698"
     > [!IMPORTANT]
     > Убедитесь, что левый выходной порт модуля **разделения данных** подключается к модулю **обучения модели**. Левый порт содержит набор для обучения. Правый порт содержит набор для проверки.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Снимок экрана: правильная конфигурация модуля Train Model (Обучение модели). Модуль Linear Regression (Линейная регрессия) присоединяется к левому порту модуля Train Model (Обучение модели), а модуль Split Data (Разделение данных) — к правому порту модуля Train Model (Обучение модели)":::
-
-1. Выберите модуль **Train Model** (Обучение модели).
-
-1. В области "Сведения о модуле" справа от холста щелкните селектор **Изменить столбец**.
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Выбор столбца" справа от холста щелкните селектор **Изменить столбец**.
 
 1. В диалоговом окне **Label column** (Столбец метки) разверните раскрывающееся меню и выберите **Имена столбцов**. 
 
@@ -236,7 +232,7 @@ ms.locfileid: "90896698"
 
     Теперь конвейер будет выглядеть следующим образом:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера после добавления модуля Обучение модели":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Выбор столбца":::
 
 ### <a name="add-the-score-model-module"></a>Добавление модуля "Score Model" (Оценка модели)
 
@@ -256,7 +252,7 @@ ms.locfileid: "90896698"
 
     Готовый вариант конвейера должен выглядеть примерно так:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Выбор столбца":::
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -285,7 +281,7 @@ ms.locfileid: "90896698"
 
     Здесь можно просмотреть прогнозируемые цены и фактические цены из тестовых данных.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Снимок экрана: визуализация выходных данных с выделенным столбцом Scored Label (Метка с оценкой)":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Выбор столбца":::
 
 ### <a name="evaluate-models"></a>Анализ моделей
 

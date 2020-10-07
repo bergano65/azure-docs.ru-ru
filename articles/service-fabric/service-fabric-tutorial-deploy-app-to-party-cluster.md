@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 4cd21669b30b8ec83d6a0538c90d4cec5cafe32a
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: e35b655dc8b735214de891884fe40fb951dd16cd
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86244996"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91441289"
 ---
 # <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Руководство по развертыванию приложения Service Fabric в кластере в Azure
 
@@ -78,19 +78,19 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 На вкладке **Кластер** введите **имя кластера** (например, "mytestcluster"), выберите свою подписку, регион для кластера (например, центрально-южная часть США), введите количество узлов кластера (для тестового кластера мы рекомендуем три узла) и введите группу ресурсов (например, "mytestclustergroup"). Щелкните **Далее**.
 
-![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/create-cluster.png)
+![Снимок экрана: вкладка "Кластер" в диалоговом окне "Создание кластера Service Fabric".](./media/service-fabric-tutorial-deploy-app-to-party-cluster/create-cluster.png)
 
 Введите пароль и путь вывода для сертификата кластера на вкладке **Сертификат**. Самозаверяющий сертификат создается в виде PFX-файла и сохраняется по указанному пути вывода.  Он используется для обеспечения безопасности как между узлами, так и между клиентами.  Не используйте самозаверяющий сертификат для кластеров в рабочей среде.  Этот сертификат используется в Visual Studio для проверки подлинности кластера и развертывания приложений. Выберите **Импорт сертификата**, чтобы установить PFX в хранилище сертификатов CurrentUser\My вашего компьютера.  Щелкните **Далее**.
 
-![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/certificate.png)
+![Снимок экрана: вкладка "Сертификат" в диалоговом окне "Создание кластера Service Fabric".](./media/service-fabric-tutorial-deploy-app-to-party-cluster/certificate.png)
 
 На вкладке **Сведения о виртуальной машине** введите **Имя пользователя** и **Пароль** для учетной записи администратора кластера.  Выберите **Образ виртуальной машины** для узлов кластера и **Размер виртуальной машины** для каждого узла кластера.  Перейдите на вкладку **Дополнительно**.
 
-![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/vm-detail.png)
+![Снимок экрана: вкладка "Сведения о виртуальной машине" в диалоговом окне "Создание кластера Service Fabric".](./media/service-fabric-tutorial-deploy-app-to-party-cluster/vm-detail.png)
 
 В разделе **Порты** введите конечную точку службы VotingWeb из предыдущего шага (например, 8080).  При создании кластера эти порты приложения открываются в подсистеме балансировки нагрузки Azure для переадресации трафика в кластер.  Чтобы создать кластер, щелкните **Создать**. Это займет всего несколько минут.
 
-![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/advanced.png)
+![Снимок экрана: вкладка "Дополнительно" в диалоговом окне "Создание кластера Service Fabric".](./media/service-fabric-tutorial-deploy-app-to-party-cluster/advanced.png)
 
 ## <a name="publish-the-application-to-the-cluster"></a>Публикация приложения в кластере
 

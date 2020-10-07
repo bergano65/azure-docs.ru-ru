@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: quickstart
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: d892d04eddb572ab644693503e454e9f00e0b39c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 82d9c143f84dfced639c928bf12693024079c2ba
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281095"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409499"
 ---
 # <a name="quickstart-deploy-an-azure-confidential-computing-vm-in-the-marketplace"></a>Краткое руководство. Развертывание виртуальной машины конфиденциальных вычислений в Marketplace
 
@@ -179,9 +179,7 @@ sudo apt -y install clang-7 libssl-dev gdb libsgx-enclave-common libsgx-enclave-
 
 В рамках этого краткого руководства вы развернули виртуальную машину конфиденциальных вычислений и пакет SDK Open Enclave. Дополнительные сведения о виртуальных машинах конфиденциальных вычислений в Azure см. в [этой статье](virtual-machine-solutions.md). 
 
-Если вы развернули виртуальную машину Windows, изучите [примеры приложений с использованием OE SDK для Windows](https://github.com/openenclave/openenclave/blob/master/samples/README_Windows.md) на сайте GitHub. 
-
-Изучите возможности по созданию приложений конфиденциальных вычислений на Linux, перейдя к разделу примеров OE SDK для Linux на сайте GitHub. 
+Изучите возможности по созданию приложений конфиденциальных вычислений на примерах для пакета SDK Open Enclave на сайте GitHub. 
 
 > [!div class="nextstepaction"]
-> [Создание примеров с пакетом SDK Open Enclave в Linux](https://github.com/openenclave/openenclave/blob/master/samples/README_Linux.md)
+> [Примеры создания приложений с помощью пакета SDK Open Enclave](https://github.com/openenclave/openenclave/blob/master/samples/README.md)

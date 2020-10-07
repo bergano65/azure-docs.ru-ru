@@ -4,12 +4,12 @@ description: 'Сравнение облачных служб Майкрософ�
 ms.topic: overview
 ms.date: 04/09/2018
 ms.custom: mvc
-ms.openlocfilehash: 2e0d8f356ec8da900b4a38399ba94434c3b1b93d
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 2c17b311811fd2cba46db379fcc766c04dd9d56d
+ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809975"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403081"
 ---
 # <a name="choose-the-right-integration-and-automation-services-in-azure"></a>Выбор правильных служб интеграции и автоматизации в Azure
 
@@ -41,7 +41,7 @@ Power Automate и Logic Apps спроектированы в рамках под
 | **Средство разработки** |В браузере и мобильном приложении, только пользовательский интерфейс |В браузере и [Visual Studio](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md) доступно [представление кода](../logic-apps/logic-apps-author-definitions.md). |
 | **Управление жизненным циклом приложений (ALM)** |Разработка и тестирование в непроизводственных средах, распространение в рабочей среде по готовности |Azure DevOps: система управления версиями, тестирование, поддержка, автоматизация и управление в [Azure Resource Manager](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md) |
 | **Возможности для администраторов** |Управление средами Power Automate и политиками защиты от потери данных, отслеживание лицензирования: [Центр администрирования](https://admin.flow.microsoft.com). |Управление группами ресурсов, подключениями, доступом и ведением журнала: [Портал Azure](https://portal.azure.com) |
-| **Безопасность** |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных, [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных |Обеспечение безопасности Azure: [система безопасности Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) |
+| **Безопасность** |Журналы аудита безопасности Microsoft 365, защита от потери данных, [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных |Обеспечение безопасности Azure: [система безопасности Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) |
 
 ## <a name="compare-azure-functions-and-azure-logic-apps"></a>Сравнение служб "Функции Azure" и Azure Logic Apps
 

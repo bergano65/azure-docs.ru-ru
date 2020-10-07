@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 07/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1865d307e7b79e7e40b0e98f2dcfa2535b0313fd
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 08e6491e1d8d94e8e6e9112e5a19682018103325
+ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551713"
+ms.lasthandoff: 09/27/2020
+ms.locfileid: "91400355"
 ---
 # <a name="tutorial-back-up-and-restore-files-for-linux-virtual-machines-in-azure"></a>Руководство по резервному копированию и восстановлению файлов для виртуальных машин Linux в Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "88551713"
  
 1. На локальном компьютере откройте браузер и введите общедоступный IP-адрес виртуальной машины, чтобы увидеть веб-страницу nginx по умолчанию.
 
-    ![Веб-страница nginx по умолчанию](./media/tutorial-backup-vms/nginx-working.png)
+    ![Снимок экрана: веб-страница nginx по умолчанию](./media/tutorial-backup-vms/nginx-working.png)
 
 1. Подключитесь к виртуальной машине по протоколу SSH.
 
@@ -86,7 +86,7 @@ ms.locfileid: "88551713"
     
 4. На локальном компьютере обновите браузер, нажав сочетание клавиш CTRL+F5, чтобы увидеть, что страница nginx по умолчанию отсутствует.
 
-    ![Веб-страница nginx по умолчанию](./media/tutorial-backup-vms/nginx-broken.png)
+    ![Снимок экрана: веб-страница nginx по умолчанию отсутствует](./media/tutorial-backup-vms/nginx-broken.png)
     
 1. На локальном компьютере войдите на [портал Azure](https://portal.azure.com/).
 6. В меню слева выберите **Виртуальные машины**. 

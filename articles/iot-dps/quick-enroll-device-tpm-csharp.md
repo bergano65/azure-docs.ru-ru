@@ -1,20 +1,20 @@
 ---
-title: Регистрация устройств TPM в службе подготовки устройств Azure с помощью C#
+title: Краткое руководство. Регистрация устройств TPM в Службе подготовки устройств Azure с помощью C#
 description: Краткое руководство. Регистрация устройств TPM в Подготовке устройств к добавлению в Центр Интернета вещей с помощью пакета SDK для службы C#. В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/08/2019
+ms.date: 09/28/2020
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 6176ff91029817e6891f0ee1e043cc3a827c2d6c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 872d1f43f1e9dc180e41a2bf625ca18b74522b40
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88999059"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409516"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-c-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для служб C#
 
@@ -128,12 +128,15 @@ ms.locfileid: "88999059"
    }
    ```
 
-1. Осталось заменить текст метода `Main` следующими строками:
+1. Осталось заменить метод `Main` следующими строками:
 
    ```csharp
-   RunSample().GetAwaiter().GetResult();
-   Console.WriteLine("\nHit <Enter> to exit ...");
-   Console.ReadLine();
+    static async Task Main(string[] args)
+    {
+        await RunSample();
+        Console.WriteLine("\nHit <Enter> to exit ...");
+        Console.ReadLine();
+    }
    ```
 
 1. Создайте решение.

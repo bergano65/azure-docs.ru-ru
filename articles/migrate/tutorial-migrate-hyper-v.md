@@ -6,12 +6,12 @@ ms.date: 06/08/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 10e17a4fba1adbccf71497c54060fda2f60088ab
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 842513536bf4dbfc0a3e3bd82905b397da9fa6c4
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90525343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439067"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Перенос виртуальных машин Hyper-V в Azure 
 
@@ -133,7 +133,7 @@ ms.locfileid: "90525343"
 
     ![Параметры вычисления виртуальной машины](./media/tutorial-migrate-hyper-v/compute-settings.png)
 
-12. В разделе **Диски** укажите, следует ли реплицировать диски виртуальных машин в Azure, и выберите тип диска (SSD или HDD (цен. категория "Стандартный") или управляемые диски (цен. категория "Премиум")) в Azure. Затем нажмите кнопку **Далее**.
+12. В разделе **Диски** укажите диски виртуальных машин, которые нужно реплицировать в Azure. Затем нажмите кнопку **Далее**.
     - Диски можно исключить из репликации.
     - Если вы исключите диски, они не будут присутствовать на виртуальной машине Azure после миграции. 
 

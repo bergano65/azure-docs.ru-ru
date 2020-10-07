@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/09/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: eceb9e4c8c839e4da333e005e879ea6094936092
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5f39f5a8f758f390536e5d113629b185252c05d9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525189"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439364"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство по Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
@@ -231,7 +231,7 @@ ms.locfileid: "86525189"
 
 Вы можете просмотреть и настроить параметры VPN-шлюза в любое время, выбрав **Просмотр и настройка**.
 
-:::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-1.png" alt-text="Просмотр конфигурации" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-1-expand.png":::
+:::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-1.png" alt-text="Снимок экрана: страница &quot;VPN (сеть-сеть)&quot;, на которой стрелка указывает на действие &quot;Просмотр и настройка&quot;" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-1-expand.png":::
 
 На странице **Изменение VPN-шлюза** можно посмотреть следующие параметры:
 
@@ -240,7 +240,7 @@ ms.locfileid: "86525189"
 * IP-адрес BGP по умолчанию для VPN-шлюза (назначен Azure).
 * Параметр конфигурации для настраиваемого IP-адреса BGP — это поле зарезервировано для APIPA (автоматическое назначение частных IP-адресов). Azure поддерживает IP-адреса BGP в диапазонах 169.254.21.* и 169.254.22.*. Azure принимает подключения по протоколу BGP в этих диапазонах, но инициирует соединение по IP-адресу BGP по умолчанию.
 
-   :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Просмотр конфигурации" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
+   :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Снимок экрана: страница &quot;VPN (сеть-сеть)&quot;, на которой стрелка указывает на действие &quot;Просмотр и настройка&quot;" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

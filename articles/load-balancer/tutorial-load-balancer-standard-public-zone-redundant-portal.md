@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: d9f16b612b508a6237c748bd135ff32618015b0b
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 4deab6fcadda36ad729096ff2f38e40ce81c7ae9
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057013"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446106"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство по Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -93,7 +93,7 @@ ms.locfileid: "86057013"
     - *myNetworkSecurityGroup* — для имени группы безопасности сети;
     - *myResourceGroupLBAZ* — для имени имеющейся группы ресурсов.
    
-![Создание виртуальной сети](./media/load-balancer-standard-public-availability-zones-portal/create-nsg.png)
+![Снимок экрана: область создания группы безопасности сети](./media/load-balancer-standard-public-availability-zones-portal/create-nsg.png)
 
 ### <a name="create-network-security-group-rules"></a>Создание правил группы безопасности сети
 
@@ -112,7 +112,7 @@ ms.locfileid: "86057013"
     - *Разрешить HTTP* — для описания правила подсистемы балансировки нагрузки.
 4. Нажмите кнопку **ОК**.
  
-   ![Создание виртуальной сети](./media/load-balancer-standard-public-availability-zones-portal/8-load-balancer-nsg-rules.png)
+   ![Снимок экрана: область добавления правила безопасности для входящего трафика](./media/load-balancer-standard-public-availability-zones-portal/8-load-balancer-nsg-rules.png)
 5. Еще раз выполните шаги 2–4, чтобы создать другое правило с именем *myRDPRule*, разрешающее входящее подключение по RDP через порт 3389. Введите (выберите) следующие значения:
     - *Service Tag* — для **источника**;
     - *Internet* — для **тега службы источника**;

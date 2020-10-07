@@ -2,16 +2,16 @@
 title: Учебник. Создание шаблона и его развертывание
 description: Создайте свой первый шаблон Azure Resource Manager. В этом учебнике вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 06/10/2020
+ms.date: 09/28/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 124df19287062a7fc8a6b9cf8b9d32eb3863b581
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.openlocfilehash: 6eb2cf792eb5a458bff8508bc21e1e0690e2e1f3
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90069243"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409222"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
@@ -25,7 +25,7 @@ ms.locfileid: "90069243"
 
 ## <a name="get-tools"></a>Получение средств
 
-Убедитесь, что у вас есть средства, необходимые для создания и развертывания шаблонов.
+Убедитесь, что у вас есть средства, необходимые для создания и развертывания шаблонов. Установите средства на локальном компьютере.
 
 ### <a name="editor"></a>Редактор
 

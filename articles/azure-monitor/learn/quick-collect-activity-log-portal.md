@@ -6,12 +6,12 @@ ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2020
-ms.openlocfilehash: 6f13a465aa43f0c45fa99d2ea396a5ca92d75d66
-ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
+ms.openlocfilehash: 47cf0a1f1d40b9e8358d6bdb4a3ea6a501b67da2
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85446287"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91439218"
 ---
 # <a name="send-azure-activity-log-to-log-analytics-workspace-using-azure-portal"></a>Отправка журнала действий Azure в рабочую область Log Analytics с помощью портала Azure
 Журнал действий — это журнал платформы в Azure, который предоставляет аналитические сведения о событиях уровня подписки, например об изменении ресурса или запуске виртуальной машины. Вы можете просмотреть журнал действий на портале Azure или получить записи с помощью PowerShell и CLI. В этом кратком руководстве показано, как применить портал Azure для создания параметра диагностики и рабочей области Log Analytics, а также для отправки журнала действий в журналы Azure Monitor, где можно их анализировать с помощью [запросов по журналам](../log-query/log-query-overview.md) и применять другие возможности, такие как [оповещения журнала](../platform/alerts-log-query.md) и [книги](../platform/workbooks-overview.md). 
@@ -24,7 +24,7 @@ ms.locfileid: "85446287"
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 На портале Azure найдите и выберите **Рабочие области Log Analytics**. 
 
-![Портал Azure](media/quick-create-workspace/azure-portal-01.png)
+![Снимок экрана: портал Azure, на котором отображается поле поиска с запросом "рабочие области Log Analytics" и выделена надпись "Рабочие области Log Analytics" в разделе "Службы".](media/quick-create-workspace/azure-portal-01.png)
   
 Щелкните **Добавить**, а затем укажите значения для параметров **Группа ресурсов**, **Имя** и **Расположение** рабочей области. Имя рабочей области должно быть уникальным в пределах всех подписок Azure.
 
@@ -36,7 +36,7 @@ ms.locfileid: "85446287"
 ## <a name="create-diagnostic-setting"></a>Создание параметра диагностики
 На портале Azure найдите и выберите **Монитор**. 
 
-![Портал Azure](media/quick-collect-activity-log/azure-portal-monitor.png)
+![Снимок экрана: портал Azure, на котором отображается поле поиска с запросом "монитор" и выделена надпись "Монитор" в разделе "Службы".](media/quick-collect-activity-log/azure-portal-monitor.png)
 
 Выберите **Журнал действий**. Здесь вы увидите последние события для текущей подписки. Щелкните **Параметры диагностики**, чтобы просмотреть параметры диагностики для подписки.
 

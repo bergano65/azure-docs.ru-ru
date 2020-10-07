@@ -1,5 +1,5 @@
 ---
-title: Запросы к Базе данных SQL с помощью редактора запросов на портале Azure
+title: Запросы к Базе данных SQL с помощью редактора запросов на портале Azure (предварительная версия)
 description: Узнайте, как с помощью редактора запросов выполнять запросы Transact-SQL (T-SQL) к базе данных в Базе данных SQL Azure.
 titleSuffix: Azure SQL Database
 keywords: подключение к базе данных sql, запрос в базе данных sql, портал azure, портал, редактор запросов
@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: quickstart
 author: Ninarn
 ms.author: ninarn
-ms.reviewer: carlrab
+ms.reviewer: sstein
 ms.date: 05/29/2020
-ms.openlocfilehash: ec43ad0c83ea56af935b326a2b13aa3b3dc4fa13
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 4eb02c65a8ce486ea152863d8b6c6d0600280893
+ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89441788"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409598"
 ---
-# <a name="quickstart-use-the-azure-portals-query-editor-to-query-an-azure-sql-database"></a>Краткое руководство. Выполнение запросов к Базе данных SQL Azure с помощью редактора запросов на портале Azure
+# <a name="quickstart-use-the-azure-portals-query-editor-preview-to-query-an-azure-sql-database"></a>Краткое руководство. Выполнение запросов к Базе данных SQL Azure с помощью редактора запросов (предварительная версия) на портале Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Редактор запросов на портале Azure позволяет выполнять SQL-запросы к базе данных в Базе данных SQL Azure или к хранилищу данных в Azure Synapse Analytics. 

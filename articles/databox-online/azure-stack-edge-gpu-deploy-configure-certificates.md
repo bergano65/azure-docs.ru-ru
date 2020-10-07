@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure certificates for Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 5be484c613c4a18e86df7b5a83f95ca75aec6077
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 7854aff0b4194efae7c4df653dee18e2676fdd41
+ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903395"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91446316"
 ---
 # <a name="tutorial-configure-certificates-for-your-azure-stack-edge-pro-with-gpu"></a>Руководство по настройке сертификатов для работы Azure Stack Edge Pro с GPU
 
@@ -51,11 +51,11 @@ ms.locfileid: "90903395"
 
     - Если вы изменили имя устройства или домен DNS, состояние активации здесь будет иметь значение **Недопустимо**. 
 
-        ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-1.png)    
+        ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (2)](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-1.png)    
 
         Выберите сертификат, чтобы просмотреть сведения о его состоянии.
 
-        ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-1a.png)  
+        ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (3)](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-1a.png)  
 
         Это связано с тем, что сертификаты не учитывают обновленных имен устройства или домена DNS (которые используются в имени субъекта и альтернативном имени субъекта). Чтобы успешно активировать устройство, выберите один из следующих вариантов. 
     
@@ -108,11 +108,11 @@ ms.locfileid: "90903395"
 
 4. Щелкните ссылку, чтобы скачать нужный сертификат, и подтвердите его сохранение в соответствующем запросе. 
 
-    ![Создание и скачивание сертификата 6](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-7.png)
+    ![Создание и скачивание сертификата 8](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-7.png)
 
 5. Повторите этот процесс для всех нужных сертификатов. 
     
-    ![Создание и скачивание сертификата 7](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-8.png)
+    ![Создание и скачивание сертификата 9](./media/azure-stack-edge-gpu-deploy-configure-certificates/generate-certificate-8.png)
 
     Созданные устройством сертификаты сохраняются в формате DER с именами следующего вида: 
 
@@ -135,31 +135,31 @@ ms.locfileid: "90903395"
 
 1. Чтобы отправить сертификат, выберите на странице **Сертификат** действие **+ Добавить сертификат**.
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-1.png)
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (4)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-1.png)
 
 2. Отправьте нужную цепочку подписывания и щелкните **Проверить и добавить**.
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-2.png)
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (5)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-2.png)
 
 3. Теперь все готово к отправке сертификатов. Например, вы можете отправить сертификаты конечных точек Azure Resource Manager и (или) Хранилища BLOB-объектов.
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-3.png)
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (6)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-3.png)
 
     Кроме того, вы можете отправить сертификаты локального пользовательского веб-интерфейса. Когда вы завершите отправку сертификатов, вам будет предложено перезапустить браузер и очистить кэш. После этого войдите в локальный пользовательский веб-интерфейс.  
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-5.png)
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (7)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-5.png)
 
     Кроме того, вы можете отправить сертификат узла.
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-4.png)
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (8)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-4.png)
 
     В любое время вы можете выбрать сертификат, просмотреть сведения о нем и убедиться, что они соответствуют отправленному сертификату.
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-6.png)
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (9)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-6.png)
 
     Теперь на странице "Сертификаты" должны появиться все добавленные вами сертификаты.
 
-    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-7.png)  
+    ![Страница "Сертификаты" в локальном пользовательском веб-интерфейсе (10)](./media/azure-stack-edge-gpu-deploy-configure-certificates/add-certificate-7.png)  
 
     > [!NOTE]
     > Во всех облачных конфигурациях, кроме общедоступного облака Azure (то есть в Azure для государственных организаций или Azure Stack), сертификаты цепочки подписывания нужно предоставить до активации.
