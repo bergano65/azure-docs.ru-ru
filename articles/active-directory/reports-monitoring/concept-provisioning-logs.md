@@ -1,6 +1,6 @@
 ---
 title: Журналы подготовки на портале Azure Active Directory (Предварительная версия) | Документация Майкрософт
-description: Общие сведения о подготовке отчетов об активности на портале Azure Active Directory
+description: Общие сведения о подготовке журналов подготовки отчетов на портале Azure Active Directory
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 09/02/2020
+ms.date: 10/07/2020
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8aa31c6e196f916b4c7633da0c54a30ab9d7b548
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 6109f35c42d4b4a44430eeb99ec115f4cdc1a619
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361285"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812562"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
 
@@ -42,6 +42,7 @@ ms.locfileid: "91361285"
 ## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
+* Владельцы приложений
 * Пользователи в роли "администратор безопасности", "читатель отчетов", "читатель отчета", "Администратор приложения" и "Администратор облачных приложений"
 * Глобальные администраторы.
 
@@ -105,7 +106,7 @@ ms.locfileid: "91361285"
 
 
 Фильтр **дат** позволяет определить интервал времени для возвращаемых данных.  
-Возможны следующие значения:
+Доступны следующие значения:
 
 - 1 месяц
 - 7 дней
@@ -127,7 +128,7 @@ ms.locfileid: "91361285"
 
 Фильтр **действий** позволяет фильтровать:
 
-- Создать 
+- Создание 
 - Update
 - DELETE
 - Отключить
@@ -210,13 +211,11 @@ ms.locfileid: "91361285"
 
 ## <a name="what-you-should-know"></a>Учитываемые аспекты
 
-- Портал Azure сохраняет данные о подготовке в течение 30 дней, если у вас выпуск Premium и 7 дней, если у вас есть бесплатный выпуск.
+- Портал Azure сохраняет данные о подготовке в течение 30 дней, если у вас выпуск Premium и 7 дней, если у вас есть бесплатный выпуск. Журналы подготовки можно опубликовать в log Analytics для хранения за пределами 30 дней. 
 
 - Атрибут идентификатора изменения можно использовать в качестве уникального идентификатора. Это, например, полезно при взаимодействии со службой поддержки продукта.
 
 - Сейчас нет возможности скачивания данных подготовки в виде CSV-файла, но можно экспортировать данные с помощью [Microsoft Graph](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http).
-
-- В настоящее время log Analytics не поддерживается.
 
 - Для пользователей, которые не находятся в области, могут отображаться пропущенные события. Это ожидается, особенно если для области синхронизации задано значение все пользователи и группы. Наша служба будет оценивать все объекты в клиенте, даже те, которые выходят за пределы области. 
 
@@ -252,3 +251,4 @@ ms.locfileid: "91361285"
 
 * [Проверка состояния подготовки пользователей](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
 * [Проблема при настройке подготовки пользователей для приложения из коллекции Azure AD](../app-provisioning/application-provisioning-config-problem.md)
+* [API Graph подготовки журналов](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta)

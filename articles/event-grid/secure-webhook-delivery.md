@@ -1,14 +1,14 @@
 ---
 title: Безопасная доставка веб-перехватчика с помощью Azure AD в службе "Сетка событий Azure"
 description: Описание доставки событий в конечные точки HTTPS, защищенные Azure Active Directory с помощью службы "Сетка событий Azure"
-ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: e4a6e08f3e28b84198346efb7de09b202b884575
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.topic: how-to
+ms.date: 10/05/2020
+ms.openlocfilehash: 0320e78e6b436f6ba1c0a6ca1bfec81eb974e106
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322552"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812205"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в конечных точках, защищенных Azure Active Directory
 
@@ -23,27 +23,46 @@ ms.locfileid: "91322552"
     - Настройте защищенный API, который будет вызываться приложением управляющей программы.
     
 ## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Включение использования приложения Azure AD в службе "Сетка событий"
+В этом разделе показано, как включить службу "Сетка событий" для использования приложения Azure AD. 
 
-Используйте приведенный ниже сценарий PowerShell, чтобы создать роль и субъект-службу в приложении Azure AD. Вам потребуется идентификатор клиента и идентификатор объекта из приложения Azure AD:
+> [!NOTE]
+> Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md#available-roles).
 
-   > [!NOTE]
-   > Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md#available-roles).
-    
-1. Измените $myTenantId сценария PowerShell, чтобы использовать идентификатор клиента Azure AD.
-1. Измените $myAzureADApplicationObjectId сценария PowerShell, чтобы использовать идентификатор объекта приложения Azure AD.
-1. Запустите измененный сценарий.
+### <a name="connect-to-your-azure-tenant"></a>Подключение к клиенту Azure
+Сначала подключитесь к клиенту Azure с помощью `Connect-AzureAD` команды. 
 
 ```PowerShell
 # This is your Tenant Id. 
 $myTenantId = "<the Tenant Id of your Azure AD Application>"
-
 Connect-AzureAD -TenantId $myTenantId
-    
-# This is your Azure AD Application's ObjectId. 
-$myAzureADApplicationObjectId = "<the Object Id of your Azure AD Application>"
-    
+```
+
+### <a name="create-microsofteventgrid-service-principal"></a>Создание субъекта-службы Microsoft. EventGrid
+Выполните следующий скрипт, чтобы создать субъект-службу для **Microsoft. EventGrid** , если он еще не создан. 
+
+```PowerShell
 # This is the "Azure Event Grid" Azure Active Directory AppId
 $eventGridAppId = "4962773b-9cdb-44cf-a8bf-237846a00ab7"
+    
+$eventGridSP = Get-AzureADServicePrincipal -Filter ("appId eq '" + $eventGridAppId + "'")
+
+# Create the service principal if it doesn't exist
+if ($eventGridSP -match "Microsoft.EventGrid")
+{
+    Write-Host "The Service principal is already defined.`n"
+} else
+{
+    # Create a service principal for the "Azure Event Grid" Azure AD Application and add it to the role
+    $eventGridSP = New-AzureADServicePrincipal -AppId $eventGridAppId
+}
+```
+
+### <a name="create-a-role-for-your-application"></a>Создание роли для приложения   
+Выполните следующий скрипт, чтобы создать роль для приложения Azure AD. В этом примере имя роли: **азуривентгридсекуревебхук**. Измените скрипт PowerShell `$myTenantId` , чтобы он использовал идентификатор клиента Azure AD, и `$myAzureADApplicationObjectId` идентификатор объекта приложения Azure AD.
+
+```PowerShell
+# This is your Azure AD Application's ObjectId. 
+$myAzureADApplicationObjectId = "<the Object Id of your Azure AD Application>"
     
 # This is the name of the new role we will add to your Azure AD Application
 $eventGridRoleName = "AzureEventGridSecureWebhook"
@@ -61,11 +80,10 @@ Function CreateAppRole([string] $Name, [string] $Description)
     $appRole.Value = $Name;
     return $appRole
 }
-    
+
 # Get my Azure AD Application, it's roles and service principal
 $myApp = Get-AzureADApplication -ObjectId $myAzureADApplicationObjectId
 $myAppRoles = $myApp.AppRoles
-$eventGridSP = Get-AzureADServicePrincipal -Filter ("appId eq '" + $eventGridAppId + "'")
 
 Write-Host "App Roles before addition of new role.."
 Write-Host $myAppRoles
@@ -74,8 +92,7 @@ Write-Host $myAppRoles
 if ($myAppRoles -match $eventGridRoleName)
 {
     Write-Host "The Azure Event Grid role is already defined.`n"
-}
-else
+} else
 {
     $myServicePrincipal = Get-AzureADServicePrincipal -Filter ("appId eq '" + $myApp.AppId + "'")
     
@@ -84,25 +101,25 @@ else
     $myAppRoles.Add($newRole)
     Set-AzureADApplication -ObjectId $myApp.ObjectId -AppRoles $myAppRoles
 }
-    
-# Create the service principal if it doesn't exist
-if ($eventGridSP -match "Microsoft.EventGrid")
-{
-    Write-Host "The Service principal is already defined.`n"
-}
-else
-{
-    # Create a service principal for the "Azure Event Grid" Azure AD Application and add it to the role
-    $eventGridSP = New-AzureADServicePrincipal -AppId $eventGridAppId
-}
-    
+
+# print application's roles
+Write-Host "My Azure AD Application's Roles: "
+Write-Host $myAppRoles
+```
+
+### <a name="add-event-grid-service-principal-to-the-role"></a>Добавление субъекта-службы сетки событий в роль    
+Теперь выполните команду, `New-AzureADServiceAppRoleAssignment` чтобы назначить субъекту-службе службы "Сетка событий" роль, созданную на предыдущем шаге. 
+
+```powershell
 New-AzureADServiceAppRoleAssignment -Id $myApp.AppRoles[0].Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventGridSP.ObjectId -PrincipalId $eventGridSP.ObjectId
-    
+```
+
+Выполните следующие команды, чтобы вывести сведения, которые будут использовать следующие шаги. 
+
+```powershell    
 Write-Host "My Azure AD Tenant Id: $myTenantId"
 Write-Host "My Azure AD Application Id: $($myApp.AppId)"
 Write-Host "My Azure AD Application ObjectId: $($myApp.ObjectId)"
-Write-Host "My Azure AD Application's Roles: "
-Write-Host $myApp.AppRoles
 ```
     
 ## <a name="configure-the-event-subscription"></a>Настройка подписки на события

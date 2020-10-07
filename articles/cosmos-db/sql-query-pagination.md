@@ -6,12 +6,12 @@ ms.author: tisande
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: 7f7f895b61e3c638cb347a2d73bb5ee458b31acd
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 1cd0c3f48d4dc79294b3ebf9907ac18d23794830
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498826"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804203"
 ---
 # <a name="pagination-in-azure-cosmos-db"></a>Разбиение на страницы в Azure Cosmos DB
 
@@ -23,7 +23,7 @@ ms.locfileid: "87498826"
 
 Можно указать максимальное число элементов, возвращаемых запросом, задав `MaxItemCount` . Задается `MaxItemCount` для каждого запроса и гарантирует, что обработчик запросов возвратит это число элементов или меньше. Можно задать значение `MaxItemCount` , `-1` если не нужно устанавливать ограничение на количество результатов для каждого выполнения запроса.
 
-Кроме того, существуют и другие причины, по которым механизму запросов может потребоваться разделить результаты запроса на несколько страниц. Сюда входит следующее.
+Кроме того, существуют и другие причины, по которым механизму запросов может потребоваться разделить результаты запроса на несколько страниц. Они перечислены ниже.
 
 - Контейнер был отрегулирован и еще не был доступен для получения дополнительных результатов запроса.
 - Отклик на выполнение запроса слишком большой
@@ -56,7 +56,7 @@ ms.locfileid: "87498826"
 
 В REST API Azure Cosmos DB можно управлять маркерами продолжения с помощью `x-ms-continuation` заголовка. Как и при выполнении запросов к пакету SDK для .NET или Java, если `x-ms-continuation` заголовок ответа не пуст, это означает, что запрос содержит дополнительные результаты.
 
-Пока используется одна и та же версия пакета SDK, срок действия маркеров продолжения никогда не истекает. При необходимости можно [ограничить размер токена продолжения](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.feedoptions.responsecontinuationtokenlimitinkb?view=azure-dotnet#Microsoft_Azure_Documents_Client_FeedOptions_ResponseContinuationTokenLimitInKb). Независимо от объема данных или числа физических секций в контейнере, запросы возвращают один маркер продолжения.
+Пока используется одна и та же версия пакета SDK, срок действия маркеров продолжения никогда не истекает. При необходимости можно [ограничить размер токена продолжения](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.feedoptions.responsecontinuationtokenlimitinkb?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Documents_Client_FeedOptions_ResponseContinuationTokenLimitInKb). Независимо от объема данных или числа физических секций в контейнере, запросы возвращают один маркер продолжения.
 
 Маркеры продолжения нельзя использовать для запросов с [ключевым словом](sql-query-keywords.md#distinct) [Group By](sql-query-group-by.md) или DISTINCT, поскольку для этих запросов требуется хранить значительный объем состояний. Для запросов с `DISTINCT` можно использовать маркеры продолжения при добавлении `ORDER BY` в запрос.
 
@@ -70,6 +70,6 @@ ORDER BY c.name
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Предложение ORDER BY](sql-query-order-by.md)

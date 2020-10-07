@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/15/2017
+ms.date: 10/06/2020
 ms.author: steveesp
-ms.openlocfilehash: 7b693d10b4e1925e9c07111982a616b56b77e5b6
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 20403b8c45120a53ea38fbbed60c8f96fd9d55e7
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87265149"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812851"
 ---
 # <a name="optimize-network-throughput-for-azure-virtual-machines"></a>Оптимизации пропускной способности сети для виртуальной машины Azure
 
@@ -56,12 +56,12 @@ ms.locfileid: "87265149"
 
 ### <a name="ubuntu-for-new-deployments"></a>Ubuntu для новых развертываний
 
-Ядро Ubuntu Azure обеспечивает самую высокую производительность сети в Azure. С 21 сентября 2017 г. оно используется по умолчанию. Чтобы получить это ядро, сначала установите последнюю поддерживаемую версию 16.04-LTS, как описано ниже:
+Ядро Azure Ubuntu является наиболее оптимизированным для производительности сети в Azure. Чтобы получить последние оптимизации, сначала установите последнюю поддерживаемую версию 18,04-LTS, как показано ниже.
 
 ```json
 "Publisher": "Canonical",
 "Offer": "UbuntuServer",
-"Sku": "16.04-LTS",
+"Sku": "18.04-LTS",
 "Version": "latest"
 ```
 
@@ -89,7 +89,7 @@ apt-get -y dist-upgrade
 
 #### <a name="ubuntu-azure-kernel-upgrade-for-existing-vms"></a>Обновление ядра Ubuntu Azure для существующих виртуальных машин
 
-Обновив ядро Azure Linux, можно существенно повысить пропускную способность. Чтобы определить необходимость обновления, проверьте вашу версию ядра.
+Обновив ядро Azure Linux, можно существенно повысить пропускную способность. Чтобы определить необходимость обновления, проверьте вашу версию ядра. Оно должно быть таким же или более поздним, чем в примере.
 
 ```bash
 #Azure kernel name ends with "-azure"
@@ -117,7 +117,7 @@ reboot
 ```json
 "Publisher": "OpenLogic",
 "Offer": "CentOS",
-"Sku": "7.4",
+"Sku": "7.7",
 "Version": "latest"
 ```
 
@@ -152,6 +152,7 @@ sudo ./install.sh #or upgrade.sh if prior LIS was previously installed
 Дополнительные сведения о версии 4.2 служб интеграции Linux (LIS) для Hyper-V см. на [странице скачивания](https://www.microsoft.com/download/details.aspx?id=55106).
 
 ## <a name="next-steps"></a>Дальнейшие действия
+* Развертывание виртуальных машин близко друг к другу для низкой задержки с [группой размещения с близкой](../virtual-machines/windows/co-location.md) назначением
 * Просмотрите оптимизированные результаты для своего сценария, используя сведения в статье [Проверка пропускной способности (NTTTCP)](virtual-network-bandwidth-testing.md).
 * Узнайте, как [выделяется пропускная способность для виртуальных машин](virtual-machine-network-throughput.md)
 * Дополнительные сведения см. в статье [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md).

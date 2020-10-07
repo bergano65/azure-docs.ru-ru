@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 662c23a29e383800a4591c900e02133c16fa2090
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: a04435b1e2feb537231bb80d2777b9ea2599c241
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743324"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812409"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -62,6 +62,11 @@ Key Vault использует проверку подлинности Azure AD,
 |--|--|--|--|
 |[Пакет SDK для Azure Identity .NET](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme)|[Пакет SDK для удостоверений Azure Python](https://docs.microsoft.com/python/api/overview/azure/identity-readme)|[Пакет SDK для Azure Identity Java](https://docs.microsoft.com/java/api/overview/azure/identity-readme)|[Azure Identity SDK JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme)|     
 
+Проверка подлинности для Key Vault в приложениях:
+- [Проверка подлинности Key Vault в приложении, размещенном на виртуальной машине в .NET](https://docs.microsoft.com/azure/key-vault/general/tutorial-net-virtual-machine)
+- [Аутентификация в Key Vault в приложении, размещенном на виртуальной машине в Python](https://docs.microsoft.com/azure/key-vault/general/tutorial-python-virtual-machine)
+- [Проверка подлинности в Key Vault со службой приложений](https://docs.microsoft.com/azure/key-vault/general/tutorial-net-create-vault-azure-web-app)
+
 ## <a name="manage-keys-certificates-and-secrets"></a>Управление ключами, сертификатами и секретами
 
 Доступом к ключам, секретам и сертификатам управляет плоскость данных. Управление доступом к плоскости данных можно выполнить с помощью политик доступа к локальному хранилищу или RBAC (Предварительная версия).
@@ -71,14 +76,14 @@ Key Vault использует проверку подлинности Azure AD,
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.keys)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-keys/)|
+|[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|Н/Д|[Ссылки](/dotnet/api/azure.security.keyvault.keys)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-keys/)|
 
 **Интерфейсы API и пакеты SDK для сертификатов**
 
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)|
+|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Н/Д|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)|
 
 **Секреты API и пакеты SDK**
 
@@ -112,9 +117,13 @@ Key Vault использует проверку подлинности Azure AD,
 
 Эти статьи посвящены другим сценариям и службам, использующим Key Vault или интегрирующимся с ним.
 
-- [Шифрование неактивных с помощью Key Vault](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
-
+- [Шифрование неактивных](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest) данных позволяет кодировать (шифровать) данные при сохранении. Ключи шифрования данных часто шифруются с помощью ключа шифрования ключа в Azure Key Vault для дальнейшего ограничения доступа.
 - [Azure Information Protection](/azure/information-protection/plan-implement-tenant-key) позволяет управлять собственным ключом клиента. Например, вместо того, чтобы вашим ключом клиента управляла корпорация Майкрософт (по умолчанию), вы можете сами управлять им в соответствии с определенными нормами своей организации. Сценарий с использованием собственного ключа клиента называется BYOK.
+- [Служба "Частная связь Azure](private-link-service.md) " позволяет получать доступ к службам Azure (например, Azure Key Vault, службе хранилища azure и Azure Cosmos DB) и службам клиентов и партнеров Azure, размещенных в частной конечной точке в виртуальной сети.
+- Key Vault интеграция с [сеткой событий](https://docs.microsoft.com/azure/event-grid/event-schema-key-vault)  позволяет пользователям получать уведомления при изменении состояния секрета, хранящегося в хранилище ключей. Вы можете распространить новую версию секретов в приложения или поворачивать с течением срока действия секретов, чтобы предотвратить сбои.
+- Вы можете защитить секреты [Azure Devops](https://docs.microsoft.com/azure/devops/pipelines/release/azure-key-vault) от нежелательного доступа в Key Vault.
+- [Использование секрета, хранящегося в Key Vault в модулях данных для подключения к службе хранилища Azure](https://docs.microsoft.com/azure/key-vault/general/integrate-databricks-blob-storage)
+- Настройка и запуск поставщика Azure Key Vault для [драйвера хранилища секретов CSI](https://docs.microsoft.com/azure/key-vault/general/key-vault-integrate-kubernetes) в Kubernetes
 
 ## <a name="key-vault-overviews-and-concepts"></a>Основные сведения о Key Vault
 

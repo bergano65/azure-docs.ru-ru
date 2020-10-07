@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/05/2020
+ms.date: 10/07/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: локальная среда, Docker, контейнер
-ms.openlocfilehash: ed14b0b90fadf02ee23852ebce9a60b758b82573
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: 0ba479e8c73cb7b0f397f39124ec32d7b9afbf4f
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766468"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91813276"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Установка и запуск контейнеров DOCKER для API-интерфейсов речевой службы 
 
@@ -80,7 +80,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера речи.
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
@@ -140,7 +140,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 # <a name="speech-language-detection"></a>[Речь распознавание языка](#tab/lid)
 
 > [!TIP]
-> Для получения наилучших результатов мы рекомендуем использовать контейнер обнаружения языка распознавания речи с текстовыми или пользовательскими контейнерами преобразования речи в текст. 
+> Чтобы получить наиболее полезные результаты, мы рекомендуем использовать контейнер обнаружения языка распознавания речи с текстовыми или пользовательскими контейнерами преобразования речи в текст. 
 
 | Контейнер | Хранилище |
 |-----------|------------|
@@ -655,7 +655,7 @@ speech_config.set_service_property(
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 При запуске или запуске контейнера могут возникнуть проблемы. Используйте [Подключение](speech-container-configuration.md#mount-settings) к выходным данным и включите ведение журнала. Это позволит контейнеру создавать файлы журналов, которые полезны при устранении неполадок.
 
@@ -673,7 +673,7 @@ speech_config.set_service_property(
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску речевых контейнеров. В разделе "Сводка" сделайте следующее.
 

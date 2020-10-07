@@ -13,12 +13,12 @@ ms.date: 05/18/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 24d50635efb4d7fe18db9836311cf0a85dfcc734
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 39cd25c2c84e92a0b06bc2ee6c6229ecb2d296d5
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88118626"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812545"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-resource-owner-password-credentials"></a>Учетные данные владельца ресурса OAuth 2.0 для платформы удостоверений Майкрософт
 
@@ -112,5 +112,4 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 ## <a name="learn-more"></a>Дополнительные сведения
 
-* Вы можете опробовать ROPC самостоятельно с помощью [примера консольного приложения](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2).
-* Чтобы определить, стоит ли вам использовать конечную точку версии 2.0, ознакомьтесь с [ограничениями платформы удостоверений Майкрософт](../azuread-dev/azure-ad-endpoint-comparison.md).
+Пример использования РОПК см. в примере кода [консольного приложения .NET Core](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) на сайте GitHub.

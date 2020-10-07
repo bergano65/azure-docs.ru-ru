@@ -17,12 +17,12 @@ ms.date: 03/24/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2791b62d8abb1ade199ae3eb72deaf4db56f3725
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 696b295a481d7b986f08f1d758edb8d5adca5717
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361302"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812834"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -31,6 +31,7 @@ ms.locfileid: "91361302"
 - **Действие** 
     - **События входа**. Информация об использовании управляемых приложений и действиях входа пользователей.
     - **Журналы аудита**  -  [Журналы аудита](concept-audit-logs.md) предоставляют сведения о действиях пользователей и управления группами, управляемых приложениях и действиях с каталогами.
+    - **Журналы подготовки**  -  [Журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) позволяют пользователям отслеживать действия службы подготовки, например создание группы в ServiceNow или пользователя, импортированного из Workday. 
 - **Безопасность** 
     - **Рискованные входы** . [рискованный вход](../identity-protection/overview-identity-protection.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
     - **Пользователи, помеченные для риска** — [рискованный пользователь](../identity-protection/overview-identity-protection.md) является индикатором для учетной записи пользователя, которая могла быть скомпрометирована.
