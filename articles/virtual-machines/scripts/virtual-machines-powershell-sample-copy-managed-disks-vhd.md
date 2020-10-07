@@ -1,5 +1,5 @@
 ---
-title: Экспорт или копирование управляемого диска VHD в учетную запись в другом регионе (Windows) с помощью PowerShell
+title: Экспорт или копирование VHD управляемого диска в учетную запись в другом регионе (Windows) с помощью PowerShell
 description: Пример сценария Azure PowerShell, который позволяет экспортировать или копировать VHD управляемого диска в учетную запись хранения в другом регионе.
 services: virtual-machines-windows
 documentationcenter: storage
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/17/2018
 ms.author: ramankum
-ms.openlocfilehash: ef760688e2a91da6e2f8ab759dc1858d3e583655
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: d76fda02f94f85126214de27d88079977824098d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89322768"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91320138"
 ---
 # <a name="exportcopy-the-vhd-of-a-managed-disk-to-a-storage-account-in-different-region-with-powershell-windows"></a>Экспорт или копирование VHD управляемого диска в учетную запись хранения в другом регионе с помощью PowerShell (Windows)
 

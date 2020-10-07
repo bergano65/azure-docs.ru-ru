@@ -4,16 +4,17 @@ titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: aahill
 manager: nitinme
-ms.service: metrics-advisor
+ms.service: cognitive-services
+ms.subservice: metrics-advisor
 ms.topic: include
-ms.date: 09/10/2020
+ms.date: 09/23/2020
 ms.author: aahi
-ms.openlocfilehash: 82eec57b30e177f75a3ac689dc096dfea54c6717
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 603668f5bd4bb3909c895c3b2816b7521312ab59
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945364"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91253754"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,10 +24,17 @@ ms.locfileid: "90945364"
     * В следующих примерах BASH используется символ продолжения строки `\`. Если консоль или терминал использует другой символ продолжения строки, используйте этот символ.
 
 > [!TIP]
-> * Вы можете найти на сайте [GitHub](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) пример для Python, в котором используется REST API.
-> * Развертывание ресурса Помощника по метрикам занимает от 10 до 30 минут. Когда развертывание завершится, щелкните **Перейти к ресурсу**.
-> * После развертывания можно сразу работать с экземпляром Помощника по метрикам, используя веб-портал и REST API. Оба URL-адреса можно найти в созданном ресурсе.
-> * Чтобы приступить к использованию службы, вам потребуются ключ и конечная точка из созданного ресурса, которые можно найти в разделе **Keys and Endpoint** (Ключи и конечная точка) для этого ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+> * Вы можете найти на сайте [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/MetricsAdvisor) пример для Python, который вызывает REST API.
+> * Ресурс Помощника по метрикам развертывает экземпляр службы от 10 до 30 минут. Когда развертывание завершится, щелкните **Перейти к ресурсу**. После развертывания можно начать работу с экземпляром Помощника по метрикам, используя веб-портал и REST API. 
+> * URL-адрес для REST API на портале Azure можно найти в разделе **Обзор** ресурса. Он будет выглядеть так:
+>    * `https://<instance-name>.cognitiveservices.azure.com/`
+
+Чтобы начать использовать REST API, нужны два ключа:
+
+* Ключ к ресурсу Помощника по метрикам. Его можно найти в разделе **Ключи и конечные точки** ресурса на портале Azure.
+    * Позже вы замените `Ocp-Apim-Subscription-Key` в примерах этим ключом. 
+* Ключ API для экземпляра Помощника по метрикам. Его можно найти на веб-портале для Помощника по метрикам в разделе **Ключи API** в меню навигации слева.
+    * Позже вы замените `x-api-key` в примерах этим ключом.
 
 ## <a name="add-a-data-feed-from-a-sample-or-data-source"></a>Добавление веб-канала данных из примера или источника данных
 
@@ -87,10 +95,10 @@ ms.locfileid: "90945364"
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав имя ресурса, ключ ресурса и значения JSON.
 
 ```bash
-curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds \
+curl -i https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/datafeeds \
 -X POST \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY" \
 -H "Content-Type:application/json" \
 -d @body.json
 ```
@@ -100,7 +108,7 @@ curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds \
 ```
 HTTP/1.1 201 Created
 Content-Length: 0
-Location: https://gualala-beta-0617.cognitiveservices.azure.com/anomalydetector-ee/v1.0/datafeeds/b5921405-8001-42b2-8746-004ddeeb780d
+Location: https://gualala-beta-0617.cognitiveservices.azure.com/metricsadvisor/v1.0/datafeeds/b5921405-8001-42b2-8746-004ddeeb780d
 x-envoy-upstream-service-time: 564
 apim-request-id: 4e4fe70b-d663-4fb7-a804-b9dc14ba02a3
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
@@ -112,14 +120,14 @@ Date: Thu, 03 Sep 2020 18:29:27 GMT
 Используя приведенный выше URL-адрес, можно запросить подробные сведения о веб-канале данных, который вы создали на предыдущем шаге. (В последующих шагах мы будем использовать **metricID** из сведений о канале данных.)
 
 ```bash
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds/REPLACE-WITH-YOUR-DATA-FEED-ID \
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/datafeeds/REPLACE-WITH-YOUR-DATA-FEED-ID \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY"
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY"
 ```
 
 #### <a name="example-response"></a>Пример ответа
 
-```
+```json
 {
    "dataFeedId":"90919c03-be13-4efa-86e5-aa9dc72764ce",
    "dataFeedName":"test_data_feed_00000007",
@@ -168,12 +176,12 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds/REPLAC
    "maxConcurrency":-1,
    "viewMode":"Private",
    "admins":[
-      "zhli2@microsoft.com"
+      "xyz@microsoft.com"
    ],
    "viewers":[
       
    ],
-   "creator":"bowgong@microsoft.com",
+   "creator":"xyz@microsoft.com",
    "status":"Active",
    "createdTime":"2020-09-08T08:39:28Z",
    "isAdmin":true,
@@ -202,10 +210,10 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds/REPLAC
 
 
 ```bash
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds/REPLACE-WITH-YOUR-DATA-FEED-ID/ingestionStatus/query \
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/datafeeds/REPLACE-WITH-YOUR-DATA-FEED-ID/ingestionStatus/query \
 -X POST \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY" \
 -H "Content-Type:application/json" \
 -d @body.json
 ```
@@ -265,10 +273,10 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/datafeeds/REPLAC
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав собственные имя ресурса, ключ ресурса, значения и размер JSON-файла.
 
 ```bash
-curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/enrichment/anomalyDetection/configurations \
+curl -i https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/enrichment/anomalyDetection/configurations \
 -X POST \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY" \
 -H "Content-Type:application/json" \
 -d @body.json
 ```
@@ -278,7 +286,7 @@ curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/enrichment/an
 ```
 HTTP/1.1 201 Created
 Content-Length: 0
-Location: https://gualala-beta-0617.cognitiveservices.azure.com/anomalydetector-ee/v1.0/enrichment/anomalyDetection/configurations/6a977d61-f0f5-488a-a162-2feb4643ae09
+Location: https://gualala-beta-0617.cognitiveservices.azure.com/metricsadvisor/v1.0/enrichment/anomalyDetection/configurations/6a977d61-f0f5-488a-a162-2feb4643ae09
 x-request-id: 17752fcc-9085-46d5-ad37-c4e9e9ba6a5a
 x-envoy-upstream-service-time: 253
 apim-request-id: 17752fcc-9085-46d5-ad37-c4e9e9ba6a5a
@@ -291,10 +299,10 @@ Date: Tue, 08 Sep 2020 09:50:38 GMT
 
 Указав приведенный выше URL-адрес в заголовке **Location**, вы можете обратиться к созданной конфигурации обнаружения (в последующих шагах мы будем использовать **anomalyDetectionConfigurationId** из содержимого ответа).
 
-```
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/enrichment/anomalyDetection/configurations/REPLACE-WITH-YOUR-DETECTION-CONFIGURATION-ID \
+```bash
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/enrichment/anomalyDetection/configurations/REPLACE-WITH-YOUR-DETECTION-CONFIGURATION-ID \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY"
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY"
 ```
 
 #### <a name="example-response"></a>Пример ответа
@@ -349,10 +357,10 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/enrichment/anoma
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав собственные имя ресурса, ключ ресурса, значения и размер JSON-файла.
 
 ```bash
-curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/hooks \
+curl -i https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/hooks \
 -X POST \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY" \
 -H "Content-Type:application/json" \
 -d @body.json
 ```
@@ -362,7 +370,7 @@ curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/hooks \
 ```
 HTTP/1.1 201 Created
 Content-Length: 0
-Location: https://gualala-beta-0617.cognitiveservices.azure.com/anomalydetector-ee/v1.0/hooks/34d677bd-0875-4760-8bf6-24d48abde7c3
+Location: https://gualala-beta-0617.cognitiveservices.azure.com/metricsadvisor/v1.0/hooks/34d677bd-0875-4760-8bf6-24d48abde7c3
 x-request-id: 7b6cc1a6-02cb-405b-bee3-174fdae0a7d2
 x-envoy-upstream-service-time: 1640
 apim-request-id: 7b6cc1a6-02cb-405b-bee3-174fdae0a7d2
@@ -373,10 +381,10 @@ Date: Tue, 08 Sep 2020 10:37:59 GMT
 
 Указав приведенный выше URL-адрес в заголовке **Location**, вы можете обратиться к созданному веб-перехватчику.
 
-```
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/hooks/REPLACE-WITH-YOUR-HOOK-ID \
+```bash
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/hooks/REPLACE-WITH-YOUR-HOOK-ID \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY"
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY"
 ```
 
 #### <a name="example-response"></a>Пример ответа
@@ -437,10 +445,10 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/hooks/REPLACE-WI
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав собственные имя ресурса, ключ ресурса, значения и размер JSON-файла.
 
 ```bash
-curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/alert/anomaly/configurations \
+curl -i https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/alert/anomaly/configurations \
 -X POST \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY" \
 -H "Content-Type:application/json" \
 -d @body.json
 ```
@@ -450,7 +458,7 @@ curl -i https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/alert/anomaly
 ```
 HTTP/1.1 201 Created
 Content-Length: 0
-Location: https://gualala-beta-0617.cognitiveservices.azure.com/anomalydetector-ee/v1.0/alert/anomaly/configurations/40004c91-6996-47c0-b8c8-fd20a8f4f0ab
+Location: https://gualala-beta-0617.cognitiveservices.azure.com/metricsadvisor/v1.0/alert/anomaly/configurations/40004c91-6996-47c0-b8c8-fd20a8f4f0ab
 x-request-id: 17752fcc-9085-46d5-ad37-c4e9e9ba6a5a
 x-envoy-upstream-service-time: 253
 apim-request-id: 17752fcc-9085-46d5-ad37-c4e9e9ba6a5a
@@ -463,10 +471,10 @@ Date: Tue, 08 Sep 2020 09:50:38 GMT
 
 Указав приведенный выше URL-адрес в заголовке **Location**, вы можете обратиться к созданной конфигурации оповещения. (В последующих шагах мы будем использовать **anomalyAlertingConfigurationId** из конфигурации оповещения.)
 
-```
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/alert/anomaly/configurations/REPLACE-WITH-YOUR-ANOMALY-ALERTING-CONFIGURATION-ID \
+```bash
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/alert/anomaly/configurations/REPLACE-WITH-YOUR-ANOMALY-ALERTING-CONFIGURATION-ID \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY"
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY"
 ```
 
 #### <a name="example-response"></a>Пример ответа
@@ -508,10 +516,10 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/alert/anomaly/co
 
 Чтобы запросить оповещение, используйте созданную выше конфигурацию оповещения.
 
-```
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/anomalydetector-ee/v1.0/alert/anomaly/configurations/REPLACE-WITH-YOUR-ANOMALY-ALERTING-CONFIGURATION-ID/alerts/query \
+```bash
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/alert/anomaly/configurations/REPLACE-WITH-YOUR-ANOMALY-ALERTING-CONFIGURATION-ID/alerts/query \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY"
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY"
 ```
 
 #### <a name="example-response"></a>Пример ответа
@@ -536,10 +544,10 @@ curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/anomalydetector-
 
 #### <a name="query-anomalies-using-alertid"></a>Запрашивание аномалий по alertID
 
-```
-curl https://REPLACE-WITH-YOUR-ENDPOINT/anomalydetector-ee/v1.0/alert/anomaly/configurations/REPLACE-WITH-YOUR-ANOMALY-ALERTING-CONFIGURATION-ID/alerts/REPLACE-WITH-YOUR-ALERTID/anomalies \
+```bash
+curl https://REPLACE-WITH-YOUR-ENDPOINT/metricsadvisor/v1.0/alert/anomaly/configurations/REPLACE-WITH-YOUR-ANOMALY-ALERTING-CONFIGURATION-ID/alerts/REPLACE-WITH-YOUR-ALERTID/anomalies \
 -H "Ocp-Apim-Subscription-Key: REPLACE-WITH-YOUR-RESOURCE-KEY" \
--H "x-api-key: REPLACE-WITH-YOUR-RESOURCE-KEY"
+-H "x-api-key: REPLACE-WITH-YOUR-API-KEY"
 ```
 
 #### <a name="example-response"></a>Пример ответа

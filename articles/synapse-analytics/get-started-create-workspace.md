@@ -9,14 +9,18 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 08/27/2020
-ms.openlocfilehash: 78ec233e618511c748ed9f51b97161eddc5e8308
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.openlocfilehash: f5851174ba223bd0ab48512b9e75449dcc927a04
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90707532"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300111"
 ---
-# <a name="create-a-synapse-workspace"></a>Создание рабочей области Synapse
+# <a name="prerequisites"></a>Предварительные требования
+
+Чтобы выполнить все действия, описанные в этом руководстве, потребуется доступ к группе ресурсов, которой назначена роль **Владелец**. Создайте рабочую область Synapse в этой группе ресурсов.
+
+## <a name="create-a-synapse-workspace"></a>Создание рабочей области Synapse
 
 В этом учебнике вы узнаете, как создать рабочую область Synapse, пул SQL и пул Apache Spark. 
 

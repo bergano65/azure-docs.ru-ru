@@ -3,23 +3,28 @@ title: Создание ресурса Cognitive Services с помощью кл
 titleSuffix: Azure Cognitive Services
 description: Сведения о том, как создать ресурсы Cognitive Services и управлять ими с помощью клиентской библиотеки управления Azure.
 services: cognitive-services
+keywords: Cognitive Services, когнитивня аналитика, когнитивные решения, службы ИИ
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: quickstart
-ms.date: 07/29/2020
+ms.date: 09/14/2020
 ms.author: pafarley
 zone_pivot_groups: programming-languages-set-ten
-ms.openlocfilehash: e56e9226593884045eb4533bfe3ffddce7aad883
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: e8628d051db7f5066a81171567f6f7e54fb0ab97
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89321585"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91262456"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-management-client-library"></a>Краткое руководство. Создание ресурса Cognitive Services с помощью клиентской библиотеки управления Azure
 
-В этом кратком руководстве описано, как создать ресурсы Cognitive Services и управлять ими с помощью клиентской библиотеки управления Azure. Отдельные службы ИИ представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые вы создаете в своей подписке Azure. После создания ресурса вы можете использовать созданные ключи и конечную точку для аутентификации приложений.
+В этом кратком руководстве описано, как создать ресурсы Cognitive Services и управлять ими с помощью клиентской библиотеки управления Azure.
+
+Azure Cognitive Services — это облачные службы с REST API и пакетами SDK клиентских библиотек, которые помогают разработчикам без опыта работы со средствами искусственного интеллекта (ИИ) и обработки и анализа данных создавать когнитивные интеллектуальные приложения. С помощью Azure Cognitive Services разработчики могут без усилий добавлять в свои приложения когнитивные функции, создавая когнитивные решения, которые могут видеть, слышать, говорить, понимать и даже в некоторой степени размышлять.
+
+Отдельные службы ИИ представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые вы создаете в своей подписке Azure. После создания ресурса вы можете использовать созданные ключи и конечную точку для аутентификации приложений.
 
 ::: zone pivot="programming-language-csharp"
 

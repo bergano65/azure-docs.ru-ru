@@ -4,19 +4,19 @@ description: Учебник. Использование Azure Toolkit for Intell
 services: synapse-analytics
 author: hrasheed-msft
 ms.author: jejiang
-ms.reviewer: jrasnick, carlrab
+ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: cd180996434463959cd6f40a115902db358a3091
-ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
+ms.openlocfilehash: c17addc313954fbca5b81c4594d7317065350c09
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85194955"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249575"
 ---
-# <a name="tutorial-create-an-apache-spark-applications-with-intellij-using-a-synapse-workspace"></a>Руководство по созданию приложений Apache Spark с помощью IntelliJ и рабочей области Synapse
+# <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Руководство по созданию приложения Apache Spark с помощью IntelliJ и рабочей области Synapse
 
 В этом учебнике показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в пул Spark (предварительной версии) напрямую из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
 
@@ -37,7 +37,7 @@ ms.locfileid: "85194955"
 - подключаемый модуль Azure Toolkit 3.27.0-2019.2 — [установите из репозитория подключаемого модуля IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-installation?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json);
 - [JDK (версия 1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
 - подключаемый модуль Scala — [установите из репозитория подключаемого модуля IntelliJ](/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#install-scala-plugin-for-intellij-idea).
-- Это предварительное требование предназначено только для пользователей Windows.
+- Приведенное ниже предварительное требование предназначено только для пользователей Windows.
 
   При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в статье о [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл WinUtils.exe.
   Чтобы устранить эту ошибку, [скачайте этот исполняемый файл WinUtils](http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например, в папку **C:\WinUtils\bin**. После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
@@ -130,11 +130,11 @@ ms.locfileid: "85194955"
 
 1. Откройте окно **Run/Debug Configurations** (Конфигурации запуска и отладки), щелкнув значок.
 
-    ![Команда Submit Spark Application to HDInsight (Отправить приложение Spark в HDInsight)](./media/intellij-tool-synapse/open-configuration-window.png)
+    ![Команда 1 Submit Spark Application to HDInsight (Отправить приложение Spark в HDInsight)](./media/intellij-tool-synapse/open-configuration-window.png)
 
 2. В диалоговом окне **Run/Debug Configurations** (Конфигурации запуска и отладки) щелкните **+** , а затем выберите **Apache Spark on Synapse** (Apache Spark в Synapse).
 
-    ![Команда Submit Spark Application to HDInsight (Отправить приложение Spark в HDInsight)](./media/intellij-tool-synapse/create-synapse-configuration02.png)
+    ![Команда 2 Submit Spark Application to HDInsight (Отправить приложение Spark в HDInsight)](./media/intellij-tool-synapse/create-synapse-configuration02.png)
 
 3. В окне **Run/Debug Configurations** (Конфигурации запуска и отладки) укажите следующие значения, а затем нажмите кнопку **ОК**.
 
@@ -152,13 +152,13 @@ ms.locfileid: "85194955"
     |Storage Key (Ключ хранилища)|Введите свой ключ к хранилищу данных.|
     |Контейнер хранилища|Если вы ввели значения в поля **Учетная запись хранения** и **Storage Key** (Ключ хранилища), из раскрывающегося списка выберите контейнер хранилища.|
 
-    ![Диалоговое окно Spark Submission (Отправка в Spark)](./media/intellij-tool-synapse/create-synapse-configuration03.png)
+    ![Диалоговое окно 1 Spark Submission (Отправка в Spark)](./media/intellij-tool-synapse/create-synapse-configuration03.png)
 
 4. Щелкните значок **SparkJobRun**, чтобы отправить проект в выбранный пул Spark. На вкладке **Remote Spark Job in Cluster** (Удаленное задание Spark в кластере) внизу показан ход выполнения задания. Чтобы остановить работу приложения, нажмите красную кнопку.
 
     ![Окно отправки Apache Spark](./media/intellij-tool-synapse/remotely-run-synapse.png)
 
-    ![Диалоговое окно Spark Submission (Отправка в Spark)](./media/intellij-tool-synapse/remotely-run-result.png)
+    ![Диалоговое окно 2 Spark Submission (Отправка в Spark)](./media/intellij-tool-synapse/remotely-run-result.png)
 
 ## <a name="local-rundebug-apache-spark-applications"></a>Локальные запуск и отладка приложений Apache Spark
 
@@ -168,7 +168,7 @@ ms.locfileid: "85194955"
 
 1. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните значок плюса ( **+** ). Затем выберите вариант **Apache Spark on Synapse** (Apache Spark в Synapse). Введите сведения в полях **Name** (Имя) и **Main class name** (Имя основного класса).
 
-    ![Локальное выполнение конфигураций запуска и отладки в Intellij](./media/intellij-tool-synapse/local-run-synapse.png)
+    ![Локальное выполнение конфигураций запуска и отладки в IntelliJ (1)](./media/intellij-tool-synapse/local-run-synapse.png)
 
     - Переменные среды и расположение файла WinUtils.exe используются только для Windows.
     - Переменные среды. Если системная переменная среды настроена ранее, она может быть обнаружена автоматически и ее не нужно добавлять вручную.
@@ -176,18 +176,18 @@ ms.locfileid: "85194955"
 
 2. Затем нажмите кнопку локального выполнения.
 
-    ![Локальное выполнение конфигураций запуска и отладки в Intellij](./media/intellij-tool-synapse/local-run-synapse01.png)
+    ![Локальное выполнение конфигураций запуска и отладки в IntelliJ (2)](./media/intellij-tool-synapse/local-run-synapse01.png)
 
 3. После завершения локального выполнения, если скрипт содержит выходные данные, можно проверить выходной файл в папке **data** > **__default__**.
 
-    ![Результат локального запуска проекта IntelliJ](./media/intellij-tool-synapse/spark-local-run-result.png)
+    ![Результат локального запуска проекта IntelliJ (1)](./media/intellij-tool-synapse/spark-local-run-result.png)
 
 ### <a name="scenario-2-do-local-debugging"></a>Сценарий 2. Локальная отладка
 
 1. Откройте скрипт **LogQuery** и установите точки останова.
 2. Щелкните значок **Local debug** (Локальная отладка), чтобы выполнить локальную отладку.
 
-    ![Результат локального запуска проекта IntelliJ](./media/intellij-tool-synapse/local-debug-synapse.png)
+    ![Результат локального запуска проекта IntelliJ (2)](./media/intellij-tool-synapse/local-debug-synapse.png)
 
 ## <a name="access-and-manage-synapse-workspace"></a>Доступ к рабочей области Synapse и управление ею
 
@@ -201,9 +201,9 @@ ms.locfileid: "85194955"
 
 2. Щелкните правой кнопкой мыши рабочую область, а затем выберите команду **Запуск рабочей области**, после чего откроется веб-сайт.
 
-    ![Представление задания Spark, сведения о приложении](./media/intellij-tool-synapse/launch-workspace-synapse.png)
+    ![Представление задания Spark, сведения о приложении (1)](./media/intellij-tool-synapse/launch-workspace-synapse.png)
 
-    ![Представление задания Spark, сведения о приложении](./media/intellij-tool-synapse/launch-workspace-result.png)
+    ![Представление задания Spark, сведения о приложении (2)](./media/intellij-tool-synapse/launch-workspace-result.png)
 
 ## <a name="spark-console"></a>Консоль Spark
 
@@ -266,7 +266,7 @@ ms.locfileid: "85194955"
 
 ### <a name="send-selection-to-spark-console"></a>Отправка выбранного фрагмента кода в консоль Spark
 
-Удобно предвидеть результат сценария, отправив код в локальную консоль или консоль интерактивного сеанса Livy (Scala). Выделите код в файле Scala, а затем в контекстном меню выберите команду **Send Selection To Spark Console** (Отправить выделенный фрагмент в консоль Spark). Выделенный код будет отправлен в консоль и выполнен. Результат отобразится в консоли после кода. Консоль проверит наличие ошибок.
+Вы можете увидеть результат выполнения скрипта, отправив код в локальную консоль или консоль интерактивного сеанса Livy (Scala). Для этого выделите код в файле Scala, а затем в контекстном меню выберите команду **Send Selection To Spark Console** (Отправить выделенный фрагмент в консоль Spark). Выделенный код будет отправлен в консоль и выполнен. Результат отобразится в консоли после кода. Консоль проверит наличие ошибок.
 
    ![Отправка выбранного фрагмента кода в консоль Spark](./media/intellij-tool-synapse/send-selection-to-console.png)
 

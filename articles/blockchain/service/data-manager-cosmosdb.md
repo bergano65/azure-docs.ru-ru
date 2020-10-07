@@ -4,18 +4,18 @@ description: Отправка данных блокчейна в Azure Cosmos DB
 ms.date: 03/08/2020
 ms.topic: tutorial
 ms.reviewer: chroyal
-ms.openlocfilehash: 483a5246274f63549dfb2914361ede6aa001e02e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 69790787bc888448f2f40178bd12ee7058cc5892
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79533187"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91283465"
 ---
 # <a name="tutorial-use-blockchain-data-manager-to-send-data-to-azure-cosmos-db"></a>Руководство по Использование диспетчера данных блокчейна для отправки данных в Azure Cosmos DB
 
 Работая с этим руководством, вы примените диспетчер данных блокчейна в службе "Блокчейн Azure" для записи данных транзакций блокчейна в Azure Cosmos DB. Диспетчер данных блокчейна регистрирует, преобразует и доставляет данные реестров блокчейна в разделы Сетки событий Azure. С помощью Сетки событий Azure вы можете создавать документы в базе данных Azure Cosmos DB с помощью соединителя приложений логики Azure. Завершив работу с руководством, вы сможете исследовать данные о транзакциях блокчейна через обозреватель данных Azure Cosmos DB.
 
-[![Сведения о транзакциях блокчейна](./media/data-manager-cosmosdb/raw-msg.png)](./media/data-manager-cosmosdb/raw-msg.png#lightbox)
+[![Снимок экрана: сведения о транзакции блокчейна](./media/data-manager-cosmosdb/raw-msg.png)](./media/data-manager-cosmosdb/raw-msg.png#lightbox)
 
 Изучив это руководство, вы:
 
@@ -271,7 +271,7 @@ ABI контракта определяет интерфейсы смарт-ко
 
 1. Просмотрите эти сообщения. Выберите идентификатор элемента и найдите сообщение с совпадающим хэш-кодом транзакции.
 
-    [![Сведения о транзакциях блокчейна](./media/data-manager-cosmosdb/raw-msg.png)](./media/data-manager-cosmosdb/raw-msg.png#lightbox)
+    [![Снимок экрана: сведения о транзакции блокчейна выбранного элемента](./media/data-manager-cosmosdb/raw-msg.png)](./media/data-manager-cosmosdb/raw-msg.png#lightbox)
 
     Необработанное сообщение транзакции содержит подробные сведения о транзакции. Но сведения о свойствах шифруются.
 

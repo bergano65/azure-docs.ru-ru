@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 409311594cc26680217948e2394420fdaea29024
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 58c1aea944d89872a79d0672a925b1696791c1a8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89015379"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91260858"
 ---
 # <a name="azure-synapse-analytics-shared-database"></a>Общая база данных Azure Synapse Analytics
 

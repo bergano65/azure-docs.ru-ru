@@ -1,15 +1,17 @@
 ---
 title: Руководство по Бот распознавания речи версии 4 на C#
 description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Бот создается с помощью Bot Framework версии 4 и службы бота веб-приложения Azure.
+ms.service: cognitive-services
+ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 820cdeb692dffbf80a0e85c9d3dd86b703a4cae3
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 57a9186033b8df71d1972289fe33b0fe654690f6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88931273"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91316432"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>Руководство по совместному использованию бота веб-приложения и службы распознавания речи в C#
 
@@ -320,12 +322,12 @@ ms.locfileid: "88931273"
 
 1. В эмуляторе бота введите `Book a flight from Seattle to Berlin tomorrow` и получите такой же ответ от основного бота, как и ответ, полученный при **тестировании в Web Chat**.
 
-    [![Ответ базового бота в эмуляторе](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
+    [![Снимок экрана: Bot Framework Emulator с ответом от основного бота](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
 
 1. Выберите **Да**. Бот ответит сводкой своих действий.
 1. Из журнала эмулятора бота выберите строку, в которой содержится `<- trace LuisV3 Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
 
-    [![Ответ базового бота в эмуляторе](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
+    [![Снимок экрана: ответ от основного бота с выбранной строкой "LuisV3 Trace" и выделенным ответом JSON](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
 
 [!INCLUDE [Bot Information](../../../includes/cognitive-services-qnamaker-luis-bot-info.md)]
 

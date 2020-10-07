@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/04/2020
+ms.date: 09/17/2020
 ms.author: jeedes
-ms.openlocfilehash: 319f3a116d52c482dde009a218ba4d2cf93d80e5
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: 4e7d8c4917f7860ba07ef9eb749337afd83f723a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89663063"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91255559"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-teamzskill"></a>Руководство по интеграции единого входа Azure Active Directory с TeamzSkill
 
@@ -103,6 +103,10 @@ ms.locfileid: "89663063"
     | employeeid | user.employeeid |
     | postalcode | user.postalcode |
     | country | user.country |
+    | роль | user.assignedroles |
+
+    > [!NOTE]
+    > В TeamzSkill требуется, чтобы пользователям приложения были назначены роли. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Чтобы понять, как настроить роли в Azure AD, см. [здесь](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management).
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -134,7 +138,6 @@ ms.locfileid: "89663063"
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
-
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-teamzskill-sso"></a>Настройка единого входа TeamzSkill

@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 07244f28a345bc3290762c657c2189941009faac
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e3c2b2ce5bd9af60d6d1fd4ac066681ee8473521
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077732"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249456"
 ---
 # <a name="azure-synapse-workspace-managed-identity-preview"></a>Управляемое удостоверение рабочей области Azure Synapse (предварительная версия)
 
@@ -58,4 +58,4 @@ Azure Synapse использует управляемое удостоверен
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Предоставление разрешений для управляемого удостоверения рабочей области Azure Synapse (предварительная версия)](./how-to-grant-workspace-managed-identity-permissions.md)
+Ознакомьтесь со статьей [Предоставление разрешений для управляемого удостоверения рабочей области Azure Synapse (предварительная версия)](./how-to-grant-workspace-managed-identity-permissions.md).

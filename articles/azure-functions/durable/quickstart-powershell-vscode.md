@@ -1,16 +1,16 @@
 ---
 title: Создание первой устойчивой функции в службе "Функции Azure" с помощью PowerShell
-description: Создание и публикация устойчивой функции Azure с помощью Visual Studio Code.
+description: Создание и публикация устойчивой функции в службе "Функции Azure" с помощью PowerShell, используя Visual Studio Code.
 author: anthonychu
 ms.topic: quickstart
 ms.date: 08/10/2020
 ms.reviewer: azfuncdf, antchu
-ms.openlocfilehash: 11ae695a898e011fd287730d894394eff013a0ca
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.openlocfilehash: edd02085abe63b124082255247362f096248ba82
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88272969"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91317265"
 ---
 # <a name="create-your-first-durable-function-in-powershell"></a>Создание устойчивой функции в PowerShell
 

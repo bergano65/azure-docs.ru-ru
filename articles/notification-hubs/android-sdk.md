@@ -1,6 +1,6 @@
 ---
 title: Отправка push-уведомлений в Android с помощью Центров уведомлений Microsoft Azure и SDK Firebase версии 1.0.0-preview1
-description: Из этого руководства вы узнаете, как использовать Центры уведомлений Microsoft Azure и Google Firebase Cloud Messaging для отправки push-уведомлений на устройства Android.
+description: Из этого руководства вы узнаете, как с помощью Центров уведомлений Microsoft Azure и Google Firebase Cloud Messaging отправлять push-уведомления на устройства Android (с использованием пакета SDK Firebase версии 1.0.0, предварительная версия 1).
 author: sethmanheim
 ms.author: sethm
 ms.date: 5/28/2020
@@ -9,12 +9,12 @@ ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 05/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ae1d2dfaf7d83d3b2323812f637bddd91b9a2ea2
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 63841bd603373d0fb325bcf82511ce3fb07b4136
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018235"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91315206"
 ---
 # <a name="tutorial-send-push-notifications-to-android-devices-using-firebase-sdk-version-100-preview1"></a>Руководство по отправке push-уведомлений на устройства Android с помощью SDK Firebase версии 1.0.0-preview1
 
@@ -62,23 +62,23 @@ ms.locfileid: "89018235"
 
 2. После создания проекта выберите  **Add Firebase to your Android app** (Добавить Firebase в приложение Android).
 
-   :::image type="content" source="media/android-sdk/get-started.png" alt-text="Добавление Firebase":::
+   :::image type="content" source="media/android-sdk/get-started.png" alt-text="Настройка проекта":::
 
 3. Выполните следующие действия на странице  **Add Firebase to your Android app**  (Добавление Firebase в приложение Android).
 
    1. Для параметра  **Android package name** (Имя пакета Android) скопируйте свое значение **applicationId**  в файл приложения **build.gradle**. В нашем примере это значение выглядит следующим образом:  `com.fabrikam.fcmtutorial1app`.
 
-      :::image type="content" source="media/android-sdk/specify-package-name-fcm-settings.png" alt-text="Указание имени пакета":::
+      :::image type="content" source="media/android-sdk/specify-package-name-fcm-settings.png" alt-text="Настройка проекта":::
 
    2. Выберите  **Register app** (Зарегистрировать приложение).
 
 4. Выберите  **Download google-services.json** (Загрузить google-services.json), сохраните файл в папку  **app**  проекта, а затем выберите  **Next** (Далее).
 
-   :::image type="content" source="media/android-sdk/download-google-service-button.png" alt-text="Скачивание службы Google":::
+   :::image type="content" source="media/android-sdk/download-google-service-button.png" alt-text="Настройка проекта":::
 
 5. В консоли Firebase щелкните значок шестеренки возле имени проекта. Затем выберите  **Project Settings** (Параметры проекта).
 
-   :::image type="content" source="media/android-sdk/notification-hubs-firebase-console-project-settings.png" alt-text="Параметры проекта":::
+   :::image type="content" source="media/android-sdk/notification-hubs-firebase-console-project-settings.png" alt-text="Настройка проекта":::
 
 6. Если вы еще не скачали файл **google-services.json** в папку  **app**  проекта Android Studio, это можно сделать на этой странице.
 
@@ -94,7 +94,7 @@ ms.locfileid: "89018235"
 
 3. На странице  **Notification Hubs**  выберите  **Добавить** на панели инструментов.
 
-   :::image type="content" source="media/android-sdk/add-hub.png" alt-text="Добавление центра":::
+   :::image type="content" source="media/android-sdk/add-hub.png" alt-text="Настройка проекта":::
 
 4. На странице  **Notification Hubs**  выполните следующие действия.
 
@@ -108,15 +108,15 @@ ms.locfileid: "89018235"
 
    5. Выберите **Создать**.
 
-      :::image type="content" source="media/android-sdk/create-hub.png" alt-text="Создание центра":::
+      :::image type="content" source="media/android-sdk/create-hub.png" alt-text="Настройка проекта":::
 
 5. Выберите  **Уведомления**  (значок колокольчика), а затем  **Перейти к ресурсу**. Вы также можете обновить список на странице  **Notification Hubs**  и выбрать свой центр.
 
-   :::image type="content" source="media/android-sdk/notification-hubs.png" alt-text="Выбор центра":::
+   :::image type="content" source="media/android-sdk/notification-hubs.png" alt-text="Настройка проекта":::
 
 6. Выберите  **Политики доступа**  из списка. Обратите внимание, что станут доступны две строки подключения. Они потребуются позже для обработки push-уведомлений.
 
-   :::image type="content" source="media/android-sdk/access-policies.png" alt-text="Политики доступа":::
+   :::image type="content" source="media/android-sdk/access-policies.png" alt-text="Настройка проекта":::
 
    > [!IMPORTANT]
    > Не используйте в приложении политику  **DefaultFullSharedAccessSignature** . Эта политика используется только в серверной части приложения.
@@ -129,7 +129,7 @@ ms.locfileid: "89018235"
 
 3. На панели инструментов выберите  **Сохранить**.
 
-   :::image type="content" source="media/android-sdk/fcm-server-key.png" alt-text="Ключ сервера":::
+   :::image type="content" source="media/android-sdk/fcm-server-key.png" alt-text="Настройка проекта":::
 
 4. Портал Azure отобразит сообщение о том, что центр был успешно обновлен. Кнопка  **Сохранить**  станет недоступна.
 
@@ -143,15 +143,15 @@ ms.locfileid: "89018235"
 
 2. Выберите целевую версию пакета SDK для Android, который используется в проекте. Затем выберите  **Show Package Details** (Показать сведения о пакете).
 
-   :::image type="content" source="media/android-sdk/notification-hubs-android-studio-sdk-manager.png" alt-text="Диспетчер пакетов SDK":::
+   :::image type="content" source="media/android-sdk/notification-hubs-android-studio-sdk-manager.png" alt-text="Настройка проекта":::
 
 3. Выберите  **Google APIs** (API Google), если они еще не установлены.
 
-   :::image type="content" source="media/android-sdk/google-apis-selected.png" alt-text="Программные интерфейсы":::
+   :::image type="content" source="media/android-sdk/google-apis-selected.png" alt-text="Настройка проекта":::
 
 4. Перейдите на вкладку  **SDK Tools**  (Инструменты SDK). Если сервисы Google Play еще не установлены, выберите  **Google Play Services**  (Сервисы Google Play), как показано на рисунке ниже. Затем выберите  **Apply**  (Применить), чтобы установить выбранные элементы. Запишите путь к пакету SDK. Он вам потребуется в дальнейшем.
 
-   :::image type="content" source="media/android-sdk/google-play-services-selected.png" alt-text="Службы Google Play":::
+   :::image type="content" source="media/android-sdk/google-play-services-selected.png" alt-text="Настройка проекта":::
 
 5. Если вы видите диалоговое окно  **Confirm Change**  (Подтвердить изменение), выберите  **ОК**. Установщик компонентов устанавливает запрошенные компоненты. После установки компонентов выберите  **Finish**  (Готово).
 
@@ -237,11 +237,11 @@ ms.locfileid: "89018235"
 
 4. Убедитесь, что у вас есть виртуальное устройство для запуска приложения. Если его нет, добавьте его следующим образом:
 
-   1. :::image type="content" source="media/android-sdk/open-device-manager.png" alt-text="Диспетчер устройств":::
-   2. :::image type="content" source="media/android-sdk/your-virtual-devices.png" alt-text="Виртуальные устройства":::
+   1. :::image type="content" source="media/android-sdk/open-device-manager.png" alt-text="Настройка проекта":::
+   2. :::image type="content" source="media/android-sdk/your-virtual-devices.png" alt-text="Настройка проекта":::
    3. Запустите приложение на выбранном устройстве и убедитесь, что оно успешно зарегистрировано в центре.
 
-      :::image type="content" source="media/android-sdk/device-registration.png" alt-text="Регистрация устройств":::
+      :::image type="content" source="media/android-sdk/device-registration.png" alt-text="Настройка проекта":::
 
       > [!NOTE]
       > Во время первоначального запуска регистрация может завершиться неудачно, пока не будет вызван метод `onTokenRefresh()` службы ИД экземпляра. Чтобы заново начать регистрацию в центре уведомлений, обновите страницу.
@@ -258,7 +258,7 @@ Push-уведомления можно отправлять в центр уве
 
 4. Результат операции можно увидеть в списке в нижней части портала.
 
-   :::image type="content" source="media/android-sdk/notification-hubs-test-send.png" alt-text="Отправка тестового уведомления":::
+   :::image type="content" source="media/android-sdk/notification-hubs-test-send.png" alt-text="Настройка проекта":::
 
 5. Вы увидите сообщение уведомления на своем устройстве.
 

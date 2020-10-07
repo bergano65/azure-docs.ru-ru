@@ -1,6 +1,6 @@
 ---
-title: Руководство по отображению направлений маршрута с помощью службы "Построение маршрутов" Microsoft Azure Maps и элемента управления картой
-description: Сведения о том, как отображать направления маршрута с помощью службы "Построение маршрутов" Microsoft Azure Maps и элемента управления картой.
+title: Руководство по Поиск маршрута к местоположению | Microsoft Azure Maps
+description: Руководство по поиску маршрута к точке интереса. Узнайте, как задать координаты адреса и отправить в службу маршрутов Azure Maps запрос на получение маршрута к точке.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 09/01/2020
@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 35a3f6d1e7894eec9baa4ea5432a8e3fec138a21
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: 3cb9bee65ab7fa2c29185c40ecb48fd531192187
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085048"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321719"
 ---
 # <a name="tutorial-how-to-display-route-directions-using-azure-maps-route-service-and-map-control"></a>Руководство по отображению направлений маршрута с помощью службы "Построение маршрутов" Azure Maps и элемента управления картой
 
@@ -218,7 +218,7 @@ ms.locfileid: "90085048"
 
      :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Простейший пример отрисовки карты на элементе управления картой":::
 
-    Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination).
+Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -12,12 +12,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, contperfq1
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 5f34215d57bd5dae8c9a5e6e8f4630b7ed0c827e
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 9cd59d6bf5b9bf6e17cba0786bfac27ed12d7638
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89436754"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258138"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт
 
@@ -59,13 +59,13 @@ ms.locfileid: "89436754"
 
 Код приложения или, как правило, библиотека проверки подлинности, используемая в приложении, также использует идентификатор клиента в качестве одного из аспектов проверки маркеров безопасности, получаемых от платформы удостоверений.
 
-:::image type="content" source="media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Снимок экрана портала Azure в веб-браузере с областью обзора регистрации приложения.":::
+:::image type="content" source="media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Снимок экрана портала Azure в веб-браузере с областью регистрации приложения.":::
 
 ## <a name="add-a-redirect-uri"></a>Добавление URI перенаправления
 
 URI перенаправления — это расположение, в которое платформа удостоверений Майкрософт перенаправляет клиент пользователя и отправляет маркеры безопасности после проверки подлинности.
 
-Например, URI перенаправления в рабочем веб-приложении часто является общедоступной конечной точкой, в которой работает приложение, например `https://contoso.com/auth-response`. Во время разработки также можно добавить конечную точку, в которой вы запускаете приложение локально, например `https://127.0.0.1/auth-response`.
+Например, URI перенаправления в рабочем веб-приложении часто является общедоступной конечной точкой, в которой работает приложение, например `https://contoso.com/auth-response`. Во время разработки также можно добавить конечную точку, в которой вы запускаете приложение локально, например `https://127.0.0.1/auth-response` или `http://localhost/auth-response`.
 
 Чтобы добавить и изменить URI перенаправления для зарегистрированных приложений, настройте [параметры платформы](#configure-platform-settings).
 
@@ -80,7 +80,7 @@ URI перенаправления — это расположение, в ко
 1. В разделе **Конфигурации платформ** щелкните **Добавить платформу**.
 1. В разделе **Настройка платформ** выберите плитку типа приложения (платформу), чтобы настроить его параметры.
 
-    :::image type="content" source="media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Снимок экрана панели Конфигурация платформ на портале Azure" border="false":::
+    :::image type="content" source="media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Снимок экрана портала Azure в веб-браузере с областью регистрации приложения." border="false":::
 
     | Платформа | Параметры конфигурации |
     | -------- | ---------------------- |
@@ -101,7 +101,7 @@ URI перенаправления — это расположение, в ко
 
 Вы можете также добавить сертификаты и секреты клиента (строку) в качестве учетных данных для регистрации конфиденциального клиентского приложения.
 
-:::image type="content" source="media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Снимок экрана портала Azure с областью сертификатов и секретов в разделе регистрации приложений":::
+:::image type="content" source="media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Снимок экрана портала Azure в веб-браузере с областью регистрации приложения.":::
 
 ### <a name="add-a-certificate"></a>Добавление сертификата
 

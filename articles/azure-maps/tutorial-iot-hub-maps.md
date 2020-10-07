@@ -1,6 +1,6 @@
 ---
-title: Руководство по реализации пространственной аналитики Интернета вещей с помощью Microsoft Azure Maps
-description: Интеграция Центра Интернета вещей с API-интерфейсами службы Azure Maps.
+title: Руководство по Реализация пространственной аналитики Интернета вещей | Microsoft Azure Maps
+description: Руководство по интеграции Центра Интернета вещей с API-интерфейсами службы Azure Maps
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 09/01/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 25665e75a361fbaa5479e2717d5e6aa9290c3d3a
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: 3eb405783b16d1bb7de27f6638dba394457601c8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90056575"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321838"
 ---
 # <a name="tutorial-implement-iot-spatial-analytics-by-using-azure-maps"></a>Руководство по Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
 
@@ -251,6 +251,7 @@ ms.locfileid: "90056575"
     dotnet run
     ```
 
+
   Теперь окно терминала должно содержать примерно такие данные:
 
 :::image type="content" source="./media/tutorial-iot-hub-maps/terminal.png" alt-text="Схема обзора системы.":::
@@ -274,8 +275,6 @@ ms.locfileid: "90056575"
 
 * [Интерфейсы REST API для Azure Maps](https://docs.microsoft.com/rest/api/maps/spatial/getgeofence)
 
-Дополнительные сведения см. в
-
 * статье об [IoT Plug and Play](https://docs.microsoft.com/azure/iot-pnp).
 
 Список устройств, сертифицированных для работы с Интернетом вещей в Azure, размещен на этой странице:
@@ -285,6 +284,7 @@ ms.locfileid: "90056575"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как отправлять данные телеметрии с устройства в облако или обратно, см. здесь:
+
 
 > [!div class="nextstepaction"]
 > [Отправка данных телеметрии с устройства](https://docs.microsoft.com/azure/iot-hub/quickstart-send-telemetry-dotnet)

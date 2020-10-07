@@ -1,5 +1,5 @@
 ---
-title: Настройка Службы подготовки устройств к добавлению в Центр Интернета вещей с помощью шаблона Azure Resource Manager
+title: Краткое руководство. Настройка Службы подготовки устройств к добавлению в Центр Интернета вещей с помощью шаблона Azure Resource Manager
 description: Краткое руководство Azure. Настройка Службы подготовки устройств к добавлению в Центр Интернета вещей с помощью шаблона
 author: wesmc7777
 ms.author: wesmc
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 482401b75cadf44e2cef03cced8dd216d0980524
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e1ca3d7270fb0858bb2512e5b9e285eb8d4555c6
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74969587"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91297153"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-an-azure-resource-manager-template"></a>Краткое руководство. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" c помощью шаблона Azure Resource Manager
 
@@ -300,7 +300,7 @@ ms.locfileid: "74969587"
 
 Используйте следующие команды Azure CLI для развертывания шаблонов и подтверждения развертывания.
 
-1. Чтобы развернуть шаблон, перейдите в папку, содержащую шаблон и файлы параметров. Затем выполните приведенную ниже [команду, чтобы начать развертывание](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create):
+1. Чтобы развернуть шаблон, перейдите в папку, содержащую шаблон и файлы параметров. Затем выполните приведенную ниже [команду, чтобы начать развертывание](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create&preserve-view=true):
     
     ```azurecli
      az group deployment create -g {your resource group name} --template-file template.json --parameters @parameters.json
@@ -311,7 +311,7 @@ ms.locfileid: "74969587"
    ![Выходные данные подготовки](./media/quick-setup-auto-provision-rm/output.png) 
 
 
-2. Чтобы проверить развертывание, выполните следующую [команду для перечисления ресурсов](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-list), после чего найдите новую службу подготовки и Центр Интернета вещей в выходных данных:
+2. Чтобы проверить развертывание, выполните следующую [команду для перечисления ресурсов](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-list&preserve-view=true), после чего найдите новую службу подготовки и Центр Интернета вещей в выходных данных:
 
     ```azurecli
      az resource list -g {your resource group name}

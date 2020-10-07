@@ -2,13 +2,13 @@
 title: Что такое служба "Сетка событий Azure"?
 description: Сведения об отправке данных событий из источника к обработчикам с помощью службы "Сетка событий Azure", а также о создании приложений на основе событий и интеграции со службами Azure.
 ms.topic: overview
-ms.date: 07/07/2020
-ms.openlocfilehash: 87ac29c2324c63977c57d60b11b3b930c23a4dd9
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.date: 09/24/2020
+ms.openlocfilehash: 73d218058c5f95d8c2d2324f1a0e1e77b24f1364
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89436873"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326510"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -20,16 +20,17 @@ ms.locfileid: "89436873"
 
 В статье представлен обзор службы "Сетка событий Azure". Чтобы приступить к использованию службы, см. раздел [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md). 
 
-![Модель источников и обработчиков в службе "Сетка событий"](./media/overview/functional-model.png)
+:::image type="content" source="./media/overview/functional-model.png" alt-text="Модель источников и обработчиков в службе &quot;Сетка событий&quot;" lightbox="./media/overview/functional-model.png":::
 
 На этом рисунке показано, как служба "Сетка событий" соединяет источники и обработчики. Здесь не предоставлен полный список поддерживаемых интеграций.
 
 ## <a name="event-sources"></a>Источники событий
 
-В настоящее время отправку событий в службу "Сетка событий" поддерживают следующие службы Azure:
+В настоящее время отправку событий в службу "Сетка событий" поддерживают перечисленные ниже службы Azure. Для получения дополнительных сведений, перейдите по ссылке элемента из списка.
 
 - [Конфигурация приложений Azure](event-schema-app-configuration.md)
 - [Хранилище BLOB-объектов Azure](event-schema-blob-storage.md)
+- [Службы коммуникации Azure](event-schema-communication-services.md) 
 - [Реестр контейнеров Azure](event-schema-container-registry.md)
 - [Центры событий Azure](event-schema-event-hubs.md)
 - [Центр Интернета вещей Azure](event-schema-iot-hub.md)

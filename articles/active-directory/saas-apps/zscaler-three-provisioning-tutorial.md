@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: b7cb55b5d14208128c894a007d13f4e73fc54b3b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d217f21b0a2dbdad56f2147c8800bbb50b0fa45e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545812"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91265533"
 ---
 # <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Руководство по настройке Zscaler Three для автоматической подготовки пользователей
 
@@ -119,7 +119,7 @@ ms.locfileid: "88545812"
 
 11. В разделе **Сопоставления атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы в Azure AD и Zscaler Three. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Zscaler Three для операций обновления. Чтобы зафиксировать изменения, щелкните **Сохранить**.
 
-    ![Сопоставления атрибутов](./media/zscaler-three-provisioning-tutorial/user-attribute-mappings.png)
+    ![Снимок экрана: раздел "Сопоставление атрибутов" с семью сопоставляемыми атрибутами](./media/zscaler-three-provisioning-tutorial/user-attribute-mappings.png)
 
 12. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Groups to Zscaler Three** (Синхронизировать группы Azure Active Directory с Zscaler Three).
 
@@ -127,7 +127,7 @@ ms.locfileid: "88545812"
 
 13. В разделе **Сопоставления атрибутов** просмотрите атрибуты групп, которые синхронизированы в Azure AD и Zscaler Three. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления групп в Zscaler Three для операций обновления. Чтобы зафиксировать изменения, щелкните **Сохранить**.
 
-    ![Сопоставления атрибутов](./media/zscaler-three-provisioning-tutorial/group-attribute-mappings.png)
+    ![Снимок экрана: раздел "Сопоставление атрибутов" с тремя сопоставляемыми атрибутами](./media/zscaler-three-provisioning-tutorial/group-attribute-mappings.png)
 
 14. Чтобы настроить фильтры области, ознакомьтесь с инструкциями в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](./../active-directory-saas-scoping-filters.md).
 

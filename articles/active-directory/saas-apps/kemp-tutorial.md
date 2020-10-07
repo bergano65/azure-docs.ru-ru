@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 1d974badd715d7966f552603a77d77aab95d70f7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 68869d464df01d3cc89493c64d66511b4a6f369d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549975"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300061"
 ---
 # <a name="tutorial-azure-active-directory-sso-integration-with-kemp-loadmaster-azure-ad-integration"></a>Руководство по Интеграция единого входа Azure Active Directory с Kemp LoadMaster Azure AD integration
 
@@ -197,11 +197,11 @@ ms.locfileid: "88549975"
 
 ### <a name="ssl-acceleration"></a>Ускорение SSL
  
-1. Перейдите к веб-интерфейсу Kemp Load Master и выберите элементы Virtual Services (Виртуальные службы) > Virtual Services (Виртуальные службы).
+1. Перейдите к веб-интерфейсу Kemp Load Master и выберите элементы Virtual Services (Виртуальные службы) > View/Modify Services (Просмотр или изменение служб).
 
 1. Щелкните команду Modify (Изменить) в разделе Operation (Функционирование).
 
-1. В разделе Properties for tcp/x.x.x.:443 (ID:6) — Operating at Layer 7 (Свойства tcp/x.x.x.:443 (ИД:6) — функционирование на уровне 7) щелкните элемент SSL Properties (Свойства SSL).
+1. Щелкните элемент SSL Properties (Свойства SSL). Протокол SSL работает на уровне 7.
     
     ![Веб-сервер Kemp LoadMaster Azure AD integration](./media/kemp-tutorial/kemp-3.png)
     

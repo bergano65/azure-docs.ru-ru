@@ -1,24 +1,24 @@
 ---
 title: Краткое руководство. Создание приложения Python с помощью учетной записи API SQL для Azure Cosmos DB
 description: В этой статье представлен пример кода Python, который можно использовать для подключения и выполнения запросов к API SQL в Azure Cosmos DB.
-author: Rodrigossz
+author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 08/11/2020
-ms.author: rosouz
+ms.date: 09/22/2020
+ms.author: anfeldma
 ms.custom:
 - seodec18
 - seo-javascript-september2019
 - seo-python-october2019
 - devx-track-python
-ms.openlocfilehash: 16f1a7d3608b13dd5423205dc75500d76f62d69a
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 128e80572275924655e1da534553265407353fff
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88588166"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319016"
 ---
 # <a name="quickstart-build-a-python-application-using-an-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения Python с использованием учетной записи API SQL для Azure Cosmos DB
 
@@ -26,6 +26,7 @@ ms.locfileid: "88588166"
 > * [.NET версии 3](create-sql-api-dotnet.md)
 > * [.NET версии 4](create-sql-api-dotnet-V4.md)
 > * [Пакет SDK для Java версии 4](create-sql-api-java.md)
+> * [Spring Data версии 3](create-sql-api-spring-data.md)
 > * [Node.js](create-sql-api-nodejs.md)
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
@@ -116,7 +117,7 @@ ms.locfileid: "88588166"
 
 1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos DB выберите **Ключи** в области навигации слева. На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл *cosmos_get_started.py*.
 
-    :::image type="content" source="./media/create-sql-api-dotnet/access-key-and-uri-in-keys-settings-in-the-azure-portal.png" alt-text="Получение ключа доступа и URI в параметрах ключа на портале Azure":::
+    :::image type="content" source="./media/create-sql-api-dotnet/access-key-and-uri-in-keys-settings-in-the-azure-portal.png" alt-text="Панель Добавить контейнер в обозревателе данных на портале Azure":::
 
 2. В Visual Studio Code откройте файл *cosmos_get_started.py* из *\git-samples\azure-cosmos-db-python-getting-started*.
 

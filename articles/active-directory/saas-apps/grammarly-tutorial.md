@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/01/2020
 ms.author: jeedes
-ms.openlocfilehash: 29778d872541ea251a46affcccd0e2befbd9003d
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: 989e3f4a285d44128bba1c9811aebcb76b8c0220
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500603"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327975"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-grammarly"></a>Руководство по интеграции единого входа Azure Active Directory с Grammarly
 
@@ -81,16 +81,13 @@ ms.locfileid: "89500603"
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 
-1. Приложение Grammarly ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
-
-    ![Изображение](common/default-attributes.png)
-
-1. В дополнение к описанному выше приложение Grammarly ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+1. Приложение Grammarly ожидает утверждения SAML в определенном формате. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
     | Имя |  Исходный атрибут|
     | -------------- | --------- |
     | FirstName | user.givenname |
     | LastName | user.surname |
+    | EmailAddress | user.principalname|
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -126,7 +123,7 @@ ms.locfileid: "89500603"
 
 ## <a name="configure-grammarly-sso"></a>Настройка единого входа для Grammarly
 
-Чтобы настроить единый вход на стороне **Grammarly**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Grammarly](mailto:support@grammarly.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход для приложения **Grammarly**, вам необходимо скопировать **URL-адрес для входа**, **идентификатор Azure AD** и скачанный **сертификат (Base64)** в панель администратора Grammarly. [Подробнее](https://support.grammarly.com/hc/en-us/articles/360048683092-How-do-I-set-up-SAML-single-sign-on-for-my-Grammarly-Business-account-).
 
 ### <a name="create-grammarly-test-user"></a>Создание тестового пользователя Grammarly
 

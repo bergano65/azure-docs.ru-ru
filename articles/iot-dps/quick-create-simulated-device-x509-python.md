@@ -1,5 +1,5 @@
 ---
-title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Python
+title: Краткое руководство. Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Python
 description: Краткое руководство по созданию и подготовке имитированного устройства X.509 с помощью пакета SDK Python для устройств для Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS). В этом кратком руководстве используется индивидуальная регистрация.
 author: wesmc7777
 ms.author: wesmc
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: python
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 3386dcf60049ede9297bd36e701442ce50603add
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 28a65e9e5f85d3c1102875a97ae122a00456c607
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87872525"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323912"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
 
@@ -24,7 +24,7 @@ ms.locfileid: "87872525"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ознакомление со статьей о [принципах автоматической подготовки устройств](concepts-auto-provisioning.md).
+- Ознакомьтесь с разделом [Роли и учетные записи Azure](about-iot-dps.md#provisioning-process).
 - Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 - Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/vs/) с разработкой классических приложений на C++.

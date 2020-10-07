@@ -9,12 +9,12 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 09/15/2020
-ms.openlocfilehash: c01d1bcb682a5f711dcba3cc7b32ef69b2642ef6
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 47b8c45e22569cc758d00fb8534f409ecebf58ca
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90900759"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91299937"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Изучение центра знаний Synapse
 
@@ -46,7 +46,6 @@ ms.locfileid: "90900759"
 1. Щелкните "Выполнить". Выбранный текст будет выполнен.
 
 ## <a name="loading-more-nyc-taxi-data"></a>Загрузка дополнительных данных NYC Taxi
-
 1. В разделе **Центр знаний** щелкните **Browse available samples** (Просмотреть доступные примеры). 
 1. Выберите вкладку **Скрипты SQL** в верхней части экрана
 1. Выберите **Load the New York Taxicab dataset** (Загрузить набор данных New York Taxicab).
@@ -58,5 +57,6 @@ ms.locfileid: "90900759"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Анализ с помощью пула SQL](get-started-analyze-sql-pool.md)
+* [Начало работы с Azure Synapse Analytics](get-started.md)
+* [Создание рабочей области](quickstart-create-workspace.md)
+* [Использование службы SQL по запросу](quickstart-sql-on-demand.md)

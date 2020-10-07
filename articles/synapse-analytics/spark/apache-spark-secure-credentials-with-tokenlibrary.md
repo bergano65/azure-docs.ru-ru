@@ -9,15 +9,19 @@ ms.subservice: spark
 ms.date: 08/26/2020
 ms.author: martinle
 ms.reviewer: euang
-ms.openlocfilehash: 21b571c859ec8ecc66c1c9a222e0648dc7f28f4f
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 90e7297236994650e0820e883c94a98b29c49fb7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89422130"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249422"
 ---
 # <a name="securing-your-credentials-through-linked-services-with-the-tokenlibrary"></a>Защита учетных данных с помощью связанных служб и TokenLibrary
-Доступ к данным из внешних источников является распространенным шаблоном. Если внешний источник данных разрешает анонимный доступ, то, вероятно, потребуется защитить подключение с помощью учетных данных, секрета или строки подключения.  Azure Synapse Analytics предоставляет связанные службы для упрощения процесса интеграции, сохраняя сведения о подключении в связанной службе или Azure Key Vault. После создания связанной службы Apache Spark может на нее ссылаться, чтобы применить сведения о подключении в вашем коде. Дополнительные сведения см. в статье о [связанных службах](../../data-factory/concepts-linked-services.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Доступ к данным из внешних источников является распространенным шаблоном. Если внешний источник данных разрешает анонимный доступ, то, вероятно, потребуется защитить подключение с помощью учетных данных, секрета или строки подключения.  
+
+Azure Synapse Analytics предоставляет связанные службы для упрощения процесса интеграции, сохраняя сведения о подключении в связанной службе или Azure Key Vault. После создания связанной службы Apache Spark может на нее ссылаться, чтобы применить сведения о подключении в вашем коде. 
+
+Дополнительные сведения см. в статье о [связанных службах](../../data-factory/concepts-linked-services.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 > [!NOTE]
 > При доступе к файлам из Azure Data Lake Storage в рамках рабочей области выполняется сквозная проверка подлинности AAD, поэтому использовать TokenLibrary не нужно. 
 
@@ -26,7 +30,7 @@ ms.locfileid: "89422130"
 * Связанная служба. Необходимо создать связанную службу для внешнего источника данных и ссылаться на нее из библиотеки маркеров. Дополнительные сведения о [связанных службах](../../data-factory/concepts-linked-services.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
 
-## <a name="connecting-to-adls-gen2-outside-of-synapse-workspace"></a>Подключение к ADLS 2-го поколения за пределами рабочей области Synapse
+## <a name="connect-to-adls-gen2-outside-of-synapse-workspace"></a>Подключение к ADLS 2-го поколения за пределами рабочей области Synapse
 
 Synapse предоставляет интегрированную среду связанных служб для Azure Data Lake Storage 2-го поколения.
 
@@ -52,7 +56,7 @@ df = spark.read.csv("abfss://<CONTAINER>@<ACCOUNT>.dfs.core.windows.net/<DIRECTO
 
 df.show()
 ```
-## <a name="using-the-token-library"></a>Использование библиотеки маркеров
+## <a name="use-the-token-library"></a>Использование библиотеки маркеров
 
 Чтобы подключиться к другим связанным службам, можно выполнить прямой вызов TokenLibrary.
 

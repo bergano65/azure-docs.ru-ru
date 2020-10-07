@@ -1,6 +1,6 @@
 ---
 title: Потоковая передача видеофайлов с помощью Служб мультимедиа Azure — .NET | Документация Майкрософт
-description: Выполните инструкции, приведенные в этом руководстве, чтобы создать учетную запись Служб мультимедиа Azure, закодировать файл и выполнить его потоковую передачу в Проигрыватель мультимедиа Azure.
+description: Выполните инструкции, приведенные в этом учебнике, чтобы создать учетную запись Служб мультимедиа Azure, закодировать файл и выполнить его потоковую передачу в Проигрыватель мультимедиа Azure с помощью .NET.
 services: media-services
 documentationcenter: ''
 author: IngridAtMicrosoft
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: ec60f775fbeb176f9442aff11117c85c5028a81f
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 530089b9c6b9544201b0f07368cac3d1a695a4f8
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267094"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268695"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---net"></a>Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью .NET
 
@@ -70,7 +70,7 @@ ms.locfileid: "89267094"
 1. Нажмите клавиши CTRL+F5, чтобы выполнить приложение *EncodeAndStreamFiles*.
 2. Выберите протокол **HLS** Apple (заканчивается на *manifest(format=m3u8-aapl)* ) и скопируйте URL-адрес потоковой передачи в консоли.
 
-![Выходные данные](./media/stream-files-tutorial-with-api/output.png)
+![Снимок экрана: выходные данные приложения EncodeAndStreamFiles в Visual Studio с отображением трех URL-адресов потоковой передачи для использования в Проигрывателе мультимедиа Azure.](./media/stream-files-tutorial-with-api/output.png)
 
 В [исходном коде](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/Program.cs) образца вы увидите, каким образом создан URL-адрес. Чтобы создать его, необходимо сцепить имя узла конечной точки потоковой передачи и путь указателя потоковой передачи.  
 

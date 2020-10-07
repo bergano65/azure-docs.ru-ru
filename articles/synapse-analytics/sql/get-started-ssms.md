@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: dc467eebbd7346777765af7143d13c76627ab648
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 166d598528d8fe38e2bc22b76c659326c5e0ba45
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077720"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91288789"
 ---
 # <a name="connect-to-synapse-sql-with-sql-server-management-studio-ssms"></a>Подключение к Synapse SQL с помощью SQL Server Management Studio (SSMS).
 > [!div class="op_single_selector"]
@@ -41,7 +41,7 @@ ms.locfileid: "87077720"
 
 * [SQL Server Management Studio (SSMS).](/sql/ssms/download-sql-server-management-studio-ssms) 
 * Для пула SQL требуется существующее хранилище данных. Сведения о его создании см. в статье [Создание пула SQL Azure](../quickstart-create-sql-pool-portal.md). Для использования SQL по запросу он уже предусмотрен в вашем рабочем пространстве во время создания. 
-* Полное имя сервера SQL Server. Эти сведения можно узнать в статье [Подключение к Synapse SQL](connect-overview.md).
+* Полное имя сервера SQL Server. Чтобы найти это имя, см. статью [Подключение к Synapse SQL](connect-overview.md).
 
 ## <a name="connect"></a>Подключение
 
@@ -50,9 +50,9 @@ ms.locfileid: "87077720"
 Чтобы подключиться к Synapse SQL с помощью пула SQL, выполните следующие действия: 
 
 1. Откройте SQL Server Management Studio (SSMS). 
-1. В диалоговом окне **Подключение к серверу** заполните поля, а затем нажмите кнопку **Подключить**. 
+1. В диалоговом окне **Подключение к серверу** заполните поля и выберите **Подключить**. 
   
-    ![Подключение к серверу](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/connect-object-explorer1.png)
+    ![Подключение к серверу 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/connect-object-explorer1.png)
    
    * **Имя сервера**: Введите найденное **имя сервера** .
    * **Аутентификация**.  Выберите тип проверки подлинности, например **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**.
@@ -60,7 +60,7 @@ ms.locfileid: "87077720"
 
 1. Разверните Azure SQL Server в **обозревателе объектов**. Вы можете просмотреть базы данных, связанные с сервером, такие как пример базы данных AdventureWorksDW. Базу данных можно развернуть, чтобы просмотреть таблицы:
    
-    ![Обзор AdventureWorksDW](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/explore-tables.png)
+    ![Обзор AdventureWorksDW 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/explore-tables.png)
 
 
 ### <a name="sql-on-demand-preview"></a>SQL по запросу (предварительная версия)
@@ -68,18 +68,18 @@ ms.locfileid: "87077720"
 Чтобы подключиться к Synapse SQL с помощью SQL по запросу, выполните следующие действия. 
 
 1. Откройте SQL Server Management Studio (SSMS).
-1. В диалоговом окне **Подключение к серверу** заполните поля, а затем нажмите кнопку **Подключить**. 
+1. В диалоговом окне **Подключение к серверу** заполните поля и выберите **Подключить**. 
    
-    ![Подключение к серверу](./media/get-started-ssms/connect-object-explorer1.png)
+    ![Подключение к серверу 2](./media/get-started-ssms/connect-object-explorer1.png)
    
    * **Имя сервера**: Введите найденное **имя сервера** .
    * **Аутентификация**. Выберите тип проверки подлинности, например **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**:
    * **Имя пользователя** и **пароль**. Если вы выбрали проверку подлинности SQL Server, введите имя пользователя и пароль.
-   * Нажмите кнопку **Соединить**.
+   * Выберите **Подключиться**.
 
 4. Чтобы исследовать данные, разверните сервер Azure SQL Server. Вы можете просмотреть базы данных, связанные с сервером. Разверните *демоверсию*, чтобы просмотреть содержимое образца базы данных.
    
-    ![Обзор AdventureWorksDW](./media/get-started-ssms/explore-tables.png)
+    ![Обзор AdventureWorksDW 2](./media/get-started-ssms/explore-tables.png)
 
 
 ## <a name="run-a-sample-query"></a>Запуск пробного запроса
@@ -91,18 +91,18 @@ ms.locfileid: "87077720"
 1. Щелкните правой кнопкой мыши базу данных в обозревателе объектов SQL Server.
 2. Выберите **Создать запрос**. Откроется новое окно запроса.
    
-    ![Создать запрос](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/new-query.png)
-3. Скопируйте этот запрос T-SQL в окно запроса.
+    ![Новый запрос 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/new-query.png)
+3. Скопируйте следующий запрос T-SQL в окно запроса.
    
     ```sql
     SELECT COUNT(*) FROM dbo.FactInternetSales;
     ```
-4. Выполните запрос. Для этого щелкните `Execute` или воспользуйтесь клавишами `F5`.
+4. Выполните запрос, выбрав `Execute`, или используйте следующий ярлык: `F5`.
    
-    ![Выполнение запроса](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/execute-query.png)
-5. Просмотрите результаты запроса. В этом примере таблица FactInternetSales содержит 60 398 строк.
+    ![Выполнение запроса 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/execute-query.png)
+5. Просмотрите результаты запроса. В следующем примере таблица FactInternetSales содержит 60 398 строк.
    
-    ![Результаты запроса](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/results.png)
+    ![Результаты запроса 1](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/results.png)
 
 ### <a name="sql-on-demand"></a>Использование SQL по запросу
 
@@ -111,18 +111,18 @@ ms.locfileid: "87077720"
 1. Щелкните правой кнопкой мыши базу данных в обозревателе объектов SQL Server.
 2. Выберите **Создать запрос**. Откроется новое окно запроса.
    
-    ![Создать запрос](./media/get-started-ssms/new-query.png)
+    ![Новый запрос 2](./media/get-started-ssms/new-query.png)
 3. Скопируйте следующий запрос T-SQL в окно запроса.
    
     ```sql
     SELECT COUNT(*) FROM demo.dbo.usPopulationView
     ```
-4. Выполните запрос. Для этого щелкните `Execute` или воспользуйтесь клавишами `F5`.
+4. Выполните запрос, выбрав `Execute`, или используйте следующий ярлык: `F5`.
    
-    ![Выполнение запроса](./media/get-started-ssms/execute-query.png)
+    ![Выполнение запроса 2](./media/get-started-ssms/execute-query.png)
 5. Просмотрите результаты запроса. В этом примере представление usPopulationView содержит 3664512 строк.
    
-    ![Результаты запроса](./media/get-started-ssms/results.png)
+    ![Результаты запроса 2](./media/get-started-ssms/results.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](get-started-power-bi-professional.md).

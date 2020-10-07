@@ -1,6 +1,6 @@
 ---
 title: Шифрование дисков для масштабируемых наборов Azure с помощью Azure CLI
-description: Узнайте, как использовать Azure PowerShell для шифрования экземпляров виртуальной машины и подключенных к ним дисков в масштабируемом наборе виртуальных машин Windows.
+description: Узнайте, как использовать Azure CLI для шифрования экземпляров виртуальной машины и подключенных к ним дисков в масштабируемом наборе виртуальных машин Windows.
 author: ju-shim
 ms.author: jushiman
 ms.topic: tutorial
@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 10/15/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: dfb8a0dc6c27b042319f43bc5970dd8d1bc2b094
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 4d8e6d225e02006683166de73a0b66f795bc3993
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496956"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321986"
 ---
 # <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli"></a>Шифрование диска ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI
 

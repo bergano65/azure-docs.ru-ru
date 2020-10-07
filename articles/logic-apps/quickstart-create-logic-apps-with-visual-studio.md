@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 08/07/2020
-ms.openlocfilehash: cc38210690c88fec826dc727775d01884dedd997
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: cdc4dfe23cce7c2f58e4c9b44f2cea46e2337e00
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008888"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322450"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -22,7 +22,7 @@ ms.locfileid: "88008888"
 
 В этом кратком руководстве с помощью Visual Studio создается то же приложение логики, что и с помощью портала Azure. Это приложение логики отслеживает RSS-канал веб-сайта и отправляет сообщения электронной почты с появлением каждого нового элемента в веб-канале. По завершении приложение логики будет выглядеть как этот высокоуровневый рабочий процесс:
 
-![Готовое приложение логики](./media/quickstart-create-logic-apps-with-visual-studio/high-level-workflow-overview.png)
+![Снимок экрана: высокоуровневый рабочий процесс готового приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/high-level-workflow-overview.png)
 
 <a name="prerequisites"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "88008888"
 
   Конструктору требуется подключение к Интернету, чтобы создать ресурсы в Azure и считать свойства и данные из соединителей в приложении логики.
 
-* Учетная запись, поддерживаемая Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Сведения о дополнительных поставщиках см. в [списке соединителей](/connectors/). В этом примере используется Office 365 Outlook. Если вы используете другой поставщик, общие шаги те же, но пользовательский интерфейс может немного отличаться.
+* Учетная запись, поддерживаемая Logic Apps, например Outlook для Microsoft 365, Outlook.com или Gmail. Сведения о дополнительных поставщиках см. в [списке соединителей](/connectors/). В этом примере используется Office 365 Outlook. Если вы используете другой поставщик, общие шаги те же, но пользовательский интерфейс может немного отличаться.
 
   > [!IMPORTANT]
   > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).

@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Клиентская библиотека Распознавателя документов для Python
-description: В этом кратком руководстве описано, как приступить к работе с клиентской библиотекой службы "Распознаватель документов" для Python.
+description: Использование клиентской библиотеки Распознавателя документов для Python для создания приложения для обработки форм, которое извлекает из документов пары "ключ — значение" и табличные данные.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 08/21/2020
+ms.date: 09/21/2020
 ms.author: pafarley
-ms.openlocfilehash: b178a0b347888f22d9a3c0ee88a203e377cb15be
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 6d460fc9ded9416ef9d2a30b1a0effa863626888
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88864807"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318921"
 ---
 > [!IMPORTANT]
 > * Пакет SDK Распознавателя документов в настоящее время предназначен для версии 2.0 службы "Распознаватель документов".
@@ -50,7 +50,8 @@ ms.locfileid: "88864807"
 * Управление моделями, созданными в учетной записи.
 * Копирование настраиваемой модели из одного ресурса Распознавателя документов в другой.
 
-Обратите внимание, что модель можно также обучить с помощью графического пользовательского интерфейса, например [средства разметки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
+> [!NOTE]
+> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
 
 ## <a name="setting-up"></a>Настройка
 
@@ -102,7 +103,7 @@ form_recognizer_client = FormRecognizerClient(endpoint, AzureKeyCredential(key))
 form_training_client = FormTrainingClient(endpoint, AzureKeyCredential(key))
 ```
 
-## <a name="assets-for-testing"></a>Ресурсы для тестирования
+## <a name="get-assets-for-testing"></a>Получение ресурсов для тестирования
 
 Во фрагментах кода в этом руководстве используются удаленные формы, доступ к которым осуществляется по URL-адресам. Если вместо этого вы планируете работать с локальными документами, воспользуйтесь соответствующими методами, которые описаны в [справочной документации](https://docs.microsoft.com/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer) и [образцах](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples).
 

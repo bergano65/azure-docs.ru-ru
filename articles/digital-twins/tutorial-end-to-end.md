@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 0b7e277518337072659bf5ccddd3436c05ff5201
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 0db39884ef54310db849abcef1062adbaeb9f22e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90563817"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292738"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -59,11 +59,11 @@ ms.locfileid: "90563817"
 
 Сначала вы будете использовать решение *AdtSampleApp* из примера проекта для сборки части Azure Digital Twins готового сценария (**область A**):
 
-:::image type="content" source="media/tutorial-end-to-end/building-scenario-a.png" alt-text="Фрагмент полной схемы сценария с выделенной областью A, представляющей экземпляр Azure Digital Twins":::
+:::image type="content" source="media/tutorial-end-to-end/building-scenario-a.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 В окне Visual Studio, где открыт проект _**AdtE2ESample**_, запустите этот проект с помощью кнопки на панели инструментов, показанной на следующем рисунке:
 
-:::image type="content" source="media/tutorial-end-to-end/start-button-sample.png" alt-text="Кнопка запуска Visual Studio (проект SampleClientApp)":::
+:::image type="content" source="media/tutorial-end-to-end/start-button-sample.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Откроется окно консоли. Выполните проверку подлинности и дождитесь выполнения команды. Создайте экземпляр примера решения Azure Digital Twins, выполнив в этой консоли следующую команду.
 
@@ -78,13 +78,23 @@ SetupBuildingScenario
 
 С помощью связей они подключаются к следующему [**графу двойников**](concepts-twins-graph.md). Этот граф двойников представляет среду в целом, включая взаимодействие сущностей и их связи друг с другом.
 
-:::image type="content" source="media/tutorial-end-to-end/building-scenario-graph.png" alt-text="Граф, показывающий, что floor1 содержит room21, а room21 содержит thermostat67" border="false":::
+:::image type="content" source="media/tutorial-end-to-end/building-scenario-graph.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)" border="false":::
 
 Вы можете проверить созданные двойники, выполнив следующую команду, которая запрашивает все цифровые двойники, содержащиеся в подключенном экземпляре Azure Digital Twins:
 
 ```cmd/sh
 Query
 ```
+
+>[!TIP]
+> Этот упрощенный метод предоставляется в рамках проекта _**AdtE2ESample**_. Вне контекста этого примера кода вы можете в любое время отправлять запросы ко всем двойникам в своем экземпляре с помощью [API запросов](how-to-use-apis-sdks.md) или [команд CLI](how-to-use-cli.md).
+>
+> Ниже приведен полный текст запроса для получения всех цифровых двойников в вашем экземпляре:
+> 
+> ```sql
+> SELECT *
+> FROM DIGITALTWINS
+> ``` 
 
 После этого можно остановить выполнение проекта. Не закрывайте решение в Visual Studio, так как вы продолжите использовать его при изучении следующих разделов этого учебника.
 
@@ -104,29 +114,29 @@ Query
 
 На панели *обозреватель решений* разверните узел *SampleFunctionsApp > Зависимости*. Щелкните правой кнопкой мыши *Пакеты* и выберите *Управление пакетами NuGet…* .
 
-:::image type="content" source="media/tutorial-end-to-end/update-dependencies-1.png" alt-text="Visual Studio: управление пакетами NuGet для проекта SampleFunctionsApp" border="false":::
+:::image type="content" source="media/tutorial-end-to-end/update-dependencies-1.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)" border="false":::
 
 Откроется диспетчер пакетов NuGet. Выберите вкладку *Обновления* и при наличии пакетов, которые необходимо обновить, установите флажок *Выбрать все пакеты*. Затем выберите *Обновить*.
 
-:::image type="content" source="media/tutorial-end-to-end/update-dependencies-2.png" alt-text="Visual Studio: выбор обновления всех пакетов в диспетчере пакетов NuGet":::
+:::image type="content" source="media/tutorial-end-to-end/update-dependencies-2.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 ### <a name="publish-the-app"></a>Публикация приложения
 
 Вернитесь в окно Visual Studio, где открыт проект _**AdtE2ESample**_, в области *Обозреватель решений* щелкните правой кнопкой мыши файл проекта _**SampleFunctionsApp**_ и выберите пункт **Опубликовать**.
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-1.png" alt-text="Visual Studio: публикация проекта":::
+:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-1.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Откроется страница *Публикация*. Оставьте выбранный по умолчанию целевой объект **Azure** и нажмите кнопку *Далее*. 
 
 В качестве конкретного целевого объекта выберите **Приложение-функция Azure (Windows)** и нажмите кнопку *Далее*.
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-2.png" alt-text="Публикация функции Azure в Visual Studio: конкретный целевой объект":::
+:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-2.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 На странице *экземпляра Функций* выберите свою подписку. При этом в соответствующем поле в вашей подписке должны появиться *группы ресурсов*.
 
 Выберите группу ресурсов своего экземпляра и нажмите *+ Создать новую функцию Azure...* .
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Публикация функции Azure в Visual Studio: экземпляр Функций (до создания приложения-функции)":::
+:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 В окне *Приложение-функция (Windows) — создать* заполните поля следующим образом.
 * **Имя** — имя плана потребления, который Azure будет использовать для размещения вашего приложения Функций Azure. Оно также станет именем приложения-функции, в котором будет находиться ваша фактическая функция. Можно выбрать собственное уникальное значение или оставить предоставленное по умолчанию.
@@ -136,20 +146,20 @@ Query
 * В поле **Расположение** выберите расположение вашей группы ресурсов.
 * Создайте новый ресурс **службы хранилища Azure**, нажав ссылку *Создать...* . Задайте расположение, соответствующее расположению вашей группы ресурсов, оставьте остальные значения по умолчанию и нажмите кнопку "ОК".
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-4.png" alt-text="Публикация функции Azure в Visual Studio: Приложение-функция (Windows) — создать":::
+:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-4.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Затем выберите **Создать**.
 
 В результате вы должны вернуться на страницу *экземпляра Функций*, где в узле вашей группы ресурсов будет отображаться новое приложение-функция. Нажмите кнопку *Готово*.
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-5.png" alt-text="Публикация функции Azure в Visual Studio: экземпляр Функций (после создания приложения-функции)":::
+:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-5.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 На странице *Публикация*, которая снова открывается в главном окне Visual Studio, проверьте все сведения, и если они верны, нажмите кнопку **Опубликовать**.
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Публикация функции Azure в Visual Studio: публикация":::
+:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 > [!NOTE]
-> Если увидите следующее всплывающее окно, выполните указанные ниже действия: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Публикация функции Azure в Visual Studio: учетные данные для публикации" border="false":::
+> Если увидите следующее всплывающее окно, выполните указанные ниже действия: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)" border="false":::
 > Выберите **Attempt to retrieve credentials from Azure** (Пытаться извлечь учетные данные из Azure) и нажмите кнопку **Сохранить**.
 >
 > Если вы видите предупреждение о том, что необходимо *обновить версию Функции Azure* или что *ваша версия среды выполнения функций не соответствует версии, работающей в Azure*, выполните следующие действия:
@@ -188,7 +198,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 Это происходит в следующей части готового сценария (**стрелка B**):
 
-:::image type="content" source="media/tutorial-end-to-end/building-scenario-b.png" alt-text="Фрагмент схемы полного сценария сборки. Выделены стрелка B и элементы до Azure Digital Twins: устройство, Центр Интернета вещей и первая функция Azure":::
+:::image type="content" source="media/tutorial-end-to-end/building-scenario-b.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Для настройки этого подключения устройства необходимо выполнить следующие действия.
 1. Создать Центр Интернета вещей, который будет управлять имитированным устройством.
@@ -219,18 +229,18 @@ az iot hub create --name <name-for-your-IoT-hub> -g <your-resource-group> --sku 
 
 На [портале Azure](https://portal.azure.com/) перейдите к только что созданному Центру Интернета вещей, выполнив поиск по его имени в верхней строке поиска. В меню центра выберите пункт *События*, а затем нажмите кнопку *+ Подписка на события*.
 
-:::image type="content" source="media/tutorial-end-to-end/event-subscription-1.png" alt-text="Портал Azure: подписка на события Центра Интернета вещей":::
+:::image type="content" source="media/tutorial-end-to-end/event-subscription-1.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Вы вернетесь на страницу *Создание подписки на события*.
 
-:::image type="content" source="media/tutorial-end-to-end/event-subscription-2.png" alt-text="Портал Azure: создание подписки на события":::
+:::image type="content" source="media/tutorial-end-to-end/event-subscription-2.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Заполните поля следующим образом (поля, заполненные по умолчанию, не указываются):
 * *СВЕДЕНИЯ О ПОДПИСКЕ НА СОБЫТИЯ* > **Имя**: укажите имя для подписки на события.
 * *СВЕДЕНИЯ О РАЗДЕЛЕ* > **Имя системного раздела**: Укажите имя для системного раздела. 
 * *ТИПЫ СОБЫТИЙ* > **Фильтр по типам событий**: в раскрывающемся списке выберите *Телеметрия устройства*.
 * *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Тип конечной точки**: выберите в меню пункт *Функция Azure*.
-* *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Конечная точка**: нажмите ссылку *Выбор конечной точки*. Откроется окно *Выбор функции Azure*: :::image type="content" source="media/tutorial-end-to-end/event-subscription-3.png" alt-text="Подписка на события на портале Azure: выбор функции Azure" border="false":::
+* *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Конечная точка**: нажмите ссылку *Выбор конечной точки*. Откроется окно *Выбор функции Azure*: :::image type="content" source="media/tutorial-end-to-end/event-subscription-3.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)" border="false":::
     - Заполните поля **Подписка**, **Группа ресурсов**, **Приложение-функция** и **Функция** (*ProcessHubToDTEvents*). После выбора подписки некоторые из этих полей могут быть заполнены автоматически.
     - Нажмите кнопку **Подтвердить выбор**.
 
@@ -255,13 +265,13 @@ az iot hub device-identity create --device-id thermostat67 --hub-name <your-IoT-
 Сначала получите *строку подключения к Центру Интернета вещей* с помощью следующей команды:
 
 ```azurecli
-az iot hub show-connection-string -n <your-IoT-hub-name>
+az iot hub connection-string show -n <your-IoT-hub-name>
 ```
 
 Далее получите *строку подключения к устройству* с помощью следующей команды:
 
 ```azurecli
-az iot hub device-identity show-connection-string --device-id thermostat67 --hub-name <your-IoT-hub-name>
+az iot hub device-identity connection-string show --device-id thermostat67 --hub-name <your-IoT-hub-name>
 ```
 
 Эти значения вы вставите в код имитатора устройства в своем локальном проекте, чтобы подключить имитатор к данному Центру Интернета вещей и устройству Центра Интернета вещей.
@@ -282,11 +292,11 @@ deviceConnectionString = <device-connection-string>
 
 Теперь, чтобы просмотреть результаты настройки имитации данных, запустите проект **DeviceSimulator** с помощью кнопки на панели инструментов, показанной на следующем рисунке.
 
-:::image type="content" source="media/tutorial-end-to-end/start-button-simulator.png" alt-text="Кнопка запуска Visual Studio (проект DeviceSimulator)":::
+:::image type="content" source="media/tutorial-end-to-end/start-button-simulator.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Откроется окно консоли, в котором будут отображаться сымитированные сообщения телеметрии температуры. Они отправляются в Центр Интернета вещей, где функция Azure их собирает и обрабатывает.
 
-:::image type="content" source="media/tutorial-end-to-end/console-simulator-telemetry.png" alt-text="Выходные данные в консоли, показывающие отправляемые имитатором устройства данные телеметрии температуры":::
+:::image type="content" source="media/tutorial-end-to-end/console-simulator-telemetry.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 В этой консоли больше ничего делать не нужно, но оставьте ее работающей для выполнения следующих шагов.
 
@@ -304,7 +314,7 @@ ObserveProperties thermostat67 Temperature
 
 Вы должны увидеть обновления температуры в реальном времени *из своего экземпляра Azure Digital Twins*, которые регистрируются в консоли каждые 10 секунд.
 
-:::image type="content" source="media/tutorial-end-to-end/console-digital-twins-telemetry.png" alt-text="Выходные данные консоли, показывающие журнал сообщений о температуре из цифрового двойника thermostat67":::
+:::image type="content" source="media/tutorial-end-to-end/console-digital-twins-telemetry.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Убедившись, что все успешно работает, вы можете остановить выполнение обоих проектов. Не закрывайте окна Visual Studio, так как вы продолжите их использовать в оставшейся части учебника.
 
@@ -314,7 +324,7 @@ ObserveProperties thermostat67 Temperature
 
 Чтобы выполнить это, вы будете использовать функцию Azure *ProcessDTRoutedData* для обновления двойника *комнаты* при обновлении двойника *терморегулятора*. Это происходит в следующей части готового сценария (**стрелка C**):
 
-:::image type="content" source="media/tutorial-end-to-end/building-scenario-c.png" alt-text="Фрагмент схемы полного сценария сборки. Выделены стрелка C и элементы после Azure Digital Twins: Сетка событий, Центр Интернета вещей и вторая функция Azure":::
+:::image type="content" source="media/tutorial-end-to-end/building-scenario-c.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Для настройки этого потока данных необходимо выполнить следующие действия.
 1. Создать конечную точку Azure Digital Twins, которая подключает экземпляр к Сетке событий.
@@ -358,7 +368,7 @@ az dt endpoint show --dt-name <your-Azure-Digital-Twins-instance> --endpoint-nam
 
 Найдите поле `provisioningState` в выходных данных и убедитесь, что оно имеет значение "Succeeded". Если отображается значение Provisioning (Подготовка), конечная точка все еще создается. В этом случае подождите несколько секунд и выполните команду еще раз, чтобы убедиться, что она успешно завершена.
 
-:::image type="content" source="media/tutorial-end-to-end/output-endpoints.png" alt-text="Результат запроса конечной точки, показывающий конечную точку с параметром provisioningState, имеющим значение Succeeded":::
+:::image type="content" source="media/tutorial-end-to-end/output-endpoints.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Сохраните имена, которые вы назначили разделу Сетки событий и конечной точке Azure Digital Twins. Они понадобятся вам позже.
 
@@ -385,7 +395,7 @@ az dt route create --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name
 
 На [портале Azure](https://portal.azure.com/) перейдите к своему разделу Сетки событий, выполнив поиск по его имени в верхней строке поиска. Выберите *+ Event Subscription* (+ Подписка на события).
 
-:::image type="content" source="media/tutorial-end-to-end/event-subscription-1b.png" alt-text="Портал Azure: подписка на события Сетки событий":::
+:::image type="content" source="media/tutorial-end-to-end/event-subscription-1b.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Эта подписка на события создается подобно тому, как создавалась подписка первой функции на события Центра Интернета вещей ранее в этом учебнике. На этот раз вам не нужно указывать *телеметрию устройства* в качестве типа события для прослушивания, и вы будете подключаться к другой функции Azure.
 
@@ -404,7 +414,7 @@ az dt route create --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name
 
 Так же, как при предыдущем запуске имитатора устройства, откроется окно консоли, в котором будут отображаться сымитированные сообщения телеметрии температуры. Эти события проходят по потоку, который вы настроили ранее, чтобы обновить двойник *thermostat67*, а затем по потоку, который вы только что настроили, чтобы обновить двойник *room21*.
 
-:::image type="content" source="media/tutorial-end-to-end/console-simulator-telemetry.png" alt-text="Выходные данные в консоли, показывающие отправляемые имитатором устройства данные телеметрии температуры":::
+:::image type="content" source="media/tutorial-end-to-end/console-simulator-telemetry.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 В этой консоли больше ничего делать не нужно, но оставьте ее работающей для выполнения следующих шагов.
 
@@ -418,7 +428,7 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 
 Вы должны увидеть обновления температуры в реальном времени *из своего экземпляра Azure Digital Twins*, которые регистрируются в консоли каждые 10 секунд. Обратите внимание, что температура для *room21* обновляется в соответствии с обновлениями в *thermostat67*.
 
-:::image type="content" source="media/tutorial-end-to-end/console-digital-twins-telemetry-b.png" alt-text="Выходные данные консоли, показывающие журнал сообщений о температуре из цифровых двойников терморегулятора и комнаты":::
+:::image type="content" source="media/tutorial-end-to-end/console-digital-twins-telemetry-b.png" alt-text="Схема полного сценария сборки. Изображен поток данных с устройства в Центр Интернета вещей через функцию Azure (стрелка B) в экземпляр Azure Digital Twins (область A), а затем через Сетку событий в другую функцию Azure для обработки (стрелка C)":::
 
 Убедившись, что все успешно работает, вы можете остановить выполнение обоих проектов. Вы также можете закрыть окна Visual Studio, так как учебник завершен.
 
@@ -436,7 +446,7 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 
 Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их. 
 
-В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). Это приведет к удалению всей группы ресурсов, экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также приложения Функций Azure вместе с двумя функциями и связанными с ними ресурсами, такими как хранилище.
+В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest&preserve-view=true#az-group-delete). Это приведет к удалению всей группы ресурсов, экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также приложения Функций Azure вместе с двумя функциями и связанными с ними ресурсами, такими как хранилище.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 

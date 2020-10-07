@@ -1,6 +1,6 @@
 ---
 title: Руководство по интеграции единого входа Azure Active Directory с F5 | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и F5.
+description: В этой статье описаны действия, которые нужно выполнить для интеграции F5 с Azure Active Directory (Azure AD).
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 2e0e727e73fa1eff21a4b2e481738be49306676a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: cbcbcb6a649969c5348c3ad445ff43f10372faeb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542988"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91306197"
 ---
 # <a name="tutorial-azure-active-directory-ad-single-sign-on-sso-integration-with-f5"></a>Руководство по интеграции единого входа Azure Active Directory с F5
 
@@ -39,8 +39,9 @@ ms.locfileid: "88542988"
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* F5 поддерживает вход, инициированный **поставщиком услуг или поставщиком удостоверений**.
-* Единый вход в F5 можно настроить тремя способами.
+F5 поддерживает единый вход, инициированный **поставщиком службы и поставщиком удостоверений**.
+
+Единый вход в F5 можно настроить тремя способами:
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](#configure-f5-single-sign-on-for-advanced-kerberos-application)
 

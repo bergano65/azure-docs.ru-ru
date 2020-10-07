@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 08455d3033040d14c85e4c4170ae34a6d05cfac1
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 03566dccbb453aa06a2b5f86bd02b86d85d61b28
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90527179"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322059"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows
 
@@ -100,6 +100,8 @@ ms.locfileid: "90527179"
 * Задержка кругового пути при передаче данных из сети клиента в регион Azure, где были развернуты пулы узлов, должна составлять менее 150 мс. Воспользуйтесь [оценщиком удобства работы](https://azure.microsoft.com/services/virtual-desktop/assessment), чтобы просмотреть сведения о работоспособности подключения и рекомендуемом регионе Azure.
 * Сетевой трафик может передаваться за пределы страны или региона, когда виртуальные машины, на которых размещены рабочие столы и приложения, подключаются к службе управления.
 * Чтобы оптимизировать производительность сети, мы рекомендуем, чтобы виртуальные машины узла сеансов совместно размещались в том же регионе Azure, что и служба управления.
+
+Стандартные варианты реализации службы "Виртуальный рабочий стол Windows" для предприятий см. в статье [Виртуальный рабочий стол Windows для предприятий](https://docs.microsoft.com/azure/architecture/example-scenario/wvd/windows-virtual-desktop).
 
 ## <a name="supported-remote-desktop-clients"></a>Поддерживаемые клиенты удаленного рабочего стола
 

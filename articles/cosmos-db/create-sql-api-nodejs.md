@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 05/11/2020
+ms.date: 09/22/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 8ec5562af254aa1bcdb030057f61db496a17826b
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-js
+ms.openlocfilehash: 25e5d583b2ae94277b155e8e03d61a308a88ec8d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423394"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322756"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-from-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Подключение и выполнение запроса к данным из учетной записи API SQL для Azure Cosmos DB с помощью Node.js
 
@@ -22,6 +22,7 @@ ms.locfileid: "87423394"
 > - [.NET версии 3](create-sql-api-dotnet.md)
 > - [.NET версии 4](create-sql-api-dotnet-V4.md)
 > - [Пакет SDK для Java версии 4](create-sql-api-java.md)
+> * [Spring Data версии 3](create-sql-api-spring-data.md)
 > - [Node.js](create-sql-api-nodejs.md)
 > - [Python](create-sql-api-python.md)
 > - [Xamarin](create-sql-api-xamarin-dotnet.md)
@@ -60,7 +61,7 @@ ms.locfileid: "87423394"
 
    Справа отобразится область **Добавить контейнер**. Возможно, вам придется прокрутить экран вправо, чтобы увидеть ее.
 
-   :::image type="content" source="./media/create-sql-api-nodejs/azure-cosmosdb-data-explorer.png" alt-text="Панель "Добавить контейнер" в обозревателе данных на портале Azure":::
+   :::image type="content" source="./media/create-sql-api-nodejs/azure-cosmosdb-data-explorer.png" alt-text="Панель Добавить контейнер в обозревателе данных на портале Azure":::
 
 2. На странице **Добавить контейнер** введите параметры для нового контейнера.
 
@@ -176,7 +177,7 @@ npm install @azure/cosmos
 
 1. В учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/) выберите **Ключи** на панели навигации слева, а затем выберите **Ключи записи-чтения**. На следующем шаге нажмите кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл _app.js_.
 
-   :::image type="content" source="./media/create-sql-api-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"":::
+   :::image type="content" source="./media/create-sql-api-dotnet/keys.png" alt-text="Панель Добавить контейнер в обозревателе данных на портале Azure":::
 
 2. Откройте файл _config.js_.
 

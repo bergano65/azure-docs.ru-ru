@@ -1,6 +1,7 @@
 ---
-title: Использование управляющей программы Python с платформой удостоверений Майкрософт | Azure
-description: Узнайте, как процесс Python может получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт, с помощью собственного удостоверения приложения.
+title: Краткое руководство. Вызов Microsoft Graph из управляющей программы Python | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как для процесса Python получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт, с помощью собственного удостоверения приложения.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/22/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 0969afa95009255981381d41268f416a615dd9f3
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 2c280b8241819155f32942a399caa7f916db3827
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88683750"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257747"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-python-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения Python с помощью удостоверения приложения
 
@@ -224,18 +225,3 @@ if not result:
 
 > [!div class="nextstepaction"]
 > [Создание управляющей программы, которая вызывает веб-API](scenario-daemon-overview.md)
-
-Руководство по управляющим программам:
-
-> [!div class="nextstepaction"]
-> [Учебник по консоли Python для управляющей программы](https://github.com/Azure-Samples/ms-identity-python-daemon)
-
-Дополнительные сведения о разрешениях и согласии:
-
-> [!div class="nextstepaction"]
-> [Разрешения и согласие](v2-permissions-and-consent.md)
-
-Чтобы узнать больше о потоке проверки подлинности для этого сценария, ознакомьтесь с потоком учетных данных клиента OAuth 2.0:
-
-> [!div class="nextstepaction"]
-> [Поток учетных данных клиента OAuth](v2-oauth2-client-creds-grant-flow.md)

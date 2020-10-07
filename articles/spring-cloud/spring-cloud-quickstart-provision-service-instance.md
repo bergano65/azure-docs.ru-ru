@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 09/08/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 16d40c334d51a66df4a4d2d56e2fa2379dda3726
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f44ebc3885fe57d68756d908c4b392cd43b0366f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90905401"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326207"
 ---
 # <a name="quickstart-provision-azure-spring-cloud-service"></a>Краткое руководство. Подготовка службы Azure Spring Cloud
 
@@ -158,23 +158,9 @@ az extension add --name spring-cloud
 ---
 ::: zone-end
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если вы планируете перейти к следующему краткому руководству из этой серии, пропустите этот шаг.
-
-При прохождении этого краткого руководства вы создали ресурсы Azure, за которые будет взиматься плата, если вы оставите их в своей подписке. Если вы не планируете продолжать работу со следующим кратким руководством или работать с этими ресурсами в будущем, вы можете удалить группу ресурсов с помощью портала, или выполнив следующую команду в Cloud Shell:
-
-```azurecli
-az group delete --name <your resource group name; for example: helloworld-1558400876966-rg> --yes
-```
-
-При прохождении этого краткого руководства вы также задали имя группы ресурсов по умолчанию. Если вы не планируете перейти к следующему краткому руководству, очистите это значение по умолчанию, выполнив такую команду CLI:
-
-```azurecli
-az configure --defaults group=
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
+При прохождении этого краткого руководства вы создали ресурсы Azure, за которые будет взиматься плата, если вы оставите их в своей подписке. Если вы не собираетесь работать со следующим кратким руководством, перейдите к разделу [Очистка ресурсов](spring-cloud-quickstart-logs-metrics-tracing.md#clean-up-resources). Следующее краткое руководство:
 
 > [!div class="nextstepaction"]
 > [Настройка сервера конфигурации](spring-cloud-quickstart-setup-config-server.md)

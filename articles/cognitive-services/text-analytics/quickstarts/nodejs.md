@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Использование Node.js для вызова REST API службы "Анализ текста"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как получить информацию и примеры кода, которые помогут вам приступить к работе с API "Анализ текста" в Azure Cognitive Services.
+description: В этом кратком руководстве показано, как с помощью Node.js получить информацию и примеры кода для начала работы с API Анализа текста в Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,13 +10,13 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 07/06/2020
 ms.author: aahi
-ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: fe9877649d850796b03e9f1c3554a1b9aa7344c3
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: seo-javascript-september2019, devx-track-js
+ms.openlocfilehash: 00026066c90520f59700c7c5ddc33557099b3e8a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407750"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91309019"
 ---
 # <a name="quickstart-use-nodejs-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Node.js для вызова службы "Анализ текста" в Cognitive Services  
 <a name="HOLTop"></a>

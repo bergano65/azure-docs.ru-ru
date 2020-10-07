@@ -3,12 +3,12 @@ title: Развертывание приложения-контейнера .NET
 description: Узнайте, как поместить имеющееся приложение .NET в контейнер с помощью Visual Studio и выполнять отладку контейнеров в Service Fabric локально. Помещенное в контейнер приложение отправляется в реестр контейнеров Azure и развертывается в кластере Service Fabric. При развертывании в Azure приложение использует базу данных SQL Azure для хранения данных.
 ms.topic: tutorial
 ms.date: 07/08/2019
-ms.openlocfilehash: 4970cf6492da38ad76a51df88eeb73538c850c67
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 4ef696156b6386c7aa1a027dcc61c988ba4692a2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258878"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314306"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по Развертывание приложения .NET в контейнере Windows в Azure Service Fabric
 
@@ -39,7 +39,7 @@ ms.locfileid: "86258878"
 
 2. Убедитесь, что приложение Fabrikam Fiber CallCenter создается и выполняется без ошибок.  Запустите Visual Studio с правами **администратора** и откройте файл [FabrikamFiber.CallCenter.sln][link-fabrikam-github].  Нажмите клавишу F5, чтобы отладить и запустить приложение.
 
-   ![Веб-пример Fabrikam][fabrikam-web-page]
+   ![Снимок экрана: домашняя страница приложения Fabrikam Fiber CallCenter, работающего на локальном узле. На странице отображается панель мониторинга со списком обращений в службу поддержки.][fabrikam-web-page]
 
 ## <a name="containerize-the-application"></a>Помещение приложения в контейнер
 
@@ -235,7 +235,7 @@ $vnetRuleObject1 = New-AzSqlServerVirtualNetworkRule `
 
 Отслеживайте ход развертывания в окне вывода. После развертывания приложения откройте браузер и введите адрес кластера и порт приложения. Например, `https://fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:8659/`.
 
-![Веб-пример Fabrikam][fabrikam-web-page-deployed]
+![Снимок экрана: домашняя страница приложения Fabrikam Fiber CallCenter, запущенного на сайте azure.com. На странице отображается панель мониторинга со списком обращений в службу поддержки.][fabrikam-web-page-deployed]
 
 ## <a name="set-up-continuous-integration-and-deployment-cicd-with-a-service-fabric-cluster"></a>Настройка непрерывной интеграции и развертывания (CI/CD) с помощью кластера Service Fabric
 

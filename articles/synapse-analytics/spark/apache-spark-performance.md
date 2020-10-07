@@ -1,6 +1,6 @@
 ---
 title: Оптимизация заданий Spark для повышения производительности
-description: В этой статье содержатся общие сведения об Apache Spark в Azure Synapse Analytics и различные концепции.
+description: В этой статье содержатся общие сведения об Apache Spark в Azure Synapse Analytics.
 services: synapse-analytics
 author: euangMS
 ms.service: synapse-analytics
@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 89040057798ec4c909cac584ed96c187e79b5581
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f8eb87909ffdf9ce15108d78bed425bf6c142262
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089266"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91249473"
 ---
 # <a name="optimize-apache-spark-jobs-preview-in-azure-synapse-analytics"></a>Оптимизация заданий Apache Spark (предварительная версия) в Azure Synapse Analytics
 
@@ -52,7 +52,7 @@ ms.locfileid: "87089266"
 
 Spark поддерживает многие форматы, такие как CSV, JSON, XML, PARQUET, ORC и AVRO. С помощью внешних источников данных его можно расширить для поддержки большего количества форматов. Дополнительные сведения см. на странице [пакетов Apache Spark](https://spark-packages.org).
 
-Лучший формат для повышения производительности — PARQUET со *сжатием Snappy*, который является стандартным форматом в кластере Spark 2.x. В формате PARQUET данные хранятся в столбцах. Этот формат высоко оптимизирован в Spark. Кроме того, несмотря на то, что *мгновенное сжатие* может привести к увеличению размера файлов, чем при сжатии gzip. Из-за особенностей разделяемости этих файлов они будут распакованы быстрее]
+Лучший формат для повышения производительности — PARQUET со *сжатием Snappy*, который является стандартным форматом в кластере Spark 2.x. В формате PARQUET данные хранятся в столбцах. Этот формат высоко оптимизирован в Spark. Кроме того, хотя *мгновенное сжатие* может привести к увеличению размера файлов, чем при сжатии gzip, эти файлы будут распакованы быстрее из-за особенностей их разделяемости.]
 
 ## <a name="use-the-cache"></a>Использование кэша
 

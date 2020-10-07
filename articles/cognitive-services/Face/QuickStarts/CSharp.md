@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: fe6def8a935fcc6f093c4489409a3bcde829ac10
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 8c1e47db4f5f5bb64c31d16c26f6c3860b5bcb29
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89294940"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323063"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-c"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и C#
 
@@ -75,7 +75,7 @@ namespace DetectFace
 
 ### <a name="receive-image-input"></a>Получение входного изображения
 
-Добавьте следующий код в метод **Main** класса **Program**. В этом коде запрограммировано отображение в консоли запроса на ввод URL-адреса изображения пользователем. Затем код вызывает другой метод, **MakeAnalysisRequest**, для обработки изображения в этом расположении.
+Добавьте следующий код в метод **Main** класса **Program**. Этот код создает в консоли запрос для пользователя на ввод пути к локальному расположению файла изображения. Затем код вызывает другой метод, **MakeAnalysisRequest**, для обработки изображения в этом расположении.
 
 ```csharp
         static void Main(string[] args)
@@ -159,7 +159,7 @@ namespace DetectFace
 
 ### <a name="process-the-input-image-data"></a>Обработка данных входных изображений
 
-Добавьте следующий метод в класс **Program**. Он преобразует изображение по указанному URL-адресу в массив байтов.
+Добавьте следующий метод в класс **Program**. Он преобразует изображение по указанному пути в массив байтов.
 
 ```csharp
         // Returns the contents of the specified file as a byte array.

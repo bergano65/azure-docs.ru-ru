@@ -1,7 +1,7 @@
 ---
-title: Получение маркера безопасности и вызов Microsoft Graph с помощью удостоверения консольного приложения | Azure
+title: Краткое руководство. Получение маркера и вызов Microsoft Graph в консольном приложении | Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как получить маркер безопасности и с помощью него вызвать защищенный API Microsoft Graph из приложения .NET Core.
+description: В этом кратком руководстве демонстрируется, как пример приложения .NET Core может использовать поток учетных данных клиента для получения маркера и вызова Microsoft Graph.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: e33b912ab65a3565e42c294388949a5c55b4ee8a
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 6f4f4c2de3b1030c4d14cb74e562954a3d3d1144
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88683765"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91257832"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-using-console-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
@@ -170,12 +170,7 @@ MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Ident
 
  MSAL.NET можно установить, выполнив в **консоли диспетчера пакетов** Visual Studio следующую команду.
 
-```powershell
-Install-Package Microsoft.Identity.Client
-```
-
-Кроме того, если вы не используете Visual Studio, выполните следующую команду, чтобы добавить MSAL в проект:
-
+```powershell twhitney
 ```console
 dotnet add package Microsoft.Identity.Client
 ```
@@ -204,7 +199,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 > | `config.ClientId` | **Идентификатор приложения (клиента)** , зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
 > | `config.Authority`    | (Необязательно.) Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно `https://login.microsoftonline.com/{tenant}` для общедоступного облака, где {tenant} — имя или идентификатор вашего клиента.|
 
-Дополнительные сведения см. в [справочной документации по `ConfidentialClientApplication`](/dotnet/api/microsoft.identity.client.iconfidentialclientapplication?view=azure-dotnet).
+Дополнительные сведения см. в [справочной документации по `ConfidentialClientApplication`](/dotnet/api/microsoft.identity.client.iconfidentialclientapplication).
 
 ### <a name="requesting-tokens"></a>Запрос маркеров
 
@@ -219,28 +214,13 @@ result = await app.AcquireTokenForClient(scopes)
 > |---------|---------|
 > | `scopes` | Содержит запрошенные области. Для конфиденциальных клиентов следует использовать формат, аналогичный `{Application ID URI}/.default`, который указывает, что запрашиваемые области — это те, которые статически определены в объекте приложения, заданном на портале Azure (для Microsoft Graph `{Application ID URI}` указывает на `https://graph.microsoft.com`). Для пользовательских веб-API `{Application ID URI}` определяется в разделе **Предоставление API** в разделе регистрации приложения (предварительная версия) на портале Azure. |
 
-Дополнительные сведения см. в [справочной документации по `AcquireTokenForClient`](/dotnet/api/microsoft.identity.client.confidentialclientapplication.acquiretokenforclient?view=azure-dotnet).
+Дополнительные сведения см. в [справочной документации по `AcquireTokenForClient`](/dotnet/api/microsoft.identity.client.confidentialclientapplication.acquiretokenforclient).
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управляющих программы см. на главной странице сценария.
+Дополнительные сведения об управляющих программах см. следующий обзор сценария:
 
 > [!div class="nextstepaction"]
 > [Создание управляющей программы, которая вызывает веб-API](scenario-daemon-overview.md)
-
-Руководство по управляющим программам:
-
-> [!div class="nextstepaction"]
-> [Руководство по консольной управляющей программе .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2)
-
-Дополнительные сведения о разрешениях и согласии:
-
-> [!div class="nextstepaction"]
-> [Разрешения и согласие](v2-permissions-and-consent.md)
-
-Чтобы узнать больше о потоке проверки подлинности для этого сценария, ознакомьтесь с потоком учетных данных клиента OAuth 2.0:
-
-> [!div class="nextstepaction"]
-> [Поток учетных данных клиента OAuth](v2-oauth2-client-creds-grant-flow.md)

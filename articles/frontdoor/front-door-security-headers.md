@@ -1,6 +1,6 @@
 ---
 title: Руководство по Добавление заголовков безопасности с помощью обработчика правил (Azure Front Door)
-description: В этой статье объясняется, как настроить заголовок безопасности с помощью обработчика правил в Azure Front Door.
+description: В этом руководстве объясняется, как настроить заголовок безопасности с помощью обработчика правил в Azure Front Door.
 services: frontdoor
 documentationcenter: ''
 author: duongau
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/14/2020
 ms.author: duau
-ms.openlocfilehash: 204a7676fd03466929fc67a0879ff28e0318d21d
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 1727193faa028a1d681f2a74df950afeb9570ec9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085248"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270055"
 ---
 # <a name="tutorial-add-security-headers-with-rules-engine"></a>Руководство по Добавление заголовков безопасности с помощью обработчика правил
 

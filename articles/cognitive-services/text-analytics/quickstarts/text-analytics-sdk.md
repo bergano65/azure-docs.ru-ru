@@ -1,27 +1,28 @@
 ---
-title: Краткое руководство. Клиентская библиотека Анализа текста версии 3 | Документация Майкрософт
+title: Краткое руководство. Интеллектуальный анализ текста с помощью клиентской библиотеки Анализа текста
 titleSuffix: Azure Cognitive Services
-description: Используйте это краткое руководство для подключения приложений к API Анализа текста в Azure Cognitive Services.
+description: В этом кратком руководстве описывается, как выполнить анализ тональности и другие действия с помощью API "Анализ текста" служб Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 07/27/2020
+ms.date: 09/09/2020
 ms.author: aahi
-ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+keywords: Интеллектуальный анализ текста, анализ тональности, анализ текста
+ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-text-analytics
-ms.openlocfilehash: 2d81175c73928d25c06acb396dac587c7cc73637
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: ed87c536c53ab1c07af05a7b8223901591c16e66
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88931188"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332346"
 ---
 # <a name="quickstart-use-the-text-analytics-client-library"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста
 
-Начните работу с клиентской библиотекой Анализа текста. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
+Изучите эту статью, чтобы начать работу с клиентской библиотекой Анализа текста. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для интеллектуального анализа текста.
 
 Используйте клиентскую библиотеку Анализа текста для выполнения следующих действий:
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 08/03/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 94caa879aa005f8f41e44b8a56400e87f6174247
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d67b0c89fbec8da9a3057164aa59d458a85c41d7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90908351"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280595"
 ---
 # <a name="quickstart-build-and-deploy-apps-to-azure-spring-cloud"></a>Краткое руководство. Сборка и развертывание приложений в Azure Spring Cloud
 
@@ -353,23 +353,9 @@ URL-адрес можно найти на портале Azure.
 
 ::: zone-end
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если вы планируете перейти к следующему краткому руководству из этой серии, пропустите этот шаг.
-
-В этих кратких руководствах показано, как создать ресурсы Azure, за которые будет взиматься плата, если они останутся в вашей подписке. Если вы не планируете продолжать работу со следующим кратким руководством или работать с этими ресурсами в будущем, вы можете удалить группу ресурсов с помощью портала, или выполнив следующую команду в Cloud Shell:
-
-```azurecli
-az group delete --name <your resource group name; for example: helloworld-1558400876966-rg> --yes
-```
-
-В предыдущем кратком руководстве также показано, как задать имя группы ресурсов по умолчанию. Если вы не планируете перейти к следующему краткому руководству, очистите это значение по умолчанию, выполнив такую команду CLI:
-
-```azurecli
-az configure --defaults group=
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
+При прохождении этого краткого руководства вы создали ресурсы Azure, за которые будет взиматься плата, если вы оставите их в своей подписке. Если вы не собираетесь работать со следующим кратким руководством, перейдите к разделу [Очистка ресурсов](spring-cloud-quickstart-logs-metrics-tracing.md#clean-up-resources). Следующее краткое руководство:
+
 > [!div class="nextstepaction"]
 > [Журналы, метрики и трассировка](spring-cloud-quickstart-logs-metrics-tracing.md)
-

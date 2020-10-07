@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d00232d602ce7b2de0db4e06ef3c7456f552833e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 6b9835cf5de28fbd515a214554f723d99e8e8fe4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018745"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91260737"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Таблицы общих метаданных Azure Synapse Analytics
 
@@ -105,7 +105,7 @@ Spark предоставляет два типа таблиц, которые Az
     CREATE TABLE mytestdb.myParquetTable(id int, name string, birthdate date) USING Parquet
 ```
 
-Это действие создает таблицу `myParquetTable` в базе данных `mytestdb`. С небольшой задержкой эта таблица станет доступной в SQL по запросу. Для нашего примера выполните указанную ниже инструкцию из SQL по запросу.
+Эта команда создает таблицу `myParquetTable` в базе данных `mytestdb`. С небольшой задержкой эта таблица станет доступной в SQL по запросу. Для нашего примера выполните указанную ниже инструкцию из SQL по запросу.
 
 ```sql
     USE mytestdb;

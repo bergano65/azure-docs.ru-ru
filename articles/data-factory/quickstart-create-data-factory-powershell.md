@@ -1,6 +1,6 @@
 ---
 title: Копирование данных в хранилище BLOB-объектов с помощью службы "Фабрика данных Azure"
-description: Создайте фабрику данных Azure для копирования данных из одного расположения в хранилище BLOB-объектов Azure в другое.
+description: Создание фабрики данных Azure с помощью PowerShell для копирования данных между расположениями в Хранилище BLOB-объектов Azure.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -13,12 +13,12 @@ ms.devlang: powershell
 ms.topic: quickstart
 ms.date: 04/10/2020
 ms.author: jingwang
-ms.openlocfilehash: ad757e3d65d3094ca6883d747404906a871ed850
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: ebcab92c40705bf108d5839a7e67aee345c1bbc7
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81419346"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292393"
 ---
 # <a name="quickstart-create-an-azure-data-factory-using-powershell"></a>Краткое руководство. Создание фабрики данных Azure с помощью PowerShell
 

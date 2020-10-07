@@ -1,5 +1,5 @@
 ---
-title: Регистрация устройств X.509 в Службе подготовки устройств Azure с помощью Node.js
+title: Краткое руководство по регистрации устройств X.509 в Службе подготовки устройств Azure с помощью Node.js
 description: В этом кратком руководстве используется групповая регистрация. Из этого краткого руководства вы узнаете, как зарегистрировать устройство X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью пакета SDK для службы Node.js
 author: wesmc7777
 ms.author: wesmc
@@ -8,13 +8,13 @@ ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.devlang: nodejs
-ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 0f6d18aa0ce4576db1618d17d8fb3866101f87b1
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: e1a7bb40e952f0437f0f8c168c48dc1d48b8cf94
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424364"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330236"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-nodejs"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Node.js
 

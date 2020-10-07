@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Ruby
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing и Ruby.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: quickstart
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: e9b990f7e79fe0d70a213db5739153fe1e558f3c
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: dc7b929aa139e6d51af25d4689166d2596dda70b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82930205"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91262898"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-ruby"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Ruby
 

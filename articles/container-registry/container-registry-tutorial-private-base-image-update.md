@@ -3,13 +3,13 @@ title: Руководство. Активация сборки образов п
 description: С помощью этого руководства вы настроите в Реестре контейнеров Azure автоматическую активацию сборки образа контейнера в облаке при обновлении базового образа в другом реестре контейнеров Azure.
 ms.topic: tutorial
 ms.date: 01/22/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e28dc65f44f3d9997a59e6204451cc84b0e41e40
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: 09b795981c1afe497e6adbb14f4f62d45293f0e3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407138"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270990"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-another-private-container-registry"></a>Руководство по Автоматизация сборки образов контейнера при обновлении базового образа в другом частном реестре контейнеров 
 
@@ -171,7 +171,7 @@ docker run -d -p 8080:80 --name myapp --rm $ACR_NAME.azurecr.io/helloworld:<run-
 
 Перейдите по адресу `http://localhost:8080` в браузере, и вы увидите номер версии Node.js, преобразованный для просмотра на веб-странице, аналогичный приведенному ниже. На более позднем этапе вы активируете версию, добавив "a" в строку версии.
 
-![Снимок экрана примера приложения, отображаемого в браузере][base-update-01]
+![Снимок экрана: пример приложения в браузере][base-update-01]
 
 Чтобы остановить и удалить контейнер, выполните следующую команду:
 

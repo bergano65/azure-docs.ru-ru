@@ -4,16 +4,27 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
-ms.openlocfilehash: be60a2f371148fabf73fc7fcdce114295775d71c
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: f169e45b126f064c5bae315b9dcd30a39c830fdd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985989"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332477"
 ---
+Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
+
+* получение ответов в виде потоков в памяти;
+* настройка частоты выборки и скорости передачи выходных данных;
+* отправка запросов синтеза с помощью SSML (язык разметки синтеза речи);
+* использование нейронных голосовых моделей.
+
+## <a name="skip-to-samples-on-github"></a>Примеры на GitHub
+
+Если вы хотите сразу перейти к примерам кода, см. [этот репозиторий](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/python/text-to-speech) на сайте GitHub.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](../../../get-started.md).
+В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](../../../overview.md#try-the-speech-service-for-free).
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
@@ -38,19 +49,19 @@ from azure.cognitiveservices.speech.audio import AudioOutputConfig
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
+Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python&preserve-view=true). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
 > [!NOTE]
 > Независимо от того, используете ли вы распознавание речи, синтез речи, перевод или распознавание намерения, вы всегда создаете конфигурацию.
 
-Существует несколько способов инициализации [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python).
+Существует несколько способов инициализации [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python&preserve-view=true).
 
 * С помощью подписки: передайте ключ и связанный с ним регион.
 * С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-В этом примере создается [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python) с помощью ключа и региона подписки. Идентификатор региона можно узнать на [этой странице](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk).
+В этом примере создается [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python&preserve-view=true) с использованием ключа и региона подписки. Идентификатор региона можно узнать на [этой странице](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-sdk).
 
 ```python
 speech_config = SpeechConfig(subscription="YourSubscriptionKey", region="YourServiceRegion")
@@ -58,7 +69,7 @@ speech_config = SpeechConfig(subscription="YourSubscriptionKey", region="YourSer
 
 ## <a name="synthesize-speech-to-a-file"></a>Синтезирование речи в файл
 
-Затем вы создадите объект [`SpeechSynthesizer`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesizer?view=azure-python), который выполняет преобразование текста в речь и выводит ее в динамики, файлы или другие потоки вывода. В качестве параметров объект [`SpeechSynthesizer`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesizer?view=azure-python) принимает созданный на предыдущем шаге объект [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python) и объект [`AudioOutputConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audio.audiooutputconfig?view=azure-python), определяющий, как должны обрабатываться выходные результаты.
+Далее необходимо создать объект [`SpeechSynthesizer`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesizer?view=azure-python&preserve-view=true), который выполняет преобразование текста в речь и выводит ее на динамики, в файлы или в другие потоки выходных данных. В качестве параметров объект [`SpeechSynthesizer`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesizer?view=azure-python&preserve-view=true) принимает созданный на предыдущем шаге объект [`SpeechConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python&preserve-view=true) и объект [`AudioOutputConfig`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audio.audiooutputconfig?view=azure-python&preserve-view=true), определяющий, как должны обрабатываться выходные результаты.
 
 Сначала создайте `AudioOutputConfig` для автоматической записи выходных данных в файл `.wav` с помощью параметра конструктора `filename`.
 
@@ -73,9 +84,9 @@ synthesizer = SpeechSynthesizer(speech_config=speech_config, audio_config=audio_
 synthesizer.speak_text_async("A simple test to write to a file.")
 ```
 
-Запустите программу, после чего синтезированный файл `.wav` будет записан в указанное вами расположение. Это хороший пример базового способа использования. Далее рассматривается настройка выходных данных и обработка выходного ответа в виде потока в памяти для работы в пользовательских сценариях.
+Запустите программу, после чего синтезированный файл `.wav` будет записан в указанное вами расположение. Это хороший пример наиболее простого способа использования. Далее рассматривается настройка выходных данных и обработка ответа для вывода в виде потока в памяти для работы в пользовательских сценариях.
 
-## <a name="synthesize-to-speaker-output"></a>Синтезирование выходных данных для вывода в динамики
+## <a name="synthesize-to-speaker-output"></a>Синтезирование выходных данных для вывода на динамики
 
 В некоторых случаях может потребоваться напрямую выводить синтезированную речь в динамики. Для этого используйте пример из предыдущего раздела, но измените `AudioOutputConfig`, удалив параметр `filename` и задав `use_default_speaker=True`. Это позволит передавать выходные данные на активное устройство вывода.
 
@@ -85,18 +96,18 @@ audio_config = AudioOutputConfig(use_default_speaker=True)
 
 ## <a name="get-result-as-an-in-memory-stream"></a>Получение результата в виде потока в памяти
 
-Во многих сценариях разработки речевых приложений требуется получить звуковые данные в виде потока в памяти, а не в виде записи в файл. Это позволяет выполнять разные действия с выходными данными, в частности:
+Во многих сценариях разработки речевых приложений вам, вероятно, понадобится получать звуковые данные в виде потока в памяти, а не записывать данные в файл. Это позволит выполнять различные действия с выходными данными, в частности:
 
-* Извлекать полученный массив байтов в виде потока с возможностью поиска для настраиваемых нижестоящих служб.
-* Интегрировать полученные данные с другими API или службами.
-* Изменять звуковые данные, записывать пользовательские заголовки `.wav` и т. д.
+* абстрагировать полученный массив байтов в виде потока с возможностью поиска для настраиваемых нижестоящих служб;
+* интегрировать полученные данные с другими API или службами;
+* изменять звуковые данные, записывать пользовательские заголовки `.wav` и т. д.
 
 Это изменение легко реализовать в предыдущем примере. Сначала удалите `AudioConfig`, так как теперь вы будете вручную управлять выходными данными, чтобы получить более полный контроль. Затем передайте `None` для `AudioConfig` в конструкторе `SpeechSynthesizer`. 
 
 > [!NOTE]
-> Передача значения `None` для `AudioConfig`, а не его пропуск, как это сделано в приведенном выше примере с выводом в динамики, не позволит по умолчанию воспроизводить звук на активном устройстве вывода.
+> Передача значения `None` для `AudioConfig` вместо его пропуска, как это сделано в приведенном выше примере с выводом на динамики, не позволит по умолчанию воспроизводить звук на активном устройстве вывода.
 
-В этом случае результат сохраняется в переменной [`SpeechSynthesisResult`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesisresult?view=azure-python). Свойство `audio_data` содержит объект `bytes` выходных данных. Вы можете работать с этим объектом вручную или использовать класс [`AudioDataStream`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audiodatastream?view=azure-python) для управления потоком в памяти. В этом примере используется конструктор `AudioDataStream` для получения потока из результата.
+В этом случае результат сохраняется в переменной [`SpeechSynthesisResult`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesisresult?view=azure-python&preserve-view=true). Свойство `audio_data` содержит объект `bytes` выходных данных. Вы можете работать с этим объектом вручную или использовать класс [`AudioDataStream`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audiodatastream?view=azure-python&preserve-view=true) для управления потоком в памяти. В этом примере используется конструктор `AudioDataStream` для получения потока из результата.
 
 ```python
 synthesizer = SpeechSynthesizer(speech_config=speech_config, audio_config=None)
@@ -106,19 +117,19 @@ stream = AudioDataStream(result)
 
 Теперь можно настроить выполнение любых пользовательских действий, используя полученный объект `stream`.
 
-## <a name="customize-audio-format"></a>Настройка формата аудио
+## <a name="customize-audio-format"></a>Настройка звукового формата
 
-В этом разделе показано, как задать атрибуты вывода звука, в том числе:
+В этом разделе показано, как настроить атрибуты вывода звука, в том числе:
 
 * тип звукового файла;
 * частоту выборки;
 * глубину в битах.
 
-Чтобы изменить звуковой формат, используйте функцию `set_speech_synthesis_output_format()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesisoutputformat?view=azure-python) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesisoutputformat?view=azure-python).
+Чтобы изменить звуковой формат, используйте функцию `set_speech_synthesis_output_format()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesisoutputformat?view=azure-python&preserve-view=true) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechsynthesisoutputformat?view=azure-python&preserve-view=true).
 
-Для разных типов файлов предусмотрены разные возможности в зависимости от требований. Обратите внимание, что по определению форматы необработанных аудиоданных, такие как `Raw24Khz16BitMonoPcm`, не содержат заголовков. Используйте такие форматы, только если вы уверены, что нижестоящие службы способны декодировать необработанный битовый поток, или если вы планируете создавать заголовки вручную на основе глубины в битах, частоты выборки, количества каналов и т. д.
+Различные типы файлов обеспечивают разные возможности для работы с ними в зависимости от требований. Обратите внимание, что по определению звуковые данные в необработанном формате, таком как `Raw24Khz16BitMonoPcm`, не содержат заголовки. Используйте такие форматы, только если вы уверены, что нижестоящие службы способны декодировать необработанный битовый поток, или если вы планируете создавать заголовки вручную на основе глубины в битах, частоты выборки, количества каналов и т. п.
 
-В этом примере мы выберем формат RIFF высокой точности воспроизведения `Riff24Khz16BitMonoPcm`, задав `SpeechSynthesisOutputFormat` для объекта `SpeechConfig`. Как и в примере из предыдущего раздела, мы будем использовать [`AudioDataStream`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audiodatastream?view=azure-python) для получения результата в виде потока в памяти, а затем записывать его в файл.
+В этом примере мы укажем формат RIFF высокой точности воспроизведения `Riff24Khz16BitMonoPcm`, задав `SpeechSynthesisOutputFormat` для объекта `SpeechConfig`. Как и в примере из предыдущего раздела, мы будем использовать [`AudioDataStream`](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.audiodatastream?view=azure-python&preserve-view=true) для получения результата в виде потока в памяти, а затем записывать его в файл.
 
 
 ```python
@@ -134,10 +145,10 @@ stream.save_to_wav_file("path/to/write/file.wav")
 
 ## <a name="use-ssml-to-customize-speech-characteristics"></a>Настройка характеристик речи с помощью SSML
 
-Язык разметки синтеза речи (SSML) позволяет точно настраивать тон, произношение, скорость речи, громкость и другие выходные данные при преобразовании текста в речь, отправляя запросы из схемы XML. В этом разделе показано несколько примеров использования этого языка, но, чтобы получить более полное представление о нем, прочтите [эту статью](../../../speech-synthesis-markup.md).
+Speech Synthesis Markup Language (язык разметки синтеза речи, SSML) позволяет точно настраивать тон, произношение, скорость речи, громкость и другие параметры выходных данных для преобразования текста в речь, отправляя запросы из схемы XML. В этом разделе показано несколько примеров использования этого языка, но, чтобы получить более полное представление о нем, прочтите [эту статью](../../../speech-synthesis-markup.md).
 
-Чтобы освоить настройку с помощью SSML, для начала внесем простое изменение, которое позволяет менять голос.
-Сначала создайте XML-файл для конфигурации SSML в корневом каталоге проекта. В нашем примере это `ssml.xml`. Корневым элементом всегда является `<speak>`, а перенос текста в элемент `<voice>` позволяет менять голос с помощью параметра `name`. В этом примере мы изменим голос на мужскую английскую речь (британский английский). Обратите внимание, что этот голос является **стандартным**, стоимость и доступность которого отличаются от аналогичных параметров голосов, **синтезированных с помощью нейронных сетей**. Ознакомьтесь с [полным списком](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#standard-voices) поддерживаемых **стандартных** голосов.
+Чтобы освоить настройку с использованием SSML, внесем простое изменение, которое позволяет менять голос.
+Сначала создайте XML-файл для конфигурации SSML в корневом каталоге проекта. В нашем примере это `ssml.xml`. Корневым элементом всегда является `<speak>`, а перенос текста в элемент `<voice>` позволяет менять голос с помощью параметра `name`. В этом примере мы изменим голос, чтобы использовать речь мужчины на (британском) английском. Обратите внимание, что этот голос является **стандартным**, поэтому цена и доступность его использования отличаются от аналогичных параметров голосов, **синтезированных с помощью нейронных сетей**. Ознакомьтесь с [полным списком](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#standard-voices) поддерживаемых **стандартных** голосов.
 
 ```xml
 <speak version="1.0" xmlns="https://www.w3.org/2001/10/synthesis" xml:lang="en-US">
@@ -162,7 +173,7 @@ stream = AudioDataStream(result)
 stream.save_to_wav_file("path/to/write/file.wav")
 ```
 
-Выходные данные поступают, но можно внести несколько простых изменений, чтобы добиться более естественного звучания. Общая скорость речи является несколько высокой, поэтому мы добавим тег `<prosody>`, чтобы снизить ее до **90 %** от заданной по умолчанию. Кроме того, пауза после запятой в предложении звучит коротковато и неестественно. Чтобы исправить это, добавьте тег `<break>`, что замедлит речь, а параметру времени задайте значение **200 мс**. Повторно запустите синтез, чтобы услышать, как эти настройки повлияли на выходные данные.
+Выходные данные поступают, но можно внести несколько простых изменений, чтобы добиться более естественного звучания. Общая скорость речи высокая, поэтому мы добавим тег `<prosody>`, чтобы уменьшить ее до **90 %** от заданной по умолчанию. Кроме того, пауза после запятой в предложении коротковата и неестественна. Чтобы исправить это, добавьте тег `<break>`, что замедлит речь, а параметру времени задайте значение **200 мс**. Повторно запустите синтез, чтобы услышать, как эти настройки повлияли на выходные данные.
 
 ```xml
 <speak version="1.0" xmlns="https://www.w3.org/2001/10/synthesis" xml:lang="en-US">
@@ -176,12 +187,12 @@ stream.save_to_wav_file("path/to/write/file.wav")
 
 ## <a name="neural-voices"></a>Синтезирование голоса с помощью нейронных сетей
 
-Синтезированные с помощью нейронных сетей голоса — это алгоритмы синтеза речи на основе глубоких нейронных сетей. Во время использования нейронных голосовых моделей синтезированная речь почти ничем не отличается от записей человеческого голоса. Эти модели отличаются человекоподобной естественной интонацией и четким произношение слов, что значительно уменьшает усталость от прослушивания при взаимодействии с системами искусственного интеллекта.
+Синтезированные с помощью нейронных сетей голоса — это модели, созданные с использованием алгоритмов синтеза речи на основе глубоких нейронных сетей. Во время использования нейронных голосовых моделей синтезированная речь почти ничем не отличается от записей человеческого голоса. Эти модели отличаются человекоподобной естественной интонацией и четким произношение слов, что значительно уменьшает усталость от прослушивания при взаимодействии с системами искусственного интеллекта.
 
-Чтобы переключиться на такой голос, замените `name` одним из [доступных вариантов](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#neural-voices). Затем добавьте пространство имен XML для `mstts` и заключите текст в тег `<mstts:express-as>`. Используйте параметр `style`, чтобы настроить стиль речи. В этом примере используется `cheerful`, но можно выполнить замену на `customerservice` или `chat`, чтобы оценить различия разговорного стиля.
+Чтобы переключиться на нейронную голосовую модель, замените `name` одним из [доступных вариантов](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#neural-voices). Затем добавьте пространство имен XML для `mstts` и заключите текст в тег `<mstts:express-as>`. Используйте параметр `style`, чтобы настроить стиль речи. В этом примере используется `cheerful`, но попробуйте заменить его на `customerservice` или `chat`, чтобы оценить различия стиля речи.
 
 > [!IMPORTANT]
-> Голоса, синтезированные с помощью нейронных сетей, поддерживаются **только** речевыми ресурсами, созданными в регионах *Восточная часть США*, *Юго-Восточная Азия* и *Западная Европа*.
+> Голоса, синтезированные с помощью нейронных сетей, поддерживают **только** речевые ресурсы, созданные в регионах *Восточная часть США*, *Юго-Восточная Азия* и *Западная Европа*.
 
 ```xml
 <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US">

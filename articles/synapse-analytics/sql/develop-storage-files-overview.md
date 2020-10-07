@@ -8,13 +8,13 @@ ms.topic: overview
 ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: v-stazar
-ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 2a0751f12f33a36d9e0003977bcf40b66d715615
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.reviewer: jrasnick
+ms.openlocfilehash: 8884f62ba015cc4b33b75a133f21264dac6430e5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986956"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91288993"
 ---
 # <a name="access-external-storage-in-synapse-sql-on-demand"></a>Доступ к внешнему хранилищу в Synapse SQL (по запросу)
 
@@ -116,7 +116,7 @@ CREATE EXTERNAL DATA SOURCE MyAzureInvoices
 
 Пользователь с разрешениями на чтение таблицы может обращаться к внешним файлам с помощью внешней таблицы (EXTERNAL TABLE), созданной на основе набора папок и файлов службы хранилища Azure.
 
-Пользователь с [разрешениями на создание внешней таблицы](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql?view=sql-server-ver15#permissions) (например, CREATE TABLE и ALTER ANY CREDENTIAL или REFERENCES DATABASE SCOPED CREDENTIAL), может использовать следующий скрипт для создания таблицы на основе источника данных службы хранилища Azure:
+Пользователь с [разрешениями на создание внешней таблицы](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql?view=sql-server-ver15#permissions&preserve-view=true) (например, CREATE TABLE и ALTER ANY CREDENTIAL или REFERENCES DATABASE SCOPED CREDENTIAL), может использовать следующий скрипт для создания таблицы на основе источника данных службы хранилища Azure:
 
 ```sql
 CREATE EXTERNAL TABLE [dbo].[DimProductexternal]

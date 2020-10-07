@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/10/2018
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ed19b9dae179c3e4fe89a9ce28df4ad0cd080af
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: e35366e35fc127057020906ac6d3dfb0f207ab72
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89263218"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331341"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "89263218"
 
 3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.**, а затем — **Сохранить**.
 
-   ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png)  
+   ![Снимок экрана: страница "Удостоверение (предварительная версия)", где на вкладке "Назначено системой" для параметра "Состояние" задано значение "Вкл.".](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png)  
 
 ### <a name="remove-system-assigned-managed-identity-from-a-vm"></a>Удаление управляемого удостоверения, назначаемого системой, из виртуальной машины
 
@@ -99,7 +99,7 @@ ms.locfileid: "89263218"
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи, связанной с подпиской Azure, которая содержит виртуальную машину.
 2. Перейдите в нужную виртуальную машину и выберите **Удостоверение**, **Назначено пользователем**, а затем — **\+Добавить**.
 
-   ![Добавление в виртуальную машину управляемого удостоверения, назначаемого пользователем](./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png)
+   ![Снимок экрана: вкладка "Назначено пользователем" на странице "Удостоверение" с выделенной кнопкой "Добавить"](./media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png)
 
 3. Выберите удостоверение, назначаемое пользователем, которое нужно добавить в виртуальную машину, а затем нажмите кнопку **Добавить**.
 

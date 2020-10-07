@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 08/27/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 7c144ddac255087ae48ff2f1c5406ad66d670562
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: d700c2f2b4df01da577b67dafab989b655bdb58d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90601356"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331086"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure на портале Azure
 
@@ -52,6 +52,9 @@ ms.locfileid: "90601356"
      ![Создание шлюза приложений: Основы](./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png)
 
 2. В Azure для обмена между создаваемыми ресурсами необходима виртуальная сеть. Вы можете создать новую виртуальную сеть или использовать существующую. В этом примере вы можете создать виртуальную сеть одновременно со шлюзом приложений. Экземпляры Шлюза приложений создаются в отдельных подсетях. В этом примере создаются две подсети: одна — для шлюза приложений, а вторая — для внутренних серверов.
+
+    > [!NOTE]
+    > [Политики конечных точек служб для виртуальной сети](../virtual-network/virtual-network-service-endpoint-policies-overview.md) в настоящее время не поддерживаются в подсети Шлюза приложений.
 
     В разделе **Настройка виртуальной сети** создайте новую виртуальную сеть, выбрав команду **Создать**. В открывшемся окне **Создание виртуальной сети** введите следующие значения, которые будут использоваться для создания виртуальной сети и двух подсетей.
 

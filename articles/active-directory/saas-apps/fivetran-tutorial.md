@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/01/2020
 ms.author: jeedes
-ms.openlocfilehash: 9cf8a76f74e6dda6ade98ea348f5401eab15c53e
-ms.sourcegitcommit: 206629373b7c2246e909297d69f4fe3728446af5
+ms.openlocfilehash: 9d6951456593c57f9def80990e582a5ff54cc5d9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2020
-ms.locfileid: "89500529"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91312654"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fivetran"></a>Руководство по интеграции единого входа Azure Active Directory с Fivetran
 
@@ -31,7 +31,7 @@ ms.locfileid: "89500529"
 Чтобы приступить к работе, потребуется следующее.
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка Fivetran с поддержкой единого входа.
+* Учетная запись Fivetran.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -96,7 +96,7 @@ ms.locfileid: "89500529"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Требуемые URL-адреса можно скопировать из раздела **Настройка Fivetran**.
+1. В разделе **настройки Fivetran** скопируйте значения **URL-адреса входа** и **идентификатора Azure AD**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -126,7 +126,22 @@ ms.locfileid: "89500529"
 
 ## <a name="configure-fivetran-sso"></a>Настройка единого входа в Fivetran
 
-Чтобы настроить единый вход на стороне **Fivetran**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Fivetran](mailto:support@fivetran.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+В рамках этого раздела вы настроите единый вход на стороне **Fivetran**.
+
+1. В другом окне веб-браузера войдите в учетную запись Fivetran как владелец учетной записи.
+1. Щелкните стрелку в левом верхнем углу окна, а затем в раскрывающемся меню выберите пункт **Управление учетной записью**.
+
+   ![Снимок экрана: выбранный параметр меню "Управление учетной записью".](media/fivetran-tutorial/fivetran-1.png)
+
+1. На странице **Параметры** перейдите к разделу **SAML Config** (Конфигурация SAML).
+
+   ![Снимок экрана: область конфигурации SAML с выделенными параметрами конфигурации.](media/fivetran-tutorial/fivetran-2.png)
+
+   1. Для параметра **Enable SAML authentication** (Включить проверку подлинности SAML) задайте значение **Вкл.**
+   1. В текстовое поле **URL-адрес для входа** вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+   1. В текстовое поле **Издатель** вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+   1. Откройте скачанный файл сертификата в текстовом редакторе, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **Общедоступный сертификат**.
+   1. Выберите **SAVE CONFIG** (Сохранить конфигурацию).
 
 ### <a name="create-fivetran-test-user"></a>Создание тестового пользователя Fivetran
 

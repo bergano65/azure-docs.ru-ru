@@ -1,6 +1,6 @@
 ---
 title: Использование хранилища таблиц Azure и API таблиц Azure Cosmos DB в Java
-description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
+description: Хранение структурированных данных в облаке с помощью Хранилища таблиц Azure или API таблиц Azure Cosmos DB в Java.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: Java
@@ -9,12 +9,12 @@ ms.date: 07/23/2020
 author: sakash279
 ms.author: akshanka
 ms.custom: devx-track-java
-ms.openlocfilehash: e28770bae9f845ae8f5edd3b67bc55175392052a
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: d50f3015be4ce12d5980fde7d039d87ef06da164
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056675"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330474"
 ---
 # <a name="how-to-use-azure-table-storage-or-azure-cosmos-db-table-api-from-java"></a>Как использовать в Java хранилище таблиц Azure и API таблиц Azure Cosmos DB
 

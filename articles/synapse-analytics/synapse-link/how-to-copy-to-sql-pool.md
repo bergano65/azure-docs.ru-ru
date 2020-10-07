@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 08/10/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 88962d63519cfeb78be694c4f702b05ed4e7d3df
-ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.openlocfilehash: 409f1ecee5ccf42a0168d500b40337366e07bfc0
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88658375"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287856"
 ---
 # <a name="copy-data-from-azure-cosmos-db-into-a-sql-pool-using-apache-spark"></a>Копирование данных из Azure Cosmos DB в пул SQL с помощью Apache Spark
 
@@ -29,15 +29,15 @@ ms.locfileid: "88658375"
 * [Настройте надлежащим образом импорт данных в пул SQL из Spark](../spark/synapse-spark-sql-pool-import-export.md)
 
 ## <a name="steps"></a>Шаги
-В этом руководстве описывается подключение к аналитическому хранилищу, поэтому приведенные здесь действия не повлияют на хранилище транзакций (для их выполнения единицы запросов не потребляются). Мы выполним следующие действия:
+В этом руководстве показано, как подключиться к аналитическому хранилищу. Описанные здесь действия не влияют на хранилище транзакций (для их выполнения единицы запросов не потребляются). Мы выполним следующие действия:
 1. Считывание контейнера HTAP Cosmos DB в кадр данных Spark
 2. Агрегирование результатов в новый кадр данных
 3. Прием данных в пуле SQL
 
-[![Процесс передачи данных из Spark в SQL](../media/synapse-link-spark-to-sql/synapse-spark-to-sql.png)](../media/synapse-link-spark-to-sql/synapse-spark-to-sql.png#lightbox)
+[![Передача из Spark в SQL 1](../media/synapse-link-spark-to-sql/synapse-spark-to-sql.png)](../media/synapse-link-spark-to-sql/synapse-spark-to-sql.png#lightbox)
 
 ## <a name="data"></a>Данные
-В этом примере мы используем контейнер HTAP с именем **RetailSales**. Он является компонентом связанной службы с именем **ConnectedData** и имеет следующую схему:
+В этом примере мы используем контейнер HTAP с именем **RetailSales**. Это часть связанной службы с именем **ConnectedData** со следующей схемой:
 * _rid: string (nullable = true)
 * _ts: long (nullable = true)
 * logQuantity: double (nullable = true)
@@ -50,7 +50,7 @@ ms.locfileid: "88658375"
 * weekStarting: long (nullable = true)
 * _etag: string (nullable = true)
 
-Для целей отчетности мы будем агрегировать продажи (*quantity*, *revenue* (price x quantity) по *productCode* и *weekStarting*. Наконец, мы экспортируем эти данные в таблицу пула SQL с именем **dbo.productsales**.
+Для отчетности мы будем агрегировать продажи (*quantity*, *revenue* (price x quantity) по *productCode* и *weekStarting*. Наконец, мы экспортируем эти данные в таблицу пула SQL с именем **dbo.productsales**.
 
 ## <a name="configure-a-spark-notebook"></a>Настройка записной книжки Spark
 Создайте записную книжку Spark, используя в качестве основного языка с Scala на Spark (Scala). Мы используем для сеанса заданный по умолчанию параметр записной книжки.
@@ -97,7 +97,7 @@ SELECT  [productCode]
  FROM [dbo].[productsales]
 ```
 
-В ответ на запрос будут представлены следующие результаты в режиме диаграммы: [![Процесс передачи данных из Spark в SQL](../media/synapse-link-spark-to-sql/sql-script-spark-sql.png)](../media/synapse-link-spark-to-sql/sql-script-spark-sql.png#lightbox)
+В ответ на запрос будут представлены следующие результаты в режиме диаграммы: [![Передача из Spark в SQL 2](../media/synapse-link-spark-to-sql/sql-script-spark-sql.png)](../media/synapse-link-spark-to-sql/sql-script-spark-sql.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 * [Отправка запросов в аналитическое хранилище Azure Cosmos DB с помощью Apache Spark](./how-to-query-analytical-store-spark.md)

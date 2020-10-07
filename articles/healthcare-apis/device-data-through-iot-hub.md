@@ -8,12 +8,12 @@ ms.subservice: iomt
 ms.topic: tutorial
 ms.date: 08/03/2020
 ms.author: punagpal
-ms.openlocfilehash: 04c732b857c06246bdc636f01afd2689c98c2b0d
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 3b2e4a1ae5ff43283893b286dafb38491a1181b4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831623"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91308231"
 ---
 # <a name="tutorial-receive-device-data-through-azure-iot-hub"></a>Руководство по Получение данных устройства через Центр Интернета вещей Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "87831623"
 ### <a name="add-a-message-route"></a>Добавление маршрута сообщений
 На этом шаге определяется маршрут сообщений на основе созданной выше конечной точки. Создайте маршрут с помощью команды PowerShell [Add-AzIotHubRoute](https://docs.microsoft.com/powershell/module/az.iothub/Add-AzIoTHubRoute) или команды CLI [az iot hub route create](https://docs.microsoft.com/cli/azure/iot/hub/route#az-iot-hub-route-create) (в зависимости от предпочтений).
 
-Ниже приведен список параметров, которые можно использовать с командой для создания конечной точки.
+Ниже приведен список параметров, которые можно использовать с командой для добавления маршрута сообщений.
 
 |Параметр PowerShell|Параметр CLI|Описание|
 |---|---|---|

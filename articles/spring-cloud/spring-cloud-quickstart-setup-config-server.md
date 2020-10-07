@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 09/08/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 639672bdeff2f833c280a041e497197286c9ff24
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 503eb4bf23c66ca8a9a73c32327f466721024b26
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90885707"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326139"
 ---
 # <a name="quickstart-set-up-azure-spring-cloud-configuration-server"></a>Краткое руководство. Настройка сервера конфигурации Azure Spring Cloud
 
@@ -74,23 +74,9 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 ---
 ::: zone-end
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если вы планируете перейти к следующему краткому руководству из этой серии, пропустите этот шаг.
-
-В этих кратких руководствах показано, как создать ресурсы Azure, за которые будет взиматься плата, если они останутся в вашей подписке. Если вы не планируете продолжать работу со следующим кратким руководством или работать с этими ресурсами в будущем, вы можете удалить группу ресурсов с помощью портала, или выполнив следующую команду в Cloud Shell:
-
-```azurecli
-az group delete --name <your resource group name; for example: helloworld-1558400876966-rg> --yes
-```
-
-В предыдущем кратком руководстве также показано, как задать имя группы ресурсов по умолчанию. Если вы не планируете перейти к следующему краткому руководству, очистите это значение по умолчанию, выполнив такую команду CLI:
-
-```azurecli
-az configure --defaults group=
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
+При прохождении этого краткого руководства вы создали ресурсы Azure, за которые будет взиматься плата, если вы оставите их в своей подписке. Если вы не собираетесь работать со следующим кратким руководством, перейдите к разделу [Очистка ресурсов](spring-cloud-quickstart-logs-metrics-tracing.md#clean-up-resources). Следующее краткое руководство:
 
 > [!div class="nextstepaction"]
 > [Сборка и развертывание приложений](spring-cloud-quickstart-deploy-apps.md)

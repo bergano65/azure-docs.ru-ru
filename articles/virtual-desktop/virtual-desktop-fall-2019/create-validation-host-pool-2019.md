@@ -1,17 +1,17 @@
 ---
 title: Обновление службы в пуле узлов Виртуального рабочего стола Windows (классического) в Azure
-description: Сведения о создании пула узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
+description: Узнайте, как в службе "Виртуальный рабочий стол Windows (классический)" создать пул узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
 author: Heidilohr
 ms.topic: tutorial
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 572b74347194070615efadca4ed6b1329b3f89c2
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 291f1e8b8870257c233dc32894ff49b26c0a3501
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526805"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323535"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates-in-windows-virtual-desktop-classic"></a>Руководство по Создание пула узлов для проверки обновлений службы в Виртуальном рабочем столе Windows (классическом)
 

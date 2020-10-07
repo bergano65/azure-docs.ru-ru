@@ -1,5 +1,5 @@
 ---
-title: Управляемый диск на основе VHD-файла в той же учетной записи — пример для CLI
+title: Создание управляемого диск из VHD-файла в той же учетной записи — пример для CLI
 description: Пример сценария Azure CLI. Создание управляемого диска на основе VHD-файла в учетной записи хранения в той же подписке
 documentationcenter: storage
 author: ramankumarlive
@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 05/19/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 4d979830e622e68cd795f0137b96442a762daade
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: d0795f67390faec4a08882adb1f2b15efcbc6619
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89322774"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91274883"
 ---
 # <a name="create-a-managed-disk-from-a-vhd-file-in-a-storage-account-in-the-same-subscription-with-cli-linux"></a>Создание управляемого диска на основе VHD-файла в учетной записи хранения в той же подписке с помощью CLI (Linux)
 

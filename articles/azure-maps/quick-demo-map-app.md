@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Поиск интерактивной карты с помощью службы Azure Maps
-description: Сведения о создании интерактивных карт с возможностью поиска. Узнайте, как создать учетную запись Azure Maps, получить первичный ключ и использовать веб-пакет SDK для настройки приложений карт.
+description: Краткое руководство. Сведения о создании интерактивных карт с возможностью поиска. Узнайте, как создать учетную запись Azure Maps, получить первичный ключ и использовать веб-пакет SDK для настройки приложений карт.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 7/10/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: fa5cab35416f2629d39ec04803f90fae1a2e5f6d
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 99257b7bef83d0acef484118c7d53aea8eda168c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88031053"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91264292"
 ---
 # <a name="quickstart-create-an-interactive-search-map-with-azure-maps"></a>Краткое руководство. Создание карты с интерактивным поиском с помощью службы Azure Maps
 
@@ -62,7 +62,7 @@ ms.locfileid: "88031053"
 >[!NOTE]
 > Если вместо первичного ключа используется ключ подписки, сопоставление будет отображаться неправильно. Кроме того, в целях безопасности рекомендуется чередовать первичный и вторичный ключи. Для этого обновите приложение, чтобы использовать вторичный ключ, разверните его, а затем нажмите кнопку цикла/обновления рядом с первичным ключом, чтобы создать первичный ключ. Старый первичный ключ будет отключен. Дополнительные сведения о чередовании ключей см. в статье [Настройка смены ключей и аудита в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/secrets/key-rotation-log-monitoring).
 
-:::image type="content" source="./media/quick-demo-map-app/get-key.png" alt-text="Получение первичного ключа Azure Maps на портале Azure":::
+:::image type="content" source="./media/quick-demo-map-app/get-key.png" alt-text="Создание учетной записи службы Azure Maps на портале":::
 
 ## <a name="download-the-demo-application"></a>Скачивание демонстрационной версии приложения
 
@@ -78,7 +78,7 @@ ms.locfileid: "88031053"
 4. Проверьте, как работает интерактивный поиск. В поле поиска в левом верхнем углу демоверсии веб-приложения найдите **restaurants**.
 5. Наведите указатель мыши на список адресов и расположений под полем поиска. Обратите внимание на то, как над соответствующим маркером на карте всплывают сведения об этом расположении. Для обеспечения конфиденциальности частных компаний отображаются вымышленные названия и адреса.
 
-    :::image type="content" source="./media/quick-demo-map-app/interactive-search.png" alt-text="Веб-приложение для интерактивного поиска на карте":::
+    :::image type="content" source="./media/quick-demo-map-app/interactive-search.png" alt-text="Создание учетной записи службы Azure Maps на портале":::
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -92,17 +92,15 @@ ms.locfileid: "88031053"
 2. Перейдите на страницу портала Azure. На главной странице портала выберите **Все ресурсы**. Или щелкните значок меню в верхнем левом углу. Щелкните **Все ресурсы**.
 3. Выберите свою учетную запись службы Azure Maps. В верхней части страницы щелкните **Удалить**.
 
+Дополнительные примеры кода и сведения о возможностях интерактивного программирования см. в следующих практических руководствах:
+
+[Поиск адреса с помощью службы поиска Azure Maps](how-to-search-for-address.md)
+
+[Использование библиотеки Map Control в службе Azure Maps](how-to-use-map-control.md)
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали учетную запись службы Azure Maps и запустили демоверсию приложения. Сведения об Azure Maps см. в этих учебниках:
 
 > [!div class="nextstepaction"]
 > [Поиск ближайшей точки интереса с помощью службы Azure Maps](tutorial-search-location.md)
-
-Дополнительные примеры кода и сведения о возможностях интерактивного программирования см. в следующих практических руководствах:
-
-> [!div class="nextstepaction"]
-> [Поиск адреса с помощью службы поиска Azure Maps](how-to-search-for-address.md)
-
-> [!div class="nextstepaction"]
-> [Использование библиотеки Map Control в службе Azure Maps](how-to-use-map-control.md)

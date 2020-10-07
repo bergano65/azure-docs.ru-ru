@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Клиентская библиотека Распознавателя документов для Java
-description: В этом кратком руководстве описано, как приступить к работе с клиентской библиотекой службы "Распознаватель документов" для Java.
+description: Узнайте, как использовать клиентскую библиотеку Распознавателя документов для Java для создания приложения для обработки форм, которое извлекает из пользовательских документов пары "ключ — значение" и табличные данные.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 06/15/2020
+ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 30c486ccb7bf3b7d537cd1ed3475a8dadc5b4f6d
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 4632c5cb12b6d3c2a1b8d4baebf37e9237704591
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89327016"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318942"
 ---
 > [!IMPORTANT]
 > * Пакет SDK Распознавателя документов в настоящее время предназначен для версии 2.0 службы "Распознаватель документов".
@@ -132,7 +132,8 @@ public class FormRecognizer {
 - Управление моделями, созданными в учетной записи.
 - Копирование настраиваемой модели из одного ресурса Распознавателя документов в другой.
 
-Обратите внимание, что модель можно также обучить с помощью графического пользовательского интерфейса, например [средства разметки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
+> [!NOTE]
+> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
 
 ## <a name="code-examples"></a>Примеры кода
 

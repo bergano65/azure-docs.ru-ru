@@ -10,12 +10,12 @@ author: GitHubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 11/06/2019
-ms.openlocfilehash: 05103052308b6dbf1314348f7d45abc9cba79827
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 552b3f55632e817cc4669ce5da41b1e127c7d808
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "84706449"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91283876"
 ---
 # <a name="tutorial-security-in-azure-sql-managed-instance-using-azure-ad-server-principals-logins"></a>Руководство по обеспечению безопасности Управляемого экземпляра SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -104,7 +104,7 @@ ms.locfileid: "84706449"
     GO
     ```
 
-    ![native-login.png](./media/aad-security-configure-tutorial/native-login.png)
+    ![Снимок экрана: вкладка "Результаты" в обозревателе объектов SSMS со значениями в полях name, principal_id, sid, type и type_desc для добавленного имени для входа](./media/aad-security-configure-tutorial/native-login.png)
 
 Дополнительные сведения можно найти в разделе [CREATE LOGIN (Transact-SQL)](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current).
 
@@ -153,13 +153,13 @@ ms.locfileid: "84706449"
    - "Active Directory — пароль";
    - "Active Directory — встроенная". </br>
 
-     ![SSMS-login-prompt.png](./media/aad-security-configure-tutorial/ssms-login-prompt.png)
+     ![Снимок экрана: диалоговое окно "Подключение к серверу в SSMS" с выделенным пунктом "Active Directory — универсальная с поддержкой MFA" в раскрывающемся списке "Аутентификация"](./media/aad-security-configure-tutorial/ssms-login-prompt.png)
 
      Дополнительные сведения см. в статье [Универсальная проверка подлинности (поддержка SSMS для многофакторной идентификации)](../database/authentication-mfa-ssms-overview.md).
 
 1. Выберите **Active Directory — универсальная с поддержкой MFA**. Откроется окно входа с Многофакторной идентификацией. Войдите с помощью пароля в Azure AD.
 
-    ![mfa-login-prompt.png](./media/aad-security-configure-tutorial/mfa-login-prompt.png)
+    ![Снимок экрана: окно входа с многофакторной проверкой подлинности с курсором в поле для ввода пароля](./media/aad-security-configure-tutorial/mfa-login-prompt.png)
 
 1. В **обозревателе объектов** SSMS щелкните сервер правой кнопкой мыши и выберите **Создать запрос**.
 1. В окне запроса создайте имя для входа для еще одной учетной записи Azure AD, используя следующий синтаксис:
@@ -222,7 +222,7 @@ ms.locfileid: "84706449"
 
 Теперь, когда мы создали базу данных с именем **MyMITestDB** и имя для входа, у которого есть только разрешения по умолчанию, следующим шагом является создание пользователя на основе этого имени для входа. В данный момент имя для входа позволяет подключиться к управляемому экземпляру и видеть все базы данных, но не позволяет взаимодействовать с ними. При входе с помощью учетной записи Azure AD с разрешениями по умолчанию и попытке развернуть только что созданную базу данных отобразится следующая ошибка:
 
-![ssms-db-not-accessible.png](./media/aad-security-configure-tutorial/ssms-db-not-accessible.png)
+![Снимок экрана: сообщение об ошибке в обозревателе объектов SSMS, информирующее о том, что база данных MyMITestDB недоступна (The database MyMITestDB is not accessible. (ObjectExplorer))](./media/aad-security-configure-tutorial/ssms-db-not-accessible.png)
 
 Дополнительные сведения о предоставлении разрешений к базе данных см. в статье [Приступая к работе с разрешениями Database Engine](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions).
 
@@ -326,7 +326,7 @@ ms.locfileid: "84706449"
 1. Установите новое подключение к управляемому экземпляру с помощью пользователя, которому назначена роль `db_datareader`.
 1. Разверните базу данных в **обозревателе объектов**, чтобы просмотреть таблицу.
 
-    ![ssms-test-table.png](./media/aad-security-configure-tutorial/ssms-test-table.png)
+    ![Снимок экрана: обозреватель объектов SSMS со структурой папок в каталоге "Таблицы" в MyMITestDB и выделенной папкой dbo.TestTable](./media/aad-security-configure-tutorial/ssms-test-table.png)
 
 1. Откройте окно нового запроса и выполните следующую инструкцию SELECT:
 
@@ -337,7 +337,7 @@ ms.locfileid: "84706449"
 
     Вы можете просматривать данные таблицы? Должны отобразиться возвращаемые столбцы.
 
-    ![ssms-test-table-query.png](./media/aad-security-configure-tutorial/ssms-test-table-query.png)
+    ![Снимок экрана: вкладка "Результаты" в обозревателе объектов SSMS с заголовками столбцов AccountNum, City, Name и State таблицы](./media/aad-security-configure-tutorial/ssms-test-table-query.png)
 
 ## <a name="impersonate-azure-ad-server-level-principals-logins"></a>Олицетворение субъектов серверного уровня Azure AD (имена для входа)
 

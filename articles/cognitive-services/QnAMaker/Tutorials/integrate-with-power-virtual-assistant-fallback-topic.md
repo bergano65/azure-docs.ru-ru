@@ -3,12 +3,12 @@ title: Руководство по интеграции с Power Virtual Agents 
 description: В этом руководстве рассматривается улучшение качества базы знаний с помощью активного обучения. Просматривайте, подтверждайте, отклоняйте и добавляйте вопросы без удаления или изменения существующих.
 ms.topic: tutorial
 ms.date: 06/08/2020
-ms.openlocfilehash: f1d51f6ad8892252161238eb71fbb02f463463fd
-ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
+ms.openlocfilehash: 6d00833a1331ebca9b070d90f32ee30c56bd5f96
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84635393"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91319220"
 ---
 # <a name="tutorial-add-your-knowledge-base-to-power-virtual-agents"></a>Руководство по добавлению базы знаний в Power Virtual Agents
 Создайте бот [Power Virtual Agents](https://powervirtualagents.microsoft.com/) и дополните его для предоставления ответов из базы знаний.
@@ -123,7 +123,7 @@ ms.locfileid: "84635393"
 
 1. Выберите соединитель **+** , который идет к блоку **Сообщение**, а затем выберите команду **Вызов действия**.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/create-new-item-call-an-action.png" alt-text="Частичный снимок экрана с командой вызова действия.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/create-new-item-call-an-action.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 1. Выберите элемент **Создать поток**. После этого откроется портал Power Automate.
 
@@ -133,7 +133,7 @@ ms.locfileid: "84635393"
 
     Power Automate открывается в новом шаблоне. Вы не будете использовать этот новый шаблон.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-flow-initial-template.png" alt-text="Частичный снимок экрана: Power Automate с новым шаблоном потока.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-flow-initial-template.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 ## <a name="create-a-power-automate-flow-to-connect-to-your-knowledge-base"></a>Создание потока Power Automate для подключения к базе знаний
 
@@ -147,12 +147,12 @@ ms.locfileid: "84635393"
 
 1. На новом экране для потока QnA Maker выберите **Продолжить**.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-qna-flow-template-continue.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой Продолжить.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-qna-flow-template-continue.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 1. Выберите поле действия **Создать ответ** и заполните параметры QnA Maker из предыдущего раздела, озаглавленного [Создание и публикация базы знаний](#create-and-publish-a-knowledge-base). **Узел службы** на следующем рисунке ссылается на узел базы знаний **Узел** и имеет формат `https://YOUR-RESOURCE-NAME.azurewebsites.net/qnamaker`.
 
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-fill-in-generate-answer-settings.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой Продолжить.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-fill-in-generate-answer-settings.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 1. Выберите **Сохранить**, чтобы сохранить поток.
 
@@ -188,21 +188,21 @@ ms.locfileid: "84635393"
 
 1. Во всплывающем окне **Поток** выберите новый поток с именем **Создать ответы с помощью базы знаний QnA Maker...** . В потоке появится новое действие.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-flow-after-adding-action.png" alt-text="Частичный снимок экрана: холст беседы Power Virtual Agent после добавления потока QnA Maker.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-flow-after-adding-action.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 1. Чтобы правильно задать входную переменную для действия QnA Maker, выберите **Выбрать переменную** и нажмите **bot.UnrecognizedTriggerPhrase**.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-selection-action-input.png" alt-text="Частичный снимок экрана: холст беседы Power Virtual Agent с выбором входной переменной.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-selection-action-input.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 
 1. Чтобы правильно задать выходную переменную для действия QnA Maker, в действии **Сообщение** выберите **UnrecognizedTriggerPhrase**, затем щелкните значок, чтобы вставить переменную, `{x}`, и выберите **FinalAnswer**.
 
 1. На контекстной панели инструментов нажмите кнопку **Сохранить**, чтобы сохранить сведения с холста разработки для раздела.
 
-Так выглядит окончательный холст агента.
+Так выглядит окончательное состояние агента на холсте.
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана с окончательной версией агента на холсте](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-topic-authoring-canvas-full-flow.png)
+> ![Снимок экрана: окончательное состояние агента на холсте с разделами "Trigger Phrases" (Фразы-триггеры), "Action" (Действие) и "Message" (Сообщение)](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-topic-authoring-canvas-full-flow.png)
 
 ## <a name="test-the-agent"></a>Тестирование агента
 
@@ -219,7 +219,7 @@ ms.locfileid: "84635393"
     |5|Да|Ответ на `Can I help with anything else?`|
     |6|Как повысить пропускную способность для прогнозов запросов?|Этот вопрос активирует действие возврата, которое отправляет текст в базу знаний для ответа. После этого отображается ответ. Зеленые флажки для отдельных действий указывают на успешное выполнение каждого действия.|
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-test-tracked.png" alt-text="Снимок экрана: чат-бот с холстом с зелеными флажками, обозначающими успешные действия.":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-test-tracked.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 ## <a name="publish-your-bot"></a>Публикация бота
 

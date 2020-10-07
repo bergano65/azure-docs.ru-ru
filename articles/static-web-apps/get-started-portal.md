@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 09/03/2020
 ms.author: cshoe
-ms.openlocfilehash: 66335548381a6f7e3ebf93c97eb212255639644c
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.openlocfilehash: b009b34be69e48ae6205cd9ab88d1583ca9c6561
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90604093"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91280574"
 ---
 # <a name="quickstart-building-your-first-static-web-app-in-the-azure-portal"></a>Краткое руководство. Создание первого статического веб-приложения на портале Azure
 
@@ -37,9 +37,9 @@ ms.locfileid: "90604093"
 1. Выберите **Статические веб-приложения (предварительная версия)** .
 1. Нажмите кнопку **Создать**
 
-Для начала на вкладке _Основные сведения_ настройте новое приложение и свяжите его с репозиторием GitHub.
+В разделе _Основные сведения_ настройте новое приложение и свяжите его с репозиторием GitHub.
 
-:::image type="content" source="media/getting-started-portal/basics-tab.png" alt-text="Вкладка Основные сведения":::
+:::image type="content" source="media/getting-started-portal/basics-tab.png" alt-text="Раздел &quot;Основные сведения&quot;":::
 
 1. Выберите _подписку Azure_.
 1. Выберите или создайте _группу ресурсов_.
@@ -51,7 +51,7 @@ ms.locfileid: "90604093"
 
 После входа с помощью GitHub введите сведения о репозитории.
 
-:::image type="content" source="media/getting-started-portal/repository-details.png" alt-text="Сведения о репозитории":::
+:::image type="content" source="media/getting-started-portal/repository-details.png" alt-text="Раздел &quot;Основные сведения&quot;":::
 
 1. Выберите предпочитаемую _организацию_.
 1. Выберите **my-first-web-static-app** из раскрывающегося списка _Репозиторий_.
@@ -94,18 +94,18 @@ ms.locfileid: "90604093"
 
 1. Выберите **Review + create** (Просмотреть и создать).
 
-    :::image type="content" source="media/getting-started-portal/review-create.png" alt-text="Кнопка Просмотр и создание":::
+    :::image type="content" source="media/getting-started-portal/review-create.png" alt-text="Раздел &quot;Основные сведения&quot;":::
 
     > [!NOTE]
     > Чтобы изменить эти значения после создания приложения, поправьте [файл рабочего процесса](github-actions-workflow.md).
 
 1. Нажмите кнопку **Создать**.
 
-    :::image type="content" source="media/getting-started-portal/create-button.png" alt-text="Кнопка Создать":::
+    :::image type="content" source="media/getting-started-portal/create-button.png" alt-text="Раздел &quot;Основные сведения&quot;":::
 
 1. Выберите **Перейти к ресурсу**.
 
-    :::image type="content" source="media/getting-started-portal/resource-button.png" alt-text="Кнопка Перейти к ресурсу":::
+    :::image type="content" source="media/getting-started-portal/resource-button.png" alt-text="Раздел &quot;Основные сведения&quot;":::
 
 [!INCLUDE [view website](../../includes/static-web-apps-get-started-view-website.md)]
 

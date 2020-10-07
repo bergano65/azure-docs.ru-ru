@@ -3,12 +3,12 @@ title: Руководство по Использование службы "Се
 description: Руководство по Служба "Сетка событий Azure" может быть активирована при передаче больших двоичных объектов в службу хранилища Azure. Это можно использовать для отправки файлов изображений, которые передаются в службу хранилища Azure, в другие службы, например службу "Функции Azure", для изменения размера и других улучшений.
 ms.topic: tutorial
 ms.date: 07/07/2020
-ms.openlocfilehash: 19dfffdcee0fb95ae867b1b26fa51e702658445d
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: 47ac8cad6d7c2ead8d25aa3525aafdab735f9e71
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "86105818"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326598"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Руководство по Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
@@ -20,11 +20,11 @@ ms.locfileid: "86105818"
 
 # <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
 
-![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
+![Снимок экрана: опубликованное веб-приложение в браузере для пакета SDK \.NET 12.](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
 
 # <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
 
-![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
+![Снимок экрана: опубликованное веб-приложение в браузере для пакета SDK \.NET 10.](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
 
 ---
 
@@ -263,7 +263,7 @@ az functionapp deployment source config --name $functionapp `
 
 1.  Щелкните элемент **Интеграция**. Затем последовательно выберите элементы **Триггер сетки событий** и **Создание подписки для Сетки событий**.
 
-    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="Переход к параметру добавления подписки Сетки событий на портале Azure" :::
+    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="Выбор функции Эскиз на портале" :::
 
 1. Задайте значения параметров подписки на событие, указанные в таблице.
     
@@ -301,7 +301,7 @@ az functionapp deployment source config --name $functionapp `
 
 Обратите внимание, что после того как переданное изображение исчезнет, его копия появится в карусели **Generated Thumbnails** (Созданные эскизы). С помощью функции размер этого образа был изменен, после чего он был добавлен в контейнер *эскизов* и скачан веб-клиентом.
 
-![Опубликованное веб-приложение в браузере](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
+![Снимок экрана: опубликованное веб-приложение с названием ImageResizer в браузере для пакета SDK \.NET 12.](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
 
 # <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
 

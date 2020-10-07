@@ -11,14 +11,17 @@ manager: philmea
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: c77dff4a4f89a78dc0a0d723fbb45fe691246112
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 49ca12ed4f408e2a3fce1c8e59f541778f35311e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81681922"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91281785"
 ---
 # <a name="what-is-opc-publisher"></a>Что такое издатель OPC?
+
+> [!IMPORTANT]
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 Издатель OPC —это эталонная реализация, демонстрирующая следующее:
 
@@ -44,6 +47,8 @@ ms.locfileid: "81681922"
 
 Это приложение использует эталонный стек OPC Foundation OPC UA в качестве пакетов NuGet. Ознакомьтесь с условиями лицензирования по адресу [https://opcfoundation.org/license/redistributables/1.3/](https://opcfoundation.org/license/redistributables/1.3/).
 
-### <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы узнали, что представляет собой издатель OPC. Мы предлагаем далее ознакомиться с информацией о [настройке издателя OPC](howto-opc-publisher-configure.md).
+Итак, вы узнали, что представляет собой издатель OPC. Далее мы рекомендуем ознакомиться со следующей статьей:
+
+[Настройка издателя OPC](howto-opc-publisher-configure.md)

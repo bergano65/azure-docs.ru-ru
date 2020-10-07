@@ -10,15 +10,15 @@ keywords: azure media services, stream
 ms.service: media-services
 ms.workload: media
 ms.topic: tutorial
-ms.custom: mvc, devx-track-javascript
+ms.custom: mvc, devx-track-js
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 901287a82ece873a572d7773dd53f80e1e8af716
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 38207ac47d2e58c689f1933a6ade6d5c86cd44ad
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89267400"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268678"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---nodejs"></a>Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью Node.js
 
@@ -74,7 +74,7 @@ ms.locfileid: "89267400"
 
 Вы должны увидеть примерно такой результат:
 
-![Run (Запустить)](./media/stream-files-nodejs-quickstart/run.png)
+![Снимок экрана: окно командной строки с результатами выполнения примера приложения StreamFileSample, в которых указаны URL-адреса трех файлах, скачанных в локальную папку](./media/stream-files-nodejs-quickstart/run.png)
 
 ## <a name="test-with-azure-media-player"></a>Тестирование с помощью Проигрывателя мультимедиа Azure
 

@@ -11,12 +11,12 @@ ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c87a965c96920ea2ce90dae0333147338c99018a
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: f02ec2220827fbec8c981ab3a1859d633675a6f4
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279148"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91313269"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Руководство по  Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
 
@@ -188,7 +188,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 2. Щелкните **значок "плюс" (+)** и выполните поиск по запросу **Azure Active Directory**.
 3. В результатах поиска выберите **Azure Active Directory**.
 4. Нажмите кнопку **создания**.</br>
-![Создание](media/tutorial-password-hash-sync/create1.png)</br>
+![Снимок экрана: создание клиента Azure AD.](media/tutorial-password-hash-sync/create1.png)</br>
 5. Укажите **имя организации** с **первоначальным доменным именем**. Щелкните **Создать**. В результате будет создан каталог.
 6. По завершении щелкните ссылку **здесь**, чтобы перейти к управлению каталогом.
 
@@ -196,10 +196,10 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 Теперь, когда у нас есть клиент Azure AD, мы создадим учетную запись глобального администратора.  Она используется для создания учетной записи соединителя Azure AD во время установки Azure AD Connect.  Учетная запись соединителя Azure AD служит для записи сведений в Azure AD.   Чтобы создать учетную запись глобального администратора, выполните указанные ниже действия.
 
 1.  В разделе **Управление** выберите **Пользователи**.</br>
-![Создание](media/tutorial-password-hash-sync/gadmin1.png)</br>
+![Снимок экрана: выбор параметра "Пользователь" в разделе "Управление", где создается учетная запись глобального администратора Azure AD.](media/tutorial-password-hash-sync/gadmin1.png)</br>
 2.  Выберите пункт **Все пользователи**, а затем выберите **+ Новый пользователь**.
 3.  Укажите имя и имя пользователя. Этот пользователь будет глобальным администратором клиента. Кроме того, может потребоваться изменить **роль каталога** на **Глобальный администратор**. Можно также отобразить временный пароль. Когда все будет готово, нажмите кнопку **Создать**.</br>
-![Создание](media/tutorial-password-hash-sync/gadmin2.png)</br>
+![Снимок экрана: кнопка "Создать", с помощью которой создается учетная запись глобального администратора Azure AD.](media/tutorial-password-hash-sync/gadmin2.png)</br>
 4. По завершении откройте новую вкладку в браузере и выполните вход на странице myapps.microsoft.com, используя новую учетную запись глобального администратора и временный пароль.
 5. Смените пароль глобального администратора и запомните новый пароль.
 
@@ -209,12 +209,12 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 1. Вернувшись на [портал Azure](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview), закройте колонку **Все пользователи**.
 2. В левой части экрана щелкните **Имена пользовательских доменов**.
 3. Нажмите кнопку **Добавить личный домен**.</br>
-![Custom](media/tutorial-federation/custom1.png)</br>
+![Снимок экрана: выделенная кнопка "Добавить личный домен".](media/tutorial-federation/custom1.png)</br>
 4. В колонке **Имена личных доменов** введите имя личного домена в поле, а затем щелкните **Добавить домен**.
 5. На экране "Имя пользовательского домена" будут предоставлены сведения о записях TXT или MX.  Эти сведения следует добавить в информацию DNS на сайте регистратора вашего домена.  То есть вам нужно перейти на сайт своего регистратора доменных имен и ввести сведения о записях TXT или MX в параметрах DNS вашего домена.  Это позволит Azure проверить ваш домен.  На проверку может потребоваться до 24 часов.  Дополнительные сведения см. в документе о [добавлении личного домена](../../active-directory/fundamentals/add-custom-domain.md).</br>
-![Custom](media/tutorial-federation/custom2.png)</br>
+![Снимок экрана, на котором показана область, где добавляются данные TXT или MX.](media/tutorial-federation/custom2.png)</br>
 6. Чтобы узнать, проверен ли домен, нажмите кнопку "Проверить".</br>
-![Custom](media/tutorial-federation/custom3.png)</br>
+![Снимок экрана: сообщение об успешной проверке, которое отображается после нажатия кнопки "Проверить".](media/tutorial-federation/custom3.png)</br>
 
 ## <a name="download-and-install-azure-ad-connect"></a>Скачивание и установка Azure AD Connect
 Теперь пора скачать и установить Azure AD Connect.  После скачивания мы произведем экспресс-установку.  Выполните следующие действия.

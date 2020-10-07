@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 52cf3af4b4ab84c12b2e1b5d7f076c43e652157d
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: a2e6111f2df5a8d7334a85ec5b6a9e514368ad6c
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90031319"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289486"
 ---
 # <a name="manage-access-to-workspaces-data-and-pipelines"></a>Управление доступом к рабочим областям, данным и конвейерам
 
@@ -64,14 +64,14 @@ ms.locfileid: "90031319"
 
 1. Перейдите к [**пользовательскому веб-интерфейсу Azure Synapse**](https://web.azuresynapse.net).
 2. Последовательно выберите **Управление**  > **Безопасность** > **Управление доступом**.
-3. Щелкните **Добавить администратора** и выберите `Synapse_WORKSPACENAME_Admins`.
+3. Нажмите **Добавить администратора** и выберите `Synapse_WORKSPACENAME_Admins`.
 
 ### <a name="step-4-configure-sql-admin-access-for-the-workspace"></a>Шаг 4. Настройка доступа администратора SQL для рабочей области
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к рабочей области.
 3. Последовательно выберите **Параметры** > **Администратор Active Directory**.
-4. Щелкните **Задать администратора**.
+4. Нажмите **Задать администратора**.
 5. Выберите `Synapse_WORKSPACENAME_Admins`
 6. Щелкните **Выбрать**.
 7. Нажмите кнопку **Сохранить**.

@@ -12,12 +12,12 @@ ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9cd70d534cebf35938285208dc76bd4a6d94533
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.openlocfilehash: 3d9f59906c566d80344891c0796a85b0a4972e68
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89279012"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91313099"
 ---
 # <a name="tutorial--setting-up-phs-as-backup-for-ad-fs-in-azure-ad-connect"></a>Руководство по  Настройка PHS в качестве резервной копии для AD FS в Azure AD Connect
 
@@ -74,7 +74,7 @@ ms.locfileid: "89279012"
 
 1. Перейдите на сайт [https://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.</br>
-   ![Проверка](media/tutorial-password-hash-sync/verify1.png)</br>
+   ![Снимок экрана: сообщение об успешном выполнении при проверке входа. ](media/tutorial-password-hash-sync/verify1.png)</br>
 
 ## <a name="switch-back-to-federation"></a>Переключение обратно на федерацию
 Теперь мы покажем, как переключиться обратно на федерацию.  Для этого сделайте следующее:
@@ -91,7 +91,7 @@ ms.locfileid: "89279012"
 10. Завершив настройку, нажмите кнопку **Далее**.
 ![Настройка](media/tutorial-phs-backup/backup4.png)</br>
 11. На экране **Проверка подключения федерации** нажмите кнопку **Проверка**.  Может потребоваться настроить записи DNS (добавление записей типа A и AAAA) для успешного завершения.
-![Проверка](media/tutorial-phs-backup/backup5.png)</br>
+![Снимок экрана: окно "Проверка подключения федерации" и кнопка "Проверить".](media/tutorial-phs-backup/backup5.png)</br>
 12. Щелкните **Выход**.
 
 ## <a name="reset-the-ad-fs-and-azure-trust"></a>Сброс отношения доверия Azure и AD FS
@@ -106,7 +106,7 @@ ms.locfileid: "89279012"
 6.  На экране **Подключение к AD FS** введите имя пользователя и пароль в формате "contoso\Администратор" и нажмите кнопку **Далее**.
 7.  На экране **Сертификаты** нажмите кнопку **Далее**.
 
-## <a name="test-signing-in-with-one-of-our-users"></a>Проверка входа с помощью одной из учетных записей
+## <a name="test-signing-in-with-a-user"></a>Проверка входа с учетной записью пользователя
 
 1.  Перейдите на сайт [https://myapps.microsoft.com](https://myapps.microsoft.com).
 2. Выполните вход с помощью учетной записи пользователя, которая была создана в новом клиенте.  Для этого следует использовать следующий формат: (user@domain.onmicrosoft.com). Используйте тот же пароль, что и для входа в локальную среду.

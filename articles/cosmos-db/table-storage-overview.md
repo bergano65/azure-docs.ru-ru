@@ -1,6 +1,6 @@
 ---
 title: Обзор Табличного хранилища Azure
-description: Хранение структурированных данных в облаке в хранилище таблиц Azure (хранилище данных NoSQL).
+description: Узнайте, как использовать Хранилище таблиц Azure для хранения гибких наборов данных, например пользовательских данных для веб-приложений, адресных книг, сведений об устройстве или метаданных другого типа.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: dotnet
@@ -9,12 +9,12 @@ ms.date: 05/20/2019
 author: sakash279
 ms.author: akshanka
 ms.reviewer: sngun
-ms.openlocfilehash: 20c799f89394dd8978f120097b054a9adf9f1280
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: abd88c3cdb54747c21ad8772860a3ed6929dbd15
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76770738"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318727"
 ---
 # <a name="azure-table-storage-overview"></a>Обзор табличного хранилища
 
@@ -30,7 +30,7 @@ ms.locfileid: "76770738"
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 
-* [Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET](table-storage-how-to-use-dotnet.md)
+* [Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET](table-storage-how-to-use-dotnet.md)
 
 * Дополнительные сведения о доступных API-интерфейсах см. в справочной документации по службе таблиц:
 

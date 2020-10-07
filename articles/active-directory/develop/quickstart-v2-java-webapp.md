@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: 10ae1c76d48c1cedbb915fec66177ac3612feea0
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: d1b79d60bba89ef01b261c403fe3b25939669d0b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115226"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91258104"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -193,15 +193,16 @@ ms.locfileid: "88115226"
 3.   HTTP-порт Tomcat по умолчанию — 8080, но для HTTPS-подключений требуется порт 8443. Чтобы выполнить настройку:
         - Перейдите к файлу tomcat/conf/server.xml
         - Найдите тег `<connector>` и замените существующий соединитель следующим:
-        ```
+
+        ```xml
         <Connector
                    protocol="org.apache.coyote.http11.Http11NioProtocol"
                    port="8443" maxThreads="200"
                    scheme="https" secure="true" SSLEnabled="true"
                    keystoreFile="C:/Path/To/Keystore/File/keystore.p12" keystorePass="KeystorePassword"
                    clientAuth="false" sslProtocol="TLS"/>
-        ``` 
-       
+        ```
+
 4. Откройте командную строку, перейдите в корневую папку этого примера (где находится файл pom.xml) и запустите `mvn package` для сборки проекта.
     - В целевом каталоге будет создан файл `msal-web-sample-0.1.0.war`.
     - Измените имя файла на `msal4jsample.war`.
@@ -249,16 +250,11 @@ compile group: 'com.microsoft.azure', name: 'msal4j', version: '1.0.0'
 import com.microsoft.aad.msal4j.*;
 ```
 
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
 ## <a name="next-steps"></a>Next Steps
 
-Дополнительные сведения о разрешениях и согласии:
+Тема создания веб-приложений, которые выполняют вход пользователей с помощью платформы Microsoft Identity, подробно рассматривается в нашей серии сценариев:
 
 > [!div class="nextstepaction"]
-> [Разрешения и согласие](./v2-permissions-and-consent.md)
-
-Дополнительные сведения о потоке авторизации для этого сценария, см. в разделе "Поток кода авторизации Oauth 2.0":
-
-> [!div class="nextstepaction"]
-> [Поток кода авторизации Oauth](./v2-oauth2-auth-code-flow.md)
-
-[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+[Scenario: Веб-приложение, выполняющее вход пользователей](scenario-web-app-sign-user-overview.md?tabs=java)

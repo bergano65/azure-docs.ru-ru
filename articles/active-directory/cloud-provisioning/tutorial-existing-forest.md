@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25e70809becd59ceeb3c45867b9e35119df497a3
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 4b247009669d6008644c9beb54fb687138b81716
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526924"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91266417"
 ---
 # <a name="integrate-an-existing-forest-and-a-new-forest-with-a-single-azure-ad-tenant"></a>Интеграция существующего и нового лесов с одним клиентом Azure AD
 
@@ -60,14 +60,14 @@ ms.locfileid: "90526924"
 4. Щелкните "Скачивание агента".
 5. Запуск агента подготовки Azure AD Connect
 6. На экране-заставке **примите** условия лицензионного соглашения и щелкните **Установить**.</br>
-![Экран приветствия](media/how-to-install/install1.png)</br>
+![Снимок экрана: экран-заставка пакета агента подготовки Microsoft Azure AD Connect](media/how-to-install/install1.png)</br>
 
 7. После завершения этой операции откроется мастер настройки.  Войдите с учетной записью глобального администратора Azure AD.  Обратите внимание, что если он включен повышенный уровень безопасности IE, вход будет заблокирован.  В этом случае закройте окно установки, отключите повышенный уровень безопасности IE в диспетчере сервера и щелкните значок **мастера агента подготовки AAD Connect**, чтобы снова запустить установку.
 8. На экране **Connect Active Directory** (Подключение Active Directory) щелкните **Добавить каталог** и выполните вход с учетной записью администратора домена Active Directory.  Примечание. Учетная запись администратора домена не должна иметь требований к изменению пароля. Если пароль изменится или истечет срок его действия, вам придется повторно настроить новые учетные данные в агенте. Эта операция добавляет локальный каталог.  Щелкните **Далее**.</br>
-![Экран приветствия](media/how-to-install/install3.png)</br>
+![Снимок экрана: экран "Connect Active Directory" (Подключение Active Directory)](media/how-to-install/install3.png)</br>
 
 9. На странице **Конфигурация завершена** щелкните **Подтвердить**.  Эта операция регистрирует и перезапускает агент.</br>
-![Экран приветствия](media/how-to-install/install4.png)</br>
+![Снимок экрана: экран "Конфигурация завершена"](media/how-to-install/install4.png)</br>
 
 10. После завершения операции появится сообщение: **Your agent configuration was successfully verified** (Конфигурация агента успешно проверена).  Здесь можно щелкнуть **Выйти**.</br>
 ![Экран приветствия](media/how-to-install/install5.png)</br>

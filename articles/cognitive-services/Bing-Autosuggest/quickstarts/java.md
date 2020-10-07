@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing и Java.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/06/2020
 ms.custom: devx-track-java
 ms.author: aahi
-ms.openlocfilehash: 4850daf8544129e29333be6a807c91106cc11f05
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: dc20b6abaf04b3743218e35d258bc8beab33c542
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321094"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91277450"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-java"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 

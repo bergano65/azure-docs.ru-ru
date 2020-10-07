@@ -8,14 +8,17 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 3c474b57533cb6165ce7fe77defccd4cb7042b06
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3df10c9d7630e9db76994e8e508f30adb986e0d5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82189928"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91281819"
 ---
 # <a name="what-is-industrial-iot-iiot"></a>Что собой представляет промышленный Интернет вещей (ПИВ)
+
+> [!IMPORTANT]
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 ПИВ — это промышленный Интернет вещей. ПИВ повышает производительность производства путем использования Интернета вещей в промышленности. 
 
@@ -49,5 +52,4 @@ OPC Vault — это реализация OPC UA Global Discovery Server (GDS),
 
 Теперь, когда ознакомились с основами промышленного Интернета вещей и его компонентов, мы предлагаем:
 
-> [!div class="nextstepaction"]
-> [Что такое OPC Twin](overview-opc-twin.md)
+[Что такое OPC Twin](overview-opc-twin.md)

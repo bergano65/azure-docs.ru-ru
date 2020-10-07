@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 08/27/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 115f01bffc4664798682923cb83a99a23a8ce274
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 3f64086ed97594416b5964cf648c857c2f271480
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88958343"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91331103"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway-using-azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
@@ -53,6 +53,8 @@ New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 1. Создайте конфигурации подсети с помощью `New-AzVirtualNetworkSubnetConfig`.
 2. Создайте виртуальную сеть с конфигурациями подсетей с помощью `New-AzVirtualNetwork`. 
 3. Создайте общедоступный IP-адрес с помощью `New-AzPublicIpAddress`. 
+> [!NOTE]
+> [Политики конечных точек служб для виртуальной сети](../virtual-network/virtual-network-service-endpoint-policies-overview.md) в настоящее время не поддерживаются в подсети Шлюза приложений.
 
 ```azurepowershell-interactive
 $agSubnetConfig = New-AzVirtualNetworkSubnetConfig `

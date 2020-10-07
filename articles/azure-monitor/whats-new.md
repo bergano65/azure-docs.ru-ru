@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: 0269d870f55f7246529b9d98608e5a325b6cf468
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: d82e9244152f1ecb78b062b4b1dbf02c45c505a1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89569532"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91325663"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
@@ -19,9 +19,67 @@ ms.locfileid: "89569532"
 
 ## <a name="august-2020"></a>Август 2020 г.
 
-### <a name="containers"></a>Контейнеры
+### <a name="general"></a>Общие сведения
 
+- [Что отслеживается службой Azure Monitor](monitor-reference.md) — статья обновлена и теперь содержит сведения об агенте Azure Monitor.
+
+
+### <a name="agents"></a>Агенты
+- [Общие сведения об агенте Azure Monitor](platform/azure-monitor-agent-overview.md) — новая статья.
+- [Использование Azure Monitor для гибридной среды](insights/vminsights-enable-hybrid.md) — обновленная версия агента зависимостей.
+- [Общие сведения об агентах Azure Monitor](platform/agents-overview.md) — добавлены агент Azure Monitor и объединенная таблица поддержки ОС.
+
+
+#### <a name="new-and-updated-articles-from-restructure-of-agent-content"></a>Новые и измененные статьи, посвященные реструктуризации содержимого агента
+- [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md)
+- [Установка агента Log Analytics на компьютерах Linux](platform/agent-linux.md)
+- [Установка агента Log Analytics на компьютерах Windows](platform/agent-windows.md)
+- [Общие сведения об агенте Log Analytics](platform/log-analytics-agent.md)
+
+### <a name="application-insights"></a>Application Insights
+- [Azure Application Insight для веб-приложений JavaScript](app/javascript.md) — добавлен раздел со сведениями о корреляции сервера клиента и конфигурации для корреляции CORS.
+- [Создание ресурса Azure Monitor Application Insights на основе рабочей области](app/create-workspace-resource.md) — добавлены возможности, предоставляемые приложениями на основе рабочей области.
+- [IP-адреса, используемые Application Insights и Log Analytics](app/ip-addresses.md) — обновлены IP-адреса для Live Metrics Stream.
+- [Отслеживание приложений Java в любой среде — Azure Monitor Application Insights](app/java-in-process-agent.md) — добавлена таблица поддерживаемых пользовательских данных телеметрии.
+- [Подключаемый модуль React Native для пакета SDK JavaScript для Application Insights](app/javascript-react-native-plugin.md) — новая статья.
+- [Подключаемый модуль React для пакета SDK JavaScript для Application Insights](app/javascript-react-plugin.md) — новая статья.
+- [Примеры шаблонов Resource Manager для создания приложений-функций Azure с мониторингом Application Insights](samples/resource-manager-function-app.md) — новая статья.
+- [Примеры шаблонов Resource Manager для создания веб-приложений Службы приложений Azure с мониторингом Application Insights](samples/resource-manager-web-app.md) — новая статья.
+- [Анализ использования с помощью Application Insight](app/usage-overview.md) — добавлено видео.
+
+### <a name="autoscale"></a>Автомасштабирование
+- [Начало работы с автомасштабированием в Azure](platform/autoscale-get-started.md) — добавлен раздел о маршрутизации в работоспособных экземплярах для Службы приложений Azure.
+
+### <a name="data-collection"></a>Сбор данных
+- [Настройка сбора данных для агента Azure Monitor (предварительная версия)](platform/data-collection-rule-azure-monitor-agent.md) — новая статья.
+- [Правила сбора данных в службе Azure Monitor (предварительная версия)](platform/data-collection-rule-overview.md) — новая статья.
+
+
+### <a name="containers"></a>Контейнеры
 - [Сбор метрик развертывания и HPA с помощью Azure Monitor для контейнеров](insights/container-insights-deployment-hpa-metrics.md) — новая статья.
+
+### <a name="insights"></a>Аналитика
+- [Решения для мониторинга в Azure Monitor](insights/solutions.md) — обновлена для нового пользовательского интерфейса.
+- [Решение "Монитор производительности сети" в Azure](insights/network-performance-monitor.md) — добавлены поддерживаемые регионы рабочей области.
+
+
+### <a name="logs"></a>Журналы
+- [Azure Monitor: вопросы и ответы](faq.md) — добавлена запись об удалении данных из рабочей области. Добавлена запись для ответов 502 и 503.
+  - [Проектирование развертывания журналов Azure Monitor](platform/design-logs-deployment.md) — обновлен раздел "Ограничение скорости тома для масштабирования и приема".
+- [Управление использованием и затратами для журналов Azure Monitor](platform/manage-cost-storage.md) — изменены запросы на использование для более эффективного формата запросов.
+- [Оптимизация запросов журналов в Azure Monitor](log-query/query-optimization.md) — добавлены конкретные значения идентификаторов производительности.
+- [Примеры шаблонов Resource Manager для параметров диагностики в Azure Monitor](samples/resource-manager-diagnostic-settings.md) — добавлен пример для журналов аудита запросов к журналам.
+
+
+### <a name="platform-logs"></a>Журналы платформы
+- [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](platform/diagnostic-settings.md) — добавлено региональное требование для параметров диагностики.
+
+### <a name="visualizations"></a>Визуализации
+- [Общие сведения о Workbooks Azure Monitor](platform/workbooks-overview.md) — добавлено видео.
+- [Перемещение шаблона Azure Workbook в другой регион](platform/workbook-templates-move-region.md) — новая статья.
+- [Перемещение Azure Workbook в другой регион](platform/workbooks-move-region.md) — новая статья.
+
+
 
 ## <a name="july-2020"></a>Июль 2020 г.
 
@@ -500,7 +558,6 @@ ms.locfileid: "89569532"
 - [Использование Application Insights для приложений службы рабочих ролей (не HTTP-приложений)](app/worker-service.md) — в код C# добавлен уровень ведения журнала по умолчанию. Обновлена версия ссылки на пакет.
 - [Справочник по файлу ApplicationInsights.config в Azure](app/configuration-with-applicationinsights-config.md) — обновлен пример кода.
 - [Автоматизация Application Insights Azure с помощью PowerShell](app/powershell.md) — обновлен шаблон Resource Manager.
-- [Пакеты NuGet для Azure Monitor и Application Insights ](app/nuget.md) — обновлены версии пакетов.
 - [Создание ресурса Azure Application Insights](app/create-new-resource.md) — добавлено примечание для глобально уникального имени.
 - [Диагностика с помощью Live Metrics Stream в Azure Application Insights](app/live-stream.md) — обновлена версия пакета SDK для ASP.NET Core.
 - [Счетчики событий в Application Insights](app/eventcounters.md) — обновлены категория и таблица для customMetrics.

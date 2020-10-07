@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по созданию устройства Azure IoT Edge на платформе Linux | Документация Майкрософт
-description: Из этого краткого руководства вы узнаете, как создать устройство IoT Edge и удаленно развернуть готовый код на портале Azure.
+description: Из этого краткого руководства вы узнаете, как создать устройство IoT Edge под управлением Linux и удаленно развернуть готовый код на портале Azure.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 36bebe829ccf81ef5b1832b90b2f73d15d5499af
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: bbed5899a860f3ba8ac7047a283966536f6c8a87
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87384809"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91328624"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
@@ -93,7 +93,7 @@ ms.locfileid: "87384809"
 2. Просмотрите строку подключения для устройства, которая связывает физическое устройство с его удостоверением в Центре Интернета вещей. Она содержит имя центра Интернета вещей и имя устройства, а также общий ключ, который используется для аутентификации подключений между ними. Мы будем использовать эту строку подключения еще раз в следующем разделе при настройке устройства IoT Edge.
 
    ```azurecli-interactive
-   az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {hub_name}
+   az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name {hub_name}
    ```
 
    ![Просмотр строки подключения в выходных данных CLI](./media/quickstart/retrieve-connection-string.png)
@@ -117,7 +117,7 @@ ms.locfileid: "87384809"
 * Пользователям Bash и Cloud Shell нужно скопировать следующую команду в текстовый редактор, а затем заменить текст заполнителя своими данными и скопировать его в окно Bash или Cloud Shell:
 
    ```azurecli-interactive
-   az deployment group create --resource-group IoTEdgeResources --template-uri "https://aka.ms/iotedge-vm-deploy" --parameters dnsLabelPrefix='my-edge-vm' --parameters adminUsername='azureUser' --parameters deviceConnectionString=$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) --parameters authenticationType='password' --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
+   az deployment group create --resource-group IoTEdgeResources --template-uri "https://aka.ms/iotedge-vm-deploy" --parameters dnsLabelPrefix='my-edge-vm' --parameters adminUsername='azureUser' --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) --parameters authenticationType='password' --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
    ```
 
 * Пользователям PowerShell нужно скопировать следующую команду в окно PowerShell, а затем заменить текст заполнителя своими данными:
@@ -128,7 +128,7 @@ ms.locfileid: "87384809"
    --template-uri "https://aka.ms/iotedge-vm-deploy" `
    --parameters dnsLabelPrefix='my-edge-vm1' `
    --parameters adminUsername='azureUser' `
-   --parameters deviceConnectionString=$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) `
+   --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) `
    --parameters authenticationType='password' `
    --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
    ```

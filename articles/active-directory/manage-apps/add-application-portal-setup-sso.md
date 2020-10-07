@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Настройка единого входа для приложения в арендаторе Azure Active Directory (Azure AD)
-description: В этом кратком руководстве описывается процесс настройки единого входа для приложения в арендаторе Azure Active Directory (Azure AD).
+title: Краткое руководство. Настройка единого входа на основе SAML для приложения в арендаторе Azure Active Directory (Azure AD)
+description: В этом кратком руководстве описывается процесс настройки единого входа на основе SAML для приложения в арендаторе Azure Active Directory (Azure AD).
 services: active-directory
 author: kenwith
 manager: celestedg
@@ -10,15 +10,14 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 040cc2dfa48f24fff4c7dda2cb6010efb01e9b86
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: d9ef069291f010db510d626ceda959a0342c39e2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89300142"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91305789"
 ---
-# <a name="quickstart-set-up-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа для приложения в арендаторе Azure Active Directory (Azure AD)
+# <a name="quickstart-set-up-saml-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа на основе SAML для приложения в арендаторе Azure Active Directory (Azure AD)
 
 Чтобы использовать упрощенный вход пользователей, настройте единый вход для приложения, которое вы добавили в арендатор Azure Active Directory (Azure AD). Когда вы настроите единый вход пользователи смогут входить в приложение, используя свои учетные данные Azure AD. Возможности единого входа включены в бесплатную версию Azure AD.
 
@@ -38,7 +37,6 @@ ms.locfileid: "89300142"
 >[!IMPORTANT]
 >Не используйте рабочую среду для проверки инструкций, приведенных в этом кратком руководстве.
 
-
 ## <a name="enable-single-sign-on-for-an-app"></a>Включение единого входа для приложения
 
 После того как приложение будет добавлено в арендатор Azure AD, отобразится страница обзора. Если вы настраиваете уже добавленное приложение, ознакомьтесь с первым кратким руководством. Оно поможет просмотреть приложения, добавленные в арендатор. 
@@ -48,19 +46,21 @@ ms.locfileid: "89300142"
 1. На портале Azure AD выберите элемент **Корпоративные приложения**. Найдите и выберите приложение, для которого нужно настроить единый вход.
 1. В разделе **Управление** выберите **Единый вход**, чтобы открыть область **Единый вход** для изменения.
 
+    > [!IMPORTANT]
+    > Если для единого входа приложение использует стандарт OpenID Connect (OIDC), в области навигации не будет отображаться параметр единого входа. Сведения о настройке единого входа на основе OIDC см. в соответствующем кратком руководстве.
+
     :::image type="content" source="media/add-application-portal-setup-sso/configure-sso.png" alt-text="Снимок экрана со страницей настройки единого входа на портале Azure AD.":::
 
 1. Выберите **SAML**, чтобы открыть страницу настройки единого входа. В этом примере мы настраиваем для единого входа приложение GitHub. После настройки приложения GitHub пользователи смогут входить в GitHub с помощью своих учетных данных из арендатора Azure AD.
 
-    :::image type="content" source="media/add-application-portal-setup-sso/github-sso.png" alt-text="Снимок экрана со страницей настройки единого входа в GitHub.":::
+    :::image type="content" source="media/add-application-portal-setup-sso/github-sso.png" alt-text="Снимок экрана со страницей настройки единого входа на портале Azure AD.":::
 
 1. Процесс настройки приложения для использования Azure AD для единого входа на основе SAML зависит от приложения. Доступна ссылка на руководство для GitHub. Инструкции для других приложений см. в статье [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/).
 1. Следуйте указаниям по настройке единого входа для приложения. Многие приложения имеют определенные требования к подписке для включения единого входа. Например, приложение GitHub требует наличия подписки Enterprise.
     > [!TIP]
     > Дополнительные сведения о параметрах конфигурации SAML см. в разделе [Настройка единого входа на основе SAML](configure-saml-single-sign-on.md).
 
-    :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Снимок экрана с параметром единого входа в подписке Enterprise на странице цен на GitHub.":::
-
+    :::image type="content" source="media/add-application-portal-setup-sso/github-pricing.png" alt-text="Снимок экрана со страницей настройки единого входа на портале Azure AD.":::
 
 > [!TIP]
 > Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](https://docs.microsoft.com/graph/application-saml-sso-configure-api).

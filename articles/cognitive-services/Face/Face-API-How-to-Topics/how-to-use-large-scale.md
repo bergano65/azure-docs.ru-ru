@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c4667b810e4d3d5f13e13572e2420880da5a8a0b
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 5341c2613624c6a52f1649dcd8a64b6746b84f67
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88931630"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332395"
 ---
 # <a name="example-use-the-large-scale-feature"></a>Пример Использование функции для увеличения масштаба
 
@@ -260,7 +260,7 @@ private static void TrainTimerOnElapsed(string largePersonGroupId, int timeInter
 }
 ```
 
-Дополнительные сведения о реализации управления данными и идентификации см. в статьях с примерами [добавления лиц](how-to-add-faces.md) и [идентификации лиц на изображении](HowtoIdentifyFacesinImage.md).
+Дополнительные сведения о реализации управления данными и идентификации см. в статье [Добавление лиц в PersonGroup](how-to-add-faces.md).
 
 ## <a name="summary"></a>Сводка
 
@@ -271,7 +271,7 @@ private static void TrainTimerOnElapsed(string largePersonGroupId, int timeInter
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Следуйте руководству, чтобы узнать, как добавить лица в PersonGroup или выполнить операцию Identify для PersonGroup.
+Следуйте руководству, чтобы узнать, как добавить лица в PersonGroup или написать скрипт для выполнения операции Identify с PersonGroup.
 
 - [Добавление лиц](how-to-add-faces.md)
-- [Идентификация лиц на изображении](HowtoIdentifyFacesinImage.md)
+- [Краткое руководство по использованию клиентской библиотеки API "Распознавание лиц"](../Quickstarts/client-libraries.md)

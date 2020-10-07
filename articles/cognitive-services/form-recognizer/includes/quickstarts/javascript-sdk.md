@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Клиентская библиотека Распознавателя документов для JavaScript
-description: В этом кратком руководстве описано, как приступить к работе с клиентской библиотекой службы "Распознаватель документов" для JavaScript.
+description: Использование клиентской библиотеки Распознавателя документов для JavaScript для создания приложения для обработки форм, которое извлекает из документов пары "ключ — значение" и табличные данные.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
-ms.date: 08/21/2020
+ms.date: 09/21/2020
 ms.author: pafarley
-ms.custom: devx-track-javascript, devx-track-csharp
-ms.openlocfilehash: cc72fa9e05dd25ef2d63f126f0fbb45841cb799c
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.custom: devx-track-js, devx-track-csharp
+ms.openlocfilehash: af6ca27236649ef915bbb52853fc0c34e29fb800
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934363"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318933"
 ---
 > [!IMPORTANT]
 > * Пакет SDK Распознавателя документов в настоящее время предназначен для версии 2.0 службы "Распознаватель документов".
@@ -84,7 +84,9 @@ npm install @azure/ai-form-recognizer
 * Управление моделями, созданными в учетной записи.
 * Копирование настраиваемой модели из одного ресурса Распознавателя документов в другой.
 
-Обратите внимание, что модель можно также обучить с помощью графического пользовательского интерфейса, например [средства разметки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
+> [!NOTE]
+> Модели можно также обучить с помощью графического пользовательского интерфейса, например [средства маркировки Распознавателя документов](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool).
+
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -114,7 +116,7 @@ const trainingClient = new FormTrainingClient(endpoint, new AzureKeyCredential(a
 const client = new FormRecognizerClient(endpoint, new AzureKeyCredential(apiKey));
 ```
 
-## <a name="assets-for-testing"></a>Ресурсы для тестирования
+## <a name="get-assets-for-testing"></a>Получение ресурсов для тестирования
 
 Во фрагментах кода в этом руководстве используются удаленные формы, доступ к которым осуществляется по URL-адресам. Если вместо этого вы планируете работать с локальными документами, воспользуйтесь соответствующими методами, которые описаны в [справочной документации](https://docs.microsoft.com/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer) и [образцах](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples).
 

@@ -8,14 +8,17 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 1e08968034134e2b9ab3b8064387d18663d5c866
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: eb558d967ad657d14158684fba92b13979ea5fe2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "71200149"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91281594"
 ---
 # <a name="opc-vault-architecture"></a>Архитектура хранилища OPC
+
+> [!IMPORTANT]
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 В этой статье приводятся общие сведения о микрослужбе хранилища OPC и модуле IoT Edge хранилища OPC.
 

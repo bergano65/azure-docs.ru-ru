@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/03/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 56198392f3c769837d8d672b861baa9b341d284e
-ms.sourcegitcommit: 9c262672c388440810464bb7f8bcc9a5c48fa326
+ms.openlocfilehash: 760a3a194e181576acb3601aabc07c6900cb664e
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89419356"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91276770"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET
 
@@ -120,7 +120,7 @@ tableClient.TableClientConfiguration.UseRestExecutorForCosmosEndpoint = true;
 
 ## <a name="insert-or-merge-an-entity"></a>Вставка или слияние сущностей
 
-Следующий пример кода создает объект сущности и добавляет его в таблицу. Метод InsertOrMerge из класса [TableOperation](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.tableoperation) используется для вставки или слияния сущностей. Для выполнения этой операции вызывается метод [CloudTable.ExecuteAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.cloudtable.executeasync?view=azure-dotnet). 
+Следующий пример кода создает объект сущности и добавляет его в таблицу. Метод InsertOrMerge из класса [TableOperation](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.tableoperation) используется для вставки или слияния сущностей. Для выполнения этой операции вызывается метод [CloudTable.ExecuteAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.cloudtable.executeasync?view=azure-dotnet&preserve-view=true). 
 
 Щелкните проект **CosmosTableSamples** правой кнопкой мыши. Выберите **Добавить**, **Новый элемент** и добавьте класс с именем **SamplesUtils.cs**. Этот класс содержит весь необходимый код для выполнения операций CRUD для сущностей. 
 
@@ -158,9 +158,7 @@ tableClient.TableClientConfiguration.UseRestExecutorForCosmosEndpoint = true;
 
 Теперь скомпилируйте решение и запустите проект, нажав клавишу F5. При выполнении проекта вы увидите в командной строке следующие выходные данные:
 
-:::image type="content" source="./media/tutorial-develop-table-standard/output-from-sample.png" alt-text="Выходные данные в командной строке":::
-
-Если возникнет ошибка с сообщением о том, что при запуске проекта файл Settings.json не удалось найти, эту ошибку можно устранить, добавив в настройки проекта следующую XML-запись. Щелкните правой кнопкой мыши CosmosTableSamples, выберите "Редактировать CosmosTableSamples.csproj" и добавьте следующий элемент itemGroup. 
+:::image type="content" source="./media/tutorial-develop-table-standard/output-from-sample.png" alt-text="Просмотр и копирование основной строки подключения на панели строки подключения" и добавьте следующий элемент itemGroup. 
 
 ```csharp
   <ItemGroup>
@@ -171,11 +169,11 @@ tableClient.TableClientConfiguration.UseRestExecutorForCosmosEndpoint = true;
 ```
 Теперь можно войти на портал Azure и проверить, появились ли данные в таблице. 
 
-:::image type="content" source="./media/tutorial-develop-table-standard/results-in-portal.png" alt-text="Результаты на портале":::
+:::image type="content" source="./media/tutorial-develop-table-standard/results-in-portal.png" alt-text="Просмотр и копирование основной строки подключения на панели строки подключения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как перенести данные в учетную запись API таблиц Azure Cosmos DB. 
 
 > [!div class="nextstepaction"]
->[Сведения о запросе данных](../cosmos-db/table-import.md)
+>[Перенос данных в учетную запись API таблиц в Azure Cosmos DB](../cosmos-db/table-import.md)

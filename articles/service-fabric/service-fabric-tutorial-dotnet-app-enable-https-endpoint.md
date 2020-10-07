@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: b309a13288c8ea95f453c1e80549a979e3f89921
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: c675f8ece8369bcfc0055343221ac82aea59dec1
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89441533"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91326241"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -354,7 +354,7 @@ if ($cert -eq $null)
 
 Сохраните все файлы и нажмите клавишу F5 для запуска приложения локально.  После развертывания приложения веб-браузер откроется на странице https:\//localhost:443. Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
 
-![Приложение для голосования][image2]
+![Снимок экрана: приложение Service Fabric Voting Sample, выполняющееся в окне браузера с URL-адресом https://localhost/.][image2]
 
 ## <a name="install-certificate-on-cluster-nodes"></a>Установка сертификата на узлы кластера
 
@@ -371,7 +371,7 @@ if ($cert -eq $null)
 > [!Warning]
 > Самозаверяющего сертификата достаточно для разработки и тестирования приложений. Для рабочих приложений вместо самозаверяющего сертификата в качестве сертификата нужно использовать сертификат [из центра сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority).
 
-## <a name="open-port-443-in-the-azure-load-balancer"></a>Открытие порта 443 в подсистеме балансировки нагрузки Azure
+## <a name="open-port-443-in-the-azure-load-balancer-and-virtual-network"></a>Открытие порта 443 в подсистеме балансировки нагрузки Azure и виртуальной сети
 
 Откройте порт 443 в подсистеме балансировки нагрузки, если это еще не сделано.
 
@@ -396,13 +396,33 @@ $slb | Add-AzLoadBalancerRuleConfig -Name $rulename -BackendAddressPool $slb.Bac
 $slb | Set-AzLoadBalancer
 ```
 
+Сделайте то же самое для связанной виртуальной сети.
+
+```powershell
+$rulename="allowAppPort$port"
+$nsgname="voting-vnet-security"
+$RGname="voting_RG"
+$port=443
+
+# Get the NSG resource
+$nsg = Get-AzNetworkSecurityGroup -Name $nsgname -ResourceGroupName $RGname
+
+# Add the inbound security rule.
+$nsg | Add-AzNetworkSecurityRuleConfig -Name $rulename -Description "Allow app port" -Access Allow `
+    -Protocol * -Direction Inbound -Priority 3891 -SourceAddressPrefix "*" -SourcePortRange * `
+    -DestinationAddressPrefix * -DestinationPortRange $port
+
+# Update the NSG.
+$nsg | Set-AzNetworkSecurityGroup
+```
+
 ## <a name="deploy-the-application-to-azure"></a>Развертывание приложения в Azure
 
 Сохраните все файлы, переключитесь с версии для отладки на версию выпуска и нажмите F6 для повторного создания.  Щелкните правой кнопкой мыши проект в **приложении для голосования** и выберите пункт **Опубликовать**. Выберите конечную точку подключения кластера, созданного в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md) или выберите другой кластер.  Нажмите кнопку **Опубликовать**, чтобы опубликовать приложение на удаленном кластере.
 
 При развертывании приложения откройте веб-браузер и перейдите по адресу `https://mycluster.region.cloudapp.azure.com:443` (обновите URL-адрес, используя конечную точку подключения кластера). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
 
-![Приложение для голосования][image3]
+![Снимок экрана: приложение Service Fabric Voting Sample, выполняющееся в окне браузера с URL-адресом https://mycluster.region.cloudapp.azure.com:443.][image3]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

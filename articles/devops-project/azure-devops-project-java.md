@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание конвейера CI/CD для Java в Azure DevOps Starter
-description: Служба DevOps Starter позволяет быстро приступить к работе с Azure. Это поможет вам запустить приложение в службе Azure по вашему выбору за несколько быстрых шагов.
+description: Узнайте, как с помощью простого интерфейса Azure DevOps Starter настроить конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) для приложения Java в Azure Pipelines.
 ms.prod: devops
 ms.technology: devops-cicd
 services: vsts
@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 738822d2dd4a67ea0b5c83c6c5f6c289e93766c3
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 29b05feab0a44629c3d450709a3bc05481be6e84
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327792"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330372"
 ---
 # <a name="set-up-a-cicd-pipeline-for-a-java-app-with-azure-devops-starter"></a>Настройка конвейера CI/CD для приложения Java с помощью Azure DevOps Starter
 

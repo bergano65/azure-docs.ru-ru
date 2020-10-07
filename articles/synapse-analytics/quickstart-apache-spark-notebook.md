@@ -4,17 +4,17 @@ description: Из этого краткого руководства вы узн
 services: synapse-analytics
 author: euangMS
 ms.author: euang
-ms.reviewer: jrasnick, carlrab
+ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: quickstart
 ms.date: 04/15/2020
-ms.openlocfilehash: 4ca718db8d2d2d57c73e8e492e2edbee221cb3ec
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: aca58328ada4f01072cf3779735bcd5cb518ef0a
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89049814"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91260773"
 ---
 # <a name="quickstart-create-an-apache-spark-pool-in-azure-synapse-analytics-using-web-tools"></a>Краткое руководство. Создание пула Apache Spark в Azure Synapse Analytics с помощью веб-инструментов
 
@@ -49,7 +49,7 @@ ms.locfileid: "89049814"
 4. В окне **Свойства** укажите имя для этой записной книжки.
 5. На панели инструментов щелкните **Опубликовать**.
 6. Если в рабочей области есть только один пул Apache Spark, он будет выбран по умолчанию. В противном случае используйте раскрывающийся список, чтобы выбрать нужный пул Apache Spark.
-7. Щелкните **Add code** (Добавить код). По умолчанию используется язык `Pyspark`. Здесь вы будете совмещать Pyspark и Spark SQL, поэтому вариант по умолчанию хорошо подходит.
+7. Щелкните **Add code** (Добавить код). По умолчанию используется язык `Pyspark`. Здесь вы будете совмещать Pyspark и Spark SQL, поэтому вариант по умолчанию хорошо подходит. Также поддерживаются такие языки, как Scala и .NET для Spark.
 8. Вы создадите в Spark простой объект DataFrame для дальнейших операций. В нашем примере для его создания применяется код. В нем есть три столбца и три строки.
 
    ```python

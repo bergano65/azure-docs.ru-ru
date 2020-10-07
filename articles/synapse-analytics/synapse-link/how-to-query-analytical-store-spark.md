@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 663c07795926b17eb42ff185ca248454c5bc459c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 07342cb31f1c44273f98a97b018620538f86c17f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90881844"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91287735"
 ---
 # <a name="interact-with-azure-cosmos-db-using-apache-spark-in-azure-synapse-link-preview"></a>Взаимодействие с Azure Cosmos DB с помощью Apache Spark в Azure Synapse Link (предварительная версия)
 
@@ -120,6 +120,8 @@ df.write.format("cosmos.oltp").
     save()
 ```
 
+## <a name="load-streaming-dataframe-from-container"></a>Загрузка DataFrame для потоковой передачи из контейнера
+В этом жесте вы будете использовать возможность потоковой передачи Spark для загрузки данных из контейнера в DataFrame. Данные будут храниться в основной учетной записи Data Lake (и файловой системе), подключенной к рабочей области. 
 > [!NOTE]
 > Если вы хотите ссылаться на внешние библиотеки в Synapse Apache Spark, просмотрите дополнительные сведения [здесь](#external-library-management). Например, если вы хотите принять кадр данных Spark в контейнере Cosmos DB API для Mongo DB, можно использовать соединитель Mongo DB для Spark, описанный [здесь](https://docs.mongodb.com/spark-connector/master/).
 

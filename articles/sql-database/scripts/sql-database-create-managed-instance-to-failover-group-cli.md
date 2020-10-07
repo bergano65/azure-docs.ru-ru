@@ -1,6 +1,6 @@
 ---
 title: 'Azure CLI: добавление управляемого экземпляра в группу отработки отказа'
-description: Пример скрипта Azure CLI для создания Управляемого экземпляра SQL Azure, добавления его в группу отработки отказа и выполнение тестовой отработки отказа.
+description: Узнайте, как создать два управляемых экземпляра, добавить их в группу отработки отказа, а затем протестировать отработку отказа.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: b29fcd33c8181ba61f57d7105d08e7e4956d80bc
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: afefc556bcac096d67051f3014c31e449dbbca32
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497262"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323572"
 ---
 # <a name="use-cli-to-create-an-azure-sql-managed-instance-to-a-failover-group"></a>Создание Управляемого экземпляра SQL Azure в группе отработки отказа с помощью CLI
 

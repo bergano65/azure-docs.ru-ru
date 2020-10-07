@@ -1,6 +1,6 @@
 ---
 title: Руководство по Поиск ближайших объектов на карте | Microsoft Azure Maps
-description: Сведения о том, как находить точки интереса на карте. Узнайте, как использовать веб-пакет SDK Azure Maps для добавления возможностей поиска и интерактивных всплывающих окон на карту.
+description: Руководство по поиску точек интереса на карте. Узнайте, как использовать веб-пакет SDK Azure Maps для добавления возможностей поиска и интерактивных всплывающих окон на карту.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 1/15/2020
@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 6ed463cbda3ceb560f907529dc8de54a772932ea
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: 4d6728d4fbde4b7d6cc8ed06e961642264ad31bc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085082"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321702"
 ---
 # <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство по Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -26,44 +26,14 @@ ms.locfileid: "90085082"
 > * создание веб-страницы с помощью API элементов управления картой;
 > * использование службы поиска "Карты Azure" для поиска ближайшей точки интереса.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-
-Войдите на [портал Azure](https://portal.azure.com).
+## <a name="prerequisites"></a>Предварительные требования
 
 <a id="createaccount"></a>
-
-## <a name="create-an-account-with-azure-maps"></a>Создание учетной записи службы "Карты Azure"
-
-Создайте учетную запись службы "Карты Azure" с помощью следующих действий:
-
-1. В верхнем левом углу [портала Azure](https://portal.azure.com) щелкните **Создать ресурс**.
-2. В поле *Поиск по Marketplace* введите **Карты**.
-3. Выберите *Результаты*, а затем — **Карты**. Нажмите кнопку **Создать**, расположенную под картой.
-4. На странице **Создание учетной записи Azure Maps** введите следующие значения:
-    * *Подписку*, которую необходимо использовать для этой учетной записи.
-    * Имя *группы ресурсов* для этой учетной записи. Вы *создать новую* или *использовать существующую* группу ресурсов.
-    * *Имя* новой учетной записи.
-    * *Ценовая категория* этой учетной записи.
-    * Ознакомьтесь с *лицензией* и *заявлением о конфиденциальности*, а затем установите флажок, чтобы принять условия соглашения.
-    * Нажмите кнопку **Создать** .
-
-![Создание учетной записи службы Azure Maps на портале Azure](./media/tutorial-search-location/create-account.png)
-
 <a id="getkey"></a>
 
-## <a name="get-the-primary-key-for-your-account"></a>Получение первичного ключа для учетной записи
-
-После успешного создания учетной записи службы "Карты Azure" извлеките ключ, позволяющий запрашивать API службы "Карты Azure". При вызове служб Azure Maps мы рекомендуем использовать первичный ключ учетной записи в качестве ключа подписки.
-
-1. Откройте учетную запись службы "Карты Azure" на портале.
-2. В разделе "Параметры" выберите **Проверка подлинности**.
-3. Скопируйте **первичный ключ** в буфер обмена. Сохраните его локально для использования в этом руководстве позже.
-
-![Получение первичного ключа на портале Azure](./media/tutorial-search-location/get-key.png)
-
-Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
+1. Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+2. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
+3. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 <a id="createmap"></a>
 
@@ -275,21 +245,9 @@ Map Control API является удобной клиентской библи
 
     ![Azure Map Control и служба поиска](./media/tutorial-search-location/popup-map.png)
 
+Чтобы просмотреть весь код для этого руководства, щелкните [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/search.html). Чтобы просмотреть рабочий пример, щелкните [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest).
+
 ## <a name="next-steps"></a>Дальнейшие действия
-
-В этом руководстве вы узнали, как выполнять следующие задачи:
-
-> [!div class="checklist"]
-> * Создание учетной записи службы "Карты Azure"
-> * Получение первичного ключа для учетной записи
-> * Создание веб-страницы с помощью API Map Control.
-> * Использование службы поиска для поиска ближайшего объекта.
-
-> [!div class="nextstepaction"]
-> [Просмотр полного исходного кода](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/search.html)
-
-> [!div class="nextstepaction"]
-> [Просмотр примера, работающего в реальном времени](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest)
 
 В следующем руководстве показано, как отобразить маршрут между двумя расположениями.
 

@@ -10,18 +10,18 @@ ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 42a1110b089d5edf9793bf2bb2c699a717a4b1a4
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: aa940b00e9c23ab08244ea55c0cd22a8d5f1897f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89004975"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289384"
 ---
 # <a name="connection-strings-for-synapse-sql-preview"></a>Строки подключения для Synapse SQL (предварительная версия)
 
 К Synapse SQL (предварительная версия) можно подключиться с помощью различных протоколов приложений, таких как [ADO.NET](https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx), [ODBC](https://msdn.microsoft.com/library/jj730314.aspx), [PHP](https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396) и [JDBC](https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx). Ниже приведены некоторые примеры строк подключения для каждого протокола. 
 
-Кроме того, для формирования строки подключения можно использовать портал Azure.  Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* щелкните *Показать строки подключения к базам данных*.
+Кроме того, для формирования строки подключения можно использовать портал Azure.  Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* выберите *Показать строки подключения к базам данных*.
 
 ## <a name="sample-adonet-connection-string"></a>Пример строки подключения по протоколу ADO.NET
 

@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: ca330357e88ff6f4824c74a6048769638542cc29
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d6c447deedbdcc4f2439fc069f368db88b3560b9
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88556125"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91278045"
 ---
 # <a name="tutorial-assign-directory-readers-role-to-an-azure-ad-group-and-manage-role-assignments"></a>Руководство по назначению роли "Читатели каталогов" группе Azure AD и управлению назначениями ролей
 
@@ -55,7 +55,7 @@ ms.locfileid: "88556125"
 
 Чтобы проверить созданную группу и управлять ею, вернитесь в область **Группы** на портале Azure и найдите имя группы. После выбора группы можно добавить дополнительных владельцев и членов, выбрав меню **Владельцы** и **Члены** в параметре **Управление**. Кроме того, можно проверить **назначенные роли** для группы.
 
-:::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-group-created.png" alt-text="azure-ad-group-created":::
+:::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-group-created.png" alt-text="aad-new-group":::
 
 ### <a name="add-azure-sql-managed-identity-to-the-group"></a>Добавление управляемого удостоверения SQL Azure в группу
 
@@ -68,17 +68,17 @@ ms.locfileid: "88556125"
 
 1. Найдите на портале Azure имя ресурса **управляемого экземпляра SQL**.
 
-   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance.png" alt-text="azure-ad-managed-instance":::
+   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance.png" alt-text="aad-new-group":::
 
    Во время создания Управляемого экземпляра SQL для вашего экземпляра было создано удостоверение Azure. Созданное удостоверение имеет то же имя, что и префикс имени Управляемого экземпляра SQL. Чтобы найти субъект-службу для удостоверения Управляемого экземпляра SQL, созданного в качестве приложения Azure AD, выполните следующие действия:
 
     - Перейдите к ресурсу **Azure Active Directory**. В разделе параметра **Управление** выберите **Корпоративные приложения**. **Идентификатор объекта** — это идентификатор экземпляра.
     
-    :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance-service-principal.png" alt-text="azure-ad-managed-instance-service-principal":::
+    :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance-service-principal.png" alt-text="aad-new-group":::
 
 1. Перейдите к ресурсу **Azure Active Directory**. В разделе **Управляемые** перейдите в раздел **Группы**. Выберите созданную группу. В параметре вашей группы **Управляемые** выберите **Члены**. Выберите **Добавление членов** и добавьте субъект-службу Управляемого экземпляра SQL в качестве члена группы, выполнив поиск по имени, указанному выше.
 
-   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-add-managed-instance-service-principal.png" alt-text="azure-ad-add-managed-instance-service-principal":::
+   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-add-managed-instance-service-principal.png" alt-text="aad-new-group":::
 
 > [!NOTE]
 > Распространение разрешений субъекта-службы через систему Azure и предоставление доступа к API Graph Azure AD может занять несколько минут. Возможно, вам придется подождать несколько минут, прежде чем приступить к подготовке администратора Azure AD для Управляемого экземпляра SQL.

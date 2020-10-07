@@ -1,6 +1,6 @@
 ---
 title: Создание конвейера CI/CD для PWA с помощью GatsbyJS и Azure DevOps Starter
-description: Служба DevOps Starter позволяет быстро приступить к работе с Azure. Это поможет вам запустить приложение в службе Azure по вашему выбору за несколько быстрых шагов.
+description: Узнайте, как создать прогрессивное веб-приложение (PWA) Node.js с помощью GatsbyJS и упрощенного интерфейса создания Azure DevOps Starter.
 ms.prod: devops
 ms.technology: devops-cicd
 services: vsts
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: angrobe
-ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 5453677826e1490977257fd75e10308ee45df00a
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: fa6d0f78f984c5e71ccdbcada45ea1bc50be9e95
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421762"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91318625"
 ---
 # <a name="create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-starter"></a>Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Starter
 

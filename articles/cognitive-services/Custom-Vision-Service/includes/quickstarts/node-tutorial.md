@@ -2,16 +2,19 @@
 author: areddish
 ms.author: areddish
 ms.service: cognitive-services
-ms.date: 08/17/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 2a8937debc38dab4b2d38b56d1c6a9c3edcbe2a7
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.date: 09/15/2020
+ms.custom: devx-track-js
+ms.openlocfilehash: 90927109a78d387ed3a535128e98ae7910c222dc
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88508579"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321069"
 ---
-В этой статье показано, как приступить к работе с клиентской библиотекой Пользовательского визуального распознавания в Node.js и создать модель классификации изображений. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес опубликованной конечной точки прогнозирования и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения Node.js. Если вы хотите создать модель классификации и использовать ее _без кода_, ознакомьтесь со статьей [Как создать классификатор с помощью Пользовательской службы визуального распознавания](../../getting-started-build-a-classifier.md).
+Это руководство содержит инструкции и пример кода, которые помогут вам начать работу с клиентской библиотекой Пользовательского визуального распознавания для Node.js и создать модель классификации изображений. Здесь объясняется, как создать проект, добавить теги, обучить проект и использовать URL-адрес конечной точки прогнозирования проекта для тестирования программными средствами. Этот пример можно использовать как шаблон при создании собственного приложения для распознавания изображений.
+
+> [!NOTE]
+> Если вы хотите создать и обучить модель классификации _без_ написания кода, см. руководство по [работе со средствами на основе браузера](../../getting-started-build-a-classifier.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -21,7 +24,7 @@ ms.locfileid: "88508579"
 
 ## <a name="install-the-custom-vision-client-library"></a>Установка клиентской библиотеки Пользовательского визуального распознавания
 
-Чтобы установить клиентскую библиотеку Пользовательского визуального распознавания для Node.js, выполните следующую команду в PowerShell:
+Чтобы написать приложение для анализа изображений с помощью Пользовательского визуального распознавания для Node.js, вам потребуются пакеты NPM этой службы. Чтобы установить их, выполните в PowerShell следующую команду:
 
 ```shell
 npm install @azure/cognitiveservices-customvision-training
@@ -36,7 +39,7 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 Создайте файл с именем *sample.js* в необходимом каталоге проекта.
 
-### <a name="create-the-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
+## <a name="create-the-custom-vision-project"></a>Создание проекта Пользовательского визуального распознавания
 
 Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения и задайте путь к папке образа в качестве значения пути sampleDataRoot. Убедитесь, что значение endPoint соответствует конечным точкам обучения и прогнозирования, созданным в [Customvision.ai](https://www.customvision.ai/). Обратите внимание, что разница между созданием проекта поиска объектов и классификации изображений состоит в домене, установленном в вызове **createProject**.
 
@@ -66,7 +69,7 @@ const trainer = new TrainingApi.TrainingAPIClient(credentials, endPoint);
     const sampleProject = await trainer.createProject("Sample Project");
 ```
 
-### <a name="create-tags-in-the-project"></a>Создание тегов в проекте
+## <a name="create-tags-in-the-project"></a>Создание тегов в проекте
 
 Чтобы создать теги классификации в проекте, добавьте в конец *sample.go* следующий код:
 
@@ -75,7 +78,7 @@ const trainer = new TrainingApi.TrainingAPIClient(credentials, endPoint);
     const cherryTag = await trainer.createTag(sampleProject.id, "Japanese Cherry");
 ```
 
-### <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
+## <a name="upload-and-tag-images"></a>Отправка и снабжение тегами изображений
 
 Чтобы добавить примеры изображений в проект, вставьте следующий код после создания тегов. Этот код загружает каждое изображение с соответствующим тегом. В одном пакете можно передать до 64 изображений.
 
@@ -101,7 +104,7 @@ const trainer = new TrainingApi.TrainingAPIClient(credentials, endPoint);
     await Promise.all(fileUploadPromises);
 ```
 
-### <a name="train-the-classifier-and-publish"></a>Обучение и публикация классификатора
+## <a name="train-and-publish-the-classifier"></a>Обучение и публикация классификатора
 
 Этот код создает первую итерацию модели прогнозирования и публикует итерацию в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
@@ -122,7 +125,7 @@ const trainer = new TrainingApi.TrainingAPIClient(credentials, endPoint);
     await trainer.publishIteration(sampleProject.id, trainingIteration.id, publishIterationName, predictionResourceId);
 ```
 
-### <a name="get-and-use-the-published-iteration-on-the-prediction-endpoint"></a>Получение и использование опубликованной итерации в конечной точке прогнозирования
+## <a name="use-the-prediction-endpoint"></a>Использование конечной точки прогнозирования
 
 Чтобы отправить изображение в конечную точку прогнозирования и извлечь прогнозирование, добавьте в конец файла следующий код:
 
@@ -175,3 +178,7 @@ Results:
 
 > [!div class="nextstepaction"]
 > [Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания](../../test-your-model.md)
+
+* [Что собой представляет Пользовательское визуальное распознавание](../../overview.md)
+* [Справочная документация по пакету SDK (обучение)](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-customvision-training/?view=azure-node-latest)
+* [Справочная документация по пакету SDK (прогнозирование)](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest)

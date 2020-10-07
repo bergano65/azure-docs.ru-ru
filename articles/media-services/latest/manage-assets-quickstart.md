@@ -6,12 +6,12 @@ ms.date: 08/31/2020
 author: IngridAtMicrosoft
 ms.author: inhenkel
 manager: femila
-ms.openlocfilehash: 16a5793f9848a6e16856728877727dbefc3e0805
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.openlocfilehash: 6b4373efc4979900e676257cc0b2748145165499
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89264935"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91261419"
 ---
 # <a name="quickstart-upload-encode-and-stream-content-with-portal"></a>Краткое руководство. Отправка, кодирование и потоковая передача содержимого с помощью портала
 
@@ -66,7 +66,7 @@ ms.locfileid: "89264935"
 
 Перейдя в окно ресурсов, вы увидите, что в список добавлен новый ресурс:
 
-![Передать](./media/manage-assets-quickstart/upload.png)
+![Снимок экрана: портал Azure с окном "Ресурсы", разделом "Ресурсы (новый)" и новым ресурсом, добавленным с помощью кнопки "Отправить"](./media/manage-assets-quickstart/upload.png)
 
 ## <a name="encode"></a>Кодирование
 
@@ -78,7 +78,7 @@ ms.locfileid: "89264935"
 
 Перейдя в окно ресурсов, вы увидите, что в список добавлен выходной ресурс:
 
-![Кодирование](./media/manage-assets-quickstart/encode.png)
+![Снимок экрана: портал Azure с окном "Ресурсы" с файлом asset ignite.mp4 в кодировке Media Encoder Standard, добавленным в список ресурсов](./media/manage-assets-quickstart/encode.png)
 
 ## <a name="monitor-the-job-progress"></a>Мониторинг хода выполнения задания
 

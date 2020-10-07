@@ -1,6 +1,6 @@
 ---
-title: Руководство по поиску и отображению маршрутов для конкретных способов передвижения поездки с помощью Microsoft Azure Maps
-description: Узнайте, как с помощью Azure Maps находить и отображать маршруты для определенных способов передвижения.
+title: Руководство по Поиск нескольких маршрутов по видам транспорта | Microsoft Azure Maps
+description: Руководство по поиску маршрутов к точкам интереса для определенных способов передвижения с помощью Azure Maps Узнайте, как реализовать отображение нескольких маршрутов на карте.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 09/10/2020
@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: a5b8dba920db0227c400e62ef7ddaf718d27c78a
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.custom: mvc, devx-track-js
+ms.openlocfilehash: 0d57e86088ee472c63b433bde14a0e4316cc20a5
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90085065"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321753"
 ---
 # <a name="tutorial-find-and-display-routes-for-different-modes-of-travel-using-azure-maps"></a>Руководство по поиску и отображению маршрутов для различных способов передвижения с помощью Azure Maps
 
@@ -160,11 +160,13 @@ ms.locfileid: "90085065"
 
     ```
 
+
     В обработчике событий `ready` элемента управления картой создается источник данных для хранения маршрута от начала до конца. [Выражения](data-driven-style-expressions-web-sdk.md) используются для извлечения ширины и цвета линии из свойств функции линии маршрута. Чтобы линия маршрута не перекрывала обозначения дорог, мы передали второй параметр со значением `'labels'`.
 
     Теперь создаем слой символов и привязываем его к источнику данных. Этот слой определяет, как отображаются начальная и конечная точки. Были добавлены выражения для извлечения изображения значка и текстовых подписей из свойств в каждом объекте точки. Чтобы узнать больше о выражениях, ознакомьтесь со [стилистическими выражениями на основе данных](data-driven-style-expressions-web-sdk.md).
 
 2. Задайте в качестве начальной точки вымышленную компанию Fabrikam в Сиэтле, а в качестве конечной точки — офис корпорации Майкрософт.  В конец обработчика событий `ready` элемента управления картой добавьте следующий код.
+
 
     ```JavaScript
     //Create the GeoJSON objects which represent the start and end point of the route.
@@ -279,7 +281,11 @@ ms.locfileid: "90085065"
 
     Маршрут грузовика отображается толстой синей линией. Маршрут легкового автомобиля отображается тонкой сиреневой линией. Маршрут легкового автомобиля пересекает Лейк-Вашингтон по трассе I-90, проходя через туннели под жилыми районами. Так как туннели проходят вблизи жилых районов, перевозка опасных отходов по ним запрещена. Маршрут грузовика, для которого указан тип груза `USHazmatClass2`, проходит через другую магистраль.
 
-    Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/truckRoute.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Multiple%20routes%20by%20mode%20of%20travel).
+Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/truckRoute.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Multiple%20routes%20by%20mode%20of%20travel).
+
+Вы также можете [использовать стилистические выражения на основе данных](data-driven-style-expressions-web-sdk.md).
+
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

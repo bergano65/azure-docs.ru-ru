@@ -4,12 +4,12 @@ description: Руководство по Описывается, как пере
 ms.topic: tutorial
 ms.date: 07/07/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d45fcedb570e384b851a7ac815ca175c67cc00a0
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: 64d4b9769e1a228294bd7d8741f6f4b1260fb0dd
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89435037"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91270565"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из Хранилища BLOB-объектов в Azure Synapse Analytics (прежнее название — Хранилище данных SQL).
@@ -66,7 +66,7 @@ ms.locfileid: "89435037"
 4. Если в Cloud Shell у вас будет выбор между **Bash** и **PowerShell**, выберите **Bash**. 
 5. Если вы используете Cloud Shell в первый раз, создайте учетную запись хранилища, выбрав **Create storage** (Создать хранилище). Azure Cloud Shell требуется учетная запись хранилища Azure для хранения некоторых файлов. 
 
-    ![Создание хранилища для Cloud Shell](media/event-grid-event-hubs-integration/create-storage-cloud-shell.png)
+    ![Снимок экрана: диалоговое окно "У вас не подключено хранилище" с выделенной кнопкой Create storage (Создать хранилище).](media/event-grid-event-hubs-integration/create-storage-cloud-shell.png)
 6. Подождите, пока не инициализируется Cloud Shell. 
 
     ![Создание хранилища для Cloud Shell](media/event-grid-event-hubs-integration/cloud-shell-initialized.png)
@@ -209,7 +209,7 @@ ms.locfileid: "89435037"
    ![Публикация приложения-функции](media/event-grid-event-hubs-integration/publish-function-app.png)
 4. Если вы видите такой экран, щелкните **Начало**. 
 
-   ![Кнопка начала публикации](media/event-grid-event-hubs-integration/start-publish-button.png) 
+   ![Снимок экрана: окно Visual Studio с кнопкой "Начало" в разделе "Опубликовать".](media/event-grid-event-hubs-integration/start-publish-button.png) 
 5. В диалоговом окне **Публикация** выберите **Azure** в качестве параметра **Целевой объект** и нажмите **Далее**. 
 
    ![Кнопка начала публикации](media/event-grid-event-hubs-integration/publish-select-azure.png)

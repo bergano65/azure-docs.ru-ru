@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальной сети для многоуровневых приложений — пример скрипта Azure PowerShell
-description: Пример скрипта Azure PowerShell для создания сети для многоуровневых приложений.
+description: Создание виртуальной сети для многоуровневых приложений — пример скрипта Azure PowerShell.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/13/2018
 ms.author: kumud
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1c592681cc2aeb900a5b7e370277aa0d148bb37e
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 51cafb0a344c5b6226b3b033d8c60327eaf2c05f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89078492"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91267980"
 ---
 # <a name="create-a-network-for-multi-tier-applications-script-sample"></a>Пример скрипта для создания сети для многоуровневых приложений
 

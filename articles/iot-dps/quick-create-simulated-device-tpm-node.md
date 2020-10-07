@@ -11,13 +11,13 @@ ms.custom:
 - mvc
 - amqp
 - mqtt
-- devx-track-javascript
-ms.openlocfilehash: 58adb3e8216fdda1f276760b103e02bf7de6e12e
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+- devx-track-js
+ms.openlocfilehash: f8b7e55d95c08a31a20503e329e64b9e65e3b723
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422136"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91323929"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Node.js для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
 
@@ -27,7 +27,7 @@ ms.locfileid: "87422136"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ознакомление со статьей о [принципах автоматической подготовки устройств](concepts-auto-provisioning.md).
+- Ознакомьтесь с разделом [Роли и учетные записи Azure](about-iot-dps.md#provisioning-process).
 - Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 - Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Node.js версии 4.0 и более поздней](https://nodejs.org).

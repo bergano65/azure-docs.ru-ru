@@ -5,14 +5,14 @@ author: vhorne
 ms.service: web-application-firewall
 services: web-application-firewall
 ms.topic: tutorial
-ms.date: 03/18/2020
+ms.date: 09/16/2020
 ms.author: victorh
-ms.openlocfilehash: 7a9e0cc3977892fd899b4a25e17ad72f13481506
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: c5505b9437a4bd8dced6a090817b17d5e29374f2
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82608819"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91327944"
 ---
 # <a name="tutorial-create-a-waf-policy-on-azure-cdn-using-the-azure-portal"></a>Руководство по созданию политики WAF в Azure CDN при помощи портала Azure
 
@@ -72,17 +72,22 @@ ms.locfileid: "82608819"
 
 На следующем снимке экрана показано настраиваемое правило сопоставления для блокировки запроса, если строка запроса содержит значение **blockme**.
 
-![Изменение режима политики WAF](../media/waf-cdn-create-portal/custommatch.png)
+![Add custom match rule (Добавление настраиваемого правила сопоставления)](../media/waf-cdn-create-portal/custommatch.png)
 
 Для правил ограничения скорости требуются два дополнительных поля: **Период ограничения скорости** и **Пороговое значение ограничения скорости (запросов)** , как показано в следующем примере:
 
-![Изменение режима политики WAF](../media/waf-cdn-create-portal/customrate.png)
+![Add rate limit rule (Добавление правила ограничения скорости)](../media/waf-cdn-create-portal/customrate.png)
 
 ### <a name="default-rule-set-drs"></a>Набор правил по умолчанию (DRS)
 
 Набор правил по умолчанию, управляемый Azure, включен по умолчанию. Чтобы отключить отдельное правило в группе правил, разверните правила в этой группе, установите флажок перед номером правила и щелкните **Отключить** на вкладке выше. Чтобы изменить типы действий для отдельных правил в наборе правил, установите флажок перед номером правила, а затем выберите вкладку **Изменение действия** выше.
 
  ![Изменение набора правил WAF](../media/waf-cdn-create-portal/managed2.png)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если группа ресурсов и связанные с ней ресурсы вам больше не нужны, их можно удалить.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

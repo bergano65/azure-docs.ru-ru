@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
-ms.openlocfilehash: fbec82e25424fd5220aa992cf2dd0e8449e6a0a4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c8978504244fbf68875ca8cff7a92f042e8e988b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88523139"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329539"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-akamai"></a>Руководство по интеграции единого входа Azure Active Directory с Akamai
 
@@ -101,7 +101,7 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 Все перечисленные ниже настройки одинаковы для сценариев интеграции **1** и **2**. Для **сценария интеграции 2** необходимо настроить отдельный поставщик удостоверений в Akamai ЕАА, а значение свойства "URL-адрес" необходимо изменить на URL-адрес приложения.
 
-![Важно!](./media/header-akamai-tutorial/important.png)
+![Снимок экрана вкладки General (Общие) для AZURESSO-SP в Akamai Enterprise Application Access. На снимке выделено поле URL-адреса в разделе конфигурации проверки подлинности.](./media/header-akamai-tutorial/important.png)
 
 ## <a name="adding-akamai-from-the-gallery"></a>Добавление Akamai из коллекции
 
@@ -198,11 +198,11 @@ Akamai ЕАА настраивается в Azure AD как единое при
 1. Войдите в консоль **Akamai Enterprise Application Access**.
 1. В **консоли Akamai ЕАА** выберите **Identity** > **Identity Providers** (Удостоверение > Поставщики удостоверений) и щелкните **Add Identity Provider** (Добавить поставщик удостоверений).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure01.png)
+    ![Снимок экрана, на котором показано окно поставщиков удостоверений для консоли Akamai ЕАА. В меню Identity (Удостоверение) выберите пункт Identity Providers (Поставщики удостоверений) и нажмите Add Identity Provider (Добавить поставщик удостоверений).](./media/header-akamai-tutorial/configure01.png)
 
 1. В разделе **Create New Identity Provider** (Создание поставщика удостоверений) выполните следующие действия.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure02.png)
+    ![Снимок экрана с диалоговым окном создания поставщиков удостоверений в консоли Akamai ЕАА.](./media/header-akamai-tutorial/configure02.png)
 
     а. Укажите уникальное имя в **Name** (Имя).
 
@@ -218,7 +218,7 @@ Akamai ЕАА настраивается в Azure AD как единое при
 1. **Akamai Cloud Zone** (Облачная зона Akamai) — выберите соответствующую облачную зону.
 1. **Certificate Validation** (Проверка сертификата) — описано в документации по Akamai (необязательно).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure03.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой General (Общие), на которой отображаются параметры для перехвата удостоверений, облачной зоны Akamai и проверки сертификата.](./media/header-akamai-tutorial/configure03.png)
 
 ### <a name="authentication-configuration"></a>Настройка проверки подлинности
 
@@ -227,37 +227,37 @@ Akamai ЕАА настраивается в Azure AD как единое при
 3. Sign SAML Request (Подписать запрос SAML): по умолчанию этот флажок снят.
 4. Для файла метаданных IDP добавьте приложение в консоли Azure AD.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure04.png)
+    ![Снимок экрана страницы конфигурации проверки подлинности консоли Akamai ЕАА, на которой отображаются параметры для URL-адреса, URL-адреса выхода, подписанного запроса SAML и файла метаданных IDP.](./media/header-akamai-tutorial/configure04.png)
 
 ### <a name="session-settings"></a>Параметры сеанса
 
 Оставьте параметры по умолчанию без изменений.
 
-![Настройка Akamai](./media/header-akamai-tutorial/sessionsettings.png)
+![Снимок экрана с диалоговым окном параметров сеанса в консоли Akamai ЕАА.](./media/header-akamai-tutorial/sessionsettings.png)
 
 ### <a name="directories"></a>Каталоги
 
 Пропустите настройку каталога.
 
-![Настройка Akamai](./media/header-akamai-tutorial/directories.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Directories (Каталоги).](./media/header-akamai-tutorial/directories.png)
 
 ### <a name="customization-ui"></a>Пользовательский интерфейс настройки
 
 Поставщик удостоверений можно настроить.
 
-![Настройка Akamai](./media/header-akamai-tutorial/customizationui.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой настройки, на которой отображаются параметры для пользовательского интерфейса, языковых параметров и тем.](./media/header-akamai-tutorial/customizationui.png)
 
 ### <a name="advanced-settings"></a>Дополнительные параметры
 
 Пропустите настройку дополнительных параметров. Дополнительные сведения см. в документации Akamai.
 
-![Настройка Akamai](./media/header-akamai-tutorial/advancesettings.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры), на которой показаны параметры для клиента ЕАА, расширенные параметры и параметры для моста между от OIDC к SAML.](./media/header-akamai-tutorial/advancesettings.png)
 
 ### <a name="deployment"></a>Развертывание
 
 1. Щелкните Deploy Identity Provider (Развернуть поставщик удостоверений).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/deployment.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Deployment (Развертывание), на которой отображается кнопка Deploy Identity Provider (Развернуть поставщик удостоверений).](./media/header-akamai-tutorial/deployment.png)
 
 2. Проверьте успешность развертывания.
 
@@ -267,115 +267,115 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 1. Выберите вариант **Custom HTTP** (Настраиваемый HTTP) в мастере добавления приложений.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure05.png)
+    ![Снимок экрана консоли Akamai ЕАА с мастером добавления приложений, в котором в разделе Access Apps (Доступ к приложениям) отображается CustomHTTP.](./media/header-akamai-tutorial/configure05.png)
 
 2. Заполните поля **Application Name** (Имя приложения) и **Description** (Описание).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure06.png)
+    ![Снимок экрана диалогового окна Custom HTTP App (Пользовательское HTTP-приложение), в котором отображаются параметры для имени и описания приложения.](./media/header-akamai-tutorial/configure06.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure07.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой General (Общие), на которой отображаются общие параметры для MYHEADERAPP.](./media/header-akamai-tutorial/configure07.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure08.png)
+    ![Снимок экрана консоли Akamai ЕАА, в которой отображаются параметры для сертификата и расположения.](./media/header-akamai-tutorial/configure08.png)
 
 #### <a name="authentication"></a>Аутентификация
 
 1. Перейдите на вкладку **Authentication** (Проверка подлинности).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure09.png)
+    ![Снимок экрана консоли Akamai ЕАА с выбранной вкладкой Authentication (Проверка подлинности).](./media/header-akamai-tutorial/configure09.png)
 
 2. Назначьте **поставщик удостоверений**.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure10.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Authentication (Проверка подлинности) для MYHEADERAPP, на которой указано, что в качестве поставщика удостоверений используется служба единого входа Azure AD.](./media/header-akamai-tutorial/configure10.png)
 
 #### <a name="services"></a>Службы
 
 Щелкните "Save and Go to Authentication" (Сохранить и перейти к проверке подлинности).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure11.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Services (Службы) для MYHEADERAPP, на которой в правом нижнем углу показана кнопка Save and go to Authentication (Сохранить и перейти к проверке подлинности).](./media/header-akamai-tutorial/configure11.png)
 
 #### <a name="advanced-settings"></a>Дополнительные параметры
 
 1. В разделе **Customer HTTP Headers** (Настраиваемые заголовки HTTP) укажите значения **CustomerHeader** и **SAML Attribute**.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure12.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры), на которой выделено поле SSO Logged URL (Зарегистрированный URL-адрес для единого входа) в разделе Authentication (Проверка подлинности).](./media/header-akamai-tutorial/configure12.png)
 
 1. Нажмите кнопку **Save and go to Deployment** (Завершить и перейти к развертыванию).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure13.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры), на которой в правом нижнем углу показана кнопка Save and go to Deployment (Завершить и перейти к развертыванию).](./media/header-akamai-tutorial/configure13.png)
 
 #### <a name="deploy-the-application"></a>Развертывание приложения
 
 1. Нажмите кнопку **Deploy Application** (Развернуть приложение).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure14.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Deployment (Развертывание), на которой отображается кнопка Deploy Application (Развернуть приложение).](./media/header-akamai-tutorial/configure14.png)
 
 1. Убедитесь, что приложение развернуто успешно.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure15.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Deployment (Развертывание), на которой отображается сообщение о состоянии приложения: Application Successfully Deployed (Приложение успешно развернуто).](./media/header-akamai-tutorial/configure15.png)
 
 1. Проверьте взаимодействие с пользователем.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser01.png)
+    ![Снимок экрана, на котором показано открытие сайта myapps.microsoft.com с фоновым изображением и диалоговым окном входа.](./media/header-akamai-tutorial/enduser01.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser02.png)
+    ![Снимок экрана, на котором показана часть окна "Приложения" со значками для надстройки, HRWEB, Akamai — CorpApps, Expense, Groups и Access reviews. ](./media/header-akamai-tutorial/enduser02.png)
 
 1. Проверьте условный доступ.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess01.png)
+    ![Снимок экрана с сообщением "Утверждение запроса на вход. На ваше мобильное устройство отправлено уведомление. Ответьте на него, чтобы продолжить работу".](./media/header-akamai-tutorial/conditionalaccess01.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess02.png)
+    ![Снимок экрана приложения со значком для MyHeaderApp.](./media/header-akamai-tutorial/conditionalaccess02.png)
 
 #### <a name="remote-desktop"></a>Удаленный рабочий стол
 
 1. Выберите вариант **RDP** в мастере добавления приложений.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure16.png)
+    ![Снимок экрана консоли Akamai ЕАА с мастером добавления приложений, в котором в разделе Access Apps (Доступ к приложениям) в списке приложений отображается RDP.](./media/header-akamai-tutorial/configure16.png)
 
 1. Заполните поля **Application Name** (Имя приложения) и **Description** (Описание).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure17.png)
+    ![Снимок экрана диалогового окна RDP App (Приложение RDP), в котором отображаются параметры для имени и описания приложения.](./media/header-akamai-tutorial/configure17.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure18.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой General (Общие), на которой отображаются параметры удостоверения приложения для SECRETRDPAPP.](./media/header-akamai-tutorial/configure18.png)
 
 1. Укажите соединитель, который будет обслуживать это подключение.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure19.png)
+    ![Снимок экрана консоли Akamai ЕАА, в которой отображаются параметры для сертификата и расположения. Для связанных соединителей задано значение USWST-CON1.](./media/header-akamai-tutorial/configure19.png)
 
 #### <a name="authentication"></a>Аутентификация
 
 Щелкните **Save and Go to Services** (Сохранить и перейти к службам).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure20.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Authentication (Проверка подлинности) для SECRETRDPAPP, на которой в правом нижнем углу показана кнопка Save and go to Services (Сохранить и перейти к службам).](./media/header-akamai-tutorial/configure20.png)
 
 #### <a name="services"></a>Службы
 
 Щелкните **Save and go to Advanced Settings** (Сохранить и перейти к дополнительным параметрам).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure21.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Services (Службы) для SECRETRDPAPP, на которой в правом нижнем углу показана кнопка Save and go to Authentication (Сохранить и перейти к проверке подлинности).](./media/header-akamai-tutorial/configure21.png)
 
 #### <a name="advanced-settings"></a>Дополнительные параметры
 
 1. Щелкните **Save and go to Deployment** (Завершить и перейти к развертыванию).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure22.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры) для SECRETRDPAPP, на которой показаны параметры конфигурации удаленного рабочего стола.](./media/header-akamai-tutorial/configure22.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure23.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры) для SECRETRDPAPP, на которой показаны параметры конфигурации проверки подлинности и работоспособности.](./media/header-akamai-tutorial/configure23.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure24.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Custom HTTP headers (Пользовательские HTTP-заголовки) для SECRETRDPAPP, на которой в правом нижнем углу показана кнопка Save and go to Deployment (Завершить и перейти к развертыванию).](./media/header-akamai-tutorial/configure24.png)
 
 1. Проверьте взаимодействие с пользователем.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser03.png)
+    ![Снимок экрана, на котором показано окно myapps.microsoft.com с фоновым изображением и диалоговым окном входа.](./media/header-akamai-tutorial/enduser03.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser02.png)
+    ![Снимок экрана, на котором показано окно "Приложения" на сайте myapps.microsoft.com со значками для надстройки, HRWEB, Akamai — CorpApps, Expense, Groups и Access reviews.](./media/header-akamai-tutorial/enduser02.png)
 
 1. Условный доступ
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess04.png)
+    ![Снимок экрана с сообщением об условном доступе: "Утверждение запроса на вход. На ваше мобильное устройство отправлено уведомление. Ответьте на него, чтобы продолжить работу".](./media/header-akamai-tutorial/conditionalaccess04.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess05.png)
+    ![Снимок экрана приложения со значком для MyHeaderApp и SecretRDPApp.](./media/header-akamai-tutorial/conditionalaccess05.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess06.png)
+    ![Снимок экрана Windows Server 2012 RS, на котором показаны общие значки пользователей. Значки для администратора, пользователя 0 и пользователя 1 указывают на то, что они вошли в систему.](./media/header-akamai-tutorial/conditionalaccess06.png)
 
 1. Кроме того, можно непосредственно ввести URL-адрес приложения для работы по протоколу RDP.
 
@@ -383,15 +383,15 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 1. Перейдите к разделу Add Applications (Добавление приложений) и выберите **SSH**.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure25.png)
+    ![Снимок экрана консоли Akamai ЕАА с мастером добавления приложений, в котором в разделе Access Apps (Доступ к приложениям) в списке приложений отображается SSH.](./media/header-akamai-tutorial/configure25.png)
 
 1. Заполните поля **Application Name** (Имя приложения) и **Description** (Описание).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure26.png)
+    ![Снимок экрана диалогового окна SSH App (Приложение RDP), в котором отображаются параметры для имени и описания приложения.](./media/header-akamai-tutorial/configure26.png)
 
 1. Настройте удостоверение приложения.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure27.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой General (Общие), на которой отображаются параметры удостоверения приложения для SSH-SECURE.](./media/header-akamai-tutorial/configure27.png)
 
     а. Укажите имя и описание.
 
@@ -407,43 +407,43 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 Щелкните **Save and Go to Services** (Сохранить и перейти к службам).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure28.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Authentication (Проверка подлинности) для SSH-SECURE, на которой в правом нижнем углу показана кнопка Save and go to Services (Сохранить и перейти к службам).](./media/header-akamai-tutorial/configure28.png)
 
 #### <a name="services"></a>Службы
 
 Щелкните **Save and go to Advanced Settings** (Сохранить и перейти к дополнительным параметрам).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure29.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Services (Службы) для SSH-SECURE, на которой в правом нижнем углу показана кнопка Save and go to Authentication (Сохранить и перейти к проверке подлинности).](./media/header-akamai-tutorial/configure29.png)
 
 #### <a name="advanced-settings"></a>Дополнительные параметры
 
 Щелкните "Save and go to Deployment" (Завершить и перейти к развертыванию).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure30.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры) для SSH-SECURE, на которой показаны параметры конфигурации проверки подлинности и работоспособности.](./media/header-akamai-tutorial/configure30.png)
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure31.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Custom HTTP headers (Пользовательские HTTP-заголовки) для SSH-SECURE, на которой в правом нижнем углу показана кнопка Save and go to Deployment (Завершить и перейти к развертыванию).](./media/header-akamai-tutorial/configure31.png)
 
 #### <a name="deployment"></a>Развертывание
 
 1. Щелкните **Deploy Application** (Развернуть приложение).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure32.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Deployment (Развертывание) для SSH-SECURE, на которой отображается кнопка Deploy Application (Развернуть приложение).](./media/header-akamai-tutorial/configure32.png)
 
 1. Проверьте взаимодействие с пользователем.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser03.png)
+    ![Снимок экрана диалогового окна входа в окне myapps.microsoft.com.](./media/header-akamai-tutorial/enduser03.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser04.png)
+    ![Снимок экрана, на котором показано окно "Приложения" сайта myapps.microsoft.com со значками для надстройки, HRWEB, Akamai — CorpApps, Expense, Groups и Access reviews.](./media/header-akamai-tutorial/enduser04.png)
 
 1. Условный доступ
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess04.png)
+    ![Снимок экрана с сообщением "Утверждение запроса на вход. На ваше мобильное устройство отправлено уведомление. Ответьте на него, чтобы продолжить работу".](./media/header-akamai-tutorial/conditionalaccess04.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess07.png)
+    ![Снимок экрана приложения со значком для MyHeaderApp, SSH-Secure и SecretRDPApp.](./media/header-akamai-tutorial/conditionalaccess07.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess08.png)
+    ![Снимок экрана командного окна для ssh-secure-go.akamai-access.com, в котором показан запрос пароля.](./media/header-akamai-tutorial/conditionalaccess08.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess09.png)
+    ![Снимок экрана: командное окно для ssh-secure-go.akamai-access.com с информацией о приложении и командной строкой.](./media/header-akamai-tutorial/conditionalaccess09.png)
 
 ### <a name="kerberos-authentication"></a>Проверка подлинности Kerberos
 
@@ -451,54 +451,54 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 #### <a name="general-tab"></a>Вкладка «Общие»
 
-![Настройка Akamai](./media/header-akamai-tutorial/generaltab.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой General (Общие) для MYKERBOROSAPP.](./media/header-akamai-tutorial/generaltab.png)
 
 #### <a name="authentication-tab"></a>Вкладка "Authentication" (Аутентификация)
 
 Назначьте поставщик удостоверений.
 
-![Настройка Akamai](./media/header-akamai-tutorial/authenticationtab.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Authentication (Проверка подлинности) для MYKERBOROSAPP, на которой указано, что в качестве поставщика удостоверений используется служба единого входа Azure AD.](./media/header-akamai-tutorial/authenticationtab.png)
 
 #### <a name="services-tab"></a>Вкладка Services (Службы)
 
-![Настройка Akamai](./media/header-akamai-tutorial/servicestab.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Services (Службы) для MYKERBOROSAPP.](./media/header-akamai-tutorial/servicestab.png)
 
 #### <a name="advanced-settings"></a>Дополнительные параметры
 
-![Настройка Akamai](./media/header-akamai-tutorial/advancesettings02.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Advanced Settings (Дополнительные параметры) для MYKERBOROSAPP, на которой показаны параметры для связанных приложений и проверки подлинности.](./media/header-akamai-tutorial/advancesettings02.png)
 
 > [!NOTE]
 > Имя субъекта-службы для веб-сервера должно быть задано в формате SPN@Domain. Например, в данном случае это `HTTP/frp-app1.superdemo.live@SUPERDEMO.LIVE`. Оставьте для остальных параметров значение по умолчанию.
 
 #### <a name="deployment-tab"></a>Вкладка Deployment (Развертывание)
 
-![Настройка Akamai](./media/header-akamai-tutorial/deploymenttab.png)
+![Снимок экрана консоли Akamai ЕАА с вкладкой Deployment (Развертывание) для MYKERBOROSAPP, на которой отображается кнопка Deploy Application (Развернуть приложение).](./media/header-akamai-tutorial/deploymenttab.png)
 
 #### <a name="adding-directory"></a>Добавление каталога
 
 1. Выберите в раскрывающемся списке **AD**.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure33.png)
+    ![Снимок экрана окна Directories (Каталоги) консоли Akamai ЕАА, в котором отображается диалоговое окно Create New Directory (Создание каталога) со службой AD, выбранной в раскрывающемся списке Directory Type (Тип каталога).](./media/header-akamai-tutorial/configure33.png)
 
 1. Укажите необходимые данные.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/configure34.png)
+    ![Снимок экрана окна SUPERDEMOLIVE консоли Akamai ЕАА с параметрами для имени каталога, службы каталогов, соединителя и сопоставления атрибутов.](./media/header-akamai-tutorial/configure34.png)
 
 1. Проверьте создание каталога.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/directorydomain.png)
+    ![Снимок экрана окна Directories (Каталоги) консоли Akamai ЕАА, в котором показано, что был добавлен каталог superdemo.live.](./media/header-akamai-tutorial/directorydomain.png)
 
 1. Добавьте группы или подразделения, которым требуется доступ.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/addgroup.png)
+    ![Снимок экрана параметров для каталога superdemo.live. Выделен значок, выбранный для добавления групп или подразделений.](./media/header-akamai-tutorial/addgroup.png)
 
 1. На изображении ниже группа называется EAAGroup и состоит из одного члена.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/eaagroup.png)
+    ![Снимок экрана окна GROUPS ON SUPERDEMOLIVE DIRECTORY (ГРУППЫ В КАТАЛОГЕ SUPERDEMOLIVE) консоли Akamai ЕАА. В списке Groups (Группы) указана EAAGroup с 1 пользователем.](./media/header-akamai-tutorial/eaagroup.png)
 
 1. Добавьте каталог для поставщика удостоверений. Для этого выберите **Identity** > **Identity Providers** (Удостоверение > Поставщики удостоверений), а затем перейдите на вкладку **Directories** (Каталоги) и щелкните **Assign directory** (Назначить каталог).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/assigndirectory.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Directories (Каталоги) для единого входа с помощью Azure AD, на которой в списке назначенных в данный момент каталогов отображается superdemo.live.](./media/header-akamai-tutorial/assigndirectory.png)
 
 ### <a name="configure-kcd-delegation-for-eaa-walkthrough"></a>Пошаговое руководство по настройке ограниченного делегирования Kerberos для ЕАА
 
@@ -506,14 +506,14 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 1. В этом примере мы будем использовать учетную запись с именем **EAADelegation**. Это можно сделать с помощью оснастки **Пользователи и компьютеры Active Directory**.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/assigndirectory.png)
+    ![Снимок экрана консоли Akamai ЕАА с вкладкой Directories (Каталоги) для единого входа с помощью Azure AD. В списке Currently assigned directories (Назначенные в данный момент каталоги) отображается каталог superdemo.live.](./media/header-akamai-tutorial/assigndirectory.png)
 
     > [!NOTE]
     > Имя пользователя должно быть указано в определенном формате и составлено на основе имени, которое задано в поле **Identity Intercept** (Перехват идентификаторов). На рис. 1 показано **corpapps.login.go.akamai-access.com**.
 
 1. Именем для входа пользователя будет `HTTP/corpapps.login.go.akamai-access.com`.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/eaadelegation.png)
+    ![Снимок экрана, на котором показаны свойства EAADelegation с именем EAADelegation и именем для входа пользователя HTTP/corpapps.login.go.akamai-access.com.](./media/header-akamai-tutorial/eaadelegation.png)
 
 #### <a name="step-2-configure-the-spn-for-this-account"></a>Шаг 2. Настройка имени субъекта-службы для этой учетной записи
 
@@ -521,13 +521,13 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 2. setspn -s **Http/corpapps.login.go.akamai-access.com eaadelegation**
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/spn.png)
+    ![Снимок экрана командной строки администратора с результатами выполнения команды setspn -s Http/corpapps.login.go.akamai-access.com eaadelegation.](./media/header-akamai-tutorial/spn.png)
 
 #### <a name="step-3-configure-delegation"></a>Шаг 3. Настройка делегирования
 
 1. Для учетной записи EAADelegation перейдите на вкладку Delegation (Делегирование).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/spn.png)
+    ![Снимок экрана командной строки администратора с командой для настройки имени субъекта-службы.](./media/header-akamai-tutorial/spn.png)
 
     * Укажите, что можно использовать любой протокол проверки подлинности.
     * Нажмите Add (Добавить) и добавьте учетную запись пула приложений для веб-сайта Kerberos. Если настройки заданы правильно, она должна автоматически разрешаться в правильное имя субъекта-службы.
@@ -551,35 +551,35 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 1. Ktpass /out EAADemo.keytab /princ HTTP/corpapps.login.go.akamai-access.com@superdemo.live /mapuser eaadelegation@superdemo.live /pass RANDOMPASS /crypto All ptype KRB5_NT_PRINCIPAL
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/administrator.png)
+    ![Снимок экрана командной строки администратора с результатами выполнения команды для создания keytab для AKAMAI EAA.](./media/header-akamai-tutorial/administrator.png)
 
 #### <a name="step-5-import-keytab-in-the-akamai-eaa-console"></a>Шаг 5. Импорт keytab в консоли Akamai ЕАА
 
 1. Щелкните **System** > **Keytabs** (Система > Файлы keytab).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/keytabs.png)
+    ![Снимок экрана консоли Akamai ЕАА с меню System, в котором выбран пункт Keytabs (Файлы keytab).](./media/header-akamai-tutorial/keytabs.png)
 
 1. В поле Keytab Type (Тип keytab) выберите **Kerberos Delegation** (Делегирование Kerberos).
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/keytabdelegation.png)
+    ![Снимок экрана EAAKEYTAB в консоли Akamai ЕАА, на котором показаны параметры файла keytab. Для Keytab Type (Тип keytab) задано значение Kerberos Delegation (Делегирование Kerberos).](./media/header-akamai-tutorial/keytabdelegation.png)
 
 1. Убедитесь, что файл keytab отображается как развернутый и проверенный.
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/keytabs02.png)
+    ![Снимок экрана KEYTABS в консоли Akamai ЕАА, на котором для ЕАА keytab задано значение Keytab deployed and verified (Файл keytab развернут и проверен).](./media/header-akamai-tutorial/keytabs02.png)
 
-1. Проверьте взаимодействие с пользователем.
+1. Действия пользователя
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser03.png)
+    ![Снимок экрана диалогового окна входа на сайте myapps.microsoft.com. ](./media/header-akamai-tutorial/enduser03.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/enduser04.png)
+    ![Снимок экрана окна "Приложения" для myapps.microsoft.com, в котором отображаются значки приложений.](./media/header-akamai-tutorial/enduser04.png)
 
 1. Условный доступ
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess04.png)
+    ![Снимок экрана с сообщением "Утверждение запроса на вход". сообщение.](./media/header-akamai-tutorial/conditionalaccess04.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess10.png)
+    ![Снимок экрана приложения со значком для MyHeaderApp, SSH-Secure, SecretRDPApp и myKerberosApp.](./media/header-akamai-tutorial/conditionalaccess10.png)
 
-    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess11.png)
+    ![Снимок экрана-заставки для myKerberosApp. Поверх фонового изображения отображается сообщение "Добро пожаловать, superdemo\user1".](./media/header-akamai-tutorial/conditionalaccess11.png)
 
 ### <a name="create-akamai-test-user"></a>Создание тестового пользователя Akamai
 

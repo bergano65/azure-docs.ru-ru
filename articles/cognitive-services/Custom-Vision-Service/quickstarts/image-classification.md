@@ -1,20 +1,22 @@
 ---
-title: Краткое руководство. Создание классификации изображений с помощью клиентской библиотеки для службы "Пользовательское визуальное распознавание"
-description: Краткое руководство. Создание проекта, добавление тегов, отправка изображений, обучение проекта и выполнение прогнозирования с использованием пакета SDK для службы "Пользовательское визуальное распознавание"
+title: Краткое руководство. Классификация изображений с помощью клиентской библиотеки для службы "Пользовательское визуальное распознавание"
+titleSuffix: Azure Cognitive Services
+description: Краткое руководство. Создание проекта классификации изображений, добавление тегов, отправка изображений, обучение проекта и выполнение прогнозирования с использованием клиентской библиотеки для службы "Пользовательское визуальное распознавание"
 author: PatrickFarley
 ms.author: pafarley
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 08/17/2020
-ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+ms.date: 09/14/2020
+ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
+keywords: Пользовательское визуальное распознавание, распознавание изображений, приложение для распознавания изображений, анализ изображений, ПО для распознавания изображений
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 805a88824d0fdf3102fb56ebcb02eb0d6dfa36bc
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 6583086c4b64c50f0cbef1fc12b7f4dc9e36be1f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88919388"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91321070"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-client-library"></a>Краткое руководство. Создание проекта классификации изображений с помощью клиентской библиотеки для службы "Пользовательское визуальное распознавание"
 

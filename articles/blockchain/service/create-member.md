@@ -5,12 +5,12 @@ ms.date: 07/16/2020
 ms.topic: quickstart
 ms.reviewer: ravastra
 ms.custom: references_regions
-ms.openlocfilehash: 5632c8a17c5ac25c8b4b436297d0dd5a0071df26
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8a7f5aaea56f34e8107664ab786a14b59cd1cb7d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503427"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91292734"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-the-azure-portal"></a>Краткое руководство. Создание участника блокчейн-сети службы "Блокчейн Azure" с помощью портала Azure
 

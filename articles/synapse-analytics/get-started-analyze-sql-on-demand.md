@@ -1,5 +1,5 @@
 ---
-title: Учебник. Приступая к анализу данных с помощью SQL по запросу
+title: Руководство по Начало работы с анализом данных с помощью бессерверного SQL
 description: В этом учебнике вы узнаете, как анализировать данные с помощью SQL по запросу, используя данные, хранящиеся в базах данных Spark.
 services: synapse-analytics
 author: saveenr
@@ -9,18 +9,18 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 93ebc1c5e89e54f4813f270b9f8b7b13f672fbe3
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 8d26a03a8b61850dc17bc4efff5f8ca12dfca191
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90016118"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300230"
 ---
 # <a name="analyze-data-with-sql-on-demand"></a>Анализ данных с помощью SQL по запросу
 
-В этом учебнике вы узнаете, как анализировать данные с помощью SQL по запросу, используя данные, хранящиеся в базах данных Spark. 
+Из этого учебника вы узнаете, как анализировать данные с помощью бессерверного SQL, используя пул SQL по запросу и данные, хранящиеся в базах данных Spark. 
 
-## <a name="analyze-nyc-taxi-data-in-blob-storage--using-sql-on-demand"></a>Анализ данных такси Нью-Йорка в Хранилище BLOB-объектов с помощью SQL по запросу
+## <a name="analyze-nyc-taxi-data-in-blob-storage-using-sql-on-demand-pool"></a>Анализ данных такси Нью-Йорка в Хранилище BLOB-объектов с помощью пула SQL по запросу
 
 1. В центре **Данные** в разделе **Связанный** щелкните правой кнопкой мыши элемент **Хранилище BLOB-объектов Azure > Sample Datasets (Образцы наборов данных) > nyc_tlc_yellow** и выберите **первые 100 строк**.
 1. Будет создан скрипт SQL со следующим кодом:

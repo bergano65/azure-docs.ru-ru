@@ -1,6 +1,6 @@
 ---
 title: Направление трафика через NVA — пример скрипта Azure PowerShell
-description: Пример скрипта Azure PowerShell для маршрутизации трафика через виртуальный сетевой модуль брандмауэра.
+description: Пример скрипта Azure PowerShell для маршрутизации трафика через NVA брандмауэра.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 03/20/2018
 ms.author: kumud
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5f23514c9dd86491e94155db60add40b73bfcfb5
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.openlocfilehash: 19bebb5c1817882dcb641a284332926e51a8dd2f
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89074140"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91314000"
 ---
 # <a name="route-traffic-through-a-network-virtual-appliance-script-sample"></a>Пример скрипта для маршрутизации трафика через виртуальный сетевой модуль
 

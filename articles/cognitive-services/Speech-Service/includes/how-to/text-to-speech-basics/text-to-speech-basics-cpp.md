@@ -4,16 +4,27 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
-ms.openlocfilehash: c5d954cc2bdda0b1fcb67801fa948e1f56fb0364
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 665ee16d71612ac79607b4a173979847e5e115af
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985973"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91332457"
 ---
+Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
+
+* получение ответов в виде потоков в памяти;
+* настройка частоты выборки и скорости передачи выходных данных;
+* отправка запросов синтеза с помощью SSML (язык разметки синтеза речи);
+* использование нейронных голосовых моделей.
+
+## <a name="skip-to-samples-on-github"></a>Примеры на GitHub
+
+Если вы хотите сразу перейти к примерам кода, см. [этот репозиторий](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/cpp/windows/text-to-speech) на сайте GitHub.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](../../../get-started.md).
+В этой статье предполагается, что у вас есть учетная запись Azure и подписка на службу "Речь". Если у вас нет учетной записи и подписки, [попробуйте службу "Речь" бесплатно](../../../overview.md#try-the-speech-service-for-free).
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
@@ -123,7 +134,7 @@ void synthesizeSpeech()
 * интегрировать полученные данные с другими API или службами;
 * изменять звуковые данные, записывать пользовательские заголовки `.wav` и т. д.
 
-Это изменение легко реализовать в предыдущем примере. Сначала удалите `AudioConfig`, так как вы будете вручную управлять выходными данными, чтобы получить больше контроля. Затем передайте `NULL` для `AudioConfig` в конструкторе `SpeechSynthesizer`. 
+Это изменение легко реализовать в предыдущем примере. Сначала удалите `AudioConfig`, так как теперь вы будете вручную управлять выходными данными, чтобы получить более полный контроль. Затем передайте `NULL` для `AudioConfig` в конструкторе `SpeechSynthesizer`. 
 
 > [!NOTE]
 > Передача значения `NULL` для `AudioConfig` вместо его пропуска, как это сделано в приведенном выше примере с выводом на динамики, не позволит по умолчанию воспроизводить звук на активном устройстве вывода.
@@ -151,7 +162,7 @@ void synthesizeSpeech()
 * частоту выборки;
 * глубину в битах.
 
-Чтобы изменить звуковой формат, используйте функцию `SetSpeechSynthesisOutputFormat()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace#speechsynthesisoutputformat), который используется для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace#speechsynthesisoutputformat).
+Чтобы изменить звуковой формат, используйте функцию `SetSpeechSynthesisOutputFormat()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace#speechsynthesisoutputformat) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace#speechsynthesisoutputformat).
 
 Различные типы файлов обеспечивают разные возможности для работы с ними в зависимости от требований. Обратите внимание, что по определению звуковые данные в необработанном формате, таком как `Raw24Khz16BitMonoPcm`, не содержат заголовки. Используйте такие форматы, только если вы уверены, что нижестоящие службы способны декодировать необработанный битовый поток, или если вы планируете создавать заголовки вручную на основе глубины в битах, частоты выборки, количества каналов и т. п.
 

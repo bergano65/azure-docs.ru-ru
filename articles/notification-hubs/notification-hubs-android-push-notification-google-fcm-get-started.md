@@ -1,6 +1,6 @@
 ---
 title: Отправка push-уведомлений в Android с помощью Центров уведомлений Azure и Firebase SDK версии 0.6 | Документация Майкрософт
-description: Из этого руководства вы узнаете, как использовать Центры уведомлений Azure и Google Firebase Cloud Messaging для отправки push-уведомлений на устройства Android.
+description: Из этого руководства вы узнаете, как с помощью Центров уведомлений Microsoft Azure и Google Firebase Cloud Messaging отправлять push-уведомления на устройства Android (с использованием пакета SDK Firebase версии 0.6).
 services: notification-hubs
 documentationcenter: android
 keywords: push-уведомления, push-уведомление, push-уведомление android, FCM, Firebase Cloud Messaging
@@ -16,12 +16,12 @@ ms.date: 06/22/2020
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 09/11/2019
-ms.openlocfilehash: 3b32a61dcf8dfe403a44af236afad830472d1b8d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7e68e93e8a103ccf92c949df779d929ac4095d92
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321468"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91268831"
 ---
 # <a name="tutorial-send-push-notifications-to-android-devices-using-firebase-sdk-version-06"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Firebase SDK версии 0.6
 

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API и C# — Визуальный поиск Bing
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как отправить изображение в API визуального поиска Bing и получить аналитические сведения об этом изображении.
+description: Узнайте, как отправить изображение с помощью API Визуального поиска Bing и C#, а затем получить аналитические сведения об этом изображении.
 services: cognitive-services
 author: swhite-msft
 manager: nitinme
@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: scottwhi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e5f772fe8152f209a8188ab5bf2d0010248feabf
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 0f908863b16b892e0978964a549b20bd9393fbae
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88934316"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91277128"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-c"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и C#
 

@@ -1,6 +1,6 @@
 ---
 title: Руководство по Создание определения задания Apache Spark в Synapse Studio
-description: Руководство. Использование Azure Synapse Analytics для создания определений заданий Spark и их отправки в пул Apache Spark для Azure Synapse Analytics.
+description: Учебник. Использование Azure Synapse Analytics для создания определений заданий Spark и их отправки в пул Apache Spark для Azure Synapse Analytics.
 author: Jejiang
 ms.author: jejiang
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: 787e9efa8ef11a83b63719cad51f9b26e055620d
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: 143713649afd7f9e42f517713b6b2365ee1605a3
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90562169"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91260280"
 ---
 # <a name="tutorial-create-apache-spark-job-definition-in-synapse-studio"></a>Руководство по Создание определения задания Apache Spark в Synapse Studio
 
@@ -47,7 +47,7 @@ ms.locfileid: "90562169"
 
      ![примеры файлов](./media/apache-spark-job-definitions/sample-files.png)
 
-3. Последовательно выберите  **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.py**  и  **shakespeare.txt**в файловую систему ADLS 2-го поколения. 
+3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.py** и **shakespeare.txt** в файловую систему ADLS 2-го поколения. 
 
      ![Отправка файла Python](./media/apache-spark-job-definitions/upload-python-file.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "90562169"
 
      ![Выбор значения для определения задания Spark для Python](./media/apache-spark-job-definitions/create-py-definition.png)
 
-7. Щелкните **Опубликовать**, чтобы сохранить определение задания Apache Spark.
+7. Выберите **Опубликовать**, чтобы сохранить определение задания Apache Spark.
 
      ![Публикация определения PY](./media/apache-spark-job-definitions/publish-py-definition.png)
 
@@ -89,7 +89,7 @@ ms.locfileid: "90562169"
  
      ![примеры файлов scala](./media/apache-spark-job-definitions/sample-files-scala.png)
 
- 3. Последовательно выберите  **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.jar**  и  **shakespeare.txt**в файловую систему ADLS 2-го поколения.
+ 3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.jar** и **shakespeare.txt** в файловую систему ADLS 2-го поколения.
  
      ![Подготовка структуры Scala](./media/apache-spark-job-definitions/prepare-scala-structure.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "90562169"
 
      ![Выбор значения для определения задания Spark для Scala](./media/apache-spark-job-definitions/create-scala-definition.png)
 
- 7. Щелкните **Опубликовать**, чтобы сохранить определение задания Apache Spark.
+ 7. Выберите **Опубликовать**, чтобы сохранить определение задания Apache Spark.
 
       ![Публикация определения Scala](./media/apache-spark-job-definitions/publish-scala-definition.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "90562169"
 
      ![пример DotNet](./media/apache-spark-job-definitions/sample-dotnet.png)
 
- 3. Последовательно выберите  **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.zip**  и  **shakespeare.txt**в файловую систему ADLS 2-го поколения.
+ 3. Последовательно выберите **Данные** -> **Связанные** -> **Azure Data Lake Storage 2-го поколения** и отправьте файлы  **wordcount.zip** и **shakespeare.txt** в файловую систему ADLS 2-го поколения.
  
      ![Подготовка структуры .NET](./media/apache-spark-job-definitions/prepare-dotnet-structure.png)
 
@@ -156,7 +156,7 @@ ms.locfileid: "90562169"
 
      ![Выбор значения для определения задания Spark для .NET](./media/apache-spark-job-definitions/create-dotnet-definition.png)
 
- 7. Щелкните **Опубликовать**, чтобы сохранить определение задания Apache Spark.
+ 7. Выберите **Опубликовать**, чтобы сохранить определение задания Apache Spark.
 
       ![Публикация определения .NET](./media/apache-spark-job-definitions/publish-dotnet-definition.png)
 
@@ -165,13 +165,13 @@ ms.locfileid: "90562169"
 Созданное определение задания Apache Spark можно отправить в пул Apache Spark. Убедитесь, что вы являетесь **владельцем данных BLOB-объектов службы хранилища** для файловой системы ADLS 2-го поколения, с которой вы хотите работать. Если у вас нет этой роли, добавьте разрешение вручную.
 
 ### <a name="scenario-1-submit-apache-spark-job-definition"></a>Сценарий 1. Отправка определения заданий Apache Spark
- 1. Откройте окно определения задания Apache Spark, щелкнув его.
+ 1. Откройте окно определения задания Apache Spark, выбрав его.
 
       ![Открытие определения задания Spark для отправки ](./media/apache-spark-job-definitions/open-spark-definition.png)
 
  2. Нажмите кнопку **Отправить**, чтобы отправить проект в выбранный пул Apache Spark. Вы можете щелкнуть вкладку **Spark monitoring URL** (URL-адрес мониторинга Spark), чтобы просмотреть LogQuery приложения Apache Spark.
 
-    ![Нажмите кнопку "Отправить", чтобы отправить определение задания Spark.](./media/apache-spark-job-definitions/submit-spark-definition.png)
+    ![Нажатие кнопки "Отправить" для отправки определения задания Spark](./media/apache-spark-job-definitions/submit-spark-definition.png)
 
     ![Диалоговое окно Spark Submission (Отправка в Spark)](./media/apache-spark-job-definitions/submit-definition-result.png)
 
@@ -197,7 +197,7 @@ ms.locfileid: "90562169"
 
  1. Откройте имеющееся определение задания Apache Spark.
 
- 2. Щелкните значок в правом верхнем углу определения задания Apache Spark, выберите **Existing Pipeline** (Существующий конвейер) или **New pipeline** (Новый конвейер). Дополнительные сведения см. на странице Pipeline (Конвейер).
+ 2. Щелкните значок в правом верхнем углу определения задания Apache Spark, выберите **Existing Pipeline** (Имеющийся конвейер) или **New pipeline** (Новый конвейер). Дополнительные сведения см. на странице Pipeline (Конвейер).
 
      ![Добавление в конвейер 1](./media/apache-spark-job-definitions/add-to-pipeline01.png)
 
@@ -205,5 +205,5 @@ ms.locfileid: "90562169"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике показано, как использовать Azure Synapse Studio для создания определений заданий Apache Spark и их отправки в пул Apache Spark. Далее вы можете использовать Azure Synapse Studio для создания наборов данных Power BI и управления такими данными.
+Далее вы можете использовать Azure Synapse Studio для создания наборов данных Power BI и управления такими данными. Дополнительные сведения см. в статье [Краткое руководство. Связывание рабочей области Power BI с рабочей областью Synapse](../quickstart-power-bi.md). 
 

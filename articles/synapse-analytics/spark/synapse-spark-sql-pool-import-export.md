@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: 58c52649750ae03f19188a025fa4baa16a55ae05
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.openlocfilehash: 11f73d2becb40b800c49afe0cd58f56953f8d42d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88590087"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91259924"
 ---
 # <a name="introduction"></a>Введение
 
@@ -30,9 +30,9 @@ ms.locfileid: "88590087"
 
 ## <a name="authentication-in-azure-synapse-analytics"></a>Проверка подлинности в Azure Synapse Analytics
 
-Проверка подлинности между системами упрощена в Azure Synapse Analytics. Служба токенов подключается к Azure Active Directory (AAD), чтобы получить маркеры безопасности, используемые при доступе к учетной записи хранения или к серверу хранилища данных.
+Проверка подлинности между системами упрощена в Azure Synapse Analytics. Служба токенов подключается к Azure Active Directory, чтобы получить маркеры безопасности, используемые при доступе к учетной записи хранения или к серверу хранилища данных.
 
-По этой причине нет необходимости создавать учетные данные или указывать их в API соединителя, если проверка подлинности AAD настроена для учетной записи хранения и сервера хранилища данных. В противном случае можно указать проверку подлинности SQL. Дополнительные сведения см. в разделе [Использование](#usage).
+По этой причине нет необходимости создавать учетные данные или указывать их в API соединителя, если аутентификация AAD настроена для учетной записи хранения и сервера хранилища данных. В противном случае можно указать проверку подлинности SQL. Дополнительные сведения см. в разделе [Использование](#usage).
 
 ## <a name="constraints"></a>Ограничения
 
@@ -98,7 +98,7 @@ API записи создает таблицу в пуле SQL, а затем в
 - Constants.INTERNAL — управляемая таблица в пуле SQL
 - Constants.EXTERNAL — внешняя таблица в пуле SQL
 
-Управляемая таблица пула SQL
+Управляемая пулом SQL таблица
 
 ```scala
 df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
@@ -106,7 +106,7 @@ df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
 
 Внешняя таблица пула SQL
 
-Для записи во внешнюю таблицу пула SQL в пуле SQL должны существовать EXTERNAL DATA SOURCE и EXTERNAL FILE FORMAT.  См. дополнительные сведения о [создании внешнего источника данных](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и о [форматах внешних файлов](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в пуле SQL.  Ниже приведены примеры создания внешнего источника данных и форматов внешних файлов в пуле SQL.
+Для записи во внешнюю таблицу пула SQL в пуле SQL должны существовать EXTERNAL DATA SOURCE и EXTERNAL FILE FORMAT.  См. дополнительные сведения о [создании внешнего источника данных](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и о [форматах внешних файлов](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в пуле SQL.  Ниже приведены примеры создания внешнего источника данных и форматов внешних файлов в пуле SQL.
 
 ```sql
 --For an external table, you need to pre-create the data source and file format in SQL pool using SQL queries:

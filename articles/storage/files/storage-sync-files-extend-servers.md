@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 10/23/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 80fcebec76788ca9ec754b35c57f9965f38c2c0e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1d2a0d79a5cdd53f8376c088fc986c20908575eb
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037105"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91329468"
 ---
 # <a name="tutorial-extend-windows-file-servers-with-azure-file-sync"></a>Руководство по Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure"
 
@@ -314,6 +314,8 @@ ms.locfileid: "87037105"
 ![Служба хранилища Azure успешно синхронизирована](media/storage-sync-files-extend-servers/files-synced-in-azurestorage.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы хотите очистить ресурсы, созданные при работе с этим учебником, сначала удалите конечные точки из службы синхронизации хранилища. Затем отмените регистрацию сервера в службе синхронизации хранилища, удалите группы синхронизации и службу синхронизации.
 
 [!INCLUDE [storage-files-clean-up-portal](../../../includes/storage-files-clean-up-portal.md)]
 

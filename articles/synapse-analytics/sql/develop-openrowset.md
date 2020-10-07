@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: b7b8a0d98db1411a08afdb33fa272bb7e6d6313e
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: e541a5620d4f263e5e1379b364d7c7dd9a97a331
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87280483"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91289027"
 ---
 # <a name="how-to-use-openrowset-with-sql-on-demand-preview"></a>Как использовать OPENROWSET в службе SQL по запросу (предварительная версия)
 
@@ -119,7 +119,7 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 | хранилище BLOB-объектов Azure         | wasb(s)  | \<container>@\<storage_account>.blob.core.windows.net/path/file |
 | Azure Data Lake Store 1-го поколения | http(s)  | \<storage_account>.azuredatalakestore.net/webhdfs/v1 |
 | Azure Data Lake Store 2-го поколения | http(s)  | \<storage_account>.dfs.core.windows.net /path/file   |
-| Azure Data Lake Store 2-го поколения | abfs(s)  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
+| Azure Data Lake Store 2-го поколения | aufs[s]  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
 ||||
 
 '\<storage_path>'
@@ -135,7 +135,7 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 > [!NOTE]
 > В отличие от Hadoop и Polybase, SQL по запросу не возвращает вложенные папки. Еще одно отличие от Hadoop и PolyBase заключается в том, что служба SQL по запросу не возвращает файлы, имя которых начинается с подчеркивания (_) или точки (.).
 
-Если в приведенном ниже примере unstructured_data_path=`https://mystorageaccount.dfs.core.windows.net/webdata/`, после обращения в SQL по запросу будут возвращены строки из mydata.txt и _hidden.txt. Служба не будет возвращать mydata2.txt и mydata3.txt, так как они находятся во вложенной папке.
+Если в приведенном ниже примере unstructured_data_path=`https://mystorageaccount.dfs.core.windows.net/webdata/`, после обращения в SQL по запросу будут возвращены строки из mydata.txt и _hidden.txt. Файлы mydata2.txt и mydata3.txt не возвращаются, так как они находятся во вложенной папке.
 
 ![Рекурсивные данные для внешних таблиц](./media/develop-openrowset/folder-traversal.png)
 
@@ -184,7 +184,7 @@ ESCAPE_CHAR = 'char'
 
 FIRSTROW = 'first_row' (первая_строка) 
 
-Указывает номер первой строки для загрузки. Значение по умолчанию — 1. Значение по умолчанию — первая строка указанного файла данных. Номера строк определяются с помощью подсчета признаков конца строки. Значения аргумента FIRSTROW начинаются с 1.
+Указывает номер первой строки для загрузки. Значение по умолчанию — 1. Оно указывает на первую строку в используемом файле данных. Номера строк определяются с помощью подсчета признаков конца строки. Значения аргумента FIRSTROW начинаются с 1.
 
 FIELDQUOTE = 'field_quote' (символ_кавычек) 
 

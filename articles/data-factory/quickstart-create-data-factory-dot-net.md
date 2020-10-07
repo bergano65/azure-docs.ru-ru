@@ -1,6 +1,6 @@
 ---
 title: Создание фабрики данных Azure с помощью пакета SDK для .NET
-description: Создайте фабрику данных Azure для копирования данных из одного расположения в хранилище BLOB-объектов Azure в другое.
+description: Создайте экземпляр и конвейер Фабрики данных Azure с помощью пакета SDK для .NET для копирования данных между расположениями в Хранилище BLOB-объектов Azure.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/24/2019
 ms.author: jingwang
-ms.openlocfilehash: d4652ca62a82d14c7e44466161ae9b463818a71f
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.openlocfilehash: e8da3dff39f94d6639471a2d1d96691c9cde614d
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89433985"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91322892"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
 
@@ -49,7 +49,7 @@ ms.locfileid: "89433985"
 
 1. В разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal) создайте приложение, которое представляет приложение .NET, создаваемое в этом руководстве. В качестве URL-адреса входа можно указать фиктивный URL-адрес, как показано в статье (`https://contoso.org/exampleapp`).
 2. В разделе [Получение значений для входа](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in) получите **код приложения**, а также **идентификатор арендатора** и запишите эти значения. Они потребуются в дальнейшем при выполнении инструкций этого руководства. 
-3. В разделе [Сертификаты и секреты](../active-directory/develop/howto-create-service-principal-portal.md#upload-a-certificate-or-create-a-secret-for-signing-in) получите **ключ аутентификации** и запишите это значение. Оно потребуется в дальнейшем при выполнении инструкций этого руководства.
+3. В разделе [Сертификаты и секреты](../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options) получите **ключ аутентификации** и запишите это значение. Оно потребуется в дальнейшем при выполнении инструкций этого руководства.
 4. В разделе [Назначение приложению роли](../active-directory/develop/howto-create-service-principal-portal.md#assign-a-role-to-the-application) назначьте приложению роль **Участник** на уровне подписки, чтобы приложение могло создавать фабрики данных в подписке.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio

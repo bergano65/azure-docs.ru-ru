@@ -4,12 +4,12 @@ description: Подготовка локальных компьютеров к �
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.custom: MVC
-ms.openlocfilehash: 8acbb867d98a547787e207c410d4e1a852aa68f3
-ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
+ms.openlocfilehash: ed5a1b6dc47c91815cc88200ddd1b1246603f806
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88606817"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91275410"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Подготовка локальных компьютеров к миграции в Azure
 
@@ -109,11 +109,13 @@ ms.locfileid: "88606817"
 
 Служба "Миграция Azure" автоматически выполняет эти действия для данных версий
 
-- Red Hat Enterprise Linux 7.0+, 6.5+
-- CentOS 7.0+, 6.5+
+- Red Hat Enterprise Linux 7.8, 7.7, 7.6, 7.5, 7.4, 7.0, 6.x;
+- Cent OS 7.7, 7.6, 7.5, 7.4, 6.x;
 - SUSE Linux Enterprise Server 12 SP1+;
-- Ubuntu 18.04LTS, 16.04LTS, 14.04LTS;
+- SUSE Linux Enterprise Server 15 SP1;
+- Ubuntu 19.04, 19.10, 18.04LTS, 16.04LTS, 14.04LTS;
 - Debian 8, 7.
+- Oracle Linux 7.7, Oracle Linux 7.7-CI.
 
 Для других версий подготовьте компьютеры, как указано в таблице.  
 

@@ -1,5 +1,5 @@
 ---
-title: Настройка Службы подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Azure CLI
+title: Краткое руководство. Настройка Подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Azure CLI
 description: Краткое руководство. Настройка Службы подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Azure CLI
 author: wesmc7777
 ms.author: wesmc
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 313dfe930dec5233f96b89fdebf978a41fdcdf80
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 157bd0a0a40ce6a935d13bb10a84c814ba1018bf
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497670"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91330253"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Краткое руководство. Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 
@@ -84,7 +84,11 @@ echo $hubConnectionString
 ```
 
 > [!NOTE]
-> Эти две команды можно использовать для узла, где работает Bash. Если вы используете локальную оболочку Windows или CMD либо узел PowerShell, вам необходимо изменить команды, чтобы использовать правильный синтаксис для этой среды.
+> Эти две команды можно использовать для узла, где работает Bash.
+> 
+> Если вы используете локальную оболочку Windows или CMD либо узел PowerShell, измените команды, чтобы использовать правильный синтаксис для этой среды.
+>
+> Если вы используете Azure Cloud Shell, убедитесь, что в раскрывающемся списке со средами в левой части окна оболочки указано **Bash**.
 >
 
 ## <a name="link-the-iot-hub-and-the-provisioning-service"></a>Связывание Центра Интернета вещей со службой подготовки устройств

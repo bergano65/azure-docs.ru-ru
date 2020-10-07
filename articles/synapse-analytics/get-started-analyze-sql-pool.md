@@ -1,5 +1,5 @@
 ---
-title: Учебник. Приступая к анализу данных с помощью пула SQL
+title: Руководство по началу работы с анализом данных с помощью выделенных пулов SQL
 description: В этом учебнике вы будете использовать пример данных по такси Нью-Йорка для изучения аналитических возможностей пула SQL.
 services: synapse-analytics
 author: saveenr
@@ -9,16 +9,16 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: b1060bcc8603cb7f7395a50056424b3d6c0ebe5a
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 3df0959003923a9a4ff2347330fd5a4f22e52245
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90015506"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91300128"
 ---
-# <a name="analyze-data-with-sql-pools"></a>Анализ данных с помощью пулов SQL
+# <a name="analyze-data-with-sql-dedicated-pools"></a>Анализ данных с помощью выделенных пулов SQL
 
-Azure Synapse Analytics предоставляет возможность анализировать данные с помощью пула SQL. В этом учебнике вы будете использовать пример данных по такси Нью-Йорка для изучения аналитических возможностей пула SQL.
+Azure Synapse Analytics позволяет анализировать данные с помощью выделенного пула SQL. В этом руководстве показано, как использовать данные о такси Нью-Йорка для изучения возможностей выделенного пула SQL.
 
 ## <a name="load-the-nyc-taxi-data-into-sqldb1"></a>Загрузка данных такси Нью-Йорка в SQLDB1
 
@@ -71,7 +71,7 @@ Azure Synapse Analytics предоставляет возможность ана
     ```
 1. Выполнение этого скрипта займет около 1 минуты. Он загружает 2 млн строк данных такси Нью-Йорка в таблицу с именем **dbo.Trip**.
 
-## <a name="explore-the-nyc-taxi-data-in-the-sql-pool"></a>Изучите данные нью-йоркского такси в пуле SQL
+## <a name="explore-the-nyc-taxi-data-in-the-dedicated-sql-pool"></a>Обзор данных о такси Нью-Йорка в выделенном пуле SQL
 
 1. В Synapse Studio перейдите в центр **Данные**.
 1. Перейдите в раздел **SQLDB1** > **Таблицы**. Вы увидите, что несколько таблиц загружены.
