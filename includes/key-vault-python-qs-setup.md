@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/03/2020
 ms.author: msmbaldwin
 ms.openlocfilehash: 9440a33858cb70389e86621ae76be9c08ec56d61
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "89482146"
 ---
 1. Убедитесь, что у вас есть [учетная запись Azure с активной подпиской](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).

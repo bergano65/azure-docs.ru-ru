@@ -14,10 +14,10 @@ ms.author: marsma
 ms.custom: aaddev, contperfq1
 ms.reviewer: lenalepa, aragra, sureshja
 ms.openlocfilehash: fc2f3202ac88e3ee6c24db21dd9072a13a8deef9
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "89442315"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
@@ -59,7 +59,7 @@ ms.locfileid: "89442315"
 
 После добавления разрешений в API вы увидите выбранные разрешения в разделе **Настроенные разрешения**. На следующем рисунке показан пример делегированного разрешения *Employees.Read.All*, добавленного в регистрацию клиентского приложения.
 
-:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-02-configured-permissions-pane.png" alt-text="Панель настроенных разрешений на портале Azure, где показано только что добавленное разрешение":::
+:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-02-configured-permissions-pane.png" alt-text="График, на котором показаны веб-API с выделенными областями справа и клиентским приложением слева, где эти области выбраны в качестве разрешений":::
 
 Вы также можете увидеть разрешение *User.Read* для API Microsoft Graph. Это разрешение добавляется автоматически при регистрации приложения на портале Azure.
 
@@ -136,11 +136,11 @@ ms.locfileid: "89442315"
 
 Кнопка **Предоставление согласия администратора для {имя_вашего_клиента}** позволяет администратору предоставить согласие администратора для разрешений, настроенных для приложения. После нажатия кнопки отображается диалоговое окно с запросом на согласие выполнить действие.
 
-:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-03-grant-admin-consent-button.png" alt-text="Кнопка предоставления согласия администратора выделена на панели настроенных разрешений на портале Azure":::
+:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-03-grant-admin-consent-button.png" alt-text="График, на котором показаны веб-API с выделенными областями справа и клиентским приложением слева, где эти области выбраны в качестве разрешений":::
 
 После предоставления согласия разрешения, для которых необходимо предоставить согласие администратора, показаны как разрешения с предоставленным согласием.
 
-:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-04-admin-consent-granted.png" alt-text="В таблице Настройка разрешений на портале Azure отображается согласие администратора, предоставленное для разрешения Files.Read.All":::
+:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-04-admin-consent-granted.png" alt-text="График, на котором показаны веб-API с выделенными областями справа и клиентским приложением слева, где эти области выбраны в качестве разрешений":::
 
 Кнопка **Предоставить согласие администратора** *отключена*, если вы не являетесь администратором или если для приложения не настроены разрешения. Если у вас есть разрешения, которые были предоставлены, но еще не настроены, кнопка согласия администратора поможет вам их обработать. Их можно добавить в настроенные разрешения или удалить.
 

@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 07/30/2020
 ms.author: mlottner
 ms.openlocfilehash: 172ae82288c2cb948839b69955b9491715eb4690
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "90945172"
 ---
 # <a name="quickstart-investigate-security-alerts"></a>Краткое руководство. Анализ оповещений системы безопасности
@@ -44,12 +44,12 @@ ms.locfileid: "90945172"
 
 1. Откройте любое оповещение системы безопасности в списке, выбрав **Центр Интернета вещей** > **Безопасность** > **Оповещения**. 
 1. Изучите **описание** оповещения, **серьезность**, **источник обнаружения**, **сведения об устройстве** по всем устройствам, выдавшим это оповещение в период агрегирования.
-:::image type="content" source="media/quickstart/drill-down-iot-alert-details.png" alt-text="Детализация и анализ сведений о каждом устройстве в агрегированном оповещении"::: 
+:::image type="content" source="media/quickstart/drill-down-iot-alert-details.png" alt-text="Исследование новых оповещений системы безопасности Интернета вещей с помощью флага нового оповещения"::: 
 1. После просмотра сведений об оповещениях воспользуйтесь инструкциями по **ручному исправлению**, которые помогут устранить проблему, вызвавшую это оповещение. 
-:::image type="content" source="media/quickstart/iot-alert-manual-remediation-steps.png" alt-text="Выполнение действий по ручному устранению проблем, связанных с оповещениями системы безопасности устройства":::
+:::image type="content" source="media/quickstart/iot-alert-manual-remediation-steps.png" alt-text="Исследование новых оповещений системы безопасности Интернета вещей с помощью флага нового оповещения":::
 
 1. Если требуется дальнейшее исследование, **проанализируйте оповещения в Log Analytics**, используя приведенную ниже ссылку. 
-:::image type="content" source="media/quickstart/investigate-iot-alert-log-analytics.png" alt-text="Использование ссылки, отображаемой на экране, для выполнения анализа с помощью Log Analytics с целью дальнейшего изучения оповещения":::
+:::image type="content" source="media/quickstart/investigate-iot-alert-log-analytics.png" alt-text="Исследование новых оповещений системы безопасности Интернета вещей с помощью флага нового оповещения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,10 +11,10 @@ ms.custom: mvc
 ms.date: 09/15/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 4d1488d6dd2e5d08ae774ca88b7ab41b2020efe5
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "90998510"
 ---
 # <a name="quickstart-create-an-key-vault-managed-hsm-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание управляемого устройства HSM в Key Vault с помощью шаблона Azure Resource Manager
@@ -30,7 +30,7 @@ ms.locfileid: "90998510"
 Чтобы выполнить действия, описанные в этой статье, вам потребуется следующее:
 
 - подписка на Microsoft Azure. Если у вас ее нет, зарегистрируйтесь, чтобы воспользоваться [бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial).
-- Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Сведения об установке или обновлении Azure CLI см. в [этой статье]( /cli/azure/install-azure-cli).
+- Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Сведения об установке или обновлении Azure CLI см. в [этой статье]( /cli/azure/install-azure-cli).
 
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]

@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: aahi
 ms.openlocfilehash: fbc73e20b8cc2baa1cc5c5a5b2f674fb1b2dde84
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "90945785"
 ---
 # <a name="quickstart-explore-the-metrics-advisor-demo-with-example-data"></a>Краткое руководство. Изучение демонстрационного примера Помощника по метрикам с тестовыми данными
@@ -44,14 +44,14 @@ ms.locfileid: "90945785"
 * Журналы обновления веб-канала данных.   
 * Сведения о канале данных и его параметры.
 
-:::image type="content" source="../media/data-feed-view.png" alt-text="Представление канала данных" lightbox="../media/data-feed-view.png":::
+:::image type="content" source="../media/data-feed-view.png" alt-text="Пример списка данных" lightbox="../media/data-feed-view.png":::
 
 
 ## <a name="view-time-series-visualizations-and-configurations"></a>Просмотр визуализаций и конфигураций для временных рядов
 
 Щелкните метрику *cost* (затраты) в веб-канале данных *Sample - Cost/Revenue - City/Category* (Пример — Затраты/доходы — Город/категория). Вы увидите сопоставленный временной ряд со срезами по измерениям, а также визуализации по историческим данным метрик. Синяя полоса вокруг данных метрики обозначает ожидаемый диапазон значений, получаемых от моделей машинного обучения Помощника по метрикам. Точки, выпадающие за пределы этого диапазона, будут отмечены красным цветом как обнаруженные аномалии. 
 
-:::image type="content" source="../media/series-visualization.png" alt-text="Визуализация ряда" lightbox="../media/series-visualization.png":::
+:::image type="content" source="../media/series-visualization.png" alt-text="Пример списка данных" lightbox="../media/series-visualization.png":::
 
 Обнаружение аномалий настраивается через **конфигурации обнаружения** в левой части страницы сведений о метриках. Здесь предлагается несколько методов обнаружения аномалий, которые можно комбинировать. Вы также можете попробовать другие характеристики, направления обнаружения и конфигурации. Ссылка **Advanced configuration** (Расширенная конфигурация) в нижней части раздела **detecting configurations** (Конфигурации обнаружения) позволяет создать более сложные настраиваемые параметры для обнаружения, а затем использовать их для групп или отдельных рядов. 
 
@@ -59,7 +59,7 @@ ms.locfileid: "90945785"
 
 В нижней части панели **Add feedback** (Добавить обратную связь) есть ссылка **To incident hub** (К центру инцидентов), которая ведет на страницу анализа инцидентов и основных причин.  
 
-:::image type="content" source="../media/incident-link.png" alt-text="Ссылка на инцидент" lightbox="../media/incident-link.png":::
+:::image type="content" source="../media/incident-link.png" alt-text="Пример списка данных" lightbox="../media/incident-link.png":::
 
 ## <a name="explore-anomaly-detection-results-and-perform-root-cause-analysis"></a>Изучение результатов обнаружения аномалий и анализ основных причин
 
@@ -67,7 +67,7 @@ ms.locfileid: "90945785"
 
 В разделе **Diagnostics** (Диагностика) отображаются дерево инцидентов и несколько вкладок для диагностики инцидента.
 
-:::image type="content" source="../media/incident-diagnostic.png" alt-text="Диагностика инцидента" lightbox="../media/incident-diagnostic.png":::
+:::image type="content" source="../media/incident-diagnostic.png" alt-text="Пример списка данных" lightbox="../media/incident-diagnostic.png":::
 
 Выявив основную причину инцидента, вы сможете принять меры и устранить проблему, пока ситуация не ухудшилась. Вы также можете просмотреть дополнительные сведения, используя другие функции диагностики, предоставленные в этом разделе. 
 

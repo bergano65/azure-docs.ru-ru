@@ -8,10 +8,10 @@ ms.custom: mvc
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.openlocfilehash: 25c3f875717c9c064af0ce27bdab735db67d2f5d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "90945137"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql---flexible-server-in-the-azure-portal"></a>Краткое руководство. Создание гибкого сервера Базы данных Azure для PostgreSQL с помощью портала Azure
@@ -41,11 +41,11 @@ ms.locfileid: "90945137"
 
 3. Выберите вариант развертывания **Гибкий сервер**.
 
-   :::image type="content" source="./media/quickstart-create-database-portal/2-select-deployment-option.png" alt-text="Выбор варианта развертывания "Гибкий сервер Базы данных Azure для PostgreSQL"":::
+   :::image type="content" source="./media/quickstart-create-database-portal/2-select-deployment-option.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
 4. Заполните форму **Основные данные** , указав следующую информацию:
 
-    :::image type="content" source="./media/quickstart-create-database-portal/3-create-basics.png" alt-text="Создание сервера":::
+    :::image type="content" source="./media/quickstart-create-database-portal/3-create-basics.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
     Параметр|Рекомендуемое значение|Описание
     ---|---|---
@@ -58,23 +58,19 @@ ms.locfileid: "90945137"
     Версия|Последний основной номер версии| Последний основной номер версии PostgreSQL, если нет особых требований.
     Вычисления и хранилище | **Общего назначения**, **4 виртуальных ядра**, **512 ГБ**, **7 дней** | Конфигурации вычислительных ресурсов, хранилища и резервного копирования для нового сервера. Щелкните **Настройка сервера**. *Общего назначения*, *4 виртуальных ядра*, *512 ГБ* и *7 дней* — это значения по умолчанию для параметров **Уровень вычислений**, **Виртуальное ядро**, **Хранилище** и **Срок хранения резервных копий**. Вы можете оставить эти ползунки как есть или же настроить их. Щелкните **ОК**, чтобы сохранить ценовую категорию. На следующем снимке экрана показаны выбранные параметры.
 
-    :::image type="content" source="./media/quickstart-create-database-portal/4-pricing-tier.png" alt-text="Область "Ценовая категория"":::
-    
-5. Настройка параметров сети
+    :::image type="content" source="./media/quickstart-create-database-portal/4-pricing-tier.png" alt-text="База данных Azure для PostgreSQL в меню" можно выбрать способ доступа к серверу. База данных Azure для PostgreSQL создает брандмауэр на уровне сервера. Он не позволяет внешним приложениям и инструментам подключаться к серверу и к любой базе данных на сервере, если не создано правило, открывающее брандмауэр для определенных IP-адресов. Мы рекомендуем сделать сервер общедоступным:
 
-    На вкладке "Сеть" можно выбрать способ доступа к серверу. База данных Azure для PostgreSQL создает брандмауэр на уровне сервера. Он не позволяет внешним приложениям и инструментам подключаться к серверу и к любой базе данных на сервере, если не создано правило, открывающее брандмауэр для определенных IP-адресов. Мы рекомендуем сделать сервер общедоступным:
-
-    :::image type="content" source="./media/quickstart-create-database-portal/5-networking.png" alt-text="Область "Сеть"":::
+    :::image type="content" source="./media/quickstart-create-database-portal/5-networking.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
     Затем разрешите доступ к ней только с IP-адреса вашего клиента:
 
-    :::image type="content" source="./media/quickstart-create-database-portal/6-add-client-ip.png" alt-text="Выбор функции "Добавить текущий IP-адрес клиента"":::
+    :::image type="content" source="./media/quickstart-create-database-portal/6-add-client-ip.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
 6. Выберите **Просмотр и создание** , чтобы просмотреть выбранные элементы. Щелкните **Создать**, чтобы подготовить сервер. Это может занять несколько минут.
 
 7. На панели инструментов щелкните значок **Уведомления** (колокольчик), чтобы отслеживать процесс развертывания. По завершении развертывания можно выбрать **Закрепить на панели мониторинга**. После этого на панели мониторинга на портале Azure отобразится плитка, которая будет служить ярлыком страницы **Обзор** для этого сервера. Если выбрать **Перейти к ресурсу**, откроется страница сервера **Обзор**.
 
-    :::image type="content" source="./media/quickstart-create-database-portal/7-notifications.png" alt-text="Область "Уведомления"":::
+    :::image type="content" source="./media/quickstart-create-database-portal/7-notifications.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
    По умолчанию на сервере создается база данных **postgres**. База данных [postgres](https://www.postgresql.org/docs/12/static/app-initdb.html) — это база данных по умолчанию, предназначенная для использования пользователями, служебными программами и сторонними приложениями. (Другая база данных по умолчанию — **azure_maintenance**. Ее функция заключается в отделении процессов управляемой службы от действий пользователей. У вас нет доступа к этой базе данных.)
 
@@ -88,7 +84,7 @@ ms.locfileid: "90945137"
 
 Откройте страницу сервера **Обзор**. Запишите значения **имени сервера** и **имени для входа администратора сервера**. Наведите указатель на каждое поле. Справа от текста отобразится символ копирования. Щелкните его, чтобы скопировать нужные значения.
 
- :::image type="content" source="./media/quickstart-create-database-portal/8-server-name.png" alt-text="Страница "Обзор" сервера":::
+ :::image type="content" source="./media/quickstart-create-database-portal/8-server-name.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
 ## <a name="connect-to-the-postgresql-database-using-psql"></a>Подключение к базе данных PostgreSQL с помощью psql
 
@@ -162,7 +158,7 @@ ms.locfileid: "90945137"
 
 2. На странице **Обзор** выберите **Удалить**.
 
-    :::image type="content" source="./media/quickstart-create-database-portal/9-delete.png" alt-text="Кнопка "Удалить"":::
+    :::image type="content" source="./media/quickstart-create-database-portal/9-delete.png" alt-text="База данных Azure для PostgreSQL в меню":::
 
 3. Подтвердите имя сервера, которое нужно удалить, чтобы появилась нужная база данных. Введите имя сервера в текстовое поле (например, **mydemoserver**). Выберите команду **Удалить**.
 

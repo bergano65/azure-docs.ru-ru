@@ -14,10 +14,10 @@ ms.author: marsma
 ms.custom: aaddev, contperfq1
 ms.reviewer: aragra, lenalepa, sureshja
 ms.openlocfilehash: 72d66bd4c738ed60bbaefc123daae90ecc0db163
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "89442167"
 ---
 # <a name="quickstart-configure-an-application-to-expose-a-web-api"></a>Краткое руководство. Настройка приложения для предоставления веб-API
@@ -50,7 +50,7 @@ ms.locfileid: "89442167"
 1. Выберите **Azure Active Directory** > **Регистрация приложений**, а затем — регистрацию приложения API.
 1. Выберите **Предоставление API** > **Добавить группу**.
 
-    :::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-02-expose-api.png" alt-text="Панель Предоставление API регистрации приложения на портале Azure":::
+    :::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-02-expose-api.png" alt-text="Панель &quot;Предоставление API&quot; регистрации приложения на портале Azure":::
 
 1. Вам будет предложено задать **URI идентификатора приложения**, если он еще не настроен.
 
@@ -95,7 +95,7 @@ ms.locfileid: "89442167"
 
 Если вы успешно добавили оба примера областей, описанные в предыдущих разделах, они отобразятся в области **Предоставление API** регистрации приложения веб-API, как показано на следующем рисунке:
 
-:::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-03-scopes-list.png" alt-text="Снимок экрана: панели Предоставление API с двумя предоставленными областями.":::
+:::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-03-scopes-list.png" alt-text="Панель &quot;Предоставление API&quot; регистрации приложения на портале Azure":::
 
 Как показано на рисунке, полной строкой области является объединение **URI идентификатора приложения** веб-API и **имени области**.
 
