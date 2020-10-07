@@ -9,12 +9,12 @@ ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
 ms.custom: has-adal-ref
-ms.openlocfilehash: c578958616e4b4d2d7d3aef1de1650566e0bd40e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 52964c906df7a96685c8eb80c1d23ef9a9efc6e1
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496412"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361846"
 ---
 # <a name="use-multi-factor-aad-authentication-with-synapse-sql-ssms-support-for-mfa"></a>Использование многофакторной проверки подлинности AAD с Synapse SQL (поддержка SSMS для MFA)
 
@@ -22,13 +22,11 @@ Synapse SQL поддерживает подключения из SQL Server Mana
 
 В этой статье обсуждаются отличия между различными вариантами проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности. 
 
-**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx). 
-
-**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+**Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 Для всех функций, описанных в этой статье, используйте по крайней мере версию 17.2 за июль 2017 года.  Диалоговое окно "Последнее подключение" должно выглядеть следующим образом:
 
-![1mfa-universal-connect](./media/mfa-authentication/1mfa-universal-connect.png "Заполнит поле имени пользователя.")  
+![Снимок экрана: диалоговое окно "Подключение к серверу", в котором можно выбрать имя сервера и способ аутентификации.](./media/mfa-authentication/1mfa-universal-connect.png "Заполнит поле имени пользователя.")  
 
 ## <a name="the-five-authentication-options"></a>Пять параметров аутентификации  
 
@@ -51,7 +49,7 @@ Azure MFA помогает защитить доступ к данным и пр
 
 ### <a name="azure-ad-domain-name-or-tenant-id-parameter"></a>Параметр доменного имени или идентификатора клиента Azure AD
 
-Начиная с [SSMS версии 17](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), пользователи, импортируемые в текущий каталог Active Directory из других каталогов Azure Active Directory в качестве гостевых пользователей, могут при подключении указывать доменное имя или идентификатор клиента Azure AD. 
+Начиная с [SSMS версии 17](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), пользователи, импортируемые в текущий каталог Active Directory из других каталогов Azure Active Directory в качестве гостевых пользователей, могут при подключении указывать доменное имя или идентификатор клиента Azure AD. 
 
 К гостевым пользователям относятся пользователи, приглашенные из других каталогов Azure AD, учетные записи Майкрософт, такие как outlook.com, hotmail.com и live.com, или другие учетные записи, например, gmail.com. Эта информация позволяет службе **универсальной аутентификации Active Directory с MFA** определить правильный центр аутентификации. Этот параметр также является обязательным для поддержки учетных записей Майкрософт (MSA), таких как outlook.com, hotmail.com или live.com, и сторонних учетных записей. 
 
@@ -61,13 +59,13 @@ Azure MFA помогает защитить доступ к данным и пр
 
 Если пользователь является собственным пользователем Azure AD, связанным с сервером Azure, а не пользователем с учетной записью MSA, то доменное имя или идентификатор клиента не требуются. 
 
-Чтобы ввести параметр (начиная с SSMS версии 17.2), заполните поля в диалоговом окне **Подключение к базе данных**, выбрав аутентификацию **Active Directory — универсальная с поддержкой MFA**, нажмите кнопку **Параметры**, заполните поле **Имя пользователя**, а затем щелкните вкладку **Свойства соединения**. 
+Чтобы ввести параметр (начиная с SSMS версии 17.2), заполните поля в диалоговом окне **Подключение к базе данных**, выбрав аутентификацию **Active Directory — универсальная с поддержкой MFA**, нажмите кнопку **Параметры**, введите данные в поле **Имя пользователя**, а затем щелкните вкладку **Свойства подключения**. 
 
 Установите флажок **Доменное имя AD или идентификатор клиента** и укажите центр аутентификации, введя доменное имя (**contosotest.onmicrosoft.com**) или GUID идентификатора клиента.  
 
-   ![mfa-tenant-ssms](./media/mfa-authentication/mfa-tenant-ssms.png)
+   ![Снимок экрана: окно "Подключение к серверу" с вкладкой "Свойства подключения" с введенными значениями.](./media/mfa-authentication/mfa-tenant-ssms.png)
 
-Если вы используете SSMS 18.x или более поздней версии, для гостевых пользователей больше не требуется имя домена AD или идентификатор клиента, поскольку 18.x или более поздние версии распознает их автоматически.
+Если вы используете SSMS 18.x или более поздней версии, для гостевых пользователей больше не требуется имя домена AD или идентификатор арендатора, поскольку версия 18.x или более поздние распознают их автоматически.
 
    ![mfa-tenant-ssms](./media/mfa-authentication/mfa-no-tenant-ssms.png)
 
@@ -80,7 +78,7 @@ Azure MFA помогает защитить доступ к данным и пр
 
 Группа пользователей по умолчанию имеет только разрешение на подключение, и дополнительные возможности доступа к данным потребуется предоставить обычным способом. 
 
-Обратите внимание на то, что пользователь `steve@gmail.com` как гость должен установить флажок и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне **Свойства соединения** SSMS. Параметр **Доменное имя AD или идентификатор клиента** поддерживается только для параметра Universal with MFA connection (Универсальная с подключением MFA), в противном случае он неактивен.
+Пользователь `steve@gmail.com` как гость должен установить флажок и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне SSMS **Свойства подключения**. Параметр **Доменное имя AD или идентификатор клиента** поддерживается только для параметра Universal with MFA connection (Универсальная с подключением MFA), в противном случае он неактивен.
 
 ## <a name="universal-authentication-limitations-for-synapse-sql"></a>Ограничения универсальной проверки подлинности для Synapse SQL
 

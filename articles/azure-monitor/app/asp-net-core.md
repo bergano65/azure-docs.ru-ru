@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: ac742aae88b3e3c62ffca857dcb690fa71434482
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: eae6117f82f3bb138edb6cea23a2c052e19fb0cf
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90006765"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91803597"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -25,13 +25,13 @@ ms.locfileid: "90006765"
 * **Метод развертывания**. Зависит от платформы либо автономный.
 * **Веб-сервер**. IIS (Internet Information Server) или Kestrel.
 * **Платформа размещения**. Функция веб-приложений службы приложений Azure, виртуальная машина Azure, Docker, служба Azure Kubernetes (AKS) и т. д.
-* **Версия среды выполнения .NET Core**: 1. XX, 2. XX или 3. XX
+* **Версия .NET Core**: все официально [Поддерживаемые](https://dotnet.microsoft.com/download/dotnet-core) версии .NET Core.
 * **Интегрированная среда разработки**: Visual Studio, VS Code или Командная строка.
 
 > [!NOTE]
 > ASP.NET Core 3. X требует [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](./create-new-resource.md).
@@ -122,7 +122,7 @@ ms.locfileid: "90006765"
 ### <a name="user-secrets-and-other-configuration-providers"></a>Секреты пользователей и другие поставщики конфигурации
 
 Если вы хотите сохранить ключ инструментирования в ASP.NET Core секреты пользователя или получить его из другого поставщика конфигурации, можно использовать перегрузку с `Microsoft.Extensions.Configuration.IConfiguration` параметром. Например, `services.AddApplicationInsightsTelemetry(Configuration);`.
-Начиная с Microsoft. ApplicationInsights. AspNetCore Version [2.15.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore), вызов `services.AddApplicationInsightsTelemetry()` будет автоматически считывать ключ инструментирования из `Microsoft.Extensions.Configuration.IConfiguration` приложения. Нет необходимости явно предоставлять `IConfiguration` .
+Начиная с Microsoft. ApplicationInsights. AspNetCore Version [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore), вызов `services.AddApplicationInsightsTelemetry()` будет автоматически считывать ключ инструментирования из `Microsoft.Extensions.Configuration.IConfiguration` приложения. Нет необходимости явно предоставлять `IConfiguration` .
 
 ## <a name="run-your-application"></a>Запуск приложения
 
@@ -151,7 +151,7 @@ ms.locfileid: "90006765"
 
 ### <a name="eventcounter"></a>евенткаунтер
 
-`EventCounterCollectionModule` параметр включен по умолчанию и будет собираются набор счетчиков по умолчанию из приложений .NET Core 3. X. В руководстве по [евенткаунтер](eventcounters.md) представлен набор собираемых счетчиков. Он также содержит инструкции по настройке списка.
+`EventCounterCollectionModule` параметр включен по умолчанию. В руководстве по [евенткаунтер](eventcounters.md) приведены инструкции по настройке списка собираемых счетчиков.
 
 ## <a name="enable-client-side-telemetry-for-web-applications"></a>Включение телеметрии на стороне клиента для веб-приложений
 
@@ -226,9 +226,9 @@ public void ConfigureServices(IServiceCollection services)
 
 См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
-### <a name="configuration-recommendation-for-microsoftapplicationinsightsaspnetcore-sdk-2150-beta3--above"></a>Рекомендация по настройке пакета SDK для Microsoft. ApplicationInsights. AspNetCore, 2.15.0-beta3 & выше
+### <a name="configuration-recommendation-for-microsoftapplicationinsightsaspnetcore-sdk-2150--above"></a>Рекомендация по настройке пакета SDK для Microsoft. ApplicationInsights. AspNetCore, 2.15.0 & выше
 
-Начиная с Microsoft. ApplicationInsights. AspNetCore SDK версии [2.15.0-beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0-beta3) , рекомендуется настроить каждый параметр, доступный в `ApplicationInsightsServiceOptions` , включая instrumentationkey с помощью `IConfiguration` экземпляра приложений. Параметры должны быть в разделе "ApplicationInsights", как показано в следующем примере. Следующий раздел из appsettings.jsв разделе Настройка ключа инструментирования, а также отключение адаптивной выборки и сбора счетчиков производительности.
+Начиная с Microsoft. ApplicationInsights. AspNetCore SDK версии [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0) , рекомендуется настроить каждый параметр, доступный в `ApplicationInsightsServiceOptions` , включая instrumentationkey с помощью `IConfiguration` экземпляра приложения. Параметры должны быть в разделе "ApplicationInsights", как показано в следующем примере. Следующий раздел из appsettings.jsв разделе Настройка ключа инструментирования, а также отключение адаптивной выборки и сбора счетчиков производительности.
 
 ```json
 {
@@ -240,11 +240,11 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Если `services.AddApplicationInsightsTelemetry(aiOptions)` используется, это переопределяет параметры из `Microsoft.Extensions.Configuration.IConfiguration` .
+Если `services.AddApplicationInsightsTelemetry(aiOptions)` используется, он переопределяет параметры из `Microsoft.Extensions.Configuration.IConfiguration` .
 
 ### <a name="sampling"></a>Выборка
 
-Пакет SDK Application Insights для ASP.NET Core поддерживает как фиксированную, так и адаптивную выборку. Адаптивная выборка включена по умолчанию. 
+Пакет SDK Application Insights для ASP.NET Core поддерживает как фиксированную, так и адаптивную выборку. Адаптивная выборка включена по умолчанию.
 
 Дополнительные сведения см. в статье [Настройка адаптивной выборки для приложений ASP.NET Core](./sampling.md#configuring-adaptive-sampling-for-aspnet-core-applications).
 
@@ -335,7 +335,6 @@ public void ConfigureServices(IServiceCollection services)
     services.ConfigureTelemetryModule<EventCounterCollectionModule>(
             (module, o) =>
             {
-                module.Counters.Clear();
                 module.Counters.Add(new EventCounterCollectionRequest("System.Runtime", "gen-0-size"));
             }
         );
@@ -447,16 +446,12 @@ public class HomeController : Controller
 
 Нет. В настоящее время [Монитор состояния](./monitor-performance-live-website-now.md) и [Монитор состояния v2](./status-monitor-v2-overview.md) поддерживают только ASP.NET 4. x.
 
-### <a name="is-application-insights-automatically-enabled-for-my-aspnet-core-20-application"></a>Включено ли Application Insights для приложения ASP.NET Core 2,0 автоматически?
-
-`Microsoft.AspNetCore.All`2,0 метапакет включает пакет SDK для Application Insights (версия 2.1.0). При запуске приложения в отладчике Visual Studio Visual Studio включает Application Insights и отображает данные телеметрии локально в самой интегрированной среде разработки. Данные телеметрии не были отправлены в службу Application Insights, если не был указан ключ инструментирования. Мы рекомендуем использовать инструкции, приведенные в этой статье, чтобы включить Application Insights, даже для приложений 2,0.
-
 ### <a name="if-i-run-my-application-in-linux-are-all-features-supported"></a>Если я запускаю приложение в Linux, поддерживаются ли все функции?
 
 Да. Поддержка функций для пакета SDK одинакова на всех платформах, за исключением следующих:
 
 * Пакет SDK собирает [счетчики событий](./eventcounters.md) в Linux, так как [счетчики производительности](./performance-counters.md) поддерживаются только в Windows. Большинство метрик одинаковы.
-* Несмотря на то что `ServerTelemetryChannel` включен по умолчанию, если приложение выполняется в Linux или MacOS, канал не создает папку локального хранилища, чтобы временно сохранять данные телеметрии в случае проблем с сетью. Из-за этого ограничения данные телеметрии теряются при наличии временных проблем с сетью или сервером. Чтобы обойти эту ошибку, настройте локальную папку для канала:
+* Несмотря на то что `ServerTelemetryChannel` включен по умолчанию, если приложение выполняется в Linux или macOS, канал не создает папку локального хранилища, чтобы временно сохранять данные телеметрии в случае проблем с сетью. Из-за этого ограничения данные телеметрии теряются при наличии временных проблем с сетью или сервером. Чтобы обойти эту ошибку, настройте локальную папку для канала:
 
 ```csharp
 using Microsoft.ApplicationInsights.Channel;
@@ -473,6 +468,8 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
         services.AddApplicationInsightsTelemetry();
     }
 ```
+
+Это ограничение неприменимо в [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0) и более новых версиях.
 
 ### <a name="is-this-sdk-supported-for-the-new-net-core-3x-worker-service-template-applications"></a>Поддерживается ли этот пакет SDK для новых приложений-шаблонов рабочей службы .NET Core 3. X?
 

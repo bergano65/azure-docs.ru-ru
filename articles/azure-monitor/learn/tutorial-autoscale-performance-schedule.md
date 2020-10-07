@@ -8,12 +8,12 @@ ms.date: 12/11/2017
 ms.author: ancav
 ms.custom: mvc
 ms.subservice: autoscale
-ms.openlocfilehash: 8a55ab9b6b87a379fbdebcead4467ec47507d67a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 8853a153450a07105ed4bac13de0da6cea95ce2a
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327520"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356355"
 ---
 # <a name="create-an-autoscale-setting-for--azure-resources-based-on-performance-data-or-a-schedule"></a>Создание параметра автомасштабирования для ресурсов Azure на основе данных о производительности или расписания
 
@@ -46,7 +46,7 @@ ms.locfileid: "87327520"
 1. В левой области навигации выберите **Монитор**. После загрузки страницы откройте вкладку **Автомасштабирование**.
 2. На ней отображается список ресурсов в вашей подписке, поддерживающих автомасштабирование. Найдите созданный ранее план службы приложений и выберите его.
 
-    ![Переход к параметрам автомасштабирования](./media/tutorial-autoscale-performance-schedule/monitor-blade-autoscale.png)
+    ![Снимок экрана: служба "Монитор" на портале Azure с выделенными параметрами автомасштабирования](./media/tutorial-autoscale-performance-schedule/monitor-blade-autoscale.png)
 
 3. На странице параметров автомасштабирования нажмите кнопку **Включить автомасштабирование**.
 
@@ -59,7 +59,7 @@ ms.locfileid: "87327520"
 2. В профиле по умолчанию установите для параметра **Режим масштабирования** значение "Масштабировать до указанного числа экземпляров".
 3. Установите число экземпляров равным **1**. В этом случае профиль по умолчанию возвращает число экземпляров в значение 1 при отсутствии другого активного или действующего профиля.
 
-   ![Переход к параметрам автомасштабирования](./media/tutorial-autoscale-performance-schedule/autoscale-setting-profile.png)
+   ![Снимок экрана: страница параметров автомасштабирования с выделенным полем для имени](./media/tutorial-autoscale-performance-schedule/autoscale-setting-profile.png)
 
 
 ## <a name="create-recurrence-profile"></a>Создание профиля повторения

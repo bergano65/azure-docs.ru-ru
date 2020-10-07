@@ -12,10 +12,10 @@ ms.date: 06/25/2020
 ms.author: trbye
 zone_pivot_groups: platforms-set-of-three
 ms.openlocfilehash: 9589a1642eac494eacb6c0b05007fcde79c0a5b1
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85391253"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-windows-linux-or-android"></a>Краткое руководство. Запуск примера приложения пакета SDK для устройств, подключаемых к службе "Речь", в Windows, Linux или Android

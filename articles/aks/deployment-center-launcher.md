@@ -5,12 +5,12 @@ ms.author: puagarw
 ms.topic: tutorial
 ms.date: 07/12/2019
 author: pulkitaggarwl
-ms.openlocfilehash: 42bdde45b3a289a35c5bf4c4651e5a50a639f049
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 36b2e829e56cf4d3b5ace64af989fa7f71725c44
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86251779"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91360843"
 ---
 # <a name="deployment-center-for-azure-kubernetes"></a>Центр развертывания для Azure Kubernetes
 
@@ -54,7 +54,7 @@ ms.locfileid: "86251779"
 
 1. Выберите кластер AKS, а затем выберите **Центр развертывания (предварительная версия)** в колонке слева. Выберите **Начать**.
 
-   ![Параметры](media/deployment-center-launcher/settings.png)
+   ![Снимок экрана: портал Azure со стрелкой, указывающей на Центр развертывания.](media/deployment-center-launcher/settings.png)
 
 1. Выберите расположение кода и нажмите кнопку **Далее**. Затем выберите один из репозиториев, поддерживаемых на данный момент: **[Azure Repos](/azure/devops/repos/index?view=azure-devops)** или **GitHub**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "86251779"
 
     - **GitHub**. Авторизуйтесь и выберите репозиторий для учетной записи GitHub.
 
-        ![GitHub](media/deployment-center-launcher/github.gif)
+        ![Анимация процесса в GitHub с выбором GitHub в качестве источника и последующего выбора вашего репозитория.](media/deployment-center-launcher/github.gif)
 
 
 1. Центр развертывания анализирует репозиторий и обнаруживает файл Dockerfile. Если вы хотите обновить Dockerfile, можно изменить определенный номер порта.
@@ -75,7 +75,7 @@ ms.locfileid: "86251779"
 
     Если репозиторий не содержит Dockerfile, система отображает сообщение для фиксации.
 
-    ![Dockerfile](media/deployment-center-launcher/dockerfile.png)
+    ![Снимок экрана: Центр развертывания с сообщением "Не удалось найти Dockerfile в репозитории".](media/deployment-center-launcher/dockerfile.png)
 
 1. Выберите существующий реестр контейнеров или создайте его, а затем нажмите кнопку **Готово**. Конвейер создается автоматически и встает в очередь сборки в [Azure Pipelines](/azure/devops/pipelines/index?view=azure-devops).
 
@@ -87,7 +87,7 @@ ms.locfileid: "86251779"
 
 1. После завершения установки вы увидите журналы успешной установки.
 
-    ![Журналы](media/deployment-center-launcher/logs.png)
+    ![Снимок экрана: Центр развертывания с Release-1, помеченным зеленым значком с флажком.](media/deployment-center-launcher/logs.png)
 
 ## <a name="examine-the-ci-pipeline"></a>Просмотр конвейера CI
 

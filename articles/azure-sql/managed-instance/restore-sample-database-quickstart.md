@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: quickstart
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: sstein, carlrab, bonova
+ms.reviewer: sstein, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: 0d10105648f434eb1d02a821e972e789bd39d66f
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 18f717ca05e93c9a8f06ac8868e9a6e5ff80eadb
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84708450"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355539"
 ---
 # <a name="quickstart-restore-a-database-to-azure-sql-managed-instance-with-ssms"></a>Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр SQL Azure с помощью SSMS
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -76,7 +76,7 @@ ms.locfileid: "84708450"
      'https://mitutorials.blob.core.windows.net/databases/WideWorldImporters-Standard.bak'
    ```
 
-    ![Восстановление](./media/restore-sample-database-quickstart/restore.png)
+    ![Снимок экрана: сообщение об успешном выполнении скрипта в обозревателе объектов](./media/restore-sample-database-quickstart/restore.png)
 
 6. Запустите следующий скрипт, чтобы отслеживать состояние восстановления.
 

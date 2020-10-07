@@ -6,12 +6,12 @@ ms.author: marobert
 ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 658aaf018dd4c231b9bc9fc8c6dda78b2a6f05c0
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 93037d1e1c56e280458a91ae5723502bff27995b
+ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90945985"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91376532"
 ---
 Из этого краткого руководства вы узнаете, как начать вызов с помощью клиентской библиотеки для вызовов Служб коммуникации Azure для Android.
 
@@ -19,12 +19,10 @@ ms.locfileid: "90945985"
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - [Android Studio](https://developer.android.com/studio) для создания приложения Android.
-- [Маркер доступа пользователя](../../access-tokens.md) для Службы коммуникации Azure.
 - Развернутый ресурс Служб коммуникации. [Создайте ресурс Служб коммуникации.](../../create-communication-resource.md)
-
+- [Маркер доступа пользователя](../../access-tokens.md) для Службы коммуникации Azure.
 
 ## <a name="setting-up"></a>Настройка
-
 
 ### <a name="create-an-android-app-with-an-empty-activity"></a>Создание приложения Android с пустым действием
 
@@ -34,11 +32,9 @@ ms.locfileid: "90945985"
 
 Выберите шаблон проекта Empty Activity (Пустое действие) из раздела Phone and Tablet (Телефон и планшет).
 
-:::image type="content" source="../media/android/studio-blank-activity.png" alt-text="Снимок экрана с экраном шаблона проекта, где выбран вариант Empty Activity (Пустое действие).":::
+:::image type="content" source="../media/android/studio-blank-activity.png" alt-text="Снимок экрана с выбранной кнопкой создания нового проекта в Android Studio." или более позднюю.
 
-Выберите минимальную версию клиентской библиотеки: "API 26: Android 8.0 (Oreo)" или более позднюю.
-
-:::image type="content" source="../media/android/studio-calling-min-api.png" alt-text="Снимок экрана с экраном шаблона проекта, где выбран вариант Empty Activity (Пустое действие) (2).":::
+:::image type="content" source="../media/android/studio-calling-min-api.png" alt-text="Снимок экрана с выбранной кнопкой создания нового проекта в Android Studio.":::
 
 
 ### <a name="install-the-package"></a>Установка пакета
@@ -126,7 +122,7 @@ See https://developer.android.com/about/versions/pie/android-9.0-changes-28#apac
     
 ```
 
-### <a name="setup-the-layout-for-the-app"></a>Настройка макета для приложения
+### <a name="set-up-the-layout-for-the-app"></a>Настройка макета для приложения
 
 Нам нужны два элемента: текстовое поле для идентификатора вызываемого участника и кнопка для начала вызова. Их можно добавить с помощью конструктора или прямым редактированием XML-документа макета. Создайте кнопку с идентификатором `call_button` и текстовое поле `callee_id`. Перейдите к `app/src/main/res/layout/activity_main.xml` и замените содержимое этого файла приведенным ниже:
 
@@ -291,7 +287,7 @@ private void createAgent() {
 
 ## <a name="start-a-call-using-the-call-agent"></a>Инициирование вызова с помощью агента вызовов
 
-Вызов можно выполнить через агент вызова — для этого достаточно предоставить список идентификаторов вызываемых участников и параметры вызова. Для целей этого краткого руководства используются параметры вызова по умолчанию, без поддержки видео, и один идентификатор вызываемого участника из текстового поля.
+Вызов можно выполнить через агент вызова — для этого достаточно предоставить список идентификаторов вызываемых участников и параметры вызова. Для примера в этом кратком руководстве используются параметры вызова по умолчанию, без поддержки видео, и один идентификатор вызываемого участника из текстового поля.
 
 ```java
 /**
@@ -315,4 +311,8 @@ private void startCall() {
 
 Теперь вы можете запустить приложение с помощью кнопки Run App (Запустить приложение) на панели инструментов или нажав клавиши SHIFT+F10. Убедитесь, что вы можете выполнять вызовы, инициировав вызов к `8:echo123`. В ответ вы должны услышать предварительно записанное сообщение и повтор сказанного вами сообщения.
 
-:::image type="content" source="../media/android/quickstart-android-call-echobot.png" alt-text="Снимок экрана с готовым приложением.":::
+:::image type="content" source="../media/android/quickstart-android-call-echobot.png" alt-text="Снимок экрана с выбранной кнопкой создания нового проекта в Android Studio.":::
+
+## <a name="sample-code"></a>Пример кода
+
+Пример приложения можно скачать в репозитории [GitHub](https://github.com/Azure/Communication/tree/master/samples/Add%20Voice%20Calling/Android/Java).

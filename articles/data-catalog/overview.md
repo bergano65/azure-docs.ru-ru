@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: overview
 ms.date: 08/01/2019
 ms.openlocfilehash: 9b7a5d5ca6cbad897839c8e28c9e3efd1eeabaf0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "68736979"
 ---
 # <a name="what-is-azure-data-catalog"></a>Что такое каталог данных Azure?
@@ -66,11 +66,11 @@ ms.locfileid: "68736979"
 * [Работа с источниками больших данных в каталоге данных Azure](data-catalog-how-to-big-data.md)
 * [Как управлять ресурсами данных](data-catalog-how-to-manage.md)
 * [Как настроить бизнес-глоссарий для регулируемого добавления тегов](data-catalog-how-to-business-glossary.md)
-* [Часто задаваемые вопросы](data-catalog-frequently-asked-questions.md)
+* [Часто задаваемые вопросы по Аналитике компьютеров](data-catalog-frequently-asked-questions.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать работу с Каталогом данных, перейдите к следующим ресурсам:
 
-* [Краткое руководство. Создание каталога данных Azure](data-catalog-get-started.md)
+* [Краткое руководство. Создание Каталога данных Azure](data-catalog-get-started.md)
 * [Войти в Каталог данных Azure](https://www.azuredatacatalog.com)

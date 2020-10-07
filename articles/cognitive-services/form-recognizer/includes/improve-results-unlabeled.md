@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 06/12/2019
 ms.author: pafarley
 ms.openlocfilehash: f0761847c3677b324ef16c5987eb9a1561dbcbe0
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "75379303"
 ---
 Изучите значения `"confidence"` для каждого результата "ключ — значение" в узле `"pageResults"`. Следует также обратить внимание на оценки достоверности в узле `"readResults"`, который соответствует операции чтения текста. Достоверность результатов чтения не влияет на достоверность результатов извлечения пар "ключ — значение", поэтому следует проверять оба значения.

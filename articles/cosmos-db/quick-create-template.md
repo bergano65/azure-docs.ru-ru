@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 06/01/2020
 ms.custom: subject-armqs
 ms.openlocfilehash: 249ff87813fe23505a09db020d4c6ad0f272796d
-ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85483301"
 ---
 # <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-an-arm-template"></a>Краткое руководство. Создание Azure Cosmos DB и контейнера с помощью шаблона ARM
@@ -57,7 +57,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 2. Введите или выберите следующие значения.
 
-   :::image type="content" source="./media/quick-create-template/create-cosmosdb-using-template-portal.png" alt-text="Шаблон ARM, интеграция с Azure Cosmos DB, развертывание на портале":::
+   :::image type="content" source="./media/quick-create-template/create-cosmosdb-using-template-portal.png" alt-text="Развертывание в Azure":::
 
     Если значение не указано, используйте значения по умолчанию для создания ресурсов Azure Cosmos DB.
 
@@ -78,7 +78,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 3. Щелкните **Приобрести**. После успешного развертывания учетной записи Azure Cosmos DB вы получите такое уведомление:
 
-   :::image type="content" source="./media/quick-create-template/resource-manager-template-portal-deployment-notification.png" alt-text="Шаблон ARM, интеграция базы данных Cosmos DB, развертывание уведомлений на портале":::
+   :::image type="content" source="./media/quick-create-template/resource-manager-template-portal-deployment-notification.png" alt-text="Развертывание в Azure":::
 
 Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-powershell.md).
 

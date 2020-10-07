@@ -4,16 +4,16 @@ description: Мониторинг системных и пользователь
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f8ae36545eecbbad2a6695ca979fb7da8380e8cc
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.openlocfilehash: a9af36f3c81ee52b41a8eed875c1a286b95bf838
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89657013"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91803649"
 ---
 # <a name="eventcounters-introduction"></a>Знакомство с объектами EventCounter
 
-`EventCounter` (счетчик событий) — это механизм .NET и .NET Core для публикации и использования счетчиков или статистики. [Этот](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md) документ содержит общие сведения об объектах `EventCounters` и примеры того, как их следует публиковать и использовать. Счетчики событий (объекты EventCounter) поддерживаются во всех платформах ОС — Windows, Linux и macOS. Их можно рассматривать как кроссплатформенный эквивалент объектов [PerformanceCounter](/dotnet/api/system.diagnostics.performancecounter), которые поддерживаются только в Windows-системах.
+[`EventCounter`](/dotnet/core/diagnostics/event-counters) является механизмом .NET и .NET Core для публикации и использования счетчиков или статистики. Счетчики событий (объекты EventCounter) поддерживаются во всех платформах ОС — Windows, Linux и macOS. Их можно рассматривать как кроссплатформенный эквивалент объектов [PerformanceCounter](/dotnet/api/system.diagnostics.performancecounter), которые поддерживаются только в Windows-системах.
 
 Хотя пользователи могут публиковать любые пользовательские решения `EventCounters` в соответствии с их потребностями, среда выполнения .NET Core 3,0 и более поздних версий по умолчанию публикует набор этих счетчиков. В этом документе рассматриваются шаги, необходимые для получения и просмотра `EventCounters` (определяемые системой или определяемые пользователем) в Azure Application Insights.
 
@@ -23,32 +23,9 @@ Application Insights поддерживает сбор `EventCounters` с пом
 
 ## <a name="default-counters-collected"></a>Счетчики, собираемые по умолчанию
 
-Для приложений, работающих в .NET Core 3,0 или более поздних версий, пакет SDK автоматически собирает следующие счетчики. Имена счетчиков будут иметь вид "Категория | Счетчик".
+Начиная с версии 2.15.0 пакета SDK [AspNetCore](asp-net-core.md) или [воркерсервице SDK](worker-service.md), счетчики не собираются по умолчанию. Сам модуль включен, поэтому пользователи могут просто добавить нужные счетчики для их получения.
 
-|Категория | Счетчик|
-|---------------|-------|
-|`System.Runtime` | `cpu-usage` |
-|`System.Runtime` | `working-set` |
-|`System.Runtime` | `gc-heap-size` |
-|`System.Runtime` | `gen-0-gc-count` |
-|`System.Runtime` | `gen-1-gc-count` |
-|`System.Runtime` | `gen-2-gc-count` |
-|`System.Runtime` | `time-in-gc` |
-|`System.Runtime` | `gen-0-size` |
-|`System.Runtime` | `gen-1-size` |
-|`System.Runtime` | `gen-2-size` |
-|`System.Runtime` | `loh-size` |
-|`System.Runtime` | `alloc-rate` |
-|`System.Runtime` | `assembly-count` |
-|`System.Runtime` | `exception-count` |
-|`System.Runtime` | `threadpool-thread-count` |
-|`System.Runtime` | `monitor-lock-contention-count` |
-|`System.Runtime` | `threadpool-queue-length` |
-|`System.Runtime` | `threadpool-completed-items-count` |
-|`System.Runtime` | `active-timer-count` |
-
-> [!NOTE]
-> Начиная с версии [ASPNETCORE SDK](asp-net-core.md) или [пакета](worker-service.md)SDK для 2.15.0-beta3, счетчики по умолчанию не собираются. Сам модуль включен, поэтому пользователи могут просто добавить нужные счетчики для их получения.
+Чтобы получить список хорошо известных счетчиков, опубликованных средой выполнения .NET, см. статью [Доступные счетчики](/dotnet/core/diagnostics/event-counters#available-counters) .
 
 ## <a name="customizing-counters-to-be-collected"></a>Настройка собираемых счетчиков
 
@@ -67,7 +44,7 @@ Application Insights поддерживает сбор `EventCounters` с пом
         services.ConfigureTelemetryModule<EventCounterCollectionModule>(
             (module, o) =>
             {
-                // This removes all default counters.
+                // This removes all default counters, if any.
                 module.Counters.Clear();
 
                 // This adds a user defined counter "MyCounter" from EventSource named "MyEventSource"

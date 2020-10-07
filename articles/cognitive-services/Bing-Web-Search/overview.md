@@ -12,10 +12,10 @@ ms.date: 03/31/2020
 ms.author: aahi
 ms.custom: seodec2018
 ms.openlocfilehash: 4cbf79abaf915e7f6e055f5bcb0d8f09de026ad5
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85604868"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
@@ -38,7 +38,7 @@ API Bing для поиска в Интернете — это служба RESTf
 | [Локализация результатов поиска по странам, регионам и/или рынкам](supported-countries-markets.md) | API Bing для поиска в Интернете поддерживает более трех десятков стран или регионов. Используйте эту функцию, чтобы уточнить результаты поиска для конкретной страны, региона или рынка. |
 | [Анализ показателей поиска с помощью надстройки "Статистика Bing"](bing-web-stats.md) | Надстройка "Статистика Bing" доступна на условиях платной подписки. Она предоставляет аналитические сведения о количестве вызовов, часто используемых строках запроса, географическом распределении и прочем. |
 
-## <a name="workflow"></a>Алгоритм использования  
+## <a name="workflow"></a>Рабочий процесс
 
 API Bing для поиска в Интернете легко вызывается с любого языка программирования, который может обрабатывать HTTP-запросы и анализировать ответы JSON. Служба доступна с использованием [REST API](quickstarts/python.md) или [клиентских библиотек Поиска в Интернете Bing](./quickstarts/client-libraries.md).
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 3/11/2019
 ms.author: rohink
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a15209351f95e44c7cf10993513e03ba35b53d27
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a08a3bb8e01d827b806dae269b65569cb415404d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494372"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358616"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-azure-cli"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью Azure CLI
 
@@ -92,7 +92,7 @@ az network dns record-set list -g MyResourceGroup -z contoso.xyz
 
    Результат будет подобным приведенному на следующем снимке экрана.
 
-   ![nslookup](media/dns-getstarted-portal/nslookup.PNG)
+   ![Снимок экрана: окно командной строки с результатом выполнения команды nslookup — значениями параметров Server (Сервер), Address (Адрес), Name (Имя) и Address (Адрес)](media/dns-getstarted-portal/nslookup.PNG)
 
 Имя узла **www\.contoso.xyz** разрешается как **10.10.10.10**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
 

@@ -8,12 +8,12 @@ ms.service: dns
 ms.topic: quickstart
 ms.date: 3/11/2019
 ms.author: rohink
-ms.openlocfilehash: 3b34b45cba805d748dcc8a0c31340cd8116e1c80
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 93d9ce50a451221c86f5336107dba30695af159f
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82160772"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91355369"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-the-azure-portal"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью портала Azure
 
@@ -97,7 +97,7 @@ You can also perform these steps using [Azure PowerShell](dns-getstarted-powersh
 
    Результат будет подобным приведенному на следующем снимке экрана.
 
-   ![nslookup](media/dns-getstarted-portal/nslookup.PNG)
+   ![Снимок экрана: окно командной строки с результатом выполнения команды nslookup — значениями параметров Server (Сервер), Address (Адрес), Name (Имя) и Address (Адрес)](media/dns-getstarted-portal/nslookup.PNG)
 
 Имя узла **www\.contoso.xyz** разрешается как **10.10.10.10**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно. 
 

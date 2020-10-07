@@ -10,12 +10,12 @@ ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 07/29/2019
 ms.custom: sqldbrb=1
-ms.openlocfilehash: b56dd81cd0cdc5d9a6917b0bf43c3fceeff63c4a
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: 1e0ab1d6c1266b37dfcba461fbbdc373fc526783
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84216545"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362169"
 ---
 # <a name="tutorial-design-a-relational-database-in-azure-sql-database-using-ssms"></a>Руководство по созданию реляционной базы данных в службе "База данных SQL Azure" с помощью SSMS
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -92,7 +92,7 @@ ms.locfileid: "84216545"
 
 9. На панели инструментов щелкните **Уведомления**, чтобы отслеживать процесс развертывания.
 
-   ![уведомление](./media/design-first-database-tutorial/notification.png)
+   ![Снимок экрана: меню "Уведомления" с сообщением о выполнении развертывания](./media/design-first-database-tutorial/notification.png)
 
 ## <a name="create-a-server-level-ip-firewall-rule"></a>Создание правила брандмауэра для IP-адресов на уровне сервера
 

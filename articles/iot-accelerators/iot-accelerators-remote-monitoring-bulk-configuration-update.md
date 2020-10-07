@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: philmea
-ms.openlocfilehash: eaca93ac8a4e8c660be9618aefb27921a4e0a2eb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8309b625a590131c5f521335e180967ab2c2667c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77565584"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91363160"
 ---
 # <a name="tutorial-manage-your-connected-devices-in-bulk"></a>Руководство по управлению подключенными устройствами в пакетном режиме
 
@@ -147,7 +147,7 @@ If this is going to be a tutorial - we need to split this include into two so th
 
 1. По завершении отправки устройство IoT DevKit перезагрузится. После завершения перезагрузки на экране IoT DevKit отображается **версия FW: 1.0.0** и выполнение проверки нового встроенного ПО:
 
-    ![ota-1](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-1.jpg)
+    ![На фотографии показано устройство IoT DevKit, на экране которого отображается версия встроенного ПО и проверка на наличие его новой версии.](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-1.jpg)
 
 ## <a name="create-a-device-configuration"></a>Создание конфигурации устройства
 
@@ -248,23 +248,23 @@ If this is going to be a tutorial - we need to split this include into two so th
 
 Через несколько минут IoT DevKit получит сведения о новом встроенном ПО и начнет его скачивание на устройство:
 
-![ota-2](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-2.jpg)
+![На фотографии показано устройство IoT DevKit, на экране которого отображается процесс скачивания новой версии встроенного ПО.](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-2.jpg)
 
 В зависимости от скорости сети скачивание может занять несколько минут. После скачивания встроенного ПО устройство проверяет размер файла и значение CRC. На экране MXChip отображается **passed** (выполнено), если проверка прошла успешно.
 
-![ota-3](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-3.jpg)
+![На фотографии показано устройство IoT DevKit, на экране которого отображается версия встроенного ПО и сведения об успешном прохождении проверки.](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-3.jpg)
 
 Если проверка выполнена успешно, устройство перезагружается. Вы увидите обратный отсчет от **5** до **0**, прежде чем произойдет перезагрузка.
 
-![ota-4](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-4.jpg)
+![На фотографии показано устройство IoT DevKit, готовящееся к перезагрузке.](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-4.jpg)
 
 После перезагрузки загрузчик IoT DevKit обновляет встроенное ПО до новой версии. Обновление может занять несколько секунд. На этом этапе светодиодный индикатор RGB на устройстве горит красным цветом и экран пуст.
 
-![ota-5](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-5.jpg)
+![На фотографии показано устройство IoT DevKit, выполняющее обновление. На дисплее нет изображения, но светодиодный индикатор светится красным цветом.](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-5.jpg)
 
 После завершения перезагрузки устройство IoT DevKit теперь работает под управлением версии 1.0.1 встроенного ПО.
 
-![ota-6](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-6.jpg)
+![На фотографии показано устройство IoT DevKit, на экране которого отображается новая версия встроенного ПО.](media/iot-accelerators-remote-monitoring-bulk-configuration-update/ota-6.jpg)
 
 На странице **Развертывания** щелкните развертывание, чтобы просмотреть сведения о состоянии своих устройств в ходе обновления. Вы увидите сведения о состоянии каждого устройства в вашей группе устройств и пользовательские метрики, которые вы определили.
 

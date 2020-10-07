@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
 ms.openlocfilehash: db3836e6171d187539b8615efcb5ab782c368020
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88752398"
 ---
 # <a name="quickstart-building-your-first-static-web-app"></a>Краткое руководство. Создание первого статического веб-приложения
@@ -44,27 +44,27 @@ ms.locfileid: "88752398"
 
 1. Наведите указатель мыши на надпись _Статические веб-приложения_ и выберите **знак плюс**.
 
-    :::image type="content" source="media/getting-started/extension-create-button.png" alt-text="Имя приложения":::
+    :::image type="content" source="media/getting-started/extension-create-button.png" alt-text="Логотип Azure":::
 
 1. В верхней части редактора откроется палитра команд и будет предложено присвоить имя приложению.
 
     Введите **my-first-static-web-app** и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-create-app.png" alt-text="Создание Статического веб-приложения":::
+    :::image type="content" source="media/getting-started/extension-create-app.png" alt-text="Логотип Azure":::
 
 1. Выберите ветвь **master** и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-branch.png" alt-text="Имя ветви":::
+    :::image type="content" source="media/getting-started/extension-branch.png" alt-text="Логотип Azure":::
 
 1. Выберите **/** в качестве расположения кода приложения и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-app-location.png" alt-text="Расположение кода приложения":::
+    :::image type="content" source="media/getting-started/extension-app-location.png" alt-text="Логотип Azure":::
 
 1. Расширение выполнит поиск расположение API в приложении. В этой статье не описывается реализация API.
 
     Выберите **Пропустить** и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-api-location.png" alt-text="Расположение API":::
+    :::image type="content" source="media/getting-started/extension-api-location.png" alt-text="Логотип Azure":::
 
 1. Выберите расположение, в котором в приложении будут создаваться файлы для рабочей среды.
 
@@ -72,39 +72,39 @@ ms.locfileid: "88752398"
 
     Снимите флажок и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-artifact-no-framework.png" alt-text="Путь к файлам приложения":::
+    :::image type="content" source="media/getting-started/extension-artifact-no-framework.png" alt-text="Логотип Azure":::
 
     # <a name="angular"></a>[Angular](#tab/angular)
 
     Введите **dist/angular-basic** и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-artifact-angular.png" alt-text="Путь к файлам приложения Angular":::
+    :::image type="content" source="media/getting-started/extension-artifact-angular.png" alt-text="Логотип Azure":::
 
     # <a name="react"></a>[React](#tab/react)
 
     Введите **build** и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-artifact-react.png" alt-text="Путь к файлам приложения React":::
+    :::image type="content" source="media/getting-started/extension-artifact-react.png" alt-text="Логотип Azure":::
 
     # <a name="vue"></a>[Vue](#tab/vue)
 
     Введите **dist** и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-artifact-vue.png" alt-text="Путь к файлам приложения Vue":::
+    :::image type="content" source="media/getting-started/extension-artifact-vue.png" alt-text="Логотип Azure":::
 
     ---
 
 1. Выберите ближайшее расположение и нажмите клавишу **ВВОД**.
 
-    :::image type="content" source="media/getting-started/extension-location.png" alt-text="Расположение ресурса":::
+    :::image type="content" source="media/getting-started/extension-location.png" alt-text="Логотип Azure":::
 
 1. После создания приложения в Visual Studio Code отобразится уведомление с подтверждением.
 
-    :::image type="content" source="media/getting-started/extension-confirmation.png" alt-text="Подтверждение создания":::
+    :::image type="content" source="media/getting-started/extension-confirmation.png" alt-text="Логотип Azure":::
 
 1. В окне обозревателя Visual Studio Code вернитесь в раздел _Статические веб-приложения_, щелкните правой кнопкой мыши **Рабочая среда** и выберите **Открыть на портале**, чтобы просмотреть приложение на портале Azure.
 
-    :::image type="content" source="media/getting-started/extension-open-in-portal.png" alt-text="Пункт Открыть портал":::
+    :::image type="content" source="media/getting-started/extension-open-in-portal.png" alt-text="Логотип Azure":::
 
 [!INCLUDE [view website](../../includes/static-web-apps-get-started-view-website.md)]
 
@@ -114,7 +114,7 @@ ms.locfileid: "88752398"
 
 В окне обозревателя Visual Studio Code вернитесь в раздел _Статические веб-приложения_, щелкните правой кнопкой мыши **my-first-static-web-app** и выберите **Удалить**.
 
-:::image type="content" source="media/getting-started/extension-delete.png" alt-text="Удаление приложения":::
+:::image type="content" source="media/getting-started/extension-delete.png" alt-text="Логотип Azure":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,13 +8,13 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/05/2020
 ms.author: aahi
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 0a505e5fb11e776a90c8e198b2568e2ac0bd1854
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-js
+ms.openlocfilehash: 20eaf6e6a9f0eee15e6ad6a5bd8f23bf8531545c
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406386"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91376496"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Node.js. Из этого краткого руководства вы узнаете, как создать экземпляр клиента, отправить запрос и вывести ответ.
 
@@ -49,8 +49,8 @@ ms.locfileid: "87406386"
 1. Теперь установите несколько модулей Azure и добавьте их в `package.json`:
 
     ```console
-    npm install --save azure-cognitiveservices-websearch
-    npm install --save ms-rest-azure
+    npm install --save @azure/cognitiveservices-websearch
+    npm install --save @azure/ms-rest-azure-js
     ```
 
 ## <a name="create-a-project-and-declare-required-modules"></a>Создание проекта и объявление обязательных модулей
@@ -60,13 +60,13 @@ ms.locfileid: "87406386"
 Скопируйте в приложение следующий код: Он загружает модули, установленные в предыдущем разделе.
 
 ```javascript
-const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
-const WebSearchAPIClient = require('azure-cognitiveservices-websearch');
+const CognitiveServicesCredentials = require('@azure/ms-rest-azure-js').CognitiveServicesCredentials;
+const WebSearchAPIClient = require('@azure/cognitiveservices-websearch');
 ```
 
 ## <a name="instantiate-the-client"></a>Создание экземпляра клиента
 
-Этот код создает экземпляр клиента с помощью модуля `azure-cognitiveservices-websearch`. Не забудьте ввести действующий ключ подписки Azure, прежде чем продолжить работу.
+Этот код создает экземпляр клиента с помощью модуля `@azure/cognitiveservices-websearch`. Не забудьте ввести действующий ключ подписки Azure, прежде чем продолжить работу.
 
 ```javascript
 let credentials = new CognitiveServicesCredentials('YOUR-ACCESS-KEY');

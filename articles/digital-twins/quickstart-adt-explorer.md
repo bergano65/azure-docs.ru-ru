@@ -1,20 +1,20 @@
 ---
-title: Изучение примера сценария
+title: Краткое руководство. Изучение примера сценария
 titleSuffix: Azure Digital Twins
-description: Используйте пример ADT Explorer для визуализации и изучения предварительно построенного сценария.
+description: Краткое руководство. Использование примера ADT Explorer для визуализации и изучения предварительно построенного сценария.
 author: baanders
 ms.author: baanders
-ms.date: 8/12/2020
+ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: bbb1378419c68db07be5ca14ca6834810f2fc9f5
-ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
+ms.openlocfilehash: dbe37e8a5cba18254cff1dc5d0fff4d5b9bc783d
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89055470"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91372618"
 ---
-# <a name="explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Изучите пример сценария Azure Digital Twins с помощью ADT Explorer
+# <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Краткое руководство. Изучение примера сценария Azure Digital Twins с помощью ADT Explorer
 
 С помощью Azure Digital Twins можно создавать модели реальных сред и взаимодействовать с ними. Для этого нужно смоделировать отдельные элементы как **цифровые двойников**, а затем подключить их к **графу** набора знаний, который может отвечать на события в реальном времени и запрашивать информацию.
 
@@ -29,15 +29,17 @@ ms.locfileid: "89055470"
 
 Пример графа, с которым вы будете работать, представляет собой здание с двумя этажами и двумя комнатами. Граф будет выглядеть так:
 
-:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой Этаж1 соединена стрелкой с меткой содержит и окружностью с меткой Комната1; окружность с меткой Этаж0 соединена стрелкой с меткой содержит и окружностью с меткой Комната0. Этаж1 и Этаж0 не подключены.":::
+:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены.":::
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам требуется подписка Azure. Если у вас его еще нет, **[создайте его бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)** прямо сейчас.
 
-Перед началом работы с кратким руководством вам потребуется загрузить два примера:
-* Пример приложения **ADT Explorer**. Этот пример содержит основное приложение, которое используется в кратком руководстве для загрузки и изучения сценария Azure Digital Twins. Чтобы получить приложение, перейдите по этой ссылке: [Azure Digital Twins (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода на свой компьютер с именем _**ADT_Explorer.zip**_.
-* **Пример сценария Azure Digital Twins**. Содержит предварительно созданный граф Azure Digital Twins, который будет загружен в ADT Explorer для работы с ним. Чтобы получить сценарий, перейдите по этой ссылке: [Azure Digital Twins samples](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода на свой компьютер с именем _**Azure_Digital_Twins_samples.zip**_.
+Вам также потребуется **Node.js** на компьютере. Последнюю версию можно скачать по этому адресу: [Node.js](https://nodejs.org/).
+
+Наконец, вам также потребуется загрузить два примера для использования во время прохождения краткого руководства:
+* Пример приложения **ADT Explorer**. Этот пример содержит основное приложение, которое используется в кратком руководстве для загрузки и изучения сценария Azure Digital Twins. Чтобы получить приложение, перейдите по этой ссылке: [Azure Digital Twins (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода с именем _**Azure_Digital_Twins__ADT__explorer.zip**_ на свой компьютер. Распакуйте папку и извлеките файлы.
+* **Пример сценария Azure Digital Twins**. Содержит предварительно созданный граф Azure Digital Twins, который будет загружен в ADT Explorer для работы с ним. Чтобы получить сценарий, перейдите по этой ссылке: [Azure Digital Twins samples](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples). Нажмите кнопку *Download ZIP* (Загрузить ZIP-файл), чтобы загрузить файл *ZIP* этого примера кода на свой компьютер. Загрузится файл с именем **Azure_Digital_Twins_samples.zip**. Распакуйте папку и извлеките файлы.
 
 ## <a name="set-up-azure-digital-twins-and-adt-explorer"></a>Настройка Azure Digital Twins и ADT Explorer
 
@@ -47,7 +49,7 @@ ms.locfileid: "89055470"
 
 ### <a name="set-up-azure-digital-twins-instance"></a>Настройка экземпляра Azure Digital Twins
 
-Самый простой способ настроить экземпляр и необходимую проверку подлинности — запустить пример сценария автоматического развертывания. Следуйте инструкциям в [*Практическое руководство. Настройка экземпляра и проверки подлинности (с использованием скрипта)* ](how-to-set-up-instance-scripted.md). В этих инструкциях также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
+Сначала настройте экземпляр Azure Digital Twins и необходимую проверку подлинности, чтобы иметь возможность работать с экземпляром. Для этого выполните инструкции из статьи [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](how-to-set-up-instance-portal.md). В зависимости от предпочтительного интерфейса статья по установке доступна для [портала Azure](how-to-set-up-instance-portal.md), [CLI](how-to-set-up-instance-cli.md) или [автоматизированного примера сценария развертывания Cloud Shell](how-to-set-up-instance-scripted.md). Во всех версиях этих инструкций также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
 
 В этом кратком руководстве потребуются следующие значения, заданные при настройке экземпляра. Если вам нужно снова собрать эти значения, воспользуйтесь приведенными ниже ссылками в соответствующих разделах статьи о настройке, чтобы найти их на [портале Azure](https://portal.azure.com).
 * **_Имя узла_** экземпляра Azure Digital Twins ([как найти на портале](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
@@ -56,36 +58,30 @@ ms.locfileid: "89055470"
 
 ### <a name="set-adt-explorer-permissions"></a>Настройка разрешений ADT Explorer
 
-Затем подготовьте созданный вами экземпляр Azure Digital Twins для работы с ADT Explorer, который является локально размещенным веб-приложением. Перейдите на страницу [Регистрация приложения](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) на портале Azure и выберите имя своей регистрации приложения в списке.
+Затем подготовьте созданный вами экземпляр Azure Digital Twins к работе с ADT Explorer, который является локально размещенным веб-приложением. Перейдите на страницу [Регистрация приложения](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) на портале Azure и выберите имя своей регистрации приложения в списке.
 
 В меню регистрации выберите *Аутентификация* и нажмите кнопку *Добавить платформу*.
 
-:::image type="content" source="media/quickstart-adt-explorer/authentication-pre.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Кнопка Добавить платформу выделена" lightbox="media/quickstart-adt-explorer/authentication-pre.png":::
+:::image type="content" source="media/quickstart-adt-explorer/authentication-pre.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/authentication-pre.png":::
 
 Далее, на странице *Настройка платформы* выберите *Интернет*.
 Заполните сведения о конфигурации следующим образом:
 * **URI перенаправления**: Добавление URI перенаправления *http://localhost:3000* .
 * **Неявное разрешение**: Установите флажок *Маркеры доступа*.
 
-:::row:::
-    :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/authentication-configure-web.png" alt-text="Страница Настройка платформы, на которой выделены сведения, описанные на экране выше":::
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
-
 Нажмите кнопку *Настроить*, чтобы завершить процесс.
 
-Теперь у вас есть интернет-конфигурация, настроенная для использования в ADT Explorer. Это должно отобразиться на вкладке "Аутентификация" на портале Azure.
+:::row:::
+    :::column:::
+        :::image type="content" source="media/quickstart-adt-explorer/authentication-configure-web.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." на портале Azure. Проверив указанные ниже разделы, нажмите *Сохранить*.
 
-:::image type="content" source="media/quickstart-adt-explorer/authentication-post.png" alt-text="Страница портала Azure в сведениях о проверке подлинности для регистрации приложения. Выделенный раздел Интернет платформы с URI перенаправления http://localhost:3000 и включенные маркеры доступа в разделе Неявное предоставление разрешения":::
+:::image type="content" source="media/quickstart-adt-explorer/authentication-post.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены.":::
 
 ### <a name="run-and-configure-adt-explorer"></a>Запуск и настройка ADT Explorer
 
 Затем запустите приложение ADT Explorer и настройте его для своего экземпляра Azure Digital Twins.
 
-Перейдите к папке с загруженным файлом _**ADT_Explorer.zip**_ и распакуйте его. Откройте командную строку в папке *ADT_explorer/client/src*.
+Перейдите к загруженной и распакованной папке _**Azure_Digital_Twins__ADT__explorer**_. Откройте командную строку в папке *Azure_Digital_Twins__ADT__explorer/client/src*.
 
 Запустите `npm install`, чтобы загрузить все необходимые зависимости.
 
@@ -93,19 +89,22 @@ ms.locfileid: "89055470"
 
 Через несколько секунд откроется окно браузера, и приложение отобразится в этом окне.
 
-:::image type="content" source="media/quickstart-adt-explorer/explorer-blank.png" alt-text="Окно браузера, в котором отображается приложение, запущенное на localhost:3000. Приложение называется ADT Explorer и содержит поля для обозревателя запросов, представления модели, представления графа и обозревателя свойств. Данных на экране пока нет." lightbox="media/quickstart-adt-explorer/explorer-blank.png":::
+:::image type="content" source="media/quickstart-adt-explorer/explorer-blank.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/explorer-blank.png":::
 
-Нажмите кнопку *Войти* в верхней части окна, чтобы настроить ADT Explorer для работы с настроенным экземпляром. 
+Нажмите кнопку *Войти* в верхней части окна (как показано на рисунке ниже), чтобы настроить ADT Explorer для работы с настроенным экземпляром. 
 
-:::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer с выделенным значком Войти в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/quickstart-adt-explorer/sign-in.png":::
+:::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/sign-in.png":::
 
 Введите важные сведения, собранные ранее в разделе [Предварительные требования](#prerequisites).
 * Идентификатор приложения (клиента)
 * Идентификатор каталога (клиента)
-* URL-адрес ADT в формате *https://{имя узла экземпляра}*
+* URL-адрес экземпляра Azure Digital Twins в формате *https://{instance host name}*
 
 >[!NOTE]
 > Вы можете в любое время повторно посетить страницу и изменить эту информацию, выбрав тот же значок, чтобы снова открыть поле входа. Он сохранит переданные значения.
+
+> [!TIP]
+> Если при подключении отображается сообщение об ошибке `SignalRService.subscribe`, убедитесь, что URL-адрес Azure Digital Twins начинается с *https://* .
 
 Если вы видите всплывающее окно *Запрос разрешений* от корпорации Майкрософт, предоставьте согласие для этого приложения и нажмите кнопку "Принять", чтобы продолжить.
 
@@ -113,7 +112,7 @@ ms.locfileid: "89055470"
 
 Затем импортируйте пример сценария и графа в ADT Explorer.
 
-Пример сценария находится в загруженном файле _**Azure_Digital_Twins_samples.zip**_, поэтому следует перейти к архиву и извлечь из него папку.
+Пример сценария находится в загруженной и распакованной папке _**Azure_Digital_Twins_samples**_, поэтому теперь следует перейти в папку.
 
 ### <a name="models"></a>Модели
 
@@ -134,21 +133,21 @@ ms.locfileid: "89055470"
 
 В окне *ПРЕДСТАВЛЕНИЕ МОДЕЛИ* щелкните значок *Отправить модель*.
 
-:::image type="content" source="media/quickstart-adt-explorer/upload-model.png" alt-text="Подсвеченный значок в середине окна Представление модели. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/upload-model.png":::
+:::image type="content" source="media/quickstart-adt-explorer/upload-model.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/upload-model.png":::
  
 1. В появившемся поле выбора файла перейдите к папке *Azure_Digital_Twins_samples/AdtSampleApp/SampleClientApp/models* в загруженном репозитории.
 2. Выберите *Room.json* и *Floor.json*, а затем нажмите кнопку ОК. (Вы можете передать другие модели, если хотите, но они не будут использоваться в этом кратком руководстве).
 3. После всплывающего диалогового окна появится запрос на вход в учетную запись Azure.
 
 >[!NOTE]
->Если вы видите следующее сообщение об ошибке: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Всплывающее окно ошибки чтения Ошибка: Ошибка выборки моделей: ClientAuthError: Ошибка открытия всплывающего окна. Это может произойти, если используется IE или если всплывающие окна заблокированы в браузере. и кнопка Закрыть в нижней части" border="false"::: 
+>Если вы видите следующее сообщение об ошибке: :::image type="content" source="media/quickstart-adt-explorer/error-models-popup.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." border="false"::: 
 > Попробуйте отключить блокирование всплывающих окон или используйте другой браузер.
 
 ADT Explorer теперь будет отправлять эти файлы модели в ваш экземпляр Azure Digital Twins. Они должны отображаться в окне *ПРЕДСТАВЛЕНИЕ МОДЕЛИ*, в котором отображаются понятные имена и полные идентификаторы моделей. Вы можете щелкнуть пузырь сведений *ПРЕДСТАВЛЕНИЕ МОДЕЛИ*, чтобы увидеть код DTDL.
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/model-info.png" alt-text="Окно Представление модели с двумя определениями модели, которые перечислены внутри, Floor (dtmi:example:Floor;1) и Room (dtmi:example:Room;1). Значок Представление модели с буквой i в окружности, выделен для каждой модели." lightbox="media/quickstart-adt-explorer/model-info.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/model-info.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/model-info.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -172,7 +171,7 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 В окне *Представление графа* щелкните значок *Импорт графа*.
 
-:::image type="content" source="media/quickstart-adt-explorer/import-graph.png" alt-text="В окне Представление графа выделен значок. В нем отображается стрелка, указывающая на облако." lightbox="media/quickstart-adt-explorer/import-graph.png":::
+:::image type="content" source="media/quickstart-adt-explorer/import-graph.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/import-graph.png":::
 
 В поле селектора файла перейдите в папку *Azure_Digital_Twins_samples/AdtSampleApp/SampleClientApp* и выберите файл таблицы _**buildingScenario.xlsx**_. Этот файл содержит описание примера графа. Нажмите кнопку ОК.
 
@@ -182,7 +181,7 @@ ADT Explorer теперь будет отправлять эти файлы мо
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/graph-preview-save.png" alt-text="Выделенный значок Сохранить на панели предварительного просмотра графа" lightbox="media/quickstart-adt-explorer/graph-preview-save.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/graph-preview-save.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/graph-preview-save.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -192,7 +191,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/import-success.png" alt-text="Диалоговое окно, указывающее на успешное завершение импорта графа. В нем написано: Импорт успешно завершен. Импортировано 49 двойников. Импортировано 50 связей." lightbox="media/quickstart-adt-explorer/import-success.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/import-success.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/import-success.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -202,7 +201,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь граф отправлен в ADT Explorer. Чтобы увидеть граф, нажмите кнопку *Выполнить запрос* в окне *ОБОЗРЕВАТЕЛЬ ГРАФА* в верхней части окна ADT Explorer. 
 
-:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Выделенная кнопка Выполнить запрос рядом с верхней частью окна" lightbox="media/quickstart-adt-explorer/run-query.png":::
+:::image type="content" source="media/quickstart-adt-explorer/run-query.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/run-query.png":::
 
 Будет выполнен запрос по умолчанию для выбора и отображения всех цифровых двойников. ADT Explorer извлечет все двойники и связи из службы и создаст граф, определенный в окне *ПРЕДСТАВЛЕНИЕ ГРАФА*.
 
@@ -210,7 +209,7 @@ ADT Explorer теперь будет использовать переданны
 
 Теперь можно увидеть отправленный граф образца сценария:
 
-:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Окно Представление графа, содержащее граф двойника. Окружность с меткой floor1 соединена стрелкой с меткой contains и окружностью с меткой room1; окружность с меткой floor0 соединена стрелкой с меткой contains и окружностью с меткой room0.":::
+:::image type="content" source="media/quickstart-adt-explorer/graph-view-full.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены.":::
 
 Окружности (узлы графа) представляют цифровых двойников, а линии представляют связи. Вы увидите, что двойник *Floor0* содержит *Room0*, а двойник *Floor1* содержит *Room1*.
 
@@ -224,7 +223,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/properties-room0.png" alt-text="Выделенное окно Обозреватель свойств, в котором отображаются свойства для Room0, включая (среди прочего) поле $dtId Room0, поле температуры со значением 70 и поле влажности со значением 30." lightbox="media/quickstart-adt-explorer/properties-room0.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/properties-room0.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/properties-room0.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -236,7 +235,7 @@ ADT Explorer теперь будет использовать переданны
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/properties-room1.png" alt-text="Выделенное окно Обозреватель свойств, в котором отображаются свойства для Room1, включая (среди прочего) поле $dtId Room1, поле температуры со значением 80 и поле влажности со значением 60." lightbox="media/quickstart-adt-explorer/properties-room1.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/properties-room1.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/properties-room1.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -260,7 +259,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 
 Припомните, что в свойствах двойника раньше для *Room0* была температура **70**, а для *Room1* была температура **80**. Поэтому в результатах отображается только _**Room1**_.
     
-:::image type="content" source="media/quickstart-adt-explorer/result-query-property-before.png" alt-text="Результаты запроса по свойству, показывающие только Room1" lightbox="media/quickstart-adt-explorer/result-query-property-before.png":::
+:::image type="content" source="media/quickstart-adt-explorer/result-query-property-before.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/result-query-property-before.png":::
 
 >[!TIP]
 > Другие операторы сравнения ( *<* , *>* , *=* или *! =* ) также поддерживаются в приведенном выше запросе. Вы можете попытаться подключить эти или другие значения, или другие свойства двойника в запрос, чтобы увидеть ответы на свои вопросы.
@@ -275,7 +274,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/quickstart-adt-explorer/new-properties-room0.png" alt-text="Окно Обозреватель свойств, в котором отображаются свойства для Room0. Значение температуры — это редактируемое поле, в котором отображается число 76, а значок Сохранить выделен." lightbox="media/quickstart-adt-explorer/new-properties-room0.png":::
+        :::image type="content" source="media/quickstart-adt-explorer/new-properties-room0.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/new-properties-room0.png":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -293,7 +292,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 
 Теперь, когда температура *Room0* изменилась с **70** на **76**, в результатах должны отобразиться оба двойника.
 
-:::image type="content" source="media/quickstart-adt-explorer/result-query-property-after.png" alt-text="Результаты запроса свойства, в которых отображаются как Room0, так и Room1" lightbox="media/quickstart-adt-explorer/result-query-property-after.png":::
+:::image type="content" source="media/quickstart-adt-explorer/result-query-property-after.png" alt-text="Представление графа, состоящее из четырех циклических узлов, соединенных стрелками. Окружность с меткой &quot;Этаж1&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната1&quot;; окружность с меткой &quot;Этаж0&quot; соединена стрелкой с меткой &quot;содержит&quot; и окружностью с меткой &quot;Комната0&quot;. &quot;Этаж1&quot; и &quot;Этаж0&quot; не подключены." lightbox="media/quickstart-adt-explorer/result-query-property-after.png":::
 
 ## <a name="review-and-contextualize-learnings"></a>Просмотр и контекстуализация учебных моделей
 
@@ -316,7 +315,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
  
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-Наконец, удалите папки примеров проекта, загруженные на локальный компьютер (_**ADT_Explorer.zip**_ и _**Azure_Digital_Twins_samples.zip**_).
+Наконец, удалите папки примеров проекта, загруженные на локальный компьютер (_**Azure_Digital_Twins__ADT__explorer**_ и _**Azure_Digital_Twins_samples**_). Возможно, вам придется удалить как сжатую, так и распакованную версию.
 
 ## <a name="next-steps"></a>Дальнейшие шаги 
 

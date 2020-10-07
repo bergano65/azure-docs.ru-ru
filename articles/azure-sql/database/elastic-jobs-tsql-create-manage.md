@@ -11,12 +11,12 @@ ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
 ms.date: 02/07/2020
-ms.openlocfilehash: 5c05db4d6e0c98935fc13325b5656f8023c6228e
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: bbecfac4bfd3d5ce1510cb671b93df5f4982cbc4
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91443339"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91803863"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs-preview"></a>Использование Transact-SQL (T-SQL) для создания заданий обработки эластичных баз данных и управления ими (Предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -1023,13 +1023,13 @@ sp_add_job необходимо выполнять из базы данных а
 Имя целевой группы для добавления элемента. Типом target_group_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ ** \@ membership_type =** ] ' membership_type '  
-Указывает, добавляется или исключается ли элемент целевой группы. Типом target_group_name является nvarchar(128), значение по умолчанию — Include. Допустимые значения target_group_name: Include и Exclude.
+Указывает, добавляется или исключается ли элемент целевой группы. Типом target_group_name является nvarchar(128), значение по умолчанию — Include. Допустимые значения для membership_type: "include" или "Exclude".
 
 [ ** \@ target_type =** ] ' target_type '  
 Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле, все базы данных в сопоставлении сегментов или отдельную базу данных. Типом target_type является nvarchar(128), значение по умолчанию отсутствует. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase, SqlShardMap.
 
 [ ** \@ refresh_credential_name =** ] ' refresh_credential_name '  
-Имя сервера. Типом refresh_credential_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя учетных данных области базы данных. Типом refresh_credential_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ ** \@ server_name =** ] ' server_name '  
 Имя сервера, который необходимо добавить в указанную целевую группу. Значение server_name следует указывать, если значением target_type является SqlServer. Типом server_name является nvarchar(128), значение по умолчанию отсутствует.
@@ -1041,7 +1041,7 @@ sp_add_job необходимо выполнять из базы данных а
 Имя эластичного пула, добавляемого в указанную целевую группу. Значение elastic_pool_name следует указывать, если значением target_type является SqlElasticPool. Типом elastic_pool_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ ** \@ shard_map_name =** ] ' shard_map_name '  
-Имя сопоставления сегментов, добавляемого в указанную целевую группу. Значение elastic_pool_name следует указывать, если значением target_type является SqlSqlShardMap. Типом shard_map_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя сопоставления сегментов, добавляемого в указанную целевую группу. elastic_pool_name следует указывать, если target_type имеет "Склшардмап". Типом shard_map_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ ** \@ target_id =** ] target_group_id выходные данные  
 Целевой идентификационный номер, который назначается элементу целевой группы при его успешном создании и добавлении в целевую группу. target_id является выходной переменой типа uniqueidentifier, значение по умолчанию — NULL.

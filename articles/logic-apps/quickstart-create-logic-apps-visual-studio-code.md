@@ -6,13 +6,13 @@ ms.suite: integration
 ms.reviewer: jonfan, deli, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 10/25/2019
-ms.openlocfilehash: a2239d5ee70e90b9ee7c07b4dca78a45d2ce7ef9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.date: 09/25/2020
+ms.openlocfilehash: fa103c39b540c41536e4f231692b4602afe01a3e
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131486"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361217"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
 
@@ -130,7 +130,7 @@ ms.locfileid: "87131486"
    Например, ниже приведен пример определения рабочего процесса приложения логики, который начинается с триггера RSS и действия Office 365 Outlook. Обычно элементы JSON отображаются в каждом разделе в алфавитном порядке. Однако в этом примере эти элементы отображаются приблизительно в том порядке, в котором в конструкторе отображаются шаги приложения логики.
 
    > [!IMPORTANT]
-   > Если вы хотите повторно использовать этот пример определения приложения логики, вам потребуется учетная запись организации Office 365, например @fabrikam.com. Обязательно замените вымышленный адрес электронной почты своим. Чтобы использовать другой соединитель электронной почты, например Outlook.com или Gmail, замените действие `Send_an_email_action` аналогичным действием, доступным в [соединителе электронной почты, поддерживаемом Azure Logic Apps](../connectors/apis-list.md).
+   > Если вы хотите повторно использовать этот пример определения приложения логики, вам потребуется учетная запись организации, например @fabrikam.com. Обязательно замените вымышленный адрес электронной почты своим. Чтобы использовать другой соединитель электронной почты, например Outlook.com или Gmail, замените действие `Send_an_email_action` аналогичным действием, доступным в [соединителе электронной почты, поддерживаемом Azure Logic Apps](../connectors/apis-list.md).
    >
    > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. 
    > Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). 
@@ -307,4 +307,4 @@ ms.locfileid: "87131486"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
+> [Создание рабочих процессов с отслеживанием состояния или без отслеживания состояния в Visual Studio Code с помощью расширения Azure Logic Apps (предварительная версия)](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 583179c4678b43bef25174835ec2701d571b37b6
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 3ceaa357150fe0c4d26eeedc6821761d2eb00106
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905656"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91357970"
 ---
 # <a name="import-soap-api"></a>импорт SOAP API;
 
@@ -45,7 +45,7 @@ ms.locfileid: "87905656"
 3. В поле **Спецификация WSDL** введите URL-адрес, по которому располагается SOAP API.
 4. Переключатель **Сквозной SOAP** по умолчанию включен. Если он включен, API будет предоставляться как SOAP. Объекту-получателю необходимо использовать правила SOAP. Если нужно преобразовать API в REST, выполните инструкции из статьи [Import a SOAP API and convert to REST](restify-soap-api.md) (Импорт SOAP API и преобразование его в REST).
 
-    ![Сквозной режим](./media/import-soap-api/pass-through.png)
+    ![Снимок экрана: диалоговое окно создания API на основе WSDL, где можно указать спецификацию WSDL](./media/import-soap-api/pass-through.png)
 5. Нажмите клавишу TAB.
 
     Следующие поля будут заполнены информацией из SOAP API: "Отображаемое имя", "Имя", "Описание".

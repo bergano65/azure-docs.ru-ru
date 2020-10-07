@@ -5,16 +5,16 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/21/2020
+ms.date: 10/06/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 794e89e75505d3c1c34bf2a15209c3218dfa3582
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f9f0983bdb5e8763d13eeab8ea21bef7fb9ef47f
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91714105"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91803336"
 ---
 # <a name="set-access-control-lists-acls-recursively-for-azure-data-lake-storage-gen2"></a>Рекурсивное задание списков управления доступом (ACL) для Azure Data Lake Storage 2-го поколения
 
@@ -25,7 +25,7 @@ ms.locfileid: "91714105"
 
 [Библиотеки](#libraries)  |  [Примеры](#code-samples)  |  [Рекомендации](#best-practice-guidelines)  |  [Отправить отзыв](#provide-feedback)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -80,7 +80,7 @@ ms.locfileid: "91714105"
 2. В каталоге проекта установите пакет Azure. Storage. Files. Data Lake Preview с помощью `dotnet add package` команды.
 
    ```console
-   dotnet add package Azure.Storage.Files.DataLake -v 12.3.0-dev.20200811.1 -s https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json
+   dotnet add package Azure.Storage.Files.DataLake -v 12.5.0-preview.1 -s https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json
    ```
 
 3. Добавьте эти операторы using в начало файла кода.
@@ -556,7 +556,7 @@ public async Task<string> ResumeAsync(DataLakeServiceClient serviceClient,
     {
         var accessControlChangeResult =
             await directoryClient.SetAccessControlRecursiveAsync(
-                accessControlList, null, continuationToken: continuationToken);
+                accessControlList, continuationToken: continuationToken, null);
 
         if (accessControlChangeResult.Value.Counters.FailedChangesCount > 0)
         {
@@ -650,7 +650,7 @@ def resume_set_acl_recursive(continuation_token):
 
 Вы можете отправить отзыв или сообщить о вопросе по адресу  [recursiveACLfeedback@microsoft.com](mailto:recursiveACLfeedback@microsoft.com) .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)
 - [Известные проблемы](data-lake-storage-known-issues.md)

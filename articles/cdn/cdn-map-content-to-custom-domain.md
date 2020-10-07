@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 06/11/2018
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 4ca601a3f149d8287137265665379d407d10b988
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.openlocfilehash: 08bbe1000d457cc4f4d6b655051ec640d4dcecf4
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88192694"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362101"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-azure-cdn-endpoint"></a>Руководство по Добавление личного домена к конечной точке Azure CDN
 Из этого руководства вы узнаете, как добавить личный домен к конечной точке сети доставки содержимого (CDN) Azure. При использовании конечной точки CDN для доставки содержимого личный домен требуется, если вы хотите обеспечить видимость своего доменного имени в URL-адресе CDN. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда. 
@@ -90,7 +90,7 @@ ms.locfileid: "88192694"
 
 5. Заполните следующие поля записи CNAME:
 
-    ![Запись CNAME](./media/cdn-map-content-to-custom-domain/cdn-cdnverify-cname-entry.png)
+    ![Снимок экрана: запись CNAME с заданными значениями в полях "Тип", "Узел", "Points to" (Указывает на) и "TTL" для временного поддомена cdnverify.](./media/cdn-map-content-to-custom-domain/cdn-cdnverify-cname-entry.png)
 
     - Тип: оставьте выбранное значение *CNAME*.
 
@@ -104,7 +104,7 @@ ms.locfileid: "88192694"
  
     Запись CNAME добавится к таблице записей DNS.
 
-    ![Таблица записей DNS](./media/cdn-map-content-to-custom-domain/cdn-cdnverify-dns-table.png)
+    ![Снимок экрана: запись CNAME добавлена в таблицу записей DNS для временного поддомена cdnverify.](./media/cdn-map-content-to-custom-domain/cdn-cdnverify-dns-table.png)
 
 
 ## <a name="associate-the-custom-domain-with-your-cdn-endpoint"></a>Связывание личного домена с конечной точкой CDN
@@ -188,7 +188,7 @@ ms.locfileid: "88192694"
 
 5. Заполните следующие поля записи CNAME:
 
-    ![Запись CNAME](./media/cdn-map-content-to-custom-domain/cdn-cname-entry.png)
+    ![Снимок экрана: запись CNAME с заданными значениями в полях "Тип", "Узел", "Points to" (Указывает на) и "TTL" для постоянного личного домена.](./media/cdn-map-content-to-custom-domain/cdn-cname-entry.png)
 
     - Тип: оставьте выбранное значение *CNAME*.
 
@@ -202,7 +202,7 @@ ms.locfileid: "88192694"
  
     Запись CNAME добавится к таблице записей DNS.
 
-    ![Таблица записей DNS](./media/cdn-map-content-to-custom-domain/cdn-dns-table.png)
+    ![Снимок экрана: запись CNAME добавлена в таблицу записей DNS для постоянного личного домена.](./media/cdn-map-content-to-custom-domain/cdn-dns-table.png)
 
 7. Если у вас есть запись CNAME cdnverify, нажмите значок карандаша рядом с ней, а затем выберите значок урны.
 

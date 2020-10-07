@@ -4,10 +4,10 @@ description: Узнайте, как быстро настроить лабора
 ms.topic: overview
 ms.date: 06/26/2020
 ms.openlocfilehash: e6ff56a831282c3abf5eec644573b9a3e88c6543
-ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85445633"
 ---
 # <a name="introduction-to-classroom-labs"></a>Общие сведения о классных лабораториях

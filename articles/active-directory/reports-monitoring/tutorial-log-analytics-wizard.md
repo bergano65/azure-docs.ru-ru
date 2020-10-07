@@ -11,12 +11,12 @@ author: MarkusVi
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93caf52d8b4a11f9843ad5f18ebf968d1d0730cd
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.openlocfilehash: 643010ef1f6e941a57673a711e1871aafd1e341d
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89226213"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91361914"
 ---
 # <a name="tutorial-configure-the-log-analytics-wizard"></a>Руководство по настройке мастера Log Analytics
 
@@ -72,7 +72,7 @@ ms.locfileid: "89226213"
 
 3. На странице "Рабочие области Log Analytics" щелкните **Добавить**.
 
-    ![Add](./media/tutorial-log-analytics-wizard/add.png)
+    ![Снимок экрана: кнопка "Добавить" на странице "Рабочие области Log Analytics"](./media/tutorial-log-analytics-wizard/add.png)
 
 4.  На странице **Создание рабочей области Log Analytics** выполните следующие шаги:
 
@@ -305,7 +305,7 @@ ms.locfileid: "89226213"
 
 3. В разделе **Мониторинг** щелкните **Книги**.
 
-    ![Workbooks](./media/tutorial-log-analytics-wizard/workbooks.png)
+    ![Снимок экрана: раздел "Мониторинг" на портале Azure с выбранным параметром "Книги"](./media/tutorial-log-analytics-wizard/workbooks.png)
 
 4. В разделе **Быстрый запуск** щелкните **Пустой**.
 
@@ -357,7 +357,7 @@ ms.locfileid: "89226213"
 
 3. В разделе **Мониторинг** щелкните **Книги**.
 
-    ![Workbooks](./media/tutorial-log-analytics-wizard/workbooks.png)
+    ![Снимок экрана: меню с разделом "Мониторинг" и выбранным параметром "Книги"](./media/tutorial-log-analytics-wizard/workbooks.png)
 
 4. В разделе **Условный доступ** щелкните **Сведения об условном доступе и создание отчетов**.
 

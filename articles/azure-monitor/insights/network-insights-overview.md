@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/24/2020
-ms.openlocfilehash: 2559c4f54aa19df248ddf756e376809dea516997
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5f076f477c36f96d1807ce7071720225a6df8e03
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91330976"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91803812"
 ---
 # <a name="azure-monitor-for-networks-preview"></a>Azure Monitor для сетей (Предварительная версия)
 Azure Monitor для сети предоставляет исчерпывающее представление о [работоспособности](https://docs.microsoft.com/azure/service-health/resource-health-checks-resource-types) и [метриках](../platform/metrics-supported.md) для всех развернутых сетевых ресурсов без какой-либо настройки.  Он также предоставляет доступ ко всем возможностям мониторинга сети, таким как [монитор подключения](../../network-watcher/connection-monitor-preview.md), [ведение журнала потоков для групп безопасности сети (группы безопасности сети)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md), [аналитика трафика](../../network-watcher/traffic-analytics.md)и другие функции [диагностики](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) сети.
 
 Azure Monitor для сетей организованы по следующим ключевым компонентам мониторинга:
 - [Работоспособность сети и метрики](#networkhealth)
-- [Соединение](#connectivity)
+- [Подключение](#connectivity)
 - [Трафик](#traffic)
 - [Набор средств диагностики](#diagnostictoolkit)
 
@@ -108,6 +108,43 @@ Azure Monitor для сетей организованы по следующим
 
 ![Вкладка средств диагностики](media/network-insights-overview/azure-monitor-for-networks-diagnostic-toolkit.png)
 
+## <a name="troubleshooting"></a>Диагностика 
+
+Общие рекомендации по устранению неполадок см. в соответствующей [статье об устранении неполадок](troubleshoot-workbooks.md)на основе книги.
+
+Этот раздел поможет вам в диагностике и устранении неполадок некоторых распространенных проблем, которые могут возникнуть при использовании Azure Monitor для сетей. Чтобы найти информацию о конкретной проблеме, просмотрите список ниже.
+
+### <a name="resolving-performance-issues-or-failures"></a>Устранение проблем с производительностью или сбоев
+
+Сведения об устранении проблем, связанных с сетью, которые можно определить с помощью Azure Monitor для сетей, см. в документации по устранению неполадок неисправного ресурса. Ссылки на устранение неполадок для служб с высоким уровнем использования перечислены ниже.
+* Виртуальная сеть (VNET)
+* Шлюз приложений
+* VPN-шлюз
+* ExpressRoute 
+* Load Balancer 
+
+### <a name="why-dont-i-see-the-resources-from-all-the-subscriptions-i-have-selected"></a>Почему я не вижу ресурсы из всех выбранных мной подписок
+
+Network Insights может одновременно отображать ресурсы только из 5 подписок. 
+
+### <a name="i-want-to-make-changes-or-add-additional-visualizations-to-network-insights-how-do-i-do-so"></a>Я хочу внести изменения или добавить дополнительные визуализации в Network Insights, как это сделать
+
+Чтобы внести изменения, выберите режим редактирования и внесите изменения в книгу, после чего вы сможете сохранить измененную книгу как новую книгу, привязанную к определенной подписке и группе ресурсов.
+
+### <a name="what-is-the-time-grain-once-we-pin-any-part-of-the-workbooks"></a>Что такое промежуток времени после закрепления любой части книг
+
+Мы используем автоматический временной интервал, поэтому он зависит от выбранного диапазона времени.
+
+### <a name="what-is-the-time-range-when-any-part-of-the-workbook-is-pinned"></a>Каков диапазон времени, когда какая-либо часть книги закреплена
+
+Диапазон времени будет зависеть от параметров панели мониторинга.
+
+### <a name="what-if-i-want-to-see-other-data-or-make-my-own-visualizations-how-can-i-make-changes-to-the-network-insights"></a>Что делать, если нужно просмотреть другие данные или создать собственные визуализации? Как внести изменения в Network Insights
+
+Книгу, отображаемую на боковой панели и подробном представлении метрики, можно изменить с помощью режима редактирования, а затем сохранить работу в виде новой книги, в которой будут внесены все новые изменения.
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о мониторинге сети см. в разделе [что такое наблюдатель за сетями Azure?](../../network-watcher/network-watcher-monitoring-overview.md).
+- Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).

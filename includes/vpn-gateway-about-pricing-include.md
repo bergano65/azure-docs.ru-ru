@@ -9,10 +9,10 @@ ms.date: 07/08/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 8f8d366961049deb3eda193718ccb553aac930e3
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "67666381"
 ---
 Вы платите за каждый час использования вычислительных ресурсов шлюза виртуальной сети и за его исходящий трафик. Дополнительные сведения о ценах можно просмотреть на [этой странице](https://azure.microsoft.com/pricing/details/vpn-gateway) . Чтобы узнать цены на SKU для шлюза прежних версий, откройте [страницу с ценами на ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute) и прокрутите ее до раздела**Шлюзы виртуальной сети**.

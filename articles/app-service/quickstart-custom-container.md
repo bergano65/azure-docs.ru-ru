@@ -7,12 +7,12 @@ ms.date: 08/28/2019
 ms.topic: quickstart
 ms.custom: devx-track-csharp
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 33eaf6274f2da09ab98a21e6028b0103df817744
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.openlocfilehash: 4c95e345255b28ba43e474087cdb80fcab493394
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88961369"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91356423"
 ---
 # <a name="run-a-custom-container-in-azure"></a>Запуск пользовательского контейнера в Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "88961369"
 
 1. Если файл _Dockerfile_ не открылся автоматически, откройте его в **обозревателе решений**.
 
-1. Вам потребуется [поддерживаемый родительский образ](#use-a-different-parent-image). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом. Затем сохраните файл.
+1. Вам потребуется [поддерживаемый родительский образ](configure-custom-container.md#supported-parent-images). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом. Затем сохраните файл.
 
    ```dockerfile
    FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019
@@ -169,22 +169,16 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 
 ![Обновленное веб-приложение в Azure](./media/quickstart-custom-container/azure-web-app-updated.png)
 
-## <a name="use-a-different-parent-image"></a>Использование другого родительского образа
-
-Для запуска приложения можно использовать другой пользовательский образ Docker. Но вам нужно выбрать правильный [родительский образ (базовый образ)](https://docs.docker.com/develop/develop-images/baseimages/) для платформы, которую вы хотите использовать:
-
-- Для развертывания приложений .NET Framework используйте родительский образ на основе выпуска [канала долгосрочного обслуживания (LTSC)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) для Windows Server Core 2019. 
-- Для развертывания приложений .NET Core используйте родительский образ на основе выпуска [канала полугодичного обслуживания (SAC)](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) для Windows Server Nano 1809. 
-
-Скачивание родительского образа во время запуска приложения занимает некоторое время. Но вы можете ускорить запуск, используя один из следующих родительских образов, уже кэшированных в службе приложений Azure:
-
-- [mcr.Microsoft.com/DotNet/Framework/ASPNET](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/): 4.7.2-windowsservercore-ltsc2019
-- [mcr.Microsoft.com/Windows/nanoserver](https://hub.docker.com/_/microsoft-windows-nanoserver/):1809 — это базовый контейнер, используемый для образов [ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) Microsoft Windows Nano Server.
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перенос в контейнер Windows в Azure](tutorial-custom-container.md)
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка пользовательского контейнера](configure-custom-container.md)
+
 ::: zone-end  
 
 ::: zone pivot="container-linux"
@@ -225,7 +219,7 @@ docker --version
 
 Наконец, убедитесь, что Реестр контейнеров Azure подключен. Для этого выберите логотип Docker на панели действий, а затем перейдите к разделу **Реестры**.
 
-![Реестры](./media/quickstart-docker/registries.png)
+![Снимок экрана: раздел "Реестры" с развернутым пунктом Azure и файлом с расширением "io"](./media/quickstart-docker/registries.png)
 
 ## <a name="deploy-the-image-to-azure-app-service"></a>Развертывание образа в Службе приложений Azure
 
@@ -260,5 +254,10 @@ docker --version
 * [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 Или получите их, установив пакет расширений [инструментов Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack).
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка пользовательского контейнера](configure-custom-container.md)
 
 ::: zone-end

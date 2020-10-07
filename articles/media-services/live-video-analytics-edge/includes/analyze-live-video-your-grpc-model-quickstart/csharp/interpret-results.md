@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 2cf9cde80a46023575a4e0833de5c2c6b90ab10e
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "88687350"
 ---
 При запуске графа мультимедиа результаты из узла обработчика расширения HTTP отправляются через узел-преемник Центра Интернета вещей в центр Интернета вещей. Эти сообщения, отображаемые в окне **Вывод** содержат разделы body (текст) и applicationProperties (свойства приложения). Дополнительные сведения см. в статье [Создание и чтение сообщений Центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct).

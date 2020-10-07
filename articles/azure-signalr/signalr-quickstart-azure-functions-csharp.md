@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Бессерверная служба Azure SignalR с использованием C#
-description: Краткое руководство по использованию служб "Функции Azure" и SignalR для создания чат-комнаты.
+description: Краткое руководство по использованию служб "Функции Azure" и SignalR для создания чат-комнаты с помощью C#.
 author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.date: 03/04/2019
+ms.date: 09/25/2020
 ms.author: zhshang
-ms.openlocfilehash: 54a4c9374c064073620f2679e7c7511e30c45de6
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.openlocfilehash: be26fdafe0a8a52669fe41fd5514c808f10df745
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89050647"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369133"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-c"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с помощью C\#
 
@@ -21,11 +21,11 @@ ms.locfileid: "89050647"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы еще не установили Visual Studio 2019, можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
 Вы также можете запустить это руководство из командной строки (macOS, Windows или Linux) с помощью [Azure Functions Core Tools (v2)](https://github.com/Azure/azure-functions-core-tools#installing), [пакета SDK для .NET Core](https://dotnet.microsoft.com/download) или любого другого редактора кода.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/dotnet), прежде чем начинать работу.
 
 [Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qscsharp)
 
@@ -55,13 +55,13 @@ ms.locfileid: "89050647"
 
 1. Выберите и скопируйте основную строку подключения.
 
-1. В Visual Studio в обозревателе решений переименуйте *local.settings.sample.json* в *local.settings.json*.
+1. В Visual Studio в **обозревателе решений** переименуйте *local.settings.sample.json* в *local.settings.json*.
 
-1. В файл **local.settings.json** вставьте строку подключения как значение параметра **AzureSignalRConnectionString**. Сохраните файл.
+1. В файл *local.settings.json* вставьте строку подключения как значение параметра **AzureSignalRConnectionString**. Сохраните файл.
 
-1. Откройте **Functions.cs**. В этом приложении-функции есть две функции триггеров HTTP.
+1. Откройте *Functions.cs*. В этом приложении-функции есть две функции триггеров HTTP.
 
-    - **GetSignalRInfo** — использует входную привязку *SignalRConnectionInfo* для создания и возврата сведений о текущем соединении.
+    - **GetSignalRInfo** — использует входную привязку `SignalRConnectionInfo` для создания и возврата сведений о текущем соединении.
     - **SendMessage** — получает мгновенное сообщение в тексте запроса и использует выходную привязку *SignalR*, чтобы разослать сообщение всем подключенным клиентским приложениям.
 
 1. Для локального запуска приложения-функции Azure можно использовать один из следующих вариантов.

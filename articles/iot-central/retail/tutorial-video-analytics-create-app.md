@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: KishorIoT
 ms.author: nandab
 ms.date: 07/31/2020
-ms.openlocfilehash: b98406984f2c9f2adfca030369a6ea3d47a786f3
-ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.openlocfilehash: c7ddff70d24fe87380c4bf1439811042418ac76a
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88762783"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369575"
 ---
 # <a name="tutorial-create-a-video-analytics---object-and-motion-detection-application-in-azure-iot-central"></a>Руководство по созданию видеоаналитики — приложения для распознавания объектов и движения в Azure IoT Central
 
@@ -111,7 +111,7 @@ ms.locfileid: "88762783"
 
 1. Нажмите кнопку **создания**.
 
-    :::image type="content" source="./media/tutorial-video-analytics-create-app/new-application.png" alt-text="Страница создания приложения Azure IoT Central":::
+    :::image type="content" source="./media/tutorial-video-analytics-create-app/new-application.png" alt-text="Настройка приложения AAD для AMS":::
 
 ### <a name="retrieve-the-configuration-data"></a>Получение данных конфигурации
 
@@ -119,11 +119,11 @@ ms.locfileid: "88762783"
 
 В разделе **Администрирование** выберите **Ваше приложение** и запишите **URL-адрес приложения** и **идентификатор приложения** в файле *scratchpad.txt*.
 
-:::image type="content" source="./media/tutorial-video-analytics-create-app/administration.png" alt-text="Администрирование":::
+:::image type="content" source="./media/tutorial-video-analytics-create-app/administration.png" alt-text="Настройка приложения AAD для AMS":::
 
 Выберите **Токены API** и создайте токен с именем **LVAEdgeToken** для роли **Оператор**.
 
-:::image type="content" source="./media/tutorial-video-analytics-create-app/token.png" alt-text="Создание токена":::
+:::image type="content" source="./media/tutorial-video-analytics-create-app/token.png" alt-text="Настройка приложения AAD для AMS":::
 
 Запишите маркер в файле *scratchpad.txt* для последующего использования. После закрытия диалогового окна вы не сможете снова просмотреть токен.
 
@@ -221,7 +221,7 @@ ms.locfileid: "88762783"
 
     Пока не выполняйте поиск манифеста развертывания. Если это сделать, мастер развертывания будет ожидать интерфейс для каждого модуля, но вам нужно предоставить интерфейс только для **LvaEdgeGatewayModule**. Вы отправите манифест позже.
 
-    :::image type="content" source="./media/tutorial-video-analytics-create-app/upload-deployment-manifest.png" alt-text="Не отправляйте манифест развертывания":::
+    :::image type="content" source="./media/tutorial-video-analytics-create-app/upload-deployment-manifest.png" alt-text="Настройка приложения AAD для AMS":::
 
     По завершении выберите **Next: Review** (Далее: проверка).
 
@@ -237,7 +237,7 @@ ms.locfileid: "88762783"
 
 На странице **шлюза LVA Edge** выберите **+ Replace manifest** (+ Заменить манифест).
 
-:::image type="content" source="./media/tutorial-video-analytics-create-app/replace-manifest.png" alt-text="Замена манифеста":::
+:::image type="content" source="./media/tutorial-video-analytics-create-app/replace-manifest.png" alt-text="Настройка приложения AAD для AMS":::
 
 Перейдите в папку *lva-configuration* и выберите файл манифеста *deployment.amd64.json*, который вы изменили ранее. Щелкните **Отправить**. После завершения проверки нажмите кнопку **Заменить**.
 
@@ -252,7 +252,7 @@ ms.locfileid: "88762783"
 
 Затем нажмите кнопку **Save** (Сохранить).
 
-:::image type="content" source="media/tutorial-video-analytics-create-app/relationships.png" alt-text="Добавление связей":::
+:::image type="content" source="media/tutorial-video-analytics-create-app/relationships.png" alt-text="Настройка приложения AAD для AMS":::
 
 ### <a name="add-views"></a>Добавление представлений
 
@@ -274,7 +274,7 @@ ms.locfileid: "88762783"
     * Плитка последнего известного значения 1x1, показывающая телеметрию **работоспособности системы**.
     * Плитка последнего известного значения 1x1, показывающая телеметрию **подключенных камер**.
 
-    :::image type="content" source="media/tutorial-video-analytics-create-app/gateway-dashboard.png" alt-text="Панель мониторинга":::
+    :::image type="content" source="media/tutorial-video-analytics-create-app/gateway-dashboard.png" alt-text="Настройка приложения AAD для AMS":::
 
 1. Щелкните **Сохранить**.
 

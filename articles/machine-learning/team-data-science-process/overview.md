@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 1/10/2020
 ms.author: tdsp
 ms.custom: previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 711c4ce8af613181d35d2850393c6c24d795c280
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: fc9a5e604e6ac52eb0e853725123272ca924fa36
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799270"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91362237"
 ---
 # <a name="what-is-the-team-data-science-process"></a>Что такое процесс обработки и анализа данных группы?
 
@@ -51,7 +51,7 @@ ms.locfileid: "88799270"
 
 Ниже представлена схема **жизненного цикла TDSP**. 
 
-![TDSP-Lifecycle2](./media/overview/tdsp-lifecycle2.png) 
+![На схеме показан жизненный цикл обработки и анализа данных, включая анализ потребностей бизнеса, получение и анализ данных, моделирование и развертывание.](./media/overview/tdsp-lifecycle2.png) 
 
 Цели, задачи и артефакты документации для каждого уровня жизненного цикла TDSP описаны в статье [Team Data Science Process lifecycle](lifecycle.md) (Жизненный цикл процесса обработки и анализа данных группы). Эти задачи и артефакты связаны с ролями проекта:
 

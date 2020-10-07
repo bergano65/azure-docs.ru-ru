@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 31055a3245eb13ec53c922a03db47612b6edacd8
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: bcfd9e1b132ef47c83d028acf5e2bcb3fc637ef5
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90057078"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369388"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zeroheight"></a>Руководство по Интеграции единого входа Azure Active Directory с zeroheight
 
@@ -76,14 +76,14 @@ ms.locfileid: "90057078"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.zeroheight.com/sso`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://zeroheight.com/sso`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `zeroheight:<CUSTOM_ID>`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.zeroheight.com/sso/acs/<CUSTOM_ID>`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://zeroheight.com/sso/acs/<CUSTOM_ID>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, URL-адреса ответа и идентификатора. Чтобы получить их, обратитесь в [службу поддержки клиентов zeroheight](mailto:support@zeroheight.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов zeroheight](mailto:support@zeroheight.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение zeroheight ожидает утверждения SAML в определенном формате, который предполагает, что вы должны добавить сопоставления настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 

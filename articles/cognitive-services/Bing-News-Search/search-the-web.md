@@ -12,10 +12,10 @@ ms.date: 12/18/2019
 ms.author: scottwhi
 ms.custom: seodec2018
 ms.openlocfilehash: d44fe58eb17e7f11dc64ee1426df7f356cb91aef
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "85602760"
 ---
 # <a name="what-is-the-bing-news-search-api"></a>Общие сведения об API Поиска новостей Bing
@@ -28,7 +28,7 @@ API Bing для поиска новостей позволяет легко ин
 
 API Bing для поиска новостей в основном находит и возвращает соответствующие статьи, а также предоставляет несколько функций для интеллектуального и тематического поиска новостей в Интернете.
 
-|Компонент  | Описание |
+|Компонент  |Description  |
 |---------|---------|
 |[Предложение и использование условий поиска](concepts/search-for-news.md#suggest-and-use-search-terms)     | Улучшите возможности поиска, используя [API автозаполнения Bing](../bing-autosuggest/get-suggested-search-terms.md) для отображения предлагаемых условий поиска по мере их ввода.         |
 |[Получение общих новостей](concepts/search-for-news.md#get-general-news)     | Ищите новости, отправляя поисковый запрос в API Bing для поиска новостей и получая список соответствующих новостных статей.           |
@@ -36,7 +36,7 @@ API Bing для поиска новостей в основном находит
 |[Новости по категории](concepts/search-for-news.md)     | Ищите новости в определенной категории.        | 
 |[Сводка новостей](concepts/search-for-news.md)     | Ищите главные заголовки по всем категориям.         |
 
-## <a name="workflow"></a>Алгоритм использования
+## <a name="workflow"></a>Рабочий процесс
 
 API Bing для поиска новостей является веб-службой RESTful, которую легко вызвать с любого языка программирования, поддерживающего выполнение HTTP-запросов и анализа JSON. Вы можете использовать службу с помощью REST API или пакета SDK.
 

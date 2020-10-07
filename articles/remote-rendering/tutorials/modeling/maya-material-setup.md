@@ -5,12 +5,12 @@ author: FlorianBorn71
 ms.author: flborn
 ms.date: 06/16/2020
 ms.topic: tutorial
-ms.openlocfilehash: 43c11575be084354e4c9287b44b5847d4d086aff
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: 56aa0d91372ac2d21a20f28b1044f0811c716b0c
+ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90084402"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91358038"
 ---
 # <a name="tutorial-set-up-physically-based-rendering-materials-in-maya"></a>Руководство по настройке физически корректной отрисовки материалов в Maya
 
@@ -79,7 +79,7 @@ ms.locfileid: "90084402"
 1. В диалоговом окне **Duplicate Special Options** (Параметры специального дублирования) выберите в поле **Geometry type** (Тип геометрии) значение **Instance** (Экземпляр). 
 1. Выберите элемент **Duplicate Special** (Специальное дублирование).
 
-   ![Создание экземпляров](media/instancing.jpg)
+   ![Снимок экрана: Maya, диалоговое окно Duplicate Special Options (Параметры специального дублирования) с выбранным элементом Duplicate Special (Специальное дублирование)](media/instancing.jpg)
 
 Это действие позволяет создать экземпляр объекта. Вы можете перемещать, поворачивать или масштабировать экземпляр независимо от родительского объекта и других его экземпляров. 
 

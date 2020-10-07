@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 07/17/2019
 ms.author: pafarley
 ms.openlocfilehash: ce67062f83ad10703dfb1f0ee1f3741e698fb450
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "70130112"
 ---
 Мы рекомендуем включить в начальный обучающий набор не менее 30 изображений для каждого тега. Кроме того, вам потребуются несколько дополнительных изображений для тестирования обученной модели.

@@ -11,28 +11,28 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a267231dd447b114c69e6ead20c8ab5252f85d0e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f5c2690ea97136c2b7887a8450c2788e3902d4e3
+ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90896743"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91369966"
 ---
 # <a name="tutorial-train-your-first-machine-learning-model-part-3-of-4"></a>Руководство по обучению первых моделей машинного обучения (часть 3 из 4)
 
 В этом учебнике описано, как обучить модель машинного обучения в Машинном обучении Azure.
 
-Этот учебник является **третьей частью в учебной серии из четырех частей**, в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках [Части 1: настройка](tutorial-1st-experiment-sdk-setup-local.md) и [Части 2: запуск Hello World](tutorial-1st-experiment-hello-world.md).
+Этот учебник является *третьей частью серии из четырех учебников*, в рамках которой вы ознакомитесь с основами Машинного обучения Azure и выполните задачи машинного обучения на основе заданий в Azure. Этот учебник создан на основе работы, выполненной в рамках статьи [Часть 1: настройка](tutorial-1st-experiment-sdk-setup-local.md) и [Части 2: Запуск скрипта "Hello World!"](tutorial-1st-experiment-hello-world.md) .
 
 В рамках этого учебника вы выполните следующий шаг, отправив сценарий, который обучает модель машинного обучения. В этом примере показано, как Машинное обучение Azure позволяет легко добиться согласованного поведения между локальной отладкой и удаленными запусками.
 
-Изучив этот учебник, вы:
+Изучив это руководство, вы:
 
 > [!div class="checklist"]
-> * создадите сценарий обучения;
+> * Создайте сценарий обучения.
 > * используете Conda для определения среды Машинного обучения Azure;
-> * создадите сценарий элемента управления;
-> * ознакомитесь с классами Машинного обучения Azure (среда, запуск, метрики);
+> * Создание скрипта элемента управления
+> * Общие сведения о классах Машинного обучения Azure (`Environment`, `Run`, `Metrics`).
 > * отправите и запустите свой сценарий обучения;
 > * просмотрите выходные данные кода в облаке;
 > * научитесь вести журнал метрик в Машинном обучении Azure;
@@ -40,10 +40,10 @@ ms.locfileid: "90896743"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-* Выполните инструкции из [части 1](tutorial-1st-experiment-sdk-setup-local.md), если у вас еще нет рабочей области Машинного обучения Azure.
+* Завершение [части 2](tutorial-1st-experiment-hello-world.md) в серии.
 * Вводные знания о языке Python и рабочих процессах машинного обучения.
-* Локальная среда разработки. Сюда входят Visual Studio Code, Jupyter или PyCharm, но этот перечень не исчерпывающий.
-* Python (версии 3.5–3.7).
+* Локальная среда разработки, например Visual Studio Code, Jupyter или PyCharm.
+* Python (версия от 3.5 до 3.7).
 
 ## <a name="create-training-scripts"></a>Создание сценариев обучения
 
@@ -90,7 +90,7 @@ import torchvision.transforms as transforms
 
 from model import Net
 
-# download CIFAR 10 data
+# download CIFAR10 data
 trainset = torchvision.datasets.CIFAR10(
     root="./data",
     train=True,
@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
 ```
 
-Теперь у вас есть структура каталогов, описанная ниже:
+Теперь у вас есть следующая структура каталогов:
 
 ```txt
 tutorial
@@ -153,9 +153,9 @@ tutorial
 └──03-run-hello.py
 ```
 
-## <a name="define-a-python-environment"></a>Определение среды Python
+## <a name="create-a-python-environment"></a>Создание среды Python
 
-В демонстрационных целях мы будем использовать среду Conda (шаги при использовании виртуальной среды PIP практически идентичны).
+В демонстрационных целях мы будем использовать среду Conda. (Шаги для виртуальной среды pip практически идентичны.)
 
 В скрытом каталоге `.azureml` создайте файл с именем `pytorch-env.yml`:
 
@@ -171,23 +171,23 @@ dependencies:
     - torchvision
 ```
 
-Эта среда имеет все зависимости, необходимые для вашей модели и сценария обучения. Обратите внимание на отсутствие зависимости от пакета SDK Python для Машинного обучения Azure.
+Эта среда имеет все зависимости, необходимые для вашей модели и сценария обучения. Обратите внимание на отсутствие зависимости от пакета SDK Машинного обучения Azure для Python.
 
 ## <a name="test-locally"></a>Локальное тестирование
 
-Тестирование сценария выполняется локально с помощью этой среды:
+Используйте следующий код, чтобы протестировать выполнение скрипта локально в этой среде:
 
 ```bash
 conda env create -f .azureml/pytorch-env.yml    # create conda environment
-conda activate pytorch-env             # activate conda environment
-python src/train.py                    # train model
+conda activate pytorch-env                      # activate conda environment
+python src/train.py                             # train model
 ```
 
-После выполнения этого сценария данные будут загружены в каталог с именем `tutorial/data`.
+После выполнения этого скрипта данные будут загружены в каталог с именем `tutorial/data`.
 
 ## <a name="create-the-control-script"></a>Создание сценария элемента управления
 
-Разница в приведенном ниже сценарии элемента управления и тем, который использовался для отправки "Hello World", заключается в том, что вы добавляете несколько дополнительных строк для задания среды.
+Разница между следующим скриптом элемента управления и тем, который использовался для отправки сообщения "Hello World!" Вы добавляете несколько дополнительных строк, чтобы задать среду.
 
 Создайте файл Python в каталоге `tutorial` с именем `04-run-pytorch.py`:
 
@@ -217,10 +217,10 @@ if __name__ == "__main__":
 
 :::row:::
    :::column span="":::
-      `env = Environment.from_conda_specification( ... )`
+      `env = ...`
    :::column-end:::
    :::column span="2":::
-      Машинное обучение Azure предоставляет концепцию [Среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true), чтобы представить воспроизводимую версионную среду Python для выполнения экспериментов. Вы можете легко создать среду из локальной среды Conda или PIP.
+      Машинное обучение Azure реализует концепцию [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true), чтобы представить воспроизводимую версионную среду Python для выполнения экспериментов. Вы можете легко создать среду из локальной среды Conda или PIP.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -228,21 +228,26 @@ if __name__ == "__main__":
       `config.run_config.environment = env`
    :::column-end:::
    :::column span="2":::
-      При этом среда добавляется в [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true).
+      Добавление среды в [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true).
    :::column-end:::
 :::row-end:::
 
-## <a name="submit-run-to-azure-machine-learning"></a>Отправка запуска в Машинное обучение Azure
+## <a name="submit-the-run-to-azure-machine-learning"></a>Отправка выполнения в Машинное обучение Azure
 
-Если вы переключались на локальные среды, обязательно переключитесь обратно в среду с установленным и выполняемым пакетом SDK для Python Машинного обучения Azure:
+При переключении между локальными средами обязательно переключитесь обратно в среду с установленным пакетом SDK Машинного обучения Azure для Python. 
+
+Далее выполните:
 
 ```bash
 python 04-run-pytorch.py
 ```
 
 >[!NOTE] 
-> При первом запуске этого сценария Машинное обучение Azure создаст образ Docker из вашей среды PyTorch. Все выполнение может занять 5–10 минут. Журналы сборки Docker можно просмотреть в Студии машинного обучения Azure: Щелкните ссылку на Студию машинного обучения, выберите вкладку "Выходные данные и журналы", а затем — `20_image_build_log.txt`.
-Этот образ будет повторно использован в будущих запусках для их ускорения.
+> При первом запуске этого скрипта Машинное обучение Azure создаст образ Docker из вашей среды PyTorch. Все выполнение может занять от 5 до 10 минут. 
+>
+> Журналы сборки Docker можно просмотреть в Студии машинного обучения Azure: Перейдите по ссылке в Студию, выберите вкладку **Выходные данные и журналы**, а затем выберите `20_image_build_log.txt`.
+>
+> Этот образ будет повторно использован в будущих запусках для их ускорения.
 
 После сборки образа выберите `70_driver_log.txt`, чтобы просмотреть выходные данные вашего сценария обучения.
 
@@ -266,23 +271,25 @@ Finished Training
 ```
 
 > [!WARNING]
-> Если отображается сообщение об ошибке `Your total snapshot size exceeds the limit`, это означает, что каталог `data` находится в `source_directory`, используемом в `ScriptRunConfig`.
-> Не забудьте переместить `data` за пределы `src`.
+> Если отображается сообщение об ошибке `Your total snapshot size exceeds the limit`, каталог `data` указан в значении `source_directory`, используемом в `ScriptRunConfig`.
+>
+> Перемещение `data` за пределы `src`.
 
-Среды можно зарегистрировать в рабочей области с помощью `env.register(ws)`, что позволяет легко предоставлять к ним общий доступ, многократно использовать и управлять их версиями. Среды упрощают воспроизведение предыдущих результатов и совместную работу с командой.
+Среды можно регистрировать в рабочей области с помощью `env.register(ws)`. Затем моно легко предоставлять к ним доступ, использовать повторно и структурировать по версиям. Среды упрощают воспроизведение предыдущих результатов и совместную работу с командой.
 
 Машинное обучение Azure также поддерживает коллекцию курируемых сред. Эти среды охватывают общие сценарии машинного обучения и поддерживаются кэшированными образами Docker. Кэшированные образы Docker ускоряют первое удаленное выполнение.
 
-Если коротко, использование зарегистрированных сред позволяет экономить время. Дополнительные сведения можно найти в [документации по средам](./how-to-use-environments.md).
+Если коротко, использование зарегистрированных сред позволяет экономить время. Дополнительные сведения см. в статье [Использование сред](./how-to-use-environments.md).
 
 ## <a name="log-training-metrics"></a>Ведение журнала метрик обучения
 
 Теперь, настроив обучение модели в Машинном обучении Azure, начните отслеживать некоторые метрики производительности.
+
 Текущий сценарий обучения выводит метрики в терминал. Машинное обучение Azure предоставляет механизм для ведения журнала метрик с дополнительными функциональными возможностями. Добавив несколько строк кода, вы получаете возможность визуализировать метрики в студии и сравнивать метрики из нескольких запусков.
 
 ### <a name="modify-trainpy-to-include-logging"></a>Изменение `train.py` для ведения журнала
 
-Измените сценарий `train.py`, добавив в него две строки кода:
+Измените скрипт `train.py`, чтобы добавить еще две строки кода:
 
 ```python
 # train.py
@@ -298,9 +305,16 @@ from azureml.core import Run
 # ADDITIONAL CODE: get Azure Machine Learning run from the current context
 run = Run.get_context()
 
-# download CIFAR 10 data
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=torchvision.transforms.ToTensor())
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
+# download CIFAR10 data
+trainset = torchvision.datasets.CIFAR10(
+    root="./data",
+    train=True,
+    download=True,
+    transform=torchvision.transforms.ToTensor(),
+)
+trainloader = torch.utils.data.DataLoader(
+    trainset, batch_size=4, shuffle=True, num_workers=2
+)
 
 if __name__ == "__main__":
 
@@ -377,14 +391,14 @@ dependencies:
         - azureml-sdk
 ```
 
-### <a name="submit-run-to-azure-machine-learning"></a>Отправка запуска в Машинное обучение Azure
+### <a name="submit-the-run-to-azure-machine-learning"></a>Отправка выполнения в Машинное обучение Azure
 Отправьте этот сценарий еще раз:
 
 ```bash
 python 04-run-pytorch.py
 ```
 
-На этот раз при посещении студии перейдите на вкладку "Метрики", на которой теперь можно увидеть обновления в реальном времени для потерь обучения модели.
+На этот раз при посещении студии перейдите на вкладку **Метрики**, на которой теперь можно увидеть обновления в реальном времени для потерь обучения модели.
 
 :::image type="content" source="media/tutorial-1st-experiment-sdk-train/logging-metrics.png" alt-text="Диаграмма потерь обучения на вкладке метрик":::
 
@@ -392,7 +406,7 @@ python 04-run-pytorch.py
 
 В этом сеансе вы обновили базовый сценарий Hello World! на более реалистичный сценарий обучения, для выполнения которого требуется определенная среда Python. Вы узнали, как использовать локальную среду Conda в облаке со средами Машинного обучение Azure. И наконец, вы узнали, как с помощью нескольких строк кода можно вести журнал метрик в Машинном обучении Azure.
 
-Существуют и другие способы создания сред Машинного обучения Azure, в том числе [из файла requirements.txt для PIP](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#from-pip-requirements-name--file-path-) или даже [из имеющейся локальной среды Conda](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#from-existing-conda-environment-name--conda-environment-name-).
+Существуют и другие способы создания сред Машинного обучения Azure, в том числе из [файла requirements.txt для pip](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#from-pip-requirements-name--file-path-) или даже из [имеющейся локальной среды Conda](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true#from-existing-conda-environment-name--conda-environment-name-).
 
 В следующий раз вы узнаете, как работать с данными в Машинном обучении Azure путем передачи набора данных CIFAR10 в Azure.
 
