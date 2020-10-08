@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b247009669d6008644c9beb54fb687138b81716
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 803663f845272c6b1573fceed8025cc23483ec09
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91266417"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91628746"
 ---
 # <a name="integrate-an-existing-forest-and-a-new-forest-with-a-single-azure-ad-tenant"></a>Интеграция существующего и нового лесов с одним клиентом Azure AD
 
@@ -109,7 +109,7 @@ ms.locfileid: "91266417"
 5.  Выберите элемент **Новая конфигурация**
 ![Снимок экрана "Подготовка Azure AD (предварительная версия)" с выделенной ссылкой "Новая конфигурация".](media/tutorial-single-forest/configure1.png)
 7.  На экране конфигурации перейдите к разделу **Сообщение электронной почты с уведомлением**, переместите селектор в положение **Включить** и щелкните **Сохранить**.
-![Снимок экрана "Настройка" с указанным адресом электронной почты для уведомлений и переключателем, установленным в положение "Включить".](media/tutorial-single-forest/configure2.png)
+![Снимок экрана "Настройка" с указанным адресом электронной почты для уведомлений и переключателем, установленным в положение "Включить".](media/how-to-configure/configure2.png)
 1.  Теперь состояние конфигурации должно быть **Healthy** (Работоспособное).
 ![Снимок экрана "Подготовка Azure AD (предварительная версия)", на котором отображается состояние "Работоспособна".](media/how-to-configure/manage4.png)
 

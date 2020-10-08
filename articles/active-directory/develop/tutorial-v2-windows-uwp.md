@@ -12,14 +12,14 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: bee6f832476537a6d7dba3db98d9aada6c61a476
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: cbfb5c598a2a56b0b14a3a90cf29ce23366b9b6c
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91574251"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627675"
 ---
-# <a name="call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
+# <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Руководство по Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
 В этом руководстве объясняется, как собственное приложение универсальной платформы Windows (UWP) может запросить маркер доступа. Затем приложение вызывает API Microsoft Graph. Руководство также применимо к другим API, которым требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 

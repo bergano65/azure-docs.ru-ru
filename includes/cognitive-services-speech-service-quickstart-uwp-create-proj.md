@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 2dcc018c65625825436bd1050cdf7f3b9d3131e2
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 134c9996690d629ad8acb348d1928904741b6b2d
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374755"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91654455"
 ---
 Чтобы создать проект Visual Studio для разработки универсальной платформы Windows (UWP), необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру, настроить запись звука и установить пакет SDK службы "Речь".
 
@@ -19,13 +19,13 @@ ms.locfileid: "87374755"
 
 1. Откройте Visual Studio 2019 для отображения окна **Запуск**.
 
-   ![Окно запуска Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-start-window.png)
+   ![Снимок экрана: окно "Запуск" с выделенным действием "Продолжить без кода"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-start-window.png)
 
 1. Выберите **Продолжить без кода** для перехода в интегрированную среду разработки Visual Studio.
 
 1. В строке меню Visual Studio выберите **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты), чтобы открыть Visual Studio Installer и просмотреть диалоговое окно **Идет изменение**.
 
-   ![Вкладка "Рабочие нагрузки", диалоговое окно "Идет изменение", Visual Studio Installer](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-workload.png)
+   ![Снимок экрана: диалоговое окно "Изменение" с вкладкой "Рабочие нагрузки" и выделенным параметром "Разработка приложений для универсальной платформы Windows"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-workload.png)
 
 1. На вкладке **Рабочие нагрузки**в разделе**Windows**найдите рабочую нагрузку**Разработка приложений для универсальной платформы Windows**. Если флажок рядом с этой рабочей нагрузкой уже выбран, закройте диалоговое окно **Идет изменение** и перейдите к шагу 6.
 
@@ -39,13 +39,13 @@ ms.locfileid: "87374755"
 
 1. В строке меню Visual Studio выберите **Файл** > **Создать** > **Проект**, чтобы открыть окно **Создание проекта**.
 
-   ![Создание проекта Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-create-new-project.png)
+   ![Снимок экрана: окно "Создание нового проекта" с выбранным параметром "Пустое приложение (универсальные приложения Windows)" и выделенной кнопкой "Далее"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-create-new-project.png)
 
 1. Найдите и выберите **Пустое приложение (универсальные приложения Windows)** . Убедитесь, что выбрана версия C# этого типа проекта (в отличие от Visual Basic).
 
 1. Выберите **Далее**, чтобы отобразить экран **Настроить новый проект**.
 
-   ![Настройка нового проекта Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-configure-your-new-project.png)
+   ![Снимок экрана: окно "Настройка нового проекта" с полями "Имя проекта" и "Расположение" и выделенной кнопкой "Создать"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-configure-your-new-project.png)
 
 1. В поле **Имя проекта** введите `helloworld`.
 
@@ -53,7 +53,7 @@ ms.locfileid: "87374755"
 
 1. Выберите **Создать**, чтобы открыть окно **Новый проект приложения для универсальной платформы Windows**.
 
-   ![Диалоговое окно "Новый проект приложения для универсальной платформы Windows" Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-02-new-uwp-project.png)
+   ![Снимок экрана: диалоговое окно "Новый проект приложений для универсальной платформы Windows"](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-02-new-uwp-project.png)
 
 1. В поле **Минимальная версия** (второй раскрывающийся список) выберите **Windows 10 Fall Creators Update (10.0; Build 16299)** (Windows 10 Fall Creators Update (10.0; сборка 16299)), которая является минимальным требованием для пакета SDK службы "Речь".
 
@@ -90,13 +90,13 @@ ms.locfileid: "87374755"
 
 1. Нажмите кнопку **Обзор**.
 
-   ![Снимок экрана диалогового окна "Управление пакетами для решения"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-nuget-solution-browse.png)
+   ![Снимок экрана: диалоговое окно "Управление пакетами для решения" с вкладкой "Обзор", полем "Поиск" и выделенным пунктом "Источник пакета"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-nuget-solution-browse.png)
 
 1. В списке **Источник пакета** выберите **nuget.org**.
 
 1. В поле **Поиска** введите`Microsoft.CognitiveServices.Speech`, а затем выберите этот пакет после появления в результатах поиска.
 
-   ![Снимок экрана диалогового окна "Управление пакетами для решения"](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-05-nuget-install-1.0.0.png)
+   ![Снимок экрана: раздел "Microsoft.CognitiveServices.Speech" с выделенным окном "Проект" и кнопкой "Установить"](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-05-nuget-install-1.0.0.png)
 
 1. В области "Состояние пакета" рядом с результатами поиска выберите проект **helloworld**.
 

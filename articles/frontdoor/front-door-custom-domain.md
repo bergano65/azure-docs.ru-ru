@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: duau
-ms.openlocfilehash: ebc0ee2e029e1f349972e3cd7fada46495534d54
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a161bc14e8f7628e04673700ca6d90ebc3e8f648
+ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91252414"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91729174"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-front-door"></a>Руководство по Добавление личного домена в службу Front Door
 В этом руководстве показано, как добавить личный домен в службу Front Door. При использовании службы Azure Front Door для доставки приложения, если вы хотите обеспечить видимость своего доменного имени в запросе пользователя, требуется личный домен. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда.
@@ -209,4 +209,4 @@ ms.locfileid: "91252414"
 Чтобы узнать, как включить протокол HTTPS для личного домена, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Включение HTTPS для личного домена](front-door-custom-domain.md)
+> [Включение HTTPS для личного домена](front-door-custom-domain-https.md)

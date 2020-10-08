@@ -1,18 +1,18 @@
 ---
 title: Руководство по разработке базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью портала Azure
 description: Это руководство содержит сведения о проектировании первой базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью портала Azure.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.custom: tutorial, mvc
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 7e98c34198c0821dac59f849267a920a87c48a54
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: d22e9c10c167e0b2646298acca75d506a0ea032f
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90905647"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91707580"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Руководство по Разработка базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью портала Azure
 
@@ -42,29 +42,14 @@ ms.locfileid: "90905647"
 
 3. Выберите вариант развертывания **Отдельный сервер**.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/select-deployment-option.png" alt-text="Выбор варианта развертывания "Отдельный сервер" для службы "База данных Azure для PostgreSQL"":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/select-deployment-option.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
 4. Заполните форму **Основные данные** , указав следующую информацию:
 
-    :::image type="content" source="./media/tutorial-design-database-using-azure-portal/create-basics.png" alt-text="Создание сервера":::
-
-    Параметр|Рекомендуемое значение|Описание
-    ---|---|---
-    Подписка|Имя вашей подписки|Подписка Azure, которую вы хотите использовать для сервера. Если у вас есть несколько подписок, выберите ту, в которой взимается плата за использование ресурса.
-    Группа ресурсов|*myresourcegroup*| Новое имя группы ресурсов или уже имеющееся из подписки.
-    Имя сервера |*mydemoserver*|Уникальное имя, идентифицирующее базу данных Azure для сервера PostgreSQL. Имя домена *postgres.database.azure.com* добавляется к указанному имени сервера. Сервер может содержать только строчные буквы, цифры и знак дефиса (-). Его длина должна составлять от 3 до 63 символов.
-    Источник данных | *None* | Чтобы создать сервер с нуля, выберите *Нет*. Если вы создаете сервер из геоизбыточной резервной копии существующего сервера службы "База данных Azure для PostgreSQL", выберите *Резервная копия*.
-    Имя администратора |*myadmin*| Собственная учетная запись входа, используемая при подключении к серверу. Не используйте для имени учетной записи администратора такие варианты: **azure_superuser**, **azure_pg_admin**, **admin**, **administrator**, **root**, **guest** или **public**. Оно не может начинаться с **pg_** .
-    Пароль |Ваш пароль| Новый пароль для учетной записи администратора сервера. Пароль должен содержать от 8 до 128 символов. Пароль должен содержать символы из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры (0–9) и небуквенно-цифровые символы (!, $, #, % и т. д.).
-    Расположение|Ближайший к пользователям регион| Ближайшее к пользователям расположение.
-    Версия|Последний основной номер версии| Последний основной номер версии PostgreSQL, если нет особых требований.
-    Вычисления и хранилище | **Общего назначения**, **Поколение 5**, **2 виртуальных ядра**, **5 ГБ**, **7 дней**, **Геоизбыточное хранилище** | Конфигурации вычислительных ресурсов, хранилища и резервного копирования для нового сервера. Щелкните **Настройка сервера**. Затем выберите вкладку **Общего назначения**. *Поколение 5*, *4 виртуальных ядра*, *100 ГБ* и *7 дней* — это значения по умолчанию для параметров **Поколение вычислительных ресурсов**, **Виртуальное ядро**, **Хранилище** и **Срок хранения резервных копий**. Вы можете оставить эти ползунки как есть или же настроить их. Чтобы включить резервное копирование сервера в геоизбыточном хранилище, выберите **Геоизбыточное** в разделе **параметров избыточности резервного копирования**. Щелкните **ОК**, чтобы сохранить ценовую категорию. На следующем снимке экрана показаны выбранные параметры.
-
-   > [!NOTE]
-   > Используйте ценовую категорию "Базовый", если для вашей рабочей нагрузки не требуется большое количество вычислительных ресурсов и операций ввода-вывода. Обратите внимание, что серверы, созданные в ценовой категории "Базовый", нельзя масштабировать до ценовых категорий "Общего назначения" или "Оптимизировано для памяти". Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/postgresql/).
+    :::image type="content" source="./media/tutorial-design-database-using-azure-portal/create-basics.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных" или "Оптимизировано для памяти". Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/postgresql/).
    > 
 
-    :::image type="content" source="./media/quickstart-create-database-portal/2-pricing-tier.png" alt-text="Область "Ценовая категория"":::
+    :::image type="content" source="./media/quickstart-create-database-portal/2-pricing-tier.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
     > [!TIP]
     > Функция **автоматического увеличения** позволяет серверу нарастить объем хранения при приближении к предельному значению без последствий для рабочей нагрузки.
@@ -73,7 +58,7 @@ ms.locfileid: "90905647"
 
 6. На панели инструментов щелкните значок **Уведомления** (колокольчик), чтобы отслеживать процесс развертывания. По завершении развертывания можно выбрать **Закрепить на панели мониторинга**. После этого на панели мониторинга на портале Azure отобразится плитка, которая будет служить ярлыком страницы **Обзор** для этого сервера. Если выбрать **Перейти к ресурсу**, откроется страница сервера **Обзор**.
 
-    :::image type="content" source="./media/quickstart-create-database-portal/3-notifications.png" alt-text="Область "Уведомления"":::
+    :::image type="content" source="./media/quickstart-create-database-portal/3-notifications.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
    
    По умолчанию на сервере создается база данных **postgres**. База данных [postgres](https://www.postgresql.org/docs/9.6/static/app-initdb.html) — это база данных по умолчанию, предназначенная для использования пользователями, служебными программами и сторонними приложениями. (Другая база данных по умолчанию — **azure_maintenance**. Ее функция заключается в отделении процессов управляемой службы от действий пользователей. У вас нет доступа к этой базе данных.)
 
@@ -84,13 +69,13 @@ ms.locfileid: "90905647"
 
 1. По завершении развертывания щелкните **Все ресурсы** в меню слева и введите имя **mydemoserver**, чтобы найти созданный сервер. Щелкните имя сервера в результатах поиска. После этого откроется страница **обзора** сервера с параметрами для дальнейшей конфигурации.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/4-locate.png" alt-text="База данных Azure для PostgreSQL. Поиск сервера":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/4-locate.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
 2. На странице сервера выберите **Безопасность подключения**. 
 
 3. Щелкните текстовое поле раздела **Имя правила** и добавьте новое правило брандмауэра, чтобы указать диапазон IP-адресов для подключения. Введите диапазон IP-адресов. Выберите команду **Сохранить**.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/5-firewall-2.png" alt-text="База данных Azure для PostgreSQL. Создание правила брандмауэра":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/5-firewall-2.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
 4. Щелкните **Сохранить**, а затем **X**, чтобы закрыть страницу **Безопасность подключения**.
 
@@ -104,13 +89,13 @@ ms.locfileid: "90905647"
 
 1. На портале Azure в меню слева щелкните **Все ресурсы** и найдите только что созданный сервер.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/4-locate.png" alt-text="База данных Azure для PostgreSQL. Поиск сервера":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/4-locate.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
 2. Щелкните имя сервера **mydemoserver**.
 
 3. Выберите страницу **обзора** сервера. Запишите значения **имени сервера** и **имени для входа администратора сервера**.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/6-server-name.png" alt-text="База данных Azure для PostgreSQL. Учетные данные администратора сервера для входа":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/6-server-name.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
 
 ## <a name="connect-to-postgresql-database-using-psql"></a>Подключение к базе данных PostgreSQL с помощью psql
@@ -190,11 +175,11 @@ SELECT * FROM inventory;
 
 1. На странице **Обзор** сервера базы данных Azure для PostgreSQL на панели инструментов щелкните **Восстановить**. Откроется страница **Восстановление**.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/9-azure-portal-restore.png" alt-text="Портал Azure. Параметры формы восстановления":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/9-azure-portal-restore.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
 2. Заполните форму **Восстановление**, указав следующие сведения.
 
-   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/10-azure-portal-restore.png" alt-text="Портал Azure. Параметры формы восстановления":::
+   :::image type="content" source="./media/tutorial-design-database-using-azure-portal/10-azure-portal-restore.png" alt-text="База данных Azure для PostgreSQL. Создание базы данных":::
 
    - **Точка восстановления.** Выберите время до того момента, когда был изменен сервер.
    - **Целевой сервер.** Укажите новое имя сервера, который нужно восстановить.

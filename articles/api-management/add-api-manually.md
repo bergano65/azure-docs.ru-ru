@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 6b8b7c0dbdce160a19b5bb5ecb67bf2fb0a204ee
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.openlocfilehash: 39a3b9d7dd9efbda93de0b5d7c5f9938922d0012
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89295268"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91631296"
 ---
 # <a name="add-an-api-manually"></a>Добавление API вручную
 
@@ -39,7 +39,7 @@ ms.locfileid: "89295268"
 2. Выберите **+ Add API** (+ Добавить API) в меню слева.
 3. Выберите **Пустой API** в списке.  
     ![Пустой API](media/add-api-manually/blank-api.png)  
-4. Введите параметры этого API Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+4. Введите параметры этого API Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#import-and-publish-a-backend-api).
 5. Нажмите кнопку **создания**.
 
 Сейчас в Управлении API нет операций, сопоставленных с операциями в API серверной части. Вызвав операцию, которая предоставляется в серверной части, но еще не сопоставлена с Управлением API, вы получите ответ **404**.

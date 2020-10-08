@@ -1,22 +1,22 @@
 ---
-title: Управление схемой в приложении с одним клиентом
+title: Управление схемой в однотенантном приложении
 description: Сведения об управлении схемой для нескольких клиентов в однотенантном приложении, использующем службу "База данных SQL Azure".
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: tutorial
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/19/2018
-ms.openlocfilehash: 60c2330578ef4b8e3e40dc3e37a0c8b1eb291e2f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 62e20a10e9709bc69a746a6f62e949c47c3a6d02
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255557"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620160"
 ---
 # <a name="manage-schema-in-a-saas-application-using-the-database-per-tenant-pattern-with-azure-sql-database"></a>Управление схемой в приложении SaaS с помощью шаблона с однотенантной базой данных с использованием Базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -39,20 +39,20 @@ ms.locfileid: "85255557"
 
 * Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. См. инструкции из руководства по быстрому [развертыванию SaaS-приложения Wingtip Tickets c однотенантной БД](../../sql-database/saas-dbpertenant-get-started-deploy.md).
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
-* Установите последнюю версию SQL Server Management Studio (SSMS). [Скачивание и установка SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)
+* Установите последнюю версию SQL Server Management Studio (SSMS). [Download SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (Скачивание SQL Server Management Studio (SSMS))
 
 
 ## <a name="introduction-to-saas-schema-management-patterns"></a>Общие сведения о шаблонах управления схемой SaaS
 
-Шаблон с однотенантной базой данных эффективно изолирует данные клиента, но увеличивает количество баз данных для управления и обслуживания. [Задания обработки эластичных БД](../../sql-database/elastic-jobs-overview.md) упрощают администрирование нескольких баз данных и управление ими. Задания позволяют вам безопасно и надежно выполнять задачи (скрипты Transact-SQL) в группах баз данных. Эти задания могут развертывать схемы и обычные изменения эталонных данных по всем клиентским базам данных в приложении. Задания обработки эластичных БД также могут использоваться для обслуживания *шаблона* базы данных, применяемого для создания клиентов, обеспечивая его самыми последними схемами и эталонными данными.
+Шаблон с однотенантной базой данных эффективно изолирует данные клиента, но увеличивает количество баз данных для управления и обслуживания. [Задания обработки эластичных баз данных](../../sql-database/elastic-jobs-overview.md) упрощают администрирование нескольких баз данных и управление ими. Задания позволяют вам безопасно и надежно выполнять задачи (скрипты Transact-SQL) в группах баз данных. Эти задания могут развертывать схемы и обычные изменения эталонных данных по всем клиентским базам данных в приложении. Задания обработки эластичных БД также могут использоваться для обслуживания *шаблона* базы данных, применяемого для создания клиентов, обеспечивая его самыми последними схемами и эталонными данными.
 
 ![экран](./media/saas-tenancy-schema-management/schema-management-dpt.png)
 
 
-## <a name="elastic-jobs-public-preview"></a>Общедоступная Предварительная версия эластичных заданий
+## <a name="elastic-jobs-public-preview"></a>Задания обработки эластичных баз данных (общедоступная предварительная версия)
 
-Существует новая версия заданий обработки эластичных баз данных, которая является интегрированным компонентом Базы данных SQL Azure. Эта новая версия эластичных заданий сейчас находится в общедоступной предварительной версии. Сейчас эта общедоступная Предварительная версия поддерживает использование PowerShell для создания агента заданий и T-SQL для создания заданий и управления ими.
-Дополнительные сведения см. в статье о [заданиях обработки эластичных баз данных](https://docs.microsoft.com/azure/azure-sql/database/elastic-jobs-overview) .
+Существует новая версия заданий обработки эластичных баз данных, которая является интегрированным компонентом Базы данных SQL Azure. Сейчас новая версия заданий обработки эластичных баз данных предоставляется в общедоступной предварительной версии. Эта общедоступная предварительная версия поддерживает создание агента заданий с помощью PowerShell и создание заданий и управление ими с помощью T-SQL.
+Сведения см. в статье [Создание и настройка заданий обработки эластичных баз данных, а также управление ими (предварительная версия)](https://docs.microsoft.com/azure/azure-sql/database/elastic-jobs-overview).
 
 ## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для SaaS-приложения Wingtip Tickets c однотенантной базой данных
 
@@ -65,7 +65,7 @@ ms.locfileid: "85255557"
 1. **В среде PowerShell ISE** выберите …\\Learning Modules\\Schema Management\\*Demo-SchemaManagement.ps1*.
 1. Нажмите клавишу **F5** для запуска скрипта.
 
-Скрипт *Demo-SchemaManagement.ps1* вызывает скрипт *Deploy-SchemaManagement.ps1* для создания базы данных с именем *осажент* на сервере каталога. Затем он создает агент заданий, используя базу данных в качестве параметра.
+Скрипт *Demo-SchemaManagement.ps1* вызовет скрипт *Deploy-SchemaManagement.ps1* для создания базы данных с именем *osagent* на сервере каталога. Затем он создает агент заданий, используя базу данных в качестве параметра.
 
 ## <a name="create-a-job-to-deploy-new-reference-data-to-all-tenants"></a>Создание задания и развертывание новых справочных данных на всех клиентах
 
@@ -102,12 +102,12 @@ ms.locfileid: "85255557"
 Создайте задание, используя те же системно хранимые процедуры задания.
 
 1. Откройте среду SSMS и подключитесь к серверу _catalog-dpt-&lt;пользователь&gt;.database.windows.net_.
-1. Откройте файл _... \\ Learning modules \\ Schema Management \\ OnlineReindex. SQL_
+1. Откройте файл _...\\Learning Modules\\Schema Management\\OnlineReindex.sql_.
 1. Щелкните правой кнопкой мыши, выберите "Подключение" и подключитесь к серверу _catalog-dpt-&lt;пользователь&gt;.database.windows.net_, если вы еще не сделали это.
 1. Убедитесь, что вы подключены к базе данных _jobagent_, и нажмите клавишу **F5** для запуска скрипта.
 
 В скрипте _OnlineReindex.sql_ обратите внимание на следующие элементы:
-* **при \_ добавлении \_ задания SP** создается новое задание с именем "оперативный переиндекс PK \_ \_ VenueTyp \_ \_ 265E44FD7FD4C885".
+* **sp\_add\_job** создает новое задание с именем Online Reindex PK\_\_VenueTyp\_\_265E44FD7FD4C885
 * **sp\_add\_jobstep** создает шаг задания, содержащий текст команды T-SQL для обновления индекса
 * Остальные представления в скрипте отслеживают выполнение задания. С помощью этих запросов можно просмотреть значение состояния в столбце **lifecycle**, чтобы определить, когда задание будет успешно завершено во всех целевых элементах группы.
 
@@ -123,10 +123,10 @@ ms.locfileid: "85255557"
 > * Обновление ссылочных данных во всех базах данных клиента.
 > * Создание индекса для таблицы во всех базах данных клиента.
 
-Затем ознакомьтесь с [руководством по автоматизированной системе отчетности](../../sql-database/saas-tenancy-cross-tenant-reporting.md) , чтобы исследовать выполнение распределенных запросов между базами данных клиентов.
+После этого ознакомьтесь с руководством по [автоматизированной системе отчетности](../../sql-database/saas-tenancy-cross-tenant-reporting.md), чтобы узнать о выполнении распределенных запросов в клиентских базах данных.
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Дополнительные руководства, основанные на развертывании приложения SaaS Wingtip Tickets на основе базы данных для каждого клиента](../../sql-database/saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
+* [Дополнительные руководства по использованию развертывания SaaS-приложения Wingtip Tickets c однотенантной БД](../../sql-database/saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
 * [Управление масштабируемыми облачными базами данных](../../sql-database/elastic-jobs-overview.md)

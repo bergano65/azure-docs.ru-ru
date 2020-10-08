@@ -6,19 +6,19 @@ ms.service: sql-database
 ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: PowerShell
-ms.topic: conceptual
+ms.topic: sample
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 06/06/2020
-ms.openlocfilehash: 7c451deb04c9fd8b394512979668ad266cadf02d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: e9f3f1ca6005ff8c61211263944513d859d6d23e
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84485470"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620194"
 ---
-# <a name="event-file-target-code-for-extended-events-in-azure-sql-database"></a>Целевой код файла событий для расширенных событий в базе данных SQL Azure
+# <a name="event-file-target-code-for-extended-events-in-azure-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -34,14 +34,14 @@ ms.locfileid: "84485470"
   - назначение контейнера хранилища Azure для целевого файла событий;
   - создание и запуск сеанса событий и т. д.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
-- Учетная запись и подписка Azure. Вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
+- Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 - Любая база данных, позволяющая создать таблицу.
   
   - При необходимости вы можете быстро [создать демонстрационную базу данных **AdventureWorksLT**](single-database-create-quickstart.md).
@@ -54,7 +54,7 @@ ms.locfileid: "84485470"
 
 - Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
 
-  - Модули предоставляют команды, такие как- **New-азсторажеаккаунт**.
+  - Модули предоставляют такие команды, как **New-AzStorageAccount**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера хранилища Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "84485470"
 
 ### <a name="powershell-code"></a>Код PowerShell
 
-В этом сценарии PowerShell предполагается, что вы уже установили модуль AZ. Дополнительные сведения см. [в разделе Установка модуля Azure PowerShell](/powershell/azure/install-Az-ps).
+В этом скрипте PowerShell предполагается, что вы уже установили модуль Az. Сведения см. в статье [Установка Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ```powershell
 ## TODO: Before running, find all 'TODO' and make each edit!!
@@ -239,7 +239,7 @@ Related to   https://github.com/MicrosoftDocs/azure-docs/issues/56520
 -->
 
 > [!NOTE]
-> В предыдущем примере кода PowerShell Расширенные события SQL несовместимы с учетными записями хранения ADLS 2-го поколения.
+> В предыдущем примере кода PowerShell расширенные события SQL несовместимы с учетными записями хранения ADLS 2-го поколения.
 
 ## <a name="phase-2-transact-sql-code-that-uses-azure-storage-container"></a>Этап 2. Код Transact-SQL, использующий контейнер хранилища Azure
 
@@ -251,7 +251,7 @@ Related to   https://github.com/MicrosoftDocs/azure-docs/issues/56520
 После выполнения сценария PowerShell на экран выводится ряд именованных значений. Эти значения необходимо включить в сценарий Transact-SQL. Чтобы определить места, в которые нужно внести изменения, найдите в сценарии Transact-SQL параметр **TODO** .
 
 1. Откройте SQL Server Management Studio (ssms.exe).
-2. Подключитесь к базе данных в базе данных SQL Azure.
+2. Подключитесь к базе данных в Базе данных SQL Azure.
 3. Щелкните, чтобы открыть новую область запроса.
 4. В область запроса вставьте указанный ниже сценарий Transact-SQL.
 5. Найти в сценарии все случаи использования параметра **TODO** и внесите соответствующие изменения.
@@ -451,9 +451,9 @@ GO
 
 ## <a name="output"></a>Выходные данные
 
-После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. **\<event>** Отобразится один элемент, в котором показана одна инструкция UPDATE.
+После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Один из отображенных элементов **\<event>** содержит инструкцию UPDATE.
 
-Ниже приведен один **\<event>** элемент, созданный во время тестирования:
+Ниже приведен один из элементов **\<event>** , сформированных в процессе тестирования.
 
 ```xml
 <event name="sql_statement_starting" package="sqlserver" timestamp="2015-09-22T19:18:45.420Z">
@@ -519,6 +519,6 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 - [Использование хранилища BLOB-объектов из .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)
 - [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/azure/dd135715.aspx)
 - [Работа с корневым контейнером](https://msdn.microsoft.com/library/azure/ee395424.aspx)
-- [Занятие 1. Создание хранимой политики доступа и подписанного URL-доступа в контейнере Azure](https://msdn.microsoft.com/library/dn466430.aspx)
-  - [Занятие 2. Создание учетных данных SQL Server с помощью подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
+- [Занятие 1. Создание хранимой политики доступа и хранилища с общим доступом](https://msdn.microsoft.com/library/dn466430.aspx)
+  - [Занятие 2. Создание учетных данных SQL Server с помощью подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
 - [Расширенные события](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events)

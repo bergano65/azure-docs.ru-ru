@@ -1,19 +1,19 @@
 ---
 title: Скрипт Azure CLI. Масштабирование и мониторинг Базы данных Azure для PostgreSQL
 description: Здесь приведен пример скрипта Azure CLI, который масштабирует сервер базы данных Azure для PostgreSQL до нужного уровня производительности после выполнения запроса к метрикам.
-author: rachel-msft
-ms.author: raagyema
+author: lfittl-msft
+ms.author: lufittl
 ms.service: postgresql
 ms.devlang: azurecli
 ms.custom: mvc, devx-track-azurecli
 ms.topic: sample
 ms.date: 08/07/2019
-ms.openlocfilehash: 23dae705f10ecca9119932640383c93ab80d1d21
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d5f08e764ae44b11ab5838689e7f8a70c89b3122
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496497"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708634"
 ---
 # <a name="monitor-and-scale-a-single-postgresql-server-using-azure-cli"></a>Мониторинг и масштабирование отдельного сервера PostgreSQL с помощью Azure CLI
 Этот пример скрипта CLI масштабирует вычислительные ресурсы и хранилище для отдельного сервера Базы данных Azure для PostgreSQL после выполнения запроса к метрикам. Вычислительные ресурсы можно масштабировать произвольно. Объем хранилища можно только наращивать. 

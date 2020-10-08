@@ -1,5 +1,5 @@
 ---
-title: Масштабирование и защита веб-приложения с использованием Azure Front Door и WAF
+title: Руководство по Масштабирование и защита веб-приложения с помощью Azure Front Door и Брандмауэра веб-приложений Azure (WAF)
 description: В этом руководстве показано, как использовать Брандмауэр веб-приложений со службой Azure Front Door.
 services: frontdoor
 documentationcenter: ''
@@ -9,20 +9,20 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/14/2020
+ms.date: 10/01/2020
 ms.author: duau
-ms.openlocfilehash: 2d531289a1d6e8c484b0334e570d943acdb82268
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7c5e938f985296e0534ca6e2438cf3acedb0fb65
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91276279"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91626485"
 ---
 # <a name="tutorial-quickly-scale-and-protect-a-web-application-by-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Руководство по Быстрое масштабирование и защита веб-приложения с помощью службы Azure Front Door и Брандмауэра веб-приложений Azure (WAF)
 
-В последние недели на работу многих веб-приложений влияет быстрое увеличение объема трафика из-за пандемии COVID-19. Кроме того, увеличился объем вредоносного трафика, в том числе связанного с атаками типа "отказ в обслуживании". Но существует эффективный способ одновременно горизонтально увеличить масштаб для возросшего объема трафика и обеспечить защиту от атак. Вам нужно просто настроить службу Azure Front Door с Azure WAF, которая ускорит работу, организует кэширование и создаст дополнительный уровень защиты перед вашим приложением. В этой статье описывается, как быстро настроить Azure Front Door с Azure WAF для любых веб-приложений, которые работают в инфраструктуре Azure или за ее пределами. 
+В последние недели на работу многих веб-приложений влияет быстрое увеличение объема трафика из-за пандемии COVID-19. Кроме того, увеличился объем вредоносного трафика, в том числе связанного с атаками типа "отказ в обслуживании". Но существует эффективный способ одновременно горизонтально увеличить масштаб приложения в соответствии с возросшим объемом трафика и обеспечить защиту от атак. Вам нужно просто настроить Azure Front Door с Azure WAF, чтобы ускорить работу, включить кэширование и создать дополнительный уровень защиты перед вашим приложением. В этой статье описывается, как быстро настроить Azure Front Door с Azure WAF для любых веб-приложений, которые работают в среде Azure и за ее пределами. 
 
-В этом руководстве показано, как настроить WAF через Azure CLI. То же самое можно выполнить на портале Azure, с помощью Azure PowerShell, Azure Resource Manager или Azure REST API. 
+В этом руководстве показано, как настроить WAF с помощью Azure CLI. То же самое можно выполнить на портале Azure, с помощью Azure PowerShell, Azure Resource Manager или Azure REST API. 
 
 В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
@@ -36,7 +36,7 @@ ms.locfileid: "91276279"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Описанные в этом руководстве действия выполняются через Azure CLI. Просмотрите это руководство по [началу работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
+- Описанные в этом руководстве действия выполняются через Azure CLI. Просмотрите это руководство по [началу работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest&preserve-view=true).
 
   > [!TIP] 
   > Чтобы быстро начать работу с Azure CLI, можно использовать [Bash в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart).
@@ -48,7 +48,7 @@ ms.locfileid: "91276279"
    ```
 
 > [!NOTE] 
-> Дополнительные сведения о командах, используемых в этом руководстве, см. в [справочных материалах по Azure CLI для Front Door](https://docs.microsoft.com/cli/azure/ext/front-door/?view=azure-cli-latest).
+> Дополнительные сведения о командах, используемых в этом руководстве, см. в [справочных материалах по Azure CLI для Front Door](https://docs.microsoft.com/cli/azure/ext/front-door/?view=azure-cli-latest&preserve-view=true).
 
 ## <a name="create-an-azure-front-door-resource"></a>Создание ресурса Azure Front Door
 
@@ -121,7 +121,7 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
 
 `--resource-group`: группа ресурсов, в которую вы поместили ресурс Azure Front Door.
 
-`--set`: Здесь вы сохраняете новую политику WAF в атрибуте `WebApplicationFirewallPolicyLink` для `frontendEndpoint`, который связан с ресурсом Azure Front Door. Идентификатор политики WAF вы получили из ответа, когда создавался профиль WAF.
+`--set`: здесь вы сохраняете новую политику WAF в атрибуте `WebApplicationFirewallPolicyLink` для конечной точки `frontendEndpoint`, которая связана с ресурсом Azure Front Door. Идентификатор политики WAF вы получили из ответа, когда создавался профиль WAF.
 
  > [!NOTE] 
 > Приведенный выше пример относится к сценарию без использования личного домена. Если вы не используете личные домены для доступа к веб-приложениям, следующий раздел можно пропустить. В этом случае передайте клиентам значение `hostName`, полученное при создании ресурса Azure Front Door. Они будут использовать это значение `hostName` для входа в веб-приложение.
@@ -136,7 +136,7 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
 
 Также в конфигурацию Azure Front Door нужно [добавить личный домен](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain), чтобы служба знала об этом сопоставлении.
 
-Наконец, если вы используете для доступа к веб-приложению личный домен и хотите включить поддержку протокола HTTPS, потребуется [настроить сертификаты для личного домена в Azure Front Door](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain-https). 
+Наконец, если вы используете для доступа к веб-приложению личный домен и хотите включить поддержку протокола HTTPS, вам нужно [настроить сертификаты для личного домена в Azure Front Door](https://docs.microsoft.com/azure/frontdoor/front-door-custom-domain-https). 
 
 ## <a name="lock-down-your-web-application"></a>Блокировка веб-приложения
 
@@ -144,7 +144,7 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы, созданные при работе с этим руководством, больше не нужны, выполните команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete), чтобы удалить группу ресурсов, Front Door и политику WAF.
+Если ресурсы, созданные при работе с этим руководством, больше не нужны, выполните команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true), чтобы удалить группу ресурсов, Front Door и политику WAF.
 
 ```azurecli-interactive
   az group delete \
@@ -158,6 +158,3 @@ az network front-door update --name <> --resource-group <> --set frontendEndpoin
 
 > [!div class="nextstepaction"]
 > [Устранение распространенных проблем маршрутизации](front-door-troubleshoot-routing.md)
-
-> [!div class="nextstepaction"]
-> [Разрешенные центры сертификации](https://docs.microsoft.com/azure/frontdoor/front-door-troubleshoot-allowed-ca)

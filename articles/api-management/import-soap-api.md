@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 3ceaa357150fe0c4d26eeedc6821761d2eb00106
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 58f2a102349baff0b70e2a0c9f72c8a4e0e44046
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91357970"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91626825"
 ---
 # <a name="import-soap-api"></a>импорт SOAP API;
 
@@ -58,7 +58,7 @@ ms.locfileid: "91357970"
 
     * **Starter**
     * **Unlimited**   
-8. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+8. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#import-and-publish-a-backend-api).
 9. Нажмите кнопку **создания**.
 
 ### <a name="test-the-new-api-in-the-administrative-portal"></a>Проверка нового API на портале администрирования

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: c6ec2be6daee931a4066ff5ce4f64fc949d497ac
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: be8a8f35ece946d1be907b2ca13a640bebbb4ee5
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86243432"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91627029"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "86243432"
     > [!NOTE]
     > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*.
 
-7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости задайте значения в других полях во время создания или позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости задайте значения в других полях во время создания или позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#import-and-publish-a-backend-api).
 8. Нажмите кнопку **Создать**.
 
 ## <a name="append-azure-function-app-to-an-existing-api"></a><a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API

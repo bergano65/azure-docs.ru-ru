@@ -1,17 +1,17 @@
 ---
 title: Руководство по мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 description: В этом руководстве описывается мониторинг и настройка отдельного сервера Базы данных Azure для PostgreSQL.
-author: rachel-msft
-ms.author: raagyema
+author: sunilagarwal
+ms.author: sunila
 ms.service: postgresql
 ms.topic: tutorial
 ms.date: 5/6/2019
-ms.openlocfilehash: 05435aae727c84a5f3eb886274f9d286627e399e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: f211ce7e52ccaa6793435159d0ce1c64fe8b63ed
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90895094"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91705287"
 ---
 # <a name="tutorial-monitor-and-tune-azure-database-for-postgresql---single-server"></a>Руководство по мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 
@@ -52,7 +52,7 @@ ms.locfileid: "90895094"
 
 2. На вкладке **Длительные запросы** отображаются 5 наиболее частых запросов, упорядоченных по средней продолжительности выполнения и объединенных в 15-минутные интервалы. 
    
-   :::image type="content" source="./media/tutorial-performance-intelligence/query-performance-insight-landing-page.png" alt-text="Целевая страница анализа производительности запросов":::
+   :::image type="content" source="./media/tutorial-performance-intelligence/query-performance-insight-landing-page.png" alt-text="Параметры сервера хранилища запросов":::
 
    Дополнительные запросы можно выбрать в раскрывающемся списке **Количество запросов**. При этом цвета, соответствующие тому или иному идентификатору запроса на графике, могут изменяться.
 
@@ -64,7 +64,7 @@ ms.locfileid: "90895094"
 
 6. Откройте вкладку **Статистика ожидания**, чтобы посмотреть визуализации ожидания на сервере.
    
-   :::image type="content" source="./media/tutorial-performance-intelligence/query-performance-insight-wait-statistics.png" alt-text="Статистика ожидания в анализе производительности запросов":::
+   :::image type="content" source="./media/tutorial-performance-intelligence/query-performance-insight-wait-statistics.png" alt-text="Параметры сервера хранилища запросов":::
 
 ### <a name="permissions"></a>Разрешения
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
@@ -75,7 +75,7 @@ ms.locfileid: "90895094"
 
 1. Откройте **рекомендации по повышению производительности** из раздела **Поддержка и устранение неполадок** в строке меню на странице портала Azure для сервера PostgreSQL.
    
-   :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-landing-page.png" alt-text="Целевая страница рекомендаций по повышению производительности":::
+   :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-landing-page.png" alt-text="Параметры сервера хранилища запросов":::
 
 2. Выберите **Анализ** и базу данных. После этого начнется анализ.
 
@@ -85,7 +85,7 @@ ms.locfileid: "90895094"
 
 5. Рекомендации будут содержать сведения о соответствующей **базе данных**, **таблице**, **столбце** и **размере индекса**.
 
-   :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-result.png" alt-text="Результат рекомендаций по производительности":::
+   :::image type="content" source="./media/tutorial-performance-intelligence/performance-recommendations-result.png" alt-text="Параметры сервера хранилища запросов":::
 
 6. Чтобы применить рекомендацию, скопируйте текст запроса и выполните его в клиенте по своему выбору.
 

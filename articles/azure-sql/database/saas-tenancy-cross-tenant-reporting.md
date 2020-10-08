@@ -1,22 +1,22 @@
 ---
-title: Создание отчетов о запросах в нескольких базах данных
+title: Выполнение запросов системы отчетности к нескольким базам данных
 description: Сведения о формировании отчетов по всем клиентам с использованием распределенных запросов.
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: tutorial
 author: stevestein
 ms.author: sstein
 ms.reviewers: ''
 ms.date: 01/25/2019
-ms.openlocfilehash: 3542bb502bbb0d41ff6a35902bc38262c26876de
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
-ms.translationtype: MT
+ms.openlocfilehash: 03e8719b256fc758874bd7375deed0637da9447e
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91361778"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620313"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "91361778"
 Для работы с этим руководством выполните следующие предварительные требования:
 
 
-* Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. Сведения о развертывании менее чем за пять минут см. в статье [развертывание и изучение приложения SaaS Wingtip Tickets для каждого клиента](../../sql-database/saas-dbpertenant-get-started-deploy.md) .
+* Развернуть SaaS-приложение Wingtip Tickets c однотенантной базой данных. См. инструкции из руководства по быстрому [развертыванию SaaS-приложение Wingtip Tickets c однотенантной БД](../../sql-database/saas-dbpertenant-get-started-deploy.md).
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Установите SQL Server Management Studio (SSMS). Сведения о том, как скачать и установить SSMS, см. в статье [Скачивание SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
@@ -53,7 +53,7 @@ ms.locfileid: "91361778"
 
 ## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Получение скриптов для SaaS-приложения Wingtip Tickets c однотенантной БД
 
-Скрипты и исходный код приложения SaaS Wingtip Tickets для баз данных с несколькими клиентами доступны в репозитории GitHub [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) . Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
+Сценарии для приложения SaaS Wingtip Tickets c мультитенантной базой данных и исходный код этого приложения вы найдете в репозитории GitHub [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant). Инструкции по скачиванию и разблокированию сценариев приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
 ## <a name="create-ticket-sales-data"></a>Создание данных о продажах билетов
 
@@ -93,10 +93,10 @@ ms.locfileid: "91361778"
 
 1. В **обозревателе объектов** разверните узел **contosoconcerthall** > **Представления**:
 
-   ![На снимке экрана показано содержимое узла views, включая четыре типа места проведения d b o.](./media/saas-tenancy-cross-tenant-reporting/views.png)
+   ![Снимок экрана: содержимое узла "Представления", включая четыре типа объекта базы данных проведения Venue.](./media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Щелкните **dbo.Venues** правой кнопкой мыши.
-3. Выберите создать **скрипт для представления**"  >  **Создание в**  >  **новом окне редактора запросов** ".
+3. Выберите **Создать скрипт для представления** > **Используя CREATE** > **В новом окне редактора запросов**.
 
 Создайте сценарий, используя любые другие представления *Venue*, чтобы увидеть, как они добавляют *VenueId*.
 
@@ -106,7 +106,7 @@ ms.locfileid: "91361778"
 
 1. В *интегрированной среде сценариев PowerShell* откройте сценарий \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReporting.ps1*. 
 
-1. Установите **$DemoScenario = 2**, _разверните базу данных автоматизированной нерегламентированной отчетности_.
+1. Задайте для **$DemoScenario** значение 2, чтобы _развернуть базу данных автоматизированной системы отчетности_.
 
 1. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.
 
@@ -148,7 +148,7 @@ ms.locfileid: "91361778"
 
 При проверке плана выполнения наведите указатель мыши на значки плана, чтобы получить дополнительные сведения. 
 
-Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждый *VenueId* сопоставляется с отдельной базой данных, фильтрация легко выполняется удаленно, возвращая только необходимые данные.
+Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)**, заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждое значение *VenueId* сопоставляется с отдельной базой данных, фильтрацию легко выполнять удаленно, чтобы получать только необходимые данные.
 
 1. В SSMS откройте файл \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReportingQueries.sql*.
 2. Убедитесь в наличии подключения к базе данных **adhocreporting**.
@@ -191,4 +191,4 @@ ms.locfileid: "91361778"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * Дополнительные [руководства по SaaS-приложению Wingtip Tickets c однотенантной БД](../../sql-database/saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials).
-* [Эластичный запрос](elastic-query-overview.md)
+* [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](elastic-query-overview.md)

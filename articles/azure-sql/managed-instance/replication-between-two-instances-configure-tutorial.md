@@ -1,37 +1,37 @@
 ---
 title: Настройка репликации между управляемыми экземплярами
 titleSuffix: Azure SQL Managed Instance
-description: В этом учебнике описывается настройка репликации транзакций между издателем и распространителем Azure SQL Управляемый экземпляр и подписчиком SQL Управляемый экземпляр.
+description: В этом руководстве показано, как настроить репликацию транзакций между Управляемыми экземплярами SQL Azure, выполняющими роли издателя или распространителя и подписчика.
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: data-movement
 ms.custom: sqldbrb=1
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: tutorial
 author: MashaMSFT
 ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 04/28/2020
-ms.openlocfilehash: 114d4f41ad48af3d1e585fcb01eb0794a8e349b5
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
-ms.translationtype: MT
+ms.openlocfilehash: b0f2a6fcd888afd7eb99a810fad6e876fe6ff4ac
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920120"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91617066"
 ---
-# <a name="tutorial-configure-replication-between-two-managed-instances"></a>Учебник. Настройка репликации между двумя управляемыми экземплярами
+# <a name="tutorial-configure-replication-between-two-managed-instances"></a>Руководство по Настройка репликации между двумя управляемыми экземплярами
 
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-Репликация транзакций позволяет реплицировать данные из одной базы данных в другую, размещенную либо в SQL Server, либо в [Azure SQL управляемый экземпляр](sql-managed-instance-paas-overview.md). SQL Управляемый экземпляр может быть издателем, распространителем или подписчиком в топологии репликации. Доступные конфигурации см. в разделе [конфигурации репликации транзакций](replication-transactional-overview.md#common-configurations) . 
+Репликация транзакций позволяет вам реплицировать данные из одной базы данных в другую, размещенную на SQL Server или на [Управляемом экземпляре SQL Azure](sql-managed-instance-paas-overview.md). Управляемый экземпляр SQL может быть издателем, распространителем или подписчиком в топологии репликации. Сведения о доступных конфигурациях см. [здесь](replication-transactional-overview.md#common-configurations). 
 
-В настоящее время репликация транзакций доступна в общедоступной предварительной версии Управляемый экземпляр SQL. 
+В настоящее время репликация транзакций предоставляется в общедоступной предварительной версии Управляемого экземпляра SQL. 
 
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
-> - Настройка управляемого экземпляра в качестве издателя и распространителя репликации.
+> - Настройка Управляемого экземпляра в качестве издателя и распространителя репликации.
 > - Настройка Управляемого экземпляра в качестве распространителя репликации.
 
 ![Репликация между двумя управляемыми экземплярами](./media/replication-between-two-instances-configure-tutorial/sqlmi-sqlmi-repl.png)
@@ -40,33 +40,33 @@ ms.locfileid: "87920120"
 
 
 > [!NOTE]
-> - В этой статье описывается использование [репликации транзакций](/sql/relational-databases/replication/transactional/transactional-replication) в Azure SQL управляемый экземпляр. Он не связан с [группами отработки отказа](../database/auto-failover-group-overview.md), компонентом управляемый экземпляр Azure SQL, позволяющим создавать полные доступные для чтения реплики отдельных экземпляров. При настройке [репликации транзакций с группами отработки отказа](replication-transactional-overview.md#with-failover-groups)необходимо учитывать дополнительные моменты.
+> - В этой статье описывается использование [репликации транзакций](/sql/relational-databases/replication/transactional/transactional-replication) в Управляемом экземпляре SQL Azure. Она не связана с [группами отработки отказа](../database/auto-failover-group-overview.md), которые представляют собой функцию Управляемого экземпляра SQL Azure, позволяющую создавать полные, доступные для чтения реплики отдельных экземпляров. При настройке [репликации транзакций с группами отработки отказа](replication-transactional-overview.md#with-failover-groups) следует учитывать дополнительные факторы.
 
 
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
-Настройка Управляемый экземпляр SQL для работы в качестве издателя и (или) распространителя требует:
+Для настройки Управляемого экземпляра в качестве издателя и (или) распространителя должны выполняться следующие требования:
 
-- , Что управляемый экземпляр издателя находится в той же виртуальной сети, что и распространитель, и подписчика, или [пиринг виртуальной сети](../../virtual-network/tutorial-connect-virtual-networks-powershell.md) настроен между виртуальными сетями всех трех сущностей. 
+- Управляемый экземпляр издателя должен находиться в той же виртуальной сети, что и распространитель и подписчик, или между [виртуальными сетями](../../virtual-network/tutorial-connect-virtual-networks-powershell.md) всех трех сущностей должен существовать пиринг виртуальных сетей. 
 - При подключении используется аутентификация SQL между участниками репликации.
-- Общий ресурс учетной записи хранения Azure для рабочего каталога репликации.
-- Порт 445 (исходящий трафик TCP) открыт в правилах безопасности NSG для доступа управляемых экземпляров к файловому ресурсу Azure.  При возникновении ошибки необходимо `failed to connect to azure storage \<storage account name> with os error 53` Добавить правило исходящего трафика в NSG подходящей подсети SQL управляемый экземпляр.
+- Общий ресурс учетной записи хранения Azure для рабочей папки репликации.
+- Открытый порт 445 (исходящее TCP-подключение) в правилах безопасности, настроенных для группы безопасности сети, чтобы управляемые экземпляры могли получить доступ к общей папке Azure.  Если возникает ошибка `failed to connect to azure storage \<storage account name> with os error 53`, значит нужно добавить правило исходящего трафика в NSG подсети соответствующего Управляемого экземпляра SQL.
 
-## <a name="1---create-a-resource-group"></a>1. Создание группы ресурсов
+## <a name="1---create-a-resource-group"></a>1\. Создание группы ресурсов
 
-Используйте [портал Azure](https://portal.azure.com) , чтобы создать группу ресурсов с именем `SQLMI-Repl` .  
+С помощью [портала Azure](https://portal.azure.com) создайте группу ресурсов с именем `SQLMI-Repl`.  
 
-## <a name="2---create-managed-instances"></a>2. Создание управляемых экземпляров
+## <a name="2---create-managed-instances"></a>2\. Создание управляемых экземпляров
 
-Используйте [портал Azure](https://portal.azure.com) , чтобы создать два [управляемых экземпляра SQL](instance-create-quickstart.md) в одной виртуальной сети и подсети. Например, назовите два управляемых экземпляра:
+С помощью [портала Azure](https://portal.azure.com) создайте два [Управляемых экземпляра SQL](instance-create-quickstart.md) в одной виртуальной сети и подсети. Например, присвойте управляемым экземплярам следующие имена:
 
-- `sql-mi-pub`(вместе с некоторыми символами для случайного выбора)
-- `sql-mi-sub`(вместе с некоторыми символами для случайного выбора)
+- `sql-mi-pub` (и еще несколько символов, чтобы имя было уникальным);
+- `sql-mi-sub` (и еще несколько символов, чтобы имя было уникальным).
 
-Кроме того, необходимо [настроить виртуальную машину Azure для подключения](connect-vm-instance-configure.md) к управляемым экземплярам. 
+Кроме того, вам нужно [настроить виртуальную машину Azure для подключения](connect-vm-instance-configure.md) к управляемым экземплярам. 
 
-## <a name="3---create-an-azure-storage-account"></a>3. Создание учетной записи хранения Azure
+## <a name="3---create-an-azure-storage-account"></a>3\. Создание учетной записи хранения Azure
 
 [Создайте учетную запись хранения Azure](/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки, а затем создайте в этой учетной записи [общую папку](../../storage/files/storage-how-to-create-file-share.md). 
 
@@ -74,15 +74,15 @@ ms.locfileid: "87920120"
 
 Например, `\\replstorage.file.core.windows.net\replshare`.
 
-Скопируйте ключи доступа к хранилищу в формате:`DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`
+Скопируйте ключи доступа к хранилищу в следующем формате: `DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`.
 
 Например, `DefaultEndpointsProtocol=https;AccountName=replstorage;AccountKey=dYT5hHZVu9aTgIteGfpYE64cfis0mpKTmmc8+EP53GxuRg6TCwe5eTYWrQM4AmQSG5lb3OBskhg==;EndpointSuffix=core.windows.net`.
 
 См. сведения о том, как [управлять ключами доступа к учетной записи хранения](../../storage/common/storage-account-keys-manage.md). 
 
-## <a name="4---create-a-publisher-database"></a>4. Создание базы данных издателя
+## <a name="4---create-a-publisher-database"></a>4\. Создание базы данных издателя
 
-Подключитесь к `sql-mi-pub` управляемому экземпляру с помощью SQL Server Management Studio и выполните следующий код Transact-SQL (T-SQL) для создания базы данных издателя:
+Подключитесь к управляемому экземпляру `sql-mi-pub` с помощью SQL Server Management Studio и выполните следующий код Transact-SQL (T-SQL) для создания базы данных издателя:
 
 ```sql
 USE [master]
@@ -114,9 +114,9 @@ SELECT * FROM ReplTest
 GO
 ```
 
-## <a name="5---create-a-subscriber-database"></a>5. Создание базы данных подписчика
+## <a name="5---create-a-subscriber-database"></a>5\. Создание базы данных подписчика
 
-Подключитесь к `sql-mi-sub` управляемому экземпляру с помощью SQL Server Management Studio и выполните следующий код T-SQL, чтобы создать базу данных пустого подписчика:
+Подключитесь к управляемому экземпляру `sql-mi-sub` с помощью SQL Server Management Studio и выполните следующий код T-SQL для создания пустой базы данных подписчика:
 
 ```sql
 USE [master]
@@ -135,9 +135,9 @@ CREATE TABLE ReplTest (
 GO
 ```
 
-## <a name="6---configure-distribution"></a>6. Настройка распространения
+## <a name="6---configure-distribution"></a>6\. Настройка распространения
 
-Подключитесь к `sql-mi-pub` управляемому экземпляру с помощью SQL Server Management Studio и выполните следующий код T-SQL для настройки базы данных распространителя.
+Подключитесь к управляемому экземпляру `sql-mi-pub` с помощью SQL Server Management Studio и выполните следующий код T-SQL для настройки базы данных распространителя:
 
 ```sql
 USE [master]
@@ -148,9 +148,9 @@ EXEC sp_adddistributiondb @database = N'distribution';
 GO
 ```
 
-## <a name="7---configure-publisher-to-use-distributor"></a>7. Настройка издателя для использования распространителя
+## <a name="7---configure-publisher-to-use-distributor"></a>7\. Настройка использования распространителя для издателя
 
-В Управляемый экземпляр издателя SQL `sql-mi-pub` измените выполнение запроса на режим [sqlcmd](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) и выполните следующий код, чтобы зарегистрировать новый распространитель на издателе.
+В Управляемом экземпляре SQL `sql-mi-pub` для издателя измените режим выполнения запроса на [SQLCMD](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) и выполните следующий код, чтобы зарегистрировать новый распространитель в этом издателе.
 
 ```sql
 :setvar username loginUsedToAccessSourceManagedInstance
@@ -172,13 +172,13 @@ EXEC sp_adddistpublisher
 ```
 
    > [!NOTE]
-   > Не забудьте использовать в качестве параметра file_storage только символы обратной косой черты ( `\` ). Использование символа прямой косой черты (`/`) может привести к ошибке при подключении к общей папке.
+   > В параметре file_storage используйте только символы обратной черты (`\`). Использование символа прямой косой черты (`/`) может привести к ошибке при подключении к общей папке.
 
-Этот сценарий настраивает локальный издатель на управляемом экземпляре, добавляет связанный сервер и создает набор заданий для агента SQL Server.
+Этот скрипт настраивает локальный издатель на управляемом экземпляре, добавляет связанный сервер и создает набор заданий для агента SQL Server.
 
-## <a name="8---create-publication-and-subscriber"></a>8. Создание публикации и подписчика
+## <a name="8---create-publication-and-subscriber"></a>8\. Создание публикации и подписчика
 
-Используя режим [sqlcmd](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor) , выполните следующий скрипт T-SQL, чтобы включить репликацию для базы данных, и настройте репликацию между издателем, распространителем и подписчиком.
+Используя режим [SQLCMD](/sql/ssms/scripting/edit-sqlcmd-scripts-with-query-editor), выполните следующий скрипт T-SQL, чтобы включить для базы данных репликацию, и настройте репликацию между издателем, распространителем и подписчиком.
 
 ```sql
 -- Set variables
@@ -255,9 +255,9 @@ EXEC sp_startpublication_snapshot
   @publication = N'$(publication_name)';
 ```
 
-## <a name="9---modify-agent-parameters"></a>9. изменение параметров агента
+## <a name="9---modify-agent-parameters"></a>9\. Изменение параметров агента
 
-В Azure SQL Управляемый экземпляр в настоящее время возникают некоторые серверные проблемы с подключением к агентам репликации. Хотя эта проблема решена, решение заключается в увеличении значения времени ожидания входа для агентов репликации.
+В Управляемом экземпляре SQL Azure сейчас возникают определенные серверные проблемы с подключением к агентам репликации. Пока эта проблема решается, вы можете в качестве обходного решения увеличить значения времени ожидания входа для агентов репликации.
 
 Выполните следующую команду T-SQL на издателе, чтобы увеличить время ожидания входа:
 
@@ -267,7 +267,7 @@ update msdb..sysjobsteps set command = command + N' -LoginTimeout 150'
 where subsystem in ('Distribution','LogReader','Snapshot') and command not like '%-LoginTimeout %'
 ```
 
-Выполните следующую команду T-SQL еще раз, чтобы задать для времени ожидания входа значение по умолчанию, если это необходимо сделать:
+Снова выполните следующую команду T-SQL, чтобы вернуть для времени ожидания входа значение по умолчанию, если это потребуется:
 
 ```sql
 -- Increase login timeout to 30
@@ -277,7 +277,7 @@ where subsystem in ('Distribution','LogReader','Snapshot') and command not like 
 
 Перезапустите все три агента, чтобы применить эти изменения.
 
-## <a name="10---test-replication"></a>10. Тестирование репликации
+## <a name="10---test-replication"></a>10. Тестовая репликация
 
 Настроенную репликацию можно протестировать, добавив новые элементы в издатель и убедившись, что изменения распространяются на подписчик.
 
@@ -322,8 +322,8 @@ EXEC sp_dropdistributor @no_checks = 1
 GO
 ```
 
-Вы можете очистить ресурсы Azure, [удалив ресурсы SQL управляемый экземпляр из группы ресурсов](../../azure-resource-manager/management/manage-resources-portal.md#delete-resources) , а затем удалив группу ресурсов `SQLMI-Repl` . 
+Вы можете очистить ресурсы Azure, [удалив ресурсы Управляемого экземпляра SQL из группы ресурсов](../../azure-resource-manager/management/manage-resources-portal.md#delete-resources), а затем удалив группу ресурсов `SQLMI-Repl`. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Кроме того, вы можете получить дополнительные сведения о [репликации транзакций с помощью Azure sql управляемый экземпляр](replication-transactional-overview.md) или настроить репликацию между [издателем и распространителем SQL управляемый экземпляр и подписчиком SQL на виртуальной машине Azure](replication-two-instances-and-sql-server-configure-tutorial.md). 
+Вы также можете получить дополнительные сведения о [репликации транзакций с помощью Управляемого экземпляра SQL Azure](replication-transactional-overview.md) и [настройке репликации между Управляемым экземпляром SQL в роли издателя или распространителя и SQL на виртуальной машине Azure в роли подписчика](replication-two-instances-and-sql-server-configure-tutorial.md). 

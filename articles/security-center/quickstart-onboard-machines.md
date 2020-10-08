@@ -3,22 +3,47 @@ title: Подключение компьютеров, не связанных с
 description: Узнайте, как подключить компьютеры, не связанные с Azure, к Центру безопасности Azure
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 10/01/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 6f2889c298f525e1babf80f86d4ae140ef2ce96f
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: df780e4e55bb5c119320d4b33502d50a95da1eaf
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91448957"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91612223"
 ---
 #  <a name="connect-your-non-azure-machines-to-security-center"></a>Подключение компьютеров, не связанных с Azure, к Центру безопасности
 
-Центр безопасности может отслеживать состояние безопасности компьютеров, не относящихся к Azure. Однако сначала необходимо подключить эти ресурсы. Компьютеры, не связанные с Azure, можно добавить на странице **Начало работы** или **Учет**, как описано ниже.
+Центр безопасности может отслеживать состояние безопасности компьютеров, не относящихся к Azure. Однако сначала необходимо подключить эти ресурсы. 
 
-## <a name="add-non-azure-computers"></a>Добавление компьютеров, не связанных с Azure 
+Добавить компьютеры, не относящиеся к Azure, можно одним из следующих способов:
+
+- с помощью Azure Arc (**рекомендуется**);
+- на страницах Центра безопасности на портале Azure (элементы **Начало работы** и **Учет**).
+
+Каждый из этих способов описан ниже.
+
+## <a name="add-non-azure-machines-with-azure-arc"></a>Добавление компьютеров, не связанных с Azure, с помощью Azure Arc
+
+Для добавления компьютеров, не связанных с Azure, в Центр безопасности Azure мы рекомендуем использовать Azure Arc.
+
+Компьютер с включенной службой Azure Arc становится ресурсом Azure и отображается в Центре безопасности с рекомендациями, как и другие ваши ресурсы Azure. 
+
+Кроме того, служба Azure Arc предоставляет расширенные возможности, такие как включение политик для компьютера, развертывание агента Log Analytics в качестве расширения, упрощение развертывания с другими службами Azure и многое другое. Общие сведения о преимуществах см. в разделе [Поддерживаемые сценарии](../azure-arc/servers/overview.md#supported-scenarios).
+
+**Чтобы развернуть Azure Arc, сделайте следующее:**
+
+- Для развертывания службы на одном компьютере следуйте инструкциям из статьи [Краткое руководство. Подключение гибридной виртуальной машины к серверам с поддержкой Azure Arc (предварительная версия)](../azure-arc/servers/learn/quick-enable-hybrid-vm.md).
+- Сведения о развертывании Azure Arc в большом масштабе см. в статье [Подключение гибридных компьютеров к Azure в большом масштабе](../azure-arc/servers/onboard-service-principal.md).
+
+См. дополнительные сведения об [Azure Arc](../azure-arc/servers/overview.md).
+
+> [!TIP]
+> Если вы подключите компьютеры AWS, соединитель Центра безопасности для AWS прозрачно обработает развертывание Azure Arc. Дополнительные сведения см. в статье [Подключение учетных записей AWS к Центру безопасности Azure](quickstart-onboard-aws.md).
+
+## <a name="add-non-azure-machines-from-security-centers-portal-pages"></a>Добавление компьютеров, не относящихся к Azure, на страницах Центра безопасности на портале
 
 1. В меню Центра безопасности откройте страницу **Начало работы**.
 1. Выберите вкладку **Начало работы**.
@@ -29,6 +54,8 @@ ms.locfileid: "91448957"
 
     > [!TIP]
     > Кроме того, вы можете добавить компьютеры с помощью кнопки **Добавление серверов не из Azure** на странице **Учет**.
+    > 
+    > :::image type="content" source="./media/security-center-onboarding/onboard-inventory.png" alt-text="Вкладка &quot;Начать&quot; на странице &quot;Начало работы&quot;":::
 
     Отобразится список ваших рабочих областей Log Analytics. В этот список входит, если это применимо, рабочая область по умолчанию, созданная центром безопасности при включении автоматической подготовки. Выберите эту или другую рабочую область, которую следует использовать.
 
@@ -91,10 +118,11 @@ ms.locfileid: "91448957"
 ## <a name="verifying"></a>Проверка
 Поздравляем! Теперь ваши компьютеры Azure и другие компьютеры отображаются в одном расположении. Откройте страницу [инвентаризации ресурсов](asset-inventory.md) и отфильтруйте соответствующие типы ресурсов. Типы можно различить с помощью значков:
 
-  ![Значок 1](./media/quick-onboard-linux-computer/security-center-monitoring-icon1.png) Компьютер, не связанный с Azure
+  ![Значок ASC для компьютера, не относящегося к Azure](./media/quick-onboard-linux-computer/security-center-monitoring-icon1.png) Компьютер, не связанный с Azure
 
-  ![Значок 2](./media/quick-onboard-linux-computer/security-center-monitoring-icon2.png) Azure
+  ![Значок ASC для компьютера Azure](./media/quick-onboard-linux-computer/security-center-monitoring-icon2.png) Azure
 
+  ![Значок ASC для компьютера с поддержкой Azure Arc](./media/quick-onboard-linux-computer/arc-enabled-machine-icon.png) Компьютер с поддержкой Azure Arc
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

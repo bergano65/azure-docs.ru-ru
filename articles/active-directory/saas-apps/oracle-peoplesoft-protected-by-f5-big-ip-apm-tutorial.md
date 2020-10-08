@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.author: jeedes
-ms.openlocfilehash: a8d34d60cfb4037192abcc20649b478e9f58a6bb
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 7d2dc1d5d02f1a371d6d94f9eeddf395d49126d7
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90992327"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91620143"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oracle-peoplesoft---protected-by-f5-big-ip-apm"></a>Руководство по интеграции единого входа Azure Active Directory с Oracle PeopleSoft — Protected by F5 BIG-IP APM
 
@@ -44,7 +44,7 @@ ms.locfileid: "90992327"
         * подписки на F5 IP Intelligence для обнаружения и блокирования известных злоумышленников и вредоносного трафика; 
         * аппаратного сетевого модуля безопасности (HSM) для защиты цифровых ключей и управления ими с целью обеспечения надежной проверки подлинности.
 1. Система F5 BIG-IP подготавливается с модулями APM (LTM является необязательным). 
-1. Хотя это необязательно, настоятельно рекомендуется развернуть системы F5 в [группе устройств для синхронизации и отработки отказа](https://techdocs.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/big-ip-device-service-clustering-administration-14-1-0.html), которая включает в себя активную резервную пару с плавающим IP-адресом для обеспечения высокой доступности. Дальнейшая избыточность интерфейса реализуется с помощью протокола LACP. Протокол LACP управляет подключенными физическими интерфейсами как одним. 
+1. Хотя это необязательно, настоятельно рекомендуется развернуть системы F5 в [группе устройств для синхронизации и отработки отказа](https://techdocs.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/big-ip-device-service-clustering-administration-14-1-0.html), которая включает в себя активную резервную пару с плавающим IP-адресом для обеспечения высокой доступности. Дальнейшая избыточность интерфейса реализуется с помощью протокола LACP. LACP управляет подключенными физическими интерфейсами как одним виртуальным интерфейсом (статистической группой) и обнаруживает все сбои интерфейса в группе.
 
 ## <a name="scenario-description"></a>Описание сценария
 

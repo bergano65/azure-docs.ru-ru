@@ -6,19 +6,19 @@ ms.service: sql-database
 ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: PowerShell
-ms.topic: conceptual
+ms.topic: sample
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: faba9eaf59f5d1c941bacb58ba1faf9f817d39cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 57449b0bbd39b6ea04ecae5a3ad766ae5687ca0b
+ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84033885"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91619837"
 ---
-# <a name="ring-buffer-target-code-for-extended-events-in-azure-sql-database"></a>Целевой код кольцевого буфера для расширенных событий в базе данных SQL Azure
+# <a name="ring-buffer-target-code-for-extended-events-in-azure-sql-database"></a>Код целевого кольцевого буфера для расширенных событий в Базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "84033885"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись и подписка Azure. Вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
+* Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 * Любая база данных, позволяющая создать таблицу.
   
   * При необходимости вы можете быстро [создать демонстрационную базу данных **AdventureWorksLT**](single-database-create-quickstart.md).
@@ -216,13 +216,13 @@ GO
 
 ## <a name="ring-buffer-contents"></a>Содержимое кольцевого буфера
 
-Мы использовали `ssms.exe` для запуска примера кода.
+Для запуска примера кода мы использовали `ssms.exe`.
 
 Чтобы просмотреть результаты, мы щелкнули ячейку под заголовком столбца **target_data_XML**.
 
 Затем в области результатов мы щелкнули ячейку под заголовком столбца **target_data_XML**. В результате в файле ssms.exe была создана дополнительная вкладка, на которой в виде XML-кода отображается содержимое итоговой ячейки.
 
-Выходные данные показаны в приведенном ниже блоке. Он выглядит длиннее, но всего лишь два **\<event>** элемента.
+Выходные данные показаны в приведенном ниже блоке. Он выглядит длинным, но содержит всего два элемента **\<event>** .
 
 &nbsp;
 
@@ -340,11 +340,11 @@ ALTER EVENT SESSION eventsession_gm_azuresqldb51
 
 Основная статья о расширенных событиях в Базе данных SQL Azure:
 
-* [Рекомендации по расширенным событиям в базе данных SQL Azure](xevent-db-diff-from-svr.md), которая отличает некоторые аспекты расширенных событий, которые отличаются от Microsoft SQL Server базы данных SQL Azure.
+* [Рекомендации по работе с расширенными событиями в Базе данных SQL Azure](xevent-db-diff-from-svr.md), где сравниваются аспекты расширенных событий в Базе данных SQL Azure и Microsoft SQL Server.
 
 Другие статьи с примерами кода для работы с расширенными событиями доступны по приведенным ниже ссылкам. Обязательно проверяйте, предназначен ли пример для Microsoft SQL Server или для базы данных SQL Azure. После этого вы сможете решить, какие поправки нужно внести в пример кода.
 
-* Пример кода для базы данных SQL Azure: [целевой код файла событий для расширенных событий в базе данных SQL Azure](xevent-code-event-file.md)
+* Пример кода для Базы данных SQL Azure: [Код целевого файла событий для расширенных событий в Базе данных SQL Azure](xevent-code-event-file.md)
 
 <!--
 ('lock_acquired' event.)

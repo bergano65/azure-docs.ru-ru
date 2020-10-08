@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 28b055cb343b7f894a28eee5fbe452d037fd6b0e
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 007598046ae64b390d44e61438b69bd26024b1c4
+ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249496"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91626893"
 ---
 # <a name="import-an-api-app-as-an-api"></a>импорт приложения API в качестве API;
 
@@ -56,7 +56,7 @@ ms.locfileid: "86249496"
 
     * **Starter**
     * **Unlimited**   
-7. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+7. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#import-and-publish-a-backend-api).
 8. Нажмите кнопку **создания**.
 
 ## <a name="test-the-new-api-in-the-azure-portal"></a>Проверка нового API на портале Azure

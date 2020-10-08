@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: 5b3893dce2d20b1de0a78f11263d880e262098d2
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
+ms.openlocfilehash: b5936d68ba98054eb6d98860c6edfaf12d6736d8
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84142390"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91710131"
 ---
 # <a name="example-detect-language-with-text-analytics"></a>Пример Определение языка с помощью API "Анализ текста"
 
@@ -31,6 +31,8 @@ ms.locfileid: "84142390"
 > API анализа текста также предоставляет образ контейнера Docker под управлением Linux для распознавания языка, поэтому вы можете [установить и запустить контейнер API анализа текста](text-analytics-how-to-install-containers.md) в непосредственной близости к своим данным.
 
 ## <a name="preparation"></a>Подготовка
+
+[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
 Необходимы документы JSON в следующем формате: ИД и текст.
 
