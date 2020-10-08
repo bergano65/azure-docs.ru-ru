@@ -9,12 +9,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
 ms.date: 07/06/2020
-ms.openlocfilehash: eab9004b37da83b5d571ff700c32215354286c94
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: a3ceb78a85546e5e75c4c484f131b67ff7fc9249
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91443860"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91824145"
 ---
 # <a name="azure-sql-connectivity-settings"></a>Параметры подключения к SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "91443860"
 В этой статье описываются параметры, управляющие подключением к серверу для базы данных SQL Azure и Azure синапсе Analytics. Эти параметры применяются ко **всем** базам данных SQL и Azure синапсе, связанным с сервером.
 
 > [!IMPORTANT]
-> Эта статья *не* относится к **Azure SQL управляемый экземпляр**
+> Эта статья *не* относится к **управляемому экземпляру базы данных SQL Azure**.
 
 Параметры подключения доступны на экране **брандмауэры и виртуальные сети** , как показано на следующем снимке экрана:
 
@@ -38,6 +38,9 @@ ms.locfileid: "91443860"
  ![Снимок экрана подключения с запретом доступа к общедоступной сети][2]
 
 Любая попытка задать для параметра **запретить общий доступ к сети** значение **Да** без каких бы то ни было существующих частных конечных точек на логическом сервере завершится с сообщением об ошибке следующего вида:  
+
+> [!NOTE]
+> Чтобы определить правила брандмауэра виртуальной сети на логическом сервере, для которого уже настроены частные конечные точки, установите для параметра **запретить доступ к общедоступной сети** значение **нет**.
 
 ```output
 Error 42102
@@ -65,7 +68,7 @@ To manage server or database level firewall rules, please enable the public netw
 ## <a name="change-public-network-access-via-powershell"></a>Изменение доступа к общедоступной сети с помощью PowerShell
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 В следующем сценарии PowerShell показано, как `Get` и `Set` свойство **доступа к общедоступной сети** на уровне сервера.
 
@@ -121,7 +124,7 @@ Login failed with invalid TLS version
 ## <a name="set-minimal-tls-version-via-powershell"></a>Установка минимальной версии TLS с помощью PowerShell
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 В следующем сценарии PowerShell показано, как `Get` и `Set` свойство **минимальной версии TLS** на уровне логического сервера.
 
@@ -161,7 +164,7 @@ az sql server update -n sql-server-name -g sql-server-group --set minimalTlsVers
 ## <a name="change-connection-policy-via-powershell"></a>Изменение политики подключения с помощью PowerShell
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны. Для следующего скрипта требуется [модуль Azure PowerShell](/powershell/azure/install-az-ps).
 
 В следующем сценарии PowerShell показано, как изменить политику подключения с помощью PowerShell.
 

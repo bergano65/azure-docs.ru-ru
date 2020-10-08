@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/09/2019
+ms.date: 10/07/2020
 ms.author: allensu
-ms.openlocfilehash: f77dd21a2c017ee41f955fdf5e0848df190dec2a
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 060048bf786f424d5df6eb8fb4813877acb0fea0
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91651281"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91823217"
 ---
 # <a name="load-balancer-tcp-reset-and-idle-timeout"></a>Load Balancer сброс TCP и время ожидания простоя
 
@@ -40,7 +40,11 @@ ms.locfileid: "91651281"
 
 ## <a name="configurable-tcp-idle-timeout"></a>Настраиваемое время ожидания в режиме простоя для TCP-подключения
 
-Azure Load Balancer имеет значение времени ожидания простоя от 4 минут до 120 минут. По умолчанию установлено значение 4 минуты. Если период бездействия превышает значение времени ожидания, нет никакой гарантии, что сеанс TCP или HTTP между клиентом и облачной службой возобновится.
+Azure Load Balancer имеет следующий диапазон времени ожидания простоя:
+-  от 4 минут до 100 минут для исходящих правил
+-  от 4 до 30 минут для правил Load Balancer и правил NAT для входящего трафика
+
+По умолчанию установлено значение 4 минуты. Если период бездействия превышает значение времени ожидания, нет никакой гарантии, что сеанс TCP или HTTP между клиентом и облачной службой возобновится.
 
 При закрытии подключения клиентское приложение может получить такое сообщение об ошибке: "Базовое соединение закрыто. Соединение, которое должно было работать, было разорвано сервером".
 
@@ -57,7 +61,7 @@ Azure Load Balancer имеет значение времени ожидания 
 - Сброс TCP не отправляется для внутренних подсистем балансировки нагрузки с настроенными портами высокой доступности.
 - Время ожидания простоя TCP не влияет на правила балансировки нагрузки по протоколу UDP.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md).
 - Узнайте о [правилах исходящих подключений](load-balancer-outbound-rules-overview.md).

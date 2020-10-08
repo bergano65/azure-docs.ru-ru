@@ -3,14 +3,14 @@ title: Интеграция Служебной шины Azure со службо�
 description: Узнайте, как интегрировать Служебную шину Azure со службой "Приватный канал Azure"
 author: spelluru
 ms.author: spelluru
-ms.date: 06/23/2020
+ms.date: 10/07/2020
 ms.topic: article
-ms.openlocfilehash: 4f3b67794d1a7f3935c79c70f18b8bd4a1e0d7ef
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: 54649c47a896937a512a6041e485abfb03ca88dd
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88716628"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91824966"
 ---
 # <a name="allow-access-to-azure-service-bus-namespaces-via-private-endpoints"></a>Разрешение доступа к пространствам имен служебной шины Azure через частные конечные точки
 

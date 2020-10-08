@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 05/24/2020
-ms.openlocfilehash: bbd3cb88b017209adff58a646e274caf31ab425f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: c297a189f3b13ca8e72daf4eef009bc28fac32bf
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87486448"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91823202"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
 
@@ -127,16 +127,16 @@ File "/home/.azure/cliextensions/azure-cli-iot-ext/azext_iot/_factory.py", line 
 ModuleNotFoundError: No module named 'azure.mgmt.iothub.iot_hub_client'
 ```
     
-Чтобы устранить эту проблему:
+Устранение проблемы:
 
-1. Выполните следующую команду.
+1. Выполните следующую команду:
 
     ```
     az --version
     ```
 1. Убедитесь, что установлены следующие расширения. Начиная с публикации этой статьи, расширения и их версии:
 
-    | Расширение | Version |
+    | Расширение | Версия |
     |---|---|
     |azure-cli   |      2.5.1|
     |Command-modules-нспкг         |   2.0.3|
@@ -190,7 +190,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
     ![Снимок экрана ответа в Visual Studio Code.](./media/troubleshoot-how-to/visual-studio-code1.png)
 1. Если предыдущее решение завершается сбоем, попробуйте выполнить следующие действия.
 
-    a. Перейдите в командную строку на устройстве IoT Edge и выполните следующую команду:
+    а. Перейдите в командную строку на устройстве IoT Edge и выполните следующую команду:
     
       ```
       sudo systemctl restart iotedge
@@ -308,22 +308,24 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
     `/var/local/mediaservices/logs:/var/lib/azuremediaservices/logs`
 
     > [!NOTE] 
-    > Эта команда привязывает папки журналов между граничным устройством и контейнером. Чтобы сохранить журналы в другом расположении, используйте следующую команду, заменив **$LOG _LOCATION_ON_EDGE_DEVICE** на расположение, которое вы хотите использовать.`/var/$LOG_LOCATION_ON_EDGE_DEVICE:/var/lib/azuremediaservices/logs`
+    > Эта команда привязывает папки журналов между граничным устройством и контейнером. Чтобы сохранить журналы в другом расположении, используйте следующую команду, заменив **$LOG _LOCATION_ON_EDGE_DEVICE** на расположение, которое вы хотите использовать. `/var/$LOG_LOCATION_ON_EDGE_DEVICE:/var/lib/azuremediaservices/logs`
 
 1. Выберите **Обновить**.
 1. Выберите **Review + Create** (Просмотреть и создать). Сообщение об успешной проверке публикуется под зеленым баннером.
-1. Щелкните **Создать**.
+1. Нажмите кнопку **создания**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
-    a. В таблице **модули** выберите **лваедже**.  
+    а. В таблице **модули** выберите **лваедже**.  
     b. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
     c. В разделе **требуемый ключ**добавьте следующую пару "ключ-значение":  
     `"DebugLogsDirectory": "/var/lib/azuremediaservices/logs"`
 
     > [!NOTE] 
-    > Эта команда привязывает папки журналов между граничным устройством и контейнером. Чтобы сохранить журналы в другом расположении, используйте следующую команду, заменив **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** на расположение, которое вы хотите использовать.  
-    > `"DebugLogsDirectory": "/var/$DEBUG_LOG_LOCATION_ON_EDGE_DEVICE"`  
-
+    > Эта команда привязывает папки журналов между граничным устройством и контейнером. Если вы хотите получить журналы в другом расположении на устройстве, сделайте следующее:
+    > 1. Создайте привязку для расположения журнала отладки в разделе " **привязки** ", заменив **_LOG_LOCATION_ON_EDGE_DEVICE $DEBUG** и **$Debug _LOG_LOCATION** на нужное расположение: `/var/$DEBUG_LOG_LOCATION_ON_EDGE_DEVICE:/var/$DEBUG_LOG_LOCATION`
+    > 2. Используйте следующую команду, заменив **$DEBUG _LOG_LOCATION** на расположение, используемое на предыдущем шаге:  
+    > `"DebugLogsDirectory": "/var/$DEBUG_LOG_LOCATION"`  
+    
     d. Щелкните **Сохранить**.
 
 1. Воспроизведите проблему.
@@ -333,7 +335,7 @@ Unhandled exception. Microsoft.Azure.Devices.Common.Exceptions.UnauthorizedExcep
    > [!NOTE]
    > Эти файлы журналов не предназначены для самостоятельной диагностики. Они предназначены для анализа ваших проблем командой инженеров Azure.
 
-   a. В следующей команде обязательно замените **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** расположением журналов отладки на пограничном устройстве, которое вы настроили ранее.  
+   а. В следующей команде обязательно замените **$DEBUG _LOG_LOCATION_ON_EDGE_DEVICE** расположением журналов отладки на пограничном устройстве, которое вы настроили ранее.  
 
    ```
    sudo apt install zip unzip  

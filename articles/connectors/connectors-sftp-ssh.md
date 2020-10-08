@@ -8,12 +8,12 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 10/02/2020
 tags: connectors
-ms.openlocfilehash: b832edca79cbbff39b7d526a21b1fbe95bd7a2ad
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: cb851734dc8f71347168e7ac16ac0752845dda7b
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761130"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91823616"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью SSH и Azure Logic Apps
 
@@ -259,7 +259,7 @@ ms.locfileid: "91761130"
 
 1. Время ожидания соединения составляет 20 секунд. Убедитесь, что SFTP Server имеет хорошую производительность, а устройства интермидиате, такие как брандмауэр, не добавляют много ресурсов. 
 
-2. Если брандмауэр включен, убедитесь, что **IP-адреса управляемых соединителей** список разрешений. Эти IP-адреса можно найти в регионе приложения логики [**здесь**] (https://docs.microsoft.com/azure/logic-apps/logic-apps-limits-and-config#multi-tenant-azure---outbound-ip-addresses)
+2. Если брандмауэр включен, убедитесь, что **IP-адреса управляемых соединителей** добавлены в список утвержденных. Эти IP-адреса можно найти в регионе приложения логики [**здесь**] (https://docs.microsoft.com/azure/logic-apps/logic-apps-limits-and-config#multi-tenant-azure---outbound-ip-addresses)
 
 3. Если это не проблема, проверьте параметр повторных попыток, чтобы узнать, не превышает ли количество повторных попыток, чем может помочь значение по умолчанию 4.
 
@@ -279,4 +279,3 @@ ms.locfileid: "91761130"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
-

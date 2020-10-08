@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/29/2020
-ms.openlocfilehash: 09d1063f704c37eb31546be08765f2b5b6fb8632
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.openlocfilehash: a6ad1c068a41b4b865c148ebb7cdb509821609d4
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90060753"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91823415"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
-В HDInsight есть две встроенные установки Python в кластере Spark: Anaconda Python 2.7 и Python 3.5. Клиентам может потребоваться настроить среду Python, например установить внешние пакеты Python или другую версию Python. В этой статье мы покажем лучшую методику безопасного управления средами Python для кластеров Apache Spark в HDInsight.
+В HDInsight есть две встроенные установки Python в кластере Spark: Anaconda Python 2.7 и Python 3.5. Клиентам может потребоваться настроить среду Python, например установку внешних пакетов Python. В этой статье мы покажем лучшую методику безопасного управления средами Python для кластеров Apache Spark в HDInsight.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

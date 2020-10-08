@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: d398cfe063dbbb2bc87a3debf1669afa6a16b43e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: aee5cb077604e5fc95647eca0e6570ea3582a785
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90891998"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91822994"
 ---
 # <a name="power-bi-output-from-azure-stream-analytics"></a>Power BI выходные данные Azure Stream Analytics
 
@@ -43,6 +43,9 @@ ms.locfileid: "90891998"
 Azure Stream Analytics создает набор данных Power BI и схему таблицы для пользователя, если они еще не существуют. Во всех остальных случаях таблица обновляется с использованием новых значений. В настоящее время в наборе данных может существовать только одна таблица. 
 
 Power BI использует политику хранения "первым поступил — первым обслужен" (FIFO). Данные будут собираться в таблице до тех пор, пока не будет собрано 200 000 строк.
+
+> [!NOTE]
+> Не рекомендуется использовать несколько выходов для записи в один набор данных, так как это может вызвать несколько проблем. Каждый выход пытается создать набор данных Power BI независимо друг от друга, что может привести к созданию множества данных с одним и тем же именем. Кроме того, если выходные данные не имеют единообразных схем, набор данных изменяет схему при каждой записи, что приводит к слишком большому числу запросов на изменение схемы. Даже если эти проблемы избежать, несколько выходов будут менее производительны, чем единые объединенные выходные данные.
 
 ### <a name="convert-a-data-type-from-stream-analytics-to-power-bi"></a>Преобразование типа данных из Stream Analytics в Power BI
 
