@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f32a988ec0d75ca8d8eca04e69edd7226bf283b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7aa33bb062abf748031b27df46d42e8f13aabfc3
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81432090"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91819962"
 ---
 # <a name="azure-key-vault-throttling-guidance"></a>Руководство по регулированию хранилища ключей Azure
 
@@ -41,9 +41,9 @@ Key Vault изначально была разработана для хране
 
 | Имя хранилища | Регион хранилища | Тип объекта (секрет, ключ или сертификат) | Операции * | Тип ключа | Длина ключа или кривая | Ключ HSM?| Требуется устойчивый RPS для состояния | Требуется пиковое число RPS |
 |--|--|--|--|--|--|--|--|--|
-| https://mykeyvault.vault.azure.net/ | | Клавиши | Sign | EC | P-256 | нет | 200 | 1000 |
+| https://mykeyvault.vault.azure.net/ | | Клавиши | вход; | EC | P-256 | нет | 200 | 1000 |
 
-\*Полный список возможных значений см. в разделе [операции Azure Key Vault](/rest/api/keyvault/key-operations).
+\* Полный список возможных значений см. в разделе [операции Azure Key Vault](/rest/api/keyvault/key-operations).
 
 Если вы утвердите дополнительную емкость, обратите внимание на следующее:
 1. Изменения модели согласованности данных. После того как хранилище разрешается в соответствии с дополнительными возможностями пропускной способности, согласованность данных службы Key Vault гарантируется (это необходимо для удовлетворения большего количества RPS, так как служба хранилища Azure не может поддерживаться).  Если говорить кратко,
@@ -75,7 +75,7 @@ SecretClientOptions options = new SecretClientOptions()
             Mode = RetryMode.Exponential
          }
     };
-    var client = new SecretClient(new Uri(https://keyVaultName.vault.azure.net"), new DefaultAzureCredential(),options);
+    var client = new SecretClient(new Uri("https://keyVaultName.vault.azure.net"), new DefaultAzureCredential(),options);
                                  
     //Retrieve Secret
     secret = client.GetSecret(secretName);
@@ -96,7 +96,7 @@ SecretClientOptions options = new SecretClientOptions()
 
 На этом этапе вы не должны получать коды ответа HTTP 429.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 Более подробные сведения о регулировании для Microsoft Cloud см. в разделе [Шаблон регулирования](https://docs.microsoft.com/azure/architecture/patterns/throttling).
 

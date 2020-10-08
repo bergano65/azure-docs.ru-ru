@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: luleon, hirsin, paulgarn
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3f1829127d1eaf65be586ddff3fb2615cae72c5d
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: fcdb0a571a9d6b81e25d061c33d8a3a812da189f
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88116144"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91819315"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
@@ -86,7 +86,7 @@ ms.locfileid: "88116144"
 
 Ошибка на странице приложения может отображаться даже после успешного входа. Это происходит в случае, когда Azure AD выдает приложению маркер, но приложение не принимает ответ.
 
-Чтобы устранить ошибку, выполните следующие действия.
+Чтобы устранить эту ошибку, выполните следующие действия или просмотрите [короткое видео об использовании Azure AD для устранения неполадок единого входа SAML](https://www.youtube.com/watch?v=poQCJK0WPUk&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0&index=8).
 
 1. Если приложение находится в коллекции Azure AD, убедитесь, что выполнены все действия по интеграции приложения с Azure AD. Инструкции по интеграции для приложения вы найдете в [руководствах по интеграции приложений SaaS](../saas-apps/tutorial-list.md).
 1. Получите ответ SAML.

@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 06/20/2020
+ms.date: 10/07/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d3dd75d246c1f74253a9ce910e50b05402065464
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 06b80b5fe14a7a913d8ad8454c6568b04fe01c2f
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88998464"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91819787"
 ---
 # <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>Руководство по Индексирование из нескольких источников данных с помощью пакета SDK для .NET
 
@@ -61,19 +61,19 @@ ms.locfileid: "88998464"
 
 1. Выберите раздел **Обозреватель данных**, а затем — команду **Новая база данных**.
 
-   ![Создание базы данных](media/tutorial-multiple-data-sources/cosmos-newdb.png "Создание базы данных")
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-newdb.png" alt-text="Создание базы данных" border="false":::
 
 1. Введите имя **hotel-rooms-db**. Примите значения по умолчанию для остальных параметров.
 
-   ![Настройка базы данных](media/tutorial-multiple-data-sources/cosmos-dbname.png "Настройка базы данных")
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-dbname.png" alt-text="Создание базы данных" border="false":::
 
 1. Создайте новый контейнер. Используйте имеющуюся базу данных, которую вы только что создали. В качестве имени контейнера введите **hotels**, а имени ключа секции — **/HotelId**.
 
-   ![Добавление контейнера](media/tutorial-multiple-data-sources/cosmos-add-container.png "Добавление контейнера")
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-add-container.png" alt-text="Создание базы данных" border="false":::
 
 1. В разделе **hotels** выберите **Элементы**, а затем на панели команд щелкните **Upload Item** (Отправить элемент). Перейдите к файлу **cosmosdb/HotelsDataSubset_CosmosDb.json** в папке проекта и выберите его.
 
-   ![Отправка в коллекцию Azure Cosmos DB](media/tutorial-multiple-data-sources/cosmos-upload.png "Отправка в коллекцию Cosmos DB")
+   :::image type="content" source="media/tutorial-multiple-data-sources/cosmos-upload.png" alt-text="Создание базы данных" border="false":::
 
 1. С помощью кнопки "Обновить" освежите представление элементов в коллекции hotels. Вы увидите в списке семь новых документов базы данных.
 
@@ -83,11 +83,11 @@ ms.locfileid: "88998464"
 
 1. [Создайте контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md) с именем **hotel-rooms**, в котором будут храниться JSON-файлы с примерами данных о номерах отелей. Можно задать любое из допустимых значений уровня общего доступа.
 
-   ![Создание контейнера больших двоичных объектов](media/tutorial-multiple-data-sources/blob-add-container.png "Создание контейнера BLOB-объектов")
+   :::image type="content" source="media/tutorial-multiple-data-sources/blob-add-container.png" alt-text="Создание базы данных" border="false":::
 
 1. Откройте контейнер после создания и на панели команд выберите **Загрузить**. Перейдите к папке, содержащей примеры файлов. Выберите их, а затем щелкните **Загрузить**.
 
-   ![Передача файлов](media/tutorial-multiple-data-sources/blob-upload.png "Upload files")
+   :::image type="content" source="media/tutorial-multiple-data-sources/blob-upload.png" alt-text="Создание базы данных" border="false":::
 
 Когда отправка файлов завершится, они появятся в списке внутри контейнера данных.
 
@@ -105,7 +105,7 @@ ms.locfileid: "88998464"
 
    Получите также ключ запроса. Мы рекомендуем создавать запросы с доступом только для чтения.
 
-   ![Получение имени службы, ключей запросов и администратора](media/search-get-started-nodejs/service-name-and-keys.png)
+   :::image type="content" source="media/search-get-started-nodejs/service-name-and-keys.png" alt-text="Создание базы данных" border="false":::
 
 Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -115,7 +115,7 @@ ms.locfileid: "88998464"
 
 1. На вкладке **Просмотреть** найдите и установите **Microsoft.Azure.Search** (версия 9.0.1 или более поздняя). Для завершения установки нужно пройти серию дополнительных диалоговых окон.
 
-    ![Добавление библиотек Azure с помощью NuGet](./media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Создание базы данных" border="false":::
 
 1. Найдите пакет NuGet **Microsoft.Extensions.Configuration.Json** и установите его.
 
@@ -352,7 +352,7 @@ private static async Task CreateAndRunBlobIndexer(string indexName, SearchServic
 
 На портале Azure откройте страницу **Обзор** для службы поиска и найдите в списке **Индексы** созданный индекс **hotel-rooms-sample**.
 
-  ![Список индексов службы Когнитивный поиск Azure](media/tutorial-multiple-data-sources/index-list.png "Список индексов службы Когнитивный поиск Azure")
+  :::image type="content" source="media/tutorial-multiple-data-sources/index-list.png" alt-text="Создание базы данных" border="false":::
 
 Щелкните индекс hotel-rooms-sample в этом списке. Вы увидите интерфейс обозревателя поиска для этого индекса. Введите запрос для поиска термина, например Luxury. Вы увидите результат поиска с хотя бы одним документом, в котором отображается список объектов номеров из массива rooms.
 

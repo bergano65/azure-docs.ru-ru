@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 159a14b30113a251c6ac61c4c04a2a3c4d69d3e5
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 132711b4a3fc584261cd577b4b8f1d4fb13da09d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909413"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91819389"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -41,6 +41,9 @@ ms.locfileid: "87909413"
 
 - **Аутентификация через Azure Active Directory Application Proxy**. Возможность аутентификации пользователей B2B в локальном приложении. Чтобы предоставить эту возможность, локальное приложение следует опубликовать через AD Application Proxy. Дополнительные сведения см. в статье [Начало работы с прокси приложения и установка соединителя](../manage-apps/application-proxy-enable.md) и [Публикация приложений с помощью Azure Active Directory Application Proxy](../manage-apps/application-proxy-publish-azure-portal.md).
 - **Авторизация через объект пользователя B2B в локальном каталоге**. Приложение должно иметь возможность проверять права пользователей и правильно предоставлять им доступ к ресурсам. Встроенная проверка подлинности Windows и ограниченное делегирование Kerberos требуют наличия объекта пользователя в локальном каталоге Active Directory на Windows Server. Как описано в разделе [Принцип работы единого входа с применением KCD](../manage-apps/application-proxy-configure-single-sign-on-with-kcd.md#how-single-sign-on-with-kcd-works), прокси приложения использует этот объект пользователя для олицетворения пользователя и получения маркера Kerberos для приложения. 
+
+   > [!NOTE]
+   > При настройке AD Application Proxy Azure убедитесь, что для **удостоверения делегированного входа** задано **имя участника-пользователя** (по умолчанию) для единого входа IWA.
 
    При работе с пользователями B2B вы можете использовать два метода создания объектов для гостевых пользователей, которым нужна авторизации в локальном каталоге.
 
@@ -82,7 +85,7 @@ ms.locfileid: "87909413"
 
 Убедитесь, что вы правильно настроили клиентские лицензии (CAL) для внешних гостевых пользователей, которые обращаются к локальным приложениям. Дополнительные сведения см. в разделе "Лицензии External Connector" статьи [Клиентские лицензии и лицензии на управление](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx). Конкретные требования к лицензированию вы можете обсудить с представителем Microsoft или локальным торговым посредником.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 
