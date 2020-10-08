@@ -20,10 +20,14 @@
       items:
         - name: Получение номера телефона
           href: quickstarts/telephony-sms/get-phone-number.md
+        - name: Добавление в приложение функции телефонного вызова
+          href: quickstarts/voice-video-calling/pstn-call.md
         - name: Отправка SMS-сообщения
           href: quickstarts/telephony-sms/send.md
         - name: Обработка событий SMS
           href: quickstarts/telephony-sms/handle-sms-events.md
+        - name: Отправка SMS в Azure Logic Apps
+          href: quickstarts/telephony-sms/logic-app.md
     - name: Голосовая и видеосвязь
       items:
         - name: Добавление в приложение функции голосового звонка

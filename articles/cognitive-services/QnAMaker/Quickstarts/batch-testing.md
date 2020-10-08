@@ -1,14 +1,16 @@
 ---
 title: Краткое руководство. Тестирование базы знаний с использованием пакетных вопросов
 description: Используйте средство пакетного тестирования QnA Maker для тестирования баз знаний в ресурсе QnA Maker с использованием ожидаемых ответов, оценок достоверности и многоэтапных запросов.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 05/26/2020
-ms.openlocfilehash: bcee98678212a3bc233c36a831f6bcde7e6ae550
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: ac406761abf922ff5f0d86eacd3e419c374ce096
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88531075"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776771"
 ---
 # <a name="quickstart-test-knowledge-base-with-batch-questions-and-expected-answers"></a>Краткое руководство. Тестирование базы знаний с использованием пакетных вопросов и ожидаемых ответов
 

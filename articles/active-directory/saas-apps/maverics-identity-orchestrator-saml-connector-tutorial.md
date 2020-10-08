@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: jeedes
-ms.openlocfilehash: 116ee7c8db3070a667c21a052bec739fd397a2dd
-ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
+ms.openlocfilehash: fbab2bbaa47090ff4bd7fb99495912bd1f645b61
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88825568"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758147"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-with-maverics-identity-orchestrator-saml-connector"></a>Руководство по интеграции единого входа Azure AD с Maverics Identity Orchestrator SAML Connector
 
@@ -36,7 +36,7 @@ Strata предоставляет программное обеспечение,
 4. Настройте Azure Key Vault и Maverics для использования его в качестве своего поставщика управления секретами.
 5. Продемонстрируйте миграцию пользователей и абстракцию сеанса с помощью Maverics для предоставления доступа к локальному веб-приложению Java.
 
-Дополнительные инструкции по установке и настройке см. на [веб-сайте Strata](https://strata.io/docs).
+Дополнительные инструкции по установке и настройке см. на [веб-сайте Strata](https://www.strata.io).
 
 ## <a name="prerequisites"></a>Обязательные условия
 
@@ -45,7 +45,7 @@ Strata предоставляет программное обеспечение,
 
 ## <a name="install-maverics-identity-orchestrator"></a>Установка Maverics Identity Orchestrator
 
-Чтобы начать установку Maverics Identity Orchestrator, ознакомьтесь с [инструкциями по установке](https://strata.io/docs).
+Чтобы начать установку Maverics Identity Orchestrator, ознакомьтесь с [инструкциями по установке](https://www.strata.io).
 
 ### <a name="system-requirements"></a>Требования к системе
 * Поддерживаемые операционные системы

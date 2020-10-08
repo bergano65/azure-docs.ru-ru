@@ -130,3 +130,7 @@
       href: /rest/api/consumption/usagedetails
     - name: "Управление затратами\_— REST API сведений о резервировании"
       href: /rest/api/consumption/reservationsdetails
+- name: Ресурсы
+  items:
+    - name: Модуль Learn об экономии средств с помощью зарезервированных экземпляров
+      href: /learn/modules/save-money-with-azure-reserved-instances

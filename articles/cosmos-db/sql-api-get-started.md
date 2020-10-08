@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: kirankk
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 514fe30da9c0e232c168992c2aabbb484644aa99
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 912b4966312d8925f70deeed99042d2701641f49
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89015311"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91801517"
 ---
 # <a name="tutorial-build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Руководство по Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
@@ -70,7 +70,7 @@ ms.locfileid: "89015311"
 1. В **обозревателе решений** щелкните правой кнопкой мыши новое консольное приложение (оно находится в решении Visual Studio). Затем щелкните **Управление пакетами NuGet**.
 1. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите *Microsoft.Azure.Cosmos*. Выберите **Microsoft.Azure.Cosmos** и щелкните **Установить**.
 
-   :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-manage-nuget-2019.png" alt-text="Установка NuGet для клиентского пакета SDK для Azure Cosmos DB":::
+   :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-manage-nuget-2019.png" alt-text="Настройка проекта":::
 
    Идентификатором пакета для клиентской библиотеки API SQL Azure Cosmos DB является [Microsoft Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
 
@@ -121,7 +121,7 @@ ms.locfileid: "89015311"
 
 1. Откройте [портал Azure](https://portal.azure.com). Найдите учетную записи Azure Cosmos DB и выберите элемент **Ключи**.
 
-   :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-portal-keys.png" alt-text="Получение ключей Azure Cosmos DB на портале Azure":::
+   :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-portal-keys.png" alt-text="Настройка проекта":::
 
 1. В файле *Program.cs* замените `<your endpoint URL>` значением **URI**. Замените `<your primary key>` фактическим значением **первичного ключа**.
 
@@ -278,7 +278,7 @@ ms.locfileid: "89015311"
 >
 >
 
-Контейнер можно создать с помощью метода [**CreateContainerIfNotExistsAsync**](/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync?view=azure-dotnet#Microsoft_Azure_Cosmos_Database_CreateContainerIfNotExistsAsync_Microsoft_Azure_Cosmos_ContainerProperties_System_Nullable_System_Int32__Microsoft_Azure_Cosmos_RequestOptions_System_Threading_CancellationToken_) или [**CreateContainerAsync**](/dotnet/api/microsoft.azure.cosmos.database.createcontainerasync?view=azure-dotnet#Microsoft_Azure_Cosmos_Database_CreateContainerAsync_Microsoft_Azure_Cosmos_ContainerProperties_System_Nullable_System_Int32__Microsoft_Azure_Cosmos_RequestOptions_System_Threading_CancellationToken_) из класса `CosmosDatabase`. Контейнер состоит из элементов (которые в случае API SQL являются документами JSON) и связанной логики приложения JavaScript на стороне сервера, например хранимых процедур, определяемых пользователем функций и триггеров.
+Контейнер можно создать с помощью метода [**CreateContainerIfNotExistsAsync**](/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Cosmos_Database_CreateContainerIfNotExistsAsync_Microsoft_Azure_Cosmos_ContainerProperties_System_Nullable_System_Int32__Microsoft_Azure_Cosmos_RequestOptions_System_Threading_CancellationToken_) или [**CreateContainerAsync**](/dotnet/api/microsoft.azure.cosmos.database.createcontainerasync?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Cosmos_Database_CreateContainerAsync_Microsoft_Azure_Cosmos_ContainerProperties_System_Nullable_System_Int32__Microsoft_Azure_Cosmos_RequestOptions_System_Threading_CancellationToken_) из класса `CosmosDatabase`. Контейнер состоит из элементов (которые в случае API SQL являются документами JSON) и связанной логики приложения JavaScript на стороне сервера, например хранимых процедур, определяемых пользователем функций и триггеров.
 
 1. Скопируйте и вставьте метод `CreateContainerAsync` ниже метода `CreateDatabaseAsync`. Функция `CreateContainerAsync` позволяет создать контейнер (если он не был создан ранее) с идентификатором `FamilyContainer`. Для идентификатора используется значение из поля `containerId` с разделением по свойству `LastName`.
 
@@ -304,13 +304,13 @@ ms.locfileid: "89015311"
 
 ## <a name="step-6-add-items-to-the-container"></a><a id="CreateDoc"></a>Шаг 6. Добавление элементов в контейнер
 
-Элемент можно создать с помощью метода [**CreateItemAsync**](/dotnet/api/microsoft.azure.cosmos.container.createitemasync?view=azure-dotnet#Microsoft_Azure_Cosmos_Container_CreateItemAsync__1___0_System_Nullable_Microsoft_Azure_Cosmos_PartitionKey__Microsoft_Azure_Cosmos_ItemRequestOptions_System_Threading_CancellationToken_) из класса `CosmosContainer`. При использовании API SQL все элементы проецируются как документы с произвольным содержимым JSON, которое определяет пользователь. Теперь можно вставить элемент в ваш контейнер Azure Cosmos.
+Элемент можно создать с помощью метода [**CreateItemAsync**](/dotnet/api/microsoft.azure.cosmos.container.createitemasync?view=azure-dotnet&preserve-view=true#Microsoft_Azure_Cosmos_Container_CreateItemAsync__1___0_System_Nullable_Microsoft_Azure_Cosmos_PartitionKey__Microsoft_Azure_Cosmos_ItemRequestOptions_System_Threading_CancellationToken_) из класса `CosmosContainer`. При использовании API SQL все элементы проецируются как документы с произвольным содержимым JSON, которое определяет пользователь. Теперь можно вставить элемент в ваш контейнер Azure Cosmos.
 
 Сначала создайте класс `Family`, который представляет объекты, хранящиеся в Azure Cosmos DB для нашего примера. Также создайте подклассы `Parent`, `Child`, `Pet` и `Address`, которые вызываются из `Family`. Элемент должен иметь свойство `Id`, сериализованное как `id` в файле JSON.
 
 1. Нажмите сочетание клавиш Ctrl+Shift+A, чтобы открыть окно **Добавить новый элемент**. Добавьте в ваш проект новый класс `Family.cs`.
 
-    :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-add-family-class-2019.png" alt-text="Снимок экрана: добавление в проект нового класса Family.cs":::
+    :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-add-family-class-2019.png" alt-text="Настройка проекта":::
 
 1. Скопируйте и вставьте в `Family.cs` элементы `Family`, `Parent`, `Child`, `Pet` и класс `Address`.
 

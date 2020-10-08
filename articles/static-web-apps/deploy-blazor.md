@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: cshoe
-ms.openlocfilehash: 2a8e0ec113b4d008f759c7d199c4dab823576e16
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 60e62228e33d2d86bb407e45802f5c0621a94049
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90929744"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761096"
 ---
 # <a name="tutorial-building-a-static-web-app-with-blazor-in-azure-static-web-apps"></a>Руководство по созданию статического веб-приложения с помощью Blazor в службе "Статические веб-приложений Azure"
 
@@ -33,7 +33,7 @@ ms.locfileid: "90929744"
 
 Описанное в этом руководстве приложение состоит из трех разных проектов Visual Studio.
 
-- **Api**. Приложение Функций Azure на языке C#, которое реализует конечную точку API для предоставления статическому приложению сведений о погоде. [`WeatherForecastFunction`](https://github.com/staticwebev/blazor-starter/blob/main/Api/WeatherForecastFunction.cs) возвращает массив объектов `WeatherForecast`.
+- **Api**. Приложение Функций Azure на языке C#, которое реализует конечную точку API для предоставления статическому приложению сведений о погоде. [`WeatherForecastFunction`](https://github.com/ssdeepak/blazor/blob/main/Api/WeatherForecastFunction.cs) возвращает массив объектов `WeatherForecast`.
 
 - **Клиент** — интерфейсная часть проекта веб-сборки Blazor. Здесь реализован [резервный маршрут](#fallback-route), чтобы файл _index.html_ обрабатывал все маршруты без исключения.
 
@@ -79,7 +79,7 @@ ms.locfileid: "90929744"
 
 В разделе _Основные сведения_ настройте новое приложение и свяжите его с репозиторием GitHub.
 
-:::image type="content" source="media/deploy-blazor/basics.png" alt-text="Вкладка "Основные сведения"":::
+:::image type="content" source="media/deploy-blazor/basics.png" alt-text="Готовое приложение Blazor":::
 
 1. Выберите _подписку Azure_.
 1. Выберите или создайте _группу ресурсов_.
@@ -91,7 +91,7 @@ ms.locfileid: "90929744"
 
 После входа с помощью GitHub введите сведения о репозитории.
 
-:::image type="content" source="media/deploy-blazor/repository-details.png" alt-text="Сведения о репозитории":::
+:::image type="content" source="media/deploy-blazor/repository-details.png" alt-text="Готовое приложение Blazor":::
 
 1. Выберите предпочитаемую _организацию_.
 1. Выберите **my-first-static-blazor-app** из раскрывающегося списка _Репозиторий_.
@@ -105,15 +105,15 @@ ms.locfileid: "90929744"
 
 1. Выберите **Review + create** (Просмотреть и создать).
 
-    :::image type="content" source="media/deploy-blazor/review-create.png" alt-text="Кнопка "Просмотр и создание"":::
+    :::image type="content" source="media/deploy-blazor/review-create.png" alt-text="Готовое приложение Blazor":::
 
 1. Нажмите кнопку **Создать**.
 
-    :::image type="content" source="media/deploy-blazor/create-button.png" alt-text="Кнопка "Создать"":::
+    :::image type="content" source="media/deploy-blazor/create-button.png" alt-text="Готовое приложение Blazor":::
 
 1. Выберите **Перейти к ресурсу**.
 
-    :::image type="content" source="media/deploy-blazor/resource-button.png" alt-text="Кнопка "Перейти к ресурсу"":::
+    :::image type="content" source="media/deploy-blazor/resource-button.png" alt-text="Готовое приложение Blazor":::
 
 ## <a name="view-the-website"></a>Просмотр веб-сайта
 
@@ -123,7 +123,7 @@ ms.locfileid: "90929744"
 
 В окне обзора службы "Статические веб-приложения" отображается ряд ссылок, которые помогут вам взаимодействовать с веб-приложением.
 
-:::image type="content" source="./media/deploy-blazor/overview-window.png" alt-text="Окно обзора":::
+:::image type="content" source="./media/deploy-blazor/overview-window.png" alt-text="Готовое приложение Blazor":::
 
 1. Если щелкнуть баннер с текстом _Click here to check the status of your GitHub Actions runs (Щелкните здесь, чтобы проверить состояние выполняемых действий GitHub)_ , отобразятся действия GitHub, выполняемым для вашего репозитория. Убедившись, что задание развертывания завершено, можно переходить к веб-сайту по созданному URL-адресу.
 

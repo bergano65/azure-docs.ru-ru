@@ -384,6 +384,9 @@
             - name: Перенос приложений из ADAL в MSAL
               href: msal-migration.md
               displayName: migration
+    - name: Библиотека Microsoft Identity Web
+      href: microsoft-identity-web.md
+      displayName: 'auth, library, .NET Core'
     - name: Протоколы проверки подлинности
       displayName: Auth protocol
       items:
@@ -469,7 +472,7 @@
       items:
         - name: Обзор
           href: authentication-national-cloud.md
-        - name: Проверка подлинности
+        - name: Аутентификация
           href: msal-national-cloud.md
     - name: Автоматическая подготовка пользователей (SCIM)
       items:

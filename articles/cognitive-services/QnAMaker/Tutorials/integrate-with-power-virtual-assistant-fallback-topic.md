@@ -1,14 +1,16 @@
 ---
 title: Руководство по интеграции с Power Virtual Agents (QnA Maker)
 description: В этом руководстве рассматривается улучшение качества базы знаний с помощью активного обучения. Просматривайте, подтверждайте, отклоняйте и добавляйте вопросы без удаления или изменения существующих.
+ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 06/08/2020
-ms.openlocfilehash: 6d00833a1331ebca9b070d90f32ee30c56bd5f96
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 42b50fcf0df27ddbc3e587a7d8e038e4979935ae
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319220"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91777410"
 ---
 # <a name="tutorial-add-your-knowledge-base-to-power-virtual-agents"></a>Руководство по добавлению базы знаний в Power Virtual Agents
 Создайте бот [Power Virtual Agents](https://powervirtualagents.microsoft.com/) и дополните его для предоставления ответов из базы знаний.

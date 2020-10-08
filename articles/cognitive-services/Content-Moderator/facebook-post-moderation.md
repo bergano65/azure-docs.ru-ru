@@ -8,18 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 05/27/2020
+ms.date: 10/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 9d8801037be55a262268afcd6e8f5751d158c76e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 478f7b7671a71d0d1f1f56c5d1d9889db81f7d37
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548520"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760203"
 ---
 # <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство по Модерация записей и команд Facebook с помощью Azure Content Moderator
 
 Из этого руководства вы узнаете, как использовать Azure Content Moderator для модерации комментариев и записей на странице Facebook. Facebook будет отправлять содержимое, опубликованное посетителями, в службу Content Moderator. Затем рабочие процессы Content Moderator будут публиковать это содержимое или создавать проверки в инструменте проверки. Это будет зависеть от пороговых значений и оценки содержимого. Действующий пример этого сценария см. в демо-ролике [Keeping “wolves” out of your platform](https://channel9.msdn.com/Events/Build/2017/T6033) (Не подпускайте "волков" к своей платформе).
+
+> [!IMPORTANT]
+> В 2018 году компания Facebook внедрила более строгую политику предварительного анализа приложений Facebook. Вы не сможете выполнить инструкции в этом учебнике, если ваше приложение не было проверено и одобрено командой проверяющих специалистов Facebook.
 
 В этом учебнике описаны следующие процедуры.
 
@@ -33,9 +36,6 @@ ms.locfileid: "88548520"
 Каждый из компонентов данного сценария отображен на этой схеме.
 
 ![Схема получения информации Content Moderator из Facebook с помощью FBListener и ее отправки с помощью CMListener](images/tutorial-facebook-moderation.png)
-
-> [!IMPORTANT]
-> В 2018 году компания Facebook внедрила более строгую политику предварительного анализа приложений Facebook. Вы не сможете выполнить инструкции в этом учебнике, если ваше приложение не было проверено и одобрено командой проверяющих специалистов Facebook.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 9daa09209818b9e01738630911a1bb926e3c257d
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 913bc4373785d9341064e505ddce84fe43f727b1
+ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079949"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91801602"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Руководство по Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -47,7 +47,7 @@ ms.locfileid: "88079949"
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
-* [Комплект разработчика Java (JDK 7 +)](/java/azure/jdk/?view=azure-java-stable).
+* [Комплект разработчика Java (JDK 7 +)](/java/azure/jdk/?view=azure-java-stable&preserve-view=true).
 * [Интегрированная среда разработки Eclipse для разработчиков Java EE.](https://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
 * [Открытый веб-сайт Azure со средой выполнения Java (например, Tomcat или Jetty).](../app-service/quickstart-java.md)
 
@@ -67,7 +67,7 @@ ms.locfileid: "88079949"
 
 1. Сначала необходимо создать проект Java. В меню Eclipse выберите **File** (Файл), щелкните **New** (Создать), а затем выберите **Dynamic Web Project** (Динамический веб-проект). Если элемента **Dynamic Web Project** (Динамический веб-проект) нет в списке доступных проектов, откройте меню **File** (Файл), щелкните пункт **New** (Создать), а затем выберите **Project** (Проект), разверните список **Web** (Интернет), выберите **Dynamic Web Project** (Динамический веб-проект) и нажмите кнопку **Next** (Далее).
    
-    :::image type="content" source="./media/sql-api-java-application/image10.png" alt-text="Разработка приложений JSP Java":::
+    :::image type="content" source="./media/sql-api-java-application/image10.png" alt-text="Приложение My ToDo List на Java":::
 
 1. Введите имя проекта в **соответствующем** поле и в раскрывающемся меню **Target Runtime** (Целевая среда выполнения). Если необходимо, выберите значение (например, Apache Tomcat v7.0), а затем нажмите кнопку **Finish** (Готово). Выбор целевой среды выполнения позволит вам запустить локальный проект через Eclipse.
 
@@ -75,7 +75,7 @@ ms.locfileid: "88079949"
 
 1. В диалоговом окне **New JSP File** (Новый JSP-файл) укажите для файла имя **index.jsp**. Сохраните родительскую папку с именем **WebContent**, как показано на следующей иллюстрации, и нажмите кнопку **Next** (Далее).
    
-    :::image type="content" source="./media/sql-api-java-application/image11.png" alt-text="Создание файла JSP — учебник по разработке веб-приложений Java":::
+    :::image type="content" source="./media/sql-api-java-application/image11.png" alt-text="Приложение My ToDo List на Java":::
 
 1. В диалоговом окне **Select JSP Template** (Выбор шаблона JSP) в целях обучения выберите **New JSP File (html)** (Новый JSP-файл (html)) и нажмите кнопку **Finish** (Готово).
 
@@ -91,7 +91,7 @@ ms.locfileid: "88079949"
 
 1. Если вы задали целевую среду выполнения в рамках шага 2, можете щелкнуть **Project** (Проект), а затем **Run** (Запуск) для локального запуска приложения JSP:
 
-   :::image type="content" source="./media/sql-api-java-application/image12.png" alt-text="Hello World — руководство по разработке приложений Java":::
+   :::image type="content" source="./media/sql-api-java-application/image12.png" alt-text="Приложение My ToDo List на Java":::
 
 ## <a name="install-the-sql-java-sdk"></a><a id="InstallSDK"></a>Установка пакета Java SDK для SQL
 

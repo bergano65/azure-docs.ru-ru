@@ -328,7 +328,7 @@
                   href: authorize-active-directory-powershell.md
                 - name: Azure CLI
                   href: ../common/authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Управление правами доступа с помощью RBAC
+            - name: Управление правами доступа с помощью Azure RBAC
               items:
                 - name: Портал
                   href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -462,6 +462,8 @@
               href: storage-blob-static-website-how-to.md
             - name: Интеграция с Azure CDN
               href: static-website-content-delivery-network.md
+            - name: Использование GitHub Actions для развертывания статического сайта в службе хранилища Azure
+              href: storage-blobs-static-site-github-actions.md
         - name: Использование личного домена
           href: storage-custom-domain-name.md
         - name: Маршрутизация событий в пользовательскую конечную точку
