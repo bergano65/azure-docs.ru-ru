@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ae663b2c7a88e116315464c11b8d162135f0aff
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 112c1c6a0fbbd7e0011890d1ce92c6e21e168137
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91450386"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817974"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Назначение ролей с заданной областью административной единице
 
@@ -38,8 +38,10 @@ ms.locfileid: "91450386"
 администратора паролей.  |  Может сбрасывать пароли для администраторов без прав администратора и паролей только в назначенной административной единице.
 администратора пользователей;  |  Может управлять всеми аспектами пользователей и групп, включая сброс паролей для ограниченных администраторов в пределах назначенной административной единицы.
 
-## <a name="security-principals-that-can-be-assigned-to-an-au-scoped-role"></a>Субъекты безопасности, которые могут быть назначены роли в области AU
-Роли с областью действия AU можно назначить следующие субъекты безопасности:
+## <a name="security-principals-that-can-be-assigned-to-a-scoped-role"></a>Субъекты безопасности, которые могут быть назначены роли с областью действия
+
+Следующие субъекты безопасности могут быть назначены роли с областью административной единицы.
+
 * Пользователи
 * Назначаемые облачные группы ролей (Предварительная версия)
 * Имя субъекта-службы (SPN)

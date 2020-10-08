@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dcbd58c5d8dc12898fe343dbba6c3a6f8cd61b4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2dddad5692ab2eebb6ef9b427c091be449791d7c
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91258718"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91818354"
 ---
-# <a name="conditional-access-conditions"></a>Условный доступ. Условия
+# <a name="conditional-access-conditions"></a>Условный доступ: условия
 
 В рамках политики условного доступа администратор может использовать сигналы из таких условий, как риск, платформа устройства или расположение, чтобы улучшить свои решения по политике. 
 
@@ -49,6 +49,9 @@ ms.locfileid: "91258718"
 - MacOS
 
 Если вы блокируете устаревшую проверку подлинности с помощью условия **другие клиенты** , можно также задать условие платформы устройства.
+
+> [!IMPORTANT]
+> Корпорация Майкрософт рекомендует использовать политику условного доступа для неподдерживаемых платформ устройств. Например, если вы хотите заблокировать доступ к корпоративным ресурсам с Linux или других неподдерживаемых клиентов, следует настроить политику с условием платформы устройства, которое включает любое устройство и исключить поддерживаемые платформы устройств, а также предоставить набор управления для блокировки доступа.
 
 ## <a name="locations"></a>Расположения
 
@@ -113,7 +116,7 @@ ms.locfileid: "91258718"
 | Windows Server 2019 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows Server 2016 | Internet Explorer |
 | Windows Server 2012 R2 | Internet Explorer |
-| Windows Server 2008 R2 | Internet Explorer |
+| Windows Server 2008 R2 | Internet Explorer |
 | MacOS | Chrome, Safari |
 
 > [!NOTE]

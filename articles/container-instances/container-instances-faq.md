@@ -1,15 +1,16 @@
 ---
 title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой "экземпляры контейнеров Azure"
-author: dkkapur
+author: macolso
+ms.author: macolso
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: 95190496df4037a973207e14292911225094782e
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 1cedfb7464fd97249c5cd3fae73c9290365da6cd
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421286"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91818482"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
 
@@ -39,7 +40,7 @@ ms.locfileid: "87421286"
 #### <a name="windows-server-2016-base-images"></a>Базовые образы Windows Server 2016
 
 * [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `sac2016` `10.0.14393.3506` или более поздняя версия
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016` `10.0.14393.3506` или более поздней версии
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`  `10.0.14393.3506` или более поздней версии
 
 > [!NOTE]
 > Образы Windows на основе полугодовых каналов выпуска 1709 или 1803 не поддерживаются.
@@ -52,7 +53,7 @@ ms.locfileid: "87421286"
 
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень образа .NET или .NET Core следует использовать в моем контейнере? 
 
-Используйте наименьшее изображение, удовлетворяющее вашим требованиям. Для Linux можно использовать образ *среды выполнения — Alpine* .NET Core, который поддерживался с момента выпуска .net Core 2,1. Для Windows, если используется полная .NET Framework, необходимо использовать образ Windows Server Core (образ только для среды выполнения, например *4.7.2-windowsservercore-ltsc2016*). Образы только для среды выполнения меньше, но не поддерживают рабочие нагрузки, для которых требуется пакет SDK для .NET.
+Используйте наименьшее изображение, удовлетворяющее вашим требованиям. Для Linux можно использовать образ *среды выполнения — Alpine* .NET Core, который поддерживался с момента выпуска .net Core 2,1. Для Windows, если используется полная .NET Framework, необходимо использовать образ Windows Server Core (образ только для среды выполнения, например  *4.7.2-windowsservercore-ltsc2016*). Образы только для среды выполнения меньше, но не поддерживают рабочие нагрузки, для которых требуется пакет SDK для .NET.
 
 ## <a name="availability-and-quotas"></a>Доступность и квоты
 
