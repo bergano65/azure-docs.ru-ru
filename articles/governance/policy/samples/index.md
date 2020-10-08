@@ -3,12 +3,12 @@ title: Индекс примеров политик
 description: Индекс встроенных определений Политики Azure. Теги категорий, соответствие нормативным требованиям, Key Vault, Kubernetes, гостевая конфигурация и многое другое.
 ms.date: 07/20/2020
 ms.topic: sample
-ms.openlocfilehash: b4f76c42eb23ce368875dfb91f2f7b9e7ee1bd50
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: 9fec7c7b0db554d424f8faee7e4e10e6121f1caa
+ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89481568"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91812528"
 ---
 # <a name="azure-policy-samples"></a>Примеры для Политики Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "89481568"
 - [Fields](./pattern-fields.md)
 - [Параметры](./pattern-parameters.md)
 - [Сведения о действиях](./pattern-effect-details.md)
-- [Использование тегов](./pattern-effect-details.md)
+- [Использование тегов](./pattern-tags.md)
 - [Оператор value](./pattern-value-operator.md)
 - [Оператор count](./pattern-count-operator.md)
 - [Группирование определений политик в инициативу](./pattern-group-with-initiative.md)

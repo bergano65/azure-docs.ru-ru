@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 18463c4350895401c9bf73dc249ce93218a44f7c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 68ff753a0c6e21fac512792670a24bede8980e99
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91264649"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91816480"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -83,6 +83,32 @@ ms.locfileid: "91264649"
   ...
 ]
 ```
+
+### <a name="automate-app-settings-with-the-azure-cli"></a>Автоматизируйте параметры приложения с помощью Azure CLI
+
+Для создания и управления параметрами из командной строки можно использовать Azure CLI.
+
+- Присвойте значение параметру с помощью команды [AZ webapp config app settings Set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set):
+
+    ```azurecli-interactive
+    az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings <setting-name>="<value>"
+    ```
+        
+    Замените на `<setting-name>` имя параметра и `<value>` присвойте ему значение. Эта команда создает параметр, если он еще не существует.
+    
+- Отобразите все параметры и их значения с помощью команды [AZ webapp config appSettings List](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_list):
+    
+    ```azurecli-interactive
+    az webapp config appsettings list --name <app-name> --resource-group <resource-group-name>
+    ```
+    
+- Удалите один или несколько параметров с помощью команды [AZ webapp config app settings Delete](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_delete):
+
+    ```azurecli-interactive
+    az webapp config appsettings delete --name <app-name> --resource-group <resource-group-name> --setting-names {<names>}
+    ```
+    
+    Замените на `<names>` список имен параметров, разделенных пробелами.
 
 ## <a name="configure-connection-strings"></a>Настройка строк подключения
 
@@ -164,7 +190,12 @@ ms.locfileid: "91264649"
 
 Здесь можно настроить некоторые общие параметры для приложения. Для некоторых параметров необходимо выполнить [масштабирование до более высоких](manage-scale-up.md)ценовых категорий.
 
-- **Параметры стека**: программный стек для запуска приложения, включая версии языка и пакета SDK. Для приложений Linux и настраиваемых приложений-контейнеров можно также задать необязательную команду запуска или файл.
+- **Параметры стека**: программный стек для запуска приложения, включая версии языка и пакета SDK.
+
+    Для приложений Linux и настраиваемых приложений-контейнеров можно выбрать версию языковой среды выполнения и задать необязательную **команду запуска** или файл команд запуска.
+
+    ![Общие параметры для контейнеров Linux](./media/configure-common/open-general-linux.png)
+
 - **Параметры платформы**: позволяет настраивать параметры для платформы размещения, включая:
     - **Разрядность: 32**-разрядная или 64-разрядная.
     - **Протокол WebSocket**: например, для [ASP.NET SignalR] или [Socket.IO](https://socket.io/).

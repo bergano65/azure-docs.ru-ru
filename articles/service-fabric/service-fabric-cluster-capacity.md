@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
 ms.custom: sfrev
-ms.openlocfilehash: 28a01bbc54f752ffc1f25b57dcf2eca566aa635a
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.openlocfilehash: d2b303c22eea9fb46a68bb3c8e36991d47d61554
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88718107"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817731"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Рекомендации по планированию загрузки кластера Service Fabric
 
@@ -34,7 +34,7 @@ ms.locfileid: "88718107"
 
 **Типы узлов, не являющихся первичными** , можно использовать для определения ролей приложения (например, *интерфейсных* и *внутренних* служб), а также для физической изоляции служб в кластере. Кластеры Service Fabric могут иметь не более одного типа узлов.
 
-Тип первичного узла настраивается с помощью `isPrimary` атрибута в определении типа узла в шаблоне развертывания Azure Resource Manager. Полный список свойств типа узла см. в [объекте нодетипедескриптион](/azure/templates/microsoft.servicefabric/clusters#nodetypedescription-object) . Например, откройте любое *AzureDeploy.jsв* файле в [примерах Service Fabric кластера](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/) и найдите для объекта поиск *по странице* `nodetTypes` .
+Тип первичного узла настраивается с помощью `isPrimary` атрибута в определении типа узла в шаблоне развертывания Azure Resource Manager. Полный список свойств типа узла см. в [объекте нодетипедескриптион](/azure/templates/microsoft.servicefabric/clusters#nodetypedescription-object) . Например, откройте любое *AzureDeploy.jsв* файле в [примерах Service Fabric кластера](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/) и найдите для объекта поиск *по странице* `nodeTypes` .
 
 ### <a name="node-type-planning-considerations"></a>Вопросы планирования типов узлов
 

@@ -535,10 +535,6 @@
     - name: Конфигурация приложений
       displayName: App configuration
       items:
-        - name: Учебное руководство по регистрации приложений на портале Azure
-          href: app-registrations-training-guide-for-app-registrations-legacy-users.md
-        - name: Интерфейс для регистрации приложений на портале Azure
-          href: app-registration-portal-training-guide.md
         - name: Преобразование однотенантного приложения в мультитенантное
           href: howto-convert-app-to-be-multi-tenant.md
         - name: Создание субъекта-службы

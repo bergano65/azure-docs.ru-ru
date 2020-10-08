@@ -8,6 +8,7 @@
         - name: Сведения об Azure HDInsight
           href: ./hdinsight-overview.md
     - name: Учебники
+      expanded: true
       items:
         - name: Создание кластеров HDInsight
           href: ./hdinsight-hadoop-provision-linux-clusters.md
