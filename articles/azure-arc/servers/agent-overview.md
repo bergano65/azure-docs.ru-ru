@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 09/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0fa406692ae0ff011c65a2683ea04ad969bdc3b5
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 20f56745127a5182a5dfa057a4496b127d78eac7
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91577226"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91822193"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -52,9 +52,9 @@ ms.locfileid: "91577226"
 - Windows Server 2012 R2 или более поздние версии (в том числе Windows Server Core)
 - Ubuntu 16,04 и 18,04 LTS (x64)
 - CentOS Linux 7 (x64);
-- SUSE Linux Enterprise Server (SLES) 15 (x64).
-- Red Hat Enterprise Linux (RHEL) 7 (x64)
-- Amazon Linux 2 (x64)
+- SUSE Linux Enterprise Server (SLES) 15 (x64)
+- Red Hat Enterprise Linux (RHEL) 7 (x64)
+- Amazon Linux 2 (x64)
 
 ### <a name="required-permissions"></a>Необходимые разрешения
 
@@ -85,6 +85,7 @@ ms.locfileid: "91577226"
 
 * AzureActiveDirectory
 * AzureTrafficManager.
+* азуреарЦинфраструктуре
 
 URL-адреса:
 
@@ -104,7 +105,7 @@ URL-адреса в предыдущей таблице необходимы в 
 
 ### <a name="register-azure-resource-providers"></a>Регистрация поставщиков ресурсов Azure
 
-Серверы с поддержкой Arc Azure зависят от следующих поставщиков ресурсов Azure в подписке для использования этой службы:
+Использование серверов с поддержкой Azure Arc зависит от следующих поставщиков ресурсов Azure в подписке:
 
 * **Microsoft.HybridCompute**
 * **Microsoft.GuestConfiguration**

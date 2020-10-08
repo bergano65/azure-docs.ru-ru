@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 7/14/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: f64e959536b4abea4f2facb5ae3238b4843e4611
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 636332c52ea71c7f84cca2f7ef526bc31200e11c
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91569954"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91822180"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Интеграция Azure Digital двойников со службой "аналитика временных рядов Azure"
 
@@ -20,7 +20,7 @@ ms.locfileid: "91569954"
 
 Решение, описанное в этой статье, позволит собирать и анализировать исторические данные о решении IoT. Azure Digital двойников отлично подходит для передачи данных в службу "аналитика временных рядов", так как позволяет сопоставлять несколько потоков данных и стандартизировать информацию перед их отправкой в службу "аналитика временных рядов". 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем можно будет настроить связь со службой "аналитика временных рядов", необходимо иметь **экземпляр Digital двойников для Azure**. Этот экземпляр следует настроить с возможностью обновлять сведения о цифровом двойника на основе данных, так как вам потребуется обновить информацию двойника несколько раз, чтобы увидеть, что данные отписываются в службе "аналитика временных рядов". 
 
@@ -121,12 +121,14 @@ namespace SampleFunctionsApp
             Dictionary<string, object> tsiUpdate = new Dictionary<string, object>();
             foreach (var operation in message["patch"]) {
                 if (operation["op"].ToString() == "replace" || operation["op"].ToString() == "add")
+                {
                     //Convert from JSON patch path to a flattened property for TSI
                     //Example input: /Front/Temperature
                     //        output: Front.Temperature
                     string path = operation["path"].ToString().Substring(1);                    
                     path = path.Replace("/", ".");                    
                     tsiUpdate.Add(path, operation["value"]);
+                }
             }
             //Send an update if updates exist
             if (tsiUpdate.Count>0){
@@ -178,7 +180,7 @@ namespace SampleFunctionsApp
 2. Используйте строку подключения в качестве результата, чтобы создать параметр приложения в приложении-функции, который содержит строку подключения:
 
     ```azurecli
-    az functionapp config appsettings set --settings "EventHubAppSetting-Twins=<Twins event hub connection string> -g <resource group> -n <your App Service (function app) name>"
+    az functionapp config appsettings set --settings "EventHubAppSetting-Twins=<Twins event hub connection string>" -g <resource group> -n <your App Service (function app) name>
     ```
 
 ### <a name="set-the-time-series-insights-event-hub-connection-string"></a>Настройка строки подключения концентратора событий "аналитика временных рядов"
@@ -192,7 +194,7 @@ namespace SampleFunctionsApp
 2. В приложении функции создайте параметр приложения, содержащий строку подключения:
 
     ```azurecli
-    az functionapp config appsettings set --settings "EventHubAppSetting-TSI=<TSI event hub connection string> -g <resource group> -n <your App Service (function app) name>"
+    az functionapp config appsettings set --settings "EventHubAppSetting-TSI=<TSI event hub connection string>" -g <resource group> -n <your App Service (function app) name>
     ```
 
 ## <a name="create-and-connect-a-time-series-insights-instance"></a>Создание и подключение экземпляра Time Series Insights

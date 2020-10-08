@@ -3,12 +3,12 @@ title: Ошибка превышения размера задания
 description: Описывает, как устранять ошибки, если размер задания или шаблон слишком велики.
 ms.topic: troubleshooting
 ms.date: 10/07/2020
-ms.openlocfilehash: 5f0df102611dba8ce49da948b14110fff32dc2a9
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 638bdef246fc908ab997bfb99e7526febdb3792e
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/07/2020
-ms.locfileid: "91812902"
+ms.locfileid: "91822141"
 ---
 # <a name="resolve-errors-for-job-size-exceeded"></a>Превышено разрешение ошибок для размера задания
 
@@ -40,7 +40,7 @@ ms.locfileid: "91812902"
 
 ## <a name="solution-2---reduce-name-size"></a>Решение 2. сокращение размера имени
 
-Попробуйте сократить длину имен, используемых для [параметров](template-parameters.md), [переменных](template-variables.md)и [выходов](template-outputs.md). Когда эти значения повторяются с помощью циклов копирования, большое имя становится умноженным на несколько раз. Окончательный размер шаблона необязателен.
+Попробуйте сократить длину имен, используемых для [параметров](template-parameters.md), [переменных](template-variables.md)и [выходов](template-outputs.md). Когда эти значения повторяются с помощью циклов копирования, большое имя становится умноженным на несколько раз.
 
 ## <a name="solution-3---use-serial-copy"></a>Решение 3. Использование последовательного копирования
 
