@@ -8,20 +8,23 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 7941748f7f917847e551b0cf5cd0a7bf926d31a9
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: a97147395d4f877b666f4aa54254c8631400c735
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086982"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91855673"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Использование службы хранилища Azure с кластерами Azure HDInsight
 
-Данные можно хранить в [службе хранилища Azure](../storage/common/storage-introduction.md), [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md) или [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md). Также можно использовать сочетание этих ресурсов. Данные варианты хранилищ позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
+Данные можно хранить в [хранилище BLOB-объектов Azure](../storage/common/storage-introduction.md), [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md)или [Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md). Также можно использовать сочетание этих ресурсов. Данные варианты хранилищ позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
 
-В Apache Hadoop поддерживается концепция файловой системы по умолчанию. Файловая система по умолчанию подразумевает использование центра сертификации и схемы по умолчанию. Она также может использоваться для разрешения относительных путей. При создании кластера HDInsight в качестве файловой системы по умолчанию можно указать контейнер больших двоичных объектов в службе хранилища Azure. При использовании HDInsight 3.6 в качестве файловой системы по умолчанию можно выбрать либо службу хранилища Azure, либо Azure Data Lake Storage 1-го/2-го поколения за несколькими исключениями. Дополнительные сведения о поддержке Data Lake Storage 1-го поколения в качестве связанного хранилища и хранилища по умолчанию см. в руководстве по [обеспечению доступности для кластеров HDInsight](./hdinsight-hadoop-use-data-lake-store.md#availability-for-hdinsight-clusters).
+В Apache Hadoop поддерживается концепция файловой системы по умолчанию. Файловая система по умолчанию подразумевает использование центра сертификации и схемы по умолчанию. Она также может использоваться для разрешения относительных путей. При создании кластера HDInsight в качестве файловой системы по умолчанию можно указать контейнер больших двоичных объектов в службе хранилища Azure. В HDInsight 3,6 можно выбрать хранилище BLOB-объектов Azure или Azure Data Lake Storage 1-го поколения/Azure Data Lake Storage 2-го поколения в качестве системы файлов по умолчанию с некоторыми исключениями. Сведения о поддержке использования Data Lake Storage 1-го поколения как по умолчанию, так и по связанному хранилищу см. в разделе [доступность кластера HDInsight](./hdinsight-hadoop-use-data-lake-storage-gen1.md#availability-for-hdinsight-clusters).
 
-Из этой статьи вы узнаете, как служба хранилища Azure работает с кластерами HDInsight. Чтобы узнать, как Data Lake Storage 1-го поколения работает с кластерами HDInsight, см. статью [Создание кластеров HDInsight, использующих Azure Data Lake Storage, с помощью портала Azure](hdinsight-hadoop-use-data-lake-store.md). Дополнительные сведения о создании кластера HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md).
+Из этой статьи вы узнаете, как служба хранилища Azure работает с кластерами HDInsight. 
+* Сведения о том, как Data Lake Storage 1-го поколения работает с кластерами HDInsight, см. в статье [использование Azure Data Lake Storage 1-го поколения кластеров Azure hdinsight](./hdinsight-hadoop-use-data-lake-storage-gen1.md).
+* сведения о том, как Data Lake Storage 2-го поколения работает с кластерами HDInsight, см. в статье [использование Azure Data Lake Storage 2-го поколения кластеров Azure hdinsight](./hdinsight-hadoop-use-data-lake-storage-gen2.md).
+* Дополнительные сведения о создании кластера HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](./hdinsight-hadoop-provision-linux-clusters.md).
 
 > [!IMPORTANT]  
 > Тип учетной записи хранения **BlobStorage** можно использовать только как дополнительное хранилище кластеров HDInsight.
@@ -169,9 +172,9 @@ LOCATION '/example/data/';
 
 Дополнительные сведения см. в разделе:
 
-* [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
-* [Начало работы с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md)
-* [Отправка данных в HDInsight](hdinsight-upload-data.md)
-* [Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным с помощью HDInsight](hdinsight-storage-sharedaccesssignature-permissions.md)
+* [Краткое руководство. Создание кластера Apache Hadoop](hadoop/apache-hadoop-linux-create-cluster-get-started-portal.md)
+* [Учебник. Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
 * [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)
+* [Отправка данных в HDInsight](hdinsight-upload-data.md)
 * [Руководство. Извлечение, преобразование и загрузка данных с помощью интерактивного запроса в Azure HDInsight](./interactive-query/interactive-query-tutorial-analyze-flight-data.md)
+* [Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным с помощью HDInsight](hdinsight-storage-sharedaccesssignature-permissions.md)

@@ -3,12 +3,12 @@ title: Выполнение действий с помощью центра ар
 description: В этой статье объясняется, как выполнять действия с помощью центра архивации.
 ms.topic: conceptual
 ms.date: 09/07/2020
-ms.openlocfilehash: 81c81f0e9d955e0a5243485baaedff4e6f0fc10d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 65ac6374b1a9571d0415bc097a6ee957874d3d44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90997715"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91854432"
 ---
 # <a name="perform-actions-using-backup-center"></a>Выполнение действий с помощью центра архивации
 
@@ -70,7 +70,7 @@ ms.locfileid: "90997715"
 ### <a name="if-youre-restoring-an-azure-database-for-postgresql-server"></a>Если вы восстанавливаете сервер базы данных Azure для PostgreSQL
 
 1. Перейдите в Центр архивации и выберите **восстановить** в верхней части вкладки **Обзор** .
-2. Выберите тип источника данных для резервного копирования (в этом случае это сервер службы "служба Azure для PostgreSQL").
+2. Выберите тип источника данных, который необходимо восстановить (в данном случае это сервер службы "служба Azure для PostgreSQL").
 
     ![Выбор DataSource для восстановления сервера базы данных Azure для PostgreSQL](./media/backup-center-actions/restore-select-datasource-postgresql.png)
 

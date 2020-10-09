@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Подключение к Azure Arc кластера Kubernetes, который поддерживает Azure Arc
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: 8f1d95db9c30e78e1ca697d5d7e5638988bc9965
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 74a0de494148f1f3315511c0bf6cb10f40cdc416
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91540631"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91855010"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -68,10 +68,8 @@ ms.locfileid: "91540631"
 | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
 | `https://management.azure.com`                                                                                 | Требуется для подключения агента к Azure и регистрации кластера                                                        |
 | `https://eastus.dp.kubernetesconfiguration.azure.com`, `https://westeurope.dp.kubernetesconfiguration.azure.com` | Конечная точка плоскости данных, через которую агент будет отправлять сведения о состоянии и извлекать сведения о конфигурации.                                      |
-| `https://docker.io`                                                                                            | Требуется для извлечения образов контейнеров.                                                                                         |
-| `https://github.com`, git://github.com                                                                         | Примеры репозиториев GitOps размещаются на сайте GitHub. Агенту конфигурации требуется подключение к конечной точке Git, которую вы укажете в настройках. |
 | `https://login.microsoftonline.com`                                                                            | Требуется для извлечения и обновления маркеров Azure Resource Manager.                                                                                    |
-| `https://azurearcfork8s.azurecr.io`                                                                            | Требуется агентам Azure Arc для извлечения образов контейнеров.                                                                  |
+| `https://mcr.microsoft.com`                                                                            | Требуется агентам Azure Arc для извлечения образов контейнеров.                                                                  |
 | `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Требуется для извлечения назначенных системой сертификатов управляемых удостоверений                                                                  |
 
 ## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Регистрация двух поставщиков для Kubernetes с поддержкой Azure Arc:
@@ -183,17 +181,36 @@ AzureArcTest1  eastus      AzureArcTest
     az -v
     ```
 
-    `connectedk8s`Для настройки агентов с исходящим прокси-сервером требуется расширение version >= 0.2.3. Если на компьютере установлена версия < 0.2.3, выполните [инструкции по обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
+    `connectedk8s`Для настройки агентов с исходящим прокси-сервером требуется расширение version >= 0.2.5. Если на компьютере установлена версия < 0.2.3, выполните [инструкции по обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
 
-2. Выполните команду Connect с указанными параметрами прокси-сервера:
+2. Задайте переменные среды, необходимые для Azure CLI для использования исходящего прокси-сервера:
+
+    * Если вы используете bash, выполните следующую команду с соответствующими значениями:
+
+        ```bash
+        export HTTP_PROXY=<proxy-server-ip-address>:<port>
+        export HTTPS_PROXY=<proxy-server-ip-address>:<port>
+        export NO_PROXY=<cluster-apiserver-ip-address>:<port>
+        ```
+
+    * Если вы используете PowerShell, выполните следующую команду с соответствующими значениями:
+
+        ```powershell
+        $Env:HTTP_PROXY = "<proxy-server-ip-address>:<port>"
+        $Env:HTTPS_PROXY = "<proxy-server-ip-address>:<port>"
+        $Env:NO_PROXY = "<cluster-apiserver-ip-address>:<port>"
+        ```
+
+3. Выполните команду Connect с указанными параметрами прокси-сервера:
 
     ```console
-    az connectedk8s connect -n <cluster-name> -g <resource-group> --proxy-https https://<proxy-server-ip-address>:<port> --proxy-http http://<proxy-server-ip-address>:<port> --proxy-skip-range <excludedIP>,<excludedCIDR>
+    az connectedk8s connect -n <cluster-name> -g <resource-group> --proxy-https https://<proxy-server-ip-address>:<port> --proxy-http http://<proxy-server-ip-address>:<port> --proxy-skip-range <excludedIP>,<excludedCIDR> --proxy-cert <path-to-cert-file>
     ```
 
 > [!NOTE]
 > 1. Чтобы гарантировать, что взаимодействие в кластере не будет разорвано для агентов, необходимо указать ЕксклудедЦидр ниже--proxy-Skip-Range.
-> 2. Приведенная выше спецификация прокси-сервера применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой дуги активно работает над этой функцией, и вскоре она будет доступна.
+> 2. While--Proxy-HTTP,--proxy-HTTPS и--Proxy-Skip-Range ожидается для большинства исходящих прокси-сред. параметр-proxy-CERT требуется только при наличии доверенных сертификатов от прокси-сервера, которые необходимо внедрить в хранилище доверенных сертификатов модулей Pod агента.
+> 3. Приведенная выше спецификация прокси-сервера в настоящее время применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой дуги активно работает над этой функцией, и вскоре она будет доступна.
 
 ## <a name="azure-arc-agents-for-kubernetes"></a>Агенты Azure Arc для Kubernetes
 

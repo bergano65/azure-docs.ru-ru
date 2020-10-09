@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdiseo17may2017,seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: b678e4de76619ff17703caecfa7a52682e835674
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.openlocfilehash: 45170e9df7082e277c445a2dab6d617eb208cd44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89462570"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91855639"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
-HDInsight предоставляет распределенную файловую систему Hadoop (HDFS) в службе хранилища Azure и Azure Data Lake Storage. Это хранилище включает Gen1 и Gen2. Службы хранилища Azure и Data Lake Storage 1-го поколения и Gen2 разработаны как расширения HDFS. Они позволяют полному набору компонентов в среде Hadoop взаимодействовать непосредственно с данными, которыми он управляет. Служба хранилища Azure, Data Lake Storage 1-го поколения и Gen2 — это разные файловые системы. Системы оптимизированы для хранения данных и вычислений на этих данных. Дополнительные сведения о преимуществах использования службы хранилища Azure см. в статье [Использование службы хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md). См. также [использование Data Lake Storage 1-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-store.md)и [Использование Data Lake Storage 2-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
+HDInsight предоставляет распределенную файловую систему Hadoop (HDFS) в службе хранилища Azure и Azure Data Lake Storage. Это хранилище включает Gen1 и Gen2. Службы хранилища Azure и Data Lake Storage 1-го поколения и Gen2 разработаны как расширения HDFS. Они позволяют полному набору компонентов в среде Hadoop взаимодействовать непосредственно с данными, которыми он управляет. Служба хранилища Azure, Data Lake Storage 1-го поколения и Gen2 — это разные файловые системы. Системы оптимизированы для хранения данных и вычислений на этих данных. Дополнительные сведения о преимуществах использования службы хранилища Azure см. в статье [Использование службы хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md). См. также [использование Data Lake Storage 1-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-storage-gen1.md)и [Использование Data Lake Storage 2-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -26,7 +26,7 @@ HDInsight предоставляет распределенную файлову
 * Кластер Azure HDInsight. Инструкции см. в статье Начало [работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Изучите следующие статьи:
     * [Использование службы хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md)
-    * [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md)
+    * [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen1.md)
     * [Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)  
 
 ## <a name="upload-data-to-azure-storage"></a>Отправка данных в службу хранилища Azure
@@ -77,7 +77,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 
 Существуют также несколько приложений, которые предоставляют графический интерфейс для работы с хранилищем Azure. В следующей таблице приведен список некоторых из таких приложений:
 
-| клиент | Linux | OS X | Windows |
+| Клиент | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [Microsoft Visual Studio Tools для HDInsight](hadoop/apache-hadoop-visual-studio-tools-get-started.md#explore-linked-resources) |✔ |✔ |✔ |
 | [Обозреватель службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-storage-explorer.md) |✔ |✔ |✔ |

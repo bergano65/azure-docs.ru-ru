@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: zhchia
-ms.openlocfilehash: 336c1e78143c09e07b8f05c3dbd10ca647844242
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 5596dfab98f6826cd61241441a9ddade72e36674
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319951"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851277"
 ---
 # <a name="tutorial-configure-federated-directory-for-automatic-user-provisioning"></a>Учебник. Настройка федеративного каталога для автоматической подготовки пользователей
 
@@ -53,24 +53,24 @@ ms.locfileid: "91319951"
 
 1. Вход в [консоль администрирования федеративного каталога](https://federated.directory/of)
 
-    ![Учебник по федеративным каталогам](media/federated-directory-provisioning-tutorial/companyname.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/companyname.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
 
 2. Перейдите в **каталог > пользовательские каталоги** и выберите свой клиент. 
 
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/ad-user-directories.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/ad-user-directories.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
 
 3.  Чтобы создать постоянный токен носителя, перейдите к **разделу ключи каталога > создать новый ключ.** 
 
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/federated01.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/federated01.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
 
 4. Создайте ключ каталога. 
 
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/federated02.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/federated02.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
     
 
 5. Скопируйте значение параметра **Маркер доступа**. Это значение будет указано в поле **секретный токен** на вкладке Подготовка приложения федеративного каталога в портал Azure. 
 
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/federated03.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/federated03.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
     
 ## <a name="add-federated-directory-from-the-gallery"></a>Добавление федеративного каталога из коллекции
 
@@ -96,15 +96,15 @@ ms.locfileid: "91319951"
 
 5. Перейдите по **URL-адресу** , выделенному ниже, в отдельном браузере. 
 
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/loginpage1.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage1.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
 
 6. Щелкните **Вход**.
 
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/federated04.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/federated04.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
 
 7.  Так как федеративный каталог является приложением OpenIDConnect, выберите вход в федеративный каталог с помощью рабочей учетной записи Майкрософт.
     
-    ![Федеративный каталог](media/federated-directory-provisioning-tutorial/loginpage3.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage3.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
  
 8. После успешной проверки подлинности примите запрос согласия на страницу согласия. Затем приложение будет автоматически добавлено в клиент, и вы будете перенаправлены в учетную запись федеративного каталога.
 
@@ -146,12 +146,12 @@ ms.locfileid: "91319951"
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с федеративным каталогом**.
 
-    ![Учебник по федеративным каталогам](media/federated-directory-provisioning-tutorial/user-mappings.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/user-mappings.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
     
     
 11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в федеративный каталог в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Федеративной папке для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Учебник по федеративным каталогам](media/federated-directory-provisioning-tutorial/user-attributes.png)
+    :::image type="content" source="media/federated-directory-provisioning-tutorial/user-attributes.png" alt-text="Снимок экрана консоли администрирования федеративного каталога, показывающей поле для ввода названия компании. Кнопки входа также являются видимыми." border="false":::
     
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).

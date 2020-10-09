@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: jeedes
-ms.openlocfilehash: a6dc9aa70c55a0ed511a73570274c68708988451
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8350ebc92575911991ca772229912941f2af10e0
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91331239"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851294"
 ---
 # <a name="tutorial-configure-4me-for-automatic-user-provisioning"></a>Учебник. Настройка 4ME для автоматической подготовки пользователей
 
@@ -122,15 +122,15 @@ ms.locfileid: "91331239"
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с 4ME**.
 
-    ![Сопоставления пользователей 4ME](media/4me-provisioning-tutorial/4me-user-mapping.png)
+    :::image type="content" source="media/4me-provisioning-tutorial/4me-user-mapping.png" alt-text="Снимок экрана со страницей &quot;сопоставления&quot;. В разделе Имя выполните синхронизацию Azure Active Directory пользователей с Фаурме." border="false":::
     
 11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в 4ME в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в 4ME для операций обновления. Убедитесь, что [4ME поддерживает фильтрацию](https://developer.4me.com/v1/scim/users/) по выбранному атрибуту сопоставления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Сопоставления пользователей 4ME](media/4me-provisioning-tutorial/4me-user-attributes.png)
+    :::image type="content" source="media/4me-provisioning-tutorial/4me-user-attributes.png" alt-text="Снимок экрана со страницей &quot;сопоставления&quot;. В разделе Имя выполните синхронизацию Azure Active Directory пользователей с Фаурме." border="false":::
     
 12. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с 4ME**.
 
-    ![Сопоставления пользователей 4ME](media/4me-provisioning-tutorial/4me-group-mapping.png)
+    :::image type="content" source="media/4me-provisioning-tutorial/4me-group-mapping.png" alt-text="Снимок экрана со страницей &quot;сопоставления&quot;. В разделе Имя выполните синхронизацию Azure Active Directory пользователей с Фаурме." border="false":::
     
 13. Проверьте атрибуты группы, которые синхронизированы из Azure AD в 4ME в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в 4ME для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 

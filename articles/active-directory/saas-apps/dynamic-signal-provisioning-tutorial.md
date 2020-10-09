@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 9a11ff33245bf92e225f0f2382f6e873eab1338c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 9ebb0927f9721c5c35ee0d83a108efd72732958b
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323876"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851243"
 ---
 # <a name="tutorial-configure-dynamic-signal-for-automatic-user-provisioning"></a>Учебник. Настройка динамического сигнала для автоматической подготовки пользователей
 
@@ -100,11 +100,11 @@ ms.locfileid: "91323876"
 
 6. В консоли администрирования динамического сигнала перейдите к **администратору > Advanced > API**.
 
-    ![Динамическая подготовка сигналов](./media/dynamic-signal-provisioning-tutorial/secret-token-1.png)
+    :::image type="content" source="./media/dynamic-signal-provisioning-tutorial/secret-token-1.png" alt-text="Снимок экрана консоли администрирования динамического сигнала. &quot;Дополнительно&quot; выделяется в меню &quot;Администрирование&quot;. Меню Дополнительно отображается, при этом выделена буква P." border="false":::
 
     Скопируйте **URL-адрес API scim** в **URL-адрес клиента**. Щелкните **создать новый токен** , чтобы создать **токен носителя** , и скопируйте значение в поле **секретный токен**.
 
-    ![Динамическая подготовка сигналов](./media/dynamic-signal-provisioning-tutorial/secret-token-2.png)
+    :::image type="content" source="./media/dynamic-signal-provisioning-tutorial/secret-token-2.png" alt-text="Снимок экрана консоли администрирования динамического сигнала. &quot;Дополнительно&quot; выделяется в меню &quot;Администрирование&quot;. Меню Дополнительно отображается, при этом выделена буква P." border="false":::
 
 7. После заполнения полей, показанных на шаге 5, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к динамическому сигналу. Если подключение не выполняется, убедитесь, что у учетной записи динамического сигнала есть разрешения администратора, и повторите попытку.
 

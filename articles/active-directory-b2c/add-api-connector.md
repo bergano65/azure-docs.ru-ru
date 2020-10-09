@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
-ms.openlocfilehash: 092246da4c01aa826fd4425e5a778d567b75d9d6
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 824b8f386e6bf822444450305e603e6068a34c5e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91828582"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91854364"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow"></a>Добавление соединителя API в пользовательский поток регистрации
 
@@ -70,7 +70,7 @@ Content-type: application/json
 }
 ```
 
-В запросе могут быть отправлены только свойства пользователя **Azure Active Directory**и настраиваемые атрибуты, перечисленные в  >  пользовательском интерфейсе пользовательских атрибутов Azure Active Directory**внешних удостоверений**  >  **Custom user attributes** .
+В запросе могут быть отправлены только свойства пользователя **Azure AD B2C**и настраиваемые атрибуты, перечисленные в  >  **пользовательском** интерфейсе Azure AD B2C атрибуты.
 
 Пользовательские атрибуты существуют в **extension_ формате \<extensions-app-id> _CustomAttribute**  в каталоге. API должен рассчитывать на получение утверждений в том же сериализованном формате. Дополнительные сведения о настраиваемых атрибутах см. [в разделе Определение настраиваемых атрибутов в Azure Active Directory B2C](user-flow-custom-attributes.md).
 
@@ -294,7 +294,7 @@ Content-type: application/json
 ## <a name="best-practices-and-how-to-troubleshoot"></a>Рекомендации и устранение неполадок
 
 ### <a name="using-serverless-cloud-functions"></a>Использование безсерверных облачных функций
-Бессерверные функции, такие как триггеры HTTP в функциях Azure, предоставляют простой способ создания конечных точек API для использования с соединителем API. Вы можете использовать бессерверную облачную функцию, например, выполнить логику проверки и ограничить число входов конкретными доменами. Бессерверная облачная функция также может вызывать и вызывать другие веб-API, хранилища пользователей и другие облачные службы для более сложных сценариев.
+Бессерверные функции, такие как триггеры HTTP в функциях Azure, предоставляют простой способ создания конечных точек API для использования с соединителем API. Вы можете использовать бессерверную облачную функцию, [например](code-samples.md#api-connectors), выполнить логику проверки и ограничить число входов конкретными доменами электронной почты. Бессерверная облачная функция также может вызывать и вызывать другие веб-API, хранилища пользователей и другие облачные службы для более сложных сценариев.
 
 ### <a name="best-practices"></a>Рекомендации
 Убедитесь в следующем:
@@ -314,4 +314,4 @@ Content-type: application/json
 
 ## <a name="next-steps"></a>Дальнейшие действия
 <!-- - Learn how to [add a custom approval workflow to sign-up](add-approvals.md) -->
-<!-- - Get started with our [Azure Function quickstart samples](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts). -->
+- Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples.md#api-connectors).

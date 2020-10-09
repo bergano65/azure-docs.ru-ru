@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
-ms.openlocfilehash: 642a1937f44a608ebf235c20da060972788046a0
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.openlocfilehash: 3274e45738c079c89560f546fe58163f695e12df
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89321741"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851107"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -421,6 +421,7 @@ Get-Service -Name Netlogon, Netman, TermService |
 
 1. Войдите на виртуальную машину Windows.
 1. Запустите сеанс PowerShell от имени администратора.
+1. Удалите каталог пансер (К:\виндовс\пансер).
 1. Измените каталог на `%windir%\system32\sysprep` . Затем выполните `sysprep.exe`.
 1. В диалоговом окне **средство подготовки системы** выберите вход в систему по раскрывающемсяу **интерфейсу (OOBE)** и убедитесь, что установлен флажок **generalize** .
 
@@ -432,7 +433,7 @@ Get-Service -Name Netlogon, Netman, TermService |
 Теперь диск VHD можно отправлять. Дополнительные сведения о том, как создать виртуальную машину на основе обобщенного диска, см. в разделе [Отправка обобщенного виртуального жесткого диска и его использование для создания новой виртуальной машины в Azure](sa-upload-generalized.md).
 
 >[!NOTE]
-> Пользовательский файл *unattend.xml* не поддерживается. Хотя мы поддерживаем свойство **аддитионалунаттендконтент** , которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *unattend.xml* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
+> Пользовательский файл *unattend.xml* не поддерживается. Хотя мы поддерживаем свойство **аддитионалунаттендконтент** , которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *unattend.xml* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet&preserve-view=true) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
 
 ## <a name="convert-the-virtual-disk-to-a-fixed-size-vhd"></a>Преобразование виртуального диска в виртуальный жесткий диск фиксированного размера
 
