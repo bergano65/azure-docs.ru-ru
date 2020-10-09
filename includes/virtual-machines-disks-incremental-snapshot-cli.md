@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -9,10 +9,10 @@ ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: cbd6f821326c86983ceb3ae5b90969e522c187fe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82204451"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
@@ -45,7 +45,7 @@ az snapshot create -g <yourResourceGroupNameHere> \
 --incremental
 ```
 
-Можно выявление добавочных моментальных снимков с того же диска со `SourceResourceId` `SourceUniqueId` свойствами и моментальными снимками. `SourceResourceId`Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId`значение, унаследованное от `UniqueId` Свойства диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение `UniqueId` Свойства изменится.
+Можно выявление добавочных моментальных снимков с того же диска со `SourceResourceId` `SourceUniqueId` свойствами и моментальными снимками. `SourceResourceId` Azure Resource Manager идентификатор ресурса родительского диска. `SourceUniqueId` значение, унаследованное от `UniqueId` Свойства диска. Если вы удалили диск, а затем создаете новый диск с тем же именем, значение `UniqueId` Свойства изменится.
 
 `SourceResourceId` `SourceUniqueId` Для создания списка всех моментальных снимков, связанных с определенным диском, можно использовать и. В следующем примере будут перечислены все добавочные моментальные снимки, связанные с конкретным диском, но они требуют установки.
 

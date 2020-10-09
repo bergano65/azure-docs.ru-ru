@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 1127a470a48660ffffa892d24c9f2991ec64c8e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76716684"
 ---
 # <a name="feature-selection-in-the-team-data-science-process-tdsp"></a>Выбор характеристик в процессе обработки и анализа данных группы (TDSP)
@@ -44,7 +44,7 @@ ms.locfileid: "76716684"
 
 Рассмотрим, например, использование модуля [Filter-Based Feature Selection][filter-based-feature-selection] (Выбор признаков на основе фильтра). Для удобства и дальше используйте пример интеллектуального анализа текста. Допустим, что вам нужно создать регрессионную модель после создания набора из 256 признаков с помощью модуля [Feature Hashing][feature-hashing] и что выходная переменная находится в столбце Col1 и представляет собой рейтинги рецензий на книги в диапазоне от 1 до 5. Установив для параметра «Метод количественной оценки» значение «Корреляция Пирсона», параметра «Целевой столбец» — «Col1» и для параметра «Число необходимых признаков» — значение 50. Затем модуль [Filter-Based Feature Selection][filter-based-feature-selection] создаст набор данных, содержащий 50 признаков с целевым атрибутом Col1. На следующем рисунке показан процесс этого эксперимента и входные параметры.
 
-![Свойства модуля выбора компонентов на основе фильтра](./media/select-features/feature-Selection1.png)
+![Свойства модуля "Выбор компонентов Filter-Based"](./media/select-features/feature-Selection1.png)
 
 На следующем рисунке показаны результирующие наборы данных.
 

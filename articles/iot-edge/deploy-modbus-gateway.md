@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: kgremban
 ms.openlocfilehash: 23fbbd87230ea0a0147dc9d90c77729f4d531e98
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76511150"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
@@ -25,7 +25,7 @@ ms.locfileid: "76511150"
 
 В этой статье предполагается, что вы используете протокол Modbus TCP. Дополнительные сведения о том, как настроить модуль для поддержки Modbus RTU, см. в проекте [модуля Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) в GitHub.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Устройство Azure IoT Edge. Пошаговое руководство по настройке одного из них см. в статье [развертывание Azure IOT EDGE в Windows](quickstart.md) или [Linux](quickstart-linux.md).
 * Строка подключения первичного ключа для устройства IoT Edge.
@@ -58,7 +58,7 @@ ms.locfileid: "76511150"
 
 6. Найдите свойство **славеконнектион** в JSON и присвойте ему значение IPv4-адреса устройства MODBUS.
 
-7. Нажмите кнопку **Обновить**.
+7. Выберите **Обновить**.
 
 8. Выберите **Проверка + создать**, просмотрите развертывание, а затем выберите **создать**.
 
@@ -74,7 +74,7 @@ iotedge logs modbus
 
 Вы также можете просмотреть данные телеметрии, которые устройство отправляет, используя [расширение центра Интернета вещей Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (ранее — расширение Azure IOT Toolkit).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о том, как IoT Edge устройства могут выступать в качестве шлюзов, см. в разделе [Создание устройства IOT EDGE, работающего в качестве прозрачного шлюза](./how-to-create-transparent-gateway.md).
 * Дополнительные сведения о работе модулей IoT Edge см. в разделе [Знакомство с Azure IOT Edgeными модулями](iot-edge-modules.md).

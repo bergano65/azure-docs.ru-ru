@@ -8,17 +8,17 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.openlocfilehash: fc46b4f24c3c21cda190f80556373991f6c711c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82130928"
 ---
 # <a name="azure-stream-analytics-job-states"></a>Состояние задания Azure Stream Analytics
 
 Задание Stream Analytics может находиться в одном из четырех состояний в любое заданное время: запуск, остановка, снижение работоспособности или сбой. Состояние задания вы можете найти на странице "Обзор" задания Stream Analytics на портале Azure. 
 
-| Область | Описание | Рекомендованные действия |
+| Состояние | Описание | Рекомендованные действия |
 | --- | --- | --- |
 | **Выполнение** | Ваше задание выполняется в событиях чтения Azure, поступающих от определенных источников входных данных, обрабатывая их и записывая результаты в настроенные приемники выходных данных. | Рекомендуется отслеживать производительность задания, выполняя мониторинг ключевых метрик. Подробнее см. в разделе [Сценарии для мониторинга](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-set-up-alerts#scenarios-to-monitor). |
 | **Остановлена** | Ваше задание остановлено и не обрабатывает события. | Н/Д | 

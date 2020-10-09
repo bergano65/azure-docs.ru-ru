@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 06/04/2019
 ms.openlocfilehash: ed849ec928cc09cd0e8911929c4abc6ae54b1536
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82208046"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу RDP к узлам Windows Server в кластере Kubernetes Service (AKS) для обслуживания или устранения неполадок
@@ -18,7 +18,7 @@ ms.locfileid: "82208046"
 
 В этой статье показано, как создать подключение RDP с узлом AKS, используя их частные IP-адреса.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас уже есть кластер AKS с узлом Windows Server. Если вам нужен кластер AKS, см. статью о [создании кластера AKS с контейнером Windows с помощью Azure CLI][aks-windows-cli]. Необходимо имя пользователя и пароль администратора Windows для узла Windows Server, для которого требуется устранить неполадки. Вам также потребуется клиент RDP, например [Удаленный рабочий стол (Майкрософт)][rdp-mac].
 

@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 09/09/2019
-ms.openlocfilehash: 2e44a4861e2522b766aab9c7151d76c471dd2d8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9a195497b4376633bd3c767d7d0ea029109fdf9d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76314544"
 ---
 # <a name="apply-sql-transformation"></a>Применение преобразования SQL
 
-В этой статье описывается модуль Машинное обучение Azure конструктора (Предварительная версия).
+В этой статье описывается модуль конструктора Машинное обучение Azure.
 
 С помощью модуля Apply SQL преобразование можно:
   
@@ -53,7 +53,7 @@ ms.locfileid: "76314544"
   
 - SQLite использует динамическую типизацию значений, а не присвоение типа столбцу, как в большинстве систем реляционных баз данных. Кроме того, для нее характерна слабая типизация. Система также позволяет выполнять неявное преобразование типов.  
   
-- `LEFT OUTER JOIN`реализован, но не `RIGHT OUTER JOIN` или `FULL OUTER JOIN` .  
+- `LEFT OUTER JOIN` реализован, но не `RIGHT OUTER JOIN` или `FULL OUTER JOIN` .  
 
 - Можно использовать инструкции `RENAME TABLE` и `ADD COLUMN` с командой `ALTER TABLE`, но другие предложения не поддерживаются, в том числе `DROP COLUMN`, `ALTER COLUMN` и `ADD CONSTRAINT`.  
   

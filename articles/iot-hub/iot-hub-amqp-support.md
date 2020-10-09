@@ -11,10 +11,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 7b3dcfc51df7f0fe4291e9c5babccc1444ad32e9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81730754"
 ---
 # <a name="communicate-with-your-iot-hub-by-using-the-amqp-protocol"></a>Обмен данными с центром Интернета вещей с помощью протокола AMQP
@@ -32,7 +32,7 @@ ms.locfileid: "81730754"
 | Сведения | Значение |
 |-------------|--------------|
 | Имя узла центра Интернета вещей | `<iot-hub-name>.azure-devices.net` |
-| Имя раздела | `service` |
+| Имя ключа | `service` |
 | Ключ доступа | Первичный или вторичный ключ, связанный со службой |
 | Подписанный URL-адрес | Кратковременная подпись общего доступа в следующем формате: `SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}` . Чтобы получить код для создания этой подписи, см. раздел [Управление доступом к центру Интернета вещей](./iot-hub-devguide-security.md#security-token-structure).
 
@@ -369,7 +369,7 @@ for result in results:
 
 * Иногда клиент должен иметь возможность правильно обрабатывать перенаправления ссылок. Чтобы понять такую операцию, см. документацию по клиенту AMQP.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о протоколе AMQP см. в [спецификации AMQP v 1.0](https://www.amqp.org/sites/amqp.org/files/amqp.pdf).
 

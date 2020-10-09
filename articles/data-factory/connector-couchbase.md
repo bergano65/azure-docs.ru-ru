@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
 ms.openlocfilehash: d78d533bc4a863a0a70b1dbb47bdfa85d539884f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81417442"
 ---
 # <a name="copy-data-from-couchbase-using-azure-data-factory-preview"></a>Копирование данных из Couchbase с помощью фабрики данных Azure (предварительная версия)
@@ -56,7 +56,7 @@ ms.locfileid: "81417442"
 | connectionString | Строка подключения к Couchbase через интерфейс ODBC. <br/>Вы можете также поместить строку учетных данных в Azure Key Vault и извлечь конфигурацию `credString` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример.**
+**Пример**.
 
 ```json
 {

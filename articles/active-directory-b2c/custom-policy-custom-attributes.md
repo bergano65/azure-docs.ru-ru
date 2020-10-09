@@ -12,10 +12,10 @@ ms.date: 03/17/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: dbeb2540084fad2cfab3ce360dd15b60a75e5e59
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85389332"
 ---
 # <a name="azure-active-directory-b2c-enable-custom-attributes-in-a-custom-profile-policy"></a>Azure Active Directory B2C: Включение настраиваемых атрибутов в пользовательской политике профиля
@@ -24,7 +24,7 @@ ms.locfileid: "85389332"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните действия, описанные в статье [Azure Active Directory B2C: Начало работы с пользовательскими политиками](custom-policy-get-started.md).
 
@@ -50,14 +50,14 @@ Azure AD B2C позволяет расширить набор атрибутов
 1. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. В меню слева выберите **Azure AD B2C**. Либо щелкните **Все службы**, а затем найдите и выберите **Azure AD B2C**
 1. Выберите **Регистрация приложений**, а затем выберите **все приложения**.
-1. Выберите `b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.` приложение.
+1. Выберите приложение `b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.`.
 1. Скопируйте следующие идентификаторы в буфер обмена и сохраните их.
     * **Идентификатор приложения**. Например, `11111111-1111-1111-1111-111111111111`.
     * **Идентификатор объекта**. Например, `22222222-2222-2222-2222-222222222222`.
 
 ## <a name="modify-your-custom-policy"></a>Изменение настраиваемой политики
 
-Чтобы включить настраиваемые атрибуты в политике, укажите **идентификатор приложения** и **идентификатор объекта** приложения в метаданных технического профиля AAD-Common. Технический профиль *AAD-Common* находится в основном [Azure Active Directory](active-directory-technical-profile.md) техническом профиле и обеспечивает поддержку управления пользователями в Azure AD. Другие технические профили Azure AD включают в себя AAD-Common, чтобы использовать его конфигурацию. Переопределите общий технический профиль AAD в файле расширения.
+Чтобы включить настраиваемые атрибуты в политике, укажите **идентификатор приложения** и **идентификатор объекта** приложения в AAD-Common метаданных технического профиля. Технический профиль *AAD-Common* находится в основном [Azure Active Directory](active-directory-technical-profile.md) техническом профиле и обеспечивает поддержку управления пользователями в Azure AD. Другие технические профили Azure AD включают AAD-Common, чтобы использовать его конфигурацию. Переопределите AAD-Common технический профиль в файле расширения.
 
 1. Откройте файл расширения для политики, например <em>`SocialAndLocalAccounts/`**`TrustFrameworkExtensions.xml`**</em>.
 1. Найдите элемент ClaimsProviders. Добавьте новый поставщика утверждений в элемент Клаимспровидерс.
