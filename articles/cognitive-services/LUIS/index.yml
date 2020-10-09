@@ -13,10 +13,10 @@ metadata:
   titleSuffix: Azure Cognitive Services
   description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
   ms.openlocfilehash: 6e34c5e39118565e14a40765443583b0b9ed237b
-  ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/02/2020
+  ms.lasthandoff: 10/09/2020
   ms.locfileid: "89322489"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)

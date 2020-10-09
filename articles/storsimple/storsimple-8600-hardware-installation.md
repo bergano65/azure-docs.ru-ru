@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 8d118e71b29b54b034788c37916091ad8f8b996f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79254759"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91871819"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8600-device"></a>Распаковка, установка в стойку и подключение устройства StorSimple 8600
 
@@ -164,7 +164,7 @@ Microsoft Azure StorSimple 8600 представляет собой устрой
 ## <a name="cable-your-storsimple-8600-device"></a>Подключение кабельного хозяйства к устройству StorSimple 8600
 В следующих процедурах описывается процесс подключения кабелей питания, сети и последовательных подключений к устройству StorSimple 8600.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Перед началом подключения кабельного хозяйства к устройству необходимо иметь:
 
 * полностью распакованные основной корпус и корпус EBOD;
@@ -217,7 +217,7 @@ Microsoft Azure StorSimple 8600 представляет собой устрой
 | D |Контроллер 1 |
 | E |PCM 1 |
 | F |Контроллер EBOD 0 |
-| G. |Контроллер EBOD 1 |
+| G |Контроллер EBOD 1 |
 | H, I |Узлы (например, файловые серверы) |
 | 0-5 |Сетевые интерфейсы |
 | 6 |Основной корпус |
@@ -262,6 +262,6 @@ Microsoft Azure StorSimple 8600 представляет собой устрой
 
 Вы завершили настройку присоединения устройства к питанию, к сети и подключения через последовательный порт. Следующим шагом является настройка программного обеспечения на устройстве.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете [развернуть и настроить локальное устройство StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
 

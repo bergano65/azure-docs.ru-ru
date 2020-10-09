@@ -18,17 +18,17 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 84b786a1701892823554a83fa2015ac88d6eff4d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "60295149"
 ---
 # <a name="determine-access-control-requirements-for-your-hybrid-identity-solution"></a>Определение требований к контролю доступа для решения гибридной идентификации
 При проектировании решения для гибридной идентификации организация может пересмотреть требования доступа к ресурсам, которые планируется сделать доступными для пользователей. Доступ к данным объединяет все четыре ключевых компонента идентификации, к которым относятся:
 
 * Администрирование
-* Проверка подлинности
+* Аутентификация
 * Авторизация
 * Аудит
 
@@ -81,6 +81,6 @@ ms.locfileid: "60295149"
 ## <a name="next-steps"></a>Дальнейшие действия
 [Определение требований по реагированию на инциденты](plan-hybrid-identity-design-considerations-incident-response-requirements.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)
 
