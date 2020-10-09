@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: mayg
 ms.openlocfilehash: ba1979c940d4a92b3d1a7a52a4f356b2896ece55
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74082607"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления Hyper-V в Azure
 
 Программу командной строки (ASRDeploymentPlanner.exe) для планировщика развертывания Site Recovery можно запустить в любом из следующих четырех режимов: 
 -   Получение списка виртуальных машин
--   [Профиль](#profile-hyper-v-vms)
+-   [Profile](#profile-hyper-v-vms)
 -   Создание отчета
--   [Оценка пропускной способности.](#get-throughput)
+-   [Получение данных пропускной способности](#get-throughput).
 
 Сначала запустите планировщик, чтобы получить список виртуальных машин из одного или нескольких узлов Hyper-V. Затем запустите программу в режиме профилирования, чтобы получить сведения об активности обработки данных и числе операций ввода-вывода в секунду на виртуальной машине. Затем запустите его в режиме создания отчетов, чтобы оценить требования к пропускной способности сети и хранилищу.
 
@@ -308,5 +308,5 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Virtualization Hyper-V -Direc
 3. Проверьте характеристики локального хранилища, чтобы определить, можно ли улучшить оборудование (например, замените жесткие диски на твердотельные).
 
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Анализ созданного отчета](hyper-v-deployment-planner-analyze-report.md)

@@ -13,10 +13,10 @@ ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
 ms.openlocfilehash: 20e64e5225987a8045e406a0e8fcae098c580c61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77913384"
 ---
 # <a name="troubleshooting-steps-specific-to-allocation-failure-scenarios-in-the-classic-deployment-model"></a>Инструкции по устранению конкретных ошибок выделения ресурсов в классической модели развертывания
@@ -42,7 +42,7 @@ ms.locfileid: "77913384"
 ![Таксономия выделения прикрепленных ресурсов](./media/virtual-machines-common-allocation-failure/Allocation3.png)
 
 ## <a name="resize-a-vm-or-add-vms-or-role-instances-to-an-existing-cloud-service"></a>Изменение размера виртуальной машины или добавление дополнительных виртуальных машин или экземпляров ролей в существующую облачную службу
-**Ошибка**
+**Error**
 
 Upgrade_VMSizeNotSupported или GeneralError
 
@@ -57,7 +57,7 @@ Upgrade_VMSizeNotSupported или GeneralError
 Если возникла ошибка GeneralError*, это означает, что кластер, скорее всего, поддерживает этот тип ресурса (например виртуальные машины определенного размера), но сейчас в нем нет свободных ресурсов. По аналогии с использованным выше сценарием попробуйте добавить необходимый вычислительный ресурс, создав облачную службу (обратите внимание, что новая облачная служба должна использовать другой виртуальный IP-адрес) и используя региональную виртуальную сеть для подключения к облачным службам.
 
 ## <a name="restart-partially-stopped-deallocated-vms"></a>Перезапустите частично остановленные (освобожденные) виртуальные машины
-**Ошибка**
+**Error**
 
 GeneralError*
 
@@ -73,7 +73,7 @@ GeneralError*
 * Если существующая облачная служба не использует региональную виртуальную сеть, создайте виртуальную сеть для новой облачной службы и [подключите имеющуюся виртуальную сеть к новой](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). См. дополнительные сведения о [региональных виртуальных сетях](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/).
 
 ## <a name="restart-fully-stopped-deallocated-vms"></a>Перезапустите полностью остановленные (освобожденные) виртуальные машины
-**Ошибка**
+**Error**
 
 GeneralError*
 
@@ -86,7 +86,7 @@ GeneralError*
 Если допускается использование другого виртуального IP-адреса, удалите исходные остановленные (освобожденные) виртуальные машины (но сохраните связанные диски) и соответствующие облачные службы (связанные вычислительные ресурсы уже освобождены при остановке (освобождении) виртуальных машин)). Создайте облачную службу для повторного добавления виртуальных машин.
 
 ## <a name="stagingproduction-deployments-platform-as-a-service-only"></a>Промежуточное и рабочее развертывание (только для "платформы как услуги")
-**Ошибка**
+**Error**
 
 New_General* или New_VMSizeNotSupported\*
 
@@ -99,7 +99,7 @@ New_General* или New_VMSizeNotSupported\*
 Удалите первое развертывание и исходную облачную службу и разверните облачную службу повторно. Выполнив это действие, можно разместить первое развертывание в кластере, в котором достаточно свободных ресурсов для обоих развертываний, или в кластере, который поддерживает запрошенный размер виртуальной машины.
 
 ## <a name="affinity-group-vmservice-proximity"></a>Территориальная группа (взаимодействие с виртуальными машинами или службами)
-**Ошибка**
+**Error**
 
 New_General* или New_VMSizeNotSupported\*
 
@@ -112,7 +112,7 @@ New_General* или New_VMSizeNotSupported\*
 Если территориальная группа не нужна, не используйте ее или сгруппируйте вычислительные ресурсы в нескольких территориальных группах.
 
 ## <a name="affinity-group-based-virtual-network"></a>Виртуальная сеть на основе группы сходства
-**Ошибка**
+**Error**
 
 New_General* или New_VMSizeNotSupported\*
 

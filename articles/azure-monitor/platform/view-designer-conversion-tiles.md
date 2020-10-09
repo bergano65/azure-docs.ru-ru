@@ -7,10 +7,10 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.openlocfilehash: f07d15521c787dfd588c285bff57616059caa2f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77658632"
 ---
 # <a name="azure-monitor-view-designer-tile-conversions"></a>Преобразования плиток конструктора представлений Azure Monitor
@@ -159,6 +159,6 @@ search *
 
 ![Книги из списка временной шкалы](media/view-designer-conversion-tiles/time-workbooks.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор конструктора представлений для перехода к книгам](view-designer-conversion-overview.md)

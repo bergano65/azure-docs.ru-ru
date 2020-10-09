@@ -5,17 +5,17 @@ ms.date: 10/14/2019
 ms.topic: how-to
 ms.reviewer: zeyadr
 ms.openlocfilehash: d40e55f177bda9edb40383b6e2c61c32633cd005
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85211346"
 ---
 # <a name="manage-consortium-members-in-azure-blockchain-service-using-powershell"></a>Управление членами консорциума в службе Блокчейн Azure с помощью PowerShell
 
 Вы можете использовать PowerShell для управления членами блокчейн Consortium в службе Блокчейн Azure. Участники, имеющие права администратора, могут приглашать, добавлять, удалять и изменять роли для всех участников в консорциуме блокчейн. Участники, имеющие привилегии пользователя, могут просматривать всех участников в консорциуме блокчейн и изменять отображаемое имя участника.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте элемент блокчейн с помощью [портал Azure](create-member.md).
 * Дополнительные сведения о консортиа, членах и узлах см. в статье [консорциум по службам Azure блокчейн](consortium.md).
@@ -77,13 +77,13 @@ $ContractConnection = Import-ConsortiumManagementContracts -RootContractAddress 
 
 Используйте командлеты сетевого и смарт-контракта, чтобы установить подключение к смарт-контрактам конечной точки блокчейн, ответственным за управление консорциумом.
 
-### <a name="import-consortiummanagementcontracts"></a>Import-Консортиумманажементконтрактс
+### <a name="import-consortiummanagementcontracts"></a>Import-ConsortiumManagementContracts
 
 Используйте этот командлет для подключения к смарт-контрактам управления консорциумом. Эти контракты используются для управления и реализации членов в консорциуме.
 
 `Import-ConsortiumManagementContracts -RootContractAddress <String> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | рутконтрактаддресс | Адрес корневого контракта для смарт-контрактов управления консорциумом | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
@@ -100,7 +100,7 @@ Import-ConsortiumManagementContracts -RootContractAddress '<RootContract address
 
 `Import-Web3Account -ManagedAccountAddress <String> -ManagedAccountPassword <String>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | манажедаккаунтаддресс | Адрес учетной записи члена блокчейн | Да |
 | манажедаккаунтпассворд | Пароль адреса учетной записи | Да |
@@ -117,7 +117,7 @@ Import-Web3Account -ManagedAccountAddress '<Member account address>'  -ManagedAc
 
 `New-Web3Connection [-RemoteRPCEndpoint <String>]`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | ремотерпцендпоинт | Адрес конечной точки члена блокчейн | Да |
 
@@ -131,16 +131,16 @@ New-Web3Connection -RemoteRPCEndpoint '<Endpoint address>'
 
 Используйте командлеты управления членами консорциума W3C для управления членами в рамках консорциума. Доступные действия зависят от вашей роли консорциума.
 
-### <a name="get-blockchainmember"></a>Get-Блоккчаинмембер
+### <a name="get-blockchainmember"></a>Get-BlockchainMember
 
 Используйте этот командлет для получения сведений о члене или списка членов консорциума.
 
 `Get-BlockchainMember [[-Name] <String>] -Members <IContract> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | name | Имя члена службы Блокчейн, сведения о котором необходимо получить. Если указано имя, оно возвращает сведения об элементе. Если имя не указано, возвращается список всех членов консорциума. | Нет |
-| Элементы | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники | Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
@@ -162,16 +162,16 @@ AccountAddress : 0x85b911c9e103d6405573151258d668479e9ebeef
 Role           : ADMIN
 ```
 
-### <a name="remove-blockchainmember"></a>Remove-Блоккчаинмембер
+### <a name="remove-blockchainmember"></a>Remove-BlockchainMember
 
 Используйте этот командлет для удаления члена блокчейн.
 
 `Remove-BlockchainMember -Name <String> -Members <IContract> -Web3Account <IAccount> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | name | Имя удаляемого члена | Да |
-| Элементы | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники | Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Account | Объект Web3Account, полученный из Import-Web3Account | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
@@ -183,7 +183,7 @@ Role           : ADMIN
 $ContractConnection | Remove-BlockchainMember -Name <Member Name> -Web3Account $MemberAccount
 ```
 
-### <a name="set-blockchainmember"></a>Set-Блоккчаинмембер
+### <a name="set-blockchainmember"></a>Set-BlockchainMember
 
 Используйте этот командлет для задания атрибутов элементов блокчейн, включая отображаемое имя и роль консорциума.
 
@@ -194,12 +194,12 @@ Set-BlockchainMember -Name <String> [-DisplayName <String>] [-AccountAddress <St
  -Members <IContract> -Web3Account <IAccount> -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | name | Имя элемента блокчейн | Да |
 | DisplayName | Новое отображаемое имя | Нет |
 | аккаунтаддресс | Адрес учетной записи | Нет |
-| Элементы | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники | Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Account | Объект Web3Account, полученный из Import-Web3Account | Да |
 | Web3Client |  Объект Web3Client, полученный из New-Web3Connection| Да |
 
@@ -215,7 +215,7 @@ $ContractConnection | Set-BlockchainMember -Name <Member Name> -DisplayName <Dis
 
 Используйте командлеты управления приглашенными участниками консорциума для управления приглашениями в отношении членов консорциума. Доступные действия зависят от вашей роли консорциума.
 
-### <a name="new-blockchainmemberinvitation"></a>New-Блоккчаинмемберинвитатион
+### <a name="new-blockchainmemberinvitation"></a>New-BlockchainMemberInvitation
 
 Используйте этот командлет, чтобы пригласить новых членов в консорциум.
 
@@ -224,11 +224,11 @@ New-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
  -Web3Account <IAccount> -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure участника, которого нужно пригласить | Да |
 | Роль | Роль консорциума. Может принимать значения ADMIN или USER. Администратор является ролью администратора консорциума. ПОЛЬЗОВАТЕЛЬ является ролью члена консорциума. | Да |
-| Элементы | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники | Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Account | Объект Web3Account, полученный из Import-Web3Account | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
@@ -240,16 +240,16 @@ New-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
 $ContractConnection | New-BlockchainMemberInvitation -SubscriptionId <Azure Subscription ID> -Role USER -Web3Account $MemberAccount
 ```
 
-### <a name="get-blockchainmemberinvitation"></a>Get-Блоккчаинмемберинвитатион
+### <a name="get-blockchainmemberinvitation"></a>Get-BlockchainMemberInvitation
 
 Используйте этот командлет для получения или перечисления состояния приглашенного для члена консорциума.
 
 `Get-BlockchainMemberInvitation [[-SubscriptionId] <String>] -Members <IContract> -Web3Client <IClient>`
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure участника, которого нужно пригласить. Если указан идентификатор подписки, он возвращает сведения о приглашении для идентификатора подписки. Если идентификатор подписки пропущен, он возвращает список всех приглашений участников. | Нет |
-| Элементы | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники | Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
 #### <a name="example"></a>Пример
@@ -268,7 +268,7 @@ SubscriptionId                       Role CorrelationId
 <Azure subscription ID>              USER             2
 ```
 
-### <a name="remove-blockchainmemberinvitation"></a>Remove-Блоккчаинмемберинвитатион
+### <a name="remove-blockchainmemberinvitation"></a>Remove-BlockchainMemberInvitation
 
 Используйте этот командлет для отзыва приглашения члена консорциума.
 
@@ -277,10 +277,10 @@ Remove-BlockchainMemberInvitation -SubscriptionId <String> -Members <IContract> 
  -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure члена, который требуется отозвать. | Да |
-| Элементы | Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники | Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Account | Объект Web3Account, полученный из Import-Web3Account | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
@@ -292,7 +292,7 @@ Remove-BlockchainMemberInvitation -SubscriptionId <String> -Members <IContract> 
 $ContractConnection | Remove-BlockchainMemberInvitation -SubscriptionId <Subscription ID> -Web3Account $MemberAccount
 ```
 
-### <a name="set-blockchainmemberinvitation"></a>Set-Блоккчаинмемберинвитатион
+### <a name="set-blockchainmemberinvitation"></a>Set-BlockchainMemberInvitation
 
 Используйте этот командлет, чтобы задать **роль** для существующего приглашения. Только администраторы консорциума могут изменять приглашения.
 
@@ -301,11 +301,11 @@ Set-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
  -Web3Account <IAccount> -Web3Client <IClient>
 ```
 
-| Параметр | Описание | Обязательное значение |
+| Параметр | Описание | Обязательно |
 |-----------|-------------|:--------:|
 | SubscriptionId | Идентификатор подписки Azure участника, которого нужно пригласить | Да |
 | Роль | Новая роль консорциума для приглашения. Значения могут быть **USER** "пользователь **" или "Администратор"**. | Да |
-| Элементы |  Объект Members, полученный из Import-Консортиумманажементконтрактс | Да |
+| Участники |  Объект Members получен из Import-ConsortiumManagementContracts | Да |
 | Web3Account | Объект Web3Account, полученный из Import-Web3Account | Да |
 | Web3Client | Объект Web3Client, полученный из New-Web3Connection | Да |
 
@@ -317,6 +317,6 @@ Set-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
 $ContractConnection | Set-BlockchainMemberInvitation -SubscriptionId <Azure subscription ID> -Role USER -Web3Account $MemberAccount
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о консортиа, членах и узлах см. в статье [консорциум по службам Azure блокчейн](consortium.md) .

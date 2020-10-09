@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.custom: seodec18
 ms.openlocfilehash: 999511c4759ee761f028a61fbfaa0310ac93d9b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74672418"
 ---
 # <a name="how-to-prepare-for-an-inbound-ip-address-change"></a>Подготовка к изменению входящего IP-адреса
@@ -41,6 +41,6 @@ ms.locfileid: "74672418"
 
 5. Скопируйте IP-адрес и измените конфигурацию записи домена или механизм IP-адресации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье показано, как подготовиться к изменению IP-адреса, которое инициировано в Azure. См. дополнительные сведения о [входящих и исходящих IP-адресах в Службе приложений Azure](overview-inbound-outbound-ips.md).

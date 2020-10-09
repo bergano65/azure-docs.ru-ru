@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: a3e8ea3b0ed2840e5eee7a046fa3a145f82884dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85200704"
 ---
 # <a name="connect-to-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Подключение к Azure синапсе Analytics с помощью Visual Studio и SSDT
@@ -30,7 +30,7 @@ ms.locfileid: "85200704"
 
 Используйте Visual Studio для запроса пула SQL в Azure синапсе всего за несколько минут. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
 * Пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).

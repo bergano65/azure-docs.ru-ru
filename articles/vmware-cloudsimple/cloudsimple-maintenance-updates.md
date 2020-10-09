@@ -10,10 +10,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 826fae1123b355a4143118b53ba649f0939acaf7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77025033"
 ---
 # <a name="cloudsimple-maintenance-and-updates"></a>Обслуживание и обновления Клаудсимпле
@@ -39,8 +39,8 @@ ms.locfileid: "77025033"
 * Физические порты сетевого адаптера
 * Серверы
 * Фанатов
-* Мощный
-* Переключатели
+* Питание
+* Коммутаторы
 * Порты коммутатора
 
 В случае сбоя диска или узла новый узел автоматически добавляется в затронутый кластер VMware для немедленного возвращения в работоспособность.
@@ -104,6 +104,6 @@ ms.locfileid: "77025033"
 
 Клаудсимпле обеспечивает ежеквартальное обслуживание программных компонентов VMware. Когда доступна новая основная версия программного обеспечения VMware, Клаудсимпле работает с клиентами, чтобы координировать подходящее окно обслуживания для обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Резервное копирование виртуальных машин рабочей нагрузки с помощью Veeam](backup-workloads-veeam.md)

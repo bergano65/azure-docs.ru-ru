@@ -9,10 +9,10 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
 ms.openlocfilehash: ff82986b27d038c536872b07e1308b0d48fadaef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74270224"
 ---
 # <a name="performance-tiers-for-block-blob-storage"></a>Уровни производительности для хранилища блочных BLOB-объектов
@@ -78,7 +78,7 @@ ms.locfileid: "74270224"
 
 Вы не можете перемещать данные, хранящиеся в учетной записи хранилища BLOB-объектов уровня "Премиум", с "горячего", "холодного" и архивного уровней. Однако вы можете копировать большие двоичные объекты из учетной записи хранения блочного BLOB-объекта на уровень горячего доступа в *другой* учетной записи. Чтобы скопировать данные в другую учетную запись, используйте API [перевода из URL-адреса](/rest/api/storageservices/put-block-from-url) или [AzCopy V10](../common/storage-use-azcopy-v10.md). API **размещения блока из URL-адреса** синхронно копирует данные на сервере. Вызов завершается только после перемещения всех данных из исходного расположения на сервере в целевое расположение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Оцените горячие, интересные и архивные записи в GPv2 и учетных записях хранилища BLOB-объектов.
 

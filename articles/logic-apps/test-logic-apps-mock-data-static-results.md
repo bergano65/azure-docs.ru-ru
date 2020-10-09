@@ -9,10 +9,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/13/2019
 ms.openlocfilehash: b71aae91f4a065b70537a300aa0bd7016edfd4b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74790277"
 ---
 # <a name="test-logic-apps-with-mock-data-by-setting-up-static-results"></a>Тестирование приложений логики с помощью макетных данных путем настройки статических результатов
@@ -45,7 +45,7 @@ ms.locfileid: "74790277"
 
       Например, ниже приведены обязательные свойства для действия HTTP.
 
-      | Свойство. | Описание: |
+      | Свойство | Описание |
       |----------|-------------|
       | **Состояние** | Возвращаемое состояние действия |
       | **Код состояния** | Конкретный возвращаемый код состояния |
@@ -136,10 +136,10 @@ ms.locfileid: "74790277"
 
    ![Отключить статические результаты](./media/test-logic-apps-mock-data-static-results/disable-static-results-button.png)
 
-## <a name="reference"></a>Справка
+## <a name="reference"></a>Справочник
 
 Дополнительные сведения об этом параметре в базовых определениях рабочих процессов см. в разделе [статические результаты — Справочник по схеме для языка определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md#static-results) и [рунтимеконфигуратион. статикресулт-Runtime Settings Configuration.](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-configuration-settings)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

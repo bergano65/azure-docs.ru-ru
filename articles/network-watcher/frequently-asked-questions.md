@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
 ms.openlocfilehash: b48aab918b477f5c689a50ca476b0b1336642f0f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77471862"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
@@ -106,5 +106,5 @@ ms.locfileid: "77471862"
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>В чем разница между журналами потоков версии 1 & 2?
 Журналы потоков версии 2 представляют концепцию *состояния потока* & хранят сведения о передаваемых байтах и пакетах. [Дополнительные сведения](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview#log-file).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
  - Перейдите к нашей [странице с обзором документации](https://docs.microsoft.com/azure/network-watcher/) по некоторым руководствам, чтобы приступить к работе с наблюдателем за сетями.

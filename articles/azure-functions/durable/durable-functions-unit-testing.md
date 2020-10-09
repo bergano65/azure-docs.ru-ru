@@ -4,10 +4,10 @@ description: Информация о модульном тестировании
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.openlocfilehash: 86733f8b5b80799bad3e52c643ed27465dfc7641
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74231226"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
@@ -17,7 +17,7 @@ ms.locfileid: "74231226"
 > [!NOTE]
 > В этой статье приводятся рекомендации по модульному тестированию для Устойчивые функции приложений, предназначенных для Устойчивые функции 1. x. Она еще не обновлена, чтобы учитывать изменения, появившиеся в Устойчивые функции 2. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
@@ -176,7 +176,7 @@ ms.locfileid: "74231226"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HelloSequenceActivityTests.cs)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о xUnit](https://xunit.github.io/docs/getting-started-dotnet-core)

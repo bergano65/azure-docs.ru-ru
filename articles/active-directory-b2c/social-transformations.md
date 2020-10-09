@@ -12,10 +12,10 @@ ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: eaa2984c0d7a5d3763f554e39f687fdbd2865e96
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85203390"
 ---
 # <a name="social-accounts-claims-transformations"></a>Преобразования утверждений учетных записей социальных сетей
@@ -44,8 +44,8 @@ ms.locfileid: "85203390"
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | ключ | строка | Тип ClaimType, который указывает уникальный идентификатор пользователя, используемый поставщиком удостоверений социальных сетей. |
-| InputClaim | identityProvider | string | Тип ClaimType, который указывает имя поставщика удостоверений учетных записей социальных сетей, например facebook.com. |
-| outputClaim | alternativeSecurityId | string | Тип ClaimType, который создается после вызова ClaimsTransformation. Содержит информацию об удостоверении пользователя учетной записи социальной сети. **issuer** — значение утверждения `identityProvider`. **issuerUserId** — значение утверждения `key` в формате base64. |
+| InputClaim | identityProvider | строка | Тип ClaimType, который указывает имя поставщика удостоверений учетных записей социальных сетей, например facebook.com. |
+| outputClaim | alternativeSecurityId | строка | Тип ClaimType, который создается после вызова ClaimsTransformation. Содержит информацию об удостоверении пользователя учетной записи социальной сети. **issuer** — значение утверждения `identityProvider`. **issuerUserId** — значение утверждения `key` в формате base64. |
 
 Это преобразование утверждений позволяет задать ClaimType для `alternativeSecurityId`. Преобразование используют все технические профили поставщиков удостоверений социальных сетей, например `Facebook-OAUTH`. Следующее преобразование утверждений позволяет получить идентификатор учетной записи пользователя социальной сети и имя поставщика удостоверений. Выходные данные этого технического профиля представляют собой строку в формате JSON, которую можно использовать в службах каталогов Azure AD.
 
@@ -75,7 +75,7 @@ ms.locfileid: "85203390"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | item | string | Тип ClaimType, добавляемый к исходящему утверждению. |
+| InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, используемые при преобразовании утверждений (если типы доступны в политике). Если это значение указано, при преобразовании утверждений в конец коллекции добавляется `item`. |
 | outputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Новая коллекция, содержащая как элементы из входного элемента `collection`, так и из `item`. |
 
@@ -139,7 +139,7 @@ ms.locfileid: "85203390"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | identityProvider | string | Тип ClaimType, который содержит имя поставщика удостоверений, удаляемое из коллекции. |
+| InputClaim | identityProvider | строка | Тип ClaimType, который содержит имя поставщика удостоверений, удаляемое из коллекции. |
 | InputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, используемые в преобразовании утверждений. При преобразовании утверждений identityProvider удаляется из коллекции. |
 | outputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Новая коллекция после удаления identityProvider из коллекции. |
 

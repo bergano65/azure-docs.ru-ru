@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 1/14/2020
 ms.author: cbasoglu
 ms.openlocfilehash: b41967033b00144ca5bd52ce23cf8aabcea6749e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78228080"
 ---
 # <a name="speech-services-with-sovereign-clouds"></a>Службы речи с облаками независимых
@@ -23,11 +23,11 @@ ms.locfileid: "78228080"
 
 Доступ к этому выделенному экземпляру осуществляется только федеральным органам США, Штатам, местным регионам и уровня общины и их партнерам, которые управляются с помощью привилегированных сотрудников США.
 - Регионы: US Gov (Вирджиния)
-- SR в Спичсдк:*config. Фромхост ("WSS://виргиниа.СТТ.Спич.Азуре.ус", "\<ваш ключ\>");*
-- TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://Virginia.TTS.Speech.Azure.US", "\<ваш ключ\>");*
-- Токены проверки подлинности: HTTPS[]()://Virginia.API.Cognitive.Microsoft.US/STS/v1.0/issueToken
+- SR в Спичсдк:*config. Фромхост ("WSS://виргиниа.СТТ.Спич.Азуре.ус", " \<your-key\> ");*
+- TTS в Спичсдк: *config. Фромхост ("HTTPS []() ://Virginia.TTS.Speech.Azure.US", " \<your-key\> ");*
+- Токены проверки подлинности: HTTPS []() ://Virginia.API.Cognitive.Microsoft.US/STS/v1.0/issueToken
 - Портал Azure: https://portal.azure.us  
-- Пользовательское распознавание речи портал:https://virginia.cris.azure.us/Home/CustomSpeech
+- Пользовательское распознавание речи портал: https://virginia.cris.azure.us/Home/CustomSpeech
 - Доступные номера SKU: S0
 - Поддерживаемые функции
   - Преобразование речи в текст
@@ -40,7 +40,7 @@ ms.locfileid: "78228080"
 - Поддерживаемые языковые стандарты: поддерживаются языковые стандарты для следующих языков.
   - Арабский (AR-*)
   - Китайский (zh-*)
-  - Английский (EN-*)
+  - Английский (en-*)
   - Французский (fr-*)
   - Немецкий (de-*)
   - Hindi
@@ -52,11 +52,11 @@ ms.locfileid: "78228080"
 
 В Китае, центре обработки данных Azure с прямым доступом к китайским, портативным, китайским и прочим центральным сетям перевозчиков для китайских пользователей, обеспечивающих высокую скорость и устойчивую работу локальной сети.
 - Регионы: Восточный Китай 2 (Шанхай)
-- SR в Спичсдк: *config. Фромхост ("WSS://chinaeast2.STT.Speech.Azure.CN", "\<ваш ключ\>");*
-- TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://chinaeast2.TTS.Speech.Azure.CN", "\<ваш ключ\>");*
-- Токены проверки подлинности: HTTPS[]()://chinaeast2.API.Cognitive.Azure.CN/STS/v1.0/issueToken
+- SR в Спичсдк: *config. Фромхост ("WSS://chinaeast2.STT.Speech.Azure.CN", " \<your-key\> ");*
+- TTS в Спичсдк:  *config. Фромхост ("HTTPS []() ://chinaeast2.TTS.Speech.Azure.CN", " \<your-key\> ");*
+- Токены проверки подлинности: HTTPS []() ://chinaeast2.API.Cognitive.Azure.CN/STS/v1.0/issueToken
 - Портал Azure: https://portal.azure.cn
-- Пользовательское распознавание речи портал:https://speech.azure.cn/CustomSpeech
+- Пользовательское распознавание речи портал: https://speech.azure.cn/CustomSpeech
 - Доступные номера SKU: S0
 - Поддерживаемые функции
   - Преобразование речи в текст
@@ -69,7 +69,7 @@ ms.locfileid: "78228080"
 - Поддерживаемые языковые стандарты: поддерживаются языковые стандарты для следующих языков.
   - Арабский (AR-*)
   - Китайский (zh-*)
-  - Английский (EN-*)
+  - Английский (en-*)
   - Французский (fr-*)
   - Немецкий (de-*)
   - Hindi

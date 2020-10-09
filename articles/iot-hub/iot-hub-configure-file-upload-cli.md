@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
 ms.openlocfilehash: df3c8d2abf59de6c9f685ad8d93e6689738df8e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78302531"
 ---
 # <a name="configure-iot-hub-file-uploads-using-azure-cli"></a>Настройка отправки файлов в Центре Интернета вещей с помощью Azure CLI
@@ -29,7 +29,7 @@ ms.locfileid: "78302531"
 
 * Центр интернета вещей Azure. Если у вас нет центра Интернета вещей, можно использовать [ `az iot hub create` команду](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create) , чтобы создать [центр Интернета вещей или создать его с помощью портала](iot-hub-create-through-portal.md).
 
-* Учетная запись хранения Azure. Если у вас нет учетной записи хранения Azure, можно использовать Azure CLI, чтобы создать ее. Дополнительные сведения см. [в разделе Создание учетной записи хранения](../storage/common/storage-create-storage-account.md).
+* Учетная запись хранения Azure. Если у вас нет учетной записи хранения Azure, можно использовать Azure CLI, чтобы создать ее. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md).
 
 ## <a name="sign-in-and-set-your-azure-account"></a>Выполнение входа и установка учетной записи Azure
 
@@ -131,7 +131,7 @@ az iot hub update --name {your iot hub name} \
 az iot hub show --name {your iot hub name}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о возможностях Центра Интернета вещей, касающихся отправки файлов, см. в разделе об [отправке файлов с устройства](iot-hub-devguide-file-upload.md).
 

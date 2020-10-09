@@ -12,10 +12,10 @@ ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
 ms.openlocfilehash: 1b2c71d7bf9e796af77e9a2a4a3a31152f2ca884
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85212349"
 ---
 # <a name="azure-synapse-analytics-workload-importance"></a>Важность рабочей нагрузки аналитики Azure синапсе
@@ -60,7 +60,7 @@ ms.locfileid: "85212349"
 
 Так как вопрос 5 — mediumrc, для него требуется два слота выдачи. Вопрос 5 должен ожидать завершения двух выполняющихся запросов.  Однако при завершении одного из выполняемых запросов (Q1-Q4) вопрос 6 планируется немедленно, так как существуют ресурсы для выполнения запроса.  Если вопрос 5 имеет более высокий уровень важности, чем вопрос 6, то вопрос 6 ждет, пока не будет запущен вопрос 5, прежде чем он сможет начать выполнение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о создании классификатора см. в разделе [Создание классификатора рабочей нагрузки (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
 - Узнайте о [классификации рабочих нагрузок](sql-data-warehouse-workload-classification.md).  

@@ -12,10 +12,10 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 772e4253244f5e13a60f155549d5f5513695e5fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85200755"
 ---
 # <a name="connect-to-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
@@ -30,7 +30,7 @@ ms.locfileid: "85200755"
 
 Используйте SQL Server Management Studio (SSMS) для подключения к хранилищу данных в Azure синапсе и выполнения запросов к нему.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 

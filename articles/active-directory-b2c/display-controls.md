@@ -12,10 +12,10 @@ ms.date: 12/10/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 131ecd010cba55f08199f713654792c0844a47e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85202302"
 ---
 # <a name="display-controls"></a>Элементы управления отображением
@@ -30,7 +30,7 @@ ms.locfileid: "85202302"
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
  В разделе [метаданных](self-asserted-technical-profile.md#metadata) [самостоятельно утвержденного технического профиля](self-asserted-technical-profile.md) [контентдефинитион](contentdefinitions.md) должен иметь `DataUri` значение контракта страницы Version 2.0.0 или выше. Пример:
 
@@ -46,14 +46,14 @@ ms.locfileid: "85202302"
 
 Элемент **DisplayControl** содержит следующие атрибуты:
 
-| Атрибут | Обязательное значение | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Идентификатор, используемый для элемента управления отображением. На него можно [ссылаться](#referencing-display-controls). |
 | усеринтерфацеконтролтипе | Да | Тип элемента управления отображением. В настоящее время поддерживается [верификатионконтрол](display-control-verification.md) |
 
 Элемент **DisplayControl** содержит следующие элементы:
 
-| Элемент | Вхождения | Описание: |
+| Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
 | InputClaims | 0:1 | **Inputclaim** используются для предварительного заполнения значений утверждений, собираемых от пользователя. |
 | дисплайклаимс | 0:1 | **Дисплайклаимс** используются для представления утверждений, собираемых от пользователя. |

@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 1e3c05e4cc3ccf34573b55d3729aded16e26d66e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76960845"
 ---
 # <a name="403006-devicemaximumactivefileuploadlimitexceeded"></a>403006 DeviceMaximumActiveFileUploadLimitExceeded
@@ -23,7 +23,7 @@ ms.locfileid: "76960845"
 
 Запрос на отправку файла завершается ошибкой с кодом **403006** и сообщением "число активных запросов на отправку файлов не может превышать 10".
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Каждый клиент устройства ограничен [10 параллельными передачами файлов](./iot-hub-devguide-quotas-throttling.md#other-limits). 
 
@@ -33,6 +33,6 @@ ms.locfileid: "76960845"
 
 Убедитесь, что устройство может немедленно [уведомить о завершении отправки файла центра Интернета вещей](./iot-hub-devguide-file-upload.md#notify-iot-hub-of-a-completed-file-upload). Затем попробуйте [уменьшить срок жизни маркера SAS для конфигурации отправки файла](iot-hub-configure-file-upload.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о передаче файлов см. в разделе [Отправка файлов с помощью центра Интернета вещей](./iot-hub-devguide-file-upload.md) и [Настройка отправки файлов центра Интернета вещей с помощью портал Azure](./iot-hub-configure-file-upload.md).

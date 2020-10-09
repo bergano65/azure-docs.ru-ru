@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 2/5/2020
 ms.author: ramamill
 ms.openlocfilehash: f24d321e882024d324435498adf11694037547f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77252233"
 ---
 # <a name="automate-mobility-service-installation"></a>Автоматизация установки службы Mobility Service
@@ -31,7 +31,7 @@ ms.locfileid: "77252233"
 - Необходимо масштабировать установки агента на множество серверов одновременно.
 - Необходимо запланировать установку и обновление во время плановых периодов обслуживания.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для автоматизации установки необходимы следующие компоненты:
 
@@ -354,7 +354,7 @@ cd /tmp
 
     **Параметр** | **Значение Windows** | **Значение Linux**
     --- | --- | ---
-    **Name** | Установка Microsoft Azure Mobility Service (Windows) | Установите Microsoft Azure Mobility Service (Linux).
+    **Имя** | Установка Microsoft Azure Mobility Service (Windows) | Установите Microsoft Azure Mobility Service (Linux).
     **Командная строка** | install.bat | ./install_linux.sh
     **Программа может выполняться** | Независимо от входа пользователя в систему | Независимо от входа пользователя в систему
     **Другие параметры** | Использовать параметр по умолчанию | Использовать параметр по умолчанию
@@ -364,9 +364,9 @@ cd /tmp
 1. В **поле Укажите требования для этой стандартной программы**выполните следующие действия.
 
    - Для компьютеров Windows выберите **Эта программа может запускаться только на указанных платформах**. Затем выберите [Поддерживаемые операционные системы Windows](vmware-physical-azure-support-matrix.md#replicated-machines) и нажмите кнопку **Далее**.
-   - Для компьютеров Linux выберите **эту программу можно запускать на любой платформе**. Нажмите кнопку **Далее**.
+   - Для компьютеров Linux выберите **эту программу можно запускать на любой платформе**. Выберите **Далее**.
 
-1. Завершите работу мастера.
+1. Завершите мастер.
 
 ### <a name="deploy-the-package"></a>Развертывание пакета
 
@@ -374,7 +374,7 @@ cd /tmp
 
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
 
-1. Выберите Точки распространения, на которые следует скопировать эти пакеты. [Подробнее.](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points)
+1. Выберите Точки распространения, на которые следует скопировать эти пакеты. [Подробнее](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).
 1. Завершите работу мастера. Теперь пакет будет реплицироваться на выбранные точки распространения.
 1. После завершения распространения пакета щелкните правой кнопкой мыши пакет, > **развернуть**.
 
@@ -386,7 +386,7 @@ cd /tmp
 
    ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
 
-1. В поле **укажите расписание для этого развертывания**настройте расписание. [Подробнее.](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-sched)
+1. В поле **укажите расписание для этого развертывания**настройте расписание. [Подробнее](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-sched).
 
    - Служба Mobility Service устанавливается в соответствии с заданным вами расписанием.
    - Чтобы избежать лишних перезагрузок, запланируйте установку пакета на период ежемесячного обслуживания или обновления программного обеспечения.
@@ -418,6 +418,6 @@ IF  %ERRORLEVEL% EQU 1 (GOTO :INSTALL) ELSE GOTO :UNINSTALL
 :ENDSCRIPT
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включите репликацию](vmware-azure-enable-replication.md) для виртуальных машин.

@@ -5,10 +5,10 @@ ms.date: 09/09/2019
 ms.topic: how-to
 ms.reviewer: mmercuri
 ms.openlocfilehash: dc7a1dc7e4a083ef8f5f7650f29ed1430b32e88b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85214202"
 ---
 # <a name="configure-the-azure-blockchain-workbench-database-firewall"></a>Настройка брандмауэра базы данных Azure Blockchain Workbench
@@ -19,7 +19,7 @@ ms.locfileid: "85214202"
 
 Чтобы подключиться к базе данных, в которой вы хотите настроить правило, сделайте следующее:
 
-1. Войдите в портал Azure с учетной записью, имеющей разрешения **владельца** для ресурсов Azure блокчейн Workbench.
+1. Войдите в портал Azure с учетной записью, имеющей разрешения **владельца**     для ресурсов Azure блокчейн Workbench.
 2. В левой области навигации выберите **Группа ресурсов**.
 3. Выберите имя группы ресурсов для развертывания Blockchain Workbench.
 4. Выберите **Тип** для сортировки списка ресурсов, а затем выберите **SQL Server**.
@@ -50,7 +50,7 @@ ms.locfileid: "85214202"
 1. Чтобы сохранить конфигурацию брандмауэра, щелкните **Сохранить**.
 2. Проверьте диапазон IP-адресов, настроенных для базы данных, подключившись с помощью приложения или средства. Например, SQL Server Management Studio.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

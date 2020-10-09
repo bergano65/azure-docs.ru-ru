@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 4f700ac34b6c6e2a651366bee7dd1785c608064f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77024795"
 ---
 # <a name="create-a-cloudsimple-private-cloud"></a>Создание частного облака Клаудсимпле
@@ -47,7 +47,7 @@ ms.locfileid: "77024795"
 
 ## <a name="create-a-new-private-cloud"></a>Создание частного облака
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 2. Выполните поиск по запросу **Клаудсимпле Services**.
 3. Выберите службу Клаудсимпле, для которой нужно создать частное облако.
 4. В разделе **Обзор**щелкните **создать частное облако** , чтобы открыть новую вкладку браузера для клаудсимпле Portal. При появлении запроса войдите с помощью учетных данных для входа в Azure.

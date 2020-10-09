@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/20/2020
 ms.author: makromer
 ms.openlocfilehash: 3f8ac2d1434019548b01d8468015a543d89d0fba
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85254418"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Обработку строк ошибок усечения SQL в потоках данных сопоставления фабрики данных
@@ -29,7 +29,7 @@ ms.locfileid: "85254418"
 
     ![Поток данных фильмов 1](media/data-flow/error4.png)
     
-3. Проблема заключается в том, что заголовок фильма не умещается в столбце приемника, в котором может содержаться только 5 символов. При выполнении этого потока данных появится сообщение об ошибке следующего вида:```"Job failed due to reason: DF-SYS-01 at Sink 'WriteToDatabase': java.sql.BatchUpdateException: String or binary data would be truncated. java.sql.BatchUpdateException: String or binary data would be truncated."```
+3. Проблема заключается в том, что заголовок фильма не умещается в столбце приемника, в котором может содержаться только 5 символов. При выполнении этого потока данных появится сообщение об ошибке следующего вида: ```"Job failed due to reason: DF-SYS-01 at Sink 'WriteToDatabase': java.sql.BatchUpdateException: String or binary data would be truncated. java.sql.BatchUpdateException: String or binary data would be truncated."```
 
 В этом видео рассматривается пример логики обработки строк ошибок в потоке данных.
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4uOHj]
@@ -50,6 +50,6 @@ ms.locfileid: "85254418"
 
     ![завершение потока данных](media/data-flow/error2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте оставшуюся часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)сопоставления.

@@ -9,17 +9,17 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, датчик, средство просмотра, внешняя синхронизация, задержка этапа, глубина, RGB, Камера, звуковой кабель, устройство записи
 ms.openlocfilehash: 052f6f1ac9f90e764de25d1d4d1b25b3d50a848d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276917"
 ---
 # <a name="use-azure-kinect-recorder-with-external-synchronized-devices"></a>Использование средства записи Azure Kinect с внешними синхронизированными устройствами
 
 В этой статье содержатся сведения о том, как средство [записи Azure Kinect](azure-kinect-recorder.md) может записывать данные, настроенные на внешних устройствах синхронизации.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Настройте несколько единиц Azure KINECT DK для внешней синхронизации](https://support.microsoft.com/help/4494429).
 
@@ -108,7 +108,7 @@ ms.locfileid: "85276917"
 
 
 
-## <a name="tips"></a>"Советы"
+## <a name="tips"></a>Советы
 
 - Использование раскрытия вручную для записи синхронизированных камер. Автоматическая экспозиция камеры RGB может повлиять на синхронизацию времени.
 - Перезапуск подчиненного устройства приведет к потере синхронизации.

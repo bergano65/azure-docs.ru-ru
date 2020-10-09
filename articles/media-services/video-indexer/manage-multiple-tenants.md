@@ -14,10 +14,10 @@ ms.custom: ''
 ms.date: 05/15/2019
 ms.author: ikbarmen
 ms.openlocfilehash: 18f2cf3daa281400151ba223e1735e7138d97e8e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76990510"
 ---
 # <a name="manage-multiple-tenants"></a>Управление несколькими арендаторами
@@ -34,7 +34,7 @@ ms.locfileid: "76990510"
 
 ![Отдельная учетная запись Индексатора видео для каждого арендатора](./media/manage-multiple-tenants/video-indexer-account-per-tenant.png)
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 
 * Клиенты используют разные учетные записи хранения (если клиент не настроит другой вариант вручную).
 * Клиенты используют разные вычислительные ресурсы (зарезервированные единицы), и не влияют на время обработки заданий друг друга.
@@ -57,7 +57,7 @@ ms.locfileid: "76990510"
 
 При [отправке видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) вы можете использовать для каждого арендатора свой атрибут секции. Это позволит реализовать изоляцию в [API поиска](https://api-portal.videoindexer.ai/docs/services/operations/operations/Search-videos?). Указав в API поиска нужный атрибут секции, вы получите результаты только для указанной секции. 
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 
 * Возможность совместно использовать содержимое и модели настройки для нескольких арендаторов.
 * Каждый арендатор влияет на производительность системы для других арендаторов.
@@ -72,7 +72,7 @@ ms.locfileid: "76990510"
 
 ![Подписка Azure для каждого арендатора](./media/manage-multiple-tenants/azure-subscription-per-tenant.png)
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 
 * Это единственный вариант, который позволяет раздельно выставлять счета.
 * Такая интеграция влечет больше накладных расходов на управление, чем отдельная учетная запись Индексатора видео для каждого арендатора. Если раздельное выставление счетов не является обязательным, мы рекомендуем выбрать другой вариант из числа описанных в этой статье.

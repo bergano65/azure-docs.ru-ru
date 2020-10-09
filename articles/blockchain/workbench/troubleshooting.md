@@ -5,10 +5,10 @@ ms.date: 10/14/2019
 ms.topic: troubleshooting
 ms.reviewer: brendal
 ms.openlocfilehash: 20c0f9bdd6f820a73b1ba6660de805268c0d8714
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85212859"
 ---
 # <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Устранение неполадок в предварительной версии Azure Блокчейн Workbench
@@ -42,7 +42,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 ```
 Этот скрипт принимает следующие параметры.
 
-| Параметр  | Описание | Обязательное значение |
+| Параметр  | Описание | Обязательно |
 |---------|---------|----|
 | SubscriptionID | Идентификатор подписки, в которой создаются или используются ресурсы. | Да |
 | ResourceGroupName | Имя группы ресурсов Azure, в которой развернуто приложение Blockchain Workbench. | Да |
@@ -56,7 +56,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 
 Результирующий ZIP-файл содержит выходные данные в следующей структуре папок:
 
-| Папка или файл | Описание:  |
+| Папка или файл | Описание  |
 |---------|---------|
 | \Summary.txt | Общие сведения о системе |
 | \Metrics\blockchain | Метрики сети блокчейн |
@@ -68,7 +68,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 
 Папка **Metrics** содержит метрики различных компонентов системы по времени. Например, выходной файл `\Details\Workbench\apiMetrics.txt` содержит сводку различных кодов отклика, а также время отклика за весь период сбора. Папка **Details** содержит подробные журналы со сведениями об устранении определенных проблем с программой Workbench базовой сети блокчейн. Например, файл `\Details\Workbench\Exceptions.csv` содержит список последних исключений, произошедших в системе. Эти сведения полезны для устранения ошибок, связанных со смарт-контрактами или взаимодействием с блокчейном. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Azure Blockchain Workbench Application Insights troubleshooting guide](https://aka.ms/workbenchtroubleshooting) (Руководство по устранению неполадок с Application Insights в Azure Blockchain Workbench)

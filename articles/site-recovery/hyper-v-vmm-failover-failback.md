@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: d31355bcb0ce42874c19988738ba06138c7a0b7c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74082598"
 ---
 # <a name="fail-over-and-fail-back-hyper-v-vms-replicated-to-your-secondary-on-premises-site"></a>Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных на дополнительный локальный сайт
@@ -35,7 +35,7 @@ ms.locfileid: "74082598"
 3. После плановой отработки отказа при необходимости можно начать репликацию с основного сайта на дополнительный еще раз.
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что [отработка аварийного восстановления](hyper-v-vmm-test-failover.md) выполнена, чтобы быть уверенным в надлежащей работе всех компонентов.
 - Чтобы выполнить восстановление размещения, убедитесь, что основной и дополнительный серверы VMM подключены к Site Recovery.
@@ -72,5 +72,5 @@ ms.locfileid: "74082598"
 5. Проверьте, доступна ли виртуальная машина в основном облаке VMM.
 6. Если вам нужно запустить репликацию основной виртуальной машины на дополнительный сайт еще раз, щелкните **Обратная репликация**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Для репликации виртуальных машин Hyper-V на дополнительный сайт [просмотрите эти действия](hyper-v-vmm-disaster-recovery.md).

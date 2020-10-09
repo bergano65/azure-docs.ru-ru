@@ -12,10 +12,10 @@ ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 1ad9cc3d6d07c8d744ec667e2fffb035848121b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85203254"
 ---
 # <a name="stringcollection-claims-transformations"></a>Преобразования утверждений StringCollection
@@ -30,7 +30,7 @@ ms.locfileid: "85203254"
 
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | item | string | Тип ClaimType, добавляемый к исходящему утверждению. |
+| InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
 | outputClaim | коллекция | stringCollection | Значение параметра, созданное после вызова этого преобразования утверждений, со значением, указанным во входном утверждении. |
 
@@ -65,7 +65,7 @@ ms.locfileid: "85203254"
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
-| InputParameter | item | string | Значение, добавляемое к исходящему утверждению. |
+| InputParameter | item | строка | Значение, добавляемое к исходящему утверждению. |
 | outputClaim | коллекция | stringCollection | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением, указанным во входном параметре. |
 
 Используйте это преобразование утверждений, чтобы добавить строковое значение в новый или существующий элемент stringCollection. В следующем примере постоянный адрес электронной почты (admin@contoso.com) добавляется в утверждение **otherMails**.
@@ -100,7 +100,7 @@ ms.locfileid: "85203254"
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
-| outputClaim | extractedItem | string | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Первый элемент в коллекции. |
+| outputClaim | extractedItem | строка | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Первый элемент в коллекции. |
 
 В следующем примере считывается утверждение **otherMails** и возвращается первый элемент в утверждение **email**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "85203254"
 | Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | Тип утверждения, для которого выполняется поиск. |
-| InputClaim | item|string| Тип утверждения, содержащий искомое значение.|
+| InputClaim | item|строка| Тип утверждения, содержащий искомое значение.|
 |InputParameter|ignoreCase|строка|Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк.|
 | outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. Логический индикатор, если коллекция содержит такую строку |
 

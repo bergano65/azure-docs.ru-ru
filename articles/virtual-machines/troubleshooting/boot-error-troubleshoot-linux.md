@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 11/20/2019
 ms.author: vilibert
 ms.openlocfilehash: 37cb201751f72918838efe5837aa0e357d483f24
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74408746"
 ---
 # <a name="troubleshoot-azure-linux-virtual-machines-boot-errors"></a>Устранение ошибок загрузки Azure Виртуальные машины Linux
@@ -27,7 +27,7 @@ ms.locfileid: "74408746"
 
 * [GRUB помощь](troubleshoot-vm-boot-error.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Последовательная консоль виртуальной машины](serial-console-linux.md)
 

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
 ms.openlocfilehash: 5b2b8871d868e827532f23c7ef4f14fb00afb5bc
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74072806"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Настройка пользовательского автозаполнения
@@ -86,7 +86,7 @@ GET https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/Suggestions
 Если пользователь выберет предложенную строку запроса из раскрывающегося списка, то при вызове [API пользовательского поиска Bing](overview.md) будет использована строка запроса из поля `query`.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Get custom suggestion](./get-custom-suggestions.md) (Получение пользовательских предложений)
 - [Search your custom instance](./search-your-custom-view.md) (Поиск в пользовательском экземпляре)

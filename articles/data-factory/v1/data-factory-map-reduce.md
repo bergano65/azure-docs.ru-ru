@@ -13,10 +13,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 598a16d25ba375b984a966cba190181edbda3d15
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74703155"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>Вызов программы MapReduce из фабрики данных
@@ -41,7 +41,7 @@ ms.locfileid: "74703155"
 > [!NOTE] 
 > Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md).  
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 Конвейер в фабрике данных Azure обрабатывает данные в связанной службе хранилища с помощью связанных вычислительных служб. В нем содержится последовательность действий, каждое из которых выполняет определенную операцию обработки. В этой статье описывается использование действия MapReduce в HDInsight.
 
 Дополнительную информацию о выполнении сценариев Pig и Hive в кластере HDInsight на основе Windows или Linux из конвейера с помощью действий Pig и Hive в HDInsight см. в статьях [Действие Pig](data-factory-pig-activity.md) и [Действие Hive](data-factory-hive-activity.md). 
@@ -181,9 +181,9 @@ ms.locfileid: "74703155"
 ### <a name="pipeline"></a>Pipeline
 Конвейер в этом примере имеет только одно действие с типом HDInsightMapReduce. Ниже приведены некоторые важные свойства в JSON. 
 
-| Свойство. | Примечания |
+| Свойство | Примечания |
 |:--- |:--- |
-| тип |Должен быть задан тип **HDInsightMapReduce**. |
+| type |Должен быть задан тип **HDInsightMapReduce**. |
 | className |Имя класса: **wordcount** |
 | jarFilePath |Путь к JAR-файлу, содержащему этот класс. Если вы копируете и вставляете приведенный код, не забудьте изменить имя кластера. |
 | jarLinkedService |Служба, связанная со службой хранилища Azure, содержащая JAR-файл. Эта связанная служба ссылается на хранилище, связанное с кластером HDInsight. |
@@ -245,7 +245,7 @@ ms.locfileid: "74703155"
 [Developer Reference]: https://go.microsoft.com/fwlink/?LinkId=516908
 [Azure Portal]: https://portal.azure.com
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Действие Hive](data-factory-hive-activity.md)
 * [Действие Pig](data-factory-pig-activity.md)
 * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
