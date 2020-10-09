@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c65d77d2cf50a59f18f0007e809e9913c3a5ae13
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: a6ccc2911312a74825b885f5f492e67774354316
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91304226"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91858133"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -274,7 +274,7 @@ ms.locfileid: "91304226"
 
 ### <a name="hybrid-identity-administrator"></a>[Администратор гибридных удостоверений](#hybrid-identity-administrator-permissions)
 
-Пользователи с этой ролью могут включать, настраивать и контролировать службы и параметры, связанные с использованием гибридных удостоверений в Azure AD. Эта роль позволяет настроить в Azure AD один из трех поддерживаемых методов проверки подлинности: синхронизацию хэша паролей (PHS), сквозную проверку подлинности (PTA) или федерацию (AD FS или сторонний поставщик федерации), а также развернуть необходимую локальную инфраструктуру. Локальная инфраструктура включает агенты для подготовки и PTA. Эта роль дает возможность использовать простой единый вход (S-SSO), обеспечивающий беспроблемную проверку подлинности на устройствах, работающих не под управлением Windows 10, или на компьютерах не с ОС Windows Server 2016. Кроме того, эта роль позволяет просматривать журналы входа в систему, сведения о работоспособности и аналитические данные для целей мониторинга и устранения неполадок. 
+Пользователи с этой ролью могут создавать, администрировать и развертывать настройку конфигурации подготовки из AD в Azure AD с помощью подготовки облака, а также управлять параметрами Федерации. Пользователи могут также устранять неполадки и отслеживать журналы с помощью этой роли.  
 
 ### <a name="insights-administrator"></a>[Администратор Insights](#insights-administrator-permissions)
 Пользователи с этой ролью могут получить доступ к полному набору административных возможностей в [приложении M365 Insights](https://go.microsoft.com/fwlink/?linkid=2129521). Эта роль имеет возможность чтения данных каталога, мониторинга работоспособности служб, запросов поддержки файлов и доступа к параметрам администратора Insights.
@@ -1216,9 +1216,6 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/cloudProvisioning/allProperties/allTasks | Чтение и настройка всех свойств службы подготовки облачных решений Azure AD. |
 | microsoft.directory/federatedAuthentication/allProperties/allTasks | Управление всеми аспектами служб федерации Active Directory (AD FS) или сторонних поставщиков федерации в Azure AD. |
 | microsoft.directory/organization/dirSync/update | Изменение свойства organization.dirSync в Azure Active Directory. |
-| microsoft.directory/passwordHashSync/allProperties/allTasks | Управление всеми аспектами синхронизации хэша паролей (PHS) в Azure AD. |
-| microsoft.directory/passThroughAuthentication/allProperties/allTasks | Управление всеми аспектами сквозной проверки подлинности (PTA) в Azure AD. |
-| microsoft.directory/seamlessSSO/allProperties/allTasks | Управление всеми аспектами простого единого входа (SSO) в Azure AD. |
 | microsoft.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | microsoft.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
 | microsoft.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
