@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 81db9c7e729aa0be67a807d9d77a3cccb8f41604
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85194796"
 ---
 # <a name="understand-iot-edge-automatic-deployments-for-single-devices-or-at-scale"></a>Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в требуемом масштабе
@@ -46,7 +46,7 @@ Azure IoT Edge предоставляет два способа настройк
 
 Метаданные конфигурации для каждого модуля содержат:
 
-* Версия
+* Version
 * Type
 * состояние (например, работает или остановлен);
 * Политика перезапуска
@@ -195,7 +195,7 @@ SELECT deviceId FROM devices
    * Развертывание, откат которого выполнен, не должно отображать состояние для устройств, откат которых был выполнен.
    * Второе развертывание теперь должно включать состояние развертывания для устройств, откат которых был выполнен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-at-scale.md), чтобы узнать, как создавать, обновлять или удалять развертывание.
 * Узнайте больше об основных понятиях IoT Edge, таких как [среда выполнения IoT Edge](iot-edge-runtime.md) и [модули IoT Edge](iot-edge-modules.md).

@@ -8,21 +8,21 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/23/2020
 ms.openlocfilehash: adcdafbc07fa0a8cc6970ab227b52aee798b084f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76776239"
 ---
 # <a name="scenario-cluster-creation-fails-with-domainnotfound-error-in-azure-hdinsight"></a>Сценарий: сбой создания кластера с ошибкой Домаиннотфаунд в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 При создании кластера HDI Secure (Корпоративный пакет безопасности) происходит сбой с `DomainNotFound` сообщением об ошибке.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Неверные параметры DNS.
 

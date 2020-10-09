@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/19/2020
 ms.author: hamusa
 ms.openlocfilehash: b84a7b88f700e2ba8e9fbe29099dfcbce8dbf3b7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85081071"
 ---
 # <a name="assess-large-numbers-of-physical-servers-for-migration-to-azure"></a>Оценка большого количества физических серверов для миграции в Azure
@@ -48,7 +48,7 @@ ms.locfileid: "85081071"
 --- | --- 
 **Проекты службы "Миграция Azure"** | Оценка до 35 000 серверов в проекте.
 **Устройство службы "Миграция Azure"** | Устройство может обнаружить до 1000 серверов.<br/> Устройство может быть связано только с одним проектом службы "миграция Azure".<br/> С одним проектом службы "миграция Azure" можно связать любое количество устройств. <br/><br/> 
-**Сгруппировать** | В одну группу можно добавить до 35 000 серверов.
+**Группа** | В одну группу можно добавить до 35 000 серверов.
 **Оценка службы "миграция Azure"** | Вы можете оценить до 35 000 серверов за одну оценку.
 
 
@@ -73,7 +73,7 @@ ms.locfileid: "85081071"
 1. Создайте проект службы "Миграция Azure".
 2. Добавьте средство Azure Migrate Server для оценки в проекты.
 
-[Подробнее](how-to-add-tool-first-time.md)
+[Дополнительные сведения](how-to-add-tool-first-time.md)
 
 ## <a name="create-and-review-an-assessment"></a>Создание и проверка оценки
 

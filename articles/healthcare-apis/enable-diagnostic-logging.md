@@ -10,10 +10,10 @@ ms.author: cavoeg
 author: CaitlinV39
 ms.date: 11/01/2019
 ms.openlocfilehash: 948ca03b5bf503c884df5df56c61951b381874a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84870874"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Включение ведения журнала диагностики в Azure API для FHIR®
@@ -63,10 +63,10 @@ ms.locfileid: "84870874"
 |ResultType|Строка|Доступные значения в настоящее время **запущены**, **успешно**или **не пройдены**
 |StatusCode|Int|Код состояния HTTP. (например, 200) 
 |TimeGenerated|Дата и время|Дата и время события|
-|Элемент Property|Строка| Описание свойств Фхирресаурцетипе
+|Свойства|Строка| Описание свойств Фхирресаурцетипе
 |SourceSystem|Строка| Исходная система (в этом случае всегда используется Azure)
 |TenantId|Строка|Tenant ID
-|Type|Строка|Тип журнала (всегда Микрософсеалскареаписаудитлог в этом случае)
+|Тип|Строка|Тип журнала (всегда Микрософсеалскареаписаудитлог в этом случае)
 |_ResourceId|Строка|Сведения о ресурсе
 
 ## <a name="sample-queries"></a>Примеры запросов
@@ -99,7 +99,7 @@ MicrosoftHealthcareApisAuditLogs
  
 FHIR® является охраняемым товарным знаком HL7 и используется с разрешением HL7.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как включить журналы аудита для Azure API для FHIR®. Далее вы узнаете о других дополнительных параметрах, которые можно настроить в API Azure для FHIR.
  
 >[!div class="nextstepaction"]

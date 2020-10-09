@@ -8,10 +8,10 @@ ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: article
 ms.openlocfilehash: c4635333614ee1c0fd0322c29a659380fb4315c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74048382"
 ---
 # <a name="customize-web-application-firewall-rules-using-the-azure-portal"></a>Настройка правил брандмауэра веб-приложения с помощью портал Azure
@@ -44,7 +44,7 @@ ms.locfileid: "74048382"
    1. Найдите правила или группы правил, которые необходимо отключить.
    2. Установите флажки для правил, которые необходимо отключить. 
    3. Выберите действие в верхней части страницы (включить или отключить) для выбранных правил.
-   2. Нажмите кнопку **Сохранить**. 
+   2. Щелкните **Сохранить**. 
 
 ![Сохранение изменений][3]
 
@@ -63,7 +63,7 @@ ms.locfileid: "74048382"
 
 * Порог входящего индекса аномалий превышает пороговое значение
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 

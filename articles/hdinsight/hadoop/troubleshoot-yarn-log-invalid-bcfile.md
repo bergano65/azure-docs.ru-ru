@@ -8,17 +8,17 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/23/2020
 ms.openlocfilehash: f7861ae4980f13fbd87780ab2d26fa3376f33532
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76776200"
 ---
 # <a name="scenario-unable-to-read-apache-yarn-log-in-azure-hdinsight"></a>Сценарий: не удается прочитать журнал Apache Yarn в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 Журналы Apache Yarn, найденные из учетной записи хранения, не могут быть прочитаны человеком. Средство синтаксического анализа файлов не работает и выдает следующее сообщение об ошибке:
 
@@ -26,7 +26,7 @@ ms.locfileid: "76776200"
 java.io.IOException: Not a valid BCFile.
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Журнал Apache Yarn обрабатывается в `IndexFile` формате, который не поддерживается средством синтаксического анализа файлов.
 

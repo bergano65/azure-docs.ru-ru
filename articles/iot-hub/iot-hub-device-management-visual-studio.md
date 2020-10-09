@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: 6fe5a45dda6632c56b3c6714827950e25e7d26af
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73953184"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью Cloud Explorer для Visual Studio
@@ -41,7 +41,7 @@ ms.locfileid: "73953184"
 
 В этой статье выполните Cloud Explorer для Visual Studio с различными вариантами управления.
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
 Вам потребуется сделать следующее:
 
@@ -107,7 +107,7 @@ ms.locfileid: "73953184"
 
    Результаты отображаются в **выходных данных**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как использовать Cloud Explorer для Visual Studio с различными параметрами управления.
 

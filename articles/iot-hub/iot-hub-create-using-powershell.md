@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: robinsh
 ms.openlocfilehash: 9c49f7ac744ee516aefc1571d50264132035ba8a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73890605"
 ---
-# <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Создание центра Интернета вещей с помощью командлета New-Азиосуб
+# <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Создание центра Интернета вещей с помощью командлета New-AzIotHub
 
 [!INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 Для создания Центров Интернета вещей и управления ими можно использовать командлеты Azure PowerShell. В этом руководстве показано, как создать Центр Интернета вещей с помощью PowerShell.
 
@@ -85,7 +85,7 @@ Remove-AzIotHub `
 Remove-AzResourceGroup -Name MyIoTRG1
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После развертывания Центра Интернета вещей с помощью командлета PowerShell вам могут понадобиться дополнительные сведения, с которыми можно ознакомиться в следующих статьях:
 

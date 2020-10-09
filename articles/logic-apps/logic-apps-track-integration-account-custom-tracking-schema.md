@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 01/01/2020
 ms.openlocfilehash: c82f9cbfaf2e23ddaa5e4b05f4aac4795d3e16a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76903054"
 ---
 # <a name="create-custom-tracking-schemas-that-monitor-end-to-end-workflows-in-azure-logic-a"></a>Создание настраиваемых схем отслеживания, отслеживающих сквозные рабочие процессы в Azure Logic A
@@ -51,9 +51,9 @@ Azure Logic Apps имеет встроенные возможности отсл
 }
 ```
 
-| Свойство | Обязательно | Тип | Описание: |
+| Свойство | Обязательно | Тип | Описание |
 |----------|----------|------|-------------|
-| sourceType | Да | Строка | Тип источника запуска с этими разрешенными значениями: `Microsoft.Logic/workflows` ,`custom` |
+| sourceType | Да | Строка | Тип источника запуска с этими разрешенными значениями: `Microsoft.Logic/workflows` , `custom` |
 | source | Да | String или JToken | Если исходный тип — `Microsoft.Logic/workflows` , сведения об источнике должны следовать этой схеме. Если тип источника — `custom` , то схема является JToken. |
 | systemId | Да | Строка | Идентификатор системы приложения логики |
 | runId | Да | Строка | Идентификатор запуска приложения логики |
@@ -65,7 +65,7 @@ Azure Logic Apps имеет встроенные возможности отсл
 | clientRequestId | нет | Строка | Клиент может заполнить это свойство для корреляции сообщений. |
 | eventLevel | Да | Строка | Уровень события |
 | eventTime | Да | Дата и время | Время события в формате UTC: *гггг-мм-ddThh: mm: SS. 00000z)* |
-| recordType | Да | Строка | Тип записи Track только с этим разрешенным значением:`custom` |
+| recordType | Да | Строка | Тип записи Track только с этим разрешенным значением: `custom` |
 | запись | Да | JToken | Пользовательский тип записи только с форматом JToken |
 |||||
 
@@ -76,6 +76,6 @@ Azure Logic Apps имеет встроенные возможности отсл
 * [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
 * [Схемы отслеживания X12](logic-apps-track-integration-account-x12-tracking-schema.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [мониторинге сообщений B2B с помощью журналов Azure Monitor](../logic-apps/monitor-b2b-messages-log-analytics.md)

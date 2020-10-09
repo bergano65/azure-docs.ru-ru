@@ -8,10 +8,10 @@ ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: article
 ms.openlocfilehash: 8e8aaa9458619bc937c5bb11c450f3197b92f451
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74048533"
 ---
 # <a name="customize-web-application-firewall-rules-using-the-azure-cli"></a>Настройка правил брандмауэра веб-приложения с помощью Azure CLI
@@ -135,7 +135,7 @@ az network application-gateway waf-config set --resource-group AdatumAppGatewayR
 
 * Порог входящего индекса аномалий превышает пороговое значение
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 

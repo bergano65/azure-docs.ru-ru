@@ -17,10 +17,10 @@ ms.date: 05/13/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.openlocfilehash: b3db86137207ae726c7befc393f62590fd1456d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74008267"
 ---
 # <a name="usage-and-insights-report-in-the-azure-active-directory-portal"></a>Отчет об использовании и аналитике на портале Azure Active Directory
@@ -31,7 +31,7 @@ ms.locfileid: "74008267"
 *   Какие приложения имеют самые неудачные попытки входа? 
 *   Каковы основные ошибки входа для каждого приложения?
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Чтобы получить доступ к данным из отчета об использовании и Insights, вам потребуется:
 
@@ -60,6 +60,6 @@ ms.locfileid: "74008267"
 
 ![Отчет об использовании и аналитике](./media/concept-usage-insights-report/usage-and-insights-report.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отчет о входе](concept-sign-ins.md)

@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: 32b47d9d6d45ff471961f55f8159dbe85eae2dce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73888833"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---docker"></a>Локальное развертывание акселератора решения для удаленного мониторинга Docker
@@ -23,7 +23,7 @@ ms.locfileid: "73888833"
 
 Если вы хотите запустить акселератор решения для удаленного мониторинга в IDE на локальном компьютере, см. статью [Локальное развертывание акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy-local.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для развертывания служб Azure, используемых акселератором решения для удаленного мониторинга, требуется активная подписка Azure.
 
@@ -104,6 +104,6 @@ docker rmi <list_of_images>
 
 Воспользуйтесь командой `docker-compose down --rmi all`, чтобы удалить образы Docker и освободить место на локальном компьютере. Также можно удалить локальную копию репозитория удаленного мониторинга, созданную при клонировании исходного кода из GitHub.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули решение для удаленного мониторинга, ознакомьтесь со статьей [Краткое руководство. Использование облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md).

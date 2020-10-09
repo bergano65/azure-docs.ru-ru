@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: wanl
 ms.openlocfilehash: 55482457058d01162116494b637661db40010a50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85131986"
 ---
 # <a name="resource-logs-for-azure-signalr-service"></a>Журналы ресурсов для службы SignalR Azure
 
 В этом учебнике рассматриваются журналы ресурсов для службы Azure SignalR, способы их настройки и способы устранения неполадок. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы включить журналы ресурсов, вам понадобится место для хранения данных журнала. В этом руководстве используется служба хранилища Azure и Log Analytics.
 
 * Служба [хранилища Azure](../azure-monitor/platform/resource-logs-collect-storage.md) — сохранение журналов ресурсов для аудита политики, статического анализа или резервного копирования.
@@ -68,7 +68,7 @@ ms.locfileid: "85131986"
 
 **Формат**
 
-name | Описание:
+name | Описание
 ------- | -------
 time | Регистрировать время события
 уровень | Уровень событий Log
@@ -81,15 +81,15 @@ properties | Подробные свойства, связанные с этим
 
 **Таблица свойств**
 
-name | Описание:
+name | Описание
 ------- | -------
 type | Тип события журнала. В настоящее время мы предоставляем сведения о подключении к службе Azure SignalR. `ConnectivityLogs`Доступен только тип
-коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и`Throttling`
+коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и `Throttling`
 connectionId | Удостоверение подключения
 transportType | Тип транспорта соединения. Допустимые значения: `Websockets` \| `ServerSentEvents` \|`LongPolling`
 connectionType | Тип подключения. Допустимые значения: `Server` \| `Client`. `Server`: соединение со стороны сервера; `Client`: подключение со стороны клиента
 userId | Удостоверение пользователя
-message | Подробное сообщение о событии журнала
+сообщение | Подробное сообщение о событии журнала
 
 Ниже приведен пример строки JSON журнала архивирования.
 
@@ -131,7 +131,7 @@ message | Подробное сообщение о событии журнала
 name | Описание
 ------- | ------- 
 TimeGenerated | Регистрировать время события
-Коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и`Throttling`
+Коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и `Throttling`
 OperationName | Имя операции для события
 Расположение | Расположение службы Azure SignalR
 Level | Уровень событий Log
