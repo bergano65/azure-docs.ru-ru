@@ -2,7 +2,7 @@
   items:
     - name: Обзор
       items:
-        - name: Приступая к работе
+        - name: Начало работы
           href: overview.md
         - name: Рабочие нагрузки
           href: partner-workloads.md
