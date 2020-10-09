@@ -2,13 +2,13 @@
 title: Событие создания пула пакетной службы Azure
 description: Ссылка на событие создания пула пакетной службы, которая формируется после создания пула. Содержимое журнала предоставляет общие сведения о пуле.
 ms.topic: reference
-ms.date: 04/20/2017
-ms.openlocfilehash: eee512bbeed223269c43bde77435fbff2b67b533
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.date: 10/08/2020
+ms.openlocfilehash: dea0e04fa506274e645ba7a578039a0d6f021043
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86147316"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850954"
 ---
 # <a name="pool-create-event"></a>Событие создания пула
 
@@ -41,7 +41,7 @@ ms.locfileid: "86147316"
     "resizeTimeout": "300000",
     "targetDedicatedNodes": 2,
     "targetLowPriorityNodes": 2,
-    "maxTasksPerNode": 1,
+    "taskSlotsPerNode": 1,
     "vmFillType": "Spread",
     "enableAutoScale": false,
     "enableInterNodeCommunication": false,
@@ -64,7 +64,7 @@ ms.locfileid: "86147316"
 |`enableAutoScale`|Bool|Указывает, корректируется ли размер пула автоматически с течением времени.|
 |`enableInterNodeCommunication`|Bool|Указывает, настроен ли пул для прямой связи между узлами.|
 |`isAutoPool`|Bool|Определяет, создан ли пул с помощью механизма AutoPool задания.|
-|`maxTasksPerNode`|Int32|Максимальное число задач, которые могут быть запущены одновременно на одном вычислительном узле в пуле.|
+|`taskSlotsPerNode`|Int32|Максимальное число задач, которые могут быть запущены одновременно на одном вычислительном узле в пуле.|
 |`vmFillType`|Строка|Определяет, каким образом пакетная служба распределяет задачи между вычислительными узлами в пуле. Допустимые значения: "Spread" (Распределение) или "Pack" (Упаковка).|
 
 ###  <a name="cloudserviceconfiguration"></a><a name="bk_csconf"></a> cloudServiceConfiguration

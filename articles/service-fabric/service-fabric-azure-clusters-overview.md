@@ -3,16 +3,14 @@ title: Создание кластеров на базе Windows Server и Linux
 description: Кластеры Service Fabric работают в Windows Server и Linux. Вы можете развертывать и размещать Service Fabric приложения в любом месте, где можно запускать Windows Server или Linux.
 services: service-fabric
 documentationcenter: .net
-author: dkkapur
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: dekapur
-ms.openlocfilehash: 2c0cc1ddc58347933b498b015c562c3822e8a688
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 7446a221d266230b319c808a88ef4fac05e6fff5
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90978711"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843317"
 ---
 # <a name="overview-of-service-fabric-clusters-on-azure"></a>Общие сведения о кластерах Service Fabric в Azure
 Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Узлом кластера называется компьютер или виртуальная машина, которая входит в состав кластера. Кластеры можно масштабировать до нескольких тысяч узлов. Если вы добавите новые узлы в кластер, реплики раздела службы подвергнутся повторной балансировке Service Fabric с учетом этих узлов. Общая производительность приложения улучшится, а конфликт доступа к памяти уменьшится. При неэффективном использовании узлов в кластере вы можете уменьшить их количество. Service Fabric снова перераспределит реплики и экземпляры секции по меньшему количеству узлов, чтобы эффективно использовать оборудование на каждом узле.
@@ -100,11 +98,11 @@ Service Fabric также поддерживает управление дост
 | --- | --- |
 | Windows Server 2012 R2 | Все версии |
 | Windows Server 2016 | Все версии |
-| Windows Server 1709 | 6.0 |
+| Windows Server 1709 | 6,0 |
 | Windows Server 1803 | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
 | Windows Server 2019 | 6.4.654.9590 |
-| Linux Ubuntu 16.04 | 6.0 |
+| Linux Ubuntu 16.04 | 6,0 |
 | Linux Ubuntu 18,04 | 7.1 |
 
 Дополнительные сведения см. [в статье Поддерживаемые версии кластеров в Azure](./service-fabric-versions.md#supported-operating-systems) .

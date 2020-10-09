@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 1274679bdd9892e2dc39f3c5e94d8d8d486928b6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f87a2347890f8d17e3901c6d8fc168c1d96c7661
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91329199"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91849353"
 ---
 # <a name="tutorial-configure-bitabiz-for-automatic-user-provisioning"></a>Учебник. Настройка BitaBIZ для автоматической подготовки пользователей
 
@@ -54,11 +54,11 @@ ms.locfileid: "91329199"
 
 1. Войдите в [консоль администратора BitaBIZ](https://www.bitabiz.com/login?lang=en). Щелкните **SETUP ADMIN** (УСТАНОВИТЬ АДМИНИСТРАТОРА).
 
-    ![Консоль администрирования BitaBIZ](media/bitabiz-provisioning-tutorial/setup-admin.png)
+    :::image type="content" source="media/bitabiz-provisioning-tutorial/setup-admin.png" alt-text="Снимок экрана консоли администрирования BitaBIZ с выделенным администратором установки." border="false":::
 
 2.  Перейдите к разделу **Интеграция**.
 
-    ![Консоль администрирования BitaBIZ](media/bitabiz-provisioning-tutorial/integration.png)
+    :::image type="content" source="media/bitabiz-provisioning-tutorial/integration.png" alt-text="Снимок экрана консоли администрирования BitaBIZ с выделенным администратором установки." border="false":::
 
 2.  Перейдите к **Microsoft Azure AD подготовки**.  Выберите **включено** в автоматической подготовке пользователей. Скопируйте значения для **URL-адреса конечной точки подготовки scim** и  **токена носителя**. Эти значения будут указаны в полях URL-адрес клиента и секретный токен на вкладке Подготовка приложения BitaBIZ в портал Azure.
 

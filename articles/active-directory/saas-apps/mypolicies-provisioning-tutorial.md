@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: a6db1866c42dbb90d6ea0f288aceed4672424fe0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 56aad5ce9045ca205221ba0c56d1ea75f8f3610a
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91321991"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850510"
 ---
 # <a name="tutorial-configure-mypolicies-for-automatic-user-provisioning"></a>Учебник. Настройка myPolicies для автоматической подготовки пользователей
 
@@ -118,7 +118,7 @@ ms.locfileid: "91321991"
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с myPolicies**.
 
-    ![Сопоставления пользователей myPolicies](media/mypolicies-provisioning-tutorial/usermapping.png)
+    :::image type="content" source="media/mypolicies-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с кустомаппссо." border="false":::
 
 10. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в myPolicies в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в myPolicies для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 

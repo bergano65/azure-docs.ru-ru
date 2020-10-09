@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 40fd048e1ace56af7a9198088d6129925033be93
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c26a581df7ac10777687bf268027eb94862605b1
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91331222"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850138"
 ---
 # <a name="tutorial-configure-15five-for-automatic-user-provisioning"></a>Учебник. Настройка 15Five для автоматической подготовки пользователей
 
@@ -54,19 +54,19 @@ ms.locfileid: "91331222"
 
 1. Войдите в [консоль администратора 15Five](https://my.15five.com/). Перейдите к **функции > интеграции**.
 
-    ![Консоль администрирования 15Five](media/15five-provisioning-tutorial/integration.png)
+    :::image type="content" source="media/15five-provisioning-tutorial/integration.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
 
 2.  Щелкните **SCIM 2,0**.
 
-    ![Консоль администрирования 15Five](media/15five-provisioning-tutorial/image00.png)
+    :::image type="content" source="media/15five-provisioning-tutorial/image00.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
 
 3.  Перейдите к **scim integration > создать токен OAuth**.
 
-    ![15Five добавить SCIM](media/15five-provisioning-tutorial/image02.png)
+    :::image type="content" source="media/15five-provisioning-tutorial/image02.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
 
 4.  Скопируйте значения для **базового URL-адреса SCIM 2,0** и **маркера доступа**. Это значение будет указано в поле **URL-адрес клиента** и **секретный токен** на вкладке подготовка приложения 15Five в портал Azure.
     
-    ![15Five добавить SCIM](media/15five-provisioning-tutorial/image03.png)
+    :::image type="content" source="media/15five-provisioning-tutorial/image03.png" alt-text="Снимок экрана консоли администрирования 15Five. Интеграция отображается в разделе &quot;компоненты&quot; в меню, а компоненты и интеграции выделены." border="false":::
 
 ## <a name="step-3-add-15five-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление 15Five из коллекции приложений Azure AD
 

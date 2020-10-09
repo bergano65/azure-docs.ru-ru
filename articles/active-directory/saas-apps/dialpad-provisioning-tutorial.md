@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: zhchia
-ms.openlocfilehash: dee9ca2879d456270cfed667b8a02a6e5c4f100b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7475ebc6dd51bbc1c30ee22623c7cbda1a5237ab
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91328077"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91848982"
 ---
 # <a name="tutorial-configure-dialpad-for-automatic-user-provisioning"></a>Учебник. Настройка поднимая для автоматической подготовки пользователей
 
@@ -54,13 +54,13 @@ ms.locfileid: "91328077"
 
 1. Войдите в [консоль администрирования поднимая](https://dialpadbeta.com/login) и выберите **Параметры администратора**. Убедитесь, что в раскрывающемся списке выбран вариант **Моя компания** . Перейдите к **разделу Проверка Подлинности > ключи API**.
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/dialpad01.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad01.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
 2. Создайте новый ключ, нажав кнопку **Добавить ключ** и настроив свойства маркера секрета.
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/dialpad02.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad02.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/dialpad03.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad03.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
 3. Нажмите кнопку " **щелкните, чтобы отобразить значение** для недавно созданного ключа API и скопируйте отображаемое значение. Это значение будет указано в поле **секретный токен** на вкладке Подготовка приложения поднимая в портал Azure. 
 
@@ -89,19 +89,19 @@ ms.locfileid: "91328077"
 
 5. Перейдите по **URL-адресу** , выделенному ниже, в отдельном браузере. 
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/dialpad05.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad05.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
 6. В правом верхнем углу выберите **вход > использовать поднимая Online**.
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/dialpad06.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/dialpad06.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
 7. Так как поднимая — это приложение OpenIDConnect, выберите вход в поднимая с помощью рабочей учетной записи Майкрософт.
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/loginpage.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/loginpage.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
 8. После успешной проверки подлинности примите запрос согласия на страницу согласия. Затем приложение будет автоматически добавлено в клиент, и вы будете перенаправлены в учетную запись поднимая.
 
-    ![Поднимая добавить SCIM](media/dialpad-provisioning-tutorial/redirect.png)
+    :::image type="content" source="media/dialpad-provisioning-tutorial/redirect.png" alt-text="Снимок экрана консоли администрирования поднимая с выделенным значком &quot;Параметры&quot;, &quot;Моя компания&quot;, &quot;Проверка подлинности&quot; и выделенными клавишами P I и моей организацией." border="false":::
 
  ## <a name="configure-automatic-user-provisioning-to-dialpad"></a>Настройка автоматической подготовки пользователей в поднимая
 

@@ -2,14 +2,14 @@
 title: Комплексное выполнение заданий с помощью шаблонов
 description: Используя только команды CLI, можно создать пул, отправить входные данные, создать задания и связанные задачи и загрузить результаты выходных данных.
 ms.topic: how-to
-ms.date: 12/07/2018
+ms.date: 10/08/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: e9b4930dee1b28bb4ec71690cbfcef88e0365b9e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 845a32c2feda5a5a3b8d44d237c62db94cae1779
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494933"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91848727"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов
 
@@ -65,7 +65,7 @@ az extension add --name azure-batch-cli-extensions
 -   **Параметры**
 
     -   Позволяют указывать значения свойств в теле шаблона. При использовании шаблона необходимо предоставить только значения параметров. Например, полное определение пула можно поместить в текст и определить только один параметр для `poolId`. Таким образом, для создания пула необходимо указать только строку идентификатора.
-        
+
     -   Тело шаблона может создать пользователь, который знаком с пакетной службой и приложениями, запускаемыми пакетной службой. При использовании шаблона необходимо указать только значения параметров, определенных создателем шаблона. Поэтому пользователь, мало знакомый с пакетной службой и (или) приложениями, также может использовать шаблоны.
 
 -   **Переменные**
@@ -121,7 +121,7 @@ az extension add --name azure-batch-cli-extensions
             "vmSize": "STANDARD_D3_V2",
             "targetDedicatedNodes": "[parameters('nodeCount')]",
             "enableAutoScale": false,
-            "maxTasksPerNode": 1,
+            "taskSlotsPerNode": 1,
             "packageReferences": [
                 {
                     "type": "aptPackage",
@@ -209,7 +209,7 @@ az batch pool create --template pool-ffmpeg.json --parameters pool-parameters.js
             },
             "taskFactory": {
                 "type": "taskPerFile",
-                "source": { 
+                "source": {
                     "fileGroup": "ffmpeg-input"
                 },
                 "repeatTask": {
@@ -271,7 +271,7 @@ az batch job create --template job-ffmpeg.json
 Расширение CLI для пакетной службы предоставляет команды, чтобы передать файлы от клиента в указанную группу файлов или скачать в клиент файлы из указанной группы файлов.
 
 ```azurecli
-az batch file upload --local-path c:\source_videos\*.mp4 
+az batch file upload --local-path c:\source_videos\*.mp4
     --file-group ffmpeg-input
 
 az batch file download --file-group ffmpeg-output --local-path

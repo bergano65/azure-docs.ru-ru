@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: 1d3ea609cda37c3bb0de28d8eb1a19944809980d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 78ba57d485f9842ad8531ce22a2b932aa1a1d28b
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91331171"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850461"
 ---
 # <a name="tutorial-configure-foodee-for-automatic-user-provisioning"></a>Учебник. Настройка пищи для автоматической подготовки пользователей
 
@@ -55,7 +55,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. Войдите в систему на [еду](https://www.food.ee/login/), а затем выберите свой идентификатор клиента.
 
-    ![Foodee](media/Foodee-provisioning-tutorial/tenant.png)
+    :::image type="content" source="media/Foodee-provisioning-tutorial/tenant.png" alt-text="Снимок экрана: главное меню корпоративного портала на уровне пищи. Заполнитель идентификатора клиента отображается в меню." border="false":::
 
 1. На **корпоративном портале**выберите **единый вход**.
 
@@ -63,7 +63,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. Скопируйте значение в поле **токен API** для последующего использования. Его можно ввести в поле **секретный токен** на вкладке **Подготовка** приложения Food в портал Azure.
 
-    ![Foodee](media/Foodee-provisioning-tutorial/token.png)
+    :::image type="content" source="media/Foodee-provisioning-tutorial/token.png" alt-text="Снимок экрана: главное меню корпоративного портала на уровне пищи. Заполнитель идентификатора клиента отображается в меню." border="false":::
 
 ## <a name="add-foodee-from-the-gallery"></a>Добавление пищи из коллекции
 
@@ -71,7 +71,7 @@ Azure AD использует концепцию, называемую *назн
 
 Чтобы добавить Food из коллекции приложений Azure AD, выполните следующие действия.
 
-1. В [портал Azure](https://portal.azure.com)в левой области выберите **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**.
 
     ![Команда Azure Active Directory](common/select-azuread.png)
 
@@ -114,7 +114,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. В разделе **учетные данные администратора**выполните следующие действия.
 
-   а. В поле **URL-адрес клиента** введите значение **https: \/ /Concierge.Food.ee/scim/v2** , полученное ранее.
+   a. В поле **URL-адрес клиента** введите значение **https: \/ /Concierge.Food.ee/scim/v2** , полученное ранее.
 
    b. В поле **секретный токен** введите значение **токена API** , полученное ранее.
    
@@ -130,20 +130,20 @@ Azure AD использует концепцию, называемую *назн
 
 1. В разделе **сопоставления**выберите **синхронизировать Azure Active Directory пользователей с Food**.
 
-    ![Сопоставления пользователей с еда](media/Foodee-provisioning-tutorial/usermapping.png)
+    :::image type="content" source="media/Foodee-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана: главное меню корпоративного портала на уровне пищи. Заполнитель идентификатора клиента отображается в меню." border="false":::
 
 1. В разделе **сопоставления атрибутов**проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в еда. Атрибуты, выбранные как свойства **Matching** , используются для сопоставления *учетных записей пользователей* в Food для операций обновления. 
 
-    ![Сопоставления пользователей с еда](media/Foodee-provisioning-tutorial/userattribute.png)
+    :::image type="content" source="media/Foodee-provisioning-tutorial/userattribute.png" alt-text="Снимок экрана: главное меню корпоративного портала на уровне пищи. Заполнитель идентификатора клиента отображается в меню." border="false":::
 
 1. Чтобы зафиксировать изменения, нажмите кнопку **сохранить**.
 1. В разделе **сопоставления**выберите **синхронизировать Azure Active Directory группы с Food**.
 
-    ![Сопоставления пользователей с еда](media/Foodee-provisioning-tutorial/groupmapping.png)
+    :::image type="content" source="media/Foodee-provisioning-tutorial/groupmapping.png" alt-text="Снимок экрана: главное меню корпоративного портала на уровне пищи. Заполнитель идентификатора клиента отображается в меню." border="false":::
 
 1. В разделе **сопоставления атрибутов**проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в еда. Атрибуты, выбранные как свойства **Matching** , используются для сопоставления *учетных записей групп* в Food для операций обновления.
 
-    ![Сопоставления пользователей с еда](media/Foodee-provisioning-tutorial/groupattribute.png)
+    :::image type="content" source="media/Foodee-provisioning-tutorial/groupattribute.png" alt-text="Снимок экрана: главное меню корпоративного портала на уровне пищи. Заполнитель идентификатора клиента отображается в меню." border="false":::
 
 1. Чтобы зафиксировать изменения, нажмите кнопку **сохранить**.
 1. Настройте фильтры области. Чтобы узнать, как это делать, ознакомьтесь с инструкциями в [руководстве по фильтрации областей](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).

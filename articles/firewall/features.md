@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 09/28/2020
+ms.date: 10/08/2020
 ms.author: victorh
-ms.openlocfilehash: 16e128fd61c8b0aeae017e5298ae1d8aed6e97e9
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: 7429be4430b2b520fb2a66b6b2c0dd138af8e501
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91408513"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850597"
 ---
 # <a name="azure-firewall-features"></a>Функции службы "Брандмауэр Azure"
 
@@ -101,7 +101,11 @@ ms.locfileid: "91408513"
 
 ## <a name="azure-monitor-logging"></a>ведение журналов Azure Monitor;
 
-Все события интегрируются с Azure Monitor, позволяя архивировать журналы в учетную запись хранения, передавать события в концентратор событий или отправлять их в журналы Azure Monitor. Дополнительные сведения см. в статье [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).
+Все события интегрируются с Azure Monitor, позволяя архивировать журналы в учетную запись хранения, передавать события в концентратор событий или отправлять их в журналы Azure Monitor. Примеры журналов Azure Monitor см. в разделе [журналы Azure Monitor для брандмауэра Azure](log-analytics-samples.md).
+
+Дополнительные сведения см. в статье [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md). 
+
+Книга брандмауэра Azure предоставляет гибкий холст для анализа данных брандмауэра Azure. Его можно использовать для создания многофункциональных визуальных отчетов в портал Azure. Дополнительные сведения см. в статье [мониторинг журналов с помощью книги брандмауэра Azure](firewall-workbook.md).
 
 ## <a name="forced-tunneling"></a>Принудительное туннелирование
 

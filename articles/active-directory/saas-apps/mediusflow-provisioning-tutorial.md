@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: fae6c9f76f5c502d3a31c76330bd5b348d523e37
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 71dc05e3949c2675be6255723530693304e1aa3e
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91360622"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850087"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Руководство по Настройка MediusFlow для автоматической подготовки пользователей
 
@@ -62,7 +62,7 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
 1.  Войдите в [консоль администрирования MediusFlow](https://office365.cloudapp.mediusflow.com/), указав идентификатор арендатора.
 
-    ![Authenticate](./media/mediusflow-provisioning-tutorial/1-auth.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/1-auth.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 2. Проверьте подключение к MediusFlow.
 
@@ -76,35 +76,35 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
 4. Сохраните конфигурацию.
 
-    ![Authenticate](./media/mediusflow-provisioning-tutorial/4-save-config.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/4-save-config.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 5. Выберите подготовку пользователей и щелкните **ОК**.
 
-    ![Authenticate](./media/mediusflow-provisioning-tutorial/5-select-user-provisioning.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/5-select-user-provisioning.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 6. Щелкните **Создать секретный ключ**. Скопируйте и сохраните это значение. Его нужно будет ввести в поле **Секретный токен** на вкладке **Подготовка** для приложения MediusFLow на портале Azure.
 
-    ![Authenticate](./media/mediusflow-provisioning-tutorial/6-create-secret-1.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/6-create-secret-1.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 7. Нажмите кнопку **ОК**.
 
-    ![Authenticate](./media/mediusflow-provisioning-tutorial/7-confirm-secret.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/7-confirm-secret.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 8. Чтобы получить пользователей, импортированных с помощью предварительно определенного набора ролей, компаний и других общих конфигураций в MediusFlow, необходимо сначала настроить его. Для начала добавьте конфигурацию, щелкнув **Добавить конфигурацию**.
 
-    ![Настройка пользователей](./media/mediusflow-provisioning-tutorial/8-configure-user-configuration-1.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/8-configure-user-configuration-1.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 9. Предоставьте параметры по умолчанию для пользователей. В этом представлении можно задать атрибут по умолчанию. Если вас устраивают стандартные значения, можно просто указать допустимое название компании. Так как эти параметры конфигурации извлекаются из Mediusflow, их нужно сначала настроить. Дополнительные сведения см. в разделе **Предварительные условия** этой статьи.
 
-    ![Настройка пользователей](./media/mediusflow-provisioning-tutorial/9-configure-user-config-detail-1.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/9-configure-user-config-detail-1.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 10. Щелкните **Сохранить**, чтобы сохранить конфигурацию пользователей.
 
-    ![Настройка пользователей](./media/mediusflow-provisioning-tutorial/10-done-1.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/10-done-1.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 11. Чтобы получить ссылку для подготовки пользователей, щелкните **Копировать ссылку SCIM**. Скопируйте и сохраните это значение. Его нужно будет ввести в поле **URL-адрес арендатора** на вкладке **Подготовка** для приложения MediusFLow на портале Azure.
  
-    ![Настройка пользователей](./media/mediusflow-provisioning-tutorial/11-get-scim-link.png)
+    :::image type="content" source="./media/mediusflow-provisioning-tutorial/11-get-scim-link.png" alt-text="Снимок экрана консоли администрирования MediusFlow. Поле Имя клиента MediusFlow и кнопка аутентификации выделены на первом этапе интеграции." border="false":::
 
 ## <a name="step-3-add-mediusflow-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление MediusFlow из коллекции приложений Azure AD
 

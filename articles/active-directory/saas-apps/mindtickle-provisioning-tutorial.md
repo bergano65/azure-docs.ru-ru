@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: Zhchia
-ms.openlocfilehash: e5145aee31b4f82b34f9256257cf6c2951ca24da
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 145793d7e451e7db9598118fb3adbd49d1d9c650
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91256472"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850682"
 ---
 # <a name="tutorial-configure-mindtickle-for-automatic-user-provisioning"></a>Учебник. Настройка Миндтиккле для автоматической подготовки пользователей
 
@@ -115,11 +115,11 @@ ms.locfileid: "91256472"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с миндтиккле**.
 
-    ![Сопоставления пользователей Миндтиккле](media/mindtickle-provisioning-tutorial/usermapping.png)
+    :::image type="content" source="media/mindtickle-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с Миндтиккле." border="false":::
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Миндтиккле в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в миндтиккле для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Сопоставления пользователей Миндтиккле](media/mindtickle-provisioning-tutorial/userattribute.png)
+    :::image type="content" source="media/mindtickle-provisioning-tutorial/userattribute.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с Миндтиккле." border="false":::
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

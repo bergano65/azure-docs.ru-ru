@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: zhchia
-ms.openlocfilehash: d88b8f2a6cc66e239706677bd1ebfe01bccd49af
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f5b14ecf061e8f0c53dc1387d1581bc780d190b9
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322042"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850916"
 ---
 # <a name="tutorial-configure-figma-for-automatic-user-provisioning"></a>Учебник. Настройка фигма для автоматической подготовки пользователей
 
@@ -53,23 +53,23 @@ ms.locfileid: "91322042"
 
 1. Войдите в [консоль администратора фигма](https://www.Figma.com/). Щелкните значок шестеренки рядом с вашим клиентом.
 
-    ![Фигмафигма-Employee-готовить](media/Figma-provisioning-tutorial/image0.png)
+    :::image type="content" source="media/Figma-provisioning-tutorial/image0.png" alt-text="Снимок экрана консоли администрирования фигма. Отображается клиент с именем A, scim тестом. Рядом с клиентом выделяется значок шестеренки." border="false":::
 
 2. Перейдите к **разделу общие > обновить журнал в параметрах**.
 
-    ![Фигмафигма-Employee-готовить](media/Figma-provisioning-tutorial/figma03.png)
+    :::image type="content" source="media/Figma-provisioning-tutorial/figma03.png" alt-text="Снимок экрана консоли администрирования фигма. Отображается клиент с именем A, scim тестом. Рядом с клиентом выделяется значок шестеренки." border="false":::
 
 3. Скопируйте **идентификатор клиента**. Это значение будет использоваться для создания URL-адреса конечной точки SCIM, который будет указан в поле **URL-адрес клиента** на вкладке Подготовка приложения фигма в портал Azure.
 
-    ![Фигма создание токена](media/Figma-provisioning-tutorial/figma-tenantid.png)
+    :::image type="content" source="media/Figma-provisioning-tutorial/figma-tenantid.png" alt-text="Снимок экрана консоли администрирования фигма. Отображается клиент с именем A, scim тестом. Рядом с клиентом выделяется значок шестеренки." border="false":::
 
 4. Прокрутите вниз и щелкните **создать токен API**.
 
-    ![Фигма создание токена](media/Figma-provisioning-tutorial/token.png)
+    :::image type="content" source="media/Figma-provisioning-tutorial/token.png" alt-text="Снимок экрана консоли администрирования фигма. Отображается клиент с именем A, scim тестом. Рядом с клиентом выделяется значок шестеренки." border="false":::
 
 5. Скопируйте значение  **токена API** . Это значение будет указано в поле **секретный токен** на вкладке Подготовка приложения фигма в портал Azure. 
 
-    ![Фигма создание токена](media/Figma-provisioning-tutorial/figma04.png)
+    :::image type="content" source="media/Figma-provisioning-tutorial/figma04.png" alt-text="Снимок экрана консоли администрирования фигма. Отображается клиент с именем A, scim тестом. Рядом с клиентом выделяется значок шестеренки." border="false":::
 
 ## <a name="add-figma-from-the-gallery"></a>Добавление фигма из коллекции
 

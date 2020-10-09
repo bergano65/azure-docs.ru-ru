@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 0af8df35bc2cc323e5165b973c889a0ab10f4cbb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: bf779918dbfb9f7b95096f3a5efcc8e64f09c403
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91304930"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850519"
 ---
 # <a name="tutorial-configure-ipass-smartconnect-for-automatic-user-provisioning"></a>Учебник. Настройка Ипасс Смартконнект для автоматической подготовки пользователей
 
@@ -114,11 +114,11 @@ ms.locfileid: "91304930"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ипасс смартконнект**.
 
-    ![Сопоставления пользователей Ипасс Смартконнект](media/ipass-smartconnect-provisioning-tutorial/usermapping.png)
+    :::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с Ипасс Смартконнект." border="false":::
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Ипасс Смартконнект в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в ипасс смартконнект для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Сопоставления пользователей Ипасс Смартконнект](media/ipass-smartconnect-provisioning-tutorial/userattribute.png)
+    :::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/userattribute.png" alt-text="Снимок экрана раздела &quot;сопоставления&quot;. В поле Имя выполните синхронизацию Azure Active Directory пользователей с Ипасс Смартконнект." border="false":::
 
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).

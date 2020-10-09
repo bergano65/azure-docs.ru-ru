@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: Zhchia
-ms.openlocfilehash: 632330d7c94e145124e202be9050e4e1beeb12b0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 43d6ac8354e992a87091bc66417f7ca88e784199
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91265483"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850665"
 ---
 # <a name="tutorial-configure-lucidchart-for-automatic-user-provisioning"></a>Учебник. Настройка LucidChart для автоматической подготовки пользователей
 
@@ -49,11 +49,11 @@ ms.locfileid: "91265483"
 
 1. Войдите в [консоль администрирования LucidChart](https://www.lucidchart.com). Перейдите к разделу **Интеграция с приложением Team >**.
 
-      ![LucidChart scim](./media/lucidchart-provisioning-tutorial/team1.png)
+      :::image type="content" source="./media/lucidchart-provisioning-tutorial/team1.png" alt-text="Снимок экрана консоли администрирования LucidChart. Меню команды выделено и открывается. В разделе Администрирование интеграция приложений выделяется." border="false":::
 
 2. Перейдите по адресу **scim**.
 
-      ![LucidChart scim](./media/lucidchart-provisioning-tutorial/scim.png)
+      :::image type="content" source="./media/lucidchart-provisioning-tutorial/scim.png" alt-text="Снимок экрана консоли администрирования LucidChart. Меню команды выделено и открывается. В разделе Администрирование интеграция приложений выделяется." border="false":::
 
 3. Прокрутите вниз, чтобы увидеть **токен носителя** и **базовый URL-адрес LucidChart**. Скопируйте и сохраните **токен носителя**. Это значение будет указано в поле **секретный токен** * на вкладке Подготовка приложения LucidChart в портал Azure. 
 

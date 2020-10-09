@@ -8,18 +8,21 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 6726dab6f1037f01eda316968e3c5b503aa9dbfb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: baf89ec75f844ae1a1f7797d26d2fb04a0d5df34
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91326588"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91849849"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) — это облачная служба, которая помогает автоматизировать рабочие процессы в приложениях и службах. Подключив Logic Apps к API-интерфейсам Azure Digital двойников, вы можете создавать такие автоматизированные потоки в Azure Digital двойников и их данные.
 
 В Azure Digital двойников в настоящее время нет сертифицированного (предварительно созданного) соединителя для Logic Apps. Вместо этого текущий процесс использования Logic Apps с Azure Digital двойников заключается в создании [**настраиваемого соединителя Logic Apps**](../logic-apps/custom-connector-overview.md)с помощью [настраиваемого цифрового Двойникова Swagger Azure](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , который был изменен для работы с Logic Apps.
+
+> [!NOTE]
+> Существует несколько версий Swagger, содержащихся в пользовательском образце Swagger, связанном выше. Последняя версия будет найдена во вложенной папке с самой последней датой, но более ранние версии, содержащиеся в этом примере, также все еще поддерживаются.
 
 В этой статье вы будете использовать [портал Azure](https://portal.azure.com) , чтобы **создать настраиваемый соединитель** , который можно использовать для подключения Logic apps к экземпляру Digital двойников Azure. Затем вы **создадите приложение логики** , которое использует это подключение для примера сценария, в котором события, активируемые таймером, будут автоматически обновлять двойника в вашем экземпляре Azure Digital двойников. 
 
@@ -37,7 +40,7 @@ ms.locfileid: "91326588"
 
 Чтобы подключиться к двойников экземпляру Azure Digital для Logic Apps в этой статье, вам потребуется уже настроенный **экземпляр Azure Digital двойников** . 
 
-Сначала настройте экземпляр Azure Digital двойников и необходимую проверку подлинности, чтобы иметь возможность работать с ним. Для этого следуйте инструкциям в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). В зависимости от предпочтительного опыта работы, статья установки предлагается для примера скрипта [портал Azure](how-to-set-up-instance-portal.md), [интерфейса командной строки](how-to-set-up-instance-cli.md)или [автоматизированного Cloud Shell развертывания](how-to-set-up-instance-scripted.md). Все версии инструкций также содержат инструкции по проверке успешного завершения каждого этапа и готовности к использованию нового экземпляра.
+Сначала настройте экземпляр Azure Digital Twins и необходимую проверку подлинности, чтобы иметь возможность работать с экземпляром. Для этого выполните инструкции из статьи [ *Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)* ](how-to-set-up-instance-portal.md). В зависимости от предпочтительного интерфейса статья по установке доступна для [портала Azure](how-to-set-up-instance-portal.md), [CLI](how-to-set-up-instance-cli.md) или [автоматизированного примера сценария развертывания Cloud Shell](how-to-set-up-instance-scripted.md). Во всех версиях этих инструкций также указано, как проверить, успешно ли завершен каждый шаг и готов ли новый экземпляр к работе.
 
 В этом учебнике вам потребуется несколько значений при настройке экземпляра. Если вам нужно снова собрать эти значения, воспользуйтесь приведенными ниже ссылками в соответствующих разделах статьи о настройке, чтобы найти их на [портале Azure](https://portal.azure.com).
 * **_Имя узла_** экземпляра Azure Digital Twins ([как найти на портале](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
@@ -88,7 +91,12 @@ ms.locfileid: "91326588"
 
 Далее вы настроите созданный соединитель для доступа к Azure Digital двойников.
 
-Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте образец **пользовательских Swagger Azure Digital двойников** по [этой ссылке](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_Custom_Swaggers.zip* и распакуйте ее. Пользовательский Swagger для этого учебника находится по адресу *Azure_Digital_Twins_Custom_Swaggers\LogicApps\preview\2020-05-31-preview\digitaltwins.js*.
+Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте образец **пользовательских Swagger Azure Digital двойников** по [**этой ссылке**](https://docs.microsoft.com/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_Custom_Swaggers.zip* и распакуйте ее. 
+
+Пользовательский Swagger для этого учебника находится в папке _**Azure_Digital_Twins_Custom_Swaggers \логикаппс**_ . Эта папка содержит вложенные папки, которые называются *стабильными* и *предварительными*версиями, оба из которых содержат различные версии Swagger, упорядоченные по датам. Папка с самой последней датой будет содержать последнюю копию Swagger. В зависимости от выбранного варианта файл Swagger называется _**digitaltwins.js**_.
+
+> [!NOTE]
+> Если вы не работаете с предварительной версией функции, обычно рекомендуется использовать самую последнюю *стабильную* версию Swagger. Тем не менее предыдущие версии и предварительные версии Swagger также поддерживаются. 
 
 Затем перейдите на страницу обзора соединителя в [портал Azure](https://portal.azure.com) и нажмите кнопку *изменить*.
 

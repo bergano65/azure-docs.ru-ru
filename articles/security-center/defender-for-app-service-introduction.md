@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: c53f7e712668f32766feaf76d6a08582bda9af22
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a7026757651d1b0510293101203f41a651c7b851
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91449102"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850971"
 ---
 # <a name="introduction-to-azure-defender-for-app-service"></a>Общие сведения об Azure Defender для Службы приложений
 
@@ -27,7 +27,7 @@ ms.locfileid: "91449102"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Предварительный просмотр|
+|Состояние выпуска:|Общедоступная версия (GA)|
 |Цены:|Плата за использование [Azure Defender для Службы приложений](azure-defender.md) начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
 |Поддерживаемые планы Службы приложений:|![Да](./media/icons/yes-icon.png) "Базовый", "Стандартный", "Премиум", "Изолированный" или Linux<br>![Нет](./media/icons/no-icon.png) "Бесплатный", "Общий" или "Потребление"<br>[Подробнее о планах Службы приложений](https://azure.microsoft.com/pricing/details/app-service/plans/)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|

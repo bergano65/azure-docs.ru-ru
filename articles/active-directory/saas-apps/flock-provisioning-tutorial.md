@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: bb6ad9aae5f92f03ea5bfacc028973e4c4a6dbea
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 636bb4c3340f13046706bf887119108b86b6a660
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91312626"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850911"
 ---
 # <a name="tutorial-configure-flock-for-automatic-user-provisioning"></a>Учебник. Настройка Флокк для автоматической подготовки пользователей
 
@@ -54,15 +54,15 @@ ms.locfileid: "91312626"
 
 1. Войдите в [флокк](https://web.flock.com/?). Щелкните **значок параметров**  >  **Управление группой**.
 
-    ![Flock](media/flock-provisioning-tutorial/icon.png)
+    :::image type="content" source="media/flock-provisioning-tutorial/icon.png" alt-text="Снимок экрана веб-сайта Флокк. Значок параметров выделяется, и его контекстное меню отображается. В этом меню Управление командой выделяется." border="false":::
 
 2. Выберите **Проверка подлинности и подготовка**.
 
-    ![Flock](media/Flock-provisioning-tutorial/auth.png)
+    :::image type="content" source="media/Flock-provisioning-tutorial/auth.png" alt-text="Снимок экрана веб-сайта Флокк. Значок параметров выделяется, и его контекстное меню отображается. В этом меню Управление командой выделяется." border="false":::
 
 3. Скопируйте **токен API**. Эти значения будут указаны в поле **секретный токен** на вкладке Подготовка приложения флокк в портал Azure.
 
-    ![Flock](media/Flock-provisioning-tutorial/provisioning.png)
+    :::image type="content" source="media/Flock-provisioning-tutorial/provisioning.png" alt-text="Снимок экрана веб-сайта Флокк. Значок параметров выделяется, и его контекстное меню отображается. В этом меню Управление командой выделяется." border="false":::
 
 
 ## <a name="add-flock--from-the-gallery"></a>Добавление Флокк из коллекции

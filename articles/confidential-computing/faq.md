@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.date: 4/17/2020
 ms.author: jencook
-ms.openlocfilehash: 519b5b669cfc8140b837743d694184a5cb859f20
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: cf90ff5b94eb03f76dffc8b64dd4d92a44ac20ee
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90987987"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91848914"
 ---
 # <a name="frequently-asked-questions-for-azure-confidential-computing"></a>Вопросы и ответы о конфиденциальных вычислениях Azure
 
@@ -56,6 +56,10 @@ ms.locfileid: "90987987"
 **Виртуальные машины DCsv2 доступны повсеместно?**
 
 Нет. Сейчас эти виртуальные машины доступны только в некоторых регионах. Список последних доступных регионов приведен на [странице продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines). 
+
+**На этих компьютерах ОТКЛЮЧЕНа технология Hyper-Threading?**
+
+Технология Hyper-Threading отключена для всех кластеров с конфиденциальными вычислениями в Azure.
 
 **Как установить пакет SDK Open Enclave на виртуальных машинах DCsv2?**
    

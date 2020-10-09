@@ -2,13 +2,13 @@
 title: Создание пула с указанными общедоступными IP-адресами
 description: Узнайте, как создать пул пакетной службы, использующий собственные общедоступные IP-адреса.
 ms.topic: how-to
-ms.date: 07/20/2020
-ms.openlocfilehash: 158facaf1fd5052c3626f065a69bfbd134ca4c3e
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.date: 10/08/2020
+ms.openlocfilehash: e822311718847e173763847d503335f71457308b
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89146493"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91849334"
 ---
 # <a name="create-an-azure-batch-pool-with-specified-public-ip-addresses"></a>Создание пула пакетной службы Azure с указанными общедоступными IP-адресами
 
@@ -24,7 +24,7 @@ ms.locfileid: "89146493"
 
 - **Виртуальная сеть Azure**. Необходимо использовать [виртуальную сеть](batch-virtual-network.md) из той же подписки Azure, в которой создается пул и IP-адреса. Можно использовать только виртуальных сетей на основе Azure Resource Manager. Убедитесь, что виртуальная сеть соответствует всем [общим требованиям](batch-virtual-network.md#vnet-requirements).
 
-- **По крайней мере один общедоступный IP-адрес Azure**. Чтобы создать один или несколько общедоступных IP-адресов, можно использовать [портал Azure](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address), [интерфейс командной строки Azure (CLI)](/cli/azure/network/public-ip#az-network-public-ip-create)или [Azure PowerShell](/powershell/module/az.network/new-azpublicipaddress). Обязательно следуйте приведенным ниже требованиям.
+- **По крайней мере один общедоступный IP-адрес Azure**. Чтобы создать один или несколько общедоступных IP-адресов, можно использовать [портал Azure](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address), [интерфейс Command-Line Azure (CLI)](/cli/azure/network/public-ip#az-network-public-ip-create)или [Azure PowerShell](/powershell/module/az.network/new-azpublicipaddress). Обязательно следуйте приведенным ниже требованиям.
 
 > [!NOTE]
 > Пакетная службы автоматически выделяет дополнительные сетевые ресурсы в группе ресурсов, содержащей общедоступные IP-адреса. Для каждого выделенного 100 узла Пакетная служба обычно выделяет одну группу безопасности сети (NSG) и одну подсистему балансировки нагрузки. Эти ресурсы ограничиваются квотами ресурсов подписки. При использовании более крупных пулов может потребоваться [запросить увеличение квоты](batch-quota-limit.md#increase-a-quota) для одного или нескольких из этих ресурсов.
@@ -82,10 +82,10 @@ client-request-id: 00000000-0000-0000-0000-000000000000
        "resizeTimeout":"PT15M",
       "targetDedicatedNodes":5,
       "targetLowPriorityNodes":0,
-      "maxTasksPerNode":3,
+      "taskSlotsPerNode":3,
       "taskSchedulingPolicy": {
         "nodeFillType":"spread"
-      }, 
+      },
       "enableAutoScale":false,
       "enableInterNodeCommunication":true,
       "metadata": [ {

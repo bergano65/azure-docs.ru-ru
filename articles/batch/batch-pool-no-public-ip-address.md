@@ -3,15 +3,15 @@ title: Создание пула пакетной службы Azure без об
 description: Узнайте, как создать пул без общедоступных IP-адресов
 author: pkshultz
 ms.topic: how-to
-ms.date: 10/05/2020
+ms.date: 10/08/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: 3106ceef8bc45d70401265f61bacb17cb0dc7262
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: fcc0538dfef1581a244ae5fd9a3515be3470026c
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743664"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850937"
 ---
 # <a name="create-an-azure-batch-pool-without-public-ip-addresses"></a>Создание пула пакетной службы Azure без общедоступных IP-адресов
 
@@ -34,10 +34,7 @@ ms.locfileid: "91743664"
 - **Виртуальная сеть Azure**. Если вы создаете пул в [виртуальной сети](batch-virtual-network.md), следуйте этим требованиям и конфигурациям. Чтобы заранее подготовить виртуальную сеть с одной или несколькими подсетями, вы можете использовать портал Azure, Azure PowerShell, интерфейс командной строки Azure (CLI) или другие методы.
   - Виртуальная сеть должна находиться в тех же подписке и регионе, что и учетная запись пакетной службы, которую вы используете для создания пула.
   - Указанная для пула подсеть должна иметь достаточное количество свободных IP-адресов для всех виртуальных машин, предназначенных для пула, то есть сумму свойств `targetDedicatedNodes` и `targetLowPriorityNodes` этого пула. Если в подсети недостаточно свободных IP-адресов, пакетная служба ограничивает выделение вычислительных узлов для пула и генерирует ошибку изменения размера.
-  - Необходимо отключить политики службы частной связи и сети конечных точек. Это можно сделать с помощью Azure CLI.
-    ```azurecli
-    az network vnet subnet update --vnet-name <vnetname> -n <subnetname> --disable-private-endpoint-network-policies --disable-private-link-service-network-policies
-    ```
+  - Необходимо отключить политики службы частной связи и сети конечных точек. Это можно сделать с помощью Azure CLI. ```az network vnet subnet update --vnet-name <vnetname> -n <subnetname> --disable-private-endpoint-network-policies --disable-private-link-service-network-policies```
 
 > [!IMPORTANT]
 > Для каждого 100 выделенных или узлов с низким приоритетом Пакетная служба выделяет одну службу частной связи и одну подсистему балансировки нагрузки. Эти ресурсы ограничены [квотами ресурсов](../azure-resource-manager/management/azure-subscription-service-limits.md) в подписке. Для больших пулов может потребоваться [запросить увеличение квоты](batch-quota-limit.md#increase-a-quota) для одного или нескольких из этих ресурсов. Кроме того, не следует применять блокировки ресурсов к любому ресурсу, созданному пакетной службой, так как это предотвращает очистку ресурсов в результате действий, инициированных пользователем, таких как Удаление пула или изменение размера до нуля.
@@ -50,7 +47,7 @@ ms.locfileid: "91743664"
 
 ## <a name="create-a-pool-without-public-ip-addresses-in-the-azure-portal"></a>Создание пула без общедоступных IP-адресов в портал Azure
 
-1. Войдите в свою учетную запись пакетной службы на портале Azure. 
+1. Войдите в свою учетную запись пакетной службы на портале Azure.
 1. В окне **Параметры** слева выберите **Пулы**.
 1. В окне **Пулы** выберите **Добавить**.
 1. В окне **Добавить пул** из раскрывающегося списка **Тип образа** выберите нужный вариант.
@@ -72,7 +69,7 @@ POST {batchURL}/pools?api-version=2020-03-01.11.0
 client-request-id: 00000000-0000-0000-0000-000000000000
 ```
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 ```json
 "pool": {
@@ -95,7 +92,7 @@ client-request-id: 00000000-0000-0000-0000-000000000000
      "resizeTimeout": "PT15M",
      "targetDedicatedNodes": 5,
      "targetLowPriorityNodes": 0,
-     "maxTasksPerNode": 3,
+     "taskSlotsPerNode": 3,
      "taskSchedulingPolicy": {
           "nodeFillType": "spread"
      },

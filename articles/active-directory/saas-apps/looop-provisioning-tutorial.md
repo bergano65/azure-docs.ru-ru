@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: b81a0fc81478fb50c356a92371ece2e79ff417ab
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 2f3657feb5a68600e4eb2d7bcaa4891a398c2682
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333568"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850699"
 ---
 # <a name="tutorial-configure-looop-for-automatic-user-provisioning"></a>Учебник. Настройка Луоп для автоматической подготовки пользователей
 
@@ -55,11 +55,11 @@ ms.locfileid: "91333568"
 
 1. Войдите в [консоль администрирования луоп](https://app.looop.co/#/login) и выберите **учетная запись**. В разделе **Параметры учетной записи** выберите **Проверка подлинности**.
 
-    ![Луоп добавить SCIM](media/looop-provisioning-tutorial/admin.png)
+    :::image type="content" source="media/looop-provisioning-tutorial/admin.png" alt-text="Снимок экрана консоли администрирования Луоп. Вкладка Учетная запись выделена и открывается. В разделе Параметры учетной записи выделена проверка подлинности." border="false":::
 
 2. Создайте новый токен, нажав кнопку **сбросить маркер** в разделе **Интеграция scim**.
 
-    ![Луоп добавить SCIM](media/looop-provisioning-tutorial/resettoken.png)
+    :::image type="content" source="media/looop-provisioning-tutorial/resettoken.png" alt-text="Снимок экрана консоли администрирования Луоп. Вкладка Учетная запись выделена и открывается. В разделе Параметры учетной записи выделена проверка подлинности." border="false":::
 
 3. Скопируйте **конечную точку scim** и **маркер**. Эти значения будут указаны в полях **URL-адрес клиента** и **секретный токен** на вкладке подготовка приложения луоп в портал Azure. 
 

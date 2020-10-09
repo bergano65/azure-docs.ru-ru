@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: ee150c2fdeb29dcd01d94a335635db7e3939b59c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1db1ef3a8fa7de557444c25650410b4e84422be4
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549319"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91849317"
 ---
 # <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Руководство по настройке Bonusly для автоматической подготовки пользователей
 
@@ -91,61 +91,61 @@ ms.locfileid: "88549319"
 
 3. Выберите вкладку **Подготовка**.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/ProvisioningTab.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/ProvisioningTab.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/ProvisioningCredentials.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/ProvisioningCredentials.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 5. В разделе **Учетные данные администратора** укажите **секретный токен** учетной записи Bonusly, как описано в шаге 6.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/secrettoken.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/secrettoken.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 6. **Секретный токен** учетной записи Bonusly можно найти в разделе **Admin > Company > Integrations** (Администрирование > Организация > Интеграции). В разделе **If you want to code** (Если вы хотите написать код ) выберите **API> Create New API Access Token** (Создать новый токен доступа к API), чтобы создать новый секретный токен.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/BonuslyIntegrations.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/BonuslyIntegrations.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/BonsulyRestApi.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/BonsulyRestApi.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/CreateToken.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/CreateToken.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 7. На следующем экране введите имя маркера доступа в предоставленном текстовом поле, а затем нажмите кнопку **Create Api Key** (Создать ключ API). Новый маркер доступа будет отображаться во всплывающем окне в течение нескольких секунд.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/Token01.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/Token01.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/Token02.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/Token02.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 8. После заполнения полей, указанных на шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Bonusly. Если установить подключение не удалось, убедитесь, что у учетной записи Bonusly есть разрешения администратора, и повторите попытку.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/TestConnection.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/TestConnection.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 9. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/EmailNotification.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/EmailNotification.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
-10. Нажмите **Сохранить**.
+10. Выберите команду **Сохранить**.
 
 11. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Bonusly** (Синхронизировать пользователей Azure Active Directory с Bonusly).
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/UserMappings.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/UserMappings.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 12. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Bonusly. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Bonusly для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/UserAttributeMapping.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/UserAttributeMapping.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 13. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 14. Чтобы включить службу подготовки Azure AD для Bonusly, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/ProvisioningStatus.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/ProvisioningStatus.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 15. Определите пользователей или группы для подготовки в Bonusly, выбрав нужные значения в поле **Область** в разделе **Параметры**.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/ScopeSync.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/ScopeSync.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 16. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
-    ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/SaveProvisioning.png)
+    :::image type="content" source="./media/bonusly-provisioning-tutorial/SaveProvisioning.png" alt-text="Снимок экрана вкладки &quot;премия — подготовка&quot;. В разделе Управление выделена подготовка." border="false":::
 
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Bonusly.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/14/2019
 ms.author: Zhchia
-ms.openlocfilehash: 4b318057254688ba3060c825a7926b1c40de437c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7c81c6145aed5f45849f6f08fdd1136862c3b7d8
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91305041"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850912"
 ---
 # <a name="tutorial-configure-infor-cloudsuite-for-automatic-user-provisioning"></a>Учебник. Настройка Клаудсуите info для автоматической подготовки пользователей
 
@@ -68,11 +68,11 @@ ms.locfileid: "91305041"
     
     ![Пароль Клаудсуитеа info](media/infor-cloudsuite-provisioning-tutorial/password.png)
 
-    ![Идентификатор Клаудсуите info](media/infor-cloudsuite-provisioning-tutorial/identifier.png)
+    :::image type="content" source="media/infor-cloudsuite-provisioning-tutorial/identifier.png" alt-text="Снимок экрана консоли администрирования info Клаудсуите, отображающей выделенную строку таблицы. Эта строка содержит идентификатор пользователя, пароли и отметку времени." border="false":::
 
 5. Чтобы создать токен носителя, скопируйте **идентификатор пользователя** и **пароль scim**. Вставьте их в блокноте + +, разделяя их двоеточием. Закодировать строковое значение, перейдя к **подключаемым модулям > средствах MIME > кодировке Basic64**. 
 
-    ![Идентификатор Клаудсуите info](media/infor-cloudsuite-provisioning-tutorial/token.png)
+    :::image type="content" source="media/infor-cloudsuite-provisioning-tutorial/token.png" alt-text="Снимок экрана консоли администрирования info Клаудсуите, отображающей выделенную строку таблицы. Эта строка содержит идентификатор пользователя, пароли и отметку времени." border="false":::
 
 3.  Скопируйте токен носителя. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения Клаудсуите info в портал Azure.
 

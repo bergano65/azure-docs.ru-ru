@@ -2,14 +2,14 @@
 title: Автоматическое масштабирование вычислительных узлов в пуле пакетной службы Azure
 description: Включение автоматического масштабирования в облачном пуле для динамического изменения количества вычислительных узлов в пуле.
 ms.topic: how-to
-ms.date: 07/27/2020
+ms.date: 10/08/2020
 ms.custom: H1Hack27Feb2017, fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: e3e7a354e015ffa8a6164de59edcf572ab773319
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 5774acbfc035ab61267dddb31b01b0e82689f690
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88932327"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91849798"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы для автоматизации масштабирования вычислительных узлов в пуле пакетной службы
 
@@ -289,7 +289,7 @@ $CPUPercent.GetSample(TimeInterval_Minute * 5)
 | HistoryBeginTime() |Возвращает метку времени самой старой доступной выборки данных метрики. |
 | GetSamplePercent() |Возвращает процент выборок, которые доступны для заданного интервала времени. Например, `doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`. Так как метод `GetSample` завершается сбоем, то если процент возвращаемых выборок меньше указанного в параметре `samplePercent`, можно сначала воспользоваться методом `GetSamplePercent` для проверки. Затем при недостаточном количестве выборок можно выполнить другое действие без прерывания оценки автоматического масштабирования. |
 
-### <a name="samples"></a>примеры
+### <a name="samples"></a>Примеры
 
 Пакетная служба периодически принимает выборки метрик задач и ресурсов, делая их доступными для формул автомасштабирования. Эти выборки записываются пакетной службой каждые 30 секунд. Однако обычно имеется задержка между временем записи этих выборок и временем, когда формулы автоматического масштабирования получают к ним доступ (и могут прочесть их). Кроме того, образцы могут не записываться для определенного интервала из-за таких факторов, как сеть или другие проблемы с инфраструктурой.
 
@@ -648,6 +648,24 @@ Result:
 Error:
 ```
 
+## <a name="get-autoscale-run-history-using-pool-autoscale-events"></a>Получение журнала выполнения автомасштабирования с помощью событий автомасштабирования пула
+Можно также проверить журнал автоматического масштабирования, выполнив запрос к [пулаутоскаливент](batch-pool-autoscale-event.md). Это событие создается пакетной службой для записи каждого вхождения вычисления формулы автомасштабирования и выполнения, что может быть полезно для устранения потенциальных проблем.
+
+Пример события для Пулаутоскаливент:
+```json
+{
+    "id": "poolId",
+    "timestamp": "2020-09-21T23:41:36.750Z",
+    "formula": "...",
+    "results": "$TargetDedicatedNodes=10;$NodeDeallocationOption=requeue;$curTime=2016-10-14T18:36:43.282Z;$isWeekday=1;$isWorkingWeekdayHour=0;$workHours=0",
+    "error": {
+        "code": "",
+        "message": "",
+        "values": []
+    }
+}
+```
+
 ## <a name="example-autoscale-formulas"></a>Примеры формул автомасштабирования
 
 Давайте рассмотрим некоторые формулы, которые демонстрируют различные способы настройки количества вычислительных ресурсов в пуле.
@@ -691,7 +709,7 @@ $NodeDeallocationOption = taskcompletion;
 
 ### <a name="example-3-accounting-for-parallel-tasks"></a>Пример 3. Параллельные задачи
 
-В этом примере на C# изменяется размер пула в зависимости от числа задач. В этой формуле также учитывается значение [MaxTasksPerComputeNode](/dotnet/api/microsoft.azure.batch.cloudpool.maxtaskspercomputenode), которое было задано для пула. Такой подход полезен, если в пуле поддерживается [параллельное выполнение задач](batch-parallel-node-tasks.md).
+В этом примере на C# изменяется размер пула в зависимости от числа задач. Эта формула также учитывает значение [таскслотсперноде](/dotnet/api/microsoft.azure.batch.cloudpool.taskslotspernode) , установленное для пула. Такой подход полезен, если в пуле поддерживается [параллельное выполнение задач](batch-parallel-node-tasks.md).
 
 ```csharp
 // Determine whether 70 percent of the samples have been recorded in the past
@@ -699,7 +717,7 @@ $NodeDeallocationOption = taskcompletion;
 $samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
 $tasks = $samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
 // Set the number of nodes to add to one-fourth the number of active tasks
-// (theMaxTasksPerComputeNode property on this pool is set to 4, adjust
+// (the TaskSlotsPerNode property on this pool is set to 4, adjust
 // this number for your use case)
 $cores = $TargetDedicatedNodes * 4;
 $extraVMs = (($tasks - $cores) + 3) / 4;

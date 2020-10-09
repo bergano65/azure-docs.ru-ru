@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: Zhchia
-ms.openlocfilehash: 3f835c021e20edba21583e71c6c1a480eca7fd89
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 45a1ae281a8a1acb1cfd12efe500f5a623033ef3
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91255850"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91850070"
 ---
 # <a name="tutorial-configure-oracle-fusion-erp-for-automatic-user-provisioning"></a>Руководство по настройке системы ERP Fusion в Oracle для автоматической подготовки пользователей
 
@@ -56,11 +56,11 @@ ms.locfileid: "91255850"
 
 2. Щелкните навигатор в левом верхнем углу. В разделе **средства**выберите **консоль безопасности**.
 
-    ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/login.png)
+    :::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/login.png" alt-text="Снимок экрана со страницей навигатора в консоли администратора Oracle Fusion E R P. Средства и консоль безопасности выделены." border="false":::
 
 3. Перейдите к разделу **Пользователи**.
     
-    ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/user.png)
+    :::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/user.png" alt-text="Снимок экрана со страницей навигатора в консоли администратора Oracle Fusion E R P. Средства и консоль безопасности выделены." border="false":::
 
 4. Сохраните имя пользователя и пароль для учетной записи администратора, которая будет использоваться для входа в консоль администрирования Oracle Fusion ERP. Эти значения необходимо указать в полях **имя пользователя** и **пароль** администратора на вкладке Подготовка приложения Oracle Fusion ERP на портал Azure.
 
@@ -116,7 +116,7 @@ ms.locfileid: "91255850"
 
 5. В разделе **учетные данные администратора** введите `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/` **URL-адрес клиента**. Введите имя пользователя и пароль администратора, полученные ранее, в поля **имя пользователя** и **пароль** администратора. Щелкните **Проверка подключения** между Azure AD и ERP Fusion в Oracle. 
 
-    ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/admin.png)
+    :::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/admin.png" alt-text="Снимок экрана со страницей навигатора в консоли администратора Oracle Fusion E R P. Средства и консоль безопасности выделены." border="false":::
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
@@ -126,11 +126,11 @@ ms.locfileid: "91255850"
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Oracle Fusion ERP**.
 
-    ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/user-mapping.png)
+    :::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/user-mapping.png" alt-text="Снимок экрана со страницей навигатора в консоли администратора Oracle Fusion E R P. Средства и консоль безопасности выделены." border="false":::
 
 9. Проверьте пользовательские атрибуты, которые синхронизированы из Azure AD в Oracle Fusion ERP в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Oracle Fusion ERP для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Добавление SCIM в Oracle Fusion ERP](media/oracle-fusion-erp-provisioning-tutorial/user-attribute.png)
+    :::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/user-attribute.png" alt-text="Снимок экрана со страницей навигатора в консоли администратора Oracle Fusion E R P. Средства и консоль безопасности выделены." border="false":::
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Oracle Fusion ERP**.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: Zhchia
-ms.openlocfilehash: bcddaec1660082c2d3fed42e0c10cbdde987693c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: c43624b57f5a46473e8640200a7284a9fa737790
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91273570"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91849254"
 ---
 # <a name="tutorial-configure-meta-networks-connector-for-automatic-user-provisioning"></a>Учебник. Настройка соединителя meta Networks для автоматической подготовки пользователей
 
@@ -60,7 +60,7 @@ ms.locfileid: "91273570"
 
 3.  Задайте **имя ключа API** и **Описание ключа API**.
 
-    ![Маркер создания соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/keyname.png)
+    :::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Снимок экрана консоли администрирования соединителя мета-сетей с выделенным именем ключа P I и значением описания ключа P I в Azure A D и ключом P I." border="false":::
 
 4.  Включите привилегии **записи** для **групп** и **пользователей**.
 
@@ -68,7 +68,7 @@ ms.locfileid: "91273570"
 
 5.  Щелкните **Добавить**. Скопируйте **секрет** и сохраните его, так как это будет единственный момент, когда вы сможете его просмотреть. Это значение будет указано в поле Секретный токен на вкладке Подготовка приложения соединителя meta Networks в портал Azure.
 
-    ![Маркер создания соединителя meta Networks](media/meta-networks-connector-provisioning-tutorial/token.png)
+    :::image type="content" source="media/meta-networks-connector-provisioning-tutorial/token.png" alt-text="Снимок экрана консоли администрирования соединителя мета-сетей с выделенным именем ключа P I и значением описания ключа P I в Azure A D и ключом P I." border="false":::
 
 6.  Добавьте IdP, перейдя в **> администрирование параметры > IdP > создать новый**.
 
