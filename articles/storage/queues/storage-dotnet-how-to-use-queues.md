@@ -3,18 +3,18 @@ title: Приступая к работе с хранилищем очереде
 description: Очереди хранилища обеспечивают надежный асинхронный обмен сообщениями между компонентами приложения. Обмен сообщениями в облаке позволяет масштабировать компоненты приложения независимо друг от друга.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 05/08/2020
+ms.date: 10/08/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e8dadc999f3bd26671b5a8ee4da26f051a822a26
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: c07ad6e631482b47da674549e976953842cf983e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89001116"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91855928"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
 
@@ -30,12 +30,9 @@ ms.locfileid: "89001116"
 
 **Предполагаемое время выполнения:** 45 минут.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
-- [Общая клиентская библиотека службы хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
-- [Клиентская библиотека очереди службы хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/)
-- [Диспетчер конфигураций Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/)
 - [Учетная запись хранения Azure](../common/storage-account-create.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json) ;
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
@@ -72,7 +69,7 @@ ms.locfileid: "89001116"
 - [Библиотека очередей службы хранилища Azure для .NET](https://www.nuget.org/packages/Azure.Storage.Queues/): Этот пакет позволяет работать с служба очередей хранилища Azure для хранения сообщений, к которым клиент может получить доступ.
 - [Библиотека Configuration Manager для .NET](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/): Этот пакет предоставляет доступ к файлам конфигурации для клиентских приложений.
 
-Для получения этих пакетов можно использовать NuGet. Выполните следующие действия:
+Для получения этих пакетов можно использовать NuGet. Выполните следующие действия.
 
 1. Щелкните правой кнопкой мыши проект в **Обозреватель решений**и выберите **Управление пакетами NuGet**.
 1. Нажмите кнопку **Обзор** .
@@ -87,7 +84,7 @@ ms.locfileid: "89001116"
 - [Библиотека очереди служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/): Эта клиентская библиотека позволяет работать с Служба хранилища Microsoft Azure служба очередей для хранения сообщений, доступ к которым может получить клиент.
 - [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) — этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
 
-Для получения этих пакетов можно использовать NuGet. Выполните следующие действия:
+Для получения этих пакетов можно использовать NuGet. Выполните следующие действия.
 
 1. Щелкните правой кнопкой мыши проект в **Обозреватель решений**и выберите **Управление пакетами NuGet**.
 1. Нажмите кнопку **Обзор** .
@@ -95,11 +92,6 @@ ms.locfileid: "89001116"
 1. Выполните поиск по запросу "Microsoft.Azure.ConfigУратионманажер" в Интернете и выберите **установить** , чтобы установить Configuration Manager Azure.
 
 ---
-
-> [!NOTE]
-> Пакеты клиентских библиотек хранилища также входят в [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/). Однако рекомендуется также установить клиентские библиотеки хранилища из NuGet, чтобы обеспечить постоянное наличие последних версий.
->
-> Зависимости ODataLib в клиентских библиотеках хранилища для .NET разрешаются с помощью пакетов ODataLib, доступных в NuGet, а не WCF Data Services. Библиотеки ODataLib можно скачать напрямую или указать на них ссылку в проекте через NuGet. Конкретные пакеты ODataLib, используемые клиентскими библиотеками хранилища, — это [OData](https://nuget.org/packages/Microsoft.Data.OData/), [EDM](https://nuget.org/packages/Microsoft.Data.Edm/)и [spatial](https://nuget.org/packages/System.Spatial/). Хотя эти библиотеки используются классами хранилища таблиц Azure, они являются обязательными зависимостями для программирования с помощью клиентских библиотек хранилища.
 
 ### <a name="determine-your-target-environment"></a>Определение целевой среды
 
@@ -185,7 +177,7 @@ using Microsoft.Azure.Storage.Queue; // Namespace for Queue storage types
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Класс [CloudQueueClient](/dotnet/api/microsoft.azure.storage.queue.cloudqueueclient?view=azure-dotnet-legacy) позволяет получать очереди, хранящиеся в хранилище очередей. Вот один из способов создать клиента службы.
+Класс [CloudQueueClient](/dotnet/api/microsoft.azure.storage.queue.cloudqueueclient?view=azure-dotnet-legacy&preserve-view=true) позволяет получать очереди, хранящиеся в хранилище очередей. Вот один из способов создать клиента службы.
 
 ```csharp
 // Retrieve storage account from connection string
@@ -237,7 +229,7 @@ queue.CreateIfNotExists();
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Чтобы вставить сообщение в существующую очередь, сначала создайте новый объект [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage?view=azure-dotnet-legacy). Затем вызовите метод [AddMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessage?view=azure-dotnet-legacy) . `CloudQueueMessage`Можно создать из типа `string` (в формате UTF-8) или `byte` массива. Ниже приведен код, который создает очередь (если она не существует) и вставляет сообщение "Hello, World":
+Чтобы вставить сообщение в существующую очередь, сначала создайте новый объект [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage?view=azure-dotnet-legacy&preserve-view=true). Затем вызовите метод [AddMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessage?view=azure-dotnet-legacy&preserve-view=true) . `CloudQueueMessage`Можно создать из типа `string` (в формате UTF-8) или `byte` массива. Ниже приведен код, который создает очередь (если она не существует) и вставляет сообщение "Hello, World":
 
 ```csharp
 // Retrieve storage account from connection string
@@ -270,7 +262,7 @@ queue.AddMessage(message);
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Можно посмотреть сообщение в начале очереди, не удаляя его из очереди, вызвав метод [PeekMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.peekmessage?view=azure-dotnet-legacy) .
+Можно посмотреть сообщение в начале очереди, не удаляя его из очереди, вызвав метод [PeekMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.peekmessage?view=azure-dotnet-legacy&preserve-view=true) .
 
 ```csharp
 // Retrieve storage account from connection string
@@ -333,7 +325,7 @@ queue.UpdateMessage(message,
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Код удаляет сообщение из очереди в два этапа. При вызове метода [GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage?view=azure-dotnet-legacy)вы получаете следующее сообщение в очереди. Сообщение, возвращаемое методом `GetMessage`, становится невидимым для другого кода, считывающего сообщения из этой очереди. По умолчанию это сообщение остается невидимым в течение 30 секунд. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод [DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage?view=azure-dotnet-legacy). Этот двухэтапный процесс удаления сообщения позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку. Код вызывается `DeleteMessage` сразу после обработки сообщения.
+Код удаляет сообщение из очереди в два этапа. При вызове метода [GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage?view=azure-dotnet-legacy&preserve-view=true)вы получаете следующее сообщение в очереди. Сообщение, возвращаемое методом `GetMessage`, становится невидимым для другого кода, считывающего сообщения из этой очереди. По умолчанию это сообщение остается невидимым в течение 30 секунд. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод [DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage?view=azure-dotnet-legacy&preserve-view=true). Этот двухэтапный процесс удаления сообщения позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку. Код вызывается `DeleteMessage` сразу после обработки сообщения.
 
 ```csharp
 // Retrieve storage account from connection string
@@ -357,7 +349,7 @@ queue.DeleteMessage(retrievedMessage);
 
 ## <a name="use-async-await-pattern-with-common-queue-storage-apis"></a>Использование алгоритма Async-Await со стандартными интерфейсами API хранилища очередей
 
-В этом примере показано использование алгоритма Async-Await со стандартными интерфейсами API хранилища очередей. Вызывается асинхронная версия каждого из методов, на что указывает суффикс *Async* в их названиях. При использовании асинхронного метода алгоритм Async-Await приостанавливает локальное выполнение процесса до завершения вызова. Благодаря этому текущий поток может выполнять другие задачи, что позволяет избежать возникновения узких мест и повысить общую скорость реагирования приложения. Дополнительные сведения об использовании шаблона async-await в .NET см. в разделе [Async и await (C# и Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx) .
+В этом примере показано использование алгоритма Async-Await со стандартными интерфейсами API хранилища очередей. Вызывается асинхронная версия каждого из методов, на что указывает суффикс *Async* в их названиях. При использовании асинхронного метода алгоритм Async-Await приостанавливает локальное выполнение процесса до завершения вызова. Благодаря этому текущий поток может выполнять другие задачи, что позволяет избежать возникновения узких мест и повысить общую скорость реагирования приложения. Дополнительные сведения об использовании шаблона Async-Await в .NET см. в разделе [Async и await (C# и Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx) .
 
 # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
@@ -406,7 +398,7 @@ Console.WriteLine("Deleted message");
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-В следующем примере кода для получения 20 сообщений в одном вызове используется метод « [Messages](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessages?view=azure-dotnet-legacy) ». Затем он обрабатывает каждое сообщение с помощью цикла `foreach`. Он также задает время ожидания невидимости 5 минут для каждого сообщения. Обратите внимание, что 5 минут начинается для всех сообщений в одно и то же время, поэтому через 5 минут после вызова `GetMessages` , все сообщения, которые не были удалены, снова станут видимыми.
+В следующем примере кода для получения 20 сообщений в одном вызове используется метод « [Messages](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessages?view=azure-dotnet-legacy&preserve-view=true) ». Затем он обрабатывает каждое сообщение с помощью цикла `foreach`. Он также задает время ожидания невидимости 5 минут для каждого сообщения. Обратите внимание, что 5 минут начинается для всех сообщений в одно и то же время, поэтому через 5 минут после вызова `GetMessages` , все сообщения, которые не были удалены, снова станут видимыми.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -438,7 +430,7 @@ foreach (CloudQueueMessage message in queue.GetMessages(20, TimeSpan.FromMinutes
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Вы можете узнать приблизительное количество сообщений в очереди. Метод [FetchAttributes](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.fetchattributes?view=azure-dotnet-legacy) отправляет в службу очередей запрос на извлечение атрибутов очереди, включая количество сообщений. Свойство [ApproximateMessageCount](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.approximatemessagecount?view=azure-dotnet-legacy) возвращает последнее значение, полученное `FetchAttributes` методом, без вызова служба очередей.
+Вы можете узнать приблизительное количество сообщений в очереди. Метод [FetchAttributes](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.fetchattributes?view=azure-dotnet-legacy&preserve-view=true) отправляет в службу очередей запрос на извлечение атрибутов очереди, включая количество сообщений. Свойство [ApproximateMessageCount](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.approximatemessagecount?view=azure-dotnet-legacy&preserve-view=true) возвращает последнее значение, полученное `FetchAttributes` методом, без вызова служба очередей.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -473,7 +465,7 @@ Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
 
 # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Чтобы удалить очередь и все сообщения в ней, вызовите метод [Delete](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.delete?view=azure-dotnet-legacy) для объекта очереди.
+Чтобы удалить очередь и все сообщения в ней, вызовите метод [Delete](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.delete?view=azure-dotnet-legacy&preserve-view=true) для объекта очереди.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -499,16 +491,8 @@ queue.Delete();
 - Дополнительные сведения о доступных API-интерфейсах см. в справочной документации по службе очередей:
   - [Справочник по клиентской библиотеке хранилища для .NET](https://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
   - [Справочник по REST API](https://msdn.microsoft.com/library/azure/dd179355)
-- Узнайте, как упростить код, предназначенный для работы со службой хранилища Azure, с помощью [пакета SDK для веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki).
 - Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.
   - [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md) .
   - [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../blobs/storage-dotnet-how-to-use-blobs.md) .
   - Информацию о хранении реляционных данных см. в статье [Подключение к базе данных SQL с помощью .NET (C#)](../../azure-sql/database/connect-query-dotnet-core.md).
-
-[Download and install the Azure SDK for .NET]: /develop/net/
-[.NET client library reference]: https://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-[Creating an Azure Project in Visual Studio]: https://msdn.microsoft.com/library/azure/ee405487.aspx
-[Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/
-[OData]: https://nuget.org/packages/Microsoft.Data.OData/5.0.2
-[Edm]: https://nuget.org/packages/Microsoft.Data.Edm/5.0.2
-[Spatial]: https://nuget.org/packages/System.Spatial/5.0.2
+- Узнайте, как упростить код, предназначенный для работы со службой хранилища Azure, с помощью [пакета SDK для веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki).

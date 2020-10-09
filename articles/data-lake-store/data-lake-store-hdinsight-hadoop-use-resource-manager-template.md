@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 33c54738b1ab3c90118c86bbf78bdcc3348658e0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2a0471055e4648944aa07d10fef67f5e7235a76b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87048712"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856930"
 ---
 # <a name="create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-using-azure-resource-manager-template"></a>Создание кластера HDInsight с Azure Data Lake Storage 1-го поколения с помощью шаблона Azure Resource Manager
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "87048712"
 
 Узнайте, как с помощью Azure PowerShell настроить кластер HDInsight с Azure Data Lake Storage 1-го поколения в качестве **дополнительного хранилища**.
 
-Для поддерживаемых типов кластеров Data Lake Storage 1-го поколения можно использовать в качестве хранилища по умолчанию или в качестве дополнительной учетной записи хранения. Если Data Lake Storage 1-го поколения используется как дополнительное хранилище, в этом случае в качестве учетной записи хранения по умолчанию для кластеров по-прежнему используется Azure Storage Blob (WASB). Кроме того, относящиеся к кластеру файлы (журналы и т. д.) записываются в хранилище по умолчанию, а данные, которые необходимо обработать, могут храниться в учетной записи Data Lake Storage 1-го поколения. Использование Data Lake Storage 1-го поколения в качестве дополнительной учетной записи хранения не влияет на производительность или возможность выполнять чтение и запись в хранилище из кластера.
+Для поддерживаемых типов кластеров Data Lake Storage 1-го поколения можно использовать в качестве хранилища по умолчанию или в качестве дополнительной учетной записи хранения. Если Data Lake Storage 1-го поколения используется в качестве дополнительного хранилища, учетная запись хранения по умолчанию для кластеров по-прежнему будет храниться в хранилище BLOB-объектов Azure (WASB), а файлы, связанные с кластером (такие как журналы и т. д.), сохраняются в хранилище по умолчанию, а данные, которые требуется обработать, могут храниться в учетной записи Data Lake Storage 1-го поколения. Использование Data Lake Storage 1-го поколения в качестве дополнительной учетной записи хранения не влияет на производительность или возможность выполнять чтение и запись в хранилище из кластера.
 
 ## <a name="using-data-lake-storage-gen1-for-hdinsight-cluster-storage"></a>Использование Data Lake Storage 1-го поколения в качестве хранилища кластера HDInsight
 
@@ -71,16 +71,16 @@ Set-AzContext -SubscriptionId <subscription ID>
 * [Microsoft. HDInsight/кластеры](/azure/templates/microsoft.hdinsight/clusters)
 
 ## <a name="upload-sample-data-to-data-lake-storage-gen1"></a>Отправка примера данных в Data Lake Storage 1-го поколения
-Шаблон Resource Manager создает учетную запись Data Lake Storage 1-го поколения и связывает ее с кластером HDInsight. На этом этапе необходимо отправить пример данных в Data Lake Storage 1-го поколения. Эти данные потребуются позже при выполнении заданий из кластера HDInsight для получения доступа к учетной записи Data Lake Storage 1-го поколения. Инструкции по отправке данных см. в разделе [Отправка файла в учетную запись Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md#uploaddata). Если у вас нет под рукой подходящих для этих целей данных, передайте папку **Ambulance Data** из [репозитория Git для озера данных Azure](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData).
+Шаблон диспетчер ресурсов создает новую учетную запись хранения с Data Lake Storage 1-го поколения и связывает ее с кластером HDInsight. На этом этапе необходимо отправить пример данных в Data Lake Storage 1-го поколения. Эти данные понадобятся позже в этом руководстве для запуска заданий из кластера HDInsight, которые обращаются к данным в учетной записи хранения с Data Lake Storage 1-го поколения. Инструкции по отправке данных см. в разделе [Отправка файла в Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md#uploaddata). Если у вас нет под рукой подходящих для этих целей данных, передайте папку **Ambulance Data** из [репозитория Git для озера данных Azure](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData).
 
 ## <a name="set-relevant-acls-on-the-sample-data"></a>Установка соответствующих списков управления доступом для примера данных
 Чтобы обеспечить доступ к отправляемым примерам данных для кластера HDInsight, необходимо убедиться, что у приложения Azure AD, используемого для определения удостоверения между кластером HDInsight и Data Lake Storage 1-го поколения, есть доступ к файлу или папке, к которой вы пытаетесь получить доступ. Для этого сделайте следующее.
 
-1. Найдите имя приложения Azure AD, связанного с кластером HDInsight и учетной записью Data Lake Storage 1-го поколения. Чтобы найти его, можно открыть колонку кластера HDInsight, созданного с помощью шаблона Resource Manager, выбрать вкладку **Удостоверение кластера AAD** и просмотреть значение параметра **Service Principal Display Name** (Отображаемое имя субъекта-службы).
+1. Найдите имя приложения Azure AD, связанного с кластером HDInsight, и учетную запись хранения с Data Lake Storage 1-го поколения. Один из способов поиска имени — открыть колонку кластера HDInsight, созданную с помощью шаблона диспетчер ресурсов, перейдите на вкладку **удостоверение Azure AD** и найдите значение **Отображаемое имя субъекта-службы**.
 2. Теперь предоставьте этому приложению Azure AD доступ к файлу или папке, к которым необходимо получить доступ из кластера HDInsight. Чтобы установить подходящие списки управления доступом для файла или папки в Data Lake Storage 1-го поколения, см. статью [Защита данных, хранимых в Data Lake Storage 1-го поколения](data-lake-store-secure-data.md#filepermissions).
 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Выполнение тестовых заданий в кластере HDInsight для использования Data Lake Storage 1-го поколения
-После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, доступно ли ему Data Lake Storage 1-го поколения. Для этого запустите образец задания Hive, создающего таблицу с данными, которые вы ранее отправили в учетную запись Data Lake Storage 1-го поколения.
+После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, доступно ли ему Data Lake Storage 1-го поколения. Для этого мы выполним пример задания Hive, которое создает таблицу, используя демонстрационные данные, отправленные ранее в учетную запись хранения с Data Lake Storage 1-го поколения.
 
 В этом разделе вы подключитесь к кластеру HDInsight под управлением Linux по протоколу SSH и выполните пример запроса Hive. При использовании клиента Windows мы рекомендуем использовать служебную программу **PuTTY**, которую можно скачать на странице [https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
@@ -99,7 +99,7 @@ Set-AzContext -SubscriptionId <subscription ID>
    SELECT * FROM vehicles LIMIT 10;
    ```
 
-   Выходные данные должны иметь следующий вид.
+   Вы должны увидеть результат, аналогичный приведенному ниже:
 
    ```
    1,1,2014-09-14 00:00:03,46.81006,-92.08174,51,S,1
@@ -122,10 +122,10 @@ Set-AzContext -SubscriptionId <subscription ID>
 
 Дополнительные сведения об использовании PuTTY см. в разделе [Использование SSH с Hadoop на основе Linux в HDInsight из Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-windows.md).
 
-После подключения используйте следующую команду файловой системы HDFS для получения списка файлов в учетной записи Data Lake Storage 1-го поколения.
+После подключения используйте следующую команду файловой системы HDFS, чтобы вывести список файлов в учетной записи хранения с Data Lake Storage 1-го поколения.
 
 ```
-hdfs dfs -ls adl://<Data Lake Storage Gen1 account name>.azuredatalakestore.net:443/
+hdfs dfs -ls adl://<storage account with Data Lake Storage Gen1 name>.azuredatalakestore.net:443/
 ```
 
 Эта команда должна показать файл, который вы ранее отправили в Data Lake Storage 1-го поколения.
@@ -141,4 +141,4 @@ Found 1 items
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-wasb-distcp.md)
-* [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
+* [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen1.md)

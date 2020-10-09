@@ -1,6 +1,6 @@
 ---
 title: Ограничение доступа с использованием подписанных URL-адресов в Azure HDInsight
-description: Узнайте, как использовать подписанные URL-адреса для ограничения доступа HDInsight к данным, хранящимся в хранилищах BLOB-объектов.
+description: Узнайте, как использовать подписанные URL-права для ограничения доступа HDInsight к данным, хранящимся в хранилище BLOB-объектов Azure.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 8ab181eb72b5a3ab54ad8dba19d23288926b8969
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ea14a67f11974c8f7cdeea9eb84e5efb2377fb15
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87006319"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856570"
 ---
-# <a name="use-azure-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным в HDInsight
+# <a name="use-azure-blob-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписей общего доступа хранилища BLOB-объектов Azure для ограничения доступа к данным в HDInsight
 
-HDInsight имеет полный доступ к данным в учетных записях хранения Azure, связанных с кластером. Чтобы ограничить этот доступ, вы можете применить подписанные URL-адреса для контейнера больших двоичных объектов. Подписанные URL-адреса (SAS) — это функция учетных записей хранения Azure, позволяющая ограничивать доступ к данным, например предоставлять доступ к данным только для чтения.
+HDInsight имеет полный доступ к данным в учетных записях хранения BLOB-объектов Azure, связанных с кластером. Чтобы ограничить этот доступ, вы можете применить подписанные URL-адреса для контейнера больших двоичных объектов. Подписанные URL-адрес (SAS) — это функция учетных записей хранилища больших двоичных объектов Azure, которая позволяет ограничить доступ к данным. например предоставлять доступ к данным только для чтения.
 
 > [!IMPORTANT]  
 > Чтобы создать решение на основе Apache Ranger, попробуйте использовать HDInsight, присоединенный к домену. Дополнительные сведения см. в статье [Настройка присоединенных к домену кластеров HDInsight (предварительная версия)](./domain-joined/apache-domain-joined-configure.md).
@@ -39,7 +39,7 @@ HDInsight имеет полный доступ к данным в учетных
 
 * При использовании C# Visual Studio должна иметь версию 2013 или более позднюю.
 
-* Схема универсального кода ресурса (URI) для вашей учетной записи хранения. Эта схема будет использоваться `wasb://` для службы хранилища Azure, `abfs://` Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет таким: `wasbs://`.
+* Схема универсального кода ресурса (URI) для вашей учетной записи хранения. Эта схема будет использоваться `wasb://` для хранилища BLOB-объектов Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов Azure включено безопасное перемещение, URI будет иметь значение `wasbs://` .
 
 * Существующий кластер HDInsight, в который добавляется подписанный URL-доступ. Если нет, создайте кластер с помощью Azure PowerShell и добавьте подписанный URL-адрес в процессе создания кластера.
 
@@ -48,7 +48,7 @@ HDInsight имеет полный доступ к данным в учетных
   * Проект Visual Studio, способный создать контейнер хранилища, хранимую политику и SAS для использования с HDInsight.
   * Сценарий Python, способный создать контейнер хранилища, хранимую политику и SAS для использования с HDInsight.
   * Сценарий PowerShell, способный создать кластер HDInsight и настроить его для использования SAS. Обновленная версия используется далее.
-  * Пример файла:`hdinsight-dotnet-python-azure-storage-shared-access-signature-master\sampledata\sample.log`
+  * Пример файла: `hdinsight-dotnet-python-azure-storage-shared-access-signature-master\sampledata\sample.log`
 
 ## <a name="shared-access-signatures"></a>Подписанные URL-адреса
 

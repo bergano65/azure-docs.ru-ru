@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
-ms.openlocfilehash: b88408480bb0822a061e97336eee5c6b3ccfc8e0
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 847c69a18a73d67b9b994e72686a4073ddd6d27f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91358327"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91857543"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
@@ -28,6 +28,7 @@ ms.locfileid: "91358327"
 * клиент Azure Active Directory;
 * Организация GitHub, созданная в облаке [GitHub Enterprise](https://help.github.com/articles/github-s-products/#github-enterprise), которой требуется [план выставления счетов GitHub Enterprise](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 * Учетная запись пользователя в GitHub с разрешениями администратора для Организации.
+* [SAML, настроенный для Организации в облаке GitHub Enterprise](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)
 * Убедитесь, что для вашей организации предоставлен доступ OAuth, как описано [здесь](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization) .
 * SCIM подготовка для одной организации поддерживается, только если единый вход включен на уровне Организации.
 
@@ -51,9 +52,6 @@ ms.locfileid: "91358327"
 ## <a name="configuring-user-provisioning-to-github"></a>Настройка подготовки учетных записей пользователей в GitHub
 
 В этом разделе описывается подключение вашего каталога Azure AD к API подготовки учетных записей пользователей в GitHub и настройка службы подготовки для создания, обновления и отключения назначенных учетных записей пользователей в GitHub на основе назначения пользователей и групп в Azure AD.
-
-> [!TIP]
-> Для GitHub можно также включить единый вход на основе SAML. Для этого следуйте инструкциям на [портале Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя эти две возможности дополняют друг друга.
 
 ### <a name="configure-automatic-user-account-provisioning-to-github-in-azure-ad"></a>Настройка автоматической подготовки учетных записей пользователей для GitHub в Azure AD
 

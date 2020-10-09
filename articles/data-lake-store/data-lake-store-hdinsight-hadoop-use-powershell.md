@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 69cfe529f3d2b0f956bfbe9d002a5a220b37e19f
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.openlocfilehash: d11d3edc4eec0a006e71ef1787cbbd62a7f5957e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91620019"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856982"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
 
@@ -29,7 +29,7 @@ ms.locfileid: "91620019"
 > Если вы собираетесь добавить Data Lake Storage 1-го поколения в качестве дополнительного хранилища для кластера HDInsight, настоятельно рекомендуется сделать это во время создания кластера, как описано в этой статье. Добавление Data Lake Storage 1-го поколения в качестве дополнительного хранилища для существующего кластера HDInsight — очень сложный процесс, который может привести к ошибкам.
 >
 
-В поддерживаемых типах кластеров Data Lake Storage 1-го поколения можно использовать в качестве хранилища по умолчанию или дополнительной учетной записи хранения. Если Data Lake Storage 1-го поколения используется как дополнительное хранилище, в этом случае в качестве учетной записи хранения по умолчанию для кластеров по-прежнему используется Azure Storage Blob (WASB). Кроме того, относящиеся к кластеру файлы (журналы и т. д.) записываются в хранилище по умолчанию, а данные, которые необходимо обработать, могут храниться в учетной записи Data Lake Storage 1-го поколения. Использование Data Lake Storage 1-го поколения в качестве дополнительной учетной записи хранения не влияет на производительность или возможность выполнять чтение и запись в хранилище из кластера.
+В поддерживаемых типах кластеров Data Lake Storage 1-го поколения можно использовать в качестве хранилища по умолчанию или дополнительной учетной записи хранения. Если Data Lake Storage 1-го поколения используется в качестве дополнительного хранилища, учетная запись хранения по умолчанию для кластеров по-прежнему будет храниться в хранилище BLOB-объектов Azure (WASB), а файлы, связанные с кластером (такие как журналы и т. д.), по-прежнему будут записываться в хранилище по умолчанию, а данные, которые требуется обработать, могут храниться в Data Lake Storage 1-го поколения. Использование Data Lake Storage 1-го поколения в качестве дополнительной учетной записи хранения не влияет на производительность или возможность выполнять чтение и запись в хранилище из кластера.
 
 ## <a name="using-data-lake-storage-gen1-for-hdinsight-cluster-storage"></a>Использование Data Lake Storage 1-го поколения в качестве хранилища кластера HDInsight
 
@@ -39,7 +39,7 @@ ms.locfileid: "91620019"
 
 Настройка HDInsight для использования Data Lake Storage 1-го поколения с помощью PowerShell состоит из нескольких этапов.
 
-* Создание учетной записи Data Lake Storage 1-го поколения
+* Создание учетной записи Data Lake Storage 1-го поколения 
 * Настройка проверки подлинности для доступа к Data Lake Storage 1-го поколения на основе ролей
 * Создание кластера HDInsight с проверкой подлинности в Data Lake Storage 1-го поколения
 * выполнение тестового задания в кластере.
@@ -57,7 +57,7 @@ ms.locfileid: "91620019"
 
     **Если вы не являетесь администратором Azure AD**, то вы не сможете выполнить шаги, необходимые для создания субъекта-службы. В этом случае администратор Azure AD должен сначала создать субъект-службу, после чего вы сможете создать кластер HDInsight с Data Lake Storage 1-го поколения. При создании субъекта-службы также необходимо использовать сертификат, как описано в разделе [Create a service principal with certificate](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-certificate-from-certificate-authority) (Создание субъекта-службы с сертификатом).
 
-## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
+## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения 
 Чтобы создать учетную запись Data Lake Storage 1-го поколения, сделайте следующее.
 
 1. На своем компьютере откройте новое окно Azure PowerShell и введите следующий фрагмент кода. Когда вам будет предложено войти, введите учетные данные администратора или владельца подписки:
@@ -80,7 +80,7 @@ ms.locfileid: "91620019"
    > Если при регистрации поставщика ресурсов Data Lake Storage 1-го поколения появляется сообщение об ошибке, похожее на `Register-AzResourceProvider : InvalidResourceNamespace: The resource namespace 'Microsoft.DataLakeStore' is invalid` , то возможно, что подписка не утверждена для Data Lake Storage 1-го поколения. Убедитесь, что подписка Azure для Data Lake Storage 1-го поколения включена, выполнив указанные [инструкции](data-lake-store-get-started-portal.md).
    >
    >
-2. Учетная запись Data Lake Storage 1-го поколения связывается с группой ресурсов Azure. Для начала создайте группу ресурсов Azure.
+2. Учетная запись хранения с Data Lake Storage 1-го поколения связана с группой ресурсов Azure. Для начала создайте группу ресурсов Azure.
 
     ```azurepowershell
     $resourceGroupName = "<your new resource group name>"
@@ -97,10 +97,10 @@ ms.locfileid: "91620019"
     ResourceId        : /subscriptions/<subscription-id>/resourceGroups/hdiadlgrp
     ```
 
-3. Создайте учетную запись Data Lake Storage 1-го поколения. Имя новой учетной записи должно содержать только строчные буквы и цифры.
+3. Создайте учетную запись хранения с Data Lake Storage 1-го поколения. Имя новой учетной записи должно содержать только строчные буквы и цифры.
 
     ```azurepowershell
-    $dataLakeStorageGen1Name = "<your new Data Lake Storage Gen1 account name>"
+    $dataLakeStorageGen1Name = "<your new storage account with Data Lake Storage Gen1 name>"
     New-AzDataLakeStoreAccount -ResourceGroupName $resourceGroupName -Name $dataLakeStorageGen1Name -Location "East US 2"
     ```
 
@@ -132,7 +132,7 @@ ms.locfileid: "91620019"
 
 ## <a name="set-up-authentication-for-role-based-access-to-data-lake-storage-gen1"></a>Настройка проверки подлинности для доступа к Data Lake Storage 1-го поколения на основе ролей
 
-Каждая подписка Azure связана со службой Azure Active Directory. Пользователи и службы, получающие доступ к ресурсам подписки через портал Azure или API Azure Resource Manager, сначала должны пройти аутентификацию в соответствующей службе Azure Active Directory. Доступ к подпискам и службам Azure предоставляется путем назначения соответствующей роли для ресурса Azure.  В случае со службами субъект-служба идентифицирует службу в Azure Active Directory (AAD). В этом разделе мы расскажем, как предоставить службе приложения, в частности HDInsight, доступ к ресурсу Azure (созданной ранее учетной записи Data Lake Storage 1-го поколения). Для этого с помощью Azure PowerShell мы создадим для приложения субъект-службу и назначим ему роли.
+Каждая подписка Azure связана со службой Azure Active Directory. Пользователи и службы, получающие доступ к ресурсам подписки через портал Azure или API Azure Resource Manager, сначала должны пройти аутентификацию в соответствующей службе Azure Active Directory. Доступ к подпискам и службам Azure предоставляется путем назначения соответствующей роли для ресурса Azure.  Для служб субъект-служба идентифицирует службу в Azure Active Directory (Azure AD). В этом разделе показано, как предоставить службе приложений, например HDInsight, доступ к ресурсу Azure (учетную запись хранения с Data Lake Storage 1-го поколения, созданным ранее), создав субъект-службу для приложения и назначив ему роли с помощью Azure PowerShell.
 
 Чтобы настроить для Data Lake Storage 1-го поколения проверку подлинности в Active Directory, вам необходимо сделать следующее.
 
@@ -197,7 +197,7 @@ ms.locfileid: "91620019"
      $objectId = $servicePrincipal.Id
     ```
 
-3. Предоставьте субъекту-службе доступ к файлу и папке Data Lake Storage 1-го поколения, к которым будете обращаться из кластера HDInsight. Приведенный ниже фрагмент предоставляет доступ к корню учетной записи Data Lake Storage 1-го поколения (в который вы скопировали пример файла данных) и к самому файлу.
+3. Предоставьте субъекту-службе доступ к файлу и папке Data Lake Storage 1-го поколения, к которым будете обращаться из кластера HDInsight. Приведенный ниже фрагмент предоставляет доступ к корню учетной записи хранения с Data Lake Storage 1-го поколения (куда был скопирован образец файла данных) и самим файлом.
 
     ```azurepowershell
     Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path / -AceType User -Id $objectId -Permissions All
@@ -206,7 +206,7 @@ ms.locfileid: "91620019"
 
 ## <a name="create-an-hdinsight-linux-cluster-with-data-lake-storage-gen1-as-additional-storage"></a>Создание кластера HDInsight на платформе Linux с Data Lake Storage 1-го поколения в качестве дополнительного хранилища
 
-В этом разделе показано, как создать кластер HDInsight Hadoop на платформе Linux с Data Lake Storage 1-го поколения в качестве дополнительного хранилища. При использовании этого выпуска кластер HDInsight и учетная запись Data Lake Storage 1-го поколения должны находиться в одном расположении.
+В этом разделе показано, как создать кластер HDInsight Hadoop на платформе Linux с Data Lake Storage 1-го поколения в качестве дополнительного хранилища. В этом выпуске кластер HDInsight и учетная запись хранения с Data Lake Storage 1-го поколения должны находиться в одном расположении.
 
 1. Сначала получите идентификатор клиента подписки. Позже он вам понадобится.
 
@@ -214,7 +214,7 @@ ms.locfileid: "91620019"
     $tenantID = (Get-AzContext).Tenant.TenantId
     ```
 
-2. В этом выпуске в кластере Hadoop Data Lake Storage 1-го поколения может использоваться только как дополнительное хранилище кластера. Хранилищем по умолчанию по-прежнему будут BLOB-объекты хранилища Azure (WASB). Поэтому мы сначала создадим учетную запись хранения и контейнеры хранилища, необходимые для кластера.
+2. В этом выпуске в кластере Hadoop Data Lake Storage 1-го поколения может использоваться только как дополнительное хранилище кластера. Хранилище по умолчанию по-прежнему будет хранилищем BLOB-объектов Azure (WASB). Поэтому мы сначала создадим учетную запись хранения и контейнеры хранилища, необходимые для кластера.
 
     ```azurepowershell
     # Create an Azure storage account
@@ -245,8 +245,8 @@ ms.locfileid: "91620019"
     В случае успешного выполнения командлета должен отобразиться список сведений о кластере.
 
 
-## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-the-data-lake-storage-gen1-account"></a>Выполнение тестовых заданий в кластере HDInsight для использования учетной записи Data Lake Storage 1-го поколения
-После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, доступно ли ему Data Lake Storage 1-го поколения. Для этого запустите образец задания Hive, создающего таблицу с данными, которые вы ранее отправили в учетную запись Data Lake Storage 1-го поколения.
+## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-the-data-lake-storage-gen1"></a>Запуск тестовых заданий в кластере HDInsight для использования Data Lake Storage 1-го поколения
+После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, доступно ли ему Data Lake Storage 1-го поколения. Для этого мы выполним пример задания Hive, которое создает таблицу, используя демонстрационные данные, отправленные ранее в учетную запись хранения с Data Lake Storage 1-го поколения.
 
 В этом разделе вы подключитесь к созданному кластеру HDInsight под управлением Linux по протоколу SSH и выполните пример запроса Hive.
 
@@ -290,10 +290,10 @@ ms.locfileid: "91620019"
 * Если вы используете клиент Windows для подключения к кластеру по протоколу SSH, ознакомьтесь со статьей [Использование SSH с HDInsight (Hadoop) в PuTTY на базе Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-windows.md).
 * Если вы используете клиент Linux для подключения к кластеру по SSH, ознакомьтесь со статьей [Использование SSH с HDInsight (Hadoop) на платформе Windows, Linux, Unix или OS X](../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
-После подключения используйте следующую команду файловой системы HDFS для получения списка файлов в учетной записи Data Lake Storage 1-го поколения.
+После подключения используйте следующую команду файловой системы HDFS, чтобы вывести список файлов в учетной записи хранения с Data Lake Storage 1-го поколения.
 
 ```azurepowershell
-hdfs dfs -ls adl://<Data Lake Storage Gen1 account name>.azuredatalakestore.net:443/
+hdfs dfs -ls adl://<storage account with Data Lake Storage Gen1 name>.azuredatalakestore.net:443/
 ```
 
 Эта команда должна показать файл, который вы ранее отправили в Data Lake Storage 1-го поколения.
@@ -306,8 +306,8 @@ Found 1 items
 
 С помощью команды `hdfs dfs -put` вы можете передать несколько файлов в Data Lake Storage 1-го поколения, а затем с помощью команды `hdfs dfs -ls` проверить, успешно ли они передались.
 
-## <a name="see-also"></a>См. также
-* [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
+## <a name="see-also"></a>См. также:
+* [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen1.md)
 * [Создание кластера HDInsight, использующего Data Lake Storage 1-го поколения, с помощью портала](data-lake-store-hdinsight-hadoop-use-portal.md)
 
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx

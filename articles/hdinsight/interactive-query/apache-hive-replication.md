@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 10/07/2020
-ms.openlocfilehash: b6a7b9d4e4b8a7caf79e2dbcc1059adc3c9122d7
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.date: 10/08/2020
+ms.openlocfilehash: af74392b3368a25e5d238f774292c80de5f91c65
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/08/2020
-ms.locfileid: "91843981"
+ms.locfileid: "91857747"
 ---
 # <a name="how-to-use-apache-hive-replication-in-azure-hdinsight-clusters"></a>Как использовать репликацию Apache Hive в кластерах Azure HDInsight
 
@@ -224,8 +224,7 @@ repl dump tpcds_orc from 2925;
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 
-- [Справочник по REST Apache Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
-- [Установка и настройка CLI Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)
-- [Установка и Настройка модуля Azure PowerShell AZ](/powershell/azure/)
-- [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md)
-- [«Подготовка кластеров HDInsight на основе Linux»](../hdinsight-hadoop-provision-linux-clusters.md)
+- [Непрерывность бизнес-процессов Azure HDInsight](../hdinsight-business-continuity.md)
+- [Архитектура обеспечения непрерывности бизнес-процессов Azure HDInsight](../hdinsight-business-continuity-architecture.md)
+- [Пример использования архитектуры высокодоступного решения Azure HDInsight](../hdinsight-high-availability-case-study.md)
+- [Обзор Apache Hive и HiveQL в Azure HDInsight](../hadoop/hdinsight-use-hive.md)

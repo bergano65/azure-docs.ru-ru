@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 03f996f1105601dc46c81fa1a874816913e80633
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2f5b82f07ecff36ba95917a1f1b347c42ae7e074
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91716058"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856792"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -32,7 +32,7 @@ AzCopy — это служебная программа командной ст
 - [Windows 64-bit](https://aka.ms/downloadazcopy-v10-windows) (ZIP)
 - [Windows 32-bit](https://aka.ms/downloadazcopy-v10-windows-32bit) (ZIP)
 - [Linux x86-64](https://aka.ms/downloadazcopy-v10-linux) (tar)
-- [MacOS](https://aka.ms/downloadazcopy-v10-mac) (ZIP-файл)
+- [macOS](https://aka.ms/downloadazcopy-v10-mac) (ZIP)
 
 Эти файлы сжимаются как ZIP-файл (Windows и Mac) или tar-файл (Linux). Чтобы скачать и распаковать TAR файл в Linux, см. документацию по дистрибутиву Linux.
 
@@ -50,7 +50,9 @@ AzCopy — это служебная программа командной ст
 
 Чтобы узнать об определенной команде, просто включите имя команды (например: `azcopy list -h` ).
 
-![Встроенная справка](media/storage-use-azcopy-v10/azcopy-inline-help.png)
+> [!div class="mx-imgBorder"]
+> ![Встроенная справка](media/storage-use-azcopy-v10/azcopy-inline-help.png)
+
 
 Подробную справочную документацию по каждой команде и параметру команды см. в разделе [azcopy](storage-ref-azcopy.md)
 
@@ -318,6 +320,6 @@ URL-адрес отображается в выходных данных это�
 
 См. раздел [Настройка, оптимизация и устранение неполадок AzCopy](storage-use-azcopy-configure.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас есть вопросы, проблемы или общие отзывы, отправьте их [на страницу GitHub](https://github.com/Azure/azure-storage-azcopy) .

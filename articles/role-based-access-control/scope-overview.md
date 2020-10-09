@@ -7,14 +7,14 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/30/2020
+ms.date: 10/08/2020
 ms.author: rolyon
-ms.openlocfilehash: 80a05fd389ecaf504f58d12bf8efe87debd4ab86
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.openlocfilehash: ad906e3665c6ffc354cf6292c2559d1184037594
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91604394"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856162"
 ---
 # <a name="understand-scope-for-azure-rbac"></a>Общие сведения об области для Azure RBAC
 
@@ -22,9 +22,13 @@ ms.locfileid: "91604394"
 
 ## <a name="scope-levels"></a>Уровни области
 
-В Azure можно указать область на четырех уровнях: [Группа управления](../governance/management-groups/overview.md), подписка, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups)и ресурс. Структура областей строится на отношениях "родитель-потомок". Каждый уровень иерархии делает область более конкретной. Вы можете назначать роли на любом из этих уровней области. Выбранный уровень определяет, насколько широко применяется роль. Более низкие уровни наследуют разрешения роли от более высоких уровней. 
+В Azure можно указать область на четырех уровнях: [Группа управления](../governance/management-groups/overview.md), подписка, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups)и ресурс. Структура областей строится на отношениях "родитель-потомок". Каждый уровень иерархии делает область более конкретной. Вы можете назначать роли на любом из этих уровней области действия. Выбранный уровень определяет, насколько широко применяется роль. Более низкие уровни наследуют разрешения роли от более высоких уровней. 
 
 ![Область для назначения ролей](./media/scope-overview/rbac-scope-no-label.png)
+
+Группы управления — это уровень области действия подписок, но группы управления поддерживают более сложные иерархии. На следующей диаграмме показан пример иерархии групп управления и подписок, которые можно определить. Дополнительные сведения о группах управления см. в статье [что такое группы управления Azure?](../governance/management-groups/overview.md).
+
+![Иерархия группы управления и подписки](./media/scope-overview/rbac-scope-management-groups.png)
 
 ## <a name="scope-format"></a>Формат области
 
@@ -118,6 +122,6 @@ ms.locfileid: "91604394"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Действия по добавлению назначения ролей](role-assignments-steps.md)
+- [Шаги для добавления назначения роли](role-assignments-steps.md)
 - [Поставщики ресурсов для служб Azure](../azure-resource-manager/management/azure-services-resource-providers.md)
-- [Упорядочение ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md)
+- [Что такое группы управления Azure?](../governance/management-groups/overview.md)

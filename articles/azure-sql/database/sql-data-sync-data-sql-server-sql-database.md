@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: f7d2351fdc39ec4600cbca2e436cdcd527157275
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 7bdb2c6ba6717624b19184ca3bcb47ee9b3da367
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91332970"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856115"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Что такое синхронизация данных SQL для Azure?
 
@@ -126,7 +126,7 @@ ms.locfileid: "91332970"
 > - Данные между концентратором и элементом могут быть потеряны, хотя синхронизация не сообщает о каких-либо проблемах.
 > - Синхронизация может завершиться ошибкой, так как таблица отслеживания содержит несуществующую строку из источника из-за изменения первичного ключа.
 
-- Необходимо включить изоляцию моментального снимка. Дополнительные сведения см. в статье [Изоляция моментального снимка в SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server).
+- Изоляция моментального снимка должна быть включена как для членов синхронизации, так и для центра. Дополнительные сведения см. в статье [Изоляция моментального снимка в SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server).
 
 ### <a name="general-limitations"></a>Общие ограничения
 
@@ -137,7 +137,7 @@ ms.locfileid: "91332970"
 - Имена объектов (баз данных, таблиц и столбцов) не могут содержать печатные символы (.), левые квадратные скобки ([) или правая квадратная скобка (]).
 - Azure Active Directory проверка подлинности не поддерживается.
 - Таблицы с одинаковыми именами, но с разными схемами (например, dbo. Customers и Sales. Customers) не поддерживаются.
-- Столбцы с определяемыми пользователем типами данных не поддерживаются.
+- Столбцы с типами данных User-Defined не поддерживаются
 - Перемещение серверов между разными подписками не поддерживается. 
 
 #### <a name="unsupported-data-types"></a>Неподдерживаемые типы данных

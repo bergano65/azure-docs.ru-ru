@@ -8,27 +8,27 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 23e7b0f8dcb0c64259627d5350511ebdc48d6fac
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 73b5966bf90d2829456401a25cc5b8ea001397d4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078976"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856234"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
-Узнайте, как использовать действия сценария для добавления дополнительных *учетных записей* хранения Azure в HDInsight. Действия, описанные в этом документе, позволяют добавить *учетную запись* хранения в существующий кластер HDInsight. Эта статья относится к *учетным записям* хранения (а не к учетной записи хранения кластера по умолчанию), а не к дополнительным хранилищам, таким как [`Azure Data Lake Storage Gen1`](hdinsight-hadoop-use-data-lake-store.md) и [`Azure Data Lake Storage Gen2`](hdinsight-hadoop-use-data-lake-storage-gen2.md) .
+Узнайте, как использовать действия сценария для добавления дополнительных *учетных записей* хранения Azure в HDInsight. Действия, описанные в этом документе, позволяют добавить *учетную запись* хранения в существующий кластер HDInsight. Эта статья относится к *учетным записям* хранения (а не к учетной записи хранения кластера по умолчанию), а не к дополнительным хранилищам, таким как [`Azure Data Lake Storage Gen1`](hdinsight-hadoop-use-data-lake-storage-gen1.md) и [`Azure Data Lake Storage Gen2`](hdinsight-hadoop-use-data-lake-storage-gen2.md) .
 
 > [!IMPORTANT]  
 > Сведения в этом документе посвящены добавлению дополнительных учетных записей хранения в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Имя и ключ учетной записи хранения. См. [раздел Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md).
 * При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 Во время обработки скрипт выполняет следующие действия:
 
@@ -55,8 +55,8 @@ ms.locfileid: "87078976"
 |Типы узлов|Head|
 |Параметры|`ACCOUNTNAME``ACCOUNTKEY` `-p` (необязательно)|
 
-* `ACCOUNTNAME`имя учетной записи хранения, добавляемой в кластер HDInsight.
-* `ACCOUNTKEY`— Это ключ доступа для `ACCOUNTNAME` .
+* `ACCOUNTNAME` имя учетной записи хранения, добавляемой в кластер HDInsight.
+* `ACCOUNTKEY` — Это ключ доступа для `ACCOUNTNAME` .
 * Аргумент `-p` является необязательным. Если этот параметр указан, ключ не шифруется и хранится в файле core-site.xml в виде обычного текста.
 
 ## <a name="verification"></a>Проверка

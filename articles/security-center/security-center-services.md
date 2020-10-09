@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 61e5c60317bf872b8e27a7bd2edea7247e01a3b8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a311439e8efc5481fbfd7431c1514ba6be576e39
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91439416"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91858019"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -107,6 +107,6 @@ ms.locfileid: "91439416"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Узнайте, как [собираются данные в Центре безопасности и подготавливается агент Log Analytics](security-center-enable-data-collection.md).
+- Узнайте, как [в Центре безопасности собираются данные с помощью агента Log Analytics](security-center-enable-data-collection.md).
 - Узнайте, как [Центр безопасности управляет данными и защищает их](security-center-data-security.md).
 - Просмотрите [платформы, которые поддерживают Центр безопасности](security-center-os-coverage.md).

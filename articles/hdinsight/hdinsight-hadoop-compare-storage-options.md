@@ -8,20 +8,20 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: ce1c6bdfb38e37c18a18cf970d2dd08683967da3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a866a225da87c22a3a276a5d59b8e86f1f955cae
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536754"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91856200"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Сравнение вариантов хранения для использования с кластерами Azure HDInsight
 
 При создании кластеров HDInsight можно выбрать одну из нескольких разных служб хранилища Azure:
 
-* [Служба хранилища Azure](./overview-azure-storage.md)
-* [Azure Data Lake Storage 2-го поколения](./overview-data-lake-storage-gen2.md)
-* [Azure Data Lake Storage 1-го поколения](./overview-data-lake-storage-gen1.md)
+* [Хранилище BLOB-объектов Azure с HDInsight](./overview-azure-storage.md)
+* [Azure Data Lake Storage 2-го поколения с помощью HDInsight](./overview-data-lake-storage-gen2.md)
+* [Azure Data Lake Storage 1-го поколения с помощью HDInsight](./overview-data-lake-storage-gen1.md)
 
 В этой статье предоставлен обзор типов хранилища и их уникальных функций.
 
@@ -33,9 +33,9 @@ ms.locfileid: "86536754"
 |---|---|---|---|---|---|---|---|
 |Azure Data Lake Storage 2-го поколения| Общего назначения версии 2 | Иерархическая (файловая система) | BLOB-объект | Standard | Горячий, холодный или архивный | 3.6+ | Все, кроме Spark 2,1 и 2,2|
 |Хранилище Azure| Общего назначения версии 2 | Объект | BLOB-объект | Standard | Горячий, холодный или архивный | 3.6+ | Все |
-|Хранилище Azure| Общего назначения версии 1 | Объект | BLOB-объект | Standard | Недоступно | All | All |
-|Хранилище Azure| Хранилище BLOB-объектов * * | Объект | Блочный BLOB-объект | Standard | Горячий, холодный или архивный | All | All |
-|Хранилище Azure Data Lake Storage 1-го поколения| Недоступно | Иерархическая (файловая система) | Недоступно | Недоступно | Недоступно | только 3,6 | Все, кроме HBase |
+|Хранилище Azure| Общего назначения версии 1 | Объект | BLOB-объект | Standard | Недоступно | Все | Все |
+|Хранилище Azure| Хранилище BLOB-объектов * * | Объект | Блочный BLOB-объект | Standard | Горячий, холодный или архивный | Все | Все |
+|Хранилище Azure Data Lake Storage 1-го поколения| Н/Д | Иерархическая (файловая система) | Н/Д | Н/Д | Н/Д | только 3,6 | Все, кроме HBase |
 
 * * Для кластеров HDInsight только вторичные учетные записи хранения могут иметь тип Блобстораже, а страничный BLOB-объект — не поддерживаемый вариант хранения.
 
@@ -48,17 +48,17 @@ ms.locfileid: "86536754"
 | Версия HDInsight | Основное хранилище | Дополнительное хранилище | Поддерживается |
 |---|---|---|---|
 | 3,6 & 4,0 | Общего назначения v1, общего назначения v2 | Общего назначения v1, общего назначения v2, Блобстораже (блочные BLOB-объекты) | Да |
-| 3,6 & 4,0 | Общего назначения v1, общего назначения v2 | Data Lake Storage 2-го поколения | Нет |
-| 3,6 & 4,0 | Data Lake Storage 2-го поколения * | Data Lake Storage 2-го поколения | Да |
+| 3,6 & 4,0 | Общего назначения v1, общего назначения v2 | Data Lake Storage 2-го поколения | Нет |
+| 3,6 & 4,0 | Data Lake Storage 2-го поколения * | Data Lake Storage 2-го поколения | Да |
 | 3,6 & 4,0 | Data Lake Storage 2-го поколения * | Общего назначения v1, общего назначения v2, Блобстораже (блочные BLOB-объекты) | Да |
-| 3,6 & 4,0 | Data Lake Storage 2-го поколения | Azure Data Lake Storage 1-го поколения | Нет |
-| 3.6 | Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 1-го поколения | Да |
-| 3.6 | Azure Data Lake Storage 1-го поколения | Общего назначения v1, общего назначения v2, Блобстораже (блочные BLOB-объекты) | Да |
-| 3.6 | Azure Data Lake Storage 1-го поколения | Data Lake Storage 2-го поколения | Нет |
-| 4.0 | Azure Data Lake Storage 1-го поколения | Любой | Нет |
-| 4.0 | Общего назначения v1, общего назначения v2 | Azure Data Lake Storage 1-го поколения | Нет |
+| 3,6 & 4,0 | Data Lake Storage 2-го поколения | Azure Data Lake Storage 1-го поколения | Нет |
+| 3,6 | Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 1-го поколения | Да |
+| 3,6 | Azure Data Lake Storage 1-го поколения | Общего назначения v1, общего назначения v2, Блобстораже (блочные BLOB-объекты) | Да |
+| 3,6 | Azure Data Lake Storage 1-го поколения | Data Lake Storage 2-го поколения | Нет |
+| 4,0 | Azure Data Lake Storage 1-го поколения | Любой | Нет |
+| 4,0 | Общего назначения v1, общего назначения v2 | Azure Data Lake Storage 1-го поколения | Нет |
 
-* = Это может быть одна или несколько учетных записей Data Lake Storage 2-го поколения, если все они настроены для использования одного управляемого удостоверения для доступа к кластеру.
+* = Это может быть один или несколько Data Lake Storage 2-го поколения, если все они настроены для использования одного управляемого удостоверения для доступа к кластеру.
 
 > [!NOTE]
 > Data Lake Storage 2-го поколения основное хранилище не поддерживается для кластеров Spark 2,1 и 2,2.
@@ -71,8 +71,8 @@ Azure HDInsight не хранит данные клиента. Основным 
  
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор службы хранилища Azure](./overview-azure-storage.md)
-* [Обзор Azure Data Lake Storage 1-го поколения](./overview-data-lake-storage-gen1.md)
-* [Обзор Azure Data Lake Storage 2-го поколения](./overview-data-lake-storage-gen2.md)
-* [Общие сведения о хранилище Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)
+* [Общие сведения о службе хранилища Azure в HDInsight](./overview-azure-storage.md)
+* [Общие сведения о Azure Data Lake Storage 1-го поколения в HDInsight](./overview-data-lake-storage-gen1.md)
+* [Общие сведения о Azure Data Lake Storage 2-го поколения в HDInsight](./overview-data-lake-storage-gen2.md)
+* [Общие сведения об Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)
 * [Введение в хранилище Azure](../storage/common/storage-introduction.md)

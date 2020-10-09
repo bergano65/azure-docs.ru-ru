@@ -7,27 +7,27 @@ ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
 ms.date: 10/02/2020
-ms.openlocfilehash: 73a097907a5b44c77ba5e1a9ead4cb4e3a8077c6
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 17d887f0834733fdc833bbbad66c957b057a588a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91777753"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91857815"
 ---
 # <a name="cognitive-services-docs-whats-new-for-september-1-2020---september-30-2020"></a>Cognitive Services документы: новые возможности для 1 сентября 2020 г., 30 сентября 2020 г.
 
 Добро пожаловать в Cognitive Services документы с 1 сентября 2020 до 31 сентября 2020. В этой статье перечислены основные изменения, внесенные в документацию в течение этого периода.
 
-## <a name="cognitive-services"></a>Cognitive Services
+## <a name="cognitive-services"></a>Службы Cognitive Services
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Краткое руководство. Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)](cognitive-services-apis-create-account-cli.md)
+- [Краткое руководство. Создание Cognitive Services ресурса с помощью интерфейса Command-Line Azure (CLI)](cognitive-services-apis-create-account-cli.md)
 - [Краткое руководство. Создание ресурса Cognitive Services с помощью клиентской библиотеки управления Azure](cognitive-services-apis-create-account-client-library.md)
 - [Краткое руководство. Создание Cognitive Services ресурса с помощью портал Azure](cognitive-services-apis-create-account.md)
 - [Краткое руководство. Создание ресурса Cognitive Services с помощью шаблона ARM](create-account-resource-manager-template.md)
 
-## <a name="computer-vision"></a>Компьютерное зрение
+## <a name="computer-vision"></a>API Компьютерного зрения
 
 ### <a name="new-articles"></a>Новые статьи
 
@@ -99,3 +99,5 @@ ms.locfileid: "91777753"
 - [иамбипинпаул](https://github.com/iAmBipinPaul) -Бипин пол (1)
 - [рексван](https://github.com/rexwan) -Rex Wang (1)
 - [рглидден](https://github.com/rglidden) -Роман Глидден (1)
+
+[!INCLUDE [Service specific updates](./includes/service-specific-updates.md)]

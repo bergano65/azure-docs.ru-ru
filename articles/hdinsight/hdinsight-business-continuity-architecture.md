@@ -8,12 +8,12 @@ keywords: Высокая доступность Hadoop
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: cb3ef1e802546d5a8b1574b304770fe7a364e2df
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.openlocfilehash: 9eb0cd3fd327a53dd0761779916caa096153a010
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/08/2020
-ms.locfileid: "91844080"
+ms.locfileid: "91856438"
 ---
 # <a name="azure-hdinsight-business-continuity-architectures"></a>Архитектура обеспечения непрерывности бизнес-процессов Azure HDInsight
 
@@ -206,8 +206,6 @@ Ranger хранилище метаданных используется для �
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 
-* [Справочник по REST Apache Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
-* [Установка и настройка CLI Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)
-* [Установка и Настройка модуля Azure PowerShell AZ](/powershell/azure/)
-* [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
-* [«Подготовка кластеров HDInsight на основе Linux»](hdinsight-hadoop-provision-linux-clusters.md)
+* [Непрерывность бизнес-процессов Azure HDInsight](./hdinsight-business-continuity.md)
+* [Пример использования архитектуры высокодоступного решения Azure HDInsight](./hdinsight-high-availability-case-study.md)
+* [Обзор Apache Hive и HiveQL в Azure HDInsight](./hadoop/hdinsight-use-hive.md)
