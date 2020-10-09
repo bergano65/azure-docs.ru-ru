@@ -8,7 +8,7 @@
       href: ../log-analytics/log-analytics-get-started.md
     - name: Служба автоматизации
       href: /azure/automation/
-    - name: Резервное копирование
+    - name: Backup
       href: ../backup/backup-introduction-to-azure-backup.md
     - name: Site Recovery
       href: ../site-recovery/site-recovery-overview.md
