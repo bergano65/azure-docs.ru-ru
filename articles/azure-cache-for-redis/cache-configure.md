@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: 1fb05b52bbe3e8f544b17537ef9070e5b2b0b77b
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: 81a65c088fd83ce179f67edd1ecdb96149dd1614
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91460175"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91840257"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -169,11 +169,11 @@ ms.locfileid: "91460175"
 ## <a name="azure-cache-for-redis-advisor"></a>Помощник по кэшу Azure для Redis
 В колонке **Azure Cache for Redis Advisor** (Помощник по кэшу Azure для Redis) отображаются рекомендации для кэша. Во время обычной работы не отображается никаких рекомендаций.
 
-![Рекомендации](./media/cache-configure/redis-cache-no-recommendations.png)
+![Снимок экрана, на котором показано, где отображаются рекомендации.](./media/cache-configure/redis-cache-no-recommendations.png)
 
 При возникновении во время работы кэша любого из таких условий, как интенсивное использование памяти, пропускной способности сети или сервера, в колонке **Azure Cache for Redis** (Кэш Azure для Redis) отображается предупреждение.
 
-![Рекомендации](./media/cache-configure/redis-cache-recommendations-alert.png)
+![Снимок экрана, на котором показано, где отображаются оповещения в разделе "кэш Azure для Redis".](./media/cache-configure/redis-cache-recommendations-alert.png)
 
 Дополнительные сведения можно найти в колонке **Рекомендации** .
 
@@ -314,7 +314,7 @@ ms.locfileid: "91460175"
 
 Если у вас кэш уровня "Премиум" с включенной кластеризацией, то вы можете выбрать сегменты кэша для перезагрузки.
 
-![Перезагрузка](./media/cache-configure/redis-cache-reboot-cluster.png)
+![Снимок экрана, на котором показано, где выбрать сегменты кэша для перезагрузки.](./media/cache-configure/redis-cache-reboot-cluster.png)
 
 Чтобы перезагрузить один или несколько узлов кэша, выберите необходимые узлы и нажмите кнопку **Перезагрузить**. Если у вас кэш уровня "Премиум" с включенной кластеризацией, выберите сегменты для перезагрузки и нажмите кнопку **Перезагрузить**. Через несколько минут выбранные узлы перезагрузятся, а еще через несколько минут — возобновят работу.
 
@@ -474,11 +474,11 @@ ms.locfileid: "91460175"
 
 Чтобы иметь доступ к консоли Redis, в колонке **Azure Cache for Redis** (Кэш Azure для Redis) щелкните **Консоль**.
 
-![Консоль Redis](./media/cache-configure/redis-console-menu.png)
+![Снимок экрана, на котором выделена кнопка консоли.](./media/cache-configure/redis-console-menu.png)
 
 Чтобы выполнить команду в своем экземпляре кэша, введите нужную команду в консоль.
 
-![Консоль Redis](./media/cache-configure/redis-console.png)
+![Снимок экрана САС отображает консоль Redis с командой ввода и результатами.](./media/cache-configure/redis-console.png)
 
 
 ### <a name="using-the-redis-console-with-a-premium-clustered-cache"></a>Использование консоли Redis с кластеризированным кэшем категории "Премиум"

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: bb6793bc1e3d5bb55426c1f344520ae19a22a9f9
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 151bc87bd5674a61b8652adfa70634318c405240
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549571"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91839611"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -295,9 +295,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
         var builder = configuration.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
         // For older versions of the Application Insights SDK, use the following line instead:
-        // var builder = TelemetryConfiguration.Active.TelemetryProcessorChainBuilder;
+        // var builder = configuration.TelemetryProcessorChainBuilder;
 
-        // Using fixed rate sampling   
+        // Using fixed rate sampling
         double fixedSamplingPercentage = 10;
         builder.UseSampling(fixedSamplingPercentage);
 
@@ -482,7 +482,7 @@ handler = AzureLogHandler(
 
 Если условия для использования других форм выборки не применяются, мы рекомендуем адаптивную выборку. Этот параметр включен по умолчанию в пакете SDK для ASP.NET/ASP.NET Core. Он не уменьшает трафик до тех пор, пока не будет достигнута определенная минимальная скорость, поэтому узлы с низким уровнем использования, скорее всего, вообще не будут выдаваться.
 
-## <a name="knowing-whether-sampling-is-in-operation"></a>Определение наличия операции выборки
+## <a name="knowing-whether-sampling-is-in-operation"></a>Принцип работы выборки
 
 Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](../log-query/log-query-overview.md) :
 

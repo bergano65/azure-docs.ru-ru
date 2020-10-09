@@ -1,22 +1,22 @@
 ---
-title: Создание ресурсов Azure Cosmos DB и управление ими с помощью PowerShell
-description: Используйте Azure PowerShell для управления учетными записями, базами данных, контейнерами и пропускной способностью Azure Cosmos.
+title: Управление ресурсами API Azure Cosmos DB Core (SQL) с помощью PowerShell
+description: Управление ресурсами API Azure Cosmos DB Core (SQL) с помощью PowerShell.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 09/18/2020
+ms.date: 10/07/2020
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 77c91d96beb2722b7fce54be8a1db32d66be6196
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: 652c546c5a38543e89f7a3b5ab8bc036c8d80911
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91767535"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91840886"
 ---
-# <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
+# <a name="manage-azure-cosmos-db-core-sql-api-resources-using-powershell"></a>Управление ресурсами API Azure Cosmos DB Core (SQL) с помощью PowerShell
 
-В этом руководстве описывается, как с помощью PowerShell написать сценарии и автоматизировать управление ресурсами Azure Cosmos DB, включая учетную запись, базу данных, контейнер и пропускную способность.
+В следующем разделе описано, как использовать PowerShell для создания скриптов и автоматизации управления ресурсами API Azure Cosmos DB Core (SQL), включая учетную запись Cosmos, базу данных, контейнер и пропускную способность.
 
 > [!NOTE]
 > В примерах этой статьи используются командлеты управления [Az.CosmosDB](/powershell/module/az.cosmosdb). Сведения о последних изменениях см. на странице справочника по API [Az.CosmosDB](/powershell/module/az.cosmosdb).
@@ -169,6 +169,7 @@ Update-AzCosmosDBAccountRegion `
 Write-Host "Update-AzCosmosDBAccountRegion returns before the region update is complete."
 Write-Host "Check account in Azure portal or using Get-AzCosmosDBAccount for region status."
 ```
+
 ### <a name="enable-multiple-write-regions-for-an-azure-cosmos-account"></a><a id="multi-region-writes"></a> Включение нескольких регионов записи для учетной записи Azure Cosmos
 
 ```azurepowershell-interactive
@@ -352,6 +353,7 @@ Get-AzResourceLock `
 * [создание базы данных Azure Cosmos DB;](#create-db)
 * [создание базы данных Azure Cosmos DB с общей пропускной способностью;](#create-db-ru)
 * [получение сведений о пропускной способности для базы данных Azure Cosmos DB;](#get-db-ru)
+* [Перенос пропускной способности базы данных в Автомасштабирование](#migrate-db-ru)
 * [вывод списка всех баз данных Azure Cosmos DB в учетной записи;](#list-db)
 * [получение сведений об одной базе данных Azure Cosmos DB;](#get-db)
 * [удаление базы данных Azure Cosmos DB.](#delete-db)
@@ -397,6 +399,20 @@ Get-AzCosmosDBSqlDatabaseThroughput `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -Name $databaseName
+```
+
+## <a name="migrate-database-throughput-to-autoscale"></a><a id="migrate-db-ru"></a>Перенос пропускной способности базы данных в Автомасштабирование
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+
+Invoke-AzCosmosDBSqlDatabaseThroughputMigration `
+    -ResourceGroupName $resourceGroupName `
+    -AccountName $accountName `
+    -Name $databaseName `
+    -ThroughputType Autoscale
 ```
 
 ### <a name="get-all-azure-cosmos-db-databases-in-an-account"></a><a id="list-db"></a>Вывод списка всех баз данных Azure Cosmos DB в учетной записи
@@ -480,6 +496,7 @@ Remove-AzResourceLock `
 * [создание контейнера Azure Cosmos DB с возможностью автомасштабирования;](#create-container-autoscale)
 * [создание контейнера Azure Cosmos DB с ключом большого раздела;](#create-container-big-pk)
 * [получение сведений о пропускной способности контейнера Azure Cosmos DB;](#get-container-ru)
+* [Перенос пропускной способности контейнера в Автомасштабирование](#migrate-container-ru)
 * [создание контейнера Azure Cosmos DB с настраиваемой индексацией;](#create-container-custom-index)
 * [создание контейнера Azure Cosmos DB с выключенной индексацией;](#create-container-no-index)
 * [создание контейнера Azure Cosmos DB с уникальным ключом и сроком жизни;](#create-container-unique-key-ttl)
@@ -565,6 +582,22 @@ Get-AzCosmosDBSqlContainerThroughput `
     -AccountName $accountName `
     -DatabaseName $databaseName `
     -Name $containerName
+```
+
+### <a name="migrate-container-throughput-to-autoscale"></a><a id="migrate-container-ru"></a>Перенос пропускной способности контейнера в Автомасштабирование
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$containerName = "myContainer"
+
+Invoke-AzCosmosDBSqlContainerThroughputMigration `
+    -ResourceGroupName $resourceGroupName `
+    -AccountName $accountName `
+    -DatabaseName $databaseName `
+    -Name $containerName `
+    -ThroughputType Autoscale
 ```
 
 ### <a name="create-an-azure-cosmos-db-container-with-custom-index-policy"></a><a id="create-container-custom-index"></a>Создание контейнера Azure Cosmos DB с настраиваемой политикой индексации

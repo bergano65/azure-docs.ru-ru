@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: mqtt, devx-track-java
-ms.openlocfilehash: c439f1a5aaa03774652dc815364c45633096f6de
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: b433ab29ab5a2520f503e002e630068126ddb328
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327605"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91838693"
 ---
 # <a name="get-started-with-device-twins-java"></a>Начало работы с двойниками устройств (Java)
 
@@ -380,7 +380,7 @@ ms.locfileid: "87327605"
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
 
-    ![Обновление значений тегов и выполнение запросов устройств с помощью приложения службы Центра Интернета вещей](./media/iot-hub-java-java-twin-getstarted/service-app-1.png)
+    ![Снимок экрана, на котором показаны выходные данные команды для запуска приложения службы "Добавление тегов".](./media/iot-hub-java-java-twin-getstarted/service-app-1.png)
 
     Вы увидите теги **plant** и **region**, добавленные в двойник устройства. Первый запрос возвращает устройство, а второй — нет.
 
@@ -390,7 +390,7 @@ ms.locfileid: "87327605"
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
 
-    ![Клиент устройства добавляет сообщаемое свойство **connectivityType**](./media/iot-hub-java-java-twin-getstarted/device-app-1.png)
+    ![Клиент устройства добавляет свойство сообщаемого типа подключения](./media/iot-hub-java-java-twin-getstarted/device-app-1.png)
 
 3. В командной строке в папке **add-tags-query** выполните следующую команду, чтобы повторно запустить приложение службы **add-tags-query**:
 

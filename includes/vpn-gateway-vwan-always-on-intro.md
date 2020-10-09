@@ -1,23 +1,23 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/12/2020
+ms.date: 10/07/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 4ea97e2dbee87f7ab129c4295276c9024c0212c7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e40f421c0fa45d772cd333dac51fe2bdf2779f48
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80117037"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91828773"
 ---
 Новой функцией VPN-клиента Windows 10, Always On, является возможность поддерживать VPN-подключение. Используя Always On, активный профиль VPN может подключаться автоматически и оставаться подключенным на основе триггеров, таких как вход пользователя, изменение состояния сети или активный экран устройства.
 
-Вы можете использовать шлюзы с Windows 10 Always On, чтобы установить постоянные туннели пользователей и туннели устройств в Azure. Эта статья поможет вам настроить туннель VPN-пользователя Always On.
+Вы можете использовать шлюзы с Windows 10 Always On, чтобы установить постоянные туннели пользователей и туннели устройств в Azure.
 
 Always On VPN-подключений включают один из двух типов туннелей:
 

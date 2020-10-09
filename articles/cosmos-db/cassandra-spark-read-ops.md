@@ -10,12 +10,12 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4ecb7758ee5f58345fccc2c490cee4d23043a20c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 68a64ad1ddb955ccebdcddca996959f1bb5f932b
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85257420"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91840967"
 ---
 # <a name="read-data-from-azure-cosmos-db-cassandra-api-tables-using-spark"></a>Чтения данных из таблиц API Cassandra в Azure Cosmos DB с помощью Spark
 
@@ -86,17 +86,10 @@ readBooksDF.show
 Вы можете отправить предикаты в базу данных, чтобы обеспечить более оптимизированные запросы Spark. Предикат — это условие в запросе, возвращающее значение true или false, которое обычно находится в предложении WHERE. Предикат принудительно раскрывает данные в запросе к базе данных, уменьшая количество записей, полученных из базы данных, и повышая производительность запросов. По умолчанию API набора данных Spark автоматически передает допустимые предложения WHERE в базу данных. 
 
 ```scala
-val readBooksDF = spark
-  .read
-  .format("org.apache.spark.sql.cassandra")
-  .options(Map( "table" -> "books", "keyspace" -> "books_ks"))
-  .load
-  .select("book_name","book_author", "book_pub_year")
-  .filter("book_pub_year > 1891")
-//.filter("book_name IN ('A sign of four','A study in scarlet')")
-//.filter("book_name='A sign of four' OR book_name='A study in scarlet'")
-//.filter("book_author='Arthur Conan Doyle' AND book_pub_year=1890")
-//.filter("book_pub_year=1903")  
+val df = spark.read.cassandraFormat("books", "books_ks").load
+df.explain
+val dfWithPushdown = df.filter(df("book_pub_year") > 1891)
+dfWithPushdown.explain
 
 readBooksDF.printSchema
 readBooksDF.explain
@@ -140,12 +133,12 @@ spark
 select * from books_vw where book_pub_year > 1891
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные статьи по работе с API Cassandra для Azure Cosmos DB из Spark:
  
  * [Операции upsert](cassandra-spark-upsert-ops.md)
  * [Операции удаления](cassandra-spark-delete-ops.md)
- * [Операции агрегатных вычислений](cassandra-spark-aggregation-ops.md)
+ * [Операции агрегирования](cassandra-spark-aggregation-ops.md)
  * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)
 

@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 03/15/2020
 ms.author: matjazl
 ms.reviewer: dseven
-ms.openlocfilehash: c4a78168f2759f9d7bb9e50165b8cf03c71ecab5
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 1df2d112814c93261c364883f4b834e0bdb657bb
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87845943"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91839917"
 ---
 # <a name="configure-azure-rbac-for-fhir"></a>Настройка Azure RBAC для FHIR 
 
@@ -23,19 +23,23 @@ ms.locfileid: "87845943"
 
 Чтобы использовать Azure RBAC, необходимо настроить API Azure для FHIR на использование клиента подписки Azure для плоскости данных и не указывать идентификаторы объектов удостоверений. Чтобы проверить параметры, просмотрите колонку **Проверка подлинности** в API Azure для FHIR:
 
-:::image type="content" source="media/rbac/confirm-azure-rbac-mode.png" alt-text="Подтверждение режима RBAC в Azure":::
+:::image type="content" source="media/rbac/confirm-azure-rbac-mode.png" alt-text="Подтверждение режима RBAC в Azure&quot;:::
 
-Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле " **допустимые идентификаторы объектов**" не должно быть GUID. Вы также увидите, что флажок отключен и метка указывает, что для назначения ролей плоскости данных следует использовать Azure RBAC.
+Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле &quot; **допустимые идентификаторы объектов**" не должно быть GUID. Вы также увидите, что флажок отключен и метка указывает, что для назначения ролей плоскости данных следует использовать Azure RBAC.
 
 ## <a name="assign-roles"></a>Назначение ролей
 
 Чтобы предоставить пользователям, субъектам-службам или группам доступ к плоскости данных FHIR, щелкните **Управление доступом (IAM)**, а затем выберите **назначения ролей** и щелкните **+ добавить**:
 
-:::image type="content" source="media/rbac/add-azure-rbac-role-assignment.png" alt-text="Добавление назначения роли Azure":::
+:::image type="content" source="media/rbac/add-azure-rbac-role-assignment.png" alt-text="Подтверждение режима RBAC в Azure&quot;:::
+
+Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле &quot; **допустимые идентификаторы объектов**":::
 
 В области Выбор **роли** найдите одну из встроенных ролей для плоскости данных FHIR:
 
-:::image type="content" source="media/rbac/built-in-fhir-data-roles.png" alt-text="Встроенные роли данных FHIR":::
+:::image type="content" source="media/rbac/built-in-fhir-data-roles.png" alt-text="Подтверждение режима RBAC в Azure&quot;:::
+
+Для **центра** должен быть задан клиент Azure Active Directory, связанный с подпиской, и в поле &quot; **допустимые идентификаторы объектов**":::
 
 Доступные параметры:
 
@@ -52,9 +56,9 @@ ms.locfileid: "87845943"
 
 API Azure для FHIR будет кэшировать решения в течение 5 минут. Если вы предоставите пользователю доступ к серверу FHIR, добавив его в список разрешенных идентификаторов объектов или удалите их из списка, вы должны пройти до пяти минут на изменение разрешений для распространения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали, как назначать роли Azure для плоскости данных FHIR. Далее вы узнаете о дополнительных параметрах для Azure API для FHIR:
+Из этой статьи вы узнали, как назначать роли Azure для плоскости данных FHIR. Дополнительные сведения о дополнительных параметрах для API Azure для FHIR:
  
 >[!div class="nextstepaction"]
->[Дополнительные параметры API Azure для FHIR](azure-api-for-fhir-additional-settings.md)
+>[Дополнительные параметры для API Azure для FHIR](azure-api-for-fhir-additional-settings.md)

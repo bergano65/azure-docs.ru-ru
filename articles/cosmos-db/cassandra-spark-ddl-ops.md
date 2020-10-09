@@ -1,19 +1,19 @@
 ---
 title: Операции DDL в API Cassandra для Azure Cosmos DB из Spark
 description: В этой статье описывается пространство ключей и операции DDL с таблицей в API Cassandra для Azure Cosmos DB из Spark.
-author: kanshiG
-ms.author: govindk
+author: TheovanKraay
+ms.author: thvankra
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
-ms.date: 09/24/2018
-ms.openlocfilehash: 30cac5894998ca2bb9c37217820e1000ed97ba5d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 10/07/2020
+ms.openlocfilehash: 589114fa004c8b4479e1a14c5a99161dd972c5bf
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85260571"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91841107"
 ---
 # <a name="ddl-operations-in-azure-cosmos-db-cassandra-api-from-spark"></a>Операции DDL в API Cassandra для Azure Cosmos DB из Spark
 
@@ -82,7 +82,7 @@ DESCRIBE keyspaces;
 ```
 ## <a name="table-ddl-operations"></a>Операции DDL для таблиц
 
-**Следует**  
+**Рекомендации**  
 
 - Пропускную способность можно назначить на уровне таблицы с помощью инструкции create table.  
 - Один ключ секции может хранить 20 ГБ данных.  
@@ -92,8 +92,7 @@ DESCRIBE keyspaces;
 ### <a name="create-a-table"></a>Создание таблицы
 
 ```scala
-val cdbConnector = CassandraConnector(sc)
-cdbConnector.withSessionDo(session => session.execute("CREATE TABLE IF NOT EXISTS books_ks.books(book_id TEXT PRIMARY KEY,book_author TEXT, book_name TEXT,book_pub_year INT,book_price FLOAT) WITH cosmosdb_provisioned_throughput=4000 , WITH default_time_to_live=630720000;"))
+cdbConnector.withSessionDo(session => session.execute("CREATE TABLE IF NOT EXISTS books_ks1.books(book_id TEXT,book_author TEXT, book_name TEXT,book_pub_year INT,book_price FLOAT, PRIMARY KEY(book_id,book_pub_year)) WITH cosmosdb_provisioned_throughput=4000 , WITH default_time_to_live=630720000;"))
 ```
 
 #### <a name="validate-in-cqlsh"></a>Проверка в cqlsh
@@ -136,7 +135,7 @@ USE books_ks;
 DESCRIBE tables;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания пространства ключей и таблицы перейдите к следующим статьям об операциях CRUD и других аспектах:
  
@@ -144,5 +143,5 @@ DESCRIBE tables;
 * [Операции чтения](cassandra-spark-read-ops.md)  
 * [Операции upsert](cassandra-spark-upsert-ops.md)  
 * [Операции удаления](cassandra-spark-delete-ops.md)  
-* [Операции агрегатных вычислений](cassandra-spark-aggregation-ops.md)  
+* [Операции агрегирования](cassandra-spark-aggregation-ops.md)  
 * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)  

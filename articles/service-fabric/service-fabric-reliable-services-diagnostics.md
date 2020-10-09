@@ -1,16 +1,14 @@
 ---
 title: Диагностика Reliable Services с отслеживанием состояния Service Fabric Azure
 description: Диагностические функции для надежных служб с отслеживанием состояния в Azure Service Fabric
-author: dkkapur
 ms.topic: conceptual
 ms.date: 8/24/2018
-ms.author: dekapur
-ms.openlocfilehash: 92fd8dbd1afbd2bdcabbaebbd5dc056d912ae118
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 5a3831dd4f8d5402980fac3daf8c35d9884c852d
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86253122"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91840767"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -21,11 +19,11 @@ ms.locfileid: "86253122"
 Для сбора и просмотра событий EventSource вы можете использовать такие средства и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [система диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) и [библиотека Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ## <a name="events"></a>События
-| Имя события. | Идентификатор события | Уровень | Описание события |
+| Имя события | Идентификатор события | Level | Описание события |
 | --- | --- | --- | --- |
-| StatefulRunAsyncInvocation |1 |Информационное |Генерируется, когда запускается задача RunAsync службы. |
-| StatefulRunAsyncCancellation |2 |Информационное |Генерируется, когда отменяется задача RunAsync службы. |
-| StatefulRunAsyncCompletion |3 |Информационное |Генерируется, когда завершается задача RunAsync службы. |
+| StatefulRunAsyncInvocation |1 |Informational |Генерируется, когда запускается задача RunAsync службы. |
+| StatefulRunAsyncCancellation |2 |Informational |Генерируется, когда отменяется задача RunAsync службы. |
+| StatefulRunAsyncCompletion |3 |Informational |Генерируется, когда завершается задача RunAsync службы. |
 | StatefulRunAsyncSlowCancellation |4 |Предупреждение |Генерируется, когда отмена задачи RunAsync службы выполняется слишком долго. |
 | StatefulRunAsyncFailure |5 |Ошибка |Генерируется, когда задача RunAsync службы вызывает исключение. |
 
@@ -89,7 +87,7 @@ Service Fabric TStore — это компонент, который исполь
 
 `00d0126d-3e36-4d68-98da-cc4f7195d85e:131652217797162571:142652217797162571_1337_urn:MyReliableDictionary/dataStore`
 
-В предыдущем примере `00d0126d-3e36-4d68-98da-cc4f7195d85e` является строковым представлением идентификатора секции Service Fabric, `131652217797162571` — идентификатором реплики, `142652217797162571` — идентификатор поставщика состояний, а `1337` — идентификатор экземпляра счетчика производительности. `urn:MyReliableDictionary/dataStore`имя поставщика состояний, в котором хранятся данные для коллекции с именем `urn:MyReliableDictionary` .
+В предыдущем примере `00d0126d-3e36-4d68-98da-cc4f7195d85e` является строковым представлением идентификатора секции Service Fabric, `131652217797162571` — идентификатором реплики, `142652217797162571` — идентификатор поставщика состояний, а `1337` — идентификатор экземпляра счетчика производительности. `urn:MyReliableDictionary/dataStore` имя поставщика состояний, в котором хранятся данные для коллекции с именем `urn:MyReliableDictionary` .
 
 ### <a name="transactional-replicator-performance-counters"></a>Счетчики производительности репликатора транзакций
 

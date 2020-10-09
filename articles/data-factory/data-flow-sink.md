@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/27/2020
-ms.openlocfilehash: b92b6930193b77d0fb50ad707001a6fca0401970
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.openlocfilehash: 06d70012756694dca1fad8fa90db0293bb106bf9
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91404771"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91828134"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
 
@@ -56,7 +56,9 @@ ms.locfileid: "91404771"
 
 ## <a name="sink-settings"></a>Параметры приемника
 
-После добавления приемника настройте его с помощью вкладки **приемник** . Здесь можно выбрать или создать набор данных, в который будет записываться приемник. Ниже приведен видеоролик, объясняющий ряд различных параметров приемника для типов файлов с разделителями текста:
+После добавления приемника настройте его с помощью вкладки **приемник** . Здесь можно выбрать или создать набор данных, в который будет записываться приемник. Значения разработки для параметров набора данных можно настроить в [параметрах отладки](concepts-data-flow-debug-mode.md) (требуется включить режим отладки).
+
+Ниже приведен видеоролик, объясняющий ряд различных параметров приемника для типов файлов с разделителями текста:
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4tf7T]
 

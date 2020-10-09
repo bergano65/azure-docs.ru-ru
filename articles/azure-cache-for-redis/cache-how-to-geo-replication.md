@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: yegu
-ms.openlocfilehash: 6203c230f7ca27b1d4b48e9f56a7f46cd5a5ce78
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: f6ac02f0bcd9becf5dd1ffcd600f78b848b47cda
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91825313"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91839696"
 ---
 # <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Как настроить георепликацию для кэша Azure для Redis
 
@@ -73,7 +73,7 @@ ms.locfileid: "91825313"
 
     Состояние связывания также можно просмотреть в колонке **Обзор** как для основного кэша, так и для дополнительного.
 
-    ![Состояние кэша](./media/cache-how-to-geo-replication/cache-geo-location-link-status.png)
+    ![Снимок экрана, посвященный просмотру состояния связывания для основного и дополнительного кэшей.](./media/cache-how-to-geo-replication/cache-geo-location-link-status.png)
 
     По завершении процесса репликации **Состояние связи** изменится на **Успешно**.
 

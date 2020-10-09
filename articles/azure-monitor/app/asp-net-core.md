@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: eae6117f82f3bb138edb6cea23a2c052e19fb0cf
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: cb192aa44e9e2ab8578881494852ddd41ae9094d
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91803597"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91839016"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -31,7 +31,7 @@ ms.locfileid: "91803597"
 > [!NOTE]
 > ASP.NET Core 3. X требует [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](./create-new-resource.md).
@@ -134,7 +134,7 @@ ms.locfileid: "91803597"
 
 ### <a name="ilogger-logs"></a>Журналы ILogger
 
-Журналы `ILogger` , созданные с уровнем серьезности `Warning` или выше, автоматически фиксируются. Следуйте инструкциям [ILogger](ilogger.md#control-logging-level) , чтобы настроить, какие уровни журнала фиксируются Application Insights.
+Журналы `ILogger` , созданные с использованием уровня серьезности `Warning` и выше, автоматически фиксируются. Следуйте инструкциям [ILogger](ilogger.md#control-logging-level) , чтобы настроить, какие уровни журнала фиксируются Application Insights.
 
 ### <a name="dependencies"></a>Зависимости
 
@@ -209,7 +209,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | По умолчанию
+|Параметр | Описание | Значение по умолчанию
 |---------------|-------|-------
 |енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | Да
 |енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | Да
@@ -397,7 +397,7 @@ using Microsoft.ApplicationInsights.Channel;
 
 ### <a name="how-can-i-track-telemetry-thats-not-automatically-collected"></a>Как можно отвестить данные телеметрии, которые не собираются автоматически?
 
-Получите экземпляр `TelemetryClient` с помощью внедрения конструктора и вызовите `TrackXXX()` для него необходимый метод. Не рекомендуется создавать новые `TelemetryClient` экземпляры в приложении ASP.NET Core. Одноэлементный экземпляр `TelemetryClient` уже зарегистрирован в `DependencyInjection` контейнере, который совместно `TelemetryConfiguration` используется с остальными данными телеметрии. Создание нового `TelemetryClient` экземпляра рекомендуется, только если требуется конфигурация, отделяющая остальные данные телеметрии.
+Получите экземпляр `TelemetryClient` с помощью внедрения конструктора и вызовите `TrackXXX()` для него необходимый метод. Не рекомендуется создавать новые `TelemetryClient` экземпляры или `TelemetryConfiguration` в приложении ASP.NET Core. Одноэлементный экземпляр `TelemetryClient` уже зарегистрирован в `DependencyInjection` контейнере, который совместно `TelemetryConfiguration` используется с остальными данными телеметрии. Создание нового `TelemetryClient` экземпляра рекомендуется, только если требуется конфигурация, отделяющая остальные данные телеметрии.
 
 В следующем примере показано, как отслеживанию дополнительных данных телеметрии из контроллера.
 
@@ -423,6 +423,40 @@ public class HomeController : Controller
 ```
 
 Дополнительные сведения о настраиваемых отчетах данных в Application Insights см. в разделе [Справочник по API настраиваемых метрик Application Insights](./api-custom-events-metrics.md). Аналогичный подход можно использовать для отправки пользовательских метрик на Application Insights с помощью API- [интерфейса](./get-metric.md).
+
+### <a name="how-do-i-customize-ilogger-logs-collection"></a>Разделы справки настроить сбор журналов ILogger?
+
+По умолчанию автоматически фиксируются только журналы с уровнем серьезности `Warning` и выше. Чтобы изменить это поведение, явно Переопределите конфигурацию ведения журнала для поставщика, `ApplicationInsights` как показано ниже.
+Следующая конфигурация позволяет ApplicationInsights записывать все журналы серьезности `Information` и выше.
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    },
+    "ApplicationInsights": {
+      "LogLevel": {
+        "Default": "Information"
+      }
+    }
+  }
+}
+```
+
+Важно отметить, что следующее не приведет к тому, что поставщик ApplicationInsights будет записывать `Information` журналы. Это связано с тем, что пакет SDK добавляет фильтр ведения журнала по умолчанию, `ApplicationInsights` который указывает на захват только `Warning` и более поздних версий. По этой причине для ApplicationInsights требуется явное переопределение.
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information"
+    }
+  }
+}
+```
+
+Подробнее о [конфигурации ILogger](ilogger.md#control-logging-level).
 
 ### <a name="some-visual-studio-templates-used-the-useapplicationinsights-extension-method-on-iwebhostbuilder-to-enable-application-insights-is-this-usage-still-valid"></a>Некоторые шаблоны Visual Studio использовали метод расширения UseApplicationInsights () в Ивебхостбуилдер для включения Application Insights. Является ли это использование допустимым?
 
@@ -477,7 +511,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 
-* [Чтение кода и внесение в него вклада](https://github.com/microsoft/ApplicationInsights-dotnet#recent-updates).
+* [Чтение кода и внесение в него вклада](https://github.com/microsoft/ApplicationInsights-dotnet).
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 

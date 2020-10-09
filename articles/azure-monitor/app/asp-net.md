@@ -4,12 +4,12 @@ description: Настройка средств аналитики произво
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 5f52f1febcc69723dae76e31d17b5a9a7e8c67bb
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.openlocfilehash: 861a9f53c2f149268e06005053206a7411e842f8
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91616760"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91838948"
 ---
 # <a name="configure-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -346,9 +346,15 @@ ms.locfileid: "91616760"
 
 Чтобы добавить наблюдение на стороне клиента, откройте `_Layout.cshtml` файл и следуйте [инструкциям по установке на основе фрагментов кода](javascript.md#snippet-based-setup) из статьи о настройке пакета SDK JavaScript на стороне клиента.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Существует известная проблема в текущей версии Visual Studio 2019, при которой ключ инструментирования в секрете пользователя разрывается для приложений на основе .NET Framework, а ключ в конечном итоге должен быть жестко закодирован в applicationinsights.config файле, чтобы обойти эту ошибку. Эта статья предназначена для полного устранения этой проблемы без использования секретов пользователя.  
+
+## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
+
+* [Чтение кода и внесение в него вклада](https://github.com/microsoft/ApplicationInsights-dotnet).
+
+Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

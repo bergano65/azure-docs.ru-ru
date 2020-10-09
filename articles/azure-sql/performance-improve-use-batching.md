@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: genemi
 ms.date: 01/25/2019
-ms.openlocfilehash: 94f54e02de1b61cb05b4e41bb4c40118299cf20f
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.openlocfilehash: 487b668d9a3d934220fecf5c0896f7ef492c6775
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91618647"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91840495"
 ---
 # <a name="how-to-use-batching-to-improve-azure-sql-database-and-azure-sql-managed-instance-application-performance"></a>Как использовать пакетную обработку для улучшения производительности базы данных SQL Azure и приложения Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -99,7 +99,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 **Из локальной среды в Azure**:
 
-| Operations | Нет транзакций (МС) | С транзакциями (мс) |
+| Операции | Нет транзакций (МС) | С транзакциями (мс) |
 | --- | --- | --- |
 | 1 |130 |402 |
 | 10 |1208 |1226 |
@@ -108,7 +108,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 **Между средами в Azure (один центр обработки данных)**:
 
-| Operations | Нет транзакций (МС) | С транзакциями (мс) |
+| Операции | Нет транзакций (МС) | С транзакциями (мс) |
 | --- | --- | --- |
 | 1 |21 |26 |
 | 10 |220 |56 |
@@ -195,7 +195,7 @@ cmd.CommandType = CommandType.StoredProcedure;
 
 В следующей таблице показаны результаты нерегламентированных тестов для использования возвращающих табличное значение параметров в миллисекундах.
 
-| Operations | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
+| Операции | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
 | --- | --- | --- |
 | 1 |124 |32 |
 | 10 |131 |25 |
@@ -233,7 +233,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 Следующие нерегламентированные результаты теста показывают производительность пакетной обработки с **SqlBulkCopy** в миллисекундах.
 
-| Operations | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
+| Операции | Из локальной среды в Azure (МС) | Один центр обработки данных Azure (мс) |
 | --- | --- | --- |
 | 1 |433 |57 |
 | 10 |441 |32 |
@@ -276,7 +276,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 Следующие нерегламентированные результаты теста показывают производительность этого типа инструкции INSERT в миллисекундах.
 
-| Operations | Параметры, которые возвращают табличное значение (мс) | Один оператор INSERT (мс) |
+| Операции | Параметры, которые возвращают табличное значение (мс) | Один оператор INSERT (мс) |
 | --- | --- | --- |
 | 1 |32 |20 |
 | 10 |30 |25 |
@@ -293,7 +293,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 
 ### <a name="entity-framework"></a>Entity Framework
 
-[Entity Framework 6](https://github.com/dotnet/ef6) теперь поддерживает пакетную обработку.
+[Entity Framework Core](https://docs.microsoft.com/ef/efcore-and-ef6/#saving-data) поддерживает пакетную обработку.
 
 ### <a name="xml"></a>XML
 

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: c9da97607961a7d701851c6892393cdf537b9a32
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 156dfd1d9553e369357eb68225e722222a59d847
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008038"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91838676"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
@@ -21,11 +21,11 @@ ms.locfileid: "88008038"
 ## <a name="reboot"></a>Перезагрузка
 Колонка **Перезагрузка** позволяет перезагрузить один или несколько узлов кэша. Функция перезагрузки дает возможность протестировать приложение на устойчивость в случае сбоя узла кэша.
 
-![Перезагрузка](./media/cache-administration/redis-cache-administration-reboot.png)
+![Снимок экрана, посвященный параметру меню "перезагрузить".](./media/cache-administration/redis-cache-administration-reboot.png)
 
 Выберите узлы, которые нужно перезагрузить, и щелкните **Перезагрузить**.
 
-![Перезагрузка](./media/cache-administration/redis-cache-reboot.png)
+![Снимок экрана, на котором показаны узлы, которые можно перезагрузить.](./media/cache-administration/redis-cache-reboot.png)
 
 Если у вас кэш уровня "Премиум" с включенной кластеризацией, то вы можете выбрать сегменты кэша для перезагрузки.
 
