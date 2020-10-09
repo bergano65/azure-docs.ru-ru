@@ -220,9 +220,9 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: удаленный мониторинг;
       items:
         - name: Справочник разработчика (.NET)
@@ -239,7 +239,7 @@
           href: iot-accelerators-faq-rm-v2.md
     - name: Промышленный Интернет вещей
       items:
-        - name: GitHub repository (Репозиторий GitHub)
+        - name: Репозиторий GitHub
           href: 'https://github.com/Azure/azure-iot-connected-factory'
         - name: 'Подключенная фабрика: вопросы и ответы'
           href: iot-accelerators-faq-cf.md
@@ -247,14 +247,14 @@
       items:
         - name: Справочник разработчика
           href: 'https://github.com/Azure/device-simulation-dotnet/wiki/Simulation-Service-Developer-Reference-Guide'
-        - name: GitHub repository (Репозиторий GitHub)
+        - name: Репозиторий GitHub
           href: 'https://github.com/Azure/device-simulation-dotnet'
     - name: Репозиторий GitHub для прогнозного обслуживания
       href: 'https://github.com/Azure/azure-iot-predictive-maintenance'
     - name: Эталонная архитектура
       href: iot-accelerators-architecture-overview.md
       items:
-        - name: Скачивание
+        - name: Скачать
           href: 'https://aka.ms/iotrefarchitecture'
         - name: Варианты партнерских реализаций
           items:
@@ -264,7 +264,7 @@
               href: 'https://www.azureiotsolutions.com/Accelerators#description/edge-dynamometer-analysis'
             - name: Digital Signage Solution
               href: 'https://www.azureiotsolutions.com/Accelerators#description/digital-signage-solution'
-    - name: ВОПРОСЫ И ОТВЕТЫ
+    - name: Вопросы и ответы
       href: iot-accelerators-faq.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'

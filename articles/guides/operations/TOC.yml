@@ -1,6 +1,6 @@
 - name: Azure для ИТ-операторов
   items:
-    - name: Приступая к работе с Azure
+    - name: Начало работы с Azure
       href: azure-operations-guide.md
     - name: Краткие руководства
       items:
@@ -14,7 +14,7 @@
           items:
             - name: Создание виртуальной сети с помощью портала Azure
               href: ../../virtual-network/quick-create-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
-        - name: безопасность
+        - name: Безопасность
           items:
             - name: Использование назначений ролей для управления ресурсами
               href: ../../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
