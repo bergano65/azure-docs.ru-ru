@@ -8,21 +8,21 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
 ms.openlocfilehash: 701e314ad2a3762b1e8ca022ce18d9435ce2db37
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75894107"
 ---
 # <a name="scenario-watchdog-bug-soft-lockup---cpu-error-from-an-azure-hdinsight-cluster"></a>Сценарий: ошибка "устройство наблюдения: ошибка: кратковременная блокировка — ЦП" из кластера Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 В системных журналах ядра содержится сообщение об ошибке: `watchdog: BUG: soft lockup - CPU` .
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 [Ошибка](https://bugzilla.kernel.org/show_bug.cgi?id=199437) в ядре Linux вызывает мягкую зависание ЦП.
 
@@ -36,7 +36,7 @@ ms.locfileid: "75894107"
 
 1. Выберите **отправить новый** и введите входные данные, как показано ниже.
 
-    | Свойство. | Значение |
+    | Свойство | Значение |
     | --- | --- |
     | Тип скрипта | — Пользовательский |
     | name |Исправление проблемы с мягкой блокировкой ядра |
@@ -46,7 +46,7 @@ ms.locfileid: "75894107"
 
     Выберите **сохранить это действие скрипта...** , если требуется выполнять скрипт при добавлении новых узлов.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Дождитесь завершения выполнения.
 

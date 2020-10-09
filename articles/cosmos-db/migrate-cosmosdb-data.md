@@ -8,10 +8,10 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/23/2019
 ms.openlocfilehash: 1e48b2ff6e469a5f792b64c20631e4bd64fb9fd7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85263550"
 ---
 # <a name="migrate-hundreds-of-terabytes-of-data-into-azure-cosmos-db"></a>Перенос сотен терабайт данных в Azure Cosmos DB 
@@ -145,10 +145,10 @@ Azure Cosmos DB стратегии миграции в настоящее вре
 ## <a name="contact-the-azure-cosmos-db-team"></a>Обратитесь к группе Azure Cosmos DB
 Хотя вы можете следовать этому руководству для успешного переноса больших наборов данных в Azure Cosmos DB, для крупномасштабных миграций рекомендуется обратиться к группе разработчиков Azure Cosmos DB, чтобы проверить моделирование данных и общую архитектурную проверку. Основываясь на наборе данных и рабочей нагрузке, группа разработчиков может также предложить другие средства оптимизации производительности и затрат, которые могут быть применимы к вам. Чтобы обратиться к группе Azure Cosmos DB для помощи в выполнении крупномасштабных миграций, можно открыть запрос в службу поддержки в подтипе проблемы "Общие рекомендации" и "крупные (ТБ +) миграции", как показано ниже.
 
-:::image type="content" source="./media/migrate-cosmosdb-data/supporttopic.png" alt-text="Раздел поддержки миграции":::
+:::image type="content" source="./media/migrate-cosmosdb-data/supporttopic.png" alt-text="Настройка средства миграции":::
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md). 
 * Библиотека небольшого Исполнительного исполнителя интегрирована в соединитель Cosmos DB Spark. Дополнительные сведения см. в статье о [соединителе Azure Cosmos DB Spark](spark-connector.md) .  

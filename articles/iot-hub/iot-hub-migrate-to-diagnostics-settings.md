@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: kgremban
 ms.openlocfilehash: ab07da38c01b052a4220274fb059683a22950a3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75750693"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-diagnostics-settings"></a>Перенос Центра Интернета вещей для перехода с операций мониторинга к параметрам диагностики
@@ -58,6 +58,6 @@ ms.locfileid: "75750693"
 
 Чтобы отслеживать события подключения и отключения устройств в рабочей среде, мы рекомендуем подписаться на [событие **отключено устройство** ](iot-hub-event-grid.md#event-types) в службе "Сетка событий", чтобы получать оповещения и отслеживать состояние подключения устройства. Используйте это [руководство](iot-hub-how-to-order-connection-state-events.md), чтобы узнать, как интегрировать события подключения и отключения устройства из Центра Интернета вещей в решение Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок](iot-hub-monitor-resource-health.md)

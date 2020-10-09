@@ -8,10 +8,10 @@ ms.date: 08/21/2019
 ms.author: sngun
 ms.reviewer: sngun
 ms.openlocfilehash: d3eda4694decb74912cc125ef0a33de04838be2c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85260633"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-blitzz"></a>Перенос данных из Cassandra в учетную запись API Cassandra Azure Cosmos DB с помощью Блитзз
@@ -54,7 +54,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
    :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/blitzz-replicant-download.png" alt-text="Загрузка средства блитзз Репликант":::
 
-   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/replicant-files.png" alt-text="Файлы Репликант блитзз":::
+   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/replicant-files.png" alt-text="Загрузка средства блитзз Репликант":::
 
 1. В окне терминала CLI настройте конфигурацию базы данных источника. Откройте файл конфигурации с помощью **`vi conf/conn/cassandra.yml`** команды и добавьте разделенный запятыми список IP-адресов узлов Cassandra, номер порта, имя пользователя, пароль и другие необходимые сведения. Ниже приведен пример содержимого в файле конфигурации.
 
@@ -71,9 +71,9 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
    ```
 
-   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/open-connection-editor-cassandra.png" alt-text="Открыть редактор подключения Cassandra":::
+   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/open-connection-editor-cassandra.png" alt-text="Загрузка средства блитзз Репликант":::
 
-   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/cassandra-connection-configuration.png" alt-text="Конфигурация подключения Cassandra":::
+   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/cassandra-connection-configuration.png" alt-text="Загрузка средства блитзз Репликант":::
 
    После заполнения сведений о конфигурации сохраните и закройте файл.
 
@@ -92,7 +92,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
 1. Перед переносом данных увеличьте пропускную способность контейнера до объема, необходимого для быстрого переноса приложения. Например, можно увеличить пропускную способность до 100000 RUs. Масштабирование пропускной способности перед началом миграции поможет перенести данные за меньшее время.
 
-   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/scale-throughput.png" alt-text="Масштабирование контейнера Azure Cosmos по всему":::
+   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/scale-throughput.png" alt-text="Загрузка средства блитзз Репликант":::
 
    Уменьшите пропускную способность после завершения миграции. В зависимости от объема хранимых данных и числа получателей, необходимых для каждой операции, можно оценить пропускную способность, необходимую после переноса данных. Дополнительные сведения о том, как оценить требуемый метод RUs, см. в статьях [предоставление пропускной способности для контейнеров и баз данных](set-throughput.md) и [Оценка единиц запросов в секунду с помощью планировщика ресурсов Azure Cosmos DB](estimate-ru-with-capacity-planner.md) .
 
@@ -128,7 +128,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
    В пользовательском интерфейсе Репликант отображается ход выполнения репликации. После завершения миграции схемы и создания моментального снимка ход выполнения показывает 100%. После завершения миграции можно проверить данные в целевой базе данных Azure Cosmos.
 
-   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/cassandra-data-migration-output.png" alt-text="Выходные данные миграции данных Cassandra":::
+   :::image type="content" source="./media/cassandra-migrate-cosmos-db-blitzz/cassandra-data-migration-output.png" alt-text="Загрузка средства блитзз Репликант":::
 
 
 1. Так как вы использовали полный режим миграции, вы можете выполнять такие операции, как вставка, обновление или удаление данных в исходной базе данных Apache Cassandra. Затем проверьте, что они реплицируются в режиме реального времени в целевой базе данных Azure Cosmos. После миграции убедитесь, что пропускная способность, настроенная для контейнера Azure Cosmos, снижена.
@@ -141,7 +141,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
 Дополнительные сведения о переносе данных в назначение, перенос в режиме реального времени см. в [блитзз Репликант Demo](https://www.youtube.com/watch?v=fsUhF9LUZmM).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md) 
 * [Рекомендации по использованию ключа секции](partitioning-overview.md#choose-partitionkey)

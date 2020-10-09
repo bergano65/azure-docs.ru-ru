@@ -11,10 +11,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d099d7c233c3f4b5e65bfdb7d4b875a0e4098499
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75864287"
 ---
 # <a name="tasks-for-the-team-lead-on-a-team-data-science-process-team"></a>Задачи для руководителя команды в команде обработки и анализа данных группы
@@ -49,7 +49,7 @@ TDSP — это гибкая, итеративная методология об
 > [!NOTE] 
 > В этой статье используются Azure DevOps и DSVM для настройки среды группы TDSP, так как это способ реализации TDSP в корпорации Майкрософт. Если ваша команда использует другие платформы размещения кода или разработки, то задачи руководителя команды одинаковы, но способ их выполнения может отличаться.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике предполагается, что [менеджер группы](group-manager-tasks.md)настроил следующие ресурсы и разрешения:
 
@@ -324,7 +324,7 @@ git push
    
 1. Убедитесь, что новый диск и хранилище успешно подключены к компьютеру.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на подробные описания других ролей и задач, определенных в процессе обработки и анализа данных группы.
 

@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/09/2018
 ms.topic: conceptual
 ms.openlocfilehash: 0a42763ff47cccfa506acbbbd95d20d41eb0827f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "72965372"
 ---
 # <a name="add-an-iot-edge-device-to-your-remote-monitoring-solution-accelerator"></a>Добавление устройства IoT Edge в акселератор решения для удаленного мониторинга
@@ -26,7 +26,7 @@ ms.locfileid: "72965372"
 
 Чтобы добавить устройство IoT Edge в акселератор решения для удаленного мониторинга, перейдите на страницу **Device Explorer** в веб-интерфейсе и щелкните **+ Новое устройство**.
 
-На панели **Новое устройство** выберите **Устройство IoT Edge**. Для остальных параметров можно оставить значения по умолчанию. Затем нажмите кнопку **Применить**.
+На панели **Новое устройство** выберите **Устройство IoT Edge**. Для остальных параметров можно оставить значения по умолчанию. Нажмите кнопку **Применить**:
 
 ![Добавление устройства IoT Edge](media/iot-accelerators-remote-monitoring-add-edge-device/addedgedevice.png)
 

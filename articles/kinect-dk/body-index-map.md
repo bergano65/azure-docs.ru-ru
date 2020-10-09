@@ -9,10 +9,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, перенос, основной текст, отслеживание, индекс, сегментация, Map
 ms.openlocfilehash: 8c128e59cef515aafb4f59794f0f644b90fd625d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85277029"
 ---
 # <a name="azure-kinect-body-tracking-index-map"></a>Схема индекса отслеживания текста Kinect для Azure
@@ -29,6 +29,6 @@ ms.locfileid: "85277029"
 
 Схема индекса тела хранится в виде `k4a_image_t` и имеет то же разрешение, что и изображение глубины или IR. Каждый пиксель имеет 8-битное значение. Его можно запросить из, `k4abt_frame_t` вызвав `k4abt_frame_get_body_index_map` . Разработчик несет ответственность за освобождение памяти для гиперкарты индекса текста путем вызова `k4a_image_release()` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание первого приложения для отслеживания тела](build-first-body-app.md)

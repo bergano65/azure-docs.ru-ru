@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: jobreen
 ms.openlocfilehash: 1846b036f12fe7e691021ec0248782cad946d9b7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75650413"
 ---
 # <a name="azure-custom-providers-resource-onboarding-overview"></a>Обзор адаптации ресурсов настраиваемых поставщиков Azure
@@ -54,7 +54,7 @@ ms.locfileid: "75650413"
 }
 ```
 
-Свойство. | Обязательно? | Описание
+Свойство | Необходим? | Описание
 ---|---|---
 name | Да | Имя определения конечной точки. Для адаптации ресурсов имя должно иметь значение "Associations".
 routingType | Да | Определяет тип контракта с конечной точкой. Для адаптации ресурсов допустимыми **раутингтипес** являются "прокси-сервер, кэш, расширение" и "веб-перехватчик, кэш, расширение".
@@ -76,7 +76,7 @@ endpoint | Да | Конечная точка для направления за
 }
 ```
 
-Свойство. | Обязательно? | Описание:
+Свойство | Необходим? | Описание
 ---|---|---
 targetResourceId | Да | Идентификатор ресурса Microsoft. Кустомпровидерс/Ресаурцепровидерс или Microsoft. Solutions/Applications.
 
@@ -152,7 +152,7 @@ X-MS-CustomProviders-ExtendedResource: /subscriptions/{subscriptionId}/resourceG
 
 Если у вас возникли вопросы по разработке поставщиков настраиваемых ресурсов Azure, попробуйте запрашивать их на [Stack overflow](https://stackoverflow.com/questions/tagged/azure-custom-providers). Подобный вопрос, возможно, уже был задан, поэтому перед его публикацией сначала проверьте наличие ответа. Чтобы быстрее получить ответ, добавьте к вопросу тег ```azure-custom-providers```!
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали о настраиваемых поставщиках. Дополнительные сведения см. в следующих статьях:
 

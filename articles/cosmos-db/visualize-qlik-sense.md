@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 986db85ddbf741dc459625dbd763b9cbbba1c429
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85263353"
 ---
 # <a name="connect-qlik-sense-to-azure-cosmos-db-and-visualize-your-data"></a>Подключение Qlik Sense к Azure Cosmos DB и визуализация данных
@@ -34,7 +34,7 @@ ms.locfileid: "85263353"
 
 В этой статье подробно описан процесс подключения к API SQL для Cosmos DB с помощью соединителя ODBC.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед выполнением инструкций, приведенных в этой статье, обеспечьте наличие следующих ресурсов:
 
@@ -62,21 +62,21 @@ ms.locfileid: "85263353"
 
 4. Переключитесь в режим **User DSN** (Пользовательский DSN) и выберите созданное ранее подключение ODBC. Укажите имя подключения и щелкните **Create** (Создать). 
 
-   :::image type="content" source="./media/visualize-qlik-sense/create-new-connection.png" alt-text="Создание подключения":::
+   :::image type="content" source="./media/visualize-qlik-sense/create-new-connection.png" alt-text="Создание нового приложения Qlik Sense":::
 
 5. Создав подключение, выберите базу данных и коллекцию, в которой размещены данные о видеоиграх, и просмотрите их.
 
-   :::image type="content" source="./media/visualize-qlik-sense/choose-database-and-collection.png" alt-text="Выбор базы данных и коллекции"::: 
+   :::image type="content" source="./media/visualize-qlik-sense/choose-database-and-collection.png" alt-text="Создание нового приложения Qlik Sense"::: 
 
 6. Теперь щелкните **Add data** (Добавить данные), чтобы загрузить данные в Qlik Sense. Загрузив данные в Qlik Sense, вы сможете извлекать из них полезные сведения и выполнять анализ. Можно использовать стандартные средства или создать собственное приложение для анализа данных о продажах видеоигр. Пример приведен на следующем рисунке. 
 
-   :::image type="content" source="./media/visualize-qlik-sense/visualize-data.png" alt-text="Визуализируйте данные":::
+   :::image type="content" source="./media/visualize-qlik-sense/visualize-data.png" alt-text="Создание нового приложения Qlik Sense":::
 
 ### <a name="limitations-when-connecting-with-odbc"></a>Ограничения при подключении с помощью ODBC 
 
 Cosmos DB — это распределенная база данных без схемы, драйвера для которой основаны на потребностях разработчиков. Драйвер ODBC требует наличия базы данных со схемой, определяющей столбцы, типы данных и другие свойства. Обычный SQL-запрос или синтаксис DML с поддержкой реляционных баз данных не применим к API SQL для Cosmos DB, так как он не является стандартным ANSI SQL. Все инструкции SQL, полученные через драйвер ODBC, преобразуются в специальный синтаксис SQL для Cosmos DB, в котором не для всех конструкций есть четкие эквиваленты. Чтобы избежать проблем с преобразованием, при настройке подключения ODBC следует применить к нему схему. Статья [о подключении с помощью драйвера ODBC](odbc-driver.md) поможет вам настроить такую схему. Не забудьте создать сопоставление для каждой базы данных и коллекции в учетной записи Cosmos DB.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Если вы используете другое средство визуализации, например Power BI, к нему можно подключиться с помощью инструкций в следующем документе:
 

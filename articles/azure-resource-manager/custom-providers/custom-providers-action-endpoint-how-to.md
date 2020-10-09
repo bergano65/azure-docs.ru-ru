@@ -6,10 +6,10 @@ ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: 6110a7952b7c29609d2b98e135b61032aec3fa52
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75650400"
 ---
 # <a name="adding-custom-actions-to-azure-rest-api"></a>Добавление настраиваемых действий в Azure REST API
@@ -190,7 +190,7 @@ resourceIdentifier | *Да* | Идентификатор ресурса **Resour
 версия_API | *Да* | Версия API среды выполнения ресурсов. Это всегда должно быть "2018-09-01-Preview".
 functionValues | *Нет* | Текст запроса, который будет отправлен в **конечную точку**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о поставщиках настраиваемых ресурсов Azure](overview.md)
 - [Краткое руководство. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)

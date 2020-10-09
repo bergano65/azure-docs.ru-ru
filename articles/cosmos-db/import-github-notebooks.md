@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.openlocfilehash: d85f020152fa3cadb1d437c125d327f5e895e14e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85262894"
 ---
 # <a name="import-notebooks-from-a-github-repo-into-azure-cosmos-db"></a>Импорт записных книжек из репозитория GitHub в Azure Cosmos DB
@@ -37,7 +37,7 @@ ms.locfileid: "85262894"
 
 1. После выбора требуемого репозитория запись этого репозитория перемещается из раздела **Незакрепленные репозитории** в **Закрепленные репозитории**. При необходимости можно также выбрать конкретную ветвь репозитория, из которой будут импортированы записные книжки.
 
-   :::image type="content" source="./media/import-github-notebooks/choose-repo-branch.png" alt-text="Выбор репозитория и ветви":::
+   :::image type="content" source="./media/import-github-notebooks/choose-repo-branch.png" alt-text="Авторизация Azure Cosmos DB на доступ к репозиториям GitHub":::
 
 1. Чтобы завершить операцию импорта, щелкните **ОК**. Все записные книжки, доступные в выбранной ветви репозитория, будут импортированы в учетную запись Azure Cosmos.
 
@@ -53,7 +53,7 @@ ms.locfileid: "85262894"
 
 В обычном потоке GitHub после фиксации изменений выполняется принудительная отправка изменений в удаленный репозиторий. Но в этом случае "фиксация" обозначает следующий набор действий: подготовка, фиксация и передача обновлений в GitHub.
 
-:::image type="content" source="./media/import-github-notebooks/commit-changes-github.png" alt-text="Изменение записных книжек и фиксация изменений в GitHub":::
+:::image type="content" source="./media/import-github-notebooks/commit-changes-github.png" alt-text="Авторизация Azure Cosmos DB на доступ к репозиториям GitHub":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

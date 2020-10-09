@@ -5,10 +5,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.openlocfilehash: 7f62c7dc7aacf9be4a59498aa5c556e9991ad578
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85298554"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
@@ -98,7 +98,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 Если вы используете реестр контейнеров Azure (запись контроля доступа) в качестве хранилища образов контейнеров, вам необходимо предоставить разрешения на чтение и извлечение образов для субъекта-службы в кластере AKS. В настоящее время рекомендуемой конфигурацией является использование команды [AZ AKS Create][az-aks-create] или [AZ AKS Update][az-aks-update] для интеграции с реестром и назначения соответствующей роли для субъекта-службы. Подробные инструкции см. в статье [Аутентификация в реестре контейнеров Azure из службы Kubernetes Azure][aks-to-acr].
 
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 
 Вы можете использовать расширенное сетевое взаимодействие, где виртуальная сеть и подсеть или общедоступные IP-адреса находятся в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
 
@@ -135,7 +135,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 - По умолчанию учетные данные субъекта-службы действительны в течение одного года. Вы можете [Обновить или повернуть учетные данные субъекта-службы][update-credentials] в любое время.
 - Все субъекты-службы связаны с определенными приложениями Azure AD. Субъект-служба для кластера Kubernetes может быть связан с любым допустимым именем приложения Azure AD (например: *https://www.contoso.org/example* ). URL-адрес приложения не обязательно должен быть реальной конечной точкой.
 - При указании **идентификатора клиента** субъект-службы используйте значение `appId`.
-- На виртуальных машинах узла агента в кластере Kubernetes учетные данные субъекта-службы хранятся в файле.`/etc/kubernetes/azure.json`
+- На виртуальных машинах узла агента в кластере Kubernetes учетные данные субъекта-службы хранятся в файле. `/etc/kubernetes/azure.json`
 - При использовании команды [az aks create][az-aks-create] для автоматического создания субъект-службы учетные данные субъект-службы записываются в файл `~/.azure/aksServicePrincipal.json` на компьютере, с которого выполняется команда.
 - Если вы не передаете субъект-службу в дополнительные команды CLI AKS, используется субъект-служба по умолчанию, расположенный по адресу `~/.azure/aksServicePrincipal.json` .  
 - При необходимости можно также удалить aksServicePrincipal.jsдля файла, и AKS создаст новый субъект-службу.
@@ -146,7 +146,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Учетные данные субъекта-службы для кластера AKS кэшируются Azure CLI. Если срок действия этих учетных данных истек, возникнут ошибки при развертывании кластеров AKS. Следующее сообщение об ошибке при выполнении команды [AZ AKS Create][az-aks-create] может указывать на проблему с кэшированными учетными данными субъекта-службы:
 
@@ -164,7 +164,7 @@ ls -la $HOME/.azure/aksServicePrincipal.json
 
 Срок действия учетных данных субъекта-службы по умолчанию составляет один год. Если *aksServicePrincipal.jsв* файле старше одного года, удалите файл и повторите попытку развертывания кластера AKS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Active Directory субъектах-службах см. в разделе [объекты приложения и субъекта-службы][service-principal].
 

@@ -8,10 +8,10 @@ ms.date: 03/23/2020
 author: timsander1
 ms.author: tisande
 ms.openlocfilehash: 657f3cf204411bd51541437f05ff13a3f9b929c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85263047"
 ---
 # <a name="use-robo-3t-with-azure-cosmos-dbs-api-for-mongodb"></a>Использование Robo 3T с API Azure Cosmos DB для MongoDB
@@ -37,14 +37,14 @@ ms.locfileid: "85263047"
 
 4. В окне **Connection Settings** (Параметры подключения) выберите имя. Затем найдите **узел** и **порт**, указанные в сведениях о подключении, полученных на шаге 1, и введите их в полях **Address** (Адрес) и **Port** (Порт) соответственно.
 
-    :::image type="content" source="./media/mongodb-robomongo/manageconnections.png" alt-text="Снимок экрана Robomongo управления подключениями":::
+    :::image type="content" source="./media/mongodb-robomongo/manageconnections.png" alt-text="Снимок экрана колонки строки подключения":::
 5. На вкладке **Authentication** (Аутентификация) установите флажок **Perform authentication** (Выполнять аутентификацию). Затем введите базу данных (по умолчанию — *Admin*), **имя пользователя** и **пароль**.
 **Имя пользователя** и **пароль** можно найти в данных подключения, полученных на шаге 1.
 
-    :::image type="content" source="./media/mongodb-robomongo/authentication.png" alt-text="Снимок экрана вкладки проверки подлинности Robomongo":::
+    :::image type="content" source="./media/mongodb-robomongo/authentication.png" alt-text="Снимок экрана колонки строки подключения":::
 6. На вкладке **SSL** установите флажок **Use SSL protocol** (Использовать протокол SSL), затем измените значение параметра **Authentication Method** (Метод аутентификации) на **Self-signed Certificate** (Самозаверяющий сертификат).
 
-    :::image type="content" source="./media/mongodb-robomongo/SSL.png" alt-text="Снимок экрана вкладки Robomongo SSL":::
+    :::image type="content" source="./media/mongodb-robomongo/SSL.png" alt-text="Снимок экрана колонки строки подключения":::
 7. Наконец, нажмите кнопку **Test** (Проверить), чтобы проверить возможность подключения, затем нажмите кнопку **Save** (Сохранить).
 
 ## <a name="next-steps"></a>Дальнейшие действия

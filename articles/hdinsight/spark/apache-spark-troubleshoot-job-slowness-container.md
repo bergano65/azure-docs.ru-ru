@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/21/2019
 ms.openlocfilehash: e389c05a6de85287bc86eff510e137f470837e56
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75894325"
 ---
 # <a name="apache-spark-job-run-slowly-when-the-azure-storage-container-contains-many-files-in-azure-hdinsight"></a>Задание Apache Spark выполняется медленно, если контейнер службы хранилища Azure содержит много файлов в Azure HDInsight
@@ -22,7 +22,7 @@ ms.locfileid: "75894325"
 
 При запуске кластера HDInsight задание Apache Spark, которое выполняет запись в контейнер службы хранилища Azure, замедлит работу при наличии большого количества файлов и вложенных папок. Например, при записи в новый контейнер может потребоваться 20 секунд, а при записи в контейнер с 200 000 деятелей-файлами — 2 минуты.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Это известная проблема Spark. Медленная работа поступает из `ListBlob` операций и `GetBlobProperties` во время выполнения задания Spark.
 

@@ -8,10 +8,10 @@ ms.service: web-application-firewall
 ms.date: 10/31/2019
 ms.author: victorh
 ms.openlocfilehash: 89c863e85d9eab27a47bc1bf7b98cd1c8d89e900
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73516868"
 ---
 # <a name="configure-bot-protection-for-web-application-firewall-on-azure-application-gateway-preview"></a>Настройка защиты от ботов для брандмауэра веб-приложения Azure в Шлюзе приложений Azure (предварительная версия)
@@ -23,7 +23,7 @@ ms.locfileid: "73516868"
 > [!NOTE]
 > Сейчас набор правил для защиты от ботов предоставляется в режиме общедоступной предварительной версии и поддерживается соглашением об уровне обслуживания для предварительной версии. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Подробные сведения см. на странице  [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Создайте базовую политику WAF для шлюза приложений, следуя инструкциям, описанным в разделе [Создание политик брандмауэра веб-приложения для шлюза](create-waf-policy-ag.md)приложений.
 
@@ -36,6 +36,6 @@ ms.locfileid: "73516868"
 > [!div class="mx-imgBorder"]
 > ![Защита от ботов](../media/bot-protection/bot-protection.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настраиваемых правилах см. [в статье пользовательские правила для брандмауэра веб-приложения версии 2 в шлюзе приложений Azure](custom-waf-rules-overview.md).

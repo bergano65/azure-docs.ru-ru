@@ -6,10 +6,10 @@ ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: 46b38686b39836f3d4bfb80686d514f932a79bf3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75650465"
 ---
 # <a name="custom-resource-proxy-reference"></a>Справочник по прокси-службе настраиваемого ресурса
@@ -65,10 +65,10 @@ ms.locfileid: "75650465"
 
 Ссылка на параметр:
 
-Свойство. | Образец | Описание
+Свойство | Образец | Описание
 ---|---|---
 name | {myCustomResourceName} | Название настраиваемого ресурса.
-тип | Microsoft.CustomProviders/resourceProviders/{имя типа ресурса} | Пространство имен типа ресурса.
+type | Microsoft.CustomProviders/resourceProviders/{имя типа ресурса} | Пространство имен типа ресурса.
 идентификатор | /subscriptions/{ИД подписки}/resourceGroups/{имя группы ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>Микустомресаурцес/{Микустомресаурценаме} " | Идентификатор ресурса.
 
 ### <a name="create-a-custom-resource"></a>Создание настраиваемого ресурса
@@ -318,7 +318,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о поставщиках настраиваемых ресурсов Azure](overview.md)
 - [Краткое руководство. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)

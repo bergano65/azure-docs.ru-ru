@@ -6,10 +6,10 @@ ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: b6c5f5b8e437ad2dc2e8a3be3f3f2ed03a613b44
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75650530"
 ---
 # <a name="adding-custom-resources-to-azure-rest-api"></a>Добавление настраиваемых ресурсов в Azure REST API
@@ -180,7 +180,7 @@ resourceTypeName | *Да* | **Имя** типа **ресурса** , опред�
 resourceProviderName | *Да* | Имя экземпляра поставщика настраиваемых ресурсов.
 customResourceName | *Да* | Имя настраиваемого ресурса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о поставщиках настраиваемых ресурсов Azure](overview.md)
 - [Краткое руководство. Создание настраиваемого поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)

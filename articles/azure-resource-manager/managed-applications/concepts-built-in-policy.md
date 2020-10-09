@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: hich
 ms.openlocfilehash: ec0fe8f66ef2ad2458b4ffad0e848591793e5b05
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75650946"
 ---
 # <a name="deploy-associations-for-a-managed-application-using-azure-policy"></a>Развертывание ассоциаций для управляемого приложения с помощью политики Azure
@@ -29,7 +29,7 @@ ms.locfileid: "75650946"
 
 ## <a name="how-to-use-the-deploy-associations-built-in-policy"></a>Использование встроенной политики «развертывание ассоциаций» 
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Если управляемому приложению требуются разрешения для выполнения действия в подписке, то развертывание ресурса сопоставления политики не будет работать без предоставления разрешений.
 
 ### <a name="policy-assignment"></a>Назначение политики
@@ -41,7 +41,7 @@ ms.locfileid: "75650946"
 
 Если у вас возникли вопросы по разработке поставщиков настраиваемых ресурсов Azure, попробуйте запрашивать их на [Stack overflow](https://stackoverflow.com/questions/tagged/azure-custom-providers). Подобный вопрос, возможно, уже был задан, поэтому перед его публикацией сначала проверьте наличие ответа. Чтобы быстрее получить ответ, добавьте к вопросу тег ```azure-custom-providers```!
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнаете об использовании встроенной политики для развертывания ассоциаций. Дополнительные сведения см. в следующих статьях:
 

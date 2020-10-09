@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/29/2019
 ms.openlocfilehash: 4659274110add96613ca88560edfb459b20a99cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75894348"
 ---
 # <a name="apache-spark-streaming-job-that-reads-apache-kafka-data-fails-with-noclassdeffounderror-in-hdinsight"></a>Задание потоковой передачи Apache Spark, считывающее Apache Kafka данные, завершается сбоем с Ноклассдеффаундеррор в HDInsight
@@ -30,7 +30,7 @@ Stack trace: ExitCodeException exitCode=50:
  at org.apache.hadoop.util.Shell.runCommand(Shell.java:944)
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта ошибка может быть вызвана указанием версии `spark-streaming-kafka` JAR-файла, который отличается от версии кластера Kafka, который вы используете.
 

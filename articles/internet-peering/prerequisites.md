@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 3c820a7be561aeef9b7e50fd0ac0cf4dee721af8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75775411"
 ---
 # <a name="prerequisites-to-set-up-peering-with-microsoft"></a>Предварительные требования для настройки пиринга с Майкрософт
@@ -30,7 +30,7 @@ ms.locfileid: "75775411"
 ## <a name="other-prerequisites"></a>Другие необходимые компоненты
 * **Профиль пирингдб:** Предполагается, что узлы имеют полный и актуальный профиль на [пирингдб](https://www.peeringdb.com). Мы используем эти сведения в нашей системе регистрации для проверки сведений о одноранговом узле, таких как сведения о центре Интернета, технические контактные данные и их присутствие на узлах и т. д.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание или изменение прямого пиринга с помощью портала](howto-direct-portal.md).
 * [Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала](howto-legacy-direct-portal.md)

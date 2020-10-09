@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: sngun
 ms.openlocfilehash: d6399da204ba930fad2dd3656d27a807a83b1b13
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85263268"
 ---
 # <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure
@@ -33,7 +33,7 @@ ms.locfileid: "85263268"
 
 На следующей схеме показаны все три способа интеграции. 
 
-:::image type="content" source="./media/serverless-computing-database/cosmos-db-azure-functions-integration.png" alt-text="Как интегрируются служба "Функции Azure" и Azure Cosmos DB" border="false":::
+:::image type="content" source="./media/serverless-computing-database/cosmos-db-azure-functions-integration.png" alt-text="Как интегрируются служба &quot;Функции Azure&quot; и Azure Cosmos DB" border="false":::
 
 Триггеры, входные и выходные привязки функций Azure для Azure Cosmos DB можно использовать в следующих сочетаниях:
 
@@ -61,7 +61,7 @@ ms.locfileid: "85263268"
 
 На рисунке ниже приведен код, написанный на портале Azure для этого триггера.
 
-:::image type="content" source="./media/serverless-computing-database/cosmos-db-trigger-portal.png" alt-text="Создание триггера функций Azure для Cosmos DB в портал Azure":::
+:::image type="content" source="./media/serverless-computing-database/cosmos-db-trigger-portal.png" alt-text="Как интегрируются служба &quot;Функции Azure&quot; и Azure Cosmos DB":::
 
 ### <a name="financial-use-case---timer-trigger-and-input-binding"></a>Вариант использования в сфере финансов. Триггер таймера и входная привязка
 
@@ -75,9 +75,9 @@ ms.locfileid: "85263268"
 
 На следующих рисунках представлен код на портале Azure для этого сценария.
 
-:::image type="content" source="./media/serverless-computing-database/cosmos-db-functions-financial-trigger.png" alt-text="Файл index.js триггера таймера для сценария в сфере финансов":::
+:::image type="content" source="./media/serverless-computing-database/cosmos-db-functions-financial-trigger.png" alt-text="Как интегрируются служба &quot;Функции Azure&quot; и Azure Cosmos DB":::
 
-:::image type="content" source="./media/serverless-computing-database/azure-function-cosmos-db-trigger-run.png" alt-text="Файл Run.csx триггера таймера для сценария в сфере финансов":::
+:::image type="content" source="./media/serverless-computing-database/azure-function-cosmos-db-trigger-run.png" alt-text="Как интегрируются служба &quot;Функции Azure&quot; и Azure Cosmos DB":::
 
 ### <a name="gaming-use-case---azure-functions-trigger-and-output-binding-for-cosmos-db"></a>Вариант использования игр — триггеры и выходные привязки функций Azure для Cosmos DB 
 
@@ -142,7 +142,7 @@ Azure Cosmos DB является рекомендуемой базой данн�
 
 Если вы не уверены, что подойдет для вашей реализации: Flow, Logic Apps, служба "Функции Azure" или веб-задания, ознакомьтесь с разделом [Сравнение Microsoft Flow, Logic Apps, функций и веб-заданий Azure](../azure-functions/functions-compare-logic-apps-ms-flow-webjobs.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно подключить Azure Cosmos DB и службу "Функции Azure" по-настоящему: 
 

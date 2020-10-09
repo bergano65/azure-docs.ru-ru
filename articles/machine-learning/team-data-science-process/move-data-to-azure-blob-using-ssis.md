@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: ad87272749011c81c1040825da3f3c53858a55bd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85322868"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
@@ -34,7 +34,7 @@ ms.locfileid: "85322868"
 > 
 > 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения задач, описанных в этой статье, необходимо настроить подписку Azure и учетную запись хранения Azure. Для отправки или скачивания данных необходимо имя учетной записи хранения Azure и ключ учетной записи.
 
 * Сведения о настройке **подписки Azure** см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
@@ -64,7 +64,7 @@ ms.locfileid: "85322868"
 
 Ниже описаны параметры, используемые задачей.
 
-| Поле | Описание: |
+| Поле | Описание |
 | --- | --- |
 | **AzureStorageConnection** |Указывает существующий диспетчер подключений службы хранилища Azure или создает новый, который ссылается на учетную запись хранения Azure, указывающую на место размещения файлов большого двоичного объекта. |
 | **BlobContainer** |Указывает имя контейнера больших двоичных объектов, который содержит отправленные файлы в виде больших двоичных объектов. |

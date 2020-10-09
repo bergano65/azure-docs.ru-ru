@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: 43e28774625db0217dde1227bad160ba87750c8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85254996"
 ---
 # <a name="create-and-manage-servers-and-single-databases-in-azure-sql-database"></a>Создание серверов и отдельных баз данных и управление ими в базе данных SQL Azure
@@ -58,7 +58,7 @@ ms.locfileid: "85254996"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для создания и управления серверами, одними и базами данных в составе пула, а также брандмауэрами уровня сервера с Azure PowerShell используйте следующие командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
@@ -80,9 +80,9 @@ ms.locfileid: "85254996"
 |[Get-Азсклсерверфиреваллруле](/powershell/module/az.sql/get-azsqlserverfirewallrule)|Получает правила брандмауэра для сервера.|
 |[Set-Азсклсерверфиреваллруле](/powershell/module/az.sql/set-azsqlserverfirewallrule)|Изменяет правило брандмауэра на сервере.|
 |[Remove-Азсклсерверфиреваллруле](/powershell/module/az.sql/remove-azsqlserverfirewallrule)|Удаляет правило брандмауэра с сервера.|
-| New-Азсклсервервиртуалнетворкруле | Создает [*правило виртуальной сети*](vnet-service-endpoint-rule-overview.md) на основе подсети, которая является конечной точкой службы для виртуальной сети. |
+| New-AzSqlServerVirtualNetworkRule | Создает [*правило виртуальной сети*](vnet-service-endpoint-rule-overview.md) на основе подсети, которая является конечной точкой службы для виртуальной сети. |
 
-## <a name="the-azure-cli"></a>Интерфейс командной строки Azure
+## <a name="the-azure-cli"></a>Azure CLI
 
 Для создания серверов, баз данных и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure)используйте следующие [Azure CLI](/cli/azure/sql/db) команды. Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
 
@@ -124,7 +124,7 @@ ms.locfileid: "85254996"
 | Get-Help | Описание |
 | --- | --- |
 |[CREATE DATABASE](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current)|Создает базу отдельную данных. Для создания новой базы данных необходимо подключение к базе данных master.|
-| [ИЗМЕНЕНИЕ БАЗЫ ДАННЫХ](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных или эластичный пул. |
+| [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных или эластичный пул. |
 |[DROP DATABASE](/sql/t-sql/statements/drop-database-transact-sql)|Удаляет базу данных.|
 |[sys.database_service_objectives](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных SQL Azure или пула SQL Azure синапсе Analytics. При входе в базу данных master на сервере в базе данных SQL возвращает сведения обо всех базах данных. Для Azure синапсе Analytics необходимо подключиться к базе данных master.|
 |[sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Возвращает сведения о потреблении ресурсов ЦП, операций ввода-вывода и памяти для базы данных в базе данных SQL Azure. Одна строка существует каждые 15 секунд, даже если в базе данных нет действий.|
@@ -161,7 +161,7 @@ ms.locfileid: "85254996"
 |[Правила брандмауэра — получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
 |[Правила брандмауэра — список по серверам](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](migrate-to-database-from-sql-server.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](features-comparison.md).

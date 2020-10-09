@@ -8,21 +8,21 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/08/2019
 ms.openlocfilehash: fa02ac0dfe229f3e82d1c1c62d83ca06a81efca6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75887331"
 ---
 # <a name="scenario-hbase-hbck-command-returns-inconsistencies-in-azure-hdinsight"></a>Сценарий: `hbase hbck` команда возвращает несоответствия в Azure HDInsight.
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue-region-is-not-in-hbasemeta"></a>Вопрос. регион не находится в`hbase:meta`
+## <a name="issue-region-is-not-in-hbasemeta"></a>Вопрос. регион не находится в `hbase:meta`
 
 Регион XXX в HDFS, но он отсутствует в списке `hbase:meta` или развернут на любом сервере регионов.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможны разные варианты.
 
@@ -45,7 +45,7 @@ ms.locfileid: "75887331"
 
 Регион XXX не развернут ни на одном Регионсервер. Это означает, что регион находится в `hbase:meta` , но вне сети.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможны разные варианты.
 
@@ -61,7 +61,7 @@ hbase hbck -ignorePreCheckPermission –fixAssignment
 
 ## <a name="issue-regions-have-the-same-startend-keys"></a>Вопрос. регионы имеют одинаковые ключи начала и окончания
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможны разные варианты.
 
@@ -81,11 +81,11 @@ RegionC, startkey:010, endkey:080.
 
 ---
 
-## <a name="issue-cant-load-regioninfo"></a>Ошибка: не удается загрузить`.regioninfo`
+## <a name="issue-cant-load-regioninfo"></a>Ошибка: не удается загрузить `.regioninfo`
 
 Не удается загрузить `.regioninfo` для региона `/hbase/data/default/tablex/regiony` .
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Скорее всего, это происходит из-за частичного удаления области при Регионсервер сбоях или перезагрузке виртуальных машин. В настоящее время хранилище Azure — это плоская файловая система больших двоичных объектов, а некоторые операции с файлами не являются атомарными.
 

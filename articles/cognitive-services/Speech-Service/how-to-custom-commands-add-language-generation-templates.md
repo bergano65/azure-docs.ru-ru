@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
 ms.openlocfilehash: 0cbc57922b31f1b3879bb2cad8a988a1ba4cc368
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85307831"
 ---
 # <a name="add-language-generation-templates-for-speech-responses"></a>Добавление шаблонов создания языков для речевых ответов
@@ -64,7 +64,7 @@ ms.locfileid: "85307831"
 
 | Параметр            | Рекомендуемое значение       | 
 | ------------------ | --------------------- | 
-| Имя               | `SubjectContext`         | 
+| name               | `SubjectContext`         | 
 | Является глобальным          | unchecked             | 
 | Обязательно           | unchecked               | 
 | Тип               | Строка                |
@@ -97,7 +97,7 @@ ms.locfileid: "85307831"
 * Входные данные: отключение освещения комнаты
 * Выходные данные: ОК, выключение освещения комнаты
 
-## <a name="use-custom-voice"></a>Использование настраиваемого голоса
+## <a name="use-custom-voice"></a>Использование набора инструментов "Пользовательский голос"
 
 Другим способом настройки ответов на пользовательские команды является выбор пользовательского выходного голоса. Для переключения голоса по умолчанию на пользовательский Voice выполните следующие действия.
 
@@ -115,7 +115,7 @@ ms.locfileid: "85307831"
 
 Теперь приложение будет отвечать на выбранный голоса вместо голоса по умолчанию.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Интегрируйте пользовательские команды с помощью речевого пакета SDK](./how-to-custom-commands-setup-speech-sdk.md).

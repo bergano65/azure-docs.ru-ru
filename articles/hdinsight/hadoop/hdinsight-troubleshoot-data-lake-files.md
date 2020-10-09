@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/13/2019
 ms.openlocfilehash: 21269f7d5a9ec832a49a613351702dd24be156af
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75894165"
 ---
 # <a name="unable-to-access-data-lake-storage-files-in-azure-hdinsight"></a>Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
@@ -26,7 +26,7 @@ ms.locfileid: "75894165"
 LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.).
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможно, пользователь отменил разрешения субъекта-службы (Service Principal, SP) для файлов и папок.
 
@@ -50,7 +50,7 @@ LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Eit
 Token Refresh failed - Received invalid http response: 500
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможно, истек срок действия сертификата, предоставленного для доступа субъекта-службы.
 
