@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: b963cc459094e823499e962736550dcea2345ba2
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.openlocfilehash: 8d5f9b360e1d81bae62e34a8e20d61636e1d22ea
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88854108"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91859596"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети — Azure Resource Manager
 Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью **Azure Resource Manager** для каждых региона и подписки. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
@@ -75,7 +75,6 @@ ms.locfileid: "88854108"
 | Внутренние ресурсы на Load Balancer<sup>1<sup> | 150                   |
 | Порты с высоким уровнем доступности                 | 1 на внутренний интерфейс       |
 | Правила для исходящего трафика на Load Balancer        | 600                           |
-| [Время ожидания простоя TCP](https://docs.microsoft.com/azure/load-balancer/load-balancer-tcp-idle-timeout#tcp-idle-timeout) | 4 минуты / 30 минут          |
 
 <sup>1</sup> Ограничение составляет до 150 ресурсов; допускаются любые сочетания групп размещения изолированных виртуальных машин, наборов доступности и масштабируемых наборов виртуальных машин.
 
@@ -88,7 +87,7 @@ ms.locfileid: "88854108"
 | Правила на сетевой адаптер (для всех IP-адресов на сетевом адаптере) | 300                          |
 | Интерфейсные IP-конфигурации              | 200                          |
 | Размер серверного пула                       | 300 IP-конфигураций, одна группа доступности |
-| Группы доступности на Load Balancer     | 150                          |
+| Группы доступности на Load Balancer     | 1                            |
 
 <a name="virtual-networking-limits-classic"></a>Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью **классической** модели развертывания для каждой подписки. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
