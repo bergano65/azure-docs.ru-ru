@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для Azure Monitor
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Azure Monitor. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 09/16/2020
+ms.date: 10/07/2020
 ms.topic: sample
 author: rboucher
 ms.author: robb
 ms.service: azure-monitor
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 81dce4b6808bdfc524c63dd9b3c41b6dbd9142b8
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 8929a39ee04b663d63135a1387e6b800eeac44c6
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90979653"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825707"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-monitor"></a>Элементы управления соответствием Политики Azure для Azure Monitor
 

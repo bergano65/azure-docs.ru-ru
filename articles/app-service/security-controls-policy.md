@@ -1,16 +1,16 @@
 ---
 title: Элементы управления соответствием Политики Azure для Службы приложений Azure
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Службы приложений Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 09/16/2020
+ms.date: 10/07/2020
 ms.topic: sample
 ms.service: app-service
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: c32bc5f6671826d7c328c3e536c019610b047aa9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 9e48e7ac8b410798875f85611373931b35cc9158
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90982815"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827085"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-app-service"></a>Элементы управления соответствием Политики Azure для Службы приложений Azure
 

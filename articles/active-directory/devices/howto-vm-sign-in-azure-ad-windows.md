@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84e692540d376c95a4a981249eba42060ed4ab80
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 27ffc176fc890d90e4201069ec1728eed69d4011
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91287106"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826669"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -191,7 +191,7 @@ az role assignment create \
 
 Дополнительные сведения об использовании Azure RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
 
-- [Добавление или удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+- [Добавление и удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md)
 - [Добавление и удаление назначений ролей Azure с помощью портала Azure](../../role-based-access-control/role-assignments-portal.md)
 - [Добавление или удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
@@ -236,7 +236,7 @@ az role assignment create \
 
    > [!NOTE]
    > Если расширение перезапускается после первоначального сбоя, журнал с ошибкой развертывания будет сохранен как CommandExecution_YYYYMMDDHHMMSSSSS. log. "
-1. Откройте командную строку на виртуальной машине и убедитесь, что эти запросы к конечной точке службы метаданных экземпляра (IMDS), работающей на узле Azure, возвращают:
+1. Откройте командную строку PowerShell на виртуальной машине и убедитесь, что эти запросы к конечной точке службы метаданных экземпляра (IMDS), работающей на узле Azure, возвращают:
 
    | Команда для запуска | Ожидаемые выходные данные |
    | --- | --- |

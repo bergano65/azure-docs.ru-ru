@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/02/2020
-ms.openlocfilehash: 48d233dee063d8f9049e6e54baa2d744e1b8b058
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.openlocfilehash: ab37fcdb4012394f1c5131a23f7c67063d3d6e37
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90033461"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825755"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "90033461"
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | 
 | **Требования к агентам**  | None | None | None | Требуется агент Log Analytics |
-| **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>Другие службы | зависимости процессов.<br>Метрики сетевого подключения |
+| **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>другие службы. | зависимости процессов.<br>Метрики сетевого подключения |
 | **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
 
@@ -142,15 +142,15 @@ ms.locfileid: "90033461"
 
 | Система операций | Агент Azure Monitor | Агент Log Analytics | Агент зависимостей | Расширение системы диагностики | 
 |:---|:---:|:---:|:---:|:---:|
-| Windows Server 2019                                      | X | X | X | X |
+| Windows Server 2019                                      | X | X | X | X |
 | Windows Server 2016                                      | X | X | X | X |
 | Windows Server 2016 Core                                 |   |   |   | X |
-| Windows Server 2012 R2                                   | X | X | X | X |
-| Windows Server 2012                                      | X | X | X | X |
-| Windows Server 2008 R2                                   |   | X | X | X |
-| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro  | X | X | X | X |
+| Windows Server 2012 R2                                   | X | X | X | X |
+| Windows Server 2012                                      | X | X | X | X |
+| Windows Server 2008 R2                                   |   | X | X | X |
+| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro  | X | X | X | X |
 | Windows 8 Корпоративная и Профессиональная                             |   | X | X |   |
-| Windows 7 SP1                                            |   | X | X |   |
+| Windows 7 с пакетом обновления 1 (SP1)                                            |   | X | X |   |
 
 
 ### <a name="linux"></a>Linux
@@ -158,12 +158,13 @@ ms.locfileid: "90033461"
 | Система операций | Агент Azure Monitor | Агент Log Analytics | Агент зависимостей | Расширение системы диагностики | 
 |:---|:---:|:---:|:---:|:---:
 | Amazon Linux 2017.09                                     |   | X |   |   |
+| CentOS Linux 8                                           |   | X |   |   |
 | CentOS Linux 7                                           | X | X |   | X |
 | CentOS Linux 7,8                                         | X | X | X | X |
 | CentOS Linux 7,6                                         | X | X | X | X |
 | CentOS Linux 6                                           | X | X |   |   |
 | CentOS Linux 6.5 +                                        | X | X |   | X |
-| Debian 10                                                | X |   |   |   |
+| Debian 10                                                | X |   |   |   |
 | Debian 9                                                 | X | X | x | X |
 | Debian 8                                                 |   | X | X | X |
 | Debian 7                                                 |   |   |   | X |
@@ -177,6 +178,7 @@ ms.locfileid: "90033461"
 | Red Hat Enterprise Linux Server 6.7 +                     | X | X | X | X |
 | SUSE Linux Enterprise Server 15                          | X | X |   |   |
 | SUSE Linux Enterprise Server 12                          | X | X | X | X |
+| Ubuntu 20.04 LTS                                         |   | X |   |   |
 | Ubuntu 18.04 LTS                                         | X | X | X | X |
 | Ubuntu 16.04 LTS                                         | X | X | X | X |
 | Ubuntu 14,04 LTS                                         | X | X |   | X |

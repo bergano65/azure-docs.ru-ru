@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Azure Cognitive Services
 description: Здесь приведены встроенные определения политик в службе "Политика Azure" для Azure Cognitive Services. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 09/16/2020
+ms.date: 10/07/2020
 author: nitinme
 ms.author: nitinme
 ms.service: cognitive-services
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: bea774a1b09921415f0014adee19c2838f867c7d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 612c288df1b9329b20088d42843239197e9be8d3
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90986355"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826572"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-cognitive-services"></a>Встроенные определения политик в службе "Политика Azure" для Azure Cognitive Services
 

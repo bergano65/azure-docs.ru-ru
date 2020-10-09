@@ -7,12 +7,12 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: fd9299d49f42eb021d64ae25447fd13e7378ff3f
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 53ce3764d074388213a3a4be08502b09743e28cb
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91447863"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827621"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -74,71 +74,17 @@ Application Insights также определяет [расширение](http
 Модель данных " [Трассировка W3C — контекст](https://w3c.github.io/trace-context/) и Application Insights" соответствует следующим образом:
 
 | Application Insights                   | W3C Трацеконтекст                                      |
-|------------------------------------    |-------------------------------------------------    |
-| `Request`, `PageView`                  | `SpanKind` сервер — если синхронный; `SpanKind` является потребителем, если асинхронный                    |
-| `Dependency`                           | `SpanKind` Клиент является синхронным; `SpanKind` является ли производитель асинхронным                   |
-| `Id` из `Request` и `Dependency`     | `SpanId`                                            |
-| `Operation_Id`                         | `TraceId`                                           |
-| `Operation_ParentId`                   | `SpanId` родительского диапазона этого диапазона. Если это корневой диапазон, это поле должно быть пустым.     |
+|------------------------------------    |-------------------------------------------------|
+| `Id` из `Request` и `Dependency`     | [родительский идентификатор](https://w3c.github.io/trace-context/#parent-id)                                     |
+| `Operation_Id`                         | [Идентификатор трассировки](https://w3c.github.io/trace-context/#trace-id)                                           |
+| `Operation_ParentId`                   | [родительский идентификатор](https://w3c.github.io/trace-context/#parent-id) родительского диапазона этого диапазона. Если это корневой диапазон, это поле должно быть пустым.     |
+
 
 Дополнительные сведения см. в разделе [Application Insightsная модель данных телеметрии](../../azure-monitor/app/data-model.md).
 
-### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
- 
-  > [!NOTE]
-  >  Начиная с `Microsoft.ApplicationInsights.Web` и `Microsoft.ApplicationInsights.DependencyCollector` , настройка не требуется.
+### <a name="enable-w3c-distributed-tracing-support-for-net-apps"></a>Включить поддержку распределенной трассировки W3C для приложений .NET
 
-W3C Trace — поддержка контекста реализована с обратной совместимостью. Корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C).
-
-Если вы хотите использовать устаревший `Request-Id` протокол, можно отключить контекст трассировки, используя следующую конфигурацию:
-
-```csharp
-  Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
-  Activity.ForceDefaultIdFormat = true;
-```
-
-При запуске более старой версии пакета SDK рекомендуется обновить или применить следующую конфигурацию, чтобы включить контекст Trace.
-Эта функция доступна в `Microsoft.ApplicationInsights.Web` `Microsoft.ApplicationInsights.DependencyCollector` пакетах и, начиная с версии 2.8.0-Beta1.
-Она отключена по умолчанию. Чтобы включить его, внесите следующие изменения `ApplicationInsights.config` :
-
-- В разделе `RequestTrackingTelemetryModule` добавьте `EnableW3CHeadersExtraction` элемент и задайте для него значение `true` .
-- В разделе `DependencyTrackingTelemetryModule` добавьте `EnableW3CHeadersInjection` элемент и задайте для него значение `true` .
-- Добавьте `W3COperationCorrelationTelemetryInitializer` в `TelemetryInitializers` . Он будет выглядеть, как в следующем примере:
-
-```xml
-<TelemetryInitializers>
-  <Add Type="Microsoft.ApplicationInsights.Extensibility.W3C.W3COperationCorrelationTelemetryInitializer, Microsoft.ApplicationInsights"/>
-   ...
-</TelemetryInitializers>
-```
-
-### <a name="enable-w3c-distributed-tracing-support-for-aspnet-core-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Core
-
- > [!NOTE]
-  > Начиная с `Microsoft.ApplicationInsights.AspNetCore` версии 2.8.0, настройка не требуется.
- 
-W3C Trace — поддержка контекста реализована с обратной совместимостью. Корреляция должна работать с приложениями, оснащенными предыдущими версиями пакета SDK (без поддержки W3C).
-
-Если вы хотите использовать устаревший `Request-Id` протокол, можно отключить контекст трассировки, используя следующую конфигурацию:
-
-```csharp
-  Activity.DefaultIdFormat = ActivityIdFormat.Hierarchical;
-  Activity.ForceDefaultIdFormat = true;
-```
-
-При запуске более старой версии пакета SDK рекомендуется обновить или применить следующую конфигурацию, чтобы включить контекст Trace.
-
-Эта функция доступна в `Microsoft.ApplicationInsights.AspNetCore` версии 2.5.0-beta1 и в `Microsoft.ApplicationInsights.DependencyCollector` версии 2.8.0-beta1.
-Она отключена по умолчанию. Чтобы ее включить, задайте для `ApplicationInsightsServiceOptions.RequestCollectionOptions.EnableW3CDistributedTracing` значение `true`:
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddApplicationInsightsTelemetry(o => 
-        o.RequestCollectionOptions.EnableW3CDistributedTracing = true );
-    // ....
-}
-```
+По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-ID.
 
 ### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
@@ -304,24 +250,9 @@ logger.warning('After the span')
 
 ## <a name="telemetry-correlation-in-net"></a>Корреляция данных телеметрии в .NET
 
-Со временем .NET определил несколько способов корреляции журналов телеметрии и диагностики:
+Среда выполнения .NET поддерживает распространение с помощью [действия](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) и [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)
 
-- `System.Diagnostics.CorrelationManager` позволяет отслеживать [LogicalOperationStack и ActivityId](/dotnet/api/system.diagnostics.correlationmanager?view=netcore-3.1).
-- `System.Diagnostics.Tracing.EventSource` и трассировка событий Windows(ETW) определяет метод [SetCurrentThreadActivityId](/dotnet/api/system.diagnostics.tracing.eventsource.setcurrentthreadactivityid?view=netcore-3.1#overloads).
-- `ILogger` использует [области журнала](/aspnet/core/fundamentals/logging#log-scopes).
-- Windows Communication Foundation (WCF) и HTTP подключают распространение "текущего" контекста.
-
-Но эти методы не включают автоматическую поддержку распределенной трассировки. `DiagnosticSource` поддерживает автоматическую корреляцию между компьютерами. Библиотеки .NET поддерживают `DiagnosticSource` и разрешают автоматическое распространение контекста корреляции между компьютерами с помощью транспорта, например HTTP.
-
-В [этом](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) `DiagnosticSource` разделе объясняются основные сведения о действиях по отслеживанию.
-
-ASP.NET Core 2,0 поддерживает извлечение заголовков HTTP и запуск новых действий.
-
-`System.Net.Http.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое внедрение заголовков HTTP корреляции и отслеживание вызовов HTTP в качестве действий.
-
-Для классической ASP.NET существует новый модуль HTTP ( [Microsoft. AspNet. телеметрикоррелатион](https://www.nuget.org/packages/Microsoft.AspNet.TelemetryCorrelation/)). Этот модуль реализует корреляцию данных телеметрии с помощью `DiagnosticSource`. Он запускает действие, исходя из заголовков входящего запроса. Он также сопоставляет данные телеметрии от различных стадий обработки запросов, даже если каждый этап обработки службы IIS (IIS) выполняется в другом управляемом потоке.
-
-Пакет SDK для Application Insights, начиная с версии 2.4.0-beta1, использует `DiagnosticSource` и `Activity` для сбора данных телеметрии и их связывания с текущим действием.
+Пакет SDK для Application Insights .NET использует `DiagnosticSource` и `Activity` для сбора данных телеметрии и их сопоставления.
 
 <a name="java-correlation"></a>
 ## <a name="telemetry-correlation-in-java"></a>Корреляция телеметрии в Java

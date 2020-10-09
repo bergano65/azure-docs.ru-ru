@@ -3,12 +3,12 @@ title: Мониторинг сайта SharePoint с помощью Application 
 description: Начало мониторинга нового приложения с помощью нового ключа инструментирования
 ms.topic: conceptual
 ms.date: 09/08/2020
-ms.openlocfilehash: afd7a5fc8ccf7546078fa8a4ffa7a076cb05be6a
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: f07c317a61c91daf7a469c1f9eaf1fb80d4ecc49
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91757254"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825290"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
 
@@ -141,4 +141,3 @@ function onRequestFail(sender, args) {
 * [Использование Application Insights](./app-insights-overview.md) для других типов приложений.
 
 <!--Link references-->
-

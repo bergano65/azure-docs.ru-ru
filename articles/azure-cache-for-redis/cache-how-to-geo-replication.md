@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: yegu
-ms.openlocfilehash: e4739c0c550988e1639e89a647815e5dd86b17b7
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: 6203c230f7ca27b1d4b48e9f56a7f46cd5a5ce78
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91461348"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825313"
 ---
 # <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Как настроить георепликацию для кэша Azure для Redis
 
@@ -111,6 +111,7 @@ ms.locfileid: "91461348"
 - [Почему произошел сбой операции, когда я попытался удалить связанный кэш?](#why-did-the-operation-fail-when-i-tried-to-delete-my-linked-cache)
 - [Какой регион лучше использовать для дополнительного связанного кэша?](#what-region-should-i-use-for-my-secondary-linked-cache)
 - [Как выполнить отработку отказа в дополнительный связанный кэш?](#how-does-failing-over-to-the-secondary-linked-cache-work)
+- [Можно ли настроить межсетевой экран с георепликацией?](#can-i-configure-a-firewall-with-geo-replication)
 
 ### <a name="can-i-use-geo-replication-with-a-standard-or-basic-tier-cache"></a>Можно ли использовать георепликацию с кэшем уровня "Стандартный" или "базовый"?
 
@@ -185,7 +186,12 @@ ms.locfileid: "91461348"
 
 Чтобы запустить отработку отказа, инициированную клиентом, сначала нужно удалить связь кэшей. Затем измените клиент Redis, чтобы он использовал конечную точку подключения вторичного кэша (ранее связанный). При разрыве связи между двумя кэшами Вторичный кэш снова переходит в обычный кэш для чтения и записи и принимает запросы непосредственно от клиентов Redis.
 
+### <a name="can-i-configure-a-firewall-with-geo-replication"></a>Можно ли настроить брандмауэр с георепликацией?
+
+Да, можно настроить [брандмауэр](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#firewall) с георепликацией. Чтобы Георепликация функционировала вместе с брандмауэром, убедитесь, что IP-адрес вторичного кэша добавлен в правила брандмауэра основного кэша.
+
 ## <a name="next-steps"></a>Дальнейшие действия
+
 Дополнительные сведения о кэше Azure для функций Redis.
 
 * [Кэш Azure для уровней служб Redis](cache-overview.md#service-tiers)

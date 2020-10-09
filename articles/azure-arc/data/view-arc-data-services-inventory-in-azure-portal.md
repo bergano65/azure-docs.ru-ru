@@ -9,19 +9,19 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 2d68fbc1b2ae7ef92279b1e99bb77299da82b87e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 3c7299ff211035f81cc08e9f191641c780ad02c4
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90939089"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826652"
 ---
 # <a name="view-inventory-of-your-instances-in-the-azure-portal"></a>Просмотр данных об инвентаризации экземпляров в портал Azure
 
-После отправки [метрик, журналов](upload-metrics-and-logs-to-azure-monitor.md)или [использования](view-billing-data-in-azure.md)можно просмотреть экземпляр в качестве ресурса Azure из портал Azure. Для этого перейдите по специальному URL-адресу [https://portal.azure.com](https://portal.azure.com) и следуйте приведенным ниже снимкам экрана.
+После передачи [метрик, журналов](upload-metrics-and-logs-to-azure-monitor.md)или [сведений об использовании](view-billing-data-in-azure.md)вы можете просмотреть свой экземпляр в качестве ресурса Azure из портал Azure. Чтобы просмотреть ресурс в портал Azure, перейдите по специальному URL-адресу [https://portal.azure.com](https://portal.azure.com) и выполните следующие действия:
 
-1. Последовательно выберите все службы.
-1. Поиск типов экземпляров базы данных
-1. Добавить в избранное
-1. Щелкните тип экземпляра в левой панели навигации.
-1. Просмотр экземпляров в том же представлении, что и другие ресурсы PostgreSQL для Azure SQL или Azure (используйте фильтры для получения детального представления).
+1. Перейдите ко **всем службам**.
+1. Найдите тип экземпляра базы данных.
+1. Добавьте тип в избранное.
+1. В меню слева выберите тип экземпляра.
+1. Просмотрите экземпляры в том же представлении, что и другие ресурсы PostgreSQL для Azure SQL или Azure (используйте фильтры для детального представления).

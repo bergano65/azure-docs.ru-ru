@@ -9,12 +9,12 @@ ms.date: 07/22/2020
 ms.author: euang
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: ad3231652056244fdfc814251e6caad025db77e5
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 02f627c9f606ced7e1b0d991e5053dab17050292
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91649904"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826739"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Управление библиотеками для Apache Spark в Azure синапсе Analytics
 
@@ -125,11 +125,11 @@ for i in pip.get_installed_distributions(local_only=True):
 Файлы должны быть отправлены по следующему пути в контейнере учетной записи хранения по умолчанию: 
 
 ```
-abfss://<file_system>@<account_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>sparkpools/<pool_name>libraries/python/
+abfss://<file_system>@<account_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/sparkpools/<pool_name>/libraries/python/
 ```
 
 >[!IMPORTANT]
 >Пользовательские пакеты можно добавлять или изменять между сеансами. Тем не менее для просмотра обновленного пакета необходимо подождать, пока пул и сеанс перезапускаются.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Просмотр библиотек по умолчанию: [Поддержка версий Apache Spark](apache-spark-version-support.md)

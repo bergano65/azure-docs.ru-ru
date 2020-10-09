@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperfq1
-ms.openlocfilehash: 7bc56f6296bf41933348fad9ea4aeb640b9afbf0
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: d08c1d23539c817792415d359b8e1cbb3979ca40
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91776023"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825508"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -28,7 +28,7 @@ ms.locfileid: "91776023"
 
 **1. Обзор виртуальной сети**  >  [2. Обеспечьте безопасность рабочей области](how-to-secure-workspace-vnet.md)  >  [3. Обеспечьте безопасность среды обучения](how-to-secure-training-vnet.md)  >  [4. Обеспечьте безопасность окружения](how-to-secure-inferencing-vnet.md)  >  [5. Включить функциональные возможности студии](how-to-enable-studio-virtual-network.md)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы со следующими разделами:
 + [Виртуальные сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
@@ -158,6 +158,12 @@ ms.locfileid: "91776023"
 Настройте брандмауэр для управления доступом к ресурсам рабочей области Машинное обучение Azure и общедоступному Интернету. Хотя мы рекомендуем использовать брандмауэр Azure, вы можете воспользоваться другими продуктами брандмауэра для защиты сети. Если у вас есть вопросы о том, как разрешить обмен данными через брандмауэр, обратитесь к документации по используемому брандмауэру.
 
 Дополнительные сведения о параметрах брандмауэра см. в статье [Использование рабочей области за брандмауэром](how-to-access-azureml-behind-firewall.md).
+
+## <a name="custom-dns"></a>Пользовательский DNS
+
+Если необходимо использовать настраиваемое решение DNS для виртуальной сети, необходимо добавить записи узла для рабочей области.
+
+Дополнительные сведения о требуемых доменных именах и IP-адресах см. в статье [Использование рабочей области с пользовательским DNS-сервером](how-to-custom-dns.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

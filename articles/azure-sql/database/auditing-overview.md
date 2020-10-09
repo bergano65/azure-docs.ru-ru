@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/28/2020
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: a7edbbb50777cc2d91332260c9ebe72be042874b
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 7ae7e20c32836d595d6e0fb4162a895407beeb5d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91396252"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91828032"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Аудит для базы данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -106,6 +106,7 @@ ms.locfileid: "91396252"
 #### <a name="remarks"></a>Remarks
 
 - Журналы аудита записываются в **добавочные большие двоичные объекты** в хранилище BLOB-объектов Azure в подписке Azure.
+- Журналы аудита находятся в формате XEL-и могут быть открыты с помощью [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 - Чтобы настроить неизменяемое хранилище журналов для событий аудита на уровне сервера или базы данных, следуйте [инструкциям, предоставленным службой хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage#enabling-allow-protected-append-blobs-writes). Убедитесь, что выбран параметр **разрешить дополнительные добавления** при настройке неизменяемого хранилища BLOB-объектов.
 - Вы можете записать журналы аудита в учетную запись хранения Azure за пределами виртуальной сети или брандмауэра. Конкретные инструкции см. в [этой статье](audit-write-storage-account-behind-vnet-firewall.md).
 - После настройки параметров аудита можно включить новую функцию обнаружения угроз и настроить адреса электронной почты для получения предупреждений системы безопасности. Использование функции обнаружения угроз позволяет настроить упреждающие оповещения об аномальной активности в базах данных, которая может указывать на потенциальные угрозы безопасности. Дополнительные сведения см. в статье [Обнаружение угроз для базы данных SQL](threat-detection-overview.md).

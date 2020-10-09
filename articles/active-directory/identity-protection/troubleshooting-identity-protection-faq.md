@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: troubleshooting
-ms.date: 12/13/2019
+ms.date: 10/07/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 140ad45d9c4f6b6f49a4ea4aefb9298e58a2cf10
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a249d5f3c47e8e8789f91f355c791cc50341ab01
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75443573"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827898"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Часто задаваемые вопросы о защите идентификации в Azure Active Directory
 
@@ -99,3 +99,7 @@ ms.locfileid: "75443573"
 ### <a name="why-does-a-sign-in-have-a-sign-in-risk-aggregate-score-of-high-when-the-detections-associated-with-it-are-of-low-or-medium-risk"></a>Почему событие входа имеет высокую оценку риска (агрегированную), если обнаруженные действия, связанные с ним, имеют низкий или средний уровень риска?
 
 Высокий агрегированный уровень риска может быть присвоен из-за других функций входа в систему или потому, что для этого входа в систему инициировано более одного события обнаружения. И наоборот, событие входа может иметь средний уровень риска входа (агрегированный), даже если события обнаружения, связанные со входом, имеют высокий уровень риска. 
+
+### <a name="why-is-the-detection-which-is-linked-to-a-risky-sign-in-have-a-different-risk-level-than-the-sign-in-risk-level-real-time"></a>Почему обнаружение, связанное с рискованным входом, имеет другой уровень риска, отличный от уровня риска при входе (в реальном времени)? 
+
+Недавно мы внесли улучшения в процесс вычисления риска при входе в систему в режиме реального времени. Результатом этих изменений является несоответствие между уровнем обнаружения рисков и уровнем риска входа. Обратите внимание, что риск входа в систему в режиме реального времени — это значение, которое используется при применении политики. 

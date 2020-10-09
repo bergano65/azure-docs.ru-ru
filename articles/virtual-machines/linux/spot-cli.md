@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 165a2c6221c8d3c14f71134deef962d0859bb438
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 9a06dea64ffb348477308979fa07c0e2ce822b0c
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88816717"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825404"
 ---
 # <a name="deploy-spot-vms-using-the-azure-cli"></a>Развертывание плашечных виртуальных машин с помощью Azure CLI
 
@@ -64,8 +64,25 @@ az vm list \
    --output table
 ```
 
+## <a name="simulate-an-eviction"></a>Имитация вытеснения
+
+Вы можете [имитировать вытеснение](/rest/api/compute/virtualmachines/simulateeviction) для ПЛАШЕЧНОЙ виртуальной машины, чтобы проверить, насколько хорошо ваше приложение будет ответил внезапного вытеснения. 
+
+Замените следующие сведения: 
+
+- `subscriptionId`
+- `resourceGroupName`
+- `vmName`
+
+
+```http
+POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/simulateEviction?api-version=2020-06-01
+```
+
 **Следующие шаги**
 
-Можно также создать плашечную виртуальную машину с помощью [Azure PowerShell](../windows/spot-powershell.md), [портала](../windows/spot-portal.md)или [шаблона](spot-template.md).
+Можно также создать плашечную виртуальную машину с помощью [Azure PowerShell](../windows/spot-powershell.md), [портала](../spot-portal.md)или [шаблона](spot-template.md).
+
+Запросите актуальные сведения о ценах с помощью [API розничных цен Azure](/rest/api/cost-management/retail-prices/azure-retail-prices) для получения сведений о ценах. Объект `meterName` и `skuName` будет содержать `Spot` .
 
 Если возникает ошибка, см. раздел [коды ошибок](../error-codes-spot.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

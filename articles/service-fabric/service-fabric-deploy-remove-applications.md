@@ -3,12 +3,12 @@ title: Развертывание Service Fabric Azure с помощью PowerSh
 description: Узнайте, как удалять и развертывать приложения в Service Fabric Azure и как выполнять эти действия в PowerShell.
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: 3a6f5411c30087e15d1164cd02d4e6eb66566388
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 8bc4557c5d0d59330c7e91a4b3fdce83cfbf334c
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611458"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827428"
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Развертывание и удаление приложений с помощью PowerShell
 
@@ -100,7 +100,7 @@ C:\USERS\USER\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\MYAPPLICATION\MYAPPLICATION\
 ```
 
 Если пакет приложения большой или имеет большое количество файлов, его можно [сжать](service-fabric-package-apps.md#compress-a-package). Сжатие уменьшает размер и количество файлов.
-Побочный эффект заключается в том, что регистрация и отмена регистрации типа приложения работают быстрее. Время загрузки может увеличиться, особенно если требуется сжать пакет. 
+Это приводит к более быстрой регистрации и отмене регистрации типа приложения. Время загрузки может увеличиться, особенно если требуется сжать пакет. 
 
 Чтобы сжать пакет, используйте команду [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps). Сжатие можно выполнить отдельно от загрузки с помощью флага `SkipCopy` или во время операции загрузки. Применить сжатие к сжатому пакету невозможно.
 Чтобы распаковать пакет, используйте команду [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) с параметром `UncompressPackage`.
@@ -223,7 +223,7 @@ Remove-ServiceFabricApplicationPackage -ApplicationPackagePathInImageStore MyApp
 
 ## <a name="create-the-application"></a>Создание приложения
 
-Чтобы создать экземпляр приложения, можно использовать любую зарегистрированную версию типа приложения. Для этого выполните командлет [New-ServiceFabricApplication](/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps). Имя приложения должно начинаться со схемы *fabric:* и быть уникальным для каждого экземпляра приложения. Если в манифесте приложения для конкретного его типа были определены службы по умолчанию, то они также будут созданы.
+Вы можете создать экземпляр приложения из любой версии типа приложения, которая успешно зарегистрирована с помощью командлета [New-ServiceFabricApplication](/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps) . Имя каждого приложения должно начинаться с схемы *"Fabric:"* и должно быть уникальным для каждого экземпляра приложения. Если в манифесте приложения для конкретного его типа были определены службы по умолчанию, то они также будут созданы.
 
 ```powershell
 New-ServiceFabricApplication fabric:/MyApp MyApplicationType 1.0.0

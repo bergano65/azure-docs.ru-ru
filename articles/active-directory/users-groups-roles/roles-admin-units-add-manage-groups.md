@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.topic: how-to
 ms.subservice: users-groups-roles
 ms.workload: identity
-ms.date: 09/22/2020
+ms.date: 10/07/2020
 ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d22ec2219a86b8445931350b616dd76d0a22ec5
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 133ea21bf7a7c1df0fccaeacce7d7a29199c033d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91439812"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827695"
 ---
 # <a name="add-and-manage-groups-in-administrative-units-in-azure-active-directory"></a>Добавление и управление группами в административных единицах в Azure Active Directory
 
@@ -101,6 +101,7 @@ Get-AzureADGroup -ObjectId $member.ObjectId
 }
 }
 ```
+
 ### <a name="microsoft-graph"></a>Microsoft Graph
 
 ```http
@@ -136,13 +137,20 @@ https://graph.microsoft.com/v1.0/groups/<group-id>/memberOf/$/Microsoft.Graph.Ad
 
 Существует два способа удаления группы из административной единицы на портале Azure.
 
-Откройте раздел **Azure AD** > **Группы** и откройте профиль группы, которую нужно удалить из административной единицы. На панели слева нажмите **Административные единицы**, чтобы получить список всех административных единиц, членом которых является группа. Выберите административную единицу, из которой необходимо удалить группу, а затем нажмите **Удалить из административной единицы**.
+- Удалить из обзора группы
 
-![Удаление группы из административной единицы](./media/roles-admin-units-add-manage-groups/group-au-remove.png)
+  1. Откройте группу **Azure AD**  >  **Groups** и откройте профиль для группы, которую необходимо удалить из административной единицы.
+  1. На панели слева нажмите **Административные единицы**, чтобы получить список всех административных единиц, членом которых является группа. Выберите административную единицу, из которой необходимо удалить группу, а затем нажмите **Удалить из административной единицы**.
 
-Либо перейдите в раздел **Azure AD** > **Административные единицы** и выберите административную единицу, членом которой является группа. На панели слева нажмите **Группы**, чтобы вывести список групп административной единицы. Выберите группу, которую необходимо удалить из административной единицы, и нажмите **Удалить группы**.
+    ![Удаление группы из административной единицы](./media/roles-admin-units-add-manage-groups/group-au-remove.png)
 
-![Список групп в административной единице](./media/roles-admin-units-add-manage-groups/list-groups-in-admin-units.png)
+- Удалить из административной единицы
+
+  1. Откройте **Azure AD**  >  **административные единицы** Azure AD и выберите административную единицу, членом которой является группа.
+  1. На панели слева нажмите **Группы**, чтобы вывести список групп административной единицы.
+  1. Выберите группу, которую необходимо удалить из административной единицы, и нажмите **Удалить группы**.
+
+    ![Список групп в административной единице](./media/roles-admin-units-add-manage-groups/list-groups-in-admin-units.png)
 
 ### <a name="powershell"></a>PowerShell
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: dd5a200d1c17f0417b2ee88f7f905ee6de3cfe62
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: efcf634c9f34fd2b479140af800bb650f66bd821
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555395"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826750"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -56,11 +56,11 @@ ms.locfileid: "88555395"
 ## <a name="add-e-sales-manager-remix-from-the-gallery"></a>Добавление E Sales Manager Remix из коллекции
 Чтобы настроить интеграцию Azure AD с E Sales Manager Remix, необходимо добавить E Sales Manager Remix из коллекции в список управляемых приложений SaaS, выполнив следующие действия:
 
-1. В [портал Azure](https://portal.azure.com)в левой области выберите **Azure Active Directory**. 
+1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**. 
 
     ![Кнопка Azure Active Directory][1]
 
-1. Выберите **корпоративные приложения**  >  **все приложения**.
+1. Щелкните **Корпоративные приложения** > **Все приложения**.
 
     ![Окно "Корпоративные приложения"][2]
     
@@ -121,7 +121,7 @@ ms.locfileid: "88555395"
 
 1. В разделе **Конфигурация E Sales Manager Remix ** выберите **Настроить E Sales Manager Remix**.
 
-    ![Конфигурация E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
+    ![Снимок экрана, на котором показан раздел "E Sales Manager Remix Configuration" с выбранным параметром "настроить E Sales Manager Remix".](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
 
     Откроется окно **Настройка единого входа**
 

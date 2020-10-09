@@ -3,14 +3,14 @@ title: Шифрование данных развертывания
 description: Узнайте о шифровании данных, сохраненных для ресурсов экземпляра контейнера, и о том, как шифровать данные с помощью ключа, управляемого клиентом.
 ms.topic: article
 ms.date: 01/17/2020
-author: dkkapur
-ms.author: dekapur
-ms.openlocfilehash: 3c7a84dad1f107d8709e3bcdeac696414cdf883d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+author: macolso
+ms.author: macolso
+ms.openlocfilehash: 1c45999dbb354e8c2d550be82cdf37a6694d2dbb
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259718"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825672"
 ---
 # <a name="encrypt-deployment-data"></a>Шифрование данных развертывания
 
@@ -28,7 +28,7 @@ ms.locfileid: "86259718"
 |----|----|----|
 |    **Операции шифрования и расшифровки**    |    Azure    |    Azure    |
 |    **Хранилище ключей**    |    Хранилище ключей (Майкрософт)    |    Azure Key Vault    |
-|    **Ответственность за смену ключей**    |    пиринг Майкрософт.    |    Customer    |
+|    **Ответственность за смену ключей**    |    Microsoft    |    Customer    |
 |    **Доступ к ключам**    |    Только Майкрософт    |    Майкрософт, клиент    |
 
 Оставшаяся часть документа описывает шаги, необходимые для шифрования данных развертывания ACI с помощью ключа (управляемого клиентом ключа). 

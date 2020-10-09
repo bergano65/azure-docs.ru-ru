@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f34355f790b56c43c2e9fae7ce23b6344b4739d
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: e8051621cf05b0f8c387c41cf0b95bb32e15e667
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91362152"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825891"
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD
 
@@ -83,7 +83,7 @@ ms.locfileid: "91362152"
 
 #### <a name="azure-ddos-protection-service"></a>Служба защиты от атак DDoS Azure
 
-Приложения, опубликованные посредством прокси приложения, защищены от распределенных атак типа "отказ в обслуживании" (DDoS). **Защиты от атак DDoS Azure** — это служба, предоставляемая платформой Azure для защиты ресурсов Azure от атак типа "отказ в обслуживании". Уровень службы **Базовый** включается автоматически, обеспечивая постоянный мониторинг трафика и защиту от основных сетевых атак в режиме реального времени. Подробные сведения о Защите от атак DDoS Azure уровня "Стандартный" см. [здесь](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview).
+Приложения, опубликованные посредством прокси приложения, защищены от распределенных атак типа "отказ в обслуживании" (DDoS). Эта защита управляется корпорацией Майкрософт и автоматически включается во всех наших центрах обработки данных. Служба защиты Azure от атак DDoS обеспечивает постоянное отслеживание трафика и устранение распространенных атак на уровне сети в режиме реального времени. 
 
 ## <a name="under-the-hood"></a>Механизм
 

@@ -5,15 +5,15 @@ author: cynthn
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 07/20/2020
+ms.date: 10/05/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: c0b8f395dde1d94c4c1efa32a2f78707d1456d88
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.openlocfilehash: 66d62cde9ea17e73f561dfbce94eb3d3e7175b6d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88818028"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827812"
 ---
 # <a name="use-spot-vms-in-azure"></a>Использование плашечных виртуальных машин в Azure
 
@@ -67,8 +67,22 @@ ms.locfileid: "88818028"
 
 Цена на точечные виртуальные машины может изменяться в зависимости от региона и ценовой категории. Дополнительные сведения см. на страницах с информацией о ценах на виртуальные машины [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) и [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/). 
 
+Вы также можете запросить сведения о ценах с помощью [API розничных цен Azure](/rest/api/cost-management/retail-prices/azure-retail-prices) , чтобы запросить информацию о ценах. Объект `meterName` и `skuName` будет содержать `Spot` .
 
 Переменное ценообразование позволяет вам указать максимальную цену в долларах США с точностью до 5 знаков после запятой. Например, значение `0.98765` определяет максимальную цену 0,98765 долларов США в час. Если вы укажете для максимальной цены значение `-1`, виртуальная машине не будет вытесняться по критерию цены. Цена на такую виртуальную машину будет определяться меньшим из двух значений: текущая цена точечных виртуальных машин или цена на стандартные виртуальные машины, но только при условии наличия емкости и соблюдения квоты.
+
+## <a name="pricing-and-eviction-history"></a>Журнал цен и вытеснения
+
+Вы можете просмотреть исторические цены и ставки вытеснений для каждого размера в регионе на портале. Выберите **Просмотр истории цен и сравните цены в ближайших регионах** , чтобы просмотреть таблицу или график цен для определенного размера.  Ниже приведены примеры цен и вытеснения на следующих изображениях. 
+
+**Диаграмма**.
+
+:::image type="content" source="./media/spot-chart.png" alt-text="Снимок экрана параметров региона с разницей в ценах и процентах вытеснения в виде диаграммы.":::
+
+**Таблица**:
+
+:::image type="content" source="./media/spot-table.png" alt-text="Снимок экрана параметров региона с разницей в ценах и процентах вытеснения в виде диаграммы.":::
+
 
 
 ##  <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
@@ -98,7 +112,7 @@ ms.locfileid: "88818028"
 **Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](https://docs.microsoft.com/answers/topics/azure-spot.html). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Используйте интерфейс [командной строки](./linux/spot-cli.md), [портал](./windows/spot-portal.md), [шаблон ARM](./linux/spot-template.md)или [PowerShell](./windows/spot-powershell.md) для развертывания плашечных виртуальных машин.
+Используйте интерфейс [командной строки](./linux/spot-cli.md), [портал](spot-portal.md), [шаблон ARM](./linux/spot-template.md)или [PowerShell](./windows/spot-powershell.md) для развертывания плашечных виртуальных машин.
 
 Также можно развернуть [масштабируемый набор с другими экземплярами виртуальных машин](../virtual-machine-scale-sets/use-spot.md).
 

@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/27/2020
-ms.openlocfilehash: d850bcf2ffbd3867ab28d7dee54df3f8b427fd6e
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.openlocfilehash: 22f524ed4f01ad5b3be110008a82cd31c5c476c5
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91404758"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827859"
 ---
 # <a name="source-transformation-in-mapping-data-flow"></a>Преобразование источника в потоке данных сопоставления 
 
@@ -57,7 +57,9 @@ ms.locfileid: "91404758"
 
 ## <a name="source-settings"></a>Параметры источника
 
-После добавления источника настройте его с помощью вкладки **Параметры источника** . Здесь можно выбрать или создать набор данных, на котором находятся исходные точки. Можно также выбрать схему и параметры выборки для данных.
+После добавления источника настройте его с помощью вкладки **Параметры источника** . Здесь можно выбрать или создать набор данных, на котором находятся исходные точки. Можно также выбрать схему и параметры выборки для данных. 
+
+Значения разработки для параметров набора данных можно настроить в [параметрах отладки](concepts-data-flow-debug-mode.md) (требуется включить режим отладки).
 
 ![Вкладка "Параметры источника"](media/data-flow/source1.png "Вкладка "Параметры источника"")
 

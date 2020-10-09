@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: mbullwin
-ms.openlocfilehash: f27771291d95770a693fa56041f7dce3de459d13
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bbd231ca527b4c01509230e839b97187de29febd
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081429"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825743"
 ---
 # <a name="azure-monitor-workbooks-data-sources"></a>Источники данных Azure Monitor книг
 
@@ -85,7 +85,7 @@ Azure Monitor обладает функциональными возможнос
 
 Поставщик JSON позволяет создавать результаты запроса из статического содержимого JSON. Чаще всего он используется в параметрах для создания раскрывающихся параметров статических значений. Простые массивы или объекты JSON будут автоматически преобразованы в строки и столбцы сетки.  Для более подробного поведения можно использовать вкладки результаты и параметры JSONPath для настройки столбцов.
 
-## <a name="alerts-preview"></a>Оповещения (Предварительная версия)
+## <a name="alerts-preview"></a>Оповещения (предварительная версия)
 
 > [!NOTE]
 > Предлагаемый способ запроса сведений об оповещении Azure — использование источника данных [графа ресурсов Azure](#azure-resource-graph) путем запроса к `AlertsManagementResources` таблице.
@@ -114,4 +114,3 @@ Azure Monitor обладает функциональными возможнос
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.
 * [Советы по оптимизации запросов Log Analytics](../log-query/query-optimization.md)
-* 

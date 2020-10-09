@@ -3,12 +3,12 @@ title: Служебная шина Azure — Просмотр сообщений
 description: Просмотр и просмотр сообщений служебной шины позволяет клиенту служебной шины Azure перечислять все сообщения, которые находятся в очереди или подписке.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 0f2d4ed1225aef4c28a5f3d841669c2e3122ba10
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6e50fc737f6c81c07854ff07d8cc64061306749b
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341247"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91827452"
 ---
 # <a name="message-browsing"></a>Просмотр сообщений
 
@@ -30,9 +30,9 @@ ms.locfileid: "85341247"
 
 [PeekBatch](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatch#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatch_System_Int32_) получает несколько сообщений и возвращает их в виде перечисления. Если доступных сообщений нет, объект перечисления является пустым, а не содержащим значения NULL.
 
-Можно также заполнить перегрузку метода значением [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), с которого следует начать, а затем вызвать перегрузку метода без параметров для продолжения перечисления. **PeekBatch** работает аналогично, но получает набор сообщений за раз.
+Кроме того, можно использовать перегрузку метода с [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber) , с которой следует начать, а затем вызвать перегрузку метода без параметров для дальнейшего перечисления. **PeekBatch** работает аналогично, но получает набор сообщений за раз.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

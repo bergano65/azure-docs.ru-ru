@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 88cb54a7a9e20e643d9a19f57dc83d3f1ea8004d
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: f32783b18b5454164567910aa369739d025b8be0
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761215"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826899"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "91761215"
 
 |Основные преимущества|Описание|
 |----|----|
-|Производительность|Вы можете создавать и развертывать модели с помощью интегрированных записных книжек и следующих средств в Машинное обучение Azure Studio:<br/>— Jupyter;<br/>— JupyterLab;<br/>-RStudio (Предварительная версия)<br/>Вычислительный экземпляр полностью интегрирован с Машинное обучение Azure рабочей областью и Studio. Вы можете обмениваться записными книжками и данными с другими специалистами по анализу данных в рабочей области. Вы также можете настроить VS Code удаленное развертывание с помощью [SSH](how-to-set-up-vs-code-remote.md) . |
+|Производительность|Вы можете создавать и развертывать модели с помощью интегрированных записных книжек и следующих средств в Машинное обучение Azure Studio:<br/>— Jupyter;<br/>— JupyterLab;<br/>-RStudio (Предварительная версия)<br/>Вычислительный экземпляр полностью интегрирован с Машинное обучение Azure рабочей областью и Studio. Вы можете обмениваться записными книжками и данными с другими специалистами по анализу данных в рабочей области.<br/> Можно также использовать [VS Code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) с экземплярами вычислений.
 |Управляемость и безопасность|Сократите воздействие на систему безопасности и обеспечьте соответствие корпоративным требованиям безопасности. Вычислительные экземпляры предоставляют надежные политики управления и защищенные сетевые конфигурации, такие как:<br/><br/>— Автоинициализация из шаблонов диспетчер ресурсов или пакета SDK для Машинное обучение Azure<br/>- [Управление доступом на основе ролей в Azure (Azure RBAC)](/azure/role-based-access-control/overview)<br/>- [поддержка виртуальной сети;](how-to-enable-virtual-network.md#compute-instance)<br/>— политика SSH для включения или отключения доступа по протоколу SSH.<br/>TLS 1,2 включен |
 |Предварительно настроено &nbsp; для &nbsp; машинного обучения|Сэкономьте время на задачах настройки благодаря предварительно настроенным, актуальным пакетам машинного обучения, платформам для глубокого обучения и драйверам GPU.|
 |Полные возможности настройки|Широкая поддержка типов виртуальных машин Azure, включая GPU, и сохраняемая низкоуровневая настройка, например установка пакетов и драйверов, позволяют без труда реализовывать сложные сценарии. |
@@ -47,9 +47,11 @@ ms.locfileid: "91761215"
 
 Вычислительный экземпляр Машинного обучения Azure позволяет создавать, обучать и развертывать модели в полностью интегрированной среде записных книжек в рабочей области.
 
+Вы можете запускать записные книжки Jupyter в [VS Code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) используя экземпляр COMPUTE в качестве удаленного сервера без необходимости SSH. Можно также включить интеграцию VS Code через [Удаленное расширение SSH](https://devblogs.microsoft.com/python/enhance-your-azure-machine-learning-experience-with-the-vs-code-extension/).
+
 Вы можете [установить пакеты](how-to-create-manage-compute-instance.md#install-packages) и [Добавить ядра](how-to-create-manage-compute-instance.md#add-new-kernels) в вычислительный экземпляр.  
 
-Эти средства и среды уже установлены на вычислительном экземпляре: 
+Следующие средства и среды уже установлены на вычислительном экземпляре: 
 
 |Общие средства и среды|Сведения|
 |----|:----:|
@@ -143,7 +145,7 @@ ms.locfileid: "91761215"
 ### <a name="create-on-behalf-of-preview"></a>Создание от имени (Предварительная версия)
 
 Как администратор вы можете создать вычислительный экземпляр от имени анализу данных и присвоить ему экземпляр с помощью:
-* [Шаблон Azure Resource Manager](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/preview/2020-09-01-preview/examples/createComputeInstance.json).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
+* [Шаблон Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance).  Дополнительные сведения о том, как найти ИД клиента и идентификатор объекта, необходимые в этом шаблоне, см. в разделе [Поиск кодов объектов удостоверений для конфигурации проверки подлинности](../healthcare-apis/find-identity-object-ids.md).  Эти значения также можно найти на портале Azure Active Directory.
 * REST API
 
 Анализу данных, для которых создается вычислительный экземпляр, требуются следующие разрешения RBAC: 
