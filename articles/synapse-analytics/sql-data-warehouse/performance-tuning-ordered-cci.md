@@ -11,12 +11,12 @@ ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 454e205904b3623bdb5adc906465f01abd77092a
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.openlocfilehash: 48db8541ebad19e3b22b737f7e92dcc980708ef6
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88795615"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91841600"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Performance tuning with result set caching (Настройка производительности с помощью упорядоченного кластеризованного индекса columnstore)  
 
@@ -48,9 +48,6 @@ ORDER BY o.name, pnp.distribution_id, cls.min_data_id
 
 
 ```
-
->[!TIP]
-> Для повышения производительности в синапсе SQL рассмотрите возможность использования представления **sys. pdw_permanent_table_mappings** вместо **sys. pdw_table_mappings** в постоянных пользовательских таблицах. Дополнительные сведения см. в разделе **[sys. pdw_permanent_table_mappings &#40;&#41;Transact-SQL ](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** .
 
 > [!NOTE] 
 > В упорядоченной таблице CCI новые данные, полученные в результате выполнения одного и того же пакета DML или операций загрузки данных, сортируются в пределах этого пакета, поэтому в таблице не существует глобальной сортировки по всем данным.  Пользователи могут перестроить упорядоченный объект CCI для сортировки всех данных в таблице.  В синапсе SQL перестроение индекса columnstore является автономной операцией.  Для секционированной таблицы перестроение выполняется по одной секции за раз.  Данные в перестроенной секции находятся в автономном режиме и недоступны до завершения перестроения для этого раздела. 
@@ -98,7 +95,7 @@ SELECT * FROM T1 WHERE Col_A = 'a' AND Col_C = 'c';
 
 Ниже приведен пример сравнения производительности при загрузке данных в таблицы с разными схемами.
 
-![Performance_comparison_data_loading](./media/performance-tuning-ordered-cci/cci-data-loading-performance.png)
+![Линейчатая диаграмма, показывающая сравнение производительности при загрузке данных в таблицы с разными схемами.](./media/performance-tuning-ordered-cci/cci-data-loading-performance.png)
 
 
 Ниже приведен пример сравнения производительности между CCI и заказанным CCI.
@@ -139,7 +136,7 @@ OPTION (MAXDOP 1);
 
 ## <a name="examples"></a>Примеры
 
-**А. Проверка упорядоченных столбцов и порядкового номера заказа:**
+**Конкретного. Для проверки упорядоченных столбцов и порядкового номера заказа:**
 
 ```sql
 SELECT object_name(c.object_id) table_name, c.name column_name, i.column_store_order_ordinal 
@@ -148,7 +145,7 @@ JOIN sys.columns c ON i.object_id = c.object_id AND c.column_id = i.column_id
 WHERE column_store_order_ordinal <>0
 ```
 
-**Б. чтобы изменить порядковый номер столбца, добавьте или удалите столбцы из списка Order или измените значение с CCI на упорядоченный CCI:**
+**&. Чтобы изменить порядковый номер столбца, добавьте или удалите столбцы из списка Order или измените значение с CCI на упорядоченный CCI:**
 
 ```sql
 CREATE CLUSTERED COLUMNSTORE INDEX InternetSales ON  InternetSales
