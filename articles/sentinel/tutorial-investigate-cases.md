@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 4ef08ac8d386bd8a28dce38cb53aed31d79b37a2
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.openlocfilehash: 648d456534e86075a243a84ac0485d95a7f28479
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88566341"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843113"
 ---
 # <a name="tutorial-investigate-incidents-with-azure-sentinel"></a>Учебник. изучение инцидентов с помощью Azure Sentinel
 
@@ -119,11 +119,11 @@ ms.locfileid: "88566341"
 - Ложные положительные — неверные данные
 - Неопределенные
 
-:::image type="content" source="media/tutorial-investigate-cases/closing-reasons-dropdown.png" alt-text="{Alt-Text}":::
+:::image type="content" source="media/tutorial-investigate-cases/closing-reasons-dropdown.png" alt-text="Снимок экрана, на котором показаны классификации, доступные в списке Выбор классификации.":::
 
 Выбрав соответствующую классификацию, добавьте в поле **Комментарий** текст описания. Это будет полезно в событии, которое необходимо относиться к этому инциденту. Когда все будет готово, нажмите кнопку **Применить** , чтобы закрыть инцидент.
 
-:::image type="content" source="media/tutorial-investigate-cases/closing-reasons-comment-apply.png" alt-text="{Alt-Text}":::
+:::image type="content" source="media/tutorial-investigate-cases/closing-reasons-comment-apply.png" alt-text="Снимок экрана, на котором показаны классификации, доступные в списке Выбор классификации.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы узнали, как приступить к исследованию инцидентов с помощью Sentinel Azure. Перейдите к руководству по [реагированию на угрозы с помощью автоматизированного модули PlayBook](tutorial-respond-threats-playbook.md).

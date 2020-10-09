@@ -3,18 +3,18 @@ title: Виртуальные сети
 titleSuffix: Azure Cognitive Services
 description: Настройка многоуровневой сетевой безопасности для ресурсов Cognitive Services.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 05/26/2020
-ms.author: dapine
-ms.openlocfilehash: 808d42c821272882bbf0e01a36e49f7f10b30efa
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.date: 10/07/2020
+ms.author: aahi
+ms.openlocfilehash: d320fcd0b7f9666da39dd1208efd9cdec04ad6b5
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88505033"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843147"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -40,40 +40,29 @@ Azure Cognitive Services предоставляет многоуровневую
 
 ## <a name="supported-regions-and-service-offerings"></a>Поддерживаемые регионы и предложения услуг
 
-Виртуальные сети (виртуальных сетей) поддерживаются в [регионах, где доступны Cognitive Services](https://azure.microsoft.com/global-infrastructure/services/). Если служба не указана в списке, она сейчас не поддерживает виртуальные сети.
+Виртуальные сети (виртуальных сетей) поддерживаются в [регионах, где доступны Cognitive Services](https://azure.microsoft.com/global-infrastructure/services/). Cognitive Services поддерживает теги службы для конфигурации сетевых правил. Перечисленные ниже службы включены в тег службы **когнитивесервицесманажемент** .
 
 > [!div class="checklist"]
-> * [Детектор аномалий](./anomaly-detector/index.yml)
-> * [Компьютерное зрение](./computer-vision/index.yml)
-> * [Content Moderator](./content-moderator/index.yml)
-> * [Пользовательское визуальное распознавание](./custom-vision-service/index.yml)
-> * [Распознавание лиц](./face/index.yml)
-> * [Распознаватель документов](./form-recognizer/index.yml)
-> * [Распознавание речи](./luis/index.yml)
-> * [Персонализатор](./personalizer/index.yml)
-> * [Анализ текста](./text-analytics/index.yml)
-> * [QnA Maker](./qnamaker/index.yml)
-> * [Перевод текстов](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#virtual-network-support)
-> * [Иммерсивное средство чтения](./immersive-reader/index.yml)
+> * Детектор аномалий
+> * API Компьютерного зрения
+> * Content Moderator
+> * Custom Vision
+> * Распознавание лиц
+> * Распознаватель документов
+> * Распознавание речи (LUIS)
+> * Персонализатор
+> * Анализ текста
+> * QnA Maker
+> * Перевод текстов
+> * Иммерсивное средство чтения
 
-## <a name="service-tags"></a>Теги служб
+> [!NOTE]
+> Если вы используете LUIS, тег **когнитивесервицесманажемент** позволяет использовать службу только с помощью пакета SDK или REST API. Чтобы получить доступ к порталу LUIS из виртуальной сети и использовать его, необходимо использовать следующие Теги:  
+> * **AzureResourceManager** 
+> * **CognitiveServicesManagement**
+> * **AzureActiveDirectory**
+> * **AzureFrontDoor.Frontend**
 
-Cognitive Services поддерживает теги службы для конфигурации сетевых правил. Перечисленные ниже службы включены в тег службы **когнитивесервицесманажемент** .
-
-> [!div class="checklist"]
-> * [Детектор аномалий](./anomaly-detector/index.yml)
-> * [Компьютерное зрение](./computer-vision/index.yml)
-> * [Content Moderator](./content-moderator/index.yml)
-> * [Пользовательское визуальное распознавание](./custom-vision-service/index.yml)
-> * [Распознавание лиц](./face/index.yml)
-> * [Распознаватель документов](./form-recognizer/index.yml)
-> * [Распознавание речи (LUIS)](./luis/index.yml)
-> * [Персонализатор](./personalizer/index.yml)
-> * [Анализ текста](./text-analytics/index.yml)
-> * [QnA Maker](./qnamaker/index.yml)
-> * [Переводчик](./translator/index.yml)
-> * [Служба речи](./speech-service/index.yml)
-> * [Иммерсивное средство чтения](./immersive-reader/index.yml)
 
 ## <a name="change-the-default-network-access-rule"></a>Изменение сетевого правила доступа по умолчанию
 

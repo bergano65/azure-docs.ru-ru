@@ -1,17 +1,17 @@
 ---
 title: Автоматическое масштабирование приложения, работающего в сети Azure Service Fabric
 description: Сведения о настройке политики автомасштабирования для служб приложения Сетки Service Fabric.
-author: dkkapur
+author: georgewallace
 ms.topic: conceptual
 ms.date: 12/07/2018
-ms.author: dekapur
+ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: fb72806dd7ba838ba7170bda409715bc074e1d99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f65fcfa76069a3de37fd3a76e38e38fba40e04ac
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75461973"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843062"
 ---
 # <a name="create-autoscale-policies-for-a-service-fabric-mesh-application"></a>Создание политик автомасштабирования для приложения Сетки Service Fabric
 Одним из основных преимуществ развертывания приложений на Service Fabricной сетке является возможность легко масштабировать службы в или. Его следует использовать для обработки различных объемов нагрузки на службы или для повышения доступности. Вы можете вручную выполнять масштабирование своих служб или же настроить автомасштабирование.
@@ -114,5 +114,5 @@ application:
           ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее о [ручном масштабировании службы](service-fabric-mesh-tutorial-template-scale-services.md)

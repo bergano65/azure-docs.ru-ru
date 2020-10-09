@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 1b7b5e209329bd5dc4c95f81f61fecf48fb74e40
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: e64c5ddfafb8bc8e9041e6d6b3e473a9a20565ed
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91362116"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843130"
 ---
 # <a name="set-up-web-endpoints"></a>Настройка конечных веб-точек
 
@@ -79,7 +79,7 @@ ms.locfileid: "91362116"
     В разделе **Simple editor** (Простой редактор) введите `{SubjectDevice} is {OnOff}`.
    
    > [!div class="mx-imgBorder"]
-   > ![Действие при успешном вызове конечных веб-точек](media/custom-commands/setup-web-endpoint-edit-action-on-success-send-response.png)
+   > ![Снимок экрана, на котором отображается экран "при успешном выполнении действия".](media/custom-commands/setup-web-endpoint-edit-action-on-success-send-response.png)
 
    | Параметр | Рекомендуемое значение | Описание |
    | ------- | --------------- | ----------- |
@@ -107,7 +107,7 @@ ms.locfileid: "91362116"
 - Ответ при успешном выполнении.
 Сохраните, запустите обучение и протестируйте.
    > [!div class="mx-imgBorder"]
-   > ![Действие при успешном вызове конечных веб-точек](media/custom-commands/setup-web-endpoint-on-success-response.png)
+   > ![Снимок экрана, на котором показан ответ при успешном выполнении.](media/custom-commands/setup-web-endpoint-on-success-response.png)
 - Ответ при неуспешном выполнении.
 Удалите один из параметров запроса, сохраните, запустите обучение и протестируйте.
    > [!div class="mx-imgBorder"]

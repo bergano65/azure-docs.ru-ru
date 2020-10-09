@@ -4,19 +4,19 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: barclayn
 ms.author: barclayn
-ms.date: 07/09/2020
+ms.date: 10/07/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 207b4a926e77ff55faad388b6eeaeb221ec252a8
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: e875eda2a59841d3238a13389768c6fa37cef774
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90006786"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843181"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -252,6 +252,12 @@ ms.locfileid: "90006786"
 
 Дополнительные сведения см. [в статье Включение управляемого удостоверения, назначенного системой для облачного приложения Azure весны](~/articles/spring-cloud/spring-cloud-howto-enable-system-assigned-managed-identity.md).
 
+### <a name="azure-stack-edge"></a>Azure Stack Edge
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | --- | --- | --- | --- |
+| Назначено системой | Доступно в регионе, где доступна служба Azure Stack ребра | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин Azure
 

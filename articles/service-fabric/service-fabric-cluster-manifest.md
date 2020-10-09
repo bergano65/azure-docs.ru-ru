@@ -1,16 +1,14 @@
 ---
 title: Настройка автономного кластера Azure Service Fabric
 description: Узнайте, как настраивать изолированный или локальный кластер Service Fabric.
-author: dkkapur
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.author: dekapur
-ms.openlocfilehash: e8a1fdfb23b6e0aee9b9bdd04f70c554824f4c35
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: fd93263b38340ce080cca1aecb98f3a599ff1861
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86246577"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843164"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
 В этой статье описаны параметры конфигурации изолированного кластера Azure Service Fabric, которые можно задать в файле *ClusterConfig.json*. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.  После изменения или добавления параметров конфигурации вы можете [создать изолированный кластер](service-fabric-cluster-creation-for-windows-server.md) или [обновить конфигурацию изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md).

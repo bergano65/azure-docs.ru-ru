@@ -1,16 +1,16 @@
 ---
 title: Настройка интерфейса командной строки Azure Service Fabric для сетки
 description: Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. Вот как его настроить.
-author: dkkapur
-ms.author: dekapur
+author: georgewallace
+ms.author: gwallace
 ms.date: 11/28/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3ce2dbcefa63cc55a66e712664d1436ca24d3a1d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: fb059fe5dc4e64df104e026983e51f799236f916
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86248549"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91842807"
 ---
 # <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
 Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. Вот как его настроить.
@@ -52,7 +52,7 @@ ms.locfileid: "86248549"
 
 * [Java](https://www.azul.com/downloads/zulu/)
 * [Maven](https://maven.apache.org/download.cgi)
-* [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git);
 * Интерфейс командной строки Сетка Azure (az mesh) для Сетки Azure Service Fabric 
 * SFCTL (sfctl) для локальных кластеров 
 

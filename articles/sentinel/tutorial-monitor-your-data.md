@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/04/2020
 ms.author: yelevin
-ms.openlocfilehash: 3f59fea9f6d96f6e259a47c75bcfb0fd0be76d34
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 63a9a6dc9f052c01a7440f616f0baeaab083ad73
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91826557"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91843079"
 ---
 # <a name="tutorial-visualize-and-monitor-your-data"></a>Руководство по Визуализация и мониторинг данных
 
@@ -62,7 +62,7 @@ ms.locfileid: "91826557"
 ## <a name="create-new-workbook"></a>Создание новой книги
 
 1. Чтобы создать новую книгу с нуля, выберите **Книги**, а затем **Добавить книгу**.
-  ![Переход к книгам](./media/tutorial-monitor-data/create-workbook.png)
+  ![Снимок экрана, на котором показан экран "Новая книга".](./media/tutorial-monitor-data/create-workbook.png)
 
 1. Чтобы изменить книгу, щелкните **Изменить** и добавьте нужные строки, запросы и (или) параметры. Дополнительные сведения о настройке книги см. в статье о [создании интерактивных отчетов с помощью книг Azure Monitor](../azure-monitor/platform/workbooks-overview.md). 
 
@@ -72,7 +72,7 @@ ms.locfileid: "91826557"
 
 1. Если вы хотите, чтобы другие пользователи в организации могли использовать эту книгу, в разделе **Сохранить в** выберите **Общие отчеты**. Если книга должна быть доступна только вам, выберите **Мои отчеты**.
 
-1. Для переключения между книгами, размещенными в рабочем пространстве, последовательно выберите **Открыть** ![Переключение книг](./media/tutorial-monitor-data/switch.png) в верхней области любой книги. Справа откроется окно, где вы можете выбрать нужную книгу.
+1. Для переключения между книгами в рабочей области можно щелкнуть значок **Открыть** , чтобы открыть ![ книгу. ](./media/tutorial-monitor-data/switch.png) в верхней области любой книги. Справа откроется окно, где вы можете выбрать нужную книгу.
 
    ![Переключение книг](./media/tutorial-monitor-data/switch-workbooks.png)
 

@@ -1,17 +1,17 @@
 ---
 title: Использование тома на основе файлов Azure в Service Fabric приложении для сетки
 description: Узнайте, как сохранить состояние в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure в службе с помощью Azure CLI.
-author: dkkapur
+author: georgewallace
 ms.topic: conceptual
 ms.date: 11/21/2018
-ms.author: dekapur
+ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 54edc242260479a8f48cc4aae91845041fc2d376
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 01cee3dc3f6b67aba1e6f8455ed7b538a44fc6f7
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260105"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91842793"
 ---
 # <a name="mount-an-azure-files-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома службы файлов Azure в приложении "Сетка Service Fabric" 
 
@@ -19,9 +19,9 @@ ms.locfileid: "86260105"
 
 Чтобы подключить том в службе, создайте ресурс тома в приложении "Сетка Service Fabric" и затем укажите этот том в вашей службе.  Объявить ресурс тома и указать на него в ресурсе службы можно в [файлах ресурсов на основе YAML](#declare-a-volume-resource-and-update-the-service-resource-yaml) или [шаблоне развертывания на основе JSON](#declare-a-volume-resource-and-update-the-service-resource-json). Прежде чем подключить тома, сначала необходимо создать учетную запись хранения и [файловый ресурс в службе файлов Azure](../storage/files/storage-how-to-create-file-share.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 > [!NOTE]
-> **Известная ошибка развертывания на компьютере Windows RS5 Development.** Существует открытая ошибка с командлетом PowerShell New-Смбглобалмаппинг на компьютерах с Windows RS5, которые предотвращают подключение томов Азурефиле. Ниже приведен пример ошибки, которая возникает при подключении тома на основе Азурефиле на локальном компьютере разработки.
+> **Известная ошибка развертывания на компьютере Windows RS5 Development.** Существует открытая ошибка с командлетом PowerShell, New-SmbGlobalMapping на RS5 компьютерах Windows, которые предотвращают подключение томов Азурефиле. Ниже приведен пример ошибки, которая возникает при подключении тома на основе Азурефиле на локальном компьютере разработки.
 ```
 Error event: SourceId='System.Hosting', Property='CodePackageActivation:counterService:EntryPoint:131884291000691067'.
 There was an error during CodePackage activation.System.Fabric.FabricException (-2147017731)

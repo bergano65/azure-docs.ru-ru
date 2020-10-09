@@ -1,19 +1,20 @@
 ---
 title: Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
 description: Узнайте, как добавлять узлы в кластер Azure Service Fabric или удалять их из него на физическом или виртуальном компьютере под управлением Windows Server, расположенном в локальной системе или в любом облаке.
-author: dkkapur
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: dekapur
-ms.openlocfilehash: 9fa8b0970d198f9801c7661b9555db17cdf67b3c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 3e5f32274d2263bc5bf1bbec8f1626d519f8ca3f
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258720"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91842926"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
-После [создания автономного кластера Service Fabric на компьютерах под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md) потребности (бизнес-потребности) компании могут измениться, и вам нужно будет добавить или удалить несколько узлов в кластере. В данной статье содержатся детальные инструкции по выполнению этой задачи. Обратите внимание, что добавление и удаление узлов в кластерах локальной разработки не поддерживается.
+После [создания автономного кластера Service Fabric на компьютерах под Windows Server](service-fabric-cluster-creation-for-windows-server.md), потребности вашего бизнеса могут измениться, и вам потребуется добавить или удалить узлы в кластере, как описано в этой статье.
+
+> [!NOTE]
+> Функции добавления и удаления узлов не поддерживаются в кластерах локальной разработки.
 
 ## <a name="add-nodes-to-your-cluster"></a>Добавление узлов в кластер
 
@@ -29,7 +30,7 @@ ms.locfileid: "86258720"
 
 5. Запустите PowerShell с повышенными привилегиями и перейдите в расположение распакованного пакета.
 
-6. Запустите скрипт *AddNode.ps1*, указав параметры, описывающие новый узел, который будет добавлен. В следующем примере добавляется новый узел с именем VM5 с типом NodeType0 и IP-адресом 182.17.34.52, в ДО1 и демон:/DC1/R0. `ExistingClusterConnectionEndPoint`— Это конечная точка подключения для узла, уже существующего в существующем кластере, который может быть IP-адресом *любого* узла в кластере. 
+6. Запустите скрипт *AddNode.ps1*, указав параметры, описывающие новый узел, который будет добавлен. В следующем примере добавляется новый узел с именем VM5 с типом NodeType0 и IP-адресом 182.17.34.52, в ДО1 и демон:/DC1/R0. `ExistingClusterConnectionEndPoint` — Это конечная точка подключения для узла, уже существующего в существующем кластере, который может быть IP-адресом *любого* узла в кластере. 
 
    Небезопасные (создание прототипов):
 
@@ -95,7 +96,7 @@ ms.locfileid: "86258720"
 Вы можете удалить узел из кластера в ходе обновления конфигурации следующим образом:
 
 1. Выполните команду [Get-ServiceFabricClusterConfiguration](/powershell/module/servicefabric/get-servicefabricclusterconfiguration?view=azureservicefabricps), чтобы получить последний файл конфигурации, и *удалите* узел из раздела узлов.
-Добавьте параметр NodesToBeRemoved в раздел Setup в разделе FabricSettings. В качестве значений следует использовать разделенный запятыми список узлов, которые необходимо удалить.
+Добавьте параметр NodesToBeRemoved в раздел Setup в разделе FabricSettings. Значение должно быть списком имен узлов, разделенных запятыми, для узлов, которые необходимо удалить.
 
     ```
          "fabricSettings": [
@@ -132,7 +133,7 @@ ms.locfileid: "86258720"
 > 
 
 ### <a name="remove-node-types-from-your-cluster"></a>Удаление типов узлов из кластера
-Прежде чем удалить тип узла, перепроверьте, нет ли узлов, которые ссылаются на этот тип. Перед удалением соответствующего типа узла удалите эти узлы. После удаления всех соответствующих узлов NodeType можно удалить из конфигурации кластера и начать обновление конфигурации с помощью [ServiceFabricClusterConfigurationUpgrade](/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade?view=azureservicefabricps).
+Прежде чем удалить тип узла, проверьте, нет ли узлов, которые ссылаются на этот тип. Перед удалением соответствующего типа узла удалите эти узлы. После удаления всех соответствующих узлов NodeType можно удалить из конфигурации кластера и начать обновление конфигурации с помощью [ServiceFabricClusterConfigurationUpgrade](/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade?view=azureservicefabricps).
 
 
 ### <a name="replace-primary-nodes-of-your-cluster"></a>Замена основных узлов кластера

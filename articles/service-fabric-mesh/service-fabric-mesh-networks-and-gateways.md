@@ -1,17 +1,17 @@
 ---
 title: Общие сведения об Azure Service Fabric Networking
 description: Сведения о сетях, шлюзах и интеллектуальной маршрутизации трафика в службе "Сетка Service Fabric".
-author: dkkapur
+author: georgewallace
 ms.topic: conceptual
 ms.date: 11/26/2018
-ms.author: dekapur
+ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: dc793e2991783cc9b7b46d92fcc8e0267feb529b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 372e8a46bfe588aa22b0f3be0ef8ae442fa342e2
+ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75459141"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91842705"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Общие сведения о сетевых подключениях в приложениях службы "Сетка Service Fabric"
 В этой статье описываются разные подсистемы балансировки нагрузки, подключение сетей с приложениями к другим сетям через шлюзы, а также маршрутизация трафика между службами в приложениях.
@@ -34,7 +34,7 @@ ms.locfileid: "75459141"
 
 Создаваемое в среде "Сетка Service Fabric" приложение должно ссылаться на существующий сетевой ресурс. Вы можете добавить общие порты или удалить имеющиеся порты из конфигурации входящего трафика. Удаление сетевого ресурса завершится ошибкой, если на него есть ссылка в ресурсе приложения. При удалении приложения сетевой ресурс удаляется автоматически.
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)
 
