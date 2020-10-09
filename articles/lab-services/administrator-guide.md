@@ -4,10 +4,10 @@ description: Это руководство поможет администрат
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: ad3bc110d93efb5b735f77fb8a0b2af9e4f9a7cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85444154"
 ---
 # <a name="azure-lab-services---administrator-guide"></a>Службы лабораторий Azure: руководство для администратора
@@ -117,7 +117,7 @@ ms.locfileid: "85444154"
 | Группа ресурсов | Содержит одну или несколько учетных записей лаборатории и одну или несколько общих коллекций образов | \<organization short name\>-\<environment\>-RG<ul><li>**Краткое имя организации** определяет имя организации, которую поддерживает группа ресурсов</li><li>**Среда** определяет среду для ресурса, например, "пилотная" или "рабочая".</li><li>**Rg** означает тип ресурса: группа ресурсов.</li></ul> | contosouniversitylabs-rg<br/>contosouniversitylabs-pilot-rg<br/>contosouniversitylabs-prod-rg |
 | Учетная запись лаборатории | Содержит одну или несколько лабораторий | \<organization short name\>-\<environment\>-Ла<ul><li>**Краткое имя организации** определяет имя организации, которую поддерживает группа ресурсов</li><li>**Среда** определяет среду для ресурса, например, "пилотная" или "рабочая".</li><li>**La** означает тип ресурса: учетная запись лаборатории.</li></ul> | contosouniversitylabs-la<br/>mathdeptlabs-la<br/>sciencedeptlabs-pilot-la<br/>sciencedeptlabs-prod-la |
 | Лаборатория для аудитории | Содержит одну или несколько виртуальных машин |\<class name\>-\<timeframe\>-\<educator identifier\><ul><li>**Имя класса** определяет имя класса, поддерживаемого лабораторией.</li><li>**Интервал времени** определяет интервал времени для класса.</li>**Идентификатор преподавателя** определяет преподавателя, которому принадлежит лаборатория.</li></ul> | CS1234-fall2019-johndoe<br/>CS1234-spring2019-johndoe |
-| Общая коллекция образов | Содержит одну или несколько версий образа виртуальной машины | \<organization short name\>gallery | contosouniversitylabsgallery |
+| Общая коллекция образов | Содержит одну или несколько версий образа виртуальной машины | \<organization short name\>Галерея | contosouniversitylabsgallery |
 
 Дополнительные сведения см. в статье [Соглашения об именовании для ресурсов Azure](/azure/architecture/best-practices/naming-conventions).
 

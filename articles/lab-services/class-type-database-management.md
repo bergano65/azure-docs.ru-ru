@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: 49f1528f1bb8b422374050512a9ae642ad129fac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85444018"
 ---
 # <a name="set-up-a-lab-to-teach-database-management-for-relational-databases"></a>Настройка лаборатории для обучения управления базой данных для реляционных баз данных
@@ -59,7 +59,7 @@ SQL Server 2019 предварительно установлен в образ 
 
 В этой статье описаны шаги, необходимые для создания лаборатории для основных концепций управления базами данных с помощью MySQL и SQL Server. Аналогичную программу установки можно использовать для других классов баз данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дальнейшие действия являются общими для настройки любой лаборатории.
 

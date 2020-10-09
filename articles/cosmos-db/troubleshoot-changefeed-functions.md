@@ -8,10 +8,10 @@ ms.author: maquaran
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.openlocfilehash: 7bf7d418e3f2680b32f61e42cffc76c921068508
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79365514"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-functions-trigger-for-cosmos-db"></a>Диагностика и устранение неполадок при использовании триггера функций Azure для Cosmos DB
@@ -119,7 +119,7 @@ ms.locfileid: "79365514"
 
 Как упоминалось ранее, для того [чтобы изменения вступили в силу слишком долго](./troubleshoot-changefeed-functions.md#my-changes-take-too-long-to-be-received), функция Azure будет в спящем режиме на настраиваемое время (по умолчанию 5 секунд), прежде чем проверять наличие новых изменений (чтобы избежать высокой степени потребления единиц запросов). Это время ожидания можно настроить с помощью параметра `FeedPollDelay/feedPollDelay` в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration) триггера (значение следует указать в миллисекундах).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Включение мониторинга для функций Azure](../azure-functions/functions-monitoring.md)
 * [Устранение неполадок пакета SDK для .NET Azure Cosmos DB](./troubleshoot-dot-net-sdk.md)

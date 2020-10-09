@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
 ms.openlocfilehash: 4810de772e44be22ee5bd4a9fb6ef0ef756e62f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77085208"
 ---
 # <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Как настроить MSAL для iOS и macOS для использования разных поставщиков удостоверений
@@ -26,7 +26,7 @@ ms.locfileid: "77085208"
 
 ## <a name="default-authority-configuration"></a>Конфигурация центра по умолчанию
 
-`MSALPublicClientApplication`настроен с URL-адресом центра по умолчанию `https://login.microsoftonline.com/common` , который подходит для большинства сценариев Azure Active Directory (AAD). Если вы не реализуете сложные сценарии, такие как национальные облака или работа с B2C, вам не нужно изменять их.
+`MSALPublicClientApplication` настроен с URL-адресом центра по умолчанию `https://login.microsoftonline.com/common` , который подходит для большинства сценариев Azure Active Directory (AAD). Если вы не реализуете сложные сценарии, такие как национальные облака или работа с B2C, вам не нужно изменять их.
 
 > [!NOTE]
 > Современная проверка подлинности с службы федерации Active Directory (AD FS) в качестве поставщика удостоверений (ADFS) не поддерживается (Дополнительные сведения см. в разделе [ADFS для разработчиков](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios) ). Службы ADFS поддерживаются через Федерацию.
@@ -240,11 +240,11 @@ do{
 
 ### <a name="msalaadauthority"></a>мсалаадаусорити
 
-`MSALAADAuthority`представляет центр AAD. URL-адрес центра сертификации должен иметь следующий формат, где `<port>` является необязательным:`https://<host>:<port>/<tenant>`
+`MSALAADAuthority` представляет центр AAD. URL-адрес центра сертификации должен иметь следующий формат, где `<port>` является необязательным: `https://<host>:<port>/<tenant>`
 
 ### <a name="msalb2cauthority"></a>MSALB2CAuthority
 
-`MSALB2CAuthority`представляет центр B2C. По умолчанию URL-адрес центра B2C должен иметь следующий формат, где `<port>` является необязательным: `https://<host>:<port>/tfp/<tenant>/<policy>` . Однако MSAL также поддерживает другие произвольные форматы центра B2C.
+`MSALB2CAuthority` представляет центр B2C. По умолчанию URL-адрес центра B2C должен иметь следующий формат, где `<port>` является необязательным: `https://<host>:<port>/tfp/<tenant>/<policy>` . Однако MSAL также поддерживает другие произвольные форматы центра B2C.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

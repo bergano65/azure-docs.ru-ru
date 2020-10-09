@@ -12,10 +12,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: ac681bb13ccea49c7a2f566a6fcdb6adb8cec5bb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81683747"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
@@ -82,7 +82,7 @@ ms.locfileid: "81683747"
 
 В следующих разделах описаны другие разделы схемы JSON.
 
-## <a name="simulation"></a>Simulation
+## <a name="simulation"></a>Моделирование
 
 В разделе `Simulation` определите внутреннее состояние имитированного устройства. Все значения телеметрии, отправленные устройством, должны быть частью состояния устройства.
 
@@ -117,7 +117,7 @@ ms.locfileid: "81683747"
 
 Служба моделирования запускает файл **chiller-01-state.js** каждые 5 секунд, чтобы обновить состояние устройства. Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-state**. Это позволяет отличить их от файлов, которые реализуют метод реакции на события.
 
-## <a name="properties"></a>Элемент Property
+## <a name="properties"></a>Свойства
 
 Раздел `Properties` схемы определяет значения свойств, которые устройство передает в решение. Пример:
 
@@ -236,7 +236,7 @@ ms.locfileid: "81683747"
 
 Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-method**. Это позволяет отличить их от файлов, которые реализуют поведение состояния.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано, как создать пользовательскую модель имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

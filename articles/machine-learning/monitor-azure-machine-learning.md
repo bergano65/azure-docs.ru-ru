@@ -10,10 +10,10 @@ ms.author: aashishb
 author: aashishb
 ms.date: 03/05/2020
 ms.openlocfilehash: eb4f46322bec57fb4412d3ddebb345640556ca5c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78399104"
 ---
 # <a name="monitoring-azure-machine-learning"></a>Мониторинг Машинное обучение Azure
@@ -56,7 +56,7 @@ ms.locfileid: "78399104"
 
 Дополнительные сведения о фильтрации и разбиении см. в разделе [Advanced Features of Azure Monitor](/azure/azure-monitor/platform/metrics-charts).
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>видны узлы
 
 Вы можете получить доступ к оповещениям для Машинное обучение Azure, открыв **оповещения** в меню **Azure Monitor** . Дополнительные сведения о создании оповещений см. в статье [Создание, просмотр и Управление оповещениями метрик с помощью Azure Monitor](/azure/azure-monitor/platform/alerts-metric) .
 
@@ -85,7 +85,7 @@ ms.locfileid: "78399104"
 
 Для Машинное обучение Azure можно настроить следующие журналы:
 
-| Категория | Описание: |
+| Категория | Описание |
 |:---|:---|
 | амлкомпутеклустеревент | События из Машинное обучение Azure вычисление кластеров. |
 | амлкомпутеклустернодивент | События из узлов в кластере Машинное обучение Azure COMPUTE. |
@@ -147,7 +147,7 @@ ms.locfileid: "78399104"
     | distinct NodeId
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Справочные сведения о журналах и метриках см. в разделе [машинное обучение Azure мониторинг данных](monitor-resource-reference.md).
 - Сведения о работе с квотами, связанными с Машинное обучение Azure, см. в статье [Управление квотами и их запрос для ресурсов Azure](how-to-manage-quotas.md).

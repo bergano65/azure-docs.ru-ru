@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: robinsh
 ms.openlocfilehash: 60d0ef30a1c7d948a9e837a8bc37c76ace415545
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82024971"
 ---
-# <a name="automatic-iot-device-and-module-management-using-the-azure-cli"></a>Автоматическое управление устройствами IoT и модулем с помощью Azure CLI
+# <a name="automatic-iot-device-and-module-management-using-the-azure-cli"></a>Автоматическое управление устройствами IoT и модулями с помощью Azure CLI
 
 [!INCLUDE [iot-edge-how-to-deploy-monitor-selector](../../includes/iot-hub-auto-device-config-selector.md)]
 
@@ -130,7 +130,7 @@ ms.locfileid: "82024971"
 
 * --**config-id** — имя конфигурации, которая будет создана в центре IoT. Присвойте вашей конфигурации уникальное имя, содержащее до 128 букв в нижнем регистре. Не используйте пробелы и следующие недопустимые символы: `& ^ [ ] { } \ | " < > /`.
 
-* --**labels** — добавление меток для облегчения отслеживания конфигураций. Метка представляет собой пару имя и значение, которые описывают развертывание. Например, `HostPlatform, Linux` или `Version, 3.0.1`.
+* --**labels** — добавление меток для облегчения отслеживания конфигураций. Метка представляет собой пару имя и значение, которые описывают развертывание. Например, `HostPlatform, Linux` или `Version, 3.0.1`
 
 * --**content** — встроенный JSON или путь к целевому содержимому, которому должны быть заданы двойные требуемые свойства. 
 

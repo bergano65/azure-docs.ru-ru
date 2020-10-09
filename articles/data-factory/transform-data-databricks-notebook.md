@@ -12,10 +12,10 @@ ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d3c9f0df0d834ffe75d0b56e3c80a432c27ea38
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81419023"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
@@ -123,7 +123,7 @@ ms.locfileid: "81419023"
 2. Выходные данные в фабрике данных можно использовать с помощью выражения, такого как `'@activity('databricks notebook activity name').output.runOutput'` . 
 
    > [!IMPORTANT]
-   > При передаче объекта JSON значения можно получить, добавив имена свойств. Пример: `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`
+   > При передаче объекта JSON значения можно получить, добавив имена свойств. Например, `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`.
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Отправка библиотеки в Databricks
 

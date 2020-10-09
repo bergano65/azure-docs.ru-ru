@@ -7,10 +7,10 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: 38203cede755d776ba9142ad16e1bea1fd1637a6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82203681"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Ресурсы Azure Red Hat OpenShift
@@ -41,13 +41,13 @@ REST API Azure Red Hat OpenShift поддерживают следующие р�
 |Стандартный D16s v3|16|64 ГБ|
 |Стандартный D32s v3|32|128 ГБ|
 |-|-|-|
-|Стандартный E4s v3|4|32 ГБ|
+|Стандартный E4s v3|4|32 Гб|
 |Стандартный E8s v3|8|64 ГБ|
 |Стандартный E16s v3|16|128 ГБ|
 |Стандартный E32s v3|32|256 ГБ|
 |-|-|-|
 |Стандартный F8s v2|8|16 ГБ|
-|Стандартный F16s v2|16|32 ГБ|
+|Стандартный F16s v2|16|32 Гб|
 |Стандартный F32s v2|32|64 ГБ|
 
 ## <a name="master-node-sizes"></a>Размеры главного узла

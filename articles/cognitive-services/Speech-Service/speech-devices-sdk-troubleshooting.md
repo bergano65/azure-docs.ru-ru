@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: wellsi
 ms.openlocfilehash: c590e0972de289a36890a75b220eddbded701ea8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74815560"
 ---
 # <a name="troubleshoot-the-speech-devices-sdk"></a>Устранение неполадок пакета SDK для устройств, подключаемых к службе "Речь"
@@ -25,7 +25,7 @@ ms.locfileid: "74815560"
 
 Если при использовании службы распознавания речи возникают ошибки сертификатов, убедитесь, что устройство имеет правильные дату и время:
 
-1. Перейдите в **Параметры**. В разделе **Система** выберите **Дата и время**.
+1. Перейдите в меню **Параметры**. В разделе **Система** выберите **Дата и время**.
 
     ![В разделе "Параметры" выберите "Дата и время".](media/speech-devices-sdk/qsg-12.png)
 
@@ -35,6 +35,6 @@ ms.locfileid: "74815560"
 
     Когда время, установленное в комплекте разработки, соответствует времени ПК, это означает, что комплект разработки подключен к Интернету.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр заметки о выпуске](devices-sdk-release-notes.md)

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/14/2020
 ms.openlocfilehash: 26852ec77194714c8236856b7cb496170bf0d777
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81606326"
 ---
 # <a name="sort-transformation-in-mapping-data-flow"></a>Преобразование «Сортировка» в потоке данных сопоставления
@@ -24,7 +24,7 @@ ms.locfileid: "81606326"
 > [!NOTE]
 > Сопоставление потоков данных выполняется в кластерах Spark, которые распределяют данные между несколькими узлами и секциями. Если вы решили повторно секционировать данные в последующем преобразовании, вы можете потерять сортировку из-за перегруппировка данных.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ![Параметры сортировки](media/data-flow/sort.png "Сортировка")
 
@@ -62,6 +62,6 @@ BasketballStats sort(desc(PTS, true),
     asc(Age, true)) ~> Sort1
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После сортировки может потребоваться использовать [Преобразование «Статистическая обработка](data-flow-aggregate.md) »

@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.openlocfilehash: 29b5e9c7673b4a730a41bf7cf2b1c4a2a86209ed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77462111"
 ---
 # <a name="azure-functions-http-triggers-and-bindings-overview"></a>Общие сведения о триггерах и привязках HTTP в функциях Azure
@@ -45,7 +45,7 @@ ms.locfileid: "77462111"
 
 Функции 1. x автоматически имеют ссылку на пакет NuGet [Microsoft. Azure. веб-задания](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) , версия 2. x.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции из HTTP-запроса](./functions-bindings-http-webhook-trigger.md)
 - [Выходные привязки HTTP для Функций Azure](./functions-bindings-http-webhook-output.md)

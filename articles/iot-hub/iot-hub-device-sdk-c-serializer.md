@@ -10,10 +10,10 @@ ms.date: 09/06/2016
 ms.author: robinsh
 ms.custom: amqp
 ms.openlocfilehash: d4916d651638f0d1dbb4f10e0e0732f5c330d300
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81767015"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-serializer"></a>Пакет SDK для устройств Azure IoT для C — дополнительные сведения о сериализаторе
@@ -78,7 +78,7 @@ END_NAMESPACE(WeatherStation);
 | bool |Логическое |
 | ascii\_char\_ptr |строка ASCII |
 | EDM\_DATE\_TIME\_OFFSET |смещение даты и времени |
-| EDM\_GUID |Идентификатор GUID |
+| EDM\_GUID |Код GUID |
 | EDM\_BINARY |binary |
 | DECLARE\_STRUCT |сложный тип данных |
 
@@ -662,7 +662,7 @@ serializer_deinit();
 
 Все прочие описанные выше функции работают с библиотекой **serializer** точно так же, как и с библиотекой **IoTHubClient**. Дополнительные сведения см. в [предыдущей статье](iot-hub-device-sdk-c-iothubclient.md) этого цикла.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье подробно описаны уникальные аспекты библиотеки **сериализаторов** , содержащиеся в **пакете SDK для устройств Azure IOT для C**. С учетом предоставленной информации вы должны иметь хорошее представление об использовании моделей для отправки событий и получения сообщений из центра Интернета вещей.
 

@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 07/18/2019
 ms.author: robinsh
 ms.openlocfilehash: 2720f9acfa308294b30f9203ba80e3f9b426e1e9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81680725"
 ---
 # <a name="iot-remote-monitoring-and-notifications-with-azure-logic-apps-connecting-your-iot-hub-and-mailbox"></a>Удаленный мониторинг и отправка уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком
@@ -84,7 +84,7 @@ ms.locfileid: "81680725"
 
    ![Создание пространства имен служебной шины с помощью портала Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/1-create-service-bus-namespace-azure-portal.png)
 
-1. Выберите **Создать**. Дождитесь завершения развертывания, прежде чем переходить к следующему шагу.
+1. Нажмите кнопку **создания**. Дождитесь завершения развертывания, прежде чем переходить к следующему шагу.
 
 ### <a name="add-a-service-bus-queue-to-the-namespace"></a>Добавление очереди служебной шины в пространство имен
 
@@ -124,7 +124,7 @@ ms.locfileid: "81680725"
 
    ![Добавление конечной точки в Центр Интернета вещей на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/3-add-iot-hub-endpoint-azure-portal.png)
 
-1. Выберите **Создать**. После успешного создания конечной точки перейдите к следующему шагу.
+1. Нажмите кнопку **создания**. После успешного создания конечной точки перейдите к следующему шагу.
 
 ### <a name="add-a-routing-rule"></a>Добавление правила маршрутизации
 
@@ -142,7 +142,7 @@ ms.locfileid: "81680725"
 
    ![Добавление правила маршрутизации на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/4-add-routing-rule-azure-portal.png)
 
-1. Нажмите кнопку **Сохранить**. Панель **маршрутизации сообщений** можно закрыть.
+1. Щелкните **Сохранить**. Панель **маршрутизации сообщений** можно закрыть.
 
 ## <a name="create-and-configure-a-logic-app"></a>Создание и настройка приложения логики
 
@@ -162,7 +162,7 @@ ms.locfileid: "81680725"
 
    ![Создание приложения логики в портал Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-a-logic-app.png)
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **создания**.
 
 ### <a name="configure-the-logic-app-trigger"></a>Настройка триггера приложения логики
 
@@ -185,7 +185,7 @@ ms.locfileid: "81680725"
 
       ![Создание подключения к служебной шине для приложения логики на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/create-service-bus-connection-1.png)
 
-   1. Выберите политику служебной шины (RootManageSharedAccessKey). Затем выберите **создать**.
+   1. Выберите политику служебной шины (RootManageSharedAccessKey). Затем выберите  **создать**.
 
       ![Создание подключения к служебной шине для приложения логики на портале Azure](media/iot-hub-monitoring-notifications-with-azure-logic-apps/7-create-service-bus-connection-in-logic-app-azure-portal.png)
 
@@ -249,7 +249,7 @@ ms.locfileid: "81680725"
    > [!NOTE]
    > Возможно, поставщику услуг электронной почты потребуется проверить подлинность отправителя и убедиться, что именно вы отправили это сообщение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно создали приложение логики, обеспечивающее подключение между Центром Интернета вещей и почтовым ящиком для мониторинга температуры и отправки уведомлений.
 

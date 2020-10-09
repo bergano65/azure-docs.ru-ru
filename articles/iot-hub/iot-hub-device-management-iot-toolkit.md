@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
 ms.openlocfilehash: d85e0e967dd802a77ccbc11b884d7a9f2891524d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81688097"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
@@ -43,7 +43,7 @@ ms.locfileid: "81688097"
 
 Запустите средства Интернета вещей Azure для Visual Studio Code с различными параметрами управления.
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
@@ -97,7 +97,7 @@ ms.locfileid: "81688097"
 
 3. Результаты будут показаны в **выводе**  >  представления**центра Интернета вещей Azure** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как использовать расширение средств Интернета вещей Azure для Visual Studio Code с различными параметрами управления.
 

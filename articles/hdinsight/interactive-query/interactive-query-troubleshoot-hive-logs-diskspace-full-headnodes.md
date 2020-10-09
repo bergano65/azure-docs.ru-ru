@@ -8,17 +8,17 @@ ms.author: nisgoel
 ms.reviewer: jasonh
 ms.date: 03/05/2020
 ms.openlocfilehash: d843b942702d335065a5f3798572e34c71b4cd0e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78943968"
 ---
 # <a name="scenario-apache-hive-logs-are-filling-up-the-disk-space-on-the-head-nodes-in-azure-hdinsight"></a>Сценарий: журналы Apache Hive заполняют дисковое пространство головных узлов в Azure HDInsight.
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем, связанных с нехваткой дискового пространства на головных узлах в кластерах Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 В кластере Apache Hive или LLAP нежелательные журналы занимают все дисковое пространство на головных узлах. Из-за этого могут возникнуть следующие проблемы.
 
@@ -33,7 +33,7 @@ ambari_agent - Controller.py - [54697] - Controller - ERROR - Error:[Errno 28] N
 ambari_agent - HostCheckReportFileHandler.py - [54697] - ambari_agent.HostCheckReportFileHandler - ERROR - Can't write host check file at /var/lib/ambari-agent/data/hostcheck.result
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 В расширенных конфигурациях Hive-log4j параметр *log4j. append. РФА. максбаккупиндекс* опущен. Это вызывает бесконечное создание файлов журнала.
 

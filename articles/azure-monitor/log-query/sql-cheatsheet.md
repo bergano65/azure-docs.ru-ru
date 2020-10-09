@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/21/2018
 ms.openlocfilehash: c76ab145fd2fdd077075b345ecac9c6a473f2369
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75365195"
 ---
 # <a name="sql-to-azure-monitor-log-query-cheat-sheet"></a>Краткий справочник по запросам журнала SQL для Azure Monitor 
@@ -19,7 +19,7 @@ ms.locfileid: "75365195"
 
 ## <a name="sql-to-azure-monitor"></a>SQL в Azure Monitor
 
-Описание:                             |Запросы SQL                                                                                          |Запросы журнала Azure Monitor
+Описание                             |Запросы SQL                                                                                          |Запросы журнала Azure Monitor
 ----------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------
 Выбор всех данных из таблицы            |`SELECT * FROM dependencies`                                                                       |<code>dependencies</code>
 Выбор определенных столбцов из таблицы    |`SELECT name, resultCode FROM dependencies`                                                        |<code>dependencies <br>&#124; project name, resultCode</code>
@@ -41,6 +41,6 @@ Union                                   |`SELECT * FROM dependencies UNION SELEC
 Join                                    |`SELECT * FROM dependencies JOIN exceptions ON dependencies.operation_Id = exceptions.operation_Id`|<code>dependencies <br>&#124; join (exceptions) on operation_Id == operation_Id</code>
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пройдите занятия по [написанию запросов журналов в Azure Monitor](get-started-queries.md).

@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 0dd5ede110255b6e53bbc397e683e66b3beffc65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77019627"
 ---
 # <a name="connect-from-on-premises-to-cloudsimple-using-expressroute"></a>Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute
@@ -25,7 +25,7 @@ ms.locfileid: "77019627"
 
 Для установления подключения Global Reach из локальной среды требуется блок сетевых адресов **/29** .  Адресное пространство/29 используется для транзитной сети между каналами ExpressRoute.  Транзитная сеть не должна перекрываться ни с одной из виртуальных сетей Azure, локальных сетей или Клаудсимпле частными облачными сетями.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Перед установкой подключения между сетями и частными облаками Клаудсимпле необходимо создать канал ExpressRoute Azure.
 * Пользователь должен иметь права доступа для создания ключей авторизации в канале ExpressRoute.
@@ -77,6 +77,6 @@ ms.locfileid: "77019627"
     > [!IMPORTANT]
     > Отправка маршрута по умолчанию позволяет отправлять весь Интернет-трафик из частного облака с помощью локального подключения к Интернету.  Чтобы отключить маршрут по умолчанию, настроенный в частном облаке, и использовать локальный маршрут по умолчанию для подключения, укажите сведения в запрос в службу поддержки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о сетевых подключениях Azure](cloudsimple-azure-network-connection.md)  

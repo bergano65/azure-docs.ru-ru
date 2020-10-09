@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 04/27/2020
 ms.custom: seodec18
 ms.openlocfilehash: 6de9e31c3e79f6d704ef8b4749d41329dcc0bddb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82190692"
 ---
 # <a name="troubleshoot-apache-hadoop-hdfs-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop HDFS с помощью Azure HDInsight
@@ -21,7 +21,7 @@ ms.locfileid: "82190692"
 
 ## <a name="how-do-i-access-the-local-hdfs-from-inside-a-cluster"></a><a name="how-do-i-access-local-hdfs-from-inside-a-cluster"></a>Как получить доступ к локальной системе HDFS в пределах кластера?
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Вместо хранилища BLOB-объектов Azure или Azure Data Lake Storage для доступа к локальной системе HDFS в пределах кластера HDInsight используется командная строка и код приложения.
 
@@ -74,7 +74,7 @@ ms.locfileid: "82190692"
 
 ## <a name="storage-exception-for-write-on-blob"></a>Исключение хранилища для записи в большой двоичный объект
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 При использовании `hadoop` команд или `hdfs dfs` для записи файлов размером свыше 12 ГБ в кластер HBase может возникнуть следующая ошибка:
 
@@ -100,7 +100,7 @@ Caused by: com.microsoft.azure.storage.StorageException: The request body is too
         ... 7 more
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 В HBase в кластерах HDInsight размер блока по умолчанию при записи в службу хранилища Azure равен 256 КБ. Несмотря на то что это подходит при использовании API HBase или REST API, применение служебных программ командной строки `hadoop` или `hdfs dfs` вызовет ошибку.
 
