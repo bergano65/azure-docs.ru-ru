@@ -12,10 +12,10 @@ ms.date: 08/20/2019
 ms.author: negoe
 ms.custom: aaddev
 ms.openlocfilehash: eeba01a609a1a21ed564c0b9cb78a28a4ad5c95a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80882324"
 ---
 # <a name="single-page-application-acquire-a-token-to-call-an-api"></a>Одностраничное приложение: получение маркера для вызова API
@@ -24,8 +24,8 @@ ms.locfileid: "80882324"
 
 Запросы токенов без уведомления к Azure AD могут завершиться сбоем по причинам, например просроченному сеансу Azure AD или изменению пароля. В этом случае можно вызвать один из интерактивных методов (который будет предлагать пользователю) получить маркеры:
 
-* [Всплывающее окно](#acquire-a-token-with-a-pop-up-window)с помощью`acquireTokenPopup`
-* [Перенаправление](#acquire-a-token-with-a-redirect)с помощью`acquireTokenRedirect`
+* [Всплывающее окно](#acquire-a-token-with-a-pop-up-window)с помощью `acquireTokenPopup`
+* [Перенаправление](#acquire-a-token-with-a-redirect)с помощью `acquireTokenRedirect`
 
 ## <a name="choose-between-a-pop-up-or-redirect-experience"></a>Выбор между всплывающим окном или перенаправлением
 
@@ -70,7 +70,7 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 
 MSAL угловая оболочка предоставляет перехватчик HTTP, который автоматически получает маркеры доступа и прикрепляет их к HTTP-запросам к API.
 
-Области для API-интерфейсов можно указать в `protectedResourceMap` параметре конфигурации. `MsalInterceptor`запрашивает эти области при автоматическом получении маркеров.
+Области для API-интерфейсов можно указать в `protectedResourceMap` параметре конфигурации. `MsalInterceptor` запрашивает эти области при автоматическом получении маркеров.
 
 ```javascript
 // app.module.ts
@@ -196,7 +196,7 @@ myMSALObj.acquireTokenPopup(request);
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-spa-call-api.md)

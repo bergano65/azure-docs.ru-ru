@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: f1e861bf9c6cc2a485ac9f153a0c932ec2e6fbb2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85318915"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
@@ -32,7 +32,7 @@ ms.locfileid: "85318915"
 | [Примеры JSON](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/JSON) |В этой выборке представлены примеры кода JSON для распространенных сценариев. |
 | [Пример загрузчика данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |В этой выборке демонстрируется скачивание данных из конечной точки HTTP в хранилище BLOB-объектов Azure с помощью настраиваемого действия .NET. |
 | [Пример действия перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/CrossAppDomainDotNetActivitySample) |Этот пример позволяет создать настраиваемое действие .NET, не ограниченное версиями сборок, которые используются средством запуска фабрики данных Azure (например, WindowsAzure.Storage версии 4.3.0, Newtonsoft.Json версии 6.0.x и т. д.). |
-| [Выполнение скрипта R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
+| [Запуск скрипта R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
 | [Вызов заданий Spark в кластере HDInsight Hadoop](https://docs.microsoft.com/azure/data-factory/tutorial-transform-data-spark-portal) |В этом примере показано, как использовать действие MapReduce для запуска программы Spark. Программа Spark просто копирует данные из одного контейнера BLOB-объектов Azure в другой. |
 | [Анализ Twitter с использованием действия пакетной оценки показателей машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-AzureMLBatchScoringActivity) |В этом примере показано, как использовать AzureMLBatchScoringActivity для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
 | [Анализ Twitter с использованием настраиваемого действия](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |В этом примере показано, как использовать настраиваемое действие .NET для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
@@ -46,7 +46,7 @@ ms.locfileid: "85318915"
 ## <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 Следующие шаблоны Azure Resource Manager для фабрики данных можно найти на портале GitHub.
 
-| Шаблон | Описание: |
+| Шаблон | Описание |
 | --- | --- |
 | [Копирование из хранилища BLOB-объектов Azure в Базу данных SQL Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-blob-to-sql-copy) |При развертывании этого шаблона создается фабрика данных Azure с конвейером, который копирует данные из указанного хранилища BLOB-объектов Azure в базу данных SQL Azure. |
 | [Копирование из Salesforce в хранилище BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-salesforce-to-blob-copy) |Развертывание этого шаблона создает фабрику данных Azure с конвейером, который копирует данные из указанной учетной записи Salesforce в хранилище BLOB-объектов Azure. |
@@ -75,12 +75,12 @@ ms.locfileid: "85318915"
     ![Колонка "Фабрика данных"](./media/data-factory-samples/DataFactoryBladeAfter.png)
 
 ## <a name="samples-in-visual-studio"></a>Примеры в Visual Studio
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 На вашем компьютере должны быть установлены следующие компоненты:
 
 * Visual Studio 2013 или Visual Studio 2015.
 * Загрузите пакет SDK Azure для Visual Studio 2013 или Visual Studio 2015. Перейдите на [cтраницу загрузки Azure](https://azure.microsoft.com/downloads/) и щелкните **VS 2013** или **VS2015** в разделе **.NET**.
-* Скачайте последнюю версию подключаемого модуля Фабрики данных Azure для Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) или [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Если вы используете Visual Studio 2013, вы также можете обновить подключаемый модуль, выполнив следующие действия: в меню щелкните **Сервис**  ->  **расширения и обновления**в  ->  **Интернете**  ->  **Visual Studio Коллекция**  ->  **Microsoft Azure инструменты фабрики данных для Visual Studio**  ->  **Обновление**.
+* Скачайте последнюю версию подключаемого модуля фабрики данных Azure для Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) или [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Если вы используете Visual Studio 2013, вы также можете обновить подключаемый модуль, выполнив следующие действия: в меню щелкните **Сервис**  ->  **расширения и обновления**в  ->  **Интернете**  ->  **Visual Studio Коллекция**  ->  **Microsoft Azure инструменты фабрики данных для Visual Studio**  ->  **Обновление**.
 
 ### <a name="use-data-factory-templates"></a>Использование шаблонов фабрики данных
 1. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**.
@@ -98,12 +98,12 @@ ms.locfileid: "85318915"
     ![Диалоговое окно "Шаблоны фабрики данных"](./media/data-factory-samples/vs-data-factory-templates-dialog.png)
 4. В диалоговом окне **Data Factory Configuration** (Конфигурация фабрики данных) на странице **Data Factory Basics** (Основы фабрики данных) нажмите кнопку **Далее**.
 5. На странице **Configure data factory** (Настройка фабрики данных) выполните следующие действия:
-   1. Выберите элемент **Create New Data Factory** (Создать фабрику данных). Можно также выбрать **Использовать существующую фабрику данных**.
+   1. Выберите **создать новую фабрику данных**. Можно также выбрать **Использовать существующую фабрику данных**.
    2. Введите **имя** фабрики данных.
    3. Выберите **подписку Azure** , в рамках которой вы хотите создать фабрику данных.
    4. Выберите **группу ресурсов** для фабрики данных.
    5. В качестве **региона** выберите **западную часть США**, **восточную часть США** или **Северную Европу**.
-   6. Нажмите кнопку **Далее**.
+   6. Щелкните **Далее**.
 6. На странице **Настройка хранилищ данных** укажите существующую **базу данных в базе данных SQL Azure** и **учетной записи хранения Azure** (или) создайте базу данных или хранилище и нажмите кнопку Далее.
 7. На странице **Настройка вычислений** выберите значения по умолчанию и нажмите кнопку **Далее**.
 8. На странице **Сводка** проверьте все параметры и нажмите кнопку **Далее**.
@@ -113,7 +113,7 @@ ms.locfileid: "85318915"
 12. Вы должны увидеть следующее диалоговое окно:
 
     ![Диалоговое окно "Опубликовать"](./media/data-factory-build-your-first-pipeline-using-vs/publish.png)
-13. На странице **Настройка фабрики данных** выполните следующие действия.
+13. На странице **Configure data factory** (Настройка фабрики данных) выполните следующие действия:
 
     1. Убедитесь, что выбран параметр **Use existing data factory** (Использовать существующую фабрику данных).
     2. Выберите **фабрику данных**, выбранную при использовании шаблона.

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: aahi
 ms.openlocfilehash: 08af17106846a0f5f7a0ccc2b01da1b2e15c1143
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80879224"
 ---
 # <a name="deploy-the-language-understanding-luis-container-to-azure-container-instances"></a>Развертывание контейнера Language Understanding (LUIS) в службе "экземпляры контейнеров Azure"
@@ -29,11 +29,11 @@ ms.locfileid: "80879224"
 
 ## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
-Для контейнера LUIS требуется файл `.gz` модели, который извлекается во время выполнения. Контейнер должен иметь возможность доступа к этому файлу модели через подключение тома из экземпляра контейнера. Сведения о создании файлового ресурса Azure см. в разделе [Создание общей папки](../../storage/files/storage-how-to-create-file-share.md). Запишите имя учетной записи хранения Azure, ключ и имя общей папки, так как они понадобятся вам позже.
+Для контейнера LUIS требуется `.gz` файл модели, который извлекается во время выполнения. Контейнер должен иметь возможность доступа к этому файлу модели через подключение тома из экземпляра контейнера. Сведения о создании файлового ресурса Azure см. в разделе [Создание общей папки](../../storage/files/storage-how-to-create-file-share.md). Запишите имя учетной записи хранения Azure, ключ и имя общей папки, так как они понадобятся вам позже.
 
 ### <a name="export-and-upload-packaged-luis-app"></a>Экспорт и передача упакованного приложения LUIS
 
-Чтобы передать модель LUIS (упакованное приложение) в общую папку Azure, <a href="luis-container-howto.md#export-packaged-app-from-luis" target="_blank" rel="noopener">сначала <span class="docon docon-navigate-external x-hidden-focus"> </span>необходимо экспортировать ее с портала Luis </a>. На портал Azure перейдите на страницу **Обзор** ресурса учетной записи хранения и выберите **файловые ресурсы**. Выберите имя общей папки, которое вы недавно создали, а затем нажмите кнопку **Отправить** .
+Чтобы передать модель LUIS (упакованное приложение) в общую папку Azure, <a href="luis-container-howto.md#export-packaged-app-from-luis" target="_blank" rel="noopener">сначала <span class="docon docon-navigate-external x-hidden-focus"></span> необходимо экспортировать ее с портала Luis </a>. На портал Azure перейдите на страницу **Обзор** ресурса учетной записи хранения и выберите **файловые ресурсы**. Выберите имя общей папки, которое вы недавно создали, а затем нажмите кнопку **Отправить** .
 
 > [!div class="mx-imgBorder"]
 > ![Отправить в общую папку](media/luis-how-to-deploy-to-aci/upload-file-share.png)

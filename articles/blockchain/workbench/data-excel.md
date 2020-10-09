@@ -5,10 +5,10 @@ ms.date: 09/05/2019
 ms.topic: how-to
 ms.reviewer: mmercuri
 ms.openlocfilehash: 4dd941abdded6a93510f4a71119769cd73855bcc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85253551"
 ---
 # <a name="view-azure-blockchain-workbench-data-with-microsoft-excel"></a>Просмотр данных Azure Blockchain Workbench с помощью Microsoft Excel
@@ -60,7 +60,7 @@ Microsoft Excel можно использовать для просмотра д
 
 После загрузки данных вы можете использовать функции Excel, чтобы создавать собственные отчеты с помощью метаданных и данных транзакций из базы данных Azure Blockchain Workbench.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

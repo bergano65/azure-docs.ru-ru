@@ -8,10 +8,10 @@ ms.prod: kinect-dk
 ms.topic: conceptual
 keywords: Kinect, Azure, Настройка, глубина, цвет, РБГ, Камера, датчик, пакет SDK, иму, датчик движения, движение, гироскопом, Гиро, акселерометр, кадров/с
 ms.openlocfilehash: 649dd5b9de62d43d59e74d53adff1ec7de8dfd32
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276944"
 ---
 # <a name="retrieve-azure-kinect-imu-samples"></a>Получение примеров Azure Kinect иму
@@ -63,7 +63,7 @@ if (K4A_RESULT_SUCCEEDED != k4a_device_start_imu(device))
 3. Получение всех примеров иму в очереди.
 4. Повторите ожидание следующей записи.
 
-Чтобы получить все текущие образцы иму в очереди, можно вызвать [`k4a_device_get_imu_sample()`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga8e5913b3bb94a453c7143bbd6e399a0e.html#ga8e5913b3bb94a453c7143bbd6e399a0e) с `timeout_in_ms` 0 в цикле до тех пор, пока функция не вернет значение `K4A_WAIT_RESULT_TIMEOUT` . `K4A_WAIT_RESULT_TIMEOUT`Указывает, что отсутствуют образцы в очереди, и они не поступили за указанное время ожидания.
+Чтобы получить все текущие образцы иму в очереди, можно вызвать [`k4a_device_get_imu_sample()`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga8e5913b3bb94a453c7143bbd6e399a0e.html#ga8e5913b3bb94a453c7143bbd6e399a0e) с `timeout_in_ms` 0 в цикле до тех пор, пока функция не вернет значение `K4A_WAIT_RESULT_TIMEOUT` . `K4A_WAIT_RESULT_TIMEOUT` Указывает, что отсутствуют образцы в очереди, и они не поступили за указанное время ожидания.
 
 ## <a name="usage-example"></a>Пример использования
 
@@ -96,7 +96,7 @@ if (imu_sample != NULL)
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы умеете работать с примерами иму, вы также можете
 >[!div class="nextstepaction"]

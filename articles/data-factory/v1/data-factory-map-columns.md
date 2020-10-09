@@ -12,10 +12,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: af7a1e40f21b6c9af490abe6f58edcaf798818b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85318881"
 ---
 # <a name="map-source-dataset-columns-to-destination-dataset-columns"></a>Сопоставление столбцов исходного набора данных со столбцами целевого набора данных
@@ -178,7 +178,7 @@ ms.locfileid: "85318881"
 
 ![Процесс сопоставления столбцов 2](./media/data-factory-map-columns/column-mapping-flow-2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с руководством по использованию действия копирования в следующей статье: 
 
 - [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)

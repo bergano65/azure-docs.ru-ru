@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, Azure, датчик, пакет SDK, глубина, RGB, запись, воспроизведение, матроска, MKV
 ms.openlocfilehash: fe403f314c1df415537d090433f34627eb1249e7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276914"
 ---
 # <a name="the-azure-kinect-playback-api"></a>API воспроизведения Kinect Azure
@@ -134,13 +134,13 @@ else
 
 Если тег не существует, предполагается, что оно имеет значение по умолчанию.
 
-| Имя тега                     | Значение по умолчанию      | [`k4a_record_configuration_t`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/structk4a__record__configuration__t.html)Полями | Примечания     |
+| Имя тега                     | Значение по умолчанию      | [`k4a_record_configuration_t`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/structk4a__record__configuration__t.html) Полями | Примечания     |
 |------------------------------|--------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | `K4A_COLOR_MODE`             | АВТОНОМ              | `color_format` / `color_resolution`  | Возможные значения: "OFF", "MJPG_1080P", "NV12_720P", "YUY2_720P" и т. д.                                      |
 | `K4A_DEPTH_MODE`             | АВТОНОМ              | `depth_mode` / `depth_track_enabled` | Возможные значения: "OFF", "NFOV_UNBINNED", "PASSIVE_IR" и т. д.                                                |
 | `K4A_IR_MODE`                | АВТОНОМ              | `depth_mode` / `ir_track_enabled`    | Возможные значения: "Выкл.", "ACTIVE", "PASSIVE"                                                                    |
 | `K4A_IMU_MODE`               | АВТОНОМ              | `imu_track_enabled`                  | Возможные значения: "ON", "OFF"                                                                                   |
-| `K4A_CALIBRATION_FILE`       | "calibration.jsна" | Н/Д                                  | Смотрите[`k4a_device_get_raw_calibration()`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga8c4e46642cee3115aeb0b33e2b43b24f.html#ga8c4e46642cee3115aeb0b33e2b43b24f) |
+| `K4A_CALIBRATION_FILE`       | "calibration.jsна" | Н/Д                                  | См. [`k4a_device_get_raw_calibration()`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga8c4e46642cee3115aeb0b33e2b43b24f.html#ga8c4e46642cee3115aeb0b33e2b43b24f) |
 | `K4A_DEPTH_DELAY_NS`         | "0"                | `depth_delay_off_color_usec`         | Значение, хранящееся в наносекундах, API — микросекунды.                                                        |
 | `K4A_WIRED_SYNC_MODE`        | АВТОНОМНОГО       | `wired_sync_mode`                    | Возможные значения: «STANDALONE», «MASTER», «ПОДЧИНЕНный»                                                         |
 | `K4A_SUBORDINATE_DELAY_NS`   | "0"                | `subordinate_delay_off_master_usec`  | Значение, хранящееся в наносекундах, API — микросекунды.                                                        |
@@ -148,10 +148,10 @@ else
 | `K4A_DEPTH_FIRMWARE_VERSION` | ""                 | Н/Д                                  | Версия встроенного по глубины устройства, например "1. x. XX"                                                            |
 | `K4A_DEVICE_SERIAL_NUMBER`   | ""                 | Н/Д                                  | Запись серийного номера устройства                                                                                 |
 | `K4A_START_OFFSET_NS`        | "0"                | `start_timestamp_offset_usec`        | См. сведения о [синхронизации меток времени](record-playback-api.md#timestamp-synchronization) ниже.                       |
-| `K4A_COLOR_TRACK`            | Отсутствуют               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
-| `K4A_DEPTH_TRACK`            | Отсутствуют               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
-| `K4A_IR_TRACK`               | Отсутствуют               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
-| `K4A_IMU_TRACK`              | Отсутствуют               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
+| `K4A_COLOR_TRACK`            | None               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
+| `K4A_DEPTH_TRACK`            | None               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
+| `K4A_IR_TRACK`               | None               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
+| `K4A_IMU_TRACK`              | None               | Н/Д                                  | См. раздел [запись формата файла — определение дорожек](record-file-format.md#identifying-tracks).                     |
 
 ## <a name="timestamp-synchronization"></a>Синхронизация меток времени
 

@@ -12,10 +12,10 @@ ms.date: 10/01/2017
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 5d83f05c16004edc3ad4842b7e4e9d4b9babe577
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85319073"
 ---
 # <a name="troubleshoot-issues-with-using-data-management-gateway"></a>Устранение неполадок в работе шлюза управления данными
@@ -32,7 +32,7 @@ ms.locfileid: "85319073"
 
 `Unable to connect to the remote server". Please check your local settings (Error Code: 10003).`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Компьютеру, на который вы пытаетесь установить шлюз, не удалось скачать последний файл установки шлюза из центра загрузки из-за проблемы в сети.
 
 #### <a name="resolution"></a>Решение
@@ -45,7 +45,7 @@ ms.locfileid: "85319073"
 
 `Error:  Abort installing a new gateway on this computer because this computer has an existing installed gateway and a computer without any installed gateway is required for installing a new gateway.`  
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Шлюз уже установлен на компьютере.
 
 #### <a name="resolution"></a>Решение
@@ -56,7 +56,7 @@ ms.locfileid: "85319073"
 
 `Error: The gateway has encountered an error during registration.`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Это сообщение может отображаться по одной из следующих причин:
 
 * недопустимый формат ключа шлюза;
@@ -75,7 +75,7 @@ ms.locfileid: "85319073"
 
 ![Недопустимое содержимое или формат ключа](media/data-factory-troubleshoot-gateway-issues/invalid-format-gateway-key.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Содержимое или формат входного ключа шлюза неправильные. Одной из причин может быть копирование части ключа на портале или использование недопустимого ключа.
 
 #### <a name="resolution"></a>Решение
@@ -88,7 +88,7 @@ ms.locfileid: "85319073"
 
 ![Ключ шлюза является недопустимым или пустым](media/data-factory-troubleshoot-gateway-issues/gateway-key-is-invalid-or-empty.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Ключ шлюза создан повторно или шлюз удален на портале Azure. Это также может произойти, если установлена не последняя версия шлюза управления данными.
 
 #### <a name="resolution"></a>Решение
@@ -103,7 +103,7 @@ ms.locfileid: "85319073"
 
 ![Ключ шлюза является недопустимым или пустым](media/data-factory-troubleshoot-gateway-issues/gateway-not-registered-key-invalid.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Эта ошибка может возникать из-за удаления шлюза или повторного создания ключа соответствующего шлюза.
 
 #### <a name="resolution"></a>Решение
@@ -116,7 +116,7 @@ ms.locfileid: "85319073"
 
 ![Выбор сертификата](media/data-factory-troubleshoot-gateway-issues/specify-certificate.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Этот шлюз ранее зарегистрирован на других компьютерах. Во время первоначальной регистрации шлюза с ним связывается сертификат шифрования. Сертификат может быть создан шлюзом или предоставлен пользователем.  Этот сертификат используется для шифрования учетных данных хранилища данных (связанные службы).  
 
 ![Экспорт сертификата](media/data-factory-troubleshoot-gateway-issues/export-certificate.png)
@@ -133,7 +133,7 @@ ms.locfileid: "85319073"
 
 `Error: The remote server returned an error: (407) Proxy Authentication Required.`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Эта ошибка возникает, если шлюз находится в среде, которой для доступа к интернет-ресурсам требуется прокси-сервер HTTP, или если пароль для аутентификации прокси-сервера изменился, но не обновился соответствующим образом в шлюзе.
 
 #### <a name="resolution"></a>Решение
@@ -143,7 +143,7 @@ ms.locfileid: "85319073"
 ### <a name="1-problem"></a>1. проблема
 Шлюз находится в состоянии "в сети с ограниченной функциональностью".
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Шлюз может находиться в состоянии "в сети с ограниченной функциональностью" по одной из следующих причин:
 
 * шлюзу не удается подключиться к облачной службе через служебную шину Azure;
@@ -161,7 +161,7 @@ ms.locfileid: "85319073"
 
 ![Шлюзу не удается подключиться к облачной службе](media/data-factory-troubleshoot-gateway-issues/gateway-cannot-connect-to-cloud-service.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Шлюзу не удается подключиться к облачной службе через служебную шину.
 
 #### <a name="resolution"></a>Решение
@@ -176,7 +176,7 @@ ms.locfileid: "85319073"
 
 `Error: Cloud service cannot connect to gateway through service bus.`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Временная ошибка подключения к сети.
 
 #### <a name="resolution"></a>Решение
@@ -195,7 +195,7 @@ ms.locfileid: "85319073"
 
 ![Не удается получить доступ к базе данных](media/data-factory-troubleshoot-gateway-issues/database-cannot-be-reached.png)
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Возможно, на компьютере шлюза был потерян сертификат TLS/SSL. Компьютеру шлюза не удается загрузить сертификат, который в настоящее время используется для шифрования TLS. Кроме того, в журнале событий также может появиться сообщение об ошибке примерно следующего вида.
 
  `Unable to get the gateway settings from cloud service. Check the gateway key and the network connection. (Certificate with thumbprint cannot be loaded.)`
@@ -218,7 +218,7 @@ ms.locfileid: "85319073"
 
 `Error: Copy activity encountered a user error: ErrorCode=UserErrorFailedToConnectToSqlServer,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Cannot connect to SQL Server`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 Она может возникнуть по разным причинам, от которых зависят и способы ее устранения.
 
 #### <a name="resolution"></a>Решение

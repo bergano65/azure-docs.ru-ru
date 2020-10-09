@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: references_regions
 ms.openlocfilehash: 9c431cebddb210add496dcca20a0334cc5b12bd8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85337959"
 ---
 # <a name="how-to-view-kubernetes-logs-events-and-pod-metrics-in-real-time"></a>Просмотр журналов Kubernetes, событий и метрик Pod в режиме реального времени
@@ -24,7 +24,7 @@ Azure Monitor для контейнеров включает функцию ин
 
 ## <a name="live-data-preview-functionality-overview"></a>Обзор функций интерактивных данных (Предварительная версия)
 
-### <a name="search"></a>Найти
+### <a name="search"></a>Поиск
 
 ![Пример фильтра области консоли динамических данных](./media/container-insights-livedata-overview/livedata-pane-filter-example.png)
 
@@ -109,7 +109,7 @@ Azure Monitor для контейнеров включает функцию ин
 
 ![Пример просмотра метрик Pod](./media/container-insights-livedata-overview/pod-properties-live-metrics.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы продолжить изучение способов использования Azure Monitor и отслеживать другие аспекты кластера AKS, ознакомьтесь со статьей [Общие сведения о мониторинге производительности кластера AKS с помощью Azure Monitor для контейнеров (предварительная версия)](container-insights-analyze.md).
 

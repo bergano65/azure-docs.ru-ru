@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Azure, Kinect, датчик, средство просмотра, визуализация, глубина, RGB, цвет, иму, аудио, микрофон, точка облака
 ms.openlocfilehash: 57cf7df831e97da4143a7f196b69a3a10609a017
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276932"
 ---
 # <a name="azure-kinect-viewer"></a>Средство просмотра Kinect Azure
@@ -108,7 +108,7 @@ Azure Kinect Viewer — это [открытый исходный код](https:
 
 ![Внешняя синхронизация управления](./media/how-to-guides/sync-control.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Инструкции по настройке внешней синхронизации](https://support.microsoft.com/help/4494429/sync-multiple-azure-kinect-dk-devices)

@@ -4,10 +4,10 @@ description: Эта статья содержит таблицу с описан
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 97640debe81041ff7e2b082c6a9ac606d6088664
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85314270"
 ---
 # <a name="azure-relay-port-settings"></a>Параметры порта ретрансляции Azure
@@ -20,7 +20,7 @@ ms.locfileid: "85314270"
 
 ## <a name="wcf-relays"></a>Ретрансляторы WCF
   
-|Привязка|Безопасность транспорта|Port|  
+|Привязка|Безопасность транспорта|Порт|  
 |-------------|------------------------|----------|  
 |[Класс BasicHttpRelayBinding](/dotnet/api/microsoft.servicebus.basichttprelaybinding) (клиент)|Да|HTTPS| 
 |" |Нет|HTTP|  
@@ -39,7 +39,7 @@ ms.locfileid: "85314270"
 |" |Нет|HTTP|  
 |[Класс WS2007HttpRelayBinding](/dotnet/api/microsoft.servicebus.ws2007httprelaybinding) (служба)|Можно использовать|9351/HTTP|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
-* [Что такое ретранслятор Azure?](relay-what-is-it.md)
+* [Что такое Azure Relay?](relay-what-is-it.md)
 * [Вопросы и ответы по ретранслятору](relay-faq.md)

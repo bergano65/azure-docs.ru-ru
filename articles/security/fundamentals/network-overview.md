@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
 ms.openlocfilehash: 496ee1bc97f6b72e09a62ae3491af7ccc7328583
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80811101"
 ---
 # <a name="azure-network-security-overview"></a>Обзор сетевой безопасности Azure
@@ -46,7 +46,7 @@ Azure требует подключения виртуальных машин к
 
 Дополнительные сведения:
 
-* [Обзор виртуальной сети](../../virtual-network/virtual-networks-overview.md)
+* [Общие сведения о виртуальных сетях](../../virtual-network/virtual-networks-overview.md)
 
 ## <a name="network-access-control"></a>Управление доступом к сети
 
@@ -93,7 +93,7 @@ Azure поддерживает несколько типов контроля д
 
 Дополнительные сведения:
 
-* [Конечные точки служб](../../virtual-network/virtual-network-service-endpoints-overview.md#secure-azure-services-to-virtual-networks)
+* [Конечные точки службы](../../virtual-network/virtual-network-service-endpoints-overview.md#secure-azure-services-to-virtual-networks)
 
 ### <a name="route-control-and-forced-tunneling"></a>Управление маршрутами и принудительное туннелирование
 
@@ -179,7 +179,7 @@ VPN-подключение "точка — сеть" позволяет наст
 Дополнительные сведения:
 
 * [Создание диспетчер ресурсов виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью портал Azure](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-* [Основные сведения о VPN-шлюзе Azure](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
+* [Сведения о VPN-шлюзе](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
 
 ### <a name="connect-your-on-premises-network-to-a-virtual-network-with-a-dedicated-wan-link"></a>Подключение локальной сети к виртуальной с помощью выделенного канала глобальной сети
 
@@ -265,7 +265,7 @@ VPN-подключения "точка — сеть" и "сеть — сеть" 
 
 Дополнительные сведения:
 
-* [Что такое диспетчер трафика](../../traffic-manager/traffic-manager-overview.md)
+* [Что такое диспетчер трафика?](../../traffic-manager/traffic-manager-overview.md)
 
 ## <a name="name-resolution"></a>Разрешение имен
 
@@ -283,7 +283,7 @@ VPN-подключения "точка — сеть" и "сеть — сеть" 
 
 Дополнительные сведения:
 
-* [Обзор виртуальной сети](../../virtual-network/virtual-networks-overview.md)
+* [Общие сведения о виртуальных сетях](../../virtual-network/virtual-networks-overview.md)
 * [Управление DNS-серверами, используемыми виртуальной сетью](../../virtual-network/manage-virtual-network.md#change-dns-servers)
 
 Для разрешения внешних имен доступны два варианта:

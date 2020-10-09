@@ -5,10 +5,10 @@ ms.date: 11/22/2019
 ms.topic: conceptual
 ms.reviewer: janders
 ms.openlocfilehash: 989d9f2afad30517a85185878d694c0b6640e987
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80879604"
 ---
 # <a name="azure-blockchain-service-security"></a>Безопасность службы Блокчейн Azure
@@ -33,7 +33,7 @@ ms.locfileid: "80879604"
 
 Существует три режима проверки подлинности для доступа RPC.
 
-### <a name="basic-authentication"></a>обычная проверка подлинности
+### <a name="basic-authentication"></a>Обычная проверка подлинности
 
 Обычная проверка подлинности использует заголовок проверки подлинности HTTP, содержащий имя пользователя и пароль. Имя пользователя — это имя узла блокчейн. Пароль задается во время подготовки элемента или узла. Пароль можно изменить с помощью портал Azure или интерфейса командной строки.
 
@@ -57,6 +57,6 @@ Azure Active Directory (Azure AD) использует механизм пров
 
 Ключи несчастливых используются для уникальной идентификации узла кворума. Ключи несчастливых создаются во время подготовки узла и указываются в параметре Приватефор закрытой транзакции в кворуме.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. статью [настройка Azure Active Directoryного доступа для службы Azure блокчейн](configure-aad.md).

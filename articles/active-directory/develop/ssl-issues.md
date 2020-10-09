@@ -13,10 +13,10 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.custom: aaddev
 ms.openlocfilehash: 1507231c3ab395319d5ce95ec06dbb592c324aa6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80881083"
 ---
 # <a name="how-to-troubleshoot-msal-for-ios-and-macos-tlsssl-issues"></a>Как устранять неполадки MSAL для iOS и macOS TLS/SSL
@@ -41,8 +41,8 @@ ms.locfileid: "80881083"
 
 ## <a name="captive-portals"></a>Порталы для пере(пере)
 
-Портал перезаписи предоставляет пользователю веб-страницу при первом доступе к сети Wi-Fi и еще не предоставил доступ к этой сети. Он перехватывает трафик Интернета до тех пор, пока пользователь не будет удовлетворять требованиям портала. Сетевые ошибки, так как пользователь не может подключиться к сетевым ресурсам, пока пользователь не подключится через портал.
+Портал с пределами предоставляет пользователю веб-страницу при первом доступе к Wi-Fi сети и еще не предоставил доступ к этой сети. Он перехватывает трафик Интернета до тех пор, пока пользователь не будет удовлетворять требованиям портала. Сетевые ошибки, так как пользователь не может подключиться к сетевым ресурсам, пока пользователь не подключится через портал.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о [порталах](https://en.wikipedia.org/wiki/Captive_portal) с пределом и новой функции [безопасности транспорта приложений Apple (ATS)](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) .

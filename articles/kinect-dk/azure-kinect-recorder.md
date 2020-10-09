@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, запись, воспроизведение, читатель, матроска, MKV, потоки, глубина, RGB, Камера, цвет, иму, аудио
 ms.openlocfilehash: 5fb6895d4102956a991c67ffab836a26b7a3abb0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276962"
 ---
 # <a name="azure-kinect-dk-recorder"></a>Средство записи Azure Kinect DK
@@ -82,6 +82,6 @@ k4arecorder.exe -d WFOV_2X2BINNED -c OFF --imu OFF -l 5 output.mkv
 
 Для извлечения дорожек или просмотра сведений о файле средства, такие как, `mkvinfo` доступны в составе набора средств [мквтулникс](https://mkvtoolnix.download/) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование средства записи с внешними синхронизированными единицами](record-external-synchronized-units.md)

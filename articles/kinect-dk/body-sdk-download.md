@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Azure, Kinect, пакет SDK, скачать обновление, последние, доступные, установка, основной текст, отслеживание
 ms.openlocfilehash: e3f8233d208e2a45c1af9a52a76b6064b15bfe4b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85277069"
 ---
 # <a name="download-azure-kinect-body-tracking-sdk"></a>Скачать пакет SDK для отслеживания текста Kinect для Azure
@@ -26,7 +26,7 @@ ms.locfileid: "85277069"
 
 ## <a name="windows-download-links"></a>Ссылки для загрузки Windows
 
-Версия       | Скачать
+Version       | Скачать
 --------------|----------
 1.0.1 | [msi](https://www.microsoft.com/en-us/download/details.aspx?id=100942) [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/1.0.1) MSI
 1.0.0 | [msi](https://www.microsoft.com/en-us/download/details.aspx?id=100848) [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/1.0.0) MSI
@@ -61,7 +61,7 @@ ms.locfileid: "85277069"
 ### <a name="v101"></a>v 1.0.1
 * [Исправление ошибки] Устранена проблема, из – за которой пакет SDK аварийно завершает работу при загрузке onnxruntime.dll по пути в Windows Build 19025 или более поздней версии: [Link](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/932)
 
-### <a name="v100"></a>Версия 1.0.0
+### <a name="v100"></a>v1.0.0
 * Функциями Добавьте оболочку C# в установщик MSI.
 * [Исправление ошибки] Устранена проблема, из – за которой невозможно правильно обнаружить вращение головного [канала: ссылка](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/997)
 * [Исправление ошибки] Устранение проблемы, с которой загрузка ЦП проходит до 100% на компьютере Linux: [ссылка](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/1007)
@@ -109,12 +109,12 @@ ms.locfileid: "85277069"
 
 * [Критическое изменение] Понижение уровня зависимостей пакета SDK до CUDA 10,0 (от CUDA 10,1). ONNX Runtime официально поддерживает только до CUDA 10,0.
 * [Критическое изменение] Переключение на среду выполнения ONNX вместо среды выполнения Tensorflow. Сокращает время запуска первого кадра и использование памяти. Он также сокращает двоичный размер пакета SDK.
-* [Изменение API] Переименован `k4abt_tracker_queue_capture()` в`k4abt_tracker_enqueue_capture()`
-* [Изменение API] `k4abt_frame_get_body()`Разбивается на две отдельные функции: `k4abt_frame_get_body_skeleton()` и `k4abt_frame_get_body_id()` . Теперь можно запросить идентификатор тела без постоянного копирования всей структуры схемы.
-* [Изменение API] Добавлена `k4abt_frame_get_timestamp_usec()` функция для упрощения шагов, позволяющих пользователям запрашивать отметку времени основного фрейма.
+* [Изменение API] Переименован `k4abt_tracker_queue_capture()` в `k4abt_tracker_enqueue_capture()`
+* [Изменение API] `k4abt_frame_get_body()` Разбивается на две отдельные функции: `k4abt_frame_get_body_skeleton()` и `k4abt_frame_get_body_id()` . Теперь можно запросить идентификатор тела без постоянного копирования всей структуры схемы.
+* [Изменение API] Добавлена  `k4abt_frame_get_timestamp_usec()` функция для упрощения шагов, позволяющих пользователям запрашивать отметку времени основного фрейма.
 * Улучшена точность алгоритма отслеживания текста и отслеживание надежности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор Azure Kinect DK](about-azure-kinect-dk.md)
 

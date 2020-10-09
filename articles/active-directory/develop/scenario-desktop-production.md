@@ -12,10 +12,10 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: ea564eb69f102d8e548bf8ae9a626598fa264cd4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80882885"
 ---
 # <a name="desktop-app-that-calls-web-apis-move-to-production"></a>Классическое приложение, вызывающее веб-API: переместить в рабочую среду
@@ -35,8 +35,8 @@ ms.locfileid: "80882885"
 
 Например, у вас может быть два ресурса с двумя областями:
 
-- `https://mytenant.onmicrosoft.com/customerapi`с областями `customer.read` и`customer.write`
-- `https://mytenant.onmicrosoft.com/vendorapi`с областями `vendor.read` и`vendor.write`
+- `https://mytenant.onmicrosoft.com/customerapi` с областями `customer.read` и `customer.write`
+- `https://mytenant.onmicrosoft.com/vendorapi` с областями `vendor.read` и `vendor.write`
 
 В этом примере используйте `.WithAdditionalPromptToConsent` Модификатор с `extraScopesToConsent` параметром.
 
@@ -105,6 +105,6 @@ AcquireTokenSilent(scopesForVendorApi, accounts.FirstOrDefault()).ExecuteAsync()
 
 Для пользователей личных учетных записей Майкрософт необходимо повторно запрашивать согласие на каждое собственное клиентское (настольное или мобильное приложение) обращение к авторизации. Идентификация собственного клиента по своей природе небезопасна, что противоречит конфиденциальному удостоверению клиентского приложения. Конфиденциальные клиентские приложения обмениваются секретом с платформой Microsoft Identity, чтобы доказать их подлинность. Платформа Microsoft Identity решила устранить эту небезопасность для потребительских услуг, запрашивая согласие пользователя при каждой авторизации приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]

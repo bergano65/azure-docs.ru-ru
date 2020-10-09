@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: Prometheus, АТО, openshift, метрики, Red Hat
 ms.openlocfilehash: 7f22df587f51af735e0ea663e53f6eef14d60692
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80886894"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
@@ -102,7 +102,7 @@ receivers:
 - name: default
 - name: deadmansswitch
 ```
-Создайте секрет с именем Пром-Alerts, введя следующую конфигурацию:
+Создайте секрет с именем Prom-Alerts, введя следующую конфигурацию:
 ```
 oc create secret generic prom-alerts --from-file=alertmanager.yml -n prometheus-project
 ```
@@ -205,7 +205,7 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
 > [!NOTE]
 > Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу **, введите в** качестве выражения и нажмите кнопку **выполнить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В приложения можно добавить настраиваемое инструментирование Prometheus. Клиентская библиотека Prometheus, которая упрощает подготовку метрик Prometheus, готова для разных языков программирования.
 

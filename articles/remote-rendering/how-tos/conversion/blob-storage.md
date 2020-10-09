@@ -6,10 +6,10 @@ ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
 ms.openlocfilehash: 6f0605077bd131c54f27e3bf46240331557fd92e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80681653"
 ---
 # <a name="use-azure-blob-storage-for-model-conversion"></a>Использование хранилища BLOB-объектов Azure для преобразования модели
@@ -80,7 +80,7 @@ URI SAS можно создать с помощью одного из следу
 
 Подписанный URL-адрес (SAS) требуется для загрузки моделей, если учетная запись хранения не была подключена к учетной записи удаленной отрисовки Azure. Вы можете узнать, как подключить учетную запись в статье [Создание учетной записи](../create-an-account.md#link-storage-accounts).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка преобразования модели](configure-model-conversion.md)
 - [Преобразование модели REST API](conversion-rest-api.md)

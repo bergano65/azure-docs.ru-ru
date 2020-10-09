@@ -8,17 +8,17 @@ ms.date: 06/26/2019
 ms.topic: article
 keywords: Azure, Kinect, RGB, IR, запись, датчик, пакет SDK, доступ, глубина, видео, Камера, иму, движение, датчик, аудио, микрофон, матроска, пакет SDK для датчика, Загрузка
 ms.openlocfilehash: 17c1b33120eacb5d0c6d3c02e692d1488ef474e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276986"
 ---
 # <a name="about-azure-kinect-sensor-sdk"></a>Сведения о пакете SDK для датчика Kinect для Azure
 
 В этой статье содержатся общие сведения о пакете средств разработки программного обеспечения (SDK) для Azure Kinect, его функциях и средствах.
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 Пакет SDK для датчика Kinect для Azure предоставляет межплатформенный доступ низкого уровня для конфигурации устройств Azure Kinect и потоков датчиков оборудования, в том числе:
 
@@ -42,7 +42,7 @@ ms.locfileid: "85276986"
 - Пакет SDK для датчика доступен на сайте [GitHub с открытым кодом](https://github.com/microsoft/Azure-Kinect-Sensor-SDK).
 - Дополнительные сведения об использовании см. в [документации по API-интерфейсу Sensor SDK](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/index.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали о пакете SDK для датчика Kinect для Azure, а также:
 >[!div class="nextstepaction"]

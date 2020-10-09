@@ -12,10 +12,10 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 753892790a6f6b898b48d955e6806837967f3e92
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80882970"
 ---
 # <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Классическое приложение, вызывающее веб-API: вызов веб-API
@@ -64,7 +64,7 @@ JSONObject responseObject = HttpClientHelper.processResponse(responseCode, respo
 
 ## <a name="call-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
 
-Методы получения маркеров возвращают объект `MSALResult`. `MSALResult`предоставляет `accessToken` свойство, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
+Методы получения маркеров возвращают объект `MSALResult`. `MSALResult` предоставляет `accessToken` свойство, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
 
 Objective-C.
 

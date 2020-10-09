@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, Azure, датчик, пакет SDK, Камера глубины, ТОФ, принципы, производительность, недействительность
 ms.openlocfilehash: 4bb1c3b79862b918870cff786042d9b4c66270d1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276893"
 ---
 # <a name="azure-kinect-dk-coordinate-systems"></a>Системы координат Azure Kinect DK
@@ -48,6 +48,6 @@ ms.locfileid: "85276893"
 
 ![Система координат иму](./media/concepts/concepts-coordinate-systems/coordinate-systems-gyroscope.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 [Сведения о пакете SDK для датчика Kinect для Azure](about-sensor-sdk.md)

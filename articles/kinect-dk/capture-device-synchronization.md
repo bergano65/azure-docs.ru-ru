@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, Azure, датчик, пакет SDK, глубина, RGB, внутренняя, внешняя, синхронизация, цепочка, смещение этапа
 ms.openlocfilehash: 914a29882277c11c388d3f81f0b1fe827fc2f156
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276959"
 ---
 # <a name="capture-azure-kinect-device-synchronization"></a>Сбор данных синхронизации устройств Azure Kinect
@@ -48,7 +48,7 @@ deviceConfig.wired_sync_mode = K4A_WIRED_SYNC_MODE_MASTER;
 
 Для программного получения текущего состояния входных данных синхронизации и гнезд выходных данных синхронизации используйте функцию [k4a_device_get_sync_jack](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga0209ac87bfd055163677321b0304e962.html#ga0209ac87bfd055163677321b0304e962) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали, как включить и записать синхронизацию устройств. Вы также можете ознакомиться с использованием 
 

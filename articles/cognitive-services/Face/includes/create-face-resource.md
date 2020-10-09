@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 7/5/2019
 ms.author: aahi
 ms.openlocfilehash: 0a330c2401412e1e3d5e2e49bf8121a681342808
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80878377"
 ---
 ## <a name="create-an-face-resource"></a>Создание ресурса лицом
@@ -30,9 +30,9 @@ ms.locfileid: "80878377"
     |Группа ресурсов|Выберите доступную группу ресурсов|
 
 1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
-1. Собираются `endpoint` настройки и ключ API:
+1. Собираются настройки `endpoint` и ключ API:
 
-    |Вкладка ресурсов на портале|Параметр|Применение|
+    |Вкладка ресурсов на портале|Параметр|Значение|
     |--|--|--|
-    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит примерно так.`https://face.cognitiveservices.azure.com/face/v1.0`|
-    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`состоящая из 32 буквенно-цифровых символов без пробелов или дефисов.|
+    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит примерно так. `https://face.cognitiveservices.azure.com/face/v1.0`|
+    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, состоящая из 32 буквенно-цифровых символов без пробелов или дефисов `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` .|

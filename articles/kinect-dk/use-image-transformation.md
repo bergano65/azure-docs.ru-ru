@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/26/2019
 keywords: Kinect, Azure, датчик, пакет SDK, система координат, калибровка, проект, отменяющий проект, преобразование, RGB-d, облако точек
 ms.openlocfilehash: df7f2aa13c0e9c0241494e96e720b30f3ff1d8a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276905"
 ---
 # <a name="use-azure-kinect-sensor-sdk-image-transformations"></a>Использование преобразований образов SDK для датчика Kinect для Azure
@@ -72,7 +72,7 @@ https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga7
 
 #### <a name="parameters"></a>Параметры
 
-Входными параметрами являются маркер преобразования, изображение глубины и цвет изображения. Разрешения изображений глубины и цвета должны соответствовать depth_mode и color_resolution, указанным при создании маркера преобразования. Выходные данные — это преобразованное изображение цвета, которое должно быть выделено пользователем путем вызова [k4a_image_create ()](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga859554581bb97a620ff8e92a893e71ef.html#ga859554581bb97a620ff8e92a893e71ef). Разрешение преобразованного цветного изображения должно соответствовать depth_resolution, заданному при создании маркера преобразования. В выходном образе хранится четыре 8-битных значения, представляющие BGRA для каждого пикселя. Таким образом, шаг изображения имеет значение ```width * 4 * sizeof(uint8_t)``` . Порядок данных помещается в пикселах, то есть синим значением — пиксель 0, зеленым значением — пиксель 0, красным значением — пиксель 0, альфа-значение — пиксель 0, синее значение — пиксель 1 и т. д.
+Входными параметрами являются маркер преобразования, изображение глубины и цвет изображения. Разрешения изображений глубины и цвета должны соответствовать depth_mode и color_resolution, указанным при создании маркера преобразования. Выходные данные — это преобразованное изображение цвета, которое должно быть выделено пользователем путем вызова [k4a_image_create ()](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga859554581bb97a620ff8e92a893e71ef.html#ga859554581bb97a620ff8e92a893e71ef). Разрешение преобразованного цветного изображения должно соответствовать depth_resolution, заданному при создании маркера преобразования. В выходном образе хранятся 4 8-битные значения, представляющие BGRA для каждого пикселя. Таким образом, шаг изображения имеет значение ```width * 4 * sizeof(uint8_t)``` . Порядок данных помещается в пикселах, то есть синим значением — пиксель 0, зеленым значением — пиксель 0, красным значением — пиксель 0, альфа-значение — пиксель 0, синее значение — пиксель 1 и т. д.
 
 ### <a name="k4a_transformation_depth_image_to_point_cloud"></a>k4a_transformation_depth_image_to_point_cloud
 
@@ -92,7 +92,7 @@ https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/group___functions_ga7
 
 [Пример преобразования](https://github.com/Microsoft/Azure-Kinect-Sensor-SDK/tree/develop/examples/transformation)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали, как использовать функции преобразования изображений из пакета SDK для датчика Kinect для Azure, вы также можете узнать о
 
