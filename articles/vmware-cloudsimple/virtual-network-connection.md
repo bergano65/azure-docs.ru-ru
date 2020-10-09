@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 6b20ee4e04a4443529ecceca8c6fc2206f7df39d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77563989"
 ---
 # <a name="connect-azure-virtual-network-to-cloudsimple-using-expressroute"></a>Подключение виртуальной сети Azure к Клаудсимпле с помощью ExpressRoute
@@ -45,7 +45,7 @@ ms.locfileid: "77563989"
 
 Дополнительные сведения о настройке ссылки на виртуальную сеть Azure для Клаудсимпле см. в статье [Подключение среды частного облака клаудсимпле к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение виртуальной сети Azure к частному облаку](azure-expressroute-connection.md)
 * [Подключение к локальной сети с помощью Azure ExpressRoute](on-premises-connection.md)

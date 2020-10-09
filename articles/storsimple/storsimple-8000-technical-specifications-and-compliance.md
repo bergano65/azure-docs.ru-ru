@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 061194422a8c1bc449dbef0c4f04bb8e1db10dea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "68965287"
 ---
 # <a name="technical-specifications-and-compliance-for-the-storsimple-device"></a>Технические характеристики и информация о соответствии нормативным требованиям для устройства StorSimple
@@ -79,7 +79,7 @@ ms.locfileid: "68965287"
 | Емкость одного твердотельного накопителя (SSD) |400 ГБ |800 ГБ |
 | Свободное место |4 TБ |4 TБ |
 | Доступная емкость жесткого диска HDD |14 ТБ |36 ТБ |
-| Доступная емкость твердотельного накопителя SSD |800 ГБ |2 ТБ |
+| Доступная емкость твердотельного накопителя SSD |800 ГБ |2 ТБ |
 | Общая доступная емкость* |~ 15 ТБ |~ 38 ТБ |
 | Максимальная емкость решения (включая облачное хранилище) |200 ТБ |500 TБ |
 
@@ -196,7 +196,7 @@ ms.locfileid: "68965287"
 
 Для сетевых интерфейсов 10 Гбит/с Ethernet DATA 2 и DATA 3 см. [список поддерживаемых сетевых кабелей и модулей](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете развернуть устройство StorSimple в центре обработки данных. Дополнительные сведения см. в разделе [Развертывание локального устройства](storsimple-8000-deployment-walkthrough-u2.md).
 

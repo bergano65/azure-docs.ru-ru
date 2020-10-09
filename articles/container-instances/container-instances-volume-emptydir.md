@@ -4,10 +4,10 @@ description: Узнайте, как подключить том emptyDir для 
 ms.topic: article
 ms.date: 01/31/2020
 ms.openlocfilehash: 64a3c83008f163167528a5e5987fe2316942d5bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77117737"
 ---
 # <a name="mount-an-emptydir-volume-in-azure-container-instances"></a>Подключение тома emptyDir в службе "Экземпляры контейнеров Azure"
@@ -44,7 +44,7 @@ ms.locfileid: "77117737"
 
 Примеры развертывания группы контейнеров см. в статье [развертывание многоконтейнерной группы с помощью шаблона диспетчер ресурсов](container-instances-multi-container-group.md) и [развертывание многоконтейнерной группы с помощью файла YAML](container-instances-multi-container-yaml.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о подключении других типов томов в службе "Экземпляры контейнеров Azure" см. в следующих статьях:
 

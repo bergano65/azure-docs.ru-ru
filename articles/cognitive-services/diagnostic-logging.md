@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 06/14/2019
 ms.author: erhopf
 ms.openlocfilehash: 539a35f170b2ee0c94762a30ed9376ca4a416210
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "71827901"
 ---
 # <a name="enable-diagnostic-logging-for-azure-cognitive-services"></a>Включение ведения журнала диагностики для Azure Cognitive Services
@@ -43,7 +43,7 @@ ms.locfileid: "71827901"
 4. Введите имя параметра. Затем выберите **Архив в учетной записи хранения** и **отправьте его в log Analytics**.
 5. При появлении запроса на настройку выберите учетную запись хранения и рабочую область OMS, которую вы хотите использовать для хранения журналов диагностики. **Примечание**. Если у вас нет учетной записи хранения или рабочей области OMS, следуйте инструкциям на экране, чтобы создать ее.
 6. Выберите **Audit**, **рекуестреспонсе**и **аллметрикс**. Затем задайте срок хранения для данных журнала диагностики. Если политика хранения имеет значение 0, события для этой категории журнала хранятся бессрочно.
-7. Нажмите кнопку **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 Для запроса и анализа данных журнала может пройти до двух часов. Не беспокойтесь, если вы не видите ничего сразу же.
 
@@ -111,7 +111,7 @@ by bin(TimeGenerated, 10s), OperationName
 | render areachart kind=unstacked
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы понять, как включить ведение журнала, а также метрики и категории журналов, которые поддерживаются различными службами Azure, прочитайте [Обзор метрик](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics) в Microsoft Azure и обзор статей о [журналах диагностики Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview) .
 * Прочтите эти статьи, чтобы узнать о концентраторах событий:

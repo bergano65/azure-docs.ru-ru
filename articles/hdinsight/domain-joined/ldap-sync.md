@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/14/2020
 ms.openlocfilehash: 99bd1ac156b12a5be7b8c5c17eb5b568b7070a25
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77463223"
 ---
 # <a name="ldap-sync-in-ranger-and-apache-ambari-in-azure-hdinsight"></a>Синхронизация LDAP в Ranger и Apache Ambari в Azure HDInsight
@@ -76,7 +76,7 @@ Ranger поддерживает параметр синхронизации гр
 1. Измените `log4j.rootLogger` уровень на на `DEBUG` (после изменения он должен выглядеть как `log4j.rootLogger = DEBUG,logFile,FilterLog` ).
 1. Сохраните конфигурацию и перезапустите Ranger.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проблемы проверки подлинности в Azure HDInsight](./domain-joined-authentication-issues.md)
 * [Синхронизация пользователей Microsoft Azure AD с кластером HDInsight](../hdinsight-sync-aad-users-to-cluster.md)

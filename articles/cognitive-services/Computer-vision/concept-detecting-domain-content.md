@@ -12,10 +12,10 @@ ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 8d6dc91ae7bb0f6d7a24064749d9295558a7d39c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "68946338"
 ---
 # <a name="detect-domain-specific-content"></a>Обнаружение содержимого, связанного с определенными предметными областями
@@ -26,7 +26,7 @@ ms.locfileid: "68946338"
 
 ### <a name="scoped-analysis"></a>Ограниченный анализ
 
-Вы можете анализировать изображения с помощью только выбранной модели для предметной области путем вызова API [Models/\<model\>/Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200).
+Вы можете проанализировать изображение, используя только выбранную модель для конкретного домена, вызвав API [Models/ \<model\> /Analyze](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200) .
 
 Ниже приведен пример ответа JSON, возвращаемого API **models/celebrities/analysis** для следующего изображения.
 
@@ -100,7 +100,7 @@ ms.locfileid: "68946338"
 
 Сейчас Компьютерное зрение поддерживает следующие модели для предметной области.
 
-| Имя | Описание |
+| name | Описание |
 |------|-------------|
 | celebrities | Распознавание знаменитостей; поддерживается для изображений, которые были классифицированы как относящиеся к категории `people_` |
 | landmarks | Распознавание ориентиров; поддерживается для изображений, которые были классифицированы как относящиеся к категории `outdoor_` или `building_` |
@@ -137,6 +137,6 @@ ms.locfileid: "68946338"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о концепциях [классификации изображений](concept-categorizing-images.md).

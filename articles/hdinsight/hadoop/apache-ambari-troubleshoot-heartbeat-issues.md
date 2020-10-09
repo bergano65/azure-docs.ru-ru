@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/06/2020
 ms.openlocfilehash: ab88f65d535be2aef5f0b26fa1171c03276466e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77057079"
 ---
 # <a name="apache-ambari-heartbeat-issues-in-azure-hdinsight"></a>Проблемы с пульсом Apache Ambari в Azure HDInsight
@@ -20,11 +20,11 @@ ms.locfileid: "77057079"
 
 ## <a name="scenario-high-cpu-utilization"></a>Сценарий: высокая загрузка ЦП
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Агент Ambari использует высокую загрузку ЦП, что приводит к предупреждениям пользовательского интерфейса Ambari, который для некоторых узлов теряет пульс агента Ambari. Предупреждение о потере пульса обычно является временным.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Из-за различных ошибок ambari-Agent в редких случаях ambari-Agent может иметь высокий уровень использования ЦП (близко к 100).
 
@@ -59,11 +59,11 @@ ms.locfileid: "77057079"
 
 ## <a name="scenario-ambari-agent-not-started"></a>Сценарий: агент Ambari не запущен
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Агент Ambari не начал работу, что приводит к предупреждениям из пользовательского интерфейса Ambari, который для некоторых узлов теряет пульс агента Ambari.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Предупреждения вызваны тем, что агент Ambari не работает.
 
@@ -85,11 +85,11 @@ ms.locfileid: "77057079"
 
 ## <a name="scenario-heartbeat-lost-for-ambari"></a>Сценарий: потеря пульса для Ambari
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Агент пульса Ambari был потерян.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Журналы OMS вызывают высокую загрузку ЦП.
 

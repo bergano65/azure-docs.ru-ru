@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 09/21/2016
 ms.author: alkohli
 ms.openlocfilehash: 7fafe177ea0c6c618dc4ab0727ba14c83cbb0102
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "68965013"
 ---
 # <a name="supported-hardware-for-the-10-gbe-network-interfaces-on-your-storsimple-device"></a>Поддерживаемое оборудование для сетевых интерфейсов 10 GbE на устройстве StorSimple
@@ -32,20 +32,20 @@ ms.locfileid: "68965013"
 Корпорация Майкрософт проверила следующие подключаемые приемопередатчики небольшого размера (SFP), кабели и коммутаторы, чтобы убедиться, что они оптимально работают с устройствами. (Следующие таблицы будут обновляться по мере тестирования оборудования.)
 
 ### <a name="sfp-transceivers"></a>Приемопередатчики SFP +
-| Производитель | Модель |
+| Производитель | Моделирование |
 | --- | --- |
 | Cisco |SFP-10G-SR |
 
 ### <a name="cables"></a>Кабели
-| S. Нет. | Производитель | Модель |
+| Х. Нет. | Производитель | Моделирование |
 | --- | --- | --- |
 | 1. |Cisco |SFP-H10GB-CU1M |
 | 2. |Cisco |SFP-H10GB-CU2M |
 | 3. |Cisco |SFP-H10GB-CU3M |
 | 4. |Tripp-Lite |N820-05M (OM3) |
 
-### <a name="switches"></a>Переключатели
-| S. Нет. | Производитель | Модель |
+### <a name="switches"></a>Коммутаторы
+| Х. Нет. | Производитель | Моделирование |
 | --- | --- | --- |
 | 1. |Cisco |N3K-C3172PQ-10GE |
 | 2. |Cisco |N3K-C3048-ZM-F |
@@ -73,7 +73,7 @@ Mellanox проверила следующие подключаемые прие
 ### <a name="cables-and-modules-supported-by-mellanox"></a>Кабели и модули, поддерживаемые Mellanox
 Ниже перечислены кабели и модули, поддерживаемые Mellanox. Они не были проверены корпорацией Майкрософт, но, скорее всего, подходят для работы с устройством StorSimple.
 
-| S. Нет. | Speed | Модель | Описание: | Производитель |
+| Х. Нет. | Speed | Моделирование | Описание | Производитель |
 | --- | --- | --- | --- | --- |
 | 1. |10 GbE |CAB-SFP-SFP-1M |Пассивный медный кабель SFP + 10 Гбит/с, 1 м |Arista |
 | 2. |10 GbE |CAB-SFP-SFP-2M |Пассивный медный кабель SFP + 10 Гбит/с, 2 м |Arista |
@@ -114,7 +114,7 @@ Mellanox проверила следующие подключаемые прие
 ### <a name="switches-supported-by-mellanox"></a>Коммутаторы, поддерживаемые Mellanox
 Ниже перечислены коммутаторы, поддерживаемые Mellanox. Они не были проверены корпорацией Майкрософт, но, скорее всего, подходят для работы с устройством StorSimple.
 
-| S. Нет. | Speed | Модель | Описание: | Производитель |
+| Х. Нет. | Speed | Моделирование | Описание | Производитель |
 | --- | --- | --- | --- | --- |
 | 1. |10GbE |516733-B21 |Коммутатор HP ProCurve 6120XG 10GbE Ethernet Blade Switch |HP |
 | 2. |10GbE |538113-B21 |Переходный модуль (PTM) HP 10GbE |HP |
@@ -124,6 +124,6 @@ Mellanox проверила следующие подключаемые прие
 | 6. |1GbE |438030-B21 |Модуль коммутатора HP 1GbE — GbE2c Layer 2/3 Ethernet Blade Switch |HP |
 | 7. |1GbE |6120G |Колонка коммутатора HP ProCurve 6120G/XG 1GbE |HP |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения об аппаратных компонентах и состоянии StorSimple](storsimple-monitor-hardware-status.md).
 

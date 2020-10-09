@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 7/9/2019
 ms.author: victorh
 ms.openlocfilehash: db29551a8150b70e797d45fe659482470c8aca2a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "67659506"
 ---
 # <a name="azure-application-gateway-resource-health-overview"></a>Общие сведения о Работоспособность ресурсов шлюза приложений Azure
@@ -31,7 +31,7 @@ ms.locfileid: "67659506"
 
 ![Доступное состояние работоспособности](media/resource-health-overview/available-full.png)
 
-## <a name="unavailable"></a>Рекомендации недоступны
+## <a name="unavailable"></a>Недоступно
 
 **Недоступное** состояние означает, что Служба обнаружила текущую платформу или событие, не связанное с платформой, которое влияет на работоспособность шлюза.
 

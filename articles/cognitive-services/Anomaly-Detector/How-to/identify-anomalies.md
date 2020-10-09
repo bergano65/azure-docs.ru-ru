@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: aahi
 ms.openlocfilehash: ca93de71f64efaf21c78b37b9c9aee193d13b28d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "71840220"
 ---
 # <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Как использовать API детектора аномалии для данных временных рядов  
@@ -26,7 +26,7 @@ ms.locfileid: "71840220"
 API детектора аномалий предоставляет режимы обнаружения: пакетная и потоковая передача.
 
 > [!NOTE]
-> Следующие URL-адреса запросов должны быть объединены с соответствующей конечной точкой для подписки. Пример: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
+> Следующие URL-адреса запросов должны быть объединены с соответствующей конечной точкой для подписки. Например: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
 
 
 ### <a name="batch-detection"></a>Пакетное обнаружение
@@ -47,7 +47,7 @@ API детектора аномалий предоставляет режимы 
 
 ## <a name="adjusting-lower-and-upper-anomaly-detection-boundaries"></a>Настройка границ обнаружения нижних и верхних аномалий
 
-По умолчанию верхние и нижние границы для обнаружения аномалий вычисляются `expectedValue`с `upperMargin`помощью, `lowerMargin`и. Если требуются разные границы, рекомендуется применить `marginScale` к `upperMargin` или. `lowerMargin` Границы будут вычисляться следующим образом:
+По умолчанию верхние и нижние границы для обнаружения аномалий вычисляются с помощью `expectedValue` , `upperMargin` и `lowerMargin` . Если требуются разные границы, рекомендуется применить `marginScale` к `upperMargin` или `lowerMargin` . Границы будут вычисляться следующим образом:
 
 |Граница  |Вычисление  |
 |---------|---------|
@@ -68,7 +68,7 @@ API детектора аномалий предоставляет режимы 
 
 ![85. чувствительность](../media/sensitivity_85.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Общие сведения об API Детектора аномалий](../overview.md)
-* [Краткое руководство. обнаружение аномалий в данных временных рядов с помощью детектора аномалий REST API](../quickstarts/detect-data-anomalies-csharp.md)
+* [Краткое руководство. Обнаружение аномалий в данных временных рядов с помощью Детектор аномалий API REST](../quickstarts/detect-data-anomalies-csharp.md)

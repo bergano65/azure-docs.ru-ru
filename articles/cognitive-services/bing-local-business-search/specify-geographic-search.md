@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
 ms.openlocfilehash: 213457bc583494bbe039269b96b25990f7d0a961
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "69906246"
 ---
 # <a name="use-geographic-boundaries-to-filter-results-from-the-bing-local-business-search-api"></a>Фильтрация результатов из API Bing Local Business Search с помощью географических границ
@@ -49,8 +49,8 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search?q=restauran
 https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search?q=restaurant&localMapView=47.619987,-122.181671,47.6421,-122.13715&appid=0123456789ABCDEF&mkt=en-us&form=monitr
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Краткое руководство по локальному поиску в компании Java](quickstarts/local-search-java-quickstart.md)
-- [Краткое руководство. Использование Local Business Search с помощью C#](quickstarts/local-quickstart.md)
+- [Руководство по локальному бизнес-поиску в C#](quickstarts/local-quickstart.md)
 - [Краткий учебник по локальному узлу поиска в бизнесе](quickstarts/local-search-node-quickstart.md)
 - [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](quickstarts/local-search-python-quickstart.md)
