@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/05/2016
 ms.author: erikre
 ms.openlocfilehash: f2d653441598a47986913d525057672eed24b435
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "60931723"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-nodejs"></a>Как отправлять электронную почту с помощью SendGrid из Node.js
@@ -36,7 +36,7 @@ SendGrid — это [облачная служба электронной по�
 * Пересылка запросов клиентов
 * Уведомления от приложения по электронной почте
 
-Дополнительные сведения см. на веб-сайте [https://sendgrid.com](https://sendgrid.com).
+Дополнительные сведения см. в статье [https://sendgrid.com](https://sendgrid.com).
 
 ## <a name="create-a-sendgrid-account"></a>Создание учетной записи SendGrid
 
@@ -207,13 +207,13 @@ email.addFilter('footer', 'text/html', '<strong>boo</strong>');
 
 SendGrid поддерживает различные веб-интерфейсы API, с помощью которых вы можете использовать дополнительные функции SendGrid, доступные в приложении Azure. Дополнительные сведения см. в [документации по интерфейсу API SendGrid][SendGrid API documentation].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Вы получили основные сведения о службе доставки электронной почты SendGrid. Дополнительные сведения вы найдете по следующим ссылкам.
 
 * Репозиторий модуля SendGrid для Node.js: [sendgrid-nodejs][sendgrid-nodejs].
 * Документация по API SendGrid: <https://sendgrid.com/docs>
-* Специальное предложение SendGrid для клиентов Azure:[http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html)
+* Специальное предложение SendGrid для клиентов Azure: [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html)
 
 [special offer]: https://sendgrid.com/windowsazure.html
 [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs

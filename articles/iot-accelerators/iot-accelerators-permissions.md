@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
 ms.openlocfilehash: 87f6b9cef50e4b8c388be835b2aa7bed8177ac4b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "61447460"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>Использование сайта azureiotsolutions.com для развертывания акселератора решений
@@ -66,7 +66,7 @@ ms.locfileid: "61447460"
 
 Чтобы опробовать один из акселераторов решений Интернета вещей, см. следующие краткие руководства.
 
-* [Пробное использование решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
-* [Пробное использование решения подключенной фабрики](quickstart-connected-factory-deploy.md)
-* [Пробное использование решения прогнозного обслуживания](quickstart-predictive-maintenance-deploy.md)
-* [Пробное использование симулятора устройств](quickstart-device-simulation-deploy.md)
+* [Краткое руководство. Использование облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Краткое руководство. Пробное использование облачного решения для управления промышленными устройствами Центра Интернета вещей](quickstart-connected-factory-deploy.md)
+* [Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах](quickstart-predictive-maintenance-deploy.md)
+* [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md)

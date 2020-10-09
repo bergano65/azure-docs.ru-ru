@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0d970fd133f8c43319e7f1fdb6b3a50c3c05f687
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "64918444"
 ---
 # <a name="determine-content-management-requirements-for-your-hybrid-identity-solution"></a>Определение требований к управлению содержимым для решения гибридной идентификации
@@ -67,6 +67,6 @@ ms.locfileid: "64918444"
 ## <a name="next-steps"></a>Дальнейшие действия
 [Определение требований к управлению доступом](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)
 
