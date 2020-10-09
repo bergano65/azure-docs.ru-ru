@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: genli
 ms.openlocfilehash: e1acfc3216ccfaeac035f1ff31e82c7b67c17daf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76119624"
 ---
 # <a name="troubleshoot-a-faulty-azure-vm-by-using-nested-virtualization-in-azure"></a>Устранение неполадок с неисправными виртуальными машинами Azure с помощью вложенной виртуализации в Azure
 
 В этой статье показано, как создать вложенную среду виртуализации в Microsoft Azure, чтобы можно было подключить диск с неисправными виртуальными машинами на узле Hyper-V (виртуальная машина аварийного тестирования) для устранения неполадок.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы подключить неисправный виртуальный компьютер, ВИРТУАЛЬная машина службы "помощь" должна использовать тот же тип учетной записи хранения ("Стандартный" или "Премиум"), что и у неисправных виртуальных машин.
 
@@ -101,7 +101,7 @@ ms.locfileid: "76119624"
     ![рисунок с параметрами подключения диска](media/troubleshoot-vm-by-use-nested-virtualization/mount-disk.png)  
 
 
-15. Нажмите кнопку **Применить**, а затем кнопку **ОК**.
+15. Нажмите кнопку **Apply** (Применить), а затем нажмите кнопку **ОК**.
 
 16. Дважды щелкните виртуальную машину, а затем запустите ее.
 

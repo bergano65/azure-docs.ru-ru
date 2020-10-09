@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
 ms.openlocfilehash: 0eb4d37342685c13027a69bb6cb85f618fa63f20
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81410219"
 ---
 # <a name="copy-data-from-web-table-by-using-azure-data-factory"></a>Копирование данных из Веб-таблицы с помощью фабрики данных Azure
@@ -93,7 +93,7 @@ ms.locfileid: "81410219"
 |:--- |:--- |:--- |
 | type | Свойство type для набора данных должно иметь значение **WebTable**. | Да |
 | path |Относительный URL-адрес ресурса, который содержит таблицу. |Нет. Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. |
-| индекс |Индекс таблицы в ресурсе. Инструкции по получению индекса таблицы на странице HTML см. [в разделе Получение индекса таблицы в HTML-странице](#get-index-of-a-table-in-an-html-page) . |Да |
+| index |Индекс таблицы в ресурсе. Инструкции по получению индекса таблицы на странице HTML см. [в разделе Получение индекса таблицы в HTML-странице](#get-index-of-a-table-in-an-html-page) . |Да |
 
 **Пример**.
 
@@ -123,7 +123,7 @@ ms.locfileid: "81410219"
 
 Чтобы скопировать данные из веб-таблицы, задайте тип источника **WebSource** в действии копирования, дополнительные свойства не поддерживаются.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

@@ -7,10 +7,10 @@ ms.author: rohogue
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.openlocfilehash: 66df6a2018960d83c4aaa9129dad067732a8b3cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76152975"
 ---
 # <a name="azure-vfxt-for-azure-whitepapers-and-other-resources"></a>Технические документы и другие ресурсы по Azure Вфкст для Azure
@@ -35,7 +35,7 @@ ms.locfileid: "76152975"
 
 На графике показаны компоненты и макеты в случае использования Avere vFXT для Azure для добавления облачной инфраструктуры в существующую систему. Avere vFXT для Azure можно использовать для увеличения производительности вычисления в существующей локальной инфраструктуре или для переноса данных и вычислений в облако на временной или постоянной основе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы планировать развертывание Avere vFXT в Azure, ознакомьтесь со статьей [Планирование системы Avere vFXT](avere-vfxt-deploy-plan.md).
 * Дополнительные сведения см. в статье [Часто задаваемые вопросы об Avere vFXT для Azure](avere-vfxt-faq.md).

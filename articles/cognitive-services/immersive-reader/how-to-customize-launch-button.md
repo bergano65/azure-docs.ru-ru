@@ -1,5 +1,5 @@
 ---
-title: Настройка кнопки "иммерсивное средство чтения"
+title: Кнопка настройки Иммерсивного средства чтения
 titleSuffix: Azure Cognitive Services
 description: В этой статье мы покажем, как настроить кнопку, запускающую иммерсивное средство чтения.
 services: cognitive-services
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: metan
 ms.openlocfilehash: 6461cc60a237cf834226b07db5e1ea6fbbea7a92
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75946213"
 ---
 # <a name="how-to-customize-the-immersive-reader-button"></a>Настройка кнопки «иммерсивное средство чтения»
@@ -23,7 +23,7 @@ ms.locfileid: "75946213"
 
 ## <a name="add-the-immersive-reader-button"></a>Добавление кнопки "иммерсивное средство чтения"
 
-Пакет SDK для иммерсивное средство чтения предоставляет стиль по умолчанию для кнопки, запускающей иммерсивное средство чтения. Для включения `immersive-reader-button` этого стиля используйте атрибут класса.
+Пакет SDK для иммерсивное средство чтения предоставляет стиль по умолчанию для кнопки, запускающей иммерсивное средство чтения. `immersive-reader-button`Для включения этого стиля используйте атрибут класса.
 
 ```html
 <div class='immersive-reader-button'></div>
@@ -31,7 +31,7 @@ ms.locfileid: "75946213"
 
 ## <a name="customize-the-button-style"></a>Настройка стиля кнопки
 
-Используйте `data-button-style` атрибут, чтобы задать стиль кнопки. Допустимые значения: `icon`, `text`и `iconAndText`. Значение по умолчанию — `icon`.
+Используйте `data-button-style` атрибут, чтобы задать стиль кнопки. Допустимые значения: `icon` , `text` и `iconAndText` . Значение по умолчанию — `icon`.
 
 ### <a name="icon-button"></a>Кнопка "значок"
 
@@ -79,6 +79,6 @@ ms.locfileid: "75946213"
 <div class='immersive-reader-button' data-icon-px-size='50'></div>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](./reference.md).

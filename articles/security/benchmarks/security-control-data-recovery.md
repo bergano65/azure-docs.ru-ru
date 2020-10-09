@@ -8,10 +8,10 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 4f3e8540902809f951a441aa2fe8d00026c44d82
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81408589"
 ---
 # <a name="security-control-data-recovery"></a>Управление безопасностью: восстановление данных
@@ -32,7 +32,7 @@ ms.locfileid: "81408589"
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 9.2 | 10.2 | Customer |
+| 9.2 | 10,2 | Customer |
 
 Включите Azure Backup и целевые виртуальные машины, а также желаемую частоту и сроки хранения. Резервное копирование управляемых пользователем ключей в Azure Key Vault.
 
@@ -56,19 +56,19 @@ ms.locfileid: "81408589"
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 9.4 | 10,4 | Customer |
+| 9.4 | 10.4 | Customer |
 
 Для резервных копий локальных данных шифрование выполняется с использованием парольной фразы, которую вы указываете при настройке резервного копирования в Azure. Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE). Используйте управление доступом на основе ролей для защиты резервных копий и управляемых клиентом ключей.  
 
-Включите обратимое удаление и очистку защиты в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  Если хранилище Azure используется для хранения резервных копий, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
+Включите Soft-Delete и очистите защиту в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  Если хранилище Azure используется для хранения резервных копий, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
 
 - [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение Soft-Delete и очистка защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
 - [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. следующий контроль безопасности: [реагирование на инциденты](security-control-incident-response.md)
+- См. следующий контроль безопасности:  [реагирование на инциденты](security-control-incident-response.md)

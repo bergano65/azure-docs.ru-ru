@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/29/2019
 ms.openlocfilehash: be50f8716835b0842f854842e5340b0bb8594136
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75894368"
 ---
 # <a name="apache-spark-job-fails-with-invalidclassexception-class-version-mismatch-in-azure-hdinsight"></a>Сбой задания Apache Spark с Инвалидклассексцептион, несоответствие версий класса в Azure HDInsight
@@ -32,7 +32,7 @@ org.apache.commons.lang3.time.FastDateFormat; local class incompatible: stream c
         at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1573)
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта ошибка может быть вызвана добавлением дополнительного JAR `spark.yarn.jars` -файла в конфигурацию, в частности, затененного JAR, включающего в себя другую версию `commons-lang3` пакета и представляющего несоответствие класса. По умолчанию в Spark 2.1/2/3 используется версия 3,5 `commons-lang3` .
 

@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.openlocfilehash: ee2e59e794cf34a8fd5043a56867a81c2537f1ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81415310"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
@@ -42,7 +42,7 @@ ms.locfileid: "81415310"
 | **Свойство**  | **Описание** | **Допустимые значения** | **Обязательное** |
 | --- | --- | --- | --- |
 | name  | Имя действия в конвейере.  | Строка | да |
-| тип  | Тип действия – "AzureFunctionActivity" | Строка | да |
+| type  | Тип действия – "AzureFunctionActivity" | Строка | да |
 | linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | да |
 | имя функции  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка | да |
 | method  | Метод REST API для вызова функции | Поддерживаемые строковые типы: "GET", "POST", "постановка"   | да |
@@ -54,7 +54,7 @@ ms.locfileid: "81415310"
 
 ## <a name="routing-and-queries"></a>Маршрутизация и запросы
 
-Действие функции Azure поддерживает **маршрутизацию**. Например, если у функции Azure есть конечная точка `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>` , то `functionName` для использования в действии функции Azure используется `<functionName>/<value>` . Эту функцию можно параметризовать, чтобы обеспечить требуемую `functionName` среду выполнения.
+Действие функции Azure поддерживает **маршрутизацию**. Например, если у функции Azure есть конечная точка  `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>` , то `functionName` для использования в действии функции Azure используется `<functionName>/<value>` . Эту функцию можно параметризовать, чтобы обеспечить требуемую `functionName` среду выполнения.
 
 Действие функции Azure поддерживает **запросы**. Запрос должен быть включен в состав `functionName` . Например, если имя функции — `HttpTriggerCSharp` , а запрос, который требуется включить, —, то `name=hello` можно создать `functionName` в действии функции Azure как `HttpTriggerCSharp?name=hello` . Эта функция может быть параметризована, чтобы значение можно было определить во время выполнения.
 

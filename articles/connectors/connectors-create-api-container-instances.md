@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 01/14/2020
 ms.openlocfilehash: ecb1049d64197f2a60438df7eedfb244907f7327
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76046296"
 ---
 # <a name="deploy-and-manage-azure-container-instances-by-using-azure-logic-apps"></a>Развертывание и управление экземплярами контейнеров Azure с помощью Azure Logic Apps
@@ -70,7 +70,7 @@ ms.locfileid: "76046296"
 
 Технические сведения о триггерах, действиях и ограничениях, описанных в описании OpenAPIа соединителя (ранее — Swagger), см. на [странице справочника](/connectors/aci/) по соединителю или в [справочнике по YAML](../container-instances/container-instances-reference-yaml.md)группы контейнеров.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. [пример приложения логики](https://github.com/Azure-Samples/aci-logicapps-integration) , которое запускает контейнер в службе "экземпляры контейнеров Azure" для анализа тональности электронной почты или текста Twitter.
 

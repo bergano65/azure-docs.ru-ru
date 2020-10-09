@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.openlocfilehash: 44aadecfa80524345932c03abb51e8ebd040a902
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73666981"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
@@ -87,10 +87,10 @@ ms.locfileid: "73666981"
 
 <table>
 <tr>
-    <th align="left">Область</th><th align="left">Подсостояние</th><th align="left">Описание:</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
-    <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
+    <td rowspan="8">Ожидание</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
 </tr>
 <tr>
 <td>DatasetDependencies</td><td>Восходящие зависимости не готовы.</td>
@@ -121,7 +121,7 @@ ms.locfileid: "73666981"
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Ошибка</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Failed</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
 <td>Отменено</td><td>Срез был отменен пользователем.</td>
@@ -135,10 +135,10 @@ ms.locfileid: "73666981"
 <td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
-<td>Пропущено</td><td>Отсутствуют</td><td>Срез не обрабатывается.</td>
+<td>Пропущено</td><td>None</td><td>Срез не обрабатывается.</td>
 </tr>
 <tr>
-<td>Отсутствуют</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
+<td>None</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
 </tr>
 </table>
 
@@ -290,7 +290,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 ### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 Ошибки можно повторно запустить с помощью командлета **Set-аздатафакторислицестатус** . Синтаксис и другие сведения о командлете см. в разделе [Set-аздатафакторислицестатус](https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus) .
 
-**Пример.**
+**Пример**.
 
 В следующем примере состояние всех срезов в таблице DAWikiAggregatedData в фабрике данных WikiADF меняется на Waiting.
 

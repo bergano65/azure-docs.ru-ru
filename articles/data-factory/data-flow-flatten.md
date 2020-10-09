@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.openlocfilehash: a0e75957a0ab49394dab56f2b7fb847dee4b43cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81413679"
 ---
 # <a name="flatten-transformation-in-mapping-data-flow"></a>Преобразование «сведение» в потоке данных сопоставления
@@ -66,7 +66,7 @@ ms.locfileid: "81413679"
 
 ### <a name="no-unroll-root-with-string-array"></a>Нет несведенного корня с массивом строк
 
-| Отменить развертывание | Развернуть корень | Прогнозирование |
+| Отменить развертывание | Развернуть корень | Проекция |
 | --------- | ----------- | ---------- |
 | товары. клиенты | None | name <br> Клиент = товары. Клиент |
 
@@ -84,7 +84,7 @@ ms.locfileid: "81413679"
 
 ### <a name="no-unroll-root-with-complex-array"></a>Нет несведенного корня с комплексным массивом
 
-| Отменить развертывание | Развернуть корень | Прогнозирование |
+| Отменить развертывание | Развернуть корень | Проекция |
 | --------- | ----------- | ---------- |
 | товары. заказы. отгруженные. orderItems | None | name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
 
@@ -105,7 +105,7 @@ ms.locfileid: "81413679"
 
 ### <a name="same-root-as-unroll-array"></a>Тот же корень, что и unrollный массив
 
-| Отменить развертывание | Развернуть корень | Прогнозирование |
+| Отменить развертывание | Развернуть корень | Проекция |
 | --------- | ----------- | ---------- |
 | товары. заказы | товары. заказы | name <br> товары. заказы. отгруженные. orderItems. itemName <br> товары. клиенты <br> location |
 
@@ -121,7 +121,7 @@ ms.locfileid: "81413679"
 
 ### <a name="unroll-root-with-complex-array"></a>Развернуть корень с помощью сложного массива
 
-| Отменить развертывание | Развернуть корень | Прогнозирование |
+| Отменить развертывание | Развернуть корень | Проекция |
 | --------- | ----------- | ---------- |
 | товары. заказы. отгруженные. orderItem | товары. заказы |name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: 0661503dce7ac2707065f60c3952da866ce9dcf3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73827413"
 ---
 # <a name="predictive-maintenance-solution-accelerator-overview"></a>Обзор акселератора решений для прогнозного обслуживания
@@ -79,7 +79,7 @@ ms.locfileid: "73827413"
 
 *\[1 \] A. Саксена и K. Гоебел (2008). "Турбофанный набор данных моделирования деплавности ядра", NASA Turbofan набор ( https://c3.nasa.gov/dashlink/resources/139/) , в базе данных NASA Turbofan Research, поле Моффетт, центр сертификации*
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы ознакомились с основными компонентами акселератора решений для прогнозного обслуживания. Вы можете попробовать настроить его.
 
 Вы также можете ознакомиться с другими функциями акселераторов решений для Интернета вещей.

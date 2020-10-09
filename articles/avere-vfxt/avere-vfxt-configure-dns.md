@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: rohogue
 ms.openlocfilehash: 81b53904f85e2ac936195b1e39d7586fd1d47524
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76153791"
 ---
 # <a name="avere-cluster-dns-configuration"></a>Настройка DNS для кластера Avere
@@ -29,7 +29,7 @@ ms.locfileid: "76153791"
 
 * DNS является обязательным, если вы хотите использовать аутентификацию Kerberos.
 
-## <a name="load-balancing"></a>балансировка нагрузки;
+## <a name="load-balancing"></a>Балансировка нагрузки
 
 Чтобы распределить общую нагрузку, настройте DNS-домен для использования распределения нагрузки методом циклического перебора для IP-адресов, ориентированных на клиенты.
 

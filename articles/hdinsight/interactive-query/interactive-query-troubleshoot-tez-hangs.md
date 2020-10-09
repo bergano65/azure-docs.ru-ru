@@ -8,21 +8,21 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/09/2019
 ms.openlocfilehash: ec5a0d6e8c0a5236ae3929560e81033d983d4dfb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75895110"
 ---
 # <a name="scenario-apache-tez-application-hangs-in-azure-hdinsight"></a>Сценарий: Apache Tez приложение зависает в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 После отправки задания Apache Hive из представления "Tez" состояние задания — "выполняется", но не выполняется.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Отправлено слишком много заданий; длинная очередь Yarn.
 

@@ -4,13 +4,13 @@ description: Описывает, как определить параметры 
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.openlocfilehash: 89c6984c587e8dae59c1825a99d4f8da1c06dafb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "76122429"
 ---
-# <a name="parameters-in-azure-resource-manager-templates"></a>Параметры в шаблонах Azure Resource Manager
+# <a name="parameters-in-azure-resource-manager-templates"></a>Параметры в шаблонах Azure Resource Manager
 
 В этой статье описывается определение и использование параметров в шаблоне Azure Resource Manager. Предоставляя различные значения параметров, можно повторно использовать шаблон для разных сред.
 
@@ -158,7 +158,7 @@ ms.locfileid: "76122429"
 |[Объект Parameter](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterobject.json) | Демонстрирует использование объекта в качестве параметра. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о доступных свойствах параметров см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
 * Дополнительные сведения о передаче значений параметров в виде файла см. в разделе [Create диспетчер ресурсов Parameter File](parameter-files.md).

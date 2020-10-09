@@ -8,21 +8,21 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/30/2019
 ms.openlocfilehash: 8a9c7ed9f6b5b8ec89bfca6dd59034b11f05f9a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75895167"
 ---
 # <a name="scenario-reducer-is-slow-in-azure-hdinsight"></a>Сценарий: снижение производительности в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании интерактивных компонентов запросов в кластерах Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 При выполнении запроса, такого как `insert into table1 partition(a,b) select a,b,c from table2` план запроса, запускается модулей сжатия, но данные из каждой секции отправляются одному элементу reduce. Это приводит к тому, что запрос будет работать так же, как и в случае с более крупным уменьшением секции.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Откройте [Beeline](../hadoop/apache-hadoop-use-hive-beeline.md) и проверьте значение SET `hive.optimize.sort.dynamic.partition` .
 

@@ -8,21 +8,21 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
 ms.openlocfilehash: 2b17c2488e47148e8845433f9c7613e1127fbffa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75895755"
 ---
 # <a name="scenario-apache-ambari-ui-502-error-in-azure-hdinsight"></a>Сценарий: Ошибка пользовательского интерфейса Apache Ambari 502 в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблемы
+## <a name="issue"></a>Проблема
 
 При попытке доступа к пользовательскому интерфейсу Apache Ambari для кластера HDInsight вы получаете примерно следующее сообщение: "502-веб-сервер получил недопустимый ответ при работе в качестве шлюза или прокси-сервера".
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 В общем случае код состояния HTTP 502 означает, что сервер Ambari работает неправильно на активном головного узла. Существует несколько возможных основных причин.
 
