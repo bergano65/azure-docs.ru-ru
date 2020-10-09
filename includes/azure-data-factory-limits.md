@@ -2,18 +2,18 @@
 title: Включить имя файла
 description: включить файл
 services: data-factory
-author: linda33wj
+author: chez-charlie
 ms.service: data-factory
 ms.topic: include
-ms.date: 01/08/2020
-ms.author: jingwang
+ms.date: 10/06/2020
+ms.author: chez
 ms.custom: include file
-ms.openlocfilehash: bfb42e0ba81eef145932db072c8a80a2f8e00932
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: a5ea95e0ea958c495e28eaa1fee72e34362157a1
+ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87425230"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91859847"
 ---
 Фабрика данных Azure — это мультитенантная служба со следующими ограничениями по умолчанию, которые гарантируют, что подписки клиентов защищены от рабочих нагрузок друг друга. Чтобы увеличить ограничение до максимального для подписки, обратитесь в службу поддержки.
 
@@ -21,10 +21,10 @@ ms.locfileid: "87425230"
 
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | -------- | ------------- | ------------- |
-| Число фабрик данных в подписке Azure. | 800 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Число фабрик данных в подписке Azure. | 800 | 800 |
 | Общее число сущностей (конвейеры, наборы данных, триггеры, связанные службы, частные конечные точки, среды выполнения интеграции) в фабрике данных. | 5 000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Общее число ядер ЦП для сред выполнения интеграции Azure-SSIS в рамках одной подписки. | 256 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Число параллельных выполнений конвейера в одной фабрике данных для всех конвейеров в фабрике. | 10 000  | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Число параллельных выполнений конвейера в одной фабрике данных для всех конвейеров в фабрике. | 10 000  | 10 000 |
 | Число параллельных выполнений внешних действий на подписку на [регион Azure Integration Runtime](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location).<br><small>Внешние действия управляются в среде выполнения интеграции, но выполняются в связанных службах, включая Databricks, хранимые процедуры, HDInsight, веб-службы и др.</small> | 3000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Число параллельных выполнений действий конвейера на подписку на [регион Azure Integration Runtime](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location). <br><small>Действия конвейера, включая поиск, получение метаданных и удаление, выполняются в среде выполнения интеграции.</small>| 1000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Число параллельных выполнений операций создания на подписку на [регион Azure Integration Runtime](../articles/data-factory/concepts-integration-runtime.md#integration-runtime-location).<br><small>Включая проверку подключения, просмотр списка папок и списка таблиц, предварительный просмотр данных. | 200 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
@@ -41,14 +41,13 @@ ms.locfileid: "87425230"
 | Число байтов на объект конвейера<sup>3</sup>. | 200 КБ | 200 КБ |
 | Число байтов на объект набора данных или связанной службы<sup>3</sup>. | 100 КБ | 2000 КБ |
 | Число единиц интеграции данных<sup>1</sup> на выполнение действия копирования. | 256 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Количество вызовов API записи | 1200/ч<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Количество вызовов API чтения | 12 500/ч<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Мониторинг запросов в минуту | 1000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
-| Операции CRUD с сущностями в минуту | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Количество вызовов API записи | 1200/ч | 1200/ч<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. |
+| Количество вызовов API чтения | 12 500/ч | 12 500/ч<br/><br/> Это ограничение накладывается Azure Resource Manager, а не фабрикой данных Azure. |
+| Мониторинг запросов в минуту | 1000 | 1000 |
 | Максимальное время сеанса отладки потока данных. | 8 ч | 8 ч |
 | Число параллельных потоков данных на среду выполнения интеграции. | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Число параллельных сеансов отладки потока данных на одного пользователя на фабрику. | 3 | 3 |
-| Предельный срок жизни Azure IR Потока данных. | 4 ч | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Предельный срок жизни Azure IR Потока данных. | 4 ч |  4 ч |
 
 <sup>1</sup> Единица интеграции данных используется в операциях копирования из облака в облако (см. сведения о [единицах интеграции данных, версия 2](../articles/data-factory/copy-activity-performance.md#data-integration-units)). См. сведения о [ценах на Фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/).
 
