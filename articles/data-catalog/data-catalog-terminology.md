@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: d6c813dec3922334f7462b1226ea22371fd5f43b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "68736296"
 ---
 # <a name="azure-data-catalog-terminology"></a>Терминология каталога данных Azure
@@ -84,6 +84,6 @@ ms.locfileid: "68736296"
 
 Регистрация — это процесс извлечения метаданных ресурса данных из источника данных и их копирования в каталог данных Azure. Зарегистрированные ресурсы данных можно аннотировать и обнаруживать.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство. Создание Каталога данных Azure](data-catalog-get-started.md) 

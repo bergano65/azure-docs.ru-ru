@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: ce58fc69496f54c078b0a0a55a8a3c7cad82a051
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81391710"
 ---
 # <a name="quickstart-deploy-service-catalog-app-through-azure-portal"></a>Краткое руководство. Развертывание приложения каталога услуг с помощью портал Azure
@@ -36,7 +36,7 @@ ms.locfileid: "81391710"
 
    ![Выбор определения для развертывания](./media/deploy-service-catalog-quickstart/select-definition.png)
 
-1. Укажите значения для вкладки " **основные** ". Выберите подписку Azure для развертывания приложения каталога услуг. Создайте новую группу ресурсов с именем **applicationGroup**. Выберите расположение для вашего приложения. По завершении выберите **ОК**.
+1. Укажите значения для вкладки " **основы** ". Выберите подписку Azure для развертывания приложения каталога услуг. Создайте новую группу ресурсов с именем **applicationGroup**. Выберите расположение для вашего приложения. По завершении выберите **ОК**.
 
    ![Укажите значения для основы](./media/deploy-service-catalog-quickstart/provide-basics.png)
 

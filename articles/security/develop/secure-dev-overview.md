@@ -14,10 +14,10 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: c4314a0dcbbcb907ef4d6de0a2788cf04dfe1641
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "68934869"
 ---
 # <a name="secure-development-best-practices-on-azure"></a>Рекомендации по безопасной разработке в Azure
@@ -43,13 +43,13 @@ ms.locfileid: "68934869"
 
   - Обучение
   - Requirements (Требования)
-  - Конструирование
+  - Проектирование
   - Реализация
   - Проверка
-  - Выпуск
+  - Release
   - Ответ
 
-![Жизненный цикл разработки решений для обеспечения безопасности](./media/secure-dev-overview/01-sdl-phase.png)
+![Жизненный цикл разработки защищенных приложений](./media/secure-dev-overview/01-sdl-phase.png)
 
 В этих статьях мы сгруппированы этапы SDL в проектировании, разработке и развертывании.
 
@@ -75,7 +75,7 @@ ms.locfileid: "68934869"
 
 Схемы [безопасности и соответствия требованиям в Azure](https://servicetrust.microsoft.com/ViewPage/BlueprintOverview) — схемы безопасности и соответствия требованиям Azure — это ресурсы, которые могут помочь в создании и запуске облачных приложений, соответствующих строгим нормативам и стандартам.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях мы рекомендуем управлять безопасностью и действиями, которые могут помочь при проектировании, разработке и развертывании безопасных приложений.
 
 - [Проектирование защищенных приложений](secure-design.md)

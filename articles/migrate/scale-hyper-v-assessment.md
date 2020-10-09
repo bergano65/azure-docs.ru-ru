@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: raynew
 ms.openlocfilehash: c1ae3a9ed8a775161aaf85ab2c91b1e43113d2e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "70279440"
 ---
 # <a name="assess-large-numbers-of-hyper-v-vms-for-migration-to-azure"></a>Оценка большого количества виртуальных машин Hyper-V для миграции в Azure
@@ -48,7 +48,7 @@ ms.locfileid: "70279440"
 --- | --- 
 **Проекты службы "Миграция Azure"** | Оценка до 35 000 виртуальных машин в проекте.
 **Устройство службы "Миграция Azure"** | Устройство может обнаруживать до 5000 виртуальных машин.<br/> Устройство может подключаться к 300 узлам Hyper-V.<br/> Устройство может быть связано только с одним проектом службы "миграция Azure".<br/> С одним проектом службы "миграция Azure" можно связать любое количество устройств. <br/><br/> 
-**Сгруппировать** | В одну группу можно добавить до 35 000 виртуальных машин.
+**Группа** | В одну группу можно добавить до 35 000 виртуальных машин.
 **Оценка службы "миграция Azure"** | Можно оценить до 35 000 виртуальных машин в одной операции.
 
 
@@ -75,7 +75,7 @@ ms.locfileid: "70279440"
 1. Создайте проекты службы "миграция Azure".
 2. Добавьте средство Azure Migrate Server для оценки в проекты.
 
-[Подробнее](how-to-add-tool-first-time.md)
+[Дополнительные сведения](how-to-add-tool-first-time.md)
 
 ## <a name="create-and-review-an-assessment"></a>Создание и проверка оценки
 

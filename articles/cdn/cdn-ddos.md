@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: allensu
 ms.openlocfilehash: dc7af555bcaf8654ecdb27d804cbef0c2cedb284
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81253821"
 ---
 # <a name="azure-cdn-ddos-protection"></a>Защита Azure CDN от атак DDoS
@@ -37,6 +37,6 @@ Azure CDN из Verizon защищены собственной платформ�
 
 Azure CDN от Akamai защищаются собственной платформой защиты от атак DDoS Akamai. Она интегрирована в Azure CDN по умолчанию из Akamai и не имеет дополнительных затрат. Она обеспечивает базовую защиту от наиболее распространенных, часто встречающихся переполнений запросов DNS уровня 7, а также атак уровня 3 и 4 объемные, предназначенных для конечных точек CDN.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об [Azure от атак DDoS](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview). 

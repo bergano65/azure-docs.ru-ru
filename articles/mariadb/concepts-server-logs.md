@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 4/13/2020
 ms.openlocfilehash: ffd4ab463080001dbab5b0ed9ece69c4b5f91382
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81272089"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Журналы запросов в базе данных Azure для MariaDB
@@ -59,18 +59,18 @@ Azure Monitor журналы диагностики позволяют пере�
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated`ФОРМАТА | Метка времени, когда журнал был записан в формате UTC |
-| `Type` | Тип журнала Всегда `AzureDiagnostics` |
+| `TimeGenerated` ФОРМАТА | Метка времени, когда журнал был записан в формате UTC |
+| `Type` | Тип журнала Всегда `AzureDiagnostics`. |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
-| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMARIADB` |
+| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMARIADB`. |
 | `ResourceType` | `Servers` |
 | `ResourceId` | Универсальный код ресурса (URI) |
 | `Resource` | Имя сервера |
 | `Category` | `MySqlSlowLogs` |
 | `OperationName` | `LogEvent` |
 | `Logical_server_name_s` | Имя сервера |
-| `start_time_t`ФОРМАТА | Время начала запроса. |
+| `start_time_t` ФОРМАТА | Время начала запроса. |
 | `query_time_s` | Общее время, которое потребовалось для выполнения запроса. |
 | `lock_time_s` | Общее время блокировки запроса. |
 | `user_host_s` | Имя пользователя |
@@ -141,6 +141,6 @@ Azure Monitor журналы диагностики позволяют пере�
     | where query_time_d > 10
     ```    
     
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 - [Настройка журналов запросов от портал Azure](howto-configure-server-logs-portal.md)
 - [Настройка журналов запросов от Azure CLI](howto-configure-server-logs-cli.md)
