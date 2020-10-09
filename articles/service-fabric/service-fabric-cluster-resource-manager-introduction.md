@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: da9205f5d95eaf1b4dc655ee727ab8a4fe90893d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75563332"
 ---
 # <a name="introducing-the-service-fabric-cluster-resource-manager"></a>Общие сведения о диспетчере кластерных ресурсов Service Fabric
@@ -44,7 +44,7 @@ ms.locfileid: "75563332"
 
 Так как диспетчер кластерных ресурсов отвечает за перемещение служб, набор его функций отличается от возможностей подсистемы балансировки сетевой нагрузки. Это обусловлено тем, что подсистемы балансировки сетевой нагрузки доставляют сетевой трафик в фактическое расположение службы, даже если оно не является оптимальным для выполнения самой службы. Диспетчер кластерных ресурсов Service Fabric применяет совершенно иные стратегии для обеспечения эффективного использования ресурсов в кластере.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения об архитектуре и потоке информации в диспетчер ресурсове кластера см. в [этой статье](service-fabric-cluster-resource-manager-architecture.md) .
 - В Cluster Resource Manager предусмотрено много параметров для описания кластера. Дополнительные сведения о метриках см. в статье, в которой [описывается кластер Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md).
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).

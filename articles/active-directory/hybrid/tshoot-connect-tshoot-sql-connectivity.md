@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d5f8b87684847089a05341a5a68f6ad3e2ac86b0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85355868"
 ---
 # <a name="troubleshoot-sql-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения SQL в Azure AD Connect
@@ -39,7 +39,7 @@ Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\A
 >Для использования Install-Module требуется обновление до [PowerShell 5.0 (WMF 5.0)](https://www.microsoft.com/download/details.aspx?id=50395) или более поздней версии.  
 Или установите [предварительную версию модулей PowerShell PackageManagement за март 2016 года для PowerShell 3.0 или 4.0](/powershell/module/PackageManagement). 
 
-- **Показывать все команды**:`Get-Command -Module AdSyncTools` 
+- **Показывать все команды**: `Get-Command -Module AdSyncTools` 
 - **Выполните функцию PowerShell**: `Connect-ADSyncDatabase` со следующими параметрами
     - Сервер. Имя сервера SQL Server.
     - Экземпляр. (Необязательно.) Имя экземпляра SQL Server и, при необходимости, номер порта, которые вы хотите использовать. Не указывайте этот параметр, чтобы использовать экземпляр по умолчанию.
@@ -172,6 +172,6 @@ TcpStatus    : Blocked - the inbound firewall rule for port 58379 is missing or 
 PS C:\Program Files\Microsoft Azure Active Directory Connect\tools>  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 - [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 -  [Подключение к Azure AD с помощью Azure AD Connect](tshoot-connect-connectivity.md)

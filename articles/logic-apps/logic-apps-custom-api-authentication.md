@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/22/2017
 ms.openlocfilehash: 5e0dcd478c6eb6696a0e07d35d4dccddac68ac1c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80656238"
 ---
 # <a name="increase-security-for-calls-to-custom-apis-from-azure-logic-apps"></a>Повышение безопасности при вызове пользовательских API из Azure Logic Apps
@@ -203,7 +203,7 @@ ms.locfileid: "80656238"
 | audience | Да | GUID целевого ресурса, к которому требуется доступ, являющийся идентификатором клиента из удостоверения приложения для веб-приложения или приложения API. | 
 | clientid | Да | GUID клиента, запрашивающего доступ, являющийся идентификатором клиента из удостоверения приложения логики. | 
 | secret | Да | Ключ или пароль из удостоверения приложения для клиента, который запрашивает маркер доступа. | 
-| тип | Да | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
+| type | Да | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
 |||| 
 
 Пример:
@@ -257,7 +257,7 @@ ms.locfileid: "80656238"
 
 <a name="basic"></a>
 
-#### <a name="basic-authentication"></a>обычная проверка подлинности
+#### <a name="basic-authentication"></a>Обычная проверка подлинности
 
 Для проверки входящих запросов из приложения логики к веб-приложениям или приложениям API можно использовать обычную проверку подлинности: имя пользователя и пароль. Обычная проверка подлинности — это универсальный вариант, который подходит для веб-приложений и приложений API, написанных на любых языках программирования.
 
@@ -293,6 +293,6 @@ and not use the Azure portal, learn how to
 To create an application identity for your logic app and use that identity to call your API, 
 you must follow the previous steps. -->
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Deploy and call custom APIs from logic app workflows](../logic-apps/logic-apps-custom-api-host-deploy-call.md) (Развертывание и вызов пользовательских API из рабочих процессов приложения логики)

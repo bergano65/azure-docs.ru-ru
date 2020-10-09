@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 6/08/2018
 ms.author: pepogors
 ms.openlocfilehash: 1a699f3b35970270a9800162a6d8717682a168ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75614423"
 ---
 # <a name="create-service-fabric-container-running-apache-tomcat-server-on-linux"></a>Создание контейнера Service Fabric в Linux с сервером Apache Tomcat
@@ -16,7 +16,7 @@ Apache Tomcat — это популярная реализация технол�
 
 Дополнительные сведения об Apache Tomcat см. на [главной странице Apache Tomcat](https://tomcat.apache.org/). 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * [Service Fabric пакет SDK и средства](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
@@ -229,7 +229,7 @@ docker rmi tomcattest
 docker rmi myregistry.azurecr.io/samples/tomcattest
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Краткую инструкцию по настройке дополнительных возможностей контейнера Linux вы найдете в статье [Создание первого контейнера-приложения Service Fabric в Linux](service-fabric-get-started-containers-linux.md).
 * Подробные инструкции приведены в руководстве по [созданию образов контейнеров в кластере Service Fabric в Linux](service-fabric-tutorial-create-container-images.md).
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).

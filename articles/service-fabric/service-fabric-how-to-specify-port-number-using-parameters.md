@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 12/06/2017
 ms.author: mikhegn
 ms.openlocfilehash: a53626b8fd362397ba89df30b099fa3c9ff7b0a2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75609865"
 ---
 # <a name="how-to-specify-the-port-number-of-a-service-using-parameters-in-service-fabric"></a>Как указать номер порта службы с помощью параметров в Service Fabric
@@ -24,7 +24,7 @@ ms.locfileid: "75609865"
 1. Выберите шаблон "ASP.NET Core без отслеживания состояния".
 1. Выберите "Веб-API".
 1. Откройте файл ServiceManifest.xml.
-1. Обратите внимание на имя конечной точки, указанное для службы. Значение по умолчанию — `ServiceEndpoint`.
+1. Обратите внимание на имя конечной точки, указанное для службы. По умолчанию — `ServiceEndpoint`.
 1. Откройте файл ApplicationManifest.xml.
 1. В элемент `ServiceManifestImport` добавьте новый элемент `RessourceOverrides` со ссылкой на конечную точку в файле ServiceManifest.xml.
 
@@ -81,7 +81,7 @@ ms.locfileid: "75609865"
 
 При публикации приложения из Visual Studio с помощью профиля публикации Cloud.xml служба будет использовать порт 80. Если приложение развертывается без указания параметра MyWebAPI_PortNumber, то служба использует порт 8080.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше о некоторых основных понятиях, рассмотренных в данной статье, ознакомьтесь с разделом [Управление параметрами приложения для нескольких сред](service-fabric-manage-multiple-environment-app-configuration.md).
 
 Сведения о других возможностях управления приложениями, доступными в Visual Studio, см. в статье [Использование Visual Studio для упрощения создания приложений Service Fabric и управления ими](service-fabric-manage-application-in-visual-studio.md).

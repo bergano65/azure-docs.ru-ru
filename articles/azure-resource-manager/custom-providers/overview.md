@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: jobreen
 ms.openlocfilehash: 68b8bd187d58cd71778b8a922684cc3817a0715d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80398473"
 ---
 # <a name="azure-custom-resource-providers-overview"></a>Общие сведения о поставщиках настраиваемых ресурсов Azure
@@ -84,7 +84,7 @@ API, добавленные в Azure для приведенного выше п
 
 HttpMethod | Образец URI | Описание
 ---|---|---
-ОТПРАВКА | /subscriptions/{subscriptionId}/resourceGroups/{имя_группы_ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>Микустомресаурцес/{Кустомресаурценаме}? API-Version = 2018-09 01-Preview | Вызов REST API Azure для создания нового ресурса.
+PUT | /subscriptions/{subscriptionId}/resourceGroups/{имя_группы_ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>Микустомресаурцес/{Кустомресаурценаме}? API-Version = 2018-09 01-Preview | Вызов REST API Azure для создания нового ресурса.
 DELETE | /subscriptions/{subscriptionId}/resourceGroups/{имя_группы_ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>Микустомресаурцес/{Кустомресаурценаме}? API-Version = 2018-09 01-Preview | Вызов REST API Azure для удаления существующего ресурса.
 GET | /subscriptions/{subscriptionId}/resourceGroups/{имя_группы_ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>Микустомресаурцес/{Кустомресаурценаме}? API-Version = 2018-09 01-Preview | Вызов REST API Azure для получения существующего ресурса.
 GET | /subscriptions/{subscriptionId}/resourceGroups/{имя_группы_ресурсов}/<br>providers/Microsoft.CustomProviders/resourceProviders/{имя поставщика ресурсов}/<br>Микустомресаурцес? API-Version = 2018-9 01-Preview | Вызов REST API Azure для получения списка существующих ресурсов.

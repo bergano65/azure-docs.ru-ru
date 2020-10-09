@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
 ms.openlocfilehash: 83548063a796401792bd19e7ec27be36a0efa4e4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80549206"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
@@ -88,8 +88,8 @@ ms.locfileid: "80549206"
 |[Брандмауэр веб-приложения](/azure/frontdoor/waf-overview) (WAF)|Компонент шлюза приложений для централизованной защиты веб-приложений от распространенных эксплойтов и уязвимостей.|
 | [Azure Load Balancer](/azure/load-balancer/load-balancer-overview)|Подсистема балансировки нагрузки сети приложения TCP/UDP. |
 | [Azure ExpressRoute](/azure/expressroute/expressroute-introduction)| Выделенная ссылка WAN между локальными сетями и виртуальными сетями Azure. |
-| [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview)| Балансировщик нагрузки глобальной DNS.|
+| [Диспетчер трафика Azure](/azure/traffic-manager/traffic-manager-overview)| Балансировщик нагрузки глобальной DNS.|
 | [Прокси приложения Azure](/azure/active-directory/active-directory-application-proxy-get-started)| Внешний интерфейс аутентификации, используемый для защиты удаленного доступа к веб-приложениям, размещенным локально. |
 |[Брандмауэр Azure](/azure/firewall/overview)|Управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure.|
-|[Защита от атак DDoS в Azure](/azure/virtual-network/ddos-protection-overview)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|
+|[Защита от атак DDoS Azure](/azure/virtual-network/ddos-protection-overview)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|
 |[Конечные точки службы виртуальной сети](/azure/virtual-network/virtual-network-service-endpoints-overview)|Расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению.|

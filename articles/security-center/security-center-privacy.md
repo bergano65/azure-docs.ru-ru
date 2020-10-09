@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 05/23/2018
 ms.author: memildin
 ms.openlocfilehash: bf715d872fab421de30ebcb146a1981a7d008738
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80585971"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
@@ -27,7 +27,7 @@ ms.locfileid: "80585971"
 
 Пользователь центра безопасности Azure, которому назначена роль читателя, владельца, участника или администратора учетной записи, может получить доступ к данным клиента в рамках этого центра. Дополнительные сведения о роли администратора учетной записи см. в статьях [встроенные роли для управления доступом на основе ролей в Azure](../role-based-access-control/built-in-roles.md) , чтобы узнать больше о ролях читателей, владельца и участника. См. раздел [Администраторы подписки Azure](../cost-management-billing/manage/add-change-subscription-administrator.md).
 
-## <a name="searching-for-and-identifying-personal-data"></a>Поиск персональных данных и их идентификация
+## <a name="searching-for-and-identifying-personal-data"></a>Поиск и идентификация персональных данных
 Пользователи Центра безопасности Azure могут просматривать свои персональные данные через портал Azure. В Центре безопасности Azure хранятся только сведения о контактных лицах по вопросам безопасности, такие как адреса электронной почты и номера телефонов. Дополнительные сведения см. [в статье указание контактных сведений по безопасности в центре безопасности Azure](security-center-provide-security-contact-details.md).
 
 В портал Azure пользователь может просматривать разрешенные IP-конфигурации с помощью функции JIT-доступа к виртуальной машине центра безопасности. Дополнительные сведения см. [в статье Управление доступом к виртуальным машинам с помощью JIT](security-center-just-in-time.md).

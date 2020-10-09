@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
 ms.openlocfilehash: 1b80fc997a4b3d2b472717b1ec2f379a4e958d8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80422557"
 ---
 # <a name="azure-vm-guest-os-firewall-is-blocking-inbound-traffic"></a>Входящий трафик блокируется брандмауэром гостевой ОС виртуальной машины Azure
@@ -29,7 +29,7 @@ ms.locfileid: "80422557"
 
 Невозможно использовать протокол удаленного рабочего стола для подключения к виртуальной машине Azure. В разделе "Диагностика загрузки -> Снимок экрана" вы видите, что операционная система полностью загружена, на экране приветствия (Ctrl+Alt+Del).
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 ### <a name="cause-1"></a>Причина 1
 

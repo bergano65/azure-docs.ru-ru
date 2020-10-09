@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, Azure, датчик, пакет SDK, система координат, калибровка, функции, Камера, внутренний, внешний, проект, отменяющий проект, преобразование, RGB-d, облако точек
 ms.openlocfilehash: a501765222154bde4ed35e878a9d18042893fca2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85276941"
 ---
 # <a name="use-azure-kinect-calibration-functions"></a>Использование функций калибровки Azure Kinect
@@ -54,7 +54,7 @@ ms.locfileid: "85276941"
 - [Пример расискажений](https://github.com/Microsoft/Azure-Kinect-Sensor-SDK/tree/develop/examples/undistort)
 - [Пример быстрой облачной точки](https://github.com/Microsoft/Azure-Kinect-Sensor-SDK/tree/develop/examples/fastpointcloud)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знакомы с калибровками камеры, вы также можете узнать, как
 >[!div class="nextstepaction"]

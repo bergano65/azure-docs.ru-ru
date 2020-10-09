@@ -4,10 +4,10 @@ description: Узнайте, какие языки поддерживаются 
 ms.topic: conceptual
 ms.date: 11/27/2019
 ms.openlocfilehash: 91a6ea886c3828678771b24d69bb7987af1fb105
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83994907"
 ---
 # <a name="supported-languages-in-azure-functions"></a>Поддерживаемые языки в решении "Функции Azure"
@@ -35,7 +35,7 @@ ms.locfileid: "83994907"
 
 Начиная с версии 2. x среда выполнения разработана таким образом, чтобы обеспечить [расширяемость языка](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке функций на поддерживаемых языках см. в следующих ресурсах:
 

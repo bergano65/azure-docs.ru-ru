@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6f3b5af972ad6dd15b7c992d5e264ede97bd1dde
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80653633"
 ---
 # <a name="azure-multi-factor-authentication-user-data-collection"></a>Сбор данных о пользователях в службе "Многофакторная идентификация Azure"
@@ -43,7 +43,7 @@ ms.locfileid: "80653633"
 - Режим "Мобильное приложение" (стандартный, ПИН-код);
 - режим "Токен OATH" (стандартный, ПИН-код);
 - тип проверки подлинности;
-- Имя приложения
+- Application Name
 - основной вызов — код страны;
 - основной вызов — номер телефона;
 - основной вызов — добавочный номер;
@@ -188,6 +188,6 @@ ms.locfileid: "80653633"
 
 - Для полного удаления данных может потребоваться до 30 дней.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отчеты в службе Многофакторной идентификации Azure](howto-mfa-reporting.md)
