@@ -9,15 +9,15 @@ ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: hrasheed
 ms.openlocfilehash: 1858e06567a0ab0907e6d2cb60358ff4ac00f9a2
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86086353"
 ---
 # <a name="set-up-hdinsight-clusters-with-a-custom-ambari-db"></a>Настройка кластеров HDInsight с помощью настраиваемой базы данных Ambari DB
 
-Apache Ambari упрощает управление и мониторинг кластера Apache Hadoop. Ambari предоставляет простой в использовании пользовательский веб-интерфейс и REST API. Ambari входит в кластеры HDInsight и используется для мониторинга кластера и внесения изменений в конфигурацию.
+Apache Ambari упрощает управление и мониторинг кластера Apache Hadoop. Ambari предоставляет простой в использовании пользовательский веб-интерфейс и REST API. Ambari предоставляется с кластерами HDInsight и используется для мониторинга кластера и внесения изменений в его конфигурацию.
 
 При нормальном создании кластера, как описано в других статьях, таких как [Настройка кластеров в hdinsight](hdinsight-hadoop-provision-linux-clusters.md), Ambari развертывается в [базе данных SQL Azure S0](../azure-sql/database/resource-limits-dtu-single-databases.md#standard-service-tier) , управляемой HDInsight и недоступной пользователям.
 
@@ -65,6 +65,6 @@ az group deployment create --name HDInsightAmbariDBDeployment \
     --parameters azuredeploy.parameters.json
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование внешних хранилищ метаданных в Azure HDInsight](hdinsight-use-external-metadata-stores.md)

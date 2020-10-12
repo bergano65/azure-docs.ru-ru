@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: scottwhi
 ms.openlocfilehash: 6fa022f181e2061c6a7f3e08d1f2f501ddd9cac3
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84696717"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Фильтрация результатов, возвращаемых в ответе на запрос поиска  
@@ -115,9 +115,9 @@ https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:con
 
 Чтобы ограничить результаты Интернета веб-страницами, обнаруженными Bing в течение определенного периода времени, задайте для параметра запроса [свежести](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#freshness) одно из следующих значений без учета регистра:
 
-* `Day`— Возврат веб-страниц, обнаруженных Bing за последние 24 часа
-* `Week`— Возврат веб-страниц, обнаруженных Bing за последние семь дней
-* `Month`— Возврат веб-страниц, обнаруженных в течение последних 30 дней
+* `Day` — Возврат веб-страниц, обнаруженных Bing за последние 24 часа
+* `Week` — Возврат веб-страниц, обнаруженных Bing за последние семь дней
+* `Month` — Возврат веб-страниц, обнаруженных в течение последних 30 дней
 
 Можно также задать для этого параметра настраиваемый диапазон дат в форме `YYYY-MM-DD..YYYY-MM-DD` . 
 

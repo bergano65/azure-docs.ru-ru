@@ -11,10 +11,10 @@ ms.date: 08/28/2020
 ms.topic: conceptual
 ms.custom: troubleshooting, devx-track-python
 ms.openlocfilehash: be68ad35deca754df70bb51e83929e73ff132ba6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91315411"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
@@ -69,7 +69,7 @@ ms.locfileid: "91315411"
 
 В таблице ниже приведены сведения о различных параметрах отладки для конвейеров. Он не является исчерпывающим списком, так как существуют другие варианты, кроме только Машинное обучение Azure, Python и Опенценсус, показанных здесь.
 
-| Библиотека                    | Тип   | Пример                                                          | Destination                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
+| Библиотека                    | Тип   | Пример                                                          | Назначение                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|--------|------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | пакет SDK для Машинного обучения Azure; | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md)<br>[класс azureml. Core. Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py&preserve-view=true)                                                                                                                                                 |
 | Печать и ведение журнала Python    | Журнал    | `print(val)`<br>`logging.info(message)`                          | Журналы драйверов, конструктор Машинное обучение Azure | [Как отвести эксперименты](how-to-track-experiments.md)<br><br>[Ведение журнала Python](https://docs.python.org/2/library/logging.html)                                                                                                                                                                       |
@@ -147,7 +147,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и дебугпи можно присоединяться к коду, как он выполняется в среде обучения. Дополнительные сведения см. в [разделе Интерактивная Отладка в VS Code Guide](how-to-debug-visual-studio-code.md#debug-and-troubleshoot-machine-learning-pipelines).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py&preserve-view=true) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py&preserve-view=true) .
 

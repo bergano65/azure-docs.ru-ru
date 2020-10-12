@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
 ms.openlocfilehash: e28ce4cd46cb802241e02e4060441747389d3989
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888162"
 ---
 # <a name="create-external-stream-transact-sql"></a>CREATE EXTERNAL STREAM (Transact-SQL)
@@ -96,7 +96,7 @@ WITH  ( <with_options> )
 - [FILE_FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql/)
 - **LOCATION**. Задает имя для фактических данных или расположения в источнике данных. 
    - Для объектов потока ребра или Kafka, Location указывает имя концентратора ребра или раздела Kafka для чтения или записи.
-   - Для объектов потока SQL (SQL Server, база данных SQL Azure или Azure SQL ребро) указывает имя таблицы. Если поток создается в той же базе данных и схеме, что и Целевая таблица, то достаточно лишь имя таблицы. В противном случае необходимо полностью определить (<database_name. schema_name. table_name) имя таблицы.
+   - Для объектов потока SQL (SQL Server, база данных SQL Azure или Azure SQL ребро) указывает имя таблицы. Если поток создается в той же базе данных и схеме, что и Целевая таблица, то достаточно лишь имя таблицы. В противном случае необходимо полностью определить (<имя_базы_данных. schema_name. table_name) имя таблицы.
    - Для расположения объекта потока хранилища BLOB-объектов Azure ссылается на шаблон пути, используемый внутри контейнера больших двоичных объектов. Дополнительные сведения об этой функции см. в статье (/артиклес/стреам-Аналитикс/стреам-Аналитикс-дефине-аутпутс.МД # Blob-Storage-and-Azure-Data-Lake-Gen2).
 
 - **INPUT_OPTIONS**: укажите параметры в виде пар "ключ-значение" для таких служб, как Kafka, IOT Edge концентратора, которые являются входными для потоковых запросов.

@@ -16,10 +16,10 @@ ms.date: 03/20/2019
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
 ms.openlocfilehash: a53027ec1f775c240164f67e7ee0473a44690964
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89262691"
 ---
 # <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов
@@ -86,14 +86,14 @@ ms.locfileid: "89262691"
 
 Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Учебные видеоматериалы по расширенному рабочему процессу кодировщика служб мультимедиа Azure](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)
 

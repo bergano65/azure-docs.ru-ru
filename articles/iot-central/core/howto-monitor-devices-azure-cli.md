@@ -10,10 +10,10 @@ ms.custom: devx-track-azurecli, device-developer
 services: iot-central
 manager: corywink
 ms.openlocfilehash: 276513e41b1595180acb0a596b236428032d87a6
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90015982"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli"></a>Мониторинг подключения устройств с помощью Azure CLI
@@ -53,7 +53,7 @@ az extension update --name azure-iot
 
 В следующих разделах описаны общие команды и параметры, которые можно использовать при запуске `az iot central` . Чтобы просмотреть полный набор команд и параметров, передайте `--help` `az iot central` его подкоманды или любую из ее подкоманд.
 
-### <a name="login"></a>Вход
+### <a name="login"></a>Имя входа
 
 Начните с входа в Azure CLI. 
 
@@ -78,6 +78,6 @@ az iot central diagnostics monitor-events --app-id <app-id> --properties all
 az iot central device twin show --app-id <app-id> --device-id <device-id>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы являетесь разработчиком устройства, рекомендуем следующий шаг — прочитать сведения о [подключении устройства в Azure IOT Central](./concepts-get-connected.md).

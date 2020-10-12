@@ -16,10 +16,10 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e78efd71943332e8a40e5b44b6b78f88e516649a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84759969"
 ---
 # <a name="remove-personal-data-for-azure-active-directory-application-proxy"></a>Удаление персональных данных в Azure Active Directory Application Proxy
@@ -79,6 +79,6 @@ ms.locfileid: "84759969"
 
 ![Отображает фрагмент кода с выделенным кодом для удаления](./media/application-proxy-remove-personal-data/01.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о прокси приложения см. в статье [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md).

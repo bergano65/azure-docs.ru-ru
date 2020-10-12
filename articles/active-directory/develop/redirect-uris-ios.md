@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: jak
 ms.custom: aaddev
 ms.openlocfilehash: 95bd7b5ac325ef5484bd01284c46489acb919a32
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85830355"
 ---
 # <a name="using-redirect-uris-with-the-microsoft-authentication-library-for-ios-and-macos"></a>Использование URI перенаправления с помощью библиотеки аутентификации Майкрософт для iOS и macOS
@@ -41,7 +41,7 @@ URI перенаправления должны быть разными для �
 С учетом следующей регистрации приложения в портал Azure:
 
 * Идентификатор клиента: `ABCDE-12345` (это один идентификатор клиента)
-* Редиректурис: `msauth.com.contoso.app1://auth` , `msauth.com.contoso.app2://auth` ,`msauth.com.contoso.app3://auth`
+* Редиректурис: `msauth.com.contoso.app1://auth` , `msauth.com.contoso.app2://auth` , `msauth.com.contoso.app3://auth`
 
 APP1 использует перенаправление `msauth.com.contoso.app1://auth` . \
 В вашем `msauth.com.contoso.app2://auth` проекте используется.

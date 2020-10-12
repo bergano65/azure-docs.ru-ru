@@ -7,13 +7,13 @@ ms.author: juluk
 ms.date: 06/29/2020
 author: jluk
 ms.openlocfilehash: d8ae03d52691a6c30f78439a579e7e7c136dda76
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90975290"
 ---
-# <a name="customize-cluster-egress-with-a-user-defined-route"></a>Настройка исходящего трафика кластера с помощью определяемого пользователем маршрута
+# <a name="customize-cluster-egress-with-a-user-defined-route"></a>Настройка исходящего трафика кластера с помощью User-Defined маршрута
 
 Исходящий трафик из кластера AKS можно настроить в соответствии с конкретными сценариями. По умолчанию AKS будет подготавливать Стандартный номер SKU Load Balancer, который будет настроен и использован для исходящего трафика. Однако настройка по умолчанию может не соответствовать требованиям всех сценариев, если общедоступные IP-адреса запрещены или для исходящего трафика требуются дополнительные прыжки.
 

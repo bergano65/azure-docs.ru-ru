@@ -4,10 +4,10 @@ description: В этой статье описывается, как можно 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 2166eaab073e2abc24ca24494ae13eb876db1fcf
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87533960"
 ---
 # <a name="scale-quotas-and-limits-in-devtest-labs"></a>Масштабирование квот и ограничений в DevTest Labs
@@ -25,7 +25,7 @@ ms.locfileid: "87533960"
 ## <a name="view-your-usage-and-quotas"></a>Просмотр сведений об использовании и квотах
 Следующие шаги показывают, как просмотреть сведения о текущих квотах в подписке на определенные ресурсы Azure, а также как узнать, какой процент каждой квоты уже использован.
 
-1. Войдите на [портал Microsoft Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Больше служб**, а затем выберите в списке **Выставление счетов**.
 1. В колонке "Выставление счетов" выберите подписку.
 4. Выберите **использование + квоты**.

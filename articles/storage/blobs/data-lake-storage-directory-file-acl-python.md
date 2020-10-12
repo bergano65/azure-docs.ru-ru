@@ -10,10 +10,10 @@ ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-python
 ms.openlocfilehash: fc99bc645b48739d6d6339111780047496c1984d
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90017121"
 ---
 # <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Python для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
@@ -96,7 +96,7 @@ def initialize_storage_account_ad(storage_account_name, client_id, client_secret
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-Контейнер выступает в качестве файловой системы для файлов. Его можно создать, вызвав метод **филесистемдаталакесервицеклиент. create_file_system** .
+Контейнер выступает в качестве файловой системы для файлов. Его можно создать, вызвав метод **FileSystemDataLakeServiceClient.create_file_system** .
 
 В этом примере создается контейнер с именем `my-file-system` .
 
@@ -114,7 +114,7 @@ def create_file_system():
 
 ## <a name="create-a-directory"></a>Создание каталога
 
-Создайте ссылку на каталог, вызвав метод **филесистемклиент. create_directory** .
+Создайте ссылку на каталог, вызвав метод **FileSystemClient.create_directory** .
 
 В этом примере в контейнер добавляется каталог с именем `my-directory` . 
 
@@ -129,7 +129,7 @@ def create_directory():
 
 ## <a name="rename-or-move-a-directory"></a>Переименование или перемещение каталога
 
-Переименуйте или переместите каталог, вызвав метод **даталакедиректориклиент. rename_directory** . Передайте путь к нужному каталогу параметру. 
+Переименуйте или переместите каталог, вызвав метод **DataLakeDirectoryClient.rename_directory** . Передайте путь к нужному каталогу параметру. 
 
 В этом примере подкаталог переименовывается в имя `my-subdirectory-renamed` .
 
@@ -149,7 +149,7 @@ def rename_directory():
 
 ## <a name="delete-a-directory"></a>Удаление каталога
 
-Удалите каталог, вызвав метод **даталакедиректориклиент. delete_directory** .
+Удалите каталог, вызвав метод **DataLakeDirectoryClient.delete_directory** .
 
 В этом примере удаляется каталог `my-directory`.  
 
@@ -166,7 +166,7 @@ def delete_directory():
 
 ## <a name="manage-directory-permissions"></a>Управление разрешениями каталога
 
-Получите список управления доступом (ACL) каталога, вызвав метод **даталакедиректориклиент. get_access_control** и ЗАДАВ список ACL, вызвав метод **даталакедиректориклиент. set_access_control** .
+Получите список управления доступом (ACL) каталога, вызвав метод **DataLakeDirectoryClient.get_access_control** и ЗАДАВ список ACL, вызвав метод **DataLakeDirectoryClient.set_access_control** .
 
 > [!NOTE]
 > Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
@@ -196,11 +196,11 @@ def manage_directory_permissions():
      print(e) 
 ```
 
-Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, вызовите метод **филесистемклиент. _get_root_directory_client** .
+Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, вызовите метод **FileSystemClient._get_root_directory_client** .
 
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог 
 
-Сначала создайте ссылку на файл в целевом каталоге, создав экземпляр класса **даталакефилеклиент** . Отправьте файл, вызвав метод **даталакефилеклиент. append_data** . Обязательно завершите передачу, вызвав метод **даталакефилеклиент. flush_data** .
+Сначала создайте ссылку на файл в целевом каталоге, создав экземпляр класса **даталакефилеклиент** . Отправьте файл, вызвав метод **DataLakeFileClient.append_data** . Обязательно завершите передачу, вызвав метод **DataLakeFileClient.flush_data** .
 
 В этом примере текстовый файл перегружается в каталог с именем `my-directory` .   
 
@@ -226,11 +226,11 @@ def upload_file_to_directory():
 ```
 
 > [!TIP]
-> Если размер файла большой, код должен выполнить несколько вызовов метода **даталакефилеклиент. append_data** . Вместо этого рекомендуется использовать метод **даталакефилеклиент. upload_data** . Таким образом, вы можете передать весь файл в одном вызове. 
+> Если размер файла большой, код должен выполнить несколько вызовов метода **DataLakeFileClient.append_data** . Вместо этого рекомендуется использовать метод **DataLakeFileClient.upload_data** . Таким образом, вы можете передать весь файл в одном вызове. 
 
 ## <a name="upload-a-large-file-to-a-directory"></a>Отправка большого файла в каталог
 
-Используйте метод **даталакефилеклиент. upload_data** для отправки больших файлов без выполнения нескольких вызовов метода **даталакефилеклиент. append_data** .
+Используйте метод **DataLakeFileClient.upload_data** для отправки больших файлов без выполнения нескольких вызовов метода **DataLakeFileClient.append_data** .
 
 ```python
 def upload_file_to_directory_bulk():
@@ -254,7 +254,7 @@ def upload_file_to_directory_bulk():
 
 ## <a name="manage-file-permissions"></a>Управление разрешениями для файлов
 
-Получите список управления доступом (ACL) файла, вызвав метод **даталакефилеклиент. get_access_control** и ЗАДАВ список ACL, вызвав метод **даталакефилеклиент. set_access_control** .
+Получите список управления доступом (ACL) файла, вызвав метод **DataLakeFileClient.get_access_control** и ЗАДАВ список ACL, вызвав метод **DataLakeFileClient.set_access_control** .
 
 > [!NOTE]
 > Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
@@ -288,7 +288,7 @@ def manage_file_permissions():
 
 ## <a name="download-from-a-directory"></a>Скачивание из каталога 
 
-Откройте локальный файл для записи. Затем создайте экземпляр **даталакефилеклиент** , представляющий файл, который требуется скачать. Вызовите **даталакефилеклиент. read_file** , чтобы прочитать байты из файла, а затем запишите эти байты в локальный файл. 
+Откройте локальный файл для записи. Затем создайте экземпляр **даталакефилеклиент** , представляющий файл, который требуется скачать. Вызовите **DataLakeFileClient.read_file** , чтобы прочитать байты из файла, а затем запишите эти байты в локальный файл. 
 
 ```python
 def download_file_from_directory():
@@ -314,7 +314,7 @@ def download_file_from_directory():
 ```
 ## <a name="list-directory-contents"></a>Вывод содержимого каталогов
 
-Перечислите содержимое каталога, вызвав метод **филесистемклиент. get_paths** , а затем перечислить результаты.
+Перечислите содержимое каталога, вызвав метод **FileSystemClient.get_paths** , а затем перечислите результаты.
 
 В этом примере выводится путь к каждому подкаталогу и файлу, расположенному в каталоге с именем `my-directory` .
 

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: guybo
 ms.openlocfilehash: cc8d4458de5f3bbf1eaf111aa10f1377f3c9d46a
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87292298"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Подготовка виртуальной машины на основе Red Hat для Azure
@@ -195,7 +195,7 @@ ms.locfileid: "87292298"
     # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
     ```
 
-1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Например:
+1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Пример:
 
     ```config-grub
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
@@ -723,7 +723,7 @@ ms.locfileid: "87292298"
     # subscription-manager repos --enable=rhel-6-server-extras-rpms
     ```
 
-1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Например:
+1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Пример:
 
     ```config-grub
     GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
@@ -1151,7 +1151,7 @@ add_drivers+=" hv_vmbus hv_netvsc hv_storvsc "
 
 Дополнительные сведения см. в описании [повторного создания initramfs](https://access.redhat.com/solutions/1958).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Теперь виртуальный жесткий диск Red Hat Enterprise Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 * Чтобы получить дополнительные сведения о низкоуровневых оболочках, сертифицированных для запуска Red Hat Enterprise Linux, посетите [веб-сайт Red Hat](https://access.redhat.com/certified-hypervisors).
 * Чтобы узнать больше об использовании готовых образов RHEL BYOS, перейдите на страницу документации по [BYOS](../workloads/redhat/byos.md).

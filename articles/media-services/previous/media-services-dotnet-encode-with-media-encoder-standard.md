@@ -17,10 +17,10 @@ ms.author: juliako
 ms.reviewer: anilmur
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 90b4680c725f3b5b7fcb6b988e52410c572b2cfa
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89262414"
 ---
 # <a name="encode-an-asset-with-media-encoder-standard-using-net"></a>Кодирование ресурса-контейнера с помощью Media Encoder Standard и .NET
@@ -212,7 +212,7 @@ namespace MediaEncoderStandardSample
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Создание эскиза с помощью Media Encoder Standard с .NET](media-services-dotnet-generate-thumbnail-with-mes.md) 
  [Общие сведения о кодировке служб мультимедиа](media-services-encode-asset.md)
 

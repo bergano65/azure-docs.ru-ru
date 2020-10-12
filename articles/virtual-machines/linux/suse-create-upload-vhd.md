@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: guybo
 ms.openlocfilehash: 73e07c612486d5f48b1ad3eca8044a561549092b
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87292121"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
@@ -133,11 +133,11 @@ ms.locfileid: "87292121"
 2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. В консоли оболочки выполните команду`zypper lr`. Если эта команда возвращает результат следующего вида, то репозитории настроены надлежащим образом, и никаких изменений не требуется (обратите внимание, что номера версий могут отличаться):
 
-   | # | Псевдоним                 | Имя                  | Включен | Обновить
+   | # | Псевдоним                 | name                  | Включен | Обновить
    | - | :-------------------- | :-------------------- | :------ | :------
    | 1 | Облако: Tools_13.1      | Облако: Tools_13.1      | Да     | Да
-   | 2 | openSUSE_13.1_OSS     | openSUSE_13.1_OSS     | Да     | Да
-   | 3 | openSUSE_13.1_Updates | openSUSE_13.1_Updates | Да     | Да
+   | 2 | openSUSE_13 openSUSE_13.1_OSS     | openSUSE_13 openSUSE_13.1_OSS     | Да     | Да
+   | 3 | openSUSE_13 openSUSE_13.1_Updates | openSUSE_13 openSUSE_13.1_Updates | Да     | Да
 
     Если команда возвращает сообщение "No repositories defined..." (Репозитории не определены...), используйте следующие команды для добавления этих репозиториев:
 

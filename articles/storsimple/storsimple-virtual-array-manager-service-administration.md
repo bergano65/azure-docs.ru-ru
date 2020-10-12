@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/1/2016
 ms.author: alkohli
 ms.openlocfilehash: d7c7cf335336cc552adaf5d9490bc58d64b0cdc9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85515442"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>Администрирование виртуального массива StorSimple с помощью службы диспетчера устройств StorSimple
@@ -42,7 +42,7 @@ ms.locfileid: "85515442"
 Служба диспетчера устройств StorSimple работает в Microsoft Azure и подключается к нескольким виртуальным массивам StorSimple. Для управления этими устройствами используется центральный портал Microsoft Azure в браузере. Чтобы подключиться к службе диспетчера устройств StorSimple, выполните следующие действия.
 
 #### <a name="to-connect-to-the-service"></a>Подключение к службе
-1. Перейдите на страницу [https://ms.portal.azure.com](https://ms.portal.azure.com).
+1. Перейдите по адресу [https://ms.portal.azure.com](https://ms.portal.azure.com).
 2. С помощью учетной записи Майкрософт войдите на портал Microsoft Azure (расположен в правой верхней части панели).
 3. Для просмотра всех диспетчеров устройств в данной подписки щелкните "Больше служб" и примените фильтр "Диспетчеры устройств StorSimple".
 
@@ -76,6 +76,6 @@ ms.locfileid: "85515442"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о веб-интерфейсе и способах его использования см. в статье [Использование веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

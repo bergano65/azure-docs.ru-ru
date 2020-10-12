@@ -13,10 +13,10 @@ ms.topic: conceptual
 robots: noindex
 ms.date: 01/22/2018
 ms.openlocfilehash: b7936fcd1e4a629a813c4266920f6c34a15cf9b4
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89438948"
 ---
 # <a name="azure-data-factory---net-api-change-log"></a>Фабрика данных Azure — журнал изменений в .NET API
@@ -163,7 +163,7 @@ ms.locfileid: "89438948"
 | TableListResponse |[DatasetListResponse](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.datasetlistresponse.aspx) |
 | CreateOrUpdateWithRawJsonContentParameters |[DatasetCreateOrUpdateWithRawJsonContentParameters](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.datasetcreateorupdatewithrawjsoncontentparameters.aspx) |
 
-* Методы **List** теперь возвращают результаты с разбивкой на страницы. Если ответ содержит непустое свойство **NextLink** , клиентскому приложению необходимо продолжить извлечение следующей страницы до тех пор, пока не будут возвращены все страницы.  Пример:
+* Методы **List** теперь возвращают результаты с разбивкой на страницы. Если ответ содержит непустое свойство **NextLink** , клиентскому приложению необходимо продолжить извлечение следующей страницы до тех пор, пока не будут возвращены все страницы.  Например:
 
     ```csharp
     PipelineListResponse response = client.Pipelines.List("ResourceGroupName", "DataFactoryName");

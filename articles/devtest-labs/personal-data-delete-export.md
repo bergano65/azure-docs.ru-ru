@@ -4,10 +4,10 @@ description: Сведения об удалении и экспорте перс
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 2c44b2f3aa6f2dfad18ed53804842a5dad8bd94a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85483522"
 ---
 # <a name="export-or-delete-personal-data-from-azure-devtest-labs"></a>Экспорт или удаление персональных данных из Azure DevTest Labs
@@ -137,7 +137,7 @@ else
 
 Ниже приведены ключевые компоненты в приведенном выше примере.
 
-- Команда Invoke-Азурермресаурцеактион.
+- Команда Invoke-AzureRmResourceAction.
    
     ```
     Invoke-AzureRmResourceAction -Action 'exportLabResourceUsage' -ResourceId $resourceId -Parameters $actionParameters -Force
@@ -160,7 +160,7 @@ else
 | ResourceGroupName | Имя группы ресурсов, содержащей виртуальную машину | 
 | ResourceId | Полный идентификатор ресурса для виртуальной машины. |
 | ресаурцеуид | Идентификатор GUID для виртуальной машины |
-| name | Имя виртуальной машины. |
+| Имя | Имя виртуальной машины. |
 | CreatedTime | Дата и время создания виртуальной машины. |
 | DeletedDate | Дата и время удаления виртуальной машины. Если она пуста, то удаление еще не выполнялось. |
 | ресаурцеовнер | Владелец виртуальной машины. Если значение пустое, то это либо запрашиваемая виртуальная машина, либо созданная субъектом-службой. |
@@ -188,7 +188,7 @@ else
 | ResourceGroupName | Имя группы ресурсов, содержащей лабораторию | 
 | ResourceId | Полный идентификатор ресурса для виртуальной машины. |
 | ресаурцеуид | Идентификатор GUID для виртуальной машины |
- |name | Имя подключенного диска |
+ |Имя | Имя подключенного диска |
 | CreatedTime |Дата и время создания диска данных. |
 | DeletedDate | Дата и время удаления диска данных. |
 | ресаурцестатус | Состояние ресурса. Активен, если ресурс существует. Неактивное, при удалении. |
@@ -207,4 +207,4 @@ else
 См. следующие статьи: 
 
 - [Управление базовыми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md)
-- [Вопросы и ответы](devtest-lab-faq.md)
+- [Часто задаваемые вопросы по Аналитике компьютеров](devtest-lab-faq.md)

@@ -14,10 +14,10 @@ ms.date: 01/17/2020
 ms.author: kenwith
 ms.reviewer: mimart
 ms.openlocfilehash: a385a339122197b7055ef6f54b8e37edea8eae4a
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88078943"
 ---
 # <a name="integrate-with-azure-ad-application-proxy-on-a-network-device-enrollment-service-ndes-server"></a>Интеграция с Azure AD Application Proxy на сервере службы регистрации сертификатов для сетевых устройств (NDES)
@@ -94,6 +94,6 @@ Azure AD Application Proxy построена на платформе Azure. Э�
    * Для Configuration Manager перейдите к точке регистрации сертификатов и настройте URL-адрес. Это URL-адрес, на который направляются устройства и представим свою проблему.
    * Для автономной Intune либо измените или создайте новую политику SCEP, а затем добавьте новый URL-адрес.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 С помощью AD Application Proxy Azure, интегрированной с NDES, опубликуйте приложения для доступа пользователей. Дополнительные сведения см. в статье [Публикация приложений с помощью Azure AD application proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application).

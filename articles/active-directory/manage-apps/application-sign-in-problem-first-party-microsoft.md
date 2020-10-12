@@ -17,10 +17,10 @@ ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8942a55d880132313e1cdac6bfc025e0b153b410
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90707957"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Проблемы при входе в приложение Майкрософт
@@ -528,6 +528,6 @@ ms.locfileid: "90707957"
 
 -   Вы также можете принудительно реализовать согласие на уровне администратора, выполнив инструкции из раздела **Запрос разрешений у администратора каталога** статьи [Использование конечной точки предоставления согласия администратора](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Использование конечной точки предоставления согласия администратора](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes#using-the-admin-consent-endpoint)
 

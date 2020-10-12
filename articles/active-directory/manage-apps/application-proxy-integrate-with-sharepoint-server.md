@@ -17,17 +17,17 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 42dd979f6e069addc1067d0018390c358e79a7b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84764542"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
 В этом пошаговом руководство объясняется, как интегрировать локальную ферму SharePoint с прокси приложения Azure Active Directory (Azure AD).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения настройки необходимы следующие ресурсы:
 - Ферма SharePoint 2013 или более поздней версии.
@@ -47,9 +47,9 @@ ms.locfileid: "84764542"
 > - В корпоративной системе доменных имен (DNS) создайте узел (A), указывающий на WFE SharePoint (или подсистему балансировки нагрузки), а не псевдоним (CName).
 
 В этой статье используются следующие значения:
-- Внутренний URL-адрес:`https://sharepoint`
-- Внешний URL-адрес:`https://spsites-demo1984.msappproxy.net/`
-- Учетная запись пула приложений для веб-приложения SharePoint:`Contoso\spapppool`
+- Внутренний URL-адрес: `https://sharepoint`
+- Внешний URL-адрес: `https://spsites-demo1984.msappproxy.net/`
+- Учетная запись пула приложений для веб-приложения SharePoint: `Contoso\spapppool`
 
 ## <a name="step-1-configure-an-application-in-azure-ad-that-uses-application-proxy"></a>Шаг 1. Настройка приложения в Azure AD, использующего прокси приложения
 
@@ -200,7 +200,7 @@ ms.locfileid: "84764542"
 
 Если вход на сайт не работает, можно получить дополнительные сведения о данной ошибке в журналах соединителя: с компьютера, на котором работает соединитель, открыть средство просмотра событий, перейти к разделу **журналы приложений и служб**  >  **Microsoft**  >  **AadApplicationProxy**  >  **Connector**и проверить журнал **администратора** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Работа с пользовательскими доменами в прокси приложения Azure AD](application-proxy-configure-custom-domain.md)
 * [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)

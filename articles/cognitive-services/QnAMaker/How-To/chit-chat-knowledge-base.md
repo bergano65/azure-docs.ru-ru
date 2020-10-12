@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
 ms.openlocfilehash: 3d5c47d3e3e9485c3a6de8f93782c654fb34a516
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91330644"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
@@ -37,7 +37,7 @@ ms.locfileid: "91330644"
 ||
 
 
-## <a name="language-support"></a>Языковая поддержка
+## <a name="language-support"></a>Поддержка языков
 
 Наборы данных ХИ2ТЕСТ-Chat поддерживаются на следующих языках:
 
@@ -79,11 +79,11 @@ ms.locfileid: "91330644"
 
 ![Удаление беседы из базы знаний](../media/qnamaker-how-to-chit-chat/delete-chit-chat.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Импорт базы знаний](../Tutorials/migrate-knowledge-base.md)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Общие сведения о QnA Maker](../Overview/overview.md)

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 07/17/2020
 ms.author: tamram
 ms.openlocfilehash: 85e7cb86217340e77a6f597a357c3de1f91fb8d0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87070543"
 ---
 Азурите поддерживает одну фиксированную учетную запись и известный ключ проверки подлинности для аутентификации с общим ключом. Эта учетная запись и ключ являются единственными учетными данными общего ключа, разрешенными для использования с Азурите. К ним относятся:

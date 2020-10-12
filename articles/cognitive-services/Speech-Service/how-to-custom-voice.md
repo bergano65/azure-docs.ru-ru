@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: trbye
 ms.openlocfilehash: 272367d5311952b45c73febe0e05b1ec2d225261
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88056692"
 ---
 # <a name="get-started-with-custom-voice"></a>Начало работы с настраиваемыми голосовыми моделями
@@ -67,7 +67,7 @@ ms.locfileid: "88056692"
 > [!IMPORTANT]
 > [Пользовательское голосовое портал](https://aka.ms/custom-voice) недавно обновлялось! Если вы создали предыдущие данные, модели, тесты и опубликованные конечные точки на портале CRIS.ai или с помощью API, необходимо создать новый проект на новом портале для подключения к этим старым сущностям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подготовка настраиваемых голосов данных](how-to-custom-voice-prepare-data.md)
 - [Создание пользовательского голоса](how-to-custom-voice-create-voice.md)

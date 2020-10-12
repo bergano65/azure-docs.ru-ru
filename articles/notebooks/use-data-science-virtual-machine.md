@@ -7,10 +7,10 @@ ms.author: getroyer
 ms.topic: how-to
 ms.date: 06/13/2019
 ms.openlocfilehash: 291f1ac093568f50ad6146b70fa1ef69263b7b5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85830318"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Использование виртуальных машин Azure для обработки и анализа данных
@@ -66,6 +66,6 @@ ms.locfileid: "85830318"
 1. Введите новое **имя пользователя**. Имя пользователя должно быть строчным, чтобы использовать его с JupyterHub. Введите пароль. Затем выберите **Обновить**. (Существующие имена пользователей не затрагиваются.)
 1. Повторите предыдущий шаг для всех дополнительных пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Dsvm см. в статье [Введение в виртуальные машины Azure для обработки и анализа данных](/azure/machine-learning/data-science-virtual-machine/overview).

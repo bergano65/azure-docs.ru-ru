@@ -4,10 +4,10 @@ description: Выводит список всех пространств име�
 ms.topic: conceptual
 ms.date: 09/04/2020
 ms.openlocfilehash: b740c8ee7c28bfeeaecc42121d0c7ce4a323ab3e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91330831"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
@@ -32,7 +32,7 @@ ms.locfileid: "91330831"
 | Microsoft.Automation | [Служба автоматизации](../../automation/index.yml) |
 | Microsoft. Аутономауссистемс | [Автономные системы](https://www.microsoft.com/ai/autonomous-systems) |
 | Microsoft.AVS | [Решение Azure VMware](../../azure-vmware/index.yml) |
-| Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
+| Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
 | Microsoft.AzureData | Реестр SQL Server |
 | Microsoft.AzureStack | core |
 | Microsoft.AzureStackHCI | [Azure Stack HCI](/azure-stack/hci/overview) |
@@ -45,7 +45,7 @@ ms.locfileid: "91330831"
 | Microsoft.BotService | [Служба Azure Bot](/azure/bot-service/) |
 | Microsoft.Cache | [Кэш Azure для Redis](../../azure-cache-for-redis/index.yml) |
 | Microsoft.Capacity | core |
-| Microsoft.Cdn | [Сеть доставки содержимого](../../cdn/index.yml) |
+| Microsoft.Cdn | [Сеть доставки содержимого (CDN)](../../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [Сертификаты службы приложений](../../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
 | Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.ClassicCompute | Виртуальная машина классической модели развертывания |
@@ -53,7 +53,7 @@ ms.locfileid: "91330831"
 | Microsoft.ClassicNetwork | Виртуальная сеть классической модели развертывания |
 | Microsoft.ClassicStorage | Хранилище классической модели развертывания |
 | Microsoft. Классиксубскриптион<sup>1</sup> | Классическая модель развертывания |
-| Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
+| Microsoft.CognitiveServices | [Службы Cognitive Services](../../cognitive-services/index.yml) |
 | Microsoft. Commerce<sup>1</sup> | core |
 | Microsoft.Compute; | [Виртуальные машины](../../virtual-machines/index.yml)<br />[Наборы для масштабирования виртуальных машин](../../virtual-machine-scale-sets/index.yml) |
 | Microsoft. потребление<sup>1</sup> | [Управление затратами](/azure/cost-management/) |
@@ -62,7 +62,7 @@ ms.locfileid: "91330831"
 | Microsoft.ContainerService | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
 | Microsoft. Костманажемент<sup>1</sup> | [Управление затратами](/azure/cost-management/) |
 | Microsoft.CostManagementExports | [Управление затратами](/azure/cost-management/) |
-| Microsoft.CustomerLockbox | [защищенное хранилище для Microsoft Azure](../../security/fundamentals/customer-lockbox-overview.md) |
+| Microsoft.CustomerLockbox | [Защищенное хранилище для Microsoft Azure](../../security/fundamentals/customer-lockbox-overview.md) |
 | Microsoft.CustomProviders | [Настраиваемые поставщики Azure](../custom-providers/overview.md) |
 | Microsoft.DataBox | [Azure Data Box](../../databox/index.yml) |
 | Microsoft.DataBoxEdge | [Azure Stack Edge](../../databox-online/azure-stack-edge-overview.md) |
@@ -96,7 +96,7 @@ ms.locfileid: "91330831"
 | Microsoft.HardwareSecurityModules | [Выделенный модуль HSM Azure](../../dedicated-hsm/index.yml) |
 | Microsoft.HDInsight | [HDInsight](../../hdinsight/index.yml) |
 | Microsoft.HealthcareApis | [Azure API для FHIR](../../healthcare-apis/index.yml) |
-| Microsoft.HybridCompute | [Azure Arc](../../azure-arc/index.yml) |
+| Microsoft.HybridCompute | [Дуга Azure](../../azure-arc/index.yml) |
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
 | Microsoft. Хибриднетворк  | [Зоны частного периметра](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
@@ -158,7 +158,7 @@ ms.locfileid: "91330831"
 | Microsoft.ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Microsoft.ServiceFabricMesh | [Служба Microsoft Azure Service Fabric](../../service-fabric-mesh/index.yml) |
 | Microsoft.Services | core |
-| Microsoft.SignalRService | [Служба SignalR Azure](../../azure-signalr/index.yml) |
+| Microsoft.SignalRService | [Служба Azure SignalR](../../azure-signalr/index.yml) |
 | Microsoft.SoftwarePlan | Лицензия |
 | Microsoft.Solutions | [Управляемые приложения Azure](../managed-applications/index.yml) |
 | Microsoft.Sql | [База данных SQL Azure](../../azure-sql/database/index.yml)<br /> [Управляемый экземпляр SQL Azure](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
@@ -186,6 +186,6 @@ ms.locfileid: "91330831"
 
 <sup>1</sup> зарегистрировано по умолчанию
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о поставщиках ресурсов, включая регистрацию поставщика ресурсов, см. в статье [поставщики и типы ресурсов Azure](resource-providers-and-types.md).
