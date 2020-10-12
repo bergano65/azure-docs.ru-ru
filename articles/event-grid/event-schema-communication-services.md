@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: mikben
 ms.openlocfilehash: fb37dfe9927c02711f4ab1b01cd89247059b27f6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91347576"
 ---
 # <a name="azure-communication-services-as-an-event-grid-source"></a>Службы связи Azure в качестве источника сетки событий
@@ -31,9 +31,9 @@ ms.locfileid: "91347576"
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | Microsoft.Communication.SMSReceived                         | Публикуется при получении SMS-сообщения на номер телефона, связанного со Службой коммуникации. |
 | Microsoft.Communication.SMSDeliveryReportReceived           | Публикуется при получении отчета о доставке для SMS-сообщений, отправленных Службой коммуникации.     |
-| Microsoft. Communication. Чатмессажерецеивед *                | Публикуется при получении сообщения для пользователя в беседе чата, участником которой является этот пользователь.        |
-| Microsoft. Communication. Чатмессажеедитед *                   | Публикуется при изменении сообщения в беседе чата, участником которой является этот пользователь.                |
-| Microsoft. Communication. Чатмессажеделетед *                  | Публикуется при удалении сообщения в беседе чата, участником которой является этот пользователь.               |
+| Microsoft.Communication.ChatMessageReceived*                | Публикуется при получении сообщения для пользователя в беседе чата, участником которой является этот пользователь.        |
+| Microsoft.Communication.ChatMessageEdited*                   | Публикуется при изменении сообщения в беседе чата, участником которой является этот пользователь.                |
+| Microsoft.Communication.ChatMessageDeleted*                  | Публикуется при удалении сообщения в беседе чата, участником которой является этот пользователь.               |
 | Microsoft.Communication.ChatThreadCreatedWithUser           | Публикуется, когда пользователь добавляется в качестве участника при создании беседы чата.           |
 | Microsoft.Communication.ChatThreadWithUserDeleted           | Публикуется, когда удаляется беседа чата, участником которой является пользователь.                           |
 | Microsoft.Communication.ChatThreadPropertiesUpdatedPerUser  | Публикуется, когда обновляются свойства беседы чата, участником которой является пользователь.              |
@@ -41,7 +41,7 @@ ms.locfileid: "91347576"
 | Microsoft.Communication.ChatMemberRemovedFromThreadWithUser | Публикуется, когда пользователь удаляется из беседы чата.                                         |
 
 
-* Чтобы активировать эти события, убедитесь, что в вызовах API для отправки сообщения вы задаете "имя отправителя".
+*Чтобы активировать эти события, в вызовах API для отправки сообщения должно быть указано имя отправителя.
 
 ## <a name="event-subjects"></a>Темы событий
 

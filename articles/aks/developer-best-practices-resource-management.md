@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zarhoads
 ms.openlocfilehash: e52bd150f72ba663c504b81832ce83d3e38cbf04
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90986776"
 ---
 # <a name="best-practices-for-application-developers-to-manage-resources-in-azure-kubernetes-service-aks"></a>Рекомендации для разработчиков приложений по управлению ресурсами в службе Azure Kubernetes (AKS)
@@ -100,7 +100,7 @@ Bridge to Kubernetes предназначен для использования 
 
 В кластере AKS с большим количеством групп разработчиков и приложений может быть сложно отслеживать контейнеры pod без установленных запросов и ограничений ресурсов. Рекомендуем регулярно запускать `kube-advisor` в кластерах AKS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье с рекомендациями мы рассмотрели запуск кластера и рабочих нагрузок с точки зрения оператора кластера. Рекомендации для администраторов см. в [этой статье][operator-best-practices-isolation].
 

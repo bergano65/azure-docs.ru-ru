@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 ms.openlocfilehash: 9b993e5a7c5b3ee2327fe26437414d8ce74f7369
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91333585"
 ---
 # <a name="create-a-storage-account"></a>Создание учетной записи хранения
@@ -68,7 +68,7 @@ Azure CLI также можно установить и применять ло�
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Нет.
+Отсутствует.
 
 ---
 
@@ -98,7 +98,7 @@ az login
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -281,7 +281,7 @@ az storage account delete --name storageAccountName --resource-group resourceGro
 >
 > Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Сведения об устранении этой ошибки см. в разделе [Устранение ошибок при удалении учетных записей хранения](../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [Обновление до учетной записи хранения общего назначения версии 2](storage-account-upgrade.md)

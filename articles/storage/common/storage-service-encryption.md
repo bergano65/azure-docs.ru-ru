@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: 19f0027b506b78ef81f9acc25a94ef9ab74643e2
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90985761"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Шифрование службы хранилища Azure для неактивных данных
@@ -46,7 +46,7 @@ ms.locfileid: "90985761"
 | Параметр управления ключами | Ключи, управляемые Майкрософт | Ключи, управляемые клиентом | Ключи, предоставляемые клиентом |
 |--|--|--|--|
 | Операции шифрования и расшифровки | Azure | Azure | Azure |
-| Поддерживаемые службы хранилища Azure | Все | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
+| Поддерживаемые службы хранилища Azure | All | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
 | Хранилище ключей | Хранилище ключей (Майкрософт) | Azure Key Vault или Key Vault HSM | Собственное хранилище ключей клиента |
 | Ответственность за смену ключей | Microsoft | Customer | Customer |
 | Управление ключами | Microsoft | Customer | Customer |
@@ -107,7 +107,7 @@ ms.locfileid: "90985761"
 > [!NOTE]
 > Невозможно удалить область шифрования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 - [Управляемые клиентом ключи для шифрования службы хранилища Azure](customer-managed-keys-overview.md)

@@ -4,10 +4,10 @@ description: Описание условного развертывания ре
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.openlocfilehash: effa7fe6ee1393e44a124bc087609da5d4898210
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84259326"
 ---
 # <a name="conditional-deployment-in-arm-templates"></a>Условное развертывание в шаблонах ARM
@@ -88,7 +88,7 @@ ms.locfileid: "84259326"
 
 Если вы развертываете шаблон с [полным режимом](deployment-modes.md) , а ресурс не развернут, так как условие принимает значение false, результат зависит от того, какая REST API версия используется для развертывания шаблона. Если вы используете более раннюю версию, чем 2019-05-10, ресурс **не удаляется**. В 2019-05-10 или более поздней версии ресурс **удаляется**. Последние версии Azure PowerShell и Azure CLI удаляют ресурс, если условие имеет значение false.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Рекомендации по созданию шаблонов см. в статье рекомендации по использованию [шаблонов ARM](template-best-practices.md).
 * Сведения о создании нескольких экземпляров ресурса см. [в статье итерация ресурсов в шаблонах ARM](copy-resources.md).

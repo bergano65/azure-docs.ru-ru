@@ -15,10 +15,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: has-adal-ref, devx-track-csharp
 ms.openlocfilehash: b9b72e8340722f8ddc97b3769ce22e607974a508
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89297405"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API служб мультимедиа v3 — .NET
@@ -72,7 +72,7 @@ ms.locfileid: "89297405"
 
 Для удобства добавьте файл конфигурации, который отвечает за чтение значений из "appsettings.jsна".
 
-1. Добавьте в проект новый класс CS. Назовите его `ConfigWrapper`. 
+1. Добавьте в проект новый класс CS. Присвойте обработчику события имя `ConfigWrapper`. 
 1. Вставьте в этот файл следующий код (в этом примере предполагается, что у вас есть пространство имен `ConsoleApp1` ).
 
 ```csharp
@@ -229,7 +229,7 @@ namespace ConsoleApp1
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Учебник. Отправка, кодирование и потоковая передача видео — .NET](stream-files-tutorial-with-api.md) 
 - [Руководство. потоковая передача в реальном времени с помощью служб мультимедиа v3 — .NET](stream-live-tutorial-with-api.md)
@@ -243,7 +243,7 @@ namespace ConsoleApp1
 - [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
 - [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочник по .NET](/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
 * Дополнительные примеры кода см. в репозитории [примеров пакета SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet) .

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/12/2020
 ms.author: raynew
 ms.openlocfilehash: 01f30305529e7f142be0ca6ddffa0f5a12a235bb
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86260022"
 ---
 # <a name="migrate-vmware-vms-to-azure-vms-enabled-with-server-side-encryption-and-customer-managed-keys"></a>Перенос виртуальных машин VMware на виртуальные машины Azure, поддерживающие шифрование на стороне сервера и управляемые клиентом ключи
@@ -24,7 +24,7 @@ ms.locfileid: "86260022"
 
 Дополнительные [сведения](../virtual-machines/windows/disk-encryption.md) о шифровании на стороне сервера (SSE) с помощью управляемых пользователем ключей (CMK) для управляемых дисков.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Ознакомьтесь с руководством](tutorial-migrate-vmware.md) по переносу виртуальных машин VMware в Azure с помощью безагентной репликации, чтобы понять требования к инструментам.
 - [Выполните эти инструкции](how-to-add-tool-first-time.md) , чтобы создать проект службы "миграция Azure" и добавить в проект средство **миграции для Azure Migration: Server** .

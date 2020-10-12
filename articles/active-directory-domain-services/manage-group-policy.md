@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
 ms.openlocfilehash: c5ee162a78ac5e8c3080cd33c89fcee507ecfe92
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91704860"
 ---
 # <a name="administer-group-policy-in-an-azure-active-directory-domain-services-managed-domain"></a>Администрирование групповая политика в управляемом домене доменных служб Azure Active Directory
@@ -116,7 +116,7 @@ ms.locfileid: "91704860"
 
     По завершении выберите **файл > сохранить** , чтобы сохранить политику. По умолчанию компьютеры обновляют групповая политика каждые 90 минут и применяют внесенные изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о доступных параметрах групповая политика, которые можно настроить с помощью консоль управления групповыми политиками, см. в разделе [Работа с элементами предпочтений групповая политика][group-policy-console].
 

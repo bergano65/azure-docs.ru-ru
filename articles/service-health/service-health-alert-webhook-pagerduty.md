@@ -4,10 +4,10 @@ description: Передача в экземпляр PagerDuty персонали
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.openlocfilehash: 5c70af2ad2ded919cda0b174705d1d3245eac627
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87091544"
 ---
 # <a name="send-azure-service-health-alerts-with-pagerduty-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в PagerDuty с помощью веб-перехватчиков
@@ -25,9 +25,9 @@ ms.locfileid: "87091544"
 
 1.  В разделе **Integration Settings** (Параметры интеграции) выберите следующее:
 
-    А. **Integration Type** (Тип интеграции): Microsoft Azure.
+    a. **Integration Type** (Тип интеграции): Microsoft Azure.
 
-    Б. **Имя интеграции**:\<Name\>
+    b. **Имя интеграции**: \<Name\>
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -43,9 +43,9 @@ ms.locfileid: "87091544"
 
 1. В списке **Действия** определите следующие сведения.
 
-    А. **Тип действия: ** *Веб-перехватчик*.
+    a. **Тип действия: ** *Веб-перехватчик*.
 
-    Б. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -60,9 +60,9 @@ ms.locfileid: "87091544"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    А. **Тип действия: ** *Веб-перехватчик*.
+    a. **Тип действия: ** *Веб-перехватчик*.
 
-    Б. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -84,7 +84,7 @@ ms.locfileid: "87091544"
 
 1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](./service-notifications.md).

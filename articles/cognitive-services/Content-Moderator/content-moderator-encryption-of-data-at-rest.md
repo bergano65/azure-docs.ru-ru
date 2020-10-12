@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: egeaney
 ms.openlocfilehash: 38fc21ee45db25f015a6b8b534b0d922efa636f2
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84310552"
 ---
 # <a name="content-moderator-encryption-of-data-at-rest"></a>Content Moderator шифрование неактивных данных
@@ -23,7 +23,7 @@ Content Moderator автоматически шифрует данные при 
 [!INCLUDE [cognitive-services-about-encryption](../includes/cognitive-services-about-encryption.md)]
 
 > [!IMPORTANT]
-> Ключи, управляемые клиентом, доступны только в ценовой категории E0. Чтобы запросить возможность использования управляемых клиентом ключей, заполните и отправьте [Content Moderator форму запроса ключа, управляемого клиентом](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования CMK со службой Content Moderator необходимо создать новый ресурс Content Moderator и выбрать в качестве ценовой категории значение E0. После создания ресурса Content Moderator с ценовой категорией "E0" можно использовать Azure Key Vault для настройки управляемого удостоверения.
+> Ключи, управляемые клиентом, доступны только в ценовой категории E0. Чтобы запросить возможность использования ключей, управляемых клиентом, заполните и отправьте [Content Moderator Customer-Managed форму запроса ключа](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования CMK со службой Content Moderator необходимо создать новый ресурс Content Moderator и выбрать в качестве ценовой категории значение E0. После создания ресурса Content Moderator с ценовой категорией "E0" можно использовать Azure Key Vault для настройки управляемого удостоверения.
 
 [!INCLUDE [cognitive-services-cmk](../includes/cognitive-services-cmk-regions.md)]
 
@@ -36,9 +36,9 @@ Content Moderator автоматически шифрует данные при 
 > [!NOTE]
 > Вам потребуется указать _идентификатор ресурса_ в ценовой категории Content Moderator E0.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список служб, поддерживающих CMK, см. в разделе [управляемые клиентом ключи для Cognitive Services](../encryption/cognitive-services-encryption-keys-portal.md)
 * [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
-* [Cognitive Servicesная форма запроса ключа, управляемого клиентом](https://aka.ms/cogsvc-cmk)
+* [Форма запроса ключа Cognitive Services Customer-Managed](https://aka.ms/cogsvc-cmk)
 

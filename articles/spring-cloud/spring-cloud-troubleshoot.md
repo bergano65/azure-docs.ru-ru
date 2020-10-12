@@ -9,10 +9,10 @@ ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
 ms.openlocfilehash: 98b7f9b1ed5e09a1f731e45f8ca2d148a4084986
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91336162"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Устранение распространенных проблем с пружинным облаком Azure
@@ -234,6 +234,6 @@ ms.locfileid: "91336162"
 Если журналы приложения можно архивировать в учетную запись хранения, но не отправляются в Azure Log Analytics, проверьте, правильно ли [настроена Рабочая область](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace). Если вы используете бесплатный уровень Log Analytics Azure, обратите внимание, что [уровень Free не обеспечивает соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака](spring-cloud-howto-self-diagnose-solve.md)

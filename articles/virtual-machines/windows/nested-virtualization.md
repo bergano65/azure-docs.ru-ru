@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
 ms.openlocfilehash: 03df7db13ebd3ebec407bb046cc735c835e01068
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87074253"
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Как включить вложенную виртуализацию в виртуальных машинах Azure
@@ -145,7 +145,7 @@ IP-адрес можно присвоить гостевой виртуальн�
   
 3. Щелкните, чтобы установить флажок **DHCP-сервер**, а затем выберите **Добавить компоненты** и нажимайте кнопку **Далее** до завершения работы мастера.
   
-4. Нажмите кнопку **Установить**.
+4. Щелкните **Install**(Установить).
 
 #### <a name="configure-a-new-dhcp-scope"></a>Настройка новой области DHCP
 

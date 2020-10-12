@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.openlocfilehash: ad487aa7492abcf02988c78ccfa2ba7cd4798249
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90983655"
 ---
 # <a name="view-virtual-hub-effective-routes"></a>Просмотр фактических маршрутов виртуального концентратора
@@ -53,7 +53,7 @@ ms.locfileid: "90983655"
 
 * Просмотр действующих маршрутов для таблицы маршрутов виртуального концентратора заполняется только в том случае, если к виртуальному концентратору подключено по крайней мере один тип подключения (VPN/ER/VNET).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 * Дополнительные сведения о маршрутизации виртуальных концентраторов см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).

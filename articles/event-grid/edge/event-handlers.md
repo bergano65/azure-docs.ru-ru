@@ -4,10 +4,10 @@ description: Обработчики событий и назначения в с
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 18e2b944f60ebdf8a1b0c60ba446a13df13134c5
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86171590"
 ---
 # <a name="event-handlers-and-destinations-in-event-grid-on-edge"></a>Обработчики событий и назначения в сетке событий на границе
@@ -35,7 +35,7 @@ ms.locfileid: "86171590"
         }
     ```
 
-## <a name="azure-event-grid"></a>Сетка событий Azure.
+## <a name="azure-event-grid"></a>Сетка событий Azure
 
 Чтобы опубликовать в облачной конечной точке службы "Сетка событий Azure", задайте `endpointType` для значение `eventGrid` и укажите:
 
@@ -145,7 +145,7 @@ ms.locfileid: "86171590"
 
 ## <a name="storage-queues"></a>Очереди службы хранилища
 
-Чтобы опубликовать в очереди хранилища, задайте для значение `endpointType` `storageQueue` и укажите:
+Чтобы опубликовать в очереди хранилища, задайте для значение  `endpointType` `storageQueue` и укажите:
 
 * queueName: имя очереди хранилища, в которую выполняется публикация.
 * connectionString: строка подключения для учетной записи хранения, в которой находится очередь хранилища.

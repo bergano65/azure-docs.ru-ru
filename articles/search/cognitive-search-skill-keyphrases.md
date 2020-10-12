@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 145d8265412c4efcaa2afad97feb23528a36191d
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88936067"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
@@ -91,7 +91,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
   }
 ```
 
-##  <a name="sample-output"></a>Пример выходных данных
+##  <a name="sample-output"></a>Пример полученных результатов
 
 В приведенном выше примере выходные данные вашего навыка будут записаны в новый узел в расширенном дереве с именем Document/Микэйфрасес, поскольку именно `targetName` мы указали. Если не указать, будет `targetName` использоваться значение Document/фраз.
 

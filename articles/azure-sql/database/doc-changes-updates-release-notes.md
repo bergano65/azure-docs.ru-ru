@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
 ms.openlocfilehash: 0e44280c0a6c0d39c98e3aeecd5e9a3707332e81
-ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88236579"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
@@ -42,7 +42,7 @@ ms.locfileid: "88236579"
 |**База данных SQL Azure**|*Единая база* данных SQL Azure| Если явно не указано иное, имя продукта в базе данных SQL Azure включает как отдельные базы данных, так и базы данных, развернутые в эластичном пуле. |
 |**База данных SQL Azure**|*Эластичный пул* базы данных SQL Azure| Если явно не указано иное, имя продукта в базе данных SQL Azure включает как отдельные базы данных, так и базы данных, развернутые в эластичном пуле.  |
 |**База данных SQL Azure** |База данных SQL Azure | Несмотря на то что термин остается прежним, он применяется только к развертыванию одиночной базы данных и пула эластичных БД и не включает управляемый экземпляр. |
-| **Azure SQL**| Н/Д | Это относится к семейству SQL Server продуктов ядра СУБД, доступных в Azure: база данных SQL Azure, Управляемый экземпляр SQL Azure и SQL Server на виртуальных машинах Azure. | 
+| **Azure SQL**| Недоступно | Это относится к семейству SQL Server продуктов ядра СУБД, доступных в Azure: база данных SQL Azure, Управляемый экземпляр SQL Azure и SQL Server на виртуальных машинах Azure. | 
 
 ## <a name="features-in-public-preview"></a>Возможности общедоступной предварительной версии
 
