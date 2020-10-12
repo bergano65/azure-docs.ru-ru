@@ -14,10 +14,10 @@ ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 9f0a3c3a96a73bd71a9b0c769a3ceff85ae428f1
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89017623"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты облачных служб)
@@ -150,7 +150,7 @@ Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
 ```
 
 ## <a name="use-the-async-await-pattern-with-common-azure-queue-apis"></a>Использование алгоритма Async-Await со стандартными API очередей Azure
-В этом примере показано использование алгоритма Async-Await со стандартными API очередей Azure. В этом примере вызывается асинхронная версия каждого из указанных методов, которая может быть видна **асинхронному** пошаговому исправлению каждого метода. При использовании асинхронного метода алгоритм Async-Await приостанавливает локальное выполнение процесса до завершения вызова. Благодаря этому текущий поток может выполнять другие задачи, что позволяет избежать возникновения узких мест и повысить общую скорость реагирования приложения. Дополнительные сведения об использовании шаблона async-await в .NET см. в разделе [Async и await (C# и Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx) .
+В этом примере показано использование алгоритма Async-Await со стандартными API очередей Azure. В этом примере вызывается асинхронная версия каждого из указанных методов, которая может быть видна **асинхронному** пошаговому исправлению каждого метода. При использовании асинхронного метода алгоритм Async-Await приостанавливает локальное выполнение процесса до завершения вызова. Благодаря этому текущий поток может выполнять другие задачи, что позволяет избежать возникновения узких мест и повысить общую скорость реагирования приложения. Дополнительные сведения об использовании шаблона Async-Await в .NET см. в разделе [Async и await (C# и Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx) .
 
 ```csharp
 // Create a message to put in the queue

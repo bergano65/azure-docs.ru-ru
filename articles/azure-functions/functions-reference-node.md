@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: bd5eea6d97ca5ff20622c651b2c6ee75f9014d55
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317182"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
@@ -204,8 +204,8 @@ module.exports = (context) => {
 | Имя свойства  | Тип  | Описание |
 |---------|---------|---------|
 | `invocationId` | Строка | Предоставляет уникальный идентификатор для конкретного вызова функции. |
-| `functionName` | Строка | Предоставляет имя выполняемой функции. |
-| `functionDirectory` | Строка | Предоставляет каталог приложения функций. |
+| `functionName` | Строковый тип | Предоставляет имя выполняемой функции. |
+| `functionDirectory` | Строковый тип | Предоставляет каталог приложения функций. |
 
 В следующем примере показано, как вернуть `invocationId` .
 
@@ -451,7 +451,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 | Версия службы "Функции" | Версия узла (Windows) | Версия узла (Linux) |
 |---|---| --- |
-| 1.x | 6.11.2 (заблокировано средой выполнения) | Н/Д |
+| 1.x | 6.11.2 (заблокировано средой выполнения) | Недоступно |
 | 2.x  | ~ 8<br/>~ 10 (рекомендуется)<br/>~ 12<sup>*</sup> | ~ 8 (рекомендуется)<br/>~ 10  |
 | 3.x | ~ 10<br/>~ 12 (рекомендуется)  | ~ 10<br/>~ 12 (рекомендуется) |
 

@@ -9,10 +9,10 @@ manager: gwallace
 description: Узнайте, как настроить непрерывную интеграцию и непрерывное развертывание с помощью Azure DevOps с Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: c7b3eba0bea85082dbb4e39d108af9471d5dc45e
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88080272"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>Использование CI/CD в Azure Dev Spaces
@@ -23,7 +23,7 @@ ms.locfileid: "88080272"
 
 В этой статье описывается использование Azure DevOps, но те же принципы применяются и к другим системам непрерывной интеграции и непрерывного развертывания, таким как Jenkins, TeamCity и т. д.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * Кластер Службы Azure Kubernetes (AKS) с поддержкой Azure Dev Spaces.
 * [Установленный интерфейс командной строки Azure Dev Spaces](upgrade-tools.md).
 * [Организация Azure DevOps с проектом](/azure/devops/user-guide/sign-up-invite-teammates?view=vsts).
@@ -160,7 +160,7 @@ http://dev.webfrontend.fedcba098.eus.azds.io  Available
 
 На _этапе Рабочей_ нагрузки конвейера CI/CD для предоставления доступа к службам _производственных_ услуг вместо контроллера входящего пространства разработки используется балансировщик. Службы, развернутые в _рабочей области,_ доступны как IP-адреса вместо DNS-имен. В рабочей среде вы можете создать собственный контроллер входящего трафика для размещения служб на основе собственной конфигурации DNS.
 
-Чтобы определить IP-адрес службы WebService, щелкните шаг " **Печать общедоступного IP-** интерфейса", чтобы развернуть выходные данные журнала. Используйте IP-адрес, отображаемый в выходных данных журнала, для доступа к приложению- **интерфейсу** .
+Чтобы определить IP-адрес службы WebService, щелкните шаг "  **Печать общедоступного IP-** интерфейса", чтобы развернуть выходные данные журнала. Используйте IP-адрес, отображаемый в выходных данных журнала, для доступа к приложению- **интерфейсу** .
 
 ```cmd
 ...
@@ -185,7 +185,7 @@ http://dev.webfrontend.fedcba098.eus.azds.io  Available
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о работе Azure Dev Spaces.
+Узнайте больше о принципах работы Azure Dev Spaces.
 
 > [!div class="nextstepaction"]
 > [Принцип работы Azure Dev Spaces](../how-dev-spaces-works.md)

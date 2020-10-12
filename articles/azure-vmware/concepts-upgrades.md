@@ -4,10 +4,10 @@ description: Сведения об основных процессах обно�
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: 380e97eae559145a9ef5ed7b6e7bf14f18039eed
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91316806"
 ---
 # <a name="azure-vmware-solution-private-cloud-updates-and-upgrades"></a>Обновление и обновление частного облака решения VMware для Azure
@@ -57,7 +57,7 @@ ms.locfileid: "91316806"
 
 Дополнительные сведения о версиях программного обеспечения VMware см. в [статье концепция частных облаков и кластеров](concepts-private-clouds-clusters.md) и [часто задаваемые вопросы](faq.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующим шагом является [Создание частного облака](tutorial-create-private-cloud.md).
 

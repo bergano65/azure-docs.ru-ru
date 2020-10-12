@@ -4,10 +4,10 @@ description: В этой статье приводится сводка Azure Ba
 ms.date: 08/30/2019
 ms.topic: conceptual
 ms.openlocfilehash: b11a2e3ec2fdf3a46b324dcc0f95d4666a84c179
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91332684"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Матрица поддержки для резервного копирования с помощью агента Служб восстановления Microsoft Azure (MARS)
@@ -67,7 +67,7 @@ Azure Backup использует агент MARS для резервного к
 
 Для доступа ко всем указанным выше URL-адресам и IP-адреса используется протокол HTTPS через порт 443.
 
-При резервном копировании файлов и папок из виртуальных машин Azure с помощью агента MARS виртуальная сеть Azure также должна быть настроена для разрешения доступа. Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Помимо тега Azure Backup необходимо разрешить подключение для проверки подлинности и передачу данных, создав аналогичные [правила NSG](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview#service-tags) для Azure AD (*AzureActiveDirectory*) и службы хранилища Azure (*хранилище*). Ниже описан процесс создания правила для тега Azure Backup:
+При резервном копировании файлов и папок из виртуальных машин Azure с помощью агента MARS виртуальная сеть Azure также должна быть настроена для разрешения доступа. Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Кроме тегов Azure Backup, вам нужно разрешить подключение для проверки подлинности и передачи данных, создав аналогичные [правила NSG](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview#service-tags) для *Azure Active Directory* и *службы хранилища Azure*. Ниже описан процесс создания правила для тега Azure Backup:
 
 1. В разделе **Все службы** перейдите к **группам сетевой безопасности** и выберите группу сетевой безопасности.
 2. Выберите **Правила безопасности для исходящего трафика** в разделе **Параметры**.
@@ -218,7 +218,7 @@ Azure Backup поддерживает *автономное заполнение
 
 Резервные копии не могут быть восстановлены на целевом компьютере, на котором работает более ранняя версия операционной системы. Например, резервная копия, созданная с компьютера под Windows 7, может быть восстановлена в Windows 8 или более поздней версии. Но резервная копия, созданная с компьютера под Windows 8, не может быть восстановлена на компьютере под Windows 7.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об [архитектуре резервного копирования, использующей агент Mars](backup-architecture.md#architecture-direct-backup-of-on-premises-windows-server-machines-or-azure-vm-files-or-folders).
 - Узнайте, что поддерживается при [запуске агента Mars на сервере MABS или DPM](backup-support-matrix-mabs-dpm.md).

@@ -5,10 +5,10 @@ ms.custom: vs-azure, devx-track-csharp
 ms.topic: conceptual
 ms.date: 06/10/2020
 ms.openlocfilehash: 0ee5d270db2149be0cfbf6bf06f87a5d0133c6ef
-ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88612815"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
@@ -214,7 +214,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 При выборе этой ссылки открывается диалоговое окно **Параметры приложения** для приложения функции, в котором можно добавлять новые параметры приложения или изменять существующие.
 
-![Параметры приложения](./media/functions-develop-vs/functions-vstools-app-settings2.png)
+![Параметры приложений](./media/functions-develop-vs/functions-vstools-app-settings2.png)
 
 **Локально** отображает значение параметра в local.settings.jsдля файла, а **Удаленное** отображение текущего значения параметра в приложении-функции в Azure. Чтобы создать параметр приложения, выберите **Добавьте параметр**. Используйте ссылку **Вставка локального значения**, чтобы скопировать значение параметра в поле **Удаленный**. Когда вы нажмете кнопку **ОК**, ожидающие изменения запишутся в файл с локальными параметрами и приложение-функцию.
 

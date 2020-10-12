@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: a5c7296a0e7b7f6ea33c1f4a669675efd90f9e9a
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86262100"
 ---
 # <a name="understanding-layers-in-the-azure-maps-power-bi-visual"></a>Основные сведения о слоях в Azure Maps Power BI Visual
@@ -87,7 +87,7 @@ ms.locfileid: "86262100"
 > [Добавление слоя пузырьков](power-bi-visual-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой линейчатой диаграммы](power-bi-visual-add-bar-chart-layer.md)
+> [Добавление слоя линейчатой диаграммы](power-bi-visual-add-bar-chart-layer.md)
 
 Добавьте дополнительный контекст на карту:
 

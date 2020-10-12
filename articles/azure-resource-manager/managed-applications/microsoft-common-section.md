@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
 ms.openlocfilehash: 924aff8f2ba3d796b65f52494845f3b10018065c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87063956"
 ---
 # <a name="microsoftcommonsection-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.Section
@@ -43,12 +43,12 @@ ms.locfileid: "87063956"
 }
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 - Параметр `elements` должен содержать по крайней мере один элемент. Этот параметр может содержать элементы любого типа, кроме `Microsoft.Common.Section`.
 - Этот элемент не поддерживает свойство `toolTip`.
 
-## <a name="sample-output"></a>Пример выходных данных
+## <a name="sample-output"></a>Пример полученных результатов
 Для доступа к выходным значениям элементов в `elements` используйте функции [basics()](create-ui-definition-referencing-functions.md#basics) или [steps()](create-ui-definition-referencing-functions.md#steps) и точечную нотацию:
 
 ```json

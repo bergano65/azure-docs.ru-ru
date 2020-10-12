@@ -19,10 +19,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cc0c8c40e370579100c562e0289c97e3f5ce4236
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91274118"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect
@@ -176,7 +176,7 @@ Azure AD Connect может проверить текущую работоспо
 
     Когда вы выберете домен, мастер предоставит соответствующие сведения о дальнейших действиях, которые будут выполнены мастером, а также о результатах настроек. В некоторых случаях при выборе домена, еще не проверенного в Azure AD, мастер предоставит сведения, которые помогут проверить домен. Дополнительные сведения см. в разделе [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).
 
-5. Нажмите кнопку **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
+5. Щелкните **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
 
    ![Готово к настройке](./media/how-to-connect-fed-management/AdditionalDomain5.PNG)
 
@@ -262,5 +262,5 @@ c1:[Type == "urn:anandmsft:tmp/idflag", Value =~ "useguid"]
 
 Можно включить несколько доменов в федерацию с помощью Azure AD Connect, как описано в разделе [Добавление нового федеративного домена](how-to-connect-fed-management.md#addfeddomain). Azure AD Connect версии 1.1.553.0 и более поздней создает корректное правило утверждения для issuerID автоматически. Если вы не можете использовать Azure AD Connect версии 1.1.553.0 или более поздней, рекомендуется использовать средство [Правила утверждений Azure AD RPT](https://aka.ms/aadrptclaimrules) для создания и установки корректных правил утверждений для доверия проверяющей стороне Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. [дополнительные сведения о параметрах входа пользователя](plan-connect-user-signin.md).

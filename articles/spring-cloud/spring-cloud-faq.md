@@ -9,10 +9,10 @@ ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
 ms.openlocfilehash: 1947e57a5f200521fe57c6aaf41e9d57c1085592
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888708"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
@@ -191,7 +191,7 @@ Azul системы. Сборки JDK корпоративного выпуск�
 ::: zone-end
 
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="what-are-the-impacts-of-service-registry-rarely-unavailable"></a>Каковы последствия редкого недоступности реестра службы?
 
@@ -206,6 +206,6 @@ RetryableEurekaHttpClient: Request execution failure with status code 401; retry
 Мы улучшаем эту часть и не будем использовать эту ошибку в приложениях пользователей в течение короткого будущего времени.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

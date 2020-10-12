@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 25199aeb7a3ed6332e74ad05835a8c4fca763c00
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88116467"
 ---
 # <a name="troubleshoot-on-premises-azure-ad-password-protection"></a>Устранение неполадок: Локальная защита паролей Azure AD
@@ -50,7 +50,7 @@ ms.locfileid: "88116467"
 
 1. Убедитесь, что лес и все прокси-серверы зарегистрированы в одном клиенте Azure.
 
-   Это требование можно проверить, запустив `Get-AzureADPasswordProtectionProxy` `Get-AzureADPasswordProtectionDCAgent` командлеты и PowerShell, а затем сравните `AzureTenant` свойство каждого возвращенного элемента. Для правильной работы сообщаемое имя клиента должно быть одинаковым для всех агентов контроллера домена и прокси-серверов.
+   Это требование можно проверить, запустив  `Get-AzureADPasswordProtectionProxy` `Get-AzureADPasswordProtectionDCAgent` командлеты и PowerShell, а затем сравните `AzureTenant` свойство каждого возвращенного элемента. Для правильной работы сообщаемое имя клиента должно быть одинаковым для всех агентов контроллера домена и прокси-серверов.
 
    Если условие несоответствия регистрации клиента Azure существует, эту проблему можно устранить, запустив `Register-AzureADPasswordProtectionProxy` командлеты и (или `Register-AzureADPasswordProtectionForest` ) PowerShell по мере необходимости, чтобы использовать учетные данные из одного и того же клиента Azure для всех регистраций.
 
@@ -84,7 +84,7 @@ The forest has not been registered with Azure. Password policies cannot be downl
 
 Существует две возможные причины этой проблемы.
 
-1. Лес в действительности не зарегистрирован. Чтобы устранить эту проблему, выполните команду Register-Азуреадпассвордпротектионфорест, как описано в статье [требования к развертыванию](howto-password-ban-bad-on-premises-deploy.md).
+1. Лес в действительности не зарегистрирован. Чтобы устранить эту проблему, выполните команду Register-AzureADPasswordProtectionForest, как описано в разделе [требования к развертыванию](howto-password-ban-bad-on-premises-deploy.md).
 1. Лес зарегистрирован, но агенту контроллера домена не удалось расшифровать данные регистрации леса. Этот случай имеет ту же основную причину, что и #2, указанные выше в разделе [Агент контроллера домена, не может шифровать или расшифровывать файлы политики паролей](howto-password-ban-bad-on-premises-troubleshoot.md#dc-agent-is-unable-to-encrypt-or-decrypt-password-policy-files). Простой способ подтвердить эту теорию заключается в том, что эта ошибка возникает только на агентах КОНТРОЛЛЕРов домена, работающих на контроллерах доменов Windows Server 2012 или Windows Server 2012 R2, а агенты КОНТРОЛЛЕРов домена под Windows Server 2016 и более поздних версий — прекрасно. Решение аналогично: обновление всех контроллеров домена до Windows Server 2016 или более поздней версии.
 
 ## <a name="weak-passwords-are-being-accepted-but-should-not-be"></a>Ненадежные пароли принимаются, но не должны быть
@@ -260,7 +260,7 @@ PS C:\> Get-AzureADPasswordProtectionDCAgent | Where-Object {$_.SoftwareVersion 
 
    Этот путь будет другим, если общий ресурс sysvol настроен в нестандартном местоположении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Часто задаваемые вопросы о функции защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
 

@@ -11,17 +11,17 @@ ms.date: 08/03/2020
 ms.topic: conceptual
 ms.custom: how-to, tracking-python
 ms.openlocfilehash: c95e1012decf1e3ae4ee3fbab8aae1a4c1a71be9
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87544663"
 ---
 # <a name="continuously-deploy-models"></a>Непрерывное развертывание моделей
 
 В этой статье показано, как использовать непрерывное развертывание в Azure DevOps для автоматической проверки новых версий зарегистрированных моделей и отправки этих новых моделей в рабочую среду.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже зарегистрировали модель в рабочей области Машинное обучение Azure. В [этом учебнике](how-to-train-scikit-learn.md) приведен пример обучения и регистрации модели scikit-учиться.
 
@@ -51,7 +51,7 @@ ms.locfileid: "87544663"
 
     [![Включение триггера модели](media/how-to-deploy-and-where/set-modeltrigger.png)](media/how-to-deploy-and-where/set-modeltrigger-expanded.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные примеры непрерывного развертывания для моделей машинного обучения см. в приведенных ниже проектах на сайте GitHub.
 
