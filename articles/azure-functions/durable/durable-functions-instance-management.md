@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 2b99d032b953caecfca2b34d5eadafe94f45f307
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87809380"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Управление экземплярами в Устойчивых функциях в Azure
@@ -137,7 +137,7 @@ module.exports = async function(context, input) {
 > [!NOTE]
 > Этот пример предназначен для Устойчивые функции версии 2. x. В версии 1. x используйте `orchestrationClient` вместо `durableClient` .
 
-**__init__. Корректировка**
+**__init__.py**
 
 ```python
 import logging
@@ -183,7 +183,7 @@ func durable start-new --function-name HelloWorld --input @counter-data.json --t
 
 * **`showHistory`**: Если задано значение `true` , ответ содержит журнал выполнения.
 * **`showHistoryOutput`**: Если задано значение `true` , журнал выполнения содержит выходные данные действия.
-* **`showInput`**: Если задано значение `false` , ответ не будет содержать входные данные функции. Значение по умолчанию — `true`.
+* **`showInput`**: Если задано значение `false` , ответ не будет содержать входные данные функции. Значение по умолчанию — `true`.
 
 Этот метод возвращает объект со следующими свойствами:
 
@@ -256,8 +256,8 @@ async def main(req: func.HttpRequest, starter: str, instance_id: str) -> func.Ht
 Также можно напрямую получить состояние экземпляра оркестрации с помощью команды [Azure functions Core Tools](../functions-run-local.md) `durable get-runtime-status` . Она принимает следующие параметры.
 
 * ** `id` (обязательно)**: идентификатор экземпляра оркестрации.
-* ** `show-input` (необязательно)**: Если задано значение `true` , ответ содержит входные данные функции. Значение по умолчанию — `false`.
-* ** `show-output` (необязательно)**: Если задано значение `true` , ответ содержит выходные данные функции. Значение по умолчанию — `false`.
+* ** `show-input` (необязательно)**: Если задано значение `true` , ответ содержит входные данные функции. Значение по умолчанию — `false`.
+* ** `show-output` (необязательно)**: Если задано значение `true` , ответ содержит выходные данные функции. Значение по умолчанию — `false`.
 * ** `connection-string-setting` (необязательно)**: имя параметра приложения, содержащего строку подключения к хранилищу для использования. Значение по умолчанию — `AzureWebJobsStorage`.
 * ** `task-hub-name` (необязательно)**: имя используемого устойчивые функции центра задач. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать в [host.json](durable-functions-bindings.md#host-json)с помощью DurableTask: HubName.
 

@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: bad81e8929cd0c5c66c87fd9f6cc11dc746b3e5f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317801"
 ---
 # <a name="service-bus-queues-output-from-azure-stream-analytics"></a>Выходные данные очередей служебной шины из Azure Stream Analytics
@@ -66,7 +66,7 @@ ms.locfileid: "91317801"
 
 На следующем рисунке изображены ожидаемые свойства выходного сообщения, проверенные в EventHub с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer).
 
-:::image type="content" source="media/service-bus-queues-output/custom-properties.png" alt-text="Настраиваемые свойства события":::
+:::image type="content" source="media/service-bus-queues-output/custom-properties.png" alt-text="Столбцы свойств":::
 
 ## <a name="system-properties"></a>Свойства системы
 

@@ -10,10 +10,10 @@ ms.date: 09/23/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: 828b5c34aaccf2a53aa197f921a8ef02d46821ae
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91280476"
 ---
 # <a name="perform-a-point-in-time-restore-on-block-blob-data"></a>Выполнение восстановления на момент времени в данных блочного BLOB-объекта
@@ -52,7 +52,7 @@ ms.locfileid: "91280476"
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Чтобы настроить восстановление на момент времени с помощью PowerShell, сначала установите модуль [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) 2.6.0 или более поздней версии. Затем вызовите команду Enable-Азсторажеблобрестореполици, чтобы включить восстановление на момент времени для учетной записи хранения.
+Чтобы настроить восстановление на момент времени с помощью PowerShell, сначала установите модуль [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) 2.6.0 или более поздней версии. Затем вызовите команду Enable-AzStorageBlobRestorePolicy, чтобы включить восстановление на момент времени для учетной записи хранения.
 
 В следующем примере активируется обратимое удаление и устанавливается срок хранения обратимого удаления, включается веб-канал изменений и управление версиями, а затем включается восстановление на момент времени.    При выполнении примера не забудьте заменить значения в угловых скобках собственными значениями:
 
@@ -122,7 +122,7 @@ Get-AzStorageBlobServiceProperty -ResourceGroupName $rgName `
 1. Убедитесь, что вы хотите выполнить установку, установив флажок.
 1. Нажмите кнопку **восстановить** , чтобы начать операцию восстановления.
 
-    :::image type="content" source="media/point-in-time-restore-manage/restore-all-containers-portal.png" alt-text="Снимок экрана, показывающий, как восстановить все контейнеры до указанной точки восстановления":::
+    :::image type="content" source="media/point-in-time-restore-manage/restore-all-containers-portal.png" alt-text="Снимок экрана, показывающий, как настроить восстановление на момент времени в портал Azure":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -169,14 +169,14 @@ Restore-AzStorageBlobRange -ResourceGroupName $rgName `
 1. Укажите диапазоны для восстановления. Используйте косую черту (/) для отделения имени контейнера от префикса большого двоичного объекта.
 1. По умолчанию в области **восстановить выбранные контейнеры** указывается диапазон, включающий в себя все большие двоичные объекты в контейнере. Удалите этот диапазон, если не хотите восстанавливать весь контейнер. Диапазон по умолчанию показан на следующем рисунке.
 
-    :::image type="content" source="media/point-in-time-restore-manage/delete-default-blob-range.png" alt-text="Снимок экрана, показывающий диапазон больших двоичных объектов по умолчанию для удаления перед указанием пользовательского диапазона":::
+    :::image type="content" source="media/point-in-time-restore-manage/delete-default-blob-range.png" alt-text="Снимок экрана, показывающий, как настроить восстановление на момент времени в портал Azure":::
 
 1. Убедитесь, что вы хотите выполнить установку, установив флажок.
 1. Нажмите кнопку **восстановить** , чтобы начать операцию восстановления.
 
 На следующем рисунке показана операция восстановления набора диапазонов.
 
-:::image type="content" source="media/point-in-time-restore-manage/restore-multiple-container-ranges-portal.png" alt-text="Снимок экрана, показывающий, как восстановить диапазоны больших двоичных объектов в одном или нескольких контейнерах":::
+:::image type="content" source="media/point-in-time-restore-manage/restore-multiple-container-ranges-portal.png" alt-text="Снимок экрана, показывающий, как настроить восстановление на момент времени в портал Azure":::
 
 Операция восстановления, показанная на образе, выполняет следующие действия.
 
@@ -245,9 +245,9 @@ $restoreOperation.Parameters.BlobRanges
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Восстановление до точки во времени для блочных BLOB-объектов](point-in-time-restore-overview.md)
 - [Обратимое удаление](soft-delete-overview.md)
-- [Канал изменений](storage-blob-change-feed.md)
+- [Веб-канал изменений](storage-blob-change-feed.md)
 - [Управление версиями BLOB-объектов](versioning-overview.md)

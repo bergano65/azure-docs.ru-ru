@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 68ddea6c58bfff5e82643acc947ac1e7de76d699
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88141046"
 ---
 # <a name="account-management-overview"></a>Общие сведения об управлении учетной записью
@@ -34,7 +34,7 @@ ms.locfileid: "88141046"
 
 Все пользователи, у которых есть роль " **владелец** " и " **участник** " в подписке, имеют доступ к порталу клаудсимпле.  При доступе к порталу пользователь создается в учетной записи Клаудсимпле.  Вы можете отключить доступ к порталу Клаудсимпле для конкретных пользователей на странице учетные записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Просмотр сводки учетной записи](account.md)
 * [Просмотр списка пользователей](users.md)

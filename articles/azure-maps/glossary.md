@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.openlocfilehash: 4c3e6216c172b0ba1273fea1690c030a05f4c456
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83742214"
 ---
 # <a name="glossary"></a>Глоссарий
@@ -237,7 +237,7 @@ ms.locfileid: "83742214"
 
 ## <a name="m"></a>M
 
-<a name="map-tile"></a> **Фрагмент карты**. Прямоугольное изображение, представляющее часть холста карты. Дополнительные сведения см. в [документации по уровням масштаба и сетке фрагментов](zoom-levels-and-tile-grid.md).
+<a name="map-tile"></a> **Фрагмент карты.\** . Прямоугольное изображение, представляющее часть холста карты. Дополнительные сведения см. в [документации по уровням масштаба и сетке фрагментов](zoom-levels-and-tile-grid.md).
 
 <a name="marker"></a> **Метка**. Также называется кнопкой. Значок, представляющий положение точки на карте.
 
