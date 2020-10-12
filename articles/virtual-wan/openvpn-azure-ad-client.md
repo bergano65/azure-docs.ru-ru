@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.openlocfilehash: e64de987bd82f6b93350cdd706fc1a243d2855b1
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90977843"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений "точка — сеть" по протоколу OpenVPN. Аутентификация Azure AD
@@ -88,33 +88,33 @@ ms.locfileid: "90977843"
 
 1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/openvpn-azure-ad-client/delete/delete1.jpg)
+    !["Удалить"](./media/openvpn-azure-ad-client/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
+    !["Удалить"](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
 ## <a name="create-a-connection"></a><a name="connection"></a>Создание подключения
 
 1. На странице выберите **+** , а затем **+ Добавить**.
 
-    ![соединение](./media/openvpn-azure-ad-client/create/create1.jpg)
+    ![подключение](./media/openvpn-azure-ad-client/create/create1.jpg)
 
 2. Заполните сведения о подключении. Если вы не уверены в этих значениях, обратитесь к администратору. После заполнения значений выберите **сохранить**.
 
-    ![соединение](./media/openvpn-azure-ad-client/create/create2.jpg)
+    ![подключение](./media/openvpn-azure-ad-client/create/create2.jpg)
 
 3. Выберите **Connect** (Подключиться), чтобы подключиться к VPN.
 
-    ![соединение](./media/openvpn-azure-ad-client/create/create3.jpg)
+    ![подключение](./media/openvpn-azure-ad-client/create/create3.jpg)
 
 4. Выберите правильные учетные данные, а затем нажмите кнопку **продолжить**.
 
-    ![соединение](./media/openvpn-azure-ad-client/create/create4.jpg)
+    ![подключение](./media/openvpn-azure-ad-client/create/create4.jpg)
 
 5. После успешного подключения значок будет зеленым и, например, **подключенным**.
 
-    ![соединение](./media/openvpn-azure-ad-client/create/create5.jpg)
+    ![подключение](./media/openvpn-azure-ad-client/create/create5.jpg)
 
 ### <a name="to-connect-automatically"></a><a name="autoconnect"></a>Автоматическое подключение
 
@@ -252,7 +252,7 @@ ms.locfileid: "90977843"
 ```
 ### <a name="can-i-import-the-profile-from-a-command-line-prompt"></a>Можно ли импортировать профиль из командной строки?
 
-Вы можете импортировать профиль из командной строки, поместив скачанный файл **azurevpnconfig.xml** в папку **%усерпрофиле%\аппдата\локал\паккажес\микрософт. AzureVpn_8wekyb3d8bbwe \локалстате** и выполнив следующую команду:
+Вы можете импортировать профиль из командной строки, поместив скачанный файл **azurevpnconfig.xml** в папку **%усерпрофиле%\аппдата\локал\паккажес\ Microsoft.AzureVpn_8wekyb3d8bbwe \локалстате** и выполнив следующую команду:
 
 ```
 azurevpn -i azurevpnconfig.xml 
@@ -260,6 +260,6 @@ azurevpn -i azurevpnconfig.xml
 чтобы принудительно выполнить импорт, используйте параметр **-f** .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).
