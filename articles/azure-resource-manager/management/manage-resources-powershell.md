@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.openlocfilehash: d97390861200a0a7f3b04d951e0ca2a17796835d
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91372507"
 ---
 # <a name="manage-azure-resources-by-using-azure-powershell"></a>Управление ресурсами Azure с помощью Azure PowerShell
@@ -135,7 +135,7 @@ Remove-AzResourceLock -LockId $lockId
 
 Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../templates/template-syntax.md).

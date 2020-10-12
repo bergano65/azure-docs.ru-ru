@@ -17,10 +17,10 @@ ms.date: 08/24/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5a356e96b82e6fbe855d0b474dcb6b1f59c98333
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88855215"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-file-share-on-azure"></a>Обеспечение высокого уровня доступности экземпляра ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и файлового ресурса в Azure
@@ -47,7 +47,7 @@ ms.locfileid: "88855215"
 
 Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]. Также рассмотрите возможность использования [номера SKU Azure Load Balancer (цен. категория "Стандартный")](../../../load-balancer/load-balancer-standard-availability-zones.md) вместо номера SKU Azure Load Balancer (цен. категория "Базовый").
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
 

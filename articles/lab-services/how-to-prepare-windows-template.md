@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: cf1b9db8de2c0f2c852a41d1e30343c5cef1b20b
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91396694"
 ---
 # <a name="guide-to-setting-up-a-windows-template-machine-in-azure-lab-services"></a>Инструкции по настройке компьютера шаблона Windows в службах лаборатории Azure
@@ -230,5 +230,5 @@ Get-AppxPackage -Name *xbox* | foreach { if (-not $_.NonRemovable) { Remove-Appx
 
 В этой статье показаны необязательные шаги по подготовке виртуальной машины шаблона Windows для эффективного класса.  Шаги включают установку OneDrive и установку Microsoft 365, установку обновлений для Windows и установку обновлений для приложений Microsoft Store.  Мы также рассмотрели, как настроить обновления по расписанию, которое лучше подходит для вашего класса.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. статью о том, как управлять поведением завершения работы Windows, чтобы упростить управление затратами: [руководство по управлению работой при завершении работы Windows](how-to-windows-shutdown.md)

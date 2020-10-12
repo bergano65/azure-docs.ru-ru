@@ -4,10 +4,10 @@ description: DevTest Labs предоставляют сведения, кото�
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 440ce6a537ac8d6a21ae8010bfbb3c38a82bf01e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85480819"
 ---
 # <a name="diagnose-artifact-failures-in-the-lab"></a>Диагностика сбоев артефактов в лаборатории 
@@ -47,6 +47,6 @@ ms.locfileid: "85480819"
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [добавить в лабораторию репозиторий Git](devtest-lab-add-artifact-repo.md).
 

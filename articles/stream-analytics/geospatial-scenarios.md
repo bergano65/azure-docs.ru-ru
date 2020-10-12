@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/02/2019
 ms.openlocfilehash: 9792641da4b3aebad047179e2c02dad757027801
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86045269"
 ---
 # <a name="geofencing-and-geospatial-aggregation-scenarios-with-azure-stream-analytics"></a>Сценарии геозоны и геопространственной статистической обработки с Azure Stream Analytics
@@ -70,7 +70,7 @@ WHERE DeviceStreamInput.DeviceID = SiteReferenceInput.AllowedDeviceID
 
 ### <a name="site-with-multiple-allowed-devices"></a>Сайт с несколькими разрешенными устройствами
 
-Если сайт поддерживает несколько устройств, можно определить массив идентификаторов устройств, `AllowedDeviceID` а определяемую пользователем функцию можно использовать в `WHERE` предложении, чтобы проверить, соответствует ли идентификатор устройства потока идентификатору устройства в этом списке. Дополнительные сведения см. в руководстве по [JavaScript UDF](stream-analytics-javascript-user-defined-functions.md) для облачных заданий и в учебнике по [языку UDF C#](stream-analytics-edge-csharp-udf.md) для заданий пограничных задач.
+Если сайт допускает использование нескольких устройств, можно определить массив идентификаторов устройств, `AllowedDeviceID` а в предложении можно использовать функцию User-Defined, `WHERE` чтобы проверить, соответствует ли идентификатор устройства потока идентификатору устройства в этом списке. Дополнительные сведения см. в руководстве по [JavaScript UDF](stream-analytics-javascript-user-defined-functions.md) для облачных заданий и в учебнике по [языку UDF C#](stream-analytics-edge-csharp-udf.md) для заданий пограничных задач.
 
 ## <a name="geospatial-aggregation"></a>Геопространственное агрегирование
 
@@ -122,7 +122,7 @@ GROUP BY RegionsRefDataInput.RegionName, hoppingwindow(minute, 1, 15)
 ![Вывод результатов на панели мониторинга Power BI](./media/geospatial-scenarios/power-bi-output.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о геопространственных функциях Azure Stream Analytics](stream-analytics-geospatial-functions.md)
 * [Геопространственные функции (Azure Stream Analytics)](https://docs.microsoft.com/stream-analytics-query/geospatial-functions)

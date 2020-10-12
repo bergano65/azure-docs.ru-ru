@@ -4,10 +4,10 @@ description: Узнайте, как использовать программы 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: e5a42658f2b83f101271f158c9af70833601b56d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85476422"
 ---
 # <a name="use-command-line-tools-to-start-and-stop-azure-devtest-labs-virtual-machines"></a>Использование программ командной строки для запуска и завершения Azure DevTest Labs виртуальных машин
@@ -83,5 +83,5 @@ az lab vm stop --lab-name yourlabname --name vmname --resource-group labResource
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения об использовании портал Azure для выполнения этих операций см. в следующей статье: [перезапуск виртуальной машины](devtest-lab-restart-vm.md).

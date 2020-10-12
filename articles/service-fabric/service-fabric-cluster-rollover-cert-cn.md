@@ -4,10 +4,10 @@ description: Узнайте, как выполнить переработку Se
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: 65ea4f463073c472ac6a31e62dcfdfd11cb28cc5
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88853352"
 ---
 # <a name="manually-roll-over-a-service-fabric-cluster-certificate"></a>Смена сертификата для кластера Service Fabric вручную
@@ -73,7 +73,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Name $VmssName -Virtual
 >[!NOTE]
 > Так как каждый секрет является уникальным ресурсом с контролем версий, секреты масштабируемого набора виртуальных машин в Вычислительных средах не поддерживают один идентификатор ресурса для двух отдельных секретов. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * Сведения о [безопасности кластера](service-fabric-cluster-security.md).
 * [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 07/17/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
 ms.openlocfilehash: 8363011187a4c2ef77681ece4bb8b1de73ec7a63
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87801649"
 ---
 # <a name="use-java-message-service-20-api-with-azure-service-bus-premium-preview"></a>Использование API службы сообщений Java 2,0 с помощью служебной шины Azure Premium (Предварительная версия)
@@ -47,7 +47,7 @@ ms.locfileid: "87801649"
 
 Для подключения к служебной шине Azure с помощью клиентов JMS необходимо, чтобы **строка подключения** , доступная в разделе "политики общего доступа", в [портал Azure](https://portal.azure.com) в **строке первичного подключения**.
 
-1. Создайте экземпляр`ServiceBusJmsConnectionFactorySettings`
+1. Создайте экземпляр `ServiceBusJmsConnectionFactorySettings`
 
     ```java
     ServiceBusJmsConnectionFactorySettings connFactorySettings = new ServiceBusJmsConnectionFactorySettings();
@@ -60,7 +60,7 @@ ms.locfileid: "87801649"
     ConnectionFactory factory = new ServiceBusJmsConnectionFactory(ServiceBusConnectionString, connFactorySettings);
     ```
 
-3. Используйте `ConnectionFactory` для создания, `Connection` а затем`Session` 
+3. Используйте `ConnectionFactory` для создания, `Connection` а затем `Session` 
 
     ```java
     Connection connection = factory.createConnection();
@@ -124,13 +124,13 @@ JMSConsumer sharedDurableConsumer = jmsContext.createSharedDurableConsumer(topic
 Message msg = (Message) sharedDurableConsumer.receive();
 ```
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этом руководство показано, как клиентские приложения Java, использующие службу сообщений Java (JMS) через AMQP 1,0, могут взаимодействовать с служебной шиной Azure.
 
 Протокол AMQP 1.0 Service Bus можно также использовать из других языков, в числе которых .NET, C, Python и PHP. Компоненты, созданные с помощью этих языков, могут надежно и точно обмениваться сообщениями, используя AMQP 1.0 в Service Bus.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о служебной шине Azure и сведения о сущностях службы сообщений Java (JMS) см. по ссылкам ниже. 
 * [Служебная шина — очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md)

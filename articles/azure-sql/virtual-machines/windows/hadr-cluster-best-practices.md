@@ -13,13 +13,13 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.openlocfilehash: e98bfbf58c179fe9df0d99e0522e5747d220ae52
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317027"
 ---
-# <a name="cluster-configuration-best-practices-sql-server-on-azure-vms"></a>Рекомендации по конфигурации кластера (SQL Server на виртуальных машинах Azure)
+# <a name="cluster-configuration-best-practices-sql-server-on-azure-vms"></a>Рекомендации по настройке кластера (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 Кластер используется для обеспечения высокой доступности и аварийного восстановления (HADR) с SQL Server на виртуальных машинах Azure. 
@@ -42,9 +42,9 @@ ms.locfileid: "91317027"
 В следующей таблице перечислены параметры кворума, доступные в заказе, рекомендуемом для использования с виртуальной машиной Azure. предпочтительнее использовать диск-свидетель. 
 
 
-||[Диск-свидетель](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |[Облачный следящий сервер](/windows-server/failover-clustering/deploy-cloud-witness)  |[Файловый ресурс-свидетель](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |
+||[Диск-свидетель](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |[Облако-свидетель](/windows-server/failover-clustering/deploy-cloud-witness)  |[Файловый ресурс-свидетель](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |
 |---------|---------|---------|---------|
-|**Поддерживаемая ОС**| Все |Windows Server 2016+| Все|
+|**Поддерживаемая ОС**| All |Windows Server 2016+| All|
 
 
 
@@ -58,7 +58,7 @@ ms.locfileid: "91317027"
 Чтобы приступить к работе, см. раздел [Настройка диска-свидетеля](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum).
 
 
-**Поддерживаемая ОС**: все   
+**Поддерживаемая ОС:** All   
 
 
 ### <a name="cloud-witness"></a>Облако-свидетель
@@ -68,7 +68,7 @@ ms.locfileid: "91317027"
 Чтобы приступить к работе, см. раздел [Настройка облачного следящего сервера](/windows-server/failover-clustering/deploy-cloud-witness#CloudWitnessSetUp).
 
 
-**Поддерживаемая ОС**: Windows Server 2016 и более поздние версии   
+**Поддерживаемая ОС:** Windows Server 2016 и более поздних версий.   
 
 
 ### <a name="file-share-witness"></a>Файловый ресурс-свидетель
@@ -80,7 +80,7 @@ ms.locfileid: "91317027"
 Чтобы приступить к работе, см. раздел [Настройка файлового ресурса-свидетеля](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum).
 
 
-**Поддерживаемая ОС**: Windows Server 2012 и более поздние версии   
+**Поддерживаемая ОС:** Windows Server 2012 и более поздних версий   
 
 ## <a name="connectivity"></a>Соединение
 
@@ -92,8 +92,8 @@ ms.locfileid: "91317027"
 
 | |**Имя виртуальной сети (VNN)**  |**Имя распределенной сети (DNN)**  |
 |---------|---------|---------|
-|**Минимальная версия ОС**| Все | Все |
-|**Минимальная версия SQL Server** |Все |SQL Server 2019 CU2|
+|**Минимальная версия ОС**| All | All |
+|**Минимальная версия SQL Server** |All |SQL Server 2019 CU2|
 |**Поддерживаемое решение HADR** | Экземпляр отказоустойчивого кластера <br/> группа доступности | Экземпляр отказоустойчивого кластера|
 
 
@@ -105,8 +105,8 @@ ms.locfileid: "91317027"
 
 Чтобы приступить к работе, Узнайте, как [настроить Azure Load Balancer для FCI](hadr-vnn-azure-load-balancer-configure.md). 
 
-**Поддерживаемая ОС**: все   
-**Поддерживаемая версия SQL**: все   
+**Поддерживаемая ОС:** All   
+**Поддерживаемая версия SQL:** All   
 **Поддерживаемое решение HADR**: экземпляр отказоустойчивого кластера и группа доступности   
 
 
@@ -125,7 +125,7 @@ ms.locfileid: "91317027"
 
 Чтобы приступить к работе, Узнайте, как [настроить ресурс DNN для FCI](hadr-distributed-network-name-dnn-configure.md). 
 
-**Поддерживаемая ОС**: Windows Server 2016 и более поздние версии   
+**Поддерживаемая ОС:** Windows Server 2016 и более поздних версий.   
 **Поддерживаемая версия SQL**: SQL Server 2019 и более поздних версий   
 **Поддерживаемое решение HADR**: только экземпляр отказоустойчивого кластера
 
@@ -136,9 +136,9 @@ ms.locfileid: "91317027"
 
 ### <a name="msdtc"></a>MSDTC 
 
-Виртуальные машины Azure поддерживают Microsoft координатор распределенных транзакций (MSDTC) в Windows Server 2019 с хранилищем в кластеризованных общих томах (CSV) и [Azure Load Balancer (цен. Категория "Стандартный")](../../../load-balancer/load-balancer-standard-overview.md) или на SQL Server виртуальных машинах, использующих общие диски Azure. 
+Виртуальные машины Azure поддерживают координатор распределенных транзакций (Майкрософт) в Windows Server 2019 с хранилищем на общих томах кластера (CSV) и с [Azure Load Balancer ценовой категории "Стандартный"](../../../load-balancer/load-balancer-standard-overview.md) или на виртуальных машинах SQL Server, использующих общие диски Azure. 
 
-На виртуальных машинах Azure MSDTC не поддерживается для Windows Server 2016 или более ранних версий с кластеризованными общими томами, так как:
+Координатор распределенных транзакций (Майкрософт) не поддерживается на Виртуальных машинах Azure в Windows Server 2016 и более ранних версий с общими томами кластера по следующим причинам:
 
 - Кластерный ресурс MSDTC нельзя настроить для использования общего хранилища. В Windows Server 2016, если вы создаете ресурс MSDTC, не будет отображаться доступное общее хранилище, даже если оно существует. Эта проблема устранена в Windows Server 2019.
 - Load Balancer ценовой категории "Стандартный" не обрабатывает порты RPC.

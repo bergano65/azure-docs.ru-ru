@@ -10,10 +10,10 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: 2e3861cf3df11fa147814fc80246fe2714653b30
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331392"
 ---
 # <a name="create-a-vm-using-a-generalized-image"></a>Создание виртуальной машины с помощью обобщенного образа 
@@ -144,7 +144,7 @@ New-AzVM `
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 С помощью [построителя образов Azure (Предварительная версия)](./windows/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](./windows/image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 

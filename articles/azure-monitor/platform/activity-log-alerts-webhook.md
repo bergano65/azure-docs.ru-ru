@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
 ms.openlocfilehash: 018bf7ac9c24669df798e9ba05c667dcb72d94a6
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87321842"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
@@ -286,7 +286,7 @@ ms.locfileid: "87321842"
 
 Сведения о схеме для остальных оповещений журнала действий см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](./platform-logs-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные [сведения о журнале действий](./platform-logs-overview.md).
 * [Выполнение скриптов службы автоматизации Azure (модулей Runbook) в оповещениях Azure](https://go.microsoft.com/fwlink/?LinkId=627081).
 * [Logic app that sends a text message when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app) (Приложение логики, которое отправляет текстовое сообщение при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.author: ramamill
 ms.date: 04/03/2020
 ms.openlocfilehash: 8ee6449f357a578b30809bb03723ac1556e4f459
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88816198"
 ---
 # <a name="troubleshoot-mobility-service-push-installation"></a>Устранение неполадок при принудительной установке службы Mobility Service
@@ -347,7 +347,7 @@ Site Recovery служба Mobility Service имеет много компоне
     - Exit code: 802
     ```
 
-Чтобы устранить проблему:
+Чтобы решить эту проблему, выполните указанные ниже действия.
 
 Обратитесь к [группе разработчиков платформы Microsoft Windows](https://aka.ms/Windows_Support) , чтобы получить помощь по устранению проблемы DCOM.
 
@@ -394,7 +394,7 @@ Site Recovery служба Mobility Service имеет много компоне
 COM+ was unable to talk to the Microsoft Distributed Transaction Coordinator (Exception from HRESULT: 0x8004E00F)
 ```
 
-Чтобы устранить проблему:
+Чтобы решить эту проблему, выполните указанные ниже действия.
 
 1. Убедитесь, что этот компьютер не является компьютером кластера и что компоненты кластера не используются.
 1. Если компоненты не используются, удалите компоненты кластера с компьютера.
@@ -403,7 +403,7 @@ COM+ was unable to talk to the Microsoft Distributed Transaction Coordinator (Ex
 
 Если установка агента мобильности завершается сбоем, проверьте журналы в разделе _к:\програмдата\асрсетуплогс_ , чтобы определить, отсутствуют ли в некоторых наборах элементов необходимые драйверы.
 
-Чтобы устранить проблему:
+Чтобы решить эту проблему, выполните указанные ниже действия.
 
 1. С помощью редактора реестра, например `regedit.msc` , откройте реестр.
 1. Откройте `HKEY_LOCAL_MACHINE\SYSTEM` узел.

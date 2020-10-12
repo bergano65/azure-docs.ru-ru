@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: 544625fe9fd2dbd87ad7330d7277494cbfbe6eb9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90891085"
 ---
 # <a name="create-certificates-for-your-azure-stack-edge-pro-using-azure-stack-hub-readiness-checker-tool"></a>Создание сертификатов для Azure Stack ребра Pro с помощью средства проверки готовности центра Azure Stack 
@@ -150,6 +150,6 @@ ms.locfileid: "90891085"
 
     `Invoke-AzsCertificateValidation -CertificateType AzureStackEdge -DeviceName mytea1 -NodeSerialNumber VM1500-00025 -externalFQDN azurestackedge.contoso.com -CertificatePath $ENV:USERPROFILE\Documents\AzureStackCSR\AzureStackEdge -pfxPassword $pfxPassword`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Развертывание устройства Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-prep.md)

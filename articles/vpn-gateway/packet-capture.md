@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: radwiv
 ms.openlocfilehash: 486ac23f26a7eee6b31322de79bfb68076a598ec
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89441601"
 ---
 # <a name="configure-packet-capture-for-vpn-gateways"></a>Настройка записи пакетов для VPN-шлюзов
@@ -355,6 +355,6 @@ Stop-AzVirtualNetworkGatewayConnectionPacketCapture -ResourceGroupName "YourReso
 - Файлы данных записи пакетов создаются в формате ПКАП. Используйте Wireshark или другие часто доступные приложения для открытия файлов ПКАП.
 - Записи пакетов не поддерживаются на шлюзах, основанных на политиках.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о VPN-шлюзе см. в статье [что такое VPN-шлюз?](vpn-gateway-about-vpngateways.md).

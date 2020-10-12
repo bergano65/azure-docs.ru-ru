@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
 ms.openlocfilehash: a2cdcab08bba76cb385666956b7663324f32c669
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87824585"
 ---
 # <a name="enable-azure-monitor-for-vms-using-powershell"></a>Включение Azure Monitor для виртуальных машин с помощью PowerShell
@@ -19,7 +19,7 @@ ms.locfileid: "87824585"
 - Виртуальная машина Azure
 - Масштабируемый набор виртуальных машин Azure
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание и Настройка рабочей области log Analytics](vminsights-configure-workspace.md).
 - Ознакомьтесь с [поддерживаемыми операционными системами](vminsights-enable-overview.md#supported-operating-systems) , чтобы убедиться, что операционная система, которую вы включаете, поддерживается. 

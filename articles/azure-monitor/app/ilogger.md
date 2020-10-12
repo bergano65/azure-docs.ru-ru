@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: 171aaeb624bfedb9aa7408a736c11faca316b392
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87322641"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
@@ -104,7 +104,7 @@ public class ValuesController : ControllerBase
 ### <a name="capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps"></a>Запись журналов ILogger из Startup.cs и Program.cs в приложениях ASP.NET Core
 
 > [!NOTE]
-> В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в статье https://github.com/aspnet/Announcements/issues/353.
+> В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в разделе https://github.com/aspnet/Announcements/issues/353.
 
 Новый Аппликатионинсигхтслогжерпровидер может записывать журналы с самого начала в конвейере запуска приложения. Хотя Аппликатионинсигхтслогжерпровидер автоматически включается в Application Insights (начиная с версии 2.7.1), ключ инструментирования не настраивается до последующего в конвейере. Таким образом, будут записываться только журналы из классов. другие **контроллера**. Чтобы записать каждый журнал, начиная с **Program.CS** и **Startup.CS** , необходимо явно включить ключ инструментирования для аппликатионинсигхтслогжерпровидер. Кроме того, *телеметриконфигуратион* не полностью настраивается при регистрации из **Program.CS** или **Startup.CS** . Поэтому эти журналы будут иметь минимальную конфигурацию, которая использует InMemoryChannel, без выборки и не имеет стандартных инициализаторов телеметрии или процессоров.
 
@@ -210,7 +210,7 @@ public class Startup
 - В предыдущем поставщике отсутствует поддержка [областей журнала](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2#log-scopes). В новом поставщике свойства из области автоматически добавляются в собранные данные телеметрии в качестве пользовательских свойств.
 - Теперь журналы могут быть захвачены в конвейере запуска приложения. Теперь можно записывать журналы из классов **Program** и **Startup** .
 - С новым поставщиком фильтрация выполняется на уровне платформы. Вы можете фильтровать журналы в поставщике Application Insights так же, как и для других поставщиков, включая встроенные поставщики, такие как консоль, отладка и т. д. Вы также можете применить те же фильтры к нескольким поставщикам.
-- В ASP.NET Core (2,0 и более поздних версиях) рекомендуемый способ [включения регистраторов](https://github.com/aspnet/Announcements/issues/255) — использование методов расширения в илоггингбуилдер в самом **Program.CS** .
+- В ASP.NET Core (2,0 и более поздних версиях) рекомендуемый способ  [включения регистраторов](https://github.com/aspnet/Announcements/issues/255) — использование методов расширения в илоггингбуилдер в самом **Program.CS** .
 
 > [!Note]
 > Новый поставщик доступен для приложений, предназначенных для NETSTANDARD 2.0 или более поздней версии. Начиная с [Microsoft. ApplicationInsights. ASPNET SDK](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) версии 2.14.0, новый поставщик также доступен для приложений, предназначенных для .NET Framework NET461 или более поздней версии. Если приложение предназначено для более старых версий .NET Core, например .NET Core 1,1, или если оно предназначено для .NET Framework менее NET46, продолжайте использовать старый поставщик.
@@ -378,7 +378,7 @@ class Program
  }
 ```
 
-Если при отладке из Visual Studio вы настроили двойное ведение журнала, задайте для параметра значение `EnableDebugLogger` *false* в коде, который включает Application Insights, как показано ниже. Это дублирование и исправление применимо только при отладке приложения.
+Если при отладке из Visual Studio вы настроили двойное ведение журнала, задайте для параметра значение `EnableDebugLogger`  *false* в коде, который включает Application Insights, как показано ниже. Это дублирование и исправление применимо только при отладке приложения.
 
 ```csharp
  public void ConfigureServices(IServiceCollection services)
@@ -444,7 +444,7 @@ public class MyController : ApiController
 
 Аппликатионинсигхтслогжерпровидер записывает журналы ILogger и создает Трацетелеметри из них. Если объект исключения передается в метод **log ()** для ILogger, вместо Трацетелеметри создается *ексцептионтелеметри* . Эти элементы телеметрии можно найти в тех же местах, что и другие Трацетелеметри или Ексцептионтелеметри, для Application Insights, включая портал, аналитику или локальный отладчик Visual Studio.
 
-Если вы предпочитаете всегда отсылать Трацетелеметри, используйте следующий фрагмент кода:```builder.AddApplicationInsights((opt) => opt.TrackExceptionsAsExceptionTelemetry = false);```
+Если вы предпочитаете всегда отсылать Трацетелеметри, используйте следующий фрагмент кода: ```builder.AddApplicationInsights((opt) => opt.TrackExceptionsAsExceptionTelemetry = false);```
 
 ### <a name="i-dont-have-the-sdk-installed-and-i-use-the-azure-web-apps-extension-to-enable-application-insights-for-my-aspnet-core-applications-how-do-i-use-the-new-provider"></a>Я не установил пакет SDK, и я использую расширение веб-приложений Azure, чтобы включить Application Insights для приложений ASP.NET Core. Разделы справки использовать новый поставщик? 
 

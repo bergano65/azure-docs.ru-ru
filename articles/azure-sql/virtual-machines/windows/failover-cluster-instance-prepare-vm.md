@@ -13,10 +13,10 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.openlocfilehash: f42d6c8015061406958bdc16473dc0f042d3143a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91272507"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Подготовка виртуальных машин для FCI (SQL Server на виртуальных машинах Azure)
@@ -120,7 +120,7 @@ SQL Server образы виртуальных машин из Azure Marketplace
 Виртуальные машины, созданные из Azure Marketplace, имеют подключенное хранилище. Если вы планируете настроить хранилище FCI с помощью файловых ресурсов уровня "Премиум" или общих дисков Azure, можно удалить подключенное хранилище, чтобы сэкономить на затратах, поскольку локальное хранилище не используется для экземпляра отказоустойчивого кластера. Однако можно использовать подключенное хранилище для Локальные дисковые пространства решений FCI, поэтому их удаление в этом случае может оказаться неполезным. Ознакомьтесь с решением хранилища FCI, чтобы определить, оптимально ли удаление подключенного хранилища для экономии затрат. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы подготовили среду виртуальной машины, вы можете настроить экземпляр отказоустойчивого кластера. 
 
@@ -133,4 +133,4 @@ SQL Server образы виртуальных машин из Azure Marketplace
 
 Дополнительные сведения см. в следующих источниках: 
 - [технологии кластера под управлением Windows](/windows-server/failover-clustering/failover-clustering-overview);   
-- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
+- [Экземпляры отказоустойчивого кластера SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)

@@ -5,10 +5,10 @@ ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
 ms.openlocfilehash: 39bc6178d0cabf6c0220d2c54e0c532a6f9a5aa2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91316738"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Устранение ошибок резервного копирования на виртуальных машинах Azure
@@ -127,12 +127,12 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v SnapshotWithoutThre
 Для проверки перейдите в раздел ***журналы приложений системы и Просмотр событий*** и проверьте следующее сообщение об ошибке:<br>
 *Истекло время ожидания поставщика теневого копирования при удержании записи на копируемый том. Возможно, это произошло из-за чрезмерной активности тома приложением или системной службой. Повторите попытку позже, когда действие на томе уменьшится.*<br>
 
-Решение:
+Решение.
 - Проверьте возможности распределения нагрузки между дисками виртуальных машин. Это снизит нагрузку на отдельные диски. Чтобы [проверить регулирование количества операций ввода-вывода, включите метрики диагностики на уровне хранилища](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/performance-diagnostics#install-and-run-performance-diagnostics-on-your-vm).
 - Измените политику резервного копирования для выполнения резервного копирования в часы пиковой нагрузки, если нагрузка на виртуальную машину находится на самом низком уровне.
 - Обновите диски Azure для поддержки более высоких операций ввода-вывода. [Дополнительные сведения см. здесь](https://docs.microsoft.com/azure/virtual-machines/disks-types)
 
-### <a name="extensionfailedvssserviceinbadstate---snapshot-operation-failed-due-to-vss-volume-shadow-copy-service-in-bad-state"></a>Екстенсионфаиледвсссервицеинбадстате-сбой операции создания моментального снимка, так как служба VSS (теневая копия тома) находится в неправильном состоянии
+### <a name="extensionfailedvssserviceinbadstate---snapshot-operation-failed-due-to-vss-volume-shadow-copy-service-in-bad-state"></a>ExtensionFailedVssServiceInBadState — сбой операции создания моментального снимка из-за неправильного состояния VSS (службы теневого копирования томов)
 
 Код ошибки: Екстенсионфаиледвсссервицеинбадстате <br/>
 Сообщение об ошибке: операция моментального снимка завершилась сбоем из-за неправильного состояния службы VSS (теневая копия тома).
@@ -318,7 +318,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 #### <a name="disks-appear-offline-after-file-restore"></a>Диски отображаются в автономном режиме после восстановления файлов
 
 Если после восстановления вы заметили, что диски находятся в автономном режиме, выполните следующие действия. 
-* Проверьте, соответствует ли компьютер, на котором выполняется сценарий, требованиям операционной системы. [Подробнее](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#system-requirements).  
+* Проверьте, соответствует ли компьютер, на котором выполняется сценарий, требованиям операционной системы. [Подробнее.](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#system-requirements)  
 * Убедитесь, что вы не восстанавливаете тот же источник, дополнительные [сведения](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#original-backed-up-machine-versus-another-machine).
 
 

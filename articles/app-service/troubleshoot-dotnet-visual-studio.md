@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 08/29/2016
 ms.custom: devx-track-csharp, seodec18
 ms.openlocfilehash: 72df946ed35dfdfd2811089a51ab9403d2e0567c
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90983012"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
@@ -70,15 +70,15 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 **Ошибка сервера в приложении "/":**
 
-:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror.png" alt-text="Снимок экрана: ошибка сервера в приложении "/" в веб-браузере.":::
+:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
 **Произошла ошибка:**
 
-:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror1.png" alt-text="Снимок экрана, показывающий пример универсальной ошибки, возникающей в веб-браузере.":::
+:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror1.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
 **Веб-сайту не удается отобразить страницу**
 
-:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png" alt-text="Снимок экрана, показывающий веб-сайт, не может отобразить ошибку страницы в веб-браузере.":::
+:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
 Подробное сообщение об ошибке, как правило, содержит полезные сведения для ее устранения. На предыдущих снимках экрана показано, как включить эту функцию. Для этого необходимо внести изменения в развернутый файл Web.config. Вы можете изменить файл *Web.config* в проекте и повторно развернуть проект либо создать [преобразование Web.config](https://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) и развернуть отладочную сборку. Однако вы можете значительно упростить этот процесс с помощью **обозревателя решений**, непосредственно просматривая и редактируя файлы на удаленном сайте с помощью функции *удаленного представления*.
 
@@ -139,31 +139,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 1. В **обозревателе сервера** щелкните правой кнопкой мыши приложение и выберите **Подключить отладчик**.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-attachdebugger.png" alt-text="Снимок экрана обозреватель сервера окна, в котором выбрано приложение, и нажмите кнопку присоединить отладчик.":::
-
-    В браузере автоматически откроется ваша главная страница, размещенная в Azure. Возможно, придется подождать около 20 секунд, пока Azure настраивает сервер для отладки. Эта задержка возникает только при первом запуске приложения в режиме отладки в течение 48-часового периода. При повторном запуске отладки в рамках того же периода времени задержки не будет.
-
-    > [!NOTE] 
-    > При возникновении сложностей с запуском отладчика попробуйте сделать это с помощью **Cloud Explorer**, а не **обозревателя сервера**.
-    >
-
-1. Выберите пункт **О программе** в меню.
-
-    Visual Studio прерывается в точке останова, при этом код выполняется в Azure, а не на локальном компьютере.
-
-1. Наведите указатель мыши на переменную `currentTime` , чтобы просмотреть значение времени.
-
-    ![Просмотр переменной в режиме отладки в Azure](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugviewinwa.png)
-
-    Время, которое отображается здесь, является временем сервера Azure, который может находиться в другом часовом поясе, отличном от часового пояса локального компьютера.
-
-1. Введите новое значение переменной `currentTime` , например "Теперь выполняется в Azure".
-
-1. Нажмите клавишу F5, чтобы продолжить работу.
-
-     На странице "О программе" в Azure отображается новое значение, введенное в переменной currentTime.
-
-     ![Страница "О программе" с новым значением](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugchangeinwa.png)
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-attachdebugger.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере." с новым значением](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugchangeinwa.png)
 
 ## <a name="remote-debugging-webjobs"></a><a name="remotedebugwj"></a> Удаленная отладка веб-заданий
 В этом разделе демонстрируется удаленная отладка с использованием проекта и приложения, созданного на этапе [Начало работы с пакетом SDK веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki).
@@ -192,7 +168,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 8. Щелкните **Подключить отладчик**.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/wjattach.png" alt-text="Снимок экрана обозреватель сервера, в котором отображается ContosoAdsWebJob, выбранный в раскрывающемся меню, и выбран параметр "присоединить отладчик".":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/wjattach.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
     В браузере автоматически откроется ваша главная страница, размещенная в Azure. Возможно, придется подождать около 20 секунд, пока Azure настраивает сервер для отладки. Эта задержка возникает только при первом запуске приложения в режиме отладки в течение 48-часового периода. При повторном запуске отладки в рамках того же периода времени задержки не будет.
 
@@ -340,11 +316,11 @@ Visual Studio обеспечивает доступ к сокращенному 
 1. В адресной строке окна браузера добавьте *Trace. axd* к URL-адресу и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd` ).
 1. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png" alt-text="Снимок экрана: страница "трассировка приложения" в веб-браузере, в которой отображаются сведения о представлении, выбранные в первой строке.":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
     Откроется страница **Сведения о запросе**, где в разделе **Сведения о трассировке** отображаются выходные данные инструкций трассировки, добавленных в метод `Index`.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd2.png" alt-text="Снимок экрана страницы сведений о запросе в веб-браузере, в котором отображается сообщение, выделенное в разделе "сведения о трассировке".":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd2.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
     По умолчанию `trace.axd` доступен только локально. Если он должен быть доступен также в удаленном приложении, можно добавить строку `localOnly="false"` в элемент `trace` файла *Web.config*, как показано в следующем примере.
 
@@ -361,11 +337,11 @@ Visual Studio обеспечивает доступ к сокращенному 
     После того как Visual Studio опубликует обновление, главная страница откроется в окне браузера (если не снят флажок **URL-адрес назначения** на вкладке **Подключение**).
 3. В **обозревателе сервера** щелкните правой кнопкой мыши приложение и выберите **Просмотр журналов потоковой передачи**.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewlogsmenu.png" alt-text="Снимок экрана обозреватель сервера после щелчка приложения правой кнопкой мыши с отображением журналов потоковой передачи, выбранных в новом окне.":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewlogsmenu.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
     В окне **Вывод** показано, что вы подключены к службе потоковой передачи журналов; каждую минуту, когда отсутствует журнал для отображения, появляется строка уведомления.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-nologsyet.png" alt-text="Снимок экрана: окно вывода с примером подключения к службе потоковой передачи журналов со строками уведомления.":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-nologsyet.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
 4. В окне браузера с открытой главной страницей щелкните пункт **Contact**.
 
@@ -394,7 +370,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 ### <a name="output-window-features"></a>Функции окна вывода
 На вкладке **Журналы Microsoft Azure** окна **Вывод** расположены несколько кнопок и текстовое поле.
 
-:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-icons.png" alt-text="Снимок экрана, показывающий кнопки и текстовое поле на вкладке "журналы Microsoft Azure" в окне вывода.":::
+:::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-icons.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
 Служат для выполнения следующих функций:
 
@@ -458,15 +434,15 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 1. В окне **Вывод** щелкните **Загрузить журналы потоковой передачи**.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadicon.png" alt-text="Снимок экрана: окно вывода с выделенной кнопкой "скачать журналы потоковой передачи".":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadicon.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
     В проводнике открывается папка *Загрузки* с выбранным загруженным файлом.
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadedfile.png" alt-text="Снимок экрана папки "загрузки" в проводнике с выбранным загруженным файлом.":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-downloadedfile.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
 2. Извлеките содержимое *ZIP* -файла, чтобы увидеть структуру папки, аналогичную следующей:
 
-    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png" alt-text="Снимок экрана со структурой папки ZIP-файла после извлечения файла.":::
+    :::image type="content" source="./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png" alt-text="Снимок экрана: ошибка сервера в приложении &quot;/&quot; в веб-браузере.":::
 
    * Журналы трассировки приложения хранятся в *TXT*-файлах в папке *LogFiles\Application*.
    * Журналы веб-сервера хранятся в *LOG*-файлах в папке *LogFiles\http\RawLogs*. Можно использовать средство, аналогичное [Log Parser](https://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) для просмотра и обработки этих файлов.

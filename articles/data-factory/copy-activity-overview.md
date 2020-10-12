@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: jingwang
 ms.openlocfilehash: 3a1e5ed7d9ca14c03483cb6afe6b6318c6a90764
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89440598"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
@@ -258,7 +258,7 @@ ms.locfileid: "89440598"
 
 По умолчанию действие копирования прекращает копирование данных и возвращает ошибку, если строки исходных данных несовместимы со строками данных приемника. Чтобы выполнить копирование, можно настроить действие копирования, чтобы пропустить и записать несовместимые строки и скопировать только совместимые данные. Дополнительные сведения см. в разделе [отказоустойчивость действий копирования](copy-activity-fault-tolerance.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь со следующими руководствами и примерами:
 
 - [Копирование данных из одного расположения в другое в одной учетной записи хранилища BLOB-объектов Azure](quickstart-create-data-factory-dot-net.md)
