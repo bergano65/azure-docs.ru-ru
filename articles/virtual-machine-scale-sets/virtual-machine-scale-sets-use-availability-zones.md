@@ -10,10 +10,10 @@ ms.date: 08/08/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: cb4d30a2bb7704ef7d4d4760f3d8cf74788945c2
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89611923"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
@@ -75,7 +75,7 @@ ms.locfileid: "89611923"
 
 Масштабируемый набор и вспомогательные ресурсы, такие как подсистема балансировки нагрузки Azure и общедоступный IP-адрес, создаются в одной зоне, указанной вами.
 
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
+## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
 
 Процесс создания масштабируемого набора, использующего зону доступности, описан в статье [Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell](quick-create-cli.md). Чтобы использовать зоны доступности, необходимо создать масштабируемый набор в поддерживаемом регионе Azure.
 
@@ -217,6 +217,6 @@ New-AzVmss `
 
 Полный пример масштабируемого набора, избыточного между зонами, и сетевых ресурсов см. в этом [примере шаблона Resource Manager](https://github.com/Azure/vm-scale-sets/blob/master/preview/zones/multizone.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После создания масштабируемого набора в зоне доступности см. статьи [Развертывание приложения в масштабируемых наборах виртуальных машин](tutorial-install-apps-cli.md) или [Обзор автомасштабирования с помощью масштабируемых наборов виртуальных машин Azure](tutorial-autoscale-cli.md).

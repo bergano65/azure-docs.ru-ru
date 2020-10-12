@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 07/27/2020
 ms.author: iainfou
 ms.openlocfilehash: 893085179c27ce88c3e310170715e2f83a59ddc7
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88723169"
 ---
 # <a name="create-an-azure-active-directory-domain-services-resource-forest-and-outbound-forest-trust-to-an-on-premises-domain-using-azure-powershell"></a>Создание Azure Active Directory леса ресурсов доменных служб и исходящего доверия лесов в локальном домене с помощью Azure PowerShell
@@ -112,7 +112,7 @@ New-AzureADServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
 
     `New-AzureAaddsForest`Скрипт может создать виртуальную сеть Azure и подсеть AD DS Azure, если эти ресурсы еще не существуют. При необходимости скрипт может создать подсети рабочей нагрузки, если они указаны:
 
-    | Имя                              | Параметр скрипта                  | Описание: |
+    | Имя                              | Параметр скрипта                  | Описание |
     |:----------------------------------|:----------------------------------|:------------|
     | Имя виртуальной сети              | *-Ааддсвнетнаме*                  | Имя виртуальной сети для управляемого домена.|
     | Пространство адресов                     | *-АаддсвнетЦидраддрессспаце*      | Диапазон адресов виртуальной сети в нотации CIDR (при создании виртуальной сети).|
@@ -193,7 +193,7 @@ Install-Script -Name Add-AaddsResourceForestTrust
 
 Теперь предоставьте скрипту следующие сведения:
 
-| Имя                               | Параметр скрипта     | Описание: |
+| Имя                               | Параметр скрипта     | Описание |
 |:-----------------------------------|:---------------------|:------------|
 | Доменное имя Azure AD DS            | *-Манажеддомаинфкдн* | Полное доменное имя управляемого домена, например *aaddscontoso.com* |
 | Локальное AD DS доменное имя      | *-Трустфкдн*         | Полное доменное имя доверенного леса, например *onprem.contoso.com* |

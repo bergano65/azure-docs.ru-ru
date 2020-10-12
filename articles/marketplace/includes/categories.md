@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл для списка категорий и подкатегорий
 documentationcenter: partner-center-commercial-marketplace
 ms.service: marketplace
@@ -10,10 +10,10 @@ ms.custom: include file
 author: anbene
 ms.author: mingshen
 ms.openlocfilehash: 763ee108e1e2899bb2268ae5e6236f74a73e4b44
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87498058"
 ---
 | [**Azure Marketplace**](https://azuremarketplace.microsoft.com/marketplace/apps)  | [**AppSource**](https://appsource.microsoft.com/marketplace/apps) |
@@ -39,7 +39,7 @@ ms.locfileid: "87498058"
 | &nbsp;&nbsp;Книга с одним узлом | &nbsp;&nbsp;Центр контактов |
 | &nbsp;&nbsp;Книга с несколькими узлами | &nbsp;&nbsp;Обслуживание лиц и лиц |
 | &nbsp;&nbsp;Инструменты | &nbsp;&nbsp;Служба Office & сотрудников |
-| **Службы вычислений**  | &nbsp;&nbsp;Управление вариантами & знаний |
+| **Среда выполнения приложений**  | &nbsp;&nbsp;Управление вариантами & знаний |
 | &nbsp;&nbsp;Инфраструктура приложений | &nbsp;&nbsp;Омничаннелное участие в социальных & сетях |
 | &nbsp;&nbsp;Операционные системы | **Финансы** |
 | &nbsp;&nbsp;Мбайта | &nbsp;&nbsp;Финансовые |

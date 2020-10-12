@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
 ms.openlocfilehash: 3aa1571b46938b03f556fa124d3f0a2a70f2c5c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79504368"
 ---
 ## <a name="steps-to-enable-single-sign-on"></a>Действия по включению единого входа
@@ -18,7 +18,7 @@ ms.locfileid: "79504368"
 ### <a name="step-1-download-and-extract-azure-ad-connect-files"></a>Шаг 1. скачивание и извлечение файлов Azure AD Connect
 1.  Сначала скачайте последнюю версию [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 2.  Откройте командную строку с правами администратора и перейдите к только что загруженному MSI.
-3.  Выполните следующую команду:`msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
+3.  Выполните следующую команду:  `msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
 4. Измените FilePath и екстрактфолдер, чтобы они соответствовали пути к файлу и имени папки извлечения.  Теперь содержимое должно находиться в папке извлечения.
 
 ### <a name="step-2-import-the-seamless-sso-powershell-module"></a>Шаг 2. импорт модуля PowerShell для простого единого входа

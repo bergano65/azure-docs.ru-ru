@@ -12,10 +12,10 @@ ms.date: 08/17/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: c434ad6a724ba513caf7923916997600097b43f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85387870"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
@@ -24,7 +24,7 @@ ms.locfileid: "85387870"
 
 Azure AD B2C поддерживает передачу маркеров доступа от поставщиков удостоверений по протоколу [OAuth 2.0](authorization-code-flow.md) и стандарту [Подключение OpenID](openid-connect.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Ваша пользовательская политика поддерживает поставщиков удостоверений OAuth 2.0 или Подключение OpenID.
 
@@ -90,7 +90,7 @@ Azure AD B2C поддерживает передачу маркеров дост
 4. Выберите **Инфраструктура процедур идентификации**.
 5. На странице "Настраиваемые политики" щелкните **Отправить политику**.
 6. Выберите **Перезаписать политику, если она существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-7. Выберите команду **Отправить**.
+7. Щелкните **Отправить**.
 8. Повторите шаги с 5 по 7 для файла проверяющей стороны, например *SignUpOrSignIn.xml*.
 
 ### <a name="run-the-policy"></a>Запуск политики
@@ -103,6 +103,6 @@ Azure AD B2C поддерживает передачу маркеров дост
 
     ![Декодированный маркер в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-custom/idp-pass-through-custom-token.PNG)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о токенах см. в [справочнике по маркеру Azure Active Directory B2C](tokens-overview.md).

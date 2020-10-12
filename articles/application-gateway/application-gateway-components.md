@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: surmb
 ms.openlocfilehash: ebd06b0b78ee511dce535ff4220df03087fb6906
-ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88723322"
 ---
 # <a name="application-gateway-components"></a>Компоненты шлюза приложений
@@ -42,7 +42,7 @@ DNS-имя, связанное с шлюзом приложений, не изм
 
 Прослушиватели поддерживают следующие порты и протоколы.
 
-### <a name="ports"></a>порты;
+### <a name="ports"></a>Порты
 
 Порт — это место, в котором прослушиватель прослушивает запрос клиента. Можно настроить порты в диапазоне от 1 до 65502 для номера SKU v1 и от 1 до 65199 для номера SKU v2.
 

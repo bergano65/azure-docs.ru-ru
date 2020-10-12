@@ -4,10 +4,10 @@ description: Описывает, как устранять ошибки, ког�
 ms.topic: troubleshooting
 ms.date: 06/10/2020
 ms.openlocfilehash: 224af4ce0fe5053201f25d8207f4ca8cdc73e638
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84667953"
 ---
 # <a name="resolve-resource-not-found-errors"></a>Ошибка при устранении ненайденных ресурсов
@@ -31,7 +31,7 @@ Message=The Resource 'Microsoft.Storage/storageAccounts/{storage name}' under re
 group {resource group name} was not found.
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Диспетчер ресурсов необходимо получить свойства ресурса, но не удается найти ресурс в подписках.
 

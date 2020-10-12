@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 06/18/2017
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: be7f9d66a10f3f0f4a1ae0f9e28e226f268a7f7c
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87497449"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
@@ -63,7 +63,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 ```
 
 * **Имя учетной записи Data Lake Analytics**. Каждой учетной записи Data Lake Analytics присвоено имя.
-* **Расположение.** Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
+* **Расположение**. Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
 * **Учетная запись Data Lake Store по умолчанию** — каждая учетная запись Data Lake Analytics содержит учетную запись Data Lake Store по умолчанию.
 
 Чтобы получить список существующих учетных записей Data Lake Store, выполните эту команду:

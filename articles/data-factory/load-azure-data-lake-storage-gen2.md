@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 06/08/2020
 ms.openlocfilehash: 8f8cfef5ed98682a1d03f7d36caa2008f4ff03b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84660481"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen2-with-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure
@@ -97,7 +97,7 @@ Azure Data Lake Storage 2-го поколения — это набор воз�
 8. На странице **Новая связанная служба (Azure Data Lake Storage 2-го поколения)** выполните следующие действия.
 
    1. Из раскрывающегося списка "Имя учетной записи хранения" выберите соответствующую учетную запись Data Lake Storage 2-го поколения.
-   2. Выберите **создать** , чтобы создать подключение. Нажмите кнопку **Далее**.   
+   2. Выберите **создать** , чтобы создать подключение. Выберите **Далее**.   
 
         ![Выбор учетной записи Data Lake Storage 2-го поколения](./media/load-azure-data-lake-storage-gen2/specify-azure-data-lake-storage.png)
 
@@ -129,7 +129,7 @@ Azure Data Lake Storage 2-го поколения — это набор воз�
 
 16. Убедитесь, что данные скопированы в Data Lake Storage Gen2.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Действие копирования в фабрике данных Azure](copy-activity-overview.md)
 * [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](connector-azure-data-lake-storage.md) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)

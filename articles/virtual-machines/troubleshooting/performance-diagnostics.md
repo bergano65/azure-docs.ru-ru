@@ -14,10 +14,10 @@ ms.topic: troubleshooting
 ms.date: 9/20/2018
 ms.author: anandh
 ms.openlocfilehash: 857d49fa579e7ea1a6e2c14ae8198cd8ac4fe228
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90090641"
 ---
 # <a name="performance-diagnostics-for-azure-virtual-machines"></a>Диагностика производительности для виртуальных машин Azure
@@ -37,7 +37,7 @@ ms.locfileid: "90090641"
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows 10
 * Windows 8.1
 * Windows 8

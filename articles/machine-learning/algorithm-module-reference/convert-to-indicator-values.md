@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
 ms.openlocfilehash: f1b194f2c65f95ad4daff0353d05ca589db9ce51
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79477669"
 ---
 # <a name="convert-to-indicator-values"></a>Преобразование в значения индикатора
@@ -98,7 +98,7 @@ ms.locfileid: "79477669"
 
 -   Преобразовать в столбцы индикаторов можно только столбцы, помеченные как категориальные. Если вы видите следующую ошибку, вероятно, что один из выбранных столбцов не имеет категорий:  
 
-     Ошибка 0056: столбец с именем \<column name> не входит в допустимую категорию.  
+     Ошибка 0056: столбец с именем  \<column name> не входит в допустимую категорию.  
 
      По умолчанию большинство строковых столбцов обрабатывается как строковые функции, поэтому их необходимо явным образом пометить как категория с помощью инструкции [Edit Metadata](edit-metadata.md).  
 

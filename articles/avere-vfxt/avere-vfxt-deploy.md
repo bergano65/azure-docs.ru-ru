@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 31d12466186bb7f66197218fbb9675888a35fef3
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88272779"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Развертывание кластера vFXT
@@ -74,7 +74,7 @@ ms.locfileid: "88272779"
 
 * **Location** (Расположение). Укажите расположение кластера и ресурсов Azure.
 
-По завершении нажмите кнопку **ОК** .
+Щелкните **OK**, когда все будет готово.
 
 > [!NOTE]
 > Если для контроллера кластера нужно настроить доступный из Интернета IP-адрес, создайте для этого кластера новую виртуальную сеть и не используйте существующие сети. Этот параметр вы найдете на второй странице.
@@ -155,7 +155,7 @@ ms.locfileid: "88272779"
 
    ![Страница выходных значений со значениями SSHSTRING, RESOURCE_GROUP, LOCATION, NETWORK_RESOURCE_GROUP, NETWORK, SUBNET, SUBNET_ID, VSERVER_IPs и MGMT_IP в полях с метками](media/avere-vfxt-outputs-values.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда кластер работает и вы узнаете его IP-адрес управления, [подключитесь к средству настройки кластера](avere-vfxt-cluster-gui.md).
 

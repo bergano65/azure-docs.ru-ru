@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: eed1b0e1b01d5d13330b927429eca9a28ff80658
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88009262"
 ---
 # <a name="tenant-and-host-pool-creation-in-windows-virtual-desktop-classic"></a>Создание пула клиентов и узлов в виртуальном рабочем столе Windows (классическая модель)
@@ -20,7 +20,7 @@ ms.locfileid: "88009262"
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -51,7 +51,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 **Исправление:** [Следуйте этому руководству](https://docs.microsoft.com/azure/virtual-desktop/virtual-desktop-fall-2019/tenant-setup-azure-active-directory#grant-permissions-to-windows-virtual-desktop) , чтобы предоставить согласие.
 
-### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: пользователь не имеет разрешения на запрос к службе управления
+### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка. Пользователь не имеет прав для отправки запроса к службе управления.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана окна PowerShell, в котором пользователь не имеет права выполнять запросы к службе управления.](../media/UserNotAuthorizedNewTenant.png)
@@ -177,7 +177,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 3. Меню DNS-серверы должно отображаться в правой части экрана. В этом меню выберите **Пользовательский**.
 4. Убедитесь, что DNS-серверы, указанные в поле Пользовательский, соответствуют вашему контроллеру домена или домену Active Directory. Если DNS-сервер не отображается, его можно добавить, введя его значение в поле **добавить DNS-сервер** .
 
-### <a name="error-your-deployment-failedunauthorized"></a>Ошибка: сбой развертывания. ..\Унаусоризед
+### <a name="error-your-deployment-failedunauthorized"></a>Ошибка. Развертывание не выполнено… Не санкционировано.
 
 ```Error
 {"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"Unauthorized","message":"{\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Target\": null,\r\n \"Details\": [\r\n {\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n },\r\n {\r\n \"Code\": \"Unauthorized\"\r\n },\r\n {\r\n \"ErrorEntity\": {\r\n \"ExtendedCode\": \"52020\",\r\n \"MessageTemplate\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Parameters\": [\r\n \"default\"\r\n ],\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n }\r\n }\r\n ],\r\n \"Innererror\": null\r\n}"}]}
@@ -187,7 +187,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 **Исправление:** Измените тип подписки или регион на другой, который может получить доступ к необходимым функциям.
 
-### <a name="error-vmextensionprovisioningerror"></a>Ошибка: Вмекстенсионпровисионинжеррор
+### <a name="error-vmextensionprovisioningerror"></a>Ошибка. VMExtensionProvisioningError
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](../media/7aaf15615309c18a984673be73ac969a.png)
@@ -198,7 +198,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 **Исправление:** Подтвердите работоспособность среды виртуальных рабочих столов Windows, выполнив вход с помощью PowerShell. Завершите регистрацию виртуальной машины вручную в окне [Создание пула узлов с помощью PowerShell](create-host-pools-powershell-2019.md).
 
-### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: указанное имя администратора не разрешено
+### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка. Указанное имя пользователя администратора не разрешено.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](../media/f2b3d3700e9517463ef88fa41875bac9.png)
@@ -218,7 +218,7 @@ Contact your IT Admin to review the configuration of your service subscriptions.
 
 **Исправление:** Обновите имя пользователя или используйте других пользователей.
 
-### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка: виртуальная машина сообщила об ошибке при обработке расширения
+### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка. Виртуальная машина сообщила о сбое при обработке расширения.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](../media/49c4a1836a55d91cd65125cf227f411f.png)
@@ -351,7 +351,7 @@ the VM.\\\"
 
 **Исправление:** Удалите заблокированный статический маршрут, правило брандмауэра или NSG. При необходимости откройте JSON-файл шаблона Azure Resource Manager в текстовом редакторе, перейдите по ссылке к ZIP-файлу и скачайте ресурс в разрешенное расположение.
 
-### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: пользователь не имеет разрешения на запрос к службе управления
+### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка. Пользователь не имеет прав для отправки запроса к службе управления.
 
 Пример необработанной ошибки:
 
@@ -375,7 +375,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDefinitionName "RDS Contributor" -SignInName <UPN>
 ```
 
-### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Ошибка: пользователю требуется многофакторная идентификация Azure (MFA)
+### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Ошибка. Пользователь должен пройти Многофакторную идентификацию Azure (MFA).
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана развертывания не удалось выполнить из-за отсутствия многофакторной проверки подлинности (MFA)](../media/MFARequiredError.png)

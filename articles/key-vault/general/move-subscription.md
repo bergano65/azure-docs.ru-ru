@@ -12,17 +12,17 @@ ms.date: 05/05/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
 ms.openlocfilehash: e6ab37539d00b6748d0e63a3f559bf70f493cf42
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89394743"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 > [!IMPORTANT]
 > **Перемещение хранилища ключей в другую подписку приведет к критическому изменению среды.**
@@ -72,7 +72,7 @@ ms.locfileid: "89394743"
 
 ### <a name="additional-steps-if-you-moved-key-vault-to-a-subscription-in-a-new-tenant"></a>Дополнительные действия при перемещении хранилища ключей в подписку в новом клиенте
 
-Если вы переместили хранилище ключей в подписку в новом клиенте, необходимо вручную обновить идентификатор клиента и удалить старые политики доступа. Ниже приведены руководства для этих шагов в PowerShell и Azure CLI. Если вы используете PowerShell, вам может потребоваться выполнить команду Clear-Азконтекст, описанную ниже, чтобы просмотреть ресурсы за пределами текущей выбранной области. 
+Если вы переместили хранилище ключей в подписку в новом клиенте, необходимо вручную обновить идентификатор клиента и удалить старые политики доступа. Ниже приведены руководства для этих шагов в PowerShell и Azure CLI. Если вы используете PowerShell, вам может потребоваться выполнить приведенную ниже команду Clear-AzContext, чтобы просматривать ресурсы за пределами текущей выбранной области. 
 
 ```azurepowershell
 Select-AzSubscription -SubscriptionId <your-subscriptionId>                # Select your Azure Subscription

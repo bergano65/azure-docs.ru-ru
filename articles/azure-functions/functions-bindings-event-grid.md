@@ -7,10 +7,10 @@ ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 1dc1198ab9c546ef1defa1891777c4c8081171e9
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85957185"
 ---
 # <a name="azure-event-grid-bindings-for-azure-functions"></a>Привязки службы "Сетка событий Azure" для функций Azure
@@ -23,7 +23,7 @@ ms.locfileid: "85957185"
 
 При желании можно использовать триггер HTTP для управления событиями сетки событий. см. раздел [получение событий для конечной точки HTTP](../event-grid/receive-events.md). В настоящее время нельзя использовать триггер службы "Сетка событий" для приложения "функции Azure", когда событие доставляется в [схему клаудевентс](../event-grid/cloudevents-schema.md#azure-functions). В этом случае необходимо использовать триггер HTTP.
 
-| Действие | Type |
+| Действие | Тип |
 |---------|---------|
 | Выполнение функции при диспетчеризации события сетки событий | [Триггер](./functions-bindings-event-grid-trigger.md) |
 | Отправляет событие сетки событий |[Выходная привязка](./functions-bindings-event-grid-output.md) |
@@ -36,7 +36,7 @@ ms.locfileid: "85957185"
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Комментарии 
+| Язык                                        | Добавить по...                                   | Remarks 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet]версии 2. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |
@@ -52,6 +52,6 @@ ms.locfileid: "85957185"
 
 Функции 1. x автоматически имеют ссылку на пакет NuGet [Microsoft. Azure. веб-задания](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) , версия 2. x.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Выполнение функции при диспетчеризации события сетки событий](./functions-bindings-event-grid-trigger.md)
 * [Отправка события Сетки событий](./functions-bindings-event-grid-trigger.md)

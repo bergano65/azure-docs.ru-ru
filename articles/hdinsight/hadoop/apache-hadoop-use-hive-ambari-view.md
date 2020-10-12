@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: cc04a891bb32ede6c7bb72a339b728642cf343ed
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86207828"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
@@ -60,7 +60,7 @@ ms.locfileid: "86207828"
 
     Эти инструкции выполняют следующие действия:
 
-    |. | Описание |
+    |Инструкция | Описание |
     |---|---|
     |DROP TABLE|удаляет таблицу и файл данных, если таблица уже существует.|
     |CREATE EXTERNAL TABLE|создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.|
@@ -83,7 +83,7 @@ ms.locfileid: "86207828"
     Для просмотра сведений журнала, созданных заданием, можно использовать вкладку **Журнал** .
 
    > [!TIP]  
-   > Скачайте или сохраните результаты из раскрывающегося диалогового окна **действия** на вкладке **результаты** .
+   > Скачайте или сохраните результаты из раскрывающегося диалогового окна **действия** на вкладке  **результаты** .
 
 ### <a name="visual-explain"></a>Визуальное объяснение
 
@@ -148,7 +148,7 @@ add jar /myudfs.jar;
 create temporary function myawesomeudf as 'com.myudfs.Awesome';
 ```
 
-Затем вы можете использовать эту функцию в своем запросе. Пример: `SELECT myawesomeudf(name) FROM people;`.
+Затем вы можете использовать эту функцию в своем запросе. Например, `SELECT myawesomeudf(name) FROM people;`.
 
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 

@@ -12,10 +12,10 @@ ms.date: 07/25/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 5cbedad360e5270238225503e7802d571820c871
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85388159"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
@@ -246,7 +246,7 @@ ms.locfileid: "85388159"
 <Item Key="scope">r_emailaddress r_basicprofile</Item>
 ```
 
-В:
+на:
 
 ```xml
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v2/me</Item>
@@ -272,7 +272,7 @@ ms.locfileid: "85388159"
 <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
 ```
 
-В:
+на:
 
 ```xml
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName.localized" />

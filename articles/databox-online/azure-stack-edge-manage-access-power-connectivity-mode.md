@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
 ms.openlocfilehash: e0e2ac43ce0157b4917e9c45f6a02ace63432137
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90904427"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro"></a>Управление доступом, питанием и режимом подключения для Azure Stack пограничных Pro
@@ -132,6 +132,6 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 > [!NOTE]
 > При завершении работы физического устройства необходимо будет нажать кнопку питания на устройстве, чтобы включить его.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об управлении общими папками см. [здесь](azure-stack-edge-manage-shares.md).
