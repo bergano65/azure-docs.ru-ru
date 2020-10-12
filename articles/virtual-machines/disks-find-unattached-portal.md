@@ -8,10 +8,10 @@ ms.date: 06/01/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: 6632d65fa07788e35b24c2f957e713f824f6b091
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87542744"
 ---
 # <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks---azure-portal"></a>Поиск и удаление отключенных управляемых и неуправляемых дисков Azure — портал Azure
@@ -45,17 +45,17 @@ ms.locfileid: "87542744"
 
     Появится список всех неуправляемых дисков. Все диски с пометкой **-** в столбце **Присоединено к** являются отключенными.
 
-    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-attached-to.png" alt-text="Снимок экрана: область неуправляемых дисков. Диски в этой области, для которых столбец Присоединено к содержит –, являются отключенными.":::
+    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-attached-to.png" alt-text="Снимок экрана: область отдельного управляемого диска. Если диск отключен, в этой области отображается состояние Отключен. Вы можете удалить этот диск, если данные на нем больше не нужны.":::
 
 1. Выберите отключенный диск, который нужно удалить. Откроется область этого диска.
 
 1. В области диска можно еще раз удостовериться, что он отключен, так как столбец **Присоединено к** будет по-прежнему содержать **-** .
 
-    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-select-blade.png" alt-text="Снимок экрана: область отдельного неуправляемого диска. Если диск отключен, в столбце Присоединено к содержится –. Если данные на этом диске больше не нужны, его можно удалить.":::
+    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-select-blade.png" alt-text="Снимок экрана: область отдельного управляемого диска. Если диск отключен, в этой области отображается состояние Отключен. Вы можете удалить этот диск, если данные на нем больше не нужны.":::
 
 1. Выберите команду **Удалить**.
 
-    :::image type="content" source="media/disks-find-unattached-portal/delete-unmanaged-disk-unattached.png" alt-text="Снимок экрана: область отдельного неуправляемого диска с выделенной командой Удалить.":::
+    :::image type="content" source="media/disks-find-unattached-portal/delete-unmanaged-disk-unattached.png" alt-text="Снимок экрана: область отдельного управляемого диска. Если диск отключен, в этой области отображается состояние Отключен. Вы можете удалить этот диск, если данные на нем больше не нужны.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

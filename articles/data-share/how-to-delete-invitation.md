@@ -7,10 +7,10 @@ ms.service: data-share
 ms.topic: how-to
 ms.date: 07/30/2020
 ms.openlocfilehash: 5ba19978a797c2e885e2b1726baad07a87f5bcbc
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87512080"
 ---
 # <a name="how-to-delete-an-invitation-to-a-recipient-in-azure-data-share"></a>Как удалить приглашение для получателя в общей папке данных Azure
@@ -19,7 +19,7 @@ ms.locfileid: "87512080"
 
 ## <a name="navigate-to-a-sent-data-share"></a>Переход к отправленной общей папке данных
 
-В общем ресурсе данных Azure перейдите к отправленному общему ресурсу и выберите вкладку **приглашения** . здесь перечислены все получатели приглашений на эту общую папку данных. Щелкните флажки рядом с получателями, чьи приглашения нужно удалить, а затем нажмите кнопку **Удалить**.
+В общем ресурсе данных Azure перейдите к отправленному общему ресурсу и выберите вкладку **приглашения** . Здесь перечислены все получатели приглашений на эту общую папку данных. Щелкните флажки рядом с получателями, чьи приглашения нужно удалить, а затем нажмите кнопку **Удалить**.
 
 ![Удалить приглашение](./media/how-to/how-to-delete-invitation/delete-invitation.png)
 

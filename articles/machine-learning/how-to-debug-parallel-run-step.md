@@ -12,10 +12,10 @@ ms.author: trmccorm
 author: tmccrmck
 ms.date: 09/23/2020
 ms.openlocfilehash: 7866f2dcaebe396759eb7f6315c457bfce307723
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91315581"
 ---
 # <a name="debug-and-troubleshoot-parallelrunstep"></a>Отладка и устранение неполадок ParallelRunStep
@@ -140,7 +140,7 @@ ds = Dataset.File.from_files(default_blob_store, '**path***')
 registered_ds = ds.register(ws, '***dataset-name***', create_new_version=True)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о пакете [azureml-Pipeline-пошаговые инструкции](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py&preserve-view=true) см. в справочнике по пакету SDK. Просмотрите справочную [документацию](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?view=azure-ml-py&preserve-view=true) по классу параллелрунстеп.
 

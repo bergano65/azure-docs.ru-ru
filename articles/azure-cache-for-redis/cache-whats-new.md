@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 09/28/2020
 ms.author: yegu
 ms.openlocfilehash: b30e83b89b25e6400b8c7e0419406631fa1edcd0
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91492540"
 ---
 # <a name="whats-new-in-azure-cache-for-redis"></a>Новые возможности кэша Azure для Redis
@@ -32,14 +32,14 @@ ms.locfileid: "91492540"
 
 | Тип ЦС | Текущий | После отката (12 октября, 2020) | Действие |
 | ----- | ----- | ----- | ----- |
-| Root | Отпечаток: d4de20d05e66fc53fe1a50882c78db2852cae474<br><br> Срок действия: понедельник, 12 мая, 2025, 4:59:00 PM<br><br> Имя субъекта.<br> CN = Baltimore CyberTrust root<br> OU = CyberTrust<br> O = Baltimore<br> C = IE | Не изменяется | Отсутствуют |
-| Промежуточный | Отпечатки<br> CN = ЦС Microsoft IT TLS 1<br> Отпечаток: 417e225037fbfaa4f95761d5ae729e1aea7e3a42<br><br> CN = Microsoft IT TLS ЦС 2<br> Отпечаток: 54d9d20239080c32316ed9ff980a48988f4adf2d<br><br> CN = ЦС Microsoft IT TLS 4<br> Отпечаток: 8a38755d0996823fe8fa3116a277ce446eac4e99<br><br> CN = Microsoft IT TLS ЦС 5<br> Отпечаток: Ad898ac73df333eb60ac1f5fc6c4b2219ddb79b7<br><br> Срок действия: Пятница, 20 мая, 2024 5:52:38 AM<br><br> Имя субъекта.<br> OU — Microsoft IT<br> O = Корпорация Майкрософт<br> L = Redmond<br> S = Вашингтон<br> C = US<br> | Отпечатки<br> CN = Microsoft RSA TLS CA 01<br> Отпечаток: 703d7a8f0ebf55aaa59f98eaf4a206004eb2516a<br><br> CN = Microsoft RSA TLS ЦС 02<br> Отпечаток: b0c2d2d13cdd56cdaa6ab6e2c04440be4a429c75<br><br> Срок действия: вторник, 8 октября 2024 12:00:00 AM;<br><br> Имя субъекта.<br> O = Корпорация Майкрософт<br> C = US<br> | Обязательный |
+| Root | Отпечаток: d4de20d05e66fc53fe1a50882c78db2852cae474<br><br> Срок действия: понедельник, 12 мая, 2025, 4:59:00 PM<br><br> Имя субъекта:<br> CN = Baltimore CyberTrust root<br> OU = CyberTrust<br> O = Baltimore<br> C = IE | Не изменяется | Нет |
+| Промежуточный | Отпечатки<br> CN = ЦС Microsoft IT TLS 1<br> Отпечаток: 417e225037fbfaa4f95761d5ae729e1aea7e3a42<br><br> CN = Microsoft IT TLS ЦС 2<br> Отпечаток: 54d9d20239080c32316ed9ff980a48988f4adf2d<br><br> CN = ЦС Microsoft IT TLS 4<br> Отпечаток: 8a38755d0996823fe8fa3116a277ce446eac4e99<br><br> CN = Microsoft IT TLS ЦС 5<br> Отпечаток: Ad898ac73df333eb60ac1f5fc6c4b2219ddb79b7<br><br> Срок действия: Пятница, 20 мая, 2024 5:52:38 AM<br><br> Имя субъекта:<br> OU — Microsoft IT<br> O = Корпорация Майкрософт<br> L = Redmond<br> S = Вашингтон<br> C = US<br> | Отпечатки<br> CN = Microsoft RSA TLS CA 01<br> Отпечаток: 703d7a8f0ebf55aaa59f98eaf4a206004eb2516a<br><br> CN = Microsoft RSA TLS ЦС 02<br> Отпечаток: b0c2d2d13cdd56cdaa6ab6e2c04440be4a429c75<br><br> Срок действия: вторник, 8 октября 2024 12:00:00 AM;<br><br> Имя субъекта:<br> O = Корпорация Майкрософт<br> C = US<br> | Обязательно |
 
 ### <a name="what-actions-should-i-take"></a>Какие действия следует предпринять?
 
 Если приложение использует хранилище сертификатов операционной системы или закрепляет корневой элемент Baltimore в других случаях, никаких действий не требуется. С другой стороны, если ваше приложение закрепляет любой промежуточный или конечный сертификат TLS, рекомендуется закрепить следующие корни:
 
-| Сертификат | Отпечаток |
+| Certificate | Отпечаток |
 | ----- | ----- |
 | [Корневой ЦС Baltimore](https://cacerts.digicert.com/BaltimoreCyberTrustRoot.crt) | d4de20d05e66fc53fe1a50882c78db2852cae474 |
 | [Microsoft RSA Root Certificate Authority 2017](https://www.microsoft.com/pkiops/certs/Microsoft%20RSA%20Root%20Certificate%20Authority%202017.crt) | 73a5e64a3bff8316ff0edccc618a906e4eae4d74 |
@@ -63,6 +63,6 @@ ms.locfileid: "91492540"
 
 Если приложение проверяет сертификат в коде, необходимо изменить его, чтобы распознать свойства (например, издатели, отпечатки) вновь закрепленных сертификатов. Эта дополнительная проверка должна охватывать все прикрепленные сертификаты, чтобы быть более будущим.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если у вас есть дополнительные вопросы, свяжитесь с нами через [службу поддержки](https://azure.microsoft.com/support/options/).  

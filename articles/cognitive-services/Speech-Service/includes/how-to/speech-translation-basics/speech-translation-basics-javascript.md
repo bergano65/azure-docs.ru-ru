@@ -6,10 +6,10 @@ ms.date: 07/14/2020
 ms.author: v-demjoh
 ms.custom: devx-track-js
 ms.openlocfilehash: f6274769814a6d4aee4648c5e18237438c6c2af5
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91376506"
 ---
 Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
@@ -18,9 +18,9 @@ ms.locfileid: "91376506"
 * Преобразование речи на несколько целевых языков
 * Выполнение прямого перевода речи в речь
 
-## <a name="skip-to-samples-on-github"></a>Перейти к примерам на GitHub
+## <a name="skip-to-samples-on-github"></a>Примеры на GitHub
 
-Если вы хотите перейти непосредственно к образцу кода, ознакомьтесь с [примерами использования JavaScript](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node) в GitHub.
+Если вы хотите сразу перейти к примерам кода, см. [этот репозиторий](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node) на сайте GitHub.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

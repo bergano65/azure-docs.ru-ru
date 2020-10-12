@@ -11,10 +11,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
 ms.openlocfilehash: 3c6aa408ab3e89c367fca0701773b35fb9b41bb8
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91460804"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Обратимое удаление для контейнеров (Предварительная версия)
@@ -115,7 +115,7 @@ az feature show --namespace Microsoft.Storage --name ContainerSoftDelete
 
 Для включения обратимого удаления контейнера дополнительная плата не взимается. Счета за данные в обратимо удаленных контейнерах выставляются по той же ставке, что и активные данные.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка обратимого удаления контейнера](soft-delete-container-enable.md)
 - [Обратимое удаление для больших двоичных объектов](soft-delete-blob-overview.md)

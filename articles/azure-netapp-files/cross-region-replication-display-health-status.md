@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: b-juche
 ms.openlocfilehash: 95c1202fb56e882554d40926e9d5ecec7be49086
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90709048"
 ---
 # <a name="display-health-status-of-replication-relationship"></a>Отображение состояния работоспособности отношения репликации 
@@ -53,10 +53,10 @@ ms.locfileid: "90709048"
 > [!NOTE] 
 > Отношение репликации показывает состояние работоспособности как *неработоспособное* , если предыдущие задания репликации не выполнены. Это состояние является результатом передачи больших объемов данных в более низком окне передачи (например, время передачи для большого объема в десять минут). В этом случае состояние связи показывает *Перемещение* , а состояние работоспособности — *неработоспособность*.
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 * [Репликация между регионами](cross-region-replication-introduction.md)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)
 * [Метрики репликации томов](azure-netapp-files-metrics.md#replication)
-* [Устранение неполадок репликации между регионами](troubleshoot-cross-region-replication.md)
+* [Устранение неполадок с репликацией между регионами](troubleshoot-cross-region-replication.md)
 

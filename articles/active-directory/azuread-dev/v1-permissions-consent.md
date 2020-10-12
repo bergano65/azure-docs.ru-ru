@@ -15,10 +15,10 @@ ms.reviewer: jesakowi
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: c600e1fddc0089a508ff0cfebbbb3476f3a90008
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88117623"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Разрешения и согласие в конечной точке Azure Active Directory версии 1.0
@@ -60,7 +60,7 @@ Azure AD определяет два типа разрешений:
 | Имя свойства | Описание | Пример |
 | --- | --- | --- |
 | `ID` | Значение GUID, которое уникальным образом идентифицирует это разрешение. | 570282fd-fa5c-430d-a7fd-fc8dc98a9dca |
-| `IsEnabled` | Указывает, доступно ли это разрешение для использования. | true |
+| `IsEnabled` | Указывает, доступно ли это разрешение для использования. | Да |
 | `Type` | Указывает, требуется ли для этого разрешения согласие пользователя или администратора. | Пользователь |
 | `AdminConsentDescription` | Описание, отображается для администраторов в процессе предоставления согласия. | Позволяет приложению читать электронную почту в почтовых ящиках пользователя. |
 | `AdminConsentDisplayName` | Понятное имя, отображаемое для администраторов во время предоставления согласия. | Чтение почты пользователей |

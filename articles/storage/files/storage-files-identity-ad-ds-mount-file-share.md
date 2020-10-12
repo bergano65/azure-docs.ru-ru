@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
 ms.openlocfilehash: 9807563c768b82c823ff754aaa679ddc917bf62d
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87535065"
 ---
 # <a name="part-four-mount-a-file-share-from-a-domain-joined-vm"></a>Часть 4. Подключение общей папки из виртуальной машины, присоединенной к домену
@@ -51,7 +51,7 @@ else
 
 После успешного подключения общей папки вы успешно включили и настроили локальную проверку подлинности AD DS для файловых ресурсов Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если удостоверение, созданное в AD DS для представления учетной записи хранения, находится в домене или подразделении, обеспечивающем смену паролей, перейдите к следующей статье, чтобы получить инструкции по обновлению пароля:
 

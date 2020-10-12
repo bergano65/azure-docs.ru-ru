@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 01/14/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: eaf99f5e92cbb9277f2d4143e14070f1900cdbef
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888492"
 ---
 # <a name="stream-azure-spring-cloud-app-logs-in-real-time"></a>Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Azure Веснного облака позволяет выполнять потоковую передачу журналов в Azure CLI для получения журналов консоли приложений в режиме реального времени для устранения неполадок. Вы также можете [анализировать журналы и метрики с помощью параметров диагностики](./diagnostic-services.md).
 
@@ -89,7 +89,7 @@ az spring-cloud app logs -n auth-service -f
 az spring-cloud app logs -h 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Краткое руководство. Мониторинг приложений Azure Spring Cloud с помощью журналов, метрик и трассировки](spring-cloud-quickstart-logs-metrics-tracing.md)
 * [Анализ журналов и метрик с помощью параметров диагностики](./diagnostic-services.md)
 

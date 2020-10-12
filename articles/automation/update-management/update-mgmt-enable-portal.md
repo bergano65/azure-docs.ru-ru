@@ -6,10 +6,10 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.custom: mvc
 ms.openlocfilehash: 136a5da8d9956e034532c14b6fce011e4e7ce415
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87563897"
 ---
 # <a name="enable-update-management-from-the-azure-portal"></a>Включение Управления обновлениями на портале Azure
@@ -60,7 +60,7 @@ ms.locfileid: "87563897"
 
 8. Выберите **включить** , чтобы включить эту функцию. После включения Управление обновлениями может потребоваться около 15 минут, прежде чем вы сможете просмотреть оценку обновлений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об использовании Управление обновлениями для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин](update-mgmt-manage-updates-for-vm.md).
 * Дополнительные сведения см. в статье [Устранение неполадок с Управлением обновлениями](../troubleshoot/update-management.md).

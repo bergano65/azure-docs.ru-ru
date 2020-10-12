@@ -9,17 +9,17 @@ ms.author: mlearned
 description: Использование Политики Azure для применения конфигураций кластера в требуемом масштабе
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.openlocfilehash: e4279f3d89376320116067bf191e3196271918ce
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87050048"
 ---
 # <a name="use-azure-policy-to-apply-cluster-configurations-at-scale-preview"></a>Использование Политики Azure для применения конфигураций кластера в требуемом масштабе (предварительная версия)
 
 ## <a name="overview"></a>Обзор
 
-Используйте политику Azure, чтобы обеспечить применение к каждому `Microsoft.Kubernetes/connectedclusters` ресурсу или ресурсу с поддержкой Git-Ops `Microsoft.ContainerService/managedClusters` конкретных `Microsoft.KubernetesConfiguration/sourceControlConfigurations` применений. Чтобы использовать Политику Azure, нужно выбрать существующее определение политики и создать назначение политики. При создании назначения политики вы устанавливаете область назначения: группа ресурсов или подписка Azure. Вы также задаете параметры для создаваемого объекта `sourceControlConfiguration`. После создания назначения подсистема управления политиками определит все ресурсы `connectedCluster` или `managedCluster`, находящиеся в области действия, и применит `sourceControlConfiguration` к каждому из них.
+Используйте политику Azure, чтобы обеспечить применение к каждому `Microsoft.Kubernetes/connectedclusters` ресурсу или ресурсу с включенным Git-Ops `Microsoft.ContainerService/managedClusters` `Microsoft.KubernetesConfiguration/sourceControlConfigurations` . Чтобы использовать Политику Azure, нужно выбрать существующее определение политики и создать назначение политики. При создании назначения политики вы устанавливаете область назначения: группа ресурсов или подписка Azure. Вы также задаете параметры для создаваемого объекта `sourceControlConfiguration`. После создания назначения подсистема управления политиками определит все ресурсы `connectedCluster` или `managedCluster`, находящиеся в области действия, и применит `sourceControlConfiguration` к каждому из них.
 
 Если вы используете несколько репозиториев Git в качестве источников достоверных данных для каждого кластера (например, один репозиторий для центрального ИТ-оператора или оператора кластера и еще несколько — для команд, ответственных за приложения), этого можно добиться с помощью нескольких назначений политик, каждое из которых использует свой репозиторий Git.
 

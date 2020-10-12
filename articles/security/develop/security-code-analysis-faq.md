@@ -13,10 +13,10 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: f872159e538dc85121a7a6d4d6503fd18a263628
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87543050"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
@@ -222,7 +222,7 @@ ms.locfileid: "87543050"
 
 Задаче сборки Roslyn Analyzers необходимо запросить Azure DevOps для журнала MSBuild из задачи сборки MSBuild. Если задача анализатора запускается сразу после задачи MSBuild, журнал еще не будет доступен. Поместите другие задачи между задачей MSBuild и задачей Roslyn Analyzers. К примерам других задач относятся Бинским и сканер защиты от вредоносных программ.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам нужна дополнительная помощь, поддержка анализа кода безопасности Майкрософт доступна с понедельника по пятницу с 9:00 до 5:00 по тихоокеанскому времени.
 

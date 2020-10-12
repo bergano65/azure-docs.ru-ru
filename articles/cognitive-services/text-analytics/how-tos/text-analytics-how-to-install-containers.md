@@ -13,10 +13,10 @@ ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальный, Docker, контейнер, анализ тональности, обработка на естественном языке
 ms.openlocfilehash: 42b22c94f8f2eed0514906422fe9f1d5e7cd12e2
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91461501"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
@@ -34,7 +34,7 @@ ms.locfileid: "91461501"
 > [!IMPORTANT]
 > Бесплатная учетная запись ограничена 5 000 транзакциями в месяц, а для контейнеров допустимы только <a href="https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics" target="_blank">ценовые <span class="docon docon-navigate-external x-hidden-focus"></span> категории</a> " **бесплатный** " и " **стандартный** ". Дополнительные сведения о тарифах запросов транзакций см. в разделе [ограничения данных](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview#data-limits).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы запустить любой из Анализ текста контейнеров, необходимо иметь главный компьютер и среды контейнеров.
 
@@ -42,7 +42,7 @@ ms.locfileid: "91461501"
 
 Прежде чем использовать контейнеры Анализа текста, необходимо выполнить следующие условия:
 
-|Обязательный|Цель|
+|Обязательно|Назначение|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -159,7 +159,7 @@ ms.locfileid: "91461501"
 
 [!INCLUDE [Discoverability of more container information](../../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье вы узнали основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Анализа текста. В разделе "Сводка" сделайте следующее.
 

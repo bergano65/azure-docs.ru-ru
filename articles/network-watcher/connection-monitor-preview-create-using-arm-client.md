@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: vinigam
 ms.openlocfilehash: 7d35799cd73ff4d065cb58189f2325dc4dac6840
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87567998"
 ---
 # <a name="create-a-connection-monitor-preview-using-the-armclient"></a>Создание монитора подключения (Предварительная версия) с помощью ARMClient
@@ -314,7 +314,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
         * Чекксфаиледперцент — задайте процент проверок, которые могут завершаться ошибкой, когда источники проверяют подключение к местам назначения, используя указанные критерии. Для протокола TCP или ICMP процент неудачных проверок может равняться проценту потери пакетов. Для протокола HTTP это поле представляет процент HTTP-запросов, которые не получили ответа.
         * Раундтриптимемс — задайте время приема-передачи в миллисекундах, в течение которого источники могут быть выбраны для подключения к назначению в конфигурации теста.
 
-## <a name="scale-limits"></a>Ограничения масштабирования
+## <a name="scale-limits"></a> Ограничения масштабирования
 
 Мониторы подключений имеют следующие ограничения масштабирования:
 
@@ -323,7 +323,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 * Максимальное число источников и назначений на монитор подключения: 100
 * Максимальное число конфигураций тестов на монитор подключений: 20 через ARMClient
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, [как анализировать данные мониторинга и настраивать оповещения](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#analyze-monitoring-data-and-set-alerts) .
 * Узнайте [, как диагностировать проблемы в сети](https://docs.microsoft.com/azure/network-watcher/connection-monitor-preview#diagnose-issues-in-your-network)

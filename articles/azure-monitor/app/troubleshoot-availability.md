@@ -7,10 +7,10 @@ ms.author: lagayhar
 ms.date: 04/28/2020
 ms.reviewer: sdash
 ms.openlocfilehash: 0ac8dd189bee1c1d4f5a7a4d0f7de68b085fbc56
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87318153"
 ---
 # <a name="troubleshooting"></a>Устранение неполадок
@@ -130,7 +130,7 @@ ms.locfileid: "87318153"
 
 Используйте новые возможности оповещений и оповещения почти в реальном времени, если вам нужно уведомлять пользователей в зависимости от их ролей. С помощью [групп действий](../platform/action-groups.md) вы можете настроить уведомления по электронной почте для пользователей с любой из ролей — участника, владельца или читателя (не объединяемых вместе как один параметр).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Многошаговое веб-тестирование](availability-multistep.md)
 * [Проверки связи URL-адреса](monitor-web-app-availability.md)

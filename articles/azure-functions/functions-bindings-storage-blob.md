@@ -6,17 +6,17 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.openlocfilehash: eead2d6ae2860bf06f1b878c1bb1692d74c06df6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87055974"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions-overview"></a>Общие сведения о привязках хранилища BLOB-объектов Azure для функций Azure
 
 Функции Azure интегрируются с [хранилищем Azure](../storage/index.yml) с помощью [триггеров и привязок](./functions-triggers-bindings.md). Интеграция с хранилищем BLOB-объектов позволяет создавать функции, реагирующие на изменения в данных больших двоичных объектов, а также значения чтения и записи.
 
-| Действие | Type |
+| Действие | Тип |
 |---------|---------|
 | Выполнение функции в качестве изменений данных хранилища BLOB-объектов | [Триггер](./functions-bindings-storage-blob-trigger.md) |
 | Чтение данных хранилища BLOB-объектов в функции | [Входная привязка](./functions-bindings-storage-blob-input.md) |
@@ -28,7 +28,7 @@ ms.locfileid: "87055974"
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Language                                        | Добавить по...                                   | Комментарии 
+| Язык                                        | Добавить по...                                   | Remarks 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 3. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |

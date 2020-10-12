@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.openlocfilehash: 8d97886232eecc369746e33df484cbfb9d40da72
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87530271"
 ---
 # <a name="enterprise-security-general-information-and-guidelines-in-azure-hdinsight"></a>Общие сведения и рекомендации по корпоративной безопасности в Azure HDInsight
@@ -20,7 +20,7 @@ ms.locfileid: "87530271"
 
 ## <a name="use-of-secure-cluster"></a>Использование безопасного кластера
 
-### <a name="recommended"></a>Рекомендуемая
+### <a name="recommended"></a>Рекомендуется
 
 * Кластер будет использоваться несколькими пользователями одновременно.
 * Пользователи имеют разные уровни доступа к одним и тем же данным.
@@ -95,7 +95,7 @@ ms.locfileid: "87530271"
 
 * Отключите политику условного доступа с помощью политики IP-адресов. Для этого необходимо включить конечные точки службы в виртуальных сетей, где развернуты кластеры. Если вы используете внешнюю службу для MFA (что отличается от AAD), политика на основе IP-адресов не будет работать.
 
-* `AllowCloudPasswordValidation`для федеративных пользователей требуется политика. Так как HDInsight использует имя пользователя и пароль непосредственно для получения маркеров из Azure AD, эта политика должна быть включена для всех федеративных пользователей.
+* `AllowCloudPasswordValidation` для федеративных пользователей требуется политика. Так как HDInsight использует имя пользователя и пароль непосредственно для получения маркеров из Azure AD, эта политика должна быть включена для всех федеративных пользователей.
 
 * Включите конечные точки службы, если требуется обход условного доступа с помощью надежных IP-адресов.
 
@@ -149,7 +149,7 @@ Azure AD DS периодически синхронизирует объекты
 
 Инструкции по установке средств администрирования Active Directory на виртуальной машине Windows Server см. в разделе [Установка средств управления](../../active-directory-domain-services/tutorial-create-management-vm.md).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="cluster-creation-fails-repeatedly"></a>Создание кластера завершается сбоем повторно
 
