@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/08/2020
 ms.custom: ''
 ms.openlocfilehash: ed848380457862fee506bf5111789e5d44545bdd
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91253417"
 ---
 # <a name="transfer-artifacts-to-another-registry"></a>Перенос артефактов в другой реестр
@@ -47,7 +47,7 @@ ms.locfileid: "91253417"
   TARGET_SA="<target-storage-account>"
   ```
 
-## <a name="scenario-overview"></a>Общие сведения о сценарии
+## <a name="scenario-overview"></a>Обзор сценария
 
 Для передачи образа между реестрами необходимо создать следующие три ресурса конвейера. Все они создаются с помощью операций размещения. Эти ресурсы работают с *исходными* и *целевыми* реестрами и учетными записями хранения. 
 
@@ -363,7 +363,7 @@ az deployment group delete \
   * Для других проблем конвейера укажите [идентификатор корреляции](../azure-resource-manager/templates/deployment-history.md) развертывания для выполнения экспорта или импорта в группу реестра контейнеров Azure.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об импорте одного образа контейнера в реестр контейнеров Azure из общедоступного реестра или другого частного реестра см. в справочнике по команде [AZ запись контроля][az-acr-import] доступа.
 

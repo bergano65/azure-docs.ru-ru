@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: storage
 author: tamram
@@ -9,10 +9,10 @@ ms.date: 07/06/2020
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: ba715d510dc296ffa8f9c0ee58841f284416a118
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86027343"
 ---
 ## <a name="protect-your-access-keys"></a>Защита ключей доступа

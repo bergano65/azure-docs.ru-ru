@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: alzam
 ms.openlocfilehash: c7f71d24ab516044a0ce48ad40f78bc659268866
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91442166"
 ---
 # <a name="transition-to-openvpn-protocol-or-ikev2-from-sstp"></a>Переход на протокол Опенвпн или IKEv2 из SSTP
@@ -63,7 +63,7 @@ ms.locfileid: "91442166"
 Если вы используете Windows 10, вы также можете использовать [VPN-клиент Azure для Windows](https://docs.microsoft.com/azure/vpn-gateway/openvpn-azure-ad-client#to-download-the-azure-vpn-client) .
 
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 ### <a name="what-are-the-client-configuration-requirements"></a>Требования к конфигурации клиента
 
 >[!NOTE]
@@ -160,7 +160,7 @@ ZIP-файл также содержит значения важных пара�
 
 * [Настройка OpenVPN для подключения "точка — сеть" VPN-шлюза Azure (предварительная версия)](vpn-gateway-howto-openvpn.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell](point-to-site-how-to-radius-ps.md)
 

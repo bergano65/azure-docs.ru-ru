@@ -7,10 +7,10 @@ ms.date: 11/04/2019
 ms.author: v-umha
 ms.custom: has-adal-ref
 ms.openlocfilehash: 271d3c0ca44c500a6fd8ee50ed5f1698e46cd511
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88510272"
 ---
 # <a name="ingest-historical-telemetry-data"></a>Прием архивных данных телеметрии
@@ -42,7 +42,7 @@ ms.locfileid: "88510272"
 
 2. **Если вы используете Фармбеатс версии 1.2.7 или более поздней, пропустите шаги a, b и c и перейдите к шагу 3.** Чтобы проверить версию Фармбеатс, выберите значок **Параметры** в правом верхнем углу пользовательского интерфейса фармбеатс.
 
-      а.  Переход к **Azure Active Directory**  >  **Регистрация приложений**
+      a.  Переход к **Azure Active Directory**  >  **Регистрация приложений**
 
       b. Выберите **регистрацию приложения** , созданную в рамках развертывания фармбеатс. Имя будет совпадать с именем Фармбеатс датахуб.
 
@@ -193,7 +193,7 @@ access_token = token_response.get('access_token')
 Ниже приведены наиболее распространенные заголовки запросов, которые необходимо указать при выполнении вызова API в Фармбеатс Датахуб:
 
 - **Тип содержимого**: Application/JSON
-- **Авторизация**: носитель <доступ — токен>
+- **Авторизация**: <носителя Access-Token>
 - **Принять**: приложение/JSON
 
 ### <a name="input-payload-to-create-metadata"></a>Входные полезные данные для создания метаданных
@@ -274,7 +274,7 @@ SensorModel
 }
 
 ```
-Датчик
+Sensor
 
 ```json
 {
@@ -464,6 +464,6 @@ write_client.stop()
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об интеграции на основе REST API см. в разделе [REST API](rest-api-in-azure-farmbeats.md).

@@ -10,10 +10,10 @@ ms.author: tamram
 ms.subservice: tables
 ms.custom: devx-track-csharp
 ms.openlocfilehash: b200782d10ae3637fcade63feab1e638d40acddb
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89006352"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
@@ -1125,7 +1125,7 @@ private static async Task SimpleEmployeeUpsertAsync(
 
 Клиентское приложение может вызывать несколько подобных асинхронных методов, а каждый вызов метода будет выполняться в отдельном потоке.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Разработка для запросов](table-storage-design-for-query.md)

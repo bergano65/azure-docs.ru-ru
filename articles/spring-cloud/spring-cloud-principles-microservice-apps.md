@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 05/27/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: 8cda46a011ae92f26a15a4e9a918559801ce299c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90906863"
 ---
 # <a name="java-and-base-os-for-spring-microservice-apps"></a>Java и базовая операционная система для приложений микрослужбы Spring
 
-**Эта статья относится к:** ✔️ Java
+**Эта статья применима к:** ✔️ Java
 
 Ниже приведены принципы поддержания работоспособности Java и базовой операционной системы для приложений пружинных микрослужб.
 ## <a name="principles-for-healthy-java-and-base-os"></a>Принципы работоспособности Java и базовой ОС
@@ -54,7 +54,7 @@ Azul системы постоянно сканирует изменения б�
 
 > ![Развертывание по умолчанию](media/spring-cloud-principles/spring-cloud-default-deployment.png)
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
 * [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support)

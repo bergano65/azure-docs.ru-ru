@@ -4,10 +4,10 @@ description: Узнайте, как добавить репозиторий GitH
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 225aae5e0a017b711f29a47829b06f8bb7a6a8ee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85483148"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Resource Manager
@@ -74,7 +74,7 @@ ms.locfileid: "85483148"
    5. **Путь к папке.** Введите по меньшей мере один путь к папке относительно URL-адреса клона, содержащего определения артефактов или шаблонов Resource Manager. При указании подкаталога обязательно включите косую черту в путь к папке.
 
       ![Область "Репозитории"](./media/devtest-lab-add-repo/devtestlab-repo-blade.png)
-6. Нажмите кнопку **Сохранить**.
+6. Щелкните **Сохранить**.
 
 ### <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Диагностика сбоев артефактов в лаборатории](devtest-lab-troubleshoot-artifact-failure.md)
@@ -82,7 +82,7 @@ ms.locfileid: "85483148"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После создания частного репозитория Git в зависимости от потребностей можно выполнить одно или оба из следующих действий:
 * Сохраните [пользовательские артефакты](devtest-lab-artifact-author.md). Их можно использовать позже для создания виртуальных машин.
 * [Создайте среды со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Resource Manager](devtest-lab-create-environment-from-arm.md). Затем шаблоны можно сохранить в частном репозитории.

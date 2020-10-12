@@ -9,17 +9,17 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
 ms.openlocfilehash: d979a68f4e3aa0071fb7654647610af1fbf95e90
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86078822"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Использование кластера HDInsight Spark для чтения и записи данных в базе данных SQL Azure
 
 Узнайте, как подключить кластер Apache Spark в Azure HDInsight к базе данных SQL Azure. Затем чтение, запись и потоковая передача данных в базу данных SQL. В инструкциях, приведенных в этой статье, используется Jupyter Notebook для выполнения фрагментов кода Scala. Однако можно создать автономное приложение в Scala или Python и выполнить те же задачи.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Azure HDInsight Spark.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
@@ -168,7 +168,7 @@ ms.locfileid: "86078822"
 
 1. Подключитесь к базе данных SQL Azure с помощью SSMS и убедитесь, что `dbo.hvactable` там отображается.
 
-    а. Запустите SSMS и подключитесь к базе данных SQL Azure, предоставив сведения о подключении, как показано на снимке экрана ниже.
+    a. Запустите SSMS и подключитесь к базе данных SQL Azure, предоставив сведения о подключении, как показано на снимке экрана ниже.
 
     ![Подключение к базе данных SQL с помощью SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS1")
 
@@ -263,7 +263,7 @@ ms.locfileid: "86078822"
     SELECT COUNT(*) FROM hvactable
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
 * [Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](apache-spark-load-data-run-query.md)

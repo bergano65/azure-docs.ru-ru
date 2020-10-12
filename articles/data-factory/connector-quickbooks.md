@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/03/2020
 ms.openlocfilehash: e9c1651244eecb036ca18ad5dadfe23f48b2bce6
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87529268"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
@@ -50,12 +50,12 @@ ms.locfileid: "87529268"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **QuickBooks**. | да |
-| connectionProperties | Группа свойств, определяющих способ подключения к QuickBooks. | да |
+| type | Для свойства type необходимо задать значение **QuickBooks**. | Да |
+| connectionProperties | Группа свойств, определяющих способ подключения к QuickBooks. | Да |
 | ***В разделе `connectionProperties` :*** | | |
-| endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | да |
-| companyId | Идентификатор компании QuickBooks для авторизации. Сведения о том, как найти идентификатор компании, см. в разделе [разделы справки найти свой идентификатор компании](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | да |
-| consumerKey | Ключ потребителя для проверки подлинности OAuth 2,0. | да |
+| endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | Да |
+| companyId | Идентификатор компании QuickBooks для авторизации. Сведения о том, как найти идентификатор компании, см. в разделе [разделы справки найти свой идентификатор компании](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | Да |
+| consumerKey | Ключ потребителя для проверки подлинности OAuth 2,0. | Да |
 | consumerSecret | Секрет клиента для проверки подлинности OAuth 2,0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | refreshtoken | Маркер обновления OAuth 2,0, связанный с приложением QuickBooks. Дополнительные сведения см. [здесь](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0#obtain-oauth2-credentials-for-your-app). Примечание. срок действия маркера обновления истечет через 180 дней. Клиент должен регулярно обновлять маркер обновления. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).| Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
@@ -95,7 +95,7 @@ ms.locfileid: "87529268"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| type | Свойство Type набора данных должно иметь значение **куиккбуксобжект** . | да |
+| type | Свойство Type набора данных должно иметь значение **куиккбуксобжект** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**

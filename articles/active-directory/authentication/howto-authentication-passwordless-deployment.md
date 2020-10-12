@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 95f4221b390071ad149699608d3937b9af4e1d5d
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90527009"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Планирование развертывания проверки подлинности с незащищенным паролем в Azure Active Directory
@@ -61,7 +61,7 @@ ms.locfileid: "90527009"
 
 Сведения о выборе лучшего метода для организации см. в разделе [Выбор метода](./concept-authentication-passwordless.md#choose-a-passwordless-method), не имеющего пароля.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом развертывания, не защищенного паролем, организации должны соответствовать следующим предварительным требованиям:
 
@@ -118,7 +118,7 @@ ms.locfileid: "90527009"
 - [Регистрация в приложении Microsoft Authenticator](howto-authentication-passwordless-phone.md)
 - [Вход с помощью телефона](../user-help/user-help-auth-app-sign-in.md)
 
-Корпорация Майкрософт предоставляет [шаблоны связи](https://aka.ms/mfatemplates)многофакторной проверки подлинности, [шаблоны связи](https://www.microsoft.com/download/details.aspx?id=56768)с самостоятельным сбросом пароля (SSPR) и [документацию для конечных пользователей](../user-help/security-info-setup-signin.md) , чтобы помочь в черновике коммуникаций. Вы можете отправить пользователям [https://myprofile.microsoft.com](https://myprofile.microsoft.com/) для непосредственной регистрации, выбрав ссылку **Сведения о безопасности** на этой странице.
+Корпорация Майкрософт предоставляет [шаблоны связи](https://aka.ms/mfatemplates)многофакторной проверки подлинности, Self-Service [шаблоны связи](https://www.microsoft.com/download/details.aspx?id=56768)для сброса пароля (SSPR) и [документацию для конечных пользователей](../user-help/security-info-setup-signin.md) , чтобы помочь в черновике коммуникаций. Вы можете отправить пользователям [https://myprofile.microsoft.com](https://myprofile.microsoft.com/) для непосредственной регистрации, выбрав ссылку **Сведения о безопасности** на этой странице.
 
 ### <a name="plan-to-pilot"></a>Планирование пилотного развертывания
 

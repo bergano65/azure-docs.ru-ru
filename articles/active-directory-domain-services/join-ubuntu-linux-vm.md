@@ -13,10 +13,10 @@ ms.date: 07/13/2020
 ms.author: iainfou
 ms.custom: fasttrack-edit
 ms.openlocfilehash: d01d961a5d5b86f74bb785c3fddfa09843aa060c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87283152"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины Ubuntu Linux к управляемому домену доменных служб Azure Active Directory
@@ -77,7 +77,7 @@ sudo vi /etc/hosts
 
 ## <a name="install-required-packages"></a>Установка необходимых пакетов
 
-Виртуальной машине требуются дополнительные пакеты для приподключения виртуальной машины к управляемому домену. Чтобы установить и настроить эти пакеты, обновите и установите средства присоединение к домену с помощью`apt-get`
+Виртуальной машине требуются дополнительные пакеты для приподключения виртуальной машины к управляемому домену. Чтобы установить и настроить эти пакеты, обновите и установите средства присоединение к домену с помощью `apt-get`
 
 Во время установки Kerberos пакет *krb5-User* запрашивает имя области в верхнем регистре. Например, если имя управляемого домена — *aaddscontoso.com*, введите *AADDSCONTOSO.com* в качестве области. При установке записываются `[realm]` `[domain_realm]` разделы и в файле конфигурации */etc/krb5.conf* . Убедитесь, что для области заданы все ПРОПИСные буквы:
 
