@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 12/19/2018
 ms.author: memildin
 ms.openlocfilehash: 6bbc38d79f51ba4ffcc3795718d276a7e9c0bf03
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91440778"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
@@ -185,7 +185,7 @@ ms.locfileid: "91440778"
    > [!NOTE]
    > Группы управления могут содержать подписки и дочерние группы управления. При назначении пользователю роли Azure родительской группе управления доступ наследуется подписками дочерней группы управления. То же самое касается и политик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Работая с этой статьей, вы узнали, как получить видимость в пределах клиента в центре безопасности Azure. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
 > [!div class="nextstepaction"]

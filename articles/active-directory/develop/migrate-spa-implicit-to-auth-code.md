@@ -13,10 +13,10 @@ ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev
 ms.openlocfilehash: b7316756aab7875dce50a3783cb95ca42676b970
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: HT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87027093"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Перенос одностраничного приложения JavaScript из неявного потока предоставления разрешения в поток кода авторизации
@@ -48,11 +48,11 @@ MSAL.js 2.x — это расширенная версия MSAL.js 1.x, кото
     :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-01-implicit-warning-banner.png" alt-text="Баннер, предупреждающий об использовании неявного потока, на плитке веб-приложения на портале Azure":::
 1. Выберите *только* URI, связанные с приложениями которые будут использовать MSAL.js 2.x, и щелкните **Настроить**.
 
-    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-02-select-redirect-uri.png" alt-text="Выбор панели URI перенаправления на панели одностраничного приложения на портале Azure":::
+    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-02-select-redirect-uri.png" alt-text="Баннер, предупреждающий об использовании неявного потока, на плитке веб-приложения на портале Azure":::
 
 Эти URI перенаправления должны появиться на плитке платформы **одностраничного приложения**, сообщая о том, что для них теперь включена поддержка CORS с потоком кода авторизации и PKCE.
 
-:::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-03-spa-redirect-uri-tile.png" alt-text="Плитка одностраничного приложения в регистрации приложения на портале Azure":::
+:::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-03-spa-redirect-uri-tile.png" alt-text="Баннер, предупреждающий об использовании неявного потока, на плитке веб-приложения на портале Azure":::
 
 Можно также [создать новую регистрацию приложения](scenario-spa-app-registration.md), а не обновлять URI перенаправления в существующей регистрации.
 

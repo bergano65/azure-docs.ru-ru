@@ -5,10 +5,10 @@ ms.date: 08/31/2020
 ms.topic: how-to
 ms.reviewer: caleteet
 ms.openlocfilehash: 4364d2f616c8eaadedf12baf4bf77810eec69fdb
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89230540"
 ---
 # <a name="use-the-ethereum-blockchain-connector-with-azure-logic-apps"></a>Использование блокчейн-соединителя Ethereum с Azure Logic Apps
@@ -20,7 +20,7 @@ ms.locfileid: "89230540"
 - Выполните дополнительную предварительную проверку [: используйте Visual Studio Code для подключения к сети консорциума Блокчейн службы Azure](connect-vscode.md). В этом кратком руководстве описывается, как установить [Пакет средств разработки Блокчейна Azure для Ethereum](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain) и настроить среду разработки блокчейна.
 - Если вы не знакомы с Azure Logic Apps, рассмотрите возможность просмотра Microsoft Learnных модулей [Azure Logic Apps](/learn/modules/intro-to-logic-apps/) и [вызова API из рабочего процесса Logic Apps с помощью настраиваемого соединителя](/learn/modules/logic-apps-and-custom-connectors/).
 
-## <a name="create-a-logic-app"></a>Создание приложения логики
+## <a name="create-a-logic-app"></a>Создайте приложение логики
 
 С помощью Azure Logic Apps можно планировать, автоматизировать бизнес-процессы и рабочие процессы, когда необходимо интегрировать системы и службы. Сначала создайте логику, в которой используется блокчейн-соединитель Ethereum.
 
@@ -156,8 +156,8 @@ ms.locfileid: "89230540"
 
 | Свойство | Описание |
 |----------|-------------|
-|**Имя соединения** | Имя подключения API. Обязательный. |
-|**конечная точка Ethereum RPC;** | HTTP-адрес узла транзакций службы "Блокчейн Azure". Обязательный. См. сведения о [получении конечной точки RPC](#get-the-rpc-endpoint). |
+|**Имя соединения** | Имя подключения API. Обязательный элемент. |
+|**конечная точка Ethereum RPC;** | HTTP-адрес узла транзакций службы "Блокчейн Azure". Обязательный элемент. См. сведения о [получении конечной точки RPC](#get-the-rpc-endpoint). |
 |**Закрытый ключ** | Закрытый ключ учетной записи Ethereum. Для транзакций требуются закрытый ключ, адрес учетной записи и пароль. См. сведения о [получении закрытого ключа](#get-the-private-key). |
 |**Адрес учетной записи** | Адрес учетной записи участника службы "Блокчейн Azure". Для транзакций требуются закрытый ключ, адрес учетной записи и пароль. См. сведения о [получении адреса учетной записи](#get-the-account-address). |
 |**Пароль учетной записи** | Пароль учетной записи задается при создании участника. Сведения о сбросе пароля см. в разделе [Учетная запись Ethereum](consortium.md#ethereum-account).|
@@ -283,6 +283,6 @@ Truffle отображает адрес контракта после разве
 
 ![Метаданные в Visual Studio Code, где представлено значение адреса](./media/ethereum-logic-app/contract-address-metadata.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Просмотрите видео о [распространенных сценариях работы с Logic Apps](https://channel9.msdn.com/Shows/Blocktalk/Doing-more-with-Logic-Apps?term=logic%20apps%20blockchain&lang-en=true).

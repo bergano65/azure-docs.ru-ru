@@ -11,17 +11,17 @@ ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
 ms.openlocfilehash: a1d86ac354524cb4d7bf9f9776b8605f244d92f7
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83592514"
 ---
 # <a name="translator-30-dictionary-examples"></a>Переводчик 3,0: примеры словарей
 
 Этот метод предоставляет контекстные примеры использования термина, включенного в словарь. Эта операция используется в сочетании с [поиском по словарю](./v3-0-dictionary-lookup.md).
 
-## <a name="request-url"></a>URL-адрес запроса
+## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -37,13 +37,13 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 | --------- | ----------- |
 | api-version <img width=200/> | **Обязательный параметр**.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`. |
 | из | **Обязательный параметр**.<br/>Определяет язык оригинального текста. Исходный язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`. |
-| в | **Обязательный параметр**.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`.  | 
+| значение | **Обязательный параметр**.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`.  | 
 
 Заголовки запроса:
 
 | Заголовки  | Описание |
 | ------ | ----------- |
-| Заголовки проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
+| Заголовки для проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
 | Content-Length   | **Обязательный заголовок запроса**.<br/>Длина текста запроса. |
 | X-ClientTraceId   | **Необязательно**.<br/>Созданный клиентом идентификатор GUID, позволяющий уникально идентифицировать запрос. Этот заголовок можно опустить, если в строке запроса указан идентификатор трассировки в параметре с именем `ClientTraceId`. |

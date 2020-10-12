@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9118a99f285dedfe0b76e890db001627e4f85969
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89657140"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
@@ -169,7 +169,7 @@ ms.locfileid: "89657140"
      >[!NOTE]
      >Сбой не означает, что пользователь не может сбросить свой пароль. Он означает, что пользователь не завершил процесс регистрации. Если в учетной записи содержатся непроверенные, но правильные данные (например, непроверенный телефонный номер), их по-прежнему можно использовать для сброса пароля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отчеты об использовании и аналитике SSPR и MFA](howto-authentication-methods-usage-insights.md)
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)

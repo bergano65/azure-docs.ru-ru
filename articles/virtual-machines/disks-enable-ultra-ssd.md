@@ -9,10 +9,10 @@ ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
 ms.openlocfilehash: e57317dce64b58e5c92684152d840955a30df660
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91441190"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
@@ -233,7 +233,7 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 
 - Перейдите к виртуальной машине и прервите ее, дождитесь ее освобождения.
 - После освобождения виртуальной машины выберите **диски**.
-- Выберите **Изменить**.
+- Выберите команду **Изменить**.
 
 ![Снимок экрана: колонка существующего диска виртуальной машины выделена для редактирования.](media/virtual-machines-disks-getting-started-ultra-ssd/options-selector-ultra-disks.png)
 
@@ -401,7 +401,7 @@ Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate 
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Используйте Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)](../aks/use-ultra-disks.md).
 - [Перенесите диск журнала на диск Ultra](../azure-sql/virtual-machines/windows/storage-migrate-to-ultradisk.md).

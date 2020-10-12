@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e991fb0c60e8f08eb43cb7799027d4200263c9b5
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89659541"
 ---
 # <a name="define-data-protection-strategy-for-your-hybrid-identity-solution"></a>Определение стратегии защиты данных для гибридного решения идентификации
@@ -49,7 +49,7 @@ ms.locfileid: "89659541"
 | Шифрование баз данных на сервере SQL Server |X |X | |
 | Шифрование трафика между виртуальными машинами | | |X |
 | SSL/TLS; | | |X |
-| Виртуальная частная сеть | | |X |
+| VPN | | |X |
 
 > [!NOTE]
 > Ознакомьтесь со статьей [Соответствие продуктов требованиям](https://azure.microsoft.com/support/trust-center/services/) в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/), которая расскажет о том, каким сертификатам соответствует каждая служба Azure.
@@ -168,8 +168,8 @@ Azure AD помогает ИТ-специалистам выявить в сре
 
 Любое реагирование на инциденты подразумевает многоуровневый подход, поэтому сравнение вариантов выходит далеко за пределы этой статьи. Постарайтесь использовать все возможные варианты для каждого сценария, в котором корпоративная политика реагирования на инциденты требует использовать возможности Azure AD по созданию отчетов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)

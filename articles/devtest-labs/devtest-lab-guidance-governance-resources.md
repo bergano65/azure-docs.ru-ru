@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 1e470da5cd317d49f0d0734caa11eed6630d3f32
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85480921"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---resources"></a>Система управления инфраструктурой Azure DevTest Labs — ресурсы
@@ -77,5 +77,5 @@ ms.locfileid: "85480921"
 ### <a name="answer"></a>Ответ
 Да. Перейдите на страницу группы ресурсов с домашней страницы лаборатории. На панели инструментов выберите действие **Переместить**, а затем выберите лабораторию, которую вы хотите переместить в другую группу ресурсов. При создании лаборатории группа ресурсов создается автоматически. Но иногда возникает необходимость переместить ее в другую группу ресурсов, например, чтобы соблюсти корпоративные соглашения об именовании. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. статью [ об управлении затратами и стоимостью владения](devtest-lab-guidance-governance-cost-ownership.md).

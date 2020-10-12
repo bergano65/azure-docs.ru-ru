@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: surmb
 ms.openlocfilehash: c0c939a6a8323dfdfafddb46ccdb7d7ef3dd2f2c
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89653023"
 ---
 # <a name="application-gateway-http-settings-configuration"></a>Конфигурация параметров HTTP для шлюза приложений
@@ -43,7 +43,7 @@ ms.locfileid: "89653023"
 
 Этот параметр в сочетании с протоколом HTTPS в прослушивателе поддерживает [сквозной протокол TLS](ssl-overview.md). Это позволяет безопасно передавать конфиденциальные данные, зашифрованные в серверной части. На каждом внутреннем сервере в пуле серверной части, для которого включен сквозной протокол TLS, необходимо настроить сертификат, чтобы обеспечить безопасную связь.
 
-## <a name="port"></a>Port
+## <a name="port"></a>Порт
 
 Этот параметр указывает порт, на котором серверные серверы прослушивают трафик от шлюза приложений. Можно настроить порты в диапазоне от 1 до 65535.
 
@@ -106,6 +106,6 @@ ms.locfileid: "89653023"
 
 Например, если в параметре **имени узла** указано *www.contoso.com* , то исходный запрос * `https://appgw.eastus.cloudapp.azure.com/path1` меняется на *, `https://www.contoso.com/path1` когда запрос перенаправляется на сервер фонового сервера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Дополнительные сведения о пуле серверной части](configuration-overview.md#back-end-pool)

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/23/2020
 ms.openlocfilehash: 178c339f6f47569160a9a748794678c610f35734
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87171636"
 ---
 # <a name="use-azure-active-directory-for-authentication-with-postgresql"></a>Использование Azure Active Directory для проверки подлинности с помощью PostgreSQL
@@ -137,7 +137,7 @@ psql "host=mydb.postgres... user=user@tenant.onmicrosoft.com@mydb dbname=postgre
 
 Важные моменты при подключении:
 
-* `user@tenant.onmicrosoft.com`— имя пользователя или группы Azure AD, которую вы пытаетесь подключить.
+* `user@tenant.onmicrosoft.com` — имя пользователя или группы Azure AD, которую вы пытаетесь подключить.
 * Всегда добавлять имя сервера после имени пользователя или группы Azure AD (например, `@mydb` )
 * Убедитесь, что используется точный способ написания имени пользователя или группы Azure AD.
 * Имена пользователей и групп Azure AD чувствительны к регистру
