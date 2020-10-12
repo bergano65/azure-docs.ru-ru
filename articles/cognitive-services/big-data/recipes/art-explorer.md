@@ -12,17 +12,17 @@ ms.date: 07/06/2020
 ms.author: marhamil
 ms.custom: devx-track-python
 ms.openlocfilehash: 0a94c66eb51298db226ceec5da5c86666576052a
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87850497"
 ---
 # <a name="recipe-intelligent-art-exploration-with-the-cognitive-services-for-big-data"></a>Рецепт: интеллектуальное исследование с помощью Cognitive Services для больших данных
 
 В этом примере мы будем использовать Cognitive Services для больших данных, чтобы добавить интеллектуальные заметки в коллекцию Open Access из музей, заносимого в рисунок. Это позволит нам создать интеллектуальную поисковую подсистему с помощью поиска Azure даже без заметок вручную. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо иметь ключ подписки для Компьютерное зрение и Когнитивный поиск. Следуйте инструкциям в разделе [Создание учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) , чтобы подписаться на компьютерное зрение и получить ключ.
   > [!NOTE]

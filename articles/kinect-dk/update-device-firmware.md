@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Kinect, встроенное по, обновление, восстановление
 ms.openlocfilehash: ecfa4a18592d3bc70e3b7cdd66ff6464a54e560d
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90030690"
 ---
 # <a name="update-azure-kinect-dk-firmware"></a>Обновление встроенного по Azure Kinect DK
@@ -41,7 +41,7 @@ Azure Kinect DK не обновляет встроенное по автомат
 
     `AzureKinectFirmwareTool.exe -u <device_firmware_file.bin>`
 
-    Пример
+    Пример.
 
     `AzureKinectFirmwareTool.exe -u firmware\AzureKinectDK_Fw_1.5.926614.bin`
 
@@ -84,7 +84,7 @@ Azure Kinect DK не обновляет встроенное по автомат
 
 Дополнительные сведения о дополнительных проблемах см. на [странице службы поддержки Майкрософт](https://aka.ms/kinectsupport) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 >[Средство встроенного по Azure Kinect](azure-kinect-firmware-tool.md)

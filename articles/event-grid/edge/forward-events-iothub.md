@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 36dc7d098892fb2be7c2ba3d75de7c7adef1a4f1
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86171556"
 ---
 # <a name="tutorial-forward-events-to-iothub"></a>Учебник. Пересылка событий в IoTHub
@@ -60,7 +60,7 @@ ms.locfileid: "86171556"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic4?api-version=2019-01-01-preview
     ```
 
-   Пример результатов выполнения:
+   Образец вывода:
 
    ```json
         [
@@ -110,7 +110,7 @@ ms.locfileid: "86171556"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic4/eventSubscriptions/sampleSubscription4?api-version=2019-01-01-preview
     ```
 
-    Пример результатов выполнения:
+    Образец вывода:
 
    ```json
         {
@@ -133,7 +133,7 @@ ms.locfileid: "86171556"
 
 Обновите маршрут концентратора ребра, чтобы переслать события подписки на события, перенаправляемые в IoTHub, следующим образом:
 
-1. Войдите на [портал Azure](https://ms.portal.azure.com).
+1. Войдите на [портал Azure](https://ms.portal.azure.com)
 1. Перейдите в **центр Интернета вещей**.
 1. Выберите **IOT Edge** в меню.
 1. Выберите идентификатор целевого устройства в списке устройств.

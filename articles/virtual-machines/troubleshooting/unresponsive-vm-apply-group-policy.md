@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.author: v-mibufo
 ms.openlocfilehash: cbf2fe491e1fe0b553eab04ca7190da0413a3ba6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86526016"
 ---
 # <a name="vm-is-unresponsive-when-applying-group-policy-local-users-and-groups-policy"></a>Виртуальная машина не отвечает, когда применяется групповая политика политики локальных пользователей и групп
@@ -31,7 +31,7 @@ ms.locfileid: "86526016"
 
 :::image type="content" source="media//unresponsive-vm-apply-group-policy/applying-group-policy-1.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2).":::
 
-:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012).":::
+:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2).":::
 
 ## <a name="cause"></a>Причина
 
@@ -66,23 +66,7 @@ ms.locfileid: "86526016"
 1. Откройте редактор реестра на виртуальной машине восстановления.
 1. Перейдите к разделу **HKEY_LOCAL_MACHINE** и выберите **файл**  >  **Загрузить куст** в меню.
 
-    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="На снимке экрана показано выделенный HKEY_LOCAL_MACHINE и меню, содержащее пункт Загрузить куст.":::
-
-    - Можно использовать Load Hive для загрузки разделов реестра из автономной системы. В этом случае система является поврежденным диском, подключенным к виртуальной машине восстановления.
-    - Параметры на уровне системы хранятся в `HKEY_LOCAL_MACHINE` и могут быть сокращены по "HKLM".
-1. На подключенном диске перейдите к файлу `\windows\system32\config\SOFTWARE` и откройте его.
-
-    1. Когда появится запрос на ввод имени, введите BROKENSOFTWARE.
-    1. Чтобы удостовериться, загружен ли BROKENSOFTWARE, разверните **HKEY_LOCAL_MACHINE** и найдите добавленный ключ BROKENSOFTWARE.
-1. Перейдите по адресу BROKENSOFTWARE и проверьте, существует ли ключ Клеануппрофиле в загруженном Hive.
-
-    1. Если ключ существует, задается политика Клеануппрофиле. Его значение представляет политику хранения, измеряемую в днях. Продолжайте удаление ключа.
-    1. Если ключ не существует, политика CleanupProfile не установлена. [Отправьте запрос в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), включая файл memory.dmp, расположенный в каталоге Windows, подключенного диска ОС.
-
-1. Удалите ключ Клеануппрофилес с помощью следующей команды:
-
-    ```
-    reg delete "HKLM\BROKENSOFTWARE\Policies\Microsoft\Windows\System" /v CleanupProfiles /f
+    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2)." /v CleanupProfiles /f
     ```
 1.  Выгрузите куст BROKENSOFTWARE с помощью следующей команды:
 

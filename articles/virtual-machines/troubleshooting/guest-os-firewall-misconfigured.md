@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
 ms.openlocfilehash: e6f42bdf462ac5261f77bc05c62e50500345fe37
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80422535"
 ---
 # <a name="azure-vm-guest-os-firewall-is-misconfigured"></a>Брандмауэр гостевой ОС виртуальной машины Azure настроен неправильно
@@ -31,7 +31,7 @@ ms.locfileid: "80422535"
 
 2.  В зависимости от настройки гостевой ОС часть сетевого трафика или весь сетевой трафик может не поступать в виртуальную машину.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Из-за неправильной настройки брандмауэр гостевой системы может блокировать некоторые или все виды сетевого трафика в виртуальную машину.
 

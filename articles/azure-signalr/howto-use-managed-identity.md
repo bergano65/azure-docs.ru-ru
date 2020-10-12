@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 06/8/2020
 ms.author: chenyl
 ms.openlocfilehash: abe7503e7eb73d533ae901af21de001960173fb0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85559412"
 ---
 # <a name="managed-identities-for-azure-signalr-service"></a>Управляемые удостоверения для службы Azure SignalR
@@ -28,7 +28,7 @@ ms.locfileid: "85559412"
 
 2. Выберите **Удостоверение**.
 
-4. На вкладке **назначенная система** переключите **состояние** **на вкл**. Нажмите кнопку **Сохранить**.
+4. На вкладке **назначенная система** переключите **состояние** **на вкл**. Щелкните **Сохранить**.
 
     :::image type="content" source="media/signalr-howto-use-managed-identity/system-identity-portal.png" alt-text="Добавление назначенного системой удостоверения на портале":::
 
@@ -46,7 +46,7 @@ ms.locfileid: "85559412"
 
 5. Найдите созданное ранее удостоверение и выберите его. Выберите **Добавить**.
 
-    :::image type="content" source="media/signalr-howto-use-managed-identity/user-identity-portal.png" alt-text="Добавление назначенного пользователем удостоверения на портале":::
+    :::image type="content" source="media/signalr-howto-use-managed-identity/user-identity-portal.png" alt-text="Добавление назначенного системой удостоверения на портале":::
 
 ## <a name="use-a-managed-identity-in-serverless-scenarios"></a>Использование управляемого удостоверения в бессерверных сценариях
 
@@ -59,7 +59,7 @@ ms.locfileid: "85559412"
 2. Настройте параметры восходящего потока и используйте **ManagedIdentity** в качестве параметров **проверки подлинности** . Сведения о создании вышестоящего параметра с проверкой подлинности см. в статье [Параметры вышестоящей](concept-upstream.md)передачи.
 
 3. В параметрах аутентификации управляемого удостоверения для **ресурса**можно указать целевой ресурс. Ресурс станет `aud` утверждением в полученном маркере доступа, который можно использовать в качестве части проверки в вышестоящей конечной точки. Ресурс может быть одним из следующих:
-    - Empty
+    - Пусто
     - Идентификатор приложения (клиента) субъекта-службы
     - URI идентификатора приложения субъекта-службы
     - [Идентификатор ресурса службы Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-azure-ad-authentication)
@@ -77,6 +77,6 @@ ms.locfileid: "85559412"
 
 Мы предоставляем библиотеки и примеры кода, демонстрирующие способы проверки маркеров. Кроме того, для проверки JSON Web Token (JWT) доступны несколько библиотек партнеров с открытым кодом. Существует по крайней мере один вариант почти для каждой платформы и языка. Дополнительные сведения о библиотеках проверки подлинности Azure AD и примеры кода см. в [статье библиотеки проверки подлинности платформы Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/reference-v2-libraries).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Azure Functions development and configuration with Azure SignalR Service](signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)

@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 2a7cc864366bd9a35c96dd453c0dc68f77d8abd9
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86171454"
 ---
 # <a name="tutorial-publish-subscribe-to-events-locally"></a>Учебник. Публикация, подписка на события локально
@@ -21,7 +21,7 @@ ms.locfileid: "86171454"
 > [!NOTE]
 > Сведения о разделах и подписках службы "Сетка событий Azure" см. в разделе [Основные понятия сетки событий](concepts.md).
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
@@ -37,7 +37,7 @@ ms.locfileid: "86171454"
 
 ### <a name="select-your-iot-edge-device"></a>Выберите устройство IoT Edge
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com)
 1. Перейдите в Центр Интернета вещей.
 1. Выберите **IOT Edge** в меню в разделе **Автоматическое управление устройствами** . 
 1. Щелкните идентификатор целевого устройства в списке устройств.
@@ -54,7 +54,7 @@ ms.locfileid: "86171454"
 1. Укажите параметры "имя", "изображение", "создать контейнер" для контейнера:
 
    * **Имя**: евентгридмодуле
-   * **URI изображения**:`mcr.microsoft.com/azure-event-grid/iotedge:latest`
+   * **URI изображения**: `mcr.microsoft.com/azure-event-grid/iotedge:latest`
    * **Параметры создания контейнера.**
 
    [!INCLUDE [event-grid-edge-module-version-update](../../../includes/event-grid-edge-module-version-update.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "86171454"
           }
         }
     ```    
- 1. Нажмите кнопку **Сохранить**
+ 1. Щелкните **Сохранить**.
  1. Перейдите к следующему разделу, чтобы добавить модуль подписчика службы "Сетка событий Azure", прежде чем развертывать их вместе.
 
     >[!IMPORTANT]
@@ -95,9 +95,9 @@ ms.locfileid: "86171454"
 1. Укажите параметры имя, образ и контейнер для создания контейнера:
 
    * **Имя**: подписчик
-   * **URI изображения**:`mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
+   * **URI изображения**: `mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
    * **Параметры создания контейнера**: нет
-1. Нажмите кнопку **Сохранить**
+1. Щелкните **Сохранить**.
 1. Нажмите кнопку " **Далее** ", чтобы перейти к разделу "маршруты"
 
  ### <a name="setup-routes"></a>Настройка маршрутов
@@ -139,7 +139,7 @@ ms.locfileid: "86171454"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1?api-version=2019-01-01-preview
     ```
 
-   Пример результатов выполнения:
+   Образец вывода:
 
    ```json
         [
@@ -189,7 +189,7 @@ ms.locfileid: "86171454"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1/eventSubscriptions/sampleSubscription1?api-version=2019-01-01-preview
     ```
 
-    Пример результатов выполнения:
+    Образец вывода:
 
    ```json
         {
@@ -250,7 +250,7 @@ ms.locfileid: "86171454"
     sudo docker logs subscriber
     ```
 
-    Пример результатов выполнения:
+    Образец вывода:
 
     ```sh
         Received Event:

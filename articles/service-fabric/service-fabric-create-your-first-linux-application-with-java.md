@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/18/2018
 ms.custom: devx-track-java
 ms.openlocfilehash: 28ddc4f0e47d853df6b026cf2495d710bebfa980
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87368937"
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Создание первого приложения Java Reliable Actors для Linux в Service Fabric
@@ -175,7 +175,7 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-## <a name="build-the-application"></a>Сборка приложения
+## <a name="build-the-application"></a>создание приложения;
 Шаблоны Service Fabric для Yeoman включают скрипт сборки для [Gradle](https://gradle.org/), который можно использовать для создания приложения из терминала.
 Зависимости Java в Service Fabric извлекаются из Maven. Чтобы создавать приложения Java в Service Fabric и работать с ними, сначала установите JDK и Gradle. Если эти компоненты не установлены, см. руководство по [началу работы с Service Fabric в Linux](service-fabric-get-started-linux.md#set-up-java-development).
 
@@ -293,7 +293,7 @@ public static void main(String[] args) throws Exception {
   }
   ```
 
-### <a name="others"></a>Прочее
+### <a name="others"></a>Другие
 #### <a name="transport"></a>Транспорт
 
 Поддержка транспортного уровня для приложения Java в Service Fabric. Вам не нужно явно добавлять эту зависимость в приложения Reliable Actors или Reliable Services, если ваша программа не находится на транспортном уровне.

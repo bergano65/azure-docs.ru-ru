@@ -10,17 +10,17 @@ ms.topic: how-to
 ms.date: 06/24/2020
 ms.author: yelevin
 ms.openlocfilehash: 69ab76bf213653ea10db8dfd181b615a7e0f47b5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85564470"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad-identity-protection"></a>Подключение данных из защиты идентификации Azure Active Directory (Azure AD)
 
 Вы можете выполнять потоковую передачу журналов из [Защита идентификации Azure AD](../active-directory/identity-protection/overview-identity-protection.md) в метку Azure для потоковой передачи оповещений в Azure Sentinel для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения расследования. Защита идентификации Azure Active Directory предоставляет объединенное представление для пользователей с рисками, обнаружения рисков и уязвимостей, с возможностью немедленного устранения рисков и установки политик для автоматического устранения будущих событий. Служба построена на основе опыта корпорации Майкрософт по защите идентификаторов потребителей и значительной точности от сигнала с более чем 13 000 000 000 журнала в день. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь [подписку Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/).
 - У вас должен быть пользователь с правами глобального администратора или администратора безопасности.
@@ -38,7 +38,7 @@ ms.locfileid: "85564470"
 
 Если вы хотите протестировать соединитель, вы можете [имитировать обнаружение](../active-directory/identity-protection/howto-identity-protection-simulate-risk.md) , чтобы создать образцы оповещений, которые будут передаваться в поток Azure Sentinel.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить защита идентификации Azure AD к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

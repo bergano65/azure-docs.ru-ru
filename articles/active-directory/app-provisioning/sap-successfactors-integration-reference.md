@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 07/20/2020
 ms.author: chmutali
 ms.openlocfilehash: 805cdc0713afd43502bb224cce60167adbc418ee
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90969529"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-sap-successfactors"></a>Как Azure Active Directory подготовка интегрируется с SAP SuccessFactors 
@@ -306,7 +306,7 @@ JSONPath — это язык запросов для JSON, похожий на X
 * В центральном центре сотрудников рабочий телефон задается как основной. Приложение обратной записи не может изменить это и установить сотовый телефон в качестве основного.
 * Приложение обратной записи не может считывать текущие параметры основного флага и использовать те же значения для операции записи. Значения флагов, настроенные в сопоставлении атрибутов, всегда будут использоваться. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как настроить SuccessFactors для Active Directory подготовки.](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
 * [Сведения о настройке обратной записи в SuccessFactors](../saas-apps/sap-successfactors-writeback-tutorial.md)

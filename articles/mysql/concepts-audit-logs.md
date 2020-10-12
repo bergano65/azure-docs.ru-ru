@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/24/2020
 ms.openlocfilehash: 8b12e1bd7bd67c3d22bdb62255b481d81976b969
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85362131"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>Журналы аудита в базе данных Azure для MySQL
@@ -31,7 +31,7 @@ ms.locfileid: "85362131"
 - `audit_log_exclude_users`: Пользователи MySQL, которые будут исключены из ведения журнала. Максимальная длина параметра — 512 символов.
 
 > [!NOTE]
-> `audit_log_include_users`имеет более высокий приоритет `audit_log_exclude_users` , чем. Например, если `audit_log_include_users`  =  `demouser` и `audit_log_exclude_users`  =  `demouser` , пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
+> `audit_log_include_users` имеет более высокий приоритет `audit_log_exclude_users` , чем. Например, если `audit_log_include_users`  =  `demouser` и `audit_log_exclude_users`  =  `demouser` , пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
 
 | **Событие** | **Описание** |
 |---|---|
@@ -60,10 +60,10 @@ ms.locfileid: "85362131"
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
 | `TimeGenerated [UTC]` | Метка времени, когда журнал был записан в формате UTC |
-| `Type` | Тип журнала Всегда `AzureDiagnostics` |
+| `Type` | Тип журнала Всегда `AzureDiagnostics`. |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
-| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL` |
+| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL`. |
 | `ResourceType` | `Servers` |
 | `ResourceId` | Универсальный код ресурса (URI) |
 | `Resource` | Имя сервера |
@@ -73,7 +73,7 @@ ms.locfileid: "85362131"
 | `event_class_s` | `connection_log` |
 | `event_subclass_s` | `CONNECT`, `DISCONNECT` , `CHANGE USER` (доступно только для MySQL 5,7) |
 | `connection_id_d` | Уникальный идентификатор соединения, созданный MySQL |
-| `host_s` | Пустое |
+| `host_s` | Пусто |
 | `ip_s` | IP-адрес клиента, подключающегося к MySQL |
 | `user_s` | Имя пользователя, который исполняет запрос |
 | `db_s` | Имя базы данных, подключенной к |
@@ -91,10 +91,10 @@ ms.locfileid: "85362131"
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
 | `TimeGenerated [UTC]` | Метка времени, когда журнал был записан в формате UTC |
-| `Type` | Тип журнала Всегда `AzureDiagnostics` |
+| `Type` | Тип журнала Всегда `AzureDiagnostics`. |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
-| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL` |
+| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL`. |
 | `ResourceType` | `Servers` |
 | `ResourceId` | Универсальный код ресурса (URI) |
 | `Resource` | Имя сервера |
@@ -104,9 +104,9 @@ ms.locfileid: "85362131"
 | `event_class_s` | `general_log` |
 | `event_subclass_s` | `LOG`, `ERROR` , `RESULT` (доступно только для MySQL 5,6) |
 | `event_time` | Время начала запроса в формате UTC (метка времени) |
-| `error_code_d` | Код ошибки, если запрос не выполнен. `0`означает отсутствие ошибок |
+| `error_code_d` | Код ошибки, если запрос не выполнен. `0` означает отсутствие ошибок |
 | `thread_id_d` | Идентификатор потока, выполнившего запрос |
-| `host_s` | Пустое |
+| `host_s` | Пусто |
 | `ip_s` | IP-адрес клиента, подключающегося к MySQL |
 | `user_s` | Имя пользователя, который исполняет запрос |
 | `sql_text_s` | Текст полного запроса |
@@ -122,10 +122,10 @@ ms.locfileid: "85362131"
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
 | `TimeGenerated [UTC]` | Метка времени, когда журнал был записан в формате UTC |
-| `Type` | Тип журнала Всегда `AzureDiagnostics` |
+| `Type` | Тип журнала Всегда `AzureDiagnostics`. |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
-| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL` |
+| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMYSQL`. |
 | `ResourceType` | `Servers` |
 | `ResourceId` | Универсальный код ресурса (URI) |
 | `Resource` | Имя сервера |
@@ -194,6 +194,6 @@ ms.locfileid: "85362131"
     | order by TimeGenerated asc nulls last
     ``` 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка журналов аудита в портал Azure](howto-configure-audit-logs-portal.md)

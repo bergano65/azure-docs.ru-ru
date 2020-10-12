@@ -8,10 +8,10 @@ ms.date: 09/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 16ee5fb59741d57f47083a0c5db852872ceb91d0
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89296096"
 ---
 # <a name="azure-security-baseline-for-logic-apps"></a>Базовый план безопасности Azure для Logic Apps
@@ -1190,13 +1190,13 @@ Logic Apps, необходимые для бизнес-операций, но к
 
 Защитите резервные копии ключей, управляемых клиентом. Обратите внимание, что это относится только к Logic Apps, выполняемым в средах служб Integration Services (ISE).
 
-Включите обратимое удаление и очистку защиты в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
+Включите Soft-Delete и очистите защиту в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
 
 - [Дополнительные сведения о непрерывности бизнес-процессов и аварийном восстановлении для Azure Logic Apps](business-continuity-disaster-recovery-guidance.md)
 
 - [Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps](customer-managed-keys-integration-service-environment.md)
 
-- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение Soft-Delete и очистка защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: apimpm
 ms.openlocfilehash: cfb7dd7a3831d90235b25af9598cfbc137ffcb3d
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87904961"
 ---
 # <a name="use-an-external-redis-compatible-cache-in-azure-api-management"></a>Использование внешнего Redis кэша в службе управления API Azure
@@ -74,7 +74,7 @@ ms.locfileid: "87904961"
 3. Щелкните **+ Добавить**.
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите свой кэш.
 5. Выберите **значение по умолчанию** или укажите нужный регион в раскрывающемся списке **использовать** .
-6. Щелкните **Сохранить**.
+6. Выберите команду **Сохранить**.
 
 ### <a name="add-an-azure-cache-for-redis-hosted-outside-of-the-current-azure-subscription-or-azure-in-general"></a>Добавление кэша Redis для Azure, размещенного за пределами текущей подписки Azure или Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "87904961"
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. Выберите **значение по умолчанию** или укажите нужный регион в раскрывающемся списке **использовать** .
 6. В поле **Строка подключения** укажите строку подключения к кэшу Redis для Azure.
-7. Щелкните **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 ### <a name="add-a-redis-cache-to-a-self-hosted-gateway"></a>Добавление кэша Redis в шлюз, размещенный на собственном сервере
 
@@ -94,7 +94,7 @@ ms.locfileid: "87904961"
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. Укажите нужное расположение самостоятельно размещенного шлюза или **значение по умолчанию** в раскрывающемся списке **использовать** .
 6. В поле **Connection string** (Строка подключения) укажите строку подключения к кэшу Redis.
-7. Щелкните **Сохранить**.
+7. Выберите команду **Сохранить**.
 
 ## <a name="use-the-external-cache"></a>Использование внешнего кэша
 

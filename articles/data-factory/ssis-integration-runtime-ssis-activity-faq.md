@@ -12,10 +12,10 @@ manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
 ms.openlocfilehash: 9b331ccee183ec101cf3449f12b4f656a1325819
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84118092"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
@@ -32,7 +32,7 @@ ms.locfileid: "84118092"
 
 ## <a name="common-errors-causes-and-solutions"></a>Распространенные ошибки, причины и решения
 
-### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>Сообщение об ошибке: "истекло время ожидания подключения" или "Служба обнаружила ошибку при обработке запроса. Повторите попытку."
+### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>Сообщение об ошибке: "истекло время ожидания подключения" или "Служба обнаружила ошибку при обработке запроса. Повторите попытку".
 
 Ниже приведены возможные причины и рекомендуемые действия.
 * Источник данных или назначение перегружены. Проверьте загрузку источника данных или назначения и убедитесь, что у него достаточно ресурсов. Например, если вы использовали базу данных SQL Azure, рассмотрите возможность увеличения масштаба, если база данных, скорее всего, истекает время ожидания.
@@ -76,8 +76,8 @@ ms.locfileid: "84118092"
     * Если вы используете файл Azure, сделайте следующее:
       * Путь к файлу должен начинаться с \\ \\ \<storage account name\> . File.Core.Windows.NET\\\<file share path\>
       * Домен должен иметь значение "Azure".
-      * Имя пользователя должно быть\<storage account name\>
-      * Пароль должен быть\<storage access key\>
+      * Имя пользователя должно быть \<storage account name\>
+      * Пароль должен быть \<storage access key\>
     * Если вы используете локальный файл, убедитесь, что виртуальная сеть, учетные данные для доступа к пакету и разрешения настроены правильно, чтобы среда выполнения интеграции Azure SSIS могла получить доступ к локальной общей папке.
 
 ### <a name="error-message-the-file-name--specified-in-the-connection-was-not-valid"></a>Сообщение об ошибке: "имя файла"... " указано недопустимое в соединении
@@ -136,36 +136,36 @@ ms.locfileid: "84118092"
 
 ### <a name="error-message-request-staging-task-with-operation-guid--fail-since-error-failed-to-dispatch-staging-operation-with-error-message-microsoftsqlserverintegrationservicesaisagentcoreaisagentexception-failed-to-load-data-proxy"></a>Сообщение об ошибке: "запрос промежуточной задачи с GUID операции... сбой с ошибкой: не удалось отправить промежуточную операцию. сообщение об ошибке: Microsoft. SqlServer. IntegrationServices. Аисаженткоре. Аисажентексцептион: не удалось загрузить прокси-сервер данных ".
 
-Убедитесь, что среда выполнения интеграции Azure SSIS настроена с помощью локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md).
+Убедитесь, что среда выполнения интеграции Azure SSIS настроена с Self-Hostedной средой выполнения интеграции. Дополнительные сведения можно найти на странице [настройка Self-Hosted IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md).
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2010-errormessage-the-self-hosted-integration-runtime--is-offline"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2010, ErrorMessage: локально размещенная Integration Runtime... отключено "
 
-Убедитесь, что локальная среда выполнения интеграции установлена и запущена. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md) .
+Убедитесь, что среда выполнения интеграции Self-Hosted установлена и запущена. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md) .
 
 ### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-the-requested-ole-db-provider--is-not-registered-if-the-64-bit-driver-is-not-installed-run-the-package-in-32-bit-mode"></a>Сообщение об ошибке: "ошибка промежуточной задачи: ErrorCode: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {" Оператионеррормессажес ":" Error: запрошенный поставщик OLE DB... не зарегистрировано. Если 64-разрядный драйвер не установлен, запустите пакет в 32-разрядном режиме...
 
-Убедитесь, что соответствующий поставщик, используемый соединителями OLE DB в вашем пакете, правильно установлен на компьютере локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
+Убедитесь, что соответствующий поставщик, используемый соединителями OLE DB в пакете, установлен на компьютере со средой выполнения интеграции Self-Hosted правильно. Дополнительные сведения можно найти по адресу [настройка Self-Hosted IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir)
 
 ### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: "ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {" Оператионеррормессажес ":" Error: System. IO. FileLoadException: не удалось загрузить файл или сборку "Microsoft. WindowsAzure. Storage", версия =..., культура = нейтральная, PublicKeyToken = 31bf3856ad364e35 или одна из его зависимостей. Определение манифеста найденной сборки не соответствует ссылке на сборку. ..."
 
-Одна из возможных причин заключается в том, что локальная среда выполнения интеграции не установлена или не обновлена должным образом. Предложить скачать и переустановить последнюю локальную среду выполнения интеграции. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md#installation-best-practices) .
+Одной из потенциальных причин является то, что среда выполнения интеграции Self-Hosted не установлена или не обновлена должным образом. Предложить скачать и переустановить последнюю локальную среду выполнения интеграции. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md#installation-best-practices) .
 
 ### <a name="error-message-a-connection-is-required-when-requesting-metadata-if-you-are-working-offline-uncheck-work-offline-on-the-ssis-menu-to-enable-the-connection"></a>Сообщение об ошибке: "при запросе метаданных требуется соединение. Если вы работаете в автономном режиме, снимите флажок "работать вне сети" в меню служб SSIS, чтобы включить подключение ".
 
 * Возможная причина и рекомендуемое действие.
-  * Если имеется также предупреждающее сообщение "компонент не поддерживает использование диспетчера соединений с параметром Коннектбипрокси value true" в журнале выполнения, это означает, что диспетчер соединений используется для компонента, который еще не поддерживал "Коннектбипрокси". Поддерживаемые компоненты можно найти на странице [Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#enable-ssis-packages-to-connect-by-proxy)
+  * Если имеется также предупреждающее сообщение "компонент не поддерживает использование диспетчера соединений с параметром Коннектбипрокси value true" в журнале выполнения, это означает, что диспетчер соединений используется для компонента, который еще не поддерживал "Коннектбипрокси". Поддерживаемые компоненты можно найти на странице [настройка Self-Hosted IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#enable-ssis-packages-to-connect-by-proxy) .
   * Журнал выполнения можно найти в [отчете SSMS](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
   * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "... \\ Ссистелеметри \\ ExecutionLog \\ ... "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"
 
-Убедитесь, что Visual C++ среда выполнения установлена на компьютере, где размещена локальная среда выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
+Убедитесь, что Visual C++ среда выполнения установлена на компьютере среды выполнения интеграции Self-Hosted. Дополнительные сведения можно найти по адресу [настройка Self-Hosted IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir)
 
 ### <a name="multiple-package-executions-are-triggered-unexpectedly"></a>Несколько запусков пакета вызываются неожиданно
 
 * Возможная причина и рекомендуемое действие.
   * Действие хранимой процедуры ADF или операция поиска используются для запуска выполнения пакета служб SSIS. Команда t-SQL может вызвать временную ошибку и запустить повторное выполнение, что приведет к выполнению нескольких пакетов.
-  * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу[https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
+  * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу [https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
   * Уточните команду t-SQL, чтобы выполнить повторный запуск, проверив, активировано ли уже выполнение.
 
 ### <a name="package-execution-takes-too-long"></a>Выполнение пакета занимает слишком много времени

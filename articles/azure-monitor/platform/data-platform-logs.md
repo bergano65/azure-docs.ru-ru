@@ -7,10 +7,10 @@ ms.tgt_pltfrm: na
 ms.date: 09/09/2020
 ms.author: bwren
 ms.openlocfilehash: e08c649b9a1d7e8b909a413ee435fce30a8d7e48
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90032790"
 ---
 # <a name="azure-monitor-logs-overview"></a>Обзор журналов Azure Monitor
@@ -51,7 +51,7 @@ Azure Monitor собирает данные журнала из различны
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о [запросах журнала](../log-query/log-query-overview.md) для извлечения и анализа данных из рабочей области log Analytics.
 - Прочитайте статью о [метриках в Azure Monitor](data-platform-metrics.md).

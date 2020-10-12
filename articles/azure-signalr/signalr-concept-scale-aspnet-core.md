@@ -8,10 +8,10 @@ ms.custom: devx-track-dotnet
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: d104e0f1f2c6a978a5fce2c046a36e50a7056970
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88928506"
 ---
 # <a name="scale-aspnet-core-signalr-applications-with-azure-signalr-service"></a>Масштабирование приложений ASP.NET Core SignalR с помощью службы Azure SignalR.
@@ -40,6 +40,6 @@ ASP.NET Core SignalR — это переписанная предыдущая в
 
 Как правило, масштабирование SignalR выполняется с помощью SQL Server, Служебной шины Azure или кэша Azure для Redis. Служба Azure SignalR автоматически выбирает метод масштабирования. Производительность и стоимость сопоставимы с этими подходами без сложной работы с этими службами. Вам нужно только обновить количество единиц для своей службы. Каждая единица поддерживает до 1000 клиентских подключений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство по созданию чата с помощью службы SignalR](signalr-quickstart-dotnet-core.md)
