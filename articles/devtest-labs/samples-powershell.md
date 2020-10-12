@@ -4,17 +4,17 @@ description: Примеры Azure PowerShell — это сценарии, кот
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: ce7a4f77aa0ea309afb81a54fd2f8f0a8f373e58
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86187733"
 ---
 # <a name="azure-powershell-samples-for-azure-lab-services"></a>Примеры Azure PowerShell для Служб лабораторий Azure
 
 В приведенной ниже таблице содержатся ссылки на примеры сценариев Azure PowerShell для Служб лабораторий Azure.
 
-| Сценарий | Описание |
+| Скрипт | Описание |
 |---|---|
 |[Добавление внешнего пользователя в лабораторию](scripts/add-external-user-to-lab.md)| Этот сценарий PowerShell добавляет внешнего пользователя в лабораторию в Azure DevTest Labs. |
 |[Добавление образов Marketplace в лабораторию](scripts/add-marketplace-images-to-lab.md)| Этот сценарий PowerShell добавляет образы marketplace в лабораторию в Azure DevTest Labs. |

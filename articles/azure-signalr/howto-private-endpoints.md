@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/06/2020
 ms.author: dayshen
 ms.openlocfilehash: 645b2c643c1c1d4fe82eb5998a35ccc48536603e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84302146"
 ---
 # <a name="use-private-endpoints-for-azure-signalr-service"></a>Использование частных конечных точек для службы SignalR Azure
@@ -57,7 +57,7 @@ ms.locfileid: "84302146"
 
 В приведенном выше примере записи ресурсов DNS для службы Azure SignalR "Foobar", разрешенные за пределами виртуальной сети, в которой размещается частная конечная точка, будут:
 
-| Имя                                                  | Type  | Значение                                                 |
+| Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``foobar.service.signalr.net``                        | CNAME | ``foobar.privatelink.service.signalr.net``            |
 | ``foobar.privatelink.service.signalr.net``            | Объект     | \<Azure SignalR Service public IP address\>           |
@@ -66,7 +66,7 @@ ms.locfileid: "84302146"
 
 Записи ресурсов DNS для "Foobar" при разрешении клиентом в виртуальной сети, где размещается частная конечная точка, будут:
 
-| Имя                                                  | Type  | Значение                                                 |
+| Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``foobar.service.signalr.net``                        | CNAME | ``foobar.privatelink.service.signalr.net``            |
 | ``foobar.privatelink.service.signalr.net``            | Объект     | 10.1.1.5                                              |
@@ -89,7 +89,7 @@ ms.locfileid: "84302146"
 
 ### <a name="create-a-private-endpoint-along-with-a-new-azure-signalr-service-in-the-azure-portal"></a>Создайте частную конечную точку и новую службу Azure SignalR в портал Azure
 
-1. При создании новой службы Azure SignalR выберите вкладку " **сеть** ". Выберите **Частная конечная точка** в качестве метода подключения.
+1. При создании новой службы Azure SignalR выберите вкладку **сеть** . Выберите **Частная конечная точка** в качестве метода подключения.
 
     ![Создание службы Azure SignalR — вкладка "сеть"](media/howto-private-endpoints/portal-create-blade-networking-tab.png)
 
@@ -186,7 +186,7 @@ ms.locfileid: "84302146"
 
 Учитывайте следующие известные проблемы, связанные с частными конечными точками для службы SignalR Azure.
 
-### <a name="free-tier"></a>Уровень "Бесплатный"
+### <a name="free-tier"></a>Уровень служб "Бесплатный"
 
 Вы не можете создать закрытую конечную точку для службы Azure SignalR уровня "бесплатный".
 
@@ -200,6 +200,6 @@ ms.locfileid: "84302146"
 
 Сейчас нельзя настроить правила [группы безопасности сети](../virtual-network/security-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются к частной конечной точке. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка контроля доступа к сети](howto-network-access-control.md)

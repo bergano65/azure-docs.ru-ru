@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: lahugh
 ms.openlocfilehash: 6a9567669445cb5aa94c1108051c961a216fabad
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335608"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
@@ -48,21 +48,19 @@ ms.locfileid: "91335608"
 
 После добавления файла YAML в средстве просмотра ресурсов отобразятся обе созданные службы Kubernetes: внутренняя служба (Azure-голосовать-Back) и внешняя служба (Azure-голосовать-Front) для доступа к приложению Azure для голосования. Внешняя служба включает связанный внешний IP-адрес, что позволяет легко просматривать приложение в браузере.
 
-:::image type="content" source="media/kubernetes-portal/portal-services.png" alt-text="Сведения о приложении Azure для голосования, отображаемые в портал Azure." lightbox="media/kubernetes-portal/portal-services.png":::
+:::image type="content" source="media/kubernetes-portal/portal-services.png" alt-text="Сведения о Pod Kubernetes, отображаемые в портал Azure." lightbox="media/kubernetes-portal/portal-services.png":::
 
 ### <a name="monitor-deployment-insights"></a>Мониторинг аналитики развертывания
 
 Кластеры AKS с включенным [Azure Monitor для контейнеров][enable-monitor] позволяют быстро просматривать аналитические сведения о развертывании. В представлении ресурсов Kubernetes пользователи могут просматривать состояние отдельных развертываний, включая использование ЦП и памяти, а также переход на Azure Monitor для получения более подробных сведений. Ниже приведен пример аналитической информации по развертыванию из примера кластера AKS.
 
-:::image type="content" source="media/kubernetes-portal/deployment-insights.png" alt-text="Аналитика развертывания, отображаемая в портал Azure." lightbox="media/kubernetes-portal/deployment-insights.png":::
+:::image type="content" source="media/kubernetes-portal/deployment-insights.png" alt-text="Сведения о Pod Kubernetes, отображаемые в портал Azure." lightbox="media/kubernetes-portal/deployment-insights.png":::
 
 ## <a name="edit-yaml"></a>Изменить YAML
 
 Представление ресурсов Kubernetes также включает редактор YAML. Встроенный редактор YAML означает, что вы можете обновлять или создавать службы и развертывания на портале и немедленно применять изменения.
 
-:::image type="content" source="media/kubernetes-portal/service-editor.png" alt-text="Редактор YAML для службы Kubernetes, отображаемой в портал Azure.":::
-
-После изменения YAML примените изменения, выбрав " **проверить и сохранить**", подтверждая изменения, а затем сохранив их еще раз.
+:::image type="content" source="media/kubernetes-portal/service-editor.png" alt-text="Сведения о Pod Kubernetes, отображаемые в портал Azure." **проверить и сохранить**", подтверждая изменения, а затем сохранив их еще раз.
 
 >[!WARNING]
 > Выполнять прямые изменения рабочей среды через пользовательский интерфейс или CLI не рекомендуется, вы должны использовать [рекомендации по непрерывной интеграции (CI) и непрерывному развертыванию (CD)](kubernetes-action.md). Возможности управления Kubernetes портала Azure и редактор YAML созданы для обучения и создания новых развертываний в параметрах разработки и тестирования.
@@ -82,7 +80,7 @@ ms.locfileid: "91335608"
 
 Для существующих кластеров может потребоваться включить представление ресурсов Kubernetes. Чтобы включить представление ресурсов, следуйте инструкциям на портале для кластера.
 
-:::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Портал Azure сообщение, чтобы включить представление ресурсов Kubernetes." lightbox="media/kubernetes-portal/enable-resource-view.png":::
+:::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Сведения о Pod Kubernetes, отображаемые в портал Azure." lightbox="media/kubernetes-portal/enable-resource-view.png":::
 
 > [!TIP]
 > Для ограничения доступа к серверу API только к общедоступной конечной точке брандмауэра можно добавить функцию AKS для [**IP-адресов разрешенного сервера API**](api-server-authorized-ip-ranges.md) . Другой вариант для таких кластеров — обновление `--api-server-authorized-ip-ranges` для включения доступа к локальному клиентскому компьютеру или диапазону IP-адресов (с которого осуществляется просмотр портала). Чтобы разрешить такой доступ, вам нужно знать общедоступный IPv4-адрес компьютера. Этот адрес можно найти с помощью приведенной ниже команды или путем поиска в веб-браузере «что такое IP-адрес».
@@ -95,7 +93,7 @@ az aks update -g $RG -n $AKSNAME --api-server-authorized-ip-ranges $CURRENT_IP/3
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как получить доступ к ресурсам Kubernetes для кластера AKS. Дополнительные сведения о ресурсах кластера и файлах YAML, доступ к которым осуществляется с помощью средства просмотра ресурсов Kubernetes, см. в разделе [развертывания и манифесты YAML][deployments] .
 

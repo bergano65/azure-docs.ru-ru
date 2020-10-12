@@ -13,17 +13,17 @@ ms.topic: conceptual
 ms.date: 08/19/2019
 ms.author: inhenkel
 ms.openlocfilehash: a9e34c4aaeb6fc2c151233b05ed5584e0e624148
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89297983"
 ---
 # <a name="transforms-and-jobs-in-media-services"></a>Преобразования и задания в службах мультимедиа
 
 В этом разделе приводятся сведения о [преобразованиях](/rest/api/media/transforms) и [заданиях](/rest/api/media/jobs) , а также объясняется связь между этими сущностями.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 ### <a name="transformsjobs-workflow"></a>Рабочий процесс преобразования и задания
 
@@ -119,7 +119,7 @@ ms.locfileid: "89297983"
 * [Коды ошибок](/rest/api/media/jobs/get#joberrorcode)
 * [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md) (содержит сведения о доступе к API, соглашения об именовании и т. д.).
 - Ознакомьтесь с этими учебниками:

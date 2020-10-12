@@ -4,10 +4,10 @@ description: В этой статье объясняется, как опубл�
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: 197d8eb1963300bc6576e664c7c3fd470cf70bb2
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86108266"
 ---
 # <a name="post-to-custom-topic-for-azure-event-grid"></a>Публикация в пользовательском разделе для службы "Сетка событий Azure"
@@ -34,7 +34,7 @@ az eventgrid topic show --name <topic-name> -g <topic-resource-group> --query "e
 (Get-AzEventGridTopic -ResourceGroupName <topic-resource-group> -Name <topic-name>).Endpoint
 ```
 
-## <a name="header"></a>Заголовок
+## <a name="header"></a>Header
 
 Добавьте в запрос значение заголовка `aeg-sas-key`, содержащее ключ для аутентификации.
 

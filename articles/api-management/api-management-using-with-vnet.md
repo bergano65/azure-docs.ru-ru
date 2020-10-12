@@ -14,10 +14,10 @@ ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
 ms.openlocfilehash: 5b96ac9cf43782764e88039d736ba61454d65911
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91539203"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
@@ -122,7 +122,7 @@ ms.locfileid: "91539203"
 | */1886, 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureMonitor         | Публикация [журналов диагностики и метрик](api-management-howto-use-azure-monitor.md), [работоспособность ресурсов](../service-health/resource-health-overview.md) и [Application Insights](api-management-howto-app-insights.md)                   | Внешний и внутренний  |
 | */25, 587, 25028                       | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Подключение к SMTP-ретранслятору для отправки сообщений электронной почты                    | Внешний и внутренний  |
 | * / 6381 - 6383              | Входящий и исходящий | TCP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Доступ к службе Redis для политик [кэша](api-management-caching-policies.md) между компьютерами         | Внешний и внутренний  |
-| */4290              | Входящий и исходящий | UDP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Счетчики синхронизации для политик [ограничения скорости](api-management-access-restriction-policies.md#LimitCallRateByKey) между компьютерами         | Внешний и внутренний  |
+| */4290              | Входящий и исходящий | Протокол UDP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Счетчики синхронизации для политик [ограничения скорости](api-management-access-restriction-policies.md#LimitCallRateByKey) между компьютерами         | Внешний и внутренний  |
 | * / *                        | Входящий трафик            | TCP                | AZURE_LOAD_BALANCER / VIRTUAL_NETWORK | Подсистема балансировки нагрузки инфраструктуры Azure                          | Внешний и внутренний  |
 
 >[!IMPORTANT]

@@ -7,10 +7,10 @@ ms.date: 08/28/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 76b7f97b6020a3a0d5571a3a105d15f7d7893485
-ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89147656"
 ---
 # <a name="use-azure-advisor-with-windows-virtual-desktop"></a>Использование помощника по Azure с виртуальным рабочим столом Windows
@@ -32,7 +32,7 @@ ms.locfileid: "89147656"
 
 При открытии помощника по Azure вы увидите пять категорий:
 
-- Стоимость
+- Cost
 - Безопасность
 - Надежность
 - Эффективность операционных процессов
@@ -58,7 +58,7 @@ ms.locfileid: "89147656"
 
 - При возникновении проблемы в виртуальном рабочем столе Windows всегда сначала следует проверять помощник по Azure. Помощник по Azure предоставит вам указания по решению проблемы или по крайней мере, к ресурсу, который может помочь.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об устранении рекомендаций см. в разделе [разрешение рекомендаций помощника по Azure](azure-advisor-recommendations.md).
 

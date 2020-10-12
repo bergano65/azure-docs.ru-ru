@@ -12,10 +12,10 @@ ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 3c8d78c164cefbab03d9d3fa783c75ded9773d38
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87075820"
 ---
 # <a name="geo-restore-for-sql-pool"></a>Геовосстановление для пула SQL
@@ -95,7 +95,7 @@ $GeoRestoredDatabase.status
 
 6. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
 - [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)

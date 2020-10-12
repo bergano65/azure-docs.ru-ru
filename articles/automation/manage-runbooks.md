@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 06/10/2020
 ms.topic: conceptual
 ms.openlocfilehash: 023864e23c0cd23df0de603e76acac651bd2458e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987578"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
@@ -293,15 +293,21 @@ Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 
 Щелкните плитку, чтобы открылась страница "Задания", на которой представлен сводный список всех выполненных заданий. На этой странице отображаются сведения о состоянии, имени runbook, времени запуска и времени выполнения каждого задания.
 
-:::image type="content" source="./media/manage-runbooks/automation-account-jobs-status-blade.png" alt-text="Снимок экрана со страницей "задания".":::
+:::image type="content" source="./media/manage-runbooks/automation-account-jobs-status-blade.png" alt-text="Снимок экрана со страницей &quot;задания&quot;.&quot;:::
 
 Список заданий можно отфильтровать, выбрав **Фильтровать задания**. Отфильтруйте список по определенной последовательности runbook или состоянию задания либо выберите вариант из раскрывающегося списка и укажите диапазон времени для поиска.
 
 ![Фильтрация по состоянию задания](./media/manage-runbooks/automation-account-jobs-filter.png)
 
-Кроме того, для просмотра сводных данных о состоянии заданий определенной последовательности runbook можно выбрать ее модуль на странице "Модули Runbook" учетной записи службы автоматизации, а затем выбрать элемент **Задания**. При выполнении этого действия отображается страница "Задания". Здесь можно щелкнуть запись задания, чтобы просмотреть сведения о ней и ее выходные данные.
+Кроме того, для просмотра сводных данных о состоянии заданий определенной последовательности runbook можно выбрать ее модуль на странице &quot;Модули Runbook" учетной записи службы автоматизации, а затем выбрать элемент **Задания**. При выполнении этого действия отображается страница "Задания". Здесь можно щелкнуть запись задания, чтобы просмотреть сведения о ней и ее выходные данные.
 
-:::image type="content" source="./media/manage-runbooks/automation-runbook-job-summary-blade.png" alt-text="Снимок экрана со страницей "задания" с выделенной кнопкой "ошибки".":::
+:::image type="content" source="./media/manage-runbooks/automation-runbook-job-summary-blade.png" alt-text="Снимок экрана со страницей &quot;задания&quot;.&quot;:::
+
+Список заданий можно отфильтровать, выбрав **Фильтровать задания**. Отфильтруйте список по определенной последовательности runbook или состоянию задания либо выберите вариант из раскрывающегося списка и укажите диапазон времени для поиска.
+
+![Фильтрация по состоянию задания](./media/manage-runbooks/automation-account-jobs-filter.png)
+
+Кроме того, для просмотра сводных данных о состоянии заданий определенной последовательности runbook можно выбрать ее модуль на странице &quot;Модули Runbook":::
 
 ### <a name="retrieve-job-statuses-using-powershell"></a>Получение данных о состоянии заданий с помощью PowerShell
 

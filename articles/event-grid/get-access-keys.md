@@ -4,10 +4,10 @@ description: В этой статье описывается получение 
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.openlocfilehash: e5694fe0b5f22f7f76285c344627005ea727ae3c
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86105869"
 ---
 # <a name="get-access-keys-for-event-grid-resources-topics-or-domains"></a>Получение ключей доступа для ресурсов сетки событий (разделы или домены)
@@ -18,7 +18,7 @@ ms.locfileid: "86105869"
 ## <a name="azure-portal"></a>Портал Azure
 В портал Azure перейдите на вкладку **ключи доступа** в **разделе сетки событий** или на странице **домена сетки событий** для раздела или домена.  
 
-:::image type="content" source="./media/get-access-keys/azure-portal.png" alt-text="Страница "ключи доступа"":::
+:::image type="content" source="./media/get-access-keys/azure-portal.png" alt-text="Страница &quot;ключи доступа&quot;":::
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 Используйте команду [Get-азевентгридтопиккэй](/powershell/module/az.eventgrid/get-azeventgridtopickey?view=azps-4.3.0) , чтобы получить ключи доступа для разделов. 

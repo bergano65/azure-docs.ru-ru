@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.openlocfilehash: 3182f7fa913cd61e6c51ea91be6b46e83a1ab949
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540108"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
@@ -137,7 +137,7 @@ ms.locfileid: "91540108"
 
     Если вы видите сертификат для CA_file, SSL_Cert и SSL_Key, необходимо будет обновить файл, добавив [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
-*   Если репликация данных выполняется между двумя базами данных Azure для MySQL, потребуется сбросить реплику, выполнив **вызов MySQL. az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication).
+*   Если репликация данных выполняется между двумя базами данных Azure для MySQL, потребуется сбросить реплику, выполнив команду **CALL MySQL.az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication).
 
 ### <a name="13-do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>13. у нас есть запрос на стороне сервера, чтобы проверить, используется ли протокол SSL?
 Чтобы проверить, используется ли SSL-соединение для подключения к серверу, обратитесь к [проверке SSL](howto-configure-ssl.md#verify-the-ssl-connection).

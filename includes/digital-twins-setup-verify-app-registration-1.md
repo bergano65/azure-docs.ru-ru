@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 7/22/2020
 ms.author: baanders
 ms.openlocfilehash: 9d09f29dc5fbe6ed6a358c37a6064319c28e35f8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320780"
 ---
 Чтобы проверить, правильно ли настроены разрешения, перейдите на [страницу обзора регистрации приложений Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) в портал Azure. Вы можете перейти на эту страницу самостоятельно, выполнив поиск *Регистрация приложений* на панели поиска портала.

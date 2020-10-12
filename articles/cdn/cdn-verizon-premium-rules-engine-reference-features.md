@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/02/2020
 ms.author: allensu
 ms.openlocfilehash: 0ea4f167b992ccfbc4156ac06c8f636d2ef4a355
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84343206"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-features"></a>Функции обработчика правил Azure CDN от Verizon Premium
@@ -32,10 +32,10 @@ ms.locfileid: "84343206"
 * [Optimize](#optimize) (Оптимизация)
 * [Исходный домен](#origin)
 * [Специальность](#specialty)
-* [URL](#url)
+* [URL-адрес](#url)
 * [Брандмауэр веб-приложения](#waf)
 
-### <a name="access"></a><a name="access"></a>Access
+### <a name="access"></a><a name="access"></a>Доступ
 
 Эти функции предназначены для управления доступом к содержимому.
 
@@ -82,7 +82,7 @@ ms.locfileid: "84343206"
 
 **[К началу](#top)**
 
-### <a name="comment"></a><a name="comment"></a>Комментировать
+### <a name="comment"></a><a name="comment"></a>Комментарий
 
 Функция "Комментарий" позволяет добавлять примечания в правила.
 

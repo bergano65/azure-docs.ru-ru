@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/14/2020
 ms.author: alkohli
 ms.openlocfilehash: 85614ab6455e149d64b7d1b9774c37c764bb600f
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90055883"
 ---
 # <a name="azure-stack-edge-and-azure-data-box-gateway-2007-release-notes"></a>Заметки о выпуске Azure Stack и Шлюз Azure Data Box 2007
@@ -45,7 +45,7 @@ ms.locfileid: "90055883"
 
 В этом выпуске не указаны новые проблемы. Все указанные в выпуске проблемы были перенесены из предыдущих выпусков. Чтобы просмотреть список известных проблем, перейдите к разделу [Известные проблемы в общедоступном выпуске](data-box-gateway-release-notes.md#known-issues-in-ga-release).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подготовка к развертыванию Azure Stack пограничных устройств](data-box-edge-deploy-prep.md)
 - [Подготовка к развертыванию Шлюз Azure Data Box](data-box-gateway-deploy-prep.md)
