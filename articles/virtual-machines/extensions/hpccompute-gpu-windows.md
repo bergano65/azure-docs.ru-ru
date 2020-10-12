@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: akjosh
 ms.openlocfilehash: 4491171062e582db8388c3eff380d67ea1a0c51c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87085662"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
@@ -37,9 +37,9 @@ ms.locfileid: "87085662"
 
 | Distribution | Версия |
 |---|---|
-| Windows 10 | Ядро |
-| Windows Server 2016 | Ядро |
-| Windows Server 2012 R2 | Ядро |
+| Windows 10 | Основные сведения |
+| Windows Server 2016 | Основные сведения |
+| Windows Server 2012 R2 | Основные сведения |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -76,7 +76,7 @@ ms.locfileid: "87085662"
 | версия_API | 2015-06-15 | Дата |
 | publisher | Microsoft.HpcCompute | строка |
 | type | NvidiaGpuDriverWindows | строка |
-| typeHandlerVersion | 1.3 | INT |
+| typeHandlerVersion | 1,3 | INT |
 
 
 ## <a name="deployment"></a>Развертывание

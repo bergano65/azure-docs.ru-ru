@@ -8,10 +8,10 @@ author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 7/14/2020
 ms.openlocfilehash: 4c4455d62f32acb1cfebde8f5e4d97de5bda17c2
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89463705"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
@@ -72,7 +72,7 @@ ms.locfileid: "89463705"
 > [!IMPORTANT]
 > Необходимо повторно сертифицировать приложения каждые 6 месяцев, чтобы они оставались на AppSource. Дополнительные сведения см. в статье политика [сертификации коммерческого магазина](https://docs.microsoft.com/legal/marketplace/certification-policies)Marketplace.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Обратитесь к менеджеру по работе с партнерами или обратитесь в [службу поддержки партнеров Майкрософт](https://aka.ms/marketplacepublishersupport) за помощью к вашей учетной записи. Общие сведения о программе Business Applications ISV Connect см. в следующих статьях:
 

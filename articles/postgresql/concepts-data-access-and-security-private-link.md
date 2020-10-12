@@ -7,13 +7,13 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.openlocfilehash: 84c68125ab7e8256b8ca949a0f4b49c5ccd5162f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90884645"
 ---
-# <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка для базы данных Azure для PostgreSQL — один сервер
+# <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка на сервер базы данных Azure для PostgreSQL-Single
 
 Частная ссылка позволяет создавать частные конечные точки для базы данных Azure для PostgreSQL-Single Server и, таким образом, предоставляет службы Azure в частной виртуальной сети (VNet). Частная конечная точка предоставляет частный IP-адрес, который можно использовать для подключения к серверу базы данных, как и любой другой ресурс в виртуальной сети.
 
@@ -72,21 +72,21 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 * Выберите отдельное PEC из списка, щелкнув его.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выберите закрытую конечную точку, ожидающие утверждения":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выбор закрытого портала конечной точки":::
 
 * Администратор сервера PostgreSQL может одобрить или отклонить PEC и при необходимости добавить короткий текст ответа.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выберите сообщение частной конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выбор закрытого портала конечной точки":::
 
 * После утверждения или отклонения список будет отражать соответствующее состояние вместе с текстом ответа.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="выберите конечное состояние частной конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="Выбор закрытого портала конечной точки":::
 
 ## <a name="use-cases-of-private-link-for-azure-database-for-postgresql"></a>Варианты использования частной ссылки для базы данных Azure для PostgreSQL
 
 Клиенты могут подключаться к частной конечной точке из той же виртуальной сети, одноранговой виртуальной сети в том же регионе или через подключение между виртуальными сетями в разных регионах. Кроме того, клиенты могут подключаться из локальной среды с помощью ExpressRoute, частного пиринга или VPN-туннелирования. Ниже приведена упрощенная схема, на которой показаны распространенные варианты использования.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выберите Общие сведения о конечной точке частного назначения":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выбор закрытого портала конечной точки":::
 
 ### <a name="connecting-from-an-azure-vm-in-peered-virtual-network-vnet"></a>Подключение из виртуальной машины Azure в одноранговой виртуальной сети (VNet)
 Настройте [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-powershell) , чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в одноранговой виртуальной сети.
@@ -124,7 +124,7 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 Чтобы узнать, как настроить доступ к общедоступной **сети** для сервера базы данных Azure для PostgreSQL от портал Azure, см. [инструкции по настройке запрета доступа к общедоступной сети](howto-deny-public-network-access.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о функциях безопасности для одного сервера базы данных Azure для PostgreSQL см. в следующих статьях:
 

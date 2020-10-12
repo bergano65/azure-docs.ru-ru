@@ -4,10 +4,10 @@ description: Мониторинг приложений с помощью Azure A
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.openlocfilehash: 714488d88b269f252dfd6677f847db315969a270
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90970609"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
@@ -51,11 +51,11 @@ Application Insights всегда предоставляло сводную па
 
 ![Кнопка "Обзор"](./media/overview-dashboard/app-insights-overview-dashboard-07.png)
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если выбрать **параметр настроить параметры плитки** и задать настраиваемый диапазон времени, превышающий 31 день, на панели мониторинга не будут отображаться данные за 31 день, даже если срок хранения данных по умолчанию 90 дней. В настоящее время обходной путь для этого поведения отсутствует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Воронки](./usage-funnels.md)
 - [Сохранение](./usage-retention.md)

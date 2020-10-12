@@ -14,10 +14,10 @@ ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 418be35cb7996acaa7f11f37627d065451c9c7c6
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90055220"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Ограничение разрешений гостевого доступа (Предварительная версия) в Azure Active Directory
@@ -47,7 +47,7 @@ Azure Active Directory (Azure AD) позволяет ограничить воз
 
     ![Страница параметров внешней совместной работы Azure AD](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
 
-1. Выберите **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
+1. Щелкните **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
 
 ## <a name="update-with-the-microsoft-graph-api"></a>Обновление с помощью Microsoft Graph API
 
@@ -103,9 +103,9 @@ GET https://graph.microsoft.com/beta/policies/authorizationPolicy/authorizationP
 
 С помощью этой функции мы добавили возможность настройки ограниченных разрешений с помощью командлетов PowerShell версии 2. Командлеты PowerShell Get и Set опубликованы в версии 2.0.2.85.
 
-### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Get, команда: Get-Азуреадмсаусоризатионполици
+### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Get, команда: Get-AzureADMSAuthorizationPolicy
 
-Пример
+Пример.
 
 ````PowerShell
 PS C:\WINDOWS\system32> Get-AzureADMSAuthorizationPolicy
@@ -119,9 +119,9 @@ GuestUserRoleId                                   : 10dae51f-b6af-4016-8d66-8c2a
 PermissionGrantPolicyIdsAssignedToDefaultUserRole : {user-default-legacy}
 ````
 
-### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Команда Set: Set-Азуреадмсаусоризатионполици
+### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Команда Set: Set-AzureADMSAuthorizationPolicy
 
-Пример
+Пример.
 
 ````PowerShell
 PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
@@ -147,10 +147,10 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 - Формы
 - Планировщик в командах
 - Приложение планировщика
-- Project
+- Проект
 - Yammer
 
-## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
 
 Вопрос | Ответ
 -------- | ------
@@ -162,7 +162,7 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 Будут ли эти разрешения установлены по умолчанию? | Нет. Существующие разрешения по умолчанию остаются без изменений. При необходимости можно задать более ограниченные разрешения.
 Существуют ли требования к лицензиям для этой функции? | Нет, новые требования к лицензированию с этой функцией отсутствуют.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о существующих разрешениях гостя в Azure AD см. [в разделе что такое разрешения пользователя по умолчанию в Azure Active Directory?](../fundamentals/users-default-permissions.md).
 - Дополнительные сведения о методах API Microsoft Graph, позволяющих ограничивать гостевой доступ, см. в разделе [тип ресурса authorizationPolicy](/graph/api/resources/authorizationpolicy).

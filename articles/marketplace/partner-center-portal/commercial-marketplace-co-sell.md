@@ -8,10 +8,10 @@ author: palanis-MSFT
 ms.author: palanis
 ms.date: 05/12/2020
 ms.openlocfilehash: 6088569efed56d4453e4f1b0806af68f206cd2e9
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90033257"
 ---
 # <a name="co-sell-option-in-partner-center"></a>Вариант совместной продажи в Центре партнеров
@@ -101,6 +101,6 @@ ms.locfileid: "90033257"
 
 * *Штаты/провинции (необязательно):*  При заполнении шаблона используйте формат XX-XX, указанный в [таблице States/провинции](./commercial-marketplace-co-sell-states.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. [в статье продажа с корпорацией Майкрософт](https://partner.microsoft.com/membership/sell-with-microsoft).

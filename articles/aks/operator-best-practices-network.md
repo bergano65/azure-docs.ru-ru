@@ -6,10 +6,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 12/10/2018
 ms.openlocfilehash: 9ec6423a853aacbc8a03cc5472bf1a95a5623b1f
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89482731"
 ---
 # <a name="best-practices-for-network-connectivity-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по подключению сетей и обеспечению безопасности в службе Azure Kubernetes (AKS)
@@ -160,7 +160,7 @@ spec:
 
 Сеть управления для узла-бастиона должна быть также защищена. Используйте [Azure ExpressRoute][expressroute] или [VPN-шлюз][vpn-gateway] для подключения к локальной сети и управляйте доступом с помощью групп безопасности сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описаны вопросы, связанные с безопасностью и подключению сетей. См. дополнительные сведения о [сетях в Службе Azure Kubernetes (AKS)][aks-concepts-network]
 

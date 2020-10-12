@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
 ms.openlocfilehash: d64414abfbc62e52b172a2c42796ec8d89d1719f
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88930066"
 ---
 # <a name="customize-the-lifecycle-of-a-web-or-worker-role-in-net"></a>Адаптируйте жизненный цикл веб-роли или рабочей роли в .NET
@@ -75,7 +75,7 @@ public override bool OnStart()
 ### <a name="implementing-the-aspnet-lifecycle-methods-for-a-web-role"></a>Реализация методов жизненного цикла ASP.NET для веб-роли
 Для управления жизненным циклом роли можно использовать методы ASP.NET в дополнение к тем, которые предоставляет класс **RoleEntryPoint**. Это может быть полезно для обеспечения совместимости при переносе существующего приложения ASP.NET в Azure. Методы жизненного цикла ASP.NET вызываются из методов **RoleEntryPoint**. Метод **Application\_Start** вызывается по завершении вызова метода **RoleEntryPoint.OnStart**. Метод **Application\_End** вызывается перед вызовом метода **RoleEntryPoint.OnStop**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как [создать пакет облачной службы](cloud-services-model-and-package.md).
 
 

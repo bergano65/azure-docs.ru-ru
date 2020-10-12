@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
 ms.openlocfilehash: c84133d5728f7b6593e0606dda2eef28b8167e43
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90972869"
 ---
 # <a name="workbook-time-parameters"></a>Параметры времени книги
@@ -78,7 +78,7 @@ requests
 | make-series Requests = count() default = 0 on timestamp from {TimeRange:start} to {TimeRange:end} step {TimeRange:grain}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

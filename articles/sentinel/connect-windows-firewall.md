@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 08/05/2020
 ms.author: yelevin
 ms.openlocfilehash: 5518da7d22d14de105c07e88b14e94d4b184269b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90883815"
 ---
 # <a name="connect-windows-defender-firewall-with-advanced-security-to-azure-sentinel"></a>Подключение брандмауэра защитника Windows к Azure Sentinel с повышенной безопасностью
@@ -37,7 +37,7 @@ ms.locfileid: "90883815"
 
 - Необходимо иметь разрешения на чтение и запись в рабочей области, к которой подключены компьютеры, которые вы хотите отслеживать.
 
-- В дополнение к любым ролям **Sentinel Azure** необходимо назначить роль **участника log Analytics** в решении секуритинсигхтс в этой рабочей области. [Подробнее](../role-based-access-control/built-in-roles.md#log-analytics-contributor)
+- В дополнение к любым ролям **Sentinel Azure** необходимо назначить роль **участника log Analytics** в решении секуритинсигхтс в этой рабочей области. [Дополнительные сведения](../role-based-access-control/built-in-roles.md#log-analytics-contributor)
 
 ## <a name="enable-the-connector"></a>Включение соединителя 
 
@@ -83,7 +83,7 @@ ms.locfileid: "90883815"
  
 Так как журналы брандмауэра Windows отправляются в Azure Sentinel только в том случае, если локальный файл журнала достигает емкости, размер журнала по умолчанию 4096 КБ, скорее всего, приведет к высокой задержке сбора данных. Можно уменьшить задержку, понизьте размер файла журнала. См. инструкции по [настройке журнала брандмауэра Windows](https://docs.microsoft.com/windows/security/threat-protection/windows-firewall/configure-the-windows-firewall-log). Обратите внимание, что при определении минимально возможного размера журнала (1 КБ) практически не приведет к задержке сбора, это также может негативно сказаться на производительности локального компьютера. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить брандмауэр Windows к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

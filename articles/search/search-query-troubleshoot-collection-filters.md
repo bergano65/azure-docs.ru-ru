@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 3050f701c11773207aa6054d4d08d908d87b2ce7
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88932072"
 ---
 # <a name="troubleshooting-odata-collection-filters-in-azure-cognitive-search"></a>Устранение неполадок фильтров коллекции OData в Azure Когнитивный поиск
@@ -171,10 +171,10 @@ ms.locfileid: "88932072"
 
     и хотя это выражение разрешено, оно не полезно, поскольку условия перекрываются:
     - `ratings/any(r: r ne 5 or r gt 7)`
-  - Простые выражения сравнения, включающие,,, `eq` `lt` или, `le` `gt` `ge` могут сочетаться с `and` / `or` . Например:
+  - Простые выражения сравнения, включающие,,, `eq` `lt` или, `le` `gt` `ge` могут сочетаться с `and` / `or` . Пример:
     - `ratings/any(r: r gt 2 and r le 5)`
     - `ratings/any(r: r le 5 or r gt 7)`
-  - Выражения сравнения, Объединенные с `and` (объединения), можно объединять с помощью `or` . Эта форма известна в логической логике как "[Дисжунктиве обычная форма](https://en.wikipedia.org/wiki/Disjunctive_normal_form)" (ДНФ). Например:
+  - Выражения сравнения, Объединенные с `and` (объединения), можно объединять с помощью `or` . Эта форма известна в логической логике как "[Дисжунктиве обычная форма](https://en.wikipedia.org/wiki/Disjunctive_normal_form)" (ДНФ). Пример:
     - `ratings/any(r: (r gt 2 and r le 5) or (r gt 7 and r lt 10))`
 - Правила для `all` :
   - Простые выражения равенства не могут быть полезны вместе с другими выражениями. Например, это выражение разрешено:
@@ -185,10 +185,10 @@ ms.locfileid: "88932072"
 
     и хотя это выражение разрешено, оно не полезно, поскольку условия перекрываются:
     - `ratings/all(r: r eq 5 and r le 7)`
-  - Простые выражения сравнения, включающие,,, `ne` `lt` или, `le` `gt` `ge` могут сочетаться с `and` / `or` . Например:
+  - Простые выражения сравнения, включающие,,, `ne` `lt` или, `le` `gt` `ge` могут сочетаться с `and` / `or` . Пример:
     - `ratings/all(r: r gt 2 and r le 5)`
     - `ratings/all(r: r le 5 or r gt 7)`
-  - Выражения сравнения в сочетании с `or` (дизъюнкции) можно объединять с помощью `and` . Эта форма известна в логической логике как "[был соединительным обычная форма](https://en.wikipedia.org/wiki/Conjunctive_normal_form)" (cnf). Например:
+  - Выражения сравнения в сочетании с `or` (дизъюнкции) можно объединять с помощью `and` . Эта форма известна в логической логике как "[был соединительным обычная форма](https://en.wikipedia.org/wiki/Conjunctive_normal_form)" (cnf). Пример:
     - `ratings/all(r: (r le 2 or gt 5) and (r lt 7 or r ge 10))`
 
 <a name="bkmk_complex"></a>

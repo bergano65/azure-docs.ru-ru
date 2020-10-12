@@ -7,10 +7,10 @@ ms.author: karolz
 ms.reviewer: danlep
 ms.date: 05/28/2020
 ms.openlocfilehash: fbf5dfd68b823b600b11cad3643e5d4004b85ff5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84309821"
 ---
 # <a name="pull-images-from-an-azure-container-registry-to-a-kubernetes-cluster"></a>Извлечение образов из реестра контейнеров Azure в кластер Kubernetes
@@ -45,9 +45,9 @@ kubectl create secret docker-registry <secret-name> \
     --docker-username=<service-principal-ID> \
     --docker-password=<service-principal-password>
 ```
-Здесь:
+Где:
 
-| Значение | Описание: |
+| Значение | Описание |
 | :--- | :--- |
 | `secret-name` | Имя секрета для получения образа, например запись *контроля доступа — секретный код* |
 | `namespace` | Пространство имен Kubernetes для помещения секрета в <br/> Требуется только в том случае, если вы хотите поместить секрет в пространство имен, отличное от пространства имен по умолчанию |
@@ -74,10 +74,10 @@ spec:
     - name: acr-secret
 ```
 
-В предыдущем примере `my-awesome-app:v1` — это имя образа, который необходимо извлечь из реестра контейнеров Azure, а `acr-secret` — это имя опрашивающего секрета, созданного для доступа к реестру. При развертывании Pod Kubernetes автоматически извлекает образ из реестра, если он еще не существует в кластере.
+В предыдущем примере `my-awesome-app:v1` — это имя образа, который необходимо извлечь из реестра контейнеров Azure, а  `acr-secret` — это имя опрашивающего секрета, созданного для доступа к реестру. При развертывании Pod Kubernetes автоматически извлекает образ из реестра, если он еще не существует в кластере.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе с субъектами-службами и реестром контейнеров Azure см. [в статье Проверка подлинности реестра контейнеров Azure с помощью субъектов-служб](container-registry-auth-service-principal.md) .
 * Дополнительные сведения о секретных параметрах образа см. в [документации по Kubernetes](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod) .

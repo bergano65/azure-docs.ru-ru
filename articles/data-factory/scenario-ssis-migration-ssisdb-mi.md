@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 9/12/2019
 ms.openlocfilehash: 6de08faee78deeb86117084b420eb5043153f62d
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88186052"
 ---
 # <a name="ssis-migration-with-azure-sql-managed-instance-as-the-database-workload-destination"></a>Миграция служб SSIS с помощью Управляемый экземпляр Azure SQL в качестве назначения рабочей нагрузки базы данных
@@ -40,11 +40,11 @@ SQL Управляемый экземпляр имеет собственный 
 
 - [Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/introduction).
 - [Среда выполнения интеграции Azure SSIS](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)
-- [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview)
+- [Миграция баз данных Azure](https://docs.microsoft.com/azure/dms/dms-overview)
 - [Сетевые топологии для миграции SQL Управляемый экземпляр с помощью DMS](https://docs.microsoft.com/azure/dms/resource-network-topologies)
 - [Миграция пакетов служб SSIS в Управляемый экземпляр SQL](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages-managed-instance)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database)
 - [Запуск пакетов служб SSIS, развернутых в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-run-packages)

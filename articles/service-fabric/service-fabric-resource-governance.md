@@ -4,10 +4,10 @@ description: Azure Service Fabric позволяет указать ограни
 ms.topic: conceptual
 ms.date: 8/9/2017
 ms.openlocfilehash: 11ca6e29829d911717a829b3e4dee0a190856a52
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81115151"
 ---
 # <a name="resource-governance"></a>Управление ресурсами
@@ -232,7 +232,7 @@ ms.locfileid: "81115151"
     </ServiceManifestImport>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о диспетчере кластерных ресурсов см. в статье [Общие сведения о диспетчере кластерных ресурсов Service Fabric](service-fabric-cluster-resource-manager-introduction.md).
 * Дополнительные сведения о модели приложения, пакетах служб и пакетах кода см. в статье [Моделирование приложения в структуре службы](service-fabric-application-model.md).

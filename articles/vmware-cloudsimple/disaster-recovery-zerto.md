@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 0e019a9229b671be2fb73e758bd39f33657bc2d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77083130"
 ---
 # <a name="set-up-cloudsimple-private-cloud-as-a-disaster-recovery-site-for-on-premises-vmware-workloads"></a>Настройка частного облака Клаудсимпле в качестве сайта аварийного восстановления для локальных рабочих нагрузок VMware
@@ -46,7 +46,7 @@ ms.locfileid: "77083130"
 3. [Настройка ЗВМ и ВРА в частном облаке Клаудсимпле](#set-up-zvm-and-vra-on-your-private-cloud)
 4. [Настройка виртуальной группы защиты Zerto](#set-up-zerto-virtual-protection-group)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Чтобы включить виртуальную репликацию Zerto из локальной среды в частное облако, выполните следующие предварительные требования.
 
@@ -93,6 +93,6 @@ ms.locfileid: "77083130"
 6. При необходимости настройте параметры сети для отдельных виртуальных машин и создайте ВПГ.
 7. Протестируйте отработку отказа после завершения репликации.
 
-## <a name="reference"></a>Справка
+## <a name="reference"></a>Справочник
 
 [Документация по Zerto](https://www.zerto.com/myzerto/technical-documentation/)

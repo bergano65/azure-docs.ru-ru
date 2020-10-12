@@ -11,10 +11,10 @@ ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.openlocfilehash: 7f7f999c145903be5db3b20ab60bd0f5a18778ea
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89463645"
 ---
 # <a name="troubleshoot-saml-based-single-sign-on-in-azure-active-directory"></a>Устранение неполадок единого входа на основе SAML в Azure Active Directory
@@ -46,14 +46,14 @@ ms.locfileid: "89463645"
     * Если шаблон не поддерживается, при попытке ввести значение в текстовом поле появляется красный восклицательный знак. Если навести на него указатель мыши, отображаются поддерживаемые шаблоны.
     * В этом учебнике для приложения также можно получить сведения о поддерживаемых шаблонах. В разделе **Настройка единого входа Azure AD**. Перейдите к шагу для настройки значений в разделе **Домены и URL-адреса приложения**.
 
-Если значения не совпадают с шаблонами, предварительно настроенными в Azure AD. Можно сделать следующее:
+Если значения не совпадают с шаблонами, предварительно настроенными в Azure AD. Вы можете:
 -   Обратитесь к поставщику приложения, чтобы получить значения, соответствующие предварительно настроенному шаблону в Azure AD
 -   Кроме того, вы можете обратиться в группу разработчиков Azure AD по адресу <aadapprequest@microsoft.com> или оставить комментарий в руководстве, чтобы запросить обновление поддерживаемых шаблонов для приложения.
 
 ## <a name="where-do-i-set-the-entityid-user-identifier-format"></a>Можно ли изменить формат идентификатора EntityID (идентификатора пользователя)?
 Вы не можете изменить формат EntityID (идентификатора пользователя), который Azure AD отправляет приложению после проверки подлинности пользователя.
 
-Azure AD выбирает формат атрибута NameID (идентификатор пользователя) на основе выбранного значения или формата, который был запрошен приложением в запросе проверки подлинности SAML. Дополнительные сведения см. в статье [протокол единого входа SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#authnrequest) в разделе NameIDPolicy.
+Azure AD выбирает формат атрибута NameID (идентификатор пользователя) на основе выбранного значения или формата, который был запрошен приложением в запросе проверки подлинности SAML. Дополнительные сведения см. в статье [единый Sign-On протокол SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#authnrequest) в разделе NameIDPolicy.
 
 ## <a name="cant-find-the-azure-ad-metadata-to-complete-the-configuration-with-the-application"></a>Не удается найти метаданные Azure AD для завершения настройки в приложении
 Чтобы скачать метаданные приложения или сертификат из Azure AD, сделайте следующее:

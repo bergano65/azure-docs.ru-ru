@@ -5,10 +5,10 @@ ms.date: 11/22/2019
 ms.topic: how-to
 ms.reviewer: janders
 ms.openlocfilehash: 337d01abc51d310d06aeea3427b770132be4824c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85208779"
 ---
 # <a name="how-to-configure-azure-active-directory-access-for-azure-blockchain-service"></a>Настройка Azure Active Directoryного доступа для службы Azure Блокчейн
@@ -17,7 +17,7 @@ ms.locfileid: "85208779"
 
 Azure AD обеспечивает облачное управление удостоверениями и позволяет использовать единое удостоверение во всем корпоративном приложении и доступ к приложениям в Azure. Служба Блокчейн Azure интегрирована с Azure AD и предоставляет такие преимущества, как Федерация идентификации, единый вход и многофакторная идентификация.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Создание элемента блокчейн с помощью портал Azure](create-member.md)
 
@@ -41,7 +41,7 @@ Azure AD обеспечивает облачное управление удос
 
     ![Добавление назначения роли](./media/configure-aad/add-role-assignment.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="grant-node-level-access"></a>Предоставление доступа на уровне узла
 
@@ -87,9 +87,9 @@ git clone https://github.com/Microsoft/azure-blockchain-connector.git
 connector.exe -remote <myBlockchainEndpoint>  -method aadclient -client-id <myClientID> -client-secret "<myClientSecret>" -tenant-id <myAADDirectory>
 ```
 
-| Параметр | Описание: |
+| Параметр | Описание |
 |-----------|-------------|
-| Идентификатор клиента | Домен Azure AD, например`yourdomain.onmicrosoft.com`
+| Идентификатор клиента | Домен Azure AD, например `yourdomain.onmicrosoft.com`
 | client-id | Идентификатор клиента зарегистрированного приложения в Azure AD
 | client-secret | Секрет клиента зарегистрированного приложения в Azure AD
 

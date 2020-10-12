@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: 56e0d40bcbfb97f57b63dc82da1a6604f83dffad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85563620"
 ---
 # <a name="what-is-a-secured-virtual-hub"></a>Что такое защищенный виртуальный концентратор?
@@ -28,6 +28,6 @@ ms.locfileid: "85563620"
 
 С помощью диспетчера брандмауэра в портал Azure можно создать новый защищенный виртуальный концентратор или преобразовать существующий виртуальный концентратор, созданный ранее с помощью виртуальной глобальной сети Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о создании защищенного виртуального концентратора и его использовании для защиты и управления концентратором и периферийной сетью см. [в статье руководство. Защита облачной сети с помощью диспетчера брандмауэра Azure с использованием портал Azure](secure-cloud-network.md).

@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 158caf3a6c4cc0efc2f89e18d065a0112b481ee9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91274050"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
@@ -61,7 +61,7 @@ ms.locfileid: "91274050"
 
 ### <a name="can-i-block-access-to-the-azure-portal-for-guest-users"></a>Можно ли заблокировать доступ к порталу Azure для гостевых пользователей?
 
-Да! Вы можете создать политику условного доступа, которая блокирует доступ к портал Azure всем гостевым и внешним пользователям. Но будьте осторожны при настройке этой политики, чтобы случайно не заблокировать доступ для участников и администраторов.
+Да. Вы можете создать политику условного доступа, которая блокирует доступ к портал Azure всем гостевым и внешним пользователям. Но будьте осторожны при настройке этой политики, чтобы случайно не заблокировать доступ для участников и администраторов.
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами администратора безопасности или администратора условного доступа.
 2. В портал Azure выберите **Azure Active Directory**. 

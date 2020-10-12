@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: c1793a22c59cda279a9d8c4522bcec2606d25582
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "67673486"
 ---
 Чтобы на портале Azure просмотреть состояние подключения для VPN-шлюза в модели Resource Manager, перейдите к нужному подключению. Ниже показано, как перейти к подключению и проверить его.

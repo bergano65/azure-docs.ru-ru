@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 1b1cf90efa14345fa8395f5f62fd80934b922352
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91273013"
 ---
 # <a name="create-azure-arc-enabled-postgresql-hyperscale-using-azure-data-studio"></a>Создание PostgreSQL с поддержкой дуги Azure с помощью Azure Data Studio
@@ -56,7 +56,7 @@ _**Server-Group-Name** — имя группы серверов, которая 
 Дополнительные сведения о SCC в OpenShift см. в [документации по OpenShift](https://docs.openshift.com/container-platform/4.2/authentication/managing-security-context-constraints.html).
 Теперь вы можете реализовать следующий шаг.
 
-## <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы серверов PostgreSQL в службе "Дуга Azure" с поддержкой геомасштабирования
+## <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы сервера с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
 1. Запустить Azure Data Studio
 1. На вкладке подключения щелкните три точки в верхнем левом углу и выберите "создать развертывание".
@@ -77,7 +77,7 @@ _**Server-Group-Name** — имя группы серверов, которая 
 
 Через несколько минут создание будет успешно завершено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Управление группой серверов с помощью Azure Data Studio](manage-postgresql-hyperscale-server-group-with-azure-data-studio.md)
 - [Мониторинг группы серверов](monitor-grafana-kibana.md)
 - Ознакомьтесь с основными понятиями и руководствами по использованию службы "база данных Azure для PostgreSQL", чтобы распределить данные между несколькими узлами PostgreSQL, а также получить преимущества от всех возможностей службы "база данных Azure для postgres". :
@@ -91,7 +91,7 @@ _**Server-Group-Name** — имя группы серверов, которая 
 
     > \* В приведенных выше документах пропустите разделы **Вход в портал Azure**& **создать базу данных Azure для PostgreSQL-Scale (Цитус)**. Реализуйте оставшиеся шаги в развертывании Azure ARC. Эти разделы относятся к службе "база данных Azure для PostgreSQL" (Цитус), предлагаемой в качестве службы PaaS в облаке Azure, но другие части документов напрямую применимы к вашей геомасштабированию Azure с включенной PostgreSQL.
 
-- [Масштабирование группы серверов PostgreSQL в базе данных Azure для масштабирования](scale-out-postgresql-hyperscale-server-group.md)
+- [Масштабирование группы серверов с Гипермасштабированием Базы данных Azure для PostgreSQL](scale-out-postgresql-hyperscale-server-group.md)
 - [Основные понятия конфигурации хранилища и хранилища Kubernetes](storage-configuration.md)
 - [Модель ресурсов Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)
 

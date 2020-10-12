@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 09e0b3bbac0bdc1d268aa7f24741aeb12a7d366d
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89462587"
 ---
 # <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-an-azure-resource-manager-template"></a>Развертывание средства управления виртуальным рабочим столом Windows (классическая модель) с помощью шаблона Azure Resource Manager
@@ -20,7 +20,7 @@ ms.locfileid: "89462587"
 
 В этой статье содержатся инструкции, которые помогут развернуть пользовательский интерфейс с помощью шаблона Azure Resource Manager.
 
-## <a name="important-considerations"></a>Важные аспекты
+## <a name="important-considerations"></a>Важные замечания
 
 Так как приложению требуется согласие на взаимодействие с Виртуальным рабочим столом Windows, это средство не поддерживает сценарии совместной работы (B2B). Для каждой подписки клиента Azure Active Directory потребуется отдельное развертывание средства управления.
 
@@ -110,6 +110,6 @@ ms.locfileid: "89462587"
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании справки по службам Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](set-up-service-alerts-2019.md).

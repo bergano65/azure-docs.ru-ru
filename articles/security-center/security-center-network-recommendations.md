@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 04/05/2019
 ms.author: memildin
 ms.openlocfilehash: 868470292fbacd71e1eb2d39de7e3a9c5cf6900e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90883909"
 ---
 # <a name="protect-your-network-resources"></a>Защита сетевых ресурсов
@@ -48,7 +48,7 @@ ms.locfileid: "90883909"
 
 1. В меню центра безопасности откройте панель мониторинга Azure Defender и выберите **Сетевая схема**.
 
-    :::image type="content" source="./media/security-center-network-recommendations/opening-network-map.png" alt-text="Открытие сетевой схемы с помощью панели мониторинга защитника Azure" lightbox="./media/security-center-network-recommendations/opening-network-map.png":::
+    :::image type="content" source="./media/security-center-network-recommendations/opening-network-map.png" alt-text="Типы ресурсов сети инвентаризации активов" lightbox="./media/security-center-network-recommendations/opening-network-map.png":::
 
 1. Выберите пункт **топология**в меню **слои** .
  
@@ -116,7 +116,7 @@ ms.locfileid: "90883909"
 [![Карта трафика сети](./media/security-center-network-recommendations/network-map-traffic.png)](./media/security-center-network-recommendations/network-map-traffic.png#lightbox)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 

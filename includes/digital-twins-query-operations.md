@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 7/28/2020
 ms.author: baanders
 ms.openlocfilehash: 6dfddd9179569075abdbd94b6c1afa719db9ba1e
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87905603"
 ---
 ## <a name="query-language-features"></a>Возможности языка запросов
@@ -24,7 +24,7 @@ Azure Digital двойников предоставляет широкие во�
 Получите цифровое двойников по их...
 * Model ( `IS_OF_MODEL` оператор using)
 * свойства (включая [свойства тегов](../articles/digital-twins/how-to-use-tags.md))
-* интерфейсы
+* interfaces
 * relationships
   - свойства связей
 
