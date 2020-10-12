@@ -12,10 +12,10 @@ ms.author: jovanpop
 ms.reviewer: jrasnick, sstein
 ms.date: 03/10/2020
 ms.openlocfilehash: afc142ec9de0e275d505276d959cfac3e652c55d
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619769"
 ---
 # <a name="detectable-types-of-query-performance-bottlenecks-in-azure-sql-database"></a>Обнаруживаемые типы узких мест производительности запросов в базе данных SQL Azure
@@ -153,8 +153,8 @@ ORDER BY count (distinct p.query_id) DESC
 - Определение ограничений ресурсов с помощью [Intelligent Insights](database/intelligent-insights-troubleshoot-performance.md#reaching-resource-limits)
 - Обнаружение проблем с ресурсами с помощью [динамических административных представлений](database/monitoring-with-dmvs.md):
 
-  - Динамическое административное представление [sys. dm_db_resource_stats](database/monitoring-with-dmvs.md#monitor-resource-use) возвращает сведения о ЦП, вводе-выводе и использовании памяти для базы данных. Одна строка существует каждые 15 секунд, даже если в базе данных нет действий. Исторические данные хранятся в течение одного часа.
-  - Динамическое административное представление [sys. resource_stats](database/monitoring-with-dmvs.md#monitor-resource-use) возвращает сведения об использовании ЦП и данных хранилища для базы данных SQL Azure. Данные собираются и суммируются через пять минут.
+  - [Sys.dm_db_resource_stats](database/monitoring-with-dmvs.md#monitor-resource-use) динамическое административное представление возвращает сведения о ЦП, вводе-выводе и использовании памяти для базы данных. Одна строка существует каждые 15 секунд, даже если в базе данных нет действий. Исторические данные хранятся в течение одного часа.
+  - [Sys.resource_stats](database/monitoring-with-dmvs.md#monitor-resource-use) динамическое административное представление возвращает сведения об использовании ЦП и данных хранилища для базы данных SQL Azure. Данные собираются и суммируются через пять минут.
   - [Много отдельных запросов, которые вместе потребляют большой объем ЦП](database/monitoring-with-dmvs.md#many-individual-queries-that-cumulatively-consume-high-cpu)
 
 Если Вы выявляете проблему как недостаточный ресурс, вы можете обновить ресурсы, чтобы увеличить емкость базы данных, чтобы уменьшить требования к ЦП. Дополнительные сведения см. в статье [масштабирование отдельных ресурсов базы данных в базе данных SQL Azure](database/single-database-scale.md) и [масштабирование ресурсов эластичного пула в базе данных SQL Azure](database/elastic-pool-scale.md). Дополнительные сведения о масштабировании управляемого экземпляра см. в разделе [ограничения ресурсов уровня службы](managed-instance/resource-limits.md#service-tier-characteristics) .
@@ -203,16 +203,16 @@ ORDER BY count (distinct p.query_id) DESC
 Эти методы обычно используются для отображения основных категорий типов ожидания:
 
 - Использование Intelligent Insights для обнаружения запросов с ухудшением производительности из-за [увеличенного числа ожиданий](database/intelligent-insights-troubleshoot-performance.md#increased-wait-statistic)
-- Используйте [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store) , чтобы найти статистику ожидания для каждого запроса с течением времени. В хранилище запросов типы времени ожидания объединены в категории ожидания. Сопоставление категорий ожидания с типами ожидания можно найти в [sys. query_store_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-query-store-wait-stats-transact-sql#wait-categories-mapping-table).
-- Используйте представление [sys. dm_db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) , чтобы получить сведения обо всех ожиданиях, обнаруженных потоками, которые выполнялись во время операции запроса. Это агрегированное представление можно использовать для диагностики проблем с производительностью базы данных SQL Azure, а также с конкретными запросами и пакетами. Запросы могут ожидать ресурсы, ожидания очереди или внешние ожидания.
-- Используйте представление [sys. dm_os_waiting_tasks](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-waiting-tasks-transact-sql) , чтобы получить сведения о очереди задач, ожидающих некоторого ресурса.
+- Используйте [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store) , чтобы найти статистику ожидания для каждого запроса с течением времени. В хранилище запросов типы времени ожидания объединены в категории ожидания. Сопоставление категорий ожидания можно найти в [sys.query_store_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-query-store-wait-stats-transact-sql#wait-categories-mapping-table)типы ожидания.
+- Используйте [sys.dm_db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) , чтобы получить сведения обо всех ожиданиях, обнаруженных потоками, которые выполнялись во время операции запроса. Это агрегированное представление можно использовать для диагностики проблем с производительностью базы данных SQL Azure, а также с конкретными запросами и пакетами. Запросы могут ожидать ресурсы, ожидания очереди или внешние ожидания.
+- Используйте [sys.dm_os_waiting_tasks](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-waiting-tasks-transact-sql) , чтобы получить сведения о очереди задач, ожидающих некоторого ресурса.
 
 В сценариях с высоким уровнем загрузки ЦП хранилище запросов и статистика ожидания могут не отражать загрузку ЦП, если:
 
 - Запросы с высоким потреблением ЦП все еще выполняются.
 - Запросы высокой загрузки ЦП выполнялись при отработке отказа.
 
-Динамические административные представления, которые следят за хранилищем запросов и статистикой ожидания, показывают результаты только для успешно завершенных и истечения времени ожидания запросов. Они не отображают данные для выполняемых в данный момент инструкций до завершения операторов. Используйте динамическое административное представление [sys. dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) для трассировки выполняющихся в данный момент запросов и связанного времени рабочего процесса.
+Динамические административные представления, которые следят за хранилищем запросов и статистикой ожидания, показывают результаты только для успешно завершенных и истечения времени ожидания запросов. Они не отображают данные для выполняемых в данный момент инструкций до завершения операторов. Используйте динамическое административное представление [sys.dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) для трассировки выполняющихся в данный момент запросов и связанного времени рабочего процесса.
 
 > [!TIP]
 > Дополнительные инструменты:
@@ -220,6 +220,6 @@ ORDER BY count (distinct p.query_id) DESC
 > - [Тижертулбокс ожидания и кратковременные блокировки](https://github.com/Microsoft/tigertoolbox/tree/master/Waits-and-Latches)
 > - [Тижертулбокс usp_whatsup](https://github.com/Microsoft/tigertoolbox/tree/master/usp_WhatsUp)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения о мониторинге и настройке базы данных SQL](database/monitor-tune-overview.md)

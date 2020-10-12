@@ -9,10 +9,10 @@ ms.date: 09/24/2020
 ms.author: jingwang
 ms.custom: include file
 ms.openlocfilehash: f3678045eae269429909f7ba0e007e13d2b02bc6
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91422090"
 ---
 | Категория | Хранилище данных |
@@ -25,7 +25,7 @@ ms.locfileid: "91422090"
 | &nbsp; |[База данных Azure для MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) |
 | &nbsp; |[База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) |
 | &nbsp; |[База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |
-| &nbsp; |[Azure Databricks Дельта Lake](../articles/data-factory/connector-azure-databricks-delta-lake.md) |
+| &nbsp; |[Azure Databricks Delta Lake](../articles/data-factory/connector-azure-databricks-delta-lake.md) |
 | &nbsp; |[Файлы Azure](../articles/data-factory/connector-azure-file-storage.md) |
 | &nbsp; |[База данных SQL Azure](../articles/data-factory/connector-azure-sql-database.md) |
 | &nbsp; |[Управляемый экземпляр SQL Azure](../articles/azure-sql/managed-instance/sql-managed-instance-paas-overview.md) |

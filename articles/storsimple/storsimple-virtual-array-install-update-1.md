@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 11/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 5bb6b61bb7d9392984bf5c308ce7ee039234461e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91295572"
 ---
 # <a name="install-update-10-on-your-storsimple-virtual-array"></a>Установка обновления 1.0 для виртуального массива StorSimple
@@ -128,6 +128,6 @@ ms.locfileid: "91295572"
 > [!NOTE]
 > Если вы непосредственно применили обновление 1 к устройству, использующему версию до обновления 0.6, некоторые обновления будут отсутствовать. Обратитесь в службу поддержки Майкрософт, чтобы узнать, что делать дальше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).

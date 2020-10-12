@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.openlocfilehash: b305be693f59b65a62570f656a0132f4f03cf099
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541804"
 ---
 # <a name="convert-data-format-of-utterances"></a>Преобразование формата данных высказываний
@@ -37,7 +37,7 @@ LUIS предоставляет следующие преобразования 
 ### <a name="quota-usage"></a>Использование квоты
 Информацию вы найдете в разделе об [ограничениях для ключей](luis-limits.md#key-limits).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Извлечение данных](luis-concept-data-extraction.md)

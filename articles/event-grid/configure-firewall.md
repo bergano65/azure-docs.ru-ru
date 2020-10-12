@@ -4,10 +4,10 @@ description: В этой статье описывается, как настр�
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: fd190a13a177b6b6d0f6b0dbcaa35d63dccd93c9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91324167"
 ---
 # <a name="configure-ip-firewall-for-azure-event-grid-topics-or-domains"></a>Настройка брандмауэра IP для разделов или доменов службы "Сетка событий Azure" 

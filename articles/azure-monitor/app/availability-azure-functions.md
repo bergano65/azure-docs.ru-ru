@@ -2,15 +2,13 @@
 title: Создание и запуск пользовательских тестов доступности с помощью функций Azure
 description: В этом документе рассматривается создание функции Azure с TrackAvailability (), которая будет выполняться периодически в соответствии с конфигурацией, заданной в функции TimerTrigger. Результаты этого теста будут отправлены в ресурс Application Insights, где вы сможете запрашивать данные о результатах доступности и получать оповещения о них. Настроенные тесты позволяют создавать более сложные тесты доступности, чем возможно с помощью пользовательского интерфейса портала, мониторинга приложения в виртуальной сети Azure, изменения адреса конечной точки или создания теста доступности, если он недоступен в вашем регионе.
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/04/2020
-ms.openlocfilehash: bf756255d5eb0ffb3e57f13f4248fb8e38f26129
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3553b212d1b63d4bd239893ba90aa3465d98df60
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91773184"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945657"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
 

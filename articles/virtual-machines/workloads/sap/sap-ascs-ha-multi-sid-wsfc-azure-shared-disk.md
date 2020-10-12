@@ -17,10 +17,10 @@ ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a4856b2578a007f72aeeec64588ac7f9c58158de
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88861300"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-azure-shared-disk"></a>Высокий уровень доступности экземпляра SAP ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и общего диска Azure
@@ -61,7 +61,7 @@ ms.locfileid: "88861300"
 - Добавлена поддержка интеграции и поддержки обслуживания узла Azure и улучшена работа по планированию событий Azure.
 - Можно использовать имя распределенной сети (это параметр по умолчанию). Поэтому нет необходимости иметь выделенный IP-адрес для сетевого имени кластера. Кроме того, не нужно настраивать этот IP-адрес во внутренних Load Balancerах Azure. 
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Сервер репликации с очередью 1 (ERS1) и сервер репликации очереди 2 (ERS2) поддерживаются в конфигурации с несколькими идентификаторами безопасности.  Сочетание ERS1 и ERS2 не поддерживается в одном кластере. 
 

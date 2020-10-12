@@ -14,10 +14,10 @@ ms.author: kkrishna
 ms.reviewer: kkrishna, jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: be5cb1c1e6ff428b3c4d4305c915e07d3880839c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91258393"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
@@ -123,7 +123,7 @@ ms.locfileid: "91258393"
 
 Когда пользователи, назначенные различным ролям приложений, входят в приложение, их маркеры будут иметь назначенные им роли в `roles` утверждении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Добавление авторизации с помощью ролей приложения и утверждения ролей в веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-1-Roles)
 - [Реализация авторизации в приложениях с помощью платформы идентификации Майкрософт (видео)](https://www.youtube.com/watch?v=LRoc-na27l0)

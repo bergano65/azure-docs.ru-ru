@@ -5,10 +5,10 @@ ms.topic: troubleshooting
 ms.date: 08/18/2017
 ms.author: pepogors
 ms.openlocfilehash: 1655a8ed03b1f678cc5dba0a165e0bcca1d2517a
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87292862"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
@@ -125,8 +125,8 @@ ms.locfileid: "87292862"
 ### <a name="how-can-my-application-authenticate-to-key-vault-to-get-secrets"></a>Как мое приложение может пройти проверку подлинности на Key Vault для получения секретов?
 Ниже приведены средства для получения учетных данных для проверки подлинности в Key Vault.
 
-А) Во время сборки или упаковки приложений можно извлечь сертификат в пакет данных приложения SF и использовать его для проверки подлинности в Key Vault.
-Б) Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md), а затем [извлечь секреты из Key Vault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
+A. Во время сборки или упаковки приложений можно извлечь сертификат в пакет данных приложения SF и использовать его для проверки подлинности в Key Vault.
+Б. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md), а затем [извлечь секреты из Key Vault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
 
 ## <a name="application-design"></a>Проектирование приложений
 

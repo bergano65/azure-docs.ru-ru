@@ -14,10 +14,10 @@ ms.topic: how-to
 ms.date: 11/08/2019
 ms.author: b-juche
 ms.openlocfilehash: e749f27875612136c50938712fded6a371f8c7ab
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325629"
 ---
 # <a name="configure-nfsv41-default-domain-for-azure-netapp-files"></a>Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files
@@ -70,7 +70,7 @@ Azure NetApp Files поддерживает локальных пользова�
 
 ![Результирующая конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-host2-users.png)
 
-## <a name="next-step"></a>Дальнейшие действия 
+## <a name="next-step"></a>Следующий шаг 
 
 [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 

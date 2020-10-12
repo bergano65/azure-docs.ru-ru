@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/07/2020
 ms.openlocfilehash: 9777e4f9b2205d2f6cdf6158b035e2a18403d69f
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541464"
 ---
 # <a name="how-to-improve-the-luis-app-by-reviewing-endpoint-utterances"></a>Как улучшить приложение LUIS, просмотрев конечную точку фразы продолжительностью
@@ -63,6 +63,6 @@ ms.locfileid: "91541464"
 
 Чтобы отключить активное обучение, не заносить в журнал пользовательские запросы. Для этого нужно задать для [запроса к конечной точке](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) `log=false` параметр QueryString и значение, либо не использовать значение строки запроса, поскольку значение по умолчанию — false.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы убедиться в повышении производительности после установки меток для предлагаемых фрагментов речи, можно перейти к консоли тестирования, выбрав **Тестирование** на верхней панели. Инструкции по тестированию приложения с помощью консоли тестирования см. в разделе [Обучение и тестирование приложения](luis-interactive-test.md).

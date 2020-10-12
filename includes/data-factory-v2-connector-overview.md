@@ -2,14 +2,14 @@
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 09/24/2020
+ms.date: 09/28/2020
 ms.author: jingwang
-ms.openlocfilehash: aee830c86476d645839cc14ac1aea780c3b928ee
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: d0b88fb81ca539949a8a2bcf8764d3732b1dcdfe
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91641046"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945841"
 ---
 | Категория              | Хранилище данных                                                   | [Действие копирования](../articles/data-factory/copy-activity-overview.md) (источник/приемник) | [Поток данных для сопоставления](../articles/data-factory/concepts-data-flow-overview.md) (источник/приемник) | [Действие поиска](../articles/data-factory/control-flow-lookup-activity.md) | [Действие получения метаданных](../articles/data-factory/control-flow-get-metadata-activity.md)/[Действие проверки](../articles/data-factory/control-flow-validation-activity.md) | [Удалить действие](../articles/data-factory/delete-activity.md) |
 | :-------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ | :----------------------------------------------------------- |
@@ -59,6 +59,7 @@ ms.locfileid: "91641046"
 | **NoSQL**             | [Cassandra](../articles/data-factory/connector-cassandra.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [Couchbase (предварительная версия)](../articles/data-factory/connector-couchbase.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [MongoDB](../articles/data-factory/connector-mongodb.md)     | ✓/−                                                          |                                                              |                                                              |                                                              |                                                              |
+| &nbsp;                | [MongoDB Atlas](../articles/data-factory/connector-mongodb-atlas.md)     | ✓/−                                                          |                                                              |                                                              |                                                              |                                                              |
 | **Файл**              | [Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) | ✓/−                                                          |                                                              | ✓                                                            | ✓                                                            | ✓                                                            |
 | &nbsp;                | [Файловая система](../articles/data-factory/connector-file-system.md) | ✓/✓                                                          |                                                              | ✓                                                            | ✓                                                            | ✓                                                            |
 | &nbsp;                | [FTP](../articles/data-factory/connector-ftp.md)             | ✓/−                                                          |                                                              | ✓                                                            | ✓                                                            | ✓                                                            |
