@@ -4,10 +4,10 @@ description: Узнайте, как указать группу ресурсов
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 7b72048405d3025ca21b324b6ad3168dd0c9ac95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85483369"
 ---
 # <a name="specify-a-resource-group-for-lab-virtual-machines-in-azure-devtest-labs"></a>Выбор группы ресурсов для виртуальных машин лаборатории в Azure DevTest Labs
@@ -112,4 +112,4 @@ az resource update -g $labRg -n $labName --resource-type "Microsoft.DevTestLab/l
 См. следующие статьи: 
 
 - [Управление базовыми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md)
-- [Вопросы и ответы](devtest-lab-faq.md)
+- [Часто задаваемые вопросы по Аналитике компьютеров](devtest-lab-faq.md)

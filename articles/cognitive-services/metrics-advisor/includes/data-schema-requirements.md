@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 09/10/2020
 ms.author: aahi
 ms.openlocfilehash: 33bc52d3c334919a9e93d9666a24d85e3fe158b4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91377604"
 ---
 Монитор метрик — это служба для обнаружения, диагностики и анализа аномалий временных рядов. Это служба на основе ИИ, а значит она использует предоставленные данные для обучения используемой модели. Эта служба принимает таблицы агрегированных данных со следующими столбцами:

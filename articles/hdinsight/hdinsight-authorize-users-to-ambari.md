@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
 ms.openlocfilehash: fc10d385df1dffed07e771d622d9bf9d8bedee39
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86086540"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
@@ -240,7 +240,7 @@ curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
 
 ![Представление блокировки ролей Apache Ambari](./media/hdinsight-authorize-users-to-ambari/ambari-roles-block-view.png)
 
-### <a name="list-view"></a>Режим списка
+### <a name="list-view"></a>Представление списка
 
 Представление "List" (Список) предоставляет возможности быстрого редактирования в двух категориях: "Users" (Пользователи) и "Groups" (Группы).
 
@@ -266,7 +266,7 @@ curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
 
 ![Отображение панели мониторинга Apache Ambari](./media/hdinsight-authorize-users-to-ambari/user-cluster-user-role.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка политик Apache Hive в кластере HDInsight с ESP](./domain-joined/apache-domain-joined-run-hive.md)
 * [Управление кластерами в HDInsight с ESP](./domain-joined/apache-domain-joined-manage.md)

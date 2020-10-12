@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 9a6d8843acf27a53e261d9c7180906b15d05cc33
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91314816"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---hyperscale-citus"></a>Мониторинг и Настройка базы данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -28,7 +28,7 @@ ms.locfileid: "91314816"
 
 Эти метрики доступны для узлов с горизонтальным масштабированием (Цитус):
 
-|Метрика|Отображаемое имя метрики|Единица измерения|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Описание|
 |---|---|---|---|
 |active_connections|Активные подключения|Count|Число активных подключений к серверу.|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
@@ -41,6 +41,6 @@ ms.locfileid: "91314816"
 
 Azure не предоставляет статистических метрик для кластера в целом, но метрики для нескольких узлов можно разместить на одном графе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. раздел [Настройка оповещений](howto-hyperscale-alert-on-metric.md) для получения рекомендаций по созданию оповещения для метрики.

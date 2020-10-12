@@ -5,10 +5,10 @@ ms.author: pepogors
 ms.date: 4/23/2019
 ms.topic: troubleshooting
 ms.openlocfilehash: 64eeb43d743d71d5acd456409445a4fadfe91aeb
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86260116"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
@@ -44,7 +44,7 @@ ms.locfileid: "86260116"
 
 Если приложение было отключено, вы можете проверить, было ли это сделано системой, с помощью команды `az mesh app show` в Azure CLI. Выполните команду, чтобы увидеть, вернется ли результат `"status": "Failed", "statusDetails": "Stopped resource due to max lifetime policies for an application during preview. Delete the resource to continue."`. 
 
-Например: 
+Пример: 
 
 ```azurecli
 az mesh app show --resource-group myResourceGroup --name helloWorldApp
@@ -75,7 +75,7 @@ az mesh app show --resource-group myResourceGroup --name helloWorldApp
 
 Чтобы удалить группу ресурсов, используйте команду `az group delete <nameOfResourceGroup>`.
 
-## <a name="deployments"></a>Развертывания
+## <a name="deployments"></a>Развернутые приложения
 
 ### <a name="what-container-images-are-supported"></a>Какие образы контейнеров поддерживаются?
 
@@ -107,7 +107,7 @@ az mesh app show --resource-group myResourceGroup --name helloWorldApp
 
 - Используйте обновление Windows Fall Creators (версии 1709) или выше как базовый образ контейнера.
 - Если имя службы не работает, попробуйте использовать полное имя: ServiceName. ApplicationName.
-- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Например:
+- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример:
 
 ```Dockerfile
 EXPOSE 80

@@ -4,10 +4,10 @@ description: Список исключений ретранслятора Azure 
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: a644dfe80255c64980400866a5e3d197f75375bd
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87532974"
 ---
 # <a name="azure-relay-exceptions"></a>Исключения ретранслятора Azure
@@ -62,7 +62,7 @@ ms.locfileid: "87532974"
 *   слишком маленькое значение [OpenTimeout](/previous-versions/) (вплоть до доли секунды);
 * неотвечающие локальные прослушиватели ретрансляции (или проблемы, связанные с тем, что правила брандмауэра запрещают прослушивателям принимать новые клиентские подключения) и значение [OpenTimeout](/previous-versions/) меньше 20 секунд.
 
-Пример
+Пример.
 
 ```
 'System.TimeoutException’: The operation did not complete within the allotted timeout of 00:00:10.

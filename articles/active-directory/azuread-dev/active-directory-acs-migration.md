@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: jlu, annaba, hirsin
 ROBOTS: NOINDEX
 ms.openlocfilehash: 9fddd5cb749b1dfe50505c139ed7900f709b584e
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90706257"
 ---
 # <a name="how-to-migrate-from-the-azure-access-control-service"></a>Руководство. Перенос из службы контроля доступа Azure
@@ -202,7 +202,7 @@ Azure AD также всегда поддерживает одинаковые �
 | WS-Trust | Поддерживается | Не поддерживается |
 | **Форматы токенов** | | |
 | JWT | Поддерживается в бета-версии | Поддерживается |
-| SAML 1.1 | Поддерживается | Preview (Предварительный просмотр) |
+| SAML 1.1 | Поддерживается | Предварительный просмотр |
 | SAML 2.0 | Поддерживается | Поддерживается |
 | SWT | Поддерживается | Не поддерживается |
 | **Настройки** | | |
@@ -266,7 +266,7 @@ Azure AD также всегда поддерживает одинаковые �
 Если вы решите перенести свои приложения и службы в Azure AD B2C, сначала изучите следующие материалы:
 
 - [Документация по Azure AD B2C](../../active-directory-b2c/overview.md)
-- [Azure AD B2C пользовательских политик](../../active-directory-b2c/custom-policy-overview.md)
+- [Пользовательские политики Azure AD B2C](../../active-directory-b2c/custom-policy-overview.md)
 - [Цены на Azure AD B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
 
 #### <a name="migrate-to-ping-identity-or-auth0"></a>Перенос в Ping Identity или Auth0

@@ -12,10 +12,10 @@ ms.date: 05/23/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.openlocfilehash: 2019802725e36c2400f57952fedf7af40877c8c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84759935"
 ---
 # <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Общие сведения и решение проблем Azure Active Directory Application Proxy CORS
@@ -114,7 +114,7 @@ X-питание от: ASP.NET \
 
 Некоторые проблемы CORS невозможно разрешить, например, когда приложение перенаправляется на *Login.microsoftonline.com* для проверки подлинности и срок действия маркера доступа истечет. Затем вызов CORS завершается ошибкой. Обходной путь для этого сценария — продлить время существования маркера доступа, чтобы предотвратить истечение срока его действия во время сеанса пользователя. Дополнительные сведения о том, как это сделать, см. [в разделе настраиваемое время существования маркеров в Azure AD](../develop/active-directory-configurable-token-lifetimes.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 - [Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md) 
-- [Планирование развертывания AD Application Proxy Azure](application-proxy-deployment-plan.md) 
+- [Планирование развертывания Azure AD Application Proxy](application-proxy-deployment-plan.md) 
 - [Удаленный доступ к локальным приложениям через Azure Active Directory Application Proxy](application-proxy.md) 

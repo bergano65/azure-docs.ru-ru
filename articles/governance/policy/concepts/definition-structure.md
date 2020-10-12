@@ -4,10 +4,10 @@ description: Описывает, как определения политик и
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: f9b64255723c6e53a6d8fe945bf19506ba30644e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91330287"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
@@ -728,7 +728,7 @@ ms.locfileid: "91330287"
 
 Более подробную информацию см. в разделе [оценка псевдонима [\*]](../how-to/author-policies-for-arrays.md#evaluating-the--alias).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. [структуру определения инициативы](./initiative-definition-structure.md)
 - См. другие [примеры шаблонов для службы Политика Azure](../samples/index.md).

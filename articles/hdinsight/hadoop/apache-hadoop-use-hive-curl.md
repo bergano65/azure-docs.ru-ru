@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/06/2020
 ms.openlocfilehash: 87feba3bc79e39f1379a25fa55fe0186d5605e4a
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86085554"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
@@ -48,7 +48,7 @@ ms.locfileid: "86085554"
 export password='PASSWORD'
 ```  
 
-**B. PowerShell** выполните приведенный ниже код и введите свои учетные данные во всплывающем окне:
+**Б. PowerShell** Выполните приведенный ниже код и введите свои учетные данные во всплывающем окне:
 
 ```powershell
 $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
@@ -146,7 +146,7 @@ $clusterName
 
    Эти операторы выполняют следующие действия:
 
-   * `DROP TABLE`— Если таблица уже существует, она удаляется.
+   * `DROP TABLE` — Если таблица уже существует, она удаляется.
    * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
 
      > [!NOTE]  
@@ -155,8 +155,8 @@ $clusterName
      > Удаление внешней таблицы **не** приводит к удалению данных, будет удалено только определение таблицы.
 
    * `ROW FORMAT` — настройка форматирования данных. Поля всех журналов разделены пробелами.
-   * `STORED AS TEXTFILE LOCATION`— Где хранятся данные (каталог example/Data) и хранятся в виде текста.
-   * `SELECT`— Выбирает количество строк, в которых столбец **T4** содержит значение **[Error]**. Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
+   * `STORED AS TEXTFILE LOCATION` — Где хранятся данные (каталог example/Data) и хранятся в виде текста.
+   * `SELECT` — Выбирает количество строк, в которых столбец **T4** содержит значение **[Error]**. Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
 
      > [!NOTE]  
      > Обратите внимание, что при использовании Curl пробелы между операторами HiveQL заменяются знаком `+`. Заключенные в кавычки значения, содержащие пробелы в качестве разделителя, заменять на `+`не нужно.
@@ -187,7 +187,7 @@ $clusterName
 
     Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI со службой хранилища Azure см. в документе [Использование Azure CLI со службой хранилища Azure](https://docs.microsoft.com/azure/storage/storage-azure-cli).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight.
 

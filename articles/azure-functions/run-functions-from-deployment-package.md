@@ -4,10 +4,10 @@ description: Настройте запуск функций в среде вып
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.openlocfilehash: b2d90cf78263b30b4315199cf1c543186a435f17
-ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88639891"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
@@ -59,7 +59,7 @@ ms.locfileid: "88639891"
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 - Запуск из пакета делает возможным `wwwroot` только чтение, поэтому при записи файлов в этот каталог возникнет ошибка.
 - Форматы tar и gzip не поддерживаются.

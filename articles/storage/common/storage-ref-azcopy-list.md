@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: f4d54e4fd8ca0d43cf3d7087006bb51a15a97bcd
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87289214"
 ---
 # <a name="azcopy-list"></a>azcopy list
@@ -42,7 +42,7 @@ azcopy list [containerURL]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды List.|
 |--Machine-доступное для чтения|Выводит список размеров файлов в байтах.|
@@ -51,12 +51,12 @@ azcopy list [containerURL]
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с, с плавающей запятой|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 |--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

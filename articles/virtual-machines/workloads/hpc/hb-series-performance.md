@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/09/2020
 ms.author: amverma
 ms.openlocfilehash: 34e9ef3ab46f2ce11500aa87db9676635d3e9b4f
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90016288"
 ---
 # <a name="hb-series-virtual-machine-sizes"></a>Размеры виртуальных машин серии ХБ
@@ -22,7 +22,7 @@ ms.locfileid: "90016288"
 | Рабочая нагрузка                                        | HB                    |
 |-------------------------------------------------|-----------------------|
 | STREAM триады                                    | 260 ГБ/с (32-33 Гб/с на КККС)  |
-| Высокопроизводительная Linpack (ХПЛ)                  | 1 000 гигафлопс (Рпеак), 860 гигафлопс (Рмакс) |
+| High-Performance Linpack (ХПЛ)                  | 1 000 гигафлопс (Рпеак), 860 гигафлопс (Рмакс) |
 | Задержка & RDMA, пропускная способность                        | 1,27 микросекунд, 99,1 ГБ/с   |
 | FIO на локальном SSD NVMe                           | 1,7 ГБ/с, операций чтения, 1,0 ГБ/с      |  
 | ИОР на 4 * SSD (цен. категория "Премиум") Azure (управляемые диски P30, конфигурацию RAID0) * *  | 725 МБ/с, 780 МБ/операций записи   |
@@ -46,7 +46,7 @@ ms.locfileid: "90016288"
 ./mvapich2-2.3.install/bin/mpirun_rsh -np 2 -hostfile ~/hostfile MV2_CPU_MAPPING=[INSERT CORE #] ./mvapich2-2.3/osu_benchmarks/mpi/pt2pt/osu_bw
 ```
 
-:::image type="content" source="./media/bandwidth-hb.png" alt-text="Пропускная способность MPI в Azure ХБ.":::
+:::image type="content" source="./media/bandwidth-hb.png" alt-text="MPI с задержкой в Azure ХБ.":::
 
 
 ## <a name="mellanox-perftest"></a>Mellanox Perftest
@@ -57,7 +57,7 @@ ms.locfileid: "90016288"
 numactl --physcpubind=[INSERT CORE #]  ib_send_lat -a
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с последними объявлениями и некоторыми примерами высокопроизводительных вычислений (HPC) и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Более высокоуровневое архитектурное представление выполнения рабочих нагрузок HPC см. в статье [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

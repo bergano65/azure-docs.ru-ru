@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
 ms.openlocfilehash: 0ed8533b093c5af0d8aefdcd5175bed63f37a76c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85507676"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-log-a-support-request-for-the-storsimple-virtual-array"></a>Использование службы диспетчера устройств StorSimple для регистрации запроса в службу поддержки для виртуального массива StorSimple
@@ -27,7 +27,7 @@ ms.locfileid: "85507676"
 
 Диспетчер устройств StorSimple предоставляет возможность **регистрации новых запросов в службу поддержки** в колонке сводных данных о службе. В этой статье объясняется, как зарегистрировать новый запрос и управлять его жизненным циклом на портале.
 
-## <a name="new-support-request"></a>Новый запрос на техническую поддержку
+## <a name="new-support-request"></a>Новый запрос на поддержку
 
 В зависимости от [плана поддержки](https://azure.microsoft.com/support/plans/) запросы в службу поддержки для решения проблем с виртуальным массивом StorSimple можно создать непосредственно в колонке сводных данных о службе диспетчера устройств StorSimple.
 
@@ -35,7 +35,7 @@ ms.locfileid: "85507676"
 
 1. Откройте службу диспетчера устройств StorSimple. В настройках колонки сводных данных о службе перейдите в раздел **Поддержка и устранение неполадок** и щелкните **Новый запрос в службу поддержки**.
    
-    ![Новый запрос на техническую поддержку](./media/storsimple-virtual-array-log-support-ticket/log-support-ticket1.png)
+    ![Новый запрос на поддержку](./media/storsimple-virtual-array-log-support-ticket/log-support-ticket1.png)
 
 2. В колонке **Основное** выполните следующие действия.
 
@@ -49,11 +49,11 @@ ms.locfileid: "85507676"
 
 3. На **шаге 2** выберите тип **серьезности** и укажите, с чем связана проблема: с массивом или со службой диспетчера устройств StorSimple. Кроме того, выберите **категорию** этой проблемы и предоставьте больше **сведений** о проблеме.
    
-    ![Новый запрос на техническую поддержку](./media/storsimple-virtual-array-log-support-ticket/log-support-ticket2.png)
+    ![Новый запрос на поддержку](./media/storsimple-virtual-array-log-support-ticket/log-support-ticket2.png)
 
 4. На **шаге 3** предоставьте свои контактные данные. Служба технической поддержки Майкрософт будет использовать эту информацию, чтобы связаться с вами для получения дополнительных сведений, диагностики и устранения проблемы.
    
-    ![Новый запрос на техническую поддержку](./media/storsimple-virtual-array-log-support-ticket/log-support-ticket3.png)
+    ![Новый запрос на поддержку](./media/storsimple-virtual-array-log-support-ticket/log-support-ticket3.png)
 
 ## <a name="manage-a-support-request"></a>Управление запросом в службу поддержки
 
@@ -65,7 +65,7 @@ ms.locfileid: "85507676"
 
 ![Управление запросами на поддержку](./media/storsimple-virtual-array-log-support-ticket/manage-support-tickets.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Устранение неполадок виртуального массива StorSimple с помощью диспетчера устройств StorSimple](storsimple-virtual-array-diagnose-problems.md)
 

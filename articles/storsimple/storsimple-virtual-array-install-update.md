@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 77d2e61533016de7417446ba4111116e9749ac74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85507880"
 ---
 # <a name="install-updates-on-your-storsimple-virtual-array---azure-portal"></a>Установка обновлений на виртуальный массив StorSimple с помощью портала Azure
@@ -107,7 +107,7 @@ ms.locfileid: "85507880"
 После окончания установки (об этом свидетельствует состояние задания "100 %") перейдите к службе диспетчера устройств StorSimple. Перейдите к **устройствам** и в списке устройств, подключенных к службе, выберите то, которое требуется обновить. В колонке **Параметры** щелкните **Управление** и выберите **Обновления устройства**. Отображаемая версия программного обеспечения должна быть **10.0.10288.0**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 
