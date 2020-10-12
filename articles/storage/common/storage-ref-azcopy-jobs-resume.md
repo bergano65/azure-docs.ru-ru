@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: dd25bec04d651c01d622f0652a29a65069421786
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87281962"
 ---
 # <a name="azcopy-jobs-resume"></a>azcopy jobs resume
@@ -34,7 +34,7 @@ azcopy jobs resume [jobID] [flags]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |--|--|
 |--Destination-строка SAS|Целевой SAS назначения для заданного идентификатора задания.|
 |--исключение строки|Фильтр: исключите эти неудачные перемещения при возобновлении задания. Файлы должны быть разделены символом ";".|
@@ -44,12 +44,12 @@ azcopy jobs resume [jobID] [flags]
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с, с плавающей запятой|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 |--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 - [azcopy jobs](storage-ref-azcopy-jobs.md)

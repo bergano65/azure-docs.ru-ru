@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
 ms.openlocfilehash: 03258bf204491afce4635828b3a33a06886aca2d
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87448387"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Рекомендации по безопасности для рабочих нагрузок IaaS в Azure
@@ -185,4 +185,4 @@ ms.locfileid: "87448387"
 
 Ниже приведены ресурсы, с помощью которых можно получить общие сведения о службах безопасности Azure и связанных службах Майкрософт.
 * [Блог команды безопасности Azure](https://blogs.msdn.microsoft.com/azuresecurity/). Благодаря этому блогу вы будете в курсе последних новостей о безопасности Azure.
-* [Центр Microsoft Security Response Center](https://technet.microsoft.com/library/dn440717.aspx) , где уязвимости системы безопасности Майкрософт, включая проблемы с Azure, можно сообщить или отправить по электронной почтеsecure@microsoft.com
+* [Центр Microsoft Security Response Center](https://technet.microsoft.com/library/dn440717.aspx) , где уязвимости системы безопасности Майкрософт, включая проблемы с Azure, можно сообщить или отправить по электронной почте secure@microsoft.com

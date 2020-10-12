@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.openlocfilehash: e9bd2db8bcc427118a76f87e49ade422a74a11c1
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87276930"
 ---
 # <a name="disaster-recovery-and-storage-account-failover"></a>Аварийное восстановление и отработка отказа учетной записи хранения
@@ -171,7 +171,7 @@ ms.locfileid: "87276930"
 
 В экстренных ситуациях, когда значительная авария приводит к неработоспособности целого региона, корпорация Майкрософт может инициировать отработку отказа между регионами. В этом случае вам не нужно предпринимать какие-либо действия. До завершения отработки отказа под управлением корпорации Майкрософт вы не получите доступ на запись к учетной записи хранения. Приложения могут считывать данные из дополнительного региона, если ваша учетная запись хранения настроена для RA-GRS или RA-ГЗРС.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Разработка высокодоступных приложений с геоизбыточностью](geo-redundant-design.md)
 - [Инициирование отработки отказа учетной записи](storage-initiate-account-failover.md)

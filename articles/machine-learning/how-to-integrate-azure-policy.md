@@ -11,10 +11,10 @@ ms.subservice: core
 ms.topic: how-to
 ms.reviewer: larryfr
 ms.openlocfilehash: e7eebb22efe32b290e078348337049c6c3e762db
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997208"
 ---
 # <a name="audit-and-manage-azure-machine-learning-using-azure-policy"></a>Аудит Машинное обучение Azure и управление ими с помощью политики Azure
@@ -54,7 +54,7 @@ ms.locfileid: "90997208"
 
 Чтобы настроить эту политику, установите для параметра effect значение __Audit__. При создании рабочей области без использования закрытой ссылки в журнале действий создается событие предупреждения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Документация по службе "Политика Azure"](/azure/governance/policy/overview)
 * [Встроенные политики для Машинное обучение Azure](policy-reference.md)

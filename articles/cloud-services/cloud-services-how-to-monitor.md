@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 01/29/2018
 ms.author: tagore
 ms.openlocfilehash: 61c794ba03934ae1828ba310f3f776bfb61b652b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85847245"
 ---
 # <a name="introduction-to-cloud-service-monitoring"></a>Введение в мониторинг облачных служб
@@ -92,7 +92,7 @@ ms.locfileid: "85847245"
 Обратите внимание, что в Application Insights могут отображаться счетчики производительности (и другие параметры), настроенные в расширении службы диагностики Azure, но по-настоящему широкие возможности вы получите только при интеграции пакета SDK для Application Insights в рабочие роли и веб-роли.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подробнее об Application Insights для облачных служб Azure](../azure-monitor/app/cloudservices.md)
 - [Настройка счетчиков производительности](diagnostics-performance-counters.md)

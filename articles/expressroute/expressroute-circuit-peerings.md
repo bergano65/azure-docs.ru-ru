@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: duau
 ms.openlocfilehash: 072eeb0bee0d0441549d2edad448f3b1c85a28a4
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89566506"
 ---
 # <a name="expressroute-circuits-and-peering"></a>Каналы и пиринг ExpressRoute
@@ -74,7 +74,7 @@ ms.locfileid: "89566506"
 
 NPM отслеживает работоспособность частного пиринга Azure и пиринга Майкрософт. Дополнительные сведения см. [здесь](https://azure.microsoft.com/blog/monitoring-of-azure-expressroute-in-preview/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Найти поставщика услуг. Ознакомьтесь с разделом [Поставщики услуг и расположения ExpressRoute](expressroute-locations.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).

@@ -8,10 +8,10 @@ ms.date: 09/28/2019
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: 668aa51bdb57dc4bcde0e3a95c481bb60e3d8ed3
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88997376"
 ---
 # <a name="provision-standard-manual-throughput-on-a-database-in-azure-cosmos-db"></a>Подготовка стандартной (масштабируемой вручную) пропускной способности в базе данных Azure Cosmos DB
@@ -33,7 +33,7 @@ ms.locfileid: "88997376"
    * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    :::image type="content" source="./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png" alt-text="Снимок экрана: диалоговое окно Новая база данных":::
+    :::image type="content" source="./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png" alt-text="Снимок экрана: диалоговое окно &quot;Новая база данных&quot;":::
 
 ## <a name="provision-throughput-using-azure-cli-or-powershell"></a>Подготовка пропускной способности с помощью портала Azure CLI или PowerShell
 

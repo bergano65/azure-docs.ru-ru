@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 08/26/2020
 ms.openlocfilehash: 44b0394773485f8054eddc94c7d7e9b91baebc6d
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88951097"
 ---
 # <a name="achieve-geo-redundancy-for-azure-stream-analytics-jobs"></a>Достижение геоизбыточности для Azure Stream Analyticsных заданий
@@ -27,7 +27,7 @@ Azure Stream Analytics не поддерживает автоматическу�
 
 Хотя различные типы входных и выходных данных допускают различные варианты георепликации, рекомендуется использовать шаблон, описанный в этой статье, для обеспечения геоизбыточности, поскольку он обеспечивает гибкость и управление для поставщиков событий и потребителей событий.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Мониторинг заданий Azure Stream Analytics и управление ими с помощью PowerShell](stream-analytics-monitor-and-manage-jobs-use-powershell.md)
 * [Отладка на основе данных в Azure Stream Analytics](stream-analytics-job-diagram-with-metrics.md)

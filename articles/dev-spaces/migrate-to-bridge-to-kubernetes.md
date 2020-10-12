@@ -1,18 +1,18 @@
 ---
-title: Миграция на мост в Kubernetes
+title: Миграция к Bridge to Kubernetes
 services: azure-dev-spaces
 ms.date: 09/21/2020
 ms.topic: conceptual
 description: Описывает процессы, которые Power Azure Dev Spaces
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, мост — Kubernetes
 ms.openlocfilehash: b585ee20efb7b377a041152996ef41d8c59c539e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997172"
 ---
-# <a name="migrating-to-bridge-to-kubernetes"></a>Миграция на мост в Kubernetes
+# <a name="migrating-to-bridge-to-kubernetes"></a>Миграция к Bridge to Kubernetes
 
 Мост в Kubernetes предоставляет более светлую альтернативу многим сценариям разработки, которые работают с Azure Dev Spaces. Bridge to Kubernetes — это интерфейс на стороне клиента, использующий расширения в [Visual Studio][vs]   и [Visual Studio Code][vsc].  
 
@@ -34,7 +34,7 @@ Azure Dev Spaces помогли разработчикам Kubernetes работ
 
 Azure Dev Spaces и Bridge в Kubernetes имеют аналогичные функции, они также отличаются в нескольких областях:
 
-| Требование  | Azure Dev Spaces  | Мост в Kubernetes  |
+| Требование  | Azure Dev Spaces  | Мост с Kubernetes  |
 |---------------|-------------------|--------------------------------|
 | Служба Azure Kubernetes | В 15 регионах Azure | Любой регион службы AKS    |
 | **Безопасность** |
@@ -115,12 +115,12 @@ Azure Dev Spaces и Bridge в Kubernetes имеют аналогичные фу�
 1. Настройте мост для Kubernetes в развернутом приложении. Дополнительные сведения об использовании моста для Kubernetes в Visual Studio Code см. в разделе [Использование моста с Kubernetes][use-btk-vsc].
 1. Начните отладку в Visual Studio, используя только что созданный мост для Kubernetes запуска профиля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о принципах работы моста с Kubernetes.
 
 > [!div class="nextstepaction"]
-> [Как работает мост в Kubernetes][how-it-works-bridge-to-kubernetes]
+> [Как работает Bridge to Kubernetes][how-it-works-bridge-to-kubernetes]
 
 
 [azds-delete]: how-to/install-dev-spaces.md#remove-azure-dev-spaces-using-the-cli
