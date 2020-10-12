@@ -17,10 +17,10 @@ ms.author: willzhan
 ms.reviewer: dwgeo
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 5e003e17490c2e35ef3f8adfdef6de0377cda7d5
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89259716"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS
@@ -252,7 +252,7 @@ func requestApplicationCertificate() throws -> Data {
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Этот документ содержит следующие шаги и информацию, с помощью которых можно реализовать автономный режим FPS:
 
 * Конфигурация защиты содержимого служб мультимедиа с помощью API служб мультимедиа для .NET настраивает динамическое шифрование FairPlay и доставку лицензии FairPlay в службы мультимедиа.

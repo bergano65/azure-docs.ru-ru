@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.openlocfilehash: 4297cc83ab3fa280e15480aefcd5aef8734c65ee
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90531053"
 ---
 # <a name="build-expressions-in-mapping-data-flow"></a>Выражения сборки в потоке данных сопоставления
@@ -128,7 +128,7 @@ regex_replace('100 and 200', `(\d+)`, 'digits')
 regex_replace('100 and 200', '(\\d+)', 'digits')
 ```
 
-## <a name="keyboard-shortcuts"></a>Сочетания клавиш
+## <a name="keyboard-shortcuts"></a>сочетания клавиш
 
 Ниже приведен список сочетаний клавиш, доступных в построителе выражений. При создании выражений доступны большинство сочетаний клавиш IntelliSense.
 

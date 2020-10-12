@@ -11,17 +11,17 @@ ms.custom: subject-moving-resources
 ms.date: 08/12/2020
 ms.author: jgardner
 ms.openlocfilehash: d3b8bfbef544e754f684421daa847f1724435d53
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88875815"
 ---
 # <a name="move-an-azure-workbook-to-another-region"></a>Перемещение книги Azure в другой регион
 
 В этой статье описывается, как переместить ресурсы книги Azure в другой регион Azure. Вы можете переместить ресурсы в другой регион по ряду причин. Например, чтобы использовать преимущества нового региона Azure для развертывания компонентов или служб, доступных только в конкретных регионах, в соответствии с требованиями к внутренней политике и управлению, а также в ответ на требования к планированию загрузки.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Убедитесь, что книги поддерживаются в целевом регионе.
 

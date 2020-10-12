@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
 ms.openlocfilehash: 3caccd6766226ce68b371856b081b052c1033f71
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91542195"
 ---
 # <a name="pattern-syntax"></a>Синтаксис шаблона
@@ -48,7 +48,7 @@ ms.locfileid: "91542195"
 |Пример вложенного группирования utterance|Объяснение|
 |--|--|
 |Редвест-C|совпадает с сущностью внешнего группирования|
-|Сиэтл|соответствует одной из внутренних сущностей группирования|
+|Seattle|соответствует одной из внутренних сущностей группирования|
 |Cairo|соответствует одной из внутренних сущностей группирования|
 
 ## <a name="nesting-limits-for-groups-with-optional-syntax"></a>Ограничения вложенности для групп с необязательным синтаксисом
@@ -132,7 +132,7 @@ ms.locfileid: "91542195"
 
 Знаки пунктуации ( `?` , `!` , `.` ) следует игнорировать, и их нужно пропускать с помощью синтаксиса квадратной скобки в шаблонах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о шаблонах:
 

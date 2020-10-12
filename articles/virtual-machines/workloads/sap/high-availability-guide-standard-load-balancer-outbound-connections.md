@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 06/16/2020
 ms.author: radeltch
 ms.openlocfilehash: a0dc9f673abcac549fffc7291b8ac376c297da6b
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87836128"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP
@@ -224,7 +224,7 @@ ms.locfileid: "87836128"
 
 Если исходящий трафик направляется через брандмауэр стороннего производителя:
 
-- При использовании агента ограждения Azure убедитесь, что конфигурация брандмауэра разрешает исходящее подключение к API управления Azure `https://management.azure.com` .`https://login.microsoftonline.com`   
+- При использовании агента ограждения Azure убедитесь, что конфигурация брандмауэра разрешает исходящее подключение к API управления Azure `https://management.azure.com` . `https://login.microsoftonline.com`   
 - Если вы используете инфраструктуру обновления общедоступного облака Azure SUSE для применения обновлений и исправлений, см. раздел [инфраструктура общедоступного облачного обновления azure 101](https://suse.com/c/azure-public-cloud-update-infrastructure-101/) .
 
 ## <a name="next-steps"></a>Дальнейшие действия

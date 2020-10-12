@@ -8,10 +8,10 @@ ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: d81cd0ac57a5a18d90144584e8705cbffcba6f9b
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88871434"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
@@ -22,7 +22,7 @@ ms.locfileid: "88871434"
 
  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Так как для преобразования требуется перезагрузка виртуальной машины, необходимо запланировать миграцию дискового накопителя во время работы предварительно существующего периода обслуживания.
 * Если диск не управляется, сначала [преобразуйте его в управляемый диск](convert-unmanaged-to-managed-disks.md) , чтобы можно было переключаться между вариантами хранения.
@@ -151,6 +151,6 @@ $disk | Update-AzDisk
 Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте копию виртуальной машины, доступную только для чтения, с помощью [моментальных снимков](snapshot-copy-managed-disk.md).

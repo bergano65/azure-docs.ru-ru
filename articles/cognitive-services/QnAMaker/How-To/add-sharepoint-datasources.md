@@ -6,10 +6,10 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.openlocfilehash: 0f49621d44b99412b9a6ab0360c30c894a71e5d1
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776873"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление защищенного источника данных SharePoint в базу знаний
@@ -20,7 +20,7 @@ ms.locfileid: "91776873"
 
 Если QnA Maker диспетчер базы знаний не является диспетчером Active Directory, необходимо установить связь с диспетчером Active Directory, чтобы завершить этот процесс.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * В облачном SharePoint-QnA Maker для разрешений используется Microsoft Graph. Если SharePoint находится в локальной среде, вы не сможете извлечь из SharePoint, так как Microsoft Graph не сможет определить разрешения.
 * Формат URL-QnA Maker поддерживает только URL-адреса SharePoint, которые создаются для общего доступа и имеют формат `https://\*.sharepoint.com`
@@ -123,7 +123,7 @@ The Active Directory manager will get a pop-up window requesting permissions to 
 
     [![Выберите пользователя, прошедшего проверку подлинности, для Active Directory администратора](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png)](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png#lightbox)
 
-1. Выберите учетную запись входа с разрешениями на предоставление разрешений для Active Directory.
+1. Выберите учетную запись Sign-On с разрешениями на предоставление разрешений для Active Directory.
 
 
 
@@ -185,7 +185,7 @@ Use the **@microsoft.graph.downloadUrl** from the previous section as the `fileu
 
 -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Совместная работа с базой знаний](collaborate-knowledge-base.md)

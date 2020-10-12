@@ -4,10 +4,10 @@ description: Параметры проверки подлинности для �
 ms.topic: article
 ms.date: 01/30/2020
 ms.openlocfilehash: 7c8176d0cdca5d74ed3201071f83ed1181d94b8d
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89657077"
 ---
 # <a name="authenticate-with-an-azure-container-registry"></a>Аутентификация в реестре контейнеров Azure
@@ -115,7 +115,7 @@ az acr update -n <acrName> --admin-enabled true
 
 ![Включение учетной записи администратора на портале Azure][auth-portal-01]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отправка первого образа с помощью Azure CLI](container-registry-get-started-azure-cli.md)
 

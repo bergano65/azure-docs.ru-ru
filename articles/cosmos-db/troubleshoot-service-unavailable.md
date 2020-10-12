@@ -8,10 +8,10 @@ ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.openlocfilehash: 749592b778612c6903c9c15e336de3fb00978199
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88870873"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-service-unavailable-exceptions"></a>Диагностика и устранение неполадок, связанных с Azure Cosmos DB недоступности службы
@@ -24,7 +24,7 @@ ms.locfileid: "88870873"
 Убедитесь, что включены все [необходимые порты](performance-tips-dotnet-sdk-v3-sql.md#networking) .
 
 ### <a name="client-side-transient-connectivity-issues"></a>Временные проблемы подключения на стороне клиента
-Исключения, недоступные для службы, могут быть вызваны временными проблемами подключения, вызывающими тайм-ауты. Как правило, трассировка стека, связанная с этим сценарием, будет содержать `TransportException` ошибку. Пример.
+Исключения, недоступные для службы, могут быть вызваны временными проблемами подключения, вызывающими тайм-ауты. Как правило, трассировка стека, связанная с этим сценарием, будет содержать `TransportException` ошибку. Пример:
 
 ```C#
 TransportException: A client transport error occurred: The request timed out while waiting for a server response. 
@@ -37,6 +37,6 @@ TransportException: A client transport error occurred: The request timed out whi
 Проверьте [состояние Azure](https://status.azure.com/status) , чтобы узнать, существует ли текущая ошибка.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).

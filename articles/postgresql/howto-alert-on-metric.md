@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.openlocfilehash: fba5c868a146529a981e23cd88b413f2eb441896
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708940"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Используйте портал Azure, чтобы настроить оповещения о метриках для базы данных Azure для PostgreSQL — один сервер.
@@ -83,6 +83,6 @@ ms.locfileid: "91708940"
 * **изменить** или **удалить** правило генерации оповещений;
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.
