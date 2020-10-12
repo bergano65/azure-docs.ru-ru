@@ -4,10 +4,10 @@ description: Узнайте, как планировать и подготавл
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.openlocfilehash: 1064e59491b7144aafade24bd50131478fe025eb
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87281333"
 ---
 # <a name="plan-and-prepare-for-a-cluster-deployment"></a>Планирование и подготовка к развертыванию кластера
@@ -118,7 +118,7 @@ Service Fabric позволяет создавать кластеры Service Fa
 ## <a name="production-readiness-checklist"></a>Контрольный список готовности рабочей среды
 Готовы ли ваше приложение и кластер к приему рабочего трафика? Перед развертыванием кластера в рабочей среде выполните [Контрольный список готовности к производству](service-fabric-production-readiness-checklist.md). Используйте элементы этого контрольного списка, чтобы обеспечить бесперебойную работу приложения и кластера. Мы настоятельно рекомендуем отключать все эти элементы перед переходом в рабочую среду.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание кластера Service Fabric под Windows](service-fabric-best-practices-overview.md)
 * [Создание кластера Service Fabric под управлением Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md)
 

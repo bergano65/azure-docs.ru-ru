@@ -4,10 +4,10 @@ description: В этой статье представлен обзор цент
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.openlocfilehash: 2857433e00a678603e30c8e5fc276020c4658f2e
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91614294"
 ---
 # <a name="overview-of-backup-center"></a>Обзор центра архивации
@@ -45,7 +45,7 @@ ms.locfileid: "91614294"
 
 Выполните следующие [действия](#next-steps) , чтобы узнать о различных возможностях, предоставляемых Центром архивации, и об использовании этих возможностей для эффективного управления пространством резервного копирования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Мониторинг и эксплуатация резервных копий](backup-center-monitor-operate.md)
 * [Управление пространством резервного копирования](backup-center-govern-environment.md)

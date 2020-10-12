@@ -8,10 +8,10 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 04/29/2020
 ms.openlocfilehash: cde8db5310e3ede2721ba327b28c789ccd0b7dd0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87280772"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
@@ -51,13 +51,13 @@ ms.locfileid: "87280772"
 
     * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
 
-    Вы можете скачать и установить Azure Logic Apps средства непосредственно из Visual Studio Marketplace или узнать, [как установить это расширение в Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). После завершения установки перезагрузите Visual Studio.
+    Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, [как установить это расширение из Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions). После завершения установки перезагрузите Visual Studio.
 
-  * Чтобы использовать подписки Azure для государственных организаций в Visual Studio, см. следующие разделы для получения дополнительных настроек:
+  * Чтобы использовать подписки Azure для государственных организаций в Visual Studio, ознакомьтесь с приведенными ниже разделами. В них описывается дополнительная настройка.
 
-    * Visual Studio 2019: [Краткое руководство. подключение к Azure для государственных организаций с помощью Visual Studio](../azure-government/documentation-government-connect-vs.md)
+    * Visual Studio 2019: [Краткое руководство. Подключение к Azure для государственных организаций с помощью Visual Studio](../azure-government/documentation-government-connect-vs.md)
 
-    * Visual Studio 2017: [Знакомство с расширением среды Azure Selector для Visual Studio](https://devblogs.microsoft.com/azuregov/introducing-the-azure-environment-selector-visual-studio-extension/), которое можно скачать и установить из [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SteveMichelotti.AzureEnvironmentSelector).
+    * Visual Studio 2017: [Introducing the Azure Environment Selector Visual Studio extension](https://devblogs.microsoft.com/azuregov/introducing-the-azure-environment-selector-visual-studio-extension/) (Знакомство с расширением селектора среды Azure для Visual Studio). Описываемое расширение можно скачать и установить из [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SteveMichelotti.AzureEnvironmentSelector).
 
 * Доступ к Интернету при использовании встроенного конструктора Logic Apps
 
@@ -127,7 +127,7 @@ ms.locfileid: "87280772"
 
 1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
 
-1. В обозреватель решений откройте контекстное меню **<Logic-App-Name # C1.js** и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
+1. В обозреватель решений откройте контекстное меню **<Logic-App-Name # C1.js** и выберите **Открыть в конструкторе приложений логики**. (Или нажмите клавиши CTRL+L)
 
    ![Открытие JSON файла приложения логики с помощью конструктора приложений логики](./media/manage-logic-apps-with-visual-studio/open-logic-app-designer.png)
 
@@ -162,7 +162,7 @@ ms.locfileid: "87280772"
 
 1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
 
-1. В обозреватель решений откройте `<logic-app-name>.json` контекстное меню файла и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
+1. В обозреватель решений откройте `<logic-app-name>.json` контекстное меню файла и выберите **Открыть в конструкторе приложений логики**. (Или нажмите клавиши CTRL+L)
 
    ![Открытие JSON файла приложения логики с помощью конструктора приложений логики](./media/manage-logic-apps-with-visual-studio/open-logic-app-designer.png)
 

@@ -7,10 +7,10 @@ ms.reviewer: arthii, divswa, logicappspm
 ms.topic: article
 ms.date: 08/18/2020
 ms.openlocfilehash: 2dd086ccc45458299cf6b8a7ad83d023055c96ae
-ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88661203"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
@@ -116,7 +116,7 @@ ms.locfileid: "88661203"
 
    Уникальное имя подключения позволяет легко найти это подключение позже, особенно при создании нескольких подключений. При необходимости добавьте также имя домена для вашего имени пользователя.
 
-   Пример:
+   Например:
 
    ![Создание подключения между логическим приложением и шлюзом данных](./media/logic-apps-gateway-connection/logic-app-gateway-connection.png)
 

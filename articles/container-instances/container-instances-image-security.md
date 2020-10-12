@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.custom: ''
 ms.openlocfilehash: f49f115e10326887cf4d23406437467256b7df2e
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87922240"
 ---
 # <a name="security-considerations-for-azure-container-instances"></a>Вопросы безопасности для экземпляров контейнеров Azure
@@ -117,7 +117,7 @@ ms.locfileid: "87922240"
 
 * [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) отслеживает производительность рабочих нагрузок, развернутых в Kubernetes средах, размещенных в службе Kubernetes Azure (AKS). С помощью Azure Monitor для контейнеров можно отслеживать производительность, собирая данные метрик памяти и процессора из контроллеров, узлов и контейнеров, доступных в Kubernetes, используя API метрик. 
 
-* [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) помогает просматривать другие узлы контейнеров DOCKER и Windows и управлять ими в одном расположении. Например:
+* [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) помогает просматривать другие узлы контейнеров DOCKER и Windows и управлять ими в одном расположении. Пример:
 
   * Просмотр подробных сведений аудита, показывающих команды, используемые с контейнерами. 
   * Устранение неполадок в контейнерах путем просмотра и поиска централизованных журналов без необходимости удаленного просмотра узлов DOCKER или Windows.  
@@ -142,7 +142,7 @@ ms.locfileid: "87922240"
 * [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md)
 * Журналы ресурсов для [экземпляров контейнеров Azure](container-instances-log-analytics.md) и [реестра контейнеров Azure](../container-registry/container-registry-diagnostics-audit-logs.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Подробные рекомендации, которые помогут повысить безопасность развертывания, см. в разделе [основы безопасности Azure для экземпляров контейнеров](security-baseline.md) .
 

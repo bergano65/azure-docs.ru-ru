@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.openlocfilehash: e18d0b84e987e6c36f3f3b4215743025cac76d45
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987266"
 ---
 # <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Azure Monitor для поставщиков решений SAP (Предварительная версия)
@@ -79,7 +79,7 @@ ms.locfileid: "90987266"
 
 ![Azure Monitor для поставщиков решений SAP — SQL](./media/azure-monitor-sap/azure-monitor-providers-sql.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создайте первую Azure Monitor для ресурса решений SAP.
 - У вас возникли вопросы по Azure Monitor для решений SAP? Проверка раздела " [вопросы и ответы](./azure-monitor-faq.md) "

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
 ms.openlocfilehash: 97031abaedaa3e5595e290fa0292646feb744d47
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90086697"
 ---
 # <a name="use-the-java-message-service-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java с служебной шиной Azure и AMQP 1,0
@@ -303,7 +303,7 @@ public class JmsQueueQuickstart {
 }
 ```
 
-### <a name="run-the-application"></a>Запуск приложения
+### <a name="run-the-application"></a>Выполнение приложения
 
 Передайте **Строку подключения** из политики совместного доступа для запуска приложения.
 Следующие выходные данные имеют форму запуска приложения:
@@ -386,7 +386,7 @@ MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 | createTemporaryQueue        | Создайте очередь с помощью API управления, инструментов или портала с *AutoDeleteOnIdle* , для которого задан срок действия. |
 | рецеивеноваит               | Используйте метод Receive (), предоставленный пакетом SDK служебной шины, и укажите очень низкое или нулевое время ожидания. |
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье показано, как использовать функции обмена сообщениями через брокер служебной шины, такие как очереди и разделы публикации или подписки, из Java с помощью популярных API JMS и AMQP 1,0.
 

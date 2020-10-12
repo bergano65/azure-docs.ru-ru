@@ -4,10 +4,10 @@ description: Узнайте, как шифровать диски операци
 ms.topic: article
 ms.date: 09/01/2020
 ms.openlocfilehash: 257894c6318c9ca083c72daf3c888f7d509ae683
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89489856"
 ---
 # <a name="encrypt-operating-system-os-disks-using-customer-managed-keys-in-azure-devtest-labs"></a>Шифрование дисков операционной системы (ОС) с помощью управляемых клиентом ключей в Azure DevTest Labs
@@ -39,14 +39,14 @@ ms.locfileid: "89489856"
     1. На странице **набор шифрования дисков** выберите **Управление доступом (IAM)** в меню слева. 
     1. Выберите **+ Добавить** на панели инструментов и щелкните **добавить назначение роли**.  
 
-        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/add-role-management-menu.png" alt-text="Добавление управления ролями — меню":::
+        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/add-role-management-menu.png" alt-text="Управляемые ключи":::
     1. На странице **Добавление назначения ролей** выберите роль **читатель** или роль, которая обеспечивает дополнительный доступ. 
     1. Введите имя лаборатории, для которой будет использоваться набор шифрования дисков, и выберите имя лаборатории (удостоверение, назначенное системой для лаборатории) из раскрывающегося списка. 
     
-        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/select-lab.png" alt-text="Выбор управляемого системой удостоверения лаборатории":::        
+        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/select-lab.png" alt-text="Управляемые ключи":::        
     1. На панели инструментов щелкните **Сохранить**. 
 
-        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/save-role-assignment.png" alt-text="Сохранить назначение ролей":::
+        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/save-role-assignment.png" alt-text="Управляемые ключи":::
 3. Добавьте в роль **участника виртуальной машины** **удостоверение, назначенное системой** лаборатории, с помощью страницы **Subscription**  ->  **управления доступом к подпискам (IAM)** . Шаги аналогичны описанным в предыдущих шагах. 
 
     
@@ -54,7 +54,7 @@ ms.locfileid: "89489856"
     1. Выберите **Управление доступом (IAM)** . 
     1. Выберите **+ Добавить** на панели инструментов и щелкните **добавить назначение роли**. 
     
-        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/subscription-access-control-page.png" alt-text="Подписка — страница управления доступом > (IAM)":::
+        :::image type="content" source="./media/encrypt-disks-customer-managed-keys/subscription-access-control-page.png" alt-text="Управляемые ключи":::
     1. На странице **Добавление назначения ролей** выберите **участника виртуальной машины** для роли.
     1. Введите имя лаборатории и выберите **имя лаборатории** (удостоверение, назначенное системой для лаборатории) из раскрывающегося списка. 
     1. На панели инструментов щелкните **Сохранить**. 
@@ -64,12 +64,12 @@ ms.locfileid: "89489856"
 1. На домашней странице лаборатории в портал Azure выберите **Конфигурация и политики** в меню слева. 
 1. На странице **Конфигурация и политики** в разделе **Шифрование** выберите **диски (Предварительная версия)** . По умолчанию для параметра **тип шифрования** задано значение **Шифрование неактивных данных с управляемым платформой ключом**.
 
-    :::image type="content" source="./media/encrypt-disks-customer-managed-keys/disks-page.png" alt-text="Вкладка диски страницы Конфигурация и политики":::
+    :::image type="content" source="./media/encrypt-disks-customer-managed-keys/disks-page.png" alt-text="Управляемые ключи":::
 1. В качестве **типа шифрования**выберите **Шифрование неактивных с помощью управляемого клиентом ключа** из раскрывающегося списка. 
 1. Для параметра **Шифрование диска**выберите созданный ранее набор шифрования дисков. Это тот же набор шифрования диска, к которому может получить доступ, назначенный системой удостоверением лаборатории.
 1. На панели инструментов щелкните **Сохранить**. 
 
-    :::image type="content" source="./media/encrypt-disks-customer-managed-keys/disk-encryption-set.png" alt-text="Включение шифрования с помощью ключа, управляемого клиентом":::
+    :::image type="content" source="./media/encrypt-disks-customer-managed-keys/disk-encryption-set.png" alt-text="Управляемые ключи":::
 1. В окне сообщения со следующим текстом: *этот параметр будет применяться к вновь созданным компьютерам в лаборатории. Старый диск ОС останется зашифрованным со старым набором шифрования диска*, нажмите кнопку **ОК**. 
 
     После настройки диски ОС лаборатории будут зашифрованы с помощью управляемого клиентом ключа, предоставленного с использованием набора шифрования дисков. 
@@ -79,15 +79,15 @@ ms.locfileid: "89489856"
 1. Перейдите к виртуальной машине лаборатории, созданной после включения шифрования дисков с помощью управляемого клиентом ключа в лаборатории.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/encrypt-disks-customer-managed-keys/enabled-encryption-vm.png" alt-text="Виртуальная машина с включенным шифрованием дисков":::
+    > :::image type="content" source="./media/encrypt-disks-customer-managed-keys/enabled-encryption-vm.png" alt-text="Управляемые ключи":::
 1. Щелкните группу ресурсов виртуальной машины и щелкните диск операционной системы.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/encrypt-disks-customer-managed-keys/vm-resource-group.png" alt-text="Группа ресурсов виртуальной машины":::
+    > :::image type="content" source="./media/encrypt-disks-customer-managed-keys/vm-resource-group.png" alt-text="Управляемые ключи":::
 1. Перейдите к разделу шифрование и проверьте, задано ли для шифрования ключ, управляемый клиентом, с выбранным набором шифрования дисков.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/encrypt-disks-customer-managed-keys/validate-encryption.png" alt-text="Проверка шифрования":::
+    > :::image type="content" source="./media/encrypt-disks-customer-managed-keys/validate-encryption.png" alt-text="Управляемые ключи":::
   
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4f9e52dc28d2834b479ac0580ff990119a56772a
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87422034"
 ---
 # <a name="update-or-remove-an-assigned-azure-ad-custom-role-in-privileged-identity-management"></a>Обновление или удаление назначенной настраиваемой роли Azure AD в Управление привилегированными пользователями
@@ -54,7 +54,7 @@ ms.locfileid: "87422034"
 
     ![Выберите "Удалить" или "Обновить" в назначении допустимой роли](./media/azure-ad-custom-roles-update-remove/remove-update.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
