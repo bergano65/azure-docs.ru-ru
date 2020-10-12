@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: 3164de9c3e44001d58d46eab9f823041b440960b
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90984182"
 ---
 # <a name="create-a-storage-account-with-infrastructure-encryption-enabled-for-double-encryption-of-data"></a>Создание учетной записи хранения с включенным шифрованием инфраструктуры для двойного шифрования данных
@@ -180,7 +180,7 @@ az storage account create \
 1. Войдите в свою учетную запись хранения на портале Azure.
 1. В разделе **Параметры**выберите **Шифрование**.
 
-    :::image type="content" source="media/infrastructure-encryption-enable/verify-infrastructure-encryption-portal.png" alt-text="Снимок экрана, показывающий, как проверить, включено ли шифрование инфраструктуры для учетной записи":::
+    :::image type="content" source="media/infrastructure-encryption-enable/verify-infrastructure-encryption-portal.png" alt-text="Снимок экрана, показывающий, как включить шифрование инфраструктуры при создании учетной записи":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 

@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
 ms.openlocfilehash: b0bc23d515bebdd0d943bbad33c5ebba35a35605
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987211"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>Настройка запуска и остановки виртуальных машин в нерабочее время
@@ -139,17 +139,17 @@ ms.locfileid: "90987211"
 
 1. На портале Azure выберите **Монитор** > **Группы действий**. Выберите группу действий под названием **StartStop_VM_Notication**.
 
-    :::image type="content" source="media/automation-solution-vm-management/azure-monitor.png" alt-text="Снимок экрана со страницей "монитор — группы действий".":::
+    :::image type="content" source="media/automation-solution-vm-management/azure-monitor.png" alt-text="Снимок экрана со страницей &quot;монитор — группы действий&quot;.":::
 
 2. На странице StartStop_VM_Notification в разделе **Сведения** щелкните **Изменить сведения**. Откроется страница "Электронная почта, SMS, push-уведомление, голосовой вызов". Измените адрес электронной почты и нажмите кнопку **ОК**, чтобы сохранить изменения.
 
-    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Снимок экрана: страница электронной почты, SMS/Push/Voice с примером обновленного адреса электронной почты.":::
+    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Снимок экрана со страницей &quot;монитор — группы действий&quot;.":::
 
     Кроме того, можно добавить дополнительные действия в группу действий. Дополнительные сведения о группах действий см. в статье [Группы действий](../azure-monitor/platform/action-groups.md)
 
 Ниже приведен пример сообщения электронной почты, которое отправляется, когда функция завершает работу виртуальных машин.
 
-:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Снимок экрана примера сообщения электронной почты, отправленного при завершении работы компонента виртуальными машинами.":::
+:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Снимок экрана со страницей &quot;монитор — группы действий&quot;.":::
 
 ## <a name="add-or-exclude-vms"></a><a name="add-exclude-vms"></a>Добавление и исключение виртуальных машин
 

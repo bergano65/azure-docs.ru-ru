@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
 ms.openlocfilehash: 39257419f179bdce8c94f2ddb3a7cd8f5ac2d34f
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89077761"
 ---
 # <a name="custom-vision-encryption-of-data-at-rest"></a>Пользовательское визуальное распознавание шифрование неактивных данных
@@ -30,14 +30,14 @@ Azure Пользовательское визуальное распознава
 Управляемые клиентом ключи в настоящее время доступны в следующих регионах:
 
 * Центрально-южная часть США
-* Западная часть США 2
+* западная часть США 2
 * Восточная часть США
 * US Gov (Вирджиния)
 
 [!INCLUDE [cognitive-services-cmk](../includes/configure-customer-managed-keys.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Полный список служб, поддерживающих CMK, см. в разделе [управляемые клиентом ключи для Cognitive Services](../encryption/cognitive-services-encryption-keys-portal.md)
 * [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
-* [Cognitive Servicesная форма запроса ключа, управляемого клиентом](https://aka.ms/cogsvc-cmk)
+* [Форма запроса ключа Cognitive Services Customer-Managed](https://aka.ms/cogsvc-cmk)

@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 07/07/2020
 ms.author: aahi
 ms.openlocfilehash: 72a877ab8cfda126016376017c0a7eb42b1186d6
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86108947"
 ---
 Чтобы запустить контейнер, сначала найдите его идентификатор образа:
@@ -24,12 +24,12 @@ docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
 
 Выполните следующую `docker run` команду. Замените заполнители ниже собственными значениями:
 
-| Заместитель | Значение | Формат или пример |
+| Заполнитель | Значение | Формат или пример |
 |-------------|-------|---|
 | **{API_KEY}** | Ключ для ресурса Анализ текста. Его можно найти на странице **ключа и конечной точки** ресурса на портал Azure. |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
 | **{ENDPOINT_URI}** | Конечная точка для доступа к API анализа текста. Его можно найти на странице **ключа и конечной точки** ресурса на портал Azure. | `https://<your-custom-subdomain>.cognitiveservices.azure.com` |
 | **{IMAGE_ID}** | Идентификатор образа для контейнера. | `1.1.011300001-amd64-preview` |
-| **{INPUT_DIR}** | Входной каталог для контейнера. | Windows: `C:\healthcareMount` <br> Linux и MacOS:`/home/username/input` |
+| **{INPUT_DIR}** | Входной каталог для контейнера. | Windows: `C:\healthcareMount` <br> Linux и MacOS: `/home/username/input` |
 
 ```bash
 docker run --rm -it -p 5000:5000 --cpus 6 --memory 12g \
@@ -40,7 +40,7 @@ ApiKey={API_KEY} \
 Logging:Disk:Format=json
 ```
 
-Эта команда:
+Команда:
 
 - Предполагается, что входной каталог существует на размещающем компьютере
 - Запускает Анализ текста для контейнера работоспособности из образа контейнера.

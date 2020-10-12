@@ -8,10 +8,10 @@ ms.custom:
 - seodec18
 - fasttrack-edit
 ms.openlocfilehash: 68af882bf240b354bdad1afe322135c048576ed4
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83772842"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-microsoft-account-login"></a>Настройка приложения в Службе приложений или службе "Функции Azure" для использования входа по учетной записи Майкрософт
@@ -28,7 +28,7 @@ ms.locfileid: "83772842"
 1. Перейдите на страницу [**Регистрация приложений**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) на портале Azure. Если потребуется, войдите в систему с учетной записью Майкрософт.
 1. Выберите **Новая регистрация** и введите имя приложения.
 1. В поле **Поддерживаемые типы учетных записей** выберите вариант **Учетные записи в любом каталоге организации (любой каталог Azure AD — мультитенантный) и персональные учетные записи Майкрософт (например, Skype, Xbox)** .
-1. В разделе **URI перенаправления** выберите **Интернет** и введите `https://<app-domain-name>/.auth/login/aad/callback`. Замените заполнитель *\<app-domain-name>* доменным именем реального приложения.  Например, `https://contoso.azurewebsites.net/.auth/login/aad/callback`. Убедитесь, что в URL-адресе используется схема HTTPS.
+1. В разделе **URI перенаправления** выберите **Интернет** и введите `https://<app-domain-name>/.auth/login/aad/callback`. Замените на *\<app-domain-name>* доменное имя приложения.  Например, `https://contoso.azurewebsites.net/.auth/login/aad/callback`. Убедитесь, что в URL-адресе используется схема HTTPS.
 
 1. Выберите **Зарегистрировать**.
 1. Скопируйте значение в поле **Идентификатор приложения (клиента)** . Он понадобится вам позднее.

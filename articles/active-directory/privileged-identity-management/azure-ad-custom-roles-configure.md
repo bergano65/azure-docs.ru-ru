@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8745482ed551108044bbe5e2b2f191ad46d7a441
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91538453"
 ---
 # <a name="configure-azure-ad-custom-roles-in-privileged-identity-management"></a>Настройка настраиваемой роли AAD через Privileged Identity Management
@@ -98,7 +98,7 @@ ms.locfileid: "91538453"
 1. Выберите по крайней мере одного участника или группу и нажмите кнопку **Выбрать**. Нужно выбрать по меньшей мере одно утверждающее лицо. Утверждающих по умолчанию нет. Выбранные вами элементы отобразятся в списке выбранных утверждающих лиц.
 1. После указания всех параметров роли щелкните **Обновить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-activate.md)
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)

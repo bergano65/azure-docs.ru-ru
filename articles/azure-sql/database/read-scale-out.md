@@ -12,10 +12,10 @@ ms.author: sashan
 ms.reviewer: sstein
 ms.date: 09/03/2020
 ms.openlocfilehash: bd393a897052dd0bd49851eee424c99ad1fcfb1f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319433"
 ---
 # <a name="use-read-only-replicas-to-offload-read-only-query-workloads"></a>Использование реплик только для чтения для разгрузки рабочих нагрузок запросов только для чтения
@@ -89,14 +89,14 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability');
 |:---|:---|
 |[sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Предоставляет метрики использования ресурсов за последний час, включая ЦП, операции ввода-вывода данных и использование записи журнала относительно ограничений цели службы.|
 |[sys.dm_os_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql)| Предоставляет совокупную статистику ожидания для экземпляра ядра СУБД. |
-|[sys. dm_database_replica_states](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database)| Предоставляет состояние работоспособности реплики и статистику синхронизации. Размер очереди повтора и скорость повтора служат индикаторами задержки данных в реплике только для чтения. |
+|[sys.dm_database_replica_states](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database)| Предоставляет состояние работоспособности реплики и статистику синхронизации. Размер очереди повтора и скорость повтора служат индикаторами задержки данных в реплике только для чтения. |
 |[sys.dm_os_performance_counters](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql)| Предоставляет счетчики производительности ядра СУБД.|
 |[sys.dm_exec_query_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql)| Предоставляет статистику выполнения по запросу, например количество выполнений, использованное время ЦП и т. д.|
-|[sys. dm_exec_query_plan ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql)| Предоставляет кэшированные планы запросов. |
-|[sys. dm_exec_sql_text ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql)| Предоставляет текст запроса для кэшированного плана запроса.|
+|[sys.dm_exec_query_plan ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql)| Предоставляет кэшированные планы запросов. |
+|[sys.dm_exec_sql_text ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql)| Предоставляет текст запроса для кэшированного плана запроса.|
 |[sys.dm_exec_query_profiles](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет ход выполнения запросов в реальном времени во время выполнения запросов.|
-|[sys. dm_exec_query_plan_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет Последний известный фактический план выполнения, включая статистику времени выполнения для запроса.|
-|[sys. dm_io_virtual_file_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql)| Предоставляет статистику операций ввода-вывода, пропускной способности и задержки хранилища для всех файлов базы данных. |
+|[sys.dm_exec_query_plan_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-stats-transact-sql)| Предоставляет Последний известный фактический план выполнения, включая статистику времени выполнения для запроса.|
+|[sys.dm_io_virtual_file_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql)| Предоставляет статистику операций ввода-вывода, пропускной способности и задержки хранилища для всех файлов базы данных. |
 
 > [!NOTE]
 > Динамические `sys.resource_stats` `sys.elastic_pool_resource_stats` административные представления и в логической базе данных master возвращают данные об использовании ресурсов первичной реплики.
@@ -123,7 +123,7 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability');
 > Если при выполнении запросов к реплике только для чтения появляется сообщение об ошибке 3961 или 1219, повторите запрос.
 
 > [!TIP]
-> В уровнях обслуживания Premium и критически важный для бизнеса при подключении к реплике только для чтения `redo_queue_size` `redo_rate` столбцы и в динамическом административном [представлении sys. dm_database_replica_states](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database) можно использовать для мониторинга процесса синхронизации данных, выступая в качестве индикаторов задержки данных в реплике только для чтения.
+> В уровнях обслуживания Premium и критически важный для бизнеса при подключении к реплике только для чтения `redo_queue_size` `redo_rate` столбцы и в динамическом административном наборе [sys.dm_database_replica_states](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database) могут использоваться для мониторинга процесса синхронизации данных, выступая в качестве индикаторов задержки данных в реплике только для чтения.
 > 
 
 ## <a name="enable-and-disable-read-scale-out"></a>Включение и отключение горизонтального масштабирования для чтения
@@ -195,6 +195,6 @@ Body: {
 > [!NOTE]
 > Между репликами геореплицированной базы данных-получателя отсутствует автоматический циклический перебор или любая другая маршрутизация с балансировкой нагрузки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о предложении для масштабирования базы данных SQL см. в разделе [уровень служб в масштабе](service-tier-hyperscale.md).

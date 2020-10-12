@@ -8,10 +8,10 @@ ms.date: 06/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 5ca65a428af02eaf5ae6ac461006c720da4461bd
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91538186"
 ---
 # <a name="cloud-tiering-overview"></a>Общие сведения о распределении по уровням в облаке
@@ -45,7 +45,7 @@ ms.locfileid: "91538186"
 |Размер кластера томов (в байтах) |Файлы такого размера или увеличения могут быть многоуровневой.  |
 |----------------------------|---------|
 |4 КБ или меньше (4096)      | 8 КБ    |
-|8 КБ (8192)                 | 16 КБ   |
+|8 КБ (8192)                 | 16 КБ   |
 |16 КБ (16384)               | 32 КБ   |
 |32 КБ (32768)               | 64 КБ   |
 |64 КБ (65536) и более    | 128 КБ  |
@@ -60,7 +60,7 @@ ms.locfileid: "91538186"
 |---------------|---------------|
 |7 МБ — 16 ТБ   | 4 КБ          |
 |16TB — 32 ТБ   | 8 КБ          |
-|32TB — 64 ТБ   | 16 КБ         |
+|32TB — 64 ТБ   | 16 КБ         |
 |64TB — 128 ТБ  | 32 КБ         |
 |128TB — 256 ТБ | 64 КБ         |
 |> 256 ТБ       | Не поддерживается |
@@ -177,14 +177,14 @@ Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint>
 * `-PerFileRetryCount`Определяет, как часто будет пытаться отозвать заблокированный файл.
 * `-PerFileRetryDelaySeconds`Определяет время в секундах между повторными попытками вызова и всегда используется в сочетании с предыдущим параметром.
 
-Пример
+Пример.
 ```powershell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
 Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint> -ThreadCount 8 -Order CloudTieringPolicy -PerFileRetryCount 3 -PerFileRetryDelaySeconds 10
 ``` 
 
 > [!Note]  
-> - Командлет Invoke-Сторажесинкфилерекалл также можно использовать для повышения производительности загрузки файлов при добавлении новой конечной точки сервера в существующую группу синхронизации.  
+> - Командлет Invoke-StorageSyncFileRecall также можно использовать для повышения производительности загрузки файлов при добавлении новой конечной точки сервера в существующую группу синхронизации.  
 >- Если на локальном томе, на котором размещен сервер, недостаточно свободного места для отзыва всех многоуровневых данных, командлет `Invoke-StorageSyncFileRecall` завершится сбоем.  
 
 <a id="sizeondisk-versus-size"></a>

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
 ms.openlocfilehash: aef468d919e6f09722045f98c68383785d10b137
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87423088"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Поддержка платформ SDK для устройств Azure IoT
@@ -44,7 +44,7 @@ ms.locfileid: "87423088"
 
 [Пакет SDK для устройства C центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c) тестируется в и поддерживает следующие конфигурации.
 
-| Операционная система                  | Библиотека TLS                  | Дополнительные требования                                                                     |
+| OS                  | Библиотека TLS                  | Дополнительные требования                                                                     |
 |---------------------|------------------------------|---------------------------------------------------------------------------------------------|
 | Linux               | OpenSSL, Волфссл или Беарссл | Протоколы Berkeley</br></br>Интерфейс переносимой операционной системы (POSIX)                       |
 | iOS 12,2            | OpenSSL.                      | XCode, имитируемый в OSX 10.13.4                                                               |
@@ -57,7 +57,7 @@ ms.locfileid: "87423088"
 
 [Пакет SDK для устройств Python центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-python) тестируется в и поддерживает следующие конфигурации.
 
-| Операционная система                  | Компилятор                          |
+| OS                  | Компилятор                          |
 |---------------------|-----------------------------------|
 | Linux               | Python 2,7. *, 3,5 или более поздней версии |
 | MacOS High Sierra   | Python 2,7. *, 3,5 или более поздней версии |
@@ -69,7 +69,7 @@ ms.locfileid: "87423088"
 
 [Пакет SDK для устройств .NET для центра Интернета вещей (C#)](https://github.com/Azure/azure-iot-sdk-csharp) проверяется с поддержкой следующих конфигураций.
 
-| Операционная система                                   | Standard                                                   |
+| OS                                   | Стандартный                                                   |
 |--------------------------------------|------------------------------------------------------------|
 | Linux                                | .NET Core 2.1                                              |
 | SKU для настольных компьютеров и серверов Windows 10   | .NET Core 2,1, .NET Framework 4.5.1 или .NET Framework 4,7 |
@@ -80,7 +80,7 @@ ms.locfileid: "87423088"
 
 [Центр Интернета вещей Azure Node.js пакет SDK для устройств](https://github.com/Azure/azure-iot-sdk-node) и поддерживает следующие конфигурации.
 
-| Операционная система                  | Версия узла    |
+| OS                  | Версия узла    |
 |---------------------|-----------------|
 | Linux               | LTS и текущий |
 | Семейство Windows 10   | LTS и текущий |
@@ -89,7 +89,7 @@ ms.locfileid: "87423088"
 
 [Пакет SDK для устройства Java центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-java) тестируется в и поддерживает следующие конфигурации.
 
-| Операционная система                     | Версия Java |
+| OS                     | Версия Java |
 |------------------------|--------------|
 | API 28 для Android         | Java 8       |
 | Linux x64             | Java 8       |
@@ -144,7 +144,7 @@ ms.locfileid: "87423088"
 
 **Запросы функций** . запросы к функциям Интернета вещей Azure отправляются с помощью [веб-страницы пользователя](https://feedback.azure.com/forums/321918-azure-iot)продукта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Пакеты SDK для устройств и служб](iot-hub-devguide-sdks.md)
 * [Руководство по переносу](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)

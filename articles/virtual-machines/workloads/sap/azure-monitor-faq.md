@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.openlocfilehash: f70aa684a089e0f21cb50932e212b71f77df0e01
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987250"
 ---
 # <a name="azure-monitor-for-sap-solutions-faq-preview"></a>Вопросы и ответы по Azure Monitor для решения SAP (Предварительная версия)
@@ -77,6 +77,6 @@ SQL Server 2012 SP4 или более поздней версии.
  - **Какова ценность этой службы по традиционным решениям, таким как SAP HANAная панель или студия?**  
 Azure Monitor для решений SAP не зависит от базы данных HANA. Azure Monitor для решений SAP поддерживает также сертифицированную.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создайте первую Azure Monitor для ресурса решений SAP.

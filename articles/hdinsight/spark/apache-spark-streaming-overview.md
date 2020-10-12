@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: a88d4893daa12ff2c35ee7cf8f4e5b7569f854f6
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86086200"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Общие сведения о потоковой передаче Apache Spark
@@ -89,7 +89,7 @@ val wordCounts = pairs.reduceByKey(_ + _)
 wordCounts.print()
 ```
 
-### <a name="run-the-application"></a>Запуск приложения
+### <a name="run-the-application"></a>Выполнение приложения
 
 Запустите приложение потоковой передачи и продолжайте его работу, пока не будет получен сигнал завершения.
 
@@ -154,7 +154,7 @@ SELECT * FROM demo_numbers
 
 Итоговые выходные данные выглядят следующим образом:
 
-| value | time |
+| значение | time |
 | --- | --- |
 |10 | 1497314465256 |
 |11 | 1497314470272 |
@@ -222,7 +222,7 @@ ssc.start()
 
 После истечения первой минуты будут получены 12 записей — по шесть записей из каждого из двух пакетов, собранных в окне.
 
-| value | time |
+| значение | time |
 | --- | --- |
 | 1 | 1497316294139 |
 | 2 | 1497316299158
@@ -239,7 +239,7 @@ ssc.start()
 
 В функции скользящего окна, доступные в API потоковой передачи Spark, входит window, countByWindow, reduceByWindow и countByValueAndWindow. Дополнительные сведения об этих функциях см. в разделе [Transformations on DStreams](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html#transformations-on-dstreams) (Преобразования в потоках DStream).
 
-## <a name="checkpointing"></a>Контрольные точки
+## <a name="checkpointing"></a>Назначение контрольных точек
 
 Для обеспечения отказоустойчивости в потоковой передаче Spark используются контрольные точки, позволяющие гарантировать, что потоки обрабатываются непрерывно даже при сбоях узлов. Spark создает контрольные точки в долговременном хранилище (хранилище Azure или Data Lake Storage). Эти контрольные точки хранят метаданные приложения потоковой передачи, такие как конфигурация, и операции, определенные приложением. Кроме того, все пакеты, которые были поставлены в очередь, но еще не обработаны. Иногда контрольные точки также включают сохранение данных в RDD для более быстрого перестроения состояния данных из RDD, управляемого Spark.
 
@@ -251,7 +251,7 @@ ssc.start()
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно завершить работу приложения, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию потоковой передачи Apache Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html)

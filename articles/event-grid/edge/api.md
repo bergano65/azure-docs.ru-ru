@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 414487d460d897eff787b11915db560706b29eb4
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86171760"
 ---
 # <a name="rest-api"></a>REST API
@@ -22,8 +22,8 @@ ms.locfileid: "86171760"
 ### <a name="base-url"></a>Базовый URL-адрес
 Сетка событий на IoT Edge имеет следующие интерфейсы API, предоставляемые через HTTP (порт 5888) и HTTPS (порт 4438).
 
-* Базовый URL-адрес для HTTP:http://eventgridmodule:5888
-* Базовый URL-адрес для HTTPS:https://eventgridmodule:4438
+* Базовый URL-адрес для HTTP: http://eventgridmodule:5888
+* Базовый URL-адрес для HTTPS: https://eventgridmodule:4438
 
 ### <a name="request-query-string"></a>Запрос строки запроса
 Для всех запросов API требуется следующий параметр строки запроса:
@@ -72,7 +72,7 @@ ms.locfileid: "86171760"
 
 ### <a name="put-topic-create--update"></a>Добавить раздел (создать или обновить)
 
-**Запрос**:``` PUT /topics/<topic_name>?api-version=2019-01-01-preview ```
+**Запрос**: ``` PUT /topics/<topic_name>?api-version=2019-01-01-preview ```
 
 **Полезные данные**:
 
@@ -105,7 +105,7 @@ ms.locfileid: "86171760"
 
 ### <a name="get-topic"></a>Получить раздел
 
-**Запрос**:``` GET /topics/<topic_name>?api-version=2019-01-01-preview ```
+**Запрос**: ``` GET /topics/<topic_name>?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -125,7 +125,7 @@ ms.locfileid: "86171760"
 
 ### <a name="get-all-topics"></a>Получить все разделы
 
-**Запрос**:``` GET /topics?api-version=2019-01-01-preview ```
+**Запрос**: ``` GET /topics?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -157,7 +157,7 @@ ms.locfileid: "86171760"
 
 ### <a name="delete-topic"></a>Удалить раздел
 
-**Запрос**:``` DELETE /topics/<topic_name>?api-version=2019-01-01-preview ```
+**Запрос**: ``` DELETE /topics/<topic_name>?api-version=2019-01-01-preview ```
 
 **Ответ**: HTTP 200, пустые полезные данные
 
@@ -166,7 +166,7 @@ ms.locfileid: "86171760"
 
 ### <a name="put-event-subscription-create--update"></a>Размещение подписки на события (создание или обновление)
 
-**Запрос**:``` PUT /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
+**Запрос**: ``` PUT /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
 
 **Полезные данные**:
 ```json
@@ -371,7 +371,7 @@ ms.locfileid: "86171760"
 
 ### <a name="get-event-subscription"></a>Получить подписку на событие
 
-**Запрос**:``` GET /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
+**Запрос**: ``` GET /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -476,7 +476,7 @@ ms.locfileid: "86171760"
 
 ### <a name="get-event-subscriptions"></a>Получение подписок на события
 
-**Запрос**:``` GET /topics/<topic_name>/eventSubscriptions?api-version=2019-01-01-preview ```
+**Запрос**: ``` GET /topics/<topic_name>/eventSubscriptions?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -494,7 +494,7 @@ ms.locfileid: "86171760"
 
 ### <a name="delete-event-subscription"></a>Удаление подписки на события
 
-**Запрос**:``` DELETE /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
+**Запрос**: ``` DELETE /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
 
 **Ответ**: HTTP 200, без полезных данных
 
@@ -503,7 +503,7 @@ ms.locfileid: "86171760"
 
 ### <a name="send-batch-of-events-in-event-grid-schema"></a>Отправка пакета событий (в схеме сетки событий)
 
-**Запрос**:``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
+**Запрос**: ``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
 
 ```json
 [
@@ -525,18 +525,18 @@ ms.locfileid: "86171760"
 
 
 **Описания полей полезных данных**
-- ```Id```является обязательным. Это может быть любое строковое значение, заполняемое вызывающим объектом. Сетка событий не выполняет никаких действий по обнаружению дубликатов и не обеспечивает никакой семантики этого поля.
-- ```Topic```аргумент является необязательным, но если он должен соответствовать topic_name из URL-адреса запроса
-- ```Subject```является обязательным, может быть любым строковым значением
-- ```EventType```является обязательным, может быть любым строковым значением
-- ```EventTime```является обязательным, он не проверяется, но должен быть правильным значением DateTime.
+- ```Id``` является обязательным. Это может быть любое строковое значение, заполняемое вызывающим объектом. Сетка событий не выполняет никаких действий по обнаружению дубликатов и не обеспечивает никакой семантики этого поля.
+- ```Topic``` аргумент является необязательным, но если он должен соответствовать topic_name из URL-адреса запроса
+- ```Subject``` является обязательным, может быть любым строковым значением
+- ```EventType``` является обязательным, может быть любым строковым значением
+- ```EventTime``` является обязательным, он не проверяется, но должен быть правильным значением DateTime.
 - ```DataVersion``` является обязательным параметром.
-- ```MetadataVersion```аргумент является необязательным, если он указан, он должен быть строкой со значением```"1"```
-- ```Data```аргумент является необязательным и может быть любым токеном JSON (число, строка, логическое значение, массив, объект)
+- ```MetadataVersion``` аргумент является необязательным, если он указан, он должен быть строкой со значением ```"1"```
+- ```Data``` аргумент является необязательным и может быть любым токеном JSON (число, строка, логическое значение, массив, объект)
 
 ### <a name="send-batch-of-events-in-custom-schema"></a>Отправка пакета событий (в пользовательской схеме)
 
-**Запрос**:``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
+**Запрос**: ``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
 
 ```json
 [
@@ -754,7 +754,7 @@ EndpointUrl
 
 ## <a name="set-up-storage-queues-as-a-destination"></a>Настройка очередей хранилища в качестве места назначения
 
-Чтобы опубликовать в очереди хранилища, задайте для значение `endpointType` `storageQueue` и укажите:
+Чтобы опубликовать в очереди хранилища, задайте для значение  `endpointType` `storageQueue` и укажите:
 
 * queueName: имя очереди хранилища, в которую выполняется публикация.
 * connectionString: строка подключения для учетной записи хранения, в которой находится очередь хранилища.

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/29/2020
 ms.openlocfilehash: 44cfc5b651bdd5dc0d7abee575bd964ad0b603d0
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89505018"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
@@ -152,7 +152,7 @@ yarn application -kill <application_id>
 yarn application -kill "application_1499348398273_0003"
 ```
 
-### <a name="getting-stuck-in-safe-mode"></a>Получение залипания в защищенном режиме
+### <a name="getting-stuck-in-safe-mode"></a>Возникла проблема в безопасном режиме
 
 При уменьшении масштаба кластера HDInsight использует интерфейсы управления Apache Ambari для первого списания дополнительных рабочих узлов. Узлы реплицируют свои блоки HDFS на другие сетевые рабочие узлы. После этого HDInsight будет безопасно масштабировать кластер. HDFS переходит в защищенный режим во время операции масштабирования. После завершения масштабирования должен быть создан HDFS. Однако в некоторых случаях HDFS зависает в защищенном режиме во время операции масштабирования из-за блокирования файла при репликации.
 
@@ -268,7 +268,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 

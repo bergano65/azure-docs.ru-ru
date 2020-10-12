@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: iainfou
 ms.openlocfilehash: 10eec1527fb0ac5109822da398642613219771f6
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86039846"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-active-directory-domain-services-managed-domain"></a>Синхронизация объектов и учетных данных в управляемом домене доменных служб Azure Active Directory
@@ -42,7 +42,7 @@ ms.locfileid: "86039846"
 
 | Атрибут в AD DS Azure | Источник | Примечания |
 |:--- |:--- |:--- |
-| Имя участника-пользователя | Атрибут *имени участника* -пользователя в клиенте Azure AD | Атрибут UPN из клиента Azure AD синхронизирован как есть в Azure AD DS. Самым надежным способом входа в управляемый домен является использование имени участника-пользователя. |
+| UPN | Атрибут *имени участника* -пользователя в клиенте Azure AD | Атрибут UPN из клиента Azure AD синхронизирован как есть в Azure AD DS. Самым надежным способом входа в управляемый домен является использование имени участника-пользователя. |
 | SAMAccountName | Атрибут *mailNickname* пользователя в клиенте Azure AD или автоматически сформированный | Источником атрибута *SamAccountName* является атрибут *mailNickname* в клиенте Azure AD. Если несколько учетных записей пользователей имеют одинаковый атрибут *mailNickname* , то *SamAccountName* создается автоматически. Если длина префикса *mailNickname* или *имени участника* -пользователя превышает 20 символов, *SamAccountName* создается автоматически в соответствии с ограничением в 20 символов для атрибутов *SamAccountName* . |
 | Пароли | Пароль пользователя из клиента Azure AD | Устаревшие хэши паролей, необходимые для проверки подлинности NTLM или Kerberos, синхронизируются с клиентом Azure AD. Если клиент Azure AD настроен для гибридной синхронизации с помощью Azure AD Connect, эти хэши паролей помещаются из локальной среды AD DS. |
 | Основной идентификатор безопасности (SID) пользователя или группы | Автоматически сформированный | Основной идентификатор безопасности учетных записей пользователей или групп создается автоматически в AD DS Azure. Этот атрибут не соответствует идентификатору безопасности основного пользователя или группы объекта в локальной среде AD DS. Это несоответствие связано с тем, что управляемый домен имеет другое пространство имен SID, чем локальный домен AD DS. |
@@ -80,7 +80,7 @@ ms.locfileid: "86039846"
 | postalCode |postalCode |
 | preferredLanguage |preferredLanguage |
 | proxyAddresses | proxyAddresses |
-| state |st |
+| Состояние |st |
 | streetAddress |streetAddress |
 | surname |sn |
 | TelephoneNumber |TelephoneNumber |
@@ -144,7 +144,7 @@ Azure AD имеет гораздо более простое и неструкт
 
 Для гибридных учетных записей пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, необходимо [настроить Azure AD Connect для синхронизации хэшей паролей в форматах, совместимых с NTLM и Kerberos](tutorial-configure-password-hash-sync.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об особенностях синхронизации паролей см. в статье [как работает синхронизация хэшей паролей с Azure AD Connect](../active-directory/hybrid/how-to-connect-password-hash-synchronization.md?context=/azure/active-directory-domain-services/context/azure-ad-ds-context).
 
