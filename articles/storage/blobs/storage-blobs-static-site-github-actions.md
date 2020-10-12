@@ -1,5 +1,5 @@
 ---
-title: Использование действий GitHub для развертывания статического сайта в службе хранилища Azure
+title: Использование GitHub Actions для развертывания статического сайта в службе хранилища Azure
 description: Размещение статического веб-сайта службы хранилища Azure с помощью действий GitHub
 author: juliakm
 ms.service: storage
@@ -10,10 +10,10 @@ ms.date: 09/11/2020
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure
 ms.openlocfilehash: 919fa0d7b6dff0361e4439b442bcfe9648ed8677
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776397"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Настройка рабочего процесса GitHub Actions для развертывания статического веб-сайта в службе хранилища Azure
@@ -24,7 +24,7 @@ ms.locfileid: "91776397"
 > Если вы используете [статические веб-приложения Azure](https://docs.microsoft.com/azure/static-web-apps/), вам не нужно вручную настраивать рабочий процесс для действий GitHub.
 > Статические веб-приложения Azure автоматически создают рабочий процесс GitHub. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Подписка Azure и учетная запись GitHub. 
 
@@ -266,7 +266,7 @@ ms.locfileid: "91776397"
 
 Если статический сайт и репозиторий Azure больше не нужны, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о статических веб-приложениях Azure](https://docs.microsoft.com/azure/static-web-apps/)

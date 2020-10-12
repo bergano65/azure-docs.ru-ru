@@ -4,10 +4,10 @@ description: Настройка брандмауэра Azure и определя
 ms.topic: article
 ms.date: 07/16/2020
 ms.openlocfilehash: 497645b9fe7f908cc9b8b4d7ed0ba5e201570160
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89566574"
 ---
 # <a name="configure-a-single-public-ip-address-for-outbound-and-inbound-traffic-to-a-container-group"></a>Настройка единого общедоступного IP-адреса для исходящего и входящего трафика в группу контейнеров
@@ -278,7 +278,7 @@ az container logs \
 <html><head><title>Current IP Check</title></head><body>Current IP Address: 52.142.18.133</body></html>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы настроите группы контейнеров в виртуальной сети за брандмауэром Azure. Вы настроили определяемые пользователем маршруты и NAT и правила приложений в брандмауэре. С помощью этой конфигурации вы настраиваете один статический IP-адрес для входящих и исходящих данных из экземпляров контейнеров Azure.
 

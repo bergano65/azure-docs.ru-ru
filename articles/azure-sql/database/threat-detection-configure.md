@@ -11,10 +11,10 @@ ms.author: ronmat
 ms.reviewer: vanto
 ms.date: 09/21/2020
 ms.openlocfilehash: 678de4354012dcea5b954980109fd71c1004aca4
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619293"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-sql-database"></a>Настройка расширенной защиты от угроз для базы данных SQL Azure
@@ -39,7 +39,7 @@ ms.locfileid: "91619293"
 
 Пример сценария см. в статье [Настройка аудита и расширенная защита от угроз с помощью PowerShell](scripts/auditing-threat-detection-powershell-configure.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [Advanced Threat protection](threat-detection-overview.md).
 - Дополнительные сведения о [расширенной защите от угроз в SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).  

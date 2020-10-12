@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: references_regions
 ms.openlocfilehash: 19b1c930ffc0e4b519c25f421662547a4d8dcde6
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91773371"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
@@ -187,7 +187,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
   - При необходимости вы сможете восстановить виртуальную машину из старого хранилища.
   - Первой резервной копией в новом хранилище виртуальной машины в новом ресурсе будет Начальная реплика.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками.
 

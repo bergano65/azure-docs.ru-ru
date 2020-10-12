@@ -8,10 +8,10 @@ ms.date: 07/29/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: ee332eb7dea86e07c2d8f9b75a0e152dc7482a41
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87438824"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
@@ -62,7 +62,7 @@ ms.locfileid: "87438824"
 
 Ниже приведены полные доменные имена, используемые шлюзом.
 
-| Имена доменов | Исходящие порты | Описание |
+| Доменные имена | Исходящие порты | Описание |
 | --- | --- | --- |
 | *.powerbi.com |80 |HTTP для скачивания установщика. |
 | *.powerbi.com |443 |HTTPS |
@@ -87,7 +87,7 @@ ms.locfileid: "87438824"
 </setting>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 Следующие статьи включены в общее содержимое локального шлюза данных, которое применяется ко всем службам, которые поддерживает шлюз:
 

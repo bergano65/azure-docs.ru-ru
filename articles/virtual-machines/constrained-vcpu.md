@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/09/2018
 ms.author: mimckitt
 ms.openlocfilehash: c7852bd1b6d93357c1c9127686d1edbb5c702a3c
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88701650"
 ---
 # <a name="constrained-vcpu-capable-vm-sizes"></a>Размеры виртуальных машин, поддерживающие ограниченное число виртуальных ЦП
@@ -24,7 +24,7 @@ ms.locfileid: "88701650"
 Цена за лицензии на виртуальные машины SQL Server или Oracle взымается в зависимости от нового количества виртуальных ЦП. Это же правило должно применяться и к цене за остальные продукты. Это позволяет на 50–75 % увеличить соотношение характеристик виртуальной машины с активными (подлежащими оплате) ЦП. Эти новые размеры виртуальных машин позволяют рабочим нагрузкам клиентов использовать одну и ту же память, хранилище и пропускную способность ввода-вывода при оптимизации стоимости лицензирования программного обеспечения. Сейчас затраты на вычисление, в том числе лицензирование операционной системы, остаются прежними. Дополнительные сведения см. в записи блога [Announcing new Azure VM sizes for more cost-effective database workloads](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/) (Объявление новых размеров виртуальных машин Azure для более экономичных рабочих нагрузок базы данных).
 
 
-| name                | vCPU | Спецификации           |
+| Имя                | vCPU | Спецификации           |
 |---------------------|------|-----------------|
 | Standard_M8-2ms     | 2    | См. M8ms    |
 | Standard_M8-4ms     | 4    | См. M8ms    |

@@ -4,10 +4,10 @@ description: В этой статье показано, как использо�
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: 354afb89b145e288f525e40ad700e8f8a67c6dad
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86115049"
 ---
 # <a name="create-view-and-manage-event-grid-system-topics-using-azure-cli"></a>Создание, просмотр и управление системными разделами сетки событий с помощью Azure CLI
@@ -18,14 +18,14 @@ ms.locfileid: "86115049"
 
 В Cloud Shell:
 
-- Если расширение было установлено ранее, обновите его:`az extension update -n eventgrid`
-- Если расширение ранее не устанавливалось, установите его:`az extension add -n eventgrid`
+- Если расширение было установлено ранее, обновите его: `az extension update -n eventgrid`
+- Если расширение ранее не устанавливалось, установите его:  `az extension add -n eventgrid`
 
 При локальной установке:
 
 1. [Установка Azure CLI](/cli/azure/install-azure-cli). С помощью `az --version` проверьте, что установлена последняя версия.
-2. Удалите предыдущие версии расширения:`az extension remove -n eventgrid`
-3. Установите расширение eventgrid с помощью`az extension add -n eventgrid`
+2. Удалите предыдущие версии расширения: `az extension remove -n eventgrid`
+3. Установите расширение eventgrid с помощью `az extension add -n eventgrid`
 
 ## <a name="create-a-system-topic"></a>Создание системного раздела
 

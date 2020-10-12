@@ -10,10 +10,10 @@ ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
 ms.openlocfilehash: 63bc3caf97e1325c365171ba3f8e6353885d9b68
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89322557"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Создание обобщенных образов без агента подготовки
@@ -271,6 +271,6 @@ Jun 11 20:28:56 thstringnopa2 systemd[1]: Started Azure Provisioning.
 
 Если вы реализуете собственный код подготовки или агента, вы владеете поддержкой этого кода, поддержка Майкрософт будет исследовать только проблемы, связанные с интерфейсами подготовки, которые недоступны. Мы постоянно делаем улучшения и изменения в этой области, поэтому необходимо отслеживать изменения в Cloud-init и агенте Linux для Azure для подготовки изменений API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

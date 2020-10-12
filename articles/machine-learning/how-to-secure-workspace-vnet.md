@@ -12,10 +12,10 @@ ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, tracking-python, contperfq1
 ms.openlocfilehash: 5d34fe403e0af4bc871ba176d0fa755650c26292
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776054"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Защита рабочей области Машинное обучение Azure с помощью виртуальных сетей
@@ -34,10 +34,10 @@ ms.locfileid: "91776054"
 > - Рабочая область службы "Машинное обучение Azure"
 > - Учетные записи хранения Azure
 > - Машинное обучение Azure хранилища данных и наборы DataSet
-> - Azure Key Vault
+> - Хранилище ключей Azure;
 > - Реестр контейнеров Azure
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь со статьей [Обзор сетевой безопасности](how-to-network-security-overview.md) , чтобы ознакомиться с общими сценариями виртуальной сети и общей архитектурой виртуальной сети.
 
@@ -282,7 +282,7 @@ validate=False)
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Эта статья является частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

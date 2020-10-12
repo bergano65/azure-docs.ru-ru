@@ -16,10 +16,10 @@ ms.date: 09/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: f953d87c53bc13af623c2bfd49ceb953280f8f2a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540716"
 ---
 # <a name="azure-virtual-machines-oracle-dbms-deployment-for-sap-workload"></a>Виртуальные машины Azure развертывание СУБД Oracle для рабочей нагрузки SAP
@@ -380,7 +380,7 @@ Oracle Database и файлы журнала повторяемых операц
 | \oracle\<SID>\origlogaB & mirrlogA | Premium или Ultra Disk | None | Не требуется. |
 | \oracle\<SID>\sapdata1...n | Premium или Ultra Disk | Только для чтения | Можно использовать для Premium |
 | \oracle\<SID>\oraarch | Standard | None | Не требуется. |
-| Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется |
+| Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется. |
 
 
 Выбор дисков для размещения журналов повторов в сети должен осуществляться с помощью требований операций ввода-вывода в секунду. Есть возможность хранить все табличные пространства (sapdata1...n) на одном подключенном диске, если он соответствует всем требованиям по размеру, операциям ввода-вывода в секунду и пропускной способности. 
@@ -389,12 +389,12 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium  |
-| \oracle\<SID>\origlogaB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| \oracle\<SID>\mirrlogAB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| \oracle\<SID>\mirrlogBA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| \oracle\<SID>\origlogaA | Premium или Ultra Disk | None | Можно использовать для Premium  |
+| \oracle\<SID>\origlogaB | Premium или Ultra Disk | None | Можно использовать для Premium |
+| \oracle\<SID>\mirrlogAB | Premium или Ultra Disk | None | Можно использовать для Premium |
+| \oracle\<SID>\mirrlogBA | Premium или Ultra Disk | None | Можно использовать для Premium |
 | \oracle\<SID>\sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| \oracle\SID\sapdata(n+1)* | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| \oracle\SID\sapdata(n+1)* | Premium или Ultra Disk | None | Можно использовать для Premium |
 | \oracle\<SID>\oraarch* | Premium или Ultra Disk | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 
@@ -482,12 +482,12 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium  |
-| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | None | Можно использовать для Premium  |
+| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | None | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | None | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | None | Можно использовать для Premium |
 | /oracle/\<SID>/sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | Отсутствуют | Можно использовать для Premium |
+| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | None | Можно использовать для Premium |
 | /oracle/\<SID>/oraarch* | Premium или Ultra Disk | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 
@@ -527,7 +527,7 @@ sudo curl -so /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules https://raw.gi
 </code></pre>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Читать статью 
 
 - [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md)
