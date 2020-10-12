@@ -11,10 +11,10 @@ ms.subservice: files
 services: storage
 tags: ''
 ms.openlocfilehash: 1c50f54491e0284005c4b762b0c4b35a8460f5ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85511980"
 ---
 # <a name="azure-file-share--failed-to-delete-files-from-azure-file-share"></a>Azure file share – failed to delete files from Azure file share (Общая папка Azure — сбой удаления файлов)
@@ -32,7 +32,7 @@ ms.locfileid: "85511980"
 
 Недостаточно квот для обработки команды
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Ошибка 1816 возникает при достижении верхнего предела одновременных открытых дескрипторов, разрешенных для файла, на компьютере, на котором размонтируется общая папка. Дополнительные сведения см. в статье [Контрольный список производительности и масштабируемости службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-performance-checklist).
 
@@ -72,7 +72,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 
 ## <a name="example-result"></a>Пример результата:
 
-|хандлеид|Path|ClientIp|клиентпорт|опентиме|ластреконнекттиме|FileId|ParentId|SessionId|
+|хандлеид|путь|ClientIp|клиентпорт|опентиме|ластреконнекттиме|FileId|ParentId|SessionId|
 |---|---|---|---|---|---|---|---|---|
 |259101229083|---|10.222.10.123|62758|2019-10-05|12:16:50Z|0|0|9507758546259807489|
 |259101229131|---|10.222.10.123|62758|2019-10-05|12:36:20Z|0|0|9507758546259807489|
@@ -88,7 +88,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 # Close-AzStorageFileHandle -Context $Context -ShareName "FileShareName" -Path 'New folder/test.zip' -CloseAll
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 * [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)

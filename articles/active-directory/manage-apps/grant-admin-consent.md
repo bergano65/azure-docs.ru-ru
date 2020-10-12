@@ -13,10 +13,10 @@ ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96b4cb6f751a5d2bc4259117007b3abec2e0598d
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90069583"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
@@ -25,7 +25,7 @@ ms.locfileid: "90069583"
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [Администратор приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator).
 
@@ -83,7 +83,7 @@ URL-адрес согласия администратора на уровне �
 https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}
 ```
 
-где:
+Где:
 
 * `{client-id}` Идентификатор клиента приложения (также известный как идентификатор приложения).
 * `{tenant-id}` — Идентификатор клиента вашей организации или любое проверенное доменное имя.

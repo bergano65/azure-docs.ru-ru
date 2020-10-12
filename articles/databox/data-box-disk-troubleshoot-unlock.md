@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 08/05/2020
 ms.author: alkohli
 ms.openlocfilehash: 866cf01243983863292ada0b086f8f5b2f94e412
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87925567"
 ---
 # <a name="troubleshoot-disk-unlocking-issues-in-azure-data-box-disk"></a>Устранение неполадок, связанных с разблокировкой диска, в Диск Azure Data Box
@@ -51,7 +51,7 @@ To figure out who accessed the **Device credentials** blade, you can query the A
 
 Вы использовали пароль в диалоговом окне BitLocker и пытались разблокировать диск с помощью диалогового окна разблокировки в BitLocker. Это не будет работать.
 
-**Способы устранения:**
+**Решение**
 
 Чтобы разблокировать Диски Data Box, необходимо использовать средство разблокирования Дисков Data Box и предоставить пароль с портала Azure. Дополнительные сведения см. в статье [учебник. Распаковка, подключение и разблокировка диск Azure Data Box](data-box-disk-deploy-set-up.md#connect-to-disks-and-get-the-passkey).
  
@@ -65,12 +65,12 @@ To figure out who accessed the **Device credentials** blade, you can query the A
  
 Это означает, что в вашем клиенте Windows, скорее всего, отсутствует соответствующая версия Windows PowerShell.
 
-**Способы устранения:**
+**Решение**
 
 Вы можете установить [Windows PowerShell версии 5.0](https://www.microsoft.com/download/details.aspx?id=54616) и повторить операцию.
  
 Если тома по-прежнему не удается разблокировать, скопируйте журналы из папки, которая содержит средство разблокировки Диска Data Box, и [обратитесь в службу поддержки Майкрософт](data-box-disk-contact-microsoft-support.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об [устранении неполадок при проверке](data-box-disk-troubleshoot.md).

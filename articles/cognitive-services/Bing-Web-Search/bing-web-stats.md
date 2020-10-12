@@ -12,10 +12,10 @@ ms.date: 07/17/2019
 ms.author: scottwhi
 ms.custom: seodec2018
 ms.openlocfilehash: ad2ac118908f1c1f77ea204ae2400913ac0807cb
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86147414"
 ---
 # <a name="add-analytics-to-the-bing-search-apis"></a>Добавление аналитики в API-интерфейсы поиска Bing
@@ -100,7 +100,7 @@ For example, if you don't include the User-Agent header in your calls, the dashb
 
 - **Response Server Distribution** (Распределение по ответам сервера). Сервер приложений, который обслуживал ваши запросы API. Возможные значения: Bing.com (для трафика, полученного с настольных и переносных устройств) и Bing.com-mobile (для трафика, полученного с мобильных устройств). Сервер определяется с помощью значения заголовка User-Agent в запросе. Если запрос не содержит заголовок User-Agent, Bing пытается получить сервер из других сигналов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое API-интерфейсы Поиска Bing?](bing-api-comparison.md)
 * [Требования к использованию и отображению API-интерфейсов Поиска Bing](use-display-requirements.md)

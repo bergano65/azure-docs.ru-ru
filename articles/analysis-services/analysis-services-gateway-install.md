@@ -8,10 +8,10 @@ ms.date: 07/29/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 1d090070dd7b2afe5ea1ece9b5da8b8b5b7b0780
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87438965"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
@@ -27,7 +27,7 @@ ms.locfileid: "87438965"
 * .NET Framework 4.5;
 * 64-разрядная версия Windows 8/Windows Server 2012 R2 (или более поздней версии)
 
-**Такую**
+**Рекомендуется:**
 
 * 8-ядерный ЦП;
 * 8 ГБ ОЗУ;
@@ -67,20 +67,20 @@ ms.locfileid: "87438965"
    > [!NOTE]
    > При входе с использованием учетной записи домена она сопоставляется с учетной записью организации в Azure AD. Учетная запись вашей организации используется как администратор шлюза.
 
-## <a name="register"></a>Регистрация
+## <a name="register"></a>Зарегистрировать
 
 Чтобы создать ресурс шлюза в Azure, необходимо зарегистрировать локальный экземпляр, установленный с помощью облачной службы шлюза. 
 
 1.  Выберите **Регистрация нового шлюза на этом компьютере**.
 
-    ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-new.png)
+    ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-new.png)
 
 2. Введите имя и ключ восстановления для шлюза. По умолчанию шлюз использует регион, установленный по умолчанию для вашей подписки. Если вам необходим другой регион, выберите **Смена региона**.
 
     > [!IMPORTANT]
     > Сохраните ключ восстановления в безопасном месте. Ключ восстановления требуется для перехвата, переноса или восстановления шлюза. 
 
-   ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-name.png)
+   ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
 ## <a name="create-an-azure-gateway-resource"></a>Создание ресурса шлюза Azure
@@ -156,5 +156,5 @@ Set-AzAnalysisServicesServer -ResourceGroupName $RGName -Name $servername -Gatew
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление службами Analysis Services](analysis-services-manage.md)   
-* [получать данные из Azure Analysis Services;](analysis-services-connect.md)   
+* [Получение данных из Azure Analysis Services](analysis-services-connect.md)   
 * [Использование шлюза для источников данных в виртуальной сети Azure](analysis-services-vnet-gateway.md)

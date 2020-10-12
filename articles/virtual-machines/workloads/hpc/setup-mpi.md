@@ -14,10 +14,10 @@ ms.date: 08/06/2020
 ms.author: amverma
 ms.reviewer: cynthn
 ms.openlocfilehash: 210b2935cd2df81b0ff079c9a1c945fe770933f9
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87926524"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
@@ -238,9 +238,9 @@ chmod 644 /home/$USER/.ssh/config
 
 В приведенном выше синтаксисе предполагается наличие общего домашнего каталога, иначе каталог. ssh должен быть скопирован на каждый узел.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о виртуальных машинах серии [H](../../sizes-hpc.md) и [N](../../sizes-gpu.md) с [поддержкой InfiniBand](../../sizes-hpc.md#rdma-capable-instances)
-- Ознакомьтесь с обзором [ХБ](hb-series-overview.md) и [описанием серии HC](hc-series-overview.md) , чтобы узнать о оптимальной настройке рабочих нагрузок для повышения производительности и масштабируемости.
-- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC и результатами в [блогах сообщества разработчиков Azure](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
-- Для более высокого уровня архитектуры выполнения рабочих нагрузок HPC см. статью [высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).
+- Дополнительные сведения об оптимальной настройке рабочих нагрузок для производительности и масштабируемости см. в статье с обзором виртуальных машин серии [HB](hb-series-overview.md) и [HC](hc-series-overview.md).
+- Ознакомьтесь с последними объявлениями и некоторыми примерами HPC, а также результатами в [блогах технического сообщества службы вычислений](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+- Сведения о более высоком уровне архитектурного представления выполнения рабочих нагрузок HPC см. в статье [Высокопроизводительные вычисления (HPC) в Azure](/azure/architecture/topics/high-performance-computing/).

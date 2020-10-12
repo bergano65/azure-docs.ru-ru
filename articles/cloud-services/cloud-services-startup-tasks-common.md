@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
 ms.openlocfilehash: beebe60d70b7e4908bd3e9348fe815036d6955c3
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85920069"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
@@ -377,7 +377,7 @@ EXIT /B 0
 Ниже приведены некоторые рекомендации, которые необходимо выполнять при настройке задачи для рабочей роли или веб-роли.
 
 ### <a name="always-log-startup-activities"></a>Всегда ведите журнал операций запуска
-В Visual Studio нет отладчика для пошагового выполнения пакетных файлов, поэтому рекомендуется получить столько данных о выполнении пакетных файлов, сколько возможно. Ведение журнала выходных данных пакетных файлов, **stdout** и **stderr**, может предоставить вам важную информацию при попытке отладить и исправить пакетные файлы. Чтобы записывать **stdout** и **stderr** в файл StartupLog.txt в каталоге, указанном переменной среды **%TEMP%**, добавьте текст `>>  "%TEMP%\\StartupLog.txt" 2>&1` в конец конкретных строк, которые нужно добавлять в журнал. Например, чтобы выполнить setup.exe в каталоге **% PathToApp1Install%** :`"%PathToApp1Install%\setup.exe" >> "%TEMP%\StartupLog.txt" 2>&1`
+В Visual Studio нет отладчика для пошагового выполнения пакетных файлов, поэтому рекомендуется получить столько данных о выполнении пакетных файлов, сколько возможно. Ведение журнала выходных данных пакетных файлов, **stdout** и **stderr**, может предоставить вам важную информацию при попытке отладить и исправить пакетные файлы. Чтобы записывать **stdout** и **stderr** в файл StartupLog.txt в каталоге, указанном переменной среды **%TEMP%**, добавьте текст `>>  "%TEMP%\\StartupLog.txt" 2>&1` в конец конкретных строк, которые нужно добавлять в журнал. Например, чтобы выполнить setup.exe в каталоге **% PathToApp1Install%** : `"%PathToApp1Install%\setup.exe" >> "%TEMP%\StartupLog.txt" 2>&1`
 
 Чтобы упростить XML, можно создать файл-оболочку *CMD*, который вызывает все задачи запуска, ведет журналы и гарантирует, что все дочерние задачи используют одинаковые переменные среды
 
@@ -491,7 +491,7 @@ EXIT %ERRORLEVEL%
 ### <a name="use-local-storage-to-store-files-that-must-be-accessed-in-the-role"></a>Используйте локальное хранилище для хранения файлов, которые должны использоваться в роли
 Если вы хотите во время выполнения задачи запуска скопировать или создать файл, который затем будет доступен вашей роли, этот файл необходимо поместить в локальное хранилище. См. [предыдущий раздел](#create-files-in-local-storage-from-a-startup-task).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с [моделью и пакетом облачной службы](cloud-services-model-and-package.md)
 
 Узнайте, как работают [задачи](cloud-services-startup-tasks.md) .
@@ -503,7 +503,7 @@ EXIT %ERRORLEVEL%
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
 [Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Перемен]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 [Конечные точки]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints

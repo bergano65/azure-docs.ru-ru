@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: dc23a0a68471b82c990d5d8a3086e2e71e88d0c8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85513924"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-and-manage-jobs-update-3-and-later"></a>Использование службы диспетчера устройств StorSimple для просмотра и администрирования заданий StorSimple (обновление 3 или более поздней версии)
@@ -85,7 +85,7 @@ ms.locfileid: "85513924"
 
 3. При запросе подтверждения нажмите кнопку **Да**. Теперь это задание отменено.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте об [управлении политиками архивации StorSimple](storsimple-8000-manage-backup-policies-u2.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

@@ -13,10 +13,10 @@ ms.date: 03/04/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 68df5256949db44b2b347002570c64d1aa0d55ea
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89297966"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
@@ -99,13 +99,13 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 |Java|[ассетстреаминглокатор](/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
 |Node.js|[listStreamingLocators](/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Ресурсы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
 * [Политики ключей содержимого](content-key-policy-concept.md)
 * [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание указателя потоковой передачи и URL-адресов сборки](create-streaming-locator-build-url.md)

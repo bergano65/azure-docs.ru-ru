@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9bc3175017e5b26251d1a12d0d1e2c51c4e5f9c9
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87910306"
 ---
 # <a name="how-users-in-your-organization-can-invite-guest-users-to-an-app"></a>Как пользователи в вашей организации могут приглашать гостевых пользователей в приложение
@@ -73,7 +73,7 @@ ms.locfileid: "87910306"
 7. Чтобы автоматически отправить приглашение гостевому пользователю, нажмите кнопку **Добавить**. После отправки приглашения учетная запись пользователя автоматически добавляется в каталог в качестве гостя.
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для самостоятельного управления приложениями требуется, чтобы глобальный администратор и администратор Azure AD выполнили небольшую начальную настройку. В рамках этой настройки в приложении будет настроено самообслуживание и будет назначена группа приложению, которым владелец приложения может управлять. Кроме того, можно настроить группу, чтобы разрешить всем пользователям запрашивать членство, но для его получения требуется утверждение владельцем группы. (Узнайте больше о [самостоятельном управлении группами](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-self-service-management).) 
 

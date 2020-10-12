@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: mayg
 ms.openlocfilehash: e4f1931aab056306ac5e9f9e9ef402ca26ec2d19
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86528950"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure
@@ -72,7 +72,7 @@ ms.locfileid: "86528950"
 
 |**Категории** | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
-Поддерживаемые сценарии |Да|Да|Нет|Да*|Нет
+Поддерживаемые сценарии |Да|Да|нет|Да*|нет
 Поддерживаемая версия | vCenter 6,7, 6,5, 6,0 или 5,5| Windows Server 2016, Windows Server 2012 R2 | Н/Д |Windows Server 2016, Windows Server 2012 R2|Н/Д
 Поддерживаемая конфигурация|vCenter, ESXi| Кластер Hyper-V, узел Hyper-V|Н/Д|Кластер Hyper-V, узел Hyper-V|Н/Д|
 Число серверов, которые можно профилировать для каждого запущенного экземпляра планировщика развертывания Azure Site Recovery. |Один (одновременно можно профилировать виртуальные машины на одном сервере vCenter Server или ESXi)|Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Н/Д |Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Н/Д
@@ -97,7 +97,7 @@ ms.locfileid: "86528950"
    ```
 1. Для каждого узла Hyper-V, который необходимо профилировать, необходимо:
 
-    а. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
+    a. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
 
       ```powershell
       set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate

@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/16/2020
 ms.openlocfilehash: ff7fc00c8de5b4d577770c140d356d7f9da1b7e7
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87421252"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Создание контейнера Windows Server в кластере Службы Azure Kubernetes (AKS) с помощью Azure CLI
@@ -71,7 +71,7 @@ az group create --name myResourceGroup --location eastus
 
 * Кластер настроен с двумя узлами
 * Параметры *Windows-Admin-Password* и *Windows-Admin-username* устанавливают учетные данные администратора для всех контейнеров Windows Server, созданных в кластере, и должны соответствовать [требованиям к паролю Windows Server][windows-server-password].
-* Пул узлов использует`VirtualMachineScaleSets`
+* Пул узлов использует `VirtualMachineScaleSets`
 
 > [!NOTE]
 > Чтобы обеспечить надежную работу кластера, создайте не менее 2 (двух) узлов в пуле узлов по умолчанию.

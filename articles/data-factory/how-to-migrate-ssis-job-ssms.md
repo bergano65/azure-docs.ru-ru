@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/7/2020
 ms.openlocfilehash: 6b95162d34b706b0bbb3e2940ea214e5a662655d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90984914"
 ---
 # <a name="migrate-sql-server-agent-jobs-to-adf-with-ssms"></a>Перенос заданий агент SQL Server в ADF с помощью SSMS
@@ -80,6 +80,6 @@ ms.locfileid: "90984914"
 1. Выполните миграцию, а затем проверьте результаты.
 ![На снимке экрана показана страница результатов миграции, на которой отображается ход выполнения миграции.](media/how-to-migrate-ssis-job-ssms/step5.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Запуск и мониторинг конвейера](how-to-invoke-ssis-package-ssis-activity.md)

@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
 ms.openlocfilehash: 7cbb67a215d44759b2b503929c37cb50ea94709c
-ms.sourcegitcommit: 1fe5127fb5c3f43761f479078251242ae5688386
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90069770"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол
@@ -198,7 +198,7 @@ ms.locfileid: "90069770"
 Чтобы включить журнал дампа и последовательную консоль, выполните следующий сценарий.
 
 1. Откройте сеанс командной строки с повышенными привилегиями (**Запуск от имени администратора**).
-2. Выполните следующий сценарий:
+2. Выполните следующий скрипт:
 
     В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
 

@@ -11,10 +11,10 @@ author: jhirono
 ms.reviewer: larryfr
 ms.date: 09/16/2020
 ms.openlocfilehash: 64665c0b1e32970f29233f5abdd6b2d2d020a6b2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90897514"
 ---
 # <a name="increase-azure-machine-learning-resiliency"></a>Повышение устойчивости Машинное обучение Azure
@@ -100,6 +100,6 @@ ms.locfileid: "90897514"
 
 Если вы предоставляете собственный ключ, управляемый клиентом, для развертывания Машинное обучение Azure рабочей области, Azure Cosmos DB также подготавливается в рамках вашей подписки. В этом случае вы несете ответственность за настройку параметров высокого уровня доступности. См. раздел [высокий уровень доступности с Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/high-availability).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы развернуть Машинное обучение Azure со связанными ресурсами с параметрами высокой доступности, используйте [шаблон Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced).

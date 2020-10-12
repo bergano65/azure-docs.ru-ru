@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/29/2020
 ms.openlocfilehash: df9a4dd546ddc5944d9a282e74c2444a5161b862
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87927572"
 ---
 # <a name="frequently-asked-questions-for-windows-server-node-pools-in-aks"></a>Часто задаваемые вопросы о пулах узлов Windows Server в AKS
@@ -58,7 +58,7 @@ Kubernetes является историческим, ориентированн
 
 В настоящее время [Сохранение IP-адресов источника клиента][client-source-ip] не поддерживается для узлов Windows.
 
-## <a name="can-i-change-the-max--of-pods-per-node"></a>Можно ли изменить максимальное значение. число модулей Pod на узел?
+## <a name="can-i-change-the-max--of-pods-per-node"></a>Можно ли изменить максимальное число модулей Pod на узел?
 
 Да. Сведения о возможных последствиях и доступных параметрах см. в разделе [Максимальное число модулей][maximum-number-of-pods]Pod.
 
@@ -121,7 +121,7 @@ Azure Dev Spaces в настоящее время доступно только 
 
 Мы работаем над тем, чтобы приложить все необходимые компоненты Windows в AKS, но если у вас возникают пробелы, проект [AKS-Engine][aks-engine] с открытым кодом предоставляет простой и полностью настраиваемый способ запуска Kubernetes в Azure, включая поддержку Windows. Обязательно ознакомьтесь с нашим планом функций, поступающих в [AKSную схему][aks-roadmap].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе с контейнерами Windows Server в AKS, [Создайте пул узлов под управлением Windows Server в AKS][windows-node-cli].
 

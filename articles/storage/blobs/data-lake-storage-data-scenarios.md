@@ -9,10 +9,10 @@ ms.date: 02/14/2020
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: 6e183a1e8cac8eec2806a35603c40a44aadac502
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84193504"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Использование Azure Data Lake Storage 2-ого поколения для обеспечения соответствия требованиям больших данных
@@ -41,7 +41,7 @@ ms.locfileid: "84193504"
 
 Ниже приведен список инструментов, которые можно использовать для приема специальных данных.
 
-| Источник данных | Средство для приема |
+| источника данных | Средство для приема |
 | --- | --- |
 | Локальный компьютер |[Azure PowerShell](data-lake-storage-directory-file-acl-powershell.md)<br><br>[Azure CLI](data-lake-storage-directory-file-acl-cli.md)<br><br>[Обозреватель службы хранилища](https://azure.microsoft.com/features/storage-explorer/)<br><br>[Средство AzCopy ](../common/storage-use-azcopy-v10.md)|
 | Большой двоичный объект хранилища Azure |[Фабрика данных Azure](../../data-factory/connector-azure-data-lake-store.md).<br><br>[Средство AzCopy ](../common/storage-use-azcopy-v10.md)<br><br>[DistCp, запущенный на кластере HDInsight](data-lake-storage-use-distcp.md)|
@@ -52,7 +52,7 @@ ms.locfileid: "84193504"
 
 Ниже приведен список инструментов, которые можно использовать для приема потоковых данных.
 
-|Средство | Руководство |
+|Инструмент | Руководство |
 |---|--|
 |Azure Stream Analytics|[Краткое руководство. по созданию задания Stream Analytics с помощью портала Azure](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal) <br> [Исходящий трафик в Azure Data Lake Gen2](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-define-outputs#blob-storage-and-azure-data-lake-gen2)|
 |Azure HDInsight Storm | [Запись данных в Apache Hadoop HDFS из Apache Storm в HDInsight](https://docs.microsoft.com/azure/hdinsight/storm/apache-storm-write-data-lake-store) |
@@ -63,7 +63,7 @@ ms.locfileid: "84193504"
 
 Ниже приведен список инструментов, которые можно использовать для приема реляционных данных.
 
-|Средство | Руководство |
+|Инструмент | Руководство |
 |---|--|
 |Фабрика данных Azure | [Действие копирования в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
 
@@ -73,7 +73,7 @@ ms.locfileid: "84193504"
 
 Ниже приведен список инструментов, которые можно использовать для приема данных журнала веб-сервера.
 
-|Средство | Руководство |
+|Инструмент | Руководство |
 |---|--|
 |Фабрика данных Azure | [Действие копирования в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/copy-activity-overview)  |
 |Azure CLI|[Azure CLI](data-lake-storage-directory-file-acl-cli.md)|
@@ -87,7 +87,7 @@ ms.locfileid: "84193504"
 
 Ниже приведен список инструментов, которые можно использовать для приема данных, связанных с кластерами HDInsight.
 
-|Средство | Руководство |
+|Инструмент | Руководство |
 |---|--|
 |Apache DistCp | [Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
 |Инструмент AzCopy | [Передача данных с помощью AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10) |
@@ -97,7 +97,7 @@ ms.locfileid: "84193504"
 
 Большие объемы данных могут храниться в кластерах Hadoop, размещенных локально на компьютерах, использующих HDFS. Кластеры Hadoop могут быть развернуты локально или работать в кластере IaaS в Azure. К копированию таких данных в Azure Data Lake Storage 2-го поколения могут предъявляться требования, в зависимости от того, является ли эта операция одноразовой или повторяющейся. Существуют различные возможности выполнить их. Ниже приведен список альтернативных вариантов и связанные с ними компромиссы.
 
-| Подход | Сведения | Преимущества | Особенности |
+| Подход | Подробнее | Преимущества | Рекомендации |
 | --- | --- | --- | --- |
 | Использование Фабрики данных Azure (ADF) для копирования данных напрямую из кластеров Hadoop в Azure Data Lake Storage 2-го поколения |[ADF поддерживает HDFS в качестве источника данных.](../../data-factory/connector-hdfs.md) |ADF реализована готовая поддержка HDFS, а также первоклассные инструменты комплексного управления и мониторинга. |Требуется развернуть шлюз управления данными в локальном кластере или кластере IaaS. |
 | Использование Distcp для копирования данных из Hadoop в службу хранилища Azure. Затем копирование данных из службы хранилища Azure в Data Lake Storage 2-го поколения с помощью соответствующего механизма. |Скопировать данные из службы хранилища Azure в Data Lake Storage 2-го поколения можно с помощью следующих элементов. <ul><li>[Фабрика данных Azure](../../data-factory/copy-activity-overview.md).</li><li>[Средство AzCopy ](../common/storage-use-azcopy-v10.md)</li><li>[Apache DistCp, запущенный в кластерах HDInsight](data-lake-storage-use-distcp.md)</li></ul> |Можно использовать инструменты с открытым кодом. |Многоэтапный процесс с использованием нескольких технологий. |
@@ -116,10 +116,10 @@ Azure ExpressRoute позволяет создавать закрытые под
 
 Ниже приведен список инструментов, которые можно использовать для выполнения заданий анализа данных, хранящихся в Azure Data Lake Storage 2-го поколения.
 
-|Средство | Руководство |
+|Инструмент | Руководство |
 |---|--|
 |Azure HDInsight | [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) |
-|Azure Databricks | [Azure Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)<br><br>[Краткое руководство. анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-databricks-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br><br>[Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure Databricks | [Azure Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html)<br><br>[Краткое руководство. анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-databricks-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br><br>[Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 
 ## <a name="visualize-the-data"></a>Визуализация данных
 
@@ -137,9 +137,9 @@ Azure ExpressRoute позволяет создавать закрытые под
 
 Ниже приведен список инструментов, которые можно использовать для загрузки данных из Data Lake Storage 2-го поколения.
 
-|Средство | Руководство |
+|Инструмент | Руководство |
 |---|--|
 |Фабрика данных Azure | [Действие копирования в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
 |Apache DistCp | [Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
-|Обозреватель службы хранилища Azure|[Использование Обозреватель службы хранилища Azure для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-explorer.md)|
+|Обозреватель службы хранилища Azure|[Использование Обозревателя службы хранилища Azure для управления каталогами, файлами и списками управления доступом в Azure Data Lake Storage 2-го поколения](data-lake-storage-explorer.md)|
 |Инструмент AzCopy|[Перенос данных с помощью AzCopy и хранилища BLOB-объектов](../common/storage-use-azcopy-blobs.md)|
