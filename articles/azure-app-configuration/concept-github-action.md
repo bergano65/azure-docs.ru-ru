@@ -7,10 +7,10 @@ ms.date: 02/20/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
 ms.openlocfilehash: 66d0e32e7dfdd5ab2abee5108ac8ce54c5222747
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87371827"
 ---
 # <a name="sync-your-github-repository-to-app-configuration"></a>Синхронизация репозитория GitHub с Конфигурацией приложений
@@ -25,7 +25,7 @@ ms.locfileid: "87371827"
 [Документация](https://help.github.com/actions/automating-your-workflow-with-github-actions/configuring-a-workflow) на сайте GitHub содержит подробные сведения о рабочих процессах и действиях GitHub. 
 
 ## <a name="enable-github-actions-in-your-repository"></a>Включение GitHub Actions в репозитории
-Чтобы начать работу с этим действием GitHub, перейдите в репозиторий и перейдите на вкладку " **действия** ". Выберите **новый рабочий процесс**, а затем **Настройте рабочий процесс самостоятельно**. Наконец, выполните поиск по запросу "Azure App Configuration Sync" в marketplace.
+Чтобы начать работу с этим действием GitHub, перейдите в репозиторий и перейдите на вкладку **действия** . Выберите **новый рабочий процесс**, а затем **Настройте рабочий процесс самостоятельно**. Наконец, выполните поиск по запросу "Azure App Configuration Sync" в marketplace.
 > [!div class="mx-imgBorder"]
 > ![Откройте вкладку "Action" (Действие).](media/find-github-action.png)
 
@@ -252,7 +252,7 @@ jobs:
 ## <a name="use-max-depth-to-limit-github-action"></a>Использование максимальной глубины для ограничения действия GitHub
 Поведение по умолчанию для вложенных атрибутов JSON состоит в том, чтобы преобразовать в плоскую структуру весь объект.  Приведенный ниже код JSON определяет пару "ключ-значение".
 
-| Key | Значение |
+| Клавиши | Значение |
 | --- | --- |
 | Object:Inner:InnerKey | InnerValue |
 

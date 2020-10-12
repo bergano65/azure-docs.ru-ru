@@ -9,10 +9,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
 ms.openlocfilehash: 97d899d73359cc45daf88940b815ed262c3b4766
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89290843"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Двойное шифрование Azure HDInsight для неактивных данных
@@ -71,7 +71,7 @@ HDInsight поддерживает несколько типов шифрова�
 
 ### <a name="create-azure-key-vault"></a>Создание хранилища Azure Key Vault
 
-Создание хранилища ключей. Конкретные действия см. в разделе [Create Azure Key Vault](../key-vault/secrets/quick-create-portal.md) .
+Создать хранилище ключей. Конкретные действия см. в разделе [Create Azure Key Vault](../key-vault/secrets/quick-create-portal.md) .
 
 HDInsight поддерживает только Azure Key Vault. Если у вас есть собственное хранилище ключей, вы можете импортировать ключи в Azure Key Vault. Помните, что для хранилища ключей должно быть включено **обратимое удаление** . Дополнительные сведения об импорте существующих ключей см. в статье [Сведения о ключах, секретах и сертификатах](../key-vault/about-keys-secrets-and-certificates.md).
 
@@ -467,7 +467,7 @@ az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\
 --storage-account MyStorageAccount --encryption-at-host true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault](../key-vault/general/overview.md).
 * [Обзор корпоративной безопасности в Azure HDInsight](./domain-joined/hdinsight-security-overview.md).

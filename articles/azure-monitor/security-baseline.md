@@ -8,15 +8,15 @@ ms.date: 09/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: fd68f720f372ee61f7c441ea83bd365bc2a6f36a
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90032747"
 ---
 # <a name="azure-security-baseline-for-azure-monitor"></a>Базовый план безопасности Azure для Azure Monitor
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../security/benchmarks/overview.md) к Azure Monitor. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к Azure Monitor. **Элементы управления** , неприменимые к Azure Monitor, были исключены. Сведения о том, как Azure Monitor полностью сопоставлены с тестовым показателем безопасности Azure, см. в разделе [полное Azure Monitor файла сопоставления базовых показателей безопасности](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../security/benchmarks/overview.md) к Azure Monitor. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к Azure Monitor. **Элементы управления** , неприменимые к Azure Monitor, были исключены. Сведения о том, как Azure Monitor полностью сопоставлены с тестовым показателем безопасности Azure, см. в разделе [полное Azure Monitor файла сопоставления базовых показателей безопасности](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 Azure Monitor входит в состав служб ядра Azure, и служба Azure Monitor не может быть развернута как услуга отдельно. Azure Monitor компоненты могут быть развернуты вместе с ресурсами, и это может повлиять на безопасность этих ресурсов.
 
@@ -687,13 +687,13 @@ Application Insights и Log Analytics оба продолжают принима
 
 **Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами. Чтобы защитить ресурсы, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.   Используйте управление доступом на основе ролей для защиты ключей, управляемых клиентом. 
 
-Кроме того, включите обратимое удаление и очистку защиты в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления. Если служба хранилища Azure используется для хранения резервных копий шаблонов Azure Resource Manager, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
+Кроме того, включите Soft-Delete и очистите защиту в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления. Если служба хранилища Azure используется для хранения резервных копий шаблонов Azure Resource Manager, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
 
 - [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
 - [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение Soft-Delete и очистка защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
 - [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 

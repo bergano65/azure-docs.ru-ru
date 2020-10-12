@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: memildin
 ms.openlocfilehash: 893b2eefc2c4c81e66bf86a1c999a3c4198a3c71
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90883829"
 ---
 # <a name="strengthen-your-security-posture-with-azure-security-center"></a>Укрепление системы безопасности с помощью центра безопасности Azure
@@ -33,7 +33,7 @@ ms.locfileid: "90883829"
 Дополнительные сведения о том, как применить рекомендации, см. в разделе [Внедрение рекомендаций по безопасности](security-center-recommendations.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы ознакомились с подробными сведениями о возможностях мониторинга в центре безопасности Azure. Дополнительные сведения о Центре безопасности Azure см. в следующих статьях:
 
 * [Настройка политик безопасности в центре безопасности Azure](tutorial-security-policy.md) — узнайте, как настроить параметры безопасности в центре безопасности Azure.

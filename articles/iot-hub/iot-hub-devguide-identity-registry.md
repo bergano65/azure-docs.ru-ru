@@ -14,10 +14,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 2f811c504f8871b06805d5578ed2d70c651be25d
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90029840"
 ---
 # <a name="understand-the-identity-registry-in-your-iot-hub"></a>Общие сведения о реестре удостоверений в Центре Интернета вещей
@@ -124,7 +124,7 @@ ms.locfileid: "90029840"
 |operationTimestamp | Отметка времени операции по стандарту ISO8601 |
 |iothub-message-schema | deviceLifecycleNotification |
 
-Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения устройства. Например, примененная к объекту директива
+Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения устройства. Например,
 
 ```json
 {
@@ -160,7 +160,7 @@ moduleId | Идентификатор модуля |
 operationTimestamp | Отметка времени операции по стандарту ISO8601 |
 iothub-message-schema | moduleLifecycleNotification |
 
-Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения модуля. Например, примененная к объекту директива
+Текст: этот раздел имеет формат JSON и представляет двойник созданного удостоверения модуля. Например,
 
 ```json
 {
@@ -244,7 +244,7 @@ iothub-message-schema | moduleLifecycleNotification |
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как использовать реестр удостоверений Центра Интернета вещей, вас могут заинтересовать следующие статьи в руководстве разработчика для Центра Интернета вещей:
 

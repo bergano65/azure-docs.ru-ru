@@ -7,10 +7,10 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.openlocfilehash: e152c0227008dd12088660b2390a8d0a5f54de96
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89290784"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
@@ -81,7 +81,7 @@ ms.locfileid: "89290784"
 
 Эта проблема возникает при использовании версии **1.2.0** в приложении Digital двойников или при добавлении библиотеки в проект без указания версии (так же, как по умолчанию используется последняя версия).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о безопасности и разрешениях для Azure Digital двойников:
 * [*Основные понятия: безопасность решений для цифровых двойников Azure*](concepts-security.md)

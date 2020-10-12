@@ -7,10 +7,10 @@ ms.reviewer: deli, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 1826b17a971b49fdfe8d5df02d71eb682b15db6f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91269732"
 ---
 # <a name="manage-azure-resources-and-monitor-costs-by-creating-automation-tasks-preview"></a>Управление ресурсами Azure и мониторинг затрат путем создания задач автоматизации (Предварительная версия)
@@ -267,6 +267,6 @@ ms.locfileid: "91269732"
 
 Мы хотели бы слышать вас! Чтобы сообщить об ошибках, отправить отзыв или задать вопросы о функции предварительной версии, [обратитесь к группе Azure Logic Apps](mailto:logicapps@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление приложениями логики в портал Azure](../logic-apps/manage-logic-apps-with-azure-portal.md)

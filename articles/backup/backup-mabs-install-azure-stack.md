@@ -4,10 +4,10 @@ description: Эта статья рассказывает, как с помощ�
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.openlocfilehash: 7153e2ff03a4f78ee1cc92ca04054fb2955d11a5
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90970241"
 ---
 # <a name="install-azure-backup-server-on-azure-stack"></a>Установка Azure Backup Server в Azure Stack
@@ -255,7 +255,7 @@ Azure Backup Server предоставляет Data Protection Manager общи�
    > Рекомендуется выполнять перенаправление из Центра обновления Windows в Центр обновления Майкрософт, который предлагает обновления безопасности и другие важные обновления для Windows и других продуктов, таких как Microsoft Azure Backup Server.
    >
 
-    ![Экран согласия Центр обновления Майкрософт](./media/backup-mabs-install-azure-stack/mabs-install-wizard-update-13.png)
+    ![Экран Opt-In Центр обновления Майкрософт](./media/backup-mabs-install-azure-stack/mabs-install-wizard-update-13.png)
 
 8. Проверьте *сводку параметров* и нажмите кнопку **установить**.
 

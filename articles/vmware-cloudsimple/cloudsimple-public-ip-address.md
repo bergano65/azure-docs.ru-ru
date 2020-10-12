@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 147ab6b5ace4493e1a0b303c320cb2e81d829b29
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77024982"
 ---
 # <a name="cloudsimple-public-ip-address-overview"></a>Общие сведения о общедоступном IP-адресе Клаудсимпле
@@ -31,6 +31,6 @@ ms.locfileid: "77024982"
 * Постоянный мониторинг трафика и устранение распространенных атак на уровне сети в режиме реального времени. Эти механизмы защиты используются корпорацией Майкрософт веб-службы.
 * Весь масштаб глобальной сети Azure. Сеть может использоваться для распространения и смягчения трафика атак в разных регионах.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [выделении общедоступного IP-адреса](public-ips.md)

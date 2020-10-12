@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 08/25/2020
 ms.openlocfilehash: 2dca0ae02f2d079e98b51e1222114db1f2104b96
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90030803"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища таблиц Azure для управления потенциальными клиентами на Marketplace для коммерческих клиентов
@@ -38,7 +38,7 @@ ms.locfileid: "90030803"
 
 1. На **домашней** странице портал Azure выберите **Просмотреть все ресурсы** , чтобы получить доступ к вашей учетной записи хранения. Можно также выбрать **Все ресурсы** в строке меню слева на портале Microsoft Azure.
 
-    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-access.png" alt-text="Доступ к учетной записи хранения Azure.":::
+    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-access.png" alt-text="Действия по созданию учетной записи хранения Azure.":::
 
 1. На панели учетной записи хранения выберите **Ключи доступа** и скопируйте значение в поле **Строка подключения** для ключа. Сохраните это значение, так как это значение **строки подключения учетной записи хранения**, которое потребуется указать на портале публикации, чтобы получать потенциальных клиентов для своего предложения на Azure Marketplace.
 
@@ -48,7 +48,7 @@ ms.locfileid: "90030803"
     DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.screens.net
     ```
 
-    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-keys.png" alt-text="Ключ службы хранилища Azure.":::
+    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-keys.png" alt-text="Действия по созданию учетной записи хранения Azure.":::
 
 
 1. В области своей учетной записи хранения выберите **Таблицы** и нажмите **+ Таблица**, чтобы создать таблицу. Введите имя таблицы и нажмите кнопку **ОК**. Сохраните это значение, так как оно понадобится, если вы хотите настроить поток для получения уведомлений по электронной почте при получении потенциальных клиентов.
@@ -185,7 +185,7 @@ ms.locfileid: "90030803"
 
 1. В разделе **Потенциальные клиенты** выберите **Подключить**.
 
-    :::image type="content" source="./media/commercial-marketplace-lead-management-instructions-azure-table/customer-leads.png" alt-text="Потенциальные клиенты":::
+    :::image type="content" source="./media/commercial-marketplace-lead-management-instructions-azure-table/customer-leads.png" alt-text="Действия по созданию учетной записи хранения Azure.":::
 
 1. Во всплывающем окне со **сведениями о подключении** в качестве места сохранения **данных о потенциальных клиентах** выберите **таблицу Azure**. 
      ![Управление потенциальными клиентами, сведения о подключении](./media/commercial-marketplace-lead-management-instructions-azure-table/connection-details.png)

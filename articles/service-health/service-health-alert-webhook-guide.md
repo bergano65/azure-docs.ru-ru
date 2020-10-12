@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.service: service-health
 ms.date: 3/27/2018
 ms.openlocfilehash: 05b0572c89a29fddc881f9977ee437d1319e6254
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86518934"
 ---
 # <a name="use-a-webhook-to-configure-health-notifications-for-problem-management-systems"></a>Использование веб-перехватчика для настройки уведомлений о работоспособности для систем управления проблемами
@@ -58,13 +58,13 @@ HTTPS <i></i> ://App.Azure.com/h/0DET-URB/bbadb3
 ## <a name="parse-the-impacted-services-to-determine-the-incident-scope"></a>Анализ затронутых служб для определения области инцидента
 Оповещения о работоспособности служб могут сообщать о проблемах в нескольких регионах и службах. Чтобы получить полные сведения, необходимо выполнить синтаксический анализ значения `impactedServices` .
 
-Содержимое, которое находится внутри, представляет собой экранированную строку [JSON](https://json.org/) , которая, в случае неэкранирования, содержит другой объект JSON, который можно регулярно анализировать. Вот несколько примеров:
+Содержимое, которое находится внутри, представляет собой экранированную строку [JSON](https://json.org/) , которая, в случае неэкранирования, содержит другой объект JSON, который можно регулярно анализировать. Пример.
 
 ```json
 {"data.context.activityLog.properties.impactedServices": "[{\"ImpactedRegions\":[{\"RegionName\":\"Australia East\"},{\"RegionName\":\"Australia Southeast\"}],\"ServiceName\":\"Alerts & Metrics\"},{\"ImpactedRegions\":[{\"RegionName\":\"Australia Southeast\"}],\"ServiceName\":\"App Service\"}]"}
 ```
 
-обретает
+ превращается в:
 
 ```json
 [

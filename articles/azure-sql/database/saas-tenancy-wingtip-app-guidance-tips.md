@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/18/2018
 ms.openlocfilehash: 4c3a141525f650d6e254f79ce9e3396f2c35a95f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84040885"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
@@ -32,7 +32,7 @@ ms.locfileid: "84040885"
     - [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant)
     - [WingtipTicketsSaaS-MultiTenantDb](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDb)
 2. Выберите **Clone or download** (Клонировать или скачать).
-3. Выберите **Download ZIP** (Скачать ZIP-файл) и сохраните файл.
+3. Щелкните **скачать ZIP** -файл и сохраните его.
 4. Щелкните правой кнопкой мыши этот ZIP-файл и выберите **Свойства**. Имя ZIP-файла будет соответствовать имени репозитория. (Например, _WingtipTicketsSaaS-DbPerTenant-master.zip_.)
 5. На вкладке **Общие** выберите **Разблокировать**.
 6. Нажмите кнопку **ОК**.
@@ -115,8 +115,8 @@ ms.locfileid: "84040885"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-- [Развертывание изолированного приложения SaaS Wingtip Tickets](../../sql-database/saas-standaloneapp-get-started-deploy.md)
+## <a name="next-steps"></a>Дальнейшие действия
+- [Развертывание отдельного SaaS-приложения Wingtip Tickets](../../sql-database/saas-standaloneapp-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для однотенантной базы данных](../../sql-database/saas-dbpertenant-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для мультитенантной базы данных](../../sql-database/saas-multitenantdb-get-started-deploy.md)
 

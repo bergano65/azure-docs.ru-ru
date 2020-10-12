@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
 ms.openlocfilehash: 30b9b8393007033a7c2e6798cd57d9cf0128820d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75464702"
 ---
 # <a name="performance-metrics"></a>Метрики производительности
@@ -78,7 +78,7 @@ Service Fabric создает достаточное число настраив
 При использовании Reliable Collections рекомендуется добавить `Avg. Transaction ms/Commit` из `Service Fabric Transactional Replicator` для сбора метрики средней задержки при фиксации транзакции.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [создании событий на уровне платформы](service-fabric-diagnostics-event-generation-infra.md) в Service Fabric.
 * Сбор метрик производительности с помощью [агента Log Analytics](service-fabric-diagnostics-oms-agent.md)

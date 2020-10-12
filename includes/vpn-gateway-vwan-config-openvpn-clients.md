@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 03/17/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 55fa01d100c60c6411774373428ff4bbd9a56822
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80986650"
 ---
 ## <a name="windows-clients"></a><a name="windows"></a>Клиенты Windows
@@ -100,7 +100,7 @@ ms.locfileid: "80986650"
 
 11. Коснитесь кнопки " **Добавить** " на странице " **Импорт профиля** "
 
-    ![Add](./media/vpn-gateway-vwan-config-openvpn-clients/ios5.png)
+    ![Добавить](./media/vpn-gateway-vwan-config-openvpn-clients/ios5.png)
 
 12. Коснитесь кнопки **Добавить** на странице **импортированного профиля**
 

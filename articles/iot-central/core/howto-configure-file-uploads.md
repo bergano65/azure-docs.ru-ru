@@ -8,10 +8,10 @@ ms.date: 08/06/2020
 ms.topic: how-to
 ms.service: iot-central
 ms.openlocfilehash: 6b717fd15b25ae4abd2af3520dba2e72f8f9f3a4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88556376"
 ---
 # <a name="upload-files-from-your-devices-to-the-cloud"></a>Передача файлов с устройств в облако
@@ -56,7 +56,7 @@ IoT Central позволяет отправлять мультимедиа и д
 
 IoT Central использует функцию отправки файлов в центре Интернета вещей, чтобы разрешить устройствам отправлять файлы. Пример кода, демонстрирующий передачу файлов с устройства, см. в разделе [пример устройства загрузки файлов IOT Central](https://docs.microsoft.com/samples/iot-for-all/iotc-file-upload-device/iotc-file-upload-device/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как настроить и реализовать передачу файлов устройств в IoT Central, предлагаемый следующий шаг — узнать больше о передаче файлов устройства:
 

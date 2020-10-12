@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 7b5017cdeade14e53778b58154456412507c5ce8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77024880"
 ---
 # <a name="what-is-azure-vmware-solution-by-cloudsimple"></a>Что такое решение VMware для Azure от Клаудсимпле
@@ -21,7 +21,7 @@ ms.locfileid: "77024880"
 
 ![Обзор решения VMware в Azure с помощью Клаудсимпле](media/azure-vmware-solution-by-cloudsimple.png)
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 * Самостоятельная подготовка облачных сред VMware по требованию. Возможность добавлять и удалять емкость по запросу.
 * Развертывание платформы VMware, обновление, резервное копирование, мониторинг работоспособности и емкости, оповещение, устранение неполадок и исправление.
@@ -40,7 +40,7 @@ ms.locfileid: "77024880"
     * Приложения
     * Операции
     * Безопасность
-    * Backup
+    * Резервное копирование
     * Аварийное восстановление
     * Аудит
     * Средства обеспечения соответствия
@@ -63,7 +63,7 @@ ms.locfileid: "77024880"
 
 ![Сценарии](media/cloudsimple-scenarios.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание службы Клаудсимпле](quickstart-create-cloudsimple-service.md)
 * [Создание частного облака](quickstart-create-private-cloud.md)

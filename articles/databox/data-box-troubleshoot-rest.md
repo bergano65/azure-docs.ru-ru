@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: b950f80ba8c2bdbaf7a515dc1ce127b934723177
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85558554"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-blob-storage"></a>Устранение неполадок, связанных с хранилищем BLOB-объектов Azure Data Box
@@ -26,7 +26,7 @@ ms.locfileid: "85558554"
 |Сообщение об ошибке  |Рекомендуемое действие |
 |---------|---------|
 |Не удалось получить дочерние ресурсы. Значение одного из заголовков HTTP имеет неправильный формат.|В меню **Правка** выберите пункт **целевые Azure Stack API**. <br>Перезапустите Обозреватель службы хранилища Azure.|
-|`getaddrinfo ENOTFOUND <accountname>.blob.<serialnumber>.microsoftdatabox.com` |Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по указанному пути: <li>`C:\Windows\System32\drivers\etc\hosts`в Windows или </li><li> `/etc/hosts`в Linux.</li>|
+|`getaddrinfo ENOTFOUND <accountname>.blob.<serialnumber>.microsoftdatabox.com` |Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по указанному пути: <li>`C:\Windows\System32\drivers\etc\hosts` в Windows или </li><li> `/etc/hosts` в Linux.</li>|
 |Не удалось получить дочерние ресурсы. <br>Сведения: самозаверяющий сертификат |Импортируйте сертификат TLS/SSL для устройства в Обозреватель службы хранилища Azure: <li>Скачайте сертификат из портал Azure. Дополнительные сведения см. в подразделе [Загрузка сертификата](data-box-deploy-copy-data-via-rest.md#download-certificate).</li><li>В меню **Правка** выберите SSL- **Сертификаты** и щелкните **Импорт сертификатов**.</li>|
 
 ## <a name="errors-seen-in-azcopy-for-windows"></a>Ошибки, обнаруженные в AzCopy для Windows
@@ -35,7 +35,7 @@ ms.locfileid: "85558554"
 
 |Сообщение об ошибке  |Рекомендуемое действие |
 |---------|---------|
-|Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка: <br>Не удалось перечислить каталог https://... Не удалось разрешить удаленное имя`<accountname>.blob.<serialnumber>.microsoftdatabox.com`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `C:\Windows\System32\drivers\etc\hosts` .|
+|Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка: <br>Не удалось перечислить каталог https://... Не удалось разрешить удаленное имя `<accountname>.blob.<serialnumber>.microsoftdatabox.com`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `C:\Windows\System32\drivers\etc\hosts` .|
 |Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка: <br>Ошибка при анализе расположения источника. Базовое соединение закрыто: не удалось установить доверительные отношения для защищенного канала SSL/TLS.|Импортируйте сертификат TLS/SSL для устройства в хранилище сертификатов системы. Дополнительные сведения см. в подразделе [Загрузка сертификата](data-box-deploy-copy-data-via-rest.md#download-certificate).|
 
 
@@ -66,6 +66,6 @@ ms.locfileid: "85558554"
 |---------|---------|
 |Время ожидания соединения истекло. |Войдите на устройство Data Box и убедитесь, что оно разблокировано. При каждом перезапуске устройства он остается заблокированным до тех пор, пока пользователь не войдет в систему.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [требованиях к системе для хранилища BLOB-объектов Data Box](data-box-system-requirements-rest.md).

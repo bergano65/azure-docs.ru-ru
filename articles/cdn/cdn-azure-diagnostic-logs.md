@@ -14,10 +14,10 @@ ms.topic: troubleshooting
 ms.date: 07/15/2020
 ms.author: allensu
 ms.openlocfilehash: 164560fff27adc2d4e63cc8471a26d1d710b89a5
-ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88191284"
 ---
 # <a name="diagnostic-logs---azure-content-delivery-network"></a>Журналы диагностики — сеть доставки содержимого Azure
@@ -52,7 +52,7 @@ ms.locfileid: "88191284"
 
 3. В разделе **мониторинг** выберите **журналы диагностики** :
 
-    :::image type="content" source="./media/cdn-diagnostics-log/03_diagnostics-logs-options.png" alt-text="Выберите журналы диагностики." border="true":::
+    :::image type="content" source="./media/cdn-diagnostics-log/03_diagnostics-logs-options.png" alt-text="Выберите конечную точку CDN." border="true":::
 
 ### <a name="enable-logging-with-azure-storage"></a>Включение ведения журнала с помощью службы хранилища Azure
 
@@ -69,9 +69,9 @@ ms.locfileid: "88191284"
 
 4. Выберите подписку и учетную запись хранения для журналов.
 
-    :::image type="content" source="./media/cdn-diagnostics-log/04_diagnostics-logs-storage.png" alt-text="Журналы диагностики — хранилище." border="true":::
+    :::image type="content" source="./media/cdn-diagnostics-log/04_diagnostics-logs-storage.png" alt-text="Выберите конечную точку CDN." border="true":::
 
-3. Выберите **Сохранить**.
+3. Щелкните **Сохранить**.
 
 ### <a name="send-to-log-analytics"></a>Отправка в Log Analytics
 
@@ -86,9 +86,9 @@ ms.locfileid: "88191284"
 
 3. Выберите подписку и Log Analytics рабочую область для журналов.
 
-   :::image type="content" source="./media/cdn-diagnostics-log/05-la-workspace.png" alt-text="Журналы диагностики — Log Analytics." border="true":::
+   :::image type="content" source="./media/cdn-diagnostics-log/05-la-workspace.png" alt-text="Выберите конечную точку CDN." border="true":::
 
-4. Выберите **Сохранить**.
+4. Щелкните **Сохранить**.
 
 ### <a name="stream-to-an-event-hub"></a>"Передать в концентратор событий";
 
@@ -103,9 +103,9 @@ ms.locfileid: "88191284"
 
 3. Выберите подписку и пространство имен концентратора событий для журналов.
 
-   :::image type="content" source="./media/cdn-diagnostics-log/06-eventhub-namespace.png" alt-text="Журналы диагностики — концентратор событий." border="true":::
+   :::image type="content" source="./media/cdn-diagnostics-log/06-eventhub-namespace.png" alt-text="Выберите конечную точку CDN." border="true":::
 
-4. Выберите **Сохранить**.
+4. Щелкните **Сохранить**.
 
 
 ## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
@@ -204,13 +204,13 @@ ms.locfileid: "88191284"
 
 **Описание полей**
 
-|Значение|Описание:|
+|Значение|Описание|
 |-------|---------|
 |Идентификатор подписки    |Идентификатор подписки Azure в формате GUID.|
 |Имя группы ресурсов |Имя группы ресурсов, к которой относятся ресурсы CDN.|
 |Имя профиля |Имя профиля CDN.|
 |Имя конечной точки |Имя конечной точки CDN.|
-|Год|  4-значное обозначение года, например 2017|
+|Year;|  4-значное обозначение года, например 2017|
 |Месяц| 2-значное обозначение номера месяца 01 = Январь... 12 = Декабрь|
 |День|   2-значное обозначение дня месяца|
 |PT1H.json| Фактический JSON-файл, в котором хранятся данные аналитики.|
@@ -265,7 +265,7 @@ ms.locfileid: "88191284"
 | RequestCountCacheHit | Количество всех запросов, в результате которых произошло попадание в кэш. Такие ресурсы возвращаются клиенту непосредственно из точки присутствия. | Да | Да | Нет  |
 | RequestCountCacheMiss | Количество всех запросов, в результате которых произошел промах кэша. Промах кэша означает, что ресурс не найден на ближайшей точке подключения к клиенту и был получен из источника. | Да | Да | Нет |
 | RequestCountCacheNoCache | Количество всех запросов к ресурсу, кэширование которых запрещено из-за конфигурации пользователя на границе. | Да | Да | Нет |
-| RequestCountCacheUncacheable | Число всех запросов к ресурсам, которые не могут быть кэшированы заголовками Cache-Control и Expires. Это число означает, что он не должен кэшироваться в POP или HTTP-клиенте. | Да | Да | Нет |
+| RequestCountCacheUncacheable | Число всех запросов к ресурсам, которые не могут быть кэшированы заголовками Cache-Control и срока действия ресурса. Это число означает, что он не должен кэшироваться в POP или HTTP-клиенте. | Да | Да | Нет |
 | RequestCountCacheOthers | Количество всех запросов с состоянием кэша, не указанным выше. | Нет | Да | Нет  |
 | EgressTotal | Объем передачи исходящих данных в ГБ. | Да |Да |Да |
 | EgressHttpStatus2xx | Объем передачи исходящих данных* для ответов с кодами состояния HTTP 2xx (ГБ). | Да | Да | Нет  |
@@ -276,7 +276,7 @@ ms.locfileid: "88191284"
 | EgressCacheHit | Объем передачи исходящих данных для ответов, которые были доставлены непосредственно из кэша CDN на точки присутствия и границы CDN. | Да | Да | Нет |
 | EgressCacheMiss. | Передача исходящих данных для ответов, которые не были найдены на ближайшем сервере POP, и получены с сервера источника. | Да | Да | Нет |
 | EgressCacheNoCache | Передача исходящих данных для ресурсов, которые запрещено кэшировать из-за пользовательской конфигурации на границе. | Да | Да | Нет |
-| EgressCacheUncacheable | Передача исходящих данных для ресурсов, которые не могут быть кэшированы в заголовке Cache-Control и или Expires. Указывает, что он не должен кэшироваться в POP или HTTP-клиенте. | Да | Да | Нет |
+| EgressCacheUncacheable | Передача исходящих данных для ресурсов, которые не могут быть кэшированы с помощью заголовков Cache-Control и или срока действия ресурса. Указывает, что он не должен кэшироваться в POP или HTTP-клиенте. | Да | Да | Нет |
 | EgressCacheOthers | Объем передачи исходящих данных для других сценариев с использованием кэша. | Нет | Да | Нет |
 
 *Передача исходящих данных — это трафик, который доставляется с POP-серверов CDN клиенту.

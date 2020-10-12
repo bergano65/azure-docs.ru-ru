@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: juliako
 ms.openlocfilehash: 5eaf17281fef32d682a2dac17b379faf7ec23a53
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90970088"
 ---
 # <a name="use-the-video-indexer-editor-to-create-projects"></a>Использование редактора индексаторов видео для создания проектов
@@ -55,7 +55,7 @@ ms.locfileid: "90970088"
 
     Вы можете отфильтровать результаты, выбрав **фильтровать результаты**. Вы можете отфильтровать видео, которые имеют определенного человека, или указать, что вы хотите видеть только те результаты видео, которые относятся к определенному языку или имеют определенного владельца. <br/> Можно также указать область запроса. Например, если нужно выполнить поиск по слову GitHub в OCR, выберите **визуальный текст**.
 
-    ![Filter](./media/video-indexer-view-edit/visual-text.png)
+    ![Фильтр](./media/video-indexer-view-edit/visual-text.png)
 
     Можно выполнить многоуровневый выбор нескольких фильтров для запроса. Используйте **+** / **-** кнопки для добавления и удаления фильтров. Используйте **clear Filters** , чтобы удалить все фильтры.
 1. Чтобы добавить видео, выделите их и нажмите кнопку **Добавить**.
