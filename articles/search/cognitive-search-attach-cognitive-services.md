@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.openlocfilehash: c9f6a5ebc4f3242181196bd40b62f7522d025b84
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88924983"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Подключение Cognitive Services ресурса к набору навыков в Azure Когнитивный поиск 
@@ -167,7 +167,7 @@ Content-Type: application/json
 
 Поместив все вместе, вы платите примерно $57,00, чтобы принять 1 000 PDF-документов этого типа с описанным набором навыков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 + [Страница цен на Когнитивный поиск Azure](https://azure.microsoft.com/pricing/details/search/)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание набора навыков (REST)](/rest/api/searchservice/create-skillset)

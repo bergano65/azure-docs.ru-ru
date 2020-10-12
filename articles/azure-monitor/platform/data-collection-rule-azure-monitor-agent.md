@@ -6,10 +6,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/19/2020
 ms.openlocfilehash: aa3225378f921792d1e8ba0442f2c555d095fb9d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90968407"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Настройка сбора данных для агента Azure Monitor (Предварительная версия)
@@ -67,7 +67,7 @@ ms.locfileid: "90968407"
 2.Создайте правило с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionrules/create#examples).
 3.Создайте ассоциацию для каждой виртуальной машины в правиле сбора данных с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionruleassociations/create#examples).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об [агенте Azure Monitor](azure-monitor-agent-overview.md).
 - Дополнительные сведения о [правилах сбора данных](data-collection-rule-overview.md).

@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.openlocfilehash: b82dd4ea8a74c51606b7a388b8d6ede07b1057c4
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89461550"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Шаблоны решений Azure Stream Analytics
@@ -180,7 +180,7 @@ SQL не является хранилищем данных с высокой п
 
 Ключом является проектирование системы в шаблонах с композицией, поэтому каждая подсистема может быть построена, протестирована, обновлена и восстановлена независимо друг от друга.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь вы узнали о различных шаблонах решений, использующих Azure Stream Analytics. Теперь вы можете вникнуть в детали и создать свое первое задание Stream Analytics:
 

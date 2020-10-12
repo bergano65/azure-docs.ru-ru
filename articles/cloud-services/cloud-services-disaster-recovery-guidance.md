@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/04/2017
 ms.author: memccror
 ms.openlocfilehash: d4f869c8b4ae6e90cfe64a2bf3d13839d72727be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84015307"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
@@ -53,7 +53,7 @@ ms.locfileid: "84015307"
 ## <a name="option-3-wait-for-recovery"></a>Вариант 3. Ожидание восстановления
 В этом случае вам не нужно ничего делать. Однако служба будет недоступна до восстановления региона. Текущее состояние службы можно просмотреть на [панели мониторинга работоспособности служб Azure](https://azure.microsoft.com/status/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы больше узнать о том, как реализовать стратегию обеспечения аварийного восстановления и высокого уровня доступности, ознакомьтесь с разделом [Аварийное восстановление и высокий уровень доступности для приложений на платформе Azure](../resiliency/resiliency-disaster-recovery-high-availability-azure-applications.md).
 
 Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](/azure/architecture/checklist/resiliency-per-service).

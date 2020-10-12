@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/13/2020
 ms.openlocfilehash: a62f8aee0bd0a0d2b7009a48e9d5f00ea3c5155f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90883213"
 ---
 # <a name="web-service-input-and-web-service-output-modules"></a>Модули выходных данных веб-службы и веб-службы
@@ -47,7 +47,7 @@ ms.locfileid: "90883213"
 > [!NOTE]
 >  В предыдущем примере **введите данные вручную** , чтобы получить схему данных для веб-службы и необходимые для развертывания конечной точки в режиме реального времени. Как правило, необходимо всегда подключать модуль или набор данных к порту, к которому подключены **входные данные веб-службы** , чтобы предоставить схему данных.
    
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о [развертывании конечной точки в режиме реального времени](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy#deploy-the-real-time-endpoint).
 
 Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure.

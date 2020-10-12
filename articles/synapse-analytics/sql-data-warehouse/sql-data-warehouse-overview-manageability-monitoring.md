@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 19b2b4aecedbaa66c258b9076c517b02034a46fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85200993"
 ---
 # <a name="manageability-and-monitoring-with-synapse-sql-pool"></a>Управляемость и мониторинг с помощью пула SQL синапсе
@@ -32,5 +32,5 @@ ms.locfileid: "85200993"
 * [Устранение неполадок хранилища данных SQL Azure](sql-data-warehouse-troubleshoot.md)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Практические руководства см. в разделе [мониторинг и Настройка пула SQL](sql-data-warehouse-manage-monitor.md).

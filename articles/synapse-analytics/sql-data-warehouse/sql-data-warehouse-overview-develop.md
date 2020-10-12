@@ -11,10 +11,10 @@ ms.date: 08/29/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.openlocfilehash: 95f712f196c37650b52220c9e34f6cb6b50bff23
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89460615"
 ---
 # <a name="design-decisions-and-coding-techniques-for-a-synapse-sql-pool-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для пула синапсе SQL в Azure синапсе Analytics 
@@ -24,7 +24,7 @@ ms.locfileid: "89460615"
 В следующих статьях приводятся основные понятия и решения по проектированию для разработки распределенного хранилища данных с помощью функции пула SQL в Azure синапсе:
 
 * [соединение](../sql/connect-overview.md)
-* [параллелизма](resource-classes-for-workload-management.md)
+* [concurrency](resource-classes-for-workload-management.md)
 * [провод](sql-data-warehouse-develop-transactions.md)
 * [определяемые пользователем схемы](sql-data-warehouse-develop-user-defined-schemas.md)
 * [распределение таблиц](sql-data-warehouse-tables-distribute.md)
@@ -45,5 +45,5 @@ ms.locfileid: "89460615"
 * [Параметры группировки](sql-data-warehouse-develop-group-by-options.md)
 * [Присваивание переменной](sql-data-warehouse-develop-variable-assignment.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные справочные сведения см. в разделе [инструкции T-SQL](sql-data-warehouse-reference-tsql-statements.md).

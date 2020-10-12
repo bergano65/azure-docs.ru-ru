@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/08/2019
 ms.openlocfilehash: de42a70cf2950aca3dbe151407671306c793ed10
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86515501"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
@@ -26,8 +26,8 @@ ms.locfileid: "86515501"
 ## <a name="logartifact-paths"></a>Пути к журналам и артефактам
 В таблицах ниже приведены расположения некоторых важных журналов и артефактов. Эти сведения используются в остальной части документа.
 
-### <a name="azure-cloud-services"></a>Oблачныe службы Azure
-| Артефакт | Путь |
+### <a name="azure-cloud-services"></a>Облачные службы Azure
+| Артефакт | путь |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics \<version>\Config.txt |
 | **Файлы журналов** | к:\логс\плугинс\микрософт.азуре.диагностикс.паасдиагностикс\<version>\ |
@@ -38,7 +38,7 @@ ms.locfileid: "86515501"
 | **Файл журнала MonAgentHost** | C:\Resources\Directory \<CloudServiceDeploymentID> . \<RoleName> DiagnosticStore\WAD0107\Configuration\MonAgentHost. <seq_num>. log |
 
 ### <a name="virtual-machines"></a>Виртуальные машины
-| Артефакт | Путь |
+| Артефакт | путь |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics \<version> \рунтимесеттингс |
 | **Файлы журналов** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<DiagnosticsVersion>\ |
@@ -79,7 +79,7 @@ ms.locfileid: "86515501"
 Если конфигурация настроена правильно, но данные метрики все равно не отображаются, следуйте инструкциям ниже для устранения ошибок.
 
 
-## <a name="azure-diagnostics-is-not-starting"></a>система диагностики Azure не запускается
+## <a name="azure-diagnostics-is-not-starting"></a>Диагностика Azure не запускается
 Сведения о том, почему система диагностики Azure не запускается, см. в файлах **DiagnosticsPluginLauncher.log** и **DiagnosticsPlugin.log** в расположение файлов журнала, указанном выше.
 
 Если эти журналы указывают `Monitoring Agent not reporting success after launch`, это означает, что произошел сбой запуска MonAgentHost.exe. Просмотрите журналы в расположении, указанном для `MonAgentHost log file` в предыдущем разделе.
@@ -165,7 +165,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
             tableName = "WAD" + eventDestination;
 ```
 
-Ниже приведен пример.
+Например:
 
 ```XML
         <EtwEventSourceProviderConfiguration provider="prov1">
@@ -212,7 +212,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 | Provider = "prov1" &lt; дефаултевентс/&gt; |Ваддефаулт + MD5 ("prov1") |
 | Provider = "prov2" &lt; Дефаултевентс евентдестинатион = "dest2"/&gt; |WADdest2 |
 
-## <a name="references"></a>Ссылки (на английском языке)
+## <a name="references"></a>Ссылки
 
 ### <a name="how-to-check-diagnostics-extension-configuration"></a>Как проверить конфигурацию расширения системы диагностики
 Самый простой способ проверить конфигурацию расширения — перейти в [обозреватель ресурсов Azure](https://resources.azure.com) и выбрать виртуальную машину или облачную службу, где выполняется расширение системы диагностики Azure (IaaSDiagnostics или PaaDiagnostics).
@@ -232,7 +232,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 | --- | --- |
 | 0 |Успешно. |
 | -1 |Общая ошибка. |
-| –2 |Невозможно загрузить RCF-файл.<p>Эта внутренняя ошибка возникает только тогда, когда средство запуска подключаемого модуля гостевого агента вызвано вручную, неправильно и на виртуальной машине. |
+| -2 |Невозможно загрузить RCF-файл.<p>Эта внутренняя ошибка возникает только тогда, когда средство запуска подключаемого модуля гостевого агента вызвано вручную, неправильно и на виртуальной машине. |
 | –3 |Не удалось загрузить файл конфигурации системы диагностики.<p><p>Решение. Это вызвано тем, что файл конфигурации не прошел проверку схемы. Следует предоставить файл конфигурации, соответствующий схеме. |
 | –4 |Другой экземпляр системы диагностики агента мониторинга уже использует локальный каталог ресурсов.<p><p>Решение. Укажите другое значение для **LocalResourceDirectory**. |
 | –6 |Попытка средства запуска подключаемого модуля гостевого агента запустить систему диагностики с помощью неправильно составленной команды.<p><p>Эта внутренняя ошибка возникает только тогда, когда средство запуска подключаемого модуля гостевого агента вызвано вручную, неправильно и на виртуальной машине. |

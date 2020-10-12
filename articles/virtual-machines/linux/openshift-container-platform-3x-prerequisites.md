@@ -10,10 +10,10 @@ ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
 ms.openlocfilehash: 68bd748e890659e4b79d76e4ccab038f251a937a
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87368189"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Общие предварительные требования для развертывания платформы контейнеров OpenShift 3,11 в Azure
@@ -173,4 +173,4 @@ az keyvault secret set --vault-name KeyVaultName -n mastercafile --file ~/certif
 Теперь разверните кластер OpenShift:
 
 - [Развертывание платформы контейнеров OpenShift в Azure](./openshift-container-platform-3x.md)
-- [Развертывание самостоятельно управляемой платформы контейнера OpenShift предложение Marketplace](./openshift-container-platform-3x-marketplace-self-managed.md)
+- [Развертывание платформы контейнеров OpenShift Self-Managed предложение Marketplace](./openshift-container-platform-3x-marketplace-self-managed.md)

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 953430421bd30aaa1df352451b549994aeaa1a70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85556163"
 ---
 # <a name="enable-multiple-namespace-support-in-an-aks-cluster-with-application-gateway-ingress-controller"></a>Включение поддержки нескольких пространств имен в кластере AKS с помощью контроллера входящего трафика шлюза приложений
@@ -29,11 +29,11 @@ ms.locfileid: "85556163"
    - Удалите `watchNamespace` ключ целиком из [Helm-config. YAML](#sample-helm-config-file) -агик будет наблюдать за всеми пространствами имен
    - Задайте `watchNamespace` пустую строку — агик будет следить за всеми пространствами имен.
    - Добавьте несколько пространств имен, разделенных запятой ( `watchNamespace: default,secondNamespace` )-агик будет наблюдать только за этими пространствами имен
-2. применить изменения шаблона Helm с помощью:`helm install -f helm-config.yaml application-gateway-kubernetes-ingress/ingress-azure`
+2. применить изменения шаблона Helm с помощью: `helm install -f helm-config.yaml application-gateway-kubernetes-ingress/ingress-azure`
 
 После развертывания с возможностью наблюдения за несколькими пространствами имен АГИК будет:
   - Вывод списка входящих ресурсов из всех доступных пространств имен
-  - фильтровать входящие ресурсы с заметками`kubernetes.io/ingress.class: azure/application-gateway`
+  - фильтровать входящие ресурсы с заметками `kubernetes.io/ingress.class: azure/application-gateway`
   - Создание общей [конфигурации шлюза приложений](https://github.com/Azure/azure-sdk-for-go/blob/37f3f4162dfce955ef5225ead57216cf8c1b2c70/services/network/mgmt/2016-06-01/network/models.go#L1710-L1744)
   - Применение конфигурации к связанному шлюзу приложений через [ARM](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)
 
@@ -84,11 +84,11 @@ spec:
 
 Несмотря на два входящих ресурса, требующих `www.contoso.com` направлять трафик в соответствующие пространства имен Kubernetes, только одна серверная часть может обслуживать трафик. АГИК будет создавать конфигурацию для одного из ресурсов на основе первых поступающих. Если одновременно создаются два передает ресурсов, приоритет будет иметь один из них, описанный ранее в алфавите. В приведенном выше примере мы сможем только создавать параметры для входящего трафика `production` . Шлюз приложений будет настроен со следующими ресурсами:
 
-  - Прослушивателя`fl-www.contoso.com-80`
-  - Правило маршрутизации:`rr-www.contoso.com-80`
-  - Внутренний пул:`pool-production-contoso-web-service-80-bp-80`
-  - Параметры HTTP:`bp-production-contoso-web-service-80-80-websocket-ingress`
-  - Проба работоспособности:`pb-production-contoso-web-service-80-websocket-ingress`
+  - Прослушивателя `fl-www.contoso.com-80`
+  - Правило маршрутизации: `rr-www.contoso.com-80`
+  - Внутренний пул: `pool-production-contoso-web-service-80-bp-80`
+  - Параметры HTTP: `bp-production-contoso-web-service-80-80-websocket-ingress`
+  - Проба работоспособности: `pb-production-contoso-web-service-80-websocket-ingress`
 
 Обратите внимание, что за исключением правила *прослушивателя* и *маршрутизации*, созданные ресурсы шлюза приложений включают имя пространства имен ( `production` ), для которого они были созданы.
 

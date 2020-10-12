@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: a9dba7c85ded7add1a9f1494d88a3f8a1f62f175
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90882457"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MySQL с помощью портал Azure
@@ -37,7 +37,7 @@ ms.locfileid: "90882457"
 
 2. Выберите **общего назначения** или **оптимизировать память**в зависимости от того, что вы масштабируете.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/change-pricing-tier.png" alt-text="Снимок экрана портал Azure для выбора уровня "базовый", "общего назначения" или "оптимизировано для памяти" в базе данных Azure для MySQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/change-pricing-tier.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
    > [!NOTE]
    > Изменение уровней приводит к перезапуску сервера.
@@ -50,7 +50,7 @@ ms.locfileid: "90882457"
 
 2. Измените параметр **Виртуальное ядро**, переместив ползунок на нужное значение.
 
-    :::image type="content" source="./media/howto-create-manage-server-portal/scaling-compute.png" alt-text="Снимок экрана портал Azure выбор параметра Виртуальное ядро в базе данных Azure для MySQL":::
+    :::image type="content" source="./media/howto-create-manage-server-portal/scaling-compute.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
     > [!NOTE]
     > Масштабирование виртуальных ядер приводит к перезапуску сервера.
@@ -63,7 +63,7 @@ ms.locfileid: "90882457"
 
 2. Измените параметр **хранилища** , переместив ползунок вверх до нужного значения.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-storage.png" alt-text="Снимок экрана портал Azure выбор масштаба хранилища в базе данных Azure для MySQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/scaling-storage.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
    > [!NOTE]
    > Невозможно масштабировать хранилище.
@@ -76,11 +76,11 @@ ms.locfileid: "90882457"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Сброс пароля**.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/overview-reset-password.png" alt-text="Снимок экрана портал Azure сброс пароля в базе данных Azure для MySQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/overview-reset-password.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/reset-password.png" alt-text="Снимок экрана портал Azure сброса пароля и сохранения в базе данных Azure для MySQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/reset-password.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
 3. Нажмите кнопку **ОК** , чтобы сохранить новый пароль.
 
@@ -90,11 +90,11 @@ ms.locfileid: "90882457"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/overview-delete.png" alt-text="Снимок экрана портал Azure для удаления сервера в базе данных Azure для MySQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/overview-delete.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
-   :::image type="content" source="./media/howto-create-manage-server-portal/confirm-delete.png" alt-text="Снимок экрана портал Azure для подтверждения удаления сервера в базе данных Azure для MySQL":::
+   :::image type="content" source="./media/howto-create-manage-server-portal/confirm-delete.png" alt-text="Снимок экрана портал Azure для выбора уровня &quot;базовый&quot;, &quot;общего назначения&quot; или &quot;оптимизировано для памяти&quot; в базе данных Azure для MySQL":::
 
    > [!NOTE]
    > Удаление сервера необратимо.

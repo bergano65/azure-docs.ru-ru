@@ -10,10 +10,10 @@ ms.workload: infrastructure
 ms.date: 05/7/2019
 ms.author: haroldw
 ms.openlocfilehash: 989c67d0d1b1cd8257da089ec9c31f247228018e
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87367951"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
@@ -46,7 +46,7 @@ OKD — это высокоуровневый проект OpenShift с [отк�
 
 - [Общие предварительные требования для OpenShift в Azure](./openshift-container-platform-3x-prerequisites.md)
 - [Развертывание платформы OpenShift Container Platform](./openshift-container-platform-3x.md)
-- [Развертывание самостоятельно управляемой платформы контейнера OpenShift предложение Marketplace](./openshift-container-platform-3x-marketplace-self-managed.md)
+- [Развертывание платформы контейнеров OpenShift Self-Managed предложение Marketplace](./openshift-container-platform-3x-marketplace-self-managed.md)
 - [Развертывание OpenShift в Azure Stack](./openshift-azure-stack.md)
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift](./openshift-container-platform-3x-troubleshooting.md)

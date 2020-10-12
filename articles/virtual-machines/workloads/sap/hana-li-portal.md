@@ -16,10 +16,10 @@ ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d81a8b3a1596e8a447f7a2434e52df8c89b416b7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87085271"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Управление крупными экземплярами HANA в Azure с помощью портала Azure
@@ -83,7 +83,7 @@ az provider register --namespace Microsoft.HanaOnAzure
 - [Доступные номера SKU для HLI](./hana-available-skus.md)
 - [Архитектура хранилища SAP HANA (крупные экземпляры)](./hana-storage-architecture.md) 
 
-Дополнительные данные в правой нижней части — это редакция метки крупных экземпляров HANA. Возможны следующие значения:
+Дополнительные данные в правой нижней части — это редакция метки крупных экземпляров HANA. Доступны следующие значения:
 
 - Редакция 3
 - Редакция 4
@@ -157,7 +157,7 @@ az provider register --namespace Microsoft.HanaOnAzure
 
 Когда вы ответили на вопросы и указали дополнительные сведения, вы можете перейти к следующему шагу, чтобы ознакомиться с запросом на поддержку и отправить его.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Мониторинг SAP HANA на крупных экземплярах Azure](./troubleshooting-monitoring.md)
 - [Мониторинг и устранение неполадок со стороны HANA](./hana-monitor-troubleshoot.md)

@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 259a1324c412dad40d32a8b8e026d84e6f5aa066
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85554928"
 ---
 # <a name="hybrid-azure-ad-joined-devices"></a>Гибридные устройства, присоединенные к Azure AD
@@ -29,7 +29,7 @@ ms.locfileid: "85554928"
 
 Если в вашей среде действует локальная служба AD и вы также хотите получить выгоду от возможностей, предоставляемых Azure Active Directory, можно использовать гибридные устройства, присоединенные к Azure AD. Эти устройства — это устройства, присоединенные к локальной Active Directory и зарегистрированные в Azure Active Directory.
 
-| Гибридное присоединение к Azure AD | Описание: |
+| Гибридное присоединение к Azure AD | Описание |
 | --- | --- |
 | **Определение** | Присоединение к локальной службе AD и Azure AD, для входа на устройство требуется учетная запись Организации |
 | **Основная аудитория** | Подходит для гибридных организаций с существующей локальной инфраструктурой AD |
@@ -62,7 +62,7 @@ ms.locfileid: "85554928"
 - Вы хотите продолжить использовать существующие решения для работы с образами для развертывания и настройки устройств.
 - В дополнение к Windows 10 необходимо поддерживать устройства Windows 7 и 8,1 нижнего уровня.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Планирование реализации гибридного присоединения к Azure Active Directory](hybrid-azuread-join-plan.md)
 - [Управление удостоверениями устройств с помощью портала Azure](device-management-azure-portal.md)

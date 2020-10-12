@@ -4,10 +4,10 @@ description: Узнайте, как настроить журналы дейст
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: ccd38d8924765df7bfd91b4fc26bb5304f6f180d
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88927737"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
@@ -155,7 +155,7 @@ JSON журнала координатора Kafka включает элемен
 | `Operation` | Имя операции, выполняемой во время координации групп. |
 | `ClientId` | Идентификатор клиента |
 | `NamespaceName` | Имя пространства имен | 
-| `SubscriptionId` | Идентификатор подписки Azure. |
+| `SubscriptionId` | идентификатор подписки Azure; |
 | `Message` | Информационное сообщение или предупреждение, содержащее сведения о действиях, выполненных во время координации групп. |
 
 ### <a name="example"></a>Пример
@@ -193,7 +193,7 @@ JSON события подключения виртуальной сети (VNet
 
 | Имя | Описание |
 | ---  | ----------- | 
-| `SubscriptionId` | Идентификатор подписки Azure. |
+| `SubscriptionId` | идентификатор подписки Azure; |
 | `NamespaceName` | Имя пространства имен |
 | `IPAddress` | IP-адрес клиента, подключающегося к службе "Центры событий". |
 | `Action` | Действие, выполняемое службой "Центры событий" при оценке запросов на подключение. Поддерживаемые действия: **Accept Connection** (Принять подключение) и **Deny Connection** (Отклонить подключение). |

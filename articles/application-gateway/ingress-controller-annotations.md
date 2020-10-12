@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: f54381ddcd11a2e4a24d30d812468da85b5403de
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80335826"
 ---
 # <a name="annotations-for-application-gateway-ingress-controller"></a>Заметки для контроллера входящего трафика шлюза приложений 
@@ -29,9 +29,9 @@ ms.locfileid: "80335826"
 | [appgw.ingress.kubernetes.io/backend-path-prefix](#backend-path-prefix) | `string` | `nil` | |
 | [appgw.ingress.kubernetes.io/ssl-redirect](#tls-redirect) | `bool` | `false` | |
 | [appgw.ingress.kubernetes.io/connection-draining](#connection-draining) | `bool` | `false` | |
-| [appgw.ingress.kubernetes.io/connection-draining-timeout](#connection-draining) | `int32`несколько | `30` | |
+| [appgw.ingress.kubernetes.io/connection-draining-timeout](#connection-draining) | `int32` несколько | `30` | |
 | [appgw.ingress.kubernetes.io/cookie-based-affinity](#cookie-based-affinity) | `bool` | `false` | |
-| [appgw.ingress.kubernetes.io/request-timeout](#request-timeout) | `int32`несколько | `30` | |
+| [appgw.ingress.kubernetes.io/request-timeout](#request-timeout) | `int32` несколько | `30` | |
 | [appgw.ingress.kubernetes.io/use-private-ip](#use-private-ip) | `bool` | `false` | |
 | [appgw.ingress.kubernetes.io/backend-protocol](#backend-protocol) | `string` | `http` | `http`, `https` |
 
@@ -237,7 +237,7 @@ spec:
 
 ## <a name="backend-protocol"></a>Внутренний протокол
 
-Эта заметка позволяет указать протокол, который должен использоваться шлюзом приложений при взаимодействии с модулями Pod. Поддерживаемые протоколы: `http` ,`https`
+Эта заметка позволяет указать протокол, который должен использоваться шлюзом приложений при взаимодействии с модулями Pod. Поддерживаемые протоколы: `http` , `https`
 
 > [!NOTE]
 > * Несмотря на то, что самозаверяющие сертификаты поддерживаются в шлюзе приложений, в настоящее время АГИК поддерживается только в тех случаях, когда в модулях Pod `https` используется сертификат, подписанный известным центром сертификации.

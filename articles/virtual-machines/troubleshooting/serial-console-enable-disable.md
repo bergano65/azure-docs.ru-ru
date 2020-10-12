@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 8/20/2019
 ms.author: alsin
 ms.openlocfilehash: e09e08f8ba36cf576bc27551254225adee3bb0fd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75451306"
 ---
 # <a name="enable-and-disable-the-azure-serial-console"></a>Включение и отключение последовательной консоли Azure
@@ -79,7 +79,7 @@ $subscription=(Get-AzContext).Subscription.Id
 Invoke-AzResourceAction -Action enableConsole -ResourceId /subscriptions/$subscription/providers/Microsoft.SerialConsole/consoleServices/default -ApiVersion 2018-05-01
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о [последовательной консоли Azure для виртуальных машин Linux](./serial-console-linux.md)
 * Дополнительные сведения о [последовательной консоли Azure для виртуальных машин Windows](./serial-console-windows.md)
 * Сведения о [возможностях управления питанием в последовательной консоли Azure](./serial-console-power-options.md)
