@@ -8,10 +8,10 @@ ms.author: barbkess
 ms.reviewer: lcozzens
 ms.service: azure-app-configuration
 ms.openlocfilehash: 560a2df5946b9cfe1160864752595e86cc6eeb65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82981227"
 ---
 # <a name="how-to-use-managed-identities-for-azure-app-configuration"></a>Использование управляемых удостоверений для конфигурации приложений Azure
@@ -101,7 +101,7 @@ ms.locfileid: "82981227"
 
 Чтобы удалить назначенное системой удостоверение, отключите эту функцию с помощью команды [AZ appconfig Identity Remove](/cli/azure/appconfig/identity?view=azure-cli-latest#az-appconfig-identity-remove) в Azure CLI. Назначаемые пользователем удостоверения можно удалить по отдельности. Такое удаление назначаемого системой удостоверения приводит к удалению из AAD. Назначаемые системой удостоверения также удаляются из AAD автоматически, когда удаляется ресурс приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание приложения ASP.NET Core с помощью конфигурации приложения Azure](quickstart-aspnet-core-app.md)

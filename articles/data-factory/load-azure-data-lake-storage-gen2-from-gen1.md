@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/13/2019
 ms.openlocfilehash: 6655510a4cfdb88e98319c7fc26c7ae83255bb6f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81415821"
 ---
 # <a name="copy-data-from-azure-data-lake-storage-gen1-to-gen2-with-azure-data-factory"></a>Копирование данных из Azure Data Lake Storage 1-го поколения в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure
@@ -80,7 +80,7 @@ Azure Data Lake Storage 2-го поколения — это набор возм
     
 5. На странице **Указание подключения Azure Data Lake Storage 1-го поколения** выполните следующие действия.
 
-   а. Выберите имя учетной записи Data Lake Storage 1-го поколения и укажите или подтвердите имя **клиента**.
+   a. Выберите имя учетной записи Data Lake Storage 1-го поколения и укажите или подтвердите имя **клиента**.
   
    b. Выберите **проверить подключение** , чтобы проверить параметры. Выберите **Готово**.
   
@@ -105,9 +105,9 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 9. На странице **Указание подключения Azure Data Lake Storage 2-го поколения** выполните следующие действия.
 
-   а. Выберите учетную запись с поддержкой Data Lake Storage 2-го поколения из раскрывающегося списка **имя учетной записи хранения** .
+   a. Выберите учетную запись с поддержкой Data Lake Storage 2-го поколения из раскрывающегося списка **имя учетной записи хранения** .
    
-   b. Выберите **Готово**, чтобы создать подключение. Нажмите кнопку **Далее**.
+   b. Выберите **Готово**, чтобы создать подключение. Выберите **Далее**.
    
    ![Выбор учетной записи Data Lake Storage 2-го поколения](./media/load-azure-data-lake-storage-gen2-from-gen1/specify-adls-gen2-account.png)
 

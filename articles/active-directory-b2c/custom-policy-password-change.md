@@ -12,10 +12,10 @@ ms.date: 12/13/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 6faf9fb3d15709d3897db9a77bf14ebf238e8fbf
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87116373"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C
@@ -24,7 +24,7 @@ ms.locfileid: "87116373"
 
 В Azure Active Directory B2C (Azure AD B2C) можно разрешить пользователям, вошедшим в локальную учетную запись, изменить пароль, не подтверждая их подлинность по проверке по электронной почте. Если время сеанса истекает, когда пользователь входит в поток смены пароля, такому пользователю предлагается выполнить вход еще раз. В этой статье рассказывается о настройке смены пароля в [настраиваемых политиках](custom-policy-overview.md). Также можно настроить [самостоятельный сброс пароля](user-flow-self-service-password-reset.md) в последовательностях пользователей.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 

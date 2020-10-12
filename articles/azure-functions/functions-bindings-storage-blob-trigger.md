@@ -7,10 +7,10 @@ ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
 ms.openlocfilehash: 67e1f1dff43939ce7ef279db57bee4b18bd12dc8
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88213954"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Триггер хранилища BLOB-объектов Azure для функций Azure
@@ -280,7 +280,7 @@ public void run(
 |**type** | Недоступно | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции. |
-|**путь** | **BlobPath** |Отслеживаемый [контейнер](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) .  Может быть [шаблоном имени большого двоичного объекта](#blob-name-patterns). |
+|**path** | **BlobPath** |Отслеживаемый [контейнер](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) .  Может быть [шаблоном имени большого двоичного объекта](#blob-name-patterns). |
 |**connection**; | **Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]

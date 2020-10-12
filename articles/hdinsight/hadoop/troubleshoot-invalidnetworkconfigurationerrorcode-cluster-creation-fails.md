@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/22/2020
 ms.openlocfilehash: 1fb5b78f210a9bd817a2987dcb30fa25d156d5d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82780442"
 ---
 # <a name="cluster-creation-fails-with-invalidnetworkconfigurationerrorcode-in-azure-hdinsight"></a>Сбой создания кластера с InvalidNetworkConfigurationErrorCode в Azure HDInsight
@@ -22,11 +22,11 @@ ms.locfileid: "82780442"
 
 ## <a name="hostname-resolution-failed"></a>"Сбой разрешения имени узла"
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Описание ошибки содержит "сбой разрешения имени узла".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка указывает на проблему с пользовательской конфигурацией DNS. DNS-серверы в виртуальной сети могут пересылать запросы DNS в рекурсивные арбитры конфликтов Azure для разрешения имен узлов в этой виртуальной сети (Дополнительные сведения см. [в разделе разрешение имен в виртуальных сетях](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) ). Доступ к рекурсивным разрешителям Azure предоставляется через виртуальный IP-адрес 168.63.129.16. Этот IP-адрес доступен только на виртуальных машинах Azure. Поэтому он не будет работать, если вы используете локальный DNS-сервер или если ваш DNS-сервер является виртуальной машиной Azure, которая не является частью виртуальной сети кластера.
 
@@ -48,13 +48,13 @@ ms.locfileid: "82780442"
 
 ## <a name="failed-to-connect-to-azure-storage-account"></a>"Не удалось подключиться к учетной записи хранения Azure"
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Описание ошибки содержит сообщение "не удалось подключиться к учетной записи хранения Azure" или "не удалось подключиться к Azure SQL".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
-Служба хранилища Azure и SQL не имеют фиксированных IP-адресов, поэтому для доступа к этим службам необходимо разрешить исходящие подключения ко всем IP-адресам. Точные действия по устранению зависят от того, настроена ли группа безопасности сети (NSG) или определяемые пользователем правила (UDR). Дополнительные сведения об этих конфигурациях см. в разделе [Управление сетевым трафиком с помощью HDInsight с группами безопасности сети и определяемыми пользователем маршрутами](../control-network-traffic.md) .
+Служба хранилища Azure и SQL не имеют фиксированных IP-адресов, поэтому для доступа к этим службам необходимо разрешить исходящие подключения ко всем IP-адресам. Точные действия по устранению зависят от того, настроена ли группа безопасности сети (NSG) или правила User-Defined (UDR). Дополнительные сведения об этих конфигурациях см. в разделе [Управление сетевым трафиком с помощью HDInsight с группами безопасности сети и определяемыми пользователем маршрутами](../control-network-traffic.md) .
 
 ### <a name="resolution"></a>Решение
 
@@ -72,7 +72,7 @@ ms.locfileid: "82780442"
 
 ## <a name="virtual-network-configuration-is-not-compatible-with-hdinsight-requirement"></a>"Конфигурация виртуальной сети несовместима с требованиями к HDInsight"
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Описания ошибок содержат сообщения, аналогичные приведенным ниже.
 
@@ -81,7 +81,7 @@ ErrorCode: InvalidNetworkConfigurationErrorCode
 ErrorDescription: Virtual Network configuration is not compatible with HDInsight Requirement. Error: 'Failed to connect to Azure Storage Account; Failed to connect to Azure SQL; HostName Resolution failed', Please follow https://go.microsoft.com/fwlink/?linkid=853974 to fix it.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Скорее всего, возникла ошибка в пользовательской установке DNS.
 
@@ -101,7 +101,7 @@ ErrorDescription: Virtual Network configuration is not compatible with HDInsight
     cat /etc/resolv.conf | grep nameserver*
     ```
 
-    Вы увидите нечто вроде этого:
+    Отобразятся примерно следующие сведения:
 
     ```output
     nameserver 168.63.129.16

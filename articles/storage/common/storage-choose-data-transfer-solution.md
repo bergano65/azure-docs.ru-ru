@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: alkohli
 ms.openlocfilehash: 0e0bcde44ba28751761b7db3f6d6fcae8f7bd49c
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400556"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
@@ -68,7 +68,7 @@ ms.locfileid: "91400556"
 
 Вы также можете открыть учетную запись хранения Azure в портал Azure и выбрать функцию **пересылки данных** . Укажите пропускную способность сети в вашей среде, размер данных, которые требуется передавать, и частоту передачи данных. Вы увидите оптимальные решения для обмена данными, соответствующие предоставленным данным. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Introduction to Microsoft Azure Storage Explorer](https://azure.microsoft.com/resources/videos/introduction-to-microsoft-azure-storage-explorer/) (Общие сведения об Обозревателе службы хранилища Azure).
 - [Общие сведения об AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).

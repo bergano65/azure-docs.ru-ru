@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 author: robinsh
 ms.service: iot-hub
@@ -9,10 +9,10 @@ ms.date: 04/22/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: d03579f704879bd8d012bb0bb326659d1f778dee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84793295"
 ---
 [Получение работоспособности конечной точки](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) в REST API предоставляет состояние работоспособности конечных точек, а также последнюю известную ошибку для определения причины, по которой конечная точка находится в неработоспособном состоянии. В следующей таблице перечислены наиболее распространенные ошибки.

@@ -14,10 +14,10 @@ ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d27cd30d6543d967cca2648597854a06f8ea4eb7
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90053979"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений учетных записей LinkedIn в Azure Active Directory
@@ -72,7 +72,7 @@ ms.locfileid: "90053979"
 1. Войдите в Microsoft 365 с помощью учетной записи администратора.
 1. Запустите PowerShell.
 1. Установите модуль Azure AD, выполнив `Install-Module AzureAD`
-1. Выполните следующий сценарий:
+1. Выполните следующий скрипт:
 
   ``` PowerShell
   $groupId = "GUID of the target group"
@@ -101,7 +101,7 @@ ms.locfileid: "90053979"
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему могут просматривать функции LinkedIn в Microsoft 365.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Согласие пользователя и общий доступ к данным для LinkedIn](linkedin-user-consent.md)
 

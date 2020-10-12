@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
 ms.openlocfilehash: 477f38e18f1bee881e4a9df23dd37048f39549be
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87092751"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
@@ -113,7 +113,7 @@ Get-AzurePublishSettingsFile
 
 Этот сертификат используется для шифрования ключей компьютера на веб-ролях Azure. Чтобы узнать больше, ознакомьтесь с [этой рекомендацией](https://docs.microsoft.com/security-updates/securityadvisories/2018/4092731).
 
-См. сведения в следующих статьях:
+Дополнительные сведения см. в следующих статьях:
 - [Настройка и запуск задач запуска для облачной службы](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks)
 - [Стандартные задачи запуска в облачной службе](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks-common)
 
@@ -198,7 +198,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 5. Перезапустите сервер.
 6. Перейдите к **веб-сайту по умолчанию** и в разделе **Привязки** создайте новую привязку TLS с только что созданным самозаверяющим сертификатом. 
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 - [HTTP/2 в IIS](https://blogs.iis.net/davidso/http2)
 - [Video: HTTP/2 in Windows 10: Browser, Apps and Web Server](https://channel9.msdn.com/Events/Build/2015/3-88) (Видео: HTTP/2 в Windows 10 для браузера, приложений и веб-сервера)

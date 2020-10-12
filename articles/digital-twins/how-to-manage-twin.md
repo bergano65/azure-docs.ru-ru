@@ -8,10 +8,10 @@ ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 3f9064c25581523167918b84a2d0027747e32bd9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91282380"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
@@ -395,7 +395,7 @@ SELECT *
 FROM DIGITALTWINS
 ``` 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как создавать связи между цифровым двойников и управлять ими:
 * [*Руководство. Управление графом двойника с помощью связей*](how-to-manage-graph.md)

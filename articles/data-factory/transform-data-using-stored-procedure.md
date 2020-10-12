@@ -12,10 +12,10 @@ manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 11/27/2018
 ms.openlocfilehash: bdab4f33852be6bfc2621e2cbecff76778567b1a
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89484737"
 ---
 # <a name="transform-data-by-using-the-sql-server-stored-procedure-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure
@@ -80,7 +80,7 @@ C его помощью можно вызвать хранимую процед�
 ## <a name="parameter-data-type-mapping"></a>Сопоставление типов данных параметров
 Тип данных, указанный для параметра, — это тип фабрики данных Azure, который сопоставляется с типом данных в используемом источнике данных. Сопоставления типов данных для источника данных можно найти в области Соединители. Некоторые примеры
 
-| Источник данных          | Сопоставление типов данных |
+| источника данных          | Сопоставление типов данных |
 | ---------------------|-------------------|
 | Azure Synapse Analytics | https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#data-type-mapping-for-azure-sql-data-warehouse |
 | База данных SQL Azure   | https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#data-type-mapping-for-azure-sql-database | 

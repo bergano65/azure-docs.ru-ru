@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: f6f3b10219775adb02d47a91da2573ea99f30ac0
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88212265"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
@@ -45,9 +45,9 @@ VMware vCenter поддерживает различные источники у
 > [!IMPORTANT]
 > **Active Directory (встроенная проверка подлинности Windows) не поддерживается.** В качестве источника удостоверения поддерживается только Active Directory по протоколу LDAP.
 
-## <a name="add-on-premises-active-directory-as-a-single-sign-on-identity-source"></a>Добавление локального Active Directory в качестве источника удостоверений единого входа
+## <a name="add-on-premises-active-directory-as-a-single-sign-on-identity-source"></a>Добавление локальной Active Directory в качестве единого источника удостоверений Sign-On
 
-Чтобы настроить локальный Active Directory как источник удостоверений единого входа, вам потребуется:
+Чтобы настроить локальный Active Directory в качестве единого источника удостоверений Sign-On, вам потребуется:
 
 * [VPN-подключение типа "сеть — сеть](vpn-gateway.md#set-up-a-site-to-site-vpn-gateway) " из локального центра обработки данных к частному облаку.
 * IP-адрес локального DNS-сервера добавлен в vCenter и контроллер служб платформы (PSC).
@@ -56,9 +56,9 @@ VMware vCenter поддерживает различные источники у
 
 | **Параметр** | **Описание** |
 |------------|-----------------|
-| **имя**; | Имя источника удостоверений. |
+| **Имя** | Имя источника удостоверений. |
 | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей. |
-| **Доменное имя** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
+| **Имя домена** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
 | **Псевдоним домена** | NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
 | **Базовое DN для групп** | Базовое различающееся имя для групп. |
 | **URL-адрес основного сервера** | Сервер LDAP основного контроллера домена для домена.<br><br>Используйте формат  `ldap://hostname:port`   или  `ldaps://hostname:port` . Порт обычно 389 для подключений LDAP и 636 для подключений LDAPs. Для Active Directory развертываний нескольких контроллеров домена порт обычно 3268 для LDAP и 3269 для LDAPs.<br><br>Сертификат, устанавливающий отношение доверия для конечной точки LDAPs сервера Active Directory, необходим при использовании  `ldaps://`   в первичном или вторичном URL-адресе LDAP. |
@@ -67,10 +67,10 @@ VMware vCenter поддерживает различные источники у
 | **Имя пользователя** | Идентификатор пользователя в домене, который имеет минимальный доступ только для чтения к базовому DN для пользователей и групп. |
 | **Пароль** | Пароль пользователя, заданного параметром username. |
 
-При наличии сведений в предыдущей таблице можно добавить локальный Active Directory как источник удостоверений единого входа в vCenter.
+При наличии сведений в предыдущей таблице можно добавить локальные Active Directory как единый Sign-On источника удостоверений в vCenter.
 
 > [!TIP]
-> Дополнительные сведения об источниках удостоверений единого входа можно найти на [странице документации по VMware](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-B23B1360-8838-4FF2-B074-71643C4CB040.html).
+> Дополнительные сведения об одном Sign-On источники удостоверений можно найти на [странице документации по VMware](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-B23B1360-8838-4FF2-B074-71643C4CB040.html).
 
 ## <a name="set-up-new-active-directory-on-a-private-cloud"></a>Настройка новых Active Directory в частном облаке
 
@@ -103,9 +103,9 @@ VMware vCenter поддерживает различные источники у
 
 ## <a name="set-up-active-directory-on-azure"></a>Настройка Active Directory в Azure
 
-Active Directory, выполняемые в Azure, похожи на Active Directory, работающие в локальной среде.  Чтобы настроить Active Directory, выполняющиеся в Azure как источник удостоверений единого входа в vCenter, сервер vCenter и контроллер PSC должны иметь сетевое подключение к виртуальной сети Azure, в которой работают службы Active Directory.  Это подключение можно установить с помощью [подключения к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md) из виртуальной сети Azure, в которой службы Active Directory работают в Клаудсимпле частном облаке.
+Active Directory, выполняемые в Azure, похожи на Active Directory, работающие в локальной среде.  Чтобы настроить Active Directory, выполняющиеся в Azure в качестве единого источника удостоверений Sign-On в vCenter, сервер vCenter и контроллер PSC должны иметь сетевое подключение к виртуальной сети Azure, в которой работают службы Active Directory.  Это подключение можно установить с помощью [подключения к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md) из виртуальной сети Azure, в которой службы Active Directory работают в Клаудсимпле частном облаке.
 
-После установки сетевого подключения выполните действия, описанные в разделе [Добавление локального Active Directory как источника удостоверений единого входа](#add-on-premises-active-directory-as-a-single-sign-on-identity-source) , чтобы добавить его в качестве источника удостоверений.  
+После установки сетевого подключения выполните действия, описанные в статье [Добавление локального Active Directory в качестве](#add-on-premises-active-directory-as-a-single-sign-on-identity-source) источника удостоверений для одного Sign-On.  
 
 ## <a name="add-an-identity-source-on-vcenter"></a>Добавление источника удостоверений в vCenter
 

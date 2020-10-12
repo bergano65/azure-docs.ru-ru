@@ -9,10 +9,10 @@ ms.date: 11/13/2019
 ms.author: absha
 ms.custom: mvc
 ms.openlocfilehash: 4626d40acc9ae84e7fcc5da16add0de7ffe6ffcc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84807897"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-portal"></a>Перезапись заголовков HTTP-запроса и ответа с помощью шлюза приложений Azure — портал Azure
@@ -91,7 +91,7 @@ ms.locfileid: "84807897"
 
    - В списке **тип заголовка** выберите **ответ**.
 
-   - Так как в этом примере мы тестируем заголовок Location, который является общим заголовком, выберите **общий заголовок** под **заголовком Имя**.
+   - Так как в этом примере мы тестируем заголовок Location, который является общим заголовком, выберите  **общий заголовок** под **заголовком Имя**.
 
    - В списке **общий заголовок** выберите **Расположение**.
 
@@ -99,9 +99,9 @@ ms.locfileid: "84807897"
 
    - В списке **оператор** выберите **равно (=)**.
 
-   - Введите шаблон регулярного выражения. В этом примере мы будем использовать шаблон `(https?):\/\/.*azurewebsites\.net(.*)$` .
+   - Введите шаблон регулярного выражения. В этом примере мы будем использовать шаблон  `(https?):\/\/.*azurewebsites\.net(.*)$` .
 
-   - Нажмите кнопку **ОК**.
+   - Щелкните **ОК**.
 
      ![Настройка условия If](media/rewrite-http-headers-portal/condition.png)
 
@@ -117,7 +117,7 @@ ms.locfileid: "84807897"
 
    - Введите значение заголовка. В этом примере мы будем использовать в `{http_resp_Location_1}://contoso.com{http_resp_Location_2}` качестве значения заголовка. Это значение заменит *azurewebsites.NET* на *contoso.com* в заголовке Location.
 
-   - Нажмите кнопку **ОК**.
+   - Щелкните **ОК**.
 
      ![Добавление действия](media/rewrite-http-headers-portal/action.png)
 
@@ -129,6 +129,6 @@ ms.locfileid: "84807897"
 
    ![Представление перезаписи набора](media/rewrite-http-headers-portal/rewrite-set-list.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как настроить некоторые распространенные варианты использования, см. в статье [Общие сценарии перезаписи заголовков](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers).

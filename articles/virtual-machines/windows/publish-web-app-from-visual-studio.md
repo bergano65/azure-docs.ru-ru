@@ -11,17 +11,17 @@ ms.topic: how-to
 ms.date: 11/03/2017
 ms.author: ghogen
 ms.openlocfilehash: bdc03e8c136606ab7768705b0c8dbcc97782966f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87088399"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Публикация веб-приложения ASP.NET на виртуальную машину Azure из Visual Studio
 
 В этом документе описывается публикация веб-приложения ASP.NET на виртуальной машине Azure с помощью функции публикации **виртуальные машины Microsoft Azure** в Visual Studio 2019.  
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать Visual Studio для публикации проекта ASP.NET на виртуальную машину Azure, ее необходимо правильно настроить.
 
 - Компьютер должен быть настроен для запуска веб-приложения ASP.NET и установки WebDeploy. Дополнительные сведения см. в статье [Создание виртуальной машины ASP.NET с помощью WebDeploy](https://github.com/aspnet/Tooling/blob/AspNetVMs/docs/create-asp-net-vm-with-webdeploy.md).
@@ -65,7 +65,7 @@ ms.locfileid: "87088399"
 
 10. Просмотрите окно вывода, чтобы проверить ход выполнения публикации.
 
-    ![Окно выходных данных]
+    ![Окно вывода]
 
 11. При успешной публикации запустится браузер и откроется URL-адрес нового опубликованного сайта.
 

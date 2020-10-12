@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: tomfitz
 ms.openlocfilehash: 2a075c5c99f457681cd49e75014487bf9cca263c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87098202"
 ---
 # <a name="createuidefinition-collection-functions"></a>Функции коллекции CreateUiDefinition
@@ -53,7 +53,7 @@ ms.locfileid: "87098202"
 "[contains(steps('demoStep').element1, 'key1')]"
 ```
 
-## <a name="empty"></a>empty
+## <a name="empty"></a>пустых
 
 Возвращает `true`, если строка, массив или объект имеет значение null или является пустым.
 

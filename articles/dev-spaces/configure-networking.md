@@ -6,10 +6,10 @@ ms.topic: conceptual
 description: Описание требований к сети для запуска Azure Dev Spaces в Azure Kubernetes Services
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, CNI, кубенет, SDN, сеть
 ms.openlocfilehash: 0d9ebbec3e3c07a466acb58e88b67e6a32a20edb
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88214173"
 ---
 # <a name="configure-networking-for-azure-dev-spaces-in-different-network-topologies"></a>Настройка сети для Azure Dev Spaces в различных сетевых топологиях
@@ -85,9 +85,9 @@ az aks use-dev-spaces -g MyResourceGroup -n MyAKS -e private
 
 Azure Dev Spaces использует средства на стороне клиента, такие как расширение CLI Azure Dev Spaces, расширение Visual Studio Code и расширение Visual Studio, чтобы взаимодействовать с кластером AKS для отладки. Чтобы использовать средства Azure Dev Spaces на стороне клиента, разрешите трафик от компьютеров разработки к [инфраструктуре Azure dev Spaces][dev-spaces-allow-infrastructure]. При использовании [IP-диапазонов разрешенного сервера API][auth-range-section]необходимо также разрешить IP-адрес любых компьютеров разработки, подключающихся к кластеру AKS для отладки, для подключения к серверу API.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о работе Azure Dev Spaces.
+Узнайте больше о принципах работы Azure Dev Spaces.
 
 > [!div class="nextstepaction"]
 > [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)

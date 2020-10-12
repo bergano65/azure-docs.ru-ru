@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
 ms.openlocfilehash: 1fe915fd58f60e4ad5b1e28b51911678ef2f866c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87085713"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
@@ -125,7 +125,7 @@ ms.locfileid: "87085713"
 | type | CustomScriptForLinux | строка |
 | typeHandlerVersion | 1.5 | INT |
 | fileUris (пример) | `https://github.com/MyProject/Archive/MyPythonScript.py` | массиве |
-| commandToExecute (пример) | MyPythonScript.py Python\<my-param1\> | строка |
+| commandToExecute (пример) | MyPythonScript.py Python \<my-param1\> | строка |
 | enableInternalDNSCheck | Да | Логическое |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
@@ -258,7 +258,7 @@ az vm extension set
   --protected-settings ./protected-config.json
 ```
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Расширение пользовательских сценариев при выполнении создает или загружает сценарий в каталог, как показано в примере ниже. Выходные данные команды также сохраняются в этот каталог в файлах `stdout` и `stderr`.
 
@@ -295,7 +295,7 @@ az vm extension set
 
 1. Enable — означает момент запуска команды.
 1. Download — относится к скачиванию пакета расширения CustomScript из Azure, а не файлов скрипта, указанных в fileUris.
-1. Вы также можете увидеть, в какой файл журнала выполняется запись.`/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
+1. Вы также можете увидеть, в какой файл журнала выполняется запись. `/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
 
 Далее нужно проверить файл журнала, имеющий следующий формат:
 
@@ -353,6 +353,6 @@ Name                  ProvisioningState    Publisher                   Version  
 CustomScriptForLinux  Succeeded            Microsoft.OSTCExtensions        1.5  True
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript).
