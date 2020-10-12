@@ -4,10 +4,10 @@ description: Сведения о том, как создать и разверн
 ms.topic: conceptual
 ms.date: 04/11/2018
 ms.openlocfilehash: 556d8dee4efd492fa98755f1ffd1cdc1c9887856
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82193655"
 ---
 # <a name="create-your-first-azure-service-fabric-application"></a>Создание первого приложения Azure Service Fabric
@@ -33,7 +33,7 @@ Service Fabric предоставляет средства формирован�
    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash 
    nvm install node 
    ```
-2. Установите на компьютере генератор шаблонов [Yeoman](https://yeoman.io/) из NPM.
+2. Установка генератора шаблонов [Yeoman](https://yeoman.io/) на компьютере из NPM
 
    ```bash
    npm install -g yo
@@ -58,7 +58,7 @@ Service Fabric предоставляет средства формирован�
 >
 >
 
-## <a name="build-the-application"></a>Построение приложения
+## <a name="build-the-application"></a>создание приложения;
 Шаблоны Service Fabric для Yeoman включают скрипт сборки, с помощью которого можно создать приложение из терминала (после перемещения в папку приложения).
 
   ```sh

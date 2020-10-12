@@ -11,10 +11,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: 81c5d410599edcbbb4e216b630709541be02c9fb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87323015"
 ---
 # <a name="understand-and-use-module-twins-in-iot-hub"></a>Общие сведения о двойниках модулей и их использование в Центре Интернета вещей
@@ -196,7 +196,7 @@ ms.locfileid: "87323015"
 
   - Текст
         
-    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление, с тем отличием, что он может содержать все разделы двойника (теги, properties.reported, properties.desired) и что он содержит элементы "$metadata". например следующие.
+    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление, с тем отличием, что он может содержать все разделы двойника (теги, properties.reported, properties.desired) и что он содержит элементы "$metadata". Например,
 
     ```json
     {

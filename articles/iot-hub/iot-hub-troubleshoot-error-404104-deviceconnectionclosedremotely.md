@@ -10,10 +10,10 @@ ms.date: 01/30/2020
 ms.author: jlian
 ms.custom: mqtt
 ms.openlocfilehash: c8cb91aa0c7ce1610320d4107db282d3c34407ba
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81758726"
 ---
 # <a name="404104-deviceconnectionclosedremotely"></a>404104 DeviceConnectionClosedRemotely
@@ -72,6 +72,6 @@ ms.locfileid: "81758726"
 
 См. раздел [решения для внутренних ошибок сервера центра Интернета вещей](iot-hub-troubleshoot-error-500xxx-internal-errors.md#solution).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для надежного управления подключениями рекомендуется использовать пакеты SDK для устройств Azure IoT. Дополнительные сведения см. в статье [Управление подключением и надежным обменом сообщениями с помощью пакетов SDK для устройств центра Интернета вещей Azure](iot-hub-reliability-features-in-sdks.md) .

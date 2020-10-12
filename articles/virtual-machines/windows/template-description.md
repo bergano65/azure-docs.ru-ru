@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 01/03/2019
 ms.author: cynthn
 ms.openlocfilehash: e420fe81941352d1002ed2c25c04fc686115c7c2
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87827458"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
@@ -449,7 +449,7 @@ Resource Manager параллельно развертывает все ресу
     
 Один и тот же шаблон можно использовать для создания или для обновления существующих ресурсов. При использовании команд для развертывания шаблонов вы сможете выбрать, какой [режим](../../azure-resource-manager/templates/deploy-powershell.md) хотите использовать. Можно задать **полный** или **добавочный** режим. По умолчанию выполняются добавочные обновления. Будьте внимательны при использовании режима **Полный**, так как можно случайно удалить ресурсы. Если выбран режим **Завершить**, Resource Manager удаляет все ресурсы в группе ресурсов, которых нет в шаблоне.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Сведения о создании собственного шаблона см. в статье [Создание шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 - Сведения о развертывании созданного шаблона см. в статье [Создание виртуальной машины Windows с использованием шаблона Resource Manager](ps-template.md).

@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 06/23/2020
 ms.custom: subject-moving-resources
 ms.openlocfilehash: 573ea96437cf6cb76854ffa417fd3ad3fb86138b
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88861068"
 ---
 # <a name="move-an-azure-service-bus-namespace-to-another-region"></a>Перемещение пространства имен служебной шины Azure в другой регион
@@ -22,10 +22,10 @@ ms.locfileid: "88861068"
 1. Проверьте развертывание, чтобы убедиться, что в целевом регионе созданы все пространства имен, очереди, разделы и подписки для разделов. 
 1. Завершите перемещение, удалив пространство имен из исходного региона после обработки всех сообщений. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Убедитесь, что служебная шина и функции Azure, используемые вашей учетной записью, поддерживаются в целевом регионе.
  
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 Чтобы приступить к работе, экспортируйте шаблон диспетчер ресурсов. Этот шаблон содержит параметры, описывающие пространство имен служебной шины.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -48,19 +48,19 @@ ms.locfileid: "88861068"
 1. В портал Azure выберите **создать ресурс**.
 2. В **поле Поиск в Marketplace**введите **шаблон развертывания** для искомого текста, выберите **шаблоны развертывания (развернуть с помощью пользовательских шаблонов)** и нажмите клавишу **Ввод**.
 
-    :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Развертывание нового шаблона":::    
+    :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Загрузить шаблон диспетчер ресурсов":::    
 1. На странице **шаблоны развертывания** выберите **создать**.
 
-    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Новое развертывание шаблона — кнопка создать":::        
+    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Загрузить шаблон диспетчер ресурсов":::        
 1. На странице **Настраиваемое развертывание** выберите **создать собственный шаблон в редакторе**.
 
-    :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Создание собственного шаблона в ссылке редактора":::            
+    :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Загрузить шаблон диспетчер ресурсов":::            
 1. На странице **изменение шаблона** на панели инструментов выберите пункт **загрузить файл** , а затем следуйте инструкциям по загрузке **template.jsдля** файла, скачанного в предыдущем разделе.
 
-    :::image type="content" source="./media/move-across-regions/select-template.png" alt-text="Выбор шаблона":::                
+    :::image type="content" source="./media/move-across-regions/select-template.png" alt-text="Загрузить шаблон диспетчер ресурсов":::                
 1. Нажмите кнопку **сохранить** , чтобы сохранить шаблон. 
 
-    :::image type="content" source="./media/move-across-regions/save-template.png" alt-text="Сохранение шаблона":::                    
+    :::image type="content" source="./media/move-across-regions/save-template.png" alt-text="Загрузить шаблон диспетчер ресурсов":::                    
 1. На странице **Настраиваемое развертывание** выполните следующие действия. 
     1. Выберите **подписку**Azure. 
     2. Выберите существующую **группу ресурсов** или создайте новую. 
@@ -68,26 +68,26 @@ ms.locfileid: "88861068"
     4. Введите новое **имя для пространства имен**.
     1. Выберите **Review + create** (Просмотреть и создать). 
 
-        :::image type="content" source="./media/move-across-regions/deploy-template.png" alt-text="Развертывание шаблона диспетчер ресурсов":::
+        :::image type="content" source="./media/move-across-regions/deploy-template.png" alt-text="Загрузить шаблон диспетчер ресурсов":::
     1. На странице **Просмотр и создание** выберите **создать** в нижней части страницы. 
     
 ## <a name="verify"></a>Проверка
 1. После успешного развертывания выберите **Переход к группе ресурсов**.
 
-    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Ссылка переход к группе ресурсов":::    
+    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Загрузить шаблон диспетчер ресурсов":::    
 1. На странице **Группа ресурсов** выберите пространство имен служебной шины. 
 
-    :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Выбор пространства имен служебной шины":::    
+    :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Загрузить шаблон диспетчер ресурсов":::    
 1. На странице **пространство имен служебной шины** убедитесь, что в исходном регионе отображаются очереди, разделы и подписки. 
     1. В нижней части правой панели появятся **очереди** в пространстве имен.         
     
-        :::image type="content" source="./media/move-across-regions/queue-namespace.png" alt-text="Очереди в пространстве имен":::
+        :::image type="content" source="./media/move-across-regions/queue-namespace.png" alt-text="Загрузить шаблон диспетчер ресурсов":::
     2. Перейдите на вкладку **разделы** , чтобы просмотреть разделы в пространстве имен.
     
-        :::image type="content" source="./media/move-across-regions/topics-namespace.png" alt-text="Разделы в пространстве имен":::
+        :::image type="content" source="./media/move-across-regions/topics-namespace.png" alt-text="Загрузить шаблон диспетчер ресурсов":::
     3. Выберите раздел для проверки создания подписок. 
 
-        :::image type="content" source="./media/move-across-regions/topic-subscriptions.png" alt-text="Подписки на разделы":::      
+        :::image type="content" source="./media/move-across-regions/topic-subscriptions.png" alt-text="Загрузить шаблон диспетчер ресурсов":::      
     
     
 

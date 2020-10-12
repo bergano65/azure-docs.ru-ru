@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: tomfitz
 ms.openlocfilehash: 27efe1e03b8a0d373d566106a53a41007731973e
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87810077"
 ---
 # <a name="arm-template-deployment-what-if-operation-preview"></a>Операция "что-если" развертывания шаблона ARM (Предварительная версия)
@@ -110,18 +110,18 @@ Resource changes: 1 to modify.
 
 Чтобы просмотреть изменения перед развертыванием шаблона, используйте [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) или [New-азсубскриптиондеплоймент](/powershell/module/az.resources/new-azdeployment). Добавьте `-Whatif` параметр Switch в команду развертывания.
 
-* `New-AzResourceGroupDeployment -Whatif`для развертываний группы ресурсов
-* `New-AzSubscriptionDeployment -Whatif`и `New-AzDeployment -Whatif` для развертываний на уровне подписки
+* `New-AzResourceGroupDeployment -Whatif` для развертываний группы ресурсов
+* `New-AzSubscriptionDeployment -Whatif` и `New-AzDeployment -Whatif` для развертываний на уровне подписки
 
 Можно использовать `-Confirm` параметр Switch для предварительного просмотра изменений и получения запроса на продолжение развертывания.
 
-* `New-AzResourceGroupDeployment -Confirm`для развертываний группы ресурсов
-* `New-AzSubscriptionDeployment -Confirm`и `New-AzDeployment -Confirm` для развертываний на уровне подписки
+* `New-AzResourceGroupDeployment -Confirm` для развертываний группы ресурсов
+* `New-AzSubscriptionDeployment -Confirm` и `New-AzDeployment -Confirm` для развертываний на уровне подписки
 
 Приведенные выше команды возвращают текстовую сводку, которую можно проверить вручную. Чтобы получить объект, который можно программно проверить на наличие изменений, используйте [Get-азресаурцеграупдеплойментвхатифресулт](/powershell/module/az.resources/get-azresourcegroupdeploymentwhatifresult) или [Get-азсубскриптиондеплойментвхатифресулт](/powershell/module/az.resources/get-azdeploymentwhatifresult).
 
-* `$results = Get-AzResourceGroupDeploymentWhatIfResult`для развертываний группы ресурсов
-* `$results = Get-AzSubscriptionDeploymentWhatIfResult`или `$results = Get-AzDeploymentWhatIfResult` для развертываний на уровне подписки
+* `$results = Get-AzResourceGroupDeploymentWhatIfResult` для развертываний группы ресурсов
+* `$results = Get-AzSubscriptionDeploymentWhatIfResult` или `$results = Get-AzDeploymentWhatIfResult` для развертываний на уровне подписки
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -172,7 +172,7 @@ Resource changes: 1 to modify.
 
 ## <a name="result-format"></a>Формат результата
 
-Вы управляете уровнем детализации, который возвращается о прогнозируемых изменениях. Имеются две возможности.
+Вы управляете уровнем детализации, который возвращается о прогнозируемых изменениях. У вас есть два варианта:
 
 * **Фуллресаурцепайлоадс** — возвращает список ресурсов, которые будут изменены, и сведения о свойствах, которые будут изменены.
 * **Ресаурцеидонли** — возвращает список ресурсов, которые будут изменены
@@ -342,7 +342,7 @@ foreach ($change in $results.Changes)
 }
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 results=$(az deployment group what-if --resource-group ExampleGroup --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json" --no-pretty-print)
