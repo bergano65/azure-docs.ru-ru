@@ -9,10 +9,10 @@ ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: e9d638a7ed17d08b585c71b1dac4a0177f4a2939
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88030526"
 ---
 # <a name="tune-performance-mapreduce-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: MapReduce, HDInsight & Azure Data Lake Storage 2-го поколения
@@ -65,7 +65,7 @@ ms.locfileid: "88030526"
 
 Контейнеры YARN определяют уровень параллелизма для задания.  Разделите общий объем памяти YARN на значение mapreduce.map.memory.  
 
-\#YARN Containers = Total YARN память/MapReduce. Map. Memory
+\# YARN Containers = Total YARN память/MapReduce. Map. Memory
 
 **Шаг 5. Установка mapreduce.job.maps/mapreduce.job.reduces**
 
@@ -93,7 +93,7 @@ MapReduce. Map. Memory = 3 ГБ
 
 **Шаг 4. Расчет числа контейнеров YARN**
 
-\#контейнеров YARN = 768GB объем доступной памяти/3 ГБ памяти = 256
+\# контейнеров YARN = 768GB объем доступной памяти/3 ГБ памяти = 256
 
 **Шаг 5. Установка mapreduce.job.maps/mapreduce.job.reduces**
 

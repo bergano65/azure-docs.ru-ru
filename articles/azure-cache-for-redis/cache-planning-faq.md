@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.openlocfilehash: 13ba529dd3067ae16167f0d9c14c8f72b982f52c
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88010875"
 ---
 # <a name="azure-cache-for-redis-planning-faqs"></a>Вопросы по планированию кэша Azure для Redis
@@ -90,6 +90,6 @@ ms.locfileid: "88010875"
 
 Сведения об использовании кэша Azure для Redis с помощью PowerShell в облаке Azure для государственных организаций, Azure для Китая (21Vianet) или Microsoft Azure — Германия см. в статье [Подключение к другим облакам — Управление кэшем Azure для Redis с использованием Azure PowerShell](cache-how-to-manage-redis-cache-powershell.md#how-to-connect-to-other-clouds).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о другом [кэше Azure для Redis часто задаваемых вопросов](cache-faq.md).

@@ -8,10 +8,10 @@ ms.date: 07/07/2020
 ms.author: jpalma
 author: palma21
 ms.openlocfilehash: 0e11f345bfed287be3170df38a909ed24149b754
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88010265"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)
@@ -39,7 +39,7 @@ ms.locfileid: "88010265"
 
 1. Разработчик выполняет аутентификацию с помощью Azure AD.
 1. Конечная точка выдачи маркера Azure AD выдает маркер доступа.
-1. Разработчик выполняет действие с помощью маркера Azure AD, например`kubectl create pod`
+1. Разработчик выполняет действие с помощью маркера Azure AD, например `kubectl create pod`
 1. Kubernetes проверяет маркер в Azure Active Directory и извлекает информацию о членстве разработчика в группах.
 1. Применяются управление доступом на основе ролей Kubernetes (RBAC) и политики кластера.
 1. Успех запроса разработчика зависит от предыдущей проверки членства в группах Azure AD, RBAC Kubernetes и политик.
@@ -125,7 +125,7 @@ roleRef:
 
 Чтобы использовать удостоверения pod, назначьте [удостоверения Azure Active Directory для приложений Kubernetes][aad-pod-identity].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье с рекомендациями мы рассказали об аутентификации и авторизации для кластера и ресурсов. Чтобы реализовать некоторые из этих рекомендаций, ознакомьтесь со следующими статьями:
 

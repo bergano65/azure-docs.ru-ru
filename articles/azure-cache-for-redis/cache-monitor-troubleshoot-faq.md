@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.openlocfilehash: 2149d069ce9cb0b636e461d19963f413b162bc9d
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88010895"
 ---
 # <a name="azure-cache-for-redis-monitoring-and-troubleshooting-faqs"></a>Часто задаваемые вопросы по мониторингу и устранению неполадок в кэше Azure для Redis
@@ -54,7 +54,7 @@ ms.locfileid: "88010895"
     * Это могли быть обновления сервера Redis или обычное обслуживание ВМ.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о мониторинге и устранении неполадок, связанных с экземплярами кэша Azure для Redis, см. в статье [Как отслеживать кэш Azure для Redis](cache-how-to-monitor.md) и различных руководствах по устранению неполадок.
 

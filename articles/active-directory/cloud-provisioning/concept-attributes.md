@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1fff90777c63820b54a1cb37156021c894de19c8
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89226936"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Общие сведения о схеме Azure AD
@@ -56,19 +56,19 @@ ms.locfileid: "89226936"
 В следующей таблице перечислены общие атрибуты и их синхронизация с Azure AD.
 
 
-|Локальная служба Active Directory|Тип сопоставления|Azure AD|
+|Локальная служба Active Directory|Тип сопоставления|Azure AD|
 |-----|-----|-----|
 |cn|Прямой доступ|commonName
 |countryCode|Прямой доступ|countryCode|
 |displayName|Прямой доступ|displayName|
-|givenName|Выражение|givenName|
+|givenName|Expression|givenName|
 |objectGUID|Прямой доступ|sourceAnchorBinary|  
 |userprincipalName|Прямой доступ|userPrincipalName|
 |проксядресс|Прямой доступ|ProxyAddress|
 
 ## <a name="view-the-schema"></a>Просмотр схемы
 > [!WARNING]
-> В конфигурации подготовки облака создается субъект-служба. Субъект-служба отображается в портал Azure. Не следует изменять сопоставления атрибутов с помощью интерфейса субъекта-службы в портал Azure.  Такой режим работы не поддерживается.
+> В конфигурации подготовки облака создается субъект-служба. Субъект-служба отображается в портал Azure. Не следует изменять сопоставления атрибутов с помощью интерфейса субъекта-службы в портал Azure.  Такой способ связывания не поддерживается.
 
 Чтобы просмотреть схему и проверить ее, выполните следующие действия.
 
@@ -243,7 +243,7 @@ ms.locfileid: "89226936"
     ```
 1. Теперь выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal Id}/synchronization/jobs/{AD2AAD Provisioning id}/schema` .
  
-    Пример: https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema
+    Например, https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema.
 
    Замените `{Service Principal Id}` и `{AD2ADD Provisioning Id}` собственными значениями.
 

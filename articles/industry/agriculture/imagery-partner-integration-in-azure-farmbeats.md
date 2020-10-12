@@ -7,10 +7,10 @@ ms.date: 11/04/2019
 ms.author: v-umha
 ms.custom: has-adal-ref
 ms.openlocfilehash: 430907f43fb40f0ee24505bdc366a98a49f23b47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82613291"
 ---
 # <a name="imagery-partner-integration"></a>Интеграция с партнерскими решениями для получения снимков
@@ -41,7 +41,7 @@ ms.locfileid: "82613291"
 
 API-интерфейсы содержат техническую документацию по Swagger. Дополнительные сведения об API и соответствующих запросах или ответах см. в разделе [Swagger](https://aka.ms/FarmBeatsDatahubSwagger).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Фармбеатс использует [Active Directory](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization) Microsoft Azure (Azure AD).  Служба приложений Azure предоставляет встроенную поддержку проверки подлинности и авторизации в службе приложений. 
 

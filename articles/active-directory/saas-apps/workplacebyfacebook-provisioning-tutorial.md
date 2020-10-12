@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/28/2020
 ms.author: jeedes
 ms.openlocfilehash: c72ca7cb521c5c7e7ed33e9a0539de0df252ac92
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91321906"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
@@ -131,9 +131,9 @@ ms.locfileid: "91321906"
    |urn:scim:schemas:extension:enterprise:1.0.organization|Строка|
    |urn:scim:schemas:extension:enterprise:1.0.costCenter|Строка|
    |urn:scim:schemas:extension:enterprise:1.0.employeeNumber|Строка|
-   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Строка|
-   |urn: scim: schemas: расширение: Facebook: оказался: 1.0. is_frontline|Логическое|
-   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Целое число|
+   |urn: scim: schemas: расширение: Facebook: auth_method: 1.0: auth_method|Строковый тип|
+   |urn: scim: schemas: расширение: Facebook: оказался: 1.0.is_frontline|Логическое|
+   |urn: scim: schemas: расширение: Facebook: старттермдатес: 1.0. startDate|Целочисленный тип|
 
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).

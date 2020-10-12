@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
 ms.openlocfilehash: 9a6a56491a327d5d4eafc2c05dc2b54b137096b8
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88752060"
 ---
 # <a name="reduce-costs-with-azure-disks-reservation"></a>Сокращение расходов с помощью резервирования дисков Azure
@@ -104,4 +104,4 @@ ms.locfileid: "88752060"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о резервировании в Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)
-- [Общие сведения о применении скидки на резервирование в службе "Хранилище дисков Azure"](../cost-management-billing/reservations/understand-disk-reservations.md)
+- [Узнайте, как применяется скидка на резервирование для Хранилище дисков Azure](../cost-management-billing/reservations/understand-disk-reservations.md)

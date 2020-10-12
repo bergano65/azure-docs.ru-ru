@@ -9,10 +9,10 @@ ms.date: 06/10/2020
 ms.author: victorh
 ms.reviewer: tyao
 ms.openlocfilehash: a995460793686d8293d77965e74e2cbf916925a0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87005605"
 ---
 # <a name="configure-a-custom-response-for-azure-web-application-firewall-waf"></a>Настройка пользовательского ответа для брандмауэра веб-приложения Azure (WAF)
@@ -27,9 +27,7 @@ ms.locfileid: "87005605"
 
 В приведенном выше примере мы сохранили код ответа как 403 и настроили короткое сообщение "свяжитесь с нами", как показано на рисунке ниже:
 
-:::image type="content" source="../media/waf-front-door-configure-custom-response-code/custom-response.png" alt-text="Пример настраиваемого ответа":::
-
-"{{Azure-ref}}" вставляет уникальную строку ссылки в текст ответа. Значение соответствует полю Траккингреференце в `FrontdoorAccessLog` `FrontdoorWebApplicationFirewallLog` журналах и.
+:::image type="content" source="../media/waf-front-door-configure-custom-response-code/custom-response.png" alt-text="Параметры политики WAF" вставляет уникальную строку ссылки в текст ответа. Значение соответствует полю Траккингреференце в `FrontdoorAccessLog` `FrontdoorWebApplicationFirewallLog` журналах и.
 
 ## <a name="configure-custom-response-status-code-and-message-use-powershell"></a>Настройка кода состояния пользовательского отклика и сообщения использование PowerShell
 
