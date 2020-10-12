@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: 840049265d3b6e4d2fddd794646bfd5691aab9a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74083989"
 ---
 # <a name="overview-of-multi-tenant-support-for-vmware-disaster-recovery-to-azure-with-csp"></a>Общие сведения о поддержке мультитенантности для аварийного восстановления VMware в Azure с помощью CSP
@@ -136,7 +136,7 @@ ms.locfileid: "74083989"
 ![architecture-shared-hsp](./media/vmware-azure-multi-tenant-overview/managed-service-scenario.png)  
 **Сценарий для управляемой службы с несколькими серверами vCenter**
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - См. дополнительные сведения об [управлении доступом на основе ролей в Site Recovery](site-recovery-role-based-linked-access-control.md).
 - Узнайте, как [настроить аварийного восстановление виртуальных машин VMware в Azure](vmware-azure-tutorial.md).
 - Узнайте больше о реализации [мультитенантности с использованием поставщика служб шифрования для виртуальных машин VMWare](vmware-azure-multi-tenant-csp-disaster-recovery.md).

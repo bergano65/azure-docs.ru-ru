@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: ba2d0acec37d0f59240381cdea04f4d53ded0b1c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91273047"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>Создание контроллера данных ARC в Azure
@@ -33,7 +33,7 @@ ms.locfileid: "91273047"
 - Платформа контейнеров OpenShift (OCP)
 - AWS Elastic Kubernetes Service (EKS)
 - Подсистема Google Cloud Kubernetes (ГКЕ)
-- Открытый исходный код, Kubernetes, как правило, развернутый с помощью кубеадм
+- Служба с открытым исходным кодом Kubernetes обычно развертывается с помощью kubeadm
 
 > [!IMPORTANT]
 > * Минимальная поддерживаемая версия Kubernetes — v 1.14.
@@ -58,7 +58,7 @@ ms.locfileid: "91273047"
 - **Имя группы ресурсов Azure** — имя группы ресурсов, в которой должен быть создан ресурс контроллера данных в Azure.
 - **Расположение Azure** — расположение Azure, в котором будут храниться метаданные ресурсов контроллера данных в Azure. Список доступных регионов см. в статье [Глобальная инфраструктура и продукты Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Существует несколько вариантов создания контроллера данных Arc Azure.
 

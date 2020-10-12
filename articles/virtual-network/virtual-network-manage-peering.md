@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: altambaw
 ms.openlocfilehash: 41cc2bfa39160d26b5c5f09687ddf1fef9ec5803
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89290197"
 ---
 # <a name="create-change-or-delete-a-virtual-network-peering"></a>Создание, изменение и удаление пиринга в виртуальной сети
@@ -86,7 +86,7 @@ ms.locfileid: "89290197"
 3. В разделе **Параметры** выберите **Пиринги**.
 4. Выберите пиринг, для которого требуется просмотреть или изменить параметры.
 5. Измените соответствующий параметр. Дополнительные сведения о параметрах для каждого параметра см. в [шаге 5](#add-peering) раздела Создание пиринга.
-6. Выберите **Сохранить**.
+6. Щелкните **Сохранить**.
 
 **Команды**
 
@@ -147,7 +147,7 @@ ms.locfileid: "89290197"
 
 Если вашей учетной записи не назначена ни одна из перечисленных выше ролей, ей должна быть назначена [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), предоставляющая разрешения, указанные в таблице ниже.
 
-| Действие                                                          | name |
+| Действие                                                          | Имя |
 |---                                                              |---   |
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write  | Требуется для создания пиринга между виртуальной сетью А и виртуальной сетью Б. Виртуальная сеть А должна быть развернута с помощью Resource Manager.          |
 | Microsoft.Network/virtualNetworks/peer/action                   | Требуется для создания пиринга между виртуальной сетью Б, развернутой с помощью Resource Manager, и виртуальной сетью A.                                                       |
@@ -155,7 +155,7 @@ ms.locfileid: "89290197"
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/read   | Чтение пиринга виртуальных сетей   |
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/delete | Удаление пиринга виртуальных сетей |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Пиринг виртуальных сетей создается между виртуальными сетями, созданными с помощью тех же или разных моделей развертывания, которые существуют в одной и той же или разных подписках. Изучите руководство одного из следующих сценариев:
 

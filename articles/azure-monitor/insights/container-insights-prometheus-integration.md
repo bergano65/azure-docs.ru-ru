@@ -4,10 +4,10 @@ description: В этой статье описывается настройка 
 ms.topic: conceptual
 ms.date: 04/22/2020
 ms.openlocfilehash: f5a9b364bc3e51307bd44d8338485f482bda6e1e
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90971368"
 ---
 # <a name="configure-scraping-of-prometheus-metrics-with-azure-monitor-for-containers"></a>Настройка очистки метрик Prometheus с помощью Azure Monitor для контейнеров
@@ -24,7 +24,7 @@ ms.locfileid: "90971368"
 
 Отходы метрик Prometheus поддерживаются в кластерах Kubernetes, размещенных на:
 
-- служба Azure Kubernetes (AKS);
+- Служба Azure Kubernetes (AKS)
 - Azure Stack или локально
 - Azure Red Hat OpenShift версии 3. x
 - Azure Red Hat OpenShift и Red Hat OpenShift версии 4. x
@@ -47,17 +47,17 @@ ms.locfileid: "90971368"
 |Область | Ключ | Тип данных | Значение | Описание |
 |------|-----|-----------|-------|-------------|
 | На уровне кластера | | | | Укажите один из следующих трех методов, чтобы отбракировать конечные точки для метрик. |
-| | `urls` | Тип String | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
-| | `kubernetes_services` | Тип String | Массив с разделителями-запятыми | Массив Kubernetes служб для сбора метрик из KUBE-State-метрик. Например, `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics",http://my-service-dns.my-namespace:9100/metrics]`.|
+| | `urls` | Строковый тип | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
+| | `kubernetes_services` | Строковый тип | Массив с разделителями-запятыми | Массив Kubernetes служб для сбора метрик из KUBE-State-метрик. Например, `kubernetes_services = ["https://metrics-server.kube-system.svc.cluster.local/metrics",http://my-service-dns.my-namespace:9100/metrics]`.|
 | | `monitor_kubernetes_pods` | Логическое | true или false | Если задано значение `true` в параметрах на уровне кластера, Azure Monitor для агента контейнеров будет наделять модули Pod Kubernetes по всему кластеру на наличие следующих заметок Prometheus:<br> `prometheus.io/scrape:`<br> `prometheus.io/scheme:`<br> `prometheus.io/path:`<br> `prometheus.io/port:` |
 | | `prometheus.io/scrape` | Логическое | true или false | Включает брак/отход модуля Pod. Для параметра `monitor_kubernetes_pods` нужно задать значение `true`. |
-| | `prometheus.io/scheme` | Тип String | HTTP или HTTPS | По умолчанию используется отработка отказа по протоколу HTTP. При необходимости задайте значение `https` . | 
-| | `prometheus.io/path` | Тип String | Массив с разделителями-запятыми | Путь HTTP-ресурса, из которого извлекать метрики. Если путь метрик не равен `/metrics` , определите его с помощью этой заметки. |
-| | `prometheus.io/port` | Тип String | 9102 | Укажите порт, из которого будет списано значение. Если параметр port не установлен, по умолчанию будет 9102. |
-| | `monitor_kubernetes_pods_namespaces` | Тип String | Массив с разделителями-запятыми | Список разрешенных пространств имен для брака метрики из модулей Kubernetes.<br> Например: `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]` |
-| На уровне узла | `urls` | Тип String | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
-| На уровне узла или на уровне кластера | `interval` | Тип String | 60 | Интервал сбора по умолчанию равен одной минуте (60 секунд). Коллекцию можно изменить для *[prometheus_data_collection_settings. Node]* и (или) *[prometheus_data_collection_settings. Cluster]* на единицы времени, например s, m, h. |
-| На уровне узла или на уровне кластера | `fieldpass`<br> `fielddrop`| Тип String | Массив с разделителями-запятыми | Можно указать метрики, которые должны быть собраны или не включены в конечную точку, задав `fieldpass` список разрешений () и запретить ( `fielddrop` ). Сначала необходимо задать список разрешений. |
+| | `prometheus.io/scheme` | Строковый тип | HTTP или HTTPS | По умолчанию используется отработка отказа по протоколу HTTP. При необходимости задайте значение `https` . | 
+| | `prometheus.io/path` | Строковый тип | Массив с разделителями-запятыми | Путь HTTP-ресурса, из которого извлекать метрики. Если путь метрик не равен `/metrics` , определите его с помощью этой заметки. |
+| | `prometheus.io/port` | Строковый тип | 9102 | Укажите порт, из которого будет списано значение. Если параметр port не установлен, по умолчанию будет 9102. |
+| | `monitor_kubernetes_pods_namespaces` | Строковый тип | Массив с разделителями-запятыми | Список разрешенных пространств имен для брака метрики из модулей Kubernetes.<br> Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`. |
+| На уровне узла | `urls` | Строковый тип | Массив с разделителями-запятыми | Конечная точка HTTP (указан IP-адрес или допустимый путь URL-адреса). Например: `urls=[$NODE_IP/metrics]`. ($NODE _IP — это конкретная Azure Monitor для параметра Containers, которую можно использовать вместо IP-адреса узла. Необходимо использовать все прописные буквы.) |
+| На уровне узла или на уровне кластера | `interval` | Строковый тип | 60 | Интервал сбора по умолчанию равен одной минуте (60 секунд). Коллекцию можно изменить для *[prometheus_data_collection_settings. Node]* и (или) *[prometheus_data_collection_settings. Cluster]* на единицы времени, например s, m, h. |
+| На уровне узла или на уровне кластера | `fieldpass`<br> `fielddrop`| Строковый тип | Массив с разделителями-запятыми | Можно указать метрики, которые должны быть собраны или не включены в конечную точку, задав `fieldpass` список разрешений () и запретить ( `fielddrop` ). Сначала необходимо задать список разрешений. |
 
 Конфигмапс является глобальным списком, и к нему может быть применен только один ConfigMap. У вас не может быть другой Конфигмапс.
 
@@ -65,7 +65,7 @@ ms.locfileid: "90971368"
 
 Выполните следующие действия, чтобы настроить файл конфигурации ConfigMap для следующих кластеров:
 
-* служба Azure Kubernetes (AKS);
+* Служба Azure Kubernetes (AKS)
 * Azure Stack или локально
 * Azure Red Hat OpenShift версии 4. x и Red Hat OpenShift версии 4. x
 
@@ -147,7 +147,7 @@ ms.locfileid: "90971368"
            - prometheus.io/port:"8000" #If port is not 9102 use this annotation
            ```
     
-          Если вы хотите ограничить мониторинг определенными пространствами имен для модулей Pod с заметками, например, включайте только модули памяти, выделенные для рабочих нагрузок, установите для параметра значение `monitor_kubernetes_pod` `true` в ConfigMap и добавьте фильтр пространства имен, `monitor_kubernetes_pods_namespaces` указывающий пространства имен, из которых следует избавиться. Например: `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`
+          Если вы хотите ограничить мониторинг определенными пространствами имен для модулей Pod с заметками, например, включайте только модули памяти, выделенные для рабочих нагрузок, установите для параметра значение `monitor_kubernetes_pod` `true` в ConfigMap и добавьте фильтр пространства имен, `monitor_kubernetes_pods_namespaces` указывающий пространства имен, из которых следует избавиться. Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`.
 
 3. Выполните следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>` .
     
@@ -264,7 +264,7 @@ container-azm-ms-agentconfig   4         56m
            - prometheus.io/port:"8000" #If port is not 9102 use this annotation
            ```
     
-          Если вы хотите ограничить мониторинг определенными пространствами имен для модулей Pod с заметками, например, включайте только модули памяти, выделенные для рабочих нагрузок, установите для параметра значение `monitor_kubernetes_pod` `true` в ConfigMap и добавьте фильтр пространства имен, `monitor_kubernetes_pods_namespaces` указывающий пространства имен, из которых следует избавиться. Например: `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`
+          Если вы хотите ограничить мониторинг определенными пространствами имен для модулей Pod с заметками, например, включайте только модули памяти, выделенные для рабочих нагрузок, установите для параметра значение `monitor_kubernetes_pod` `true` в ConfigMap и добавьте фильтр пространства имен, `monitor_kubernetes_pods_namespaces` указывающий пространства имен, из которых следует избавиться. Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`.
 
 2. Сохраните изменения в редакторе.
 
@@ -278,7 +278,7 @@ container-azm-ms-agentconfig   4         56m
 
 Для следующих сред Kubernetes:
 
-- служба Azure Kubernetes (AKS);
+- Служба Azure Kubernetes (AKS)
 - Azure Stack или локально
 - Azure Red Hat OpenShift и Red Hat OpenShift версии 4. x
 
@@ -366,6 +366,6 @@ InsightsMetrics
 
 Дополнительные сведения о мониторинге использования данных и анализе затрат см. в руководствах по [управлению использованием и затратами Azure Monitor журналов](../platform/manage-cost-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о настройке параметров коллекции агентов для stdout, stderr и переменных среды из рабочих нагрузок контейнера см. [здесь](container-insights-agent-config.md). 

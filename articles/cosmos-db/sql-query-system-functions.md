@@ -8,17 +8,17 @@ ms.date: 12/02/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 6f41adbb726313ef095084d079dc7852736e0c06
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74870536"
 ---
 # <a name="system-functions-azure-cosmos-db"></a>Системные функции (Azure Cosmos DB)
 
  Cosmos DB предоставляет множество встроенных функций SQL. Ниже перечислены их категории.  
   
-|Группа функций|Описание:|Операции|  
+|Группа функций|Описание|Операции|  
 |--------------|-----------------|-----------------| 
 |[Функции массива](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
 |[Функции даты и времени](sql-query-date-time-functions.md)|Функции даты и времени позволяют получить текущую дату и время в формате UTC в двух формах. числовая метка времени, значение которой является эпохой UNIX в миллисекундах или в виде строки, которая соответствует формату ISO 8601. | [Жеткуррентдатетиме](sql-query-getcurrentdatetime.md), [жеткурренттиместамп](sql-query-getcurrenttimestamp.md) |
@@ -35,9 +35,9 @@ ms.locfileid: "74870536"
 
 Основное различие между функциями Cosmos DB и ANSI SQL-функциями заключается в том, что функции Cosmos DB предназначены для работы с данными без схем и смешанными схемами. Например, если свойство отсутствует или имеет нечисловое значение, такое как `unknown` , элемент пропускается вместо возврата ошибки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Функции массива](sql-query-array-functions.md)
 - [Функции даты и времени](sql-query-date-time-functions.md)
 - [Математические функции](sql-query-mathematical-functions.md)
@@ -45,4 +45,4 @@ ms.locfileid: "74870536"
 - [Строковые функции](sql-query-string-functions.md)
 - [Функции проверки типа](sql-query-type-checking-functions.md)
 - [Определенные пользователем функции](sql-query-udfs.md)
-- [Статистические выражения](sql-query-aggregates.md)
+- [Статистические функции](sql-query-aggregates.md)

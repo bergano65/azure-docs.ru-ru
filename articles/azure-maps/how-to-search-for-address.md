@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 2a322de383194f131395629d33456d7561397eb9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91310991"
 ---
 # <a name="search-for-a-location-using-azure-maps-search-services"></a>Поиск расположения с помощью служб поиска Azure Maps
@@ -95,7 +95,7 @@ API Azure Maps [нечеткий поиск](https://docs.microsoft.com/rest/api
 
 4. Поведение по умолчанию заключается в поиске по всему миру, потенциально возвращая ненужные результаты. Далее мы будем искать пиццу только США. Добавьте `countrySet` ключ в раздел **params** и задайте для него значение `US` . Если задать `countrySet` для ключа значение, `US` результаты будут привязаны к США.
 
-    :::image type="content" source="./media/how-to-search-for-address/search-fuzzy-country.png" alt-text="Поиск пиццы в США":::
+    :::image type="content" source="./media/how-to-search-for-address/search-fuzzy-country.png" alt-text="Поиск адреса":::
 
     Теперь результаты ограничены кодом страны и запрос возвращает адреса пиццерий в США.
 
@@ -143,13 +143,13 @@ API Azure Maps [нечеткий поиск](https://docs.microsoft.com/rest/api
     | returnRoadUse | Да | Возвращает дорожные типы использования по адресу. Все возможные типы использования в пути см. в разделе [типы использования дорожек](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#uri-parameters).|
     | ретурнматчтипе | Да| Возвращает тип соответствия. Все возможные значения см. в разделе [обратные результаты поиска адресов](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#searchaddressreverseresult) .
 
-   :::image type="content" source="./media/how-to-search-for-address/search-reverse.png" alt-text="Обратный поиск.":::
+   :::image type="content" source="./media/how-to-search-for-address/search-reverse.png" alt-text="Поиск адреса":::
 
 5. Нажмите кнопку **Отправить**и проверьте текст ответа.
 
 6. Далее мы добавим `entityType` ключ и присвоим ему значение `Municipality` . `entityType`Ключ переопределит `returnMatchType` ключ на предыдущем шаге. Также необходимо удалить `returnSpeedLimit` и, `returnRoadUse` так как мы запрашиваем сведения о органе государственной власти.  Все возможные типы сущностей см. в разделе [типы сущностей](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#entitytype).
 
-    :::image type="content" source="./media/how-to-search-for-address/search-reverse-entity-type.png" alt-text="Поиск в обратных entityType.":::
+    :::image type="content" source="./media/how-to-search-for-address/search-reverse-entity-type.png" alt-text="Поиск адреса":::
 
 7. Нажмите кнопку **Отправить**. Сравните результаты с результатами, возвращенными на шаге 5.  Так как запрошенный тип сущности теперь является `municipality` , ответ не включает сведения о почтовом адресе. Кроме того, возвращаемое значение `geometryId` можно использовать для запроса многоугольника с помощью Azure Maps получения [API-интерфейса Polygon поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon).
 
@@ -168,11 +168,11 @@ API Azure Maps [нечеткий поиск](https://docs.microsoft.com/rest/api
    https://atlas.microsoft.com/search/address/reverse/crossstreet/json?&api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}&language=en-US&query=47.591180,-122.332700
     ```
 
-    :::image type="content" source="./media/how-to-search-for-address/search-address-cross.png" alt-text="Поиск по перекрестной улицы.":::
+    :::image type="content" source="./media/how-to-search-for-address/search-address-cross.png" alt-text="Поиск адреса":::
   
 3. Нажмите кнопку **Отправить**и проверьте текст ответа. Обратите внимание, что ответ содержит `crossStreet` значение `Occidental Avenue South` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Azure Maps Служба поиска REST API](https://docs.microsoft.com/rest/api/maps/search)

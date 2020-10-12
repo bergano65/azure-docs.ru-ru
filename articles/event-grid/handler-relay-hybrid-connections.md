@@ -3,11 +3,11 @@ title: Гибридное подключение Azure Relay как обрабо
 description: В статье показано, как гибридные подключения Azure Relay можно использовать в качестве обработчиков событий службы "Сетка событий Azure".
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 3807e2d125d652b8f5ed7c9dec1b972d69f699f6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 38233a2e103600f07837ce9a1ad8d63fe7e4fb99
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91270208"
 ---
 # <a name="relay-hybrid-connection-as-an-event-handler-for-azure-event-grid-events"></a>Гибридное подключение Azure Relay как обработчик событий службы "Сетка событий Azure"
@@ -40,9 +40,6 @@ ms.locfileid: "91270208"
     }
 }
 ```
-
-> [!NOTE]
-> Доставка событий в Azure Relay гибридное подключение в **другом клиенте** не поддерживается. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

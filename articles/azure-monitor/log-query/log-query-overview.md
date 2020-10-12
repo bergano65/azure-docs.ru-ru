@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 06/19/2019
 ms.openlocfilehash: 5a47de51a90d926b47f6b465d6c10111407da9c6
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90033172"
 ---
 # <a name="overview-of-log-queries-in-azure-monitor"></a>Общие сведения о запросах журналов в Azure Monitor
@@ -96,6 +96,6 @@ Log Analytics является основным инструментом пор�
 - **API журналов Azure Monitor.**  [API журналов Azure Monitor](https://dev.loganalytics.io) позволяет любому клиенту REST API извлекать данные журнала из рабочей области.  Запрос API включает запрос, который выполняется в Azure Monitor, чтобы определить извлекаемые данные.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Пошаговое [руководство по использованию log Analytics в портал Azure](get-started-portal.md).
 - Пошаговое [руководство по написанию запросов](get-started-queries.md).

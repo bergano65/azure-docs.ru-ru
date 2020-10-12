@@ -4,10 +4,10 @@ description: Включение автоматического расширен�
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 1be564472011622b71b3066495748dfdbe6cc791
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86537247"
 ---
 # <a name="automatically-scale-up-azure-event-hubs-throughput-units"></a>Автоматическое масштабирование единиц пропускной способности Центров событий Azure
@@ -64,7 +64,7 @@ ms.locfileid: "86537247"
 
 ### <a name="enable-auto-inflate-using-an-azure-resource-manager-template"></a>Включение автоматического расширения с помощью шаблона Azure Resource Manager
 
-Вы можете включить автоматическое расширение во время развертывания шаблона Azure Resource Manager. Например, задайте для свойства `isAutoInflateEnabled` значение **true** и установите для `maximumThroughputUnits` значение 10. Вот несколько примеров:
+Вы можете включить автоматическое расширение во время развертывания шаблона Azure Resource Manager. Например, задайте для свойства `isAutoInflateEnabled` значение **true** и установите для `maximumThroughputUnits` значение 10. Пример.
 
 ```json
 "resources": [

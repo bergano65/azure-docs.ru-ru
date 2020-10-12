@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 02/27/2020
 ms.custom: subject-moving-resources
 ms.openlocfilehash: 87a2da31802a8b6858e875c23ef1dbd2d6d006bc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86524860"
 ---
 # <a name="move-an-app-service-resource-to-another-region"></a>Перемещение ресурса службы приложений в другой регион
@@ -25,9 +25,9 @@ ms.locfileid: "86524860"
 - Убедитесь, что целевой регион поддерживает службу приложений и любую связанную службу, ресурсы которой требуется переместить.
 <!-- - Domain bindings, certificates, and managed identities can't replicated using the **Export template** method. You must create them manually. -->
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
-Найдите все ресурсы службы приложений, которые вы используете в данный момент. Вот несколько примеров:
+Найдите все ресурсы службы приложений, которые вы используете в данный момент. Пример:
 
 - Приложения службы приложений
 - [Планы службы приложений](overview-hosting-plans.md)

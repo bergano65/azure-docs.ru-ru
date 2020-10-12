@@ -1,17 +1,17 @@
 ---
-title: Разрабатывайте функции Azure с помощью Visual Studio Code
+title: Разработка Функций Azure с помощью Visual Studio Code
 description: Узнайте, как разрабатывать и тестировать функции Azure с помощью расширения "функции Azure" для Visual Studio Code.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 08/21/2019
 ms.openlocfilehash: 610c80dc5552eae4f2ad8442fa11b85f2eab35eb
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88206743"
 ---
-# <a name="develop-azure-functions-by-using-visual-studio-code"></a>Разрабатывайте функции Azure с помощью Visual Studio Code
+# <a name="develop-azure-functions-by-using-visual-studio-code"></a>Разработка Функций Azure с помощью Visual Studio Code
 
 [Расширение "функции Azure" для Visual Studio Code] позволяет локально разрабатывать функции и развертывать их в Azure. Если вы впервые сталкиваетесь с функциями Azure, дополнительные сведения см. в статье [Общие сведения о Функциях Azure](functions-overview.md).
 
@@ -191,7 +191,7 @@ Visual Studio Code позволяет добавлять привязки к fun
 | -------- | ----- | ----------- |
 | **Select binding direction** (Выберите направление привязки) | `out` | Привязка является выходной привязкой. |
 | **Выбор привязки с направлением** | `Azure Queue Storage` | Привязка является привязкой очереди службы хранилища Azure. |
-| **Имя, используемое для распознавания этой привязки в коде** | `msg` | Имя, которое используется для идентификации параметров привязки, указанных в коде. |
+| **Имя, используемое для идентификации этой привязки в коде** | `msg` | Имя, которое используется для идентификации параметров привязки, указанных в коде. |
 | **Очередь, в которую будет отправлено сообщение** | `outqueue` | Имя очереди, в которой записывается привязка. Если *queueName* не существует, то при первом использовании этот параметр будет создан привязкой. |
 | **Выберите параметр из "local.settings.js".** | `MyStorageConnection` | Имя параметра приложения, содержащего строку подключения для учетной записи хранения. `AzureWebJobsStorage`Параметр содержит строку подключения для учетной записи хранения, созданной с помощью приложения функции. |
 

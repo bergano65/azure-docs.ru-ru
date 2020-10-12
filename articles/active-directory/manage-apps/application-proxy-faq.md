@@ -12,10 +12,10 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.openlocfilehash: edf51dad768e8d8b5ea5dc6c1eff88f43f0f6b70
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88589169"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
@@ -85,7 +85,7 @@ ms.locfileid: "88589169"
     ```
 
 
-## <a name="application-configuration"></a>Настройка приложения
+## <a name="application-configuration"></a>Конфигурация приложений
 
 ### <a name="i-am-receiving-an-error-about-an-invalid-certificate-or-possible-wrong-password"></a>Я получаю сообщение об ошибке: Недопустимый сертификат или возможный неверный пароль
 
@@ -141,7 +141,7 @@ ms.locfileid: "88589169"
 
 См. статью [публикация удаленный рабочий стол с помощью AD application proxy Azure](application-proxy-integrate-with-remote-desktop-services.md).
 
-### <a name="can-i-use-kerberos-constrained-delegation-single-sign-on---windows-integrated-authentication-in-the-remote-desktop-gateway-publishing-scenario"></a>Можно ли использовать ограниченное делегирование Kerberos (единый вход — встроенная проверка подлинности Windows) в сценарии публикации шлюза удаленный рабочий стол?
+### <a name="can-i-use-kerberos-constrained-delegation-single-sign-on---windows-integrated-authentication-in-the-remote-desktop-gateway-publishing-scenario"></a>Можно ли использовать ограниченное делегирование Kerberos (единый Sign-On — встроенная проверка подлинности Windows) в сценарии публикации шлюза удаленный рабочий стол?
 
 Нет, этот сценарий не поддерживается.  
 

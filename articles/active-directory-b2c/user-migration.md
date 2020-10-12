@@ -12,10 +12,10 @@ ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 60dff717fbd86fa83821575ac90c9dac36dbc4d1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85383977"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Миграция пользователей в Azure AD B2C
@@ -38,7 +38,7 @@ ms.locfileid: "85383977"
 
 ## <a name="seamless-migration"></a>Простая миграция
 
-Используйте простой поток миграции, если недоступность паролей в старом поставщике удостоверений невозможна. Например, если:
+Используйте простой поток миграции, если недоступность паролей в старом поставщике удостоверений невозможна. Например, такая необходимость может возникнуть в следующих случаях:
 
 - Пароль хранится в одностороннего зашифрованном формате, например в хэш-функции.
 - Пароль хранится в устаревшем поставщике удостоверений в недоступном виде. Например, когда поставщик удостоверений проверяет учетные данные путем вызова веб-службы.
@@ -99,7 +99,7 @@ ms.locfileid: "85383977"
 
 Если переносимые учетные записи имеют более слабую стойкость пароля, чем [усиленный пароль](../active-directory/authentication/concept-sspr-policy.md) , принудительно установленный Azure AD B2C, можно отключить требование надежного пароля. Дополнительные сведения см. в разделе [свойство политики паролей](manage-user-accounts-graph-api.md#password-policy-property).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В репозитории [Azure-AD-B2C/User-migrations](https://github.com/azure-ad-b2c/user-migration) на сайте GitHub содержится простой пример пользовательской политики миграции и REST API пример кода:
 

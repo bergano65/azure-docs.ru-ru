@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philMea
 ms.openlocfilehash: 1f25aadf716b7768b6122a4fb165466aef7f8a16
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90053398"
 ---
 # <a name="drawing-package-requirements"></a>Требования к пакету рисунков
@@ -246,15 +246,15 @@ ms.locfileid: "90053398"
 |`unitName`    |строка    |Да    |Имя секции, связанное с этой записью `unitProperty`. Эта запись допустима, только если на `unitName` слоях найдено соответствие меток `unitLabel` . |
 |`categoryName`|    строка|    false    |Имя категории. Полный список категорий см. [здесь](https://aka.ms/pa-indoor-spacecategories). |
 |`navigableBy`| Массив строк |    false    |Указывает типы агентов навигации, которые могут пересекать секцию. Это свойство информирует о возможностях вайфиндинг. Допустимые значения: `pedestrian` , `wheelchair` , `machine` , `bicycle` , `automobile` , `hiredAuto` , `bus` , `railcar` , `emergency` , `ferry` , `boat` и `disallowed` .|
-|`routeThroughBehavior`|    строка|    false    |Маршрут через поведение секции. Допустимые значения: `disallowed`, `allowed` и `preferred`. Значение по умолчанию — `allowed`.|
+|`routeThroughBehavior`|    строка|    false    |Маршрут через поведение секции. Допустимые значения: `disallowed`, `allowed` и `preferred`. Значение по умолчанию — `allowed`.|
 |`occupants`    |Массив объектов directoryInfo |false    |Список пользователей для секции. |
 |`nameAlt`|    строка|    false|    Альтернативное имя единицы измерения. |
 |`nameSubtitle`|    строка    |false|    Подзаголовок для секции. |
 |`addressRoomNumber`|    строка|    false|    Номер комнаты, единицы, подразделения или набора единиц.|
 |`verticalPenetrationCategory`|    строка|    false| Если это свойство определено, то итоговая функция является вертикальной уязвимостью (SNORT), а не единицей. Вртс можно использовать для перехода к другим функциям SNORT на уровнях выше или ниже. По вертикали уязвимости является имя [категории](https://aka.ms/pa-indoor-spacecategories) . Если это свойство определено, `categoryName` свойство переопределяется с помощью `verticalPenetrationCategory` . |
-|`verticalPenetrationDirection`|    строка|    false    |Если определено `verticalPenetrationCategory`, можно также определить допустимое направление движения. Допустимые значения: `lowToHigh` , `highToLow` , `both` и `closed` . Значение по умолчанию — `both`.|
+|`verticalPenetrationDirection`|    строка|    false    |Если определено `verticalPenetrationCategory`, можно также определить допустимое направление движения. Допустимые значения: `lowToHigh` , `highToLow` , `both` и `closed` . Значение по умолчанию — `both`.|
 | `nonPublic` | bool | false | Указывает, открыта ли секция для свободного доступа. |
-| `isRoutable` | bool | false | Если для этого свойства задано значение `false` , нельзя переходить к или через единицу измерения. Значение по умолчанию — `true`. |
+| `isRoutable` | bool | false | Если для этого свойства задано значение `false` , нельзя переходить к или через единицу измерения. Значение по умолчанию — `true`. |
 | `isOpenArea` | bool | false | Позволяет агенту навигации входить в единицу, не требуя открытия, присоединенного к единице. По умолчанию этому параметру присвоено значение `true` для единиц без вакансий и `false` для единиц с вакансиями. Ручная установка в `isOpenArea` `false` единицу без вакансий приводит к выдаче предупреждения. Это связано с тем, что результирующая единица не будет доступна агенту навигации.|
 
 ### `zoneProperties`
@@ -402,7 +402,7 @@ ms.locfileid: "90053398"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Когда пакет рисования соответствует требованиям, можно использовать [службу преобразования Azure Maps](https://docs.microsoft.com/rest/api/maps/conversion) для преобразования пакета в набор данных Map. Затем можно использовать набор данных для создания карты внутренней таблицы с помощью модуля "карты".
 

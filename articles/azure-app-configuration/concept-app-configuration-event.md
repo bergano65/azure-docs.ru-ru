@@ -8,10 +8,10 @@ ms.date: 02/20/2020
 ms.topic: article
 ms.service: azure-app-configuration
 ms.openlocfilehash: ae3417f991c0d810d8946cdaf358218ebbe4f6a5
-ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88590036"
 ---
 # <a name="reacting-to-azure-app-configuration-events"></a>Реагирование на события настройки приложения Azure
@@ -29,7 +29,7 @@ ms.locfileid: "88590036"
 ## <a name="available-azure-app-configuration-events"></a>Доступные события конфигурации приложения Azure
 Сетка событий использует [подписки на события](../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Подписки на события конфигурации приложений Azure могут включать два типа событий:  
 
-> |Название мероприятия|Описание|
+> |Имя события|Описание|
 > |----------|-----------|
 > |`Microsoft.AppConfiguration.KeyValueModified`|Возникает при создании или замене ключевого значения|
 > |`Microsoft.AppConfiguration.KeyValueDeleted`|Возникает при удалении значения ключа|

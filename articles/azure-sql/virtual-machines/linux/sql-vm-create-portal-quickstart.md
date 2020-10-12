@@ -11,13 +11,13 @@ ms.workload: iaas-sql-server
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: e1a9d2722987464b1bb3c8b1489a2d1258a41d15
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "91273098"
 ---
-# <a name="provision-a-linux-virtual-machine-running-sql-server-in-the-azure-portal"></a>Подготавливает виртуальную машину Linux под управлением SQL Server в портал Azure
+# <a name="provision-a-linux-virtual-machine-running-sql-server-in-the-azure-portal"></a>Подготовка виртуальной машины Linux под управлением SQL Server на портале Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 > [!div class="op_single_selector"]
@@ -72,7 +72,7 @@ ms.locfileid: "91273098"
 1. Затем введите или выберите следующие значения:
    * **Регион**. Выберите подходящий регион Azure.
    * **Параметры доступности**. Выберите параметры доступности и избыточности, которые лучше всего подходят для приложений и данных.
-   * **Изменение размера**. Выберите этот параметр, чтобы указать размер машины, а затем нажмите кнопку **Выбрать**. Дополнительные сведения о размерах ВИРТУАЛЬНЫХ машин см. в статье [размеры виртуальных](../../../virtual-machines/sizes.md)машин.
+   * **Изменение размера**. Выберите этот параметр, чтобы указать размер машины, а затем нажмите кнопку **Выбрать**. См. сведения о [размерах виртуальных машин](../../../virtual-machines/sizes.md).
 
      ![Выбор размера виртуальной машины](./media/sql-vm-create-portal-quickstart/vmsizes.png)
 

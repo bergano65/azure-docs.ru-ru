@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 93cabb566db02de7ef991fe9cdd293f8c399c3a3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91272962"
 ---
 # <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных трафика на карте с помощью Azure Maps пакет SDK для Android
@@ -57,7 +57,7 @@ import static com.microsoft.azure.maps.mapcontrol.options.TrafficOptions.flow;
 | :-- | :-- |
 | Траффикфлов. NONE | Не отображает данные трафика на карте |
 | Траффикфлов. RELATIVE | Показывает данные трафика, относящиеся к скорости произвольного потока в дороге |
-| Траффикфлов. RELATIVE_DELAY | Отображает области, которые выполняются медленнее среднего ожидаемого значения задержки |
+| TrafficFlow.RELATIVE_DELAY | Отображает области, которые выполняются медленнее среднего ожидаемого значения задержки |
 | Траффикфлов. ABSOLUTE | Показывает абсолютную скорость всех транспортных средств в дороге |
 
 ```java
@@ -229,7 +229,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
    </center>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать, как добавить дополнительные данные на карту, ознакомьтесь со следующими руководствами.
 

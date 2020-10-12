@@ -9,10 +9,10 @@ ms.date: 08/31/2020
 ms.topic: how-to
 ms.service: media-services
 ms.openlocfilehash: 1383b6afac9ad2332169328ef71981e23e86bdcc
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89297456"
 ---
 # <a name="how-to-verify-your-on-premises-live-streaming-encoder"></a>Как проверить локальный кодировщик динамической потоковой передачи
@@ -69,10 +69,10 @@ ms.locfileid: "89297456"
 
 Наконец, отправьте свои записанные настройки и параметры динамического архива в Службы мультимедиа Azure по адресу amshelp@microsoft.com ​​в качестве уведомления о том, что все проверки для самопроверки пройдены. Кроме того, добавьте свою контактную информацию для дальнейших действий. По любым вопросам, касающимся этого процесса, вы можете связаться с командой Службы мультимедиа Azure.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Протестированные локальные кодировщики](recommended-on-premises-live-encoders.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Потоковая трансляция в Службах мультимедиа Azure версии 3](live-streaming-overview.md)

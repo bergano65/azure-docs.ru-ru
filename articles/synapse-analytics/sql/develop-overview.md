@@ -11,10 +11,10 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.openlocfilehash: f4c61b43855e4a845956a937d9d9cfe738d6f47a
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90032951"
 ---
 # <a name="design-decisions-and-coding-techniques-for-synapse-sql-features-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для функций синапсе SQL в Azure синапсе Analytics
@@ -25,7 +25,7 @@ ms.locfileid: "90032951"
 ## <a name="key-design-decisions"></a>Основные проектные решения
 Приведенные ниже статьи выделяют основные понятия и архитектурные решения для синапсе разработки SQL.
 
-| Статья | Пул SQL | Использование SQL по запросу |
+| Статья | Пул SQL | SQL по запросу |
 | ------- | -------- | ------------- |
 | [Соединения](connect-overview.md)                    | Да | Да |
 | [Классы и параллелизм ресурсов](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Да    | Нет |
@@ -44,7 +44,7 @@ ms.locfileid: "90032951"
 
 Ниже приводятся статьи, посвященные конкретным методам программирования, советам и рекомендациям по разработке.
 
-| Статья | Пул SQL | Использование SQL по запросу |
+| Статья | Пул SQL | SQL по запросу |
 | ------- | -------- | ------------- |
 | [Хранимые процедуры](develop-stored-procedures.md)  | Да                | Нет                      |
 | [Метки](develop-label.md)                           | Да                | Нет                      |
@@ -55,6 +55,6 @@ ms.locfileid: "90032951"
 | [Группировка по параметрам](develop-group-by-options.md)       | Да                | Нет                      |
 | [Присваивание переменной](develop-variable-assignment.md) | Да                | Да                     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные справочные сведения см. в статье [инструкции T-SQL пула SQL](../sql-data-warehouse/sql-data-warehouse-reference-tsql-statements.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 

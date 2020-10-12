@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 6/27/2019
 ms.author: sutalasi
 ms.openlocfilehash: 08e971e52f994ec5fa5663708fa9f173daf33d80
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86135405"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Настройка аварийного восстановления с помощью Azure Site Recovery для многоуровневого приложения SharePoint | Документация Майкрософт
 
-В этой статье подробно описано, как защитить приложение SharePoint с помощью [Azure Site Recovery](site-recovery-overview.md).
+В этой статье подробно описано, как защитить приложение SharePoint с помощью  [Azure Site Recovery](site-recovery-overview.md).
 
 
 ## <a name="overview"></a>Обзор
@@ -84,7 +84,7 @@ Site Recovery не зависит от приложения и должна ра
 
 * Рекомендации по защите уровня базы данных на сервере SQL Server см. в документе, посвященном [защите SQL Server](site-recovery-sql.md).
 
-## <a name="networking-configuration"></a>Конфигурация сети
+## <a name="networking-configuration"></a>Конфигурации сети
 
 ### <a name="network-properties"></a>Свойства сети
 
@@ -102,7 +102,7 @@ Site Recovery не зависит от приложения и должна ра
 Для сайтов, работающих с Интернетом, [создайте профиль диспетчера трафика типа "Приоритет"](../traffic-manager/quickstart-create-traffic-manager-profile.md) в подписке Azure. Затем настройте профиль DNS и диспетчера трафика следующим образом.
 
 
-| **Которому** | **Источник** | **Целевой объект**|
+| **Where** | **Source** | **Цель**|
 | --- | --- | --- |
 | Общедоступное имя DNS | Общедоступное имя DNS для сайтов SharePoint <br/><br/> Например: sharepoint.contoso.com | Диспетчер трафика <br/><br/> contososharepoint.trafficmanager.net |
 | Локальное имя DNS | sharepointonprem.contoso.com | Общедоступный IP-адрес в локальной ферме |

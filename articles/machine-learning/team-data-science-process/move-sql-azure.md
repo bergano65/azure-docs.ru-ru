@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 1f1120c78ef2a634c079705c85170d9742eabd1f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87087430"
 ---
 # <a name="move-data-to-an-azure-sql-database-for-azure-machine-learning"></a>Перемещение данных в базу данных SQL Azure для машинного обучения Azure
@@ -43,13 +43,13 @@ ms.locfileid: "87087430"
 
 Вы можете либо адаптировать описанные здесь процедуры к собственному набору данных, либо выполнить описанные действия с набором данных о такси Нью-Йорка. Чтобы передать набор данных Нью такси в базу данных SQL Server, выполните процедуру, описанную в разделе [инструкции по импорту данных в базу данных SQL Server](sql-walkthrough.md#dbload).
 
-## <a name="moving-data-from-a-flat-file-source-to-an-azure-sql-database"></a><a name="file-to-azure-sql-database"></a>Перемещение данных из источника «Неструктурированный файл» в базу данных SQL Azure
+## <a name="moving-data-from-a-flat-file-source-to-an-azure-sql-database"></a><a name="file-to-azure-sql-database"></a> Перемещение данных из источника «Неструктурированный файл» в базу данных SQL Azure
 Данные в неструктурированных файлах (CSV или TSV) можно переместить в базу данных SQL Azure с помощью SQL-запроса на выполнение инструкции INSERT.
 
-### <a name="bulk-insert-sql-query"></a><a name="bulk-insert-sql-query"></a>Запрос SQL для выполнения инструкции INSERT
+### <a name="bulk-insert-sql-query"></a><a name="bulk-insert-sql-query"></a> Запрос SQL для выполнения инструкции INSERT
 Действия для процедуры, использующей SQL-запрос на ввод неструктурированного файла, аналогичны указаниям по перемещению данных из источника «Плоский файл» в SQL Server на виртуальной машине Azure. Дополнительные сведения см. в разделе [SQL-запрос на массовую вставку](move-sql-server-virtual-machine.md#insert-tables-bulkquery).
 
-## <a name="moving-data-from-sql-server-to-an-azure-sql-database"></a><a name="sql-on-prem-to-sazure-sql-database"></a>Перемещение данных из SQL Server в базу данных SQL Azure
+## <a name="moving-data-from-sql-server-to-an-azure-sql-database"></a><a name="sql-on-prem-to-sazure-sql-database"></a> Перемещение данных из SQL Server в базу данных SQL Azure
 Если исходные данные хранятся в SQL Server, существуют различные возможности перемещения данных в базу данных SQL Azure.
 
 1. [Экспорт в неструктурированный файл](#export-flat-file)

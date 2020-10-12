@@ -4,10 +4,10 @@ description: Из этой статьи вы узнаете, как создат
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.openlocfilehash: 3e19701abe152e947e87ef624a003538ab7062a9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91271806"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
@@ -57,7 +57,7 @@ ms.locfileid: "91271806"
 
 #### <a name="nsg-tags"></a>Теги NSG
 
-Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Помимо тега Azure Backup необходимо разрешить подключение для проверки подлинности и передачу данных, создав аналогичные [правила NSG](../virtual-network/security-overview.md#service-tags) для Azure AD (*AzureActiveDirectory*) и службы хранилища Azure (*хранилище*).  Ниже описан процесс создания правила для тега Azure Backup:
+Если вы используете группы безопасности сети (NSG), используйте тег службы *AzureBackup*, чтобы разрешить исходящий доступ к Azure Backup. Кроме тегов Azure Backup, вам нужно разрешить подключение для проверки подлинности и передачи данных, создав аналогичные [правила NSG](../virtual-network/security-overview.md#service-tags) для *Azure Active Directory* и *службы хранилища Azure*.  Ниже описан процесс создания правила для тега Azure Backup:
 
 1. В разделе **Все службы** перейдите к **группам сетевой безопасности** и выберите группу сетевой безопасности.
 

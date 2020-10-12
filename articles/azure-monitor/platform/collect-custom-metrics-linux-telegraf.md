@@ -8,10 +8,10 @@ ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: b80f27e490dd3b1890eab7740fb4650ba4280abb
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88207798"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
@@ -58,7 +58,7 @@ Azure Monitor позволяет собирать пользовательски
 
 1. Новая виртуальная машина закрепляется на панели мониторинга портала Azure. После завершения развертывания автоматически отобразятся сводные сведения о виртуальной машине. 
 
-1. В области виртуальная машина перейдите на вкладку **удостоверение** . Убедитесь, что для виртуальной машины назначено системное удостоверение со значением **вкл**. 
+1. В области виртуальная машина перейдите на вкладку **удостоверение** . Убедитесь, **что для виртуальной**машины установлен идентификатор, назначенный системой. 
  
     ![Предварительный просмотр удостоверения виртуальной машины Telegraf](./media/collect-custom-metrics-linux-telegraf/connect-to-VM.png)
  

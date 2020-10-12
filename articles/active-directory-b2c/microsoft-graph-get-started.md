@@ -12,10 +12,10 @@ ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: d95b45b9be0893282a532bae9ec0278c3a141686
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85385932"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Управление Azure AD B2C с помощью Microsoft Graph
@@ -82,7 +82,7 @@ ms.locfileid: "85385932"
 1. В текстовом поле **Выбор** введите имя зарегистрированного ранее приложения, например *managementapp1*. Выберите приложение, которое появится в результатах поиска.
 1. Выберите **Добавить**. Для полного распространения разрешений может потребоваться несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы зарегистрировали приложение управления и предоставили ему необходимые разрешения, ваши приложения и службы (например, Azure Pipelines) могут использовать свои учетные данные и разрешения для взаимодействия с Microsoft Graph API. 
 
 * [Получение токена доступа из Azure AD](https://docs.microsoft.com/graph/auth-v2-service#4-get-an-access-token)

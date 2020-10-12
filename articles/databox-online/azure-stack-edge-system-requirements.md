@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/15/2020
 ms.author: alkohli
 ms.openlocfilehash: a1a0462b82629b16bd8ccbe269fb1a917357d542
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90883507"
 ---
 # <a name="azure-stack-edge-pro-system-requirements"></a>Требования к системе для Azure Stack пограничных Pro
@@ -133,6 +133,6 @@ Azure IoT Edge обеспечивает исходящее подключени�
 Наконец, убедитесь, что вы проверили свое решение на наборе данных и количественно изверите производительность Azure Stack пограничных Pro перед развертыванием в рабочей среде.
 
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 - [Развертывание Azure Stack пограничных Pro](azure-stack-edge-deploy-prep.md)
