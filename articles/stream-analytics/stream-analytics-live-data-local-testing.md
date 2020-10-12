@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: fe1caca11ec0a3d89ddae140d00cd3556b9d3d89
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86044470"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
@@ -26,8 +26,8 @@ ms.locfileid: "86044470"
 |**Ввод**  |**Выходные данные**  |**Тип задания**  |
 |---------|---------|---------|
 |Локальные статические данные   |  Локальные статические данные   |   Облако или Edge |
-|Реальные входные данные   |  Локальные статические данные   |   Cloud |
-|Реальные входные данные   |  Реальные выходные данные   |   Cloud |
+|Реальные входные данные   |  Локальные статические данные   |   Облако |
+|Реальные входные данные   |  Реальные выходные данные   |   Облако |
 
 ## <a name="local-testing-with-live-data"></a>Локальное тестирование с помощью реальных данных
 
@@ -61,7 +61,7 @@ ms.locfileid: "86044470"
 
 * Для облачных входных данных поддерживаются [политики времени](stream-analytics-out-of-order-and-late-events.md), а для локальных входных данных — нет.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание Stream Analytics задания с помощью средств Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)

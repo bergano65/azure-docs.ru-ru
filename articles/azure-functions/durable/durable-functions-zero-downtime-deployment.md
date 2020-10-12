@@ -7,10 +7,10 @@ ms.date: 10/10/2019
 ms.author: azfuncdf
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 11bbc30179cc27f4799b1fd2869cb312dfa34473
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87093074"
 ---
 # <a name="zero-downtime-deployment-for-durable-functions"></a>Развертывание без простоя для Устойчивые функции
@@ -54,7 +54,7 @@ ms.locfileid: "87093074"
 
 1. Для каждого слота создайте новый параметр приложения, например `DurableManagementStorage` . Задайте в качестве значения строку подключения различных учетных записей хранения. Эти учетные записи хранения используются расширением Устойчивые функции для [надежного выполнения](./durable-functions-orchestrations.md). Используйте отдельную учетную запись хранения для каждого слота. Не отмечайте этот параметр как параметр слота развертывания.
 
-1. Вhost.jsфайла в приложении функции в [разделе durableTask](durable-functions-bindings.md#hostjson-settings)укажите в `azureStorageConnectionStringName` качестве имени параметра приложения, созданного на шаге 3.
+1. Вhost.jsфайла в приложении функции в [ разделе durableTask](durable-functions-bindings.md#hostjson-settings)укажите в `azureStorageConnectionStringName` качестве имени параметра приложения, созданного на шаге 3.
 
 На следующей схеме показана описанная конфигурация слотов развертывания и учетных записей хранения. В этом случае возможный сценарий предварительного развертывания версии 2 приложения-функции выполняется в рабочем слоте, а версия 1 остается в промежуточном слоте.
 

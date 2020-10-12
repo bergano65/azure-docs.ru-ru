@@ -10,10 +10,10 @@ ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: c93508bebdcfce35a89b3d5e2a8abecc7ac84722
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91280153"
 ---
 # <a name="storage-account-overview"></a>Общие сведения об учетной записи хранения
@@ -167,7 +167,7 @@ ms.locfileid: "91280153"
 
 ### <a name="azcopy"></a>AzCopy
 
-AzCopy — это программа командной строки Windows, предназначенная для быстрого копирования большого объема данных в службу хранилища Azure и из нее. С помощью AzCopy можно копировать данные в учетную запись хранилища BLOB-объектов из имеющейся учетной записи хранения общего назначения или передать данные из локальных устройств хранения. Дополнительные сведения см. в статье о [переносе данных с помощью служебной программы командной строки AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+AzCopy — это программа командной строки Windows, предназначенная для быстрого копирования большого объема данных в службу хранилища Azure и из нее. С помощью AzCopy можно копировать данные в учетную запись хранилища BLOB-объектов из имеющейся учетной записи хранения общего назначения или передать данные из локальных устройств хранения. Дополнительные сведения см. в статье о [переносе данных с помощью служебной программы AzCopy Command-Line](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ### <a name="data-movement-library"></a>Библиотека перемещения данных
 

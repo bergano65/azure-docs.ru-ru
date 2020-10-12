@@ -16,10 +16,10 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4e544d135883d0c936b3f23b3e50e385268c992c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87006302"
 ---
 # <a name="deploy-storsimple-virtual-array---set-up-as-file-server-via-azure-portal"></a>Развертывание виртуального массива StorSimple. Установка в качестве файлового сервера на портале Azure
@@ -33,7 +33,7 @@ ms.locfileid: "87006302"
 
 Установка и настройка могут занять около 10 минут. Информация в этой статье касается только развертывания виртуальных массивов StorSimple. Инструкции по развертыванию устройств StorSimple 8000 см. в статье о [развертывании устройства StorSimple серии 8000 с обновлением 2](storsimple-deployment-walkthrough-u2.md).
 
-## <a name="setup-prerequisites"></a>Предварительные требования к установке и настройке
+## <a name="setup-prerequisites"></a>Setup prerequisites
 Перед установкой и настройкой виртуального массива StorSimple проверьте следующее.
 
 * Вы подготовили виртуальный массив и подключились к нему, как описано в статье [Развертывание виртуального массива StorSimple — подготовка виртуального массива в Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md) или [Развертывание виртуального массива StorSimple — подготовка виртуального массива в VMware](storsimple-virtual-array-deploy2-provision-vmware.md).
@@ -124,7 +124,7 @@ ms.locfileid: "87006302"
 Чтобы завершить необходимую настройку устройства, выполните на [портале Azure](https://portal.azure.com/) указанные ниже действия.
 
 #### <a name="to-configure-the-device-as-file-server"></a>Настройка устройства в качестве файлового сервера
-1. Перейдите в службу StorSimple Device Manager и перейдите в раздел **управление > устройства**. В колонке **Устройства** выберите устройство, которое вы только что создали. Для него должно отображаться состояние **Готово к настройке**.
+1. Перейдите в службу StorSimple Device Manager и перейдите в раздел  **управление > устройства**. В колонке **Устройства** выберите устройство, которое вы только что создали. Для него должно отображаться состояние **Готово к настройке**.
    
    ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs2m.png) 
 2. Щелкните устройство. Вы увидите сообщение, указывающее, что устройство готово к настройке.
@@ -155,7 +155,7 @@ ms.locfileid: "87006302"
    
         ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs8m.png)
 
-5. После успешного создания учетных данных учетной записи хранения колонка **Настройка** обновится, и в ней появятся указанные данные. Щелкните **Настройка**.
+5. После успешного создания учетных данных учетной записи хранения колонка **Настройка** обновится, и в ней появятся указанные данные. Нажмите **Настроить**.
    
    ![Настройка файлового сервера](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs11m.png)
    

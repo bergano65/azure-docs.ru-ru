@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/24/2019
 ms.custom: seodec18
 ms.openlocfilehash: 6a993779bc47f1a9b2be8851fafe628ae4286f4a
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400508"
 ---
 # <a name="using-a-partitioned-graph-in-azure-cosmos-db"></a>Использование секционированного графа в Azure Cosmos DB
@@ -82,7 +82,7 @@ ms.locfileid: "91400508"
 
 - **Оптимизируйте запросы для получения данных в пределах секции**. Оптимальной стратегией секционирования является согласование с шаблонами запросов. Запросы для получения данных из одной секции обеспечивают наилучшую производительность.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Затем можно ознакомиться со следующими статьями:
 

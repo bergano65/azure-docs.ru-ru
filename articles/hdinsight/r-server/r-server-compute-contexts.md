@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
 ms.openlocfilehash: 4df3c24c6f0853c1ae7447a8e20e8c2944319686
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86087611"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>Параметры контекста вычислений для Служб машинного обучения в HDInsight
@@ -57,7 +57,7 @@ ms.locfileid: "86087611"
 
 С учетом этих принципов в следующем разделе приведены некоторые общие правила выбора контекста вычислений.
 
-### <a name="local"></a>Local
+### <a name="local"></a>Локальная
 
 - Если объем анализируемых данных мал и не требует повторяющегося анализа, то следует передать его непосредственно в подпрограммы анализа с помощью *локальных* или *localpar*.
 - Если нужно проанализировать данные небольшого или среднего объема, для которых потребуется повторный анализ, скопируйте их в локальную файловую систему, импортируйте в XDF-формат и проанализируйте в контексте *local* или *localpar*.
@@ -79,7 +79,7 @@ ms.locfileid: "86087611"
 
 Также см. [обзор распределенных вычислений](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-distributed-computing) в [документации Machine Learning Server](https://docs.microsoft.com/machine-learning-server/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы ознакомились с параметрами, которые доступны для указания необходимости и способа выполнения параллелизации между ядрами граничного узла или кластера HDInsight. Дополнительные сведения об использовании Служб машинного обучения в кластерах HDInsight см. в следующих статьях:
 

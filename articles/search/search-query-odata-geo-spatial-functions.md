@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 376cece922ca424ec78011224852b1fa5499da16
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88934843"
 ---
 # <a name="odata-geo-spatial-functions-in-azure-cognitive-search---geodistance-and-geointersects"></a>Геопространственные функции OData в Azure Когнитивный поиск `geo.distance` и `geo.intersects`
@@ -37,7 +37,7 @@ Azure Когнитивный поиск поддерживает геопрос�
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `geo.distance` `geo.intersects` функций и, а также геопространственных значений, в которых они работают:
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `geo.distance` `geo.intersects` функций и, а также геопространственные значения, по которым они работают:
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 

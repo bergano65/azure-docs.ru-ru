@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 07/10/2020
 author: jluk
 ms.openlocfilehash: 5b3dc3803cfb89f4a74d082b5913e69df1d03a00
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87986718"
 ---
 # <a name="reduce-latency-with-proximity-placement-groups-preview"></a>Сокращение задержки с помощью групп размещения с учетом расположения (Предварительная версия)
@@ -28,7 +28,7 @@ ms.locfileid: "87986718"
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Перед началом
 
 Нужно установить следующие ресурсы:
 
@@ -151,7 +151,7 @@ az aks nodepool add \
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [группах размещения][proximity-placement-groups]с учетом расположения.
 

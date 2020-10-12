@@ -10,10 +10,10 @@ services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
 ms.openlocfilehash: dd4a02ffdc062ed1940d35ca64e02a5e0a88a248
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91333330"
 ---
 # <a name="read-and-write-spatial-data"></a>Чтение и запись пространственных данных
@@ -29,7 +29,7 @@ ms.locfileid: "91333330"
 | кмл               | ✓  |  ✓  |
 | кмз               | ✓  |  ✓  |
 | Пространственный CSV       | ✓  |  ✓  |
-| Известный текст   | ✓  |  ✓  |
+| Well-Known текст   | ✓  |  ✓  |
 
 В следующих разделах описаны различные средства чтения и записи пространственных данных с помощью модуля пространственного ввода-вывода.
 
@@ -123,26 +123,26 @@ atlas.io.read(data, {
 );
 ```
 
-## <a name="read-and-write-well-known-text-wkt"></a>Чтение и запись хорошо известного текста (WKT)
+## <a name="read-and-write-well-known-text-wkt"></a>Чтение и запись Well-Known текста (WKT)
 
 [Хорошо известный текст](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) (WKT) — это стандартный открытый ГЕОПРОСТРАНСТВЕННЫЙ консорциум (OGC), представляющий пространственные геометрические объекты в виде текста. Многие геопространственные системы поддерживают WKT, такие как Azure SQL и Azure PostgreSQL, с помощью подключаемого модуля PostGIS. Как и большинство стандартов OGC, координаты форматируются как "Долгота широты" для согласования с соглашением "x y". Например, точка со долготой-110 и Широта 45 может быть написана `POINT(-110 45)` с использованием формата WKT.
 
 Хорошо известный текст можно считать с помощью `atlas.io.ogc.WKT.read` функции и написать с помощью `atlas.io.ogc.WKT.write` функции.
 
-## <a name="examples-of-reading-and-writing-well-known-text-wkt"></a>Примеры чтения и записи хорошо известного текста (WKT)
+## <a name="examples-of-reading-and-writing-well-known-text-wkt"></a>Примеры чтения и записи Well-Known текста (WKT)
 
 В следующем коде показано, как прочитать хорошо известную текстовую строку `POINT(-122.34009 47.60995)` и отобразить ее на карте с помощью пузырькового слоя.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Чтение хорошо известного текста' src='//codepen.io/azuremaps/embed/XWbabLd/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите <a href='https://codepen.io/azuremaps/pen/XWbabLd/'>хорошо известный текст</a> с помощью пера, Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Чтение Well-Known текста' src='//codepen.io/azuremaps/embed/XWbabLd/?height=500&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/XWbabLd/'>чтение Well-Known текста</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 Следующий код демонстрирует чтение и запись хорошо известного текста.
 
 <br/>
 
-<iframe height='700' scrolling='no' title='Чтение и запись хорошо известного текста' src='//codepen.io/azuremaps/embed/JjdyYav/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/JjdyYav/'>статью чтение и запись хорошо известного текста</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='700' scrolling='no' title='Чтение и запись Well-Known текста' src='//codepen.io/azuremaps/embed/JjdyYav/?height=700&theme-id=0&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io/azuremaps/pen/JjdyYav/'>Прочтите текст Well-Known чтения и записи</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="read-and-write-gml"></a>Чтение и запись GML
@@ -183,7 +183,7 @@ GML — это спецификация пространственных XML-ф�
 [Сведения о поддерживаемых форматах данных](spatial-io-supported-data-format-details.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

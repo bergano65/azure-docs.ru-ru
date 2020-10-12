@@ -8,10 +8,10 @@ ms.date: 08/24/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
 ms.openlocfilehash: 938968599f1824416666818a46cc73a1d33c5341
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90987745"
 ---
 # <a name="manage-azure-cosmos-db-resources-by-using-azure-storage-explorer"></a>Управление ресурсами Azure Cosmos DB с помощью Обозреватель службы хранилища Azure
@@ -38,19 +38,19 @@ ms.locfileid: "90987745"
 
 1. Выберите **Add an Azure Account** (Добавить учетную запись Azure), а затем щелкните **Войти**.
 
-   :::image type="content" source="./media/storage-explorer/connect-to-azure-subscription.png" alt-text="Снимок экрана: окно "подключение к службе хранилища Azure" с выбранным переключателем "добавить учетную запись Azure" и раскрывающееся меню среды Azure.":::
+   :::image type="content" source="./media/storage-explorer/connect-to-azure-subscription.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. В диалоговом окне **входа в Azure** выберите **Вход**и введите учетные данные Azure.
 
-    :::image type="content" source="./media/storage-explorer/sign-in.png" alt-text="Снимок экрана: окно входа, показывающее, где ввести учетные данные для подписки Azure.":::
+    :::image type="content" source="./media/storage-explorer/sign-in.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. Выберите свою подписку в списке и нажмите кнопку **Применить**.
 
-    :::image type="content" source="./media/storage-explorer/apply-subscription.png" alt-text="Снимок экрана: панель управления учетными записями, отображающая список подписок и кнопку "Применить".":::
+    :::image type="content" source="./media/storage-explorer/apply-subscription.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
     Панель обозревателя обновляется и отображает учетные записи в выбранной подписке.
 
-    :::image type="content" source="./media/storage-explorer/account-list.png" alt-text="Снимок экрана панели "Обозреватель", обновленный для отображения учетных записей в выбранной подписке.":::
+    :::image type="content" source="./media/storage-explorer/account-list.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
     Ваша **учетная запись Cosmos DB** подключена к вашей подписке Azure.
 
@@ -60,7 +60,7 @@ ms.locfileid: "90987745"
 
 1. Найдите **локальные и** присоединитесь к левому дереву, щелкните правой кнопкой мыши **Cosmos DB учетные записи**, а затем выберите **подключиться к Cosmos DB**.
 
-    :::image type="content" source="./media/storage-explorer/connect-to-db-by-connection-string.png" alt-text="Снимок экрана, показывающий раскрывающееся меню после щелчка правой кнопкой мыши, с выделенным пунктом "подключение к Azure Cosmos D B".":::
+    :::image type="content" source="./media/storage-explorer/connect-to-db-by-connection-string.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 2. В окне **Подключение к Cosmos DB** :
    1. Выберите API в раскрывающемся меню.
@@ -68,7 +68,7 @@ ms.locfileid: "90987745"
    1. Введите **метку учетной записи**, а затем нажмите кнопку **Далее** , чтобы проверить сводку.
    1. Выберите **подключить** , чтобы подключить учетную запись Azure Cosmos DB.
 
-      :::image type="content" source="./media/storage-explorer/connection-string.png" alt-text="Снимок экрана: окно подключения к Cosmos D B, в котором отображается раскрывающееся меню API, строка подключения и поле "метка учетной записи".":::
+      :::image type="content" source="./media/storage-explorer/connection-string.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ## <a name="use-a-local-emulator-to-connect-to-azure-cosmos-db"></a>Использование локального эмулятора для подключения к Azure Cosmos DB
 
@@ -78,14 +78,14 @@ ms.locfileid: "90987745"
 
 1. Найдите **локальные и** присоединитесь к левому дереву, щелкните правой кнопкой мыши **Cosmos DB учетные записи**, а затем выберите **подключиться к эмулятору Cosmos DB**.
 
-    :::image type="content" source="./media/storage-explorer/emulator-entry.png" alt-text="Снимок экрана, показывающий меню, отображаемое после щелчка правой кнопкой мыши с выделенным пунктом "подключение к эмулятору Azure Cosmos D B".":::
+    :::image type="content" source="./media/storage-explorer/emulator-entry.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. В окне **Подключение к Cosmos DB** :
    1. Вставьте строку подключения в поле **строка подключения** . Сведения о получении основной строки подключения см. в разделе [Получение строки подключения](manage-with-powershell.md#list-keys).
    1. Введите **метку учетной записи**, а затем нажмите кнопку **Далее** , чтобы проверить сводку.
    1. Выберите **подключить** , чтобы подключить учетную запись Azure Cosmos DB.
 
-      :::image type="content" source="./media/storage-explorer/emulator-dialog.png" alt-text="Снимок экрана: окно "подключение к Cosmos D", в котором отображается строка подключения и поле "метка учетной записи".":::
+      :::image type="content" source="./media/storage-explorer/emulator-dialog.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ## <a name="azure-cosmos-db-resource-management"></a>Управление ресурсами Azure Cosmos DB
 
@@ -105,13 +105,13 @@ ms.locfileid: "90987745"
 
 * Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB или базу данных, а затем выберите пункт **Открыть на портале** , чтобы управлять ресурсом в браузере на портал Azure.
 
-  :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="Снимок экрана, показывающий меню, отображаемое после щелчка правой кнопкой мыши с выделенным пунктом открыть в портале.":::
+  :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 * Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB, базу данных или коллекцию, а затем выберите команду **Добавить для быстрого доступа** , чтобы добавить ее в меню быстрого доступа.
 
 * Выберите **Поиск здесь** , чтобы включить поиск по ключевым словам в выбранном пути.
 
-    :::image type="content" source="./media/storage-explorer/search-from-here.png" alt-text="Снимок экрана, показывающий выделенное поле поиска.":::
+    :::image type="content" source="./media/storage-explorer/search-from-here.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="database-and-collection-management"></a>Управление базами данных и коллекциями
 
@@ -119,7 +119,7 @@ ms.locfileid: "90987745"
 
 1. Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB и выберите команду **создать базу данных**.
 
-   :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="Снимок экрана, показывающий меню, отображаемое после щелчка правой кнопкой мыши с выделенным пунктом "создать базу данных".":::
+   :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. Введите имя базы данных и нажмите клавишу **Ввод** для завершения.
 
@@ -127,28 +127,28 @@ ms.locfileid: "90987745"
 
 1. Щелкните правой кнопкой мыши базу данных и выберите команду **Удалить базу данных**. 
 
-   :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="Снимок экрана, показывающий меню, отображаемое после щелчка правой кнопкой мыши с выделенным параметром удалить базу данных.":::
+   :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. Во всплывающем окне выберите **Да** . После удаления узла базы данных учетная запись Azure Cosmos DB будет обновлена автоматически.
 
-   :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="Снимок экрана окна подтверждения с выделенной кнопкой "Да".":::
+   :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="create-a-collection"></a>Создание коллекции
 
 1. Щелкните правой кнопкой мыши базу данных и выберите команду **создать коллекцию**.
 
-   :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="Снимок экрана, показывающий меню, отображаемое после щелчка правой кнопкой мыши с выделенным пунктом "создать коллекцию".":::
+   :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. В окне Создание коллекции введите требуемые сведения, например **идентификатор коллекции** и **емкость хранилища**, и т. д. Нажмите кнопку **ОК** для завершения.
 
-   :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="Снимок экрана: окно "Создание коллекции" с кнопками сбора I D и емкостью хранилища.":::
+   :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 1. Выберите параметр **без ограничений** , чтобы можно было указать ключ секции, а затем нажмите кнопку **ОК** для завершения.
 
    > [!NOTE]
    > Если ключ секции используется при создании коллекции, то после завершения создания вы не сможете изменить значение ключа секции в коллекции.
 
-    :::image type="content" source="./media/storage-explorer/partitionkey.png" alt-text="Снимок экрана: окно "Создание коллекции", в котором отображается неограниченный объем хранилища и выделенный ключ раздела.":::
+    :::image type="content" source="./media/storage-explorer/partitionkey.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="delete-a-collection"></a>Удаление коллекции
 
@@ -156,7 +156,7 @@ ms.locfileid: "90987745"
 
     После удаления узла коллекции база данных будет обновлена автоматически.
 
-    :::image type="content" source="./media/storage-explorer/delete-collection.png" alt-text="Снимок экрана, показывающий меню, отображаемое после щелчка правой кнопкой мыши с выделенным пунктом удалить коллекцию.":::
+    :::image type="content" source="./media/storage-explorer/delete-collection.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="document-management"></a>Управление документами
 
@@ -165,7 +165,7 @@ ms.locfileid: "90987745"
 - Откройте **документы** на левой панели, выберите **создать документ**, измените содержимое на правой панели, а затем выберите **сохранить**.
 - Можно также обновить существующий документ, а затем нажать кнопку **сохранить**. Чтобы отменить изменения, выберите **отменить**.
 
-  :::image type="content" source="./media/storage-explorer/document.png" alt-text="Снимок экрана, показывающий документы, выделенные на левой панели. В правой области выделены кнопки Создать документ, сохранить и отменить.":::
+  :::image type="content" source="./media/storage-explorer/document.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="delete-a-document"></a>Удаление документа
 
@@ -175,7 +175,7 @@ ms.locfileid: "90987745"
 
 * Чтобы изменить фильтр документа, введите SQL- [запрос](how-to-sql-query.md)и нажмите кнопку **Применить**.
 
-  :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="Снимок экрана с правой панелью, отображающий кнопки фильтра и применения, ИДЕНТИФИКАЦИОНный номер и выделенное поле запроса.":::
+  :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="graph-management"></a>Управление графом
 
@@ -184,7 +184,7 @@ ms.locfileid: "90987745"
 * Чтобы создать новую вершину, откройте **диаграмму** в левой области, выберите **создать вершину**, измените содержимое и нажмите кнопку **ОК**.
 * Чтобы изменить существующую вершину, щелкните значок пера на правой панели.
 
-   :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="Снимок экрана: диаграмма, выбранная на левой панели, с отображением новой вершины и значком пера, выделенным на правой панели.":::
+   :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="delete-a-graph"></a>Удаление графа
 
@@ -194,7 +194,7 @@ ms.locfileid: "90987745"
 
 * Чтобы изменить фильтр графа, введите [запрос Gremlin](gremlin-support.md)и нажмите кнопку **Применить фильтр**.
 
-   :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="Снимок экрана, на котором показан график, выбранный на левой панели, с отображением фильтра применения и поля запроса, выделенного на правой панели.":::
+   :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="table-management"></a>Управление таблицами
 
@@ -206,7 +206,7 @@ ms.locfileid: "90987745"
    1. Нажмите кнопку **Добавить свойство** , чтобы добавить свойство.
    1. Выберите команду **Вставить**.
 
-      :::image type="content" source="./media/storage-explorer/table.png" alt-text="Снимок экрана, на котором показаны сущности, выделенные на левой панели, а также показаны кнопки Добавить, изменить, добавить свойство и вставить, выделенные на правой панели.":::
+      :::image type="content" source="./media/storage-explorer/table.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 * Чтобы изменить таблицу, выберите **изменить**, измените содержимое, а затем щелкните **Обновить**.
 
@@ -217,26 +217,26 @@ ms.locfileid: "90987745"
 * Для импорта нажмите кнопку **Импорт** , а затем выберите существующую таблицу.
 * Чтобы выполнить экспорт, нажмите кнопку **Экспорт** , а затем выберите назначение.
 
-   :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="Снимок экрана, на котором показаны кнопки импорта и экспорта, выделенные на правой панели.":::
+   :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="delete-entities"></a>Удаление сущностей
 
 * Выберите сущности, а затем нажмите кнопку **Удалить** .
 
-  :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="Снимок экрана, на котором показана кнопка "Удалить", выделенная на правой панели, и всплывающее окно подтверждения с выделенным параметром "Да".":::
+  :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="query-a-table"></a>запрос к таблице;
 
 - Нажмите кнопку **запрос** , введите условие запроса, а затем нажмите кнопку **выполнить запрос** . Чтобы закрыть панель запроса, нажмите кнопку **закрыть запрос** .
 
-  :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="Снимок экрана правой панели, показывающий кнопку "выполнить запрос" и выделенную кнопку "закрыть запрос".":::
+  :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="manage-stored-procedures-triggers-and-udfs"></a>Управление хранимыми процедурами, триггерами и определяемыми пользователем функциями
 
 * Чтобы создать хранимую процедуру, выполните следующие действия.
   1. В левом дереве щелкните правой кнопкой мыши пункт **хранимые процедуры**и выберите команду **создать хранимую процедуру**.
   
-     :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="Снимок экрана с левой панелью, отображающий меню, которое отображается после щелчка правой кнопкой мыши, с выделенным параметром "создать хранимую процедуру".":::
+     :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
   
   1. Введите имя слева, введите скрипты хранимой процедуры на правой панели, а затем щелкните **создать**.
   
@@ -244,7 +244,7 @@ ms.locfileid: "90987745"
 
 * Операции для **триггеров** и **UDF** похожи на **хранимые процедуры**.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Ниже приведены решения распространенных проблем, возникающих при использовании Azure Cosmos DB в Обозреватель службы хранилища.
 
@@ -296,7 +296,7 @@ ms.locfileid: "90987745"
   * extaccounts-файл.
 * Нажмите клавишу F12, чтобы открыть консоль разработчика. Просмотрите консоль на наличие сообщений об ошибках при входе.
 
-   :::image type="content" source="./media/storage-explorer/console.png" alt-text="Снимок экрана консоли средств разработчика, в котором отображается выделенная консоль.":::
+   :::image type="content" source="./media/storage-explorer/console.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 #### <a name="unable-to-see-the-authentication-page"></a>Не отображается страница аутентификации
 
@@ -331,26 +331,26 @@ ms.locfileid: "90987745"
 
 После выбора узла **Разработка** в **локальном и присоединенном** узле в дереве слева нет ответа. Такое поведение ожидаемо.
 
-:::image type="content" source="./media/storage-explorer/development.png" alt-text="Снимок экрана, показывающий выбранный узел разработки.":::
+:::image type="content" source="./media/storage-explorer/development.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="attach-an-azure-cosmos-db-account-in-the-local-and-attached-node-error"></a>Присоединение учетной записи Azure Cosmos DB в **локальной и вложенной** ошибках узла
 
 Если после подключения учетной записи Azure Cosmos DB в **локальном и присоединенном** узле появляется следующая ошибка, убедитесь, что вы используете правильную строку подключения.
 
-:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Снимок экрана: всплывающее окно ошибки "не удалось получить дочерние ресурсы", указывающее на функцию getaddrinfo ЕНОТФАУНД.":::
+:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 ### <a name="expand-azure-cosmos-db-node-error"></a>Ошибка развертывания узла Azure Cosmos DB
 
 При попытке развернуть узлы в дереве слева может появиться следующее сообщение об ошибке.
 
-:::image type="content" source="./media/storage-explorer/expand-error.png" alt-text="Снимок экрана: всплывающее окно ошибки "не удалось получить дочерние ресурсы", указывающее на невозможность подключения к этой учетной записи Cosmos D B.":::
+:::image type="content" source="./media/storage-explorer/expand-error.png" alt-text="Снимок экрана, показывающий значок подключаемого модуля на левой панели.":::
 
 Попробуйте следующие предложения:
 
 * Убедитесь, что Azure Cosmos DB учетная запись находится в состоянии готовности к работе. Повторите попытку, когда учетная запись будет успешно создана.
 * Если учетная запись находится под **быстрым доступом** или **локальными и подключенными** узлами, проверьте, не удалена ли учетная запись. В этом случае необходимо удалить узел вручную.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите это видео, чтобы узнать, как использовать Azure Cosmos DB в Обозреватель службы хранилища Azure: [используйте Azure Cosmos DB в обозреватель службы хранилища Azure](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be).
 * Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).

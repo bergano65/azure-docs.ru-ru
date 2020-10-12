@@ -4,10 +4,10 @@ description: Загрузка VHD-файла в учетную запись хр
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: d4e421932ebba5d4f389000c12bcf44ac2f37599
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91282533"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-microsoft-azure-storage-explorer"></a>Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
@@ -110,7 +110,7 @@ ms.locfileid: "91282533"
 
         ![Статус отправки файлов][10]  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление пользовательскими образами Azure DevTest Labs для создания виртуальных машин](devtest-lab-create-template.md)
 - [Создание пользовательского образа из VHD-файла с помощью PowerShell](devtest-lab-create-custom-image-from-vhd-using-powershell.md)

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.openlocfilehash: 58f1c2621165a7074c04752832c6560b2fd3e423
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88935438"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Пример. Создание пользовательского навыка распознавателя форм
@@ -59,7 +59,7 @@ ms.locfileid: "88935438"
 POST https://localhost:7071/api/analyze-form
 ```
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Начните с шаблона текста запроса ниже.
 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 description: Описание процессов удаленной отладки в службе Kubernetes Azure с помощью Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
 ms.openlocfilehash: fd984ff6a8ebe336f76643406c0957769dbfd3da
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88213385"
 ---
 # <a name="how-remote-debugging-your-code-with-azure-dev-spaces-works"></a>Как выполняется удаленная отладка кода с помощью Azure Dev Spaces
@@ -28,9 +28,9 @@ Azure Dev Spaces предоставляет несколько способов
 
 Изображение отладчика автоматически определяется средствами на стороне клиента. В нем используется метод, аналогичный использованному во время работы Dockerfile и Helm диаграмма `azds prep` . После подключения отладчика к образу приложения он запускается с помощью `azds exec` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о работе Azure Dev Spaces.
+Узнайте больше о принципах работы Azure Dev Spaces.
 
 > [!div class="nextstepaction"]
 > [Принцип работы Azure Dev Spaces](how-dev-spaces-works.md)

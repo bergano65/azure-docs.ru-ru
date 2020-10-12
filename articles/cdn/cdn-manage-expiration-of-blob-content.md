@@ -16,10 +16,10 @@ ms.topic: how-to
 ms.date: 02/1/2018
 ms.author: mazha
 ms.openlocfilehash: 49748b3d77d097e655ee6ec5777022c038841a6d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87073132"
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-cdn"></a>Управление сроком действия хранилища BLOB-объектов Azure в Azure CDN
@@ -93,7 +93,7 @@ ms.locfileid: "87073132"
 
 [Azure PowerShell](/powershell/azure/) — это одно из самых быстрых и мощных средств администрирования служб Azure. Используйте командлет `Get-AzStorageBlob`, чтобы получить ссылку на большой двоичный объект, а затем определите свойство `.ICloudBlob.Properties.CacheControl`. 
 
-Например.
+Пример:
 
 ```powershell
 # Create a storage context
@@ -117,7 +117,7 @@ $blob.ICloudBlob.SetProperties()
 ## <a name="setting-cache-control-headers-by-using-net"></a>Определение заголовков Cache-Control с помощью .NET
 Чтобы определить заголовок `Cache-Control` для большого двоичного объекта с помощью кода .NET, задайте свойство [CloudBlob.Properties.CacheControl](/dotnet/api/microsoft.azure.storage.blob.blobproperties.cachecontrol) при помощи [клиентской библиотеки службы хранилища Azure для .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md).
 
-Например.
+Пример:
 
 ```csharp
 class Program
@@ -180,7 +180,7 @@ azure storage blob upload -c <connectionstring> -p cacheControl="max-age=3600" .
 ## <a name="testing-the-cache-control-header"></a>Проверка заголовка Cache-Control
 Вы легко можете проверить установленный для BLOB-объектов срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваш BLOB-объект содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа также можно использовать такие средства, как [wget](https://www.gnu.org/software/wget/), [POST](https://www.getpostman.com/)или [Fiddler](https://www.telerik.com/fiddler) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 * [Узнайте, как управлять сроком действия содержимого облачных служб в сети доставки содержимого (CDN) Azure](cdn-manage-expiration-of-cloud-service-content.md).
 * [Дополнительные сведения о кэшировании](cdn-how-caching-works.md)
 

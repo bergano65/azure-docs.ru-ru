@@ -8,10 +8,10 @@ ms.date: 08/14/2020
 ms.author: tisande
 ms.custom: query-reference
 ms.openlocfilehash: 87663c18ddaa5da6740a0f54aa5f2812cbb06af8
-ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88227389"
 ---
 # <a name="datetimepart-azure-cosmos-db"></a>Датетимепарт (Azure Cosmos DB)
@@ -29,14 +29,14 @@ DateTimePart (<DateTimePart> , <DateTime>)
 *датетимепарт*  
    Часть даты, для которой Датетимепарт будет возвращать значение. В этой таблице перечислены все допустимые аргументы Датетимепарт:
 
-| датетимепарт | сокращения;        |
+| DateTimePart | сокращения;        |
 | ------------ | -------------------- |
-| Год         | "Year", "гггг", "гг" |
+| Year;         | "Year", "гггг", "гг" |
 | Месяц        | "month", "mm", "m"   |
 | День          | "Day", "DD", "d"     |
 | Час         | "Hour", "HH"         |
 | Минута       | "Minute", "MI", "n"  |
-| Секунда       | "Second", "SS", "s"  |
+| Second       | "Second", "SS", "s"  |
 | Миллисекунда  | "миллисекунда", "MS"  |
 | Микросекунды  | "микросекунда", "MCS" |
 | Потребовавшееся   | "наносекундных", "NS"   |
@@ -87,7 +87,7 @@ SELECT DateTimePart("mcs", "2020-01-02T03:04:05.6789123Z") AS MicrosecondsValue
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

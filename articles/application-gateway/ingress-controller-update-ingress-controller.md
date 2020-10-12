@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: f20302a4993da1754255254ce6d69c000750d4ab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84806781"
 ---
 # <a name="how-to-upgrade-application-gateway-ingress-controller-using-helm"></a>How to upgrade Application Gateway Ingress Controller using Helm (Обновление контроллера входящего трафика Шлюза приложений с помощью Helm) 
@@ -34,7 +34,7 @@ ms.locfileid: "84806781"
         https://appgwingress.blob.core.windows.net/ingress-azure-helm-package/
     ```
 
-## <a name="upgrade"></a>Upgrade
+## <a name="upgrade"></a>Обновление
 
 1. Обновите репозиторий АГИК Helm, чтобы получить последний выпуск:
 
@@ -56,7 +56,7 @@ ms.locfileid: "84806781"
     application-gateway-kubernetes-ingress/ingress-azure    0.6.0           0.6.0           Use Azure Application Gateway as the ingress for an Azure...
     ```
 
-    Последняя доступная версия из приведенного выше списка:`0.7.0-rc1`
+    Последняя доступная версия из приведенного выше списка: `0.7.0-rc1`
 
 1. Просмотр установленных на данный момент диаграмм Helm:
 
@@ -92,7 +92,7 @@ ms.locfileid: "84806781"
     helm history odd-billygoat
     ```
 
-    Пример результатов выполнения:
+    Образец вывода:
 
     ```bash
     REVISION        UPDATED                         STATUS          CHART                   DESCRIPTION
@@ -100,7 +100,7 @@ ms.locfileid: "84806781"
     2               Fri Jun 21 15:56:06 2019        FAILED          ingress-azure-xx        xxxx
     ```
 
-    В примере выходных данных `helm history` команды он выглядит как Последнее успешное развертывание нашей `odd-billygoat` редакции.`1`
+    В примере выходных данных `helm history` команды он выглядит как Последнее успешное развертывание нашей `odd-billygoat` редакции. `1`
 
 1. Откат к последней успешной редакции:
 

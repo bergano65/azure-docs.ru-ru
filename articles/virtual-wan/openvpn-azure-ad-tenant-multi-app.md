@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: alzam
 ms.openlocfilehash: 57fd36366eef284e2975633fbb34549f4316cde6
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90988262"
 ---
 # <a name="create-an-azure-active-directory-ad-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory (AD) для подключений по протоколу Опенвпн P2S
@@ -123,11 +123,11 @@ ms.locfileid: "90988262"
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
+    !["Удалить"](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/openvpn-azure-ad-tenant-multi-app/delete/delete2.jpg)
+    !["Удалить"](./media/openvpn-azure-ad-tenant-multi-app/delete/delete2.jpg)
 
 #### <a name="to-diagnose-connection-issues"></a><a name="diagnose"></a>Диагностика проблем с подключением
 

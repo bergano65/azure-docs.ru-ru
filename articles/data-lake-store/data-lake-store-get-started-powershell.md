@@ -8,10 +8,10 @@ ms.date: 06/27/2018
 ms.author: twooley
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: ba51c96e3195f75a0ccf49baded67737f4665615
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89077744"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-azure-powershell"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью Azure PowerShell
@@ -162,7 +162,7 @@ Remove-AzDataLakeStoreAccount -Name $dataLakeStorageGen1Name
 
 При появлении запроса введите **Y** , чтобы удалить учетную запись.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения](data-lake-store-performance-tuning-powershell.md)
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md)

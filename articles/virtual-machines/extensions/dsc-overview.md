@@ -17,10 +17,10 @@ ms.date: 07/13/2020
 ms.author: magoedte
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 ms.openlocfilehash: 900273ec48c71e6f88d28bccff6f1e2abd412c1d
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89079580"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
@@ -203,7 +203,7 @@ az vm extension set \
 
 Журналы для расширения хранятся в следующем расположении: `C:\WindowsAzure\Logs\Plugins\Microsoft.Powershell.DSC\<version number>`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о PowerShell DSC см. в [центре документации по PowerShell](/powershell/scripting/dsc/overview/overview).
 - Изучите [шаблон Resource Manager для расширения DSC](dsc-template.md).

@@ -13,10 +13,10 @@ ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 04/20/2020
 ms.openlocfilehash: a335f6ac015397ba2b2634d0d604c194a768260a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91283247"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance-preview"></a>Репликация транзакций с помощью Управляемый экземпляр Azure SQL (Предварительная версия)
@@ -72,7 +72,7 @@ ms.locfileid: "91283247"
 
 Существуют разные [типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication).
 
-| Replication | База данных SQL Azure | Управляемый экземпляр SQL Azure |
+| Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да |
 | [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
@@ -190,7 +190,7 @@ ms.locfileid: "91283247"
 - Для отработки отказа с потерей данных также будет работать репликация. После этого будет выполнена повторная репликация потерянных изменений.
 - Для отработки отказа с потерей данных, но потери данных выходят за пределы срока хранения базы данных распространителя, администратору SQL Управляемый экземпляр потребуется повторно инициализировать базу данных подписки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о настройке репликации транзакций см. в следующих учебниках:
 
@@ -199,7 +199,7 @@ ms.locfileid: "91283247"
 - [Создайте публикацию](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
 - [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**). )
 
-## <a name="see-also"></a>См. также раздел  
+## <a name="see-also"></a>См. также  
 
 - [Репликация с помощью Управляемый экземпляр SQL и группы отработки отказа](transact-sql-tsql-differences-sql-server.md#replication)
 - [Репликация в Базу данных SQL](../database/replication-to-sql-database.md)

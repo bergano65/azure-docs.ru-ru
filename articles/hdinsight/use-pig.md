@@ -10,10 +10,10 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 01/28/2020
 ms.openlocfilehash: 8fd42169ab6ccb144215e1b6ad2ece09ff55c07f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87072838"
 ---
 # <a name="use-apache-pig-with-apache-hadoop-on-hdinsight"></a>Использование Apache Pig с Apache Hadoop в HDInsight
@@ -42,7 +42,7 @@ Pig Latin также поддерживает пользовательские �
 
 Дополнительные сведения о Pig Latin см. в [справочном руководстве по Pig Latin 1](https://archive.cloudera.com/cdh/3/pig/piglatin_ref1.html) и [справочном руководстве по Pig Latin 2](https://archive.cloudera.com/cdh/3/pig/piglatin_ref2.html).
 
-## <a name="example-data"></a><a id="data"></a>Демонстрационные данные
+## <a name="example-data"></a><a id="data"></a>Пример данных
 
 HDInsight предоставляет различные наборы демонстрационных данных, которые хранятся в каталогах `/example/data` и `/HdiSamples`. Эти каталоги находятся в хранилище по умолчанию для кластера. В примере Pig в этом документе используется файл *log4j* из `/example/data/sample.log`.
 
