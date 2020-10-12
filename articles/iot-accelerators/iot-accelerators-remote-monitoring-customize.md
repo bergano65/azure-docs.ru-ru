@@ -10,10 +10,10 @@ ms.date: 11/09/2018
 ms.topic: conceptual
 ms.custom: devx-track-js
 ms.openlocfilehash: 2789ed642979616a4491a61d146d8468552ec2e5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91318472"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решения для удаленного мониторинга
@@ -493,7 +493,7 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 * [Микрослужба конфигурации для решений Интернета вещей Azure (Java)](https://github.com/Azure/remote-monitoring-services-java/tree/master/config)
 * [Веб-интерфейс для удаленного мониторинга Интернета вещей Azure PCS](https://github.com/Azure/pcs-remote-monitoring-webui)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решения для удаленного мониторинга. Чтобы узнать больше о настройке пользовательского интерфейса, обратитесь к следующим статьям:
 

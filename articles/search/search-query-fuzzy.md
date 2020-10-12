@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/08/2020
 ms.openlocfilehash: faa98f1c52cfe2dd0e19f085f4d33dedb6f01851
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88934894"
 ---
 # <a name="fuzzy-search-to-correct-misspellings-and-typos"></a>Нечеткий поиск для исправления ошибок и опечаток
@@ -132,7 +132,7 @@ search=scal~&highlight=Description
 
 В этом развернутом примере видно, что выделение попаданий может привести к неоднозначным результатам. Во всех случаях возвращается один и тот же документ. Если вы использовали идентификаторы документов для проверки совпадения, вы могли пропустить смену из "специального" на "SQL".
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Как работает полнотекстовый поиск в Когнитивный поиск Azure (архитектура анализа запросов)](search-lucene-query-architecture.md)
 + [Обозреватель поиска](search-explorer.md)

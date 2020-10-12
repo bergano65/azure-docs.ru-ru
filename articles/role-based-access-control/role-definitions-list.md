@@ -15,10 +15,10 @@ ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 9819b90ba390e8601cc33a17338ce9b16bf3b3cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84982498"
 ---
 # <a name="list-azure-role-definitions"></a>Вывод списка определений ролей Azure
@@ -344,7 +344,7 @@ az role definition list --name "Virtual Machine Contributor" --output json --que
 1. В URI замените *{Scope}* областью, для которой необходимо получить список определений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -356,7 +356,7 @@ az role definition list --name "Virtual Machine Contributor" --output json --que
 1. Замените *{Filter}* условием, которое необходимо применить для фильтрации списка определений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=atScopeAndBelow()` | Перечисляет определения ролей для указанной области и всех ее подобластей. |
     > | `$filter=type+eq+'{type}'` | Перечисляет определения ролей указанного типа. Тип роли может быть `CustomRole` или `BuiltInRole` . |
@@ -429,7 +429,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId1}/providers/Micro
 1. В URI замените *{Scope}* областью, для которой требуется перечислить определение роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -474,7 +474,7 @@ GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitio
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Встроенные роли Azure](built-in-roles.md)
 - [Настраиваемые роли Azure](custom-roles.md)

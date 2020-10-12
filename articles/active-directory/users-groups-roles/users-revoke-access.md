@@ -14,10 +14,10 @@ ms.date: 07/15/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a8d1b6d912cadb073251d72ee327f4b19950ab1b
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90055191"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Отозвать доступ пользователей в Azure Active Directory
@@ -117,7 +117,7 @@ ms.locfileid: "90055191"
 
 - Для **приложений, использующих маркеры сеанса**, существующие сеансы завершаются после истечения срока действия маркера. Если отключенное состояние пользователя синхронизировано с приложением, приложение может автоматически отозвать существующие сеансы пользователя, если оно настроено для этого.  Время, необходимое для работы, зависит от частоты синхронизации между приложением и Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Рекомендации по обеспечению безопасного доступа для администраторов Azure AD](directory-admin-roles-secure.md)
 - [Добавление или обновление сведений о профиле пользователя](../fundamentals/active-directory-users-profile-azure-portal.md)

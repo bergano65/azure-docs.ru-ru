@@ -13,10 +13,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: b7324115c880fb1ee4d5a1730a3b84a289cee4b0
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89490145"
 ---
 # <a name="copy-data-to-and-from-azure-synapse-analytics-formerly-sql-data-warehouse-using-azure-data-factory"></a>Копирование данных в Azure синапсе Analytics (прежнее хранилище данных SQL) и обратно с помощью фабрики данных Azure
@@ -320,7 +320,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 | время; | время; |
 | DateTimeOffset | DateTimeOffset |
 | SmallDateTime | SmallDateTime |
-| текст | Varchar (до 8000) |
+| Текст | Varchar (до 8000) |
 | NText | NVarChar (до 4000) |
 | Образ — | VarBinary (до 8000) |
 | UniqueIdentifier | UniqueIdentifier |
@@ -368,14 +368,14 @@ All columns of the table must be specified in the INSERT BULK statement.
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Object * |
-| текст |String, Char[] |
+| text |String, Char[] |
 | time |TimeSpan |
 | TIMESTAMP |Byte[] |
 | tinyint |Byte |
 | UNIQUEIDENTIFIER |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| Xml |Xml |
+| xml |Xml |
 
 Также можно сопоставить столбцы из набора данных, используемого в качестве источника, со столбцами из приемника в определении действия копирования. Дополнительные сведения см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).
 

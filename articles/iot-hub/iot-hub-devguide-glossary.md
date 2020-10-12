@@ -12,10 +12,10 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 2b7a81357cc6ee2608d2acd3051dcac3e5d0e07e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87023472"
 ---
 # <a name="glossary-of-iot-hub-terms"></a>Глоссарий терминов, связанных с Центром Интернета вещей
@@ -58,7 +58,7 @@ ms.locfileid: "87023472"
 
 [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) — это кроссплатформенное расширение Visual Studio Code с открытым кодом, которое помогает управлять Центром Интернета вещей и устройствами в VS Code. С помощью средств Azure IoT разработчики могут без труда создавать проекты Интернета вещей в VS Code.
 
-## <a name="azure-portal"></a>портал Azure;
+## <a name="azure-portal"></a>Портал Azure
 
 [Портал Microsoft Azure](https://portal.azure.com) — это центральное место, где можно подготавливать ресурсы Azure и управлять ими. Содержимое портала упорядочено с помощью _колонок_.
 
@@ -74,7 +74,7 @@ ms.locfileid: "87023472"
 
 [Служебная шина](../service-bus/index.md) обеспечивает взаимодействие с облаком с помощью корпоративной системы обмена сообщениями и передачи данных, что позволяет подключать локальные решения к облаку. В некоторых учебниках, посвященных Центру Интернета вещей, упоминаются [очереди](../service-bus-messaging/service-bus-messaging-overview.md) служебной шины.
 
-## <a name="azure-storage"></a>Служба хранилища Azure
+## <a name="azure-storage"></a>Хранилище Azure
 
 [Служба хранилища Azure](../storage/common/storage-introduction.md) — это решение облачного хранилища. Она включает в себя службу хранилища BLOB-объектов, которую можно использовать для хранения объектов с неструктурированными данными. В некоторых учебниках, посвященных Центру Интернета вещей, используется хранилище BLOB-объектов.
 

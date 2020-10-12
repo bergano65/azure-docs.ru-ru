@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.openlocfilehash: bae4cb72201bbc1653db5bb549d67531bda71d50
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91537724"
 ---
 # <a name="query-types-and-composition-in-azure-cognitive-search"></a>Типы запросов и композиция в Azure Когнитивный поиск
@@ -165,7 +165,7 @@ Azure Когнитивный поиск поддерживает широкий 
 ### <a name="hit-highlighting"></a>Выделение совпадений
 В Azure Когнитивный поиск с помощью **`highlight`** параметров, и можно легко подчеркнуть точную часть результатов поиска, соответствующую поисковому запросу **`highlightPreTag`** **`highlightPostTag`** . Можно указать, какие из полей с *возможностью поиска* должны быть выделены соответствующим текстом, а также указать точные Теги строк для добавления к началу и концу совпадающего текста, возвращаемого Azure когнитивный Поиск.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Как работает полнотекстовый поиск в Когнитивный поиск Azure (архитектура анализа запросов)](search-lucene-query-architecture.md)
 + [Обозреватель поиска](search-explorer.md)

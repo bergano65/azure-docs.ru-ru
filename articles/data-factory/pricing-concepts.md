@@ -11,10 +11,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.openlocfilehash: a80e0f1b62257fdbce6598c9cc4088701cc2ae9c
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90983614"
 ---
 # <a name="understanding-data-factory-pricing-through-examples"></a>Изучение ценообразования Фабрики данных Azure посредством примеров
@@ -211,7 +211,7 @@ ms.locfileid: "90983614"
 
 Ответ. будет разрешено не более 50 параллельных действий конвейера.  Действие конвейера 51th будет поставлено в очередь, пока не будет открыта Свободная ячейка. То же самое для внешних действий. Допускается не более 800 одновременных внешних действий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы ознакомились с ценами на Фабрику данных Azure, можно начинать работу.
 

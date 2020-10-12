@@ -8,10 +8,10 @@ ms.date: 12/19/2019
 ms.author: bwren
 ms.subservice: logs
 ms.openlocfilehash: 6ea960e93dba634573ec1ef594f1d2c49be57ca9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84945313"
 ---
 # <a name="overview-of-azure-platform-logs"></a>Общие сведения о журналах платформы Azure
@@ -20,7 +20,7 @@ ms.locfileid: "84945313"
 ## <a name="types-of-platform-logs"></a>Типы журналов платформы
 В следующей таблице перечислены конкретные журналы платформы, доступные на разных уровнях Azure.
 
-| Журнал | Уровень | Описание: |
+| Журнал | Уровень | Описание |
 |:---|:---|:---|
 | [Журналы ресурсов](resource-logs.md) | ресурсов Azure | Предоставьте сведения об операциях, которые выполнялись в ресурсе Azure ( *плоскость данных*), например получение секрета из Key Vault или выполнение запроса к базе данных. Содержимое журналов ресурсов зависит от службы и типа ресурса Azure.<br><br>*Журналы ресурсов ранее назывались журналами диагностики.*  |
 | [Журнал действий](activity-log.md) | Подписка Azure | Предоставляет подробные сведения об операциях с каждым ресурсом Azure в подписке извне (*плоскость управления*) в дополнение к обновлениям событий работоспособности службы. Используйте журнал _действий, чтобы определить,_ _кто_и _когда_ для любых операций записи (размещение, публикация, удаление), выполненных с ресурсами в вашей подписке. Для каждой подписки Azure существует один журнал действий. |
@@ -53,12 +53,12 @@ ms.locfileid: "84945313"
 - Дополнительные сведения о создании параметров диагностики для журналов действий или журналов ресурсов см. в разделе [Создание параметров диагностики для отправки журналов платформы и метрик в разные места назначения](diagnostic-settings.md). 
 - Дополнительные сведения о создании параметров диагностики для журналов Azure Active Directory см. в следующих статьях.
   - [Интеграция журналов Azure AD с Azure Monitor журналами](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
-  - [Учебник. потоковая передача журналов Azure Active Directory в концентратор событий Azure](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
+  - [Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md)
   - [Руководство. архивация журналов Azure AD в учетную запись хранения Azure](../../active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md)
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о журнале действий](activity-log.md)
 * [Дополнительные сведения о журналах ресурсов](resource-logs.md)

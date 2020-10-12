@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
 ms.openlocfilehash: 63adb5d6898fd467a0557aa147e54f814c167e72
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91400141"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
@@ -46,7 +46,7 @@ ms.locfileid: "91400141"
 ## <a name="azure-classic-deployment-model"></a><a name="classic-model"></a>классическая модель развертывания Azure
 Одна из двух [моделей развертывания](resource-manager-deployment-model.md) , которые используются для развертывания ресурсов в Azure (новой моделью является модель Azure Resource Manager). Некоторые службы Azure поддерживают только модель развертывания с помощью Resource Manager, некоторые — только классическую модель развертывания, а другие — обе модели. Поддерживаемые модели указаны в документации по соответствующей службе Azure.
 
-## <a name="azure-command-line-interface-cli"></a><a name="cli"></a>Интерфейс командной строки Azure (CLI)
+## <a name="azure-command-line-interface-cli"></a><a name="cli"></a>интерфейс командной строки Azure (CLI)
 Интерфейс командной строки, который можно использовать для управления службами Azure на компьютерах Windows, macOS и Linux.  Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки. Ознакомьтесь с [Azure CLI](/cli/azure).
 
 ## <a name="azure-powershell"></a><a name="powershell"></a>Azure PowerShell
@@ -153,7 +153,7 @@ JSON-файл, который декларативно определяет од
 ## <a name="web-app"></a>Веб-приложение
 Другое название [приложения службы приложений](#app-service-app).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Начало работы с Azure](https://azure.microsoft.com/get-started/)
 * [Центр облачных ресурсов](https://azure.microsoft.com/resources/)  

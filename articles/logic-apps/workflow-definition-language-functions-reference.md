@@ -7,10 +7,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/04/2020
 ms.openlocfilehash: c8bc9e844687c85255be972011eba03e9c38de48
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89488309"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
@@ -1136,7 +1136,7 @@ bool(<value>)
 
 | Возвращаемое значение | Тип | Описание |
 | ------------ | ---- | ----------- |
-| `true` или `false` | Логическое значение | Логическая версия указанного значения. |
+| `true` или `false` | Логическое | Логическая версия указанного значения. |
 ||||
 
 *Выходные данные*
@@ -1145,8 +1145,8 @@ bool(<value>)
 
 | Входное значение | Тип | Возвращаемое значение |
 | ----------- | ---------- | ---------------------- |
-| `bool(1)` | Целое число | `true` |
-| `bool(0)` | Целое число    | `false` |
+| `bool(1)` | Целочисленный тип | `true` |
+| `bool(0)` | Целочисленный тип    | `false` |
 | `bool(-1)` | Целое число | `true` |
 | `bool('true')` | Строка | `true` |
 | `bool('false')` | Строка | `false` |

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
 ms.openlocfilehash: 15b69e664ae9a01635afb44d7b6b7c24d7551ce9
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87921424"
 ---
 # <a name="what-is-multi-device-conversation-preview"></a>Что такое беседа с несколькими устройствами (Предварительная версия)?
@@ -79,7 +79,7 @@ ms.locfileid: "87921424"
 -    Список всех участников диалога, в том числе выбранный пользователем псевдоним и основной язык для речи и ввода текста.
 
 
-Существует два типа пользователей в диалоге: **узел** и **участник**.
+Существует два типа пользователей в диалоге:  **узел** и **участник**.
 
 **Узел** — это пользователь, который запускает диалог и выступает в качестве администратора этого диалога.
 - Каждый диалог может иметь только один узел
@@ -123,7 +123,7 @@ ms.locfileid: "87921424"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Преобразование диалогов в режиме реального времени](quickstarts/multi-device-conversation.md)
