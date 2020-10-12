@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/28/2020
 ms.openlocfilehash: aef29eef7eb53c4cc4ffcc4926f9efe533374178
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319458"
 ---
 # <a name="choose-between-the-vcore-and-dtu-purchasing-models---azure-sql-database-and-sql-managed-instance"></a>Выбор между моделями приобретения Виртуальное ядро и DTU в базе данных SQL Azure и SQL Управляемый экземпляр
@@ -127,7 +127,7 @@ DTU наиболее полезны для понимания относител
 
 ### <a name="determine-the-number-of-dtus-needed-by-a-workload"></a>Определение числа единиц DTU, требуемых для рабочей нагрузки
 
-Если вы хотите перенести существующую локальную или SQL Server рабочую нагрузку виртуальной машины в базу данных SQL, используйте [Калькулятор DTU](https://dtucalculator.azurewebsites.net/) , чтобы приблизительно оценить необходимое количество DTU. Для существующей рабочей нагрузки базы данных SQL используйте [аналитические сведения о производительности запросов](query-performance-insight-use.md) , чтобы получить представление о потреблении ресурсов базы данных (DTU) и получать более подробные сведения для оптимизации рабочей нагрузки. Динамическое административное представление [sys. dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) позволяет просматривать потребление ресурсов за последний час. Представление каталога [sys. resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) отображает потребление ресурсов за последние 14 дней, но с более низким уровнем точности в среднем за пять минут.
+Если вы хотите перенести существующую локальную или SQL Server рабочую нагрузку виртуальной машины в базу данных SQL, используйте [Калькулятор DTU](https://dtucalculator.azurewebsites.net/) , чтобы приблизительно оценить необходимое количество DTU. Для существующей рабочей нагрузки базы данных SQL используйте [аналитические сведения о производительности запросов](query-performance-insight-use.md) , чтобы получить представление о потреблении ресурсов базы данных (DTU) и получать более подробные сведения для оптимизации рабочей нагрузки. Динамическое административное представление [sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) позволяет просматривать потребление ресурсов за последний час. В представлении каталога [sys.resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) отображается потребление ресурсов за последние 14 дней, но с более низким уровнем точности в среднем за пять минут.
 
 ### <a name="determine-dtu-utilization"></a>Определение использования DTU
 
@@ -135,7 +135,7 @@ DTU наиболее полезны для понимания относител
 
 `avg_dtu_percent = MAX(avg_cpu_percent, avg_data_io_percent, avg_log_write_percent)`
 
-Входные значения для этой формулы можно получить из представлений [sys. dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database), [sys. resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)и [sys. elastic_pool_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) DMV. Иными словами, чтобы определить процент использования DTU/eDTU в отношении ограничения DTU/eDTU базы данных или эластичного пула, выберите наибольшее процентное значение из следующих значений: `avg_cpu_percent` , `avg_data_io_percent` и `avg_log_write_percent` в определенный момент времени.
+Входные значения для этой формулы можно получить из [sys.dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database), [sys.resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)и [sys.elastic_pool_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) DMV. Иными словами, чтобы определить процент использования DTU/eDTU в отношении ограничения DTU/eDTU базы данных или эластичного пула, выберите наибольшее процентное значение из следующих значений: `avg_cpu_percent` , `avg_data_io_percent` и `avg_log_write_percent` в определенный момент времени.
 
 > [!NOTE]
 > Ограничение DTU базы данных определяется ЦП, операциями чтения, записи и памятью, доступной базе данных. Однако, поскольку ядро СУБД SQL обычно использует всю доступную память для кэша данных, чтобы повысить производительность, `avg_memory_usage_percent` значение обычно будет близко к 100% независимо от текущей загрузки базы данных. Таким образом, несмотря на то, что память косвенно влияет на предел DTU, она не используется в формуле использования DTU.
@@ -168,7 +168,7 @@ DTU наиболее полезны для понимания относител
 
 Да, можно легко преобразовать базу данных в любую поддерживаемую цель производительности с помощью портал Azure, PowerShell, Azure CLI, T-SQL или REST API. См. раздел [Управление отдельными базами данных](single-database-scale.md) и [Управление пулами эластичных БД](elastic-pool-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о модели приобретения на основе виртуальное ядро см. в разделе [модель приобретения на основе виртуальное ядро](service-tiers-vcore.md).
 - Дополнительные сведения о модели приобретения на основе DTU см. в разделе [модель приобретения на основе DTU](service-tiers-dtu.md).

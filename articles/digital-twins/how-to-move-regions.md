@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.service: digital-twins
 ms.openlocfilehash: 1725c3ff162e4f6b7ac3a5ea1ede6976c827b510
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91328502"
 ---
 # <a name="move-an-azure-digital-twins-instance-to-a-different-azure-region"></a>Перемещение экземпляра Azure Digital двойников в другой регион Azure
@@ -51,7 +51,7 @@ ms.locfileid: "91328502"
 
 Эти сведения можно получить с помощью [портал Azure](https://portal.azure.com), [интерфейсов API и пакетов SDK](how-to-use-apis-sdks.md)для Azure Digital двойников, [команд интерфейса командной строки Azure Digital двойников](how-to-use-cli.md)или образца [обозревателя Digital двойников (ADT)](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) .
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
 В этом разделе Вы подготовитесь к повторному созданию экземпляра путем **загрузки исходных моделей, двойников и Graph** из исходного экземпляра. Эта статья делает это с помощью примера [Azure Digital двойников (ADT) Explorer](https://docs.microsoft.com/samples/azure-samples/digital-twins-explorer/digital-twins-explorer/) .
 

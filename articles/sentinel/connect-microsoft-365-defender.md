@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/13/2019
 ms.author: yelevin
 ms.openlocfilehash: e9e892ae08c65ee5c5008bbdc1b419d8dec30183
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938479"
 ---
 # <a name="connect-data-from-microsoft-365-defender-to-azure-sentinel"></a>Подключение данных из защитника Microsoft 365 к Azure Sentinel
@@ -31,7 +31,7 @@ ms.locfileid: "90938479"
 >
 > Вы можете увидеть, что старые имена по-прежнему используются в течение определенного периода времени.
 
-## <a name="background"></a>Фон
+## <a name="background"></a>История
 
 Новый соединитель [защитника Microsoft 365](https://docs.microsoft.com/microsoft-365/security/mtp/microsoft-threat-protection) позволяет выполнять потоковую передачу **расширенных** журналов подразделений — тип данных необработанных событий — от Microsoft 365 защитника до Azure Sentinel. 
 
@@ -98,7 +98,7 @@ let Now = now();
 
 На вкладке **дальнейшие действия** вы найдете несколько примеров запросов, которые были добавлены. Их можно запустить в месте или изменить и сохранить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как получить необработанные данные о событиях из защитника Майкрософт для конечной точки в Azure Sentinel с помощью соединителя защитника Microsoft 365. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

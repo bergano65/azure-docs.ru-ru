@@ -1,6 +1,6 @@
 ---
 title: Серийная консоль Azure для Windows | Документация Майкрософт
-description: Многонаправленная последовательная консоль для виртуальных машин Azure и масштабируемых наборов виртуальных машин с примером Windows.
+description: Bi-Directional последовательной консоли для виртуальных машин Azure и масштабируемых наборов виртуальных машин с помощью примера Windows.
 services: virtual-machines-windows
 documentationcenter: ''
 author: asinn826
@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 5/1/2019
 ms.author: alsin
 ms.openlocfilehash: c5c139cb94358d70d1f23b68f2a369adb953da08
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325986"
 ---
 # <a name="azure-serial-console-for-windows"></a>Серийная консоль Azure для Windows

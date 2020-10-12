@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/27/2020
 ms.custom: seodec18
 ms.openlocfilehash: abae83cee106feb553e8ced404d23ba5619ba416
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91327159"
 ---
 # <a name="the-confidence-score-of-an-answer"></a>Оценка достоверности ответа
@@ -86,7 +86,7 @@ ms.locfileid: "91327159"
 ## <a name="no-match-found"></a>Совпадения не найдены
 Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". Этот [ответ по умолчанию](../How-To/metadata-generateanswer-usage.md) можно переопределить в коде программы-робота или приложения, вызывающего конечную точку. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
 > [Рекомендации](./best-practices.md)
 

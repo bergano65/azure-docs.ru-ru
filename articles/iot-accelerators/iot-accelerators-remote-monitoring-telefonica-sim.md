@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
 ms.openlocfilehash: 21d84bea808ba5832b81d415001a3fc25a7e1630
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91323963"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении для удаленного мониторинга
@@ -63,7 +63,7 @@ ms.locfileid: "91323963"
 
 ![Снимок экрана: окно Device Explorer на панели мониторинга удаленного мониторинга Интернета вещей Azure. Выделена строка, показывающая сведения об устройстве Weatherstation —.](./media/iot-accelerators-remote-monitoring-telefonica-sim/dashboard.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда у вас есть представление об интеграции данных SIM-карты в решение удаленного мониторинга Интернета вещей Azure, для ускорителей решений можно выполнить следующие шаги, описанные в руководствах ниже:
 

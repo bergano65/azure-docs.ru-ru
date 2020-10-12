@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: aahi
 ms.openlocfilehash: 343db078880f55701730e096c3da85a6a7e5428a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91324473"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Добавление веб-каналов данных из разных источников данных в помощник по метрикам
@@ -40,7 +40,7 @@ ms.locfileid: "91324473"
 |[**Azure Application Insights**](#appinsights)|  Basic |
 |[**Хранилище BLOB-объектов Azure (JSON)**](#blob) | Basic<br>ManagedIdentity|
 |[**Azure Cosmos DB (SQL)**](#cosmosdb) | Basic |
-|[**Обозреватель данных Azure (Kusto)**](#kusto) | Basic<br>ManagedIdentity|
+|[**Azure Data Explorer (Kusto)**](#kusto) | Basic<br>ManagedIdentity|
 |[**Azure Data Lake Storage 2-го поколения**](#adl) | Basic<br>DataLakeGen2SharedKey<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br> |
 |[**База данных SQL Azure/SQL Server**](#sql) | Basic<br>ManagedIdentity<br>Субъект-служба<br>Субъект-служба из хранилища ключей<br>азуресклконнектионстринг
 |[**Хранилище таблиц Azure**](#table) | Basic | 
@@ -82,7 +82,7 @@ ms.locfileid: "91324473"
 
 * **Контейнер**: помощник по метрикам ждет, что данные временных рядов хранятся в виде файлов BLOB-объектов (один большой двоичный объект на метку времени) в одном контейнере. Это поле имени контейнера.
 
-* **Шаблон большого двоичного объекта**: это шаблон имен файлов BLOB-объектов. Например, так: `/%Y/%m/X_%Y-%m-%d-%h-%M.json`. Поддерживаются следующие параметры:
+* **Шаблон большого двоичного объекта**: это шаблон имен файлов BLOB-объектов. Например: `/%Y/%m/X_%Y-%m-%d-%h-%M.json`. Поддерживаются следующие параметры:
   * `%Y` год в формате `yyyy`
   * `%m` — месяц в формате `MM`
   * `%d` — день в формате `dd`
@@ -131,7 +131,7 @@ ms.locfileid: "91324473"
     select StartDate, JobStatusId, COUNT(*) AS JobNumber from IngestionJobs WHERE and StartDate = '2019-12-12 00:00:00'
     ```
 
-## <a name="span-idkustoazure-data-explorer-kustospan"></a><span id="kusto">Обозреватель данных Azure (Kusto)</span>
+## <a name="span-idkustoazure-data-explorer-kustospan"></a><span id="kusto">Azure Data Explorer (Kusto)</span>
 
 * **Строка подключения**. сведения о том, как получить строку подключения из Azure обозреватель данных (Kusto), см. в статье [Просмотр и копирование строки подключения](https://docs.microsoft.com/azure/data-explorer/kusto/api/connection-strings/kusto) .
 
@@ -232,7 +232,7 @@ The timestamp field must match one of these two formats:
 
 ## <a name="span-idhttphttp-requestspan"></a><span id="http">HTTP-запрос</span>
 
-* **URL-адрес запроса**: URL-адрес HTTP, который может возвращать JSON. Заполнители% Y,% m,% d,% h,% M поддерживаются:% Y = year в формате гггг,% m = месяц в формате MM,% d = день в формате DD,% h = час в формате чч,% M = минута в формате mm. Например, так: `http://microsoft.com/ProjectA/%Y/%m/X_%Y-%m-%d-%h-%M`.
+* **URL-адрес запроса**: URL-адрес HTTP, который может возвращать JSON. Заполнители% Y,% m,% d,% h,% M поддерживаются:% Y = year в формате гггг,% m = месяц в формате MM,% d = день в формате DD,% h = час в формате чч,% M = минута в формате mm. Например: `http://microsoft.com/ProjectA/%Y/%m/X_%Y-%m-%d-%h-%M`.
 * **HTTP-метод запроса**: используйте Get или POST.
 * **Заголовок запроса**: можно добавить обычную проверку подлинности. 
 * **Полезные данные запроса**: поддерживаются только полезные данные JSON. @StartTimeВ полезных данных поддерживается заполнитель. Ответ должен быть в следующем формате JSON: [{"timestamp": "2018-01-01T00:00:00Z", "Market": "en-US", "Count": 11, "доход": 1,23}, {"timestamp": "2018-01-01T00:00:00Z", "DataMarket": "zh-CN", "Count": 22, "доход": 4,56}]. (например, когда принимается значение 2020-06-21T00:00:00Z, @StartTime = 2020-06-21T00:00:00.0000000 + 00:00)
@@ -261,7 +261,7 @@ The timestamp field must match one of these two formats:
 * **Строка подключения**: строка подключения для доступа к базе данных PostgreSQL DB.
 * **Запрос**: запрос для получения и формирования данных многомерных временных рядов для приема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * При ожидании передачи данных метрик в систему прочитайте о [том, как управлять конфигурациями веб-каналов данных](how-tos/manage-data-feeds.md).
 * При приеме данных метрик можно [настроить метрики и выполнить тонкую настройку обнаружения конфигурации](how-tos/configure-metrics.md).

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 13d78110f50d6ce72b8525914ed0e91dfcadd2cc
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938499"
 ---
 # <a name="manage-an-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Управление базой данных Azure для PostgreSQL-гибкого сервера с помощью портал Azure
@@ -52,7 +52,7 @@ ms.locfileid: "90938499"
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/howto-manage-server-portal/reset-password.png" alt-text="Сброс пароля для гибкого сервера":::
+> :::image type="content" source="./media/howto-manage-server-portal/reset-password.png" alt-text="масштабирование гибкого сервера хранилища":::
 
 3. Нажмите кнопку **сохранить** , чтобы сохранить новый пароль.
 
@@ -63,7 +63,7 @@ ms.locfileid: "90938499"
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 2. Введите имя сервера в поле ввода, чтобы подтвердить, что вы хотите удалить сервер.
 
-   :::image type="content" source="./media/howto-manage-server-portal/delete-server.png" alt-text="Удаление гибкого сервера":::
+   :::image type="content" source="./media/howto-manage-server-portal/delete-server.png" alt-text="масштабирование гибкого сервера хранилища":::
 
    > [!IMPORTANT]
    > Удаление сервера необратимо.

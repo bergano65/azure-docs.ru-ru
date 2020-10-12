@@ -6,10 +6,10 @@ ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
 ms.openlocfilehash: 31fde0c7af652bc50eb5f06743c5dd5807a1762e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91323731"
 ---
 # <a name="system-requirements"></a>Требования к системе
@@ -71,7 +71,7 @@ ms.locfileid: "91323731"
 | Порт              | Протокол | Allow    | Описание |
 |-------------------|----------|----------|-------------|
 | 50051             | TCP      | Исходящий | Начальное соединение (подтверждение HTTP) |
-| 8266              | UDP      | Исходящий | Передача данных |
+| 8266              | Протокол UDP      | Исходящий | Передача данных |
 | 5000, 5433, 8443  | TCP      | Исходящий | Требуется для [средства арринспектор](../resources/tools/arr-inspector.md)|
 
 

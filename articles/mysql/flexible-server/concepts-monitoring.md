@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
 ms.openlocfilehash: f3a58a6766c42385dd6611c2014ba36fd1078710
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939289"
 ---
 # <a name="monitor-azure-database-for-mysql-flexible-servers-with-built-in-metrics"></a>Мониторинг базы данных Azure для гибких серверов MySQL с помощью встроенных метрик
@@ -31,7 +31,7 @@ ms.locfileid: "90939289"
 ### <a name="list-of-metrics"></a>Список метрик
 Для базы данных Azure для MySQL доступны следующие метрики:
 
-|Отображаемое имя метрики|Метрика|Единица измерения|Описание|
+|Отображаемое имя метрики|Метрика|Unit|Описание|
 |---|---|---|---|
 |Процент ЦП узла|cpu_percent|Процент|Процент использования ЦП на сервере, включая использование ЦП как рабочей нагрузки клиента, так и процессов Azure MySQL.|
 |Сеть узла в |network_bytes_ingress|Байты|Входящий сетевой трафик на сервере, включая трафик из базы данных клиента и функций Azure MySQL, таких как репликация, мониторинг, журналы и т. д.|
@@ -48,6 +48,6 @@ ms.locfileid: "90939289"
 |Прерванные подключения|aborted_connections|Count|Число неудачных попыток подключения к MySQL, например сбой подключения из-за неправильных учетных данных.|
 |Запросы|Запросы|Count|Число запросов в секунду|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](./how-to-alert-on-metric.md).
 - Дополнительные сведения о [масштабировании операций ввода-вывода](./concepts/../concepts-compute-storage.md#iops) для повышения производительности.

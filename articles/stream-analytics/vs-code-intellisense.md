@@ -7,10 +7,10 @@ ms.author: sujie
 ms.date: 4/11/2020
 ms.topic: how-to
 ms.openlocfilehash: bd72866e3e3db21691fda6aaec864a76af7414a3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90903723"
 ---
 # <a name="intellisense-in-azure-stream-analytics-tools-for-visual-studio-code"></a>IntelliSense в средствах Azure Stream Analytics для Visual Studio Code
@@ -36,7 +36,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 |Completion     |  Тип       |
 | ----- | ------- |
-| Keywords | `keyword`
+| Ключевые слова | `keyword`
 | Функции | `build-in function`, `user defined function`  |
 | Имя набора данных| `input`, `output`, `intermediate result set`|
 | Имя столбца набора данных|`input`, `intermediate result set`|
@@ -69,7 +69,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 Эта проблема вызвана отсутствием входной конфигурации, которая предоставляет данные. Можно проверить правильность настройки [локального ввода](visual-studio-code-local-run.md#define-a-local-input) или [ввода в реальном времени](visual-studio-code-local-run-live-input.md#define-a-live-stream-input) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)

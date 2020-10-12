@@ -10,13 +10,13 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 3eb41b868aba7e7350f54594fa43f01eeeabebc4
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940678"
 ---
-# <a name="install-client-tools-for-deploying-and-managing-azure-arc-enabled-data-services"></a>Установка клиентских средств для развертывания и управления службами данных с поддержкой Arc Azure
+# <a name="install-client-tools-for-deploying-and-managing-azure-arc-enabled-data-services"></a>Установка клиентских средств для развертывания служб данных с поддержкой Azure Arc и управления ими
 
 > [!IMPORTANT]
 > При обновлении до нового ежемесячного выпуска необходимо также выполнить обновление до последней версии Azure Data Studio, средства CLI данных Azure (аздата) и интерфейса командной строки Azure Data CLI и расширений Azure ARC для Azure Data Studio.
@@ -49,6 +49,6 @@ ms.locfileid: "90940678"
 
 <sup>3</sup> если вы используете PowerShell, то фигурный псевдоним для командлета Invoke-WebRequest.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание контроллера данных ARC в Azure](create-data-controller.md)

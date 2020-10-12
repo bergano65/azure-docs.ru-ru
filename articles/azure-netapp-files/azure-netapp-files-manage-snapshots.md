@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 09/04/2020
 ms.author: b-juche
 ms.openlocfilehash: e1be0879af02fac0f7ae926a02ea23fd6be84de4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325695"
 ---
 # <a name="manage-snapshots-by-using-azure-netapp-files"></a>Управление моментальными снимками с помощью Azure NetApp Files
@@ -219,8 +219,8 @@ Azure NetApp Files поддерживает создание моменталь�
 
     ![Свойства предыдущих версий](../media/azure-netapp-files/snapshot-properties-previous-version.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Устранение неполадок политик моментальных снимков](troubleshoot-snapshot-policies.md)
+* [Устранение неполадок с политиками моментальных снимков](troubleshoot-snapshot-policies.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
 * [Видео о Azure NetApp Filesных моментальных снимках 101](https://www.youtube.com/watch?v=uxbTXhtXCkw&feature=youtu.be)

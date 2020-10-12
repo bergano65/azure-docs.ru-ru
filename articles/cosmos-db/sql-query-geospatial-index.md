@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/03/2020
 ms.author: tisande
 ms.openlocfilehash: 546b664c74980b3522fefed82c00eec414641eaa
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91326632"
 ---
 # <a name="index-geospatial-data-with-azure-cosmos-db"></a>Индексирование геопространственных данных с помощью Azure Cosmos DB
@@ -161,7 +161,7 @@ ms.locfileid: "91326632"
 > [!NOTE]
 > Если вы попытаетесь добавить политику индексирования с **BoundingBox** в контейнер с `geography` типом данных, произойдет сбой. **geospatialConfig** `geometry` Перед добавлением **BoundingBox**необходимо изменить жеоспатиалконфиг контейнера. Вы можете добавить данные и изменить оставшуюся часть политики индексирования (например, пути и типы) до или после выбора геопространственного типа данных для контейнера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 

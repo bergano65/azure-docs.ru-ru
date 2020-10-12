@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 44519a21296fd658f12b8d7df2191797b16caf7f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320903"
 ---
 # <a name="use-azure-policy-to-implement-governance-and-controls-for-azure-cosmos-db-resources"></a>Применение Политики Azure для систем и элементов управления ресурсами Azure Cosmos DB
@@ -126,11 +126,11 @@ az provider show --namespace Microsoft.DocumentDB --expand "resourceTypes/aliase
 - Ноль двух учетных записей соответствует политике, требующей, чтобы учетная запись была настроена для нескольких расположений для записи.
 - Ноль двух учетных записей соответствует политике, которую ресурсы были развернуты в разрешенных регионах Azure.
 
-:::image type="content" source="./media/policy/compliance.png" alt-text="Результаты соответствия требованиям для назначений политик Azure":::
+:::image type="content" source="./media/policy/compliance.png" alt-text="Поиск встроенных определений политик для Azure Cosmos DB":::
 
 Сведения об исправлении несоответствующих ресурсов см. в статье [как исправить ресурсы с помощью политики Azure](../governance/policy/how-to/remediate-resources.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ознакомьтесь с примерами определений пользовательских политик для Azure Cosmos DB](https://github.com/Azure/azure-policy/tree/master/samples/CosmosDB), в том числе для нескольких расположений записи и политик фильтрации виртуальной сети, показанных выше.
 - [Создание назначения политики на портале Azure](../governance/policy/assign-policy-portal.md)

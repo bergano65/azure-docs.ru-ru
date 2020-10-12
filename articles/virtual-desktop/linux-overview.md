@@ -7,10 +7,10 @@ ms.date: 01/23/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 0a53e9ae42031203347784b78e162e8f806eb3c5
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320253"
 ---
 # <a name="linux-support"></a>Поддержка Linux
@@ -27,7 +27,7 @@ ms.locfileid: "91320253"
 |![Логотип Нкомпутинг](./media/partners/ncomputing.png)|[Документация по клиенту Нкомпутинг](https://www.ncomputing.com/microsoft)|[Поддержка Нкомпутинг](https://www.ncomputing.com/support/support-options)|
 |![Логотип стратодеск](./media/partners/stratodesk.png)|[Документация по клиенту стратодеск](https://www.stratodesk.com/kb/Microsoft_Windows_Virtual_Desktop_(WVD))|[Поддержка стратодеск](https://www.stratodesk.com/support-3/)|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с документацией по следующим клиентам:
 

@@ -4,10 +4,10 @@ description: Описание свойств и схемы, предоставл
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: b3d961228429c1f84e45c1df9147fa1687ab5074
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91324082"
 ---
 # <a name="azure-key-vault-as-event-grid-source"></a>Azure Key Vault в качестве источника сетки событий
@@ -81,7 +81,7 @@ ms.locfileid: "91324082"
 | [Учебник. Создание и отслеживание событий Key Vault с помощью сетки событий](../key-vault/general/event-grid-logicapps.md) | Узнайте, как настроить уведомления в сетке событий для Key Vault. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения о службе "Сетка событий Azure" см. в статье [что такое сетка событий](overview.md).
 * Дополнительные сведения о создании подписки на службу "Сетка событий Azure" см. в разделе [Схема подписки службы "Сетка событий](subscription-creation-schema.md)".

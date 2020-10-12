@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/24/2020
 ms.reviewer: sngun
 ms.openlocfilehash: f3906878755b7c7c2e3801da1bfa70a50d73ea16
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91318795"
 ---
 # <a name="work-with-databases-containers-and-items-in-azure-cosmos-db"></a>Работа с базами данных, контейнерами и элементами в Azure Cosmos DB
@@ -139,7 +139,7 @@ ms.locfileid: "91318795"
 | --- | --- | --- | --- | --- | --- | --- |
 | Вставка, замена, удаление, обновление или вставка, чтение | Нет | Да | Да | Да | Да | Да |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об этих задачах и концепциях:
 
