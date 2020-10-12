@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/18/2017
 ms.author: tagore
 ms.openlocfilehash: fca14ed4e3b338f9b49f949af7498dfd49990d3b
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88142389"
 ---
 # <a name="how-to-create-and-deploy-a-cloud-service"></a>Создание и развертывание облачной службы
@@ -86,7 +86,7 @@ ms.locfileid: "88142389"
 
 [TFSTutorialForCloudService]: https://go.microsoft.com/fwlink/?LinkID=251796
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).

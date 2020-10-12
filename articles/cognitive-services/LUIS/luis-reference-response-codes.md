@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 03/04/2019
 ms.openlocfilehash: 46a7fff86d3a8c4539b77a0f271179d68e7a26d2
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541685"
 ---
 # <a name="common-api-response-codes-and-their-meaning"></a>Стандартные коды ответа API и их значение
@@ -38,6 +38,6 @@ API-интерфейсы [разработки](https://go.microsoft.com/fwlink/
 |414|Конечная точка|В запросе превышено максимально допустимое количество символов|
 |429|Разработки, конечных точек|Превышено ограничение скорости (запросов в секунду)|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Документация по [разработке](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) и [конечной точке](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78) REST API

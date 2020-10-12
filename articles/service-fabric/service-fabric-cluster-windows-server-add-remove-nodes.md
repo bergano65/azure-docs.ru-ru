@@ -4,10 +4,10 @@ description: Узнайте, как добавлять узлы в класте�
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.openlocfilehash: 3e5f32274d2263bc5bf1bbec8f1626d519f8ca3f
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91842926"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
@@ -140,7 +140,7 @@ ms.locfileid: "91842926"
 Замену основных узлов следует выполнять последовательно, вместо того чтобы удалять, а затем добавлять их массово.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
 * [Защита автономного кластера под управлением Windows с помощью сертификатов](service-fabric-windows-cluster-x509-security.md)
 * [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](./service-fabric-cluster-creation-via-arm.md)

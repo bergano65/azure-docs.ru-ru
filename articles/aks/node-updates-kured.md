@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 02/28/2019
 ms.openlocfilehash: 35c9e76c234e4b09fbb090eda363506ee3e11130
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88164246"
 ---
 # <a name="apply-security-and-kernel-updates-to-linux-nodes-in-azure-kubernetes-service-aks"></a>Применение обновлений безопасности и ядра для узлов Linux в службе Kubernetes Azure (AKS)
@@ -99,7 +99,7 @@ aks-nodepool1-28993262-0   Ready     agent     1h        v1.11.7   10.240.0.4   
 aks-nodepool1-28993262-1   Ready     agent     1h        v1.11.7   10.240.0.5    <none>        Ubuntu 16.04.6 LTS   4.15.0-1037-azure   docker://3.0.4
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описано, как использовать `kured` для автоматической перезагрузки узлов Linux в рамках процесса обновления системы безопасности. Чтобы перейти на последнюю версию Kubernetes, вы можете [обновить кластер AKS][aks-upgrade].
 

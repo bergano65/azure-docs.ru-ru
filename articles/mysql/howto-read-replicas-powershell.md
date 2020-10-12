@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 8/24/2020
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: e9c8ce7519c6e2c84ef47fc78897c4b67b89e56a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541022"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью PowerShell
@@ -22,7 +22,7 @@ ms.locfileid: "91541022"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -57,7 +57,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| Название | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 
@@ -107,7 +107,7 @@ Remove-AzMySqlServer -Name mydemoreplicaserver -ResourceGroupName myresourcegrou
 Remove-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Перезапуск базы данных Azure для сервера MySQL с помощью PowerShell](howto-restart-server-powershell.md)

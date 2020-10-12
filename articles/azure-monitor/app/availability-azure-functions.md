@@ -6,10 +6,10 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/04/2020
 ms.openlocfilehash: bf756255d5eb0ffb3e57f13f4248fb8e38f26129
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91773184"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
@@ -185,7 +185,7 @@ public async static Task RunAvailbiltyTestAsync(ILogger log)
 >[!div class="mx-imgBorder"]
 >![Снимок экрана показывает новую вкладку запросов с зависимостями, ограниченными 50.](media/availability-azure-functions/dependencies.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Схема сопоставления приложений](./app-map.md)
 - [Диагностика транзакции](./transaction-diagnostics.md)

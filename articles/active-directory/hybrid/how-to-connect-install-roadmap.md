@@ -14,10 +14,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 244456298e9a85f7cf7a5bdc175f1df5397ca207
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89662154"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
@@ -32,7 +32,7 @@ ms.locfileid: "89662154"
 | Решение | Сценарий |
 | --- | --- |
 | Перед началом работы: [оборудование и предварительные требования](how-to-connect-install-prerequisites.md) |<li>Шаги, которые нужно выполнить до установки Azure AD Connect.</li> |
-| [Параметры Express](how-to-connect-install-express.md) |<li>Рекомендуемый вариант при наличии AD с одним лесом.</li> <li>Пользователи входят в систему с одним и тем же паролем, используя синхронизацию паролей.</li> |
+| [Стандартные параметры](how-to-connect-install-express.md) |<li>Рекомендуемый вариант при наличии AD с одним лесом.</li> <li>Пользователи входят в систему с одним и тем же паролем, используя синхронизацию паролей.</li> |
 | [Настраиваемые параметры](how-to-connect-install-custom.md) |<li>Используется при наличии нескольких лесов. Поддерживает многие локальные [топологии](plan-connect-topologies.md).</li> <li>Настройка режима входа (например, с помощью сквозной аутентификации, AD FS для федерации или стороннего поставщика удостоверений).</li> <li>Настройка функций синхронизации, таких как фильтрация и обратная запись.</li> |
 | [Обновление из DirSync](how-to-dirsync-upgrade-get-started.md) |<li>Используется при наличии уже работающего сервера DirSync.</li> |
 | [Переход с Azure AD Sync на Azure AD Connect](how-to-upgrade-previous-version.md) |<li>Есть несколько разных способов на выбор.</li> |
@@ -165,14 +165,14 @@ Azure AD Connect поставляется с несколькими функци
 * **Доменные службы Active Directory.** В этом разделе представлены все леса AD DS, которые в настоящее время отслеживает служба Azure AD Connect Health. Если выбрать лес, откроется колонка со сведениями об этом лесе. Эти сведения включают обзор основной информации, панель мониторинга контроллеров домена, панель мониторинга состояния репликации, оповещения и мониторинг. Дополнительные сведения о возможностях см. в статье [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).
 * **Настройка.** В этом разделе можно включить или отключить следующие функции.
 
-   - **Автоматическое обновление** агента Azure AD Connect Health до последней версии: агент Azure AD Connect Health автоматически обновляется каждый раз, когда доступны новые версии. По умолчанию параметр включен.
+   - **Автоматическое обновление** агента Azure AD Connect Health до последней версии: агент Azure AD Connect Health автоматически обновляется каждый раз, когда доступны новые версии. Этот параметр по умолчанию включен.
    - **Доступ к данным** из каталога Azure AD только в целях устранения неполадок. Если этот параметр включен, корпорация Майкрософт может получить доступ к тем же данным, которые отображаются у пользователя. Эти сведения могут быть полезны для устранения неполадок и предоставления необходимой помощи. По умолчанию этот параметр отключен
 * Раздел **Управление доступом на основе ролей (IAM)** предназначен для управления доступом к данным Connect Health с помощью ролей. 
 
 ## <a name="next-steps"></a>Next Steps
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
-- [Параметры Express](how-to-connect-install-express.md)
+- [Стандартные параметры](how-to-connect-install-express.md)
 - [Настраиваемые параметры](how-to-connect-install-custom.md)
 - [Синхронизация хэша паролей](how-to-connect-password-hash-synchronization.md)|
 - [Сквозная проверка подлинности](how-to-connect-pta.md)

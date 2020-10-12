@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 4d606e6cd035d4dae388d8559d100988a46e8203
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89010024"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий
@@ -60,14 +60,14 @@ ms.locfileid: "89010024"
 4.  На странице **Добавление назначения ролей** выберите роли концентраторов событий, которые требуется назначить. Затем найдите удостоверение службы, зарегистрированное для назначения роли.
     
     ![Страница добавления назначения ролей](./media/authenticate-managed-identity/add-role-assignment-page.png)
-5.  Выберите **Сохранить**. Удостоверение, которому назначена роль RBAC, будет отображаться в списке под этой ролью. Например, на следующем рисунке показано, что удостоверение службы имеет владельца данных концентраторов событий.
+5.  Щелкните **Сохранить**. Удостоверение, которому назначена роль RBAC, будет отображаться в списке под этой ролью. Например, на следующем рисунке показано, что удостоверение службы имеет владельца данных концентраторов событий.
     
     ![Удостоверение, назначенное роли](./media/authenticate-managed-identity/role-assigned.png)
 
 После назначения роли веб-приложение будет иметь доступ к ресурсам концентраторов событий в определенной области. 
 
 ### <a name="test-the-web-application"></a>Тестирование веб-приложения
-1. Создайте пространство имен концентраторов событий и концентратор событий. 
+1. Создайте пространство имен Центров событий и концентратор событий. 
 2. Разверните веб-приложение в Azure. Ссылки на веб-приложение на сайте GitHub см. в следующем разделе с вкладками. 
 3. Убедитесь, что Сендрецеиве. aspx задан в качестве документа по умолчанию для веб-приложения. 
 3. Включите **удостоверение** для веб-приложения. 
@@ -138,7 +138,7 @@ var ehClient = EventHubClient.CreateWithManagedIdentity(new Uri($"sb://{EventHub
 ## <a name="event-hubs-for-kafka"></a>Центры событий для Kafka
 Apache Kafka приложения можно использовать для отправки и получения сообщений из концентраторов событий Azure с помощью управляемого удостоверения OAuth. См. Следующий пример на сайте GitHub: [концентраторы событий для Kafka — отправка и получение сообщений с помощью управляемого удостоверения OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/managedidentity).
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 - Примеры **Azure. Messaging. EventHubs**
     - [.NET](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)
     - [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs)

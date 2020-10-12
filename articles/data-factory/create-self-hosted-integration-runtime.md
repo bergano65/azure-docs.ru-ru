@@ -12,10 +12,10 @@ manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 06/09/2020
 ms.openlocfilehash: cac7b4f376300722762b1cedbf52a5c2e0ecb6e4
-ms.sourcegitcommit: 1b320bc7863707a07e98644fbaed9faa0108da97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89596127"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
@@ -36,7 +36,7 @@ ms.locfileid: "89596127"
 
 ### <a name="create-a-self-hosted-ir-via-azure-powershell"></a>Создание локальной среды IR с помощью Azure PowerShell
 
-1. Для этой задачи можно использовать Azure PowerShell. Пример:
+1. Для этой задачи можно использовать Azure PowerShell. Например:
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $selfHostedIntegrationRuntimeName -Type SelfHosted -Description "selfhosted IR description"
@@ -66,7 +66,7 @@ ms.locfileid: "89596127"
 
 1. На странице **Настройка среды выполнения интеграции** выберите **Azure,** локальное размещение и нажмите кнопку **продолжить**. 
 
-1. На следующей странице выберите локальное **Размещение** , чтобы создать локальное IR, а затем выберите **продолжить**.
+1. На следующей странице выберите локальное **Размещение** , чтобы создать Self-Hosted IR, а затем выберите **продолжить**.
    ![Создание селфхостед IR](media/create-self-hosted-integration-runtime/new-selfhosted-integration-runtime.png)
 
 1. Введите имя для своего типа IR и нажмите кнопку **создать**.
@@ -163,7 +163,7 @@ dmgcmd [ -RegisterNewNode "<AuthenticationKey>" -EnableRemoteAccess "<port>" ["<
   + Windows Server 2012
   + Windows Server 2012 R2
   + Windows Server 2016
-  + Windows Server 2019
+  + Windows Server 2019
    
    Установка локальной среды выполнения интеграции на контроллере домена не поддерживается.
 - Требуется .NET Framework 4.6.1 или более поздней версии. Если локальная среда выполнения интеграции устанавливается на компьютер под управлением Windows 7, установите .NET Framework 4.6.1 или более поздней версии. Дополнительные сведения см. в разделе [Требования к системе для .NET Framework](/dotnet/framework/get-started/system-requirements).
@@ -440,6 +440,6 @@ msiexec /q /i IntegrationRuntime.msi NOFIREWALL=1
 
 Если вы решили не открывать порт 8060 на компьютере, где размещена локальная среда выполнения интеграции, используйте механизмы, отличные от приложения учетные данные, для настройки учетных данных хранилища данных. Например, можно использовать командлет PowerShell **New-AzDataFactoryV2LinkedServiceEncryptCredential** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Пошаговые инструкции см. в разделе [учебник. Копирование локальных данных в облако](tutorial-hybrid-copy-powershell.md).

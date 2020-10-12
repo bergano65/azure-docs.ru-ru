@@ -11,10 +11,10 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.openlocfilehash: d4ab3bccf281928be2b55eb5a36ae20a0aa8a08a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91288721"
 ---
 # <a name="design-tables-using-synapse-sql"></a>Разработка таблиц с помощью синапсе SQL
@@ -25,7 +25,7 @@ ms.locfileid: "91288721"
 
 В следующей таблице перечислены разделы, относящиеся к пулу SQL и SQL по запросу.
 
-| Раздел                                                        | Пул SQL | Использование SQL по запросу |
+| Раздел                                                        | Пул SQL | SQL по запросу |
 | ------------------------------------------------------------ | ------------------ | ----------------------- |
 | [Определение категории таблицы](#determine-table-category)        | Да                | Нет                      |
 | [имена схем;](#schema-names)                                | Да                | Да                     |
@@ -228,7 +228,7 @@ ORDER BY
 Пул SQL поддерживает многие, но не все функции таблиц, предлагаемые другими базами данных.  В следующем списке показаны некоторые функции таблиц, которые не поддерживаются в пуле SQL.
 
 - Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-- [Вычисленные столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
@@ -439,6 +439,6 @@ ORDER BY    distribution_id
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После создания таблицы для хранилища данных загрузите данные в таблицу.  Руководство по загрузке см. в разделе [Загрузка данных в пул SQL](../sql-data-warehouse/load-data-wideworldimportersdw.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#load-the-data-into-sql-pool).

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/07/2020
 ms.author: yelevin
 ms.openlocfilehash: 822d0c742bbd54b5bab0c69e82652743584a0696
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89659617"
 ---
 # <a name="connect-your-data-from-azure-defender-formerly-azure-security-center-for-iot-to-azure-sentinel"></a>Подключение данных из Azure Defender (прежнее название — центр безопасности Azure) для Azure IoT 
@@ -63,7 +63,7 @@ SecurityAlert | where ProductName == "Azure Defender for IoT"
 После подключения центра Интернета вещей данные концентратора доступны в Sentinel в течение приблизительно 15 минут позже.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как подключить защитник Azure для данных IoT к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

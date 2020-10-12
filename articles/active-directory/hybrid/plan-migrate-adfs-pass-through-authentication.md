@@ -13,10 +13,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a0ee8661ca985e1882cff54d2fc2cdc5e9ad0a22
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335975"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Переход с федеративной на сквозную проверку подлинности для Azure Active Directory
@@ -455,7 +455,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье об [устранении неполадок при сквозной проверке подлинности Azure Active Directory](./tshoot-connect-pass-through-authentication.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Изучите [принципы проектирования для Azure AD Connect](plan-connect-design-concepts.md).
 * Выберите [подходящую проверку подлинности](./choose-ad-authn.md).

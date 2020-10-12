@@ -9,10 +9,10 @@ ms.service: virtual-machines-linux
 ms.subservice: disks
 ms.custom: references_regions
 ms.openlocfilehash: bf2531536796965f145a9ac3e6a23cbb6634852a
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88817921"
 ---
 # <a name="use-the-azure-portal-to-enable-double-encryption-at-rest-for-managed-disks"></a>Использование портал Azure для включения двойного шифрования при хранении для управляемых дисков
@@ -39,7 +39,7 @@ ms.locfileid: "88817921"
 
 1. Щелкните **+ Добавить**.
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-add-disk-encryption-set.png" alt-text="Снимок экрана: колонка набор шифрования диска, "+ Добавить".":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-add-disk-encryption-set.png" alt-text="Снимок экрана основного портал Azure. наборы шифрования диска выделены на панели поиска.":::
 
 1. Выберите один из поддерживаемых регионов.
 1. В качестве **типа шифрования**выберите **двойное шифрование с управляемыми платформой ключами и управляемыми клиентом ключи**.
@@ -49,19 +49,19 @@ ms.locfileid: "88817921"
 
 1. Заполните оставшуюся информацию.
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-create-disk-encryption-set-blade.png" alt-text="Снимок экрана: колонка создания набора шифрования дисков, регионы и двойное шифрование с управляемыми платформой ключами и управляемыми клиентом сочетаниями.":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-create-disk-encryption-set-blade.png" alt-text="Снимок экрана основного портал Azure. наборы шифрования диска выделены на панели поиска.":::
 
 1. Выберите Azure Key Vault и ключ или создайте новый при необходимости.
 
     > [!NOTE]
     > При создании экземпляра Key Vault необходимо включить защиту с обратимым удалением и очисткой. Эти параметры являются обязательными при использовании Key Vault для шифрования управляемых дисков, а также для защиты от потери данных из-за случайного удаления.
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-select-key-vault.png" alt-text="Снимок экрана: колонка создания Key Vault.":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-select-key-vault.png" alt-text="Снимок экрана основного портал Azure. наборы шифрования диска выделены на панели поиска.":::
 
 1. Нажмите кнопку **создания**.
 1. Перейдите к созданному набору шифрования дисков и выберите отображаемую ошибку. При этом для шифрования дисков будет настроено значение работает.
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png" alt-text="Снимок экрана с сообщением об ошибке: отображаемый код ошибки. сообщение об ошибке. чтобы связать диск, изображение или моментальный снимок с этим набором шифрования диска, необходимо предоставить разрешения для хранилища ключей.":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png" alt-text="Снимок экрана основного портал Azure. наборы шифрования диска выделены на панели поиска.":::
 
     Уведомление должно быть всплывающим и успешных. Это позволит использовать шифрование дисков, установленное в хранилище ключей.
     
@@ -73,7 +73,7 @@ ms.locfileid: "88817921"
 1. Выберите набор шифрования дисков.
 1. Щелкните **Save** (Сохранить).
 
-    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-enable-disk-blade.png" alt-text="Снимок экрана колонки шифрование для управляемого диска выделено упомянутый тип шифрования.":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-enable-disk-blade.png" alt-text="Снимок экрана основного портал Azure. наборы шифрования диска выделены на панели поиска.":::
 
 Теперь вы включили двойное шифрование неактивных на управляемом диске.
 

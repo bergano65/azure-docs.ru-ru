@@ -14,10 +14,10 @@ ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman
 ms.openlocfilehash: f5950347fff380fcfbaa89834407ff5f497a9719
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88854917"
 ---
 # <a name="android-microsoft-authentication-library-configuration-file"></a>Файл конфигурации библиотеки проверки подлинности Майкрософт для Android
@@ -143,7 +143,7 @@ URI перенаправления, зарегистрированный при 
 | `connect_timeout` | int | Нет | Время в миллисекундах |
 | `read_timeout` | int | Нет | Время в миллисекундах |
 
-### <a name="logging"></a>Ведение журнала
+### <a name="logging"></a>Ведение журналов
 
 Для ведения журнала используются следующие глобальные параметры.
 

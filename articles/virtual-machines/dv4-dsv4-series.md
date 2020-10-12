@@ -9,22 +9,22 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 59c00b06f1fef613b00ade13c7cacc0b88e61bf1
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 959906f25cbae0158dfb0baf0b7664b8f9b9b5d4
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91649552"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945674"
 ---
 # <a name="dv4-and-dsv4-series"></a>Серии Dv4 и Dsv4
 
-Серия dv4 и Dsv4 работает на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована постоянная вся частота процессора Turbo 3,4 ГГц. 
+Серия dv4 и Dsv4 работает на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота процессора Turbo 3,4 ГГц. 
 
 > [!NOTE]
 > Часто задаваемые вопросы см. в статье  [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).
 ## <a name="dv4-series"></a>Серия dv4
 
-Размеры серии dv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Размеры серии dv4 предлагают сочетание параметров виртуальных ЦП, памяти и удаленного хранилища для большинства рабочих нагрузок. Виртуальные машины серии dv4 — [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html).
+Размеры серии dv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Размеры серии dv4 предлагают сочетание параметров виртуальных ЦП, памяти и удаленного хранилища для большинства рабочих нагрузок. Виртуальные машины серии dv4 имеют функцию [Intel &reg; Hyper-Threading Technology](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html).
 
 Удаление хранилища данных диска оплачивается отдельно от виртуальных машин. Чтобы использовать диски хранилища класса Premium, используйте размеры Dsv4. Показатели ценообразования и выставления счетов для размеров Dsv4 совпадают с серией dv4.
 
@@ -48,7 +48,7 @@ ms.locfileid: "91649552"
 
 ## <a name="dsv4-series"></a>Серия Dsv4
 
-Размеры серии Dsv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Размеры серии dv4 предлагают сочетание параметров виртуальных ЦП, памяти и удаленного хранилища для большинства рабочих нагрузок. Виртуальные машины серии Dsv4 — [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html). Удаление хранилища данных диска оплачивается отдельно от виртуальных машин.
+Размеры серии Dsv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Размеры серии dv4 предлагают сочетание параметров виртуальных ЦП, памяти и удаленного хранилища для большинства рабочих нагрузок. Виртуальные машины серии Dsv4 имеют функцию [Intel &reg; Hyper-Threading Technology](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html). Удаление хранилища данных диска оплачивается отдельно от виртуальных машин.
 
 [ACU](acu.md): 195-210<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>

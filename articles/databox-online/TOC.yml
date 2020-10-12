@@ -31,10 +31,6 @@
           href: azure-stack-edge-gpu-deploy-activate.md
         - name: "8.\_Настройка вычислений"
           href: azure-stack-edge-gpu-deploy-configure-compute.md
-        - name: "9A.\_Добавление общей папки и подключение к ней"
-          href: azure-stack-edge-j-series-deploy-add-shares.md
-        - name: "9Б.\_Добавление учетных записей хранения и подключение к ним"
-          href: azure-stack-edge-j-series-deploy-add-storage-accounts.md
     - name: Основные понятия
       items:
         - name: Обзор требований
@@ -87,6 +83,8 @@
               items:
                 - name: Приложение без отслеживания состояния
                   href: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
+                - name: Разработка модуля C#
+                  href: azure-stack-edge-j-series-create-iot-edge-module.md
             - name: "С помощью Azure Arc\_(предварительная версия)"
               items:
                 - name: Включение Arc в кластере Kubernetes
@@ -123,12 +121,14 @@
               href: azure-stack-edge-j-series-create-certificates-tool.md
             - name: Устранение ошибок сертификата
               href: azure-stack-edge-j-series-certificate-troubleshooting.md
-        - name: Разработка модуля C#
-          href: azure-stack-edge-j-series-create-iot-edge-module.md
         - name: Управление пограничными вычислениями
           href: azure-stack-edge-j-series-manage-compute.md
         - name: Управление шлюзом хранилища
           items:
+            - name: Добавление общей папки и подключение к ней
+              href: azure-stack-edge-j-series-deploy-add-shares.md
+            - name: Добавление учетных записей хранения и подключение к ним
+              href: azure-stack-edge-j-series-deploy-add-storage-accounts.md
             - name: Общие папки
               href: azure-stack-edge-j-series-manage-shares.md
             - name: Пользователи
@@ -149,6 +149,10 @@
               href: azure-stack-edge-return-device.md
             - name: Замена устройства
               href: azure-stack-edge-replace-device.md
+            - name: Подготовка к сбою устройства
+              href: azure-stack-edge-gpu-prepare-device-failure.md
+            - name: Восстановление после сбоя устройства
+              href: azure-stack-edge-gpu-recover-device-failure.md
         - name: Монитор
           items:
             - name: Использование диаграмм метрик
