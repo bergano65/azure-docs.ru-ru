@@ -8,10 +8,10 @@ ms.date: 06/14/2020
 ms.author: jpalma
 author: palma21
 ms.openlocfilehash: a58b00018f6ac89f024661d8d3f50ea5249e620b
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89182128"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Использование общедоступной Load Balancer (цен. категория "Стандартный") в службе Kubernetes Azure (AKS)
@@ -317,7 +317,7 @@ spec:
 
 Ниже приведен список заметок, поддерживаемых для служб Kubernetes с типом `LoadBalancer` . Эти заметки применяются только к **входящим** потокам:
 
-| Заметка | Значение | Описание
+| Annotation | Значение | Описание
 | ----------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------ 
 | `service.beta.kubernetes.io/azure-load-balancer-internal`         | `true` или `false`                     | Укажите, должна ли подсистема балансировки нагрузки быть внутренней. Значение по умолчанию — Public, если не задано.
 | `service.beta.kubernetes.io/azure-load-balancer-internal-subnet`  | Имя подсети                    | Укажите подсеть, к которой должна быть привязана внутренняя подсистема балансировки нагрузки. Если значение не задано, по умолчанию используется подсеть, настроенная в облачном файле конфигурации.

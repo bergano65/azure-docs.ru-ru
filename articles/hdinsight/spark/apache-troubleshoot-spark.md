@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 08/22/2019
 ms.custom: seodec18
 ms.openlocfilehash: 80bca2dab1d07d9b99e75e283068bff99335fa18
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79271945"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
@@ -37,7 +37,7 @@ ms.locfileid: "79271945"
 
 1. Задайте для этого параметра рекомендуемое значение. Рекомендуется использовать значение **2048m**.
 
-1. Сохраните это значение, а затем сохраните конфигурацию. Нажмите кнопку **Сохранить**.
+1. Сохраните это значение, а затем сохраните конфигурацию. Щелкните **Сохранить**.
 
     ![Изменение значения на 2048m](./media/apache-troubleshoot-spark/apache-spark-ambari-config6a.png)
 
@@ -97,7 +97,7 @@ curl -k --user 'username:password' -v -H 'Content-Type: application/json' -X POS
 spark-submit --master yarn-cluster --class com.microsoft.spark.application --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4 /home/user/spark/sparkapplication.jar
 ```
 
-### <a name="additional-reading"></a>Дополнительные материалы для чтения
+### <a name="additional-reading"></a>Дополнительные материалы
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 

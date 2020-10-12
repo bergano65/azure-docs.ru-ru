@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/08/2020
 ms.openlocfilehash: ade2fd6011bbcdaed4ce31ce70bfb4235429bb0d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81606300"
 ---
 # <a name="surrogate-key-transformation-in-mapping-data-flow"></a>Преобразование суррогатного ключа в потоке данных сопоставления 
@@ -21,7 +21,7 @@ ms.locfileid: "81606300"
 
 Используйте преобразование «суррогатный ключ», чтобы добавить значение ключа приращения к каждой строке данных. Это полезно при проектировании таблиц измерений в модели аналитических данных схемы типа «звезда». В схеме типа «звезда» каждому элементу в таблицах измерений требуется уникальный ключ, который является небизнесным ключом.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ![Преобразование суррогатного ключа](media/data-flow/surrogate.png "Преобразование суррогатного ключа")
 
@@ -41,7 +41,7 @@ ms.locfileid: "81606300"
 
 #### <a name="database-sources"></a>Источники базы данных
 
-Используйте параметр SQL-запроса, чтобы выбрать MAX () из источника. Например`Select MAX(<surrogateKeyName>) as maxval from <sourceTable>`/
+Используйте параметр SQL-запроса, чтобы выбрать MAX () из источника. Например `Select MAX(<surrogateKeyName>) as maxval from <sourceTable>`/
 
 ![Запрос суррогатного ключа](media/data-flow/sk002.png "Запрос на преобразование суррогатного ключа")
 
@@ -81,6 +81,6 @@ AggregateDayStats
     ) ~> SurrogateKey1
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этих примерах используются преобразования « [соединение](data-flow-join.md) » и « [производный столбец](data-flow-derived-column.md) ».

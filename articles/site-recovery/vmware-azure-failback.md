@@ -8,10 +8,10 @@ ms.date: 01/15/2019
 ms.topic: conceptual
 ms.author: mayg
 ms.openlocfilehash: aed015b67aa36e7678b31d7f2f047cb1e77c6a3d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84485316"
 ---
 # <a name="fail-back-vmware-vms-to-on-premises-site"></a>Восстановить при сбое виртуальные машины VMware на локальном сайте
@@ -60,7 +60,7 @@ ms.locfileid: "84485316"
 > [!NOTE]
 > После запуска локальной виртуальной машины для регистрации агента на сервере конфигурации потребуется до 15 минут. Если включить повторную защиту в течение этого времени, произойдет сбой и на экране отобразится сообщение о том, что агент не установлен. В таком случае подождите несколько минут и повторно включите защиту.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После завершения задания повторной защиты локальная виртуальная машина реплицируется в Azure. При необходимости можно [запустить другую отработку отказа](site-recovery-failover.md) в Azure.
 

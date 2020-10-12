@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: mqtt
 ms.openlocfilehash: 5c14e8cfcbf8df86b0f71d6b12025594d2e648c4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81730111"
 ---
 # <a name="schedule-jobs-on-multiple-devices"></a>Планирование заданий на нескольких устройствах
@@ -178,7 +178,7 @@ Content-Type: application/json; charset=utf-8
 
 В таблице ниже содержится список свойств, которые можно использовать при выполнении запросов на задания и их результаты, а также описание этих свойств.
 
-| Свойство. | Описание: |
+| Свойство | Описание: |
 | --- | --- |
 | **jobId** |Идентификатор задания, указанный в приложении. |
 | **startTime** |Время начала задания (ISO-8601), указанное в приложении. |
@@ -215,7 +215,7 @@ Content-Type: application/json; charset=utf-8
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы применить некоторые основные понятия, описанные в этой статье, просмотрите следующие руководства по Центру Интернета вещей:
 

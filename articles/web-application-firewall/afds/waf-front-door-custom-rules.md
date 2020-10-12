@@ -8,10 +8,10 @@ services: web-application-firewall
 ms.date: 09/05/2019
 ms.author: victorh
 ms.openlocfilehash: 158bfe30bf48ee420be8efb9ff32fff0e555d9e7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79475830"
 ---
 #  <a name="custom-rules-for-web-application-firewall-with-azure-front-door"></a>Пользовательские правила для брандмауэра веб-приложения с помощью передней дверцы Azure
@@ -76,8 +76,8 @@ ms.locfileid: "79475830"
      
    - **Значение соответствия:** Поддерживаемые значения метода HTTP-запроса включают:
      - GET
-     - ПОМЕСТИТЬ
-     - ОТПРАВКА
+     - POST
+     - PUT
      - HEAD
      - DELETE
      - LOCK
@@ -176,7 +176,7 @@ ms.locfileid: "79475830"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройка политики брандмауэра веб-приложения с помощью Azure PowerShell](waf-front-door-custom-rules-powershell.md) 
 - Дополнительные сведения о [брандмауэре веб-приложения с помощью передней дверцы](afds-overview.md)
 - Дополнительные сведения о [создании Front Door](../../frontdoor/quickstart-create-front-door.md).

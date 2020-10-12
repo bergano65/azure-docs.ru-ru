@@ -5,10 +5,10 @@ ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
 ms.openlocfilehash: 9a3c0643f4fc965ff64106758320aeb445aaf9ae
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85921739"
 ---
 # <a name="azure-functions-developer-guide"></a>Руководство разработчиков Функций Azure
@@ -36,15 +36,15 @@ ms.locfileid: "85921739"
 }
 ```
 
-Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в функциях Azure](functions-triggers-bindings.md).
+Дополнительные сведения см. в разделе [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
 
 В свойстве `bindings` указываются свойства триггеров и привязок. Каждая привязка имеет ряд общих параметров и некоторые параметры, характерные для данного типа привязки. Для каждой привязки требуются указанные ниже параметры.
 
-| Свойство. | Значения и типы | Комментарии |
+| Свойство | Значения и типы | Комментарии |
 | --- | --- | --- |
-| `type` |string |Тип привязки. Например, `queueTrigger`. |
+| `type` |строка |Тип привязки. Например, `queueTrigger`. |
 | `direction` |"in", "out" |Указывает, служит ли привязка для получения данных в функции или для отправки их из функции. |
-| `name` |string |Имя, используемое для связанных данных в функции. Для C# это имя аргумента, а для JavaScript — ключ в списке ключей и значений. |
+| `name` |строка |Имя, используемое для связанных данных в функции. Для C# это имя аргумента, а для JavaScript — ключ в списке ключей и значений. |
 
 ## <a name="function-app"></a>Приложение-функция
 Приложение-функция предоставляет контекст выполнения в Azure, в котором выполняются функции. Таким образом, это единица развертывания и управления для ваших функций. Приложение-функция состоит из одной или нескольких независимых функций, которые управляются, развертываются и масштабируются вместе. Все функции в приложении-функции совместно используют один план ценообразования, метод развертывания и версию среды выполнения. Приложение-функцию можно рассматривать как способ упорядочения функций и совместного управления ими. Дополнительные сведения см. в разделе [Управление приложением-функцией](functions-how-to-use-azure-function-app-settings.md). 
@@ -82,8 +82,8 @@ ms.locfileid: "85921739"
 * [Узел функций Azure](https://github.com/Azure/azure-functions-host/)
 * [портал функций Azure;](https://github.com/azure/azure-functions-ux)
 * [шаблоны функций Azure;](https://github.com/azure/azure-functions-templates)
-* [пакет Azure SDK для веб-заданий;](https://github.com/Azure/azure-webjobs-sdk/)
-* [расширения пакета Azure SDK для веб-заданий.](https://github.com/Azure/azure-webjobs-sdk-extensions/)
+* [Пакет SDK для веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/)
+* [Расширения пакета SDK для веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk-extensions/)
 
 ## <a name="bindings"></a>Привязки
 В таблице ниже приведены все поддерживаемые привязки.
@@ -95,7 +95,7 @@ ms.locfileid: "85921739"
 ## <a name="reporting-issues"></a>Создание отчетов о проблемах
 [!INCLUDE [Reporting Issues](../../includes/functions-reporting-issues.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в следующих ресурсах:
 
 * [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)

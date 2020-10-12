@@ -11,10 +11,10 @@ ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: a2f20a4521efe2806c4bc66e4612b99caf84382a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85385269"
 ---
 # <a name="configure-session-behavior-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка поведения сеанса с помощью пользовательских политик в Azure Active Directory B2C
@@ -59,7 +59,7 @@ ms.locfileid: "85385269"
 
 Для поддержки единого выхода в технический профиль издателя маркера для JWT и SAML необходимо указать:
 
-- Имя протокола, например`<Protocol Name="OpenIdConnect" />`
+- Имя протокола, например `<Protocol Name="OpenIdConnect" />`
 - Ссылка на технический профиль сеанса, например `UseTechnicalProfileForSessionManagement ReferenceId="SM-OAuth-issuer" />` .
 
 В следующем примере показаны издатели маркеров JWT и SAML с единым выходом:
@@ -101,6 +101,6 @@ ms.locfileid: "85385269"
 </ClaimsProvider>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).

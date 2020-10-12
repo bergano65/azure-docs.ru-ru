@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 03/14/2019
 ms.author: alkohli
 ms.openlocfilehash: bf41232026fcb51e63cb68d6f42b7b66d14022e1
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86207787"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-and-manage-storsimple-alerts"></a>Использование службы диспетчера устройств StorSimple для просмотра оповещений StorSimple и управления ими
@@ -118,7 +118,7 @@ ms.locfileid: "86207787"
 * [Оповещения локально закрепленных томов](#locally-pinned-volume-alerts)
 * [Оповещения сети](#networking-alerts)
 * [Оповещения производительности](#performance-alerts)
-* [Оповещения системы безопасности](#security-alerts)
+* [Оповещения безопасности](#security-alerts)
 * [Оповещения пакета поддержки](#support-package-alerts)
 * [Предупреждения окружения корпуса](#enclosure-environment-alerts)
 

@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 69733071c5b43ee9c8e6450e3a9924bc656d5c84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84485497"
 ---
 # <a name="configure-mfa-server-settings"></a>Настройка параметров сервера MFA
@@ -66,6 +66,6 @@ ms.locfileid: "84485497"
 1. При необходимости выберите тип проверки подлинности и укажите приложение.
 1. Выберите **Добавить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные параметры конфигурации сервера MFA доступны в веб-консоли сервера MFA. Вы также можете [настроить сервер Azure MFA для обеспечения высокой доступности](howto-mfaserver-deploy-ha.md).

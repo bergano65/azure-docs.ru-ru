@@ -13,10 +13,10 @@ ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 8b94f6388d77cca2ef74c802aec7648091172775
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79281136"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
@@ -34,7 +34,7 @@ ms.locfileid: "79281136"
 ## <a name="supported-versions"></a>Поддерживаемые версии
 Этот соединитель поддерживает следующие выпуски Salesforce: Developer Edition, Professional Edition, Enterprise Edition или Unlimited Edition. Он также поддерживает копирование из рабочей среды Salesforce, песочницы и пользовательского домена.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * Требуется включить разрешения API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 * Чтобы скопировать данные из Salesforce в локальное хранилище данных, в локальной среде необходимо установить шлюз управления данными версии не ниже 2.0.
 
@@ -66,7 +66,7 @@ ms.locfileid: "79281136"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Salesforce.
 
-| Свойство. | Описание: | Обязательное значение |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | type |Свойство Type должно иметь значение: **Salesforce**. |Да |
 | environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> -По умолчанию — "https: \/ /Login.Salesforce.com". <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |Нет |
@@ -79,7 +79,7 @@ ms.locfileid: "79281136"
 
 Раздел **typeProperties** отличается для каждого типа набора данных и предоставляет сведения о расположении данных в хранилище данных. Раздел typeProperties для набора данных типа **RelationalTable** содержит следующие свойства.
 
-| Свойство. | Описание: | Обязательное значение |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | tableName |Имя таблицы в Salesforce |Нет (если для свойства **RelationalSource** задано значение **query**). |
 
@@ -95,7 +95,7 @@ ms.locfileid: "79281136"
 
 В случае действия копирования, если источник относится к типу **RelationalSource** (который содержит Salesforce), в разделе typeProperties доступны следующие свойства.
 
-| Свойство. | Описание | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) . Например: `select * from MyTable__c`. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
@@ -108,7 +108,7 @@ ms.locfileid: "79281136"
 ### <a name="retrieving-data-using-where-clause-on-datetime-column"></a>Получение данных с использованием предложения WHERE в столбце даты и времени
 При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Пример:
 
-* **Пример SOQL**:`$$Text.Format('SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= {0:yyyy-MM-ddTHH:mm:ssZ} AND LastModifiedDate < {1:yyyy-MM-ddTHH:mm:ssZ}', WindowStart, WindowEnd)`
+* **Пример SOQL**: `$$Text.Format('SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= {0:yyyy-MM-ddTHH:mm:ssZ} AND LastModifiedDate < {1:yyyy-MM-ddTHH:mm:ssZ}', WindowStart, WindowEnd)`
 * **Пример SQL**:
     * **Использование мастера копирования для указания запроса:** `$$Text.Format('SELECT * FROM Account WHERE LastModifiedDate >= {{ts\'{0:yyyy-MM-dd HH:mm:ss}\'}} AND LastModifiedDate < {{ts\'{1:yyyy-MM-dd HH:mm:ss}\'}}', WindowStart, WindowEnd)`
     * **Использование редактирования JSON для указания запроса (соответствующие escape-символы):** `$$Text.Format('SELECT * FROM Account WHERE LastModifiedDate >= {{ts\\'{0:yyyy-MM-dd HH:mm:ss}\\'}} AND LastModifiedDate < {{ts\\'{1:yyyy-MM-dd HH:mm:ss}\\'}}', WindowStart, WindowEnd)`
@@ -294,11 +294,11 @@ ms.locfileid: "79281136"
 | Идентификатор |Строка |
 | Связь для подстановки |Строка |
 | Список множественного выбора |Строка |
-| number |Decimal |
+| Число |Decimal |
 | Процент |Decimal |
-| Номер телефона |Строка |
+| Телефон |Строка |
 | Список выбора |Строка |
-| Text |Строка |
+| Текстовый |Строковый |
 | Текстовое поле |Строка |
 | Текстовое поле (длинное) |Строка |
 | Текстовое поле (расширенное) |Строка |

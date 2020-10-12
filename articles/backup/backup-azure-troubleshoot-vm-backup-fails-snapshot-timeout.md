@@ -5,10 +5,10 @@ ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
 ms.openlocfilehash: e5fc26231cc5d3ad412371c2f8c187b2d0033ee4
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89182043"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
@@ -249,10 +249,10 @@ Azure Backup использует расширение моментальных 
 2. Для параметра **Logs.Verbose** измените значение с *n* на *y*.
 3. Сохраните изменения и перезапустите waagent, выполнив шаги, описанные выше в этом разделе.
 
-### <a name="vm-agent-configuration-options-are-not-set-for-linux-vms"></a>Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)
+### <a name="vm-agent-configuration-options-are-not-set-for-linux-vms"></a>Параметры конфигурации VM-Agent не заданы (для виртуальных машин Linux)
 
 Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Для параметров файла конфигурации **Extensions. Enable** должно быть задано значение **y** и **подготовка.** для работы резервного копирования агент должен иметь значение **Авто** .
-Полный список параметров файла конфигурации агента виртуальной машины см. в разделе. <https://github.com/Azure/WALinuxAgent#configuration-file-options>
+Полный список параметров файла конфигурации VM-Agent см. в разделе. <https://github.com/Azure/WALinuxAgent#configuration-file-options>
 
 ### <a name="application-control-solution-is-blocking-iaasbcdrextensionexe"></a>Решение "Управление приложениями" блокирует IaaSBcdrExtension.exe
 

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48584fa4042cf53fa1084e519dca0e64f530ca59
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90090131"
 ---
 # <a name="azure-ad-connect-staging-server-and-disaster-recovery"></a>Azure AD Connect: промежуточный сервер и аварийное восстановление
@@ -49,13 +49,13 @@ ms.locfileid: "90090131"
 ### <a name="verify-the-configuration-of-a-server"></a>Проверка конфигурации сервера
 Чтобы использовать этот метод, выполните следующие действия.
 
-1. [Подготовка](#prepare)
+1. [Подготовка.](#prepare)
 2. [Конфигурация](#configuration)
 3. [Импорт и синхронизация](#import-and-synchronize)
 4. [Проверка](#verify)
 5. [Переключение активного сервера](#switch-active-server)
 
-#### <a name="prepare"></a>Подготовка
+#### <a name="prepare"></a>Подготовка.
 1. Установите Azure AD Connect, выберите **промежуточный режим** и снимите флажок **Запустить синхронизацию** на последней странице мастера установки. В этом режиме можно вручную запустить модуль синхронизации.
    ![На снимке экрана показана страница все готово для настройки в диалоговом окне Azure AD Connect.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
 2. Выйдите из системы и снова войдите в нее, а затем в меню "Пуск" выберите пункт **Служба синхронизации**.

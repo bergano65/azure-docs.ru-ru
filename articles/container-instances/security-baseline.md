@@ -8,10 +8,10 @@ ms.date: 05/27/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: a26581b61a4b99bd11f48a3d431a1bb85148d66b
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89393434"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
@@ -1103,7 +1103,7 @@ ms.locfileid: "89393434"
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
 
-**Рекомендации**. обратимое удаление можно включить в Azure Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
+**Рекомендации**. Вы можете включить Soft-Delete в Azure Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
 
 * [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
 
