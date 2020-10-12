@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
 ms.openlocfilehash: 7a76ac3bbe62d48de67815d09e1c8d75f03caa36
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86077904"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
@@ -36,7 +36,7 @@ ms.locfileid: "86077904"
 
 В приведенной ниже таблице представлены различные способы создания кластера HDInsight.
 
-|Средство|На основе браузера|Командная строка|REST API|SDK|
+|Инструмент|На основе браузера|Командная строка|REST API|SDK|
 |---|---|---|---|---|
 |[Портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)|X||||
 |[Фабрика данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md).|X|X|X|X|
@@ -118,7 +118,7 @@ HDInsight использует Базу данных SQL Azure для храни
 - Рассмотрите использование Ranger RBAC для таблиц Hive и аудита.
 - Рассмотрите вопрос об использовании CosmosDB вместо MongoDB или Cassandra.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочитайте следующую статью в этом цикле:
 

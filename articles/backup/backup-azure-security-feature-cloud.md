@@ -4,10 +4,10 @@ description: Узнайте, как использовать функции бе
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.openlocfilehash: d7998c7f9def6ce9965ded3b6ec700f7975891eb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91271551"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Обратимое удаление для Azure Backup
@@ -178,6 +178,6 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 Операции обратимого удаления можно выполнить с помощью PowerShell. В настоящее время CLI не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о средствах безопасности в Azure Backup](security-overview.md)

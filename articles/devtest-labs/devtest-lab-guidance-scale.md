@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 50bf08678a12a1a0499abd08c52a264d03f4a401
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85478796"
 ---
 # <a name="scale-up-your-azure-devtest-labs-infrastructure"></a>Увеличение масштаба инфраструктуры Azure DevTest Labs
@@ -57,5 +57,5 @@ ms.locfileid: "85478796"
 - **Владелец DevTest Labs** имеет полный административный доступ к лаборатории. Этот пользователь отвечает за добавление и удаление пользователей, управление параметрами затрат, общие параметры лаборатории и другие задачи, связанные с артефактами или виртуальными машинами. Владелец лаборатории также имеет все права пользователя DevTest Labs.
 - **Пользователь DevTest Labs** может создавать и использовать виртуальные машины в лаборатории. Эти пользователи имеют минимальные права администрирования (запуск, приостановление, удаление и настройка виртуальных машин) для виртуальных машин, которые они создают. Они не могут управлять виртуальными машинами других пользователей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующей статье из этой серии: [Orchestrate the implementation of Azure DevTest Labs](devtest-lab-guidance-orchestrate-implementation.md) (Оркестрация внедрения службы Azure DevTest Labs).

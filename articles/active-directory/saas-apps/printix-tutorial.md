@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 06/29/2017
 ms.author: jeedes
 ms.openlocfilehash: e9bc7969c5fee83944dab7cb35832f82b57c5595
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88552349"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-printix"></a>Руководство. Интеграция Azure Active Directory с Printix
@@ -108,7 +108,7 @@ ms.locfileid: "88552349"
 
     ![Настройка единого входа](./media/printix-tutorial/tutorial_printix_url.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:. `https://<subdomain>.printix.net`
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.printix.net`
 
     > [!NOTE] 
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Printix](mailto:support@printix.net). 

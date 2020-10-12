@@ -9,10 +9,10 @@ ms.date: 08/24/2020
 ms.author: bwren
 ms.custom: subject-monitoring
 ms.openlocfilehash: 12bf87e16bf4506f2015dd75fb360f8de8399902
-ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88797825"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
@@ -62,7 +62,7 @@ Azure Cosmos DB собирает данные мониторинга тех же
 
 На странице **Обзор** на портале Azure приводится сводка использования каждой базы данных Azure Cosmos, включая количество запросов и стоимость в час. Это полезная информация, которая, однако, представляет собой лишь небольшую часть доступных данных мониторинга. Некоторые из этих данных собираются автоматически и доступны для анализа сразу же после создания базы данных, но для сбора дополнительных данных требуется настройка.
 
-:::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="Страница Обзор":::
+:::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
 ## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a> Анализ данных метрик
 
@@ -82,27 +82,27 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 1. На панели навигации слева выберите пункт **Монитор**, а затем выберите **Метрики**.
 
-   :::image type="content" source="./media/monitor-cosmos-db/monitor-metrics-blade.png" alt-text="Область метрик в Azure Monitor":::
+   :::image type="content" source="./media/monitor-cosmos-db/monitor-metrics-blade.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
 1. В области **Метрики** щелкните **Выбрать ресурс** и выберите требуемые **подписку** и **группу ресурсов**. В поле **Тип ресурса** выберите **Учетные записи Azure Cosmos DB**, выберите одну из существующих учетных записей Azure Cosmos и нажмите кнопку **Применить**.
 
-   :::image type="content" source="./media/monitor-cosmos-db/select-cosmosdb-account.png" alt-text="Выбор учетной записи Cosmos DB для просмотра метрик":::
+   :::image type="content" source="./media/monitor-cosmos-db/select-cosmosdb-account.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
 1. Далее можно выбрать метрику из списка доступных метрик. Вы можете выбрать метрики, связанные с единицами запросов, хранилищем, задержкой, доступностью, Cassandra и т. д. Подробные сведения о всех доступных метриках в списке см. в статье с [перечнем метрик по категориям](monitor-cosmos-db-reference.md). В этом примере выберем **Единицы запроса** и **Среднее** в качестве значения агрегата.
 
    Помимо этих сведений, можно также выбрать **диапазон времени** и **степень детализации времени** для метрик. Вы можете просмотреть метрики максимум за последние 30 дней.  После применения фильтра отображается диаграмма на его основе. На ней можно увидеть среднее количество единиц запросов, употреблявшихся в минуту за выбранный период.  
 
-   :::image type="content" source="./media/monitor-cosmos-db/metric-types.png" alt-text="Выбор метрики на портале Azure":::
+   :::image type="content" source="./media/monitor-cosmos-db/metric-types.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
 ### <a name="add-filters-to-metrics"></a>Добавление фильтров к метрикам
 
 Можно также отфильтровать метрики и отображаемую диаграмму по определенному значению **CollectionName**, **DatabaseName**, **OperationType**, **Region** или **StatusCode**. Чтобы отфильтровать метрики, выберите команду **Добавить фильтр**, а затем выберите требуемое свойство, например **OperationType**, и значение, например **Запрос**. После этого на графе отобразятся единицы запросов, использованные для операции запроса за выбранный период. Операции, выполняемые с помощью хранимой процедуры, не регистрируются в журнале, поэтому они недоступны в метрике OperationType.
 
-:::image type="content" source="./media/monitor-cosmos-db/add-metrics-filter.png" alt-text="Добавление фильтра для выбора степени детализации метрики":::
+:::image type="content" source="./media/monitor-cosmos-db/add-metrics-filter.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
 Метрики можно группировать с помощью параметра **Применить разделение**. Например, можно сгруппировать единицы запросов по типу операции и просмотреть граф для всех операций сразу, как показано на следующем рисунке:
 
-:::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Добавление фильтра Применить разделение":::
+:::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="Параметры мониторинга, доступные в портал Azure":::
 
 ## <a name="analyzing-log-data"></a><a id="analyze-log-data"></a> Анализ данных журнала
 

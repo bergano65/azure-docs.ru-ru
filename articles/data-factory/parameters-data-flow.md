@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 05/01/2020
 ms.openlocfilehash: 8e88e5e8a9fbe1881959c5183dc01b11ac681bdf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82780404"
 ---
 # <a name="parameterizing-mapping-data-flows"></a>Параметризация потоков данных для сопоставления
@@ -67,7 +67,7 @@ ms.locfileid: "82780404"
 Значение, если параметр потока данных `stringParam` ссылается на параметр конвейера со значением `upper(column1)` . 
 
 - Если выбрано выражение, `$stringParam` вычисляется значение Столбец1 все прописные.
-- Если выражение не проверяется (поведение по умолчанию), `$stringParam` результатом вычисления будет`'upper(column1)'`
+- Если выражение не проверяется (поведение по умолчанию),  `$stringParam` результатом вычисления будет `'upper(column1)'`
 
 #### <a name="passing-in-timestamps"></a>Передача меток времени
 
@@ -84,7 +84,7 @@ ms.locfileid: "82780404"
 
 ![Задание параметра потока данных](media/data-flow/parameter-pipeline-2.png "Задание параметра потока данных")
 
-`@pipeline.parameters.pipelineParam`присваивается значение `abs(1)` во время выполнения.
+`@pipeline.parameters.pipelineParam` присваивается значение `abs(1)` во время выполнения.
 
 ![Задание параметра потока данных](media/data-flow/parameter-pipeline-4.png "Задание параметра потока данных")
 

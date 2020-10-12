@@ -9,10 +9,10 @@ ms.date: 07/28/2020
 ms.author: cynthn
 ms.reviewer: zivr
 ms.openlocfilehash: 351b10b68cf1c014d358032f41bb01ac1093bd68
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91373126"
 ---
 # <a name="azure-dedicated-hosts"></a>Выделенные узлы Azure
@@ -180,7 +180,7 @@ Azure отслеживает состояние работоспособност
 | Узел освобожден  | Все виртуальные машины были удалены с узла. Вы больше не платите за этот узел, так как оборудование было вычислено из вращения.   |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Выделенный узел можно развернуть с помощью [Azure PowerShell](./windows/dedicated-hosts-powershell.md), [портала](./windows/dedicated-hosts-portal.md)и [Azure CLI](./linux/dedicated-hosts-cli.md).
 

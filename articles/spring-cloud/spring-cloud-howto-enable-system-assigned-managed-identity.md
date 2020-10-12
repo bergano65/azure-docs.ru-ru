@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 05/13/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: bff98ea3470110bc29f75361fb3a2adc685e2602
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888568"
 ---
 # <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Как включить управляемое удостоверение, назначенное системой, для приложения Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Управляемые удостоверения для ресурсов Azure предоставляют автоматически управляемое удостоверение в Azure Active Directory к ресурсу Azure, например к облачному приложению Azure весны. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
@@ -83,7 +83,7 @@ Azure Веснное облако использует одну и ту же к�
 az spring-cloud app identity remove -n app_name -s service_name -g resource_group_name
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Доступ к Azure Key Vault с управляемыми удостоверениями в пружинной заначальной загрузке](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-starter-keyvault-secrets/README.md#use-msi--managed-identities)
 * [Дополнительные сведения об управляемых удостоверениях для ресурсов Azure](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/overview.md)

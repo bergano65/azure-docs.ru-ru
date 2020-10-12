@@ -12,10 +12,10 @@ ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 477349f1addf71a30e8ecb179266d8eac5510887
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80244756"
 ---
 # <a name="categorize-images-by-subject-matter"></a>Категоризация изображений по темам
@@ -53,7 +53,7 @@ ms.locfileid: "80244756"
 
 В приведенной ниже таблице показаны типичный набор изображений и категория, возвращаемая компьютерным зрением для каждого из них.
 
-| Изображение | Категория |
+| Образ — | Категория |
 |-------|----------|
 | ![Четыре человека позируют как семья](./Images/family_photo.png) | people_group |
 | ![Щенок, сидящий на лужайке](./Images/cute_dog.png) | animal_dog |
@@ -67,6 +67,6 @@ ms.locfileid: "80244756"
 * [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 * [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите связанные понятия [маркировки изображений](concept-tagging-images.md) и [Описание изображений](concept-describing-images.md).

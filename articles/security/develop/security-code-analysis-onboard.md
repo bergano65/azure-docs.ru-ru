@@ -13,10 +13,10 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: 5366da1048e7c6d9612ad8b6b1f1694068bb35fb
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87543033"
 ---
 # <a name="onboarding-and-installing"></a>Подключение и установка
@@ -48,9 +48,9 @@ ms.locfileid: "87543033"
 
 >**Переключающ**
 
-- Зоны — контактные данные:cloudsupport@zones.com
-- Вортелл — контактные данные:info@wortell.nl
-- Логическое, контактные данные:logicalisleads@us.logicalis.com
+- Зоны — контактные данные: cloudsupport@zones.com
+- Вортелл — контактные данные: info@wortell.nl
+- Логическое, контактные данные: logicalisleads@us.logicalis.com
 
 ### <a name="become-a-partner"></a>Стать партнером
 
@@ -78,7 +78,7 @@ ms.locfileid: "87543033"
    - Новый конвейер: выберите **создать** и выполните действия, описанные в разделе Создание нового конвейера.
    - Изменить конвейер. Выберите существующий конвейер и нажмите кнопку **изменить** , чтобы начать редактирование конвейера.
 1. Выберите **+** и перейдите к области **Добавление задач** .
-1. В списке или с помощью поля поиска найдите задачу сборки, которую нужно добавить. Нажмите кнопку **Добавить**.
+1. В списке или с помощью поля поиска найдите задачу сборки, которую нужно добавить. Выберите **Добавить**.
 1. Укажите параметры, необходимые для задачи.
 1. Поставьте новую сборку в очередь.
    >[!NOTE]
@@ -92,7 +92,7 @@ ms.locfileid: "87543033"
 > - Некоторые задачи сборки Azure DevOps не поддерживаются при выполнении через конвейер выпуска. В частности, Azure DevOps не поддерживает задачи, которые публикуют артефакты из конвейера выпуска.
 > - Список стандартных переменных в Azure DevOps Team Build, которые можно указать в качестве параметров, см. в статье [переменные сборки DevOps Azure](https://docs.microsoft.com/azure/devops/pipelines/build/variables?tabs=batch&view=vsts).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о настройке задач сборки см. в нашем [руководству по настройке](security-code-analysis-customize.md) или [YAML](yaml-configuration.md).
 

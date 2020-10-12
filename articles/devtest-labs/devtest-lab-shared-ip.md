@@ -4,10 +4,10 @@ description: Узнайте, как с помощью общих IP-адресо
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 36a5da1b2b6252d0adb480a622c461b33425e675
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85484100"
 ---
 # <a name="understand-shared-ip-addresses-in-azure-devtest-labs"></a>Общие IP-адреса в Azure DevTest Labs
@@ -40,7 +40,7 @@ Azure DevTest Labs позволяет виртуальным машинам ла
 
 - **Пользователи Windows.** Нажмите кнопку **Подключить** на портале Azure, чтобы скачать предварительно настроенный RDP-файл и получить доступ к виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определение политик лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md)
 * [Настройка виртуальной сети в Azure DevTest Labs](devtest-lab-configure-vnet.md)

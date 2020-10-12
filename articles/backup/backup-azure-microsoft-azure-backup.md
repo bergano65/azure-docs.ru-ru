@@ -4,10 +4,10 @@ description: Из этой статьи вы узнаете, как подгот
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.openlocfilehash: 6fe03260cc1759929e7ff9886b1b232a37056866
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90975529"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Установка и обновление Azure Backup Server
@@ -210,7 +210,7 @@ Azure Backup Server наследует большую часть функцио�
    >
    >
 
-    ![Центр обновления Майкрософт согласие](./media/backup-azure-microsoft-azure-backup/update-opt-screen2.png)
+    ![Центр обновления Майкрософт Opt-In](./media/backup-azure-microsoft-azure-backup/update-opt-screen2.png)
 7. Проверьте *сводку параметров* и нажмите кнопку **установить**.
 
     ![Сводка параметров](./media/backup-azure-microsoft-azure-backup/summary-screen.png)

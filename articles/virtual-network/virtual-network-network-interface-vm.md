@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
 ms.openlocfilehash: f7253be2844f40ca52df2f9b3bc9cbba552fea2b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85480139"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Добавление и удаление сетевых интерфейсов виртуальных машин
@@ -50,7 +50,7 @@ ms.locfileid: "85480139"
 
 Перед созданием виртуальной машины [Создайте сетевой интерфейс](virtual-network-network-interface.md#create-a-network-interface).
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[az network nic create](/cli/azure/network/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-network-nic-create)|
 |PowerShell|[New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json)|
@@ -78,7 +78,7 @@ ms.locfileid: "85480139"
 
 ### <a name="commands"></a>Команды
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[AZ VM NIC Add](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-add) (Справочник); [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
 |PowerShell|[Add-азвмнетворкинтерфаце](/powershell/module/az.compute/add-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (ссылка); [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
@@ -100,7 +100,7 @@ ms.locfileid: "85480139"
 
 ### <a name="commands"></a>Команды
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[AZ VM NIC List](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-list)|
 |PowerShell|[Get-AzVM](/powershell/module/az.compute/get-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
@@ -124,7 +124,7 @@ ms.locfileid: "85480139"
 
 ### <a name="commands"></a>Команды
 
-|Средство|Get-Help|
+|Инструмент|Get-Help|
 |---|---|
 |CLI|[AZ VM NIC Remove](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-remove) (Reference); [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
 |PowerShell|[Remove-азвмнетворкинтерфаце](/powershell/module/az.compute/remove-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (Reference); [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
@@ -153,11 +153,11 @@ ms.locfileid: "85480139"
 
 - Достижение оптимальной производительности требует ускорения работы в сети. В некоторых случаях необходимо явно включить ускоренную сеть для виртуальных машин [Windows](create-vm-accelerated-networking-powershell.md) или [Linux](create-vm-accelerated-networking-cli.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о создании виртуальной машины с несколькими сетевыми интерфейсами или IP-адресами см. в следующих статьях:
 
-|Задача|Средство|
+|Задача|Инструмент|
 |---|---|
 |Создание виртуальной машины с несколькими сетевыми адаптерами|[Интерфейс командной строки](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |Создание виртуальной машины с одним сетевым адаптером, которому назначено несколько IPv4-адресов|[Интерфейс командной строки](virtual-network-multiple-ip-addresses-cli.md), [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)|

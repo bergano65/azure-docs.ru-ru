@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/23/2019
 ms.openlocfilehash: 3e724e6336163a092c9b4385324b1aa037295bb6
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86081763"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight
@@ -75,6 +75,6 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 Если это не сработает, отключите кэш ввода-вывода.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительная информация об IO Cache, в том числе о сравнительных тестах производительности, приведена в [этой записи блога](https://azure.microsoft.com/blog/apache-spark-speedup-with-hdinsight-io-cache/)
