@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: zarhoads
 ms.openlocfilehash: fab4943cad1a87bda70a4c4332ab6135ed99bf1b
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89022281"
 ---
 # <a name="best-practices-for-pod-security-in-azure-kubernetes-service-aks"></a>Рекомендации по защите групп pod в Службе контейнеров Azure (AKS)
@@ -97,7 +97,7 @@ spec:
 
 Когда приложениям требуются учетные данные, они обращаются в цифровое хранилище и получают последнюю версию секретных данных, а затем подключаются к нужной службе. В качестве цифрового хранилища можно использовать Azure Key Vault. На следующей схеме показан упрощенный рабочий процесс извлечения учетных данных из Azure Key Vault с использованием управляемых удостоверений группы pod:
 
-:::image type="content" source="media/developer-best-practices-pod-security/basic-key-vault.svg" alt-text="Упрощенный рабочий процесс извлечения учетных данных из Key Vault с использованием управляемого удостоверения группы pod":::
+:::image type="content" source="media/developer-best-practices-pod-security/basic-key-vault.svg" alt-text="Упрощенный рабочий процесс при использовании управляемых удостоверений группы pod в Azure":::
 
 Key Vault позволяет хранить и регулярно менять секреты, в том числе учетные данные, ключи учетной записи хранения или сертификаты. Вы можете интегрировать Azure Key Vault в кластер AKS при помощи [поставщика услуг Azure Key Vault для драйвера Secrets Store CSI](https://github.com/Azure/secrets-store-csi-driver-provider-azure#usage). Драйвер Secrets Store CSI позволяет кластеру AKS собственными средствами получать секретные данные из Key Vault и безопасно предоставлять их только запрашивающей группе pod. Обратитесь к оператору кластера, чтобы развернуть драйвер Secrets Store CSI на рабочих узлах AKS. Управляемое удостоверение группы pod позволяет запрашивать доступ к Key Vault и получать нужные секретные данные через драйвер Secrets Store CSI.
 

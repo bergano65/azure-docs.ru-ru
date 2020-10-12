@@ -15,14 +15,14 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: cba3f47015072f16112ef981d2f59d0c73cb69c2
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88142491"
 ---
 # <a name="troubleshooting-allocation-failure-when-you-deploy-cloud-services-in-azure"></a>Устранение ошибки выделения при развертывании облачных служб в Azure
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 При развертывании экземпляров в облачной службе или добавлении новых экземпляров веб-узлов или рабочих ролей Microsoft Azure выделяет вычислительные ресурсы. Иногда во время выполнения этих операций могут возникать ошибки, даже если еще не достигнуты ограничения подписки Azure. В этой статье объясняются причины возникновения некоторых распространенных ошибок выделения, а также представлены возможные способы их устранения. Эта информация также может быть полезна при планировании развертывания служб.
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]

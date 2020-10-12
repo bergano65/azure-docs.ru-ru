@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: b7a6584b1566d1fa2e1e250938212a01d845e113
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 993c0bdf1e8e29a7cff9bd1cad60bf78386b16a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91578229"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Управляемые клиентом ключи для шифрования службы хранилища Azure
@@ -27,8 +27,6 @@ ms.locfileid: "91578229"
 
 > [!NOTE]
 > Управляемый модуль HSM Azure Key Vault и Azure Key Vault поддерживают те же интерфейсы API и интерфейсы управления для конфигурации.
-
-[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="about-customer-managed-keys"></a>Сведения об управляемых клиентом ключах
 
@@ -117,7 +115,7 @@ ms.locfileid: "91578229"
 
 Ключи, управляемые клиентом, также доступны для управления шифрованием управляемых дисков Azure. Управляемые клиентом ключи ведут себя иначе для управляемых дисков, чем для ресурсов службы хранилища Azure. Дополнительные сведения см. в статье [Шифрование управляемых дисков Azure](../../virtual-machines/windows/disk-encryption.md) на стороне сервера для Windows или [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/linux/disk-encryption.md) для Linux.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
 - [Настройка шифрования с помощью управляемых клиентом ключей, хранящихся в Azure Key Vault](customer-managed-keys-configure-key-vault.md)

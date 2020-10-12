@@ -9,10 +9,10 @@ ms.date: 08/05/2020
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: c3a5f3a984c95af400c9e0c1543e3c1883290668
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89442962"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения
@@ -26,7 +26,7 @@ ms.locfileid: "89442962"
 > [!NOTE]
 > Уровень поддержки относится только к поддержке службы с Data Lake Storage Gen 2.
 
-|Служба Azure |Уровень поддержки |Azure AD |Общий ключ| Похожие статьи |
+|Служба Azure |Уровень поддержки |Azure AD |Общий ключ| Похожие статьи |
 |---------------|-------------------|---|---|---|
 |Фабрика данных Azure|Общедоступная версия|Да|Да|[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/load-azure-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Azure Databricks|Общедоступная версия|Да|Да|[Использование с Azure Databricks](https://docs.azuredatabricks.net/data/data-sources/azure/azure-datalake-gen2.html) <br> [Краткое руководство. анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks](data-lake-storage-quickstart-create-databricks-account.md) <br>[Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse) <br>[Учебник. доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks с использованием Spark](data-lake-storage-use-databricks-spark.md)|

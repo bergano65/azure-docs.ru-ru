@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/20/2020
 ms.author: raynew
 ms.openlocfilehash: f9f7b3b64cf91019ed4e40d5d52b859419b74836
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86107637"
 ---
 # <a name="contoso-migration-series"></a>Миграция Contoso: серия
@@ -26,7 +26,7 @@ ms.locfileid: "86107637"
 - Для каждого сценария развертывания мы предоставляем сведения о бизнес-драйверах и целях, предлагаемую архитектуру, шаги для выполнения миграции и рекомендации по очистке и дальнейшим действиям после завершения миграции.
 
 
-**Рассмотрен** | **Сведения** 
+**Статья** | **Сведения** 
 --- | --- 
 [Статья 1. Общие сведения](/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-overview) | Обзор серии статей, стратегии миграции компании Contoso и используемых в этой серии примеров приложений. 
 [Статья 2. Развертывание инфраструктуры миграции в Contoso](/azure/architecture/cloud-adoption/migrate/azure-best-practices/contoso-migration-infrastructure) | Компания Contoso готовит свою локальную инфраструктуру и инфраструктуру Azure для миграции. Для всех статей в серии используется одна и та же инфраструктура. 

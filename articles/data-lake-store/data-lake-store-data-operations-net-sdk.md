@@ -8,10 +8,10 @@ ms.date: 01/03/2020
 ms.author: twooley
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 1044af94df43e61ae8c0032041bc80a356331f1a
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89022468"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Операции файловой системы на Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
@@ -28,7 +28,7 @@ ms.locfileid: "89022468"
 
 Инструкции по выполнению операций управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET см. в разделе [операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Visual Studio 2013 или более поздней версии**. В инструкциях этой статьи используется Visual Studio 2019.
 
@@ -192,14 +192,14 @@ foreach (var entry in client.EnumerateDirectory("/Test"))
 client.DeleteRecursive("/Test");
 ```
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>примеры
 
 Ниже приведено несколько примеров, демонстрирующих использование пакета SDK для файловой системы Data Lake Storage 1-го поколения.
 
 * [Базовый пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
 * [Расширенный пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)

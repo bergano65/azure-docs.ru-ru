@@ -16,10 +16,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 11/13/2019
 ms.openlocfilehash: 85ebb7f5ac52f4eea25f9e6f1a2b1b5ac6f4caa5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87077919"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
@@ -151,7 +151,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 
 Для отправки конфиденциальных полезных данных мы советуем использовать шаблон безопасных push-уведомлений. Отправитель посылает уведомление для проверки связи с идентификатором сообщения на устройство без конфиденциальных полезных данных. Когда приложение на устройстве получает эти полезные данные, оно может напрямую вызвать безопасный API, чтобы получить информацию о сообщении. Руководство по реализации этой схемы см. на странице [Безопасные push-уведомления посредством центров уведомлений Azure].
 
-## <a name="operations"></a>Operations
+## <a name="operations"></a>Операции
 
 ### <a name="what-support-is-provided-for-disaster-recovery"></a>Какая поддержка предоставляется для аварийного восстановления?
 
@@ -191,7 +191,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 
 Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [портале Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [этой странице].
 
-Можно также программно получить доступ к метрикам. См. сведения в следующих статьях:
+Можно также программно получить доступ к метрикам. Дополнительные сведения см. в следующих статьях:
 
 - [Получение метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). В этом примере используются имя пользователя и пароль. Чтобы использовать сертификат, перегрузите метод ФромсервицепринЦипал, чтобы предоставить сертификат, как показано в [этом примере](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
 - [Получение метрик и журналов действий для ресурса](https://azure.microsoft.com/resources/samples/monitor-dotnet-query-metrics-activitylogs/)
