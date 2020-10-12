@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: fa48953e5e86ffa758fe556b7fb1072be9d74647
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75360316"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
@@ -148,7 +148,7 @@ EXIT /B 0
 </Startup>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как выполнять некоторые [стандартные задачи запуска](cloud-services-startup-tasks-common.md) с помощью облачной службы.
 
 [Упакуйте](cloud-services-model-and-package.md) облачную службу.  
@@ -156,9 +156,9 @@ EXIT /B 0
 [ServiceDefinition. csdef]: cloud-services-model-and-package.md#csdef
 [Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Запуск]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
-[Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
+[Параметры выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
 [Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Перемен]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 

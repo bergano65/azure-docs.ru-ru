@@ -11,10 +11,10 @@ ms.author: euang
 ms.reviewer: euang
 zone_pivot_groups: programming-languages-spark-all-minus-sql
 ms.openlocfilehash: f25aae64e117452cd689b68c5478e7431d1a21bf
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91249371"
 ---
 # <a name="hyperspace-an-indexing-subsystem-for-apache-spark"></a>Гиперпространства: подсистема индексирования для Apache Spark
@@ -32,7 +32,7 @@ ms.locfileid: "91249371"
 
 Этот документ также доступен в форме записной книжки для [Python](https://github.com/microsoft/hyperspace/blob/master/notebooks/python/Hitchhikers%20Guide%20to%20Hyperspace.ipynb), [C#](https://github.com/microsoft/hyperspace/blob/master/notebooks/csharp/Hitchhikers%20Guide%20to%20Hyperspace.ipynb)и [Scala](https://github.com/microsoft/hyperspace/blob/master/notebooks/scala/Hitchhikers%20Guide%20to%20Hyperspace.ipynb) .
 
-## <a name="setup"></a>Установка
+## <a name="setup"></a>Настройка
 
 Чтобы начать работу, запустите новый сеанс Spark. Поскольку этот документ является учебником только для демонстрации того, что может предложить гиперпространства, вы вносите изменения в конфигурацию, позволяющие выделять, что делает гиперпространства в небольших наборах данных. 
 
@@ -1544,7 +1544,7 @@ Project [deptName#675]
    +- *(1) FileScan parquet [deptId#674,deptName#675] Batched: true, Format: Parquet, Location: InMemoryFileIndex[abfss://datasets@hyperspacebenchmark.dfs.core.windows.net/hyperspaceon..., PartitionFilters: [], PushedFilters: [IsNotNull(deptId), GreaterThan(deptId,20)], ReadSchema: struct<deptId:int,deptName:string>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Проект гиперпространства](https://microsoft.github.io/hyperspace/)
 * [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)

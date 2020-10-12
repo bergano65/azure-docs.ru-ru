@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 06/02/2020
 ms.openlocfilehash: 70e0a95a85920562af8bf9d3fffa6633709dccc5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84322096"
 ---
 # <a name="select-transformation-in-mapping-data-flow"></a>Выбор преобразования в потоке данных сопоставления
@@ -72,7 +72,7 @@ ms.locfileid: "84322096"
 
 ![сопоставление на основе правил](media/data-flow/rule-based-hierarchy.png "Rule-based mapping (Выбор преобразования: сопоставление на основе правил)")
 
-Приведенный выше пример соответствует всем подстолбцам сложного столбца `a` . `a`содержит два подстолбца `b` и `c` . Выходная схема будет содержать два столбца `b` , а `c` в качестве условия "Name AS" — `$$` .
+Приведенный выше пример соответствует всем подстолбцам сложного столбца `a` . `a` содержит два подстолбца `b` и `c` . Выходная схема будет содержать два столбца `b` , а `c` в качестве условия "Name AS" — `$$` .
 
 ### <a name="parameterization"></a>Определение параметров
 
@@ -132,5 +132,5 @@ DerivedColumn1 select(mapColumn(
     skipDuplicateMapOutputs: true) ~> Select1
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * После использования инструкции SELECT для переименования, изменения порядка и псевдонима столбцов используйте [Преобразование «приемник](data-flow-sink.md) » для размещения данных в хранилище данных.

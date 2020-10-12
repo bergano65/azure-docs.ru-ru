@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: cherylmc
 ms.openlocfilehash: 1e0bc9a17a12afac6d91867b19aba0f90b7f6edb
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88270756"
 ---
 # <a name="create-an-azure-bastion-host-using-the-portal"></a>Создание узла бастиона Azure с помощью портала
@@ -59,7 +59,7 @@ ms.locfileid: "88270756"
 1. На странице **Создание бастиона** нажмите кнопку **создать**.
 1. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. Создание и развертывание ресурса бастиона занимает около 5 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в статье [вопросы и ответы по бастиона](bastion-faq.md) .
 

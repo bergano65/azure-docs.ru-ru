@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: alkohli
 ms.openlocfilehash: 423345739ca5c078fbff4f267e1e8a118abf107c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90903191"
 ---
 # <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-pro-gpu-device"></a>Включение службы "Дуга Azure" в кластере Kubernetes на устройстве с Azure Stack ребра Pro GPU
@@ -222,6 +222,6 @@ ms.locfileid: "90903191"
     `Remove-HcsKubernetesAzureArcAgent` 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о том, как запустить развертывание Azure Arc, см. в статье [развертывание приложения Redis в режиме без отслеживания состояния с помощью гитопс на устройстве Pro на Azure Stack](azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md) .

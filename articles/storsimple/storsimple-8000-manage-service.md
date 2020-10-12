@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 73373f788a4a87a36a800d69ffcdc646f4cd2084
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91249558"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Развертывание службы диспетчера устройств StorSimple для устройств StorSimple серии 8000
@@ -156,7 +156,7 @@ ms.locfileid: "91249558"
 
 #### <a name="to-initiate-the-service-data-encryption-key-change"></a>Запуск изменения ключа шифрования данных службы
 1. Выберите вариант 1, чтобы войти на устройство с правами на полный доступ.
-2. В командной строке введите:
+2. В командной строке введите следующее:
    
      `Invoke-HcsmServiceDataEncryptionKeyChange`
 3. После успешного завершения работы командлета вы получите новый ключ шифрования данных службы. Скопируйте и сохраните этот ключ для использования на шаге 3. Этот ключ будет использоваться для обновления всех остальных устройств, зарегистрированных в службе StorSimple Manager.
@@ -211,7 +211,7 @@ ms.locfileid: "91249558"
 | Включение и выключение контроллеров устройства                                                                                              | Да            |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше о [процессе развертывания StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
 * Узнайте больше об [управлении учетной записью хранения StorSimple](storsimple-8000-manage-storage-accounts.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

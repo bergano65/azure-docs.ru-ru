@@ -10,10 +10,10 @@ ms.reviewer: klam, estfan
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.openlocfilehash: e851da0013cf3a9ff6bb1a0fc1c073b5b796c54d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78898539"
 ---
 # <a name="what-is-azure-scheduler"></a>Что такое планировщик Azure?
@@ -39,7 +39,7 @@ ms.locfileid: "78898539"
 
 Для создания, планирования, управления, обновления и удаления заданий и [коллекций заданий](../scheduler/scheduler-concepts-terms.md)можно использовать код, [планировщик REST API](https://docs.microsoft.com/rest/api/scheduler/)или [командлеты PowerShell планировщика Azure](scheduler-powershell-reference.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
 * [Тарифные планы и выставление счетов для планировщика Azure](scheduler-plans-billing.md)

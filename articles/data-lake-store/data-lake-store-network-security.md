@@ -14,10 +14,10 @@ ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
 ms.openlocfilehash: 9066c53fce750b1c8402c5a0ccbd10debd5ec431
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85855708"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения
@@ -81,7 +81,7 @@ az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resourc
   
 - Данные файлов и папок в учетной записи ADLS 1-го поколения с поддержкой интеграции с виртуальной сетью недоступны на портале. Это включает доступ из виртуальной машины, которая находится в пределах виртуальной сети, и такие действия, как использование обозревателя данных. Действия по управлению учетными записями будут работать. Данные файлов и папок в учетной записи ADLS с интеграцией с виртуальной сетью доступны через все ресурсы вне портала. Это пакет SDK для доступа, скрипты PowerShell, другие службы Azure (когда поступают не с портала) и т. д. 
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="step-1-configure-your-virtual-network-to-use-an-azure-ad-service-endpoint"></a>Шаг 1. Настройка виртуальной сети для использования конечной точки службы AAD
 
@@ -128,7 +128,7 @@ az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resourc
 
     ![Выбор виртуальной сети и подсетей.](media/data-lake-store-network-security/config-adls-3.png)
 
-6.  Убедитесь, что виртуальные сети и подсети отображаются в списке корректно. Нажмите кнопку **Сохранить**.
+6.  Убедитесь, что виртуальные сети и подсети отображаются в списке корректно. Щелкните **Сохранить**.
 
     ![Сохранение нового правила](media/data-lake-store-network-security/config-adls-4.png)
 

@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.openlocfilehash: 4dd592cb1b0037e2e1054bb24d987d4456f15e2c
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89381184"
 ---
 # <a name="how-to-configure-your-saas-offer-properties"></a>Настройка свойств предложения SaaS
@@ -43,7 +43,7 @@ ms.locfileid: "89381184"
 
 ## <a name="provide-terms-and-conditions"></a>Укажите условия
 
-В разделе **юридические**укажите условия для вашего предложения. Имеются две возможности.
+В разделе **юридические**укажите условия для вашего предложения. У вас есть два варианта:
 
 - [Использование стандартного контракта с необязательными поправками](#use-the-standard-contract)
 - [Собственные условия](#use-your-own-terms-and-conditions)
@@ -95,6 +95,6 @@ ms.locfileid: "89381184"
 
 1. Выберите **Сохранить черновик** , прежде чем перейти к следующей вкладке, **список предложений**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Как настроить сведения о списке предложений SaaS](create-new-saas-offer-listing.md)

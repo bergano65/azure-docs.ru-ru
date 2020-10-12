@@ -13,10 +13,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 61d07c1ba912a0e24b2f4e5fa67243b4525db367
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81536188"
 ---
 # <a name="scopes-for-a-web-api-accepting-v10-tokens"></a>Области для веб-API, принимающие токены версии 1.0
@@ -64,7 +64,7 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 Azure AD использует следующую логику:
 
 - Для конечной точки ADAL (Azure AD v 1.0) с маркером доступа v 1.0 (только возможный), AUD = Resource.
-- Для конечной точки MSAL (Microsoft Identity Platform (v 2.0)), запрашивающей маркер доступа для ресурса, принимающего токены версии 2.0,`aud=resource.AppId`
+- Для конечной точки MSAL (Microsoft Identity Platform (v 2.0)), запрашивающей маркер доступа для ресурса, принимающего токены версии 2.0, `aud=resource.AppId`
 - Для MSAL (конечная точка версии 2.0) с запросом маркера доступа для ресурса, который принимает маркер доступа v 1.0 (этот вариант описан выше), Azure AD анализирует нужную аудиторию из запрошенной области, принимая все до последней косой черты и используя ее в качестве идентификатора ресурса. Таким образом, если для HTTPS: \/ /Database.Windows.NET требуется аудитория "https: \/ /Database.Windows.NET/", необходимо запросить область "https: \/ /Database.Windows.NET//.Default". См. также вопрос GitHub [#747: Конечная косая черта URL-адреса ресурса пропущена, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>Области для запроса доступа ко всем разрешениям в приложении версии 1.0

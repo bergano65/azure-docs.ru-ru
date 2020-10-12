@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
 ms.openlocfilehash: e63c3f329cb9c1fd5ca91274540f5145c3ad098a
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85921545"
 ---
 # <a name="transformation-functions-in-wrangling-data-flow"></a>Функции преобразования в потоке данных структурирование
@@ -68,15 +68,15 @@ ms.locfileid: "85921545"
 ----------------------
 * Power Query создаст вложенное соединение (Table. Нестеджоин; пользователи могут также вручную написать [таблицу. адджоинколумн](https://docs.microsoft.com/powerquery-m/table-addjoincolumn)).
     Пользователи должны развернуть вложенный столбец JOIN в невложенное соединение (Table. Експандтаблеколумн, не поддерживается в любом другом контексте).
-* Таблица функций M [. Join](https://docs.microsoft.com/powerquery-m/table-join) может быть написана напрямую, чтобы избежать необходимости в дополнительном шаге расширения, но пользователь должен убедиться в отсутствии повторяющихся имен столбцов между соединяемыми таблицами.
-* Поддерживаемые типы соединений: [inner](https://docs.microsoft.com/powerquery-m/joinkind-inner), [LeftOuter](https://docs.microsoft.com/powerquery-m/joinkind-leftouter), [RightOuter](https://docs.microsoft.com/powerquery-m/joinkind-rightouter), [FullOuter](https://docs.microsoft.com/powerquery-m/joinkind-fullouter)
-* Оба [значения. Equals](https://docs.microsoft.com/powerquery-m/value-equals) и [value. нуллабликуалс](https://docs.microsoft.com/powerquery-m/value-nullableequals) поддерживаются как компараторы равенства ключей
+* Таблица функций M   [. Join](https://docs.microsoft.com/powerquery-m/table-join) может быть написана напрямую, чтобы избежать необходимости в дополнительном шаге расширения, но пользователь должен убедиться в отсутствии повторяющихся имен столбцов между соединяемыми таблицами.
+* Поддерживаемые типы соединений:   [inner](https://docs.microsoft.com/powerquery-m/joinkind-inner),   [LeftOuter](https://docs.microsoft.com/powerquery-m/joinkind-leftouter),   [RightOuter](https://docs.microsoft.com/powerquery-m/joinkind-rightouter),   [FullOuter](https://docs.microsoft.com/powerquery-m/joinkind-fullouter)
+* Оба   [значения. Equals](https://docs.microsoft.com/powerquery-m/value-equals) и   [value. нуллабликуалс](https://docs.microsoft.com/powerquery-m/value-nullableequals) поддерживаются как компараторы равенства ключей
 
 ## <a name="group-by"></a>Group by
 
 Используйте [Table. Group](https://docs.microsoft.com/powerquery-m/table-group) для статистической обработки значений.
 * Должен использоваться с агрегатной функцией
-* Поддерживаемые статистические функции: [Table. ROWCOUNT](https://docs.microsoft.com/powerquery-m/table-rowcount), [List. Sum](https://docs.microsoft.com/powerquery-m/list-sum), [List. Count](https://docs.microsoft.com/powerquery-m/list-count), [List. СРЗНАЧ](https://docs.microsoft.com/powerquery-m/list-average), [List. min](https://docs.microsoft.com/powerquery-m/list-min), [List. Max](https://docs.microsoft.com/powerquery-m/list-max), [List. стандартное отклонение](https://docs.microsoft.com/powerquery-m/list-standarddeviation), [List. First](https://docs.microsoft.com/powerquery-m/list-first), [List. Last](https://docs.microsoft.com/powerquery-m/list-last)
+* Поддерживаемые статистические функции:   [Table. ROWCOUNT](https://docs.microsoft.com/powerquery-m/table-rowcount),   [List. Sum](https://docs.microsoft.com/powerquery-m/list-sum),   [List. Count](https://docs.microsoft.com/powerquery-m/list-count),   [List. СРЗНАЧ](https://docs.microsoft.com/powerquery-m/list-average),   [List. min](https://docs.microsoft.com/powerquery-m/list-min),   [List. Max](https://docs.microsoft.com/powerquery-m/list-max),   [List. стандартное отклонение](https://docs.microsoft.com/powerquery-m/list-standarddeviation),   [List. First](https://docs.microsoft.com/powerquery-m/list-first),   [List. Last](https://docs.microsoft.com/powerquery-m/list-last)
 
 ## <a name="sorting"></a>Сортировка
 
@@ -88,7 +88,7 @@ ms.locfileid: "85921545"
 
 ## <a name="known-unsupported-functions"></a>Известные неподдерживаемые функции
 
-| Функция | Состояние |
+| Компонент | Состояние |
 | -- | -- |
 | Table.PromoteHeaders | Не поддерживается. Тот же результат можно получить, установив в наборе данных "первая строка как заголовок". |
 | Table.CombineColumns | Это распространенный сценарий, который не поддерживается напрямую, но может быть достигнут путем добавления нового столбца, объединяющего два заданных столбца.  Например, Table. AddColumn (Ремовимаилколумн, "Name", each [FirstName] & "" & [LastName]) |

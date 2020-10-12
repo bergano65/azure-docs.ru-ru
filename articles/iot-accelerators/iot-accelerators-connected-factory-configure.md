@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
 ms.openlocfilehash: e015c6761b920ef37af2bbfd67ced5fc3218d532
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91290693"
 ---
 # <a name="configure-the-connected-factory-solution-accelerator"></a>Настройка акселератора решения "Подключенная фабрика"
 
 > [!IMPORTANT]
-> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 Акселератор решения "Подключенная фабрика" показывает смоделированную панель мониторинга для вымышленной компании Contoso. Компания располагает фабриками в различных точках земного шара.
 
@@ -341,6 +341,6 @@ WebApp поддерживает внутренний словарь данных
 
 **OpCode** в конфигурации настраивает логику вычислений для расчета разницы максимального и минимального значений. Затем полученные результаты накапливаются в восходящем порядке до корневого (глобального) уровня и отображаются на панели мониторинга.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Предлагаемый следующий шаг — научиться [настраивать решение подключенной фабрики](iot-accelerators-connected-factory-customize.md).

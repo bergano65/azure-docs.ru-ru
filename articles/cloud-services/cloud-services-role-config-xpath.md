@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/19/2017
 ms.author: tagore
 ms.openlocfilehash: 380b0be4e4e4b19d16cb611b0b472294339f2199
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75386091"
 ---
 # <a name="expose-role-configuration-settings-as-an-environment-variable-with-xpath"></a>Предоставление параметров конфигурации ролей как переменной среды с помощью XPath
@@ -22,7 +22,7 @@ ms.locfileid: "75386091"
 ## <a name="app-running-in-emulator"></a>Приложение, запущенное в эмуляторе
 Указывает, что приложение выполняется в эмуляторе.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/Deployment/@emulated" |
 | Код |var x = RoleEnvironment.IsEmulated; |
@@ -30,7 +30,7 @@ ms.locfileid: "75386091"
 ## <a name="deployment-id"></a>Идентификатор развертывания
 Получает идентификатор развертывания для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/Deployment/@id" |
 | Код |var deploymentId = RoleEnvironment.DeploymentId; |
@@ -38,7 +38,7 @@ ms.locfileid: "75386091"
 ## <a name="role-id"></a>Идентификатор роли
 Получает идентификатор текущей роли для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/@id" |
 | Код |var id = RoleEnvironment.CurrentRoleInstance.Id; |
@@ -46,7 +46,7 @@ ms.locfileid: "75386091"
 ## <a name="update-domain"></a>Обновление домена
 Получает домен обновления для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/@updateDomain" |
 | Код |var ud = RoleEnvironment.CurrentRoleInstance.UpdateDomain; |
@@ -54,7 +54,7 @@ ms.locfileid: "75386091"
 ## <a name="fault-domain"></a>Домен сбоя
 Получает домен сбоя для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/@faultDomain" |
 | Код |var fd = RoleEnvironment.CurrentRoleInstance.FaultDomain; |
@@ -62,7 +62,7 @@ ms.locfileid: "75386091"
 ## <a name="role-name"></a>Имя роли
 Получает имя роли для экземпляров.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/@roleName" |
 | Код |var rname = RoleEnvironment.CurrentRoleInstance.Role.Name; |
@@ -70,7 +70,7 @@ ms.locfileid: "75386091"
 ## <a name="config-setting"></a>Параметр конфигурации
 Получает значение указанного параметра конфигурации.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Setting1']/@value" |
 | Код |var setting = RoleEnvironment.GetConfigurationSettingValue("Setting1"); |
@@ -78,7 +78,7 @@ ms.locfileid: "75386091"
 ## <a name="local-storage-path"></a>Путь к локальному хранилищу
 Получает путь к локальному хранилищу для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='LocalStore1']/@path" |
 | Код |var localResourcePath = RoleEnvironment.GetLocalResource("LocalStore1").RootPath; |
@@ -86,7 +86,7 @@ ms.locfileid: "75386091"
 ## <a name="local-storage-size"></a>Размер локального хранилища
 Получает размер локального хранилища для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='LocalStore1']/@sizeInMB" |
 | Код |var localResourceSizeInMB = RoleEnvironment.GetLocalResource("LocalStore1").MaximumSizeInMegabytes; |
@@ -94,7 +94,7 @@ ms.locfileid: "75386091"
 ## <a name="endpoint-protocol"></a>Протокол конечной точки
 Получает протокол конечной точки для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/Endpoints/Endpoint[@name='Endpoint1']/@protocol" |
 | Код |var prot = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["Endpoint1"].Protocol; |
@@ -102,7 +102,7 @@ ms.locfileid: "75386091"
 ## <a name="endpoint-ip"></a>IP-адрес конечной точки
 Получает IP-адрес указанной конечной точки.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/Endpoints/Endpoint[@name='Endpoint1']/@address" |
 | Код |var address = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["Endpoint1"].IPEndpoint.Address |
@@ -110,7 +110,7 @@ ms.locfileid: "75386091"
 ## <a name="endpoint-port"></a>Порт конечной точки
 Получает порт конечной точки для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/Endpoints/Endpoint[@name='Endpoint1']/@port" |
 | Код |var port = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["Endpoint1"].IPEndpoint.Port; |
@@ -155,7 +155,7 @@ ms.locfileid: "75386091"
 </WorkerRole>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о файле [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#serviceconfigurationcscfg) .
 
 Создайте пакет [ServicePackage.cspkg](cloud-services-model-and-package.md#servicepackagecspkg) .

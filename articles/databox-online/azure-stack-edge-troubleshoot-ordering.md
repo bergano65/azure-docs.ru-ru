@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: alkohli
 ms.openlocfilehash: 3087c209b844d691173edbbd8a993c1d0aae319b
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90903635"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-pro-ordering-issues"></a>Устранение неполадок, связанных с порядком Azure Stack пограничных заказов Pro
@@ -73,6 +73,6 @@ ms.locfileid: "90903635"
 
 **Предлагаемое решение:** Эта ошибка возникает из-за существующей политики Azure, блокирующей создание ресурсов. Политики Azure задаются системным администратором организации для обеспечения соответствия при использовании или создании ресурсов Azure. Если любая такая политика блокирует Azure Stack создания ресурса ребра, обратитесь к системному администратору, чтобы изменить политику Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о том, как [устранять неполадки Azure Stack пограничных Pro](azure-stack-edge-troubleshoot.md).

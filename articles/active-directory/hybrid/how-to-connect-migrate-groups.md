@@ -12,20 +12,20 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ef693a48dc52854e4e1fd8359ef24f65ce236f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85358588"
 ---
 # <a name="migrate-groups-from-one-forest-to-another-for-azure-ad-connect"></a>Миграция групп из одного леса в другой для Azure AD Connect
 
 В этой статье описывается, как выполнить миграцию групп из одного леса в другой, чтобы перенесенные объекты группы соответствовали существующим объектам в облаке.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure AD Connect версии 1.5.18.0 или более поздней
-- Для атрибута привязки к источнику задано значение`mS-DS-ConsistencyGuid`
+- Для атрибута привязки к источнику задано значение `mS-DS-ConsistencyGuid`
 
 ## <a name="migrate-groups"></a>Миграция групп
 
@@ -124,5 +124,5 @@ Set-ADGroup -Identity $dn -Replace @{'mS-DS-ConsistencyGuid'=$targetGuid} -Error
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

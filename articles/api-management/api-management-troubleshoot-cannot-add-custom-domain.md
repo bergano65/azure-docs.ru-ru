@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 07/19/2019
 ms.author: tehnoonr
 ms.openlocfilehash: a09c15466a4a9f62b2696b087cb7ab23cc767379
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75430577"
 ---
 # <a name="failed-to-update-api-management-service-hostnames"></a>Не удалось обновить имена узлов службы управления API
@@ -30,7 +30,7 @@ ms.locfileid: "75430577"
 
 - Не удалось обновить имена узлов службы управления API. Сбой запроса к ресурсу " https://vaultname.vault.azure.net/secrets/secretname/?api-version=7.0 " с StatusCode: запрещено для RequestId:. Сообщение об исключении: операция вернула недопустимый код состояния "запрещено".
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Служба управления API не имеет разрешения на доступ к хранилищу ключей, которое вы пытаетесь использовать для личного домена.
 
@@ -54,7 +54,7 @@ ms.locfileid: "75430577"
 
 Убедитесь, что проблема устранена. Для этого попытайтесь создать личный домен в службе управления API с помощью сертификата Key Vault.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе управления API:
 
 - См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.

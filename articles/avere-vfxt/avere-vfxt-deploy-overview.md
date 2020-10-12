@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 4c63fdf2164dd4dce12912669eec29c79755cc2a
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88271232"
 ---
 <!-- filename is linked to in the marketplace template, make sure it gets a redirect if we rename it -->
@@ -74,6 +74,6 @@ ms.locfileid: "88271232"
 
    Если необходимо переместить данные рабочего набора в новый контейнер больших двоичных объектов или другую серверную систему хранения, следуйте инструкциям в разделе [Перемещение данных в кластер вфкст](avere-vfxt-data-ingest.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Продолжайте [подготовку к созданию Авере вфкст](avere-vfxt-prereqs.md) для выполнения необходимых задач.
