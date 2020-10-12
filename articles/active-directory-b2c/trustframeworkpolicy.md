@@ -11,10 +11,10 @@ ms.date: 01/31/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 29eddbcfb7c0da98e5438f968dd3976b77a44680
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85203101"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
@@ -38,14 +38,14 @@ ms.locfileid: "85203101"
 
 Элемент **TrustFrameworkPolicy** содержит следующие атрибуты:
 
-| Атрибут | Обязательное значение | Описание |
+| attribute | Обязательно | Описание |
 |---------- | -------- | ----------- |
 | PolicySchemaVersion | Да | Версия схемы, которая будет использоваться для выполнения политики. Значение должно быть `0.3.0.0`. |
 | TenantObjectId | Нет | Уникальный идентификатор объекта для Azure Active Directory B2C клиента (Azure AD B2C). |
 | TenantId | Да | Уникальный идентификатор арендатора, к которому относится эта политика. |
 | PolicyId | Да | Уникальный идентификатор политики. Этот идентификатор должен начинаться с префикса *B2C_1A_* |
 | PublicPolicyUri | Да | Универсальный код ресурса (URI) для политики, который является сочетанием идентификатора арендатора и идентификатора политики. |
-| DeploymentMode | Нет | Возможные значения: `Production` или `Development` . `Production` используется по умолчанию. Это свойство используется при отладке политики. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
+| DeploymentMode | Нет | Возможные значения: `Production` или `Development` . Значение по умолчанию — `Production`. Это свойство используется при отладке политики. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
 | UserJourneyRecorderEndpoint | Нет | Конечная точка, которая используется, когда для **DeploymentMode** задано значение `Development`. Значение должно быть равно `urn:journeyrecorder:applicationinsights`. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
 
 
@@ -88,7 +88,7 @@ ms.locfileid: "85203101"
 
 В элементе **BasePolicy** содержатся следующие элементы:
 
-| Элемент | Вхождения | Описание: |
+| Элемент | Вхождения | Описание |
 | ------- | ----------- | --------|
 | TenantId | 1:1 | Идентификатор арендатора Azure AD B2C. |
 | PolicyId | 1:1 | Идентификатор родительской политики. |

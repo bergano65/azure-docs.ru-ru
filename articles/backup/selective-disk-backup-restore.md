@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: references_regions
 ms.openlocfilehash: ce7e53bc740882a819e8a21e3ac95ab47d3b876a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91271381"
 ---
 # <a name="selective-disk-backup-and-restore-for-azure-virtual-machines"></a>Выборочное резервное копирование и восстановление для виртуальных машин Azure
@@ -313,7 +313,7 @@ Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "
 
 Функция выборочной архивации диска — это возможность, предоставляемая в верхней части решения для резервного копирования виртуальных машин Azure. Сейчас служба архивации виртуальных машин Azure не поддерживает виртуальные машины с подключенными к ним виртуальными дисками Ultra-Disk или Shared.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Матрица поддержки для резервного копирования виртуальных машин Azure](backup-support-matrix-iaas.md)
 - [Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure](backup-azure-vm-backup-faq.md)

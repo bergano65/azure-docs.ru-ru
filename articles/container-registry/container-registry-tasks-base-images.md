@@ -4,10 +4,10 @@ description: Сведения об основных образах для обр
 ms.topic: article
 ms.date: 01/22/2019
 ms.openlocfilehash: 35933c4cdbbf2762f7a54bd945f8a8ffa55b9f21
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85918502"
 ---
 # <a name="about-base-image-updates-for-acr-tasks"></a>Основные сведения об обновлениях базовых образов для задач контроля доступа
@@ -62,7 +62,7 @@ ms.locfileid: "85918502"
 
 * **Другие триггеры задач** . в задаче, активируемой обновлениями базовых образов, можно также включить триггеры на основе [фиксации исходного кода](container-registry-tutorial-build-task.md) или [расписания](container-registry-tasks-scheduled.md). Обновление базового образа также может вызвать [многошаговую задачу](container-registry-tasks-multi-step.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих руководствах содержатся сценарии для автоматизации сборок образа приложения после обновления базового образа.
 

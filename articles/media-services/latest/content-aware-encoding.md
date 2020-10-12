@@ -13,10 +13,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 5d08e09905841f6068f2bac45680a8e5a011c158
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89297371"
 ---
 # <a name="use-the-content-aware-encoding-preset-to-find-the-optimal-bitrate-value-for-a-given-resolution"></a>Используйте предустановку кодирования с поддержкой содержимого, чтобы найти оптимальное значение скорости для заданного разрешения.
@@ -81,10 +81,10 @@ TransformOutput[] output = new TransformOutput[]
 > [!NOTE]
 > Счета для заданий кодирования, использующих `ContentAwareEncoding` предустановку, выставляются на основе выходных минут. 
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Учебник. Отправка, кодирование и потоковая передача видео со службами мультимедиа v3](stream-files-tutorial-with-api.md)
 * [Руководство. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)
 * [Руководство. кодирование удаленного файла на основе URL-адреса и потока видео — CLI](stream-files-cli-quickstart.md)
-* [Руководство. кодирование удаленного файла на основе URL-адреса и поток видео — .NET](stream-files-dotnet-quickstart.md)
-* [Руководство. кодирование удаленного файла на основе URL-адреса и потоковой передачи видео Node.js](stream-files-nodejs-quickstart.md)
+* [Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью .NET](stream-files-dotnet-quickstart.md)
+* [Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью Node.js](stream-files-nodejs-quickstart.md)

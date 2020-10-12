@@ -4,10 +4,10 @@ description: Создайте пул настраиваемых образов �
 ms.topic: conceptual
 ms.date: 07/01/2020
 ms.openlocfilehash: 45bf0f8b3cb335b7025ff06189bf6bc4e0a896ad
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85851300"
 ---
 # <a name="use-a-managed-image-to-create-a-custom-image-pool"></a>Использование управляемого образа для создания пользовательского пула образов

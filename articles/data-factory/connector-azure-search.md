@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/13/2019
 ms.openlocfilehash: dfa1ad318ccc9e891b646ec050f6a0776e108206
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81418241"
 ---
 # <a name="copy-data-to-an-azure-cognitive-search-index-using-azure-data-factory"></a>Копирование данных в индекс Когнитивный поиск Azure с помощью фабрики данных Azure
@@ -52,7 +52,7 @@ ms.locfileid: "81418241"
 > [!IMPORTANT]
 > При копировании данных из облачного хранилища данных в индекс поиска в связанной службе Azure Когнитивный поиск необходимо сослаться на Azure Integration Runtime с явно заданным регионом в Коннактвиа. Задайте регион, в котором находится служба поиска. Дополнительные сведения о среде IR Azure см. [здесь](concepts-integration-runtime.md#azure-integration-runtime).
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -133,7 +133,7 @@ AzureSearchSink проявляет два типа поведения upsert (с
 
 Служба Когнитивный поиск Azure поддерживает запись документов в виде пакета. Пакет может содержать от 1 до 1000 действий. Действие обрабатывает один документ для выполнения операции передачи или объединения.
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[

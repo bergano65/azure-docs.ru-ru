@@ -15,10 +15,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4de9f5a21f38f741dcf65d285446d9482716d4f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85608132"
 ---
 # <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Практическое руководство. Устранение ошибок входа с помощью отчетов Azure Active Directory
@@ -32,7 +32,7 @@ ms.locfileid: "85608132"
 
 Кроме того, отчет о событиях входа также помогает устранить ошибки входа для пользователей в вашей организации. В этом руководстве вы узнаете, как найти сбой входа в отчете о событиях входа и использовать его, чтобы понять основную причину сбоя.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам необходимы:
 
@@ -61,7 +61,7 @@ ms.locfileid: "85608132"
 
 8. Если ничего не поможет или проблема будет повторяться, несмотря на выполнение рекомендуемых действий, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md), следуя инструкциям на вкладке **Устранение неполадок и поддержка**. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Справочник по кодам ошибок входов](reference-sign-ins-error-codes.md)
 * [Обзор отчета о событиях входа](concept-sign-ins.md)

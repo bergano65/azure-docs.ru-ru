@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
 ms.openlocfilehash: e744423e00377ef763824f6e39865e6b3e8ee475
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89073545"
 ---
 # <a name="qna-maker-encryption-of-data-at-rest"></a>QnA Maker шифрование неактивных данных
@@ -58,7 +58,7 @@ QnA Maker использует поддержку CMK из службы поис
 QnA Maker портал работает в браузере пользователя. Каждое действие активирует прямой вызов соответствующего API-интерфейса службы. Таким образом, QnA Maker соответствует данным при передаче.
 Однако, поскольку служба QnA Maker Portal размещена в западной части США, она по-прежнему не идеально подходит для клиентов, не являющихся клиентами США. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Шифрование в поиске Azure с помощью ключей CMK в Azure Key Vault](https://docs.microsoft.com/azure/search/search-security-manage-encryption-keys)
 * [Шифрование неактивных данных](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)

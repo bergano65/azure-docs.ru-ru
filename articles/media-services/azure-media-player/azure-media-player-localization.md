@@ -7,10 +7,10 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 04/20/2020
 ms.openlocfilehash: 8a459d1fba4353b4b3e092e83a759314cc455ead
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87087294"
 ---
 # <a name="azure-media-player-localization"></a>Локализация Проигрыватель мультимедиа Azure #
@@ -26,7 +26,7 @@ ms.locfileid: "87087294"
 
 В настоящее время Проигрыватель мультимедиа Azure поддерживает следующие языки с соответствующими кодами языков:
 
-| Language            | Код | Language                | Код   | Language                | Код         |
+| Язык            | Код | Язык                | Код   | Язык                | Код         |
 |---------------------|------|-------------------------|--------|-------------------------|--------------|
 | Английский {по умолчанию}   | en   | Хорватский                | hr     | Румынский                | ro           |
 | Арабский              | ar   | Венгерский               | hu     | Словацкий                  | sk           |

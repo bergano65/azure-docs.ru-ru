@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
 ms.openlocfilehash: 730efb552ef218cc5a5ce6a984d20b4e23b364ac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81416941"
 ---
 # <a name="copy-data-from-an-http-endpoint-by-using-azure-data-factory"></a>Копирование данных с источника HTTP с помощью фабрики данных Azure
@@ -184,7 +184,7 @@ ms.locfileid: "81416941"
 > [!NOTE]
 > Поддерживаемый размер полезных данных запроса HTTP — около 500 КБ. Если размер полезных данных, которые вы хотите передать в конечную веб-точку, превышает размер 500 КБ, разбейте полезные данные на небольшие блоки.
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -227,7 +227,7 @@ ms.locfileid: "81416941"
 | type                     | Свойство Type в разделе `storeSettings` должно иметь значение **хттпреадсеттингс**. | Да      |
 | requestMethod            | Метод HTTP. <br>Допустимые значения: **GET** (по умолчанию) и **POST**. | Нет       |
 | аддтионалхеадерс         | Дополнительные заголовки HTTP-запроса.                             | Нет       |
-| requestBody              | Текст HTTP-запроса.                               | Нет       |
+| requestBody              | Текст HTTP-запроса.                               | нет       |
 | httpRequestTimeout           | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. По умолчанию используется значение **00:01:40**. | Нет       |
 | maxConcurrentConnections | Количество одновременных подключений к хранилищу. Укажите, только если требуется ограничить одновременные подключения к хранилищу данных. | Нет       |
 
@@ -291,7 +291,7 @@ ms.locfileid: "81416941"
 | additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет |
 | requestBody | Текст HTTP-запроса. | Нет |
 | format | Если требуется получить данные из конечной точки HTTP "как есть", — без анализа и копирования в хранилище файлов — можно пропустить раздел **форматирования** в определениях входного и выходного наборов данных.<br/><br/>Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [формате JSON](supported-file-formats-and-compression-codecs-legacy.md#json-format), [текстовом формате](supported-file-formats-and-compression-codecs-legacy.md#text-format), [формате Avro](supported-file-formats-and-compression-codecs-legacy.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs-legacy.md#orc-format) и [ формате Parquet](supported-file-formats-and-compression-codecs-legacy.md#parquet-format). |Нет |
-| compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs-legacy.md#compression-support).<br/><br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни: **оптимальный** и **самый быстрый**. |Нет |
+| compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs-legacy.md#compression-support).<br/><br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни:  **оптимальный** и **самый быстрый**. |Нет |
 
 > [!NOTE]
 > Поддерживаемый размер полезных данных запроса HTTP — около 500 КБ. Если размер полезных данных, которые вы хотите передать в конечную веб-точку, превышает размер 500 КБ, разбейте полезные данные на небольшие блоки.

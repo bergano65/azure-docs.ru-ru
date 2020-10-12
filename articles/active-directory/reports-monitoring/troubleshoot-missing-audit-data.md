@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5e1ac0033b7ed2de90ece481cd02d64970ff5f9f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85608115"
 ---
 # <a name="troubleshoot-missing-data-in-the-azure-active-directory-activity-logs"></a>Устранение неполадок, связанных с отсутствием данных в журналах действий Azure Active Directory 
@@ -34,11 +34,11 @@ ms.locfileid: "85608115"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/01.png)
  
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Report | Задержка (P95) | Задержка (P99) |
+| Отчет | Задержка (P95) | Задержка (P99) |
 |--------|---------------|---------------|
 | Аудит каталогов | 2 мин | 5 мин |
 | Действия при входе | 2 мин | 5 мин |
@@ -55,11 +55,11 @@ ms.locfileid: "85608115"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/02.png)
  
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Report | Задержка (P95) | Задержка (P99) |
+| Отчет | Задержка (P95) | Задержка (P99) |
 |--------|---------------|---------------|
 | Аудит каталогов | 2 мин | 5 мин |
 | Активность входа 2 мин | 5 мин |
@@ -76,11 +76,11 @@ ms.locfileid: "85608115"
 
  ![Отчеты](./media/troubleshoot-missing-audit-data/03.png)
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 В зависимости от типа лицензии Azure Active Directory сохраняет отчеты о действиях за такие периоды времени:
 
-| Report           | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Отчет           | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
 | ---              | ---           | ---                 | ---                 |
 | Аудит каталога  |  7 дней       | 30 дней             | 30 дней             |
 | Действия при входе | Недоступно. Доступ к данным собственного входа в систему можно получить в течение 7 дней в колонке профиля пользователя | 30 дней | 30 дней             |
@@ -91,7 +91,7 @@ ms.locfileid: "85608115"
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).
 * [Azure Active Directory отчет о задержке](reference-reports-latencies.md).

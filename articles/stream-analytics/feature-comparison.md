@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.openlocfilehash: 2ba7dc3b0f2bc4f62234c480da0af1061dea1f91
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90885562"
 ---
 # <a name="azure-stream-analytics-feature-comparison"></a>Сравнение возможностей Azure Stream Analytics
@@ -23,7 +23,7 @@ ms.locfileid: "90885562"
 ## <a name="cloud-job-features"></a>Функции облачных заданий
 
 
-|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
+|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Кроссплатформенные     |Mac</br>Linux</br>Windows         |Windows        |Mac</br>Linux</br>Windows          |
 |Создание скриптов     |Да         |Да         |Да         |
@@ -53,7 +53,7 @@ ms.locfileid: "90885562"
 
 ## <a name="iot-edge-job-features"></a>Функции задания IoT Edge
 
-|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
+|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Создание заданий     |Да         |Да         |Нет         |
 |Система управления версиями     |Нет         |Да         |Нет         |
@@ -68,7 +68,7 @@ ms.locfileid: "90885562"
 |Поддержка CI/CD     |Нет         |Нет         |Нет         |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Azure Stream Analytics в IoT Edge](stream-analytics-edge.md)
 * [Руководство. Написание определяемой пользователем функции C# для задания Azure Stream Analytics IoT Edge (Предварительная версия)](stream-analytics-edge-csharp-udf.md)

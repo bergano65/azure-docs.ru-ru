@@ -8,10 +8,10 @@ ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: 82003ef84571c8e07982826124b33763c0e53194
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88205552"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
@@ -109,7 +109,7 @@ public static ConnectionMultiplexer Connection
 | 10221-10231 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) | (Подсеть Redis) |
 | 20226 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 | 13000-13999 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
-| 15000-15999 |Исходящие |TCP |Внутренние коммуникации для Redis и георепликации | (Подсеть Redis) |(Подсеть Redis) (Геореплика одноранговая подсеть) |
+| 15000-15999 |Исходящие |TCP |Внутренние коммуникации для Redis и Geo-Replication | (Подсеть Redis) |(Подсеть Redis) (Геореплика одноранговая подсеть) |
 | 6379-6380 |Исходящие |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 
 <sup>1</sup> вы можете использовать тег службы "AzureKeyVault" с диспетчер ресурсов группами безопасности сети.
@@ -130,11 +130,11 @@ public static ConnectionMultiplexer Connection
 | --- | --- | --- | --- | --- | --- |
 | 6379, 6380 |Входящий трафик |TCP |Обмен данными между клиентом и Redis, балансировка нагрузки Azure | (Подсеть Redis) | (Подсеть Redis), виртуальная сеть, Azure Load Balancer <sup>1</sup> |
 | 8443 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
-| 8500 |Входящие |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Azure Load Balancer |
+| 8500 |Входящий |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Azure Load Balancer |
 | 10221-10231 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) Azure Load Balancer |
 | 13000-13999 |Входящий трафик |TCP |Обмен данными между клиентом и кластерами Redis, балансировка нагрузки Azure | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer |
-| 15000-15999 |Входящий трафик |TCP |Взаимодействие клиента с кластерами Redis, балансировкой нагрузки Azure и георепликацией | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer, (одноранговая подсеть геореплики) |
-| 16001 |Входящие |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Azure Load Balancer |
+| 15000-15999 |Входящий трафик |TCP |Клиентское взаимодействие с кластерами Redis, балансировкой нагрузки Azure и Geo-Replication | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer, (одноранговая подсеть геореплики) |
+| 16001 |Входящий |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Azure Load Balancer |
 | 20226 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 
 <sup>1</sup> можно использовать тег службы "AzureLoadBalancer" (диспетчер ресурсов) (или "AZURE_LOADBALANCER" для классической модели) для создания правил NSG.

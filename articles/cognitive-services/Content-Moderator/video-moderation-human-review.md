@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.openlocfilehash: 0c031a890efc7fad7e5d9caefce3b0e66c515d90
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81404238"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
@@ -100,7 +100,7 @@ ms.locfileid: "81404238"
 
 ![Представление расшифровки инструмента проверки видео](images/video-review-transcript-view.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md).
 - Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.

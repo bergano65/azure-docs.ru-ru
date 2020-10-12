@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alkohli
 ms.openlocfilehash: 75ccfe7a8e62e519b1df89792211433260a6abf6
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89294719"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Настройка MPIO на узле StorSimple под управлением CentOS
@@ -269,7 +269,7 @@ ms.locfileid: "89294719"
 ### <a name="step-5-verify-multipathing"></a>Этап 5. Проверка работы многоканального ввода-вывода
 1. Сначала убедитесь, что соединение iSCSI с устройством StorSimple установлено.
    
-   а. Обнаружьте устройство StorSimple. Тип:
+   a. Обнаружьте устройство StorSimple. Тип:
       
     `iscsiadm -m discovery -t sendtargets -p  <IP address of network interface on the device>:<iSCSI port on StorSimple device>`
     
@@ -438,13 +438,13 @@ dm-3 devnode blacklisted, unmonitored
 | **Поддержка нескольких каналов ввода-вывода** |`service multipathd start` |Запуск управляющей программы многоканального ввода-вывода |
 | &nbsp; |`service multipathd stop` |Остановка управляющей программы многоканального ввода-вывода |
 | &nbsp; |`service multipathd restart` |Перезапуск управляющей программы многоканального ввода-вывода |
-| &nbsp; |`chkconfig multipathd on` </br> ИЛИ </br> `mpathconf -with_chkconfig y` |Обеспечение запуска управляющей программы многоканального ввода-вывода во время загрузки |
+| &nbsp; |`chkconfig multipathd on` </br> OR </br> `mpathconf -with_chkconfig y` |Обеспечение запуска управляющей программы многоканального ввода-вывода во время загрузки |
 | &nbsp; |`multipathd -k` |Запуск интерактивной консоли для устранения неполадок |
 | &nbsp; |`multipath -l` |Вывод списка подключений и устройств с многоканальным вводом-выводом |
 | &nbsp; |`mpathconf --enable` |Создание примера файла mulitpath.conf в `/etc/mulitpath.conf` |
 |  | | |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Во время настройки MPIO на узле Linux вам могут пригодиться следующие документы по CentOS 6.6.
 
 * [Настройка MPIO на CentOS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/index)

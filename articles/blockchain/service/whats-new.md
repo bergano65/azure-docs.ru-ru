@@ -5,10 +5,10 @@ ms.date: 06/30/2020
 ms.topic: conceptual
 ms.reviewer: ravastra
 ms.openlocfilehash: 80ece6cb6bb81b7ce168da997603e17d1238171b
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85921890"
 ---
 # <a name="whats-new-in-azure-blockchain-service"></a>Что нового в службе Azure Блокчейн?
@@ -23,7 +23,7 @@ ms.locfileid: "85921890"
 
 ---
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="version-upgrades"></a>Обновления версий
 
@@ -42,7 +42,7 @@ ms.locfileid: "85921890"
 
 Значение Триетимеаут было уменьшено таким образом, что состояние в памяти записывается на диск чаще. Более низкое значение обеспечивает более быстрое восстановление узла в редких случаях сбоя узла.
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="version-upgrades"></a>Обновления версий
 

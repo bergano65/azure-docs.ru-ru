@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/14/2020
 ms.openlocfilehash: f2dd759203655746601699f665436c78ee0758f8
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90885505"
 ---
 # <a name="azure-stream-analytics-jobconfigjson-fields"></a>Azure Stream Analytics JobConfig.jsв полях
@@ -53,7 +53,7 @@ ms.locfileid: "90885505"
 |ScriptType|строка|Да|Зарезервированное свойство для указанного типа этого исходного файла. Допустимое значение — "Жобконфиг" для JobConfig.js.|
 |Теги|Пары "ключ-значение" JSON|Нет|Теги — это пары имя — значение, которые можно назначать различным ресурсам и группам ресурсов для их категоризации и консолидированного отображения счетов. В именах тегов не учитывается регистр, а в значениях тегов учитывается регистр.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)

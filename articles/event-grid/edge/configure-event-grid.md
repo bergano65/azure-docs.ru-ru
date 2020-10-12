@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 632227579fd021a0d2ce1d0b1bb0b8a8288c5f47
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86171675"
 ---
 # <a name="event-grid-configuration"></a>Конфигурация сетки событий
@@ -65,7 +65,7 @@ ms.locfileid: "86171675"
 | Имя свойства | Описание |
 | ---------------- | ------------ |
 | `broker__defaultMaxDeliveryAttempts` | Максимальное число попыток доставки события. Значение по умолчанию — 30.
-| `broker__defaultEventTimeToLiveInSeconds` | Срок жизни (TTL) (в секундах), после которого событие будет удалено, если оно не доставлено. Значение по умолчанию — **7200** секунд.
+| `broker__defaultEventTimeToLiveInSeconds` | Срок жизни (TTL) (в секундах), после которого событие будет удалено, если оно не доставлено. Значение по умолчанию —  **7200** секунд.
 
 ## <a name="output-batching"></a>Пакетная обработка выходных данных
 

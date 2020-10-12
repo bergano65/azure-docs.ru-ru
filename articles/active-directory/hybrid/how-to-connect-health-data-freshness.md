@@ -16,10 +16,10 @@ ms.date: 02/26/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 63d1d87d9b576a8e181b5b339052a6b6512f18a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85359234"
 ---
 # <a name="health-service-data-is-not-up-to-date-alert"></a>Оповещение "Данные службы работоспособности неактуальны"
@@ -41,9 +41,9 @@ ms.locfileid: "85359234"
  
 Следующая таблица сопоставляет типы служб с соответствующими обязательными типами данных:
 
-| Service type (Тип службы) | Агент (имя службы Windows) | Цель | Тип данных, созданный  |
+| Service type (Тип службы) | Агент (имя службы Windows) | Назначение | Тип данных, созданный  |
 | --- | --- | --- | --- |  
-| Azure AD Connect (синхронизация) | Служба Sync Insights Azure AD Connect Health | Получение сведений о подключении AAD (соединители, правила синхронизации и т. д.) | -Аадсинксервице-Синчронизатионрулес <br />  -Аадсинксервице — соединители <br /> -Аадсинксервице-Глобалконфигуратионс  <br />  -Аадсинксервице-Рунпрофилересултс <br /> -Аадсинксервице-Сервицеконфигуратионс <br /> -Аадсинксервице-Сервицестатус   |
+| Azure AD Connect (синхронизация) | Служба Sync Insights Azure AD Connect Health | Получение сведений о подключении AAD (соединители, правила синхронизации и т. д.) | — AadSyncService-SynchronizationRules <br />  — AadSyncService-Connectors <br /> — AadSyncService-GlobalConfigurations  <br />  — AadSyncService-RunProfileResults <br /> — AadSyncService-ServiceConfigurations <br /> — AadSyncService-ServiceStatus   |
 |  | Служба Sync Monitoring Azure AD Connect Health | Получение счетчиков производительности, относящихся к AAD Connect, трассировки ETW, файлы | Счетчик производительности |
 | AD DS | служба AD DS для Azure AD Connect Health; | Выполнение искусственных тестов, получение сведений о топологии, метаданные репликации |  -Adds-Топологинфо-JSON <br /> -Common-TestData-JSON (создание результатов теста)   | 
 |  | служба наблюдения AD DS Azure AD Connect Health. | Собирайте счетчики производительности, относящиеся к ДОБАВЛЕНию, трассировки ETW, файлы | — Счетчик производительности  <br /> -Common-TestData-JSON (отправка результатов теста)  |
@@ -58,16 +58,16 @@ ms.locfileid: "85359234"
 > [!IMPORTANT] 
 > Для этого оповещения соблюдается [политика хранения данных](reference-connect-health-user-privacy.md#data-retention-policy) Connect Health
 
-* Убедитесь, что установлены последние версии агентов. Просмотр [журнала выпусков](reference-connect-health-version-history.md). 
-* Убедитесь, что на компьютере **работают** службы Azure AD Connect Health Agents. Например, Connect Health для AD FS должен состоять из трех служб.
+* Убедитесь, что установлены последние версии агентов. Просмотрите [историю выпусков](reference-connect-health-version-history.md). 
+* Убедитесь, что агенты службы Azure AD Connect Health **запущены** на компьютере. Например, Connect Health для AD FS должен состоять из трех служб.
   ![Проверка Azure AD Connect Health](./media/how-to-connect-health-agent-install/install5.png)
 
 * Откройте [раздел требований](how-to-connect-health-agent-install.md#requirements) и убедитесь, что все они соблюдены.
-* Используйте [средство тестирования подключения](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) для обнаружения возможных проблем с подключением.
-* Если вы используете прокси-сервер HTTP, следуйте этим [этапам конфигурации](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
+* Используйте [средство проверки подключения](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) для обнаружения проблем с подключением.
+* Если у вас есть прокси-сервер HTTP, выполните следующие [действия по настройке](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если какой либо из описанных выше шагов обнаружил проблему, исправьте ее и дождитесь, пока не будет устранено предупреждение. Фоновый процесс предупреждения выполняется каждые 2 часа, поэтому разрешение предупреждения займет до 2 часов. 
 
 * [Azure AD Connect Health политики хранения данных](reference-connect-health-user-privacy.md#data-retention-policy)

@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: 4b6a7070b6b1b76a3f763105f4dce795f3e5c4be
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87372524"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java"></a>Устранение неполадок, а также вопросы и ответы по Application Insights для Java
@@ -70,7 +70,7 @@ ms.locfileid: "87372524"
     config.setTrackingIsDisabled(true);
 ```
 
-**Ни**
+**Or**
 
 Измените файл ApplicationInsights.xml (в папке ресурсов проекта). Добавьте следующий элемент в корневой узел:
 
@@ -126,7 +126,7 @@ azure.application-insights.logger.level=trace
 
 ### <a name="java-agent"></a>Агент Java
 
-Чтобы включить ведение журнала агента ВИРТУАЛЬНОЙ машины Java, обновите [файлAI-Agent.xml](java-agent.md):
+Чтобы включить ведение журнала агента ВИРТУАЛЬНОЙ машины Java, обновите [ файлAI-Agent.xml](java-agent.md):
 
 ```xml
 <AgentLogger type="FILE"><!-- or "CONSOLE" to print to stderr -->
@@ -188,7 +188,7 @@ Application Insights использует модуль `org.apache.http`. Он �
 * [Написать код для отслеживания использования приложения][track]
 * [Записать журналы диагностики][javalogs]
 
-## <a name="get-help"></a>Получить помощь
+## <a name="get-help"></a>Получить справку
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ms-application-insights)
 * [Сообщите о проблеме на GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues)
 
