@@ -12,10 +12,10 @@ ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 06/21/2019
 ms.openlocfilehash: e88c1b976ce1de0ce0be4b6a5f85af6790802323
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91321634"
 ---
 # <a name="restore-your-azure-sql-database-or-failover-to-a-secondary"></a>Восстановление базы данных SQL Azure или отработки отказа на сервер-получатель
@@ -26,7 +26,7 @@ ms.locfileid: "91321634"
 - [активная георепликация;](active-geo-replication-overview.md)
 - [Группы автоматической отработки отказа](auto-failover-group-overview.md)
 - [Геовосстановление](recovery-using-backups.md#point-in-time-restore)
-- [Базы данных, избыточные между зонами](high-availability-sla.md)
+- [Базы данных, избыточные в виде зоны](high-availability-sla.md)
 
 Чтобы узнать о сценариях непрерывности бизнес-процессов и функциях, которые их обеспечивают, ознакомьтесь с [непрерывностью бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).
 
@@ -115,7 +115,7 @@ ms.locfileid: "91321634"
 
 Если для доступа к базе данных требуется аудит, то после восстановления базы данных необходимо включить аудит. Дополнительные сведения см. в статье [Аудит базы данных](../../azure-sql/database/auditing-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [создаваемых автоматически резервных копий базы данных SQL](automated-backups-overview.md)
 - Чтобы изучить сценарии проектирования и восстановления непрерывности бизнес-процессов, ознакомьтесь со [сценариями обеспечения непрерывности](business-continuity-high-availability-disaster-recover-hadr-overview.md)

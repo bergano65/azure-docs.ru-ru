@@ -12,10 +12,10 @@ ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 0991992a6138d263dfb4d200c9555a8d53366d70
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90995986"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault"></a>Настройка шифрования с помощью управляемых клиентом ключей, хранящихся в Azure Key Vault
@@ -157,7 +157,7 @@ az keyvault key create \
 
 ---
 
-## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью управляемых клиентом ключей
+## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с использованием ключей, управляемых клиентом
 
 Затем настройте учетную запись хранения Azure для использования ключей, управляемых клиентом, с Azure Key Vault, а затем укажите ключ, связываемый с учетной записью хранения.
 
@@ -190,7 +190,7 @@ az keyvault key create \
 
 После указания ключа портал Azure указывает, что автоматическое обновление версии ключа включено и отображает текущую версию ключа, используемую для шифрования.
 
-:::image type="content" source="media/customer-managed-keys-configure-key-vault/portal-auto-rotation-enabled.png" alt-text="Снимок экрана с включенным автоматическим обновлением версии ключа":::
+:::image type="content" source="media/customer-managed-keys-configure-key-vault/portal-auto-rotation-enabled.png" alt-text="Снимок экрана, показывающий, как включить защиту от очистки при создании хранилища ключей":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -385,7 +385,7 @@ az storage account update
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
 - [Управляемые клиентом ключи для шифрования службы хранилища Azure](customer-managed-keys-overview.md)

@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 23266043d5efd65a4e6e79dd515a54a2c321b077
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87798840"
 ---
 # <a name="complete-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Выполнение проверки доступа для групп и приложений в проверках доступа Azure AD
@@ -29,7 +29,7 @@ ms.locfileid: "87798840"
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure AD Premium P2
 - Глобальный администратор, администратор пользователей, администратор безопасности или читатель безопасности

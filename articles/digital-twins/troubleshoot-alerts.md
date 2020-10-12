@@ -8,10 +8,10 @@ ms.date: 7/28/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
 ms.openlocfilehash: ae7e85624f5da06603ddc2675787b84203bc987b
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90087220"
 ---
 # <a name="troubleshooting-azure-digital-twins-alerts"></a>Устранение неполадок в Azure Digital двойников: оповещения
@@ -44,17 +44,17 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 Ниже приведен фрагмент процесса *условия выбора* , иллюстрирующий, какие типы оповещений доступны для Azure Digital двойников. На этой странице можно отфильтровать тип сигнала и выбрать нужный сигнал из списка.
 
-:::image type="content" source="media/troubleshoot-alerts/configure-signal-logic.png" alt-text="Снимок экрана, показывающий первую страницу настройки логики сигнала. В поле Тип сигнала можно выбрать метрики или журналы действий, а также список метрик ниже, которые могут быть выбраны.":::
+:::image type="content" source="media/troubleshoot-alerts/configure-signal-logic.png" alt-text="Снимок экрана, показывающий страницу создания правила генерации оповещений с разделами для области, условия, группы действий и сведений о правиле генерации оповещений":::
 
 После выбора сигнала вам будет предложено настроить логику оповещения. Можно выполнить фильтрацию по измерению, установить пороговое значение для оповещения и задать частоту проверок для условия. Ниже приведен пример настройки оповещения о том, когда средняя метрика частоты сбоев маршрутизации превышает 5%.
 
-:::image type="content" source="media/troubleshoot-alerts/configure-signal-logic-2.png" alt-text="Снимок экрана, показывающий вторую страницу настройки сигнальной логики. На странице отображается журнал метрик, имеется область для фильтрации по измерению, такому как операции сетки событий, и раздел для определения логики оповещения, например среднее значение больше 5.":::
+:::image type="content" source="media/troubleshoot-alerts/configure-signal-logic-2.png" alt-text="Снимок экрана, показывающий страницу создания правила генерации оповещений с разделами для области, условия, группы действий и сведений о правиле генерации оповещений":::
 
 ### <a name="verify-success"></a>Проверка успешного выполнения
 
 После настройки оповещений они будут отображаться на странице *оповещения* для вашего экземпляра.
  
-:::image type="content" source="media/troubleshoot-alerts/alerts-post.png" alt-text="Снимок экрана, показывающий страницу предупреждений и добавляемую кнопку. Настроено одно оповещение" lightbox="media/troubleshoot-alerts/alerts-post.png":::
+:::image type="content" source="media/troubleshoot-alerts/alerts-post.png" alt-text="Снимок экрана, показывающий страницу создания правила генерации оповещений с разделами для области, условия, группы действий и сведений о правиле генерации оповещений" lightbox="media/troubleshoot-alerts/alerts-post.png":::
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

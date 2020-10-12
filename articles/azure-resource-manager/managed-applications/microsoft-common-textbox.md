@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
 ms.openlocfilehash: c89bc434d9d67144a95b5c2f23e7664078fe7825
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87474314"
 ---
 # <a name="microsoftcommontextbox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.TextBox
@@ -20,7 +20,7 @@ ms.locfileid: "87474314"
 
 ![Элемент пользовательского интерфейса Microsoft.Common.TextBox](./media/managed-application-elements/microsoft-common-textbox.png)
 
-## <a name="schema"></a>Схема
+## <a name="schema"></a>схема
 
 ```json
 {
@@ -47,13 +47,13 @@ ms.locfileid: "87474314"
 }
 ```
 
-## <a name="sample-output"></a>Пример выходных данных
+## <a name="sample-output"></a>Пример полученных результатов
 
 ```json
 "contoso123"
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 - Если для параметра `constraints.required` задано значение **true**, то текстовое поле должно содержать значение, чтобы пройти проверку. Значение по умолчанию — **false**.
 - Свойство представляет собой массив, в который `validations` добавляются условия для проверки значения, указанного в текстовом поле.

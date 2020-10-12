@@ -4,10 +4,10 @@ description: Вот как можно добавить расширение ма
 ms.topic: article
 ms.date: 09/28/2020
 ms.openlocfilehash: 10487bad4fce41c68b4e2cb90c311b986d709eee
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91410324"
 ---
 # <a name="add-a-virtual-machine-scale-set-extension-to-a-service-fabric-managed-cluster-node-type-preview"></a>Добавление расширения масштабируемого набора виртуальных машин в Service Fabric тип узла управляемого кластера (Предварительная версия)
@@ -53,9 +53,9 @@ ms.locfileid: "91410324"
 
 Дополнительные сведения о настройке типов управляемых узлов кластера Service Fabric см. в разделе [тип узла управляемого кластера](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2020-01-01-preview/managedclusters/nodetypes).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о Service Fabric управляемых кластерах см. в следующих статьях:
+Дополнительные сведения об управляемых кластерах Service Fabric см. в статье:
 
 > [!div class="nextstepaction"]
-> [Часто задаваемые вопросы о Service Fabric управляемых кластерах](./faq-managed-cluster.md)
+> [Распространенные вопросы об управляемых кластерах Service Fabric](./faq-managed-cluster.md)

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: JenCook
 ms.openlocfilehash: 6bb3b8dbc7887419f7901a52b56c25f60c869abb
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997847"
 ---
 # <a name="application-development-on-intel-sgx"></a>Разработка приложений на Intel SGX 
@@ -58,6 +58,6 @@ ms.locfileid: "90997847"
 Эта платформа с открытым кодом обеспечивает высокий уровень конфиденциальности и управления консорциумом для блокчейн. С каждым узлом, использующим TEEs, можно обеспечить безопасное согласие и обработку транзакций.
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
-- [Развертывание виртуальной машины серии DCsv2 для конфиденциальных вычислений](quick-create-portal.md)
+## <a name="next-steps"></a>Дальнейшие шаги 
+- [Развертывание конфиденциальной вычислительной DCsv2-Series виртуальной машины](quick-create-portal.md)
 - [Скачайте и установите пакет OE SDK и приступите к разработке приложений.](https://github.com/openenclave/openenclave)

@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 260125b5e7aa4537c6e204d93263b65be042793a
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540750"
 ---
 # <a name="customize-remote-desktop-protocol-properties-for-a--windows-virtual-desktop-classic-host-pool"></a>Настройка свойств протокол удаленного рабочего стола для пула узлов виртуальных рабочих столов Windows (классическая модель)
@@ -34,7 +34,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 
 |Свойства RDP | Настольные системы | RemoteApps |
 |---|---| --- |
-| Режим с несколькими мониторами | Активировано | Н/Д |
+| Режим с несколькими мониторами | Включен | Недоступно |
 | Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
 | Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
 
@@ -49,7 +49,7 @@ Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с именем и FriendlyName, выделенным для редактирования пользовательского свойства R D P.](../media/singlecustomrdpproperty.png)
+> ![Снимок экрана командлета PowerShell Get-RDSRemoteApp с именем и FriendlyName, выделенными для редактирования пользовательского свойства R D P.](../media/singlecustomrdpproperty.png)
 
 ## <a name="add-or-edit-multiple-custom-rdp-properties"></a>Добавление или изменение нескольких настраиваемых свойств RDP
 
@@ -61,7 +61,7 @@ Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и FriendlyName, выделенным для редактирования пользовательского свойства R D P.](../media/multiplecustomrdpproperty.png)
+> ![Снимок экрана командлета PowerShell Set-RDSRemoteApp с именем и FriendlyName, выделенными для редактирования пользовательского свойства R D P.](../media/multiplecustomrdpproperty.png)
 
 ## <a name="reset-all-custom-rdp-properties"></a>Сброс всех настраиваемых свойств RDP
 
@@ -72,9 +72,9 @@ Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](../media/resetcustomrdpproperty.png)
+> ![Снимок экрана командлета PowerShell Get-RDSRemoteApp с выделенным именем и FriendlyName.](../media/resetcustomrdpproperty.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы настроили свойства протокола удаленного рабочего стола для определенного пула узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. В следующих двух практических статьях рассказывается, как подключиться к сеансу с помощью выбранного клиента:
 

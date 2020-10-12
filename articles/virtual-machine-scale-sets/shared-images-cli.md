@@ -11,10 +11,10 @@ ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
 ms.openlocfilehash: c056db21eea2d87471c80ea7c4811eed418fcbd0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91323470"
 ---
 # <a name="create-and-use-shared-images-for-virtual-machine-scale-sets-with-the-azure-cli-20"></a>Создание и использование общих образов для масштабируемых наборов виртуальных машин с помощью Azure CLI 2.0
@@ -27,7 +27,7 @@ ms.locfileid: "91323470"
 [!INCLUDE [virtual-machines-common-shared-images-cli](../../includes/virtual-machines-common-shared-images-cli.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создание версии образа из [виртуальной машины](../virtual-machines/image-version-vm-cli.md)или [управляемого образа](../virtual-machines/image-version-managed-image-cli.md).
 

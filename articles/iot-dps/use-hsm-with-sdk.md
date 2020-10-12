@@ -11,17 +11,17 @@ ms.custom:
 - mvc
 - amqp
 ms.openlocfilehash: 0a32e2f055b2914fa0008e043e80092ac2da0814
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90531514"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure для С
 
 В этой статье объясняется, как использовать разные [механизмы аттестации](concepts-service.md#attestation-mechanism) с помощью клиентского пакета SDK для C для службы подготовки устройств. Вы можете использовать физическое устройство или симулятор. Служба подготовки поддерживает два режима аутентификации для механизмов аттестации двух типов: X.509 и доверенный платформенный модуль (TPM).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Подготовьте среду разработки в соответствии с инструкциями в разделе "Подготовка среды разработки" руководства по [созданию и подготовке имитированного устройства](./quick-create-simulated-device.md).
 

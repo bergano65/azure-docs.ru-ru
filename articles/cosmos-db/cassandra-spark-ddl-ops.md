@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 10/07/2020
 ms.openlocfilehash: 589114fa004c8b4479e1a14c5a99161dd972c5bf
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91841107"
 ---
 # <a name="ddl-operations-in-azure-cosmos-db-cassandra-api-from-spark"></a>Операции DDL в API Cassandra для Azure Cosmos DB из Spark
@@ -135,7 +135,7 @@ USE books_ks;
 DESCRIBE tables;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После создания пространства ключей и таблицы перейдите к следующим статьям об операциях CRUD и других аспектах:
  
@@ -143,5 +143,5 @@ DESCRIBE tables;
 * [Операции чтения](cassandra-spark-read-ops.md)  
 * [Операции upsert](cassandra-spark-upsert-ops.md)  
 * [Операции удаления](cassandra-spark-delete-ops.md)  
-* [Операции агрегирования](cassandra-spark-aggregation-ops.md)  
+* [Операции агрегатных вычислений](cassandra-spark-aggregation-ops.md)  
 * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)  

@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.openlocfilehash: bd0ec4cf085fb19c89c6be48d4f4534383560fd5
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91707784"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Партнеры по разработке миграции и приложения Azure Cosmos DB для NoSQL
@@ -25,7 +25,7 @@ ms.locfileid: "91707784"
 | [10thMagnitude](https://www.10thmagnitude.com/) | IoT, розница (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений | США |
 |[Altoros Development LLC](https://www.altoros.com/)  |  IoT, розница для персонализации (Инвентаризация), бессерверные архитектуры NoSQL миграция, разработка приложений|   США |
 |[Avanade](https://www.avanade.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений | Австрия, Германия, Швейцария, Италия, Норвегия, Испания, Великобритания, Канада |
-|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Глобальный|
+|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Global|
 |[Capax Global LLC](https://www.capaxglobal.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений|    США     |  
 | [Capgemini](https://www.capgemini.com/) | Розничная торговля (Инвентаризация), IoT, операционная аналитика (Spark), разработка приложений | США, Франция, Великобритания, Нидерланды, Финляндия  |
 | [Cognizant](https://www.cognizant.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), разработка приложений |США, Канада, Великобритания, Дания, Нидерланды, Швейцария, Австралия, Япония |
@@ -48,7 +48,7 @@ ms.locfileid: "91707784"
 | [Нециклическое программное обеспечение](https://www.incyclesoftware.com/) | NoSQL миграция, бессерверная архитектура, разработка приложений| США|
 | [Orion](https://www.orioninc.com/) | Персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), IoT, разработка приложений| США, Канада|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о других партнерах Майкрософт можно получить [на сайте партнеров Майкрософт](https://partner.microsoft.com/).
 

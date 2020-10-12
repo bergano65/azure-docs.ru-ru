@@ -14,10 +14,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9fbdccfa7ff16bd63dda1f7c21c07e6d20e086e1
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89321095"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Добавление или удаление пользователей с помощью Azure Active Directory
@@ -40,9 +40,9 @@ ms.locfileid: "89321095"
 
 1. На странице **пользователь** введите сведения для этого пользователя:
 
-   - **Имя**. Обязательный. Имя и фамилия нового пользователя. Например, *Мэри Parker*.
+   - **Имя**. Обязательный элемент. Имя и фамилия нового пользователя. Например, *Мэри Parker*.
 
-   - **Имя пользователя**. Обязательный. Имя нового пользователя. Например, `mary@contoso.com`.
+   - **Имя пользователя**. Обязательный элемент. Имя нового пользователя. Например, `mary@contoso.com`.
 
      Доменная часть имени пользователя должна использовать начальное имя домена по умолчанию, * \<yourdomainname> . onmicrosoft.com*или имя пользовательского домена, например *contoso.com*. Дополнительные сведения о создании пользовательского доменного имени см. [в статье Добавление имени личного домена с помощью портала Azure Active Directory](add-custom-domain.md).
 
@@ -93,7 +93,7 @@ ms.locfileid: "89321095"
 >[!Note]
 >Чтобы обновить удостоверение, контактные данные или сведения о задании для пользователей, источником которых является Windows Server Active Directory, необходимо использовать Windows Server Active Directory. После завершения обновления изменения будут отображаться после следующего цикла синхронизации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После добавления пользователей можно выполнять следующие основные процессы.
 

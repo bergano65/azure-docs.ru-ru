@@ -14,10 +14,10 @@ ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 800c1742b49fce7e1adf8c3ca22181cfb7d0a085
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89565513"
 ---
 # <a name="delete-a-group-using-azure-active-directory"></a>Удаление группы с помощью Azure Active Directory
@@ -44,7 +44,7 @@ ms.locfileid: "89565513"
 
     ![Страница "Обзор MDM policy — East" с выделенной командой "Удалить"](media/active-directory-groups-delete-group/group-overview-blade.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Если вы по ошибке удалили группу, ее можно создать заново. Дополнительные сведения см. в статье [Как создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md).
 
