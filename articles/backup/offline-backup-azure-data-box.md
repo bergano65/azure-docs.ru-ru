@@ -4,10 +4,10 @@ description: Узнайте, как использовать Azure Data Box дл
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.openlocfilehash: 5a4aeebeddcca4adcac511c7c225c8809dd29c93
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89180938"
 ---
 # <a name="azure-backup-offline-backup-by-using-azure-data-box"></a>Автономное резервное копирование с помощью Azure Data Box
@@ -302,7 +302,7 @@ Azure PowerShell также можно было установить с помо
 
 4. На сервере откройте реестр, введя в окне выполнения команду " **regedit** ".
 
-5. Перейдите к разделу реестра *Computer \ HKEY_LOCAL_MACHINE \Софтваре\микрософт\виндовс Azure баккуп\конфиг\клаудбаккуппровидер.* Щелкните правой кнопкой мыши **клаудбаккуппровидер**и добавьте новое строковое значение с именем `AzureADAppCertThumbprint_<Azure User Id>` .
+5. Перейдите вComputer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider реестра * .* Щелкните правой кнопкой мыши **клаудбаккуппровидер**и добавьте новое строковое значение с именем `AzureADAppCertThumbprint_<Azure User Id>` .
 
     >[!NOTE]
     > Чтобы получить идентификатор пользователя Azure, выполните одно из следующих действий.

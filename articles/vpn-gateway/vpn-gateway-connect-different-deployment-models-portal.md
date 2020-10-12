@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/24/2019
 ms.author: cherylmc
 ms.openlocfilehash: d3ab49d0ad24c2b2c8859408ed103178cede5b8b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87082109"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
@@ -78,7 +78,7 @@ ms.locfileid: "87082109"
 | Виртуальная сеть | Адресное пространство | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |западная часть США | RMVNetLocal (192.168.0.0/16) |
-| RMVNet | (192.168.0.0/16) |East US |ClassicVNetLocal (10.0.0.0/24) |
+| RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |
 
 ## <a name="section-1---configure-the-classic-vnet-settings"></a><a name="classicvnet"></a>Раздел 1. Настройка классической виртуальной сети
 
@@ -173,7 +173,7 @@ ms.locfileid: "87082109"
 | Виртуальная сеть | Адресное пространство | Регион | Подключается к сайту локальной сети |Общедоступный IP-адрес|
 |:--- |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |западная часть США | RMVNetLocal (192.168.0.0/16) |Общедоступный IP-адрес, назначенный шлюзу ClassicVNet|
-| RMVNet | (192.168.0.0/16) |East US |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
+| RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
 
 Шлюз локальной сети задает диапазон адресов и общедоступный IP-адрес, связанный с классической виртуальной сетью и ее шлюзом. При выполнении этих действий в качестве упражнения используйте примеры значений.
 

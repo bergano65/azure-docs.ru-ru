@@ -13,17 +13,17 @@ ms.topic: article
 ms.date: 12/14/2019
 ms.author: apimpm
 ms.openlocfilehash: 5e995d008b441e122f9e93e5f7c29f0bb9bf9c53
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86254696"
 ---
 # <a name="use-azure-api-management-with-microservices-deployed-in-azure-kubernetes-service"></a>Использование службы управления API Azure с микрослужбами, развернутыми в службе Kubernetes Azure
 
 Микрослужбы идеально подходят для создания API-интерфейсов. С помощью [службы Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/) (AKS) можно быстро развернуть и использовать [архитектуру на основе микрослужб](/azure/architecture/guide/architecture-styles/microservices) в облаке. Затем можно использовать службу [управления API Azure](https://aka.ms/apimrocks) (API Management) для публикации микрослужб как интерфейсов API для внутреннего и внешнего потребления. В этой статье описываются варианты развертывания управления API с помощью AKS. В нем предполагается наличие базовых знаний о Kubernetes, управлении API и сети Azure. 
 
-## <a name="background"></a>Фон
+## <a name="background"></a>История
 
 При публикации микрослужб в качестве интерфейсов API для потребления может быть трудно управлять обменом данными между микрослужбами и клиентами, которые их используют. Существует множество перекрестных задач, таких как проверка подлинности, авторизация, регулирование, кэширование, преобразование и мониторинг. Эти проблемы являются допустимыми независимо от того, доступны ли микрослужбы внутренним или внешним клиентам. 
 

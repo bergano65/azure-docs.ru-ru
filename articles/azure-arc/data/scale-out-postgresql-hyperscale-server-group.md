@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: df0620308fab2e813fe3802dc7effb9dc1ce226c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91285389"
 ---
 # <a name="scale-out-your-azure-arc-enabled-postgresql-hyperscale-server-group-by-adding-more-worker-nodes"></a>Масштабирование группы масштабируемых серверов PostgreSQL в службе "Дуга Azure" путем добавления дополнительных рабочих узлов
@@ -46,7 +46,7 @@ ms.locfileid: "91285389"
 ```console
 azdata arc postgres endpoint list -n <server name>
 ```
-Пример:
+Например, такое:
 ```console
 azdata arc postgres endpoint list -n postgres01
 ```
@@ -152,7 +152,7 @@ azdata arc postgres server edit -n <server group name> -w <target number of work
 ```
 
 > [!CAUTION]
-> Предварительный выпуск не поддерживает обратное масштабирование. Например, пока невозможно уменьшить количество рабочих узлов. Если это необходимо, необходимо извлечь или создать резервную копию данных, удалить группу серверов, создать новую группу серверов с меньшим количеством рабочих узлов, а затем импортировать данные.
+> Выпуск предварительной версии не поддерживает обратное масштабирование. Например, пока невозможно сократить количество рабочих узлов. Если это необходимо, то нужно извлечь или создать резервную копию данных, удалить группу серверов, создать новую группу серверов с меньшим количеством рабочих узлов, а затем импортировать данные.
 
 В этом примере мы увеличив число рабочих узлов с 2 до 4, выполнив следующую команду:
 
@@ -236,7 +236,7 @@ SELECT COUNT(*) FROM github_events;
 >* [Создание HTAP приложений с помощью Python & Azure PostgreSQL Scale (Цитус)](https://www.youtube.com/watch?v=YDT8_riLLs0)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте о том [, как увеличить и уменьшить масштаб (память, виртуальных ядер) в вашей ГеоPostgreSQLной группе серверов Azure Arc](scale-up-down-postgresql-hyperscale-server-group-using-cli.md)
 - Узнайте о том, как задать параметры сервера в группе PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"

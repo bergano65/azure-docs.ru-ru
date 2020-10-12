@@ -12,10 +12,10 @@ ms.date: 07/05/2019
 ms.author: chlandsi
 ms.custom: devx-track-js
 ms.openlocfilehash: 0e67d0ae4d875699b26fdcd30093b0c2bf373458
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91282992"
 ---
 # <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как выбрать устройство ввода звука с помощью пакета SDK для распознавания речи
@@ -390,7 +390,7 @@ CFArrayRef CreateInputDeviceArray()
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

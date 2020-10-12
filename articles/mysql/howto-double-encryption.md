@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 06/30/2020
 ms.openlocfilehash: eafad5edf9dcac5745986d09060baf7e4278762d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90903972"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-mysql"></a>Двойное шифрование инфраструктуры для базы данных Azure для MySQL
@@ -33,15 +33,15 @@ ms.locfileid: "90903972"
 
 3. Укажите основные сведения о сервере. Выберите **Дополнительные параметры** и включите флажок **двойное шифрование инфраструктуры** , чтобы задать параметр.
 
-    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-selected.png" alt-text="Параметры базы данных Azure для MySQL":::
+    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-selected.png" alt-text="Параметр базы данных Azure для MySQL":::
 
 4. Щелкните **Просмотр и создание**, чтобы подготовить сервер.
 
-    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-summary.png" alt-text="Сводка по базе данных Azure для MySQL":::
+    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-summary.png" alt-text="Параметр базы данных Azure для MySQL":::
 
 5. После создания сервера можно проверить двойное шифрование инфраструктуры, проверив состояние в колонке "сервер **шифрования данных** ".
 
-    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-validation.png" alt-text="Проверка базы данных Azure для MySQL":::
+    :::image type="content" source="./media/howto-double-encryption/infrastructure-encryption-validation.png" alt-text="Параметр базы данных Azure для MySQL":::
 
 ## <a name="create-an-azure-database-for-mysql-server-with-infrastructure-double-encryption---cli"></a>Создание базы данных Azure для сервера MySQL с помощью двойного шифрования инфраструктуры — CLI
 
@@ -58,6 +58,6 @@ az group create --name myresourcegroup --location westus
 az mysql server create --resource-group myresourcegroup --name mydemoserver  --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 --version 5.7 --infrastructure-encryption <Enabled/Disabled>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
  Дополнительные сведения о шифровании данных см. в статье [двойное шифрование инфраструктуры данных в базе данных Azure для MySQL](concepts-Infrastructure-double-encryption.md).

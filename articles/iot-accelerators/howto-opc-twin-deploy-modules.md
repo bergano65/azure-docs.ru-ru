@@ -10,16 +10,16 @@ ms.custom: devx-track-azurecli
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: 9ae3e9b4bb69bf0c85054b5d6144633923cac947
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91282074"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание модуля и зависимостей OPC двойника с нуля
 
 > [!IMPORTANT]
-> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 Модуль OPC двойника выполняется на IoT Edge и предоставляет несколько служб пограничных услуг для двойникаов устройств OPC и служб реестра. 
 

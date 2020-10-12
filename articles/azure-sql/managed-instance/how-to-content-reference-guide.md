@@ -13,10 +13,10 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 04/16/2019
 ms.openlocfilehash: 208793d3ba8c3463abe892b368beb41d4b79f214
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91617457"
 ---
 # <a name="azure-sql-managed-instance-content-reference"></a>Справочник по содержимому Управляемый экземпляр Azure SQL
@@ -67,7 +67,7 @@ ms.locfileid: "91617457"
 - [Использование хранилища запросов для наблюдения за производительностью](https://docs.microsoft.com/sql/relational-databases/performance/best-practice-with-the-query-store#Insight)
 - [Устранение проблем с производительностью с помощью Intelligent Insights](../database/intelligent-insights-troubleshoot-performance.md)
 - [Использование журнала диагностики Intelligent Insights](../database/intelligent-insights-use-diagnostics-log.md)
-- [Мониторинг пространства выполняющейся в памяти OLTP](../in-memory-oltp-monitor-space.md)
+- [Мониторинг пространства In-Memory OLTP](../in-memory-oltp-monitor-space.md)
 
 ### <a name="extended-events"></a>Расширенные события
 
@@ -79,7 +79,7 @@ ms.locfileid: "91617457"
 
 - [Создание оповещений об управляемом экземпляре](alerts-create.md)
 
-## <a name="operations"></a>Operations
+## <a name="operations"></a>Операции
 
 - [Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр](user-initiated-failover.md)
 
@@ -108,6 +108,6 @@ ms.locfileid: "91617457"
 - [Индексатор видео SaaS](../database/saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](../database/saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Начните с [развертывания управляемый экземпляр SQL](instance-create-quickstart.md).

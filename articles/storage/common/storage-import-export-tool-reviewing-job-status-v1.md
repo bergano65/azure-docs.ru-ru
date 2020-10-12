@@ -9,10 +9,10 @@ ms.date: 01/26/2017
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 2fa5cfcf0cb6c20a8a0b64651da0b365e12a3d05
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90056328"
 ---
 # <a name="reviewing-azure-importexport-job-status-with-copy-log-files"></a>Просмотр состояния задания импорта и экспорта Azure с помощью файлов журнала копирования
@@ -28,7 +28,7 @@ ms.locfileid: "90056328"
 
  Дополнительные сведения о формате журналов копирования и полный список кодов состояний см. в статье [Формат файла журнала службы импорта и экспорта Azure](../storage-import-export-file-format-log.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
  * [Настройка средства импорта и экспорта Azure](storage-import-export-tool-setup-v1.md)   
  * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
