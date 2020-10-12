@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/28/2020
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 6f48245983898c542197deb7e0b3cd53bd39be33
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91707529"
 ---
 # <a name="limits-in-azure-database-for-postgresql---single-server"></a>Ограничения в базе данных Azure для PostgreSQL — один сервер
@@ -72,7 +72,7 @@ PostgreSQL подключение, даже бездействующее, мож
    - Мы планируем завершить обновление до конца ноября. Рекомендуется использовать рабочую версию драйвера.
    - Или попробуйте отключить запрос GSS.  Используйте параметр соединения, например `gssEncMode=disable` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. [доступные возможности в каждой ценовой категории](concepts-pricing-tiers.md).
 - См. [поддерживаемые версии базы данных PostgreSQL](concepts-supported-versions.md).
 - Узнайте [Как выполнить резервное копирование и восстановление сервера в службе "База данных Azure для PostgreSQL" с помощью портала Azure](howto-restore-server-portal.md).

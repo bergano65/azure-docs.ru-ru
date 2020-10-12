@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 679a8fee80711e8244cf953e78fd7260d922ff49
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88949394"
 ---
 # <a name="integrate-radius-authentication-with-azure-multi-factor-authentication-server"></a>Интеграция аутентификации RADIUS с сервером Многофакторной идентификации Azure
@@ -85,6 +85,6 @@ RADIUS — это стандартный протокол принятия и о
 * Используйте тот же общий секрет, который был настроен ранее.
 * Настройте время ожидания RADIUS равным 30-60 секунд, чтобы существовало время на проверку учетных данных пользователя, выполнение двухфакторной проверки подлинности, получение ответа и ответ на запрос доступа RADIUS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [интегрировать проверку подлинности RADIUS](howto-mfa-nps-extension.md) со службой Многофакторной идентификации Azure в облаке. 

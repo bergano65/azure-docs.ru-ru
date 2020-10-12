@@ -10,10 +10,10 @@ ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 8170cfcbbf200c6ba5030aff5716f46b537d8c97
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87080477"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
@@ -64,7 +64,7 @@ ms.locfileid: "87080477"
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Работают ли масштабируемые наборы с зонами доступности Azure?
 
-Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
+Да. Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
 ## <a name="autoscale"></a>Автомасштабирование
@@ -226,7 +226,7 @@ az sf cluster create -h
 
 Имя элемента конфигурации Linux | Обязательно | Тип | Описание
 --- | --- | --- | ---
-ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
+ssh | нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
 path | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Да | Строка | Указывает открытый ключ SSH в кодировке Base64.
 
@@ -656,7 +656,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="how-do-i-turn-on-boot-diagnostics"></a>Как включить диагностику загрузки?
 
@@ -671,7 +671,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 }
 ```
 
-После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Ниже приведен пример.
+После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Ниже приведен пример:
 
 ```json
 "bootDiagnostics": {

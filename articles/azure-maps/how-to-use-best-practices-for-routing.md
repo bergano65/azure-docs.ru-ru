@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 1c108c79cafb591dced6f6be0dd5c1b353ddac45
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90086408"
 ---
 # <a name="best-practices-for-azure-maps-route-service"></a>Рекомендации для службы маршрутов Azure Maps
@@ -21,7 +21,7 @@ ms.locfileid: "90086408"
 
 > [!div class="checklist"]
 > * Выбор интерфейсов API маршрутов маршрутизации
-> * Запрос с предысторией и прогнозируемым временем поездки на основе данных в реальном времени и истории трафика
+> * Запрос с предысторией и прогнозируемым временем поездки на основе данных в реальном времени и истории трафика.
 > * Сведения о маршруте запроса, например время и расстояние, для всего маршрута и каждого его участка
 > * Запрос маршрута для коммерческого транспортного средства, например грузовика
 > * Запрос сведений о трафике по маршруту, например ДТП и платный сбор данных
@@ -205,7 +205,7 @@ https://atlas.microsoft.com/route/directions/json?subscription-key=<Your-Azure-M
 
 ![Цветные разделы, отображаемые на карте](media/how-to-use-best-practices-for-routing/show-traffic-sections-img.png)
 
-## <a name="calculate-and-optimize-a-multi-stop-route"></a>Вычисление и оптимизация нескольких маршрутов
+## <a name="calculate-and-optimize-a-multi-stop-route"></a>Вычисление и оптимизация маршрутов с остановками
 
 Azure Maps в настоящее время предоставляет две формы оптимизации маршрутов:
 
@@ -282,7 +282,7 @@ https://atlas.microsoft.com/route/directions/json?api-version=1.0&subscription-k
 Дополнительные сведения см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Служба маршрутов Azure Maps](https://docs.microsoft.com/rest/api/maps/route)
+> [Служба "Построение маршрутов" Azure Maps](https://docs.microsoft.com/rest/api/maps/route)
 
 > [!div class="nextstepaction"]
 > [Использование модуля службы](https://docs.microsoft.com/azure/azure-maps/how-to-use-services-module)

@@ -7,10 +7,10 @@ ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 31e9b4b065b2acb8378c2eeac332341f48b28165
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88005233"
 ---
 # <a name="session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеанса
@@ -20,7 +20,7 @@ ms.locfileid: "88005233"
 
 Используйте эту статью для устранения неполадок, возникающих при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -114,7 +114,7 @@ ms.locfileid: "88005233"
 
 При первой установке агента виртуальных рабочих столов Windows на виртуальных машинах узла сеансов (вручную либо с помощью шаблона Azure Resource Manager и PowerShell DSC) он предоставляет маркер регистрации. В следующем разделе описаны неполадки, связанные с агентом виртуальных рабочих столов Windows и маркером.
 
-### <a name="error-the-status-filed-in-get-azwvdsessionhost-cmdlet-shows-status-as-unavailable"></a>Ошибка: состояние, зарегистрированное в командлете Get-Азввдсессионхост, показывает состояние "недоступно"
+### <a name="error-the-status-filed-in-get-azwvdsessionhost-cmdlet-shows-status-as-unavailable"></a>Ошибка: состояние, зарегистрированное в командлете Get-AzWvdSessionHost, показывает состояние "недоступно"
 
 > [!div class="mx-imgBorder"]
 > ![Командлет Get-Азввдсессионхост отображает состояние недоступно.](media/23b8e5f525bb4e24494ab7f159fa6b62.png)
@@ -140,7 +140,7 @@ ms.locfileid: "88005233"
 2. Выполните командлет **New-азввдрегистратионинфо** , чтобы создать новый токен.
 3. Убедитесь, что для параметра *-експриатионтиме* задано значение 3 дня.
 
-### <a name="error-windows-virtual-desktop-agent-isnt-reporting-a-heartbeat-when-running-get-azwvdsessionhost"></a>Ошибка: агент виртуальных рабочих столов Windows не сообщает о пульсе при выполнении Get-Азввдсессионхост
+### <a name="error-windows-virtual-desktop-agent-isnt-reporting-a-heartbeat-when-running-get-azwvdsessionhost"></a>Ошибка: агент виртуальных рабочих столов Windows не сообщает о пульсе при запуске Get-AzWvdSessionHost
 
 **Причина 1:** Служба Рдажентбутлоадер остановлена.
 

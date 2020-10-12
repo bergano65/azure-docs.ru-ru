@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 07/18/2018
 ms.subservice: alerts
 ms.openlocfilehash: f76d28018fdf55314593dabc44ef1e9a1dab9494
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91403132"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
@@ -41,7 +41,7 @@ ms.locfileid: "91403132"
 
 3.  Присвойте **Имя** приложению логики, выберите значение **Группа ресурсов** и т. д.
 
-    ![Создайте приложение логики](media/action-groups-logic-app/create-logic-app-dialog.png "Создание приложения логики")
+    ![Создайте приложение логики](media/action-groups-logic-app/create-logic-app-dialog.png "Создайте приложение логики")
 
 4.  Выберите **Создать**, чтобы создать приложение логики. Отображается всплывающее сообщение, указывающее на создание приложения логики. Выберите **Launch Resource** (Запустить ресурс), чтобы открыть **Конструктор Logic Apps**.
 
@@ -293,7 +293,7 @@ ms.locfileid: "91403132"
 ## <a name="calling-other-applications-besides-microsoft-teams"></a>Вызов других приложений помимо Microsoft Teams
 Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../../connectors/apis-list.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Изучите [обзор оповещений журнала действий Azure](./alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../service-health/alerts-activity-log-service-notifications-portal.md).
 * Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](./action-groups.md).

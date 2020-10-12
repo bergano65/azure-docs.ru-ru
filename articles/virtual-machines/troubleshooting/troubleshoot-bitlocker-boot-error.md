@@ -14,10 +14,10 @@ ms.date: 08/23/2019
 ms.author: genli
 ms.custom: has-adal-ref
 ms.openlocfilehash: ac1105f1fce2ac04abfa8a809161580104952917
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91404907"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
@@ -287,7 +287,7 @@ ms.locfileid: "91404907"
 
 Можно также выполнить поиск `Az.Accounts` папки, чтобы найти правильный путь.
 
-**Ошибка: Get-Азкэйваултсекрет или Get-Азкэйваултсекрет не распознан как имя командлета**
+**Ошибка: Get-AzKeyVaultSecret или Get-AzKeyVaultSecret не распознано как имя командлета**
 
 Если вы используете старый модуль AZ PowerShell, необходимо изменить две команды на `Get-AzureKeyVaultSecret` и `Get-AzureKeyVaultSecret` .
 

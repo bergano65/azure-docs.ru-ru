@@ -13,10 +13,10 @@ ms.author: sashan
 ms.reviewer: sstein, sashan
 ms.date: 08/12/2020
 ms.openlocfilehash: fd470180e17bd64990c1e657a6614fc2e0ef71d6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335030"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Высокий уровень доступности для базы данных SQL Azure и Управляемый экземпляр SQL
@@ -112,7 +112,7 @@ ms.locfileid: "91335030"
 
 База данных SQL Azure и Управляемый экземпляр Azure SQL — это встроенное решение с высоким уровнем доступности, которое тесно интегрировано с платформой Azure. Это зависит от Service Fabric для обнаружения сбоев и восстановления, в хранилище BLOB-объектов Azure для защиты данных, а также на Зоны доступности для повышения отказоустойчивости (как упоминалось ранее в документе, который еще не применим к Azure SQL Управляемый экземпляр). Кроме того, база данных SQL и SQL Управляемый экземпляр используют технологию группы доступности Always On из экземпляра SQL Server для репликации и отработки отказа. Сочетание этих технологий позволяет приложениям полностью реализовать преимущества модели смешанного хранения и поддерживать наиболее ресурсоемкие соглашения об уровне обслуживания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [зонах доступности Azure](../../availability-zones/az-overview.md).
 - Дополнительные сведения о [Service Fabric](../../service-fabric/service-fabric-overview.md)

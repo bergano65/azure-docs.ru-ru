@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: juergent
 ms.openlocfilehash: f2a62cb08fcce6597f02c080231f5e1808794054
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88509966"
 ---
 # <a name="installation-of-sap-hana-on-azure-virtual-machines"></a>Установка SAP HANA на виртуальных машинах Azure
@@ -61,7 +61,7 @@ ms.locfileid: "88509966"
 3. После развертывания и регистрации виртуальной машины примените последние исправления к операционной системе. Зарегистрировано в собственной подписке. Если вы выбрали образ, который включает поддержку операционной системы, у виртуальной машины уже должен быть доступ к исправлениям. 
 4. Примените настройки, необходимые для SAP HANA. Эти настройки перечислены в следующих заметках о поддержке SAP:
 
-    - [Примечание о поддержке SAP #2694118-Red Hat Enterprise Linux надстройки высокой доступности в Azure](https://launchpad.support.sap.com/#/notes/2694118)
+    - [Примечание о поддержке SAP #2694118-Red Hat Enterprise Linux HA Add-On в Azure](https://launchpad.support.sap.com/#/notes/2694118)
     - [Примечание о поддержке SAP #1984787-SUSE LINUX Enterprise Server 12: замечания по установке](https://launchpad.support.sap.com/#/notes/1984787) 
     - [Примечание о поддержке SAP #2578899-SUSE Linux Enterprise Server 15: Примечание по установке](https://launchpad.support.sap.com/#/notes/2578899)
     - [Примечание о поддержке SAP #2002167-Red Hat Enterprise Linux 7. x: Установка и обновление](https://launchpad.support.sap.com/#/notes/0002002167)
@@ -72,7 +72,7 @@ ms.locfileid: "88509966"
     -  [Примечание о поддержке SAP #2382421 — оптимизация конфигурации сети на уровне HANA и ОС](https://launchpad.support.sap.com/#/notes/2382421)
 
 1. Выберите тип хранилища Azure для SAP HANA. На этом шаге необходимо выбрать структуру хранилища для SAP HANA установки. Вы будете использовать подключенные диски Azure или собственные общие ресурсы Azure NFS. Типы хранилища Azure, которые можно использовать, и комбинации различных типов хранилища Azure, которые могут использоваться, описаны в [SAP HANA конфигурациях хранилища виртуальных машин Azure](./hana-vm-operations-storage.md). Задавайте конфигурации, задокументированные в качестве отправной точки. Для непроизводственных систем можно настроить более низкую пропускную способность или операции ввода-вывода. В производственных целях может потребоваться дополнительная настройка пропускной способности и операций ввода-вывода в секунду.
-2. Убедитесь, что вы настроили [ускоритель записи Azure](../../how-to-enable-write-accelerator.md) для томов, которые содержат журналы транзакций СУБД, или журналы повторяемых операций при использовании виртуальных машин серии M или Mv2. Помните об ограничениях Ускоритель записи, как описано в статье.
+2. Убедитесь, что вы настроили [ускоритель записи Azure](../../how-to-enable-write-accelerator.md) для томов, которые содержат журналы транзакций СУБД, или журналы повтора при использовании виртуальных машин серии M или Mv2-Series. Помните об ограничениях Ускоритель записи, как описано в статье.
 2. Проверьте, включена ли поддержка [ускорения в Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/) для виртуальных машин, которые развернуты.
 
 > [!NOTE]
@@ -97,7 +97,7 @@ ms.locfileid: "88509966"
 * [Инструкции по резервному копированию для SAP HANA на виртуальных машинах Azure](./sap-hana-backup-guide.md)
 * [Резервное копирование SAP HANA в Azure на уровне файлов](./sap-hana-backup-file-level.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с документацией:
 
 - [Конфигурации и операции инфраструктуры SAP HANA в Azure](./hana-vm-operations.md)

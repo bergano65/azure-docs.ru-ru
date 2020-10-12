@@ -11,10 +11,10 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
 ms.openlocfilehash: 58bb08cad111e0744f7831783169901cd76caef4
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91772640"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Использование частных пакетов Python с Машинное обучение Azure
@@ -29,7 +29,7 @@ ms.locfileid: "91772640"
 
 Частные пакеты используются через класс [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment) . В среде вы объявляете, какие пакеты Python следует использовать, включая частные. Дополнительные сведения о среде в Машинное обучение Azure см. в разделе [использование сред](how-to-use-environments.md). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
  * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py&preserve-view=true)
  * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)
@@ -98,6 +98,6 @@ myenv.python.conda_dependencies=conda_dep
 
 После завершения этих конфигураций можно сослаться на пакеты в определении среды Машинное обучение Azure по полному URL-адресу в хранилище больших двоичных объектов Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
  * Дополнительные сведения о [корпоративной безопасности в машинное обучение Azure](concept-enterprise-security.md)

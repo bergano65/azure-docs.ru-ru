@@ -6,10 +6,10 @@ ms.subservice: update-management
 ms.date: 09/23/2020
 ms.topic: conceptual
 ms.openlocfilehash: 314012467da532002529a3f561b192876602b46e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335438"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
@@ -259,7 +259,7 @@ sudo yum -q --security check-update
 * [из учетной записи службы автоматизации Azure](update-mgmt-enable-automation-account.md).
 * Для серверов с поддержкой ARC (Предварительная версия) или компьютеров, не относящихся к Azure, установите [агент log Analytics](../../azure-monitor/platform/log-analytics-agent.md) , а затем [включите в рабочей области Компьютеры](update-mgmt-enable-automation-account.md#enable-machines-in-the-workspace) для управление обновлениями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о работе с Управление обновлениями см. в статье [Управление обновлениями для виртуальных машин](update-mgmt-manage-updates-for-vm.md).
 

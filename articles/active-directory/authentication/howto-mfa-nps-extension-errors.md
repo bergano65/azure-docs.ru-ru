@@ -13,10 +13,10 @@ ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: f991e38c184fe44f63af63809deb14eda22f8f4c
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88716730"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
@@ -101,7 +101,7 @@ ms.locfileid: "88716730"
 
 [Скрипт проверки работоспособности расширения NPS Azure MFA](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) выполняет базовую проверку работоспособности при устранении неполадок расширения NPS. Запустите сценарий и выберите вариант 3.
 
-### <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
+### <a name="contact-microsoft-support"></a>Обращение в службу поддержки Майкрософт
 
 Если вам требуется дополнительная помощь, обратитесь к службе поддержки, используя [поддержку сервера Многофакторной идентификации Azure](https://support.microsoft.com/oas/default.aspx?prid=14947). Вы можете облегчить нам задачу, если при обращении предоставите максимально полные сведения о проблеме. Вы можете сообщить нам, на какой странице возникла ошибка, а также точный код ошибки, идентификатор сеанса и идентификатор пользователя, получившего эту ошибку, и журналы отладки.
 

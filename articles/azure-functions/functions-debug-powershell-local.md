@@ -7,10 +7,10 @@ ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
 ms.openlocfilehash: 0c37c8f108e9bcbb827c05242d8863994dfc64cf
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89177097"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
@@ -256,6 +256,6 @@ At /Path/To/PSFunctionApp/HttpTriggerFunction/run.ps1:13 char:1
 | В Visual Studio Code терминалу по умолчанию необходим доступ к func.exe. Убедитесь, что вы не используете терминал по умолчанию, на котором не установлены основные средства, например подсистема Windows для Linux (WSL).  | Задайте оболочку по умолчанию в Visual Studio Code либо PowerShell 7 (рекомендуется), либо Windows PowerShell 5,1.|
   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о разработке функций с помощью PowerShell см. в статье с [руководством разработчика PowerShell для функций Azure](functions-reference-powershell.md).
