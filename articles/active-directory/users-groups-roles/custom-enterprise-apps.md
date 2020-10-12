@@ -14,10 +14,10 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 439f31672b5471eb37752e1248704f3f26e44dc1
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997907"
 ---
 # <a name="assign-custom-roles-to-manage-enterprise-apps-in-azure-active-directory"></a>Назначение пользовательских ролей для управления корпоративными приложениями в Azure Active Directory
@@ -103,7 +103,7 @@ get-module azureadpreview
   Binary     2.0.0.115    azureadpreview               {Add-AzureADAdministrati...}
 ```
 
-### <a name="create-a-custom-role"></a>Создание пользовательской роли
+### <a name="create-a-custom-role"></a>Создание настраиваемой роли
 
 Создайте роль с помощью следующего скрипта PowerShell:
 
@@ -195,6 +195,6 @@ POST https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Просмотр доступных разрешений пользовательской роли для корпоративных приложений](custom-enterprise-app-permissions.md)

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: cherylmc
 ms.openlocfilehash: 016741606bad5536985a38b0e0664b39006e1df5
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776567"
 ---
 # <a name="configure-a-site-to-site-vpn-connection-over-expressroute-private-peering-preview"></a>Настройка VPN-подключения типа "сеть — сеть" через частный пиринг ExpressRoute (Предварительная версия)
@@ -107,6 +107,6 @@ ms.locfileid: "91776567"
 1. В брандмауэре проверьте связь с частным IP-адресом, записанным на шаге 2. Он должен быть доступен через частный пиринг ExpressRoute.
 1. Используйте этот частный IP-адрес в качестве удаленного IP-адреса в локальном брандмауэре, чтобы установить туннель "сеть — сеть" через частный пиринг ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о VPN-шлюзе см [. в статье что такое VPN-шлюз?](vpn-gateway-about-vpngateways.md)

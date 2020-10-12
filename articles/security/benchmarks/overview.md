@@ -9,10 +9,10 @@ ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 6628d693a8df3614097e23785ac234a451565ca3
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91777111"
 ---
 # <a name="overview-of-the-azure-security-benchmark-v2"></a>Обзор производительности системы безопасности Azure (v2)
@@ -22,7 +22,7 @@ ms.locfileid: "91777111"
 Этот тест производительности является частью набора комплексных руководств по обеспечению безопасности, которые также включают:
 
 - **Инфраструктура внедрения облачных** решений — Руководство по безопасности, включая [стратегию](/azure/cloud-adoption-framework/strategy/define-security-strategy), [роли и обязанности](/azure/cloud-adoption-framework/organize/cloud-security), лучшие 10 рекомендаций по [безопасности Azure](/azure/cloud-adoption-framework/get-started/security#step-1-establish-essential-security-practices)и [справочную реализацию](/azure/cloud-adoption-framework/ready/enterprise-scale/).
-- **Хорошо спроектированная Платформа Azure** — руководство по [обеспечению безопасности рабочих нагрузок](https://docs.microsoft.com/assessments/?mode=pre-assessment&session=local) в Azure.
+- **Azure Well-Architected Framework** — руководство по [обеспечению безопасности рабочих нагрузок](https://docs.microsoft.com/assessments/?mode=pre-assessment&session=local) в Azure.
 - Рекомендации по **обеспечению безопасности корпорации Майкрософт** — [Рекомендуемые](/security/compass/microsoft-security-compass-introduction) примеры в Azure.
 
  Контрольный тест системы безопасности Azure посвящен облачным областям управления. Эти элементы управления согласуются с хорошо известными тестами безопасности, такими как, описанные в разделе центр для обеспечения безопасности Интернета (CIS), управляются версии 7,1 и национальным институтом стандартов и технологий (NIST) SP800-53.
@@ -58,11 +58,11 @@ ms.locfileid: "91777111"
 
 Мы будем рады ознакомиться с подробными сведениями и активно участием в тестировании системы безопасности Azure. Если вы хотите предоставить прямой ввод для группы производительности системы безопасности Azure, заполните форму по адресу https://aka.ms/AzSecBenchmark
 
-## <a name="download"></a>Скачать
+## <a name="download"></a>Скачивание
 
 Вы можете скачать тест производительности системы безопасности Azure в [формате электронной таблицы](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark).
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 - См. первый контроль безопасности: [Сетевая безопасность](security-control-network-security.md)
 - Ознакомление с [обзором производительности системы безопасности Azure](introduction.md)
 - Основные сведения о [безопасности в Azure](../fundamentals/index.yml)

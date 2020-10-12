@@ -9,10 +9,10 @@ ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: 85499839992f872896153e360507d7d1ba7fea38
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88037207"
 ---
 # <a name="tune-performance-storm-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: & Azure Data Lake Storage 2-го поколения HDInsight
@@ -113,7 +113,7 @@ ms.locfileid: "88037207"
 1. В **Ambari**  >  **Storm**  >  **файле config**Ambari  >  **с расширенным набором данных-Worker-log4j**измените значение ** &lt; корневого &gt; уровня = "info"** на ** &lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 2-го поколения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В [этом блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/)можно ссылаться на дополнительную настройку производительности для работы с ними.
 
 Дополнительный пример для запуска есть [в этом разделе GitHub](https://github.com/hdinsight/storm-performance-automation).

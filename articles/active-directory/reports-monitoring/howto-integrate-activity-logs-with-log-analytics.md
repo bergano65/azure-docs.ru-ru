@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f70d1caacfd655c956d4fcc36e3f0d3848d8f0fe
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89230574"
 ---
 # <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Интеграция журналов Azure AD с Azure Monitor журналами
@@ -51,13 +51,13 @@ ms.locfileid: "89230574"
 > В настоящее время журналы действий аудита и входов в систему в клиенте B2C не поддерживаются.
 >
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
-Чтобы использовать эту функцию, вам понадобится следующее.
+Для использования этой функции необходимо иметь следующее.
 
 * Подписка Azure. Если у вас нет подписки Azure, можно [зарегистрироваться и получить бесплатную пробную версию](https://azure.microsoft.com/free/).
 * Клиент Azure AD.
-* Пользователь, являющийся *глобальным администратором* или *администратором безопасности* для клиента Azure AD.
+* Пользователь, который является *глобальным администратором* или *администратором безопасности* для этого клиента Azure AD.
 * Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
 
 ## <a name="licensing-requirements"></a>Требования к лицензированию
@@ -84,7 +84,7 @@ ms.locfileid: "89230574"
 
 7. Примерно через 15 минут убедитесь, что события отправлены в рабочую область Log Analytics.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Анализ журналов действий Azure AD с помощью журналов Azure Monitor](howto-analyze-activity-logs-log-analytics.md)
 * [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)

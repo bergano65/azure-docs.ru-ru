@@ -8,10 +8,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.openlocfilehash: a34544eb29f0a1417d10955bba755fb4f9965320
-ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88136045"
 ---
 # <a name="data-modeling-in-azure-cosmos-db"></a>Моделирование данных в Azure Cosmos DB
@@ -299,7 +299,7 @@ Book documents:
 В реляционной базе данных связи *многие ко многим* часто моделируются с помощью таблиц JOIN, которые просто соединяют вместе записи из других таблиц.
 
 
-:::image type="content" source="./media/sql-api-modeling-data/join-table.png" alt-text="Объединенные таблицы" border="false":::
+:::image type="content" source="./media/sql-api-modeling-data/join-table.png" alt-text="Модель реляционной базы данных" border="false":::
 
 У вас может возникнуть желание реплицировать это с помощью документов и создать модель данных, аналогичную приведенной ниже.
 
@@ -432,7 +432,7 @@ Review documents:
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Основная идея этой статьи заключается в том, что моделирование данных без фиксированных схем не теряет своей актуальности.
 
@@ -442,4 +442,4 @@ Review documents:
 
 Чтобы понять, как сегментировать данные по нескольким разделам, ознакомьтесь со статьей [Секционирование, ключи секции и масштабирование в DocumentDB](sql-api-partition-data.md).
 
-Чтобы узнать, как моделировать и секционировать данные на Azure Cosmos DB с помощью практического примера, см. [Пример моделирования данных и секционирования — реальные примеры](how-to-model-partition-example.md).
+Чтобы научиться моделировать и секционировать данные на Azure Cosmos DB с помощью практического примера, ознакомьтесь с [ разделом моделирование данных и секционирование — Real-World пример](how-to-model-partition-example.md).

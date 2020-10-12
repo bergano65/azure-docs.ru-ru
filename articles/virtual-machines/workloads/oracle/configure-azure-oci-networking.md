@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 03/16/2020
 ms.author: rogardle
 ms.openlocfilehash: 5bb26a21317401ddbd0d9b8f8a9a501c78153842
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776584"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого взаимодействия между Azure и облачной инфраструктурой Oracle  
@@ -36,7 +36,7 @@ ms.locfileid: "91776584"
 
 ![Сетевое подключение между облаками](media/configure-azure-oci-networking/azure-oci-connect.png)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Чтобы установить подключение между Azure и OCI, необходимо иметь активную подписку Azure и активную службу OCI.
 
@@ -82,7 +82,7 @@ ms.locfileid: "91776584"
 
 После завершения настройки сети можно проверить допустимость конфигурации, щелкнув ссылку **получить записи ARP** и **получить таблицу маршрутов** в колонке частного пиринга ExpressRoute в портал Azure.
 
-## <a name="automation"></a>Автоматизация
+## <a name="automation"></a>Служба автоматизации
 
 Корпорация Майкрософт создала сценарии terraform, чтобы включить автоматическое развертывание сетевого соединения. Перед выполнением скрипты terraform должны пройти проверку подлинности в Azure, так как для них требуются соответствующие разрешения в подписке Azure. Проверку подлинности можно выполнить с помощью [субъекта-службы Azure Active Directory](../../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) или с помощью Azure CLI. Дополнительные сведения см. в [документации по terraform](https://www.terraform.io/docs/providers/azurerm/auth/azure_cli.html).
 
@@ -102,7 +102,7 @@ ms.locfileid: "91776584"
 
 На этом этапе процесс удаления и отмены инициализации завершен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о межоблачном подключении между OCI и Azure см. в [документации Oracle](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm).
 * Используйте [сценарии terraform](https://aka.ms/azureociinterconnecttf) для развертывания инфраструктуры для целевых приложений Oracle в Azure и настройки сетевого соединения. 

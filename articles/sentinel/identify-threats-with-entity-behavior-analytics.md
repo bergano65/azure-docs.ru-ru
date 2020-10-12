@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/19/2020
 ms.author: yelevin
 ms.openlocfilehash: 6597baa67bcd2e26f3b8aeaa98c1776b5fc47430
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997148"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Выявление дополнительных угроз с помощью анализа поведения пользователей и сущностей (УЕБА) в Azure Sentinel
@@ -47,15 +47,13 @@ ms.locfileid: "90997148"
 
 - **Аналитика:** Используя различные алгоритмы машинного обучения (ML), Sentinel Azure определяет аномальные действия и четко отображает доказательства в виде контекстных дополнений, некоторые примеры которых приведены ниже.
 
-    :::image type="content" source="media/identify-threats-with-entity-behavior-analytics/behavior-analytics-top-down.png" alt-text="Анализ поведения за пределами":::
-
-В Azure Sentinel представлены артефакты, которые помогут аналитикам безопасности получить четкое представление о аномальных действиях в контексте и сравнить их с базовым профилем пользователя. Действия, выполняемые пользователем (или узлом или адресом), оцениваются контекстно, где результат "true" указывает на определенную аномалию:
+    :::image type="content" source="media/identify-threats-with-entity-behavior-analytics/behavior-analytics-top-down.png" alt-text="Архитектура аналитики поведения сущностей" указывает на определенную аномалию:
 - между географическими расположениями, устройствами и средами.
 - за период времени и периодичность (по сравнению с собственным журналом пользователя).
 - по сравнению с поведением одноранговых узлов.
 - по сравнению с поведением Организации.
 
-    :::image type="content" source="media/identify-threats-with-entity-behavior-analytics/context.png" alt-text="Контекст сущности":::
+    :::image type="content" source="media/identify-threats-with-entity-behavior-analytics/context.png" alt-text="Архитектура аналитики поведения сущностей":::
 
 
 ### <a name="scoring"></a>оценка.
@@ -79,7 +77,7 @@ ms.locfileid: "90997148"
 
 ### <a name="the-timeline"></a>Временная шкала
 
-:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/entity-pages-timeline.png" alt-text="Временная шкала страниц сущностей":::
+:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/entity-pages-timeline.png" alt-text="Архитектура аналитики поведения сущностей":::
 
 Временная шкала является основной частью вклада страницы сущности в аналитику поведения в Azure Sentinel. Он представляет собой историю событий, связанных с сущностями, которые помогают понять действия сущности в течение определенного промежутка времени.
 
@@ -107,7 +105,7 @@ Entity Insights — это запросы, определяемые исслед
 
 Страницы сущностей разрабатываются как часть нескольких сценариев использования, и к ним можно получить доступ из управления инцидентами, с помощью графа расследования, закладок или непосредственно со страницы **поиска сущностей в главном** меню Azure Sentinel.
 
-:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/entity-pages-use-cases.png" alt-text="Варианты использования страниц сущностей":::
+:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/entity-pages-use-cases.png" alt-text="Архитектура аналитики поведения сущностей":::
 
 
 ## <a name="data-schema"></a>Схема данных
@@ -156,9 +154,7 @@ BehaviorAnalytics
 
 Azure Sentinel вычисляет и ранжирует одноранговые узлы пользователей на основе членства пользователя в группе безопасности Azure AD, списка рассылки, обновляло и сохраняет ранги, Ранжированные по 1-20, в таблице **усерпираналитикс** . На следующем снимке экрана показана схема таблицы Усерпираналитикс и отображаются первые 8-Ранжированные одноранговые узлы пользователя Кендалл Коллинз. Для нормализации коэффициентами взвешивания для вычисления ранга Azure Sentinel используется алгоритм *Term-инверсия документов* (TF-IDF). чем меньше группа, тем выше плотность. 
 
-:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/user-peers-metadata.png" alt-text="Снимок экрана таблицы метаданных для одноранговых узлов пользователей":::
-
-Вы можете использовать [записную книжку Jupyter](https://github.com/Azure/Azure-Sentinel-Notebooks/tree/master/BehaviorAnalytics/UserSecurityMetadata) , предоставленную в репозитории Azure Sentinel GitHub, для визуализации метаданных одноранговых узлов пользователей. Подробные инструкции по использованию записной книжки см. в разделе " [Интерактивный анализ и](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/master/BehaviorAnalytics/UserSecurityMetadata/Guided%20Analysis%20-%20User%20Security%20Metadata.ipynb) Записная книжка метаданных безопасности пользователя".
+:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/user-peers-metadata.png" alt-text="Архитектура аналитики поведения сущностей" [Интерактивный анализ и](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/master/BehaviorAnalytics/UserSecurityMetadata/Guided%20Analysis%20-%20User%20Security%20Metadata.ipynb) Записная книжка метаданных безопасности пользователя".
 
 ### <a name="permission-analytics---table-and-notebook"></a>Аналитика разрешений — таблица и Записная книжка
 
@@ -166,9 +162,7 @@ Azure Sentinel вычисляет и ранжирует одноранговые
 
 Метка Azure определяет прямые и транзитивные права доступа, удерживаемые определенным пользователем, в ресурсы Azure, оценивая подписки Azure, к которым пользователь имеет доступ напрямую или через группы или субъекты-службы. Эти сведения, а также полный список членства пользователя в группе безопасности Azure AD хранятся в таблице **усеракцессаналитикс** . На снимке экрана ниже показан пример строки в таблице Усеракцессаналитикс для пользователя Алекс Джонсон. **Исходная сущность** — это учетная запись пользователя или субъекта-службы, а **Целевая сущность** — это ресурс, к которому имеет доступ исходная сущность. Значения **уровня доступа** и **типа доступа** зависят от модели управления доступом целевой сущности. Вы видите, что Алекс имеет доступ для участников в подписке Azure для *клиента гостиниц Contoso*. Модель управления доступом подписки — RBAC.   
 
-:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/user-access-analytics.png" alt-text="Снимок экрана таблицы аналитики доступа пользователей":::
-
-Для визуализации данных аналитики разрешений можно использовать [записную книжку Jupyter](https://github.com/Azure/Azure-Sentinel-Notebooks/tree/master/BehaviorAnalytics/UserSecurityMetadata) (ту же самую записную книжку, которую упоминали ранее) из репозитория Azure Sentinel в репозитории GitHub. Подробные инструкции по использованию записной книжки см. в разделе " [Интерактивный анализ и](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/master/BehaviorAnalytics/UserSecurityMetadata/Guided%20Analysis%20-%20User%20Security%20Metadata.ipynb) Записная книжка метаданных безопасности пользователя".
+:::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/user-access-analytics.png" alt-text="Архитектура аналитики поведения сущностей" [Интерактивный анализ и](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/master/BehaviorAnalytics/UserSecurityMetadata/Guided%20Analysis%20-%20User%20Security%20Metadata.ipynb) Записная книжка метаданных безопасности пользователя".
 
 ### <a name="hunting-queries-and-exploration-queries"></a>Поиск запросов и исследование запросов
 
@@ -176,7 +170,7 @@ Azure Sentinel предоставляет готовый набор запрос
 
 Узнайте больше о [поиске и диаграмме расследования](./hunting.md) в Azure Sentinel.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали о возможностях аналитики поведения сущностей Azure Sentinel. Практические рекомендации по реализации и использованию ценных сведений, которые вы получили, см. в следующих статьях:
 
 - [Включите аналитику поведения сущностей](./enable-entity-behavior-analytics.md) в Azure Sentinel.

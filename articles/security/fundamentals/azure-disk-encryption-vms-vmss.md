@@ -8,10 +8,10 @@ ms.author: mbaldwin
 ms.date: 10/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 21194bf2fe76a7eb0ee034d4a502c20ee3032dd9
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87543679"
 ---
 # <a name="azure-disk-encryption-for-virtual-machines-and-virtual-machine-scale-sets"></a>Шифрование дисков Azure для виртуальных машин и масштабируемых наборов виртуальных машин
@@ -25,7 +25,7 @@ ms.locfileid: "87543679"
 ### <a name="current-version-of-azure-disk-encryption"></a>Текущая версия шифрования дисков Azure
 
 - [Общие сведения о шифровании дисков Azure для виртуальных машин Linux](../../virtual-machines/linux/disk-encryption-overview.md)
-- [Сценарии шифрования дисков Azure на виртуальных машинах Linux](../../virtual-machines/linux/disk-encryption-linux.md)
+- [Azure Disk Encryption scenarios on Linux VMs](../../virtual-machines/linux/disk-encryption-linux.md) (Сценарии шифрования дисков Azure для виртуальных машин Linux)
 - [Создание и шифрование виртуальной машины Linux с помощью Azure CLI](../../virtual-machines/linux/disk-encryption-cli-quickstart.md)
 - [Создание и шифрование виртуальной машины Linux с помощью Azure PowerShell](../../virtual-machines/linux/disk-encryption-powershell-quickstart.md)
 - [Создание и шифрование виртуальной машины Linux на портале Azure](../../virtual-machines/linux/disk-encryption-portal-quickstart.md)
@@ -72,10 +72,10 @@ ms.locfileid: "87543679"
 - [Encrypt OS and attached data disks in a virtual machine scale set with the Azure CLI](../../virtual-machine-scale-sets/disk-encryption-cli.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI) 
 - [Шифрование масштабируемых наборов виртуальных машин с помощью Azure PowerShell](../../virtual-machine-scale-sets/disk-encryption-powershell.md).
 - [Шифрование масштабируемых наборов виртуальных машин с помощью Azure Resource Manager](../../virtual-machine-scale-sets/disk-encryption-azure-resource-manager.md)
-- [Creating and configuring a key vault for Azure Disk Encryption](../../virtual-machine-scale-sets/disk-encryption-key-vault.md) (Создание и настройка хранилища ключей для шифрования дисков Azure)
+- [Создание и настройка хранилища ключей для шифрования дисков Azure](../../virtual-machine-scale-sets/disk-encryption-key-vault.md)
 - [Use Azure Disk Encryption with virtual machine scale set extension sequencing](../../virtual-machine-scale-sets/disk-encryption-extension-sequencing.md) (Использование шифрования дисков Azure с помощью виртуализации расширения масштабируемого набора виртуальных машин)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о шифровании в Azure](encryption-overview.md)
 - [Шифрование неактивных данных](encryption-atrest.md)

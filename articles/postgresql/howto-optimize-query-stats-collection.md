@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.openlocfilehash: bc731f6f6a5a60bce0851bf8fe5874f7149f3899
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90901457"
 ---
 # <a name="optimize-query-statistics-collection-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация сбора статистики запросов в базе данных Azure для PostgreSQL — один сервер
@@ -34,9 +34,9 @@ ms.locfileid: "90901457"
 ## <a name="use-the-query-store"></a>Использование хранилища запросов 
 Компонент [Хранилище запросов](concepts-query-store.md) в Базе данных Azure для PostgreSQL предоставляет более эффективный метод отслеживания статистики запросов. Этот компонент рекомендуется в качестве альтернативы использованию *pg_stats_statements*. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Попробуйте задать `pg_stat_statements.track = NONE` на [портале Azure](howto-configure-server-parameters-using-portal.md) или с помощью [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения см. в разделе: 
 - [Сценарии использования хранилища запросов](concepts-query-store-scenarios.md) 
 - [Рекомендации по хранилищу запросов](concepts-query-store-best-practices.md) 

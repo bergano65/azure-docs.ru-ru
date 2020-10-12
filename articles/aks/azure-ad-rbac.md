@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/21/2020
 ms.openlocfilehash: 2845a091c8a89f22e8892141dd2dad26d6049447
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88006848"
 ---
 # <a name="control-access-to-cluster-resources-using-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей и удостоверений Azure Active Directory в службе Azure Kubernetes
@@ -18,7 +18,7 @@ ms.locfileid: "88006848"
 
 В этой статье показано, как использовать членство в группах Azure AD для управления доступом к пространствам имен и ресурсам кластера с помощью Kubernetes RBAC в кластере AKS. Примеры групп и пользователей создаются в Azure AD, а затем роли и Ролебиндингс создаются в кластере AKS, чтобы предоставить соответствующие разрешения на создание и просмотр ресурсов.
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас уже есть кластер AKS с поддержкой интеграции с Azure AD. Если вам нужен кластер AKS, см. статью [интеграция Azure Active Directory с AKS][azure-ad-aks-cli].
 
@@ -164,7 +164,7 @@ kubectl apply -f role-dev-namespace.yaml
 az ad group show --group appdev --query objectId -o tsv
 ```
 
-Теперь создайте Ролебиндинг для группы *AppDev* , чтобы использовать ранее созданную роль для доступа к пространству имен. Создайте файл `rolebinding-dev-namespace.yaml` и вставьте в него следующий манифест YAML. В последней строке замените *граупобжектид* на выходные данные идентификатора объекта Group из предыдущей команды:
+Теперь создайте Ролебиндинг для группы *AppDev* , чтобы использовать ранее созданную роль для доступа к пространству имен. Создайте файл `rolebinding-dev-namespace.yaml` и вставьте в него следующий манифест YAML. В последней строке замените *граупобжектид*  на выходные данные идентификатора объекта Group из предыдущей команды:
 
 ```yaml
 kind: RoleBinding
@@ -229,7 +229,7 @@ kubectl apply -f role-sre-namespace.yaml
 az ad group show --group opssre --query objectId -o tsv
 ```
 
-Создайте Ролебиндинг для группы *опссре* , чтобы использовать ранее созданную роль для доступа к пространству имен. Создайте файл `rolebinding-sre-namespace.yaml` и вставьте в него следующий манифест YAML. В последней строке замените *граупобжектид* на выходные данные идентификатора объекта Group из предыдущей команды:
+Создайте Ролебиндинг для группы *опссре* , чтобы использовать ранее созданную роль для доступа к пространству имен. Создайте файл `rolebinding-sre-namespace.yaml` и вставьте в него следующий манифест YAML. В последней строке замените *граупобжектид*  на выходные данные идентификатора объекта Group из предыдущей команды:
 
 ```yaml
 kind: RoleBinding
@@ -388,7 +388,7 @@ az ad group delete --group appdev
 az ad group delete --group opssre
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS][rbac-authorization].
 

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 08/25/2020
 ms.author: raynew
-ms.openlocfilehash: 608d9511b14ef8dd3815d6f9b45cda31e6b38b94
-ms.sourcegitcommit: 3c66bfd9c36cd204c299ed43b67de0ec08a7b968
+ms.openlocfilehash: dc931b910981578a3257c9131bea93cd836d1def
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "90004312"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945169"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Поддержка перемещения ресурсов Azure в разных регионах
 
@@ -544,14 +544,14 @@ ms.locfileid: "90004312"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее](../../postgresql/howto-move-regions-portal.md).<br/><br/> Если служба подготовлена с геоизбыточным хранилищем резервных копий, можно использовать геовосстановление для восстановления в других регионах. [Подробнее](../../mariadb/concepts-business-continuity.md#recover-from-an-azure-regional-data-center-outage).
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее.](../../postgresql/howto-move-regions-portal.md)<br/><br/> Если служба подготовлена с геоизбыточным хранилищем резервных копий, можно использовать геовосстановление для восстановления в других регионах. [Подробнее.](../../mariadb/concepts-business-continuity.md#recover-from-an-azure-regional-data-center-outage)
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее](../../mysql/howto-move-regions-portal.md).
+> | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. [Подробнее.](../../mysql/howto-move-regions-portal.md)
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
@@ -696,7 +696,7 @@ ms.locfileid: "90004312"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | нет | 
+> | accounts | Нет. [Подробнее.](../../azure-monitor/faq.md#how-do-i-move-an-application-insights-resource-to-a-new-region)
 > | actiongroups |  Нет | 
 > | activitylogalerts | нет | 
 > | alertrules |  нет | 

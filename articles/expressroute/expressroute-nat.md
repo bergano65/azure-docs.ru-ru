@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: duau
 ms.openlocfilehash: a2c322c765d39a3afe4974ed88bf4dc18fd467a3
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89569651"
 ---
 # <a name="expressroute-nat-requirements"></a>Требования ExpressRoute к NAT
@@ -65,7 +65,7 @@ ms.locfileid: "89569651"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. сведения о требованиях к [маршрутизации](expressroute-routing.md) и [качеству обслуживания](expressroute-qos.md).
 * Сведения о рабочем процессе см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
 * Настройте подключение ExpressRoute.

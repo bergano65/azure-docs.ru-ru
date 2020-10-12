@@ -15,10 +15,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 09c306b85c910e8ec2021abf15013935c44b0df3
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91707716"
 ---
 # <a name="monitor-media-services-metrics"></a>Monitor Media Services metrics (Мониторинг метрик службы мультимедиа)
@@ -70,11 +70,11 @@ az monitor metrics list --resource \
 
 Чтобы получить другие метрики, замените "исходящий" на имя метрики, которое вас интересует.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
 * [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Журналы диагностики](media-services-diagnostic-logs-howto.md)
