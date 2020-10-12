@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/12/2020
 ms.author: victorh
 ms.openlocfilehash: e51cc8905a7b4a88bb7f7dabaf24bb30159ff86c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83655093"
 ---
 # <a name="azure-firewall-threat-intelligence-based-filtering"></a>Фильтрация на основе аналитики угроз в Брандмауэре Azure
@@ -27,7 +27,7 @@ ms.locfileid: "83655093"
 
 По умолчанию фильтрация на основе аналитики угроз работает в режиме оповещения. Вы не сможете отключить эту функцию или изменить режим, пока соответствующий раздел интерфейса портала не станет доступен в вашем регионе.
 
-:::image type="content" source="media/threat-intel/threat-intel-ui.png" alt-text="Интерфейс портала для фильтрации на основе аналитики угроз":::
+:::image type="content" source="media/threat-intel/threat-intel-ui.png" alt-text="Аналитика угроз в брандмауэре":::
 
 ## <a name="logs"></a>Журналы
 

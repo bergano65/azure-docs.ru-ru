@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: b826c986a0af26bb79fb0823e4e8626f0165d460
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86250029"
 ---
 # <a name="azure-api-management-page-controls"></a>Элементы управления страницей в службе управления API Azure
@@ -43,7 +43,7 @@ ms.locfileid: "86250029"
 -   [Управление разбиением на страницы](#paging-control)  
 -   [providers](#providers)  
 -   [Поиск — контроль](#search-control)  
--   [sign-up](#sign-up)  
+-   [регистрация](#sign-up)  
 -   [кнопка подписки](#subscribe-button)  
 -   [подписка — Отмена](#subscription-cancel)  
   
@@ -111,7 +111,7 @@ ms.locfileid: "86250029"
   
 -   [Список продуктов](api-management-product-templates.md#ProductList)  
   
-##  <a name="providers"></a><a name="providers"></a>поставщик  
+##  <a name="providers"></a><a name="providers"></a> поставщик  
  Элемент управления `providers` предоставляет интерфейс для выбора поставщика проверки подлинности на странице входа на портал разработчика.  
   
  ![элемент управления providers](./media/api-management-page-controls/APIM-providers-control.png "Элемент управления поставщиками APIM")  
@@ -151,7 +151,7 @@ ms.locfileid: "86250029"
   
 -   [Список продуктов](api-management-product-templates.md#ProductList)  
   
-##  <a name="sign-up"></a><a name="sign-up"></a>регистрация  
+##  <a name="sign-up"></a><a name="sign-up"></a> регистрация  
  Элемент управления `sign-up` предоставляет интерфейс для сбора информации о профиле пользователя на странице регистрации на портале разработчика.  
   
  ![знаком&#45;управления](./media/api-management-page-controls/APIM-sign-up-control.png "Управление регистрацией APIM")  

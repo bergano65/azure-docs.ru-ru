@@ -14,10 +14,10 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 4ce40d1a46a6448e678a8a86812d08e9013310d7
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86086914"
 ---
 # <a name="copy-or-move-data-easily-with-azure-data-factory-copy-wizard"></a>Удобное копирование и перемещение данных с помощью мастера копирования в фабрике данных Azure
@@ -93,6 +93,6 @@ ms.locfileid: "86086914"
 
 ![Планирование свойств](./media/data-factory-copy-wizard/scheduling-properties.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Краткое пошаговое руководство по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных см. в [этой статье](data-factory-copy-data-wizard-tutorial.md).
 

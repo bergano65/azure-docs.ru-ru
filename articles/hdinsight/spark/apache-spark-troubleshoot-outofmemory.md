@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/15/2019
 ms.openlocfilehash: 31cdef281b1cb26d01a4690c815e3d3621e2c053
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84709051"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
@@ -20,7 +20,7 @@ ms.locfileid: "84709051"
 
 ## <a name="scenario-outofmemoryerror-exception-for-apache-spark"></a>Сценарий: исключение OutOfMemoryError для Apache Spark
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Сбой приложения Apache Spark с необработанным исключением OutOfMemoryError. Может появиться сообщение об ошибке следующего вида:
 
@@ -52,7 +52,7 @@ java.lang.OutOfMemoryError
     ...
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Наиболее вероятной причиной этого исключения является нехватка памяти кучи, выделенной для виртуальных машин Java. Эти виртуальных машин Java запускаются как исполнители или драйверы в составе приложения Apache Spark.
 
@@ -92,7 +92,7 @@ java.lang.OutOfMemoryError
 
 ## <a name="scenario-java-heap-space-error-when-trying-to-open-apache-spark-history-server"></a>Сценарий: ошибка пространства кучи Java при попытке открыть сервер журнала Apache Spark
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 При открытии событий на сервере журнала Spark появляется следующее сообщение об ошибке:
 
@@ -100,7 +100,7 @@ java.lang.OutOfMemoryError
 scala.MatchError: java.lang.OutOfMemoryError: Java heap space (of class java.lang.OutOfMemoryError)
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема часто возникает из-за недостатка ресурсов при открытии больших файлов Spark-событий. Размер кучи Spark по умолчанию устанавливается равным 1 ГБ, но для больших файлов событий Spark может потребоваться больше.
 
@@ -132,7 +132,7 @@ hadoop fs -du -s -h wasb:///hdp/spark2-events/application_1503957839788_0264_1/
 
 ## <a name="scenario-livy-server-fails-to-start-on-apache-spark-cluster"></a>Сценарий: Livy Server не запускается в кластере Apache Spark
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Livy Server нельзя запустить на Apache Spark [(Spark 2,1 в Linux (HDI 3,6)]. Попытка перезапуска приводит к последующему стеку ошибок из журналов Livy:
 
@@ -192,9 +192,9 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
   ## using "vmstat" found  we had enough free memory
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
-`java.lang.OutOfMemoryError: unable to create new native thread`ОС с выделенными фрагментами не может назначить больше машинных потоков для виртуальных машин Java. Подтверждает, что это исключение вызвано нарушением числа потоков для каждого процесса.
+`java.lang.OutOfMemoryError: unable to create new native thread` ОС с выделенными фрагментами не может назначить больше машинных потоков для виртуальных машин Java. Подтверждает, что это исключение вызвано нарушением числа потоков для каждого процесса.
 
 При неожиданном завершении работы сервера Livy все подключения к кластерам Spark также завершаются. Это означает, что все задания и связанные данные будут потеряны. В механизме восстановления сеанса HDP 2,6 Livy сохраняет сведения о сеансе в Zookeeper для восстановления после возвращения сервера Livy.
 
@@ -239,7 +239,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
 1. Дождитесь завершения выполнения приведенной выше команды и курсора, чтобы вернуть запрос, а затем перезапустите службу Livy из Ambari, которая должна быть выполнена.
 
 > [!NOTE]
-> `DELETE`сеанс Livy после завершения его выполнения. Сеансы пакетной службы Livy не будут удаляться автоматически сразу после завершения работы приложения Spark, что является конструкцией. Сеанс Livy — это сущность, созданная запросом POST к серверу Livy RESTful. `DELETE`Для удаления этой сущности требуется вызов. Или следует подождать, пока сборщик мусора не запустится.
+> `DELETE` сеанс Livy после завершения его выполнения. Сеансы пакетной службы Livy не будут удаляться автоматически сразу после завершения работы приложения Spark, что является конструкцией. Сеанс Livy — это сущность, созданная запросом POST к серверу Livy RESTful. `DELETE`Для удаления этой сущности требуется вызов. Или следует подождать, пока сборщик мусора не запустится.
 
 ---
 

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/13/2018
 ms.author: routlaw
 ms.openlocfilehash: 925246eb2adae59ca74e363c4d4a6952f11c3744
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87292333"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
@@ -29,18 +29,18 @@ ms.locfileid: "87292333"
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmname}/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=Percentage%20CPU&timespan=2018-06-05T03:00:00Z/2018-06-07T03:00:00Z
 ```
 
-### <a name="request-headers"></a>Заголовки запросов
+### <a name="request-headers"></a>Заголовки запроса
 
 Ниже приведены обязательные заголовки. 
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
 |*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Задайте допустимый  [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |  
+|*Authorization:*|Обязательный элемент. Задайте допустимый [маркер доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| Имя | Описание |
+| name | Описание |
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | имя_группы_ресурсов | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |

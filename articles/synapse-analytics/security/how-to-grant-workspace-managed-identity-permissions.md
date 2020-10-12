@@ -9,10 +9,10 @@ ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
 ms.openlocfilehash: 5c07943d517f893e67eed5103660a953b508cc87
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87535048"
 ---
 # <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Предоставление разрешений управляемому удостоверению рабочей области (Предварительная версия)
@@ -117,6 +117,6 @@ Azure синапсе будет пытаться предоставить упр
 Управляемое удостоверение должно отображаться в разделе **участник данных BLOB-объекта хранилища** с назначенной ему ролью *участника данных BLOB-объекта хранилища* . 
 ![ADLS 2-го поколения выбор контейнера учетной записи хранения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-15.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об [управляемом удостоверении рабочей области](./synapse-workspace-managed-identity.md)

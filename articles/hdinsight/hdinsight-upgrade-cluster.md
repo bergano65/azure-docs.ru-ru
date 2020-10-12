@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/31/2020
 ms.openlocfilehash: f3bfd430023330d3a399a0a760fd353b6ee60941
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86085894"
 ---
 # <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>Перенос кластера HDInsight в более новую версию
@@ -53,7 +53,7 @@ ms.locfileid: "86085894"
 
 Дополнительные сведения о резервном копировании и восстановлении базы данных см. в статье [Восстановление базы данных в базе данных SQL Azure с помощью автоматических резервных копий базы данных](../azure-sql/database/recovery-using-backups.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).

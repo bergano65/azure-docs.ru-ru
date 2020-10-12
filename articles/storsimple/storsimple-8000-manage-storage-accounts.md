@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 306d3a14d759ac73e78626a4c2ec6abc69d3df85
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85515025"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-storage-account-credentials"></a>Использование службы диспетчера устройств StorSimple для управления учетными данными учетной записи хранения
@@ -176,7 +176,7 @@ ms.locfileid: "85515025"
    2. Обновлять ключ доступа к хранилищу необходимо в службе диспетчера устройств StorSimple. В этом случае его можно увидеть. Введите новый ключ в поле **Ключ доступа к учетной записи хранения**. 
    3. Сохраните изменения. Ключ доступа к учетной записи хранения теперь должен быть обновлен.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [безопасности StorSimple](storsimple-8000-security.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 
