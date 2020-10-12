@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
 ms.openlocfilehash: f969d7edc22c9c36481ca42449193af5f8c7b0d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84710003"
 ---
 # <a name="deploy-virtual-machine-scale-sets-with-ipv6-in-azure"></a>Развертывание масштабируемых наборов виртуальных машин с помощью IPv6 в Azure
@@ -27,7 +27,7 @@ ms.locfileid: "84710003"
 2.    Создайте подсистему балансировки нагрузки с двумя стеками.  
 3.    Создание правил группы безопасности сети (NSG).  
 
-Единственным шагом, который отличается от отдельных виртуальных машин, является создание конфигурации сетевого интерфейса (NIC), использующей ресурс масштабируемого набора виртуальных машин: networkProfile/networkInterfaceConfigurations. Структура JSON аналогична структуре объекта Microsoft. Network/networkInterfaces, которая используется для отдельных виртуальных машин с добавлением сетевой карты и IP-конфигурации IPv4 в качестве основного интерфейса с помощью атрибута **PRIMARY: true** , как показано в следующем примере:
+Единственным шагом, который отличается от отдельных виртуальных машин, является создание конфигурации сетевого интерфейса (NIC), использующей ресурс масштабируемого набора виртуальных машин: networkProfile/networkInterfaceConfigurations. Структура JSON аналогична структуре объекта Microsoft. Network/networkInterfaces, которая используется для отдельных виртуальных машин с добавлением сетевой карты и IP-конфигурации IPv4 в качестве основного интерфейса с помощью атрибута **PRIMARY: true**  , как показано в следующем примере:
 
 ```json
           "networkProfile": {
@@ -92,6 +92,6 @@ ms.locfileid: "84710003"
 ## <a name="sample-virtual-machine-scale-set-template-json"></a>Пример шаблона масштабируемого набора виртуальных машин в формате JSON
 
 [Вот](https://azure.microsoft.com/resources/templates/ipv6-in-vnet-vmss/)как можно развернуть масштабируемый набор виртуальных машин с двойным стеком (IPv4 + IPv6) с двумя внешними Load Balancer и примером шаблона представления виртуальной сети.
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в статье [что такое IPv6 для виртуальной сети Azure?](ipv6-overview.md).

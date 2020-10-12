@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: apimpm
 ms.openlocfilehash: 0a3aa0c26ddb515b8096cce909ca074f6f24a333
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86250487"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
@@ -41,7 +41,7 @@ ms.locfileid: "86250487"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством вам понадобится следующее:
+Для работы с этим руководством сделайте следующее:
 
 + [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + [Импорт и публикация API](import-and-publish.md)

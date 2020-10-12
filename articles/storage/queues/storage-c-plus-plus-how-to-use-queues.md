@@ -9,10 +9,10 @@ ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.openlocfilehash: 6a4f8b99be564779b350bff2ab5b37f3c7ccc6f2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87020986"
 ---
 # <a name="how-to-use-queue-storage-from-c"></a>Использование хранилища очередей из C++
@@ -39,8 +39,8 @@ ms.locfileid: "87020986"
 
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
-* **Linux:** Следуйте инструкциям, приведенным в [файле сведений о клиентской библиотеке хранилища Azure для C++ README: Начало работы на странице Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) .
-* **Windows:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве диспетчера зависимостей. Выполните инструкции из [краткого руководства](https://github.com/microsoft/vcpkg#quick-start) , чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
+* **Linux:** следуйте инструкциям, указанным в файле README [клиентской библиотеки хранилища Azure для C++ на странице для начала работы в Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux).
+* **Windows:** В Windows в качестве диспетчера зависимостей используйте [vcpkg](https://github.com/microsoft/vcpkg). Выполните инструкции из [краткого руководства](https://github.com/microsoft/vcpkg#quick-start) , чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
 
 ```powershell
 .\vcpkg.exe install azure-storage-cpp
@@ -267,4 +267,4 @@ queue.delete_queue_if_exists();
 * [Использование табличного хранилища из C++](../../cosmos-db/table-storage-how-to-use-c-plus.md)
 * [Список ресурсов службы хранилища Azure в C++](../common/storage-c-plus-plus-enumeration.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json)
 * [Справочник по клиентской библиотеке хранилища для C++](https://azure.github.io/azure-storage-cpp)
-* [Документация по службе хранилища Azure](https://azure.microsoft.com/documentation/services/storage/)
+* [Документация по хранилищу Azure](https://azure.microsoft.com/documentation/services/storage/)

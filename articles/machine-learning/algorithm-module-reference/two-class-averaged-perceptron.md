@@ -1,7 +1,7 @@
 ---
-title: 'Среднее значение перцептрона: ссылка на модуль в двух классах'
+title: 'Two-Class среднего перцептрона: ссылка на модуль'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать перцептрона модуль среднего уровня с двумя классами в Машинное обучение Azure для создания модели машинного обучения на основе среднего алгоритма перцептрона.
+description: Узнайте, как использовать Two-Class усредненного модуля перцептрона в Машинное обучение Azure для создания модели машинного обучения на основе среднего алгоритма перцептрона.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,13 +10,13 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 3e5351ed2d400e0b1a10a913bb62391851030053
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90907746"
 ---
-# <a name="two-class-averaged-perceptron-module"></a>Усредненный модуль перцептрона с двумя классами
+# <a name="two-class-averaged-perceptron-module"></a>Two-Class усредненного модуля перцептрона
 
 В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
@@ -30,7 +30,7 @@ ms.locfileid: "90907746"
 
 Более простые модели перцептрона подходят для обучения линейно отделяемых шаблонов, тогда как нейронные сети (особенно глубокие нейронные сети) могут моделировать более сложные границы класса. Однако перцептроны работают быстрее, и их можно использовать в непрерывном обучении, так как перцептроны обрабатывают случаи последовательно.
 
-## <a name="how-to-configure-two-class-averaged-perceptron"></a>Как настроить среднее перцептрона для двух классов
+## <a name="how-to-configure-two-class-averaged-perceptron"></a>Как настроить Two-Class среднего перцептрона
 
 1.  Добавьте в конвейер модуль **перцептрона с усредненными значениями из двух классов** .  
 

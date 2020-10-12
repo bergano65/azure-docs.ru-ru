@@ -11,10 +11,10 @@ ms.date: 01/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
 ms.openlocfilehash: b733fbc44deefe46e3496e288ebad525346ef005
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91322314"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
@@ -202,7 +202,7 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 
 Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` , когда для вывода списка моделей путь начинается с `modelmanagement/v1.0` . REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. 
 
-|Область|Путь|
+|Область|путь|
 |-|-|
 |Artifacts|/рест/апи/азуремл|
 |Хранилища данных|/азуре/мачине-леарнинг/хов-то-акцесс-дата|

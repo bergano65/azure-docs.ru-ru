@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
 ms.openlocfilehash: 9b5fc9e4118d98905138b7f205f61d85a96b60b0
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88035473"
 ---
 # <a name="associate-a-public-ip-address-to-a-virtual-machine"></a>Связывание общедоступного IP-адреса с виртуальной машиной
@@ -212,6 +212,6 @@ ms.locfileid: "88035473"
 
 Прежде чем подключиться к общедоступному IP-адресу из Интернета, убедитесь, что в каждой группе безопасности сети, связанной с сетевым интерфейсом, открыты необходимые порты, подсеть, в которой находится сетевой интерфейс, или оба. Несмотря на то, что группы безопасности фильтруют трафик по частному IP-адресу сетевого интерфейса, после того, как входящий Интернет-трафик поступает по общедоступному, Azure преобразует общедоступный адрес в частный IP-адрес, поэтому если группа безопасности сети предотвращает поток трафика, связь с общедоступным IP-адресом завершается ошибкой. Действующие правила безопасности для сетевого интерфейса и его подсети можно просмотреть с помощью [портала](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-portal), [CLI](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-cli) или [PowerShell](diagnose-network-traffic-filter-problem.md#diagnose-using-powershell).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Разрешите входящий Интернет-трафик к виртуальной машине с помощью группы безопасности сети. Сведения о создании группы безопасности сети см. в статье [Работа с группами безопасности сети](manage-network-security-group.md#work-with-network-security-groups). Дополнительные сведения о группах безопасности сети см. в разделе [группы безопасности](security-overview.md).

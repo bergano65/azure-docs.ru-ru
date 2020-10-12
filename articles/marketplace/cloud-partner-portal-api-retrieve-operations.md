@@ -8,10 +8,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
 ms.openlocfilehash: cb44d977407a7e854603e6bbacf3591752b109c2
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87271949"
 ---
 # <a name="retrieve-operations"></a>Получение операций
@@ -33,13 +33,13 @@ ms.locfileid: "87271949"
 
 |  **Имя**          |      **Описание**                                                                                           | **Data type** |
 |  ----------------  |     --------------------------------------------------------------------------------------------------------   |  -----------  |
-|  publisherid       |  Идентификатор издателя, например `Contoso`                                                                   |  Тип String       |
-|  offerId           |  Идентификатор предложения                                                                                              |  Тип String       |
+|  publisherid       |  Идентификатор издателя, например `Contoso`                                                                   |  Строковый тип       |
+|  offerId           |  Идентификатор предложения                                                                                              |  Строковый тип       |
 |  operationId       |  Глобальный уникальный идентификатор (GUID) идентифицирует предложение. OperationId можно получить с помощью этого API, а также она возвращается в заголовок ответа HTTP для любой долго выполняющиеся операции, например, [публикации предложения](./cloud-partner-portal-api-publish-offer.md) API.  |   Guid   |
 |  api-version       | API последней версии |    Дата      |
 |  |  |  |
 
-## <a name="header"></a>Заголовок
+## <a name="header"></a>Header
 
 |  **имя**;          |  **Значение**           |
 |  ---------------   | -------------------- |
@@ -176,7 +176,7 @@ ms.locfileid: "87271949"
 |  createdDateTime             | Дата и время создания операции в формате UTC.                                                       |
 |  lastActionDateTime          | Дата и время выполнения последнего обновления операции в формате UTC.                                       |
 |  status                      | Состояние операции: `not started` \| `running` \| `failed` \| `completed` . Только одна операция может иметь состояние `running` за раз. |
-|  Ошибка                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
+|  error                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
 |  |  |
 
 ### <a name="response-step-properties"></a>Свойства шага ответа

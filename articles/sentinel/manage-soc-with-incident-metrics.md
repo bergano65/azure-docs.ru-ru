@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 08/11/2020
 ms.author: yelevin
 ms.openlocfilehash: 9d8d0fc46a463bda31595988d807854ef146d333
-ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88761732"
 ---
 # <a name="manage-your-soc-better-with-incident-metrics"></a>Улучшенное управление SOC с помощью метрик инцидентов
@@ -80,11 +80,11 @@ SecurityIncident
 - Недавние действия 
 - Недавние закрывающие классификации  
 
-Этот новый шаблон книги можно найти, выбрав пункт **книги** в меню навигации меток Azure и выбрав вкладку **шаблоны** . Выберите в коллекции пункт " **эффективность операций безопасности** " и щелкните одну из кнопок " **Просмотреть сохраненные книги** " и " **просмотреть шаблон** ".
+Этот новый шаблон книги можно найти, выбрав пункт **книги** в меню навигации меток Azure и выбрав вкладку **шаблоны** . Выберите в галерее **эффективность операций безопасности** и щелкните одну из кнопок **просмотреть сохраненную книгу** и **просмотреть шаблон** .
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Коллекция книг инцидентов безопасности":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-incidents-workbooks-gallery.png" alt-text="Таблица инцидентов безопасности":::
 
-:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Книга инциденты безопасности завершена":::
+:::image type="content" source="./media/manage-soc-with-incident-metrics/security-operations-workbook-1.png" alt-text="Таблица инцидентов безопасности":::
 
 Шаблон можно использовать для создания собственных настраиваемых книг, соответствующих вашим потребностям.
 

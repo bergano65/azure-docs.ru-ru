@@ -8,10 +8,10 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
 ms.openlocfilehash: 332d6da35af0eaae9d9d15258a152734f0a9eba6
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88033637"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
@@ -31,8 +31,8 @@ ms.locfileid: "88033637"
 
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
-- **Linux:** Следуйте инструкциям, приведенным в [файле сведений о клиентской библиотеке хранилища Azure для C++ README: Начало работы на странице Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) .
-- **Windows:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве диспетчера зависимостей. Выполните инструкции из [краткого руководства](https://github.com/microsoft/vcpkg#quick-start) , чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
+- **Linux:** следуйте инструкциям, указанным в файле README [клиентской библиотеки хранилища Azure для C++ на странице для начала работы в Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux).
+- **Windows:** В Windows в качестве диспетчера зависимостей используйте [vcpkg](https://github.com/microsoft/vcpkg). Выполните инструкции из [краткого руководства](https://github.com/microsoft/vcpkg#quick-start) , чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
 
 ```powershell
 .\vcpkg.exe install azure-storage-cpp
@@ -254,13 +254,13 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.
 
 - [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)
 - [Использование табличного хранилища из C++](../../cosmos-db/table-storage-how-to-use-c-plus.md)
 - [Список ресурсов службы хранилища Azure в C++](../storage-c-plus-plus-enumeration.md)
 - [Справочник по клиентской библиотеке хранилища для C++](https://azure.github.io/azure-storage-cpp)
-- [Документация по службе хранилища Azure](https://azure.microsoft.com/documentation/services/storage/)
+- [Документация по хранилищу Azure](https://azure.microsoft.com/documentation/services/storage/)
 - [Перенос данных с помощью служебной программы командной строки AzCopy](../storage-use-azcopy.md)
 

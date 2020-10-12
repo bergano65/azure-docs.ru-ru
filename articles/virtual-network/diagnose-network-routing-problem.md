@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/30/2018
 ms.author: kumud
 ms.openlocfilehash: 1c23244707179e05c63ed44b5915e58eefd3f4a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84705055"
 ---
 # <a name="diagnose-a-virtual-machine-routing-problem"></a>Диагностика проблем с маршрутизацией виртуальной машины
@@ -116,7 +116,7 @@ az vm show \
 
 Если у вас по-прежнему возникают проблемы связи, см. статью [рекомендации](#considerations) и дополнительная диагностика.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 
 При устранении проблем с подключениями необходимо учитывать следующие аспекты.
 
@@ -137,7 +137,7 @@ az vm show \
 * Если вы используете [принудительное туннелирование](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) трафика на локальное устройство через VPN-шлюз или сетевой виртуальный модуль, может отсутствовать возможность подключения к виртуальной машине из Интернета в зависимости от настройки маршрутизации для этих устройств. Убедитесь, что маршрутизация для этих устройств направляет трафик на общедоступный или частный IP-адрес виртуальной машины.
 * Используйте функцию [устранения неполадок подключения](../network-watcher/network-watcher-connectivity-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) службы "Наблюдатель за сетями", чтобы определить параметры маршрутизации, фильтрации и ОС, вызывающие проблему с подключением.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о всех задачах, свойствах и параметрах для [маршрутов и таблицы маршрутов](manage-route-table.md).
 - Узнайте о всех [типах следующего прыжка, системных маршрутах и способах выбора маршрута в Azure](virtual-networks-udr-overview.md).

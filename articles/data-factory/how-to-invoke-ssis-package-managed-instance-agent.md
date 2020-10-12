@@ -10,10 +10,10 @@ ms.author: lle
 author: lle
 ms.date: 04/14/2020
 ms.openlocfilehash: cf1bf9e05f83610fd43146cf4c99c5006fdc97b3
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87171464"
 ---
 # <a name="run-ssis-packages-by-using-azure-sql-managed-instance-agent"></a>Запуск пакетов служб SSIS с помощью агента Управляемый экземпляр Azure SQL
@@ -146,7 +146,7 @@ ms.locfileid: "87171464"
 
 Чтобы отменить выполнение пакета из задания агента SQL Управляемый экземпляр, выполните следующие действия вместо непосредственной остановки задания агента.
 
-1. Найдите агент SQL Server **JOBID** из **заданийmsdb.dbo.sys**.
+1. Найдите агент SQL Server **JOBID** из ** заданийmsdb.dbo.sys**.
 1. Найдите соответствующую **executionId** служб SSIS на основе идентификатора задания, используя следующий запрос:
    ```sql
    select * from '{table for job execution}' where  parameter_value = 'SQL_Agent_Job_{jobId}' order by execution_id desc
@@ -158,5 +158,5 @@ ms.locfileid: "87171464"
 
 1. Останавливает соответствующую операцию на основе **executionId**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы также можете планировать пакеты служб SSIS с помощью фабрики данных Azure. Пошаговые инструкции см. в разделе [триггер событий фабрики данных Azure](how-to-create-event-trigger.md). 

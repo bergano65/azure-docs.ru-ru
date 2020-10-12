@@ -1,5 +1,5 @@
 ---
-title: 'Векторный компьютер поддержки двух классов: ссылка на модуль'
+title: 'Two-Class поддержки векторной машины: ссылка на модуль'
 titleSuffix: Azure Machine Learning
 description: Узнайте, как использовать модуль **Одноклассового компьютера поддержки двух классов** в машинное обучение Azure, чтобы создать модель, основанную на алгоритме машинного вектора поддержки.
 services: machine-learning
@@ -10,13 +10,13 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 1dc2f8bdf6ed2823b44d25bdf65766b1f7ae060c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90907668"
 ---
-# <a name="two-class-support-vector-machine-module"></a>Модуль векторного компьютера поддержки двух классов
+# <a name="two-class-support-vector-machine-module"></a>Модуль Two-Class поддержки векторного компьютера
 
 В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
