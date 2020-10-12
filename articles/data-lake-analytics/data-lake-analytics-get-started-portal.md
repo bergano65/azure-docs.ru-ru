@@ -7,10 +7,10 @@ ms.assetid: b1584d16-e0d2-4019-ad1f-f04be8c5b430
 ms.topic: conceptual
 ms.date: 03/21/2017
 ms.openlocfilehash: d8f0a5697a128deb75537f3d48a3830dc7ba9df9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87132540"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-the-azure-portal"></a>Начало работы с Azure Data Lake Analytics с помощью портала Azure
@@ -18,7 +18,7 @@ ms.locfileid: "87132540"
 
 Из этой статьи вы узнаете, как с помощью портала Azure создавать учетные записи Azure Data Lake Analytics, определять задания в [U-SQL](data-lake-analytics-u-sql-get-started.md) и отправлять их в службу Data Lake Analytics.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством необходимо иметь **подписку Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -61,9 +61,9 @@ OUTPUT @a
 2. Вставьте в текст скрипт U-SQL, приведенный выше. Присвойте заданию имя. 
 3. Нажмите кнопку **Отправить**, чтобы запустить задание.   
 4. Отслеживайте **состояние** задания и подождите, пока оно изменится на **Успешно**.
-5. Перейдите на вкладку **данные** , а затем перейдите на вкладку **выходные** данные. Выберите выходной файл с именем `data.csv` и просмотр выходных данных.
+5. Перейдите на вкладку **данные** и выберите вкладку **выходные** данные. Выберите выходной файл с именем `data.csv` и просмотрите выходные данные.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 * Чтобы приступить к разработке приложений U-SQL, ознакомьтесь со статьей [Разработка скриптов U-SQL с помощью средств озера данных для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
 * Для знакомства с U-SQL см. статью о [начале работы с языком U-SQL для Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md).

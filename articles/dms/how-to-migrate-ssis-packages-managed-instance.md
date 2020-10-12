@@ -13,10 +13,10 @@ ms.custom: seo-lt-2019
 ms.topic: how-to
 ms.date: 02/20/2020
 ms.openlocfilehash: 7f7bc16658733a7200d29fae22d96a2157b73065
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91292138"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-managed-instance"></a>Перенос пакетов SQL Server Integration Services в Управляемый экземпляр SQL Azure
@@ -37,8 +37,8 @@ ms.locfileid: "91292138"
 
 Для выполнения этих действий вам потребуется следующее:
 
-* Чтобы создать виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения см. в статье [сетевые топологии для миграции SQL управляемый экземпляр с помощью Azure Database Migration Service]( https://aka.ms/dmsnetworkformi). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
-* Чтобы гарантировать, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящего трафика для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
+* Чтобы создать виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения см. в статье [сетевые топологии для миграции SQL управляемый экземпляр с помощью Azure Database Migration Service]( https://aka.ms/dmsnetworkformi). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+* Чтобы гарантировать, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящего трафика для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети, с помощью NSG см. в статье [Планирование виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 * Настройка [брандмауэра Windows для доступа к ядру базы данных источника](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access?view=sql-server-2017).
 * Чтобы открыть брандмауэр Windows, чтобы разрешить Azure Database Migration Service доступ к исходному SQL Server, по умолчанию — TCP-порт 1433.
 * Если вы запустили несколько именованных экземпляров SQL Server, использующих динамические порты, вы можете включить службу обозревателя SQL и разрешить доступ к UDP-порту 1434 через брандмауэры. Это позволит службе Azure Database Migration Service подключиться к именованному экземпляру на исходном сервере.
@@ -67,7 +67,7 @@ ms.locfileid: "91292138"
 
 ## <a name="create-an-azure-database-migration-service-instance"></a>Создание экземпляра Azure Database Migration Service
 
-1. В портал Azure выберите + **создать ресурс**, найдите **Azure Database Migration Service**, а затем выберите **Azure Database Migration Service** из раскрывающегося списка.
+1. На портале Azure выберите + **Создать ресурс**, введите в поле поиска **Azure Database Migration Service**, а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
 
      ![Azure Marketplace](media/how-to-migrate-ssis-packages-mi/portal-marketplace.png)
 
@@ -79,17 +79,17 @@ ms.locfileid: "91292138"
 
 4. Выберите расположение, в котором хотите создать экземпляр DMS.
 
-5. Выберите существующую виртуальную сеть или создайте ее.
+5. Выберите существующую виртуальную сеть или создайте новую.
 
     Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходным SQL Server и целевым Управляемый экземпляр Azure SQL.
 
-    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
+    См. дополнительные сведения о [создании виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
 
     Дополнительные сведения см. в статье [сетевые топологии для миграции управляемый экземпляр Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
 
 6. Выберите ценовую категорию.
 
-    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
+    Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
 
     ![Создание службы DMS](media/how-to-migrate-ssis-packages-mi/dms-create-service2.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "91292138"
 
     ![Поиск всех экземпляров Azure Database Migration Service](media/how-to-migrate-ssis-packages-mi/dms-search.png)
 
-2. На экране **Azure Database Migration Service** найдите имя созданного экземпляра, а затем выберите экземпляр.
+2. На экране **Служба миграции баз данных Azure** найдите имя созданного экземпляра и выберите его.
 
 3. Выберите **+ Новый проект миграции**.
 
@@ -122,7 +122,7 @@ ms.locfileid: "91292138"
     Если доверенный сертификат не установлен, SQL Server создаст самозаверяющий сертификат при запуске экземпляра. Этот сертификат используется с целью шифрования учетных данных для клиентских подключений.
 
     > [!CAUTION]
-    > TLS-подключения, зашифрованные с помощью самозаверяющего сертификата, не обеспечивают надежную защиту. Они уязвимы для атак "злоумышленник в середине". Не следует полагаться на TLS, используя самозаверяющие сертификаты в рабочей среде или на серверах, подключенных к Интернету.
+    > TLS-соединения, шифруемые с помощью самозаверяющего сертификата, не обеспечивают надежной защиты. Они уязвимы для атак "злоумышленник в середине". Не следует надеяться на защиту TLS с самозаверяющими сертификатами в рабочей среде или на серверах, подключенных к Интернету.
 
    ![Сведения об источнике](media/how-to-migrate-ssis-packages-mi/dms-source-details1.png)
 
@@ -134,7 +134,7 @@ ms.locfileid: "91292138"
 
      ![Сведения о целевом объекте](media/how-to-migrate-ssis-packages-mi/dms-target-details2.png)
 
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 
 ## <a name="review-the-migration-summary"></a>Просмотр сводки по миграции
 
@@ -150,6 +150,6 @@ ms.locfileid: "91292138"
 
 * Выберите **Запустить миграцию**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

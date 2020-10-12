@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/14/2020
 tags: connectors
 ms.openlocfilehash: f005bdfa5643ea187fb2973cac065563c4cc2ee6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91292461"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Вызов конечных точек службы по HTTP или HTTPS из Azure Logic Apps
@@ -108,7 +108,7 @@ ms.locfileid: "91292461"
 |----------|------|-------------|
 | `headers` | Объект JSON | Заголовки из запроса |
 | `body` | Объект JSON | Объект с содержимым текста из запроса |
-| `status code` | Целое число | Код состояния из запроса |
+| `status code` | Целочисленный тип | Код состояния из запроса |
 |||
 
 | Код состояния | Описание |
@@ -267,7 +267,7 @@ ms.locfileid: "91292461"
 * [Параметры триггера HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-trigger)
 * [Параметры действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests)
 * [Соединители для Logic Apps](../connectors/apis-list.md)

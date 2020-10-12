@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/27/2020
 tags: connectors
 ms.openlocfilehash: 7c6f3c4e3e4a2a29fe6a02c03043e3dfb81a2010
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89227905"
 ---
 # <a name="create-and-run-automated-event-based-workflows-by-using-http-webhooks-in-azure-logic-apps"></a>Создание и Запуск автоматизированных рабочих процессов на основе событий с помощью веб-перехватчиков HTTP в Azure Logic Apps
@@ -164,7 +164,7 @@ ms.locfileid: "89227905"
 
 Дополнительные сведения о параметрах триггера и действия, которые похожи на друг друга, см. в разделе [Параметры веб-перехватчика HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-webhook-trigger).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Безопасный доступ и доступ к данным для входящих вызовов триггеров на основе запросов](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests)
 * [Соединители для Logic Apps](../connectors/apis-list.md)

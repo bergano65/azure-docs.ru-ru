@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.custom: dpalled
 ms.openlocfilehash: c3948a5bdfce583384992fb87bf40e9e7251974d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91346388"
 ---
-# <a name="model-synchronization-between-azure-digital-twins-and-time-series-insights-gen2"></a>Синхронизация моделей между Azure Digital двойников и Time Series Insights Gen2
+# <a name="model-synchronization-between-azure-digital-twins-and-time-series-insights-gen2"></a>Синхронизация моделей между Azure Digital Twins и Аналитикой временных рядов 2-го поколения
 
 В этой статье рассматриваются рекомендации и средства, используемые для перевода модели активов в Azure Digital двойников (ADT) в модель активов в службе "аналитика временных рядов Azure" (TSI).  Эта статья является второй частью серии руководств, посвященной интеграции Azure Digital двойников со службой "аналитика временных рядов Azure". Интеграция Azure Digital двойников со службой "аналитика временных рядов" позволяет архивировать и отслеживать историю телеметрии и вычисляемых свойств цифрового двойников. Эта серия руководств предназначена для разработчиков, которые работают над интеграцией временных рядов в Azure Digital двойников. В части 1 объясняется  [, как установить конвейер данных, который переносит данные из Azure Digital двойников в службу "аналитика](https://docs.microsoft.com/azure/digital-twins/how-to-integrate-time-series-insights) временных рядов", а вторая часть серии руководств посвящена синхронизации модели активов между Azure Digital двойников и службой "аналитика временных рядов". В этом учебнике объясняются рекомендации по выбору и установке соглашения об именовании ИДЕНТИФИКАТОРов временных рядов (TS ID) и установке иерархий в модели временных рядов (ТСМ) вручную.
 
@@ -225,6 +225,6 @@ private async Task<TimeSeriesInstance> AddHierarchyToInstanceAsync(TimeSeriesIns
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В третьем ряде руководств вы узнаете, как запрашивать исторические данные из Azure Digital двойников с помощью интерфейсов API службы "аналитика временных рядов". Это выполняемая работа, и раздел будет обновлен при готовности. В то же время читатели должны ссылаться на [документацию по API запросов данных в службе "аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/concepts-query-overview)".

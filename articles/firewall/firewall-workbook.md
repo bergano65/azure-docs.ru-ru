@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: victorh
 ms.openlocfilehash: dabe154535d2bd3ae5550d4bbbafa75adc5ae2c0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91347379"
 ---
 # <a name="monitor-logs-using-azure-firewall-workbook"></a>Мониторинг журналов с помощью книги брандмауэра Azure
@@ -38,24 +38,24 @@ ms.locfileid: "91347379"
 
 На этой странице показаны уникальные источники IP-адресов с течением времени, количество правил приложения, запрещенные или разрешенные полные доменные имена с временем, а также отфильтрованные данные. Данные можно фильтровать по IP-адресу.
 
-:::image type="content" source="./media/firewall-workbook/firewall-workbook-application-rule.png" alt-text="Журнал правил приложения для книги брандмауэра Azure":::
+:::image type="content" source="./media/firewall-workbook/firewall-workbook-application-rule.png" alt-text="Обзор книги по брандмауэру Azure":::
 
 ## <a name="network-rule-log-statistics"></a>Статистика журнала сетевых правил
 
 На этой странице представлено действие правила — разрешить или запретить, целевой порт по IP-адресу и ДНаТ с течением времени. Можно также выполнять фильтрацию по типу действия, порту и назначению.
 
-:::image type="content" source="./media/firewall-workbook/firewall-workbook-network-rule.png" alt-text="Журнал сетевых правил для книги брандмауэра Azure":::
+:::image type="content" source="./media/firewall-workbook/firewall-workbook-network-rule.png" alt-text="Обзор книги по брандмауэру Azure":::
 
 Можно также фильтровать журналы в зависимости от временного интервала:
 
-:::image type="content" source="./media/firewall-workbook/firewall-workbook-network-rule-time.png" alt-text="Временное окно журнала сетевого правила для книги брандмауэра Azure":::
+:::image type="content" source="./media/firewall-workbook/firewall-workbook-network-rule-time.png" alt-text="Обзор книги по брандмауэру Azure":::
 
 ## <a name="investigations"></a>Операций
 
 Вы можете просмотреть журналы и узнать больше о ресурсе на основе IP-адреса источника. Вы можете получить такие сведения, как имя виртуальной машины и имя сетевого интерфейса. Можно просто отфильтровать ресурс из журналов.
 
-:::image type="content" source="./media/firewall-workbook/firewall-workbook-investigation.png" alt-text="Исследование книги брандмауэра Azure":::
+:::image type="content" source="./media/firewall-workbook/firewall-workbook-investigation.png" alt-text="Обзор книги по брандмауэру Azure":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [диагностике брандмауэра Azure](firewall-diagnostics.md)

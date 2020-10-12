@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
 ms.openlocfilehash: b9882168cd063cb4448269cc6a4949778fe93fb1
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88509864"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
@@ -80,7 +80,7 @@ ms.locfileid: "88509864"
 
 Когда клиентское приложение предоставляет универсальный код ресурса (URI) SAS для службы хранилища Azure в рамках запроса, служба проверяет параметры и подпись SAS, чтобы убедиться, что она допустима для авторизации запроса. Если служба подтверждает эту подпись, выполнение запроса разрешается. В противном случае запрос отклоняется и происходит ошибка с кодом 403 (запрещено).
 
-Ниже приведен пример URI-кода SAS службы, в котором показаны URI ресурса и маркер SAS:
+Ниже приведен пример URI SAS службы, в котором показаны URI ресурса и токен SAS.
 
 ![Компоненты URI SAS службы](./media/storage-sas-overview/sas-storage-uri.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "88509864"
 
 - [Создание SAS учетной записи с помощью .NET](storage-account-sas-create-dotnet.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Делегирование доступа с помощью подписанного URL-доступа (REST API)](/rest/api/storageservices/delegate-access-with-shared-access-signature)
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)

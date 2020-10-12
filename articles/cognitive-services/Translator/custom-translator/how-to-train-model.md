@@ -10,10 +10,10 @@ ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 824516a327d45feb5b6a084a113633bd3a486abe
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88508382"
 ---
 # <a name="train-a-model"></a>Обучение модели
@@ -70,8 +70,8 @@ ms.locfileid: "88508382"
 
     ![Диалоговое окно изменения сведений о модели](media/how-to/how-to-edit-model-dialog.png)
 
-6. Нажмите кнопку «Сохранить».
+6. Щелкните «Сохранить».
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, [как просмотреть сведения о модели](how-to-view-model-details.md).

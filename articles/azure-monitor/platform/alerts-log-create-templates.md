@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/26/2020
 ms.subservice: alerts
 ms.openlocfilehash: b23f1d455610222ffa5713773a0bfb947f23ce34
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91346073"
 ---
 # <a name="create-a-log-alert-with-a-resource-manager-template"></a>Создание оповещения журнала с помощью шаблона Resource Manager
@@ -432,7 +432,7 @@ ms.locfileid: "91346073"
 
 Этот JSON можно сохранить и развернуть с помощью [Azure Resource Manager в портал Azure](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об [оповещениях журнала](./alerts-unified-log.md)
 * Дополнительные сведения об [управлении оповещениями журнала](./alerts-log.md)
