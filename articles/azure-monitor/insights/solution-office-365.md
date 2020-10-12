@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
 ms.openlocfilehash: 14f7b5546d30d98adf4a14408882c972687a2d71
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86498803"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
@@ -218,7 +218,7 @@ ms.locfileid: "86498803"
     .\office365_unsubscribe.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeTennantID <Tenant ID> 
     ```
 
-    Пример
+    Пример.
 
     ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
@@ -226,7 +226,7 @@ ms.locfileid: "86498803"
 
 Вам будет предложено ввести учетные данные. Укажите учетные данные для рабочей области Log Analytics.
 
-## <a name="data-collection"></a>Сбор данных
+## <a name="data-collection"></a>сбор данных
 
 Для сбора данных может потребоваться несколько часов. После запуска сбора при создании каждой записи Office 365 отправляет в службу Azure Monitor [уведомление веб-перехватчика](/office/office-365-management-api/office-365-management-activity-api-reference#receiving-notifications) с подробными данными. Эта запись становится доступной в Azure Monitor в течение нескольких минут после ее получения.
 
@@ -272,7 +272,7 @@ ms.locfileid: "86498803"
 | ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
-| UserType | Тип пользователя, выполнившего операцию.<br><br>Административный<br>Приложение<br>DcAdmin<br>Регулярно<br>Зарезервировано<br>ServicePrincipal<br>Система |
+| UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Регулярно<br>Зарезервировано<br>ServicePrincipal<br>Система |
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory

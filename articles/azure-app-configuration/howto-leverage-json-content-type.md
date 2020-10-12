@@ -1,5 +1,5 @@
 ---
-title: Использование типа содержимого JSON для значений ключа
+title: Использование свойства JSON content-type для пар "ключ-значение"
 titleSuffix: Azure App Configuration
 description: Сведения об использовании типа содержимого JSON для значений ключа
 services: azure-app-configuration
@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: avgupta
 ms.openlocfilehash: 725beb50e55852e35ee4434539ff158f082059df
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88122043"
 ---
 # <a name="leverage-content-type-to-store-json-key-values-in-app-configuration"></a>Использование Content-Type для хранения значений ключа JSON в конфигурации приложения
@@ -55,7 +55,7 @@ ms.locfileid: "88122043"
 > [!NOTE]
 > В оставшейся части этой статьи любое значение ключа в конфигурации приложения с допустимым типом содержимого JSON и допустимым значением JSON будет называться как **значение ключа JSON**. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 > * Создание значений ключа JSON в конфигурации приложения.
 > * Импорт значений ключа JSON из JSON-файла.
@@ -63,7 +63,7 @@ ms.locfileid: "88122043"
 > * Использование значений ключа JSON в приложениях.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - Последняя версия Azure CLI (2.10.0 или более поздней версии). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). При использовании Azure CLI необходимо сначала войти с помощью `az login` . При желании вы также можете использовать Azure Cloud Shell.

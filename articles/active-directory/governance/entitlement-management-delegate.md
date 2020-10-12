@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c761be04c7d31567e727e93b84c98a1b3510e3d9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90979877"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Делегирование и роли в управлении назначениями Azure AD
@@ -124,8 +124,8 @@ ms.locfileid: "90979877"
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Microsoft 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | н/д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | н/д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Администратор Intune](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Администратор Exchange](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор служб Team Services](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
@@ -139,7 +139,7 @@ ms.locfileid: "90979877"
 
 Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../users-groups-roles/roles-delegate-by-task.md#entitlement-management).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Делегирование управления доступом к авторам каталогов](entitlement-management-delegate-catalog.md)
 - [Создание каталога ресурсов и управление им](entitlement-management-catalog-create.md)

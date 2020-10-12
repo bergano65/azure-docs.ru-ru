@@ -8,10 +8,10 @@ ms.date: 12/02/2019
 ms.author: sngun
 ms.reviewer: sngun
 ms.openlocfilehash: 94b5b3d2ab1f576f87ead23b389252ec96a20f11
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91397357"
 ---
 # <a name="how-does-azure-cosmos-db-globally-scale-the-provisioned-throughput"></a>Как Azure Cosmos DB глобально масштабировать подготовленную пропускную способность?
@@ -36,7 +36,7 @@ ms.locfileid: "91397357"
 
 Выбранная [Модель согласованности](consistency-levels.md) также влияет на пропускную способность. Вы можете получить приблизительно 2,5 пропускную способность чтения для более ослабленных уровней согласованности (например, *сеанса*, *согласованного префикса* и *окончательной* согласованности) по сравнению с более надежными уровнями согласованности (например, *ограниченной устаревания* или *строгой* согласованностью).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Далее можно узнать, как настроить пропускную способность для контейнера или базы данных.
 

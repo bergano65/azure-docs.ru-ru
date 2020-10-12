@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 03/04/2019
 ms.openlocfilehash: ef34dbfd3af326dbf2d82e09a4c5c8c8e4a91a84
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87319802"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
@@ -22,7 +22,7 @@ ms.locfileid: "87319802"
 
 * Разделение данных
 * Хранение данных
-* физическая безопасность.
+* Физическая безопасность
 * Управление инцидентами
 * Соответствие нормативным требованиям
 * Соответствие сертификатам и стандартам безопасности
@@ -66,7 +66,7 @@ ms.locfileid: "87319802"
 
 В следующей таблице показаны примеры типов данных:
 
-| **Data type** | **Поля** |
+| **Data type** | **Fields** |
 | --- | --- |
 | Предупреждение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
 | Конфигурация |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
@@ -75,7 +75,7 @@ ms.locfileid: "87319802"
 | Производительность |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
 | Состояние |StateChangeEventId, StateId, NewHealthState, OldHealthState, Context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
 
-## <a name="physical-security"></a>физическая безопасность.
+## <a name="physical-security"></a>Физическая безопасность
 Персонал корпорации Майкрософт управляет службой Log Analytics, а все действия записываются в журнал и доступны для аудита. Служба Log Analytics управляется в качестве службы Azure и соответствует всем нормативным требованиям Azure и требованиям безопасности. Вы можете просмотреть сведения о физической защите активов Azure на странице 18 [обзора безопасности Microsoft Azure](https://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf). Права физического доступа к защищенным областям меняются в течение одного рабочего дня для каждого клиента, который перестает нести ответственность за службу Log Analytics, в том числе за передачу данных и завершение операций. Вы также можете ознакомиться с [глобальной физической инфраструктурой, используемой в центрах обработки данных Майкрософт](https://azure.microsoft.com/global-infrastructure/).
 
 ## <a name="incident-management"></a>Управление инцидентами

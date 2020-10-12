@@ -14,10 +14,10 @@ ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
 ms.openlocfilehash: 0ad5fab685757d2efd91cd1df0e48a5f1258d17e
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88119884"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
@@ -30,9 +30,9 @@ ms.locfileid: "88119884"
 
 При наличии B2C приложения с двумя политиками:
 - Регистрация и вход в систему
-    * Имя`B2C_1_SISOPolicy`
+    * Имя `B2C_1_SISOPolicy`
 - Изменить профиль
-    * Имя`B2C_1_EditProfile`
+    * Имя `B2C_1_EditProfile`
 
 Файл конфигурации для приложения будет объявлять два `authorities` . По одному для каждой политики. `type`Свойство каждого из полномочий имеет значение `B2C` .
 
@@ -58,7 +58,7 @@ ms.locfileid: "88119884"
 
 ## <a name="initialize-ipublicclientapplication"></a>Инициализация Ипубликклиентаппликатион
 
-`IPublicClientApplication`создается с помощью фабричного метода, позволяющего выполнять синтаксический анализ конфигурации приложения в асинхронном режиме.
+`IPublicClientApplication` создается с помощью фабричного метода, позволяющего выполнять синтаксический анализ конфигурации приложения в асинхронном режиме.
 
 ```java
 PublicClientApplication.createMultipleAccountPublicClientApplication(
@@ -235,8 +235,8 @@ B2C рассматривает каждую политику как отдель
 
 Каждая политика добавляет `IAccount` в кэш для каждого пользователя. Если пользователь входит в приложение и вызывает две политики, у них будет два `IAccount` . Чтобы удалить этого пользователя из кэша, необходимо вызвать `removeAccount()` для каждой политики.
 
-При обновлении маркеров для политики с помощью `acquireTokenSilent` Укажите то же значение `IAccount` , которое было возвращено предыдущими вызовами политики в `AcquireTokenSilentParameters` . Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
+При обновлении маркеров для политики с помощью `acquireTokenSilent` Укажите то же значение `IAccount` , которое было возвращено предыдущими вызовами политики в  `AcquireTokenSilentParameters` . Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](../../active-directory-b2c/overview.md)

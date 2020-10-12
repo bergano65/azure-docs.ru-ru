@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.openlocfilehash: cd974377637f535383c4e099ac408bea88f887a4
-ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88853112"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
@@ -143,7 +143,7 @@ ms.locfileid: "88853112"
 
 ### <a name="install-an-ascsscs-instance-on-the-first-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на первом узле кластера ASCS/SCS
 
-1. Установите экземпляр SAP ASCS/SCS на первом узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к разделу: **продукт**  >  **СУБД** > установка > сервер приложений ABAP (или Java) > системы с высокой доступностью > экземпляра ASCS/SCS > первый узел кластера.  
+1. Установите экземпляр SAP ASCS/SCS на первом узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к разделу: **продукт**  >  **СУБД** > установка > сервер приложений ABAP (или Java) > High-Availability System > ASCS/SCS экземпляр > первый узел кластера.  
 
 2. Выберите **кластер общих** папок в качестве конфигурации общего ресурса кластера в SWPM.  
 3. При появлении запроса на шаге **Параметры кластера системы SAP**введите имя узла для Azure NetApp Files общего ресурса SMB, который вы уже создали как **имя узла общего файлового ресурса**.  В этом примере имя узла общего ресурса SMB — **анфсмб-9562**. 
@@ -158,7 +158,7 @@ ms.locfileid: "88853112"
 
 ### <a name="install-an-ascsscs-instance-on-the-second-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на второй узел кластера ASCS/SCS
 
-1. Установите экземпляр SAP ASCS/SCS на втором узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к **продукту**  >  **СУБД** > установка > сервер приложений ABAP (или Java) > высокодоступную систему > экземпляра ASCS/SCS > дополнительный узел кластера.  
+1. Установите экземпляр SAP ASCS/SCS на втором узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к **продукту**  >  **СУБД** > установка > сервер приложений ABAP (или Java) > High-Availability System > ASCS/SCS, > дополнительный узел кластера.  
 
 ### <a name="install-a-dbms-instance-and-sap-application-servers"></a>Установка экземпляра СУБД и серверов приложений SAP
 

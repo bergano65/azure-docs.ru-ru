@@ -12,10 +12,10 @@ ms.author: lazzeri
 ms.reviewer: cgronlun
 ms.date: 05/07/2020
 ms.openlocfilehash: 5ad0d2c520d5347e36a9cead4ed6c5526d885ca4
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87319530"
 ---
 # <a name="how-to-select-algorithms-for-azure-machine-learning"></a>Выбор алгоритмов для Машинное обучение Azure
@@ -50,24 +50,24 @@ ms.locfileid: "87319530"
 | **Алгоритм** | **Точность** | **Время обучения** | **Линейность** | **Параметры** | **Примечания** |
 | --- |:---:|:---:|:---:|:---:| --- |
 | **Семейство классификаций** | | | | | |
-| [Логистическая регрессия двух классов](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-logistic-regression?WT.mc_id=docs-article-lazzeri) |Хорошо  |Быстр. |Да |4 | |
-| [Лес решений с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-decision-forest?WT.mc_id=docs-article-lazzeri) |Отлично |Средняя |Нет |5 |Показывает меньшее время оценки. Предложение не работает с Многоклассовый классификатор "один — все" из-за более медленных оценок, вызванных действовать блокировкой в накоплении прогнозов дерева |
-| [Дерево решений, увеличивающееся двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-boosted-decision-tree?WT.mc_id=docs-article-lazzeri) |Отлично |Средняя |Нет |6 |Большой объем памяти |
+| [Логистическая регрессия двух классов](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-logistic-regression?WT.mc_id=docs-article-lazzeri) |Хорошо  |быстрый; |Да |4 | |
+| [Лес решений с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-decision-forest?WT.mc_id=docs-article-lazzeri) |Высокая |Средняя |Нет |5 |Показывает меньшее время оценки. Предложение не работает с Многоклассовый классификатор "один — все" из-за более медленных оценок, вызванных действовать блокировкой в накоплении прогнозов дерева |
+| [Дерево решений, увеличивающееся двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-boosted-decision-tree?WT.mc_id=docs-article-lazzeri) |Высокая |Средняя |Нет |6 |Большой объем памяти |
 | [Нейронная сеть с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-neural-network?WT.mc_id=docs-article-lazzeri) |Хорошо |Средняя |Нет |8 | |
 | [Среднее перцептрона, основанное на двух классах](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-averaged-perceptron?WT.mc_id=docs-article-lazzeri) |Хорошо |Средняя |Да |4 | |
-| [Поддержка векторного компьютера с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-support-vector-machine?WT.mc_id=docs-article-lazzeri) |Хорошо |Быстр. |Да |5 |Подходит для больших наборов функций |
-| [Логистическая регрессия в многоклассовой](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-logistic-regression?WT.mc_id=docs-article-lazzeri) |Хорошо |Быстр. |Да |4 | |
-| [Лес решений в многоклассовых решениях](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-decision-forest?WT.mc_id=docs-article-lazzeri) |Отлично |Средняя |Нет |5 |Показывает меньшее время оценки |
-| [Многоклассическое дерево принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree?WT.mc_id=docs-article-lazzeri) |Отлично |Средняя |Нет |6 | Как правило, повышение точности с небольшим риском меньшего объема |
+| [Поддержка векторного компьютера с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-support-vector-machine?WT.mc_id=docs-article-lazzeri) |Хорошо |быстрый; |Да |5 |Подходит для больших наборов функций |
+| [Логистическая регрессия в многоклассовой](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-logistic-regression?WT.mc_id=docs-article-lazzeri) |Хорошо |быстрый; |Да |4 | |
+| [Лес решений в многоклассовых решениях](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-decision-forest?WT.mc_id=docs-article-lazzeri) |Высокая |Средняя |Нет |5 |Показывает меньшее время оценки |
+| [Многоклассическое дерево принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree?WT.mc_id=docs-article-lazzeri) |Высокая |Средняя |Нет |6 | Как правило, повышение точности с небольшим риском меньшего объема |
 | [Многоклассовая нейронная сеть](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-neural-network?WT.mc_id=docs-article-lazzeri) |Хорошо |Средняя |Нет |8 | |
 | [Многоклассовая, одна-VS-все](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/one-vs-all-multiclass?WT.mc_id=docs-article-lazzeri) | - | - | - | - |Просмотрите свойства выбранного двухклассового метода |
 | **Семейство регрессии** | | | | | |
-| [Линейная регрессия](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/linear-regression?WT.mc_id=docs-article-lazzeri) |Хорошо |Быстр. |Да |4 | |
-| [Регрессия леса принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/decision-forest-regression?WT.mc_id=docs-article-lazzeri)|Отлично |Средняя |Нет |5 | |
-| [Регрессия повышенного дерева принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/boosted-decision-tree-regression?WT.mc_id=docs-article-lazzeri) |Отлично |Средняя |Нет |6 |Большой объем памяти |
+| [Линейная регрессия](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/linear-regression?WT.mc_id=docs-article-lazzeri) |Хорошо |быстрый; |Да |4 | |
+| [Регрессия леса принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/decision-forest-regression?WT.mc_id=docs-article-lazzeri)|Высокая |Средняя |Нет |5 | |
+| [Регрессия повышенного дерева принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/boosted-decision-tree-regression?WT.mc_id=docs-article-lazzeri) |Высокая |Средняя |Нет |6 |Большой объем памяти |
 | [Регрессия нейронной сети](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/neural-network-regression?WT.mc_id=docs-article-lazzeri) |Хорошо |Средняя |Нет |8 | |
 | **Семейство кластеров** | | | | | |
-| [Кластеризация K-средних](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/k-means-clustering?WT.mc_id=docs-article-lazzeri) |Отлично |Средняя |Да |8 |Алгоритм кластеризации |
+| [Кластеризация K-средних](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/k-means-clustering?WT.mc_id=docs-article-lazzeri) |Высокая |Средняя |Да |8 |Алгоритм кластеризации |
 
 ## <a name="requirements-for-a-data-science-scenario"></a>Требования к сценарию обработки и анализа данных
 

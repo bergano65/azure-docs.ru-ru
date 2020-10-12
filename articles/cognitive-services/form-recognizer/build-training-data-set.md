@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
 ms.openlocfilehash: 073f1361771ded96b33158d040efd77306acd846
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91276953"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Создание набора обучающих данных для пользовательской модели
@@ -68,7 +68,7 @@ ms.locfileid: "91276953"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как создать набор обучающих данных, выполните инструкции из краткого руководства по обучению настраиваемой модели распознавателя форм и начните использовать ее в своих формах.
 

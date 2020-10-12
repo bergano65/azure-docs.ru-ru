@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/01/2020
 ms.author: atsenthi
 ms.openlocfilehash: 1da70c37c8a6ed93e7abe1b5d329e808c592e43a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86034988"
 ---
 # <a name="read-and-update-a-reliable-collections-backup-by-using-backup-explorer"></a>Чтение и обновление резервной копии надежных коллекций с помощью обозревателя резервного копирования
@@ -42,7 +42,7 @@ Service Fabric обозреватель резервного копирован�
  
 NuGet для обозревателя резервного копирования (Microsoft. ServiceFabric. Релиаблеколлектионбаккуп. Parser) будет доступен в [NuGet.org](https://www.nuget.org/). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [надежных коллекциях в Azure Service Fabric служб с отслеживанием состояния](service-fabric-reliable-services-reliable-collections.md).
 * Ознакомьтесь [Service Fabric](service-fabric-best-practices-overview.md)рекомендациями.
