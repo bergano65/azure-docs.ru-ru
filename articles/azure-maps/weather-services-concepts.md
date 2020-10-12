@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 4430737814ef904e83b2bf3ce25edf3d44e2668d
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90972039"
 ---
 # <a name="weather-services-in-azure-maps"></a>Службы погоды в Azure Maps
@@ -108,22 +108,22 @@ ms.locfileid: "90972039"
 
 | Шестнадцатеричный код цвета | Образец цвета | Условие погоды |
 |----------------|--------------|-------------------|
-| #93c701        | ![Цвет для дождя-light.](./media/weather-services-concepts/color-93c701.png) | Дождя-light |
-| #ffd701        | ![Цвет для дождя-Moderate.](./media/weather-services-concepts/color-ffd701.png) | Дождя — умеренный |
-| #f05514        | ![Цвет для дождя-высокая.](./media/weather-services-concepts/color-f05514.png) | Дождя-очень высокая |
-| #dc250e        | ![Цвет для дождя — серьезность.](./media/weather-services-concepts/color-dc250e.png) | Дождя — серьезный |
-| #9ec8f2        | ![Цвет для снег-light.](./media/weather-services-concepts/color-9ec8f2.png) | Снег-light |
-| #2a8fdb        | ![Цвет для снег-Moderate.](./media/weather-services-concepts/color-2a8fdb.png) | Снег — умеренный |
-| #144bed        | ![Цвет для снег-высокая.](./media/weather-services-concepts/color-144bed.png) | Снег-очень высокая |
-| #020096        | ![Цвет для снег — серьезность.](./media/weather-services-concepts/color-020096.png) | Снег — серьезный |
-| #e6a5c8        | ![Цвет для ICE-light.](./media/weather-services-concepts/color-e6a5c8.png) | Ice-light |
-| #d24fa0        | ![Цвет для ICE — умеренный.](./media/weather-services-concepts/color-d24fa0.png) | Ice — умеренный |
-| #b71691        | ![Цвет для Ice-критическое.](./media/weather-services-concepts/color-b71691.png) | Ice — серьезное |
-| #7a1570        | ![Цвет для ICE-тяжелая.](./media/weather-services-concepts/color-7a1570.png) | Ice-тяжелая |
-| #c196e6        | ![Цвет для сочетания-освещения.](./media/weather-services-concepts/color-c196e6.png) | Смешение-светлое |
-| #ae6ee6        | ![Цвет для сочетания-умеренный.](./media/weather-services-concepts/color-ae6ee6.png) | Сочетание-умеренный |
-| #8a32d7        | ![Цвет для интенсивного смешивания.](./media/weather-services-concepts/color-8a32d7.png) | С высокой интенсивностью |
-| #6500ba        | ![Цвет для Mix-критическое.](./media/weather-services-concepts/color-6500ba.png) | Смешивание-серьезное |
+| #93c701        | ![Цвет для дождя-light.](./media/weather-services-concepts/color-93c701.png) | Rain-Light |
+| #ffd701        | ![Цвет для дождя-Moderate.](./media/weather-services-concepts/color-ffd701.png) | Rain-Moderate |
+| #f05514        | ![Цвет для дождя-высокая.](./media/weather-services-concepts/color-f05514.png) | Rain-Heavy |
+| #dc250e        | ![Цвет для дождя — серьезность.](./media/weather-services-concepts/color-dc250e.png) | Rain-Severe |
+| #9ec8f2        | ![Цвет для снег-light.](./media/weather-services-concepts/color-9ec8f2.png) | Snow-Light |
+| #2a8fdb        | ![Цвет для снег-Moderate.](./media/weather-services-concepts/color-2a8fdb.png) | Snow-Moderate |
+| #144bed        | ![Цвет для снег-высокая.](./media/weather-services-concepts/color-144bed.png) | Snow-Heavy |
+| #020096        | ![Цвет для снег — серьезность.](./media/weather-services-concepts/color-020096.png) | Snow-Severe |
+| #e6a5c8        | ![Цвет для ICE-light.](./media/weather-services-concepts/color-e6a5c8.png) | Ice-Light |
+| #d24fa0        | ![Цвет для ICE — умеренный.](./media/weather-services-concepts/color-d24fa0.png) | Ice-Moderate |
+| #b71691        | ![Цвет для Ice-критическое.](./media/weather-services-concepts/color-b71691.png) | Ice-Severe |
+| #7a1570        | ![Цвет для ICE-тяжелая.](./media/weather-services-concepts/color-7a1570.png) | Ice-Heavy |
+| #c196e6        | ![Цвет для сочетания-освещения.](./media/weather-services-concepts/color-c196e6.png) | Mix-Light |
+| #ae6ee6        | ![Цвет для сочетания-умеренный.](./media/weather-services-concepts/color-ae6ee6.png) | Mix-Moderate |
+| #8a32d7        | ![Цвет для интенсивного смешивания.](./media/weather-services-concepts/color-8a32d7.png) | Mix-Heavy |
+| #6500ba        | ![Цвет для Mix-критическое.](./media/weather-services-concepts/color-6500ba.png) | Mix-Severe |
 
 Ниже показана подробная цветовая палитра для лепестковых плиток с шестнадцатеричными кодами цветов и dBZ. dBZ представляет интенсивность осадков в погодной лепестковой диаграммы. 
 
@@ -199,7 +199,7 @@ ms.locfileid: "90972039"
 
 | Шестнадцатеричный код цвета | Образец цвета | Температура облака |
 |----------------|--------------|-------------------|
-| #b5b5b5        | ![Плитка цвета для #b5b5b5.](./media/weather-services-concepts/color-b5b5b5.png) | Низкая температура | 
+| #b5b5b5        | ![Плитка цвета для #b5b5b5.](./media/weather-services-concepts/color-b5b5b5.png) | Temperature-Low | 
 | #d24fa0        | ![Плитка цвета для #d24fa0.](./media/weather-services-concepts/color-d24fa0.png) |  |
 | #8a32d7        | ![Плитка цвета для #8a32d7.](./media/weather-services-concepts/color-8a32d7.png) |  |
 | #144bed        | ![Плитка цвета для #144bed.](./media/weather-services-concepts/color-144bed.png) |  |
@@ -210,7 +210,7 @@ ms.locfileid: "90972039"
 | #f05514        | ![Плитка цвета для #f05514.](./media/weather-services-concepts/color-f05514.png) |  |
 | #dc250e        | ![Плитка цвета для #dc250e.](./media/weather-services-concepts/color-dc250e.png) |  |
 | #ba0808        | ![Плитка цвета для #ba0808.](./media/weather-services-concepts/color-ba0808.png) |  |
-| #1f1f1f        | ![Плитка цвета для #1f1f1f.](./media/weather-services-concepts/color-1f1f1f.png) | Температура — высокая |
+| #1f1f1f        | ![Плитка цвета для #1f1f1f.](./media/weather-services-concepts/color-1f1f1f.png) | Temperature-High |
 
 
 Ниже показана подробная цветовая палитра для инфракрасных спутниковых плиток.
@@ -494,7 +494,7 @@ ms.locfileid: "90972039"
   Пыль & Дандер              |18| [Низкая Extreme 1](#low-extreme-1)
   Готовность поля            |32| [Плохое (отличное) 1](#poor-excellent-1)
   Рыболовство                    |13| [Плохое (отличное) 1](#poor-excellent-1)
-  Задержки рейсов              |–3|  [Очень маловероятно, очень вероятно 2](#very-unlikely-very-likely-2)
+  Задержки рейсов              |–3|  [Очень Unlikely-Very, скорее всего, 2](#very-unlikely-very-likely-2)
   Гриппа                        |26|  [Выгодный риск](#beneficial-at-extreme-risk)
   Индекс поездки полета        |31| [Отличная — плохо](#excellent-poor)
   Экономичность топлива               |37| [Плохое (отличное) 1](#poor-excellent-1)
@@ -515,7 +515,7 @@ ms.locfileid: "90972039"
   Активность на воздухе           |29| [Плохое (отличное) 1](#poor-excellent-1)
   Наружный Барбекуе           |24| [Плохое (отличное) 1](#poor-excellent-1)
   Наружный концерт            |8| [Плохое (отличное) 1](#poor-excellent-1)
-  Выполнение                    |1|  [Плохое (отличное) 1](#poor-excellent-1)
+  Запущен                    |1|  [Плохое (отличное) 1](#poor-excellent-1)
   Теннис                     |6| [Плохое (отличное) 1](#poor-excellent-1)
   сирст                     |41| [Низкая Extreme 2](#low-extreme-2)
   Гоночные                    |11| [Плохое (отличное) 1](#poor-excellent-1)
@@ -523,7 +523,7 @@ ms.locfileid: "90972039"
   Синусная головная боль             |30|  [Выгодный риск](#beneficial-at-extreme-risk)
   скатебоардинг              | 7| [Плохое (отличное) 1](#poor-excellent-1)
   Лыжная погода                | 15| [Плохое (отличное) 1](#poor-excellent-1)
-  Снег дней                  | 19| [Очень маловероятно, очень вероятно](#very-unlikely-very-likely)
+  Снег дней                  | 19| [Скорее всего Unlikely-Very](#very-unlikely-very-likely)
   Почвы влажность              | 34| [Плохое (отличное) 1](#poor-excellent-1)
   старгазинг                 | 12| [Плохое (отличное) 1](#poor-excellent-1)
 
@@ -531,7 +531,7 @@ ms.locfileid: "90972039"
 
   ID   | Имя группы | Индексы в этой группе |
   -------- | ------------------|------
-  1       |Все | Все
+  1       |All | All
   2       |Ачес и трудности | Арсритис-трудности (21) </br> Миграиненая головная боль (27) </br> Синусная головная боль (30)
   3       |респиратори | Ассма (23) </br> Распространенный холодный (25) </br> Прогноз гриппа (26)
   4       |Садов | Готовность полей (32) </br> Зеленая трава Мовинг (28) </br> Почвы влажность (34)</br>
@@ -549,7 +549,7 @@ ms.locfileid: "90972039"
 
 Функция [получения ежедневных индексов](https://aka.ms/AzureMapsWeatherDailyIndices) возвращает значение по диапазону и имя связанной категории для каждого идентификатора индекса. Наборы диапазонов не одинаковы для всех индексов. В таблицах ниже показаны различные наборы диапазонов, используемые поддерживаемыми индексами, указанными в списке [идентификаторы индексов и групп индексов](#index-ids-and-index-groups-ids). Чтобы узнать, какие индексы используют наборы диапазонов, перейдите к разделу идентификаторы [индекса и идентификаторы групп индекса](#index-ids-and-index-groups-ids) этого документа.
 
-### <a name="poor-excellent-1"></a>Плохое (отличное) 1
+### <a name="poor-excellent-1"></a>Poor-Excellent 1
 
   | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
@@ -557,49 +557,49 @@ ms.locfileid: "90972039"
   Ниже среднего              |  3  |               4,99
   Хорошо              |  5  |              6,99
   Очень хорошо         |  7  |               8,99
-  Отлично         |  9  |               10
+  Высокая         |  9  |               10
 
-### <a name="poor-excellent-2"></a>Плохое-отличное 2
+### <a name="poor-excellent-2"></a>Poor-Excellent 2
 
  | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
   Плохо           |0              |  3
   Ниже среднего           |3,01           |  6
-  Хорошо           |6.01           |  7,5 %
+  Хорошо           |6.01           |  7.5
   Очень хорошо      |7,51           |  8,99
-  Отлично      |9              |  10
+  Высокая      |9              |  10
 
-### <a name="excellent-poor"></a>Отличная — плохо
+### <a name="excellent-poor"></a>Excellent-Poor
 
  | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
-  Отлично      |     0,00        |    1.00
+  Высокая      |     0,00        |    1.00
   Очень хорошо        |   1.01          |  3.00
   Хорошо             |   3,01          |  5.00
   Ниже среднего             |   5.01          |  7,00
   Плохо             |   7,01          |  10,00
 
-### <a name="low-extreme-1"></a>Низкая Extreme 1
+### <a name="low-extreme-1"></a>Low-Extreme 1
 
    | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
   Низкий                |  0         |        1,99
-  Умеренный           |  2         |        3,99
+  Средняя           |  2         |        3,99
   Высокий               |  4         |        5,99
   Очень высокая          |  6         |        7,99
   Предельный            |  8         |        10
 
-### <a name="low-extreme-2"></a>Низкая Extreme 2
+### <a name="low-extreme-2"></a>Low-Extreme 2
 
    | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
   Низкий                |  0            |      2,99
-  Умеренный           |  3            |      4,99
+  Средняя           |  3            |      4,99
   Высокий               |  5            |      6,99
   Очень высокая          |  7            |      8,99
   Предельный            |  9            |      10
 
-### <a name="very-unlikely-very-likely"></a>Очень маловероятно, очень вероятно
+### <a name="very-unlikely-very-likely"></a>Скорее всего Unlikely-Very
 
  | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
@@ -609,7 +609,7 @@ ms.locfileid: "90972039"
   Ли             | 6     |           7,99
   Скорее всего        | 8     |           10
 
-### <a name="very-unlikely-very-likely-2"></a>Очень маловероятно, очень вероятно 2
+### <a name="very-unlikely-very-likely-2"></a>Очень Unlikely-Very, скорее всего, 2
 
  | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
@@ -619,7 +619,7 @@ ms.locfileid: "90972039"
   Ли             |  5.01     |         7,00
   Скорее всего        |  7,01     |         10,00
 
-### <a name="unlikely-emergency"></a>Маловероятно — аварийное
+### <a name="unlikely-emergency"></a>Unlikely-Emergency
 
 | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------
@@ -629,7 +629,7 @@ ms.locfileid: "90972039"
   Предупреждение          |  7     |          8,99
   Аварийный режим        |  9     |          10
 
-### <a name="beneficial-at-extreme-risk"></a>Выгодный риск
+### <a name="beneficial-at-extreme-risk"></a>Beneficial-At экстремального риска
 
 | Название категории | Начальный диапазон | Конечный диапазон |
   ----------------|--------------|------------

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: erhopf
 ms.openlocfilehash: 2897fe2e0cc8aeb929b0a33f5cdaba9c60f2a244
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81261590"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Запись образцов голоса для создания пользовательских голосовых моделей
@@ -215,7 +215,7 @@ ms.locfileid: "81261590"
 
 Архивируйте оригинальные записи в безопасном месте, в случае если они вам понадобятся позже. Сохраните свой сценарий и заметки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы готовы загрузить свои записи и создать пользовательскую голосовую модель.
 

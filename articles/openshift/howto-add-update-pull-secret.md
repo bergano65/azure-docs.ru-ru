@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 keywords: секрет по запросу, АТО, openshift, Red Hat
 ms.openlocfilehash: 769b7589fb6496fc2f4123665ad1f6fe61d0cce2
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89294753"
 ---
 # <a name="add-or-update-your-red-hat-pull-secret-on-an-azure-red-hat-openshift-4-cluster"></a>Добавление или обновление секрета по запросу Red Hat в кластере Azure Red Hat OpenShift 4
@@ -230,7 +230,7 @@ openshift-marketplace   redhat-operators      Red Hat Operators     grpc   Red H
 
 Чтобы убедиться, что секрет по запросу обновлен и работает правильно, откройте Операторхуб и проверьте любой оператор проверки Red Hat. Например, проверьте, доступен ли оператор хранилища контейнера OpenShift, и проверьте, есть ли у вас разрешения на установку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о важных секретах для Red Hat см. в разделе [использование секретных ключей образа](https://docs.openshift.com/container-platform/4.5/openshift_images/managing_images/using-image-pull-secrets.html).
 
 Дополнительные сведения о Red Hat OpenShift 4 см. в статье [Azure Red Hat OpenShift 4](https://docs.openshift.com/aro/4/welcome/index.html).

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
 ms.openlocfilehash: 706d7e081743f2bab1f593e00dc792f218a000ea
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90033631"
 ---
 # <a name="find-identity-object-ids-for-authentication-configuration"></a>Поиск идентификаторов объектов удостоверений для конфигурации проверки подлинности
@@ -68,7 +68,7 @@ $(Get-AzureADGroup -Filter "DisplayName eq 'mygroup'").ObjectId
 az ad group show --group "mygroup" --query objectId --out tsv
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как найти идентификаторы объектов удостоверений, необходимые для настройки API Azure для FHIR на использование внешнего или дополнительного клиента Azure Active Directory. Далее прочитайте об использовании идентификаторов объектов для настройки локальных параметров RBAC.
  

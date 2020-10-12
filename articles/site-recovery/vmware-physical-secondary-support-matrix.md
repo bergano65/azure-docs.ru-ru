@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: c6f0f48df32db0beb9c0a57982d9bc87b26538d8
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86135140"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт
@@ -86,7 +86,7 @@ Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentO
 **Устройство или система хранения (узел)** | **Поддерживается** 
 --- | --- 
 NFS | Да 
-SMB 3.0 | Н/Д 
+SMB 3.0 | Недоступно 
 Сеть SAN (iSCSI) | Да 
 Многопутевой (MPIO) | Да 
 
@@ -95,8 +95,8 @@ SMB 3.0 | Н/Д
 **Конфигурация** | **Поддерживается** 
 --- | --- 
 VMDK | Да 
-VHD (VHDX) | Н/Д 
-Виртуальная машина 2-го поколения | Н/Д 
+VHD (VHDX) | Недоступно 
+Виртуальная машина 2-го поколения | Недоступно 
 Общий диск кластера | Да 
 Зашифрованный диск | нет 
 UEFI| Да 
@@ -108,7 +108,7 @@ RDM | Да
 Дисковые пространства | нет 
 "Горячее" добавление или удаление диска | Да 
 Исключение диска | Да 
-Многопутевой (MPIO) | Н/Д 
+Многопутевой (MPIO) | Недоступно 
 
 ## <a name="vaults"></a>Хранилища
 
@@ -121,13 +121,13 @@ RDM | Да
 
 Служба Mobility Service координирует репликацию между локальными серверами VMware или физическими серверами и дополнительным расположением. При настройке репликации обязательно проверьте, что установлена последняя версия Mobility Service и других компонентов.
 
-| **Update** | **Сведения** |
+| **Обновление** | **Сведения** |
 | --- | --- |
 |Обновления Scout | Обновления Scout являются накопительными. <br/><br/> Последние обновления Scout: [сведения и файлы для скачивания](vmware-physical-secondary-disaster-recovery.md#updates) |
 |Обновления компонентов | В пакет обновлений Scout входят обновления для всех компонентов, включая сервер RX, сервер конфигурации, главный целевой сервер и целевой сервер обработки, серверы vContinuum и исходные серверы, которые нужно защитить.<br/><br/> [Подробнее](vmware-physical-secondary-disaster-recovery.md#download-and-install-component-updates).|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Скачайте [руководство пользователя InMage Scout](https://aka.ms/asr-scout-user-guide).
 

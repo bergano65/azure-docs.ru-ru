@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 629de079f7cc7d95d10f8ff951a47b8b8fc62dad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77474110"
 ---
 Ошибки, возникающие в функциях Azure, могут поступать из любого из следующих источников:
@@ -20,7 +20,7 @@ ms.locfileid: "77474110"
 
 Чтобы избежать потери данных или пропущенных сообщений, необходимо выполнить следующие надежные методы обработки ошибок. Рекомендуемые методы обработки ошибок включают следующие действия.
 
-- [Включение Application Insights](../articles/azure-functions/functions-monitoring.md)
+- [Включить Application Insights](../articles/azure-functions/functions-monitoring.md)
 - [Использование структурированной обработки ошибок](#use-structured-error-handling)
 - [Проектирование для идемпотентности](../articles/azure-functions/functions-idempotent.md)
 - [Реализация политик повтора](../articles/azure-functions/functions-reliable-event-processing.md) (при необходимости)

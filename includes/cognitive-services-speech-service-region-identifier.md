@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 02/12/2020
 ms.author: wolfma
 ms.openlocfilehash: c8e6c11771ae4cd216b3b1e43f3db7924dca81cd
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77168174"
 ---
-| Geography | Регион | Идентификатор региона |
+| Географический регион | Регион | Идентификатор региона |
 | ----- | ----- | ----- |
 | Северная и Южная Америка | Центральная часть США | `centralus` |
 | Северная и Южная Америка | Восточная часть США | `eastus` |
@@ -27,7 +27,7 @@ ms.locfileid: "77168174"
 | Азиатско-Тихоокеанский регион | Юго-Восточная Азия | `southeastasia` |
 | Азиатско-Тихоокеанский регион | Восточная Австралия | `australiaeast` |
 | Азиатско-Тихоокеанский регион | Центральная Индия | `centralindia` |
-| Азиатско-Тихоокеанский регион | Восточная Япония | `japaneast` |
+| Азиатско-Тихоокеанский регион | Japan East | `japaneast` |
 | Азиатско-Тихоокеанский регион | Западная Япония | `japanwest` |
 | Азиатско-Тихоокеанский регион | Республика Корея, центральный регион | `koreacentral` |
 | Европа | Северная Европа | `northeurope` |

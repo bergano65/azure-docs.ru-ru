@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 02/14/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 410570302eec418f1e4bcb75d6413936a96b5171
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77471583"
 ---
 Условный доступ обеспечивает детальное управление доступом для отдельных приложений. Чтобы использовать условный доступ, к пользователям, которым будут применяться правила условного доступа, необходимо Azure AD Premium 1 или более высокого лицензирования.
@@ -26,7 +26,7 @@ ms.locfileid: "77471583"
    - Щелкните **Выбрать пользователей и группы**.
    - Проверьте **пользователей и группы**.
    - Нажмите кнопку **выбрать** , чтобы выбрать группу или набор пользователей, на которые будет повлиять mfa.
-   - Нажмите кнопку **Done**(Готово).
+   - Нажмите кнопку **Готово**.
 
    ![Назначения](./media/vpn-gateway-vwan-openvpn-azure-ad-mfa/mfa-ca-assignments.png)
 3. На панели **создать** перейдите к панели **элементы управления доступом — > предоставить** .

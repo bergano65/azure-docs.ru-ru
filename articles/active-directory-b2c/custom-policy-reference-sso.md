@@ -12,10 +12,10 @@ ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 4824b64236270c422f22809e9eeb191ee3be27fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85202574"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
@@ -28,7 +28,7 @@ ms.locfileid: "85202574"
 
 |Поставщик сеанса  |Область  |
 |---------|---------|
-|[NoopSSOSessionProvider](#noopssosessionprovider)     |  Отсутствуют       |       
+|[NoopSSOSessionProvider](#noopssosessionprovider)     |  None       |       
 |[DefaultSSOSessionProvider](#defaultssosessionprovider)    | Azure AD B2C диспетчер внутренних сеансов.      |       
 |[ExternalLoginSSOSessionProvider](#externalloginssosessionprovider)     | Между Azure AD B2C и OAuth1, OAuth2 или OpenID Connect Connect Identity Provider.        |         |
 |[OAuthSSOSessionProvider](#oauthssosessionprovider)     | Между приложением проверяющей стороны OAuth2 или OpenID Connect и Azure AD B2C.        |        
@@ -121,7 +121,7 @@ ms.locfileid: "85202574"
 
 #### <a name="metadata"></a>Метаданные
 
-| attribute | Обязательное значение | Описание|
+| attribute | Обязательно | Описание|
 | --- | --- | --- |
 | алвайсфетчклаимсфромпровидер | Нет | В настоящее время не используется, может игнорироваться. |
 
@@ -163,13 +163,13 @@ ms.locfileid: "85202574"
 
 #### <a name="metadata"></a>Метаданные
 
-| attribute | Обязательное значение | Описание|
+| attribute | Обязательно | Описание|
 | --- | --- | --- |
 | IncludeSessionIndex | Нет | В настоящее время не используется, может игнорироваться.|
 | RegisterServiceProviders | Нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
 - Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).

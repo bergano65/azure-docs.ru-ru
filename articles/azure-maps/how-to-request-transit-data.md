@@ -10,10 +10,10 @@ services: azure-maps
 manager: philmea
 ms.custom: mvc
 ms.openlocfilehash: 3ded5f6186d8ccdae0f42ecb9942c70e09f2dd9f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91310889"
 ---
 # <a name="request-public-transit-data-using-the-azure-maps-mobility-service"></a>Запрос общедоступных транзитных данных с помощью службы Azure Maps Mobility Service
@@ -38,7 +38,7 @@ ms.locfileid: "91310889"
 
 Чтобы запросить подробную информацию о транзитных агентствах и поддерживаемых типах транзитных складов для определенной области города, вам понадобится эта `metroId` область. [Интерфейс API "получить область метро](https://aka.ms/AzureMapsMobilityMetro) " позволяет запрашивать области метро, в которых доступна Azure Mapsная служба Mobility Service. Ответ содержит такие сведения `metroId` , как, `metroName` и представление геометрии области Metro в формате геоjson.
 
-Давайте создадим запрос на получение области Metro для идентификатора области "Сиэтл — Tacoma". Чтобы запросить идентификатор для области Metro, выполните следующие действия.
+Давайте создадим запрос для получения области Metro для Seattle-Tacoma идентификатора области Metro. Чтобы запросить идентификатор для области Metro, выполните следующие действия.
 
 1. Откройте приложение POST и создадим коллекцию для хранения запросов. В верхней части приложения Postman выберите элемент **Создать**. В окне **Create New** (Создание) выберите **Collection** (Коллекция).  Присвойте имя коллекции и нажмите кнопку **Создать**.
 
@@ -794,7 +794,7 @@ API Azure Maps [получения транзитных маршрутов](http
 
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как запрашивать данные в режиме реального времени с помощью службы Mobility Service:
 

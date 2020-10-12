@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: mayg
 ms.openlocfilehash: d333972ea5f74d1676e5e4b4e1417c6bf5d87b79
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86135355"
 ---
 # <a name="troubleshoot-vcenter-server-discovery-failures"></a>Устранение ошибок обнаружения vCenter Server
@@ -20,7 +20,7 @@ ms.locfileid: "86135355"
 
 ## <a name="non-numeric-values-in-the-maxsnapshots-property"></a>Нечисловые значения в свойстве Максснапшотс
 
-В версиях до 9,20 vCenter отключается при извлечении нечислового значения `snapshot.maxSnapShots` свойства Property на виртуальной машине.
+В версиях до 9,20 vCenter отключается при извлечении нечислового значения  `snapshot.maxSnapShots` свойства Property на виртуальной машине.
 
 Эта проблема определяется по ИДЕНТИФИКАТОРу ошибки 95126.
 
@@ -32,11 +32,11 @@ System.FormatException: Input string was not in a correct format.
     at VMware.VSphere.Management.InfraContracts.VirtualMachineInfo.get_MaxSnapshots()
 ```
 
-Чтобы устранить проблему:
+Чтобы решить эту проблему, выполните указанные ниже действия.
 
 - Укажите виртуальную машину и присвойте ей числовое значение (параметры изменения виртуальной машины в vCenter).
 
-либо
+Или
 
 - Обновите сервер конфигурации до версии 9,20 или более поздней.
 
@@ -52,7 +52,7 @@ System.FormatException: Input string was not in a correct format.
 - Сервер vCenter \<vCenter> недоступен из-за ошибки: удаленный сервер вернул ошибку: не удалось подключиться к удаленному серверу.
 - Не удалось подключиться к серверу vCenter/ESXi.
 
-Чтобы устранить проблему:
+Чтобы решить эту проблему, выполните указанные ниже действия.
 
 Скачайте средство [PsExec](https://aka.ms/PsExec). 
 

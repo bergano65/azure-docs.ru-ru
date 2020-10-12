@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 08/06/2020
 ms.openlocfilehash: 1ba2f5e4b88ae6ae0ed15dbfbbc4fa5c55c45a77
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87874033"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
@@ -25,7 +25,7 @@ ms.locfileid: "87874033"
 
 Портал Azure предоставляет большую часть свойств кластера. С помощью шаблонов Azure Resource Manager можно скрыть множество сведений. Дополнительные сведения см. в статье [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-clusters"></a>Создание кластеров
 
@@ -39,7 +39,7 @@ ms.locfileid: "87874033"
 
 1. Выберите элементы **Analytics** > **Azure HDInsight**, чтобы перейти на страницу **Создание кластера HDInsight**.
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 ![Основы создания кластера HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-basics.png "Создание кластера на портале Azure")
 
@@ -59,9 +59,9 @@ ms.locfileid: "87874033"
 |Имя пользователя для Secure Shell (SSH)|Укажите имя пользователя, по умолчанию — **sshuser**.|
 |Использование пароля для входа в кластер для SSH|Если вам нужен тот же пароль SSH, что и пароль администратора, указанный ранее, установите флажок **использовать пароль для входа в кластер для SSH** . В противном случае введите **пароль** или **открытый ключ**, которые будут использоваться для аутентификации пользователя SSH. Мы рекомендуем использовать открытый ключ. Нажмите кнопку **Выбрать** внизу страницы, чтобы сохранить учетные данные конфигурации.  Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).|
 
-Нажмите кнопку **Далее: >>хранилища** , чтобы перейти на следующую вкладку.
+Нажмите кнопку **Далее: >>хранилища ** , чтобы перейти на следующую вкладку.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 > [!WARNING] 
 > Начиная с 15 июня клиенты 2020 не смогут создать новый субъект-службу с помощью HDInsight. См. раздел [Создание субъекта-службы и сертификатов](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) с помощью Azure Active Directory.
@@ -97,7 +97,7 @@ ms.locfileid: "87874033"
 
 На вкладке **безопасность и сеть** укажите следующие сведения.
 
-|Свойство |Описание: |
+|Свойство |Описание |
 |---|---|
 |Пакет безопасности корпоративного уровня|Необязательно: установите флажок, чтобы использовать **Корпоративный пакет безопасности**. Дополнительные сведения см. в статье [Настройка кластера HDInsight с корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](./domain-joined/apache-domain-joined-configure-using-azure-adds.md).|
 |TLS|Необязательно. Выберите версию TLS из раскрывающегося списка. Дополнительные сведения см. в статье [о протоколе TLS](./transport-layer-security.md).|
@@ -114,7 +114,7 @@ ms.locfileid: "87874033"
 
 На вкладке **Настройка и цены** укажите следующие сведения.
 
-|Свойство |Описание: |
+|Свойство |Описание |
 |---|---|
 |+ Добавить приложение|Необязательно. Выберите любые нужные приложения. Эти приложения могут разрабатывать корпорация Майкрософт, независимые поставщики программного обеспечения (ISV) или вы сами. Дополнительные сведения см. в разделе [Установка приложения во время создания кластера](hdinsight-apps-install-applications.md#install-applications-during-cluster-creation).|
 |Размер узла|Необязательно. Выберите узел другого размера.|

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
 ms.openlocfilehash: 1445d1418bde6d5d15e365c59ceb56e7661faccb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87088076"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
@@ -28,7 +28,7 @@ ms.locfileid: "87088076"
 
 [!INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
-## <a name="create-an-application-gateway"></a>Создание Шлюза приложений
+## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
 Создание шлюза приложений:
 
@@ -142,8 +142,8 @@ Get-AzureApplicationGateway AppGwTest
 
 |Параметр|Описание|
 |---|---|
-|**имя**; |Имя пользовательской пробы. |
-| **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
+|**Имя** |Имя пользовательской пробы. |
+| **протокол**; | Используемый протокол (возможные значения: HTTP или HTTPS).|
 | **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас есть веб-сайт http: \/ /contoso.com/, то пользовательская пробная проверка может быть настроена на "http: \/ /contoso.com/Path/custompath.htm" для проверки на наличие успешного HTTP-ответа.|
 | **Интервал** | Задает интервал между пробами в секундах.|
 | **Timeout** | Определяет время ожидания для проверки ответа HTTP.|
