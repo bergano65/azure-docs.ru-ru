@@ -4,10 +4,10 @@ description: Узнайте, как установить агент Службы
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.openlocfilehash: fb59c245c469791233ce973b00426a127b116535
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90975300"
 ---
 # <a name="install-the-azure-backup-mars-agent"></a>Установка агента MARS Azure Backup
@@ -162,6 +162,6 @@ Azure Backup использует агент MARS для резервного к
 
 1. Нажмите кнопку **Готово**. Теперь агент установлен, и ваш компьютер зарегистрирован в хранилище. вы можете настроить параметры резервного копирования, в том числе расписание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [выполнять резервное копирование компьютеров Windows с помощью агента MARS Azure Backup](backup-windows-with-mars-agent.md)

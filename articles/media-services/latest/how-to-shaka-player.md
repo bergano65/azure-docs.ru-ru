@@ -14,10 +14,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-js
 ms.openlocfilehash: e4be3d4508d342c77507cf824fb036e32084b617
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91329743"
 ---
 # <a name="how-to-use-the-shaka-player-with-azure-media-services"></a>Как использовать проигрыватель Шака со службами мультимедиа Azure
@@ -148,7 +148,7 @@ player.configure('drm.advanced.com\\.apple\\.fps\\.1_0.serverCertificate', new U
 
 Дополнительные сведения см. в [документации по защите DRM Шака Player](https://shaka-player-demo.appspot.com/docs/api/tutorial-drm-config.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Использование Проигрыватель мультимедиа Azure](../azure-media-player/azure-media-player-overview.md)
 * [Краткое руководство. Шифрование содержимого](encrypt-content-quickstart.md)

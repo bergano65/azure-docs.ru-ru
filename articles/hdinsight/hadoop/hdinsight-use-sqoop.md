@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/06/2019
 ms.openlocfilehash: 165b7d00c3cf307e7996e84a35bb2a202f448cc0
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86076884"
 ---
 # <a name="use-apache-sqoop-with-hadoop-in-hdinsight"></a>Использование Apache Sqoop с Hadoop в HDInsight
@@ -52,7 +52,7 @@ ms.locfileid: "86076884"
   | deviceplatform |строка |
   | devicemake |строка |
   | devicemodel |строка |
-  | state |строка |
+  | Состояние |строка |
   | country |строка |
   | querydwelltime |double |
   | sessionid |BIGINT |

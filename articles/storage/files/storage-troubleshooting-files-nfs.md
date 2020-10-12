@@ -9,10 +9,10 @@ ms.author: jeffpatt
 ms.subservice: files
 ms.custom: references_regions
 ms.openlocfilehash: 661cfd5bb410a714bc42e0cd9676ac2ec08f8a45
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90709101"
 ---
 # <a name="troubleshoot-azure-nfs-file-shares"></a>Устранение неполадок файловых ресурсов Azure NFS
@@ -90,7 +90,7 @@ NFS доступна только в учетных записях хранен�
     - Пиринг виртуальных сетей с виртуальными сетями, размещенными в частной конечной точке, предоставляет NFS общий доступ к клиентам в одноранговых виртуальных сетях.
     - Частные конечные точки можно использовать с ExpressRoute, подключением типа "точка — сеть" и VPN-подключение "сеть — сеть".
 
-:::image type="content" source="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg" alt-text="Схема подключения к частной конечной точке." lightbox="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg":::
+:::image type="content" source="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg" alt-text="Схема подключения к общедоступной конечной точке." lightbox="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg":::
 
 ### <a name="cause-2-secure-transfer-required-is-enabled"></a>Причина 2. требуется безопасное перемещение
 
@@ -100,7 +100,7 @@ NFS доступна только в учетных записях хранен�
 
 В колонке настройки учетной записи хранения необходимо отключить безопасное перемещение.
 
-:::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Снимок экрана: колонка конфигурации учетной записи хранения, требуется отключить безопасное перемещение.":::
+:::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Схема подключения к общедоступной конечной точке.":::
 
 ### <a name="cause-3-nfs-common-package-is-not-installed"></a>Причина 3. общий пакет NFS не установлен
 Перед выполнением команды mount установите пакет, выполнив команду дистрибутив, указанную ниже.

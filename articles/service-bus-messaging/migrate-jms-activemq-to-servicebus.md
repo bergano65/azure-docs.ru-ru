@@ -15,10 +15,10 @@ ms.date: 07/07/2020
 ms.author: aschhab
 ms.custom: devx-track-java
 ms.openlocfilehash: 1b07faa5b2540aafafc27a51192d824d4445ce35
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88067160"
 ---
 # <a name="migrate-existing-java-message-service-jms-20-applications-from-apache-activemq-to-azure-service-bus"></a>Перенос существующих приложений службы сообщений Java (JMS) 2,0 из Apache Активемк в служебную шину Azure
@@ -35,7 +35,7 @@ ms.locfileid: "88067160"
 
 Несмотря на это, существуют некоторые различия между ними, как показано в следующей таблице.
 
-| Категория | ActiveMQ | Azure Service Bus |
+| Категория | ActiveMQ | Служебная шина Azure |
 | --- | --- | --- |
 | Распределение по уровням приложений | Кластеризованный Монолит | Двухуровневая <br> (шлюз + серверная части) |
 | Поддержка протоколов | <ul> <li>AMQP</li> <li> стомп </li> <li> опенвире </li> </ul> | AMQP |
@@ -84,7 +84,7 @@ ms.locfileid: "88067160"
 
 ### <a name="set-up-enterprise-configurations"></a>Настройка корпоративных конфигураций
 
-Служебная шина обеспечивает различные возможности корпоративной безопасности и обеспечения высокого уровня доступности. Дополнительные сведения можно найти в разделе 
+Служебная шина обеспечивает различные возможности корпоративной безопасности и обеспечения высокого уровня доступности. Дополнительные сведения см. в разделе: 
 
   * [Конечные точки службы для виртуальной сети](service-bus-service-endpoints.md)
   * [Брандмауэр](service-bus-ip-filtering.md)
@@ -116,7 +116,7 @@ ms.locfileid: "88067160"
 |Broker|`CurrentConnectionsCount`|`activeConnections`|
 |Broker|`EstablishedConnectionsCount`|`activeConnections` + `connectionsClosed`|
 |Broker|`InactiveDurableTopicSubscribersCount`|Использование метрик подписки|
-|Broker|`TotalMessageCount`|Использование уровня очереди, раздела или подписки`activeMessages`|
+|Broker|`TotalMessageCount`|Использование уровня очереди, раздела или подписки `activeMessages`|
 |Очередь или раздел|`EnqueueCount`|`incomingMessages`|
 |Очередь или раздел|`DequeueCount`|`outgoingMessages`|
 |Очередь|`QueueSize`|`sizeBytes`|
@@ -134,7 +134,7 @@ ms.locfileid: "88067160"
 > [!NOTE]
 > Для приложений JMS в качестве операции времени выполнения создаются очереди, разделы и подписки. Большинство поставщиков JMS (брокеров сообщений) дают возможность создавать их во время выполнения. Вот почему этот шаг экспорта считается необязательным. Чтобы убедиться, что приложение имеет разрешения на создание топологии во время выполнения, используйте строку подключения с `Manage` разрешениями SAS.
 
-Выполните указанные ниже действия.
+Для этого выполните следующие действия.
 
 1. Чтобы экспортировать топологию, используйте [программы командной строки активемк](https://activemq.apache.org/activemq-command-line-tools-reference) .
 1. Повторно создайте ту же топологию с помощью [шаблона Azure Resource Manager](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
@@ -266,11 +266,11 @@ connection.start();
 
 ```
 
-## <a name="post-migration"></a>После миграции
+## <a name="post-migration"></a>Действия после миграции
 
 Теперь, когда вы изменили приложение, чтобы начать отправку и получение сообщений из служебной шины, следует убедиться, что она работает правильно. По завершении вы можете продолжить и модернизировать стека приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте [стартовую начальную загрузку для JMS служебной шины Azure](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-service-bus) для эффективной интеграции с служебной шиной.
 

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 632a1eb7b7ac53bd3d7df3f2722d6e53277c7926
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84738759"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
@@ -87,9 +87,9 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | PlannedMaintenance |  Выполняется обслуживание экземпляра шлюза.  |Нет|
 | UserDrivenUpdate | Идет обновление, инициированное пользователем. Это может быть операция изменения размера. | Нет |
 | VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | Нет |
-| PlatformInActive | Существует проблема с платформой. | Нет|
-| ServiceNotRunning | Базовая служба не выполняется. | Нет|
-| NoConnectionsFoundForGateway | У шлюза нет подключений. Это всего лишь предупреждение.| Нет|
+| PlatformInActive | Существует проблема с платформой. | нет|
+| ServiceNotRunning | Базовая служба не выполняется. | нет|
+| NoConnectionsFoundForGateway | У шлюза нет подключений. Это всего лишь предупреждение.| нет|
 | ConnectionsNotConnected | Ни одно из подключений не установлено. Это всего лишь предупреждение.| Да|
 | GatewayCPUUsageExceeded | Текущее использование ЦП шлюза превышает 95 %. | Да |
 
@@ -101,9 +101,9 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | GatewayNotFound | Не удается найти шлюз или шлюз не подготовлен. |Нет|
 | PlannedMaintenance | Выполняется обслуживание экземпляра шлюза.  |Нет|
 | UserDrivenUpdate | Идет обновление, инициированное пользователем. Это может быть операция изменения размера.  | Нет |
-| VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | Нет |
-| ConnectionEntityNotFound | Отсутствует конфигурация подключения. | Нет |
-| ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |Нет|
+| VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | нет |
+| ConnectionEntityNotFound | Отсутствует конфигурация подключения. | нет |
+| ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
 | Аутентификация | Несоответствие предварительного ключа. | Да|
@@ -111,7 +111,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Да|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Научитесь проверять подключения VPN-шлюза с помощью PowerShell и службы автоматизации Azure, ознакомившись с разделом [Мониторинг VPN-шлюзов с помощью средства устранения неполадок наблюдателя за сетями Azure](network-watcher-monitor-with-azure-automation.md).
 

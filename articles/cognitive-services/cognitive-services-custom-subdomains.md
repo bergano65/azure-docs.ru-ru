@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: erhopf
 ms.openlocfilehash: c7dd916b27cd8005162c09f7e6a090293e336719
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83590644"
 ---
 # <a name="custom-subdomain-names-for-cognitive-services"></a>Имена пользовательских поддоменов для Cognitive Services
@@ -80,7 +80,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 | | восточная часть США 2 | `https://eastus2.api.cognitive.microsoft.com` |
 | | Центральная Франция | `https://francecentral.api.cognitive.microsoft.com` |
 | | Центральная Индия | `https://centralindia.api.cognitive.microsoft.com` |
-| | Восточная Япония | `https://japaneast.api.cognitive.microsoft.com` |
+| | Japan East | `https://japaneast.api.cognitive.microsoft.com` |
 | | Республика Корея, центральный регион | `https://koreacentral.api.cognitive.microsoft.com` |
 | | Центрально-северная часть США | `https://northcentralus.api.cognitive.microsoft.com` |
 | | Северная Европа | `https://northeurope.api.cognitive.microsoft.com` |

@@ -16,10 +16,10 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 959837ff540fd95d186497858d7b9de1f8b1124d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91274016"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам или приложениям в проверках доступа Azure AD
@@ -103,7 +103,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 4. Продолжить в разделе **выполнение проверки доступа**
 
-### <a name="email"></a>Адрес электронной почты
+### <a name="email"></a>Email
 
 >[!IMPORTANT]
 > При получении сообщения электронной почты могут воздержаться задержки, а в некоторых случаях это может занять до 24 часов. Добавьте azure-noreply@microsoft.com в список надежных получателей, чтобы убедиться, что получены все сообщения электронной почты.
@@ -163,6 +163,6 @@ Azure Active Directory (Azure AD) упрощает управление дост
     > [!NOTE]
     > Если вы указали, что вам больше не нужен доступ, вы не удалите их немедленно. Вы удаляете после завершения проверки или после того, как администратор останавливает проверку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение проверки доступа для групп или приложений](complete-access-review.md)

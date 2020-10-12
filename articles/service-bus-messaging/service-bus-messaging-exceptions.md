@@ -4,10 +4,10 @@ description: В этой статье представлен список иск
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 4813ad7386af3d9dd730b74e6b815ff173cfe809
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90885732"
 ---
 # <a name="service-bus-messaging-exceptions"></a>Исключения обмена сообщениями служебной шины
@@ -183,6 +183,6 @@ Aliases:  <mynamespace>.servicebus.windows.net
    * Для **временных проблем** ***(где параметру with задано*** ***значение true***) или для **проблем регулирования**, повторная попытка операции может разрешить ее. Для этого можно использовать политику повтора по умолчанию в пакете SDK.
    * Для других проблем сведения в исключении указывают на проблемы и способы их устранения, которые можно вывести из одного и того же.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Полные справочные материалы по API служебной шины для .NET доступны в [справочнике по API Azure для .NET](/dotnet/api/overview/azure/service-bus).
 Советы по устранению неполадок см. в разделе [руководство по устранению неполадок](service-bus-troubleshooting-guide.md)

@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bf1113f7b2f396deed849fa46108537f290b53a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84742102"
 ---
 # <a name="multi-factor-authentication-and-privileged-identity-management"></a>Многофакторная идентификация и управление привилегированными пользователями
@@ -38,7 +38,7 @@ ms.locfileid: "84742102"
 
 Кроме того, если пользователи проходят аутентификацию в локальной среде, поставщик удостоверений может отвечать за многофакторную идентификацию. Например, если службы федерации AD требуют проверку подлинности на основе смарт-карты для доступа к Azure AD, можете воспользоваться инструкциями по настройке AD FS для отправки утверждений в Azure AD, приведенными в разделе [Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS](../authentication/howto-mfa-adfs.md). Когда пользователь пытается активировать роль, управление привилегированными пользователями принимает, что многофакторная проверка подлинности уже была проверена для пользователя после получения соответствующих утверждений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка параметров роли Azure AD в управление привилегированными пользователями](pim-how-to-change-default-settings.md)
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)

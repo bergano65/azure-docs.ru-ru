@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/07/2020
 ms.openlocfilehash: 805b51bf4e6d8feab9539f660dfc72ca78b82d5c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82982638"
 ---
 # <a name="exists-transformation-in-mapping-data-flow"></a>Преобразование EXISTS в потоке данных сопоставления
@@ -23,7 +23,7 @@ ms.locfileid: "82982638"
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4vZKz]
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 1. Выберите поток данных для проверки существования в правильном раскрывающемся списке **потока** .
 1. Укажите, нужно ли, чтобы данные были уже существуют или не существовали в параметре **типа EXISTS** .
