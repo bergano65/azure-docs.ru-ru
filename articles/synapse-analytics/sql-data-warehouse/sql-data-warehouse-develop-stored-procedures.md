@@ -1,5 +1,5 @@
 ---
-title: Использование хранимых процедур
+title: использование хранимых процедур;
 description: Советы по разработке решений путем реализации хранимых процедур в пуле синапсе SQL.
 services: synapse-analytics
 author: XiaoyuMSFT
@@ -11,17 +11,17 @@ ms.date: 04/02/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.openlocfilehash: 87c7eaa57f9da87bd83f89953afc09632d42b1f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85213403"
 ---
 # <a name="using-stored-procedures-in-synapse-sql-pool"></a>Использование хранимых процедур в пуле SQL синапсе
 
 В этой статье приводятся советы по разработке решений пула SQL путем реализации хранимых процедур.
 
-## <a name="what-to-expect"></a>Основные принципы
+## <a name="what-to-expect"></a>Чего следует ожидать
 
 Пул SQL поддерживает многие функции T-SQL, используемые в SQL Server. Что более важно, в нем есть специальные функции горизонтального масштабирования, с помощью которых можно максимально увеличить производительность решения.
 

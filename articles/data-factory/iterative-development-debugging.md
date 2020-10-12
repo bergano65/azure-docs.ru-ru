@@ -10,10 +10,10 @@ ms.workload: data-services
 author: djpmsft
 ms.author: daperlov
 ms.openlocfilehash: e4c66055184b2ef0113aa0e25c02ad8635feddb3
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90031013"
 ---
 # <a name="iterative-development-and-debugging-with-azure-data-factory"></a>Итеративные разработка и отладка в фабрике данных Azure
@@ -87,6 +87,6 @@ ms.locfileid: "90031013"
 
 ![Выполнение конвейера с потоком данных](media/iterative-development-debugging/iterative-development-dataflow.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После тестирования изменений передвигайте их в более высокие среды, используя [непрерывную интеграцию и развертывание в фабрике данных Azure](continuous-integration-deployment.md).

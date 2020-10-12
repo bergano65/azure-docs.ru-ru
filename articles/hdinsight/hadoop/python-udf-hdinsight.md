@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 11/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive, devx-track-python
 ms.openlocfilehash: 9c16b3ff013c2985ea381ed4bb002276b1c3fdb8
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89462247"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
@@ -31,7 +31,7 @@ ms.locfileid: "89462247"
 * **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 * [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это может быть `wasb://` для службы хранилища Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет wasbs://.  См. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md).
 * **Возможное изменение конфигурации хранилища.**  Если используется тип учетной записи хранения, см. раздел [Конфигурация хранилища](#storage-configuration) `BlobStorage` .
-* Необязательный элемент.  Если планируется использовать PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) .
+* Необязательный параметр.  Если планируется использовать PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) .
 
 > [!NOTE]  
 > Учетная запись хранения, используемая в этой статье, была включена в службу хранилища Azure с включенной [безопасной](../../storage/common/storage-require-secure-transfer.md) поддержкой и поэтому `wasbs` используется во всей статье.

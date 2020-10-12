@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.openlocfilehash: fb907e0b9c923a77c6956723f6df397fabd84da8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86523984"
 ---
 # <a name="translator-v2-to-v3-migration"></a>Миграция с версии 2 на v3
@@ -118,8 +118,8 @@ Global
 
 | Версия | Конечная точка | Соответствие требованиям процессора GDPR | Использование Translator Hub | Использование Пользовательского переводчика (предварительная версия) |
 | :------ | :------- | :------------------------ | :----------------- | :------------------------------ |
-|Переводчик версии 2|    api.microsofttranslator.com|    Нет    |Да    |Нет|
-|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    Нет|    Да|
+|Переводчик версии 2|    api.microsofttranslator.com|    нет    |Да    |нет|
+|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    нет|    Да|
 
 **Translator версии 3**
 * Является общедоступным и полностью поддерживается.
@@ -137,7 +137,7 @@ Global
 
 Ни одна из версий транслятора не создает запись переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](https://www.aka.ms/NoTrace).
 
-## <a name="links"></a>Создание ссылок
+## <a name="links"></a>Ссылки
 
 * [Политика конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)

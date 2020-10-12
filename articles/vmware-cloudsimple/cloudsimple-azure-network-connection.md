@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: cfd4d65b07cf255ac2b60d6bf8376723a997374e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77025084"
 ---
 # <a name="azure-network-connections-overview"></a>Общие сведения о сетевых подключениях Azure
@@ -51,7 +51,7 @@ ms.locfileid: "77025084"
 
 ![Подключение к локальному ExpressRoute с помощью виртуальной сети Azure](media/cloudsimple-global-reach-and-vnet-connection.png)
 
-### <a name="important-considerations"></a>Важные сведения
+### <a name="important-considerations"></a>Важные замечания
 
 Подключение к сети Клаудсимпле из локальной сети и из виртуальной сети Azure обеспечивает обмен маршрутами между всеми сетями.
 
@@ -61,7 +61,7 @@ ms.locfileid: "77025084"
 * Клаудсимпле **не** будет объявлять маршрут по умолчанию для подключений ExpressRoute
 * Если локальный маршрутизатор объявляет маршрут по умолчанию, трафик из Клаудсимпле сети и виртуальной сети Azure будет использовать объявленный маршрут по умолчанию.  В результате доступ к виртуальным машинам в Azure с помощью общедоступных IP-адресов невозможен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение виртуальной сети Azure к Клаудсимпле с помощью ExpressRoute](virtual-network-connection.md)
 * [Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute](on-premises-connection.md)

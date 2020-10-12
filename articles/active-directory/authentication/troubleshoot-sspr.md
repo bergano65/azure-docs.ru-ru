@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4a02d46688fa49401684f836a7c289906affb413
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90030027"
 ---
 # <a name="troubleshoot-self-service-password-reset-in-azure-active-directory"></a>Устранение неполадок самостоятельного сброса пароля в Azure Active Directory
@@ -144,6 +144,6 @@ Azure Active Directory (Azure AD) самостоятельный сброс па
 * **Лицензирование.** Назначена ли пользователю лицензия Azure AD?
 * **Журнал событий приложений.** Если используется компонент обратной записи паролей и код ошибки находится в локальной инфраструктуре, включите сжатую копию журнала событий приложения с сервера Azure AD Connect.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о SSPR см. в статье [как это работает: самостоятельный сброс пароля Azure AD](concept-sspr-howitworks.md) или [самостоятельная обратная запись сброса пароля в Azure AD](concept-sspr-writeback.md).

@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 06/12/2020
 ms.author: apimpm
 ms.openlocfilehash: 8a7fa295bdc8881c0c1ba58c95872a9380231b81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85558032"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Использование управляемых удостоверений в службе управления API Azure
@@ -35,7 +35,7 @@ ms.locfileid: "85558032"
 
 1. Создайте экземпляр управления API на портале как обычно. Перейдите к нему на портале.
 2. Выберите **управляемые удостоверения**.
-3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Нажмите кнопку **Сохранить**.
+3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Щелкните **Сохранить**.
 
     :::image type="content" source="./media/api-management-msi/enable-system-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного системой" border="true":::
 
@@ -281,7 +281,7 @@ ms.locfileid: "85558032"
 3. На вкладке **Назначенные пользователи** выберите **Добавить**.
 4. Найдите созданное ранее удостоверение и выберите его. Выберите **Добавить**.
 
-   :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного пользователем" border="true":::
+   :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного системой" border="true":::
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -413,7 +413,7 @@ ms.locfileid: "85558032"
 >
 > Вы можете разблокировать себя, переключив сертификат Azure Key Vault во встроенный закодированный сертификат, а затем отключив управляемое удостоверение. Дополнительные сведения см. в разделе [Настройка имени домена](configure-custom-domain.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управляемых удостоверениях для ресурсов Azure:
 

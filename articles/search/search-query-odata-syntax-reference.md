@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 83e9ae4aa68bc0c819d02a0cc6c39758549811cb
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88928859"
 ---
 # <a name="odata-expression-syntax-reference-for-azure-cognitive-search"></a>Справочник по синтаксису выражений OData для Azure Когнитивный поиск
@@ -34,7 +34,7 @@ Azure Когнитивный поиск использует [выражения
 
 ## <a name="formal-grammar"></a>Формальное грамматика
 
-Мы можем описать подмножество языка OData, поддерживаемого Когнитивный поиском Azure, с помощью грамматики EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)). Правила перечислены "сверху вниз", начиная с наиболее сложных выражений и разбивая их на более простые выражения. В верхней части представлены правила грамматики, соответствующие определенным параметрам REST API Когнитивный поиск Azure:
+Мы можем описать подмножество языка OData, поддерживаемого Когнитивный поиском Azure, с помощью грамматики EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)). Правила перечислены "сверху вниз", начиная с наиболее сложных выражений и разбивая их на более простые выражения. В верхней части представлены правила грамматики, соответствующие определенным параметрам REST API Когнитивный поиск Azure:
 
 - [`$filter`](search-query-odata-filter.md), определяемое `filter_expression` правилом.
 - [`$orderby`](search-query-odata-orderby.md), определяемое `order_by_expression` правилом.

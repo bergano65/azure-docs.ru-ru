@@ -8,10 +8,10 @@ ms.author: helohr
 ms.custom: devx-track-azurepowershell
 manager: lizross
 ms.openlocfilehash: d7219751d584eb458cded9f4e30cccb1439dfa1b
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89069023"
 ---
 # <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-powershell"></a>Развертывание средства управления виртуальными рабочими столами Windows (классическая модель) с помощью PowerShell
@@ -21,7 +21,7 @@ ms.locfileid: "89069023"
 
 В этой статье показано, как развернуть средство управления с помощью PowerShell.
 
-## <a name="important-considerations"></a>Важные аспекты
+## <a name="important-considerations"></a>Важные замечания
 
 Каждой подписке клиента Azure Active Directory (Azure AD) требуется отдельное развертывание средства управления. Это средство не поддерживает сценарии Azure AD "бизнес — бизнес" (B2B).
 
@@ -60,7 +60,7 @@ ms.locfileid: "89069023"
     Connect-AzureAD
     ```
 
-4. После этого перейдите в папку, где были сохранены два сценария PowerShell из репозитория GitHub RDS-Templates.
+4. После этого перейдите в папку, где были сохранены два сценария PowerShell из репозитория RDS-Templates GitHub.
 
 Не закрывайте окно PowerShell, которое использовалось для входа в систему, чтобы запустить дополнительные командлеты PowerShell при входе.
 

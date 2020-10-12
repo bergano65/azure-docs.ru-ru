@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 09/24/2019
 ms.author: yelevin
 ms.openlocfilehash: a88696ba69fdf53f5c7e15d174b126d69f4230ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85555439"
 ---
 # <a name="connect-your-domain-name-server"></a>Подключение сервера доменных имен
@@ -44,9 +44,9 @@ ms.locfileid: "85555439"
 | **Подключенный источник** | **Поддержка** | **Описание** |
 | --- | --- | --- |
 | [Агенты Windows](../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
-| [Агенты Linux](../azure-monitor/learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
+| [Агенты Linux](../azure-monitor/learn/quick-collect-linux-computer.md) | нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
 | [Группа управления System Center Operations Manager](../azure-monitor/platform/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
-| [Учетная запись хранения Azure](../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет | Решение не использует службу хранилища Azure. |
+| [Учетная запись хранения Azure](../azure-monitor/platform/collect-azure-metrics-logs.md) | нет | Решение не использует службу хранилища Azure. |
 
 ### <a name="data-collection-details"></a>Сведения о сборе данных
 
@@ -82,7 +82,7 @@ ms.locfileid: "85555439"
 4. В Azure DNS Analytics в разделе **Конфигурация**измените любые параметры, сохраните его, а затем измените его обратно, если нужно, а затем сохраните его снова.
 5. Проверьте Azure DNS аналитику, чтобы убедиться, что запросы отображаются.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить локальные устройства DNS к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

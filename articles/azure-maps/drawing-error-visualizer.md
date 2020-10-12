@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: b3f9451a5ffd13c67232107d8db1e2da4a3891ec
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86524749"
 ---
 # <a name="using-the-azure-maps-drawing-error-visualizer"></a>Использование визуализатора ошибок рисования в Azure Maps
@@ -82,11 +82,11 @@ ms.locfileid: "86524749"
 
 Файл _ConversionWarningsAndErrors.json_ помещен в корень папки downloaded. Чтобы передать файл _ConversionWarningsAndErrors.json_, можно перетащить его в соответствующее поле либо щелкнуть поле и найти файл в диалоговом окне проводника.
 
-:::image type="content" source="./media/drawing-errors-visualizer/loading-data.gif" alt-text="Приложение визуализатора ошибок рисования — перетаскивание для загрузки данных":::
+:::image type="content" source="./media/drawing-errors-visualizer/loading-data.gif" alt-text="Приложение визуализатора ошибок рисования — начальная страница":::
 
 Когда завершится отправка файла _ConversionWarningsAndErrors.json_, вы увидите список ошибок и предупреждений пакета рисунков. Для всех ошибок и предупреждений указывается информация о слое и уровне, а также текст сообщения. Чтобы просмотреть подробные сведения об ошибке или предупреждении, щелкните ссылку **сведения** . После этого отобразится подраздел, который можно отозвать. Вы можете перейти к любой ошибке, чтобы получить дополнительные сведения о ее устранении.
 
-:::image type="content" source="./media/drawing-errors-visualizer/errors.png" alt-text="Приложение визуализатора ошибок рисования — ошибки и предупреждения":::
+:::image type="content" source="./media/drawing-errors-visualizer/errors.png" alt-text="Приложение визуализатора ошибок рисования — начальная страница":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

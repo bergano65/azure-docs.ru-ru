@@ -15,10 +15,10 @@ ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: 75603593e8c290b6bcb059207858d663ab5c96d9
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89460122"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
@@ -65,7 +65,7 @@ ms.locfileid: "89460122"
 2. Во время развертывания решения с помощью Visual Studio включите подключения к удаленному рабочему столу. Дополнительные сведения см. в статье [Enable Remote Desktop Connection for a Role in Azure Cloud Services using Visual Studio](cloud-services-role-enable-remote-desktop-visual-studio.md) (Включение подключения к удаленному рабочему столу для роли в облачных службах Azure с помощью Visual Studio).
 3. Когда для экземпляра отобразится состояние **Готово**, установите удаленное подключение к экземпляру на портале Microsoft Azure. Дополнительные сведения об использовании удаленного рабочего стола с облачными службами см. в статье об [удаленном подключении к экземплярам ролей](cloud-services-role-enable-remote-desktop-new-portal.md#remote-into-role-instances).
 5. Войдите в виртуальную машину, используя учетные данные, указанные во время настройки удаленного рабочего стола.
-6. Откройте командное окно.
+6. Откройте окно командной строки.
 7. Введите `IPconfig`.
 8. Запомните IPV4-адрес.
 9. Откройте обозреватель Internet Explorer.
@@ -121,7 +121,7 @@ ms.locfileid: "89460122"
 
 Убедившись, что все ошибки исправлены, вы можете развернуть службу, не устанавливая флажок **Включить IntelliTrace для ролей .NET 4** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Просмотрите дополнительные [статьи об устранении неполадок](https://azure.microsoft.com/documentation/articles/?tag=top-support-issue&product=cloud-services) в облачных службах.
 
 Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](https://docs.microsoft.com/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data).

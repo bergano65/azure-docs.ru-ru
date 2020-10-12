@@ -7,10 +7,10 @@ ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
 ms.openlocfilehash: 52a74593fcfbdc2c1e464077e4ae460f6a5a9c39
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87852401"
 ---
 # <a name="understand-migration-options-to-newer-alerts"></a>Общие сведения о вариантах миграции для новых оповещений
@@ -150,11 +150,11 @@ ms.locfileid: "87852401"
 | SASSuccess | Метрика транзакций с измерениями "ResponseType" = "Success" и "Authentication" = "SAS" | |
 | ServerOtherError | Метрика транзакций с измерениями "ResponseType" = "Серверосереррор" | |
 | ServerTimeOutError | Метрика транзакций с измерениями "ResponseType" = "ServerTimeOutError"  | |
-| Успешно | Метрика транзакций с измерениями "ResponseType" = "Success" | |
-| TotalBillableRequests| Транзакции | |
+| Успех | Метрика транзакций с измерениями "ResponseType" = "Success" | |
+| TotalBillableRequests| Transactions | |
 | TotalEgress | Исходящие | |
 | TotalIngress | Входящий трафик | |
-| TotalRequests | Транзакции | |
+| TotalRequests | Transactions | |
 
 ### <a name="microsoftinsightscomponents"></a>Microsoft. Insights/компоненты
 
@@ -171,16 +171,16 @@ ms.locfileid: "87852401"
 | Клиентперформанце. действия ReceiveRequest. Value | browserTimings/receiveDuration| Умножьте исходное пороговое значение на 1000 в качестве единиц для классической метрики в секундах, а для новой — в миллисекундах.  |
 | Клиентперформанце. sendRequest. Value | browserTimings/sendDuration| Умножьте исходное пороговое значение на 1000 в качестве единиц для классической метрики в секундах, а для новой — в миллисекундах.  |
 | Клиентперформанце. Total. Value | browserTimings/totalDuration| Умножьте исходное пороговое значение на 1000 в качестве единиц для классической метрики в секундах, а для новой — в миллисекундах.  |
-| performanceCounter. available_bytes. Value | performanceCounters/memoryAvailableBytes|   |
-| performanceCounter. io_data_bytes_per_sec. Value | performanceCounters/processIOBytesPerSecond|   |
-| performanceCounter. number_of_exceps_thrown_per_sec. Value | performanceCounters/exceptionsPerSecond|   |
-| performanceCounter. percentage_processor_time_normalized. Value | performanceCounters/processCpuPercentage|   |
-| performanceCounter. percentage_processor_time. Value | performanceCounters/processCpuPercentage| Пороговое значение должно быть соответствующим образом изменено, так как исходная метрика находилась во всех ядрах, а новая метрика будет нормализована до одного ядра. Средство миграции не изменяет пороговые значения.  |
-| performanceCounter. percentage_processor_total. Value | performanceCounters/processorCpuPercentage|   |
-| performanceCounter. process_private_bytes. Value | performanceCounters/processPrivateBytes|   |
-| performanceCounter. request_execution_time. Value | performanceCounters/requestExecutionTime|   |
-| performanceCounter. requests_in_application_queue. Value | performanceCounters/requestsInQueue|   |
-| performanceCounter. requests_per_sec. Value | performanceCounters/requestsPerSecond|   |
+| performanceCounter.available_bytes. Value | performanceCounters/memoryAvailableBytes|   |
+| performanceCounter.io_data_bytes_per_sec. Value | performanceCounters/processIOBytesPerSecond|   |
+| performanceCounter.number_of_exceps_thrown_per_sec. Value | performanceCounters/exceptionsPerSecond|   |
+| performanceCounter.percentage_processor_time_normalized. Value | performanceCounters/processCpuPercentage|   |
+| performanceCounter.percentage_processor_time. Value | performanceCounters/processCpuPercentage| Пороговое значение должно быть соответствующим образом изменено, так как исходная метрика находилась во всех ядрах, а новая метрика будет нормализована до одного ядра. Средство миграции не изменяет пороговые значения.  |
+| performanceCounter.percentage_processor_total. Value | performanceCounters/processorCpuPercentage|   |
+| performanceCounter.process_private_bytes. Value | performanceCounters/processPrivateBytes|   |
+| performanceCounter.request_execution_time. Value | performanceCounters/requestExecutionTime|   |
+| performanceCounter.requests_in_application_queue. Value | performanceCounters/requestsInQueue|   |
+| performanceCounter.requests_per_sec. Value | performanceCounters/requestsPerSecond|   |
 | Длительность запроса | requests/duration| Умножьте исходное пороговое значение на 1000 в качестве единиц для классической метрики в секундах, а для новой — в миллисекундах.  |
 | Частота запросов | requests/rate|   |
 | Рекуестфаилед. Count | requests/failed| Используйте `aggregationType` "Count" вместо "Sum".   |
