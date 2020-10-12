@@ -7,10 +7,10 @@ ms.date: 07/29/2020
 ms.author: hazeng
 ms.custom: devx-track-python
 ms.openlocfilehash: 9b9f5d389eda5d74e7e78cfcfa9a46fba7276cbd
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87846043"
 ---
 # <a name="troubleshoot-python-errors-in-azure-functions"></a>Устранение ошибок Python в функциях Azure
@@ -165,9 +165,9 @@ you must uninstall azure-storage first.</pre>
 
 Чтобы проверить разрядность интерпретатора Python, выполните следующие команды:
 
-В Windows в PowerShell:`py -c 'import platform; print(platform.architecture()[0])'`
+В Windows в PowerShell: `py -c 'import platform; print(platform.architecture()[0])'`
 
-В оболочке, похожей на UNIX:`python3 -c 'import platform; print(platform.architecture()[0])'`
+В оболочке, похожей на UNIX: `python3 -c 'import platform; print(platform.architecture()[0])'`
 
 В случае несоответствия между разрядностью интерпретатора Python и архитектурой операционной системы Скачайте правильный интерпретатор Python из [Python Software Foundation](https://python.org/downloads/release).
 

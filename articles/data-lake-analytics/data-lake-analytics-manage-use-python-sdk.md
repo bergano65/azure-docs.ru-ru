@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/08/2018
 ms.custom: devx-track-python
 ms.openlocfilehash: dd3511fefe39f51a521aa211454a49763224a6d9
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87876246"
 ---
 # <a name="manage-azure-data-lake-analytics-using-python"></a>Управление Azure Data Lake Analytics с помощью Python
@@ -96,7 +96,7 @@ import time
 
 Запустите этот сценарий, чтобы проверить, можно ли импортировать модули.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 ### <a name="interactive-user-authentication-with-a-pop-up"></a>Интерактивная аутентификация пользователей с помощью всплывающего окна
 

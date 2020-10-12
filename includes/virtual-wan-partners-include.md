@@ -9,10 +9,10 @@ ms.date: 10/09/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 4bf53561e7788b1d4ce9789c3b555cb1e089545b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91267311"
 ---
 В этом разделе вы можете перейти по ссылкам для получения дополнительных сведений об услугах, предлагаемых партнерами. Если ваш партнер устройства филиала отсутствует в указанном ниже разделе, попросите вашего поставщика ресурсов связаться с нами. Он может обратиться к нам, отправив сообщение по адресу azurevirtualwan@microsoft.com.

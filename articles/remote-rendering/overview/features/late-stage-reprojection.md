@@ -6,10 +6,10 @@ ms.author: sepick
 ms.date: 02/04/2020
 ms.topic: article
 ms.openlocfilehash: 8d42087008f1812bc3713456025ed3be351d0917
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84022186"
 ---
 # <a name="late-stage-reprojection"></a>Перепроецирование на позднем этапе
@@ -52,6 +52,6 @@ ms.locfileid: "84022186"
 
 Точки фокусировки, вычисленные в двух последовательных кадрах, могут сильно отличаться. Простое использование их "как есть" может привести к появлению голограмм. Чтобы предотвратить такое поведение, рекомендуется выполнить интерполяцию между предыдущей и текущей точками фокусировки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запросы данных производительности на стороне сервера](performance-queries.md)

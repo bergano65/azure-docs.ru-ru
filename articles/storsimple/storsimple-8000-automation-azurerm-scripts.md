@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 10/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 4a53dd803b22899b7dd15db0aa1ff411641a11dc
-ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88183264"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
@@ -166,6 +166,6 @@ PS C:\Scripts\StorSimpleSDKTools>
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

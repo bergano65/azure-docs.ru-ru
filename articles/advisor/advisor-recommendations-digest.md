@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 03/16/2020
 ms.author: sagupt
 ms.openlocfilehash: e446fca11e029e28e44ada884efd071f3142514c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86518085"
 ---
 # <a name="configure-periodic-summary-for-recommendations"></a>Настройка периодической сводки по рекомендациям
@@ -54,7 +54,7 @@ ms.locfileid: "86518085"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
-* [Общие сведения об Azure Advisor](advisor-overview.md)
+* [Общие сведения о Помощнике по Azure](advisor-overview.md)
 * [Начало работы с Помощником](advisor-get-started.md)
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)

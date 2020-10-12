@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 08/17/2020
 ms.openlocfilehash: be4856beac69d11de12ec764f313fa59f3b24e9f
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89290554"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
@@ -18,7 +18,7 @@ ms.locfileid: "89290554"
 
 В этой статье описывается, как установить и настроить [контроллер входящего трафика NGINX][nginx-ingress] в кластере Службы Azure Kubernetes (AKS). Контроллер входящего трафика настраивается со статическим общедоступным IP-адресом. Для автоматического создания и настройки сертификатов [Let's Encrypt][lets-encrypt] используется проект [cert-manager][cert-manager]. Наконец, в кластере AKS запущено два приложения, каждое из которых доступно по одному IP-адресу.
 
-Также можно:
+Кроме того, вы можете сделать следующее:
 
 - [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
 - [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
@@ -441,7 +441,7 @@ kubectl delete namespace ingress-basic
 az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 
@@ -449,7 +449,7 @@ az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eas
 - [Контроллер входящего трафика NGINX][nginx-ingress]
 - [cert-manager][cert-manager]
 
-Также можно:
+Кроме того, вы можете сделать следующее:
 
 - [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
 - [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]

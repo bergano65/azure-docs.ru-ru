@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/22/2019
 ms.author: victorh
 ms.openlocfilehash: f752604b86634948954dd670d0b7f4edb5b3e2be
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86517881"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
@@ -307,7 +307,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |ruleSetType     | Тип набора правил. Доступное значение — OWASP.        |
 |ruleSetVersion     | Используемая версия набора правил. Возможные значения: 2.2.9 и 3.0.     |
 |ruleId     | Идентификатор правила события-триггера.        |
-|message     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
+|сообщение     | Понятное сообщение для события-триггера. Дополнительные сведения приведены в разделе details.        |
 |action     |  Действие, выполняемое с запросом. Доступные значения сопоставлены и блокируются.      |
 |site     | Сайт, для которого создан журнал. В нашем случае возможно только значение Global, так как применяются глобальные правила.|
 |подробности     | Сведения о событии-триггере.        |

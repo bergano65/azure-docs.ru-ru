@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/31/2019
 ms.author: vaaga
 ms.openlocfilehash: e049a2b914cbf9c4f0ca0f3a1dd0281d58f881b2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75486824"
 ---
 # <a name="troubleshoot-virtual-machine-deployment-due-to-detached-disks"></a>Устранение неполадок развертывания виртуальной машины из-за отключенных дисков
@@ -30,7 +30,7 @@ Code=\"AttachDiskWhileBeingDetached\"
 Message=\"Cannot attach data disk '{disk ID}' to virtual machine '{vmName}' because the disk is currently being detached or the last detach  operation failed. Please wait until the disk is completely detached, and then try again or delete/detach the disk explicitly again\” 
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта ошибка возникает при попытке повторно подключить диск данных, операция последнего отсоединения завершилась ошибкой. Лучшим способом выхода из этого состояния является отключение диска, на котором происходит сбой.
 
@@ -230,7 +230,7 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md).
 

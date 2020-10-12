@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
 ms.openlocfilehash: 7670d00a2dd25961a51d18c50c102e0f92b30975
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88566154"
 ---
 # <a name="collect-data-from-linux-based-sources-using-syslog"></a>Получение данных из источников на основе Linux с помощью системного журнала
@@ -130,7 +130,7 @@ Sentinel Azure может применить машинное обучение (
     
     Если полученное число больше нуля, данные системного журнала подходят для обнаружения аномальных входов по протоколу SSH. Это обнаружение включается из **Analytics**  >   **шаблона правил**аналитики  >  **(Предварительная версия) с аномальным обнаружением входа SSH**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить локальные устройства syslog к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

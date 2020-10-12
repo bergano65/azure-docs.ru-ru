@@ -7,10 +7,10 @@ ms.date: 03/10/2020
 ms.author: mathoma
 ms.reviewer: vanto
 ms.openlocfilehash: ad6e444f9672fbe521e9c6963649d250830154d8
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84032675"
 ---
 На этом шаге вы создадите [логический сервер SQL Server](../database/logical-servers.md) и [отдельную базу данных](../database/single-database-overview.md), в которой используются образцы данных AdventureWorksLT. Базу данных можно создать с помощью меню и экранов портала Azure либо с помощью Azure CLI или сценария PowerShell в Azure Cloud Shell.

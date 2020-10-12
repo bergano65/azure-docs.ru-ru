@@ -10,10 +10,10 @@ ms.date: 04/03/2020
 ms.author: menchi
 ms.custom: devx-track-python
 ms.openlocfilehash: 6ed0290abe91453058589b032fb5ed2dd71fe98a
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87872571"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-python"></a>Начало работы с удостоверениями модулей центра Интернета вещей и модулем двойника (Python)
@@ -34,7 +34,7 @@ ms.locfileid: "87872571"
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [iot-hub-include-python-v2-installation-notes](../../includes/iot-hub-include-python-v2-installation-notes.md)]
 

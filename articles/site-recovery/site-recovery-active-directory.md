@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: mayg
 ms.openlocfilehash: 528a24bb64aa8d323b5d63a27af0a52ccdf1abb6
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86132323"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
@@ -25,7 +25,7 @@ ms.locfileid: "86132323"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Если выполняется репликация в Azure, [подготовьте ресурсы Azure](tutorial-prepare-azure.md), включая подписку, виртуальную сеть Azure, учетную запись хранения и хранилище служб восстановления.
-- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-azure-support-matrix.md) для всех компонентов.
+- [Ознакомьтесь](./vmware-physical-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
 
 ## <a name="replicate-the-domain-controller"></a>Репликация контроллера домена
 
@@ -79,7 +79,7 @@ Site Recovery можно использовать для защиты вирту
 1. Создайте изолированную сеть. Любая виртуальная сеть, созданная в Azure, по умолчанию изолируется от другой сети. Рекомендуем использовать для этой сети такой же диапазон IP-адресов, как у вашей рабочей сети. Не включайте для этой сети подключение между сайтами.
 1. Укажите IP-адрес DNS в изолированной сети. Используйте IP-адрес, который должна получить виртуальная машина DNS. При репликации в Azure укажите IP-адрес для виртуальной машины, используемой при отработке отказа. Чтобы ввести IP-адрес, в реплицированной виртуальной машине в разделе параметров **Вычисления и сеть** выберите параметры **Целевой IP-адрес**.
 
-   :::image type="content" source="./media/site-recovery-active-directory/azure-test-network.png" alt-text="Тестовая сеть Azure":::
+   :::image type="content" source="./media/site-recovery-active-directory/azure-test-network.png" alt-text="Сеть Azure":::
 
    > [!TIP]
    > Служба Site Recovery попытается создать тестовые виртуальные машины в подсети с таким же именем, используя тот же IP-адрес, который был указан в разделе параметров **Вычисления и сеть** виртуальной машины. Если подсеть с таким же именем недоступна в виртуальной сети Azure, предоставленной для тестовой отработки отказа, тестовая виртуальная машина создается в первой по алфавиту подсети.
@@ -118,21 +118,21 @@ Site Recovery можно использовать для защиты вирту
 
 - Значение **GenerationID** изменяется:
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event2170.png" alt-text="Изменение идентификатора создания":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event2170.png" alt-text="Сеть Azure":::
 
 - Значение **invocationID** изменяется:
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event1109.png" alt-text="Изменение идентификатора вызова":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event1109.png" alt-text="Сеть Azure":::
 
-- `SYSVOL`Папка и `NETLOGON` Общие папки недоступны.
+- `SYSVOL` Папка и `NETLOGON` Общие папки недоступны.
 
-  :::image type="content" source="./media/site-recovery-active-directory/sysvolshare.png" alt-text="Общая папка SYSVOL":::
+  :::image type="content" source="./media/site-recovery-active-directory/sysvolshare.png" alt-text="Сеть Azure":::
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event13565.png" alt-text="Папка NtFrs SYSVOL":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event13565.png" alt-text="Сеть Azure":::
 
 - Базы данных DFSR удалены.
 
-  :::image type="content" source="./media/site-recovery-active-directory/Event2208.png" alt-text="Базы данных DFSR удалены":::
+  :::image type="content" source="./media/site-recovery-active-directory/Event2208.png" alt-text="Сеть Azure":::
 
 ### <a name="troubleshoot-domain-controller-issues-during-test-failover"></a>Устранение неполадок контроллера домена при тестовой отработке отказа
 

@@ -12,10 +12,10 @@ ms.author: MirekS
 ms.reviewer: vanto
 ms.date: 04/23/2020
 ms.openlocfilehash: 147b73b6772675d5143e41ddfff030614e393b95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84031735"
 ---
 # <a name="connect-to-azure-sql-database-with-azure-multi-factor-authentication"></a>Подключение к базе данных SQL Azure с помощью многофакторной идентификации Azure
@@ -68,7 +68,7 @@ ms.locfileid: "84031735"
 
     ![Отображение идентификатора приложения](./media/active-directory-interactive-connect-azure-sql-db/image2.png)
 
-2. Выберите **разрешения API**  >  **Добавить разрешение**.
+2. Выберите **Разрешения API** > **Добавить разрешение**.
 
     ![Параметры разрешений для зарегистрированного приложения](./media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-c32.png)
 
@@ -338,10 +338,10 @@ In method 'AcquireTokenAsync', case_0 == '.ActiveDirectoryInteractive'.
 >>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 & [Get-Азсклсерверактиведиректорядминистратор](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserveractivedirectoryadministrator)

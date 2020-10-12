@@ -9,10 +9,10 @@ ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: devx-track-python
 ms.openlocfilehash: 5cbf75ef2d9f0c1a65179e6a423b59f9763ce72b
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87872248"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для Python
@@ -26,7 +26,7 @@ ms.locfileid: "87872248"
 
 В этой статье содержатся сведения об использовании пакета SDK для Python для выполнения операций файловой системы в Azure Data Lake Storage 1-го поколения. Дополнительные сведения о том, как выполнять операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для Python, см. в [этой статье](data-lake-store-get-started-python.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
@@ -83,7 +83,7 @@ pip install azure-datalake-store
 
 3. Сохраните изменения в mysample.py.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 В этом разделе мы рассмотрим различные способы проверки подлинности в Azure AD. Доступны следующие варианты.
 
@@ -118,7 +118,7 @@ multithread.ADLUploader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.txt'
 ```
 
 
-## <a name="download-a-file"></a>Скачивание файла
+## <a name="download-a-file"></a>скачать файл;
 
 ```python
 ## Download a file

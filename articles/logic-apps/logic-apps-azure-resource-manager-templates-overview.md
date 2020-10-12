@@ -7,10 +7,10 @@ ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 08/17/2020
 ms.openlocfilehash: a3d7386e976551d70fbbc08930b2ab5603aa5d50
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91269052"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Обзор: Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager
@@ -1277,7 +1277,7 @@ ms.locfileid: "91269052"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Создание шаблонов приложений логики](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)

@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma
 ms.openlocfilehash: b02329d624eda440230fb99e02e08c841c5580f2
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90706002"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Глоссарий разработчика платформы удостоверений Майкрософт
@@ -220,7 +220,7 @@ ms.locfileid: "90706002"
 
 Тип [клиентского приложения](#client-application), которое выполняет весь код на веб-сервере и может выступать в роли "конфиденциального" клиента, обеспечивая безопасное хранение учетных данных на сервере. Дополнительные сведения см. в разделе о [типах и профилях клиента OAuth2][OAuth2-Client-Types].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Руководства разработчика платформы идентификации Майкрософт][AAD-Dev-Guide] — это Целевая страница для всех разделов, связанных с разработками платформы идентификации Майкрософт, включая обзор [интеграции приложений][AAD-How-To-Integrate] и основы [проверки подлинности платформы Microsoft Identity и поддерживаемых сценариев проверки подлинности][AAD-Auth-Scenarios]. Руководства и примеры кода для быстрого начала работы можно также найти на сайте [GitHub](https://github.com/azure-samples?utf8=%E2%9C%93&q=active%20directory&type=&language=).
 

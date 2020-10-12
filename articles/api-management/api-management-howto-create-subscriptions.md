@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
 ms.openlocfilehash: 191323a4c150c00c93245be35c9c8af381e26b42
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87904871"
 ---
 # <a name="create-subscriptions-in-azure-api-management"></a>Создание подписок в службе управления API Azure
@@ -25,7 +25,7 @@ ms.locfileid: "87904871"
 
 Эта статья поможет вам создать подписки с помощью портала Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения действий в этой статье требуется следующее.
 

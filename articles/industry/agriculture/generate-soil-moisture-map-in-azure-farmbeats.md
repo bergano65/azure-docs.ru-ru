@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: a2115e9c1601c86cce8857c10baf12b91cc2b997
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75482573"
 ---
 # <a name="generate-soil-moisture-heatmap"></a>Создать почвы влажность тепловой карты
@@ -81,16 +81,16 @@ ms.locfileid: "75482573"
 
 ### <a name="download-the-soil-moisture-heatmap"></a>Скачайте почвы влажность тепловой карты
 
-Выполните следующие шаги.
+Выполните указанные ниже действия.
 
 1. На странице **задания** проверьте **состояние** задания, созданного в последней процедуре.
 2. Когда состояние задания отобразится **удачно**, выберите **Maps (карты** ) в меню.
 3. Найдите карту по дню создания в формате <почвы-moisture_MyFarm_YYYY-MM-ДД>.
 4. Выберите карту в столбце **имя** . появится всплывающее окно с предварительной версией выбранной схемы.
-5. Выберите **Скачать**. Эта схема загружается и сохраняется в локальной папке компьютера.
+5. Щелкните **Скачать**. Эта схема загружается и сохраняется в локальной папке компьютера.
 
     ![Проект FarmBeats](./media/get-sensor-data-from-sensor-partner/download-soil-moisture-map-1.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы успешно создали почвы влажность тепловой карты, Узнайте, как [создавать расположение датчиков](generate-maps-in-azure-farmbeats.md#sensor-placement-map) и получать [исторические данные телеметрии](ingest-historical-telemetry-data-in-azure-farmbeats.md). 

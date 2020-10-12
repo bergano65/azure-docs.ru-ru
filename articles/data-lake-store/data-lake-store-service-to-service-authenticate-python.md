@@ -8,10 +8,10 @@ ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: has-adal-ref, devx-track-python
 ms.openlocfilehash: 95da32c6f684946bf6d394c282246f2f329b8620
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87873982"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с использованием Python
@@ -26,7 +26,7 @@ ms.locfileid: "87873982"
 В этой статье описывается, как использовать пакет SDK для Python для аутентификации между службами в Azure Data Lake Storage 1-го поколения. Дополнительные сведения об аутентификации пользователей в Azure Data Lake Storage 1-го поколения с помощью Python см. статье [Аутентификация пользователей в Data Lake Storage 1-го поколения с использованием Python](data-lake-store-end-user-authenticate-python.md).
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 

@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
 ms.openlocfilehash: d0bbde0ee4fd0eaf7387abaf6d548dc563e5b715
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86515450"
 ---
 # <a name="create-and-configure-a-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Создание и настройка рабочей области Log Analytics в Azure Monitor с помощью PowerShell
@@ -197,7 +197,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 
 В указанном примере regexDelimiter был определен как \\n для новой строки. Разделителем журнала также может служить метка времени.  Далее приведены поддерживаемые форматы.
 
-| Формат | Формат регулярных выражений JSON использует два `\\` для каждого `\` в стандартном регулярном выражении, поэтому, если тестирование в приложении Regex уменьшится `\\` до`\` |
+| Формат | Формат регулярных выражений JSON использует два `\\` для каждого `\` в стандартном регулярном выражении, поэтому, если тестирование в приложении Regex уменьшится `\\` до `\` |
 | --- | --- |
 | `YYYY-MM-DD HH:MM:SS` | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` |
 | `M/D/YYYY HH:MM:SS AM/PM` | `(([0-1]\\d)|[0-9])/(([0-3]\\d)|(\\d))/((\\d{2})|(\\d{4}))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]\\s(AM|PM|am|pm)` |

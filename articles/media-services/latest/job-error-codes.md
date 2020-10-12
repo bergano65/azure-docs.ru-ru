@@ -14,10 +14,10 @@ ms.topic: error-reference
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: 272f32ebdba04009a67bf03d5e830ad8f9e649f3
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89289568"
 ---
 # <a name="media-services-job-error-codes"></a>Коды ошибок заданий служб мультимедиа
@@ -40,6 +40,6 @@ ms.locfileid: "89289568"
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [Квоты и ограничения](limits-quotas-constraints.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Пример: доступ к ErrorCode и сообщению из Апиексцептион с помощью .NET](configure-connect-dotnet-howto.md#connect-to-the-net-client)

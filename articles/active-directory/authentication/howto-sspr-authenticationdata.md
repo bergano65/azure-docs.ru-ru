@@ -13,10 +13,10 @@ ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 6fa1c14509a558c1f91d07bf9a73a4ecc39e1413
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89068683"
 ---
 # <a name="pre-populate-user-authentication-contact-information-for-azure-active-directory-self-service-password-reset-sspr"></a>Предварительное заполнение контактных данных для проверки подлинности пользователя для Azure Active Directory самостоятельного сброса пароля (SSPR)
@@ -39,7 +39,7 @@ ms.locfileid: "89068683"
 
 Если вы используете параметры по умолчанию в Azure AD Connect, то для заполнения контактной информации для проверки подлинности для SSPR будут выполнены следующие сопоставления:
 
-| Локальная служба Active Directory | Azure AD     |
+| Локальная служба Active Directory | Azure AD     |
 |------------------------------|--------------|
 | TelephoneNumber              | Рабочий телефон |
 | mobile                       | Мобильный телефон |

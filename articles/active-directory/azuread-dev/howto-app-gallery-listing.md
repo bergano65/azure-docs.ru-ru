@@ -14,10 +14,10 @@ ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 40d299049a0a1bbff81c412a5beb84f28e64ff46
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90706308"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
@@ -35,7 +35,7 @@ ms.locfileid: "90706308"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, использующие систему для управления идентификаторами в разных доменах ([scim](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010)), могут использовать подготовку для одного и того же приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для федеративных приложений (Open ID и SAML/WS-подача) приложение должно поддерживать модель SaaS (программное обеспечение как услуга) для получения списка в коллекции приложений Azure AD. Приложения из коллекции предприятия должны поддерживать несколько пользовательских конфигураций, а не конкретных клиентов.
 - Для Open ID Connect приложение должно быть многоклиентским, а [инфраструктура согласия Azure AD](../develop/consent-framework.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) должна быть правильно реализована для приложения. Пользователь может отправить запрос на вход в общую конечную точку, чтобы любой клиент мог предоставить согласие для приложения. Доступом пользователей можно управлять на основе идентификатора клиента и имени участника-пользователя, которые передаются в маркере.
@@ -101,7 +101,7 @@ ms.locfileid: "90706308"
 
 - **Saml 2,0** или **WS-подач**. если приложение поддерживает SAML 2,0, его можно интегрировать непосредственно с клиентом Azure AD, следуя [инструкциям по добавлению пользовательского приложения](../manage-apps/view-applications-portal.md).
 
-  ![Перечисление приложения SAML 2,0 или WS-подач в коллекции](./media/howto-app-gallery-listing/saml.png)
+  ![Перечисление приложения SAML 2,0 или WS-Fed в коллекции](./media/howto-app-gallery-listing/saml.png)
 
   * Если вы хотите добавить приложение в список в коллекции с помощью **saml 2,0** или **WS-подач**, выберите **SAML 2.0/WS-подача** , как показано ниже.
 
@@ -146,7 +146,7 @@ ms.locfileid: "90706308"
 
 ## <a name="timelines"></a>График выполнения процессов
 
-Временная шкала для процесса перечисления приложения SAML 2,0 или WS-подач в коллекции составляет от 7 до 10 рабочих дней.
+Временная шкала для процесса перечисления приложения SAML 2,0 или WS-Fed в коллекции составляет от 7 до 10 рабочих дней.
 
   ![Временная шкала для перечисления приложения SAML в коллекции](./media/howto-app-gallery-listing/timeline.png)
 

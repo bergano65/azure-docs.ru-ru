@@ -8,10 +8,10 @@ ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: has-adal-ref, devx-track-python
 ms.openlocfilehash: c3262a2802da8dbd50fc05f7aa2fea71623c9b42
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87872197"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-python"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Python
@@ -30,7 +30,7 @@ ms.locfileid: "87872197"
 
 В этой статье рассматриваются оба типа. См. дополнительные сведения о [проверке подлинности между службами в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-service-to-service-authenticate-python.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 

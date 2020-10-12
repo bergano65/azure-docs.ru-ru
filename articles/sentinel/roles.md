@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
 ms.openlocfilehash: b48ff1043ae8128a5cbfdcbba0548d89b5af2624
-ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88565848"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Разрешения в Azure Sentinel
@@ -30,7 +30,7 @@ Azure Sentinel использует [Управление доступом на
 
 ## <a name="roles-for-working-in-azure-sentinel"></a>Роли для работы в Azure Sentinel
 
-### <a name="azure-sentinel-specific-roles"></a>Роли для конкретных маркеров Azure
+### <a name="azure-sentinel-specific-roles"></a>Роли, относящиеся к Azure Sentinel
 
 Существует три выделенных встроенных ролей-маркеров Azure.
 
@@ -80,7 +80,7 @@ Azure Sentinel использует [Управление доступом на
 
 В следующей таблице перечислены роли и разрешенные действия в Azure Sentinel. 
 
-| Роль | Создание и запуск модули PlayBook| Создание и изменение книг, аналитических правил и других ресурсов Sentinel Azure | Управление инцидентами (отклонение, назначение и т. д.) | Просмотр данных, инцидентов, книг и других ресурсов Sentinel Azure |
+| Роль | Создание и запуск сборников схем| Создание и изменение книг, правил аналитики и других ресурсов Azure Sentinel | Управление инцидентами (отклонение, назначение и т. д.) | Просмотр данных, инцидентов, книг и других ресурсов Sentinel Azure |
 |---|---|---|---|---|
 | Читатель Azure Sentinel | -- | -- | -- | &#10003; |
 | Респондент Azure Sentinel | -- | -- | &#10003; | &#10003; |
@@ -93,7 +93,7 @@ Azure Sentinel использует [Управление доступом на
 
 - Вы можете использовать Log Analytics расширенный контроль доступа на основе ролей для данных в рабочей области Sentinel Azure. Сюда входят и RBAC на основе типов данных, и RBAC, ориентированный на ресурсы. Дополнительные сведения о ролях Log Analytics см. [в статье Управление данными и рабочими областями в Azure Monitor](../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как работать с ролями в Azure Sentinel Users и какую роль разрешает выполнять пользователи.
 
