@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/22/2020
 ms.openlocfilehash: 6d0a29d8ef8123eafd6a1616a24003c1e36e6e59
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90905939"
 ---
 # <a name="migrate-your-mysql-database-by-using-import-and-export"></a>Перенос базы данных MySQL с помощью импорта и экспорта
@@ -31,7 +31,7 @@ ms.locfileid: "90905939"
 
 Добавьте сведения о подключении MySQL Workbench.
 
-:::image type="content" source="./media/concepts-migrate-import-export/2_setup-new-connection.png" alt-text="Строка подключения MySQL Workbench":::
+:::image type="content" source="./media/concepts-migrate-import-export/2_setup-new-connection.png" alt-text="Поиск сведений о подключении на портале Azure":::
 
 ## <a name="determine-when-to-use-import-and-export-techniques"></a>Определение необходимости использования методов импорта и экспорта
 
@@ -68,7 +68,7 @@ ms.locfileid: "90905939"
 > - Для гибкого сервера MySQL можно просто использовать "Username" username@servername , если для подключения используется "". Подключение завершится ошибкой.
 
 ### <a name="table-data-export-and-import-wizards-from-the-object-browsers-context-menu"></a>Мастера экспорта и импорта данных таблиц в контекстном меню обозревателя объектов
-:::image type="content" source="./media/concepts-migrate-import-export/p1.png" alt-text="Мастера MySQL Workbench в контекстном меню обозревателя объектов":::
+:::image type="content" source="./media/concepts-migrate-import-export/p1.png" alt-text="Поиск сведений о подключении на портале Azure":::
 
 Мастера для данных таблиц поддерживают операции импорта и экспорта с использованием файлов типа CSV и JSON. В них предусмотрено несколько параметров конфигурации, таких как разделители, выбор столбцов и кодировки. Операции каждого мастера можно выполнять на локальных или удаленно подключенных серверах MySQL. Операция импорта включает сопоставление таблиц, столбцов и типов.
 
@@ -94,7 +94,7 @@ ms.locfileid: "90905939"
 Используйте этот мастер для экспорта или импорта данных SQL, созданных в MySQL Workbench или с помощью команды mysqldump. Получите доступ к этим мастерам в области **Навигатор**, или выбрав **Сервер** в главном меню. Затем выберите **Экспорт данных** или **Импорт данных**.
 
 #### <a name="data-export"></a>Экспорт данных
-:::image type="content" source="./media/concepts-migrate-import-export/p2.png" alt-text="Экспорт данных MySQL Workbench с помощью области навигатора":::
+:::image type="content" source="./media/concepts-migrate-import-export/p2.png" alt-text="Поиск сведений о подключении на портале Azure":::
 
 Используйте вкладку **Экспорт данных** для экспорта данных MySQL.
 1. Выберите все схемы, которые необходимо экспортировать. При необходимости выберите из каждой схемы конкретные объекты или таблицы и выполните экспорт. Параметры конфигурации позволяют выполнить экспорт в папку проекта или в самодостаточный файл SQL, выполните дамп сохраненных процедур и событий или пропустите данные таблицы.
@@ -107,12 +107,12 @@ ms.locfileid: "90905939"
 
 
 #### <a name="data-import"></a>Импорт данных
-:::image type="content" source="./media/concepts-migrate-import-export/p3.png" alt-text="Импорт данных в MySQL Workbench с помощью Management Navigator":::
+:::image type="content" source="./media/concepts-migrate-import-export/p3.png" alt-text="Поиск сведений о подключении на портале Azure":::
 
 Вкладку **Импорт данных** можно использовать для импорта или восстановления экспортированных данных из операции данных или из команды mysqldump.
 1. Выберите папку проекта или самодостаточный файл SQL, выберите схему, в которую будут импортированы данные, или выберите **Создать**, чтобы определить новую схему.
 2. Щелкните **Start Import** (Начать импорт), чтобы начать процесс импорта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о другом способе переноса см. в статье [Перенос базы данных MySQL в базу данных Azure для MySQL с помощью дампа и восстановления](concepts-migrate-dump-restore.md).
 - Дополнительные сведения о переносе баз данных в службу "База данных Azure для MySQL" см. в [этой статье](https://aka.ms/datamigration).

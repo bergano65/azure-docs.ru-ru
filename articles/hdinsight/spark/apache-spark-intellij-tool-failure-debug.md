@@ -10,17 +10,17 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
 ms.openlocfilehash: 052b12817b788ff38f0fab72a5420896b062c732
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82857421"
 ---
 # <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия)
 
 В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij) для запуска приложений **отладки Spark с ошибкой** .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). В этом руководстве используется Java версии 8.0.202.
   
@@ -38,7 +38,7 @@ ms.locfileid: "82857421"
 
 1. Откройте IntelliJ IDEA. Откройте окно **Новый проект** .
 
-   а. На левой панели щелкните **Azure Spark/HDInsight**.
+   a. На левой панели щелкните **Azure Spark/HDInsight**.
 
    b. В главном окне выберите **проект Spark с неудачной отладкой задачи (Предварительная версия) (Scala)** .
 
@@ -50,7 +50,7 @@ ms.locfileid: "82857421"
 
    ![IntelliJ новый проект выберите версию Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-project.png)
 
-   а. Введите имя и расположение проекта.
+   a. Введите имя и расположение проекта.
 
    b. В раскрывающемся списке **пакет SDK для проекта** выберите **Java 1,8** для кластера **Spark 2.3.2** .
 

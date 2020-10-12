@@ -13,10 +13,10 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 02/07/2019
 ms.openlocfilehash: ee218253309995e721c97f4a7f7b4547b32f7c36
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85986647"
 ---
 # <a name="general-purpose-service-tier---azure-sql-database-and-azure-sql-managed-instance"></a>Общего назначения уровня служб — база данных SQL Azure и Azure SQL Управляемый экземпляр
@@ -53,7 +53,7 @@ ms.locfileid: "85986647"
 
 Общего назначения уровня служб — это уровень служб по умолчанию в базе данных SQL Azure и Управляемый экземпляр SQL Azure, предназначенный для большинства универсальных рабочих нагрузок. Если вам требуется полностью управляемое ядро СУБД с соглашением об уровне обслуживания на 99,99% с задержкой хранилища от 5 до 10 мс, которые соответствуют SQL Server на виртуальной машине Azure в большинстве случаев, для вас будет доступен уровень общего назначения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Найдите характеристики ресурсов (количество ядер, операций ввода-вывода, памяти) уровня общего назначения/Standard в [SQL управляемый экземпляр](../managed-instance/resource-limits.md#service-tier-characteristics), отдельной базы данных в [модели Виртуальное ядро](resource-limits-vcore-single-databases.md#general-purpose---provisioned-compute---gen4) или [модели DTU](resource-limits-dtu-single-databases.md#single-database-storage-sizes-and-compute-sizes)или эластичном пуле в модели [Виртуальное ядро](resource-limits-vcore-elastic-pools.md#general-purpose---provisioned-compute---gen4) и [DTU](resource-limits-dtu-elastic-pools.md#standard-elastic-pool-limits).
 - Дополнительные сведения об уровнях [Критически важный для бизнеса](service-tier-business-critical.md) и [Гипермасштабирование](service-tier-hyperscale.md).

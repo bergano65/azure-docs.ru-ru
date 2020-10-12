@@ -9,10 +9,10 @@ ms.date: 10/17/2018
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: 026b7ee6cf8061c7cff25b4f9f8d46b6ec3e6a8d
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89396494"
 ---
 # <a name="configure-ipsec-transport-mode-for-expressroute-private-peering"></a>Настройка транспортного режима IPsec для частного пиринга ExpressRoute
@@ -147,7 +147,7 @@ ms.locfileid: "89396494"
 8. На странице **Параметры особого метода безопасности** выберите **Data integrity and encryption (ESP): SHA1, 3DES** (Целостность данных и шифрование (ESP): SHA1, 3DES). Затем нажмите кнопку **ОК**.
 
    [![22]][22]
-9. На странице **Управление действиями фильтра** вы увидите, что **myEncryption** был успешно добавлен. Щелкните **Закрыть**.
+9. На странице **Управление действиями фильтра** вы увидите, что **myEncryption** был успешно добавлен. Нажмите кнопку **Закрыть**.
 
    [![23]][23]
 

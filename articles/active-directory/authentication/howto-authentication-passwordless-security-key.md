@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e523f8cc3aa9ab2f42d2d28909c9dec2dad30b43
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90526958"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включить вход в систему без пароля (Предварительная версия)
@@ -27,7 +27,7 @@ ms.locfileid: "90526958"
 > [!NOTE]
 > Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные  [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 - [Многофакторная идентификация Azure](howto-mfa-getstarted.md)
 - Разрешить [объединенную предварительную версию регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
@@ -68,7 +68,7 @@ ms.locfileid: "90526958"
 1. Выберите **USB-устройство** или **устройство NFC**.
 1. Получите ключ и нажмите кнопку **Далее**.
 1. Появится окно с просьбой создать или ввести ПИН-код для ключа безопасности, а затем выполнить требуемый жест для ключа — Биометрия или сенсорного ввода.
-1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Нажмите кнопку **Далее**.
+1. Пользователь вернется к объединенному интерфейсу регистрации и попросит ввести понятное имя для ключа, чтобы пользователь мог указать, какой из них имеет несколько. Щелкните **Далее**.
 1. Нажмите кнопку **Готово** , чтобы завершить процесс.
 
 ## <a name="sign-in-with-passwordless-credential"></a>Вход с использованием учетных данных без пароля

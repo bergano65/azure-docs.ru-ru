@@ -7,10 +7,10 @@ ms.date: 3/23/2020
 ms.topic: how-to
 ms.service: notification-hubs
 ms.openlocfilehash: c99af881b8f93b75633741c2352dc5df17dd2963
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80146892"
 ---
 # <a name="use-apns-voip-through-notification-hubs-not-officially-supported"></a>Использование APNS VOIP через центры уведомлений (не поддерживается официально)
@@ -21,7 +21,7 @@ ms.locfileid: "80146892"
 
 Если вы по-прежнему решили отправлять уведомления о передаче данных APNS через концентраторы уведомлений, учитывайте следующие ограничения.
 
-- Для отправки уведомлений VOIP в качестве `apns-topic` заголовка необходимо задать идентификатор набора приложений + `.voip` суффикс. Например, для примера приложения с ИДЕНТИФИКАТОРом пакета `com.microsoft.nhubsample` `apns-topic` необходимо задать для заголовка значение.`com.microsoft.nhubsample.voip.`
+- Для отправки уведомлений VOIP в качестве `apns-topic` заголовка необходимо задать идентификатор набора приложений + `.voip` суффикс. Например, для примера приложения с ИДЕНТИФИКАТОРом пакета `com.microsoft.nhubsample` `apns-topic` необходимо задать для заголовка значение. `com.microsoft.nhubsample.voip.`
 
    Этот метод не работает с центрами уведомлений Azure, так как идентификатор пакета приложения должен быть настроен как часть учетных данных APNS концентратора, и его значение нельзя изменить. Кроме того, центры уведомлений не позволяют `apns-topic` переопределять значение заголовка во время выполнения.
 

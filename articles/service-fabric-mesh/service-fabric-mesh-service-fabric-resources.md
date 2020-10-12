@@ -7,10 +7,10 @@ ms.date: 10/23/2018
 ms.author: vturecek
 ms.custom: mvc, devcenter
 ms.openlocfilehash: a7f25d4156c3d2671e1a15a1253ed7ba22265af0
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91354876"
 ---
 # <a name="introduction-to-service-fabric-resource-model"></a>Общие сведения о модели ресурсов Service Fabric
@@ -78,7 +78,7 @@ ms.locfileid: "91354876"
 Приложения Сетки Service Fabric на основе модели ресурсов упаковываются в виде контейнеров Docker.  Сетка Service Fabric является общей мультитенантной средой, а контейнеры обеспечивают высокий уровень изоляции.  Описываются эти приложения с помощью формата JSON или YAML (который затем преобразуется в формат JSON). При развертывании приложения сетки в сетке Service Fabric Azure JSON, используемый для описания приложения, является шаблоном Azure Resource Manager. Ресурсы сопоставляются с ресурсами Azure.  При развертывании приложения сетки в Service Fabric кластере (изолированном или размещенном в Azure) JSON, используемый для описания приложения, имеет формат, аналогичный шаблону Azure Resource Manager.  После развертывания приложениями Сетки можно управлять с помощью интерфейсов HTTP или Azure CLI. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)
 

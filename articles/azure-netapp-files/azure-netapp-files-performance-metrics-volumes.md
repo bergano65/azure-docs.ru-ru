@@ -8,10 +8,10 @@ ms.workload: storage
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.openlocfilehash: a254465d9055fcf1cf10a2a1d6eb82b2afc16f0b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82692272"
 ---
 # <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Рекомендации по тестам производительности для Azure NetApp Files
@@ -109,7 +109,7 @@ FIO доступен в двоичном формате как для Linux, т�
 
 Вы также можете создать панель мониторинга в Azure Monitor для Azure NetApp Files, перейдя на страницу метрики, отфильтровать NetApp и указав интересующие вас счетчики томов: 
 
-![Панель мониторинга Azure Monitor](../media/azure-netapp-files/azure-netapp-files-benchmark-monitor-dashboard.png)
+![Панель мониторинга Azure Monitor](../media/azure-netapp-files/azure-netapp-files-benchmark-monitor-dashboard.png)
 
 ### <a name="azure-monitor-api-access"></a>Доступ к Azure Monitor API
 

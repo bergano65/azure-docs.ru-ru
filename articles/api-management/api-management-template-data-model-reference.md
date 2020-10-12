@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 868ad3d1c6e7e7ef2cf32dcf675bc471a614f3ed
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86243160"
 ---
 # <a name="azure-api-management-template-data-model-reference"></a>Справочник по модели данных шаблона в службе управления API Azure
@@ -33,12 +33,12 @@ ms.locfileid: "86243160"
 
 -   [API](#API)  
 -   [Сводка по API](#APISummary)  
--   [Приложения](#Application)  
+-   [Приложение](#Application)  
 -   [Вложение](#Attachment)  
 -   [Пример кода](#Sample)  
 -   [Комментарий](#Comment)  
 -   [Фильтрация](#Filtering)  
--   [Заголовок](#Header)  
+-   [Header](#Header)  
 -   [HTTP-запрос](#HTTPRequest)  
 -   [HTTP-ответ](#HTTPResponse)  
 -   [Проблема](#Issue)  
@@ -70,7 +70,7 @@ ms.locfileid: "86243160"
 |`authenticationSettings`|[Параметры проверки подлинности сервера авторизации](/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-contract-reference#AuthenticationSettings)|Коллекция параметров проверки подлинности, входящих в этот API.|  
 |`subscriptionKeyParameterNames`|object|Необязательное свойство, которое может использоваться для указания пользовательских имен для параметров запроса и (или) заголовка, содержащих ключ подписки. Это свойство должно содержать хотя бы одно из двух следующих свойств.<br /><br /> `{   "subscriptionKeyParameterNames":   {     "query": “customQueryParameterName",     "header": “customHeaderParameterName"   } }`|  
   
-##  <a name="api-summary"></a><a name="APISummary"></a>Сводка по API  
+##  <a name="api-summary"></a><a name="APISummary"></a> Сводка по API  
  Сущность `API summary` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -79,7 +79,7 @@ ms.locfileid: "86243160"
 |`name`|строка|Имя API. Не может быть пустым. Максимальная длина составляет 100 символов.|  
 |`description`|строка|Описание API. Не может быть пустым. Может содержать теги форматирования HTML. Максимальная длина составляет 1000 символов.|  
   
-##  <a name="application"></a><a name="Application"></a>Приклад  
+##  <a name="application"></a><a name="Application"></a> Приклад  
  Сущность `application` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -97,7 +97,7 @@ ms.locfileid: "86243160"
 |`Attachments`|коллекция сущностей [Вложение](#Attachment)|Вложения для приложения, например снимки экрана или значки.|  
 |`Icon`|[Вложение](#Attachment)|Значок для приложения.|  
   
-##  <a name="attachment"></a><a name="Attachment"></a>Содержатся  
+##  <a name="attachment"></a><a name="Attachment"></a> Содержатся  
  Сущность `attachment` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -107,7 +107,7 @@ ms.locfileid: "86243160"
 |`Type`|строка|Тип вложения.|  
 |`ContentType`|строка|Тип носителя вложения.|  
   
-##  <a name="code-sample"></a><a name="Sample"></a>Пример кода  
+##  <a name="code-sample"></a><a name="Sample"></a> Пример кода  
   
 |Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
@@ -124,7 +124,7 @@ ms.locfileid: "86243160"
 |`headers`|коллекция сущностей [Заголовок](#Header)|Заголовки для этой операции.|  
 |`parameters`|коллекция сущностей [Параметр](#Parameter)|Параметры, определенные для этой операции.|  
   
-##  <a name="comment"></a><a name="Comment"></a>Метки  
+##  <a name="comment"></a><a name="Comment"></a> Метки  
  Сущность `API` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -134,7 +134,7 @@ ms.locfileid: "86243160"
 |`DeveloperCompany`|строка|Название компании, где работает разработчик.|  
 |`PostedOn`|Дата и время|Дата и время, когда был оставлен комментарий.|  
   
-##  <a name="issue"></a><a name="Issue"></a>Issue  
+##  <a name="issue"></a><a name="Issue"></a> Issue  
  Сущность `issue` имеет следующие свойства.  
   
 |Свойство|Тип|Описание|  
@@ -150,7 +150,7 @@ ms.locfileid: "86243160"
 |`Attachments`|коллекция сущностей [Вложение](api-management-template-data-model-reference.md#Attachment)|Все вложения, добавленные к проблеме.|  
 |`Services`|коллекция сущностей [API](#API)|API, на которые подписан пользователь, отправивший проблему.|  
   
-##  <a name="filtering"></a><a name="Filtering"></a>Записей  
+##  <a name="filtering"></a><a name="Filtering"></a> Записей  
  Сущность `filtering` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -158,7 +158,7 @@ ms.locfileid: "86243160"
 |`Pattern`|строка|Текущий поисковый запрос или `null` при его отсутствии.|  
 |`Placeholder`|строка|Текст, отображаемый в поле поиска, если не указан поисковый запрос.|  
   
-##  <a name="header"></a><a name="Header"></a>Заголовок  
+##  <a name="header"></a><a name="Header"></a> Заголовок  
  В этом разделе описывается представление `parameter`.  
   
 |Свойство|Тип|Описание|  
@@ -171,7 +171,7 @@ ms.locfileid: "86243160"
 |`required`|Логическое|Указывает, требуется ли заголовок.|  
 |`readOnly`|Логическое|Указывает, доступен ли заголовок только для чтения.|  
   
-##  <a name="http-request"></a><a name="HTTPRequest"></a>HTTP-запрос  
+##  <a name="http-request"></a><a name="HTTPRequest"></a> HTTP-запрос  
  В этом разделе описывается представление `request`.  
   
 |Свойство|Тип|Описание|  
@@ -181,7 +181,7 @@ ms.locfileid: "86243160"
 |`parameters`|массив [параметров](#Parameter)|коллекция параметров запросов операций|  
 |`representations`|массив [представлений](#Representation)|коллекция представлений запросов операций|  
   
-##  <a name="http-response"></a><a name="HTTPResponse"></a>HTTP-ответ  
+##  <a name="http-response"></a><a name="HTTPResponse"></a> HTTP-ответ  
  В этом разделе описывается представление `response`.  
   
 |Свойство|Тип|Описание|  
@@ -190,7 +190,7 @@ ms.locfileid: "86243160"
 |`description`|строка|Описание ответа операции.|  
 |`representations`|массив [представлений](#Representation)|коллекция представлений ответов операций|  
   
-##  <a name="operation"></a><a name="Operation"></a>Операцию  
+##  <a name="operation"></a><a name="Operation"></a> Операцию  
  Сущность `operation` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -224,7 +224,7 @@ ms.locfileid: "86243160"
 |`Title`|строка|Описание операции.|  
 |`HttpMethod`|строка|Метод HTTP, используемый для операции.|  
   
-##  <a name="paging"></a><a name="Paging"></a>Просмотра  
+##  <a name="paging"></a><a name="Paging"></a> Просмотра  
  Сущность `paging` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -235,7 +235,7 @@ ms.locfileid: "86243160"
 |`ShowAll`|Логическое|Указывает, следует ли показывать все результаты на одной странице.|  
 |`PageCount`|number|Число страниц с результатами.|  
   
-##  <a name="parameter"></a><a name="Parameter"></a>Параметр  
+##  <a name="parameter"></a><a name="Parameter"></a> Параметр  
  В этом разделе описывается представление `parameter`.  
   
 |Свойство|Тип|Описание|  
@@ -248,7 +248,7 @@ ms.locfileid: "86243160"
 |`kind`|number|Указывает, является ли этот параметр параметром пути (1) или параметром строки запроса (2).|  
 |`typeName`|строка|Тип параметра.|  
   
-##  <a name="product"></a><a name="Product"></a>Продукта  
+##  <a name="product"></a><a name="Product"></a> Продукта  
  Сущность `product` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -261,7 +261,7 @@ ms.locfileid: "86243160"
 |`AllowMultipleSubscriptions`|Логическое|Указывает, может ли пользователь одновременно иметь несколько подписок на этот продукт.|  
 |`MultipleSubscriptionsCount`|number|Максимальное число подписок для этого продукта, которые может иметь пользователь.|  
   
-##  <a name="provider"></a><a name="Provider"></a>Поставщики  
+##  <a name="provider"></a><a name="Provider"></a> Поставщики  
  Сущность `provider` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -270,7 +270,7 @@ ms.locfileid: "86243160"
 |`AuthenticationType`|строка|Тип поставщика (Azure Active Directory, Facebook, учетная запись Google, учетная запись Майкрософт, Twitter).|  
 |`Caption`|строка|Отображаемое имя поставщика.|  
   
-##  <a name="representation"></a><a name="Representation"></a>Значения  
+##  <a name="representation"></a><a name="Representation"></a> Значения  
  В этом разделе описывается `representation`.  
   
 |Свойство|Тип|Описание|  
@@ -325,7 +325,7 @@ ms.locfileid: "86243160"
 |`ProviderName`|строка|Имя поставщика проверки подлинности.|  
 |`IsBasicAccount`|Логическое|Значение true, если эта учетная запись зарегистрирована с использованием электронной почты и пароля. Значение false, если учетная запись зарегистрирована с помощью поставщика.|  
   
-##  <a name="user-sign-in"></a><a name="UseSignIn"></a>Вход пользователя  
+##  <a name="user-sign-in"></a><a name="UseSignIn"></a> Вход пользователя  
  Сущность `user sign in` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  
@@ -343,7 +343,7 @@ ms.locfileid: "86243160"
 |`UserRegistrationTerms`|строка|Условия, которые пользователь должен принять перед входом.|  
 |`UserRegistrationTermsEnabled`|Логическое|Указывает, включены ли условия использования.|  
   
-##  <a name="user-sign-up"></a><a name="UserSignUp"></a>Регистрация пользователя  
+##  <a name="user-sign-up"></a><a name="UserSignUp"></a> Регистрация пользователя  
  Сущность `user sign up` имеет следующие свойства:  
   
 |Свойство|Тип|Описание|  

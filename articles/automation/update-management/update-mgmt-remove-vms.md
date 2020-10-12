@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.custom: mvc
 ms.openlocfilehash: 66631adbb56a98431e70f956f3e860b16e8f7ea2
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89648638"
 ---
 # <a name="remove-vms-from-update-management"></a>Исключение виртуальных машин из Управления обновлениями
@@ -43,6 +43,6 @@ ms.locfileid: "89648638"
 >[!NOTE]
 >Компьютеры по-прежнему отображаются после отмены регистрации, так как мы получаем отчет по всем компьютерам, оцененным за последние 24 часа. После удаления компьютера необходимо подождать 24 часа, прежде чем они перестанут отображаться в списке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы повторно включить управление виртуальной машиной, см. раздел [включение Управление обновлениями, просмотрев портал Azure](update-mgmt-enable-portal.md) или [включите управление обновлениями из виртуальной машины Azure](update-mgmt-enable-vm.md).

@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: aahi
 ms.openlocfilehash: f85a7e2acf911772ecc6562217918352e909fcbb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91254080"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Данные телеметрии и устранение неполадок
 
-Пространственный анализ включает набор функций для мониторинга работоспособности системы и диагностики проблем.
+Пространственный анализ содержит набор функций, позволяющих отслеживать работоспособность системы и диагностировать проблемы.
 
 ## <a name="enable-visualizations"></a>Включение визуализаций
 
@@ -229,7 +229,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 >[!NOTE]
 > При вызове `getRTCVLogs` метода с пустыми полезными данными будет возвращен список всех контейнеров, развернутых на устройстве. Имя метода задается с учетом регистра. Если указано неправильное имя метода, будет выдана ошибка 501.
 
-:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Вызов метода Жетртквлогс ":::
+:::image type="content" source="./media/spatial-analysis/direct-log-collection.png" alt-text="Отчет о телеметрии Azure Monitor":::
 ![страница прямого метода Жетртквлогс](./media/spatial-analysis/direct-log-collection.png)
 
  
@@ -400,13 +400,13 @@ kubectl logs <pod-name> -n <namespace> --all-containers
 
 ### <a name="useful-commands"></a>Полезные команды
 
-|Команда  |Описание  |
+|Get-Help  |Описание  |
 |---------|---------|
 |`Get-HcsKubernetesUserConfig -AseUser`     | Создает файл конфигурации Kubernetes. При использовании команды скопируйте данные в файл с именем *config*. Не сохраняйте файл с расширением.        |
 | `Get-HcsApplianceInfo` | Возвращает сведения о вашем устройстве. |
 | `Enable-HcsSupportAccess` | Создает учетные данные доступа для запуска сеанса поддержки. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание веб-приложения инвентаризации людей](spatial-analysis-web-app.md)
 * [Настройка операций пространственного анализа](./spatial-analysis-operations.md)

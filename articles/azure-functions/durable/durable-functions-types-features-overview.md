@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 35ef9d8731e169e890f5985ce01215fec5d6e3de
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84697713"
 ---
 # <a name="durable-functions-types-and-features"></a>Типы и функции Устойчивые функции
@@ -59,7 +59,7 @@ ms.locfileid: "84697713"
 
 Помимо активации функций Orchestrator или Entity, для взаимодействия с запущенными оркестрации и сущностями можно использовать *устойчивую клиентскую* привязку. Например, оркестрации могут запрашиваться, завершаться и получать события. Дополнительные сведения об управлении согласованиями и сущностями см. в статье [Управление экземплярами](durable-functions-instance-management.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, создайте свою первую устойчивую функцию в [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md).
 
