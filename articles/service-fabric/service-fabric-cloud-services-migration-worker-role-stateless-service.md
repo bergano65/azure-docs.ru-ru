@@ -7,10 +7,10 @@ ms.date: 11/02/2017
 ms.author: vturecek
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 24a411403fc139a7e7fa6644690c57a3b2729bf5
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89002289"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Руководство по преобразованию рабочих ролей и веб-ролей в службы без отслеживания состояния Service Fabric
@@ -44,9 +44,9 @@ ms.locfileid: "89002289"
 | **Точка входа** | **Рабочая роль** | **Служба Service Fabric** |
 | --- | --- | --- |
 | Обработка |`Run()` |`RunAsync()` |
-| Запуск виртуальной машины |`OnStart()` |Н/Д |
-| Остановка виртуальной машины |`OnStop()` |Н/Д |
-| Открытие прослушивателя для запросов клиентов |Н/Д |<ul><li> `CreateServiceInstanceListener()` для служб без отслеживания состояния</li><li>`CreateServiceReplicaListener()` для служб с отслеживанием состояния</li></ul> |
+| Запуск виртуальной машины |`OnStart()` |Недоступно |
+| Остановка виртуальной машины |`OnStop()` |Недоступно |
+| Открытие прослушивателя для запросов клиентов |Недоступно |<ul><li> `CreateServiceInstanceListener()` для служб без отслеживания состояния</li><li>`CreateServiceReplicaListener()` для служб с отслеживанием состояния</li></ul> |
 
 ### <a name="worker-role"></a>Рабочая роль
 ```csharp
@@ -115,8 +115,8 @@ namespace Stateless1
 | Параметры конфигурации и изменение уведомления |`RoleEnvironment` |`CodePackageActivationContext` |
 | Локальное хранилище |`RoleEnvironment` |`CodePackageActivationContext` |
 | Сведения о конечной точке |`RoleInstance` <ul><li>Текущий экземпляр: `RoleEnvironment.CurrentRoleInstance`</li><li>Другие роли и экземпляр: `RoleEnvironment.Roles`</li> |<ul><li>`NodeContext` для адреса текущего узла</li><li>`FabricClient` и `ServicePartitionResolver` для обнаружения конечной точки службы</li> |
-| Эмуляция среды |`RoleEnvironment.IsEmulated` |Н/Д |
-| Событие одновременного изменения |`RoleEnvironment` |Н/Д |
+| Эмуляция среды |`RoleEnvironment.IsEmulated` |Недоступно |
+| Событие одновременного изменения |`RoleEnvironment` |Недоступно |
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Параметры конфигурации в облачных службах задаются для роли виртуальной машины и применяются ко всем экземплярам этой роли. Эти параметры представляют собой пары "ключ — значение", заданные в файлах ServiceConfiguration.*.cscfg. Получить к ним прямой доступ можно через RoleEnvironment. На платформе Service Fabric параметры применяются отдельно к каждой службе и каждому приложению, а не к каждой виртуальной машине. Это обусловлено тем, что на виртуальной машине может быть размещено несколько служб и приложений. Служба состоит из трех пакетов:

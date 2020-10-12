@@ -7,10 +7,10 @@ author: rboucher
 ms.author: robb
 ms.date: 06/16/2020
 ms.openlocfilehash: 462358ab967d4ba26a265d7b5f401b995223815e
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85959848"
 ---
 # <a name="saved-queries-in-azure-monitor-log-analytics"></a>Сохраненные запросы в Azure Monitor Log Analytics
@@ -108,7 +108,7 @@ Log Analytics предлагает наборы примеров запросо�
 
 Интерфейс обозревателя запросов для сохранения и совместного использования созданных пользователем запросов остается неизменным в течение времени.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Начало работы с запросами ККЛ](get-started-queries.md)
 

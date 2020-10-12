@@ -8,10 +8,10 @@ ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: b470fa72518f805c10403931280bdec96bda0fbe
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89226545"
 ---
 # <a name="azure-security-baseline-for-azure-application-gateway"></a>Базовый план безопасности Azure для шлюза приложений Azure
@@ -983,7 +983,7 @@ ms.locfileid: "89226545"
 
 **Руководство**. шлюз приложений Azure не хранит данные клиента. Однако при использовании пользовательских определений политик Azure используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
-Azure DevOps Services использует многие функции службы хранилища Azure для обеспечения доступности данных в случае сбоя оборудования, нарушения работы службы или сбоя в регионе. Кроме того, Группа Azure DevOps соответствует процедурам защиты данных от случайного или вредоносного удаления.
+В Azure DevOps Services используются многие функции службы хранилища Azure для обеспечения доступности данных в случае сбоя оборудования, нарушения работы службы или сбоя в регионе. Кроме того, команда Azure DevOps следует процедурам защиты данных от случайного или злонамеренного удаления.
 
 * [Сведения о доступности данных в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/data-protection?view=azure-devops#data-availability)
 

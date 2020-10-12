@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: duau
 ms.openlocfilehash: dd4c6f0b9d518acf06f7d018a65cc2b9b92db33d
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89395457"
 ---
 # <a name="configure-expressroute-global-reach"></a>Настройка ExpressRoute Global Reach
@@ -124,7 +124,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt_1
 
 После завершения предыдущей операции вы потеряете подключение к локальной сети через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 1. [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 2. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 3. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).

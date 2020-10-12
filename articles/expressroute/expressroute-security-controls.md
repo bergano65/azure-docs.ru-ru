@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/05/2019
 ms.author: duau
 ms.openlocfilehash: 24057de44f3d28df96bcb93e89af9c3afa6fa3c6
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89394913"
 ---
 # <a name="security-controls-for-azure-expressroute"></a>Средства управления безопасностью для Azure ExpressRoute
@@ -51,7 +51,7 @@ ms.locfileid: "89394913"
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт |  Недоступно | ExpressRoute не хранит данные клиента. |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Недоступно |  |
 | Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
-| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Нет | |
+| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование VNet-VNet);| Нет | |
 | Вызовы API в зашифрованном виде| Да | С помощью [Azure Resource Manager](../azure-resource-manager/index.yml) и HTTPS. |
 
 
@@ -61,6 +61,6 @@ ms.locfileid: "89394913"
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да | Через поставщик сетевых ресурсов (NRP). |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

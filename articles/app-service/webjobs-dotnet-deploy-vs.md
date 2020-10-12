@@ -9,10 +9,10 @@ ms.date: 07/30/2020
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
 ms.openlocfilehash: de10903be86b52b3415b57a53be81e7fd1661f63
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89226035"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio"></a>Разработка и развертывание веб-заданий с помощью Visual Studio
@@ -59,7 +59,7 @@ Visual Studio добавляет следующие элементы в прое
 
 ### <a name="enable-webjobs-deployment-for-an-existing-console-app-project"></a><a id="convert"></a> Включение развертывания веб-заданий для существующего проекта консольного приложения
 
-Имеются две возможности.
+У вас есть два варианта:
 
 * [Включение автоматического развертывания с веб-проектом](#convertlink).
 
@@ -107,7 +107,7 @@ Visual Studio добавляет следующие элементы в прое
 > 
 
 #### <a name="use-the-webjobs-new-project-template-for-an-independent-webjob"></a><a id="createnolink"></a> Использование шаблона создания проекта веб-заданий для отдельного веб-задания
-1. Выберите **Файл** > **Создать** > **Проект**. В диалоговом окне **создавайте a New Project (создание проекта** ) найдите и выберите **веб-задание Azure (.NET Framework)** для C#.
+1. Выберите **File** > **New** > **Project** ( Файл > Создать > Проект). В диалоговом окне **создавайте a New Project (создание проекта** ) найдите и выберите **веб-задание Azure (.NET Framework)** для C#.
    
 2. Следуйте приведенным выше инструкциям, чтобы [сделать проект консольного приложения независимым проектом](#convertnolink)веб-заданий.
 
@@ -239,7 +239,7 @@ Visual Studio добавляет следующие элементы в прое
 
 1. Выберите **опубликовать** на вкладке **Публикация** , чтобы повторно опубликовать веб-задание с обновленными параметрами.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Подробнее о пакете SDK веб-заданий](webjobs-sdk-how-to.md)

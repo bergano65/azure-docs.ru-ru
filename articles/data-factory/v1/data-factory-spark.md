@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 3ea719a26f47da98e80abd9e3fcd1785ed8efa69
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82185597"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
@@ -35,7 +35,7 @@ ms.locfileid: "82185597"
 > [!NOTE]
 > Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию службы "Фабрика данных", см. статью о [преобразовании данных с помощью действия Apache Spark в службе "Фабрика данных Azure"](../transform-data-using-spark.md).
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 Действие Spark — это одно из [действий преобразования данных](data-factory-data-transformation-activities.md), которое поддерживает фабрика данных. Это действие запускает указанную программу Spark в кластере Spark в Azure HDInsight.
 
 > [!IMPORTANT]
@@ -118,7 +118,7 @@ ms.locfileid: "82185597"
 
 1. Вставьте следующий фрагмент в окно Draft-1. В редакторе JSON выполните следующие действия.
 
-    а. Укажите URI для кластера HDInsight Spark. Например: `https://<sparkclustername>.azurehdinsight.net/`.
+    a. Укажите URI для кластера HDInsight Spark. Например: `https://<sparkclustername>.azurehdinsight.net/`.
 
     b. Укажите имя пользователя, имеющего доступ к кластеру Spark.
 
@@ -273,7 +273,7 @@ ms.locfileid: "82185597"
 Для дальнейшего устранения неполадок сделайте следующее:
 
 
-1. Перейдите к `https://<CLUSTERNAME>.azurehdinsight.net/yarnui/hn/cluster`.
+1. Перейдите по адресу `https://<CLUSTERNAME>.azurehdinsight.net/yarnui/hn/cluster`.
 
     ![Приложение пользовательского интерфейса YARN](media/data-factory-spark/yarnui-application.png)
 
@@ -332,10 +332,10 @@ ms.locfileid: "82185597"
 | linkedServiceName | Имя связанной службы HDInsight, в которой выполняется программа Spark. | Да |
 | rootPath | Контейнер больших двоичных объектов и папка, содержащая файл Spark. Имя файла чувствительно к регистру. | Да |
 | entryFilePath | Относительный путь к корневой папке пакета и кода Spark. | Да |
-| className | Основной класс Java или Spark приложения. | нет |
+| className | Основной класс Java или Spark приложения. | Нет |
 | аргументы | Список аргументов командной строки для программы Spark. | Нет |
 | proxyUser | Учетная запись пользователя для олицетворения, используемая для выполнения программы Spark. | Нет |
-| sparkConfig | Укажите значения для свойств конфигурации Spark, перечисленных в разделе [свойств приложения документа о конфигурации Spark](https://spark.apache.org/docs/latest/configuration.html#available-properties). | нет |
+| sparkConfig | Укажите значения для свойств конфигурации Spark, перечисленных в разделе [свойств приложения документа о конфигурации Spark](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Нет |
 | getDebugInfo | Указывает, когда файлы журнала Spark копируются в хранилище, используемое кластером HDInsight или определенное sparkJobLinkedService. Допустимые значения: None, Always или Failure. По умолчанию используется None. | Нет |
 | sparkJobLinkedService | Связанная служба хранилища, в которой хранятся файл задания Spark, зависимости и журналы. Если значение этого свойства не указано, используется хранилище, связанное с кластером HDInsight. | Нет |
 
@@ -344,7 +344,7 @@ ms.locfileid: "82185597"
 
 Создайте следующую структуру папок в хранилище BLOB-объектов, на которое ссылается связанная служба HDInsight. Затем передайте зависимые файлы в соответствующие вложенные папки в корневой папке, определенной значением **entryFilePath**. Например, передайте файлы Python во вложенную папку pyFiles, а JAR-файлы — во вложенную папку jars, расположенную в корневой папке. Во время выполнения служба фабрики данных ожидает в хранилище BLOB-объектов следующую структуру папок.
 
-| Path | Описание | Обязательно | Тип |
+| путь | Описание | Обязательно | Тип |
 | ---- | ----------- | -------- | ---- |
 | . | Путь к корневому каталогу задания Spark в хранилище связанной службы. | Да | Папка |
 | &lt;Определяется пользователем&gt; | Путь к файлу записи задания Spark. | Да | Файл |

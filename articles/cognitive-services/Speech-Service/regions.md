@@ -12,10 +12,10 @@ ms.date: 08/20/2020
 ms.author: panosper
 ms.custom: seodec18
 ms.openlocfilehash: b0574c41042e172af78365bb273c81729ce204ab
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88749311"
 ---
 # <a name="speech-service-supported-regions"></a>Регионы, поддерживаемые речевыми службами
@@ -60,7 +60,7 @@ ms.locfileid: "88749311"
 | Северная Америка | Центрально-южная часть США | `southcentralus`     |
 | Северная Америка | центрально-западная часть США  | `westcentralus`      |
 | Северная Америка | западная часть США          | `westus`             |
-| Северная Америка | Западная часть США 2        | `westus2`            |
+| Северная Америка | западная часть США 2        | `westus2`            |
 | Южная Америка | Южная Бразилия     | `brazilsouth`        |
 
 Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](/azure/cognitive-services/luis/luis-reference-regions).
@@ -79,7 +79,7 @@ ms.locfileid: "88749311"
 | Северная Европа   | `northeurope`        |
 | Юго-Восточная Азия | `southeastasia`      |
 
-### <a name="speaker-recognition"></a>API Распознавания говорящего
+### <a name="speaker-recognition"></a>Распознавание говорящего
 
 Распознавание говорящего в настоящее время доступно только в `westus` регионе.
 

@@ -14,10 +14,10 @@ caps.latest.revision: 17
 author: tgore03
 ms.author: tagore
 ms.openlocfilehash: e53c10395ec3168e656633cc43fb2d01902209fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "79534734"
 ---
 # <a name="azure-cloud-services-definition-networktrafficrules-schema"></a>Схема NetworkTrafficRules определения облачных служб Azure
@@ -64,7 +64,7 @@ ms.locfileid: "79534734"
 
 [Элемент FromRole](#FromRole)
 
-##  <a name="networktrafficrules-element"></a><a name="NetworkTrafficRules"></a>NetworkTrafficRules, элемент
+##  <a name="networktrafficrules-element"></a><a name="NetworkTrafficRules"></a> NetworkTrafficRules, элемент
 Элемент `NetworkTrafficRules` определяет роли, которые могут обмениваться данными с определенной конечной точкой в другой роли. Служба может содержать одно определение `NetworkTrafficRules`.
 
 ##  <a name="onlyallowtrafficto-element"></a><a name="OnlyAllowTrafficTo"></a> Элемент OnlyAllowTrafficTo
@@ -73,32 +73,32 @@ ms.locfileid: "79534734"
 ##  <a name="destinations-element"></a><a name="Destinations"></a> Элемент Destinations
 Элемент `Destinations` описывает коллекцию элементов RoleEndpoint, с которыми можно обмениваться данными.
 
-##  <a name="roleendpoint-element"></a><a name="RoleEndpoint"></a>RoleEndpoint, элемент
+##  <a name="roleendpoint-element"></a><a name="RoleEndpoint"></a> RoleEndpoint, элемент
 Элемент `RoleEndpoint` описывает конечную точку в роли, с которой можно обмениваться данными. Можно указать несколько элементов `RoleEndpoint`, если в роли существует несколько конечных точек.
 
 | attribute      | Тип     | Описание |
 | -------------- | -------- | ----------- |
-| `endpointName` | `string` | Обязательный. Имя конечной точки, к которой разрешается трафик.|
-| `roleName`     | `string` | Обязательный. Имя веб-роли, с которой разрешается обмен данными.|
+| `endpointName` | `string` | Обязательный элемент. Имя конечной точки, к которой разрешается трафик.|
+| `roleName`     | `string` | Обязательный элемент. Имя веб-роли, с которой разрешается обмен данными.|
 
 ## <a name="allowalltraffic-element"></a>Элемент AllowAllTraffic
 Элемент `AllowAllTraffic` — это правило, которое разрешает всем ролям обмениваться данными с конечными точками, определенными в узле `Destinations`.
 
-##  <a name="whensource-element"></a><a name="WhenSource"></a>WhenSource, элемент
+##  <a name="whensource-element"></a><a name="WhenSource"></a> WhenSource, элемент
 Элемент `WhenSource` описывает коллекцию ролей, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`.
 
 | attribute | Тип     | Описание |
 | --------- | -------- | ----------- |
-| `matches` | `string` | Обязательный. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
+| `matches` | `string` | Обязательный элемент. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
   
-##  <a name="fromrole-element"></a><a name="FromRole"></a>FromRole, элемент
+##  <a name="fromrole-element"></a><a name="FromRole"></a> FromRole, элемент
 Элемент `FromRole` указывает роли, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`. Можно указать несколько элементов `FromRole`, если существует несколько ролей, которые могут обмениваться данными с конечными точками.
 
 | attribute  | Тип     | Описание |
 | ---------- | -------- | ----------- |
-| `roleName` | `string` | Обязательный. Имя роли, из которой разрешается обмен данными.|
+| `roleName` | `string` | Обязательный элемент. Имя роли, из которой разрешается обмен данными.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
 
 

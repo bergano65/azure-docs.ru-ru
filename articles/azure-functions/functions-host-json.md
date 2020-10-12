@@ -4,10 +4,10 @@ description: Справочная документация по файлу host.
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.openlocfilehash: 400ff6f9db421552b2b2736ea48265deefe676ac
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91321855"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Справочник по host.json для Функций Azure 2.x и более поздних версий 
@@ -147,13 +147,13 @@ ms.locfileid: "91321855"
 
 | Свойство | По умолчанию | Описание |
 | --------- | --------- | --------- | 
-| самплингсеттингс | Н/Д | См. раздел [applicationInsights. самплингсеттингс](#applicationinsightssamplingsettings). |
+| самплингсеттингс | Недоступно | См. раздел [applicationInsights. самплингсеттингс](#applicationinsightssamplingsettings). |
 | енаблеливеметрикс | Да | Включает сбор динамических метрик. |
 | енабледепенденцитраккинг | Да | Включает отслеживание зависимостей. |
 | енаблеперформанцекаунтерсколлектион | Да | Включает сбор счетчиков производительности KUDU. |
 | ливеметриксинитиализатионделай | 00:00:15 | Только для внутреннего использования. |
-| хттпаутоколлектионоптионс | Н/Д | См. раздел [applicationInsights. хттпаутоколлектионоптионс](#applicationinsightshttpautocollectionoptions). |
-| снапшотконфигуратион | Н/Д | См. раздел [applicationInsights. снапшотконфигуратион](#applicationinsightssnapshotconfiguration). |
+| хттпаутоколлектионоптионс | Недоступно | См. раздел [applicationInsights. хттпаутоколлектионоптионс](#applicationinsightshttpautocollectionoptions). |
+| снапшотконфигуратион | Недоступно | См. раздел [applicationInsights. снапшотконфигуратион](#applicationinsightssnapshotconfiguration). |
 
 ### <a name="applicationinsightssamplingsettings"></a>applicationInsights. Самплингсеттингс
 
@@ -310,9 +310,9 @@ ms.locfileid: "91321855"
 |Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Определяет, какой уровень журнала файла включен.  Доступны следующие параметры: `never`, `always` и `debugOnly`. |
-|LogLevel|Н/Д|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версии 2. x и более поздние следуют за разметкой ASP.NET Core для фильтрации категорий журнала. Этот параметр позволяет фильтровать ведение журнала для конкретных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
-|console|Н/Д| Параметр ведения журнала [консоли](#console). |
-|applicationInsights|Н/Д| Параметр [applicationInsights](#applicationinsights). |
+|LogLevel|Недоступно|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версии 2. x и более поздние следуют за разметкой ASP.NET Core для фильтрации категорий журнала. Этот параметр позволяет фильтровать ведение журнала для конкретных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
+|console|Недоступно| Параметр ведения журнала [консоли](#console). |
+|applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
 
 ## <a name="console"></a>console
 
@@ -380,7 +380,7 @@ ms.locfileid: "91321855"
 |listenerLockPeriod|00:01:00|Период времени, на который применяются блокировки прослушивателя.| 
 |listenerLockRecoveryPollingInterval|00:01:00|Интервал времени, используемый для восстановления блокировки прослушивателя, если блокировку прослушивателя не удалось получить при запуске.| 
 |lockAcquisitionTimeout|00:01:00|Максимальный период времени, за который среда выполнения будет пытаться получить блокировку.| 
-|lockAcquisitionPollingInterval|Н/Д|Интервал между попытками получения блокировки.| 
+|lockAcquisitionPollingInterval|Недоступно|Интервал между попытками получения блокировки.| 
 
 ## <a name="version"></a>version
 
@@ -413,7 +413,7 @@ ms.locfileid: "91321855"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Узнайте, как обновить файл host.json](functions-reference.md#fileupdate)

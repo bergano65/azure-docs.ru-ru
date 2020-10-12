@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/24/2020
 ms.author: yelevin
 ms.openlocfilehash: 5c67f517ffd3704644fbe8041f3ac1e7b0d1f09c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90904554"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Подключение данных из Microsoft Cloud App Security 
@@ -57,7 +57,7 @@ ms.locfileid: "90904554"
 >
 > Так как данные Cloud Discovery объединяются в один день, имейте в виду, что до 24 часов последние данные не будут отражены в Azure Sentinel. В случае, если исследование низкого уровня требует более немедленных данных, оно должно выполняться непосредственно в исходном устройстве или в службе, где хранятся необработанные данные.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить Microsoft Cloud App Security к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Приступите к обнаружению угроз с помощью Azure Sentinel, используя [встроенные](tutorial-detect-threats.md) или [Настраиваемые](tutorial-detect-threats-custom.md) правила.

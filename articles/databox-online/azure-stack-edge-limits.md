@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: 5f3c39ce7334145d3ffc1d54badb1f7b766da70f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90904454"
 ---
 # <a name="azure-stack-edge-pro-limits"></a>Ограничения Azure Stack Edge Pro
@@ -51,6 +51,6 @@ ms.locfileid: "90904454"
 
 [!INCLUDE [data-box-edge-gateway-storage-object-limits](../../includes/data-box-edge-gateway-storage-object-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подготовка к развертыванию Azure Stack пограничных Pro](azure-stack-edge-deploy-prep.md)
