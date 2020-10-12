@@ -11,17 +11,17 @@ ms.topic: reference
 ms.date: 08/06/2020
 ms.author: swmachan
 ms.openlocfilehash: 59e064dc2b9d33bda966eb50544c8383b0394dd3
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89566608"
 ---
 # <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>URL-адрес запроса
+## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -106,12 +106,12 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   <th width="20%">Заголовки</th>
   <th>Описание</th>
   <tr>
-    <td>Заголовки проверки подлинности</td>
+    <td>Заголовки для проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
     <td>Content-Type</td>
-    <td><em>Обязательный заголовок запроса</em>.<br/>Указывает тип содержимого для полезных данных.<br/> Принятое значение — <code>application/json; charset=UTF-8</code> .</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/>Указывает тип содержимого для полезных данных.<br/> Допустимое значение: <code>application/json; charset=UTF-8</code>.</td>
   </tr>
   <tr>
     <td>Content-Length</td>
@@ -551,4 +551,4 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 ]
 ```
 
-Эта возможность работает одинаково как с `textType=text`, так и с `textType=html`. Компонент должен использоваться только в случае необходимости. Соответствующий и гораздо лучший способ настройки перевода — это использование концентратора Custom Translator. Custom Translator обеспечивает полное использование контекста и статистические значения вероятности. Если вы имеете или можете позволить себе создавать учебные данные, которые показывают вашу работу или фразу в контексте, вы получите гораздо лучшие результаты. [Узнайте больше о Custom Translator](../customization.md).
+Эта возможность работает одинаково как с `textType=text`, так и с `textType=html`. Компонент должен использоваться только в случае необходимости. Соответствующий и гораздо лучший способ настройки перевода — это использование концентратора Custom Translator. Custom Translator обеспечивает полное использование контекста и статистические значения вероятности. Если вы имеете или можете позволить себе создавать учебные данные, которые показывают вашу работу или фразу в контексте, вы получите гораздо лучшие результаты. Дополнительные [сведения о пользовательском трансляторе](../customization.md).

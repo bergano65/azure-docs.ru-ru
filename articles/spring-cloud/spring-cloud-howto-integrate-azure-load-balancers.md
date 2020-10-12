@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 04/20/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: 02772f153cdda7e3f3c866c727d589e755e19033
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90906935"
 ---
 # <a name="integrate-azure-spring-cloud-with-azure-load-balance-solutions"></a>Интеграция Azure Spring Cloud с решениями Azure для распределения нагрузки
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Azure Веснное облако поддерживает микрослужбы в Azure.  Для повышения бизнеса может потребоваться несколько центров обработки данных с управлением несколькими экземплярами Azure Веснного облака.
 
@@ -91,7 +91,7 @@ Azure уже предоставляет различные решения бал
 
     ![Передняя дверь 2](media/spring-cloud-load-balancers/front-door-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание диспетчера трафика](https://docs.microsoft.com/azure/traffic-manager/quickstart-create-traffic-manager-profile/)
 * [Создание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
 * [Создание передней дверцы](https://docs.microsoft.com/azure/frontdoor/quickstart-create-front-door)

@@ -8,13 +8,13 @@ ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
 ms.openlocfilehash: 2bf48b6808fccb1f4344e66a2b8f1fc2d4c52ef6
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89322455"
 ---
-# <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, почему данные с устройств не отображаются в Azure IoT Central
+# <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, при которых данные с устройств не отображаются в Azure IoT Central
 
 Этот документ помогает разработчикам устройств узнать, почему данные, отправляемые их устройствами, IoT Central могут не отображаться в приложении.
 
@@ -203,13 +203,13 @@ tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601
 
 Если вы предпочитаете использовать графический интерфейс пользователя, используйте IoT Central представление **необработанных данных** , чтобы определить, не моделируется ли что-либо. Представление " **необработанные данные** " не обнаруживает, отправляет ли устройство неверно сформированный код JSON.
 
-:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления необработанные данные":::
+:::image type="content" source="media/troubleshoot-connection/raw-data-view.png" alt-text="Снимок экрана представления &quot;необработанные данные&quot;":::
 
 После обнаружения проблемы может потребоваться обновить встроенное по устройства или создать новый шаблон устройства, моделирующий ранее несмоделированные данные.
 
 Если вы решили создать новый шаблон, который моделирует данные правильно, перенесите устройства из старого шаблона в новый шаблон. Дополнительные сведения см. в статье [Управление устройствами в приложении IOT Central Azure](howto-manage-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам нужна дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, вы можете отправить запрос в [службу поддержки Azure](https://portal.azure.com/#create/Microsoft.Support).
 

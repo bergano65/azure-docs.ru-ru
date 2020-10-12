@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: cd7496690ec88fbe4297386c32d1b8a2c3234577
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540767"
 ---
 # <a name="customize-feed-for-windows-virtual-desktop-classic-users"></a>Настройка веб-канала для пользователей виртуальных рабочих столов Windows (классические)
@@ -37,7 +37,7 @@ Get-RdsRemoteApp -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGroup
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с именем и FriendlyName, выделенным для настройки отображаемого имени.](../media/get-rdsremoteapp.png)
+> ![Снимок экрана командлета PowerShell Get-RDSRemoteApp с именем и FriendlyName, выделенными для настройки отображаемого имени.](../media/get-rdsremoteapp.png)
 
 Чтобы назначить понятное имя RemoteApp, выполните следующий командлет PowerShell:
 
@@ -46,7 +46,7 @@ Set-RdsRemoteApp -TenantName <tenantname> -HostPoolName <hostpoolname> -AppGroup
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и с новым FriendlyName, выделенным для настройки отображаемого имени.](../media/set-rdsremoteapp.png)
+> ![Снимок экрана командлета PowerShell Set-RDSRemoteApp с именем и новым параметром FriendlyName, выделенным для настройки отображаемого имени.](../media/set-rdsremoteapp.png)
 
 ## <a name="customize-the-display-name-for-a-remote-desktop"></a>Настройка отображаемого имени для удаленный рабочий стол
 
@@ -59,7 +59,7 @@ Get-RdsRemoteDesktop -TenantName <tenantname> -HostPoolName <hostpoolname> -AppG
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](../media/get-rdsremotedesktop.png)
+> ![Снимок экрана командлета PowerShell Get-RDSRemoteApp с выделенным именем и FriendlyName.](../media/get-rdsremotedesktop.png)
 
 Чтобы назначить понятное имя ресурсу удаленного рабочего стола, выполните следующий командлет PowerShell:
 
@@ -68,9 +68,9 @@ Set-RdsRemoteDesktop -TenantName <tenantname> -HostPoolName <hostpoolname> -AppG
 ```
 
 > [!div class="mx-imgBorder"]
-> ![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и новым FriendlyName.](../media/set-rdsremotedesktop.png)
+> ![Снимок экрана командлета PowerShell Set-RDSRemoteApp с именем и другим выделенным FriendlyName.](../media/set-rdsremotedesktop.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы настроили веб-канал для пользователей, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его. Для этого перейдите к инструкциям по подключению к виртуальному рабочему столу Windows.
 

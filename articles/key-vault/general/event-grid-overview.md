@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 1ee38196f0b1a6e00d385dc0d2c88d45a4291d3b
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90087442"
 ---
 # <a name="monitoring-key-vault-with-azure-event-grid"></a>мониторингу Key Vault с помощью службы "Сетка событий Azure"
@@ -42,9 +42,9 @@ Key Vault интеграция с сеткой событий позволяет
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Обзор Azure Key Vault](overview.md)
+- [Общие сведения об Azure Key Vault](overview.md)
 - [Обзор службы "Сетка событий Azure"](../../event-grid/overview.md)
 - Как [перенаправлять Key Vault события в модуль Runbook службы автоматизации](event-grid-tutorial.md).
 - Руководство. [Получение сообщения электронной почты при изменении секрета в хранилище ключей](event-grid-logicapps.md)
-- [Схема событий службы "Сетка событий Azure" для Azure Key Vault](../../event-grid/event-schema-key-vault.md)
+- [Схема событий Сетки событий Azure для Azure Key Vault](../../event-grid/event-schema-key-vault.md)
 - [Обзор службы автоматизации Azure](../../automation/index.yml)

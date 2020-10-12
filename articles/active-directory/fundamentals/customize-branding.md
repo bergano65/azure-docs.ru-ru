@@ -14,10 +14,10 @@ ms.reviewer: kexia
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 04e1d35ab17a49dd1c4e9bd2bd19289de2b8658a
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89565860"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Добавление фирменной символики организации на страницу входа в Azure Active Directory
@@ -113,7 +113,7 @@ ms.locfileid: "89565860"
 
 3. На странице **Настройка корпоративной фирменной символики** добавьте, удалите или измените данные в соответствии с описанием в разделе [Настройка страницы входа в Azure AD](#customize-your-azure-ad-sign-in-page) этой статьи.
 
-4. Выберите **Сохранить**.
+4. Щелкните **Сохранить**.
 
    Применение каких-либо изменений фирменной символики страницы входа может занять до одного часа.
 
@@ -130,7 +130,7 @@ ms.locfileid: "89565860"
 
 3. На странице **Настройка корпоративной фирменной символики** выберите язык (например, французский) и добавьте переведенные сведения в соответствии с описанием в разделе [Настройка страницы входа в Azure AD](#customize-your-azure-ad-sign-in-page) этой статьи.
 
-4. Выберите **Сохранить**.
+4. Щелкните **Сохранить**.
 
     Страница **Contoso — Корпоративная фирменная символика** обновится, чтобы отобразить новую конфигурацию на французском языке.
 

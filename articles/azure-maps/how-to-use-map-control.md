@@ -10,10 +10,10 @@ services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
 ms.openlocfilehash: 19db4fb0d75369a0f272eef1180e86f47d45d284
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335336"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой в Azure Maps
@@ -254,14 +254,14 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
 ## <a name="javascript-frameworks"></a>Платформы JavaScript
 
-При разработке с использованием платформы JavaScript может оказаться полезным один из следующих проектов с открытым исходным кодом:
+Для разработки с использованием платформы JavaScript может оказаться полезным один из следующих проектов с открытым исходным кодом:
 
-- [NG-Azure-Maps](https://github.com/arnaudleclerc/ng-azure-maps) -угловой 10 оболочка для карт Azure.
-- [Азуремапсконтрол. Components](https://github.com/arnaudleclerc/AzureMapsControl.Components) — компонент Azure Maps блазор.
-- [Azure Maps реагирующий компонент](https://github.com/WiredSolutions/react-azure-maps) — обертка для элемента управления Azure Maps.
-- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
+- [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps) — это программа-оболочка Angular 10 для Azure Maps.
+- [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components) — компонент Azure Maps Blazor.
+- [Компонент React Azure Maps](https://github.com/WiredSolutions/react-azure-maps) — программа-оболочка React для управления Azure Maps.
+- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как создавать и взаимодействовать с картой:
 

@@ -1,7 +1,7 @@
 ---
-title: 'Дерево решений, увеличивающееся двумя классами: ссылка на модуль'
+title: 'Two-Class увеличивающееся дерево решений: ссылка на модуль'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль высококлассного дерева решений с двумя классами в Машинное обучение Azure для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений.
+description: Узнайте, как использовать модуль Two-Class повышенного дерева принятия решений в Машинное обучение Azure для создания модели машинного обучения на основе алгоритма повышенного дерева принятия решений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,13 +10,13 @@ author: likebupt
 ms.author: keli19
 ms.date: 08/24/2020
 ms.openlocfilehash: 833caa0cf264fb49d8b32255f429132cd888c6c0
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90907731"
 ---
-# <a name="two-class-boosted-decision-tree-module"></a>Модуль высококлассного дерева принятия решений с двумя классами
+# <a name="two-class-boosted-decision-tree-module"></a>Модуль "Two-Class повышенного дерева принятия решений"
 
 В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 

@@ -8,10 +8,10 @@ ms.date: 2/20/2020
 ms.author: fauhse
 ms.subservice: files
 ms.openlocfilehash: 16b9342f0374377349f338db7ce5c8389c77ea18
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87425106"
 ---
 На этом шаге вы оцениваете количество необходимых файловых ресурсов Azure. Один экземпляр Windows Server (или кластер) может синхронизировать до 30 файловых ресурсов Azure.

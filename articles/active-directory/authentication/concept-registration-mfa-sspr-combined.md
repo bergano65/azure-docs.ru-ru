@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4afc5e554e72fc2ab78173368930b2e5317bce7
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88718923"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Общие сведения о общей регистрации безопасности для Azure Active Directory
@@ -51,7 +51,7 @@ ms.locfileid: "88718923"
 
 Объединенная регистрация поддерживает следующие методы и действия проверки подлинности:
 
-| Метод | Зарегистрировать | Change | Удалить |
+| Метод | Зарегистрировать | Change | DELETE |
 | --- | --- | --- | --- |
 | Microsoft Authenticator | Да (максимум 5) | Нет | Да |
 | Другое приложение для проверки подлинности | Да (максимум 5) | Нет | Да |
@@ -59,7 +59,7 @@ ms.locfileid: "88718923"
 | Телефон | Да | Да | Да |
 | Дополнительный телефон | Да | Да | Да |
 | Рабочий телефон | Нет | Нет | Нет |
-| Адрес электронной почты | Да | Да | Да |
+| Email | Да | Да | Да |
 | Контрольные вопросы | Да | Нет | Да |
 | Пароли приложений | Да | Нет | Да |
 | Ключи безопасности FIDO2<br />*Управляемый режим только на странице [сведений о безопасности](https://mysignins.microsoft.com/security-info)*| Да | Да | Да |
@@ -140,7 +140,7 @@ ms.locfileid: "88718923"
 
 Пользователь, который ранее настроил по крайней мере один метод, который можно использовать для многофакторной проверки подлинности, переходит к [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . Пользователь изменяет текущий метод по умолчанию на другой метод по умолчанию. По завершении пользователь увидит новый метод по умолчанию на странице сведений о безопасности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, ознакомьтесь с учебниками, чтобы [включить самостоятельный сброс пароля](tutorial-enable-sspr.md) и [включить многофакторную идентификацию Azure](tutorial-enable-azure-mfa.md).
 

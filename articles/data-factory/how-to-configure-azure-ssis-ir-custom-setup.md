@@ -13,10 +13,10 @@ ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 09/28/2020
 ms.openlocfilehash: 4ef569864b27eff7f57aa2b0a922034fa28f587c
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91405247"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
@@ -347,7 +347,7 @@ ms.locfileid: "91405247"
 
 1. После завершения стандартной пользовательской установки и запуска Azure-SSIS IR можно найти все журналы настраиваемой установки в папке *Main. cmd. log* контейнера. Они включают стандартные выходные данные файла *Main. cmd* и другие журналы выполнения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка выпуска Enterprise Azure-SSIS IR](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных компонентов для Azure-SSIS IR](how-to-develop-azure-ssis-ir-licensed-components.md)

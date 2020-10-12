@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2020
 ms.author: kumud
 ms.openlocfilehash: 15fe5d6d16948875253d65e70d9d440214a4a2e8
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87286110"
 ---
 # <a name="add-change-or-delete-a-virtual-network-subnet"></a>Создание, изменение или удаление виртуальной сети
@@ -61,7 +61,7 @@ ms.locfileid: "87286110"
 
 ### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) |
 | PowerShell | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) |
@@ -78,7 +78,7 @@ ms.locfileid: "87286110"
 
 5. На странице подсеть измените любые из следующих параметров.
 
-    | Параметр | Описание: |
+    | Параметр | Описание |
     | --- | --- |
     | **Диапазон адресов** | Если в подсети не развернуты ресурсы, вы можете изменить диапазон адресов. Если в подсети имеются какие-либо ресурсы, необходимо удалить их или переместить в другую подсеть. Процедура удаления или перемещения ресурса зависит от его типа. Чтобы узнать, как перемещать или удалять ресурсы в подсетях, ознакомьтесь с документацией по каждому из этих типов ресурсов. См. ограничения для **диапазона адресов** на шаге 4 в разделе [Добавление подсети](#add-a-subnet). |
     | **Пользователи** | Вы можете управлять доступом к подсети, используя встроенные роли или собственные настраиваемые роли. Дополнительные сведения о назначении ролей и пользователей для доступа к подсети см. в разделе [Добавление назначения ролей](../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-role-assignment). |
@@ -90,7 +90,7 @@ ms.locfileid: "87286110"
 
 ### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) |
 | PowerShell | [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig) |
@@ -111,7 +111,7 @@ ms.locfileid: "87286110"
 
 ### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Инструмент | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ сетевая подсеть vnet удаление](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-delete) |
 | PowerShell | [Remove-Азвиртуалнетворксубнетконфиг](/powershell/module/az.network/remove-azvirtualnetworksubnetconfig?toc=%2fazure%2fvirtual-network%2ftoc.json) |
@@ -120,7 +120,7 @@ ms.locfileid: "87286110"
 
 Чтобы выполнять задачи в подсетях, учетной записи должна быть назначена [роль "участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) " или [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) , которой назначены соответствующие действия в следующей таблице:
 
-|Действие                                                                   |   Имя                                       |
+|Действие                                                                   |   name                                       |
 |-----------------------------------------------------------------------  |   -----------------------------------------  |
 |Microsoft.Network/virtualNetworks/subnets/read                           |   Чтение подсети виртуальной сети              |
 |Microsoft.Network/virtualNetworks/subnets/write                          |   Создание или обновление подсети виртуальной сети  |
@@ -129,7 +129,7 @@ ms.locfileid: "87286110"
 |Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action  |   Включение конечной точки службы для подсети     |
 |Microsoft.Network/virtualNetworks/subnets/virtualMachines/read           |   Получение виртуальных машин в подсети       |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создание виртуальной сети и подсетей с помощью образцов скриптов [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md)
 - Создание и назначение [определений политик Azure](policy-samples.md) для виртуальных сетей

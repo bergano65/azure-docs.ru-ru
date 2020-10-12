@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.date: 07/31/2018
 ms.author: bikang
 ms.openlocfilehash: 7d361d44c349bc7a6e3c041f78d00ad66182fa15
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84711040"
 ---
 # <a name="manage-an-azure-service-fabric-application-by-using-azure-service-fabric-cli-sfctl"></a>Управление приложениями Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric (sfctl)
 
 Узнайте, как создавать и удалять приложения, выполняющиеся в кластере Azure Service Fabric.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите интерфейс командной строки Service Fabric и выберите кластер Service Fabric. Дополнительные сведения см. в статье [Azure Service Fabric command line](service-fabric-cli.md) (Интерфейс командной строки Azure Service Fabric).
 
@@ -162,7 +162,7 @@ sfctl application upgrade --app-id TestApp --app-version 2.0.0 --parameters "{\"
 
 Наконец, если идет обновление и его необходимо отменить, можно использовать команду `sfctl application upgrade-rollback`, чтобы выполнить откат обновления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Service Fabric command line](service-fabric-cli.md) (Командная строка Azure Service Fabric)
 * [Подготовка среды разработки в Linux](service-fabric-get-started-linux.md)

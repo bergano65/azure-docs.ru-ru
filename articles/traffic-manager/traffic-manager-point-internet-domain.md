@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 10/11/2016
 ms.author: duau
 ms.openlocfilehash: 93a8076f12b8f006d600cbd32ce39169f4b47c67
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89392601"
 ---
 # <a name="point-a-company-internet-domain-to-an-azure-traffic-manager-domain"></a>Указание домена диспетчера трафика для интернет-домена компании.
@@ -30,7 +30,7 @@ ms.locfileid: "89392601"
 > [!IMPORTANT]
 > Нельзя направить домен второго уровня, например *contoso.com*, в домен диспетчера трафика. Стандарты протокола DNS не позволяют использовать записи CNAME для имен домена второго уровня.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Методы маршрутизации диспетчера трафика](traffic-manager-routing-methods.md)
 * [Диспетчер трафика — включение, отключение или удаление профиля диспетчера трафика](disable-enable-or-delete-a-profile.md)

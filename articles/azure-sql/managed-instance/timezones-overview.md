@@ -12,10 +12,10 @@ ms.author: mlandzic
 ms.reviewer: ''
 ms.date: 05/25/2020
 ms.openlocfilehash: fc1532fab23ec520722ea71d814496e786b91651
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91617933"
 ---
 # <a name="time-zones-in-azure-sql-managed-instance"></a>Часовые пояса в Azure SQL Управляемый экземпляр
@@ -34,7 +34,7 @@ ms.locfileid: "91617933"
 
 [Политика смены часовых поясов с переходом на летнее время](https://aka.ms/time) гарантирует историческую точность от 2010 вперед.
 
-Список с именами поддерживаемых часовых поясов доступен через системное представление [sys. time_zone_info](/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql) .
+Список с именами поддерживаемых часовых поясов предоставляется через системное представление [sys.time_zone_info](/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql) .
 
 ## <a name="set-a-time-zone"></a>Задание часового пояса
 
@@ -144,7 +144,7 @@ ms.locfileid: "91617933"
 | Сен-Пьер (зима) | (UTC-03:00) Сен-Пьер и Микелон |
 | Баияское время (зима) | (UTC-03:00) -Сальвадор |
 | UTC-02 | (UTC-02:00) Время в формате UTC — 02 |
-| Середина-Атлантическое время (зима) | (UTC-02:00) Середина-Атлантическое-старое |
+| Mid-Atlantic стандартное время | (UTC-02:00) Mid-Atlantic-Old |
 | Азорские острова (зима) | (UTC-01:00) Острова |
 | Кабо — стандартное время | (UTC-01:00) Кабо-Верде. |
 | Формат UTC. | (UTC) Время в формате UTC |
@@ -199,7 +199,7 @@ ms.locfileid: "91617933"
 | Омскское время (зима) | (UTC + 06:00) Омск |
 | Мьянма (зима) | (UTC + 06:30) Янгон (Рангун) |
 | Юго-Восточная Азия (зима) | (UTC + 07:00) Бангкок, Ханой, Джакарта |
-| Алтайскоеское время (зима) | (UTC + 07:00) Барнаул, Горно — Алтайск |
+| Алтайскоеское время (зима) | (UTC + 07:00) Барнаул, Gorno-Altaysk |
 | Ц. Монголия (зима) | (UTC + 07:00) Ховд |
 | Северная Азия (зима) | (UTC + 07:00) Красноярск |
 | О. Центральная Азия (зима) | (UTC + 07:00) Новосибирск |
@@ -230,20 +230,20 @@ ms.locfileid: "91617933"
 | Норфолк (зима) | (UTC + 11:00) Остров Норфолк |
 | Сахалинское время (зима) | (UTC + 11:00) Сахалин |
 | Центральное тихоокеанское время (зима) | (UTC + 11:00) Нов., Новая Каледония |
-| Россия, часовой пояс 11 | (UTC + 12:00) Анадырь, Петропавловск-Камчатский |
+| Россия, часовой пояс 11 | (UTC + 12:00) Анадырь, Petropavlovsk-Kamchatsky |
 | Новая Зеландия (зима) | (UTC + 12:00) Веллингтон |
 | UTC + 12 | (UTC + 12:00) Время в формате UTC + 12 |
 | Фиджи (зима) | (UTC + 12:00) Фиджи |
-| Камчатка (зима) | (UTC + 12:00) Петропавловск-Камчатский-Old |
+| Камчатка (зима) | (UTC + 12:00) Petropavlovsk-Kamchatsky-Old |
 | Чатем острова (зима) | (UTC + 12:45) Чатем острова |
 | UTC + 13 | (UTC + 13:00) Время в формате UTC + 13 |
 | Тонга (зима) | (UTC + 13:00) Нукуалофа |
 | Стандартное время Самоа | (UTC + 13:00) Американск |
 | Острова линии — стандартное время | (UTC + 14:00) Остров Киритимати |
 
-## <a name="see-also"></a>См. также раздел 
+## <a name="see-also"></a>См. также 
 
 - [CURRENT_TIMEZONE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/current-timezone-transact-sql)
 - [CURRENT_TIMEZONE_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/current-timezone-id-transact-sql)
 - [AT TIME ZONE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/at-time-zone-transact-sql)
-- [sys. time_zone_info (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql)
+- [sys.time_zone_info (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql)

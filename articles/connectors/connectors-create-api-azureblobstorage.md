@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/21/2020
 tags: connectors
 ms.openlocfilehash: 34608a085c0d60e0ce07e5d198622f80a43f8b38
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87284087"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-by-using-azure-logic-apps"></a>Создание больших двоичных объектов и управление ими в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
@@ -127,7 +127,7 @@ ms.locfileid: "87284087"
    | **Учетная запись хранения** | Да | <*Учетная запись хранения*> | Выберите свою учетную запись хранения в списке. |
    ||||
 
-   Например:
+   Пример:
 
    ![Создание подключения к учетной записи хранилища BLOB-объектов Azure](./media/connectors-create-api-azureblobstorage/create-storage-account-connection.png) 
 

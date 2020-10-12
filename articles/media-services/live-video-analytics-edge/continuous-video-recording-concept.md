@@ -4,10 +4,10 @@ description: Непрерывная запись видео (КВР) — это 
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: 04f09f1968e647c57ba0913a9e7f9e601d045771
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89566706"
 ---
 # <a name="continuous-video-recording"></a>Непрерывная запись видео  
@@ -17,7 +17,7 @@ ms.locfileid: "89566706"
 * [Понятие графа мультимедиа](media-graph-concept.md)
 * [Концепция записи видео](video-recording-concept.md)
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Непрерывная запись видео (КВР) — это процесс постоянной записи видео из источника видео. Интерактивная аналитика видео на IoT Edge поддерживает непрерывную запись видео на постоянной основе с камеры ККТВ через [мультимедийный граф](media-graph-concept.md) , состоящий из ИСХОДНОГО узла RTSP и узла приемника ресурса. На схеме ниже показано графическое представление такого графа мультимедиа. Представление JSON [топологии графа](media-graph-concept.md?branch=release-preview-media-services-lva#media-graph-topologies-and-instances) такого графа мультимедиа можно найти [здесь](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/cvr-asset).
 
@@ -58,6 +58,6 @@ ms.locfileid: "89566706"
 * [Запись видео на основе событий](event-based-video-recording-concept.md)
 * [Воспроизведение записанного содержимого](video-playback-concept.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Учебник. запись непрерывного видео](continuous-video-recording-tutorial.md)

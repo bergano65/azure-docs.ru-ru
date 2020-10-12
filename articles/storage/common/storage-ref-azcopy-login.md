@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 98f8554d6313147c03d4a0bec74e36043cdce342
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87285277"
 ---
 # <a name="azcopy-login"></a>azcopy login
@@ -95,7 +95,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert --applicati
 
 Рассматривать `/path/to/my/cert` как путь к файлу PEM или PKCS12. AzCopy не удается подключиться к системному хранилищу сертификатов для получения сертификата.
 
-`--certificate-path`является обязательным при выполнении проверки подлинности субъекта-службы на основе сертификата.
+`--certificate-path` является обязательным при выполнении проверки подлинности субъекта-службы на основе сертификата.
 
 ## <a name="options"></a>Параметры
 
@@ -105,7 +105,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert --applicati
 
 **—** путь к строке пути к сертификату для проверки подлинности имени участника-службы. Требуется для проверки подлинности субъекта-службы на основе сертификата.
 
-**--** Справка по `azcopy login` команде.
+**--**   Справка по `azcopy login` команде.
 
 **--Identity**   Вход с использованием удостоверения виртуальной машины, также известного как управляемое удостоверение службы (MSI).
 
@@ -121,12 +121,12 @@ azcopy login --service-principal --certificate-path /path/to/my/cert --applicati
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с, с плавающей запятой|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 |--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

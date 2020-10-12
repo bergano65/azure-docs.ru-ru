@@ -9,10 +9,10 @@ ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
 ms.openlocfilehash: 297595c6c4a9c82c3d0293f2cea2db66ea9ca54a
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89180411"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
@@ -141,7 +141,7 @@ mkdir test
 echo "hello world" > test/blob.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Домашняя страница blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
 * [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues) 

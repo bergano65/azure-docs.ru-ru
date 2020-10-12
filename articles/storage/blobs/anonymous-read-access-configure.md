@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
 ms.openlocfilehash: 3a585bc2bf3872a21bde9be036628922ee5743fa
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90087360"
 ---
 # <a name="configure-anonymous-public-read-access-for-containers-and-blobs"></a>Настройка анонимного общего доступа на чтение для контейнеров и больших двоичных объектов
@@ -207,7 +207,7 @@ az storage account show \
 
 Если общий доступ запрещен для учетной записи хранения, невозможно установить общий уровень доступа контейнера. Если вы попытаетесь задать общий уровень доступа контейнера, вы увидите, что этот параметр отключен, так как для учетной записи запрещен общий доступ.
 
-:::image type="content" source="media/anonymous-read-access-configure/container-public-access-blocked.png" alt-text="Снимок экрана, показывающий, что этот параметр имеет общий уровень доступа, заблокирован, если доступ запрещен":::
+:::image type="content" source="media/anonymous-read-access-configure/container-public-access-blocked.png" alt-text="Снимок экрана, показывающий, как разрешить или запретить общий доступ к BLOB-объектам для учетной записи":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 

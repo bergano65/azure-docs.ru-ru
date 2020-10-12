@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/12/2018
 ms.assetid: b8487516-7ac5-4435-9680-674d9ecf5642
 ms.openlocfilehash: ad60436d82ccc8049a4509ba5bf1e244bee150ea
-ms.sourcegitcommit: 655e4b75fa6d7881a0a410679ec25c77de196ea3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89506684"
 ---
 # <a name="restore-azure-virtual-machines-using-rest-api"></a>Восстановление виртуальных машин Azure с помощью REST API
@@ -351,7 +351,7 @@ X-Powered-By: ASP.NET
 
 Для восстановления дисков ответы должны обрабатываться так же, как [описано выше](#responses).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о REST API Azure Backup с использованием API REST см. в следующих документах:
 

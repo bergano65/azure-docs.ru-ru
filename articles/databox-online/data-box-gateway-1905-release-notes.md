@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/12/2019
 ms.author: alkohli
 ms.openlocfilehash: b97165f19ac07e5a783203ece1a28420f731b649
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320682"
 ---
 # <a name="azure-data-box-edge-and-azure-data-box-gateway-1905-release-notes"></a>Заметки о выпуске Azure Data Box Edge и Шлюз Azure Data Box 1905
@@ -40,7 +40,7 @@ ms.locfileid: "91320682"
 В этом выпуске не указаны новые проблемы. Все указанные в выпуске проблемы были перенесены из предыдущих выпусков. Чтобы просмотреть список известных проблем, перейдите к разделу [Известные проблемы в общедоступном выпуске](data-box-gateway-release-notes.md#known-issues-in-ga-release).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подготовка к развертыванию Шлюз Azure Data Box](data-box-gateway-deploy-prep.md)
 - [Подготовка к развертыванию Azure Data Box Edge](azure-stack-edge-deploy-prep.md)

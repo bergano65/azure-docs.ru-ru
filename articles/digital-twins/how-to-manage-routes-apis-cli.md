@@ -8,10 +8,10 @@ ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 7365e4904bb8e1920e7d4c57c165e489f2ff302e
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540597"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
@@ -24,7 +24,7 @@ ms.locfileid: "91540597"
 
 Они также могут управляться с помощью [портал Azure](https://portal.azure.com). Версию этой статьи, которая использует портал, см. [*в разделе руководство. Управление конечными точками и маршрутами (портал)*](how-to-manage-routes-portal.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам потребуется **учетная запись Azure** (вы можете настроить ее [здесь](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)бесплатно).
 * Вам потребуется **экземпляр Azure Digital двойников** в подписке Azure. Если у вас еще нет экземпляра, его можно создать, выполнив действия, описанные в разделе [*инструкции. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md). Используйте следующие значения из программы установки, которые можно использовать далее в этой статье:
@@ -184,7 +184,7 @@ catch (RequestFailedException e)
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
 * [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

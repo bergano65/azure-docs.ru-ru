@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: duau
 ms.openlocfilehash: 3428f092c4b2356e9ea6afa54d1a03fc8b4f9f05
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89566183"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
@@ -63,7 +63,7 @@ ms.locfileid: "89566183"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, * Standard или *Premium*. Нельзя изменить номер SKU с *Standard/Premium* на *локальный*.
+   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, * Standard или *Premium*. Изменить номер SKU *Стандартный или Премиум* на *Локальный* нельзя.
    * **Семейство SKU** определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
    * **Расположение пиринга** — физическое расположение пиринга с корпорацией Майкрософт.
 
