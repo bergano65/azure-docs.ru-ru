@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: storage
 author: tamram
@@ -9,10 +9,10 @@ ms.date: 07/30/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 1da1cfff05418219fdf5217b612103e50efca05d
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87841854"
 ---
 Служба [файлов Azure](../articles/storage/files/storage-files-introduction.md) поддерживает проверку подлинности на основе удостоверений через протокол SMB с помощью [локальных служб домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) и [Azure Active Directory доменных служб (Azure AD DS)](../articles/active-directory-domain-services/overview.md). Эта статья посвящена тому, как файловые ресурсы Azure могут использовать службы домена локально или в Azure для поддержки доступа на основе удостоверений к файловым ресурсам Azure через SMB. Включение доступа на основе удостоверений для файловых ресурсов Azure позволяет заменить существующие файловые серверы на файловые ресурсы Azure, не заменяя существующую службу каталогов, сохраняя при этом простой доступ пользователей к общим ресурсам. 

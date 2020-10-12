@@ -11,10 +11,10 @@ ms.date: 03/07/2018
 ms.author: liydu
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 187e44a40228adb62a1d97f4e0df8a7ad3a7e2d3
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91356073"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
@@ -101,7 +101,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 3. На экране появится идентификатор DevKit и надпись "Configuration" (Настройка).
 
-### <a name="macos"></a>MacOS
+### <a name="macos"></a>macOS
 
 1. Переведите DevKit в режим настройки:
 

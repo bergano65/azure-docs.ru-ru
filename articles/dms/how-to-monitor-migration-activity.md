@@ -12,10 +12,10 @@ ms.custom: seo-lt-2019
 ms.topic: how-to
 ms.date: 02/20/2020
 ms.openlocfilehash: dc9123735ef65bec89e99a14d25cba881be306fe
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91297476"
 ---
 # <a name="monitor-migration-activity-using-the-azure-database-migration-service"></a>Мониторинг действий миграции с помощью Azure Database Migration Service
@@ -93,7 +93,7 @@ ms.locfileid: "91297476"
     </tr>
     <tr>
       <td rowspan="1" class="duration"><strong>Длительность</strong></td>
-      <td>Н/Д</td>
+      <td>Недоступно</td>
       <td>Общее время от инициализации действия миграции до завершения или ошибки миграции.</td>
     </tr>
      </tbody>
@@ -141,5 +141,5 @@ ms.locfileid: "91297476"
 > [!NOTE]
 > Значения CDC полей операций вставки, обновления, удаления и поля "Всего применено" могут уменьшаться при прямой миграции базы данных или перезапуске миграции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

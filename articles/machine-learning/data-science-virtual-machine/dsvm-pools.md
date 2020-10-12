@@ -11,10 +11,10 @@ ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 12/10/2018
 ms.openlocfilehash: 0745957620aab7ed4d08cb016c706b56e6da1c5a
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708974"
 ---
 # <a name="create-a-shared-pool-of-data-science-virtual-machines"></a>Создание общего пула виртуальных машин для обработки и анализа данных
@@ -55,7 +55,7 @@ az group deployment create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  -
 
 Масштабируемые наборы виртуальных машин поддерживают автомасштабирование. Можно задать правила создания дополнительных экземпляров и время масштабирования экземпляров. Например, вы можете уменьшить масштаб до нуля экземпляров, чтобы сэкономить на использовании облачного оборудования, когда виртуальные машины простаивают. Подробное описание процедуры [автомасштабирования](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview) приведено в документации по масштабируемым наборам виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка общего удостоверения](dsvm-common-identity.md)
 * [Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных](dsvm-secure-access-keys.md)

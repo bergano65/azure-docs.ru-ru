@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 852bce26e348c817b609d5ff837641741afe4461
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940391"
 ---
 # <a name="logs-in-azure-database-for-postgresql---flexible-server"></a>Журналы в базе данных Azure для PostgreSQL-гибкого сервера
@@ -65,7 +65,7 @@ ms.locfileid: "90940391"
 | Prefix | Префикс строки журнала |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [настройке журналов и доступе к ним](howto-configure-and-access-logs.md).
 - Дополнительные сведения о [ценах на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).

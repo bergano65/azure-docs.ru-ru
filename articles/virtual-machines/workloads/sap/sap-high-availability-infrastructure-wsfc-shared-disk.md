@@ -17,10 +17,10 @@ ms.date: 08/25/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8f389581d8fbeb912507b303c46109dd08fcab8d
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88871522"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Подготовка инфраструктуры Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для SAP ASCS/SC
@@ -174,7 +174,7 @@ ms.locfileid: "88871522"
 > Группы размещения службы "близость" Azure являются необходимым условием для использования общего диска Azure.
  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом установки ознакомьтесь со статьей:
 
@@ -261,7 +261,7 @@ Azure Load Balancer может закрывать соединения, если
 - KeepAliveTime
 - KeepAliveInterval
 
-| Путь| Имя переменной | Тип переменной  | Значение | Документация |
+| путь| Имя переменной | Тип переменной  | Значение | Документация |
 | --- | --- | --- |---| ---|
 | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveTime |REG_DWORD (десятичное) |120000 |[KeepAliveTime](https://technet.microsoft.com/library/cc957549.aspx) |
 | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveInterval |REG_DWORD (десятичное) |120000 |[KeepAliveInterval](https://technet.microsoft.com/library/cc957548.aspx) |
@@ -555,6 +555,6 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
    _Реплицируемый диск DataKeeper отображается в диспетчере отказоустойчивости кластеров_
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка SAP NetWeaver высокого уровня доступности в Azure с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP (A)SCS][sap-high-availability-installation-wsfc-shared-disk]

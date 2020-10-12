@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: d1019c31b10801a12c960dd5dadd8836fd9b7cd2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939278"
 ---
 # <a name="create-and-manage-azure-database-for-postgresql---flexible-server-firewall-rules-using-the-azure-cli"></a>Создание и Администрирование базы данных Azure для PostgreSQL — гибких правил брандмауэра сервера с помощью Azure CLI
@@ -150,7 +150,7 @@ az postgres flexible-server firewall-rule delete --name mydemoserver --rule-name
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о работе [в сети в базе данных Azure для PostgreSQL-гибкого сервера](./concepts-networking.md)
 - Дополнительные сведения о [базе данных Azure для PostgreSQL. правила брандмауэра для гибких серверов](./concepts-networking.md#public-access-allowed-ip-addresses)
 - [Создание и Администрирование базы данных Azure для PostgreSQL — гибких правил брандмауэра сервера с помощью портал Azure](./how-to-manage-firewall-portal.md).

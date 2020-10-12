@@ -12,10 +12,10 @@ ms.reviewer: vanto
 ms.date: 10/07/2019
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: f1c4fe8268d24026609f55d76a102a5c9a4e8295
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91356322"
 ---
 # <a name="azure-sql-managed-instance-connection-types"></a>Типы соединения управляемого экземпляра SQL Azure
@@ -70,7 +70,7 @@ $mi = Get-AzSqlInstance -ResourceGroupName {rg-name} -Name {mi-name}
 $mi = $mi | Set-AzSqlInstance -ProxyOverride "Redirect" -force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Восстановление базы данных в SQL Управляемый экземпляр](restore-sample-database-quickstart.md)
 - Узнайте, как [настроить общедоступную конечную точку на SQL управляемый экземпляр](public-endpoint-configure.md)

@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mqtt
 ms.openlocfilehash: d1d4abbcc0768915d7d2e693cfc76a699ed21a91
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89669621"
 ---
 # <a name="understand-how-azure-iot-edge-uses-certificates"></a>Сведения о том, как Azure IoT Edge использует сертификаты
@@ -105,7 +105,7 @@ IoT Edge сертификаты используются модулями и п�
 | Сертификат ЦС рабочей нагрузки     | iotedge workload ca                                                                                       |
 | Сертификат сервера центра IoT Edge | iotedgegw.local (соответствует значению свойства hostname в файле config.yaml)                                            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения о модулях Azure IoT Edge](iot-edge-modules.md)
 

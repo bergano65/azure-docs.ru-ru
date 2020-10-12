@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: lagayhar
 ms.openlocfilehash: 114245030ba2356861b83a580f103d3b84c0eae3
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89664797"
 ---
 # <a name="grid-visualizations"></a>Визуализации сетки
@@ -276,7 +276,7 @@ requests
 
 [![Снимок экрана: столбцы в сетке с ассортиментом разной единицы ширины](./media/workbooks-grid-visualizations/custom-column-width-fr3.png)](./media/workbooks-grid-visualizations/custom-column-width-fr3.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как создать [дерево в книгах](workbooks-tree-visualizations.md).
 * Узнайте, как создавать [Текстовые параметры книги](workbooks-text.md).

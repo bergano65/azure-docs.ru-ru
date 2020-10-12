@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: 264bb8c66510c90fecf12d2e4e68bd969b4fb474
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938689"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-postgresql---flexible-server"></a>Общие сведения о непрерывности бизнес-процессов с помощью базы данных Azure для PostgreSQL-гибкого сервера
@@ -72,7 +72,7 @@ ms.locfileid: "90938689"
 >  **Невозможно**   восстановить удаленные серверы. Если вы удалите сервер, все связанные с ним базы данных также будут удалены без возможности восстановления. Используйте [блокировку ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources)   , чтобы предотвратить случайное удаление сервера.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)
 -   Сведения о [резервном копировании и восстановлении](./concepts-backup-restore.md)

@@ -10,10 +10,10 @@ ms.date: 06/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: 51422bd47b5bd2d7d5103c154e90eaa910396024
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89661027"
 ---
 # <a name="analyze-complex-data-types-in-azure-synapse-analytics"></a>Анализ сложных типов данных в Azure синапсе Analytics
@@ -218,7 +218,7 @@ with ( ProfileType varchar(50) '$.customerInfo.ProfileType',
 
   Если массив содержит 5 элементов с 4 вложенными структурами, то бессерверная модель SQL возвращает 5 строк и 4 столбца. Бессерверная модель SQL может выполнять запросы на месте, сопоставлять массив в двух строках и отображать все вложенные структуры в столбцах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как запросить ссылку синапсе для Azure Cosmos DB с помощью Spark](./synapse-link/how-to-query-analytical-store-spark.md)
 * [Запрашивание вложенных типов Parquet](./sql/query-parquet-nested-types.md) 

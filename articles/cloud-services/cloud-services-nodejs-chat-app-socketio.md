@@ -11,10 +11,10 @@ ms.date: 08/17/2017
 ms.author: tagore
 ms.custom: devx-track-js
 ms.openlocfilehash: a3f661aa31511c5f1cf35d2e3c0429af6ab0c997
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91327533"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
@@ -29,7 +29,7 @@ Socket.IO обеспечивает связь в режиме реального
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
 * установить [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx);
-* Установка [Node.js](https://nodejs.org/download/)
+* Установите [Node.js](https://nodejs.org/download/)
 * Установите [Python версии 2.7.10](https://www.python.org/)
 
 ## <a name="create-a-cloud-service-project"></a>Создание проекта облачной службы
@@ -166,7 +166,7 @@ Socket.IO обеспечивает связь в режиме реального
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Чтобы узнать, как разместить это приложение на веб-сайте Azure, см. статью [Создание приложения для разговора Node.js с Socket.IO на веб-сайте Azure][chatwebsite].
 
 Дополнительные сведения см. также в [центре по разработке для Node.js](https://docs.microsoft.com/azure/developer/javascript/).

@@ -9,10 +9,10 @@ ms.date: 12/06/2018
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: e9c56f59d6dd64002632a5f74e9f39c51293caab
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87836366"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop
@@ -42,7 +42,7 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 На внутреннем уровне драйвер ABFS преобразует ресурсы, указанные в URI, в файлы и каталоги и вызывает REST API хранилища Azure Data Lake Storage с использованием этих ссылок.
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Драйвер ABFS поддерживает две формы проверки подлинности, поэтому приложение Hadoop может безопасно обращаться к ресурсам, содержащимся в учетной записи, совместимой с Data Lake Storage 2-го поколения. Дополнительные сведения о схемах проверки подлинности приведены в [Руководстве по безопасности службы хранилища Azure](security-recommendations.md). К ним относятся:
 
@@ -63,7 +63,7 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 Все сведения о драйвере ABFS см. в [официальной документации по Hadoop](https://hadoop.apache.org/docs/stable/hadoop-azure/abfs.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание кластера Azure Databricks](./data-lake-storage-quickstart-create-databricks-account.md)
 - [Использование URI в Azure Data Lake Storage Gen2](./data-lake-storage-introduction-abfs-uri.md)
