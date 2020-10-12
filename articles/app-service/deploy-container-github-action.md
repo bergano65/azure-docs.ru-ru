@@ -7,12 +7,12 @@ ms.date: 10/03/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: dc8b5e75b4feed886f843e7a516cc18429afec11
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.openlocfilehash: 3a5e319115c124551c05f2ac5aa393ba19596d0d
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728494"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91893362"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
@@ -138,10 +138,6 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 В следующем примере показана часть рабочего процесса, который создает Node.JS образ DOCKER. Используйте [имя входа DOCKER](https://github.com/azure/docker-login) для входа в закрытый реестр контейнеров. В этом примере используется реестр контейнеров Azure, но одно и то же действие работает для других реестров. 
 
-# <a name="publish-profile"></a>[Опубликовать профиль](#tab/publish-profile)
-
-В этом примере показано, как создать образ DOCKER Node.JS с помощью профиля публикации для проверки подлинности.
-
 
 ```yaml
 name: Linux Container Node Workflow
@@ -191,41 +187,6 @@ jobs:
         docker build . -t mycontainer.azurecr.io/myapp:${{ github.sha }}
         docker push mycontainer.azurecr.io/myapp:${{ github.sha }}     
 ```
-# <a name="service-principal"></a>[Субъект-служба](#tab/service-principal)
-
-В этом примере показано, как создать образ DOCKER Node.JS с помощью субъекта-службы для проверки подлинности. 
-
-```yaml
-on: [push]
-
-name: Linux_Container_Node_Workflow
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    # checkout the repo
-    - name: 'Checkout GitHub Action' 
-      uses: actions/checkout@master
-
-    - name: 'Login via Azure CLI'
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}   
-    - uses: azure/docker-login@v1
-      with:
-        login-server: mycontainer.azurecr.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}  
-    - run: |
-        docker build . -t mycontainer.azurecr.io/myapp:${{ github.sha }}
-        docker push mycontainer.azurecr.io/myapp:${{ github.sha }}      
-    - name: Azure logout
-      run: |
-        az logout
-```
-
----
 
 ## <a name="deploy-to-an-app-service-container"></a>Развертывание в контейнер службы приложений
 
@@ -237,7 +198,7 @@ jobs:
 | **publish-profile** | (Необязательный) Содержимое файла профиля публикации с секретами для веб-развертывания. |
 | **images** | Полное имя образа контейнера. Например, "myregistry.azurecr.io/nginx:latest" или "Python: 3.7.2-Alpine/". Для сценария с несколькими контейнерами можно указать несколько имен образов контейнеров (с несколькими строками). |
 | **slot-name** | (Необязательный) Введите существующий слот вместо рабочего. |
-| **файл конфигурации** | Используемых Путь к файлу создания DOCKER |
+| **файл конфигурации** | Используемых Путь к файлу Docker-Compose |
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/publish-profile)
 

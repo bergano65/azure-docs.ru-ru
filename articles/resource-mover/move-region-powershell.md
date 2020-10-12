@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
 ms.openlocfilehash: 3236e0a95c6a4b4f57ac38ed067011c3d6848b5a
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89670799"
 ---
 # <a name="move-resources-across-regions-in-powershell"></a>Перемещение ресурсов между регионами в PowerShell
@@ -19,7 +19,7 @@ ms.locfileid: "89670799"
 Узнайте, как переместить ресурсы Azure в другой регион с помощью PowerShell в службе "перенос ресурсов Azure". 
 
 > [!NOTE]
-> Сейчас для перемещения ресурсов Azure доступна предварительная версия.
+> Azure Resource Mover сейчас поддерживается в предварительной версии.
 
 
 
@@ -269,7 +269,7 @@ Get-AzResourceMoverUnresolvedDependency -MoveCollectionName “MoveCollection-ce
 
 Прежде чем можно будет подготовить исходные ресурсы, необходимо подготовить и переместить исходную группу ресурсов.
 
-### <a name="prepare"></a>Подготовка
+### <a name="prepare"></a>Подготовка.
 
 ```azurepowershell-interactive
 # Prepare the source resource group
@@ -344,10 +344,10 @@ Invoke-AzResourceMoverInitiateMove -SubscriptionId <subscription-id> -ResourceGr
 
 ## <a name="discard-or-commit-the-move"></a>Отменить или зафиксировать перемещение
 
-После первоначального перемещения можно решить, следует ли зафиксировать перемещение или отменить его. 
+После первоначального перемещения нужно решить, следует ли фиксировать перемещение или отменить его. 
 
-- **Отменить**. Вы можете отменить перемещение, если тестируете, и вы не хотите переносить исходный ресурс. При отмене перемещения ресурс возвращается в состояние *Ожидание инициированного перемещения*. При необходимости можно снова запустить перемещение.
-- **Фиксация**: фиксация завершает перемещение в целевой регион. После фиксации исходный ресурс будет находиться в состоянии *Ожидание удаления источника*, и вы можете решить, хотите ли вы удалить его.
+- **Отмена**. Если вы выполняете тестирование и не хотите фактически перемещать исходный ресурс, вы можете отменить перемещение. При отмене перемещения ресурс возвращается в состояние *ожидания начала перемещения*. При необходимости можно снова запустить перемещение.
+- **Фиксация**. Фиксация завершает перемещение в целевой регион. После фиксации исходный ресурс будет находиться в состоянии *ожидания удаления источника*. Затем вы можете его удалить.
 
 ### <a name="discard"></a>Игнорировать
 
@@ -377,6 +377,6 @@ Invoke-AzResourceMoverCommit -SubscriptionId  <subscription-id> -ResourceGroupNa
 
 После фиксации перемещения и проверки правильности работы ресурсов в целевом регионе можно удалить исходные ресурсы в [портал Azure](../azure-resource-manager/management/manage-resources-portal.md#delete-resources), [с помощью PowerShell](../azure-resource-manager/management/manage-resources-powershell.md#delete-resources)или [Azure CLI](../azure-resource-manager/management/manage-resources-cli.md#delete-resources).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Узнайте, как](remove-move-resources.md) удалить ресурсы из коллекции перемещения.

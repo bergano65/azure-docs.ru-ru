@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
 ms.openlocfilehash: baf89ec75f844ae1a1f7797d26d2fb04a0d5df34
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91849849"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
@@ -189,7 +189,7 @@ ms.locfileid: "91849849"
 
 Дополнительные сведения о запросах к экземпляру Digital двойников для Azure см. [*в статье как выполнить запрос к графу двойника*](how-to-query-graph.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы создали приложение логики, которое регулярно обновляет двойника в экземпляре Azure Digital двойников с указанным вами исправлением. Вы можете попробовать выбрать другие API в настраиваемом соединителе, чтобы создать Logic Apps для различных действий в экземпляре.
 

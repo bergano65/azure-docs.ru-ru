@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 06/03/2019
 ms.openlocfilehash: 58c2c597c7a75c801af91cd735561071250bda2c
-ms.sourcegitcommit: ac5cbef0706d9910a76e4c0841fdac3ef8ed2e82
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89426152"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
@@ -175,7 +175,7 @@ az aks create \
 
   Не рекомендуется, но эта конфигурация возможна. Диапазон адресов службы — это набор виртуальных IP-адресов, которые Kubernetes присваивает внутренним службам в кластере. Сеть Azure не видит адреса в диапазоне IP-адресов службы кластера Kubernetes. Из-за этого позже возможно создать подсеть в виртуальной сети кластера, которая пересекается с диапазоном адресов службы. При возникновении такого пересекания Kubernetes может присвоить службе IP-адрес, который уже используется другим ресурсом в подсети, что приводит к непредсказуемому поведению или сбоям. Убедившись, что диапазон адресов используется за пределами виртуальной сети кластера, можно избежать такого риска пересечений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о сетевом взаимодействии в AKS из следующих статей:
 

@@ -7,10 +7,10 @@ ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 175b2268727364040640b319c24019bdf9b48df9
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89433710"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
@@ -125,7 +125,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fEnab
 
 ### <a name="disable-storage-sense"></a>Отключение датчика хранилища
 
-Для узла сеансов виртуальных рабочих столов Windows, использующего многосеансовую поддержку Windows 10 Корпоративная или Windows 10 Корпоративная, рекомендуется отключить контроль использования хранилища. Вы можете отключить контроль хранилища в меню "Параметры" в разделе " **хранилище**", как показано на следующем снимке экрана:
+Для узла сеансов Виртуальных рабочих столов Windows, использующего Windows 10 Корпоративная или Windows 10 Корпоративная с несколькими сеансами, рекомендуется отключить Контроль памяти. Вы можете отключить контроль хранилища в меню "Параметры" в разделе " **хранилище**", как показано на следующем снимке экрана:
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана меню "хранилище" в разделе "Параметры". Параметр "контроль хранилища" отключен.](media/storagesense.png)
@@ -204,7 +204,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана уведомления об успешно созданном образе.](media/1f41b7192824a2950718a2b7bb9e9d69.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о создании и обновлении пулов узлов см. в следующих статьях:
 
