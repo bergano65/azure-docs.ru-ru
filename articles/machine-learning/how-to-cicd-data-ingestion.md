@@ -13,10 +13,10 @@ manager: davete
 ms.reviewer: larryfr
 ms.date: 06/23/2020
 ms.openlocfilehash: 47b41e807c4d7b9a9fce6591da6655db74f483f3
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90971264"
 ---
 # <a name="devops-for-a-data-ingestion-pipeline"></a>DevOps для конвейера приема данных
@@ -478,7 +478,7 @@ stages:
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Система управления версиями в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/source-control)
 * [Непрерывные интеграция и поставка в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment)

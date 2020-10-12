@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 08/12/2019
 ms.openlocfilehash: 7cf4be078a7bee0bedbeac4326acb9ca290cde88
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331987"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory-legacy"></a>Копирование данных из MongoDB с помощью фабрики данных Azure (прежние версии)
@@ -134,7 +134,7 @@ ms.locfileid: "91331987"
 | type | Свойство type источника действия копирования должно иметь значение **MongoDbSource**. | Да |
 | query |Используйте пользовательский запрос SQL-92 для чтения данных. Например, select * from MyTable. |Нет (если в наборе данных указано значение collectionName). |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -182,7 +182,7 @@ ms.locfileid: "91331987"
 | Двоичные данные |Byte[] |
 | Логический |Логическое |
 | Дата |Дата и время |
-| NumberDouble |Тип Double |
+| NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
 | ObjectID |Строка |

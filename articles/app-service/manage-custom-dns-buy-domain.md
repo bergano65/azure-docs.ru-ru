@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/24/2017
 ms.custom: seodec18
 ms.openlocfilehash: 0111da00962f267387e66978952e8a7c9f5d7308
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90970059"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Приобретение личного доменного имени в Службе приложений Azure
@@ -61,7 +61,7 @@ ms.locfileid: "90970059"
 
 Нажмите кнопку **Применить**.
 
-:::image type="content" source="./media/app-service-web-tutorial-custom-domain/choose-pricing-tier.png" alt-text="Снимок экрана для ценовых категорий пользовательского домена в категории "Рабочая область" с вкладкой "производство", "план" и выделенной кнопкой "Применить".":::
+:::image type="content" source="./media/app-service-web-tutorial-custom-domain/choose-pricing-tier.png" alt-text="Снимок экрана: меню навигации слева на странице приложения с выбранным вертикальным масштабированием (план службы приложений).":::
 
 Если вы увидите уведомление ниже, значит уровень плана службы приложений изменен.
 

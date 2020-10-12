@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/29/2020
 ms.author: alkohli
 ms.openlocfilehash: c43f7ba52ed0f6018ee32583011bb92786708119
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91460481"
 ---
 # <a name="azure-stack-edge-pro-with-gpu-general-availability-ga-release-notes"></a>Заметки о выпуске Azure Stack ребра Pro с общедоступным графическим процессором (GA)
@@ -35,7 +35,7 @@ ms.locfileid: "91460481"
 
 В следующей таблице приведена сводка известных проблем для устройства Azure Stack ребра Pro.
 
-| Нет. | Признак | Проблема | Временное решение и комментарии |
+| Нет. | Компонент | Проблема | Временное решение и комментарии |
 | --- | --- | --- | --- |
 |**1.**|Предварительная версия функций |Для этого общедоступного выпуска доступны следующие функции: локальные Azure Resource Manager, виртуальные машины, Kubernetes, служба Arc Azure Kubernetes, Многопроцессные службы (MPS) для GPU — доступны в предварительной версии для устройства Azure Stack. Pro.  |Эти функции будут общедоступными в более поздней версии. |
 | **2.** |Azure Stack пограничных Pro + SQL Azure | Для создания базы данных SQL требуется доступ администратора.   |Выполните следующие действия вместо шагов 1-2 в [https://docs.microsoft.com/azure/iot-edge/tutorial-store-data-sql-server#create-the-sql-database](https://docs.microsoft.com/azure/iot-edge/tutorial-store-data-sql-server#create-the-sql-database) . <ul><li>В локальном пользовательском интерфейсе устройства Включите интерфейс вычислений. Выберите **вычисление > порт # > включить для вычислений > применить.**</li><li>Скачайте `sqlcmd` на клиентский компьютер с https://docs.microsoft.com/sql/tools/sqlcmd-utility </li><li>Подключитесь к IP-адресу интерфейса вычислений (включенному порту), добавив ", 1401" в конец адреса.</li><li>Окончательная команда будет выглядеть следующим образом: sqlcmd-S {Interface IP}, 1401-U SA-P «strong! Passw0rd".</li>После этого шаги 3-4 из текущей документации должны быть идентичны. </li></ul> |
@@ -63,7 +63,7 @@ ms.locfileid: "91460481"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подготовка к развертыванию Azure Stack пограничных устройств Pro с помощью GPU](azure-stack-edge-gpu-deploy-prep.md)
 

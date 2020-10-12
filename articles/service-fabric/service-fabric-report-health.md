@@ -7,10 +7,10 @@ ms.date: 2/28/2018
 ms.author: gwallace
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 6df434610a8f595ecca7f16e31f8a302373b02f9
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89012659"
 ---
 # <a name="add-custom-service-fabric-health-reports"></a>Добавление настраиваемых отчетов о работоспособности Service Fabric
@@ -293,7 +293,7 @@ HealthEvents          :
 ### <a name="rest"></a>REST
 Чтобы отправить отчет о работоспособности с помощью REST, создайте запрос POST и передайте его в нужную сущность, включив в тело запроса описание отчета о работоспособности. Ознакомьтесь с примерами отправки [отчетов о работоспособности кластера](/rest/api/servicefabric/report-the-health-of-a-cluster) и [отчетов о работоспособности службы](/rest/api/servicefabric/report-the-health-of-a-service) с помощью интерфейса REST. Поддерживаются все сущности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 На основе данных о работоспособности создатели служб и администраторы кластеров или приложений могут решить, как использовать полученные сведения. Например, они могут настроить оповещения на основе состояния работоспособности для выявления серьезных проблем, которые могут вызвать простои. Кроме того, администраторы могут настроить системы восстановления, чтобы устранять неполадки автоматически.
 
 [Общие сведения о мониторинге работоспособности Service Fabric](service-fabric-health-introduction.md)

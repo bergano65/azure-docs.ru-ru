@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 6/15/2019
 ms.author: rohink
 ms.openlocfilehash: 76b19cfb3c00a26d81eab81f67d8e156a520f377
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77121720"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
@@ -32,7 +32,7 @@ ms.locfileid: "77121720"
 
 Дополнительные сведения см. на [странице цен на Azure DNS](https://azure.microsoft.com/pricing/details/dns/).
 
-### <a name="what-is-the-sla-for-azure-dns"></a>Что такое соглашение об уровне обслуживания для Azure DNS?
+### <a name="what-is-the-sla-for-azure-dns"></a>Каково Соглашение об уровне обслуживания для Azure DNS?
 
 Azure гарантирует, что в 100 % случаев на допустимые запросы DNS поступит ответ хотя бы от одного DNS-сервера Azure.
 
@@ -110,9 +110,9 @@ Azure DNS поддерживает только размещение "стати
 
 Наборы записей псевдонимов поддерживаются для следующих типов записей в зоне DNS Azure:
  
-- Объект 
-- AAAA
-- CNAME 
+- A; 
+- AAAA;
+- CNAME. 
 
 ### <a name="what-resources-are-supported-as-targets-for-alias-record-sets"></a>Какие ресурсы поддерживаются в качестве целевых объектов для наборов записей псевдонимов?
 
@@ -195,7 +195,7 @@ Azure DNS поддерживает только размещение "стати
 
 Чтобы настроить имена IDN в Azure DNS, преобразуйте имя зоны или набора записей в punycode. Azure DNS в настоящее время не поддерживает встроенное преобразование в punycode.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные [сведения о Azure DNS](dns-overview.md).
 

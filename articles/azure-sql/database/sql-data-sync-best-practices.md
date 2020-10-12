@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/20/2018
 ms.openlocfilehash: fd9bc17db3eccc64f35d7295d57dc120364481dd
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91332990"
 ---
 # <a name="best-practices-for-azure-sql-data-sync"></a>Best practices for SQL Data Sync (Preview) (Рекомендации по синхронизации данных SQL (предварительная версия)) 
@@ -52,7 +52,7 @@ ms.locfileid: "91332990"
 -   Изменяйте учетные данные для разных этапов (например, *учетные данные1* для настройки и *учетные данные2* для непрерывной синхронизации).  
 -   Изменяйте разрешения для учетных данных (то есть изменяйте разрешение после настройки синхронизации).
 
-## <a name="setup"></a>Установка
+## <a name="setup"></a>Настройка
 
 ### <a name="database-considerations-and-constraints"></a><a name="database-considerations-and-constraints"></a> Рекомендации по базам данных и ограничения
 
@@ -228,7 +228,7 @@ ms.locfileid: "91332990"
 
 Чтобы устранить эту ошибку, увеличьте масштаб базы данных метаданных синхронизации, допуская более высокий номер SKU, например S3. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о синхронизации данных SQL см. в следующих материалах:
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-data-sync-data-sql-server-sql-database.md).

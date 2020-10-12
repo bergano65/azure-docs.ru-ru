@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 18d9463bc512257034860e1188372879524924f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77022670"
 ---
 # <a name="access-your-private-cloud-vcenter-portal"></a>Доступ к порталу для работы с частным облаком vCenter
@@ -36,7 +36,7 @@ ms.locfileid: "77022670"
 
 Портал vCenter для частного облака можно запустить из портал Azure.
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 
 2. Выполните поиск по запросу **Клаудсимпле Services**.
 
@@ -64,7 +64,7 @@ ms.locfileid: "77022670"
 
     ![Запуск клиента vSphere — сводка](media/cloudsimple-resources-summary-launch-vcenter.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание виртуальных ЛС и подсетей для частных облаков и управление ими](create-vlan-subnet.md)
 * [Модель разрешений частного облака Клаудсимпле для VMware vCenter](learn-private-cloud-permissions.md)

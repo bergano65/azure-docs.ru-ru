@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
 ms.openlocfilehash: 4b7fd2de0762de147ad3ceae0d562a1c78b33dc2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81417473"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
@@ -73,7 +73,7 @@ ms.locfileid: "81417473"
 >[!NOTE]
 >Сейчас подключение к Cassandra с помощью TLS не поддерживается.
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -144,7 +144,7 @@ ms.locfileid: "81417473"
 | query |Используйте пользовательский запрос для чтения данных. Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
 | consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных Дополнительные сведения см. в статье [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных).<br/><br/>Допустимые значения: **ONE**, **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM** и **LOCAL_ONE**. |Нет (значение по умолчанию — `ONE`) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -188,7 +188,7 @@ ms.locfileid: "81417473"
 | BOOLEAN |Логическое |
 | DECIMAL |Decimal |
 | DOUBLE |Double |
-| FLOAT |Один |
+| FLOAT |Single |
 | INET |Строка |
 | INT |Int32 |
 | TEXT |Строка |
@@ -255,7 +255,7 @@ ms.locfileid: "81417473"
 | --- | --- | --- |
 | 1 |S1 |Объект |
 | 1 |S2 |b |
-| 3 |S1 |т |
+| 3 |S1 |t |
 
 **Таблица ExampleTable_vt_StringSet**:
 
