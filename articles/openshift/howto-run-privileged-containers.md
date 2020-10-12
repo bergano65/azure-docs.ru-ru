@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/05/2019
 keywords: АТО, openshift, акуасек, Twistlock, Red Hat
 ms.openlocfilehash: e1c1dd9f27a207f78dd22e271f6b070c7f92f622
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78271375"
 ---
 # <a name="run-privileged-containers-in-an-azure-red-hat-openshift-cluster"></a>Запуск привилегированных контейнеров в кластере Azure Red Hat OpenShift
@@ -115,7 +115,7 @@ oc get route aqua-web -n aqua-security
 | -------------- | ------------- |
 | Оркестратор:   | OpenShift     |
 | ServiceAccount | Голубой — учетная запись  |
-| Project        | Голубой — безопасность |
+| Проект        | Голубой — безопасность |
 
 ## <a name="product-specific-steps-for-prisma-cloud--twistlock"></a>Действия, относящиеся к продукту для Присма Cloud/Twistlock
 
@@ -169,7 +169,7 @@ spec:
 oc create -f twistlock_route.yaml
 ```
 
-URL-адрес, назначенный консоли Twistlock, можно получить с помощью следующей команды:`oc get route twistlock-console -n twistlock`
+URL-адрес, назначенный консоли Twistlock, можно получить с помощью следующей команды: `oc get route twistlock-console -n twistlock`
 
 ### <a name="configure-console"></a>Настройка консоли
 

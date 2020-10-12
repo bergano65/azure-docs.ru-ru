@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: b165741f9f7a4eb7af8424b9175aa5ec9261fbcc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85602726"
 ---
 # <a name="azure-firewall-certifications"></a>Сертификаты брандмауэра Azure
@@ -34,7 +34,7 @@ ms.locfileid: "85602726"
 - КФТК 1,31
 - Аттестация CSA STAR
 - Сертификация CSA STAR
-- Самооценка CSA STAR
+- CSA STAR Self-Assessment
 - Законы о защите конфиденциальности Канады
 - DPP (ВЕЛИКОБРИТАНИЯ)
 - ЕС ЕНИСА IAF
@@ -76,7 +76,7 @@ ms.locfileid: "85602726"
 - Испания DPA
 - тисакс
 - TruSight
-- G-Cloud, Соединенное Королевство
+- Великобритания: G-Cloud
 - WCAG 2.0
 
 
@@ -117,7 +117,7 @@ ms.locfileid: "85602726"
 Брандмауэр Azure — это первая служба облачного брандмауэра, позволяющая достичь сертификации корпоративного брандмауэра Икса Labs. Отчет о сертификации брандмауэра Azure см. в [отчете о тестировании сертификации и аудита Икса Labs](https://aka.ms/ICSALabsCertification). Дополнительные сведения см. на странице [программы сертификации брандмауэра Икса Labs](https://www.icsalabs.com/technology-program/firewalls) .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о соответствии Майкрософт см. в следующих статьях.
 

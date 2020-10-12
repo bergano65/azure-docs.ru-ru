@@ -12,10 +12,10 @@ ms.topic: troubleshooting
 ms.date: 09/11/2020
 ms.reviewer: arvinh
 ms.openlocfilehash: 2f83679a39f919e5e9932303731560aedd796233
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90052395"
 ---
 # <a name="known-issues-application-provisioning"></a>Известные проблемы: Подготовка приложений
@@ -87,5 +87,5 @@ ms.locfileid: "90052395"
 Если группа находится в области действия, а член выходит за пределы области действия, группа будет подготовлена. Пользователь вне области не будет подготовлен. Если элемент возвращается в область, служба не будет немедленно обнаруживать это изменение. Перезагрузка приведет к устранению проблемы. Рекомендуется периодически перезапускать службу, чтобы обеспечить правильную подготовку всех пользователей.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Описание процесса подготовки](how-provisioning-works.md)

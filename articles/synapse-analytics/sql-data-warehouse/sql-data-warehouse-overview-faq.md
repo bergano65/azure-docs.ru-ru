@@ -11,10 +11,10 @@ ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.openlocfilehash: 228fa18fef0f681437fd2c0c87e3114d14977a49
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89462655"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы
@@ -47,7 +47,7 @@ A. На странице [соответствия требованиям кор
 
 У. Можно ли подключиться Power BI?
 
-A. Да! Хотя Power BI поддерживает прямой запрос с помощью Azure синапсе, он не предназначен для большого числа пользователей или данных в режиме реального времени. Чтобы оптимизировать производительность Power BI, рассмотрите возможность использования Power BI на основе Azure Analysis Services или служб Analysis Service IaaS.
+A. Да. Хотя Power BI поддерживает прямой запрос с помощью Azure синапсе, он не предназначен для большого числа пользователей или данных в режиме реального времени. Чтобы оптимизировать производительность Power BI, рассмотрите возможность использования Power BI на основе Azure Analysis Services или служб Analysis Service IaaS.
 
 У. Каковы ограничения емкости пула SQL синапсе?
 
@@ -109,6 +109,6 @@ A. Поддержка драйвера для пула SQL синапсе мож
 
 О. HDI может использовать Azure Data Lake Store или WASB в качестве уровня HDFS. Если у вас есть уровень HDFS, вы можете загрузить эти данные в пул синапсе SQL. Тем не менее, создание вычислений со стековой памятью для экземпляра HDI невозможно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure синапсе в целом см. на странице с [обзором](sql-data-warehouse-overview-faq.md) .

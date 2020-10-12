@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
 ms.openlocfilehash: e418e64fe9fbe98fbd8da4e75a81c05d5e3d118d
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90885174"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
@@ -228,12 +228,12 @@ ms.locfileid: "90885174"
 - В базах данных SQL:
   - Используйте детализированные разрешения и определяемые пользователем роли базы данных (или роли сервера в Управляемый экземпляр):
     1. Создание необходимых ролей
-       - [СОЗДАНИЕ РОЛИ](https://docs.microsoft.com/sql/t-sql/statements/create-role-transact-sql)
+       - [CREATE ROLE](https://docs.microsoft.com/sql/t-sql/statements/create-role-transact-sql)
        - [CREATE SERVER ROLE](https://docs.microsoft.com/sql/t-sql/statements/create-server-role-transact-sql)
     1. Создание необходимых пользователей
        - [СОЗДАНИЕ ПОЛЬЗОВАТЕЛЯ](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql)
     1. Добавление пользователей в качестве членов ролей
-       - [ALTER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql)
+       - [ALTER_ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql)
        - [ALTER SERVER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-server-role-transact-sql)
     1. Затем назначьте разрешения ролям.
        - [GRANT](https://docs.microsoft.com/sql/t-sql/statements/grant-transact-sql)
@@ -266,7 +266,7 @@ ms.locfileid: "90885174"
 - Помните, что разрешения в ядре СУБД могут быть применены в следующих областях (чем меньше область, тем меньше воздействие предоставленных разрешений):
   - Сервер (специальные роли в базе данных master) в Azure
   - База данных
-  - Схема
+  - схема
     - Рекомендуется использовать схемы для предоставления разрешений внутри базы данных. (см. также раздел [Schema-Design: рекомендации по проектированию схем с учетом безопасности.](http://andreas-wolter.com/en/schema-design-for-sql-server-recommendations-for-schema-design-with-security-in-mind/))
   - Объект (таблица, представление, процедура и т. д.)
 
@@ -461,7 +461,7 @@ ms.locfileid: "90885174"
 
 - Защитите симметричные ключи с помощью асимметричных ключей и сертификатов (не паролей), чтобы избежать использования 3DES.
 
-- Будьте внимательны при переносе базы данных с помощью шифрования на уровне ячейки с помощью экспорта и импорта (файлы BACPAC).
+- Будьте внимательны при переносе базы данных с помощью Cell-Levelного шифрования с помощью экспорта и импорта (файлы BACPAC).
   - См. статью [рекомендации по использованию шифрования на уровне ячеек в базе данных SQL Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database/) и о том, как предотвратить потерю ключей при переносе данных, а также о других рекомендуемых рекомендациях.
 
 Помните, что Always Encrypted в основном предназначен для защиты конфиденциальных данных от пользователей с высоким уровнем привилегий базы данных SQL Azure (операторов облака). см. раздел [Защита конфиденциальных данных, используемых с высоким уровнем привилегий и неавторизованными пользователями](#protect-sensitive-data-in-use-from-high-privileged-unauthorized-users). При использовании Always Encrypted для защиты данных от пользователей приложений учитывайте следующие проблемы.
@@ -798,6 +798,6 @@ ms.locfileid: "90885174"
 
 - Дополнительные функции обеспечения непрерывности бизнес-процессов, такие как группы автоматической отработки отказа в различных геообъектовах Azure, можно настроить, как описано здесь: [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. [Обзор возможностей безопасности базы данных SQL Azure](security-overview.md) .

@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 04/16/2020
 ms.custom: mvc, cc996988-fb4f-47
 ms.openlocfilehash: 9e542c493c02174364072f91d092f05ad9ec69cf
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90973098"
 ---
 # <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Создание в Azure функции, активируемой по таймеру
@@ -36,15 +36,15 @@ ms.locfileid: "90973098"
 
 1. В приложении-функции выберите **Функции**, а затем выберите **+ Добавить**. 
 
-   :::image type="content" source="./media/functions-create-scheduled-function/function-add-function.png" alt-text="Добавьте функцию на портале Azure." border="true":::
+   :::image type="content" source="./media/functions-create-scheduled-function/function-add-function.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 1. Выберите шаблон **Триггер таймера**. 
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-select-timer-trigger.png" alt-text="Выберите триггер таймера на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-select-timer-trigger.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 1. Настройте новый триггер с параметрами, как указано в таблице под изображением, и нажмите **Создать функцию**.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="На снимке экрана показана страница Новая функция с выбранным шаблоном триггера таймера." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="Приложение-функция успешно создана." border="true":::
     
     | Параметр | Рекомендуемое значение | Описание |
     |---|---|---|
@@ -55,11 +55,11 @@ ms.locfileid: "90973098"
 
 1. В функции выберите **Код + тест** и разверните журналы.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-test-timer-trigger.png" alt-text="Протестируйте триггер таймера на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-test-timer-trigger.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 1. Проверьте выполнение, просмотрев записанные в журналах сведения.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-view-timer-logs.png" alt-text="Просмотрите триггер таймера на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-view-timer-logs.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 Теперь потребуется изменить расписание функции, чтобы она выполнялась раз в час, а не раз в минуту.
 
@@ -69,11 +69,11 @@ ms.locfileid: "90973098"
 
 1. Выберите **Таймер (myTimer)** .
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-update-timer-schedule.png" alt-text="Обновите расписание таймера на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-update-timer-schedule.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 1. Измените значение **Расписание** на `0 0 */1 * * *`, а затем нажмите **Сохранить**.  
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-edit-timer-schedule.png" alt-text="Обновление расписания таймера функций на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-edit-timer-schedule.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 Теперь функция будет выполняться в начале каждого часа.
 

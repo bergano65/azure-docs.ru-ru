@@ -4,10 +4,10 @@ description: Узнайте, как подключиться к виртуаль
 ms.topic: how-to
 ms.date: 07/17/2020
 ms.openlocfilehash: 52fe245f85034a4c6300615ad8fb6040c1168298
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86532188"
 ---
 # <a name="connect-to-a-linux-vm-in-your-lab-azure-devtest-labs"></a>Подключение к виртуальной машине Linux в лаборатории (Azure DevTest Labs)
@@ -20,13 +20,13 @@ ms.locfileid: "86532188"
     :::image type="content" source="./media/connect-linux-virtual-machine/search-select.png" alt-text="Найдите и выберите DevTest Labs.":::    
 1. В списке лабораторий выберите свою **лабораторию**.
 
-    :::image type="content" source="./media/connect-linux-virtual-machine/select-lab.png" alt-text="Выбор лаборатории":::            
+    :::image type="content" source="./media/connect-linux-virtual-machine/select-lab.png" alt-text="Найдите и выберите DevTest Labs.":::            
 1. На домашней странице лаборатории выберите виртуальную машину Linux из списка **мои виртуальные машины** . 
 
-    :::image type="content" source="./media/connect-linux-virtual-machine/select-linux-vm.png" alt-text="Выбор виртуальной машины Linux":::        
+    :::image type="content" source="./media/connect-linux-virtual-machine/select-linux-vm.png" alt-text="Найдите и выберите DevTest Labs.":::        
 5. На странице **Обзор** можно увидеть полное доменное имя (FQDN) или IP-адрес виртуальной машины. Вы также можете просмотреть порт, как показано на следующем рисунке.
 
-    :::image type="content" source="./media/connect-linux-virtual-machine/vm-overview.png" alt-text="Полное доменное имя виртуальной машины":::    
+    :::image type="content" source="./media/connect-linux-virtual-machine/vm-overview.png" alt-text="Найдите и выберите DevTest Labs.":::    
 
     Обратите внимание, что кнопка **подключить** неактивна, несмотря на то, что виртуальная машина запущена. Это по разработке.
 6.  Используйте SSH для подключения к виртуальной машине Linux. В следующем примере выполняется подключение к виртуальной машине с полным доменным именем `mydtl07172452621450000.eastus.cloudapp.azure.com` с именем пользователя `vmuser` и портом `51637` . Введите пароль для пользователя, чтобы подключиться к виртуальной машине. 
@@ -39,5 +39,5 @@ ms.locfileid: "86532188"
 
     После подключения с помощью SSH можно установить и настроить среду рабочего стола ([Xfce](https://www.xfce.org)) и удаленный рабочий стол ([xrdp](http://xrdp.org)).  Подробные сведения см. в [статье Установка и настройка удаленный рабочий стол для подключения к виртуальной машине Linux в Azure](../virtual-machines/linux/use-remote-desktop.md). 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 [Как подключиться к виртуальной машине Windows](connect-windows-virtual-machine.md)

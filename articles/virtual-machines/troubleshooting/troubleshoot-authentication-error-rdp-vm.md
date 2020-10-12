@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
 ms.openlocfilehash: cc1ad3104596cc7ad4bb48f88e4c8312bc833371
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87088569"
 ---
 # <a name="troubleshoot-authentication-errors-when-you-use-rdp-to-connect-to-azure-vm"></a>Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP
@@ -124,7 +124,7 @@ REG add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-T
 REG add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v fAllowSecProtocolNegotiation /t REG_DWORD /d 1 /f
 ```
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="for-domain-joined-vms"></a>Для виртуальных машин, присоединенных к домену
 
@@ -161,7 +161,7 @@ Reset-ComputerMachinePassword -Server "<COMPUTERNAME>" -Credential <DOMAIN CREDE
 
 Если контроллер домена и виртуальная машина успешно взаимодействуют, но контроллер домена недостаточно работоспособен, чтобы запустить сеанс RDP, можно попытаться перезапустить контроллер домена.
 
-Если указанные выше команды не привели к устранению неполадки связи с доменом, можно повторно присоединить эту виртуальную машину к домену. Для этого выполните следующие действия.
+Если указанные выше команды не привели к устранению неполадки связи с доменом, можно повторно присоединить эту виртуальную машину к домену. Для этого выполните следующие действия:
 
 1. Создайте сценарий Unjoin.ps1, используя приведенное ниже содержимое. Затем разверните этот сценарий как расширение пользовательских сценариев на портале Azure.
 
@@ -274,7 +274,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP
 
 Чтобы изменения реестра вступили в силу, перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Метод SetEncryptionLevel класса Win32_TSGeneralSetting](/windows/desktop/termserv/win32-tsgeneralsetting-setencryptionlevel)
 

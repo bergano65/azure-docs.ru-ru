@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet, devx-track-azurepowershell
 ms.date: 04/22/2019
 ms.openlocfilehash: 1da4154530f823d391aea779011a34a35edfd070
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89071165"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Руководство разработчика PowerShell для Функций Azure.
@@ -145,7 +145,7 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 
 Дополнительные сведения см. в разделе [About общиепараметры](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-#### <a name="push-outputbinding-example-http-responses"></a>Push-Аутпутбиндинг пример: HTTP-ответы
+#### <a name="push-outputbinding-example-http-responses"></a>Push-OutputBinding пример: HTTP-ответы
 
 Триггер HTTP возвращает ответ, используя выходную привязку с именем `response` . В следующем примере выходная привязка `response` имеет значение "output #1":
 
@@ -174,7 +174,7 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 }) -Clobber
 ```
 
-#### <a name="push-outputbinding-example-queue-output-binding"></a>Пример Push-Аутпутбиндинг: Выходная привязка очереди
+#### <a name="push-outputbinding-example-queue-output-binding"></a>Push-OutputBinding пример: Выходная привязка очереди
 
 `Push-OutputBinding` используется для отправки данных в выходные привязки, такие как [выходная привязка хранилища очередей Azure](functions-bindings-storage-queue-output.md). В следующем примере сообщение, записанное в очередь, имеет значение "Output #1":
 
@@ -297,7 +297,7 @@ MyQueue                        myData
 
 | Свойство  | Описание                                                    | Тип                      |
 |-----------|----------------------------------------------------------------|---------------------------|
-| **`Body`**    | Объект, содержащий текст запроса. `Body` сериализуется в лучший тип на основе данных. Например, если данные являются JSON, они передаются в виде хэш-таблицы. Если данные являются строкой, они передаются в виде строки. | объект |
+| **`Body`**    | Объект, содержащий текст запроса. `Body` сериализуется в лучший тип на основе данных. Например, если данные являются JSON, они передаются в виде хэш-таблицы. Если данные являются строкой, они передаются в виде строки. | object |
 | **`Headers`** | Словарь, содержащий заголовки запроса.                | Строка<словаря, строка><sup>*</sup> |
 | **`Method`** | Метод HTTP, используемый для запроса.                                | строка                    |
 | **`Params`**  | Объект, содержащий параметры маршрутизации запроса. | Строка<словаря, строка><sup>*</sup> |
@@ -312,7 +312,7 @@ MyQueue                        myData
 
 | Свойство      | Описание                                                 | Тип                      |
 |---------------|-------------------------------------------------------------|---------------------------|
-| **`Body`**  | Объект, содержащий текст ответа.           | объект                    |
+| **`Body`**  | Объект, содержащий текст ответа.           | object                    |
 | **`ContentType`** | Короткий рукой для установки типа содержимого для ответа. | строка                    |
 | **`Headers`** | Объект, содержащий заголовок ответа.               | Словарь или хэш-таблица   |
 | **`StatusCode`**  | Код состояния HTTP ответа.                       | строка или целое число             |

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 12/09/2019
 ms.custom: sfrev
 ms.openlocfilehash: dd0cbd3251185a7831852ead47ca0b120126cf55
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81415672"
 ---
 # <a name="configure-managed-identity-support-for-a-new-service-fabric-cluster"></a>Настройка поддержки управляемого удостоверения для нового кластера Service Fabric
@@ -36,7 +36,7 @@ ms.locfileid: "81415672"
 ]
 ```
 
-## <a name="errors"></a>Ошибки
+## <a name="errors"></a>ошибки
 
 Если развертывание завершается сбоем с этим сообщением, это означает, что кластер не находится в требуемой версии Service Fabric (минимальная поддерживаемая среда выполнения — 6,5 CU2):
 

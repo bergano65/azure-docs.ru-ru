@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 87cbb94dbab241630dc7585bdf4314d858d5b4da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74232754"
 ---
 # <a name="versioning-in-durable-functions-azure-functions"></a>Управление версиями в устойчивых функциях (Функции Azure)
@@ -153,7 +153,7 @@ public static Task Run([OrchestrationTrigger] IDurableOrchestrationContext conte
 > [!NOTE]
 > Эта стратегия оптимально подходит при использовании триггеров HTTP и веб-перехватчика для функций оркестратора. Для триггеров, отличных от HTTP, таких как очереди или концентраторы событий, определение триггера должно [быть производным от параметра приложения](../functions-bindings-expressions-patterns.md#binding-expressions---app-settings) , который обновляется как часть операции переключения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как управлять проблемами с производительностью и масштабированием](durable-functions-perf-and-scale.md)

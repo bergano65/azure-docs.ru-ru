@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 ms.openlocfilehash: eca49a3fac1ea0398ebe1d05bde20fbca3c81232
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77594317"
 ---
 # <a name="about-service-meshes"></a>О сетчатых службах
@@ -38,7 +38,7 @@ ms.locfileid: "77594317"
 
 ![Стандартная архитектура сетки служб](media/servicemesh/typical-architecture.png)
 
-## <a name="capabilities"></a>Характеристики
+## <a name="capabilities"></a>Возможности
 
 Каждая из сеток служб имеет естественное соответствие и сосредоточена на поддержке конкретных сценариев, но обычно большинство из них будет реализовывать ряд, если не все, из следующих возможностей.
 
@@ -92,7 +92,7 @@ ms.locfileid: "77594317"
 - **Безопасность** — проверка подлинности, идентификация, Управление сертификатами и вращение, подключаемый внешний ЦС
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей документации содержатся дополнительные сведения о сетевых сетках, которые можно испытать в службе Azure Kubernetes (AKS).
 

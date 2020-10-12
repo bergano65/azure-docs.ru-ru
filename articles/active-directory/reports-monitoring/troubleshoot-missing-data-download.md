@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5003d7b644a0c75401a17ed6a37f31acd8180aa9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85608081"
 ---
 # <a name="i-cant-find-all-the-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Я не могу найти данные в скачанных журналах действий Azure Active Directory
@@ -32,7 +32,7 @@ ms.locfileid: "85608081"
 
  ![Отчеты](./media/troubleshoot-missing-data-download/01.png)
  
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 При скачивании журналов действий в портал Azure мы ограничивают масштабирование до 250 000 записей, отсортированных по последним первым. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "85608081"
 
 Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вопросы и ответы об отчетах Azure Active Directory](reports-faq.md)
 

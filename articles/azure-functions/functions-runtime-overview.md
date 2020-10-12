@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
 ms.openlocfilehash: ab04aa4ca7f54e8de120d078a313c3096a350aa5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74226628"
 ---
 # <a name="azure-functions-runtime-overview-preview"></a>Обзор среды выполнения Функций Azure (предварительная версия)
@@ -43,7 +43,7 @@ ms.locfileid: "74226628"
 
 Чтобы приступить к работе со средой выполнения для решения "Функции Azure", установите Windows Server 2016 или Windows 10 Creators Update с доступом к экземпляру SQL Server.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Установка [предварительной версии среда выполнения функций Azure](https://aka.ms/azafrdoc)
 

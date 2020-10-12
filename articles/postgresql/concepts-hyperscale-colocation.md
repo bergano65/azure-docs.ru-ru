@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.openlocfilehash: 842563319e09a001fd6e85403d8aee6fb14690ee
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90884431"
 ---
 # <a name="table-colocation-in-azure-database-for-postgresql--hyperscale-citus"></a>Совместное размещение таблиц в базе данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -47,7 +47,7 @@ CREATE TABLE page (
 
 Теперь мы хотим ответить на запросы, которые могут выдаваться на панели мониторинга, ориентированной на клиента. Пример запроса: "Возврат числа посещений за прошлую неделю для всех страниц, начинающихся с"/блог "в клиенте" шесть "".
 
-Если наши данные были в режиме развертывания с одним сервером, можно легко выразить наш запрос с помощью обширного набора реляционных операций, предлагаемых SQL:
+Если наши данные были в Single-Server развертывания, можно легко выразить наш запрос с помощью обширного набора реляционных операций, предлагаемых SQL:
 
 ```sql
 SELECT page_id, count(event_id)
@@ -96,7 +96,7 @@ GROUP BY page_id ORDER BY count DESC LIMIT 10;
 
 Выполнение запросов должно обращаться к данным в сегментах, разбросанных по узлам.
 
-:::image type="content" source="media/concepts-hyperscale-colocation/colocation-inefficient-queries.png" alt-text="Неэффективные запросы":::
+:::image type="content" source="media/concepts-hyperscale-colocation/colocation-inefficient-queries.png" alt-text="Сегментов":::
 
 В этом случае распределение данных создает существенные недостатки.
 
@@ -134,10 +134,10 @@ GROUP BY page_id;
 
 Из-за фильтрации и объединения в tenant_id, Цитуса, чтобы получить ответ на весь запрос, можно использовать набор соразмещенных сегментов, содержащих данные для конкретного клиента. Один PostgreSQL узел может ответить на запрос за один шаг.
 
-:::image type="content" source="media/concepts-hyperscale-colocation/colocation-better-query.png" alt-text="Улучшенный запрос":::
+:::image type="content" source="media/concepts-hyperscale-colocation/colocation-better-query.png" alt-text="Сегментов":::
 
 В некоторых случаях необходимо изменить запросы и схемы таблиц, чтобы включить идентификатор клиента в ограничения UNIQUE и условия JOIN. Это изменение обычно является простым.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как данные клиента сохранятся в [учебнике по нескольким клиентам](tutorial-design-database-hyperscale-multi-tenant.md).

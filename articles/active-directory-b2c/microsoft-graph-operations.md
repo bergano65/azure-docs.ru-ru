@@ -12,10 +12,10 @@ ms.date: 02/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 27fe1a41365d96a4179f8c659b63dc22c7b9fc93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78184254"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph операции, доступные для Azure AD B2C
@@ -49,7 +49,7 @@ ms.locfileid: "78184254"
 Настройте предварительно созданные политики для регистрации, входа, объединения и входа в систему, сброса пароля и обновления профиля.
 
 - [Перечисление потоков пользователей](https://docs.microsoft.com/graph/api/identityuserflow-list)
-- [Создание потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-post-userflows)
+- [Создание потока пользователей](https://docs.microsoft.com/graph/api/identityuserflow-post-userflows)
 - [Получение потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-get)
 - [Удаление потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-delete)
 

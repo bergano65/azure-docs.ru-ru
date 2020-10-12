@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 68cad32be177fa20794399157fca89e87c2f8f59
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74157667"
 ---
 # <a name="performance-guide-for-azure-signalr-service"></a>Руководство по производительности для Службы Azure SignalR
@@ -70,7 +70,7 @@ ms.locfileid: "74157667"
 
 Тип транспорта является еще одним фактором, влияющим на производительность. Три типа — это [WebSocket](https://en.wikipedia.org/wiki/WebSocket), [Серверная передача событий](https://en.wikipedia.org/wiki/Server-sent_events)и [длительный опрос](https://en.wikipedia.org/wiki/Push_technology). 
 
-WebSocket — это двунаправленный и дуплексный протокол связи по одному TCP-соединению. Server-Sentd-Event — это однонаправленный протокол для отправки сообщений с сервера на клиент. Для длительного опроса клиенты должны периодически опрашивать данные с сервера через HTTP-запрос. Для того же API, что и в тех же условиях, WebSocket имеет лучшую производительность, серверное событие — медленный, а длительный опрос — самый медленный. По умолчанию служба Azure SignalR рекомендует WebSocket.
+WebSocket — это двунаправленный и дуплексный протокол связи по одному TCP-соединению. Server-Sentd-Event — это однонаправленный протокол для отправки сообщений с сервера на клиент. Long-Polling требует, чтобы клиенты периодически опрашивают данные с сервера через HTTP-запрос. Для одного и того же API в одном и том же состоянии WebSocket имеет лучшую производительность, серверное событие — медленный, а Long-Polling является самым медленным. По умолчанию служба Azure SignalR рекомендует WebSocket.
 
 Стоимость маршрутизации сообщений также ограничивает производительность. Служба Azure SignalR играет роль в качестве маршрутизатора сообщений, который направляет сообщение от набора клиентов или серверов другим клиентам или серверам. Для другого сценария или API требуется другая политика маршрутизации. 
 
@@ -428,7 +428,7 @@ outboundConnections = outboundBandwidth * sendInterval / messageSize
 
 Средства оценки производительности для службы Azure SignalR можно найти на сайте [GitHub](https://github.com/Azure/azure-signalr-bench/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы получите обзор производительности службы Azure SignalR в типичных сценариях использования.
 

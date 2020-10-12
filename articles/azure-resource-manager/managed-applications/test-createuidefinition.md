@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
 ms.openlocfilehash: e2d075a58872f9337c7d1faa642a48047e2f9ddf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "78250180"
 ---
 # <a name="test-your-portal-interface-for-azure-managed-applications"></a>Тестирование интерфейса портала для управляемых приложений Azure
 
 После [создания createUiDefinition.jsв файле](create-uidefinition-overview.md) для управляемого приложения необходимо протестировать взаимодействие с пользователем. Чтобы упростить тестирование, используйте изолированную среду, которая загружает файл на портал. Вам не нужно развертывать управляемое приложение. Песочница представляет пользовательский интерфейс в текущем полноэкранном портале. Также можно использовать скрипт для тестирования интерфейса. В этой статье описаны оба подхода. Песочница является рекомендуемым способом предварительного просмотра интерфейса.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Файл **createUiDefinition.json**. Если у вас нет этого файла, скопируйте [Пример файла](https://github.com/Azure/azure-quickstart-templates/blob/master/100-marketplace-sample/createUiDefinition.json).
 
@@ -102,6 +102,6 @@ ms.locfileid: "78250180"
 
 Теперь, когда вы проверили, что ваш интерфейс портала работает так, как ожидается, пришло время проверить, что ваш файл createUiDefinition правильно интегрирован с файлом mainTemplate.json. Можно запустить тестирование сценария проверки для проверки содержимого файлов решения, включая файл createUiDefinition. Сценарий проверяет синтаксис JSON, регулярные выражения в текстовых полях и обеспечивает соответствие выходных значений интерфейса портала параметрам шаблона. Со сведениями о запуске этого сценария можно ознакомиться в статье, посвященной [запуску статических проверок шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/test).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После проверки интерфейса портала узнайте, как [обеспечить доступность управляемых приложений Azure в Marketplace](publish-marketplace-app.md).

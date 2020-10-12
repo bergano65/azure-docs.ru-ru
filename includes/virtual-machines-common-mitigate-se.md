@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: virtual-machines
 author: cynthn
@@ -9,10 +9,10 @@ ms.date: 11/12/2019
 ms.author: cynthn;kareni
 ms.custom: include file
 ms.openlocfilehash: 6668d9753d0b93ab907d37cdeff8315f488cff7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "73935893"
 ---
 **Последнее обновление документа**: 12 ноября 2019 10:00 по тихоокеанскому времени.
@@ -43,7 +43,7 @@ ms.locfileid: "73935893"
 
 | Предложение | Рекомендуемое действие  |
 |----------|---------------------|
-| Oблачныe службы Azure  | Включите [Автоматическое обновление](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal) или убедитесь, что вы используете самую новую гостевую ОС. |
+| Облачные службы Azure  | Включите [Автоматическое обновление](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal) или убедитесь, что вы используете самую новую гостевую ОС. |
 | Виртуальные машины Linux в Azure | Устанавливайте обновления, предоставляемые поставщиками операционной системы. Дополнительные сведения см. в пункте [Linux](#linux) далее в этом документе. |
 | Виртуальные машины Windows в Azure  | Установка последнего накопительного пакета обновлений безопасности.
 | Прочие службы Azure PaaS | Для клиентов, использующих эти службы, дополнительные действия не требуются. Azure автоматически выполняет обновление версий операционной системы. |

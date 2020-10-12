@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.openlocfilehash: 1b8b4c43c559831810db9b92da6c2743556cd2ac
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90973584"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
@@ -255,11 +255,11 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
 - PerfCounters поддерживаются, когда приложение выполняется на любых компьютерах Windows (виртуальная машина или облачная служба или локальная и т. д.). (Пакет SDK для AspNetCore версии 2.7.1 или более поздней), но для приложений, предназначенных для .NET Core 2,0 или более поздних версий.
 - PerfCounters поддерживаются, когда приложение работает где УГОДно (Linux, Windows, служба приложений для Linux, контейнеры и т. д.) в последних версиях (т. е. AspNetCore SDK версии 2.8.0 или более поздней), но только для приложений, предназначенных для .NET Core 2,0 или более поздней версии.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Live Metrics Stream использует IP-адреса, отличные от других Application Insights телеметрии. Убедитесь, что [эти IP-адреса](./ip-addresses.md) открыты в брандмауэре. Также убедитесь, что [исходящие порты для Live Metrics Stream](./ip-addresses.md#outgoing-ports) открыты в брандмауэре серверов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отслеживание использования Application Insights.](./usage-overview.md)
 * [Использование диагностического поиска](./diagnostic-search.md)
