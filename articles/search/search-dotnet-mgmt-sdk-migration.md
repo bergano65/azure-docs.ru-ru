@@ -10,10 +10,10 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 07/08/2020
 ms.openlocfilehash: 8648347eb48081389cf360fa949b31bbd0b8c71e
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88936713"
 ---
 # <a name="upgrading-versions-of-the-azure-search-net-management-sdk"></a>Обновление версий пакета SDK для службы поиска Azure для .NET
@@ -46,7 +46,7 @@ ms.locfileid: "88936713"
 
 ### <a name="new-apis"></a>Новые интерфейсы API
 
-| API | Категория| Сведения |
+| API | Категория| Подробнее |
 |-----|--------|------------------|
 | [нетворкрулесет](/rest/api/searchmanagement/services/createorupdate#networkruleset) | Брандмауэр IP-адресов | Ограничьте доступ к конечной точке службы списком разрешенных IP-адресов. Основные понятия и инструкции на портале см. в разделе [Настройка брандмауэра IP](service-configure-firewall.md) . |
 | [Общий ресурс частной ссылки](/rest/api/searchmanagement/sharedprivatelinkresources) | Приватный канал | Создайте общий ресурс частной ссылки, который будет использоваться службой поиска.  |

@@ -14,10 +14,10 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: aa10cb207011051c30866a3a3ed693e7113b5882
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89297727"
 ---
 # <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Настройка POST для вызовов REST API служб мультимедиа v3
@@ -99,12 +99,12 @@ ms.locfileid: "89297727"
 * Если приложение завершается с ошибкой "HTTP 504: время ожидания шлюза", убедитесь, что для переменной расположения не было явно задано значение, отличное от ожидаемого расположения учетной записи служб мультимедиа. 
 * Если возникает ошибка "учетная запись не найдена", убедитесь, что для свойства Location в тексте сообщения JSON задано расположение учетной записи служб мультимедиа. 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Создание фильтров с помощью REST API Служб мультимедиа](filters-dynamic-manifest-rest-howto.md)
 - [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Потоковая передача файлов с помощью REST](stream-files-tutorial-with-rest.md)  
 - [Руководство. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)

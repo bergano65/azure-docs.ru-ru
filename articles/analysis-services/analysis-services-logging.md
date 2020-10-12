@@ -8,10 +8,10 @@ ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 7e1eab20a8e315b977c21de46dd4f6ea2fec9f5d
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83701487"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
@@ -90,7 +90,7 @@ ms.locfileid: "83701487"
 
 3. Выберите команду **Сохранить**.
 
-    Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id> is not registered to use Microsoft.Insights (Не удалось обновить данные диагностики для <имя_рабочей_области>. Подписку <идентификатор_подписки> не зарегистрировано для использования Microsoft.Insights), следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
+    Если появится сообщение об ошибке "не удалось обновить диагностику для \<workspace name> . Подписка \<subscription id> не зарегистрирована для использования Microsoft. Insights. " следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
     Если вы хотите изменить способ сохранения журналов ресурсов в дальнейшем, можно в любое время вернуться на эту страницу, чтобы изменить параметры.
 

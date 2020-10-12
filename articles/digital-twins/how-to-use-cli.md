@@ -8,10 +8,10 @@ ms.date: 05/25/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 2c642b2441d1f30c31e707a237732e028f548ac5
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89298187"
 ---
 # <a name="use-the-azure-digital-twins-cli"></a>Использование CLI для Azure Digital Twins
@@ -41,7 +41,7 @@ ms.locfileid: "89298187"
 
 [!INCLUDE [digital-twins-cloud-shell-extensions.md](../../includes/digital-twins-cloud-shell-extensions.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Альтернативу командам CLI см. в статье Управление экземпляром Digital двойников в Azure с помощью API и пакетов SDK:
 * [*Практические руководства. Использование API-интерфейсов и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md)

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: 148310419ad4f760219003514dbc078b7c675be6
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91538793"
 ---
 # <a name="data-import-overview---azure-cognitive-search"></a>Общие сведения об импорте данных в Azure Когнитивный поиск
@@ -98,7 +98,7 @@ ms.locfileid: "91538793"
 > [!TIP]
 > Многочисленные [примеры кода когнитивный Поиск Azure](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=search) включают в себя встроенные или готовые наборы данных, предлагающие простой способ начать работу. На портале также доступен пример индексатора и источника данных, представленного небольшим набором данных, связанных с недвижимостью (realestate-us-sample). При запуске предварительно настроенного индексатора с примером источника данных создается и загружается индекс с документами. Затем вы можете создать запрос к этому индексу, используя проводник поиска или программные средства.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Обзор индексатора](search-indexer-overview.md)
 + [Руководство по созданию первого индекса службы поиска Azure на портале](search-get-started-portal.md)

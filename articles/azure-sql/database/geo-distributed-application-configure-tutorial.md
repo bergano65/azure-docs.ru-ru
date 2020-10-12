@@ -12,10 +12,10 @@ ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 03/12/2019
 ms.openlocfilehash: 8e64e1a63b01e900988c999321423dfe92df00c4
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335081"
 ---
 # <a name="tutorial-implement-a-geo-distributed-database-azure-sql-database"></a>Учебник. Реализация геораспределенной базы данных (база данных SQL Azure)
@@ -25,7 +25,7 @@ ms.locfileid: "91335081"
 
 > [!div class="checklist"]
 >
-> - создавать [группу отработки отказа](auto-failover-group-overview.md);
+> - Создание [группы отработки отказа](auto-failover-group-overview.md)
 > - Запуск приложения Java для запроса базы данных в базе данных SQL
 > - Тестовая отработка отказа
 
@@ -36,7 +36,7 @@ ms.locfileid: "91335081"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для работы с этим руководством необходимо убедиться, что установлены следующие компоненты:
 
@@ -368,7 +368,7 @@ az sql failover-group show --name $failoverGroup --resource-group $resourceGroup
 
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководстве вы настроили базу данных в базе данных SQL Azure и приложение для отработки отказа в удаленный регион и проверили план отработки отказа. Вы ознакомились с выполнением следующих задач:
 

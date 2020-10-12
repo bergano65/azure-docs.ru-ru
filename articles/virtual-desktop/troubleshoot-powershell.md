@@ -7,10 +7,10 @@ ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 03b6da1d35247749d8ec2c6459c8ddee69bfccb6
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88002275"
 ---
 # <a name="windows-virtual-desktop-powershell"></a>Виртуальный рабочий стол Windows — PowerShell
@@ -20,7 +20,7 @@ ms.locfileid: "88002275"
 
 Используйте эту статью для устранения ошибок и проблем при использовании PowerShell с виртуальным рабочим столом Windows. Дополнительные сведения о службы удаленных рабочих столов PowerShell см. в статье [Windows Virtual Desktop PowerShell](/powershell/module/windowsvirtualdesktop/).
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -52,7 +52,7 @@ New-AzRoleAssignment -SignInName "admins@contoso.com" -RoleDefinitionName "Deskt
 
 **Исправление 2:** Пользователю с разрешениями Active Directory необходимо выполнить назначение ролей.
 
-### <a name="error-new-azwvdhostpool----the-location-is-not-available-for-resource-type"></a>Ошибка: New-Азввдхостпул--расположение недоступно для типа ресурса
+### <a name="error-new-azwvdhostpool----the-location-is-not-available-for-resource-type"></a>Ошибка: New-AzWvdHostPool--расположение недоступно для типа ресурса
 
 ```powershell
 New-AzWvdHostPool_CreateExpanded: The provided location 'southeastasia' is not available for resource type 'Microsoft.DesktopVirtualization/hostpools'. List of available regions for the resource type is 'eastus,eastus2,westus,westus2,northcentralus,southcentralus,westcentralus,centralus'.
@@ -62,7 +62,7 @@ New-AzWvdHostPool_CreateExpanded: The provided location 'southeastasia' is not a
 
 Исправление. в сообщении об ошибке будет опубликован список поддерживаемых регионов. Вместо этого используйте один из поддерживаемых регионов.
 
-### <a name="error-new-azwvdapplicationgroup-must-be-in-same-location-as-host-pool"></a>Ошибка: New-Азввдаппликатионграуп должен находиться в том же расположении, что и пул узлов
+### <a name="error-new-azwvdapplicationgroup-must-be-in-same-location-as-host-pool"></a>Ошибка: New-AzWvdApplicationGroup должны находиться в том же расположении, что и пул узлов
 
 ```powershell
 New-AzWvdApplicationGroup_CreateExpanded: ActivityId: e5fe6c1d-5f2c-4db9-817d-e423b8b7d168 Error: ApplicationGroup must be in same location as associated HostPool

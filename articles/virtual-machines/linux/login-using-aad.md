@@ -8,10 +8,10 @@ ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: sandeo
 ms.openlocfilehash: fef1870c396055cb9121aa5d8c7859440d107f98
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88002332"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
@@ -158,7 +158,7 @@ ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 
 При появлении запроса введите учетные данные для входа в Azure AD на странице входа. 
 
-При успешной проверке подлинности в веб-браузере отображается следующее сообщение:`You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.`
+При успешной проверке подлинности в веб-браузере отображается следующее сообщение: `You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.`
 
 Закройте окно браузера, вернитесь к запросу SSH и нажмите клавишу **ВВОД**. 
 
@@ -212,6 +212,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

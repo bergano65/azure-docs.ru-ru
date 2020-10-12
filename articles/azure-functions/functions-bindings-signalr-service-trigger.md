@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 05/11/2020
 ms.author: chenyl
 ms.openlocfilehash: e2651afbcdc3bae71bb531aa0e821f83264c295d
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88212584"
 ---
 # <a name="signalr-service-trigger-binding-for-azure-functions"></a>Привязка триггера службы SignalR для функций Azure
@@ -213,7 +213,7 @@ await connection.invoke("broadcast", message1, message2);
 
 Можно получить доступ к этим двум аргументам из параметра, а также назначить для них тип параметра с помощью `ParameterNames` .
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Для привязки параметра порядок важен. Если используется `ParameterNames` , порядок в `ParameterNames` совпадает с порядком аргументов, которые вызываются в клиенте. Если вы используете атрибут `[SignalRParameter]` в C#, порядок аргументов в методах функции Azure соответствует порядку аргументов в клиентах.
 

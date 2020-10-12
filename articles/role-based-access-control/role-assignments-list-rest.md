@@ -16,15 +16,15 @@ ms.date: 05/06/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 634e1111c9374a1749e7dbb0666740ce2833a688
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84790982"
 ---
 # <a name="list-azure-role-assignments-using-the-rest-api"></a>Вывод списка назначений ролей Azure с помощью REST API
 
-[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)]В этой статье описывается, как вывести список назначений ролей с помощью REST API.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] В этой статье описывается, как вывести список назначений ролей с помощью REST API.
 
 > [!NOTE]
 > Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
@@ -42,7 +42,7 @@ ms.locfileid: "84790982"
 1. Внутри URI замените *{scope}* областью, для которой требуется вывести список назначений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -54,7 +54,7 @@ ms.locfileid: "84790982"
 1. Замените *{filter}* условием, по которому требуется отфильтровать список назначений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание: |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=atScope()` | Выводит список назначений ролей только для указанной области, не включая назначения ролей в подобластях. |
     > | `$filter=assignedTo('{objectId}')` | Выводит список назначений ролей для указанного пользователя или субъекта-службы.<br/>Если пользователь является членом группы, у которой есть назначение ролей, также отображается это назначение роли. Этот фильтр является транзитивным для групп. Это означает, что если пользователь является членом группы, а эта группа является членом другой группы, имеющей назначение ролей, также будет указано назначение роли.<br/>Этот фильтр принимает только идентификатор объекта для пользователя или субъекта-службы. Невозможно передать идентификатор объекта для группы. |
@@ -90,7 +90,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId1}/providers/Micro
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
+- [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)
