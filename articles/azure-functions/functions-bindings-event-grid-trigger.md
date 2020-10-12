@@ -7,10 +7,10 @@ ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python
 ms.openlocfilehash: 96daa93c28617bd34f263b11afcd244e3b7bacf0
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88214131"
 ---
 # <a name="azure-event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий Azure" для Функций Azure
@@ -407,7 +407,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Когда вы щелкните эту ссылку, на портале откроется страница **Создать подписку на события**, где автоматически определена конечная точка текущего триггера.
 
-:::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Страница Создать подписку на события, где определена конечная точка функции" :::
+:::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Подключите новую подписку на событие к триггеру с помощью портала." :::
 
 Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../event-grid/custom-event-quickstart-portal.md) документации по службе "Сетка событий".
 

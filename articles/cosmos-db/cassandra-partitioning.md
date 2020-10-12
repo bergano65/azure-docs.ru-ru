@@ -8,10 +8,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 05/20/2020
 ms.openlocfilehash: 26df3c49e44dd79d87a1e0a982ceb8133f425447
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87423326"
 ---
 # <a name="partitioning-in-azure-cosmos-db-cassandra-api"></a>Секционирование в Azure Cosmos DB API Cassandra
@@ -58,7 +58,7 @@ CREATE TABLE uprofile.user (
 
 ## <a name="compound-primary-key"></a>Составной первичный ключ
 
-Apache Cassandra также имеет концепцию `compound keys` . Составная `primary key` часть состоит из более чем одного столбца; первый столбец — `partition key` , а все дополнительные столбцы — `clustering keys` . Синтаксис для `compound primary key` показан ниже.
+Apache Cassandra также имеет концепцию  `compound keys` . Составная `primary key` часть состоит из более чем одного столбца; первый столбец — `partition key` , а все дополнительные столбцы — `clustering keys` . Синтаксис для `compound primary key` показан ниже.
 
 ```shell
 PRIMARY KEY (partition_key_column_name, clustering_column_name [, ...])

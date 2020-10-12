@@ -10,10 +10,10 @@ ms.subservice: azure-arc-data
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: d22976254cc804ca53060fb284abde8e80a684e6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319737"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Заметки о выпуске — службы данных с поддержкой ARC в Azure (Предварительная версия)
@@ -54,7 +54,7 @@ ms.locfileid: "91319737"
 
 - Длина имен управляемых экземпляров SQL не может превышать 13 символов
 - Нет обновления на месте для контроллера данных ARC в Azure или экземпляров базы данных.
-- Образы контейнеров служб данных с поддержкой Arc не подписаны.  Возможно, потребуется настроить узлы Kubernetes, чтобы разрешить отвлекать неподписанные образы контейнера.  Например, если в качестве среды выполнения контейнера используется DOCKER, можно задать переменную среды DOCKER_CONTENT_TRUST = 0 и перезапустить.  Другие среды выполнения контейнеров имеют аналогичные параметры, например в [OpenShift](https://docs.openshift.com/container-platform/4.5/openshift_images/image-configuration.html#images-configuration-file_image-configuration).
+- Образы контейнеров служб данных с поддержкой Arc не подписаны.  Возможно, потребуется настроить узлы Kubernetes так, чтобы разрешить извлечь неподписанные образы контейнера.  Например, если в качестве среды выполнения контейнера используется DOCKER, можно задать переменную среды DOCKER_CONTENT_TRUST = 0 и перезапустить.  Другие среды выполнения контейнеров имеют аналогичные параметры, например в [OpenShift](https://docs.openshift.com/container-platform/4.5/openshift_images/image-configuration.html#images-configuration-file_image-configuration).
 - Не удается создать на основе портал Azure службы "Дуга Azure", управляемые экземпляры SQL или группы серверов PostgreSQL.
 - Пока вы используете NFS, перед созданием контроллера данных ARC в Azure необходимо задать для Алловрунасрут значение true в файле профиля развертывания.
 - Только проверка подлинности входа SQL и PostgreSQL.  Отсутствует поддержка Azure Active Directory или Active Directory.

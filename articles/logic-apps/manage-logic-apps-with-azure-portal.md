@@ -10,17 +10,17 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 07/20/2020
 ms.openlocfilehash: d50f577a7170982be004cc8957114f79675fbc6e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87078627"
 ---
 # <a name="manage-logic-apps-in-the-azure-portal"></a>Управление приложениями логики в портал Azure
 
 Управлять приложениями логики можно с помощью [портал Azure](https://portal.azure.com) или [Visual Studio](manage-logic-apps-with-visual-studio.md). В этой статье показано, как изменять, отключать, включать и удалять приложения логики в портал Azure. Если вы не знакомы с Azure Logic Apps, см. статью [что такое Azure Logic Apps](logic-apps-overview.md)?
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -54,12 +54,12 @@ ms.locfileid: "87078627"
 
 1. На панели " **Свойства** " можно просмотреть и скопировать следующие сведения о приложении логики:
 
-   * **имя**;
+   * **Имя**
    * **Идентификатор ресурса**
    * **Группа ресурсов**
    * **Расположение**
    * **Тип** 
-   * **Название подписки**
+   * **Имя подписки**
    * **Идентификатор подписки**
    * **Конечная точка доступа**
    * **Исходящие IP-адреса среды выполнения**

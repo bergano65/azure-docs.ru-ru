@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/13/2020
 ms.author: aahi
 ms.openlocfilehash: e4a652b146286965c68154bd362525861158ecb2
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91704384"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример. Извлечение ключевых фраз с помощью Анализ текста
@@ -159,7 +159,7 @@ ms.locfileid: "91704384"
 ```
 Как уже отмечалось, анализатор находит и отбрасывает слова, которые не представляют смысла и сохраняет одиночные термины или фразы, которые могут быть темой или объектом предложения.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье рассматриваются основные понятия и рабочий процесс извлечения ключевой фразы с помощью Анализа текста в Cognitive Services. В разделе "Сводка" сделайте следующее.
 

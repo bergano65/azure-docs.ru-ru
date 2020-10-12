@@ -9,10 +9,10 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 1c8ccc1e1ee8c8c1b1a1e27443d27b2140a91649
-ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84465019"
 ---
 Чтобы создать частную конечную точку для учетной записи хранения, сначала нужно получить ссылку на учетную запись хранения и подсеть виртуальной сети, в которую вы хотите добавить частную конечную точку. Замените `<storage-account-resource-group-name>`, `<storage-account-name>`, `<vnet-resource-group-name>`, `<vnet-name>` и `<vnet-subnet-name>` ниже:

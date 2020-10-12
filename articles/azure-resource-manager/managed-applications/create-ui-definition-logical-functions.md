@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: tomfitz
 ms.openlocfilehash: 00d2f0eeb5d353c8ebd7ad30f6866f890d6cb42e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87098182"
 ---
 # <a name="createuidefinition-logical-functions"></a>Логические функции CreateUiDefinition
@@ -181,7 +181,7 @@ ms.locfileid: "87098182"
 "[not(equals(0, 0))]"
 ```
 
-## <a name="or"></a>or
+## <a name="or"></a>или
 
 Возвращает `true`, если хотя бы один из параметров имеет значение `true`. Эта функция поддерживает два или более параметров только логического типа.
 

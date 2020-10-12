@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 78f9e4d8fa80fdf74bdb5cd79f4489d12696fcc2
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88935795"
 ---
 # <a name="odata-full-text-search-functions-in-azure-cognitive-search---searchismatch-and-searchismatchscoring"></a>Функции полнотекстового поиска OData в Azure Когнитивный поиск — `search.ismatch` и `search.ismatchscoring`
@@ -35,7 +35,7 @@ Azure Когнитивный поиск поддерживает полноте�
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `search.ismatch` `search.ismatchscoring` функций и.
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `search.ismatch` `search.ismatchscoring` функций и.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -69,7 +69,7 @@ search_mode ::= "'any'" | "'all'"
 
 Параметры определены в следующей таблице.
 
-| Имя параметра | Тип | Description |
+| Имя параметра | Тип | Описание |
 | --- | --- | --- |
 | `search` | `Edm.String` | Поисковый запрос (как [простой](query-simple-syntax.md) , так и [полный](query-lucene-syntax.md) синтаксис запроса Lucene). |
 | `searchFields` | `Edm.String` | Разделенный запятыми список полей с возможностью поиска, в которых выполняется поиск; по умолчанию для всех полей, поддерживающих поиск, в индексе. При использовании [поискового](query-lucene-syntax.md#bkmk_fields) запроса в `search` параметре описатели полей в запросе Lucene переопределяют все поля, указанные в этом параметре. |

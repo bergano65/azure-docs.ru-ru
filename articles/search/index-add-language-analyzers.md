@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/05/2020
 ms.openlocfilehash: bda186f6bb45250763e439b77b4d3af988574401
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88935891"
 ---
 # <a name="add-language-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Добавление языковых анализаторов в строковые поля в индексе Azure Когнитивный поиск
@@ -129,7 +129,7 @@ Azure Когнитивный поиск поддерживает анализа�
 
  Все анализаторы, у которых в названии есть идентификатор **Lucene**, работают на базе [анализаторов языка Apache Lucene](https://lucene.apache.org/core/6_6_1/core/overview-summary.html ).
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 + [Создание индекса &#40;Azure Когнитивный поиск REST API&#41;](/rest/api/searchservice/create-index)  
 
