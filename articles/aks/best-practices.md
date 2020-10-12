@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 12/07/2018
 ms.openlocfilehash: 1278a03d3ffc7ccb11b0e3c4c84f6c213648440b
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88008786"
 ---
 # <a name="cluster-operator-and-developer-best-practices-to-build-and-manage-applications-on-azure-kubernetes-service-aks"></a>Лучшие методики по созданию приложений и управлению ими в Службе Azure Kubernetes (AKS) для оператора и разработчика кластера
@@ -73,6 +73,6 @@ ms.locfileid: "88008786"
 * [Варианты хранилищ](concepts-storage.md)
 * [Возможности масштабирования приложений в Службе Azure Kubernetes (AKS)](concepts-scale.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам необходимо приступить к работе с AKS, ознакомьтесь с одним из кратких руководств по развертыванию кластера Службы Azure Kubernetes (AKS) с помощью [Azure CLI](kubernetes-walkthrough.md) или [портала Azure](kubernetes-walkthrough-portal.md).

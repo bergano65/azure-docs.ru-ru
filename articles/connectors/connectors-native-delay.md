@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/25/2019
 tags: connectors
 ms.openlocfilehash: 5348ade1ba6eec6cbd360849411b4520cb3c2b19
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74787342"
 ---
 # <a name="delay-running-the-next-action-in-azure-logic-apps"></a>Задержка выполнения следующего действия в Azure Logic Apps
@@ -50,10 +50,10 @@ ms.locfileid: "74787342"
 
    ![Задать время задержки](./media/connectors-native-delay/delay-time-intervals.png)
 
-   | Свойство. | Имя JSON | Обязательно | Тип | Описание: |
+   | Свойство | Имя JSON | Обязательно | Тип | Описание |
    |----------|-----------|----------|------|-------------|
    | Count | count | Да | Целое число | Число единиц времени для задержки |
-   | Единицы | unit | Да | Строка | Единица времени, например:,, `Second` `Minute` ,, `Hour` `Day` `Week` или`Month` |
+   | Unit | unit | Да | Строка | Единица времени, например:,, `Second` `Minute` ,, `Hour` `Day` `Week` или `Month` |
    ||||||
 
 1. Добавьте любые другие действия, которые необходимо выполнить в рабочем процессе.
@@ -76,7 +76,7 @@ ms.locfileid: "74787342"
 
    ![Укажите отметку времени окончания задержки](./media/connectors-native-delay/delay-until-timestamp.png)
 
-   | Свойство. | Имя JSON | Обязательно | Тип | Описание |
+   | Свойство | Имя JSON | Обязательно | Тип | Описание |
    |----------|-----------|----------|------|-------------|
    | Отметка времени | TIMESTAMP | Да | Строка | Конечная дата и время возобновления рабочего процесса с использованием этого формата: <p>ГГГГ-мм-DDThh: мм: ссZ <p>Например, если вы хотите 18 сентября 2017 в 2:00 PM, укажите "2017-09-18T14:00:00Z". <p>**Примечание.** Этот формат времени должен соответствовать [спецификации даты и времени ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) в [формате даты и времени](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)в формате UTC, но без [смещения в формате UTC](https://en.wikipedia.org/wiki/UTC_offset). Без часового пояса необходимо добавить букву "Z" в конце без пробелов. Эта буква Z ссылается на соответствующее [судовое время](https://en.wikipedia.org/wiki/Nautical_time). |
    ||||||
@@ -85,7 +85,7 @@ ms.locfileid: "74787342"
 
 1. Сохраните приложение логики, когда закончите.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание, планирование и выполнение повторяющихся задач и рабочих процессов с помощью триггера повторения](../connectors/connectors-native-recurrence.md)
 * [Соединители для Logic Apps](../connectors/apis-list.md)

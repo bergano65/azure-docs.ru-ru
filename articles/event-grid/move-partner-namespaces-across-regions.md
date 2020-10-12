@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 08/20/2020
 ms.openlocfilehash: 6783db6b9bb1c7d48b308234a179925d6f30e281
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89086209"
 ---
 # <a name="move-azure-event-grid-partner-namespaces-to-another-region"></a>Перемещение пространств имен партнеров службы "Сетка событий Azure" в другой регион
@@ -27,7 +27,7 @@ ms.locfileid: "89086209"
 ## <a name="prerequisites"></a>Предварительные требования
 - Убедитесь, что служба "Сетка событий" доступна в целевом регионе. См. страницу [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=event-grid&regions=all).
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 Чтобы приступить к работе, экспортируйте шаблон диспетчер ресурсов для пространства имен Partner. 
 
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -59,7 +59,7 @@ ms.locfileid: "89086209"
 1. В портал Azure выберите **создать ресурс**.
 2. В **поле Поиск в Marketplace**введите **шаблон развертывание**и нажмите клавишу **Ввод**.
 3. Выберите **шаблоны развертывания**.
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 5. Выберите **Создать собственный шаблон в редакторе**.
 6. Выберите **загрузить файл**и следуйте инструкциям по загрузке **template.jsв** файл, скачанный в предыдущем разделе.
 7. Нажмите кнопку **сохранить** , чтобы сохранить шаблон. 

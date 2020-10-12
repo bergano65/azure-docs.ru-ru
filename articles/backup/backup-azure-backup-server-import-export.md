@@ -4,10 +4,10 @@ description: С Azure Backup можно отправить данные из с�
 ms.topic: conceptual
 ms.date: 05/24/2020
 ms.openlocfilehash: 368ae846a24ec04ee4b7da9b5971c00180be611d
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89378463"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-mabs"></a>Рабочий процесс автономного резервного копирования для DPM и Azure Backup Server (MABS)
@@ -24,7 +24,7 @@ System Center Data Protection Manager и Azure Backup Server (MABS) интегр
 >
 > MABS UR1 Update также предоставляет предварительную версию для автономного резервного копирования с помощью Azure Data Box в MABS. [SystemCenterFeedback@microsoft.com](mailto:SystemCenterFeedback@microsoft.com)Для получения дополнительных сведений обратитесь к.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Благодаря возможности автономного заполнения Azure Backup и службы импорта и экспорта Azure можно легко передать данные в автономном режиме в Azure с помощью дисков. Процесс автономного резервного копирования включает следующие шаги:
 

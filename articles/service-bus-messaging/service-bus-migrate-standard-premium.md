@@ -4,10 +4,10 @@ description: Инструкции по разрешению переноса с�
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 1ed09a077f086390c658e6650171c552b361008d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85340741"
 ---
 # <a name="migrate-existing-azure-service-bus-standard-namespaces-to-the-premium-tier"></a>Перенос существующих стандартных пространств имен служебной шины Azure на уровень "Премиум"
@@ -208,10 +208,10 @@ az servicebus migration abort --resource-group $resourceGroup --name $standardNa
     >
     > После завершения миграции приложения-получатели будут отключены от стандартного пространства имен и автоматически подключаться к пространству имен уровня "Премиум".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [различиях в обмене сообщениями](./service-bus-premium-messaging.md)уровня "Стандартный" и "Премиум".
-* Сведения о [высоком уровне доступности и географического аварийного восстановления для служебной шины Premium](service-bus-outages-disasters.md#protecting-against-outages-and-disasters---service-bus-premium).
+* Узнайте о [высоком уровне доступности и Geo-Disaster аспектах восстановления для служебной шины Premium](service-bus-outages-disasters.md#protecting-against-outages-and-disasters---service-bus-premium).
 
 [Целевая страница миграции]: ./media/service-bus-standard-premium-migration/1.png
 [Пространство имен установки]: ./media/service-bus-standard-premium-migration/2.png

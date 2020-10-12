@@ -4,10 +4,10 @@ description: Описывает функции, используемые в ша
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.openlocfilehash: c78e9481e6f2ba1f17389992aab2712719fc4c3b
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89378412"
 ---
 # <a name="arm-template-functions"></a>Функции шаблонов ARM
@@ -244,7 +244,7 @@ Resource Manager предоставляет для работы с логиче�
 * [uriComponent](template-functions-string.md#uricomponent)
 * [uriComponentToString](template-functions-string.md#uricomponenttostring)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание разделов в шаблоне ARM см. в разделе [Создание шаблонов ARM](template-syntax.md) .
 * Сведения о слиянии нескольких шаблонов см. в разделе [Использование связанных шаблонов с Azure Resource Manager](linked-templates.md)

@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: d4dc5c2690be7b9abbda685e78ea562878626b5c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90902861"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mysql-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MySQL с помощью портал Azure
@@ -38,8 +38,8 @@ ms.locfileid: "90902861"
 
 5. В уведомлении будет подтверждено, что автоматическое увеличение размера было успешно включено.
 
-    :::image type="content" source="./media/howto-auto-grow-storage-portal/5-auto-grow-success.png" alt-text="База данных Azure для MySQL — успешное выполнение автоматического роста":::
+    :::image type="content" source="./media/howto-auto-grow-storage-portal/5-auto-grow-success.png" alt-text="База данных Azure для MySQL — Settings_Pricing_tier — автоматическое увеличение":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

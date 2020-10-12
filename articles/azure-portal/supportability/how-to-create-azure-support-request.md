@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 06/25/2020
 ms.author: mblythe
 ms.openlocfilehash: d8a480481e47995f9f819122a3e8cc0b0a21a254
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85851869"
 ---
 # <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
@@ -102,7 +102,7 @@ Azure предоставляет неограниченную поддержку
 Инженер службы поддержки свяжется с вами, используя указанный вами метод. Сведения о начальном времени ответа см. в разделе [область поддержки и скорость реагирования](https://azure.microsoft.com/support/plans/response/).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о вариантах самостоятельного устранения проблем в Azure см. в этом видео:
 

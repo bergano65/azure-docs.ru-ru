@@ -4,10 +4,10 @@ description: Узнайте, как создавать артефакты для
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 85acfcc3811e671e58fadab08a23951778e1323d
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88270688"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
@@ -144,9 +144,9 @@ ms.locfileid: "88270688"
       ![Пример папки артефакта](./media/devtest-lab-artifact-author/git-repo.png)
 5. Если вы используете свой репозиторий для хранения артефактов, добавьте репозиторий артефактов в лабораторию, как описано в руководстве по [добавлению репозитория Git для хранения артефактов и шаблонов](devtest-lab-add-artifact-repo.md).
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 * [Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs](devtest-lab-troubleshoot-artifact-failure.md)
 * [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте, как [добавить репозиторий артефактов Git в лабораторию](devtest-lab-add-artifact-repo.md).

@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Устранение неполадок, обновление, ошибка, Kinect, обратная связь, восстановление, ведение журнала, советы
 ms.openlocfilehash: 2db7b17ffc8b6595107dbc52fae719aa9f2d15db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85277093"
 ---
 # <a name="azure-kinect-known-issues-and-troubleshooting"></a>Известные проблемы и устранение неполадок в Azure Kinect
@@ -134,7 +134,7 @@ ms.locfileid: "85277093"
 - Для совместного использования проблем с качеством изображений в команде можно:
 
 1) Приостановите просмотр в [средстве просмотра Kinect Azure](azure-kinect-viewer.md) и сделайте снимок экрана или
-2) Выполните запись с помощью [средства записи Azure Kinect](azure-kinect-recorder.md), например`k4arecorder.exe -l 5 -r 5 output.mkv`
+2) Выполните запись с помощью [средства записи Azure Kinect](azure-kinect-recorder.md), например `k4arecorder.exe -l 5 -r 5 output.mkv`
 
 ## <a name="inconsistent-or-unexpected-device-timestamps"></a>Несоответствие или непредвиденные метки времени устройства
 
@@ -166,6 +166,6 @@ ms.locfileid: "85277093"
 
 Чтобы использовать пакет SDK для отслеживания текста с нереальными данными, убедитесь, что вы добавили `<SDK Installation Path>\tools` в переменную среды `PATH` и скопировали `dnn_model_2_0.onnx` и `cudnn64_7.dll` в `Program Files/Epic Games/UE_4.23/Engine/Binaries/Win64` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о поддержке](support.md)

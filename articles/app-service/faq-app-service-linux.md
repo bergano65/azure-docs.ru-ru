@@ -8,10 +8,10 @@ ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
 ms.openlocfilehash: c35647a46cd252ce045d10e8dfefcf78236ba74b
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88961726"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
@@ -201,7 +201,7 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 
 Вы можете отправить свои идеи на [форум отзывов о веб-приложениях](https://aka.ms/webapps-uservoice). Добавьте [Linux] в заголовок своей идеи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о службе приложений на платформе Linux](overview.md#app-service-on-linux).
 - [Настройка промежуточных сред в Службе приложений Azure](deploy-staging-slots.md)

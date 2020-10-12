@@ -4,10 +4,10 @@ description: Узнайте, как создавать пользователь�
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a4d2b328626f0d0f096082fa88bb170894ccf3e4
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88270739"
 ---
 # <a name="add-tags-to-a-lab-in-azure-devtest-labs"></a>Добавление тегов в лабораторию в Azure DevTest Labs
@@ -56,6 +56,6 @@ ms.locfileid: "88270739"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * В подписку можно добавить ограничения и соглашения, используя настраиваемые политики. Некоторые политики могут требовать, чтобы для всех ресурсов было задано значение определенного тега. Дополнительные сведения см. в статье [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md).
 * Изучите [коллекцию шаблонов быстрого запуска DevTest Labs Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

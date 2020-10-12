@@ -8,10 +8,10 @@ ms.date: 05/08/2020
 author: mingshen-ms
 ms.author: mingshen
 ms.openlocfilehash: d232f7ba1304d76a0ba2db62b9f0f9b4229513f1
-ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89378612"
 ---
 # <a name="metered-billing-for-saas-using-the-commercial-marketplace-metering-service"></a>Выставление счетов за использование SaaS с помощью службы контроля использования коммерческих рынков
@@ -145,7 +145,7 @@ ms.locfileid: "89378612"
 
 Максимальное число измерений, которое можно настроить для одного предложения, составляет 18 уникальных измерений.
 
-## <a name="get-support"></a>Техническая поддержка
+## <a name="get-support"></a>Получение поддержки
 
 При наличии одной из следующих проблем можно открыть запрос в службу поддержки.
 
@@ -155,6 +155,6 @@ ms.locfileid: "89378612"
 
 Чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт, следуйте инструкциям в статье [Поддержка программы коммерческого рынка в центре партнеров](./support.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [API-интерфейсы службы из Marketplace для контроля потребления](./marketplace-metering-service-apis.md)

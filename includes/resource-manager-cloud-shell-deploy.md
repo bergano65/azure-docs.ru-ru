@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: aac2f3ea2b52ac0319f96279deed13c1145749bd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "74451494"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Развертывание шаблона из Cloud Shell
@@ -33,7 +33,7 @@ ms.locfileid: "74451494"
 
    ![Добавление контейнера](./media/resource-manager-cloud-shell-deploy/add-container.png)
 
-1. Задайте контейнеру название и уровень доступа. Образец шаблона в данной статье не содержит конфиденциальных сведений и поэтому разрешает анонимный доступ для чтения. Нажмите кнопку **ОК**.
+1. Задайте контейнеру название и уровень доступа. Образец шаблона в данной статье не содержит конфиденциальных сведений и поэтому разрешает анонимный доступ для чтения. Щелкните **ОК**.
 
    ![Указание значений для контейнера](./media/resource-manager-cloud-shell-deploy/provide-container-values.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74451494"
 
    ![Выберите новый контейнер](./media/resource-manager-cloud-shell-deploy/select-container.png)
 
-1. Выберите команду **Отправить**.
+1. Щелкните **Отправить**.
 
    ![Отправка большого двоичного объекта](./media/resource-manager-cloud-shell-deploy/upload-blob.png)
 
