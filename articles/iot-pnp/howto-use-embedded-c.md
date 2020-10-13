@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: edcfcda8de1fade605c409537155231d90d5849e
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91610081"
 ---
 # <a name="implement-iot-plug-and-play-on-constrained-devices"></a>Реализация Plug and Play Интернета вещей на ограниченных устройствах
@@ -24,7 +24,7 @@ ms.locfileid: "91610081"
 
 ### <a name="use-a-real-device"></a>Использование реального устройства
 
-Полное комплексное руководство по использованию пакета SDK для Embedded C, службы подготовки устройств и Интернета вещей Plug and Play на реальном устройстве см. в статье о [повторном назначении PIC для WX разработки для подключения к Azure через службу подготовки устройств центра Интернета вещей](https://github.com/Azure-Samples/Microchip-PIC-IoT-Wx).
+Полный комплексный учебник, использующий пакет SDK для Embedded C, служба подготовки устройств и IoT Plug and Play на реальном устройстве, см. в статье [повторное назначение PIC-IoT WX Development Board для подключения к Azure через службу подготовки устройств центра Интернета вещей](https://github.com/Azure-Samples/Microchip-PIC-IoT-Wx).
 
 ### <a name="introductory-samples"></a>Вводные примеры
 
@@ -64,6 +64,6 @@ Azure RTO включает упрощенный слой, который доб�
 | стмикроелектроникс | [B-L475E-IOT01](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) | [GCC/CMAK](https://github.com/azure-rtos/getting-started/tree/master/STMicroelectronics/STM32L4_L4%2B) • [ИАР](https://aka.ms/azrtos-sample/l4s5-iar) • [STM32Cube](https://aka.ms/azrtos-sample/l4s5-cubeide)
 | стмикроелектроникс | [B-L4S5I-IOT01](https://www.st.com/en/evaluation-tools/b-l4s5i-iot01a.html) | [GCC/CMAK](https://github.com/azure-rtos/getting-started/tree/master/STMicroelectronics/STM32L4_L4%2B) • [ИАР](https://aka.ms/azrtos-sample/l4s5-iar) • [STM32Cube](https://aka.ms/azrtos-sample/l4s5-cubeide)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали о вариантах реализации Plug and Play Интернета вещей на ограниченных устройствах, рекомендуем следующий шаг — узнать о [соглашениях Plug and Play IOT](concepts-convention.md).

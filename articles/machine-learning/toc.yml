@@ -15,7 +15,7 @@
 - name: Учебники
   expanded: true
   items:
-    - name: "Начало работы с Python. День\_1"
+    - name: "Начало работы с Python (день\_1)"
       expanded: true
       items:
         - name: 1. Настройка локального компьютера
@@ -188,6 +188,8 @@
             - name: Использование Приватного канала
               displayName: private endpoint
               href: how-to-configure-private-link.md
+            - name: Использование пользовательских DNS-серверов
+              href: how-to-custom-dns.md
             - name: Настройка безопасных веб-служб
               displayName: 'ssl, tls'
               href: how-to-secure-web-service.md

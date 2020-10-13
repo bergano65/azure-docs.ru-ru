@@ -14,10 +14,10 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
 ms.openlocfilehash: 4df4f7e1db880a38f647e8e384cbfb29b70954ec
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86187257"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
@@ -30,7 +30,7 @@ ms.locfileid: "86187257"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Если среда Azure-SSIS IR еще не подготовлена, выполните подготовку по указаниям из [этого руководства](tutorial-create-azure-ssis-runtime-portal.md). 
 
 ## <a name="create-and-schedule-adf-pipelines-that-start-and-or-stop-azure-ssis-ir"></a>Создание и планирование конвейеров ADF для запуска и остановки Azure-SSIS IR
@@ -91,7 +91,7 @@ ms.locfileid: "86187257"
    
 2. На панели элементов **Действия** разверните меню **Общие** и перетащите **веб-действие** в область конструктора конвейера. На вкладке **Общие** в окне свойств действия измените имя действия на **startMyIR**. Перейдите на вкладку **Настройки** и выполните здесь следующие действия:
 
-    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который начинается Azure-SSIS IR, заменяя `{subscriptionId}` ,, `{resourceGroupName}` `{factoryName}` и `{integrationRuntimeName}` фактические значения для вашего IR: `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start?api-version=2018-06-01` Кроме того, можно также скопировать & вставьте идентификатор ресурса IR со страницы мониторинга в пользовательском интерфейсе или приложении ADF, чтобы заменить следующую часть приведенного выше URL-адреса:`/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}`
+    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который начинается Azure-SSIS IR, заменяя `{subscriptionId}` ,, `{resourceGroupName}` `{factoryName}` и `{integrationRuntimeName}` фактические значения для вашего IR: `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start?api-version=2018-06-01` Кроме того, можно также скопировать & вставьте идентификатор ресурса IR со страницы мониторинга в пользовательском интерфейсе или приложении ADF, чтобы заменить следующую часть приведенного выше URL-адреса: `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}`
     
        ![Идентификатор ресурса Azure-SSIS IR](./media/how-to-schedule-azure-ssis-integration-runtime/adf-ssis-ir-resource-id.png)
   
@@ -104,7 +104,7 @@ ms.locfileid: "86187257"
   
 3. Клонируйте первый конвейер, чтобы создать второй, присвоив ему имя действия **stopMyIR** и изменив свойства, как описано ниже.
 
-    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который останавливает Azure-SSIS IR, заменяя `{subscriptionId}` ,, `{resourceGroupName}` `{factoryName}` и `{integrationRuntimeName}` фактические значения для своего IR:`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/stop?api-version=2018-06-01`
+    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который останавливает Azure-SSIS IR, заменяя `{subscriptionId}` ,, `{resourceGroupName}` `{factoryName}` и `{integrationRuntimeName}` фактические значения для своего IR: `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/stop?api-version=2018-06-01`
     
     2. В поле **Текст** введите `{"message":"Stop my IR"}`. 
 
@@ -117,7 +117,7 @@ ms.locfileid: "86187257"
     1. В поле **Роль** выберите **Участник**. 
     2. В поле **Назначение доступа к** выберите **Пользователь, группа или субъект-служба Azure AD**. 
     3. В поле **Выберите** найдите имя нужной ADF и выберите его. 
-    4. Нажмите кнопку **Сохранить**.
+    4. Выберите команду **Сохранить**.
     
    ![Назначение роли управляемому удостоверению ADF](./media/how-to-schedule-azure-ssis-integration-runtime/adf-managed-identity-role-assignment.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "86187257"
     1. В качестве **имени сервера**введите ** &lt; имя сервера &gt; . Database.Windows.NET**.
     2. Выберите **Параметры >>**.
     3. В поле **Подключение к базе данных** выберите **SSISDB**.
-    4. Щелкните **Подключить**. 
+    4. Выберите **Подключиться**. 
     5. Разверните папку **Integration Services каталоги**  ->  **SSISDB** -> > **проекты** , > свои **пакеты**> проекта SSIS. 
     6. Щелкните правой кнопкой мыши указанный пакет служб SSIS для запуска и выберите пункт **отчеты**  ->  **Стандартные отчеты**  ->  **все выполнения**. 
     7. Убедитесь, что конвейер выполнен. 
@@ -163,7 +163,7 @@ ms.locfileid: "86187257"
     4. В поле **Повторение** укажите периодичность активации триггера. В следующем примере выбран вариант **Ежедневно**. 
     5. В поле **Конец** выберите вариант **Нет конца** или введите дату окончания и время, выбрав вариант **Дата**. 
     6. Выберите **Активировано**, чтобы запустить триггер сразу после публикации этих параметров ADF. 
-    7. Нажмите **Далее**.
+    7. Выберите **Далее**.
 
    !["Триггер" > "Создать/изменить"](./media/how-to-schedule-azure-ssis-integration-runtime/new-trigger-window.png)
     
@@ -230,7 +230,7 @@ ms.locfileid: "86187257"
     4. В поле **Расположение** выберите расположение для учетной записи службы автоматизации Azure. 
     5. В поле **Создать учетную запись запуска от имени Azure** подтвердите создание, выбрав **Да**. Это действие позволяет создать в Azure Active Directory субъект-службу и назначить ей роль **Участник** в подписке Azure.
     6. Выберите **Закрепить на панели мониторинга**, чтобы этот субъект постоянно отображался на панели мониторинга Azure. 
-    7. Нажмите кнопку **Создать**. 
+    7. Нажмите кнопку **создания**. 
 
    ![Создать -> Мониторинг и управление -> Служба автоматизации](./media/how-to-schedule-azure-ssis-integration-runtime/add-automation-account-window.png)
    
@@ -268,7 +268,7 @@ ms.locfileid: "86187257"
 
     1. В поле **Имя** введите **StartStopAzureSsisRuntime**.
     2. Для поля **Тип Runbook** выберите значение **PowerShell**.
-    3. Нажмите кнопку **Создать**.
+    3. Нажмите кнопку **создания**.
     
    ![Кнопка добавления модуля runbook](./media/how-to-schedule-azure-ssis-integration-runtime/add-runbook-window.png)
    
@@ -339,7 +339,7 @@ ms.locfileid: "86187257"
     2. В поле **DATA FACTORY NAME** (Имя Фабрики данных) введите имя ADF, где расположена Azure-SSIS IR. 
     3. В поле **AZURESSISNAME** (Имя Azure-SSIS) введите имя Azure-SSIS IR. 
     4. Для параметра **OPERATION** введите **START**. 
-    5. Нажмите кнопку **ОК**.  
+    5. Щелкните **ОК**.  
 
    ![Окно "Запуск Runbook"](./media/how-to-schedule-azure-ssis-integration-runtime/start-runbook-window.png)
    
@@ -367,7 +367,7 @@ ms.locfileid: "86187257"
     4. В поле **Запускается** введите время на несколько минут позже текущего времени. 
     5. Для параметра **Периодичность** выберите значение **Повторяющееся**. 
     6. В поле **Повторять каждые** введите значение **1** и выберите **День**. 
-    7. Нажмите кнопку **Создать**. 
+    7. Нажмите кнопку **создания**. 
 
    ![Расписание для запуска IR Azure SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/new-schedule-start.png)
     

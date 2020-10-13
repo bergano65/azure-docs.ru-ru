@@ -11,15 +11,15 @@ ms.topic: article
 ms.date: 07/16/2020
 ms.author: aahi
 ms.openlocfilehash: 49fb77b4efbbecb306a0650cb17097b43e5153ca
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91309155"
 ---
 # <a name="model-versioning-in-the-text-analytics-api"></a>Управление версиями модели в API анализа текста
 
-Версия 3 API анализа текста позволяет выбрать версию модели, используемую для данных. Используйте необязательный `model-version` параметр, чтобы выбрать версию модели в запросах API. Например, так: `<resource-url>/text/analytics/v3.0/sentiment?model-version=2020-04-01`. Если этот параметр не указан, API по умолчанию будет иметь последнюю стабильную версию. 
+Версия 3 API анализа текста позволяет выбрать версию модели, используемую для данных. Используйте необязательный `model-version` параметр, чтобы выбрать версию модели в запросах API. Например: `<resource-url>/text/analytics/v3.0/sentiment?model-version=2020-04-01`. Если этот параметр не указан, API по умолчанию будет иметь последнюю стабильную версию. 
 
 ## <a name="available-versions"></a>Доступные версии
 
@@ -51,7 +51,7 @@ ms.locfileid: "91309155"
 | `/domains/health`               | `1.1.012070001-amd64-preview`           | `2020-04-16`  |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Пример. Как определить тональность с помощью Анализа текста](../how-tos/text-analytics-how-to-sentiment-analysis.md)

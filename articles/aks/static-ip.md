@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 03/09/2020
 ms.openlocfilehash: 3055b5d32055d0ed0e3870f16f6af95407a68cd9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86243942"
 ---
 # <a name="use-a-static-public-ip-address-and-dns-label-with-the-azure-kubernetes-service-aks-load-balancer"></a>Использование статического общедоступного IP-адреса и метки DNS с подсистемой балансировки нагрузки Azure Kubernetes Service (AKS)
@@ -63,7 +63,7 @@ $ az network public-ip show --resource-group myResourceGroup --name myAKSPublicI
 
 ## <a name="create-a-service-using-the-static-ip-address"></a>Создание службы со статическим IP-адресом
 
-Перед созданием службы убедитесь, что субъект-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов. Например:
+Перед созданием службы убедитесь, что субъект-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов. Пример:
 
 ```azurecli-interactive
 az role assignment create \
@@ -102,7 +102,7 @@ kubectl apply -f load-balancer-service.yaml
 
 Если служба использует динамический или статический общедоступный IP-адрес, можно использовать заметку службы `service.beta.kubernetes.io/azure-dns-label-name` для задания общедоступной метки DNS. При этом будет опубликовано полное доменное имя службы с помощью общедоступных DNS-серверов Azure и домена верхнего уровня. Значение аннотации должно быть уникальным в расположении Azure, поэтому рекомендуется использовать достаточно полную метку.   
 
-Azure автоматически добавит подсеть по умолчанию, например `<location>.cloudapp.azure.com` (где расположение — выбранный регион), в имя, которое вы задаете, чтобы создать полное DNS-имя. Например:
+Azure автоматически добавит подсеть по умолчанию, например `<location>.cloudapp.azure.com` (где расположение — выбранный регион), в имя, которое вы задаете, чтобы создать полное DNS-имя. Пример:
 
 ```yaml
 apiVersion: v1
@@ -122,7 +122,7 @@ spec:
 > [!NOTE] 
 > Сведения о публикации службы в собственном домене см. в разделе [Azure DNS][azure-dns-zone] и проект [External-DNS][external-dns] .
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Если статический IP-адрес, определенный в свойстве *лоадбаланцерип* манифеста службы Kubernetes, не существует или не был создан в группе ресурсов узла и не настроены дополнительные делегирования, то создание службы балансировщика нагрузки завершится ошибкой. Для устранения неполадок просмотрите события создания службы, выполнив команду [kubectl describe][kubectl-describe]. Введите имя службы, указанное в манифесте YAML, как показано в следующем примере:
 

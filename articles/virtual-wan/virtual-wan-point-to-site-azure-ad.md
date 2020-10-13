@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 03/17/2020
 ms.author: alzam
 ms.openlocfilehash: 21c2cba1d67ba415849b20dedf9ba157ca191d05
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87832524"
 ---
 # <a name="configure-azure-active-directory-authentication-for-user-vpn"></a>Настройка проверки подлинности Azure Active Directory для VPN пользователя
@@ -167,11 +167,11 @@ ms.locfileid: "87832524"
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
+    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
+    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
 
 #### <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 
