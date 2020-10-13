@@ -14,17 +14,17 @@ ms.author: jmprieur
 ms.reviewer: kkrishna
 ms.custom: aaddev
 ms.openlocfilehash: 5742ddf9553c3ac9187dbef93fc7927564cbc095
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88116977"
 ---
 # <a name="handle-samesite-cookie-changes-in-chrome-browser"></a>Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
 
 ## <a name="what-is-samesite"></a>Что такое SameSite?
 
-`SameSite`— Это свойство, которое можно задать в cookie-файлах HTTP для предотвращения атак с подделкой межсайтовых запросов (CSRF) в веб-приложениях:
+`SameSite` — Это свойство, которое можно задать в cookie-файлах HTTP для предотвращения атак с подделкой межсайтовых запросов (CSRF) в веб-приложениях:
 
 - Если параметр `SameSite` имеет значение " **нестрогий**", файл cookie отправляется в запросах на том же сайте и в запросах GET от других сайтов. Он не отправляется в запросах GET между доменами.
 - Значение **, равное, гарантирует,** что файл cookie отправляется в запросах только в пределах того же сайта.
@@ -77,7 +77,7 @@ ms.locfileid: "88116977"
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о SameSite и сценарии веб-приложения:
 
@@ -88,4 +88,4 @@ ms.locfileid: "88116977"
 > [Страница Chromium SameSite](https://www.chromium.org/updates/same-site)
 
 > [!div class="nextstepaction"]
-> [Сценарий: веб-приложение, которое входит в систему пользователей](scenario-web-app-sign-user-overview.md)
+> [Scenario: Веб-приложение, выполняющее вход пользователей](scenario-web-app-sign-user-overview.md)

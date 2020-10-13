@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: efbe8bc24b430716da46601ed073300e4c79cca7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b7d670f5e38968fa6592e323ede075abf687435
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743732"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91939023"
 ---
 # <a name="performance-tiers-for-managed-disks-preview"></a>Уровни производительности для управляемых дисков (Предварительная версия)
 
@@ -58,7 +58,7 @@ ms.locfileid: "91743732"
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Возможность настройки уровня производительности управляемого диска в настоящее время доступна только для твердотельных накопителей категории "Премиум" в регионе "Западная Центральная часть США". 
+Возможность настраивать уровень производительности управляемого диска в настоящее время доступна только для твердотельных накопителей уровня "Премиум" в Восточная часть США 2, Юго-Центральный регион США, Западная Центральная часть США, регионы Восточной Азии.
 
 ## <a name="create-an-empty-data-disk-with-a-tier-higher-than-the-baseline-tier"></a>Создание пустого диска данных с уровнем выше базового уровня
 
@@ -103,7 +103,7 @@ az disk update -n $diskName -g $resourceGroupName --set tier=$performanceTier
 az disk show -n $diskName -g $resourceGroupName --query [tier] -o tsv
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Если необходимо изменить размер диска, чтобы воспользоваться преимуществами более высоких уровней производительности, см. следующие статьи:
 

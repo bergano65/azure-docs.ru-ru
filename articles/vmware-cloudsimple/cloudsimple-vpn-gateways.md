@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 6e013bb96990a8f3a0ef7d3a58529b200919e276
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88140638"
 ---
 # <a name="vpn-gateways-overview"></a>Общие сведения о VPN-шлюзах
@@ -72,6 +72,6 @@ VPN-подключение типа "сеть — сеть" использует
 
 VPN-подключение типа "точка — сеть" используется для отправки зашифрованного трафика между сетью регионов Клаудсимпле и клиентским компьютером.  VPN-подключение типа "точка — сеть" — самый простой способ доступа к сети частного облака, включая виртуальные машины с частным облаком vCenter и рабочей нагрузки.  Используйте VPN-подключение типа "точка — сеть", если подключение к частному облаку выполняется удаленно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка VPN-шлюза](vpn-gateway.md)

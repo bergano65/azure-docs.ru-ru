@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 56f9976faf2a803e747bce8b851a3555e6d746b0
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89231152"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Справочные материалы по действиям аудита в Azure Active Directory
@@ -474,7 +474,7 @@ ms.locfileid: "89231152"
 |Управление пользователями|Add role from template (Добавление роли на основе шаблона)|
 |Управление пользователями|Add scoped member to role (Добавление участника с заданной областью в роль)|
 |Управление пользователями|Добавлено|
-|Управление пользователями|Присвоение|
+|Управление пользователями|Назначение|
 |Управление пользователями|Создание пользователей с массовым запуском|
 |Управление пользователями|Создание пользователей с массовым управлением — завершено|
 |Управление пользователями|Пользователи с массовым удалением — запущено|
@@ -547,7 +547,7 @@ ms.locfileid: "89231152"
 
 
 
-## <a name="privileged-identity-management"></a>Управление привилегированными пользователями
+## <a name="privileged-identity-management"></a>Управление привилегированными пользователями (PIM)
 
 |Категория аудита|Действие|
 |---|---|
@@ -558,7 +558,7 @@ ms.locfileid: "89231152"
 |PIM|ActivationRequested|
 |PIM|Добавлено|
 |PIM|AddedOutsidePIM|
-|PIM|Присвоение|
+|PIM|Назначение|
 |PIM|DismissAlert|
 |PIM|Повышение прав|
 |PIM|ReactivateAlert|
@@ -621,7 +621,7 @@ ms.locfileid: "89231152"
 |Условия использования|Unpublish Terms Of Use (Отмена публикации условий использования)|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое отчеты в Azure Active Directory](overview-reports.md).
 - [Отчет о журналах аудита](concept-audit-logs.md). 

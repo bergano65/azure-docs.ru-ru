@@ -14,10 +14,10 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 4020f47184e141a69586fc958f641547d7bde94d
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89482806"
 ---
 # <a name="configure-an-availability-group-for-sql-server-on-azure-vm-azure-portal---preview"></a>Настройка группы доступности для SQL Server на виртуальной машине Azure (портал Azure-Preview)
@@ -67,18 +67,11 @@ ms.locfileid: "89482806"
 
 1. Присвойте имя кластеру и укажите учетную запись хранения, которая будет использоваться в качестве облачного следящего сервера. Используйте существующую учетную запись хранения или щелкните **создать** , чтобы создать новую учетную запись хранения. Имя учетной записи хранения должно содержать от 3 до 24 знаков и состоять только из цифр и букв нижнего регистра.
 
-   :::image type="content" source="media/availability-group-az-portal-configure/configure-new-cluster-1.png" alt-text="Укажите имя, учетную запись хранения и учетные данные для кластера.":::
+   :::image type="content" source="media/availability-group-az-portal-configure/configure-new-cluster-1.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Разверните узел **учетные данные отказоустойчивого кластера Windows Server** , чтобы предоставить [учетные данные](https://docs.microsoft.com/rest/api/sqlvm/sqlvirtualmachinegroups/createorupdate#wsfcdomainprofile) SQL Server учетной записи службы, а также оператор кластера и учетные записи начальной загрузки, если они отличаются от учетной записи, используемой для службы SQL Server. 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/configure-new-cluster-2.png" alt-text="Укажите учетные данные для учетной записи службы SQL, учетной записи оператора кластера и начальной загрузки кластера.":::
-
-1. Выберите SQL Server виртуальные машины, которые необходимо добавить в кластер. Обратите внимание, требуется ли перезагрузка и будьте внимательны. Будут видны только виртуальные машины, зарегистрированные в поставщике ресурсов виртуальной машины SQL в режиме полного управления, и находятся в одном расположении, домене и в той же виртуальной сети, что и первичная SQL Serverная виртуальная машина. 
-1. Нажмите кнопку **Применить** , чтобы создать кластер. Состояние развертывания можно проверить в **журнале действий** , доступном по значку колокольчика на верхней панели навигации. 
-1. Чтобы отказоустойчивый кластер поддерживался корпорацией Майкрософт, он должен пройти проверку кластера. Подключитесь к виртуальной машине с помощью предпочтительного метода (например, протокол удаленного рабочего стола (RDP)) и убедитесь, что кластер прошел проверку, прежде чем продолжить. Несоблюдение этого действия оставляет кластер в неподдерживаемом состоянии. Вы можете проверить кластер с помощью диспетчер отказоустойчивости кластеров (FCM) или следующей команды PowerShell:
-
-    ```powershell
-    Test-Cluster –Node ("<node1>","<node2>") –Include "Inventory", "Network", "System Configuration"
+   :::image type="content" source="media/availability-group-az-portal-configure/configure-new-cluster-2.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале."
     ```
     
 
@@ -94,7 +87,7 @@ ms.locfileid: "89482806"
 1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
 1. Выберите подключить **существующий отказоустойчивый кластер Windows Server** , чтобы открыть страницу **отказоустойчивого кластера Windows Server** . 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/onboard-existing-cluster.png" alt-text="Подключение существующего кластера со страницы высокой доступности в ресурсе виртуальных машин SQL":::
+   :::image type="content" source="media/availability-group-az-portal-configure/onboard-existing-cluster.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Проверьте параметры кластера. 
 1. Выберите **Применить** , чтобы подключить кластер, а затем выберите **Да** в командной строке для продолжения.
@@ -111,23 +104,21 @@ ms.locfileid: "89482806"
 1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
 1. Выберите **+ New Always on группа доступности** , чтобы открыть страницу **Создание группы доступности** .
 
-   :::image type="content" source="media/availability-group-az-portal-configure/create-new-availability-group.png" alt-text="Выберите Создать группу доступности Always on, чтобы открыть страницу Создание группы доступности.":::
+   :::image type="content" source="media/availability-group-az-portal-configure/create-new-availability-group.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Введите имя группы доступности. 
 1. Выберите **настроить прослушиватель** , чтобы открыть страницу **Настройка прослушивателя группы доступности** . 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/create-availability-group.png" alt-text="Укажите имя группы доступности и настройте прослушиватель.":::
+   :::image type="content" source="media/availability-group-az-portal-configure/create-availability-group.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Заполните значения и либо используйте существующую подсистему балансировки нагрузки, либо выберите **создать** , чтобы создать новую подсистему балансировки нагрузки.  Нажмите кнопку **Применить** , чтобы сохранить параметры и создать прослушиватель и подсистему балансировки нагрузки. 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/configure-new-listener.png" alt-text="Заполните значения в форме, чтобы создать новый прослушиватель и подсистему балансировки нагрузки.":::
+   :::image type="content" source="media/availability-group-az-portal-configure/configure-new-listener.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Выберите **+ выбрать реплику** , чтобы открыть страницу **Настройка реплик группы доступности** .
 1. Выберите виртуальные машины, которые необходимо добавить в группу доступности, и выберите параметры группы доступности, которые лучше всего соответствуют потребностям вашего бизнеса. Нажмите кнопку **Применить** , чтобы сохранить параметры. 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/add-replicas.png" alt-text="Выберите виртуальные машины для добавления в группу доступности и настройте параметры, подходящие для вашего бизнеса.":::
-
-1. Проверьте параметры группы доступности и нажмите кнопку " **Применить** ", чтобы создать группу доступности. 
+   :::image type="content" source="media/availability-group-az-portal-configure/add-replicas.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале." **Применить** ", чтобы создать группу доступности. 
 
 Состояние развертывания можно проверить в **журнале действий** , доступном по значку колокольчика на верхней панели навигации. 
 
@@ -147,7 +138,7 @@ ms.locfileid: "89482806"
 1. Разверните **Always on высокий уровень доступности** в **обозревателе объектов**.
 1. Разверните узел **группы доступности**, щелкните правой кнопкой мыши группу доступности и выберите **Добавить базу данных...**.
 
-   :::image type="content" source="media/availability-group-az-portal-configure/add-database.png" alt-text="Щелкните правой кнопкой мыши группу доступности в обозревателе объектов и выберите Добавить базу данных.":::
+   :::image type="content" source="media/availability-group-az-portal-configure/add-database.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Следуйте инструкциям на экране, чтобы выбрать базы данных, которые нужно добавить в группу доступности. 
 1. Нажмите кнопку **ОК** , чтобы сохранить параметры и добавить базу данных в группу доступности. 
@@ -155,7 +146,7 @@ ms.locfileid: "89482806"
 
 После добавления баз данных можно проверить состояние группы доступности в портал Azure: 
 
-:::image type="content" source="media/availability-group-az-portal-configure/healthy-availability-group.png" alt-text="Проверка состояния группы доступности на странице высокой доступности из портал Azure после синхронизации баз данных":::
+:::image type="content" source="media/availability-group-az-portal-configure/healthy-availability-group.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 ## <a name="add-more-vms"></a>Добавить дополнительные виртуальные машины
 
@@ -166,7 +157,7 @@ ms.locfileid: "89482806"
 1. Выберите **высокий уровень доступности** в разделе **Параметры**. 
 1. Выберите **настроить отказоустойчивый кластер Windows Server** , чтобы открыть страницу **Настройка отказоустойчивого кластера Windows Server** . 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/configure-existing-cluster.png" alt-text="Выберите настроить отказоустойчивый кластер Windows Server, чтобы добавить виртуальные машины в кластер.":::
+   :::image type="content" source="media/availability-group-az-portal-configure/configure-existing-cluster.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 1. Разверните узел **учетные данные отказоустойчивого кластера Windows Server** и введите учетные записи, используемые для службы SQL Server, оператора кластера и начальной загрузки кластера. 
 1. Выберите SQL Server виртуальные машины, которые необходимо добавить в кластер. 
@@ -180,7 +171,7 @@ ms.locfileid: "89482806"
 
 Можно **добавить дополнительные реплики** в группу доступности, **настроить прослушиватель**или **удалить прослушиватель** на странице **высокой доступности** в портал Azure, нажав кнопку с многоточием (...) рядом с группой доступности: 
 
-:::image type="content" source="media/availability-group-az-portal-configure/configure-listener.png" alt-text="Щелкните многоточие рядом с группой доступности и выберите Добавить реплику, чтобы добавить дополнительные реплики в группу доступности.":::
+:::image type="content" source="media/availability-group-az-portal-configure/configure-listener.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале.":::
 
 ## <a name="remove-cluster"></a>Удалить кластер
 
@@ -255,7 +246,7 @@ Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster n
 1. Выберите нужное развертывание, чтобы узнать больше о развертывании. 
 
 
-   :::image type="content" source="media/availability-group-az-portal-configure/failed-deployment.png" alt-text="Выберите развертывание, которое вы хотите изучить." :::
+   :::image type="content" source="media/availability-group-az-portal-configure/failed-deployment.png" alt-text="Создайте новый кластер, выбрав + новый кластер на портале." :::
 
 ### <a name="common-errors"></a>Распространенные ошибки
 
@@ -268,7 +259,7 @@ Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster n
 - Убедитесь, что учетные данные, указанные на портале, соответствуют службам SQL Server. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 
 Дополнительные сведения о группах доступности см. в следующих статьях:
