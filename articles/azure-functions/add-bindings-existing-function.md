@@ -4,10 +4,10 @@ description: Узнайте, как добавлять привязки к су�
 ms.topic: how-to
 ms.date: 04/29/2020
 ms.openlocfilehash: 23b7b05f9a9f9da5a48511ee555e3b6184a74179
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91654157"
 ---
 # <a name="add-bindings-to-an-existing-function-in-azure-functions"></a>Добавление привязок в существующую функцию в функциях Azure
@@ -37,6 +37,6 @@ ms.locfileid: "91654157"
 + [Выходная привязка хранилища очередей](functions-integrate-storage-queue-output-binding.md)
 + [Выходная привязка Azure Cosmos DB](functions-integrate-store-unstructured-data-cosmosdb.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 + [Основные понятия. Триггеры и привязки в функциях Azure](functions-triggers-bindings.md)

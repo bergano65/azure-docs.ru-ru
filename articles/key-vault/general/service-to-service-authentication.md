@@ -9,17 +9,17 @@ ms.date: 09/04/2020
 ms.topic: how-to
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: 00799f7c5239bfd744268f7353e1bac6cb038294
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.openlocfilehash: fccd838b47cbb565ffdbe5250a91cd293238bf9b
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89483343"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940452"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
 > [!NOTE]
-> **Microsoft. Azure. Services. AppAuthentication** больше не рекомендуется использовать с новым пакетом SDK Key Vault. Он заменяется новой библиотекой удостоверений Azure **дефаултазурекредентиалс** , доступной для .NET, Java, TypeScript и Python, и должна использоваться для всех новых разработок. Дополнительные сведения можно найти здесь: [Проверка подлинности и пакет Azure SDK](https://devblogs.microsoft.com/azure-sdk/authentication-and-the-azure-sdk/).
+> **Microsoft. Azure. Services. AppAuthentication** больше не рекомендуется использовать с новым пакетом SDK Key Vault. Она заменяется новой **клиентской библиотекой Azure Identity** , доступной для .NET, Java, TypeScript и Python, и должна использоваться для всех новых разработок. Дополнительные сведения можно найти здесь: [Проверка подлинности в Key Vault в коде](https://docs.microsoft.com/azure/key-vault/general/developers-guide#azure-identity-client-libraries).
 
 Для проверки подлинности в Azure Key Vault требуются учетные данные Azure Active Directory (Azure AD), либо общий секрет, либо сертификат.
 
