@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: b-juche
-ms.openlocfilehash: bed1375631c017d23ed53b6102c424533237099e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb3d1fd49c2623ff6dcbe8a19ae8c8ca3b46425a
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447561"
+ms.locfileid: "91930634"
 ---
 # <a name="delegate-a-subnet-to-azure-netapp-files"></a>Делегирование подсети в Azure NetApp Files 
 
@@ -33,7 +33,7 @@ ms.locfileid: "91447561"
    В виртуальной сети может быть только одна Делегированная подсеть. Учетная запись NetApp может развертывать тома в нескольких виртуальных сетей, каждый из которых имеет собственную делегированную подсеть.  
 * В делегированной подсети невозможно назначить группу безопасности сети или конечную точку службы. Попытка к сбою делегирования подсети.
 * Доступ к тому из глобальной одноранговой виртуальной сети в настоящее время не поддерживается.
-* [Определяемые пользователем маршруты](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) (определяемые пользователем маршруты) и группы безопасности сети (группы безопасности сети) не поддерживаются в делегированных подсетях для Azure NetApp Files. Но вы можете применять UDR и NSG к другим подсетям, в том числе к расположенным в той же виртуальной сети, что и делегированная подсеть Azure NetApp Files.  
+* [Определяемые пользователем маршруты](../virtual-network/virtual-networks-udr-overview.md#custom-routes) (определяемые пользователем маршруты) и группы безопасности сети (группы безопасности сети) не поддерживаются в делегированных подсетях для Azure NetApp Files. Но вы можете применять UDR и NSG к другим подсетям, в том числе к расположенным в той же виртуальной сети, что и делегированная подсеть Azure NetApp Files.  
    Azure NetApp Files создает системный маршрут к делегированной подсети. Маршрут отображается в подразделах **действующие маршруты** в таблице маршрутов, если это необходимо для устранения неполадок.
 
 ## <a name="steps"></a>Шаги
@@ -54,6 +54,4 @@ ms.locfileid: "91447561"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание тома для Azure NetApp Files](azure-netapp-files-create-volumes.md)
-* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
-
-
+* [Узнайте об интеграции виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md)

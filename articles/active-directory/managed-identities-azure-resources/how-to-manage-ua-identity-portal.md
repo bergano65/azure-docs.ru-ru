@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 08/26/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5045c81f280d9d7687a466aed2e918d21eec697
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ad91c916a6134f2507e74df6e87478421a00f43
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266393"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977431"
 ---
 # <a name="create-list-delete-or-assign-a-role-to-a-user-assigned-managed-identity-using-the-azure-portal"></a>Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "89266393"
     - **Регион**: Выберите регион для развертывания управляемого удостоверения, назначаемого пользователем, например " **Западная часть США**".
     - **Имя**. это имя управляемого пользователем удостоверения, например UAI1.
     ![Создание управляемого удостоверения, назначаемого пользователем](./media/how-to-manage-ua-identity-portal/create-user-assigned-managed-identity-portal.png)
-4. Щелкните **проверить и ящик** , чтобы проверить изменения.
+4. Щелкните **проверить и создать** , чтобы проверить изменения.
 5. Нажмите кнопку **Создать**.
 
 ## <a name="list-user-assigned-managed-identities"></a>Получение списка управляемых удостоверений, назначаемых пользователем

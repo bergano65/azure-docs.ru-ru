@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 994fe6c5005eeeab1399091dca5f72024fdd7262
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91812596"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
@@ -92,7 +92,7 @@ ms.locfileid: "91812596"
 
 Фильтр **службы** позволяет выбрать один из раскрывающегося списка следующих служб:
 
-- Все
+- All
 - Пользовательский интерфейс управления AAD
 - Проверки доступа
 - "Account Provisioning" (Подготовка учетных записей).
@@ -114,7 +114,7 @@ ms.locfileid: "91812596"
 
 Фильтр **категорий** позволяет выбрать один из следующих фильтров:
 
-- Все
+- All
 - AdministrativeUnit
 - ApplicationManagement
 - Аутентификация
@@ -141,7 +141,7 @@ ms.locfileid: "91812596"
 
 Фильтр **состояния** позволяет выполнять фильтрацию на основе состояния операции аудита. Состояние может быть одним из следующих:
 
-- Все
+- All
 - Успешно
 - Failure
 
@@ -217,7 +217,7 @@ ms.locfileid: "91812596"
 
 Можно также программно получить доступ к журналам действий Microsoft 365 с помощью [API-интерфейсов управления Office 365](/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Справочные материалы по действиям аудита в Azure AD](reference-audit-activities.md)
 - [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

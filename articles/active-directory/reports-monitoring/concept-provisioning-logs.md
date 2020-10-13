@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6109f35c42d4b4a44430eeb99ec115f4cdc1a619
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91812562"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
@@ -61,7 +61,7 @@ ms.locfileid: "91812562"
 
 Чтобы получить доступ к журналам подготовки, выберите **журналы подготовки** в разделе **мониторинг** колонки **Azure Active Directory** в [портал Azure](https://portal.azure.com). Для отображения некоторых записей подготовки на портале может потребоваться до двух часов.
 
-![Подготовка журналов](./media/concept-provisioning-logs/access-provisioning-logs.png "Подготовка журналов")
+![Журналы подготовки](./media/concept-provisioning-logs/access-provisioning-logs.png "Подготовка журналов")
 
 
 Журнал подготовки имеет представление списка по умолчанию, которое показывает:
@@ -119,7 +119,7 @@ ms.locfileid: "91812562"
 
 В фильтре **Состояние** можете выбрать:
 
-- Все
+- All
 - Успешно
 - Failure
 - Пропущено
@@ -247,7 +247,7 @@ ms.locfileid: "91812562"
 |ентрисинчронизатионскиппед | Служба подготовки успешно запросила исходную систему и определила пользователя. Никаких дополнительных действий пользователя не было выполнено, и они были пропущены. Пропуск может быть вызван тем, что пользователь выходит из области действия или пользователь уже существует в целевой системе, но дальнейшие изменения не требуются.|
 |системфоркроссдомаинидентитиманажементмултиплинтриесинреспонсе| При выполнении запроса GET для получения пользователя или группы в ответе было получено несколько пользователей или групп. Ожидалось, что в ответе будет получен только один пользователь или группа. Если, [например](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#get-group), мы выполняем запрос GET для получения группы и предложит фильтр для исключения членов, а конечная точка scim возвращает элементы, мы выдаем эту ошибку.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Проверка состояния подготовки пользователей](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
 * [Проблема при настройке подготовки пользователей для приложения из коллекции Azure AD](../app-provisioning/application-provisioning-config-problem.md)

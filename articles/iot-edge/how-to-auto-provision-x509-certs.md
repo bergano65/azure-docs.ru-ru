@@ -9,12 +9,12 @@ ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 13c15eeb98b13d0fe9a5b7797ec942209d403cc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 761b031916dd9ead71f5be6a6887208a1f200f58
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447743"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966140"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Создание и инициализация устройства IoT Edge с помощью сертификатов X. 509
 
@@ -209,73 +209,76 @@ Windows:
 
 Среда выполнения IoT Edge развертывается на всех устройствах IoT Edge. Ее компоненты выполняются в контейнерах и позволяют развертывать дополнительные контейнеры на устройстве, чтобы обеспечить возможность выполнения кода в граничной системе.
 
+Выполните действия, описанные в разделе [Установка среды выполнения Azure IOT Edge](how-to-install-iot-edge.md), а затем вернитесь к этой статье для инициализации устройства.
+
 509. подготовка с помощью DPS поддерживается только в IoT Edge версии 1.0.9 или более поздней.
 
-При подготовке устройства вам потребуются следующие сведения:
+## <a name="configure-the-device-with-provisioning-information"></a>Настройка устройства с помощью сведений об инициализации
+
+После установки среды выполнения на устройстве настройте на нем сведения, которые он использует для подключения к службе подготовки устройств и центру Интернета вещей.
+
+Приготовьте следующие сведения:
 
 * Значение **области идентификаторов** DPS. Это значение можно получить на странице обзора экземпляра DP в портал Azure.
 * Файл цепочки сертификатов удостоверений устройств на устройстве.
 * Файл ключа удостоверения устройства на устройстве.
-* Необязательный идентификатор регистрации (извлекается из общего имени в сертификате удостоверения устройства, если оно не указано).
+* Необязательный идентификатор регистрации. Если он не указан, идентификатор извлекается из общего имени в сертификате удостоверения устройства.
 
 ### <a name="linux-device"></a>Устройство Linux
 
-Используйте следующую ссылку, чтобы установить среду выполнения Azure IoT Edge на устройстве, используя команды, соответствующие архитектуре устройства. Когда вы получите доступ к разделу о настройке управляющей программы безопасности, настройте среду выполнения IoT Edge для X. 509 автоматически, а не вручную. Необходимо иметь все необходимые сведения и файлы сертификатов после завершения предыдущих разделов этой статьи.
+1. Откройте файл конфигурации на устройстве IoT Edge.
 
-[Установка среды выполнения Azure IoT Edge в Linux](how-to-install-iot-edge-linux.md)
+   ```bash
+   sudo nano /etc/iotedge/config.yaml
+   ```
 
-При добавлении сертификата X. 509 и сведений о ключе в файл config. YAML эти пути должны быть указаны в виде URI файлов. Пример:
+1. Найдите раздел конфигурации подготовки файла. Раскомментируйте строки для подготовки симметричного ключа DP и убедитесь, что все остальные строки подготовки снабжены комментариями.
 
-* `file:///<path>/identity_certificate_chain.pem`
-* `file:///<path>/identity_key.pem`
+   `provisioning:`Строка не должна содержать предшествующих пробелов, а вложенные элементы должны иметь отступ в два пробела.
 
-Раздел в файле конфигурации для автоматической подготовки X. 509 выглядит следующим образом:
+   ```yml
+   # DPS TPM provisioning configuration
+   provisioning:
+     source: "dps"
+     global_endpoint: "https://global.azure-devices-provisioning.net"
+     scope_id: "<SCOPE_ID>"
+     attestation:
+       method: "x509"
+   #   registration_id: "<OPTIONAL REGISTRATION ID. LEAVE COMMENTED OUT TO REGISTER WITH CN OF identity_cert>"
+       identity_cert: "<REQUIRED URI TO DEVICE IDENTITY CERTIFICATE>"
+       identity_pk: "<REQUIRED URI TO DEVICE IDENTITY PRIVATE KEY>"
+   ```
 
-```yaml
-# DPS X.509 provisioning configuration
-provisioning:
-  source: "dps"
-  global_endpoint: "https://global.azure-devices-provisioning.net"
-  scope_id: "<SCOPE_ID>"
-  attestation:
-    method: "x509"
-#   registration_id: "<OPTIONAL REGISTRATION ID. LEAVE COMMENTED OUT TO REGISTER WITH CN OF identity_cert>"
-    identity_cert: "<REQUIRED URI TO DEVICE IDENTITY CERTIFICATE>"
-    identity_pk: "<REQUIRED URI TO DEVICE IDENTITY PRIVATE KEY>"
-```
+1. Обновите значения параметров `scope_id` , `identity_cert` и `identity_pk` с помощью сведений об DP и устройстве.
 
-Замените значения заполнителей для `scope_id` , `identity_cert` , `identity_pk` идентификатором области из экземпляра DP, а также URI для цепочки сертификатов и расположений файлов ключей на вашем устройстве. `registration_id`При необходимости укажите устройство для устройства или оставьте строку с комментарием, чтобы зарегистрировать устройство с именем CN сертификата удостоверения.
+   При добавлении сертификата X. 509 и сведений о ключе в файл config. YAML эти пути должны быть указаны в виде URI файлов. Пример:
 
-Всегда перезапускайте управляющую программу безопасности после обновления файла config. YAML.
+   `file:///<path>/identity_certificate_chain.pem`
+   `file:///<path>/identity_key.pem`
 
-```bash
-sudo systemctl restart iotedge
-```
+1. `registration_id`При необходимости укажите устройство для устройства или оставьте строку с комментарием, чтобы зарегистрировать устройство с именем CN сертификата удостоверения.
+
+1. Перезапустите среду выполнения IoT Edge, чтобы активировать все изменения конфигурации, внесенные на устройстве.
+
+   ```bash
+   sudo systemctl restart iotedge
+   ```
 
 ### <a name="windows-device"></a>устройство с Windows;
 
-Установите среду выполнения IoT Edge на устройстве, для которого была создана цепочка сертификатов удостоверений и ключ удостоверения. Вы настроите среду выполнения IoT Edge для автоматического, а не ручной подготовки.
-
-Дополнительные сведения об установке IoT Edge в Windows, включая предварительные требования и инструкции для таких задач, как Управление контейнерами и обновление IoT Edge, см. в [статье Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md).
-
 1. Откройте окно PowerShell с правами администратора. Не забудьте использовать сеанс AMD64 PowerShell при установке IoT Edge, а не PowerShell (x86).
 
-1. Команда **deploy-IoTEdge** проверяет, что компьютер Windows находится в поддерживаемой версии, включает функцию контейнеров, а затем загружает среду выполнения значок Кита и среду выполнения IOT Edge. Команда по умолчанию использует контейнеры Windows.
+1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. Команда по умолчанию используется для подготовки вручную с контейнерами Windows, поэтому используйте `-DpsX509` флаг для автоматической подготовки с использованием проверки подлинности на сертификате X. 509.
+
+   Замените значения заполнителей для `{scope_id}` , `{identity cert chain path}` и `{identity key path}` соответствующими ЗНАЧЕНИЯМИ из экземпляра DPS и путей к файлам на устройстве.
+
+   Добавьте, `-RegistrationId {registration_id}` Если вы хотите задать идентификатор устройства, отличный от имени CN сертификата удостоверения.
+
+   Добавьте `-ContainerOs Linux` параметр, если вы используете контейнеры Linux в Windows.
 
    ```powershell
    . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
-   Deploy-IoTEdge
-   ```
-
-1. На этом этапе устройства IoT Core могут перезапускаться автоматически. Другие устройства Windows 10 или Windows Server могут предложить перезагрузку. Если да, перезагрузите устройство прямо сейчас. Когда устройство будет готово, снова запустите PowerShell от имени администратора.
-
-1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. Команда по умолчанию выполняется подготовка вручную, если не используется `-Dps` флаг для автоматической подготовки.
-
-   Замените значения заполнителей для `{scope_id}` , `{identity cert chain path}` и `{identity key path}` соответствующими ЗНАЧЕНИЯМИ из экземпляра DPS и путей к файлам на устройстве. Если вы хотите указать идентификатор регистрации, включите его `-RegistrationId {registration_id}` также, заменив заполнитель соответствующим образом.
-
-   ```powershell
-   . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
-   Initialize-IoTEdge -Dps -ScopeId {scope ID} -X509IdentityCertificate {identity cert chain path} -X509IdentityPrivateKey {identity key path}
+   Initialize-IoTEdge -DpsX509 -ScopeId {scope ID} -X509IdentityCertificate {identity cert chain path} -X509IdentityPrivateKey {identity key path}
    ```
 
    >[!TIP]
@@ -329,6 +332,6 @@ Get-Service iotedge
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. Узнайте, как [развертывать и отслеживать модули IOT EDGE в масштабе с помощью портал Azure](how-to-deploy-at-scale.md) или [с помощью Azure CLI](how-to-deploy-cli-at-scale.md).

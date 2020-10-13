@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
-ms.openlocfilehash: 306d3a14d759ac73e78626a4c2ec6abc69d3df85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a0ea8a2f07ef596cd80e9165eedb2b98dab0bfa
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85515025"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978719"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-storage-account-credentials"></a>Использование службы диспетчера устройств StorSimple для управления учетными данными учетной записи хранения
 
@@ -33,7 +33,7 @@ ms.locfileid: "85515025"
 
 В этом руководстве объясняется, как добавлять, изменять или удалять учетные данные учетной записи хранения или сменять ключи безопасности для учетной записи хранения.
 
- ![Список учетных данных учетной записи хранения](./media/storsimple-8000-manage-storage-accounts/createnewstorageacct6.png)  
+ ![Список учетных данных учетной записи хранения 1](./media/storsimple-8000-manage-storage-accounts/createnewstorageacct6.png)  
 
 Учетные записи хранения содержат учетные данные, используемые устройством StorSimple для доступа к учетной записи хранения у поставщика облачной службы. Для учетных записей хранения Microsoft Azure это такие учетные данные, как имя учетной записи и основной ключ доступа. 
 
@@ -102,7 +102,7 @@ ms.locfileid: "85515025"
 
 1. Откройте службу диспетчера устройств StorSimple. В разделе **Конфигурация** выберите **Учетные данные для учетной записи хранения**.
 
-    ![учетные данные учетной записи хранения;](./media/storsimple-8000-manage-storage-accounts/editstorageacct1.png)
+    ![Учетные данные учетной записи хранения 2](./media/storsimple-8000-manage-storage-accounts/editstorageacct1.png)
 
 2. В колонке **Учетные данные для учетной записи хранения** выберите в списке учетную запись хранения, которую нужно изменить. 
 
@@ -159,11 +159,11 @@ ms.locfileid: "85515025"
 
 3. Щелкните **...Дополнительно** и выберите **Синхронизировать ключ доступа**.   
 
-    ![Синхронизация ключей](./media/storsimple-8000-manage-storage-accounts/syncaccesskey2.png)
+    ![синхронизировать ключи 2](./media/storsimple-8000-manage-storage-accounts/syncaccesskey2.png)
 
 4. В службе диспетчера устройств StorSimple необходимо обновить ключ, ранее измененный в службе хранилища Microsoft Azure. Если первичный ключ доступа был изменен (создан повторно), выберите **первичный** ключ. Если был изменен вторичный ключ, выберите **вторичный** ключ. Нажмите кнопку **Синхронизировать ключ**.
       
-      ![Синхронизация ключей](./media/storsimple-8000-manage-storage-accounts/syncaccesskey3.png)
+      ![синхронизировать ключи 3](./media/storsimple-8000-manage-storage-accounts/syncaccesskey3.png)
 
 Вы получите уведомление после успешной синхронизации.
 

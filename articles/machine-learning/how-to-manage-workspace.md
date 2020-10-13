@@ -11,10 +11,10 @@ ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
 ms.openlocfilehash: d2885c6cc259cba74ab991ecf5046856984824f1
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91631258"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинного обучения Azure и управление ими с помощью портала Azure
@@ -89,7 +89,7 @@ ms.locfileid: "91631258"
 
 Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье  [сканирование образа реестра контейнеров Azure с помощью центра безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration) и [интеграции Azure Kubernetes Services с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-kubernetes-service-integration).
 
-### <a name="advanced"></a>Продвинутый уровень    
+### <a name="advanced"></a>Дополнительно    
 
 По умолчанию метрики и метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт.  
 

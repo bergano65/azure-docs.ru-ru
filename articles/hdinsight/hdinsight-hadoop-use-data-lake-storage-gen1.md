@@ -12,7 +12,7 @@ ms.openlocfilehash: 7e05e89cae8688162c6ac6ded5ad56c85394dc8c
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91858775"
 ---
 # <a name="use-data-lake-storage-gen1-with-azure-hdinsight-clusters"></a>Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight
@@ -299,11 +299,11 @@ Invoke-AzResourceAction `
     -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как использовать HDFS-совместимую службу Azure Data Lake Storage 1-го поколения с HDInsight. Это хранилище позволяет создавать адаптируемые, долгосрочные решения для получения данных архивации. И используйте HDInsight для разблокировки информации внутри хранимых структурированных и неструктурированных данных.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 * [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md)
 * [Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)](../data-lake-store/data-lake-store-hdinsight-hadoop-use-powershell.md).

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 3e3dce20f447b47ad78deea617b513c50f552733
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: 24229c331d0c7c4b2327e8e609e9d75b6654868f
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893634"
+ms.locfileid: "91931991"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -47,14 +47,14 @@ WHERE ...
 
 ### <a name="count-items"></a>Количество элементов
 
-Количество двойников в результирующем наборе можно подсчитать с помощью `Select COUNT` предложения:
+Количество элементов в результирующем наборе можно подсчитать с помощью `Select COUNT` предложения:
 
 ```sql
 SELECT COUNT() 
 FROM DIGITALTWINS
 ``` 
 
-Добавьте `WHERE` предложение для подсчета количества двойников, соответствующих определенным критериям. Ниже приведены некоторые примеры инвентаризации с примененным фильтром на основе типа модели двойника (Дополнительные сведения об этом синтаксисе см. в разделе [*запрос по модели*](#query-by-model) ниже).
+Добавьте `WHERE` предложение для подсчета количества элементов, соответствующих определенным критериям. Ниже приведены некоторые примеры инвентаризации с примененным фильтром на основе типа модели двойника (Дополнительные сведения об этом синтаксисе см. в разделе [*запрос по модели*](#query-by-model) ниже).
 
 ```sql
 SELECT COUNT() 
@@ -68,7 +68,7 @@ WHERE IS_OF_MODEL('dtmi:sample:Room;1') AND c.Capacity > 20
 Также можно использовать `COUNT` вместе с `JOIN` предложением. Ниже приведен запрос, который подсчитывает все лампочки, содержащиеся в светлых панелях комнат 1 и 2:
 
 ```sql
-SELECT COUNT(LightBulb)  
+SELECT COUNT()  
 FROM DIGITALTWINS Room  
 JOIN LightPanel RELATED Room.contains  
 JOIN LightBulb RELATED LightPanel.contains  

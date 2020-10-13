@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/17/2017
 ms.author: alkohli
-ms.openlocfilehash: 1c2df017a9af47bfa330c8e0fa7561bf5b2d5bae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ffb13912780edcf3d92093e672d1dae983e50a8
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514687"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977414"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-your-storsimple-device"></a>Использование службы диспетчера устройств StorSimple для мониторинга устройства StorSimple
 
@@ -77,7 +77,7 @@ Growth (%) = [{Usage(last day) - Usage(first day)} X 100]/Usage(first day)
 
 Вы также можете щелкнуть каждый том в списке и просмотреть соответствующее использование.
 
-![Уровень использования основного хранилища по всем локально закрепленным томам](./media/storsimple-8000-monitor-device/device-primary-storage-usage-by-volume.png)
+![Использование первичной емкости для всех локально закрепленных томов 2](./media/storsimple-8000-monitor-device/device-primary-storage-usage-by-volume.png)
 
 ### <a name="cloud-storage-usage"></a>Использование облачного хранилища
 На этих графика показан объем используемого облачного хранилища. Эти данные дедуплицированы и сжаты. Этот объем включает облачные моментальные снимки, которые могут содержать данные, не отраженные ни в каком основном томе и хранящиеся для поддержки прежних версий или для хранения данных. Сравнив показатели использования основного и облачного хранилищ, можно получить представление о степени сокращения данных, хотя эта величина будет неточной.

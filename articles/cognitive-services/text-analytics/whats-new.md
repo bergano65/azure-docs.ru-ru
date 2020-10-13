@@ -8,18 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 09/29/2020
+ms.date: 10/07/2020
 ms.author: aahi
-ms.openlocfilehash: 12f3ce506d8b4588dc9c670e49cabd3bc7767566
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f0a40e30cc58a01a66ba808076fe1d42c31c326
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460277"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978889"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
+
+## <a name="october-2020"></a>Октябрь 2020 г.
+
+* Поддержка хинди для анализ тональности, начиная с версии модели `2020-04-01` . 
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
@@ -213,7 +217,7 @@ API анализа текста v3 теперь общедоступен со с
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое API "Анализ текста"?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)

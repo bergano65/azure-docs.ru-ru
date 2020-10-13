@@ -9,12 +9,12 @@ ms.date: 4/3/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 4c44ad91b4fb8581a67ea67e09faca4a9d96df91
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 791aadf349654e1e62c3ac2b98a955de7b46c0b7
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447757"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966123"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-symmetric-key-attestation"></a>Создание и инициализация устройства IoT Edge с помощью аттестации симметричных ключей
 
@@ -156,7 +156,13 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 Среда выполнения IoT Edge развертывается на всех устройствах IoT Edge. Ее компоненты выполняются в контейнерах и позволяют развертывать дополнительные контейнеры на устройстве, чтобы обеспечить возможность выполнения кода в граничной системе.
 
-При подготовке устройства вам потребуются следующие сведения:
+Выполните действия, описанные в разделе [Установка среды выполнения Azure IOT Edge](how-to-install-iot-edge.md), а затем вернитесь к этой статье для инициализации устройства.
+
+## <a name="configure-the-device-with-provisioning-information"></a>Настройка устройства с помощью сведений об инициализации
+
+После установки среды выполнения на устройстве настройте на нем сведения, которые он использует для подключения к службе подготовки устройств и центру Интернета вещей.
+
+Приготовьте следующие сведения:
 
 * Значение **области идентификаторов** DPS
 * Созданный **идентификатор регистрации** устройства
@@ -167,50 +173,49 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 ### <a name="linux-device"></a>Устройство Linux
 
-Следуйте инструкциям по архитектуре вашего устройства. Среда выполнения IoT Edge должна быть настроена на автоматическую подготовку, а не подготовку вручную.
+1. Откройте файл конфигурации на устройстве IoT Edge.
 
-[Установка среды выполнения Azure IoT Edge в Linux](how-to-install-iot-edge-linux.md)
+   ```bash
+   sudo nano /etc/iotedge/config.yaml
+   ```
 
-Раздел файла конфигурации для подготовки симметричного ключа выглядит следующим образом:
+1. Найдите раздел конфигурации подготовки файла. Раскомментируйте строки для подготовки симметричного ключа DP и убедитесь, что все остальные строки подготовки снабжены комментариями.
 
-```yaml
-# DPS symmetric key provisioning configuration
-provisioning:
-   source: "dps"
-   global_endpoint: "https://global.azure-devices-provisioning.net"
-   scope_id: "<SCOPE_ID>"
-   attestation:
-      method: "symmetric_key"
-      registration_id: "<REGISTRATION_ID>"
-      symmetric_key: "<SYMMETRIC_KEY>"
-```
+   `provisioning:`Строка не должна содержать предшествующих пробелов, а вложенные элементы должны иметь отступ в два пробела.
 
-Замените значения заполнителей для `<SCOPE_ID>` , `<REGISTRATION_ID>` и `<SYMMETRIC_KEY>` данными, собранными ранее. Убедитесь, что **Подготовка:** строка не имеет предшествующих пробелов, а вложенные элементы имеют отступ в два пробела.
+   ```yml
+   # DPS TPM provisioning configuration
+   provisioning:
+     source: "dps"
+     global_endpoint: "https://global.azure-devices-provisioning.net"
+     scope_id: "<SCOPE_ID>"
+     attestation:
+       method: "symmetric_key"
+       registration_id: "<REGISTRATION_ID>"
+       symmetric_key: "<SYMMETRIC_KEY>"
+   ```
+
+1. Обновите значения параметров `scope_id` , `registration_id` и `symmetric_key` с помощью сведений об DP и устройстве.
+
+1. Перезапустите среду выполнения IoT Edge, чтобы активировать все изменения конфигурации, внесенные на устройстве.
+
+   ```bash
+   sudo systemctl restart iotedge
+   ```
 
 ### <a name="windows-device"></a>устройство с Windows;
 
-Установите среду выполнения IoT Edge на устройстве, для которого создан производный ключ устройства. Вы настроите среду выполнения IoT Edge для автоматического, а не ручной подготовки.
-
-Дополнительные сведения об установке IoT Edge в Windows, включая предварительные требования и инструкции для таких задач, как Управление контейнерами и обновление IoT Edge, см. в [статье Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md).
-
 1. Откройте окно PowerShell с правами администратора. Не забудьте использовать сеанс AMD64 PowerShell при установке IoT Edge, а не PowerShell (x86).
 
-1. Команда **deploy-IoTEdge** проверяет, что компьютер Windows находится в поддерживаемой версии, включает функцию контейнеров, а затем загружает среду выполнения значок Кита и среду выполнения IOT Edge. Команда по умолчанию использует контейнеры Windows.
-
-   ```powershell
-   . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
-   Deploy-IoTEdge
-   ```
-
-1. На этом этапе устройства IoT Core могут перезапускаться автоматически. Другие устройства Windows 10 или Windows Server могут предложить перезагрузку. Если да, перезагрузите устройство прямо сейчас. Когда устройство будет готово, снова запустите PowerShell от имени администратора.
-
-1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. Команда по умолчанию используется для подготовки вручную с контейнерами Windows, если не использовать `-Dps` флаг для автоматической подготовки.
+1. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. Команда по умолчанию используется для подготовки вручную с контейнерами Windows, поэтому используйте `-DpsSymmetricKey` флаг, чтобы использовать автоматическую подготовку с проверкой подлинности с симметричным ключом.
 
    Замените значения заполнителей для `{scope_id}` , `{registration_id}` и `{symmetric_key}` данными, собранными ранее.
 
+   Добавьте `-ContainerOs Linux` параметр, если вы используете контейнеры Linux в Windows.
+
    ```powershell
    . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
-   Initialize-IoTEdge -Dps -ScopeId {scope ID} -RegistrationId {registration ID} -SymmetricKey {symmetric key}
+   Initialize-IoTEdge -DpsSymmetricKey -ScopeId {scope ID} -RegistrationId {registration ID} -SymmetricKey {symmetric key}
    ```
 
 ## <a name="verify-successful-installation"></a>Проверка установки
@@ -259,6 +264,6 @@ iotedge list
 
 Вы можете проверить, была ли использована отдельная регистрация, созданная в службе подготовки устройств. Перейдите к экземпляру службы подготовки устройств в портал Azure. Откройте сведения о регистрации для созданной индивидуальной регистрации. Обратите внимание, что для регистрации **назначено** состояние и указан идентификатор устройства.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. Узнайте, как [развертывать и отслеживать модули IOT EDGE в масштабе с помощью портал Azure](how-to-deploy-at-scale.md) или [с помощью Azure CLI](how-to-deploy-cli-at-scale.md).

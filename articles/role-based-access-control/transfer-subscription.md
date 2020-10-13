@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 10/06/2020
 ms.author: rolyon
 ms.openlocfilehash: 35c6d94ce69acf59ae6cd8b26b0ad75645eb526a
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91819708"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Перенос подписки Azure в другой каталог Azure AD
@@ -68,7 +68,7 @@ ms.locfileid: "91819708"
 | Пользовательские роли | Да | Да | [Вывод списка настраиваемых ролей](#save-custom-roles) | Все пользовательские роли удаляются без возможности восстановления. Необходимо повторно создать пользовательские роли и назначения ролей. |
 | Управляемые удостоверения, назначенные системой | Да | Да | [Перечисление управляемых удостоверений](#list-role-assignments-for-managed-identities) | Необходимо отключить и повторно включить управляемые удостоверения. Необходимо повторно создать назначения ролей. |
 | Управляемые удостоверения, назначаемые пользователем | Да | Да | [Перечисление управляемых удостоверений](#list-role-assignments-for-managed-identities) | Необходимо удалить, повторно создать и присоединить управляемые удостоверения к соответствующему ресурсу. Необходимо повторно создать назначения ролей. |
-| Azure Key Vault | Да | Да | [Перечисление политик доступа Key Vault](#list-key-vaults) | Необходимо обновить идентификатор клиента, связанный с хранилищами ключей. Необходимо удалить и добавить новые политики доступа. |
+| Хранилище ключей Azure; | Да | Да | [Перечисление политик доступа Key Vault](#list-key-vaults) | Необходимо обновить идентификатор клиента, связанный с хранилищами ключей. Необходимо удалить и добавить новые политики доступа. |
 | Базы данных SQL Azure с включенной интеграцией аутентификации Azure AD | Да | Нет | [Проверка баз данных SQL Azure с помощью аутентификации Azure AD](#list-azure-sql-databases-with-azure-ad-authentication) |  |  |
 | Служба хранилища Azure и Azure Data Lake Storage 2-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Хранилище Azure Data Lake Storage 1-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
@@ -377,7 +377,7 @@ ms.locfileid: "91819708"
 
 1. Для ресурсов, использующих сертификаты, обновите сертификат.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Передача прав владения на выставление счетов для подписки Azure другой учетной записи](../cost-management-billing/manage/billing-subscription-transfer.md)
 - [Перенос подписок Azure между подписчиками и CSP](../cost-management-billing/manage/transfer-subscriptions-subscribers-csp.md)

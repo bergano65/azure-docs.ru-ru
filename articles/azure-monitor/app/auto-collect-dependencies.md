@@ -3,15 +3,13 @@ title: Автоматический сбор зависимостей в Azure A
 description: Автоматический сбор и визуализация зависимостей Application Insights
 ms.topic: reference
 ms.custom: devx-track-dotnet
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/06/2020
-ms.openlocfilehash: ca1c63f042bd06c19f232c2ff8170d23741e73f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a4d79e52465e93fb4db2625217cb37a06917218
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "88936441"
+ms.locfileid: "91930872"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -87,7 +85,7 @@ ms.locfileid: "88936441"
 | ------------------------|----------|
 | [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | All |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Настройка отслеживания зависимостей для платформы [.NET](./asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](./java-agent.md).
