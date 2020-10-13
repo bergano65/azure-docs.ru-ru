@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 09/16/2016
 ms.author: hermannd
 ms.openlocfilehash: 56f5072c90a699270a92af317976c8f56bd3e2cb
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91536534"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
@@ -39,7 +39,7 @@ ms.locfileid: "91536534"
 ### <a name="create-an-account-in-the-sap-cal"></a>Создание учетной записи в SAP CAL
 1. Для входа в SAP CAL впервые используйте пользователя S-User SAP или других пользователей, зарегистрированных в SAP. Затем определите учетную запись SAP CAL, которая используется SAP CAL для развертывания устройств в Azure. Вот что нужно сделать в определении учетной записи:
 
-    а. Выберите модель развертывания в Azure (Resource Manager или классическая).
+    a. Выберите модель развертывания в Azure (Resource Manager или классическая).
 
     b. Введите подписку Azure. Учетную запись SAP CAL можно назначить только одной подписке. Если вам требуется несколько подписок, необходимо создать еще одну учетную запись SAP CAL.
     
@@ -50,7 +50,7 @@ ms.locfileid: "91536534"
 
 1. При создании учетной записи SAP CAL на странице **Учетные записи** отображаются два варианта для Azure: 
 
-    а. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
+    a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
     b. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
@@ -97,7 +97,7 @@ ms.locfileid: "91536534"
 
 1. На странице **Basic Mode: Create Instance** (Базовый режим: создание экземпляра) сделайте следующее:
 
-    а. Введите **имя** экземпляра.
+    a. Введите **имя** экземпляра.
 
     b. Выберите **регион**Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
 

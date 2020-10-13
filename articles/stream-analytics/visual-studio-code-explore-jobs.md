@@ -7,10 +7,10 @@ ms.author: mamccrea
 ms.date: 05/15/2019
 ms.topic: how-to
 ms.openlocfilehash: 4b4ddd7db4891c642ec2002bbe992314fe67a20f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90891977"
 ---
 # <a name="explore-azure-stream-analytics-with-visual-studio-code-preview"></a>Изучение Azure Stream Analytics с Visual Studio Code (Предварительная версия)
@@ -42,6 +42,6 @@ Azure Stream Analytics для расширения Visual Studio Code предо
 
    ![Открытие представления заданий на портале](./media/vscode-explore-jobs/open-job-view.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание облачного задания Azure Stream Analytics в Visual Studio Code (предварительная версия)](quick-create-visual-studio-code.md)

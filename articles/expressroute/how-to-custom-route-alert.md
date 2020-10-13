@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
 ms.openlocfilehash: 67591e9227ff32e81b973c181da2c1374f0ded47
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91766673"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
@@ -391,7 +391,7 @@ Azure Logic Apps — это Orchestrator для всех процессов сб
 
    :::image type="content" source="./media/custom-route-alert-portal/condition-control.png" alt-text="Добавить учетную запись службы автоматизации":::
 
-5. В списке **действия** выберите **элемент Управление условием**. Элемент управления условием — это структура элемента управления, которая сравнивает данные в рабочем процессе с конкретными значениями или полями. Затем можно указать различные действия, выполняемые в зависимости от того, соответствуют ли данные условию.
+5. В списке **действия** выберите **элемент Управление условием**. Condition-Control является структурой управления, сравнивает данные в рабочем процессе с конкретными значениями или полями. Затем можно указать различные действия, выполняемые в зависимости от того, соответствуют ли данные условию.
 
    :::image type="content" source="./media/custom-route-alert-portal/condition.png" alt-text="Добавить учетную запись службы автоматизации":::
 
@@ -453,6 +453,6 @@ Logic Apps предоставляет много соединителей эле
 
 :::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Добавить учетную запись службы автоматизации":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о настройке рабочего процесса см. в разделе [Azure Logic Apps](../logic-apps/logic-apps-overview.md).

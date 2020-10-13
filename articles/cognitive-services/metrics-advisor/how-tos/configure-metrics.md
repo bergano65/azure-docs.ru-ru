@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: aahi
 ms.openlocfilehash: 93fdf2884ca6593cfdb4fb2878ba0dd21246266d
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91446357"
 ---
 # <a name="how-to-configure-metrics-and-fine-tune-detecting-configuration"></a>Как настроить метрики и выполнить тонкую настройку обнаружения конфигурации
@@ -128,7 +128,7 @@ ms.locfileid: "91446357"
 Если вы хотите получать уведомления при обнаружении аномалии, можно подписываться на предупреждения для метрики с помощью обработчика. Дополнительные сведения см. [в статьях Настройка оповещений и получение уведомлений с помощью обработчика](alerts.md) .
 
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие шаги 
 - [Настройка уведомлений и получение уведомлений с использованием перехватчика](alerts.md)
 - [Настройка обнаружения аномалий с помощью обратной связи](anomaly-feedback.md)
 - [Диагностика инцидента](diagnose-incident.md).

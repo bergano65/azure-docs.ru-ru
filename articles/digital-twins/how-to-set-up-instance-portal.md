@@ -8,10 +8,10 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: 12b0dd957cb89fc7114c752312b08f1e490499da
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89280032"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
@@ -32,11 +32,11 @@ ms.locfileid: "89280032"
 
 На портале нажмите кнопку _создать ресурс_ в меню домашней страницы служб Azure.
 
-:::image type="content" source= "media/how-to-set-up-instance/portal/create-resource.png" alt-text="Выбор пункта создать ресурс на домашней странице портал Azure":::
+:::image type="content" source= "media/how-to-set-up-instance/portal/create-resource.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Найдите *Azure Digital двойников* в поле поиска и выберите в результатах службу **Azure Digital двойников (Предварительная версия)** . Нажмите кнопку _создать_ , чтобы создать новый экземпляр службы.
 
-:::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins.png" alt-text="Выбор команды создать на странице службы цифровых двойников Azure":::
+:::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 На следующей странице *Создание ресурса* заполните указанные ниже значения.
 * **Подписка**. Подписка Azure, которую вы используете.
@@ -44,7 +44,7 @@ ms.locfileid: "89280032"
 * **Расположение**: регион с поддержкой цифровых двойников Azure для развертывания. Дополнительные сведения о языковой поддержке см. в [*подразделах продукты Azure, доступные по регионам (Azure Digital двойников)*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
 * **Имя ресурса**: имя вашего экземпляра Digital двойников для Azure. Имя нового экземпляра должно быть уникальным в пределах региона для вашей подписки (это означает, что если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется выбранное имя, вам будет предложено выбрать другое имя).
 
-:::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins-2.png" alt-text="Заполнение описанных значений для создания ресурса цифрового двойников Azure":::
+:::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins-2.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 По завершении выберите _проверить и создать_. Откроется страница сводки, на которой можно проверить введенные сведения об экземпляре и нажать кнопку _создать_. 
 
@@ -52,7 +52,7 @@ ms.locfileid: "89280032"
 
 После *создания*вы можете просмотреть состояние развертывания экземпляра в уведомлениях Azure на панели значков портала. Уведомление сообщит о том, что развертывание прошло успешно, и вы сможете нажать кнопку _Перейти к ресурсу_ , чтобы просмотреть созданный экземпляр.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/notifications-deployment.png" alt-text="Просмотр уведомлений Azure, демонстрирующих успешное развертывание, и выделение кнопки перейти к ресурсу":::
+:::image type="content" source="media/how-to-set-up-instance/portal/notifications-deployment.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Кроме того, если развертывание завершается неудачно, в уведомлении будет указано, почему. Просмотрите уведомление в сообщении об ошибке и повторите попытку создания экземпляра.
 
@@ -61,7 +61,7 @@ ms.locfileid: "89280032"
 
 На странице *Обзор* экземпляра Обратите внимание на его *имя*, *группу ресурсов*и *имя узла*. Это все важные значения, которые могут потребоваться при продолжении работы с экземпляром Digital двойников для Azure. Если другие пользователи будут программироваться на экземпляре, вы должны использовать эти значения совместно с ними.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Выделение важных значений на странице обзора экземпляра":::
+:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Теперь у вас есть экземпляр Azure Digital двойников, готовый к работе. Далее вы получите соответствующие разрешения пользователя Azure для управления им.
 
@@ -71,7 +71,7 @@ ms.locfileid: "89280032"
 
 Сначала откройте страницу для своего экземпляра Azure Digital двойников в портал Azure. В меню экземпляра выберите *Управление доступом (IAM)*. Нажмите кнопку  *Добавить* в разделе *Добавление назначения роли*.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Добавление назначения роли на странице Управление доступом (IAM)":::
+:::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 На следующей странице *Добавление назначения ролей* введите значения (они должны быть выполнены пользователем с [достаточными разрешениями](#prerequisites-permission-requirements) в подписке Azure):
 * **Роль**: в раскрывающемся меню выберите *Azure Digital двойников Owner (Предварительная версия)* .
@@ -80,7 +80,7 @@ ms.locfileid: "89280032"
 
 :::row:::
     :::column:::
-        :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-2.png" alt-text="Заполнение указанных полей в диалоговом окне Добавление назначения роли":::
+        :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-2.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -92,7 +92,7 @@ ms.locfileid: "89280032"
 
 Вы можете просмотреть назначение ролей, настроенное в разделе *Управление доступом (IAM) > назначения ролей*. Пользователь должен отображаться в списке с ролью *владельца Azure Digital двойников (Предварительная версия)*. 
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-role-assignment.png" alt-text="Просмотр назначений ролей для экземпляра цифрового двойников Azure в портал Azure":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-role-assignment.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Теперь у вас есть экземпляр Azure Digital двойников, который готов к работе и ему назначены разрешения для управления им. Далее предстоит настроить разрешения для клиентского приложения на доступ к нему.
 
@@ -102,7 +102,7 @@ ms.locfileid: "89280032"
 
 Начните с перехода к [Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) в портал Azure (вы можете использовать эту ссылку или найти ее с помощью панели поиска портала). Выберите *Регистрация приложений* в меню служба, а затем *+ Новая регистрация*.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/new-registration.png" alt-text="Просмотрите страницу службы Azure AD в портал Azure, выделите пункт меню Регистрация приложений и нажмите кнопку + Новая регистрация.":::
+:::image type="content" source="media/how-to-set-up-instance/portal/new-registration.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 На следующей странице *Регистрация приложения* Введите запрошенные значения:
 * **Имя**: отображаемое имя приложения Azure AD, связываемое с регистрацией.
@@ -111,7 +111,7 @@ ms.locfileid: "89280032"
 
 По завершении нажмите кнопку Register ( *зарегистрировать* ).
 
-:::image type="content" source="media/how-to-set-up-instance/portal/register-an-application.png" alt-text="Представление страницы регистрация приложения с указанными введенными значениями":::
+:::image type="content" source="media/how-to-set-up-instance/portal/register-an-application.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 После завершения настройки регистрации портал перенаправит вас на страницу сведений о ней.
 
@@ -121,18 +121,18 @@ ms.locfileid: "89280032"
 
 На странице портала для регистрации приложения в меню выберите *разрешения API* . На следующей странице разрешения нажмите кнопку *+ Добавить разрешение* .
 
-:::image type="content" source="media/how-to-set-up-instance/portal/add-permission.png" alt-text="Просмотр регистрации приложения в портал Azure, выделение пункта меню разрешения API и кнопка + добавить разрешение":::
+:::image type="content" source="media/how-to-set-up-instance/portal/add-permission.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 На следующей странице *разрешений API запроса* перейдите к *API-интерфейсам, используемым моей организацией* , и выполните поиск по запросу *Azure Digital двойников*. Выберите *Azure Digital двойников* из результатов поиска, чтобы продолжить назначение разрешений для API-интерфейсов цифровой двойников Azure.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1.png" alt-text="Просмотр результатов поиска страниц разрешения API запроса, демонстрирующих Azure Digital двойников":::
+:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 >[!NOTE]
 > При наличии существующего экземпляра Azure Digital двойников из предыдущего общедоступного предварительной версии службы (до июля 2020) по-прежнему в вашей подписке необходимо найти *службу "интеллектуальные модули Azure* ". Это старое имя для того же набора API-интерфейсов, которое не будет изменяться после этого шага.
 
 Далее предстоит выбрать разрешения, которые будут предоставлены для этих API. Разверните разрешение **Чтение (1)** и установите флажок *чтение. запись* , чтобы предоставить этому приложению доступ для чтения и записи регистрации приложения.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-2.png" alt-text="Просмотр страницы разрешения API запросов Выбор разрешений чтение. запись для API-интерфейсов цифрового двойников Azure":::
+:::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-2.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 По завершении нажмите кнопку *Добавить разрешения* .
 
@@ -140,19 +140,19 @@ ms.locfileid: "89280032"
 
 Вернитесь на страницу *разрешения API* и убедитесь, что теперь есть запись для Azure Digital двойников, отражающая разрешения на чтение и запись:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Представление портала с разрешениями API для регистрации приложения Azure AD с доступом чтение и запись для Azure Digital двойников":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-api-permissions.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Вы также можете проверить подключение к Azure Digital двойников в *manifest.js*регистрации приложения, которое автоматически обновлялось с помощью сведений о цифровой двойников Azure при добавлении разрешений API.
 
 Для этого в меню выберите *Манифест* , чтобы просмотреть код манифеста регистрации приложения. Прокрутите окно кода вниз и найдите эти поля в разделе `requiredResourceAccess` . Значения должны соответствовать приведенным на снимке экрана ниже:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Представление портала манифеста для регистрации приложения Azure AD. В разделе requiredResourceAccess вложено значение Ресаурцеаппид 0b07f429-9f4b-4714-9392-cc5e8e80c8b0 и значение resourceAccess > ID 4589bd03-58cb-4e6c-b17f-b580e39652f8":::
+:::image type="content" source="media/how-to-set-up-instance/portal/verify-manifest.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 ### <a name="collect-important-values"></a>Получение важных значений
 
 Затем в строке меню выберите *Обзор* , чтобы просмотреть сведения о регистрации приложения:
 
-:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Представление портала с важными значениями для регистрации приложения":::
+:::image type="content" source="media/how-to-set-up-instance/portal/app-important-values.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Запишите *идентификатор приложения (клиента)* и *идентификатор каталога (клиента)* , показанные на **странице.** Эти значения потребуются позже для [проверки подлинности клиентского приложения с помощью API цифровых двойников Azure](how-to-authenticate-client.md). Если вы не являетесь пользователем, который будет писать код для таких приложений, вы должны поделиться этими значениями с пользователем, который будет иметь значение.
 
@@ -160,7 +160,7 @@ ms.locfileid: "89280032"
 
 [!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
 * [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest)

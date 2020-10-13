@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: v-erkel
 ms.openlocfilehash: 19950ca215abbac3a56bdb901448c9d92ad369be
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91613065"
 ---
 # <a name="manage-your-cache"></a>Управление кэшем
@@ -117,7 +117,7 @@ $ az hpc-cache start --name doc-cache0629
 
 Используйте [AZ HPC-Cache Flush](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-flush) , чтобы принудительно записать все измененные данные в целевые объекты хранилища.
 
-Пример
+Пример.
 
 ```azurecli
 $ az hpc-cache flush --name doc-cache0629 --resource-group doc-rg
@@ -229,7 +229,7 @@ $
 
 Чтобы окончательно удалить кэш, воспользуйтесь командой Azure CLI [AZ HPC-Cache Delete](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-delete) .
 
-Пример
+Пример.
 ```azurecli
 $ az hpc-cache delete --name doc-cache0629
  - Running ..
@@ -255,7 +255,7 @@ $
 
 Эти диаграммы являются частью встроенных средств мониторинга и анализа Azure. Дополнительные средства и оповещения можно найти на страницах под заголовком **мониторинг** на боковой панели портала. Дополнительные сведения см. в разделе "портал" [документации по Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md#monitoring-in-the-azure-portal).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [метриках и средствах статистики Azure](../azure-monitor/index.yml)
 * Получение [помощи по кэшу Azure HPC](hpc-cache-support-ticket.md)

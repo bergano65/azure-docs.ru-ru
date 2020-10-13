@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: 1472da4c87dc4579a30290460fb7811cf228be47
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90892486"
 ---
 # <a name="security-controls-for-azure-spring-cloud-service"></a>Средства управления безопасностью для службы Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 Средства управления безопасностью встроены в облачную службу Azure весны.
 
@@ -36,6 +36,6 @@ ms.locfileid: "90892486"
 |:-------------|:-------|:-------------------------------|:----------------------|
 | Тег службы | Да | Используйте тег службы **азуреспрингклауд** , чтобы определить исходящие элементы управления доступом к сети в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэре Azure](https://docs.microsoft.com/azure/firewall/service-tags), чтобы разрешить трафик в облачные приложения Azure весны.<br><br>*Примечание.* Сейчас только новый экземпляр облачной службы Azure весны, созданный после 2020/07/14, поддерживает тег службы **азуреспрингклауд** . | [Теги служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)

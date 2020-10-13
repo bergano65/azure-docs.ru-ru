@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 3/14/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: e450cf0de7dce4f626fd41252bfeed5fba294c70
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91761011"
 ---
 # <a name="filter-telemetry-in-your-java-web-app"></a>Фильтрация данных телеметрии в веб-приложении Java
@@ -258,13 +258,13 @@ public TelemetryProcessor successFilter() {
 Для `application.properties` передачи этих параметров в пользовательский фильтр необходимо создать собственные параметры фильтра в и использовать внешнюю инфраструктуру конфигурации с пружинной загрузкой. 
 
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 *Мой фильтр не работает.*
 
 * Убедитесь, что для параметров указаны допустимые значения. Например, значения длительности должны быть целыми числами. Недопустимые значения приведут к тому, что фильтр будет проигнорирован. Если пользовательский фильтр породит исключение из конструктора или метода set, он будет проигнорирован.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Использование [выборки](./sampling.md) — альтернативный метод, который не искажает метрики.
 

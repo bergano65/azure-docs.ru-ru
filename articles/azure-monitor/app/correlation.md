@@ -8,10 +8,10 @@ ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
 ms.openlocfilehash: 53ce3764d074388213a3a4be08502b09743e28cb
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91827621"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
@@ -62,7 +62,7 @@ Application Insights переходит в [консорциум W3C Trace-conte
 - `traceparent`: Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
 - `tracestate`: Содержит контекст трассировки, зависящий от системы.
 
-Последняя версия пакета SDK Application Insights поддерживает протокол контекста Trace, но может потребоваться согласие на него. (Будет поддерживаться обратная совместимость с предыдущим протоколом корреляции, поддерживаемым пакетом SDK для Application Insights.)
+Последняя версия пакета SDK для Application Insights поддерживает протокол Trace-Context, но может потребоваться согласие на него. (Будет поддерживаться обратная совместимость с предыдущим протоколом корреляции, поддерживаемым пакетом SDK для Application Insights.)
 
 [Протокол HTTP корреляции, также называемый Request-ID](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md), является устаревшим. Этот протокол определяет два заголовка:
 
@@ -84,7 +84,7 @@ Application Insights также определяет [расширение](http
 
 ### <a name="enable-w3c-distributed-tracing-support-for-net-apps"></a>Включить поддержку распределенной трассировки W3C для приложений .NET
 
-По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-ID.
+По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-Id.
 
 ### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
@@ -170,7 +170,7 @@ Application Insights также определяет [расширение](http
 
 ### <a name="incoming-request-correlation"></a>Корреляция входящих запросов
 
-Опенценсус Python сопоставляет заголовки контекста W3C Trace и context из входящих запросов с диапазонами, созданными из самих запросов. Опенценсус сделает это автоматически с интеграцией для этих популярных платформ веб-приложений: Flask, Django и пирамидальная. Необходимо просто заполнить заголовки W3C Trace-контекста [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format) и отправить их вместе с запросом. Вот пример приложения Flask, которое демонстрирует это:
+Опенценсус Python сопоставляет заголовки W3C Trace-Context от входящих запросов к диапазонам, которые создаются из самих запросов. Опенценсус сделает это автоматически с интеграцией для этих популярных платформ веб-приложений: Flask, Django и пирамидальная. Необходимо просто заполнить заголовки W3C Trace-Context [правильным форматом](https://www.w3.org/TR/trace-context/#trace-context-http-headers-format) и отправить их вместе с запросом. Вот пример приложения Flask, которое демонстрирует это:
 
 ```python
 from flask import Flask
@@ -299,7 +299,7 @@ logger.warning('After the span')
 
   Начальная загрузочная загрузка автоматически присваивает `cloudRoleName` значение, введенное для `spring.application.name` Свойства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Запись [пользовательской телеметрии](../../azure-monitor/app/api-custom-events-metrics.md).
 - Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в разделе [Track Custom Operations](custom-operations-tracking.md).

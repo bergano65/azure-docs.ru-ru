@@ -6,10 +6,10 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
 ms.openlocfilehash: df8ebd97ed9e34e0fce85a50297c595732057115
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91761470"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Устранение неполадок агента Application Insights (прежнее название — монитор состояния v2)
@@ -78,7 +78,7 @@ ms.locfileid: "91761470"
 
     
     
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
     
 ### <a name="troubleshooting-powershell"></a>Устранение неполадок PowerShell
 
@@ -128,7 +128,7 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 
 ### <a name="collect-etw-logs-by-using-perfview"></a>Получение журналов ETW с помощью PerfView
 
-#### <a name="setup"></a>Установка
+#### <a name="setup"></a>Настройка
 
 1. Скачайте PerfView.exe и PerfView64.exe из [GitHub](https://github.com/Microsoft/perfview/releases).
 2. Запустите PerfView64.exe.
@@ -150,6 +150,6 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.

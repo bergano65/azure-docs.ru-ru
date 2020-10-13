@@ -8,26 +8,26 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-js
-ms.openlocfilehash: 1ccbe6cb332f357eeef02dff22b8a4be328b8de0
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 53887b7487c3f0bb70c9f8cc7cd61246fabc0b37
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91324235"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970135"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Создание настраиваемых пакетов SDK для Azure Digital двойников с помощью функции автоотдыха
 
 Сейчас единственными пакетами SDK для плоскости Data плоскость для взаимодействия с API-интерфейсами Azure Digital двойников являются .NET (C#), JavaScript и Java. Сведения об этих пакетах SDK и интерфейсах API см. в статье [*как использовать интерфейсы API и пакеты SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md). Если вы работаете на другом языке, в этой статье вы узнаете, как создать собственный пакет SDK для плоскости данных на выбранном языке с помощью функции автоотдыха.
 
 >[!NOTE]
-> При необходимости можно также использовать автооставшуюся для создания пакета SDK для плоскости управления. Для этого выполните действия, описанные в этой статье, с помощью [файла Swagger плоскости управления (OpenAPI)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/preview/2020-03-01-preview) , а не плоскости данных.
+> При необходимости можно также использовать автооставшуюся для создания пакета SDK для плоскости управления. Для этого выполните действия, описанные в этой статье, используя последний файл **Swagger плоскости управления** (OpenAPI) в [папке Swagger плоскости управления]] ( https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/) а не на плоскости данных 1).
 
 ## <a name="set-up-your-machine"></a>Настройка компьютера
 
 Чтобы создать пакет SDK, потребуется:
 * Функция [автоотдыха](https://github.com/Azure/autorest)версии 2.0.4413 (версия 3 сейчас не поддерживается)
 * [Node.js](https://nodejs.org) как предварительные требования для автоотдыха
-* [Файл Swagger (OpenAPI)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins/preview/2020-05-31-preview) Azure Digital двойников, *на которыйdigitaltwins.js*, и его сопроводительную папку примеров. Скачайте файл Swagger и его папку примеров на локальный компьютер.
+* Последний файл **Swagger** (OpenAPI) Azure Digital двойников в [папке Swagger плоскости данных](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins)и его сопроводительной папке примеров.  Скачайте файл Swagger *digitaltwins.jsв* и его папку примеров на локальном компьютере.
 
 После того как компьютер оснащен всеми данными из приведенного выше списка, вы можете использовать автооставшуюся для создания пакета SDK.
 
@@ -57,7 +57,7 @@ autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --ad
 
 В этом разделе приводятся инструкции по созданию пакета SDK в виде библиотеки классов, которая является собственным проектом и может быть включена в другие проекты. Эти действия зависят от **Visual Studio** (вы можете установить последнюю версию отсюда [).](https://visualstudio.microsoft.com/downloads/)
 
-Для этого выполните указанные ниже действия.
+Вот что нужно сделать.
 
 1. Создание нового решения Visual Studio для библиотеки классов
 2. Использовать *адтапи* в качестве имени проекта

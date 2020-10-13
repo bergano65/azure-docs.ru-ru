@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 0e44280c0a6c0d39c98e3aeecd5e9a3707332e81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3950cc16cd8661ee4e509cf14d12f561cb29c4ea
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88236579"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940711"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "88236579"
 |**База данных SQL Azure**|*Единая база* данных SQL Azure| Если явно не указано иное, имя продукта в базе данных SQL Azure включает как отдельные базы данных, так и базы данных, развернутые в эластичном пуле. |
 |**База данных SQL Azure**|*Эластичный пул* базы данных SQL Azure| Если явно не указано иное, имя продукта в базе данных SQL Azure включает как отдельные базы данных, так и базы данных, развернутые в эластичном пуле.  |
 |**База данных SQL Azure** |База данных SQL Azure | Несмотря на то что термин остается прежним, он применяется только к развертыванию одиночной базы данных и пула эластичных БД и не включает управляемый экземпляр. |
-| **Azure SQL**| Недоступно | Это относится к семейству SQL Server продуктов ядра СУБД, доступных в Azure: база данных SQL Azure, Управляемый экземпляр SQL Azure и SQL Server на виртуальных машинах Azure. | 
+| **Azure SQL**| Н/Д | Это относится к семейству SQL Server продуктов ядра СУБД, доступных в Azure: база данных SQL Azure, Управляемый экземпляр SQL Azure и SQL Server на виртуальных машинах Azure. | 
 
 ## <a name="features-in-public-preview"></a>Возможности общедоступной предварительной версии
 
@@ -72,7 +72,7 @@ ms.locfileid: "88236579"
 
 ---
 
-## <a name="sql-managed-instance-new-features-and-known-issues"></a>Новые функции и известные проблемы SQL Управляемый экземпляр
+## <a name="new-features"></a>Новые функции
 
 ### <a name="sql-managed-instance-h2-2019-updates"></a>Обновления SQL Управляемый экземпляр H2 2019
 
@@ -93,10 +93,11 @@ ms.locfileid: "88236579"
   - Новая встроенная [роль участника «экземпляр](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-managed-instance-contributor) » обеспечивает соответствие требованиям к разделению (разделения обязанностей) с учетом принципов безопасности и соответствия стандартам предприятия.
   - SQL Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)), а также в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Народно-Восточная, Южная Африка, Северная Африка, Юго-Африканская Республика.
 
-### <a name="known-issues"></a>Известные проблемы
+## <a name="known-issues"></a>Известные проблемы
 
 |Проблема  |Дата обнаружения  |Состояние  |Дата разрешения  |
 |---------|---------|---------|---------|
+|[BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql) в Azure SQL и `BACKUP` / `RESTORE` инструкции в управляемый экземпляр не могут использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
 |[Субъект-служба не может получить доступ к Azure AD и AKV](#service-principal-cannot-access-azure-ad-and-akv)|Авг 2020|Есть обходной путь||
 |[Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой](#restoring-manual-backup-without-checksum-might-fail)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
 |[Агент перестает отвечать при изменении, отключении или включении существующих заданий](#agent-becomes-unresponsive-upon-modifying-disabling-or-enabling-existing-jobs)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
@@ -124,6 +125,21 @@ ms.locfileid: "88236579"
 |Восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполняться, если база данных-источник содержит объекты OLTP в памяти.||"Разрешено"|Октябрь 2019|
 |Компонент Database Mail с внешними (не Azure) почтовыми серверами с использованием безопасного подключения||"Разрешено"|Октябрь 2019|
 |Автономные базы данных не поддерживаются в SQL Управляемый экземпляр||"Разрешено"|Авг 2019|
+
+### <a name="bulk-insert-and-backuprestore-statements-cannot-use-managed-identity-to-access-azure-storage"></a>Инструкции BULK INSERT и BACKUP/Restore не могут использовать управляемое удостоверение для доступа к службе хранилища Azure
+
+Инструкция инструкции reinsert не может использовать `DATABASE SCOPED CREDENTIAL` с управляемым удостоверением для проверки подлинности в службе хранилища Azure. В качестве обходного решения переключитесь на проверку подлинности ПОДПИСАНного URL-доступа. Следующий пример не будет работать в Azure SQL (база данных и Управляемый экземпляр):
+
+```sql
+CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Identity';
+GO
+CREATE EXTERNAL DATA SOURCE MyAzureBlobStorage
+  WITH ( TYPE = BLOB_STORAGE, LOCATION = 'https://****************.blob.core.windows.net/curriculum', CREDENTIAL= msi_cred );
+GO
+BULK INSERT Sales.Invoices FROM 'inv-2017-12-08.csv' WITH (DATA_SOURCE = 'MyAzureBlobStorage');
+```
+
+**Обходное решение**. Используйте [подписанный URL для проверки подлинности в хранилище](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15#f-importing-data-from-a-file-in-azure-blob-storage).
 
 ### <a name="service-principal-cannot-access-azure-ad-and-akv"></a>Субъект-служба не может получить доступ к Azure AD и AKV
 

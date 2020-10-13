@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 0f3c21d5c7f328ddef000ca7f1eaa9d5e18e6ca9
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 6c088188802590139ee895c45fb26959138db07e
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91761895"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91939806"
 ---
 # <a name="manage-an-azure-database-for-postgresql---flexible-server-using-the-azure-cli"></a>Управление базой данных Azure для PostgreSQL-гибкого сервера с помощью Azure CLI
 
@@ -123,13 +123,13 @@ az postgres flexible-server update --resource-group myresourcegroup --name mydem
 
 ## <a name="delete-a-server"></a>Удаление сервера
 
-Если вы хотите удалить гибкий сервер PostgreSQL, можно выполнить команду [AZ postgres гибкий-Server DELETE](/cli/azure/PostgreSQL/server#az-PostgreSQL-flexible-server-delete) .
+Если вы хотите удалить гибкий сервер PostgreSQL, можно выполнить команду [AZ postgres гибкий-Server DELETE](/cli/azure/postgres/flexible-server#az-PostgreSQL-flexible-server-delete) .
 
 ```azurecli-interactive
 az postgres flexible-server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Основные сведения о резервном копировании и восстановлении](concepts-backup-restore.md)
 - [Настройка и мониторинг сервера](concepts-monitoring.md)

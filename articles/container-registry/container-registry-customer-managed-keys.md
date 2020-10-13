@@ -4,12 +4,12 @@ description: Узнайте о шифровании неактивных дан�
 ms.topic: article
 ms.date: 09/30/2020
 ms.custom: ''
-ms.openlocfilehash: 7b4b3fd21421ba1e371bd27d8224c1f2aa34b7be
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.openlocfilehash: 6eaae5266277a6a65c7cecaa761b75e3a41ebe87
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91620347"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940673"
 ---
 # <a name="encrypt-registry-using-a-customer-managed-key"></a>Шифрование реестра с помощью управляемого клиентом ключа
 
@@ -114,7 +114,7 @@ az keyvault set-policy \
   --key-permissions get unwrapKey wrapKey
 ```
 
-Кроме того, можно использовать [Azure RBAC для Key Vault](../key-vault/general/rbac-guide.md) (Предварительная версия), чтобы назначить разрешения удостоверению для доступа к хранилищу ключей. Например, назначьте удостоверению Key Vault для удостоверения службы шифрования с помощью команды [AZ Role назначение Create](/cli/azure/az/role/assigment#az-role-assignment-create) .
+Кроме того, можно использовать [Azure RBAC для Key Vault](../key-vault/general/rbac-guide.md) (Предварительная версия), чтобы назначить разрешения удостоверению для доступа к хранилищу ключей. Например, назначьте удостоверению Key Vault для удостоверения службы шифрования с помощью команды [AZ Role назначение Create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) .
 
 ```azurecli 
 az role assignment create --assignee $identityPrincipalID \

@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: b-juche
 ms.openlocfilehash: 4df96f1c508df22e98a9c611ed04fecf6734970a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91278300"
 ---
 # <a name="cross-region-replication-of-azure-netapp-files-volumes"></a>Репликация Azure NetApp Files томов между регионами
@@ -109,7 +109,7 @@ Azure NetApp Filesная репликация тома в настоящее в�
 
 Плата за емкость хранилища Azure NetApp Files в течение месяца 2 применяется к целевому тому.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Требования и рекомендации по использованию репликации между регионами](cross-region-replication-requirements-considerations.md)
 * [Создание пиринга репликации](cross-region-replication-create-peering.md)
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)

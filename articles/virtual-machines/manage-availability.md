@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cynthn
 ms.openlocfilehash: fe89b58f71b14b211863fd46ba523e8c866764f1
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91361795"
 ---
 # <a name="manage-the-availability-of-linux-virtual-machines"></a>Управление доступностью виртуальных машин Linux
@@ -113,5 +113,5 @@ az vm list-skus --resource-type availabilitySets --query '[?name==`Aligned`].{Lo
 Руководство по балансировке нагрузки между зонами доступности см. в разделе [учебник. Балансировка нагрузки виртуальных машин в разных зонах доступности с помощью Load Balancer (цен. категория "Стандартный") портал Azure](../load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](../load-balancer/load-balancer-overview.md).

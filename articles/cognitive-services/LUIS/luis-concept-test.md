@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.openlocfilehash: ef63bf68fec592b768986a1329663508443c514b
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91535854"
 ---
 # <a name="testing-example-utterances-in-luis"></a>Тестирование примеров фраз в LUIS
@@ -54,6 +54,6 @@ LUIS сохраняет все зарегистрированные фразы �
 ## <a name="best-practices"></a>Рекомендации
 Ознакомьтесь с [рекомендациями](luis-concept-best-practices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о [тестировании](luis-interactive-test.md) высказываний.

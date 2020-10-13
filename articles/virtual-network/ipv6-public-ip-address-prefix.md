@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
 ms.openlocfilehash: ff33bf771065e7af209934a5c54b6f8f2e34835e
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91666789"
 ---
 # <a name="reserved-public-ipv6-address-prefix"></a>Зарезервированный префикс общедоступного IPv6-адреса
@@ -38,7 +38,7 @@ ms.locfileid: "91666789"
 -  Минимальный размер префикса IPv6:/127 = 2 адреса
 -  Максимальный размер префикса IPv6:/124 = 16 адресов
 
-Размер префикса задается как размер маски, зависящей от междоменной маршрутизации (CIDR). Например, маска/128 представляет отдельный IPv6-адрес, так как IPv6-адреса состоят из 128 бит.
+Размер префикса задается как размер маски с неInter-Domainной маршрутизацией (CIDR). Например, маска/128 представляет отдельный IPv6-адрес, так как IPv6-адреса состоят из 128 бит.
 
 ## <a name="pricing"></a>Цены
  
@@ -49,7 +49,7 @@ ms.locfileid: "91666789"
 
 Рекомендуется использовать стандартные общедоступные IP-адреса и стандартные подсистемы балансировки нагрузки для приложений IPv6.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Зарезервируйте префикс общедоступного [IPv6-адреса](ipv6-reserve-public-ip-address-prefix.md).
 - Дополнительные сведения об [IPv6-адресах](ipv6-overview.md).
 - Узнайте [, как создавать и использовать общедоступные IP-адреса](virtual-network-public-ip-address.md) (как IPv4, так и IPv6) в Azure.

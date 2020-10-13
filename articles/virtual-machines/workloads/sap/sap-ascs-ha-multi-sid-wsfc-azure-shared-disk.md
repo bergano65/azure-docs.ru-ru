@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a4856b2578a007f72aeeec64588ac7f9c58158de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8116f3e00d13c0bd1e5f075a7fbe3264f337079
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88861300"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970407"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-azure-shared-disk"></a>Высокий уровень доступности экземпляра SAP ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и общего диска Azure
 
@@ -34,13 +34,13 @@ ms.locfileid: "88861300"
 
 В настоящее время вы можете использовать диски SSD (цен. категория "Премиум") Azure в качестве общего диска Azure для экземпляра SAP ASCS/SCS. Существуют следующие ограничения.
 
--  [Azure Ultra Disk](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#ultra-disk) не поддерживается как общий диск Azure для рабочих нагрузок SAP. Сейчас невозможно разместить виртуальные машины Azure с помощью Azure Ultra Disk в группе доступности.
--  [Общий диск Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-shared) с SSD (цен. Категория "Премиум")ными дисками поддерживается только для виртуальных машин в группе доступности. Он не поддерживается в Зоны доступности развертывании. 
--  Значение общего диска Azure [максшарес](https://docs.microsoft.com/azure/virtual-machines/windows/disks-shared-enable?tabs=azure-cli#disk-sizes) определяет, сколько узлов кластера может использовать общий диск. Как правило, для экземпляра SAP ASCS/SCS настраиваются два узла в отказоустойчивом кластере Windows, поэтому для параметра `maxShares` необходимо задать значение 2.
--  Все виртуальные машины кластера SAP ASCS/SCS должны быть развернуты в одной [группе размещения](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups)службы расположения Azure.   
+-  [Azure Ultra Disk](../../disks-types.md#ultra-disk) не поддерживается как общий диск Azure для рабочих нагрузок SAP. Сейчас невозможно разместить виртуальные машины Azure с помощью Azure Ultra Disk в группе доступности.
+-  [Общий диск Azure](../../windows/disks-shared.md) с SSD (цен. Категория "Премиум")ными дисками поддерживается только для виртуальных машин в группе доступности. Он не поддерживается в Зоны доступности развертывании. 
+-  Значение общего диска Azure [максшарес](../../disks-shared-enable.md?tabs=azure-cli#disk-sizes) определяет, сколько узлов кластера может использовать общий диск. Как правило, для экземпляра SAP ASCS/SCS настраиваются два узла в отказоустойчивом кластере Windows, поэтому для параметра `maxShares` необходимо задать значение 2.
+-  Все виртуальные машины кластера SAP ASCS/SCS должны быть развернуты в одной [группе размещения](../../windows/proximity-placement-groups.md)службы расположения Azure.   
    Несмотря на то, что вы можете развернуть виртуальные машины кластера Windows в группе доступности с общим диском Azure без ППГ, ППГ обеспечит близкое физическое сходство общих дисков Azure и виртуальных машин кластера, тем самым обеспечивая более низкую задержку между виртуальными машинами и уровнем хранилища.    
 
-Для получения дополнительных сведений об ограничениях для общего диска Azure внимательно ознакомьтесь с разделом [ограничения](https://docs.microsoft.com/azure/virtual-machines/linux/disks-shared#limitations) в документации по общим дискам Azure.  
+Для получения дополнительных сведений об ограничениях для общего диска Azure внимательно ознакомьтесь с разделом [ограничения](../../linux/disks-shared.md#limitations) в документации по общим дискам Azure.  
 
 > [!IMPORTANT]
 > При развертывании отказоустойчивого кластера Windows SAP ASCS/SCS с помощью общего диска Azure имейте в виду, что развертывание будет работать с одним общим диском в одном кластере хранилища. В случае возникновения проблем с кластером хранения, в котором развернут общий диск Azure, будет затронуто ваше экземпляр SAP ASCS/SCS.  
@@ -111,7 +111,7 @@ ms.locfileid: "88861300"
 
 ### <a name="create-azure-internal-load-balancer"></a>Создание внутренней подсистемы балансировки нагрузки Azure
 
-SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное имя узла и виртуальные IP-адреса. В Azure для использования виртуального IP-адреса требуется [балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) . Настоятельно рекомендуется использовать [стандартный балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal). 
+SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное имя узла и виртуальные IP-адреса. В Azure для использования виртуального IP-адреса требуется [балансировщик нагрузки](../../../load-balancer/load-balancer-overview.md) . Настоятельно рекомендуется использовать [стандартный балансировщик нагрузки](../../../load-balancer/quickstart-load-balancer-standard-public-portal.md). 
 
 Необходимо добавить конфигурацию в существующую подсистему балансировки нагрузки для второго экземпляра SAP SID ASCS/SCS/ERS **PR2**. Конфигурация первого идентификатора безопасности SAP **PR1** должна быть уже выполнена.  
 

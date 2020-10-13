@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 0f9a8a1c4631fc667d0dd31ae62f7d57aefccc90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ccbf7e8aaab5463abf8fa9e129ba9f0ea8599c4e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855843"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91969846"
 ---
 # <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Часто задаваемые вопросы о миграции из классической модели в модель Azure Resource Manager
 
@@ -26,7 +26,7 @@ ms.locfileid: "88855843"
 
 ## <a name="what-is-azure-resource-manager"></a>Azure Resource Manager
 
-[Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) — это последняя плоскость управления Azure, отвечающая за создание, управление и удаление виртуальных машин, а также выполнение других операций плоскости управления. 
+[Azure Resource Manager](../azure-resource-manager/management/overview.md) — это последняя плоскость управления Azure, отвечающая за создание, управление и удаление виртуальных машин, а также выполнение других операций плоскости управления. 
 
 ## <a name="what-is-the-time-required-for-migration"></a>Сколько времени потребуется для миграции?
 
@@ -42,7 +42,7 @@ ms.locfileid: "88855843"
 
 ## <a name="why-am-i-getting-an-error-stating-newclassicvmcreationnotallowedforsubscription"></a>Почему я получаю сообщение об ошибке "NewClassicVMCreationNotAllowedForSubscription"?
 
-По условиям процесса прекращения поддержки виртуальная машина IaaS (классическая) больше не доступна для новых клиентов. Мы считаем вас новым клиентом, поэтому ваша операция не разрешается. Мы настоятельно рекомендуем использовать [Виртуальные машины Azure на основе ARM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell). Если вы не можете использовать виртуальные машины Azure с помощью ARM, обратитесь в службу поддержки, чтобы добавить подписку в список разрешений.
+По условиям процесса прекращения поддержки виртуальная машина IaaS (классическая) больше не доступна для новых клиентов. Мы считаем вас новым клиентом, поэтому ваша операция не разрешается. Мы настоятельно рекомендуем использовать [Виртуальные машины Azure на основе ARM](./windows/quick-create-powershell.md). Если вы не можете использовать виртуальные машины Azure с помощью ARM, обратитесь в службу поддержки, чтобы добавить подписку в список разрешений.
 
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 
@@ -105,7 +105,7 @@ ms.locfileid: "88855843"
 
 ## <a name="how-do-i-report-an-issue"></a>Как сообщить о проблеме? 
 
-Сведения о проблемах и вопросы, связанные с переносом, публикуйте на [странице вопросов и ответов о виртуальных машинах на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-virtual-machines.html), указывая ключевое слово ClassicIaaSMigration. Рекомендуется публиковать на этом форуме все свои вопросы. Если у вас есть контракт на техническую поддержку, то вы всегда можете зарегистрировать запрос в службу поддержки.
+Сведения о проблемах и вопросы, связанные с переносом, публикуйте на [странице вопросов и ответов о виртуальных машинах на сайте Майкрософт](/answers/topics/azure-virtual-machines.html), указывая ключевое слово ClassicIaaSMigration. Рекомендуется публиковать на этом форуме все свои вопросы. Если у вас есть контракт на техническую поддержку, то вы всегда можете зарегистрировать запрос в службу поддержки.
 
 ## <a name="what-if-i-dont-like-the-names-of-the-resources-that-the-platform-chose-during-migration"></a>Что делать, если мне не нравятся имена, которые платформа выбрала для ресурсов во время миграции? 
 

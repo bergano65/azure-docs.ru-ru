@@ -18,10 +18,10 @@ ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
 ms.openlocfilehash: 53f10996a7f15e32261f151600163f41df4e58ca
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91666795"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-the-azure-cli"></a>Управление данными утечка в учетные записи хранения Azure с помощью политик конечной точки службы виртуальной сети с использованием Azure CLI
@@ -361,6 +361,6 @@ sudo mount --types cifs //notallowedstorageacc.file.core.windows.net/my-file-sha
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы применили политику конечной точки службы к службе хранилища Azure для конечной точки службы виртуальной сети Azure. Вы создали учетные записи хранения Azure и ограниченный сетевой доступ только к определенным учетным записям хранения (и, таким же, отклонили другие) из подсети виртуальной сети. Дополнительные сведения о политиках конечной точки службы см. в статье [Общие сведения о политиках конечных точек служб](virtual-network-service-endpoint-policies-overview.md).

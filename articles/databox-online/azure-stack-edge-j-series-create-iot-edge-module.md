@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
 ms.openlocfilehash: 628dec7f1ba44d81243aeff2657e2311119c566a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90891188"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge-pro"></a>Разработка модуля IoT Edge C# для перемещения файлов на Azure Stack пограничных Pro
@@ -65,7 +65,7 @@ ms.locfileid: "90891188"
 Реестр контейнеров Azure — это частный реестр Docker в Azure, где можно хранить частные образы контейнеров Docker и управлять ими. Две самые популярные облачные службы реестров Docker — Реестр контейнеров Azure и Центр Docker. В этой статье используется Реестр контейнеров.
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
-2. Выберите **Создать ресурс > Контейнеры > Реестр контейнеров**. Щелкните **Создать**.
+2. Выберите **Создать ресурс > Контейнеры > Реестр контейнеров**. Нажмите кнопку **Создать**.
 3. Сделайте следующее:
 
    1. Создайте уникальное в пределах Azure **имя реестра**, которое содержит от 5 до 50 буквенно-цифровых символов.
@@ -276,6 +276,6 @@ ms.locfileid: "90891188"
 
 4. Полный адрес образа контейнера с тегом можно увидеть в окне интегрированного терминала VS Code. Адрес образа создается на основе информации, сохраненной в файле module.json в формате `<repository>:<version>-<platform>`. Для этой статьи адрес должен выглядеть так: `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы развернуть и запустить этот модуль на Azure Stack пограничных Pro, см. действия в разделе [Добавление модуля](azure-stack-edge-j-series-deploy-configure-compute.md#add-a-module).

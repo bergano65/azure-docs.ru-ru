@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.openlocfilehash: 6bb50e427fa85a170c5ad23a63d67c01e898a17d
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91665690"
 ---
 # <a name="swagger-documentation"></a>Документация по Swagger
@@ -50,7 +50,7 @@ ms.locfileid: "91665690"
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры речевых служб на GitHub](https://aka.ms/csspeech/samples).
 * [Try the Speech service for free](overview.md#try-the-speech-service-for-free) (Бесплатное использование службы "Речь")

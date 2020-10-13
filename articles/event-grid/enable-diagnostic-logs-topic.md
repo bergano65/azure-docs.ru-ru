@@ -4,10 +4,10 @@ description: В этой статье приводятся пошаговые и
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.openlocfilehash: 2d76d3ededd6d241197b26ac357c3b5406f43f02
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91297527"
 ---
 #  <a name="enable-diagnostic-logs-for-azure-event-grid-topics-or-domains"></a>Включение журналов диагностики для разделов и доменов службы "Сетка событий Azure"
@@ -106,5 +106,5 @@ ms.locfileid: "91297527"
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Сведения о схеме журнала и других концептуальных данных о журналах диагностики для разделов или доменов см. в разделе [журналы диагностики](diagnostic-logs.md).

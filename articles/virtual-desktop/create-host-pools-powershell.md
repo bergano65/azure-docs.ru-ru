@@ -7,10 +7,10 @@ ms.date: 10/02/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: a47126a48ea63efd4e49097428679b85b7a95a61
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91667169"
 ---
 # <a name="create-a-windows-virtual-desktop-host-pool-with-powershell"></a>Создание пула узлов виртуальных рабочих столов Windows с помощью PowerShell
@@ -140,8 +140,8 @@ $token = Get-AzWvdRegistrationInfo -ResourceGroupName <resourcegroupname> -HostP
    Чтобы удалить эти файлы, щелкните правой кнопкой мыши имя каждого файла, а затем выберите **Удалить**.
 5. При необходимости можно также удалить следующие параметры реестра:
      
-     - Компьютер \ HKEY_LOCAL_MACHINE \Софтваре\микрософт\рдинфраажент
-     - Компьютер \ HKEY_LOCAL_MACHINE \Софтваре\микрософт\рдажентбутлоадер
+     - Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\RDInfraAgent
+     - Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\RDAgentBootLoader
 
 6. После удаления этих элементов необходимо удалить все связи со старым пулом узлов. Если вы хотите повторно зарегистрировать этот узел в службе, следуйте инструкциям в разделе [регистрация виртуальных машин в пуле узлов виртуальных рабочих столов Windows](create-host-pools-powershell.md#register-the-virtual-machines-to-the-windows-virtual-desktop-host-pool).
 

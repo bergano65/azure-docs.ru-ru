@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 12/23/2019
 ms.openlocfilehash: a696ba4f7bab85f2353e80d028220688531b3b69
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89021771"
 ---
 # <a name="create-a-non-interactive-authentication-net-hdinsight-application"></a>Создание приложения .NET HDInsight с неинтерактивной проверкой подлинности
@@ -25,7 +25,7 @@ ms.locfileid: "89021771"
 * Идентификатор клиента для приложения Azure Active Directory (Azure AD). См. статью [создание Azure Active Directory приложения](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal) и [Получение идентификатора приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
 * Секретный ключ приложения Azure AD. Дополнительные сведения см. в разделе [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Кластер HDInsight. Дополнительные сведения см. в [руководстве по началу работы](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -39,7 +39,7 @@ ms.locfileid: "89021771"
 1. Перейдите к группе ресурсов с кластером HDInsight, в которой будет выполняться запрос Hive далее в этой статье. Если у вас много групп ресурсов, для поиска нужной можно использовать фильтр.
 1. В меню группы ресурсов щелкните **Управление доступом (IAM)**.
 1. Выберите вкладку **Назначения ролей**, чтобы просмотреть текущие назначения ролей.
-1. В верхней части страницы выберите **+ Добавить**.
+1. В верхней части страницы выберите **+ Добавить**.
 1. Выполните инструкции по добавлению роли владельца в приложение Azure AD. После успешного добавления роли приложение отобразится в списке роли владельца.
 
 ## <a name="develop-an-hdinsight-client-application"></a>Разработка клиентского приложения HDInsight
