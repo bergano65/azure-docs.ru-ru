@@ -11,10 +11,10 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
 ms.openlocfilehash: f0c923bcb7df930ed4b1380d487ededc6c160844
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91743749"
 ---
 # <a name="train-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Обучение scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
@@ -99,7 +99,7 @@ sklearn_env = Environment.from_conda_specification(name='sklearn-env', file_path
 ## <a name="configure-and-submit-your-training-run"></a>Настройка и отправка учебного запуска
 
 ### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
-Создайте объект Скриптрунконфиг, чтобы указать сведения о настройке учебного задания, включая сценарий обучения, используемую среду и целевой объект вычислений.
+Создайте объект ScriptRunConfig, чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание.
 Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре.
 
 Следующий код настроит объект Скриптрунконфиг, чтобы отправить задание на выполнение на локальном компьютере.
@@ -197,7 +197,7 @@ web_service = Model.deploy(ws, "scikit-learn-service", [model])
 Полное [Описание процесса](how-to-deploy-and-where.md) развертывания в машинное обучение Azure более подробно.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы обучили и зарегистрировали модель scikit-учиться и узнали о вариантах развертывания. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 

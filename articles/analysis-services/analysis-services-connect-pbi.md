@@ -8,10 +8,10 @@ ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: f79ff9af1272ca908c7a5ba35fbaa1e8bb87fc50
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86506717"
 ---
 # <a name="connect-with-power-bi"></a>Подключение с помощью Power BI
@@ -25,7 +25,7 @@ ms.locfileid: "86506717"
   
 ## <a name="connect-in-power-bi-desktop"></a>Подключение в Power BI Desktop
 
-1. В Power BI Desktop щелкните **получить данные**  >  **Azure**  >  **Azure Analysis Services база данных**Azure.
+1. В Power BI Desktop выберите **Получить данные** > **Azure** > **База данных Azure Analysis Services**.
 
 2. В поле **Сервер** укажите имя сервера. Обязательно включите полный URL-адрес, например asazure://westcentralus.asazure.windows.net/advworks.
 
@@ -49,7 +49,7 @@ ms.locfileid: "86506717"
 1. Создайте файл Power BI Desktop с возможностью активного подключения к нужной модели на сервере.
 2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)** > **Файлы**, а затем найдите и выберите PBIX-файл.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 [Подключение к Azure Analysis Services](analysis-services-connect.md)   
 [Клиентские библиотеки](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
 

@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 07/23/2020
 ms.openlocfilehash: 0418785fe558503b716ff1e798446fb64db998b1
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87799844"
 ---
 # <a name="use-azure-active-directory-for-authentication-with-mysql"></a>Использование Azure Active Directory для проверки подлинности с помощью MySQL
@@ -126,7 +126,7 @@ mysql -h mydb.mysql.database.azure.com \
 
 Важные моменты при подключении:
 
-* `user@tenant.onmicrosoft.com`— имя пользователя или группы Azure AD, которую вы пытаетесь подключить.
+* `user@tenant.onmicrosoft.com` — имя пользователя или группы Azure AD, которую вы пытаетесь подключить.
 * Всегда добавлять имя сервера после имени пользователя или группы Azure AD (например, `@mydb` )
 * Убедитесь, что используется точный способ написания имени пользователя или группы Azure AD.
 * Имена пользователей и групп Azure AD чувствительны к регистру

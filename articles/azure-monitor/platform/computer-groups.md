@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/05/2019
 ms.openlocfilehash: 217be627f81406f671118d5290cd5f67f52c01d2
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86112118"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor запросы журналов
@@ -26,7 +26,7 @@ ms.locfileid: "86112118"
 | Запрос журнала |Создание запроса к журналам, который возвращает список компьютеров. |
 | API поиска по журналам |Использование API поиска по журналам для создания группы компьютеров программными средствами на основе результатов запроса к журналам. |
 | Active Directory |Автоматическая проверка членства в группе на компьютерах агента, которые являются членами домена Active Directory, и создание группы в Azure Monitor для каждой группы безопасности. (Только для компьютеров Windows.)|
-| Configuration Manager | Импортируйте коллекции из Configuration Manager конечных точек Майкрософт и создайте группу в Azure Monitor для каждой из них. |
+| диспетчер конфигураций | Импортируйте коллекции из Configuration Manager конечных точек Майкрософт и создайте группу в Azure Monitor для каждой из них. |
 | Службы WSUS |Автоматическая проверка целевых групп на клиентах или серверах WSUS и создание для каждой из них группы в Azure Monitor. |
 
 ### <a name="log-query"></a>Запрос журнала
@@ -76,7 +76,7 @@ Heartbeat | where Computer contains "srv" | distinct Computer
 
 При импорте групп в меню отображаются число компьютеров с обнаруженным членством в группах и число импортированных групп.  Можно щелкнуть любую из этих ссылок для возврата записей **ComputerGroup** с этой информацией.
 
-### <a name="configuration-manager"></a>Configuration Manager
+### <a name="configuration-manager"></a>диспетчер конфигураций
 Если вы настроите в Azure Monitor импорт данных о членстве в коллекциях Configuration Manager, служба создаст отдельную группу компьютеров для каждой коллекции.  Данные о членстве в коллекциях извлекаются каждые три часа, чтобы поддерживать актуальность групп компьютеров. 
 
 Перед импортом коллекций Configuration Manager следует [подключить Configuration Manager к Azure Monitor](collect-sccm.md).  

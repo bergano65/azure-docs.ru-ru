@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
 ms.openlocfilehash: 9f816b35fd79d3f158ea12fd2c7e1d811823dc8a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939508"
 ---
 # <a name="security-module-for-azure-rtos-preview"></a>Модуль безопасности для Azure RTO (Предварительная версия)
@@ -63,7 +63,7 @@ Azure RTO Неткс Duo — это расширенный, промышленн
 
 Модуль безопасности для Azure RTO предоставляется бесплатно для загрузки устройств IoT. Служба "защитник для облачных служб Интернета вещей" доступна с 30-дневной пробной версией для каждой подписки Azure. [Скачайте модуль безопасности прямо сейчас](https://github.com/azure-rtos/azure-iot-preview/releases) и приступим к работе. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Приступая к работе с модулем безопасности для RTO [предварительных требований и установки](quickstart-azure-rtos-security-module.md)Azure.
 - Дополнительные сведения о модуле безопасности для [оповещений системы безопасности Azure RTO и рекомендации по поддержке рекомендаций](concept-rtos-security-alerts-recommendations.md). 

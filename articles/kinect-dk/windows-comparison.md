@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: article
 keywords: Kinect, Windows, v2, Azure Kinect, сравнение, пакет SDK, различия, оборудование, программное обеспечение
 ms.openlocfilehash: 0a8d399370f354524858bdd658ffd65c0494dd4d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87031581"
 ---
 # <a name="azure-kinect-and-kinect-windows-v2-comparison"></a>Сравнение Azure Kinect и Kinect Windows v2
@@ -22,11 +22,11 @@ ms.locfileid: "87031581"
 
 В следующей таблице перечислены обобщенные различия между пакетом Azure Kinect Development Kit и Kinect для Windows версии 2.
 
-| Функция | Тип | Azure Kinect DK | Kinect для Windows v2 |
+| Компонент | Тип | Azure Kinect DK | Kinect для Windows v2 |
 | ------- | ---- | --------------- | --------------------- |
-| **звук;** | Подробности  | 7-циклический круглый массив | 4-MIC линейный поэтапный массив |
-| **Датчик движения** | Подробности | Трехмерная ось акселерометр 3 оси Гиро | акселерометр по оси 3 |
-| **Камера RGB**    | Подробности | 3840 x 2160 ПКС в @30 сек. | 1920 x 1080 ПКС в @30 сек. |
+| **звук;** | Подробнее  | 7-циклический круглый массив | 4-MIC линейный поэтапный массив |
+| **Датчик движения** | Подробнее | Трехмерная ось акселерометр 3 оси Гиро | акселерометр по оси 3 |
+| **Камера RGB**    | Подробнее | 3840 x 2160 ПКС в @30 сек. | 1920 x 1080 ПКС в @30 сек. |
 | **Камера глубины**  | Метод   | Время рейса | Время рейса |
 |                   | Решение | 640 x 576 ПКС в @30 сек. | 512 x 424 ПКС @ 30 кадров/с |
 |                   |            | 512 x 512 ПКС в @30 сек. |                       |
@@ -46,7 +46,7 @@ ms.locfileid: "87031581"
 
 | **Функциональность**| **Azure Kinect** | **Kinect для Windows** | **Примечания** |
 |---------|---------|------------|---------|
-| **Depth** | ✔️ | ✔️ |    |   |
+| **Глубина** | ✔️ | ✔️ |    |   |
 | **IR** | ✔️ | ✔️ |  |
 | **Цвет** | ✔️ | ✔️ | Формат цвета поддерживает различия. в Azure Kinect DK поддерживаются следующие элементы управления камеры: экспозиция, баланс белого, яркость, контрастность, насыщенность, резкость и усиление контроля. |
 | **звук;** | ✔️ | ✔️ | Доступ к Azure Kinect DK микс осуществляется через речевой пакет SDK или собственный API Windows. |
@@ -71,7 +71,7 @@ ms.locfileid: "87031581"
 | | бодиндексфраме | Пакет SDK для отслеживания текста  |
 | Сопоставление координат|курдинатемаппер| [Пакет SDK для датчика — преобразования изображений](use-image-transformation.md) |
 |Отслеживание лиц | фацефраме | [Cognitive Services: лицо](https://azure.microsoft.com/services/cognitive-services/face/)       |
-|    Распознавание речи    |    Н/Д                      |    [Cognitive Services: речь](https://azure.microsoft.com/services/cognitive-services/directory/speech/)     |
+|    Распознавание речи    |    Недоступно                      |    [Cognitive Services: речь](https://azure.microsoft.com/services/cognitive-services/directory/speech/)     |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

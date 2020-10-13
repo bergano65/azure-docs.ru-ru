@@ -4,10 +4,10 @@ description: Узнайте, как настроить существующую 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 21fe23b6be6fdc924c5502ff97f9c03a3f3e759d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87283560"
 ---
 # <a name="configure-a-virtual-network-in-azure-devtest-labs"></a>Настройка виртуальной сети в Azure DevTest Labs
@@ -57,5 +57,5 @@ ms.locfileid: "87283560"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После добавления в лабораторию нужной виртуальной сети следует [добавить виртуальную машину в лабораторию](devtest-lab-add-vm.md).

@@ -9,10 +9,10 @@ ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
 ms.openlocfilehash: e9dc6acf33208de44eec2b5b9706b9f0b176f0d7
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87284478"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
@@ -41,7 +41,7 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
-|Параметр|Описание:|Обязательное?|
+|Параметр|Описание|Обязательное?|
 |------|------|------|
 |$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
 |$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
@@ -105,7 +105,7 @@ reboot
 > Чтобы получить внешний ключ с использованием BitLocker, подготовьте виртуальную машину с отдельным виртуальным жестким диском для данных и ресурсов.
 
 ## <a name="upload-encrypted-vhd-to-an-azure-storage-account"></a>Передача зашифрованного виртуального жесткого диска в учетную запись хранения Azure
-После включения шифрования с помощью DM-Encryption локальный зашифрованный виртуальный жесткий диск необходимо отправить в учетную запись хранения.
+После включения шифрования DM-Crypt необходимо отправить локальный зашифрованный виртуальный жесткий диск в учетную запись хранения.
 ```powershell
     Add-AzVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo> [[-NumberOfUploaderThreads] <Int32> ] [[-BaseImageUriToPatch] <Uri> ] [[-OverWrite]] [ <CommonParameters>]
 ```

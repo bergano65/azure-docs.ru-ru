@@ -8,10 +8,10 @@ ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
 ms.openlocfilehash: dddcdd52709c634f0dcf67cb982804f5556e88b9
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88548341"
 ---
 # <a name="register-a-saas-application"></a>Регистрация приложения SaaS
@@ -111,6 +111,6 @@ Azure Marketplace не накладывает никаких ограничен�
 
 `"access_token"`Значение поля в ответе — это то `<access_token>` , что вы будете передавать как параметр авторизации при вызове всех API-интерфейсов контроля использования SaaS и Marketplace.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Приложение, защищенное с помощью Azure AD, теперь может использовать [API выполнения SaaS версии 2](./pc-saas-fulfillment-api-v2.md).

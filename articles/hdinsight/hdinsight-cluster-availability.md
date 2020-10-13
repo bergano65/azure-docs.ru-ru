@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/01/2020
 ms.openlocfilehash: 615e23dc388f36f5ae1cd7e0d846acc14ffa2236
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86086421"
 ---
 # <a name="how-to-monitor-cluster-availability-with-apache-ambari-in-azure-hdinsight"></a>Как отслеживать доступность кластера с помощью Apache Ambari в Azure HDInsight
@@ -55,7 +55,7 @@ Ambari также предлагает несколько настраиваем
 
 Ambari предлагает множество стандартных предупреждений, относящихся к доступности, в том числе:
 
-| Имя предупреждения                        | Описание:   |
+| Имя предупреждения                        | Описание   |
 |---|---|
 | Сводка по работоспособности узла           | Это предупреждение уровня обслуживания активируется при наличии неработоспособных узлов с данным|
 | Работоспособность высокой доступности NameNode | Это предупреждение уровня обслуживания активируется, если не запущены активные NameNode или резервные NameNode.|
@@ -85,7 +85,7 @@ Ambari предлагает множество стандартных преду
 > [!TIP]
 > Настройка уведомлений по электронной почте Ambari может быть хорошим способом получения оповещений в одном месте при управлении множеством кластеров HDInsight.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Доступность и надежность кластеров Apache Hadoop в HDInsight](hdinsight-high-availability-linux.md)
 - [Доступность кластера — журналы Azure Monitor](./cluster-availability-monitor-logs.md)

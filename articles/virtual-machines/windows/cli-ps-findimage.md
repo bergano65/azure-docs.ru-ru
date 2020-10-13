@@ -9,10 +9,10 @@ ms.workload: infrastructure
 ms.date: 01/25/2019
 ms.author: cynthn
 ms.openlocfilehash: 96b5e3770a3f5e08237d61eab05cfeafbc72a5db
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87288344"
 ---
 # <a name="find-and-use-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск и использование образов виртуальных машин в Azure Marketplace с помощью Azure PowerShell
@@ -312,7 +312,7 @@ $vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Off
 ```
 Затем нужно передать конфигурацию виртуальной машины (вместе с объектами конфигурации сети) командлету `New-AzVM`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по быстрому созданию виртуальной машины с помощью командлета `New-AzVM` на основе полученных данных образа см. в статье [Создание виртуальной машины Windows с помощью PowerShell](quick-create-powershell.md).
 

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: jingwang
 ms.openlocfilehash: 7134fc5d591fffdfb9aea13767e597dddc92b038
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89434951"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
@@ -25,7 +25,7 @@ ms.locfileid: "89434951"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 При создании фабрики данных можно создать управляемое удостоверение вместе с созданием фабрики. Управляемое удостоверение является управляемым приложением, зарегистрированным в Azure Active Directory, и представляет эту конкретную фабрику данных.
 
@@ -246,7 +246,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В следующих разделах представлены сведения о том, когда и как использовать управляемое удостоверение фабрики данных.
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)

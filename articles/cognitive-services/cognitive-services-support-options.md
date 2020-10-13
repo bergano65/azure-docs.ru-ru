@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
 ms.openlocfilehash: 0bf4750d5db5961ff8c572c3aa52cc06faf697c1
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83590542"
 ---
 # <a name="azure-cognitive-services-support-and-feedback-options"></a>Параметры поддержки и отзывов Azure Cognitive Services
@@ -28,7 +28,7 @@ ms.locfileid: "83590542"
     <img alt='Azure support' src='https://docs.microsoft.com/media/logos/logo_azure.svg'>
 </div>
 
-Изучите диапазон [вариантов поддержки Azure и выберите](https://azure.microsoft.com/support/plans) оптимальный план, будь то разработчик, который просто запускает облачный или крупную организацию, развертывая критически важные для бизнеса приложения. Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
+Изучите различные [варианты поддержки Azure и выберите план](https://azure.microsoft.com/support/plans), который лучше всего отвечает вашим потребностям. Мы предлагаем варианты для широкого круга пользователей — от разработчиков, которые только начинают пользоваться облаком, до крупных организаций, развертывающих стратегические и критически важные для бизнеса приложения. Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
 * [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 * [Портал Azure для государственных учреждений США](https://portal.azure.us)
@@ -47,9 +47,9 @@ ms.locfileid: "83590542"
 
 Где `{search keywords}` — это контекст поиска. Попробуйте использовать эти поиски в области соответствующим образом:
 
- - Stack Overflow:`site:stackoverflow.com`
- - Документация Майкрософт:`site:docs.microsoft.com`
- - Примеры GitHub:`site:github.com/azure-samples`
+ - Stack Overflow: `site:stackoverflow.com`
+ - Документация Майкрософт: `site:docs.microsoft.com`
+ - Примеры GitHub: `site:github.com/azure-samples`
 
 ### <a name="post-a-question-on-stack-overflow"></a>Публикация вопроса на Stack Overflow
 
@@ -78,10 +78,10 @@ ms.locfileid: "83590542"
 
 Заметки о выпуске Cognitive Services обновляются по мере выпуска новых выпусков. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
 
- - [Custom Vision](custom-vision-service/release-notes.md)
+ - [Пользовательское визуальное распознавание](custom-vision-service/release-notes.md)
  - [Распознавание лиц](face/releasenotes.md)
  - [Распознавание речи (LUIS)](LUIS/whats-new.md)
- - [Службы речи](speech-service/releasenotes.md)
+ - [Речевые службы](speech-service/releasenotes.md)
  - [Пакет SDK для речевых служб](speech-service/devices-sdk-release-notes.md)
  - [Анализ текста](text-analytics/whats-new.md)
  - [Индексатор видео](../media-services/video-indexer/release-notes.md)
@@ -120,7 +120,7 @@ Reddit — это управляемый сообществом веб-сайт 
 |-------------------------------|---------------|
 | Детектор аномалий              | https://cognitive.uservoice.com/forums/912196-anomaly-detector |
 | Службы Bing                 | https://cognitive.uservoice.com/forums/555907-bing-search |
-| Компьютерное зрение               | https://cognitive.uservoice.com/forums/430309-computer-vision |
+| API Компьютерного зрения               | https://cognitive.uservoice.com/forums/430309-computer-vision |
 | Content Moderator             | https://cognitive.uservoice.com/forums/559960-content-moderator |
 | Custom Vision                 | https://cognitive.uservoice.com/forums/598141-custom-vision-service |
 | Распознавание лиц                          | https://cognitive.uservoice.com/forums/430315-face |
@@ -129,7 +129,7 @@ Reddit — это управляемый сообществом веб-сайт 
 | Распознавание речи (LUIS) | https://cognitive.uservoice.com/forums/551524-luis |
 | Персонализатор                  | https://cognitive.uservoice.com/forums/921562-personalizer |
 | QnA Maker                     | https://cognitive.uservoice.com/forums/578689-qna-maker |
-| Службы речи               | https://cognitive.uservoice.com/forums/912208-speech-service |
+| Службы "Речь"               | https://cognitive.uservoice.com/forums/912208-speech-service |
 | Пользовательское распознавание речи                 | https://cognitive.uservoice.com/forums/555934-custom-speech-service |
 | Анализ текста                | https://cognitive.uservoice.com/forums/555922-text-analytics |
 | API перевода               | https://cognitive.uservoice.com/forums/558796-translator |
@@ -156,7 +156,7 @@ Reddit — это управляемый сообществом веб-сайт 
 * [Cognitive Services: DotNet](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
 * [Cognitive Services: go](https://github.com/Azure-Samples/azure-sdk-for-go-samples)
 * [Cognitive Services: Java](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
-* [Cognitive Services: node. js](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples)
+* [Cognitive Services: Node.js](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples)
 * [Cognitive Services: Python](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples)
 
 #### <a name="cognitive-services-sdk-source-code"></a>Исходный код пакета SDK Cognitive Services
@@ -166,8 +166,8 @@ Reddit — это управляемый сообществом веб-сайт 
 Ниже приведен список исходного кода пакета SDK для Cognitive Services по языку:
 
 * [Пакет Azure SDK для DotNet](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices)
-* [Azure SDK для Go](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices)<br>
-* [Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices)
+* [Пакет Azure SDK для Go](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices)<br>
+* [Пакет Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices)
 * [Пакет Azure SDK для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices)
 * [SDK Azure для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices)
 

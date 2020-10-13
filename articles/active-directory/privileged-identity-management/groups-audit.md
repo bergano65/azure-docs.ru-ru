@@ -15,10 +15,10 @@ ms.author: curtand
 ms.reviewer: shaunliu
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 94dd5c2579eb7ce96dea70c6354df8ec84125bd9
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88141675"
 ---
 # <a name="audit-activity-history-for-privileged-access-group-assignments-preview-in-privileged-identity-management"></a>Журнал действий аудита для назначений привилегированных прав доступа (Предварительная версия) в управление привилегированными пользователями
@@ -62,7 +62,7 @@ ms.locfileid: "88141675"
 
     ![Список аудита для текущего пользователя](media/azure-pim-resource-rbac/my-audit-time.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение членства и принадлежности к группам в управление привилегированными пользователями](groups-assign-member-owner.md)
 - [Утверждение или отклонение запросов для привилегированных групп доступа в PIM](groups-approval-workflow.md)

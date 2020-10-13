@@ -5,10 +5,10 @@ ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 03/24/2017
 ms.openlocfilehash: 86389ef89ced74905db0fc8bfeaabcea6140762a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91263000"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
@@ -105,6 +105,6 @@ ms.locfileid: "91263000"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

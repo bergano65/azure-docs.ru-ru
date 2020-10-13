@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 01/13/2019
 ms.openlocfilehash: 65b6b1f783dbabc9ad2e1a4bf79008240d1b2726
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89659918"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Подключение к локальной файловой системе с помощью Azure Logic Apps
@@ -75,7 +75,7 @@ ms.locfileid: "89659918"
    | **Тип проверки подлинности** | Нет | <*Проверка подлинности-тип*> | Тип проверки подлинности, используемый файловой системой: **Windows** |
    | **Имя пользователя** | Да | <*domain* > \\ домен < *имя пользователя*> <p>-или- <p><*локальный* > \\ компьютер < *имя пользователя*> | Имя пользователя для компьютера, на котором находится папка файловой системы. <p>Если папка файловой системы находится на том же компьютере, что и локальный шлюз данных, можно использовать <*local-computer* > \\ < *имя пользователя* локального компьютера>. |
    | **Пароль** | Да | <*Ваш пароль*> | Пароль для компьютера, на котором есть файловая система. |
-   | **gateway** | Да | <*installed-Gateway-Name*> | Имя вашего ранее установленного шлюза. |
+   | **роль** | Да | <*installed-Gateway-Name*> | Имя вашего ранее установленного шлюза. |
    |||||
 
 1. Когда все будет готово, выберите **Создать**.
@@ -101,7 +101,7 @@ ms.locfileid: "89659918"
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений интегрированной](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) среды сценариев.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [подключиться к локальным данным](../logic-apps/logic-apps-gateway-connection.md). 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/03/2020
 ms.openlocfilehash: 9088b36acead9f47e94949ee102d66a8aff2d226
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87529608"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью Фабрики данных Azure
@@ -72,8 +72,8 @@ ms.locfileid: "87529608"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| `type` | Для свойства `type` должно быть установлено значение `SapEcc`. | да |
-| `url` | URL-адрес службы SAP ECC OData. | да |
+| `type` | Для свойства `type` должно быть установлено значение `SapEcc`. | Да |
+| `url` | URL-адрес службы SAP ECC OData. | Да |
 | `username` | Имя пользователя, применяемое для подключения к SAP ECC. | Нет |
 | `password` | Пароль (открытым текстом), применяемый для подключения к SAP ECC. | Нет |
 | `connectVia` | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites). Если не указать среду выполнения, используется среда выполнения интеграции Azure по умолчанию. | Нет |
@@ -111,7 +111,7 @@ ms.locfileid: "87529608"
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| `path` | Путь к сущности SAP ECC OData. | да |
+| `path` | Путь к сущности SAP ECC OData. | Да |
 
 ### <a name="example"></a>Пример
 
@@ -147,7 +147,7 @@ ms.locfileid: "87529608"
 | `type` | Свойство `type` в разделе `source` действия копирования должно иметь значение `SapEccSource`. | Да |
 | `query` | Параметры запроса OData для фильтрации данных. Пример:<br/><br/>`"$select=Name,Description&$top=10"`<br/><br/>Соединитель SAP ECC копирует данные из объединенного URL-адреса:<br/><br/>`<URL specified in the linked service>/<path specified in the dataset>?<query specified in the copy activity's source section>`<br/><br/>Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 | `sapDataColumnDelimiter` | Единственный символ, используемый в качестве разделителя, передаваемый в SAP RFC для разделения выходных данных. | Нет |
-| `httpRequestTimeout` | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | нет |
+| `httpRequestTimeout` | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
 
 ### <a name="example"></a>Пример
 

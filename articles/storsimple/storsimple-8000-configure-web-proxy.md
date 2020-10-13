@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/19/2017
 ms.author: alkohli
 ms.openlocfilehash: 62c052f2293c670b43f1c77363c8bbbcc03d0de2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85514286"
 ---
 # <a name="configure-web-proxy-for-your-storsimple-device"></a>Настройка веб-прокси для устройства StorSimple
@@ -153,7 +153,7 @@ ms.locfileid: "85514286"
 > * Приведенный выше список сообщений об ошибках не является исчерпывающим.
 > * Ошибки, связанные с параметрами веб-прокси, не будут отображаться на портале Azure в службе диспетчера устройств StorSimple. Если после завершения настройки возникнет проблема с веб-прокси, состояние устройства на классическом портале Azure изменится на **Не в сети** .|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 * Если возникают проблемы при развертывании устройства или настройке параметров веб-прокси, см. статью [Устранение неполадок в развертывании устройства StorSimple](storsimple-troubleshoot-deployment.md).
 * Дополнительные сведения об использовании службы диспетчера устройств StorSimple см. в статье [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

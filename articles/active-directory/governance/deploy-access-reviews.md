@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 51983e52643d587fc497a1a67fcb0cd29dbb7f17
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91306571"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
@@ -246,7 +246,7 @@ ms.locfileid: "91306571"
 | **Ресурсы для проверки**| Доступ к Microsoft Dynamics |
 | **Частота проверки**| Ежемесячно |
 | **Кто выполняет проверку**| Руководители программ Dynamics Business Group |
-| **Уведомление**| Электронная почта за 24 часа до проверки псевдонима Dynamics-PMS<p>Включение настраиваемого сообщения поощрение рецензентам для защиты своего приобретения |
+| **Уведомление**| Электронная почта за 24 часа до проверки псевдонима Dynamics-Pms<p>Включение настраиваемого сообщения поощрение рецензентам для защиты своего приобретения |
 | **Сроки**| 48 часов от уведомления |
 |**Автоматические действия**| Удалите доступ из любой учетной записи, не имеющей интерактивного входа, в течение 90 дней, удалив пользователя из группы безопасности Dynamics-Access. <p>*Выполните действия, если они не были проверены на временной шкале.* |
 | **Ручные действия**| Рецензенты могут выполнить удаление утверждения перед автоматическим действием, если это необходимо. |
@@ -361,7 +361,7 @@ ms.locfileid: "91306571"
 
 * Использование Microsoft Graph для программного доступа к результатам и решениям в завершенных проверках доступа.
 
-Например, чтобы получить доступ к результатам для группы, управляемой Windows AD, используйте этот [Пример скрипта PowerShell](https://github.com/microsoft/access-reviews-samples/tree/master/AzureADAccessReviewsOnPremises). Этот сценарий описывает необходимые вызовы графа и экспортирует команды Windows AD-PowerShell для выполнения изменений.
+Например, чтобы получить доступ к результатам для группы, управляемой Windows AD, используйте этот [Пример скрипта PowerShell](https://github.com/microsoft/access-reviews-samples/tree/master/AzureADAccessReviewsOnPremises). Сценарий описывает необходимые вызовы графа и экспортирует команды AD-PowerShell Windows для выполнения изменений.
 
 ## <a name="plan-access-reviews-for-applications"></a>Планирование проверок доступа для приложений 
 
@@ -511,7 +511,7 @@ ms.locfileid: "91306571"
 
 Для более сложных запросов и анализа проверок доступа, а также для наблюдения за изменениями и завершением проверок рекомендуется экспортировать журналы аудита Azure AD в [log Analytics Azure](../reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) или концентратор событий Azure. При хранении в Azure Log Analytics можно использовать [мощный язык аналитики](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md) и создавать собственные панели мониторинга.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о следующих связанных технологиях.
 

@@ -13,10 +13,10 @@ ms.author: marsma
 ms.custom: aaddev
 ms.reviewer: celested
 ms.openlocfilehash: 74ca7f80f483a722cc8dabde76d295210074bebe
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87540297"
 ---
 # <a name="microsoft-identity-platform-videos"></a>Видео по платформе удостоверений Майкрософт
@@ -158,7 +158,7 @@ ___
 
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank">Обзор платформы идентификации Майкрософт<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank">Обзор платформы идентификации Майкрософт <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -170,13 +170,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank">Microsoft Graph и библиотека проверки подлинности Майкрософт (MSAL)<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank">Microsoft Graph и библиотека проверки подлинности Майкрософт (MSAL) <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank"> <img src="./media/identity-videos/graph-and-msal.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank">Что такое семейство библиотек MSAL?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank">Что такое семейство библиотек MSAL? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -184,13 +184,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank">Описание областей<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank">Описание областей <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=Zd_Uubnu0U0" target="_blank">Что такое брокеры<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=Zd_Uubnu0U0" target="_blank">Что такое брокеры <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=Zd_Uubnu0U0" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -198,13 +198,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank">Что делают URI перенаправления<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank">Что делают URI перенаправления <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank">Описание клиентов<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank">Описание клиентов <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -212,13 +212,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank">Роль Azure AD<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank">Роль Azure AD <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank">Роль объектов приложения Azure AD<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank">Роль объектов приложения Azure AD <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -226,13 +226,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank">Различия в организационных и личных учетная запись Майкрософт<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank">Различия в организационных и личных учетная запись Майкрософт <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank">Различия в SPA и веб-приложениях<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank">Различия в SPA и веб-приложениях <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -240,13 +240,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank">Что такое разрешения приложений и делегированные разрешения?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank">Что такое разрешения приложений и делегированные разрешения? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank"> <img src="./media/identity-videos/aad-basics-12.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank">Что такое Microsoft Identity Platform OpenID Connect Connect сертифицировано?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank">Что такое Microsoft Identity Platform OpenID Connect Connect сертифицировано? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail"> </a>
@@ -254,13 +254,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank">Что такое различные типы приложений AAD и как они сравниваются?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank">Что такое различные типы приложений AAD и как они сравниваются? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank"> <img src="./media/identity-videos/aad-basics-13.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank">Если вы используете MSAL, какие основные понятия протокола следует иметь в курсе?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank">Если вы используете MSAL, какие основные понятия протокола следует иметь в курсе? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail"> </a>
@@ -268,13 +268,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank">В чем разница между маркерами идентификации, маркерами доступа, маркерами обновления и маркерами сеансов?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank">В чем разница между маркерами идентификации, маркерами доступа, маркерами обновления и маркерами сеансов? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-08.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank">Какова связь между запросом авторизации и маркерами?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank">Какова связь между запросом авторизации и маркерами? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail"> </a>
@@ -282,7 +282,7 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank">Какие аспекты использования протоколов делают библиотеки MSAL проще?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank">Какие аспекты использования протоколов делают библиотеки MSAL проще? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank"> <img src="./media/identity-videos/id-for-devs-06.jpg" alt="Video thumbnail"> </a>
@@ -300,13 +300,13 @@ ___
 
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank">Зачем выполнять миграцию из ADAL в MSAL<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank">Зачем выполнять миграцию из ADAL в MSAL <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
      :::column:::
-        <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank">Перенос базы кода ADAL в MSAL<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank">Перенос базы кода ADAL в MSAL <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
@@ -314,13 +314,13 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank">Преимущества MSAL через ADAL<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank">Преимущества MSAL через ADAL <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail"> </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank">Каковы различия в проверке подлинности v1 и v2?<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank">Каковы различия в проверке подлинности v1 и v2? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail"> </a>

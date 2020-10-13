@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 3277dc4d9c4485b117bfcfd1d6e130e7370cd8c2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939198"
 ---
 # <a name="connect-to-azure-arc-enabled-sql-managed-instance"></a>Подключение к SQL Управляемый экземпляр с включенной службой Arc
@@ -82,7 +82,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
 ```
 
-После получения имени NSG можно добавить правило брандмауэра, используя следующую команду. Приведенные здесь примеры значений создают правило NSG для порта 30913 и допускают подключение с **любого** исходного IP-адреса.  Это не рекомендуется по соображениям безопасности.  Вы можете более эффективно зафиксировать вещи, указав значение-Source-Address-префиксы, характерные для IP-адреса клиента или диапазон IP-адресов, который охватывает IP-адреса вашей команды или организации.
+После получения имени NSG можно добавить правило брандмауэра, используя следующую команду. Приведенные здесь примеры значений создают правило NSG для порта 30913 и допускают подключение с **любого** исходного IP-адреса.  Это не рекомендуется по соображениям безопасности.  Вы можете более эффективно выполнять блокирование, указав значение -source-address-prefixes, характерное для IP-адреса клиента, или диапазон IP-адресов, который охватывает IP-адреса вашей команды или организации.
 
 Замените значение `--destination-port-ranges` параметра ниже номером порта, полученным из `azdata sql instance list` команды F выше.
 
@@ -90,7 +90,7 @@ az network nsg list -g azurearcvm-rg --query "[].{NSGName:name}" -o table
 az network nsg rule create -n db_port --destination-port-ranges 30913 --source-address-prefixes '*' --nsg-name azurearcvmNSG --priority 500 -g azurearcvm-rg --access Allow --description 'Allow port through for db access' --destination-address-prefixes '*' --direction Inbound --protocol Tcp --source-port-ranges '*'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Просмотр панелей мониторинга управляемого экземпляра SQL](azure-data-studio-dashboards.md#view-the-sql-managed-instance-dashboards)
 - [Просмотр Управляемый экземпляр SQL в портал Azure](view-arc-data-services-inventory-in-azure-portal.md)
