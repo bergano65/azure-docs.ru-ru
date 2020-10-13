@@ -12,12 +12,12 @@ ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2df2cf2a9d0a89f72078cd0da36272781e89e338
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 18afa6b2e974c605b18d4e38b82061234619e9ff
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961329"
+ms.locfileid: "91998116"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -454,7 +454,7 @@ https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/policy-name/generic
 |`<Response>` `<Assertion>` `<Subject>` `<Conditions>` |`NotBefore` |Время, когда токен становится действительным. Значение времени кодируется в формате UTC. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Чтобы изменить параметры времени существования маркера, установите `TokenNotBeforeSkewInSeconds` [метаданные](saml-issuer-technical-profile.md#metadata) технического профиля для выпуска ошибки маркера SAML. |
 |`<Response>` `<Assertion>` `<Subject>` `<Conditions>` | `NotOnOrAfter` | Время, когда маркер станет недействительным. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Значение составляет 15 минут после `NotBefore` и не может быть изменено.|
 |`<Response>` `<Assertion>` `<Conditions>` `<AudienceRestriction>` `<Audience>` | |Ссылка URI, которая определяет предполагаемую аудиторию. Он определяет предполагаемого получателя маркера. Значение идентично запросу SAML `AssertionConsumerServiceURL` .|
-|`<Response>``<Assertion>` `<saml:AttributeStatement>` коллекция`<Attribute>` | | Коллекция утверждений (утверждения), настроенная в заявках на вывод [технического профиля проверяющей](relyingparty.md#technicalprofile) стороны. Имя утверждения можно настроить, задав `PartnerClaimType` для выходного утверждения. |
+|`<Response>``<Assertion>` `<AttributeStatement>` коллекция`<Attribute>` | | Коллекция утверждений (утверждения), настроенная в заявках на вывод [технического профиля проверяющей](relyingparty.md#technicalprofile) стороны. Имя утверждения можно настроить, задав `PartnerClaimType` для выходного утверждения. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

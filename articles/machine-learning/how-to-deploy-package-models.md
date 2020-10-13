@@ -9,18 +9,20 @@ ms.author: gopalv
 author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
-ms.openlocfilehash: d5fb2539d79c31de5a5e0196a7a4814c02a84602
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.reviewer: larryfr
+ms.custom: deploy
+ms.openlocfilehash: edaae4f4c06f038d12267e35a2c356af430e1555
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87544600"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91998821"
 ---
 # <a name="how-to-package-a-registered-model-with-docker"></a>Упаковка зарегистрированной модели с помощью DOCKER
 
 В этой статье показано, как упаковать зарегистрированную модель Машинное обучение Azure с помощью DOCKER.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что модель уже обучена и зарегистрирована в рабочей области машинного обучения. Чтобы узнать, как обучить и зарегистрировать модель scikit-учиться, [следуйте указаниям этого руководства](how-to-train-scikit-learn.md).
 
@@ -158,7 +160,7 @@ print(resp.text)
 docker kill mycontainer
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

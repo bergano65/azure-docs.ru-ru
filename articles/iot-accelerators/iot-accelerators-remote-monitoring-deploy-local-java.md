@@ -1,20 +1,19 @@
 ---
 title: Локальное развертывание решения для удаленного мониторинга — IntelliJ IDE в Azure | Документация Майкрософт
 description: В этом пошаговом руководство показано, как развернуть средство удаленного мониторинга Solution Accelerator на локальном компьютере с помощью IntelliJ для тестирования и разработки.
-author: v-krghan
-manager: dominicbetts
+author: dominicbetts
 ms.custom: devx-track-java
-ms.author: v-krghan
+ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: f7554843db247ade1cddff78902430a5d84debe1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78573cfe00d8e2e7ddcbf705dffdd5530f82c4e0
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87319173"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91998599"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---intellij"></a>Локальное развертывание акселератора решения для удаленного мониторинга IntelliJ
 
@@ -24,7 +23,7 @@ ms.locfileid: "87319173"
 
 Если вы хотите запустить акселератор решения для удаленного мониторинга в Docker на локальном компьютере, см. статью [Deploy the Remote Monitoring solution accelerator locally — Docker](iot-accelerators-remote-monitoring-deploy-local-docker.md) (Локальное развертывание акселератора решения для удаленного мониторинга в Docker).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для развертывания служб Azure, используемых акселератором решения для удаленного мониторинга, требуется активная подписка Azure.
 

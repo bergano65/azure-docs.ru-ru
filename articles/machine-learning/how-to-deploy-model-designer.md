@@ -10,13 +10,13 @@ author: likebupt
 ms.reviewer: peterlu
 ms.date: 10/12/2020
 ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: 00b689e4546d1f639f76ccbdf45348c43a678066
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.custom: how-to, deploy, studio
+ms.openlocfilehash: e2f3e0b596847000af62aa6e23da5b137ee9de33
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996281"
+ms.locfileid: "91999009"
 ---
 # <a name="use-the-studio-to-deploy-models-trained-in-the-designer"></a>Развертывание моделей, обученных в конструкторе, с помощью студии
 
@@ -33,7 +33,7 @@ ms.locfileid: "91996281"
 
 Модели, обученные в конструкторе, также можно развернуть с помощью пакета SDK или интерфейса командной строки (CLI). Дополнительные сведения см. в статье [развертывание существующей модели с помощью машинное обучение Azure](how-to-deploy-existing-model.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Рабочая область Машинное обучение Azure](how-to-manage-workspace.md)
 

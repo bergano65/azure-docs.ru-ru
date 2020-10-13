@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: 81a65c088fd83ce179f67edd1ecdb96149dd1614
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed371cf230df3070ce1a545895831ae56d320d99
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840257"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92000184"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -214,7 +214,7 @@ ms.locfileid: "91840257"
 
 
 ### <a name="redis-data-persistence"></a>Сохраняемость данных Redis
-Щелкните **сохраняемость данных** , чтобы включить, отключить или настроить сохраняемость данных для кэша уровня "Премиум". Кэш Azure для Redis обеспечивает сохраняемость Redis на основе [RDB](cache-how-to-premium-persistence.md#configure-rdb-persistence) или [AOF](cache-how-to-premium-persistence.md#configure-aof-persistence).
+Щелкните **сохраняемость данных** , чтобы включить, отключить или настроить сохраняемость данных для кэша уровня "Премиум". Кэш Azure для Redis обеспечивает сохраняемость Redis на основе RDB или AOF.
 
 Дополнительные сведения см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Как настроить сохраняемость для кэша Azure для Redis категории "Премиум").
 
@@ -504,5 +504,5 @@ shard1>get myKey
 
 Сведения о перемещении ресурсов из одной группы ресурсов в другую, а также из одной подписки в другую см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о работе с командами Redis см. в разделе [как выполнять команды Redis?](cache-development-faq.md#how-can-i-run-redis-commands)

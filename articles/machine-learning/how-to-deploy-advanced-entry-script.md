@@ -9,18 +9,20 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: gopalv
-ms.openlocfilehash: 3af681f561bc190ae7c0354afb7fc3591fa82b5c
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.reviewer: larryfr
+ms.custom: deploy
+ms.openlocfilehash: 3bd4953812ec88f28ac16956a85c95afc5bb8a38
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940078"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91999211"
 ---
 # <a name="advanced-entry-script-authoring"></a>Разработка расширенных сценариев ввода
 
 В этой статье показано, как написать скрипты записи для специализированных вариантов использования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что у вас уже есть обученная модель машинного обучения, которую планируется развернуть с помощью Машинное обучение Azure. Дополнительные сведения о развертывании модели см. в [этом руководстве](how-to-deploy-and-where.md).
 
@@ -324,7 +326,7 @@ second_model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), second_model_na
 * [AutoML](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features)
 * [ONNX](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

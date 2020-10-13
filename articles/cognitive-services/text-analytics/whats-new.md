@@ -10,20 +10,20 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: aahi
-ms.openlocfilehash: 8f0a40e30cc58a01a66ba808076fe1d42c31c326
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 17c9797935612c8697d30455e28cc91321b84772
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978889"
+ms.locfileid: "91999682"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
 
-## <a name="october-2020"></a>Октябрь 2020 г.
+## <a name="october-2020"></a>Октябрь 2020 г.
 
-* Поддержка хинди для анализ тональности, начиная с версии модели `2020-04-01` . 
+* Поддержка хинди для анализ тональности v3. x, начиная с версии модели `2020-04-01` . 
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 

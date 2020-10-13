@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: 8a387adde6c74b8eb1ff950c5e6b5183e43d1f4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 500131121640026fd3fda5be9eecb376d2db8f0e
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448659"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91999318"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Защита рабочих нагрузок Kubernetes
 
@@ -33,12 +33,12 @@ ms.locfileid: "91448659"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр|
 |Цены|Free|
 |Требуемые роли и разрешения|**Владелец** или **администратор безопасности** для изменения назначения<br>**Читатель** для просмотра рекомендаций|
-|Поддерживаемые кластеры|Требуется Kubernetes v 1.14 (или более поздняя версия)<br>Нет ресурса Подсекуритиполици (старая модель PSP) в кластерах<br>Узлы Windows не поддерживаются|
+|Поддерживаемые кластеры:|Требуется Kubernetes v 1.14 (или более поздняя версия)<br>Нет ресурса Подсекуритиполици (старая модель PSP) в кластерах<br>Узлы Windows не поддерживаются|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 
@@ -227,7 +227,7 @@ spec:
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как настроить защиту рабочей нагрузки Kubernetes. 
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/12/2020
+ms.date: 10/13/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 676b6abb28abf58287bfc9036ca907ae6a1ee192
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 20480a252d7aedfd48a59bc05166f645e02e37e9
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961295"
+ms.locfileid: "91998426"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
@@ -112,7 +112,7 @@ ms.locfileid: "91961295"
 </ClaimsTransformation>
 ```
 
-В следующем преобразовании утверждений выводится строковый запрос JSON, который будет основным текстом запроса, отправленного в REST API. Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Числа в точечной нотации подразумевают массивы. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
+В следующем преобразовании утверждений выводится строковый запрос JSON, который будет основным текстом запроса, отправленного в REST API. Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
 
 - Входные утверждения:
   - **адрес электронной почты**, утверждение преобразования типа  **customerEntity. email**: " john.s@contoso.com "
@@ -187,7 +187,7 @@ ms.locfileid: "91961295"
 | InputParameter | includeEmptyClaims | строка | Указывает, следует ли включать пустые утверждения. |
 | InputParameter | jsonSourceKeyName | строка | Имя ключа элемента |
 | InputParameter | jsonSourceValueName | строка | Имя значения элемента |
-| outputClaim | Collection | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
+| outputClaim | Коллекция | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
 
 В следующем примере в процессе преобразования утверждений из данных JSON извлекаются следующие утверждения: email (string), displayName (string), membershipNum (int), active (boolean) и birthdate (datetime).
 

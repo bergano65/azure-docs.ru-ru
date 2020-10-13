@@ -7,12 +7,12 @@ ms.service: iot-dps
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: wesmc
-ms.openlocfilehash: 43d7b3ae906909312a9e9ec4517061a788267a0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d90b18094a26830ee6909251d46837eff95a812a
+ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612784"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91998592"
 ---
 # <a name="azure-iot-hub-device-provisioning-service-dps-support-for-virtual-networks"></a>Поддержка службы подготовки устройств для центра Интернета вещей Azure (DPS) для виртуальных сетей
 
@@ -36,14 +36,14 @@ ms.locfileid: "91612784"
 
 * Соблюдение шаблонов подключения, заданных на уровне Azure, с помощью [частных конечных точек](../private-link/private-endpoint-overview.md).
 
-Распространенные подходы к ограничению подключения включают [правила IP-фильтра DPS](./iot-dps-ip-filtering.md) и виртуальные сети (vnet) с [частными конечными точками](../private-link/private-endpoint-overview.md). Эта статья содержит описание подхода к виртуальной сети для DPS с использованием частных конечных точек. 
+Распространенные подходы к ограничению подключения включают [правила IP-фильтра DPS](./iot-dps-ip-filtering.md) и виртуальные сети (vnet) с [частными конечными точками](../private-link/private-endpoint-overview.md). Цель этой статьи — описать подход к виртуальной сети для DPS с помощью частных конечных точек. 
 
 Устройства, которые работают в локальных сетях, могут использовать [виртуальную частную сеть (VPN)](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) или частный пиринг [ExpressRoute](https://azure.microsoft.com/services/expressroute/) для подключения к виртуальной сети в Azure и доступа к ресурсам DP через частные конечные точки. 
 
 Частная конечная точка — это частный IP-адрес, выделенный внутри виртуальной сети клиента, с которой доступен ресурс Azure. Имея закрытую конечную точку для ресурса DPS, вы сможете разрешить устройствам, которые будут работать внутри виртуальной сети, запрашивать подготовку ресурса DPS, не разрешая трафик к общедоступной конечной точке.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем продолжать, убедитесь, что выполняются следующие необходимые условия.
 
@@ -129,7 +129,7 @@ ms.locfileid: "91612784"
     | :---- | :-----|
     | **Идентификатор или псевдоним ресурса** | Введите идентификатор ресурса для ресурса DPS. |
     | **Целевой подресурс** | Введите **DPS** |
-    | **Сообщение запроса** | Введите сообщение запроса для владельца ресурса DPS.<br>Например, <br>`Please approve this new private endpoint`<br>`for IoT devices in site 23 to access this DPS instance`  |
+    | **Сообщение запроса** | Введите сообщение запроса для владельца ресурса DPS.<br>Например: <br>`Please approve this new private endpoint`<br>`for IoT devices in site 23 to access this DPS instance`  |
 
     Нажмите кнопку **Далее: Конфигурация** , чтобы настроить виртуальную сеть для закрытой конечной точки.
 
@@ -150,7 +150,7 @@ ms.locfileid: "91612784"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Воспользуйтесь приведенными ниже ссылками, чтобы узнать больше о функциях безопасности DPS:
 
