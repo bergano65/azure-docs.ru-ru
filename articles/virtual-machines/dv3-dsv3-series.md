@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: jushiman
 ms.openlocfilehash: eff3ff3d8fa2ab3025ca8b8d4f974d6944c88433
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91649649"
 ---
 # <a name="dv3-and-dsv3-series"></a>Серии Dv3 и Dsv3
@@ -26,7 +26,7 @@ ms.locfileid: "91649649"
 
 Хранилище данных диска оплачивается отдельно от виртуальных машин. Используйте экземпляры серии Dsv3 для использования дисков хранилища класса Premium. Счетчики цены и учета стоимости для размеров Dsv3 соответствуют серии Dv3.
 
-Виртуальные машины серии Dv3 имеют технологию Intel® технологии Hyper-Threading.
+Виртуальные машины серии Dv3 имеют технологию Intel® Hyper-Threading.
 
 [ACU](acu.md): 160-190<br>
 [Хранилище класса Premium](premium-storage-performance.md): не поддерживается<br>
@@ -50,7 +50,7 @@ ms.locfileid: "91649649"
 
 Размеры серии Dsv3 работают на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® 3 – 2673 v4 2,3 ГГц (Broadwell) или Intel® Xeon® 2673 v3 2,4 ГГц (Haswell) с 2,0 технологией Intel Turbo Boost и используют хранилище класса Premium. Экземпляры серии Dsv3 — это сочетание быстрого виртуального ЦП, временного хранилища и увеличенного объема памяти, которые подходят для большинства рабочих нагрузок.
 
-Виртуальные машины серии Dsv3 имеют технологию Intel® технологии Hyper-Threading.
+Виртуальные машины серии Dsv3 имеют технологию Intel® Hyper-Threading.
 
 [ACU](acu.md): 160-190<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>

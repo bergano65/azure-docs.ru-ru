@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: chrpap
 ms.openlocfilehash: b8db69792b31fd82646757423e669e39e8539d06
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91630708"
 ---
 # <a name="networking"></a>Сеть
@@ -61,7 +61,7 @@ ms.locfileid: "91630708"
 
 Основные правила являются минимальными для безопасности управляемого кластера Azure Service Fabric. Сбой при открытии следующих портов или утверждение IP/URL-адреса помешает правильной работе кластера и может не поддерживаться. Если это правило задано, необходимо использовать [Автоматическое обновление образа ОС](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md), иначе потребуется открыть дополнительные порты.
 
-### <a name="inbound"></a>Входящие 
+### <a name="inbound"></a>Входящий 
 |Приоритет   |Имя               |Порт        |Протокол  |Источник             |Назначение       |Действие   
 |---        |---                |---         |---       |---                |---               |---
 |3900       |Azure              |19080;       |TCP       |Интернет           |VirtualNetwork    |Allow
@@ -123,7 +123,7 @@ ms.locfileid: "91630708"
 
 * Для контейнеров Windows, размещенных на компьютерах Air гаппед, которые не могут получать базовые уровни из облачного хранилища Azure, переопределяйте поведение внешнего слоя с помощью флага [--allow-нераспространяемый-артефакты](/virtualization/windowscontainers/about/faq#how-do-i-make-my-container-images-available-on-air-gapped-machines) в управляющей программе DOCKER.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-cluster-creation-for-windows-server.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).

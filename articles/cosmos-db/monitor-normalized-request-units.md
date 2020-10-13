@@ -7,10 +7,10 @@ author: kanshiG
 ms.author: govindk
 ms.date: 06/25/2020
 ms.openlocfilehash: 183b161039b86ce824fd0bfde82cf291d54024fc
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91801483"
 ---
 # <a name="how-to-monitor-normalized-rus-for-an-azure-cosmos-container-or-an-account"></a>Мониторинг нормализованных единиц запросов в секунду для контейнера Azure Cosmos или учетной записи
@@ -61,7 +61,7 @@ Azure Monitor для Azure Cosmos DB предоставляет представ
 
 :::image type="content" source="./media/monitor-normalized-request-units/normalized-request-unit-usage-filters.png" alt-text="Область метрик в Azure Monitor":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Отслеживайте Azure Cosmos DB данные с помощью [параметров диагностики](cosmosdb-monitor-resource-logs.md) в Azure.
 * [Аудит операций Azure Cosmos DB плоскости управления](audit-control-plane-logs.md)

@@ -8,10 +8,10 @@ ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: e5ca792c6dbc3c08847315b916913e8c38909a7a
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91637389"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Базовый план безопасности Azure для службы Kubernetes Azure
@@ -1237,7 +1237,7 @@ security-hardened-vm-host-image.md
 
 Пример:
 
-Backup-Азкэйваултцертификате Backup — Азкэйваулткэй Backup-Азкэйваултманажедсторажеаккаунт Backup-Азкэйваултсекрет
+Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorageAccount Backup-AzKeyVaultSecret
 
 - [Резервное копирование Key Vault сертификатов](/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate)
 
@@ -1261,7 +1261,7 @@ Backup-Азкэйваултцертификате Backup — Азкэйваул�
 
 Пример:
 
-Restore-Азкэйваултцертификате Restore-Азкэйваулткэй Restore-Азкэйваултманажедсторажеаккаунт Restore-Азкэйваултсекрет
+Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedStorageAccount Restore-AzKeyVaultSecret
 
 - [Восстановление сертификатов Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0)
 
@@ -1281,7 +1281,7 @@ Restore-Азкэйваултцертификате Restore-Азкэйваулт�
 
 **Руководство**. Резервное копирование данных с помощью соответствующего средства для хранилища, такого как велеро, которое позволяет создавать резервные копии постоянных томов вместе с дополнительными ресурсами кластера и конфигурациями. 
 
-Включите обратимое удаление в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления, если Azure Key Vault используется для развертываний службы Azure Kubernetes Service (AKS).
+Включите Soft-Delete в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления, если Azure Key Vault используется с для развертываний службы Azure Kubernetes Service (AKS).
 
 - [Общие сведения об Azure Шифрование службы хранилища](../storage/common/storage-service-encryption.md)
 

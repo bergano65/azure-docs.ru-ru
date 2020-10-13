@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/25/2020
 ms.author: victorh
 ms.openlocfilehash: 3bde4c11e9dc34be13efb25864fe75054d22bddb
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91363109"
 ---
 # <a name="integrate-azure-firewall-with-azure-standard-load-balancer"></a>Интеграция Брандмауэра Azure с Azure Load Balancer (цен. категория "Стандартный")
@@ -79,6 +79,6 @@ ms.locfileid: "91363109"
 
 Дополнительные сведения о группы безопасности сети см. в разделе [группы безопасности](../virtual-network/security-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [развернуть и настроить брандмауэр Azure](tutorial-firewall-deploy-portal.md).

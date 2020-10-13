@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 546c53334b7700ab73c22edb2d82b324bfad61a9
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91569434"
 ---
 # <a name="plan-your-azure-time-series-insights-gen1-environment"></a>Планирование среды Gen1 "аналитика временных рядов Azure"
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 В этой статье описывается, как спланировать среду Gen1 службы "аналитика временных рядов Azure" в зависимости от ожидаемой скорости входящего трафика и требований к хранению данных.
 
@@ -124,7 +124,7 @@ ms.locfileid: "91569434"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Начните с создания [новой среды службы "аналитика временных рядов Azure" в портал Azure](time-series-insights-get-started.md).
 
