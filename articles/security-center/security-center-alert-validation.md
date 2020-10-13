@@ -1,6 +1,6 @@
 ---
-title: Проверка предупреждений (файл теста EICAR) в центре безопасности Azure | Документация Майкрософт
-description: В этом документе вы ознакомитесь с процедурой проверки оповещений безопасности в Центре безопасности Azure.
+title: Проверка предупреждений в центре безопасности Azure | Документация Майкрософт
+description: Узнайте, как проверить правильность настройки оповещений системы безопасности в центре безопасности Azure.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 0c777c2461047f21e8fb413faec6d5f1140fc75f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 764a2263587a477eb506edec1e0f661d0ca7ae31
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91438811"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91971614"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Проверка предупреждений в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -26,12 +26,6 @@ ms.locfileid: "91438811"
 ## <a name="what-are-security-alerts"></a>Что такое оповещения системы безопасности?
 Оповещения — это уведомления, которые Центр безопасности создает при обнаружении угроз для ресурсов. Он определяет приоритеты и отображает оповещения вместе с информацией, необходимой для быстрого изучения проблемы. Центр безопасности также предоставляет рекомендации по устранению атак.
 Дополнительные сведения см. в статьях [оповещения системы безопасности в центре безопасности](security-center-alerts-overview.md) и [Управление оповещениями системы безопасности и реагирование на них](security-center-managing-and-responding-alerts.md) .
-
-## <a name="alert-validation"></a>Проверка оповещений
-
-* [Windows](#validate-windows)
-* [Linux](#validate-linux)
-* [Kubernetes](#validate-kubernetes)
 
 ## <a name="validate-alerts-on-windows-vms"></a>Проверка оповещений на виртуальных машинах Windows <a name="validate-windows"></a>
 
@@ -68,7 +62,7 @@ ms.locfileid: "91438811"
 
 Дополнительные сведения о защите узлов и кластеров Kubernetes см. [в статье Введение в защитник Azure для Kubernetes](defender-for-kubernetes-introduction.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
 * [Проверка Azure Key Vault обнаружения угроз в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)

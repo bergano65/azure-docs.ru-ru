@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/11/2018
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b945b984210dc3fc3338da8a5670a7813198e40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70d431b0094264d37f60d63636be388802b3552e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88919477"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968571"
 ---
 # <a name="windows-authentication-and-azure-multi-factor-authentication-server"></a>Проверка подлинности Windows и сервер Многофакторной идентификации Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "88919477"
    ![Проверка подлинности Windows на сервере MFA](./media/howto-mfaserver-windows/windowsauth.png)
 2. Установите флажок **Включить проверку подлинности Windows**. По умолчанию этот флажок не установлен.
 3. На вкладке «Приложения» администратор может настроить одно или несколько приложений для проверки подлинности Windows.
-4. Выберите сервер или приложение — укажите, включен ли сервер или приложение. Нажмите кнопку **ОК**.
+4. Выберите сервер или приложение — укажите, включен ли сервер или приложение. Нажмите кнопку **OK**.
 5. Нажмите кнопку **Добавить...**
 6. На вкладке «Надежные IP-адреса» можно пропустить Многофакторную идентификацию Azure для сеансов Windows с конкретных IP-адресов. Например, если сотрудники используют приложение как в офисе, так и дома, то можно сделать так, чтобы их телефоны не звонили для проверки подлинности, пока они находятся в офисе. Для этого для офисной подсети установите значение «Надежные IP-адреса».
 7. Нажмите кнопку **Добавить...**

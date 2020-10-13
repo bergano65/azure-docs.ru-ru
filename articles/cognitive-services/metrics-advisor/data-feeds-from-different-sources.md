@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
-ms.date: 09/04/2020
+ms.date: 10/12/2020
 ms.author: aahi
-ms.openlocfilehash: 343db078880f55701730e096c3da85a6a7e5428a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11b75bcadc6292c17ef7e1e0f482d0c53bd9f8f5
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324473"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91971954"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Добавление веб-каналов данных из разных источников данных в помощник по метрикам
 
@@ -133,7 +133,7 @@ ms.locfileid: "91324473"
 
 ## <a name="span-idkustoazure-data-explorer-kustospan"></a><span id="kusto">Azure Data Explorer (Kusto)</span>
 
-* **Строка подключения**. сведения о том, как получить строку подключения из Azure обозреватель данных (Kusto), см. в статье [Просмотр и копирование строки подключения](https://docs.microsoft.com/azure/data-explorer/kusto/api/connection-strings/kusto) .
+* **Строка подключения**. советник по метрикам поддерживает доступ к Azure обозреватель данных (Kusto) с помощью проверки подлинности приложения Azure AD. Вам потребуется создать и зарегистрировать приложение Azure AD, а затем авторизовать его для доступа к базе данных Azure обозреватель данных. Чтобы получить строку подключения, см. документацию по [Обозреватель данных Azure](https://docs.microsoft.com/azure/data-explorer/provision-azure-ad-app) .
 
 * **Запрос**. см. раздел [язык запросов Kusto](https://docs.microsoft.com/azure/data-explorer/kusto/query) , чтобы получить и сформулировать данные в многомерных рядах данных. В запросе можно использовать `@StartTime` `@EndTime` переменные и. Они должны быть отформатированы: `yyyy-MM-dd HH:mm:ss` .
 
@@ -261,7 +261,7 @@ The timestamp field must match one of these two formats:
 * **Строка подключения**: строка подключения для доступа к базе данных PostgreSQL DB.
 * **Запрос**: запрос для получения и формирования данных многомерных временных рядов для приема.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * При ожидании передачи данных метрик в систему прочитайте о [том, как управлять конфигурациями веб-каналов данных](how-tos/manage-data-feeds.md).
 * При приеме данных метрик можно [настроить метрики и выполнить тонкую настройку обнаружения конфигурации](how-tos/configure-metrics.md).

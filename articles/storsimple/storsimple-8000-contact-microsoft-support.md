@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: d5e867849d17a489fad37d09215905d23fb0ed6a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: daf54b64e33b83b909fe91455cee2f5c1ec27d3d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514245"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960326"
 ---
 # <a name="contact-microsoft-support"></a>Обращение в службу поддержки Майкрософт
 
@@ -39,7 +39,7 @@ ms.locfileid: "85514245"
    3. При наличии нескольких планов, связанных с подпиской, выберите из раскрывающегося списка **план поддержки**. Чтобы получить техническую поддержку, у вас должен быть платный план поддержки.
    4. Щелкните **Далее**.
 
-       ![Обращение в службу поддержки Майкрософт через новый портал](./media/storsimple-8000-contact-microsoft-support/contactsupport2.png)
+       ![Обращение в службу поддержки Майкрософт через новый портал 2](./media/storsimple-8000-contact-microsoft-support/contactsupport2.png)
 
 3. В колонке **Новый запрос в службу поддержки** выберите шаг 2 **Проблема**. В колонке **Проблема** выполните следующие действия.
     
@@ -51,7 +51,7 @@ ms.locfileid: "85514245"
     6. Установите флажок **Предоставить диагностическую информацию**.
     7. Щелкните **Далее**.
 
-       ![Обращение в службу поддержки Майкрософт через новый портал](./media/storsimple-8000-contact-microsoft-support/contactsupport3.png) 
+       ![Обращение в службу поддержки Майкрософт через новый портал 3](./media/storsimple-8000-contact-microsoft-support/contactsupport3.png) 
 
 4. В колонке **Новый запрос на поддержку** щелкните шаг 3 **Контактные данные**. В колонке **Контактные данные** выполните следующие действия.
 
@@ -59,7 +59,7 @@ ms.locfileid: "85514245"
    2. В поле Контактные данные укажите ваше имя, электронную почту, дополнительное контактное лицо, страну или регион. Установите флажок **Save contact changes for future support requests** (Сохранить изменения контактных данных для будущих обращений в службу поддержки).
    3. Нажмите кнопку **Создать**.
    
-       ![Обращение в службу поддержки Майкрософт через новый портал](./media/storsimple-8000-contact-microsoft-support/contactsupport5.png)   
+       ![Обращение в службу поддержки Майкрософт через новый портал 4](./media/storsimple-8000-contact-microsoft-support/contactsupport5.png)   
 
       Служба технической поддержки Майкрософт будет использовать эту информацию, чтобы связаться с вами для получения дополнительных сведений, диагностики и устранения проблемы.
       После отправки запроса с вами максимально оперативно свяжется специалист службы технической поддержки для обработки вашего запроса.
@@ -76,11 +76,11 @@ ms.locfileid: "85514245"
 
 2. Список всех запросов на поддержку в виде таблицы отображается в колонке **Справка и поддержка**.
 
-    ![Управление запросами на поддержку](./media/storsimple-8000-contact-microsoft-support/managesupport2.png)
+    ![Управление запросами в службу поддержки 2](./media/storsimple-8000-contact-microsoft-support/managesupport2.png)
 
 3. Выберите и щелкните запрос на поддержку. Для запроса можно просмотреть состояние и подробные сведения. Щелкните **+ Новое сообщение**, если нужно следить за этим запросом.
 
-    ![Управление запросами на поддержку](./media/storsimple-8000-contact-microsoft-support/managesupport3.png)
+    ![Управление запросами в службу поддержки 3](./media/storsimple-8000-contact-microsoft-support/managesupport3.png)
 
 ## <a name="start-a-support-session-in-windows-powershell-for-storsimple"></a>Запуск сеанса поддержки в Windows PowerShell для StorSimple
 

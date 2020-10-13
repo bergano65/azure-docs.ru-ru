@@ -2,19 +2,17 @@
 title: Azure Monitor параметры раскрывающегося списка книги
 description: Упрощение сложных отчетов с помощью предварительно созданных и настраиваемых параметризованных книг, содержащих параметры раскрывающегося списка
 services: azure-monitor
-author: mrbullwinkle
 manager: carmonm
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.author: mbullwin
-ms.openlocfilehash: 73b6029dfe52a4b32c9a8ce092fcd284ac1ec0e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad1e09a0f9d1e0f9e4a748220edf5eced96123f8
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "85965059"
+ms.locfileid: "91932572"
 ---
 # <a name="workbook-drop-down-parameters"></a>Параметры раскрывающегося списка книги
 
@@ -154,7 +152,7 @@ dependencies
 
 ![Изображение, отображающее раскрывающийся список множественного выбора](./media/workbook-dropdowns/dropdown-multiselect.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

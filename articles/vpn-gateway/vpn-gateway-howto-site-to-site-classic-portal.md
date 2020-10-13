@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: cherylmc
-ms.openlocfilehash: aae05c89cd56ffa16994cb5696054457f1d32bc3
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 7680c7ad4b2c5c8b8c1c13fb2344575659eda140
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876147"
+ms.locfileid: "91892827"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Создание подключения типа "сеть — сеть" с помощью классического портала Azure
 
@@ -109,11 +109,11 @@ ms.locfileid: "91876147"
 
 ## <a name="create-the-connection"></a><a name="CreateConnection"></a>Создание подключения
 
-На этом шаге, используя значения из предыдущих шагов, вы настроили общий ключ и создаете соединение. Установите ключ, использованный в конфигурации VPN-устройства.
-
 > [!NOTE]
 > Для классической модели развертывания этот шаг недоступен в портал Azure или с помощью Azure Cloud Shell. На рабочем столе необходимо локально использовать версию управления службами (SM) командлетов Azure PowerShell.
 >
+
+На этом шаге, используя значения из предыдущих шагов, вы настроили общий ключ и создаете соединение. Установите ключ, использованный в конфигурации VPN-устройства.
 
 1. Установите общий ключ и создайте подключение.
 

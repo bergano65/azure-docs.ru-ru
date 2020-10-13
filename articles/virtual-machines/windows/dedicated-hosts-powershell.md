@@ -8,16 +8,16 @@ ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: ac915aa3baba910895e10d21148b899347e8ae4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 884a9e82dacb2a0dfc6763809a2ccfd2b886df1a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91370493"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91974181"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
-В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
+В этой статье рассказывается, как создать [выделенный узел](../dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
 Убедитесь, что установлен Azure PowerShell версии 2.8.0 или более поздней, и вы вошли в учетную запись Azure в с помощью `Connect-AzAccount` . 
 
@@ -278,4 +278,4 @@ Remove-AzResourceGroup -Name $rgName
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md) можно найти пример шаблона, в котором используются как зоны, так и домены сбоя для обеспечения максимальной устойчивости в регионе.
 
-- Кроме того, выделенные узлы можно развернуть с помощью [портал Azure](dedicated-hosts-portal.md).
+- Кроме того, выделенные узлы можно развернуть с помощью [портал Azure](../dedicated-hosts-portal.md).

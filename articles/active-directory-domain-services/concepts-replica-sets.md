@@ -2,20 +2,20 @@
 title: Основные понятия наборов реплик для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, какие наборы реплик входят в доменные службы Azure Active Directory и как они обеспечивают избыточность для приложений, которым требуются службы удостоверений.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.author: iainfou
-ms.openlocfilehash: 698009ee8a57ed5d30e01376b4f2c63b0a27ead8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: joflore
+ms.openlocfilehash: 499f4df303993d97ebb4eb38de98828b085aff00
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87505735"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961074"
 ---
 # <a name="replica-sets-concepts-and-features-for-azure-active-directory-domain-services-preview"></a>Основные понятия и функции наборов реплик для Azure Active Directory доменных служб (Предварительная версия)
 
@@ -84,7 +84,7 @@ SKU по умолчанию для управляемого домена — SKU
 
 Изменения в управляемом домене работают так же, как и ранее. Вы [создаете и используете виртуальную машину управления с инструментами RSAT, которые присоединены к управляемому домену](tutorial-create-management-vm.md). Вы можете присоединить к управляемому домену столько виртуальных машин управления, сколько нужно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать работу с наборами реплик, [Создайте и настройте управляемый домен AD DS Azure][tutorial-create-advanced]. При развертывании [Создайте и используйте дополнительные наборы реплик][create-replica-set].
 

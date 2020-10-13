@@ -8,14 +8,16 @@ ms.topic: conceptual
 description: Используйте частный репозиторий Helm в пространстве разработки Azure.
 keywords: DOCKER, Kubernetes, Azure, AKS, служба контейнеров Azure, контейнеры, Helm
 manager: gwallace
-ms.openlocfilehash: c8f0e463bc78d278d8162f8389664dbb46a83301
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c5f28595df2e552fd48033b44e4e1f0ea4ec306
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80240467"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960343"
 ---
 # <a name="use-a-private-helm-repository-in-azure-dev-spaces"></a>Используйте частный репозиторий Helm в Azure Dev Spaces
+
+[!INCLUDE [Azure Dev Spaces deprecation](../../../includes/dev-spaces-deprecation.md)]
 
 [Helm][helm] — это диспетчер пакетов для Kubernetes. Helm использует формат [диаграммы][helm-chart] для упаковки зависимостей. Helm диаграммы хранятся в репозитории, который может быть общедоступным или частным. Azure Dev Spaces получает диаграммы Helm из общедоступных репозиториев при запуске приложения. В случаях, когда репозиторий Helm является частным или Azure Dev Spaces не может получить к нему доступ, можно добавить диаграмму из этого репозитория непосредственно в приложение. Добавление диаграммы напрямую позволяет Azure Dev Spaces запускать приложение без доступа к частному репозиторию Helm.
 
@@ -75,7 +77,7 @@ Service 'app1' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [Helm и принципах его работы][helm].
 

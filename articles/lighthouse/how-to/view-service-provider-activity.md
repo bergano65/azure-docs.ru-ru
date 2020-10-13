@@ -1,21 +1,21 @@
 ---
 title: Просмотр действий поставщика служб
 description: Клиенты могут просматривать зарегистрированные в журнале действия, чтобы просмотреть действия, выполняемые поставщиками услуг через делегированное управление ресурсами Azure.
-ms.date: 07/07/2020
+ms.date: 10/12/2020
 ms.topic: how-to
-ms.openlocfilehash: 0c92fc9b45d17e37fb3721d9cf087c5e7a62f6d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ec9d49de953a0fed3a5afc669e9297148aadf32
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86131471"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91974317"
 ---
 # <a name="view-service-provider-activity"></a>Просмотр действий поставщика служб
 
 Клиенты, у которых есть делегированные подписки на [Azure лигхсаусе](../overview.md) , могут [просматривать данные журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md) для просмотра всех выполненных действий. Это позволяет клиентам полностью видеть операции, выполняемые поставщиками служб через [делегированное управление ресурсами Azure](../concepts/azure-delegated-resource-management.md), а также операции, выполняемые пользователями в собственном клиенте Azure Active Directory (Azure AD) клиента.
 
 > [!TIP]
-> Мы также предоставляем определение встроенной политики Azure для аудита делегирования областей управления клиентом. Дополнительные сведения см. [в разделе Аудит делегирования в вашей среде](view-manage-service-providers.md#audit-delegations-in-your-environment).
+> Мы также предоставим встроенные определения политик Azure, чтобы [ограничить делегирование определенными клиентами](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Azure%20Lighthouse/AllowCertainManagingTenantIds_Deny.json) и [Аудит делегирования областей для управления клиентом](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Lighthouse/Lighthouse_Delegations_Audit.json). Дополнительные сведения см. [в разделе Аудит делегирования в вашей среде](view-manage-service-providers.md#audit-delegations-in-your-environment).
 
 ## <a name="view-activity-log-data"></a>Просмотр данных журнала действий
 

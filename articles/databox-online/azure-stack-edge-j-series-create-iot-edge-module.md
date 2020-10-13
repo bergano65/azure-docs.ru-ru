@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 628dec7f1ba44d81243aeff2657e2311119c566a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b29f6b400ba7b500e215caec4a2115a12b369fe
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891188"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952205"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge-pro"></a>Разработка модуля IoT Edge C# для перемещения файлов на Azure Stack пограничных Pro
 
@@ -77,7 +77,7 @@ ms.locfileid: "90891188"
 
       ![Создание реестра контейнеров](./media/azure-stack-edge-j-series-create-iot-edge-module/create-container-registry-1.png)
  
-4. Нажмите кнопку **создания**.
+4. Щелкните **Создать**.
 5. После создания реестра контейнеров просмотрите его и выберите **Ключи доступа**.
 
     ![Получение ключей доступа](./media/azure-stack-edge-j-series-create-iot-edge-module/get-access-keys-1.png)
@@ -259,7 +259,7 @@ ms.locfileid: "90891188"
  
 3. Предоставив учетные данные, вы сможете отправить образ модуля в Реестр контейнеров Azure. В обозревателе VS Code щелкните правой кнопкой мыши файл **module.json** и выберите действие **Build and Push IoT Edge solution** (Собрать и отправить решение IoT Edge).
 
-    ![Сборка и отправка решения IoT Edge](./media/azure-stack-edge-j-series-create-iot-edge-module/build-iot-edge-solution-2.png)
+    ![Сборка и отправка IoT Edge решение 2](./media/azure-stack-edge-j-series-create-iot-edge-module/build-iot-edge-solution-2.png)
  
     Получив команду на сборку решения, Visual Studio Code выполнит в интегрированном окне терминала две команды: docker build и docker push. Они создают код, упаковывают его в контейнер CSharpModule.dll и передают в реестр контейнера, который был указан при инициализации решения.
 
@@ -276,6 +276,6 @@ ms.locfileid: "90891188"
 
 4. Полный адрес образа контейнера с тегом можно увидеть в окне интегрированного терминала VS Code. Адрес образа создается на основе информации, сохраненной в файле module.json в формате `<repository>:<version>-<platform>`. Для этой статьи адрес должен выглядеть так: `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть и запустить этот модуль на Azure Stack пограничных Pro, см. действия в разделе [Добавление модуля](azure-stack-edge-j-series-deploy-configure-compute.md#add-a-module).

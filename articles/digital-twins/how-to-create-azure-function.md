@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 11034a585db6ef3a3e1e445bbed8a1e51f83948d
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: bf2894cc30873e3cbf7f379e22078dbb863ac179
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91949792"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970441"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -232,18 +232,18 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 ### <a name="assign-access-roles-using-azure-portal"></a>Назначение ролей доступа с помощью портал Azure
 
-Нажмите кнопку _назначения ролей Azure_ , чтобы открыть страницу назначения ролей Azure. Затем выберите _+ добавить назначение ролей (Предварительная версия)_.
+Нажмите кнопку _назначения ролей Azure_ , после чего откроется страница *назначения ролей Azure* . Затем выберите _+ добавить назначение ролей (Предварительная версия)_.
 
 :::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-В открывшемся окне _Добавление назначения ролей (Предварительная версия)_ выберите:
+На открывшейся странице _Добавление назначения ролей (Предварительная версия)_ выберите:
 
 * _Область_ — группа ресурсов.
 * _Подписка_: выберите подписку Azure.
 * _Группа ресурсов_. Выберите группу ресурсов из раскрывающегося списка.
 * _Роль_: выберите _Azure Digital двойников Owner (Предварительная версия)_ в раскрывающемся списке.
 
-Сохраните сведения, нажав кнопку _сохранить_ .
+Затем сохраните сведения, нажав кнопку Save ( _сохранить_ ).
 
 :::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 

@@ -5,14 +5,16 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описание подготовки проекта с помощью Azure Dev Spaces
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 61351072494b51d02a1d6c31399208b9e9b54fce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2da69dd8a8c2683ff584dfd0ffc61cb023f2ece
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88213415"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968163"
 ---
 # <a name="how-preparing-a-project-for-azure-dev-spaces-works"></a>Как готовится проект для Azure Dev Spaces
+
+[!INCLUDE [Azure Dev Spaces deprecation](../../includes/dev-spaces-deprecation.md)]
 
 Azure Dev Spaces предоставляет несколько способов быстро перебора и отладки приложений Kubernetes, а также совместной работы в кластере Службы Azure Kubernetes (AKS). Пространства разработки могут создавать диаграммы файлы dockerfile и Helm для проекта. Пространства разработки также создают и используют файл конфигурации для развертывания, запуска и отладки приложений Kubernetes в AKS. Все эти файлы находятся в коде приложения и могут быть добавлены в систему управления версиями.
 
@@ -94,7 +96,7 @@ configurations:
 
 `azds.yaml`Файл, созданный командой, `prep` предназначен для простого сценария разработки с одним проектом. Если в конкретном проекте увеличилась сложность, может потребоваться обновить этот файл после выполнения `prep` команды. Например, проект может потребовать внесения некоторых изменений в процесс сборки или запуска в зависимости от потребностей разработки или отладки. Кроме того, в проекте может быть несколько приложений, для которых требуется несколько процессов сборки или другое содержимое сборки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о выполнении кода в сфере разработки см. в статье [как выполнять код с помощью Azure dev Spaces Works][how-it-works-up].
 

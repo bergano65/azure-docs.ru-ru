@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.date: 08/06/2019
 ms.author: alkohli
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8acbc7eec7581adcf0d73ffcd4bb2aa7ab2dd572
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96a6692524eca3a2845d648ab3df2932d00ce823
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883498"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951151"
 ---
-# <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge-pro"></a>Разработка модуля IoT Edge C# для перемещения файлов на Azure Stack пограничных Pro
+# <a name="develop-a-c-iot-edge-module-to-move-files-with-azure-stack-edge-pro"></a>Разработка модуля IoT Edge C# для перемещения файлов с помощью Azure Stack пограничных Pro
 
 В этой статье описано, как создать модуль IoT Edge для развертывания с помощью устройства Azure Stack. Pro. Azure Stack пограничной Pro — это решение для хранения данных, которое позволяет обрабатывать данные и передавать их по сети в Azure.
 
@@ -77,7 +77,7 @@ ms.locfileid: "90883498"
 
       ![Создание реестра контейнеров](./media/azure-stack-edge-create-iot-edge-module/create-container-registry-1.png)
  
-4. Нажмите кнопку **создания**.
+4. Щелкните **Создать**.
 5. После создания реестра контейнеров просмотрите его и выберите **Ключи доступа**.
 
     ![Получение ключей доступа](./media/azure-stack-edge-create-iot-edge-module/get-access-keys-1.png)
@@ -259,7 +259,7 @@ ms.locfileid: "90883498"
  
 3. Предоставив учетные данные, вы сможете отправить образ модуля в Реестр контейнеров Azure. В обозревателе VS Code щелкните правой кнопкой мыши файл **module.json** и выберите действие **Build and Push IoT Edge solution** (Собрать и отправить решение IoT Edge).
 
-    ![Сборка и отправка решения IoT Edge](./media/azure-stack-edge-create-iot-edge-module/build-iot-edge-solution-2.png)
+    ![Сборка и отправка IoT Edge решение 2](./media/azure-stack-edge-create-iot-edge-module/build-iot-edge-solution-2.png)
  
     Получив команду на сборку решения, Visual Studio Code выполнит в интегрированном окне терминала две команды: docker build и docker push. Они создают код, упаковывают его в контейнер CSharpModule.dll и передают в реестр контейнера, который был указан при инициализации решения.
 
@@ -276,6 +276,6 @@ ms.locfileid: "90883498"
 
 4. Полный адрес образа контейнера с тегом можно увидеть в окне интегрированного терминала VS Code. Адрес образа создается на основе информации, сохраненной в файле module.json в формате `<repository>:<version>-<platform>`. Для этой статьи адрес должен выглядеть так: `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть и запустить этот модуль на Azure Stack пограничных Pro, см. действия в разделе [Добавление модуля](azure-stack-edge-deploy-configure-compute.md#add-a-module).
