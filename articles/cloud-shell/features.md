@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/26/2019
 ms.author: damaerte
 ms.openlocfilehash: a052364b06ac1b9b30cef76db10a79e8ed85b9a3
-ms.sourcegitcommit: 4feb198becb7a6ff9e6b42be9185e07539022f17
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89470159"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
@@ -55,13 +55,13 @@ PowerShell в Cloud Shell предоставляет диск Azure ( `Azure:` )
 
 PowerShell в Cloud Shell содержит частную сборку модуля Exchange Online.  Выполните команду `Connect-EXOPSSession` , чтобы получить командлеты Exchange.
 
-![Снимок экрана Azure Cloud Shell с командами Connect-Ексопссессион и Get-User.](media/features-powershell/exchangeonline.png)
+![Снимок экрана Azure Cloud Shell выполнение команд Connect-EXOPSSession и Get-User.](media/features-powershell/exchangeonline.png)
 
  Выполнить `Get-Command -Module tmp_*`
 > [!NOTE]
 > Имя модуля должно начинаться с `tmp_` , если установлены модули с таким же префиксом, также отображаются их командлеты. 
 
-![Снимок экрана Azure Cloud Shell с командой Get-Command-Module tmp_ *.](media/features-powershell/exchangeonlinecmdlets.png)
+![Снимок экрана Azure Cloud Shell, выполняющего команду Get-Command-Module tmp_ *.](media/features-powershell/exchangeonlinecmdlets.png)
 
 ### <a name="deep-integration-with-open-source-tooling"></a>Глубокая интеграция со средствами с открытым кодом
 
@@ -69,7 +69,7 @@ PowerShell в Cloud Shell содержит частную сборку моду�
 
 ## <a name="tools"></a>Инструменты
 
-|Категория   |name   |
+|Категория   |Имя   |
 |---|---|
 |Средства Linux            |bash<br> zsh<br> sh<br> tmux<br> dig<br>               |
 |Инструменты Azure            |[Azure CLI](https://github.com/Azure/azure-cli) и [классический интерфейс командной строки Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](../storage/common/storage-use-azcopy-v10.md)<br> [CLI службы "Функции Azure"](https://github.com/Azure/azure-functions-core-tools)<br> [Интерфейс командной строки Service Fabric](../service-fabric/service-fabric-cli.md)<br> [Batch Shipyard](https://github.com/Azure/batch-shipyard)<br> [blobxfer](https://github.com/Azure/blobxfer)|
@@ -78,7 +78,7 @@ PowerShell в Cloud Shell содержит частную сборку моду�
 |Инструменты сборки            |make<br> maven<br> npm<br> pip         |
 |Контейнеры             |[Виртуальная машина Docker](https://github.com/docker/machine)<br> [Kubectl](https://kubernetes.io/docs/user-guide/kubectl-overview/).<br> [Helm](https://github.com/kubernetes/helm)<br> [Интерфейс командной строки DC/OS](https://github.com/dcos/dcos-cli)         |
 |Базы данных              |Клиент MySQL<br> Клиент PostgreSQL<br> [Программа sqlcmd](/sql/tools/sqlcmd-utility)<br> [mssql-scripter](https://github.com/Microsoft/sql-xplat-cli) |
-|Другие                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)<br> [Puppet](https://puppet.com/docs/bolt/latest/bolt.html)<br> [Пакет HashiCorp](https://www.packer.io/)<br> [Интерфейс командной строки Office 365](https://pnp.github.io/office365-cli/)|
+|Другое                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)<br> [Puppet](https://puppet.com/docs/bolt/latest/bolt.html)<br> [Пакет HashiCorp](https://www.packer.io/)<br> [Интерфейс командной строки Office 365](https://pnp.github.io/office365-cli/)|
 
 ## <a name="language-support"></a>Поддержка языков
 
@@ -91,7 +91,7 @@ PowerShell в Cloud Shell содержит частную сборку моду�
 |PowerShell |[7.0.0](https://github.com/PowerShell/powershell/releases)       |
 |Python     |2.7 и 3.5 (по умолчанию)|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Быстрый запуск Bash в Cloud Shell](quickstart.md) <br>
 [Быстрый запуск PowerShell в Cloud Shell](quickstart-powershell.md) <br>
 [Справочник команд Azure CLI](/cli/azure/) <br>

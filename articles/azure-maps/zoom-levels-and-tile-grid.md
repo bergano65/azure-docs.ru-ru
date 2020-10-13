@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 618c8597f7f10ce669bb340b9f5ea4c96f5c1d3f
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91825297"
 ---
 # <a name="zoom-levels-and-tile-grid"></a>Уровни увеличения и сетка фрагментов
@@ -935,7 +935,7 @@ module AzureMaps {
 > Интерактивные элементы управления картой в Azure Maps пакете SDK имеют вспомогательные функции для преобразования геопространственных положений и точек просмотра. 
 > - [Веб-пакет SDK: вычисление пикселей и позиций в карте](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map#pixelstopositions-pixel---)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Прямой доступ к плиткам карт из Azure Maps служб RESTFUL:
 

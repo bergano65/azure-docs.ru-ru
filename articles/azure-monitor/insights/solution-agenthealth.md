@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/06/2020
 ms.openlocfilehash: 4f14f006283b7430458d67d2bd3bee787c08411d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87326024"
 ---
 #  <a name="agent-health-solution-in-azure-monitor"></a>Работоспособность агентов решение в Azure Monitor
@@ -67,7 +67,7 @@ ms.locfileid: "87326024"
 ### <a name="heartbeat-records"></a>Записи пульсов
 Создается запись с типом **Пульс**.  У этих записей есть свойства, приведенные в таблице ниже.  
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | `Type` | *Периодический сигнал*|
 | `Category` | Значение — *Прямой агент*, *Агент SCOM*, или *Сервер управления SCOM*.|
@@ -108,7 +108,7 @@ ms.locfileid: "87326024"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о создании оповещений из запросов журналов см. [в Azure Monitor](../platform/alerts-overview.md) . 
 

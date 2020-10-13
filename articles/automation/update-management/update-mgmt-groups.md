@@ -6,10 +6,10 @@ ms.subservice: update-management
 ms.date: 07/28/2020
 ms.topic: conceptual
 ms.openlocfilehash: 61339a22fc3823325ff5356112c2df8a800010a0
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90985206"
 ---
 # <a name="use-dynamic-groups-with-update-management"></a>Использование динамических групп с Управлением обновлениями
@@ -47,6 +47,6 @@ ms.locfileid: "90985206"
 
 ![На снимке экрана показана страница Выбор групп для не Azure (Предварительная версия) и панель предварительного просмотра справа.](./media/update-mgmt-groups/select-groups-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете [запрашивать журналы Azure Monitor](update-mgmt-query-logs.md) для анализа оценок обновлений, развертываний и других связанных задач управления. Он содержит предварительно определенные запросы, которые помогут приступить к работе.

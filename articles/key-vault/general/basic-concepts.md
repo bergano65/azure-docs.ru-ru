@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: mbaldwin
 ms.openlocfilehash: b537fecefd0b8b00967894daa94881a084d5c8f2
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91398516"
 ---
 # <a name="azure-key-vault-basic-concepts"></a>Azure Key Vault основные понятия
@@ -81,7 +81,7 @@ Azure Key Vault — это облачная служба для безопасн
 
 Разработчики также могут управлять ключами напрямую с помощью API. Дополнительные сведения см. [в Key Vaultном руководством разработчика](developers-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [защитить хранилище](secure-your-key-vault.md).
 - Узнайте, как [защитить управляемые ПУЛЫ HSM](../managed-hsm/access-control.md)

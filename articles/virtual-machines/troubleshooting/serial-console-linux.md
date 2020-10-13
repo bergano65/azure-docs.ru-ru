@@ -1,6 +1,6 @@
 ---
 title: Последовательная консоль Azure для Linux | Документация Майкрософт
-description: Двунаправленная последовательная консоль для виртуальных машин Azure и масштабируемых наборов виртуальных машин с использованием примера Linux.
+description: Bi-Directional последовательной консоли для виртуальных машин Azure и масштабируемых наборов виртуальных машин с помощью примера Linux.
 services: virtual-machines-linux
 documentationcenter: ''
 author: asinn826
@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 5/1/2019
 ms.author: alsin
 ms.openlocfilehash: 9a31a22a5b037162198f594d9bcf35c91a0a4654
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91306877"
 ---
 # <a name="azure-serial-console-for-linux"></a>Последовательная консоль Azure для Linux
@@ -71,7 +71,7 @@ SUSE        | В новых образах SLES, доступных в Azure, д
 Oracle Linux        | Доступ к последовательной консоли включен по умолчанию.
 
 ### <a name="custom-linux-images"></a>Пользовательские образы Linux
-Чтобы включить последовательную консоль для настраиваемого образа виртуальной машины Linux, включите доступ к консоли в файле */etc/inittab* для запуска терминала на `ttyS0`. Например, так: `S0:12345:respawn:/sbin/agetty -L 115200 console vt102`. Также может потребоваться порождение жетти на ttyS0. Это можно сделать с помощью `systemctl start serial-getty@ttyS0.service` .
+Чтобы включить последовательную консоль для настраиваемого образа виртуальной машины Linux, включите доступ к консоли в файле */etc/inittab* для запуска терминала на `ttyS0`. Например: `S0:12345:respawn:/sbin/agetty -L 115200 console vt102`. Также может потребоваться порождение жетти на ttyS0. Это можно сделать с помощью `systemctl start serial-getty@ttyS0.service` .
 
 Кроме того, необходимо добавить ttyS0 в качестве назначения для последовательного вывода. Дополнительные сведения о настройке пользовательского образа для работы с последовательной консолью см. в общих системных требованиях на странице [Создание и передача виртуального жесткого диска Linux в Azure](https://aka.ms/createuploadvhd#general-linux-system-requirements).
 
@@ -168,7 +168,7 @@ A. Да, доступна. Ознакомьтесь со сведениями в
 
 A. Да. Так как для последовательной консоли не требуются ключи SSH, все, что вам нужно, — это настроить имя пользователя и пароль. Это можно сделать, выбрав **Сброс пароля** на портале Azure и используя эти учетные данные для входа в последовательную консоль.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Используйте последовательную консоль для [доступа к GRUB и однопользовательскому режиму](serial-console-grub-single-user-mode.md).
 * Используйте последовательную консоль для [вызовов SysRq и NMI](serial-console-nmi-sysrq.md).
 * Узнайте, как использовать последовательное консоль для [включения GRUB в различных дистрибутивов](serial-console-grub-proactive-configuration.md)
