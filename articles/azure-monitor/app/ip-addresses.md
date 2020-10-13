@@ -2,15 +2,13 @@
 title: IP-адреса, используемые Application Insights и Log Analytics | Документация Майкрософт
 description: Исключения брандмауэра сервера, требуемые для Application Insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 09/15/2020
-ms.openlocfilehash: e4c5331177541c7543b386bf8c489d6315fe0bc1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 755fd62482d7e453814cab5b5b617ba5eb0cc85a
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91299027"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932368"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
 Служба [Azure Application Insights](./app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.

@@ -6,10 +6,10 @@ ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: 50b3cae00110a64e4d95171822bf1d2a282d2cc1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91715410"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
@@ -23,7 +23,7 @@ ms.locfileid: "91715410"
 
 ### <a name="in-the-cloud-shell"></a>В Cloud Shell
 
-Чтобы настроить пользователя развертывания, выполните в [Cloud Shell](https://shell.azure.com) команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Замените \<username> и \<password> именем пользователя и паролем развертывания. 
+Чтобы настроить пользователя развертывания, выполните в [Cloud Shell](https://shell.azure.com) команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Вместо \<username> и \<password> укажите имя пользователя и пароль развертывания. 
 
 - Имя пользователя должно быть уникальным в Azure. Кроме того, чтобы отправка в локальный репозиторий Git работала, имя пользователя не должно содержать символ @. 
 - Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы. 

@@ -13,10 +13,10 @@ ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
 ms.openlocfilehash: e2cdf7d5213f1667b0b588cc5bfa9f105245b6b3
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619123"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и Azure CLI: включение прозрачное шифрование данных с управляемым клиентом ключом из Azure Key Vault
@@ -45,7 +45,7 @@ ms.locfileid: "91619123"
 Дополнительные сведения о Key Vault см. в [инструкциях по PowerShell из Key Vault](../../key-vault/secrets/quick-create-powershell.md) и [об использовании Key Vault обратимого удаления с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md).
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка сосредоточена на модуле Az.Sql. Исправления ошибок для модуля AzureRM будут продолжать выпускаться как минимум до декабря 2020 г.  Аргументы команд в модулях Az и AzureRm практически идентичны. Дополнительные сведения о совместимости см. в статье [Знакомство с новым модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
 
 ## <a name="assign-an-azure-active-directory-azure-ad-identity-to-your-server"></a>Назначьте серверу удостоверение Azure Active Directory (Azure AD)
 
@@ -123,7 +123,7 @@ Get-AzSqlDatabaseTransparentDataEncryptionActivity -ResourceGroupName <SQLDataba
 
 # <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
-Чтобы установить требуемую версию Azure CLI (версии 2,0 или более поздней) и подключиться к подписке Azure, см. статью [Установка и настройка кросс-платформенного интерфейса командной строки azure 2,0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Чтобы установить требуемую версию Azure CLI (версии 2,0 или более поздней) и подключиться к подписке Azure, см. статью [Установка и настройка Межплатформенного Command-Lineного интерфейса azure 2,0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 Дополнительные сведения о Key Vault см. в статьях [управление Key Vault с помощью интерфейса командной строки 2,0](../../key-vault/general/manage-with-cli2.md) и [Использование Key Vault обратимого удаления с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md).
 
@@ -241,7 +241,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
    - ключ не должен иметь дату окончания срока действия;
    - для ключа должны быть включены операции *получения*, *упаковки ключа* и *распаковки ключа*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как сменить средство защиты TDE сервера в соответствии с требованиями безопасности: [поворачивайте средство защиты прозрачное шифрование данных с помощью PowerShell](transparent-data-encryption-byok-key-rotation.md).
 - Сведения о том, как удалить потенциально скомпрометированный предохранитель TDE в случае угрозы безопасности, вы найдете в [этой статье](transparent-data-encryption-byok-remove-tde-protector.md).

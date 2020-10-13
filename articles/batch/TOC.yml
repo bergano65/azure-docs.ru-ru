@@ -257,12 +257,16 @@
           href: batch-pool-resize-start-event.md
         - name: Событие завершения изменения размера пула
           href: batch-pool-resize-complete-event.md
+        - name: Событие автомасштабирования пула
+          href: batch-pool-autoscale-event.md
         - name: Событие начала выполнения задачи
           href: batch-task-start-event.md
         - name: Событие завершения выполнения задачи
           href: batch-task-complete-event.md
         - name: Событие сбоя выполнения задачи
           href: batch-task-fail-event.md
+        - name: Событие сбоя расписания задач
+          href: batch-task-schedule-fail-event.md
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md

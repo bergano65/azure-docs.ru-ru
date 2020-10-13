@@ -12,7 +12,7 @@ ms.openlocfilehash: b8be230044d868cc3ec03f6dc3fc2d21e102f121
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856302"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
@@ -51,7 +51,7 @@ ms.locfileid: "91856302"
 
 Разрешить трафик с IP-адресов, указанных в таблице ниже.
 
-| Исходный IP-адрес | Назначение | Direction (направление) |
+| Исходный IP-адрес | Назначение | Direction |
 |---|---|---|
 | 168.61.49.99 | *: 443 | Входящий |
 | 23.99.5.239 | *: 443 | Входящий |
@@ -80,7 +80,7 @@ ms.locfileid: "91856302"
 
 Проверьте [состояние Azure](https://status.azure.com) на наличие потенциальных сбоев или проблем со службой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Расширение возможностей HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
 * [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  

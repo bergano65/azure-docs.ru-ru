@@ -12,7 +12,7 @@ ms.openlocfilehash: 9eb0cd3fd327a53dd0761779916caa096153a010
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856438"
 ---
 # <a name="azure-hdinsight-business-continuity-architectures"></a>Архитектура обеспечения непрерывности бизнес-процессов Azure HDInsight
@@ -202,7 +202,7 @@ Ranger хранилище метаданных используется для �
 
 :::image type="content" source="./media/hdinsight-business-continuity-architecture/hdinsight-enterprise-security-package.png" alt-text="Архитектура Hive и интерактивных запросов":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 

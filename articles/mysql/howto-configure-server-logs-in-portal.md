@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 4/13/2020
 ms.openlocfilehash: 69368500a99b47238e74a960fdd5381c0339430a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90905867"
 ---
 # <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Настройка и доступ к журналам запросов с высокой занесением портал Azure
@@ -40,20 +40,20 @@ ms.locfileid: "90905867"
 
 8. Щелкните **Сохранить**. 
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Снимок экрана параметров журнала "замедляют запрос" и "Сохранить".":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 На странице **Параметры сервера** можно вернуться к списку журналов, закрыв страницу.
 
 ## <a name="view-list-and-download-logs"></a>Просмотр списка журналов и их скачивание
 После начала ведения журнала можно просмотреть список доступных журналов запросов с высокой загрузкой и загрузить отдельные файлы журналов.
 
-1. Откройте портал Azure.
+1. Перейдите на портал Azure.
 
 2. Выберите сервер базы данных Azure для MySQL.
 
 3. В разделе **мониторинг** на боковой панели выберите **журналы сервера**. На странице отображается список файлов журнала.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным списком журналов":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/4-server-logs-list.png" alt-text="Снимок экрана параметров журналов сервера":::
 
    > [!TIP]
    > Действует следующее соглашение об именовании журналов: **mysql-slow-<имя_вашего_сервера>-ггггммддчч.log**. Дата и время, используемые в имени файла, — это время, когда был выдан журнал. Файлы журнала поворачиваются каждые 24 часа или 7,5 ГБ, в зависимости от того, что происходит раньше. 
@@ -62,27 +62,27 @@ ms.locfileid: "90905867"
 
 5. Чтобы загрузить отдельные файлы журналов, щелкните значок со стрелкой вниз рядом с каждым файлом журнала в строке таблицы.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-download.png" alt-text="Снимок экрана: страница "журналы сервера" с выделенным значком "стрелка вниз"":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/5-download.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 ## <a name="set-up-diagnostic-logs"></a>Настройка журналов диагностики
 
 1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**  >  **Добавить параметры диагностики**.
 
-   :::image type="content" source="./media/howto-configure-server-logs-in-portal/add-diagnostic-setting.png" alt-text="Снимок экрана параметров параметров диагностики":::
+   :::image type="content" source="./media/howto-configure-server-logs-in-portal/add-diagnostic-setting.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 1. Укажите имя параметра диагностики.
 
 1. Укажите, какие приемники данных должны отправлять журналы запросов с высокой загрузкой (учетная запись хранения, концентратор событий или Рабочая область Log Analytics).
 
 1. В качестве типа журнала выберите **мисклсловлогс** .
-:::image type="content" source="./media/howto-configure-server-logs-in-portal/configure-diagnostic-setting.png" alt-text="Снимок экрана параметров конфигурации параметров диагностики":::
+:::image type="content" source="./media/howto-configure-server-logs-in-portal/configure-diagnostic-setting.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 1. После настройки приемников данных для передачи журналов запросов с задержкой нажмите кнопку **сохранить**.
-:::image type="content" source="./media/howto-configure-server-logs-in-portal/save-diagnostic-setting.png" alt-text="Снимок экрана параметров конфигурации параметров диагностики с выделенным сохранением":::
+:::image type="content" source="./media/howto-configure-server-logs-in-portal/save-diagnostic-setting.png" alt-text="Снимок экрана параметров журналов сервера":::
 
 1. Получите доступ к журналам запросов с задержкой, изучив их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Сведения о том, как программно скачивать журналы запросов, см. [в статье доступ к журналам запросов с помощью интерфейса командной строки](howto-configure-server-logs-in-cli.md) .
 - Дополнительные сведения о [медленных журналах запросов](concepts-server-logs.md) в базе данных Azure для MySQL.
 - Дополнительные сведения об определениях параметров и ведении журнала MySQL см. в документации MySQL по [журналам](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).

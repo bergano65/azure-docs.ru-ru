@@ -14,7 +14,7 @@ ms.openlocfilehash: 824b8f386e6bf822444450305e603e6068a34c5e
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91854364"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow"></a>Добавление соединителя API в пользовательский поток регистрации
@@ -283,7 +283,7 @@ Content-type: application/json
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
 | version     | Строка  | Да      | Версия API.                                                    |
 | action      | Строка  | Да      | Необходимое значение: `ValidationError`.                                           |
-| status      | Целое число | Да      | `400`Для ответа ValidationError должно быть значение.                        |
+| status      | Целочисленный тип | Да      | `400`Для ответа ValidationError должно быть значение.                        |
 | userMessage | Строка  | Да      | Сообщение, отображаемое для пользователя.                                            |
 
 **Взаимодействие с пользователем при проверке — ошибка проверки**
@@ -312,6 +312,6 @@ Content-type: application/json
 * При необходимости используйте более агрессивные уровни ведения журнала (например, "Трассировка" или "Отладка") в разработке.
 * Отслеживайте долгое время ответа API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 <!-- - Learn how to [add a custom approval workflow to sign-up](add-approvals.md) -->
 - Приступая к работе с [примерами краткого руководства по функциям Azure](code-samples.md#api-connectors).

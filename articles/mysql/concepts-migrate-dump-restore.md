@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 2/27/2020
 ms.openlocfilehash: a0171481b97cff2ea085a80b387bff13590529a5
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90905897"
 ---
 # <a name="migrate-your-mysql-database-to-azure-database-for-mysql-using-dump-and-restore"></a>Перенос базы данных MySQL в базу данных Azure для MySQL с помощью дампа и восстановления
@@ -67,7 +67,7 @@ ms.locfileid: "90905897"
 
 Добавьте сведения о подключении в MySQL Workbench.
 
-:::image type="content" source="./media/concepts-migrate-dump-restore/2_setup-new-connection.png" alt-text="Строка подключения MySQL Workbench":::
+:::image type="content" source="./media/concepts-migrate-dump-restore/2_setup-new-connection.png" alt-text="Поиск сведений о подключении на портале Azure":::
 
 ## <a name="preparing-the-target-azure-database-for-mysql-server-for-fast-data-loads"></a>Подготовка целевого сервера базы данных Azure для MySQL для быстрой загрузки данных
 Чтобы подготовить целевой сервер базы данных Azure для MySQL для ускорения загрузки данных, необходимо изменить следующие параметры и конфигурацию сервера.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: kegorman
-ms.openlocfilehash: 24dfe52b7f08d93dfba70c7b63812eac53431d5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a15a82fff2a40e5c6b64ef87733b8c72916f5a44
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91274798"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965885"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
 
@@ -68,7 +68,7 @@ az group create --name myResourceGroup --location westus
 
 ### <a name="create-an-availability-set"></a>"Создать группу доступности"
 
-Следующий шаг необязателен, но мы рекомендуем его выполнить. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](../../windows/infrastructure-example.md).
+Следующий шаг необязателен, но мы рекомендуем его выполнить. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](/previous-versions/azure/virtual-machines/windows/infrastructure-example).
 
 ```azurecli
 az vm availability-set create \
@@ -819,7 +819,7 @@ GGSCI> VIEW REPORT INITEXT
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 

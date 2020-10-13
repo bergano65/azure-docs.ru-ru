@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 07/02/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: e5a31742956c2ba9bd15026f7667c971c20694a3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91303014"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
@@ -222,7 +222,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).
