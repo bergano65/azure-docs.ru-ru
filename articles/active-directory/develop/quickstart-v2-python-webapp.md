@@ -1,6 +1,7 @@
 ---
-title: Добавление единого входа в веб-приложение Python платформы удостоверений Майкрософт
-description: Узнайте, как реализовать вход с помощью учетной записи Майкрософт в веб-приложении Python с помощью OAuth2.
+title: Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как в веб-приложении Python реализовать вход пользователей, получение маркера доступа от платформы удостоверений Майкрософт и вызов API Microsoft Graph.
 services: active-directory
 author: abhidnya13
 manager: CelesteDG
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 6b58e927952b2a51289c3017455cc7d66545fe86
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 63abbc739849a201275995c81a28ede9f9c84b5a
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120326"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613345"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт
 
@@ -26,8 +27,7 @@ ms.locfileid: "88120326"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для запуска этого примера потребуется:
-
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - [Python 2.7+](https://www.python.org/downloads/release/python-2713) или [Python 3+](https://www.python.org/downloads/release/python-364/)
 - [Flask](http://flask.pocoo.org/), [Flask-сеанс](https://pypi.org/project/Flask-Session/), [запросы](https://requests.kennethreitz.org/en/master/)
 - [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)
@@ -97,7 +97,7 @@ ms.locfileid: "88120326"
 
 > [!div class="sxs-lookup" renderon="portal"]
 > Скачайте проект и извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корневой папке (например, **C:\Azure-Samples**).
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div class="sxs-lookup" renderon="portal" id="autoupdate" class="nextstepaction"]
 > [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-python-webapp/archive/master.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]
@@ -162,11 +162,11 @@ pip install msal
 import msal
 ```
 
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о веб-приложениях для входа пользователей в систему и вызова веб-API
+Подробнее о веб-приложениях с поддержкой входа пользователей узнайте в нашей серии сценариев.
 
 > [!div class="nextstepaction"]
-> [Scenario: Веб-приложения для входа пользователей в систему](scenario-web-app-sign-user-overview.md)
-
-[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+> [Scenario: Веб-приложение, выполняющее вход пользователей](scenario-web-app-sign-user-overview.md)

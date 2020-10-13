@@ -1,7 +1,7 @@
 ---
-title: Вход пользователей в одностраничных приложениях JavaScript | Azure
+title: Краткое руководство. Вход пользователей в одностраничных приложениях JavaScript | Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как приложение JavaScript может вызывать API, которому необходимы маркеры доступа, используя платформу удостоверений Майкрософт.
+description: Из этого краткого руководства вы узнаете, как приложение JavaScript может вызывать API, которому требуются маркеры доступа, выданные платформой удостоверений Майкрософт.
 services: active-directory
 author: navyasric
 manager: CelesteDG
@@ -12,23 +12,22 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: b6e3e0c1ecf9ce3a9d86f6b03c3ad3efc5676b5c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1f5281ead3c0487b6052859df3b33fa6ddaaf45a
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91257934"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613328"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
-В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API. (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
+В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. [Создать подписку Azure бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio Code](https://code.visualstudio.com/download) (для внесения правок в файлы проекта).
-
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -300,9 +299,4 @@ myMSALObj.acquireTokenPopup(requestObj)
 Более подробное пошаговое руководство по созданию приложения для этого краткого руководства см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Tutorial to sign in and call MS Graph](./tutorial-v2-javascript-spa.md) (Руководство по вызову API Microsoft Graph)
-
-Чтобы ознакомиться с документацией, часто задаваемыми вопросами, проблемами и многим другим в репозитории MSAL, перейдите по ссылке:
-
-> [!div class="nextstepaction"]
-> [Библиотека проверки подлинности Майкрософт для JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js)
+> [Руководство. Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)](tutorial-v2-javascript-spa.md)

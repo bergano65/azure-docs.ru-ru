@@ -90,6 +90,8 @@
                   href: database/transparent-data-encryption-tde-overview.md
                 - name: Создание собственных ключей (BYOK)
                   href: database/transparent-data-encryption-byok-overview.md
+            - name: Распределенные транзакции
+              href: database/elastic-transactions-overview.md
         - name: Непрерывность бизнес-процессов
           displayName: 'Backup, back up, restore, recovery'
           items:
@@ -862,6 +864,8 @@
               href: managed-instance/public-endpoint-overview.md
             - name: Аудит
               href: managed-instance/auditing-configure.md
+            - name: Группы доверия сервера
+              href: managed-instance/server-trust-group-overview.md
     - name: Практическое руководство
       items:
         - name: Обзор

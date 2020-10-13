@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: d457e911dec481e2b1a8bdae1ca05f80452bb883
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: f3fd214fa62d95430bd8ca62e78fd3df30c77d19
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85557188"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91652454"
 ---
 # <a name="quickstart-convert-a-model-for-rendering"></a>Краткое руководство. Преобразование модели для отрисовки
 
@@ -189,7 +189,7 @@ Connect-AzAccount
 URI SAS, созданный скриптом преобразования, действует только в течение 24 часов. Но после истечения срока действия вам не нужно снова преобразовывать модель. Достаточно создать на портале новый SAS, как описано ниже.
 
 1. Перейдите на [портал Azure](https://www.portal.azure.com).
-1. Щелкните ресурс **учетной записи хранения**: ![Доступ по подписи](./media/portal-storage-accounts.png)
+1. Щелкните ресурс **учетной записи хранения**: ![Снимок экрана, на котором выделен выбранный ресурс учетной записи хранения.](./media/portal-storage-accounts.png)
 1. На следующем экране щелкните **Обозреватель хранилища** на панели слева и найдите выходной файл модели ( *.arrAsset*) в контейнере BLOB-объектов *arroutput*. Щелкните этот файл правой кнопкой мыши и выберите в контекстном меню действие **Получить подписанный URL-адрес**. ![Доступ по подписи](./media/portal-storage-explorer.png)
 1. Откроется новый экран, где вы можете указать дату окончания срока действия. Щелкните **Создать** и скопируйте URI, который отобразится в следующем диалоговом окне. Этот новый URI заменяет собой временный адрес, созданный скриптом.
 

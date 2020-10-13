@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 10/05/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e1a52a15012e367dc902992f7f7b905fc6c6a5eb
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 53deb7dc853de969ad6b6679ee728a3f132b6309
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91541549"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759096"
 ---
 # <a name="quickstart-create-a-search-index-using-the-azuresearchdocuments-client-library"></a>Краткое руководство. Создание индекса поиска с помощью клиентской библиотеки Azure.Search.Documents
 
@@ -36,11 +36,17 @@ ms.locfileid: "91541549"
 
 + [Visual Studio](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода был протестирован в Visual Studio 2019 (бесплатный выпуск Community).
 
++ [Пакет NuGet Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/)
+
+## <a name="set-up-your-project"></a>Настройка проекта
+
+Соберите сведения о подключении к службе, а затем откройте Visual Studio, чтобы создать новый проект консольного приложения, который можно запустить в .NET Core.
+
 <a name="get-service-info"></a>
 
-## <a name="get-a-key-and-endpoint"></a>Получение ключа и конечной точки
+### <a name="copy-a-key-and-endpoint"></a>Копирование ключа и конечной точки
 
-Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. В первую очередь найдите ключ API и URL-адрес для добавления в проект. При создании клиента на более позднем этапе необходимо указать оба значения.
 
 1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **обзора** службы поиска получите URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
@@ -50,10 +56,6 @@ ms.locfileid: "91541549"
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
-## <a name="set-up-your-project"></a>Настройка проекта
-
-Запустите Visual Studio и создайте новый проект консольного приложения, которое будет выполняться на базе .NET Core. 
-
 ### <a name="install-the-nuget-package"></a>Установка пакета NuGet
 
 После создания проекта добавьте клиентскую библиотеку. [Пакет Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/) состоит из одной клиентской библиотеки, которая предоставляет все API для работы со службой поиска в .NET.
@@ -62,7 +64,7 @@ ms.locfileid: "91541549"
 
 1. Нажмите кнопку **Обзор**.
 
-1. Выполните поиск по `Azure.Search.Documents` и выберите версию 11.0.0.
+1. Найдите `Azure.Search.Documents` и выберите версию 11.0 или более позднюю.
 
 1. Щелкните **Установить** справа, чтобы добавить сборку в проект и решение.
 
@@ -78,7 +80,7 @@ ms.locfileid: "91541549"
    using Azure.Search.Documents.Models;
    ```
 
-1. Создайте два клиента: [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) создает новый индекс, а [SearchClient](/dotnet/api/azure.search.documents.searchclient) работает с существующим. Обоим клиентам нужны конечная точка службы и ключ API администрирования, чтобы пройти проверку подлинности и получить права на создание и удаление.
+1. Создайте два клиента: [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) создает индекс, а [SearchClient](/dotnet/api/azure.search.documents.searchclient) загружает и запрашивает существующий индекс. Обоим клиентам нужны конечная точка службы и ключ API администрирования, чтобы пройти проверку подлинности и получить права на создание и удаление.
 
    ```csharp
    static void Main(string[] args)
@@ -93,7 +95,7 @@ ms.locfileid: "91541549"
        SearchIndexClient idxclient = new SearchIndexClient(serviceEndpoint, credential);
 
        // Create a SearchClient to load and query documents
-       SearchClient qryclient = new SearchClient(serviceEndpoint, indexName, credential);
+       SearchClient srchclient = new SearchClient(serviceEndpoint, indexName, credential);
     ```
 
 ## <a name="1---create-an-index"></a>1\. Создание индекса
@@ -132,7 +134,7 @@ ms.locfileid: "91541549"
     }
     ```
 
-1. В **Program.cs** укажите поля и атрибуты. Для создания индекса используются [SearchIndex](/dotnet/api/azure.search.documents.indexes.models.searchindex) и [CreateIndex](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex).
+1. В **Program.cs** создайте объект [SearchClient](/dotnet/api/azure.search.documents.indexes.models.searchindex), а затем вызовите метод [CreateIndex](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex), чтобы отразить индекс в службе поиска.
 
    ```csharp
     // Define an index schema using SearchIndex
@@ -155,9 +157,13 @@ ms.locfileid: "91541549"
 
 Атрибуты поля определяют его использование в приложении. Например, атрибут `IsFilterable` должен быть присвоен каждому полю, которое поддерживает выражение фильтра.
 
-В отличие от предыдущих версий пакета SDK для .NET, в которых требовался атрибут [IsSearchable](/dotnet/api/microsoft.azure.search.models.field.issearchable) для строковых полей с поддержкой поиска, здесь вы можете использовать [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) и [SimpleField](/dotnet/api/azure.search.documents.indexes.models.simplefield), чтобы упростить определения полей.
+В клиентской библиотеке Azure.Search.Documents можно использовать [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) и [SimpleField](/dotnet/api/azure.search.documents.indexes.models.simplefield) для упрощения определения полей. Оба метода являются производными от [SearchField](/dotnet/api/azure.search.documents.indexes.models.searchfield) и потенциально могут упростить код:
 
-Но для самого определения, как и в предыдущих версиях, требуются другие атрибуты. Например, [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable), [IsSortable](/dotnet/api/azure.search.documents.indexes.models.searchfield.issortable) и [IsFacetable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfacetable) должны присваиваться явным образом, как в примере выше. 
++ `SimpleField` может быть любым типом данных, он всегда недоступен для поиска (он игнорируется для запросов полнотекстового поиска) и его можно извлечь (он не скрыт). Другие атрибуты отключены по умолчанию, но их можно включить. `SimpleField` можно использовать для идентификаторов документов или полей, используемых только в фильтрах, аспектах или профилях оценки. Если это так, обязательно примените все необходимые для сценария атрибуты, например `IsKey = true` для идентификатора документа. Чтобы узнать больше, см. [SimpleFieldAttribute.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/src/Indexes/SimpleFieldAttribute.cs) в исходном коде.
+
++ `SearchableField` должен быть строкой и всегда доступен для поиска и извлечения. Другие атрибуты отключены по умолчанию, но их можно включить. Так как этот тип поля доступен для поиска, он поддерживает синонимы и полное дополнение свойств анализатора. Чтобы узнать больше, см. [SearchableFieldAttribute.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/src/Indexes/SearchableFieldAttribute.cs) в исходном коде.
+
+Независимо от того, используется ли базовый API `SearchField` или одна из вспомогательных моделей, необходимо явно включить атрибуты фильтров, аспектов и сортировки. Например, [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable), [IsSortable](/dotnet/api/azure.search.documents.indexes.models.searchfield.issortable) и [IsFacetable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfacetable) должны присваиваться явным образом, как в примере выше. 
 
 <a name="load-documents"></a>
 
@@ -165,11 +171,11 @@ ms.locfileid: "91541549"
 
 Когнитивный поиск Azure выполняет поиск по содержимому, которое хранится в этой службе. На этом шаге вы отправите документы JSON, которые соответствуют формату созданного индекса отелей.
 
-Документы в службе "Когнитивный поиск Azure" представляют собой структуры данных, которые служат входами для индексирования и (или) выходами для запросов. Полученные из внешнего источника данных входные документы могут содержать строки базы данных, большие двоичные объекты из хранилища BLOB-объектов или сохраненные на диске документы JSON. В нашем примере мы выбрали самый простой путь, внедрив прямо в код документы JSON с данными о пяти отелях. 
+Искомые документы в службе "Когнитивный поиск Azure" представляют собой структуры данных, которые служат входными данными для индексирования и (или) результатами запросов. Полученные из внешнего источника данных входные документы могут содержать строки базы данных, большие двоичные объекты из хранилища BLOB-объектов или сохраненные на диске документы JSON. В нашем примере мы выбрали самый простой путь, внедрив прямо в код документы JSON с данными о пяти отелях. 
 
-При отправке документов необходимо использовать объект [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1). IndexDocumentsBatch включает разные свойства [Actions](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1.actions), каждое из которых содержит документ и свойство для определения действия, выполняемого Когнитивным поиском Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
+При отправке документов необходимо использовать объект [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1). Объект `IndexDocumentsBatch` содержит коллекцию [действий](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1.actions), каждое из которых содержит документ и свойство с описанием действия, которое должен выполнить Когнитивный поиск Azure ([отправка, объединение, удаление и mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
 
-1. В файле **Program.cs** создайте массив документов и действий с индексом, а затем передайте этот массив в `ndexDocumentsBatch`. Указанные ниже документы соответствуют формату индекса hotels-quickstart-v11 index, который определен в классе hotel.
+1. В файле **Program.cs** создайте массив документов и действий индексирования, а затем передайте этот массив в `IndexDocumentsBatch`. Приведенные ниже документы соответствуют индексу hotels-quickstart-v11, как определено в классе hotel.
 
     ```csharp
     // Load documents (using a subset of fields for brevity)
@@ -183,7 +189,7 @@ ms.locfileid: "91541549"
     IndexDocumentsOptions idxoptions = new IndexDocumentsOptions { ThrowOnAnyError = true };
 
     Console.WriteLine("{0}", "Loading index...\n");
-    qryclient.IndexDocuments(batch, idxoptions);
+    srchclient.IndexDocuments(batch, idxoptions);
     ```
 
     Создав экземпляр объекта [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1), вы сможете отправить его в индекс, вызвав [IndexDocuments](/dotnet/api/azure.search.documents.searchclient.indexdocuments) из объекта [SearchClient](/dotnet/api/azure.search.documents.searchclient).
@@ -225,7 +231,7 @@ ms.locfileid: "91541549"
 1. Создайте метод RunQueries для выполнения запросов и возврата результатов. Результаты имеют формат объектов Hotel.
 
     ```csharp
-    private static void RunQueries(SearchClient qryclient)
+    private static void RunQueries(SearchClient srchclient)
     {
         SearchOptions options;
         SearchResults<Hotel> response;
@@ -238,7 +244,7 @@ ms.locfileid: "91541549"
             OrderBy = { "" }
         };
 
-        response = qryclient.Search<Hotel>("motel", options);
+        response = srchclient.Search<Hotel>("motel", options);
         WriteDocuments(response);
 
         Console.WriteLine("Query #2: Find hotels where 'type' equals hotel...\n");
@@ -248,7 +254,7 @@ ms.locfileid: "91541549"
             Filter = "hotelCategory eq 'hotel'",
         };
 
-        response = qryclient.Search<Hotel>("*", options);
+        response = srchclient.Search<Hotel>("*", options);
         WriteDocuments(response);
 
         Console.WriteLine("Query #3: Filter on rates less than $200 and sort by when the hotel was last updated...\n");
@@ -259,9 +265,16 @@ ms.locfileid: "91541549"
             OrderBy = { "lastRenovationDate desc" }
         };
 
-        response = qryclient.Search<Hotel>("*", options);
+        response = srchclient.Search<Hotel>("*", options);
         WriteDocuments(response);
     }
+    ```
+
+1. Добавьте RunQueries в `Main()`.
+
+    ```csharp
+    Console.WriteLine("Starting queries...\n");
+    RunQueries(srchclient);
     ```
 
 Существует два [способа сопоставления терминов в запросе](search-query-overview.md#types-of-queries): полнотекстовый поиск и фильтры.
@@ -278,7 +291,7 @@ ms.locfileid: "91541549"
 
 Нажмите клавишу F5, чтобы перестроить приложение и запустить полнофункциональную программу. 
 
-Выходные данные содержат сообщения из [Console.WriteLIne](/dotnet/api/system.console.writeline), а также сведения о запросе и результаты.
+Выходные данные содержат сообщения из [Console.WriteLine](/dotnet/api/system.console.writeline), а также сведения о запросе и результаты.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -290,7 +303,7 @@ ms.locfileid: "91541549"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве для C# вы отработали ряд задач по созданию индекса, загрузке документов в него и выполнению запросов. Мы несколько упростили решение, чтобы код было проще читать и понимать. Если основные понятия вы усвоили хорошо, мы рекомендуем перейти к следующей статье для изучения альтернативных подходов и основных понятий, которые дополнят и расширят ваши знания. 
+В этом кратком руководстве для C# вы отработали задачи по созданию индекса, загрузке документов в него и выполнению запросов. Мы несколько упростили решение, чтобы код было проще читать и понимать. Если основные понятия вы усвоили хорошо, мы рекомендуем перейти к следующей статье для изучения альтернативных подходов и основных понятий, которые дополнят и расширят ваши знания. 
 
 > [!div class="nextstepaction"]
 > [Разработка в .NET](search-howto-dotnet-sdk.md)

@@ -1,24 +1,24 @@
 ---
 title: Краткое руководство. Получение номера телефона из Служб коммуникации Azure
 description: Узнайте, как приобрести номер телефона в Службах коммуникации Azure с помощью портала Azure.
-author: ddematheu2
-manager: nimag
+author: prakulka
+manager: nmurav
 services: azure-communication-services
-ms.author: dademath
-ms.date: 07/09/2020
+ms.author: prakulka
+ms.date: 10/05/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
 ms.custom: references_regions
-ms.openlocfilehash: 2743dc0164f604c9c5e033aacc3e58fae42a1fd2
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: e06c3720e180c1dc4fa2f227fd86d15cbbb0ff33
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90946052"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756914"
 ---
 # <a name="quickstart-get-a-phone-number-using-the-azure-portal"></a>Краткое руководство. Получение номера телефона с помощью портала Azure
 
-[!INCLUDE [Private Preview Notice](../../includes/private-preview-include.md)]
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 Начните работу со Службами коммуникации Azure, приобретя номер телефона с помощью портала Azure.
 
@@ -37,36 +37,26 @@ ms.locfileid: "90946052"
 
 Перейдите в колонку "Номера телефонов" через меню ресурса.
 
-:::image type="content" source="../media/manage-phone-azure-portal-phone-page.png" alt-text="Снимок экрана: страница с номерами телефонов ресурса Служб коммуникации.":::
+:::image type="content" source="../media/manage-phone-azure-portal-phone-page.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 Нажмите кнопку `Get`, чтобы запустить мастер. Мастер в колонке `Phone numbers` задаст вам ряд вопросов, которые помогут вам выбрать подходящий номер телефона для вашего сценария. 
 
-Сначала необходимо выбрать страну или регион (`Country/region`), где вы хотите подготовить номер телефона. Затем нужно выбрать план телефонии (`phone plan`), который лучше подходит для ваших потребностей. 
+Сначала необходимо выбрать страну или регион (`Country/region`), где вы хотите подготовить номер телефона. Затем нужно выбрать план телефонии (`use case`), который лучше подходит для ваших потребностей. 
 
-:::image type="content" source="../media/manage-phone-azure-portal-get-numbers.png" alt-text="Снимок экрана: представление Получение телефонных номеров.":::
+:::image type="content" source="../media/manage-phone-azure-portal-get-numbers.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 ### <a name="select-a-phone-plan"></a>Выбор плана телефонии
 
 Выбор плана телефонии включает два этапа: 
 
 1. выбор [типа номера](../../concepts/telephony-sms/plan-solution.md#phone-number-types-in-azure-communication-services);
-2. выбор самого [плана](../../concepts/telephony-sms/plan-solution.md#plans).
+2. выбор самого [плана](../../concepts/telephony-sms/plan-solution.md#phone-number-plans-in-azure-communication-services).
 
 Сейчас мы предлагаем два типа номеров: `Geographic` и `Toll-free`. Когда вы выберете тип номера, вам будет предложено несколько планов.
 
-> [!NOTE]
-> Сейчас можно выбрать телефонные номера для осуществления только входящих ИЛИ исходящих вызовов. Но вы можете приобрести номер телефона, для которого включены входящие вызовы, а затем настроить идентификатор вызывающей стороны (то, что увидят пользователи, которым вы будете звонить из приложения Служб коммуникации), совпадающий с номером этого телефона.
-> Это применимо только для двунаправленных вызовов. Двунаправленная отправка SMS поддерживается изначально.
+В нашем примере мы выбрали тип номера `Toll-free` и планы `Outbound calling` и `Inbound and Outbound SMS`.
 
-В нашем примере мы выбрали тип номера `Toll-free` и план `Outbound calling`.
-
-:::image type="content" source="../media/manage-phone-azure-portal-select-plans.png" alt-text="Снимок экрана: представление Выбор планов.":::
-
-### <a name="declare-purpose"></a>Объявление назначения
-
-Затем мастер спросит, для чего вам этот номер. Мы собираем эти сведения, чтобы обеспечить надлежащее налогообложение и применение правил аварийных вызовов.
-
-:::image type="content" source="../media/quickstart-search-and-acquire-bot-or-human.png" alt-text="Снимок экрана: выбор режима общения с ботом или человеком при получении номера телефона.":::
+:::image type="content" source="../media/manage-phone-azure-portal-select-plans.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 Нажмите кнопку `Next: Numbers` в нижней части страницы, чтобы настроить номера телефонов, которые вы хотите подготовить.
 
@@ -74,14 +64,14 @@ ms.locfileid: "90946052"
 
 На странице `Numbers` можно настроить номера телефонов, которые вы хотите подготовить.
 
-:::image type="content" source="../media/manage-phone-azure-portal-select-numbers-start.png" alt-text="Снимок экрана: страница выбора номеров.":::
+:::image type="content" source="../media/manage-phone-azure-portal-select-numbers-start.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 > [!NOTE]
 > В этом кратком руководстве показан поток настройки для номеров с типом `Toll-free`. Если вы выбрали номер с типом `Geographic`, процесс может немного отличаться, но результат будет таким же.
 
 Выберите `Area code` в списке доступных кодов областей и введите количество номеров для подготовки, а затем нажмите `Search`, чтобы найти номера, соответствующие вашим требованиям. Отобразятся номера телефонов, соответствующие вашим потребностям, а также сведения о ежемесячной плате.
 
-:::image type="content" source="../media/manage-phone-azure-portal-found-numbers.png" alt-text="Снимок экрана: страница выбора номеров, где отображаются зарезервированные номера.":::
+:::image type="content" source="../media/manage-phone-azure-portal-found-numbers.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 > [!NOTE]
 > Доступность зависит от типа номера, расположения и плана, которые вы выбрали.
@@ -98,7 +88,7 @@ ms.locfileid: "90946052"
 
 Наконец, подтвердите выбор, щелкнув `Place order` в нижней части страницы.
 
-:::image type="content" source="../media/manage-phone-azure-portal-get-numbers-summary.png" alt-text="Снимок экрана: страница сводки, где представлены тип номера, возможности, номера телефонов и общая ежемесячная плата.":::
+:::image type="content" source="../media/manage-phone-azure-portal-get-numbers-summary.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 ## <a name="find-your-phone-numbers-on-the-azure-portal"></a>Поиск номеров телефонов на портале Azure
 
@@ -106,18 +96,25 @@ ms.locfileid: "90946052"
 
 :::image type="content" source="../media/manage-phone-azure-portal-start.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
-Выберите в меню вкладку "Номера телефонов", чтобы управлять номерами телефонов.
+Выберите в меню колонку "Номера телефонов", чтобы управлять номерами телефонов.
 
-:::image type="content" source="../media/manage-phone-azure-portal-phones.png" alt-text="Снимок экрана: страница номеров телефонов ресурса Служб коммуникации.":::
+:::image type="content" source="../media/manage-phone-azure-portal-phones.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
 
 > [!NOTE]
 > Может пройти несколько минут, пока выбранные для подготовки номера телефонов отобразятся на этой странице.
+
+### <a name="customizing-phone-number-plans"></a>Настройка планов номеров телефонов
+На странице `Numbers` можно выбрать номер телефона, щелкнув номер, для которого вы хотите настроить план.
+
+:::image type="content" source="../media/manage-phone-azure-portal-capability-update.png" alt-text="Снимок экрана: главная страница ресурса Служб коммуникации.":::
+
+Выберите возможности из списка доступных возможностей для вызовов и отправки SMS, а затем нажмите `Confirm`, чтобы применить выбор.
 
 ## <a name="troubleshooting"></a>Диагностика
 
 Распространенные вопросы и проблемы.
 
-- Покупка телефонных номеров сейчас поддерживается только в США и Канаде. Регион определяется по адресу выставления счетов в той подписке, с которой связан ресурс. Сейчас вы не можете переместить ресурс в другую подписку.
+- Покупка телефонных номеров сейчас поддерживается только в США. Регион определяется по адресу выставления счетов в той подписке, с которой связан ресурс. Сейчас вы не можете переместить ресурс в другую подписку.
 
 - При удалении номер телефона не будет освобожден или доступен для повторного приобретения до окончания периода выставления счетов.
 

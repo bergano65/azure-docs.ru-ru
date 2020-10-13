@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 09/21/2020
-ms.openlocfilehash: 75f68a4de2db0c4c9102a58da12d80cc273a6e80
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: b986832e5febbb2a0f88b65213f9acf0dd4c5ab5
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931178"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996886"
 ---
 # <a name="automatic-registration-with-sql-vm-resource-provider"></a>Автоматическая регистрация с помощью поставщика ресурсов виртуальной машины SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -77,7 +77,26 @@ Unregister-AzProviderFeature -FeatureName BulkRegistration -ProviderNamespace Mi
 
 ---
 
+## <a name="enable-for-multiple-subscriptions"></a>Включить для нескольких подписок
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Функцию автоматической регистрации можно включить для нескольких подписок Azure с помощью PowerShell. 
+
+Для этого выполните указанные ниже действия.
+
+1. Сохраните [этот скрипт](https://github.com/microsoft/tigertoolbox/blob/master/AzureSQLVM/RegisterSubscriptionsToSqlVmAutomaticRegistration.ps1) в `.ps1` файл, например `EnableBySubscription.ps1` . 
+1. Перейдите к месту сохранения скрипта с помощью административной командной строки или окна PowerShell. 
+1. Подключитесь к Azure ( `az login` ).
+1. Выполните скрипт, передав идентификаторов подписки в качестве параметров, таких как   
+   `.\EnableBySubscription.ps1 -SubscriptionList SubscriptionId1,SubscriptionId2`
+
+   Пример: 
+
+   ```console
+   .\EnableBySubscription.ps1 -SubscriptionList a1a1a-aa11-11aa-a1a1-a11a111a1,b2b2b2-bb22-22bb-b2b2-b2b2b2bb
+   ```
+
+Ошибки регистрации, которые не удалось зарегистрировать, хранятся в `RegistrationErrors.csv` том же каталоге, в котором был сохранен и выполнен `.ps1` скрипт. 
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Обновите свой режим управления до [полной](sql-vm-resource-provider-register.md#upgrade-to-full) , чтобы воспользоваться преимуществами полного набора функций, предоставляемых поставщиком ресурсов ВИРТУАЛЬНОЙ машины SQL. 

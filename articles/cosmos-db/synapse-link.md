@@ -5,14 +5,14 @@ author: Rodrigossz
 ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 10/12/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 0e02f0bf1bb9646a644a40279a8bae930de34c0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b36f4e292eb4bcae424d463f76e8a69eefd2968
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568001"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91995523"
 ---
 # <a name="what-is-azure-synapse-link-for-azure-cosmos-db-preview"></a>Что такое Azure Synapse Link для Azure Cosmos DB (предварительная версия)?
 
@@ -116,7 +116,7 @@ Synapse Link не рекомендуется, если вы ищете трад�
 
 ## <a name="limitations"></a>Ограничения
 
-* Ссылка Azure синапсе поддерживается для API Azure Cosmos DB SQL (Core) и API Azure Cosmos DB для MongoDB.
+* Ссылка на Azure синапсе для Azure Cosmos DB поддерживается для API SQL и Azure Cosmos DB API для MongoDB. Он не поддерживается для API Gremlin и API таблиц. Поддержка API Cassandra доступна в частном предварительной версии. Дополнительные сведения можно получить у команды Azure синапсе Link по адресу cosmosdbsynapselink@microsoft.com .  
 
 * Сейчас аналитическое хранилище можно включить только для новых контейнеров. Чтобы использовать аналитическое хранилище для существующих контейнеров, перенесите данные из существующих контейнеров в новые контейнеры с помощью [Azure Cosmos DB средств миграции](cosmosdb-migrationchoices.md). Вы можете включить ссылку синапсе на новых и существующих учетных записях Azure Cosmos DB.
 

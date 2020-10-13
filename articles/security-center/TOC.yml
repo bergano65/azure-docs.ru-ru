@@ -50,7 +50,7 @@
           displayName: 'KV, akv'
           href: defender-for-key-vault-introduction.md
         - name: Azure Defender для Kubernetes
-          displayName: 'clusters, k8s'
+          displayName: 'clusters, k8s, aks'
           href: defender-for-kubernetes-introduction.md
         - name: Azure Defender для реестров контейнеров
           displayName: 'ACR, registry, images'
@@ -58,7 +58,7 @@
         - name: Дополнительные средства защиты от угроз
           href: other-threat-protections.md
     - name: Функции обеспечения безопасности контейнеров в Центре безопасности
-      displayName: 'kubernetes, aks, acr, registries'
+      displayName: 'kubernetes, aks, acr, registries, k8s'
       href: container-security.md
     - name: Цены
       href: security-center-pricing.md
@@ -79,6 +79,8 @@
           href: quickstart-onboard-gcp.md
     - name: Автоматизация подключения с помощью PowerShell
       href: security-center-powershell-onboarding.md
+    - name: Включение Центра безопасности для группы управления
+      href: onboard-management-group.md
     - name: Настройка сбора данных
       href: security-center-enable-data-collection.md
     - name: Настройка уведомлений по электронной почте
@@ -140,8 +142,6 @@
             - name: Автоматизация ответов рекомендации
               displayName: workflow
               href: workflow-automation.md
-            - name: Экспорт рекомендаций
-              href: continuous-export.md
             - name: Исключение ресурса из рекомендации
               href: exempt-resource.md
     - name: Оповещения в Azure Defender
@@ -180,6 +180,9 @@
             - name: Проверка и устранение уязвимостей на виртуальных машинах
               displayName: 'qualys, rapid7, vulnerability'
               href: remediate-vulnerability-findings-vm.md
+            - name: Отключение результатов оценки для определенных уязвимостей
+              displayName: 'qualys, rapid7, vulnerability'
+              href: remediate-vulnerability-findings-vm.md#disable-specific-findings-preview
         - name: Защита портов управления с помощью JIT-доступа к виртуальной машине
           items:
             - name: Общие сведения о JIT-доступе к виртуальной машине
@@ -213,6 +216,15 @@
     - name: Использование Azure Defender для реестров контейнеров
       displayName: 'ACR, registry, images'
       href: defender-for-container-registries-usage.md
+    - name: Экспорт оповещений и рекомендаций
+      items:
+        - name: 'Экспорт в SIEM, SOAR или ITSM'
+          displayName: 'continuous, SIEM, SOAR, Splunk, QRadar, ServiceNow, ArcSight, Monitor, Graph, Sentinel,'
+          href: export-to-siem.md
+        - name: Экспорт в рабочую область Log Analytics или концентратор событий Azure
+          href: continuous-export.md
+        - name: Скачивание отчета в формате CSV для всех оповещений
+          href: continuous-export.md#manual-one-time-export-of-alerts-and-recommendations
     - name: Управление оповещениями в Azure Defender
       items:
         - name: Управление оповещениями системы безопасности
@@ -226,16 +238,14 @@
           href: security-center-incident.md
         - name: Создание отчетов по аналитике угроз
           href: security-center-threat-report.md
-        - name: Проверка конфигурации оповещений (тестовый файл EICAR)
+        - name: Проверка конфигурации оповещений
+          displayname: 'eicar, Kubernetes, Linux'
           href: security-center-alert-validation.md
         - name: Автоматизации реагирования на оповещения
           displayName: workflow
           href: workflow-automation.md
-        - name: Экспорт оповещений
-          displayName: continuous
-          href: continuous-export.md
     - name: Защита рабочих нагрузок Kubernetes
-      displayName: 'k8s, containers'
+      displayName: 'k8s, containers, aks'
       href: kubernetes-workload-protections.md
     - name: Управление пользовательскими данными исследования
       href: security-center-investigation-user-data.md

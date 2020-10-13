@@ -1,7 +1,7 @@
 ---
-title: Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт | Azure
+title: Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт | Azure
 titleSuffix: Microsoft identity platform
-description: Узнайте, как реализовать вход с помощью учетной записи Майкрософт в веб-приложении ASP.NET Core с помощью OpenID Connect
+description: Из этого краткого руководства вы узнаете, как реализовать вход с помощью учетной записи Майкрософт в веб-приложении ASP.NET Core с помощью OpenID Connect.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,18 +12,23 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 1d31fc70aaf8449ed8bdafe4e290113e20865906
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: bf80a15131a8808359d21d5a9655ef04db236178
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90902363"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613498"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
 В этом кратком руководстве вы на конкретном примере кода изучите, как веб-приложение ASP.NET Core позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD). (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
 
 > [!div renderon="docs"]
+> ## <a name="prerequisites"></a>Предварительные требования
+>
+> * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) или [Visual Studio Code](https://code.visualstudio.com/)
+> * [Пакет SDK для .NET Core 3.1 +](https://dotnet.microsoft.com/download)
+>
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
 > У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
 > * [Экспресс-способ] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
@@ -108,7 +113,7 @@ ms.locfileid: "90902363"
 >
 > После предоставления согласия на запрошенные разрешения в приложении отобразится оповещение об успешном входе с использованием учетных данных Azure Active Directory.
 >
-> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-02-signed-in.png" alt-text="Веб-браузер, отображающий работающее веб-приложение и вошедшего в него пользователя":::
+> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-02-signed-in.png" alt-text="Диалоговое окно согласия с разрешениями, запрашиваемыми приложением от > пользователя":::
 
 ## <a name="more-information"></a>Дополнительные сведения
 

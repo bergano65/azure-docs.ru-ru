@@ -1,26 +1,18 @@
 ---
 title: Azure Monitor для поставщиков решений SAP | Документация Майкрософт
 description: Эта статья содержит ответы на часто задаваемые вопросы о Azure Monitor для поставщиков решений SAP.
-services: virtual-machines-windows,virtual-network,storage
-documentationcenter: saponazure
 author: rdeltcheva
-manager: juergent
-editor: ''
-tags: azure-resource-manager
-keywords: ''
-ms.assetid: 5e514964-c907-4324-b659-16dd825f6f87
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
-ms.workload: infrastructure-services
 ms.date: 06/30/2020
 ms.author: radeltch
-ms.openlocfilehash: e18d0b84e987e6c36f3f3b4215743025cac76d45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.reviewer: cynthn
+ms.openlocfilehash: 235572cc4d697e7488765c464b12f9349c1e012b
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987266"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91994167"
 ---
 # <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Azure Monitor для поставщиков решений SAP (Предварительная версия)
 
@@ -33,7 +25,7 @@ ms.locfileid: "90987266"
 Клиенты также могут настроить несколько поставщиков определенного типа поставщика, чтобы повторно использовать один и тот же ресурс SAP Monitor и связанную управляемую группу. Дополнительные сведения об управляемой группе ресурсов. Для общедоступной предварительной версии поддерживаются следующие типы поставщиков:   
 - SAP HANA
 - Кластер с высоким уровнем доступности
-- Microsoft SQL Server
+- Microsoft SQL Server
 
 ![Azure Monitor для поставщиков решений SAP](./media/azure-monitor-sap/azure-monitor-providers.png)
 
@@ -79,7 +71,7 @@ ms.locfileid: "90987266"
 
 ![Azure Monitor для поставщиков решений SAP — SQL](./media/azure-monitor-sap/azure-monitor-providers-sql.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте первую Azure Monitor для ресурса решений SAP.
 - У вас возникли вопросы по Azure Monitor для решений SAP? Проверка раздела " [вопросы и ответы](./azure-monitor-faq.md) "

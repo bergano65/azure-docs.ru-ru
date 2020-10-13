@@ -1,6 +1,7 @@
 ---
-title: Добавление входа с помощью OIDC в веб-приложение Node.js — платформа удостоверений Майкрософт | Azure
-description: Узнайте, как реализовать проверку подлинности в веб-приложении Node.js с помощью подключения OpenID.
+title: Краткое руководство. Добавление возможности входа пользователей в веб-приложение Node.js | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как реализовать проверку подлинности в веб-приложении Node.js с помощью OpenID Connect.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, devx-track-js
-ms.openlocfilehash: 8e42d906cce65cf51d6359343bc4f218b94a05fb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 34baa054104a6cf2c78864cc2827b16c1eedb084
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91257696"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91613311"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Node.js с помощью OpenID Connect
 
@@ -24,11 +25,8 @@ ms.locfileid: "91257696"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для запуска этого примера потребуется:
-
-* Установите Node.js из http://nodejs.org/
-
-* [Учетная запись Майкрософт](https://www.outlook.com) или [Программа для разработчиков Microsoft 365](/office/developer-program/office-365-developer-program).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+- [Node.js](https://nodejs.org/en/download/).
 
 ## <a name="register-your-application"></a>Регистрация приложения
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.

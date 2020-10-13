@@ -6,18 +6,18 @@ author: lgayhardt
 ms.custom: devx-track-java
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: f0583af05ae7d8e365b50610bfb812ac7764f223
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12497d3ac86888ed861e8d5f655f45c8cbe4b6e3
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90602471"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996161"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
 
 > [!IMPORTANT]
-> Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).
+> Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](./java-in-process-agent.md).
 
 В этом кратком руководстве вы используете пакет SDK для Application Insights для инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности, диагностики проблем производительности и исключений, а также для написания кода, который позволяет отслеживать действия пользователей с приложением.
 
@@ -199,7 +199,7 @@ Application Insights — это расширяемая служба аналит
 
 ## <a name="azure-app-service-aks-vms-config"></a>Служба приложений Azure, AKS, Конфигурация виртуальных машин
 
-Лучший и самый простой подход к мониторингу приложений, работающих на любом из поставщиков ресурсов Azure, — использовать Application Insights автоматическое инструментирование с помощью [агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).
+Лучший и самый простой подход к мониторингу приложений, работающих на любом из поставщиков ресурсов Azure, — использовать Application Insights автоматическое инструментирование с помощью [агента Java 3,0](./java-in-process-agent.md).
 
 
 ## <a name="exceptions-and-request-failures"></a>Исключения и ошибки запросов
@@ -296,7 +296,7 @@ Application Insights может тестировать ваш веб-сайт ч
 ## <a name="questions-problems"></a>У вас появились вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
@@ -313,4 +313,3 @@ Application Insights может тестировать ваш веб-сайт ч
 [javalogs]: java-trace-logs.md
 [metrics]: ../platform/metrics-charts.md
 [usage]: javascript.md
-

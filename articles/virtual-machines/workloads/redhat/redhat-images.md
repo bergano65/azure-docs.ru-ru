@@ -1,23 +1,18 @@
 ---
 title: Обзор образов Red Hat Enterprise Linux в Azure
 description: Сведения о Red Hat Enterprise Linux образах в Microsoft Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: asinn826
-manager: BorisB2015
-editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 07444e32d1808f928de418dd898aa1fa30703c90
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.reviewer: cynthn
+ms.openlocfilehash: 46504f7d6d3a989119a3c851fc029bdf4494e01f
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977635"
+ms.locfileid: "91994309"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Общие сведения об образах Red Hat Enterprise Linux
 
@@ -150,7 +145,7 @@ RedHat:RHEL:7.6:7.6.2019102813
 RHEL 7.4      |RedHat: RHEL: 7.4:7.4.2019041718 | Образы, опубликованные 2019 апреля и более поздних версий, по умолчанию ЕУС.|
 RHEL 7.5      |RedHat: RHEL: 7.5:7.5.2019060305 | Изображения, опубликованные 2019 июня и более поздних версий, по умолчанию ЕУС. |
 RHEL 7.6      |RedHat: RHEL: 7.6:7.6.2019052206 | Опубликованные образы 2019 и более поздних версий по умолчанию ЕУС. |
-RHEL 8,0      |Недоступно                            | Нет ЕУС, доступных по Red Hat.                               |
+RHEL 8,0      |Н/Д                            | Нет ЕУС, доступных по Red Hat.                               |
 
 ### <a name="update-services-for-sap"></a>Обновление служб для SAP
 

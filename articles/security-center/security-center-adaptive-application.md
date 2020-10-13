@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: 12140b71f8ef720a9e48b486a43e683b5766d102
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3f3aad08266337756038dfa6ac6ff0c9afe093c
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91439017"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996807"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -48,7 +48,7 @@ ms.locfileid: "91439017"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
@@ -150,6 +150,23 @@ ms.locfileid: "91439017"
 1. Чтобы применить изменения, нажмите кнопку **сохранить**.
 
 
+## <a name="review-and-edit-a-groups-settings"></a>Просмотр и изменение параметров группы
+
+1. Чтобы просмотреть сведения и параметры группы, выберите **Параметры группы** .
+
+    На этой панели отображается имя группы (которую можно изменить), тип ОС, расположение и другие релевантные сведения.
+
+    :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-group-settings.png" alt-text="Открытие адаптивных элементов управления приложениями на панели мониторинга Azure" lightbox="./media/security-center-adaptive-application/adaptive-application-group-settings.png":::
+
+    > [!IMPORTANT]
+    > Параметр **принудительного применения** в параметрах режим защиты файлов неактивен во всех сценариях. В настоящее время параметры принудительной установки недоступны. 
+    >
+    > :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-modes.png" alt-text="Открытие адаптивных элементов управления приложениями на панели мониторинга Azure":::
+
+1. При необходимости измените имя группы или режим защиты типа файла.
+
+1. Выберите **Применить** и **сохранить**.
+
 
 
 ## <a name="respond-to-the-allowlist-rules-in-your-adaptive-application-control-policy-should-be-updated-recommendation"></a>Ответьте на запрос "правила разрешенных в политике адаптивного управления приложениями".
@@ -225,7 +242,7 @@ ms.locfileid: "91439017"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как использовать адаптивное управление приложениями в центре безопасности Azure для определения списков разрешенных приложений, выполняющихся на компьютерах с Azure и без Azure. Дополнительные сведения о других функциях защиты облачной рабочей нагрузки центра безопасности см. в следующих статьях:
 
 * [Основные сведения о JIT-доступе к виртуальной машине](just-in-time-explained.md)

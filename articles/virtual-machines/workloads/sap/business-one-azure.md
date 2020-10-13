@@ -1,26 +1,18 @@
 ---
 title: Использование SAP Business One на виртуальных машинах Azure | Документация Майкрософт
 description: Использование SAP Business One в Azure.
-services: virtual-machines-linux,virtual-machines-windows
-documentationcenter: ''
 author: msjuergent
-manager: patfilot
-editor: ''
-tags: azure-resource-manager
-keywords: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
 ms.date: 07/15/2018
 ms.author: juergent
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7ea10ee5b6fb14558e6bb93b83da0d5c46cff330
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.reviewer: cynthn
+ms.openlocfilehash: caabaa6fbf65787f90c0033a06af26996c2388f2
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977652"
+ms.locfileid: "91994095"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Использование SAP Business One на виртуальных машинах Azure
 Этот документ содержит руководство для развертывания SAP Business One на виртуальных машинах Azure. Эта документация не заменяет документацию по установке Business One для SAP. Документация должна содержать основные принципы планирования и развертывания инфраструктуры Azure для запуска приложений Business One.
