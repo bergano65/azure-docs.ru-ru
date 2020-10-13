@@ -6,8 +6,12 @@
       href: bastion-overview.md
 - name: Краткие руководства
   items:
-    - name: Создание узла-бастиона в разделе параметров виртуальной машины
+    - name: Создание узла с использованием параметров виртуальной машины
       href: quickstart-host-portal.md
+- name: Учебники
+  items:
+    - name: Создание узла и его подключение к виртуальной машине Windows
+      href: tutorial-create-host-portal.md
 - name: Основные понятия
   items:
     - name: Поддержка дистанционной работы
@@ -16,7 +20,7 @@
       href: work-remotely-support.md
 - name: Практические руководства
   items:
-    - name: Создание узла-бастиона
+    - name: Создание узла
       items:
         - name: Портал Azure
           href: bastion-create-host-portal.md
