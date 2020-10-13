@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: f37b453a294a0d0a7b9a99bfebe8f3eff09e8956
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89291200"
 ---
 # <a name="azure-storage-accounts"></a>Учетные записи хранения Azure
@@ -70,6 +70,6 @@ ms.locfileid: "89291200"
 
 Службы мультимедиа Azure не поддерживают учетные записи хранения с включенным брандмауэром хранилища Azure или [частными конечными точками](../../storage/common/storage-network-security.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о присоединении учетной записи хранения к учетной записи Служб мультимедиа см. в статье [Краткое руководство по созданию учетной записи Служб мультимедиа Azure](./create-account-howto.md).

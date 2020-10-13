@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
 ms.openlocfilehash: b6416438b8c970f4a92f73004e67f90a28210500
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91335472"
 ---
 # <a name="api-management-policies"></a>Политики управления API
@@ -82,7 +82,7 @@ ms.locfileid: "91335472"
     -  [Отправить сообщение в Pub/подраздел](api-management-dapr-policies.md#pubsub) — использует среду выполнения ДАПР для публикации сообщения в разделе Публикация и подписка. Опубликуйте-Subscribe-MESSAGING/readme. md), чтобы узнать больше о публикации и подписку на сообщения в ДАПР.
     -  [Выходная привязка триггера](api-management-dapr-policies.md#bind) — использует среду выполнения ДАПР для вызова внешней системы через выходную привязку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)

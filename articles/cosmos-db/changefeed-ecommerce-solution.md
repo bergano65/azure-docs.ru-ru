@@ -9,10 +9,10 @@ ms.date: 05/28/2019
 ms.author: sngun
 ms.custom: devx-track-java
 ms.openlocfilehash: b1de0fa2e6601e4350b52caea32f8bc379909f85
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91356372"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Использование канала изменений Azure Cosmos DB для визуализации аналитики данных в реальном времени
@@ -170,7 +170,7 @@ ms.locfileid: "91356372"
 
 3. Добавьте имена **коллекции** и **базы данных**. (Эти имена должны быть **changefeedlabcollection** и **changefeedlabdatabase**, если вы не решите назвать их по-другому.)
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/update-connection-string.png" alt-text="Обновление строк подключения":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/update-connection-string.png" alt-text="Визуальное представление проекта":::
  
 4. Сохраните изменения во всех отредактированных файлах.  
 
@@ -180,7 +180,7 @@ ms.locfileid: "91356372"
 
 7. Если вы перешли к [портал Azure](https://portal.azure.com/) , а затем к учетной записи Cosmos DB в группе ресурсов, то для **Обозреватель данных**вы увидите случайные данные, импортированные в **чанжефидлабколлектион** .
  
-   :::image type="content" source="./media/changefeed-ecommerce-solution/data-generated-in-portal.png" alt-text="Данные, созданные на портале":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/data-generated-in-portal.png" alt-text="Визуальное представление проекта":::
 
 ## <a name="set-up-a-stream-analytics-job"></a>Настройка задания Stream Analytics
 
@@ -190,7 +190,7 @@ Azure Stream Analytics — это полностью управляемая об
 
 2. Выберите **Входные данные**, как показано ниже.  
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/create-input.png" alt-text="Создание входных данных":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/create-input.png" alt-text="Визуальное представление проекта":::
 
 3. Выберите **+ Добавить потоковый вход**. В раскрывающемся меню выберите пункт **Концентратор событий**.  
 
@@ -222,20 +222,7 @@ Azure Stream Analytics — это полностью управляемая об
 
 8. Затем вернитесь к **streamjob1** и выберите **Изменить запрос**.
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/edit-query.png" alt-text="Изменить запрос":::
- 
-9. Вставьте следующий запрос в окно запроса. Запрос **СРЕДНЯЯ ЦЕНА** вычисляет среднюю цену всех товаров, которые просматриваются пользователями, среднюю цену всех товаров, которые добавляются в корзины пользователей, и среднюю цену всех товаров, которые они покупают. Эта метрика может помочь компаниям электронной коммерции решить, по каким ценам продавать товары и в какие ресурсы инвестировать. Например, если средняя цена просматриваемых товаров намного выше средней цены купленных товаров, тогда компания может захотеть добавить менее дорогие товары в свой ассортимент.
-
-   ```sql
-   /*AVERAGE PRICE*/      
-   SELECT System.TimeStamp AS Time, Action, AVG(Price)  
-    INTO averagePriceOutput  
-    FROM input  
-    GROUP BY Action, TumblingWindow(second,5) 
-   ```
-10. Затем нажмите кнопку **Сохранить** в верхнем левом углу.  
-
-11. Теперь вернитесь к **streamjob1** и нажмите кнопку **Запуск** в верхней части страницы. Azure Stream Analytics может потребоваться несколько минут, но, в конце концов, вы увидите, что состояние изменилось с "Запуск" на "Выполняется".
+   :::image type="content" source="./media/changefeed-ecommerce-solution/edit-query.png" alt-text="Визуальное представление проекта" на "Выполняется".
 
 ## <a name="connect-to-power-bi"></a>Подключение к Power BI
 
@@ -255,7 +242,7 @@ Power BI — набор средств бизнес-аналитики для а
 
 7. Теперь, если вы хотите визуализировать больше метрики, можете вернуться к **streamjob1** и создать еще три набора выходных данных со следующими полями.
 
-   а. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
+   a. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
    b. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
    c. **Выходной псевдоним** — uniqueVisitorCountOutput, имя набора данных — uniqueVisitorCount, имя таблицы — uniqueVisitorCount.
 
@@ -315,7 +302,7 @@ Power BI — набор средств бизнес-аналитики для а
 
    Так выглядит пример панели мониторинга с этими диаграммами:
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/visualizations.png" alt-text="На снимке экрана показан пример панели мониторинга с диаграммами с средней ценой за действия, уникальные посетители, доходы и пять ведущих приобретенных товаров.":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/visualizations.png" alt-text="Визуальное представление проекта":::
 
 ## <a name="optional-visualize-with-an-e-commerce-site"></a>Дополнительно: визуализация с использованием сайта электронной коммерции
 
@@ -329,13 +316,13 @@ Power BI — набор средств бизнес-аналитики для а
 
 2. Выберите коллекцию **topItems** и в разделе **Scale and Settings** (Масштаб и параметры) задайте значение **30 секунд** для **Time to Live** (Срок жизни), чтобы topItems обновлялся каждые 30 секунд.
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/time-to-live.png" alt-text="Срок жизни":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/time-to-live.png" alt-text="Визуальное представление проекта":::
 
 3. Чтобы заполнить коллекцию **topItems** наиболее часто приобретаемыми товарами, перейдите к **streamjob1** и добавьте новые **выходные данные**. Выберите **Cosmos DB**.
 
 4. Заполните обязательные поля, как показано ниже.
 
-   :::image type="content" source="./media/changefeed-ecommerce-solution/cosmos-output.png" alt-text="Выходные данные Cosmos":::
+   :::image type="content" source="./media/changefeed-ecommerce-solution/cosmos-output.png" alt-text="Визуальное представление проекта":::
  
 5. Если вы добавили дополнительный запрос TOP 5 в предыдущую часть задания, перейдите к части 5a. В противном случае перейдите к части 5b.
 
@@ -393,6 +380,6 @@ Power BI — набор средств бизнес-аналитики для а
 
 Чтобы удалить ресурсы, созданные в ходе этой лабораторной работы, перейдите к группе ресурсов на [портал Azure](https://portal.azure.com/), а затем выберите **Удалить группу ресурсов** в меню в верхней части страницы и следуйте инструкциям.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
   
 * Дополнительные сведения о канале изменений см. в статье [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md). 

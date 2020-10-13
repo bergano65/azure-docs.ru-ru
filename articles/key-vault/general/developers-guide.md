@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a04435b1e2feb537231bb80d2777b9ea2599c241
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6564804b7003b5e1c166868dae1bfaac7bd28fa5
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91812409"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940470"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -52,17 +52,27 @@ ms.locfileid: "91812409"
 Key Vault использует проверку подлинности Azure AD, которая требует наличия субъекта безопасности Azure AD для предоставления доступа. Субъект безопасности Azure AD может быть пользователем, субъектом-службой приложения, [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md)или группой участников безопасности любого типа.
 
 ### <a name="authentication-best-practices"></a>Рекомендации по проверке подлинности
+
 Рекомендуется использовать управляемое удостоверение для приложений, развернутых в Azure. Если вы используете службы Azure, которые не поддерживают управляемое удостоверение или если приложения развертываются локально, [субъект-служба с сертификатом](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) является возможной альтернативой. В этом случае сертификат должен храниться в Key Vault и поворачиваться часто. Субъект-службу с секретом можно использовать для сред разработки и тестирования, а также локально или в Cloud Shell с помощью субъекта пользователя.
 
-Описанные выше сценарии проверки подлинности поддерживаются клиентской библиотекой удостоверений Azure и интегрированы с пакетами SDK для Key Vault. Библиотеку удостоверений Azure можно использовать в разных средах и платформах без изменения кода. Удостоверение Azure также автоматически получает маркер проверки подлинности из входа в Azure с помощью Azure CLI, Visual Studio, Visual Studio Code и других. 
+Рекомендуемые субъекты безопасности на среду:
+- **Рабочая среда**:
+  - Управляемое удостоверение или субъект-служба с сертификатом
+- **Среды тестирования и разработки**:
+  - Управляемое удостоверение, субъект-служба с сертификатом или субъектом-службой с секретом
+- **Локальная разработка**:
+  - Субъект-пользователь или субъект-служба с секретом
 
-Дополнительные сведения см. в разделе: 
+Описанные выше сценарии проверки подлинности поддерживаются **клиентской библиотекой удостоверений Azure** и интегрированы с пакетами sdk для Key Vault. Библиотеку удостоверений Azure можно использовать в разных средах и платформах без изменения кода. Удостоверение Azure также автоматически получает маркер проверки подлинности из входа в Azure с помощью Azure CLI, Visual Studio, Visual Studio Code и других. 
 
+Дополнительные сведения о либарари Azure Identity Client см. в следующих статьях:
+
+### <a name="azure-identity-client-libraries"></a>Клиентские библиотеки Azure Identity
 | .NET | Python | Java | JavaScript |
 |--|--|--|--|
 |[Пакет SDK для Azure Identity .NET](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme)|[Пакет SDK для удостоверений Azure Python](https://docs.microsoft.com/python/api/overview/azure/identity-readme)|[Пакет SDK для Azure Identity Java](https://docs.microsoft.com/java/api/overview/azure/identity-readme)|[Azure Identity SDK JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme)|     
 
-Проверка подлинности для Key Vault в приложениях:
+Руководства по проверке подлинности в Key Vault в приложениях см. в следующих статьях:
 - [Проверка подлинности Key Vault в приложении, размещенном на виртуальной машине в .NET](https://docs.microsoft.com/azure/key-vault/general/tutorial-net-virtual-machine)
 - [Аутентификация в Key Vault в приложении, размещенном на виртуальной машине в Python](https://docs.microsoft.com/azure/key-vault/general/tutorial-python-virtual-machine)
 - [Проверка подлинности в Key Vault со службой приложений](https://docs.microsoft.com/azure/key-vault/general/tutorial-net-create-vault-azure-web-app)
@@ -76,14 +86,14 @@ Key Vault использует проверку подлинности Azure AD,
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.keys)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-keys/)|
+|[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|Н/Д|[Ссылки](/dotnet/api/azure.security.keyvault.keys)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-keys/)|
 
 **Интерфейсы API и пакеты SDK для сертификатов**
 
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)|
+|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Н/Д|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)|
 
 **Секреты API и пакеты SDK**
 

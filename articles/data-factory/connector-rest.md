@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: jingwang
 ms.openlocfilehash: 7b6fa2395e81089e8b4523929a4a7a583b0788a2
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91360775"
 ---
 # <a name="copy-data-from-a-rest-endpoint-by-using-azure-data-factory"></a>Копирование данных из конечной точки REST с помощью Фабрики данных Azure
@@ -179,7 +179,7 @@ ms.locfileid: "91360775"
 
 Если вы настраиваете `requestMethod` , `additionalHeaders` `requestBody` и `paginationRules` в наборе данных, он по-прежнему поддерживается как есть, хотя в дальнейшем предлагается использовать новую модель в источнике действия.
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -323,7 +323,7 @@ ms.locfileid: "91360775"
 | Headers.*заголовок_ответа* ИЛИ Headers['заголовок_ответа'] | "response_header" является определяемым пользователем, который ссылается на одно имя заголовка в текущем HTTP-ответе, значение которого будет использоваться для выдаче следующего запроса. |
 | Выражение JSONPath, начинающееся с $ (представляет корневую часть текста ответа) | Текст ответа должен содержать только один объект JSON. Выражение JSONPath должно возвращать одно значение-примитив, которое будет использоваться для выдачи следующего запроса. |
 
-**Пример.**
+**Пример**.
 
 Facebook Graph API возвращает ответ со следующей структурой. В этом случае URL-адрес следующей странице представлен в ***paging.next***.
 

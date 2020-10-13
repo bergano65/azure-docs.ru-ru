@@ -12,10 +12,10 @@ ms.date: 08/27/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 4f6b09061a4aa98824e176af55efcedfab3df48c
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89051950"
 ---
 # <a name="tutorial-for-configuring-hypr-with-azure-active-directory-b2c"></a>Руководство по настройке ХИПР с помощью Azure Active Directory B2C
@@ -77,11 +77,11 @@ ms.locfileid: "89051950"
 
 3. Выберите **запустить поток пользователя** и выберите параметры:
 
-   А. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
+   a. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
 
-   Б. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
+   b. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
 
-   В. Выберите **Выполнить поток пользователя**.
+   c. Выберите **Выполнить поток пользователя**.
 
 4. Последовательно выберите процесс регистрации и создайте учетную запись.
 

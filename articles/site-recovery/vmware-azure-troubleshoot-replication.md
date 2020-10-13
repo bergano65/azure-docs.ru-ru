@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/2/2019
 ms.author: mayg
 ms.openlocfilehash: 8b44a1d6119cc658b9460e0a52fa0629f759964a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91336211"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
@@ -146,7 +146,7 @@ Site Recovery использует [сервер обработки](vmware-phys
 #### <a name="cause-3-known-issue-in-sql-server-2016-and-2017"></a>Причина 3. Известная проблема в SQL Server 2016 и 2017
 **Как исправить.** См. [статью базы знаний](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component).
 
-#### <a name="cause-4-app-consistency-not-enabled-on-linux-servers"></a>Причина 4. согласованность приложений не включена на серверах Linux
+#### <a name="cause-4-app-consistency-not-enabled-on-linux-servers"></a>Причина 4. App-Consistency не включена на серверах Linux
 **Как исправить** : Azure Site Recovery для операционной системы Linux поддерживает пользовательские сценарии для обеспечения согласованности приложений. Пользовательский скрипт с параметрами pre и POST будет использоваться агентом мобильности Azure Site Recovery для согласованности приложений. [Ниже](./site-recovery-faq.md#replication) приведены действия по его включению.
 
 ### <a name="more-causes-due-to-vss-related-issues"></a>Другие причины, связанные с проблемами VSS

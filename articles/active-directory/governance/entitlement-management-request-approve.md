@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca42ddbc648f7c342b1cd649c19b77df803257d8
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90979816"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD
@@ -89,7 +89,7 @@ ms.locfileid: "90979816"
 
     Если ни один из настроенных утверждающих не может утвердить или отклонить запрос доступа, срок действия запроса истечет через настроенную длительность запроса. Пользователь получает оповещение о том, что срок действия запроса на доступ истек, и необходимо повторно отправить запрос на доступ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Запрос доступа к пакету Access](entitlement-management-request-access.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

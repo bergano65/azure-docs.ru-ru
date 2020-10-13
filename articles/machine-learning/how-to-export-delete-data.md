@@ -12,10 +12,10 @@ ms.date: 04/24/2020
 ms.topic: conceptual
 ms.custom: how-to
 ms.openlocfilehash: e847f62c2ae3d1d68c39685a38b67e1d0ada8c2f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91251020"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения
@@ -50,7 +50,7 @@ ms.locfileid: "91251020"
 
 Документы журнала выполнения, которые могут содержать личные сведения о пользователе, хранятся в учетной записи хранения в хранилище BLOB-объектов во вложенных папках `/azureml` . Вы можете скачать и удалить данные с портала.
 
-:::image type="content" source="media/how-to-export-delete-data/storage-account-folders.png" alt-text="Снимок экрана: Каталог azureml в учетной записи хранения на портале":::
+:::image type="content" source="media/how-to-export-delete-data/storage-account-folders.png" alt-text="Снимок экрана портала с выделенным значком удаления":::
 
 ## <a name="export-and-delete-machine-learning-resources-using-azure-machine-learning-studio"></a>Экспорт и удаление ресурсов машинного обучения с помощью Машинное обучение Azure Studio
 
@@ -62,7 +62,7 @@ ms.locfileid: "91251020"
 
 Чтобы скачать зарегистрированную модель, перейдите к нужной **модели** и выберите **загрузить**. 
 
-:::image type="contents" source="media/how-to-export-delete-data/model-download.png" alt-text="Снимок экрана: страница модели Studio с выделенным параметром загрузки":::
+:::image type="contents" source="media/how-to-export-delete-data/model-download.png" alt-text="Снимок экрана портала с выделенным значком удаления":::
 
 ## <a name="export-and-delete-resources-using-the-python-sdk"></a>Экспорт и удаление ресурсов с помощью пакета SDK для Python
 

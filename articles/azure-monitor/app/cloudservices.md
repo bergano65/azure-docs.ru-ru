@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
 ms.openlocfilehash: 676d3543cbcbf86feb67cad4bd2b9709c2b81437
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91759379"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
@@ -16,7 +16,7 @@ ms.locfileid: "91759379"
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com) . Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -106,7 +106,7 @@ ms.locfileid: "91759379"
 
 1. Чтобы настроить **рабочие ролей**, сделайте следующее: 
 
-    а. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
+    a. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
     b. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
@@ -114,7 +114,7 @@ ms.locfileid: "91759379"
 
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
-    а. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
+    a. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
    
@@ -264,7 +264,7 @@ ms.locfileid: "91759379"
 
 Если у вас есть клиентское мобильное приложение, воспользуйтесь [Центром приложений](../learn/mobile-center-quickstart.md). Создайте запросы в [Аналитике](../log-query/log-query-overview.md) для отображения числа событий и закрепите эти показатели на панели мониторинга.
 
-## <a name="example"></a>Например, .
+## <a name="example"></a>Пример
 [примере](https://github.com/MohanGsk/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) отслеживается служба, которая имеет веб-роль и две рабочие роли.
 
 ## <a name="exception-method-not-found-on-running-in-azure-cloud-services"></a>Исключение "метод не найден" при выполнении в облачных службах Azure

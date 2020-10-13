@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/06/2020
 ms.author: yelevin
 ms.openlocfilehash: 5ac72c9861e06773ffab87dcbf4e730562b798fe
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91346599"
 ---
 # <a name="connect-alerts-from-microsoft-defender-for-office-365"></a>Подключение оповещений от защитника Майкрософт для Office 365 
@@ -73,7 +73,7 @@ ms.locfileid: "91346599"
 
 1. Перейдите на вкладку **дальнейшие действия** , чтобы просмотреть и использовать шаблоны образцов запросов и правил аналитики, Объединенные с соединителем Microsoft Защитник для Office 365.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как подключить Microsoft Defender для Office 365 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

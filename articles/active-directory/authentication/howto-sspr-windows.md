@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a6013ed47196e2300f56f0066c634da2a64fdee8
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90526873"
 ---
 # <a name="enable-azure-active-directory-self-service-password-reset-at-the-windows-sign-in-screen"></a>Включение Azure Active Directory самостоятельного сброса пароля на экране входа Windows
@@ -137,7 +137,7 @@ ms.locfileid: "90526873"
 > [!WARNING]
 > Протокол TLS 1.2 должен быть включен, а не просто настроен на автоматический обмен записями.
 
-### <a name="install"></a>Установить
+### <a name="install"></a>Установка
 
 Для Windows 7, 8 и 8,1 на компьютере должен быть установлен небольшой компонент, чтобы включить SSPR на экране входа. Чтобы установить этот компонент SSPR, выполните следующие действия.
 
