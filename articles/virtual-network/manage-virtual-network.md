@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
 ms.openlocfilehash: 5581a4c43f0b78dc8c14c44bfb1ded371a925fd0
-ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88706036"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Создание, изменение или удаление виртуальной сети
@@ -136,7 +136,7 @@ ms.locfileid: "88706036"
 1. В поле поиска в верхней части портала введите *виртуальные сети*. Когда в результатах поиска появится пункт **Виртуальные сети**, выберите его.
 2. Из списка виртуальных сетей выберите виртуальную сеть, для которой требуется изменить DNS-серверы.
 3. В разделе **Параметры**выберите **DNS-серверы**.
-4. Выберите один из следующих вариантов.
+4. Выберите один из следующих параметров:
    - **По умолчанию (предоставлено Azure)**. все имена ресурсов и частные IP-адреса автоматически регистрируются на серверах Azure DNS. Этот параметр позволяет разрешать имена между всеми ресурсами, подключенными к одной виртуальной сети. Но вы не сможете использовать этот параметр для разрешения имен между виртуальными сетями. Разрешать имена между виртуальными сетями можно с помощью пользовательского DNS-сервера.
    - **Пользовательский.** Вы можете добавить один или несколько серверов в пределах лимита Azure, установленного для виртуальной сети. Дополнительные сведения о лимите DNS-серверов см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual-networking-limits-classic). Вам доступны следующие варианты:
    - **Add an address** (Добавить адрес). Позволяет добавить сервер в список DNS-серверов для виртуальной сети. Этот параметр также позволяет зарегистрировать DNS-сервер в Azure. Если вы уже зарегистрировали DNS-сервер в Azure, его можно будет выбрать в списке DNS-серверов.
@@ -170,13 +170,13 @@ ms.locfileid: "88706036"
 
 Для выполнения задач в виртуальных сетях учетной записи должна быть назначена роль [Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие действия, перечисленные в следующей таблице.
 
-| Действие                                  |   name                                |
+| Действие                                  |   Имя                                |
 |---------------------------------------- |   --------------------------------    |
 |Microsoft.Network/virtualNetworks/read   |   Чтение виртуальной сети.              |
 |Microsoft.Network/virtualNetworks/write  |   Создание или обновление виртуальной сети.  |
 |Microsoft.Network/virtualNetworks/delete |   Удаление виртуальной сети            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создайте виртуальную сеть с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
 - Создание и назначение [определений политик Azure](policy-samples.md) для виртуальных сетей

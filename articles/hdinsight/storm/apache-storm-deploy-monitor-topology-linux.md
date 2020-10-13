@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
 ms.openlocfilehash: 9b190b5847c7412344e2bb09fd4000985816219b
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86085741"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight
@@ -80,7 +80,7 @@ ms.locfileid: "86085741"
 
 ## <a name="submit-a-topology-programmatically"></a>Программная отправка топологии
 
-Топологию можно развернуть программными средствами с помощью службы Nimbus. [https://github.com/Azure-Samples/hdinsight-java-deploy-storm-topology](https://github.com/Azure-Samples/hdinsight-java-deploy-storm-topology)содержит пример приложения Java, которое демонстрирует развертывание и запуск топологии с помощью службы Nimbus.
+Топологию можно развернуть программными средствами с помощью службы Nimbus. [https://github.com/Azure-Samples/hdinsight-java-deploy-storm-topology](https://github.com/Azure-Samples/hdinsight-java-deploy-storm-topology) содержит пример приложения Java, которое демонстрирует развертывание и запуск топологии с помощью службы Nimbus.
 
 ## <a name="monitor-and-manage-a-topology-in-visual-studio"></a>Мониторинг топологии и управление ею в Visual Studio
 
@@ -228,7 +228,7 @@ storm rebalance TOPOLOGYNAME
 | Статистика выходных данных *(интервал времени)* | Информация о потоках, создаваемых компонентами воронки или сита. |
 | Профилирование и отладка | Элементы управления для профилирования и отладки компонентов на этой странице. Можно задать значение **состояния/времени ожидания (в минутах)** , а также выбрать кнопки для **Жстакк**, **перезапуск рабочей роли**и **кучи**. |
 | Исполнители *(кадр времени)* | Информация об экземплярах воронки или сита. Чтобы просмотреть журнал диагностических данных, созданных для данного экземпляра, выберите запись **порта** для конкретного исполнителя. Вы также можете просмотреть рабочие ресурсы, связанные с конкретным исполнителем, выбрав соответствующую ссылку в столбце **узел** . |
-| Ошибки | Информация об ошибках для компонентов воронки или сита. |
+| ошибки | Информация об ошибках для компонентов воронки или сита. |
 
 Страница «сводка» с молнией выглядит примерно так:
 
@@ -266,7 +266,7 @@ storm rebalance TOPOLOGYNAME
 
 Сведения, возвращаемые из REST API, могут использоваться только в пределах кластера. Например, полное доменное имя (FQDN), возвращенное для серверов [Apache ZooKeeper](https://zookeeper.apache.org/) , недоступно из Интернета.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [разработке топологий на основе Java с помощью Apache Maven](apache-storm-develop-java-topology.md).
 

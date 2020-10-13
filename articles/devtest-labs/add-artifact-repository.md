@@ -4,10 +4,10 @@ description: Узнайте, как указать собственный реп
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 7553f6b1afa416a5428577a8313bdadb669e32c2
-ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88270994"
 ---
 # <a name="add-an-artifact-repository-to-your-lab-in-devtest-labs"></a>Добавление репозитория артефактов в лабораторию в DevTest Labs
@@ -180,7 +180,7 @@ New-AzResourceGroupDeployment `
     -TemplateParameterFile azuredeploy.parameters.json
 ```
 
-После успешного выполнения команды New-Азресаурцеграупдеплоймент команда выводит важную информацию, такую как состояние подготовки (должно быть выполнено успешно), и все выходные данные шаблона.
+После успешного выполнения New-AzResourceGroupDeployment команда выводит важную информацию, например состояние подготовки (должно быть выполнено успешно), и все выходные данные шаблона.
 
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
 В этом разделе приведен пример скрипта PowerShell, который можно использовать для добавления репозитория артефактов в лабораторию. Если у вас нет Azure PowerShell, см. Дополнительные инструкции по установке [и настройке Azure PowerShell](/powershell/azure/?view=azps-1.2.0) .
@@ -381,7 +381,7 @@ $resourceName = $LabName + '/' + $ArtifactRepositoryName
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Укажите обязательные артефакты для лаборатории в Azure DevTest Labs](devtest-lab-mandatory-artifacts.md)
 - [Создание пользовательских артефактов для виртуальной машины DevTest Labs](devtest-lab-artifact-author.md)
 - [Диагностика сбоев артефактов в лаборатории](devtest-lab-troubleshoot-artifact-failure.md)

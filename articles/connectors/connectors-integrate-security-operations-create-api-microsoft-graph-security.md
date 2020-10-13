@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 02/21/2020
 tags: connectors
 ms.openlocfilehash: b08b5db5639d498aa6a6a47b7f7121cad565fe02
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87986374"
 ---
 # <a name="improve-threat-protection-by-integrating-security-operations-with-microsoft-graph-security--azure-logic-apps"></a>Улучшение защиты от угроз путем интеграции операций обеспечения безопасности с Microsoft Graph Security — Azure Logic Apps
@@ -146,7 +146,7 @@ Microsoft Graph поддерживает [*подписки*](/graph/api/resourc
 
 | Действие | Описание |
 |--------|-------------|
-| **Получение индикаторов аналитики угроз** | Get Тииндикаторс Filtered на основе одного или нескольких [свойств тииндикатор](/graph/api/resources/tiindicator?view=graph-rest-beta), например`threatType eq 'MaliciousUrl' or 'DDoS'` |
+| **Получение индикаторов аналитики угроз** | Get Тииндикаторс Filtered на основе одного или нескольких [свойств тииндикатор](/graph/api/resources/tiindicator?view=graph-rest-beta), например `threatType eq 'MaliciousUrl' or 'DDoS'` |
 | **Получить индикатор аналитики угроз по ИДЕНТИФИКАТОРу** | Получение конкретного Тииндикатора на основе идентификатора Тииндикатор. | 
 | **Создать индикатор для аналитики угроз** | Создайте новый Тииндикатор путем отправки в коллекцию Тииндикаторс. Чтобы убедиться, что в запросе передаются необходимые свойства, ознакомьтесь со свойствами, [необходимыми для создания тииндикатор](/graph/api/tiindicators-post?tabs=http&view=graph-rest-beta). |
 | **Отправка нескольких индикаторов аналитики угроз** | Создавайте несколько новых Тииндикаторс, публикуя коллекцию Тииндикаторс. Чтобы убедиться, что в запросе передаются обязательные свойства, см. [свойства, необходимые для отправки нескольких тииндикаторс](/graph/api/tiindicator-submittiindicators?tabs=http&view=graph-rest-beta). |

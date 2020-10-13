@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: 08ab71375171d4bb4167c725bc7118bec2e1ebfa
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91372030"
 ---
 # <a name="machine-learning-features"></a>Функции машинного обучения
@@ -226,7 +226,7 @@ ms.locfileid: "91372030"
 
 Для примера резервирования билетов помечайте пример фразы продолжительностью в намерении с помощью `TicketBooking` сущности и всех вложенных сущностей в тексте.
 
-:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity.png" alt-text="Добавление меток к примеру речевого фрагмента":::
+:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity.png" alt-text="Схема сущности тиккетбукинг":::
 
 ### <a name="example-pizza-ordering-app"></a>Пример: приложение заказа пиццы
 
@@ -234,13 +234,13 @@ ms.locfileid: "91372030"
 
 Сущность машинного обучения в этом примере более сложена с вложенными подсущностями, списками фраз, предварительно созданными сущностями и пользовательскими сущностями.
 
-:::image type="content" source="media/luis-concept-features/pizza-order-entity.png" alt-text="Схема сущности заказа пиццы":::
+:::image type="content" source="media/luis-concept-features/pizza-order-entity.png" alt-text="Схема сущности тиккетбукинг":::
 
 В этом примере используются функции на уровне подсущностей и дочернего элемента уровня подсущностей. Уровень, который получает список фраз или модель в качестве функции, является важной частью структуры сущности.
 
 В то время как вложенные сущности могут иметь множество списков фраз в качестве функций, помогающих обнаружить сущность, каждая подсущность имеет только одну модель в качестве функции. В этом [приложении пиццы](https://github.com/Azure/pizza_luis_bot/blob/master/CognitiveModels/MicrosoftPizza.json)эти модели в основном перечислены.
 
-:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity-pizza.png" alt-text="Цель заказа пиццы с помеченным примером фразы продолжительностью":::
+:::image type="content" source="media/luis-concept-features/intent-example-utterances-machine-learning-entity-pizza.png" alt-text="Схема сущности тиккетбукинг":::
 
 Правильно помеченный пример фразы продолжительностью отображает способ отображения вложенных сущностей. 
 
@@ -249,7 +249,7 @@ ms.locfileid: "91372030"
 
 Ознакомьтесь с [рекомендациями](luis-concept-best-practices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Расширьте](schema-change-prediction-runtime.md) модели приложений в среде выполнения прогнозирования.
 * Дополнительные сведения о добавлении компонентов в приложение LUIS см. в разделе [Добавление компонентов](luis-how-to-add-features.md) .

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/18/2019
 ms.author: cshoe
 ms.openlocfilehash: e00fd3d1dac0a18ac7f7377e08ae8d20ae132c56
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91652635"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
@@ -29,9 +29,9 @@ ms.locfileid: "91652635"
 | Пример сценария | Триггер | Входная привязка | Выходная привязка |
 |-------------|---------|---------------|----------------|
 | Поступает новое сообщение очереди, которое запускает функцию для записи в другую очередь. | Очереди<sup>*</sup> | *None* | Очереди<sup>*</sup> |
-|Запланированное задание считывает содержимое хранилища BLOB-объектов и создает новый документ Cosmos DB. | Таймер | Хранилище BLOB-объектов | Cosmos DB |
-|Сетка событий используется для чтения изображения из хранилища BLOB-объектов и документа из Cosmos DB для отправки сообщения электронной почты. | Сетка событий | Хранилище BLOB-объектов и Cosmos DB | SendGrid |
-| Веб-перехватчик, использующий Microsoft Graph для обновления листа Excel. | HTTP | *None* | Microsoft Graph |
+|Запланированное задание считывает содержимое хранилища BLOB-объектов и создает новый документ Cosmos DB. | Таймер | Хранилище BLOB-объектов | Cosmos DB |
+|Сетка событий используется для чтения изображения из хранилища BLOB-объектов и документа из Cosmos DB для отправки сообщения электронной почты. | Сетка событий Azure | Хранилище BLOB-объектов и Cosmos DB | SendGrid |
+| Веб-перехватчик, использующий Microsoft Graph для обновления листа Excel. | HTTP | *None* | Microsoft Graph |
 
 <sup>\*</sup> Представляет различные очереди
 
@@ -98,6 +98,6 @@ ms.locfileid: "91652635"
   - [Запуск функции, не активируемой HTTP-запросом, вручную](functions-manually-run-non-http.md)
 - [Обработка ошибок привязки](./functions-bindings-errors.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
 > [Регистрация расширений привязки функций Azure](./functions-bindings-register.md)

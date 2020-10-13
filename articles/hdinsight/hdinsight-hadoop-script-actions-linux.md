@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/28/2019
 ms.openlocfilehash: 08354e212b8ca3cae642b599f25ed318e79f581c
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86082256"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
@@ -73,7 +73,7 @@ elif [[ $OS_VERSION == 16* ]]; then
 fi
 ```
 
-### <a name="target-the-operating-system-version"></a><a name="bps10"></a>Целевая версия операционной системы
+### <a name="target-the-operating-system-version"></a><a name="bps10"></a> Целевая версия операционной системы
 
 HDInsight основывается на распределении Ubuntu Linux. Для разных версий HDInsight используются разные версии Ubuntu. Это может изменить поведение сценария. Например, HDInsight версии 3.4 и более ранних версий основан на версии Ubuntu, в которой используется Upstart. Версия 3.5 и более поздние версии основана на Ubuntu версии 16.04, в которой используется Systemd. Systemd и Upstart используют разные команды, поэтому сценарий нужно написать таким образом, чтобы он был совместим и с тем, и с другим.
 
@@ -177,7 +177,7 @@ echo "Getting ready to install Foo"
 
 Дополнительные сведения о просмотре сведений, регистрируемых действиями скрипта, см. в разделе [Устранение неполадок в сценариях](./troubleshoot-script-action.md).
 
-### <a name="save-files-as-ascii-with-lf-line-endings"></a><a name="bps8"></a>Сохранять файлы в формате ASCII с символами перевода строки (LF)
+### <a name="save-files-as-ascii-with-lf-line-endings"></a><a name="bps8"></a> Сохранять файлы в формате ASCII с символами перевода строки (LF)
 
 Сценарии Bash должны храниться в формате ASCII. Для завершения строк в этом файле используется символ LF. Если в файлах используется кодировка UTF-8 или используется CRLF в качестве конца строки, сценарий может завершиться следующей ошибкой:
 
@@ -186,7 +186,7 @@ $'\r': command not found
 line 1: #!/usr/bin/env: No such file or directory
 ```
 
-### <a name="use-retry-logic-to-recover-from-transient-errors"></a><a name="bps9"></a>Использование логики повторных попыток для восстановления после временных ошибок
+### <a name="use-retry-logic-to-recover-from-transient-errors"></a><a name="bps9"></a> Использование логики повторных попыток для восстановления после временных ошибок
 
 При загрузке файлов, установке пакетов с помощью apt-get или других действий, передающих данные через Интернет, действие может завершиться ошибкой из-за временных ошибок сети. Например, удаленный ресурс, с которым вы обмениваетесь данными, может находиться в процессе отработки отказа на узел резервного копирования.
 
@@ -235,7 +235,7 @@ wget -O /tmp/HDInsightUtilities-v01.sh -q https://hdiconfigactions.blob.core.win
 
 Эта команда открывает доступ к следующим вспомогательным приложениям, доступным для использования в сценарии:
 
-| Назначение вспомогательного приложения | Описание: |
+| Назначение вспомогательного приложения | Описание |
 | --- | --- |
 | `download_file SOURCEURL DESTFILEPATH [OVERWRITE]` |Скачивает файл из исходного универсального кода ресурса (URI) и сохраняет его в указанное расположение. По умолчанию существующий файл не перезаписывается. |
 | `untar_file TARFILE DESTDIR` |Извлекает TAR-файл (с помощью `-xf`) в папку назначения. |

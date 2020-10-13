@@ -7,13 +7,13 @@ author: derek1ee
 ms.author: deli
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
-ms.date: 10/08/2020
-ms.openlocfilehash: 4715d7173dd959d12350229e457717c908a83756
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.date: 01/13/2019
+ms.openlocfilehash: 65b6b1f783dbabc9ad2e1a4bf79008240d1b2726
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873240"
+ms.locfileid: "89659918"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Подключение к локальной файловой системе с помощью Azure Logic Apps
 
@@ -22,9 +22,6 @@ ms.locfileid: "91873240"
 - создание, получение, добавление, обновление и удаление файлов;
 - создание списка файлов в папках или корневых папках;
 - получение содержимого и метаданных файлов;
-
-  > [!IMPORTANT]
-  > В настоящее время соединитель файловой системы поддерживает только файловые системы Windows в операционных системах Windows.  
 
 В этой статье на примере сценария показано, как подключиться к локальной файловой системе: копирование файла, переданного в Dropbox, в файловый ресурс, а затем отправка сообщения. Для безопасного подключения и доступа к локальным системам в приложениях логики используется [локальный шлюз данных](../logic-apps/logic-apps-gateway-connection.md). Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps?](../logic-apps/logic-apps-overview.md). Технические сведения для конкретных соединителей см. в [справочнике по коннектору файловой системы](/connectors/filesystem/).
 

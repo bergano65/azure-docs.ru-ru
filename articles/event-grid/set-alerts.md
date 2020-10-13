@@ -4,10 +4,10 @@ description: В этой статье описывается создание о
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: 615ebef749be49822a09470eb0d47d8eb31b9a5a
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86119146"
 ---
 # <a name="set-alerts-on-azure-event-grid-metrics-and-activity-logs"></a>Настройка оповещений для метрик службы "Сетка событий Azure" и журналов действий
@@ -18,56 +18,48 @@ ms.locfileid: "86119146"
 
 1. На странице **раздела сетки событий** в разделе Выберите **оповещения** в меню слева и щелкните **+ новое правило генерации оповещений**. 
 
-    :::image type="content" source="./media/monitor-event-delivery/new-alert-button.png" alt-text="Страница "Оповещения" — кнопка "Новое правило генерации оповещений"":::
+    :::image type="content" source="./media/monitor-event-delivery/new-alert-button.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::
 2. На странице **Создание правила генерации оповещений** убедитесь, что для ресурса выбран раздел. Затем щелкните **Выбрать условие**. 
 
-    :::image type="content" source="./media/monitor-event-delivery/alert-select-condition.png" alt-text="Страница "оповещения" — Выбор условия":::    
+    :::image type="content" source="./media/monitor-event-delivery/alert-select-condition.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::    
 3. На странице **Настройка логики сигнала** выполните следующие действия.
     1. Выберите метрику или запись журнала действий. В этом примере выбраны **недоставленные события** . 
 
-        :::image type="content" source="./media/monitor-event-delivery/select-dead-lettered-events.png" alt-text="Выберите события с недоставленными письмами":::        
+        :::image type="content" source="./media/monitor-event-delivery/select-dead-lettered-events.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::        
     2. Выберите измерения (необязательно). 
         
-        :::image type="content" source="./media/monitor-event-delivery/configure-signal-logic.png" alt-text="Настройка логики сигналов":::        
+        :::image type="content" source="./media/monitor-event-delivery/configure-signal-logic.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::        
 
         > [!NOTE]
         > Можно выбрать **+** кнопку для **евентсубскриптионнаме** , чтобы указать имя подписки на событие для фильтрации событий. 
     3. Прокрутите страницу вниз. В разделе **логика оповещения** выберите **оператор**, **тип агрегирования**и введите **пороговое значение**и нажмите кнопку **Готово**. В этом примере оповещение активируется, если общее число недоставленных событий больше 10. 
     
-        :::image type="content" source="./media/monitor-event-delivery/alert-logic.png" alt-text="Логика оповещения":::                
+        :::image type="content" source="./media/monitor-event-delivery/alert-logic.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::                
 4. Вернитесь на страницу **Создание правила оповещения** и нажмите кнопку **выбрать группу действий**.
 
-    :::image type="content" source="./media/monitor-event-delivery/select-action-group-button.png" alt-text="Кнопка выбора группы действий":::
-5. Выберите **создать группу действий** на панели инструментов, чтобы создать новую группу действий. Можно также выбрать существующую группу действий.        
-6. На странице **Добавление группы действий** выполните следующие действия.
-    1. Введите **имя группы действий**.
-    1. Введите **короткое имя** для группы действий.
-    1. Выберите **подписку Azure** , в которой нужно создать группу действий.
-    1. Выберите **группу ресурсов Azure** , в которой нужно создать группу действий.
-    1. Введите **имя действия**. 
-    1. Выберите **тип действия**. В этом примере выбрана **роль Azure Resource Manager электронной почты** , в частности роль " **владельцы** ". 
+    :::image type="content" source="./media/monitor-event-delivery/select-action-group-button.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;" **владельцы** ". 
     1. Нажмите кнопку **ОК**, чтобы закрыть страницу. 
     
-        :::image type="content" source="./media/monitor-event-delivery/add-action-group-page.png" alt-text="Страница добавления группы действий":::                   
+        :::image type="content" source="./media/monitor-event-delivery/add-action-group-page.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::                   
 7. Вернитесь на страницу **Создание правила оповещения** , введите имя для правила оповещения, а затем выберите **создать правило генерации оповещений**.
 
-    :::image type="content" source="./media/monitor-event-delivery/alert-rule-name.png" alt-text="Имя правила генерации оповещений":::  
+    :::image type="content" source="./media/monitor-event-delivery/alert-rule-name.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::  
 8. Теперь на странице **оповещения** раздела вы увидите ссылку для управления правилами генерации оповещений, если еще нет оповещений. Если имеются оповещения, выберите **Диспетчер правила оповещений** на панели инструментов.  
 
-    :::image type="content" source="./media/monitor-event-delivery/manage-alert-rules.png" alt-text="Управление оповещениями":::
+    :::image type="content" source="./media/monitor-event-delivery/manage-alert-rules.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::
 
 ## <a name="create-alerts-on-other-metrics-or-activity-log-operations"></a>Создание оповещений о других метриках или операциях с журналом действий
 В предыдущем разделе показано, как создавать предупреждения для событий с недоставленными письмами. Действия по созданию предупреждений для других метрик или операций с журналом действий похожи. 
 
 Например, чтобы создать оповещение о событии сбоя доставки, выберите событие **сбой доставки** на странице **Настройка логики сигнала** . 
 
-:::image type="content" source="./media/set-alerts/delivery-failed-events.png" alt-text="Выбор событий сбоя доставки":::
+:::image type="content" source="./media/set-alerts/delivery-failed-events.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::
 
 
 ## <a name="create-alerts-using-the-metrics-page"></a>Создание оповещений на странице "метрики"
 Кроме того, оповещения можно создавать с помощью страницы **метрики** . Шаги аналогичны. В системных разделах для создания оповещений можно использовать только страницу **метрики** , так как страница **оповещения** недоступна. 
 
-:::image type="content" source="./media/monitor-event-delivery/metric-page-create-alert-button.png" alt-text="Страница "метрики" — Кнопка "создать оповещение"":::   
+:::image type="content" source="./media/monitor-event-delivery/metric-page-create-alert-button.png" alt-text="Страница &quot;Оповещения&quot; — кнопка &quot;Новое правило генерации оповещений&quot;":::   
     
 
 > [!NOTE]

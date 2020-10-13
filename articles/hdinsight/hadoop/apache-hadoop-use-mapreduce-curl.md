@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/13/2020
 ms.openlocfilehash: 407db727f521ea7731f0cbdbdd05c4338c9f452e
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86207717"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
@@ -24,9 +24,9 @@ ms.locfileid: "86207717"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
+* Кластер Apache Hadoop в HDInsight. См. [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
-Одно из двух:
+Любое из следующих:
   * Windows PowerShell или,
   * [Перелистывание](https://curl.haxx.se/) с [JQ](https://stedolan.github.io/jq/)
 
@@ -169,7 +169,7 @@ ms.locfileid: "86207717"
 
 Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI для работы с хранилищем BLOB-объектов Azure см. в разделе [Краткое руководство. Создание, скачивание и перечисление больших двоичных объектов с помощью Azure CLI](../../storage/blobs/storage-quickstart-blobs-cli.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight:
 

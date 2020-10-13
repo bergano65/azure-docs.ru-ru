@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 18972e991f08db7fa9548454a5c5cdc3ff0f552f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87285192"
 ---
 # <a name="azcopy"></a>azcopy
@@ -38,11 +38,11 @@ AzCopy — это программа командной строки, котор
 
 **--Справка** Справка по azcopy
       
-**—** формат выходного типа (String) для выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — `text`. (по умолчанию `text` )
+**—**  формат выходного типа (String) для выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — `text`. (по умолчанию `text` )
 
 **--Trusted-Microsoft-суффиксы** (строка) задает дополнительные суффиксы домена, в которых могут отправляться Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 - [Начало работы с AzCopy](storage-use-azcopy-v10.md)
 - [azcopy bench](storage-ref-azcopy-bench.md)

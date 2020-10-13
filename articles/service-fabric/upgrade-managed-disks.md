@@ -4,10 +4,10 @@ description: Вот как можно обновить существующий 
 ms.topic: how-to
 ms.date: 4/07/2020
 ms.openlocfilehash: 152bdaea121e65de8332fcde8543b8158ff11714
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88717529"
 ---
 # <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Обновление узлов кластера для использования управляемых дисков Azure
@@ -371,7 +371,7 @@ foreach($name in $nodeNames){
 
 * [Удаление типа узла Service Fabric](service-fabric-how-to-remove-node-type.md)
 
-См. также
+См. также:
 
 * [Пример. обновление узлов кластера для использования управляемых дисков Azure](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage)
 
