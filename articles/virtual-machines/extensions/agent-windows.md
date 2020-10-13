@@ -7,12 +7,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 07/20/2019
 ms.author: mimckitt
-ms.openlocfilehash: 2db83b643ec3000c5b86388f4b603bba32f2a9a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ef2c9ef4e2a2296ceb214c89bb6e3fb98dcb26f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91855781"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91974912"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Обзор агента виртуальной машины Azure
 Агент виртуальной машины Microsoft Azure — это защищенный упрощенный процесс, который управляет взаимодействием виртуальной машины с контроллером структуры Azure. Основная роль агента виртуальной машины — это включение и выполнение расширений виртуальной машины Azure. Расширения виртуальной машины позволяют выполнять дополнительные действия по настройке виртуальной машины после развертывания, например устанавливать и настраивать программное обеспечение. Они также предоставляют возможности восстановления, такие как сброс пароля администратора виртуальной машины. Расширения виртуальной машины не могут выполняться без агента виртуальной машины Azure.
@@ -68,7 +68,7 @@ $vm | Update-AzVM
 
 - Убедитесь, что ваша виртуальная машина имеет доступ к IP-адресу 168.63.129.16. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md).
 
-- Убедитесь, что протокол DHCP включен в гостевой виртуальной машине. Это необходимо для получения адреса узла или структуры из DHCP для работы агента виртуальной машины IaaS и расширений. Если вам нужен статический частный IP-адрес, настройте его с помощью портал Azure или PowerShell и убедитесь, что в виртуальной машине включен параметр DHCP. Дополнительные сведения о настройке статического IP-адреса с помощью PowerShell см. [здесь](https://docs.microsoft.com/azure/virtual-network/virtual-networks-static-private-ip-arm-ps#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface) .
+- Убедитесь, что протокол DHCP включен в гостевой виртуальной машине. Это необходимо для получения адреса узла или структуры из DHCP для работы агента виртуальной машины IaaS и расширений. Если вам нужен статический частный IP-адрес, настройте его с помощью портал Azure или PowerShell и убедитесь, что в виртуальной машине включен параметр DHCP. Дополнительные сведения о настройке статического IP-адреса с помощью PowerShell см. [здесь](../../virtual-network/virtual-networks-static-private-ip-arm-ps.md#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface) .
 
 
 ## <a name="detect-the-vm-agent"></a>Обнаружение агента виртуальной машины
@@ -120,7 +120,7 @@ foreach ($vm in $vms) {
 
 Для виртуальной машины используйте [Remove-азвмсекрет]() , чтобы удалить сертификаты из `OSProfile` .
 
-Дополнительные сведения о сертификатах масштабируемых наборов виртуальных машин см [. в разделе масштабируемые наборы виртуальных машин — разделы справки удалить устаревшие сертификаты?](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-faq#how-do-i-remove-deprecated-certificates)
+Дополнительные сведения о сертификатах масштабируемых наборов виртуальных машин см [. в разделе масштабируемые наборы виртуальных машин — разделы справки удалить устаревшие сертификаты?](../../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#how-do-i-remove-deprecated-certificates)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

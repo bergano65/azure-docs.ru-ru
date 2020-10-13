@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperfq1, identityplatformtop40
 ms.openlocfilehash: 79475414f6785474596beae208fefae81a673dea
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91842688"
 ---
 # <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Разрешения и согласие для конечной точки платформы удостоверений Майкрософт
@@ -322,7 +322,7 @@ response_type=token            //code or a hybrid flow is also possible here
 
 Если во время принятия согласия у пользователей вашего приложения возникли непредвиденные ошибки, см. инструкции по устранению неполадок в этой статье: [непредвиденная ошибка при выполнении согласия для приложения](../manage-apps/application-sign-in-unexpected-user-consent-error.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Маркеры ID | Платформа Microsoft Identity](id-tokens.md)
 * [Маркеры доступа | Платформа Microsoft Identity](access-tokens.md)
