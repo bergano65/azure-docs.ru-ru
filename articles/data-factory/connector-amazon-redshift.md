@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2018
 ms.openlocfilehash: a756a3cec5702570751e0bea09a4f59152accafc
-ms.sourcegitcommit: de2750163a601aae0c28506ba32be067e0068c0c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89484550"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
@@ -221,15 +221,15 @@ ms.locfileid: "89484550"
 | Тип данных Amazon Redshift | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | bigint |Int64 |
-| BOOLEAN |Строка |
+| BOOLEAN |Строковый тип |
 | CHAR |Строка |
 | DATE |Дата и время |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
-| ВЕЩЕСТВЕННОЕ ЧИСЛО |Single |
+| ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
 | SMALLINT |Int16 |
-| TEXT |Строка |
+| TEXT |Строковый тип |
 | timestamp |Дата и время |
 | VARCHAR |Строка |
 

@@ -11,10 +11,10 @@ ms.reviewer: vanto
 ms.custom: sqldbrb=1
 ms.date: 06/03/2020
 ms.openlocfilehash: 49e885862a49bb3bbea718566ee5389e6b08e860
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91444593"
 ---
 # <a name="sql-database-audit-log-format"></a>Формат журнала аудита базы данных SQL
@@ -57,7 +57,7 @@ ms.locfileid: "91444593"
 | class_type | class_type_s | Тип проверяемой сущности, на которой выполняется аудит | varchar(2) | строка |
 | class_type_desc | class_type_description_s | Описание проверяемой сущности, на которой выполняется аудит | Недоступно | строка |
 | client_ip | client_ip_s | Исходный IP-адрес клиентского приложения | NVARCHAR(128) | строка |
-| connection_id | Недоступно | Идентификатор соединения на сервере | GUID | Недоступно |
+| connection_id | Недоступно | Идентификатор соединения на сервере | Код GUID | Недоступно |
 | data_sensitivity_information | data_sensitivity_information_s | Типы сведений и метки чувствительности, возвращаемые отслеживаемым запросом, на основе классифицированных столбцов в базе данных. Дополнительные сведения об [обнаружении и классификации данных в базе данных SQL Azure](data-discovery-and-classification-overview.md) | nvarchar(4000) | строка |
 | database_name | database_name_s | Контекст базы данных, в котором произошло действие | sysname | строка |
 | database_principal_id | database_principal_id_d | Идентификатор контекста пользователя базы данных, в котором выполняется действие | INT | INT |
@@ -73,7 +73,7 @@ ms.locfileid: "91444593"
 | response_rows | response_rows_d | Число строк, возвращенных в результирующем наборе | BIGINT | INT |
 | schema_name | schema_name_s | Контекст схемы, в котором выполнялось действие. Значение NULL для аудитов, происходящих за пределами схемы | sysname | строка |
 | Недоступно | securable_class_type_s | Защищаемый объект, сопоставляемый с class_type аудита | Недоступно | строка |
-| sequence_group_id | sequence_group_id_g | Уникальный идентификатор | varbinary | GUID |
+| sequence_group_id | sequence_group_id_g | Уникальный идентификатор | varbinary | Код GUID |
 | sequence_number | sequence_number_d | Отслеживает последовательность записей в одной записи аудита, которая слишком велика для размещения в буфере записи для аудита | INT | INT |
 | server_instance_name | server_instance_name_s | Имя экземпляра сервера, на котором произошел аудит | sysname | строка |
 | server_principal_id | server_principal_id_d | Идентификатор контекста имени входа, в котором выполняется действие | INT | INT |
@@ -92,6 +92,6 @@ ms.locfileid: "91444593"
 | user_defined_event_id | user_defined_event_id_d | Определяемый пользователем идентификатор события, передаваемый в качестве аргумента для sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | smallint | INT |
 | user_defined_information | user_defined_information_s | Определяемые пользователем сведения, передаваемые в качестве аргумента для sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | nvarchar(4000) | строка |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об [аудите базы данных SQL Azure](auditing-overview.md).

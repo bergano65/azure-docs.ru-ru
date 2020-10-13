@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: 2b83433a135fec486701b4538793f0c3e0a6fa6e
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91611832"
 ---
 # <a name="send-events-to-an-azure-time-series-insights-gen1-environment-by-using-an-event-hub"></a>Отправка событий в среду Gen1 "аналитика временных рядов Azure" с помощью концентратора событий
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 В этой статье объясняется, как создать и настроить концентратор событий в концентраторах событий Azure. Здесь также описывается, как запустить пример приложения для отправки событий в службу "аналитика временных рядов Azure" из концентраторов событий. Если у вас есть концентратор событий с событиями в формате JSON, пропустите этот учебник и просмотрите свою среду в [службе "аналитика временных рядов Azure](./time-series-insights-update-create-environment.md)".
 
@@ -201,10 +201,10 @@ ms.locfileid: "91611832"
 
     |location|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
     |---|---|---|---|---|---|---|---|
-    |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|давление|psi|108.09|
+    |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
     |WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Просматривайте свою среду](https://insights.timeseries.azure.com) в обозревателе службы "аналитика временных рядов Azure".
 
