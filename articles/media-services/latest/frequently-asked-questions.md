@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: d34b5aaaa12a3d296f92e0d7be34ae76931d8506
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89268491"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
@@ -24,7 +24,7 @@ ms.locfileid: "89268491"
 
 В этой статье приводятся ответы на часто задаваемые вопросы о службах мультимедиа Azure v3.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Каковы ограничения портал Azure для служб мультимедиа v3?
 
@@ -121,7 +121,7 @@ ms.locfileid: "89268491"
 
 Используйте API служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения см. на странице
+Дополнительные сведения см. в разделе:
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)
@@ -269,6 +269,6 @@ ms.locfileid: "89268491"
   * Управляемый клиентом: Приложение проигрывателя автоматически выбирает или выбирает пользователя, уровень качества видео и звуковые дорожки для загрузки.
   * Управляемая службой. с помощью функции динамического манифеста в службах мультимедиа Azure можно создать (глобальный) фильтр, ограничивающий список воспроизведения HLS или ШТРИХовых MPD на один слой качества видео и выбранные звуковые дорожки. Затем URL-адрес загрузки, представленный пользователям, будет включать этот фильтр.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Что такое Службы мультимедиа Azure версии 3?](media-services-overview.md)

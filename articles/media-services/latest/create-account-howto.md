@@ -15,10 +15,10 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 93f5e4d659b94bd79345a5e687de14ab6a5e8ba6
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89267978"
 ---
 # <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
@@ -56,7 +56,7 @@ ms.locfileid: "89267978"
 1. Щелкните **+ создать ресурс**  >  **Media**  >  **службы**мультимедиа мультимедиа.
 1. В разделе **Создание учетной записи служб мультимедиа** введите необходимые значения.
 
-    | name | Описание |
+    | Имя | Описание |
     | ---|---|
     |**Account Name** (Имя учетной записи)|Введите имя новой учетной записи служб мультимедиа. Имя учетной записи служб мультимедиа может состоять из цифр или букв в нижнем регистре без пробелов и должно иметь длину от 3 до 24 символов.|
     |**Подписка**|Если у вас есть несколько подписок, выберите одну из них в списке подписок Azure, к которым у вас есть доступ.|
@@ -71,7 +71,7 @@ ms.locfileid: "89267978"
 
 ## <a name="cli"></a>[CLI](#tab/cli/)
 
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
+## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
 
 <!-- NOTE: The following are in the includes file and are reused in other How To articles. All task based content should be in the includes folder with the task- prefix prepended to the file name. -->
 
@@ -98,6 +98,6 @@ ms.locfileid: "89267978"
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
