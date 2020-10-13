@@ -15,10 +15,10 @@ ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0d29f4ef5806eb8ed9385696dea78f4ae0992b93
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91818236"
 ---
 # <a name="add-and-manage-users-in-an-administrative-unit-in-azure-active-directory"></a>Добавление пользователей и управление ими в административной единице в Azure Active Directory
@@ -66,7 +66,7 @@ $UserObj = Get-AzureADUser -Filter "UserPrincipalName eq 'billjohn@fabidentity.o
 Add-AzureADMSAdministrativeUnitMember -Id $administrativeunitObj.ObjectId -RefObjectId $UserObj.ObjectId
 ```
 
-В приведенном выше примере командлет Add-Азуреададминистративеунитмембер используется для добавления пользователя в административную единицу. Идентификатор объекта административной единицы, в которую добавляется пользователь, и идентификатор объекта пользователя, который будет добавлен в качестве аргумента. Выделенную часть можно изменить в соответствии с требованиями конкретной среды.
+В приведенном выше примере командлет Add-AzureADAdministrativeUnitMember используется для добавления пользователя в административную единицу. Идентификатор объекта административной единицы, в которую добавляется пользователь, и идентификатор объекта пользователя, который будет добавлен в качестве аргумента. Выделенную часть можно изменить в соответствии с требованиями конкретной среды.
 
 ### <a name="microsoft-graph"></a>Microsoft Graph
 
@@ -106,9 +106,9 @@ Request body
 ```powershell
 Get-AzureADMSAdministrativeUnit | where { Get-AzureADMSAdministrativeUnitMember -Id $_.ObjectId | where {$_.RefObjectId -eq $userObjId} }
 ```
-Примечание. по умолчанию командлет Get-Азуреададминистративеунитмембер возвращает только 100 членов. для получения дополнительных элементов можно добавить "-ALL $true".
+Примечание. по умолчанию Get-AzureADAdministrativeUnitMember возвращает только 100 членов. для получения дополнительных элементов можно добавить "-ALL $true".
 
-### <a name="microsoft-graph"></a>Microsoft Graph
+### <a name="microsoft-graph"></a>Microsoft Graph
 
 ```http
 https://graph.microsoft.com/v1.0/users/{id}/memberOf/$/Microsoft.Graph.AdministrativeUnit

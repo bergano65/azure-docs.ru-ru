@@ -3,16 +3,16 @@ title: Публикация предложения управляемой слу
 description: Узнайте, как опубликовать предложение управляемой службы, которое осуществляет подключение клиентов к Azure Лигхсаусе.
 ms.date: 08/18/2020
 ms.topic: how-to
-ms.openlocfilehash: 11fb0073bcc3ba4437f78de8b263d165f0069db8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 033003d7e782ca0e99b1fc908c5261b6e31bf613
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88589730"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91974368"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Публикация предложения управляемой службы в Azure Marketplace
 
-В этой статье вы узнаете, как опубликовать общедоступное или закрытое предложение управляемой службы в [Azure Marketplace](https://azuremarketplace.microsoft.com) с помощью программы [коммерческого рынка](../../marketplace/partner-center-portal/commercial-marketplace-overview.md) в центре партнеров. Клиенты, которые приобрели предложение, будут делегировать подписки или группы ресурсов, что позволит управлять ими с помощью [Azure лигхсаусе](../overview.md).
+В этой статье вы узнаете, как опубликовать общедоступное или закрытое предложение управляемой службы в [Azure Marketplace](https://azuremarketplace.microsoft.com) с помощью программы [коммерческого рынка](../../marketplace/overview.md) в центре партнеров. Клиенты, которые приобрели предложение, будут делегировать подписки или группы ресурсов, что позволит управлять ими с помощью [Azure лигхсаусе](../overview.md).
 
 ## <a name="publishing-requirements"></a>Требования к публикации
 
@@ -28,19 +28,19 @@ ms.locfileid: "88589730"
 
 |**Рассмотрение**  |**Предложение управляемой службы**  |**Шаблоны ARM**  |
 |---------|---------|---------|
-|Требуется [учетная запись центра партнеров](../../marketplace/partner-center-portal/create-account.md)   |Да         |Нет        |
-|Требуется [уровень компетенции серебристой или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP Azure](https://partner.microsoft.com/membership/azure-expert-msp)      |Да         |Нет         |
-|Доступно для новых клиентов через Azure Marketplace     |Да     |Нет       |
+|Требуется [учетная запись центра партнеров](../../marketplace/partner-center-portal/create-account.md)   |Да         |нет        |
+|Требуется [уровень компетенции серебристой или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP Azure](https://partner.microsoft.com/membership/azure-expert-msp)      |Да         |нет         |
+|Доступно для новых клиентов через Azure Marketplace     |Да     |нет       |
 |Может ограничить предложение конкретными клиентами     |Да (только с частными предложениями, которые нельзя использовать с подписками, установленными через торгового посредника программы поставщика облачных решений (CSP))         |Да         |
-|Требуется согласие клиента в портал Azure     |Да     |Нет   |
-|Можно использовать автоматизацию для подключения нескольких подписок, групп ресурсов или клиентов. |Нет     |Да    |
+|Требуется согласие клиента в портал Azure     |Да     |нет   |
+|Можно использовать автоматизацию для подключения нескольких подписок, групп ресурсов или клиентов. |нет     |Да    |
 |Немедленный доступ к новым встроенным ролям и функциям Azure Лигхсаусе     |Не всегда (обычно доступно после некоторой задержки)         |Да         |
 
 ## <a name="create-your-offer"></a>Создайте предложение
 
 Подробные инструкции по созданию предложения, включая все сведения и активы, которые необходимо предоставить, см. в разделе [Создание предложения управляемой службы](../../marketplace/partner-center-portal/create-new-managed-service-offer.md).
 
-Чтобы узнать об общем процессе публикации, ознакомьтесь с [руководством по публикации в Azure Marketplace и AppSource](../../marketplace/marketplace-publishers-guide.md). Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](/legal/marketplace/certification-policies), в частности с разделом [Managed Services](/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
+Чтобы узнать об общем процессе публикации, ознакомьтесь с [руководством по публикации в Azure Marketplace и AppSource](../../marketplace/overview.md). Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](/legal/marketplace/certification-policies), в частности с разделом [Managed Services](/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
 
 Когда клиент добавит ваше предложение, он сможет делегировать одну или несколько подписок или групп ресурсов, которые затем будут подключены [к Azure лигхсаусе](#the-customer-onboarding-process).
 
@@ -64,6 +64,6 @@ ms.locfileid: "88589730"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о [коммерческом рынке](../../marketplace/partner-center-portal/commercial-marketplace-overview.md).
+- Сведения о [коммерческом рынке](../../marketplace/overview.md).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).
 - [Просматривайте клиентов и управляйте ими](view-manage-customers.md), перейдя в раздел **Мои клиенты** на портале Azure.

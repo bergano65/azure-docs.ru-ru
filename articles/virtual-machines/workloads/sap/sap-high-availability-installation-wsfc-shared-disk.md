@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c5b7debe0c94839e2ca7742817a49216328c571
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5126ae94d8c751952964aaf4df0736a5e546ff36
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855331"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963641"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>Установка SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS в Azure
 
@@ -149,7 +149,7 @@ ms.locfileid: "88855331"
 
 В этой статье описывается, как установить и настроить в Azure систему SAP высокого уровня доступности, используя отказоустойчивый кластер Windows Server и общий диск для кластеризации экземпляра SAP ASCS/SCS. Как описано в разделе [руководство по архитектуре: Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска][sap-high-availability-guide-wsfc-shared-disk]кластера, существует два варианта использования *общего диска кластера*:
 
-- [Общие диски Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-shared)
+- [Общие диски Azure](../../windows/disks-shared.md)
 - Использование [SIOS Cluster Edition](https://us.sios.com/products/datakeeper-cluster/) для создания зеркально отображаемого хранилища, которое имитирует кластерный общий диск 
 
 ## <a name="prerequisites"></a>Предварительные требования

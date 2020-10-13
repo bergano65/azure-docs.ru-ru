@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 12b0dd957cb89fc7114c752312b08f1e490499da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f8f5d7ddf25b2df6b2e07818e1b2ed7e90fb867
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "89280032"
+ms.locfileid: "91932126"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -123,12 +123,13 @@ ms.locfileid: "89280032"
 
 :::image type="content" source="media/how-to-set-up-instance/portal/add-permission.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
-На следующей странице *разрешений API запроса* перейдите к *API-интерфейсам, используемым моей организацией* , и выполните поиск по запросу *Azure Digital двойников*. Выберите *Azure Digital двойников* из результатов поиска, чтобы продолжить назначение разрешений для API-интерфейсов цифровой двойников Azure.
+На следующей странице *разрешений API запроса* перейдите к *API-интерфейсам, используемым моей организацией* , и выполните поиск по запросу *Azure Digital двойников*. Выберите _**Azure Digital двойников**_ из результатов поиска, чтобы продолжить назначение разрешений для API-интерфейсов цифровой двойников Azure.
 
 :::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 >[!NOTE]
-> При наличии существующего экземпляра Azure Digital двойников из предыдущего общедоступного предварительной версии службы (до июля 2020) по-прежнему в вашей подписке необходимо найти *службу "интеллектуальные модули Azure* ". Это старое имя для того же набора API-интерфейсов, которое не будет изменяться после этого шага.
+> Если у вашей подписки по-прежнему есть существующий экземпляр Azure Digital двойников из предыдущего общедоступного предварительной версии службы (до июля 2020), вам потребуется найти и выбрать _**службу "интеллектуальные модули Azure**_ ". Это старое имя для того же набора API-интерфейсов (Обратите внимание, что *идентификатор приложения (клиента)* аналогичен показанному на снимке экрана выше), и ваш опыт не будет изменяться после этого шага.
+> :::image type="content" source="media/how-to-set-up-instance/portal/request-api-permissions-1-smart-spaces.png" alt-text="Выбор пункта &quot;создать ресурс&quot; на домашней странице портал Azure":::
 
 Далее предстоит выбрать разрешения, которые будут предоставлены для этих API. Разверните разрешение **Чтение (1)** и установите флажок *чтение. запись* , чтобы предоставить этому приложению доступ для чтения и записи регистрации приложения.
 
@@ -163,7 +164,7 @@ ms.locfileid: "89280032"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
-* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest)
+* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true)
 * [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
 
 Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:

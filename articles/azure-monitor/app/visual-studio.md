@@ -2,17 +2,14 @@
 title: Отладка в Visual Studio с помощью Application Insights Azure
 description: Анализ производительности веб-приложения и диагностика во время отладки и в рабочей среде.
 ms.topic: conceptual
-author: NumberByColors
-ms.author: daviste
-ms.date: 07/07/2017
-ms.reviewer: mbullwin
+ms.date: 03/17/2017
 ms.custom: vs-azure
-ms.openlocfilehash: 1bb18cc43ef306a208500ff49ec41dbfb74b788e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3937719fd47ba988cf1e0a93f4c06fcc8112d3e
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323474"
+ms.locfileid: "91932215"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Отладка приложений с помощью Azure Application Insights в Visual Studio
 В Visual Studio 2015 и более поздних версиях можно анализировать производительность веб-приложения ASP.NET и диагностировать проблемы во время отладки и в рабочей среде с помощью телеметрии из [Azure Application Insights](./app-insights-overview.md).
@@ -93,9 +90,7 @@ ms.locfileid: "87323474"
   * Чтобы отключить отправку данных телеметрии на портал, закомментируйте строку `<instrumentationkey>...` с ApplicationInsights.config. Когда вы будете готовы отправить данные телеметрии на портал, раскомментируйте его.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-|  |  |
-| --- | --- |
-| **[Добавление данных](./asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio/64.png) |
-| **[Работа с порталом Application Insights](./overview-dashboard.md)**<br/>Просмотр панелей мониторинга, эффективных средств диагностики и анализа, оповещений, карты динамических зависимостей приложения, а также экспортированных данных телеметрии. |![Visual studio](./media/visual-studio/62.png) |
+## <a name="next-steps"></a>Дальнейшие шаги
+
+ * **[Работа с порталом Application Insights](./overview-dashboard.md)**. Просмотр панелей мониторинга, эффективных средств диагностики и анализа, оповещений, карты динамических зависимостей приложения, а также экспортированных данных телеметрии. 
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 2af4f2e2148c96a6059836f861cf56d4a4ac005b
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: 61c8468400898655b6501b7a8fada607b77b1466
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766177"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91931501"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -29,7 +29,7 @@ API-интерфейсы плоскости управления — это ин
 Самая последняя версия API плоскости управления для общедоступной предварительной версии — _**2020-03-01-Preview**_.
 
 Для использования API-интерфейсов плоскости управления:
-* Интерфейсы API можно вызывать напрямую, ссылаясь на последнюю [папку Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins). Этот репозиторий также содержит папку примеров, демонстрирующих использование.
+* Интерфейсы API можно вызывать напрямую, ссылаясь на последнюю версию Swagger в [папке контрольной плоскости Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins). Этот репозиторий также содержит папку примеров, демонстрирующих использование.
 * В настоящее время вы можете получить доступ к пакетам SDK для API управления в...
   - [.NET (C#)](https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/1.0.0-preview.1) ([Исходный код](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins)) ([ссылка [автоматически созданная]](https://docs.microsoft.com/dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet-preview&preserve-view=true))
   - [Java](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_03_01_preview/azure-mgmt-digitaltwins) ([источник](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins)) ([ссылка [автоматически созданная]](https://docs.microsoft.com/java/api/overview/azure/digitaltwins/management?view=azure-java-preview&preserve-view=true))
@@ -51,7 +51,7 @@ API-интерфейсы плоскости данных — это API-инте
 
 Чтобы использовать API-интерфейсы плоскости данных, выполните следующие действия.
 * Интерфейсы API можно вызывать напрямую, по...
-   - Ссылка на последнюю [папку Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins). Этот репозиторий также содержит папку примеров, демонстрирующих использование. 
+   - Ссылка на последнюю версию Swagger в [папке Swagger плоскости данных](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins). Этот репозиторий также содержит папку примеров, демонстрирующих использование. 
    - Просмотр [справочной документации по API](https://docs.microsoft.com/rest/api/azure-digitaltwins/).
 * Вы можете использовать пакет SDK для **.NET (C#)** . Для использования пакета SDK для .NET...
    - Вы можете просмотреть и добавить пакет из NuGet: [Azure. дигиталтвинс. Core](https://www.nuget.org/packages/Azure.DigitalTwins.Core). 
@@ -298,7 +298,7 @@ client.UpdateDigitalTwin("myTwin", uou.Serialize());
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об использовании API для настройки экземпляра и проверки подлинности Azure Digital двойников:
 * [*Пошаговое руководство. Настройка экземпляра и проверки подлинности*](how-to-set-up-instance-portal.md)

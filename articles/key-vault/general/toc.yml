@@ -106,6 +106,8 @@
       items:
         - name: Руководство разработчика хранилища ключей Azure
           href: developers-guide.md
+        - name: Использование Azure Resource Manager для развертывания Key Vault
+          href: vault-create-template.md
         - name: Сохранение секретов веб-приложений
           href: vs-secure-secret-appsettings.md
         - name: Аутентификация между службами с помощью .NET

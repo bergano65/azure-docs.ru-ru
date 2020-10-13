@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
 ms.openlocfilehash: b8d16b4e112c9aebe86c60dc01d380d591fc7624
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91743528"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Начало работы с автомасштабированием в Azure
@@ -127,7 +127,7 @@ Azure Monitor дает возможность обнаружить все рес
 
 #### <a name="security"></a>Безопасность 
 
-Группам разработчиков на крупных предприятиях часто приходится соблюдать требования к безопасности для предоставляемых API. Чтобы защитить конечную точку Healthcheck, сначала следует использовать такие функции, как [ограничения IP-адресов](../../app-service/app-service-ip-restrictions.md#adding-ip-address-rules), [сертификаты клиентов](../../app-service/app-service-ip-restrictions.md#adding-ip-address-rules)или виртуальная сеть, чтобы ограничить доступ к приложению. Вы можете защитить конечную точку Healthcheck, запросив, что `User-Agent` входящий запрос соответствует `ReadyForRequest/1.0` . Не удается подменить агента пользователя, так как запрос уже защищен с помощью предыдущих функций безопасности.
+Группам разработчиков на крупных предприятиях часто приходится соблюдать требования к безопасности для предоставляемых API. Чтобы защитить конечную точку Healthcheck, сначала следует использовать такие функции, как [ограничения IP-адресов](../../app-service/app-service-ip-restrictions.md#adding-ip-address-rules), [сертификаты клиентов](../../app-service/app-service-ip-restrictions.md#adding-ip-address-rules)или виртуальная сеть, чтобы ограничить доступ к приложению. Вы можете защитить конечную точку Healthcheck, запросив, что `User-Agent` входящий запрос соответствует `ReadyForRequest/1.0` . Невозможно подменить User-Agent, так как запрос уже защищен с помощью предыдущих функций безопасности.
 
 ### <a name="behavior"></a>Поведение
 
@@ -141,7 +141,7 @@ Azure Monitor дает возможность обнаружить все рес
 
 После предоставления пути к проверке работоспособности приложения можно отслеживать работоспособность сайта с помощью Azure Monitor. В колонке **Проверка работоспособности** на портале щелкните **метрики** на верхней панели инструментов. Откроется новая колонка, в которой можно просмотреть историю состояния работоспособности сайта и создать новое правило генерации оповещений. Дополнительные сведения о мониторинге сайтов см. [в разделе Azure Monitor](../../app-service/web-sites-monitor.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Создайте оповещение журнала действий, чтобы отслеживать все операции системы автомасштабирования в подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert).
 - [Создайте оповещение журнала действий, чтобы отслеживать все сбои автомасштабирования в подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert).
 
