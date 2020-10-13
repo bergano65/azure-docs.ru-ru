@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/21/2020
 ms.openlocfilehash: bec9c7b4be5c3c3e334a8e3cb3a8b2e0a7130de3
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89669296"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительная версия — защита кластера с помощью политик безопасности Pod в службе Kubernetes Azure (AKS)
@@ -16,7 +16,7 @@ ms.locfileid: "89669296"
 > [!WARNING]
 > **Функция, описанная в этом документе, политика безопасности Pod (Предварительная версия), задается для устаревания и больше не будет доступна после 1 февраля 2021** в пользу [политики Azure для AKS](use-pod-security-on-azure-policy.md). Дата устаревания была продлена с предыдущей даты 15 октября 2020 г.
 >
-> После того как политика безопасности Pod (Предварительная версия) устарела, эту функцию необходимо отключить в любых существующих кластерах, использующих устаревшую функцию, чтобы выполнить будущие обновления кластера и остаться в службе поддержки Azure.
+> После этой даты политику безопасности pod (предварительная версия) нужно будет отключить на всех затронутых существующих кластерах, чтобы сохранить возможность обновления кластеров в будущем и обеспечить поддержку Azure.
 >
 > Мы настоятельно рекомендуем начать тестирование сценариев с помощью политики Azure для AKS, которая предоставляет встроенные политики для защиты модулей Pod и встроенных инициатив, которые сопоставляются с политиками безопасности модуля. Щелкните здесь, чтобы узнать о [переходе на политику Azure из политики безопасности Pod (Предварительная версия)](use-pod-security-on-azure-policy.md#migrate-from-kubernetes-pod-security-policy-to-azure-policy).
 
@@ -58,7 +58,7 @@ az feature register --name PodSecurityPolicyPreview --namespace Microsoft.Contai
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/PodSecurityPolicyPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -422,7 +422,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как создать политику безопасности Pod, чтобы предотвратить использование привилегированного доступа. Существует множество функций, которые может применять политика, например тип тома или пользователя запуска от имени. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам безопасности Kubernetes Pod][kubernetes-policy-reference].
 

@@ -11,10 +11,10 @@ ms.service: azure-portal
 ms.custom: ''
 manager: mtillman
 ms.openlocfilehash: 359a544df906a277a89333e3aee2f6203a707f8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84764134"
 ---
 # <a name="add-remove-and-rearrange-favorites"></a>Добавление, удаление и переупорядочение избранного
@@ -63,7 +63,7 @@ ms.locfileid: "84764134"
 
 1. Продолжая удерживаться, перетащите элемент в начало списка **Избранное** , а затем выпустите.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о создании рабочей области, ориентированной на проект, см. [в разделе Создание панелей мониторинга и общий доступ к ним в портал Azure](../azure-portal/azure-portal-dashboards.md)
 * Ознакомьтесь с дополнительными инструкциями по [портал Azure видеороликов](https://www.youtube.com/playlist?list=PLLasX02E8BPBKgXP4oflOL29TtqTzwhxR)

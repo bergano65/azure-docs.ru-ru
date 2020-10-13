@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.openlocfilehash: 7217817e9add6214c2da8362a2769cad0c2cf330
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939318"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Основные понятия сервера в базе данных Azure для гибкого сервера MySQL (Предварительная версия)
@@ -57,7 +57,7 @@ ms.locfileid: "90939318"
 
 Вы можете управлять базой данных Azure для гибкого сервера MySQL с помощью [портал Azure](./quickstart-create-server-portal.md) или [Azure CLI](./quickstart-create-server-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Дополнительные сведения о [создании сервера](./quickstart-create-server-portal.md)
 -   Сведения о [мониторинге и оповещениях](./how-to-alert-on-metric.md)

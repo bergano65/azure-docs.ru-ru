@@ -10,10 +10,10 @@ ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 97327517b40e715294393a97e8a26c078173e762
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88510850"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Связывание и сопоставление предложений в параллельных документах
@@ -46,6 +46,6 @@ Custom Translator анализирует перевод по одному пре
 > - Настройка и тестирование являются необязательными. Если они не будут предоставлены, система удалит соответствующий процент от обучения, чтобы использовать его для проверки и тестирования. 
 > - При обучении модели можно ограничиться только данными в формате словаря. См. статью [что такое словарь](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/what-is-dictionary).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об использовании [словаря](what-is-dictionary.md) в Custom Translator.

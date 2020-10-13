@@ -4,10 +4,10 @@ description: Узнайте, как выполнить команду быстр
 ms.topic: article
 ms.date: 07/02/2019
 ms.openlocfilehash: f27a99818260553cbd7ba26158db0064c145a21f
-ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88245389"
 ---
 # <a name="check-the-health-of-an-azure-container-registry"></a>Проверка работоспособности реестра контейнеров Azure
@@ -19,7 +19,7 @@ ms.locfileid: "88245389"
 Дополнительные рекомендации по устранению неполадок в реестре см. в следующих статьях:
 * [Устранение неполадок при входе в реестр](container-registry-troubleshoot-login.md)
 * [Устранение проблем с сетью с помощью реестра](container-registry-troubleshoot-access.md)
-* [Устранение неполадок с производительностью реестра](container-registry-troubleshoot-performance.md)
+* [Устранение проблем с производительностью реестра](container-registry-troubleshoot-performance.md)
 
 ## <a name="run-az-acr-check-health"></a>Выполните команду AZ контроля доступа (проверка работоспособности)
 
@@ -38,7 +38,7 @@ az acr check-health
 
 ### <a name="check-the-environment-and-a-target-registry"></a>Проверка среды и целевого реестра
 
-Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Пример.
+Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Пример:
 
 ```azurecli
 az acr check-health --name myregistry

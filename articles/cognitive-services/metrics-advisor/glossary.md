@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: aahi
 ms.openlocfilehash: 25e5cb6e34624f3272e83e1e7c1cd847b865ae8e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938798"
 ---
 # <a name="metrics-advisor-glossary-of-common-vocabulary-and-concepts"></a>Глоссарий по метрикам общего словаря и концепций
@@ -181,7 +181,7 @@ ms.locfileid: "90938798"
 
 **Аномалии в первых n всех рядах**: оповещения будут активироваться только для аномалий в n первых сериях. Можно задать параметры, определяющие количество отметок времени, которое следует учитывать, и количество аномалий, которые должны быть в них для отправки предупреждения.
 
-### <a name="severity"></a>Уровень серьезности
+### <a name="severity"></a>Severity
 
 Серьезность — это показатель, который помощник по метрикам использует для описания серьезности инцидента, включая *высокий*, *средний*и *низкий*.
 
@@ -244,7 +244,7 @@ ms.locfileid: "90938798"
 
 * *Средство просмотра* может просматривать веб-канал данных или метрики, но не может вносить изменения. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Общие сведения о Помощнике по метрикам](overview.md)
 - [Попробуйте демонстрационный сайт](quickstarts/explore-demo.md)
 - [Использование веб-портала](quickstarts/web-portal.md)

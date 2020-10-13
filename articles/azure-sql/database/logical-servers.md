@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: abb8f42e7fe4ffe6e933f466202247c73ece129a
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89441720"
 ---
 # <a name="what-is-a-logical-sql-server-in-azure-sql-database-and-azure-synapse"></a>Что такое логический сервер SQL Server в базе данных SQL Azure и Azure синапсе?
@@ -83,7 +83,7 @@ ms.locfileid: "89441720"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для создания серверов, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте следующие командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Изучите дополнительные сведения о создании [эластичных пулов](elastic-pool-overview.md) и управлении ими.
 
@@ -102,7 +102,7 @@ ms.locfileid: "89441720"
 |[Get-Азсклсерверфиреваллруле](/powershell/module/az.sql/get-azsqlserverfirewallrule)|Получает правила брандмауэра для сервера.|
 |[Set-Азсклсерверфиреваллруле](/powershell/module/az.sql/set-azsqlserverfirewallrule)|Изменяет правило брандмауэра на сервере.|
 |[Remove-Азсклсерверфиреваллруле](/powershell/module/az.sql/remove-azsqlserverfirewallrule)|Удаляет правило брандмауэра с сервера.|
-| New-Азсклсервервиртуалнетворкруле | Создает [*правило виртуальной сети*](vnet-service-endpoint-rule-overview.md) на основе подсети, которая является конечной точкой службы для виртуальной сети. |
+| New-AzSqlServerVirtualNetworkRule | Создает [*правило виртуальной сети*](vnet-service-endpoint-rule-overview.md) на основе подсети, которая является конечной точкой службы для виртуальной сети. |
 
 > [!TIP]
 > Краткое руководство по PowerShell см. [в статье Создание базы данных в базе данных SQL Azure с помощью PowerShell](single-database-create-quickstart.md). Примеры сценариев PowerShell см. в статьях [Использование PowerShell для создания базы данных в базе данных SQL Azure и настройка правила брандмауэра](scripts/create-and-configure-database-powershell.md) и [мониторинг и масштабирование базы данных в базе данных SQL Azure с помощью PowerShell](scripts/monitor-and-scale-database-powershell.md).
@@ -147,7 +147,7 @@ ms.locfileid: "89441720"
 
 | Get-Help | Описание |
 | --- | --- |
-|[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current) | Создает новую базу данных в базе данных SQL Azure. Для создания новой базы данных необходимо подключение к базе данных master.|
+|[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current) | Отвечает за создание базы данных в Базе данных SQL Azure. Для создания новой базы данных необходимо подключение к базе данных master.|
 |[Создание базы данных (Azure синапсе)](/sql/t-sql/statements/create-database-transact-sql?view=azure-sqldw-latest) | Создает новую базу данных хранилища данных в Azure синапсе. Для создания новой базы данных необходимо подключение к базе данных master.|
 | [CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных или эластичный пул. |
 |[ALTER DATABASE (Azure синапсе Analytics)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=sql-server-ver15)|Изменяет базу данных хранилища данных в Azure синапсе.|
@@ -190,7 +190,7 @@ ms.locfileid: "89441720"
 |[Правила брандмауэра — получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
 |[Правила брандмауэра — список по серверам](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о переносе базы данных SQL Server в базу данных SQL Azure см. в статье [Миграция в базу данных SQL](migrate-to-database-from-sql-server.md)Azure.
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](features-comparison.md).

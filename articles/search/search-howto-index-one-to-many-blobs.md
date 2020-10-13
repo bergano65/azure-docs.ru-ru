@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
 ms.openlocfilehash: e5a69525c4bd0717c0561bc61ee3c52aa68e1c9d
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91533967"
 ---
 # <a name="indexing-blobs-to-produce-multiple-search-documents"></a>Индексирование больших двоичных объектов для получения нескольких поисковых документов
@@ -66,7 +66,7 @@ _Blob2.jsна_
 
 Эта установка приведет к тому, что индекс Когнитивный поиск Azure будет содержать следующие сведения (идентификатор в кодировке Base64 сокращен для краткости).
 
-| ID | Температура | давление | TIMESTAMP |
+| ID | Температура | pressure | TIMESTAMP |
 |----|-------------|----------|-----------|
 | aHR0 ... ижеуаннвбжскс | 100 | 100 | 2019-02-13T00:00:00Z |
 | aHR0 ... ижеуаннвбжси | 33 | 30 | 2019-02-14T00:00:00Z |
@@ -112,7 +112,7 @@ _Blob2.jsна_
 ## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
 Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/). Если вам нужна помощь с использованием существующего компонента, опубликуйте свой вопрос на [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы еще не знакомы с базовой структурой и рабочим процессом индексирования больших двоичных объектов, сначала следует ознакомиться [с индексацией хранилища BLOB-объектов Azure с помощью Azure когнитивный Поиск](search-howto-index-json-blobs.md) . Дополнительные сведения о режимах синтаксического анализа для различных типов содержимого BLOB-объектов см. в следующих статьях.
 

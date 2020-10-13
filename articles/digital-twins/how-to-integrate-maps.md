@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
 ms.openlocfilehash: 8f739982ac9193c80cae23d91b77091f75c3fd13
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90564369"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Использование Azure Digital двойников для обновления карт Azure Maps
@@ -25,7 +25,7 @@ ms.locfileid: "90564369"
 2. Создание функции Azure для обновления "Azure Maps" функции сопоставления.
 3. Сведения о хранении идентификатора сопоставления и идентификатора состояния компонентов в графе Azure Digital двойников.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 * Следуйте указаниям в руководстве по цифровому двойников Azure [*: подключение комплексного решения*](./tutorial-end-to-end.md).
     * Вы будете расширять эту двойника с помощью дополнительной конечной точки и маршрута. Вы также добавите в приложение функции другую функцию из этого руководства. 
@@ -152,7 +152,7 @@ az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-st
 
 Оба образца отправляют температуру в совместимом диапазоне, поэтому на карте должен отображаться цвет для обновления комнаты 121 примерно каждые 30 секунд.
 
-:::image type="content" source="media/how-to-integrate-maps/maps-temperature-update.png" alt-text="Схема Office, в которой отображается комната 121, окрашенный оранжевый":::
+:::image type="content" source="media/how-to-integrate-maps/maps-temperature-update.png" alt-text="Представление служб Azure в комплексном сценарии, в котором выделяется элемент интеграции Maps":::
 
 ## <a name="store-your-maps-information-in-azure-digital-twins"></a>Хранение сведений о картах в цифровом двойников Azure
 
@@ -162,7 +162,7 @@ az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-st
 
 В зависимости от конфигурации топологии вы сможете хранить эти три атрибута на разных уровнях, соотнесенных с степенью детализации вашей схемы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении, обновлении и извлечении данных из графа двойников см. в следующих статьях:
 

@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
 ms.openlocfilehash: fd49993e6825c47bbae8f034715c03191e06ab2d
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89441669"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-fstab-errors"></a>Устранение проблем с запуском виртуальных машин Linux из-за ошибок fstab
@@ -238,7 +238,7 @@ Give root password for maintenance
     * Протестируйте все изменения fstab, прежде чем перезапускать виртуальную машину. Для этого используйте следующую команду: ``$ sudo mount -a``
     * Создайте дополнительную копию исправленного файла fstab для использования в будущих сценариях восстановления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2.0](./troubleshoot-recovery-disks-linux.md)
 * [Устранение неполадок с виртуальной машиной Linux при присоединении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](./troubleshoot-recovery-disks-portal-linux.md)

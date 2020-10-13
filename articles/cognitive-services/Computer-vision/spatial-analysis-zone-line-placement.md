@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: aahi
 ms.openlocfilehash: 7e2a64c14d7d7a1d20b64b746969aca1e60ab218
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939409"
 ---
 # <a name="zone-and-line-placement-guide"></a>Рекомендации по размещению зон и строк
@@ -79,7 +79,7 @@ ms.locfileid: "90939409"
 
 ![Линия слишком высока и не охватывает всей двери](./media/spatial-analysis/zone-line-too-high.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание веб-приложения инвентаризации людей](spatial-analysis-web-app.md)
 * [Настройка операций пространственного анализа](./spatial-analysis-operations.md)

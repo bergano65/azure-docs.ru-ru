@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/24/2019
 ms.custom: devx-track-js
 ms.openlocfilehash: cad7d5c066dd8c8a7468833cb67e6085f067417a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91262116"
 ---
 # <a name="build-and-push-an-image-from-an-app-using-a-cloud-native-buildpack"></a>Сборка и отправка образа из приложения с помощью собственного облачного Буилдпакк
@@ -94,7 +94,7 @@ docker run --rm -p 8080:8080 myregistry.azurecr.io/java-app:runid
 Перейдите в `localhost:8080` свой любимый браузер, чтобы просмотреть пример веб-приложения. Нажмите `[Ctrl]+[C]` , чтобы прерывать контейнер.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После сборки и отправки образа контейнера с помощью `az acr pack build` его можно развернуть как любой образ в выбранном целевом объекте. Варианты развертывания Azure включают в себя запуск в [службе приложений](../app-service/tutorial-custom-container.md) или [Azure Kubernetes Service](../aks/tutorial-kubernetes-deploy-cluster.md), а также другие.
 

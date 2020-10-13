@@ -4,10 +4,10 @@ description: Справочник по событию завершения из�
 ms.topic: reference
 ms.date: 04/20/2017
 ms.openlocfilehash: 94301f29fb6e7968dbe0389754fcf2a3b105d7ef
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83723822"
 ---
 # <a name="pool-resize-complete-event"></a>Событие завершения изменения размера пула

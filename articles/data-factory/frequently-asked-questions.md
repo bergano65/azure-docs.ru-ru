@@ -10,10 +10,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.openlocfilehash: 2d2c4145ab0a070e4cb20d89b8a0d3973b23d9ed
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89440513"
 ---
 # <a name="azure-data-factory-faq"></a>Часто задаваемые вопросы о фабрике данных Azure
@@ -257,7 +257,7 @@ ms.locfileid: "89440513"
 * nchar
 * varchar
 * nvarchar
-* целое число
+* Целое число
 * INT
 * bit
 * Логическое
@@ -265,7 +265,7 @@ ms.locfileid: "89440513"
 * tinyint
 * BIGINT
 * long
-* текст
+* text
 * Дата
 * DATETIME
 * datetime2
@@ -276,7 +276,7 @@ ms.locfileid: "89440513"
 
 В будущем будут поддерживаться и другие типы данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Пошаговые инструкции по созданию фабрики данных см. в следующих руководствах:
 
 - [Краткое руководство. Создание фабрики данных](quickstart-create-data-factory-dot-net.md)

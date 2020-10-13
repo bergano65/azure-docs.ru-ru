@@ -4,10 +4,10 @@ description: Базовый план безопасности Azure для Azure
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.openlocfilehash: 49b07242068df5d7c46c602140c8b3e1f778e90c
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89398329"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
@@ -515,7 +515,7 @@ DevTest Labs не имеет концепции паролей по умолча
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-См. следующие статьи: 
+Дополнительные сведения см. в следующих статьях: 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 - [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/not-allowed-resource-types.md)
 
@@ -886,7 +886,7 @@ DevTest Labs не имеет концепции паролей по умолча
 
 **Ответственность:** Используемый
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующую статью:
 
 - [Оповещения системы безопасности для сред в Azure DevTest Labs](environment-security-alerts.md)
