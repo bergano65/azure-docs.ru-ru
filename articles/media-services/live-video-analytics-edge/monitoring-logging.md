@@ -4,10 +4,10 @@ description: В этой статье представлен обзор функ
 ms.topic: reference
 ms.date: 04/27/2020
 ms.openlocfilehash: ef00517fc61ac532bdd99c1e887dfd93d56a8c4f
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89567560"
 ---
 # <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
@@ -21,7 +21,7 @@ ms.locfileid: "89567560"
 Интерактивная аналитика видео на IoT Edge выдает события или данные телеметрии в соответствии со следующей классификацией.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/telemetry-schema/taxonomy.png" alt-text="Классификация событий":::
+> :::image type="content" source="./media/telemetry-schema/taxonomy.png" alt-text="Классификация событий&quot;:::
 
 * Операционные: события, которые создаются как часть действий, выполненных пользователем, или во время выполнения [графа мультимедиа](media-graph-concept.md).
    
@@ -32,16 +32,16 @@ ms.locfileid: "89567560"
       
       ```
       {
-        "body": {
-          "outputType": "assetName",
-          "outputLocation": "sampleAssetFromEVR-LVAEdge-20200512T233309Z"
+        &quot;body&quot;: {
+          &quot;outputType&quot;: &quot;assetName&quot;,
+          &quot;outputLocation&quot;: &quot;sampleAssetFromEVR-LVAEdge-20200512T233309Z&quot;
         },
-        "applicationProperties": {
-          "topic": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/<my-resource-group>/providers/microsoft.media/mediaservices/<ams-account-name>",
-          "subject": "/graphInstances/Sample-Graph-2/sinks/assetSink",
-          "eventType": "Microsoft.Media.Graph.Operational.RecordingStarted",
-          "eventTime": "2020-05-12T23:33:10.392Z",
-          "dataVersion": "1.0"
+        &quot;applicationProperties&quot;: {
+          &quot;topic&quot;: &quot;/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/<my-resource-group>/providers/microsoft.media/mediaservices/<ams-account-name>&quot;,
+          &quot;subject&quot;: &quot;/graphInstances/Sample-Graph-2/sinks/assetSink&quot;,
+          &quot;eventType&quot;: &quot;Microsoft.Media.Graph.Operational.RecordingStarted&quot;,
+          &quot;eventTime&quot;: &quot;2020-05-12T23:33:10.392Z&quot;,
+          &quot;dataVersion&quot;: &quot;1.0"
         }
       }
       ```
@@ -160,7 +160,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 События происходят на пограничном устройстве, и их можно использовать на границе или в облаке. События, создаваемые функцией Live Video Analytics на IoT Edge, соответствуют [шаблону обмена сообщениями с потоковой передачей](../../iot-hub/iot-hub-devguide-messages-construct.md) , установленному центром Интернета вещей Azure, со свойствами системы, свойствами приложения и телом.
 
-### <a name="summary"></a>Сводка
+### <a name="summary"></a>Итоги
 
 Каждое событие, наблюдаемое через центр Интернета вещей, будет иметь набор общих свойств, как описано ниже.
 
@@ -207,7 +207,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 |Имя класса|Описание|
 |---|---|
-|Analytics  |События, создаваемые как часть анализа содержимого.|
+|Аналитика  |События, создаваемые как часть анализа содержимого.|
 |Диагностика    |События, помогающие в диагностике проблем и производительности.|
 |Операционный    |События, создаваемые как часть операции с ресурсами.|
 
@@ -268,6 +268,6 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 [Вопросы и ответы](faq.md#monitoring-and-metrics)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Непрерывная запись видео](continuous-video-recording-tutorial.md)

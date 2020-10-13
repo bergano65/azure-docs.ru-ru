@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
 ms.openlocfilehash: 0c7838b291ca5ba1747b08d7e8fcc6d17cc35f7d
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91802231"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
@@ -248,6 +248,6 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 Если вы подключаетесь к ресурсам Azure Monitor по частной ссылке, трафик к этому ресурсу должен пройти через закрытую конечную точку, настроенную в сети. Чтобы включить частную конечную точку, обновите параметры DNS, как описано в [подсоединении к частной конечной точке](#connect-to-a-private-endpoint). Некоторые браузеры используют собственные параметры DNS вместо заданных. Браузер может попытаться подключиться к Azure Monitor общедоступным конечным точкам и полностью обойти частную ссылку. Убедитесь, что параметры браузера не переопределяют или кэшируют старые параметры DNS. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о [закрытом хранилище](private-storage.md)

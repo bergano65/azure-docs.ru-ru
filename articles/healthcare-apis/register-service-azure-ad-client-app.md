@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
 ms.openlocfilehash: 19d6b0ebfa2570b04c3a9dda3fe69428aa0eed75
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91629329"
 ---
 # <a name="register-a-service-client-application-in-azure-active-directory"></a>Регистрация клиентского приложения службы в Azure Active Directory
@@ -71,7 +71,7 @@ ms.locfileid: "91629329"
 
 4. После создания секрета он будет отображаться на портале только один раз. Запишите его и храните в безопасном месте.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как зарегистрировать клиентское приложение службы в Azure Active Directory. Далее вы можете узнать о дополнительных параметрах API Azure для FHIR.
  

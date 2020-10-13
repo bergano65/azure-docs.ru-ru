@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/09/2020
 ms.openlocfilehash: b23783080e976f70ba8c5e02f67dcee36bbc9c34
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91444965"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mariadb"></a>Подключение SSL/TLS в базе данных Azure для MariaDB
@@ -68,7 +68,7 @@ ms.locfileid: "91444965"
 *   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
 *   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [правилах брандмауэра сервера](concepts-firewall-rules.md)
 - Узнайте, как [настроить SSL](howto-configure-ssl.md)
 - Узнайте, как [настроить TLS](howto-tls-configurations.md)

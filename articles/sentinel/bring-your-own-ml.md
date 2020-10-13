@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: yelevin
 ms.openlocfilehash: 17c0ba7306ab4cc51fe8bbe3709d5b6bc85fa487
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91347511"
 ---
 # <a name="bring-your-own-machine-learning-ml-into-azure-sentinel"></a>Перевод собственного Машинное обучение (машинного обучения) в Azure Sentinel
@@ -159,18 +159,18 @@ az monitor log-analytics workspace data-export list --resource-group "RG_NAME" -
 
 Чтобы просмотреть оцененные результаты вместе со сведениями о связанном журнале, вернитесь на портал Azure Sentinel. В **журналах** > пользовательские журналы отобразятся результаты в таблице **AnomalousResourceAccessResult_CL** (или в собственном имени настраиваемой таблицы). Эти результаты можно использовать для улучшения расследования и поиска.
 
-:::image type="content" source="./media/bring-your-own-ml/anomalous-resource-access-logs.png" alt-text="журналы аномального доступа к ресурсам":::
+:::image type="content" source="./media/bring-your-own-ml/anomalous-resource-access-logs.png" alt-text="платформа машинного обучения":::
 
 ### <a name="build-custom-analytics-rule-with-ml-results"></a>Создание настраиваемого правила аналитики с помощью результатов ML
 
 После подтверждения того, что результаты машинного обучения находятся в таблице пользовательские журналы, и вы удовлетворены достоверностью оценок, вы можете создать обнаружение на основе результатов. Перейдите к **аналитике** на портале Sentinel Azure и [Создайте новое правило обнаружения](tutorial-detect-threats-custom.md). Ниже приведен пример запроса, используемого для создания обнаружения.
 
-:::image type="content" source="./media/bring-your-own-ml/create-byo-ml-analytics-rule.png" alt-text="создать настраиваемое правило аналитики для обнаружений B Y O M L":::
+:::image type="content" source="./media/bring-your-own-ml/create-byo-ml-analytics-rule.png" alt-text="платформа машинного обучения":::
 
 ### <a name="view-and-respond-to-incidents"></a>Просмотр инцидентов и реагирование на них
 После настройки правила аналитики на основе результатов машинного обучения, если результаты выше порогового значения, заданного в запросе, создается инцидент и отображается на странице **инциденты** в Azure Sentinel. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как использовать платформу BYO-ML в Azure Sentinel для создания или импорта собственных алгоритмов машинного обучения для анализа данных и обнаружения угроз.
 

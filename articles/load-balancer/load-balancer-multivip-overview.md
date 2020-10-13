@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
 ms.openlocfilehash: 2e27b168087966701fb53cc8df19d264861257d6
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91448105"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Несколько внешних интерфейсов для Azure Load Balancer
@@ -33,7 +33,7 @@ Azure Load Balancer позволяет выполнять балансировк
 | --- | --- | --- | --- |
 | 1 |65.52.0.1 |TCP |80 |
 | 2 |65.52.0.1 |TCP |*8080* |
-| 3 |65.52.0.1 |*UDP* |80 |
+| 3 |65.52.0.1 |*Протокол UDP* |80 |
 | 4 |*65.52.0.2* |TCP |80 |
 
 В таблице представлены четыре разных внешних интерфейса. Внешние интерфейсы 1, 2 и 3 — это один внешний интерфейс с несколькими правилами. Используется один IP-адрес, но порт или протокол отличаются для каждого внешнего интерфейса. Внешние интерфейсы 1 и 4 являются примерами нескольких внешних интерфейсов, где один интерфейсный протокол и один порт повторно используются для разных внешних интерфейсов.
@@ -69,7 +69,7 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 Полное сопоставление в Azure Load Balancer теперь выглядит следующим образом:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |Выделенный IP-адрес (DIP) |80 |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |Выделенный IP-адрес (DIP) |81 |
@@ -148,7 +148,7 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 
 Следующая таблица демонстрирует полное сопоставление в балансировщике нагрузки:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.1) |такое, как у внешнего интерфейса (80) |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.2) |такое, как у внешнего интерфейса (80) |
@@ -167,6 +167,6 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 * Общедоступные IP-адреса оказывают влияние на выставление счетов. Дополнительные сведения см. в статье [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
 * Действуют ограничения подписки. Дополнительные сведения см. в разделе [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Просмотрите статью [Исходящие подключения в Azure](load-balancer-outbound-connections.md), чтобы понять, как влияют несколько внешних интерфейсов на поведение исходящих подключений.

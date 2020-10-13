@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
 ms.openlocfilehash: 706379649b47846b5c020dc76493a98e346c4a8f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317690"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
@@ -39,7 +39,7 @@ ms.locfileid: "91317690"
 
 1. Выберите **создать ресурс** в левом верхнем углу портал Azure.
 2. Выполните поиск *DDoS*. Когда в результатах поиска появится **план защиты от атак DDoS** , выберите его.
-3. Выберите **Создать**.
+3. Нажмите кнопку **создания**.
 4. Введите или выберите собственные значения либо введите или выберите значения из примера, а затем щелкните **Создать**.
 
     |Параметр        |Значение                                              |
@@ -241,6 +241,6 @@ ms.locfileid: "91317690"
 ### <a name="azure-policy"></a>Политика Azure
 Для клиентов, которые имеют различные подписки и хотят, чтобы один план для стандарта защиты Azure от атак DDoS был развернут в своем клиенте для управления затратами, можно использовать политику Azure для [ограничения создания планов защиты Azure от атак DDoS Standard](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Restrict%20creation%20of%20Azure%20DDoS%20Protection%20Standard%20Plans%20with%20Azure%20Policy). Эта политика будет блокировать создание планов от атак DDoS, если подписка ранее не была помечена как исключение. Эта политика также будет показывать список всех подписок, которые развернули план от атак DDoS, но не должны помечать их как несоответствие. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создание и назначение [политики Azure определения](policy-samples.md) для виртуальных сетей

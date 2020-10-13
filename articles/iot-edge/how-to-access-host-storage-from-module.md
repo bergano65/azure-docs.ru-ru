@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 4af63421e831318e6250825cffd1abad415b85bb
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91447839"
 ---
 # <a name="give-modules-access-to-a-devices-local-storage"></a>Предоставление модулям доступа к локальному хранилищу устройства
@@ -89,6 +89,6 @@ sudo chmod 700 <HostStoragePath>
 
 Если требуется совместное использование файлов между модулями в поколениях, они не должны содержать секреты, иначе они не будут расшифровываться.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные примеры доступа к хранилищу узлов из модуля см. в разделе [хранение данных в пограничном хранилище с помощью хранилища BLOB-объектов Azure на IOT Edge](how-to-store-data-blob.md).

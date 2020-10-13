@@ -10,10 +10,10 @@ ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
 ms.openlocfilehash: 700cc461563f145f58e02f7ed9a09b2899a4eb5b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91345828"
 ---
 # <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Studio (классическая модель)
@@ -129,6 +129,6 @@ ms.locfileid: "91345828"
 После удаления файлов cookie перезапустите браузер и перейдите на страницу [студия машинного обучения Microsoft Azure (классическая модель)](https://studio.azureml.net) . Введите данные той же учетной записи Майкрософт, использованной для создания рабочей области.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении рабочей областью см. в статье [Управление рабочей областью машинное обучение Azure Studio (классическая модель)](manage-workspace.md).

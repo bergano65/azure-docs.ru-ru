@@ -17,10 +17,10 @@ ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ba90724f75635ea9fd5f72f75de6a46d7b6d288
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91447002"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
@@ -150,7 +150,7 @@ ms.locfileid: "91447002"
     
     Если любая политика имеет более высокий приоритет, категории с низким приоритетом не учитываются. Пример того, как в запрашивающей части отображается несколько политик с одинаковым приоритетом, см. в разделе [Выбор политики](entitlement-management-request-access.md#select-a-policy).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление доступом для внешних пользователей](entitlement-management-external-users.md)
 - [Просмотр отчетов о том, как пользователи получили доступ в управлении назначениями](entitlement-management-reports.md)
