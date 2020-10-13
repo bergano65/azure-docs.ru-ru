@@ -8,10 +8,10 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 09/09/2020
 ms.openlocfilehash: 52b9a67ee8c11011ea04f7414a3d978f5860c0ce
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708073"
 ---
 # <a name="commercial-marketplace-policies-and-terms"></a>Политики и условия коммерческой платформы
@@ -30,6 +30,6 @@ ms.locfileid: "91708073"
 - [Политики участия в Azure Marketplace](/legal/marketplace/participation-policy?context=/azure/marketplace/context/context)
 - [Условия Azure Marketplace](/legal/marketplace/terms?context=/azure/marketplace/context/context)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое коммерческий магазин корпорации Майкрософт?](overview.md)

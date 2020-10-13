@@ -10,10 +10,10 @@ ms.date: 06/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
 ms.openlocfilehash: 86fcdde72145cf25ee289ef3869976fecd628707
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91362050"
 ---
 # <a name="how-to-create-a-java-application-that-uses-azure-cosmos-db-sql-api-and-change-feed-processor"></a>Создание приложения Java, которое использует API SQL Azure Cosmos DB и обработчик канала изменений
@@ -78,7 +78,7 @@ mvn clean package
     * **InventoryContainer-pktype** — материализованное представление записи инвентаризации, оптимизированное для запросов по элементу ```type```
     * **InventoryContainer-leases** — для канала изменений обязательно нужен контейнер аренд. Аренды позволяют отслеживать чтение канала изменений приложением.
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_account_resources_lease_empty.JPG" alt-text="Пустые контейнеры":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_account_resources_lease_empty.JPG" alt-text="Учетная запись Azure Cosmos DB":::
 
 1. В окне терминала появится следующий запрос:
 
@@ -96,7 +96,7 @@ mvn clean package
 
     Вернитесь к обозревателю данных на портале Azure через браузер. В разделе контейнера **InventoryContainer-leases** щелкните **элементы**, чтобы просмотреть его содержимое. Вы увидите, что обработчик канала изменений заполнил контейнер аренд. Это означает, что обработчик назначил рабочей роли ```SampleHost_1``` аренду некоторых секций **InventoryContainer**.
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_leases.JPG" alt-text="Аренда":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_leases.JPG" alt-text="Учетная запись Azure Cosmos DB":::
 
 1. Снова нажмите клавишу ВВОД в окне терминала. При этом активируется вставка 10 документов в **InventoryContainer**. Каждая вставка документа отображается в канале изменений в формате JSON. Следующий код обратного вызова обрабатывает эти события путем зеркального отображения документов JSON в материализованном представлении:
 
@@ -106,15 +106,15 @@ mvn clean package
 
 1. Подождите 5–10 секунд, пока код выполняется. Затем вернитесь к обозревателю данных на портале Azure и выберите раздел **InventoryContainer > элементы**. Там должно быть показано, что выполняется вставка элементов в контейнер инвентаризации. Обратите внимание на ключ секции (```id```).
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_items.JPG" alt-text="Контейнер канала":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_items.JPG" alt-text="Учетная запись Azure Cosmos DB":::
 
 1. Теперь в обозревателе данных перейдите в раздел **InventoryContainer-pktype > элементы**. Это материализованное представление. Элементы в этом контейнере являются зеркальным отображением **InventoryContainer**, так как они были вставлены программными средствами с помощью канала изменений. Обратите внимание на ключ секции (```type```). Таким образом, это материализованное представление оптимизировано для фильтрации запросов по ```type```, что будет неэффективным для контейнера **InventoryContainer**, так как он секционирован по ```id```.
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview2.JPG" alt-text="На снимке экрана показана обозреватель данных страница для учетной записи Azure Cosmos D B с выбранными элементами.":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview2.JPG" alt-text="Учетная запись Azure Cosmos DB":::
 
 1. Мы удалим документ из **InventoryContainer** и **InventoryContainer-pktype** с помощью одного вызова ```upsertItem()```. Сначала обратите внимание на обозреватель данных на портале Azure. Мы удалим документ, для которого ```/type == "plums"```. Он обведен красной рамкой.
 
-    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview-emph-todelete.JPG" alt-text="На снимке экрана показана обозреватель данных страница для учетной записи Azure Cosmos D B с выбранным элементом I D.":::
+    :::image type="content" source="media/create-sql-api-java-changefeed/cosmos_materializedview-emph-todelete.JPG" alt-text="Учетная запись Azure Cosmos DB":::
 
     Нажмите клавишу ВВОД еще раз, чтобы вызвать функцию ```deleteDocument()``` в примере кода. Эта функция, показанная ниже, выполняет для новой версии документа операцию upsert, устанавливая ```/ttl == 5```. Теперь срок жизни документа равен 5 секундам. 
     

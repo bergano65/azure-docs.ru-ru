@@ -6,10 +6,10 @@ ms.subservice: qna-maker
 ms.topic: how-to
 ms.date: 03/25/2020
 ms.openlocfilehash: 9ba5f1d3d240867a8f6da52b9666c500c5b6446e
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91777375"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
@@ -22,7 +22,7 @@ ms.locfileid: "91777375"
 
 Для миграции базы знаний необходимо экспортировать из существующей базы знаний, а затем импортировать в другую.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * Настройте новую [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
@@ -69,7 +69,7 @@ ms.locfileid: "91777375"
 
 Возможность переноса журналов чатов не предусмотрена, так как новая база знаний использует для хранения журналов чатов Application Insights.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Редактирование базы знаний](../How-To/edit-knowledge-base.md)

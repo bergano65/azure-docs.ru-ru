@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-js
 ms.openlocfilehash: 0438632a36fe14d35210cb5acb8d3a50d0f038b7
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91767819"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
@@ -25,7 +25,7 @@ ms.locfileid: "91767819"
 
 Дополнительные сведения об API и пакетах SDK для Azure Digital двойников см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Сначала выполните действия по настройке, описанные в разделе [*инструкции. Настройка экземпляра и аутентификации*](how-to-set-up-instance-portal.md). Это обеспечит наличие экземпляра Azure Digital двойников, у пользователя есть разрешения на доступ, и вы настроили разрешения для клиентских приложений. После выполнения всех этих настроек вы сможете писать код клиентского приложения.
 
@@ -106,7 +106,7 @@ client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
 
 В этом разделе объясняется, как выполнить проверку подлинности в этом случае.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Во-первых, необходимо выполнить действия по созданию настраиваемого пакета SDK с помощью функции автозаполнения, выполнив действия, описанные в разделе [*инструкции. Создание настраиваемых пакетов SDK для Azure Digital двойников с*](how-to-create-custom-sdks.md)назначением.
 
@@ -199,7 +199,7 @@ export async function login() {
 
 MSAL обладает многими дополнительными возможностями, которые можно использовать для реализации таких возможностей, как кэширование и другие потоки проверки подлинности. Дополнительные сведения об этом см. в [*статье Обзор библиотеки проверки подлинности Майкрософт (MSAL)*](../active-directory/develop/msal-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о работе системы безопасности в Azure Digital двойников.
 * [*Основные понятия: безопасность решений для цифровых двойников Azure*](concepts-security.md)

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: 089cc8f22248a2b7152afaf951f6028a05682648
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91443333"
 ---
 # <a name="get-started-with-cross-database-queries-vertical-partitioning-preview"></a>Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)
@@ -121,9 +121,9 @@ ON CustomerInformation.CustomerID = OrderInformation.CustomerID
 
 В настоящее время функция запроса к эластичной базе данных включена в стоимость Базы данных SQL Azure.  
 
-Сведения о ценах см. на [странице с ценами на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database).
+Сведения о ценах см. на странице [цен на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](elastic-query-overview.md).
 * Описание синтаксиса и примеры запросов вертикально секционированных данных см. в разделе [Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)](elastic-query-vertical-partitioning.md).

@@ -18,10 +18,10 @@ ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: c46d977b6ce4eaa62aefc6874ce2b855a4711670
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91317518"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
@@ -93,7 +93,7 @@ Azure AD Connect использует для аутентификации сов
 Если прокси-сервер настроен неправильно, то появляется ошибка: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest403.png)
 ![proxy407](./media/tshoot-connect-connectivity/invokewebrequest407.png).
 
-| Error | Текст сообщения об ошибке | Комментарий |
+| Ошибка | Текст сообщения об ошибке | Комментарий |
 | --- | --- | --- |
 | 403 |Запрещено |Прокси-сервер не был открыт для запрошенного URL-адреса. Проверьте конфигурацию прокси-сервера и убедитесь, что [URL-адреса](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) открыты. |
 | 407 |Требуется проверка подлинности прокси-сервера |Для прокси-сервера требуется имя входа, которое не было указано. Если для прокси-сервера требуется проверка подлинности, убедитесь, что этот параметр настроен в machine.config. Также убедитесь, что вы используете учетные записи домена для пользователя, запустившего мастер, и для учетной записи службы. |

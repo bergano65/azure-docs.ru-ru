@@ -9,15 +9,15 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/27/2016
 ms.openlocfilehash: 186289826273e85c9faa7f972b6f48d34e38416f
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91357392"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio-classic"></a>Управление жизненным циклом приложений в Машинное обучение Azure Studio (классическая модель)
 
-**применимо к:** ![ Применяется к. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ не применяется к.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
 
 
 Машинное обучение Azure Studio (классическая модель) — это инструмент для разработки экспериментов машинного обучения, которые поддерживаются в облачной платформе Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Вы можете использовать стандартные методики управления жизненным циклом приложений (ALM) с управлением версиями различных ресурсов для автоматического выполнения и развертывания в Машинное обучение Azure Studio (классическая модель). В этой статье рассматриваются некоторые возможности и подходы.
@@ -96,7 +96,7 @@ ms.locfileid: "91357392"
 9. [Разверните веб-службу](https://github.com/hning86/azuremlps#new-amlwebservice) из прогнозного эксперимента.
 10. Протестируйте конечную точку [RRS](https://github.com/hning86/azuremlps#invoke-amlwebservicerrsendpoint) или [BES](https://github.com/hning86/azuremlps#invoke-amlwebservicebesendpoint) веб-службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Скачайте модуль [PowerShell для машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps) и начните АВТОМАТИЗИРОВАТЬ задачи ALM.
 * Узнайте, как [создавать большое число моделей машинного обучения и управлять ими, используя только один эксперимент](create-models-and-endpoints-with-powershell.md), с помощью PowerShell и API переобучения.
 * См. дополнительные сведения о [развертывании веб-служб машинного обучения Azure](deploy-a-machine-learning-web-service.md).

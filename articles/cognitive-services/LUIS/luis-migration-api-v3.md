@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
 ms.openlocfilehash: a5760db2d6e453d631680d6154e6d9a03ce55cd6
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541345"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Изменения конечной точки прогнозирования для v3
@@ -103,13 +103,13 @@ API-интерфейс прогнозирования версии 2 не буд
 }
 ```
 
-|Свойство|Type|Версия|По умолчанию|Цель|
+|Свойство|Тип|Версия|По умолчанию|Назначение|
 |--|--|--|--|--|
-|`dynamicLists`|массиве|Только версия 3|Необязательно.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
-|`externalEntities`|массиве|Только версия 3|Необязательно.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
+|`dynamicLists`|массиве|Только версия 3|Не требуется.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
+|`externalEntities`|массиве|Только версия 3|Не требуется.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
 |`options.datetimeReference`|строка|Только версия 3|Нет значения по умолчанию|Используется для определения [смещения datetimeV2](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity). Формат для Датетимереференце — [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).|
 |`options.preferExternalEntities`|Логическое|Только версия 3|false|Указывает, используется ли [внешняя сущность пользователя (с тем же именем, что и существующая сущность)](schema-change-prediction-runtime.md#override-existing-model-predictions) , или существующая сущность в модели используется для прогнозирования. |
-|`query`|строка|Только версия 3|Обязательный.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
+|`query`|строка|Только версия 3|Обязательный элемент.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
 
 ## <a name="response-changes"></a>Изменения ответа
 
@@ -272,6 +272,6 @@ const associatedMetadata = entities.$instance.my_list_entity[item];
 
 API v2 не будет считаться устаревшим по меньшей мере через 9 месяцев после предварительной версии v3.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте документацию по API V3 для обновления существующих вызовов RESTFUL к API-интерфейсам [конечной точки](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/operations/5cb0a9459a1fe8fa44c28dd8) Luis.

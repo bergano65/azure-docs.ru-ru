@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: contperfq1
 ms.date: 09/14/2020
 ms.openlocfilehash: 385e910befb79daafa532fa816b96d50a46b7d8c
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620092"
 ---
 # <a name="autoscale-azure-hdinsight-clusters"></a>Автомасштабирование кластеров Azure HDInsight
@@ -281,6 +281,6 @@ https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{res
 
 Если служба интерактивных запросов перезапускается вручную, необходимо вручную изменить `num_llap_node` конфигурацию (число узлов, необходимых для запуска управляющей программы для интерактивных запросов Hive) в разделе *Advanced Hive-Interactive-env* в соответствии с текущим числом активных рабочих узлов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с рекомендациями по масштабированию кластеров вручную в [руководстве по масштабированию](hdinsight-scaling-best-practices.md) .

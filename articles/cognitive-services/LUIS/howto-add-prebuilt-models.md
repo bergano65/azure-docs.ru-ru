@@ -9,10 +9,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/17/2020
 ms.openlocfilehash: 2080139732d71aa5df9a9d4ad13fcc4545128dff
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541923"
 ---
 # <a name="add-prebuilt-models-for-common-usage-scenarios"></a>Добавление предварительно созданных моделей для распространенных сценариев использования
@@ -78,6 +78,6 @@ LUIS включает набор предварительно созданных
 
 Если у вас есть сущность машинного обучения, которая требует обязательного компонента предварительно созданной сущности, добавьте подсущность в сущность машинного обучения, а затем добавьте _необходимый_ компонент предварительно созданной сущности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
 > [Создание модели из CSV-файлов с помощью интерфейсов API](./luis-tutorial-node-import-utterances-csv.md)

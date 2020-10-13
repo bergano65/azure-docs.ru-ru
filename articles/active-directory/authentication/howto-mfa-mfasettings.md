@@ -13,10 +13,10 @@ ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
 ms.openlocfilehash: 29187ef99ce6628359819739ab5e4b34213eeb8a
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91441624"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Настройка параметров Многофакторной идентификации Azure
@@ -374,6 +374,6 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 
 После включения функции "запомнить многофакторную проверку подлинности" пользователи могут помечать устройства как доверенные при входе, установив флажок **больше не спрашивать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о доступных методах для использования в службе многофакторной идентификации Azure см [. в статье какие методы проверки подлинности и проверки доступны в Azure Active Directory?](concept-authentication-methods.md)

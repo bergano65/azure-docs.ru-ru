@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 08/12/2020
 ms.author: alkohli
 ms.openlocfilehash: e67b507baf1c3271a7fe32318597722e52fd3890
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90891377"
 ---
 # <a name="certificate-requirements"></a>Требования к сертификатам
@@ -70,7 +70,7 @@ ms.locfileid: "90891377"
 
 * При экспорте сертификата PFX убедитесь, что выбран параметр **включить все сертификаты в цепочку, если возможно** .
 
-* Используйте сертификат PFX для конечной точки, локального пользовательского интерфейса, узла, VPN и Wi-Fi, так как открытый и закрытый ключи необходимы для Azure Stack пограничных Pro. Для закрытого ключа должен быть установлен атрибут ключа локального компьютера.
+* Используйте PFX-сертификат для конечной точки, локального пользовательского интерфейса, узла, VPN и Wi-Fi, так как открытый и закрытый ключи требуются для Azure Stack. Pro. Для закрытого ключа должен быть установлен атрибут ключа локального компьютера.
 
 * В сертификате должен использоваться алгоритм шифрования PFX 3DES. Это шифрование по умолчанию, используемое при экспорте из клиента Windows 10 в хранилище сертификатов Windows Server 2016. Дополнительные сведения о 3DES см. в разделе [тройной алгоритм DES](https://en.wikipedia.org/wiki/Triple_DES).
 
@@ -84,7 +84,7 @@ ms.locfileid: "90891377"
 
 Дополнительные сведения см. [в статье экспорт сертификатов PFX с помощью закрытого ключа](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-pfx-format-with-private-key).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Использование сертификатов с Azure Stack пограничным Pro](azure-stack-edge-j-series-manage-certificates.md)
 

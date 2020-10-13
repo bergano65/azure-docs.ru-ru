@@ -7,10 +7,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.openlocfilehash: b402dab4c6e94a7634e11f0330b5379315e43abf
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91762509"
 ---
 # <a name="call-logic-apps-from-power-automate-and-power-apps"></a>Вызов приложений логики из Power Automate и Power Apps
@@ -148,7 +148,7 @@ ms.locfileid: "91762509"
 
 1. Чтобы подтвердить удаление, нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [соединителях для Azure Logic Apps](../connectors/apis-list.md)
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

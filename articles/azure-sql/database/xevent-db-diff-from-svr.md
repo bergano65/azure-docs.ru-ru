@@ -12,10 +12,10 @@ ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
 ms.openlocfilehash: c8f73c0789cd0211deeb66af5c7300a81d7b1be0
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619820"
 ---
 # <a name="extended-events-in-azure-sql-database"></a>Расширенные события в базе данных SQL Azure 
@@ -51,12 +51,12 @@ ms.locfileid: "91619820"
 
 Связанные разделы содержат два примера кода.
 
-- [Целевой код кольцевого буфера для расширенных событий в базе данных SQL Azure](xevent-code-ring-buffer.md)
+- [Код целевого кольцевого буфера для расширенных событий в Базе данных SQL Azure](xevent-code-ring-buffer.md)
 
   - Простой короткий сценарий Transact-SQL.
   - В этой статье с примером кода подчеркивается, что после завершения работы с целевым объектом "Кольцевой буфер" необходимо освободить задействованные им ресурсы с помощью инструкции изменения и удаления `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` . Впоследствии вы сможете добавить другой экземпляр кольцевого буфера с помощью оператора `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...`.
 
-- [Целевой код файла событий для расширенных событий в базе данных SQL Azure](xevent-code-event-file.md)
+- [Код целевого файла событий для расширенных событий в Базе данных SQL Azure](xevent-code-event-file.md)
 
   - Этап 1. PowerShell: создание контейнера хранилища Azure в облаке.
   - Этап 2. Transact-SQL: использование контейнера хранилища Azure.
@@ -92,12 +92,12 @@ ms.locfileid: "91619820"
 | **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях сеанса событий. |
 | **sys.dm_xe_database_session_events** |Возвращает сведения о событиях сеанса. |
 | **sys.dm_xe_database_session_object_columns** |Отображает значения конфигурации объектов, привязанных к сеансу. |
-| **sys. dm_xe_database_session_targets** |Возвращает сведения о целевых объектах сеанса. |
+| **sys.dm_xe_database_session_targets** |Возвращает сведения о целевых объектах сеанса. |
 | **sys.dm_xe_database_sessions** |Возвращает строку для каждого сеанса событий, относящегося к текущей базе данных. |
 
 В Microsoft SQL Server аналогичные представления каталога именуются без части имени * \_ базы данных* , например:
 
-- **sys.dm_xe_sessions** вместо имени<br/>**sys. dm_xe_database_sessions**.
+- **sys.dm_xe_sessions** вместо имени<br/>**sys.dm_xe_database_sessions**.
 
 ### <a name="dmvs-common-to-both"></a>Общие DMV
 

@@ -12,10 +12,10 @@ ms.author: danil
 ms.reviewer: jrasnik, sstein
 ms.date: 05/04/2020
 ms.openlocfilehash: dbf5c06adcddb5b3dfa3cdf2e0127f8a36c59885
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620109"
 ---
 # <a name="create-alerts-for-azure-sql-managed-instance-using-the-azure-portal"></a>Создание оповещений для Управляемый экземпляр Azure SQL с помощью портал Azure
@@ -140,7 +140,7 @@ ms.locfileid: "91620109"
 
    Отобразится список существующих предупреждений. Выберите отдельное существующее правило генерации оповещений для управления. Существующие активные правила могут быть изменены и настроены в предпочтениях. Активные правила также могут быть приостановлены без удаления. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о Azure Monitor системе предупреждений см. [в разделе Обзор оповещений в Microsoft Azure](../../azure-monitor/platform/alerts-overview.md)
 * Дополнительные сведения об оповещениях метрик см. в статье Общие сведения о [работе оповещений метрик в Azure Monitor](../../azure-monitor/platform/alerts-metric-overview.md)

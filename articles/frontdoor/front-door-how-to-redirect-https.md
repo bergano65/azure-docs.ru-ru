@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: duau
 ms.openlocfilehash: 19908b3cba63bc76a205097ef8d16e612d58503b
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91626648"
 ---
 # <a name="create-a-front-door-with-http-to-https-redirection-using-the-azure-portal"></a>Создание передней дверцы с перенаправлением HTTP-HTTPS с помощью портал Azure
@@ -91,7 +91,7 @@ ms.locfileid: "91626648"
 
 1. Выберите **проверить и создать** , а затем **создать**, чтобы создать профиль передней дверцы. Перейдите к ресурсу после создания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о том, [как работает Front Door](front-door-routing-architecture.md).
 - Дополнительные сведения о [перенаправлении URL-адресов на передней дверце](front-door-url-redirect.md).

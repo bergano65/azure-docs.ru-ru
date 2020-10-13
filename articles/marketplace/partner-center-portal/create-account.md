@@ -8,10 +8,10 @@ ms.date: 07/01/2020
 author: parthpandyaMSFT
 ms.author: parthp
 ms.openlocfilehash: 96a11caa93a925731ad2f24ac860b21301a29cdf
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708192"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Создание коммерческой учетной записи Marketplace в центре партнеров
@@ -188,7 +188,7 @@ ms.locfileid: "91708192"
 
 После завершения этого процесса вы сможете управлять только что созданным издателем, перейдя к учетной записи коммерческого магазина, указанной на левой панели. Если вы не видите учетную запись коммерческого магазина, обновите страницу. Новый издатель появится в списке **издателей** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое коммерческий магазин корпорации Майкрософт?](../overview.md)
 - [Управление учетной записью коммерческой платформы в Центре партнеров](./manage-account.md)

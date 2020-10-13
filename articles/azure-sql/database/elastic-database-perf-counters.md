@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/07/2019
 ms.openlocfilehash: 6038ec1d83957f20ca6e2759eeb5a88e66c2f77f
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91443409"
 ---
 # <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Создание счетчиков производительности для наблюдения за производительностью диспетчера карт сегментов
@@ -66,7 +66,7 @@ ms.locfileid: "91443409"
 * Создание категории производительности и счетчиков следует выполнять только один раз, до создания объекта ShardMapManager. При каждом выполнении команды CreatePerformanceCategoryAndCounters() предыдущие значения счетчиков удаляются (данные теряются во всех экземплярах) и создаются новые.  
 * Экземпляры счетчиков производительности создаются для каждого процесса. Любой сбой приложения или удаление карты сегментов из кэша приведет к удалению экземпляров счетчиков производительности.  
 
-### <a name="see-also"></a>См. также раздел
+### <a name="see-also"></a>См. также
 
 [Общие сведения о возможностях эластичных баз данных](elastic-scale-introduction.md)  
 

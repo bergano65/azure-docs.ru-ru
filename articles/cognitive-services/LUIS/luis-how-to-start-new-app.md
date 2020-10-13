@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/18/2020
 ms.openlocfilehash: fcc803e87b2efd3e94b90eb17258ab3bb156359f
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541444"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
@@ -73,6 +73,6 @@ ms.locfileid: "91541444"
 * Экспорт журналов конечных точек как `.csv` для автономного анализа
 * Удаление приложения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если проект приложения включает обнаружение намерения, [Создайте новые](luis-how-to-add-intents.md)цели и добавьте пример фразы продолжительностью. Если проект приложения предназначен только для извлечения данных, добавьте пример фразы продолжительностью к намерению None, затем [Создайте сущности](luis-how-to-add-example-utterances.md)и пометка примера фразы продолжительностью с этими сущностями.

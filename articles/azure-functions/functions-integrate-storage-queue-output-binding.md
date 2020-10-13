@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 04/24/2020
 ms.custom: devx-track-csharp, mvc
 ms.openlocfilehash: 9c635b01bcd04bd03191fca2590b0189bad0f544
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90982014"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
@@ -38,7 +38,7 @@ ms.locfileid: "90982014"
 
 1. Выберите тип привязки **Хранилище очередей Azure** и добавьте параметры, указанные в следующей таблице: 
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-create-output-binding-details.png" alt-text="Добавление выходной привязки хранилища очередей к функции на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-create-output-binding-details.png" alt-text="Создание выходной привязки для функции." border="true":::
     
     | Параметр      |  Рекомендуемое значение   | Описание                              |
     | ------------ |  ------- | -------------------------------------------------- |
@@ -94,7 +94,7 @@ ms.locfileid: "90982014"
 1. Сохранив изменения в коде, щелкните **Тест**.
 1. Убедитесь, что тест соответствует приведенному ниже изображению, и выберите **Запустить**. 
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/functions-test-run-function.png" alt-text="Тестирование привязки хранилища очередей на портале Azure." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/functions-test-run-function.png" alt-text="Создание выходной привязки для функции." border="true":::
 
     Обратите внимание, что **тело запроса** содержит `name` значение *Azure*. Это значение находится в сообщении очереди, которое создается при вызове функции.
     
@@ -111,11 +111,11 @@ ms.locfileid: "90982014"
 
 1. В разделе **Параметры приложения** выберите **AzureWebJobsStorage**.
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-find-storage-account.png" alt-text="На снимке экрана показана страница конфигурации с выбранным AzureWebJobsStorage." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-find-storage-account.png" alt-text="Создание выходной привязки для функции." border="true":::
 
 1. Найдите и запишите имя учетной записи.
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-storage-account-name.png" alt-text="Найдите учетную запись хранения, подключенную к AzureWebJobsStorage." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-storage-account-name.png" alt-text="Создание выходной привязки для функции." border="true":::
 
 ### <a name="examine-the-output-queue"></a>Проверка выходной очереди
 
