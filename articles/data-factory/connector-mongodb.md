@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 08/12/2019
-ms.openlocfilehash: eba63ff500aad4538f5b30f11bac168cf14816c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 09/28/2020
+ms.openlocfilehash: bb9768c2a4d3be9ac0e06844c5ac0835707cf455
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84558167"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945878"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory"></a>Копирование данных из MongoDB с помощью фабрики данных Azure
 
@@ -51,9 +51,9 @@ ms.locfileid: "84558167"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type |Для свойства Type необходимо задать значение **MongoDbV2** . |Да |
-| connectionString |Укажите строку подключения MongoDB, например `mongodb://[username:password@]host[:port][/[database][?options]]`. Дополнительные сведения см. в [руководстве MongoDB по строке подключения](https://docs.mongodb.com/manual/reference/connection-string/). <br/><br /> Можно также добавить пароль в Azure Key Vault и извлечь  `password`   конфигурацию из строки подключения. Дополнительные сведения см. в разделе [хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md) . |Да |
+| connectionString |Укажите строку подключения MongoDB, например `mongodb://[username:password@]host[:port][/[database][?options]]`. Дополнительные сведения см. в [руководстве MongoDB по строке подключения](https://docs.mongodb.com/manual/reference/connection-string/). <br/><br /> Строку подключения также можно разместить в Azure Key Vault. Дополнительные сведения см. в разделе [хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md) . |Да |
 | База данных | Имя базы данных, к которой нужно получить доступ. | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 **Пример**.
 
@@ -113,12 +113,12 @@ ms.locfileid: "84558167"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение **MongoDbV2Source** . | Да |
-| фильтр | Задает фильтр выбора с помощью операторов запросов. Чтобы получить все документы в коллекции, не указывайте этот параметр или передайте пустой документ ({}). | нет |
-| cursorMethods.project | Определяет, какие поля в документах для проекции необходимо получить. Чтобы получить все поля в соответствующих документах, не указывайте этот параметр. | нет |
-| cursorMethods.sort | Определяет, в каком порядке запрос будет возвращать соответствующие документы. См. [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | нет |
-| cursorMethods.limit | Определяет максимальное количество документов, возвращаемых сервером. См. [cursor.limit()](https://docs.mongodb.com/manual/reference/method/cursor.limit/#cursor.limit).  | нет |
-| cursorMethods.skip | Определяет, сколько документов нужно пропустить, прежде чем MongoDB начнет выдавать результаты. См. [cursor.skip()](https://docs.mongodb.com/manual/reference/method/cursor.skip/#cursor.skip). | нет |
-| batchSize | Определяет, сколько документов должно быть выдано в каждом пакете ответа от экземпляра MongoDB. В большинстве случаев изменение размера пакета не влияет на пользователя или приложение. В Cosmos DB размер пакета не может превышать 40 МБ — это сумма размеров всех документов в этом пакете, поэтому при работе с большими документами их количество нужно уменьшать. | нет<br/>(значение по умолчанию — **100**) |
+| фильтр | Задает фильтр выбора с помощью операторов запросов. Чтобы получить все документы в коллекции, не указывайте этот параметр или передайте пустой документ ({}). | Нет |
+| cursorMethods.project | Определяет, какие поля в документах для проекции необходимо получить. Чтобы получить все поля в соответствующих документах, не указывайте этот параметр. | Нет |
+| cursorMethods.sort | Определяет, в каком порядке запрос будет возвращать соответствующие документы. См. [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | Нет |
+| cursorMethods.limit | Определяет максимальное количество документов, возвращаемых сервером. См. [cursor.limit()](https://docs.mongodb.com/manual/reference/method/cursor.limit/#cursor.limit).  | Нет |
+| cursorMethods.skip | Определяет, сколько документов нужно пропустить, прежде чем MongoDB начнет выдавать результаты. См. [cursor.skip()](https://docs.mongodb.com/manual/reference/method/cursor.skip/#cursor.skip). | Нет |
+| batchSize | Определяет, сколько документов должно быть выдано в каждом пакете ответа от экземпляра MongoDB. В большинстве случаев изменение размера пакета не влияет на пользователя или приложение. В Cosmos DB размер пакета не может превышать 40 МБ — это сумма размеров всех документов в этом пакете, поэтому при работе с большими документами их количество нужно уменьшать. | Нет<br/>(значение по умолчанию — **100**) |
 
 >[!TIP]
 >ADF поддерживает прием документа BSON в **строгом режиме**. Убедитесь в том, что запрос фильтра находится в строгом режиме, а не в режиме оболочки. Более подробное описание см. в [руководстве MongoDB](https://docs.mongodb.com/manual/reference/mongodb-extended-json/index.html).

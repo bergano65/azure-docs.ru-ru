@@ -12,10 +12,10 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
 ms.openlocfilehash: fc20d59ca016e7c6be8dae9f50a84e4927449467
-ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91660740"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Развертывание веб-служб в Экземплярах контейнеров Azure.
@@ -105,7 +105,7 @@ az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploy
 > Вам не нужно создавать контейнер ACI для предварительного тестирования. Контейнеры ACI создаются по мере необходимости.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

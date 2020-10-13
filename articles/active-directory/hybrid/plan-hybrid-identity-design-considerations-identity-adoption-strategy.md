@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 318da4e92e6d07df1fcb89a4df0cb29d82caa630
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91294874"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Определение стратегии внедрения гибридной идентификации
@@ -193,9 +193,9 @@ ms.locfileid: "91294874"
 | Местонахождение пользователей | Предпочтительный вариант |
 | --- | --- |
 | Azure Active Directory |Multi-Factor Authentication в облаке |
-| Azure AD и локальная служба AD с использованием федерации в AD FS |Оба |
-| Azure AD и локальная служба AD с использованием Azure AD Connect без синхронизации паролей |Оба |
-| Azure AD и локальная служба AD с использованием Azure AD Connect с синхронизацией паролей |Оба |
+| Azure AD и локальная служба AD с использованием федерации в AD FS |Оба варианта |
+| Azure AD и локальная служба AD с использованием Azure AD Connect без синхронизации паролей |Оба варианта |
+| Azure AD и локальная служба AD с использованием Azure AD Connect с синхронизацией паролей |Оба варианта |
 | Локальная служба AD |Сервер Многофакторной идентификации |
 
 > [!NOTE]
@@ -210,7 +210,7 @@ ms.locfileid: "91294874"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Определение требований к защите данных](plan-hybrid-identity-design-considerations-dataprotection-requirements.md)
 
 ## <a name="see-also"></a>См. также раздел

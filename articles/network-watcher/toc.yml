@@ -127,6 +127,8 @@
               href: network-watcher-nsg-flow-logging-rest.md
             - name: Azure Resource Manager
               href: network-watcher-nsg-flow-logging-azure-resource-manager.md
+            - name: Встроенная политика
+              href: nsg-flow-logs-policy-portal.md
         - name: Удаление больших двоичных объектов хранилища журналов потоков NSG
           href: network-watcher-delete-nsg-flow-log-blobs.md
         - name: Анализ журналов потоков NSG

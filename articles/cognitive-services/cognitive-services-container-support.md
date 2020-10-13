@@ -12,10 +12,10 @@ ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальная среда, Docker, контейнер, Kubernetes
 ms.openlocfilehash: ed61760312ad8bada0241b0338c36ab3557e2caa
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91665418"
 ---
 # <a name="azure-cognitive-services-containers"></a>Контейнеры Cognitive Services Azure
@@ -109,7 +109,7 @@ Docker нужно настроить таким образом, чтобы ко�
 
 [!INCLUDE [Discoverability of more container information](../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте о [рецептах контейнеров](containers/container-reuse-recipe.md) , которые можно использовать с Cognitive Services.
 

@@ -2,13 +2,13 @@
 title: Создание ресурса рабочей области Azure Monitor Application Insights | Документация Майкрософт
 description: Узнайте, что нужно сделать, чтобы использовать новые ресурсы на основе рабочих областей Azure Monitor Application Insights.
 ms.topic: conceptual
-ms.date: 09/10/2020
-ms.openlocfilehash: 29fa9f1dc401ac4132d9c6c0d8c054b3f4a154ac
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.date: 10/06/2020
+ms.openlocfilehash: 9b91e5065729bee6af3f8018c36930e132eb1a15
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932436"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945419"
 ---
 # <a name="workspace-based-application-insights-resources"></a>Ресурсы рабочей области Application Insights.
 
@@ -204,6 +204,10 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 ## <a name="export-telemetry"></a>Экспорт данных телеметрии
 
 Устаревшие функции непрерывного экспорта не поддерживаются для ресурсов рабочей области. Вместо этого в ресурсе Application Insights выберите **Параметры диагностики** > **Добавить параметр диагностики**. Можно выбрать все таблицы или подмножество таблиц для архивации в учетную запись хранения или использовать потоковую передачу в концентратор событий Azure.
+
+> [!NOTE]
+> В настоящее время дополнительная плата за экспорт телеметрии отсутствует. Сведения о ценах на этот компонент будут доступны на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).  До начала выставления счетов уведомления будут отправляться. Если вы решили продолжить использование <feature name> после периода уведомления, плата будет взиматься по соответствующей ставке. 
+ 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

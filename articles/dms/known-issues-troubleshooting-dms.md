@@ -12,10 +12,10 @@ ms.custom: seo-lt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
 ms.openlocfilehash: f0ec9d2a3794ea910339b4d329bb28f23c5a76b1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91297364"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных проблем и ошибок Azure Database Migration Service
@@ -64,7 +64,7 @@ ms.locfileid: "91297364"
 
 | Причина         | Решение |
 | ------------- | ------------- |
-| Эта ошибка отображается, когда экземпляр службы, который вы пытаетесь отключить, содержит действия, которые все еще выполняются или присутствуют в проектах миграции. <br><br><br><br><br><br> | Убедитесь, что в экземпляре отсутствуют действия, выполняемые Azure Database Migration Service попытке остановки. Вы также можете удалить действия или проекты перед попыткой остановки службы. Следующие шаги иллюстрируют удаление проектов для очистки экземпляра службы миграции путем удаления всех выполняющихся задач:<br>1. Install-Module-Name AzureRM. Migration <br>2. Login-AzureRmAccount <br>3. Select-AzureRmSubscription-SubscriptionName " \<subName> " <br> 4. Remove-Азурермдатамигратионпрожект-Name \<projectName> -ResourceGroupName \<rgName> -ServiceName \<serviceName> -делетеруннингтаск |
+| Эта ошибка отображается, когда экземпляр службы, который вы пытаетесь отключить, содержит действия, которые все еще выполняются или присутствуют в проектах миграции. <br><br><br><br><br><br> | Убедитесь, что в экземпляре отсутствуют действия, выполняемые Azure Database Migration Service попытке остановки. Вы также можете удалить действия или проекты перед попыткой остановки службы. Следующие шаги иллюстрируют удаление проектов для очистки экземпляра службы миграции путем удаления всех выполняющихся задач:<br>1. Install-Module-Name AzureRM. Migration <br>2. Login-AzureRmAccount <br>3. Select-AzureRmSubscription-SubscriptionName " \<subName> " <br> 4. Remove-AzureRmDataMigrationProject-Name \<projectName> -ResourceGroupName \<rgName> -ServiceName \<serviceName> -делетеруннингтаск |
 
 ## <a name="error-when-attempting-to-start-azure-database-migration-service"></a>Ошибка при попытке запуска Azure Database Migration Service
 
@@ -130,7 +130,7 @@ ms.locfileid: "91297364"
 * [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для MySQL](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
 * [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите статью [Azure Database Migration Service PowerShell](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
 * Ознакомьтесь со статьей [Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure](https://docs.microsoft.com/azure/mysql/howto-server-parameters).

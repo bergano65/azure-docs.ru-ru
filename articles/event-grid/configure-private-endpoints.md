@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 07/07/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: e2e164d55f61f7a08e689aea106eac678b553c82
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91324150"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains"></a>Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure"
@@ -44,7 +44,7 @@ ms.locfileid: "91324150"
 
             ![Снимок экрана, на котором показана страница "Создание частной конечной точки — ресурс".](./media/configure-private-endpoints/resource-page.png)
     2. При выборе **подключения к ресурсу с помощью идентификатора ресурса или псевдонима**выполните следующие действия.
-        1. Введите идентификатор ресурса. Например, так: `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
+        1. Введите идентификатор ресурса. Например: `/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventGrid/topics/<EVENT GRID TOPIC NAME>`.  
         2. Для **ресурса**введите **раздел** или **домен**. 
         3. используемых Добавление сообщения запроса. 
         4. По завершении выберите **Next: Конфигурация >**  в нижней части страницы. 
@@ -480,6 +480,6 @@ Invoke-RestMethod -Method 'Get'
 
 Вы можете одобрить подключение даже после его отклонения через API. При использовании портал Azure нельзя утвердить конечную точку, которая была отклонена. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о настройке параметров брандмауэра IP см. в разделе [Настройка брандмауэра IP для разделов и доменов службы "Сетка событий Azure](configure-firewall.md)".
 * Сведения об устранении неполадок с сетевым подключением см. в разделе [Устранение неполадок с сетевым подключением](troubleshoot-network-connectivity.md)

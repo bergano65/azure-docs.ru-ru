@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: ff0582e3c4f654ed2a7f5efdc9ce8fd7a226595a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9d4356f5dc0b1eace586b741593b9c718c35caf
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906841"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945453"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
@@ -210,6 +210,8 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
         <version>2.1.2</version>
 </dependency>
 ```
+> [!WARNING]
+> Не указывайте `server.port` в конфигурации. В Azure Веснного облака этот параметр будет переопределить с фиксированным номером порта. Также следует учитывать этот параметр и не указывать порт сервера в коде.
 
 ## <a name="other-recommended-dependencies-to-enable-azure-spring-cloud-features"></a>Другие рекомендуемые зависимости для включения функций Azure Spring Cloud
 
@@ -227,6 +229,7 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
 ```
 
 Конечная точка сервера реестра служб будет автоматически внедрена в приложение в виде переменных среды. Приложения смогут зарегистрироваться на сервере реестра служб и обнаруживать другие зависимые микрослужбы.
+
 
 #### <a name="enablediscoveryclient-annotation"></a>Заметка EnableDiscoveryClient
 

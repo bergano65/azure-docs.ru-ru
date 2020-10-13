@@ -14,10 +14,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 476cf8013f5dc8b5d54efb573cf305d81fc690b1
-ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89319157"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Что такое архитектура Azure Active Directory?
@@ -121,6 +121,6 @@ Azure AD выполняет ежедневное резервное копиро
 
 Мы используем операционные элементы управления, такие как многофакторная проверка подлинности (MFA), для всех операций, а также ведем аудит всех операций. Кроме того, мы используем JIT-систему повышения прав, чтобы предоставлять необходимый временный доступ к любой рабочей задаче по запросу на постоянной основе. Дополнительные сведения см. на странице [Надежное облако](https://azure.microsoft.com/support/trust-center).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Azure Active Directoryное руководством разработчика](../develop/index.yml)

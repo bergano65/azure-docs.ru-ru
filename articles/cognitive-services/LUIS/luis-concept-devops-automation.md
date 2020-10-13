@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/5/2020
 ms.openlocfilehash: a74ad7b995f0112346e2212866655107f72c03e7
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91324813"
 ---
 # <a name="continuous-integration-and-continuous-delivery-workflows-for-luis-devops"></a>Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps
@@ -96,7 +96,7 @@ ms.locfileid: "91324813"
 
 Как правило, рекомендуется непрерывная доставка только в нерабочие среды, например в разработку и промежуточное хранение. Большинству команд требуется процесс проверки и утверждения вручную для развертывания в рабочей среде. В рабочем развертывании может потребоваться убедиться, что это происходит, когда основные пользователи команды разработчиков доступны для поддержки или в периоды низкой нагрузки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [реализовать DevOps для Luis с GitHub](luis-how-to-devops-with-github.md)
 * Узнайте, как написать [Рабочий процесс для действий GitHub с помощью НЛУ. DevOps](https://github.com/Azure-Samples/LUIS-DevOps-Template/blob/master/docs/4-pipeline.md)

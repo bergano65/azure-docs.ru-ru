@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 603628e24d7ccdffeafea392ab56aa7e47781a37
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91296490"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
@@ -158,7 +158,7 @@ ms.locfileid: "91296490"
 
 Ответив на вопросы в предыдущем разделе, вы сможете определить сценарий, наиболее соответствующий вашей ситуации. Примеры сценариев приведены в статье [Сценарии для расширенной аналитики в Машинном обучении Azure](plan-sample-scenarios.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md)

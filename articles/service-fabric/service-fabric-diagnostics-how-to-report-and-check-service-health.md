@@ -7,10 +7,10 @@ ms.date: 02/25/2019
 ms.author: srrengar
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 59c8202b03bf1be2be5a68b75a1d7c7404b2213d
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89020207"
 ---
 # <a name="report-and-check-service-health"></a>Проверка работоспособности службы и оповещение о проблемах
@@ -26,7 +26,7 @@ ms.locfileid: "89020207"
 
 В этой статье описан пример того, как отправлять отчеты о работоспособности из кода службы. В примере также показано, как можно использовать инструменты, предоставляемые Service Fabric, для проверки состояния работоспособности. Эта статья представляет собой краткое изложение возможностей Service Fabric по отслеживанию работоспособности. Для получения дополнительных сведений вы можете прочесть серию подробных статей о работоспособности, начиная со статьи, ссылка на которую приведена в конце этой статьи.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Должны быть установлены следующие компоненты:
 
 * Visual Studio 2015 или Visual Studio 2019
@@ -60,13 +60,13 @@ ms.locfileid: "89020207"
 1. Откройте файл Stateful1.cs и найдите вызов `myDictionary.TryGetValueAsync` в методе `RunAsync`. Как видите, этот метод возвращает `result` , который содержит текущее значение счетчика, так как основная логика этого приложения — поддерживать работу счетчика. Если приложение было реальным приложением и в случае отсутствия результата возникла ошибка, следует отметить это событие.
 1. Чтобы сообщить о событии отсутствия результата, что представляет собой сбой, сделайте следующее:
    
-    А. Добавьте в файл Stateful1.cs пространство имен `System.Fabric.Health` .
+    a. Добавьте в файл Stateful1.cs пространство имен `System.Fabric.Health` .
    
     ```csharp
     using System.Fabric.Health;
     ```
    
-    Б. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
+    b. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
    
     ```csharp
     if (!result.HasValue)
@@ -88,13 +88,13 @@ ms.locfileid: "89020207"
     ```
 1. Если служба запущена с правами администратора или кластер не является [безопасным](service-fabric-cluster-security.md), для отправки сведений о работоспособности также можно использовать `FabricClient`, как показано ниже.  
    
-    А. Создайте экземпляр `FabricClient` после объявления `var myDictionary`.
+    a. Создайте экземпляр `FabricClient` после объявления `var myDictionary`.
    
     ```csharp
     var fabricClient = new FabricClient(new FabricClientSettings() { HealthReportSendInterval = TimeSpan.FromSeconds(0) });
     ```
    
-    Б. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
+    b. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
    
     ```csharp
     if (!result.HasValue)
