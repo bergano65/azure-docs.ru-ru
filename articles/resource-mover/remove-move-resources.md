@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: raynew
 ms.openlocfilehash: 241ccbda67f7a2518d0c44a0d362673922ad4284
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89653131"
 ---
 # <a name="remove-resources-from-a-move-collection"></a>Удаление ресурсов из коллекции перемещения
@@ -91,6 +91,6 @@ Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceG
 **Ожидается удаление источника** | Удаляется из коллекции перемещения.<br/><br/> Он не удаляет все, что было создано в целевом регионе. 
 **Не удалось удалить источник** | Удаляется из коллекции перемещения.<br/><br/> Он не удаляет все, что было создано в целевом регионе. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте [переместить виртуальную машину](tutorial-move-region-virtual-machines.md) в другой регион с помощью перемещения ресурсов.

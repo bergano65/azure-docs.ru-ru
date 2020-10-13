@@ -1,5 +1,5 @@
 ---
-title: Модели пакетов
+title: Упаковка моделей
 titleSuffix: Azure Machine Learning
 description: Упаковка модели в качестве Dockerfile
 services: machine-learning
@@ -10,22 +10,22 @@ author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.openlocfilehash: d5fb2539d79c31de5a5e0196a7a4814c02a84602
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87544600"
 ---
 # <a name="how-to-package-a-registered-model-with-docker"></a>Упаковка зарегистрированной модели с помощью DOCKER
 
 В этой статье показано, как упаковать зарегистрированную модель Машинное обучение Azure с помощью DOCKER.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что модель уже обучена и зарегистрирована в рабочей области машинного обучения. Чтобы узнать, как обучить и зарегистрировать модель scikit-учиться, [следуйте указаниям этого руководства](how-to-train-scikit-learn.md).
 
 
-## <a name="package-models"></a>Модели пакетов
+## <a name="package-models"></a>Упаковка моделей
 
 В некоторых случаях может потребоваться создать образ DOCKER без развертывания модели (например, если планируется [развертывание в службе приложений Azure](how-to-deploy-app-service.md)). Также можно загрузить образ и запустить его в локальной установке DOCKER. Может даже потребоваться загрузить файлы, используемые для создания образа, проверить их, изменить и создать образ вручную.
 
@@ -158,12 +158,12 @@ print(resp.text)
 docker kill mycontainer
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md)
-* [Обновить веб-службу](how-to-deploy-update-web-service.md)
+* [Обновление веб-службы](how-to-deploy-update-web-service.md)
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)

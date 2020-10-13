@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: kgremban
 ms.openlocfilehash: 21fde76dc5791030a7afa280e00642119cbe464c
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89660043"
 ---
-# <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
+# <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
 
 Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. После настройки устройства с помощью среды выполнения IoT Edge можно приступить к развертыванию в ней бизнес-логики из облака. Дополнительные сведения см. [в разделе Знакомство со средой выполнения Azure IOT EDGE и ее архитектурой](iot-edge-runtime.md).
 
@@ -154,7 +154,7 @@ provisioning:
 
 Для вставки содержимого буфера обмена в Nano `Shift+Right Click` или нажмите клавишу `Shift+Insert` .
 
-Сохраните и закройте файл.
+Сохраните файл и закройте его.
 
    `CTRL + X`, `Y`, `Enter`
 
@@ -226,7 +226,7 @@ provisioning:
 
 Для вставки содержимого буфера обмена в Nano `Shift+Right Click` или нажмите клавишу `Shift+Insert` .
 
-Сохраните и закройте файл. `CTRL + X`, `Y`, `Enter`
+Сохраните файл и закройте его. `CTRL + X`, `Y`, `Enter`
 
 Когда введете сведения о подготовке в файл конфигурации, перезапустите управляющую программу:
 
@@ -347,7 +347,7 @@ sudo apt-get remove --purge moby-cli
 sudo apt-get remove --purge moby-engine
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

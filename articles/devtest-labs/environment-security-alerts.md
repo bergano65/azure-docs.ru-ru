@@ -4,10 +4,10 @@ description: В этой статье показано, как просмотр�
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: c9f7cf9fe7ab0e3f573470228ee1962aa92ccaef
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91308696"
 ---
 # <a name="security-alerts-for-environments-in-azure-devtest-labs"></a>Оповещения системы безопасности для сред в Azure DevTest Labs
@@ -31,7 +31,7 @@ ms.locfileid: "91308696"
     ![Просмотр оповещений безопасности](./media/environment-security-alerts/advisor-recommendations.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о средах см. в следующих статьях:
 
 - [Создание сред с несколькими виртуальными машинами и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md)

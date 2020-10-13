@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 10/02/2020
 ms.openlocfilehash: 708901dbc37daa075cf38d3f9ef046ae658ea979
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91744894"
 ---
 # <a name="operationalinsights-api-version-retirement"></a>Прекращение использования версии API OperationalInsights
@@ -67,6 +67,6 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{reso
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. [Справочник по API OperationalInsights](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/allversions).

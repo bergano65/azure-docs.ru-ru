@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/19/2017
 ms.author: tagore
 ms.openlocfilehash: 08ce69856dd36b6029297109fcb8610b856c8b98
-ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88142372"
 ---
 # <a name="certificates-overview-for-azure-cloud-services"></a>Общие сведения о сертификатах для облачных служб Azure
@@ -88,7 +88,7 @@ Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
 ### <a name="linux"></a>Linux
 В [этой](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) статье рассматривается создание сертификатов с использованием SSH.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Передача сертификата службы на портал Azure](cloud-services-configure-ssl-certificate-portal.md).
 
 Передайте на портал Azure [сертификат API управления](../azure-api-management-certs.md).

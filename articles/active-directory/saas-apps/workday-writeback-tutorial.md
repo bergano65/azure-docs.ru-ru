@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
 ms.openlocfilehash: 8c76bddc0fae024b0dd2bdd27d6b1e10d71dec71
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90017478"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-workday"></a>Руководство. Настройка обратной записи атрибутов из Azure AD в Workday
@@ -26,7 +26,7 @@ ms.locfileid: "90017478"
 * Номер рабочего мобильного устройства (включая код страны, код города, номер)
 * Основной флаг рабочего мобильного устройства
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 После настройки входящей интеграции подготовки с помощью [workday для локального](workday-inbound-tutorial.md) приложения подготовки AD или [рабочего дня в приложении подготовки Azure AD](workday-inbound-cloud-only-tutorial.md) можно дополнительно настроить приложение обратной записи workday для записи контактной информации, такой как Рабочая электронная почта и номер телефона, в Workday. 
 

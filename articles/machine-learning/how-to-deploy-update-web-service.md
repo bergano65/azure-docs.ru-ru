@@ -9,10 +9,10 @@ ms.author: gopalv
 author: gvashishtha
 ms.date: 07/31/2020
 ms.openlocfilehash: 5f2def8d41252b2267f2de736dc93825ac767540
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91328332"
 ---
 # <a name="update-a-deployed-web-service"></a>Обновление развернутой веб-службы
@@ -86,7 +86,7 @@ az ml service update -n myservice --model-metadata-file modelinfo.json
 
 Дополнительные сведения см. в документации по [AZ ML Service Update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-service-update) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

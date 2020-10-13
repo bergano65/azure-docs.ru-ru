@@ -13,10 +13,10 @@ ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 06/03/2020
 ms.openlocfilehash: d7a3c86f3d9cf083a8746f753b8c5287c774a93e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91263273"
 ---
 # <a name="machine-learning-services-in-azure-sql-managed-instance-preview"></a>Службы машинного обучения в Управляемый экземпляр SQL Azure (Предварительная версия)
@@ -74,7 +74,7 @@ ms.locfileid: "91263273"
 
 Не следует использовать Службы машинного обучения с Управляемыми экземплярами SQL для рабочих нагрузок в общедоступной предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [основными отличиями от SQL Server службы машинного обучения](machine-learning-services-differences.md).
 - Сведения об использовании Python в Службы машинного обучения см. в разделе [выполнение скриптов Python](https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=sql-server-ver15).

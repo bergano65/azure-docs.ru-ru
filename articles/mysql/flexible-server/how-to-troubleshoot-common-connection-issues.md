@@ -8,10 +8,10 @@ ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 9/21/2020
 ms.openlocfilehash: b328da01cd3b2ecb3eb5f183296eab808de27399
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937274"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mysql---flexible-server"></a>Устранение проблем с подключением к базе данных Azure для MySQL — гибкому серверу
@@ -45,7 +45,7 @@ ms.locfileid: "90937274"
 * На всех брандмауэрах между клиентом и Интернетом откройте порт 3306 для входящих соединений.
 * Проверьте строку подключения и другие параметры подключения. См. предварительно определенные строки подключения на странице **строки подключения** , доступной для сервера в портал Azure для распространенных языков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Используйте MySQL Workbench для подключения и запроса данных в базе данных Azure для гибкого сервера MySQL](./connect-workbench.md).
 - [Используйте PHP для подключения и запроса данных в базе данных Azure для гибкого сервера MySQL](./connect-php.md).
 - [Используйте Python для подключения и запроса данных в базе данных Azure для гибкого сервера MySQL](./connect-python.md).

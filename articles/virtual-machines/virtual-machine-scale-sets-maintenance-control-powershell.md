@@ -8,10 +8,10 @@ ms.workload: infrastructure-services
 ms.date: 09/11/2020
 ms.author: jushiman
 ms.openlocfilehash: 62b2fd0554c218b733501805779745049d3b8c92
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90532713"
 ---
 # <a name="preview-maintenance-control-for-os-image-upgrades-on-azure-virtual-machine-scale-sets-using-powershell"></a>Предварительный просмотр. Управление обновлением образа ОС в масштабируемых наборах виртуальных машин Azure с помощью PowerShell
@@ -56,7 +56,7 @@ $location="eastus2"
 $vmss="myMaintenanceVMSS"
 ```
 
-## <a name="create-a-maintenance-configuration"></a>Создание конфигурации обслуживания
+## <a name="create-a-maintenance-configuration"></a>Создайте конфигурацию обслуживания.
 
 Создайте группу ресурсов в качестве контейнера для вашей конфигурации. В этом примере в *eastus2*создается группа ресурсов с именем *мимаинтенанцерг* . Если у вас уже есть группа ресурсов, которую вы хотите использовать, эту часть можно пропустить. Просто замените имя группы ресурсов своим собственным в остальных примерах.
 

@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
 ms.openlocfilehash: 7701fe91d0e3f78f9596687bf945ba4b11c2d199
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331698"
 ---
 # <a name="manage-an-azure-database-for-mysql---flexible-server-preview-using-the-azure-cli"></a>Управление базой данных Azure для MySQL — гибким сервером (Предварительная версия) с помощью Azure CLI
@@ -86,7 +86,7 @@ az mysql flexible-server update --resource-group myresourcegroup --name mydemose
 az mysql flexible-server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Узнайте, как запустить или отключить сервер](how-to-stop-start-server-portal.md)
 - [Узнайте, как управлять виртуальной сетью](how-to-manage-virtual-network-cli.md)
 - [Устранение неполадок с подключением](how-to-troubleshoot-common-connection-issues.md)

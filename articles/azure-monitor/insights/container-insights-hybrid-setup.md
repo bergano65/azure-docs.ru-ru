@@ -4,10 +4,10 @@ description: В этой статье описывается, как настр�
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: 26846148f3212699cecd6db3318cd2da2d9aa783
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89398387"
 ---
 # <a name="configure-hybrid-kubernetes-clusters-with-azure-monitor-for-containers"></a>Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров
@@ -372,6 +372,6 @@ Azure Monitor для контейнеров предоставляет широ�
 .\TroubleshootError_nonAzureK8s.ps1 - azureLogAnalyticsWorkspaceResourceId </subscriptions/<subscriptionId>/resourceGroups/<resourcegroupName>/providers/Microsoft.OperationalInsights/workspaces/<workspaceName> -kubeConfig <kubeConfigFile> -clusterContextInKubeconfig <clusterContext>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов для гибридного кластера Kubernetes и рабочих нагрузок, которые работают на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.

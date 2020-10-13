@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/05/2020
 ms.author: alkohli
 ms.openlocfilehash: ac5f2de383066d6ee399dac3b0ad8c365b2e72bc
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91744116"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Data Box
@@ -24,7 +24,7 @@ ms.locfileid: "91744116"
 
 ## <a name="storage-differences"></a>Различия хранилищ
 
-|     Функция                                             |     Хранилище Azure                                     |     Хранилище BLOB-объектов службы Data Box |
+|     Компонент                                             |     Хранилище Azure                                     |     Хранилище BLOB-объектов службы Data Box |
 |---------------------------------------------------------|-------------------------------------------------------|---------------------------|
 |    Хранилище файлов Azure                                   |    Поддерживаются облачные общие папки с файлами SMB              |    Не поддерживается      |
 |    Шифрование службы для неактивных данных                  |    256-битное шифрование AES                             |    256-битное шифрование AES |
@@ -147,6 +147,6 @@ AccountKey=mykey;
 EndpointSuffix=<serial no. of the device>.microsoftdatabox.com
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание Azure Data Box](data-box-deploy-ordered.md)

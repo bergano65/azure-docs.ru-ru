@@ -8,10 +8,10 @@ ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.openlocfilehash: a0f5a921ad9eba82f27b3a8945643737b6d76030
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89614076"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
@@ -38,15 +38,15 @@ ms.locfileid: "89614076"
 
 Укажите имя для приложения-функции и нажмите кнопку _создать_.
 
-:::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Visual Studio: Настройка нового проекта":::
+:::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Выберите тип *триггера сетки событий* приложения функции и нажмите кнопку _создать_.
 
-:::image type="content" source="media/how-to-create-azure-function/eventgridtrigger-function.png" alt-text="Visual Studio: диалоговое окно триггера проекта функции Azure":::
+:::image type="content" source="media/how-to-create-azure-function/eventgridtrigger-function.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 После создания приложения-функции Visual Studio будет иметь автоматически заполняемый пример кода в файле **Function.CS** в папке проекта. Эта короткая функция Azure используется для регистрации событий.
 
-:::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Visual Studio: окно проекта с образцом кода":::
+:::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 ## <a name="write-an-azure-function-with-an-event-grid-trigger"></a>Запись функции Azure с помощью триггера службы "Сетка событий"
 
@@ -160,19 +160,19 @@ namespace adtIngestFunctionSample
 > [!IMPORTANT] 
 > Публикация функции Azure приведет к дополнительным затратам на вашу подписку, независимо от Azure Digital двойников.
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function.png" alt-text="Visual Studio: публикация функции Azure ":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Выберите **Azure** в качестве целевого объекта публикации и нажмите кнопку **Далее**.
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-1.png" alt-text="Visual Studio: диалоговое окно публикации функции Azure, выбор Azure ":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-1.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-2.png" alt-text="Visual Studio: диалоговое окно функции публикации выберите Azure приложение-функция (Windows) или (Linux) на основе компьютера":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-2.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-3.png" alt-text="Visual Studio: диалоговое окно публикации функции, создание новой функции Azure":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-3.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-4.png" alt-text="Visual Studio: диалоговое окно функции публикации, заполните поля и выберите Создать.":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-4.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-5.png" alt-text="Visual Studio: диалоговое окно функции публикации, выберите в списке приложение функции и завершите его работу.":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-5.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 На следующей странице введите нужное имя для нового приложения-функции, группы ресурсов и других сведений.
 Чтобы приложение-функция могло получить доступ к Azure Digital двойников, оно должно иметь управляемое системой удостоверение и иметь разрешения на доступ к вашему экземпляру Azure Digital двойников.
@@ -214,27 +214,27 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 В [портал Azure](https://portal.azure.com/)найдите _приложение функции_ в строке поиска с именем приложения функции, созданным ранее. Выберите *приложение-функция* из списка. 
 
-:::image type="content" source="media/how-to-create-azure-function/portal-search-for-functionapp.png" alt-text="Портал Azure: Поиск приложения функции":::
+:::image type="content" source="media/how-to-create-azure-function/portal-search-for-functionapp.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 В окне приложение функции выберите _удостоверение_ на панели навигации слева, чтобы включить управляемое удостоверение.
 На вкладке _назначенная система_ переключите _состояние_ на вкл. и _Сохраните_ его. Вы увидите всплывающее окно для _включения управляемого удостоверения, назначенного системой_.
 Нажмите кнопку _Да_ . 
 
-:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Портал Azure: Включить управляемое системой удостоверение":::
+:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Вы можете проверить в уведомлениях о том, что функция успешно зарегистрирована в Azure Active Directory.
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Портал Azure: уведомления":::
+:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Также обратите внимание на **идентификатор объекта** , показанный на странице _удостоверений_ , как он будет использоваться в следующем разделе.
 
-:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="Скопируйте идентификатор объекта для использования в будущем":::
+:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 ### <a name="assign-access-roles-using-azure-portal"></a>Назначение ролей доступа с помощью портал Azure
 
 Нажмите кнопку _назначения ролей Azure_ , чтобы открыть страницу назначения ролей Azure. Затем выберите _+ добавить назначение ролей (Предварительная версия)_.
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Портал Azure: Добавление назначения ролей":::
+:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 В открывшемся окне _Добавление назначения ролей (Предварительная версия)_ выберите
 
@@ -245,7 +245,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 Сохраните сведения, нажав кнопку _сохранить_ .
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Портал Azure: Добавление назначения ролей (Предварительная версия) ":::
+:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 ### <a name="configure-application-settings-using-azure-portal"></a>Настройка параметров приложения с помощью портал Azure
 
@@ -255,7 +255,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 ADT_INSTANCE_URL можно получить, добавив **_https://_** в имя узла экземпляра. В портал Azure можно найти имя узла Digital двойников, выполнив поиск своего экземпляра на панели поиска. Затем на левой панели навигации выберите _Обзор_ , чтобы просмотреть _имя узла_. Скопируйте это значение, чтобы создать параметр приложения.
 
-:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Портал Azure: Overview — > Копировать имя узла для использования в поле _Value_.":::
+:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Теперь можно создать параметр приложения, выполнив следующие действия:
 
@@ -263,9 +263,9 @@ ADT_INSTANCE_URL можно получить, добавив **_https://_** в �
 * Выберите пункт _Конфигурация_ на панели навигации слева, чтобы создать новый параметр приложения.
 * На вкладке _Параметры приложения_ выберите _+ создать параметр приложения_ .
 
-:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Портал Azure: Поиск существующей функции Azure":::
+:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Портал Azure: Настройка параметров приложения":::
+:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 В открывшемся окне используйте значение, скопированное из выше, чтобы создать параметр приложения. \
 _Имя_  : ADT_SERVICE_URL \
@@ -273,21 +273,21 @@ _Значение_ : https://{ваш-Azure-Digital-двойников-hostname}
 
 Нажмите кнопку _ОК_ , чтобы создать параметр приложения.
 
-:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Портал Azure: Добавление параметров приложения.":::
+:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Параметры приложения можно просмотреть с помощью имени приложения в поле _имя_ . Затем сохраните параметры приложения, нажав кнопку _сохранить_ .
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Портал Azure: Просмотр созданного приложения и перезапуск приложения":::
+:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Все изменения параметров приложения требуют перезапуска приложения. Нажмите кнопку _продолжить_ , чтобы перезапустить приложение.
 
-:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Портал Azure: сохранение параметров приложения":::
+:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
 Вы можете просмотреть параметры приложения, щелкнув значок _уведомления_ . Если параметр приложения не создан, можно повторно добавить параметр приложения, выполнив описанный выше процесс.
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Портал Azure: уведомления об обновлении параметров приложения":::
+:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описано, как настроить функцию Azure для использования с Azure Digital двойников. Затем вы можете подписать функцию Azure на службу "Сетка событий", чтобы прослушать конечную точку. Эта конечная точка может быть следующей:
 * Конечная точка сетки событий, присоединенная к Azure Digital двойников для обработки сообщений, поступающих от самого себя в Azure Digital двойников (например, сообщений об изменении свойств, сообщений телеметрии, созданных [цифровым двойников](concepts-twins-graph.md) в графе двойника, или сообщений о жизненном цикле).

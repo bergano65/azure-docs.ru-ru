@@ -8,10 +8,10 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 09/18/2020
 ms.openlocfilehash: 312457a6220920d550f05e3a1cd1dc5ec2f4449a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91327866"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Azure Resource Manager
@@ -345,7 +345,7 @@ ms.locfileid: "91327866"
 
 Если они больше не нужны, удалите решение " **обновления** " в рабочей области log Analytics, снимите связь между учетной записью службы автоматизации и рабочей областью, а затем удалите учетную запись службы автоматизации и рабочую область.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об использовании Управление обновлениями для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин](update-mgmt-manage-updates-for-vm.md).
 

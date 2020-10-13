@@ -14,10 +14,10 @@ ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
 ms.openlocfilehash: 678bad67b454ec0930d2cf30df45ba7b2c822e35
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91371462"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
@@ -101,7 +101,7 @@ sudo grep Port /etc/ssh/sshd_config
 Port 22
 ```
 
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
+## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
 Установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) (если вы еще этого не сделали) и войдите в учетную запись Azure, выполнив команду [az login](/cli/azure/reference-index).
 
 Если вы создали и отправили пользовательский образ диска Linux, убедитесь, что установлен [агент Linux для Microsoft Azure](../extensions/agent-linux.md) версии 2.0.5 или более поздней. В виртуальных машинах, созданных с помощью образов из коллекции, это расширение для доступа уже установлено и настроено.

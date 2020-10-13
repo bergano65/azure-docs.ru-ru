@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: aahi
 ms.openlocfilehash: 4f540c7e853efe370c84b7c4d0a7d74911b8cd6c
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91823945"
 ---
 # <a name="example-user-scenarios-for-the-text-analytics-api"></a>Примеры пользовательских сценариев для API Анализа текста
@@ -58,7 +58,7 @@ API Анализа текста — это облачная служба с в�
 > [!div class="mx-imgBorder"] 
 > :::image type="content" source="media/use-cases/aspect-based-sentiment.png" alt-text="Пример мнения о гостинице.":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое API "Анализ текста"?](overview.md)
 * [Quickstart: Use the Text Analytics client library for detecting language](quickstarts/text-analytics-sdk.md) (Краткое руководство. Вызов клиентской библиотеки "Анализ текста" для определения языка)

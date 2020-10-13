@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
 ms.openlocfilehash: 04b33c7e63efbd6ffabf978708e1b8ed81f1fc42
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940031"
 ---
 # <a name="deploy-an-defender-for-iot-c-based-security-agent-for-windows"></a>Развертывание агента безопасности на основе C# для Windows IoT
@@ -79,7 +79,7 @@ ms.locfileid: "90940031"
 
 Для получения дополнительных сведений используйте команду Get-Help в PowerShell.
 
-Пример получения справки:    ```Get-Help .\InstallSecurityAgent.ps1```
+Get-Help пример:    ```Get-Help .\InstallSecurityAgent.ps1```
 
 ### <a name="verify-deployment-status"></a>Проверка состояния развертывания
 
@@ -97,7 +97,7 @@ ms.locfileid: "90940031"
     .\InstallSecurityAgent.ps1 -Uninstall
     ```
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если агент не запускается, включите ведение журнала (по умолчанию ведение журнала *отключено*), чтобы просмотреть дополнительные сведения.
 
@@ -125,7 +125,7 @@ ms.locfileid: "90940031"
      Restart-Service "ASC IoT Agent"
      ```
 
-   или диспетчер конфигурации служб
+   или
 
     **CMD**
 
@@ -138,7 +138,7 @@ ms.locfileid: "90940031"
 
    Расположение файла журнала: `.\IoTAgentLog.log`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей"
 * Дополнительные сведения о защитнике для [архитектуры](architecture.md) IOT

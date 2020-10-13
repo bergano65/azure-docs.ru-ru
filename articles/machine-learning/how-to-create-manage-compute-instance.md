@@ -12,10 +12,10 @@ author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
 ms.openlocfilehash: 3b5698c782b691dd8ae91913115db184fc83a2eb
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91756625"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
@@ -147,7 +147,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.stop(wait_for_completion=True, show_output=True)
     ```
 
-* Начать
+* Запуск
 
     ```python
     # start() is used to start the ComputeInstance if it is in stopped state
@@ -180,7 +180,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в разделе [AZ ML computetarget останавливает компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest&preserve-view=true#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop).
 
-* Начать 
+* Запуск 
 
     ```azurecli-interactive
     az ml computetarget start computeinstance -n instance -v
@@ -289,6 +289,6 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отправить обучающий запуск](how-to-set-up-training-targets.md) 

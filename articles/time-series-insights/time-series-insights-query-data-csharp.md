@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: a7dd67387a541ff62bfa85a7afc2f1bbf31c6180
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91596438"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-gen1-environment-using-c-sharp"></a>Запрос данных из среды Gen1 "аналитика временных рядов Azure" с помощью языка C диезом
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 В этом примере C# демонстрируется использование [API-интерфейсов Gen1 запросов](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query) для запроса данных из сред Gen1 "аналитика временных рядов Azure".
 
