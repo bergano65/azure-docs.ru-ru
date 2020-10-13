@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
 ms.openlocfilehash: 99c5ff39820b652a33ab670e63ca709f8747c4cf
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88751285"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
@@ -79,7 +79,7 @@ ms.locfileid: "88751285"
 
 **Шифрование**
     - Прозрачное шифрование на стороне сервера с использованием ключей, управляемых корпорацией Майкрософт, или ключей, управляемых клиентом.
-    - При транзитном шифровании с помощью шифрования на стороне клиента, HTTPS и TLS.
+    - При транзитном шифровании с помощью шифрования Client-Side, HTTPS и TLS.
 
 Дополнительные сведения см. в следующих статьях:
 

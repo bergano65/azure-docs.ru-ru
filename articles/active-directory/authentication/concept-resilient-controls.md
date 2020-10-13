@@ -13,10 +13,10 @@ ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f58e5a07348dfde4e4618eb58746f08016c55ed6
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89049576"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
@@ -215,13 +215,13 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 В этом случае можно отключить расширение NPS. в результате сервер NPS будет проверять только основную проверку подлинности и не будет применять MFA для пользователей.
 
 Отключить расширение NPS: 
--   Экспортируйте раздел реестра HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\сервицес\ауссрв\параметерс в качестве резервной копии. 
+-   Экспортируйте раздел реестра HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AuthSrv\Parameters в качестве резервной копии. 
 -   Удалите значения реестра для "Аусоризатиондллс" и "Екстенсиондллс", а не ключа параметров. 
 -   Перезапустите службу сетевой политики (IAS), чтобы изменения вступили в силу. 
 -   Определите, успешно ли выполнена основная проверка подлинности для VPN.
 
 После восстановления службы и подготовки к повторному применению MFA для пользователей включите расширение NPS: 
--   Импорт раздела реестра из Backup HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\сервицес\ауссрв\параметерс 
+-   Импорт раздела реестра из резервной копии HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AuthSrv\Parameters 
 -   Перезапустите службу сетевой политики (IAS), чтобы изменения вступили в силу. 
 -   Определите, успешно ли выполнена основная проверка подлинности, а также дополнительная проверка подлинности для VPN.
 -   Проверьте NPS-сервер и журнал VPN, чтобы определить, какие пользователи вошли в аварийное окно.

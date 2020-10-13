@@ -8,10 +8,10 @@ ms.date: 08/29/2019
 ms.author: victorh
 ms.topic: how-to
 ms.openlocfilehash: 7f00b57edb37cc5bb5c8340663d619e526c2eacb
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89075432"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure с помощью Azure CLI
@@ -105,7 +105,7 @@ az network vnet subnet create \
 Теперь создайте виртуальные машины для перехода и рабочей нагрузки и поместите их в соответствующие подсети.
 При появлении запроса введите пароль для виртуальной машины.
 
-Создайте виртуальную машину с SRV-переходом.
+Создайте Srv-Jump виртуальную машину.
 
 ```azurecli-interactive
 az vm create \
@@ -121,7 +121,7 @@ az vm open-port --port 3389 --resource-group Test-FW-RG --name Srv-Jump
 
 
 
-Создайте сетевую карту для SRV-работы с конкретными IP-адресами DNS-сервера и без общедоступного IP-адреса для тестирования.
+Создайте сетевую карту для Srv-Work с конкретными IP-адресами DNS-сервера и без общедоступного IP-адреса для тестирования.
 
 ```azurecli-interactive
 az network nic create \

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: jingwang
 ms.openlocfilehash: 24f9b7655398cbd6a2621edb61d67d4fc4edfb52
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91332038"
 ---
 # <a name="copy-data-from-google-cloud-storage-by-using-azure-data-factory"></a>Копирование данных из Google Cloud Storage с помощью фабрики данных Azure
@@ -236,5 +236,5 @@ ms.locfileid: "91332038"
 
 Если вы используете соединитель Amazon S3 для копирования данных из Google Cloud Storage, он по-прежнему поддерживается в целях обратной совместимости. Мы рекомендуем использовать новую модель, упомянутую ранее. Пользовательский интерфейс создания фабрики данных переключился на создание новой модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Список хранилищ данных, которые действие копирования в фабрике данных Azure поддерживает в качестве источников и приемников, см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).
