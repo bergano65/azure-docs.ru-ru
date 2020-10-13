@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: fecb78b240f5c983580d4bdb34535a879ffe3e2e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91289282"
 ---
 # <a name="maximize-rowgroup-quality-for-columnstore-index-performance"></a>Максимальное качество группы строк для производительности индекса columnstore
@@ -42,7 +42,7 @@ ms.locfileid: "91289282"
 
 ## <a name="how-to-monitor-rowgroup-quality"></a>Мониторинг качества групп строк
 
-Динамическое административное представление sys. dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys. dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) содержит определение представления, соответствующее базе данных SQL), которое предоставляет полезную информацию, например число строк в групп строк, и причину усечения при усечении. Вы можете создать следующее представление для удобства выполнения запросов к этому динамическому административному представлению, чтобы получить сведения об усечении групп строк.
+Sys.dm_pdw_nodes_db_column_store_row_group_physical_stats динамического административного представления ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) содержит определение представления, соответствующее базе данных SQL), которое предоставляет полезную информацию, например число строк в групп строк, и причину усечения при усечении. Вы можете создать следующее представление для удобства выполнения запросов к этому динамическому административному представлению, чтобы получить сведения об усечении групп строк.
 
 ```sql
 create view dbo.vCS_rg_physical_stats
@@ -140,7 +140,7 @@ OPTION (MAXDOP 1);
 - Сведения об увеличении числа DWU см.в разделе [Масштабирование производительности](../sql-data-warehouse/quickstart-scale-compute-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 - Сведения об изменении класса ресурсов для запросов см. в разделе [Пример изменения класса ресурсов пользователя](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#change-a-users-resource-class).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать больше о способах повышения производительности в синапсе SQL, см. [Обзор производительности](../overview-cheat-sheet.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 

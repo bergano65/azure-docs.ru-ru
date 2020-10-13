@@ -10,10 +10,10 @@ ms.date: 01/29/2018
 ms.topic: conceptual
 ms.custom: devx-track-js
 ms.openlocfilehash: 7f887aac91bdb1b8c752806c7c5076708a40bc10
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91276175"
 ---
 # <a name="implement-the-device-model-behavior"></a>Реализация поведения модели устройства
@@ -257,7 +257,7 @@ function main(context, previousState, previousProperties) {
 
 Сведения о локальном запуске службы имитирования устройств содержатся в статье [Running the service locally](https://github.com/Azure/device-simulation-dotnet#running-the-service-locally-eg-for-development-tasks) (Локальный запуск службы) на сайте GitHub. Локальный запуск службы упрощает отладку имитированного устройства перед его развертыванием в облако.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описывается, как определить поведение собственной настраиваемой модели имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

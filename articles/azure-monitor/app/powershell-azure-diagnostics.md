@@ -4,10 +4,10 @@ description: Автоматизируйте настройку система д
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.openlocfilehash: 3d0b7d1e8d4a164d517834eae877844d85b9a256
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87320363"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Настройка Application Insights для облачных служб Azure с помощью PowerShell
@@ -123,7 +123,7 @@ Remove-AzureServiceDiagnosticsExtension -ServiceName "MyService" -Role "WebRole"
 ```
 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Мониторинг приложений облачных служб Azure с помощью Application Insights](./cloudservices.md)
 * [Отправка данных системы диагностики Azure в Application Insights](../platform/diagnostics-extension-to-application-insights.md)
 * [Use PowerShell to set alerts in Application Insights](powershell-alerts.md)

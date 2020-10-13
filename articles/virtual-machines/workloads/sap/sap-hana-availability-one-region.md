@@ -16,10 +16,10 @@ ms.date: 07/27/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 58ea65e53f4a1262b448a3abd08807113d016fcb
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87833323"
 ---
 # <a name="sap-hana-availability-within-one-azure-region"></a>Доступность SAP HANA в пределах одного региона Azure
@@ -118,7 +118,7 @@ ms.locfileid: "87833323"
 
 Это решение позволяет достичь RPO 0 и низкого целевого времени восстановления. Настройте клиентское подключение SAP HANA таким образом, чтобы клиенты SAP HANA использовали виртуальный IP-адрес для подключения к конфигурации репликации системы HANA. Такая конфигурация устранит необходимость перенастройки приложения в случае отработки отказа на дополнительный узел. В этом сценарии номера SKU Azure для основной и дополнительной виртуальных машин должны быть одинаковыми.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Пошаговое руководство по настройке этих конфигураций в Azure см. в следующих статьях:
 

@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: b-juche
 ms.openlocfilehash: 2a64e595f0ea07510f416be56a54a3c74294b95d
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91653627"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
@@ -255,7 +255,7 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 Нет. Служба импорта и экспорта Azure не поддерживает Azure NetApp Files в настоящее время.
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 - [Microsoft Azure ExpressRoute часто задаваемые вопросы](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
 - [Вопросы и ответы по виртуальная сеть Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)

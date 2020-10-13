@@ -17,10 +17,10 @@ ms.date: 08/10/2020
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7653f850edc910fc78b14a628b87dcb22aeb903
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89279420"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
@@ -149,7 +149,7 @@ ms.locfileid: "89279420"
   1. Повышение доступности агента. 
   2. Исправления ошибок и общие улучшения.
 
-## <a name="december-2017"></a>Декабрь 2017 г.
+## <a name="december-2017"></a>Декабрь 2017 г.
 **Обновление агента:**
 
 * Агент Azure AD Connect Health для AD DS (версия 3.0.145.0).
@@ -161,7 +161,7 @@ ms.locfileid: "89279420"
   2. Повышение доступности агента. 
   3. Исправления ошибок и общие улучшения.
   
-## <a name="october-2017"></a>Октябрь 2017 г.
+## <a name="october-2017"></a>Октябрь 2017 г.
 **Обновление агента:**
 
  * Агент Azure AD Connect Health для синхронизации (версия 3.0.129.0) выпущен вместе с Azure AD Connect версии 1.1.649.0.
@@ -259,5 +259,5 @@ ms.locfileid: "89279420"
 * Тенденции неудачных запросов на серверах AD FS, сгруппированные по приложениям, типам ошибок и т. д.
 * Упрощенное развертывание агентов с помощью учетных данных глобального администратора Azure AD.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о [мониторинге локальной инфраструктуры идентификации и служб синхронизации в облаке](./whatis-azure-ad-connect.md).

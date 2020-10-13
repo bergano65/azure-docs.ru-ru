@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2bb8c6c64e0a68f5176c4eb0c0177c5220394695
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89268763"
 ---
 # <a name="enforce-tls-12-for-the-azure-ad-registration-service"></a>Принудительное применение TLS 1,2 для службы регистрации Azure AD
@@ -37,13 +37,13 @@ ms.locfileid: "89268763"
 
 Убедитесь, что следующие строки реестра настроены так, как показано ниже.
 
-- HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ клиент
   - "DisabledByDefault" = DWORD: 00000000
   - "Enabled" = DWORD: 00000001
-- HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ сервер
   - "DisabledByDefault" = DWORD: 00000000
   - "Enabled" = DWORD: 00000001
-- HKEY_LOCAL_MACHINE \Софтваре\микрософт \. NETFramework\v4.0.30319
+- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\. NETFramework\v4.0.30319
   - "SchUseStrongCrypto"=dword:00000001
 
 ## <a name="update-non-windows-proxies"></a>Обновление прокси-серверов, отличных от Windows
@@ -66,6 +66,6 @@ ms.locfileid: "89268763"
 - Internet Explorer 10 на Windows Phone 8,0
 - Safari версии 6.0.4 в OS X 10.8.4 и более ранних версий
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Обзор TLS/SSL (поставщик общих служб Schannel)](/windows-server/security/tls/tls-ssl-schannel-ssp-overview)

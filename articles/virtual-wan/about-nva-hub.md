@@ -9,10 +9,10 @@ ms.date: 09/22/2020
 ms.author: scottnap
 Customer intent: As someone with a networking background, I want to learn about Network Virtual Appliances in the Virtual WAN hub.
 ms.openlocfilehash: 1e4b8a2d801d7d7eccfaf558c3926ead1ab0a953
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91313779"
 ---
 # <a name="about-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Сведения о сетевом виртуальном устройстве в виртуальном концентраторе глобальной сети Azure (Предварительная версия)
@@ -50,7 +50,7 @@ NVA, доступные для развертывания непосредств
 * **Группа ресурсов клиента** — это будет содержать заполнитель приложения для управляемого приложения. Партнеры могут использовать его для предоставления любых свойств клиентов, которые они выбирают здесь.
 * **Управляемая группа ресурсов** . клиенты не могут настраивать или изменять ресурсы в этой группе ресурсов напрямую, так как это управляется издателем управляемого приложения. Эта группа ресурсов будет содержать ресурс **нетворквиртуалапплианцес** .
 
-:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Группы ресурсов управляемых приложений":::
+:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Общие сведения о процессе":::
 
 ### <a name="nva-infrastructure-units"></a><a name="units"></a>Единицы инфраструктуры NVA
 
@@ -82,10 +82,10 @@ NVA в виртуальном концентраторе доступна для
 | Южная Америка | Южная Бразилия |
 | Европа | Западная Европа, южная часть Соединенного Королевства|
 |  Ближний Восток | Северная часть ОАЭ; |
-| Азия | Восточная Япония |
+| Азия | Japan East |
 | Австралия | Восточная Австралия |
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="i-am-a-network-appliance-partner-and-want-to-get-our-nva-in-the-hub--can-i-join-this-partner-program"></a>Я являюсь партнером по сетевым устройствам и хочу получить наши NVA в центре.  Можно ли присоединиться к этой партнерской программе?
 
@@ -115,6 +115,6 @@ NVA в виртуальном концентраторе доступна для
 
 Все сценарии маршрутизации, поддерживаемые виртуальной глобальной сетью, поддерживаются с NVA в концентраторе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о виртуальной глобальной сети см. в статье [Обзор виртуальной глобальной сети](virtual-wan-about.md) .

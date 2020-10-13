@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 11/09/2018
 ms.author: edprice
 ms.openlocfilehash: 0b032f48e18651af7f360471cc2834a5c45acc56
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87831419"
 ---
 # <a name="ibm-db2-purescale-on-azure"></a>IBM DB2 pureScale в Azure
@@ -104,6 +104,6 @@ IBM рекомендует сети InfiniBand для всех элементо�
 
 В Azure сеть DB2 pureScale должна использовать для хранилища сетевое подключение по протоколу TCP/IP.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   [Развертывание этой архитектуры в Azure](deploy-ibm-db2-purescale-azure.md)

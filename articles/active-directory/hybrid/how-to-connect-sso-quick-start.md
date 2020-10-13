@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect: простой единый вход — краткое руководство | Документация Майкрософт'
+title: 'Azure AD Connect: простое одноSign-Onное краткое руководство | Документация Майкрософт'
 description: В этой статье описывается, как приступить к работе простым единым входом Azure Active Directory.
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fde2052078e0131e720411f91aa8ae7484338252
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91295029"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory простой единый вход: Краткое руководство
@@ -234,7 +234,7 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 >[!IMPORTANT]
 >Этот шаг не требуется выполнять _немедленно_ после включения функции. Меняйте ключи расшифровки Kerberos по крайней мере каждые 30 дней.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Подробное техническое руководство](how-to-connect-sso-how-it-works.md). Поймите, как работает функция простого единого входа.
 - [Часто задаваемые вопросы](how-to-connect-sso-faq.md). Получите ответы на часто задаваемые вопросы о простом едином входе.

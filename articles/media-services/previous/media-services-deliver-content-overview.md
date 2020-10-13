@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: b636d1cdf2e4b9bd137768e22240d8a47d724a97
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89266040"
 ---
 # <a name="deliver-content-to-customers"></a>Доставка содержимого клиентам
@@ -133,7 +133,7 @@ http: \/ /testendpoint-testaccount.Streaming.mediaservices.Windows.NET/fecebb23-
 
 Необходимо расшифровать все зашифрованные в хранилище ресурсы-контейнеры, которые требуется передать из исходной службы для поэтапной загрузки.
 
-## <a name="download"></a>Скачать
+## <a name="download"></a>Скачивание
 Для скачивания содержимого на клиентское устройство необходимо создать указатель SAS. Он предоставляет доступ к контейнеру службы хранилища Azure, в котором расположен ваш файл. Чтобы создать URL-адрес загрузки, необходимо вставить имя файла между узлом и подписью SAS.
 
 В следующем примере показан URL-адрес, основанный на типе указателя SAS.

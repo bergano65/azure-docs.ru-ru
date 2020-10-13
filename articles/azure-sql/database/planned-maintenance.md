@@ -12,10 +12,10 @@ ms.author: aamalvea
 ms.reviewer: sstein
 ms.date: 08/25/2020
 ms.openlocfilehash: 3f87f47f652f71a57796d1cacd047b0448b49b7c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91333041"
 ---
 # <a name="plan-for-azure-maintenance-events-in-azure-sql-database-and-azure-sql-managed-instance"></a>Планирование событий обслуживания Azure в базе данных SQL Azure и Управляемый экземпляр Azure SQL
@@ -45,7 +45,7 @@ ms.locfileid: "91333041"
 
 Если в базе данных возникают ошибки входа в систему, Проверьте текущее состояние в окне [работоспособность ресурсов](../../service-health/resource-health-overview.md#get-started) в [портал Azure](https://portal.azure.com) . Раздел "Работоспособность ресурсов" содержит причину простоя для каждого события (если она доступна).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [работоспособность ресурсов](resource-health-to-troubleshoot-connectivity.md) для базы данных SQL azure и управляемый экземпляр SQL Azure.
 - Дополнительные сведения о логике повторных попыток см. в разделе [логика повторных попыток для временных ошибок](troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors).

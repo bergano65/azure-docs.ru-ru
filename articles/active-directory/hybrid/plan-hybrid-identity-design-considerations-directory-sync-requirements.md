@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 500d226fcb60646becc49144f206dcb0dee49bd8
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89278400"
 ---
 # <a name="determine-directory-synchronization-requirements"></a>Определение требований к синхронизации каталога
@@ -72,7 +72,7 @@ ms.locfileid: "89278400"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Определение требований к многофакторной проверке подлинности](plan-hybrid-identity-design-considerations-multifactor-auth-requirements.md)
 
 ## <a name="see-also"></a>См. также раздел

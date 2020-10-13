@@ -13,10 +13,10 @@ ms.date: 02/27/2019
 ms.author: billmath
 author: billmath
 ms.openlocfilehash: ce438ad0725aff677f897a635a0cd32d92bbbdbe
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91265475"
 ---
 # <a name="configure-group-claims-for-applications-with-azure-active-directory"></a>Настройка групповых утверждений для приложений с Azure Active Directory
@@ -220,7 +220,7 @@ Azure Active Directory могут предоставить сведения о �
  }
  ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Добавление авторизации с помощью групп & групп, утвержденных в веб-приложение ASP.NET Core (пример кода)](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/5-WebApp-AuthZ/5-2-Groups/README.md)
 - [Назначение корпоративному приложению пользователя или группы](../../active-directory/manage-apps/assign-user-or-group-access-portal.md)

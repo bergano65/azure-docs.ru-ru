@@ -12,10 +12,10 @@ ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: e39548a923e76fc118dec4158398d02577ec20c5
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91610064"
 ---
 # <a name="initiate-a-storage-account-failover"></a>Запуск отработки отказа учетной записи хранения
@@ -112,7 +112,7 @@ az storage account failover \ --name accountName
 
 После повторного включения GRS для учетной записи хранения Microsoft начинает репликацию данных в вашей учетной записи в новый вторичный регион. Время репликации зависит от объема реплицируемых данных.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Аварийное восстановление и отработка отказа учетной записи хранения](storage-disaster-recovery-guidance.md)
 - [Проверка свойства "Время последней синхронизации" для учетной записи хранения](last-sync-time-get.md)
