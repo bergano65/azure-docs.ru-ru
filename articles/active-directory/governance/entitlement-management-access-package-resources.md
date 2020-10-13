@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1b6e2ac9d80c1c3bf76b4a3d4c44f0654100670f
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89567424"
 ---
 # <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD
@@ -180,7 +180,7 @@ Azure AD может автоматически назначать пользов
 
 При удалении члена команды они также удаляются из группы Microsoft 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](/microsoftteams/office-365-groups#group-membership).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../fundamentals/active-directory-groups-create-azure-portal.md)
 - [Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений](../develop/active-directory-enterprise-app-role-management.md)

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
 ms.openlocfilehash: 9df5d702019063ffba6d79cc63370cd25a7242fd
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91358791"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Prepare your logic apps and runbooks for migration of classic alert rules (Подготовка приложений логики и модулей runbook для миграции классических правил генерации оповещений)
@@ -161,7 +161,7 @@ else {
 
 Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

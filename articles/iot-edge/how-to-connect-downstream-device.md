@@ -13,10 +13,10 @@ ms.custom:
 - mqtt
 - devx-track-js
 ms.openlocfilehash: 78db26318fc95adec1b31799ed143b3e4a6b3acc
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91281462"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
@@ -212,6 +212,6 @@ openssl s_client -connect mygateway.contoso.com:8883 -CAfile <CERTDIR>/certs/azu
 2. Разрешается ли имя узла шлюза в IP-адрес? Вы можете разрешить периодические подключения с помощью DNS или путем добавления записи файла узла на конечном устройстве.
 3. Открыты ли порты связи в брандмауэре? Связь, основанная на используемом протоколе (МКТТС: 8883/AMQPS: 5671/HTTPS: 433), должна быть возможна между подчиненным устройством и прозрачным IoT Edge.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как IoT Edge расширяет [возможности автономной работы](offline-capabilities.md) для подчиненных устройств.

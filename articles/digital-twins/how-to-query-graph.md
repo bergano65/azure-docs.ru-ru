@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 72658a97f89b14529e8ccb3639cb1b78f1b92316
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e3dce20f447b47ad78deea617b513c50f552733
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91848813"
+ms.locfileid: "91893634"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -43,6 +43,38 @@ FROM DIGITALTWINS
 SELECT TOP (5)
 FROM DIGITALTWINS
 WHERE ...
+```
+
+### <a name="count-items"></a>Количество элементов
+
+Количество двойников в результирующем наборе можно подсчитать с помощью `Select COUNT` предложения:
+
+```sql
+SELECT COUNT() 
+FROM DIGITALTWINS
+``` 
+
+Добавьте `WHERE` предложение для подсчета количества двойников, соответствующих определенным критериям. Ниже приведены некоторые примеры инвентаризации с примененным фильтром на основе типа модели двойника (Дополнительные сведения об этом синтаксисе см. в разделе [*запрос по модели*](#query-by-model) ниже).
+
+```sql
+SELECT COUNT() 
+FROM DIGITALTWINS 
+WHERE IS_OF_MODEL('dtmi:sample:Room;1') 
+SELECT COUNT() 
+FROM DIGITALTWINS c 
+WHERE IS_OF_MODEL('dtmi:sample:Room;1') AND c.Capacity > 20
+```
+
+Также можно использовать `COUNT` вместе с `JOIN` предложением. Ниже приведен запрос, который подсчитывает все лампочки, содержащиеся в светлых панелях комнат 1 и 2:
+
+```sql
+SELECT COUNT(LightBulb)  
+FROM DIGITALTWINS Room  
+JOIN LightPanel RELATED Room.contains  
+JOIN LightBulb RELATED LightPanel.contains  
+WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1')  
+AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1')  
+AND Room.$dtId IN ['room1', 'room2'] 
 ```
 
 ### <a name="query-by-property"></a>Запрос по свойству
@@ -178,7 +210,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Любой из приведенных выше типов запросов можно **объединить** с помощью сочетаний операторов, чтобы включить более подробные сведения в один запрос. Ниже приведены некоторые дополнительные примеры составных запросов, которые одновременно запрашивают более одного типа дескриптора двойника.
 
-| Описание | Запрос |
+| Description | Запрос |
 | --- | --- |
 | На устройствах, которые имеют *место 123* , возвращаются устройства MxChip, обслуживающие роль оператора. | `SELECT device`<br>`FROM DigitalTwins space`<br>`JOIN device RELATED space.has`<br>`WHERE space.$dtid = 'Room 123'`<br>`AND device.$metadata.model = 'dtmi:contosocom:DigitalTwins:MxChip:3'`<br>`AND has.role = 'Operator'` |
 | Получить двойников, имеющую связь с именем, которая *содержит* другой ДВОЙНИКА с идентификатором *id1* | `SELECT Room`<br>`FROM DIGITALTWINS Room`<br>`JOIN Thermostat RELATED Room.Contains`<br>`WHERE Thermostat.$dtId = 'id1'` |
@@ -202,7 +234,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Поддерживаются следующие функции проверки и приведения типов:
 
-| Компонент | Описание |
+| Компонент | Description |
 | -------- | ----------- |
 | IS_DEFINED | Возвращает логическое значение, указывающее, назначено ли свойству значение. Это поддерживается только в том случае, если значение является типом-примитивом. Типы-примитивы включают строку, логическое значение, число или `null` . DateTime, типы объектов и массивы не поддерживаются. |
 | IS_OF_MODEL | Возвращает логическое значение, указывающее, соответствует ли указанный двойника указанному типу модели. |
@@ -215,7 +247,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Поддерживаются следующие строковые функции:
 
-| Компонент | Описание |
+| Компонент | Description |
 | -------- | ----------- |
 | STARTSWITH (x, y) | Возвращает значение логического типа, указывающее, начинается ли первое строковое выражение вторым. |
 | ENDSWITH (x, y) | Возвращает значение логического типа, указывающее, заканчивается ли первое строковое выражение вторым. |

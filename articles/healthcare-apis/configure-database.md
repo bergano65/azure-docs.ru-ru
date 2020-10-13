@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 11/15/2019
 ms.author: matjazl
 ms.openlocfilehash: be3cf7d946e7502147942fa8954ade70dd47bedf
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839934"
 ---
 # <a name="configure-database-settings"></a>Настройка параметров базы данных 
@@ -36,7 +36,7 @@ API Azure для FHIR использует концепцию RUs из Cosmos DB
 
 ![Cosmos DB конфигурации](media/database/database-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как обновить службу веб-запросов для Azure API для FHIR. Сведения о настройке ключей, управляемых клиентом, в качестве параметров базы данных:
 

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.openlocfilehash: babf2c8208732a194184549dfa5ed3228b376d0f
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91710266"
 ---
 # <a name="query-performance-insight"></a>Анализ производительности запросов 
@@ -45,7 +45,7 @@ ms.locfileid: "91710266"
 ## <a name="considerations"></a>Рекомендации
 * Анализ производительности запросов недоступна для [реплик чтения](concepts-read-replicas.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.
 
 

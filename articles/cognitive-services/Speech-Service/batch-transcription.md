@@ -12,10 +12,10 @@ ms.date: 08/28/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
 ms.openlocfilehash: fe864212eaccb67335586ef8b25049529ab36b81
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91360758"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
@@ -63,7 +63,7 @@ API-интерфейс для транскрипции пакетов подде
 Для звуковых потоков стереозвука левый и правый каналы разбиваются во время транскрипции. Файл результатов JSON создается для каждого канала.
 Чтобы создать упорядоченную конечную запись, используйте метки времени, созданные для каждого utterance.
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Параметры конфигурации предоставляются в виде JSON (один или несколько отдельных файлов):
 
@@ -336,6 +336,6 @@ API-интерфейс для транскрипции пакетов подде
 > [!NOTE]
 > Для транскрипций базовых показателей не нужно объявлять идентификатор для базовой модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Справочник по API для преобразования речи в текст v3](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription)

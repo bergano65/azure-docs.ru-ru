@@ -11,10 +11,10 @@ ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 08/31/2020
 ms.openlocfilehash: 3be0695c20eafb71564211d1168bc59813f8800a
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91617763"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Ручная отработка отказа, инициированная пользователем в SQL Управляемый экземпляр
@@ -125,7 +125,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 
 ## <a name="monitor-the-failover"></a>Мониторинг отработки отказа
 
-Чтобы отслеживать ход выполнения отработки отказа пользователем вручную, выполните следующий запрос T-SQL в избранном клиенте (например, SSMS) на SQL Управляемый экземпляр. Будет прочитано системное представление sys. dm_hadr_fabric_replica_states и реплики отчетов, доступные в экземпляре. Обновите тот же запрос после инициации перехода на другой ресурс вручную.
+Чтобы отслеживать ход выполнения отработки отказа пользователем вручную, выполните следующий запрос T-SQL в избранном клиенте (например, SSMS) на SQL Управляемый экземпляр. Будет прочитано системное представление sys.dm_hadr_fabric_replica_states и реплики отчетов, доступные в экземпляре. Обновите тот же запрос после инициации перехода на другой ресурс вручную.
 
 ```T-SQL
 SELECT DISTINCT replication_endpoint_url, fabric_replica_role_desc FROM sys.dm_hadr_fabric_replica_states
@@ -144,7 +144,7 @@ SELECT DISTINCT replication_endpoint_url, fabric_replica_role_desc FROM sys.dm_h
 > - Для экземпляров BC должен существовать кворум реплик, чтобы запрос отработки отказа был принят.
 > - Для экземпляров BC невозможно указать, на какой вторичной реплике для запуска отработки отказа будет выполняться операция.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о высокой доступности управляемого экземпляра [Высокая доступность для управляемый экземпляр Azure SQL](../database/high-availability-sla.md).
 - Общие сведения см. в статье [что такое Azure SQL управляемый экземпляр?](sql-managed-instance-paas-overview.md).

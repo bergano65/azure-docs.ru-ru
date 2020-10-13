@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.openlocfilehash: e677aef7a90e7372c5af4bfa48c6160c439b3ee8
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91707971"
 ---
 # <a name="firewall-rules-in-azure-database-for-postgresql---single-server"></a>Правила брандмауэра в базе данных Azure для PostgreSQL — один сервер
@@ -71,7 +71,7 @@ ms.locfileid: "91707971"
 
    Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI](howto-manage-firewall-using-cli.md)
 * [Конечные точки службы виртуальной сети в базе данных Azure для PostgreSQL](./concepts-data-access-and-security-vnet.md)

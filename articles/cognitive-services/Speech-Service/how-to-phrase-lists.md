@@ -13,10 +13,10 @@ ms.author: trbye
 zone_pivot_groups: programming-languages-speech-services-one-nomore-no-go
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 1e0b345eb4f1d6b3ab8ba917794b6878180ac558
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320954"
 ---
 # <a name="phrase-lists-for-speech-to-text"></a>Списки фраз для преобразования речи в текст
@@ -137,6 +137,6 @@ phraseListGrammar.clear();
 > [!NOTE]
 > Изменения `PhraseListGrammar` объекта вступают в силу при следующем распознавании или после повторного подключения к службе речи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

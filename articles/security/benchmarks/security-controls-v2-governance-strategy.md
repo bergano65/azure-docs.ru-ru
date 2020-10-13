@@ -8,10 +8,10 @@ ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 420ab87591e230592ec8f728c6acb155266b5912
-ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91403532"
 ---
 # <a name="security-control-v2-governance-and-strategy"></a>Управление безопасностью версии 2: управление и стратегия
@@ -105,7 +105,7 @@ ms.locfileid: "91403532"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| GS-4 | Н/Д | PL, PM |
+| GS-4 | Недоступно | PL, PM |
 
 Убедитесь, что вы задокументированы и сообщаете четкие стратегии для ролей и обязанностей в организации безопасности. Определение приоритетов для обеспечения четкой отчетности за принятие решений в области безопасности, обучение всех пользователей по общей модели ответственности и обучение технических команд по технологиям для защиты облака.
 
@@ -255,7 +255,7 @@ ms.locfileid: "91403532"
 Дополнительные сведения см. в следующих ресурсах.
 - [Тестирование безопасности Azure — резервное копирование и восстановление](security-controls-v2-backup-recovery.md)
 
-- [Инфраструктура с хорошей архитектурой Azure — резервное копирование и аварийное восстановление для приложений Azure](/azure/architecture/framework/resiliency/backup-and-recovery)
+- [Azure Well-Architecture Framework — резервное копирование и аварийное восстановление для приложений Azure](/azure/architecture/framework/resiliency/backup-and-recovery)
 
 - [Платформа внедрения Azure — непрерывность бизнес-процессов и аварийное восстановление](/azure/cloud-adoption-framework/ready/enterprise-scale/business-continuity-and-disaster-recovery)
 

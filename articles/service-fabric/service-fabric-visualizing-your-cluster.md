@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: mikhegn
 ms.openlocfilehash: 5c1a7de386baeb4b89fd12bd89236ea2e0348a57
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91357222"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с помощью обозревателя Service Fabric
@@ -133,7 +133,7 @@ Service Fabric Explorer предлагает возможность взаимо
 * Активация и отслеживание восстановления для секции.
 
 Дополнительные сведения о службе резервного копирования и восстановления см. в [справочнике по REST API](/rest/api/servicefabric/sfclient-index-backuprestore).
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 * [Развертывание приложений Service Fabric с помощью PowerShell](service-fabric-deploy-remove-applications.md)
 

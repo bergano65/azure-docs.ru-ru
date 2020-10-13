@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 05/17/2020
 ms.service: cognitive-services
 ms.openlocfilehash: c2802f1b41ed2842e12c808a8c380ebd646ffa03
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540937"
 ---
 # <a name="add-intents-to-determine-user-intention-of-utterances"></a>Добавление намерений для определения намерения пользователя для фраз
@@ -79,6 +79,6 @@ ms.locfileid: "91540937"
 
 После добавления, изменения или удаления намерений выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. Не обучить после каждого отдельного изменения. Обучить после группы изменений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о добавлении [примеров высказываний](luis-how-to-add-example-utterances.md) с сущностями.

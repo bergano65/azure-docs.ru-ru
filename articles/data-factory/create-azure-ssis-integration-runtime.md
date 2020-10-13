@@ -12,10 +12,10 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.openlocfilehash: d193438a232cc6bc113efb31ce4276117a366add
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91276900"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure
@@ -984,7 +984,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 
 В обоих случаях вы также можете запустить развернутые пакеты в Azure-SSIS IR, используя действие "Выполнить пакеты служб SSIS" в конвейерах Фабрики данных Azure. См. сведения о [запуске выполнения пакета SSIS с использованием действия Фабрики данных](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. другие разделы Azure-SSIS IR в этой документации:
 

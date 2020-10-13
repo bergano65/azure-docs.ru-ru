@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 07/10/2020
 ms.openlocfilehash: 08d1d393b4ba52e6feeb36c0538f2664e1407d38
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91708294"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
@@ -184,6 +184,6 @@ ms.locfileid: "91708294"
  
 3. Для параметра **агрегирования** установите значение **Макс.** 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI и REST API](howto-read-replicas-cli.md).

@@ -12,10 +12,10 @@ ms.author: mlandzic
 ms.reviewer: sstein, jovanpop
 ms.date: 07/21/2020
 ms.openlocfilehash: 08adfd7b69d580f6a231f13f9fb2793d828e16a3
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91618171"
 ---
 # <a name="migrate-a-certificate-of-a-tde-protected-database-to-azure-sql-managed-instance"></a>Перенос сертификата базы данных, защищенной TDE, в Azure SQL Управляемый экземпляр
@@ -51,7 +51,7 @@ ms.locfileid: "91618171"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается Управляемый экземпляр SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRM существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается Управляемый экземпляр SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRM существенно идентичны.
 
 Выполните следующие команды в PowerShell, чтобы установить или обновить модуль:
 
@@ -186,7 +186,7 @@ Update-Module -Name Az.Sql
 
 Теперь сертификат доступен для указанного управляемого экземпляра, и резервная копия соответствующей базы данных, защищенной с помощью TDE, может быть успешно восстановлена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как выполнить миграцию сертификата, защищающего ключ шифрования базы данных, с прозрачное шифрование данных, из локального или экземпляра SQL Server IaaS в Управляемый экземпляр Azure SQL.
 

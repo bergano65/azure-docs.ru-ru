@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4dcc7ed6076c3bac723d709f50f1b3ab2ce8f58
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91319934"
 ---
 # <a name="changing-the-adsync-service-account-password"></a>Изменение пароля учетной записи службы ADSync
@@ -119,7 +119,7 @@ Azure AD Connect, как часть служб синхронизации, ис�
 1. Перейдите к диспетчеру управления службами Windows ("Пуск" → "Службы").
 2. Выберите **службу синхронизации Microsoft Azure AD** и нажмите кнопку "Перезапустить".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 **Обзорные статьи**
 
 * [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
