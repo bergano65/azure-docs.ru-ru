@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 4889ecd02be1b8f59c30550b7813ed5e5935f20f
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88924700"
 ---
 #   <a name="text-translation-cognitive-skill"></a>Неприятный навык преобразования текста
@@ -54,7 +54,7 @@ Microsoft.Skills.Text.TranslationSkill
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Имя вывода    | Description |
+| Имя вывода    | Описание |
 |--------------------|-------------|
 | TranslatedText | Строковый результат преобразования текста из Транслатедфромлангуажекоде в Транслатедтолангуажекоде.|
 | транслатедтолангуажекоде  | Строка, указывающая код языка, в который был преобразован текст. Полезен при переводе на несколько языков и необходимости в отслеживании текста на каком языке.|

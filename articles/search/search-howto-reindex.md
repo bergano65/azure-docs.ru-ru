@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.openlocfilehash: 10c7d4146d61f5b589b29bc8faad5fa8e60a293a
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88924033"
 ---
 # <a name="how-to-rebuild-an-index-in-azure-cognitive-search"></a>Как перестроить индекс в Azure Когнитивный поиск
@@ -37,7 +37,7 @@ ms.locfileid: "88924033"
 
 Удалите и повторно создайте индекс, если выполняется любое из следующих условий. 
 
-| Условие | Description |
+| Условие | Описание |
 |-----------|-------------|
 | Изменение определения поля | Если вы меняете имя поля, тип данных или определенные [атрибуты индекса](/rest/api/searchservice/create-index) (с возможностью поиска, фильтрации, сортировки или поддержкой аспектов), требуется полная перестройка. |
 | Присвоение полю анализатора | [Анализаторы](search-analyzers.md) определяются в индексе, а затем присваиваются полям. Вы можете добавить новое определение анализатора в индекс в любое время, но *присвоить* анализатор можно только при создании поля. Это касается обоих свойств: **analyzer** и **indexAnalyzer**. Свойство **searchAnalyzer** является исключением (его можно присвоить уже существующему полю). |

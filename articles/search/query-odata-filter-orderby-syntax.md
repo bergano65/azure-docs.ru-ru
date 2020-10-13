@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: d04311fce81d147a0830918aee1d4a2a9c0808d4
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88923404"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Общие сведения о языке OData для `$filter` , `$orderby` и `$select` в Azure когнитивный Поиск
@@ -46,7 +46,7 @@ ms.locfileid: "88923404"
 
 ## <a name="field-paths"></a>Пути к полям
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику путей к полям.
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику путей к полям.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -70,7 +70,7 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 Примеры путей к полям приведены в следующей таблице.
 
-| Путь к полю | Description |
+| Путь к полю | Описание |
 | --- | --- |
 | `HotelName` | Ссылается на поле индекса верхнего уровня |
 | `Address/City` | Ссылается на `City` вспомогательное поле сложного поля в индексе; `Address` тип `Edm.ComplexType` в этом примере |
@@ -95,7 +95,7 @@ Rooms/any(room: room/Type eq 'deluxe')
 
 | API | Имя параметра | Ограничения |
 | --- | --- | --- |
-| [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | Нет |
+| [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | None |
 | [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `scoringProfiles/text/weights` | Может ссылаться только на поля с **возможностью поиска** |
 | [Создать](/rest/api/searchservice/create-index) или [Обновить](/rest/api/searchservice/update-index) индекс | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемые** поля |
 | [Поиск](/rest/api/searchservice/search-documents) | `search` Когда `queryType` имеет `full` | Может ссылаться только на поля с **возможностью поиска** |
@@ -135,7 +135,7 @@ Rooms/any(room: room/Type eq 'deluxe')
 
 ### <a name="constants-syntax"></a>Синтаксис констант
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для большинства констант, показанных в приведенной выше таблице. Грамматику для геопространственных типов можно найти в [геопространственных функциях OData в Azure когнитивный Поиск](search-query-odata-geo-spatial-functions.md).
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для большинства констант, показанных в приведенной выше таблице. Грамматику для геопространственных типов можно найти в [геопространственных функциях OData в Azure когнитивный Поиск](search-query-odata-geo-spatial-functions.md).
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -211,7 +211,7 @@ boolean_literal ::= 'true' | 'false'
 
 Однако в большинстве случаев требуются более сложные выражения, ссылающиеся на более чем одно поле и константу. Эти выражения создаются различными способами в зависимости от параметра.
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для параметров **$Filter**, **$OrderBy**и **$SELECT** . Они основаны на более простых выражениях, которые ссылаются на пути к полям и константы:
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для параметров **$Filter**, **$OrderBy**и **$SELECT** . Они основаны на более простых выражениях, которые ссылаются на пути к полям и константы:
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -239,7 +239,7 @@ select_expression ::= '*' | field_path(',' field_path)*
 - [Синтаксис $orderby OData в Azure Когнитивный поиск](search-query-odata-orderby.md)
 - [Синтаксис $select OData в Azure Когнитивный поиск](search-query-odata-select.md)
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 - [Навигация с аспектами в Azure Когнитивный поиск](search-faceted-navigation.md)
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)

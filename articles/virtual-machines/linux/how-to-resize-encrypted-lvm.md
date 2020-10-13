@@ -7,10 +7,10 @@ ms.topic: article
 ms.author: jofrance
 ms.date: 09/21/2020
 ms.openlocfilehash: 3a3e9b7406e11261aff12d77d9fbeed5debbe938
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91744276"
 ---
 # <a name="how-to-resize-logical-volume-management-devices-that-use-azure-disk-encryption"></a>Изменение размера устройств управления логическими томами, использующих шифрование дисков Azure
@@ -849,6 +849,6 @@ lvdisplay lvname
 
 Примените ту же процедуру изменения размера к любому другому параметру LV, который его требует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Устранение неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)

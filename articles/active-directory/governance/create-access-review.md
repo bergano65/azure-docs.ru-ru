@@ -16,10 +16,10 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 02d1c40c26dd6b6992d8df85a986b4157a22226a
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90602937"
 ---
 # <a name="create-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа для групп и приложений в проверках доступа Azure AD
@@ -32,7 +32,7 @@ ms.locfileid: "90602937"
 
 В этой статье описывается, как создать одну или несколько проверок доступа для членов группы или доступа к приложениям.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure AD Premium P2
 - глобальный администратор или администратор пользователей.
@@ -169,7 +169,7 @@ ms.locfileid: "90602937"
 
 Проверки доступа можно также создать с помощью API. Все действия по управлению проверками доступа для групп и пользователей приложений, которые выполняются на портале Azure, доступны и через API Microsoft Graph. Дополнительные сведения см. в [справочнике по API проверок доступа Azure AD](/graph/api/resources/accessreviews-root?view=graph-rest-beta). Пример кода см. в разделе [Пример получения проверок доступа Azure AD с помощью Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/m-p/236096).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Проверка доступа к группам или приложениям](perform-access-review.md)
 - [Обзор доступа к группам или приложениям](review-your-access.md)

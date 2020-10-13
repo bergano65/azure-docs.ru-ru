@@ -11,10 +11,10 @@ ms.custom: subject-moving-resources
 ms.date: 08/12/2020
 ms.author: jgardner
 ms.openlocfilehash: f37550d914cf7efb0c75ed3dfa8854e1ec7be7e0
-ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88875810"
 ---
 # <a name="move-an-azure-workbook-template-to-another-region"></a>Перемещение шаблона книги Azure в другой регион
@@ -23,11 +23,11 @@ ms.locfileid: "88875810"
 
 В настоящее время нет пользовательского интерфейса портала для создания ресурсов шаблона книги, единственным текущим способом их создания является [развертывание с помощью Azure Resource Manager шаблона (шаблона ARM)](./workbooks-automate.md). Таким образом, самый простой способ переместить шаблон — повторно использовать предыдущий шаблон ARM и обновить его для развертывания в новом регионе.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Убедитесь, что шаблоны книг поддерживаются в целевом регионе.
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
 * Найдите ранее использовавшийся шаблон ARM для шаблона книги.
 
