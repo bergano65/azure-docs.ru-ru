@@ -16,10 +16,10 @@ ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9a32874cebcd8335967eaf8a07a56346e8ad6460
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88213623"
 ---
 # <a name="set-up-self-service-group-management-in-azure-active-directory"></a>Настройка самостоятельного управления группами в Azure Active Directory 
@@ -66,5 +66,5 @@ ms.locfileid: "88213623"
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
 * [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md)
 * [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
-* [Что такое Azure Active Directory](../fundamentals/active-directory-whatis.md)
+* [Что такое Azure Active Directory?](../fundamentals/active-directory-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

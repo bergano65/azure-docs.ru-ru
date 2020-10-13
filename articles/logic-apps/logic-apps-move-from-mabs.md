@@ -9,10 +9,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/30/2017
 ms.openlocfilehash: 6c07ab4b18c017bd29723d2640129b8e67374e3c
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87837386"
 ---
 # <a name="migrate-your-apps-and-solutions-from-biztalk-services-to-azure-logic-apps"></a>Перенос приложений и решений из служб BizTalk в Azure Logic Apps
@@ -127,13 +127,13 @@ ms.locfileid: "87837386"
 
 Выделенный портал служб BizTalk предоставлял возможности отслеживания для мониторинга и устранения неполадок. Logic Apps предоставляет более широкие возможности отслеживания и мониторинга для [мониторинга приложений логики в портал Azure](../logic-apps/monitor-logic-apps.md)и включает в себя мобильное приложение, позволяющее следить за тем, когда вы находитесь в процессе перемещения.
 
-## <a name="high-availability"></a>Высокая доступность
+## <a name="high-availability"></a>Высокий уровень доступности
 
 Для достижения высокой доступности (HA) в службах BizTalk вы можете использовать более одного экземпляра в конкретном регионе для распределения нагрузки обработки. Служба Logic Apps предоставляет высокий уровень доступности в регионе без отдельной оплаты. 
 
 Для аварийного восстановления за пределами региона для обработки B2B в службах BizTalk необходимо реализовать процесс резервного копирования и восстановления. Для обеспечения непрерывности бизнес-процессов в службе Logic Apps предоставляется [возможность активного или пассивного аварийного восстановления](../logic-apps/logic-apps-enterprise-integration-b2b-business-continuity.md) в разных регионах. Это позволяет выполнять синхронизацию данных B2B в учетных записях интеграции в разных регионах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое Logic Apps?](../logic-apps/logic-apps-overview.md)
 * [Создайте свое первое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) или приступите к работе, используя [готовый шаблон](../logic-apps/logic-apps-create-logic-apps-from-templates.md).  

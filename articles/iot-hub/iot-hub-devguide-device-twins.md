@@ -12,10 +12,10 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 ms.openlocfilehash: 4887315ddef3f15ee3f6ef5ad80cf8df8b1dcd34
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87327775"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Общие сведения о двойниках устройств и их использование в Центре Интернета вещей
@@ -201,7 +201,7 @@ ms.locfileid: "87327775"
 
   - Текст
         
-    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление. разница заключается в том, что он может содержать все разделы двойника: Теги, Properties. reсообщаемые, Properties. и что содержит элементы "$metadata". например следующие.
+    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление. разница заключается в том, что он может содержать все разделы двойника: Теги, Properties. reсообщаемые, Properties. и что содержит элементы "$metadata". Например,
 
     ```json
     {

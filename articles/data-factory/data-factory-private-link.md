@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
 ms.openlocfilehash: 2cd9f01404a4e33303356dd3f452cd7dbc47a747
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91328570"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Частная ссылка Azure для фабрики данных Azure
@@ -84,7 +84,7 @@ ms.locfileid: "91328570"
 > [!NOTE]
 > Вы по-прежнему можете получить доступ к порталу фабрики данных Azure через общедоступную сеть после отключения доступа к общедоступной сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание фабрики данных с помощью пользовательского интерфейса фабрики данных Azure](quickstart-create-data-factory-portal.md)
 - [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)

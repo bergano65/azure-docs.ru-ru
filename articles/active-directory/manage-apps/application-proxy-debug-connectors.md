@@ -12,10 +12,10 @@ ms.date: 05/21/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.openlocfilehash: 7e7a1de24e5032b2dade2f325560fd6964c892d5
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86145682"
 ---
 # <a name="debug-application-proxy-connector-issues"></a>Устранение проблем с соединителями Application Proxy 
@@ -53,7 +53,7 @@ ms.locfileid: "86145682"
 |9 | Продлите значение времени ожидания в серверной части | В **дополнительных параметрах** приложения измените значение параметра **время ожидания серверных приложений** на **Long**. См. статью [Добавление локального приложения в Azure AD](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). |
 |10 | Если проблемы не удается устранить, устраните проблемы с конкретными потоками, проверьте потоки отладки приложения и единого входа. | Использование [приложения "Отладка прокси приложения](application-proxy-debug-apps.md) " позволяет устранить неполадки. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 * [Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей](application-proxy-connector-groups.md)

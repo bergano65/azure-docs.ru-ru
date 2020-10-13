@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: asrastog
 ms.openlocfilehash: 83d2fa59654e038586a7f23eedbe7c656873f35c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84976580"
 ---
 # <a name="encryption-of-data-at-rest-with-customer-managed-keys-for-iot-hub"></a>Шифрование неактивных данных с помощью управляемых клиентом ключей для центра Интернета вещей
@@ -22,7 +22,7 @@ ms.locfileid: "84976580"
 Для этой возможности требуется создать центр Интернета вещей (уровень "базовый" или "Стандартный"). Чтобы испытать эту возможность, свяжитесь с нами через [службу поддержки Майкрософт](https://azure.microsoft.com/support/create-ticket/). Поделитесь своим названием организации и ИДЕНТИФИКАТОРом подписки при обращении в службу поддержки Майкрософт.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о центре Интернета вещей](https://docs.microsoft.com/azure/iot-hub/about-iot-hub)
 

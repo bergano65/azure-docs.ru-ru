@@ -9,10 +9,10 @@ ms.date: 6/2/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 6c594dbab51c46c382c21b4d87595cd7322f6036
-ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84465129"
 ---
 Перейдите к учетной записи хранения, для которой вы хотите разрешить доступ к общедоступной конечной точке только из нескольких виртуальных сетей. В таблице содержимого для учетной записи хранения выберите **Брандмауэры и виртуальные сети**. 

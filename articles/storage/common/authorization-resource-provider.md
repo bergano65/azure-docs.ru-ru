@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: e71e56b9da06bfd8f3be24481efd619b788a8839
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91822277"
 ---
 # <a name="use-the-azure-storage-resource-provider-to-access-management-resources"></a>Использование поставщика ресурсов службы хранилища Azure для доступа к ресурсам управления
@@ -74,7 +74,7 @@ Azure также поддерживает определение пользов�
 
 Дополнительные сведения о моделях развертывания Azure см. в разделе [Диспетчер ресурсов и классическое развертывание](../../azure-resource-manager/management/deployment-models.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview)
 - [Что такое управление доступом на основе ролей в Azure (RBAC)?](../../role-based-access-control/overview.md)

@@ -8,10 +8,10 @@ ms.date: 06/24/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: e4f011d9286a0685f1b091b930155db969407423
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87903720"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Параметры брандмауэра и прокси-сервера службы "Синхронизация файлов Azure"
@@ -25,7 +25,7 @@ ms.locfileid: "87903720"
 Служба "Синхронизация файлов Azure" действует как служба оркестрации между Windows Server, вашим файловым ресурсом Azure и несколькими другими службами Azure, которая синхронизирует данные, как описано в группе синхронизации. Чтобы служба "Синхронизация файлов Azure" работала правильно, необходимо настроить серверы для взаимодействия со следующими службами Azure.
 
 - Хранилище Azure
-- Синхронизация файлов Azure
+- Служба синхронизации файлов Azure
 - Azure Resource Manager
 - Службы аутентификации
 
@@ -109,16 +109,16 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 В целях обеспечения непрерывности бизнес-процессов и аварийного восстановления (BCDR) вы могли разместить файловые ресурсы Azure в учетной записи глобально избыточного хранилища (GRS). Если это так, тогда в случае продолжительного регионального сбоя будет выполнена отработка отказа файловых ресурсов Azure в связанный регион. Служба "Синхронизация файлов Azure" использует те же региональные связи, что и хранилище. Поэтому при использовании учетных записей хранения GRS необходимо включить дополнительные URL-адреса, чтобы разрешить серверу взаимодействовать с парным регионом для Синхронизация файлов Azure. Приведенная ниже таблица вызывает эту "парный регион". Кроме того, есть URL-адрес профиля диспетчера трафика, который также должен быть включен. Это позволяет гарантировать простое перенаправление трафика в парный регион в случае отработки отказа. Этот адрес называется "URL-адрес обнаружения" в таблице ниже.
 
-| Облако  | Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
+| Cloud  | Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
 |--------|--------|----------------------|---------------|---------------|
 | Общие |Восточная Австралия | HTTPS: \/ /australiaeast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-Aue.One.Microsoft.com | Australia Southeast | HTTPS: \/ /TM-australiaeast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-Aue.One.Microsoft.com |
 | Общие |Australia Southeast | HTTPS: \/ /australiasoutheast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-AUS.One.Microsoft.com | Восточная Австралия | HTTPS: \/ /TM-australiasoutheast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-AUS.One.Microsoft.com |
-| Общие | Brazil South | HTTPS: \/ /brazilsouth01.AFS.Azure.NET | Центрально-южная часть США | HTTPS: \/ /TM-brazilsouth01.AFS.Azure.NET |
+| Общие | Южная Бразилия | HTTPS: \/ /brazilsouth01.AFS.Azure.NET | Центрально-южная часть США | HTTPS: \/ /TM-brazilsouth01.AFS.Azure.NET |
 | Общие | Центральная Канада | HTTPS: \/ /canadacentral01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CAC.One.Microsoft.com | Восточная Канада | HTTPS: \/ /TM-canadacentral01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-CAC.One.Microsoft.com |
 | Общие | Восточная Канада | HTTPS: \/ /canadaeast01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CAE.One.Microsoft.com | Центральная Канада | HTTPS: \/ /TM-canadaeast01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani.CAE.One.Microsoft.com |
 | Общие | Центральная Индия | HTTPS: \/ /centralindia01.AFS.Azure.NET<br>HTTPS: \/ /kailani-cIn.One.Microsoft.com | Южная Индия | HTTPS: \/ /TM-centralindia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-cIn.One.Microsoft.com |
 | Общие | Центральная часть США | HTTPS: \/ /centralus01.AFS.Azure.NET<br>HTTPS: \/ /kailani-CUS.One.Microsoft.com | восточная часть США 2 | HTTPS: \/ /TM-centralus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-CUS.One.Microsoft.com |
-| Общие | Восточная Азия | HTTPS: \/ /eastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani11.One.Microsoft.com | Southeast Asia | HTTPS: \/ /TM-eastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani11.One.Microsoft.com |
+| Общие | Восточная Азия | HTTPS: \/ /eastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani11.One.Microsoft.com | Юго-Восточная Азия | HTTPS: \/ /TM-eastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani11.One.Microsoft.com |
 | Общие | Восточная часть США | HTTPS: \/ /eastus01.AFS.Azure.NET<br>HTTPS: \/ /kailani1.One.Microsoft.com | западная часть США | HTTPS: \/ /TM-eastus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani1.One.Microsoft.com |
 | Общие | восточная часть США 2 | HTTPS: \/ /eastus201.AFS.Azure.NET<br>HTTPS: \/ /kailani-ESS.One.Microsoft.com | Центральная часть США | HTTPS: \/ /TM-eastus201.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-ESS.One.Microsoft.com |
 | Общие | Japan East | HTTPS: \/ /japaneast01.AFS.Azure.NET | Западная Япония | HTTPS: \/ /TM-japaneast01.AFS.Azure.NET |
@@ -129,13 +129,13 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 | Общие | Северная Европа | HTTPS: \/ /northeurope01.AFS.Azure.NET<br>HTTPS: \/ /kailani7.One.Microsoft.com | Западная Европа | HTTPS: \/ /TM-northeurope01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani7.One.Microsoft.com |
 | Общие | Центрально-южная часть США | HTTPS: \/ /southcentralus01.AFS.Azure.NET | Центрально-северная часть США | HTTPS: \/ /TM-southcentralus01.AFS.Azure.NET |
 | Общие | Южная Индия | HTTPS: \/ /southindia01.AFS.Azure.NET<br>HTTPS: \/ /kailani-Sin.One.Microsoft.com | Центральная Индия | HTTPS: \/ /TM-southindia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-Sin.One.Microsoft.com |
-| Общие | Southeast Asia | HTTPS: \/ /southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani10.One.Microsoft.com | Восточная Азия | HTTPS: \/ /TM-southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani10.One.Microsoft.com |
+| Общие | Юго-Восточная Азия | HTTPS: \/ /southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /kailani10.One.Microsoft.com | Восточная Азия | HTTPS: \/ /TM-southeastasia01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani10.One.Microsoft.com |
 | Общие | южная часть Соединенного Королевства | HTTPS: \/ /uksouth01.AFS.Azure.NET<br>HTTPS: \/ /kailani-UKS.One.Microsoft.com | западная часть Соединенного Королевства | HTTPS: \/ /TM-uksouth01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-UKS.One.Microsoft.com |
 | Общие | западная часть Соединенного Королевства | HTTPS: \/ /ukwest01.AFS.Azure.NET<br>HTTPS: \/ /kailani-UKW.One.Microsoft.com | южная часть Соединенного Королевства | HTTPS: \/ /TM-ukwest01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani-UKW.One.Microsoft.com |
-| Общие | центрально-западная часть США | HTTPS: \/ /westcentralus01.AFS.Azure.NET | Западная часть США 2 | HTTPS: \/ /TM-westcentralus01.AFS.Azure.NET |
+| Общие | центрально-западная часть США | HTTPS: \/ /westcentralus01.AFS.Azure.NET | западная часть США 2 | HTTPS: \/ /TM-westcentralus01.AFS.Azure.NET |
 | Общие | Западная Европа | HTTPS: \/ /westeurope01.AFS.Azure.NET<br>HTTPS: \/ /kailani6.One.Microsoft.com | Северная Европа | HTTPS: \/ /TM-westeurope01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani6.One.Microsoft.com |
 | Общие | западная часть США | HTTPS: \/ /westus01.AFS.Azure.NET<br>HTTPS: \/ /kailani.One.Microsoft.com | Восточная часть США | HTTPS: \/ /TM-westus01.AFS.Azure.NET<br>HTTPS: \/ /TM-kailani.One.Microsoft.com |
-| Общие | Западная часть США 2 | HTTPS: \/ /westus201.AFS.Azure.NET | центрально-западная часть США | HTTPS: \/ /TM-westus201.AFS.Azure.NET |
+| Общие | западная часть США 2 | HTTPS: \/ /westus201.AFS.Azure.NET | центрально-западная часть США | HTTPS: \/ /TM-westus201.AFS.Azure.NET |
 | Государственный сектор | US Gov (Аризона) | HTTPS: \/ /usgovarizona01.AFS.Azure.US | US Gov (Техас) | HTTPS: \/ /TM-usgovarizona01.AFS.Azure.US |
 | Государственный сектор | US Gov (Техас) | HTTPS: \/ /usgovtexas01.AFS.Azure.US | US Gov (Аризона) | HTTPS: \/ /TM-usgovtexas01.AFS.Azure.US |
 
@@ -266,7 +266,7 @@ if ($found) {
 Затем можно использовать диапазоны IP-адресов в `$ipAddressRanges` для обновления брандмауэра. Сведения о том, как обновить брандмауэр, см. на веб-сайте брандмауэра или сетевого устройства.
 
 ## <a name="test-network-connectivity-to-service-endpoints"></a>Проверка сетевого подключения к конечным точкам службы
-После регистрации сервера в службе Синхронизация файлов Azure командлет Test-Сторажесинкнетворкконнективити и ServerRegistration.exe можно использовать для проверки связи со всеми конечными точками (URL-адресами), характерными для этого сервера. Этот командлет может помочь в устранении неполадок, когда незавершенная связь не позволяет серверу полностью работать с Синхронизация файлов Azure и может использоваться для точной настройки конфигурации прокси-сервера и брандмауэра.
+После регистрации сервера в службе Синхронизация файлов Azure можно использовать командлет Test-StorageSyncNetworkConnectivity и ServerRegistration.exe для проверки связи со всеми конечными точками (URL-адресами), специфичными для этого сервера. Этот командлет может помочь в устранении неполадок, когда незавершенная связь не позволяет серверу полностью работать с Синхронизация файлов Azure и может использоваться для точной настройки конфигурации прокси-сервера и брандмауэра.
 
 Чтобы запустить проверку сетевого подключения, установите агент Синхронизация файлов Azure версии 9,1 или более поздней и выполните следующие команды PowerShell:
 ```powershell
@@ -280,6 +280,6 @@ Test-StorageSyncNetworkConnectivity
 Настройка домена с ограничивающими правилами брандмауэра может служить мерой повышения безопасности. Если используются такие конфигурации брандмауэров, необходимо помнить, что URL-адреса со временем добавляются и могут измениться. Периодически просматривайте эту статью.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
-- [Планирование развертывания Синхронизации файлов Azure](storage-sync-files-planning.md)
+- [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

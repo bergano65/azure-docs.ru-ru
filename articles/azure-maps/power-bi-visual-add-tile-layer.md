@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: 8a0d930d1c0fd30c48d97b0d1d4b94548077fbca
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86262159"
 ---
 # <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
@@ -54,8 +54,8 @@ ms.locfileid: "86262159"
 -   `{x}` — позиция X фрагмента. Также нужны `{y}` и `{z}`.
 -   `{y}` — позиция Y фрагмента. Также нужны `{x}` и `{z}`.
 -   `{z}` — уровень увеличения фрагмента. Также нужны `{x}` и `{y}`.
--   `{quadkey}`— `quadkey` Идентификатор плитки, основанный на соглашении об именовании системы плиток Bing Maps.
--   `{bbox-epsg-3857}`— Строка ограничивающего прямоугольника с форматом `{west},{south},{east},{north}` в системе пространственной ссылки EPSG 3857.
+-   `{quadkey}` — `quadkey` Идентификатор плитки, основанный на соглашении об именовании системы плиток Bing Maps.
+-   `{bbox-epsg-3857}` — Строка ограничивающего прямоугольника с форматом `{west},{south},{east},{north}` в системе пространственной ссылки EPSG 3857.
 
 В качестве примера ниже представлен отформатированный URL-адрес плитки для [службы плитки "радар погоды](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview) " в Azure Maps. Обратите внимание, что `[subscription-key]` — это заполнитель для ключа подписки Azure Maps.
 

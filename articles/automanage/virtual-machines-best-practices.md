@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: deanwe
 ms.openlocfilehash: df03fc3049deaf5ce57fda74ca98c748ace1fbbc
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937673"
 ---
 # <a name="azure-automanage-for-virtual-machines-best-practices"></a>Рекомендации по управлению Azure для виртуальных машин
@@ -40,7 +40,7 @@ ms.locfileid: "90937673"
 <sup>1</sup> профили конфигурации доступны при включении функции автоуправления. Дополнительные [сведения.](automanage-virtual-machines.md#configuration-profiles) Можно также настроить параметры по умолчанию для профиля конфигурации и задать собственные предпочтения в рамках рекомендаций.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте включить Автоуправление для виртуальных машин в портал Azure.
 

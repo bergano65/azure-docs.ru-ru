@@ -1,5 +1,5 @@
 ---
-title: Включение Azure Monitor для виртуальных машин с помощью шаблонов диспетчер ресурсов
+title: Включение Azure Monitor для виртуальных машин с помощью шаблонов Resource Manager
 description: В этой статье описывается, как включить Azure Monitor для виртуальных машин для одной или нескольких виртуальных машин Azure или масштабируемых наборов виртуальных машин с помощью шаблонов Azure PowerShell или Azure Resource Manager.
 ms.subservice: ''
 ms.topic: conceptual
@@ -7,13 +7,13 @@ author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
 ms.openlocfilehash: 89a9a1b762e02237a8ee08dca5d6eedefabaafbb
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87328357"
 ---
-# <a name="enable-azure-monitor-for-vms-using-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин с помощью шаблонов диспетчер ресурсов
+# <a name="enable-azure-monitor-for-vms-using-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин с помощью шаблонов Resource Manager
 В этой статье описывается, как включить Azure Monitor для виртуальных машин для виртуальной машины или масштабируемого набора виртуальных машин с помощью шаблонов диспетчер ресурсов. Эту процедуру можно использовать для следующих действий:
 
 - Виртуальная машина Azure

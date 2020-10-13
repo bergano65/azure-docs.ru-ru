@@ -5,10 +5,10 @@ ms.assetid: 361daf37-598c-4703-8d78-c77dbef91643
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.openlocfilehash: e49c235e11eea17fdd1a7ff7751cc0493934d725
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "83123697"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
@@ -19,7 +19,7 @@ ms.locfileid: "83123697"
 
 * [Azure Repos](https://azure.microsoft.com/services/devops/repos/)
 * [GitHub](https://github.com)
-* [BitBucket](https://bitbucket.org/)
+* [Bitbucket](https://bitbucket.org/)
 
 Единицей развертывания для функций в Azure является приложение-функция. Все функции в приложении-функции развертываются одновременно. После включения непрерывного развертывания доступ к коду функции в портал Azure настраивается как " *только для чтения* ", так как источник истинности установлен в другое место.
 
@@ -32,7 +32,7 @@ ms.locfileid: "83123697"
 >[!NOTE]  
 > Непрерывное развертывание пока не поддерживается для приложений Linux, работающих в плане потребления. 
 
-## <a name="set-up-continuous-deployment"></a><a name="credentials"></a>Настройка непрерывного развертывания
+## <a name="set-up-continuous-deployment"></a><a name="credentials"></a>Непрерывное развертывание с использованием GIT в службе приложений Azure
 
 Чтобы настроить непрерывное развертывание для существующего приложения функции, выполните следующие действия. Шаги демонстрируют интеграцию с репозиторием GitHub, но аналогичные действия применяются для Azure Repos или других репозиториев исходного кода.
 
@@ -42,7 +42,7 @@ ms.locfileid: "83123697"
 
 3. В GitHub выберите **авторизовать AzureAppService**.
 
-    :::image type="content" source="./media/functions-continuous-deployment/authorize.png" alt-text="Авторизация службы приложений Azure":::
+    :::image type="content" source="./media/functions-continuous-deployment/authorize.png" alt-text="Центр развертывания службы приложений Azure":::
 
     Введите пароль GitHub и нажмите кнопку **продолжить**.
 
@@ -55,7 +55,7 @@ ms.locfileid: "83123697"
 
 5. Настройте сведения, относящиеся к указанному параметру системы управления версиями. Для GitHub необходимо ввести или выбрать значения для параметров **Организация**, **репозиторий**и **ветвь**. Значения основаны на расположении кода. Затем выберите **продолжить**.
 
-    :::image type="content" source="./media/functions-continuous-deployment/github-specifics.png" alt-text="Настройка GitHub":::
+    :::image type="content" source="./media/functions-continuous-deployment/github-specifics.png" alt-text="Центр развертывания службы приложений Azure":::
 
 6. Просмотрите все сведения, а затем нажмите кнопку **Готово** , чтобы завершить настройку развертывания.
 
@@ -64,7 +64,7 @@ ms.locfileid: "83123697"
 > [!NOTE]
 > После настройки непрерывной интеграции вы больше не сможете изменять исходные файлы на портале функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации по функциям Azure](functions-best-practices.md)

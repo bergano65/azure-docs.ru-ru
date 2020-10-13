@@ -17,10 +17,10 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ab3b340654fd6d824edef0a33d1ea363a913654
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84764593"
 ---
 # <a name="high-availability-and-load-balancing-of-your-application-proxy-connectors-and-applications"></a>Высокий уровень доступности и балансировка нагрузки соединителей прокси приложения и приложений
@@ -92,7 +92,7 @@ ms.locfileid: "84764593"
 
 Сведения о требованиях к балансировке нагрузки серверного приложения см. в документации поставщика программного обеспечения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Включение прокси приложения](application-proxy-add-on-premises-application.md)
 - [Включение единого входа](application-proxy-configure-single-sign-on-with-kcd.md)

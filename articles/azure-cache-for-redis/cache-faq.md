@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.openlocfilehash: 197decbb263391a32b8bf01cdbb6c2f34b750111
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88003562"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Redis для Azure
@@ -18,7 +18,7 @@ ms.locfileid: "88003562"
 
 * [Часто задаваемые вопросы о планировании](cache-planning-faq.md)
 * [Часто задаваемые вопросы о разработке](cache-development-faq.md)
-* [Вопросы и ответы по управлению](cache-management-faq.md)
+* [Часто задаваемые вопросы об управлении](cache-management-faq.md)
 * [Часто задаваемые вопросы о мониторинге и устранении неполадок](cache-monitor-troubleshoot-faq.md)
 
 ## <a name="deprecated-cache-services"></a>Устаревшие службы кэша

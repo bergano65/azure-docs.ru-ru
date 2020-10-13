@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.openlocfilehash: a2e99440a7c8f33eee9d3c9fe2276ac3868ff4b6
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331766"
 ---
 # <a name="scheduled-maintenance-in-azure-database-for-mysql--flexible-server"></a>Запланированное обслуживание на гибком сервере Базы данных Azure для MySQL
@@ -43,7 +43,7 @@ ms.locfileid: "91331766"
 
 В редких случаях событие обслуживания может быть отменено системой или может не завершиться успешно. В этом случае система создаст уведомление об отменяемом или неудачном событии обслуживания соответственно. Следующая попытка выполнить обслуживание будет запланирована согласно текущим параметрам планирования, и вы получите уведомление об этом за пять дней заранее.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [изменить расписание обслуживания](how-to-maintenance-portal.md)
 * Узнайте, как [получать уведомления о предстоящем обслуживании](../../service-health/service-notifications.md) с помощью службы работоспособности служб Azure.

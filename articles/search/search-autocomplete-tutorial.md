@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: dac1a09b7984cdc8deca22ced1e8018a761979e2
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91531621"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps"></a>Добавление автозаполнения и предложений в клиентские приложения
@@ -247,7 +247,7 @@ public ActionResult AutoComplete(string term)
 
 Эта функция автозавершения принимает входные данные с термином для поиска. Затем этот метод создает объект [AutoCompleteParameters](/rest/api/searchservice/autocomplete). Затем результат преобразуется в JSON, чтобы его можно было передать клиенту.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте эти ссылки для получения комплексных инструкций или кода, демонстрирующих возможности поиска как типов. Оба примера кода включают гибридные реализации предложений и автозаполнения вместе.
 

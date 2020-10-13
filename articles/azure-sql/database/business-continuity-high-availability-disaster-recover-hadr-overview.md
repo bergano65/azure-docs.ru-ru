@@ -14,10 +14,10 @@ ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 06/25/2019
 ms.openlocfilehash: a69332f1534e32a85ce084289dd00533612cc282
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91327567"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure
@@ -152,6 +152,6 @@ ms.locfileid: "91327567"
 
 Иногда приложение нужно перевести в автономный режим для планового обслуживания, например, чтобы обновить его. В статье [Управление последовательными обновлениями для облачных приложений с помощью активной георепликации базы данных SQL](manage-application-rolling-upgrade.md) описывается, как с помощью активной георепликации обеспечить последовательное обновление облачного приложения, чтобы свести к минимуму простой при обновлениях и обеспечить путь восстановления, если случится сбой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Обсуждение вопросов разработки приложений для отдельных баз данных и эластичных пулов см. в статье [проектирование приложения для аварийного восстановления облака](designing-cloud-solutions-for-disaster-recovery.md) и [стратегий аварийного восстановления эластичного пула](disaster-recovery-strategies-for-applications-with-elastic-pool.md).
