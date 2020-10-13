@@ -10,10 +10,10 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
 ms.openlocfilehash: 5a6fb2c1c539c5b8e353f5c3720cb9d001dcbbc9
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91277960"
 ---
 # <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Роль "Читатели каталогов" в Azure Active Directory для Azure SQL
@@ -49,7 +49,7 @@ Azure Active Directory (Azure AD) предоставила [Использова
 
 Этому решению по-прежнему требуется пользователь с высоким уровнем прав (глобальный администратор или администратор привилегированных ролей) для создания группы и назначения пользователей в качестве однократного действия, но владельцы групп Azure AD смогут назначать дополнительные участники. Это избавляет от необходимости использования пользователя с высоким уровнем привилегий в будущем для настройки всех баз данных SQL, управляемых экземпляров SQL или серверов Azure синапсе в своем клиенте Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство по назначению роли "Читатели каталогов" группе Azure AD и управлению назначениями ролей](authentication-aad-directory-readers-role-tutorial.md)

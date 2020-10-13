@@ -8,10 +8,10 @@ ms.topic: troubleshooting
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.openlocfilehash: 56a8514fc2531ba0b18925427814e5bfef7d64bf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84988109"
 ---
 # <a name="troubleshoot-an-azure-ad-authentication-vpn-client"></a>Устранение неполадок VPN-клиента проверки подлинности Azure AD
@@ -35,7 +35,7 @@ ms.locfileid: "84988109"
 ![войти](./media/troubleshoot-ad-vpn-client/2.png)
 
 1. Выберите... рядом с профилем, который требуется устранить. Выберите **настроить-> очистить сохраненную учетную запись**.
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 3. Попытайтесь подключиться.
 4. Если подключение по-прежнему не выполняется, перейдите к следующему разделу.
 
@@ -66,6 +66,6 @@ ms.locfileid: "84988109"
 
    ![Просмотреть файл](./media/troubleshoot-ad-vpn-client/5.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).

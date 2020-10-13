@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 1a6aabe7ef3500a114525fe6c8bc993826295e36
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91275359"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Основные понятия работы с сервером в базе данных Azure для MySQL
@@ -41,7 +41,7 @@ ms.locfileid: "91275359"
 |     |     |
 | :-- | :-- |
 | **Аутентификация и авторизация** | Сервер базы данных Azure для MySQL поддерживает собственную аутентификацию MySQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
-| **Протокол** | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
+| **протокол**; | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
 | **TCP/IP** | Протокол работает через TCP/IP, а также через сокеты домена Unix. |
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу базы данных, пока не будут указаны компьютеры, которые имеют разрешение. Ознакомьтесь со статьей [Правила брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md). |
 | **SSL** | Служба поддерживает применение SSL-соединений между приложениями и сервером базы данных.  Ознакомьтесь со статьей [Configure SSL connectivity in your application to securely connect to Azure Database for MySQL](./howto-configure-ssl.md) (Настройка SSL-соединений в приложении для безопасного подключения к базе данных Azure для MySQL). |
@@ -64,7 +64,7 @@ ms.locfileid: "91275359"
 
 Управлять серверами базы данных Azure для MySQL можно с помощью портала Azure или Azure CLI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Обзор службы содержится в статье [What is Azure Database for MySQL? Service Introduction](./overview.md) (Что такое база данных Azure для MySQL? Общие сведения о службе).
 - Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](./concepts-service-tiers.md) .

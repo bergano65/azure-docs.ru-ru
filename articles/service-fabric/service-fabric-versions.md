@@ -4,10 +4,10 @@ description: Узнайте о версиях кластера в Azure Service 
 ms.topic: troubleshooting
 ms.date: 06/15/2020
 ms.openlocfilehash: e3194a59607563656f6624dabf51e9369e9258ee
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91843249"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
@@ -29,7 +29,7 @@ ms.locfileid: "91843249"
 | --- | --- |--- | --- |
 | Все версии кластера до 5.3.121 | 5.1.158.* |Не выше версии 2.3 |20 января 2017 г. |
 | 5.3.* | 5.1.158.* |Не выше версии 2.3 |24 февраля 2017 г. |
-| 5.4.* | 5.1.158.* |Не выше версии 2.4 |10 мая 2017 г.       |
+| 5.4.* | 5.1.158.* |Не выше версии 2.4 |10 мая 2017 г.       |
 | 5.5.* | 5.4.164.* |Не выше версии 2.5 |10 августа 2017 г.    |
 | 5.6.* | 5.4.164.* |Не выше версии 2.6 |13 октября 2017 г.   |
 | 5.7.* | 5.4.164.* |Не выше версии 2.7 |15 декабря 2017 г.  |

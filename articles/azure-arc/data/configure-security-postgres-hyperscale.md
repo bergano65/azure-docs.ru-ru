@@ -1,6 +1,6 @@
 ---
-title: Настройка безопасности для группы PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"
-description: Настройка безопасности для группы PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"
+title: Настройка безопасности для группы серверов Гипермасштабирования PostgreSQL с поддержкой Azure Arc
+description: Настройка безопасности для группы серверов Гипермасштабирования PostgreSQL с поддержкой Azure Arc
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
@@ -10,17 +10,17 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 4f89ace7130e95ba109edcf6becca1e15c8d32c1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91273206"
 ---
-# <a name="configure-security-for-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Настройка безопасности для группы PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"
+# <a name="configure-security-for-your-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Настройка безопасности для группы серверов Гипермасштабирования PostgreSQL с поддержкой Azure Arc
 
 В этом документе описаны различные аспекты, связанные с безопасностью группы серверов.
 - Шифрование при хранении
-- управление пользователями;
+- Управление пользователями
    - Общие перспективы
    - Изменение пароля администратора _postgres_
 
@@ -148,7 +148,7 @@ select * from mysecrets;
 
 В этом небольшом примере показано, как можно зашифровать неактивные данные (хранить зашифрованные данные) в PostgreSQL с помощью расширения postgres, `pgcrypto` а приложения могут использовать функции, предложенные `pgcrypto` для управления этими зашифрованными данными.
 
-## <a name="user-management"></a>управление пользователями;
+## <a name="user-management"></a>Управление пользователями
 ### <a name="general-perspectives"></a>Общие перспективы
 Вы можете использовать стандартный postgres способ создания пользователей или ролей. Однако при этом эти артефакты будут доступны только для роли координатора. На этапе предварительной версии эти пользователи и роли не смогут получить доступ к данным, которые распространяются за пределы узла координатора и рабочих узлов группы серверов. Причина в том, что в предварительной версии определение пользователя не реплицируется на рабочие узлы.
 
@@ -188,7 +188,7 @@ azdata arc postgres server edit --name <server group name> --admin-password
    
 #### <a name="changing-the-password-of-the-postgres-administrative-user-using-the-azdata_password-sessions-environment-variable"></a>Изменение пароля администратора postgres с помощью переменной среды **сеанса**AZDATA_PASSWORD:
 1. Задайте для переменной среды **сеанса**AZDATA_PASSWORD значение, которое вы хотите использовать для пароля.
-2. Выполните команду:
+2. Выполните команду .
    ```console
    azdata arc postgres server edit --name <server group name> --admin-password
    ```
@@ -218,7 +218,7 @@ azdata arc postgres server edit --name <server group name> --admin-password
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о `pgcrypto` расширении см. [здесь](https://www.postgresql.org/docs/current/pgcrypto.html).
 - Дополнительные сведения об использовании расширений postgres см. [здесь](using-extensions-in-postgresql-hyperscale-server-group.md).
 

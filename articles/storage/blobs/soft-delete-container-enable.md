@@ -10,10 +10,10 @@ ms.date: 08/10/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: 4b25458cc934097b5477c174ae7ecc47762e2929
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91280306"
 ---
 # <a name="enable-and-manage-soft-delete-for-containers-preview"></a>Включение и управление обратимым удалением для контейнеров (Предварительная версия)
@@ -86,7 +86,7 @@ ms.locfileid: "91280306"
 1. Перейдите к своей учетной записи хранения в портал Azure и просмотрите список контейнеров.
 1. Переключите параметр Показать удаленные контейнеры, чтобы включить удаленные контейнеры в список.
 
-    :::image type="content" source="media/soft-delete-container-enable/soft-delete-container-portal-list.png" alt-text="Снимок экрана, показывающий, как просматривать обратимо удаленные контейнеры в портал Azure":::
+    :::image type="content" source="media/soft-delete-container-enable/soft-delete-container-portal-list.png" alt-text="Снимок экрана, показывающий, как включить обратимое удаление контейнера в портал Azure":::
 
 ## <a name="restore-a-soft-deleted-container"></a>Восстановление обратимо удаленного контейнера
 
@@ -95,9 +95,9 @@ ms.locfileid: "91280306"
 1. Перейдите к своей учетной записи хранения в портал Azure и просмотрите список контейнеров.
 1. Откройте контекстное меню для восстанавливаемого контейнера и выберите в меню пункт **Отменить удаление** .
 
-    :::image type="content" source="media/soft-delete-container-enable/soft-delete-container-portal-restore.png" alt-text="Снимок экрана, показывающий, как восстановить обратимо удаленное контейнер в портал Azure":::
+    :::image type="content" source="media/soft-delete-container-enable/soft-delete-container-portal-restore.png" alt-text="Снимок экрана, показывающий, как включить обратимое удаление контейнера в портал Azure":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обратимое удаление для контейнеров (Предварительная версия)](soft-delete-container-overview.md)
 - [Обратимое удаление для больших двоичных объектов](soft-delete-blob-overview.md)

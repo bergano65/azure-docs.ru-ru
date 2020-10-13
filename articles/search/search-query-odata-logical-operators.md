@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 27d5427d34de591f9cfeab2310d79a2fde217624
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88917879"
 ---
 # <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в Azure Когнитивный поиск — `and` , `or` , `not`
@@ -38,7 +38,7 @@ ms.locfileid: "88917879"
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику выражения OData, в которой используются логические операторы.
+Следующая EBNF ([Расширенная форма Backus-Naur](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику выражения OData, в которой используются логические операторы.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -72,7 +72,7 @@ logical_expression ::=
 
 Большинство логических выражений, таких как функции и сравнения, не могут формировать `null` значения, а логические операторы не могут применяться к `null` литералу напрямую (например, `x and null` не допускается). Однако логические поля могут быть `null` , поэтому необходимо знать, как `and` `or` работают операторы, и при `not` наличии значения NULL. Это приводится в следующей таблице, где `b` — поле типа `Edm.Boolean` :
 
-| Выражение | Результат `b` , если имеет значение `null` |
+| Expression | Результат `b` , если имеет значение `null` |
 | --- | --- |
 | `b` | `false` |
 | `not b` | `true` |

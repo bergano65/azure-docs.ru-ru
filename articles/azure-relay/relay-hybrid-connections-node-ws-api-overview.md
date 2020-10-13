@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 558f49c09203192ff4cbb1af392eaeef8d705c94
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91263493"
 ---
 # <a name="relay-hybrid-connections-node-api-overview"></a>Общие сведения об API Node для гибридных подключений ретранслятора
@@ -133,7 +133,7 @@ function(headers)
 
 Событие `headers` возникает непосредственно перед тем, как принимается входящее подключение, позволяя изменять заголовки для отправки клиенту. 
 
-##### <a name="connection"></a>соединение
+##### <a name="connection"></a>подключение
 
 ```JavaScript
 function(socket)
@@ -198,7 +198,7 @@ WebSocket.relayedConnect(
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 * [Что такое Azure Relay?](relay-what-is-it.md)
 * [Available Relay APIs](relay-api-overview.md) (Доступные API-интерфейсы ретранслятора)

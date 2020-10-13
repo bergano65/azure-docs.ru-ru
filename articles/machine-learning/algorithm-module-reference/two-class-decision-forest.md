@@ -1,7 +1,7 @@
 ---
-title: 'Лес решений с двумя классами: Справочник по модулям'
+title: 'Лес решений Two-Class: Справочник по модулям'
 titleSuffix: Azure Machine Learning
-description: Узнайте, как использовать модуль леса решений с двумя классами в Машинное обучение Azure для создания модели машинного обучения на основе алгоритма лесов принятия решений.
+description: Узнайте, как использовать модуль Two-Classного леса для принятия решений в Машинное обучение Azure для создания модели машинного обучения на основе алгоритма лесов принятия решений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,13 +10,13 @@ author: likebupt
 ms.author: keli19
 ms.date: 09/03/2020
 ms.openlocfilehash: 9870b5366ac629fe1b10cfde15a58b85c7c6fbc3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90907719"
 ---
-# <a name="two-class-decision-forest-module"></a>Модуль леса решений с двумя классами
+# <a name="two-class-decision-forest-module"></a>Модуль леса Two-Class принятия решений
 
 В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
