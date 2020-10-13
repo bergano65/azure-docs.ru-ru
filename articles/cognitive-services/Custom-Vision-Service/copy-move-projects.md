@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: pafarley
 ms.openlocfilehash: 78ae0fc94e74755b481f80724ca26b34da99122c
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91758580"
 ---
 # <a name="copy-and-move-your-custom-vision-projects"></a>Копирование и перемещение проектов Пользовательское визуальное распознавание
@@ -26,7 +26,7 @@ API-интерфейсы **[експортпрожект](https://southcentralus
 
 Если приложение или бизнес зависит от использования Пользовательское визуальное распознавание проекта, рекомендуется скопировать модель в другую учетную запись Пользовательское визуальное распознавание в другом регионе. Затем, если происходит региональный сбой, вы можете получить доступ к проекту в регионе, в котором он был скопирован.
 
-##  <a name="prerequisites"></a>предварительные требования
+##  <a name="prerequisites"></a>Предварительные требования
 
 - Два Пользовательское визуальное распознавание ресурсов Azure. Если у вас их нет, перейдите к портал Azure и [Создайте новый ресурс пользовательское визуальное распознавание](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision?azure-portal=true).
 - Ключи обучения и URL-адреса конечных точек для ресурсов Пользовательское визуальное распознавание. Эти значения можно найти на вкладке **Обзор** ресурса на портал Azure.
@@ -136,7 +136,7 @@ curl -v -X POST "{endpoint}/customvision/v3.3/Training/projects/import?token={to
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководство вы узнали, как копировать и перемещать проект между Пользовательское визуальное распознаваниеными ресурсами. Затем изучите документацию по API, чтобы узнать, что еще можно сделать с помощью Пользовательское визуальное распознавание.
 * [Справочная документация по REST API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)

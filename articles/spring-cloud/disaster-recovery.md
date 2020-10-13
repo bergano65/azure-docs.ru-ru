@@ -8,15 +8,15 @@ ms.date: 10/24/2019
 ms.author: brendm
 ms.custom: devx-track-java
 ms.openlocfilehash: 19e022073f43548a91fad76cb380a75205237bbd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90892557"
 ---
 # <a name="azure-spring-cloud-disaster-recovery"></a>Аварийное восстановление Azure Spring Cloud
 
-**Эта статья относится к:** ✔️ Java ✔️ C #
+**Эта статья применима к:** ✔️ Java ✔️ C#
 
 В этой статье объясняются некоторые стратегии, которые можно использовать для защиты облачных приложений Azure Spring Cloud от простоя.  Любой регион или центр обработки данных может столкнуться с простоями, вызванными региональными авариями, но тщательное планирование может снизить влияние на клиентов.
 
@@ -65,7 +65,7 @@ ms.locfileid: "90892557"
 
 5. Среда полностью настроена. Клиенты смогут получить доступ к приложению по адресу bcdr-test.contoso.com
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
  

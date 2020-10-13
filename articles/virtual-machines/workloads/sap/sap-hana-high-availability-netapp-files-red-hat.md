@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 09/30/2020
 ms.author: radeltch
 ms.openlocfilehash: 3a5238ec9e9bc30da330be206eb559acc3c2ec07
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91598085"
 ---
 # <a name="high-availability-of-sap-hana-scale-up-with-azure-netapp-files-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA с Azure NetApp Files на Red Hat Enterprise Linux
@@ -81,12 +81,12 @@ ms.locfileid: "91598085"
 - [SAP HANA репликацию системы в кластере Pacemaker.](https://access.redhat.com/articles/3004101)
 - Общая документация по RHEL
     - [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
-    - [Администрирование надстройки высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
-    - [Справочник по надстройке высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
-    - [Настройка SAP HANA репликации системы в кластере Pacemaker, если файлы FileSystem хранятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
+    - [Add-On администрирования высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
+    - [Справочник по Add-On высокого уровня доступности.](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
+    - [Настройка SAP HANA репликации системы в Scale-Up в кластере Pacemaker, если файловые системы HANA находятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
 - Документация по RHEL для Azure:
     - [Политики поддержки для кластеров высокой доступности RHEL — Виртуальные машины Microsoft Azure как члены кластера.](https://access.redhat.com/articles/3131341)
-    - [Установка и настройка кластера с высоким уровнем доступности Red Hat Enterprise Linux 7,4 (и более поздних версий) на Microsoft Azure.](https://access.redhat.com/articles/3252491)
+    - [Установка и настройка High-Availability кластера Red Hat Enterprise Linux 7,4 (и более поздних версий) на Microsoft Azure.](https://access.redhat.com/articles/3252491)
     - [Установите SAP HANA на Red Hat Enterprise Linux для использования в Microsoft Azure.](https://access.redhat.com/solutions/3193782)
     - [Настройка SAP HANA масштабируемой репликации системы в кластере Pacemaker, если файловые системы HANA находятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
 - [Приложения NetApp SAP в Microsoft Azure. Использование Azure NetApp Files](https://www.netapp.com/us/media/tr-4746.pdf)
@@ -536,7 +536,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     ```
 
    > [!TIP]
-   > Если в конфигурацию входят файловые системы, за пределами группы `hanadb1_nfs` или `hanadb2_nfs` , включите `sequential=false` параметр, чтобы в файловых системах не было зависимостей упорядочения. Все файловые системы должны начинаться раньше `hana_nfs1_active` , но им не нужно начинать ни в каком порядке относительно друг друга. Дополнительные сведения см. в разделе [разделы справки Настройка репликации системы SAP HANA в кластере Pacemaker, если файлы FileSystem хранятся в общих папках NFS](https://access.redhat.com/solutions/5156571) .
+   > Если в конфигурацию входят файловые системы, за пределами группы `hanadb1_nfs` или `hanadb2_nfs` , включите `sequential=false` параметр, чтобы в файловых системах не было зависимостей упорядочения. Все файловые системы должны начинаться раньше `hana_nfs1_active` , но им не нужно начинать ни в каком порядке относительно друг друга. Дополнительные сведения см. [в разделе разделы справки Настройка репликации системы SAP HANA в Scale-Up в кластере Pacemaker, если файловые системы Hana находятся в общих папках NFS](https://access.redhat.com/solutions/5156571) .
 
 ### <a name="configure-sap-hana-cluster-resources"></a>Настройка ресурсов кластера SAP HANA
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/05/2019
 ms.author: rohink
 ms.openlocfilehash: 9d183f2da7b916b1547fa1f81aa877b1b5488b41
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91308441"
 ---
 # <a name="azure-private-dns-faq"></a>Частная зона DNS: часто задаваемые вопросы
@@ -20,7 +20,7 @@ ms.locfileid: "91308441"
 
 ## <a name="does-azure-dns-support-private-domains"></a>Поддерживает ли Azure DNS частные домены?
 
-Частные домены поддерживаются с помощью функции Azure Частная зона DNS Zones. Зоны Частная зона DNS разрешимы только в указанных виртуальных сетях. Дополнительные сведения см. в статье [Использование Azure DNS для частных доменов](private-dns-overview.md).
+Частные домены поддерживаются с помощью функции Azure Частная зона DNS Zones. Зоны Частная зона DNS разрешимы только в указанных виртуальных сетях. Дополнительные сведения см. в [обзоре](private-dns-overview.md).
 
 Сведения о других внутренних параметрах DNS в Azure см. в статье [Разрешение имен ресурсов в виртуальных сетях Azure](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
@@ -89,6 +89,6 @@ ms.locfileid: "91308441"
 
 Настоятельно рекомендуется как можно скорее перейти на новую модель ресурсов. Поддержка устаревшей модели ресурсов будет поддерживаться, однако дополнительные функции не будут разрабатываться поверх этой модели. В будущем мы планируем использовать ее в пользу новой модели ресурсов. Инструкции по переносу существующих частных зон DNS в новую модель ресурсов см. в[руководстве по миграции для Azure DNS частных зон](private-dns-migration-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Дополнительные сведения об Azure Частная зона DNS](private-dns-overview.md)

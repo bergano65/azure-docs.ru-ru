@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
 ms.openlocfilehash: bb408c762c33e4d146a2f0ef36f32e525b3859bd
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91758274"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
@@ -38,7 +38,7 @@ ms.locfileid: "91758274"
 > - [Замена локальных файловых серверов файлами Azure (включая установку на частном канале для файлов и аутентификации Active Directory)](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)
 > - [Использование файлов Azure в качестве контейнера профилей для виртуальных рабочих столов Windows (включая установку на основе проверки подлинности AD и конфигурации Фслогикс)](https://www.youtube.com/embed/9S5A1IJqfOQ)
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Перед включением проверки подлинности AD DS для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 
@@ -88,7 +88,7 @@ ms.locfileid: "91758274"
 
 Удостоверения, используемые для доступа к файловым ресурсам Azure, должны быть синхронизированы с Azure AD для применения разрешений файла общего уровня через модель [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) . [Списки DACL в стиле Windows](https://docs.microsoft.com/previous-versions/technet-magazine/cc161041(v=msdn.10)?redirectedfrom=MSDN) для файлов и каталогов, перенесенных из существующих файловых серверов, будут сохранены и применены. Это обеспечивает беспроблемную интеграцию с корпоративной AD DSной средой. При замене локальных файловых серверов на файловые ресурсы Azure существующие пользователи могут получить доступ к общим файловым ресурсам Azure с их текущих клиентов с помощью единого входа, не внося изменения в используемые учетные данные.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы включить локальную проверку подлинности AD DS для файлового ресурса Azure, перейдите к следующей статье:
 

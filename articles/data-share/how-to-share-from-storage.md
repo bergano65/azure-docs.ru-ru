@@ -1,5 +1,5 @@
 ---
-title: Совместное использование и получение данных из хранилища BLOB-объектов Azure и Azure Data Lake Storage
+title: Совместное использование данных и их получение из Хранилища BLOB-объектов Azure и Azure Data Lake Storage
 description: Сведения о совместном использовании и получении данных из хранилища BLOB-объектов Azure и Azure Data Lake Storage
 author: jifems
 ms.author: jife
@@ -7,13 +7,13 @@ ms.service: data-share
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.openlocfilehash: a54a9d4c50852fe78fd245723dd29f487d58f4b1
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89270254"
 ---
-# <a name="share-and-receive-data-from-azure-blob-storage-and-azure-data-lake-storage"></a>Совместное использование и получение данных из хранилища BLOB-объектов Azure и Azure Data Lake Storage
+# <a name="share-and-receive-data-from-azure-blob-storage-and-azure-data-lake-storage"></a>Совместное использование данных и их получение из Хранилища BLOB-объектов Azure и Azure Data Lake Storage
 
 [!INCLUDE[appliesto-storage](includes/appliesto-storage.md)]
 
@@ -33,7 +33,7 @@ ms.locfileid: "89270254"
 
 ### <a name="prerequisites-for-source-storage-account"></a>Необходимые условия для исходной учетной записи хранения
 
-* Учетная запись хранения Azure. Если у вас ее еще нет, вы можете создать [учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) .
+* Учетная запись хранения Azure. Если у вас ее еще нет, вы можете создать [Учетную запись службі хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
 * Разрешение на запись в учетную запись хранения, которая имеется в *Microsoft.Storage/storageAccounts/write*. Это разрешение назначено роли участника.
 * Разрешение на добавление назначения ролей в учетную запись хранения, имеющуюся в *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
 
@@ -45,11 +45,11 @@ ms.locfileid: "89270254"
 
 Создайте ресурс Azure Data Share в группе ресурсов Azure.
 
-1. Нажмите кнопку меню в левом верхнем углу портала, а затем выберите **создать ресурс** (+).
+1. Нажмите кнопку меню в левом верхнем углу окна портала и выберите элемент **Создать ресурс** (+).
 
 1. Найдите *Data Share*.
 
-1. Выберите Общий ресурс данных и нажмите **Создать**.
+1. Выберите Data Share и команду **Создать**.
 
 1. Укажите основные сведения о ресурсе Azure Data Share, указав следующую информацию. 
 
@@ -73,17 +73,17 @@ ms.locfileid: "89270254"
 
 1. Выберите команду **Начать совместное использование данных**.
 
-1. Нажмите кнопку **Создать**.   
+1. Нажмите кнопку **создания**.   
 
-1. Заполните сведения о вашей общей папке. Укажите имя, тип совместного использования, описание содержимого и условия использования (необязательно). 
+1. Введите сведения о совместном использовании. Укажите имя, тип совместного использования, описание содержимого и условия использования (необязательно). 
 
     ![EnterShareDetails](./media/enter-share-details.png "Введите сведения об общем ресурсе") 
 
 1. Выберите **Continue** (Продолжить).
 
-1. Чтобы добавить наборы данных в общую папку, выберите **добавить наборы данных**. 
+1. Чтобы добавить наборы данных в общий ресурс, выберите **Добавить наборы данных**. 
 
-    ![Добавление наборов данных в общую папку](./media/datasets.png "Наборы данных")
+    ![Добавление наборов данных в общий ресурс](./media/datasets.png "Наборы данных")
 
 1. Выберите тип набора данных, который хотите добавить. Вы увидите другой список типов наборов данных в зависимости от типа ресурса (моментальный снимок или на странице), который вы выбрали на предыдущем этапе. 
 

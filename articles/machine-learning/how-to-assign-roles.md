@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: d36c0ab78f9f96a051e6cb0a53b756c7409ca142
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: ab94af9ec172a3e88d523024c1e00d3a0d944798
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90893395"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91873087"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -141,7 +141,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 | Публикация конечной точки конвейера | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/pipelines/write", "/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
 | Развертывание зарегистрированной модели в ресурсе AKS/ACI | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/services/aks/write", "/workspaces/services/aci/write"` |
 | Оценка по развернутой конечной точке AKS | Не требуется | Не требуется | Владелец, участник или настраиваемая роль: `"/workspaces/services/aks/score/action", "/workspaces/services/aks/listkeys/action"` (если не используется Azure Active Directory auth) или `"/workspaces/read"` (при использовании токена проверки подлинности) |
-| Доступ к хранилищу с помощью интерактивных записных книжек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*"` |
+| Доступ к хранилищу с помощью интерактивных записных книжек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*", "/workspaces/listKeys/action"` |
 | Создать новую настраиваемую роль | Владелец, участник или пользовательская роль, допускающая `Microsoft.Authorization/roleDefinitions/write` | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
 
 > [!TIP]
@@ -419,7 +419,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 Для выполнения любой операции, связанной с квотой, в рабочей области требуются разрешения уровня подписки. Это означает, что Настройка квоты на уровне подписки или квоты на уровне рабочей области для управляемых ресурсов вычислений может произойти только при наличии разрешений на запись в области подписки. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
 - [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: 5b96ac9cf43782764e88039d736ba61454d65911
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67b855beae4ea36bf4ef7e6bb396c6b7ae1d89e3
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91539203"
+ms.locfileid: "91874345"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -223,6 +223,7 @@ IP-адреса разделены **средой Azure**. При разреше
 | Azure Public| Восточная Канада| 52.139.80.117|
 | Azure Public| Северная часть ОАЭ;| 20.46.144.85|
 | Azure Public| Южная Бразилия| 191.233.24.179|
+| Azure Public| Юго-Восточная Бразилия| 191.232.18.181|
 | Azure Public| Юго-Восточная Азия| 40.90.185.46|
 | Azure Public| Северная часть ЮАР;| 102.133.130.197|
 | Azure Public| Центральная Канада| 52.139.20.34|

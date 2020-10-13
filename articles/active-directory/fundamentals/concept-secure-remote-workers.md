@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: davidspo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4f4d9d1a2a4c88601e7dd7e0d6f56025b79aaac1
-ms.sourcegitcommit: 7374b41bb1469f2e3ef119ffaf735f03f5fad484
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90705373"
 ---
 # <a name="rapidly-respond-to-secure-identities-with-azure-ad"></a>Быстрое реагирование для защиты удостоверений с помощью Azure AD
@@ -34,7 +34,7 @@ ms.locfileid: "90705373"
 - Использование Cloud Intelligence
 - Включение возможности самообслуживания для конечных пользователей
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике предполагается, что в Azure AD уже установлены только облачные или гибридные удостоверения. Чтобы получить справку по выбору типа удостоверения, см. статью [Выбор правильного метода проверки подлинности для Azure Active Directory гибридного решения для идентификации](../hybrid/choose-ad-authn.md) . 
 
@@ -128,7 +128,7 @@ ms.locfileid: "90705373"
 | [Планирование доступа гостевых пользователей](../external-identities/what-is-b2b.md) | Работайте с гостевыми пользователями, предоставляя им возможность входить в свои приложения и службы с собственными рабочими, учебными или социальными удостоверениями. |
 | [Включить управление привилегированными пользователями](../privileged-identity-management/pim-configure.md) | Позволяет управлять и контролировать доступ к важным ресурсам в Организации, обеспечивая доступ к администраторам только при необходимости и при утверждении. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Подробные рекомендации по развертыванию отдельных функций Azure AD см. в статье [планы развертывания проекта Azure AD](active-directory-deployment-plans.md).
 

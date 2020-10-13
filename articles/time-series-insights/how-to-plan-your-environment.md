@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: cb12777a6a4fa1e75cd65bc597c87442d592aad5
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91598121"
 ---
 # <a name="plan-your-azure-time-series-insights-gen2-environment"></a>Планирование среды Аналитики временных рядов Azure 2-го поколения
@@ -91,7 +91,7 @@ ms.locfileid: "91598121"
 
 [!INCLUDE [business-disaster-recover](../../includes/time-series-insights-business-recovery.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.
 * Ознакомьтесь с [помощником по Azure](../advisor/advisor-overview.md) , чтобы спланировать параметры конфигурации бизнес-восстановления.

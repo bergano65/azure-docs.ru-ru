@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
 ms.openlocfilehash: c30b82e44833e413c1576bf64e8fef263c58b246
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91264615"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
@@ -244,7 +244,7 @@ az network vnet subnet list --resource-group
 az aks create -g MyResourceGroup -n MyManagedCluster --vnet-subnet-id MySubnetID
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Приступите к [созданию приложений с помощью Azure dev Spaces][dev-spaces], [развертыванию существующих приложений с помощью Helm][use-helm]или [созданию новых приложений с помощью Helm][develop-helm].
 

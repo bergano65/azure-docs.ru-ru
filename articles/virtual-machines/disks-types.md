@@ -9,10 +9,10 @@ ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
 ms.openlocfilehash: 7f274827e646ea0a7c0fd103983cfc566d699228
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91596773"
 ---
 # <a name="what-disk-types-are-available-in-azure"></a>Какие типы дисков доступны в Azure?
@@ -147,6 +147,6 @@ SSD (цен. категория "Премиум") размеры, меньшие
 
 Резервирование дисков — это возможность приобретения на один год дискового накопителя заранее по скидкам, уменьшая общую стоимость. При покупке резервирования дисков вы выбираете конкретный номер SKU диска в целевом регионе, например 10 P30 (1TiB) Premium SSDs в регионе "Восточная часть США 2" в течение одного года. Процесс резервирования аналогичен зарезервированным экземплярам виртуальной машины. Вы можете объединить резервирования виртуальных машин и дисков, чтобы максимально сократить объем экономии. Сейчас резервирование дисков Azure предлагает план на один год для номеров SKU SSD уровня "Премиум" от P30 (1TiB) до P80 (32 Тиб) во всех рабочих регионах. Дополнительные сведения о ценах на зарезервированные диски см. на [странице цен на диски Azure](https://azure.microsoft.com/pricing/details/managed-disks/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [ценами на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/) , чтобы приступить к работе.

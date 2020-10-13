@@ -6,12 +6,12 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/07/2020
-ms.openlocfilehash: 6bcb1ea6c16fd387dfb7f15f909d1908c20a44d7
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.openlocfilehash: 4189aadb6e37fc70bcaeecca2110d6fcc3959dd3
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
-ms.locfileid: "91710912"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91939874"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-postgresql---single-server"></a>Общие сведения о непрерывности бизнес-процессов с помощью базы данных Azure для PostgreSQL — один сервер
 
@@ -29,10 +29,9 @@ ms.locfileid: "91710912"
 | :------------: | :-------: | :-----------------: | :------------------: |
 | Восстановление до точки во времени из резервной копии | Любая точка восстановления в пределах срока хранения | Любая точка восстановления в пределах срока хранения | Любая точка восстановления в пределах срока хранения |
 | Геовосстановление из геореплицированных резервных копий | Не поддерживается | RTO — зависит от <br/>RPO < 1 ч | RTO — зависит от <br/>RPO < 1 ч |
-| Реплики чтения | RTO — минут <br/>RPO < 5 мин | RTO — минут <br/>RPO < 5 мин| RTO — минут <br/>RPO < 5 мин|
+| Реплики чтения | RTO — минут <br/>RPO < 5 мин * | RTO — минут <br/>RPO < 5 мин *| RTO — минут <br/>RPO < 5 мин *|
 
-> [!IMPORTANT]
-> Ожидаемые значения RTO и RPO, указанные здесь, предназначены только для справочных целей. Для этих метрик не предлагаются соглашения об уровне обслуживания.
+\* В некоторых случаях RPO может быть выше в зависимости от различных факторов, включая рабочую нагрузку базы данных и задержку между регионами. 
 
 ## <a name="recover-a-server-after-a-user-or-application-error"></a>Восстановление сервера после ошибки пользователя или приложения
 
@@ -64,7 +63,7 @@ ms.locfileid: "91710912"
 По умолчанию база данных Azure для PostgreSQL не перемещает и не хранит данные клиента вне региона, в котором они развернуты. Тем не менее клиенты могут дополнительно включить [геоизбыточные резервные копии](concepts-backup.md#backup-redundancy-options) или создать [реплику чтения между регионами](concepts-read-replicas.md#cross-region-replication) для хранения данных в другом регионе.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения об автоматическом создании резервных копий см. в [этой статье](concepts-backup.md). 
 - Дополнительные сведения см. в статьях [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](howto-restore-server-portal.md) или [Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI](howto-restore-server-cli.md).
 - См. дополнительные сведения в статье [Реплики чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).

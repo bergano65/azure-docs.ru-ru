@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
 ms.openlocfilehash: 03c783b5a475f0a49fe94d33aa866654e9c9f5f1
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91397833"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
@@ -55,7 +55,7 @@ ms.locfileid: "91397833"
     |Свойство |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable — все|
-    |База данных Hive|значение по умолчанию|
+    |База данных Hive|default|
     |table|hivesampletable|
     |Столбец Hive|*|
     |Выберите пользователя|hiveuser1|
@@ -73,7 +73,7 @@ ms.locfileid: "91397833"
     |Свойство |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable-devicemake|
-    |База данных Hive|значение по умолчанию|
+    |База данных Hive|default|
     |table|hivesampletable|
     |Столбец Hive|ClientID, devicemake|
     |Выберите пользователя|hiveuser2|
@@ -156,7 +156,7 @@ ms.locfileid: "91397833"
 
     После этого должны отобразиться два столбца импортируемых данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Сведения об управлении кластером HDInsight с помощью ESP см. в статье [Управление кластерами HDInsight с помощью Корпоративного пакета безопасности](apache-domain-joined-manage.md).

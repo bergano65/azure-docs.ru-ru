@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: kumud
 ms.openlocfilehash: 5bd88493324867dc957922a732506f5cfb8bbc20
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91361240"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-website"></a>Настройка модели торговых марок с помощью веб-сайта Индексатора видео
@@ -101,6 +101,6 @@ ms.locfileid: "91361240"
 1. Щелкните значок корзины рядом с торговой маркой, которую необходимо удалить.
 2. Выберите **Удалить** , и торговая марка больше не будет отображаться в списке *исключить торговые марки* .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Customize a Brands model with the Video Indexer API](customize-brands-model-with-api.md) (Настройка модели торговых марок с помощью API Индексатора видео)

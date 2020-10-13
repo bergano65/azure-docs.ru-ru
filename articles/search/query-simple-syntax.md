@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/24/2020
 ms.openlocfilehash: d07364e20cc11abc52ad9b308eb5daed8a65c146
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88923387"
 ---
 # <a name="simple-query-syntax-in-azure-cognitive-search"></a>Простой синтаксис запросов в Azure Когнитивный поиск
@@ -114,7 +114,7 @@ ms.locfileid: "88923387"
 
 Поиск термина — это запрос для одного или нескольких терминов, где любое из условий считается совпадением. Поиск фраз — это точная фраза, заключенная в кавычки `" "` . Например, хотя `Roach Motel` (без кавычек) будет искать документы, содержащие `Roach` и/или `Motel` в любом месте в любом порядке, `"Roach Motel"` (с кавычками) будет соответствовать только документам, содержащим всю эту фразу вместе и в этом порядке (лексическая аналитика по-прежнему применима).
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
 + [Примеры запросов для простого поиска](search-query-simple-examples.md)

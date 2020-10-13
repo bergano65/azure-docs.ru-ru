@@ -4,10 +4,10 @@ description: Граф мультимедиа можно использовать
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: 5dda18b68cb19d29623f2120fe07d7cc617f0c2f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90893015"
 ---
 # <a name="analyzing-live-video-without-any-recording"></a>Анализ динамического видео без записи
@@ -33,15 +33,15 @@ ms.locfileid: "90893015"
 Показанный ниже граф мультимедиа позволяет анализировать поток динамического видео с помощью пользовательской модели представления, упакованной в отдельный модуль. Представление JSON топологии графа такого графа мультимедиа можно найти [здесь](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/httpExtension/topology.json). Некоторые примеры можно увидеть в [статье](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis) о переносе моделей в IOT Edge модули, которые выполняются в качестве службы вывода.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/analyze-live-video/motion-detected-frames.svg" alt-text="Интерактивная аналитика видео на основе внешнего модуля":::
+> :::image type="content" source="./media/analyze-live-video/motion-detected-frames.svg" alt-text="Аналитика видеотрансляции на основе обнаружения движения":::
 
 В этом графе мультимедиа узел обработчика фильтра кадров понижает частоту кадров входящего потока видео перед его отправкой в узел [обработчика расширений HTTP](media-graph-concept.md#http-extension-processor) , который отправляет кадры изображения (в форматах JPEG, BMP или PNG) во внешнюю службу вывода. Результаты внешней службы вывода извлекаются узлом расширения HTTP и ретранслируются в центр IoT Edge через узел приемника сообщений центра Интернета вещей. Этот тип графа мультимедиа можно использовать для создания решений для различных сценариев, например для понимания распределения временных рядов транспортных средств на пересечении, понимания шаблона трафика потребителя в розничном магазине и т. д.
 
 Усовершенствованием этого примера является использование процессора детектора движения перед узлом обработчика фильтра частоты кадров. Это снизит нагрузку на службу вывода, так как она используется только при наличии в видео действий перемещения.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/analyze-live-video/custom-model.svg" alt-text="Интерактивная аналитика видео на основе обнаруженных в ходе движения кадров с помощью внешнего модуля":::
+> :::image type="content" source="./media/analyze-live-video/custom-model.svg" alt-text="Аналитика видеотрансляции на основе обнаружения движения":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Непрерывная запись видео](continuous-video-recording-concept.md)

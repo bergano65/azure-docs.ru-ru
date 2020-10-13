@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: chuye
 ms.openlocfilehash: d318983cec1365b71d14731395e71528621659d6
-ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89051963"
 ---
 # <a name="azure-storage-explorer-blob-versioning-guide"></a>Обозреватель службы хранилища Azure руководством по управлении версиями BLOB-объектов
@@ -115,7 +115,7 @@ ms.locfileid: "89051963"
 
 Каждая версия BLOB-объекта имеет собственный уровень доступа. Чтобы изменить уровень доступа для версий BLOB-объектов, выберите версии BLOB-объекта, для которых требуется изменить уровень доступа, и в контекстном меню выберите **изменить уровень доступа...** .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Управление версиями BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/versioning-overview)
 * [Обратимое удаление для больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/soft-delete-blob-overview)
