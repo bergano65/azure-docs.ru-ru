@@ -8,18 +8,20 @@ ms.subservice: fhir
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: matjazl
-ms.openlocfilehash: 6671b8aa60690bc1915e297bc31b19299be2b1da
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: f39fb5766965e3881068bd6d2fd3a8142f9eb2ac
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91629086"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975915"
 ---
 # <a name="register-a-public-client-application-in-azure-active-directory"></a>Регистрация общедоступного клиентского приложения в Azure Active Directory
 
 В этой статье вы узнаете, как зарегистрировать общедоступное приложение в Azure Active Directory.  
 
 Регистрация клиентских приложений — это Azure Active Directory представления приложений, которые могут проходить проверку подлинности и запрашивать разрешения API от имени пользователя. Общедоступные клиенты — это приложения, такие как мобильные приложения и одностраничные приложения JavaScript, которые не могут оставаться конфиденциальными. Процедура аналогична [регистрации конфиденциального клиента](register-confidential-azure-ad-client-app.md), но, поскольку общедоступные клиенты не могут быть доверенными для хранения секрета приложения, добавлять его не нужно.
+
+В кратком руководстве содержатся общие сведения о [регистрации приложения на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ## <a name="app-registrations-in-azure-portal"></a>Регистрация приложений в портал Azure
 
@@ -38,6 +40,18 @@ ms.locfileid: "91629086"
 2. Укажите URL-адрес ответа. URL-адрес ответа — это место, где коды проверки подлинности будут возвращены клиентскому приложению. Позднее можно добавить URL-адреса ответов и изменить их.
 
     ![портал Azure. Новая регистрация общедоступного приложения.](media/how-to-aad/portal-aad-register-new-app-registration-PUB-CLIENT-NAME.png)
+
+
+Чтобы настроить [классическое](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration)приложение, [мобильное](https://docs.microsoft.com/azure/active-directory/develop/scenario-mobile-app-registration) или [одностраничное](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-app-registration) , как общедоступное приложение, выполните следующие действия.
+
+1. В [портал Azure](https://portal.azure.com)в **Регистрация приложений**выберите свое приложение, а затем выберите **Проверка подлинности**.
+
+2. Выберите **Дополнительные параметры**  >  **Тип клиента по умолчанию**. Чтобы **приложение считалось общедоступным клиентом**, выберите **Да**.
+
+3. Для одностраничного приложения выберите **токены доступа** и **маркеры идентификации** , чтобы включить неявный поток.
+
+   - Если приложение обрабатывает вход пользователей, щелкните **Маркеры идентификации**.
+   - Если приложение вызывает с защищенный веб-API, выберите **Маркеры доступа**.
 
 ## <a name="api-permissions"></a>Разрешения API
 

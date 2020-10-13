@@ -4,10 +4,10 @@ description: В этой статье описывается, как настр�
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: 79a534e4f37fb0154115e43402f031752a603ccb
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620296"
 ---
 # <a name="enable-monitoring-of-azure-arc-enabled-kubernetes-cluster"></a>Включение мониторинга кластера Kubernetes с включенной службой "Дуга Azure"
@@ -262,7 +262,7 @@ bash enable-monitoring.sh --resource-id $azureArcClusterResourceId --client-id $
 |proxyhost | Адрес или полное доменное имя прокси-сервера |
 |порт | Необязательный номер порта прокси-сервера |
 
-Пример: `http://user01:password@proxy01.contoso.com:3128`
+Например: `http://user01:password@proxy01.contoso.com:3128`
 
 Если указать протокол как **http**, HTTP-запросы создаются с помощью защищенного соединения SSL/TLS. Прокси-сервер должен поддерживать протоколы SSL/TLS.
 

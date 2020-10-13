@@ -9,17 +9,17 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: 6aa4273933190ccfe495bcaf243ee15a5ce823fb
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91577651"
 ---
-# <a name="how-to-certify-iot-plug-and-play-devices"></a>Как сертифицировать устройства IoT Plug and Play
+# <a name="how-to-certify-iot-plug-and-play-devices"></a>Сертификация устройств Plug and Play IoT
 
-Программа сертификации IoT Plug and Play предлагает средства для проверки соответствия устройства требованиям сертификации IoT Plug and Play. Средства также помогают организациям обеспечить доступность своих устройств IoT Plug and Play. Эти сертифицированные устройства адаптированы для решений IoT и помогают сократить время на рынке.
+Программа сертификации устройств IoT Plug and Play содержит средства для проверки того, соответствует ли устройство требованиям сертификации IoT Plug and Play. Средства также помогают организациям обеспечить доступность своих устройств IoT Plug and Play. Эти сертифицированные устройства адаптированы для решений IoT и помогают сократить время на рынке.
 
-В этой статье показано, как выполнить следующие действия:
+В этой статье показано, как:
 
 - Установите расширение средства командной строки Azure IoT для Azure CLI
 - Запуск тестов IoT Plug and Play для проверки приложения устройства на этапе разработки  
@@ -45,7 +45,7 @@ ms.locfileid: "91577651"
 - Отправьте идентификатор модели во время [регистрации DPS](concepts-developer-guide-device-csharp.md#dps-payload) в полезных данных подготовки DPS.
 - Объявите идентификатор модели во время [подключения MQTT](concepts-developer-guide-device-csharp.md#model-id-announcement).
 
-## <a name="test-with-the-azure-iot-extension-cli"></a>Тестирование с помощью интерфейса командной строки для расширения Интернета вещей Azure
+## <a name="test-with-the-azure-iot-extension-cli"></a>Тестирование с помощью расширения Azure IoT для Azure CLI
 
 [Расширение интерфейса командной строки Azure IOT](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/product?view=azure-cli-latest&preserve-view=true) позволяет проверить соответствие реализации устройства модели перед отправкой устройства для сертификации через портал сертифицированного устройства Azure.
 
@@ -162,7 +162,7 @@ az iot product test task create --type QueueTestRun --test-id d45d53d9-656d-4be7
             },
 ```
 
-## <a name="test-using-the-azure-certified-device-portal"></a>Тестирование с помощью портала устройств, сертифицированного для Azure
+## <a name="test-using-the-azure-certified-device-portal"></a>Тестирование с помощью портала Microsoft Azure Certified for IoT
 
 Ниже описано, как использовать [сертифицированный портал устройств Azure](https://aka.ms/acdp) для подключения, регистрации сведений о продукте, отправки руководства по началу работы и выполнения тестов сертификации.
 
@@ -209,6 +209,6 @@ az iot product test task create --type QueueTestRun --test-id d45d53d9-656d-4be7
 
 Когда устройство сертифицировано, вы можете опубликовать сведения о продукте в каталоге сертифицированных устройств Azure с помощью функции **опубликовать в каталоге** на странице сводки по продукту.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После завершения отправки устройства вы можете обратиться к группе сертификации устройств по адресу, [iotcert@microsoft.com](mailto:iotcert@microsoft.com) чтобы перейти к дальнейшим действиям, в том числе Microsoft Partner Network проверки членства и ознакомиться с руководствами по началу работы. После соблюдения всех требований можно выбрать включение устройства в список [сертифицировано для каталога устройств Azure IOT](https://aka.ms/devicecatalog).

@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 10/09/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1520f3ef77353e653dca10779228e70488bcbd75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c8fe6c7ead587d58775984854260bd071215e42
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91801755"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965579"
 ---
 # <a name="authentication-methods-in-azure-active-directory---microsoft-authenticator-app"></a>Методы проверки подлинности в приложении Azure Active Directory Microsoft Authenticator
 
@@ -58,7 +58,7 @@ Microsoft Authenticator приложение предоставляет допо
 >
 > Если требуется использовать два метода, то пользователи смогут сбросить пароль с помощью уведомления или кода проверки в дополнение к любым другим включенным методам.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к входу без пароля, см. статью [Включение входа без пароля с помощью приложения Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 

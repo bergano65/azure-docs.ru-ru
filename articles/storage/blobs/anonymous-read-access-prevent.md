@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/02/2020
+ms.date: 10/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: 0ed8b04353c50bff53d074ebdb1efa2a286c8e59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d843440adc61b315616a05f223c5a13ebe271ed
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "90086578"
+ms.locfileid: "91930838"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Запретить анонимный общий доступ на чтение к контейнерам и BLOB-объектам
 
@@ -70,6 +70,9 @@ ms.locfileid: "90086578"
 Чтобы проверить анонимные запросы в учетной записи хранения Azure, можно использовать ведение журнала службы хранилища Azure Azure Monitor (Предварительная версия). Дополнительные сведения см. в статье [мониторинг службы хранилища Azure](../common/monitor-storage.md).
 
 Ведение журнала службы хранилища Azure в Azure Monitor поддерживает использование запросов журналов для анализа данных журнала. Для запроса журналов можно использовать рабочую область Azure Log Analytics. Дополнительные сведения о запросах журналов см. в разделе [учебник. Начало работы с log Analytics запросами](../../azure-monitor/log-query/get-started-portal.md).
+
+> [!NOTE]
+> Предварительная версия ведения журнала службы хранилища Azure в Azure Monitor поддерживается только в общедоступном облаке Azure. Государственные облака не поддерживают ведение журналов для службы хранилища Azure с Azure Monitor.
 
 #### <a name="create-a-diagnostic-setting-in-the-azure-portal"></a>Создайте параметр диагностики в портал Azure
 

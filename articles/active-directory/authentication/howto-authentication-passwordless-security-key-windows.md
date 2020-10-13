@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 01/30/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66283e4965aea9e24da6041133e2d88e95df6755
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: b88b2ca0a420295a7a53608f02923e72045e1c44
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526992"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964746"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "90526992"
 > [!NOTE]
 > Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные  [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 | Тип устройства | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
 | --- | --- | --- |
@@ -91,12 +91,12 @@ ms.locfileid: "90526992"
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите к **Microsoft Intune**  >  **профили конфигурации устройства**  >  **Profiles**  >  **создать профиль**.
 1. Настройте новый профиль со следующими параметрами:
-   - Имя: ключи безопасности для входа в Windows
+   - Имя: ключи безопасности для Windows Sign-In
    - Описание: Включение использования ключей безопасности FIDO во время входа Windows
    - Платформа. Windows 10 и более поздней версии
    - Тип профиля: настраиваемый
    - Настраиваемые параметры OMA-URI:
-      - Имя: включить ключи безопасности FIDO для входа в Windows
+      - Имя: включить ключи безопасности FIDO для Windows Sign-In
       - OMA-URI:./девице/вендор/мсфт/пасспортфорворк/секуритикэй/усесекуритикэйфорсигнин
       - Тип данных: целое число
       - Значение: 1
@@ -158,7 +158,7 @@ ms.locfileid: "90526992"
    - Подкатегория: FIDO
 1. Для записи журналов используйте параметр, чтобы **повторно создать мою проблему**
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Разрешение доступа к локальным ресурсам для Azure AD и гибридных устройств, присоединенных к Azure AD](howto-authentication-passwordless-security-key-on-premises.md)
 

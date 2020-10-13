@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 405ebbbfa4a662dd9ee3c8d10dde8f28e5ce9c66
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f23e2c58ae25fefb8508474921e476163b33e79
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87830450"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978430"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Шифрование дисков Azure для виртуальных машин под управлением Linux 
 
@@ -26,7 +26,7 @@ ms.locfileid: "87830450"
 > [!WARNING]
 > - Если вы уже использовали шифрование дисков Azure c Azure AD для шифрования виртуальной машины, применяйте этот способ шифрования виртуальной машины и далее. Подробнее см. в разделе [Шифрование дисков Azure с использованием приложения Azure AD (предыдущий выпуск)](disk-encryption-overview-aad.md). 
 > - Выполнение некоторых приведенных рекомендаций может привести к более интенсивному использованию данных, сети или вычислительных ресурсов, а следовательно к дополнительным затратам на лицензии или подписки. Необходима действующая подписка Azure, которая позволяет создавать ресурсы Azure в поддерживаемых регионах.
-> - Сейчас виртуальные машины поколения 2 не поддерживают шифрование дисков Azure. Подробнее см. в статье о [поддержке виртуальных машин поколения 2 в Azure](../windows/generation-2.md).
+> - Сейчас виртуальные машины поколения 2 не поддерживают шифрование дисков Azure. Подробнее см. в статье о [поддержке виртуальных машин поколения 2 в Azure](../generation-2.md).
 
 Статьи [Создание и шифрование виртуальной машины под управлением Linux с помощью краткого руководства по Azure CLI ](disk-encryption-cli-quickstart.md) и [Создание и шифрование виртуальной машины под управлением Linux с помощью краткого руководства по Azure PowerShell](disk-encryption-powershell-quickstart.md) помогут вам изучить основы шифрования дисков Azure для Linux за несколько минут.
 
@@ -46,7 +46,7 @@ ms.locfileid: "87830450"
 
 Шифрование дисков Azure также доступно для виртуальных машин с хранилищем класса Рremium.
 
-Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](generation-2.md#generation-1-vs-generation-2-capabilities) и [виртуальных машинах серии Lsv2](../lsv2-series.md). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure. Неподдерживаемые сценарии](disk-encryption-linux.md#unsupported-scenarios).
+Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](../generation-2.md#generation-1-vs-generation-2-capabilities) и [виртуальных машинах серии Lsv2](../lsv2-series.md). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure. Неподдерживаемые сценарии](disk-encryption-linux.md#unsupported-scenarios).
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 

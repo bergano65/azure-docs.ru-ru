@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 06/05/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12be5109f339223c11970041922ed2172f67382b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85031896a196dd742868466243dd401345b0bc97
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526907"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964508"
 ---
 # <a name="enable-and-use-azure-multi-factor-authentication-with-legacy-applications-using-app-passwords"></a>Включение и использование многофакторной идентификации Azure с устаревшими приложениями с помощью паролей приложений
 
@@ -103,6 +103,6 @@ Azure AD поддерживает федерацию или единый вхо�
 
 Пользователи также могут создавать пароли приложений после регистрации, Дополнительные сведения и подробные инструкции для пользователей см. в статье [Что такое пароли приложений в службе Многофакторной идентификации Azure](../user-help/multi-factor-authentication-end-user-app-passwords.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как разрешить пользователям быстро регистрироваться в службе многофакторной идентификации Azure, см. в статье [Обзор общей регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md).

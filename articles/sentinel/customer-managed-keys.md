@@ -12,24 +12,25 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/19/2020
+ms.date: 10/12/2020
 ms.author: yelevin
-ms.openlocfilehash: 58936066abcbe4c3f9fcfad78bf914c74079aa95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc3da6f0d82adab2d21d4dbd91dee8654145b896
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88141794"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951491"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Настройка ключа, управляемого клиентом, в Azure Sentinel
-
 
 В этой статье содержатся общие сведения и инструкции по настройке ключа, управляемого клиентом (CMK), для Azure Sentinel. С помощью ключа CMK можно шифровать все данные, сохраненные или отправленные в Azure Sentinel, во всех соответствующих ресурсах хранилища с помощью ключа Azure Key Vault, созданного вами или принадлежащего вам.
 
 > [!NOTE]
-> -   Возможность CMK Azure Sentinel предоставляется только **новым** клиентам, и доступ к ней контролируется с помощью регистрации функции Azure. Вы можете запросить доступ, обратившись в azuresentinelCMK@microsoft.com, и как только эта возможность станет доступна, ожидающие запросы будут утверждены.
-> -   Возможность CMK Azure Sentinel доступна только в восточной части США, западной части США 2 и центрально-южной части США.
-> -   Возможность CMK доступна только для клиентов, отправляющих 1 ТБ данных или более в день. Вы получите сведения о дополнительных ценах, когда отправите в корпорацию Майкрософт запрос на подготовку CMK для своей подписки Azure. Узнайте больше о [ценах на Log Analytics](../azure-monitor/platform/manage-cost-storage.md#log-analytics-dedicated-clusters).
+> - Функция Azure Sentinel CMK предоставляется только **новым клиентам**.
+>
+> - Доступ к этой возможности контролируется с помощью регистрации компонентов Azure.Вы можете запросить доступ, обратившись по адресу azuresentinelCMK@microsoft.com . Ожидающие запросы будут утверждены в соответствии с доступной емкостью.
+>
+> - Возможность CMK доступна только для клиентов, отправляющих 1 ТБ данных или более в день. Вы получите сведения о дополнительных ценах, когда отправите в корпорацию Майкрософт запрос на подготовку CMK для своей подписки Azure. Узнайте больше о [ценах на Log Analytics](../azure-monitor/platform/manage-cost-storage.md#log-analytics-dedicated-clusters).
 
 ## <a name="how-cmk-works"></a>Как работает CMK 
 
@@ -58,7 +59,7 @@ ms.locfileid: "88141794"
 
 ### <a name="step-1-create-an-azure-key-vault-and-storing-key"></a>Шаг 1. Создание Azure Key Vault и ключа хранилища
 
-1.  [Создайте ресурс Azure Key Vault](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal?view=azs-1910), затем создайте или импортируйте ключ, который будет использоваться для шифрования данных.
+1.  [Создайте ресурс Azure Key Vault](https://docs.microsoft.com/azure-stack/user/azure-stack-key-vault-manage-portal), затем создайте или импортируйте ключ, который будет использоваться для шифрования данных.
     > [!NOTE]
     >  Для Azure Key Vault нужно настроить возможность восстановления, чтобы обезопасить ключи и доступ.
 

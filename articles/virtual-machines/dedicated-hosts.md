@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 07/28/2020
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: 351b10b68cf1c014d358032f41bb01ac1093bd68
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b407ae18316071d77cc87992a70a4fba857ab64
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91373126"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979025"
 ---
 # <a name="azure-dedicated-hosts"></a>Выделенные узлы Azure
 
@@ -122,7 +122,7 @@ ms.locfileid: "91373126"
 
 **Управление обслуживанием** предоставляет клиентам возможность пропускать регулярные обновления платформы, запланированные на их отдельных узлах, а затем применять их во время выбора в течение интервала в течение 35 дней.
 
-Дополнительные сведения см. в разделе [Управление обновлениями платформы с помощью управления обслуживанием](https://docs.microsoft.com/azure/virtual-machines/maintenance-control).
+Дополнительные сведения см. в разделе [Управление обновлениями платформы с помощью управления обслуживанием](./maintenance-control.md).
 
 ## <a name="capacity-considerations"></a>Рекомендации по емкости
 
@@ -142,7 +142,7 @@ ms.locfileid: "91373126"
 
 ![Снимок экрана со страницей "использование и квоты" на портале](./media/virtual-machines-common-dedicated-hosts/quotas.png)
 
-Дополнительные сведения см. в статье [квоты виртуальной машины виртуальных ЦП](/azure/virtual-machines/windows/quotas).
+Дополнительные сведения см. в статье [квоты виртуальной машины виртуальных ЦП](./windows/quotas.md).
 
 Бесплатная пробная версия и подписки MSDN не имеют квоты для выделенных узлов Azure.
 
@@ -180,9 +180,9 @@ Azure отслеживает состояние работоспособност
 | Узел освобожден  | Все виртуальные машины были удалены с узла. Вы больше не платите за этот узел, так как оборудование было вычислено из вращения.   |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Выделенный узел можно развернуть с помощью [Azure PowerShell](./windows/dedicated-hosts-powershell.md), [портала](./windows/dedicated-hosts-portal.md)и [Azure CLI](./linux/dedicated-hosts-cli.md).
+- Выделенный узел можно развернуть с помощью [Azure PowerShell](./windows/dedicated-hosts-powershell.md), [портала](./dedicated-hosts-portal.md)и [Azure CLI](./linux/dedicated-hosts-cli.md).
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md) можно найти пример шаблона, в котором используются как зоны, так и домены сбоя для обеспечения максимальной устойчивости в регионе.
 
