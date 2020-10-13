@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: raynew
 ms.openlocfilehash: fa71cd502f730844e4f4398d41d06ada56fc2413
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90602291"
 ---
 # <a name="support-for-moving-azure-vms-between-azure-regions"></a>Поддержка перемещения виртуальных машин Azure между регионами Azure
@@ -170,7 +170,7 @@ SSD (цен. категория "Стандартный") | Поддержива
 
  При использовании прокси-сервера или брандмауэра на основе URL-адресов для управления исходящими подключениями разрешите использование этих URL-адресов:
 
-**имя**; | **Общедоступное облако Azure** | **Сведения** 
+**имя**; | **Общедоступное облако Azure:** | **Сведения** 
 --- | --- | --- 
 Память | `*.blob.core.windows.net`  | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. 
 Azure Active Directory | `login.microsoftonline.com`  | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. 
@@ -188,6 +188,6 @@ Azure Active Directory | `login.microsoftonline.com`  | Обеспечивает
 - Рекомендуется тестировать правила в нерабочей среде. [Ознакомьтесь с некоторыми примерами](../site-recovery/azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте [переместить виртуальную машину Azure](tutorial-move-region-virtual-machines.md) в другой регион с помощью перемещения ресурсов.

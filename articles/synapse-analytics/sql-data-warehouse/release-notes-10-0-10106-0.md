@@ -13,10 +13,10 @@ manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
 ms.openlocfilehash: 6f7af74cce6bbafea7924d505f768503c7b1f108
-ms.sourcegitcommit: 4a7a4af09f881f38fcb4875d89881e4b808b369b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89457997"
 ---
 # <a name="azure-synapse-analytics-release-notes"></a>Заметки о выпуске Azure Synapse Analytics
@@ -45,7 +45,7 @@ ms.locfileid: "89457997"
 | Улучшения службы | Сведения |
 | --- | --- |
 |**Управление рабочей нагрузкой — интерфейс портала**|Пользователи могут настраивать параметры управления рабочей нагрузкой и управлять ими с помощью портала Azure. Вы можете настраивать важные [группы рабочей нагрузки](/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-portal) и [классификаторы рабочей нагрузки](/azure/synapse-analytics/sql-data-warehouse/quickstart-create-a-workload-classifier-portal).|
-|**Улучшено представление каталога сопоставления таблиц**|Новое представление каталога [sys. pdw_permanent_table_mappings](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=sqlallproducts-allversions) сопоставляет **object_ids** постоянных пользовательских таблиц с их физическими именами таблиц.|
+|**Улучшено представление каталога сопоставления таблиц**|Новое представление каталога [sys.pdw_permanent_table_mappings](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=sqlallproducts-allversions) сопоставляет **object_ids** постоянных пользовательских таблиц с их именами физических таблиц.|
 
 ## <a name="july-2020"></a>Июль 2020 г.
 

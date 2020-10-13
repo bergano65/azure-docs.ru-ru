@@ -4,10 +4,10 @@ description: В этой статье описываются типы ресур
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.openlocfilehash: 27e25b1048bb759a3b38859788c27c03f1cf0447
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91371547"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
@@ -818,7 +818,7 @@ ms.locfileid: "91371547"
 > | ------------- | ----------- | ----------- |
 > | AggregatedCost | Нет | Нет |
 > | сведения о балансе. | Нет | Нет |
-> | Бюджеты | Нет | Нет |
+> | сведения о бюджете; | Нет | Нет |
 > | Расходы | Нет | Нет |
 > | CostTags | Нет | нет |
 > | credits | нет | нет |
@@ -902,7 +902,7 @@ ms.locfileid: "91371547"
 > | ------------- | ----------- | ----------- |
 > | видны узлы | Нет | Нет |
 > | BillingAccounts | Нет | Нет |
-> | Бюджеты | Нет | Нет |
+> | сведения о бюджете; | Нет | Нет |
 > | клаудконнекторс | Нет | Нет |
 > | Соединители | Да | Да |
 > | косталлокатионрулес | Нет | Нет |
@@ -2528,6 +2528,6 @@ ms.locfileid: "91371547"
 > | monitors | нет | Нет |
 > | notificationSettings | Нет | Нет |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о том, как применить теги к ресурсам, см. в статье, посвященной [использованию тегов для организации ресурсов Azure](tag-resources.md).

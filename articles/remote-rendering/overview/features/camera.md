@@ -6,10 +6,10 @@ ms.author: chmant
 ms.date: 03/07/2020
 ms.topic: article
 ms.openlocfilehash: 5ad39ad9f5e585029cff5d573a026702f259607e
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90564915"
 ---
 # <a name="camera"></a>Камера
@@ -73,7 +73,7 @@ void ChangeStageSpace(ApiHandle<AzureSession> session)
 * [C# GraphicsBindingSimD3d11. Update, функция](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.graphicsbindingsimd3d11.update)
 * [Функция C++ GraphicsBindingSimD3d11:: Update](https://docs.microsoft.com/cpp/api/remote-rendering/graphicsbindingsimd3d11#update)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Графическая привязка](../../concepts/graphics-bindings.md)
 * [Перепроецирование на позднем этапе](late-stage-reprojection.md)

@@ -10,10 +10,10 @@ ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: a6fc1d6b831ae794907c59ab1af3328902f3a70a
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89230115"
 ---
 # <a name="soft-delete-for-blobs"></a>Обратимое удаление для больших двоичных объектов
@@ -191,7 +191,7 @@ Copy a snapshot over the base blob:
 
 Воспользоваться преимуществами обратимого удаления можно вне зависимости от используемой версии API. Однако для перечисления и восстановления обратимо удаленных больших двоичных объектов и моментальных снимков больших двоичных объектов необходимо использовать службу [хранилища Azure](/rest/api/storageservices/Versioning-for-the-Azure-Storage-Services) версии 2017-07-29 REST API или более поздней. Корпорация Майкрософт рекомендует всегда использовать последнюю версию API службы хранилища Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Включение обратимого удаления для больших двоичных объектов](soft-delete-enable.md)
 - [Управление версиями BLOB-объектов](versioning-overview.md)

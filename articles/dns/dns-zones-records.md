@@ -10,17 +10,17 @@ ms.workload: infrastructure-services
 ms.date: 12/18/2017
 ms.author: rohink
 ms.openlocfilehash: 19189af6424960b8e20be686af745b10f2d8578b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85846830"
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Обзор зон и записей DNS
 
 В этой статье описываются основные понятия доменов, зон и записей DNS, а также наборов записей и их поддержка в Azure DNS.
 
-## <a name="domain-names"></a>Имена доменов
+## <a name="domain-names"></a>Доменные имена
 
 Система доменных имен — это иерархия доменов. Иерархия начинается с "корневого" домена, имя которого — просто "**.**".  Ниже находятся домены верхнего уровня, такие как com, net, org, uk и jp.  Под ними расположены домены второго уровня, например org.uk и co.jp. Эти домены в иерархии DNS глобально распределены на DNS-серверах по всему миру.
 
@@ -141,7 +141,7 @@ Azure DNS поддерживает использование тегов Azure R
 
 [!INCLUDE [dns-limits](../../includes/dns-limits.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](dns-getstarted-create-dnszone-portal.md) и [записи DNS](dns-getstarted-create-recordset-portal.md).
 * Чтобы перенести имеющуюся зону DNS, узнайте, как [импортировать и экспортировать файл зоны DNS](dns-import-export.md).

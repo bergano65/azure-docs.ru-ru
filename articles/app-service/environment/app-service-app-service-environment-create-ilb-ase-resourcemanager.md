@@ -8,10 +8,10 @@ ms.date: 07/11/2017
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 2a03b791f37868010e107214ddcb7cf42174e4e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85833559"
 ---
 # <a name="how-to-create-an-ilb-ase-using-azure-resource-manager-templates"></a>Создание среды службы приложений с внутренним балансировщиком нагрузки с помощью шаблонов Azure Resource Manager
@@ -88,7 +88,7 @@ $fileContentEncoded | set-content ($fileName + ".b64")
 * *pfxBlobString* — представление PFX-файла в виде строки в кодировке Base64.  Нужно скопировать строку, содержащуюся в файле exportedcert.pfx.b64, и вставить ее в качестве значения атрибута *pfxBlobString* в фрагменте кода выше.
 * *пароль*. пароль, используемый для защиты PFX-файла.
 * *certificateThumbprint* — отпечаток сертификата.  Если вы получаете это значение из PowerShell (например, *$Certificate. Отпечаток* из предыдущего фрагмента кода) можно использовать значение "как есть".  Однако если вы скопируете это значение в диалоговом окне сертификатов Windows, в нем нужно удалить лишние пробелы.  *CertificateThumbprint* должен выглядеть примерно так: AF3143EB61D43F6727842115BB7F17BBCECAECAE
-* *certificateName* — понятный идентификатор строки для сертификата. Пользователь может выбрать его по своему усмотрению.  Имя используется как часть уникального идентификатора Azure Resource Manager для сущности *Microsoft. Web/Certificates* , представляющей сертификат TLS/SSL.  Имя **должно** заканчиваться следующим суффиксом: \_ yourASENameHere_InternalLoadBalancingASE.  Этот суффикс сообщает порталу о том, что для обеспечения безопасности ASE с поддержкой ILB используется сертификат.
+* *certificateName* — понятный идентификатор строки для сертификата. Пользователь может выбрать его по своему усмотрению.  Имя используется как часть уникального идентификатора Azure Resource Manager для сущности *Microsoft. Web/Certificates* , представляющей сертификат TLS/SSL.  Имя **должно** заканчиваться следующим суффиксом:  \_ yourASENameHere_InternalLoadBalancingASE.  Этот суффикс сообщает порталу о том, что для обеспечения безопасности ASE с поддержкой ILB используется сертификат.
 
 Ниже приведен сокращенный пример файла *azuredeploy.parameters.json* .
 

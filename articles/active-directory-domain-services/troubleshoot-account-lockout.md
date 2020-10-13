@@ -11,10 +11,10 @@ ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: iainfou
 ms.openlocfilehash: 4a5ae321a4a97df5b5fa91bb239589c76c6601fc
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86039761"
 ---
 # <a name="troubleshoot-account-lockout-problems-with-an-azure-active-directory-domain-services-managed-domain"></a>Устранение неполадок с блокировкой учетных записей с помощью управляемого домена доменных служб Azure Active Directory
@@ -84,7 +84,7 @@ AADDomainServicesAccountManagement
 | sort by TimeGenerated asc
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о детализированных политиках паролей для настройки порогов блокировки учетной записи см. в разделе [Настройка политик блокировки паролей и учетных записей][configure-fgpp].
 

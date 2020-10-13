@@ -6,10 +6,10 @@ ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
 ms.openlocfilehash: 0af9d6906e038a4b9285a2c302fc0c98345fdbd9
-ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90023760"
 ---
 # <a name="use-the-session-management-rest-api"></a>Использование REST API управления сеансами
@@ -79,7 +79,7 @@ $token = $response.AccessToken;
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 202 | -sessionId: GUID | Успешно |
+| 202 | -sessionId: GUID | Успех |
 
 ### <a name="example-script-create-a-session"></a>Пример сценария. Создание сеанса
 
@@ -265,7 +265,7 @@ RawContentLength  : 60
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 204 | | Успешно |
+| 204 | | Успех |
 
 ### <a name="example-script-stop-a-session"></a>Пример скрипта. Завершение сеанса
 

@@ -4,10 +4,10 @@ description: Узнайте, как запускать виртуальные м
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 231e79d594aab7c59fa21f9ee512abaa9ac67043
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87282268"
 ---
 # <a name="start-virtual-machines-in-a-lab-in-order-by-using-azure-automation-runbooks"></a>Запуск виртуальных машин в лаборатории по порядку с помощью модулей Runbook службы автоматизации Azure
@@ -128,5 +128,5 @@ While ($current -le 10) {
 
 В крупномасштабной ситуации, когда существует несколько подписок с несколькими лабораториями, храните сведения о параметрах в файле для разных лабораторий и передайте файл в сценарий вместо отдельных параметров. Сценарий потребуется изменить, но основное выполнение будет таким же. Хотя в этом примере для выполнения сценария PowerShell используется служба автоматизации Azure, существуют и другие параметры, такие как использование задачи в конвейере сборки или выпуска.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе автоматизации Azure см. в следующей статье: [Введение в службу автоматизации Azure](../automation/automation-intro.md).

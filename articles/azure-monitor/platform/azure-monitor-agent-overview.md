@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
 ms.openlocfilehash: cc49bec71f6c591ca3036592b0949e3fc7cef48e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91263782"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Общие сведения об агенте Azure Monitor (Предварительная версия)
@@ -99,7 +99,7 @@ Azure Monitor агент сосуществовать с [общедоступн
 
 | Свойство | Windows | Linux |
 |:---|:---|:---|
-| Publisher | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
+| Издатель | Microsoft. Azure. Monitor  | Microsoft. Azure. Monitor |
 | Тип      | азуремониторвиндовсажент | азуремониторлинуксажент  |
 | TypeHandlerVersion  | 1.0 | 1.5 |
 

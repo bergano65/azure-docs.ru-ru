@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 08/16/2020
 ms.author: cshoe
 ms.openlocfilehash: 942ca3229808b57894598c3477e9dc97e40e8c80
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88689575"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
@@ -25,7 +25,7 @@ ms.locfileid: "88689575"
 |Портал Azure|Автоматически|Автоматически<sup>*</sup>|
 |Non-.NET языки|Автоматически|Использовать [пакеты расширений](#extension-bundles) (рекомендуется) или [явно устанавливать расширения](#explicitly-install-extensions)|
 |Библиотека классов C# с использованием Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
-|Библиотека классов C# с использованием Visual Studio Code|н/д|[С помощью .NET Core CLI](#vs-code)|
+|Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#vs-code)|
 
 <sup>*</sup> Портал использует пакеты расширений.
 

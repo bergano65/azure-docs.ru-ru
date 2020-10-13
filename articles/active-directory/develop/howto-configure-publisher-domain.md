@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
 ms.openlocfilehash: d62328534157a1e2d9e53830be9d6b87e08c9e40
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87129276"
 ---
 # <a name="how-to-configure-an-applications-publisher-domain"></a>Как настроить домен издателя приложения
@@ -97,7 +97,7 @@ ms.locfileid: "87129276"
 - Если у клиента есть проверенные домены, выберите один из доменов в раскрывающемся списке **выберите проверенный домен** .
 
 >[!Note]
-> Ожидался ожидаемый заголовок Content-Type, который должен быть возвращен `application/json` . Вы можете получить сообщение об ошибке, как упоминалось ниже, если вы используете что-нибудь вроде`application/json; charset=utf-8` 
+> Ожидался ожидаемый заголовок Content-Type, который должен быть возвращен `application/json` . Вы можете получить сообщение об ошибке, как упоминалось ниже, если вы используете что-нибудь вроде `application/json; charset=utf-8` 
 > 
 >``` "Verification of publisher domain failed. Error getting JSON file from https:///.well-known/microsoft-identity-association. The server returned an unexpected content type header value. " ```
 >

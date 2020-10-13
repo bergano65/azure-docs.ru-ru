@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/16/2017
 ms.author: alkohli
 ms.openlocfilehash: 5efb87ad674474b2e21b86b5cdc48785753a51dc
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90564157"
 ---
 # <a name="available-regions-for-your-storsimple"></a>Доступные регионы для StorSimple
@@ -96,7 +96,7 @@ ms.locfileid: "90564157"
 
 Если вам нужен виртуальный массив StorSimple серии 1200, образ виртуального диска для него поддерживается во всех регионах Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о ценах на разные модели StorSimple см. [здесь](https://azure.microsoft.com/pricing/calculator/#storsimple2).
 * Узнайте больше об [управлении учетной записью хранения StorSimple](storsimple-8000-manage-storage-accounts.md).

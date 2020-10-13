@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
 ms.openlocfilehash: 3c34fd198164d7e3ae0851749cf51809df31ca19
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88522952"
 ---
 # <a name="azure-portal-how-to-video-series"></a>Серия видеоинструкций по работе с порталом Azure
@@ -39,6 +39,6 @@ ms.locfileid: "88522952"
 
 Ознакомьтесь с [пошаговыми руководствами по портал Azure](https://www.youtube.com/playlist?list=PLLasX02E8BPBKgXP4oflOL29TtqTzwhxR) , чтобы получить наиболее полезные советы по созданию большинства из портал Azure. Подпишитесь на канал, чтобы получать уведомления при добавлении новых видеороликов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите сотни видеороликов по службам Azure в [библиотеке видео](https://azure.microsoft.com/resources/videos/index/?tag=microsoft-azure-portal).

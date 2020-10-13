@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5bcfb21ab15355653780355f1b5e459bc806ec8c
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90600727"
 ---
 # <a name="start-using-privileged-identity-management"></a>Начало работы с управлением привилегированными пользователями
@@ -27,7 +27,7 @@ ms.locfileid: "90600727"
 
 Используйте управление привилегированными пользователями (PIM) для управления доступом, контроля и мониторинга доступа в вашей организации Azure Active Directory (Azure AD). С помощью PIM вы можете предоставить необходимые и своевременный доступ к ресурсам Azure, ресурсам Azure AD и другим веб-службы Майкрософт, таким как Microsoft 365 или Microsoft Intune.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать управление привилегированными пользователями, необходимо иметь одну из следующих лицензий:
 
@@ -96,7 +96,7 @@ ms.locfileid: "90600727"
 
     ![Плитка "Быстрый запуск" управление привилегированными пользователями на панели мониторинга](./media/pim-getting-started/pim-quickstart-dashboard-tile.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение ролей Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Управление доступом к ресурсам Azure в управление привилегированными пользователями](pim-resource-roles-discover-resources.md)

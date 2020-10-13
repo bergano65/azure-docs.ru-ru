@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: aahi
 ms.openlocfilehash: e378bc88d28173eaed0308db3034a54236d63098
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91262830"
 ---
 # <a name="language-and-region-support-for-the-bing-web-search-api"></a>Поддержка языков и регионов в API Bing для поиска в Интернете
@@ -76,8 +76,8 @@ API Bing для поиска в Интернете поддерживает бо
 |Бельгия|Нидерландский|nl-BE|
 |Бельгия|Французский|fr-BE|
 |Бразилия|Португальский|pt-BR|
-|Canada|Английский|en-CA|
-|Canada|Французский|fr-CA|
+|Канада|Английский|en-CA|
+|Канада|Французский|fr-CA|
 |Чили|Испанский|es-CL|
 |Дания|Датский|da-DK|
 |Финляндия|Финский|fi-FI|
@@ -98,7 +98,7 @@ API Bing для поиска в Интернете поддерживает бо
 |Польша|Польский|pl-PL|
 |Португалия|Португальский|pt-PT|
 |Филиппины|Английский|en-PH|
-|Россия|русском языке|ru-RU|
+|Россия|Русский|ru-RU|
 |Саудовская Аравия|Арабский|ar-SA|
 |Южно-Африканская Республика|Английский|en-ZA|
 |Испания|Испанский|es-ES|
@@ -108,9 +108,9 @@ API Bing для поиска в Интернете поддерживает бо
 |Тайвань|Китайский (традиционный)|zh-TW|
 |Турция|Турецкий|tr-TR|
 |Соединенное Королевство|Английский|en-GB|
-|США|Английский|en-US|
+|США|Английский|ru-RU|
 |США|Испанский|es-US|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Справочник по API Bing для поиска изображений](//docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference)

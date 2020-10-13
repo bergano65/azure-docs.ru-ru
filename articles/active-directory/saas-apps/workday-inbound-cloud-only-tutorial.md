@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
 ms.openlocfilehash: 7d47c21da1279271b12933a2e4642abcce622600
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90015489"
 ---
 # <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Руководство по настройке рабочего дня для подготовки пользователей в Azure AD
@@ -206,7 +206,7 @@ ms.locfileid: "90015489"
    > [!div class="mx-imgBorder"]
    > ![Индикатор выполнения подготовки](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о поддерживаемых атрибутах Workday для входящей подготовки](../app-provisioning/workday-attribute-reference.md)
 * [Узнайте, как настроить обратную запись Workday](workday-writeback-tutorial.md)

@@ -8,10 +8,10 @@ ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: bbb959b6b1d71c81f7b920b3962f693716041e16
-ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89181754"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Расширение виртуальных жестких дисков на виртуальной машине Linux с помощью Azure CLI
@@ -113,7 +113,7 @@ ms.locfileid: "89181754"
     End?  [107GB]? 215GB
     ```
 
-    г. Чтобы закрыть командную строку, введите `quit`.
+    d. Чтобы закрыть командную строку, введите `quit`.
 
 1. Изменив размер раздела, проверьте его целостность с помощью команды `e2fsck`.
 
@@ -140,6 +140,6 @@ ms.locfileid: "89181754"
     /dev/sdc1        197G   60M   187G   1% /datadrive
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Если вам требуется дополнительное место для хранения, можно также [добавить диски данных в виртуальную машину Linux](add-disk.md). 
 * Дополнительные сведения о шифровании дисков см. в статье [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md).
