@@ -12,10 +12,10 @@ ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
 ms.openlocfilehash: b97d36a5773eeb82a60330d0398ea19232f72b1e
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91613719"
 ---
 # <a name="set-up-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинное обучение Azure
@@ -131,7 +131,7 @@ ms.locfileid: "91613719"
 
 После установки расширения Visual Studio Code можно управлять [ресурсами машинное обучение Azure](how-to-manage-resources-vscode.md), [запускать и отлаживать эксперименты](how-to-debug-visual-studio-code.md)и [развертывать обученные модели](tutorial-train-deploy-image-classification-model-vscode.md).
 
-## <a name="azure-machine-learning-compute-instance"></a><a id="compute-instance"></a>Вычислительная операция Машинного обучения Azure
+## <a name="azure-machine-learning-compute-instance"></a><a id="compute-instance"></a>Машинное обучение Azure вычислительный экземпляр
 
 Машинное обучение Azure [вычислительным экземпляром](concept-compute-instance.md) является защищенная облачная Рабочая станция Azure, которая предоставляет специалистам по обработке и анализу данных Jupyter Notebook сервер, JupyterLab и полностью управляемую среду машинного обучения.
 
@@ -169,7 +169,7 @@ DSVM — это настраиваемый образ виртуальной м
 
     * Используйте портал Azure, чтобы создать DSVM [Ubuntu](data-science-virtual-machine/dsvm-ubuntu-intro.md) или [Windows](data-science-virtual-machine/provision-vm.md) .
     * [Создайте DSVM с помощью шаблонов ARM](data-science-virtual-machine/dsvm-tutorial-resource-manager.md).
-    * Использование Azure CLI
+    * Использование командной строки Azure CLI
 
         Чтобы создать DSVM Ubuntu, используйте следующую команду:
 
@@ -291,7 +291,7 @@ Azure Databricks — это среда, которая лежит в основ�
 
 + Узнайте, как [создать конвейер с модулями обработки в качестве обучающего вычислений](how-to-create-your-first-pipeline.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST
 - Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) (Что такое пакет SDK для Машинного обучения Azure для Python?)

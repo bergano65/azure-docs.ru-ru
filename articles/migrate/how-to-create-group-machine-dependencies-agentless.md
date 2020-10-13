@@ -4,10 +4,10 @@ description: Настройка анализа зависимостей без �
 ms.topic: how-to
 ms.date: 6/08/2020
 ms.openlocfilehash: 57e5add810cf4fac232bce08fc7ca96df0a7c3a0
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91667475"
 ---
 # <a name="analyze-machine-dependencies-agentless"></a>Анализ зависимостей компьютера (без агентов)
@@ -144,7 +144,7 @@ ms.locfileid: "91667475"
 
 ### <a name="log-in-to-azure"></a>Вход в Azure
 
-1. Войдите в подписку Azure с помощью командлета Connect-Азаккаунт.
+1. Войдите в подписку Azure с помощью командлета Connect-AzAccount.
 
     ```PowerShell
     Connect-AzAccount
@@ -197,7 +197,7 @@ ms.locfileid: "91667475"
 1. Скачайте модуль PowerShell и шаблон Power BI из репозитория [примеров Azure PowerShell](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/dependencies-at-scale) на сайте GitHub.
 
 2. Войдите в Azure, выполнив приведенные ниже инструкции. 
-- Войдите в подписку Azure с помощью командлета Connect-Азаккаунт.
+- Войдите в подписку Azure с помощью командлета Connect-AzAccount.
 
     ```PowerShell
     Connect-AzAccount
@@ -243,6 +243,6 @@ ms.locfileid: "91667475"
 7. Визуализировать карту сетевых подключений по серверам и процессам. Сохраните файл.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Сгруппируйте компьютеры](how-to-create-a-group.md) для оценки.

@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/21/2020
 ms.openlocfilehash: 005bfd4b7e7d062640a79896ccd3d7f76e3d6fb3
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91447198"
 ---
 # <a name="configure-the-os-patching-schedule-for-linux-based-hdinsight-clusters"></a>Настройка расписания исправлений ОС для кластеров HDInsight под управлением Linux
@@ -73,7 +73,7 @@ Welcome to Spark on HDInsight.
 > [!NOTE]
 > Параметр запланированной перезагрузки выполняет автоматическое пошаговое перезагрузку исправленных узлов кластера в течение 12 – 24 часов и учитывает высокий уровень доступности, домен обновления и домен сбоя. Запланированная перезагрузка не прерывает выполняющиеся рабочие нагрузки, но может отказаться от емкости кластера в промежуточном режиме, если узлы недоступны, что увеличивает время обработки. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Конкретные действия по использованию действий скрипта см. в следующих разделах: [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 

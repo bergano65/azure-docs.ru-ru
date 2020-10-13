@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: mathoma
 ms.date: 04/28/2020
 ms.openlocfilehash: 079d187f66cf77585121198df06cabafc454fea1
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91362135"
 ---
 # <a name="replication-to-azure-sql-database"></a>Репликация в базу данных SQL Azure
@@ -52,7 +52,7 @@ ms.locfileid: "91362135"
 
 Существуют разные [типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication).
 
-| Replication | База данных SQL Azure | Управляемый экземпляр SQL Azure |
+| Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да | 
 | [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
@@ -129,7 +129,7 @@ ms.locfileid: "91362135"
 - [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) , используя имя сервера в качестве подписчика (например, **N'azuresqldbdns. Database. Windows. NET**) и имя базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
 
 - [Репликация транзакций](../managed-instance/replication-transactional-overview.md)
 - [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)

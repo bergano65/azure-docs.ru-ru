@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
 ms.openlocfilehash: 6cb2c90658a69f3e63e9ebe08db41eea0a9bc7fa
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91299703"
 ---
 # <a name="tutorial-configure-gotomeeting-for-automatic-user-provisioning"></a>Руководство по настройке GoToMeeting для автоматической подготовки пользователей
@@ -64,7 +64,7 @@ ms.locfileid: "91299703"
 
 1. В разделе "Учетные данные администратора" выполните следующие действия:
    
-    а. В текстовом поле **Имя пользователя администратора GoToMeeting** введите имя пользователя администратора.
+    a. В текстовом поле **Имя пользователя администратора GoToMeeting** введите имя пользователя администратора.
 
     b. В текстовом поле **Пароль администратора GoToMeeting** введите пароль администратора.
 

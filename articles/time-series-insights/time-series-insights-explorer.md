@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 49a763af8d936ec9fd15c59c908ba9015f803930
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91568640"
 ---
 # <a name="azure-time-series-insights-gen1-explorer"></a>Обозреватель Gen1 временных рядов Azure
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 В этой статье описываются функции и параметры [веб-приложения Gen1 Explorer](https://insights.timeseries.azure.com/)для службы "аналитика временных рядов Azure". Обозреватель службы "аналитика временных рядов Azure" демонстрирует мощные возможности визуализации данных, предоставляемые службой, и к ним можно обращаться в собственной среде.
 
@@ -126,7 +126,7 @@ ms.locfileid: "91568640"
 
 Теперь вы узнали о ключевых функциях, параметрах конфигурации и параметрах вывода, доступных в веб-приложении обозревателя службы "аналитика временных рядов Azure".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [диагностировать и устранять проблемы](time-series-insights-diagnose-and-solve-problems.md) в среде службы "аналитика временных рядов Azure".
 

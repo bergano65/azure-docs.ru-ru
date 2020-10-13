@@ -4,10 +4,10 @@ description: В этой статье содержатся сведения о �
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.openlocfilehash: 48d2bc1aa3389459077bb7b8df0ac63ce1e1a438
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91566267"
 ---
 # <a name="authorize-access-to-event-hubs-resources-using-azure-active-directory"></a>Авторизация доступа к ресурсам концентраторов событий с помощью Azure Active Directory
@@ -71,7 +71,7 @@ Azure предоставляет следующие встроенные рол�
 - [Концентраторы событий для примеров Kafka-OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Сведения о назначении встроенной роли Azure субъекту безопасности см. в статье [Проверка подлинности доступа к ресурсам концентраторов событий с помощью Azure Active Directory](authenticate-application.md).
 - Узнайте [, как создавать пользовательские роли с помощью RBAC](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/CustomRole).
 - Узнайте [, как использовать Azure Active Directory с EH](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/AzureEventHubsSDK)

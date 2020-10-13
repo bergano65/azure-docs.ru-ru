@@ -12,10 +12,10 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
 ms.openlocfilehash: cade5a4329cdfc11c1b256ba01e9764f60a476a6
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91667866"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
@@ -304,7 +304,7 @@ az ml computetarget detach -n myaks -g myresourcegroup -w myworkspace
 
 В Машинное обучение Azure Studio выберите __вычисления__, __кластеры вывода__и кластер, который нужно удалить. Используйте ссылку __отсоединить__ , чтобы отсоединить кластер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Как и где развертывается модель](how-to-deploy-and-where.md)
 * [Развертывание модели в кластере службы Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md)

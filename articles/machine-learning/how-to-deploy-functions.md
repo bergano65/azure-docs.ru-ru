@@ -12,10 +12,10 @@ ms.date: 03/06/2020
 ms.topic: conceptual
 ms.custom: how-to, racking-python
 ms.openlocfilehash: cc5bc5b2c9f78854909b965487f7b4299f3a1579
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91567457"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
@@ -295,7 +295,7 @@ print(blob.location)
 
 Дополнительные сведения об использовании триггеров больших двоичных объектов см. в статье [Создание функции, активируемой с помощью хранилища BLOB-объектов Azure](/azure/azure-functions/functions-create-storage-blob-triggered-function) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Научитесь настраивать приложение функций в документации по [функциям](/azure/azure-functions/functions-create-function-linux-custom-image) .
 * Дополнительные сведения о службе хранилища BLOB-объектов см. в статье триггеры [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).

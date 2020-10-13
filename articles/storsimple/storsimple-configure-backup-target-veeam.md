@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/06/2016
 ms.author: matd
 ms.openlocfilehash: 052859e99ffd0082994d313508ebb6f0496d980b
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91710351"
 ---
 # <a name="storsimple-as-a-backup-target-with-veeam"></a>Использование StorSimple в качестве целевого объекта архивации с помощью Veeam
@@ -516,7 +516,7 @@ Veeam позволяет выполнять быстрое, точное вос�
 - [Using GPT drives](https://msdn.microsoft.com/windows/hardware/gg463524.aspx#EHD) (Использование дисков GPT)
 - [Включение и настройка теневых копий общих папок](https://technet.microsoft.com/library/cc771893.aspx)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как выполнить [восстановление из набора резервных копий](storsimple-restore-from-backup-set-u2.md).
 - Узнайте, как выполнить [отработку отказа и аварийное восстановление устройства](storsimple-device-failover-disaster-recovery.md).

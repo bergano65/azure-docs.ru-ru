@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f9f68d3734cd7de83a2ddd376caefa410c619d61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90db861a4ef4fc951844d3ae82a51d20cf9dc8c5
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291115"
+ms.locfileid: "91875110"
 ---
 # <a name="safe-url-list"></a>Список надежных URL-адресов
 
@@ -19,17 +19,19 @@ ms.locfileid: "89291115"
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 
-Виртуальные машины Azure, которые вы создаете для Виртуального рабочего стола Windows, должны иметь доступ к следующим URL-адресам:
+Виртуальные машины Azure, создаваемые для виртуальных рабочих столов Windows, должны иметь доступ к следующим URL-адресам в коммерческом облаке Azure:
 
 |Адрес|Исходящий TCP-порт|Назначение|Тег службы|
 |---|---|---|---|
 |*.wvd.microsoft.com|443|Служба трафика|WindowsVirtualDesktop|
-|mrsglobalsteus2prod.blob.core.windows.net|443|Обновления агента и стека SxS|AzureCloud;|
-|*.core.windows.net|443|Агент трафика|AzureCloud;|
-|*.servicebus.windows.net|443|Агент трафика|AzureCloud;|
 |gcs.prod.monitoring.core.windows.net|443|Агент трафика|AzureCloud;|
+|production.diagnostics.monitoring.core.windows.net|443|Агент трафика|AzureCloud;|
+|* xt.blob.core.windows.net|443|Агент трафика|AzureCloud;|
+|* eh.servicebus.windows.net|443|Агент трафика|AzureCloud;|
+|* xt.table.core.windows.net|443|Агент трафика|AzureCloud;|
 |catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud;|
 |kms.core.windows.net|1688;|Активация Windows|Интернет|
+|mrsglobalsteus2prod.blob.core.windows.net|443|Обновления агента и стека SxS|AzureCloud;|
 |wvdportalstorageblob.blob.core.windows.net|443|Поддержка портала Azure|AzureCloud;|
 | 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
 | 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/security-overview.md#azure-platform-considerations) | Недоступно |
@@ -39,16 +41,33 @@ ms.locfileid: "89291115"
 >
 >Вместо URL-адресов мы рекомендуем использовать теги FQDN или теги службы, чтобы избежать проблем со службами. Указанные URL-адреса и теги соответствуют только сайтам и ресурсам Виртуальных рабочих столов Windows. Они не включают URL-адреса для других служб, например Azure Active Directory.
 
-В следующей таблице перечислены дополнительные URL-адреса, к которым виртуальные машины Azure могут иметь доступ:
+Виртуальные машины Azure, создаваемые для виртуальных рабочих столов Windows, должны иметь доступ к следующим URL-адресам в облаке Azure для государственных организаций:
 
 |Адрес|Исходящий TCP-порт|Назначение|Тег службы|
 |---|---|---|---|
-|*.microsoftonline.com|443|Проверка подлинности в Microsoft Online Services|None|
+|*. wvd.microsoft.us|443|Служба трафика|WindowsVirtualDesktop|
+|gcs.monitoring.core.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
+|monitoring.core.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
+|fairfax.warmpath.usgovcloudapi.net;|443|Агент трафика|AzureCloud;|
+|* xt.blob.core.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
+|*.servicebus.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
+|* xt.table.core.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
+|Kms.core.usgovcloudapi.net|1688;|Активация Windows|Интернет|
+|mrsglobalstugviffx.core.usgovcloudapi.net|443|Обновления агента и стека SxS|AzureCloud;|
+|wvdportalstorageblob.blob.core.usgovcloudapi.net|443|Поддержка портала Azure|AzureCloud;|
+| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/security-overview.md#azure-platform-considerations) | Недоступно |
+
+В следующей таблице перечислены дополнительные URL-адреса, к которым виртуальные машины Azure могут иметь доступ:
+
+|Адрес|Исходящий TCP-порт|Назначение|Azure gov|
+|---|---|---|---|
+|*.microsoftonline.com|443|Проверка подлинности в Microsoft Online Services|login.microsoftonline.us|
 |*.events.data.microsoft.com|443|Служба телеметрии|None|
 |www.msftconnecttest.com|443|Проверка, подключена ли ОС к Интернету.|None|
 |*.prod.do.dsp.mp.microsoft.com|443|Центр обновления Windows|None|
-|login.windows.net|443|Вход в Microsoft Online Services, Microsoft 365|None|
-|*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|None|
+|login.windows.net|443|Вход в Microsoft Online Services, Microsoft 365|login.microsoftonline.us|
+|*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|oneclient.sfx.ms|
 |*.digicert.com|443|Проверка отзыва сертификата|None|
 
 >[!NOTE]
@@ -66,15 +85,15 @@ ms.locfileid: "89291115"
 
 Все используемые удаленный рабочий стол клиенты должны иметь доступ к следующим URL-адресам:
 
-|Адрес|Исходящий TCP-порт|Назначение|Клиент(ы)|
-|---|---|---|---|
-|*.wvd.microsoft.com|443|Служба трафика|All|
-|*.servicebus.windows.net|443|Данные диагностики|All|
-|сайт go.microsoft.com;|443|Microsoft FWLinks|All|
-|aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|
-|docs.microsoft.com|443|Документация|All|
-|privacy.microsoft.com|443|Заявление о конфиденциальности|All|
-|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|
+|Адрес|Исходящий TCP-порт|Назначение|Клиент(ы)|Azure gov|
+|---|---|---|---|---|
+|*.wvd.microsoft.com|443|Служба трафика|All|*. wvd.microsoft.us|
+|*.servicebus.windows.net|443|Данные диагностики|All|*.servicebus.usgovcloudapi.net|
+|сайт go.microsoft.com;|443|Microsoft FWLinks|All|None|
+|aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|None|
+|docs.microsoft.com|443|Документация|All|None|
+|privacy.microsoft.com|443|Заявление о конфиденциальности|All|None|
+|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|Нет|
 
 >[!IMPORTANT]
 >Открытие этих URL-адресов является обязательным для надежной работы клиента. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы.
