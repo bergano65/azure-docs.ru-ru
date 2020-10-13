@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/02/2020
 ms.author: apimpm
-ms.openlocfilehash: 86ed7f3941965bcac525a2ba71786d20a4753489
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a53cc2b2ec6d46b4bde54af58b4e5542ff6cf79
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335506"
+ms.locfileid: "91932640"
 ---
 # <a name="api-import-restrictions-and-known-issues"></a>Ограничения и известные проблемы при импорте API
 
@@ -42,6 +42,7 @@ ms.locfileid: "91335506"
 -   Определения безопасности игнорируются.
 -   Встроенные определения схемы для операций API не поддерживаются. Определения схемы определяются в области API, и на них можно ссылаться в областях запросов или ответов операций API.
 -   Определенный параметр URL-адреса должен быть частью шаблона URL-адреса.
+-   `server` объект не поддерживается на уровне операции API.
 -   `Produces` ключевое слово, описывающее типы MIME, возвращаемые API, не поддерживается. 
 
 ### <a name="openapi-version-2"></a><a name="open-api-v2"> </a>OpenAPI версия 2

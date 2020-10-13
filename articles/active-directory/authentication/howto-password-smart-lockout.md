@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/20/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5734cb76e4ed018778c6858597ec8efe3019bf9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: baffe307a560f2668c2d93e36939a695cf963e89
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88065987"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968384"
 ---
 # <a name="protect-user-accounts-from-attacks-with-azure-active-directory-smart-lockout"></a>Защита учетных записей пользователей от атак с помощью Azure Active Directory Smart-блокировки
 
@@ -90,7 +90,7 @@ ms.locfileid: "88065987"
 
 *Ваша учетная запись временно заблокирована, чтобы предотвратить несанкционированное использование. Повторите попытку позже. Если у вас по-прежнему возникают проблемы, обратитесь к администратору.*
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для дальнейшей настройки интерфейса можно [настроить настраиваемые пароли для защиты паролей Azure AD](tutorial-configure-custom-password-protection.md).
 

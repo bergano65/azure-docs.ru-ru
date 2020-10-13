@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.custom: fasttrack-edit
-ms.openlocfilehash: dce2ecc166938e21b01b34f8903d9242a6207929
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 574544df1ad89b277f2e07103b02b9b591fb3924
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91652634"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91936110"
 ---
 В этой таблице показаны привязки, которые поддерживаются в двух основных версиях среды выполнения Функций Azure.
 
@@ -18,7 +18,7 @@ ms.locfileid: "91652634"
 | Тип | 1.x | 2.x и выше<sup>1</sup> | Триггер | Входные данные | Выходные данные |
 | ---- | :-: | :-: | :------: | :---: | :----: |
 | [Хранилище BLOB-объектов](../articles/azure-functions/functions-bindings-storage-blob.md)          |✔|✔|✔|✔|✔|
-| [Azure Cosmos DB](../articles/azure-functions/functions-bindings-documentdb.md)               |✔|✔|✔|✔|✔|
+| [Azure Cosmos DB](../articles/azure-functions/functions-bindings-cosmosdb-v2.md)               |✔|✔|✔|✔|✔|
 | [Dapr](https://github.com/dapr/azure-functions-extension)<sup>3</sup>             | |✔|✔|✔|✔|
 | [Сетка событий](../articles/azure-functions/functions-bindings-event-grid.md)              |✔|✔|✔| |✔|
 | [Центры событий](../articles/azure-functions/functions-bindings-event-hubs.md)              |✔|✔|✔| |✔|

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/20/2020
 ms.author: mimckitt
-ms.openlocfilehash: f3ddf0491c31ded6983df9da724e9321775bd1d3
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 2d6ce99104b649ea75651692622623d1a6236e75
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945232"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968877"
 ---
 # <a name="general-purpose-virtual-machine-sizes"></a>Размеры виртуальных машин общего назначения
 
@@ -31,7 +31,7 @@ ms.locfileid: "91945232"
 
 - [Серии dv4 и Dsv4](dv4-dsv4-series.md) Серия dv4 и Dsv4 работает на процессорах Intel® Xeon® Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота процессора Turbo 3,4 ГГц.
 
-- [Серии Ddv4 и Ddsv4](ddv4-ddsv4-series.md) Серия Ddv4 и Ddsv4 работает на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота процессора Turbo 3,4 ГГц, [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel &reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Dv3/Dsv3](./dv3-dsv3-series.md) для [виртуальных машин 2-го поколения](./linux/generation-2.md).
+- [Серии Ddv4 и Ddsv4](ddv4-ddsv4-series.md) Серия Ddv4 и Ddsv4 работает на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота процессора Turbo 3,4 ГГц, [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel &reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Dv3/Dsv3](./dv3-dsv3-series.md) для [виртуальных машин 2-го поколения](./generation-2.md).
 
 - [Серии Dv3 и Dsv3](dv3-dsv3-series.md) Виртуальные машины работают на основе 2-го поколения Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® Broadwell-2673 v4 2,3 ГГц (2673) или Intel® Xeon® Haswell v3 2,4 ГГц () в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. Объем памяти увеличен с 3,5 ГиБ до 4 ГиБ на виртуальный ЦП, а дисковые и сетевые ограничения в связи с переходом на технологию Hyper Threading подстроены под каждое ядро. Серия Dv3 больше не предлагает виртуальные машины с большим объемом памяти серий D и Dv2. Такие виртуальные машины вынесены в новые, более оптимизированные для операций в памяти, серии [Ev3 и Esv3](ev3-esv3-series.md).
 

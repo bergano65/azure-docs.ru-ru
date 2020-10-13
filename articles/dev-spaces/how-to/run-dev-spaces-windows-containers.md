@@ -5,14 +5,16 @@ ms.date: 01/16/2020
 ms.topic: conceptual
 description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: 131f69d42795b857a53fc21b760a7275a6826bb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51a91c9ff74c4d0d1c5bccff2f1033eb14cd9198
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212463"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91972940"
 ---
 # <a name="interact-with-windows-containers-using-azure-dev-spaces"></a>Взаимодействие с контейнерами Windows с помощью Azure Dev Spaces
+
+[!INCLUDE [Azure Dev Spaces deprecation](../../../includes/dev-spaces-deprecation.md)]
 
 Можно включить Azure Dev Spaces как для новых, так и для существующих пространств имен Kubernetes. Azure Dev Spaces будут запускать и инструментированные службы, работающие в контейнерах Linux. Эти службы также могут взаимодействовать с приложениями, которые работают в контейнерах Windows, в одном пространстве имен. В этой статье показано, как использовать пространства разработки для запуска служб в пространстве имен с существующими контейнерами Windows. В настоящее время нельзя выполнять отладку или присоединение к контейнерам Windows с Azure Dev Spaces.
 

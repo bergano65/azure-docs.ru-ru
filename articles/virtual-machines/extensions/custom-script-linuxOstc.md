@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: 1fe915fd58f60e4ad5b1e28b51911678ef2f866c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b2099a6a48c9393b6e9e8b983a4acac2933bf06
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87085713"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973841"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -58,7 +58,7 @@ ms.locfileid: "87085713"
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
-Чтобы скачать скрипт из внешнего источника, например с сайта GitHub или из службы хранилища Azure, откройте дополнительные порты брандмауэра или группы безопасности сети. Например, если скрипт находится в службе хранилища Azure, вы можете разрешить доступ с помощью тегов службы Azure NSG для [хранилища](../../virtual-network/security-overview.md#service-tags).
+Чтобы скачать скрипт из внешнего источника, например с сайта GitHub или из службы хранилища Azure, откройте дополнительные порты брандмауэра или группы безопасности сети. Например, если скрипт находится в службе хранилища Azure, вы можете разрешить доступ с помощью тегов службы Azure NSG для [хранилища](../../virtual-network/network-security-groups-overview.md#service-tags).
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра или группы безопасности сети.
 
@@ -353,6 +353,6 @@ Name                  ProvisioningState    Publisher                   Version  
 CustomScriptForLinux  Succeeded            Microsoft.OSTCExtensions        1.5  True
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript).
