@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/03/2020
 ms.openlocfilehash: 1c0247c5adfe60dc2436c832cf3d561882ae3a5d
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91760167"
 ---
 # <a name="audit-queries-in-azure-monitor-logs-preview"></a>Аудит запросов в журналах Azure Monitor (Предварительная версия)
@@ -72,7 +72,7 @@ ms.locfileid: "91760167"
 ## <a name="costs"></a>Затраты  
 Плата за расширение "Диагностика Azure" не взимается, но, возможно, вам придется оплатить получение данных. На странице [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/) указаны назначения для сбора данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [параметрах диагностики](../platform/diagnostic-settings.md).
 - Дополнительные сведения об [оптимизации запросов журналов](query-optimization.md).

@@ -12,10 +12,10 @@ author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
 ms.openlocfilehash: e033f00f7657f7f4e5e63509672e924979ce03e7
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91362522"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Активация приложений, процессов или процессов CI/CD на основе событий Машинное обучение Azure (Предварительная версия)
@@ -69,7 +69,7 @@ ms.locfileid: "91362522"
 
 1. Выберите вкладку "Фильтры" и прокрутите вниз до пункта "Дополнительные фильтры". Для параметров **Ключ** и **Значение**укажите типы свойств, по которым требуется выполнить фильтрацию. Здесь можно увидеть, что событие будет запущено только тогда, когда тип запуска является запуском конвейера или запуском этапа конвейера.  
 
-    :::image type="content" source="media/how-to-use-event-grid/select-event-filters.png" alt-text="события фильтра":::
+    :::image type="content" source="media/how-to-use-event-grid/select-event-filters.png" alt-text="события фильтра&quot;:::
 
 
 + **Фильтрация по типу события.** Подписка на события может указывать один или несколько типов событий Машинного обучения Azure.
@@ -84,7 +84,7 @@ ms.locfileid: "91362522"
   | `Microsoft.MachineLearningServices.DatasetDriftDetected` | `datadrift/{data.DataDriftId}/run/{data.RunId}` | `datadrift/4e694bf5-712e-4e40-b06a-d2a2755212d4/run/my_driftrun1_1550564444_fbbcdc0f` |
   | `Microsoft.MachineLearningServices.RunStatusChanged` | `experiments/{ExperimentId}/runs/{RunId}` | `experiments/b1d7966c-f73a-4c68-b846-992ace89551f/runs/my_exp1_1554835758_38dbaa94` | 
 
-+ **Расширенная фильтрация**. Сетка событий Azure также поддерживает расширенную фильтрацию на основе схемы опубликованных событий. Сведения о схеме событий Машинного обучение Azure можно найти в разделе [Схема событий службы "Сетка событий Azure" для Машинного обучение Azure](../event-grid/event-schema-machine-learning.md).  Ниже приведены некоторые примеры расширенных фильтров, которые можно применять.
++ **Расширенная фильтрация**. Сетка событий Azure также поддерживает расширенную фильтрацию на основе схемы опубликованных событий. Сведения о схеме событий Машинного обучение Azure можно найти в разделе [Схема событий службы &quot;Сетка событий Azure" для Машинного обучение Azure](../event-grid/event-schema-machine-learning.md).  Ниже приведены некоторые примеры расширенных фильтров, которые можно применять.
 
   Для `Microsoft.MachineLearningServices.ModelRegistered` события, чтобы отфильтровать значение тега модели:
 

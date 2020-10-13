@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2e36b2d4576b43544bec89efd326363344b35be9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90997088"
 ---
 # <a name="change-approval-and-requestor-information-preview-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров утверждения и сведений о запрашивающей (Предварительная версия) для пакета Access в управлении назначениями Azure AD
@@ -190,6 +190,6 @@ ms.locfileid: "90997088"
 
 После настройки сведений о запрашивающей странице в политике пакета доступа можно просмотреть ответы запрашивающей стороны на вопросы. Рекомендации по просмотру сведений о запрашивающей стороны см. [в статье ответы на вопросы (Предварительная версия)](entitlement-management-request-approve.md#view-requestors-answers-to-questions-preview).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Изменение параметров жизненного цикла пакета Access](entitlement-management-access-package-lifecycle-policy.md)
 - [Просмотр запросов для пакета Access](entitlement-management-access-package-requests.md)

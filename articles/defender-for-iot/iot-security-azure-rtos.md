@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/07/2020
 ms.author: mlottner
 ms.openlocfilehash: 22bd12bbdcccef2fd0e9010f926cd18e95d42967
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91761861"
 ---
 # <a name="overview-defender-for-iot-security-module-for-azure-rtos-preview"></a>Обзор: модуль безопасности "защитник для Интернета вещей" для Azure RTO (Предварительная версия)
@@ -49,7 +49,7 @@ ms.locfileid: "91761861"
 Модуль безопасности для Azure RTO предоставляется бесплатно для загрузки устройств. Защитник для облачной службы IoT доступен в рамках 30-дневной пробной версии для каждой подписки Azure. Скачайте [модуль безопасности для Azure RTO](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/defender-for-iot/iot-security-azure-rtos.md) , чтобы приступить к работе. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали о модуле безопасности для службы Azure RTO. Дополнительные сведения о модуле безопасности и начале работы см. в следующих статьях:
 

@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 09/21/2020
 ms.openlocfilehash: 21e4189e56f704129710da5b1d39613c4e1b1df5
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91766899"
 ---
 # <a name="troubleshoot-database-corruption-in-azure-database-for-mysql"></a>Устранение неполадок с повреждением базы данных Azure для MySQL
@@ -85,7 +85,7 @@ mysql  --ssl-cert=</path/to/pem> -h [hostname] -u [uname] -p[pass] [db_to_restor
 $ mysql --ssl-cert=</path/to/pem> -h mydemoserver.mysql.database.azure.com -u myserveradmin -p testdb < testdb_backup.sql
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Если описанные выше действия не помогли устранить проблему, всегда можно восстановить весь сервер:
 - [Восстановление сервера в базе данных Azure для MySQL — одиночный сервер](howto-restore-server-portal.md)
 - [Восстановление сервера в базе данных Azure для MySQL — гибкого сервера](flexible-server/how-to-restore-server-portal.md)

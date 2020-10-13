@@ -11,10 +11,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 ms.openlocfilehash: 9b5463ba789a1bcfb707fb03c70f1a8464cb6b59
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91767345"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Синтаксис запросов маршрутизации сообщений центра Интернета вещей
@@ -53,7 +53,7 @@ ms.locfileid: "91767345"
 
 Системные свойства помогают определить содержимое и источник сообщений. 
 
-| Свойство. | Тип | Описание |
+| Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
 | сontentType | строка | Пользователь указывает тип содержимого сообщений. Чтобы разрешить запрос к тексту сообщения, для этого свойства должно быть задано значение application/JSON. |
 | contentEncoding | строка | Пользователь указывает тип кодирования сообщений. Допустимые значения: UTF-8, UTF-16, UTF-32, если contentType имеет значение application/JSON. |
@@ -220,7 +220,7 @@ $twin.tags.deploymentLocation.floor = 1
 
 Запрос на маршрутизацию в тексте или двойникае устройства с точкой в полезных данных или имени свойства не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о [маршрутизации сообщений](iot-hub-devguide-messages-d2c.md).
 * Попробуйте [учебник по маршрутизации сообщений](tutorial-routing.md).

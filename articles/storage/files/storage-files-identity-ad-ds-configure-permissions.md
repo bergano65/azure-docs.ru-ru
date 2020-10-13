@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: rogarana
 ms.openlocfilehash: 03b569422b6ce9e74f77637a514c1c0b28011bed
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91761147"
 ---
 # <a name="part-three-configure-directory-and-file-level-permissions-over-smb"></a>Часть 3. Настройка разрешений на уровне каталога и файлов по протоколу SMB 
@@ -116,7 +116,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 Дополнительные сведения об использовании icacls для задания списков управления доступом Windows и различных типов поддерживаемых разрешений см. [в справочнике по командной строке для icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда эта функция включена и настроена, перейдите к следующей статье, в которой вы подключаете файловый ресурс Azure с виртуальной машины, присоединенной к домену.
 

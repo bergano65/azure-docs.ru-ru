@@ -658,6 +658,8 @@
                       href: app/javascript-react-plugin.md
                     - name: Подключаемый модуль React Native
                       href: app/javascript-react-native-plugin.md
+                    - name: Подключаемый модуль Angular
+                      href: app/javascript-angular-plugin.md
                 - name: Диагностика
                   items:
                     - name: Сбоев при загрузке пакетов SDK

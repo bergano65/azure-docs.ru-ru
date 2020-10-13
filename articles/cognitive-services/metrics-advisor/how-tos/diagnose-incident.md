@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: aahi
 ms.openlocfilehash: fb70745cf7773e8caa91b31048af97e8e626bb91
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91597949"
 ---
 # <a name="how-to-diagnose-an-incident-using-metrics-advisor"></a>Инструкции: диагностика инцидента с помощью помощника по метрикам
@@ -142,7 +142,7 @@ ms.locfileid: "91597949"
 - Другая метрика & канала данных: поток данных и метрика для подключения к текущей метрике
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 - [Настройка обнаружения аномалий с помощью обратной связи](anomaly-feedback.md)
 - [Настройка метрик и детальная настройка конфигурации обнаружения](configure-metrics.md)

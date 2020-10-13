@@ -6,10 +6,10 @@ manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
 ms.openlocfilehash: 59bbca9461ff174ebe2451a6c01d84dee404cf56
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91398312"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
@@ -22,7 +22,7 @@ ms.locfileid: "91398312"
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
 | Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
-| Replication               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
+| Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 
 ## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
@@ -105,7 +105,7 @@ ms.locfileid: "91398312"
 
 #### <a name="resolution"></a>Решение
 
-Если вы используете правило или прокси-сервер брандмауэра группы безопасности сети Azure (NSG) для управления исходящими сетевыми подключениями на компьютере, необходимо разрешить несколько тегов служб. [Подробнее](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags).
+Если вы используете правило или прокси-сервер брандмауэра группы безопасности сети Azure (NSG) для управления исходящими сетевыми подключениями на компьютере, необходимо разрешить несколько тегов служб. [Подробнее.](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)
 
 ### <a name="issue-4-azure-to-azure-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Причина 4. сбой репликации из Azure в Azure, если сетевой трафик проходит через локальный прокси-сервер (151072)
 
@@ -136,6 +136,6 @@ ms.locfileid: "91398312"
 
 Чтобы разрешить [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)адресов, выполните действия, описанные в [документе Руководство](./azure-to-azure-about-networking.md)по работе с сетями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Репликация виртуальных машин Azure в другой регион Azure](azure-to-azure-how-to-enable-replication.md)
