@@ -8,10 +8,10 @@ author: keferna
 ms.author: keferna
 ms.date: 09/18/2020
 ms.openlocfilehash: d69001922520fc7162071b4828492bb1d9f80d0a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91330023"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Поддержка программы коммерческого рынка в центре партнеров
@@ -57,7 +57,7 @@ ms.locfileid: "91330023"
 
 Найдя нужный раздел, выберите **проверить решения**.
 
-![Дальнейшие действия](./media/support/next-step.png)
+![Следующий шаг](./media/support/next-step.png)
 
 Станут доступны следующие параметры:
 

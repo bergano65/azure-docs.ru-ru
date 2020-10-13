@@ -15,7 +15,7 @@ ms.openlocfilehash: e91fd0d94d6f6d87b5e554e27bf9c2a2ba6ccabd
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91858478"
 ---
 # <a name="data-sync-agent-for-sql-data-sync"></a>Агент синхронизации данных для синхронизация данных SQL
@@ -315,7 +315,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -databaseName testdb -authentication windows -encryption true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 

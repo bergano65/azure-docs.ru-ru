@@ -8,12 +8,12 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: baf89ec75f844ae1a1f7797d26d2fb04a0d5df34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1288f117a6b6c9fb05fd29578be35c676453177
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849849"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975167"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
@@ -173,7 +173,7 @@ ms.locfileid: "91849849"
 Откроется окно *Выбор действия* . Перейдите на вкладку *Пользовательская* . Вы должны увидеть пользовательский соединитель с более ранней версии в верхнем поле.
 
 :::image type="content" source="media/how-to-integrate-logic-apps/custom-action.png" alt-text="Представление портала регистрации приложения Azure AD. В меню ресурсов есть выделение &quot;сертификаты и секреты&quot;, а также выделение на странице &quot;новый секрет клиента&quot;." *Управление цифровыми двойниковми*".
-* _версия API_: в текущей общедоступной предварительной версии это значение — *2020-05-31-Preview* .
+* _версия API_: Последняя версия API. В текущей общедоступной предварительной версии это значение — *2020-05-31-Preview* .
 
 Нажмите кнопку *сохранить* в конструкторе Logic Apps.
 
@@ -189,7 +189,7 @@ ms.locfileid: "91849849"
 
 Дополнительные сведения о запросах к экземпляру Digital двойников для Azure см. [*в статье как выполнить запрос к графу двойника*](how-to-query-graph.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали приложение логики, которое регулярно обновляет двойника в экземпляре Azure Digital двойников с указанным вами исправлением. Вы можете попробовать выбрать другие API в настраиваемом соединителе, чтобы создать Logic Apps для различных действий в экземпляре.
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: e5cc5b557aa4dff793f7e87093eeb65028da4f8c
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839798"
 ---
 # <a name="how-to-reprovision-devices"></a>Повторная подготовка устройств
@@ -90,7 +90,7 @@ ms.locfileid: "91839798"
 Например, код отправки запросов на подготовку с устройства во время последовательности загрузки см. в статье об [автоматической подготовке имитированного устройства](quick-create-simulated-device.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
 - Дополнительные сведения об отмене подготовки см. в статье [как отменить подготовку устройств, которые были подготовлены ранее](how-to-unprovision-devices.md) . 

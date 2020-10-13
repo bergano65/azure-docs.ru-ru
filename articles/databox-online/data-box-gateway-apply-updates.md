@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: alkohli
 ms.openlocfilehash: 337c0c4434eb768ee45429d9b2d23536db4c3fc7
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91575458"
 ---
 # <a name="update-your-azure-data-box-gateway"></a>Обновление Шлюз Azure Data Box
@@ -152,6 +152,6 @@ ms.locfileid: "91575458"
 
    ![Снимок экрана Шлюз Data Box локального веб-сайта U с параметром обновления программного обеспечения и обновленным сообщением о текущей версии программного обеспечения.](./media/data-box-gateway-apply-updates/local-ui-update-6.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об [администрировании шлюз Azure Data Box](data-box-gateway-manage-users.md).

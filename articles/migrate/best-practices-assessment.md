@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
 ms.openlocfilehash: e007f0272a693f5117b0182dad82de2f4a6e252a
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91576886"
 ---
 # <a name="best-practices-for-creating-assessments"></a>Рекомендации по созданию оценок
@@ -136,7 +136,7 @@ ms.locfileid: "91576886"
 - **Неизвестно**: для виртуальных машин, импортированных с помощью CSV-файла, инструмент миграции по умолчанию неизвестен. Однако для компьютеров VMware рекомендуется использовать решение гибридного облака VMware (ХККС).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Узнайте](concepts-assessment-calculation.md) , как рассчитываются оценки.
 - [Узнайте](how-to-modify-assessment.md) , как настроить оценку.

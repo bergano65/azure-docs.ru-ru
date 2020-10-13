@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
 ms.openlocfilehash: efcf634c9f34fd2b479140af800bb650f66bd821
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91826750"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
@@ -96,7 +96,7 @@ ms.locfileid: "91826750"
 
     ![Сведения о домене и URL-адресах единого входа для E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_url.png)
 
-    а. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: *https:// \<Server-Based-URL> / \<sub-domain> /есалес-ПК*.
+    a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: *https:// \<Server-Based-URL> / \<sub-domain> /есалес-ПК*.
 
     b. В поле **идентификатор** введите URL-адрес в следующем формате: *https:// \<Server-Based-URL> / \<sub-domain> / *.
 
@@ -149,7 +149,7 @@ ms.locfileid: "91826750"
 
     ![Раздел "SAML authentication setting" (Настройка аутентификации SAML)](./media/esalesmanagerremix-tutorial/configure3.png)
     
-    а. Установите флажок **PC version** (Версия для компьютера).
+    a. Установите флажок **PC version** (Версия для компьютера).
     
     b. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
 
@@ -193,7 +193,7 @@ ms.locfileid: "91826750"
 
     ![Окно пользователя](./media/paloaltoadmin-tutorial/create_aaduser_04.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    a. В поле **Имя** введите **BrittaSimon**.
 
     b. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
@@ -217,7 +217,7 @@ ms.locfileid: "91826750"
     
     ![Раздел "New employee registration" (Регистрация нового сотрудника)](./media/esalesmanagerremix-tutorial/user2.png)
 
-    а. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
+    a. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
 
     b. Заполните остальные обязательные поля.
     

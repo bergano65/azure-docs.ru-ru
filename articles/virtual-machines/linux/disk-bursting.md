@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 2e5fc8bde2c79a355fb7963c9101c4b040f97fa7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ee3b65e95fe3f4c52136cb3645c987fe7f6c9a7a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91275168"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975371"
 ---
 # <a name="managed-disk-bursting"></a>Ускорение операций управляемого диска
 [!INCLUDE [managed-disks-bursting](../../../includes/managed-disks-bursting.md)]
@@ -29,6 +29,6 @@ ms.locfileid: "91275168"
 Ускорение операций включено по умолчанию для виртуальных машин, которые поддерживают его.
 
 ## <a name="disk-level-bursting"></a>Ускорение операций на уровне дисков
-Ускорение операций также доступно для наших [дисков SSD цен. категории "Премиум"](disks-types.md#premium-ssd) с размером вплоть до P20 во всех регионах общедоступного облака Azure, облака для государственных учреждений и облака для Китая. По умолчанию для всех новых и существующих развертываний размеров дисков, поддерживающих эту возможность, включена Ускоренная работа диска. 
+Ускорение операций также доступно для наших [дисков SSD цен. категории "Премиум"](../disks-types.md#premium-ssd) с размером вплоть до P20 во всех регионах общедоступного облака Azure, облака для государственных учреждений и облака для Китая. По умолчанию для всех новых и существующих развертываний размеров дисков, поддерживающих эту возможность, включена Ускоренная работа диска. 
 
 [!INCLUDE [managed-disks-bursting](../../../includes/managed-disks-bursting-2.md)]

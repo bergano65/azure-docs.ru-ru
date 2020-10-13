@@ -12,7 +12,7 @@ ms.openlocfilehash: 44c87a3415a236f614510aa3163ad2e9cbd1f64f
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91856183"
 ---
 # <a name="use-scp-with-apache-hadoop-in-azure-hdinsight"></a>Использование SCP с Apache Hadoop в Azure HDInsight
@@ -44,7 +44,7 @@ scp sshuser@clustername-ssh.azurehdinsight.net:test.txt .
 * [Использование службы хранилища Azure с кластерами Azure HDInsight](hdinsight-hadoop-use-blob-storage.md).
 * [HDInsight с использованием Azure Data Lake Storage 1-го поколения](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen1.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Использование SSH с HDInsight](./hdinsight-hadoop-linux-use-ssh-unix.md)
 * [Доступ к граничному узлу](hdinsight-apps-use-edge-node.md#access-an-edge-node)

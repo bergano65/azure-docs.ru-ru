@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/15/2020
 ms.author: cherylmc
 ms.openlocfilehash: 7105597ec34e804c2f2b85b01feb4824d63005c5
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91578127"
 ---
 # <a name="create-an-intune-profile-to-deploy-vpn-client-profiles"></a>Создание профиля Intune для развертывания профилей VPN-клиента
@@ -78,7 +78,7 @@ ms.locfileid: "91578127"
     * **OMA-URI:** ```./User/Vendor/MSFT/VPNv2/<name of your connection>/ProfileXML``` (эти сведения можно найти в файле azurevpnconfig.xml в <name> </name> теге).
     * **Тип данных:** Строка (XML-файл).
 
-   Щелкните значок папки и выберите файл, сохраненный на шаге 6, в разделе [XML-](#xml) действия. Нажмите **Добавить**.
+   Щелкните значок папки и выберите файл, сохраненный на шаге 6, в разделе [XML-](#xml) действия. Выберите **Добавить**.
 
    :::image type="content" source="./media/create-profile-intune/configuration-settings.png" alt-text="профили конфигурации." lightbox="./media/create-profile-intune/configuration-settings.png":::
 1. Выберите **Далее**.

@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2c610eb8fe6caf308117fa7adfc6e2f2a35c6352
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91325901"
 ---
 # <a name="tls-12-enforcement-for-azure-ad-connect"></a>Принудительное применение TLS 1.2 для Azure AD Connect
@@ -34,19 +34,19 @@ ms.locfileid: "91325901"
 
 
 ### <a name="enable-tls-12"></a>Включите протокол TLS 1.2.
-- [HKEY_LOCAL_MACHINE \SOFTWARE\WOW6432Node\Microsoft \\ . NETFramework\v4.0.30319
+- [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\ . NETFramework\v4.0.30319
   - "Системдефаулттлсверсионс" = DWORD: 00000001
   - "SchUseStrongCrypto" = DWORD: 0000001
-- [HKEY_LOCAL_MACHINE \Софтваре\микрософт \\ . NETFramework\v4.0.30319
+- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\ . NETFramework\v4.0.30319
   - "Системдефаулттлсверсионс" = DWORD: 00000001
   - "SchUseStrongCrypto"=dword:00000001
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ сервер]
   - "Enabled" = DWORD: 00000001
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ сервер]
   - "DisabledByDefault" = DWORD: 00000000 
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ клиент]
   - "Enabled" = DWORD: 00000001
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ клиент]
   - "DisabledByDefault" = DWORD: 00000000
 
 ### <a name="powershell-script-to-enable-tls-12"></a>Сценарий PowerShell для включения протокола TLS 1.2
@@ -80,19 +80,19 @@ ms.locfileid: "91325901"
 ```
 
 ### <a name="disable-tls-12"></a>Отключение протокола TLS 1.2
-- [HKEY_LOCAL_MACHINE \SOFTWARE\WOW6432Node\Microsoft \\ . NETFramework\v4.0.30319
+- [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\ . NETFramework\v4.0.30319
   - "Системдефаулттлсверсионс" = DWORD: 00000000
   - "SchUseStrongCrypto" = DWORD: 0,0000 до 0,0000000
-- [HKEY_LOCAL_MACHINE \Софтваре\микрософт \\ . NETFramework\v4.0.30319
+- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\ . NETFramework\v4.0.30319
   - "Системдефаулттлсверсионс" = DWORD: 00000000
   - "SchUseStrongCrypto" = DWORD: 00000000
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ сервер]
   - "Enabled" = DWORD: 00000000
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ сервер]
   - "DisabledByDefault" = DWORD: 00000001
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ клиент]
   - "Enabled" = DWORD: 00000000
-- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ клиент]
   - "DisabledByDefault" = DWORD: 00000001 
 
 ### <a name="powershell-script-to-disable-tls-12"></a>Сценарий PowerShell для отключения протокола TLS 1.2
@@ -125,5 +125,5 @@ ms.locfileid: "91325901"
     Write-Host 'TLS 1.2 has been disabled.'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

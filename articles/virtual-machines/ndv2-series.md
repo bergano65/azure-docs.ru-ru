@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 7ab9d270ae5da52cbf9b5ba0ed4730233225a7c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74c8924116cf9b565ea63e3b72a409686a4d725c
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653455"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975726"
 ---
 # <a name="updated-ndv2-series"></a>Обновленная серия NDv2
 
@@ -27,7 +27,7 @@ NDv2 работает на основе 8 видеопроцессоров NVIDI
 > [!IMPORTANT]
 > При [включении InfiniBand](./workloads/hpc/enable-infiniband.md) на ND40rs_v2 виртуальной машине используйте драйвер Mellanox офед 4.7-1.0.0.1.
 >
-> Из-за увеличения памяти GPU для новой виртуальной машины ND40rs_v2 требуется использование [виртуальных машин поколения 2](./windows/generation-2.md) и образов Marketplace. 
+> Из-за увеличения памяти GPU для новой виртуальной машины ND40rs_v2 требуется использование [виртуальных машин поколения 2](./generation-2.md) и образов Marketplace. 
 >
 > Примечание. ND40s_v2 с 16 ГБ памяти для каждого GPU больше не доступен для предварительной версии и заменен обновленной ND40rs_v2.
 

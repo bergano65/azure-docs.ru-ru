@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.openlocfilehash: fc62c87fd12457c60d3eb26cba6814aa1df76f87
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839220"
 ---
 # <a name="send-custom-commands-activity-to-client-application"></a>Отправка действия настраиваемых команд клиентскому приложению
@@ -156,7 +156,7 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
    > [!div class="mx-imgBorder"]
    > ![Снимок экрана, на котором показано, что теперь визуальное состояние T V включено.](media/custom-commands/send-activity-to-client-turn-on-tv.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Как настроить конечные веб-точки (Предварительная версия)](./how-to-custom-commands-setup-web-endpoints.md)

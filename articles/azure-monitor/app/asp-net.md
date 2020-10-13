@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: contperfq1
 ms.openlocfilehash: 861a9f53c2f149268e06005053206a7411e842f8
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91838948"
 ---
 # <a name="configure-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
@@ -346,7 +346,7 @@ ms.locfileid: "91838948"
 
 Чтобы добавить наблюдение на стороне клиента, откройте `_Layout.cshtml` файл и следуйте [инструкциям по установке на основе фрагментов кода](javascript.md#snippet-based-setup) из статьи о настройке пакета SDK JavaScript на стороне клиента.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Существует известная проблема в текущей версии Visual Studio 2019, при которой ключ инструментирования в секрете пользователя разрывается для приложений на основе .NET Framework, а ключ в конечном итоге должен быть жестко закодирован в applicationinsights.config файле, чтобы обойти эту ошибку. Эта статья предназначена для полного устранения этой проблемы без использования секретов пользователя.  
 
@@ -356,7 +356,7 @@ ms.locfileid: "91838948"
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Добавьте искусственные транзакции, чтобы проверить доступность веб-сайта по всему миру с [мониторингом доступности](monitor-web-app-availability.md).
 * [Настройка выборки](sampling.md) для уменьшения трафика телеметрии и затрат на хранение данных.

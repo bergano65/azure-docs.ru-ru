@@ -10,10 +10,10 @@ ms.date: 09/22/2020
 ms.author: reyandap
 ms.custom: references_pricing
 ms.openlocfilehash: b4025990a1a62351d3971d788558dea8ecb390ba
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91327963"
 ---
 # <a name="about-virtual-wan-pricing"></a>Сведения о ценах на виртуальные глобальные сети
@@ -56,7 +56,7 @@ ms.locfileid: "91327963"
 
 **Цены на внутреннюю континент (*)**
 
-| Внутренний континент| Цена ($/ГБ)|
+| Intra-Continent| Цена ($/ГБ)|
 |---|---|
 | В качестве ВЬЕТНАМа|0,02 долл. США |
 | ЕС в ЕС |0,02 долл. США |
@@ -67,7 +67,7 @@ ms.locfileid: "91327963"
 
 **Цены на внутрихолдинговый континентальной части (*)**
 
-| Взаимная континентальной части| Цена ($/ГБ)|
+| Inter-Continental| Цена ($/ГБ)|
 |---|---|
 | ИЗ ВЬЕТНАМа в ЕС или ЕС в качестве ВЬЕТНАМа |0,07 долл. США |
 | ИЗ ЛАТАМ в любое место |$0,17 |

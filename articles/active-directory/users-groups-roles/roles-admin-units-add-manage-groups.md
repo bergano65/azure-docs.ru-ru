@@ -15,10 +15,10 @@ ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 133ea21bf7a7c1df0fccaeacce7d7a29199c033d
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91827695"
 ---
 # <a name="add-and-manage-groups-in-administrative-units-in-azure-active-directory"></a>Добавление и управление группами в административных единицах в Azure Active Directory
@@ -53,7 +53,7 @@ $GroupObj = Get-AzureADGroup -Filter "displayname eq 'TestGroup'"
 Add-AzureADMSAdministrativeUnitMember -ObjectId $administrative unitObj.ObjectId -RefObjectId $GroupObj.ObjectId
 ```
 
-В этом примере командлет Add-Азуреадмсадминистративеунитмембер используется для добавления группы в административную единицу. В качестве аргументов передаются идентификатор объекта административной единицы и идентификатор объекта добавляемой группы. Выделенную часть можно изменить в соответствии с требованиями конкретной среды.
+В этом примере командлет Add-AzureADMSAdministrativeUnitMember используется для добавления группы в административную единицу. В качестве аргументов передаются идентификатор объекта административной единицы и идентификатор объекта добавляемой группы. Выделенную часть можно изменить в соответствии с требованиями конкретной среды.
 
 ### <a name="microsoft-graph"></a>Microsoft Graph
 

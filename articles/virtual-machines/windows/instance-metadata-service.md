@@ -11,12 +11,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2020
 ms.author: sukumari
 ms.reviewer: azmetadatadev
-ms.openlocfilehash: 2e0788b6a7eb6f1d43185d8b484adddd76374ea3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51310b1569982e0b71f39dede0d4d7dbefd1a3c9
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90086714"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975541"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -47,13 +47,15 @@ IMDS Azure — это конечная точка RESTFUL, доступная п
 **Запрос**
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri http://169.254.169.254/metadata/instance?api-version=2020-06-01
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri http://169.254.169.254/metadata/instance?api-version=2020-06-01 | ConvertTo-Json
 ```
+> [!NOTE]
+> `-NoProxy`Флаг доступен только в PowerShell 6 или более поздней версии. Вы можете опустить флаг, если у вас нет настройки прокси-сервера.
 
 **Ответ**
 
 > [!NOTE]
-> Ответ представляет собой строку JSON. Следующие примеры ответов представлены в удобном для чтения формате.
+> Ответ представляет собой строку JSON. Мы передаем наш запрос RESTFUL с помощью `ConvertTo-Json` командлета для достаточной печати.
 
 ```json
 {
@@ -250,8 +252,8 @@ offer | Предоставление сведений для образа вир
 osType | Windows или Linux | 2017-04-02
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
 План | [План](/rest/api/compute/virtualmachines/createorupdate#plan), указывающий наименование, продукт и издателя виртуальной машины (если используется образ Azure Marketplace) | 2018-04-02
-platformUpdateDomain |  [Домен обновления](manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
-platformFaultDomain | [Домен сбоя](manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
+platformUpdateDomain |  [Домен обновления](../manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
+platformFaultDomain | [Домен сбоя](../manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
 поставщик | Поставщик виртуальной машины | 2018-10-01
 publicKeys | [Коллекция открытых ключей](/rest/api/compute/virtualmachines/createorupdate#sshpublickey), назначенная виртуальной машине и путям | 2018-04-02
 publisher | Издатель образа виртуальной машины | 2017-04-02

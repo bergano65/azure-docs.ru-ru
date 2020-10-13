@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 7d7dc8564ee35bcd8bfd92d996d07e1d0c365806
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91776499"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
@@ -143,7 +143,7 @@ Content-Type: application/json
 |Свойство тела JSON|Тип|Назначение|
 |--|--|--|--|
 |`feedbackRecords`|массиве|Список отзывов.|
-|`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный элемент.|
+|`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный параметр.|
 |`userQuestion`|строка|Точный текст запроса пользователя. Обязательный элемент.|
 |`qnaID`|number|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
@@ -341,7 +341,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)
