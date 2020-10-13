@@ -7,7 +7,7 @@ ms.openlocfilehash: 65ac6374b1a9571d0415bc097a6ee957874d3d44
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91854432"
 ---
 # <a name="perform-actions-using-backup-center"></a>Выполнение действий с помощью центра архивации
@@ -134,7 +134,7 @@ ms.locfileid: "91854432"
 
 [Дополнительные сведения о прекращении архивации для сервера базы данных Azure для PostgreSQL](backup-azure-database-postgresql.md#stop-protection)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Мониторинг и эксплуатация резервных копий](backup-center-monitor-operate.md)
 * [Управление пространством резервного копирования](backup-center-govern-environment.md)
