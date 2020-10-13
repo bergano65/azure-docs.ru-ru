@@ -4,10 +4,10 @@ description: Симптомы, причины и способы устранен
 ms.topic: article
 ms.date: 10/01/2020
 ms.openlocfilehash: f84b11418344bfeaf790377c1d8644fbc7d7d636
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91743375"
 ---
 # <a name="troubleshoot-network-issues-with-registry"></a>Устранение проблем с сетью с помощью реестра
@@ -130,7 +130,7 @@ ms.locfileid: "91743375"
 * [Базовый план безопасности Azure для реестра контейнеров Azure](security-baseline.md)
 * [Рекомендации по использованию реестра контейнеров Azure](container-registry-best-practices.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы не решите проблему здесь, см. следующие параметры.
 

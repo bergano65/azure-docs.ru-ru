@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/05/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8265d328a23e871dc25692f22138a7bb648a8323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9fc34a85f8a858adea2161e1734ead589180ea4
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88653602"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978243"
 ---
 # <a name="sap-workload-configurations-with-azure-availability-zones"></a>Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure
 [Зоны доступности Azure](../../../availability-zones/az-overview.md) — одна из функций высокой доступности, предлагаемых Azure. Использование Зон доступности повышает общую доступность рабочих нагрузок SAP в Azure. Эта функция уже доступна в некоторых [регионах Azure](https://azure.microsoft.com/global-infrastructure/regions/). В дальнейшем она будет доступна во всех регионах.
@@ -30,7 +30,7 @@ ms.locfileid: "88653602"
 
 ![Конфигурация высокой доступности цен. категории "Стандартный"](./media/sap-ha-availability-zones/standard-ha-config.png)
 
-Уровень приложений SAP развертывается в рамках одной [группы доступности](../../windows/manage-availability.md)Azure. Чтобы обеспечить высокую доступность центральных служб SAP, вы можете развернуть две виртуальные машины в отдельных группах доступности. Используйте службы отказоустойчивого кластера Windows Server или Pacemaker (Linux) в качестве платформы высокой доступности с автоматической отработкой отказа в случае проблем с инфраструктурой или программным обеспечением. Дополнительные сведения об этих развертываниях см. в следующих статьях:
+Уровень приложений SAP развертывается в рамках одной [группы доступности](../../manage-availability.md)Azure. Чтобы обеспечить высокую доступность центральных служб SAP, вы можете развернуть две виртуальные машины в отдельных группах доступности. Используйте службы отказоустойчивого кластера Windows Server или Pacemaker (Linux) в качестве платформы высокой доступности с автоматической отработкой отказа в случае проблем с инфраструктурой или программным обеспечением. Дополнительные сведения об этих развертываниях см. в следующих статьях:
 
 - [Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью общего диска кластера](./sap-high-availability-guide-wsfc-shared-disk.md)
 - [Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса в Azure](./sap-high-availability-guide-wsfc-file-share.md)

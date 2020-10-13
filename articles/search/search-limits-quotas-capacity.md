@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: 7e3a5fcdcead402d59e680fcba270e80b4eda8bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c422b9a70f679279d1310444aafb1f9131ff944
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843436"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949856"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Ограничения службы "Когнитивный поиск Azure"
 
@@ -104,12 +104,12 @@ ms.locfileid: "91843436"
 ### <a name="shared-private-link-resource-limits"></a>Ограничения общего ресурса частной ссылки
 
 > [!NOTE]
-> Индексаторы могут безопасно обращаться к ресурсам через частные конечные точки, управляемые через [общий API ресурсов частной ссылки](https://docs.microsoft.com/rest/api/searchmanagement/sharedprivatelinkresources) , как описано в [этом пошаговом руководство](search-indexer-howto-access-private.md) .
+> Индексаторы могут безопасно обращаться к ресурсам через частные конечные точки, управляемые через [общий API ресурсов частной ссылки](/rest/api/searchmanagement/sharedprivatelinkresources) , как описано в [этом пошаговом руководство](search-indexer-howto-access-private.md) .
 
 | Ресурс | Free | Basic | S1 | S2 | S3 | S3 HD | L1 | L2
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Поддержка индексатора закрытых конечных точек | Нет | Да | Да | Да | Да | Нет | Да | Да |
-| Поддержка закрытых конечных точек для индексаторов с набором навыков<sup>1</sup> | Нет | Нет | Нет | Да | Да | Нет | Да | Да |
+| Поддержка индексатора закрытых конечных точек | нет | Да | Да | Да | Да | нет | Да | Да |
+| Поддержка закрытых конечных точек для индексаторов с набором навыков<sup>1</sup> | нет | нет | нет | Да | Да | нет | Да | Да |
 | Максимальное число частных конечных точек | Недоступно | 10 или 30 | 100 | 400 | 400 | Недоступно | 20 | 20 |
 | Максимальное число различных типов ресурсов<sup>2</sup> | Недоступно | 4 | 7 | 15 | 15 | Недоступно | 4 | 4 |
 

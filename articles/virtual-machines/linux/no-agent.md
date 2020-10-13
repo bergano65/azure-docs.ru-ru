@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 63bc3caf97e1325c365171ba3f8e6353885d9b68
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30e76ec3085922ec2a1d4693681eb97c9052c026
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89322557"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978736"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Создание обобщенных образов без агента подготовки
 
@@ -199,7 +199,7 @@ WantedBy=multi-user.target
 Эта системная служба выполняет три вещи для базовой подготовки:
 
 1. Отчеты, готовые к работе в Azure (чтобы указать, что он был успешно создан).
-1. Переименовывает виртуальную машину на основе имени предоставленной пользователем виртуальной машины, изменяя эти данные из [службы метаданных экземпляра Azure (IMDS)](https://docs.microsoft.com/azure/virtual-machines/linux/instance-metadata-service). **Примечание** . IMDS также предоставляет другие [метаданные экземпляра](https://docs.microsoft.com/azure/virtual-machines/linux/instance-metadata-service#accessing-azure-instance-metadata-service), такие как открытые ключи SSH, поэтому вы можете задать больше имени узла.
+1. Переименовывает виртуальную машину на основе имени предоставленной пользователем виртуальной машины, изменяя эти данные из [службы метаданных экземпляра Azure (IMDS)](./instance-metadata-service.md). **Примечание** . IMDS также предоставляет другие [метаданные экземпляра](./instance-metadata-service.md#accessing-azure-instance-metadata-service), такие как открытые ключи SSH, поэтому вы можете задать больше имени узла.
 1. Отключается, чтобы он выполнялся только при первой загрузке, а не при последующих перезагрузках.
 
 С помощью единицы в файловой системе выполните следующую команду, чтобы включить ее:
@@ -271,6 +271,6 @@ Jun 11 20:28:56 thstringnopa2 systemd[1]: Started Azure Provisioning.
 
 Если вы реализуете собственный код подготовки или агента, вы владеете поддержкой этого кода, поддержка Майкрософт будет исследовать только проблемы, связанные с интерфейсами подготовки, которые недоступны. Мы постоянно делаем улучшения и изменения в этой области, поэтому необходимо отслеживать изменения в Cloud-init и агенте Linux для Azure для подготовки изменений API.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 06/01/2020
 ms.author: kegorman
 ms.custom: ''
-ms.openlocfilehash: a73d327ad2a251b5043da7e58c14e5f6f311e334
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9d8838747c4f7ff195a5451a3c68f5cf891c91f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91274509"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978464"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure"></a>Решения для приложений Oracle с интеграцией Microsoft Azure и Oracle Cloud Infrastructure
 
@@ -68,7 +68,7 @@ ms.locfileid: "91274509"
 
 Сетевая безопасность является важнейшим компонентом любого корпоративного приложения, что справедливо и для этого решения с поддержкой нескольких облаков. Весь трафик через ExpressRoute и FastConnect передается через частную сеть. Такая конфигурация обеспечивает безопасную связь между виртуальной сетью Azure и виртуальной облачной сетью Oracle. Вам не придется выделять общедоступные IP-адреса виртуальным машинам в Azure, а также не потребуется шлюз Интернета в OCI. Все взаимодействие происходит через частные IP-адреса компьютеров.
 
-Кроме того, вы можете настроить [списки безопасности](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm) в виртуальной облачной сети OCI и правила безопасности, подключенные к [группам безопасности сети](../../../virtual-network/security-overview.md) в Azure. Эти правила позволяют управлять трафиком, передаваемым между компьютерами в виртуальных сетях. Правила сетевой безопасности можно добавлять на уровне компьютера, подсети или виртуальной сети.
+Кроме того, вы можете настроить [списки безопасности](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm) в виртуальной облачной сети OCI и правила безопасности, подключенные к [группам безопасности сети](../../../virtual-network/network-security-groups-overview.md) в Azure. Эти правила позволяют управлять трафиком, передаваемым между компьютерами в виртуальных сетях. Правила сетевой безопасности можно добавлять на уровне компьютера, подсети или виртуальной сети.
 
 [Приложения Azure на основе сервера WebLogic](oracle-weblogic.md) создают для каждого из них группу безопасности сети, предварительно настроенную для работы с конфигурациями портов на сервере WebLogic.
  

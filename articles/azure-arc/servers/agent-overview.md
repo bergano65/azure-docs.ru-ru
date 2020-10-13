@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 09/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 20f56745127a5182a5dfa057a4496b127d78eac7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 248604884cf1b7592b382a3490aab60102e12faf
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91822193"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979161"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -85,6 +85,7 @@ ms.locfileid: "91822193"
 
 * AzureActiveDirectory
 * AzureTrafficManager.
+* AzureResourceManager
 * азуреарЦинфраструктуре
 
 URL-адреса:
@@ -94,10 +95,15 @@ URL-адреса:
 |`management.azure.com`|Azure Resource Manager|
 |`login.windows.net`|Azure Active Directory|
 |`dc.services.visualstudio.com`|Application Insights|
-|`agentserviceapi.azure-automation.net`|Гостевая конфигурация|
-|`*-agentservice-prod-1.azure-automation.net`|Гостевая конфигурация|
 |`*.guestconfiguration.azure.com` |Гостевая конфигурация|
 |`*.his.arc.azure.com`|Служба гибридной идентификации|
+
+Для предварительных версий агентов (версии 0,11 и ниже) также требуется доступ к следующим URL-адресам:
+
+| Ресурс агента | Описание |
+|---------|---------|
+|`agentserviceapi.azure-automation.net`|Гостевая конфигурация|
+|`*-agentservice-prod-1.azure-automation.net`|Гостевая конфигурация|
 
 Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Дополнительные сведения см. в разделе [Теги служб](../../virtual-network/security-overview.md#service-tags).
 
@@ -249,7 +255,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

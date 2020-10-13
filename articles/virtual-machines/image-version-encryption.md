@@ -6,14 +6,14 @@ ms.service: virtual-machines
 ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 08/11/2020
+ms.date: 10/12/2020
 ms.author: cynthn
-ms.openlocfilehash: 91f485d03717ab80bac26abd16da165d7b0dead7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd2d42bb83afa5a97bd5bd71d7b1a4bcc506d93e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291931"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91976170"
 ---
 # <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>Предварительный просмотр: Использование управляемых клиентом ключей для шифрования образов
 
@@ -37,11 +37,11 @@ ms.locfileid: "89291931"
 
 При использовании ключей, управляемых клиентом, для шифрования образов из общей коллекции образов существует несколько ограничений.  
 
-- Наборы ключей шифрования должны находиться в той же подписке и регионе, что и ваш образ.
+- Наборы ключей шифрования должны находиться в той же подписке, что и ваш образ.
+
+- Наборы ключей шифрования являются региональными ресурсами, поэтому каждому региону требуется другой набор ключей шифрования.
 
 - Нельзя совместно использовать образы, использующие управляемые клиентом ключи. 
-
-- Нельзя реплицировать в другие регионы образы, в которых используются управляемые клиентом ключи.
 
 - Если вы использовали собственные ключи для шифрования диска или образа, вы не сможете вернуться к использованию управляемых платформой ключей, чтобы шифровать эти диски или образы.
 
@@ -97,7 +97,19 @@ $encryption1 = @{OSDiskImage=$osDiskImageEncryption;DataDiskImages=$dataDiskImag
 
 $region1 = @{Name='West US';ReplicaCount=1;StorageAccountType=Standard_LRS;Encryption=$encryption1}
 
-$targetRegion = @($region1)
+$eastUS2osDiskImageEncryption = @{DiskEncryptionSetId='subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/diskEncryptionSets/myEastUS2DESet'}
+
+$eastUS2dataDiskImageEncryption1 = @{DiskEncryptionSetId='subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/diskEncryptionSets/myEastUS2DESet1';Lun=1}
+
+$eastUS2dataDiskImageEncryption2 = @{DiskEncryptionSetId='subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/diskEncryptionSets/myEastUS2DESet2';Lun=2}
+
+$eastUS2DataDiskImageEncryptions = @($eastUS2dataDiskImageEncryption1,$eastUS2dataDiskImageEncryption2)
+
+$encryption2 = @{OSDiskImage=$eastUS2osDiskImageEncryption;DataDiskImages=$eastUS2DataDiskImageEncryptions}
+
+$region2 = @{Name='East US 2';ReplicaCount=1;StorageAccountType=Standard_LRS;Encryption=$encryption2}
+
+$targetRegion = @($region1, $region2)
 
 
 # Create the image
@@ -158,8 +170,8 @@ az sig image-version create \
    -g MyResourceGroup \
    --gallery-image-version 1.0.0 \
    --location westus \
-   --target-regions westus=2=standard_lrs \
-   --target-region-encryption DiskEncryptionSet1,0,DiskEncryptionSet2 \
+   --target-regions westus=2=standard_lrs eastus2 \
+   --target-region-encryption WestUSDiskEncryptionSet1,0,WestUSDiskEncryptionSet2 EastUS2DiskEncryptionSet1,0,EastUS2DiskEncryptionSet2 \
    --gallery-name MyGallery \
    --gallery-image-definition MyImage \
    --managed-image "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myImage"
@@ -174,8 +186,8 @@ az sig image-version create \
    -g MyResourceGroup \
    --gallery-image-version 1.0.0 \
    --location westus\
-   --target-regions westus=2=standard_lrs \
-   --target-region-encryption DiskEncryptionSet1,0,DiskEncryptionSet2 \
+   --target-regions westus=2=standard_lrs eastus\
+   --target-region-encryption WestUSDiskEncryptionSet1,0,WestUSDiskEncryptionSet2 EastUS2DiskEncryptionSet1,0,EastUS2DiskEncryptionSet2 \
    --os-snapshot "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/snapshots/myOSSnapshot" \
    --data-snapshot-luns 0 \
    --data-snapshots "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/snapshots/myDDSnapshot" \

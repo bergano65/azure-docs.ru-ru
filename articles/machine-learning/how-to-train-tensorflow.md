@@ -11,10 +11,10 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
 ms.openlocfilehash: 21a0672db5a7038fbcdeb01e4cf07bcd760cf7ef
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91743001"
 ---
 # <a name="train-tensorflow-models-at-scale-with-azure-machine-learning"></a>Обучение моделей TensorFlow в масштабе с помощью Машинное обучение Azure
@@ -193,7 +193,7 @@ tf_env.docker.base_image = 'mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.1-cudn
 
 ### <a name="create-a-scriptrunconfig"></a>Создание Скриптрунконфиг
 
-Создайте объект [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true) , чтобы указать сведения о настройке учебного задания, включая сценарий обучения, используемую среду и целевой объект вычислений. Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре.
+Создайте объект [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py&preserve-view=true), чтобы указать сведения о конфигурации для вашего задания обучения, в том числе скрипт обучения, используемую среду и целевой объект вычислений, на котором будет выполняться задание. Любые аргументы в скрипте обучения передаются через командную строку, если они указаны в `arguments` параметре.
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -358,7 +358,7 @@ service = Model.deploy(ws, "tensorflow-web-service", [model])
 
 Полное [Описание процесса](how-to-deploy-and-where.md) развертывания в машинное обучение Azure более подробно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы обучили и зарегистрировали модель TensorFlow и узнали о вариантах развертывания. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 

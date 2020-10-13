@@ -2,23 +2,25 @@
 title: Функции шаблонов — объекты
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с объектами.
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: fede4d6c71e45b119e500d4c9c6f91765d052036
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/12/2020
+ms.openlocfilehash: 632e92bb798a5e8469079ef4693b7f321617f88c
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84676800"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977890"
 ---
 # <a name="object-functions-for-arm-templates"></a>Функции объектов для шаблонов ARM
 
 Диспетчер ресурсов предоставляет несколько функций для работы с объектами в шаблоне Azure Resource Manager (ARM).
 
 * [contains](#contains)
+* [createObject](#createobject)
 * [empty](#empty)
 * [intersection](#intersection)
 * [json](#json)
 * [length](#length)
+* [null](#null)
 * [union](#union)
 
 ## <a name="contains"></a>содержит
@@ -101,6 +103,58 @@ ms.locfileid: "84676800"
 | objectFalse | Bool | False |
 | arrayTrue | Bool | True |
 | arrayFalse | Bool | False |
+
+## <a name="createobject"></a>createObject
+
+`createObject(key1, value1, key2, value2, ...)`
+
+Создает объект из ключей и значений.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно | Тип | Описание |
+|:--- |:--- |:--- |:--- |
+| key1 |нет |строка |Имя ключа. |
+| value1 |нет |int, Boolean, строка, объект или массив |Значение для ключа. |
+| Дополнительные ключи |нет |строка |Дополнительные имена ключей. |
+| дополнительные значения |нет |int, Boolean, строка, объект или массив |Дополнительные значения для ключей. |
+
+Функция принимает только четное число параметров. Каждый ключ должен иметь совпадающее значение.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Объект с каждой парой "ключ — значение".
+
+### <a name="example"></a>Пример
+
+В следующем примере создается объект из различных типов значений.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+    ],
+    "outputs": {
+        "newObject": {
+            "type": "object",
+            "value": "[createObject('intProp', 1, 'stringProp', 'abc', 'boolProp', true(), 'arrayProp', createArray('a', 'b', 'c'), 'objectProp', createObject('key1', 'value1'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию — объект с именем `newObject` со следующим значением:
+
+```json
+{
+  "intProp": 1,
+  "stringProp": "abc",
+  "boolProp": true,
+  "arrayProp": ["a", "b", "c"],
+  "objectProp": {"key1": "value1"}
+}
+```
 
 ## <a name="empty"></a>пустых
 
@@ -237,40 +291,58 @@ ms.locfileid: "84676800"
 
 `json(arg1)`
 
-Возвращает объект JSON.
+Преобразует допустимую строку JSON в тип данных JSON.
 
 ### <a name="parameters"></a>Параметры
 
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| arg1 |Да |строка |Значение для преобразования в JSON. |
+| arg1 |Да |строка |Значение для преобразования в JSON. Строка должна быть правильно отформатированной строкой JSON. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Объект JSON из указанной строки или пустой объект, если указано значение **null**.
+Тип данных JSON из указанной строки или пустое значение, если указано **значение NULL** .
 
 ### <a name="remarks"></a>Remarks
 
 Если необходимо включить значение параметра или переменную в объект JSON, используйте функцию [concat](template-functions-string.md#concat) для создания строки, передаваемой в функцию.
 
+Для получения значения NULL можно также использовать [значение null ()](#null) .
+
 ### <a name="example"></a>Пример
 
-В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/json.json) показано, как использовать функцию JSON. Обратите внимание, что можно передать строку, представляющую объект, или использовать **значение NULL** , если значение не требуется.
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/json.json) показано, как использовать функцию JSON. Обратите внимание, что для пустого объекта можно передать **значение NULL** .
 
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "jsonObject1": {
+        "jsonEmptyObject": {
             "type": "string",
             "defaultValue": "null"
         },
-        "jsonObject2": {
+        "jsonObject": {
             "type": "string",
             "defaultValue": "{\"a\": \"b\"}"
         },
-        "testValue": {
+        "jsonString": {
+            "type": "string",
+            "defaultValue": "\"test\""
+        },
+        "jsonBoolean": {
+            "type": "string",
+            "defaultValue": "true"
+        },
+        "jsonInt": {
+            "type": "string",
+            "defaultValue": "3"
+        },
+        "jsonArray": {
+            "type": "string",
+            "defaultValue": "[[1,2,3 ]"
+        },
+        "concatValue": {
             "type": "string",
             "defaultValue": "demo value"
         }
@@ -278,17 +350,33 @@ ms.locfileid: "84676800"
     "resources": [
     ],
     "outputs": {
-        "jsonOutput1": {
+        "emptyObjectOutput": {
             "type": "bool",
-            "value": "[empty(json(parameters('jsonObject1')))]"
+            "value": "[empty(json(parameters('jsonEmptyObject')))]"
         },
-        "jsonOutput2": {
+        "objectOutput": {
             "type": "object",
-            "value": "[json(parameters('jsonObject2'))]"
+            "value": "[json(parameters('jsonObject'))]"
         },
-        "paramOutput": {
+        "stringOutput": {
+            "type": "string",
+            "value": "[json(parameters('jsonString'))]"
+        },
+        "booleanOutput": {
+            "type": "bool",
+            "value": "[json(parameters('jsonBoolean'))]"
+        },
+        "intOutput": {
+            "type": "int",
+            "value": "[json(parameters('jsonInt'))]"
+        },
+        "arrayOutput": {
+            "type": "array",
+            "value": "[json(parameters('jsonArray'))]"
+        },
+        "concatObjectOutput": {
             "type": "object",
-            "value": "[json(concat('{\"a\": \"', parameters('testValue'), '\"}'))]"
+            "value": "[json(concat('{\"a\": \"', parameters('concatValue'), '\"}'))]"
         }
     }
 }
@@ -298,9 +386,13 @@ ms.locfileid: "84676800"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| jsonOutput1 | Логическое значение | True |
-| jsonOutput2 | Объект | {"a": "b"} |
-| paramOutput | Объект | {"a": "demo value"}
+| емптйобжектаутпут | Логическое значение | True |
+| objectOutput | Объект | {"a": "b"} |
+| stringOutput | Строка | Тестировать |
+| булеанаутпут | Логическое значение | True |
+| intOutput | Целое число | 3 |
+| arrayOutput | Массив | [1, 2, 3] |
+| конкатобжектаутпут | Объект | {"a": "демонстрационное значение"} |
 
 ## <a name="length"></a>length
 
@@ -377,6 +469,44 @@ ms.locfileid: "84676800"
 | arrayLength | Int | 3 |
 | stringLength | Int | 13 |
 | обжектленгс | Int | 4 |
+
+## <a name="null"></a>null
+
+`null()`
+
+Возвращает значение NULL.
+
+### <a name="parameters"></a>Параметры
+
+Функция null не принимает никаких параметров.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Значение, всегда равное NULL.
+
+### <a name="example"></a>Пример
+
+В следующем примере используется функция null.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [],
+    "outputs": {
+        "emptyOutput": {
+            "type": "bool",
+            "value": "[empty(null())]"
+        },
+    }
+}
+```
+
+Выходные данные из предыдущего примера:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| emptyOutput | Bool | True |
 
 ## <a name="union"></a>union
 

@@ -6,18 +6,18 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 06/05/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 29187ef99ce6628359819739ab5e4b34213eeb8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17fbba605f6f20fa384d59a8c89ee536a9b121bf
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91441624"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964441"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Настройка параметров Многофакторной идентификации Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "91441624"
 
 В портал Azure доступны следующие параметры многофакторной идентификации Azure:
 
-| Компонент | Описание |
+| Функция | Описание |
 | ------- | ----------- |
 | [Блокировка учетной записи](#account-lockout) | Временно заблокируйте учетные записи с помощью многофакторной идентификации Azure, если в строке слишком много попыток проверки подлинности. Эта функция применяется только для пользователей, которые входят в систему с помощью ПИН-кода. (Сервер MFA) |
 | [Блокировка и разблокировка пользователей](#block-and-unblock-users) | Запрещает конкретным пользователям получать запросы многофакторной идентификации Azure. Любые попытки выполнить аутентификацию заблокированных пользователей отклоняются автоматически. Пользователи остаются заблокированными в течение 90 дней с момента блокировки или разблокированы вручную. |
@@ -374,6 +374,6 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 
 После включения функции "запомнить многофакторную проверку подлинности" пользователи могут помечать устройства как доверенные при входе, установив флажок **больше не спрашивать**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных методах для использования в службе многофакторной идентификации Azure см [. в статье какие методы проверки подлинности и проверки доступны в Azure Active Directory?](concept-authentication-methods.md)

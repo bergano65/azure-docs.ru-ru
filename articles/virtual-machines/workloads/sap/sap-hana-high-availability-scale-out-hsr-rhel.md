@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/02/2020
 ms.author: radeltch
-ms.openlocfilehash: edca4b44bd9e7aa9f100db3cea0bc69880a4c533
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 658470a3c19f8484ac56f6a1d88d23c3d7b4147e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91744853"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978111"
 ---
 # <a name="high-availability-of-sap-hana-scale-out-system-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA масштабируемой системы на Red Hat Enterprise Linux 
 
@@ -100,7 +100,7 @@ ms.locfileid: "91744853"
 Общая файловая система HANA `/hana/shared` в представленной архитектуре обеспечивается [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-introduction.md). Он монтируется через Нфсв 4.1 на каждом узле HANA на одном сайте репликации системы HANA. Файловые системы `/hana/data` и `/hana/log` являются локальными файловыми системами и не являются общими для узлов базы данных Hana. SAP HANA будет установлен в режиме без общего доступа. 
 
 > [!TIP]
-> Рекомендуемые конфигурации хранилища SAP HANA см. в статье [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage).   
+> Рекомендуемые конфигурации хранилища SAP HANA см. в статье [SAP HANA конфигурации хранилища виртуальных машин Azure](./hana-vm-operations-storage.md).   
 
 [![SAP HANA масштабирование с помощью кластера HSR и Pacemaker](./media/sap-hana-high-availability-rhel/sap-hana-high-availability-scale-out-hsr-rhel.png)](./media/sap-hana-high-availability-rhel/sap-hana-high-availability-scale-out-hsr-rhel-detail.png#lightbox)
 
@@ -128,7 +128,7 @@ ms.locfileid: "91744853"
   
    Для узла "большинство разработчиков" можно развернуть небольшую виртуальную машину, так как эта виртуальная машина не запускает ресурсы SAP HANA. Виртуальная машина "большинство разработчиков" используется в конфигурации кластера для достижения нечетного числа узлов кластера в сценарии раздельного мозгового случая. В этом примере виртуальной машине с производителем большинства нужен только один виртуальный сетевой интерфейс в `client` подсети.        
 
-   Развертывание локальных управляемых дисков для `/hana/data` и `/hana/log` . Минимальная рекомендуемая конфигурация хранилища для `/hana/data` и `/hana/log` описана в статье [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage).
+   Развертывание локальных управляемых дисков для `/hana/data` и `/hana/log` . Минимальная рекомендуемая конфигурация хранилища для `/hana/data` и `/hana/log` описана в статье [SAP HANA конфигурации хранилища виртуальных машин Azure](./hana-vm-operations-storage.md).
 
    Разверните основной сетевой интерфейс для каждой виртуальной машины в `client` подсети виртуальной сети.  
    При развертывании виртуальной машины с помощью портал Azure имя сетевого интерфейса создается автоматически. В этих инструкциях мы будем называть автоматически создаваемые основные сетевые интерфейсы, подключенные к `client` подсети виртуальной сети Azure, как **Hana-S1-DB1-Client**, Hana-S1- **DB2**-Client, **Hana-S1 — db3-** Client и т. д.  
@@ -148,9 +148,9 @@ ms.locfileid: "91744853"
 
     b. В левой области выберите **виртуальные машины**. Выполните фильтрацию по имени виртуальной машины (например, **Hana-S1-DB1**), а затем выберите виртуальную машину.  
 
-    c. В области **Обзор** выберите пункт **прерывать** , чтобы освободить виртуальную машину.  
+    в. В области **Обзор** выберите пункт **прерывать** , чтобы освободить виртуальную машину.  
 
-    d. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для `inter` `hsr` подсетей и.  
+    г. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для `inter` `hsr` подсетей и.  
     
     д) Щелкните **Сохранить**. 
  
@@ -229,7 +229,7 @@ ms.locfileid: "91744853"
 
 ### <a name="deploy-the-azure-netapp-files-infrastructure"></a>Развертывание инфраструктуры Azure NetApp Files 
 
-Разверните тома использовании для `/hana/shared` файловой системы. Вам потребуется отдельный `/hana/shared` том для каждого сайта репликации системы Hana. Дополнительные сведения см. [в разделе Настройка инфраструктуры Azure NetApp Files](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel#set-up-the-azure-netapp-files-infrastructure).
+Разверните тома использовании для `/hana/shared` файловой системы. Вам потребуется отдельный `/hana/shared` том для каждого сайта репликации системы Hana. Дополнительные сведения см. [в разделе Настройка инфраструктуры Azure NetApp Files](./sap-hana-scale-out-standby-netapp-files-rhel.md#set-up-the-azure-netapp-files-infrastructure).
 
 В этом примере использовались следующие Azure NetApp Files тома: 
 
@@ -1160,7 +1160,7 @@ ms.locfileid: "91744853"
       ```
 
 
-Рекомендуется тщательно протестировать конфигурацию кластера SAP HANA, а также выполнить тесты, документированные в [HA для SAP HANA на виртуальных машинах Azure в RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel#test-the-cluster-setup).
+Рекомендуется тщательно протестировать конфигурацию кластера SAP HANA, а также выполнить тесты, документированные в [HA для SAP HANA на виртуальных машинах Azure в RHEL](./sap-hana-high-availability-rhel.md#test-the-cluster-setup).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

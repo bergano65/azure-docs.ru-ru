@@ -8,16 +8,16 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 30fc71e6f59766a759cdb8e4e503123623f48bd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4fbffaa7bc68bb32bd07b657f4b769e5af4302bf
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320478"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91950030"
 ---
 # <a name="accessing-data-in-storage-accounts-securely-via-trusted-service-exception"></a>Безопасный доступ к данным в учетных записях хранения через исключение доверенной службы
 
-Индексаторы, обращающиеся к данным в учетных записях хранения, могут использовать возможность [исключения доверенной службы](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions) для безопасного доступа к данным. Этот механизм предлагает клиентам, которые не могут предоставить [доступ к индексатору через правила брандмауэра IP](search-indexer-howto-access-ip-restricted.md) , простую, безопасную и свободную альтернативу доступу к данным в учетных записях хранения.
+Индексаторы, обращающиеся к данным в учетных записях хранения, могут использовать возможность [исключения доверенной службы](../storage/common/storage-network-security.md#exceptions) для безопасного доступа к данным. Этот механизм предлагает клиентам, которые не могут предоставить [доступ к индексатору через правила брандмауэра IP](search-indexer-howto-access-ip-restricted.md) , простую, безопасную и свободную альтернативу доступу к данным в учетных записях хранения.
 
 > [!NOTE]
 > Поддержка доступа к данным в учетных записях хранения через исключение доверенной службы ограничена хранилищем BLOB-объектов Azure и Azure Data Lake хранилищем Gen2. Хранилище таблиц Azure не поддерживается.
@@ -34,7 +34,7 @@ ms.locfileid: "91320478"
 
 Теперь индексаторы смогут получать доступ к данным в учетной записи хранения, даже если учетная запись защищена с помощью правил брандмауэра IP.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексаторах службы хранилища Azure:
 

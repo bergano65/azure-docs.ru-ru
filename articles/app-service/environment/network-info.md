@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/27/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 0dfcf74ef07ff2bde7921860c6e13a59b0ccf023
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c5fa5ae54c7aea520a2346cba8feca294585b0d
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962542"
+ms.locfileid: "91875739"
 ---
 # <a name="networking-considerations-for-an-app-service-environment"></a>Рекомендации по работе с сетями в среде службы приложений #
 
@@ -161,7 +161,7 @@ ASE взаимодействует с доступными адресами в �
 * UDP ко всем IP-адресам через порт 53
 * UDP ко всем IP-адресам через порт 123
 * TCP ко всем IP-адресам на портах 80, 443
-* TCP к тегу IP-службы AzureSQL на портах 1433
+* TCP на тег службы IP `Sql` на портах 1433
 * TCP ко всем IP-адресам через порт 12000
 * в подсеть ASE на всех портах
 

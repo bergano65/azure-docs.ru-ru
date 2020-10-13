@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: b7d19d782e9cb29cfc917293f084b78830db89bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aba28e867f5fdb7bfaa917547f60565c39e382dd
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797621"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977771"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Linux
 
@@ -408,7 +408,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Создание образа или моментального снимка зашифрованной виртуальной машины и его использование для развертывания дополнительных виртуальных машин.
 - Аварийный дамп памяти ядра (kdump).
 - Oracle ACFS (файловая система кластера ASM).
-- Виртуальные машины Gen2 (см.: [Поддержка виртуальных машин 2-го поколения в Azure](generation-2.md#generation-1-vs-generation-2-capabilities)).
+- Виртуальные машины Gen2 (см.: [Поддержка виртуальных машин 2-го поколения в Azure](../generation-2.md#generation-1-vs-generation-2-capabilities)).
 - Диски NVMe виртуальных машин серии Lsv2 (см. раздел [Lsv2-Series](../lsv2-series.md)).
 - Виртуальная машина с "вложенными точками подключения"; то есть несколько точек подключения находятся по одному пути (например, "/1stmountpoint/Data/2stmountpoint").
 - Виртуальная машина с диском данных, подключенным поверх папки ОС.

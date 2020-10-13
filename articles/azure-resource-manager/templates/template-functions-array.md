@@ -2,13 +2,13 @@
 title: Функции шаблонов — массивы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с массивами.
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: 4d4ee96888aee5421d88b5371ac25a69c0af4fd7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/12/2020
+ms.openlocfilehash: a5cf73203cf59a0b9f2b5f49c923d0a077c065fc
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84677854"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979144"
 ---
 # <a name="array-functions-for-arm-templates"></a>Функции массивов для шаблонов ARM
 
@@ -278,12 +278,11 @@ ms.locfileid: "84677854"
 
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| arg1 |Да |Строка, целое число, массив или объект |Первое значение в массиве. |
-| дополнительные аргументы |нет |Строка, целое число, массив или объект |Дополнительные значения в массиве. |
+| args |нет |Строка, целое число, массив или объект |Значения в массиве. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Массив объектов .
+Массив объектов . Если параметры не указаны, возвращается пустой массив.
 
 ### <a name="example"></a>Пример
 
@@ -321,6 +320,10 @@ ms.locfileid: "84677854"
         "arrayArray": {
             "type": "array",
             "value": "[createArray(parameters('arrayToTest'))]"
+        },
+        "emptyArray": {
+            "type": "array",
+            "value": "[createArray()]"
         }
     }
 }
@@ -334,6 +337,7 @@ ms.locfileid: "84677854"
 | intArray | Массив | [1, 2, 3] |
 | objectArray | Массив | [{"one": "a", "two": "b", "three": "c"}] |
 | arrayArray | Массив | [["one", "two", "three"]] |
+| емптяррай | Массив | [] |
 
 ## <a name="empty"></a>пустых
 

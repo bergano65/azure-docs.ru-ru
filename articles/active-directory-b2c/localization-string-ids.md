@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 07/10/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 611d676f5f588ff32f981692456160e269642a43
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1b3e12bcf744ad0d762f686a908a01239fc4323
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87428132"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949247"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -25,7 +25,7 @@ ms.locfileid: "87428132"
 
 ## <a name="sign-up-or-sign-in-page-elements"></a>Элементы страниц регистрации или входа
 
-Следующие идентификаторы используются для определения содержимого с идентификатором `api.signuporsignin`.
+Следующие идентификаторы используются для определения содержимого с ИДЕНТИФИКАТОРом `api.signuporsignin` и [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md).
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
@@ -93,7 +93,7 @@ ms.locfileid: "87428132"
 
 ## <a name="sign-up-and-self-asserted-pages-user-interface-elements"></a>Элементы пользовательского интерфейса страниц для входа и самоподтверждения
 
-Ниже приведены идентификаторы для определения содержимого с идентификатором `api.localaccountsignup` или любого определения содержимого, которое начинается с `api.selfasserted`, например `api.selfasserted.profileupdate` и `api.localaccountpasswordreset`.
+Ниже приведены идентификаторы для определения содержимого с ИДЕНТИФИКАТОРом `api.localaccountsignup` или любым определением содержимого, которое начинается с `api.selfasserted` , например, и и с `api.selfasserted.profileupdate` `api.localaccountpasswordreset` [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md).
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
@@ -155,7 +155,7 @@ ms.locfileid: "87428132"
 
 ## <a name="phone-factor-authentication-page-user-interface-elements"></a>Элементы пользовательского интерфейса на странице аутентификации по номеру телефона
 
-Ниже указаны идентификаторы, используемые для определения содержимого с идентификатором `api.phonefactor`.
+Ниже приведены идентификаторы для определения содержимого с ИДЕНТИФИКАТОРом `api.phonefactor` и [техническим профилем "телефонный фактор](phone-factor-technical-profile.md)".
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
@@ -197,11 +197,11 @@ ms.locfileid: "87428132"
 
 В следующем примере показано использование некоторых элементов пользовательского интерфейса на странице регистрации многофакторной идентификации:
 
-![Элементы пользовательского интерфейса на странице регистрации для проверки адреса электронной почты](./media/localization-string-ids/localization-mfa1.png)
+![Элементы пользовательского интерфейса регистрации проверки подлинности с помощью телефонного фактора](./media/localization-string-ids/localization-mfa1.png)
 
 В следующем примере показано использование некоторых элементов пользовательского интерфейса на странице проверки многофакторной идентификации:
 
-![Элементы пользовательского интерфейса на странице регистрации для проверки адреса электронной почты](./media/localization-string-ids/localization-mfa2.png)
+![Элементы UX проверки подлинности с помощью телефонного фактора](./media/localization-string-ids/localization-mfa2.png)
 
 ## <a name="verification-display-control-user-interface-elements"></a>Элементы пользовательского интерфейса элемента управления отображением проверки
 
