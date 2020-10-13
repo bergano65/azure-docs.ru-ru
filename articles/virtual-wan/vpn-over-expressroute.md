@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.openlocfilehash: bbce84ad917da71ab363b20f3aef9da79ed3f2b0
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91827967"
 ---
 # <a name="expressroute-encryption-ipsec-over-expressroute-for-virtual-wan"></a>Шифрование ExpressRoute: IPsec через ExpressRoute для виртуальной глобальной сети
@@ -242,6 +242,6 @@ ms.locfileid: "91827967"
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Эта статья поможет вам создать VPN-подключение через частный пиринг ExpressRoute с помощью виртуальной глобальной сети. Дополнительные сведения о виртуальной глобальной сети и связанных с ней функциях см. в [обзоре виртуальной глобальной сети](virtual-wan-about.md).

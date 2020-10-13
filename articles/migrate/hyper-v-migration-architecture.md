@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
 ms.openlocfilehash: 390a8a49e9a47ee5e6845d85fe4fe02f514708e8
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91362203"
 ---
 # <a name="how-does-hyper-v-replication-work"></a>Как работает репликация Hyper-V?
@@ -80,12 +80,12 @@ I
 Если у вас есть запасная полоса пропускания для репликации и вы хотите увеличить нагрузку, можно увеличить число потоков, выделенных для задачи отправки, следующим образом:
 
 1. Откройте реестр с помощью программы Regedit.
-2. Перейдите к разделу Key HKEY_LOCAL_MACHINE \Софтваре\микрософт\виндовс Azure Баккуп\репликатион\уплоадсреадспервм
+2. Перейдите к разделу Key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Replication\UploadThreadsPerVM
 3. Увеличьте значение числа потоков, используемых для передачи данных для каждой реплицируемой виртуальной машины. Значение по умолчанию — 4, а максимальное значение — 32. 
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте выполнить [миграцию Hyper-V](tutorial-migrate-hyper-v.md) с помощью миграции сервера миграция Azure.

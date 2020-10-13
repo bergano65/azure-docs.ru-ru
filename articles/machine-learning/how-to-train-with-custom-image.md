@@ -11,10 +11,10 @@ ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
 ms.openlocfilehash: 8239d037d6bd68638998cbb36c47c7dac4bce30d
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91537622"
 ---
 # <a name="train-a-model-using-a-custom-docker-image"></a>Обучение модели с помощью пользовательского образа DOCKER
@@ -25,7 +25,7 @@ ms.locfileid: "91537622"
 
 Хотя Машинное обучение Azure предоставляет базовый образ DOCKER по умолчанию, можно также использовать Машинное обучение Azure среды, чтобы указать конкретный базовый образ, например один из набора обслуживаемых [базовых образов машинного обучения Azure](https://github.com/Azure/AzureML-Containers) или собственного [пользовательского образа](how-to-deploy-custom-docker-image.md#create-a-custom-base-image). Пользовательские базовые образы позволяют тесно управлять зависимостями и поддерживать более строгий контроль версий компонентов при выполнении заданий обучения. 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 Запустите этот код в любой из этих сред:
 * Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
     * Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md) , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
@@ -157,7 +157,7 @@ run.wait_for_completion(show_output=True)
 > [!WARNING]
 > Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py&preserve-view=true)данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы обучили модель с помощью пользовательского образа DOCKER. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 * [Мониторинг метрик выполнения](how-to-track-experiments.md) во время обучения
 * [Развертывание модели](how-to-deploy-custom-docker-image.md) с помощью пользовательского образа DOCKER.

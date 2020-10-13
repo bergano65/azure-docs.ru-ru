@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/25/2020
 ms.openlocfilehash: 5415446e0211618cfbee917d0df91213d68b7097
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91627352"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Параметры сервера в базе данных Azure для MySQL
@@ -280,7 +280,7 @@ Lower_case_table_name по умолчанию имеет значение 1, и 
 
 Другие переменные, не указанные здесь, устанавливаются в значения по умолчанию для стандартных значений MySQL. Значения по умолчанию см. в документации по MySQL для версий [8,0](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html), [5,7](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html)и [5,6](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html) . 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [настроить параметры сервера с помощью портал Azure](./howto-server-parameters.md)
 - Узнайте, как [настроить параметры сервера с помощью Azure CLI](./howto-configure-server-parameters-using-cli.md)

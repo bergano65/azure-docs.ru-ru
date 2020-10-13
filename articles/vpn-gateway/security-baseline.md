@@ -8,15 +8,15 @@ ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 7604e8519e7ae8db255a0e033ca3df0bb941a845
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91626264"
 ---
 # <a name="azure-security-baseline-for-vpn-gateway"></a>Базовый уровень безопасности Azure для VPN-шлюза
 
-Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к VPN-шлюзу. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в средстве оценки безопасности Azure, и связанным рекомендациям, применимым к VPN-шлюзу. **Элементы управления** , неприменимые к VPN-шлюзу, были исключены.
+Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к VPN-шлюзу. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в средстве оценки безопасности Azure, и связанным рекомендациям, применимым к VPN-шлюзу. **Элементы управления** , неприменимые к VPN-шлюзу, были исключены.
 
 Чтобы увидеть, как VPN-шлюз полностью сопоставляется с тестовым показателем безопасности Azure, см. [полный базовый файл сопоставления безопасности шлюза VPN](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 

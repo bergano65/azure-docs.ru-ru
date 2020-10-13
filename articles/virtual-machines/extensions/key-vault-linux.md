@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 720c5190bfc1b4b6a6c3e86052cfc329233c5ed2
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: bdab132d4d22dced97273e9d1d051f155f9d69b6
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91802486"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91970730"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -32,6 +32,11 @@ ms.locfileid: "91802486"
 
 - PKCS #12
 - PEM
+
+## <a name="prerequisities"></a>Предварительные требования
+  - Key Vault экземпляр с сертификатом. См. раздел [создание Key Vault](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal)
+  - Виртуальная машина или VMSS должна иметь назначенное [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) .
+  - Политика доступа Key Vault должна быть установлена с секретами `get` и `list` разрешениями на управляемое удостоверение VM/VMSS для получения части сертификата, относящейся к секрету. См. статью [Проверка подлинности в Key Vault](/azure/key-vault/general/authentication) и [назначение политики доступа Key Vault](/azure/key-vault/general/assign-access-policy-cli).
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -202,12 +207,10 @@ Azure PowerShell можно использовать для развертыва
         --vm-name "<vmName>" `
         --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCerts> \"] }}'
     ```
-
 Ознакомьтесь со следующими ограничениями и требованиями.
 - Ограничения, касающиеся решения Key Vault:
   - оно должно существовать во время развертывания; 
-  - Политика доступа Key Vault должна быть установлена для удостоверения виртуальной машины или VMSS с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault](/azure/key-vault/general/authentication) и [назначение политики доступа Key Vault](/azure/key-vault/general/assign-access-policy-cli).
-
+  - Политика доступа Key Vault должна быть установлена для удостоверения виртуальной машины или VMSS с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-cli.md).
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 

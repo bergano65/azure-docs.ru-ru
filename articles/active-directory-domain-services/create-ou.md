@@ -2,7 +2,7 @@
 title: Создание подразделения (OU) в доменных службах Azure AD | Документация Майкрософт "
 description: Узнайте, как создать пользовательское подразделение и управлять им в управляемом домене доменных служб Azure AD.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.assetid: 52602ad8-2b93-4082-8487-427bdcfa8126
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: iainfou
-ms.openlocfilehash: 1e3546239dfcfd4c6ef23ad16f3340f34f958901
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: joflore
+ms.openlocfilehash: df8d32fb38d9ea6750ef47651e4f660428fd1fbe
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88723220"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961006"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-active-directory-domain-services-managed-domain"></a>Создание подразделения в управляемом домене доменных служб Azure Active Directory
 
