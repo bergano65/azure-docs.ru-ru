@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
 ms.openlocfilehash: 0c777c2461047f21e8fb413faec6d5f1140fc75f
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91438811"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Проверка предупреждений в центре безопасности Azure
@@ -68,7 +68,7 @@ ms.locfileid: "91438811"
 
 Дополнительные сведения о защите узлов и кластеров Kubernetes см. [в статье Введение в защитник Azure для Kubernetes](defender-for-kubernetes-introduction.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
 * [Проверка Azure Key Vault обнаружения угроз в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)

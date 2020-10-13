@@ -13,10 +13,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 12/13/2018
 ms.openlocfilehash: e102aaace15d065d02e44fa06655827068020959
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620228"
 ---
 # <a name="sync-networking-configuration-for-azure-app-service-hosting-plan-with-azure-sql-managed-instance"></a>Синхронизация конфигурации сети для плана размещения службы приложений Azure с помощью Управляемый экземпляр Azure SQL
@@ -46,6 +46,6 @@ ms.locfileid: "91620228"
 
 Теперь вы можете попытаться восстановить подключение к Управляемый экземпляр SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о настройке виртуальной сети для Управляемый экземпляр SQL см. в статье [Архитектура виртуальной сети sql управляемый экземпляр](connectivity-architecture-overview.md) и [Настройка существующей виртуальной сети](vnet-existing-add-subnet.md).

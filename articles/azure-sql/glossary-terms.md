@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/22/2020
 ms.openlocfilehash: 18ff2c9690de1708cd8382d83a0c01662a8e6fb0
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619788"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Глоссарий терминов для Базы данных SQL Azure
@@ -28,7 +28,7 @@ ms.locfileid: "91619788"
 |:---|:---|:---|
 |Служба Azure|База данных SQL Azure или База данных SQL|[База данных SQL Azure](database/sql-database-paas-overview.md)|
 |Модель приобретения|Модель приобретения на основе единиц DTU|[Модель приобретения на основе DTU](database/service-tiers-dtu.md)|
-||Модель приобретения на основе виртуальных ядер|[модель приобретения на основе виртуальное ядро](database/service-tiers-vcore.md)|
+||Модель приобретения на основе виртуальных ядер|[Модель приобретения на основе виртуальных ядер](database/service-tiers-vcore.md)|
 |Параметр развертывания |Отдельная база данных|[Отдельные базы данных](database/single-database-overview.md)|
 ||Эластичный пул|[Эластичный пул](database/elastic-pool-overview.md)|
 |Уровень служб|Базовый, Стандартный, премиум, общего назначения, масштабирование, критически важный для бизнеса|Сведения об уровнях служб в модели Виртуальное ядро см. в разделе [уровни служб базы данных SQL](database/service-tiers-vcore.md#service-tiers). Сведения об уровнях служб в модели DTU см. в разделе [модель DTU](database/service-tiers-dtu.md#compare-the-dtu-based-service-tiers).|
@@ -44,7 +44,7 @@ ms.locfileid: "91619788"
 |Контекст|Термин|Дополнительные сведения|
 |:---|:---|:---|
 |Служба Azure|Управляемый экземпляр SQL Azure|[Управляемый экземпляр SQL](managed-instance/sql-managed-instance-paas-overview.md)|
-|Модель приобретения|Модель приобретения на основе виртуальных ядер|[модель приобретения на основе виртуальное ядро](database/service-tiers-vcore.md)|
+|Модель приобретения|Модель приобретения на основе виртуальных ядер|[Модель приобретения на основе виртуальных ядер](database/service-tiers-vcore.md)|
 |Параметр развертывания |Один экземпляр|[Один экземпляр](managed-instance/sql-managed-instance-paas-overview.md)|
 ||Пул экземпляров (Предварительная версия)|[Пулы экземпляров](managed-instance/instance-pools-overview.md)|
 |Уровень служб|Общего назначения, критически важный для бизнеса|[Уровни служб SQL Управляемый экземпляр](managed-instance/sql-managed-instance-paas-overview.md#service-tiers)|

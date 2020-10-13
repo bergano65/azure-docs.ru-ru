@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.openlocfilehash: 41ea41b4d7c181dad9246653a68c329387ac5381
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "80884687"
 ---
 # <a name="microsoft-identity-platform-authentication-protocols"></a>Протоколы проверки подлинности платформы Microsoft Identity
@@ -31,7 +31,7 @@ ms.locfileid: "80884687"
 * [OpenID Connect 1.0](v2-protocols-oidc.md) — сведения об использовании протокола авторизации OAuth 2.0 для проверки подлинности.
 * [Служба обслуживания вызовов с помощью учетных данных клиента](v2-oauth2-client-creds-grant-flow.md) — сведения об использовании потока предоставления учетных данных клиента OAuth 2.0 для вызовов между службами.
 * [Служба обслуживания вызовов с помощью потока On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md) — сведения об использовании потока On-Behalf-Of OAuth 2.0 для вызовов между службами.
-* [Справочник по протоколу SAML](active-directory-saml-protocol-reference.md) . сведения о профилях единого входа и единого выхода для платформы Microsoft Identity.
+* [Справочник по протоколу SAML](active-directory-saml-protocol-reference.md) . сведения об одном Sign-On и профили SAML единого выхода для платформы Microsoft Identity.
 
 ## <a name="see-also"></a>См. также
 

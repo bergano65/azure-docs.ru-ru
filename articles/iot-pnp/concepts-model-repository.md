@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: 5d07257d1e23ee792aa996e31a2c28c17bc23d34
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91715074"
 ---
 # <a name="azure-iot-model-repository"></a>Репозиторий моделей Интернета вещей Azure
@@ -84,7 +84,7 @@ var response = await httpClient.GetAsync($"/models/{modelId}?api-version=2020-05
 |----|----------|
 |тенантадминистратор|Управление доступом, чтение моделей|
 |Автор|Создание моделей, чтение моделей|
-|Publisher|Публикация моделей, чтение моделей|
+|Издатель|Публикация моделей, чтение моделей|
 
 #### <a name="passing-a-security-token-when-accessing-company-models-with-a-rest-api"></a>Передача маркера безопасности при доступе к моделям компании с помощью REST API
 

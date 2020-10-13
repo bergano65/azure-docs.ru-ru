@@ -16,10 +16,10 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 90cd9605a166a00412ed77caf3727ffb3ad3e1fd
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89262129"
 ---
 # <a name="develop-azure-functions-with-media-services"></a>Разработка Функций Azure с помощью служб мультимедиа
@@ -343,7 +343,7 @@ public static async Task<IAsset> CreateAssetFromBlobAsync(CloudBlockBlob blob, s
 >[!NOTE]
 > Если используется триггер BLOB-объекта в плане потребления, то после того как приложение-функция стало неактивным, обработка новых BLOB-объектов может осуществляться с задержкой до 10 минут. После запуска приложения-функции большие двоичные объекты обрабатываются немедленно. Дополнительные сведения см. в статье о [привязках и триггерах хранилища BLOB-объектов](../../azure-functions/functions-bindings-storage-blob.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 На этом этапе вы готовы начать разработку приложения служб мультимедиа. 
  

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
 ms.openlocfilehash: eea64520dd5440467c911b6de42d8c8c31fc1bde
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87543458"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
@@ -46,7 +46,7 @@ ms.locfileid: "87543458"
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно службы хранилища. Ошибка: 403 RequestDisallowedByPolicy
 
-- **Сведения**. при создании учетной записи хранения с помощью Cloud Shell она не будет выполнена из-за назначения политики Azure администратором. Сообщение об ошибке будет содержать следующее:`The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
+- **Сведения**. при создании учетной записи хранения с помощью Cloud Shell она не будет выполнена из-за назначения политики Azure администратором. Сообщение об ошибке будет содержать следующее: `The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
 - **Решение**. обратитесь к администратору Azure, чтобы удалить или обновить назначение политики Azure, запрещающее создание хранилища.
 
 ### <a name="storage-dialog---error-400-disallowedoperation"></a>Диалоговое окно службы хранилища. Ошибка: 400 DisallowedOperation
@@ -196,4 +196,4 @@ PowerShell.
 Azure Cloud Shell в Azure для государственных организаций доступны только в портал Azure.
 
 >[!Note]
-> Подключение к облакам с незначительным или государственным облаком для Exchange Online в настоящее время не поддерживается.
+> Подключение к GCC-Highным или государственным облакам с облаком для Exchange Online в настоящее время не поддерживается.

@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 04/16/2020
 ms.openlocfilehash: 01dd8422658aa0c8982733e48782efd27c1bf5be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81617842"
 ---
 # <a name="how-to-upgrade-the-azure-monitor-for-vms-dependency-agent"></a>Обновление агента зависимостей Azure Monitor для виртуальных машин
@@ -68,6 +68,6 @@ ms.locfileid: "81617842"
 
 Если Dependency Agent не запускается, просмотрите подробные сведения об ошибке в записях журналов. В агентах Linux каталог журнала — *расположении/var/opt/Microsoft/dependency-Agent/log*. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите отключить мониторинг виртуальных машин в течение определенного периода времени или полностью удалить Azure Monitor для виртуальных машин, см. статью [Отключение мониторинга виртуальных машин в Azure Monitor для виртуальных машин](vminsights-optout.md).

@@ -8,10 +8,10 @@ ms.date: 09/18/2020
 ms.author: thweiss
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: dd1a59c2e6b0656233174c53b08ab013ce73d0f1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91334435"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account"></a>Настройка Приватного канала Azure для учетной записи Azure Cosmos
@@ -98,7 +98,7 @@ ms.locfileid: "91334435"
 1. Найдите частную конечную точку, созданную ранее. В данном случае это **cdbPrivateEndpoint3**.
 1. Перейдите на вкладку **Обзор**, чтобы просмотреть параметры DNS и IP-адреса.
 
-:::image type="content" source="./media/how-to-configure-private-endpoints/private-ip-addresses-portal.png" alt-text="Частные IP-адреса на портале Azure":::
+:::image type="content" source="./media/how-to-configure-private-endpoints/private-ip-addresses-portal.png" alt-text="Выбор параметров для создания частной конечной точки на портале Azure":::
 
 Для каждой частной конечной точки создается несколько IP-адресов.
 
@@ -411,7 +411,7 @@ $deploymentOutput
 
 После успешного развертывания шаблона должны отобразиться выходные данные, аналогичные приведенным ниже. Если частные конечные точки настроены правильно, параметр `provisioningState` должен иметь значение `Succeeded`.
 
-:::image type="content" source="./media/how-to-configure-private-endpoints/resource-manager-template-deployment-output.png" alt-text="Выходные данные развертывания шаблона Resource Manager":::
+:::image type="content" source="./media/how-to-configure-private-endpoints/resource-manager-template-deployment-output.png" alt-text="Выбор параметров для создания частной конечной точки на портале Azure":::
 
 После развертывания шаблона частные IP-адреса резервируются в подсети. Правило брандмауэра учетной записи Azure Cosmos настраивается для приема подключений только от частной конечной точки.
 

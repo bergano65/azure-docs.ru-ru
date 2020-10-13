@@ -9,10 +9,10 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: b660d3a0d49de80ed85cfbdcdf8e28b9828cbf26
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91544862"
 ---
 - Поддерживаются только [ключи RSA для программного обеспечения и HSM](../articles/key-vault/keys/about-keys.md) с размерами 2 048-бит, 3 072-бит и 4 096-bit, без других ключей или размеров.

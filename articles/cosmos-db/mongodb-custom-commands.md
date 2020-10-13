@@ -8,10 +8,10 @@ ms.date: 05/28/2020
 ms.author: jasonh
 ms.custom: devx-track-js
 ms.openlocfilehash: a40be5212fb1335482ec5011d24c8eaf5f3d9a00
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91409686"
 ---
 # <a name="use-mongodb-extension-commands-to-manage-data-stored-in-azure-cosmos-dbs-api-for-mongodb"></a>Используйте команды расширения MongoDB для управления данными, хранящимися в API-интерфейсе Azure Cosmos DB для MongoDB 
@@ -40,7 +40,7 @@ API Azure Cosmos DB для MongoDB совместим с MongoDB Server верс
 |**Поле**|**Тип** |**Описание** |
 |---------|---------|---------|
 | `customAction`   |  `string`  |   Имя пользовательской команды должно быть "CreateDatabase".      |
-| `offerThroughput` | `int`  | Подготовленная пропускная способность, заданная для базы данных. Это необязательный параметр. |
+| `offerThroughput` | `int`  | Подготовленная пропускная способность, заданная для базы данных. Этот параметр является необязательным. |
 | `autoScaleSettings` | `Object` | Требуется для [режима автомасштабирования](provision-throughput-autoscale.md). Этот объект содержит параметры, связанные с режимом автомасштабирования емкость. Можно настроить `maxThroughput` значение, которое описывает наибольшее количество единиц запросов, которое будет динамически увеличиваться в коллекции. |
 
 ### <a name="output"></a>Выходные данные

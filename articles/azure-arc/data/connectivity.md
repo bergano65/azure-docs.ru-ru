@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: 9c1dd6f628e87792808d14db2c7bcc7f050923a3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91713194"
 ---
 # <a name="connectivity-modes-and-requirements"></a>Режимы и требования к подключениям
@@ -28,7 +28,7 @@ ms.locfileid: "91713194"
 
 Важно! Если службы данных, включенные в службу "Дуга Azure", напрямую подключены к Azure, пользователи могут использовать [Azure Resource Manager API-интерфейсы](/rest/api/resources/), Azure CLI и портал Azure для работы со службами данных Arc Azure. Взаимодействие в режиме прямого подключения очень похоже на использование любой другой службы Azure с подготовкой или отменой подготовки, масштабированием, настройкой и т. д. на портал Azure.  Если службы данных с поддержкой дуги Azure были косвенно подключены к Azure, то портал Azure является представлением только для чтения. Вы можете просматривать данные инвентаризации управляемых экземпляров SQL и postgres масштабируемых экземпляров, а также сведения о них, но вы не можете выполнять действия с ними в портал Azure.  В режиме непрямого подключения все действия должны быть выполнены локально с помощью Azure Data Studio, интерфейса командной строки Azure или собственных средств Kubernetes, таких как kubectl.
 
-Кроме того, Azure Active Directory и управление доступом на основе ролей Azure можно использовать только в режиме прямого подключения, поскольку существует зависимость от непрерывного и прямого подключения к Azure для предоставления этой функции.
+Кроме того, Azure Active Directory и Azure Role-Based Access Control можно использовать только в режиме прямого подключения, поскольку существует зависимость от непрерывного и прямого подключения к Azure для предоставления этой функции.
 
 Наконец, некоторые службы, подключенные к Azure, доступны только в том случае, если их можно напрямую доработать, например службы безопасности защитника Azure, контейнерная аналитика и хранилище Azure Backup/BLOB-объектов.
 
@@ -43,7 +43,7 @@ ms.locfileid: "91713194"
 
 ## <a name="feature-availability-by-connectivity-mode"></a>Доступность функций по режиму подключения
 
-|**Возможность**|**Косвенное соединение**|**Подключено напрямую**|
+|**Компонент**|**Косвенное соединение**|**Подключено напрямую**|
 |---|---|---|
 |**Автоматическое обеспечение высокого уровня доступности**|Поддерживается|Поддерживается|
 |**Самостоятельная подготовка**|Поддерживается<br/>Создание можно выполнить с помощью Azure Data Studio, интерфейса командной строки Azure или собственных средств Kubernetes (Helm, kubectl, OC и т. д.) или с помощью службы Arc Azure, поддерживающей Kubernetes Гитопс.|Поддерживается<br/>В дополнение к параметрам создания в режиме косвенного подключения можно также создать с помощью портал Azure, Azure Resource Manager API, Azure CLI или шаблонов ARM. **Ожидание доступности непосредственно подключенного режима**
@@ -82,7 +82,7 @@ ms.locfileid: "91713194"
 
 |**Имя**|**Источник подключения**|**Цель подключения**|**протокол**;|**порт**.|**Может использовать прокси-сервер**|**Аутентификация**|**Примечания**|
 |---|---|---|---|---|---|---|---|
-|**Реестр контейнеров (Майкрософт) (мкр)**|Kubernetes kubelet на каждом из узлов Kubernetes извлекает образы контейнеров.|`mcr.microsoft.com`|HTTPS|443|Да|Нет|В реестре контейнеров Майкрософт размещаются образы контейнеров служб данных, включенные в службу "Дуга Azure".  Вы можете извлечь эти образы из мкр и отправить их в частный реестр контейнеров и настроить процесс развертывания контроллера данных на извлечение образов контейнеров из этого закрытого реестра контейнеров.|
+|**Реестр контейнеров (Майкрософт) (мкр)**|Kubernetes kubelet на каждом из узлов Kubernetes извлекает образы контейнеров.|`mcr.microsoft.com`|HTTPS|443|Да|None|В реестре контейнеров Майкрософт размещаются образы контейнеров служб данных, включенные в службу "Дуга Azure".  Вы можете извлечь эти образы из мкр и отправить их в частный реестр контейнеров и настроить процесс развертывания контроллера данных на извлечение образов контейнеров из этого закрытого реестра контейнеров.|
 |**Azure Resource Manager API**|Компьютер, на котором работает Azure Data Studio, Azure Data CLI или Azure CLI, который подключается к Azure.|`login.microsoftonline.com`<br/>`management.azure.com`<br/>`san-af-eastus-prod.azurewebsites.net`<br/>`san-af-eastus2-prod.azurewebsites.net`<br/>`san-af-australiaeast-prod.azurewebsites.net`<br/>`san-af-centralus-prod.azurewebsites.net`<br/>`san-af-westus2-prod.azurewebsites.net`<br/>`san-af-westeurope-prod.azurewebsites.net`<br/>`san-af-southeastasia-prod.azurewebsites.net`<br/>`san-af-koreacentral-prod.azurewebsites.net`<br/>`san-af-northeurope-prod.azurewebsites.net`<br/>`san-af-westeurope-prod.azurewebsites.net`<br/>`san-af-uksouth-prod.azurewebsites.net`<br/>`san-af-francecentral-prod.azurewebsites.net`|HTTPS|443|Да|Azure Active Directory|Azure Data Studio, интерфейс командной строки Azure и Azure CLI подключаются к Azure Resource Manager API для отправки и извлечения данных в Azure и обратно для некоторых функций.|
 |**Azure Monitor API**|Компьютер, на котором выполняется интерфейс командной строки Azure Data CLI или Azure CLI, который отправляет метрики мониторинга или журналы в Azure Monitor.|`login.microsoftonline.com`<br/>`management.azure.com`<br/>`*.ods.opinsights.azure.com`<br/>`*.oms.opinsights.azure.com`<br/>`*.monitoring.azure.com`|HTTPS|443|Да|Azure Active Directory|Azure Data Studio, интерфейс командной строки Azure и Azure CLI подключаются к Azure Resource Manager API для отправки и извлечения данных в Azure и обратно для некоторых функций.|
 

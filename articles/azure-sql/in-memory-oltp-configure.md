@@ -1,6 +1,6 @@
 ---
-title: Производительность выполняющейся в памяти OLTP улучшает транзакция производительности SQL
-description: Применяйте выполняющуюся в памяти OLTP для повышения производительности транзакций в существующей базе данных в базе данных SQL Azure и Управляемый экземпляр Azure SQL.
+title: In-Memory OLTP улучшает производительность SQL транзакция
+description: Внедрение In-Memory OLTP для повышения производительности транзакций в существующей базе данных в базе данных SQL Azure и Управляемый экземпляр SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.custom: sqldbrb=2
@@ -11,13 +11,13 @@ ms.author: sstein
 ms.reviewer: MightyPen
 ms.date: 11/07/2018
 ms.openlocfilehash: e17e98e784b7453c87814c5cce5c03568f66b1cb
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91619752"
 ---
-# <a name="use-in-memory-oltp-to-improve-your-application-performance-in-azure-sql-database-and-azure-sql-managed-instance"></a>Использование выполняющейся в памяти OLTP для повышения производительности приложения в базе данных SQL Azure и Azure SQL Управляемый экземпляр
+# <a name="use-in-memory-oltp-to-improve-your-application-performance-in-azure-sql-database-and-azure-sql-managed-instance"></a>Использование In-Memory OLTP для повышения производительности приложения в базе данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
 
 [Выполняющуюся в памяти OLTP](in-memory-oltp-overview.md) можно использовать для повышения производительности обработки транзакций, приема данных и сценариев, связанных с временными данными, в базах данных уровней ["Премиум" и "Критически важный для бизнеса"](database/service-tiers-vcore.md), не повышая ценовую категорию.
@@ -80,11 +80,11 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 2. В **обозревателе объектов** щелкните правой кнопкой мыши таблицу, а затем выберите пункт **Memory Optimization Advisor** (Помощник по оптимизации памяти).
 
    Отобразится мастер **Помощник по оптимизации памяти таблицы** .
-3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения можно найти в разделе
+3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения см. в разделе:
 
    * *Контрольный список оптимизации памяти* в [помощнике по оптимизации памяти](/sql/relational-databases/in-memory-oltp/memory-optimization-advisor).
-   * [Конструкции Transact-SQL, не поддерживаемые выполняющейся в памяти OLTP](/sql/relational-databases/in-memory-oltp/transact-sql-constructs-not-supported-by-in-memory-oltp).
-   * [Миграция в выполняющуюся в памяти OLTP](/sql/relational-databases/in-memory-oltp/plan-your-adoption-of-in-memory-oltp-features-in-sql-server).
+   * [Конструкции Transact-SQL, не поддерживаемые In-Memory OLTP](/sql/relational-databases/in-memory-oltp/transact-sql-constructs-not-supported-by-in-memory-oltp).
+   * [Миграция в In-Memory OLTP](/sql/relational-databases/in-memory-oltp/plan-your-adoption-of-in-memory-oltp-features-in-sql-server).
 4. Если в таблице нет неподдерживаемых функций, помощник выполнит фактический перенос схемы и данных автоматически.
 
 ### <a name="manual-t-sql"></a>Создание таблицы вручную с помощью инструкций T-SQL
@@ -172,7 +172,7 @@ CREATE PROCEDURE schemaname.procedurename
 
 Рассмотрите возможность отслеживания влияния, оказываемого компонентом In-Memory в рабочей среде.
 
-* [Мониторинг хранилища в памяти](in-memory-oltp-monitor-space.md).
+* [Мониторинг In-Memoryного хранилища](in-memory-oltp-monitor-space.md).
 * [Мониторинг с помощью динамических административных представлений](database/monitoring-with-dmvs.md)
 
 ## <a name="related-links"></a>Связанные ссылки

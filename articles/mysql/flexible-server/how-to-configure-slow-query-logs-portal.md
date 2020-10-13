@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
 ms.openlocfilehash: e2046673cda17c58153ceb12eee31edb83365092
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91565756"
 ---
 # <a name="configure-and-access-slow-query-logs-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Настройка и доступ к журналам запросов для базы данных Azure для MySQL — гибкого сервера с помощью портал Azure
@@ -39,7 +39,7 @@ ms.locfileid: "91565756"
 1. Измените необходимые параметры (например, `long_query_time`, `log_slow_admin_statements`). Дополнительные параметры см. в документации по [журналам медленных запросов](./concepts-slow-query-logs.md#configure-slow-query-logging) .  
    :::image type="content" source="./media/how-to-configure-slow-query-logs-portal/long-query-time.png" alt-text="Страница параметров сервера.":::
 
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
    :::image type="content" source="./media/how-to-configure-slow-query-logs-portal/save-parameters.png" alt-text="Страница параметров сервера.":::
 
 На странице **Параметры сервера** можно вернуться к списку журналов, закрыв страницу.
@@ -66,7 +66,7 @@ ms.locfileid: "91565756"
 
 Если вы передаете журналы в Azure Monitor журналы (Log Analytics), ознакомьтесь с [примерами запросов](concepts-slow-query-logs.md#analyze-logs-in-azure-monitor-logs) , которые можно использовать для анализа. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 <!-- - See [Access slow query Logs in CLI](howto-configure-server-logs-in-cli.md) to learn how to download slow query logs programmatically.-->
 - Дополнительные сведения о [журналах медленных запросов](concepts-slow-query-logs.md)
 - Дополнительные сведения об определениях параметров и ведении журнала MySQL см. в документации MySQL по [журналам](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).

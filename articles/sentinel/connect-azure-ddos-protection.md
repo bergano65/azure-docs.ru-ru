@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: yelevin
 ms.openlocfilehash: e8e44f69965af1987bd5f023644d966b3caf1c77
-ms.sourcegitcommit: 59ea8436d7f23bee75e04a84ee6ec24702fb2e61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89505877"
 ---
 # <a name="connect-data-from-azure-ddos-protection"></a>Подключение данных из Azure от атак DDoS Protection
@@ -59,7 +59,7 @@ ms.locfileid: "89505877"
 >
 > С этим конкретным соединителем данных индикаторы состояния подключения (цветовая полоса в коллекции соединителей данных и значки подключения рядом с именами типов данных) отображаются как *подключенные* (зеленые), только если данные были приняты в течение последних двух недель. По прошествии двух недель без приема данных соединитель будет отображаться как отключенный. В то время, когда поступает больше данных, состояние *Connected* будет возвращено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как подключить журналы защиты Azure от атак DDoS к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

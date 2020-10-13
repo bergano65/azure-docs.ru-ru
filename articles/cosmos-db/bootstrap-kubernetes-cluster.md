@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: sngun
 ms.openlocfilehash: b9e6e1388465542e9fb3ac69540c981a1fd70d4b
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570128"
 ---
 # <a name="how-to-use-azure-kubernetes-with-azure-cosmos-db-preview"></a>Использование Azure Kubernetes с Azure Cosmos DB (предварительная версия)
@@ -25,7 +25,7 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
 
 Дополнительные сведения об API etcd в Azure Cosmos DB см. в [этой обзорной статье](etcd-api-introduction.md). В этой статье содержатся сведения об использовании [Azure Kubernetes Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md) (aks-engine) для начальной загрузки кластера Kubernetes в Azure, который использует [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/) вместо локально установленного и настроенного хранилища etcd. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Установите [последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) Azure CLI. Вы можете скачать и установить Azure CLI, соответствующий вашей операционной системе.
 
@@ -179,7 +179,7 @@ INFO[0587] Finished ARM Deployment (aks-sg-test-546247491). Succeeded
 
 Имя учетной записи Azure Cosmos будет соответствовать указанному префиксу DNS с добавлением k8s. Вашей учетной записи Azure Cosmos будет автоматически предоставлена база данных **EtcdDB** и контейнер **EtcdData**. В контейнере будут храниться все данные, связанные с etcd. Контейнеру предоставляется определенное количество единиц запроса, и вы сможете [масштабировать (увеличивать/уменьшать) пропускную способность](scaling-throughput.md) на основе рабочей нагрузки. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со сведениями о [работе с базами данных, контейнерами и элементами Azure Cosmos](databases-containers-items.md).
 * Ознакомьтесь со сведениями об [оптимизации затрат на подготовленную пропускную способность](optimize-cost-throughput.md).

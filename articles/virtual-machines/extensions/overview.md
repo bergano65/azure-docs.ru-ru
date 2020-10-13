@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 08/03/2020
 ms.author: amjads
 ms.openlocfilehash: 73738f339bea3e8e075530e5de564c1c0854d283
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87552056"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Расширения и компоненты виртуальной машины Azure
@@ -56,7 +56,7 @@ ms.locfileid: "87552056"
 | Microsoft. recoveryservices. vmsnapshot | [Моментальный снимок для Windows](vmsnapshot-windows.md#troubleshoot-and-support) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о работе агента и расширений Linux см. в статье [расширения и компоненты виртуальной машины Azure для Linux](features-linux.md).
 * Дополнительные сведения о работе гостевого агента и расширений Windows см. в статье [расширения и компоненты виртуальной машины Azure для Windows](features-windows.md).  
 * Сведения об установке гостевого агента Windows см. в статье [Обзор агента виртуальных машин Windows в Azure](agent-windows.md).  

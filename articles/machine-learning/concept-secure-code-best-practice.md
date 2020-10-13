@@ -10,10 +10,10 @@ ms.author: cgronlun
 author: cjgronlund
 ms.date: 11/12/2019
 ms.openlocfilehash: 4bc9a982f6ce77b803a3ba91e050bcda9ec74fed
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91728528"
 ---
 # <a name="secure-code-best-practices-with-azure-machine-learning"></a>Рекомендации по защите кода с помощью Машинное обучение Azure
@@ -60,7 +60,7 @@ __Возможные угрозы__:
 * Подделка межсайтовых запросов (CSRF)
 
 __Устранение рисков, предоставляемых машинное обучение Azure__:
-* Отсутствует. Jupyter и Jupyter Lab — это приложения с открытым исходным кодом, размещенные на Машинное обучение Azure вычислительном экземпляре.
+* Нет. Jupyter и Jupyter Lab — это приложения с открытым исходным кодом, размещенные на Машинное обучение Azure вычислительном экземпляре.
 
 __Рекомендуемые действия__:
 * Убедитесь, что вы доверяете содержимому файлов перед отправкой в студию. При отправке необходимо подтвердить, что выполняется отправка надежных файлов.
@@ -69,6 +69,6 @@ __Рекомендуемые действия__:
 
 Машинное обучение Azure может использоваться в программе Microsoft Azure поощрения. Дополнительные сведения см. по адресу  [https://www.microsoft.com/msrc/bounty-microsoft-azure](https://www.microsoft.com/msrc/bounty-microsoft-azure) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Корпоративная безопасность для Машинного обучения Azure](concept-enterprise-security.md)

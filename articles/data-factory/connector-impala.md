@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
 ms.openlocfilehash: b70db03e03ce914ea1d81d94cd2803a36eccfc88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81418224"
 ---
 # <a name="copy-data-from-impala-by-using-azure-data-factory"></a>Копирование данных из Impala с помощью Фабрики данных Azure
@@ -53,7 +53,7 @@ ms.locfileid: "81418224"
 |:--- |:--- |:--- |
 | type | Для свойства Type необходимо задать значение **Impala**. | Да |
 | host | IP-адрес или имя узла сервера Impala (192.168.222.160).  | Да |
-| порт | TCP-порт, используемый сервером Impala для прослушивания клиентских подключений. Значение по умолчанию — 21050.  | Нет |
+| порт | TCP-порт, используемый сервером Impala для прослушивания клиентских подключений. Значение по умолчанию — 21050.  | нет |
 | authenticationType | Тип проверки подлинности. <br/>Допустимые значения: **Anonymous**, **SASLUsername** и **UsernameAndPassword**. | Да |
 | username | Имя пользователя, используемое для доступа к серверу Impala. Значение по умолчанию является анонимным при использовании SASLUsername.  | Нет |
 | password | Пароль, который соответствует имени пользователя при использовании UsernameAndPassword. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | нет |
