@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: sachins
 ms.openlocfilehash: 291a5850540ea7d7d24a4a544c1eb65183df8ffb
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91667747"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen1"></a>Рекомендации по использованию Azure Data Lake Storage Gen1
@@ -189,7 +189,7 @@ NA/Extracts/ACMEPaperCo/Out/2017/08/14/processed_updates_08142017.csv
 
 В общем случае пакетных данных, обрабатываемых непосредственно в таких базах данных, как Hive или традиционных базах данных SQL, нет необходимости в папке **/in** или **/out**, так как результаты уже выводятся в отдельную папку для таблицы Hive или внешней базы данных. Например, ежедневные извлечения данных от клиентов будут размещаться в их соответствующих папках, а при управлении с помощью фабрики данных Azure, Apache Oozie или Apache Airflow будет ежедневно выполняться задание Hive или Spark для обработки и записи данных в таблицу Hive.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Контроль доступа в Azure Data Lake Storage 1-го поколения](data-lake-store-access-control.md)

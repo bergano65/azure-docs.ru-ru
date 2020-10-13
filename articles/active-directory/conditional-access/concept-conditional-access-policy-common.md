@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 114f26c71ee1aecdb1a0ad3d1c01e558843c0969
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91705064"
 ---
 # <a name="common-conditional-access-policies"></a>Распространенные политики условного доступа
@@ -49,7 +49,7 @@ ms.locfileid: "91705064"
 * [Требование использовать соответствующее устройство](howto-conditional-access-policy-compliant-device.md)
 * [Блокировать доступ, за исключением конкретных приложений](howto-conditional-access-policy-block-access.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Моделирование поведения входа с помощью средства What If условного доступа.](troubleshoot-conditional-access-what-if.md)
 
