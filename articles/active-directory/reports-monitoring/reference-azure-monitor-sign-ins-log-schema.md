@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6a881dee50195fe4995c77d793b4f4b75091d20b
-ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89231118"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Анализ схемы журналов входа в Azure AD в Azure Monitor
@@ -167,7 +167,7 @@ ms.locfileid: "89231118"
 | Расположение | Содержит сведения о местонахождении, в котором выполнялась операция входа. |
 | Свойства | Список всех свойств, связанных с входом. Дополнительные сведения см. в статье [Справочник по API Microsoft Graph](/graph/api/resources/signin?view=graph-rest-beta). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Анализ схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
+* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
 * [Подробнее о журналах платформы Azure](../../azure-monitor/platform/platform-logs-overview.md)
