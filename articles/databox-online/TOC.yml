@@ -165,6 +165,8 @@
               href: azure-stack-edge-gpu-troubleshoot.md
             - name: Проблемы с заказом
               href: azure-stack-edge-troubleshoot-ordering.md
+            - name: Проблемы с активацией
+              href: azure-stack-edge-gpu-troubleshoot-activation.md
             - name: Обращение в службу поддержки Майкрософт
               href: azure-stack-edge-contact-microsoft-support.md
     - name: Заметки о выпуске

@@ -35,7 +35,11 @@
         - name: 0. Развертывание приложения для распознавания объектов и движения
           href: tutorial-video-analytics-deploy.md
         - name: "1.\_Создание приложения для видеоаналитики"
-          href: tutorial-video-analytics-create-app.md
+          items:
+            - name: "Обнаружение объектов и движения (YOLO версии\_3)"
+              href: tutorial-video-analytics-create-app-yolo-v3.md
+            - name: Обнаружение объектов и движения (OpenVINO)
+              href: tutorial-video-analytics-create-app-openvino.md
         - name: "2.\_Настройка устройства IoT Edge"
           items:
             - name: Создание устройства для видеоаналитики в пограничной среде (виртуальная машина Linux)

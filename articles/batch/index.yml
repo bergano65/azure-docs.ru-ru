@@ -8,13 +8,13 @@ metadata:
   ms.topic: landing-page
   author: JnHs
   ms.author: jenhayes
-  ms.date: 09/29/2020
-  ms.openlocfilehash: 40c268ed31cf7360d74c5eb8bebf75756fd76563
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.date: 10/09/2020
+  ms.openlocfilehash: 2b2f1a9dbf8c5621ff83dee9e600575c54e9de28
+  ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 10/09/2020
-  ms.locfileid: "91570477"
+  ms.locfileid: "91931739"
 landingContent:
 - title: Сведения о пакетной службе Azure
   linkLists:
@@ -40,8 +40,12 @@ landingContent:
       url: quick-run-python.md
   - linkListType: concept
     links:
-    - text: Общие сведения о рабочих процессах и функциях для разработчиков
+    - text: Обзор рабочего процесса и функций
       url: batch-service-workflow-features.md
+    - text: Задания и задачи
+      url: jobs-and-tasks.md
+    - text: Узлы и пулы
+      url: nodes-and-pools.md
 - title: Пошаговые руководства
   linkLists:
   - linkListType: tutorial
@@ -50,6 +54,8 @@ landingContent:
       url: tutorial-parallel-dotnet.md
     - text: Параллельная обработка файлов — Python
       url: tutorial-parallel-python.md
+    - text: Скрипты Python с использованием Фабрики данных
+      url: tutorial-run-python-batch-azure-data-factory.md
     - text: Распознавание текста c помощью пакетной службы и службы "Функции"
       url: tutorial-batch-functions.md
     - text: Отрисовка сцен с использованием Arnold
@@ -65,11 +71,13 @@ landingContent:
     - text: Создание учетной записи Пакетной службы
       url: batch-account-create-portal.md
     - text: Создание пулов и управление ими
-      url: batch-custom-images.md
+      url: batch-sig-images.md
     - text: Выполнение задач в параллельном режиме
       url: batch-parallel-node-tasks.md
     - text: Использование пакетов приложений
       url: batch-application-packages.md
+    - text: Запуск контейнерных приложений
+      url: batch-docker-container-workloads.md
   - linkListType: concept
     links:
     - text: Поддерживаемые размеры виртуальных машин
