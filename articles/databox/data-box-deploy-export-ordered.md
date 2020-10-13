@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: alkohli
 ms.openlocfilehash: 5c3f87620c8a2a2d2438d7a5630541c0f76f9f17
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91575577"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box-preview"></a>Учебник. создание порядка экспорта для Azure Data Box (Предварительная версия)
@@ -60,7 +60,7 @@ Azure Data Box — это гибридное решение, которое по
 
    ![Создайте ресурс](media/data-box-deploy-export-ordered/azure-data-box-export-00b.png)
 
-3. Выберите **Создать**.
+3. Нажмите кнопку **создания**.
 
    ![Создание Azure Data Box](media/data-box-deploy-export-ordered/azure-data-box-export-00c.png)
 
@@ -168,7 +168,7 @@ Azure Data Box — это гибридное решение, которое по
 
    ![Снимок экрана: вкладка "создать контейнер" с выбранным параметром "частный" (нет анонимного доступа).](media/data-box-deploy-export-ordered/azure-data-box-export-sms-use-xml-file-04.png)
 
-4. Выберите **Создать**.
+4. Нажмите кнопку **создания**.
 
    ![Снимок экрана вкладки "новый контейнер" с параметром создания "вызываемый".](media/data-box-deploy-export-ordered/azure-data-box-export-sms-use-xml-file-07.png)
 
@@ -256,7 +256,7 @@ Data Box копирует данные из исходных учетных за
 
 В следующей таблице приведены примеры допустимых путей к большим двоичным объектам.
 
-   | Выбор | Путь к BLOB-объекту | Description |
+   | Выбор | Путь к BLOB-объекту | Описание |
    | --- | --- | --- |
    | Начинается с |/ |Экспорт всех blob-объектов в учетной записи хранения |
    | Начинается с |/$root/ |Экспорт всех blob-объектов в корневом контейнере |

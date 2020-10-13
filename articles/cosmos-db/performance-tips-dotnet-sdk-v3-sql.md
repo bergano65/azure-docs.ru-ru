@@ -8,10 +8,10 @@ ms.date: 06/16/2020
 ms.author: jawilley
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: f8e610531eaf3e7e5dbee9c40c88683a05029303
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91802996"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
@@ -284,7 +284,7 @@ while (queryable.HasMoreResults)
 
 Плата за запрос (т. е. затраты на обработку запросов) указанной операции напрямую соотносится с размером документа. Операции с большими документами изменяют больше операций с малыми документами.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Пример приложения, который используется для оценки Azure Cosmos DB для высокопроизводительных сценариев на нескольких клиентских компьютерах, см. в статье [Тестирование производительности и масштабирования с помощью Azure Cosmos DB](performance-testing.md).
 
 Дополнительные сведения о создании приложения с высокой масштабируемостью и производительностью см. в статье [Partitioning and scaling in Azure Cosmos DB](partition-data.md) (Секционирование и масштабирование в Azure Cosmos DB).

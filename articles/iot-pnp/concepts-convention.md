@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: 8b5492a737b733f486455507a8a813b5d583d453
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91573843"
 ---
 # <a name="iot-plug-and-play-conventions"></a>Соглашения IoT Plug and Play
@@ -338,7 +338,7 @@ ms.locfileid: "91573843"
 
 На устройстве или модуле в интерфейсах с несколькими компонентами имена команд используются в следующем формате: `componentName*commandName` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали о соглашениях IoT Plug and Play, ниже приведены некоторые дополнительные ресурсы.
 

@@ -8,10 +8,10 @@ ms.date: 06/29/2020
 ms.custom: fasttrack-edit
 author: palma21
 ms.openlocfilehash: 33355251a06ba076be3677b84e383793f9f25193
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570383"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Управление исходящим трафиком для узлов кластера в службе Azure Kubernetes (AKS)
@@ -49,7 +49,7 @@ ms.locfileid: "91570383"
 
 | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
-| **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. Это не требуется для [частных кластеров](private-clusters.md)|
+| **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | Протокол UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. Это не требуется для [частных кластеров](private-clusters.md)|
 | **`*:9000`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Or* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. Это не требуется для [частных кластеров](private-clusters.md) |
 | **`*:123`** или **`ntp.ubuntu.com:123`** (при использовании сетевых правил брандмауэра Azure)  | UDP      | 123     | Требуется для синхронизации времени по протоколу NTP на узлах Linux.                 |
 | **`CustomDNSIP:53`** `(if using custom DNS servers)`                             | UDP      | 53      | Если вы используете пользовательские DNS-серверы, необходимо убедиться, что они доступны для узлов кластера. |
@@ -76,7 +76,7 @@ ms.locfileid: "91570383"
 
 | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
-| **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.Region:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.Region:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | Протокол UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:9000`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Or* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:22`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:22`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:22`** <br/> *Or* <br/> **`APIServerIP:22`** `(only known after cluster creation)`  | TCP           | 22      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:123`** или **`ntp.ubuntu.com:123`** (при использовании сетевых правил брандмауэра Azure)  | UDP      | 123     | Требуется для синхронизации времени по протоколу NTP на узлах Linux.                 |
@@ -105,7 +105,7 @@ ms.locfileid: "91570383"
 
 | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
-| **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | Протокол UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:9000`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Or* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:123`** или **`ntp.ubuntu.com:123`** (при использовании сетевых правил брандмауэра Azure)  | UDP      | 123     | Требуется для синхронизации времени по протоколу NTP на узлах Linux.                 |
 | **`CustomDNSIP:53`** `(if using custom DNS servers)`                             | UDP      | 53      | Если вы используете пользовательские DNS-серверы, необходимо убедиться, что они доступны для узлов кластера. |
@@ -773,13 +773,13 @@ az network firewall nat-rule create --collection-name exampleset --destination-a
 az group delete -g $RG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, какие порты и адреса разрешить, если требуется ограничить исходящий трафик для кластера. Вы также узнали, как защитить исходящий трафик с помощью брандмауэра Azure. 
 
 При необходимости вы можете обобщить приведенные выше шаги, чтобы перенаправить трафик в предпочтительное решение для [исходящего трафика, следуя `userDefinedRoute` документации по типу исходящих](egress-outboundtype.md)сообщений.
 
-Если необходимо ограничить способ обмена данными между собой и ограничениями трафика "Восток-Западная" в кластере, см. раздел [Защита трафика между модулями Pod с помощью сетевых политик в AKS][network-policy].
+Если необходимо ограничить способ взаимодействия между собой и East-West ограничения трафика в кластере, см. раздел [Защита трафика между модулями Pod с помощью сетевых политик в AKS][network-policy].
 
 <!-- LINKS - internal -->
 [aks-quickstart-cli]: kubernetes-walkthrough.md

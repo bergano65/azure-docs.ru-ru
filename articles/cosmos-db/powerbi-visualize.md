@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: sngun
 ms.openlocfilehash: fc3ca5fdde464ba63671512a6ebecd2c314cb192
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570831"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
@@ -25,7 +25,7 @@ ms.locfileid: "91570831"
 > [!NOTE]
 > Подключение к Azure Cosmos DB с помощью соединителя Power BI в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и Gremlin API.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед выполнением инструкций в этом руководстве по Power BI убедитесь в наличии доступа к следующим ресурсам:
 
 * [загруженной последней версии Power BI Desktop](https://powerbi.microsoft.com/desktop);
@@ -201,7 +201,7 @@ For a scheduled refresh, do the following.
 5. Expand **Schedule Refresh** and set up the schedule you want to refresh the dataset. 
 6. Click **Apply** and you are done setting up the scheduled refresh.
 -->
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 * Дополнительные сведения об Azure Cosmos DB см. на [целевой странице документации по Azure Cosmos DB](https://azure.microsoft.com/documentation/services/cosmos-db/).
 

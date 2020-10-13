@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: b740c8ee7c28bfeeaecc42121d0c7ce4a323ab3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9e31f902d36cf84fc559337f3c69529cf1c014b
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330831"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91949128"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "91330831"
 | Microsoft. Адхибридхеалссервице<sup>1</sup> | [Azure Active Directory](../../active-directory/index.yml) |
 | Microsoft.Advisor | [Помощник по Azure](../../advisor/index.yml) |
 | Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
-| Microsoft.AnalysisServices | [Службы Azure Analysis Services](../../analysis-services/index.yml) |
+| Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
 | Microsoft.ApiManagement | [Управление API](../../api-management/index.yml) |
 | Microsoft.AppConfiguration | [Конфигурация приложений Azure](../../azure-app-configuration/index.yml) |
 | Microsoft.AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
@@ -53,7 +53,7 @@ ms.locfileid: "91330831"
 | Microsoft.ClassicNetwork | Виртуальная сеть классической модели развертывания |
 | Microsoft.ClassicStorage | Хранилище классической модели развертывания |
 | Microsoft. Классиксубскриптион<sup>1</sup> | Классическая модель развертывания |
-| Microsoft.CognitiveServices | [Службы Cognitive Services](../../cognitive-services/index.yml) |
+| Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
 | Microsoft. Commerce<sup>1</sup> | core |
 | Microsoft.Compute; | [Виртуальные машины](../../virtual-machines/index.yml)<br />[Наборы для масштабирования виртуальных машин](../../virtual-machine-scale-sets/index.yml) |
 | Microsoft. потребление<sup>1</sup> | [Управление затратами](/azure/cost-management/) |
@@ -96,7 +96,7 @@ ms.locfileid: "91330831"
 | Microsoft.HardwareSecurityModules | [Выделенный модуль HSM Azure](../../dedicated-hsm/index.yml) |
 | Microsoft.HDInsight | [HDInsight](../../hdinsight/index.yml) |
 | Microsoft.HealthcareApis | [Azure API для FHIR](../../healthcare-apis/index.yml) |
-| Microsoft.HybridCompute | [Дуга Azure](../../azure-arc/index.yml) |
+| Microsoft.HybridCompute | [Azure Arc](../../azure-arc/index.yml) |
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
 | Microsoft. Хибриднетворк  | [Зоны частного периметра](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
@@ -110,7 +110,7 @@ ms.locfileid: "91330831"
 | Microsoft.Kusto | [Azure Data Explorer](/azure/data-explorer/) |
 | Microsoft.LabServices | [Службы лабораторий Azure](../../lab-services/index.yml) |
 | Microsoft.Logic | [Logic Apps](../../logic-apps/index.yml) |
-| Microsoft.MachineLearning | [Студия машинного обучения](../../machine-learning/studio/index.yml) |
+| Microsoft.MachineLearning | [Студия машинного обучения](../../machine-learning/classic/index.yml) |
 | Microsoft.MachineLearningServices | [Машинное обучение Azure](../../machine-learning/index.yml) |
 | Microsoft.Maintenance | [Обслуживание Azure](../../virtual-machines/maintenance-control-cli.md) |
 | Microsoft.ManagedIdentity | [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/index.yml) |
@@ -124,7 +124,7 @@ ms.locfileid: "91330831"
 | Microsoft.Media | [Службы мультимедиа](../../media-services/index.yml) |
 | Microsoft.Microservices4Spring | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
 | Microsoft.Migrate | [Служба "Миграция Azure"](../../migrate/migrate-services-overview.md) |
-| Microsoft.MixedReality | [Пространственные привязки Azure.](../../spatial-anchors/index.yml) |
+| Microsoft.MixedReality | [Пространственные привязки Azure](../../spatial-anchors/index.yml) |
 | Microsoft.NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
 | Microsoft.Network. | [Шлюз приложений](../../application-gateway/index.yml)<br />[Бастион Azure](../../bastion/index.yml)<br />[Защита от атак DDoS Azure](../../virtual-network/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Брандмауэр Azure](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Приватный канал Azure](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Наблюдатель за сетями](../../network-watcher/index.yml)<br />[Диспетчер трафика](../../traffic-manager/index.yml)<br />[Виртуальная сеть](../../virtual-network/index.yml)<br />[Виртуальная глобальная сеть](../../virtual-wan/index.yml)<br />[VPN-шлюз](../../vpn-gateway/index.yml)<br /> |
 | Microsoft. Notebooks | [Записные книжки Azure](https://notebooks.azure.com/help/introduction) |
@@ -186,6 +186,6 @@ ms.locfileid: "91330831"
 
 <sup>1</sup> зарегистрировано по умолчанию
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о поставщиках ресурсов, включая регистрацию поставщика ресурсов, см. в статье [поставщики и типы ресурсов Azure](resource-providers-and-types.md).

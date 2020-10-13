@@ -7,10 +7,10 @@ author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
 ms.openlocfilehash: 714a43ec197ac150488d4443c1eb6fe1be1da232
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91575526"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
@@ -87,7 +87,7 @@ Get-Job -Command "New-AzOperationalInsightsCluster*" | Format-List -Property *
 
 **REST**
 
-*Обращение* 
+*Вызов* 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
 Authorization: Bearer <token>
@@ -116,7 +116,7 @@ Content-type: application/json
 
 Подготовка кластера Log Analytics занимает некоторое время. Проверить состояние подготовки можно несколькими способами.
 
-- Выполните команду PowerShell Get-Азоператионалинсигхтсклустер с именем группы ресурсов и проверьте свойство ProvisioningState. Значение *провисионингаккаунт* во время подготовки и *успешного* завершения.
+- Выполните команду PowerShell Get-AzOperationalInsightsCluster с именем группы ресурсов и проверьте свойство ProvisioningState. Значение *провисионингаккаунт* во время подготовки и *успешного* завершения.
   ```powershell
   New-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} 
   ```
@@ -184,7 +184,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} -Cl
 
 Пример: 
 
-*Обращение*
+*Вызов*
 
 ```rst
 PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
@@ -220,7 +220,7 @@ Content-type: application/json
 
 - Скопируйте значение URL-адреса Azure-AsyncOperation из ответа и выполните проверку состояния асинхронных операций. 
 
-   ИЛИ
+   OR
 
 - Отправьте запрос GET на ресурс *Кластер* и просмотрите свойства *KeyVaultProperties*. В ответе должны возвращаться недавно обновленные сведения об идентификаторе ключа.
 
@@ -404,7 +404,7 @@ Authorization: Bearer <token>
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [log Analytics выставлении счетов за выделенный кластер](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)
 - Сведения о [правильном проектировании рабочих областей log Analytics](../platform/design-logs-deployment.md)

@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 09/22/2020
 author: jluk
 ms.openlocfilehash: fd4f79e0cae5028e4bbaa8a4f5115d5a767dcf54
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91368861"
 ---
-# <a name="secure-pods-with-azure-policy"></a>Защита модулей Pod с помощью политики Azure
+# <a name="secure-pods-with-azure-policy"></a>Защита групп pod с помощью Политики Azure
 
 Чтобы повысить уровень безопасности кластера AKS, вы можете контролировать предоставляемые модули Pod и, если что-либо работает с политикой компании. Этот доступ определяется с помощью встроенных политик, предоставляемых [надстройкой политики Azure для AKS][kubernetes-policy-reference]. Обеспечивая дополнительный контроль над аспектами безопасности спецификации Pod, например привилегированными привилегиями, обеспечивает более строгое соответствие безопасности и видимость того, что развертывается в кластере. Если модуль Pod не соответствует условиям, указанным в политике, политика Azure может запретить запуск или пометить нарушение. В этой статье показано, как использовать политику Azure для ограничения развертывания модулей Pod в AKS.
 
@@ -315,7 +315,7 @@ az aks disable-addons --addons azure-policy --name MyAKSCluster --resource-group
 | [Политика безопасности Pod "Стандартный" — "базовый"/"по умолчанию"](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline-default) | Пользователь устанавливает базовый ресурс политики безопасности Pod. | Политика Azure предоставляет [встроенную базовую инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2Fa8640138-9b0a-4a28-b8cb-1666c838647d) , которая сопоставляется с базовой политикой безопасности Pod.
 | [Политика безопасности Pod — ограничена по стандарту](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted) | Пользователь устанавливает ресурс с ограничением политики безопасности Pod. | Политика Azure предоставляет [встроенную ограниченную инициативу](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2F42b8ef37-b724-4e24-bbc8-7a7708edfe00) , которая сопоставляется с ограниченной политикой безопасности Pod.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как применить политику Azure, которая запрещает развертывание привилегированных модулей Pod, чтобы предотвратить использование привилегированного доступа. Существует множество политик, которые можно применять, например политики, ограничивающие использование томов. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам Azure для Kubernetes][kubernetes-policy-reference].
 

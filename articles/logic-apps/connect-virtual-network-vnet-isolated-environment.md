@@ -7,10 +7,10 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.openlocfilehash: 49248575cb10f3df746b9ba484244e4702fb5d72
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91369014"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)

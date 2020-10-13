@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 08/25/2020
 ms.author: raynew
-ms.openlocfilehash: dc931b910981578a3257c9131bea93cd836d1def
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 83cd36683a0487f13ab5707e4b1534cc7f20a88a
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945169"
+ms.locfileid: "91948533"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Поддержка перемещения ресурсов Azure в разных регионах
 
@@ -180,7 +180,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | servers | Нет |
+> | servers | нет |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 
@@ -194,7 +194,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | configurationstores | Нет | 
+> | configurationstores | нет | 
 
 ## <a name="microsoftappservice"></a>Microsoft.AppService
 
@@ -312,7 +312,7 @@ ms.locfileid: "91945169"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | cdnwebapplicationfirewallpolicies | нет |
-> | профили | Нет | 
+> | профили | нет | 
 > | profiles / endpoints | нет | 
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
@@ -372,7 +372,7 @@ ms.locfileid: "91945169"
 > | hostgroups | нет | 
 > | hostgroups / hosts | нет | 
 > | images | нет | 
-> | proximityplacementgroups | Нет | 
+> | proximityplacementgroups | нет | 
 > | restorepointcollections | нет | 
 > | sharedvmimages | нет | 
 > | sharedvmimages / versions | нет | 
@@ -448,7 +448,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | resourceproviders | Нет | 
+> | resourceproviders | нет | 
 
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 
@@ -560,7 +560,7 @@ ms.locfileid: "91945169"
 > | ------------- | ----------- |
 > | servergroups | нет | 
 > | servers | Для перемещения существующего сервера можно использовать реплику чтения между регионами. Дополнительные [сведения](../../postgresql/howto-move-regions-portal.md).
-> | serversv2 | Нет | 
+> | serversv2 | нет | 
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
 
@@ -569,10 +569,10 @@ ms.locfileid: "91945169"
 > | ------------- | ----------- |
 > | artifactsources | нет | 
 > | rollouts | нет |  
-> | servicetopologies | Нет | 
-> | servicetopologies / services | Нет |  
-> | servicetopologies / services / serviceunits | Нет | 
-> | steps | Нет | 
+> | servicetopologies | нет | 
+> | servicetopologies / services | нет |  
+> | servicetopologies / services / serviceunits | нет | 
+> | steps | нет | 
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
@@ -581,16 +581,16 @@ ms.locfileid: "91945169"
 > | ------------- | ----------- |
 > | elasticpools | Нет. Ресурс не предоставлен.
 > | elasticpools / iothubtenants | Нет. Ресурс не предоставлен.
-> | iothubs | Да. [Дополнительные сведения](../../iot-hub/iot-hub-how-to-clone.md)
-> | provisioningservices | Нет | 
+> | iothubs | Да. [Подробнее](../../iot-hub/iot-hub-how-to-clone.md)
+> | provisioningservices | нет | 
 
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | controllers | Нет | 
-> | Кластер AKS | Нет<br/><br/> Дополнительные [сведения](../../dev-spaces/faq.md#can-i-migrate-my-aks-cluster-with-azure-dev-spaces-to-another-region) о переходе в другой регион.
+> | controllers | нет | 
+> | Кластер AKS | нет<br/><br/> Дополнительные [сведения](../../dev-spaces/faq.md#can-i-migrate-my-aks-cluster-with-azure-dev-spaces-to-another-region) о переходе в другой регион.
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
@@ -599,8 +599,8 @@ ms.locfileid: "91945169"
 > | ------------- | ----------- |
 > | labcenters | нет | 
 > | labs | нет | 
-> | labs / environments | Нет |  
-> | labs / servicerunners | Нет | 
+> | labs / environments | нет |  
+> | labs / servicerunners | нет | 
 > | labs / virtualmachines | нет |  
 > | schedules | нет |  
 
@@ -697,7 +697,7 @@ ms.locfileid: "91945169"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | accounts | Нет. [Подробнее.](../../azure-monitor/faq.md#how-do-i-move-an-application-insights-resource-to-a-new-region)
-> | actiongroups |  Нет | 
+> | actiongroups |  нет | 
 > | activitylogalerts | нет | 
 > | alertrules |  нет | 
 > | autoscalesettings |  нет | 
@@ -707,8 +707,8 @@ ms.locfileid: "91945169"
 > | notificationgroups | нет | 
 > | notificationrules | нет | 
 > | scheduledqueryrules |  нет | 
-> | webtests |  Нет | 
-> | workbooks |  Нет |  
+> | webtests |  нет | 
+> | workbooks |  нет |  
 
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
@@ -717,7 +717,7 @@ ms.locfileid: "91945169"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | checknameavailability |  Нет.<br/><br/> IoT Central работает с географическими и не регионами.
-> | graph | Нет
+> | graph | нет
 
 ## <a name="microsoftiothub"></a>Microsoft.IoTHub
 
@@ -777,10 +777,10 @@ ms.locfileid: "91945169"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | hostingenvironments | нет | 
-> | integrationaccounts |  Нет |  
+> | integrationaccounts |  нет |  
 > | integrationserviceenvironments | нет | 
 > | isolatedenvironments | нет | 
-> | workflows |  Нет |  
+> | workflows |  нет |  
 
 ## <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
 
@@ -898,8 +898,8 @@ ms.locfileid: "91945169"
 > | applicationsecuritygroups |  нет |  
 > | azurefirewalls |  нет |  
 > | bastionhosts | нет | 
-> | connections |  Нет | 
-> | ddoscustompolicies |  Нет | 
+> | connections |  нет | 
+> | ddoscustompolicies |  нет | 
 > | ddosprotectionplans | нет | 
 > | dnszones |  нет | 
 > | expressroutecircuits | нет | 
@@ -911,23 +911,23 @@ ms.locfileid: "91945169"
 > | loadbalancers | Да <br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения внутренних и внешних подсистем балансировки нагрузки. |
 > | localnetworkgateways |  нет | 
 > | natgateways |  нет | 
-> | networkintentpolicies |  Нет | 
+> | networkintentpolicies |  нет | 
 > | networkinterfaces | Да <br/><br/> Перемещение сетевых карт с помощью перемещения [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) . | 
 > | networkprofiles | нет | 
 > | networksecuritygroups | Да <br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения групп безопасности сети (нгсс). | 
 > | networkwatchers |  нет |  
-> | networkwatchers / connectionmonitors |  Нет | 
+> | networkwatchers / connectionmonitors |  нет | 
 > | нетворкватчерс/lenses |  нет | 
 > | networkwatchers / pingmeshes |  нет | 
 > | p2svpngateways | нет | 
 > | privatednszones |  нет |  
 > | privatednszones / virtualnetworklinks |  нет |  
-> | privateendpoints | Нет | 
+> | privateendpoints | нет | 
 > | privatelinkservices | нет | 
 > | publicipaddresses | Да<br/><br/> Используйте перемещение [ресурсов Azure](../../resource-mover/tutorial-move-region-virtual-machines.md) для перемещения общедоступных IP-адресов. |
-> | publicipprefixes | Нет | 
+> | publicipprefixes | нет | 
 > | routefilters | нет | 
-> | routetables |  Нет | 
+> | routetables |  нет | 
 > | serviceendpointpolicies |  нет | 
 > | trafficmanagerprofiles |  нет | 
 > | virtualhubs | нет | 
@@ -937,7 +937,7 @@ ms.locfileid: "91945169"
 > | virtualwans | нет | 
 > | vpngateways (Virtual WAN) | нет | 
 > | vpnsites (Virtual WAN) | нет | 
-> | webapplicationfirewallpolicies |  Нет | 
+> | webapplicationfirewallpolicies |  нет | 
 
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
@@ -945,8 +945,8 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | пространства имен |  Нет | 
-> | namespaces / notificationhubs |  Нет |  
+> | пространства имен |  нет | 
+> | namespaces / notificationhubs |  нет |  
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
@@ -991,7 +991,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | workspacecollections |  Нет | 
+> | workspacecollections |  нет | 
 
 ## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
 
@@ -1049,7 +1049,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | flows |  Нет |  
+> | flows |  нет |  
 > | jobcollections |  нет | 
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
@@ -1057,7 +1057,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | searchservices |  Нет | 
+> | searchservices |  нет | 
 
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
@@ -1065,7 +1065,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | iotsecuritysolutions |  Нет | 
+> | iotsecuritysolutions |  нет | 
 > | плайбукконфигуратионс | нет | 
 
 ## <a name="microsoftservermanagement"></a>Microsoft.ServerManagement
@@ -1122,8 +1122,8 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | appliancedefinitions | Нет | 
-> | appliances | Нет | 
+> | appliancedefinitions | нет | 
+> | appliances | нет | 
 > | applicationdefinitions | нет | 
 > | веб-масштабированием; | нет | 
 > | jitrequests | нет | 
@@ -1134,11 +1134,11 @@ ms.locfileid: "91945169"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | instancepools | нет | 
-> | managedinstances | Да <br/><br/> [Дополнительные сведения](/azure/azure-sql/database/move-resources-across-regions) о перемещении управляемых экземпляров между регионами. | 
+> | managedinstances | Да <br/><br/> [Дополнительные сведения](../../azure-sql/database/move-resources-across-regions.md) о перемещении управляемых экземпляров между регионами. | 
 > | managedinstances / databases | Да | 
 > | servers | Да | 
-> | servers / databases | Да <br/><br/> [Узнайте больше](/azure/azure-sql/database/move-resources-across-regions) о перемещении баз данных между регионами.<br/><br/> [Дополнительные сведения](../../resource-mover/tutorial-move-region-sql.md) об использовании средства перемещения ресурсов Azure для перемещения баз данных SQL Azure.  | 
-> | servers / elasticpools | Да <br/><br/> [Узнайте больше](/azure/azure-sql/database/move-resources-across-regions) о перемещении пулов эластичных БД по регионам.<br/><br/> [Узнайте больше](../../resource-mover/tutorial-move-region-sql.md) об использовании перемещения ресурсов Azure для перемещения эластичных ПУЛОВ Azure SQL.  | 
+> | servers / databases | Да <br/><br/> [Узнайте больше](../../azure-sql/database/move-resources-across-regions.md) о перемещении баз данных между регионами.<br/><br/> [Дополнительные сведения](../../resource-mover/tutorial-move-region-sql.md) об использовании средства перемещения ресурсов Azure для перемещения баз данных SQL Azure.  | 
+> | servers / elasticpools | Да <br/><br/> [Узнайте больше](../../azure-sql/database/move-resources-across-regions.md) о перемещении пулов эластичных БД по регионам.<br/><br/> [Узнайте больше](../../resource-mover/tutorial-move-region-sql.md) об использовании перемещения ресурсов Azure для перемещения эластичных ПУЛОВ Azure SQL.  | 
 > | virtualclusters | Да | 
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
@@ -1147,7 +1147,7 @@ ms.locfileid: "91945169"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | sqlvirtualmachinegroups |  нет |  
-> | sqlvirtualmachines |  Нет |  
+> | sqlvirtualmachines |  нет |  
 
 ## <a name="microsoftsqlvm"></a>Microsoft.SqlVM
 
@@ -1203,7 +1203,7 @@ ms.locfileid: "91945169"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | streamingjobs |  Нет |  
+> | streamingjobs |  нет |  
 
 
 ## <a name="microsoftstreamanalyticsexplorer"></a>Microsoft.StreamAnalyticsExplorer
@@ -1275,12 +1275,12 @@ ms.locfileid: "91945169"
 > | ------------- | ----------- |
 > | certificates | нет | 
 > | connectiongateways |  нет |  
-> | connections |  Нет |  
+> | connections |  нет |  
 > | customapis |  нет | 
 > | hostingenvironments | нет | 
 > | serverfarms |  нет |  
 > | sites |  нет | 
-> | sites / premieraddons |  Нет |  
+> | sites / premieraddons |  нет |  
 > | sites / slots |  нет |  
 
 

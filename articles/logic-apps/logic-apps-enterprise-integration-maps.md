@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/06/2019
 ms.openlocfilehash: 62c3d4533dd04dbb5a2ce0c73afa52b81d433913
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570786"
 ---
 # <a name="transform-xml-with-maps-in-azure-logic-apps-with-enterprise-integration-pack"></a>Преобразование XML с помощью карт в Azure Logic Apps с использованием Пакета интеграции Enterprise
@@ -23,7 +23,7 @@ ms.locfileid: "91570786"
 
 Сведения об ограничениях, связанных с учетными записями интеграции и артефактами, такими как карты, см. в статье [Ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -344,7 +344,7 @@ the map appears in the **Maps** list.
 
 1. Чтобы подтвердить удаление карты, щелкните **Да**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)  
 * [Дополнительные сведения о схемах](../logic-apps/logic-apps-enterprise-integration-schemas.md)

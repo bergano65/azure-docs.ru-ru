@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/29/2020
 ms.author: duau
 ms.openlocfilehash: dac9df23209fa93b8060ad80d58fd66f7a356ecd
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91651485"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
@@ -63,7 +63,7 @@ ms.locfileid: "91651485"
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/validate.png" alt-text="Страница &quot;Основные&quot;":::
 
-1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
+1. Нажмите кнопку **создания**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 
 ## <a name="generate-the-letter-of-authorization-loa"></a><a name="authorization"></a>Создание письма авторизации (определения гарантии)
 
@@ -109,8 +109,8 @@ ms.locfileid: "91651485"
 
    :::image type="content" source="./media/how-to-expressroute-direct-portal/review.png" alt-text="Страница &quot;Основные&quot;":::
 
-1. Выберите **Создать**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
+1. Нажмите кнопку **создания**. Вы увидите сообщение о том, что развертывание выполняется. Состояние будет отображаться на этой странице при создании ресурсов. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании ExpressRoute Direct см. в [обзоре](expressroute-erdirect-about.md).

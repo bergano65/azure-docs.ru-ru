@@ -10,15 +10,15 @@ ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
 ms.openlocfilehash: 0ed958d24a7ff499c8cf33974648afb0f4e0a81d
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91367996"
 ---
 # <a name="choose-parameters-to-optimize-your-algorithms-in-machine-learning-studio-classic"></a>Выбор параметров для оптимизации алгоритмов в Машинное обучение Studio (классическая модель)
 
-**применимо к:** ![ Применяется к. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ не применяется к.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)  
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../compare-azure-ml-to-studio-classic.md)
 
 В этом разделе описывается, как выбрать правый набор параметров для алгоритма в Машинное обучение Azure Studio (классическая модель). В большинстве алгоритмов машинного обучения есть параметры, которые необходимо настроить. Например, это требуется сделать при обучении модели. Эффективность обученной модели зависит от выбранных для нее параметров. Процесс определения оптимального набора параметров называется *выбором модели*.
 

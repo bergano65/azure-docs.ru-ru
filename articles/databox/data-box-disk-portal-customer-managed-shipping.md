@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 05/20/2020
 ms.author: alkohli
 ms.openlocfilehash: c4b3479e5728c32e66bc40f950bc948bf61dce42
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91575169"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-disk-in-the-azure-portal"></a>Использование функции самоуправляемой доставки для Дисков Azure Data Box на портале Azure
@@ -43,7 +43,7 @@ ms.locfileid: "91575169"
 
 3. После того как вы указали адрес доставки, проверьте его и завершите заказ.
 
-   ![Снимок экрана: диалоговое окно "Добавление адреса доставки" с параметрами "доставка с помощью" и "добавить адрес доставки".](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
+   ![Снимок экрана диалогового окна добавления адреса доставки с параметрами доставки и добавления адреса доставки.](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-2.png)
 
 4. После подготовки устройства и получения уведомления по электронной почте можно запланировать отправку. В заказе на Диск Azure Data Box перейдите в раздел **Обзор** и выберите **Запланировать вывоз**.
 

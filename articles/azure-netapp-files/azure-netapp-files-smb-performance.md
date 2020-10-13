@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: b-juche
-ms.openlocfilehash: 6a7bf07359344e26280021a6a55eecc5b96b7a86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a07c6ae48cdca68a95db7770d90076eb8f10f95
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653695"
+ms.locfileid: "91929462"
 ---
 # <a name="faqs-about-smb-performance-for-azure-netapp-files"></a>Часто задаваемые вопросы о производительности SMB для Azure NetApp Files
 
@@ -39,7 +39,7 @@ ms.locfileid: "91653695"
 
 ## <a name="which-windows-versions-support-smb-multichannel"></a>Какие версии Windows поддерживают многоканальный протокол SMB?
 
-Windows поддерживает многоканальный протокол SMB с Windows 2012 для обеспечения лучшей производительности.  Дополнительные сведения см. в статье [развертывание многоканального протокола SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3Dws.11)) и [основы многоканального SMB](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/) . 
+Windows поддерживает многоканальный протокол SMB с Windows 2012 для обеспечения лучшей производительности.  Дополнительные сведения см. в статье [развертывание многоканального протокола SMB](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3Dws.11)) и [основы многоканального SMB](/archive/blogs/josebda/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0) . 
 
 
 ## <a name="does-my-azure-virtual-machine-support-rss"></a>Поддерживает ли моя виртуальная машина Azure поддержку RSS?
@@ -132,7 +132,7 @@ Azure размещает ограничения сетевой частоты д
 
 ## <a name="is-accelerated-networking-recommended"></a>Рекомендуется ли использовать ускоренную сеть?
 
-Для максимальной производительности рекомендуется настроить [ускоренную сеть](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-powershell) там, где это возможно. Учитывайте следующие соображения.  
+Для максимальной производительности рекомендуется настроить [ускоренную сеть](../virtual-network/create-vm-accelerated-networking-powershell.md) там, где это возможно. Учитывайте следующие соображения.  
 
 * Портал Azure по умолчанию включает ускоренную сеть для виртуальных машин, поддерживающих эту функцию.  Однако другие методы развертывания, такие как Ansible и аналогичные средства настройки, могут не иметь.  Невозможность включения ускоренной сети может парализовать производительность компьютера.  
 * Если в сетевом интерфейсе виртуальной машины не включено ускорение работы в сети из-за отсутствия поддержки типа или размера экземпляра, он останется отключенным с более крупными типами экземпляров. В таких случаях потребуется вмешательство вручную.

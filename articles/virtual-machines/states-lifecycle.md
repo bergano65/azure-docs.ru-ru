@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 08/09/2018
 ms.author: vashan
-ms.openlocfilehash: cd104a31fdba932481889db198ae3cc4998a4466
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c9641e722cf3892450bbfbea54f169ac6dc764b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88261894"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963301"
 ---
 # <a name="virtual-machines-lifecycle-and-states"></a>Жизненный цикл и состояния виртуальных машин
 
@@ -418,14 +418,14 @@ ms.locfileid: "88261894"
 
 ## <a name="vm-instance-view"></a>Представление экземпляра виртуальной машины
 
-API представления экземпляра предоставляет информацию о состоянии выполнения виртуальной машины. Дополнительные сведения см. в разделе [Virtual Machines — Instance View](https://docs.microsoft.com/rest/api/compute/virtualmachines/instanceview) (Просмотр экземпляров виртуальных машин в документации по API).
+API представления экземпляра предоставляет информацию о состоянии выполнения виртуальной машины. Дополнительные сведения см. в разделе [Virtual Machines — Instance View](/rest/api/compute/virtualmachines/instanceview) (Просмотр экземпляров виртуальных машин в документации по API).
 
 Обозреватель ресурсов Azure предоставляет простой пользовательский интерфейс для просмотра состояния выполнения виртуальной машины — [Обозреватель ресурсов](https://resources.azure.com/).
 
 Состояния подготовки отображаются в свойствах виртуальной машины и в представлении экземпляра. Состояния включения доступно в представлении экземпляра виртуальной машины.
 
-Чтобы узнать рабочее состояние всех виртуальных машин в подписке, используйте [API "Виртуальные машины — показать все"](https://docs.microsoft.com/rest/api/compute/virtualmachines/listall) с параметром **statusOnly**, которому задано значение *true*.
+Чтобы узнать рабочее состояние всех виртуальных машин в подписке, используйте [API "Виртуальные машины — показать все"](/rest/api/compute/virtualmachines/listall) с параметром **statusOnly**, которому задано значение *true*.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о мониторинге виртуальной машины см. в статье [мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md).

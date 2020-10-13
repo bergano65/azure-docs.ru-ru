@@ -7,12 +7,12 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: conceptual
 ms.date: 08/04/2020
-ms.openlocfilehash: a8879bed4160c7cd1bd74cb196ce271964e384f7
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 52a2b5e27cd5857416343e559237d08ea9a591be
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91813242"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91972396"
 ---
 # <a name="azure-boot-diagnostics"></a>Диагностика загрузки Azure
 
@@ -39,9 +39,9 @@ ms.locfileid: "91813242"
 - Диагностика загрузки доступна только для Azure Resource Manager виртуальных машин. 
 - Диагностика загрузки не поддерживает учетные записи хранения класса Premium. Если для диагностики загрузки используется учетная запись хранения класса Premium, `StorageAccountTypeNotSupported` при запуске виртуальной машины будут появляться сообщения об ошибке. 
 - Управляемые учетные записи хранения поддерживаются в диспетчер ресурсов API версии "2020-06-01" и более поздних версий.
-- Последовательная консоль Azure в настоящее время несовместима с управляемой учетной записью хранения для диагностики загрузки. Дополнительные сведения о [последовательной консоли Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-overview).
+- Последовательная консоль Azure в настоящее время несовместима с управляемой учетной записью хранения для диагностики загрузки. Дополнительные сведения о [последовательной консоли Azure](./troubleshooting/serial-console-overview.md).
 - Диагностика загрузки с использованием учетной записи хранения можно применить только с помощью портал Azure. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о [последовательной консоли Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-overview) и об использовании диагностики загрузки для [устранения неполадок виртуальных машин в Azure](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics).
+Узнайте больше о [последовательной консоли Azure](./troubleshooting/serial-console-overview.md) и об использовании диагностики загрузки для [устранения неполадок виртуальных машин в Azure](./troubleshooting/boot-diagnostics.md).

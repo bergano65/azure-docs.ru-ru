@@ -12,10 +12,10 @@ author: peterclu
 ms.date: 09/24/2020
 ms.custom: contperfq4, tracking-python, contperfq1
 ms.openlocfilehash: 784a0acf139aa05179fd92afb4eab299c2669590
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91630854"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
@@ -255,7 +255,7 @@ aks_target.wait_for_completion(show_output = True)
 2. Разверните модель с помощью [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py&preserve-view=true#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Эта статья является третьей частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

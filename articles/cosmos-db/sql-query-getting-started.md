@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 07/24/2020
 ms.author: tisande
 ms.openlocfilehash: f4ee0c0af6939e71f696fc900ec2ab1343ca91df
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91802520"
 ---
 # <a name="getting-started-with-sql-queries"></a>Начало работы с запросами SQL Server
@@ -178,7 +178,7 @@ ms.locfileid: "91802520"
 
 * Контейнер Cosmos — это коллекция элементов JSON без схемы. Отношения внутри и между элементами контейнера неявно фиксируются с помощью включения, а не связей первичного и внешнего ключей. Эта функция важна для соединений внутри элемента, обсуждаемых далее в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об Azure Cosmos DB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)

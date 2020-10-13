@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 74b8bfcd8cfedaa7c5e24b6c29d9229a4db5828a
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91450756"
 ---
 # <a name="preserving-file-acls-attributes-and-timestamps-with-azure-data-box"></a>Сохранение списков ACL файлов, атрибутов и меток времени с помощью Azure Data Box
@@ -82,7 +82,7 @@ Azure Data Box позволяет сохранять списки управле
 robocopy <Source> <Target> * /copyall /e /dcopy:DAT /r:3 /w:60 /is /nfl /ndl /np /MT:32 or 64 /fft /log+:<LogFile>
 ```
 
-где
+where
 
 |Параметр |Описание |
 |------------------- | ----- |
@@ -112,6 +112,6 @@ cp -aR /etc /opt/
 rsync -avP /etc /opt (-a copies a directory)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Копирование данных в Azure Data Box через SMB](./data-box-deploy-copy-data.md)

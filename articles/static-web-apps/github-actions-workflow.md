@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 92d445991aa8b90a343ad7d015787cff35ddf183
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d4a455458812bef1d79aba583a6317c08b65863
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85340931"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91948380"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>Рабочие процессы GitHub Actions для предварительной версии Статических веб-приложений Azure
 
@@ -152,7 +152,7 @@ with:
 
 | Get-Help            | Описание |
 |---------------------|-------------|
-| `app_build_command` | Определяет пользовательскую команду, выполняемую во время развертывания приложения статического содержимого.<br><br>Например, чтобы настроить производственную сборку для приложения Angular, введите `ng build --prod`. Если оставить это поле пустым, рабочий процесс попытается выполнить команды `npm run build` или `npm run build:Azure`.  |
+| `app_build_command` | Определяет пользовательскую команду, выполняемую во время развертывания приложения статического содержимого.<br><br>Например, чтобы настроить рабочую сборку для углового приложения, создайте сценарий NPM с именем `build-prod` для запуска `ng build --prod` и введите в `npm run build-prod` качестве пользовательской команды. Если оставить это поле пустым, рабочий процесс попытается выполнить команды `npm run build` или `npm run build:Azure`.  |
 | `api_build_command` | Определяет пользовательскую команду, выполняемую во время развертывания приложения API Функций Azure. |
 
 ## <a name="route-file-location"></a>Расположение файла маршрута

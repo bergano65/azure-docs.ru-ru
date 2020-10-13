@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
 ms.openlocfilehash: 3274e45738c079c89560f546fe58163f695e12df
-ms.sourcegitcommit: efaf52fb860b744b458295a4009c017e5317be50
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91851107"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
@@ -517,7 +517,7 @@ Resize-VHD -Path C:\test\MyNewVM.vhd -SizeBytes 105906176
 
   - Рекомендуется отключить блокирование сценариев, которое может быть предоставлено антивирусным программным обеспечением. Они могут мешать работе и блокировать сценарии агента подготовки Windows, выполняемые при развертывании новой виртуальной машины из образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Отправка образа виртуальной машины Windows в Azure для развертываний Resource Manager](upload-generalized-managed.md)
 - [Устранение неполадок при активации виртуальной машины Windows в Azure](troubleshoot-activation-problems.md)

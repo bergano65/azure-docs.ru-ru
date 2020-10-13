@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: mjbrown
 ms.openlocfilehash: 98210f26072504c129ba32f765cf6bab74fef604
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570713"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
@@ -153,7 +153,7 @@ ms.locfileid: "91570713"
 
 3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
    :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню добавления и удаления регионов":::
 
@@ -184,7 +184,7 @@ ms.locfileid: "91570713"
 
 4. Чтобы изменить приоритет при отработке отказа, щелкните и перетащите регионы чтения, щелкнув три точки в левой части строки, которые появляются при наведении указателя мыши на строку.
 
-5. Нажмите кнопку **Сохранить**.
+5. Щелкните **Сохранить**.
 
    :::image type="content" source="./media/how-to-manage-database-account/automatic-failover.png" alt-text="Меню добавления и удаления регионов":::
 
@@ -196,7 +196,7 @@ ms.locfileid: "91570713"
 
 См. раздел [Установка приоритета отработки отказа с помощью PowerShell](manage-with-powershell.md#modify-failover-priority)
 
-## <a name="perform-manual-failover-on-an-azure-cosmos-account"></a><a id="manual-failover"></a>Выполнение перехода на другой ресурс вручную для учетной записи Azure Cosmos
+## <a name="perform-manual-failover-on-an-azure-cosmos-account"></a><a id="manual-failover"></a>Выполнение отработки отказа вручную в учетной записи Azure Cosmos
 
 > [!IMPORTANT]
 > Для успеха этой операции учетная запись Azure Cosmos должна быть настроена на переход на другой ресурс вручную.
@@ -228,7 +228,7 @@ ms.locfileid: "91570713"
 
 См. раздел [Активация перехода на другой ресурс вручную с помощью PowerShell](manage-with-powershell.md#trigger-manual-failover) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

@@ -8,12 +8,12 @@ ms.date: 07/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 96bd6b461a5374b5f5bc578c5f58dbcd09cd7087
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6fffa227c4b8bb01c736c70d8d2cd30c57f416c4
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "84699300"
+ms.locfileid: "91876589"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -65,7 +65,7 @@ ms.locfileid: "84699300"
 1. Создайте экземпляр ModuleClient в приложении.
 2. Убедитесь, что приложение принимает сертификат, предоставленный центром IoT Edge на этом устройстве.
 
-Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка SDK: [C#](/dotnet/api/microsoft.azure.devices.client.moduleclient), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient), [Java](/java/api/com.microsoft.azure.sdk.iot.device.moduleclient)или [Node.js](/javascript/api/azure-iot-device/moduleclient).
 
 ## <a name="language-and-architecture-support"></a>Поддержка языков и архитектур
 
@@ -75,7 +75,7 @@ IoT Edge поддерживает несколько операционных с
 
 Для всех языков, перечисленных в следующей таблице, IoT Edge поддерживает разработку для устройств с поддержкой AMD64 и ARM32 Linux.
 
-| Язык разработки | Средства разработки |
+| Язык разработки | Инструменты разработки |
 | -------------------- | ----------------- |
 | C | Visual Studio Code<br>Visual Studio 2017 или 2019 |
 | C# | Visual Studio Code<br>Visual Studio 2017 или 2019 |
@@ -90,12 +90,12 @@ IoT Edge поддерживает несколько операционных с
 
 Для всех языков, перечисленных в следующей таблице, IoT Edge поддерживает разработку для устройств Windows AMD64.
 
-| Язык разработки | Средства разработки |
+| Язык разработки | Инструменты разработки |
 | -------------------- | ----------------- |
 | C | Visual Studio 2017 или 2019 |
 | C# | Visual Studio Code (без возможностей отладки)<br>Visual Studio 2017 или 2019 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Подготовка среды разработки и тестирования для IoT Edge](development-environment.md)
 

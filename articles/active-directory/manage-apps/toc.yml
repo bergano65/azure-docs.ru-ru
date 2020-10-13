@@ -110,18 +110,26 @@
   items:
     - name: Назначение пользователей и управление доступом к приложениям
       items:
-        - name: Настройка согласия пользователя
-          href: configure-user-consent.md
-        - name: Администрирование и оценка запросов на предоставление согласия
-          href: manage-consent-requests.md
-        - name: Предоставление согласия администратора на уровне клиента
-          href: grant-admin-consent.md
-        - name: Настройка рабочего процесса согласия администратора (предварительная версия)
-          href: configure-admin-consent-workflow.md
+        - name: Согласие и разрешения
+          items:
+            - name: Настройка согласия пользователя
+              href: configure-user-consent.md
+            - name: Настройка согласия владельца группы
+              href: configure-user-consent-groups.md
+            - name: Настройка классификации разрешений
+              href: configure-permission-classifications.md
+            - name: Управление политиками согласия для приложений
+              href: manage-app-consent-policies.md
+            - name: Настройка рабочего процесса согласия администратора (предварительная версия)
+              href: configure-admin-consent-workflow.md
+            - name: Администрирование и оценка запросов на предоставление согласия
+              href: manage-consent-requests.md
+            - name: Предоставление согласия администратора на уровне клиента
+              href: grant-admin-consent.md
+            - name: 'Проверка разрешений, предоставляемых приложениям'
+              href: manage-application-permissions.md
         - name: Управление назначением пользователей для приложения
           href: assign-user-or-group-access-portal.md
-        - name: 'Проверка разрешений, предоставляемых приложениям'
-          href: manage-application-permissions.md
         - name: Создание коллекций в разделе "Мои приложения"
           href: access-panel-collections.md
         - name: Использование самостоятельного доступа к приложениям
