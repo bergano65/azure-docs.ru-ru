@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
-keywords: Распознавание говорящего, Voice биометри
+keywords: распознавание говорящего, голосовая биометрия
 ms.openlocfilehash: 2c5b73b93c22ef27d7b68455f5e1e5108f25c984
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89397265"
 ---
 # <a name="what-is-speaker-recognition"></a>Что такое распознавание говорящего?
@@ -72,7 +72,7 @@ ms.locfileid: "89397265"
 | Можно ли зарегистрировать одного динамика несколько раз? | Да, для проверки, зависимой от текста, можно зарегистрировать докладчик до 50 раз. Для проверки, не зависящей от текста, и идентификации докладчика вы можете зарегистрироваться до 300 секунд для звука. |
 | Какие данные хранятся в Azure? | Звук регистрации хранится в службе до тех пор, пока не будет [удален](speaker-recognition-basics.md#deleting-voice-profile-enrollments)речевой профиль. Образцы звука распознавания не сохраняются и не сохраняются. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > * Выполните инструкции из [статьи основы](speaker-recognition-basics.md) распознавание говорящего для выполнения стандартных шаблонов проектирования, которые можно использовать в приложениях.

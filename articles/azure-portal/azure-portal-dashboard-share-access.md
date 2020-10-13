@@ -1,5 +1,5 @@
 ---
-title: Совместное использование панелей мониторинга портал Azure с помощью управления доступом на основе ролей
+title: Совместное использование панелей мониторинга портал Azure с помощью Role-Based контроля доступа
 description: В этой статье описывается, как предоставить общий доступ к панели мониторинга на портале Azure с помощью управления доступом на основе ролей.
 services: azure-portal
 documentationcenter: ''
@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 03/23/2020
 ms.author: mblythe
 ms.openlocfilehash: b478272ff790121d914a51f8ee4c5cf250134f4d
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87923889"
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей
@@ -85,7 +85,7 @@ ms.locfileid: "87923889"
 
 1. Завершив добавление пользователей или групп, нажмите кнопку **сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Список ролей см. [в статье встроенные роли Azure](../role-based-access-control/built-in-roles.md).
 * Дополнительные сведения об управлении ресурсами см. [в статье Управление ресурсами Azure с помощью портал Azure](resource-group-portal.md).

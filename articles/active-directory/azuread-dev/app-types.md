@@ -14,10 +14,10 @@ ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 5ff2858dd8b91ba036c517cbff07be96a729ef8c
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88116450"
 ---
 # <a name="application-types-in-v10"></a>Типы приложений в версии 1.0
@@ -78,6 +78,6 @@ Azure Active Directory (Azure AD) поддерживает проверку по
 
 Каждый сценарий, рассматриваемый в этом документе, содержит подраздел, где описываются соответствующие требования по подготовке. Более подробные сведения о подготовке приложения в Azure AD и различиях между приложениями с одним и несколькими клиентами см. в статье [Интеграция приложений с Azure Active Directory](../develop/single-and-multi-tenant-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) для получения дополнительных сведений. Продолжим рассмотрение типичных сценариев работы приложений в Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [основными сведениями о проверке подлинности](v1-authentication-scenarios.md) в Azure AD.

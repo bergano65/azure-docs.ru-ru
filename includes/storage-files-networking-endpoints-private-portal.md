@@ -9,10 +9,10 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: b941084c8a196081c2443364ed3fb52868386670
-ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84465063"
 ---
 Перейдите к учетной записи хранения, для которой вы хотите создать частную конечную точку. В таблице содержимого для учетной записи хранения щелкните **Подключения к частной конечной точке**, а затем выберите **+ Частная конечная точка**, чтобы создать частную конечную точку. 

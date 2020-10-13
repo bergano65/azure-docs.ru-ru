@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 02d89226bd2df4bfe5d11897199c50c702e7bc1c
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88033229"
 ---
 # <a name="data-structures-in-azure-maps-mobility-service"></a>Структуры данных в службе Mobility Service Azure Maps
@@ -25,7 +25,7 @@ ms.locfileid: "88033229"
 
 `metroID`— Это идентификатор области метро, который можно использовать для вызова [API получения сведений о области Metro](https://aka.ms/AzureMapsMobilityMetroAreaInfo). Используйте Azure Maps "" Get Metro "API для запроса типов транзитного склада, транзитных агентств, активных оповещений и дополнительных сведений о выбранном Metro. Вы также можете запросить поддерживаемые области Metro и Метроидс. Идентификаторы областей Metro могут изменяться.
 
-**Метроид:** 522 **Имя:** Сиэтл-Tacoma-Бельвью
+**Метроид:** 522   **Имя:** Сиэтл-Tacoma-Бельвью
 
 ![Сиэтл-Metro-Area](./media/mobility-service-data-structure/seattle-metro.png)
 
@@ -52,7 +52,7 @@ ms.locfileid: "88033229"
 Для начала можно запросить группы строк с помощью [API получения транзитной строки](https://aka.ms/AzureMapsMobilityTransitLine).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как запросить транзитные данные с помощью службы Mobility Service:
 

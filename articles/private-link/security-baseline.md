@@ -8,15 +8,15 @@ ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: 654fc453f0b4167ae91afcab811de321925c6bf5
-ms.sourcegitcommit: f845ca2f4b626ef9db73b88ca71279ac80538559
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89614674"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Базовый канал безопасности Azure для частной связи Azure
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../security/benchmarks/overview.md) к частной ссылке Azure. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к частной ссылке Azure. **Элементы управления** , неприменимые к закрытой ссылке Azure, были исключены. Сведения о том, как частная связь Azure полностью сопоставляется с тестовым уровнем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности виртуальной сети Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../security/benchmarks/overview.md) к частной ссылке Azure. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, применимым к частной ссылке Azure. **Элементы управления** , неприменимые к закрытой ссылке Azure, были исключены. Сведения о том, как частная связь Azure полностью сопоставляется с тестовым уровнем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности виртуальной сети Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Безопасность сети
 

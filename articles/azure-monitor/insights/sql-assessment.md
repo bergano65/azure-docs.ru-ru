@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
 ms.openlocfilehash: 98caca31e172f54c3e37f33c5a463790d9d27032
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87325990"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-azure-monitor"></a>Оптимизируйте среду SQL с помощью решения SQL Server проверки работоспособности в Azure Monitor
@@ -85,7 +85,7 @@ Log Analytics использует агент Operations Manager и группу
    > Тип учетной записи «Запуск от имени» должен быть указан как Windows. Учетная запись запуска от имени также должна входить в группу локальных администраторов на всех серверах Windows Server, на которых размещены экземпляры SQL Server.
    >
    >
-5. Щелкните **Сохранить**.
+5. Выберите команду **Сохранить**.
 6. Измените, а затем выполните приведенный ниже пример T-SQL на каждом экземпляре SQL Server. Это позволит предоставить минимальные разрешения, необходимые учетной записи запуска от имени для проверки работоспособности SQL. Но это не требуется делать в том случае, если учетная запись запуска от имени уже является частью серверной роли sysadmin в экземплярах SQL Server.
 
 ```

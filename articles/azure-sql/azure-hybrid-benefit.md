@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 11/13/2019
 ms.openlocfilehash: f43d03f722617e88e7a00e71798351c88ce10e98
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91327601"
 ---
 # <a name="azure-hybrid-benefit---azure-sql-database--sql-managed-instance"></a>Преимущество гибридного использования Azure — база данных SQL Azure & SQL Управляемый экземпляр
@@ -94,7 +94,7 @@ ms.locfileid: "91327601"
 |||
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о выборе варианта развертывания SQL Azure см. в разделе [Выбор правильного развертывания в SQL Azure](azure-sql-iaas-vs-paas-what-is-overview.md).
 - Сравнение функций базы данных SQL и Управляемый экземпляр SQL см. в разделе [SQL database & sql управляемый экземпляр Features](database/features-comparison.md).

@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: acomet
 ms.openlocfilehash: 03ea1b0cdfef30935b38078d0811d1408a78c41e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937982"
 ---
 # <a name="use-power-bi-and-synapse-sql-serverless-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и синапсе SQL Server для анализа Azure Cosmos DB данных с помощью ссылки синапсе (Предварительная версия)
@@ -46,7 +46,7 @@ ms.locfileid: "90937982"
 
 Каждая Рабочая область поставляется с конечной точкой синапсе SQL Server без сервера. После создания скрипта SQL на панели инструментов в верхней части окна подключитесь к **SQL по запросу**.
 
-:::image type="content" source="./media/synapse-link-power-bi/enable-sql-on-demand-endpoint.png" alt-text="Включение скрипта SQL для использования конечной точки синапсе SQL Server в рабочей области":::
+:::image type="content" source="./media/synapse-link-power-bi/enable-sql-on-demand-endpoint.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 
 Создайте новую базу данных с именем **ретаилкосмосдб**и представление SQL для контейнеров с включенной ссылкой синапсе. Следующая команда показывает, как создать базу данных.
 
@@ -106,7 +106,7 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 
 Выберите **Запуск** , который предоставляет следующую таблицу в качестве результата:
 
-:::image type="content" source="./media/synapse-link-power-bi/join-views-query-results.png" alt-text="Результаты запроса после присоединения к представлениям Сторедемографикс и Ретаилсалес":::
+:::image type="content" source="./media/synapse-link-power-bi/join-views-query-results.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 
 ## <a name="model-views-over-containers-with-power-bi"></a>Представления модели над контейнерами с Power BI
 
@@ -141,8 +141,8 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 1. Перетащите элемент **productCode** из представления **ретаилсалес** в условные обозначения, чтобы выбрать определенную линейку продуктов.
 После выбора этих параметров вы увидите диаграмму, как на следующем снимке экрана:
 
-:::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Отчет, сравнивающий относительную важность размера семьи с средним доходом по магазину":::
+:::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Использование синапсе SQL Server для [анализа открытых наборов данных Azure и визуализация результатов в Azure синапсе Studio](../synapse-analytics/sql/tutorial-data-analyst.md)

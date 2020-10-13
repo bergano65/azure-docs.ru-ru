@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
 ms.openlocfilehash: 0c6fc36be101679cea3a770f311005f63c3f0d66
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84737382"
 ---
 # <a name="create-a-private-endpoint-using-azure-powershell"></a>Создание частной конечной точки с помощью Azure PowerShell
@@ -100,7 +100,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 ## <a name="create-a-logical-sql-server"></a>Создание логического сервера SQL Server 
 
-Создайте логический сервер SQL Server с помощью команды New-Азсклсервер. Помните, что имя сервера должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
+Создайте логический сервер SQL Server с помощью команды New-AzSqlServer. Помните, что имя сервера должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
 
 ```azurepowershell-interactive
 $adminSqlLogin = "SqlAdmin"
@@ -184,7 +184,7 @@ mstsc /v:<publicIpAddress>
   > [!NOTE]
   > Вам может потребоваться выбрать дополнительные варианты > использовать другую учетную запись, чтобы указать учетные данные, введенные при создании виртуальной машины. 
   
-3. Нажмите кнопку **ОК**. 
+3. Щелкните **ОК**. 
 4. Вы можете получить предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**. 
 
 ## <a name="access-sql-database-privately-from-the-vm"></a>Доступ с виртуальной машины к базе данных SQL в частном порядке

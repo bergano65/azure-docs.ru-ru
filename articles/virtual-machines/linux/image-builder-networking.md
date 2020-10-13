@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
 ms.openlocfilehash: dfd0929ea03cd99033482f71579e91aaf6fc131c
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88068344"
 ---
 # <a name="azure-image-builder-service-networking-options"></a>Параметры сети службы "Azure Image Builder"
@@ -87,6 +87,6 @@ ms.locfileid: "88068344"
 5. Убедитесь, что вы используете виртуальную сеть в том же регионе, что и регион службы Azure Image Builder.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в разделе [Общие сведения о построителе образов Azure](image-builder-overview.md).

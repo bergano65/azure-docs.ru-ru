@@ -6,10 +6,10 @@ ms.topic: conceptual
 description: Описание подготовки проекта с помощью Azure Dev Spaces
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
 ms.openlocfilehash: 61351072494b51d02a1d6c31399208b9e9b54fce
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88213415"
 ---
 # <a name="how-preparing-a-project-for-azure-dev-spaces-works"></a>Как готовится проект для Azure Dev Spaces

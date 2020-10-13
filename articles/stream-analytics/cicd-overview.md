@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 9/22/2020
 ms.openlocfilehash: ec8f27d0376f7187fd36b3feba556dbced0946e9
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937595"
 ---
 # <a name="continuous-integration-and-deployment-cicd-for-azure-stream-analytics"></a>Непрерывная интеграция и развертывание (CI/CD) для Azure Stream Analytics
@@ -41,7 +41,7 @@ ms.locfileid: "90937595"
 
 Для автоматической сборки, тестирования и развертывания можно использовать командную строку и [средства Azure Stream Analytics CI/CD](cicd-tools.md) . Вы также можете настроить конвейер CI/CD в [Azure pipelines](set-up-cicd-pipeline.md). Azure Pipelines, чтобы включить более широкие возможности, такие как Управление конвейером, Визуализация и триггеры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Автоматизация сборок, тестов и развертываний задания Azure Stream Analytics с помощью средств CI/CD](cicd-tools.md)
 * [Настройка конвейера CI/CD для задания Stream Analytics с помощью Azure Pipelines](set-up-cicd-pipeline.md)

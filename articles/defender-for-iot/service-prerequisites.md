@@ -15,10 +15,10 @@ ms.date: 09/09/2020
 ms.author: mlottner
 ms.custom: references_regions
 ms.openlocfilehash: 19263f8db58c8d20288d3ae74c24efd85667bc33
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90937838"
 ---
 # <a name="azure-defender-for-iot-prerequisites"></a>Предварительные требования для защитника Azure для IoT
@@ -59,8 +59,8 @@ ms.locfileid: "90937838"
 - Западная Европа
 - Северная Европа
 - Западная Япония
-- Восточная Япония
-- Юго-Восточная часть Австралии
+- Japan East
+- Australia Southeast
 - Восточная Австралия
 - Восточная Азия
 - Юго-Восточная Азия
@@ -83,7 +83,7 @@ ms.locfileid: "90937838"
 
 Защитник для агентов IoT поддерживает растущей список устройств и платформ. Просмотрите [список поддерживаемых платформ](how-to-deploy-agent.md) , чтобы проверить существующую или запланированную библиотеку устройств.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором](overview.md) безопасности Azure IOT
 - Сведения о [включении службы](quickstart-onboard-iot-hub.md)

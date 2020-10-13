@@ -12,10 +12,10 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
 ms.openlocfilehash: 723b8cf7a71e5af672c8665040645d55645fe9f7
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87281860"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-active-directory-domain-services"></a>Создание групповой управляемой учетной записи службы (gMSA) в доменных службах Azure Active Directory
@@ -95,7 +95,7 @@ New-ADServiceAccount -Name WebFarmSvc `
 
 Теперь приложения и службы можно настроить для использования gMSA по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Gmsa см. в статье [Приступая к работе с групповыми управляемыми учетными записями служб][gmsa-start].
 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: tomfitz
 ms.openlocfilehash: d4b21f092733f6ebb3c2bf5aa06c1d2782323730
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87099059"
 ---
 # <a name="microsoftsolutionsresourceselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft. Solutions. Ресаурцеселектор
@@ -37,7 +37,7 @@ ms.locfileid: "87099059"
 }
 ```
 
-## <a name="sample-output"></a>Пример выходных данных
+## <a name="sample-output"></a>Пример полученных результатов
 
 ```json
 "name": "{resource-name}",
@@ -45,11 +45,11 @@ ms.locfileid: "87099059"
 "location": "{deployed-location}"
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 В `resourceType` свойстве укажите пространство имен поставщика ресурсов и имя типа ресурса для ресурса, который вы хотите отобразить в списке.
 
-`filter`Свойство ограничивают доступные параметры для ресурсов. Результаты можно ограничить по расположению или подписке. Чтобы отобразить только ресурсы, соответствующие выделенному фрагменту в области основные сведения, используйте `onBasics` . Чтобы отобразить все ресурсы, используйте `all` . Значение по умолчанию — `all`.
+`filter`Свойство ограничивают доступные параметры для ресурсов. Результаты можно ограничить по расположению или подписке. Чтобы отобразить только ресурсы, соответствующие выделенному фрагменту в области основные сведения, используйте `onBasics` . Чтобы отобразить все ресурсы, используйте `all` . Значение по умолчанию — `all`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
