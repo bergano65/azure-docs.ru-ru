@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
 ms.openlocfilehash: a7ae1a0f77d0d19fc48695ddc5cc3d3a14d65ab9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82195134"
 ---
 # <a name="azure-data-lake-storage-gen2-overview-in-hdinsight"></a>Общие сведения о Azure Data Lake Storage 2-го поколения в HDInsight
@@ -77,6 +77,6 @@ abfs:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapreduc
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Общие сведения о хранилище Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)
+* [Общие сведения об Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)
 * [Введение в хранилище Azure](../storage/common/storage-introduction.md)
 * [Обзор Azure Data Lake Storage 1-го поколения](./overview-data-lake-storage-gen1.md)

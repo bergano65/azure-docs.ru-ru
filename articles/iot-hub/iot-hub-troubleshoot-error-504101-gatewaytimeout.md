@@ -10,10 +10,10 @@ ms.date: 01/30/2020
 ms.author: jlian
 ms.custom: amqp
 ms.openlocfilehash: 373acc30ed652a7f540e840dfad5eeeda65ca179
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "81759555"
 ---
 # <a name="504101-gatewaytimeout"></a>504101 GatewayTimeout
@@ -24,7 +24,7 @@ ms.locfileid: "81759555"
 
 При попытке вызвать прямой метод из центра Интернета вещей на устройстве происходит сбой запроса с ошибкой **504101 гатевайтимеаут**.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 ### <a name="cause-1"></a>Причина 1
 

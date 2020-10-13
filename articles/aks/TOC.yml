@@ -59,7 +59,7 @@
           href: ./security-controls-policy.md
     - name: Сеть
       href: concepts-network.md
-    - name: Хранилище
+    - name: Память
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md

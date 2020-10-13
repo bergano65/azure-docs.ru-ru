@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 826e475eb71563b52d687903aeac4ec936e267f6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87093006"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск Устойчивые функции как веб-заданий
@@ -21,13 +21,13 @@ ms.locfileid: "87093006"
 
 Пример цепочки Устойчивые функции можно найти в пакете SDK для веб-заданий версии 2. x: Скачайте или клонировать [репозиторий устойчивые функции](https://github.com/azure/azure-functions-durable-extension/), а затем *выберите ветвь версии* 1 и перейдите к папке *Samples \\ вебжобссдк \\ chaining* .
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы с основами пакета SDK для веб-заданий, разработки библиотеки классов C# для Функций Azure и устойчивых функций. Ознакомиться с этими темами вам помогут следующие ресурсы:
 
 * [Начало работы с пакетом SDK WebJobs](../../app-service/webjobs-sdk-get-started.md)
 * [Создание первой функции с помощью Visual Studio](../functions-create-your-first-function-visual-studio.md)
-* [Устойчивые функции](durable-functions-sequence.md)
+* [Цепочки функций в устойчивых функциях — пример последовательности Hello](durable-functions-sequence.md)
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
@@ -126,7 +126,7 @@ static void Main(string[] args)
 Пакет SDK для веб-заданий не поддерживает следующие возможности Функций Azure:
 
 * [Атрибут FunctionName](#functionname-attribute)
-* [Триггер HTTP](#http-trigger)
+* [триггером HTTP](#http-trigger)
 * [API управления HTTP устойчивых функций](#http-management-api)
 
 ### <a name="functionname-attribute"></a>Атрибут FunctionName
@@ -192,9 +192,9 @@ while (true)
 
 1. Если вы хотите просмотреть журналы в Application Insights при локальном запуске проекта:
 
-    А. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
+    a. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
 
-    Б. Сохраните ключ инструментирования в файл *App.config*.
+    b. Сохраните ключ инструментирования в файл *App.config*.
 
 1. Запустите проект.
 
@@ -224,7 +224,7 @@ while (true)
     * `Microsoft.Azure.WebJobs.Extensions.Storage`
     * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
 
-1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.jsв* файле с помощью платформы конфигурации .NET Core. Ниже приведен пример.
+1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.jsв* файле с помощью платформы конфигурации .NET Core. Ниже приведен пример:
 
     ```json
         {
