@@ -61,6 +61,8 @@
           href: protect-with-aes128.md
         - name: Динамическое шифрование с помощью DRM
           href: protect-with-drm.md
+        - name: "Защита контента в Azure\_AD"
+          href: azure-ad-content-protection.md
     - name: REST
       items:
         - name: Кодирование и потоковая передача размещенных удаленно файлов (REST)
@@ -188,8 +190,6 @@
           href: streaming-policy-concept.md
         - name: Политики ключа содержимого
           href: content-key-policy-concept.md
-        - name: "Защита контента в Azure\_AD"
-          href: azure-ad-content-protection.md
     - name: Наблюдение
       items:
         - name: События в Сетке событий
