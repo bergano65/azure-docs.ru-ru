@@ -56,6 +56,8 @@
           href: dsvm-common-identity.md
         - name: Защита учетных данных для доступа к ресурсам
           href: dsvm-secure-access-keys.md
+    - name: "Обновите виртуальную машину для обработки и анализа данных до версии Ubuntu\_18.04"
+      href: ubuntu-upgrade.md
 - name: Ресурсы
   items:
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)

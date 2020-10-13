@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: 60f6863bbe051338308c30e22c6969d84670dc64
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91409754"
 ---
 # <a name="distributed-transactions-across-cloud-databases-preview"></a>Распределенные транзакции между облачными базами данных (Предварительная версия)
@@ -134,7 +134,7 @@ Azure включает несколько предложений для разм
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка сосредоточена на модуле Az.Sql. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Транзакции эластичной базы данных поддерживаются на разных серверах в базе данных SQL Azure. Если транзакции пересекают границы сервера, участвующие серверы сначала должны быть указаны в связи взаимной связи. После установления отношения взаимодействия любая база данных на любом из двух серверов может участвовать в эластичных транзакциях с базами данных другого сервера. При наличии транзакций, охватывающих более двух серверов, для любой пары серверов необходимо установить связь связи.
 
@@ -162,7 +162,7 @@ Azure включает несколько предложений для разм
 * Поддерживаются только транзакции, которые осуществляются с помощью приложения .NET и которые координирует клиент. Сейчас выполнение запросов T-SQL на серверах (например, BEGIN DISTRIBUTED TRANSACTION) не поддерживается, но в будущем мы планируем добавить эту возможность.
 * Транзакции в службах WCF не поддерживаются. Например, если у вас есть метод службы WCF, выполняющий транзакцию, включение вызова в область транзакции завершится ошибкой с исключением [System.ServiceModel.ProtocolException](https://msdn.microsoft.com/library/system.servicemodel.protocolexception).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для получения вопросов обратитесь к нам на [странице Microsoft Q&A вопрос для базы данных SQL](https://docs.microsoft.com/answers/topics/azure-sql-database.html). Для запросов функций добавьте их на [Форум обратной связи базы данных SQL](https://feedback.azure.com/forums/217321-sql-database/).
 

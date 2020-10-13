@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: e69bcb3d9e4dca4c45bf9a6fe8ed4d54e7f4a8cd
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90938868"
 ---
 # <a name="point-in-time-restore-of-a-flexible-server"></a>Восстановление гибкого сервера на момент времени
@@ -40,7 +40,7 @@ ms.locfileid: "90938868"
 
 4.  Выберите **ближайшую точку восстановления** и укажите новое имя сервера в поле **восстановить в новый сервер** . Отображается самая ранняя метка времени, в которую можно восстановить. 
    
-   :::image type="content" source="./media/how-to-restore-server-portal/restore-earliest.png" alt-text="Самое раннее время восстановления":::
+   :::image type="content" source="./media/how-to-restore-server-portal/restore-earliest.png" alt-text="Обзор восстановления":::
 
 5.  Нажмите кнопку **ОК**.
 
@@ -61,13 +61,13 @@ ms.locfileid: "90938868"
 
 5.  Выберите Дата и время и укажите новое имя сервера в поле **восстановить в новый сервер** . 
    
-:::image type="content" source="./media/how-to-restore-server-portal/restore-custom.png" alt-text="Время пользовательского восстановления":::
+:::image type="content" source="./media/how-to-restore-server-portal/restore-custom.png" alt-text="Обзор восстановления":::
  
 6.  Нажмите кнопку **ОК**.
 
 7.  Будет отображено уведомление о том, что операция восстановления была инициирована.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   Сведения о [непрерывности бизнес-процессов](./concepts-business-continuity.md)
 -   Сведения о [высокой доступности с избыточностью зоны](./concepts-high-availability.md)

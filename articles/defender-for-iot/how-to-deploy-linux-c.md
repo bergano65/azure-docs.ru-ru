@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: 8c03f6b882c8b1a64c9f256493c5d586b5fa0f89
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940054"
 ---
 # <a name="deploy-defender-for-iot-c-based-security-agent-for-linux"></a>Развертывание агента безопасности на основе Azure IoT C для Linux
@@ -82,13 +82,13 @@ ms.locfileid: "90940054"
 
 ```./InstallSecurityAgent.sh -–uninstall```
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Проверьте состояние развертывания, выполнив следующую команду:
 
 ```systemctl status ASCIoTAgent.service```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей"
 - Дополнительные сведения о защитнике для [архитектуры](architecture.md) IOT

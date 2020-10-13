@@ -8,10 +8,10 @@ ms.date: 05/29/2018
 ms.custom: devx-track-java
 ms.author: twooley
 ms.openlocfilehash: a2c55a2d3277bbb6c3cf72f5ea703780d2a5e9bd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87318850"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-java-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием Java SDK
@@ -231,7 +231,7 @@ promptEnterKey();
 1. Для запуска из среды IDE найдите и нажмите кнопку **запуска**. Для запуска из Maven выполните команду [exec:exec](https://www.mojohaus.org/exec-maven-plugin/exec-mojo.html).
 2. Чтобы получить автономный JAR-файл, который можно запустить из командной строки, создайте такой файл со всеми зависимостями с помощью [подключаемого модуля сборки Maven](https://maven.apache.org/plugins/maven-assembly-plugin/usage.html). Пример содержится в файле pom.xml в [исходном коде на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started/blob/master/pom.xml).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Документация по пакету SDK для Java](https://azure.github.io/azure-data-lake-store-java/javadoc/)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 

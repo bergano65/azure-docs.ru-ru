@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.openlocfilehash: 19e3f1a157ee2c042dfebfc96c9b51c3c4698ebc
-ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88163736"
 ---
 # <a name="how-to-monitor-cluster-availability-with-azure-monitor-logs-in-hdinsight"></a>Как отслеживать доступность кластера с помощью журналов Azure Monitor в HDInsight
@@ -99,7 +99,7 @@ ms.locfileid: "88163736"
 > [!NOTE]
 > Существует несколько других действий, которые можно активировать с помощью предупреждения, помимо электронной почты, SMS/Push/Voice, например функции Azure, LogicApp, веб-перехватчика, ITSM и модуля Runbook службы автоматизации. [Подробнее.](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#action-specific-information)
 
-Откроется **Электронная почта, SMS, Push/Voice**. Выберите **имя** получателя, **Проверьте** поле адреса **электронной** почты и введите адрес электронной почты, по которому должно быть отправлено оповещение. Нажмите кнопку **ОК** в окне **Электронная почта, SMS/Push/Voice**, а затем в **группе Добавить действие** , чтобы завершить настройку группы действий.
+Откроется **Электронная почта, SMS, Push/Voice**. Выберите **имя** получателя, **Проверьте** поле адреса **электронной** почты и введите адрес электронной почты, по которому должно быть отправлено оповещение. Нажмите кнопку **ОК** в окне  **Электронная почта, SMS/Push/Voice**, а затем в **группе Добавить действие** , чтобы завершить настройку группы действий.
 
 ![Правило генерации оповещений создает группу действий](media/cluster-availability-monitor-logs/portal-add-action-group.png)
 
@@ -122,7 +122,7 @@ ms.locfileid: "88163736"
 
 ![Log Analytics рабочей области уровень серьезности одно оповещение](media/cluster-availability-monitor-logs/portal-oms-alerts-sev1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Доступность кластера — Apache Ambari](./hdinsight-cluster-availability.md)
 * [Использование журналов Azure Monitor](hdinsight-hadoop-oms-log-analytics-tutorial.md)

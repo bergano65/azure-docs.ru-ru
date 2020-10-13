@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
 ms.openlocfilehash: 095fd0b534c0dffaf80d2464fb9734f295335b84
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87317184"
 ---
 # <a name="collect-data-from-azure-diagnostics-extension-to-azure-monitor-logs"></a>Собирайте данные из расширения системы диагностики Azure в журналы Azure Monitor
@@ -61,7 +61,7 @@ ms.locfileid: "87317184"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сбор журналов и метрик для поддерживаемых служб Azure](./resource-logs.md#send-to-log-analytics-workspace).
 * [Включите решения](../insights/solutions.md) , чтобы обеспечить глубокое понимание данных.

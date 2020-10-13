@@ -1,5 +1,5 @@
 ---
-title: Обновите расширение наблюдателя за сетями до последней версии.
+title: Обновление расширения наблюдателя за сетями до последней версии
 description: Узнайте, как обновить расширение наблюдателя за сетями до последней версии.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: c386685d63894472623ffc4392a529541a91391c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd3fff2d438bbf804e35f04db0cfae15eea5e782
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91410362"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973345"
 ---
 # <a name="how-to-update-the-network-watcher-extension-to-the-latest-the-version"></a>Обновление расширения наблюдателя за сетями до последней версии 
 
@@ -114,4 +114,4 @@ az vm extension set --resource-group "DALANDEMO" --vm-name "Linux-01" --name "Ne
 
 ## <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, см. документацию по расширениям наблюдателя за сетями ([Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-linux), [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/network-watcher-windows)) или обратитесь к экспертам Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, см. документацию по расширениям наблюдателя за сетями ([Linux](./network-watcher-linux.md), [Windows](./network-watcher-windows.md)) или обратитесь к экспертам Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
