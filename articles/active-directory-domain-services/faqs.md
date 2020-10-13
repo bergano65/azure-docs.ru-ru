@@ -12,10 +12,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: iainfou
 ms.openlocfilehash: 6e2daa60e99eb7aab34b11f240a2e2fb03c98582
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91612410"
 ---
 # <a name="frequently-asked-questions-faqs-about-azure-active-directory-ad-domain-services"></a>Часто задаваемые вопросы о доменных службах Azure Active Directory (AD)
@@ -164,7 +164,7 @@ ms.locfileid: "91612410"
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о доменных службах Azure AD см. в статье [что такое Azure Active Directory доменных служб?](overview.md).
 

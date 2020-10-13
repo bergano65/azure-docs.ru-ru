@@ -9,10 +9,10 @@ ms.date: 05/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
 ms.openlocfilehash: ac7879590424fa921425dcd077503733affeb634
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91361753"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-sync-java-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB с пакетом SDK для Sync Java версии 2
@@ -72,7 +72,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Если это возможно, размещайте приложения, выполняющие вызовы к Azure Cosmos DB, в том же регионе, в котором находится база данных Azure Cosmos. Для приблизительного сравнения: вызовы к Azure Cosmos DB в пределах региона выполняются в течение 1–2 мс, но задержка между восточным и западным побережьем США превышает 50 мс. Значение задержки может отличаться в зависимости от выбранного маршрута при передаче запроса от клиента к границе центра обработки данных Azure. Минимальная возможная задержка достигается при размещении клиентского приложения в том же регионе Azure, в котором предоставляется конечная точка Azure Cosmos DB. Список доступных регионов см. на странице [Регионы Azure](https://azure.microsoft.com/regions/#services).
 
-    :::image type="content" source="./media/performance-tips/same-region.png" alt-text="На схеме показаны запросы и ответы в двух регионах, где компьютеры подключаются к учетной записи Cosmos D B через службы среднего уровня." border="false":::
+    :::image type="content" source="./media/performance-tips/same-region.png" alt-text="На схеме показана политика подключения Azure Cosmos D B." border="false":::
    
 ## <a name="sdk-usage"></a>Использование пакета SDK
 1. **Установка последней версии пакета SDK**

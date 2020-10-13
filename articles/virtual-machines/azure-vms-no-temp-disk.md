@@ -8,10 +8,10 @@ ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
 ms.openlocfilehash: 30587fac7d7be37d7595a78502b7999adee9a30f
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91665316"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Размеры виртуальных машин Azure без локального временного диска 
@@ -52,7 +52,7 @@ ms.locfileid: "91665316"
 ## <a name="have-questions-or-feedback"></a>Есть вопросы или предложения?
 Заполните [форму обратной связи]( https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRUMzdCQkw0OVVRTldFUUtXSTlLQVBPUkVHSy4u). 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 В этом документе вы узнали больше о наиболее часто встречающихся вопросах, связанных с виртуальными машинами Azure без локального временного диска. Дополнительные сведения об этих размерах виртуальных машин см. в следующих статьях:
 
 - [Спецификации для серии dv4 и Dsv4 (общего назначенияная Рабочая нагрузка)](dv4-dsv4-series.md)

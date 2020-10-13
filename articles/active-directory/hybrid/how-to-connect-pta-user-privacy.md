@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 396344ba90aa3850d7d23dc40d6df95f6d1f6c3f
-ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89279522"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Конфиденциальность пользователей и сквозная аутентификация Azure Active Directory
@@ -29,7 +29,7 @@ ms.locfileid: "89279522"
 
 [!INCLUDE [Privacy](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Обзор
 
 Сквозная аутентификация Azure AD создает следующие типы журналов, которые могут содержать персональные данные:
 
@@ -105,6 +105,6 @@ Foreach ($file in $files) {
 
 Если включено ведение журнала аудита, этот продукт может создавать журналы безопасности для контроллеров домена. Дополнительные сведения о настройке политик аудита см. в [этой статье](/previous-versions/tn-archive/dd277403(v=technet.10)).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Просмотр политики конфиденциальности корпорации Майкрософт в центре управления безопасностью](https://www.microsoft.com/trustcenter)
 * [**Устранение неполадок**](tshoot-connect-pass-through-authentication.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
