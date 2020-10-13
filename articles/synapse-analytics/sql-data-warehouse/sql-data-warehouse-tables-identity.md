@@ -11,12 +11,12 @@ ms.date: 07/20/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 375c97179351e1dbf90ce4488114cb232d6dd450
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 8b4e9aa73a959bcaac18df38f975331ecbf6b034
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121329"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876011"
 ---
 # <a name="using-identity-to-create-surrogate-keys-in-synapse-sql-pool"></a>Использование удостоверения для создания суррогатных ключей в пуле синапсе SQL
 
@@ -26,7 +26,8 @@ ms.locfileid: "88121329"
 
 Суррогатный ключ таблицы представляет собой столбец с уникальным идентификатором каждой строки. Ключ не генерируется из данных таблицы. Разработчики моделей данных создают суррогатные ключи для таблиц, когда проектируют модели хранилища данных. Чтобы просто и эффективно достичь этой цели, не оказывая влияния на производительность загрузки, можно использовать свойство IDENTITY.
 > [!NOTE]
-> Значение идентификатора в синапсе SQL не обязательно должно быть уникальным, если пользователь явно вставляет повторяющееся значение с параметром "SET IDENTITY_INSERT" или повторно заполняет УДОСТОВЕРЕНие. Дополнительные сведения см. в разделе [CREATE TABLE (Transact-SQL) Identity (свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=azure-sqldw-latest). 
+> В Azure синапсе Analytics значение идентификатора увеличивается отдельно в каждом распределении и не перекрывается со значениями ИДЕНТИФИКАТОРов в других дистрибутивах.  Значение идентификатора в синапсе не обязательно должно быть уникальным, если пользователь явно вставляет повторяющееся значение с параметром "SET IDENTITY_INSERT" или повторно заполняет УДОСТОВЕРЕНие. Дополнительные сведения см. в разделе [CREATE TABLE (Transact-SQL) Identity (свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=azure-sqldw-latest). 
+
 
 ## <a name="creating-a-table-with-an-identity-column"></a>Создание таблицы со столбцом IDENTITY
 
@@ -163,7 +164,7 @@ DBCC PDW_SHOWSPACEUSED('dbo.T1');
 > В настоящее время невозможно использовать `CREATE TABLE AS SELECT` при загрузке данных в таблицу со столбцом IDENTITY.
 >
 
-Дополнительные сведения о загрузке данных см. в разделе [Разработка операций извлечения, загрузки и преобразования (ELT) для пула SQL синапсе](design-elt-data-loading.md) и [Загрузка рекомендаций](guidance-for-loading-data.md).
+Дополнительные сведения о загрузке данных см. в разделе [Разработка операций извлечения, загрузки и преобразования (ELT) для пула SQL синапсе](design-elt-data-loading.md) и  [Загрузка рекомендаций](guidance-for-loading-data.md).
 
 ## <a name="system-views"></a>Системные представления
 
@@ -241,7 +242,7 @@ AND     tb.name = 'T1'
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о таблицах](sql-data-warehouse-tables-overview.md)
 - [CREATE TABLE (Transact-SQL) IDENTITY (Свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)

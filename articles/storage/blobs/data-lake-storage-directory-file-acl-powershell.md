@@ -11,10 +11,10 @@ ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 62a6bb807f01fd19a92c3dc4edf797171dd5ebc9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91713411"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование PowerShell для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
@@ -402,14 +402,14 @@ Update-AzDataLakeGen2Item -Context $ctx -FileSystem $filesystemName -Path $dirna
 
 |Командлет Data Lake Storage 1-го поколения| Командлет Data Lake Storage 2-го поколения| Примечания |
 |--------|---------|-----|
-|Get-Аздаталакесторечилдитем|Get-AzDataLakeGen2ChildItem|По умолчанию командлет Get-AzDataLakeGen2ChildItem перечисляет только дочерние элементы первого уровня. Параметр-recursive Рекурсивно перечисляет дочерние элементы. |
-|Get-Аздаталакестореитем<br>Get-Аздаталакестореитемаклентри<br>Get-Аздаталакестореитемовнер<br>Get-Аздаталакестореитемпермиссион|Get-AzDataLakeGen2Item|Выходные элементы командлета Get-AzDataLakeGen2Item имеют следующие свойства: ACL, владелец, группа, разрешение.|
-|Get-Аздаталакестореитемконтент|Get-AzDataLakeGen2FileContent|Командлет Get-AzDataLakeGen2FileContent скачивает содержимое файла в локальный файл.|
-|Move-Аздаталакестореитем|Move-AzDataLakeGen2Item||
-|New-Аздаталакестореитем|New-AzDataLakeGen2Item|Этот командлет передает содержимое нового файла из локального файла.|
-|Remove-Аздаталакестореитем|Remove-AzDataLakeGen2Item||
-|Set-Аздаталакестореитемовнер<br>Set-Аздаталакестореитемпермиссион<br>Set-Аздаталакестореитемакл|Update-AzDataLakeGen2Item|Командлет Update-AzDataLakeGen2Item обновляет только один элемент, а не рекурсивно. Если требуется выполнить рекурсивное обновление, перечислите элементы с помощью командлета Get-Аздаталакесторечилдитем, а затем выполните конвейер для командлета Update-AzDataLakeGen2Item.|
-|Test-Аздаталакестореитем|Get-AzDataLakeGen2Item|Если элемент не существует, командлет Get-AzDataLakeGen2Item сообщит об ошибке.|
+|Get-AzDataLakeStoreChildItem|Get-AzDataLakeGen2ChildItem|По умолчанию командлет Get-AzDataLakeGen2ChildItem перечисляет только дочерние элементы первого уровня. Параметр-recursive Рекурсивно перечисляет дочерние элементы. |
+|Get-AzDataLakeStoreItem<br>Get-AzDataLakeStoreItemAclEntry<br>Get-AzDataLakeStoreItemOwner<br>Get-AzDataLakeStoreItemPermission|Get-AzDataLakeGen2Item|Выходные элементы командлета Get-AzDataLakeGen2Item имеют следующие свойства: ACL, владелец, группа, разрешение.|
+|Get-AzDataLakeStoreItemContent|Get-AzDataLakeGen2FileContent|Командлет Get-AzDataLakeGen2FileContent загрузить содержимое файла в локальный файл.|
+|Move-AzDataLakeStoreItem|Move-AzDataLakeGen2Item||
+|New-AzDataLakeStoreItem|New-AzDataLakeGen2Item|Этот командлет передает содержимое нового файла из локального файла.|
+|Remove-AzDataLakeStoreItem|Remove-AzDataLakeGen2Item||
+|Set-AzDataLakeStoreItemOwner<br>Set-AzDataLakeStoreItemPermission<br>Set-AzDataLakeStoreItemAcl|Update-AzDataLakeGen2Item|Командлет Update-AzDataLakeGen2Item обновляет только один элемент, а не рекурсивно. Если требуется обновлять рекурсивно, перечислите элементы с помощью командлета Get-AzDataLakeStoreChildItem, а затем выполните конвейер в командлете Update-AzDataLakeGen2Item.|
+|Test-AzDataLakeStoreItem|Get-AzDataLakeGen2Item|Если элемент не существует, командлет Get-AzDataLakeGen2Item сообщит об ошибке.|
 
 ## <a name="see-also"></a>См. также
 

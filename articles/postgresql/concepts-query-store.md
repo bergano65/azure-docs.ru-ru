@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/01/2020
 ms.openlocfilehash: 7b6c8faafac34ada664ddfadebf8d71a16c73fa7
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91710538"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
@@ -164,7 +164,7 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 |query_id   |BIGINT     ||Внутренний хэш-код, вычисляемый на основе дерева синтаксического анализа инструкции|
 |event_type |text       ||Тип события, которого ожидает серверный компонент|
 |event  |text       ||Имя события ожидания, если серверный компонент сейчас находится в состоянии ожидания|
-|calls  |Целое число        ||Число одинаковых записанных событий|
+|calls  |Целочисленный тип        ||Число одинаковых записанных событий|
 
 
 ### <a name="functions"></a>Функции
@@ -253,6 +253,6 @@ Query_store.staging_data_reset() returns void
 - [Чтение реплик](concepts-read-replicas.md) реплицирует данные хранилища запросов с сервера источника. Это означает, что хранилище запросов реплики чтения не предоставляет статистических данных о запросах, выполняемых в реплике чтения.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [ситуациях, в которых хранилище запросов может быть особенно полезным](concepts-query-store-scenarios.md).
 - Дополнительные сведения о [рекомендациях по работе с хранилищем запросов](concepts-query-store-best-practices.md).

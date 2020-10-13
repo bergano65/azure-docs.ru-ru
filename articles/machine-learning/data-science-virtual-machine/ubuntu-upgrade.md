@@ -11,13 +11,13 @@ ms.author: samkemp
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.openlocfilehash: d57de4d52ccf3a029a8dd1350635fb65dd3ac829
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91828679"
 ---
-# <a name="upgrade-your-data-science-virtual-machine-to-ubuntu-1804"></a>Обновление виртуальной машины для обработки и анализа данных до Ubuntu 18,04
+# <a name="upgrade-your-data-science-virtual-machine-to-ubuntu-1804"></a>Обновите виртуальную машину для обработки и анализа данных до версии Ubuntu 18.04
 
 Если у вас есть виртуальная машина для обработки и анализа данных с более ранним выпуском, например Ubuntu 16,04 или CentOS, необходимо перенести DSVM в Ubuntu 18,04. Миграция обеспечит получение последних исправлений операционной системы, драйверов, предварительно установленного программного обеспечения и версий библиотеки. В этом документе объясняется, как выполнить миграцию из более старых версий Ubuntu или CentOS. 
 
@@ -175,7 +175,7 @@ cat /etc/os-release
 
 :::image type="content" source="media/ubuntu_upgrade/portal-showing-os-version.png" alt-text="Снимок экрана, показывающий портал Azure и панель поиска с выделенными * * снимками * *":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обработка и анализ данных с помощью машины Ubuntu для обработки и анализа данных в Azure](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/linux-dsvm-walkthrough)
 - [Какие средства включены в виртуальную машину Azure для обработки и анализа данных?](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/tools-included)

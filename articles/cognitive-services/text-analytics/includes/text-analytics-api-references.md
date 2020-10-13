@@ -6,17 +6,18 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
+ms.subservice: text-analytics
 ms.topic: include
 ms.date: 11/19/2019
 ms.author: assafi
-ms.openlocfilehash: 6fb6e62dbcf404f0c5f77592c2c8e6565f4bc687
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
-ms.translationtype: MT
+ms.openlocfilehash: b412308bf11a5e73287401e8b4b0cc522b26d623
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144993"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91779301"
 ---
 > [!Tip]
 > Чтобы получить подробную техническую документацию по API, воспользуйтесь следующими ссылками. Кроме того, можно отправлять запросы POST из встроенной консоли тестирования API. Настройка не требуется. Просто вставьте в запрос ключ ресурса и документы JSON:
-> - Последний стабильный API- [Версия 3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0)
-> - Последняя Предварительная версия API — [Версия 3.1-Preview. 1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-1)
+> - Последняя стабильная версия API — [v3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0).
+> - Последняя предварительная версия API — [v3.1-Preview.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-1).

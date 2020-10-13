@@ -13,16 +13,16 @@ ms.author: sashan
 ms.reviewer: mathoma, sstein, danil
 ms.date: 09/26/2019
 ms.openlocfilehash: 23fdc69b59cc1415d06bd394fd9ef729b7ef4ce0
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91448797"
 ---
 # <a name="recover-using-automated-database-backups---azure-sql-database--sql-managed-instance"></a>Восстановление с помощью автоматически создаваемых резервных копий базы данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-Для восстановления базы данных доступны следующие параметры с помощью автоматически создаваемых [резервных копий базы данных](automated-backups-overview.md). Можно сделать следующее.
+Для восстановления базы данных доступны следующие параметры с помощью автоматически создаваемых [резервных копий базы данных](automated-backups-overview.md). Вы можете:
 
 - Создайте новую базу данных на том же сервере, восстановленную до указанной точки во времени в течение срока хранения.
 - Создайте базу данных на том же сервере, восстановленную до времени удаления для удаленной базы данных.
@@ -205,7 +205,7 @@ ms.locfileid: "91448797"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL и Управляемый экземпляр SQL, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях Azure Resource Manager находятся в отличном экстенте.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL и Управляемый экземпляр SQL, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях Azure Resource Manager находятся в отличном экстенте.
 
 #### <a name="sql-database"></a>База данных SQL
 
@@ -250,11 +250,11 @@ ms.locfileid: "91448797"
 
 Инструкции по восстановлению базы данных управляемого экземпляра с помощью Azure CLI см. в разделе [AZ SQL функция MidB Restore](/cli/azure/sql/midb#az-sql-midb-restore).
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Создаваемые автоматически резервные копии позволяют защитить базы данных от ошибок пользователей и приложений, случайного удаления базы данных и длительных простоев. Эта встроенная возможность доступна для всех уровней служб и объемов вычислительных ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
 - [Общие сведения об автоматическом резервном копировании базы данных SQL](automated-backups-overview.md)

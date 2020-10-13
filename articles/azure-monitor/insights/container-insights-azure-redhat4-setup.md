@@ -4,10 +4,10 @@ description: В этой статье описывается настройка 
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: 63db888419ee691e83ea456fcd7fc28a4d9909fe
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620330"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров
@@ -121,7 +121,7 @@ Azure Monitor для контейнеров поддерживает монит�
     export kubeContext="<kubeContext name of your ARO v4 cluster>"  
     ```
 
-    Пример
+    Пример.
 
     `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext --workspace-id $logAnalyticsWorkspaceResourceId`
 
@@ -164,7 +164,7 @@ export kubeContext="<kubeContext name of your ARO v4 cluster>"
 
     Результаты в списке можно найти, выполнив поиск значения **АТО** в столбце **тип кластера** . После выбора **включить**вы будете перенаправлены к этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Теперь, когда вы включили функцию мониторинга для получения сведений о работоспособности и использовании ресурсов в кластере RedHat OpenShift версии 4. x и рабочих нагрузках, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
 

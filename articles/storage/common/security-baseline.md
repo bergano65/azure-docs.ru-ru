@@ -8,10 +8,10 @@ ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: f4687add8fdd55c8084a7180a6e0a3bffd9751b1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91715157"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
@@ -316,7 +316,7 @@ ms.locfileid: "91715157"
 
 **Ответственность**: Customer
 
-### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4. Использование единого входа Azure Active Directory (SSO)
+### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4: используйте Azure Active Directory Single Sign-On (единый вход)
 
 **Рекомендации**. везде, где это возможно, используйте Azure Active Directory SSO вместо настройки отдельных автономных учетных данных для каждой службы. Используйте рекомендации по управлению удостоверениями и доступом в центре безопасности Azure. 
 
@@ -960,7 +960,7 @@ ms.locfileid: "91715157"
 
 Кроме того, службу автоматизации Azure можно использовать для создания регулярных снимков больших двоичных объектов.
 
-- [Общие сведения о избыточности службы хранилища Azure и соглашениях об уровне обслуживания](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
+- [Общие сведения о избыточности службы хранилища Azure и Service-Level соглашениях](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
 
 - [Создание моментального снимка большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/creating-a-snapshot-of-a-blob)
 
@@ -990,7 +990,7 @@ ms.locfileid: "91715157"
 
 **Рекомендации**. периодически выполняется восстановление данных сертификатов Key Vault, ключей, управляемых учетных записей хранения и секретов с помощью следующих команд PowerShell: 
 
-Restore-Азкэйваултцертификате Restore-Азкэйваулткэй Restore-Азкэйваултманажедсторажеаккаунт Restore-Азкэйваултсекрет 
+Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedStorageAccount Restore-AzKeyVaultSecret 
 
 - [Восстановление сертификатов Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0)
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/21/2020
+ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 37df1a052a58271c239b8b3bcaa4808ab7c355f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 676b6abb28abf58287bfc9036ca907ae6a1ee192
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85204376"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961295"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
@@ -33,6 +33,8 @@ ms.locfileid: "85204376"
 | InputClaim | Любая строка в следующей нотации с точкой | строка | JsonPath JSON, в который будет вставлено значение утверждения. |
 | InputParameter | Любая строка в следующей нотации с точкой | строка | JsonPath JSON, в который будет вставлено строковое значение константы. |
 | outputClaim | outputClaim | строка | Созданная строка JSON. |
+
+### <a name="example-1"></a>Пример 1
 
 В следующем примере создается строка JSON на основе значения утверждения "Email" и "OTP", а также константных строк.
 
@@ -52,8 +54,6 @@ ms.locfileid: "85204376"
   </OutputClaims>
 </ClaimsTransformation>
 ```
-
-### <a name="example"></a>Пример
 
 В следующем преобразовании утверждений выводится строковый запрос JSON, который будет являться телом запроса, отправленного в SendGrid (поставщик электронной почты стороннего поставщика). Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Числа в точечной нотации подразумевают массивы. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
 
@@ -87,6 +87,56 @@ ms.locfileid: "85204376"
   "from": {
     "email": "service@contoso.com"
   }
+}
+```
+
+### <a name="example-2"></a>Пример 2
+
+В следующем примере создается строка JSON на основе значений утверждений, а также константных строк.
+
+```xml
+<ClaimsTransformation Id="GenerateRequestBody" TransformationMethod="GenerateJson">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="customerEntity.email" />
+    <InputClaim ClaimTypeReferenceId="objectId" TransformationClaimType="customerEntity.userObjectId" />
+    <InputClaim ClaimTypeReferenceId="givenName" TransformationClaimType="customerEntity.firstName" />
+    <InputClaim ClaimTypeReferenceId="surname" TransformationClaimType="customerEntity.lastName" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="customerEntity.role.name" DataType="string" Value="Administrator"/>
+    <InputParameter Id="customerEntity.role.id" DataType="long" Value="1"/>
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="requestBody" TransformationClaimType="outputClaim"/>
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+В следующем преобразовании утверждений выводится строковый запрос JSON, который будет основным текстом запроса, отправленного в REST API. Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Числа в точечной нотации подразумевают массивы. Значения берутся из значений Inputclaim и свойств InputParameters "" value ".
+
+- Входные утверждения:
+  - **адрес электронной почты**, утверждение преобразования типа  **customerEntity. email**: " john.s@contoso.com "
+  - **ObjectID**, тип утверждения преобразования **customerEntity. значение userobjectid** "01234567-89ab-cdef-0123-456789abcdef"
+  - **ObjectID**, тип утверждения преобразования **customerEntity. FirstName** "Джон"
+  - **ObjectID**, тип утверждения преобразования **customerEntity. LastName** "Смит"
+- Входной параметр:
+  - **customerEntity.Role.Name**: "Администратор"
+  - **customerEntity.Role.ID** 1
+- Исходящее утверждение:
+  - **requestBody**: значение JSON
+
+```json
+{
+   "customerEntity":{
+      "email":"john.s@contoso.com",
+      "userObjectId":"01234567-89ab-cdef-0123-456789abcdef",
+      "firstName":"John",
+      "lastName":"Smith",
+      "role":{
+         "name":"Administrator",
+         "id": 1
+      }
+   }
 }
 ```
 
@@ -137,7 +187,7 @@ ms.locfileid: "85204376"
 | InputParameter | includeEmptyClaims | строка | Указывает, следует ли включать пустые утверждения. |
 | InputParameter | jsonSourceKeyName | строка | Имя ключа элемента |
 | InputParameter | jsonSourceValueName | строка | Имя значения элемента |
-| outputClaim | Коллекция | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
+| outputClaim | Collection | string, int, boolean и datetime |Список утверждений для извлечения. Имя утверждения должно соответствовать указанному имени во входящем утверждении _jsonSourceClaim_. |
 
 В следующем примере в процессе преобразования утверждений из данных JSON извлекаются следующие утверждения: email (string), displayName (string), membershipNum (int), active (boolean) и birthdate (datetime).
 

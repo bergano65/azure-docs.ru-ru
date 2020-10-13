@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/05/2020
+ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 9e67f24cf670024432f64487df20b9fca515c006
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 2df2cf2a9d0a89f72078cd0da36272781e89e338
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91740383"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91961329"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -437,6 +437,24 @@ https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/policy-name/generic
 
 Следующие сценарии проверяющей стороны SAML (RP) в настоящее время не поддерживаются:
 * Поставщик удостоверений инициировал вход, где поставщик удостоверений является внешним поставщиком удостоверений, например ADFS.
+
+## <a name="saml-token"></a>маркер SAML
+
+Маркер SAML — это маркер безопасности, выдаваемый Azure AD B2C после успешного входа. Он содержит сведения о пользователе, поставщик службы, для которого предназначен маркер, подпись и срок действия. В следующей таблице перечислены утверждения и свойства, которые могут быть ожидаемыми в маркере SAML, выданном Azure AD B2C.
+
+|Элемент  |Свойство  |Примечания  |
+|---------|---------|---------|
+|`<Response>`| `ID` | Автоматически созданный уникальный идентификатор ответа. | 
+|`<Response>`| `InResponseTo` | Идентификатор запроса SAML, на который отвечает это сообщение. | 
+|`<Response>` | `IssueInstant` | Время, по истечении которого отклики отдаются. Значение времени кодируется в формате UTC.Чтобы изменить параметры времени существования маркера, установите `TokenNotBeforeSkewInSeconds` [метаданные](saml-issuer-technical-profile.md#metadata) технического профиля ИЗДАТЕЛЯ маркера SAML. | 
+|`<Response>` | `Destination`| Ссылка URI, указывающая адрес, на который был отправлен этот ответ. Значение идентично запросу SAML `AssertionConsumerServiceURL` . | 
+|`<Response>` `<Issuer>` | |Идентифицирует издателя маркера. Это произвольный URI, определяемый `IssuerUri` [метаданными](saml-issuer-technical-profile.md#metadata) проблемы токена SAML.     |
+|`<Response>` `<Assertion>` `<Subject>` `<NameID>`     |         |Участник, для которого маркер утверждает сведения, например идентификатор объекта пользователя. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Это значение можно использовать для безопасных проверок авторизации, например, когда маркер используется для доступа к ресурсу. По умолчанию утверждение субъекта заполняется идентификатором объекта пользователя в каталоге.|
+|`<Response>` `<Assertion>` `<Subject>` `<NameID>`     | `Format` | Ссылка URI, представляющая классификацию сведений об идентификаторе на основе строк. По умолчанию это свойство опущено. [Субжектнамингинфо](relyingparty.md#subjectnaminginfo) проверяющей стороны можно задать `NameID` Формат, например `urn:oasis:names:tc:SAML:2.0:nameid-format:transient` . |
+|`<Response>` `<Assertion>` `<Subject>` `<Conditions>` |`NotBefore` |Время, когда токен становится действительным. Значение времени кодируется в формате UTC. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Чтобы изменить параметры времени существования маркера, установите `TokenNotBeforeSkewInSeconds` [метаданные](saml-issuer-technical-profile.md#metadata) технического профиля для выпуска ошибки маркера SAML. |
+|`<Response>` `<Assertion>` `<Subject>` `<Conditions>` | `NotOnOrAfter` | Время, когда маркер станет недействительным. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Значение составляет 15 минут после `NotBefore` и не может быть изменено.|
+|`<Response>` `<Assertion>` `<Conditions>` `<AudienceRestriction>` `<Audience>` | |Ссылка URI, которая определяет предполагаемую аудиторию. Он определяет предполагаемого получателя маркера. Значение идентично запросу SAML `AssertionConsumerServiceURL` .|
+|`<Response>``<Assertion>` `<saml:AttributeStatement>` коллекция`<Attribute>` | | Коллекция утверждений (утверждения), настроенная в заявках на вывод [технического профиля проверяющей](relyingparty.md#technicalprofile) стороны. Имя утверждения можно настроить, задав `PartnerClaimType` для выходного утверждения. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

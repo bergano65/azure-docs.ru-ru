@@ -13,10 +13,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, vanto
 ms.date: 11/09/2018
 ms.openlocfilehash: a59e498435aab7b3e3e2ecf2e6096c044550a1b8
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91628372"
 ---
 # <a name="connect-your-application-to-azure-sql-managed-instance"></a>Connect your application to Azure SQL Managed Instance (Подключение приложения к управляемому экземпляру SQL Azure)
@@ -154,7 +154,7 @@ ms.locfileid: "91628372"
 |SSMS| 18,0 или [более поздней версии](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
 |[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) или более поздней версии |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о SQL Управляемый экземпляр см. в статье [что такое sql управляемый экземпляр?](sql-managed-instance-paas-overview.md).
 - Руководство, в котором показано, как создать управляемый экземпляр, см. в разделе [Создание управляемого экземпляра](instance-create-quickstart.md).

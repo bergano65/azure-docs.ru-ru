@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
 ms.openlocfilehash: bed2a4ccbe87aef9afa395ed789da393e885cc89
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91779815"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
@@ -141,7 +141,7 @@ call = callAgent.join(context, groupCallContext, joinCallOptions);
 ### <a name="overview"></a>Обзор
 Мобильные push-уведомления — это всплывающие уведомления, отображаемые на мобильных устройствах. Для вызова мы будем сосредоточиться на push-уведомлениях VoIP (голосовой через Интернет). Мы будем регистрироваться для получения push-уведомлений, обработайте push-уведомления, а затем отменяют регистрацию push-уведомлений.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Чтобы завершить работу с этим разделом, создайте учетную запись Firebase и включите облачные службы обмена сообщениями (FCM). Убедитесь, что Firebase Cloud Messaging подключен к экземпляру центра уведомлений Azure (АНХ). Инструкции см. [в статье Connect Firebase to Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started) .
 В этом разделе также предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.

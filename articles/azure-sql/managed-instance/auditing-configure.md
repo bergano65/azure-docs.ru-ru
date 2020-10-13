@@ -14,10 +14,10 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 05/26/2020
 ms.openlocfilehash: d8a6ead23e080b5e1e17403873e2dbaedc0ce177
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91620364"
 ---
 # <a name="get-started-with-azure-sql-managed-instance-auditing"></a>Приступая к работе с аудитом Управляемый экземпляр Azure SQL
@@ -32,7 +32,7 @@ ms.locfileid: "91620364"
 
 В следующем разделе описывается настройка аудита для управляемого экземпляра.
 
-1. Перейдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Создайте **контейнер** службы хранилища Azure для хранения журналов аудита.
 
    1. Перейдите к учетной записи хранения Azure, в которой вы хотите хранить журналы аудита.
@@ -244,7 +244,7 @@ ms.locfileid: "91620364"
 - Параметр завершения работы **не поддерживается**.
 - Значение 0 для `queue_delay`**не поддерживается**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Полный список методов использования журнала аудита см. в статье Приступая к [работе с аудитом базы данных SQL Azure](../../azure-sql/database/auditing-overview.md).
 - Дополнительные сведения о программах Azure, поддерживающих соответствие стандартам, см. в [центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), где можно найти самый актуальный список сертификатов соответствия.

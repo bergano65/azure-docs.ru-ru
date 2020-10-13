@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: chlound
 ms.openlocfilehash: 61679e1ee3843ed866ef12138a0edeff8877b1e6
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91448597"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
@@ -19,7 +19,7 @@ ms.locfileid: "91448597"
 
 В примере в этой статье используется [модуль SQLServer PowerShell](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps). Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -71,7 +71,7 @@ ms.locfileid: "91448597"
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
-5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите кнопку **Опубликовать**.
+5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите **Публиковать**.
 
     ![Публикация модуля Runbook](./media/analysis-services-refresh-azure-automation/10.png)
 
@@ -161,7 +161,7 @@ ms.locfileid: "91448597"
 
 Эти параметры определяются в сценарии Runbook PowerShell.  При выполнении веб-действия передаются полезные данные JSON WEBHOOKDATA.
 
-Он десериализуется и сохраняется как параметры PowerShell, которые затем используются командой PowerShell Invoke-Процесасдатабасе.
+Этот параметр десериализуется и сохраняется как параметры PowerShell, которые затем используются Invoke-ProcesASDatabase командой PowerShell.
 
 ![Десериализованный веб-перехватчик](./media/analysis-services-refresh-azure-automation/20.png)
 
@@ -223,7 +223,7 @@ else
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Примеры](analysis-services-samples.md)  
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: kgremban
 ms.openlocfilehash: d81cc6c94c04c683362fd12cd6777c304a4b0a84
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91361982"
 ---
 # <a name="confidential-computing-at-the-edge"></a>Конфиденциальные вычисления на границе
@@ -55,6 +55,6 @@ Open анклава поддерживает несколько аппаратн
 
 Когда вы будете готовы к разработке и развертыванию доверенного приложения, может помочь расширение [Microsoft Open анклава](https://marketplace.visualstudio.com/items?itemName=ms-iot.msiot-vscode-openenclave) для Visual Studio Code. Для разработки модулей для Трустбокс можно использовать Linux или Windows в качестве компьютера разработки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как приступить к разработке доверенных приложений в качестве модулей IoT Edge с помощью [расширения Open анклава для Visual Studio Code](https://github.com/openenclave/openenclave/tree/master/devex/vscode-extension)
