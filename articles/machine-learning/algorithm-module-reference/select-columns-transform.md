@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 10/10/2019
-ms.openlocfilehash: b3a0b904d65e6597c058ccf05ec837696e9ca20e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/10/2020
+ms.openlocfilehash: 14f08502f35afdc8a9a2cdc741b539b5f9cca712
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90893620"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945603"
 ---
 # <a name="select-columns-transform"></a>Преобразование "Выбор столбцов"
 
@@ -46,8 +46,14 @@ ms.locfileid: "90893620"
 
    *Не подключайте входной набор данных.* Вместо этого добавьте модуль « [Применить преобразование](apply-transformation.md) » и Соедините выходные данные преобразования «выбор компонентов».
 
+   Структура конвейера должна выглядеть следующим образом:
+
+   > [!div class="mx-imgBorder"]
+   > ![Пример конвейера](media/module/filter-based-feature-selection-score.png)
+
    > [!IMPORTANT]
    > Вы не можете применить [Выбор компонентов на основе фильтра](filter-based-feature-selection.md) к набору данных оценки и получить те же результаты. Поскольку выбор компонентов основан на значениях, он может выбрать другой набор столбцов, что приведет к сбою операции оценки.
+    
 7. Отправьте конвейер.
 
 Этот процесс сохранения и применения выбора столбцов гарантирует, что одна и та же схема данных будет доступна для обучения и оценки.

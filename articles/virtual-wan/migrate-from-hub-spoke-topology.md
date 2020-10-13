@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: cherylmc
 ms.openlocfilehash: e602905b461e370189cefed706ddc3a47e0199fe
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839645"
 ---
 # <a name="migrate-to-azure-virtual-wan"></a>Переход на Виртуальную глобальную сеть Azure
@@ -334,6 +334,6 @@ Contoso — это глобальная финансовая организац�
 
 Модель подключения типа &quot;звезда":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [виртуальной глобальной сети Azure](virtual-wan-about.md).

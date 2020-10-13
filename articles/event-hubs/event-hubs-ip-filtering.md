@@ -4,10 +4,10 @@ description: Использование правил брандмауэра дл
 ms.topic: article
 ms.date: 07/16/2020
 ms.openlocfilehash: ab7f835187a33b5e4d95c160831337172a5ed74e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91318540"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-from-specific-ip-addresses-or-ranges"></a>Разрешить доступ к пространствам имен концентраторов событий Azure с конкретных IP-адресов или диапазонов
@@ -23,7 +23,7 @@ ms.locfileid: "91318540"
 > - Azure Stream Analytics
 > - Маршруты Центра Интернета вещей Azure.
 > - Device Explorer Интернета вещей Azure.
-> - Сетка событий Azure.
+> - Сетка событий Azure
 > - Azure Monitor (параметры диагностики)
 >
 > В качестве исключения можно разрешить доступ к ресурсам концентраторов событий из определенных доверенных служб, даже если включена фильтрация IP-адресов. Список доверенных служб см. в разделе [Доверенные службы Майкрософт](#trusted-microsoft-services).

@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 72623d69f9fb0cbc68758a362bb977e5e02d2c00
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91637304"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-on-demand-provisioning"></a>Azure AD Connect подготовки облака по требованию
@@ -45,7 +45,7 @@ Azure AD Connect подготовка облачной подготовки пр
  ![Подготовка по требованию](media/how-to-on-demand-provision/on-demand3.png)
 7. После завершения работы вы увидите экран Success (успешно) и 4 зеленые флажки, указывающие, что оно было успешно подготовлено.  Все ошибки будут отображаться слева.
 
-  ![Успешно](media/how-to-on-demand-provision/on-demand4.png)
+  ![Успех](media/how-to-on-demand-provision/on-demand4.png)
 
 Теперь вы можете просмотреть пользователя и определить, применены ли изменения, внесенные в конфигурацию.  В оставшейся части этого документа будут описаны отдельные разделы, которые отображаются в сведениях об успешно синхронизированном пользователе.
 
@@ -93,6 +93,6 @@ Azure AD Connect подготовка облачной подготовки пр
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
-- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
+- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
 - [Как установить облачную подготовку Azure AD Connect](how-to-install.md)
  

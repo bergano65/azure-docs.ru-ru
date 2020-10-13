@@ -13,10 +13,10 @@ ms.author: sashan
 ms.reviewer: sstein
 ms.date: 07/28/2020
 ms.openlocfilehash: be632ba06edc858e7eadcd6e57a4f7769f69f2cb
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91321685"
 ---
 # <a name="designing-globally-available-services-using-azure-sql-database"></a>Разработка глобально доступных служб с помощью Базы данных SQL Azure
@@ -167,9 +167,9 @@ ms.locfileid: "91321685"
 ||Доступ только для чтения = 0 | Доступ только для чтения = время обнаружения сбоя + льготный период с потерей данных |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Сведения об обеспечении непрерывности бизнес-процессов и возможные сценарии описаны в [обзоре непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
+* Общие сведения о непрерывности бизнес-процессов и сценарии см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md) .
 * Дополнительные сведения об активной георепликации см. [здесь](active-geo-replication-overview.md).
 * Дополнительные сведения о группах автоматической отработки отказа см. в статье [группы автоматической отработки](auto-failover-group-overview.md)отказа.
 * Сведения об активной георепликации с пулами эластичных баз данных см. в статье [стратегии аварийного восстановления эластичного пула](disaster-recovery-strategies-for-applications-with-elastic-pool.md).

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: a2fe1b8bdc80a5265add22bd3602050034471fe2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dec5aeaac6f39a106899094e674864d3bd10dc02
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87036443"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966344"
 ---
 # <a name="troubleshoot-application-connectivity-issues-on-virtual-machines-in-azure"></a>Устранение проблем с подключением к приложениям на виртуальных машинах в Azure
 
@@ -122,7 +122,7 @@ ms.locfileid: "87036443"
   
   * Убедитесь, что конфигурация правила NAT для входящего трафика для виртуальной машины разрешает входящий трафик, в частности протокол (TCP или UDP), а также номера общедоступных и частных портов.
   * Убедитесь, что группы безопасности сети разрешают трафик входящих запросов и исходящих ответов.
-  * Дополнительные сведения см. в статье [Безопасность сети](../../virtual-network/security-overview.md).
+  * Дополнительные сведения см. в статье [Безопасность сети](../../virtual-network/network-security-groups-overview.md).
 
 Если виртуальная машина или конечная точка входит в комплект балансировки нагрузки, сделайте следующее.
 

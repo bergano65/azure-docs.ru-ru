@@ -10,10 +10,10 @@ ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
 ms.openlocfilehash: 6f4dd0836ba04d0e07ada8aced964317498b1f22
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91757601"
 ---
 # <a name="query-azure-cosmos-db-data-using-sql-serverless-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью SQL Server не в связи с Azure синапсе (Предварительная версия)
@@ -245,7 +245,7 @@ FROM
 | Логическое значение | bit |
 | Целое число | BIGINT |
 | Decimal | FLOAT |
-| Строка | varchar (параметры сортировки базы данных UTF8) |
+| Строковый тип | varchar (параметры сортировки базы данных UTF8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
 | Дата и время (метка времени Unix) | BIGINT |
 | NULL | `any SQL type` 

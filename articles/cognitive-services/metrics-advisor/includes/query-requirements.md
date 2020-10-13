@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: aahi
 ms.openlocfilehash: 518865f78c170f1fbe4e65b96dc149c1b449a88b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91631393"
 ---
 В запросе используйте параметр `@StartTime`, чтобы получить данные метрик для одной метки времени. Помощник по метрикам заменит параметр строкой формата `yyyy-MM-ddTHH:mm:ss` при выполнении запроса.

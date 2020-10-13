@@ -8,10 +8,10 @@ ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
 ms.openlocfilehash: 9a9cdef27276aa589a4aadd853185b0e3fb4be61
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91773745"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Регионы и зоны доступности в Azure
@@ -78,7 +78,7 @@ ms.locfileid: "91773745"
 
 | Тип области | Не региональный | Основное | Основной | Специализированный | Зоны доступности | Местонахождение данных |
 | --- | --- | --- | --- | --- | --- | --- |
-| Рекомендуемая | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
+| Рекомендуется | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
 | Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Недоступно | :heavy_check_mark: |
 
 ### <a name="services-by-category"></a>Службы по категориям
@@ -94,15 +94,15 @@ ms.locfileid: "91773745"
 > | Хранилище учетных записей | Управление API | Azure API для FHIR |
 > | Шлюз приложений | Конфигурация приложений | Службы Azure Analysis Services |
 > | Azure Backup | Служба приложений | Служба Блокчейн Azure |
-> | Azure Cosmos DB | Автоматизация | Azure Blueprints |
+> | Azure Cosmos DB | Служба автоматизации | Azure Blueprints |
 > | Azure Data Lake Storage 2-го поколения | Доменные службы Azure Active Directory | База данных Azure для MariaDB |
 > | Azure ExpressRoute | Бастион Azure | Выделенное устройство HSM Azure |
-> | База данных SQL Azure | Кэш Azure для Redis | Azure Dev Spaces |
+> | База данных SQL Azure | Кэш Redis для Azure | Azure Dev Spaces |
 > | Облачные службы | Когнитивный поиск Azure | Azure Digital Twins |
-> | Облачные службы: серия Av2 | Azure Data Explorer | Службы лабораторий Azure |
-> | Облачные службы: серия Dv2 | Azure Data Share | Azure NetApp Files |
-> | Облачные службы: серия Dv3 | База данных Azure для MySQL | Такт Azure |
-> | Облачные службы: серия Ev3 | База данных Azure для PostgreSQL | Облачная служба Azure весны |
+> | Облачные службы: Av2-Series | Azure Data Explorer | Службы лабораторий Azure |
+> | Облачные службы: Dv2-Series | Azure Data Share | Azure NetApp Files |
+> | Облачные службы: Dv3-Series | База данных Azure для MySQL | Такт Azure |
+> | Облачные службы: Ev3-Series | База данных Azure для PostgreSQL | Облачная служба Azure весны |
 > | Облачные службы: IP-адреса уровня экземпляра | Azure Database Migration Service | Azure Time Series Insights |
 > | Облачные службы: зарезервированный IP-адрес | Azure Databricks | Решение VMware в Azure от CloudSimple |
 > | Хранилище дисков | Защита от атак DDoS Azure | Облачные службы: серия G |
@@ -113,47 +113,47 @@ ms.locfileid: "91773745"
 > | Service Fabric | Azure HPC Cache | Каталог данных |
 > | Масштабируемые наборы виртуальных машин | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
 > | Виртуальные машины | Служба Azure Kubernetes (AKS) | Data Lake Analytics |
-> | Виртуальные машины: серия Av2 | Машинное обучение Azure | Машинное обучение Azure Studio (классическая модель)|
-> | Виртуальные машины: серия "BS" | Приватный канал Azure | Microsoft Genomics |
-> | Виртуальные машины: серия DSv2 | Azure Red Hat OpenShift | Удаленная отрисовка |
-> | Виртуальные машины: серия DSv3 | Служба Azure SignalR | Пространственные привязки |
-> | Виртуальные машины: серия Dv2 | Azure Site Recovery | StorSimple |
-> | Виртуальные машины: серия Dv3 | Azure Stack Hub | Индексатор видео |
-> | Виртуальные машины: серия ESv3 | Azure Stream Analytics | Виртуальные машины: серия DASv4 |
-> | Виртуальные машины: серия Ev3 | Azure Synapse Analytics | Виртуальные машины: серия DAv4 |
+> | Виртуальные машины: Av2-Series | Машинное обучение Azure | Машинное обучение Azure Studio (классическая модель)|
+> | Виртуальные машины: Bs-Series | Приватный канал Azure | Microsoft Genomics |
+> | Виртуальные машины: DSv2-Series | Azure Red Hat OpenShift | Удаленная отрисовка |
+> | Виртуальные машины: DSv3-Series | Служба Azure SignalR | Пространственные привязки |
+> | Виртуальные машины: Dv2-Series | Azure Site Recovery | StorSimple |
+> | Виртуальные машины: Dv3-Series | Azure Stack Hub | Индексатор видео |
+> | Виртуальные машины: ESv3-Series | Azure Stream Analytics | Виртуальные машины: DASv4-Series |
+> | Виртуальные машины: Ev3-Series | Azure Synapse Analytics | Виртуальные машины: DAv4-Series |
 > | Виртуальные машины: серии F | Пакетная служба Azure | Виртуальные машины: серия DCsv2 |
-> | Виртуальные машины: серия FS | Облачные службы: серия M | Виртуальные машины: серия EASv4 |
-> | Виртуальные машины: IP-адреса уровня экземпляра | Cognitive Services | Виртуальные машины: серия EAv4 |
+> | Виртуальные машины: FS-Series | Облачные службы: серия M | Виртуальные машины: EASv4-Series |
+> | Виртуальные машины: IP-адреса уровня экземпляра | Службы Cognitive Services | Виртуальные машины: EAv4-Series |
 > | Виртуальные машины: зарезервированный IP-адрес | Cognitive Services: Компьютерное зрение | Виртуальные машины: серия G |
-> | Виртуальная сеть | Cognitive Services: Content Moderator | Виртуальные машины: Серия GS |
-> | VPN-шлюз | Cognitive Services: лицо | Виртуальные машины: серия HBv1 |
-> |  | Cognitive Services: распознаватель форм | Виртуальные машины: серия HBv2 |
-> |  | Cognitive Services: Language Understanding | Виртуальные машины: серия HCv1 |
+> | Виртуальная сеть | Cognitive Services: Content Moderator | Виртуальные машины: GS-Series |
+> | VPN-шлюз | Cognitive Services: лицо | Виртуальные машины: HBv1-Series |
+> |  | Cognitive Services: распознаватель форм | Виртуальные машины: HBv2-Series |
+> |  | Cognitive Services: Language Understanding | Виртуальные машины: HCv1-Series |
 > |  | Cognitive Services: QnA Maker | Виртуальные машины: Серия H |
-> |  | Cognitive Services: речевые службы | Виртуальные машины: серия LS |
-> |  | Экземпляры контейнеров | Виртуальные машины: серия LSv2 |
-> |  | Реестр контейнеров | Виртуальные машины: серия Mv2 |
-> |  | Фабрика данных | Виртуальные машины: серия NC |
-> |  | Сетка событий Azure | Виртуальные машины: серия NCv2 |
-> |  | HDInsight | Виртуальные машины: серия NCv3 |
-> |  | Logic Apps | Виртуальные машины: серия NDs |
-> |  | Службы мультимедиа | Виртуальные машины: серия NDv2 |
-> |  | Наблюдатель за сетями | Виртуальные машины: серия NV |
-> |  | Центры уведомлений | Виртуальные машины: серия NVv3 |
-> |  | Power BI Embedded | Виртуальные машины: серия NVv4 |
+> |  | Cognitive Services: речевые службы | Виртуальные машины: LS-Series |
+> |  | Экземпляры контейнеров | Виртуальные машины: LSv2-Series |
+> |  | Реестр контейнеров | Виртуальные машины: Mv2-Series |
+> |  | Фабрика данных | Виртуальные машины: NC-Series |
+> |  | Сетка событий Azure | Виртуальные машины: NCv2-Series |
+> |  | HDInsight | Виртуальные машины: NCv3-Series |
+> |  | Logic Apps | Виртуальные машины: NDs-Series |
+> |  | Службы мультимедиа | Виртуальные машины: NDv2-Series |
+> |  | Наблюдатель за сетями | Виртуальные машины: NV-Series |
+> |  | Центры уведомлений | Виртуальные машины: NVv3-Series |
+> |  | Power BI Embedded | Виртуальные машины: NVv4-Series |
 > |  | Хранилище BLOB-объектов класса Premium | Виртуальные машины: SAP HANA на крупных экземплярах Azure |
 > |  | Хранилище файлов Premium | Центр приложений Visual Studio |
 > |  | Хранилище: Архивное хранилище |  |
 > |  | Ultra Хранилище дисков |  |
-> |  | Виртуальные машины: серия Ddsv4 |  |
-> |  | Виртуальные машины: серия Ddv4 |  |
-> |  | Виртуальные машины: серия Dsv4 |  |
-> |  | Виртуальные машины: серия dv4 |  |
-> |  | Виртуальные машины: серия Edsv4 |  |
-> |  | Виртуальные машины: серия Edv4 |  |
-> |  | Виртуальные машины: серия Esv4 |  |
-> |  | Виртуальные машины: серия Ev4 |  |
-> |  | Виртуальные машины: серия серия fsv2 |  |
+> |  | Виртуальные машины: Ddsv4-Series |  |
+> |  | Виртуальные машины: Ddv4-Series |  |
+> |  | Виртуальные машины: Dsv4-Series |  |
+> |  | Виртуальные машины: Dv4-Series |  |
+> |  | Виртуальные машины: Edsv4-Series |  |
+> |  | Виртуальные машины: Edv4-Series |  |
+> |  | Виртуальные машины: Esv4-Series |  |
+> |  | Виртуальные машины: Ev4-Series |  |
+> |  | Виртуальные машины: Fsv2-Series |  |
 > |  | Виртуальные машины: серия M |  |
 > |  | Виртуальная глобальная сеть |  |
 
@@ -182,7 +182,7 @@ ms.locfileid: "91773745"
 - [Создание экземпляра доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-create-instance.md)
 - [Создание кластера Azure Kubernetes Service (AKS), использующего Зоны доступности](../aks/availability-zones.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Регионы, поддерживающие Зоны доступности в Azure](az-region.md)
 - [Шаблоны быстрого запуска](https://aka.ms/azqs)

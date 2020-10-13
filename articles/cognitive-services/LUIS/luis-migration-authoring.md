@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 08/13/2020
 ms.openlocfilehash: 926b79e672c14249ec7c2b053dba7eb3a31443a7
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91536055"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
@@ -56,7 +56,7 @@ Language Understanding (LUIS) создание аутентификации из
 * Если вы являетесь владельцем приложения, вам не потребуется экспортировать приложения, так как они будут перенесены автоматически. Рекомендуется сохранить список совместной работы каждого приложения. Шаблон сообщения электронной почты, содержащий этот список, предоставляется в рамках процесса миграции.
 
 
-|Портал|Цель|
+|Портал|Назначение|
 |--|--|
 |[Azure](https://azure.microsoft.com/free/cognitive-services)| Создание ресурсов для прогнозирования и разработки.<br> Назначение участников ресурсам.|
 |[LUIS](https://www.luis.ai)| Переход на новые ресурсы для разработки.<br> Создайте новые ресурсы для разработки в потоке миграции.<br> Назначение и отмена назначения ресурсов для прогнозирования и разработки приложений на странице " **Управление**  >  **ресурсами Azure** ". <br> Перемещение приложений из одного ресурса для создания в другой.  |
@@ -243,7 +243,7 @@ Language Understanding (LUIS) создание аутентификации из
 ![Ошибка, показывающая, что произошел сбой миграции для участников совместной работы](./media/migrate-authoring-key/migration-failed-for-collab-2.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь [с основными понятиями о создании и использовании ключей среды выполнения](luis-how-to-azure-subscription.md).
 * Узнайте, как [назначать ключи](luis-how-to-azure-subscription.md) и [добавлять участников](luis-how-to-collaborate.md).

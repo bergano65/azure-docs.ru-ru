@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
 ms.openlocfilehash: ab9b7fa330964f7db8393334dd8f209efd75573d
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91611308"
 ---
 # <a name="add-storage-targets"></a>Добавление целевых объектов хранилища
@@ -185,9 +185,9 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
 
 | Модель использования                   | Режим кэширования | Проверка серверной части | Максимальная задержка записи на сервер |
 |-------------------------------|--------------|-----------------------|--------------------------|
-| Частое чтение, редкие операции записи | Чтение         | Никогда                 | Нет                     |
+| Частое чтение, редкие операции записи | Чтение         | Никогда                 | None                     |
 | Более 15% операций записи       | Чтение/запись   | Никогда                 | 1 час                   |
-| Клиенты обходят кэш      | Чтение         | 30 секунд            | Нет                     |
+| Клиенты обходят кэш      | Чтение         | 30 секунд            | None                     |
 
 ### <a name="create-an-nfs-storage-target"></a>Создание целевого объекта хранилища NFS
 
@@ -244,7 +244,7 @@ az hpc-cache blob-storage-target add --resource-group "hpc-cache-group" \
   * ``nfs-export`` — Экспорт системы хранения, связываемый с путем, ориентированным на клиента
   * ``target-path`` (необязательно) — подкаталог экспорта (при необходимости).
 
-  Пример: ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``
+  Например, ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``.
 
   Дополнительные сведения о функции виртуального пространства имен см. в статье [Настройка агрегированного пространства имен](hpc-cache-namespace.md) .
 
@@ -311,7 +311,7 @@ az hpc-cache storage-target list --resource-group "scgroup" --cache-name "sc1"
 
 Чтобы просмотреть сведения о конкретном целевом объекте хранилища, используйте команду [AZ HPC — хранилище кэша — целевое отображение](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-list) . (Укажите целевой объект хранилища по имени.)
 
-Пример
+Пример.
 
 ```azurecli
 $ az hpc-cache storage-target show --cache-name doc-cache0629 --name nfsd1
@@ -343,7 +343,7 @@ $
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После создания целевых объектов хранилища продолжите выполнение этих задач, чтобы подготовить кэш к использованию:
 

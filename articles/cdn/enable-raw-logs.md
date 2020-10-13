@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 09/25/2020
 ms.author: allensu
 ms.openlocfilehash: c41bf8bc6e5aa3749786bc1189343dfdebdc1508
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91321251"
 ---
 # <a name="monitoring-metrics-and-raw-logs-for-azure-cdn-from-microsoft"></a>Мониторинг метрик и необработанных журналов для Azure CDN от Майкрософт
@@ -61,7 +61,7 @@ ms.locfileid: "91321251"
     * **Передать в концентратор событий.**
         * Выберите **подписку**, **пространство имен концентратора событий**, **имя концентратора событий (необязательно)** и **имя политики концентратора событий**.
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-02.png" alt-text="Настройка назначения для параметров журнала." border="true":::
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-02.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 7. Щелкните **Сохранить**.
 
@@ -235,23 +235,23 @@ Azure CDN от мер Майкрософт и отправляет свои ме
 
 2. В разделе **мониторинг**выберите **метрики**.
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-03.png" alt-text="Метрики для профиля CDN." border="true":::
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-03.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 3. Выберите **Добавить метрику**, выберите метрику для добавления:
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-04.png" alt-text="Добавьте и выберите метрику для профиля CDN." border="true":::
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-04.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 4. Выберите **Добавить фильтр** , чтобы добавить фильтр:
     
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-05.png" alt-text="Примените фильтр к метрике." border="true":::
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-05.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 5. Выберите **Применить** разделение, чтобы увидеть тенденцию по различным измерениям:
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-06.png" alt-text="Примените разделение к метрике." border="true":::
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-06.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 6. Выберите " **создать диаграмму** ", чтобы добавить новую диаграмму:
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-07.png" alt-text="Добавьте новую диаграмму в представление метрики." border="true":::
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-07.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 ### <a name="alerts"></a>видны узлы
 
@@ -259,7 +259,7 @@ Azure CDN от мер Майкрософт и отправляет свои ме
 
 Выберите **новое правило генерации оповещений** для метрик, перечисленных в разделе метрики.
 
-:::image type="content" source="./media/cdn-raw-logs/raw-logs-08.png" alt-text="Настройка оповещений для конечной точки CDN." border="true":::
+:::image type="content" source="./media/cdn-raw-logs/raw-logs-08.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::
 
 За использование оповещений будет выплачиваться Azure Monitor. Дополнительные сведения об оповещениях см. в разделе [Azure Monitor Alerts](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview).
 
@@ -270,21 +270,21 @@ Azure CDN от мер Майкрософт и отправляет свои ме
 
 2. Выберите созданную рабочую область Log Analytics:
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-09.png" alt-text="Выбор рабочей области log Analytics" border="true":::   
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-09.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::   
 
 3. В рабочей области log Analytics в разделе **Общие** выберите **журналы** .  Затем выберите **начать работу**.
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-10.png" alt-text="Рабочая область ресурсов log Analytics." border="true":::   
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-10.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::   
  
 4. Выберите **Профили CDN**.  Выберите пример запроса для запуска или закройте пример экрана, чтобы ввести пользовательский запрос:
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-11.png" alt-text="Образец экрана запроса." border="true":::   
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-11.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::   
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-12.png" alt-text="Выполнение запроса." border="true":::   
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-12.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true":::   
 
 4. Чтобы просмотреть данные по диаграмме, выберите **Диаграмма**.  Выберите **закрепить на панели мониторинга** , чтобы закрепить диаграмму на панели мониторинга Azure:
 
-    :::image type="content" source="./media/cdn-raw-logs/raw-logs-13.png" alt-text="Закрепите диаграмму на панели мониторинга." border="true"::: 
+    :::image type="content" source="./media/cdn-raw-logs/raw-logs-13.png" alt-text="Добавьте параметр диагностики для профиля CDN." border="true"::: 
 
 ## <a name="next-steps"></a>Next Steps
 В рамках этой статьи вы включили поддержку необработанных журналов HTTP в службе Microsoft CDN.

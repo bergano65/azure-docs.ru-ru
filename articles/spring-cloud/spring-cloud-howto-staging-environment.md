@@ -8,15 +8,15 @@ ms.date: 02/03/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: d36c185272b7b67ffb8a21a77cc3a64f22d0df5a
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90888468"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Настройка промежуточной среды в облаке Azure весны
 
-**Эта статья относится к:** ✔️ Java
+**Эта статья применима к:** ✔️ Java
 
 В этой статье описывается настройка промежуточного развертывания с помощью шаблона развертывания "синий-зеленый" в Azure Веснного облака. Сине-зеленое развертывание — это шаблон непрерывной поставки Azure DevOps, который предполагает сохранение существующей (синей) версии при развертывании новой (зеленой). В этой статье показано, как разместить промежуточное развертывание в рабочей среде, не изменяя рабочее развертывание напрямую.
 
@@ -106,6 +106,6 @@ az spring-cloud app deploy  -g <resource-group-name> -s <service-instance-name> 
 az spring-cloud app deployment delete -n <staging-deployment-name> -g <resource-group-name> -s <service-instance-name> --app gateway
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
