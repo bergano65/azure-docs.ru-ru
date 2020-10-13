@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. создание конвейера CI/CD для границ на шинах с помощью Azure DevOps Starter
+title: Краткое руководство. Создание конвейера CI/CD для приложения Ruby on Rails с помощью Azure DevOps Starter
 description: Служба Azure DevOps Starter позволяет быстро приступить к работе с Azure. Вы можете запустить веб-приложение Ruby в службе Azure, выполнив несколько простых действий.
 ms.prod: devops
 ms.technology: devops-cicd
@@ -14,21 +14,21 @@ ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc
 ms.openlocfilehash: cde959d8e075b55cb6cbb37479ca49cdd8a8c0c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "82233743"
 ---
-# <a name="create-a-cicd-pipeline-for-ruby-on-rails-by-using-azure-devops-starter"></a>Создание конвейера CI/CD для заводы на шинах с помощью Azure DevOps Starter
+# <a name="create-a-cicd-pipeline-for-ruby-on-rails-by-using-azure-devops-starter"></a>Создание конвейера CI/CD для приложения Ruby on Rails с помощью Azure DevOps Starter
 
-Настройте непрерывную интеграцию (CI) и непрерывную доставку (CD) для приложения Ruby on салазок с помощью Azure DevOps Starter. DevOps Starter упрощает первоначальную настройку конвейера сборки и выпуска Azure DevOps.
+Настройте непрерывную интеграцию (CI) и непрерывную поставку (CD) для приложения Ruby on Rails с помощью Azure DevOps Starter. DevOps Starter упрощает первоначальную настройку конвейера сборки и выпуска Azure DevOps.
 
 Если у вас нет подписки Azure, вы можете получить ее бесплатно с помощью [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Azure DevOps Starter создает конвейер CI/CD в Azure Repos. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Starter также создает ресурсы Azure в требуемой подписке Azure.
+Azure DevOps Starter позволяет создать конвейер CI/CD в Azure Repos. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Starter также создает ресурсы Azure в требуемой подписке Azure.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
@@ -53,7 +53,7 @@ Azure DevOps Starter создает конвейер CI/CD в Azure Repos. Вы 
 1. Задайте имя проекта Azure DevOps. 
 
 1. Выберите подписку Azure и расположение, введите имя для приложения и нажмите кнопку **Готово**.  
-    Через несколько минут панель мониторинга DevOps Starter отобразится в портал Azure. Пример приложения настраивается в репозитории в организации Azure DevOps, после чего выполняется сборка и развертывание приложения в Azure. 
+    Через несколько минут панель мониторинга DevOps Starter отобразится на портале Azure. Пример приложения настраивается в репозитории в организации Azure DevOps, после чего выполняется сборка и развертывание приложения в Azure. 
     
     Панель мониторинга позволяет просматривать репозиторий кода, конвейер CI/CD и приложение в Azure. В области справа выберите **Обзор** для просмотра выполняющегося приложения.
 
@@ -61,9 +61,9 @@ Azure DevOps Starter создает конвейер CI/CD в Azure Repos. Вы 
 
 ## <a name="commit-your-code-changes-and-execute-the-cicd"></a>Фиксация изменений, внесенных в код, и выполнение процесса CI/CD
 
-Azure DevOps Starter создает репозиторий Git на Azure Pipelines или GitHub. Выполните следующие действия, чтобы просмотреть репозиторий и внести изменения в код приложения.
+Служба Azure DevOps Starter создает репозиторий Git в Azure Pipelines или на сайте GitHub. Выполните следующие действия, чтобы просмотреть репозиторий и внести изменения в код приложения.
 
-1. На левой панели мониторинга DevOps Starter выберите ссылку для главной ветви. По этой ссылке откроется представление созданного репозитория Git.
+1. В левой части панели мониторинга DevOps Starter выберите ссылку главной ветви. По этой ссылке откроется представление созданного репозитория Git.
 
 1. Чтобы просмотреть URL-адрес для клонирования репозитория, щелкните **Клонировать** в правом верхнем углу. Вы можете клонировать свой репозиторий Git в предпочитаемую интегрированную среду разработки. В следующих нескольких шагах вы можете использовать веб-браузер для создания и фиксации изменений кода непосредственно в главной ветви.
 
@@ -77,7 +77,7 @@ Azure DevOps Starter создает репозиторий Git на Azure Pipeli
 
 ## <a name="examine-the-azure-pipelines-cicd-pipeline"></a>изучение конвейера CI/CD в Azure Pipelines;
 
-Azure DevOps Starter автоматически настраивает весь конвейер CI/CD в Организации Azure DevOps. При необходимости изучите и настройте конвейер. Чтобы ознакомиться с конвейерами сборки и выпуска Azure DevOps, сделайте следующее:
+Служба Azure DevOps Starter автоматически настраивает полный конвейер CI/CD в вашей организации Azure DevOps. При необходимости изучите и настройте конвейер. Чтобы ознакомиться с конвейерами сборки и выпуска Azure DevOps, сделайте следующее:
 
 1. Перейдите к панели мониторинга DevOps Starter.
 

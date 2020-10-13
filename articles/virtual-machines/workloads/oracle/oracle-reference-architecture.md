@@ -1,23 +1,18 @@
 ---
 title: Эталонные архитектуры для баз данных Oracle в Azure | Документация Майкрософт
 description: Ссылается на архитектуры для запуска Oracle Database Enterprise Edition баз данных на Виртуальные машины Microsoft Azure.
-services: virtual-machines-linux
 author: dbakevlar
-manager: ''
-tags: ''
-ms.service: virtual-machines
+ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 12/13/2019
 ms.author: kegorman
-ms.custom: ''
-ms.openlocfilehash: 6e13add778ae372ea90361c094238668752fe2af
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.reviewer: cynthn
+ms.openlocfilehash: f9765f4ce47e6e698daf1680aecf059241c58382
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977703"
+ms.locfileid: "91993579"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Эталонные архитектуры для Oracle Database Enterprise Edition в Azure
 

@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 11/04/2019
+ms.date: 10/12/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9b5bc3f87296ea1af5de28178df6d8f27c965476
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ddc0dc433a5d8c09c692e6304647fb391694e8c8
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87116084"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993175"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
@@ -89,7 +89,7 @@ ms.locfileid: "87116084"
 Для просмотра новых журналов в Application Insights требуется небольшая задержка (обычно менее пяти минут).
 
 1. Откройте созданный ресурс Application Insights на [портале Azure](https://portal.azure.com).
-1. В меню **Обзор** выберите пункт **аналитика**.
+1. На странице **Обзор** выберите **журналы**.
 1. Откройте новую вкладку в Application Insights
 
 Ниже приведен список запросов, которые можно использовать для просмотра журналов.

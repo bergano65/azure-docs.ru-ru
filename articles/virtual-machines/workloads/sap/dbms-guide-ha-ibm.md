@@ -1,25 +1,18 @@
 ---
 title: Настройка IBM DB2 HADR на виртуальных машинах Azure | Документация Майкрософт
 description: Установите высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: msjuergent
-manager: patfilot
-editor: ''
-tags: azure-resource-manager
-keywords: SAP
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
 ms.date: 03/06/2020
 ms.author: juergent
-ms.openlocfilehash: 7d453fba37e62e8528ae7b4ea86d1604973b84a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.reviewer: cynthn
+ms.openlocfilehash: 17df60cd039601d3f8036125c5c0098a8000667c
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87051997"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993310"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-suse-linux-enterprise-server-with-pacemaker"></a>Высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure на SUSE Linux Enterprise Server с Pacemaker
 
@@ -403,7 +396,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте интерфейсный пул IP-адресов:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
@@ -415,7 +408,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте пул серверной части:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
 
@@ -429,7 +422,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создание пробы работоспособности:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
 
    b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
 
@@ -439,7 +432,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте правила балансировки нагрузки.
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
 
    b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
 
@@ -495,7 +488,7 @@ j2ee/dbhost = db-virt-hostname
 
 Рекомендуется настроить общую общую папку NFS, в которой журналы записываются из обоих узлов. Общий ресурс NFS должен быть высокодоступным. 
 
-Можно использовать существующие общие ресурсы NFS высокой доступности для транспорта или каталога профиля. Дополнительные сведения см. в разделе:
+Можно использовать существующие общие ресурсы NFS высокой доступности для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе
 
 - [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][nfs-ha] 
 - [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](./high-availability-guide-suse-netapp-files.md)

@@ -1,26 +1,18 @@
 ---
 title: Развертывание SAP S/4HANA или BW/4HANA на виртуальной машине Azure | Документация Майкрософт
 description: Развертывание SAP S/4HANA или BW/4HANA на виртуальной машине Azure
-services: virtual-machines-linux
-documentationcenter: ''
 author: hermanndms
-manager: juergent
-editor: ''
-tags: azure-resource-manager
-keywords: ''
-ms.assetid: 44bbd2b6-a376-4b5c-b824-e76917117fa9
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
-ms.openlocfilehash: c110a4e0429ba52e01c472097a2241f91d504cf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.reviewer: cynthn
+ms.openlocfilehash: 116de28501b77262ef126ed420982d853376da4e
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77616207"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993400"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Развертывание SAP S/4HANA или BW/4HANA в Azure
 В этой статье описывается, как развернуть платформу S/4HANA в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. Чтобы развернуть другие решения на основе SAP HANA, например BW/4HANA, выполните те же действия.
@@ -42,7 +34,7 @@ ms.locfileid: "77616207"
 ### <a name="create-an-account-in-the-sap-cal"></a>Создание учетной записи в SAP CAL
 1. Для входа в SAP CAL впервые используйте пользователя S-User SAP или других пользователей, зарегистрированных в SAP. Затем определите учетную запись SAP CAL, которая используется SAP CAL для развертывания устройств в Azure. Вот что нужно сделать в определении учетной записи:
 
-    a. Выберите модель развертывания в Azure (Resource Manager или классическая).
+    а. Выберите модель развертывания в Azure (Resource Manager или классическая).
 
     b. Введите подписку Azure. Учетную запись SAP CAL можно назначить только одной подписке. Если вам требуется несколько подписок, необходимо создать еще одну учетную запись SAP CAL.
 
@@ -53,7 +45,7 @@ ms.locfileid: "77616207"
 
 1. Создайте учетную запись SAP CAL. На странице **Учетные записи** отображается три варианта для Azure: 
 
-    a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
+    а. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
     b. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
@@ -111,7 +103,7 @@ ms.locfileid: "77616207"
 
 1. На странице**Сведения об учетной записи** сделайте следующее:
 
-    a. Выберите учетную запись SAP CAL. (Используйте учетную запись, которая связана с моделью развертывания Resource Manager.)
+    а. Выберите учетную запись SAP CAL. (Используйте учетную запись, которая связана с моделью развертывания Resource Manager.)
 
     b. Введите **имя** экземпляра.
 
