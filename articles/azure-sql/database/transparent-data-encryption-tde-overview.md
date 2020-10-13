@@ -13,10 +13,10 @@ ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 06/15/2020
 ms.openlocfilehash: d9bc5e91d45b75c47cee31c45b937f7d3f0118b8
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87836689"
 ---
 # <a name="transparent-data-encryption-for-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Прозрачное шифрование данных для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
@@ -53,7 +53,7 @@ ms.locfileid: "87836689"
 
 Для операций в пределах Azure базу данных не нужно расшифровывать. Параметры TDE базы данных-источника прозрачно наследуются целевым объектом. Это относится ко всем следующим операциям:
 
-- геовосстановлением;
+- Геовосстановление
 - восстановление на определенный момент времени через интерфейс самообслуживания;
 - восстановление удаленной базы данных;
 - Активная георепликация
@@ -91,7 +91,7 @@ ms.locfileid: "87836689"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка предназначена для модуля AZ. SQL. Сведения об этих командлетах см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы команд в модулях Az и AzureRm практически идентичны.
 
 Для настройки TDE с помощью PowerShell нужно подключиться в качестве владельца Azure, участника или диспетчера безопасности SQL.
 

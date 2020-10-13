@@ -10,10 +10,10 @@ ms.date: 08/20/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 5521e49c767a2510bf7c8c53cf6ac5e86b73b466
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87837182"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Уведомления о плановом обслуживании для масштабируемых наборов виртуальных машин
@@ -214,6 +214,6 @@ az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
    - Вы решили остановить (отменить распределение) и перезапустить виртуальную машину.
    - Вы настроили **автоматическое завершение работы** для виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как получать события обслуживания с виртуальной машины с помощью службы [Запланированные события](../virtual-machines/windows/scheduled-events.md).

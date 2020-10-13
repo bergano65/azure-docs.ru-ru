@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/29/2020
 ms.author: duau
 ms.openlocfilehash: 1a8064c3ff89c0bc8b0ceb5249492b912c219ce8
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91535837"
 ---
 # <a name="caching-with-azure-front-door"></a>Кэширование с помощью передней дверцы Azure
@@ -113,7 +113,7 @@ ms.locfileid: "91535837"
 2. Cache-Control: max-age =\<seconds>
 3. Истекает \<http-date>
 
-Заголовки ответов Cache-Control, указывающие, что ответ не будет кэшироваться, например Cache-Control: закрытый, Cache-Control: un-Cache и Cache-Control: No-Store, не учитывается.  Если кэш-Control отсутствует, то по умолчанию Передняя дверца будет кэшировать ресурс на X-й период, где X получает случайный выбор в диапазоне от 1 до 3 дней.
+Cache-Control заголовки ответа, указывающие, что ответ не будет кэшироваться, например Cache-Control: Private, Cache-Control: un-Cache и Cache-Control: No-Store, не учитывается.  Если Cache-Control отсутствует, то по умолчанию на передней дверце будет кэшироваться ресурс на X-й период, где X возвращается случайным образом в диапазоне от 1 до 3 дней.
 
 ## <a name="request-headers"></a>Заголовки запроса
 

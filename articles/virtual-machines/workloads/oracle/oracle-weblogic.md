@@ -14,13 +14,13 @@ ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: rezar
 ms.openlocfilehash: e8f1b115f8a52b4352478f91dd5849c45bfebdc1
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91274373"
 ---
-# <a name="what-are-solutions-for-running-oracle-weblogic-server-on-azure-virtual-machines"></a>Что такое решения для запуска сервера платформы Oracle на виртуальных машинах Azure?
+# <a name="what-are-solutions-for-running-oracle-weblogic-server-on-azure-virtual-machines"></a>Что такое решения для запуска Oracle WebLogic Server в Виртуальных машинах Azure?
 
 На этой странице описаны решения для запуска сервера веб-логики Oracle (WLS) на виртуальных машинах Azure. Эти решения совместно разработаны корпорацией Oracle и корпорацией Майкрософт.
 
@@ -56,11 +56,11 @@ _Если вы заинтересованы в тесном взаимодейс
 
 Решения позволяют использовать широкий спектр готовых к производству архитектур развертывания с относительным удобством. Большинство вариантов миграции можно использовать наиболее производительным способом, позволяя сосредоточиться на разработке бизнес-приложений.
 
-:::image type="content" source="media/oracle-weblogic/weblogic-architecture-vms.png" alt-text="В Azure включены сложные развертывания сервера для серверной логической логики":::
+:::image type="content" source="media/oracle-weblogic/weblogic-architecture-vms.png" alt-text="Вы можете использовать портал Azure для развертывания сервера серверной логической логики в Azure.":::
 
 Помимо тех, которые автоматически подготавливаются решениями, клиенты имеют полную гибкость в настройке своих развертываний. Скорее всего, на самом верху развертывания приложений клиенты будут интегрировать дополнительные ресурсы Azure с их развертываниями. Пользователям рекомендуется предоставить отзыв о дальнейших улучшениях решений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите предложения в Azure.
 

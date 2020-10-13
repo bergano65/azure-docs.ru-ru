@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
-ms.openlocfilehash: 916d491c45a2979c59580328a721c11bd79d49c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48808f762536390287bae40e8af3849da20b81c2
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372210"
+ms.locfileid: "91874294"
 ---
 # <a name="video-analytics---object-and-motion-detection-application-architecture"></a>Аналитика видео — архитектура приложения для обнаружения объектов и движения
 
@@ -41,4 +41,4 @@ Media Graph позволяет определить, откуда следует
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-На следующем шаге вы узнаете, как [создать приложение для анализа видео в Azure IOT Central](tutorial-video-analytics-create-app.md).
+На следующем шаге мы научитесь [развертывать приложение IOT Central с помощью шаблона приложения Video Analytics — объект и приложение обнаружения движения](tutorial-video-analytics-deploy.md).

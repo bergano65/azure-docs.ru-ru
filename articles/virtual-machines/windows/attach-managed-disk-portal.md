@@ -8,10 +8,10 @@ ms.date: 02/06/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: b100676cd8cfbffd273ea6ad50b63545f2d6037a
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87836230"
 ---
 # <a name="attach-a-managed-data-disk-to-a-windows-vm-by-using-the-azure-portal"></a>Подключение управляемого диска данных к виртуальной машине Windows с помощью портала Azure
@@ -45,7 +45,7 @@ ms.locfileid: "87836230"
 9. Вы получите предупреждение о том, что при форматировании дисков будут стерты все данные. Щелкните **ОК**.
 10. После завершения форматирования щелкните **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Вы также можете [подключить диск данных с помощью PowerShell](attach-disk-ps.md).
 - Если приложению необходимо использовать диск *D:* для хранения данных, можно [изменить букву диска временного диска Windows](change-drive-letter.md).
