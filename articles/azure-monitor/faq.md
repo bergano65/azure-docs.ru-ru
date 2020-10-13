@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 06b92d982b42d97849994b4a21696b72461efe1f
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: 4b7f596d2184d25229cc1a8e496d0d78eaaabdb6
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893770"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91994679"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
-В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor. Если у вас есть дополнительные вопросы, перейдите на [дискуссионный форум](https://docs.microsoft.com/answers/questions/topics/single/24223.html) и опубликуйте свои вопросы. Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
+В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor. Если у вас есть дополнительные вопросы, перейдите на [дискуссионный форум](/answers/questions/topics/single/24223.html) и опубликуйте свои вопросы. Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
 
 
 ## <a name="general"></a>Общие сведения

@@ -54,6 +54,20 @@
               href: class-type-matlab.md
             - name: Автоматизированное проектирование (САПР) с использованием SolidWorks
               href: class-type-solidworks.md
+        - name: Использование Служб лабораторий Azure с Teams
+          items:
+            - name: Обзор
+              href: lab-services-within-teams-overview.md
+            - name: Создание лаборатории с помощью Teams
+              href: how-to-get-started-create-lab-within-teams.md
+            - name: Управление списками пользователей
+              href: how-to-manage-user-lists-within-teams.md
+            - name: Управление пулом виртуальных машин
+              href: how-to-manage-vm-pool-within-teams.md
+            - name: Создание расписаний
+              href: how-to-create-schedules-within-teams.md
+            - name: Доступ к виртуальной машине (представление для учащихся)
+              href: how-to-access-vm-for-students-within-teams.md
 - name: Практические руководства
   items:
     - name: Руководство для администратора

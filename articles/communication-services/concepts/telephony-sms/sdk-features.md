@@ -6,19 +6,19 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 03/10/2020
+ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 4077bbe0a98f6b7788af9b6c44f73abbc936c6aa
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d40637b05a5d398124ee52dbca49d55b3112ec95
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91332245"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758410"
 ---
 # <a name="sms-client-library-overview"></a>Общие сведения о клиентской библиотеке SMS
 
-[!INCLUDE [Private Preview Notice](../../includes/private-preview-include.md)]
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 Клиентские библиотеки Служб коммуникации Azure для текстовых сообщений (SMS) можно использовать для добавления в приложения возможности обмена текстовыми сообщениями.
 
@@ -37,7 +37,7 @@ ms.locfileid: "91332245"
 | номер телефона;      | Бесплатные номера                                                                     | ✔️   | ✔️    | ✔️    | ✔️      |
 | Нормативные требования        | Обработка отказов                                                                      | ✔️   | ✔️    | ✔️    | ✔️      |
 | Наблюдение        | Отслеживание использования отправленных и полученных сообщений                                          | ✔️   | ✔️    | ✔️    | ✔️      |
-| Вызовы ТСОП      | Добавление возможностей вызова ТСОП по бесплатному номеру телефона с поддержкой SMS (закрытая предварительная версия)                    | ✔️   | ✔️    | ✔️    | ✔️      |
+| Вызовы ТСОП      | Добавление возможностей вызова ТСОП по бесплатному номеру телефона с поддержкой SMS                    | ✔️   | ✔️    | ✔️    | ✔️      |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

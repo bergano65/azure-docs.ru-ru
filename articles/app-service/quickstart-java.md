@@ -10,12 +10,12 @@ ms.date: 08/01/2020
 ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 4041623d1c6ae464afd20e3beff753fb89e0a350
-ms.sourcegitcommit: ada9a4a0f9d5dbb71fc397b60dc66c22cf94a08d
+ms.openlocfilehash: f6a4045308aa0ae8488839b0d5ea4d476c4dc883
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91405086"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776329"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure
 
@@ -257,26 +257,24 @@ az group delete --name <your resource group name; for example: helloworld-155840
 Ее выполнение может занять до минуты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-> [!div class="nextstepaction"]
-> [Подключение к Базе данных SQL Azure на Java](../azure-sql/database/connect-query-java.md?toc=%2fazure%2fjava%2ftoc.json)
-
-> [!div class="nextstepaction"]
-> [Подключение к Базе данных Azure для MySQL на Java](../mysql/connect-java.md)
 
 > [!div class="nextstepaction"]
 > [Подключение к Базе данных Azure для PostgreSQL на Java](../postgresql/connect-java.md)
+
+> [!div class="nextstepaction"]
+> [Настройка процесса непрерывной интеграции и доставки](deploy-continuous-deployment.md)
+
+> [!div class="nextstepaction"]
+> [Сведения о ценах](https://azure.microsoft.com/pricing/details/app-service/linux/)
+
+> [!div class="nextstepaction"]
+> [Агрегирование журналов и метрик](troubleshoot-diagnostic-logs.md)
+
+> [!div class="nextstepaction"]
+> [Увеличение масштаба](manage-scale-up.md)
 
 > [!div class="nextstepaction"]
 > [Ресурсы Azure для разработчиков Java](/java/azure/)
 
 > [!div class="nextstepaction"]
 > [Настройка приложения Java](configure-language-java.md)
-
-> [!div class="nextstepaction"]
-> [CI/CD с использованием Jenkins](/azure/developer/jenkins/deploy-to-azure-app-service-using-plugin)
-
-> [!div class="nextstepaction"]
-> [Сопоставление пользовательского домена](app-service-web-tutorial-custom-domain.md)
-
-> [!div class="nextstepaction"]
-> [Дополнительные сведения о подключаемых модулях Maven для Azure](https://github.com/microsoft/azure-maven-plugins)

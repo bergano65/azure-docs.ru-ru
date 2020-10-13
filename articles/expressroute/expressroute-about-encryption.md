@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 05/05/2020
+ms.date: 10/12/2020
 ms.author: duau
-ms.openlocfilehash: 46f0a0e86c5db612f440bcf631329d2800251dab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83fa16265106e1033cb77ab4175b606714ec66d7
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397803"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996842"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
  
@@ -37,14 +37,12 @@ ExpressRoute поддерживает несколько технологий ш
 Протокол IPsec является [стандартом IETF](https://tools.ietf.org/html/rfc6071). Он шифрует данные на уровне протокола Интернета (IP) или уровня сети 3. Протокол IPsec можно использовать для шифрования сквозного подключения между локальной сетью и виртуальной сетью в Azure. См. другие вопросы и ответы ниже.
 ### <a name="can-i-enable-ipsec-in-addition-to-macsec-on-my-expressroute-direct-ports"></a>Можно ли включить IPsec в дополнение к Максек на моих портах ExpressRoute Direct?
 Да. Максек обеспечивает защиту физических подключений между вами и корпорацией Майкрософт. IPsec обеспечивает безопасность сквозного подключения между вами и виртуальными сетями в Azure. Их можно включить независимо. 
-### <a name="can-i-use-azure-vpn-gateway-to-set-up-the-ipsec-tunnel-between-my-on-premises-network-and-my-azure-virtual-network"></a>Можно ли использовать VPN-шлюз Azure для настройки туннеля IPsec между локальной сетью и виртуальной сетью Azure?
-Да. Вы можете настроить этот туннель IPsec через пиринг Майкрософт канала ExpressRoute. Выполните [инструкции по настройке](site-to-site-vpn-over-microsoft-peering.md).
 ### <a name="can-i-use-azure-vpn-gateway-to-set-up-the-ipsec-tunnel-over-azure-private-peering"></a>Можно ли использовать VPN-шлюз Azure для настройки туннеля IPsec через частный пиринг Azure?
-При внедрении виртуальной глобальной сети Azure можно выполнить следующие [действия](../virtual-wan/vpn-over-expressroute.md) , чтобы зашифровать сквозное подключение. Если у вас есть обычная виртуальная сеть Azure, вы можете развернуть сторонний VPN-шлюз в виртуальной сети и создать туннель IPsec между ним и локальным VPN-шлюзом.
+Да. При внедрении виртуальной глобальной сети Azure можно выполнить следующие [действия](../virtual-wan/vpn-over-expressroute.md) , чтобы зашифровать сквозное подключение. Если у вас есть обычная виртуальная сеть Azure, вы можете выполнить следующие [действия](../vpn-gateway/site-to-site-vpn-private-peering.md) , чтобы установить туннель IPsec между VPN-шлюзом Azure и ЛОКАЛЬНЫМ VPN-шлюзом.
 ### <a name="what-is-the-throughput-i-will-get-after-enabling-ipsec-on-my-expressroute-connection"></a>Какова пропускная способность, которую я получаю после включения IPsec для подключения ExpressRoute?
 Если используется VPN-шлюз Azure, проверьте [номера производительности здесь](../vpn-gateway/vpn-gateway-about-vpngateways.md). Если используется сторонний VPN-шлюз, обратитесь к поставщику за номерами производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о конфигурации Максек см. в разделе [Configure максек](expressroute-howto-macsec.md) .
 
 Дополнительные сведения о конфигурации IPsec см. в разделе [Настройка IPSec](site-to-site-vpn-over-microsoft-peering.md) .

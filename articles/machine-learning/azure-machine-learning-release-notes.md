@@ -9,18 +9,61 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
-ms.openlocfilehash: 189d6a57a17172f181e7375265960fe4f25f8ed1
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 9f1b8435f7d51ad586484ddb7e9bbabf9d067926
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940248"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996751"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
 В этой статье вы узнаете о выпусках Машинное обучение Azure.  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true) машинное обучение Azure.
 
 Ознакомьтесь со [списком известных проблем](resource-known-issues.md), чтобы получить сведения об известных ошибках и способах их устранения.
+
+## <a name="2020-10-12"></a>2020-10-12
+
+### <a name="azure-machine-learning-sdk-for-python-v1160"></a>Машинное обучение Azure SDK для Python v 1.16.0
++ **Исправления ошибок и улучшения**
+  + **azure-cli-ml**
+    + Аксвебсервице и Аксендпоинтс теперь поддерживают ограничения ресурсов ЦП и памяти на уровне Pod. Эти необязательные ограничения можно определить с помощью 1. Установка `cpu_cores_limit` `memory_gb_limit` параметров и в `AKSEndpoint.deploy_configuration()` `AKSWebservice.deploy_configuration()` методе и 2. Установка `--cpu-cores-limit` и `--memory-gb-limit` Флаги в применимых вызовах CLI 3. Параметры `cpuLimit` и `memoryInGBLimit` в `containerResourceRequirements` файле конфигурации развертывания. JSON/. yml. Дополнительные сведения о ресурсах и ограничениях Kubernetes можно найти по адресу https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+  + **azureml-contrib-interpret**
+    + Исправление описаний пакетов, вызывающее ошибку отправки в PyPI для azureml-интерпретации, azureml-объяснить-Model, azureml-от участников сообщества-интерпретируем и azureml-tensorboard
+  + **azureml-от участников сообщества-K8S**
+    + Добавлена поддержка для присоединения Арккубернетес COMPUTE.
+  + **azureml-от участников сообщества-Талха**
+    + Аксвебсервице и Аксендпоинтс теперь поддерживают ограничения ресурсов ЦП и памяти на уровне Pod. Эти необязательные ограничения можно определить с помощью 1. Установка `cpu_cores_limit` `memory_gb_limit` параметров и в `AKSEndpoint.deploy_configuration()` `AKSWebservice.deploy_configuration()` методе и 2. Установка `--cpu-cores-limit` и `--memory-gb-limit` Флаги в применимых вызовах CLI 3. Параметры `cpuLimit` и `memoryInGBLimit` в `containerResourceRequirements` файле конфигурации развертывания. JSON/. yml. Дополнительные сведения о ресурсах и ограничениях Kubernetes можно найти по адресу https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+  + **azureml-от участников сообщества-Server**
+    + Аксвебсервице и Аксендпоинтс теперь поддерживают ограничения ресурсов ЦП и памяти на уровне Pod. Эти необязательные ограничения можно определить с помощью 1. Установка `cpu_cores_limit` `memory_gb_limit` параметров и в `AKSEndpoint.deploy_configuration()` `AKSWebservice.deploy_configuration()` методе и 2. Установка `--cpu-cores-limit` и `--memory-gb-limit` Флаги в применимых вызовах CLI 3. Параметры `cpuLimit` и `memoryInGBLimit` в `containerResourceRequirements` файле конфигурации развертывания. JSON/. yml. Дополнительные сведения о ресурсах и ограничениях Kubernetes можно найти по адресу https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+  + **azureml-core**
+    + Закрепление основных версий прямых зависимостей azureml-Core
+    + Аксвебсервице и Аксендпоинтс теперь поддерживают ограничения ресурсов ЦП и памяти на уровне Pod. Дополнительные сведения о ресурсах и ограничениях Kubernetes можно найти по адресу https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits
+    + Обновлен run.log_table, позволяющий регистрировать отдельные строки.
+    + Добавлен статический метод `Run.get(workspace, run_id)` для получения запуска только с помощью метода экземпляра, добавленного в рабочую область, `Workspace.get_run(run_id)` для получения запуска в рабочей области.
+    + Введение в свойство Command в конфигурации запуска, которое позволит пользователям отправлять команду вместо аргументов сценария &.
+  + **azureml — машинный код**
+    + `azureml-train, azureml-train-core, azureml-sdk, azureml-pipeline-core, azureml-dataprep-native` официально поддерживает Python 3,8.
+  + **azureml-explain-model**
+    + Исправление описаний пакетов, вызывающее ошибку отправки в PyPI для azureml-интерпретации, azureml-объяснить-Model, azureml-от участников сообщества-интерпретируем и azureml-tensorboard
+  + **azureml-interpret**
+    + фиксированное объяснение поведения is_raw флага клиента в azureml-интерпретировать
+    + Исправление описаний пакетов, вызывающее ошибку отправки в PyPI для azureml-интерпретации, azureml-объяснить-Model, azureml-от участников сообщества-интерпретируем и azureml-tensorboard
+  + **azureml-pipeline-core**
+    + `azureml-train, azureml-train-core, azureml-sdk, azureml-pipeline-core, azureml-dataprep-native` официально поддерживает Python 3,8.
+  + **azureml-sdk**
+    + `azureml-train, azureml-train-core, azureml-sdk, azureml-pipeline-core, azureml-dataprep-native` официально поддерживает Python 3,8.
+  + **azureml-tensorboard**
+    + Исправление описаний пакетов, вызывающее ошибку отправки в PyPI для azureml-интерпретации, azureml-объяснить-Model, azureml-от участников сообщества-интерпретируем и azureml-tensorboard
+  + **azureml — обучение**
+    + `azureml-train, azureml-train-core, azureml-sdk, azureml-pipeline-core, azureml-dataprep-native` официально поддерживает Python 3,8.
+  + **azureml-train-core**
+    + `azureml-train, azureml-train-core, azureml-sdk, azureml-pipeline-core, azureml-dataprep-native` официально поддерживает Python 3,8.
+    + Добавление среды TensorFlow 2,3, проверенной в среде
+    + Введение в свойство Command в конфигурации запуска, которое позволит пользователям отправлять команду вместо аргументов сценария &.
+  + **azureml-widgets**
+    + Переработанный интерфейс для мини-приложения запуска сценария.
+
 
 ## <a name="2020-09-28"></a>2020-09-28
 
@@ -98,7 +141,7 @@ ms.locfileid: "91940248"
     + Указанное свойство Свагжерурл для сущности конечной точки конвейера через этого пользователя может видеть определение схемы для конечной точки опубликованного конвейера.
   + **azureml-конвейер — шаги**
     + Новый Kusto шаг и целевой объект Kusto вычислений.
-  + **azureml — телеметрии**
+  + **azureml-telemetry**
     + Обновление описания пакета для страницы обзора PyPI.
   + **azureml — обучение**
     + Обновление описания пакета для страницы обзора PyPI.
@@ -127,7 +170,7 @@ ms.locfileid: "91940248"
     + Обновленные зависимости Аутомл: `scikit-learn` (теперь 0.22.1), `pandas` (теперь 0.25.1), `numpy` (теперь 1.18.2).
   + **azureml-от участников сообщества-равноправие**
     + Укажите краткое описание для azureml-от участников сообщества-равноправия.
-  + **azureml-от участников сообщества-конвейер — шаги**
+  + **azureml-contrib-pipeline-steps**
     + Добавлено сообщение о том, что этот пакет является устаревшим, и вместо него следует использовать azureml-Pipeline-этапы.
   + **azureml-core**
     + Добавлена команда списка ключей для рабочей области.
@@ -198,7 +241,7 @@ ms.locfileid: "91940248"
     + Улучшено сообщение об ошибке при попытке загрузить или подключить неверный тип набора данных.
   + **azureml-pipeline-core**
     + Исправлена ошибка при десериализации графа конвейера, содержащего зарегистрированные наборы данных.
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Рскриптстеп поддерживает Рсектион из azureml. Core. Environment.
     + Удален параметр passthru_automl_config из `AutoMLStep` общедоступного API и преобразован в внутренний параметр.
   + **azureml-train-automl-client**
@@ -350,7 +393,7 @@ ms.locfileid: "91940248"
     + Очистка балансировки класса больше не будет включена, если пользователь отключит Добавление признаков.  
   + **azureml-от участников сообщества-ITP**
     + Поддерживается тип вычислений CmAk. Вы можете подключить собственный кластер AKS к рабочей области для задания обучения.
-  + **azureml-contrib-notebook**
+  + **azureml-от участников сообщества-Notebook**
     + Усовершенствования документации по пакету azureml-от участников сообщества-Notebook.
   + **azureml-contrib-pipeline-steps**
     + Усовершенствования в документах для пакета azureml-от участников сообщества--конвейер — шаги.
@@ -375,7 +418,7 @@ ms.locfileid: "91940248"
     + Улучшена обработка памяти для to_pandas_dataframe проблемы.
   + **azureml-interpret**
     + Обновлены azureml-интерпретировать для использования интерпретации сообщества версии 0,12. *
-  + **azureml-млфлов**
+  + **azureml-mlflow**
     + Усовершенствования в документах для azureml-млфлов.
     + Добавлена поддержка реестра модели AML с помощью Млфлов.
   + **azureml-opendatasets**
@@ -387,7 +430,7 @@ ms.locfileid: "91940248"
   + **azureml-конвейер — шаги**
     + Улучшения документации по пакету azureml-Pipeline-этапы.
     + Удалено passthru_automl_config требование для промежуточного использования данных с Аутомлстеп в конвейерах.
-  + **azureml — телеметрии**
+  + **azureml-telemetry**
     + Усовершенствования документации по azureml-телеметрии.
   + **azureml-train-automl-client**
     + Исправлена ошибка, в `experiment.submit()` результате которой в объекте дважды вызывалось `AutoMLConfig` другое поведение.
@@ -451,7 +494,7 @@ ms.locfileid: "91940248"
   + **azureml-pipeline-core**
     + Это изменение позволяет пользователю предоставить необязательный runconfig в параметре перенастройки при вызове модуля. Publish_python_script.
     + Включение учетной записи узла может быть параметром конвейера в Параллелрунстеп в azureml. Pipeline. шаги
-  + **azureml-конвейер — шаги**
+  + **azureml-pipeline-steps**
     + Это изменение позволяет пользователю предоставить необязательный runconfig в параметре перенастройки при вызове модуля. Publish_python_script.
   + **azureml-train-automl-client**
     + Добавлена поддержка нескольких языков для моделей с глубоким обучением, таких как БЕРТ, в автоматизированном ML.
@@ -486,7 +529,7 @@ ms.locfileid: "91940248"
       + Параллелрунстеп не внедряет пакеты, пользователь должен включить в определение среды пакеты **azureml-Core** и **azureml-[Pandas, предохранитель]** . Если пользовательский образ DOCKER используется с user_managed_dependencies, пользователю необходимо установить conda на образе.
       
 + **Критические изменения**
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Нерекомендуемое использование класса azureml. dprep. DataFlow в качестве допустимого типа входных данных для Аутомлконфиг
   + **azureml-train-automl-client**
     + Нерекомендуемое использование класса azureml. dprep. DataFlow в качестве допустимого типа входных данных для Аутомлконфиг
@@ -520,7 +563,7 @@ ms.locfileid: "91940248"
   + **azureml-от участников сообщества-Талха**
     + Добавлена поддержка служб Windows в МанажединференЦинг
     + Удаление старых рабочих процессов ТАЛХА, таких как подключение ТАЛХА COMPUTE, Синглемоделмирвебсервице профилирование модели, помещенное в пакет от участников сообщества-Талха
-  + **azureml-от участников сообщества-конвейер — шаги**
+  + **azureml-contrib-pipeline-steps**
     + Незначительное исправление для поддержки YAML
     + Параллелрунстеп выпущен в общей доступности — azureml. от участников сообщества. Pipeline. шаги имеют уведомление об устаревании и перемещаются в azureml. Pipeline. шаги
   + **azureml-contrib-reinforcementlearning**
@@ -546,7 +589,7 @@ ms.locfileid: "91940248"
   + **azureml-pipeline-core**
     + Быстрое исправление для Параллелрунстеп, где загрузка из YAML была нарушена
     + Параллелрунстеп выпущен в общей доступности — azureml. от участников сообщества. Pipeline. шаги имеют уведомление об устаревании и перемещаются в azureml. конвейер. шаги — новые функции включают: 1. Наборы данных как Пипелинепараметер 2. Новый параметр run_max_retry 3. Настраиваемое имя выходного файла append_row
-  + **azureml-конвейер — шаги**
+  + **azureml-pipeline-steps**
     + Нерекомендуемый поток azureml. dprep. DataFlow в качестве допустимого типа для входных данных.
     + Быстрое исправление для Параллелрунстеп, где загрузка из YAML была нарушена
     + Параллелрунстеп выпущен в общей доступности — azureml. от участников сообщества. Pipeline. шаги имеют уведомление об устаревании и перемещаются в azureml. конвейер. шаги — новые функции включают:
@@ -704,7 +747,7 @@ ms.locfileid: "91940248"
     + Добавлена верхняя граница размера файла для данных визуализации в отправленных объяснениях.
   + **azureml-train-automl-client**
     + Явная проверка label_column_name & weight_column_name параметров для Аутомлконфиг типа String.
-  + **azureml-contrib-pipeline-steps**
+  + **azureml-от участников сообщества-конвейер — шаги**
     + Параллелрунстеп теперь поддерживает набор данных в качестве параметра конвейера. Пользователь может создать конвейер с образцом набора данных и изменить входной набор данных того же типа (файл или табличный) для нового запуска конвейера.
 
   
@@ -862,7 +905,7 @@ ms.locfileid: "91940248"
     + Записная книжка оценки пакетов конвейера теперь использует Параллелрунстеп
     + Исправлена ошибка, из-за которой результаты Писонскриптстеп могут быть неправильно использованы повторно, несмотря на изменение списка аргументов.
     + Добавлена возможность задать тип столбцов при вызове методов parse_ * для `PipelineOutputFileDataset`
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Перемещен в `AutoMLStep` `azureml-pipeline-steps` пакет. Нерекомендуемый `AutoMLStep` в `azureml-train-automl-runtime` .
     + Добавлен пример документации для набора данных в качестве входных данных Писонскриптстеп
   + **azureml-tensorboard**
@@ -941,7 +984,7 @@ ms.locfileid: "91940248"
     + Исправлена сериализация Дипскоринжексплаинер для моделей keras
   + **azureml-pipeline-core**
     + Записная книжка оценки пакетов конвейера теперь использует Параллелрунстеп
-  + **azureml-конвейер — шаги**
+  + **azureml-pipeline-steps**
     + Перемещен `AutoMLStep` в `azureml-pipeline-steps` пакет. Нерекомендуемый `AutoMLStep` в `azureml-train-automl-runtime` .
   + **azureml-contrib-pipeline-steps**
     + Необязательный параметр side_inputs добавлен в Параллелрунстеп. Этот параметр можно использовать для подключения папки в контейнере. В настоящее время поддерживаются следующие типы: Reference и Пипелинедата.
@@ -972,7 +1015,7 @@ ms.locfileid: "91940248"
     + Обновление azureml-интерпретируемо в зависимости от интерпретации сообщества 0.5.0
   + **azureml-pipeline-core**
     + Исправлена ошибка, из-за которой результаты Писонскриптстеп могут быть неправильно использованы повторно, несмотря на изменение списка аргументов.
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Добавлен пример документации для набора данных в качестве входных данных Писонскриптстеп
   + **azureml-contrib-pipeline-steps**
     + Параметры, переданные в Параллелрунконфиг, можно перезазаписать, передав параметры конвейера сейчас. Поддерживаются новые параметры конвейера aml_mini_batch_size, aml_error_threshold, aml_logging_level, aml_run_invocation_timeout (aml_node_count и aml_process_count_per_node уже входят в более ранний выпуск).
@@ -1115,7 +1158,7 @@ ms.locfileid: "91940248"
     + При вызове метода `keep_columns` или `drop_columns` , который приводит к удалению столбца временных рядов, соответствующие возможности также будут удалены для набора данных.
   + **azureml-interpret**
     + обновленная версия интерпретации сообщества до 0.2.0
-  + **azureml-конвейер — шаги**
+  + **azureml-pipeline-steps**
     + Описаны поддерживаемые значения для `runconfig_pipeline_params` шагов конвейера машинного обучения Azure.
   + **azureml-pipeline-core**
     + Добавлен параметр CLI для скачивания выходных данных в формате JSON для команд конвейера.
@@ -1377,13 +1420,13 @@ ms.locfileid: "91940248"
   + **azureml-train-core**
     + Добавлена поддержка TensorFlow 2,0 в Оценщике TensorFlow.
   + **azureml-Training-аутомл**
-    + Создание объекта [эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример.
+    + Создание объекта [эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        Функция [Archive ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример.
+        Функция [Archive ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -1392,7 +1435,7 @@ ms.locfileid: "91940248"
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример.
+        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
@@ -1488,7 +1531,7 @@ ms.locfileid: "91940248"
     + Добавлено свойство объяснения в Мимиквраппер, чтобы обеспечить получение базового Мимицексплаинер.
   + **azureml-pipeline-core**
     + Добавлена Записная книжка, описывающая модуль, Модулестеп и
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Добавлен Рскриптстеп для поддержки выполнения скрипта R через конвейер AML.
     + Исправлены параметры метаданных в Азуребатчстеп, которые вызвали сообщение об ошибке "назначение для параметра SubscriptionId не задано".
   + **azureml-Training-аутомл**
@@ -1496,7 +1539,7 @@ ms.locfileid: "91940248"
     + Добавлено сообщение об устаревании для explain_model () и retrieve_model_explanations ().
   + **[azureml-pipeline-core](https://docs.microsoft.com/python/api/azureml-pipeline-core)**
     + Добавлена [Записная книжка](https://aka.ms/pl-modulestep) для описания [модуля](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.module%28class%29), [ [модулестеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.modulestep)и.
-  + **[azureml-pipeline-steps](https://docs.microsoft.com/python/api/azureml-pipeline-steps)**
+  + **[azureml-конвейер — шаги](https://docs.microsoft.com/python/api/azureml-pipeline-steps)**
     + Добавлен [рскриптстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.rscriptstep) для поддержки выполнения скрипта R через конвейер AML.
     + Исправлены параметры метаданных в [Азуребатчстеп, которая привела к появлению сообщения об ошибке "назначение для параметра SubscriptionId не задано".
   + **[azureml-Training-аутомл](/python/api/azureml-train-automl-runtime/)**
@@ -1694,7 +1737,7 @@ ms.locfileid: "91940248"
     + Добавлены классы для получения населения США по округам и почтовым индексам.
   + **azureml-pipeline-core**
     + Добавлено свойство Label к определениям порта ввода и вывода.
-  + **azureml — телеметрии**
+  + **azureml-telemetry**
     + Исправлена неправильная конфигурация телеметрии.
   + **azureml-Training-аутомл**
     + Исправлена ошибка установки, ошибка не была зарегистрирована в поле "ошибки" для запуска программы установки, поэтому она не хранилась в родительском запуске "Errors".
@@ -1761,7 +1804,7 @@ ms.locfileid: "91940248"
     + В пояснения добавлен флаг model_task, позволяющий пользователю переопределить логику автоматического вывода по умолчанию для типа модели.
   + **azureml-mlflow**
     + Исправлена ошибка в mlflow.azureml.build_image при игнорировании вложенных каталогов.
-  + **azureml-конвейер — шаги**
+  + **azureml-pipeline-steps**
     + Добавлена возможность запуска заданий JAR в существующем кластере Azure Databricks.
     + Добавлена поддержка instance_pool_id и cluster_log_dbfs_path параметров для шага Датабрикксстеп.
     + Добавлена поддержка параметров конвейера на шаге Датабрикксстеп.
@@ -1853,11 +1896,11 @@ ms.locfileid: "91940248"
     + Переместите azureml-от участников сообщества-опендатасетс в azureml-опендатасетс.
     + Разрешите регистрацию открытых классов DataSet в Машинное обучение Azure рабочей области и легко используйте возможности набора данных AML.
     + Значительно Повышайте производительность Ноааисдвеасер в версиях, отличных от SPARK.
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Хранилище данных DBFS теперь поддерживается для входов и выходов в Датабрикксстеп.
     + Обновленная документация по пакетной службе Azure в отношении входных и выходных данных.
     + В Азуребатчстеп в качестве значения по умолчанию изменено значение *true* *delete_batch_job_after_finish* .
-  + **azureml-telemetry**
+  + **azureml — телеметрии**
     +  Переместите azureml-от участников сообщества-опендатасетс в azureml-опендатасетс.
     + Разрешите регистрацию открытых классов DataSet в Машинное обучение Azure рабочей области и легко используйте возможности набора данных AML.
     + Значительно Повышайте производительность Ноааисдвеасер в версиях, отличных от SPARK.
@@ -1925,7 +1968,7 @@ ms.locfileid: "91940248"
   + **azureml-pipeline-core**
     + Параметр hash_paths для всех шагов конвейера устарел и будет удален в будущем. По умолчанию содержимое source_directory хэшируется (за исключением файлов, перечисленных в `.amlignore` или `.gitignore` )
     + Продолжая улучшать модуль и Модулестеп для поддержки модулей, связанных с типом вычислений, подготовиться к интеграции RunConfiguration и другим изменениям, чтобы разблокировать использование модуля, зависящего от типа вычислений, в конвейерах.
-  + **azureml-pipeline-steps**
+  + **azureml-конвейер — шаги**
     + Азуребатчстеп: Улучшенная документация в отношении входных и выходных данных.
     + Азуребатчстеп: изменено delete_batch_job_after_finish значение по умолчанию равным true.
   + **azureml-train-core**
@@ -2060,6 +2103,6 @@ ms.locfileid: "91940248"
   + Средство просмотра файлов журналов
   + Ссылки на запуск, вычисление, модели, изображения и развертывания экспериментов на вкладке "действия"
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](overview-what-is-azure-ml.md).

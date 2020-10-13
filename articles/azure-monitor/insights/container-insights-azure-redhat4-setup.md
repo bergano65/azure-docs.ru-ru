@@ -3,12 +3,12 @@ title: Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для 
 description: В этой статье описывается настройка мониторинга для кластера Kubernetes с Azure Monitor, размещенной в Azure Red Hat OpenShift версии 4 или более поздней.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 63db888419ee691e83ea456fcd7fc28a4d9909fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9f31d1b71122c53a67dc40af31d33255e2e98d8
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91620330"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91994546"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров
 
@@ -41,7 +41,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
 - [Рабочая область Log Analytics](../platform/design-logs-deployment.md).
 
-    Azure Monitor для контейнеров поддерживает рабочую область Log Analytics в регионах, перечисленных в списке [продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Чтобы создать собственную рабочую область, ее можно создать с помощью [Azure Resource Manager](../platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)или в [портал Azure](../learn/quick-create-workspace.md).
+    Azure Monitor для контейнеров поддерживает рабочую область Log Analytics в регионах, перечисленных в списке [продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Чтобы создать собственную рабочую область, ее можно создать с помощью [Azure Resource Manager](../samples/resource-manager-workspace.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)или в [портал Azure](../learn/quick-create-workspace.md).
 
 - Чтобы включить функции и получить доступ к ним в Azure Monitor для контейнеров, необходимо, как минимум, роль *участника* Azure в подписке Azure и роль [*участника log Analytics*](../platform/manage-access.md#manage-access-using-azure-permissions) в log Analytics рабочей области, настроенной с Azure Monitor для контейнеров.
 
@@ -121,7 +121,7 @@ Azure Monitor для контейнеров поддерживает монит�
     export kubeContext="<kubeContext name of your ARO v4 cluster>"  
     ```
 
-    Пример.
+    Пример
 
     `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext --workspace-id $logAnalyticsWorkspaceResourceId`
 
@@ -164,7 +164,7 @@ export kubeContext="<kubeContext name of your ARO v4 cluster>"
 
     Результаты в списке можно найти, выполнив поиск значения **АТО** в столбце **тип кластера** . После выбора **включить**вы будете перенаправлены к этой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Теперь, когда вы включили функцию мониторинга для получения сведений о работоспособности и использовании ресурсов в кластере RedHat OpenShift версии 4. x и рабочих нагрузках, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
 

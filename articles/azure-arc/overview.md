@@ -3,12 +3,12 @@ title: Общие сведения об Azure Arc
 description: Узнайте о том, что такое служба Azure Arc и как она помогает клиентам обеспечить управление гибридными ресурсами и их администрирование с помощью других служб и функций Azure.
 ms.date: 09/23/2020
 ms.topic: overview
-ms.openlocfilehash: e6dc052655bffae949399f77a26d7b76c5b0d13c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8e48378e5032768b3f56a5d99c1189e282ff37f8
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91335404"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91714158"
 ---
 # <a name="azure-arc-overview"></a>Общие сведения об Azure Arc
 
@@ -56,7 +56,7 @@ ms.locfileid: "91335404"
 
 * поиск и индексирование с помощью Azure Resource Graph;
 
-* обеспечение доступа и безопасности с помощью RBAC и подписок;
+* обеспечение доступа и безопасности с помощью Azure RBAC и подписок;
 
 * обслуживание сред и автоматизация с помощью шаблонов и расширений;
 

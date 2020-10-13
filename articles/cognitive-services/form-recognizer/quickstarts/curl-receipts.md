@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 05/27/2020
+ms.date: 10/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 4fa31a5be41e89c8fdc821ae77ff151b184316df
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 282b8e1292bf1fe24655691fbbeb876d871bc31e
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88518022"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91761351"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-curl"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и cURL
 
@@ -34,43 +34,43 @@ ms.locfileid: "88518022"
 
 ## <a name="analyze-a-receipt"></a>Анализ квитанции
 
-Для начала анализа квитанции запустите API **[анализа](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)** , используя приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
+Для начала анализа квитанции запустите API **[анализа](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeReceiptAsync)** , используя приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
 1. Замените `<your receipt URL>` на URL-адрес изображения квитанции.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 
 ```bash
-curl -i -X POST "https://<Endpoint>/formrecognizer/v2.0/prebuilt/receipt/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"source\": \"<your receipt URL>\"}"
+curl -i -X POST "https://<Endpoint>/formrecognizer/v2.1-preview.1/prebuilt/receipt/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"source\": \"<your receipt URL>\"}"
 ```
 
 Вы получите ответ `202 (Success)`, содержащий заголовок **Operation-Location**. Значение этого заголовка содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере строка после `operations/` является идентификатором операции.
 
 ```console
-https://cognitiveservice/formrecognizer/v2.0/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
 
 ## <a name="get-the-receipt-results"></a>Получение результатов анализа данных квитанции
 
-После вызова API **анализа квитанции** вызовите API **[получения результатов анализа квитанции](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Перед выполнением команды внесите следующие изменения:
+После вызова API **анализа квитанции** вызовите API **[получения результатов анализа квитанции](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<operationId>` идентификатором операции из предыдущего шага.
 1. Замените `<subscription key>` ключом своей подписки.
 
 ```bash
-curl -X GET "https://<Endpoint>/formrecognizer/v2.0/prebuilt/receipt/analyzeResults/<operationId>" -H "Ocp-Apim-Subscription-Key: <subscription key>"
+curl -X GET "https://<Endpoint>/formrecognizer/v2.1-preview.1/prebuilt/receipt/analyzeResults/<operationId>" -H "Ocp-Apim-Subscription-Key: <subscription key>"
 ```
 
 ### <a name="examine-the-response"></a>Изучите ответ.
 
-Вы получите ответ `200 (Success)` со следующими выходными данными JSON. В первом поле, `"status"`, указывается состояние операции. Если операция завершена, поле `"recognitionResults"` будет содержать каждую строку текста, извлеченного из квитанции, а поле `"understandingResults"` будет содержать сведения пары "ключ — значение" для самых подходящих элементов квитанции. Если операция не завершена, значение поля `"status"` будет `"running"` или `"notStarted"`, и вам снова понадобится вызвать API вручную или с помощью сценария. Мы рекомендуем установить между вызовами интервал в одну секунду или более.
+Вы получите ответ `200 (Success)` со следующими выходными данными JSON. В первом поле, `"status"`, указывается состояние операции. Если операция завершена, поле `"readResults"` будет содержать каждую строку текста, извлеченного из квитанции, а поле `"documentResults"` будет содержать сведения пары "ключ — значение" для самых подходящих элементов квитанции. Если операция не завершена, значение поля `"status"` будет `"running"` или `"notStarted"`, и вам снова понадобится вызвать API вручную или с помощью сценария. Мы рекомендуем установить между вызовами интервал в одну секунду или более.
 
 Ознакомьтесь со следующим изображением квитанции и его соответствующими выходными данными в формате JSON. Выходные данные сокращены для удобства чтения.
 
 ![Квитанция из магазина Contoso](../media/contoso-allinone.jpg)
 
-Узел `"recognitionResults"` содержит весь распознанный текст. Текст упорядочивается по страницам, затем по строкам, а затем по отдельным словам. Узел `"understandingResults"` содержит обнаруженные моделью значения, зависящие от квитанции. Здесь вы найдете полезные пары "ключ — значение", такие как налог, итог, адрес продавца и т. д.
+Узел `"readResults"` содержит весь распознанный текст (если для необязательного параметра *includeTextDetails* вы задали значение `true`). Текст упорядочивается по страницам, затем по строкам, а затем по отдельным словам. Узел `"documentResults"` содержит обнаруженные моделью значения, зависящие от квитанции. Здесь вы найдете полезные пары "ключ — значение", такие как налог, итог, адрес продавца и т. д.
 
 ```json
 {
@@ -78,7 +78,7 @@ curl -X GET "https://<Endpoint>/formrecognizer/v2.0/prebuilt/receipt/analyzeResu
   "createdDateTime":"2019-12-17T04:11:24Z",
   "lastUpdatedDateTime":"2019-12-17T04:11:32Z",
   "analyzeResult":{
-    "version":"2.0.0",
+    "version":"2.1.0",
     "readResults":[
       {
         "page":1,
@@ -402,4 +402,4 @@ curl -X GET "https://<Endpoint>/formrecognizer/v2.0/prebuilt/receipt/analyzeResu
 В этом кратком руководстве для извлечения содержания с изображений квитанции используется REST API Распознавателя документов и cURL. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)
+> [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeReceiptAsync)

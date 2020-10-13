@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Использование веб-приложений Java с Платформой удостоверений Майкрософт | Azure
-description: Узнайте, как реализовать вход с помощью учетной записи Майкрософт в веб-приложении Java с помощью OpenID Connect.
+title: Краткое руководство. Добавление возможности входа с помощью учетной записи Майкрософт в веб-приложение Java | Azure
+titleSuffix: Microsoft identity platform
+description: Из этого краткого руководства вы узнаете, как реализовать вход с учетной записью Майкрософт в веб-приложении Java с помощью OpenID Connect.
 services: active-directory
 author: sangonzal
 manager: CelesteDG
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: d1b79d60bba89ef01b261c403fe3b25939669d0b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: f00a935815b64f7c2c06dd33130c1a950582e5c3
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91258104"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743494"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -257,4 +258,4 @@ import com.microsoft.aad.msal4j.*;
 Тема создания веб-приложений, которые выполняют вход пользователей с помощью платформы Microsoft Identity, подробно рассматривается в нашей серии сценариев:
 
 > [!div class="nextstepaction"]
-[Scenario: Веб-приложение, выполняющее вход пользователей](scenario-web-app-sign-user-overview.md?tabs=java)
+> [Scenario: Веб-приложение, выполняющее вход пользователей](scenario-web-app-sign-user-overview.md?tabs=java)

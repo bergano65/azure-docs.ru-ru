@@ -3,17 +3,17 @@ title: Текущий выпуск IoT Plug and Play | Документация
 description: Узнайте, что входит в текущий выпуск IoT Plug and Play.
 author: dominicbetts
 ms.author: dobett
-ms.date: 09/19/2020
+ms.date: 10/01/2020
 ms.topic: overview
 ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 4cfc9ca14a4b344423a27d9683114de5275fb20b
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: c7ebcdac3174f7eb497ae3e976386ab92212e1ba
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580793"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715569"
 ---
 # <a name="whats-in-the-current-iot-plug-and-play-release"></a>Чем является текущий выпуск IoT Plug and Play
 
@@ -46,27 +46,21 @@ ms.locfileid: "91580793"
     > [!TIP]
     > Расширение Интернета вещей Azure содержит команды, помогающие сертифицировать устройства. См. раздел `az iot product -h`.
 
-
-
 ## <a name="libraries-and-sdks"></a>Библиотеки и пакеты SDK
 
 Дополнительные сведения о библиотеках и пакетах SDK см. в статье [Пакеты SDK Microsoft для IoT Plug and Play](libraries-sdks.md).
 
-- Пакет SDK для устройства C [VcPkg 2020-07-19](https://github.com/microsoft/vcpkg/tree/master/ports/azure-iot-sdk-c)
-- Пакет SDK для устройств .NET [NuGet Microsoft.Azure.Devices.Client версии 1.30.0](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/)
-- Пакет SDK для устройств Java [Maven IOT-Device-Client версии 1.25.0](https://search.maven.org/artifact/com.microsoft.azure.sdk.iot/iot-device-client)
-- Пакет SDK для устройств Python [Pip azure-iot-device версии 2.2.0](https://pypi.org/project/azure-iot-device/)
-- Пакет SDK для устройств Node.js [npm azure-iot-device версии 1.17.1](https://www.npmjs.com/package/azure-iot-device)
-- .NET — служба Центра Интернета вещей [NuGet Microsoft.Azure.Devices версии 1.22.0](https://www.nuget.org/packages/Microsoft.Azure.Devices/)
-- Java — служба Центра Интернета вещей [Maven iot-service-client версии 1.25.0](https://search.maven.org/artifact/com.microsoft.azure.sdk.iot/iot-service-client)
-- Node.js — служба Центра Интернета вещей [npm azure-iothub версии 1.12.5](https://www.npmjs.com/package/azure-iothub)
-- Python — служба Центра Интернета вещей или служба Digital Twins [Pip azure-iot-hub версии 2.2.2](https://pypi.org/project/azure-iot-hub/)
+- Пакет SDK для устройства C [vcpkg 1.3.9](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/setting_up_vcpkg.md)
+- Встроенный пакет SDK для устройства C [GitHub](https://github.com/Azure/azure-sdk-for-c/)
+- Пакет SDK для устройства .NET [NuGet 1.31.0](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client)
+- Пакет SDK для устройства Java [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-device-client)
+- Пакет SDK для устройства Python [pip 2.3.0](https://pypi.org/project/azure-iot-device/)
+- Пакет SDK для устройства Node.js [npm 1.17.2](https://www.npmjs.com/package/azure-iot-device)
+- Служба Центра Интернета вещей для .NET [NuGet 1.27.1](https://www.nuget.org/packages/Microsoft.Azure.Devices )
+- Служба Центра Интернета вещей для Java [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-service-client/1.26.0)
+- Служба Центра Интернета вещей для Node.js [npm 1.13.0](https://www.npmjs.com/package/azure-iothub)
+- Служба Центра Интернета вещей или Digital Twins для Python [pip 2.2.3](https://pypi.org/project/azure-iot-hub)
 - Средство синтаксического анализа DTDL [NuGet](https://www.nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser).
-
-### <a name="preview"></a>Предварительный просмотр
-
-- Пакет SDK Azure для Embedded [1.0.0-preview.5](https://github.com/Azure/azure-sdk-for-c/releases/tag/1.0.0-preview.5)
-- ПО промежуточного слоя центра Интернета вещей для ОСРВ Azure [v6.0_beta3](https://github.com/azure-rtos/azure-iot-preview/releases/tag/v6.0_beta3)
 
 ## <a name="rest-apis"></a>Интерфейсы REST API
 
@@ -86,4 +80,3 @@ REST API [30.09.2020](https://docs.microsoft.com/rest/api/iothub).
 - [Подготовка и сертификация устройств для IoT Plug and Play (опубликовано 26 августа 2020 г.)](https://azure.microsoft.com/blog/prepare-and-certify-your-devices-for-iot-plug-and-play/)
 - [Теперь IoT Plug and Play доступен в предварительной версии (опубликовано 22 августа 2019 г.)](https://azure.microsoft.com/blog/iot-plug-and-play-is-now-available-in-preview/)
 - [Сборка с помощью Azure IoT Central и IoT Plug and Play (опубликовано 7 мая 2019 г.)](https://azure.microsoft.com/blog/build-with-azure-iot-central-and-iot-plug-and-play/)
-

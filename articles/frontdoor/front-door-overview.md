@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/27/2020
 ms.author: duau
-ms.openlocfilehash: 039e5b94bbd9d3b6c3edcb92eff88e7a9931205d
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: bf0d802dc4ea4d18122a12b107dfb0cc0af80d63
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91448744"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91773456"
 ---
 # <a name="what-is-azure-front-door"></a>Что такое Azure Front Door?
 
@@ -56,7 +56,7 @@ Azure Front Door — это глобальная масштабируемая �
 
 * Определение **[личного домена](front-door-custom-domain.md)** . 
 
-* Безопасность приложений с помощью собственных правил **[брандмауэра веб-приложений (WAF)](../web-application-firewall/overview.md)** и **[Защиты от атак DDoS Azure](../virtual-network/ddos-protection-overview.md)** .
+* Защита приложений с интегрированным **[Брандмауэром веб-приложений (WAF)](../web-application-firewall/overview.md)** .
 
 * Перенаправление трафика HTTP на HTTPS с помощью **[перенаправления URL-адреса](front-door-url-redirect.md)** .
 

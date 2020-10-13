@@ -7,12 +7,13 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/18/2019
 ms.author: sttsinar
-ms.openlocfilehash: d6a77cac049ef32949eeba4cbd6fe9217100a360
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.reviewer: ayshak
+ms.openlocfilehash: 7b1956d704bbdf9475f04efcbdc4b6ee75bb50b2
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666846"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996296"
 ---
 # <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 
@@ -72,6 +73,6 @@ ms.locfileid: "91666846"
 | 15 мая 2021 г. | Снятие DS15_v2 с учета D/DS15i_v2 (все клиенты, кроме тех, которые приобрели 3-летний набор прав () до 18 ноября 2019 г.)| 
 | 17 ноября 2022 г. | Снятие с учета D/DS15i_v2 при выполнении 3-летний RIs (для клиентов, которые приобрели 3-летний набор данных (DS15_v2) до 18 ноября 2019) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Клиенты также могут разделить ресурсы этих изолированных виртуальных машин благодаря [поддержке вложенных виртуальных машин в Azure](https://azure.microsoft.com/blog/nested-virtualization-in-azure/).

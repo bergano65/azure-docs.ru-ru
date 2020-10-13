@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: d4301a9c0c5684be04ee2cfbace60c1bb1904876
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: 861351e16120c3f46612ba35518135fbfaf4c81b
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89569018"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91776482"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -39,6 +39,15 @@ ms.locfileid: "89569018"
 ## <a name="use-direct-method-calls"></a>Использование вызовов прямых методов
 
 С помощью модуля можно анализировать потоки видеотрансляции, вызывая его прямые методы. Ознакомитесь со статьей [Прямые методы для Аналитики видеотрансляции в IoT Edge](direct-methods.md), чтобы узнать о всех прямых методах, обеспечиваемых модулем. 
+
+1. В Visual Studio Code откройте вкладку **Расширения** (или нажмите клавиши CTRL+SHIFT+X) и найдите Центр Интернета вещей Azure.
+1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
+
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Запись видео на основе событий в активы на основе событий движения" (Показывать подробное сообщение).
+
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Запись видео на основе событий в активы на основе событий движения"::: (Показывать подробное сообщение)
 
 ### <a name="invoke-graphtopologylist"></a>Вызов GraphTopologyList
 В этом шаге перечислены все [топологии графа](media-graph-concept.md#media-graph-topologies-and-instances) в модуле.

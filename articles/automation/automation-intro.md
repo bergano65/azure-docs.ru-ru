@@ -7,12 +7,12 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 10/18/2018
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: d10570efe49203f879cdceae776af5c3bc6991c0
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 0e4be48157650ace3d7bebcc3a5689caef1ba779
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448067"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91715965"
 ---
 # <a name="an-introduction-to-azure-automation"></a>Общие сведения о службе автоматизации Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "87448067"
 
 ### <a name="role-based-access-control"></a>Управление доступом на основе ролей
 
-Служба автоматизации Azure поддерживает управление доступом на основе ролей (RBAC) для учетной записи службы автоматизации и ее ресурсов. См. сведения о [настройке RBAC в учетной записи службы автоматизации Azure, модулях runbook и заданиях](automation-role-based-access-control.md).
+Служба автоматизации Azure поддерживает управление доступом на основе ролей Azure (Azure RBAC) для учетной записи службы автоматизации и ее ресурсов. Сведения о настройке Azure RBAC в учетной записи службы автоматизации Azure, последовательностях runbook и заданиях см. в статье [Управление разрешениями ролей и безопасностью](automation-role-based-access-control.md).
 
 ### <a name="source-control-integration"></a>Интеграция системы управления версиями
 
@@ -86,7 +86,7 @@ ms.locfileid: "87448067"
 * **Поиск изменений.** Выявляйте изменения, которые могут привести к ошибкам в конфигурации, и улучшайте соответствие рабочим требованиям.
 * **Мониторинг.** Отслеживайте изменения на компьютерах, которые приводят к проблемам, устраняйте эти проблемы или передавайте для решения в системы управления.
 * **Защита.** Помещайте компьютеры на карантин при возникновении оповещений системы безопасности. Настройте требования к гостевым системам.
-* **Управление.** Настраивайте RBAC для команд. Восстанавливайте неиспользуемые ресурсы.
+* **Управление.** Настраивайте Azure RBAC для команд. Восстанавливайте неиспользуемые ресурсы.
 
 [!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
 

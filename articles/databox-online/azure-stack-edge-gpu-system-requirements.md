@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 08/28/2020
+ms.date: 10/12/2020
 ms.author: alkohli
-ms.openlocfilehash: e542480db4ed82cf84c6ce04c62e2a07b6193f4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d835507a17417f8b500c0fc13d0a662e606a37ff
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320733"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91996418"
 ---
 # <a name="system-requirements-for-azure-stack-edge-pro-with-gpu"></a>Требования к системе для Azure Stack ребра Pro с графическим процессором 
 
@@ -32,21 +32,29 @@ ms.locfileid: "91320733"
 
 [!INCLUDE [Supported protocols for clients accessing device](../../includes/azure-stack-edge-gateway-supported-client-protocols.md)]
 
-## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
+## <a name="supported-azure-storage-accounts"></a>Поддерживаемые учетные записи хранения Azure
 
 [!INCLUDE [Supported storage accounts](../../includes/azure-stack-edge-gateway-supported-storage-accounts.md)]
 
-## <a name="supported-tiered-storage-accounts"></a>Поддерживаемые многоуровневые учетные записи хранения
+## <a name="supported-edge-storage-accounts"></a>Поддерживаемые граничные учетные записи хранения
 
-При управлении из Azure Stack следующие многоуровневые учетные записи хранения поддерживаются интерфейсами SMB/NFS/RESTFUL.
+Следующие пограничные учетные записи хранения поддерживаются с интерфейсом интерфейса RESTFUL устройства. На устройстве создаются учетные записи хранения пограничных устройств. Дополнительные сведения см. в разделе [пограничные учетные записи хранения](azure-stack-edge-j-series-manage-storage-accounts.md#about-edge-storage-accounts).
 
 |Тип  |Учетная запись хранения  |Комментарии  |
 |---------|---------|---------|
-|Стандартный     |GPv1: блочный BLOB-объект         |         |
-|    |  Хранилище BLOB-объектов: блочный BLOB-объект       | Поддерживается только для NAS     |
+|Standard     |GPv1: блочный BLOB-объект         |         |
 
-* Страничные BLOB-объекты и файлы Azure в настоящее время не поддерживаются в Azure Stack.
-* * Горячий и холодный уровни не существуют в Azure Stack. Используйте Azure PowerShell, чтобы переместить данные на уровень архива после передачи данных. Пошаговые инструкции см. в статье [использование Azure PowerShell для задания уровня BLOB-объекта]() .
+* Страничные BLOB-объекты и файлы Azure сейчас не поддерживаются.
+
+## <a name="supported-local-azure-resource-manager-storage-accounts"></a>Поддерживаемые локальные учетные записи хранения Azure Resource Manager
+
+Эти учетные записи хранения создаются через локальные API устройства при подключении к локальной Azure Resource Manager. Поддерживаются следующие учетные записи хранения:
+
+|Тип  |Учетная запись хранения  |Комментарии  |
+|---------|---------|---------|
+|Standard     |GPv1: блочный большой двоичный объект, страничный BLOB-объект        | Тип номера SKU — Standard_LRS       |
+|Premium     |GPv1: блочный большой двоичный объект, страничный BLOB-объект        | Тип номера SKU — Premium_LRS        |
+
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 

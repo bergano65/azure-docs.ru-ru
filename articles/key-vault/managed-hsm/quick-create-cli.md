@@ -9,12 +9,12 @@ ms.subservice: managed-hsm
 ms.topic: quickstart
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 705e389c83fbab6075c25a3f56e5392fb8cafcd9
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 86d0a336a7d3f5d12ed8e53de802616f839f9eba
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90998531"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756827"
 ---
 # <a name="quickstart-provision-and-activate-a-managed-hsm-using-azure-cli"></a>Краткое руководство. Подготовка и активация управляемого устройства HSM с помощью Azure CLI
 
@@ -76,7 +76,7 @@ az keyvault create --hsm-name "ContosoMHSM" --resource-group "ContosoResourceGro
 В выходных данных команды вы увидите свойства созданного управляемого устройства HSM. Среди всех свойств есть два самых важных:
 
 * **name**. В этом примере используется имя ContosoMHSM. Вы будете использовать это имя для выполнения других команд хранилища ключей.
-* **hsmUri**. В данном примере универсальный код ресурса (URI) — это https://contosohsm.managedhsm.azure.net. Приложения, использующие HSM через REST API, должны использовать именно этот универсальный код ресурса (URI).
+* **hsmUri.** В этом примере универсальный код ресурса (URI) — https://contosohsm.managedhsm.azure.net. Приложения, использующие HSM через REST API, должны использовать именно этот универсальный код ресурса (URI).
 
 Теперь ваша учетная запись Azure авторизована, и вы можете выполнять любые операции на этом управляемом устройстве HSM. Но пока никто другой не авторизован.
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 688541147a9a765ed94d8e6c18ce4ee63615f627
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: b35268cd8d36901f750225713407c5392e5c429e
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91580815"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759175"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution-c"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play с помощью C#
 
@@ -66,7 +66,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 Во время прохождения статьи [Настройка среды для кратких руководств и учебников IoT Plug and Play](set-up-environment.md) вы создали две переменные среды, чтобы настроить пример для подключения к центру Интернета вещей и устройству:
 
 * **IOTHUB_CONNECTION_STRING**: строка подключения центра Интернета вещей, которую вы записали ранее.
-* **DEVICE_ID**: `"my-pnp-device"`.
+* **IOTHUB_DEVICE_ID**: `"my-pnp-device"`.
 
 В рамках этого краткого руководства вы примените пример решения Интернета вещей на C# для взаимодействия с только что настроенным примером устройства.
 
@@ -76,7 +76,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 
     | Имя | Значение |
     | ---- | ----- |
-    | DEVICE_ID | my-pnp-device |
+    | IOTHUB_DEVICE_ID | my-pnp-device |
     | IOTHUB_CONNECTION_STRING | Значение, которое записали после завершения [настройки среды](set-up-environment.md). |
 
 1. Теперь можно создать пример в Visual Studio и запустить его в режиме отладки.
@@ -92,7 +92,7 @@ s_logger.LogDebug($"Model Id of this Twin is: {twin.ModelId}");
 ```
 
 > [!NOTE]
-> В этом образце используется пространство имен **Microsoft.Azure.Devices.Client;** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об извлечении идентификатора модели см. в [руководстве разработчика](concepts-developer-guide.md).
+> В этом образце используется пространство имен **Microsoft.Azure.Devices.Client;** из **клиента службы Центра Интернета вещей**. Дополнительные сведения об извлечении идентификатора модели см. в [руководстве разработчика](concepts-developer-guide-service.md).
 
 Этот код создаст следующие выходные данные:
 
