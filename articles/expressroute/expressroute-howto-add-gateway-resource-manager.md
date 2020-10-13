@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 7554993025d8f64a80c1b223586f856eedf9e964
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: 9f01961ec7c7f8e0a4e2d72e28e6def50e93ad5d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91766610"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91854313"
 ---
-# <a name="configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell
+# <a name="tutorial-configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Руководство по Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Resource Manager — портал Azure](expressroute-howto-add-gateway-portal-resource-manager.md)
 > * [Resource Manager — PowerShell](expressroute-howto-add-gateway-resource-manager.md)
@@ -29,8 +29,6 @@ ms.locfileid: "91766610"
 > [!div class="checklist"]
 > - Создайте подсеть шлюза.
 > - создание шлюза виртуальной сети.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,13 +44,13 @@ ms.locfileid: "91766610"
 | Имя подсети Subnet1 | *FrontEnd* |   
 | Диапазон адресов Subnet1 | *192.168.1.0/24* |
 | Имя подсети Subnet1 | *FrontEnd* |
-| Имя подсети шлюза | *Подсеть шлюза* |    
+| Имя подсети шлюза | *GatewaySubnet* |    
 | Диапазон адресов подсети шлюза | *192.168.200.0/26* |
-| Регион | *восточная часть США*. |
+| Регион | *Восточная часть США* |
 | Имя шлюза | *GW* |   
 | Имя IP-адреса шлюза | *GWIP* |
 | Имя конфигурации IP-адреса шлюза | *gwipconf* |
-| Тип | *ExpressRoute* |
+| Type | *ExpressRoute* |
 | Имя общедоступного IP-адреса шлюза  | *gwpip* |
 
 ## <a name="add-a-gateway"></a>Добавление шлюза
@@ -94,7 +92,7 @@ ms.locfileid: "91766610"
    ```azurepowershell-interactive
    $pip = New-AzPublicIpAddress -Name $GWIPName  -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
    ```
-1. Создайте конфигурацию для шлюза. Конфигурация шлюза определяет используемые подсеть и общедоступный IP-адрес. На этом шаге вы задаете конфигурацию, которая будет использоваться при создании шлюза. Но пока объект шлюза не создается. Используйте следующий пример, чтобы создать конфигурацию шлюза.
+1. Создайте конфигурацию для шлюза. Конфигурация шлюза определяет используемые подсеть и общедоступный IP-адрес. На этом шаге вы задаете конфигурацию, которая будет использоваться при создании шлюза. Используйте следующий пример, чтобы создать конфигурацию шлюза.
 
    ```azurepowershell-interactive
    $ipconf = New-AzVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip

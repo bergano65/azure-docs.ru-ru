@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: b-juche
 ms.openlocfilehash: b2e597ff8fc761b66de6228063c471933a364144
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91449656"
 ---
 # <a name="configure-an-nfs-client-for-azure-netapp-files"></a>Настройка клиента NFS для Azure NetApp Files
@@ -64,7 +64,7 @@ ms.locfileid: "91449656"
 1. Выполните следующую команду, чтобы обновить установленные пакеты:  
     `sudo apt update && sudo apt install libnss-ldap libpam-ldap ldap-utils nscd`
 
-    Пример:   
+    Пример.   
 
     `base dc=hariscus,dc=com` `uri ldap://10.20.0.4:389/`
     `ldap_version 3`
@@ -79,7 +79,7 @@ ms.locfileid: "91449656"
 `root@cbs-k8s-varun4-04:/home/cbs# getent passwd hari1`   
 `hari1:*:1237:1237:hari1:/home/hari1:/bin/bash`   
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 * [Создание тома NFS для Azure NetApp Files](azure-netapp-files-create-volumes.md)
 * [Создание тома с двумя протоколами для Azure NetApp Files](create-volumes-dual-protocol.md)

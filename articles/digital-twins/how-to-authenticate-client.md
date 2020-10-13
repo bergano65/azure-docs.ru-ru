@@ -4,26 +4,23 @@ titleSuffix: Azure Digital Twins
 description: См. статью как написать код проверки подлинности в клиентском приложении.
 author: baanders
 ms.author: baanders
-ms.date: 4/22/2020
+ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.custom: devx-track-js
-ms.openlocfilehash: 0438632a36fe14d35210cb5acb8d3a50d0f038b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2cef34413f46608e8bc35a009a29212af5ddf20
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91767819"
+ms.locfileid: "91893600"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
-После [настройки экземпляра и проверки подлинности Azure Digital двойников](how-to-set-up-instance-portal.md)можно создать клиентское приложение, которое будет использоваться для взаимодействия с экземпляром. После настройки проекта начального клиента в этой статье показано **, как написать код в клиентском приложении для проверки подлинности** в экземпляре Azure Digital двойников.
+После [настройки экземпляра и проверки подлинности Azure Digital двойников](how-to-set-up-instance-portal.md)можно создать клиентское приложение, которое будет использоваться для взаимодействия с экземпляром. После настройки проекта начального клиента необходимо **написать код в этом клиентском приложении для проверки подлинности** в экземпляре Azure Digital двойников.
 
-В этой статье есть два подхода к примерам кода. Вы можете использовать тот, который вам подходит, в зависимости от выбранного языка:
-* В первом разделе примера кода используется пакет SDK Azure Digital двойников .NET (C#). Пакет SDK является частью пакета SDK для Azure для .NET и находится здесь: [*Клиентская библиотека Digital двойника для Azure IOT для .NET*](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). Существуют также поддерживаемые пакеты SDK для [Java](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0-beta.1/jar ) и [JavaScript](https://www.npmjs.com/package/@azure/digital-twins/v/1.0.0-preview.1), которые можно использовать аналогичным образом.
-* Второй раздел примера кода предназначен для пользователей, которые не используют предоставленный пакет SDK, а вместо этого используют пакеты SDK, созданные автоматически на других языках. Дополнительные сведения об этой стратегии см. в разделе [*инструкции. Создание настраиваемых пакетов SDK для Azure Digital двойников с помощью автоrestful*](how-to-create-custom-sdks.md).
+Azure Digital двойников выполняет проверку подлинности с помощью [маркеров безопасности Azure AD на основе OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-jwts-and-claims). Чтобы проверить подлинность пакета SDK, необходимо получить маркер носителя с нужными разрешениями для Azure Digital двойников и передать его вместе с вызовами API. 
 
-Дополнительные сведения об API и пакетах SDK для Azure Digital двойников см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
+В этой статье описывается, как получить учетные данные с помощью `Azure.Identity` клиентской библиотеки. Хотя в этой статье показаны примеры кода для [пакета SDK для .NET (C#)](https://www.nuget.org/packages/Azure.DigitalTwins.Core), можно использовать версию независимо от того, `Azure.Identity` какой пакет SDK вы используете (Дополнительные сведения см. в разделе с [*инструкциями по использованию интерфейсов API цифровых двойников и пакетов SDK*](how-to-use-apis-sdks.md)для Azure Digital двойников).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,31 +28,89 @@ ms.locfileid: "91767819"
 
 Для продолжения Вам потребуется проект клиентского приложения, в котором будет написан код. Если вы еще не настроили проект клиентского приложения, создайте базовый проект на выбранном вами языке для использования с этим руководством.
 
-## <a name="authentication-and-client-creation-net-c-sdk"></a>Проверка подлинности и создание клиентов: пакет SDK для .NET (C#)
+## <a name="common-authentication-methods-with-azureidentity"></a>Общие методы проверки подлинности с помощью Azure. Identity
 
-В этом разделе показан пример в C# для использования предоставленного пакета SDK для .NET.
+`Azure.Identity` — это клиентская библиотека, которая предоставляет несколько методов получения учетных данных, которые можно использовать для получения маркера носителя и проверки подлинности с помощью пакета SDK. Хотя в этой статье приведены примеры в C#, можно просматривать `Azure.Identity` несколько языков, включая...
+* [.NET (C#)](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true)
+* [Java](https://docs.microsoft.com/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true)
+* [JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true)
+* [Python](https://docs.microsoft.com/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
 
-Во-первых, включите в проект следующие пакеты, чтобы использовать пакет SDK для .NET и средства проверки подлинности для этого руководства:
-* `Azure.DigitalTwins.Core`
-* `Azure.Identity`
+Три общих метода получения учетных данных в `Azure.Identity` :
+* [Дефаултазурекредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet&preserve-view=true) предоставляет `TokenCredential` поток проверки подлинности по умолчанию для приложений, которые будут развернуты в Azure. это **рекомендуемый вариант для локальной разработки**. Также можно включить другие два метода, которые рекомендуются в этой статье. Он является оболочкой `ManagedIdentityCredential` и может иметь доступ к `InteractiveBrowserCredential` переменной конфигурации.
+* [Манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet&preserve-view=true) работает отлично в тех случаях, когда вам нужны [управляемые удостоверения (MSI)](../active-directory/managed-identities-azure-resources/overview.md), и это хороший кандидат на работу с функциями Azure и развертывание в службах Azure.
+* [Интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) предназначен для интерактивных приложений и может использоваться для создания клиента SDK с проверкой подлинности
 
-В зависимости от выбранных вами средств можно включить пакеты с помощью диспетчера пакетов Visual Studio или `dotnet` средства командной строки. 
+В следующем примере показано, как использовать каждый из них с пакетом SDK для .NET (C#).
 
-Вам также потребуются следующие операторы using:
+## <a name="authentication-examples-net-c-sdk"></a>Примеры проверки подлинности: пакет SDK для .NET (C#)
+
+В этом разделе показан пример в C# для использования предоставленного пакета SDK для .NET для написания кода проверки подлинности.
+
+Сначала включите пакет SDK `Azure.DigitalTwins.Core` и `Azure.Identity` пакет в проект. В зависимости от выбранных вами средств можно включить пакеты с помощью диспетчера пакетов Visual Studio или `dotnet` средства командной строки. 
+
+Кроме того, в код проекта необходимо добавить следующие операторы using:
 
 ```csharp
 using Azure.Identity;
 using Azure.DigitalTwins.Core;
 ```
-Для проверки подлинности с помощью пакета SDK для .NET используйте один из методов получения учетных данных, определенных в библиотеке [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) . Ниже приведены два, которые часто используются (даже вместе в одном приложении):
 
-* [Интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) предназначен для интерактивных приложений и может использоваться для создания клиента SDK с проверкой подлинности
-* [Манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet&preserve-view=true) работает отлично в тех случаях, когда вам требуются управляемые удостоверения (MSI), и он является хорошим кандидатом для работы с функциями Azure.
+Затем добавьте код для получения учетных данных с помощью одного из методов в `Azure.Identity` .
+
+### <a name="defaultazurecredential-method"></a>Метод Дефаултазурекредентиал
+
+[Дефаултазурекредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet&preserve-view=true) предоставляет `TokenCredential` поток проверки подлинности по умолчанию для приложений, которые будут развернуты в Azure. это **рекомендуемый вариант для локальной разработки**.
+
+Чтобы использовать учетные данные Azure по умолчанию, вам потребуется URL-адрес экземпляра Azure Digital двойников ([инструкции по поиску](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
+
+Ниже приведен пример кода для добавления в `DefaultAzureCredential` проект.
+
+```csharp
+// The URL of your instance, starting with the protocol (https://)
+private static string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-URL>";
+
+//...
+
+DigitalTwinsClient client;
+try
+{
+    var credential = new DefaultAzureCredential();
+    client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
+} catch(Exception e)
+{
+    Console.WriteLine($"Authentication or client creation error: {e.Message}");
+    Environment.Exit(0);
+}
+```
+
+### <a name="managedidentitycredential-method"></a>Метод Манажедидентитикредентиал
+
+Метод [манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet&preserve-view=true) работает отлично в тех случаях, когда вам требуются [управляемые удостоверения (MSI)](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), например при работе с функциями Azure.
+
+Это означает, что можно использовать `ManagedIdentityCredential` в том же проекте, что `DefaultAzureCredential` и или `InteractiveBrowserCredential` , для проверки подлинности другой части проекта.
+
+Чтобы использовать учетные данные Azure по умолчанию, вам потребуется URL-адрес экземпляра Azure Digital двойников ([инструкции по поиску](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
+
+В функции Azure можно использовать учетные данные управляемого удостоверения следующим образом:
+
+```csharp
+ManagedIdentityCredential cred = new ManagedIdentityCredential(adtAppId);
+DigitalTwinsClientOptions opts = 
+    new DigitalTwinsClientOptions { Transport = new HttpClientTransport(httpClient) });
+client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
+```
 
 ### <a name="interactivebrowsercredential-method"></a>Метод Интерактивебровсеркредентиал
-Метод [интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) предназначен для интерактивных приложений и позволяет открыть веб-браузер для проверки подлинности.
 
-Чтобы использовать учетные данные интерактивного браузера для создания клиента пакета SDK с проверкой подлинности, добавьте следующий код:
+Метод [интерактивебровсеркредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) предназначен для интерактивных приложений и позволяет открыть веб-браузер для проверки подлинности. Это можно использовать вместо `DefaultAzureCredential` в тех случаях, когда требуется Интерактивная проверка подлинности.
+
+Чтобы использовать интерактивные учетные данные браузера, потребуется **Регистрация приложения** , имеющего разрешения на доступ к API-интерфейсам цифрового двойников Azure. Инструкции по настройке регистрации приложения см. в разделе " [*Настройка разрешений на доступ к клиентским приложениям*](how-to-set-up-instance-portal.md#set-up-access-permissions-for-client-applications) *" статьи как настроить экземпляр и проверку подлинности*. После настройки регистрации приложения вам потребуется...
+* *идентификатор приложения (клиента)* регистрации приложения.
+* *идентификатор каталога (клиента)* регистрации приложения.
+* URL-адрес экземпляра Azure Digital двойников ([инструкции для поиска](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values))
+
+Ниже приведен пример кода для создания клиента пакета SDK с проверкой подлинности с помощью `InteractiveBrowserCredential` .
 
 ```csharp
 // Your client / app registration ID
@@ -63,7 +118,7 @@ private static string clientId = "<your-client-ID>";
 // Your tenant / directory ID
 private static string tenantId = "<your-tenant-ID>";
 // The URL of your instance, starting with the protocol (https://)
-private static string adtInstanceUrl = "<your-Azure-Digital-Twins-instance-URL>";
+private static string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-URL>";
 
 //...
 
@@ -82,16 +137,7 @@ try
 >[!NOTE]
 > Хотя идентификатор клиента, идентификатор клиента и URL-адрес экземпляра можно разместить непосредственно в коде, как показано выше, рекомендуется заставить код получать эти значения из файла конфигурации или переменной среды.
 
-### <a name="managedidentitycredential-method"></a>Метод Манажедидентитикредентиал
- Метод [манажедидентитикредентиал](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet&preserve-view=true) работает отлично в тех случаях, когда вам требуются [управляемые удостоверения (MSI)](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview), например при работе с функциями Azure.
-В функции Azure можно использовать учетные данные управляемого удостоверения следующим образом:
-
-```csharp
-ManagedIdentityCredential cred = new ManagedIdentityCredential(adtAppId);
-DigitalTwinsClientOptions opts = 
-    new DigitalTwinsClientOptions { Transport = new HttpClientTransport(httpClient) });
-client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
-```
+#### <a name="other-notes-about-authenticating-azure-functions"></a>Другие примечания о проверке подлинности функций Azure
 
 См. [*инструкции по настройке функции Azure для обработки данных*](how-to-create-azure-function.md) для более полного примера, в котором объясняются некоторые важные варианты настройки в контексте функций.
 
@@ -100,104 +146,9 @@ client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
 * Используйте [переменные среды](https://docs.microsoft.com/sandbox/functions-recipes/environment-variables?tabs=csharp) соответствующим образом
 * Назначьте разрешения приложению "функции", которое позволяет ему получить доступ к интерфейсам API цифровых двойников. Дополнительные сведения о процессах функций Azure см. [*в разделе Практические руководства. Настройка функции Azure для обработки данных*](how-to-create-azure-function.md).
 
-## <a name="authentication-with-an-autorest-generated-sdk"></a>Проверка подлинности с помощью пакета SDK, созданного автоматически
+## <a name="other-credential-methods"></a>Другие методы учетных данных
 
-Если вы не используете один из указанных пакетов SDK (.NET, Java, JavaScript), вы можете создать библиотеку пакета SDK на любом языке, как описано в статье [*Создание настраиваемых пакетов SDK для Azure Digital двойников с помощью*](how-to-create-custom-sdks.md)функции автозаписи.
-
-В этом разделе объясняется, как выполнить проверку подлинности в этом случае.
-
-### <a name="prerequisites"></a>Предварительные требования
-
-Во-первых, необходимо выполнить действия по созданию настраиваемого пакета SDK с помощью функции автозаполнения, выполнив действия, описанные в разделе [*инструкции. Создание настраиваемых пакетов SDK для Azure Digital двойников с*](how-to-create-custom-sdks.md)назначением.
-
-В этом примере используется пакет SDK typescript, созданный с помощью автоотдыха. В результате также требуется:
-* [msal-JS](https://github.com/AzureAD/microsoft-authentication-library-for-js)
-* [MS-RESTful-JS](https://github.com/Azure/ms-rest-js)
-
-### <a name="minimal-authentication-code-sample"></a>Пример кода минимальной проверки подлинности
-
-Для проверки подлинности приложения с помощью служб Azure можно использовать следующий минимальный код в клиентском приложении.
-
-Вам потребуются *идентификатор вашего приложения (клиента)* и *каталога (клиента)* , а также URL-адрес вашего экземпляра Digital двойников для Azure.
-
-> [!TIP]
-> URL-адрес экземпляра Azure Digital двойников создается путем добавления *https://* в начало *имени узла*для цифрового двойникова Azure. Чтобы просмотреть *имя узла*, а также все свойства экземпляра, можно запустить `az dt show --dt-name <your-Azure-Digital-Twins-instance>` . `az account show --query tenantId`Для просмотра *идентификатора каталога (клиента)* можно использовать команду. 
-
-```javascript
-import * as Msal from "msal";
-import { TokenCredentials } from "@azure/ms-rest-js";
-// Autorest-generated SDK
-import { AzureDigitalTwinsAPI } from './azureDigitalTwinsAPI';
-
-// Client / app registration ID
-var ClientId = "<your-client-ID>";
-// Azure tenant / directory ID
-var TenantId = "<your-tenant-ID>";
-// URL of the Azure Digital Twins instance
-var AdtInstanceUrl = "<your-instance-URL>"; 
-
-var AdtAppId = "https://digitaltwins.azure.net";
-
-let client = null;
-
-export async function login() {
-
-    const msalConfig = {
-        auth: {
-            clientId: ClientId,
-            redirectUri: "http://localhost:3000",
-            authority: "https://login.microsoftonline.com/"+TenantId
-        }
-    };
-
-    const msalInstance = new Msal.UserAgentApplication(msalConfig);
-
-    msalInstance.handleRedirectCallback((error, response) => {
-        // handle redirect response or error
-    });
-
-    var loginRequest = {
-        scopes: [AdtAppId + "/.default"] 
-    };
-
-    try {
-        await msalInstance.loginPopup(loginRequest)
-        var accessToken;
-        // if the user is already logged in you can acquire a token
-        if (msalInstance.getAccount()) {
-            var tokenRequest = {
-                scopes: [AdtAppId + "/.default"]
-            };
-            try {
-                const response = await msalInstance.acquireTokenSilent(tokenRequest);
-                accessToken = response.accessToken;
-            } catch (err) {
-                if (err.name === "InteractionRequiredAuthError") {
-                    const response = await msalInstance.acquireTokenPopup(tokenRequest)
-                    accessToken = response.accessToken;
-                }
-            }
-        }
-        if (accessToken!=null)
-        {
-            var tokenCredentials = new TokenCredentials(accessToken);
-                
-            // Add token and server URL to service instance
-            const clientConfig = {
-                baseUri: AdtInstanceUrl
-            };
-            client = new AzureDigitalTwinsAPI(tokenCredentials, clientConfig);
-            appDataStore.client = client;
-        }
-    } catch (err) {
-        ...
-    }
-}
-```
-
-Обратите внимание, что когда код, указанный выше, помещает идентификатор клиента, идентификатор клиента и URL-адрес экземпляра непосредственно в код для простоты, рекомендуется заставить код получать эти значения из файла конфигурации или переменной среды.
-
-MSAL обладает многими дополнительными возможностями, которые можно использовать для реализации таких возможностей, как кэширование и другие потоки проверки подлинности. Дополнительные сведения об этом см. в [*статье Обзор библиотеки проверки подлинности Майкрософт (MSAL)*](../active-directory/develop/msal-overview.md).
+Если выделенные выше сценарии проверки подлинности не охватывают потребности приложения, можно изучить другие типы проверки подлинности, предлагаемые на [**платформе Microsoft Identity**](../active-directory/develop/v2-overview.md#getting-started). Документация по этой платформе охватывает дополнительные сценарии проверки подлинности, упорядоченные по типам приложений.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

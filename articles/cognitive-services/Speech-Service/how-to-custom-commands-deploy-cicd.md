@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
 ms.openlocfilehash: bd1ab5110313380c90e71ed161935c7274a845b7
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839254"
 ---
 # <a name="continuous-deployment-with-azure-devops"></a>Непрерывное развертывание с помощью Azure DevOps
@@ -168,7 +168,7 @@ ms.locfileid: "91839254"
 1. Щелкните "выполнить" и выберите "задание" выполняется.
     Вы увидите список задач, которые выполняются с: "Импорт приложения" & "обучение и публикация приложения".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [См. примеры на GitHub](https://aka.ms/speech/cc-samples)

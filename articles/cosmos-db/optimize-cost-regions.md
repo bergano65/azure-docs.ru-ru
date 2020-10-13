@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.openlocfilehash: 8d98c9a7e58f08d9ad63183805cd6cd0d2ab3b3d
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570165"
 ---
 # <a name="optimize-multi-region-cost-in-azure-cosmos-db"></a>Оптимизация затрат на использование нескольких регионов в Azure Cosmos DB
@@ -49,7 +49,7 @@ ms.locfileid: "91570165"
 
 3. Отслеживайте действия в своих регионах и сможете добавлять и удалять регионы по запросу для масштабирования пропускной способности чтения и записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 

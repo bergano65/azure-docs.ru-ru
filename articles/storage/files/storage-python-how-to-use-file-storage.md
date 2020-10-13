@@ -8,12 +8,12 @@ ms.date: 10/08/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-python
-ms.openlocfilehash: 11c31b9ce3c5a8d8fba18d8e7c46ac38b0559aec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8bef69037fad8bf8ee9537e90f26ca967560b9d2
+ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856319"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91876103"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 
@@ -95,7 +95,7 @@ from azure.storage.file import FileService
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-`FileService`Объект позволяет работать с общими папками, каталогами и файлами. Следующий код создает объект `FileService`, используя имя и ключ учетной записи хранения. Замените `<myaccount>` и `<mykey>` именем учетной записи и ключом.
+Объект [FileService](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true) позволяет работать с общими папками, каталогами и файлами. Следующий код создает объект `FileService`, используя имя и ключ учетной записи хранения. Замените `<myaccount>` и `<mykey>` именем учетной записи и ключом.
 
 ```python
 file_service = FileService(account_name='myaccount', account_key='mykey')
@@ -113,7 +113,7 @@ file_service = FileService(account_name='myaccount', account_key='mykey')
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-В следующем примере кода используется `FileService` объект для создания общего ресурса, если он не существует.
+В следующем примере кода используется объект [FileService](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true) для создания общего ресурса, если он не существует.
 
 ```python
 file_service.create_share('myshare')
@@ -153,7 +153,7 @@ file_service.create_directory('myshare', 'sampledir')
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Файловый ресурс Azure содержит по крайней мере корневой каталог, в котором могут размещаться файлы. Чтобы создать файл и передать данные, используйте `create_file_from_path` `create_file_from_stream` методы,, `create_file_from_bytes` или `create_file_from_text` . Они являются высокоуровневые методы, которые выполняют необходимое Фрагментирование, когда размер данных превышает 64 МБ.
+Файловый ресурс Azure содержит по крайней мере корневой каталог, в котором могут размещаться файлы. Чтобы создать файл и передать данные, используйте методы [create_file_from_path](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#create-file-from-path-share-name--directory-name--file-name--local-file-path--content-settings-none--metadata-none--validate-content-false--progress-callback-none--max-connections-2--file-permission-none--smb-properties--azure-storage-file-models-smbproperties-object---timeout-none-), [create_file_from_stream](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#create-file-from-stream-share-name--directory-name--file-name--stream--count--content-settings-none--metadata-none--validate-content-false--progress-callback-none--max-connections-2--timeout-none--file-permission-none--smb-properties--azure-storage-file-models-smbproperties-object--), [create_file_from_bytes](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#create-file-from-bytes-share-name--directory-name--file-name--file--index-0--count-none--content-settings-none--metadata-none--validate-content-false--progress-callback-none--max-connections-2--timeout-none--file-permission-none--smb-properties--azure-storage-file-models-smbproperties-object--)или [create_file_from_text](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#create-file-from-text-share-name--directory-name--file-name--text--encoding--utf-8---content-settings-none--metadata-none--validate-content-false--timeout-none--file-permission-none--smb-properties--azure-storage-file-models-smbproperties-object--) . Они являются высокоуровневые методы, которые выполняют необходимое Фрагментирование, когда размер данных превышает 64 МБ.
 
 Метод `create_file_from_path` передает содержимое файла из указанного пути, а метод `create_file_from_stream` передает содержимое уже открытого файла или потока. Метод `create_file_from_bytes` передает массив байтов, а `create_file_from_text` — указанное текстовое значение с использованием указанной кодировки (по умолчанию UTF-8).
 
@@ -181,7 +181,7 @@ file_service.create_file_from_path(
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Чтобы получить список файлов и каталогов в общем ресурсе, используйте метод **list\_directories\_and\_files**. Этот метод возвращает генератор. Приведенный далее код выводит в консоль **имя** каждого файла и каталога в общем ресурсе.
+Чтобы получить список файлов и каталогов в общей папке, используйте метод [list_directories_and_files](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#list-directories-and-files-share-name--directory-name-none--num-results-none--marker-none--timeout-none--prefix-none--snapshot-none-) . Этот метод возвращает генератор. Приведенный далее код выводит в консоль **имя** каждого файла и каталога в общем ресурсе.
 
 ```python
 generator = file_service.list_directories_and_files('myshare')
@@ -203,7 +203,7 @@ for file_or_dir in generator:
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Чтобы загрузить данные из файла, используйте методы `get_file_to_path`, `get_file_to_stream`, `get_file_to_bytes` или `get_file_to_text`. Они являются высокоуровневые методы, которые выполняют необходимое Фрагментирование, когда размер данных превышает 64 МБ.
+Чтобы загрузить данные из файла, используйте [get_file_to_path](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#get-file-to-path-share-name--directory-name--file-name--file-path--open-mode--wb---start-range-none--end-range-none--validate-content-false--progress-callback-none--max-connections-2--timeout-none--snapshot-none-), [get_file_to_stream](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#get-file-to-stream-share-name--directory-name--file-name--stream--start-range-none--end-range-none--validate-content-false--progress-callback-none--max-connections-2--timeout-none--snapshot-none-), [get_file_to_bytes](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#get-file-to-bytes-share-name--directory-name--file-name--start-range-none--end-range-none--validate-content-false--progress-callback-none--max-connections-2--timeout-none--snapshot-none-)или [get_file_to_text](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#get-file-to-text-share-name--directory-name--file-name--encoding--utf-8---start-range-none--end-range-none--validate-content-false--progress-callback-none--max-connections-2--timeout-none--snapshot-none-). Они являются высокоуровневые методы, которые выполняют необходимое Фрагментирование, когда размер данных превышает 64 МБ.
 
 В следующем примере показано использование метода `get_file_to_path` для загрузки содержимого файла **myfile** и его сохранения в файл *out-sunset.png*.
 
@@ -313,7 +313,7 @@ file_service.delete_share(share_name, snapshot=snapshot_id)
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Чтобы удалить файл, вызовите `delete_file` .
+Чтобы удалить файл, вызовите [delete_file](/python/api/azure-storage-file/azure.storage.file.fileservice.fileservice?view=azure-python-previous&preserve-view=true#delete-file-share-name--directory-name--file-name--timeout-none-).
 
 ```python
 file_service.delete_file('myshare', None, 'myfile')
@@ -339,7 +339,7 @@ file_service.delete_share(share_name, delete_snapshots=DeleteSnapshot.Include)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как работать с файлами Azure с помощью Python, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 

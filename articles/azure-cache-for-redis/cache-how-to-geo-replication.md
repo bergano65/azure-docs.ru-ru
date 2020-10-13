@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: yegu
 ms.openlocfilehash: f6ac02f0bcd9becf5dd1ffcd600f78b848b47cda
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91839696"
 ---
 # <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Как настроить георепликацию для кэша Azure для Redis
@@ -190,7 +190,7 @@ ms.locfileid: "91839696"
 
 Да, можно настроить [брандмауэр](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#firewall) с георепликацией. Чтобы Георепликация функционировала вместе с брандмауэром, убедитесь, что IP-адрес вторичного кэша добавлен в правила брандмауэра основного кэша.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о кэше Azure для функций Redis.
 

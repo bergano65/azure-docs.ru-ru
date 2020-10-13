@@ -64,8 +64,14 @@
           href: ./hdinsight-capacity-planning.md
         - name: Рекомендации по управлению кластерами
           href: ./cluster-management-best-practices.md
-        - name: Доступность и надежность
-          href: ./hdinsight-high-availability-linux.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Общие сведения о непрерывности бизнес-процессов
+              href: hdinsight-business-continuity.md
+            - name: Архитектура обеспечения непрерывности бизнес-процессов
+              href: ./hdinsight-business-continuity-architecture.md
+            - name: Пример использования высокого уровня доступности
+              href: ./hdinsight-high-availability-case-study.md
         - name: Основные сведения об управляемых удостоверениях
           href: ./hdinsight-managed-identities.md
         - name: Сравнение вариантов хранилищ
@@ -102,10 +108,14 @@
           items:
             - name: Использование службы хранилища Azure
               href: hdinsight-hadoop-use-blob-storage.md
-            - name: Использование Azure Data Lake Storage 2-го поколения
+            - name: Использование Data Lake Storage 2-го поколения
               href: hdinsight-hadoop-use-data-lake-storage-gen2.md
-            - name: Использование Azure Data Lake Storage 1-го поколения
-              href: hdinsight-hadoop-use-data-lake-store.md
+            - name: Использование Data Lake Storage 2-го поколения на портале
+              href: hdinsight-hadoop-use-data-lake-storage-gen2-portal.md
+            - name: Использование Data Lake Storage 2-го поколения с Azure CLI
+              href: hdinsight-hadoop-use-data-lake-storage-gen2-azure-cli.md
+            - name: Использование Data Lake Storage 1-го поколения
+              href: hdinsight-hadoop-use-data-lake-storage-gen1.md
         - name: Расширение кластеров
           items:
             - name: Установка приложений HDInsight
@@ -757,6 +767,8 @@
           href: ./interactive-query/gateway-best-practices.md
         - name: Рекомендации по выбору размера
           href: ./interactive-query/sizing-guidelines.md
+        - name: Репликация Hive
+          href: ./interactive-query/apache-hive-replication.md
     - name: Практические руководства
       items:
         - name: Разработка

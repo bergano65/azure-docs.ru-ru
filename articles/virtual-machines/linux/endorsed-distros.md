@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: conceptual
-ms.date: 08/02/2020
+ms.date: 10/09/2020
 ms.author: guybo
-ms.openlocfilehash: f945c58b256c2a024a62b15a1bca1841483e1849
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1417635c0e510badd191e99786f49dfb509c8206
+ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91279439"
+ms.locfileid: "91893413"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Рекомендуемые дистрибутивы Linux в Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "91279439"
 | CentOS по мошенническому звуковому программному обеспечению |CentOS 6. x, 7. x, 8. x |CentOS 6,3: [скачивание LIS](https://www.microsoft.com/download/details.aspx?id=55106)<p>CentOS 6.4 и более поздних версий: в ядре |Пакет: в [репозитории](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) в разделе "WALinuxAgent" <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)<p> CoreOS теперь имеет [окончание жизни](https://coreos.com/os/eol/) от 26 мая 2020 г. |Больше не доступно | | |
 | Debian от Credativ |8.x, 9.x |В ядре |Пакет: в репозитории в разделе WAAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
-|Контейнер флаткар Linux от Кинволк| Стабильный, бета-версия| В ядре | WA-Linux-агент уже установлен в/УСР/шаре/ОЕМ/бин/ваажент |
+|Контейнер флаткар Linux от Кинволк| Профессиональная, стабильная, бета-версия| В ядре | WA-Linux-агент уже установлен в/УСР/шаре/ОЕМ/бин/ваажент |
 | Oracle Linux по Oracle |6.x, 7.x, 8.x |В ядре |Пакет: в репозитории в разделе WALinuxAgent  <br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | [Red Hat Enterprise Linux с помощью Red Hat](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/overview) |6.x, 7.x, 8.x |В ядре |Пакет: в репозитории в разделе WALinuxAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise по SUSE |SLES/SLES для SAP 11. x, 12. x, 15. x <br/> [Жизненный цикл образа общедоступного облака SUSE](https://www.suse.com/c/suse-public-cloud-image-life-cycle/) |В ядре |Пакет:<p> для версии 11: в репозитории [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools);<br>для версии 12: входит в состав модуля Public Cloud в python-azure-agent.<br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
@@ -58,6 +58,7 @@ Azure тесно работает с различными предустанов
 - [Ядро Debian Cloud — доступно в образе "однопортовый" Debian 10 и Debian 9 "в Azure](https://wiki.debian.org/Cloud/MicrosoftAzure)
 - [Ядро Azure-Tuned SLES](https://www.suse.com/c/a-different-builtin-kernel-for-azure-on-demand-images/)
 - [Ядро Azure-Tuned Ubuntu](https://blog.ubuntu.com/2017/09/21/microsoft-and-canonical-increase-velocity-with-azure-tailored-kernel)
+- [Контейнер флаткар Linux Pro](https://azuremarketplace.microsoft.com/marketplace/apps/kinvolk.flatcar_pro)
 
 ## <a name="partners"></a>Участники
 

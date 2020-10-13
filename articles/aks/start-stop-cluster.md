@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 09/24/2020
 author: palma21
 ms.openlocfilehash: 4a814d575e0879daec64ebfdabc1539219bea250
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91368946"
 ---
 # <a name="stop-and-start-an-azure-kubernetes-service-aks-cluster-preview"></a>Останавливает и запускает кластер Azure Kubernetes Service (AKS) (Предварительная версия)
@@ -124,7 +124,7 @@ az aks start --name myAKSCluster --resource-group myResourceGroup
 Если `provisioningState` показывает `Starting` , что кластер еще не был полностью запущен.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы узнать, как масштабировать `User` Пулы до 0, см. раздел [масштабирование `User` пулов до 0](scale-cluster.md#scale-user-node-pools-to-0).
 - Сведения о том, как сократить расходы с помощью экземпляров смесевых, см. в разделе [Добавление пула узлов смесевых цветов в AKS](spot-node-pool.md).

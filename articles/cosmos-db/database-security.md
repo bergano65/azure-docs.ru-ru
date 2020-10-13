@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: mjbrown
 ms.openlocfilehash: 3b098b4136098a196dd747345556b1847512fcd1
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91570242"
 ---
 # <a name="security-in-azure-cosmos-db---overview"></a>Безопасность в Azure Cosmos DB. Обзор
@@ -43,7 +43,7 @@ ms.locfileid: "91570242"
 - Реагирование на атаки
 - Возможность защитить данные в пределах геозоны в соответствии с ограничениями, установленными для управления данными
 - Физическая защита серверов в защищенных центрах обработки данных
-- Сертификация
+- Сертификаты
 
 И хотя это может показаться очевидным, но последние [крупномасштабные нарушения в работе баз данных](https://thehackernews.com/2017/01/mongodb-database-security.html) напоминают нам о простых, но критических важных требованиях, которые необходимо выполнять:
 
@@ -81,7 +81,7 @@ ms.locfileid: "91570242"
 
 На следующем снимке экрана показано, как можно выполнять мониторинг учетной записи с помощью журналов аудита и действий: :::image type="content" source="./media/database-security/nosql-database-security-application-logging.png" alt-text="Ответственность клиента и поставщика базы данных":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о первичных ключах и маркерах ресурсов см. [в статье Защита доступа к Azure Cosmos DBным данным](secure-access-to-data.md).
 
