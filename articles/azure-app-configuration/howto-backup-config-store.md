@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
 ms.openlocfilehash: a3c1699dd4b7b828c7dc652f14f431878f785061
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88207143"
 ---
 # <a name="back-up-app-configuration-stores-automatically"></a>Автоматическое резервное копирование хранилищ конфигурации приложений
@@ -23,7 +23,7 @@ ms.locfileid: "88207143"
 
 После настройки автоматического резервного копирования Конфигурация приложения будет публиковать события в службе "Сетка событий Azure" для любых изменений, внесенных в значения ключа в хранилище конфигураций. Служба "Сетка событий" поддерживает различные службы Azure, от которых пользователи могут подписываться на события, генерируемые при создании, обновлении или удалении значений ключей.
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 В этой статье вы будете использовать хранилище очередей Azure для получения событий из службы "Сетка событий" и использования триггера таймера для функций Azure для обработки событий в очереди в пакетах. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "88207143"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. [Создайте бесплатно](https://azure.microsoft.com/free/). 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой разработки Azure.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой разработки Azure.
 - [пакет SDK для .NET Core](https://dotnet.microsoft.com/download);
 - Последняя версия Azure CLI (2.3.1 или более поздней версии). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если вы используете Azure CLI, необходимо сначала войти с помощью `az login` . При необходимости можно использовать Azure Cloud Shell.
 

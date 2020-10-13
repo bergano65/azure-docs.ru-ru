@@ -10,10 +10,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 4ab613c251bc43a025e0381046805ec998a04227
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77019559"
 ---
 # <a name="quickstart---consume-vmware-vms-on-azure"></a>Краткое руководство. Использование виртуальных машин VMware в Azure
@@ -26,7 +26,7 @@ ms.locfileid: "77019559"
 
 ## <a name="create-a-virtual-machine-in-the-azure-portal"></a>Создание виртуальной машины на портале Azure
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 
 2. Выполните поиск **CloudSimple Virtual Machines**.
 
@@ -38,7 +38,7 @@ ms.locfileid: "77019559"
 
     ![Создание виртуальной машины Клаудсимпле — основы](media/create-cloudsimple-virtual-machine-basic-info.png)
 
-    | Поле | Описание: |
+    | Поле | Описание |
     | ------------ | ------------- |
     | Подписка | Подписка Azure, связанная с частным облаком.  |
     | Группа ресурсов | Группа ресурсов, которой будет назначена виртуальная машина. Можно выбрать имеющуюся группу или создать новую. |
@@ -61,7 +61,7 @@ ms.locfileid: "77019559"
 
     Для параметра сетевые интерфейсы щелкните **Добавить сетевой интерфейс** и настройте следующие параметры.
 
-    | Элемент управления | Описание: |
+    | Элемент | Описание |
     | ------------ | ------------- |
     | name | Введите имя для идентификации интерфейса.  |
     | Сеть | Выберите из списка настроенной распределенной группы портов в vSphere частного облака.  |
@@ -70,7 +70,7 @@ ms.locfileid: "77019559"
 
     Для параметра диски щелкните **Добавить диск** и настройте следующие параметры.
 
-    | Item | Описание |
+    | Элемент | Описание |
     | ------------ | ------------- |
     | name | Введите имя для идентификации диска.  |
     | Размер | Выберите один из доступных размеров.  |
@@ -81,7 +81,7 @@ ms.locfileid: "77019559"
 
     ![Создание виртуальной машины Клаудсимпле — обзор](media/create-cloudsimple-virtual-machine-review.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр списка виртуальных машин CloudSimple](azure-create-vm.md#view-list-of-cloudsimple-virtual-machines)
 * [Управление виртуальной машиной Клаудсимпле из Azure](azure-manage-vm.md)

@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/23/2020
 ms.openlocfilehash: f8885229c8ab6784c6c0bf45487812fcc43f9b22
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90903825"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio-code"></a>Отладка запросов Azure Stream Analytics локально с помощью схемы заданий в Visual Studio Code
@@ -106,7 +106,7 @@ ms.locfileid: "90903825"
 
 * Только облачные входные параметры имеют поддержку [политик времени](stream-analytics-out-of-order-and-late-events.md) , а локальные параметры ввода — нет.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание задания Stream Analytics с помощью Visual Studio Code](quick-create-visual-studio-code.md)
 * [Изучение Azure Stream Analytics с Visual Studio Code](visual-studio-code-explore-jobs.md)

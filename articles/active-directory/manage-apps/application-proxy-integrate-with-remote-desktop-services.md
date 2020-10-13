@@ -17,10 +17,10 @@ ms.custom: it-pro
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7ffdccf9cf3b6de4ba15d6076d7a5b9e0a93f464
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89396766"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
@@ -145,7 +145,7 @@ ms.locfileid: "89396766"
 1. В разделе [Публикация конечной точки узла удаленных рабочих столов](#publish-the-rd-host-endpoint) (шаг 1) в качестве метода предварительной аутентификации выберите **Сквозной режим**.
 2. В разделе [Направление трафика RDS в прокси приложения](#direct-rds-traffic-to-application-proxy) полностью пропустите шаг 8.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Включение удаленного доступа к SharePoint с помощью Azure AD application proxy](application-proxy-integrate-with-sharepoint-server.md) 
  [Вопросы безопасности при удаленном доступе к приложениям с помощью Azure AD application proxy](application-proxy-security.md)

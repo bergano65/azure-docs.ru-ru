@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: 551f0065f1547e94d93993a38795234f455b9eef
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86044402"
 ---
 # <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Проверка подлинности Stream Analytics для Azure Data Lake Storage 1-го поколения с помощью управляемых удостоверений
@@ -182,7 +182,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
 2. **[Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md)**:, не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба создается Azure Stream Analytics.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание выходных данных Data Lake Store с помощью Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)

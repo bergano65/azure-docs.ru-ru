@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/16/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: b1a23c01fdf8a0145c26b709f36709a7b710103f
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87374309"
 ---
 # <a name="configuring-jvm-args-java-standalone-agent-for-azure-monitor-application-insights"></a>Настройка изолированного агента Java ВИРТУАЛЬНОЙ машины Java args для Azure Monitor Application Insights
@@ -43,7 +43,7 @@ ENTRYPOINT java -javaagent:path/to/applicationinsights-agent-3.0.0-PREVIEW.jar -
 
 ## <a name="tomcat-8-linux"></a>Tomcat 8 (Linux)
 
-### <a name="tomcat-installed-via-apt-get-or-yum"></a>Tomcat, установленный с помощью `apt-get` или`yum`
+### <a name="tomcat-installed-via-apt-get-or-yum"></a>Tomcat, установленный с помощью `apt-get` или `yum`
 
 Если вы установили Tomcat через `apt-get` или `yum` , то у вас должен быть файл `/etc/tomcat8/tomcat8.conf` .  Добавьте следующую строку в конец этого файла:
 
@@ -139,12 +139,12 @@ set "CATALINA_OPTS=%CATALINA_OPTS% -javaagent:path/to/applicationinsights-agent-
 ...
 ```
 
-Указанное `applicationinsights.agent.id` значение должно быть уникальным. Он используется для создания вложенного каталога в каталоге applicationinsights, так как каждому процессу ВИРТУАЛЬНОЙ машины Java требуется собственная локальная applicationinsights config и локальный файл журнала applicationinsights. Кроме того, при отправке отчетов центральному сборщику `applicationinsights.properties` файл совместно используется несколькими управляемыми серверами, поэтому `applicationinsights.agent.id` для переопределения `agent.id` параметра в этом общем файле необходимо указать указанный параметр. `applicationinsights.agent.rollup.id`можно также указать на сервере, если необходимо `system-properties` переопределить `agent.rollup.id` параметр для каждого управляемого сервера.
+Указанное `applicationinsights.agent.id` значение должно быть уникальным. Он используется для создания вложенного каталога в каталоге applicationinsights, так как каждому процессу ВИРТУАЛЬНОЙ машины Java требуется собственная локальная applicationinsights config и локальный файл журнала applicationinsights. Кроме того, при отправке отчетов центральному сборщику `applicationinsights.properties` файл совместно используется несколькими управляемыми серверами, поэтому `applicationinsights.agent.id` для переопределения `agent.id` параметра в этом общем файле необходимо указать указанный параметр. `applicationinsights.agent.rollup.id` можно также указать на сервере, если необходимо `system-properties` переопределить `agent.rollup.id` параметр для каждого управляемого сервера.
 
 
 ## <a name="jetty-9"></a>Jetty 9
 
-Добавьте эти строки в`start.ini`
+Добавьте эти строки в `start.ini`
 
 ```
 --exec

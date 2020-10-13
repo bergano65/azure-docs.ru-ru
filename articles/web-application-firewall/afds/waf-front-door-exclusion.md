@@ -8,15 +8,15 @@ ms.date: 02/25/2020
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: 6ed382e88700e4ecd7f8de20a2c8da7ed3c13566
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "77925934"
 ---
 # <a name="web-application-firewall-waf-with-front-door-service-exclusion-lists"></a>Брандмауэр веб-приложения (WAF) с списками исключений службы Front дверь 
 
-Иногда брандмауэр веб-приложения (WAF) может блокировать запрос, который требуется разрешить приложению. Например, Active Directory вставляет маркеры, используемые для проверки подлинности. Эти токены могут содержать специальные символы, которые могут вызывать ложное срабатывание из правил WAF. Списки исключений WAF позволяют пропустить некоторые атрибуты запроса при проверке WAF.  Список исключений можно настроить с помощью [повсершелл](https://docs.microsoft.com/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject?view=azps-3.5.0), [Azure CLI](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-managed-rules-exclusion-add), [интерфейса API](https://docs.microsoft.com/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)или портал Azure. В следующем примере показана конфигурация портал Azure. 
+Иногда брандмауэр веб-приложения (WAF) может блокировать запрос, который требуется разрешить приложению. Например, Active Directory вставляет маркеры, используемые для проверки подлинности. Эти токены могут содержать специальные символы, которые могут вызывать ложное срабатывание из правил WAF. Списки исключений WAF позволяют пропустить некоторые атрибуты запроса при проверке WAF.  Список исключений можно настроить с помощью  [повсершелл](https://docs.microsoft.com/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject?view=azps-3.5.0), [Azure CLI](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-managed-rules-exclusion-add), [интерфейса API](https://docs.microsoft.com/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)или портал Azure. В следующем примере показана конфигурация портал Azure. 
 ## <a name="configure-exclusion-lists-using-the-azure-portal"></a>Настройка списков исключений с помощью портал Azure
 **Управление исключениями** доступно на портале WAF в разделе **управляемые правила** .
 
@@ -46,6 +46,6 @@ ms.locfileid: "77925934"
 
 Список исключений можно применить ко всем правилам в наборе управляемых правил, к правилам для конкретной группы правил или к одному правилу, как показано в предыдущем примере. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки параметров WAF Узнайте, как просматривать журналы WAF. Дополнительные сведения см. в статье [Диагностика передней дверцы](../afds/waf-front-door-monitor.md).

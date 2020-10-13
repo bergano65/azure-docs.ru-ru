@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/29/2020
 ms.author: alkohli
 ms.openlocfilehash: 251b15f72c3216ad3ff4b2983c8cbbd2d9ec6579
-ms.sourcegitcommit: 4bebbf664e69361f13cfe83020b2e87ed4dc8fa2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91618256"
 ---
 # <a name="deployment-checklist-for-your-azure-stack-edge-pro-gpu-device"></a>Контрольный список развертывания для устройства GPU Azure Stack с пограничными Pro  
@@ -37,7 +37,7 @@ ms.locfileid: "91618256"
 | Такую Параметры времени       | Настройте часовой пояс, основной NTP-сервер, дополнительный NTP-сервер. | Настройте основной и дополнительный NTP-серверы в локальной сети.<br>Если локальный сервер недоступен, можно настроить общедоступные NTP-серверы.                                                    |
 | Используемых Обновить параметры сервера | <li>Требуется IP-адрес сервера обновлений в локальной сети, путь к серверу WSUS. </li> | По умолчанию используется общедоступный сервер центра обновления Windows.|
 | Параметры устройства | <li>Полное доменное имя устройства (FQDN) </li><li>Домен DNS</li> | |
-| Используемых Сертификаты  | Чтобы протестировать нерабочие нагрузки, используйте [параметр создать сертификаты](azure-stack-edge-gpu-deploy-configure-certificates.md#generate-device-certificates) . <br><br> Если вы перенесете собственные сертификаты, включая цепочки подписывания, [добавьте сертификаты](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates) в соответствующем формате.| Настройте сертификаты, только если вы изменяете имя устройства или домен DNS. |
+| Используемых Сертификаты  | Чтобы протестировать нерабочие нагрузки, используйте [параметр создать сертификаты](azure-stack-edge-gpu-deploy-configure-certificates.md#generate-device-certificates) . <br><br> Если вы будете использовать собственные сертификаты, в том числе цепочки подписывания, [добавьте сертификаты](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates) в соответствующем формате.| Настройте сертификаты, только если вы изменяете имя устройства или домен DNS. |
 | Активация  | Требовать ключ активации из ресурса Azure Stack ребра Pro/Шлюз Data Box.    | После создания ключ истекает через 3 дня. |
 
 <!--
@@ -45,6 +45,6 @@ ms.locfileid: "91618256"
 | (Optional) Network switch port    | Device hosts Hyper-V VMs for compute. Some network switch port configurations don’t accommodate these setups by default.                                                                                                        |                                                                                                                   |-->
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Подготовка к развертыванию [устройства Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-prep.md).

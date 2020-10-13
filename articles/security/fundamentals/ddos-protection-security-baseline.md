@@ -8,15 +8,15 @@ ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
 ms.openlocfilehash: b1bb22b702cae77ba40fbeeaca1c11c9063bffe8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91331613"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../benchmarks/overview.md) к стандарту защиты Azure от атак DDoS. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в ходе тестирования системы безопасности Azure, и связанным рекомендациям, применимым к защите от атак DDoS. **Элементы управления** , неприменимые к защите от атак DDoS, были исключены. Сведения о том, как защита от атак DDoS полностью сопоставляется с тестовым уровнем безопасности Azure, см. в разделе [полный базовый план безопасности от атак DDoS Protection](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../benchmarks/overview.md) к стандарту защиты Azure от атак DDoS. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в ходе тестирования системы безопасности Azure, и связанным рекомендациям, применимым к защите от атак DDoS. **Элементы управления** , неприменимые к защите от атак DDoS, были исключены. Сведения о том, как защита от атак DDoS полностью сопоставляется с тестовым уровнем безопасности Azure, см. в разделе [полный базовый план безопасности от атак DDoS Protection](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 

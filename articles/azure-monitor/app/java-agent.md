@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: 9cce87fa742df2e623217b5b0f72ad19814fd3b7
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87371368"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
@@ -85,7 +85,7 @@ ms.locfileid: "87371368"
 * Выберите элементы "Параметры > Параметры приложения".
 * В разделе "Параметры приложения" добавьте новую пару "ключ — значение":
 
-Ключ: `JAVA_OPTS` значение:`-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
+Ключ: `JAVA_OPTS` значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
 
 Для получения последней версии агента Java ознакомьтесь с выпусками [здесь](https://github.com/Microsoft/ApplicationInsights-Java/releases
 ). 
@@ -123,7 +123,7 @@ ms.locfileid: "87371368"
 
 [Дополнительные сведения о диагностировании проблем зависимостей](./asp-net-dependencies.md#diagnosis).
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+## <a name="questions-problems"></a>У вас появились вопросы? Проблемы?
 * Данные отсутствуют? [Настройка исключений брандмауэра](./ip-addresses.md)
 * [Устранение неполадок Java](java-troubleshoot.md)
 

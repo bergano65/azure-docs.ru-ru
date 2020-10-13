@@ -7,10 +7,10 @@ ms.date: 09/14/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: e47486f29537cb948aaae7cf17e97bae14b60700
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90084300"
 ---
 # <a name="customize-the-feed-for-windows-virtual-desktop-users"></a>Настройка веб-канала для пользователей виртуальных рабочих столов Windows
@@ -20,7 +20,7 @@ ms.locfileid: "90084300"
 
 Вы можете настроить веб-канал таким образом, чтобы ресурсы RemoteApp и удаленный рабочий стол отображались для пользователей с распознаваемым способом.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже скачали и установили модуль PowerShell для виртуальных рабочих столов Windows. Если вы этого не сделали, следуйте инструкциям в разделе [Настройка модуля PowerShell](powershell-module.md).
 
@@ -113,7 +113,7 @@ Update-AzWvdDesktop -ResourceGroupName <resourcegroupname> -ApplicationGroupName
 
 6. Выберите приложение, которое требуется обновить, а затем введите новое **Отображаемое имя**.
 
-7. Выберите **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
+7. Щелкните **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

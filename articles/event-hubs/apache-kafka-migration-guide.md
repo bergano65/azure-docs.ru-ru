@@ -4,10 +4,10 @@ description: В этой статье объясняется, как перен�
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: d9f3775a85df5a881c2c38566628e4e1d4d8c40e
-ms.sourcegitcommit: 51df05f27adb8f3ce67ad11d75cb0ee0b016dc5d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90061450"
 ---
 # <a name="migrate-to-azure-event-hubs-for-apache-kafka-ecosystems"></a>Миграция в Центры событий Azure для экосистем Apache Kafka
@@ -16,7 +16,7 @@ ms.locfileid: "90061450"
 ## <a name="pre-migration"></a>Подготовка к миграции 
 
 ### <a name="create-an-azure-account"></a>Создание учетной записи Azure
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
 ### <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 Выполните пошаговые инструкции из статьи [Создание концентратора событий](event-hubs-create.md) , чтобы создать пространство имен концентраторов событий и концентратор событий. 

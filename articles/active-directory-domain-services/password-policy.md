@@ -12,10 +12,10 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
 ms.openlocfilehash: e3e524df2e98229698a86a721b7312a4d054ff70
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86040050"
 ---
 # <a name="password-and-account-lockout-policies-on-active-directory-domain-services-managed-domains"></a>Политики блокировки паролей и учетных записей в управляемых доменах служб домен Active Directory Services
@@ -127,7 +127,7 @@ ms.locfileid: "86040050"
 
 1. Выбрав имя выбранной группы, которое отображается непосредственно в разделе **применяется к** , нажмите кнопку **ОК** , чтобы сохранить политику настраиваемых паролей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о политиках паролей и использовании центра администрирования Active Directory см. в следующих статьях:
 

@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f75c08f0a390e798435b70bbe2409ec4a9732214
-ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88717172"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Использование методов проверки подлинности & Insights (Предварительная версия)
@@ -26,7 +26,7 @@ ms.locfileid: "88717172"
 
 Следующие роли могут получать доступ к использованию и аналитике:
 
-- глобального администратора;
+- глобальный администратор
 - Читатель сведений о безопасности
 - Администратор безопасности
 - Читатель отчетов

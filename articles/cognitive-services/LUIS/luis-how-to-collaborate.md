@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.openlocfilehash: 30b4256b37dc3329801a730192e25f7c24a45594
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91540917"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
@@ -92,7 +92,7 @@ ms.locfileid: "91540917"
 Узнайте больше о пользователях и согласии Azure Active Directory.
 * [Ограничить приложение](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) набором пользователей
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-how-to-azure-subscription.md#authoring-key) и [участников](luis-how-to-azure-subscription.md#contributions-from-other-authors) этого ресурса.
