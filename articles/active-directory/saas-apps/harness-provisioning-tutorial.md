@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
 ms.openlocfilehash: b78de4769f49954c4d4e860e75818f6485247a17
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91305679"
 ---
 # <a name="tutorial-configure-harness-for-automatic-user-provisioning"></a>Учебник. Настройка программы для автоматической подготовки пользователей
@@ -65,7 +65,7 @@ ms.locfileid: "91305679"
 
     ![Панель "Добавление ключа API"](media/harness-provisioning-tutorial/title.png)
    
-   а. В поле **имя** введите имя ключа.  
+   a. В поле **имя** введите имя ключа.  
    b. В раскрывающемся списке **разрешения, унаследованные от** выберите параметр. 
    
 1. Нажмите кнопку **Submit** (Отправить).
@@ -78,7 +78,7 @@ ms.locfileid: "91305679"
 
 Перед настройкой программы для автоматической подготовки пользователей с помощью Azure AD необходимо добавить программу из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-1. В [портал Azure](https://portal.azure.com)в левой области выберите **Azure Active Directory**.
+1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -126,7 +126,7 @@ ms.locfileid: "91305679"
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
  
-   а. В поле **URL-адрес клиента** введите **`https://app.harness.io/gateway/api/scim/account/<your_harness_account_ID>`** . Идентификатор учетной записи программы можно получить по URL-адресу в браузере при входе в систему.
+   a. В поле **URL-адрес клиента** введите **`https://app.harness.io/gateway/api/scim/account/<your_harness_account_ID>`** . Идентификатор учетной записи программы можно получить по URL-адресу в браузере при входе в систему.
    b. В поле **секретный токен** введите значение маркера проверки подлинности scim, сохраненное на шаге 6 раздела "Настройка окружения для подготовки".  
    c. Выберите **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к программе. В случае сбоя подключения убедитесь, что учетная запись пользователя имеет разрешения *администратора* , и повторите попытку.
 

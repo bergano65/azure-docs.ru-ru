@@ -7,28 +7,35 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: raynew
-ms.openlocfilehash: 241ccbda67f7a2518d0c44a0d362673922ad4284
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38a633a7a11ac29271231679e7075920e1f33a70
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89653131"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945949"
 ---
-# <a name="remove-resources-from-a-move-collection"></a>Удаление ресурсов из коллекции перемещения
+# <a name="manage-move-collections-and-resource-groups"></a>Управление перемещением коллекций и групп ресурсов
 
-В этой статье описывается, как удалить ресурсы из коллекции перемещения в [службе "перемещение ресурсов Azure](overview.md)". Перемещение коллекций используется при перемещении ресурсов Azure между регионами Azure.
+В этой статье описывается, как удалить ресурсы из коллекции перемещения или удалить коллекцию или группу ресурсов в службе "перемещение [ресурсов Azure](overview.md)". Перемещение коллекций используется при перемещении ресурсов Azure между регионами Azure.
 
 ## <a name="remove-a-resource-portal"></a>Удаление ресурса (портала)
 
-Удалите на портале перемещения ресурсов следующим образом:
+Вы можете удалить ресурсы в коллекции перемещения на портале перемещения ресурсов следующим образом:
 
-1. В **области в разных регионах**выберите ресурсы, которые необходимо удалить из коллекции > **Удалить**.
+1. В **области в разных регионах**выберите все ресурсы, которые необходимо удалить из коллекции, и нажмите кнопку **Удалить**. 
 
     ![Кнопка для удаления](./media/remove-move-resources/portal-select-resources.png)
 
-1. В окне **удаление ресурсов**нажмите кнопку **Удалить**.
+2. В окне **удаление ресурсов**нажмите кнопку **Удалить**.
 
     ![Кнопка, позволяющая выбрать удаление ресурсов из коллекции перемещения](./media/remove-move-resources/remove-portal.png)
+
+## <a name="remove-a-move-collectionresource-group-portal"></a>Удаление коллекции перемещения или группы ресурсов (портал)
+
+Вы можете удалить перемещаемую коллекцию или группу ресурсов на портале.
+
+1. Выполните инструкции из описанной выше процедуры, чтобы удалить ресурсы из коллекции. Если вы удаляете группу ресурсов, убедитесь, что она не содержит ресурсов.
+2. Удаление коллекции перемещения или группы ресурсов.  
 
 ## <a name="remove-a-resource-powershell"></a>Удаление ресурса (PowerShell)
 
@@ -41,16 +48,20 @@ Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceG
 **Ожидаемый результат** 
  ![ Вывод текста после удаления ресурса из коллекции перемещения](./media/remove-move-resources/remove-resource.png)
 
+
+
 ## <a name="remove-a-collection-powershell"></a>Удаление коллекции (PowerShell)
 
 Удалите всю коллекцию перемещения с помощью PowerShell, как показано ниже.
 
-```azurepowershell-interactive
-# Remove a resource using the resource ID
-Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus 
-```
-**Ожидаемый результат** 
- ![ Вывод текста после удаления коллекции перемещения](./media/remove-move-resources/remove-collection.png)
+1. Выполните приведенные выше инструкции, чтобы удалить ресурсы из коллекции с помощью PowerShell.
+2. Выполните:
+
+    ```azurepowershell-interactive
+    # Remove a resource using the resource ID
+    Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus 
+    ```
+    **Ожидаемый результат** ![ Вывод текста после удаления коллекции перемещения](./media/remove-move-resources/remove-collection.png)
 
 ## <a name="vm-resource-state-after-removing"></a>Состояние ресурса виртуальной машины после удаления
 

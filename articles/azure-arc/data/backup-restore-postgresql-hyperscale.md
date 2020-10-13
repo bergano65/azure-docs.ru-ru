@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 4fb64a2ea55744d66b203ef4d901f22ae4695e1a
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91630429"
 ---
 # <a name="backup-and-restore-for-azure-arc-enabled-postgresql-hyperscale-server-groups"></a>Резервное копирование и восстановление для PostgreSQLных групп серверов с поддержкой дуги Azure
@@ -215,6 +215,6 @@ ID                                Name                    State
 azdata arc postgres backup delete --help
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [масштабировании (Добавление рабочих узлов)](scale-out-postgresql-hyperscale-server-group.md) в группу серверов
 - Дополнительные сведения о [масштабировании (увеличение или уменьшение объема памяти и виртуальных ядер)](scale-up-down-postgresql-hyperscale-server-group-using-cli.md) для группы серверов
