@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
 ms.openlocfilehash: c28a3b0f445ca905a882a7ede3fcfed2c1e673a4
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91531196"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
@@ -193,7 +193,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 ### <a name="resolution-step-by-step"></a>Разрешение (пошаговое пошаговое действие)
 
-1. Обновите пакет NSS-PEM до версии [v 1.0.3-5. el7_6.1](https://centos.pkgs.org/7/centos-x86_64/nss-pem-1.0.3-7.el7.x86_64.rpm.html). <br/>
+1. Обновите пакет NSS-PEM до версии [v 1.0.3-5.el7_6.1](https://centos.pkgs.org/7/centos-x86_64/nss-pem-1.0.3-7.el7.x86_64.rpm.html). <br/>
 `sudo yum upgrade nss-pem`
 
 2. Если NSS-PEM недоступен для обновления (главным образом происходит в CentOS), то понизить его до 7.29.0-46. Если по ошибке вы выполнили команду "yum update", то фигурная скобка будет обновлена до 7.29.0-51, а эта ошибка повторится. <br/>
@@ -405,7 +405,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge
 ```
-либо
+Или
 
 ```
 sudo sh ./onboard_agent.sh --purge

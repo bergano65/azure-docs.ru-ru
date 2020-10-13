@@ -10,10 +10,10 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 09/30/2020
 ms.openlocfilehash: 374cc79b42d2dcaed0312c0ec205073906ce1fc5
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91530680"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
@@ -26,7 +26,7 @@ ms.locfileid: "91530680"
 
 Используйте расширение Машинное обучение Azure для проверки, запуска и отладки экспериментов машинного обучения перед их отправкой в облако.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Расширение Машинное обучение Azure VS Code (Предварительная версия). Дополнительные сведения см. в разделе [Настройка расширения Машинное обучение Azure VS Code](tutorial-setup-vscode-extension.md).
 * [Docker](https://www.docker.com/get-started)
@@ -84,7 +84,7 @@ ms.locfileid: "91530680"
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью VS Code и дебугпи можно присоединяться к коду, как он выполняется в среде обучения.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
 * __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.

@@ -10,10 +10,10 @@ ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18, devx-track-python
 ms.openlocfilehash: 512776f2498a88f1fda9b5e7f0e2db0ddd32b955
-ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88962334"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
@@ -34,7 +34,7 @@ ms.locfileid: "88962334"
 6. Задайте файлу имя **.user.ini**.
 7. Щелкните значок карандаша рядом с файлом **.user.ini**.
 8. Добавьте в файл следующий код: `log_errors=on`.
-9. Выберите **Сохранить**.
+9. Щелкните **Сохранить**.
 10. Щелкните значок карандаша рядом с файлом **wp-config.php**.
 11. Вместо текста в файле добавьте следующий код:
     ```php

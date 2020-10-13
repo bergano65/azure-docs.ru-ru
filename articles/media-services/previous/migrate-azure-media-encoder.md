@@ -15,10 +15,10 @@ ms.date: 08/21/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 32eab0f729280ad25f45853e05ea982b60a6d9f7
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89259342"
 ---
 # <a name="migrate-from-azure-media-encoder-to-media-encoder-standard"></a>Миграция из кодировщика мультимедиа Azure в Media Encoder Standard
@@ -75,7 +75,7 @@ Media Encoder Standard более надежна, надежна, имеет л�
 * Media Encoder Standard создает выходные файлы с другим соглашением об именовании, чем имя в имени.
 * Media Encoder Standard создает такие артефакты, как файлы, содержащие [метаданные входного файла](media-services-input-metadata-schema.md) и [метаданные выходных файлов](media-services-output-metadata-schema.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устаревшие компоненты](legacy-components.md)
 * [Страница цен](https://azure.microsoft.com/pricing/details/media-services/#encoding)

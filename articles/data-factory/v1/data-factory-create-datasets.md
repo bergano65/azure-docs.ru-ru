@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: ddb99fd7a7ce8265a6e9c63555cd6a226caacc4c
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89440734"
 ---
 # <a name="datasets-in-azure-data-factory-version-1"></a>DataSets в фабрике данных Azure (версия 1)
@@ -109,7 +109,7 @@ ms.locfileid: "89440734"
 }
 ```
 
-Обратите внимание на следующие моменты:
+Обратите внимание на следующие моменты.
 
 * для **типа** задано значение AzureSqlTable.
 * свойство типа **TableName** (для конкретного типа AzureSqlTable) имеет значение MyTable.
@@ -441,6 +441,6 @@ structure:
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о конвейерах см. в статье [Конвейеры и действия в фабрике данных Azure](data-factory-create-pipelines.md).
 - Дополнительные сведения о планировании и выполнении конвейеров см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md).

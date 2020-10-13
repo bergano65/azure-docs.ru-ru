@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/29/2020
 ms.openlocfilehash: c3a6f9b5831d4fed377d3f8702dbc0af0663b3a5
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91596504"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Настройка Базы данных Azure для MySQL для репликации входных данных
@@ -62,7 +62,7 @@ ms.locfileid: "91596504"
       ```bash
       mysql> SELECT @@global.redirect_server_host;
       ```
-      Ниже приведен пример выходных данных.
+      Ниже приведен пример выходных данных:
       ```bash 
       +-----------------------------------------------------------+
       | @@global.redirect_server_host                             |
@@ -285,5 +285,5 @@ CALL mysql.az_replication_remove_master;
 CALL mysql.az_replication_skip_counter;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. дополнительные сведения о [репликации входных данных](concepts-data-in-replication.md) в Базе данных Azure для MySQL. 

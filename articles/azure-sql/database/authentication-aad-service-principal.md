@@ -10,10 +10,10 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/17/2020
 ms.openlocfilehash: d8268ebf89bed6b67919e77576118343b58edb6c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88516628"
 ---
 # <a name="azure-active-directory-service-principal-with-azure-sql"></a>Субъект-служба Azure Active Directory с SQL Azure
@@ -69,7 +69,7 @@ ms.locfileid: "88516628"
 
     Дополнительные сведения см. в описании команды [Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver).
 
-    - Чтобы проверить, назначено ли удостоверение сервера серверу, выполните команду Get-Азсклсервер.
+    - Чтобы проверить, назначено ли удостоверение сервера серверу, выполните команду Get-AzSqlServer.
 
     > [!NOTE]
     > Удостоверение сервера можно также назначить с помощью команд интерфейса командной строки. Дополнительные сведения см. в разделе [AZ SQL Server Create](https://docs.microsoft.com/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create) и [AZ SQL Server Update](https://docs.microsoft.com/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-update).
@@ -81,7 +81,7 @@ ms.locfileid: "88516628"
 > [!IMPORTANT]
 > Шаги 1 и 2 должны выполняться в указанном порядке. Сначала создайте или назначьте удостоверение сервера, а затем предоставьте разрешение на [**чтение каталога**](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers) . Пропуск одного из этих шагов или и того и другого приведет к ошибке выполнения во время создания объекта Azure AD в Azure SQL от имени приложения Azure AD. Пошаговые инструкции по созданию пользователя Azure AD от имени приложения Azure AD см. в статье [учебник. Создание пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md).
 >
-> В **общедоступной предварительной версии**роль " **читатели каталога** " можно назначить группе в Azure AD. Владельцы групп могут добавить управляемое удостоверение в качестве члена этой группы, что позволит пользователям без прав администратора **глобального администратора** или **привилегированных ролей** предоставить роль **читателей каталога** . Дополнительные сведения об этой функции см. [в разделе роль читателей каталога в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
+> В **общедоступной предварительной версии**роль " **читатели каталога** " можно назначить группе в Azure AD. Владельцы групп могут добавить управляемое удостоверение в качестве члена этой группы, что позволит пользователям без прав администратора **глобального администратора** или **привилегированных ролей** предоставить роль **читателей каталога** . Дополнительные сведения об этой функции см. в статье [Роль "Читатели каталогов" в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
 
 ## <a name="troubleshooting-and-limitations-for-public-preview"></a>Устранение неполадок и ограничения для общедоступной предварительной версии
 
@@ -98,7 +98,7 @@ ms.locfileid: "88516628"
 - Использование приложения Azure AD с субъектом-службой из другого клиента Azure AD завершится ошибкой при доступе к базе данных SQL или Управляемый экземпляр SQL, созданной в другом клиенте. Субъект-служба, назначенный этому приложению, должен принадлежать тому же клиенту, что и логический сервер SQL или Управляемый экземпляр.
 - Для настройки отдельного приложения Azure AD в качестве администратора Azure AD для SQL Azure с помощью PowerShell необходим модуль [Az.Sql 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) или более поздней версии. Убедитесь, что используется последняя версия модуля.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md)

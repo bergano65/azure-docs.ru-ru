@@ -6,16 +6,16 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0a53e9ae42031203347784b78e162e8f806eb3c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 16659eafccd4c15e37ef8a6d16a3765d0afdbc3e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320253"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91960649"
 ---
 # <a name="linux-support"></a>Поддержка Linux
 
-Вы можете получить доступ к ресурсам виртуальных рабочих столов Windows с устройств Linux со следующими поддерживаемыми клиентами, предоставляемыми партнерами по работе с тонкими клиентами Linux. Мы работаем с несколькими участниками, чтобы включить поддержку клиентов виртуальных рабочих столов Windows в других операционных системах и устройствах под управлением Linux. Если вам нужна поддержка виртуальных рабочих столов Windows на платформе Linux, которая не указана здесь, сообщите нам об этом на нашей [странице UserVoice](https://remotedesktop.uservoice.com/forums/923035-remote-desktop-support-on-linux).
+Доступ к ресурсам виртуальных рабочих столов Windows с устройств Linux можно получить с помощью [веб-клиента](connect-web.md) или следующих поддерживаемых клиентов, предоставляемых партнерами по работе с тонкими клиентами Linux. Мы работаем с несколькими участниками, чтобы включить поддержку клиентов виртуальных рабочих столов Windows в других операционных системах и устройствах под управлением Linux. Если вам нужна поддержка виртуальных рабочих столов Windows на платформе Linux, которая не указана здесь, сообщите нам об этом на нашей [странице UserVoice](https://remotedesktop.uservoice.com/forums/923035-remote-desktop-support-on-linux).
 
 ## <a name="connect-with-your-linux-device"></a>Подключение к устройству Linux
 
@@ -27,7 +27,7 @@ ms.locfileid: "91320253"
 |![Логотип Нкомпутинг](./media/partners/ncomputing.png)|[Документация по клиенту Нкомпутинг](https://www.ncomputing.com/microsoft)|[Поддержка Нкомпутинг](https://www.ncomputing.com/support/support-options)|
 |![Логотип стратодеск](./media/partners/stratodesk.png)|[Документация по клиенту стратодеск](https://www.stratodesk.com/kb/Microsoft_Windows_Virtual_Desktop_(WVD))|[Поддержка стратодеск](https://www.stratodesk.com/support-3/)|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с документацией по следующим клиентам:
 

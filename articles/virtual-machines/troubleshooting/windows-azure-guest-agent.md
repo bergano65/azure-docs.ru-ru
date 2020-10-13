@@ -12,10 +12,10 @@ ms.workload: infrastructure
 ms.date: 09/15/2020
 ms.author: genli
 ms.openlocfilehash: 597ea6e7ff7dbcfcb8a99d4e4de3c1b82915ee07
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90561267"
 ---
 # <a name="troubleshooting-windows-azure-guest-agent"></a>Устранение неполадок гостевого агента Windows Azure
@@ -234,6 +234,6 @@ at Microsoft.WindowsAzure.GuestAgent.AgentCore.AgentService.<>c__DisplayClass2.<
 
 Адаптер замыкания на себя Npcap, вероятно, устанавливается с помощью WireShark. Попробуйте отключить его, а затем проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для дальнейшей диагностики проблемы "Гостевой агент Windows Azure не работает" [обратитесь в службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
