@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: alkohli
 ms.openlocfilehash: f668136713024ba57d72bf5a457cd249742a3b11
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91742032"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-pro-issues"></a>Устранение неполадок Azure Stack пограничных Pro
@@ -82,6 +82,6 @@ ms.locfileid: "91742032"
 
     [!INCLUDE [data-box-edge-edge-upload-error-reference](../../includes/data-box-edge-gateway-upload-error-reference.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об [известных проблемах в этом выпуске](data-box-gateway-release-notes.md).

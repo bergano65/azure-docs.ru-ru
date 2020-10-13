@@ -12,10 +12,10 @@ ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
 ms.date: 10/05/2020
 ms.openlocfilehash: 43551ca17180cbb3614c670490a19aeaae6c7701
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91728664"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
@@ -308,7 +308,7 @@ Get-AzSqlDeletedInstanceDatabaseBackup -ResourceGroupName resourceGroup -Instanc
 PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/resourceGroup/providers/Microsoft.Sql/servers/testserver/databases/testDatabase/backupShortTermRetentionPolicies/default?api-version=2017-10-01-preview
 ```
 
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a>Тело запроса
 
 ```json
 {
@@ -341,7 +341,7 @@ PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444
 PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/resourceGroup/providers/Microsoft.Sql/servers/testserver/databases/testDatabase/backupShortTermRetentionPolicies/default?api-version=2017-10-01-preview
 ```
 
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a>Тело запроса
 
 ```json
 {
@@ -453,7 +453,7 @@ New-AzSqlInstance -Name managedInstance2 -ResourceGroupName ResourceGroup01 -Loc
 Сведения о назначении политик с помощью [портал Azure](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal) или [Azure PowerShell](https://docs.microsoft.com/azure/governance/policy/assign-policy-powershell)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Резервные копии базы данных являются важной частью любой стратегии непрерывности бизнес-процессов и аварийного восстановления, так как они защищают данные от случайного повреждения или удаления. Дополнительные сведения о других решениях для обеспечения непрерывности бизнес-процессов базы данных SQL см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).
 - Получите дополнительные сведения о [восстановлении базы данных на момент времени с помощью портал Azure](recovery-using-backups.md).

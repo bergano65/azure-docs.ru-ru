@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
 ms.openlocfilehash: be50deb836082354db899e84ef24d75c4d403432
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91450403"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Мониторинг VMware (не рекомендуется) решение в Azure Monitor
@@ -42,7 +42,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ### <a name="configure-syslog-collection"></a>Настройка сбора системных журналов
 1. Настройте пересылку системных журналов для VSphere. Подробные сведения о настройке пересылки системных журналов в ESXi 5.0 и более поздних версиях см. [здесь](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2003322). Последовательно выберите **Конфигурация узла ESXi**  >  **программное обеспечение**  >  **Advanced Settings**  >  **syslog**.
    ![vsphereconfig](./media/vmware/vsphere1.png)  
-1. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например, `tcp://hostname:1514` или `tcp://123.456.789.101:1514`.
+1. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например, `tcp://hostname:1514` или `tcp://123.456.789.101:1514`
 1. Откройте брандмауэр узла ESXi для системного журнала. **Конфигурация**  >  узла ESXi **Программное обеспечение**  >  **Профиль безопасности**  >  **Брандмауэр** и открыть **свойства**.  
 
     ![vspherefw](./media/vmware/vsphere2.png)  
@@ -158,7 +158,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
 Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../platform/alerts-overview.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](/archive/blogs/msoms/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Что нужно настраивать для узла ESXi? Какое влияние это окажет на мою текущую среду?
 В решении используется встроенный механизм перенаправления системного журнала узла ESXi. Для ведения журналов на узле ESXi не нужно устанавливать дополнительное программное обеспечение Майкрософт. Существенное влияние на имеющуюся среду не оказывается. Тем не менее необходимо настроить перенаправление системного журнала, что является функцией ESXi.
 
@@ -196,7 +196,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
      d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Используйте [запросы журналов в Log Analytics](../log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md), отображающие данные об узле VMware.
 * [Создавайте оповещения](../platform/alerts-overview.md), информирующие о возникновении определенных событий узла VMware.
