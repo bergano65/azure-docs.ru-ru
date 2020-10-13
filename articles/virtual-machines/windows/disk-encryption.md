@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 49898f2215139c4460c639dc8caa3d2764082e34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07916b7f7e5d0f1e755ae9759a16541eede45a41
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91274781"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91950488"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage-for-powershell"></a>Шифрование Хранилище дисков Azure на стороне сервера для PowerShell
 
@@ -76,7 +76,7 @@ ms.locfileid: "91274781"
 
 ### <a name="supported-regions"></a>Поддерживаемые регионы
 
-[!INCLUDE [virtual-machines-disks-double-encryption-at-rest-regions](../../../includes/virtual-machines-disks-double-encryption-at-rest-regions.md)]
+Двойное шифрование доступно во всех регионах, где доступны управляемые диски.
 
 ## <a name="server-side-encryption-versus-azure-disk-encryption"></a>Шифрование на стороне сервера и шифрование дисков Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "91274781"
 > Управляемые клиентом ключи используют управляемые удостоверения для ресурсов Azure — функцию Azure Active Directory (Azure AD). При настройке управляемых пользователем ключей управляемое удостоверение автоматически назначается вашим ресурсам. При перемещении подписки, группы ресурсов или управляемого диска из одного каталога Azure AD в другой управляемое удостоверение, связанное с управляемыми дисками, не передается в новый клиент, поэтому управляемые клиентом ключи могут перестать работать. Дополнительные сведения см. в статье [Передача подписки между каталогами Azure AD](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Включите сквозное шифрование с использованием шифрования на узле с помощью [PowerShell](disks-enable-host-based-encryption-powershell.md) или [портал Azure](../disks-enable-host-based-encryption-portal.md).
 - Включите двойное шифрование при неактивных дисках для управляемых дисков с помощью [PowerShell](disks-enable-double-encryption-at-rest-powershell.md) или [портал Azure](../disks-enable-double-encryption-at-rest-portal.md).

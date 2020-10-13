@@ -10,10 +10,10 @@ ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
 ms.openlocfilehash: 72a224d4ad1807d095baa8db819878bf2e22e133
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91802724"
 ---
 # <a name="java-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для Java: информация о скачивании
@@ -28,7 +28,7 @@ ms.locfileid: "91802724"
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Пружинные данные v2](sql-api-sdk-java-spring-v2.md)
-> * [Пружинные данные v3](sql-api-sdk-java-spring-v3.md)
+> * [Spring Data версии 3](sql-api-sdk-java-spring-v3.md)
 > * [Соединитель Spark](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](/rest/api/cosmos-db/)

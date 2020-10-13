@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: v-miegge
-ms.openlocfilehash: 53e1daca47a2917a19cbc30db5348e4fcc06b325
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f181a6dee7ed182150bd0cad2b51690b6c77d7a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90039154"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963131"
 ---
 # <a name="vm-is-unresponsive-while-applying-default-domain-controllers-policy"></a>При применении политики контроллеров домена по умолчанию виртуальная машина не отвечает
 
@@ -28,7 +28,7 @@ ms.locfileid: "90039154"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана будет отображаться, что операционная система перестанет отвечать при загрузке с помощью **политики контроллеров домена по умолчанию**.
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана будет отображаться, что операционная система перестанет отвечать при загрузке с помощью **политики контроллеров домена по умолчанию**.
 
   ![На рис. 1 показана ОС с сообщением "политика контроллеров домена по умолчанию"](./media/vm-unresponsive-domain-controllers-policy/1-default-domain-controllers-policy.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "90039154"
 
 ### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>Подключение диска ОС к новой виртуальной машине восстановления
 
-1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 
 1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
@@ -56,4 +56,4 @@ ms.locfileid: "90039154"
 
 1. Найдите файл Memory. dmp и отправьте запрос в [службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с файлом дампа памяти.
 
-1. Если при поиске файла Memory. dmp возникают проблемы, можно использовать [вызовы прерываний (NMI) в последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-windows#use-the-serial-console-for-nmi-calls) . Следуйте указаниям по [созданию файла аварийной копии памяти с помощью вызовов NMI](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump).
+1. Если при поиске файла Memory. dmp возникают проблемы, можно использовать [вызовы прерываний (NMI) в последовательной консоли](./serial-console-windows.md#use-the-serial-console-for-nmi-calls) . Следуйте указаниям по [созданию файла аварийной копии памяти с помощью вызовов NMI](/windows/client-management/generate-kernel-or-complete-crash-dump).

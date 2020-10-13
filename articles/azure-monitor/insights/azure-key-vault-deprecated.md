@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/27/2019
-ms.openlocfilehash: f6d8929c8fd59836ff297f226851890892c10acc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 71eb49c84b8ab92c9ba2ad8e05e8d74054bd4ee7
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91445132"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91938837"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
 
@@ -75,7 +75,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 | Azure |  |  |&#8226; |  |  | При получении |
 
 ## <a name="use-azure-key-vault"></a>Использование хранилища ключей Azure
-После [установки решения](https://azuremarketplace.microsoft.com/en-usrketplace/marketplace/apps/Microsoft.KeyVaultAnalyticsOMS?tab=Overview)просмотрите Key Vault данные, щелкнув плитку **Аналитика Key Vault** на странице Azure Monitor **Обзор** . Откройте ее в меню **Azure Monitor**, щелкнув **Больше** в разделе **Аналитика**. 
+После [установки решения](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.KeyVaultAnalyticsOMS?source=intercept.nl&tab=Overview)просмотрите Key Vault данные, щелкнув плитку **Аналитика Key Vault** на странице Azure Monitor **Обзор** . Откройте ее в меню **Azure Monitor**, щелкнув **Больше** в разделе **Аналитика**. 
 
 ![Снимок экрана с плиткой Аналитика Key Vault на странице обзора Azure Monitor с графиком объема операций хранилища ключей с течением времени.](media/azure-key-vault/log-analytics-keyvault-tile.png)
 
@@ -99,7 +99,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/general/logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--- |:--- |
 | `Type` |*AzureDiagnostics* |
 | `SourceSystem` |*Azure* |

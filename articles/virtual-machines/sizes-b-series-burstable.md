@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 43e19df24de2f2c4e8e5334010ee788129cee68b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 506336ad80c1f30b937bc71724ca39cee24bb2fd
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666642"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968928"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -21,7 +21,7 @@ ms.locfileid: "91666642"
 
 Серия B имеет следующие размеры виртуальных машин:
 
-[Единица вычислений Azure (ACU)](https://docs.microsoft.com/azure/virtual-machines/acu?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json): зависит от *<br>
+[Единица вычислений Azure (ACU)](./acu.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json): зависит от *<br>
 [Хранилище класса Premium](premium-storage-performance.md): поддерживается<br>
 [Кэширование хранилища класса Premium](premium-storage-performance.md): не поддерживается<br>
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
@@ -59,7 +59,7 @@ ms.locfileid: "91666642"
 
 ![Диаграмма данных о почасовом трафике](./media/b-series-burstable/office-workload.png)
 
-| Сценарий | время; | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
+| Сценарий | Время | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
 | --- | --- | --- | --- | --- |
 | Развертывание B16ms | Развертывание | Развертывание  | 480 (первоначальные кредиты) | 480 |
 | Нет трафика | 0:00 | 0 | 162 | 642 |

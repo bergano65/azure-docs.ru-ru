@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: d965d9cb8b87ce0b67f4fe0c07b660fdfd69cc07
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91577991"
 ---
 # <a name="iot-plug-and-play-limits-quotas-and-throttles"></a>Ограничения, квоты и регулировки для Интернета вещей Plug and Play
@@ -35,6 +35,6 @@ ms.locfileid: "91577991"
 
 Библиотека средства синтаксического анализа соответствует ограничениям, которые применяются к [языку определения Digital двойников](https://github.com/Azure/opendigitaltwins-dtdl).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующим шагом является проверка [архитектуры Plug and Play IOT](concepts-architecture.md).

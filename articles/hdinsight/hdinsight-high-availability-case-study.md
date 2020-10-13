@@ -12,7 +12,7 @@ ms.openlocfilehash: 4b98b03c2d7eb4a0403b4595c1376656ed42511b
 ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91855044"
 ---
 # <a name="azure-hdinsight-highly-available-solution-architecture-case-study"></a>Пример использования архитектуры высокодоступного решения Azure HDInsight
@@ -78,7 +78,7 @@ HDInsight An кластер Hadoop, выполняющий Hive и MapReduce, п
 
 Решение для отработки отказа не должно быть спроектировано для внутренних отчетов, поскольку оно не является критически важным для обеспечения непрерывности бизнес-процессов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 

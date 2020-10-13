@@ -2,19 +2,16 @@
 title: Управление доступом к книгам Azure Monitor
 description: Упрощение создания сложных отчетов с помощью предварительно созданных и настраиваемых параметризованных книг с контролем доступа на основе ролей
 services: azure-monitor
-author: mrbullwinkle
-manager: carmonm
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
-ms.author: mbullwin
-ms.openlocfilehash: dc6e1d738bf255fe7baa244556bad4519979b1df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c0b5dd72cf82649e7f659d23606d23aea62ac82
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "86539301"
+ms.locfileid: "91932555"
 ---
 # <a name="access-control"></a>Управление доступом
 
@@ -39,6 +36,6 @@ ms.locfileid: "86539301"
 
 Добавить `microsoft.insights/workbooks/write` для сохранения общих книг. Дополнительные сведения см. в разделе роль [участника книги](../../role-based-access-control/built-in-roles.md#monitoring-contributor) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.

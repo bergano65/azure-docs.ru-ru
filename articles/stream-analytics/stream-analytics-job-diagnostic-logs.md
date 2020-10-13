@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.custom: contperfq1
 ms.date: 06/18/2020
 ms.openlocfilehash: ed5c7eee1e8261c65decba4748e1d9c6a4d7212b
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91459818"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Устранение неполадок в Azure Stream Analytics с помощью журналов ресурсов
@@ -95,7 +95,7 @@ Azure Stream Analytics захватывает две категории журн
 
 Все журналы хранятся в формате JSON. Каждая запись содержит следующие общие строковые поля.
 
-Название | Описание
+Имя | Описание
 ------- | -------
 time | Метка времени журнала (в формате UTC).
 resourceId | Идентификатор ресурса (прописными буквами), с которым была выполнена операция. Содержит идентификатор подписки, группу ресурсов и имя задания. Например, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
@@ -113,11 +113,11 @@ properties | Сведения о записи журнала, сериализо
 
 Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Вы можете узнать больше о причинах различных [ошибок ввода и вывода данных](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
-Название | Описание
+Имя | Описание
 ------- | -------
 Источник | Имя входных или выходных данных задания, в которых произошла ошибка.
 Сообщение | Сообщение, связанное с ошибкой.
-Type | Тип ошибки. Например **DataConversionError**, **CsvParserError** или **ServiceBusPropertyColumnMissingError**.
+Тип | Тип ошибки. Например **DataConversionError**, **CsvParserError** или **ServiceBusPropertyColumnMissingError**.
 Данные | Содержит данные, полезные для точного поиска источника ошибки. Значение может быть усечено в зависимости от размера.
 
 В зависимости от значения **operationName** ошибки данных имеют следующую схему:
@@ -134,14 +134,14 @@ Type | Тип ошибки. Например **DataConversionError**, **CsvParse
 
 Остальные типы ошибок считаются универсальными событиями.
 
-Название | Описание
+Имя | Описание
 -------- | --------
 Ошибка | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
 Сообщение| Сообщение журнала.
-Type | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
+Тип | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
 Идентификатор корреляции | Идентификатор GUID, однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Ошибки данных Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)
 * [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
