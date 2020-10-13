@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
 ms.openlocfilehash: 0a5c788b4429b5048a1b94fa8adfb2d9367982da
-ms.sourcegitcommit: 3fc3457b5a6d5773323237f6a06ccfb6955bfb2d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90033478"
 ---
 # <a name="deploy-azure-monitor"></a>Развертывание Azure Monitor
@@ -168,7 +168,7 @@ Snapshot Debugger в Application Insights отслеживает данные т
 
 Дополнительные сведения о создании пользовательских книг см. в разделе [книги Azure Monitor](platform/workbooks-overview.md) .
 
-### <a name="create-dashboards"></a>создание панелей мониторинга;
+### <a name="create-dashboards"></a>Создавайте панели мониторинга
 [Панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md) — это основная технология панелей мониторинга для Azure, позволяющая объединять Azure Monitor данные с данными из других служб, чтобы обеспечить единую область прозрачности в инфраструктуре Azure. Дополнительные сведения о создании панели мониторинга, содержащей данные из журналов Azure Monitor, см. в разделе [Создание и совместное использование панелей мониторинга log Analytics данных](learn/tutorial-logs-dashboards.md) . 
 
 Дополнительные сведения о создании панели мониторинга, содержащей данные из Application Insights, см. в статье [Создание настраиваемых панелей мониторинга с помощью Application Insights Azure](learn/tutorial-app-dashboards.md) . 
@@ -192,6 +192,6 @@ Snapshot Debugger в Application Insights отслеживает данные т
 - [Оповещения приложений](app/monitor-web-app-availability.md) позволяют выполнять профилактическое тестирование производительности и доступности веб-приложения. Вы можете выполнять простую проверку связи без каких-либо затрат, но есть затраты на более сложное тестирование. Описание различных тестов и сведения о их создании см. в разделе [мониторинг доступности любого веб-сайта](app/monitor-web-app-availability.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. статью [развертывание Azure Monitor в масштабе с помощью политики Azure](deploy-scale.md).

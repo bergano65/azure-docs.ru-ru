@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 03/26/2020
 ms.author: mialdrid
 ms.openlocfilehash: 8ee90d80230f9115946525ede325e874e98e358e
-ms.sourcegitcommit: 70ee014d1706e903b7d1e346ba866f5e08b22761
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90024338"
 ---
 # <a name="create-an-azure-bastion-host-using-azure-cli"></a>Создание узла бастиона Azure с помощью Azure CLI
@@ -51,7 +51,7 @@ ms.locfileid: "90024338"
    az network bastion create --name MyBastion --public-ip-address MyIp --resource-group MyResourceGroup --vnet-name MyVnet --location northeurope
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в статье [вопросы и ответы по бастиона](bastion-faq.md) .
 

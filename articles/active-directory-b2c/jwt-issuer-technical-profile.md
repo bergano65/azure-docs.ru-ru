@@ -12,10 +12,10 @@ ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: e8f5564f9e7e1176db1fed5fae38eee58874c2eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85204207"
 ---
 # <a name="define-a-technical-profile-for-a-jwt-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя токенов JWT в пользовательской политике Azure Active Directory B2C
@@ -54,7 +54,7 @@ ms.locfileid: "85204207"
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательное значение | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | issuer_refresh_token_user_identity_claim_type | Да | Утверждение, которое следует использовать в качестве удостоверения пользователя в кодах авторизации OAuth2 и токенах обновления. По умолчанию необходимо присвоить значение `objectId`, если не указан другой тип утверждения SubjectNamingInfo. |
 | SendTokenResponseBodyWithJsonNumbers | Нет | Всегда имеет значение `true`. Для устаревшего формата, где числовые значения представлены в виде строк вместо чисел JSON, задается значение `false`. Этот атрибут необходим для клиентов, которые приняли зависимость в ранней реализации, в которой возвращены такие свойства, как строки. |
@@ -71,7 +71,7 @@ ms.locfileid: "85204207"
 
 Элемент CryptographicKeys содержит следующие атрибуты:
 
-| attribute | Обязательное значение | Описание |
+| attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | issuer_secret | Да | Сертификат X509 (набор ключей RSA), используемый для подписывания токена JWT. Это ключ, `B2C_1A_TokenSigningKeyContainer` который вы настраиваете в разделе [Приступая к работе с пользовательскими политиками](custom-policy-get-started.md). |
 | issuer_refresh_token_key | Да | Сертификат X509 (набор ключей RSA), используемый для шифрования токена обновления. Вы настроили ключ `B2C_1A_TokenEncryptionKeyContainer` во время работы со статьей [Azure Active Directory B2C: начало работы с настраиваемыми политиками](custom-policy-get-started.md). |

@@ -12,10 +12,10 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: 921a56dca8f1cda67e6f32458914fef4ac2d324c
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90601318"
 ---
 # <a name="azure-active-directory-general-operations-guide-reference"></a>Справочник по общим операциям Azure Active Directory
@@ -156,7 +156,7 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 Организации, которые настраивают приложения для проверки подлинности непосредственно в преимуществах Azure AD с [использованием Smart-блокировки Azure AD](../authentication/concept-sspr-howitworks.md). При использовании AD FS в Windows Server 2012 R2 реализуйте AD FS [защиту блокировки экстрасети](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection). Если вы используете AD FS в Windows Server 2016 или более поздней версии, реализуйте [интеллектуальную блокировку экстрасети](https://support.microsoft.com/help/4096478/extranet-smart-lockout-feature-in-windows-server-2016). Как минимум, рекомендуется включить блокировку экстрасети, чтобы она содержала риск атак методом подбора в локальной Active Directory. Однако при наличии AD FS в Windows 2016 или более поздней версии следует также включить интеллектуальную блокировку экстрасети, которая поможет устранить атаки на [распыление паролей](https://www.microsoft.com/microsoft-365/blog/2018/03/05/azure-ad-and-adfs-best-practices-defending-against-password-spray-attacks/) .
 
-Если AD FS используется только для Федерации Azure AD, можно отключить некоторые конечные точки, чтобы максимально сокращать контактную зону для атак. Например, если AD FS используется только для Azure AD, следует отключить конечные точки WS-Trust, кроме конечных точек, включенных для **усернамемиксед** и **windowstransport**.
+Если AD FS используется только для Федерации Azure AD, можно отключить некоторые конечные точки, чтобы максимально сокращать контактную зону для атак. Например, если AD FS используется только для Azure AD, следует отключить WS-Trust конечных точек, отличных от конечных точек, включенных для **усернамемиксед** и **windowstransport**.
 
 ### <a name="access-to-machines-with-on-premises-identity-components"></a>Доступ к компьютерам с локальными компонентами удостоверений
 
@@ -184,6 +184,6 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - Блокировка AD FS.
 - Блокировка доступа к компьютерам с помощью локальных компонентов удостоверений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о реализации всех возможностей, которые вы не развернули, см. в статье [планы развертывания Azure AD](active-directory-deployment-plans.md) .

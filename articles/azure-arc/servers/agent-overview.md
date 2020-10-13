@@ -4,10 +4,10 @@ description: В этой статье представлен подробный 
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.openlocfilehash: 20f56745127a5182a5dfa057a4496b127d78eac7
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91822193"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
@@ -23,7 +23,7 @@ ms.locfileid: "91822193"
 
 * Служба метаданных гибридного экземпляра (ХИМДС) управляет подключением к Azure и удостоверением Azure подключенного компьютера.
 
-* Гостевой агент настройки предоставляет гостевую политику и функциональность гостевой настройки, например оценку того, соответствует ли компьютер необходимым политикам.
+* Гостевой агент настройки предоставляет In-Guestную политику и функциональность гостевой настройки, например оценку того, соответствует ли компьютер необходимым политикам.
 
     Обратите внимание на следующее поведение в [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) политики Azure для отключенного компьютера:
 
@@ -173,7 +173,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     |Имя службы |Отображаемое имя |Имя процесса |Описание |
     |-------------|-------------|-------------|------------|
     |himds |Гибридная служба метаданных экземпляров Azure |himds.exe |Эта служба реализует службу метаданных экземпляров Azure (IMDS) для управления подключением к Azure и удостоверением Azure подключенного компьютера.|
-    |DscService |Служба гостевой конфигурации |dsc_service.exe |База кода Desired State Configuration (DSC v2), используемая в Azure для реализации гостевой политики.|
+    |DscService |Служба гостевой конфигурации |dsc_service.exe |База кода Desired State Configuration (DSC v2), используемая в Azure для реализации политики In-Guest.|
 
 * Во время установки агента создаются указанные ниже переменные среды.
 
@@ -249,7 +249,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

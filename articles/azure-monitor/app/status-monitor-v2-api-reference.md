@@ -6,10 +6,10 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
 ms.openlocfilehash: 2f814c54aeca8a337f786beb8da1b98accbeef7e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87319003"
 ---
 # <a name="azure-monitor-application-insights-agent-api-reference"></a>Справочник по API агента Application Insights Azure Monitor
@@ -26,7 +26,7 @@ ms.locfileid: "87319003"
 > - Модуль инструментирования добавляет дополнительные издержки и по умолчанию отключен.
 
 
-## <a name="enable-instrumentationengine"></a>Enable-Инструментатионенгине
+## <a name="enable-instrumentationengine"></a>Enable-InstrumentationEngine
 
 Включает модуль инструментирования, настроив некоторые разделы реестра.
 Перезапустите IIS, чтобы изменения вступили в силу.
@@ -47,7 +47,7 @@ PS C:\> Enable-InstrumentationEngine
 ### <a name="parameters"></a>Параметры
 
 #### <a name="-acceptlicense"></a>-AcceptLicense
-**Используемых.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
+**Необязательный параметр.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
 
 #### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
@@ -62,7 +62,7 @@ Configuring IIS Environment for instrumentation engine...
 Configuring registry for instrumentation engine...
 ```
 
-## <a name="enable-applicationinsightsmonitoring"></a>Enable-Аппликатионинсигхтсмониторинг
+## <a name="enable-applicationinsightsmonitoring"></a>Enable-ApplicationInsightsMonitoring
 
 Включает некодированный мониторинг приложений IIS на конечном компьютере.
 
@@ -84,10 +84,10 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 
 #### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
 В этом примере:
-- `MachineFilter`соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
-- `AppFilter='WebAppExclude'`предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
-- `AppFilter='WebAppOne'`Присваивает указанному приложению уникальный ключ инструментирования.
-- `AppFilter='WebAppTwo'`Присваивает указанному приложению уникальный ключ инструментирования.
+- `MachineFilter` соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
+- `AppFilter='WebAppExclude'` предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
+- `AppFilter='WebAppOne'` Присваивает указанному приложению уникальный ключ инструментирования.
+- `AppFilter='WebAppTwo'` Присваивает указанному приложению уникальный ключ инструментирования.
 - Наконец, `AppFilter` также использует `'.*'` подстановочный знак для сопоставления всех веб-приложений, которые не соответствуют предыдущим правилам, и назначения ключа инструментирования по умолчанию.
 - Для удобочитаемости добавляются пробелы.
 
@@ -113,7 +113,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 > [!IMPORTANT]
 > Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
 
-##### <a name="schema"></a>Схема
+##### <a name="schema"></a>схема
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'}})`
 
 - **Мачинефилтер** — это обязательное регулярное выражение C# для имени компьютера или виртуальной машины.
@@ -127,12 +127,12 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 
 
 #### <a name="-enableinstrumentationengine"></a>-Енаблеинструментатионенгине
-**Используемых.** Используйте этот параметр, чтобы модуль инструментирования собирал события и сообщения о том, что происходит во время выполнения управляемого процесса. Эти события и сообщения включают в себя коды результатов зависимостей, глаголы HTTP и текст команды SQL.
+**Необязательный параметр.** Используйте этот параметр, чтобы модуль инструментирования собирал события и сообщения о том, что происходит во время выполнения управляемого процесса. Эти события и сообщения включают в себя коды результатов зависимостей, глаголы HTTP и текст команды SQL.
 
 Модуль инструментирования добавляет издержки и по умолчанию отключен.
 
 #### <a name="-acceptlicense"></a>-AcceptLicense
-**Используемых.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
+**Необязательный параметр.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
 
 #### <a name="-ignoresharedconfig"></a>-Игнорешаредконфиг
 При наличии кластера веб-серверов можно использовать [общую конфигурацию](/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
@@ -181,7 +181,7 @@ Updating app pool permissions...
 Successfully enabled Application Insights Status Monitor
 ```
 
-## <a name="disable-instrumentationengine"></a>Disable-Инструментатионенгине
+## <a name="disable-instrumentationengine"></a>Disable-InstrumentationEngine
 
 Отключает модуль инструментирования, удаляя некоторые разделы реестра.
 Перезапустите IIS, чтобы изменения вступили в силу.
@@ -210,7 +210,7 @@ Registry: removing 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WAS[Env
 Configuring registry for instrumentation engine...
 ```
 
-## <a name="disable-applicationinsightsmonitoring"></a>Disable-Аппликатионинсигхтсмониторинг
+## <a name="disable-applicationinsightsmonitoring"></a>Disable-ApplicationInsightsMonitoring
 
 Отключает наблюдение на целевом компьютере.
 Этот командлет удалит изменения в applicationHost.config IIS и удалит разделы реестра.
@@ -253,7 +253,7 @@ Successfully disabled Application Insights Status Monitor
 ```
 
 
-## <a name="get-applicationinsightsmonitoringconfig"></a>Get-Аппликатионинсигхтсмониторингконфиг
+## <a name="get-applicationinsightsmonitoringconfig"></a>Get-ApplicationInsightsMonitoringConfig
 
 Возвращает файл конфигурации и выводит значения на консоль.
 
@@ -280,7 +280,7 @@ Filters:
 2)InstrumentationKey: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxdefault AppFilter: .* MachineFilter: .*
 ```
 
-## <a name="get-applicationinsightsmonitoringstatus"></a>Get-Аппликатионинсигхтсмониторингстатус
+## <a name="get-applicationinsightsmonitoringstatus"></a>Get-ApplicationInsightsMonitoringStatus
 
 Этот командлет предоставляет сведения об устранении неполадок монитор состояния.
 Используйте этот командлет для изучения состояния мониторинга, версии модуля PowerShell и для проверки выполняющегося процесса.
@@ -456,7 +456,7 @@ listdlls64.exe -accepteula w3wp
 **Необязательно**. Используется только с Инспектпроцесс. Используйте этот параметр, чтобы пропустить запрос пользователя, который появляется перед скачиванием дополнительных средств.
 
 
-## <a name="set-applicationinsightsmonitoringconfig"></a>Set-Аппликатионинсигхтсмониторингконфиг
+## <a name="set-applicationinsightsmonitoringconfig"></a>Set-ApplicationInsightsMonitoringConfig
 
 Задает файл конфигурации без выполнения полной переустановки.
 Перезапустите IIS, чтобы изменения вступили в силу.
@@ -476,10 +476,10 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 
 #### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
 В этом примере:
-- `MachineFilter`соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
-- `AppFilter='WebAppExclude'`предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
-- `AppFilter='WebAppOne'`Присваивает указанному приложению уникальный ключ инструментирования.
-- `AppFilter='WebAppTwo'`Присваивает указанному приложению уникальный ключ инструментирования.
+- `MachineFilter` соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
+- `AppFilter='WebAppExclude'` предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
+- `AppFilter='WebAppOne'` Присваивает указанному приложению уникальный ключ инструментирования.
+- `AppFilter='WebAppTwo'` Присваивает указанному приложению уникальный ключ инструментирования.
 - Наконец, `AppFilter` также использует `'.*'` подстановочный знак для сопоставления всех веб-приложений, которые не соответствуют предыдущим правилам, и назначения ключа инструментирования по умолчанию.
 - Для удобочитаемости добавляются пробелы.
 
@@ -503,7 +503,7 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap `
 > [!IMPORTANT]
 > Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
 
-##### <a name="schema"></a>Схема
+##### <a name="schema"></a>схема
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'})`
 
 - **Мачинефилтер** — это обязательное регулярное выражение C# для имени компьютера или виртуальной машины.
@@ -550,7 +550,7 @@ VERBOSE: Config File Path:
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applicationInsights.ikey.config
 ```
 
-## <a name="start-applicationinsightsmonitoringtrace"></a>Start-Аппликатионинсигхтсмониторингтраце
+## <a name="start-applicationinsightsmonitoringtrace"></a>Start-ApplicationInsightsMonitoringTrace
 
 Собирает [события ETW](/windows/desktop/etw/event-tracing-portal) из среды выполнения с некодированным подключением. Этот командлет является альтернативой запуску [PerfView](https://github.com/microsoft/perfview).
 
@@ -585,17 +585,17 @@ C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applica
 ### <a name="parameters"></a>Параметры
 
 #### <a name="-maxdurationinminutes"></a>-Максдуратионинминутес
-**Используемых.** Используйте этот параметр, чтобы задать время, в течение которого этот скрипт должен получать события. Значение по умолчанию — 5 минут.
+**Необязательный параметр.** Используйте этот параметр, чтобы задать время, в течение которого этот скрипт должен получать события. Значение по умолчанию — 5 минут.
 
 #### <a name="-logdirectory"></a>-LogDirectory
-**Используемых.** Используйте этот параметр, чтобы задать выходной каталог ETL-файла. По умолчанию этот файл будет создан в каталоге модулей PowerShell. Полный путь будет отображаться во время выполнения скрипта.
+**Необязательный параметр.** Используйте этот параметр, чтобы задать выходной каталог ETL-файла. По умолчанию этот файл будет создан в каталоге модулей PowerShell. Полный путь будет отображаться во время выполнения скрипта.
 
 
 #### <a name="-collectsdkevents"></a>-Коллектсдкевентс
-**Используемых.** Используйте этот параметр для получения Application Insights событий пакета SDK.
+**Необязательный параметр.** Используйте этот параметр для получения Application Insights событий пакета SDK.
 
 #### <a name="-collectredfieldevents"></a>-Коллектредфиелдевентс
-**Используемых.** Используйте этот параметр для получения событий из монитор состояния и среды выполнения Redfield.
+**Необязательный параметр.** Используйте этот параметр для получения событий из монитор состояния и среды выполнения Redfield.
 
 #### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.

@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
 ms.openlocfilehash: 02d1d78dae4f02ac53d535f6c404b15f8d98f008
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90563766"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Устранение проблем с сходством сеансов шлюза приложений Azure
@@ -195,7 +195,7 @@ ms.locfileid: "90563766"
    > [!NOTE]
    > Это значение Арраффинити — это идентификатор файла cookie, который шлюз приложений задает клиенту для отправки на определенный сервер.
 
-   ![На снимке экрана показан пример сведений о записи журнала с выделенным значением Set-cookie.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-17.png)
+   ![На снимке экрана показан пример сведений о записи журнала с выделенным значением Set-Cookie.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-17.png)
 
 - **Пример б.** Следующий журнал сеанса, за которым следует предыдущий, — клиент, реагирующий обратно в шлюз приложений, который установил параметр АРРААФФИНИТИ. Если идентификатор cookie Арраффинити соответствует, пакет должен быть отправлен на тот же сервер, который использовался ранее. Проверьте следующие несколько строк связи HTTP, чтобы узнать, изменился ли файл cookie Арраффинити клиента.
 

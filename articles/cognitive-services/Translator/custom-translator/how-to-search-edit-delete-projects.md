@@ -10,10 +10,10 @@ ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 4c48a8a18a3ad0487b4c3840847c7f5edbb6d29f
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88510382"
 ---
 # <a name="search-edit-and-delete-projects"></a>Поиск, изменение и удаление проектов
@@ -62,6 +62,6 @@ Custom Translator предоставляет несколько способов
 
    ![Диалоговое окно подтверждения](media/how-to/how-to-delete-project-confirm.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Отправьте документы](how-to-upload-document.md), чтобы приступить к созданию пользовательской модели перевода.

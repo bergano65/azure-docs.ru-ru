@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 727eb4cd7e7c3de090e1573cb5358ef23118385e
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90936962"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-postgresql---flexible-server-using-the-azure-cli"></a>Создание виртуальных сетей для базы данных Azure для PostgreSQL-гибкого сервера и управление ими с помощью Azure CLI
@@ -78,7 +78,7 @@ az account set --subscription <subscription id>
     ```-->
 См. справочную документацию по Azure CLI <!--FIXME --> где описаны все настраиваемые параметры для интерфейса командной строки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о работе [в сети в базе данных Azure для PostgreSQL-гибкого сервера](./concepts-networking.md).
 - [Создание базы данных Azure для PostgreSQL-гибкой виртуальной сети сервера и управление ею с помощью портал Azure](./how-to-manage-virtual-network-portal.md).
 - Узнайте больше о [базе данных Azure для PostgreSQL-гибкой виртуальной сети сервера](./concepts-networking.md#private-access-vnet-integration).

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/07/2020
 ms.openlocfilehash: 94763cee852893057348f8eea1fa74fa742f62a1
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91534732"
 ---
 # <a name="accessing-secure-resources-via-private-endpoints"></a>Доступ к защищенным ресурсам через частные конечные точки
@@ -37,7 +37,7 @@ Azure Когнитивный поиск предлагает через API уп
 | API Azure Cosmos DB-SQL | `Sql`|
 | База данных SQL Azure | `sqlServer`|
 | База данных Azure для MySQL (Предварительная версия) | `mysqlServer`|
-| Azure Key Vault | `vault` |
+| Хранилище ключей Azure; | `vault` |
 | Функции Azure (Предварительная версия) | `sites` |
 
 Список ресурсов Azure, для которых поддерживаются исходящие подключения к частной конечной точке, также можно запросить с помощью [API-интерфейса List Supported](https://docs.microsoft.com/rest/api/searchmanagement/privatelinkresources/listsupported).
@@ -164,7 +164,7 @@ Azure Когнитивный поиск предлагает через API уп
 - Если индексатор создается без настройки `executionEnvironment` и выполняется успешно, это означает, что когнитивный Поиск Azure решила, что среда выполнения — это частная среда, соответствующая службе поиска. Однако это может измениться в зависимости от ряда факторов (ресурсов, потребляемых индексатором, нагрузки на службу поиска и т. д.) и может завершиться сбоем позже. Мы настоятельно рекомендуем установить значение `executionEnvironment` как, `"Private"` чтобы гарантировать, что в будущем оно не будет работать.
 - [Квоты и ограничения](search-limits-quotas-capacity.md) определяют, сколько общих ресурсов частной ссылки могут быть созданы и зависят от номера SKU службы поиска.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о частных конечных точках:
 

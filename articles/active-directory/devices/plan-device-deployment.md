@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60d3e3c174ad9a3372df084cac9eb67270779298
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90563902"
 ---
 # <a name="plan-your-azure-active-directory-device-deployment"></a>Планирование развертывания устройства Azure Active Directory
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) позволяет Организации уд
 
 * [Создайте гибридное присоединение к Azure AD](concept-azure-ad-join-hybrid.md) между устройствами в локальной Active Directory и Azure AD. 
 
-## <a name="learn"></a>Learn
+## <a name="learn"></a>Обучение
 
 Перед началом работы убедитесь, что вы знакомы с [обзором управления удостоверениями устройств](overview.md).
 
@@ -141,7 +141,7 @@ BYOD и корпоративное мобильное устройство ре�
 
 * [Android](/mem/intune/user-help/enroll-device-android-company-portal)
 
-* [Windows 10](/mem/intune/user-help/enroll-windows-10-device)
+* [Windows 10](/mem/intune/user-help/enroll-windows-10-device)
 
 Если регистрация устройств является лучшим вариантом для вашей организации, см. следующие ресурсы:
 
@@ -261,7 +261,7 @@ BYOD и корпоративное мобильное устройство ре�
 
 * [Устранение неполадок гибридного присоединение к Azure AD для устройств Windows нижнего уровня](troubleshoot-hybrid-join-windows-legacy.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Планирование реализации присоединение к Azure AD](azureadjoin-plan.md)
 * [Планирование гибридной реализации присоединение к Azure AD](hybrid-azuread-join-plan.md)

@@ -15,10 +15,10 @@ ms.date: 10/01/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 4d335affa5a06bdb8e5c733c871654cf58947581
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91652964"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
@@ -56,7 +56,7 @@ ms.locfileid: "91652964"
 * [хисторикалевентс](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.historicalevents)
 * [перфмессаже](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.perfmessage)
 
-Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения можно найти в разделе
+Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения см. в разделе:
 
 * [Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-queues.md)
 * [Использование веб-перехватчиков Azure для мониторинга уведомлений о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-webhooks.md)
