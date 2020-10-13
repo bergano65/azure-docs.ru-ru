@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.date: 07/31/2020
 ms.author: punagpal
 ms.openlocfilehash: 43b7bcba97617d6931fd5c191e62e833a25bf89d
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87513385"
 ---
-# <a name="azure-iot-connector-for-fhir-preview-data-flow"></a>Соединитель Azure IoT для потока данных FHIR (Предварительная версия)
+# <a name="azure-iot-connector-for-fhir-preview-data-flow"></a>Поток данных в соединителе "Azure IoT для FHIR" (предварительная версия)
 
 В этой статье представлен обзор потока данных в соединителе Azure IoT для FHIR *. Вы узнаете о различных стадиях обработки данных в соединителе Azure IoT для FHIR, которые преобразуют данные устройства в ресурсы [наблюдения](https://www.hl7.org/fhir/observation.html) на основе FHIR.
 
-![Соединитель Azure IoT для потока данных FHIR](media/concepts-iot-data-flow/iot-connector-data-flow.png)
+![Поток данных для соединителя "Azure IoT для FHIR"](media/concepts-iot-data-flow/iot-connector-data-flow.png)
 
 На схеме выше показаны общие потоки данных с помощью соединителя Azure IoT для FHIR. 
 
@@ -62,8 +62,8 @@ ms.locfileid: "87513385"
 Щелкните ниже следующий шаг, чтобы узнать, как создать шаблоны сопоставления устройств и FHIR.
 
 >[!div class="nextstepaction"]
->[Соединитель Azure IoT для шаблонов сопоставления FHIR](iot-mapping-templates.md)
+>[Шаблоны сопоставления для соединителя "Azure IoT для FHIR"](iot-mapping-templates.md)
 
-* В портал Azure соединитель Azure IoT для FHIR называется соединителем IoT (Предварительная версия).
+*На портале Azure соединитель "Azure IoT для FHIR" называется соединителем IoT (предварительная версия).
 
 FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.

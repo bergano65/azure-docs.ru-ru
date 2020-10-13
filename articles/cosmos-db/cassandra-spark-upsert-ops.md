@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 09/24/2018
 ms.openlocfilehash: 5ad2cf5dee43f0345017930377a3ed9d2e4624bf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85257488"
 ---
 # <a name="upsert-data-into-azure-cosmos-db-cassandra-api-from-spark"></a>Операции upsert с данными в API Cassandra для Azure Cosmos DB из Spark
@@ -87,7 +87,7 @@ cdbConnector.withSessionDo(session => session.execute("update books_ks.books set
 > [!NOTE]
 > Операция upsert из API RRD аналогична операции создания 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для выполнения других операций с данными, хранящимися в таблицах API Cassandra Azure Cosmos DB, ознакомьтесь со следующими статьями.
  

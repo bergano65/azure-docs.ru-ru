@@ -8,10 +8,10 @@ ms.author: viviali
 ms.date: 10/4/2019
 ms.topic: conceptual
 ms.openlocfilehash: f996bb2d5126ef038ca872aee1f1893979a5229b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87081004"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Визуализация и анализ данных Azure IoT Central на панели мониторинга Power BI
@@ -29,7 +29,7 @@ ms.locfileid: "87081004"
 
 Это решение настраивает конвейер, который считывает данные из учетной записи хранения больших двоичных объектов Azure для [экспорта непрерывных данных](howto-export-data-blob-storage.md) . Для обработки и преобразования данных конвейер использует функции Azure, фабрику данных Azure и базу данных SQL Azure. данные можно визуализировать и анализировать в Power BIном отчете, который загружается в виде PBIX-файла. Все ресурсы создаются в подписке Azure, поэтому каждый компонент можно настроить в соответствии со своими потребностями.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом руководстве, вам потребуется активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -55,13 +55,13 @@ ms.locfileid: "87081004"
 
 PBIX-файл содержит отчет **устройства и данные телеметрии** , в котором представлено историческое представление телеметрии, отправленных устройствами. Она обеспечивает разделение различных типов телеметрии, а также показывает последние данные телеметрии, отправленные устройствами.
 
-:::image type="content" source="media/howto-connect-powerbi/report.png" alt-text="Power BIные устройства и отчет о телеметрии":::
+:::image type="content" source="media/howto-connect-powerbi/report.png" alt-text="Конвейер решения Power BI":::
 
 ## <a name="pipeline-resources"></a>Ресурсы конвейера
 
 Вы можете получить доступ ко всем ресурсам Azure, которые составляют конвейер, в портал Azure. Все ресурсы находятся в группе ресурсов, созданной при настройке конвейера.
 
-:::image type="content" source="media/howto-connect-powerbi/azure-deployment.png" alt-text="портал Azure представление группы ресурсов":::
+:::image type="content" source="media/howto-connect-powerbi/azure-deployment.png" alt-text="Конвейер решения Power BI":::
 
 В следующем списке приводится описание роли каждого ресурса в конвейере.
 
