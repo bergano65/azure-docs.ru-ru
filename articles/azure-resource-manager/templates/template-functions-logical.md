@@ -2,13 +2,13 @@
 title: Функции шаблонов — логические
 description: Описываются функции, используемые в шаблоне Azure Resource Manager для определения логических значений.
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: 8fe1c00240fc24c3c1454b118f9e0d9a9d54fe4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/12/2020
+ms.openlocfilehash: ede41bd6c03eb7a01ae63526810d0310f31e4014
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84677395"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978515"
 ---
 # <a name="logical-functions-for-arm-templates"></a>Логические функции для шаблонов ARM
 
@@ -16,9 +16,11 @@ ms.locfileid: "84677395"
 
 * [and](#and)
 * [bool](#bool)
+* [false](#false)
 * [if](#if)
 * [not](#not) (не);
 * [или диспетчер конфигурации служб](#or)
+* [true](#true)
 
 ## <a name="and"></a>и
 
@@ -85,7 +87,12 @@ ms.locfileid: "84677395"
 | arg1 |Да |строка или целое число |Значение, которое необходимо преобразовать в логическое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
+
 Логическое выражение преобразованного значения.
+
+### <a name="remarks"></a>Remarks
+
+Для получения логических значений можно также использовать значения [true ()](#true) и [false ()](#false) .
 
 ### <a name="examples"></a>Примеры
 
@@ -125,6 +132,44 @@ ms.locfileid: "84677395"
 | falseString | Bool | False |
 | trueInt | Bool | True |
 | falseInt | Bool | False |
+
+## <a name="false"></a>false
+
+`false()`
+
+Возвращает значение false.
+
+### <a name="parameters"></a>Параметры
+
+Функция false не принимает никаких параметров.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Логическое значение, всегда равное false.
+
+### <a name="example"></a>Пример
+
+В следующем примере возвращается ложное выходное значение.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [],
+    "outputs": {
+        "falseOutput": {
+            "value": "[false()]",
+            "type" : "bool"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| фалсеаутпут | Bool | False |
 
 ## <a name="if"></a>if
 
@@ -304,7 +349,7 @@ ms.locfileid: "84677395"
 | ---- | ---- | ----- |
 | checkNotEquals | Bool | True |
 
-## <a name="or"></a>или
+## <a name="or"></a>or
 
 `or(arg1, arg2, ...)`
 
@@ -355,6 +400,44 @@ ms.locfileid: "84677395"
 | andExampleOutput | Bool | False |
 | orExampleOutput | Bool | True |
 | notExampleOutput | Bool | False |
+
+## <a name="true"></a>Да
+
+`true()`
+
+Возвращает значение true.
+
+### <a name="parameters"></a>Параметры
+
+Функция true не принимает никаких параметров.
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Логическое значение, которое всегда равно true.
+
+### <a name="example"></a>Пример
+
+В следующем примере возвращается значение true Output.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [],
+    "outputs": {
+        "trueOutput": {
+            "value": "[true()]",
+            "type" : "bool"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| труеаутпут | Bool | True |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

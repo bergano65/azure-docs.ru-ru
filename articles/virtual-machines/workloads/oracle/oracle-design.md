@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: kegorman
-ms.openlocfilehash: 70de7363634cee2790a40ecf056134cf002c762d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c84d97a86dd1dc912964b78d488c460faa744dd2
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91274713"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977346"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "91274713"
 | **Сеть** |Локальная или глобальная сеть  |SDN (программно-конфигурируемая сеть)|
 | **Группа безопасности** |Средства ограничения портов и IP-адресов |[Группа безопасности сети (NSG)](https://azure.microsoft.com/blog/network-security-groups) |
 | **Устойчивость** |MTBF (среднее время безотказной работы) |MTTR (среднее время восстановления)|
-| **Плановое техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](../../windows/infrastructure-example.md) (установка исправлений и обновлений, управляемая Azure) |
+| **Плановое техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](/previous-versions/azure/virtual-machines/windows/infrastructure-example) (установка исправлений и обновлений, управляемая Azure) |
 | **Ресурс** |Выделенные  |Совместное использование с другими клиентами|
 | **Регионы** |Центры обработки данных |[Пары регионов](../../regions.md#region-pairs)|
 | **Память** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
@@ -230,9 +230,9 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - [Настройка Oracle ASM](configure-oracle-asm.md)
 - [Настройка Oracle Data Guard](configure-oracle-dataguard.md)
 - [Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](configure-oracle-golden-gate.md)
-- [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
+- [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](./oracle-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

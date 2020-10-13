@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 09/24/2020
 author: palma21
-ms.openlocfilehash: 4a814d575e0879daec64ebfdabc1539219bea250
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc756994cf0f6e12af1c1ad5a6c8db304b4253e3
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91368946"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968792"
 ---
 # <a name="stop-and-start-an-azure-kubernetes-service-aks-cluster-preview"></a>Останавливает и запускает кластер Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -30,6 +30,7 @@ ms.locfileid: "91368946"
 - Эта функция поддерживается только для кластеров с поддержкой масштабируемых наборов виртуальных машин.
 - На этапе предварительной версии эта функция не поддерживается для частных кластеров.
 - Состояние кластера остановленного кластера AKS сохраняется в течение 12 месяцев. Если кластер остановлен более 12 месяцев, состояние кластера восстановить нельзя. Дополнительные сведения см. в разделе [политики поддержки AKS](support-policies.md).
+- Во время действия предварительной версии необходимо отключить Автомасштабирование кластера (ЦС) перед попыткой его отключения.
 - Вы можете запустить или удалить остановленный кластер AKS. Чтобы выполнить любые операции, такие как масштабирование или обновление, сначала запустите кластер.
 
 ### <a name="install-the-aks-preview-azure-cli"></a>Установка `aks-preview` Azure CLI 
@@ -124,7 +125,7 @@ az aks start --name myAKSCluster --resource-group myResourceGroup
 Если `provisioningState` показывает `Starting` , что кластер еще не был полностью запущен.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать, как масштабировать `User` Пулы до 0, см. раздел [масштабирование `User` пулов до 0](scale-cluster.md#scale-user-node-pools-to-0).
 - Сведения о том, как сократить расходы с помощью экземпляров смесевых, см. в разделе [Добавление пула узлов смесевых цветов в AKS](spot-node-pool.md).

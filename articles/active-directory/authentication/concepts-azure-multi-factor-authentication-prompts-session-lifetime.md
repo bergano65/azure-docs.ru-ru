@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 08/31/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab36eb9d5c66f61fbb320c91087659cc811eca85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a759d4e686f43133716cc1c40237db74a015210
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91595545"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964950"
 ---
 # <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-multi-factor-authentication"></a>Оптимизация запросов на повторное аутентификацию и изучение времени существования сеанса для многофакторной идентификации Azure
 
@@ -134,6 +134,6 @@ Azure Active Directory (Azure AD) имеет несколько параметр
 | **Единый вход**                      | [Присоединение к Azure AD](../devices/concept-azure-ad-join.md) или [гибридное присоединение к Azure AD](../devices/concept-azure-ad-join-hybrid.md)или [простой единый вход](../hybrid/how-to-connect-sso.md) для неуправляемых устройств. | присоединение к Azure AD;<br />гибридное присоединение к Azure AD; |
 | **Параметры перепроверки подлинности** | Продолжить вход                  | Использование политик условного доступа для частоты входа и постоянного сеанса браузера |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, ознакомьтесь с руководством по [защите событий входа пользователей с помощью многофакторной идентификации Azure или с](tutorial-enable-azure-mfa.md) [помощью обнаружения рисков для входа пользователей в систему для активации многофакторной идентификации Azure](tutorial-risk-based-sspr-mfa.md).

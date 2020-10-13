@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 951c1fd89f9e943b72c32492ff40dae3bd07bb61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf7e596c8ed057a3244ed2b12de59d02c4ba2cae
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88794491"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977941"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
@@ -262,7 +262,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Шифрование общих и распределенных файловых систем, таких как (но не ограничиваясь ими), DFS, GFS, ДРДБ и Цеффс.
 - Перемещение зашифрованных виртуальных машин в другую подписку или регион.
 - Создание образа или моментального снимка зашифрованной виртуальной машины и его использование для развертывания дополнительных виртуальных машин.
-- Виртуальные машины Gen2 (см. раздел [Поддержка виртуальных машин поколения 2 в Azure](generation-2.md#generation-1-vs-generation-2-capabilities)).
+- Виртуальные машины Gen2 (см. раздел [Поддержка виртуальных машин поколения 2 в Azure](../generation-2.md#generation-1-vs-generation-2-capabilities)).
 - Виртуальные машины серии M с Ускоритель записиными дисками.
 - Применение ADE к виртуальной машине с дисками, зашифрованными с помощью [шифрования на стороне сервера, с помощью ключей, управляемых клиентом](disk-encryption.md) (SSE + CMK). Применение SSE + CMK к диску данных на виртуальной машине, зашифрованном с помощью ADE, также является неподдерживаемым сценарием.
 - Перенос виртуальной машины, зашифрованной с помощью ADE, или **когда-либо** зашифрованный с помощью ade, для [шифрования на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md).

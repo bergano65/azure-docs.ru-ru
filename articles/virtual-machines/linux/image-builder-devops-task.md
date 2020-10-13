@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 9f948fcc8ad36f8bef8b1ab6a1b74131faea9bd3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 88bbd83d7ac5b834255c9b4d46d7cef4394f15d3
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88068362"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91968673"
 ---
 # <a name="azure-image-builder-service-devops-task"></a>Задача DevOps службы Azure Image Builder
 
@@ -31,8 +31,8 @@ ms.locfileid: "88068362"
 * Установите [стабильную задачу DevOps из Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureImageBuilder.devOps-task-for-azure-image-builder).
 * Необходимо иметь учетную запись VSTS DevOps и конвейер сборки, созданный
 * Зарегистрируйте и включите требования к функциям построителя образов в подписке, используемой конвейерами:
-    * [AZ PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-powershell#register-features)
-    * [AZ CLI](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder#register-the-features)
+    * [AZ PowerShell](../windows/image-builder-powershell.md#register-features)
+    * [AZ CLI](../windows/image-builder.md#register-the-features)
     
 * Создайте стандартную учетную запись хранения Azure в исходной группе ресурсов, можно использовать другую группу ресурсов или учетные записи хранения. Учетная запись хранения используется для перемещения артефактов сборки из задачи DevOps в образ.
 
@@ -71,14 +71,14 @@ ms.locfileid: "88068362"
  
 ### <a name="location"></a>Расположение
 
-Расположение — это регион, в котором будет выполняться построитель изображений. Поддерживается только заданное число [регионов](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#regions) . Исходные образы должны находиться в этом расположении. Например, если вы используете коллекцию общих образов, реплика должна существовать в этом регионе.
+Расположение — это регион, в котором будет выполняться построитель изображений. Поддерживается только заданное число [регионов](../windows/image-builder-overview.md#regions) . Исходные образы должны находиться в этом расположении. Например, если вы используете коллекцию общих образов, реплика должна существовать в этом регионе.
 
 ### <a name="managed-identity-required"></a>Управляемое удостоверение (обязательно)
-Для работы с Image Builder требуется управляемое удостоверение, которое используется для чтения исходных пользовательских образов, подключения к службе хранилища Azure и создания пользовательских образов. Подробнее см. [здесь](https://aka.ms/azvmimagebuilder#permissions).
+Для работы с Image Builder требуется управляемое удостоверение, которое используется для чтения исходных пользовательских образов, подключения к службе хранилища Azure и создания пользовательских образов. Подробнее см. [здесь](./image-builder-overview.md#permissions).
 
 ### <a name="vnet-support"></a>Поддержка виртуальной сети
 
-В настоящее время задача DevOps не поддерживает указание существующей подсети. Это относится к плану, но если вы хотите использовать существующую виртуальную сеть, можно использовать шаблон ARM с шаблоном построителя образов, вложенный в. Дополнительные сведения см. в примерах шаблона построителя образов Windows, а также с помощью команды [AZ AIB PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-powershell).
+В настоящее время задача DevOps не поддерживает указание существующей подсети. Это относится к плану, но если вы хотите использовать существующую виртуальную сеть, можно использовать шаблон ARM с шаблоном построителя образов, вложенный в. Дополнительные сведения см. в примерах шаблона построителя образов Windows, а также с помощью команды [AZ AIB PowerShell](../windows/image-builder-powershell.md).
 
 ### <a name="source"></a>Источник
 
@@ -194,7 +194,7 @@ ms.locfileid: "88068362"
     
 #### <a name="total-length-of-image-build"></a>Общая длина сборки образа
 
-Общая длина еще не может быть изменена в задаче конвейера DevOps. По умолчанию используется значение 240 минут. Если вы хотите увеличить [буилдтимеаутинминутес](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-json?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fbreadcrumb%2Ftoc.json#properties-buildtimeoutinminutes), то можете использовать задачу AZ CLI в конвейере выпуска. Настройте задачу, чтобы скопировать шаблон и отправить его. Пример см. в описании этого [решения](https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/4_Using_ENV_Variables#using-environment-variables-and-parameters-with-image-builder)или с помощью команды AZ PowerShell.
+Общая длина еще не может быть изменена в задаче конвейера DevOps. По умолчанию используется значение 240 минут. Если вы хотите увеличить [буилдтимеаутинминутес](./image-builder-json.md?bc=%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#properties-buildtimeoutinminutes), то можете использовать задачу AZ CLI в конвейере выпуска. Настройте задачу, чтобы скопировать шаблон и отправить его. Пример см. в описании этого [решения](https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/4_Using_ENV_Variables#using-environment-variables-and-parameters-with-image-builder)или с помощью команды AZ PowerShell.
 
 
 #### <a name="storage-account"></a>Учетная запись хранения
@@ -333,6 +333,6 @@ template name:  t_1556938436xxx
 Артефакт ресурса шаблона образа находится в группе ресурсов, указанной изначально в задаче. По завершении устранения неполадок удалите артефакт. При удалении с помощью портал Azure в группе ресурсов выберите **Показать скрытые типы**, чтобы просмотреть артефакт.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Общие сведения о построителе образов Azure](image-builder-overview.md).

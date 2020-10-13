@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/11/2018
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5bcb63a325ca6bbf464faf9c5f9934879ccf9a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9dc11faa502e5a6d8ede761d35d1ba24305b7688
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88949666"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91964185"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-20"></a>Настройка сервера Многофакторной идентификации Azure для работы с AD FS 2.0
 
@@ -112,7 +112,7 @@ ms.locfileid: "88949666"
 
    ![AD FS 2.0 без прокси-сервера (напрямую)](./media/howto-mfaserver-adfs-2/noproxy.png)
 
-8. Нажмите кнопку **ОК**.
+8. Нажмите кнопку **OK**.
 9. Перейдите на вкладку **собственный модуль** и выберите сервер, веб-сайт (например, "веб-сайт по умолчанию") или приложение AD FS (например, Ls в ADFS), чтобы включить подключаемый модуль IIS на нужном уровне.
 10. Установите флажок **Включить проверку подлинности IIS** в верхней части экрана.
 

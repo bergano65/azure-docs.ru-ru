@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: jushiman
-ms.openlocfilehash: a54de6dbfb320ca530e9c885af9ebe5d833274cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7234c02d387e2fbf21a7f6002e44f84deb851133
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89323033"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977601"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин 2-го поколения в Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "89323033"
 |---------|--------------|--------------|
 | Загрузка             | PCAT                      | UEFI                               |
 | Контроллеры дисков | IDE                       | SCSI                               |
-| Размеры виртуальной машины         | Все размеры виртуальной машины. | [Просмотреть доступные размеры](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2#generation-2-vm-sizes) |
+| Размеры виртуальной машины         | Все размеры виртуальной машины. | [Просмотреть доступные размеры](#generation-2-vm-sizes) |
 
 ### <a name="generation-1-vs-generation-2-capabilities"></a>Возможности 1-го и 2-го поколений
 
@@ -222,4 +222,3 @@ az vm image list --publisher Canonical --sku gen2 --output table --all
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [виртуальных машинах 2-го поколения в Hyper-V](/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
-

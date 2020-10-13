@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 06/02/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c24698736d611604c39b6fa91aef97f73576c6c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dd17e446766514fa90f8beaaab104bbbd2f389f
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88716217"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965035"
 ---
 # <a name="licensing-requirements-for-azure-active-directory-self-service-password-reset"></a>Требования к лицензированию для самостоятельного сброса пароля Azure Active Directory
 
@@ -30,7 +30,7 @@ SSPR лицензируется для каждого пользователя. 
 
 В следующей таблице описаны различные сценарии SSPR для изменения, сброса или обратной записи паролей, а также номера SKU, которые предоставляют эту функцию.
 
-| Компонент | Azure AD уровня "Бесплатный" | Microsoft 365 бизнес стандартный; | Microsoft 365 бизнес премиум. | Azure AD Premium (P1 или P2) |
+| Функция | Azure AD уровня "Бесплатный" | Microsoft 365 бизнес стандартный; | Microsoft 365 бизнес премиум. | Azure AD Premium (P1 или P2) |
 | --- |:---:|:---:|:---:|:---:|
 | **Изменение пароля пользователя только в облаке**<br />Когда пользователь в Azure AD знает свой пароль и хочет изменить его на что-то новое. | ● | ● | ● | ● |
 | **Сброс пароля пользователя только в облаке**<br />Когда пользователь в Azure AD забыл свой пароль и его необходимо сбросить. | | ● | ● | ● |

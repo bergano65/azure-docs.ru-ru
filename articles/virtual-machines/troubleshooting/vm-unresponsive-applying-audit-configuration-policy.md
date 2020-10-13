@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: bc41783bf977806b5f9bba5b953f1f581ad07f18
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff21975c34c28d7476635467e0c1abb8e6575e35
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89299530"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977958"
 ---
 # <a name="virtual-machine-is-unresponsive-while-applying-audit-policy-configuration-policy"></a>При применении политики конфигурации политики аудита виртуальная машина не отвечает.
 
@@ -27,7 +27,7 @@ ms.locfileid: "89299530"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается, что операционная система (ОС) не отвечала во время загрузки с сообщением **применение политики конфигурации политики аудита**.
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается, что операционная система (ОС) не отвечала во время загрузки с сообщением **применение политики конфигурации политики аудита**.
 
   ![Загрузка ОС с сообщением: "применение политики конфигурации политики аудита"](./media/vm-unresponsive-applying-audit-configuration-policy/1.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "89299530"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и вход на нее
 
-1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
 ### <a name="disable-the-policy"></a>Отключение политики
@@ -153,7 +153,7 @@ ms.locfileid: "89299530"
    
 ### <a name="rebuild-the-virtual-machine"></a>Перестроение виртуальной машины
 
-1. Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+1. Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).
 
 1. Проверьте, не загружается ли в обычном случае виртуальная машина, чтобы узнать, устранена ли проблема.
 
@@ -175,11 +175,11 @@ ms.locfileid: "89299530"
 
 #### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>Подключение диска ОС к новой виртуальной машине восстановления
 
-1. Выполните шаги 1-3 [команды восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands) , чтобы ПОДГОТОВИТЬ новую виртуальную машину для восстановления.
+1. Выполните шаги 1-3 [команды восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md) , чтобы ПОДГОТОВИТЬ новую виртуальную машину для восстановления.
 1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
 #### <a name="locate-the-dump-file-and-submit-a-support-ticket"></a>Размещение файла дампа и отправка запроса в службу поддержки
 
 1. На виртуальной машине восстановления перейдите в папку Windows на подключенном диске ОС. Если буква драйвера, назначенная подключенному диску ОС, обозначена как *F*, необходимо обратиться к `F:\Windows` .
 1. Найдите `memory.dmp` файл и отправьте запрос в [службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с файлом дампа памяти.
-1. Если у вас возникли проблемы с нахождением `memory.dmp` файла, используйте вместо него [вызовы прерываний (NMI) в последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-windows#use-the-serial-console-for-nmi-calls) . Следуйте указаниям по [созданию файла аварийного дампа с помощью вызовов NMI](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump).
+1. Если у вас возникли проблемы с нахождением `memory.dmp` файла, используйте вместо него [вызовы прерываний (NMI) в последовательной консоли](./serial-console-windows.md#use-the-serial-console-for-nmi-calls) . Следуйте указаниям по [созданию файла аварийного дампа с помощью вызовов NMI](/windows/client-management/generate-kernel-or-complete-crash-dump).

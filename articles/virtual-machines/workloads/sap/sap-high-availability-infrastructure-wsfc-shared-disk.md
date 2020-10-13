@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/25/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8f389581d8fbeb912507b303c46109dd08fcab8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2653742b788ab24fc295ebc156090d1db5f85268
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88871522"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978498"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Подготовка инфраструктуры Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для SAP ASCS/SC
 
@@ -165,10 +165,10 @@ ms.locfileid: "88871522"
 В этой статье описаны действия по подготовке инфраструктуры Azure к установке и настройке высокодоступного экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью *общего диска кластера* в качестве варианта кластеризации экземпляра SAP ASCS.
 В документации представлены два варианта *общего диска кластера* :
 
-- [Общие диски Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-shared)
+- [Общие диски Azure](../../windows/disks-shared.md)
 - Использование [SIOS Cluster Edition](https://us.sios.com/products/datakeeper-cluster/) для создания зеркально отображаемого хранилища, которое имитирует кластерный общий диск 
 
-Представленная конфигурация полагается на [группы размещения Azure (ППГ)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-proximity-placement-scenarios) , чтобы обеспечить оптимальную задержку в сети для рабочих нагрузок SAP. В документации не рассматривается уровень базы данных.  
+Представленная конфигурация полагается на [группы размещения Azure (ППГ)](./sap-proximity-placement-scenarios.md) , чтобы обеспечить оптимальную задержку в сети для рабочих нагрузок SAP. В документации не рассматривается уровень базы данных.  
 
 > [!NOTE]
 > Группы размещения службы "близость" Azure являются необходимым условием для использования общего диска Azure.
@@ -199,7 +199,7 @@ ms.locfileid: "88871522"
 
 ## <a name="create-azure-internal-load-balancer"></a><a name="fe0bd8b5-2b43-45e3-8295-80bee5415716"></a> Создание внутренней подсистемы балансировки нагрузки Azure
 
-SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное имя узла и виртуальные IP-адреса. В Azure для использования виртуального IP-адреса требуется [балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) . Настоятельно рекомендуется использовать [стандартный балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal). 
+SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное имя узла и виртуальные IP-адреса. В Azure для использования виртуального IP-адреса требуется [балансировщик нагрузки](../../../load-balancer/load-balancer-overview.md) . Настоятельно рекомендуется использовать [стандартный балансировщик нагрузки](../../../load-balancer/quickstart-load-balancer-standard-public-portal.md). 
 
 
 В следующем списке показана конфигурация балансировщика нагрузки (A) SCS/ERS. Конфигурация SAP ASCS и ERS2 выполняется в одной и той же подсистеме балансировки нагрузки Azure.  
@@ -263,8 +263,8 @@ Azure Load Balancer может закрывать соединения, если
 
 | путь| Имя переменной | Тип переменной  | Значение | Документация |
 | --- | --- | --- |---| ---|
-| HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveTime |REG_DWORD (десятичное) |120000 |[KeepAliveTime](https://technet.microsoft.com/library/cc957549.aspx) |
-| HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveInterval |REG_DWORD (десятичное) |120000 |[KeepAliveInterval](https://technet.microsoft.com/library/cc957548.aspx) |
+| HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveTime |REG_DWORD (десятичное) |120000 |[KeepAliveTime](/previous-versions/windows/it-pro/windows-2000-server/cc957549(v=technet.10)) |
+| HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |KeepAliveInterval |REG_DWORD (десятичное) |120000 |[KeepAliveInterval](/previous-versions/windows/it-pro/windows-2000-server/cc957548(v=technet.10)) |
 
 
 Чтобы применить изменения, перезапустите оба узла кластера.
@@ -325,7 +325,7 @@ Azure Load Balancer может закрывать соединения, если
    ```
 
 ### <a name="configure-cluster-cloud-quorum"></a>Настройка кворума облака кластера
-При использовании Windows Server 2016 или 2019 рекомендуется настроить [облачный следящий сервер Azure](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)в качестве кворума кластера.
+При использовании Windows Server 2016 или 2019 рекомендуется настроить [облачный следящий сервер Azure](/windows-server/failover-clustering/deploy-cloud-witness)в качестве кворума кластера.
 
 Выполните эту команду на одном из узлов кластера:
 

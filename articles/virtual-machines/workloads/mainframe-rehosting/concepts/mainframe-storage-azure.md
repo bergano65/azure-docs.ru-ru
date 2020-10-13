@@ -6,12 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: 639764c9cae5e27e90a55da00b246807e49d2a20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a3a7cad8399146834eed0282e0655a551bc083a
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88652854"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977278"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>Перемещение хранилища мэйнфреймов в Azure
 
@@ -57,7 +57,7 @@ Azure предоставляет функции и емкость хранили
 <tr><td>Файлы Azure
 </td>
 <td>
-Предоставляет интерфейс SMB, клиентские библиотеки и интерфейс <a href="https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api">RESTful</a> , обеспечивающие доступ из любого места к сохраненным файлам.
+Предоставляет интерфейс SMB, клиентские библиотеки и интерфейс <a href="/rest/api/storageservices/file-service-rest-api">RESTful</a> , обеспечивающие доступ из любого места к сохраненным файлам.
 </td>
 <td><ul>
 <li>Поднимите и перенесите приложение в облако, когда приложение использует собственные API-интерфейсы файловой системы для обмена данными между ИТ и другими приложениями, работающими в Azure.</li>
@@ -67,7 +67,7 @@ Azure предоставляет функции и емкость хранили
 </tr>
 <tr><td>Большие двоичные объекты Azure
 </td>
-<td>Предоставляет клиентские библиотеки и интерфейс <a href="https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api">RESTful</a> , позволяющие хранить неструктурированные данные и обращаться к ним в большом масштабе в блочных BLOB-объектах. Хранилище BLOB-объектов также поддерживает <a href="/azure/storage/blobs/data-lake-storage-introduction">Azure Data Lake Storage 2-го поколения</a> для корпоративных решений аналитики больших данных.
+<td>Предоставляет клиентские библиотеки и интерфейс <a href="/rest/api/storageservices/blob-service-rest-api">RESTful</a> , позволяющие хранить неструктурированные данные и обращаться к ним в большом масштабе в блочных BLOB-объектах. Хранилище BLOB-объектов также поддерживает <a href="/azure/storage/blobs/data-lake-storage-introduction">Azure Data Lake Storage 2-го поколения</a> для корпоративных решений аналитики больших данных.
 </td>
 <td><ul>
 <li>Поддержка потоковой передачи и сценариев произвольного доступа в приложении.</li>
@@ -77,7 +77,7 @@ Azure предоставляет функции и емкость хранили
 </tr>
 <tr><td>Диски Azure
 </td>
-<td>Предоставляет клиентские библиотеки и интерфейс <a href="https://docs.microsoft.com/rest/api/compute/disks">RESTful</a> , позволяющие постоянно хранить данные и обращаться к ним с подключенного виртуального жесткого диска.
+<td>Предоставляет клиентские библиотеки и интерфейс <a href="/rest/api/compute/disks">RESTful</a> , позволяющие постоянно хранить данные и обращаться к ним с подключенного виртуального жесткого диска.
 </td>
 <td><ul>
 <li>Приложения с нулификацией и сдвигом, которые используют собственные API файловой системы для чтения и записи данных на постоянные диски.</li>

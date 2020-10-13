@@ -2,20 +2,20 @@
 title: Устранение неполадок при входе в доменные службы Azure AD | Документация Майкрософт
 description: Сведения об устранении распространенных проблем с входом пользователя и ошибках в доменных службах Azure Active Directory.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/06/2020
-ms.author: iainfou
-ms.openlocfilehash: 91c42e391d1a23e9ac494af9271c92e3e9b5d6c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: joflore
+ms.openlocfilehash: 9343af5b29289a152db84e64f81fa8ca74ce7bc3
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88722659"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91967398"
 ---
 # <a name="troubleshoot-account-sign-in-problems-with-an-azure-active-directory-domain-services-managed-domain"></a>Устранение неполадок при входе в учетную запись с управляемым доменом доменных служб Azure Active Directory
 

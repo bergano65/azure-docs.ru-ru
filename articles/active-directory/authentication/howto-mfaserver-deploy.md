@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/21/2019
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbe8b4176e33ff04ff8033af3b50cbdd0d882ae2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ea9117d3cce2eec4c143e9fb3df76710a93a664
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88919579"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966973"
 ---
 # <a name="getting-started-with-the-azure-multi-factor-authentication-server"></a>Приступая к работе с сервером Многофакторной идентификации Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "88919579"
 | Требования к серверу Многофакторной идентификации Azure | Описание |
 |:--- |:--- |
 | Оборудование |<li>200 МБ места на жестком диске</li><li>32- или 64-разрядный процессор</li><li>Не менее 1 ГБ ОЗУ</li> |
-| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008/R2 (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>Windows 10</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
+| Программное обеспечение |<li>Windows Server 2016</li><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008/R2 (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>быть под управлением ОС Windows 10;</li><li>Windows 8.1, все выпуски</li><li>Windows 8, все выпуски</li><li>Windows 7, все выпуски (только с [ЕСУ](https://docs.microsoft.com/lifecycle/faq/extended-security-updates) )</li><li>Microsoft .NET Framework 4.0</li><li>IIS 7.0 или более поздняя версия, если вы устанавливаете SDK для пользовательского портала или веб-службы</li> |
 | Разрешения | Учетная запись администратора домена или администратора предприятия для регистрации в Active Directory |
 
 ### <a name="azure-mfa-server-components"></a>Компоненты сервера Azure MFA

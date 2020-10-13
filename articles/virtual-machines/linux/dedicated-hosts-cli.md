@@ -6,17 +6,17 @@ ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 09/25/2020
 ms.author: cynthn
-ms.openlocfilehash: a85f5cb9cc519b180354445ca9ca2f8dd0354c23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d99f8c380b486ed818aff64782ca817dab41c916
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91370205"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91975287"
 ---
 # <a name="deploy-to-dedicated-hosts-using-the-azure-cli"></a>Развертывание на выделенных узлах с помощью Azure CLI
  
 
-В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
+В этой статье рассказывается, как создать [выделенный узел](../dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
 Обязательно установите Azure CLI версии 2.0.70 или более поздней и войдите в учетную запись Azure с помощью команды `az login`. 
 
@@ -319,8 +319,8 @@ az group delete -n myDHResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения см. в [обзоре выделенных узлов](dedicated-hosts.md).
+- Дополнительные сведения см. в [обзоре выделенных узлов](../dedicated-hosts.md).
 
-- Выделенные узлы можно также создавать с помощью [портала Azure](dedicated-hosts-portal.md).
+- Выделенные узлы можно также создавать с помощью [портала Azure](../dedicated-hosts-portal.md).
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md) можно найти пример шаблона, в котором используются как зоны, так и домены сбоя для обеспечения максимальной устойчивости в регионе.

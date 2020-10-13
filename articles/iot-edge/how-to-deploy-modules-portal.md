@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 754c106db42f3f0695ad023e736993bee82e9757
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67c7c71e1f1f3eb9e76aa4938cb4a0a15ca405c8
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82133920"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978804"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -25,7 +25,9 @@ ms.locfileid: "82133920"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
-* [Устройство IoT Edge](how-to-register-device.md#register-in-the-azure-portal) с установленной средой выполнения IoT Edge.
+* Устройство IoT Edge.
+
+  Если устройство IoT Edge не настроено, вы можете создать его на виртуальной машине Azure. Выполните действия, описанные в одной из кратких руководств, чтобы [создать виртуальное устройство Linux](quickstart-linux.md) или [создать виртуальное устройство Windows](quickstart.md).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
 

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 611edb06762b96ded7671b70ec0f5d4f07f51848
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78ea26adb8299cc13d4677c66a0e06cba901d9dc
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87829090"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91977380"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -70,7 +70,7 @@ ms.locfileid: "87829090"
 > [!IMPORTANT]
 > Если вы заблокировали доступ к *168.63.129.16* с помощью гостевого брандмауэра или прокси-сервера, расширения будут завершаться сбоем независимо от описанного выше. Требуются порты 80, 443 и 32526.
 
-Агенты можно использовать только для скачивания пакетов расширений и отправки отчетов о состоянии. Например, если для установки расширения требуется скачать сценарий из GitHub (пользовательский сценарий) или требуется доступ к службе хранилища Azure (Azure Backup), откройте дополнительные порты в брандмауэре или в группе безопасности сети (NSG). Разные расширения имеют разные требования, ведь они по сути являются самостоятельными приложениями. Для расширений, которым требуется доступ к службе хранилища Azure или Azure Active Directory, можно разрешить доступ с помощью [тегов службы Azure NSG](../../virtual-network/security-overview.md#service-tags) к хранилищу или AzureActiveDirectory.
+Агенты можно использовать только для скачивания пакетов расширений и отправки отчетов о состоянии. Например, если для установки расширения требуется скачать сценарий из GitHub (пользовательский сценарий) или требуется доступ к службе хранилища Azure (Azure Backup), откройте дополнительные порты в брандмауэре или в группе безопасности сети (NSG). Разные расширения имеют разные требования, ведь они по сути являются самостоятельными приложениями. Для расширений, которым требуется доступ к службе хранилища Azure или Azure Active Directory, можно разрешить доступ с помощью [тегов службы Azure NSG](../../virtual-network/network-security-groups-overview.md#service-tags) к хранилищу или AzureActiveDirectory.
 
 Гостевой агент Windows не поддерживает прокси-сервер для перенаправления запросов трафика агента через. Это означает, что гостевой агент Windows будет использовать пользовательский прокси-сервер (если он есть) для доступа к ресурсам в Интернете или на узле через IP-168.63.129.16.
 
@@ -428,6 +428,6 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 | Расширение Диагностики Azure |Управляет системой диагностики Azure |[Расширение система диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение для доступа к виртуальной машине для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

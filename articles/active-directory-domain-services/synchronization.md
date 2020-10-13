@@ -2,7 +2,7 @@
 title: Как работает синхронизация в доменных службах Azure AD | Документация Майкрософт
 description: Узнайте, как работает процесс синхронизации для объектов и учетных данных из клиента Azure AD или локальной среды служб домен Active Directory Services в домен Azure Active Directory, управляемый службами домена.
 services: active-directory-ds
-author: iainfoulds
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.assetid: 57cbf436-fc1d-4bab-b991-7d25b6e987ef
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
-ms.author: iainfou
-ms.openlocfilehash: 10eec1527fb0ac5109822da398642613219771f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: joflore
+ms.openlocfilehash: 683a6c9f31947355a5415a5b8b57b621f717af91
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86039846"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91967670"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-active-directory-domain-services-managed-domain"></a>Синхронизация объектов и учетных данных в управляемом домене доменных служб Azure Active Directory
 

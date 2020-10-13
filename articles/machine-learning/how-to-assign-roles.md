@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 07/24/2020
 ms.custom: how-to, seodec18
-ms.openlocfilehash: ab94af9ec172a3e88d523024c1e00d3a0d944798
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: a9259e287c75a3a39ad1d4e701638f38b4512ee0
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873087"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966412"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -66,6 +66,22 @@ az ml workspace share -w my_workspace -g my_resource_group --role Contributor --
 ## <a name="azure-machine-learning-operations"></a>Машинное обучение Azure операции
 
 Машинное обучение Azure встроенных действий для многих операций и задач. Полный список см. в статье [операции с поставщиками ресурсов Azure](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices).
+
+## <a name="mlflow-operations-in-azure-machine-learning"></a>Операции Млфлов в машинном обучении Azure
+
+В этой таблице описывается область разрешений, которую следует добавить к действиям в пользовательской роли, созданной для выполнения операций Млфлов.
+
+| Операция Млфлов | Область |
+| --- | --- |
+| Перечислите все эксперименты в хранилище отслеживания рабочих областей, получите эксперимент по идентификатору, получите эксперимент по имени | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/чтение |
+| Создание эксперимента с именем, задание тега в эксперименте, восстановление эксперимента, помеченного для удаления| Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/запись | 
+| Удаление эксперимента | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/удаление |
+| Получение запуска и связанных данных и метаданных, получение списка всех значений для указанной метрики для данного запуска, список артефактов для запуска | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/запуски/чтение |
+| Создание нового запуска в эксперименте, удаление запусков, восстановление удаленных запусков, метрики журнала в текущем запуске, установка тегов для запуска, удаление тегов для выполнения, параметры журнала (пара "ключ-значение"), используемые для запуска, запись пакета метрик, параметров и тегов для запуска, обновление состояния выполнения. | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/запуски/запись |
+| Получение зарегистрированной модели по имени, получение списка всех зарегистрированных моделей в реестре, поиск зарегистрированных моделей, последние модели версий для каждого этапа запросов, получение версии зарегистрированной модели, версии модели поиска, получение URI, где хранятся артефакты версии модели, Поиск запусков по идентификаторам экспериментов | Microsoft. Мачинелеарнингсервицес/рабочие области/модели/чтение |
+| Создайте новую зарегистрированную модель, обновите имя или описание зарегистрированной модели, переименуйте существующую зарегистрированную модель, создайте новую версию модели, обновите описание версии модели, перенесите зарегистрированную модель на один из этапов. | Microsoft. Мачинелеарнингсервицес/рабочие области/модели/запись |
+| Удаление зарегистрированной модели вместе со всеми ее версиями, удаление конкретных версий зарегистрированной модели | Microsoft. Мачинелеарнингсервицес/рабочие области/модели/удаление |
+
 
 ## <a name="create-custom-role"></a>Создание настраиваемой роли
 
@@ -253,6 +269,46 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
         ]
     }
     ```
+     
+* __Млфлов Data анализу Custom__: позволяет анализу данных выполнять все поддерживаемые операции млфлов AzureML, **за исключением**следующих:
+
+   * Создание вычислений
+   * Развертывание моделей в рабочем кластере AKS
+   * Развертывание конечной точки конвейера в рабочей среде
+
+   `mlflow_data_scientist_custom_role.json` :
+   ```json
+   {
+        "Name": "MLFlow Data Scientist Custom",
+        "IsCustom": true,
+        "Description": "Can perform azureml mlflow integrated functionalities that includes mlflow tracking, projects, model registry",
+        "Actions": [
+            "Microsoft.MachineLearningServices/workspaces/experiments/read",
+            "Microsoft.MachineLearningServices/workspaces/experiments/write",
+            "Microsoft.MachineLearningServices/workspaces/experiments/delete",
+            "Microsoft.MachineLearningServices/workspaces/experiments/runs/read",
+            "Microsoft.MachineLearningServices/workspaces/experiments/runs/write",
+            "Microsoft.MachineLearningServices/workspaces/models/read",
+            "Microsoft.MachineLearningServices/workspaces/models/write",
+            "Microsoft.MachineLearningServices/workspaces/models/delete"
+        ],
+        "NotActions": [
+            "Microsoft.MachineLearningServices/workspaces/delete",
+            "Microsoft.MachineLearningServices/workspaces/write",
+            "Microsoft.MachineLearningServices/workspaces/computes/*/write",
+            "Microsoft.MachineLearningServices/workspaces/computes/*/delete", 
+            "Microsoft.Authorization/*",
+            "Microsoft.MachineLearningServices/workspaces/computes/listKeys/action",
+            "Microsoft.MachineLearningServices/workspaces/listKeys/action",
+            "Microsoft.MachineLearningServices/workspaces/services/aks/write",
+            "Microsoft.MachineLearningServices/workspaces/services/aks/delete",
+            "Microsoft.MachineLearningServices/workspaces/endpoints/pipelines/write"
+        ],
+     "AssignableScopes": [
+            "/subscriptions/<subscription_id>"
+        ]
+    }
+    ```   
 
 * __Млопс Custom__: позволяет назначить роль субъекту-службе и использовать ее для автоматизации конвейеров млопс. Например, для отправки запусков в уже опубликованном конвейере:
 
@@ -419,7 +475,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 Для выполнения любой операции, связанной с квотой, в рабочей области требуются разрешения уровня подписки. Это означает, что Настройка квоты на уровне подписки или квоты на уровне рабочей области для управляемых ресурсов вычислений может произойти только при наличии разрешений на запись в области подписки. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
 - [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)

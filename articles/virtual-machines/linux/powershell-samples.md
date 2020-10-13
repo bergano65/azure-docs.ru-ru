@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 03/01/2019
 ms.author: cynthn
-ms.openlocfilehash: b1a154e562db9f8fdd74300bb8eb3d6839cb2ef4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d20f02b846c7ae47aef395694aef2bc5732957e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89321928"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978651"
 ---
 # <a name="azure-vm-powershell-samples-for-creating-and-managing-linux-vms"></a>Примеры Azure VM PowerShell для создания виртуальных машин Linux и управления ими
 
@@ -36,6 +36,6 @@ ms.locfileid: "89321928"
 | [Копирование снимка экрана в ту же или другую подписку](../scripts/virtual-machines-powershell-sample-copy-snapshot-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Копирует снимок экрана в ту же или в другую подписку, расположенную в том же регионе, что и родительский снимок экрана. |
 |**Мониторинг виртуальных машин**||
 | [Мониторинг виртуальной машины с помощью журналов Azure Monitor](./../scripts/virtual-machines-linux-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Создает виртуальную машину, устанавливает агент Log Analytics и регистрирует виртуальную машину в рабочей области Log Analytics.  |
-| [Копирование управляемого диска в ту же или другую подписку](../scripts/virtual-machines-linux-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Копирует управляемый диск в ту же или другую подписку, расположенную в том же регионе, что и родительский управляемый диск.
+| [Копирование управляемого диска в ту же или другую подписку](../scripts/virtual-machines-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Копирует управляемый диск в ту же или другую подписку, расположенную в том же регионе, что и родительский управляемый диск.
 | [Сбор сведений обо всех виртуальных машинах в подписке с использованием PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Отвечает за создание CSV-файла, содержащего имя виртуальной машины, имя группы ресурсов, частный IP-адрес, сведения о регионе, виртуальной сети, подсети и типе ОС, а также общедоступный IP-адрес виртуальных машин в указанной подписке.
 | | |

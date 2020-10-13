@@ -2,14 +2,14 @@
 title: Перемещение артефактов
 description: Передача коллекций образов или других артефактов из одного реестра контейнеров в другой в реестр путем создания конвейера передачи с помощью учетных записей хранения Azure
 ms.topic: article
-ms.date: 05/08/2020
+ms.date: 10/07/2020
 ms.custom: ''
-ms.openlocfilehash: ed848380457862fee506bf5111789e5d44545bdd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd2cee972ef173853572b871bc80b92b28c505cd
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253417"
+ms.locfileid: "91932606"
 ---
 # <a name="transfer-artifacts-to-another-registry"></a>Перенос артефактов в другой реестр
 
@@ -21,7 +21,7 @@ ms.locfileid: "91253417"
 * Большой двоичный объект копируется из исходной учетной записи хранения в целевую учетную запись хранения.
 * Большой двоичный объект в целевой учетной записи хранения импортируется как артефакты в целевой реестр. Вы можете настроить конвейер импорта для запуска при каждом обновлении BLOB-объекта артефакта в целевом хранилище.
 
-Перенос идеально подходит для копирования содержимого между двумя реестрами контейнеров Azure в физически отключенных облаках, которые исправляются учетными записями хранения в каждом облаке. Для копирования образа из реестра контейнера в подключенных облаках, включая DOCKER HUB и другие поставщики облачных решений, вместо этого рекомендуется использовать [Импорт изображений](container-registry-import-images.md) .
+Перенос идеально подходит для копирования содержимого между двумя реестрами контейнеров Azure в физически отключенных облаках, которые исправляются учетными записями хранения в каждом облаке. Если вместо этого вы хотите копировать образы из реестров контейнеров в подключенных облаках, включая DOCKER HUB и другие поставщики облачных решений, рекомендуется [импортировать изображения](container-registry-import-images.md) .
 
 В этой статье описано, как использовать развертывания шаблонов Azure Resource Manager для создания и запуска конвейера передачи. Azure CLI используется для предоставления связанных ресурсов, таких как секреты хранилища. Рекомендуется Azure CLI версии 2.2.0 или более поздней. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
 
@@ -32,11 +32,18 @@ ms.locfileid: "91253417"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Реестры **контейнеров** . для перемещения необходимо использовать существующий исходный раздел реестра с артефактами и целевой реестр. Перенос записей контроля доступа предназначен для перемещения в физически отключенных облаках. Для тестирования исходный и целевой реестры могут находиться в той же или другой подписке Azure, Active Directory клиенте или облаке. Если необходимо создать реестр, см. раздел [Краткое руководство. создание закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md). 
-* **Учетные записи хранения** — Создайте исходную и целевую учетные записи хранения в подписке и расположении по своему усмотрению. В целях тестирования можно использовать ту же подписку или подписки, что и в исходном и целевом реестрах. В сценариях с несколькими облаками обычно создается отдельная учетная запись хранения в каждом облаке. При необходимости создайте учетные записи хранения с помощью [Azure CLI](../storage/common/storage-account-create.md?tabs=azure-cli) или других средств. 
+* Реестры **контейнеров** . для перемещения необходимо использовать существующий исходный раздел реестра с артефактами и целевой реестр. Перенос записей контроля доступа предназначен для перемещения в физически отключенных облаках. Для тестирования исходный и целевой реестры могут находиться в той же или другой подписке Azure, Active Directory клиенте или облаке. 
+
+   Если необходимо создать реестр, см. раздел [Краткое руководство. создание закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md). 
+* **Учетные записи хранения** — Создайте исходную и целевую учетные записи хранения в подписке и расположении по своему усмотрению. В целях тестирования можно использовать ту же подписку или подписки, что и в исходном и целевом реестрах. В сценариях с несколькими облаками обычно создается отдельная учетная запись хранения в каждом облаке. 
+
+  При необходимости создайте учетные записи хранения с помощью [Azure CLI](../storage/common/storage-account-create.md?tabs=azure-cli) или других средств. 
 
   Создайте контейнер больших двоичных объектов для перемещения артефактов в каждой учетной записи. Например, создайте контейнер с именем *Перемещение*. Два или более конвейеров передачи могут совместно использовать одну и ту же учетную запись хранения, но должны использовать разные области контейнера хранилища.
-* **Хранилища ключей** . хранилища ключей необходимы для хранения секретов маркеров SAS, используемых для доступа к исходным и целевым учетным записям хранения. Создайте исходное и целевое хранилище ключей в той же подписке Azure или подписки, что и исходный и целевой реестр. При необходимости создайте хранилища ключей с помощью [Azure CLI](../key-vault/secrets/quick-create-cli.md) или других средств.
+* **Хранилища ключей** . хранилища ключей необходимы для хранения секретов маркеров SAS, используемых для доступа к исходным и целевым учетным записям хранения. Создайте исходное и целевое хранилище ключей в той же подписке Azure или подписки, что и исходный и целевой реестр. В демонстрационных целях в шаблонах и командах, используемых в этой статье, предполагается, что исходные и целевые хранилища ключей находятся в тех же группах ресурсов, что и исходные и целевые реестры соответственно. Использование общих групп ресурсов не является обязательным, но упрощает шаблоны и команды, используемые в этой статье.
+
+   При необходимости создайте хранилища ключей с помощью [Azure CLI](../key-vault/secrets/quick-create-cli.md) или других средств.
+
 * **Переменные среды** . Например, команды в этой статье устанавливают следующие переменные среды для исходной и целевой сред. Все примеры отформатированы для оболочки bash.
   ```console
   SOURCE_RG="<source-resource-group>"
@@ -62,7 +69,7 @@ ms.locfileid: "91253417"
 
 ### <a name="things-to-know"></a>Полезная информация
 * Експортпипелине и Импортпипелине обычно находятся в разных клиентах Active Directory, связанных с исходным и целевым облаками. В этом сценарии для ресурсов экспорта и импорта требуются отдельные управляемые удостоверения и хранилища ключей. В целях тестирования эти ресурсы можно разместить в том же облаке, совместно использовать удостоверения.
-* В примерах конвейера создаются управляемые системой удостоверения для доступа к секретам хранилища ключей. Експортпипелинес и Импортпипелинес также поддерживают назначенные пользователю удостоверения. В этом случае необходимо настроить хранилища ключей с политиками доступа для удостоверений. 
+* По умолчанию шаблоны Експортпипелине и Импортпипелине позволяют управляемому системному удостоверению получать доступ к секреты хранилища ключей. Шаблоны Експортпипелине и Импортпипелине также поддерживают предоставленное пользователем удостоверение. 
 
 ## <a name="create-and-store-sas-keys"></a>Создание и хранение ключей SAS
 
@@ -152,7 +159,13 @@ az keyvault secret set \
 
 ### <a name="create-the-resource"></a>Создание ресурса
 
-Выполните команду [AZ Deployment Group Create][az-deployment-group-create] , чтобы создать ресурс. В следующем примере называется *експортпипелине*развертывания.
+Выполните команду [AZ Deployment Group Create][az-deployment-group-create] , чтобы создать ресурс с именем *експортпипелине* , как показано в следующих примерах. По умолчанию с первым параметром пример шаблона включает в ресурсе Експортпипелине удостоверение, назначенное системой. 
+
+Второй вариант позволяет предоставить ресурсу удостоверение, назначенное пользователем. (Не показано создание назначенного пользователю удостоверения.)
+
+При использовании любого из этих параметров шаблон настраивает удостоверение для доступа к маркеру SAS в хранилище ключей экспорта. 
+
+#### <a name="option-1-create-resource-and-enable-system-assigned-identity"></a>Вариант 1. Создание ресурса и включение назначенного системой удостоверения
 
 ```azurecli
 az deployment group create \
@@ -162,10 +175,23 @@ az deployment group create \
   --parameters azuredeploy.parameters.json
 ```
 
+#### <a name="option-2-create-resource-and-provide-user-assigned-identity"></a>Вариант 2. Создание ресурса и указание назначенного пользователю удостоверения
+
+В этой команде укажите идентификатор ресурса назначенного пользователем удостоверения в качестве дополнительного параметра.
+
+```azurecli
+az deployment group create \
+  --resource-group $SOURCE_RG \
+  --template-file azuredeploy.json \
+  --name exportPipeline \
+  --parameters azuredeploy.parameters.json \
+  --parameters userAssignedIdentity="/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myUserAssignedIdentity"
+```
+
 В выходных данных команды запишите идентификатор ресурса ( `id` ) конвейера. Это значение можно сохранить в переменной среды для последующего использования, выполнив команду [AZ Deployment Group][az-deployment-group-show]. Пример:
 
 ```azurecli
-EXPORT_RES_ID=$(az group deployment show \
+EXPORT_RES_ID=$(az deployment group show \
   --resource-group $SOURCE_RG \
   --name exportPipeline \
   --query 'properties.outputResources[1].id' \
@@ -198,20 +224,39 @@ EXPORT_RES_ID=$(az group deployment show \
 
 ### <a name="create-the-resource"></a>Создание ресурса
 
-Выполните команду [AZ Deployment Group Create][az-deployment-group-create] , чтобы создать ресурс.
+Выполните команду [AZ Deployment Group Create][az-deployment-group-create] , чтобы создать ресурс с именем *импортпипелине* , как показано в следующих примерах. По умолчанию с первым параметром пример шаблона включает в ресурсе Импортпипелине удостоверение, назначенное системой. 
+
+Второй вариант позволяет предоставить ресурсу удостоверение, назначенное пользователем. (Не показано создание назначенного пользователю удостоверения.)
+
+При использовании любого из этих параметров шаблон настраивает удостоверение для доступа к маркеру SAS в хранилище ключей импорта. 
+
+#### <a name="option-1-create-resource-and-enable-system-assigned-identity"></a>Вариант 1. Создание ресурса и включение назначенного системой удостоверения
 
 ```azurecli
 az deployment group create \
   --resource-group $TARGET_RG \
   --template-file azuredeploy.json \
-  --parameters azuredeploy.parameters.json \
-  --name importPipeline
+  --name importPipeline \
+  --parameters azuredeploy.parameters.json 
 ```
 
-Если вы планируете выполнить импорт вручную, запишите идентификатор ресурса ( `id` ) конвейера. Это значение можно сохранить в переменной среды для последующего использования, выполнив команду [AZ Deployment Group][az-deployment-group-show]. Пример:
+#### <a name="option-2-create-resource-and-provide-user-assigned-identity"></a>Вариант 2. Создание ресурса и указание назначенного пользователю удостоверения
+
+В этой команде укажите идентификатор ресурса назначенного пользователем удостоверения в качестве дополнительного параметра.
 
 ```azurecli
-IMPORT_RES_ID=$(az group deployment show \
+az deployment group create \
+  --resource-group $TARGET_RG \
+  --template-file azuredeploy.json \
+  --name importPipeline \
+  --parameters azuredeploy.parameters.json \
+  --parameters userAssignedIdentity="/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myUserAssignedIdentity"
+```
+
+Если вы планируете выполнить импорт вручную, запишите идентификатор ресурса ( `id` ) конвейера. Это значение можно сохранить в переменной среды для последующего использования, выполнив команду [AZ Deployment Group показ][az-deployment-group-show] . Пример:
+
+```azurecli
+IMPORT_RES_ID=$(az deployment group show \
   --resource-group $TARGET_RG \
   --name importPipeline \
   --query 'properties.outputResources[1].id' \
@@ -246,12 +291,22 @@ az deployment group create \
   --parameters azuredeploy.parameters.json
 ```
 
+Для последующего использования Сохраните идентификатор ресурса для запуска конвейера в переменной среды:
+
+```azurecli
+EXPORT_RUN_RES_ID=$(az deployment group show \
+  --resource-group $SOURCE_RG \
+  --name exportPipelineRun \
+  --query 'properties.outputResources[0].id' \
+  --output tsv)
+```
+
 Экспорт артефактов может занять несколько минут. После успешного завершения развертывания проверьте экспорт артефактов, выполнив список экспортированного большого двоичного объекта в контейнере *перемещения* исходной учетной записи хранения. Например, выполните команду [AZ Storage BLOB List][az-storage-blob-list] :
 
 ```azurecli
 az storage blob list \
-  --account-name $SOURCE_SA
-  --container transfer
+  --account-name $SOURCE_SA \
+  --container transfer \
   --output table
 ```
 
@@ -300,11 +355,21 @@ az acr repository list --name <target-registry-name>
 ```azurecli
 az deployment group create \
   --resource-group $TARGET_RG \
+  --name importPipelineRun \
   --template-file azuredeploy.json \
   --parameters azuredeploy.parameters.json
 ```
 
-После успешного завершения развертывания проверьте импорт артефактов, выполнив список репозиториев в целевом реестре контейнеров. Например, выполните команду [AZ контроля доступа к репозиторию][az-acr-repository-list]:
+Для последующего использования Сохраните идентификатор ресурса для запуска конвейера в переменной среды:
+
+```azurecli
+IMPORT_RUN_RES_ID=$(az deployment group show \
+  --resource-group $TARGET_RG \
+  --name importPipelineRun \
+  --query 'properties.outputResources[0].id' \
+  --output tsv)
+
+When deployment completes successfully, verify artifact import by listing the repositories in the target container registry. For example, run [az acr repository list][az-acr-repository-list]:
 
 ```azurecli
 az acr repository list --name <target-registry-name>
@@ -329,20 +394,20 @@ az deployment group create \
 
 ## <a name="delete-pipeline-resources"></a>Удаление ресурсов конвейера
 
-Чтобы удалить ресурс конвейера, удалите его диспетчер ресурсов развертывание с помощью команды [AZ Deployment Group Delete][az-deployment-group-delete] . В следующих примерах удаляются ресурсы конвейера, созданные в этой статье:
+В следующих примерах команд Команда [AZ Resource Delete][az-resource-delete] используется для удаления ресурсов конвейера, созданных в этой статье. Идентификаторы ресурсов ранее хранились в переменных среды.
 
-```azurecli
-az deployment group delete \
-  --resource-group $SOURCE_RG \
-  --name exportPipeline
+```
+# Delete export resources
+az resource delete \
+--resource-group $SOURCE_RG \
+--ids $EXPORT_RES_ID $EXPORT_RUN_RES_ID \
+--api-version 2019-12-01-preview
 
-az deployment group delete \
-  --resource-group $SOURCE_RG \
-  --name exportPipelineRun
-
-az deployment group delete \
-  --resource-group $TARGET_RG \
-  --name importPipeline  
+# Delete import resources
+az resource delete \
+--resource-group $TARGET_RG \
+--ids $IMPORT_RES_ID $IMPORT_RUN_RES_ID \
+--api-version 2019-12-01-preview
 ```
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -374,8 +439,6 @@ az deployment group delete \
 
 <!-- LINKS - Internal -->
 [azure-cli]: /cli/azure/install-azure-cli
-[az-identity-create]: /cli/azure/identity#az-identity-create
-[az-identity-show]: /cli/azure/identity#az-identity-show
 [az-login]: /cli/azure/reference-index#az-login
 [az-keyvault-secret-set]: /cli/azure/keyvault/secret#az-keyvault-secret-set
 [az-keyvault-secret-show]: /cli/azure/keyvault/secret#az-keyvault-secret-show
@@ -387,3 +450,4 @@ az deployment group delete \
 [az-deployment-group-show]: /cli/azure/deployment/group#az-deployment-group-show
 [az-acr-repository-list]: /cli/azure/acr/repository#az-acr-repository-list
 [az-acr-import]: /cli/azure/acr#az-acr-import
+[az-resource-delete]: /cli/azure/resource#az-resource-delete

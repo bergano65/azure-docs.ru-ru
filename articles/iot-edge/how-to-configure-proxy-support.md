@@ -10,12 +10,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - contperfq1
-ms.openlocfilehash: e6c85ba79c21c9a8120feebc02477506eb93d2e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8d5e5e6cc77c7fe1d32f0834831ef1b930ee834d
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89500374"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91966174"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -25,7 +25,7 @@ ms.locfileid: "89500374"
 
 1. [**Установка среды выполнения IoT Edge на устройстве**](#install-the-runtime-through-a-proxy)
 
-   IoT Edge сценарии установки запрашивают пакеты и файлы из Интернета, поэтому устройство должно взаимодействовать через прокси-сервер для выполнения этих запросов. Для устройств Windows сценарий установки также предоставляет возможность [автономной установки](how-to-install-iot-edge-windows.md#offline-or-specific-version-installation) .
+   IoT Edge сценарии установки запрашивают пакеты и файлы из Интернета, поэтому устройство должно взаимодействовать через прокси-сервер для выполнения этих запросов. Для устройств Windows сценарий установки также предоставляет возможность автономной установки.
 
    Этот шаг является одноразовым процессом настройки устройства IoT Edge при его первой настройке. При обновлении среды выполнения IoT Edge также требуются те же подключения.
 
@@ -65,7 +65,7 @@ URL-адрес прокси-сервера имеет такой формат: *
 
 ### <a name="linux-devices"></a>Устройства Linux
 
-При установке среды выполнения IoT Edge на устройстве Linux настройте в диспетчере пакетов прохождение через прокси-сервер для доступа к пакету установки. Например, [настройте apt-get для использования прокси-сервера HTTP](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). После настройки диспетчера пакетов следуйте инструкциям в [статье Установка среды выполнения Azure IOT EDGE в Linux](how-to-install-iot-edge-linux.md) в обычном режиме.
+При установке среды выполнения IoT Edge на устройстве Linux настройте в диспетчере пакетов прохождение через прокси-сервер для доступа к пакету установки. Например, [настройте apt-get для использования прокси-сервера HTTP](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). После настройки диспетчера пакетов следуйте инструкциям в разделе [Установка среды выполнения Azure IOT Edge](how-to-install-iot-edge.md) как обычно.
 
 ### <a name="windows-devices"></a>Устройства Windows
 
@@ -85,7 +85,7 @@ URL-адрес прокси-сервера имеет такой формат: *
    . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
    ```
 
-Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например,
+Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например, примененная к объекту директива
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
@@ -93,7 +93,7 @@ $proxyCredential = (Get-Credential).GetNetworkCredential()
 Deploy-IoTEdge -InvokeWebRequestParameters @{ '-Proxy' = '<proxy URL>'; '-ProxyCredential' = $proxyCredential }
 ```
 
-Дополнительные сведения о параметрах прокси-сервера см. в статье [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest). Дополнительные сведения о параметрах установки Windows, включая автономную установку, см. [в разделе Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md).
+Дополнительные сведения о параметрах прокси-сервера см. в статье [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest). Дополнительные сведения о параметрах установки Windows см. [в статье сценарии PowerShell для IOT EDGE в Windows](reference-windows-scripts.md).
 
 ## <a name="configure-the-daemons"></a>Настройка управляющих программ
 
@@ -271,7 +271,7 @@ Restart-Service iotedge
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о ролях см. в статье о [среде выполнения IoT Edge](iot-edge-runtime.md).
 

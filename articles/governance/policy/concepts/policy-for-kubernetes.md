@@ -3,12 +3,12 @@ title: Сведения о политике Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде.
 ms.date: 09/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 67c6af4842ea1f404468497930b08c36ecd1abb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3478a98ef98001ee8a2e3bb502bf289ed52285e7
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540257"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951542"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Общие сведения о политике Azure для кластеров Kubernetes
 
@@ -57,6 +57,7 @@ ms.locfileid: "91540257"
 - Установки привратника вне надстройки политики Azure не поддерживаются. Перед включением надстройки политики Azure удалите все компоненты, установленные предыдущей установкой привратника.
 - [Reasons for non-compliance](../how-to/determine-non-compliance.md#compliance-reasons) В `Microsoft.Kubernetes.Data` 
    [режиме поставщика ресурсов](./definition-structure.md#resource-provider-modes)не предусмотрены причины несоответствия требованиям. Используйте [сведения о компоненте](../how-to/determine-non-compliance.md#component-details-for-resource-provider-modes).
+- [Исключения](./exemption-structure.md) не поддерживаются для [режимов поставщика ресурсов](./definition-structure.md#resource-provider-modes).
 
 Следующие ограничения применяются только к надстройке политики Azure для AKS:
 
