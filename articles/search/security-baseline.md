@@ -7,22 +7,22 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b2dea32163fbb2827daed616087c893631429aea
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 0709152631037e7561094082c8ce02b860fd4edc
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91400866"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951565"
 ---
 # <a name="azure-security-baseline-for-azure-cognitive-search"></a>Базовый план безопасности Azure для Azure Когнитивный поиск
 
-Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](https://docs.microsoft.com/azure/security/benchmarks/overview) к Azure когнитивный Поиск. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в средстве оценки безопасности Azure, и связанным рекомендациям, применимым к Azure когнитивный Поиск. **Элементы управления** , неприменимые к Azure когнитивный Поиск, или клиенты были исключены.
+Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](../security/benchmarks/overview.md) к Azure когнитивный Поиск. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **элементам управления безопасностью** , определенным в средстве оценки безопасности Azure, и связанным рекомендациям, применимым к Azure когнитивный Поиск. **Элементы управления** , неприменимые к Azure когнитивный Поиск, или клиенты были исключены.
 
 Сведения о том, как Azure Когнитивный поиск полностью сопоставляется с тестовым уровнем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности azure когнитивный Поиск](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
@@ -30,9 +30,9 @@ ms.locfileid: "91400866"
 
 Когнитивный поиск также поддерживает дополнительные функции сетевой безопасности для управления списками управления доступом к сети. Настройте службу поиска, разрешающую обмен данными только с надежными источниками путем ограничения доступа из определенных диапазонов общедоступных IP-адресов с помощью возможности брандмауэра.
 
-- [Как настроить частные конечные точки для Azure Когнитивный поиск](https://docs.microsoft.com/azure/search/service-create-private-endpoint)
+- [Как настроить частные конечные точки для Azure Когнитивный поиск](./service-create-private-endpoint.md)
 
-- [Настройка брандмауэра Azure Когнитивный поиск](https://docs.microsoft.com/azure/search/service-configure-firewall)
+- [Настройка брандмауэра Azure Когнитивный поиск](./service-configure-firewall.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -42,11 +42,11 @@ ms.locfileid: "91400866"
 
 **Руководство**. когнитивный Поиск не может быть развернуто непосредственно в виртуальной сети. Однако если клиентское приложение или источники данных находятся в виртуальной сети, вы можете отслеживать и записывать трафик для этих сетевых компонентов, включая запросы, отправленные в службу поиска в облаке. К стандартным рекомендациям относится включение журнала потоков для групп безопасности сети и отправка журналов в хранилище Azure или в рабочую область Log Analytics. При необходимости можно использовать Аналитика трафика для анализа закономерностей трафика.
 
-- [Включение журналов потоков для групп безопасности сети](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+- [Включение журналов потоков для групп безопасности сети](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-- [Как включить и использовать Аналитика трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+- [Как включить и использовать Аналитика трафика](../network-watcher/traffic-analytics.md)
 
-- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../security-center/security-center-network-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -64,7 +64,7 @@ ms.locfileid: "91400866"
 
 **Руководство**. когнитивный Поиск не предоставляет конкретную функцию для борьбы с атаками типа "отказ в обслуживании", но вы можете включить стандарт защиты от атак DDoS для виртуальных сетей, связанных со службой когнитивный Поиск, для общей защиты.
 
-- [Настройка защиты от атак DDoS](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+- [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -76,9 +76,9 @@ ms.locfileid: "91400866"
 
 Включите запись пакетов наблюдателя за сетями, если это необходимо для изучения аномальных действий.
 
-- [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+- [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-- [Как включить Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+- [Как включить Наблюдатель за сетями](../network-watcher/network-watcher-create.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -88,9 +88,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. когнитивный Поиск не поддерживает обнаружение проникновения в сеть, но в качестве защиты от вторжения можно настроить правила брандмауэра, чтобы указать IP-адреса, принимаемые службой когнитивный Поиск. Настройте закрытую конечную точку для сохранения трафика поиска из общедоступного Интернета.
 
-- [Настройка ключей, управляемых клиентом, для шифрования данных](https://docs.microsoft.com/azure/search/search-security-manage-encryption-keys)
+- [Настройка ключей, управляемых клиентом, для шифрования данных](./search-security-manage-encryption-keys.md)
 
-- [Получение сведений о ключах, управляемых клиентом, из индексов и карт синонимов](https://docs.microsoft.com/azure/search/search-security-get-encryption-keys)
+- [Получение сведений о ключах, управляемых клиентом, из индексов и карт синонимов](./search-security-get-encryption-keys.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -110,7 +110,7 @@ ms.locfileid: "91400866"
 
 Разрешение или запрет трафика для ресурсов путем указания имени тега службы (например, Азурекогнитивесеарч) в соответствующем исходном или целевом поле правила. 
 
-- [Теги службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+- [Теги службы виртуальной сети](../virtual-network/service-tags-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -132,13 +132,13 @@ ms.locfileid: "91400866"
 
 Для поиска или выполнения действий с ресурсами на основе их тегов можно использовать Azure PowerShell или Azure CLI. 
 
-- [Создание частной конечной точки для Когнитивный поиск](https://docs.microsoft.com/azure/search/service-create-private-endpoint)
+- [Создание частной конечной точки для Когнитивный поиск](./service-create-private-endpoint.md)
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-- [Создание виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+- [Создание виртуальной сети Azure](../virtual-network/quick-create-portal.md)
 
-- [Фильтрация сетевого трафика с помощью правил группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+- [Фильтрация сетевого трафика с помощью правил группы безопасности сети](../virtual-network/tutorial-filter-network-traffic.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -154,7 +154,7 @@ ms.locfileid: "91400866"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [производительность системы безопасности Azure: ведение журнала и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [производительность системы безопасности Azure: ведение журнала и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
@@ -171,9 +171,9 @@ ms.locfileid: "91400866"
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -183,9 +183,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. диагностические и операционные журналы предоставляют подробные сведения об операциях когнитивный Поиск и полезны для мониторинга службы и для рабочих нагрузок, обращающихся к службе.  Для сбора диагностических данных Включите ведение журнала, указав, где хранятся сведения о ведении журнала.
 
-- [Получение и анализ данных журнала для Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-monitor-logs)
+- [Получение и анализ данных журнала для Когнитивный поиск Azure](./search-monitor-logs.md)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -205,9 +205,9 @@ ms.locfileid: "91400866"
 
 В Azure Monitor задайте срок хранения Log Analytics рабочей области согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения. 
 
-- [Изменение срока хранения данных в Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+- [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Настройка политики хранения для журналов учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
+- [Настройка политики хранения для журналов учетных записей хранения Azure](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -217,15 +217,15 @@ ms.locfileid: "91400866"
 
 **Руководство**. анализ и мониторинг журналов из службы когнитивный Поиск для аномального поведения. Используйте аналитику журналов Azure Monitor для просмотра журналов и выполнения запросов к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-- [Получение и анализ данных журнала для Когнитивный поиск](https://docs.microsoft.com/azure/search/search-monitor-logs)
+- [Получение и анализ данных журнала для Когнитивный поиск](./search-monitor-logs.md)
 
-- [Визуализация данных журнала поиска в Power BI](https://docs.microsoft.com/azure/search/search-monitor-logs-powerbi)
+- [Визуализация данных журнала поиска в Power BI](./search-monitor-logs-powerbi.md)
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [См. дополнительные сведения о Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+- [См. дополнительные сведения о Log Analytics](../azure-monitor/log-query/get-started-portal.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -235,11 +235,11 @@ ms.locfileid: "91400866"
 
 **Руководство**. Использование центра безопасности с рабочей областью log Analytics для мониторинга и оповещения о аномальных действиях, обнаруженных в журналах и событиях безопасности. Кроме того, вы можете включить и подключить данные в Azure Sentinel.
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+- [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -271,7 +271,7 @@ ms.locfileid: "91400866"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: идентификация и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: идентификация и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
@@ -279,12 +279,12 @@ ms.locfileid: "91400866"
 
 Роли Когнитивный поиск связаны с разрешениями, поддерживающими задачи управления уровнями обслуживания.  Эти роли не предоставляют доступ к конечной точке службы. Доступ к операциям с конечной точкой (например, Управление индексами, заполнение индекса и запросы к данным поиска) с помощью ключей API для проверки подлинности запроса.
 
-- [Задание ролей для административного доступа к Azure Когнитивный поиск](https://docs.microsoft.com/azure/search/search-security-rbac)
+- [Задание ролей для административного доступа к Azure Когнитивный поиск](./search-security-rbac.md)
 
-- [Создание ключей API для службы Когнитивный поиск Azure и управление ими](https://docs.microsoft.com/azure/search/search-security-api-keys)
+- [Создание ключей API для службы Когнитивный поиск Azure и управление ими](./search-security-api-keys.md)
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -304,9 +304,9 @@ ms.locfileid: "91400866"
 
 Используйте встроенные роли Azure AD, которые должны быть явно назначены для операций управления. Вызовите модуль Azure AD PowerShell, чтобы выполнять нерегламентированные запросы для обнаружения учетных записей, входящих в группы администраторов.
 
-- [Использование ролей для административного доступа в Когнитивный поиск](https://docs.microsoft.com/azure/search/search-security-rbac)
+- [Использование ролей для административного доступа в Когнитивный поиск](./search-security-rbac.md)
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -318,7 +318,7 @@ ms.locfileid: "91400866"
 
 Создайте процесс уменьшения количества удостоверений и учетных данных, включив единый вход для службы с существующими удостоверениями вашей организации.
 
-- [Общие сведения об использовании единого входа в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+- [Общие сведения об использовании единого входа в Azure AD](../active-directory/manage-apps/what-is-single-sign-on.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -328,9 +328,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. Включение функции многофакторной идентификации (MFA) Azure Active Directory (Azure AD) и соблюдение рекомендаций по удостоверениям и доступу для центра безопасности.
 
-- [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted) 
+- [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md) 
 
-- [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access) 
+- [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -340,10 +340,10 @@ ms.locfileid: "91400866"
 
 **Руководство**. Используйте рабочую станцию привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации (MFA), настроенной для входа в ресурсы Azure и получения доступа к ним.
 
-- [Общие сведения о защищенных рабочих станциях под управлением Azure](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-managed-workstation)
+- [Общие сведения о защищенных рабочих станциях под управлением Azure](../active-directory/devices/concept-azure-managed-workstation.md)
  
 
-- [Как включить Azure AD MFA](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+- [Как включить Azure AD MFA](../active-directory/authentication/howto-mfa-getstarted.md)
  
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
@@ -354,9 +354,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) отчетов о безопасности и мониторинга для обнаружения подозрительных или ненадежных действий в среде. Используйте центр безопасности для мониторинга активности удостоверений и доступа.
 
-- [Как определить пользователей Azure AD, помеченных для события риска](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk)
+- [Как определить пользователей Azure AD, помеченных для события риска](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+- [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -374,9 +374,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве центральной системы проверки подлинности и авторизации для задач управления уровнями обслуживания в Azure когнитивный Поиск. Удостоверения Azure AD не предоставляют доступ к конечной точке службы поиска.  Доступ к операциям, таким как управление индексами, заполнение индекса и запросы к данным поиска, осуществляется через ключи API.
 
-- [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
-- [Создание ключей API для службы Когнитивный поиск Azure и управление ими](https://docs.microsoft.com/azure/search/search-security-api-keys)
+- [Создание ключей API для службы Когнитивный поиск Azure и управление ими](./search-security-api-keys.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -388,11 +388,11 @@ ms.locfileid: "91400866"
 
 Проверьте журналы диагностики от Когнитивный поиск для действий в конечной точке службы поиска, таких как управление индексами, заполнение индекса и запросы.
 
-- [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-- [Как использовать проверки подлинности и доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+- [Как использовать проверки подлинности и доступа Azure AD](../active-directory/governance/access-reviews-overview.md)
 
-- [Мониторинг операций и активности Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-monitor-usage)
+- [Мониторинг операций и активности Когнитивный поиск Azure](./search-monitor-usage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -404,7 +404,7 @@ ms.locfileid: "91400866"
 
 Оптимизируйте этот процесс, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Настройте нужные оповещения в Log Analytics рабочей области.
 
-- [Как интегрировать журналы действий Azure с Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics) 
+- [Как интегрировать журналы действий Azure с Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md) 
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -414,11 +414,11 @@ ms.locfileid: "91400866"
 
 **Руководство**. Использование функций защиты идентификации Azure Active Directory (Azure AD) для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Прием данных в метку Azure для дальнейшего изучения по мере необходимости.
 
-- [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins) 
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md) 
 
-- [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies) 
+- [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md) 
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard) 
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -434,7 +434,7 @@ ms.locfileid: "91400866"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
@@ -448,11 +448,11 @@ ms.locfileid: "91400866"
 
 **Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Ресурсы должны быть разделены виртуальной сетью или подсетью, помечены соответствующим образом и защищены в рамках группы безопасности сети или брандмауэра Azure. Ресурсы, которые хранят или обрабатывают конфиденциальные данные, должны быть изолированы. Используйте ссылку частная, чтобы настроить закрытую конечную точку для Когнитивный поиск.
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription) 
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md) 
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-- [Создание частной конечной точки для Когнитивный поиск](https://docs.microsoft.com/azure/search/service-create-private-endpoint)
+- [Создание частной конечной точки для Когнитивный поиск](./service-create-private-endpoint.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -464,7 +464,7 @@ ms.locfileid: "91400866"
 
 Корпорация Майкрософт управляет базовой платформой и рассматривает все содержимое клиента как конфиденциальные и защищает от потери и доступности данных клиентов. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data) 
+- [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -474,7 +474,7 @@ ms.locfileid: "91400866"
 
 **Руководство**. когнитивный Поиск шифрует данные при передаче с помощью протокола TLS 1,2 и обеспечивает шифрование (SSL/TLS) в любое время для всех подключений. Это гарантирует, что все данные шифруются "при передаче" между клиентом и службой.
 
-- [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit) 
+- [Общие сведения о шифровании при передаче с помощью Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -486,7 +486,7 @@ ms.locfileid: "91400866"
 
 Корпорация Майкрософт управляет базовой платформой и рассматривает все содержимое клиента как конфиденциальные и защищает от потери и доступности данных клиентов. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -495,10 +495,10 @@ ms.locfileid: "91400866"
 ### <a name="46-use-azure-rbac-to-manage-access-to-resources"></a>4,6. Использование Azure RBAC для управления доступом к ресурсам
 
 **Руководство**. для администрирования служб используйте управление доступом на основе ролей Azure (Azure RBAC) для управления доступом к ключам и конфигурации. Для операций с содержимым, таких как индексирование и запросы, Когнитивный поиск использует ключи вместо модели управления доступом на основе удостоверений. Используйте Azure RBAC для управления доступом к ключам.
-- [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) 
+- [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md) 
 
  
-- [Использование ролей для административного доступа к Когнитивный поиск](https://docs.microsoft.com/azure/search/search-security-rbac)
+- [Использование ролей для административного доступа к Когнитивный поиск](./search-security-rbac.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -510,7 +510,7 @@ ms.locfileid: "91400866"
 
 Майкрософт управляет базовой инфраструктурой для Когнитивный поиск и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+- [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -520,9 +520,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. когнитивный Поиск автоматически шифрует индексируемое содержимое при хранении с помощью ключей, управляемых корпорацией Майкрософт. Если требуется дополнительная защита, можно дополнить шифрование по умолчанию на второй уровень шифрования с помощью ключей, которые вы создаете и управляете в Azure Key Vault.
 
-- [Настройка ключей, управляемых клиентом, для шифрования данных в Azure Когнитивный поиск](https://docs.microsoft.com/azure/search/search-security-manage-encryption-keys)
+- [Настройка ключей, управляемых клиентом, для шифрования данных в Azure Когнитивный поиск](./search-security-manage-encryption-keys.md)
 
-- [Общие сведения о шифровании неактивных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
+- [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md)
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
@@ -532,9 +532,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах когнитивный Поиск и других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
-- [Создание оповещений для действий Когнитивный поиск](https://docs.microsoft.com/azure/search/search-monitor-logs)
+- [Создание оповещений для действий Когнитивный поиск](./search-monitor-logs.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -542,7 +542,7 @@ ms.locfileid: "91400866"
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Управление уязвимостью](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Управление уязвимостью](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
@@ -586,7 +586,7 @@ ms.locfileid: "91400866"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Инвентаризация и управление активами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Инвентаризация и управление активами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
@@ -594,11 +594,11 @@ ms.locfileid: "91400866"
 
 Обеспечьте соответствующие разрешения (чтение) в клиенте и перечислите все подписки Azure, а также ресурсы в подписках.  
 
-- [Создание запросов с помощью обозревателя графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal) 
+- [Создание запросов с помощью обозревателя графа ресурсов Azure](../governance/resource-graph/first-query-portal.md) 
 
-- [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0) 
+- [Просмотр подписок Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0) 
 
-- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+- [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -608,7 +608,7 @@ ms.locfileid: "91400866"
 
 **Руководство**. применение тегов к ресурсам Azure с помощью метаданных для логической организации их в таксономию.
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -617,11 +617,11 @@ ms.locfileid: "91400866"
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
 **Рекомендации**. Используйте теги, группы управления и отдельные подписки, если это необходимо, для Организации и мониторинга ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription) 
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md) 
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create) 
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md) 
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags) 
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -639,9 +639,9 @@ ms.locfileid: "91400866"
 
 **Руководство**. рекомендуется определить инвентаризацию ресурсов Azure, которые были утверждены для использования согласно политикам организации и стандартам, а затем отслеживать неутвержденные ресурсы Azure с помощью политики Azure или графа ресурсов Azure.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage) 
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md) 
 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal) 
+- [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -682,9 +682,9 @@ ms.locfileid: "91400866"
 
 Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage) 
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md) 
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types) 
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md) 
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -726,7 +726,7 @@ ms.locfileid: "91400866"
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
@@ -738,9 +738,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 Вы также можете использовать рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для ресурсов Azure. 
 
-- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](https://docs.microsoft.com/azure/search/security-controls-policy)
+- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](./security-controls-policy.md)
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -760,13 +760,13 @@ Azure Resource Manager может экспортировать шаблон в �
 
 Шаблоны Azure Resource Manager можно использовать для поддержания конфигурации безопасности ресурсов Azure, необходимых вашей организации. 
 
-- [Общие сведения о влиянии политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+- [Общие сведения о влиянии политики Azure](../governance/policy/concepts/effects.md)
 
-- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](https://docs.microsoft.com/azure/search/security-controls-policy)
+- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](./security-controls-policy.md)
 
-- [Создание политик и управление ими для обеспечения соответствия](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Создание политик и управление ими для обеспечения соответствия](../governance/policy/tutorials/create-and-manage.md)
 
-- [Общие сведения о шаблонах Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview)
+- [Общие сведения о шаблонах Azure Resource Manager](../azure-resource-manager/templates/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -784,9 +784,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index)
+- [Документация по Azure Repos](/azure/devops/repos/index)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -808,9 +808,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 Кроме того, службу автоматизации Azure можно использовать для развертывания изменений конфигурации и управления исключениями политик. 
 
-- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](https://docs.microsoft.com/azure/search/security-controls-policy)
+- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](./security-controls-policy.md)
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -828,9 +828,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. Использование центра безопасности для выполнения проверок базовых ресурсов службы когнитивный Поиск.  Кроме того, используйте политику Azure для оповещения и аудита конфигураций ресурсов. 
 
-- [Как исправить рекомендации в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations)
+- [Как исправить рекомендации в центре безопасности Azure](../security-center/security-center-remediate-recommendations.md)
 
-- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](https://docs.microsoft.com/azure/search/security-controls-policy)
+- [Элементы управления соответствием Политики Azure для Когнитивного поиска Azure](./security-controls-policy.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -847,10 +847,10 @@ Azure Resource Manager может экспортировать шаблон в �
 ### <a name="711-manage-azure-secrets-securely"></a>7.11: Безопасное управление секретами Azure
 
 **Руководство**. Использование управляемых удостоверений Azure в сочетании с Azure Key Vault для упрощения управления секретами в облачных приложениях.
-- [Использование управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity) 
-- [Создание Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal) 
+- [Использование управляемых удостоверений для ресурсов Azure](../azure-app-configuration/howto-integrate-azure-managed-service-identity.md) 
+- [Создание Key Vault](../key-vault/secrets/quick-create-portal.md) 
 
-- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](https://docs.microsoft.com/azure/key-vault/managed-identity) 
+- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/assign-access-policy-portal.md) 
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -860,9 +860,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. использование управляемого удостоверения Azure для предоставления когнитивный Поиск доступа к другим службам Azure, таким как key Vault и источники данных индексатора, с помощью автоматически управляемого удостоверения в Azure Active Directory (Azure AD). Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Azure Key Vault без каких бы то ни было учетных данных в коде. 
 
-- [Настройка соединения индексатора с источником данных с помощью управляемого удостоверения](https://docs.microsoft.com/azure/search/search-howto-managed-identities-data-sources)
+- [Настройка соединения индексатора с источником данных с помощью управляемого удостоверения](./search-howto-managed-identities-data-sources.md)
 
-- [Настройка ключей, управляемых клиентом, для шифрования данных с помощью управляемого удостоверения](https://docs.microsoft.com/azure/search/search-security-manage-encryption-keys#3---create-a-service-identity)
+- [Настройка ключей, управляемых клиентом, для шифрования данных с помощью управляемого удостоверения](./search-security-manage-encryption-keys.md#3---create-a-service-identity)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -878,7 +878,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-antimalware-software"></a>8,1. Использование централизованно управляемого антивредоносного по
 
@@ -912,7 +912,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
@@ -928,9 +928,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. когнитивный Поиск в настоящее время не поддерживает автоматическое резервное копирование данных в службе поиска. их необходимо архивировать с помощью ручного процесса.  Вы также можете архивировать ключи, управляемые клиентом, в Azure Key Vault. 
 
-- [Резервное копирование и восстановление индекса Azure Когнитивный поиск](https://docs.microsoft.com/samples/azure-samples/azure-search-dotnet-samples/azure-search-backup-restore-index/)
+- [Резервное копирование и восстановление индекса Azure Когнитивный поиск](/samples/azure-samples/azure-search-dotnet-samples/azure-search-backup-restore-index/)
 
-- [Резервное копирование ключей Key Vault в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Резервное копирование ключей Key Vault в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -940,9 +940,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. когнитивный Поиск в настоящее время не поддерживает автоматическое резервное копирование данных в службе поиска. их необходимо архивировать и восстанавливать с помощью ручного процесса.  Периодически осуществляйте восстановление данных, резервное копирование которых выполнено вручную, чтобы обеспечить сквозную целостность процесса резервного копирования.
 
-- [Резервное копирование и восстановление индекса Azure Когнитивный поиск](https://docs.microsoft.com/samples/azure-samples/azure-search-dotnet-samples/azure-search-backup-restore-index/)
+- [Резервное копирование и восстановление индекса Azure Когнитивный поиск](/samples/azure-samples/azure-search-dotnet-samples/azure-search-backup-restore-index/)
 
-- [Восстановление ключей Key Vault в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Восстановление ключей Key Vault в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -954,11 +954,11 @@ Azure Resource Manager может экспортировать шаблон в �
 
 Включите обратимое удаление и очистку защиты в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления. Если хранилище Azure используется для хранения резервных копий вручную, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
 
-- [Резервное копирование и восстановление индекса Azure Когнитивный поиск](https://docs.microsoft.com/samples/azure-samples/azure-search-dotnet-samples/azure-search-backup-restore-index/)
+- [Резервное копирование и восстановление индекса Azure Когнитивный поиск](/samples/azure-samples/azure-search-dotnet-samples/azure-search-backup-restore-index/)
 
-- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение обратимого удаления и очистки защиты в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
-- [Обратимое удаление для хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Обратимое удаление для хранилища BLOB-объектов Azure](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -966,7 +966,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
@@ -988,9 +988,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 Кроме того, Пометьте подписки с помощью тегов и создайте систему именования для обнаружения и классификации ресурсов Azure, особенно для обработки конфиденциальных данных. Ответственность за исправление предупреждений в зависимости от степени важности ресурсов и среды Azure, в которых произошел инцидент, лежит на вашем уровне.
 
-- [Упорядочение ресурсов Azure с помощью тегов](https://docs.microsoft.com/azure/azure-resource-manager/management/tag-resources)
+- [Упорядочение ресурсов Azure с помощью тегов](../azure-resource-manager/management/tag-resources.md)
 
-- [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+- [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1010,7 +1010,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-- [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+- [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1020,9 +1020,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. Экспорт оповещений и рекомендаций центра безопасности с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации либо на постоянной основе, либо вручную. Соединитель данных центра безопасности можно использовать для потоковой передачи оповещений в Azure Sentinel.
 
-- [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+- [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
-- [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+- [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1032,7 +1032,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 **Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
 
-- [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+- [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1040,7 +1040,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [тесты производительности системы безопасности Azure: испытания на проникновение и команды красных команд](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [тесты производительности системы безопасности Azure: испытания на проникновение и команды красных команд](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -1054,5 +1054,5 @@ Azure Resource Manager может экспортировать шаблон в �
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

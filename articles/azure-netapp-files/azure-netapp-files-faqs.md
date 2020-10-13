@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: 2a64e595f0ea07510f416be56a54a3c74294b95d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa33106f200b2edb3b710c6b0e08208bd4da8ace
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653627"
+ms.locfileid: "91932266"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -31,13 +31,13 @@ ms.locfileid: "91653627"
 
 Нет. Путь к данным NFS не переходит через Интернет. Azure NetApp Files — это собственная служба Azure, которая развертывается в виртуальной сети Azure (VNet), где доступна эта служба. Azure NetApp Files использует делегированную подсеть и подготавливает сетевой интерфейс непосредственно в виртуальной сети. 
 
-Дополнительные сведения см. [в разделе рекомендации по Azure NetApp Files планировании сети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) .  
+Дополнительные сведения см. [в разделе рекомендации по Azure NetApp Files планировании сети](./azure-netapp-files-network-topologies.md) .  
 
 ### <a name="can-i-connect-a-vnet-that-i-already-created-to-the-azure-netapp-files-service"></a>Можно ли подключить уже созданную виртуальную сеть к службе Azure NetApp Files?
 
 Да, можно подключить виртуальных сетей, созданный вами к службе. 
 
-Дополнительные сведения см. [в разделе рекомендации по Azure NetApp Files планировании сети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) .  
+Дополнительные сведения см. [в разделе рекомендации по Azure NetApp Files планировании сети](./azure-netapp-files-network-topologies.md) .  
 
 ### <a name="can-i-mount-an-nfs-volume-of-azure-netapp-files-using-dns-fqdn-name"></a>Можно ли подключить том NFS Azure NetApp Files, используя полное доменное имя DNS?
 
@@ -146,7 +146,7 @@ Azure NetApp Files поддерживает SMB 2,1 и SMB 3,1 (включая �
 
 ### <a name="is-an-active-directory-connection-required-for-smb-access"></a>Требуется Active Directoryое подключение для доступа по протоколу SMB? 
 
-Да, перед развертыванием тома SMB необходимо создать подключение Active Directory. Для успешного подключения указанные контроллеры домена должны быть доступны для делегированной подсети Azure NetApp Files.  Дополнительные сведения см. [в разделе Создание тома SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb) . 
+Да, перед развертыванием тома SMB необходимо создать подключение Active Directory. Для успешного подключения указанные контроллеры домена должны быть доступны для делегированной подсети Azure NetApp Files.  Дополнительные сведения см. [в разделе Создание тома SMB](./azure-netapp-files-create-volumes-smb.md) . 
 
 ### <a name="how-many-active-directory-connections-are-supported"></a>Сколько Active Directory подключений поддерживается?
 
@@ -156,7 +156,7 @@ Azure NetApp Files не поддерживает множественные по
 
 ### <a name="does-azure-netapp-files-support-azure-active-directory"></a>Поддерживает ли Azure NetApp Files Azure Active Directory? 
 
-Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут размещаться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В настоящее время Azure NetApp Files не поддерживает присоединение к AD для [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) .
+Поддерживаются [службы доменов Azure Active Directory (AD)](../active-directory-domain-services/overview.md) и [домен Active Directory Services (AD DS)](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут размещаться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В настоящее время Azure NetApp Files не поддерживает присоединение к AD для [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) .
 
 При использовании Azure NetApp Files с доменными службами Azure Active Directory путь подразделения при настройке Active Directory для учетной записи NetApp будет `OU=AADDC Computers`.
 
@@ -171,7 +171,7 @@ Azure NetApp Files поддерживает версии домен Active Direc
 <!--
 ### Does Azure NetApp Files support LDAP signing? 
 
-Yes, Azure NetApp Files supports LDAP signing by default. This functionality enables secure LDAP lookups between the Azure NetApp Files service and the user-specified [Active Directory Domain Services domain controllers](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). For more information, see [ADV190023 | Microsoft Guidance for Enabling LDAP Channel Binding and LDAP Signing](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).
+Yes, Azure NetApp Files supports LDAP signing by default. This functionality enables secure LDAP lookups between the Azure NetApp Files service and the user-specified [Active Directory Domain Services domain controllers](/windows/win32/ad/active-directory-domain-services). For more information, see [ADV190023 | Microsoft Guidance for Enabling LDAP Channel Binding and LDAP Signing](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).
 --> 
 
 ## <a name="dual-protocol-faqs"></a>Вопросы и ответы по двойным протоколам
@@ -224,7 +224,7 @@ Azure NetApp Files предоставляет тома NFS и SMB.  Для пе�
 
 NetApp предлагает решение на основе SaaS, [NetApp облачную синхронизацию](https://cloud.netapp.com/cloud-sync-service).  Решение позволяет реплицировать данные NFS или SMB в Azure NetApp Files экспорта NFS или общих ресурсах SMB. 
 
-Можно также использовать широкий набор бесплатных средств для копирования данных. Для NFS можно использовать средства рабочих нагрузок, такие как [rsync](https://rsync.samba.org/examples.html) , для копирования и синхронизации исходных данных в том Azure NetApp Files. Для SMB можно использовать рабочие нагрузки с помощью средства [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) аналогичным образом.  Эти средства также могут выполнять репликацию разрешений для файлов и папок. 
+Можно также использовать широкий набор бесплатных средств для копирования данных. Для NFS можно использовать средства рабочих нагрузок, такие как [rsync](https://rsync.samba.org/examples.html) , для копирования и синхронизации исходных данных в том Azure NetApp Files. Для SMB можно использовать рабочие нагрузки с помощью средства [Robocopy](/windows-server/administration/windows-commands/robocopy) аналогичным образом.  Эти средства также могут выполнять репликацию разрешений для файлов и папок. 
 
 Ниже приведены требования к переносу данных из локальной среды в Azure NetApp Files. 
 
@@ -239,7 +239,7 @@ Azure NetApp Files предоставляет тома NFS и SMB.  Любое �
 
 NetApp предлагает решение на основе SaaS, [NetApp облачную синхронизацию](https://cloud.netapp.com/cloud-sync-service).  Решение позволяет реплицировать данные NFS или SMB в Azure NetApp Files экспорта NFS или общих ресурсах SMB. 
 
-Можно также использовать широкий набор бесплатных средств для копирования данных. Для NFS можно использовать средства рабочих нагрузок, такие как [rsync](https://rsync.samba.org/examples.html) , для копирования и синхронизации исходных данных в том Azure NetApp Files. Для SMB можно использовать рабочие нагрузки с помощью средства [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) аналогичным образом.  Эти средства также могут выполнять репликацию разрешений для файлов и папок. 
+Можно также использовать широкий набор бесплатных средств для копирования данных. Для NFS можно использовать средства рабочих нагрузок, такие как [rsync](https://rsync.samba.org/examples.html) , для копирования и синхронизации исходных данных в том Azure NetApp Files. Для SMB можно использовать рабочие нагрузки с помощью средства [Robocopy](/windows-server/administration/windows-commands/robocopy) аналогичным образом.  Эти средства также могут выполнять репликацию разрешений для файлов и папок. 
 
 Ниже приведены требования к репликации Azure NetApp Files тома в другой регион Azure. 
 - Убедитесь, что Azure NetApp Files доступен в целевом регионе Azure.
@@ -257,8 +257,8 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 ## <a name="next-steps"></a>Дальнейшие шаги  
 
-- [Microsoft Azure ExpressRoute часто задаваемые вопросы](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
-- [Вопросы и ответы по виртуальная сеть Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq)
-- [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)
-- [Azure Data Box](https://docs.microsoft.com/azure/databox)
+- [Microsoft Azure ExpressRoute часто задаваемые вопросы](../expressroute/expressroute-faqs.md)
+- [Вопросы и ответы по виртуальная сеть Microsoft Azure](../virtual-network/virtual-networks-faq.md)
+- [Создание запроса на поддержку Azure](../azure-portal/supportability/how-to-create-azure-support-request.md)
+- [Azure Data Box](../databox/index.yml)
 - [Часто задаваемые вопросы о производительности SMB для Azure NetApp Files](azure-netapp-files-smb-performance.md)

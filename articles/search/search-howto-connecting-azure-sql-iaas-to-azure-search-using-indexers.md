@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: ec1e74c6a029ab0f8defc3ae783c9e974f387289
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: a13f78b6aa4fc3cb6f6777c76bc762ec565624fc
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88922979"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951321"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Когнитивный поиск Azure для SQL Server на виртуальной машине Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "88922979"
 Приведенные ниже ссылки содержат инструкции по настройке групп безопасности сети для развертывания виртуальной машины. Используйте эти инструкции для ACL для конечной точки Azure Когнитивный поиск в соответствии с ее IP-адресом.
 
 > [!NOTE]
-> Основные сведения см. в статье [Группа безопасности сети](../virtual-network/security-overview.md).
+> Основные сведения см. в статье [Группа безопасности сети](../virtual-network/network-security-groups-overview.md).
 > 
 > 
 

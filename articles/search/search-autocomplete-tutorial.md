@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: dac1a09b7984cdc8deca22ced1e8018a761979e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1796566c0a775e5810c387a01e0b54983727fa37
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91531621"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951406"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps"></a>Добавление автозаполнения и предложений в клиентские приложения
 
@@ -141,7 +141,7 @@ source: "/home/suggest?highlights=true&fuzzy=true&",
 
 Если вы используете C# и приложение MVC, файл **HomeController.CS** в каталоге Controllers — это место, где можно создать класс для предлагаемых результатов. В .NET функция предлагаю основана на [методе документсоператионсекстенсионс. предлагаю](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.suggest). Дополнительные сведения о пакете SDK для .NET см. в статье [использование когнитивный Поиск Azure из приложения .NET](./search-howto-dotnet-sdk.md).
 
-`InitSearch`Метод создает клиент индексов HTTP с проверкой подлинности в службе когнитивный Поиск Azure. Свойства класса [сугжестпараметерс](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggestparameters) определяют, какие поля ищутся и возвращаются в результатах, число совпадений и используется ли нечеткое сопоставление. 
+`InitSearch`Метод создает клиент индексов HTTP с проверкой подлинности в службе когнитивный Поиск Azure. Свойства класса [сугжестпараметерс](/dotnet/api/microsoft.azure.search.models.suggestparameters) определяют, какие поля ищутся и возвращаются в результатах, число совпадений и используется ли нечеткое сопоставление. 
 
 Для автозаполнения ограничение нечеткого сопоставления ограничено одним расстоянием правки (одним пропущенным или недопустимым символом). Обратите внимание, что нечеткие совпадения в запросах автозаполнения иногда могут привести к непредвиденным результатам в зависимости от размера индекса и его сегментирования. Дополнительные сведения см. в разделе [Основные понятия секционирования и сегментирования](search-capacity-planning.md#concepts-search-units-replicas-partitions-shards).
 
@@ -247,7 +247,7 @@ public ActionResult AutoComplete(string term)
 
 Эта функция автозавершения принимает входные данные с термином для поиска. Затем этот метод создает объект [AutoCompleteParameters](/rest/api/searchservice/autocomplete). Затем результат преобразуется в JSON, чтобы его можно было передать клиенту.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте эти ссылки для получения комплексных инструкций или кода, демонстрирующих возможности поиска как типов. Оба примера кода включают гибридные реализации предложений и автозаполнения вместе.
 

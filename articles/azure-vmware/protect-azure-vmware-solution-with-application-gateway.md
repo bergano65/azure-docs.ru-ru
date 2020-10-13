@@ -3,12 +3,12 @@ title: Использование шлюза приложений Azure для �
 description: Настройте шлюз приложений Azure, чтобы безопасно предоставлять веб-приложения, выполняющиеся в решении VMware для Azure.
 ms.topic: how-to
 ms.date: 07/31/2020
-ms.openlocfilehash: ad7cd36d77da41d75ea9dcc18a51d0ffc5540d2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b63b7348419500504cb45917d741cc17e2b8a622
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91580106"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91951457"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Использование шлюза приложений Azure для защиты веб-приложений в решении Azure VMware
 
@@ -201,4 +201,4 @@ ms.locfileid: "91580106"
 
 ## <a name="next-steps"></a>Next Steps
 
-Дополнительные примеры настройки см. в [документации по шлюзу приложений Azure](https://docs.microsoft.com/azure/application-gateway/) .
+Дополнительные примеры настройки см. в [документации по шлюзу приложений Azure](../application-gateway/index.yml) .
