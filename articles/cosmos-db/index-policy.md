@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: tisande
 ms.openlocfilehash: f9e1ff633f70e544a3cde579f1550d3fd708f269
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90089519"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexing policy in Azure Cosmos DB (Политики индексации в Azure Cosmos DB)
@@ -278,7 +278,7 @@ SELECT * FROM c WHERE c.name = "John", c.age = 18 ORDER BY c.name, c.age, c.time
 
 ## <a name="indexing-policies-and-ttl"></a>Политики индексирования и TTL
 
-Для использования [функции срока жизни (TTL)](time-to-live.md) требуется индексирование. Это означает следующее.
+Для использования [функции срока жизни (TTL)](time-to-live.md) требуется индексирование. Это означает следующее:
 
 - невозможно активировать TTL для контейнера, в котором для режима индексирования задано значение None,
 - невозможно задать для режима индексирования значение None в контейнере, где активирован TTL.

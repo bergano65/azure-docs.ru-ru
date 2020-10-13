@@ -16,17 +16,17 @@ ms.date: 05/06/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: d66b4c8e9f41f661cfc399f72a9ad97405a860fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84790852"
 ---
-# <a name="add-or-remove-azure-role-assignments-using-the-rest-api"></a>Добавление или удаление назначений ролей Azure с помощью REST API
+# <a name="add-or-remove-azure-role-assignments-using-the-rest-api"></a>Добавление и удаление назначений ролей Azure с помощью REST API
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В этой статье описывается назначение ролей с помощью REST API.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] В этой статье описывается назначение ролей с помощью REST API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для добавления или удаления назначений ролей необходимо иметь следующее:
 
@@ -58,7 +58,7 @@ ms.locfileid: "84790852"
 1. Внутри URI замените *{scope}* областью для назначения роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -72,7 +72,7 @@ ms.locfileid: "84790852"
 1. В тексте запроса замените *{Scope}* областью для назначения роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -132,7 +132,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId1}/providers/micro
 1. Внутри URI замените *{scope}* областью для удаления назначения роли.
 
     > [!div class="mx-tableFixed"]
-    > | Область | Type |
+    > | Область | Тип |
     > | --- | --- |
     > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     > | `subscriptions/{subscriptionId1}` | Подписка |
@@ -166,7 +166,7 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId1}/providers/mi
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вывод списка назначений ролей Azure с помощью REST API](role-assignments-list-rest.md)
 - [Развертывание ресурсов с помощью шаблонов диспетчер ресурсов и диспетчер ресурсов REST API](../azure-resource-manager/templates/deploy-rest.md)

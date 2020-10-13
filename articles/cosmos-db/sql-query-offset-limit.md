@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 07/29/2020
 ms.author: tisande
 ms.openlocfilehash: 9342c0c10ed4f7287716d21823fddfe992e0568f
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87432708"
 ---
 # <a name="offset-limit-clause-in-azure-cosmos-db"></a>Предложение ЛИМИТа смещения в Azure Cosmos DB
@@ -35,7 +35,7 @@ OFFSET <offset_amount> LIMIT <limit_amount>
   
    Указывает целое число элементов, которые должны быть включены в результаты запроса
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
   `OFFSET` `LIMIT` В предложении требуется как количество, так и количество `OFFSET LIMIT` . Если используется необязательное `ORDER BY` предложение, результирующий набор создается путем пропуска всех упорядоченных значений. В противном случае запрос вернет фиксированный порядок значений.
 

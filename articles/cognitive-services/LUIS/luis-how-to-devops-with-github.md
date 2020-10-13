@@ -12,13 +12,13 @@ ms.topic: conceptual
 ms.date: 06/5/2020
 ms.author: anwigley
 ms.openlocfilehash: 6df65040277ac61cca5fb4bf7fce5b5a7b2f3afe
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84783764"
 ---
-# <a name="apply-devops-to-luis-app-development-using-github-actions"></a>Применение DevOps к разработке приложений LUIS с помощью действий GitHub
+# <a name="apply-devops-to-luis-app-development-using-github-actions"></a>Применение DevOps при разработке приложений LUIS с помощью GitHub Actions
 
 В [репозитории шаблонов Luis DevOps](https://github.com/Azure-Samples/LUIS-DevOps-Template) можно найти полное решение, в котором реализованы рекомендации по DevOps и проектированию программного обеспечения для Luis. Этот репозиторий шаблонов можно использовать для создания собственного репозитория со встроенной поддержкой рабочих процессов CI/CD и методов, позволяющих [управлять исходным кодом](luis-concept-devops-sourcecontrol.md), [автоматизировать сборки](luis-concept-devops-automation.md), [тестирование](luis-concept-devops-testing.md)и [Управление выпусками](luis-concept-devops-automation.md#release-management) с помощью Luis для собственного проекта.
 
@@ -38,6 +38,6 @@ ms.locfileid: "84783764"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Используйте [репозиторий шаблонов Luis DevOps](https://github.com/Azure-Samples/LUIS-DevOps-Template) , чтобы применить DevOps с собственным проектом.
-* [Управление версиями и стратегии ветвления для LUIS](luis-concept-devops-sourcecontrol.md)
+* [Управление исходным кодом и стратегии создания ветвей для LUIS](luis-concept-devops-sourcecontrol.md)
 * [Тестирование для LUIS DevOps](luis-concept-devops-testing.md)
 * [Рабочие процессы автоматизации для LUIS DevOps](luis-concept-devops-automation.md)

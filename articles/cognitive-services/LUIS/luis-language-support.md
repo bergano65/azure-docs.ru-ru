@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 12/09/2019
 ms.openlocfilehash: e377f910e1c1ddda864ea312b40fe3608c166376
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91541396"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
@@ -38,7 +38,7 @@ ms.locfileid: "91541396"
 | Французский (Канада) |`fr-CA` |-|-|-|✔|
 | Немецкий |`de-DE` |✔| ✔ |✔ |✔|
 | Гуджарати | `gu-IN`|-|-|-|-|
-| Хинди | `hi-IN`|-|✔|-|-|
+| Hindi | `hi-IN`|-|✔|-|-|
 | Итальянский |`it-IT` |✔| ✔ |✔|✔|
 | *[японский](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |✔|-|-|Только ключевая фраза|
@@ -92,7 +92,7 @@ ms.locfileid: "91541396"
 |Французский (fr-CA)|✔|||
 |Немецкий|✔||✔|
 |Гуджарати|✔|||
-|Хинди|✔|||
+|Hindi|✔|||
 |Итальянский|✔|||
 |Японский|||✔
 |Корейский||✔||
@@ -109,7 +109,7 @@ ms.locfileid: "91541396"
 
 Следующие языки и региональные параметры имеют пользовательские версии маркеров:
 
-|culture|Версия|Цель|
+|culture|Версия|Назначение|
 |--|--|--|
 |Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь введет в `Ich fahre einen krankenwagen` качестве utterance, он будет включен `Ich fahre einen kranken wagen` . Разрешение пометки и независимо от того, `kranken` `wagen` как разные сущности.|
 |Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` в качестве utterance, он остается единственным маркером. Таким образом `krankenwagen` , помечается как единая сущность. |

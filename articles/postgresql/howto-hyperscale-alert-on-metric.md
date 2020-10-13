@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 3/16/2020
 ms.openlocfilehash: b5ccd1281e50ca10b8edd7d7567a000b97107901
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90907420"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Использование портал Azure для настройки оповещений в метриках для базы данных Azure для PostgreSQL-Scale (Цитус)
@@ -41,13 +41,13 @@ ms.locfileid: "90907420"
 
 4. Откроется страница **Создание правила**, как показано ниже. Заполните необходимые сведения:
 
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/4-add-rule-form.png" alt-text="Форма добавления оповещения для метрики":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/4-add-rule-form.png" alt-text="Выбор правил оповещений":::
 
 5. В разделе **условие** выберите **Добавить**.
 
 6. Выберите из списка сигналов метрику, для которой необходимо создать оповещение. В этом примере выберите Storage percent (Процент хранилища).
    
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/6-configure-signal-logic.png" alt-text="Выбор метрики":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/6-configure-signal-logic.png" alt-text="Выбор правил оповещений":::
 
 7. Настройте логику оповещения.
 
@@ -58,13 +58,13 @@ ms.locfileid: "90907420"
    
    По завершении нажмите кнопку **Готово**.
 
-   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/7-set-threshold-time.png" alt-text="Выбор метрики":::
+   :::image type="content" source="./media/howto-hyperscale-alert-on-metric/7-set-threshold-time.png" alt-text="Выбор правил оповещений":::
 
 8. В разделе **Группы действий** выберите **Создать**, чтобы создать группу для получения уведомлений об оповещении.
 
 9. Заполните форму "Добавить группу действий", указав имя, короткое имя, подписку и группу ресурсов.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/9-add-action-group.png" alt-text="Группа действий":::
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/9-add-action-group.png" alt-text="Выбор правил оповещений":::
 
 10. Настройте тип действия **Электронная почта, SMS, push-уведомление, голосовой вызов**.
     
@@ -72,11 +72,11 @@ ms.locfileid: "90907420"
    
     По завершении нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/10-action-group-type.png" alt-text="Группа действий":::
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/10-action-group-type.png" alt-text="Выбор правил оповещений":::
 
 11. Укажите имя правила генерации оповещений, описание и уровень серьезности.
 
-    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/11-name-description-severity.png" alt-text="Группа действий"::: 
+    :::image type="content" source="./media/howto-hyperscale-alert-on-metric/11-name-description-severity.png" alt-text="Выбор правил оповещений"::: 
 
 12. Выберите **Создать правило генерации оповещений**, чтобы создать оповещение.
 
@@ -108,6 +108,6 @@ ms.locfileid: "90907420"
 
 Наблюдение за использованием ЦП полезно для создания базовых показателей производительности. Например, вы можете заметить, что загрузка ЦП обычно составляет около 40-60%. Если загрузка ЦП внезапно начинает навести указатель на 95%, можно распознать аномалию. Использование ЦП может отражать приростства, но может также обнаружить недопустимый запрос. При создании предупреждения о ЦП задайте большую степень гранулярности статистической обработки для перехвата длительных увеличений и пропуска пиковых скачков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

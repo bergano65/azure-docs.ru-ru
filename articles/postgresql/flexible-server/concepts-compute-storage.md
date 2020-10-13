@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: ca60c44d1e167367e2c138af1e7bfd4ba1a69417
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91710079"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-postgresql---flexible-server"></a>Варианты вычислений и хранения в базе данных Azure для PostgreSQL-гибкого сервера
@@ -81,7 +81,7 @@ ms.locfileid: "91710079"
 | 1 ТиБ | 5 000 |
 | 2 ТиБ | 7500 |
 | 4 ТиБ | 7500 |
-| 8 ТиБ | 16 000 |
+| 8 ТиБ | 16 000 |
 | 16 ТиБ | 18 000 |
 
 Обратите внимание, что операции ввода-вывода также ограничены типом виртуальной машины. Несмотря на то, что можно выбрать любой размер хранилища независимо от типа сервера, вы не сможете использовать все операции ввода-вывода, предоставляемые хранилищем, особенно при выборе сервера с небольшим количеством виртуальных ядер.
@@ -176,7 +176,7 @@ ms.locfileid: "91710079"
 
 Наиболее актуальные сведения о стоимости см. в статье [Цены на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/PostgreSQL/). Расходы на вашу конфигурацию можно посмотреть на [портале Azure](https://portal.azure.com/#create/Microsoft.PostgreSQLServer). На вкладке **Ценовая категория** отображается ежемесячная стоимость выбранных параметров. Если у вас нет подписки Azure, для расчета цены можно воспользоваться калькулятором цен Azure. На сайте с [калькулятором цен Azure](https://azure.microsoft.com/pricing/calculator/) нажмите кнопку **Добавить элементы**, разверните категорию **Базы данных** и выберите **База данных Azure для PostgreSQL**, чтобы настроить параметры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью портала Azure](how-to-manage-server-portal.md).
 - Дополнительные сведения см. в статье [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md).

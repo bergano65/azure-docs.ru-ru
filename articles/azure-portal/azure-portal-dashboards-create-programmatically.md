@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 03/23/2020
 ms.author: mblythe
 ms.openlocfilehash: bdaf1261e9945aa862157f7e43a44387e14d3657
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84764049"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Создание панелей мониторинга Azure программными средствами
@@ -78,7 +78,7 @@ ms.locfileid: "84764049"
 Существует два подхода к интерфейсам API, которые создают ресурсы в Azure:
 
 * Императивные API создают по одному ресурсу за раз. Дополнительные сведения см. в статье о [ресурсах DSC](/rest/api/resources/resources).
-* Система развертывания на основе шаблона, которая создает несколько зависимых ресурсов с помощью одного вызова API. Дополнительные сведения см. в статье [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md).
+* Система развертывания на основе шаблона, которая создает несколько зависимых ресурсов с помощью одного вызова API. Дополнительные сведения см. в статье  [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md).
 
 Развертывание на основе шаблона поддерживает параметризацию и создание шаблонов. Мы используем этот подход в этой статье.
 
@@ -124,7 +124,7 @@ id: "[resourceId(parameters('virtualMachineResourceGroup'), 'Microsoft.Compute/v
 ```
 После настройки шаблона разверните его с помощью любого из следующих методов.
 
-* [Интерфейсы REST API](/rest/api/resources/deployments)
+* [REST API](/rest/api/resources/deployments);
 * [PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
 * [Azure CLI](/cli/azure/group/deployment#az-group-deployment-create)
 * [Страница развертывания шаблона портал Azure](https://portal.azure.com/#create/Microsoft.Template)

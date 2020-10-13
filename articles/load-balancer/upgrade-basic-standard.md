@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
 ms.openlocfilehash: 66c56ae6730043022a0d8bf3c94f7c6ce14d9852
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84809341"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Обновление общедоступных Load Balancer Azure
@@ -41,7 +41,7 @@ ms.locfileid: "84809341"
 
 ## <a name="download-the-script"></a>Скачивание скрипта
 
-Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzurePublicLBUpgrade/2.0).
+Скачайте скрипт миграции из  [коллекция PowerShell](https://www.powershellgallery.com/packages/AzurePublicLBUpgrade/2.0).
 ## <a name="use-the-script"></a>Использование скрипта
 
 В зависимости от настроек и настроек локальной среды PowerShell существует два варианта.
@@ -103,7 +103,7 @@ ms.locfileid: "84809341"
    
     1. Выберите внутренний пул, соответствующий внутреннему пулу базового Load Balancer, выберите следующее значение: 
       - **Виртуальная машина**: раскрывающийся список и выберите виртуальные машины из соответствующего серверного пула базовых Load Balancer.
-    1. Нажмите кнопку **Сохранить**.
+    1. Щелкните **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
@@ -130,6 +130,6 @@ ms.locfileid: "84809341"
   
 Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

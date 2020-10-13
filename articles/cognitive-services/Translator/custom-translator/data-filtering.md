@@ -10,10 +10,10 @@ ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: 1076a4fe3a460fa07e061e9ec0ec41b088ec7eca
-ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88507269"
 ---
 # <a name="data-filtering"></a>Фильтрация данных
@@ -56,6 +56,6 @@ ms.locfileid: "88507269"
 ## <a name="invalid-characters"></a>Недопустимые знаки
 Пользовательский переводчик удаляет предложения, содержащие символ Юникода U+FFFD. Символ U+FFFD указывает на сбой преобразования кодировки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обучение модели](how-to-train-model.md) в пользовательском переводчике.

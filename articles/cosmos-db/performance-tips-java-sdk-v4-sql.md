@@ -9,10 +9,10 @@ ms.date: 07/08/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
 ms.openlocfilehash: a014038996ae2846d059551b565feedd8de560a0
-ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88258311"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-java-sdk-v4"></a>Советы по повышению производительности для пакета SDK для Java версии 4 в Azure Cosmos DB
@@ -157,7 +157,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     * ***Общие сведения о режиме прямого подключения***
 
-        :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Иллюстрация архитектуры режима прямого подключения" border="false":::
+        :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Пример политики подключения Azure Cosmos DB" border="false":::
 
         Клиентская архитектура, применяемая в режиме прямого подключения, обеспечивает предсказуемое использование сети и мультиплексированный доступ к репликам Azure Cosmos DB. На схеме выше показано, как в режиме прямого подключения запросы клиентов направляются к репликам в серверной части Cosmos DB. Архитектура режима прямого подключения выделяет до 10 **каналов** на стороне клиента на каждую реплику базы данных. Канал представляет собой TCP-соединение, которому предшествует буфер запросов глубиной 30 запросов. Каналы, принадлежащие реплике, динамически распределяются по мере необходимости **конечной точкой службы** реплики. Когда пользователь отправляет запрос в режиме прямого подключения, **TransportClient** направляет запрос на соответствующую конечную точку службы на основе ключа раздела. **Очередь запросов** помещает запросы в буфер перед конечной точкой службы.
 

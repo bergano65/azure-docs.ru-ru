@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 author: robinsh
 ms.service: iot-hub
@@ -9,10 +9,10 @@ ms.date: 04/28/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: a0d1de622eefad4ae5e55a427f8b0b1bf4360c0a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "84792101"
 ---
 Для получения состояния работоспособности конечных точек можно использовать REST API [получить работоспособность конечной точки](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) . Мы рекомендуем использовать [метрики центра Интернета вещей](../articles/iot-hub/iot-hub-metrics.md) , связанные с задержкой сообщений маршрутизации, для определения и отладки ошибок, когда работоспособность конечной точки невозможна или неработоспособна, так как мы предполагаем, что задержка будет выше, когда конечная точка находится в одном из этих состояний.

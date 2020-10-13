@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.openlocfilehash: 5760d5e140919c9309b22f6f597e73c88f7a9069
-ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91710283"
 ---
 # <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Ценовые категории Базы данных Azure для PostgreSQL (отдельный сервер)
@@ -104,7 +104,7 @@ ms.locfileid: "91710283"
 
 Наиболее актуальные сведения о стоимости см. в статье [Цены на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/PostgreSQL/). Расходы на вашу конфигурацию можно посмотреть на [портале Azure](https://portal.azure.com/#create/Microsoft.PostgreSQLServer). На вкладке **Ценовая категория** отображается ежемесячная стоимость выбранных параметров. Если у вас нет подписки Azure, для расчета цены можно воспользоваться калькулятором цен Azure. На сайте с [калькулятором цен Azure](https://azure.microsoft.com/pricing/calculator/) нажмите кнопку **Добавить элементы**, разверните категорию **Базы данных** и выберите **База данных Azure для PostgreSQL**, чтобы настроить параметры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью портала Azure](tutorial-design-database-using-azure-portal.md).
 - Дополнительные сведения см. в статье [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md).

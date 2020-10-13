@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 05/30/2019
 ms.author: terrylan
 ms.openlocfilehash: d41fe409b4a44a4c2af3670d76dd3a83a300feae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "68727115"
 ---
 # <a name="management-and-operation-of-the-azure-production-network"></a>Управление и эксплуатация рабочей сети Azure    
@@ -50,7 +50,7 @@ ms.locfileid: "68727115"
 
 Доступ к внутренним приложениям Azure контролируется с помощью аутентификации служб федерации Active Directory (ADFS). ADFS — это служба, размещенная MSIT, которая обеспечивает аутентификацию пользователей корпоративной сети посредством применения защищенных токенов и утверждений пользователей. ADFS позволяет внутренним приложениям Azure аутентифицировать пользователей в домене Microsoft Corporate Active Directory. Чтобы получить доступ к производственной сети из среды корпоративной сети, пользователь должен пройти аутентификацию, используя многофакторную проверку подлинности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о действиях корпорации Майкрософт в сфере защиты инфраструктуры Azure приведены в следующих статьях:
 
 - [Объекты, локальная среда и физическая безопасность в Azure](physical-security.md)
