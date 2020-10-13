@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: jeedes
-ms.openlocfilehash: 3c1ff9de1057a5ef551ad941965f64907e4243e5
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 93d13023dfda8164bf0d327bee6106f9803e1bf7
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555745"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775161"
 ---
 # <a name="tutorial-integrate-dropbox-business-with-azure-active-directory"></a>Руководство по интеграции Dropbox Business с Azure Active Directory
 
@@ -145,27 +145,27 @@ ms.locfileid: "88555745"
 
 3. Если вы хотите вручную настроить Dropbox Business, откройте новое окно веб-браузера, перейдите к своему клиенту Dropbox Business и войдите в него. Затем выполните следующие действия.
 
-    ![Настройка единого входа](./media/dropboxforbusiness-tutorial/ic769509.png "Настройка единого входа")
+    ![Снимок экрана, на котором показана страница входа в Dropbox Business](./media/dropboxforbusiness-tutorial/ic769509.png "Настройка единого входа")
 
 4. Щелкните значок **Пользователь** и выберите вкладку **Параметры**.
 
-    ![Настройка единого входа](./media/dropboxforbusiness-tutorial/configure1.png "Настройка единого входа")
+    ![Снимок экрана, на котором показано действие со значком пользователя и выбрана вкладка "Параметры"](./media/dropboxforbusiness-tutorial/configure1.png "Настройка единого входа")
 
 5. На панели навигации слева щелкните **консоль администрирования**.
 
-    ![Настройка единого входа](./media/dropboxforbusiness-tutorial/configure2.png "Настройка единого входа")
+    ![Снимок экрана, на котором показана выбранная консоль администрирования](./media/dropboxforbusiness-tutorial/configure2.png "Настройка единого входа")
 
 6. В **консоли администрирования** выберите пункт **Параметры** в левой области навигации.
 
-    ![Настройка единого входа](./media/dropboxforbusiness-tutorial/configure3.png "Настройка единого входа")
+    ![Снимок экрана, на котором показан выбранный пункт "Параметры"](./media/dropboxforbusiness-tutorial/configure3.png "Настройка единого входа")
 
 7. Выберите параметр **единый вход** в разделе **Проверка подлинности**.
 
-    ![Настройка единого входа](./media/dropboxforbusiness-tutorial/configure4.png "Настройка единого входа")
+    ![Снимок экрана, на котором показан раздел "Проверка подлинности" с выбранным параметром "Единый вход"](./media/dropboxforbusiness-tutorial/configure4.png "Настройка единого входа")
 
 8. В разделе **Единый вход** выполните следующие действия.  
 
-    ![Настройка единого входа](./media/dropboxforbusiness-tutorial/configure5.png "Настройка единого входа")
+    ![Снимок экрана, на котором показаны параметры конфигурации "Единый вход"](./media/dropboxforbusiness-tutorial/configure5.png "Настройка единого входа")
 
     а. Выберите параметр **Обязательная** из раскрывающегося списка для **единого входа**.
 

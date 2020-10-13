@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 09/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 4818755e48a4d497d70920a62a9505346176ed73
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 026caf101f58ff9d93e3306d0bd224f24e8af864
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91371292"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743953"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware
 
@@ -145,11 +145,11 @@ ms.locfileid: "91371292"
 
     На этой же странице щелкните **Add hard disk** (Добавить жесткий диск), а затем выберите **Existing hard disk** (Имеющийся жесткий диск). Выберите VMDK-файл в хранилище данных. В результате добавится диск операционной системы. 
 
-     ![Страница "Настройка параметров"](./media/data-box-gateway-deploy-provision-vmware/image14.png)
+     ![Страница "Настройка параметров" 2](./media/data-box-gateway-deploy-provision-vmware/image14.png)
 
     Прокрутите вниз, пока не увидите **New Hard Disk** (Новый жесткий диск), и разверните его для просмотра параметров. Задайте для **узла виртуального устройства** значение **IDE controller 0** (Контроллер 0 IDE).
 
-     ![Страница "Настройка параметров"](./media/data-box-gateway-deploy-provision-vmware/image15.png)
+     ![Страница "Настройка параметров" 3](./media/data-box-gateway-deploy-provision-vmware/image15.png)
 
 17. (Необязательно.) *Выполните этот шаг, только если вы используете VMware ESXi Server 6.7*. На странице **Настройка параметров** щелкните **Параметры виртуальной машины**. Щелкните **Варианты загрузки > Встроенное ПО** и выберите **BIOS**. По умолчанию установлено значение EFI. Щелкните **Далее**.
 
@@ -158,7 +158,7 @@ ms.locfileid: "91371292"
 18. На странице **Ready to Complete** (Все готово к выполнению) проверьте все параметры, связанные с новой виртуальной машиной. Убедитесь, что ЦП имеет 4 ядра, память — 8192 МБ, для сетевого интерфейса задано значение 1, а для жесткого диска 2 — значение IDE controller 0 (Контроллер 0 IDE). Нажмите кнопку **Готово**.
    
     ![Страница "Готово к завершению"](./media/data-box-gateway-deploy-provision-vmware/image16.png)
-    ![Ready to Complete page](./media/data-box-gateway-deploy-provision-vmware/image17.png)
+    ![Страница "Готово к завершению" 2](./media/data-box-gateway-deploy-provision-vmware/image17.png)
 
 Теперь виртуальная машина подготовлена. Появится уведомление, и новая виртуальная машина будет добавлена в список виртуальных машин.
 

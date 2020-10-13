@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 1088827ead320007c758d8e843a15328f108c035
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4607d4dfba68ca8f78ec4e3aaa4da36966ea843a
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88543029"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760841"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
 
@@ -101,7 +101,7 @@ ms.locfileid: "88543029"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Adobe Experience Manager](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML" и выбраны текстовые поля "Идентификатор" и "URL-адрес ответа"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите уникальное значение, которое определяется на сервере AEM.
 
@@ -136,35 +136,35 @@ ms.locfileid: "88543029"
 
 2. Выберите **Параметры** > **Безопасность** > **Пользователи**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_user.png)
+    ![Снимок экрана, на котором показана плитка "Users" (Пользователи) в Adobe Experience Manager](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_user.png)
 
 3. Выберите **Администратора** или любого другого соответствующего пользователя.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin6.png)
+    ![Снимок экрана, на котором выделен пользователь "Administrator" (Администратор)](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin6.png)
 
 4. Выберите **Account settings** (Параметры учетной записи)  > **Manage TrustStore** (Управление TrustStore).
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_managetrust.png)
+    ![Снимок экрана, на котором показан элемент "Manage TrustStore" (Управление TrustStore) в разделе "Account settings" (Параметры учетной записи)](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_managetrust.png)
 
 5. Щелкните **Select Certificate File** (Выбрать файл сертификата) в разделе **Add Certificate from CER file** (Добавление сертификата из CER-файла). Найдите и укажите путь к файлу сертификата, скачанному с портала Azure.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_user2.png)
+    ![Снимок экрана, на котором выбрана кнопка "Select Certificate File" (Выбрать файл сертификата)](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_user2.png)
 
 6. Сертификат добавляется в TrustStore. Обратите внимание на псевдоним сертификата.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin7.png)
+    ![Снимок экрана, на котором показано, что сертификат добавлен в TrustStore](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin7.png)
 
 7. На странице **Users** (Пользователи) выберите **authentication-service**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin8.png)
+    ![Снимок экрана, на котором показан элемент authentication-service](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin8.png)
 
 8. Выберите **Параметры учетной записи** > **Create/Manage KeyStore** (Создание хранилища ключей/Управление хранилищем ключей). Создайте хранилище ключей, указав пароль.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin9.png)
+    ![Снимок экрана, на котором выбран элемент "Manage KeyStore" (Управление хранилищем ключей)](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin9.png)
 
 9. Вернитесь на страницу администрирования. Выберите **Settings** (Параметры)  > **Operations** (Операции)  > **Web Console** (Веб-консоль).
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin1.png)
+    ![Снимок экрана, на котором выбран элемент "Web Console" (Веб-консоль) в области "Operations" (Операции) в разделе "Settings" (Параметры)](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin1.png)
 
     Откроется страница конфигурации.
 
@@ -172,7 +172,7 @@ ms.locfileid: "88543029"
 
 10. Найдите **Adobe Granite SAML 2.0 Authentication Handler**. Щелкните значок **Add** (Добавить).
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin3.png)
+    ![Снимок экрана, на котором выбран элемент "Adobe Granite SAML 2.0 Authentication Handler" (Обработчик аутентификации Adobe Granite SAML 2.0)](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin3.png)
 
 11. Выполните следующие действия на этой странице.
 

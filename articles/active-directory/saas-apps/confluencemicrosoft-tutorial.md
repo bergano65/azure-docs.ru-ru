@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
-ms.openlocfilehash: d629e5d572f1e8fff05104a4a5004b7aaa8c7a0d
-ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
+ms.openlocfilehash: 12f6e66140b3654f1283cad45c97325e2bfb1a28
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88892972"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775692"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-confluence-saml-sso-by-microsoft"></a>Руководство по Интеграции единого входа Azure Active Directory с Confluence SAML SSO by Microsoft
 
@@ -159,34 +159,34 @@ ms.locfileid: "88892972"
 
 1. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon1.png)
+    ![Снимок экрана, на котором показан выбранный значок шестеренки, а в раскрывающемся меню выбран пункт "Add-ons" (Надстройки)](./media/confluencemicrosoft-tutorial/addon1.png)
 
 1. Скачайте подключаемый модуль из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=56503). Вручную передайте подключаемый модуль, предоставленный корпорацией Майкрософт, воспользовавшись меню **Upload add-on** (Отправка надстройки). Загрузка подключаемого модуля выполняется в соответствии с [соглашением об обслуживании Майкрософт](https://www.microsoft.com/servicesagreement/).
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon12.png)
+    ![Снимок экрана, на котором показана страница "Manage add-ons" (Управление надстройками) с выбранным действием "Upload add-on" (Отправка надстройки)](./media/confluencemicrosoft-tutorial/addon12.png)
 
 1. Для сценария использования обратного прокси-сервера Confluence или подсистемы балансировки нагрузки выполните приведенные ниже действия.
 
     > [!NOTE]
     > Сначала нужно настроить сервер, выполнив инструкции ниже, а затем установить подключаемый модуль.
 
-    а. Добавьте следующий атрибут в раздел порта **соединителя** в файле **server.xml** серверного приложения JIRA.
+    а. Добавьте следующий атрибут в раздел порта **connector** в файле **server.xml** серверного приложения JIRA.
 
     `scheme="https" proxyName="<subdomain.domain.com>" proxyPort="<proxy_port>" secure="true"`
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/reverseproxy1.png)
+    ![Снимок экрана, на котором показан файл server.xml с атрибутом, добавленным в раздел порта connector](./media/confluencemicrosoft-tutorial/reverseproxy1.png)
 
     b. Измените **базовый URL-адрес** в разделе **системных параметров** на соответствующий для подсистемы балансировки нагрузки или прокси-сервера.
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/reverseproxy2.png)
+    ![Снимок экрана, на котором показана страница "Administration > Settings" (Администрирование > Параметры) с выделенным базовым URL-адресом](./media/confluencemicrosoft-tutorial/reverseproxy2.png)
 
 1. После установки подключаемый модуль появится в разделе **Управление надстройками**, подраздел **Установленные пользователем**. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon15.png)
+    ![Снимок экрана, на котором показан раздел "User Installed" (Установленные пользователем) с выбранной кнопкой "Configure" (Настроить)](./media/confluencemicrosoft-tutorial/addon15.png)
 
 1. Выполните следующие действия на странице настройки:
 
-    ![Настройка единого входа](./media/confluencemicrosoft-tutorial/addon54.png)
+    ![Снимок экрана, на котором показана страница конфигурации единого входа](./media/confluencemicrosoft-tutorial/addon54.png)
 
     > [!TIP]
     > Убедитесь, что с приложением сопоставлен только один сертификат, чтобы при разрешении метаданных не возникла ошибка. Если имеется несколько сертификатов, то при разрешении метаданных администратор увидит сообщение об ошибке.
@@ -237,7 +237,7 @@ ms.locfileid: "88892972"
 
 1. В разделе "Users" (Пользователи) выберите вкладку **Add users** (Добавление пользователей). На диалоговой странице **Add a User** (Добавление пользователя) выполните следующее.
 
-    ![Добавление сотрудника](./media/confluencemicrosoft-tutorial/user2.png)
+    ![Снимок экрана, на котором показан раздел "Confluence administration" (Администрирование Confluence) с выбранной вкладкой "Add Users" (Добавление пользователей) и заполненным разделом "Add a User" (Добавление пользователя)](./media/confluencemicrosoft-tutorial/user2.png)
 
     а. В текстовом поле **Имя пользователя** введите электронный адрес пользователя, например B.Simon.
 

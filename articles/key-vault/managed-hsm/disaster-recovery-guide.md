@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 13f62631e4913434699f4c5dd5eb1956ca3e3a36
-ms.sourcegitcommit: bdd5c76457b0f0504f4f679a316b959dcfabf1ef
+ms.openlocfilehash: 7dbb7b3fdc15c0a9d502fbe9a0d12d084f9ddf29
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90992460"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760399"
 ---
 # <a name="managed-hsm-disaster-recovery"></a>Аварийное восстановление управляемого устройства HSM
 
@@ -61,7 +61,7 @@ az keyvault create --hsm-name "ContosoMHSM" --resource-group "ContosoResourceGro
 В выходных данных команды вы увидите свойства созданного управляемого устройства HSM. Среди всех свойств есть два самых важных:
 
 * **name**. В этом примере используется имя ContosoMHSM. Вы будете использовать это имя для выполнения других команд хранилища ключей.
-* **hsmUri.** В данном примере универсальный код ресурса (URI) — это https://contosohsm.managedhsm.azure.net. Приложения, использующие HSM через REST API, должны использовать именно этот универсальный код ресурса (URI).
+* **hsmUri.** В данном примере универсальный код ресурса (URI) — "https://contosohsm.managedhsm.azure.net". Приложения, использующие HSM через REST API, должны использовать именно этот универсальный код ресурса (URI).
 
 Теперь ваша учетная запись Azure авторизована, и вы можете выполнять любые операции на этом управляемом устройстве HSM. Но пока никто другой не авторизован.
 
@@ -102,7 +102,7 @@ az keyvault security-domain upload --hsm-name ContosoMHSM2 --sd-exchange-key Con
 - учетная запись хранения, где будет храниться резервная копия;
 - контейнер хранилища BLOB-объектов в этой учетной записи хранения, где процесс резервного копирования создаст новую папку для хранения зашифрованной резервной копии.
 
-В приведенном ниже примере мы используем команду `az keyvault backup`, чтобы создать резервную копию HSM в контейнере хранилища **mhsmbackupcontainer** в учетной записи хранения **ContosoBackup**. Мы создаем маркер SAS со сроком действия 30 минут и передаем его на управляемое устройство HSM для записи резервной копии.
+Мы используем команду `az keyvault backup`, чтобы создать резервную копию HSM в контейнере хранилища **mhsmbackupcontainer**, размещенном в учетной записи хранения **ContosoBackup**, для приведенного ниже примера. Мы создаем маркер SAS со сроком действия 30 минут и передаем его на управляемое устройство HSM для записи резервной копии.
 
 ```azurecli-interactive
 end=$(date -u -d "30 minutes" '+%Y-%m-%dT%H:%MZ')

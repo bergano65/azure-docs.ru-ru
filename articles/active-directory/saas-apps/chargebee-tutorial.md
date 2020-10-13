@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/08/2019
 ms.author: jeedes
-ms.openlocfilehash: 6358c41ab6d63baa8ed1fa6960d7d887825a1d78
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c620393903ee08199632d457ece3b4c06db8ed68
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88529491"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760654"
 ---
 # <a name="tutorial-integrate-chargebee-with-azure-active-directory"></a>Руководство по Интеграция Chargebee с Azure Active Directory
 
@@ -132,11 +132,11 @@ ms.locfileid: "88529491"
 
 4. В левой части меню последовательно щелкните **Параметры** > **Безопасность** > **Управление**.
 
-    ![Конфигурация Chargebee](./media/chargebee-tutorial/config01.png)
+    ![Снимок экрана, на котором показан корпоративный сайт Chargebee с выбранными элементами "Settings" (Параметры), "Security" (Безопасность) и "Manage" (Управление)](./media/chargebee-tutorial/config01.png)
 
 5. На странице **Single Sign-On** (Единый вход) выполните следующие шаги.
 
-    ![Конфигурация Chargebee](./media/chargebee-tutorial/config02.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Single Sign-On" (Единый вход) вход с выбранным параметром "SAML" и параметром для подтверждения](./media/chargebee-tutorial/config02.png)
 
     а. Выберите **SAML**.
 
@@ -154,13 +154,13 @@ ms.locfileid: "88529491"
 
 1. В другом окне браузера войдите в приложение Chargebee с правами администратора безопасности.
 
-2. В левой части меню щелкните **Customers** (Клиенты) и перейдите к пункту **Create a New Customer** (Создание нового пользователя).
+2. В левой части меню щелкните **Customers** (Клиенты) и перейдите к пункту **Create a New Customer** (Создать клиента).
 
-    ![Конфигурация Freedcamp](./media/chargebee-tutorial/config03.png)
+    ![Снимок экрана, на котором показан сайт Chargebee с выбранными элементами "Customers" (Клиенты) и "Create a New Customer" (Создать клиента)](./media/chargebee-tutorial/config03.png)
 
 3. На странице **New Customer** (Новый клиент) заполните соответствующие поля, как показано ниже, и щелкните **Create Customer** (Создать клиента).
 
-    ![Конфигурация Freedcamp](./media/chargebee-tutorial/config04.png)
+    ![Снимок экрана, на котором показана страница "New Customer" (Новый клиент), где можно ввести сведения о клиенте](./media/chargebee-tutorial/config04.png)
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

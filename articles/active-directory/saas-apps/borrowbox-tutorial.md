@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: d7cab94520464662589ca952e9d50102f450ab8d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c0ffa67725c3178155c495754ca67270c946778b
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548367"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91744313"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-borrowbox"></a>Руководство по интеграции Azure Active Directory с BorrowBox
 
@@ -100,11 +100,11 @@ ms.locfileid: "88548367"
 
 4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-    ![Сведения о домене и URL-адресах единого входа для [название приложения]](common/preintegrated.png)
+    ![[Снимок экрана, на котором показана базовая конфигурация SAML] Сведения о домене и URL-адресах единого входа](common/preintegrated.png)
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для [название приложения]](common/metadata-upload-additional-signon.png)
+    ![[Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа] Сведения о домене и URL-адресах единого входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://fe.bolindadigital.com/wldcs_bol_fo/b2i/mainPage.html?b2bSite=<ID>`.
 

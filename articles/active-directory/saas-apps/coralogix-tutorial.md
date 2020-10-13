@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: jeedes
-ms.openlocfilehash: 20a6702a37a4432504d85c787218eb10a10931b9
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 17e2d04a39a2ef5a935ea6e56ef16958419eddb1
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555913"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775649"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-coralogix"></a>Руководство по Интеграция единого входа Azure Active Directory с Coralogix
 
@@ -95,13 +95,14 @@ ms.locfileid: "88555913"
 
  1. Приложение Coralogix ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Значениями этих атрибутов можно управлять в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Атрибуты пользователя" с выбранной кнопкой "Изменить"](common/edit-attribute.png)
 
 1. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения с помощью значка **Изменить**. Кроме того, вы можете добавлять утверждения с помощью команды **Добавить новое утверждение**, которая позволяет настроить атрибут токена SAML, как показано на предыдущем рисунке. Затем выполните следующие действия:
     
     а. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/coralogix-tutorial/tutorial_usermail.png) ![изображение](./media/coralogix-tutorial/tutorial_usermailedit.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Атрибуты и утверждения пользователя" с выбранной кнопкой "Изменить"](./media/coralogix-tutorial/tutorial_usermail.png)
+    ![image](./media/coralogix-tutorial/tutorial_usermailedit.png)
 
     b. В списке **Choose name identifier format** (Выбор формата идентификатора имени) выберите значение **Email address** (Адрес электронной почты).
 

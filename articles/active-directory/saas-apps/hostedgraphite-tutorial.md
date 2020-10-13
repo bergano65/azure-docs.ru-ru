@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: b7aaaa589b92814694bee2838332f6823b3351de
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 137a077ac73b5dd5ca9c68c6be2b30beb8e92ce0
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88521883"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826238"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Учебник. Интеграция Azure Active Directory с Hosted Graphite
 
@@ -100,7 +100,7 @@ ms.locfileid: "88521883"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Hosted Graphite](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.hostedgraphite.com/metadata/<user id>`.
 
@@ -108,7 +108,7 @@ ms.locfileid: "88521883"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Hosted Graphite](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.hostedgraphite.com/login/saml/<user id>/`.
 
@@ -135,23 +135,23 @@ ms.locfileid: "88521883"
 
 2. На боковой панели выберите **SAML Setup page** (Страница настройки SAML), щелкнув **Access -> SAML Setup** (Доступ -> Настройка SAML).
 
-    ![Настройка единого входа на стороне приложения](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_000.png)
+    ![Снимок экрана, на котором показано меню "Access" (Доступ) с выбранным пунктом "SAML Setup" (Настройка SAML)](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_000.png)
 
 3. Проверьте, что эти URL-адреса соответствуют конфигурации в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка единого входа на стороне приложения](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_001.png)
+    ![Снимок экрана, на котором показана базовая конфигурация SAML](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_001.png)
 
 4. В текстовые поля **Entity or Issuer ID** (Идентификатор сущности или издателя) и **SSO Login URL** (URL-адрес единого входа) вставьте значения **идентификатора Azure AD** и **URL-адреса входа**, скопированные на портале Azure.
 
-    ![Настройка единого входа на стороне приложения](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_002.png)
+    ![Снимок экрана, на котором показаны записи для поставщика удостоверений](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_002.png)
 
 5. Для параметра **Default User Role** (Роль пользователя по умолчанию) выберите значение **Read-only** (Только для чтения).
 
-    ![Настройка единого входа на стороне приложения](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_004.png)
+    ![Снимок экрана, на котором показан параметр "Default User Role" (Роль пользователя по умолчанию) со значением "Read-only" (Только для чтения)](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_004.png)
 
 6. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат X.509**.
 
-    ![Настройка единого входа на стороне приложения](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_005.png)
+    ![Снимок экрана, на котором показан сертификат X точка 509](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_005.png)
 
 7. Нажмите кнопку **Сохранить** .
 

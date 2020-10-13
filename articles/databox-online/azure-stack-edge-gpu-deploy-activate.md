@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 15680a4f8228af95e6643478c9262653171912ca
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 6807174f374e75f826001afecc1eccf8ba1a0603
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90903478"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743392"
 ---
 # <a name="tutorial-activate-azure-stack-edge-pro-with-gpu"></a>Руководство по Активация Azure Stack Edge Pro с GPU
 
@@ -52,12 +52,12 @@ ms.locfileid: "90903478"
 
 4. Нажмите кнопку **Применить**.
 
-    ![Страница Cloud details (Сведения об облаке) в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-activate/activate-2.png)
+    ![Страница "Сведения об облаке" в локальном пользовательском веб-интерфейсе 2](./media/azure-stack-edge-gpu-deploy-activate/activate-2.png)
 
 
 5. Сначала устройство активируется. Затем вам будет предложено скачать файл ключа.
     
-    ![Страница Cloud details (Сведения об облаке) в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-activate/activate-3.png)
+    ![Страница "Сведения об облаке" в локальном пользовательском веб-интерфейсе 3](./media/azure-stack-edge-gpu-deploy-activate/activate-3.png)
     
     Выберите **Download and continue** (Скачать и продолжить) и сохраните файл *device-serial-no.json* в безопасном расположении вне устройства. **Этот файл ключа содержит ключи восстановления для диска ОС и дисков данных на вашем устройстве.** Эти ключи могут потребоваться для быстрого восстановления системы в будущем.
 
@@ -88,7 +88,7 @@ ms.locfileid: "90903478"
 
 6. Перейдите на страницу **Обзор**. Состояние устройства должно отображаться как **Активировано**.
 
-    ![Страница Cloud details (Сведения об облаке) в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-activate/activate-4.png)
+    ![Страница "Сведения об облаке" в локальном пользовательском веб-интерфейсе 4](./media/azure-stack-edge-gpu-deploy-activate/activate-4.png)
  
 Активация устройства завершена. Теперь в него можно добавить общие папки.
 

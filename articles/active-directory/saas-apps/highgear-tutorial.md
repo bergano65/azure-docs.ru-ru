@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2019
 ms.author: jeedes
-ms.openlocfilehash: af2630b977c1ce34712a582175674277799f105b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a48772c4325717a64bd36873675ff19c6a332de0
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550622"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817163"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-highgear"></a>Руководство по Интеграция Azure Active Directory с HighGear
 
@@ -99,7 +99,7 @@ ms.locfileid: "88550622"
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения HighGear](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовое поле **Идентификатор** вставьте значение из поля **Service Provider Entity ID** (Идентификатор сущности поставщика службы), которое находится на странице параметров единого входа в системе HighGear.
 
@@ -116,7 +116,7 @@ ms.locfileid: "88550622"
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-     ![Сведения о домене и URL-адресах единого входа для приложения HighGear](common/metadata-upload-additional-signon.png)
+     ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
      В текстовое поле **Единый вход** вставьте значение из поля **Service Provider Entity ID** (Идентификатор сущности поставщика службы), которое находится на странице параметров единого входа в системе HighGear. (Этот идентификатор сущности также является базовым URL-адресом системы HighGear, который будет использоваться для инициируемого поставщиком единого входа).
 

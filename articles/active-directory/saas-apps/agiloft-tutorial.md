@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 5ca2e37c3524dc75328b0b6615e15c58652d20d1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a7ab3d32253b354f759c4d348526e22521a5fde4
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542961"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760735"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство по интеграции Azure Active Directory с Agiloft
 
@@ -100,7 +100,7 @@ ms.locfileid: "88542961"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Agiloft](common/idp-intiated.png)
+    ![Снимок экрана, на котором показаны текстовые поля "Идентификатор" и "URL-адрес ответа"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
@@ -150,11 +150,11 @@ ms.locfileid: "88542961"
 
 2. В области слева щелкните **Настройка**, а затем выберите **Доступ**.
 
-    ![Настройка Agiloft](./media/agiloft-tutorial/setup1.png)
+    ![Снимок экрана, на котором выбран раздел пользователь "Access" (Доступ)](./media/agiloft-tutorial/setup1.png)
 
 3. Нажмите кнопку **Настройка единого входа SAML 2.0**.
 
-    ![Настройка Agiloft](./media/agiloft-tutorial/setup2.png)
+    ![Снимок экрана, на котором показана кнопка "Configure SAML 2.0 Single Sign-On" (Настройка единого входа SAML 2.0)](./media/agiloft-tutorial/setup2.png)
 
 4. Откроется диалоговое окно мастера настройки. В диалоговом окне щелкните **Сведения о поставщике удостоверений** и заполните следующие поля.  
 

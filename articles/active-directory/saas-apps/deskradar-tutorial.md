@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: jeedes
-ms.openlocfilehash: a9004577fa8d946281df88284139e2e507e485b7
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 071b311466869321a12626190e894287c28e707b
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536486"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91774187"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-deskradar"></a>Руководство по Интеграция единого входа Azure Active Directory с Deskradar
 
@@ -162,7 +162,7 @@ ms.locfileid: "88536486"
 
 1. На вкладке **SAML 2.0** выполните следующие действия.
 
-    ![Конфигурация Deskradar](./media/deskradar-tutorial/14-paste-urls.jpg)
+    ![Снимок экрана, на котором показана вкладка "SAML 2.0" со стрелками, указывающими на поля "SAML SSO URL" (URL-адрес единого входа SAML) и "Identifier Provider Issuer" (Издатель поставщика идентификаторов)](./media/deskradar-tutorial/14-paste-urls.jpg)
 
     а. Включите метод проверки подлинности **SAML**.
 

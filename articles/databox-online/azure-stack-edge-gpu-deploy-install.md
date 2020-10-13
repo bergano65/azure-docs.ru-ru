@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/02/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Azure Stack Edge Pro in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: b9f3b564e36939197acd532a37f9a6098fbc870f
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: ba903793844e44b26931a70183860c983adaf18a
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90900017"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91743409"
 ---
 # <a name="tutorial-install-azure-stack-edge-pro-with-gpu"></a>Руководство по Установка Azure Stack Edge Pro с GPU
 
@@ -124,7 +124,7 @@ ms.locfileid: "90900017"
 3. Закрепите левую и правую направляющую на передних монтажных фланцах стойки с помощью двух пар винтов.
 4. Задвиньте правую и левую задние монтажные скобы вперед до их упора во фланцы задней вертикальной стойки и закрепите их с помощью двух пар винтов.
 
-    ![Монтаж и демонтаж инструментальных направляющих](./media/azure-stack-edge-deploy-install/installing-removing-tooled-rails.png)
+    ![Монтаж и демонтаж инструментальных направляющих 2](./media/azure-stack-edge-deploy-install/installing-removing-tooled-rails.png)
 
 ### <a name="install-the-system-in-a-rack"></a>Установка системы в стойку
 
@@ -207,11 +207,11 @@ ms.locfileid: "90900017"
 
     - Устройство с тремя отсеками PCI и одним GPU
 
-        ![Задняя панель подключенного устройства](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-one-gpu.png)
+        ![Задняя панель подключенного устройства 2](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-one-gpu.png)
 
     - Устройство с тремя отсеками PCI и двумя GPU
 
-        ![Задняя панель подключенного устройства](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-two-gpu.png)
+        ![Задняя панель подключенного устройства 3](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-two-gpu.png)
 
 2. Изучите расположение отсеков для накопителей и кнопки питания на передней панели устройства.
 

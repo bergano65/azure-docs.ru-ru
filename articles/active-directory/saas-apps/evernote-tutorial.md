@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 22225d9810c7b913505cb003a1ed2ce8f1a144e1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b22bf4ee3ff830a80ee97851f08173257697c50d
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555351"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826488"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-evernote"></a>Руководство по Интеграция единого входа Azure Active Directory с Evernote
 
@@ -92,7 +92,7 @@ ms.locfileid: "88555351"
 
 7. В разделе **Сертификат подписи SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Изображение](common/edit-certificate.png) 
+    ![Снимок экрана, на котором показано диалоговое окно "Сертификат подписи SAML" с выбранной кнопкой "Изменить"](common/edit-certificate.png) 
 
     ![Изображение](./media/evernote-tutorial/samlassertion.png)
 
@@ -181,7 +181,7 @@ ms.locfileid: "88555351"
 
 3. В **консоли администрирования** выберите **Добавить пользователей**.
 
-    ![Добавление тестового пользователя](./media/evernote-tutorial/create_aaduser_0001.png)
+    ![Снимок экрана, на котором показано меню "Users" (Пользователи) с выбранным пунктом "Add users" (Добавить пользователей)](./media/evernote-tutorial/create_aaduser_0001.png)
 
 4. **Добавьте адреса электронной почты участников команды** в **соответствующих полях** и нажмите кнопку **Пригласить**.
 

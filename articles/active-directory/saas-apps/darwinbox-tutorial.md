@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: jeedes
-ms.openlocfilehash: 6773805fac9a23ca918a1bf6e4889d3e1a3bb336
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a2c1ba8feb933be7c4970f061dd5acdc1ef68a16
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550118"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775462"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-darwinbox"></a>Руководство по интеграции единого входа Azure Active Directory с Darwinbox
 
@@ -143,19 +143,19 @@ ms.locfileid: "88550118"
 
 1. Откройте мобильное приложение Darwinbox. Щелкните **Enter Organization URL** (Ввести URL-адрес организации), введите URL-адрес своей организации в текстовое поле и нажмите кнопку со стрелкой.
 
-    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile01.jpg)
+    ![Снимок экрана, на котором показано мобильное приложение Darwinbox с выбранным параметром "Enter Organization URL" (Ввести URL-адрес организации), а также пример организации и выбранная кнопка со стрелкой](media/darwinbox-tutorial/DarwinboxMobile01.jpg)
 
 1. Если у вас несколько доменов, щелкните свой домен.
 
-    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile02.jpg)
+    ![Снимок экрана, на котором показан экран "Choose your domain" (Выбор домена) с выбранным примером домена](media/darwinbox-tutorial/DarwinboxMobile02.jpg)
 
 1. Введите адрес электронной почты Azure AD в приложение Darwinbox и нажмите **Далее**.
 
-    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile03.jpg)
+    ![Снимок экрана, на котором показан экран "Sign in" (Вход) с выбранной кнопкой "Next" (Далее).](media/darwinbox-tutorial/DarwinboxMobile03.jpg)
 
 1. Введите пароль Azure AD в приложение Darwinbox и нажмите **Войти**.
 
-    ![Мобильное приложение Darwinbox](media/darwinbox-tutorial/DarwinboxMobile04.jpg)
+    ![Снимок экрана, на котором показан экран "Enter password" (Ввод пароля) с выбранной кнопкой "Next" (Далее)](media/darwinbox-tutorial/DarwinboxMobile04.jpg)
 
 1. Наконец, после успешного входа на сайт отобразится домашняя страница приложения.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 787de3e3e44ca921c5dccd7b51a2e655a31d112b
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: ba76618892cace6681c82e96d7a2f9b36f839664
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555983"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91775624"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство. Интеграция Azure Active Directory с Datahug
 
@@ -99,7 +99,7 @@ ms.locfileid: "88555983"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Datahug](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML" с выбранными полем "Идентификатор", полем "URL-адрес ответа" и кнопкой "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://apps.datahug.com/identity/<uniqueID>`.
 
@@ -206,11 +206,11 @@ ms.locfileid: "88555983"
 
 2. Наведите указатель мыши на **шестеренку** в верхнем правом углу и выберите **Settings** (Параметры).
    
-    ![Добавление сотрудника](./media/datahug-tutorial/1.png)
+    ![Снимок экрана, на котором показана домашняя страница Datahug с выбранным значком шестеренки и выбранным пунктом "Settings" (Параметры) в раскрывающемся меню](./media/datahug-tutorial/1.png)
 
 3. Выберите элемент **People** (Люди) и откройте вкладку **Add Users** (Добавление пользователей).
 
-    ![Добавление сотрудника](./media/datahug-tutorial/2.png)
+    ![Снимок экрана, на котором показана страница "Settings" (Параметры) с последовательно выбранными вкладками "Users" (Пользователи) и "Add Users" (Добавление пользователей)](./media/datahug-tutorial/2.png)
 
 4. Введите адрес электронной почты человека, для которого вы хотите создать учетную запись, и нажмите кнопку **Добавить**.
 

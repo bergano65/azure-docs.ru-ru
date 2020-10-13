@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/09/2019
 ms.author: jeedes
-ms.openlocfilehash: b11955c040225f66bc3eda9fe762cb1cbfc2d308
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 9836c4e8f644a4e1b39e5aef7208262d6701f5bb
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542859"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760695"
 ---
 # <a name="tutorial-integrate-aha-with-azure-active-directory"></a>Руководство по Интеграция Aha! с Azure Active Directory
 
@@ -148,7 +148,7 @@ ms.locfileid: "88542859"
 
 6. Нажмите **Безопасность и единый вход**.
 
-    ![Безопасность и единый вход](./media/aha-tutorial/IC798952.png "Безопасность и единый вход")
+    ![Снимок экрана, на котором показан пункт меню "Security and single sign-on" (Безопасность и единый вход)](./media/aha-tutorial/IC798952.png "Безопасность и единый вход")
 
 7. В разделе **Единый вход** в качестве **поставщика удостоверений** выберите **SAML 2.0**.
 

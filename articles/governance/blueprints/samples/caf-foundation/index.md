@@ -3,12 +3,12 @@ title: Краткое описание примера схемы CAF Foundation
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы для Azure Foundation.
 ms.date: 09/14/2020
 ms.topic: sample
-ms.openlocfilehash: a3e2a5bcbb68ef0b51cf02ebb7a7e34913e2a1e6
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 77e8b79ec7cf217161099808cee4364e31c6d6dd
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91929614"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91950284"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -26,7 +26,7 @@ ms.locfileid: "91929614"
 
 - Экземпляр [Azure Key Vault](../../../../key-vault/general/overview.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска безопасного развертывания в [учетную запись хранения](../../../../storage/common/storage-introduction.md) для диагностического ведения журналов;
-- развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок.
+- развернутый [Центр безопасности Azure](../../../../security-center/security-center-introduction.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок.
 - В схеме также описываются и развертываются определения [Политики Azure](../../../policy/overview.md):
   - Определения Политики:
     - добавление тегов (CostCenter) к группам ресурсов;

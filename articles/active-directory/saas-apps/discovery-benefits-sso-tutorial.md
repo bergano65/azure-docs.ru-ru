@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/03/2019
 ms.author: jeedes
-ms.openlocfilehash: 3beefb467f7875e6bc76765811c6525f5dab9393
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 83f1eef14a5c22fbab998fb6c939775873748670
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88536246"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91774127"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-discovery-benefits-sso"></a>Руководство по интеграции единого входа Azure Active Directory с Discovery Benefits SSO
 
@@ -86,7 +86,7 @@ ms.locfileid: "88536246"
 
     а. Щелкните значок **Изменить**, чтобы открыть диалоговое окно **Unique User Identifier (Name ID)** (Уникальный идентификатор пользователя (идентификатор имени)).
 
-    ![Настройка приложения Discovery Benefits SSO](./media/discovery-benefits-sso-tutorial/attribute01.png)
+    ![Снимок экрана, на котором показан раздел "Утверждения и атрибуты пользователя", в правой части которого выбран значок многоточия "Обязательное утверждение"](./media/discovery-benefits-sso-tutorial/attribute01.png)
 
     ![Настройка приложения Discovery Benefits SSO](./media/discovery-benefits-sso-tutorial/attribute02.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "88536246"
 
     е) Мы автоматически заполнили дополнительные утверждения, необходимые для настройки единого входа (`SSOInstance` и `SSOID`). Щелкните значок **Изменить** для сопоставления значений для своей организации.
 
-    ![Настройка приложения Discovery Benefits SSO](./media/discovery-benefits-sso-tutorial/attribute03.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты и утверждения пользователя" с выделенными значениями "SSO Instance" (Экземпляр единого входа) и "SSO ID" (Идентификатор единого входа).](./media/discovery-benefits-sso-tutorial/attribute03.png)
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 

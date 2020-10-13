@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 219dd6e4a8f04da8b28a28e5473394f0721e4013
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 03b8110db94a08f44035e75371fd7641fcd91626
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545217"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826349"
 ---
 # <a name="tutorial-integrate-ilms-with-azure-active-directory"></a>Руководство по Интеграция iLMS с Azure Active Directory
 
@@ -130,29 +130,29 @@ ms.locfileid: "88545217"
 
 2. На вкладке **Settings** (Параметры) щелкните **SSO:SAML**, чтобы открыть параметры SAML, и выполните следующие действия:
 
-    ![Настройка единого входа](./media/ilms-tutorial/1.png)
+    ![Снимок экрана, на котором показана вкладка "Settings" (Параметры) на сайте iLMS, где можно выбрать параметр "SSO: SAML" (Единый вход: SAML")](./media/ilms-tutorial/1.png)
 
 3. Разверните раздел **Service Provider** (Поставщик услуг) и скопируйте значения **идентификатора** и **URL-адреса конечной точки**.
 
-    ![Настройка единого входа](./media/ilms-tutorial/2.png) 
+    ![Снимок экрана, на котором показан раздел параметров SAML, где можно узнать значения](./media/ilms-tutorial/2.png) 
 
 4. В разделе **Identity Provider** (Поставщик удостоверений) установите переключатель **Import Metadata** (Импорт метаданных).
 
 5. Выберите файл **метаданных федерации**, скачанный с портала Azure в разделе **Сертификат подписи SAML**.
 
-    ![Настройка единого входа](./media/ilms-tutorial/tutorial_ilms_ssoconfig1.png)
+    ![Снимок экрана, на котором показан раздел параметров SAML, где можно выбрать файл метаданных](./media/ilms-tutorial/tutorial_ilms_ssoconfig1.png)
 
 6. Если вы хотите включить JIT-подготовку, чтобы создать учетные записи iLMS для неопознанных пользователей, выполните следующие действия:
 
     а. Установите флажок **Create Un-recognized User Account** (Создать учетную запись неопознанного пользователя) для сопоставления этих атрибутов.
 
-    ![Настройка единого входа](./media/ilms-tutorial/tutorial_ilms_ssoconfig2.png)
+    ![Снимок экрана, на котором показан флажок "Create Un-recognized User Account" (Создать учетную запись неопознанного пользователя)](./media/ilms-tutorial/tutorial_ilms_ssoconfig2.png)
 
     b. Сопоставьте атрибуты в Azure AD с атрибутами в iLMS. В столбце атрибутов укажите имена атрибутов или значение по умолчанию.
 
     c. Перейдите на вкладку **Business Rules** (Бизнес-правила) и выполните следующие действия:
 
-    ![Настройка единого входа](./media/ilms-tutorial/5.png)
+    ![Снимок экрана, на котором показан раздел параметров "Business Rules" (Бизнес-правила), где ввести сведения на этом шаге](./media/ilms-tutorial/5.png)
 
     d. Установите флажок **Create Un-recognized Regions, Divisions and Departments** (Создать неопознанные регионы, подразделения и отделы), чтобы создать регионы, подразделения и отделы, которые не существуют во время выполнения единого входа.
 
@@ -164,7 +164,7 @@ ms.locfileid: "88545217"
 
 7. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
-    ![Настройка единого входа](./media/ilms-tutorial/save.png)
+    ![Снимок экрана, на котором показана кнопка "Save" (Сохранить)](./media/ilms-tutorial/save.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -206,11 +206,11 @@ ms.locfileid: "88545217"
 
 2. Щелкните **Register User** (Регистрация пользователя) на вкладке **Users** (Пользователя), чтобы открыть страницу **регистрации пользователя**.
 
-   ![Добавление сотрудника](./media/ilms-tutorial/3.png)
+   ![Снимок экрана, на котором показана вкладка "Settings" (Параметры) на сайте iLMS, где можно выбрать параметр "Register User" (Регистрация пользователя)](./media/ilms-tutorial/3.png)
 
 3. На странице **Register User** (Регистрация пользователя) сделайте следующее:
 
-    ![Добавление сотрудника](./media/ilms-tutorial/create_testuser_add.png)
+    ![Снимок экрана, на котором показана страница "Register User" (Регистрация пользователя), где можно ввести указанные сведения](./media/ilms-tutorial/create_testuser_add.png)
 
     а. В текстовом поле **Имя** введите имя, например Britta.
 

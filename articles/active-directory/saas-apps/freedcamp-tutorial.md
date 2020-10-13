@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 50b5e21c8dc441187b3d78310db55b84aa1cd158
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 7f8bc88cf34c3bbea168bd95d2d03bdc3373ad07
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551036"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817048"
 ---
 # <a name="tutorial-integrate-freedcamp-with-azure-active-directory"></a>Руководство по Интеграция Freedcamp с Azure Active Directory
 
@@ -108,11 +108,11 @@ ms.locfileid: "88551036"
 
 4. В правом верхнем углу страницы щелкните **профиль** и выберите **My Account** (Моя учетная запись).
 
-    ![Конфигурация Freedcamp](./media/freedcamp-tutorial/config01.png)
+    ![Снимок экрана, на котором показаны выбранные элементы "Profile" (Профиль) и "My Account" (Моя учетная запись)](./media/freedcamp-tutorial/config01.png)
 
 5. В левой части строки меню щелкните **SSO** (Единый вход). На странице **Your SSO connections** (Ваши подключения для единого входа) выполните следующие действия.
 
-    ![Конфигурация Freedcamp](./media/freedcamp-tutorial/config02.png)
+    ![Снимок экрана, на котором показан элемент "SSO" (Единый вход), выбранный в левой строке меню, страница "Your SSO connections" (Ваши подключения для единого входа) с введенными значениями и выбранная кнопка "Submit" (Отправить)](./media/freedcamp-tutorial/config02.png)
 
     а. В текстовом поле **Title** (Заголовок) введите заголовок.
 
@@ -168,7 +168,7 @@ ms.locfileid: "88551036"
 
 3. В правой части страницы "Manage System" (Управление системой) выполните следующие действия.
 
-    ![Конфигурация Freedcamp](./media/freedcamp-tutorial/config04.png)
+    ![Снимок экрана, на котором показана выбранная кнопка "Add Or Invite Users" (Добавить или пригласить пользователей), выделенное поле "Email" (Адрес электронной почты) и выбранная кнопка "Add User" (Добавить пользователя)](./media/freedcamp-tutorial/config04.png)
 
     а. Щелкните **Add or invite Users** (Добавить или пригласить пользователей).
 

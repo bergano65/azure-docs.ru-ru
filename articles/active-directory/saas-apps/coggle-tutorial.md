@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/30/2020
 ms.author: jeedes
-ms.openlocfilehash: ffa4f0ab40e413da78257bde81a00fd3910131b1
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 08a9cbadb86f59cca1f361dc66ee03a300f91968
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555978"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759549"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-coggle"></a>Руководство по интеграции единого входа Azure Active Directory с Coggle
 
@@ -146,19 +146,19 @@ ms.locfileid: "88555978"
 
 2. Щелкните учетную запись **Coggle** и выберите **My Settings** (Мои параметры).
 
-    ![Конфигурация Coggle](./media/Coggle-tutorial/configure1.png)
+    ![Снимок экрана, на котором показан корпоративный сайт Coggle с выбранным элементом "My Settings" (Мои параметры)](./media/Coggle-tutorial/configure1.png)
 
 3. Щелкните следующий **логотип** и выберите **Authentication** (Проверка подлинности).
 
-    ![Конфигурация Coggle](./media/Coggle-tutorial/configure2.png)
+    ![Снимок экрана, на котором выбраны значок кита и элемент "Authentication" (Проверка подлинности)](./media/Coggle-tutorial/configure2.png)
 
 4. Щелкните **Edit SAML Config** (Изменить конфигурацию SAML).
 
-    ![Конфигурация Coggle](./media/Coggle-tutorial/configure3.png)
+    ![Снимок экрана, на котором показана страница "SAML Integration" (Интеграция SAML) с параметром "Edit SAML Config" (Изменить конфигурацию SAML)](./media/Coggle-tutorial/configure3.png)
 
 5. На диалоговой странице **SAML Integration** (Интеграция SAML) выполните указанные ниже действия.
 
-    ![Конфигурация Coggle](./media/Coggle-tutorial/configure4.png)
+    ![Снимок экрана, на котором показана страница "SAML Integration" (Интеграция SAML), где можно ввести сведения на этом шаге](./media/Coggle-tutorial/configure4.png)
 
     а. В текстовое поле **Entrypoint (ID Provider SSO URL)** (Точка входа или целевой URL-адрес единого входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 

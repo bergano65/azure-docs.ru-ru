@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 794a952ba719faa16e3584afaf8f2f292deb6c03
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 8a8a9587fd50b63dc862f8b74bc99548699fa6e2
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88551824"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760679"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Руководство по Интеграция Azure Active Directory с ClickUp Productivity Platform
 
@@ -118,17 +118,17 @@ ms.locfileid: "88551824"
 
 2. Щелкните значок **профиля пользователя** и выберите пункт **Settings** (Параметры).
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure0.png)
+    ![Снимок экрана, на котором показан арендатор ClickUp Productivity с выбранным значком "Settings" (Параметры)](./media/clickup-productivity-platform-tutorial/configure0.png)
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure1.png)
+    ![Снимок экрана, на котором показан раздел "Settings" (Параметры)](./media/clickup-productivity-platform-tutorial/configure1.png)
 
 3. Выберите **Microsoft** (Майкрософт) в разделе "Single Sign-On (SSO) Provider" (Поставщик единого входа).
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure2.png)
+    ![Снимок экрана, на котором показана область "Authentication" (Аутентификация) с выбранным элементом "Microsoft" (Майкрософт)](./media/clickup-productivity-platform-tutorial/configure2.png)
 
 4. На странице **Configure Microsoft Single Sign On** (Настройка единого входа Майкрософт) выполните следующие действия:
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure3.png)
+    ![Снимок экрана, на котором показана страница "Configure Microsoft Single Sign On" (Настройка единого входа Майкрософт), где можно скопировать идентификатор сущности и сохранить URL-адрес метаданных федерации Azure](./media/clickup-productivity-platform-tutorial/configure3.png)
 
     а. Щелкните **Copy** (Копировать), чтобы скопировать идентификатор сущности, и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
     
@@ -136,7 +136,7 @@ ms.locfileid: "88551824"
 
 5. Чтобы завершить настройку, щелкните **Authenticate With Microsoft to complete setup** (Выполнить аутентификацию с помощью средств Майкрософт, чтобы завершить настройку) и выполните аутентификацию с помощью учетной записи Майкрософт.
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure4.png)
+    ![Снимок экрана, на котором показана кнопка "Authenticate With Microsoft to complete setup" (Выполнить аутентификацию с помощью средств Майкрософт, чтобы завершить настройку)](./media/clickup-productivity-platform-tutorial/configure4.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -195,13 +195,13 @@ ms.locfileid: "88551824"
 
 2. Щелкните значок **профиля пользователя** и выберите пункт **People** (Пользователи).
    
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure0.png)
+    ![Снимок экрана, на котором показан арендатор ClickUp Productivity](./media/clickup-productivity-platform-tutorial/configure0.png)
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/user1.png)
+    ![Снимок экрана, на котором показана выбранная ссылка "People" (Люди)](./media/clickup-productivity-platform-tutorial/user1.png)
 
 3. Введите в текстовом поле адрес электронной почты пользователя и щелкните **Invite** (Пригласить).
 
-    ![Настройка ClickUp Productivity](./media/clickup-productivity-platform-tutorial/user2.png)
+    ![Снимок экрана, на котором показан раздел "Team Users Settings" (Параметры участников команды), позволяющий пригласить людей по электронной почте](./media/clickup-productivity-platform-tutorial/user2.png)
 
     > [!NOTE]
     > Пользователь получит уведомление, и ему потребуется принять приглашение, чтобы активировать учетную запись.

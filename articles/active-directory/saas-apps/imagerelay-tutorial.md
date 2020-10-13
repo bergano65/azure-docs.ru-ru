@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: ec0cc88122521a5f59da45107956b4f25156b02f
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 0c32dbdafe8d2681d341cb7f2ee6f0ce45123cab
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88545256"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91826391"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство по интеграции Azure Active Directory с приложением Image Relay
 
@@ -128,27 +128,27 @@ ms.locfileid: "88545256"
 
 2. На панели инструментов вверху экрана выберите рабочую нагрузку **Users & Permissions** (Пользователи и разрешения).
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_06.png) 
+    ![Снимок экрана, на котором показан элемент "Users & Permissions" (Пользователи и разрешения), выбранный на панели инструментов](./media/imagerelay-tutorial/tutorial_imagerelay_06.png) 
 
 3. Щелкните **Создать новое разрешение**.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_08.png)
+    ![Снимок экрана, на котором показано текстовое поле для ввода заголовка разрешения и параметр для выбора типа разрешения](./media/imagerelay-tutorial/tutorial_imagerelay_08.png)
 
 4. В рабочей нагрузке **Single Sign On Settings** (Параметры единого входа) установите флажок **This Group can only sign-in via Single Sign On** (Эта группа может входить только через единый вход) и нажмите кнопку **Сохранить**.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_09.png) 
+    ![Снимок экрана, на котором показан раздел "Single Sign On Settings" (Параметры единого входа), где можно выбрать соответствующий параметр](./media/imagerelay-tutorial/tutorial_imagerelay_09.png) 
 
 5. Откройте **Параметры учетной записи**.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_10.png) 
+    ![Снимок экрана, на котором показан параметр панели инструментов "Account Settings" (Параметры учетной записи)](./media/imagerelay-tutorial/tutorial_imagerelay_10.png) 
 
 6. Выберите рабочую нагрузку **Параметры единого входа** .
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_11.png)
+    ![Снимок экрана, на котором показан пункт меню "Single Sign On Settings" (Параметры единого входа)](./media/imagerelay-tutorial/tutorial_imagerelay_11.png)
 
 7. В диалоговом окне **SAML Settings** (Параметры SAML) выполните следующие действия.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_12.png)
+    ![Снимок экрана, на котором показано диалоговое "SAML Settings" (Параметры SAML), где можно ввести соответствующую информацию](./media/imagerelay-tutorial/tutorial_imagerelay_12.png)
 
     а. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
 
@@ -160,19 +160,19 @@ ms.locfileid: "88545256"
 
     д) В разделе **Сертификат X.509** щелкните **Обновить сертификат**.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_17.png)
+    ![Снимок экрана, на котором показан параметр для обновления сертификата](./media/imagerelay-tutorial/tutorial_imagerelay_17.png)
 
     е) Откройте скачанный сертификат в блокноте, а затем скопируйте и вставьте его содержимое в текстовое поле **x.509 Certificate** (Сертификат X.509).
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_18.png)
+    ![Снимок экрана, на котором показан сертификат X точка 509](./media/imagerelay-tutorial/tutorial_imagerelay_18.png)
 
     ж. В разделе **Just-In-Time User Provisioning** (JIT-подготовка пользователей) выберите **Enable Just-In-Time User Provisioning** (Включить JIT-подготовку пользователей).
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_19.png)
+    ![Снимок экрана, на котором показан раздел "Just-In-Time User Provisioning" (JIT-подготовка пользователей) с выбранным элементом управления для включения](./media/imagerelay-tutorial/tutorial_imagerelay_19.png)
 
     h. Выберите группу разрешений (например, **SSO Basic**(Базовый единый вход)), которой будет разрешено выполнять вход только через службу единого входа.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_20.png)
+    ![Снимок экрана, на котором показан раздел "Just-In-Time User Provisioning" (JIT-подготовка пользователей) с выбранным элементом "SSO Basic" (Базовый единый вход)](./media/imagerelay-tutorial/tutorial_imagerelay_20.png)
 
     i. Выберите команду **Сохранить**.
 
@@ -237,11 +237,11 @@ ms.locfileid: "88545256"
 
 2. Откройте раздел **Users & Permissions** (Пользователи и разрешения) и выберите параметр **Create SSO User** (Создать пользователя единого входа).
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_21.png) 
+    ![Снимок экрана, на котором показан выбранный пункт меню "Create SSO User" (Создать пользователя единого входа)](./media/imagerelay-tutorial/tutorial_imagerelay_21.png) 
 
 3. Введите **Адрес электронной почты**, **Имя**, **Фамилию** и **Организацию** пользователя, которого нужно подготовить, и выберите группу разрешений (например, "Базовый единый вход"). Эта группа сможет выполнять вход только с помощью единого входа.
 
-    ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_22.png)
+    ![Снимок экрана, на котором показана страница "Create SSO User" (Создание пользователя единого входа), где можно ввести необходимые сведения](./media/imagerelay-tutorial/tutorial_imagerelay_22.png)
 
 4. Нажмите кнопку **Создать**.
 

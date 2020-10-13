@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 5bae2173fc49cb9f41787905be66cf32a99fa03a
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5ffdc510fd2a0f81fbfa5d9d04c337c99b389110
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88537026"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91774551"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dealpath"></a>Руководство по интеграции Azure Active Directory с Dealpath
 
@@ -128,7 +128,7 @@ ms.locfileid: "88537026"
 
 2. В правом верхнем углу щелкните **Admin Tools** (Средства администрирования) и перейдите на страницу **Integrations** (Интеграции), затем в разделе **SAML 2.0 Authentication** (Аутентификация SAML 2.0) щелкните **Update Settings** (Изменить параметры).
 
-    ![Конфигурация Dealpath](./media/dealpath-tutorial/tutorial_dealpath_admin.png)
+    ![Снимок экрана, на котором показана страница Admin Tools > Integrations" (Средства администрирования > Интеграции) с выбранными разделом "SAML 2.0 Authentication" (Аутентификация SAML 2.0) и кнопкой "Update Settings" (Обновить параметры)](./media/dealpath-tutorial/tutorial_dealpath_admin.png)
 
 3. На странице **Set up SAML 2.0 authentication** (Настройка аутентификации SAML 2.0) выполните указанные ниже действия.
 

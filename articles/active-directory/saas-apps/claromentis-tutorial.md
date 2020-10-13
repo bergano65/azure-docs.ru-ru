@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/04/2019
 ms.author: jeedes
-ms.openlocfilehash: dba77045f8aef1799717c6f6af91046b3ca6119e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 3b8f91bca3650004472d8fe51d4e92b42ade3122
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88520317"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759831"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-claromentis"></a>Руководство по Интеграция единого входа Azure Active Directory с Claromentis
 
@@ -138,19 +138,19 @@ ms.locfileid: "88520317"
 
 1. Щелкните **значок приложения** и выберите **Администратор**.
 
-    ![Конфигурация Claromentis](./media/claromentis-tutorial/config1.png)
+    ![Снимок экрана, на котором показан веб-сайт Claromentis с выбранным элементом "Admin" (Администратор)](./media/claromentis-tutorial/config1.png)
 
 1. Выберите вкладку **Custom Login Handler** (Пользовательский обработчик входа).
 
-    ![Конфигурация Claromentis](./media/claromentis-tutorial/config2.png)
+    ![Снимок экрана, на котором показана страница "Administration" (Администрирование) с выбранной вкладкой "Custom Login Handler" (Пользовательский обработчик входа)](./media/claromentis-tutorial/config2.png)
 
 1. Выберите **SAML Config** (Конфигурация SAML).
 
-    ![Конфигурация Claromentis](./media/claromentis-tutorial/config3.png)
+    ![Снимок экрана, на котором показана страница конфигурации SAML](./media/claromentis-tutorial/config3.png)
 
 1. На вкладке **SAML Config** (Конфигурация SAML) прокрутите вниз до раздела **Config** (Конфигурация) и выполните следующие действия.
 
-    ![Конфигурация Claromentis](./media/claromentis-tutorial/config4.png)
+    ![Снимок экрана, на котором показан раздел "Config" (Конфигурация) страницы, где можно ввести сведения, описанные на этом шаге](./media/claromentis-tutorial/config4.png)
 
     а. В текстовом поле **Technical Contact Name** (Имя контактного лица по техническим вопросам) введите имя контактного лица.
 
@@ -160,7 +160,7 @@ ms.locfileid: "88520317"
 
 1. Прокрутите вниз до раздела **Auth Sources** (Источники проверки подлинности) и выполните следующие шаги.
 
-    ![Конфигурация Claromentis](./media/claromentis-tutorial/config5.png)
+    ![Снимок экрана, на котором показан раздел "Auth Sources" (Источники проверки подлинности), где можно ввести сведения, описанные на этом шаге](./media/claromentis-tutorial/config5.png)
 
     а. В текстовое поле **IDP** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -172,7 +172,7 @@ ms.locfileid: "88520317"
 
 1. Теперь вы увидите, что все URL-адреса были заполнены в разделе **Поставщик удостоверений** в разделе **SAML Config** (Конфигурация SAML).
 
-    ![Конфигурация Claromentis](./media/claromentis-tutorial/config6.png)
+    ![Снимок экрана, на котором показана страница "Поставщик удостоверений", заполненная URL-адресами](./media/claromentis-tutorial/config6.png)
 
     а. Скопируйте значение **идентификатора (идентификатор сущности)** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 

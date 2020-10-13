@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 072c02401a5d1ef49a3f25828f5b60fa8504d2ee
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c62967950d9f6d9ba9e3578357f65cc4988412c2
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555129"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91824915"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-filesanywhere"></a>Руководство по интеграции Azure Active Directory с FilesAnywhere
 
@@ -101,7 +101,7 @@ ms.locfileid: "88555129"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения FilesAnywhere](common/both-replyurl.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML" с выбранными полем "URL-адрес ответа" и кнопкой "Сохранить"](common/both-replyurl.png)
 
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.filesanywhere.com/saml20.aspx?c=<Client Id>`.
 
@@ -116,9 +116,9 @@ ms.locfileid: "88555129"
 
 6. Приложение FilesAnywhere ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок "Изменить", чтобы добавить атрибуты.
 
-    ![image](common/edit-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты пользователя" с выбранной кнопкой "Изменить"](common/edit-attribute.png)
 
-    Когда пользователи регистрируются в FilesAnywhere, они получают от [службы поддержки FilesAnywhere](mailto:support@FilesAnywhere.com) значение атрибута **clientid**. Необходимо добавить атрибут "Client Id" (Идентификатор клиента), используя уникальное значение, предоставленное FilesAnywhere.
+    Когда пользователи регистрируются в FilesAnywhere, они получают от [службы поддержки FilesAnywhere](mailto:support@FilesAnywhere.com) значение атрибута **clientid**. Необходимо добавить атрибут "Client ID" (Идентификатор клиента), используя уникальное значение, предоставленное FilesAnywhere.
 
 7. Кроме описанных выше, приложение FilesAnywhere ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -128,7 +128,7 @@ ms.locfileid: "88555129"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](common/new-save-attribute.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Утверждения пользователя" с выбранными кнопками "Добавить новое утверждение" и "Сохранить"](common/new-save-attribute.png)
 
     ![image](common/new-attribute-details.png)
 

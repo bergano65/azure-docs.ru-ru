@@ -3,12 +3,12 @@ title: Руководство по записи видео в облако на 
 description: Из этого руководства можно узнать, как с помощью службы Аналитики видеотрансляций на платформе Azure IoT Edge записывать видео в облако на основе событий и воспроизводить его.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 05ee34770cacdcda270afced13373a61ba83e13a
-ms.sourcegitcommit: d0541eccc35549db6381fa762cd17bc8e72b3423
+ms.openlocfilehash: a2388a01544d2158e7ca6f1692df07b14ec03a93
+ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89568576"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91773558"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство. Запись видео в облако на основе событий и его воспроизведение
 
@@ -63,13 +63,13 @@ ms.locfileid: "89568576"
 Кроме того, запись может активироваться при обнаружении определенного события службой логического вывода. В этом руководстве мы используем видео автомобилей, проезжающих по трассе, и будем записывать видео каждый раз при появлении грузовика.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/event-based-video-recording-tutorial/overview.svg" alt-text="Граф мультимедиа":::
+> :::image type="content" source="./media/event-based-video-recording-tutorial/overview.svg" alt-text="Граф мультимедиа&quot;:::
 
 Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
 
 * Модуль аналитики видеотрансляции в IoT Edge.
 * Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
-* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван "Object Counter". Вы создадите "Object Counter" и развернете его в этом руководстве.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter" и развернете его в этом руководстве.
 * [Модуль симулятора RTSP](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555), эмулирующий работу RTSP-камеры.
     
 Как видно на схеме, мы используем узел [RTSP-источника](media-graph-concept.md#rtsp-source) в графе мультимедиа для захвата условного видеопотока движения автомобилей по шоссе и отправляем это видео по двум маршрутам:
@@ -82,23 +82,13 @@ ms.locfileid: "89568576"
 Прежде чем приступать к работе, убедитесь, что вы выполнили 3-й пункт из раздела [Предварительные требования](#prerequisites). После того, как скрипт подготовки ресурсов завершит свою работу, выберите фигурные скобки, чтобы раскрыть структуру папок. В каталоге ~/clouddrive/lva-sample будет создано несколько файлов.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstarts/clouddrive.png" alt-text="Параметры приложения":::
+> :::image type="content" source="./media/quickstarts/clouddrive.png" alt-text="Граф мультимедиа&quot;:::
 
-В этом руководстве нас интересуют нижеперечисленные файлы:
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
 
-* **~/clouddrive/lva-sample/edge-deployment/.env**: Содержит свойства, которые Visual Studio Code использует для развертывания модулей на пограничном устройстве.
-* **~/clouddrive/lva-sample/appsetting.json**: Используется Visual Studio Code для запуска примера кода.
-
-Для выполнения этих действий потребуются файлы.
-
-1. Клонируйте репозиторий из ссылки GitHub https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp.
-1. Запустите Visual Studio Code и откройте папку, в которую загружен репозиторий.
-1. В Visual Studio Code перейдите в папку src/cloud-to-device-console-app и создайте файл **appsettings.json**. Этот файл содержит параметры, необходимые для выполнения программы.
-1. Скопируйте содержимое файла ~/clouddrive/lva-sample/appsettings.json. Текст должен выглядеть так:
-
-    ```
-    {  
-        "IoThubConnectionString" : "HostName=xxx.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX",  
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter" : "HostName=xxx.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX",  
         "deviceId" : "lva-sample-device",  
         "moduleId" : "lvaEdge"  
     }
@@ -155,7 +145,13 @@ ms.locfileid: "89568576"
 С помощью Visual Studio Code выполните [эти инструкции](../../iot-edge/tutorial-develop-for-linux.md#build-and-push-your-solution), чтобы войти в Docker. Потом выберите **Создание и отправка решения IoT Edge**. Используйте файл src/edge/deployment.objectCounter.template.json для этого шага.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/event-based-video-recording-tutorial/build-push.png" alt-text="Создание и отправка решения IoT Edge":::
+> :::image type="content" source="./media/event-based-video-recording-tutorial/build-push.png" alt-text="Граф мультимедиа&quot;:::
+
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
+
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter":::
 
 Это действие создает модуль objectCounter для подсчета объектов и отправки изображения в Реестр контейнеров Azure.
 
@@ -164,7 +160,13 @@ ms.locfileid: "89568576"
 Этот шаг создает манифест развертывания IoT Edge в файле src/edge/config/deployment.objectCounter.amd64.json. Щелкните этот файл правой кнопкой и выберите **Create Deployment for Single Device** (Создание развертывания для одного устройства).
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/quickstarts/create-deployment-single-device.png" alt-text="Создание развертывания для одного устройства":::
+> :::image type="content" source="./media/quickstarts/create-deployment-single-device.png" alt-text="Граф мультимедиа&quot;:::
+
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
+
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter":::
 
 Если вы раньше не работали с руководством по аналитике видеотрансляций в IoT Edge, среда Visual Studio Code предложит вам ввести строку подключения к Центру Интернета вещей. Ее можно скопировать из файла appsettings.json.
 
@@ -174,7 +176,13 @@ ms.locfileid: "89568576"
 В течении 30 секунд обновите центр Интернета вещей Azure в левом нижнем углу раздела Visual Studio Code. Вы увидите, что разворачиваются четыре модуля с именами lvaEdge, rtspsim, yolov3, and objectCounter.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/event-based-video-recording-tutorial/iot-hub.png" alt-text="Четыре развернутых модуля":::
+> :::image type="content" source="./media/event-based-video-recording-tutorial/iot-hub.png" alt-text="Граф мультимедиа&quot;:::
+
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
+
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter":::
 
 ## <a name="prepare-for-monitoring-events"></a>Подготовка к мониторингу событий
 
@@ -185,62 +193,36 @@ ms.locfileid: "89568576"
 1. Щелкните правой кнопкой мыши на файл lva-sample-device и выберите **Start Monitoring Built-in Event Endpoint** (Запуск мониторинга встроенной конечной точки события).
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/quickstarts/start-monitoring-iothub-events.png" alt-text="Запуск мониторинга встроенной конечной точки события":::
+    > :::image type="content" source="./media/quickstarts/start-monitoring-iothub-events.png" alt-text="Граф мультимедиа&quot;:::
+
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
+
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter":::
     
-    ## <a name="run-the-program"></a>Запуск программы
+## <a name="run-the-program"></a>Запуск программы
 
-1. В Visual Studio Code перейдите к файлу src/cloud-to-device-console-app/operations.json.
+1. В Visual Studio Code откройте вкладку **Расширения** (или нажмите клавиши CTRL+SHIFT+X) и найдите центр Интернета вещей Azure.
+1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
 
-1. В узле **GraphTopologySet** внесите следующие изменения:
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Граф мультимедиа&quot;:::
 
-    `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/evr-hubMessage-assets/topology.json"`
-    
-1. Затем внесите изменения в узлах **GraphInstanceSet** и **GraphTopologyDelete**:
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
 
-    `"topologyName" : "EVRtoAssetsOnObjDetect"`
-1. Чтобы запустить сеанс отладки, нажмите клавишу F5. В окне **ТЕРМИНАЛ** начнут появляться сообщения.
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter" (Показывать подробное сообщение).
 
-1. Файл operations.json начнет выполнение операций с вызова GraphTopologyList и GraphInstanceList. Если вы очистили ресурсы после выполнения действий, описанных в предыдущих кратких руководствах или учебниках, это действие возвратит пустые списки, а затем выполнение будет приостановлено, пока вы не нажмете клавишу **ВВОД**, как показано ниже:
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Граф мультимедиа&quot;:::
 
-    ```
-    --------------------------------------------------------------------------
-    Executing operation GraphTopologyList
-    -----------------------  Request: GraphTopologyList  --------------------------------------------------
-    {
-      "@apiVersion": "1.0"
-    }
-    ---------------  Response: GraphTopologyList - Status: 200  ---------------
-    {
-      "value": []
-    }
-    --------------------------------------------------------------------------
-    Executing operation WaitForInput
-    Press Enter to continue
-    ```
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
 
-1. После нажатия клавиши **ВВОД** в окне **ТЕРМИНАЛ** будет вызвана следующая серия прямых методов:
-   * Вызов GraphTopologySet с использованием предыдущего topologyUrl
-   * Вызов GraphInstanceSet с использованием приведенного ниже кода
-     
-        ```
-        {
-          "@apiVersion": "1.0",
-          "name": "Sample-Graph-1",
-          "properties": {
-            "topologyName": "EVRtoAssetsOnObjDetect",
-            "description": "Sample graph description",
-            "parameters": [
-              {
-                "name": "rtspUrl",
-                "value": "rtsp://rtspsim:554/media/camera-300s.mkv"
-              },
-              {
-                "name": "rtspUserName",
-                "value": "testuser"
-              },
-              {
-                "name": "rtspPassword",
-                "value": "testpassword"
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter"
               }
             ]
           }
@@ -251,11 +233,9 @@ ms.locfileid: "89568576"
    * Второй вызов GraphInstanceList должен указывать, что экземпляр графа находится в состоянии выполнения
      
 1. Вывод данных в окне **ТЕРМИНАЛ** будет приостановлен с предложением **Нажать клавишу ВВОД для продолжения**. Не нажимайте **ВВОД** на этом этапе. Прокрутите экран вверх, чтобы увидеть полезные данные ответов JSON на вызванные нами прямые методы.
-
 1. Если теперь переключиться в окно **ВЫХОДНЫЕ ДАННЫЕ** в Visual Studio Code, вы увидите сообщения, отправляемые в Центр Интернета вещей модулем Аналитики видеотрансляции в IoT Edge.
 
    Эти сообщения рассматриваются в следующем разделе.
-     
 1. Экземпляр графы продолжит работу и запись видео. Симулятор RTSP будет продолжать циклический перебор исходного видео. Просмотрите сообщения как написано в следующем разделе. Затем, чтобы закрыть экземпляр, вернитесь в окно **ТЕРМИНАЛ** и выберите **ВВОД**. Следующая серия вызовов производится для очистки ресурсов используя:
 
    * Вызов GraphInstanceDeactivate для деактивации экземпляра графа.
@@ -397,13 +377,25 @@ ms.locfileid: "89568576"
 1. Выберите **ресурсы** в списке **Служб мультимедиа**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/continuous-video-recording-tutorial/assets.png" alt-text="Непрерывная запись видео":::
+    > :::image type="content" source="./media/continuous-video-recording-tutorial/assets.png" alt-text="Граф мультимедиа&quot;:::
+
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
+
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter":::
 1. Вы найдете ресурс с именем sampleAssetFromEVR-LVAEdge-{DateTime}. Это имя указанное в свойстве outputLocation события RecordingStarted. Алгоритм создания этого имени определяется свойством assetNamePattern топологии.
 1. Выберите ресурс.
 1. На странице подробных сведений о ресурсе выберите команду **Создать** под текстовым полем **URL-адрес потоковой передачи**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/continuous-video-recording-tutorial/new-asset.png" alt-text="Новый актив":::
+    > :::image type="content" source="./media/continuous-video-recording-tutorial/new-asset.png" alt-text="Граф мультимедиа&quot;:::
+
+Схема представляет собой изображение [графа мультимедиа](media-graph-concept.md) и дополнительных модулей, которые позволяют реализовать описанный сценарий. Используются четыре модуля IoT Edge:
+
+* Модуль аналитики видеотрансляции в IoT Edge.
+* Модуль Edge с моделью ИИ, расположенный за конечной точкой HTTP. В этом модуле ИИ используется модель [YOLO v3](https://github.com/Azure/live-video-analytics/tree/master/utilities/video-analysis/yolov3-onnx), которая может распознавать объекты различных видов.
+* Пользовательский модуль для подсчета и фильтрации объектов, который на схеме назван &quot;Object Counter&quot;. Вы создадите &quot;Object Counter":::
 1. В открывшемся мастере примите параметры по умолчанию и выберите **Добавить**. Дополнительные сведения см. в статье о [воспроизведении видео](video-playback-concept.md).
 
     > [!TIP]

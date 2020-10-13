@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 049066ffc5ce0aea2af956343dfa7ba97b6b5bb4
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2baff2ac2af10caf857fd08b0d7e7df5030220e4
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88542825"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91758155"
 ---
 # <a name="tutorial-integrate-airwatch-with-azure-active-directory"></a>Руководство по Интеграция AirWatch с Azure Active Directory
 
@@ -125,7 +125,7 @@ ms.locfileid: "88542825"
 
 1. Откройте вкладку **User** (Пользователь), введите в текстовое поле **Base DN** (Базовое доменное имя) используемое доменное имя и щелкните **Save** (Сохранить).
 
-   ![Пользователь](./media/airwatch-tutorial/ic791922.png "Пользователь")
+   ![Снимок экрана, на котором выбрано текстовое поле "Base DN" (Базовое доменное имя)](./media/airwatch-tutorial/ic791922.png "Пользователь")
 
 1. Откройте вкладку **Server** (Сервер).
 
@@ -133,7 +133,7 @@ ms.locfileid: "88542825"
 
 1. В разделе **LDAP** выполните следующие действия:
 
-    ![Передача](./media/airwatch-tutorial/ic791924.png "LDAP")   
+    ![Снимок экрана, на котором показаны изменения, которые необходимо внести в раздел "LDAP"](./media/airwatch-tutorial/ic791924.png "LDAP")   
 
     а. Для параметра **Directory Type** (Тип каталога) выберите значение **None** (Нет).
 
@@ -223,7 +223,7 @@ ms.locfileid: "88542825"
 
 3. В меню **Users** (Пользователи) выберите пункт **List View** (Представление списка), а затем щелкните **Add > Add User** (Добавить > Добавить пользователя).
   
-   ![Добавление пользователя](./media/airwatch-tutorial/ic791930.png "Добавить пользователя")
+   ![Снимок экрана, на котором выбраны кнопки "Add" (Добавить) и "Add User" (Добавить пользователя)](./media/airwatch-tutorial/ic791930.png "Добавить пользователя")
 
 4. В диалоговом окне **Add / Edit User** (Добавление или изменение пользователя) выполните следующие действия.
 

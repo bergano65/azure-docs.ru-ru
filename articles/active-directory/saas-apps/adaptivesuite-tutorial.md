@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 3471d79875fb34ea0285c086e7d908aa254957dc
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 35414820228b615816f2389b7a609f5d63f5830d
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88537745"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760790"
 ---
 # <a name="tutorial-integrate-adaptive-insights-with-azure-active-directory"></a>Руководство по Интеграции Adaptive Insights с Azure Active Directory
 
@@ -99,7 +99,7 @@ ms.locfileid: "88537745"
 
 2. Перейдите в раздел **Administration**(Администрирование).
 
-    ![Администратор](./media/adaptivesuite-tutorial/ic805644.png "Административный")
+    ![Снимок экрана, на котором показан раздел "Administration" (Администрирование) в области панели навигации](./media/adaptivesuite-tutorial/ic805644.png "Административный")
 
 3. В разделе **Users and Roles** (Пользователи и роли) щелкните **SAML SSO Settings** (Параметры единого входа SAML).
 

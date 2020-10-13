@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: ef388426584dc013d102b929627ce2ba45431d5c
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 32dd392965e8bf33c835b435b5a2a01460740d2b
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547509"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91823680"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ideascale"></a>Руководство. Интеграция Azure Active Directory с IdeaScale
 
@@ -137,7 +137,7 @@ ms.locfileid: "88547509"
 
 3. Последовательно выберите **Security \> Single Signon Settings** (Безопасность > Параметры единого входа).
 
-    ![Параметры единого входа](./media/ideascale-tutorial/ic790848.png "Параметры единого входа")
+    ![Снимок экрана, на котором показан пункт "Single Signon Settings" (Параметры единого входа), выбранный в меню "Security" (Безопасность)](./media/ideascale-tutorial/ic790848.png "Параметры единого входа")
 
 4. Выберите для параметра **Single-Signon Type** (Тип единого входа) значение **SAML 2.0**.
 
@@ -145,7 +145,7 @@ ms.locfileid: "88547509"
 
 5. В диалоговом окне **Параметры единого входа** выполните следующие действия.
 
-    ![Параметры единого входа](./media/ideascale-tutorial/ic790850.png "Параметры единого входа")
+    ![Снимок экрана, на котором показано диалоговое окно "Single Signon Settings" (Параметры единого входа)](./media/ideascale-tutorial/ic790850.png "Параметры единого входа")
 
     а. В текстовое поле **SAML IdP Entity ID** (Идентификатор сущности выдающей точки распространения SAML) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 4fd6b46353cdeb4493c1a767c92e75d602e52843
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: b6da84c1be38dde72b663de1db3756e77f4db915
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88528905"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91759853"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Руководство по Интеграция единого входа Azure Active Directory с Cisco Webex
 
@@ -151,13 +151,13 @@ ms.locfileid: "88528905"
 
 4. Выберите **Settings** (Параметры) и в разделе **Authentication** (Аутентификация) щелкните **Modify** (Изменить).
 
-    ![Настройка единого входа](./media/cisco-spark-tutorial/tutorial-cisco-spark-10.png)
+    ![Снимок экрана, на котором показаны параметры аутентификации с возможностью выбора элемента "Modify" (Изменить)](./media/cisco-spark-tutorial/tutorial-cisco-spark-10.png)
   
 5. Выберите **Integrate a 3rd-party identity provider. (Advanced)** (Интеграция стороннего поставщика удостоверений. (Дополнительно)) и перейдите к следующему экрану.
 
 6. На странице **Import Idp Metadata** (Импорт метаданных IdP) либо перетащите файл метаданных Azure AD на страницу, либо воспользуйтесь обозревателем файлов, чтобы найти и передать файл метаданных Azure AD. Затем выберите **Require certificate signed by a certificate authority in Metadata (more secure)** (Требовать наличия в метаданных сертификата, подписанного центром сертификации) и нажмите кнопку **Next** (Далее).
 
-    ![Настройка единого входа](./media/cisco-spark-tutorial/tutorial-cisco-spark-11.png)
+    ![Снимок экрана, на котором показана страница "Import Idp Metadata" (Импорт метаданных IdP)](./media/cisco-spark-tutorial/tutorial-cisco-spark-11.png)
 
 7. Выберите **Test SSO Connection** (Проверить подключение для единого входа) и, когда откроется новая вкладка браузера, пройдите аутентификацию Azure AD, выполнив вход.
 
@@ -171,13 +171,13 @@ ms.locfileid: "88528905"
 
 2. Щелкните **Пользователи** и **Управление пользователями**.
    
-    ![Настройка единого входа](./media/cisco-spark-tutorial/tutorial-cisco-spark-12.png) 
+    ![Снимок экрана, на котором показана страница "Users" (Пользователи), где можно управлять пользователями](./media/cisco-spark-tutorial/tutorial-cisco-spark-12.png) 
 
 3. В окне **Manage User** (Управление пользователем) выберите **Manually add or modify users** (Добавить или изменить пользователей вручную) и нажмите кнопку **Next** (Далее).
 
 4. Выберите **Names and Email address** (Имя, фамилия и электронный адрес). Затем заполните текстовые поля следующим образом.
 
-    ![Настройка единого входа](./media/cisco-spark-tutorial/tutorial-cisco-spark-13.png) 
+    ![Снимок экрана, на котором показано диалоговое окно "Mange Users" (Управление пользователями), где можно вручную добавить или изменить пользователей](./media/cisco-spark-tutorial/tutorial-cisco-spark-13.png) 
 
     а. В текстовом поле **First Name** (Имя) введите имя пользователя, например **B**.
 

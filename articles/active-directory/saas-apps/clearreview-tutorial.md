@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 06c4945c6fee82b3ce622304351c3ad6d9ae282d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 21899ab40836b8ad083c0f005d43084c65c1b6fa
+ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544712"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91760025"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clear-review"></a>Руководство по интеграции Azure Active Directory с Clear Review
 
@@ -102,7 +102,7 @@ ms.locfileid: "88544712"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Clear Review](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<customer name>.clearreview.com/sso/metadata/`.
 
@@ -110,7 +110,7 @@ ms.locfileid: "88544712"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Clear Review](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<customer name>.clearreview.com`.
 
@@ -119,15 +119,15 @@ ms.locfileid: "88544712"
 
 6. Приложение Clever Review ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Clear Review ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты пользователя" с выбранным значком "Изменить"](common/edit-attribute.png)
 
 7. В разделе **Атрибуты и утверждения пользователя** выполните следующие действия:
 
     а. Щелкните значок **Изменить** в правой части значения **Имя идентификатора**.
 
-    ![Изображение](./media/clearreview-tutorial/attribute02.png)
+    ![Снимок экрана, на котором показан раздел "Атрибуты и утверждения пользователя" с выбранным значком "Изменить"](./media/clearreview-tutorial/attribute02.png)
 
-    ![Изображение](./media/clearreview-tutorial/attribute01.png)
+    ![Снимок экрана, на котором показано диалоговое окно "Управление утверждениями пользователя", где можно ввести описанные значения](./media/clearreview-tutorial/attribute01.png)
 
     b. В списке **Атрибут источника** выберите значение **user.mail** для этой строки.
 
@@ -153,15 +153,15 @@ ms.locfileid: "88544712"
 
 2. Выберите **Admin** (Администрирование) в области навигации слева.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/clearreview-tutorial/tutorial_clearreview_app_admin1.png)
+    ![Снимок экрана, на котором показан портал Clear Review с выбранным элементом "Admin" (Администратор)](./media/clearreview-tutorial/tutorial_clearreview_app_admin1.png)
 
 3. В разделе **Интеграции** в нижней части страницы щелкните **Изменить** справа от раздела **Параметры единого входа**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/clearreview-tutorial/tutorial_clearreview_app_admin2.png)
+    ![Снимок экрана, на котором показана кнопка "Single Sign-On Change" (Изменить единый вход)](./media/clearreview-tutorial/tutorial_clearreview_app_admin2.png)
 
 4. На странице **Single Sign-On Settings** (Параметры единого входа) выполните следующие действия.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/clearreview-tutorial/tutorial_clearreview_app_admin3.png)
+    ![Снимок экрана, на котором показана страница "Single Sign-On Settings" (Параметры единого входа), где можно ввести сведения на этом шаге](./media/clearreview-tutorial/tutorial_clearreview_app_admin3.png)
 
     а. В текстовое поле **URL-адреса издателя** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
