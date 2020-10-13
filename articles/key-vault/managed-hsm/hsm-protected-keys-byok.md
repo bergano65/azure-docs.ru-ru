@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: ambapat
 ms.openlocfilehash: ce275674704cd7538f25a2d3f31d0e65aecd7925
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320631"
 ---
 # <a name="import-hsm-protected-keys-to-managed-hsm-byok"></a>Импорт ключей, защищенных с АППАРАТным модулем безопасности, в управляемый HSM (BYOK)
@@ -45,8 +45,8 @@ ms.locfileid: "91320631"
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
 * подписка на Microsoft Azure. Если у вас ее нет, зарегистрируйтесь, чтобы воспользоваться [бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial).
-* Azure CLI версии 2.12.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
-* Управляемый модуль HSM — [поддерживаемый список HSM](#supported-hsms) в вашей подписке. Дополнительные сведения см. в разделе [Краткое руководство по подготовке и активации управляемого модуля HSM с помощью Azure CLI](quick-create-cli.md) для предоставления и активации управляемого HSM.
+* Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+* Управляемый модуль HSM — [поддерживаемый список HSM](#supported-hsms) в вашей подписке. См. [Краткое руководство. Подготовка и активация управляемого устройства HSM с помощью Azure CLI](quick-create-cli.md) для выполнения соответствующих действий.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

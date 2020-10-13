@@ -8,10 +8,10 @@ ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: ffe368d763ee93d1864f0f807cbe18b8ebfe41c9
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85851659"
 ---
 # <a name="performance-and-scale-testing-with-azure-cosmos-db"></a>Проверка производительности и масштабирования с помощью Azure Cosmos DB
@@ -91,7 +91,7 @@ Press any key to exit...
 
 После запуска приложения вы можете опробовать различные [политики индексирования](index-policy.md) и [уровни согласованности](consistency-levels.md), чтобы понять, как они влияют на пропускную способность и задержки. Вы также можете просмотреть исходный код и реализовывать аналогичные настройки в ваших тестовых наборах или приложениях в рабочей среде.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы рассмотрели способы тестирования производительности и масштабируемости с Azure Cosmos DB с помощью консольного приложения .NET. Дополнительные сведения см. в следующих статьях:
 

@@ -4,40 +4,35 @@ description: Примеры использования поставщика Azur
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 171aaeb624bfedb9aa7408a736c11faca316b392
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 987d5b78c5fe680f43ff6a001e7a31a8ae9f6124
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "87322641"
+ms.locfileid: "91931467"
 ---
-# <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
+# <a name="applicationinsightsloggerprovider-for-microsoftextensionlogging"></a>Аппликатионинсигхтслогжерпровидер для Microsoft. extension. Logging
 
-ASP.NET Core поддерживает API ведения журнала, который работает с различными типами встроенных и сторонних поставщиков ведения журналов. Ведение журнала выполняется путем вызова **log ()** или его варианта в экземплярах *ILogger* . В этой статье показано, как использовать *аппликатионинсигхтслогжерпровидер* для записи журналов ILogger в консольных и ASP.NET Core приложениях. В этой статье также описано, как Аппликатионинсигхтслогжерпровидер интегрируется с другими Application Insights телеметрии.
-Дополнительные сведения см. в статье [Ведение журналов в ASP.NET Core](/aspnet/core/fundamentals/logging).
+В этой статье показано, как использовать `ApplicationInsightsLoggerProvider` для записи `ILogger` журналов в консольных и ASP.NET Core приложениях.
+Дополнительные сведения о ведении журнала см. [в разделе Ведение журнала в ASP.NET Core](/aspnet/core/fundamentals/logging).
 
 ## <a name="aspnet-core-applications"></a>ASP.NET Core приложения
 
-Аппликатионинсигхтслогжерпровидер включается по умолчанию в [пакете SDK Microsoft. ApplicationInsights. AspNet](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) версии 2.7.1 (и более поздних версиях) при включении обычного мониторинга Application Insights с помощью любого из методов:
+`ApplicationInsightsLoggerProvider` включен по умолчанию для ASP.NET Core приложений, если ApplicationInsights настроен с использованием [кода](./asp-net-core.md) или подхода [без кода](./azure-web-apps.md?tabs=netcore#enable-agent-based-monitoring) .
 
-- Вызов метода расширения **UseApplicationInsights** в Ивебхостбуилдер (теперь устарел)
-- Путем вызова метода расширения **аддаппликатионинсигхтстелеметри** для IServiceCollection
+В Application Insights по умолчанию отправляются только журналы *предупреждений* и более поздних версий `ILogger` (из всех [категорий](/aspnet/core/fundamentals/logging/#log-category)). Но [это поведение можно настроить](./asp-net-core.md#how-do-i-customize-ilogger-logs-collection). Для записи журналов ILogger из **Program.CS** или **Startup.CS**требуются дополнительные действия. (См. раздел [захват журналов ILogger из Startup.cs и Program.cs в ASP.NET Core приложениях](#capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps).)
 
-Журналы ILogger, для которых Аппликатионинсигхтслогжерпровидер записи, подчиняются той же конфигурации, что и другие собираемые данные телеметрии. Они имеют одинаковый набор Telemetryinitializer и TelemetryProcessors, используют один и тот же Телеметричаннел, а также сопоставляются и вычисляются с выборкой так же, как и с другими данными телеметрии. При использовании версии 2.7.1 или более поздней для записи журналов ILogger не требуется никаких действий.
-
-Application Insights по умолчанию отправляются только *предупреждения* или более высокие журналы ILogger (из всех [категорий](/aspnet/core/fundamentals/logging/?view=aspnetcore-3.1#log-category)). Но вы можете [Применить фильтры, чтобы изменить это поведение](#control-logging-level). Для записи журналов ILogger из **Program.CS** или **Startup.CS**требуются дополнительные действия. (См. раздел [захват журналов ILogger из Startup.cs и Program.cs в ASP.NET Core приложениях](#capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps).)
-
-Если вы используете более раннюю версию пакета SDK для Microsoft. ApplicationInsights. AspNet или хотите использовать Аппликатионинсигхтслогжерпровидер без других Application Insights мониторинга, выполните следующую процедуру.
+Если вы хотите использовать `ApplicationInsightsLoggerProvider` без других Application Insights мониторинга, выполните следующие действия.
 
 1. Установите пакет NuGet:
 
    ```xml
-       <ItemGroup>
-         <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.9.1" />  
-       </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.15.0" />  
+    </ItemGroup>
    ```
 
-1. Измените **Program.CS** , как показано ниже:
+1. Измените `Program.cs` , как показано ниже:
 
    ```csharp
    using Microsoft.AspNetCore;
@@ -61,7 +56,7 @@ Application Insights по умолчанию отправляются тольк
                    // standalone package Microsoft.Extensions.Logging.ApplicationInsights
                    // or if you want to capture logs from early in the application startup
                    // pipeline from Startup.cs or Program.cs itself.
-                   builder.AddApplicationInsights("ikey");
+                   builder.AddApplicationInsights("put-actual-ikey-here");
 
                    // Optional: Apply filters to control what logs are sent to Application Insights.
                    // The following configures LogLevel Information or above to be sent to
@@ -89,13 +84,8 @@ public class ValuesController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<string>> Get()
     {
-        // All the following logs will be picked up by Application Insights.
-        // and all of them will have ("MyKey", "MyValue") in Properties.
-        using (_logger.BeginScope(new Dictionary<string, object> { { "MyKey", "MyValue" } }))
-            {
-                _logger.LogWarning("An example of a Warning trace..");
-                _logger.LogError("An example of an Error level message");
-            }
+        _logger.LogWarning("An example of a Warning trace..");
+        _logger.LogError("An example of an Error level message");
         return new string[] { "value1", "value2" };
     }
 }
@@ -106,7 +96,7 @@ public class ValuesController : ControllerBase
 > [!NOTE]
 > В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в разделе https://github.com/aspnet/Announcements/issues/353.
 
-Новый Аппликатионинсигхтслогжерпровидер может записывать журналы с самого начала в конвейере запуска приложения. Хотя Аппликатионинсигхтслогжерпровидер автоматически включается в Application Insights (начиная с версии 2.7.1), ключ инструментирования не настраивается до последующего в конвейере. Таким образом, будут записываться только журналы из классов. другие **контроллера**. Чтобы записать каждый журнал, начиная с **Program.CS** и **Startup.CS** , необходимо явно включить ключ инструментирования для аппликатионинсигхтслогжерпровидер. Кроме того, *телеметриконфигуратион* не полностью настраивается при регистрации из **Program.CS** или **Startup.CS** . Поэтому эти журналы будут иметь минимальную конфигурацию, которая использует InMemoryChannel, без выборки и не имеет стандартных инициализаторов телеметрии или процессоров.
+`ApplicationInsightsLoggerProvider` может собирать журналы с раннего запуска приложения. Хотя Аппликатионинсигхтслогжерпровидер автоматически включается в Application Insights (начиная с версии 2.7.1), ключ инструментирования не настраивается до последующего в конвейере. Таким образом, будут записываться только журналы из классов. другие **контроллера**. Чтобы записать каждый журнал, начиная с **Program.CS** и **Startup.CS** , необходимо явно включить ключ инструментирования для аппликатионинсигхтслогжерпровидер. Кроме того, *телеметриконфигуратион* не полностью настраивается при регистрации из **Program.CS** или **Startup.CS** . Поэтому эти журналы будут иметь минимальную конфигурацию, которая использует [InMemoryChannel](./telemetry-channels.md), без [выборки](./sampling.md)и не имеет стандартных [инициализаторов телеметрии или процессоров](./api-filtering-sampling.md).
 
 В следующих примерах демонстрируется эта возможность с помощью **Program.CS** и **Startup.CS**.
 
@@ -123,7 +113,6 @@ public class Program
     {
         var host = CreateWebHostBuilder(args).Build();
         var logger = host.Services.GetRequiredService<ILogger<Program>>();
-        // This will be picked up by AI
         logger.LogInformation("From Program. Running the host now..");
         host.Run();
     }
@@ -169,7 +158,6 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
-    // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddApplicationInsightsTelemetry();
@@ -178,18 +166,15 @@ public class Startup
         _logger.LogInformation("Logging from ConfigureServices.");
     }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
         if (env.IsDevelopment())
         {
-            // The following will be picked up by Application Insights.
             _logger.LogInformation("Configuring for Development environment");
             app.UseDeveloperExceptionPage();
         }
         else
         {
-            // The following will be picked up by Application Insights.
             _logger.LogInformation("Configuring for Production environment");
         }
 
@@ -207,7 +192,7 @@ public class Startup
 
 Вы по-прежнему можете использовать старый поставщик. (Он будет удален только при смене основной версии на 3. *XX*.) Однако рекомендуется перейти на новый поставщик по следующим причинам:
 
-- В предыдущем поставщике отсутствует поддержка [областей журнала](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2#log-scopes). В новом поставщике свойства из области автоматически добавляются в собранные данные телеметрии в качестве пользовательских свойств.
+- В предыдущем поставщике отсутствует поддержка [областей журнала](/aspnet/core/fundamentals/logging#log-scopes). В новом поставщике свойства из области автоматически добавляются в собранные данные телеметрии в качестве пользовательских свойств.
 - Теперь журналы могут быть захвачены в конвейере запуска приложения. Теперь можно записывать журналы из классов **Program** и **Startup** .
 - С новым поставщиком фильтрация выполняется на уровне платформы. Вы можете фильтровать журналы в поставщике Application Insights так же, как и для других поставщиков, включая встроенные поставщики, такие как консоль, отладка и т. д. Вы также можете применить те же фильтры к нескольким поставщикам.
 - В ASP.NET Core (2,0 и более поздних версиях) рекомендуемый способ  [включения регистраторов](https://github.com/aspnet/Announcements/issues/255) — использование методов расширения в илоггингбуилдер в самом **Program.CS** .
@@ -220,15 +205,14 @@ public class Startup
 > [!NOTE]
 > Существует новый пакет SDK Application Insights с именем [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights (ILogger и других данных телеметрии Application Insights) для любых консольных приложений. Рекомендуется использовать этот пакет и связанные инструкции [отсюда](./worker-service.md).
 
-В следующем коде показан пример консольного приложения, которое настроено для отправки трассировок ILogger в Application Insights.
+Если вы хотите просто использовать Аппликатионинсигхтслогжерпровидер без каких бы то ни было других Application Insights мониторинга, выполните следующие действия.
 
 Установленные пакеты:
 
 ```xml
 <ItemGroup>
   <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0" />  
-  <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.9.1" />
-  <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.1.0" />
+  <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.15.0" />  
 </ItemGroup>
 ```
 
@@ -264,11 +248,7 @@ class Program
 
         ILogger<Program> logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 
-        // Begin a new scope. This is optional.
-        using (logger.BeginScope(new Dictionary<string, object> { { "Method", nameof(Main) } }))
-        {
-            logger.LogInformation("Logger is working"); // this will be captured by Application Insights.
-        }
+        logger.LogInformation("Logger is working");
 
         // Explicitly call Flush() followed by sleep is required in Console Apps.
         // This is to ensure that even if application terminates, telemetry is sent to the back-end.
@@ -301,11 +281,10 @@ class Program
             serverChannel.Initialize(config);
         }
     );
-
-    // Add the logging pipelines to use. We are adding Application Insights only.
+    
     services.AddLogging(loggingBuilder =>
     {
-        loggingBuilder.AddApplicationInsights();
+        loggingBuilder.AddApplicationInsights("--YourAIKeyHere--");
     });
 
     ........
@@ -319,9 +298,9 @@ class Program
 
 ## <a name="control-logging-level"></a>Управление уровнем ведения журнала
 
-Технология ASP.NET Core *ILogger* имеет встроенный механизм для применения [фильтрации журналов](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2#log-filtering). Это позволяет управлять журналами, которые отправляются каждому зарегистрированному поставщику, включая поставщика Application Insights. Фильтрацию можно выполнить либо в конфигурации (обычно с помощью *appsettings.jsв* файле), либо в коде. Это средство предоставляется самой платформой. Это не относится к поставщику Application Insights.
+`ILogger` имеет встроенный механизм для применения [фильтрации журналов](/aspnet/core/fundamentals/logging#log-filtering). Это позволяет управлять журналами, которые отправляются каждому зарегистрированному поставщику, включая поставщика Application Insights. Фильтрацию можно выполнить либо в конфигурации (обычно с помощью *appsettings.jsв* файле), либо в коде.
 
-В следующих примерах правила фильтра применяются к Аппликатионинсигхтслогжерпровидер.
+В следующих примерах показано, как применять правила фильтра к `ApplicationInsightsLoggerProvider` .
 
 ### <a name="create-filter-rules-in-configuration-with-appsettingsjson"></a>Создание правил фильтрации в конфигурации с appsettings.js
 
@@ -354,6 +333,28 @@ class Program
                         ("", LogLevel.Warning)
              .AddFilter<Microsoft.Extensions.Logging.ApplicationInsights.ApplicationInsightsLoggerProvider>
                         ("Microsoft", LogLevel.Error);
+```
+
+## <a name="logging-scopes"></a>Области ведения журнала
+
+`ApplicationInsightsLoggingProvider` поддерживает [области журнала](/aspnet/core/fundamentals/logging#log-scopes) и области по умолчанию включены.
+
+Если область имеет тип `IReadOnlyCollection<KeyValuePair<string,object>>` , каждая пара "ключ-значение" в коллекции добавляется в данные телеметрии Application Insights в качестве пользовательских свойств. В приведенном ниже примере журналы будут записываться как `TraceTelemetry` и будут иметь значение ("myKey", "значения MyValue") в свойствах.
+
+```csharp
+    using (_logger.BeginScope(new Dictionary<string, object> { { "MyKey", "MyValue" } }))
+    {
+        _logger.LogError("An example of an Error level message");
+    }
+```
+
+Если в качестве области используется любой другой тип, то они будут храниться в свойстве "область" в телеметрии Application Insights. В приведенном ниже примере у `TraceTelemetry` свойства будет имя Scope, содержащее область.
+
+```csharp
+    using (_logger.BeginScope("hello scope"))
+    {
+        _logger.LogError("An example of an Error level message");
+    }
 ```
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
@@ -442,7 +443,7 @@ public class MyController : ApiController
 
 ### <a name="what-application-insights-telemetry-type-is-produced-from-ilogger-logs-or-where-can-i-see-ilogger-logs-in-application-insights"></a>Какой тип телеметрии Application Insights создан из журналов ILogger? Или где можно просмотреть журналы ILogger в Application Insights?
 
-Аппликатионинсигхтслогжерпровидер записывает журналы ILogger и создает Трацетелеметри из них. Если объект исключения передается в метод **log ()** для ILogger, вместо Трацетелеметри создается *ексцептионтелеметри* . Эти элементы телеметрии можно найти в тех же местах, что и другие Трацетелеметри или Ексцептионтелеметри, для Application Insights, включая портал, аналитику или локальный отладчик Visual Studio.
+Аппликатионинсигхтслогжерпровидер записывает журналы ILogger и создает Трацетелеметри из них. Если объект исключения передается в `Log` метод в `ILogger` , вместо трацетелеметри создается *ексцептионтелеметри* . Эти элементы телеметрии можно найти в тех же местах, что и другие Трацетелеметри или Ексцептионтелеметри, для Application Insights, включая портал, аналитику или локальный отладчик Visual Studio.
 
 Если вы предпочитаете всегда отсылать Трацетелеметри, используйте следующий фрагмент кода: ```builder.AddApplicationInsights((opt) => opt.TrackExceptionsAsExceptionTelemetry = false);```
 

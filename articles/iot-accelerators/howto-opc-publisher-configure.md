@@ -10,16 +10,16 @@ services: iot-industrialiot
 manager: philmea
 ms.custom: devx-track-csharp
 ms.openlocfilehash: b004bb4fbca768d782863f73d83ec5443bc66ae3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91320615"
 ---
 # <a name="configure-opc-publisher"></a>Настройка издателя OPC
 
 > [!IMPORTANT]
-> Пока мы обновляем эту статью, ознакомьтесь с наиболее актуальными материалами в [Azure для промышленного центра Интернета вещей](https://azure.github.io/Industrial-IoT/) .
+> Актуальную информацию по этой теме см. в статье [Промышленный Интернет вещей в Azure](https://azure.github.io/Industrial-IoT/).
 
 Вы можете настроить издатель OPC для указания.
 
@@ -382,6 +382,6 @@ ms.locfileid: "91320615"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь вы узнали, как настроить издатель OPC. Мы предлагаем далее ознакомиться со статьей [Запуск издателя OPC](howto-opc-publisher-run.md).
