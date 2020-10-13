@@ -4,10 +4,10 @@ description: Сведения о вариантах блокировки в сх
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 8ac5c918a3c370b9d8e88800e05f83e585550e3c
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91744021"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
@@ -179,7 +179,7 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
 Хотя **ексклудедпринЦипалс** должны быть явными, записи **ексклудедактионс** могут использовать `*` для поиска с подстановочными знаками операций поставщика ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Следуйте указаниям в учебнике [Защита новых ресурсов](../tutorials/protect-new-resources.md) .
 - Ознакомьтесь со сведениями о [жизненном цикле схем](./lifecycle.md).

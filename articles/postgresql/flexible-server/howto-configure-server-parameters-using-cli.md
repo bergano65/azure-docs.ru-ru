@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 9/22/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 43b14858cc99cac41e277b03171fd4cac4d6eafa
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940738"
 ---
 # <a name="customize-server-parameters-for-azure-database-for-postgresql---flexible-server-using-azure-cli"></a>Настройка параметров сервера для базы данных Azure для PostgreSQL — гибкого сервера с помощью Azure CLI
@@ -63,6 +63,6 @@ az postgres flexible-server parameter set --name log_min_messages --resource-gro
 
 Эта команда сбрасывает значение параметра **log \_ min \_ Messages** до значения по умолчанию **warning**. Дополнительные сведения о параметрах сервера и допустимых значениях см. в документации по PostgreSQL в разделе Параметры [параметров](https://www.postgresql.org/docs/12/config-setting.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы настроить журналы сервера и получать к ним доступ, ознакомьтесь с разделом [Журналы сервера в базе данных Azure для PostgreSQL](concepts-logging.md).

@@ -1,5 +1,5 @@
 ---
-title: Параметры развертывания
+title: Варианты развертывания
 description: Начните с понимания основного рабочего процесса защитника для функций и служб IoT.
 services: defender-for-iot
 ms.service: defender-for-iot
@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
 ms.openlocfilehash: aaed6cd789ca6178410c05b940a8f498e2c067a8
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90940931"
 ---
 # <a name="get-started-with-defender-for-iot"></a>Начало работы с защитником для Интернета вещей
@@ -26,7 +26,7 @@ ms.locfileid: "90940931"
 
 Ищете начало работы с модулем безопасности для Azure RTO? Перейдите к разделу [Краткое руководство по модулю безопасности для Azure RTO](quickstart-azure-rtos-security-module.md) . 
 
-## <a name="deployment-options"></a>Параметры развертывания
+## <a name="deployment-options"></a>Варианты развертывания
 
 Выберите сценарий службы, который наилучшим образом соответствует требованиям к устройству и среде Интернета вещей.
 
@@ -43,7 +43,7 @@ ms.locfileid: "90940931"
 
 Запустите [Улучшенное развертывание](security-agents.md) с помощью комплексного решения для защиты от угроз и управления уровнями безопасности на основе агентов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Включение [защитника для Интернета вещей](quickstart-onboard-iot-hub.md)
 - Настройка [решения](quickstart-configure-your-solution.md)

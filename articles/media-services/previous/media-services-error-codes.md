@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: c30808a46b5cecfaf2e761b3f7a611020cd2cdfb
-ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89263683"
 ---
 # <a name="azure-media-services-error-codes"></a>Коды ошибок служб мультимедиа Azure
@@ -91,7 +91,7 @@ ms.locfileid: "89263683"
 * Предпринята попытка создать указатель на asset, которая уже использует 5 указателей. (В хранилище Azure установлено ограничение в пять политик общего доступа для одного контейнера хранилища.)
 * Связывание учетной записи хранения asset с ingestManifestAsset, который не соответствует учетной записи хранения, используемой родительской сущностью ingestManifest.  
 
-## <a name="500-internal-server-error"></a>500 — внутренняя ошибка сервера
+## <a name="500-internal-server-error"></a>500 Internal Server Error (внутренняя ошибка сервера)
 Во время обработки запроса в службах мультимедиа возникли ошибки, которые не позволяют продолжить обработку. Это может быть вызвано одной из следующих причин.
 
 * Происходит сбой создания asset или job из-за временной недоступности информации о квоте службы учетной записи служб мультимедиа.
@@ -119,10 +119,10 @@ ms.locfileid: "89263683"
 > 
 > 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Media Services Management Error Codes](/rest/api/media/) (Коды ошибок управления службами мультимедиа)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы

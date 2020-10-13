@@ -11,10 +11,10 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: e65e5478c81a99db7789eab4d532ddd01ffc635a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91307166"
 ---
 # <a name="create-a-shared-image-gallery-using-the-portal"></a>Создание коллекции общих образов с помощью портала
@@ -69,7 +69,7 @@ ms.locfileid: "91307166"
 
 Если вы хотите удалить отдельные ресурсы, их необходимо удалить в порядке их сортировки. Например, чтобы удалить определение образа, необходимо удалить все версии образа, созданные на основе этого образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

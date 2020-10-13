@@ -9,10 +9,10 @@ ms.date: 09/08/2020
 ms.author: amverma
 ms.reviewer: jushiman
 ms.openlocfilehash: 3e79373da3de2750a47e68a6d8f10c3ffb9c38de
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91652981"
 ---
 # <a name="hb-series"></a>Серия HB
@@ -31,7 +31,7 @@ ms.locfileid: "91652981"
 
 | Размер | vCPU | Процессор | Память, ГиБ | Пропускная способность памяти ГБ/с | Базовая частота ЦП (ГГц) | Частота ядер (ГГц, пик) | Частота с одним ядром (ГГц, пик) | Производительность RDMA (ГБ/с) | Поддержка MPI | Временное хранилище, Гиб | Максимальное число дисков данных | Максимальное число сетевых адаптеров Ethernet |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_HB60rs | 60 | AMD ЕПИК 7551 | 240 | 263 | 2.0 | 2.55 | 2.55 | 100 | Все | 700 | 4 | 1 |
+| Standard_HB60rs | 60 | AMD ЕПИК 7551 | 240 | 263 | 2.0 | 2.55 | 2.55 | 100 | All | 700 | 4 | 1 |
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 

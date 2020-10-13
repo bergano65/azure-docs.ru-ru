@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
 ms.openlocfilehash: 42efc2bee88f073f2a628b1d2041afcc310cb871
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91822972"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Создание, изменение и удаление группы безопасности сети
@@ -56,7 +56,7 @@ ms.locfileid: "91822972"
     | --- | --- |
     | **Подписка** | Выберите свою подписку. |
     | **Группа ресурсов** | Выберите существующую группу ресурсов или щелкните **создать** , чтобы создать новую группу ресурсов. |
-    | **имя**; | Введите уникальную текстовую строку в группе ресурсов. |
+    | **Имя** | Введите уникальную текстовую строку в группе ресурсов. |
     | **Регион** | Выберите нужное расположение. |
 
 4. Выберите **Review + create** (Просмотреть и создать).
@@ -65,7 +65,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create) |
 | PowerShell | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) |
@@ -76,7 +76,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG List](/cli/azure/network/nsg#az-network-nsg-list) |
 | PowerShell | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) |
@@ -101,7 +101,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG показывать](/cli/azure/network/nsg#az-network-nsg-show) |
 | PowerShell | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) |
@@ -116,7 +116,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG обновление](/cli/azure/network/nsg#az-network-nsg-update) |
 | PowerShell | [Set-AzNetworkSecurityGroup](/powershell/module/az.network/set-aznetworksecuritygroup) |
@@ -137,7 +137,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG Delete](/cli/azure/network/nsg#az-network-nsg-delete) |
 | PowerShell | [Remove-Азнетворксекуритиграуп](/powershell/module/az.network/remove-aznetworksecuritygroup) |
@@ -175,12 +175,12 @@ ms.locfileid: "91822972"
     | **протокол**; | **ANY**, **TCP**, **UDP**или **ICMP** | Правило может быть ограничено протоколом TCP, протоколом UDP или протоколом обмена сообщениями Интернета (ICMP). По умолчанию правило применяется ко всем протоколам. |
     | **Действие** | **Разрешить** или **запретить** | Этот параметр указывает, разрешает или запрещает доступ данного правила к указанной конфигурации источника и назначения. |
     | **Приоритет** | Значение от 100 до 4096, уникальное для всех правил безопасности в группе безопасности сети | Azure обрабатывает правила безопасности в порядке приоритета. Чем меньше число, тем выше приоритет. При создании правил, таких как 100, 200 и 300, рекомендуется оставлять зазор между номерами приоритетов. Освобождение пропусков упрощает добавление правил в будущем, чтобы их можно было задать выше или ниже приоритета по сравнению с существующими правилами. |
-    | **имя**; | Уникальное имя правила в группе безопасности сети. | Оно может содержать до 80 знаков. Оно должно начинаться с буквы или цифры и должно заканчиваться буквой, цифрой или символом подчеркивания. Имя может содержать только буквы, цифры, символы подчеркивания, точки или дефисы. |
+    | **Имя** | Уникальное имя правила в группе безопасности сети. | Оно может содержать до 80 знаков. Оно должно начинаться с буквы или цифры и должно заканчиваться буквой, цифрой или символом подчеркивания. Имя может содержать только буквы, цифры, символы подчеркивания, точки или дефисы. |
     | **Описание** | Текстовое описание | При необходимости можно указать текстовое описание для правила безопасности. Длина описания не может превышать 140 символов. |
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create) |
 | PowerShell | [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig) |
@@ -199,7 +199,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule list](/cli/azure/network/nsg/rule#az-network-nsg-rule-list) |
 | PowerShell | [Get-Азнетворксекуритирулеконфиг](/powershell/module/az.network/get-aznetworksecurityruleconfig) |
@@ -219,7 +219,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG, отображение правила](/cli/azure/network/nsg/rule#az-network-nsg-rule-show) |
 | PowerShell | [Get-Азнетворксекуритирулеконфиг](/powershell/module/az.network/get-aznetworksecurityruleconfig) |
@@ -235,7 +235,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule update](/cli/azure/network/nsg/rule#az-network-nsg-rule-update) |
 | PowerShell | [Set-AzNetworkSecurityRuleConfig.](/powershell/module/az.network/set-aznetworksecurityruleconfig) |
@@ -251,7 +251,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG правило Delete](/cli/azure/network/nsg/rule#az-network-nsg-rule-delete) |
 | PowerShell | [Remove-Азнетворксекуритирулеконфиг](/powershell/module/az.network/remove-aznetworksecurityruleconfig) |
@@ -274,7 +274,7 @@ ms.locfileid: "91822972"
     | --- | --- |
     | **Подписка** | Выберите свою подписку. |
     | **Группа ресурсов** | Выберите существующую группу ресурсов или щелкните **создать** , чтобы создать новую группу ресурсов. |
-    | **имя**; | Введите уникальную текстовую строку в группе ресурсов. |
+    | **Имя** | Введите уникальную текстовую строку в группе ресурсов. |
     | **Регион** | Выберите нужное расположение. |
 
 5. Выберите **Review + create** (Просмотреть и создать).
@@ -283,7 +283,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG CREATE](/cli/azure/network/asg#az-network-asg-create) |
 | PowerShell | [New-Азаппликатионсекуритиграуп](/powershell/module/az.network/new-azapplicationsecuritygroup) |
@@ -294,7 +294,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG List](/cli/azure/network/asg#az-network-asg-list) |
 | PowerShell | [Get-Азаппликатионсекуритиграуп](/powershell/module/az.network/get-azapplicationsecuritygroup) |
@@ -307,7 +307,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG показывать](/cli/azure/network/asg#az-network-asg-show) |
 | PowerShell | [Get-Азаппликатионсекуритиграуп](/powershell/module/az.network/get-azapplicationsecuritygroup) |
@@ -327,7 +327,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG обновление](/cli/azure/network/asg#az-network-asg-update) |
 | PowerShell | Нет командлета PowerShell |
@@ -344,7 +344,7 @@ ms.locfileid: "91822972"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG Delete](/cli/azure/network/asg#az-network-asg-delete) |
 | PowerShell | [Remove-Азаппликатионсекуритиграуп](/powershell/module/az.network/remove-azapplicationsecuritygroup) |
@@ -380,7 +380,7 @@ ms.locfileid: "91822972"
 | Microsoft.Network/applicationSecurityGroups/write                          | Создание или обновление группы безопасности приложений.           |
 | Microsoft.Network/applicationSecurityGroups/delete                         | Удаление группы безопасности приложений                     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создание сети или группы безопасности приложений с помощью [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) примеров сценариев или шаблонов Azure [Диспетчер ресурсов](template-samples.md)
 - Создание и назначение [определений политик Azure](policy-samples.md) для виртуальных сетей

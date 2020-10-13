@@ -6,10 +6,10 @@ ms.date: 03/23/2018
 ms.author: pepogors
 ms.custom: sfrev
 ms.openlocfilehash: 870467760a2baaa887b06fb8e01335f225f04d6e
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90561896"
 ---
 # <a name="azure-service-fabric-node-types-and-virtual-machine-scale-sets"></a>Типы узлов Azure Service Fabric и масштабируемые наборы виртуальных машин
@@ -72,10 +72,10 @@ Service Fabric расширение виртуальной машины испо
 
 Ниже приведены описания свойств.
 
-| **имя**; | **Допустимые значения** | **Рекомендация или краткое описание** |
+| **Имя** | **Допустимые значения** | **Рекомендация или краткое описание** |
 | --- | --- | --- | --- |
 | name | строка | Уникальное имя для расширения |
-| тип | "Сервицефабриклинуксноде" или "Сервицефабриквиндовсноде" | Идентифицирует Service Fabric ОС для начальной загрузки |
+| type | "Сервицефабриклинуксноде" или "Сервицефабриквиндовсноде" | Идентифицирует Service Fabric ОС для начальной загрузки |
 | autoUpgradeMinorVersion | true или false | Включить автоматическое обновление вспомогательных версий среды выполнения SF |
 | publisher | Microsoft. Azure. ServiceFabric | Имя издателя расширения Service Fabric |
 | клустерендпонт | строка | URI: порт для конечной точки управления |
@@ -88,7 +88,7 @@ Service Fabric расширение виртуальной машины испо
 | typeHandlerVersion | 1,1 | Версия расширения. 1,0. рекомендуется использовать классическую версию расширения для обновления до 1,1 |
 | Пути к данным | строка | Путь к диску, используемому для сохранения состояния Service Fabric системных служб и данных приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о возможности развертывания в любом месте и сравнении с кластерами под управлением Azure см. в статье [Создание кластеров Service Fabric в Windows Server или Linux](service-fabric-deploy-anywhere.md).
 * Сведения о [безопасности кластера](service-fabric-cluster-security.md).

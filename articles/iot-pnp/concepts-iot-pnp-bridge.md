@@ -9,13 +9,13 @@ ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
 ms.openlocfilehash: 224f86a40fa812003463301f97bcae07de907f3c
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91580720"
 ---
-# <a name="iot-plug-and-play-bridge"></a>Мост Plug and Play IoT
+# <a name="iot-plug-and-play-bridge"></a>Мост для IoT Plug and Play
 
 Мост IoT Plug and Play — это приложение с открытым исходным кодом для подключения существующих устройств, подключенных к шлюзу Windows или Linux, в качестве устройств IoT Plug and Play. После установки и настройки приложения на компьютере под управлением Windows или Linux его можно использовать для подключения подключенных устройств к центру Интернета вещей. С помощью моста можно сопоставлять интерфейсы Интернета вещей Plug and Play с данными телеметрии, отправляемыми подключенными устройствами, работать со свойствами устройств и вызывать команды.
 
@@ -82,7 +82,7 @@ ms.locfileid: "91580720"
 
 Кроме того, вы можете загрузить и просмотреть исходный код [центра Интернета вещей Plug and Play Bridge на GitHub](https://aka.ms/bridge).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда у вас есть общие сведения об архитектуре центра Интернета вещей Plug and Play, выполните следующие действия, чтобы получить дополнительные сведения:
 
