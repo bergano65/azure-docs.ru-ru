@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/14/2019
 ms.openlocfilehash: 290b541d9b5e86616373d2e426241fca07e780ed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75887212"
 ---
 # <a name="apache-hbase-master-hmaster-fails-to-start-in-azure-hdinsight"></a>Не удается запустить Apache HBase Master (HMaster) в Azure HDInsight
@@ -20,11 +20,11 @@ ms.locfileid: "75887212"
 
 ## <a name="scenario-atomic-renaming-failure"></a>Сценарий: сбой атомарного переименования
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 В процессе запуска обнаружены непредвиденные файлы.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 В процессе запуска HMaster выполняет множество шагов инициализации, включая перемещение данных из папки "Рабочая область" (. tmp) в папку данных. HMaster также просматривает папку с упреждающими журналами (WAL), чтобы узнать, есть ли Неотвечающие серверы региона.
 
@@ -42,11 +42,11 @@ HMaster выполняет команду Basic List в папках WAL. Каж
 
 ## <a name="scenario-no-server-address-listed"></a>Сценарий: адрес сервера не указан.
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Может появиться сообщение о том, что `hbase: meta` таблица не находится в режиме «в сети». Выполнение `hbck` может сообщить о том, что `hbase: meta table replicaId 0 is not found on any region.` в журналах HMaster может появиться сообщение: `No server address listed in hbase: meta for region hbase: backup <region name>` .  
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Не удалось инициализировать HMaster после перезапуска HBase.
 
@@ -73,11 +73,11 @@ HMaster выполняет команду Basic List в папках WAL. Каж
 
 ## <a name="scenario-javaioioexception-timedout"></a>Сценарий: Java. IO. IOException: TimedOut
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Время ожидания HMaster истекает с неустранимым исключением, аналогичным: `java.io.IOException: Timedout 300000ms waiting for namespace table to be assigned` .
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Такая проблема может возникнуть при наличии большого количества таблиц и регионов, которые не были удалены при перезагрузке служб HMaster. Время ожидания является известным дефектом HMaster. Общие задачи запуска кластера могут занять много времени. HMaster завершает работу, если таблица пространства имен еще не назначена. Длительные задачи запуска выполняются, когда существует большой объем неочищенных данных и не хватает времени ожидания 5 минут.
 
@@ -95,7 +95,7 @@ HMaster выполняет команду Basic List в папках WAL. Каж
 
 ## <a name="scenario-frequent-region-server-restarts"></a>Сценарий: частый перезапуск сервера региона
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Периодически перезапускаются узлы. В журналах сервера регионов могут отображаться записи следующего вида:
 
@@ -105,7 +105,7 @@ HMaster выполняет команду Basic List в папках WAL. Каж
 2017-05-09 17:45:07,683 WARN  [JvmPauseMonitor] util.JvmPauseMonitor: Detected pause in JVM or host machine (eg GC): pause of approximately 31000ms
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Длительная `regionserver` ВИРТУАЛЬНОЙ машины Java GC Pause. Приостановка приведет к тому, что она `regionserver` не будет отвечать на запросы и не сможет отправить пульс HMaster в течение ZK сеанса ожидания 40s. HMaster полагает, что `regionserver` это не так, и прекратит `regionserver` перезапуститься.
 
@@ -127,11 +127,11 @@ HMaster выполняет команду Basic List в папках WAL. Каж
 
 ## <a name="scenario-log-splitting-failure"></a>Сценарий: ошибка разделения журнала
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Хмастерс не удалось подключиться к кластеру HBase.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Неправильно настроены параметры HDFS и HBase для дополнительной учетной записи хранения.
 

@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 9b0b2b08e01c99fc918c4bc5649197c9caa4978a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75775502"
 ---
 # <a name="internet-peering---faqs"></a>Интернет-пиринг — часто задаваемые вопросы
@@ -27,10 +27,10 @@ ms.locfileid: "75775502"
 
 Подключение пиринга, настроенное с помощью Azure PowerShell, управляется как ресурс Azure. Одноранговые подключения, настроенные в прошлом, хранятся в нашей системе как устаревшие пиринга, которые можно преобразовать для управления как ресурс Azure.
 
-**Какие IP-адреса предоставляются корпорации Майкрософт и одноранговым устройствам при вызове New-Азпирингдиректконнектионобжект?**
+**Когда вызывается New-AzPeeringDirectConnectionObject, какие IP-адреса предоставляются корпорации Майкрософт и одноранговым устройствам?**
 
-При вызове командлета New-Азпирингдиректконнектионобжект введены адрес/31 (a. b. c. d/31) или/30 адрес (a. b. c. d/30). Первый IP-адрес (a. b. c. d + 0) передается устройству однорангового устройства, а второй IP-адрес (a. b. c. d + 1) предоставляется устройству Майкрософт.
+При вызове командлета New-AzPeeringDirectConnectionObject вводит адрес/31 (a. b. c. d/31) или/30 адрес (a. b. c. d/30). Первый IP-адрес (a. b. c. d + 0) передается устройству однорангового устройства, а второй IP-адрес (a. b. c. d + 1) предоставляется устройству Майкрософт.
 
-**Что такое параметры MaxPrefixesAdvertisedIPv4 и MaxPrefixesAdvertisedIPv6 в командлете New-Азпирингдиректконнектионобжект?**
+**Что такое параметры MaxPrefixesAdvertisedIPv4 и MaxPrefixesAdvertisedIPv6 в командлете New-AzPeeringDirectConnectionObject?**
 
 Параметры MaxPrefixesAdvertisedIPv4 и MaxPrefixesAdvertisedIPv6 представляют максимальное число префиксов IPv4 и IPv6, которые узел хочет принять Майкрософт. Эти параметры можно изменять в любое время.

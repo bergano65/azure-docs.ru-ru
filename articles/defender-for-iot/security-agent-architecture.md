@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 07/26/2019
 ms.author: mlottner
 ms.openlocfilehash: 64d90b4d9dc3efbe877230bbc20780b1c4f2d213
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90939754"
 ---
 # <a name="security-agent-reference-architecture"></a>Эталонная архитектура агента безопасности
@@ -51,7 +51,7 @@ ms.locfileid: "90939754"
 | 64-разрядная версия  | C# или C           | C#      | Мы рекомендуем использовать агент C для устройств с более ограниченными или минимальными ресурсами устройств.|
 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали о защитнике для архитектуры агента безопасности IoT и доступных установщиках.
 

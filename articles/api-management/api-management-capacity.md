@@ -13,10 +13,10 @@ ms.date: 06/18/2018
 ms.author: apimpm
 ms.custom: fasttrack-edit
 ms.openlocfilehash: f4eb90cc0e8867230c7fb1a2a169b5ba0126e46a
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86205880"
 ---
 # <a name="capacity-of-an-azure-api-management-instance"></a>Емкость экземпляра управления API Azure
@@ -78,7 +78,7 @@ ms.locfileid: "86205880"
 ![Метрики емкости](./media/api-management-capacity/capacity-metric.png)  
 
 1. Перейдите к экземпляру APIM на [портале Azure](https://portal.azure.com/).
-2. Выберите **метрики**.
+2. Выберите **Метрики**.
 3. В сиреневом разделе выберите метрику **Емкость** из доступных метрик и оставьте значение агрегирования по умолчанию **Среднее**.
 
     > [!TIP]

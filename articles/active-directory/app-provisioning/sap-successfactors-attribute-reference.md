@@ -12,10 +12,10 @@ ms.date: 08/05/2020
 ms.author: chmutali
 ms.reviewer: celested
 ms.openlocfilehash: ef2da377c7720cfb7b431d1ce0fed56656a2b8c7
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87808513"
 ---
 # <a name="sap-successfactors-attribute-reference"></a>Справочник по атрибутам SAP SuccessFactors
@@ -136,7 +136,7 @@ ms.locfileid: "87808513"
 | 12 | перемаил                               | emailAddress             | mail                                    | Н/Д                                                                                           |
 | 13 | емпжоб                                 | jobTitle                 | title                                   | Н/Д                                                                                           |
 | 14 | емпжоб                                 | managerId                | manager                                 | Н/Д                                                                                           |
-| 15 | Емпжоб \. \. каунтрйофрегистратион компании | твочаркаунтрикоде       | с                                       | Н/Д                                                                                           |
+| 15 | Емпжоб \. \. каунтрйофрегистратион компании | твочаркаунтрикоде       | c                                       | Н/Д                                                                                           |
 | 16 | Емпжоб \. отдел                     | department               | department                              | Н/Д                                                                                           |
 | 17 | Подразделение Емпжоб \.                       | division                 | company                                 | Н/Д                                                                                           |
 | 18 | \.Расположение емпжоб                       | оффицелокатионаддресс    | streetAddress                           | Н/Д                                                                                           |

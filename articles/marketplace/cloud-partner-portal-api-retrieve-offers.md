@@ -8,10 +8,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
 ms.openlocfilehash: 39d07751c708d5555799ecbb3b3bc66d3f44f43a
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87271966"
 ---
 # <a name="retrieve-offers"></a>Получение предложений
@@ -27,11 +27,11 @@ ms.locfileid: "87271966"
 
 | **Имя**         |  **Описание**                         |  **Data type** |
 | -------------    |  ------------------------------------    |  -----------   |
-|  publisherid     | Идентификатор издателя, например `contoso` |   Тип String    |
+|  publisherid     | Идентификатор издателя, например `contoso` |   Строка    |
 |  api-version     | API последней версии                    |    Дата        |
 |  |  |
 
-## <a name="header"></a>Заголовок
+## <a name="header"></a>Header
 
 |  **имя**;        |         **Значение**       |
 |  --------------- |       ----------------  |
@@ -91,7 +91,7 @@ ms.locfileid: "87271966"
 |  NotStarted                  | Предложения — новое, но не запущенное.                 |
 |  WaitingForPublisherReview   | Предложение ожидает утверждения издателя.         |
 |  Запущен                     | Отправка предложения обрабатывается.             |
-|  Выполнено                   | Отправка предложения прекратила обработку.       |
+|  Успешно                   | Отправка предложения прекратила обработку.       |
 |  Отменено                    | Отправка предложения была отменена.                   |
-|  Сбой                      | Не удалось отправить предложение.                         |
+|  Failed                      | Не удалось отправить предложение.                         |
 |  |  |
