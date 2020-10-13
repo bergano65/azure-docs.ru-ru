@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 000bc150b1a4addb4b68bd86b8d72524ec1015fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 457910f30830db06f148282a32551a400255f7e1
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450416"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91965919"
 ---
 # <a name="what-is-a-primary-refresh-token"></a>Что такое основной маркер обновления?
 
-Основной маркер обновления (PRT) является ключевым артефактом аутентификации Azure AD на устройствах с Windows 10, iOS и Android. Это маркер JSON Web Token (JWT), специально выданный для собственных брокеров маркеров корпорации Майкрософт, чтобы обеспечить единый вход для приложений на этих устройствах. Эта статья содержит сведения о том, как выдается, используется и защищается маркер PRT на устройствах Windows 10.
+Основной маркер обновления (PRT) является ключевым артефактом проверки подлинности Azure AD на устройствах Windows 10, Windows Server 2016 и более поздних версий, iOS и Android. Это маркер JSON Web Token (JWT), специально выданный для собственных брокеров маркеров корпорации Майкрософт, чтобы обеспечить единый вход для приложений на этих устройствах. Эта статья содержит сведения о том, как выдается, используется и защищается маркер PRT на устройствах Windows 10.
 
 В этой статье предполагается, что вы уже знакомы с различными состояниями устройств, доступными в Azure AD, и знаете, как работает единый вход в Windows 10. Дополнительные сведения об устройствах в Azure AD см. в статье [Что такое управление устройствами в Azure Active Directory?](overview.md)
 

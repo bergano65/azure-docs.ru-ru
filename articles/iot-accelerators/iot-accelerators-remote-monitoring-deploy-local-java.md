@@ -10,10 +10,10 @@ services: iot-accelerators
 ms.date: 01/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: f7554843db247ade1cddff78902430a5d84debe1
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87319173"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---intellij"></a>Локальное развертывание акселератора решения для удаленного мониторинга IntelliJ
@@ -191,10 +191,10 @@ Node.js V8 является необходимым условием для ин�
 
 Чтобы получить доступ к состоянию служб, перейдите по следующим URL-адресам:
 
-* IoT — диспетчер концентраторов:`http://localhost:9002/v1/status`
-* Телеметрию устройства:`http://localhost:9004/v1/status`
-* файле`http://localhost:9005/v1/status`
-* адаптер хранилища:`http://localhost:9022/v1/status`
+* Диспетчер IoT-Hub: `http://localhost:9002/v1/status`
+* Телеметрию устройства: `http://localhost:9004/v1/status`
+* файле `http://localhost:9005/v1/status`
+* адаптер хранилища: `http://localhost:9022/v1/status`
 
 ### <a name="start-the-stream-analytics-job"></a>Запуск задания Stream Analytics
 

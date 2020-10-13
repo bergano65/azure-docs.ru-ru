@@ -11,10 +11,10 @@ ms.workload: Infrastructure-services
 ms.date: 09/24/2020
 ms.author: derekol
 ms.openlocfilehash: 4b034c2657cd1bddd696b40738d51c8a3e6c9798
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91355258"
 ---
 # <a name="peering-service-partners"></a>Партнеры по службам пиринга
@@ -47,7 +47,7 @@ ms.locfileid: "91355258"
 >Дополнительные сведения о прикреплении к партнерской программе службы пиринга см. в статье peeringservice@microsoft.com .
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о службе пиринга см. в статье [Общие сведения о службе пиринга](about.md).
 - Дополнительные сведения о вопросах пиринга см. в статье [часто задаваемые вопросы о службе пиринга](faq.md).

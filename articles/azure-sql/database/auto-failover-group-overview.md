@@ -13,10 +13,10 @@ ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/28/2020
 ms.openlocfilehash: 2035fa811ed6bb5760f2527f66e0f2ca48ccb2c9
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91627233"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
@@ -235,7 +235,7 @@ ms.locfileid: "91627233"
 
 ### <a name="using-geo-paired-regions"></a>Использование геопарных регионов
 
-Развертывание управляемых экземпляров в [парных регионах](../../best-practices-availability-paired-regions.md) для повышения производительности. Управляемые экземпляры, размещенные в геопарных регионах, имеют гораздо более высокую производительность по сравнению с непарными регионами. 
+Разверните оба управляемых экземпляра в [парные регионы](../../best-practices-availability-paired-regions.md), чтобы обеспечить максимальную производительность. Управляемые экземпляры, размещенные в геопарных регионах, обеспечат гораздо более высокую производительность по сравнению с размещением в непарных регионах. 
 
 ### <a name="enabling-replication-traffic-between-two-instances"></a>Включение трафика репликации между двумя экземплярами
 
@@ -482,7 +482,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Подробные руководства см. в разделе
   - [Добавление базы данных SQL в группу отработки отказа](failover-group-add-single-database-tutorial.md)
@@ -492,7 +492,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
   - [Настройка активной георепликации для базы данных SQL Azure с помощью PowerShell](scripts/setup-geodr-and-failover-database-powershell.md)
   - [Настройка активной георепликации для базы данных в пуле в Базе данных SQL Azure с помощью PowerShell](scripts/setup-geodr-and-failover-elastic-pool-powershell.md)
   - [Добавление базы данных SQL Azure в группу отработки отказа с помощью PowerShell](scripts/add-database-to-failover-group-powershell.md)
-- Сведения об обеспечении непрерывности бизнес-процессов и возможные сценарии описаны в [обзоре непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
+- Общие сведения о непрерывности бизнес-процессов и сценарии см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md) .
 - Дополнительные сведения об автоматизированных резервных копиях базы данных SQL Azure см. в статье [Автоматическое резервное копирование базы данных](automated-backups-overview.md)SQL.
 - Дополнительные сведения об использовании автоматических резервных копий для восстановления см. в статье [Восстановление базы данных из резервных копий, инициированных службой](recovery-using-backups.md).
 - Дополнительные сведения о требованиях к проверке подлинности для новых сервера-источника и базы данных-источника см. в статье [Безопасность базы данных SQL после аварийного восстановления](active-geo-replication-security-configure.md).

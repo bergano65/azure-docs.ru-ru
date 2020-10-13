@@ -170,9 +170,11 @@
             - name: Переключение чата в реальном времени
               href: howto-show-hide-chat.md
     - name: Диагностика
-      items: null
-      '-name': Device connections
-      href: troubleshoot-connection.md
+      items:
+        - name: Подключение устройств
+          href: troubleshoot-connection.md
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: howto-faq.md
 - name: Справочник
   items:
     - name: Azure CLI
