@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 01/09/2019
 ms.author: alkohli
 ms.openlocfilehash: a4ac56a4d588071f599f62e6de94d9ec7367a1ae
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87924759"
 ---
 # <a name="use-azure-portal-to-administer-your-data-box-disk"></a>Администрирование Диска Data Box с помощью портала Azure
@@ -51,7 +51,7 @@ ms.locfileid: "87924759"
 
     ![Порядок клонирования заказа 1](media/data-box-portal-ui-admin/clone-order1.png)
 
-2.  Все сведения о заказе остаются теми же. Имя заказа — это первоначальное имя с добавлением *-Clone*. Установите флажок, чтобы подтвердить, что вы просмотрели сведения о конфиденциальности. Нажмите **Создать**.    
+2.  Все сведения о заказе остаются теми же. Имя заказа — это первоначальное имя с добавлением *-Clone*. Установите флажок, чтобы подтвердить, что вы просмотрели сведения о конфиденциальности. Нажмите кнопку **Создать**.    
 
 Клон создается в течение нескольких минут, после чего портал обновляется и отображается новый заказ.
 
@@ -134,6 +134,6 @@ ms.locfileid: "87924759"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. сведения об [устранении неполадок с диском Data Box Azure](data-box-disk-troubleshoot.md).

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/18/2019
 ms.author: glenga
 ms.openlocfilehash: 9ed6244d8f5ecf18e89994c0c62af16290fb68c5
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88120581"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
@@ -158,7 +158,7 @@ Service Fabric поддерживает веб-API благодаря испол
   >
   > **Приступая к работе**. [Используйте пользовательский образ Docker для службы приложений на платформе Linux](../../app-service/containers/quickstart-docker-go.md).
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Очень важно не только знать, кто использует ваши приложения, но и предотвращать несанкционированный доступ к ресурсам. Azure предоставляет несколько способов аутентификации клиентов приложения.
 

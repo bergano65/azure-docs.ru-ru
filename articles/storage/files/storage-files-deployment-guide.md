@@ -8,10 +8,10 @@ ms.date: 05/22/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 08bcb41dd8d9f4643b03d855960d8632b778ff84
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88034504"
 ---
 # <a name="how-to-deploy-azure-files"></a>Как развернуть службу файлов Azure
@@ -28,7 +28,7 @@ ms.locfileid: "88034504"
 ## <a name="transfer-data-into-azure-files"></a>Передача данных в службу файлов Azure
 Вы можете перенести существующие общие файловые ресурсы, например хранящиеся локально, в новую общую папку Azure. В этом разделе показано, как переместить данные в общую папку Azure с помощью нескольких популярных методов, подробных от [руководства по планированию](storage-files-planning.md#migration) .
 
-### <a name="azure-file-sync"></a>Синхронизация файлов Azure
+### <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
 
 Службу "Синхронизация файлов Azure" можно использовать для переноса данных в общую папку Azure, даже если для долгосрочного использования не требуется механизм синхронизации. Дополнительные сведения об использовании службы "Синхронизация файлов Azure" для передачи данных в общую папку Azure можно найти в статьях [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md) и [Развертывание службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md).
@@ -147,7 +147,7 @@ do
 done
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
 - [Устранение неполадок в работе службы "Файлы Azure" в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 - [Устранение неполадок в работе службы "Файлы Azure" в Linux](storage-troubleshoot-linux-file-connection-problems.md)

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 3/13/2020
 ms.author: harshacs
 ms.openlocfilehash: f0a3ac0c81291a1231ef660481d8e31b38c0e212
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91631347"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
@@ -125,7 +125,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 Вы можете переопределить системный маршрут Azure по умолчанию для префикса адреса 0.0.0.0/0, указав [настраиваемый маршрут](../virtual-network/virtual-networks-udr-overview.md#custom-routes), и перенаправить трафик виртуальных машин на локальный сетевой виртуальный модуль (NVA), но такая конфигурация не рекомендуется для репликации Site Recovery. При использовании настраиваемых маршрутов рекомендуется создать в виртуальной сети для хранилища [конечную точку службы для виртуальной сети](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage), чтобы трафик репликации не покидал границ Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Включите защиту рабочих нагрузок, [выполнив репликацию виртуальных машин Azure](./azure-to-azure-quickstart.md).
 - Узнайте больше о [сохранении IP-адресов](site-recovery-retain-ip-azure-vm-failover.md) при отработке отказа виртуальных машин Azure.
 - Узнайте больше об аварийном восстановлении [виртуальных машин Azure с помощью ExpressRoute](azure-vm-disaster-recovery-with-expressroute.md).

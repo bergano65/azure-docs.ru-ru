@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, seoapril2019
 ms.openlocfilehash: e9724bb2e5377f84904dc77c33375c39f3077dd4
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91631415"
 ---
 # <a name="integrating-with-microsoft-identity-platform"></a>Интеграция с платформой идентификации Майкрософт
@@ -88,7 +88,7 @@ ms.locfileid: "91631415"
 
 **Система Azure AD развернута в центрах обработки данных в разных странах. Для нее обеспечивается круглосуточное управление и отслеживание.**  Azure AD — это система управления идентификацией для Microsoft Azure и Microsoft 365, которая развертывается в 28 центрах обработки данных по всему миру. Данные каталога гарантированно реплицируются по крайней мере в трех центрах обработки данных. Благодаря глобальным подсистемам балансировки нагрузки пользователи получают доступ к ближайшей к ним копии системы Azure AD, где содержатся их данные. При обнаружении проблемы эти подсистемы автоматически перенаправляет запросы в другие центры обработки данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Приступая к работе](v2-overview.md#getting-started)
 

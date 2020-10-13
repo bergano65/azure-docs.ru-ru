@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/10/2020
 ms.openlocfilehash: 4b5deeec0b76520952345e9b03135fa094a1f78e
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "87986871"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Шифрование на основе узла в службе Azure Kubernetes Service (AKS) (Предварительная версия)
@@ -16,7 +16,7 @@ ms.locfileid: "87986871"
 При шифровании на основе узла данные, хранящиеся на узле виртуальной машины агента AKS, шифруются в неактивных потоках и передаются в зашифрованном виде в службу хранилища. Это означает, что временные диски шифруются при хранении с помощью ключей, управляемых платформой. Кэш ОС и дисков данных шифруется при хранении с помощью управляемых платформой ключей или ключей, управляемых клиентом, в зависимости от типа шифрования, установленного на этих дисках. По умолчанию при использовании AKS диски операционной системы и данных шифруются при хранении с помощью ключей, управляемых платформой. Это означает, что кэши для этих дисков также шифруются по умолчанию с помощью ключей, управляемых платформой.  Вы можете указать собственные управляемые ключи [, используя собственные ключи (BYOK) с дисками Azure в службе Kubernetes Azure](azure-disk-customer-managed-keys.md). Кэш для этих дисков будет также зашифрован с помощью ключа, указанного на этом шаге.
 
 
-## <a name="before-you-begin"></a>Подготовка
+## <a name="before-you-begin"></a>Перед началом
 
 Этот компонент можно задать только при создании кластера или во время создания пула узлов.
 
@@ -29,7 +29,7 @@ ms.locfileid: "87986871"
 - Убедитесь, что в `EncryptionAtHost` разделе включено установлен флаг компонента `Microsoft.Compute` .
 - Убедитесь, что в `EnableEncryptionAtHostPreview` разделе включено установлен флаг компонента `Microsoft.ContainerService` .
 
-### <a name="register-encryptionathost--preview-features"></a>Регистрация `EncryptionAtHost` функций предварительной версии
+### <a name="register-encryptionathost--preview-features"></a>Регистрация `EncryptionAtHost`  функций предварительной версии
 
 Чтобы создать кластер AKS, использующий шифрование на основе узла, необходимо включить `EnableEncryptionAtHostPreview` `EncryptionAtHost` Флаги компонентов и в подписке.
 
@@ -97,7 +97,7 @@ az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-gr
 
 Если вы хотите создать новые пулы узлов без функции шифрования на основе узла, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [рекомендациями по безопасности кластера AKS][best-practices-security] Подробнее о [шифровании на основе узла](../virtual-machines/linux/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
 
