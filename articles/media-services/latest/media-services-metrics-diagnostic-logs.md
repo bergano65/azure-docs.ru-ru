@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: c03950d64c9ead17dfa5c07ef70ab2b7ee0e90bb
-ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89296657"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-via-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
@@ -94,7 +94,7 @@ ms.locfileid: "89296657"
 
 ### <a name="key-delivery"></a>Доставка ключей
 
-|name|Описание|
+|Имя|Описание|
 |---|---|
 |Запрос службы доставки ключей|Журналы, отображающие сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 
@@ -111,9 +111,9 @@ ms.locfileid: "89296657"
 
 См. раздел [мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
-* [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)
+* [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)
 * [Мониторинг метрик служб мультимедиа](media-services-metrics-howto.md)
 * [Мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md)
