@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 08/26/2020
-ms.author: iainfou
-author: iainfoulds
+ms.author: joflore
+author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a02d46688fa49401684f836a7c289906affb413
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ef46cf0947f1ea31c74a6d189b5bdf00fea44fc
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90030027"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91963828"
 ---
 # <a name="troubleshoot-self-service-password-reset-in-azure-active-directory"></a>Устранение неполадок самостоятельного сброса пароля в Azure Active Directory
 
@@ -144,6 +144,6 @@ Azure Active Directory (Azure AD) самостоятельный сброс па
 * **Лицензирование.** Назначена ли пользователю лицензия Azure AD?
 * **Журнал событий приложений.** Если используется компонент обратной записи паролей и код ошибки находится в локальной инфраструктуре, включите сжатую копию журнала событий приложения с сервера Azure AD Connect.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о SSPR см. в статье [как это работает: самостоятельный сброс пароля Azure AD](concept-sspr-howitworks.md) или [самостоятельная обратная запись сброса пароля в Azure AD](concept-sspr-writeback.md).
