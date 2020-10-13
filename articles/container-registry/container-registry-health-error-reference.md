@@ -4,10 +4,10 @@ description: Коды ошибок и возможные решения проб
 ms.topic: article
 ms.date: 07/02/2019
 ms.openlocfilehash: 9136d41097207bfb17776071e958308f36a9aadd
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91565604"
 ---
 # <a name="health-check-error-reference"></a>Ссылка на ошибку проверки работоспособности
@@ -102,7 +102,7 @@ ms.locfileid: "91565604"
 
 Эта ошибка означает, что интерфейс командной строки несовместим с текущей установленной версией DOCKER/Нотари. Попробуйте понизить версию notary.exe до версии, более ранней, чем 0.6.0, заменив клиент Нотари установки DOCKER вручную, чтобы устранить эту проблему.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о параметрах проверки работоспособности реестра см. в статье [Проверка работоспособности реестра контейнеров Azure](container-registry-check-health.md).
 

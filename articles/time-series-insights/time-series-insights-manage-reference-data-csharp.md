@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18, devx-track-csharp
 ms.openlocfilehash: fb0c29fb68d0bcd2405cc031008c1c8e5035476f
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91569389"
 ---
 # <a name="manage-reference-data-for-an-azure-time-series-insights-gen-1-environment-using-c-sharp"></a>Управление эталонными данными для среды "аналитика временных рядов Azure" с помощью C Sharp
 
 > [!CAUTION]
-> Это Gen1 статья.
+> Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
 В этой статье показано, как объединить C#, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)и Azure Active Directory, чтобы программные запросы API были предоставлены в справочнике по Azure Time Series Insights Gen 1 [Управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api).
 

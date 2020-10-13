@@ -4,10 +4,10 @@ description: Из этой статьи вы узнаете, как подклю
 ms.date: 09/24/2020
 ms.topic: conceptual
 ms.openlocfilehash: dc92b1cb96b61caa17f141ca9a78fb10fe59a2a9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91713424"
 ---
 # <a name="connect-hybrid-machines-to-azure-at-scale"></a>Подключение гибридных компьютеров к Azure в большом масштабе
@@ -133,7 +133,7 @@ azcmagent connect \
 >[!NOTE]
 >Для запуска **азкмажент**требуются права доступа *root* на компьютерах Linux.
 
-После установки агента и его настройки для подключения к серверам с поддержкой Arc Azure перейдите к портал Azure, чтобы убедиться, что сервер успешно подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
+После установки агента и настройки его подключения к серверам с поддержкой Azure Arc перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 
 ![Успешное соединение с сервером](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 

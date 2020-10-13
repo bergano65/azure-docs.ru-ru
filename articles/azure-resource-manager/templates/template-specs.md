@@ -6,10 +6,10 @@ ms.date: 10/02/2020
 ms.author: tomfitz
 author: tfitzmac
 ms.openlocfilehash: b0dfc41bddccc6b5c5c924168044cffc0aa5e2b5
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91728477"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Спецификации шаблонов Azure Resource Manager (Предварительная версия)
@@ -336,7 +336,7 @@ az deployment group create \
 
 При создании спецификации шаблона вы предоставляете для него номер версии. По мере выполнения итерации по коду шаблона можно либо обновить существующую версию (для исправлений), либо опубликовать новую версию. Версия является текстовой строкой. Можно выбрать любую систему управления версиями, включая семантическую версию. Пользователи спецификации шаблона могут предоставить номер версии, который они хотят использовать при развертывании.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о создании и развертывании шаблона см. в разделе [Краткое руководство. Создание и развертывание спецификации шаблона](quickstart-create-template-specs.md).
 

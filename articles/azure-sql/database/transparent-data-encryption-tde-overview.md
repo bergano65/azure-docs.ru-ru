@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-ms.date: 06/15/2020
-ms.openlocfilehash: d9bc5e91d45b75c47cee31c45b937f7d3f0118b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/12/2020
+ms.openlocfilehash: 10728a5500d8ad36c006bac9176422c6afb9bf1a
+ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836689"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91945998"
 ---
 # <a name="transparent-data-encryption-for-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Прозрачное шифрование данных для базы данных SQL, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "87836689"
 > Все вновь созданные базы данных SQL шифруются по умолчанию с помощью прозрачного шифрования данных, управляемого службой. Существующие базы данных SQL, созданные до 2017 мая, а базы данных SQL, созданные с помощью инструкции RESTORE, Георепликация и копия базы данных, по умолчанию не шифруются. Существующие базы данных SQL Управляемый экземпляр, созданные до февраля 2019, по умолчанию не шифруются. Базы данных SQL Управляемый экземпляр, созданные с помощью инструкции RESTORE, наследуют состояние шифрования от источника.
 
 > [!NOTE]
-> TDE нельзя использовать для шифрования базы данных **master** в базе данных SQL.  База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
+> TDE нельзя использовать для шифрования базы данных **master** в базе данных SQL Azure и azure SQL управляемый экземпляр. База данных **master** содержит объекты, которые необходимы для выполнения операций TDE для пользовательских баз данных.
 
 ## <a name="service-managed-transparent-data-encryption"></a>Управляемое службой прозрачное шифрование данных
 

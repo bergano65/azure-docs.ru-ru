@@ -3,18 +3,18 @@ title: Документация по платформе удостоверени
 summary: Платформа удостоверений Майкрософт — это служба аутентификации, библиотеки с открытым исходным кодом и средства управления приложениями. Узнайте, как создавать современные основанные на стандартах решения для аутентификации с помощью наших примеров, руководств и примеров кода. Создавайте приложения, в которые пользователи и клиенты входят с использованием своих удостоверений Майкрософт или социальных учетных записей, и авторизуйте доступ к вашим API или API Майкрософт, таким как Microsoft Graph.
 metadata:
   ms.topic: landing-page
-  ms.date: 09/26/2020
+  ms.date: 10/07/2020
   author: mmacy
   ms.author: marsma
   ms.service: active-directory
   ms.subservice: develop
   ms.workload: identity
-  ms.openlocfilehash: d80d722594e717319bda473e2cb86551acc8d9f0
-  ms.sourcegitcommit: dc68a2c11bae2e9d57310d39fbed76628233fd7f
+  ms.openlocfilehash: b6dfd02b11c972ae4877e45e7424d3e35f0d0874
+  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/28/2020
-  ms.locfileid: "91403149"
+  ms.lasthandoff: 10/09/2020
+  ms.locfileid: "91801891"
 landingContent:
 - title: Общие сведения о платформе удостоверений Майкрософт
   linkLists:
@@ -120,6 +120,8 @@ landingContent:
   linkLists:
   - linkListType: whats-new
     links:
+    - text: Общие сведения о библиотеке Microsoft Identity Web
+      url: microsoft-identity-web.md
     - text: Руководство по Blazor Server
       url: tutorial-blazor-server.md
     - text: Краткое руководство. Защита веб-API ASP.NET Core
