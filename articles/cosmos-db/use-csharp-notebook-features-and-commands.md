@@ -8,10 +8,10 @@ ms.date: 05/19/2020
 ms.author: dech
 ms.custom: devx-track-python, devx-track-csharp
 ms.openlocfilehash: 47ac6b4caf97b264df58732f8d031fc63091171e
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89019272"
 ---
 # <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-c-notebooks-preview"></a>Использование встроенных команд и функций записных книжек в Azure Cosmos DB C# (предварительная версия)
@@ -117,12 +117,12 @@ for (int i = 0; i < 5; i++) {
 
 :::image type="content" source="media/use-notebook-features-and-commands/csharp-query-cell.png" alt-text="Ячейка запроса Csharp":::
 
-:::image type="content" source="media/use-notebook-features-and-commands/csharp-nteract-built-in-chart.png" alt-text="Обозреватель данных nteract":::
+:::image type="content" source="media/use-notebook-features-and-commands/csharp-nteract-built-in-chart.png" alt-text="Ячейка запроса Csharp":::
 
 ## <a name="use-built-in-dictionary-viewer"></a>Использование встроенного средства просмотра словарей
 Для просмотра переменной можно использовать встроенное средство просмотра словарей. В ячейке вставьте переменную, которую необходимо визуализировать, в последней строке, которая автоматически отображается при запуске ячейки.
 
-:::image type="content" source="media/use-notebook-features-and-commands/csharp-built-in-dictionary-viewer.png" alt-text="Встроенное средство просмотра словарей":::
+:::image type="content" source="media/use-notebook-features-and-commands/csharp-built-in-dictionary-viewer.png" alt-text="Ячейка запроса Csharp":::
 
 ## <a name="upload-json-items-to-a-container"></a>Отправка элементов JSON в контейнер
 Магическую команду ``%%upload`` можно использовать для передачи данных из JSON-файла в указанный контейнер Azure Cosmos. Используйте для отправки элементов следующую команду:
@@ -160,7 +160,7 @@ Total RUs consumed : 25022.58
 ## <a name="reset-notebooks-workspace"></a>Сброс рабочей области записных книжек
 Чтобы сбросить рабочую область записных книжек до значений по умолчанию, выберите **Сбросить рабочую область** на панели команд. При этом будут удалены все установленные пользовательские пакеты и перезапущен сервер Jupyter. Ваши записные книжки, файлы и ресурсы Azure Cosmos затронуты не будут.  
 
-:::image type="content" source="media/use-notebook-features-and-commands/reset-workspace.png" alt-text="Сброс рабочей области записных книжек":::
+:::image type="content" source="media/use-notebook-features-and-commands/reset-workspace.png" alt-text="Ячейка запроса Csharp":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -2,15 +2,13 @@
 title: Схема ресурсов на основе рабочей области Azure Monitor Application Insights
 description: Сведения о новой структуре и схеме таблицы для Azure Monitor Application Insights ресурсов на основе рабочих областей.
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/09/2020
-ms.openlocfilehash: 1d7275c928b4d25e200a3a8d3d690c7575c056e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f0bee64d74cfd5b6abef5c918c023974fda3fcf
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323185"
+ms.locfileid: "91931059"
 ---
 # <a name="workspace-based-resource-changes-preview"></a>Изменения ресурсов на основе рабочей области (Предварительная версия)
 
@@ -20,7 +18,7 @@ ms.locfileid: "87323185"
 
 ## <a name="table-structure"></a>Структура таблицы
 
-| Устаревшее имя таблицы | Имя новой таблицы | Описание |
+| Устаревшее имя таблицы | Имя новой таблицы | Description |
 |:---|:---|:---|
 | availabilityResults | аппаваилабилитиресултс |  Сводные данные из тестов доступности.|
 | бровсертимингс | аппбровсертимингс | Данные о производительности клиента, например время, затраченное на обработку входящих данных.|
@@ -43,7 +41,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: доступность
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -87,7 +85,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: Бровсертимингс
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -108,7 +106,7 @@ ms.locfileid: "87323185"
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|строка|
-|name|строка|name|DATETIME|
+|name|строка|Имя|DATETIME|
 |нетворкдуратион|real|нетворкдуратионмс|real|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
@@ -131,7 +129,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: зависимости
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -176,7 +174,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: customEvents
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -213,7 +211,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: customMetrics
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -254,7 +252,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: pageViews
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -295,7 +293,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: performanceCounters
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -334,7 +332,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: запросы
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -352,7 +350,7 @@ ms.locfileid: "87323185"
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|Real|
-|`id`|строка|`Id`|Строка|
+|`id`|строка|`Id`|Строковый тип|
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
@@ -362,14 +360,14 @@ ms.locfileid: "87323185"
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
 |operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
-|перформанцебуккет|строка|перформанцебуккет|Строка|
-|resultCode|строка|ResultCode|Строка|
+|перформанцебуккет|строка|перформанцебуккет|Строковый тип|
+|resultCode|строка|ResultCode|Строковый тип|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|source|строка|Источник|Строка|
+|source|строка|Источник|Строковый тип|
 |Успешное завершение|строка|Успех|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|url|строка|Url|Строка|
+|url|строка|Url|Строковый тип|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
@@ -378,7 +376,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: исключения
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -430,7 +428,7 @@ ms.locfileid: "87323185"
 
 Устаревшая таблица: трассировки
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|

@@ -4,16 +4,16 @@ description: В этой статье содержатся инструкции 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a5278626f8cdd4299912f3c952786422436fe916
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85476246"
 ---
 # <a name="save-custom-images-and-distribute-to-multiple-labs"></a>Сохранение пользовательских образов и их распространение в несколько лабораторий
 В этой статье содержатся инструкции по сохранению пользовательских образов из уже созданных виртуальных машин. Здесь также рассматривается распространение этих пользовательских образов в другие DevTest Labs в Организации.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Следующие элементы уже должны быть на месте:
 
 - Лаборатория для фабрики изображений в Azure DevTest Labs.
@@ -78,12 +78,12 @@ ms.locfileid: "85476246"
 
 ![Задача сборки для распространения образов](./media/save-distribute-custom-images/second-build-task-powershell.png)
 
-Параметры:`-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -SubscriptionId $(SubscriptionId) -DevTestLabName $(DevTestLabName) -maxConcurrentJobs 20`
+Параметры: `-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -SubscriptionId $(SubscriptionId) -DevTestLabName $(DevTestLabName) -maxConcurrentJobs 20`
 
 Эта задача принимает в фабрике образов пользовательские образы и отправляет их в любые лаборатории, определенные в Labs.jsфайле.
 
 ## <a name="queue-the-build"></a>Поставить сборку в очередь
 После завершения задачи сборки распространителя поочередно создайте новую сборку, чтобы убедиться в том, что все работает. После успешного завершения сборки новые пользовательские образы будут отображаться в целевой лаборатории, которая была введена в Labs.jsфайла конфигурации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В следующей статье серии вы обновите фабрику образов, указав политику хранения и шаги очистки: [Настройка политики хранения и запуск скриптов очистки](image-factory-set-retention-policy-cleanup.md).

@@ -11,10 +11,10 @@ ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
 ms.openlocfilehash: 5ec06960e695abfa4bf004633b1f171214a5d29a
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91286656"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Руководство. Настройка атрибута обратной записи из Azure AD в SAP SuccessFactors
@@ -275,7 +275,7 @@ ms.locfileid: "91286656"
 
 1. В таблице сопоставление в разделе **сопоставления атрибутов** можно сопоставить следующие Azure Active Directory атрибуты с SuccessFactors. В следующей таблице приведены инструкции по сопоставлению атрибутов обратной записи. 
 
-   | \# | Атрибут Azure AD | Атрибут SuccessFactors | Комментарии |
+   | \# | Атрибут Azure AD | Атрибут SuccessFactors | Remarks |
    |--|--|--|--|
    | 1 | employeeId | персонидекстернал | По умолчанию этот атрибут является соответствующим идентификатором. Вместо employeeId можно использовать любой другой атрибут Azure AD, который может хранить значение, равное Персонидекстернал в SuccessFactors.    |
    | 2 | mail | email | Источник атрибута адреса электронной почты. В целях тестирования можно сопоставлять userPrincipalName с электронной почтой. |
@@ -339,7 +339,7 @@ ms.locfileid: "91286656"
 
 См. [раздел сценарии обратной записи](../app-provisioning/sap-successfactors-integration-reference.md#writeback-scenarios) в справочном руководстве по интеграции SAP SuccessFactors. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Подробный справочник по интеграции Azure AD и SAP SuccessFactors](../app-provisioning/sap-successfactors-integration-reference.md)
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

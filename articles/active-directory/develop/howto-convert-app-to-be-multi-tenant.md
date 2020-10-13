@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
 ms.openlocfilehash: 3578562839069eb4b9c99b16d938efe48821fcec
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91631313"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
@@ -188,9 +188,9 @@ ms.locfileid: "91631313"
 * [Обзор платформы согласия][AAD-Consent-Overview]
 * [Справочник по разрешениям Microsoft Graph][MSFT-Graph-permission-scopes]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этой статье было показано, как создать приложение, поддерживающее вход пользователя с любого клиента Azure AD. После включения единого входа (SSO) между приложением и Azure AD можно также обновить приложение для доступа к API, предоставляемым ресурсами Майкрософт, такими как Microsoft 365. Это позволит вам предлагать своим пользователям персонализированные возможности при работе с приложением, например отображать контекстную информацию — такую, как изображение профиля или следующая встреча из календаря. Дополнительные сведения о вызовах API в Azure AD и Microsoft 365 службах, таких как Exchange, SharePoint, OneDrive, OneNote и др., см. [Microsoft Graph API][MSFT-Graph-overview].
+В этой статье было показано, как создать приложение, поддерживающее вход пользователя с любого клиента Azure AD. После включения единого Sign-On (SSO) между приложением и Azure AD можно также обновить приложение для доступа к API, предоставляемым ресурсами Майкрософт, такими как Microsoft 365. Это позволит вам предлагать своим пользователям персонализированные возможности при работе с приложением, например отображать контекстную информацию — такую, как изображение профиля или следующая встреча из календаря. Дополнительные сведения о вызовах API в Azure AD и Microsoft 365 службах, таких как Exchange, SharePoint, OneDrive, OneNote и др., см. [Microsoft Graph API][MSFT-Graph-overview].
 
 <!--Reference style links IN USE -->
 [AAD-Access-Panel]:  https://myapps.microsoft.com

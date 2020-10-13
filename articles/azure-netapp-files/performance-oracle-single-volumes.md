@@ -15,13 +15,13 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: b-juche
 ms.openlocfilehash: c6cdf2f6dada0aa4dea2f70f18237b7ee39e3ea1
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91571413"
 ---
-# <a name="oracle-database-performance-on-azure-netapp-files-single-volumes"></a>Производительность базы данных Oracle на Azure NetApp Files одном томе
+# <a name="oracle-database-performance-on-azure-netapp-files-single-volumes"></a>Производительность базы данных Oracle в отдельных томах Azure NetApp Files
 
 В этой статье рассматриваются следующие темы о Oracle в облаке. Эти темы могут быть особенно интересны администратору базы данных, архитектору облака или архитектору хранилища:   
 
@@ -172,7 +172,7 @@ ms.locfileid: "91571413"
 
 В сводке Azure NetApp Files помогает перевести базы данных Oracle в облако. Она обеспечивает производительность, когда она требует база данных. Вы можете в любое время динамически и без сбоев изменять размер квоты тома.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Рекомендации по тестам производительности для Azure NetApp Files](azure-netapp-files-performance-metrics-volumes.md)
 - [Тесты производительности для Linux](performance-benchmarks-linux.md)

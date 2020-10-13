@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: b-juche
-ms.openlocfilehash: 54c85fb778d1794f9aeba2eba5ed459292636e35
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61978566eba792a1d5b1db45ea4a9e8d6e84a543
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/09/2020
-ms.locfileid: "87513627"
+ms.locfileid: "91931042"
 ---
 # <a name="azure-netapp-files-sdks-and-cli-tools"></a>Пакеты SDK для Azure NetApp Files и средства CLI
 
@@ -42,14 +42,14 @@ ms.locfileid: "87513627"
 
 В таблице ниже перечислены поддерживаемые средства CLI и их Справочник по командам.   
 
-|    Инструмент    |    Справочник по командам    |
+|    Средство    |    Справочник по командам    |
 |------------------|--------------------------------------------|
-|    Azure CLI  |    [AZ нетаппфилес](https://docs.microsoft.com/cli/azure/netappfiles?view=azure-cli-latest)    |
-|    PowerShell   |    [Azure PowerShell для Azure NetApp Files](https://docs.microsoft.com/powershell/module/az.netappfiles/?view=azps-2.5.0#netapp_files)    |
+|    Azure CLI  |    [AZ нетаппфилес](/cli/azure/netappfiles?view=azure-cli-latest)    |
+|    PowerShell   |    [Azure PowerShell для Azure NetApp Files](/powershell/module/az.netappfiles/?view=azps-2.5.0#netapp_files)    |
 
 ## <a name="code-samples"></a>Примеры кода
 
-См. [примеры кода для Azure NetApp Files](https://docs.microsoft.com/samples/browse/?filter-products=netapp&products=azure-netapp-files).
+См. [примеры кода для Azure NetApp Files](/samples/browse/?filter-products=netapp&products=azure-netapp-files).
 
-## <a name="next-steps"></a>Дальнейшие действия   
+## <a name="next-steps"></a>Дальнейшие шаги   
  [Скачать пакеты SDK для Azure](https://azure.microsoft.com/downloads/)

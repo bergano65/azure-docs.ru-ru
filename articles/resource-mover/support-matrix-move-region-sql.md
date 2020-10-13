@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/07/2020
 ms.author: raynew
 ms.openlocfilehash: 4925f6ffd2383c21f8ff9b0e3196d44fc15bb657
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89652999"
 ---
 # <a name="support-for-moving-azure-sql-resources-between-azure-regions"></a>Поддержка перемещения ресурсов SQL Azure между регионами Azure
@@ -30,15 +30,15 @@ ms.locfileid: "89652999"
 **Существующая Георепликация** | Поддерживается | Существующие геореплики повторно сопоставляются с новым источником в целевом регионе.<br/><br/> Начальное заполнение должно быть инициализировано после перемещения. [Дополнительные сведения](/azure/sql-database/sql-database-active-geo-replication-portal)
 **Прозрачное шифрование данных (TDE) с создание собственных ключей (BYOK)** | Поддерживается | Дополнительные [сведения](../key-vault/general/move-region.md) о перемещении хранилищ ключей в разных регионах.
 **TDE с ключом, управляемым службой** | Поддерживается. |  Дополнительные [сведения](../key-vault/general/move-region.md) о перемещении хранилищ ключей в разных регионах.
-**Правила динамического маскирования данных** | Поддерживается. | Правила автоматически копируются в целевой регион в процессе перемещения. [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started-portal).
-**Расширенная защита данных** | Не поддерживается. | Обходное решение. Настройте на уровне SQL Server в целевом регионе. [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security).
-**Правила брандмауэра** | Не поддерживается. | Обходное решение. Настройте правила брандмауэра для SQL Server в целевом регионе. Правила брандмауэра уровня базы данных копируются с исходного сервера на целевой сервер. [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-server-level-firewall-rule).
+**Правила динамического маскирования данных** | Поддерживается. | Правила автоматически копируются в целевой регион в процессе перемещения. [Подробнее.](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started-portal)
+**Расширенная защита данных** | Не поддерживается. | Обходное решение. Настройте на уровне SQL Server в целевом регионе. [Подробнее.](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+**Правила брандмауэра** | Не поддерживается. | Обходное решение. Настройте правила брандмауэра для SQL Server в целевом регионе. Правила брандмауэра уровня базы данных копируются с исходного сервера на целевой сервер. [Подробнее.](https://docs.microsoft.com/azure/sql-database/sql-database-server-level-firewall-rule)
 **Политики аудита** | Не поддерживается. | Политики будут сброшены к значениям по умолчанию после перемещения. [Узнайте](https://docs.microsoft.com/azure/sql-database/sql-database-auditing) , как выполнить сброс.
-**Хранение архивных копий** | Поддерживается. | Политики хранения резервных копий для базы данных источника переносятся в целевую базу данных. [Узнайте](/azure/sql-database/sql-database-long-term-backup-retention-configure) , как изменить параметры после перемещения.
-**Автоматическая настройка** | Не поддерживается. | Обходное решение. Задайте параметры автоматической настройки после перемещения. [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-automatic-tuning-enable).
-**Предупреждения базы данных** | Не поддерживается. | Обходное решение. Настройте оповещения после перемещения. [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-insights-alerts-portal).
+**Хранение архивных копий** | Поддерживается. | Политики хранения резервных копий для исходной базы данных переносятся в целевую базу данных. [Узнайте](/azure/sql-database/sql-database-long-term-backup-retention-configure) , как изменить параметры после перемещения.
+**Автоматическая настройка** | Не поддерживается. | Обходное решение. Задайте параметры автоматической настройки после перемещения. [Подробнее.](https://docs.microsoft.com/azure/sql-database/sql-database-automatic-tuning-enable)
+**Предупреждения базы данных** | Не поддерживается. | Обходное решение. Настройте оповещения после перемещения. [Подробнее.](https://docs.microsoft.com/azure/sql-database/sql-database-insights-alerts-portal)
 **База данных Stretch SQL Server Azure** | Не поддерживается | Не удается переместить базы данных Stretch SQL Server с помощью перемещения ресурсов.
 **Azure Synapse Analytics** | Не поддерживается | Не удается переместить синапсе Analytics (ранее — хранилище данных SQL Azure) с помощью перемещения ресурсов.
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте использовать [ресурсы SQL Azure](tutorial-move-region-sql.md) в другом регионе с помощью перемещения ресурсов.

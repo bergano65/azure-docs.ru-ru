@@ -10,10 +10,10 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/27/2020
 ms.openlocfilehash: 62edee6a882191551ce2409646ea8b617576c059
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89651152"
 ---
 # <a name="distributed-training-with-azure-machine-learning"></a>Распределенное обучение с помощью Машинное обучение Azure
@@ -48,7 +48,7 @@ ms.locfileid: "89651152"
 
 В случае параллелизма модели рабочие узлы должны синхронизировать общие параметры, как правило, один раз для каждого этапа перенаправления вперед или обратного распространения. Кроме того, более крупные модели не являются проблемой, так как каждый узел работает с подразделом модели для тех же обучающих данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [использовать целевые объекты вычислений для обучения модели](how-to-set-up-training-targets.md) с помощью пакета SDK для Python.
 * Технический пример см. в статье [сценарий эталонной архитектуры](https://docs.microsoft.com/azure/architecture/reference-architectures/ai/training-deep-learning).

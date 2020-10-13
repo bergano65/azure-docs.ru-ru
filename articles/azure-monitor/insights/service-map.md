@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 07/24/2019
 ms.openlocfilehash: f7268f698dcc26dbe99b517c9dd4584be67c3a82
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91448463"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Использование решения "Сопоставление служб" в Azure
@@ -373,7 +373,7 @@ Linux:
 
 Для удобства IP-адрес удаленной стороны подключения включается в свойство RemoteIp. Для входящих подключений свойство RemoteIp имеет то же значение, что и свойство SourceIp, а для исходящих подключений у него будет такое же значение, что и у свойства DestinationIp. Свойство RemoteDnsCanonicalNames представляет канонические имена DNS, переданные компьютером для свойства RemoteIp. Свойства RemoteDnsQuestions и RemoteClassification зарезервированы для использования в будущем. 
 
-#### <a name="geolocation"></a>Геопозиционирование
+#### <a name="geolocation"></a>Географическое положение
 
 *VMConnection* для каждой записи подключения содержит указанные ниже свойства со сведениями о географическом положении для удаленной стороны. 
 
@@ -548,7 +548,7 @@ let remoteMachines = remote | summarize by RemoteMachine;
 
 Дополнительные сведения о сборе и использовании данных см. в [заявлении о конфиденциальности служб Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=512132).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о [поиске по журналам](../log-query/log-query-overview.md) в Log Analytics для получения данных, собранных с помощью схемы услуги.
 

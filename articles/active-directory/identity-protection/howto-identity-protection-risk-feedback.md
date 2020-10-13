@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 939ffc9e2a8fb8ce3a25dc212e3df34dc6bb2ec1
-ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88950363"
 ---
 # <a name="how-to-give-risk-feedback-in-azure-ad-identity-protection"></a>Как предоставить отзыв о рисках в защита идентификации Azure AD
@@ -58,6 +58,6 @@ Azure AD использует ваши отзывы для обновления 
 
 ![Состояние обработки риска для отчета о рискованных пользователях](./media/howto-identity-protection-risk-feedback/risky-users-provide-feedback.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Справочник по обнаружению рисков Защита идентификации Azure Active Directory](./concept-identity-protection-risks.md)

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: dae2461336316defb6f2cfc63b775c67cf2196d0
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91813072"
 ---
 # <a name="what-are-application-templates"></a>Что представляют собой шаблоны приложений?
@@ -57,6 +57,6 @@ IoT Central Azure — это независимая от отрасли плат
 
 Шаблоны связаны с конкретными версиями приложения IoT Central. Версию приложения можно найти на странице [сведения о приложении](./howto-get-app-info.md) по ссылке **Справка** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы знакомы с IoT Central шаблонами приложений, приступайте [к созданию IOT Central приложения](quick-deploy-iot-central.md).

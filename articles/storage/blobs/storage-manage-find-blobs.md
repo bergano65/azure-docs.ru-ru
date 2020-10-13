@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.reviewer: hux
 ms.custom: references_regions
 ms.openlocfilehash: db23d3b5c532a1539936b51222345c98679c554c
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91817537"
 ---
 # <a name="manage-and-find-azure-blob-data-with-blob-index-preview"></a>Управление данными большого двоичного объекта Azure и их поиск с помощью индекса BLOB-объектов (Предварительная версия)
@@ -132,7 +132,7 @@ ms.locfileid: "91817537"
 |     <      |  Меньше чем   | "Age" < "32" |
 |     <=     |  Меньше или равно  | "Company" <= "contoso" |
 |    AND     |  Логическое и  | "Rank" >= "010" и "Rank" < "100" |
-|     ИЛИ     | Логическое или   | "Status" = "Done" или "Priority" >= "05" |
+|     OR     | Логическое или   | "Status" = "Done" или "Priority" >= "05" |
 
 > [!NOTE]
 > Существует два дополнительных оператора, которые не равны и являются логическими или, которые допускаются в условном заголовке x-MS-if-Tags для операции с BLOB-объектом, но не существуют в операции Финдблобсбитагс.
@@ -311,7 +311,7 @@ az provider register --namespace 'Microsoft.Storage'
 ### <a name="are-blob-index-tags-and-azure-resource-manager-tags-related"></a>Являются ли Теги индексов BLOB-объектов и Azure Resource Manager тегами?
 Нет, диспетчер ресурсов Теги помогают упорядочить ресурсы плоскости управления, такие как подписки, группы ресурсов и учетные записи хранения. Теги индекса больших двоичных объектов обеспечивают управление объектами и их обнаружение в ресурсах плоскости данных, таких как большие двоичные объекты в учетной записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Пример использования индекса больших двоичных объектов см. в разделе [использование индекса больших двоичных объектов для управления и поиска данных](storage-blob-index-how-to.md).
 

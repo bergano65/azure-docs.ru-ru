@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: 3891d1730648fea3c480cd03921a76fe005c308f
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91740060"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql"></a>Настройка оповещений на основе метрик для базы данных Azure для MySQL на портале Azure 
@@ -84,6 +84,6 @@ ms.locfileid: "91740060"
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

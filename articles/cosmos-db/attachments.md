@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/07/2020
 ms.reviewer: sngun
 ms.openlocfilehash: 56e8212d60494d469e225c25edbbd331c601ea6b
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91804167"
 ---
 # <a name="azure-cosmos-db-attachments"></a>Azure Cosmos DB вложения
@@ -158,7 +158,7 @@ namespace attachments
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Приступая к работе с [хранилищем BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet)
 - Получение ссылок на использование вложений с помощью [пакета SDK .NET версии 2 для Azure Cosmos DB](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.attachment?view=azure-dotnet&preserve-view=true)

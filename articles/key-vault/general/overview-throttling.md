@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 7aa33bb062abf748031b27df46d42e8f13aabfc3
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91819962"
 ---
 # <a name="azure-key-vault-throttling-guidance"></a>Руководство по регулированию хранилища ключей Azure
@@ -41,7 +41,7 @@ Key Vault изначально была разработана для хране
 
 | Имя хранилища | Регион хранилища | Тип объекта (секрет, ключ или сертификат) | Операции * | Тип ключа | Длина ключа или кривая | Ключ HSM?| Требуется устойчивый RPS для состояния | Требуется пиковое число RPS |
 |--|--|--|--|--|--|--|--|--|
-| https://mykeyvault.vault.azure.net/ | | Клавиши | вход; | EC | P-256 | нет | 200 | 1000 |
+| https://mykeyvault.vault.azure.net/ | | Ключ | вход; | EC | P-256 | нет | 200 | 1000 |
 
 \* Полный список возможных значений см. в разделе [операции Azure Key Vault](/rest/api/keyvault/key-operations).
 

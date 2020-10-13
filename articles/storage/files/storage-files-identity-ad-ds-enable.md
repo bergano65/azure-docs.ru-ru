@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
 ms.openlocfilehash: b125ae506a9811b8e80a9114e31effc1933c114d
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91821212"
 ---
 # <a name="part-one-enable-ad-ds-authentication-for-your-azure-file-shares"></a>Часть 1. Включение проверки подлинности AD DS для файловых ресурсов Azure 
@@ -32,7 +32,7 @@ ms.locfileid: "91821212"
 - Установите и выполните модуль на устройстве, присоединенном к локальному AD DS с учетными данными AD DS, имеющими разрешения на создание учетной записи входа в службу или учетной записи компьютера в целевом AD.
 -  Запустите скрипт, используя локальные учетные данные AD DS, которые синхронизируются с Azure AD. Локальные учетные данные AD DS должны иметь разрешения владельца учетной записи хранения или роли участника Azure.
 
-### <a name="run-join-azstorageaccountforauth"></a>Выполните команду JOIN-Азсторажеаккаунтфораус
+### <a name="run-join-azstorageaccountforauth"></a>Запустить Join-AzStorageAccountForAuth
 
 `Join-AzStorageAccountForAuth`Командлет выполняет эквивалентное автономное присоединение к домену от имени указанной учетной записи хранения. Сценарий использует командлет для создания [учетной записи компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) в домене AD. Если по какой-либо причине нельзя использовать учетную запись компьютера, можно изменить скрипт, чтобы создать [учетную запись входа в службу](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) . Если вы решили выполнить команду вручную, следует выбрать учетную запись, подходящую для вашей среды.
 
@@ -132,7 +132,7 @@ Set-AzStorageAccount `
 
 ### <a name="debugging"></a>Отладка
 
-Командлет Debug-Азсторажеаккаунтаус можно использовать для выполнения набора основных проверок конфигурации AD с пользователем, вошедшим в систему Active Directory. Этот командлет поддерживается в AzFilesHybrid версии 0.1.2+. Дополнительные сведения о проверках, выполненных в этом командлете, см. в разделе [не удается подключить службу файлов Azure с учетными данными AD](storage-troubleshoot-windows-file-connection-problems.md#unable-to-mount-azure-files-with-ad-credentials) в статье Руководство по устранению неполадок для Windows.
+Вы можете запустить командлет Debug-AzStorageAccountAuth, чтобы выполнить ряд основных проверок конфигурации AD с вошедшим в систему пользователем AD. Этот командлет поддерживается в AzFilesHybrid версии 0.1.2+. Дополнительные сведения о проверках, выполненных в этом командлете, см. в разделе [не удается подключить службу файлов Azure с учетными данными AD](storage-troubleshoot-windows-file-connection-problems.md#unable-to-mount-azure-files-with-ad-credentials) в статье Руководство по устранению неполадок для Windows.
 
 ```PowerShell
 Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGroupName $ResourceGroupName -Verbose
@@ -155,7 +155,7 @@ $storageAccount.AzureFilesIdentityBasedAuth.DirectoryServiceOptions
 $storageAccount.AzureFilesIdentityBasedAuth.ActiveDirectoryProperties
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы успешно включили функцию в учетной записи хранения. Чтобы использовать эту функцию, необходимо назначить разрешения на уровне общего ресурса. Перейдите к следующему разделу.
 

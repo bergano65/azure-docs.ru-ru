@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/21/2020
 ms.openlocfilehash: 4414dc86ff318cfff5d224ce7aa064c31f3df460
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91294535"
 ---
 # <a name="install-log-analytics-agent-on-linux-computers"></a>Установка агента Log Analytics на компьютерах Linux
@@ -100,7 +100,7 @@ ms.locfileid: "91294535"
 
 Агент Log Analytics для Linux состоит из нескольких пакетов. Файл выпуска содержит следующие пакеты, доступные для запуска пакета оболочки с `--extract` параметром:
 
-**Пакет** | **Version** | **Описание**
+**Пакет** | **Версия** | **Описание**
 ----------- | ----------- | --------------
 omsagent | 1.13.9 | Агент Log Analytics для Linux
 omsconfig | 1.1.1 | Агент конфигурации для агента Log Analytics

@@ -8,10 +8,10 @@ ms.date: 3/16/2020
 ms.topic: conceptual
 ms.service: digital-twins
 ms.openlocfilehash: 7e360c158c7887109684d13f774cbbda1813373e
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91729140"
 ---
 # <a name="integrate-azure-digital-twins-with-other-services"></a>Интеграция Azure Digital двойников с другими службами
@@ -45,7 +45,7 @@ Azure Digital двойников может передавать данные в
 
 Вы также можете научиться маршрутизировать данные аналогичным образом во время анализа временных рядов, в [*инструкции по интеграции со службой "аналитика временных рядов"*](how-to-integrate-time-series-insights.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о конечных точках и маршрутизации событий для внешних служб:
 * [*Основные понятия: маршрутизация событий цифровых двойников Azure*](concepts-route-events.md)

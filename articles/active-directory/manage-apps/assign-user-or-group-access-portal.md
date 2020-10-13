@@ -12,10 +12,10 @@ ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
 ms.openlocfilehash: f49377743521e27c2312e95491762ca48d8448c4
-ms.sourcegitcommit: 80b9c8ef63cc75b226db5513ad81368b8ab28a28
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90604331"
 ---
 # <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Управление назначением пользователей для приложения в Azure Active Directory
@@ -28,7 +28,7 @@ ms.locfileid: "90604331"
 > После назначения приложению группы, доступ будут иметь только пользователи из этой группы. Назначение не распространяется на вложенные группы.
 
 > [!NOTE]
-> Для назначения ролей на основе групп необходимо установить Azure Active Directory Premium P1 или P2. Назначение на основе группы поддерживается только для групп безопасности. Членство в вложенных группах и группы Microsoft 365 в настоящее время не поддерживаются. Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory). 
+> Для назначения ролей на основе групп необходимо установить Azure Active Directory Premium P1 или P2. Назначение на основе группы поддерживается только для групп безопасности. Членство во вложенных группах и группы Microsoft 365 в настоящее время не поддерживаются. Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory). 
 
 ## <a name="configure-an-application-to-require-user-assignment"></a>Настройка приложения для требования назначения пользователей
 

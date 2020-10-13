@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2dddad5692ab2eebb6ef9b427c091be449791d7c
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91818354"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ: условия
@@ -46,7 +46,7 @@ ms.locfileid: "91818354"
 - iOS
 - Windows Phone
 - Windows
-- MacOS
+- macOS
 
 Если вы блокируете устаревшую проверку подлинности с помощью условия **другие клиенты** , можно также задать условие платформы устройства.
 
@@ -117,7 +117,7 @@ ms.locfileid: "91818354"
 | Windows Server 2016 | Internet Explorer |
 | Windows Server 2012 R2 | Internet Explorer |
 | Windows Server 2008 R2 | Internet Explorer |
-| MacOS | Chrome, Safari |
+| macOS | Chrome, Safari |
 
 > [!NOTE]
 > Пограничная 85 + требует, чтобы пользователь вошел в браузер для правильной передачи удостоверения устройства. В противном случае он ведет себя как Chrome без расширения Accounts. Этот вход может не выполняться автоматически в гибридном сценарии присоединение к Azure AD. 
@@ -132,14 +132,14 @@ ms.locfileid: "91818354"
 
 Чтобы автоматически развернуть это расширение в браузере Chrome, создайте следующий раздел реестра:
 
-- Путь HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\гугле\чроме\екстенсионинсталлфорцелист
+- HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist пути
 - Имя 1
 - Тип REG_SZ (строка)
 - Ппнбнпеолгкикжегкбкбжмхлидеопижи данных; HTTPS \: //clients2.Google.com/Service/Update2/CRX
 
 Для поддержки Chrome в **Windows 8.1 и Windows 7** создайте следующий раздел реестра:
 
-- Путь HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\гугле\чроме\аутоселектцертификатефорурлс
+- HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls пути
 - Имя 1
 - Тип REG_SZ (строка)
 - Данные {"шаблон": " https://device.login.microsoftonline.com ", "фильтр": {"Issuer": {"CN": "MS-Организации-Access"}}}
@@ -160,12 +160,12 @@ ms.locfileid: "91818354"
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | SharePoint | Windows 8.1, Windows 7 |
 | Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | SharePoint Online | Windows 10 |
-| Office 2016 (только Word, Excel, PowerPoint, OneNote). | SharePoint | MacOS |
+| Office 2016 (только Word, Excel, PowerPoint, OneNote). | SharePoint | macOS |
 | Office 2019| SharePoint | Windows 10, macOS |
 | Мобильные приложения Office | SharePoint | Android, iOS |
 | Приложение Office Yammer | Yammer | Windows 10, iOS, Android |
 | Outlook 2019 | SharePoint | Windows 10, macOS |
-| Outlook 2016 (Office для macOS) | Exchange Online | MacOS |
+| Outlook 2016 (Office для macOS) | Exchange Online | macOS |
 | Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности) | Exchange Online | Windows 8.1, Windows 7 |
 | Мобильное приложение Outlook | Exchange Online | Android, iOS |
 | Приложение Power BI | Служба Power BI | Windows 10, Windows 8.1, Windows 7, Android и iOS |
@@ -196,7 +196,7 @@ ms.locfileid: "91818354"
 Например, *все пользователи* , обращающиеся к облачному приложению *Microsoft Azure Management* , включая **все состояние устройства** , за исключением **гибридного устройства, присоединенного к Azure AD** , и **устройства, помеченные как соответствующие** и для *элементов управления доступом*, **блок**. 
    - В этом примере создается политика, которая разрешает доступ к управлению Microsoft Azure только с устройств, присоединенных к гибридной службе Azure AD или устройств, помеченных как соответствующие требованиям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Условный доступ: предоставление](concept-conditional-access-grant.md)
 

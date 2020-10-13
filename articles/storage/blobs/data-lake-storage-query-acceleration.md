@@ -9,10 +9,10 @@ ms.date: 09/09/2020
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: ae92828f08ae4abf9cc28f18872cca27ce747be4
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89657651"
 ---
 # <a name="azure-data-lake-storage-query-acceleration"></a>Ускорение запросов Azure Data Lake Storage
@@ -72,7 +72,7 @@ ms.locfileid: "89657651"
 
 Несмотря на изменение модели выставления счетов, модель ценообразования для ускорения запросов предназначена для снижения совокупной стоимости владения рабочей нагрузкой, учитывая снижение затрат на виртуальные машины гораздо более затратным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage](data-lake-storage-query-acceleration-how-to.md)
 - [Справочник по языку SQL для ускорения запросов](query-acceleration-sql-reference.md)
