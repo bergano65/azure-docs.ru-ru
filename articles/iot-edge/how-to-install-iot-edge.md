@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: kgremban
-ms.openlocfilehash: e5dc5601be5bd6d8003b196b5e7768e66bc48478
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 3a02459f5b92aa7d708c29c737ed9428ed14215a
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979783"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045692"
 ---
 # <a name="install-or-uninstall-the-azure-iot-edge-runtime"></a>Установка или удаление среды выполнения Azure IoT Edge
 
@@ -267,9 +267,9 @@ Azure IoT Edge пакеты программного обеспечения по
 
 4. При необходимости скачайте установщик для распространяемого пакета Visual C++. Например, сценарий PowerShell использует эту версию: [vc_redist.x64.exe](https://download.microsoft.com/download/0/6/4/064F84EA-D1DB-4EAA-9A5C-CC2F0FF6A638/vc_redist.x64.exe). Сохраните установщик в той же папке на устройстве IoT, что и файлы IoT Edge.
 
-5. Чтобы установить с автономными компонентами, [источником точки](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing) является локальная копия сценария PowerShell. 
+5. Чтобы установить с автономными компонентами, [источником точки](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing) является локальная копия сценария PowerShell. 
 
-6. Выполните команду [deploy-IoTEdge](reference-windows-scripts.md#deploy-iotedge) с `-OfflineInstallationPath` параметром. Укажите абсолютный путь к каталогу файлов. Например, примененная к объекту директива
+6. Выполните команду [deploy-IoTEdge](reference-windows-scripts.md#deploy-iotedge) с `-OfflineInstallationPath` параметром. Укажите абсолютный путь к каталогу файлов. Например:
 
    ```powershell
    . <path>\IoTEdgeSecurityDaemon.ps1

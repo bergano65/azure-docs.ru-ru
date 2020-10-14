@@ -3,18 +3,21 @@ title: Службы лаборатории Azure в Microsoft Teams
 description: Содержит общие сведения об использовании служб лабораторий Azure в Microsoft Teams.
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: 8b70ab3cbf1a342646f6a2897550c4bf8f7601a7
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 0c7defdb6f801a10c5fadfdca805381a31f39378
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946746"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047834"
 ---
 # <a name="azure-lab-services-within-microsoft-teams"></a>Службы лаборатории Azure в Microsoft Teams
 
-Владельцы и создатели служб лаборатории Azure теперь могут создавать лабораторные работы в Microsoft Teams.
+Службы лаборатории Azure можно использовать в Microsoft Teams с помощью приложения Team **Services для служб лаборатории Azure** . Любой владелец команды с правами владельца, участника или создателя на учетные записи лаборатории сможет создавать лаборатории и подготавливать виртуальные машины для всех участников группы.
 
-В этой статье описаны преимущества интеграции групп и приведены ссылки на другие статьи с инструкциями по управлению службами лабораторий Azure в группах. 
+В этой статье описаны преимущества использования служб лабораторий Azure в командах и ссылки на другие статьи с инструкциями по созданию лабораторий и управлению ими в рамках групп. 
+
+> [!NOTE]
+>**Службы лаборатории Azure** Приложение Teams может быть добавлено только к команде, оно не может быть добавлено в отдельные сеансы разговора или групповые беседы.
 
 ## <a name="benefits"></a>Преимущества
 
@@ -31,8 +34,8 @@ ms.locfileid: "91946746"
 
 См. следующие статьи:
 
-- [Приступая к работе и создание лаборатории лабораторных служб из рабочих групп](how-to-get-started-create-lab-within-teams.md)
-- [Управление списками пользователей служб лаборатории с командами](how-to-manage-user-lists-within-teams.md)
-- [Управление пулом виртуальных машин в службах лаборатории из рабочих групп](how-to-manage-vm-pool-within-teams.md)
-- [Создание расписаний служб лаборатории для рабочих групп](how-to-create-schedules-within-teams.md)
-- [Доступ к виртуальной машине (представление учащихся) в службах лаборатории из групп](how-to-access-vm-for-students-within-teams.md)
+- [Приступая к работе и создание лабораторной работы в группах](how-to-get-started-create-lab-within-teams.md)
+- [Управление списками пользователей лабораторий в командах](how-to-manage-user-lists-within-teams.md)
+- [Управление пулом виртуальных машин лаборатории в рамках команд](how-to-manage-vm-pool-within-teams.md)
+- [Создание и управление расписаниями лаборатории в рабочих группах](how-to-create-schedules-within-teams.md)
+- [Доступ к виртуальной машине в командах — представление учащихся](how-to-access-vm-for-students-within-teams.md)

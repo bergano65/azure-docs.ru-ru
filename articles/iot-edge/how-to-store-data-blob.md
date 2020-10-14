@@ -8,16 +8,16 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 07da9316ea76e609948eed586f776be33c91b4bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6de96b9913b70dd1b2d423e00c58b95ccb8dcb07
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87287268"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048157"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на пограничных устройствах с использованием хранилища BLOB-объектов Azure в IoT Edge
 
-Хранилище BLOB-объектов Azure на IoT Edge предоставляет хранилище [блочного BLOB](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-block-blobs) и [Добавление хранилища больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-append-blobs) на границе. Модуль хранилища BLOB-объектов на устройстве IoT Edge ведет себя как служба BLOB-объектов Azure, за исключением того, что большие двоичные объекты хранятся локально на устройстве IoT Edge. Вы можете получить доступ к BLOB-объектам, используя те же методы пакета SDK службы хранилища Azure или вызовы API BLOB-объектов, которые вы уже используете. В этой статье объясняются основные понятия, связанные с хранилищем BLOB-объектов Azure, в контейнере IoT Edge, где выполняется служба больших двоичных объектов на устройстве IoT Edge.
+Хранилище BLOB-объектов Azure на IoT Edge предоставляет хранилище [блочного BLOB](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-block-blobs) и [Добавление хранилища больших двоичных объектов](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-append-blobs) на границе. Модуль хранилища BLOB-объектов на устройстве IoT Edge ведет себя как служба BLOB-объектов Azure, за исключением того, что большие двоичные объекты хранятся локально на устройстве IoT Edge. Вы можете получить доступ к BLOB-объектам, используя те же методы пакета SDK службы хранилища Azure или вызовы API BLOB-объектов, которые вы уже используете. В этой статье объясняются основные понятия, связанные с хранилищем BLOB-объектов Azure, в контейнере IoT Edge, где выполняется служба больших двоичных объектов на устройстве IoT Edge.
 
 Этот модуль полезен в сценариях:
 
@@ -110,7 +110,7 @@ $creds = Get-Credential
 New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath <Any available drive letter>
 ```
 
-Пример:
+Например.
 
 ```powershell
 $creds = Get-Credential
@@ -136,7 +136,7 @@ sudo chown -R 11000:11000 <blob-dir>
 sudo chmod -R 700 <blob-dir>
 ```
 
-Пример:
+Например.
 
 ```terminal
 sudo chown -R 11000:11000 /srv/containerdata
@@ -160,7 +160,7 @@ sudo chmod -R 700 <blob-dir>
 
 ## <a name="configure-log-files"></a>Настройка файлов журналов
 
-Дополнительные сведения о настройке файлов журналов для модуля [см. в этих рекомендациях](https://docs.microsoft.com/azure/iot-edge/production-checklist#set-up-logs-and-diagnostics).
+Дополнительные сведения о настройке файлов журналов для модуля [см. в этих рекомендациях](./production-checklist.md#set-up-logs-and-diagnostics).
 
 ## <a name="connect-to-your-blob-storage-module"></a>Подключение к модулю хранилища BLOB-объектов
 

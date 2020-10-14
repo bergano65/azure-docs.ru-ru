@@ -3,19 +3,19 @@ title: Настройка оповещений помощника по метр�
 titleSuffix: Azure Cognitive Services
 description: Настройка оповещений Advisor с помощью перехватчиков для электронной почты, Интернета и Azure DevOps.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/14/2020
-ms.author: aahi
-ms.openlocfilehash: 870b412a1fa5d362ac7b5be1df6c92d95c2936ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: mbullwin
+ms.openlocfilehash: ab1c07bd7814afb054bb20b77bbc84c1ee9df017
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90977792"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046797"
 ---
 # <a name="how-to-configure-alerts-and-get-notifications-using-a-hook"></a>Инструкции: Настройка оповещений и получение уведомлений с помощью обработчика
 
@@ -77,7 +77,7 @@ ms.locfileid: "90977792"
 |---------|---------|
 | Имя | Имя для обработчика |
 | Организация | Организация, к которой принадлежит ваш DevOps |
-| Проект | Конкретный проект в DevOps. |
+| Project | Конкретный проект в DevOps. |
 | Маркер доступа |  Токен для проверки подлинности в DevOps. | 
 
 > [!Note]
@@ -136,7 +136,7 @@ ms.locfileid: "90977792"
 
 :::image type="content" source="../media/alerts/alert-setting-operator.png" alt-text="окно создания веб-перехватчика.":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка обнаружения аномалий с помощью обратной связи](anomaly-feedback.md)
 - [Диагностика инцидента](diagnose-incident.md).

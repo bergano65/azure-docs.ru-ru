@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/1/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: efc507cb69b3368a2102b6de0b905657d5806ef2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a2345dce542f941df0122acd12b4acedd3b49a3
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90561437"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047240"
 ---
 # <a name="auto-manage-devices-in-azure-digital-twins-using-device-provisioning-service-dps"></a>Автоматическое управление устройствами в цифровом двойников Azure с помощью службы подготовки устройств (DPS)
 
@@ -32,7 +32,7 @@ ms.locfileid: "90561437"
 * **_Имя узла_** экземпляра Azure Digital Twins ([как найти на портале](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).
 * **_Строка подключения_** к концентратору событий Azure ([Поиск на портале](../event-hubs/event-hubs-get-connection-string.md#get-connection-string-from-the-portal))
 
-В этом примере также используется **симулятор устройств** , который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](https://docs.microsoft.com/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Получите пример проекта на своем компьютере, перейдя по ссылке с образцом и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
+В этом примере также используется **симулятор устройств** , который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Получите пример проекта на своем компьютере, перейдя по ссылке с образцом и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
 
 Симулятор устройства основан на **Node.js**версии 10.0. x или более поздней. [*Подготовка среды разработки*](https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md) . описывает, как установить Node.js для этого руководства в Windows или Linux.
 
@@ -69,7 +69,7 @@ ms.locfileid: "90561437"
 
 Создайте экземпляр службы подготовки устройств, который будет использоваться для подготовки устройств IoT. Можно либо использовать приведенные ниже инструкции Azure CLI, либо использовать портал Azure: Краткое руководство по [*настройке службы подготовки устройств для центра Интернета вещей с помощью портал Azure*](../iot-dps/quick-setup-auto-provision.md).
 
-Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+Следующая команда Azure CLI создаст службу подготовки устройств. Необходимо указать имя, группу ресурсов и регион. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
 
 ```azurecli
 az iot dps create --name <Device Provisioning Service name> --resource-group <resource group name> --location <region; for example, eastus>
@@ -258,7 +258,7 @@ az functionapp config appsettings set --settings "AdtAppId=<Application (client)
 
 ### <a name="set-up-the-device-simulator"></a>Настройка симулятора устройств
 
-В этом примере используется симулятор устройства, который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](https://docs.microsoft.com/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Если вы еще не скачали пример, получите его сейчас, перейдя по ссылке образца и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
+В этом примере используется симулятор устройства, который включает подготовку с помощью службы подготовки устройств. Симулятор устройства расположен здесь: [пример интеграции Azure Digital двойников и центра Интернета вещей](/samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/). Если вы еще не скачали пример, получите его сейчас, перейдя по ссылке образца и нажав кнопку *скачать ZIP-файл* под заголовком. Распакуйте скачанный каталог.
 
 Откройте окно командной строки и перейдите в папку downloaded, а затем в каталог *Device-симулятор* . Установите зависимости для проекта с помощью следующей команды:
 
@@ -447,7 +447,7 @@ namespace Samples.AdtIothub
 
 Далее необходимо задать переменные среды в приложении-функции с помощью более ранней версии, содержащей ссылку на созданный вами экземпляр двойников Azure и концентратор событий. Если вы использовали полное руководство ([*руководство по подключению комплексного решения*](./tutorial-end-to-end.md)), первый параметр будет уже настроен.
 
-Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
+Добавьте параметр с помощью этой команды Azure CLI. Команду можно выполнить в [Cloud Shell](https://shell.azure.com)или локально, если [на компьютере установлен](/cli/azure/install-azure-cli?view=azure-cli-latest)Azure CLI.
 
 ```azurecli
 az functionapp config appsettings set --settings "ADT_SERVICE_URL=https://<Azure Digital Twins instance _host name_>" -g <resource group> -n <your App Service (function app) name>
@@ -480,7 +480,7 @@ az functionapp config appsettings set --settings "EVENTHUB_CONNECTIONSTRING=<Eve
 
 В [первой половине этой статьи](#auto-provision-device-using-device-provisioning-service)вы создали устройство в центре Интернета вещей и соответствующий цифровой двойника. 
 
-Теперь перейдите в центр Интернета вещей и удалите это устройство (это можно сделать с помощью [команды Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) или в [портал Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
+Теперь перейдите в центр Интернета вещей и удалите это устройство (это можно сделать с помощью [команды Azure CLI](/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-device-identity-delete) или в [портал Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs)). 
 
 Устройство будет автоматически удалено из Azure Digital двойников. 
 
@@ -497,7 +497,7 @@ az dt twin show -n <Digital Twins instance name> --twin-id <Device Registration 
 
 Если ресурсы, созданные в этой статье, больше не нужны, выполните следующие действия, чтобы удалить их.
 
-С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete) . Это приведет к удалению группы ресурсов. экземпляр Azure Digital двойников; центр Интернета вещей и регистрация устройств концентратора; раздел "Сетка событий" и связанные подписки; пространство имен концентраторов событий и оба приложения функций Azure, включая связанные ресурсы, такие как хранилище.
+С помощью Azure Cloud Shell или локального Azure CLI можно удалить все ресурсы Azure в группе ресурсов с помощью команды [AZ Group Delete](/cli/azure/group?view=azure-cli-latest#az-group-delete) . Это приведет к удалению группы ресурсов. экземпляр Azure Digital двойников; центр Интернета вещей и регистрация устройств концентратора; раздел "Сетка событий" и связанные подписки; пространство имен концентраторов событий и оба приложения функций Azure, включая связанные ресурсы, такие как хранилище.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
@@ -514,7 +514,7 @@ az ad app delete --id <your-application-ID>
 
 Затем удалите папку примера проекта, скачанную с локального компьютера.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Цифровые двойников, созданные для устройств, хранятся в виде плоской иерархии в Azure Digital двойников, но их можно расширить с помощью информации о модели и многоуровневой иерархии для Организации. Дополнительные сведения об этой концепции см. в следующих статье:
 

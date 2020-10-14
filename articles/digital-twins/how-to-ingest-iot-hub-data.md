@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 9fa3c27f9cc35b31fc78b2a09bea725934093e63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e53a7f5e76a6161016cbbb6b3566de4cad923f6a
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90983377"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048055"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>Прием данных телеметрии центра Интернета вещей в Azure Digital двойников
 
@@ -129,7 +129,7 @@ await client.UpdateDigitalTwinAsync(deviceId, uou.Serialize());
 
 ### <a name="update-your-azure-function-code"></a>Обновление кода функции Azure
 
-Теперь, когда вы понимаете код из предыдущих примеров, откройте функцию Azure из раздела [*Предварительные требования*](https://docs.microsoft.com/azure/digital-twins/how-to-ingest-iot-hub-data#prerequisites) в Visual Studio. (Если у вас нет функции Azure, перейдите по ссылке в предварительных требованиях, чтобы создать ее сейчас).
+Теперь, когда вы понимаете код из предыдущих примеров, откройте функцию Azure из раздела [*Предварительные требования*](#prerequisites) в Visual Studio. (Если у вас нет функции Azure, перейдите по ссылке в предварительных требованиях, чтобы создать ее сейчас).
 
 Замените код функции Azure этим примером кода.
 
@@ -193,7 +193,7 @@ namespace IotHubtoTwins
     }
 }
 ```
-Сохраните код функции и опубликуйте приложение функции в Azure. Это можно сделать, обратившись к статье о [*публикации приложение-функция*](https://docs.microsoft.com/azure/digital-twins/how-to-create-azure-function#publish-the-function-app-to-azure) разделе [*инструкции. Настройка функции Azure для обработки данных*](how-to-create-azure-function.md).
+Сохраните код функции и опубликуйте приложение функции в Azure. Это можно сделать, обратившись к статье о [*публикации приложение-функция*](./how-to-create-azure-function.md#publish-the-function-app-to-azure) разделе [*инструкции. Настройка функции Azure для обработки данных*](how-to-create-azure-function.md).
 
 После успешной публикации вы увидите выходные данные в окне командной строки Visual Studio, как показано ниже:
 
@@ -214,7 +214,7 @@ namespace IotHubtoTwins
 ## <a name="connect-your-function-to-iot-hub"></a>Подключение функции к центру Интернета вещей
 
 Настройте назначение события для данных концентратора.
-В [портал Azure](https://portal.azure.com/)перейдите к экземпляру центра Интернета вещей, созданному в разделе [*Предварительные требования*](https://docs.microsoft.com/azure/digital-twins/how-to-ingest-iot-hub-data#prerequisites) . В разделе **события**создайте подписку для функции Azure.
+В [портал Azure](https://portal.azure.com/)перейдите к экземпляру центра Интернета вещей, созданному в разделе [*Предварительные требования*](#prerequisites) . В разделе **события**создайте подписку для функции Azure.
 
 :::image type="content" source="media/how-to-ingest-iot-hub-data/add-event-subscription.png" alt-text="Схема, показывающая блок-диаграмму. На диаграмме устройство центра Интернета вещей отправляет данные телеметрии температуры через центр Интернета вещей в функцию Azure, которая обновляет свойство температуры двойника в Azure Digital двойников.":::
 
@@ -242,7 +242,7 @@ namespace IotHubtoTwins
 
 ## <a name="send-simulated-iot-data"></a>Отправка смоделированных данных IoT
 
-Чтобы протестировать новую функцию, используйте симулятор устройств из руководства по [*подключению комплексного решения*](./tutorial-end-to-end.md). Этот учебник основан на примере проекта, написанного на языке C#. Пример кода расположен здесь: [примеры цифровых двойников Azure](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples). Вы будете использовать проект **девицесимулатор** в этом репозитории.
+Чтобы протестировать новую функцию, используйте симулятор устройств из руководства по [*подключению комплексного решения*](./tutorial-end-to-end.md). Этот учебник основан на примере проекта, написанного на языке C#. Пример кода расположен здесь: [примеры цифровых двойников Azure](/samples/azure-samples/digital-twins-samples/digital-twins-samples). Вы будете использовать проект **девицесимулатор** в этом репозитории.
 
 В сквозном руководстве выполните следующие действия.
 1. [*Регистрация имитированного устройства в Центре Интернета вещей*](./tutorial-end-to-end.md#register-the-simulated-device-with-iot-hub)
@@ -284,7 +284,7 @@ az dt twin query -q "select * from digitaltwins" -n {digital_twins_instance_name
 
 Чтобы увидеть изменение значения, повторно выполните команду запроса выше.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о поступлении и исходящих данных в Azure Digital двойников:
 * [*Основные понятия: интеграция с другими службами*](concepts-integration.md)

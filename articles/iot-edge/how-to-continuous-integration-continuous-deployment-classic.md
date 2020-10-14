@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c4a9d7fbfbda568c07a528e5a7eafd70b85add45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1866f3360b90a96b5e3f215eb7669a1451262bd8
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447801"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046015"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices-classic-editor"></a>Непрерывная интеграция и непрерывное развертывание на Azure IoT Edge устройствах (классический редактор)
 
@@ -21,7 +21,7 @@ ms.locfileid: "91447801"
 
 ![Схема ветвей CI и CD для разработки и эксплуатации](./media/how-to-continuous-integration-continuous-deployment-classic/model.png)
 
-Из этой статьи вы узнаете, как использовать встроенные [Azure IOT Edge задачи](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/azure-iot-edge) для Azure pipelines создания конвейеров сборки и выпуска для решения IOT Edge. Каждая задача Azure IoT Edge, добавленная в конвейер, реализует одно из следующих четырех действий.
+Из этой статьи вы узнаете, как использовать встроенные [Azure IOT Edge задачи](/azure/devops/pipelines/tasks/build/azure-iot-edge) для Azure pipelines создания конвейеров сборки и выпуска для решения IOT Edge. Каждая задача Azure IoT Edge, добавленная в конвейер, реализует одно из следующих четырех действий.
 
  | Действие | Описание |
  | --- | --- |
@@ -32,22 +32,22 @@ ms.locfileid: "91447801"
 
 Если не указано иное, процедуры, описанные в этой статье, не анализируют все функциональные возможности, доступные через параметры задачи. Дополнительные сведения см. в следующих разделах:
 
-* [Версия задачи](https://docs.microsoft.com/azure/devops/pipelines/process/tasks?view=azure-devops&tabs=classic#task-versions)
+* [Версия задачи](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-versions)
 * **Дополнительно** — если применимо, укажите модули, которые не должны создаваться.
-* [Параметры управления](https://docs.microsoft.com/azure/devops/pipelines/process/tasks?view=azure-devops&tabs=classic#task-control-options)
-* [Переменные среды](https://docs.microsoft.com/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#environment-variables)
-* [Выходные переменные](https://docs.microsoft.com/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#use-output-variables-from-tasks)
+* [Параметры управления](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-control-options)
+* [Переменные среды](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#environment-variables)
+* [Выходные переменные](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#use-output-variables-from-tasks)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](https://docs.microsoft.com/azure/devops/repos/git/create-new-repo?view=vsts&tabs=new-nav). В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**.
-* Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-csharp-module.md). В этой статье мы создали решение в нашем репозитории с именем **иотеджесолутион**, которое содержит код для модуля с именем **filtermodule**.
+* Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](/azure/devops/repos/git/create-new-repo?tabs=new-nav&view=vsts). В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**.
+* Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](./how-to-visual-studio-develop-module.md). В этой статье мы создали решение в нашем репозитории с именем **иотеджесолутион**, которое содержит код для модуля с именем **filtermodule**.
 
    Все, что требуется в этой статье, — это папка решения, созданная по шаблону IoT Edge в Visual Studio Code или Visual Studio. Вам не требуется создавать, отправлять, развертывать или отлаживать этот код, чтобы продолжить. Эти процессы настраиваются в Azure Pipelines.
 
    Если вы создаете решение, сначала клонируйте репозиторий локально. Затем вы сможете создать решение непосредственно в папке репозитория. Кроме того, вы можете легко фиксировать и отправлять файлы из нее.
 
-* Реестр контейнеров, в который можно отправлять образы модулей. Вы можете использовать [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) или сторонний реестр.
+* Реестр контейнеров, в который можно отправлять образы модулей. Вы можете использовать [Реестр контейнеров Azure](../container-registry/index.yml) или сторонний реестр.
 * Активный [центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) Azure по крайней мере с двумя IOT Edge устройствами для тестирования отдельных этапов тестового и рабочего развертывания. Следуйте кратким руководствам, чтобы создать устройство IoT Edge в [Linux](quickstart-linux.md) или [Windows](quickstart.md).
 
 ## <a name="create-a-build-pipeline-for-continuous-integration"></a>Создание конвейера сборки для непрерывной интеграции
@@ -84,7 +84,7 @@ ms.locfileid: "91447801"
 
    * Если вы хотите создать модули на платформе amd64 для контейнеров Linux, выберите **Ubuntu-16,04** .
 
-   * Если вы хотите создавать модули на платформе amd64 для контейнеров Windows 1809, вам необходимо [настроить агента в Windows в локальной среде](https://docs.microsoft.com/azure/devops/pipelines/agents/v2-windows?view=vsts).
+   * Если вы хотите создавать модули на платформе amd64 для контейнеров Windows 1809, вам необходимо [настроить агента в Windows в локальной среде](/azure/devops/pipelines/agents/v2-windows?view=vsts).
 
    * Если вы хотите создать модули на платформе platform arm32v7 или arm64 для контейнеров Linux, необходимо [настроить самостоятельный агент в Linux](https://devblogs.microsoft.com/iotdev/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent).
 
@@ -136,14 +136,14 @@ ms.locfileid: "91447801"
     | Отображаемое имя | Используйте имя по умолчанию или настройте |
     | Исходная папка | Папка с копируемыми файлами. |
     | Содержимое | Добавьте две строки: `deployment.template.json` и `**/module.json` . Эти два файла служат входными данными для создания манифеста развертывания IoT Edge. |
-    | Целевая папка | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) . |
+    | Целевая папка | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) . |
 
 10. Выберите задачу **Publish Build Artifacts** (Публикация артефактов сборки), чтобы изменить его. Укажите путь к промежуточному каталогу артефакта для задачи, чтобы путь можно было опубликовать в конвейере выпуска.
 
     | Параметр | Описание |
     | --- | --- |
     | Отображаемое имя | Используйте имя по умолчанию или настройте. |
-    | Путь для публикации | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения см. в разделе [переменные сборки](https://docs.microsoft.com/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables) . |
+    | Путь для публикации | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) . |
     | Имя артефакта | Использовать имя по умолчанию: **Drop** |
     | Расположение публикации артефакта | Использовать расположение по умолчанию: **Azure pipelines** |
 
@@ -160,7 +160,7 @@ ms.locfileid: "91447801"
 >[!NOTE]
 >Если вы хотите использовать **многоуровневые развертывания** в конвейере, то многоуровневые развертывания еще не поддерживаются в задачах Azure IOT EDGE в Azure DevOps.
 >
->Однако вы можете использовать [задачу Azure CLI в Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli) , чтобы создать развертывание в качестве многоуровневого развертывания. Чтобы получить значение **встроенного скрипта** , можно использовать [команду AZ IOT ребр развертывания CREATE](/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment):
+>Однако вы можете использовать [задачу Azure CLI в Azure DevOps](/azure/devops/pipelines/tasks/deploy/azure-cli) , чтобы создать развертывание в качестве многоуровневого развертывания. Чтобы получить значение **встроенного скрипта** , можно использовать [команду AZ IOT ребр развертывания CREATE](/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment):
 >
 >   ```azurecli-interactive
 >   az iot edge deployment create -d {deployment_name} -n {hub_name} --content modules_content.json --layered true
@@ -168,7 +168,7 @@ ms.locfileid: "91447801"
 
 [!INCLUDE [iot-edge-verify-iot-edge-continuous-integration-continuous-deployment](../../includes/iot-edge-verify-iot-edge-continuous-integration-continuous-deployment.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * IoT Edge DevOps рекомендации в [Azure DevOps Starter для IOT Edge](how-to-devops-starter.md)
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).

@@ -8,12 +8,12 @@ ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 8f739982ac9193c80cae23d91b77091f75c3fd13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6c6c1cfdfef864be17adfed2d115150c4fbede0
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90564369"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045131"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Использование Azure Digital двойников для обновления карт Azure Maps
 
@@ -64,7 +64,7 @@ ms.locfileid: "90564369"
     >[!NOTE]
     >В Cloud Shell присутствует **известная проблема**, которая затрагивает такие группы команд: `az dt route`, `az dt model`, `az dt twin`.
     >
-    >Чтобы устранить эту проблему, выполните `az login` в Cloud Shell перед выполнением команды или используйте [локальный CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) вместо Cloud Shell. Дополнительные сведения см. в статье [*Устранение неполадок: известные проблемы в Azure Digital Twins*](troubleshoot-known-issues.md#400-client-error-bad-request-in-cloud-shell).
+    >Чтобы устранить эту проблему, выполните `az login` в Cloud Shell перед выполнением команды или используйте [локальный CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) вместо Cloud Shell. Дополнительные сведения см. в статье [*Устранение неполадок: известные проблемы в Azure Digital Twins*](troubleshoot-known-issues.md#400-client-error-bad-request-in-cloud-shell).
 
     ```azurecli
     az dt route create -n <your-Azure-Digital-Twins-instance-name> --endpoint-name <Event-Grid-endpoint-name> --route-name <my_route> --filter "type = 'Microsoft.DigitalTwins.Twin.Update'"
@@ -74,7 +74,7 @@ ms.locfileid: "90564369"
 
 Вы создадите функцию, активируемую с помощью функции "Сетка событий" в приложении-функции, из комплексного учебника ([*Учебник: подключение комплексного решения*](./tutorial-end-to-end.md)). Эта функция выполнит распаковку этих уведомлений и отправит обновления в Azure Maps наборе состояний компонентов, чтобы обновить температуру одной комнаты. 
 
-Справочные сведения см. в следующем документе: триггер службы " [*Сетка событий Azure" для функций Azure*](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-grid-trigger).
+Справочные сведения см. в следующем документе: триггер службы " [*Сетка событий Azure" для функций Azure*](../azure-functions/functions-bindings-event-grid-trigger.md).
 
 Замените код функции следующим кодом. Он фильтрует только обновления пространства двойников, считывает обновленную температуру и отправляет эти сведения в Azure Maps.
 
@@ -162,7 +162,7 @@ az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-st
 
 В зависимости от конфигурации топологии вы сможете хранить эти три атрибута на разных уровнях, соотнесенных с степенью детализации вашей схемы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управлении, обновлении и извлечении данных из графа двойников см. в следующих статьях:
 

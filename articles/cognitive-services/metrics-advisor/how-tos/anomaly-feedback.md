@@ -3,19 +3,19 @@ title: Обеспечение обратной связи с аномалией 
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как отправить отзыв об аномалиях, обнаруженных вашим экземпляром советника по метрикам, и настроить результаты.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 09/10/2020
-ms.author: aahi
-ms.openlocfilehash: 50d422edf1a4b45132d0b86eac9d4947cef5e5bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: mbullwin
+ms.openlocfilehash: 11864cb26b76d414aa2efe2643797a2f66fa30e4
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90938045"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047613"
 ---
 # <a name="adjust-anomaly-detection-using-feedback"></a>Настройка обнаружения аномалий с помощью обратной связи
 
@@ -62,7 +62,7 @@ ms.locfileid: "90938045"
 |Аномалия вызвана праздником праздников.     | Используйте [предустановленные события](configure-metrics.md#preset-events) , чтобы отметить обнаружение аномалий в указанное время.       |
 |Существует регулярный шаблон для обнаруженных аномалий (например, в выходные дни), и они не должны быть аномалиями.      |Используйте функцию обратной связи или предустановленные события.        |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Диагностика инцидента](diagnose-incident.md).
 - [Настройка метрик и детальная настройка конфигурации обнаружения](configure-metrics.md)
 - [Настройка уведомлений и получение уведомлений с использованием перехватчика](../how-tos/alerts.md)

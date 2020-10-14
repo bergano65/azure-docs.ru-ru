@@ -11,12 +11,12 @@ ms.date: 05/13/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 1b73b82b4367d50cc5fbe9881a67e0afa041db86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af3eb828e1fd2c4aa14467e5afc18f1b5a0b7fa1
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85201164"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047715"
 ---
 # <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула Synapse SQL
 
@@ -28,10 +28,6 @@ ms.locfileid: "85201164"
 
 С помощью PolyBase и инструкции COPY можно обращаться к внешним хранимым данным в хранилище BLOB-объектов Azure или Azure Data Lake Storage, используя язык T-SQL. Для наибольшей гибкости при загрузке рекомендуем использовать инструкцию COPY.
 
-> [!NOTE]  
-> Сейчас инструкция COPY находится на этапе общедоступной предварительной версии. Для отзыва отправьте сообщение на этот адрес: sqldwcopypreview@service.microsoft.com.
-
-> [!VIDEO https://www.youtube.com/embed/l9-wP7OdhDk]
 
 ## <a name="what-is-elt"></a>Что такое ELT?
 

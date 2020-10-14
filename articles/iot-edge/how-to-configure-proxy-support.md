@@ -10,12 +10,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - contperfq1
-ms.openlocfilehash: 8d5e5e6cc77c7fe1d32f0834831ef1b930ee834d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ae0c4c69cf500fb352cc889e068888084d1d8f8b
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966174"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045964"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -85,7 +85,7 @@ URL-адрес прокси-сервера имеет такой формат: *
    . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
    ```
 
-Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например, примененная к объекту директива
+Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например:
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
@@ -93,7 +93,7 @@ $proxyCredential = (Get-Credential).GetNetworkCredential()
 Deploy-IoTEdge -InvokeWebRequestParameters @{ '-Proxy' = '<proxy URL>'; '-ProxyCredential' = $proxyCredential }
 ```
 
-Дополнительные сведения о параметрах прокси-сервера см. в статье [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest). Дополнительные сведения о параметрах установки Windows см. [в статье сценарии PowerShell для IOT EDGE в Windows](reference-windows-scripts.md).
+Дополнительные сведения о параметрах прокси-сервера см. в статье [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest). Дополнительные сведения о параметрах установки Windows см. [в статье сценарии PowerShell для IOT EDGE в Windows](reference-windows-scripts.md).
 
 ## <a name="configure-the-daemons"></a>Настройка управляющих программ
 
@@ -108,7 +108,7 @@ IoT Edge полагается на две управляющие програм�
 Выберите статью, которая относится к операционной системе устройства IoT Edge.
 
 * [Настройка управляющей программы DOCKER в Linux](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy) Управляющая программа значок Кита на устройствах Linux сохраняет имя DOCKER.
-* [Настройка управляющей программы DOCKER в Windows](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon#proxy-configuration) Управляющая программа значок Кита на устройствах Windows называется iotedge-значок Кита. Имена различаются, так как на устройстве Windows можно параллельно запускать приложения DOCKER Desktop и значок Кита.
+* [Настройка управляющей программы DOCKER в Windows](/virtualization/windowscontainers/manage-docker/configure-docker-daemon#proxy-configuration) Управляющая программа значок Кита на устройствах Windows называется iotedge-значок Кита. Имена различаются, так как на устройстве Windows можно параллельно запускать приложения DOCKER Desktop и значок Кита.
 
 ### <a name="iot-edge-daemon"></a>Управляющая программа IoT Edge
 

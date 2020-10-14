@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: e16e7fa5ecc2fb947f9f82c1cdd27af6758d6bda
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7cde23372f6a3af0320e2d48c78a0d7fe69a2600
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971755"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045709"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
@@ -108,7 +108,7 @@ curl -L <iotedge link> -o iotedge.deb && sudo dpkg -i ./iotedge.deb
 
 При выполнении команды Update-IoTEdge удаляет и обновляет управляющую программу безопасности с устройства, а также два образа контейнеров среды выполнения. Файл config. YAML хранится на устройстве, а также данные из подсистемы контейнеров значок Кита (если вы используете контейнеры Windows). Хранение сведений о конфигурации означает, что в процессе обновления не требуется повторно указывать строку подключения или сведения о службе подготовки устройств для устройства.
 
-Если вы хотите выполнить обновление до определенной версии управляющей программы безопасности, найдите версию, которую вы хотите использовать, из [IOT Edge выпусков](https://github.com/Azure/azure-iotedge/releases). В этой версии Скачайте файл **Microsoft-Azure-IoTEdge.cab** . Затем используйте параметр, `-OfflineInstallationPath` чтобы указать расположение локального файла. Пример:
+Если вы хотите выполнить обновление до определенной версии управляющей программы безопасности, найдите версию, которую вы хотите использовать, из [IOT Edge выпусков](https://github.com/Azure/azure-iotedge/releases). В этой версии Скачайте файл **Microsoft-Azure-IoTEdge.cab** . Затем используйте параметр, `-OfflineInstallationPath` чтобы указать расположение локального файла. Например.
 
 ```powershell
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Update-IoTEdge -ContainerOs <Windows or Linux> -OfflineInstallationPath <absolute path to directory>
@@ -194,7 +194,7 @@ docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
 
 3. Если загруженный CAB-файл имеет суффикс архитектуры, переименуйте файл в **Microsoft-Azure-IoTEdge.cab**.
 
-4. Чтобы выполнить обновление с помощью автономных компонентов, [источник точки](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7#script-scope-and-dot-sourcing) является локальной копией сценария PowerShell. Затем используйте параметр в `-OfflineInstallationPath` составе `Update-IoTEdge` команды и укажите абсолютный путь к каталогу файла. Например, примененная к объекту директива
+4. Чтобы выполнить обновление с помощью автономных компонентов, [источник точки](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7#script-scope-and-dot-sourcing) является локальной копией сценария PowerShell. Затем используйте параметр в `-OfflineInstallationPath` составе `Update-IoTEdge` команды и укажите абсолютный путь к каталогу файла. Например:
 
    ```powershell
    . <path>\IoTEdgeSecurityDaemon.ps1

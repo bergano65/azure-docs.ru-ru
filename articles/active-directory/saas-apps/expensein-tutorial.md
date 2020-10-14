@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/17/2020
 ms.author: jeedes
-ms.openlocfilehash: 7d0b0a6c935182737a7f207b7c7831fefcd491ea
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: ccdfddd3ea76eddea2ab672fe07a092c9b1f1b62
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88555326"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817058"
 ---
 # <a name="tutorial-integrate-expensein-with-azure-active-directory"></a>Руководство по Интеграция ExpenseIn с Azure Active Directory
 
@@ -135,11 +135,11 @@ ms.locfileid: "88555326"
 
 1. Щелкните **Admin** (Администратор) вверху, выберите **Single Sign-on** (Единый вход) и щелкните **Add provider** (Добавить поставщика).
 
-     ![Конфигурация ExpenseIn](./media/expenseIn-tutorial/config01.png)
+     ![Снимок экрана: вкладка "Администратор", страница "Единый вход — поставщики" и параметр "Добавить поставщик".](./media/expenseIn-tutorial/config01.png)
 
 1. В разделе **New Identity Provider** (Создание поставщика удостоверений) выполните следующие действия:
 
-    ![Конфигурация ExpenseIn](./media/expenseIn-tutorial/config02.png)
+    ![Снимок экрана: всплывающее окно "Изменение поставщика удостоверений" с введенными значениями.](./media/expenseIn-tutorial/config02.png)
 
     а. В текстовое поле **Provider Name** (Имя поставщика) введите имя, например "Azure".
 
@@ -163,7 +163,7 @@ ms.locfileid: "88555326"
 
 2. Щелкните **Admin** (Администратор) вверху, выберите **Users** (Пользователи) и щелкните **New User** (Создать пользователя).
 
-     ![Конфигурация ExpenseIn](./media/expenseIn-tutorial/config03.png)
+     ![Снимок экрана: вкладка "Администратор" и страница "Управление пользователями" с выбранным параметром "Создать пользователя".](./media/expenseIn-tutorial/config03.png)
 
 3. Во всплывающем элементе **Details** (Сведения) выполните следующие действия:
 

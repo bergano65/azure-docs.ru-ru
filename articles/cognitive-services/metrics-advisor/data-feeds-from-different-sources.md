@@ -3,19 +3,19 @@ title: Добавление веб-каналов данных из разных
 titleSuffix: Azure Cognitive Services
 description: Добавление различных каналов данных в помощник по метрикам
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 10/12/2020
-ms.author: aahi
-ms.openlocfilehash: 11b75bcadc6292c17ef7e1e0f482d0c53bd9f8f5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: mbullwin
+ms.openlocfilehash: a37f3cfd250d152129245395680dbd847359e869
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971954"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92046916"
 ---
 # <a name="add-data-feeds-from-different-data-sources-to-metrics-advisor"></a>Добавление веб-каналов данных из разных источников данных в помощник по метрикам
 
@@ -93,7 +93,7 @@ ms.locfileid: "91971954"
   
   * v1 (значение по умолчанию)
 
-      Принимаются только *имена* и *значения* метрик. Пример:
+      Принимаются только *имена* и *значения* метрик. Например.
     
       ``` JSON
       {"count":11, "revenue":1.23}
@@ -101,7 +101,7 @@ ms.locfileid: "91971954"
 
   * Версия 2
 
-      Также принимаются *измерения* метрик и *отметка времени* . Пример:
+      Также принимаются *измерения* метрик и *отметка времени* . Например.
       
       ``` JSON
       [
@@ -159,7 +159,7 @@ ms.locfileid: "91971954"
   * `%h` — Это час в формате `HH`
   * `%M` представляет собой минуты в формате `mm`
 
-В настоящее время помощник по метрикам поддерживает схему данных в файлах JSON, как показано ниже. Пример:
+В настоящее время помощник по метрикам поддерживает схему данных в файлах JSON, как показано ниже. Например.
 
 ``` JSON
 [

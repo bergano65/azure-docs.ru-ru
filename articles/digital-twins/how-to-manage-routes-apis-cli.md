@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 7365e4904bb8e1920e7d4c57c165e489f2ff302e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65e7a425fdf8ee1b253bcb696792b569b7195d4c
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540597"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047375"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -44,7 +44,7 @@ ms.locfileid: "91540597"
 
 ### <a name="create-an-event-grid-endpoint"></a>Создание конечной точки сетки событий
 
-В следующем примере показано, как создать конечную точку типа "Сетка событий" с помощью Azure CLI. Вы можете использовать [Azure Cloud Shell](https://shell.azure.com)или [установить интерфейс командной строки локально](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
+В следующем примере показано, как создать конечную точку типа "Сетка событий" с помощью Azure CLI. Вы можете использовать [Azure Cloud Shell](https://shell.azure.com)или [установить интерфейс командной строки локально](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 
 Сначала создайте раздел "Сетка событий". Вы можете использовать следующую команду или просмотреть действия более подробно, перейдя [к разделу *Создание пользовательского раздела* ](../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) краткого руководства по *событиям* сетки событий.
 
@@ -184,7 +184,7 @@ catch (RequestFailedException e)
 
 [!INCLUDE [digital-twins-route-metrics](../../includes/digital-twins-route-metrics.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
 * [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

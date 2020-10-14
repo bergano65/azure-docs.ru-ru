@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 83741f5bc55eb222b379a274ef403f766553b21f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e8e26f73aef155e4194ca7a4178827b6a7366fb
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91328651"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047426"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -20,7 +20,7 @@ ms.locfileid: "91328651"
 
 В этой статье описаны действия по **настройке нового экземпляра Azure Digital двойников**, включая создание экземпляра и настройку проверки подлинности. По завершении работы с этой статьей у вас будет готовый экземпляр Azure Digital двойников для начала программирования.
 
-Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
+Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
 * Для просмотра действий CLI вручную, выполняемых сценарием в фоновом режиме, см. версию CLI этой статьи: [*инструкции по настройке экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md).
 * Чтобы просмотреть действия вручную в соответствии с портал Azure, см. версию портала этой статьи: инструкции по [*настройке экземпляра и проверки подлинности (портал)*](how-to-set-up-instance-portal.md).
 
@@ -28,7 +28,7 @@ ms.locfileid: "91328651"
 
 ## <a name="prerequisites-download-the-script"></a>Предварительные требования: скачивание скрипта
 
-Пример скрипта написан на PowerShell. Она входит в [**примеры цифровых двойников Azure**](https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
+Пример скрипта написан на PowerShell. Она входит в [**примеры цифровых двойников Azure**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
 
 При этом пример проекта будет скачан на компьютер как _**Azure_Digital_Twins_samples.zip**_. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
 
@@ -162,10 +162,10 @@ ms.locfileid: "91328651"
 
 [!INCLUDE [digital-twins-setup-additional-requirements.md](../../includes/digital-twins-setup-additional-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
-* [AZ DT Справочник](https://docs.microsoft.com/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true)
+* [AZ DT Справочник](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)
 * [*Практическое руководство. Использование CLI для Azure Digital Twins*](how-to-use-cli.md)
 
 Или см. раздел как подключить клиентское приложение к экземпляру, написав код проверки подлинности клиентского приложения:

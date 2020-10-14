@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: jeedes
-ms.openlocfilehash: 16783d344c6a0dedec4e24d49150e0b4b2edbe3e
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1c6faf2bb1811f7b27a49f8029c833499273d8a1
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88548149"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91817110"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Учебник. Интеграция Azure Active Directory с Help Scout
 
@@ -89,7 +89,7 @@ ms.locfileid: "88548149"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-intiated.png)
 
     а. **Идентификатор** — это **URI аудитории (идентификатор сущности поставщика службы)** из Help Scout, который начинается с `urn:`
 
@@ -100,7 +100,7 @@ ms.locfileid: "88548149"
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана: параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа.](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://secure.helpscout.net/members/login/`.
 
@@ -183,15 +183,15 @@ ms.locfileid: "88548149"
 
 1. Щелкните **Manage** (Управление) в верхнем меню, а затем выберите **Company** (Компания) в раскрывающемся меню.
 
-    ![Настройка единого входа](./media/helpscout-tutorial/settings1.png)
+    ![Снимок экрана: меню "Управление" с выбранной компанией.](./media/helpscout-tutorial/settings1.png)
 
 1. Выберите **Authentication** (Проверка подлинности) на левой панели навигации.
 
-    ![Настройка единого входа](./media/helpscout-tutorial/settings2.png)
+    ![Снимок экрана: выбранный элемент "Проверка подлинности".](./media/helpscout-tutorial/settings2.png)
 
 1. Отобразится раздел SAML settings (Параметры SAML), после чего выполните следующие действия.
 
-    ![Настройка единого входа](./media/helpscout-tutorial/settings3.png)
+    ![Снимок экрана: вкладка "Единый вход", на которой вводятся указанные сведения.](./media/helpscout-tutorial/settings3.png)
 
     а. Скопируйте значение **URL-адреса обратной отправки (URL-адрес службы обработчика утверждений)** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
 
@@ -199,7 +199,7 @@ ms.locfileid: "88548149"
 
 1. Переключите параметр **Enable SAML** (Включить SAML) в положение "Вкл." и выполните следующие действия:
 
-    ![Настройка единого входа](./media/helpscout-tutorial/settings4.png)
+    ![Снимок экрана: вкладка "Единый вход", на которой можно включить SAML и добавить другие сведения.](./media/helpscout-tutorial/settings4.png)
 
     а. В текстовом поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 31fc1877dd0edd2fd670f0f9466692ac7bc8ad15
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: d1e2b91b46bee761c7feb1000920d5ae1e65ba4c
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88531197"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713622"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство по интеграции Azure Active Directory с Andromeda
 
@@ -100,7 +100,7 @@ ms.locfileid: "88531197"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Andromeda](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantURL>.ngcxpress.com/`.
 
@@ -108,7 +108,7 @@ ms.locfileid: "88531197"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Andromeda](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<tenantURL>.ngcxpress.com/SAMLLogon.aspx`.
 
@@ -117,7 +117,7 @@ ms.locfileid: "88531197"
 
 6. Приложение Andromeda ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![image](common/edit-attribute.png)
+    ![Снимок экрана: раздел "Атрибуты пользователя" с такими атрибутами, как "givenname: user.givenname" и "emailaddress: user.mail".](common/edit-attribute.png)
 
     > [!Important]
     > Очистите определения пространств имен при настройке.
@@ -135,9 +135,9 @@ ms.locfileid: "88531197"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](common/new-save-attribute.png)
+    ![Снимок экрана: раздел "Утверждения пользователя" с кнопками "Добавить новое утверждение" и "Сохранить".](common/new-save-attribute.png)
 
-    ![image](common/new-attribute-details.png)
+    ![Снимок экрана: раздел "Управление утверждениями пользователя", где можно ввести описанные на этом шаге значения.](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
