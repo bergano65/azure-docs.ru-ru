@@ -13,12 +13,12 @@ ms.author: abnarain
 ms.custom: devx-track-csharp
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: b8935b9f2c3c598aee7c5d0eb37f21d8114dac42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8cd72d34535ac3a2aec60aa3d2369da34dd7194
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88997461"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017409"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-version-1-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure версии 1
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -31,7 +31,7 @@ ms.locfileid: "88997461"
 Существует два типа действий, которые можно использовать в конвейере фабрики данных Azure.
 
 - [Действия перемещения данных](data-factory-data-movement-activities.md) для перемещения данных между [поддерживаемыми хранилищами данных источника и приемника](data-factory-data-movement-activities.md#supported-data-stores-and-formats).
-- [Действия преобразования данных](data-factory-data-transformation-activities.md) для преобразования данных с помощью служб вычислений, таких как Azure HDInsight, пакетная служба azure и машинное обучение Azure.
+- [Действия преобразования данных](data-factory-data-transformation-activities.md) для преобразования данных с помощью служб вычислений, таких как Azure HDInsight, пакетная служба azure и машинное обучение Azure Studio (классическая модель).
 
 Чтобы переместить данные из хранилища данных, которое не поддерживает фабрика данных Azure, или в такое хранилище, можно создать **пользовательское действие** с собственной логикой перемещения данных и использовать это действие в конвейере. Аналогично, чтобы преобразовать или обработать данные способом, который не поддерживается фабрикой данных Azure, создайте пользовательское действие с собственной логикой преобразования данных и используйте это действие в конвейере.
 
@@ -43,14 +43,14 @@ ms.locfileid: "88997461"
 > - Невозможно использовать шлюз управления данными из пользовательского действия для доступа к локальным источникам данных. В настоящее время [шлюз управления данными](data-factory-data-management-gateway.md) поддерживает действие копирования и действие хранимой процедуры только в фабрике данных.
 
 ## <a name="walkthrough-create-a-custom-activity"></a>Пошаговое руководство по созданию настраиваемого действия
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 * Visual Studio 2012/2013/2015/2017
 * Скачайте и установите пакет [Azure .NET SDK](https://azure.microsoft.com/downloads/)
 
 ### <a name="azure-batch-prerequisites"></a>Предварительные требования для пакетной службы Azure
 В этом руководстве вы запустите свои настраиваемые действия .NET с помощью пакетной службы Azure как вычислительные ресурсы. **Пакетная служба Azure** — это служба платформы, которая позволяет эффективно работать с приложениями для крупномасштабных параллельных и высокопроизводительных вычислений (HPC) в облаке. Пакетная служба Azure планирует выполнение ресурсоемких операций на управляемой **коллекции виртуальных машин**и может автоматически масштабировать вычислительные ресурсы в соответствии с потребностями ваших заданий. Подробные сведения о пакетной службе Azure см. в [этой статье][batch-technical-overview].
 
-Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Для этого выполните указанные ниже действия.
+Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Ниже приводятся шаги:
 
 1. Создайте **учетную запись пакетной службы Azure** с помощью [портал Azure](https://portal.azure.com). Инструкции см. в статье [Создание учетной записи пакетной службы Azure на портале Azure][batch-create-account].
 2. Запишите ключ и имя учетной записи пакетной службы Azure, а также URI и имя пула. Они понадобятся при создании связанной службы пакетной службы Azure.
@@ -1022,10 +1022,10 @@ namespace DataFactoryAPITestApp
 Пример [локальной среды фабрики данных Azure](https://github.com/gbrueckl/Azure.DataFactory.LocalEnvironment) на портале GitHub включает в себя инструмент, который позволяет выполнять отладку настраиваемых действий .NET в Visual Studio.
 
 ## <a name="sample-custom-activities-on-github"></a>Примеры настраиваемых действий на портале GitHub
-| Образец | Результат настраиваемого действия |
+| Пример | Результат настраиваемого действия |
 | --- | --- |
 | [Загрузчик данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |Загрузка данных из конечной точки HTTP в хранилище BLOB-объектов с помощью настраиваемого действия C# в фабрике данных Azure. |
-| [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |Вызов модели Студии машинного обучения Azure и выполнение анализа мнений, оценки, прогнозирования и т. д. |
+| [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |Вызывает модель Машинное обучение Azure Studio (классической) и выполняет анализ тональности, оценку, прогнозирование и т. д. |
 | [Выполните сценарий R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample). |Вызов сценария R путем запуска RScript.exe в кластере HDInsight, где уже установлен R. |
 | [Действие перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/CrossAppDomainDotNetActivitySample) |Использование разных версий сборок, которые используются средством запуска фабрики данных. |
 | [Повторная обработка модели в службах Azure Analysis Services](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/AzureAnalysisServicesProcessSample) |  Повторная обработка модели в службах Azure Analysis Services. |

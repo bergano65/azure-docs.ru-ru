@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: 9060c00e1523db0671d9698465c8e8fcb6340785
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: efbed9ec44bd386a4540c397ca8958fb3ccea807
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842841"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019891"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -79,7 +79,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Есть несколько заданных по умолчанию ролей. Если заданные роли не соответствуют вашим потребностям, вы можете определить собственные. Дополнительные сведения см. в статье [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md). 
 
-Вам нужны `Microsoft.Authorization/roleAssignments/write` `Microsoft.Authorization/roleAssignments/delete` разрешения, например [администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles.md#user-access-administrator) или [владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles.md#owner) .
+Вам нужны `Microsoft.Authorization/roleAssignments/write` `Microsoft.Authorization/roleAssignments/delete` разрешения, например [администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) или [владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) .
 
 > [!IMPORTANT]
 > Если у пользователя есть разрешения `Contributor` в плоскости управления хранилища ключей, он может предоставить себе доступ к плоскости данных, настроив политику доступа к хранилищу ключей. Следует очень внимательно контролировать, у кого есть доступ `Contributor` к вашим хранилищам ключей в рамках роли. Убедитесь, что только авторизованные лица могут получать доступ к хранилищам ключей, ключам, секретам и сертификатам, а также управлять ими.
@@ -205,7 +205,7 @@ Azure Key Vault — это облачная служба, которая обе
  [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) 
  [Частная ссылка](https://docs.microsoft.com/azure/private-link/private-link-overview)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Проверка подлинности в Azure Key Vault](authentication.md)
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: mimckitt
-ms.openlocfilehash: 2f18f830b690acdca67058da6ed6a0907406e66c
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 1e27ee2c045404d13b10945ac65484281b0cd967
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945973"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019721"
 ---
 # <a name="memory-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в памяти
 
@@ -36,7 +36,7 @@ ms.locfileid: "91945973"
 
 - [Серии Ev4 и Esv4](ev4-esv4-series.md) работают на двухъядерных &reg; процессорах Intel Xeon &reg; Platinum 8272CL (Cascade Lake) в конфигурации с поддержкой технологии Hyper-Threading. они идеально подходят для различных ресурсоемких корпоративных приложений и компонентов до 504 гиб ОЗУ. В нем реализована [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Серия Ev4 и Esv4 не включает локальный временный диск. Дополнительные сведения см. в статье  [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).
 
-- [Серии Edv4 и Edsv4](edv4-edsv4-series.md) работают на базе &reg; &reg; процессоров Intel Xeon Platinum 8272CL (Cascade Lake) второго поколения, идеально подходят для очень больших баз данных или других приложений, которые используют большое количество виртуальных ЦП и большие объемы памяти. Кроме того, эти размеры виртуальных машин включают в себя быстрое, более крупное локальное хранилище SSD для приложений, которое выгодно с низкой задержкой, высокоскоростным локальным хранилищем. В нем реализована вся частота процессора Turbo 3,4 ГГц, [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html).
+- [Серии Edv4 и Edsv4](edv4-edsv4-series.md) работают на базе &reg; &reg; процессоров Intel Xeon Platinum 8272CL (Cascade Lake) второго поколения, идеально подходят для очень больших баз данных или других приложений, которые используют большое количество виртуальных ЦП и большие объемы памяти. Кроме того, эти размеры виртуальных машин включают в себя быстрое, более крупное локальное хранилище SSD для приложений, которое выгодно с низкой задержкой, высокоскоростным локальным хранилищем. В нем реализована вся частота ядра Turbo 3,4 ГГц, [технология Intel &reg; Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [технология Intel &reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html).
 
 - [Серия M](m-series.md) предусматривает наибольшие число виртуальных ЦП (до 128) и объем памяти (до 3,8 ТиБ). Это идеальный вариант для очень крупных баз данных или других приложений, которым требуются высокие показатели виртуальной ЦП и памяти.
 

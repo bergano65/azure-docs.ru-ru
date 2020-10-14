@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: d34b5aaaa12a3d296f92e0d7be34ae76931d8506
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa33319f146ac57ab4d253696c94308a43b5db2e
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89268491"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019619"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
 
@@ -28,7 +28,7 @@ ms.locfileid: "89268491"
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Каковы ограничения портал Azure для служб мультимедиа v3?
 
-Вы можете использовать [портал Azure](https://portal.azure.com/) для управления динамическими событиями v3, просмотреть v3 Assets and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. <br/>Для всех других задач управления (например, для управления преобразованиями и заданиями или анализа содержимого v3) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+Вы можете использовать [портал Azure](https://portal.azure.com/) для управления динамическими событиями v3, просмотреть v3 Assets and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. <br/>Для всех других задач управления (например, для управления преобразованиями и заданиями или анализа содержимого v3) используйте [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 Если ваше видео ранее было отправлено в учетную запись Служб мультимедиа с помощью API Служб мультимедиа версии 3 или если содержимое было создано на основе выходных данных потоковой передачи, на портале Azure не будут отображаться кнопки **Кодировать**, **Анализировать** или **Зашифровать**. Для выполнения этих задач используйте API Служб мультимедиа версии 3.  
 
@@ -121,7 +121,7 @@ ms.locfileid: "89268491"
 
 Используйте API служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)
@@ -163,7 +163,7 @@ ms.locfileid: "89268491"
 * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3. 
 * [Получение сведений о доступе к API](./access-api-howto.md). 
 
-Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/), [Azure CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/), [Azure CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ### <a name="is-there-an-assetfile-concept-in-v3"></a>Существует элемент AssetFile в версии 3?
 
@@ -269,6 +269,6 @@ ms.locfileid: "89268491"
   * Управляемый клиентом: Приложение проигрывателя автоматически выбирает или выбирает пользователя, уровень качества видео и звуковые дорожки для загрузки.
   * Управляемая службой. с помощью функции динамического манифеста в службах мультимедиа Azure можно создать (глобальный) фильтр, ограничивающий список воспроизведения HLS или ШТРИХовых MPD на один слой качества видео и выбранные звуковые дорожки. Затем URL-адрес загрузки, представленный пользователям, будет включать этот фильтр.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Что такое Службы мультимедиа Azure версии 3?](media-services-overview.md)

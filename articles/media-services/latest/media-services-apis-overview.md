@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 4d1c68ba1e0b7db8afefa64abefc671d51e78bd4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d57a6705973fbd5ee39042404015347d75b49b3
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569510"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019789"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Разработка с помощью API Служб мультимедиа версии 3
 
@@ -122,9 +122,9 @@ API Служб мультимедиа требует, чтобы у пользо
 
 |SDK|Справочник|
 |---|---|
-|[Пакет SDK для .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Справочник по .NET](https://aka.ms/ams-v3-dotnet-ref)|
-|[пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)|[Справочник по Java](https://aka.ms/ams-v3-java-ref)|
-|[Пакет SDK для Python](https://aka.ms/ams-v3-python-sdk)|[Справочник по Python](https://aka.ms/ams-v3-python-ref)|
+|[Пакет SDK для .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Справочник по .NET](/dotnet/api/overview/azure/mediaservices/management)|
+|[пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)|[Справочник по Java](/java/api/overview/azure/mediaservices/management)|
+|[Пакет SDK для Python](https://aka.ms/ams-v3-python-sdk)|[Справочник по Python](/python/api/overview/azure/mediaservices/management)|
 |[Пакет SDK для Node.js](https://aka.ms/ams-v3-nodejs-sdk) |[Справочник по Node.js](/javascript/api/overview/azure/mediaservices/management)| 
 |[Пакет SDK для GO](https://aka.ms/ams-v3-go-sdk) |[Справочник по Go](https://aka.ms/ams-v3-go-ref)|
 |[Пакет SDK для Ruby](https://aka.ms/ams-v3-ruby-sdk)||

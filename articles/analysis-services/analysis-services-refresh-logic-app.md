@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
 ms.custom: references_regions
-ms.openlocfilehash: c4908373035b1a3148cd77db513f4e6bd23a50d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a8d434fca7cab4432f38fc64093cf1fe060bd5f
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540733"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019092"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -29,7 +29,7 @@ ms.locfileid: "91540733"
 > [!IMPORTANT]
 > В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть добавлен в список утверждений в брандмауэре Azure Analysis Services. Дополнительные сведения о Azure Logic Apps диапазонах IP-адресов для региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#configuration).
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 #### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -76,7 +76,7 @@ ms.locfileid: "91540733"
 |**Тип учетных данных**     |Секрет         |
 |**Секрет**     |Введите секретное имя субъекта-службы         |
 
-Пример.
+Пример
 
 ![Завершенное действие HTTP](./media/analysis-services-async-refresh-logic-app/7.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "91540733"
 
 Сохраните приложение логики.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
-[REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)
+[REST API](/rest/api/analysisservices/servers)

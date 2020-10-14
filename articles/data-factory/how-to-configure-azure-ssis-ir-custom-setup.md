@@ -11,13 +11,13 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 09/28/2020
-ms.openlocfilehash: 4ef569864b27eff7f57aa2b0a922034fa28f587c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/13/2020
+ms.openlocfilehash: e4708e49ebd45210e381a1b58752bbfa287a9eeb
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91405247"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019874"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -127,7 +127,7 @@ ms.locfileid: "91405247"
 
 #### <a name="running-cmdkey-command"></a>Выполнение команды cmdkey
 
-Если вы выбрали тип **команды Run cmdkey** для Экспресс настраиваемой установки, то можете выполнить команду Windows cmdkey на Azure-SSIS IR. Для этого введите имя целевого компьютера или имя домена, имя пользователя или учетной записи, а также пароль или ключ учетной записи в текстовые поля **/Add**, **/User**и **/Пасс** соответственно. Это позволит сохранить учетные данные доступа для серверов SQL Server, файловых ресурсов или файлов Azure на Azure-SSIS IR. Например, для доступа к службе файлов Azure можно ввести `YourAzureStorageAccountName.file.core.windows.net` , `azure\YourAzureStorageAccountName` и `YourAzureStorageAccountKey` для **/Add**, **/User**и **/Пасс**соответственно. Это похоже на выполнение команды Windows [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) на локальном компьютере.
+Если вы выбрали тип **команды Run cmdkey** для Экспресс настраиваемой установки, то можете выполнить команду Windows cmdkey на Azure-SSIS IR. Для этого введите имя целевого компьютера или имя домена, имя пользователя или учетной записи, а также пароль или ключ учетной записи в текстовые поля **/Add**, **/User**и **/Пасс** соответственно. Это позволит сохранить учетные данные доступа для серверов SQL Server, файловых ресурсов или файлов Azure на Azure-SSIS IR. Например, для доступа к службе файлов Azure можно ввести `YourAzureStorageAccountName.file.core.windows.net` , `azure\YourAzureStorageAccountName` и `YourAzureStorageAccountKey` для **/Add**, **/User**и **/Пасс**соответственно. Это похоже на выполнение команды Windows [cmdkey](https://docs.microsoft.com/windows-server/administration/windows-commands/cmdkey) на локальном компьютере. Сейчас поддерживается только одна Экспресс-Настраиваемая установка для выполнения команды cmdkey. Чтобы выполнить несколько команд cmdkey, используйте стандартную пользовательскую установку.
 
 #### <a name="adding-environment-variables"></a>Добавление переменных среды
 
@@ -143,7 +143,7 @@ ms.locfileid: "91405247"
 
    * При выборе компонента **фабрики задач SentryOne** можно установить набор компонентов [фабрики задач](https://www.sentryone.com/products/task-factory/high-performance-ssis-components) из SentryOne на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **2020.1.3**.
 
-   * При выборе **OH22'S Хедда. Компонент ввода-вывода** можно установить [Хедда. ](https://hedda.io/ssis-component/) Компонент качества или очистки данных ввода-вывода из oh22 на Azure-SSIS IR. Для этого необходимо приобрести свою службу заранее. Текущая интегрированная версия — **1.0.14**.
+   * При выборе **OH22'S Хедда. Компонент ввода-вывода** можно установить [Хедда. ](https://github.com/oh22is/HEDDA.IO/tree/master/SSIS-IR) Компонент качества или очистки данных ввода-вывода из oh22 на Azure-SSIS IR. Для этого необходимо приобрести свою службу заранее. Текущая интегрированная версия — **1.0.14**.
 
    * При выборе компонента **oh22's SQLPhonetics.NET** можно установить компонент качества данных [SQLPhonetics.NET](https://appsource.microsoft.com/product/web-apps/oh22.sqlphonetics-ssis) и соответствующий параметр из oh22 на Azure-SSIS IR. Для этого введите лицензионный ключ продукта, который вы приобрели заранее, в текстовом поле **лицензионный ключ** . Текущая интегрированная версия — **1.0.45**.
 
@@ -175,7 +175,7 @@ ms.locfileid: "91405247"
    $AzureSSISName = "[your Azure-SSIS IR name]"
    # Custom setup info: Standard/express custom setups
    $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-   $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|InstallAzurePowerShell|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS|AecorSoft.IntegrationService or leave it empty]" # OPTIONAL to configure an express custom setup without script
+   $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|InstallAzurePowerShell|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS|AecorSoft.IntegrationService|CData.Standard|CData.Extended or leave it empty]" # OPTIONAL to configure an express custom setup without script
 
    # Add custom setup parameters if you use standard/express custom setups
    if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
@@ -242,6 +242,16 @@ ms.locfileid: "91405247"
            $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
            $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
        }
+       if($ExpressCustomSetup -eq "CData.Standard")
+       {
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }
+       if($ExpressCustomSetup -eq "CData.Extended")
+       {
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }    
        # Create an array of one or more express custom setups
        $setups = New-Object System.Collections.ArrayList
        $setups.Add($setup)
@@ -288,6 +298,8 @@ ms.locfileid: "91405247"
       * Папка *.NET FRAMEWORK 3,5* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки более ранней версии .NET Framework на каждом узле Azure-SSIS IR. Эта версия может потребоваться для некоторых пользовательских компонентов.
 
       * Папка *bcp* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки SQL Server служебных программ командной строки (*MsSqlCmdLnUtils.msi*) на каждом узле Azure-SSIS IR. Одной из этих служебных программ является программа копирования (*bcp*).
+
+      * Папка *DNS-суффикса* , которая содержит настраиваемый сценарий установки (*Main. cmd*) для добавления собственного DNS-суффикса (например, *Test.com*) в любое неполное имя домена с одной меткой и преобразует его в полное доменное имя (FQDN), прежде чем использовать его в запросах DNS из Azure-SSIS IR.
 
       * Папка *Excel* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки некоторых сборок и библиотек C# на каждом узле Azure-SSIS IR. Их можно использовать в задачах скриптов для динамического чтения и записи файлов Excel. 
       
@@ -347,7 +359,7 @@ ms.locfileid: "91405247"
 
 1. После завершения стандартной пользовательской установки и запуска Azure-SSIS IR можно найти все журналы настраиваемой установки в папке *Main. cmd. log* контейнера. Они включают стандартные выходные данные файла *Main. cmd* и другие журналы выполнения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка выпуска Enterprise Azure-SSIS IR](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных компонентов для Azure-SSIS IR](how-to-develop-azure-ssis-ir-licensed-components.md)

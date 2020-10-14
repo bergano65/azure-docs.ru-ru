@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: b4e79a2aab5ca72ff8263bfc5734757bbff41005
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48ce6edc3d071d84c3921f85c2e9798b804d0279
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297745"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017749"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -32,7 +32,7 @@ ms.locfileid: "89297745"
 
 Если у вас есть видеослужба, разработанная на основе [устаревших API Служб мультимедиа версии 2](../previous/media-services-overview.md), ознакомьтесь со следующими рекомендациями и советами перед переносом в API версии 3. В версии 3 API существует множество преимуществ и новых функций, которые улучшают возможности разработки и Служб мультимедиа. Однако, как указано в разделе с [известными проблемами](#known-issues) этой статьи, из-за изменений между версиями API существуют определенные ограничения. Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Обзор [служб мультимедиа версии 2 и V3](media-services-v2-vs-v3.md)
 * [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
@@ -44,10 +44,10 @@ ms.locfileid: "89297745"
 *  Версия 3 создана на основе унифицированной области API, что позволяет использовать функции управления и операции, встроенные в Azure Resource Manager. Шаблоны Azure Resource Manager можно использовать для создания и развертывания преобразований, конечных точек потоковой передачи, событий потоковой трансляции и т. д.
 * [Спецификация OpenAPI (прежнее название — Swagger)](https://aka.ms/ams-v3-rest-sdk) .
     Представляет схему для всех компонентов службы, включая кодирование на основе файла.
-* Пакеты SDK для [.NET](https://aka.ms/ams-v3-dotnet-ref), .NET Core, [Node.js](/javascript/api/overview/azure/mediaservices/management), [Python](https://aka.ms/ams-v3-python-ref), [Java](https://aka.ms/ams-v3-java-ref), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
-* Интеграция [Azure CLI](https://aka.ms/ams-v3-cli-ref) для простых скриптов поддержки.
+* Пакеты SDK для [.NET](/dotnet/api/overview/azure/mediaservices/management), .NET Core, [Node.js](/javascript/api/overview/azure/mediaservices/management), [Python](/python/api/overview/azure/mediaservices/management), [Java](/java/api/overview/azure/mediaservices/management), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
+* Интеграция [Azure CLI](/cli/azure/ams) для простых скриптов поддержки.
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * Для обработки задания на основе файла можно использовать URL-адрес HTTP в качестве входных данных.<br/>Вам не обязательно ни хранить содержимое в Azure, ни создавать ресурсы.
 * Для обработки задания на основе файла введено понятие [преобразования](transforms-jobs-concept.md). Преобразование можно использовать для создания повторно используемых конфигураций, создания шаблонов Azure Resource Manager и изолирования параметров обработки между несколькими пользователями или клиентами.
@@ -69,7 +69,7 @@ ms.locfileid: "89297745"
     * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
     * [Получение сведений о доступе к API](./access-api-howto.md). 
 
-    Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+    Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 * Подготовьте зарезервированные единицы мультимедиа (MRU) в вашей учетной записи, чтобы управлять параллелизмом и производительностью заданий, особенно тех, что касаются видео- или аудиоанализа. Дополнительные сведения см. в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md). Вы можете управлять Мрус с помощью [интерфейса командной строки (CLI) 2,0 для служб мультимедиа v3](media-reserved-units-cli-how-to.md), с помощью [портал Azure](../previous/media-services-portal-scale-media-processing.md)или с помощью [API v2](../previous/media-services-dotnet-encoding-units.md). Подготавливать единицы MRU нужно с учетом того, какая версия API Служб мультимедиа используется: версия 2 или 3.
 * С помощью API версии 2 нельзя управлять сущностями Cлужбы мультимедиа, созданными с помощью API версии 3.  
 * Не все сущности в API v2 автоматически отображаются в API V3.  Ниже приведены примеры сущностей в двух версиях, которые несовместимы:  

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: 797ba00820e7ff9d96868acdfc1dddfff3d21623
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7941d542ca2cab1637b9edaef057f740a9a1b7ef
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598279"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92016831"
 ---
 # <a name="dynamic-packaging-in-media-services-v3"></a>Динамическая упаковка в Службах мультимедиа версии 3
 
@@ -30,7 +30,7 @@ ms.locfileid: "91598279"
 В Службах мультимедиа [конечная точка потоковой передачи](streaming-endpoint-concept.md) (источник) — это служба динамической (JIT) упаковки и служба источника, которая может в реальном времени и по запросу доставлять содержимое непосредственно в клиентское приложение проигрывателя. Она использует один из распространенных протоколов потоковой передачи мультимедиа, упомянутых в следующем разделе. *Динамическая упаковка* — это возможность, которая по умолчанию предоставляется для конечных точек потоковой передачи.
 
 > [!NOTE]
-> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [трансляциями](live-events-outputs-concept.md) в версии 3, просмотра [ресурсов](assets-concept.md) в версии 3, а также получения сведений о доступе к интерфейсам API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [трансляциями](live-events-outputs-concept.md) в версии 3, просмотра [ресурсов](assets-concept.md) в версии 3, а также получения сведений о доступе к интерфейсам API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](/rest/api/media/), [CLI](/cli/azure/ams) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="to-prepare-your-source-files-for-delivery"></a>Подготовка исходных файлов к доставке
 
@@ -88,7 +88,7 @@ ms.locfileid: "91598279"
 1. [Отправьте входной файл](job-input-from-http-how-to.md) например MP4, QuickTime, MOV или другого поддерживаемого формата. Этот файл также называется мезонинным или исходным. Список поддерживаемых форматов см. в статье [Standard Encoder formats and codecs](media-encoder-standard-formats.md) (Форматы и кодеки кодировщика ценовой категории "Стандартный").
 1. [Закодируйте](#encode-to-adaptive-bitrate-mp4s) мезонинный файл в набор MP4-файлов с адаптивной скоростью в формате H.264 или AAC.
 
-    Если у вас уже есть закодированные файлы и требуется только скопировать их и выполнить потоковую передачу, используйте API [CopyVideo](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#copyvideo) и [CopyAudio](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#copyaudio). В результате будет создан MP4-файл с манифестом потоковой передачи (ISM-файл).
+    Если у вас уже есть закодированные файлы и требуется только скопировать их и выполнить потоковую передачу, используйте API [CopyVideo](/rest/api/media/transforms/createorupdate#copyvideo) и [CopyAudio](/rest/api/media/transforms/createorupdate#copyaudio). В результате будет создан MP4-файл с манифестом потоковой передачи (ISM-файл).
 1. Опубликуйте выходной ресурс, который содержит набор MP4-файлов с адаптивной скоростью. Публикация выполняется путем создания [указателя потоковой передачи](streaming-locators-concept.md).
 1. Создайте URL-адреса, которые предназначены для различных форматов (HLS, MPEG-DASH и Smooth Streaming). *Конечная точка потоковой передачи* возьмет на себя выдачу надлежащего манифеста и обработку запросов для всех форматов.
     

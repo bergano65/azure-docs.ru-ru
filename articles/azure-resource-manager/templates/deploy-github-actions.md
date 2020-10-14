@@ -3,12 +3,13 @@ title: Развертывание шаблонов Resource Manager с помо�
 description: Описывает развертывание шаблонов Azure Resource Manager с помощью действий GitHub.
 ms.topic: conceptual
 ms.date: 07/02/2020
-ms.openlocfilehash: 313354499901bc69ec6e00f0ba7c385065cae615
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: github-actions-azure
+ms.openlocfilehash: cea099088005fa91e1b3e9a793105df4796a66ee
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85854746"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018582"
 ---
 # <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Развертывание шаблонов Resource Manager с помощью действий GitHub
 

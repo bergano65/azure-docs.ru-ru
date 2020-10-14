@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
-ms.openlocfilehash: 3da6dd877a94da64f85f093ae98a0b8a109ab2e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6b7c8cbcf6685ca2e781789fc508d005bcb5f88
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89255109"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018905"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
-Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) обработчики мультимедиа выводятся из эксплуатации. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). Вместо этих устаревших компонентов теперь используется [Индексатор видео Служб мультимедиа Azure](../video-indexer/index.yml).
+Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](./legacy-components.md) обработчики мультимедиа выводятся из эксплуатации. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). Вместо этих устаревших компонентов теперь используется [Индексатор видео Служб мультимедиа Azure](../video-indexer/index.yml).
 
 Индексатор видео служб мультимедиа Azure создан на основе Аналитика мультимедиа Azure, Когнитивный поиск Azure Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и службы Пользовательское распознавание речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. Чтобы узнать, в каких сценариях можно использовать индексатор видео, какие функции он предлагает и как приступить к работе, см. статью [видео и звуковые модели индексатора видео](../video-indexer/video-indexer-overview.md). 
 

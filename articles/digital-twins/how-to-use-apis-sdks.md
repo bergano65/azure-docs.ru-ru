@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 030b41e086d700c527107d2246bc7f7df07e860f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e9804eb2af28108572688244d6d7b513454e375b
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977720"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019007"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -269,10 +269,7 @@ client.UpdateDigitalTwin("myTwin", uou.Serialize());
 ## <a name="general-apisdk-usage-notes"></a>Общие примечания об использовании API/SDK
 
 > [!NOTE]
-> Обратите внимание, что на этапе предварительной версии Azure Digital двойников не поддерживает **общий доступ к ресурсам между источниками (CORS)**. В результате, если вы вызываете REST API из приложения браузера, интерфейса [управления API (APIM)](../api-management/api-management-key-concepts.md) или соединителя [Power Apps](https://docs.microsoft.com/powerapps/powerapps-overview) , может появиться сообщение об ошибке политики.
-> Чтобы устранить эту ошибку, выполните одно из следующих действий.
-> * Удалить Заголовок CORS `Access-Control-Allow-Origin` из сообщения. Этот заголовок указывает, можно ли предоставить общий доступ к ответу. 
-> * Кроме того, можно создать прокси-сервер CORS и сделать REST API Azure Digital двойников. 
+> Обратите внимание, что Azure Digital двойников сейчас не поддерживает **общий доступ к ресурсам между источниками (CORS)**. Дополнительные сведения о стратегиях влияния и разрешения см. в разделе Основные понятия [*общего доступа к ресурсам в разных источниках (CORS)*](concepts-security.md#cross-origin-resource-sharing-cors) *: безопасность для решений Digital двойников в Azure*.
 
 В следующем списке приведены дополнительные сведения и общие рекомендации по использованию API и пакетов SDK.
 

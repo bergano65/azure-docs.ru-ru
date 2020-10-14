@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: 2ba7dc3b0f2bc4f62234c480da0af1061dea1f91
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fbaaac0095622f14d5bc0033b7787bec8ec2fa2
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90885562"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018293"
 ---
 # <a name="azure-stream-analytics-feature-comparison"></a>Сравнение возможностей Azure Stream Analytics
 
@@ -23,7 +23,7 @@ ms.locfileid: "90885562"
 ## <a name="cloud-job-features"></a>Функции облачных заданий
 
 
-|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
+|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Кроссплатформенные     |Mac</br>Linux</br>Windows         |Windows        |Mac</br>Linux</br>Windows          |
 |Создание скриптов     |Да         |Да         |Да         |
@@ -44,7 +44,7 @@ ms.locfileid: "90885562"
 |Функция пользовательского кода C# и десериализатор|Режим только для чтения|Да|Нет|
 |Определяемые пользователем функции JavaScript и UDA     |Да         |Да         |Только в Windows         |
 |Служба машинного обучения     |Да        |Да         |Нет         |
-|Студия машинного обучения     |Да, но запрос не может быть проверен        |Да |Нет         |
+|Машинное обучение Azure Studio (классическая модель)|Да, но запрос не может быть проверен        |Да |Нет         |
 |Уровень совместимости     |1.0</br>1,1</br>1,2 (по умолчанию)         |1.0</br>1,1</br>1,2 (по умолчанию)           |1.0</br>1,1</br>1,2 (по умолчанию)           |
 |Встроенные функции обнаружения аномалий на основе машинного обучения     |Да         |Да         |Да         |
 |Встроенные геопространственные функции     |Да         |Да         |Да         |
@@ -53,7 +53,7 @@ ms.locfileid: "90885562"
 
 ## <a name="iot-edge-job-features"></a>Функции задания IoT Edge
 
-|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
+|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Создание заданий     |Да         |Да         |Нет         |
 |Система управления версиями     |Нет         |Да         |Нет         |
@@ -68,7 +68,7 @@ ms.locfileid: "90885562"
 |Поддержка CI/CD     |Нет         |Нет         |Нет         |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Stream Analytics в IoT Edge](stream-analytics-edge.md)
 * [Руководство. Написание определяемой пользователем функции C# для задания Azure Stream Analytics IoT Edge (Предварительная версия)](stream-analytics-edge-csharp-udf.md)

@@ -3,12 +3,12 @@ title: Концепция. Интеграция развертывания ре�
 description: Ознакомьтесь с рекомендациями по интеграции развертывания решения Azure VMware в существующую или новую архитектуру, а также в новой и периферийной архитектурах в Azure.
 ms.topic: conceptual
 ms.date: 09/09/2020
-ms.openlocfilehash: bfd0da4f03eedaf215ddb55facffc2296a9d0b85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1bbb2a771ac6f7981460b1e81881725a11299242
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91580284"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019275"
 ---
 # <a name="integrate-azure-vmware-solution-in-a-hub-and-spoke-architecture"></a>Интеграция решения Azure VMware в центральную и периферийную архитектуру
 
@@ -28,7 +28,7 @@ ms.locfileid: "91580284"
 
 На схеме показан пример развертывания на основе концентратора и периферийного сервера в Azure, подключенного к локальной среде и решению VMware для Azure с помощью ExpressRoute Global Reach.
 
-:::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-and-spoke-deployment.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+:::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-and-spoke-deployment.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-and-spoke-deployment.png":::
 
 Архитектура имеет следующие основные компоненты:
 
@@ -65,12 +65,12 @@ ms.locfileid: "91580284"
 
 * **Поток трафика решения "из локальной среды в Azure VMware"**
 
-  :::image type="content" source="media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+  :::image type="content" source="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/on-premises-azure-vmware-solution-traffic-flow.png":::
 
 
 * **Поток трафика виртуальной сети Azure VMware к концентратору**
 
-  :::image type="content" source="media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false":::
+  :::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Развертывание в центре решений Azure VMware и в периферийном развертывании" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png":::
 
 
 Дополнительные сведения о сети и концепциях подключения для Azure VMware см. в [документации по продукту VMware для Azure](./concepts-networking.md).

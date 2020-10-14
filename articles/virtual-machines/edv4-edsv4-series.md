@@ -9,16 +9,16 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/04/2020
-ms.openlocfilehash: eb809b2dabe2d8b28f05b328877e1a20dbeacbc3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e8ecb0dde2208b367362f26f654ec8eb83c7a777
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977618"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92016201"
 ---
 # <a name="edv4-and-edsv4-series"></a>Серии Edv4 и Edsv4
 
-Серии Edv4 и Edsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с технологией Hyper-Threading и отлично подходят для любых корпоративных приложений, требующих больших объемов памяти, предоставляя до 504 ГиБ ОЗУ, технологию [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и расширения [Intel&reg; Advanced Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Новые размеры виртуальных машин будут иметь 50% больше локального хранилища, а также дополнительные операции ввода-вывода на локальный диск для чтения и записи по сравнению с размером [Ev3/Esv3](./ev3-esv3-series.md) с [виртуальными машинами Gen2](./generation-2.md). В нем реализована вся частота процессора Turbo 3,4 ГГц. 
+Серии Edv4 и Edsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с технологией Hyper-Threading и отлично подходят для любых корпоративных приложений, требующих больших объемов памяти, предоставляя до 504 ГиБ ОЗУ, технологию [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и расширения [Intel&reg; Advanced Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Новые размеры виртуальных машин будут иметь 50% больше локального хранилища, а также дополнительные операции ввода-вывода на локальный диск для чтения и записи по сравнению с размером [Ev3/Esv3](./ev3-esv3-series.md) с [виртуальными машинами Gen2](./generation-2.md). Он включает всю частоту ядра Turbo 3,4 ГГц. 
 
 ## <a name="edv4-series"></a>Серия Edv4
 

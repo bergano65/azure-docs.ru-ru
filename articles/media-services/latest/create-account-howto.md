@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 93f5e4d659b94bd79345a5e687de14ab6a5e8ba6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49cac230363750e481e165712bf4f619e5cba7ae
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89267978"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017851"
 ---
 # <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -47,7 +47,7 @@ ms.locfileid: "89267978"
 * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
 * [Получение сведений о доступе к API](./access-api-howto.md). 
 
-Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 <!-- Move this section. This section should be moved to conceptual.  It doesn't belong in task based -->
 
 ### <a name="use-the-azure-portal-to-create-a-media-services-account"></a>Создание учетной записи служб мультимедиа с помощью портал Azure
@@ -91,13 +91,13 @@ ms.locfileid: "89267978"
 
 [!INCLUDE [Create a Media Services account with CLI](./includes/task-create-media-services-account-cli.md)]
 
-### <a name="see-also"></a>См. также
+### <a name="see-also"></a>См. также статью
 
 * [Azure CLI](/cli/azure/ams?view=azure-cli-latest)
 * [Подключение дополнительного хранилища к учетной записи служб мультимедиа](/cli/azure/ams/account/storage?view=azure-cli-latest#az-ams-account-storage-add)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/29/2020
 ms.author: duau
-ms.openlocfilehash: a99aa53e954fe0b2822628ff91989e0b618028ae
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 0611297164f3fe0afb1e18afe3abbbac00fd9c9a
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91938412"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92016371"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -351,7 +351,7 @@ ms.locfileid: "91938412"
 | **[FlexManage](https://www.flexmanage.com/cloud)** | Северная Америка |
 | **[Lightstream](https://www.lightstream.tech/partners/microsoft-azure/)** | Северная Америка |
 | **[The IT Consultancy Group](https://itconsult.com.au/)** | Австралия |
-| **[MOQdigital](https://www.moqdigital.com.au/insights/technical/network-connectivity-options-for-azure)** | Австралия |
+| **[MOQdigital](https://www.moqdigital.com/insights)** | Австралия |
 | **[MSG Services](https://www.msg-services.de/it-services/managed-services/cloud-outsourcing/)** | Европа (Германия) |
 | **[Nelite](https://www.exakis-nelite.com/offres/)** | Европа |
 | **[New Signature](https://newsignature.com/technologies/express-route/)** | Европа |

@@ -9,16 +9,16 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 060b9f80b571af739e234ced2e7b912d38a6234c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 370e9e0df2a4fc2ee4aca43c01bfe0a98077d189
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979042"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018854"
 ---
 # <a name="ddv4-and-ddsv4-series"></a>Серии Ddv4 и Ddsv4
 
-Виртуальные машины серии Ddv4 и Ddsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с поддержкой технологии Hyper Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота процессора Turbo 3,4 ГГц, [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel &reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Dv3/Dsv3](./dv3-dsv3-series.md) для [виртуальных машин 2-го поколения](./generation-2.md).
+Виртуальные машины серии Ddv4 и Ddsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с поддержкой технологии Hyper Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота ядра Turbo 3,4 ГГц, [технология Intel &reg; Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [технология Intel &reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel &reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Dv3/Dsv3](./dv3-dsv3-series.md) для [виртуальных машин 2-го поколения](./generation-2.md).
 
 Среди вариантов использования серии D — приложения корпоративного уровня, реляционные базы данных, кэширование в памяти и аналитика.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 3e64ffe5007d27a44167f08807a9694875fe48c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28f414c5eaaea7b987f2c3694cb8fc73b70838e9
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87050443"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018786"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
@@ -46,21 +46,21 @@ ms.locfileid: "87050443"
 
 |Командлет|Описание|
 |------------|-----------------| 
-|[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
-|[Backup-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase)|Архивация базы данных Analysis Services.|  
-|[Remove-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
-|[Invoke-ASCmd](https://docs.microsoft.com/powershell/module/sqlserver/invoke-ascmd)|Выполнение сценария TMSL.|
-|[Invoke-ProcessASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processasdatabase)|Обработка базы данных.|  
-|[Invoke-ProcessPartition](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processpartition)|Обработка секции.| 
-|[Invoke-ProcessTable](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processtable)|Обработка таблицы.|  
-|[Merge-Partition](https://docs.microsoft.com/powershell/module/sqlserver/merge-partition)|Объединение секции.|  
-|[Restore-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/restore-asdatabase)|Восстановление базы данных Analysis Services.| 
+|[Add-RoleMember](/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
+|[Backup-ASDatabase](/powershell/module/sqlserver/backup-asdatabase)|Архивация базы данных Analysis Services.|  
+|[Remove-RoleMember](/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
+|[Invoke-ASCmd](/powershell/module/sqlserver/invoke-ascmd)|Выполнение сценария TMSL.|
+|[Invoke-ProcessASDatabase](/powershell/module/sqlserver/invoke-processasdatabase)|Обработка базы данных.|  
+|[Invoke-ProcessPartition](/powershell/module/sqlserver/invoke-processpartition)|Обработка секции.| 
+|[Invoke-ProcessTable](/powershell/module/sqlserver/invoke-processtable)|Обработка таблицы.|  
+|[Merge-Partition](/powershell/module/sqlserver/merge-partition)|Объединение секции.|  
+|[Restore-ASDatabase](/powershell/module/sqlserver/restore-asdatabase)|Восстановление базы данных Analysis Services.| 
   
 
 ## <a name="related-information"></a>Дополнительные сведения
 
-* [SQL Server PowerShell](https://docs.microsoft.com/sql/powershell/sql-server-powershell)      
-* [Скачивание модуля PowerShell SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
-* [Скачивание SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)   
+* [SQL Server PowerShell](/sql/powershell/sql-server-powershell)      
+* [Скачивание модуля PowerShell SQL Server](/sql/ssms/download-sql-server-ps-module)   
+* [Скачивание SSMS](/sql/ssms/download-sql-server-management-studio-ssms)   
 * [Модуль SqlServer в коллекции PowerShell](https://www.powershellgallery.com/packages/SqlServer)    
-* [Программирование табличных моделей с уровнем совместимости 1200 и выше](https://docs.microsoft.com/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200)
+* [Программирование табличных моделей с уровнем совместимости 1200 и выше](/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200)

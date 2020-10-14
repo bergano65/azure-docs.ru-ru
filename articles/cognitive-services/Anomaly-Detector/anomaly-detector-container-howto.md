@@ -3,21 +3,21 @@ title: Установка и запуск контейнеров DOCKER для A
 titleSuffix: Azure Cognitive Services
 description: Используйте алгоритмы API детектора аномалий для поиска аномалий в данных локально с помощью контейнера DOCKER.
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 09/28/2020
-ms.author: aahi
+ms.author: mbullwin
 ms.custom: cog-serv-seo-aug-2020
 keywords: локальная среда, Docker, контейнер, потоковая передача, алгоритмы
-ms.openlocfilehash: ff4d15b33cb261e71ea883c0245afe5781005e38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e20ff5022b9b4a5b601160516f255af991a540c6
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460006"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018616"
 ---
 # <a name="install-and-run-docker-containers-for-the-anomaly-detector-api"></a>Установка и запуск контейнеров DOCKER для API детектора аномалий 
 
@@ -59,7 +59,7 @@ ms.locfileid: "91460006"
 
 В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для контейнера детекторов обнаружения аномалий.
 
-| QPS (запросов в секунду) | Минимальные | Рекомендуется |
+| QPS (запросов в секунду) | Минимальные требования | Рекомендуется |
 |-----------|---------|-------------|
 | 10 QPS | 4 ядра, 1 ГБ памяти | 8-ядерный 2 ГБ памяти |
 | 20 QPS | 8 ядер, 2 ГБ памяти | 16-ядерный 4 ГБ памяти |
@@ -161,7 +161,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если контейнер запускается с выходным [подключением](anomaly-detector-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -179,7 +179,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску контейнеров детекторов аномалий. В разделе "Сводка" сделайте следующее.
 

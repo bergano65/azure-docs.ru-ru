@@ -6,17 +6,17 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 07/09/2020
+ms.date: 10/13/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 50abe5071ef424b03d92522e01477d1152930b2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69ec30a14d4c04e1f47c909e829f7388132e64d6
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187818"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018220"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 
@@ -151,7 +151,7 @@ ms.locfileid: "86187818"
 Дополнительные сведения см. в разделе [разрешение имен, использующее собственный DNS-сервер](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server). 
 
 > [!NOTE]
-> Используйте полное доменное имя (FQDN) для имени частного узла, например `<your_private_server>.contoso.com` , используйте вместо `<your_private_server>` , так как Azure-SSIS IR не будет автоматически добавлять собственный DNS-суффикс.
+> Используйте полное доменное имя (FQDN) для имени частного узла (например, используйте `<your_private_server>.contoso.com` вместо `<your_private_server>` ). Кроме того, можно использовать стандартную настраиваемую установку на Azure-SSIS IR для автоматического добавления собственного DNS-суффикса (например `contoso.com` ) в любое имя домена с неполным именем и перед его использованием в DNS-запросах. см. раздел [стандартные примеры выборочной установки](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup#standard-custom-setup-samples). 
 
 ### <a name="set-up-an-nsg"></a><a name="nsg"></a> Настройка NSG
 Если необходимо реализовать NSG для подсети, используемой Azure-SSIS IR, разрешите входящий и исходящий трафик через следующие порты: 

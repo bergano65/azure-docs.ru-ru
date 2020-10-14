@@ -9,16 +9,16 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 959906f25cbae0158dfb0baf0b7664b8f9b9b5d4
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: ca01397959aa50c77218742320f8ced128876bad
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945674"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018684"
 ---
 # <a name="dv4-and-dsv4-series"></a>Серии Dv4 и Dsv4
 
-Серия dv4 и Dsv4 работает на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. В нем реализована вся частота процессора Turbo 3,4 ГГц. 
+Серия dv4 и Dsv4 работает на &reg; &reg; процессорах Intel Xeon Platinum 8272CL (Cascade Lake) в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. Он включает всю частоту ядра Turbo 3,4 ГГц. 
 
 > [!NOTE]
 > Часто задаваемые вопросы см. в статье  [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).

@@ -6,24 +6,24 @@ ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: chlound
-ms.openlocfilehash: 61679e1ee3843ed866ef12138a0edeff8877b1e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fe811c81d0774393f40dc5c8403d1af8b22da109
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448597"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019143"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
 С помощью службы автоматизации Azure и модулей Runbook PowerShell можно выполнять автоматические операции обновления данных в табличных моделях анализа Azure.  
 
-В примере в этой статье используется [модуль SQLServer PowerShell](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps). Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
+В примере в этой статье используется [модуль SQLServer PowerShell](/powershell/module/sqlserver/?view=sqlserver-ps). Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
 ## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 > [!IMPORTANT]
 > В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если включен брандмауэр, общедоступный IP-адрес инициатора запроса должен быть включен в правило брандмауэра.
@@ -104,7 +104,7 @@ ms.locfileid: "91448597"
 
     ![Настройка расписания](./media/analysis-services-refresh-azure-automation/15.png)
 
-3. Нажмите кнопку **Создать**.
+3. Щелкните **Создать**.
 
 4. Заполните параметры расписания. Они будут использоваться при каждом срабатывании модуля Runbook. При выполнении по расписанию параметр **WEBHOOKDATA** должен оставаться пустым.
 
@@ -223,7 +223,7 @@ else
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
-[REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)
+[REST API](/rest/api/analysisservices/servers)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: juliako
-ms.openlocfilehash: 5d5a00488321c9c67dd1469b1d8476636675aa8f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e841d1922beb3f0276ff94cacbbdf566b23cdf6e
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91281020"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92017290"
 ---
 # <a name="overview-of-azure-on-demand-media-encoders"></a>Обзор кодировщиков мультимедиа Azure по запросу
 
@@ -53,7 +53,7 @@ ms.locfileid: "91281020"
 [Форматы и кодеки](media-services-media-encoder-standard-formats.md)
 
 ### <a name="presets"></a>Предустановки
-Стандартный кодировщик мультимедиа настраивается с помощью одной из предустановок кодировщика, описанных [здесь](https://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409).
+Стандартный кодировщик мультимедиа настраивается с помощью одной из предустановок кодировщика, описанных [здесь](./media-services-mes-presets-overview.md).
 
 ### <a name="input-and-output-metadata"></a>Входные и выходные метаданные
 Входные метаданные кодировщиков описаны [здесь](media-services-input-metadata-schema.md).
@@ -69,7 +69,7 @@ ms.locfileid: "91281020"
 ### <a name="create-overlays"></a>Создание наложений
 Дополнительные сведения см. в разделе о [создании наложения с помощью стандартного кодировщика мультимедиа](media-services-advanced-encoding-with-mes.md#overlay).
 
-### <a name="see-also"></a>См. также раздел
+### <a name="see-also"></a>См. также статью
 [Блог, посвященный службам мультимедиа](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
 
 ### <a name="known-issues"></a>Известные проблемы

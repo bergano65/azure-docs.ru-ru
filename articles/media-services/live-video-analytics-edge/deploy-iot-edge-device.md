@@ -3,12 +3,12 @@ title: Развертывание Live Video Analytics на IoT Edge устро�
 description: В этой статье перечислены действия, которые помогут вам развернуть службу Live Video Analytics на устройстве IoT Edge. Это можно сделать, например, при наличии доступа к локальной виртуальной машине Linux и (или) ранее созданной учетной записи служб мультимедиа Azure.
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: 211dd0d61bbca39c4f4ec2f388d950c4615bb023
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a64fc11d7afa70d5200fdbd24bd3facdb8a95a7e
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90887233"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019585"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Развертывание Live Video Analytics на устройстве IoT Edge
 
@@ -18,9 +18,9 @@ ms.locfileid: "90887233"
 > Поддержка устройств ARM64 доступна в функции Live Video Analytics на IoT Edge сборках `1.0.4` и более новых версиях.
 > Поддержка для запуска среды выполнения Azure IoT Edge на устройствах ARM64 предоставляется в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* Устройство с архитектурой x86-64 или ARM64, работающее под управлением одной из [поддерживаемых операционных систем Linux](https://docs.microsoft.com/azure/iot-edge/support#operating-systems)
+* Устройство с архитектурой x86-64 или ARM64, работающее под управлением одной из [поддерживаемых операционных систем Linux](../../iot-edge/support.md#operating-systems)
 * Подписка Azure, к которой у вас есть [права владельца](../../role-based-access-control/built-in-roles.md#owner)
 * [Создание и настройка центра Интернета вещей](../../iot-hub/iot-hub-create-through-portal.md)
 * [Регистрация IoT Edge устройства](../../iot-edge/how-to-register-device.md)
@@ -250,7 +250,7 @@ sudo chown -R edgeuser /var/media
 
     ![Сообщение о состоянии 200](./media/deploy-iot-edge-device/connection-timeout.png) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство по началу работы: интерактивная аналитика видео на IOT Edge](get-started-detect-motion-emit-events-quickstart.md#deploy-modules-on-your-edge-device)
 
