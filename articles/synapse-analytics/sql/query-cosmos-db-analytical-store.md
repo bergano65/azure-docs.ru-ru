@@ -9,19 +9,19 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6f4dd0836ba04d0e07ada8aced964317498b1f22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c326aed172bb8159185829f80d66e8e00496aad2
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757601"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057813"
 ---
 # <a name="query-azure-cosmos-db-data-using-sql-serverless-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью SQL Server не в связи с Azure синапсе (Предварительная версия)
 
 Синапсе SQL Server (ранее по запросу) позволяет анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью [ссылки Azure синапсе](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из [аналитического хранилища](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL.
 
 > [!NOTE]
-> Поддержка запросов Azure Cosmos DB аналитического хранилища с SQL Server в настоящее время находится в режиме предварительной версии. 
+> Поддержка запросов Azure Cosmos DB аналитического хранилища с SQL Server в настоящее время находится в режиме предварительной версии. Общедоступная Предварительная версия будет объявлена на странице [обновлений службы Azure](https://azure.microsoft.com/updates/?status=nowavailable&category=databases) .
 
 Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время нельзя хранить результаты запросов SQL Server, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
 
@@ -36,10 +36,15 @@ OPENROWSET(
        'CosmosDB',
        '<Azure Cosmos DB connection string>',
        <Container name>
-    )  [ < with clause > ]
+    )  [ < with clause > ] AS alias
 ```
 
-Строка подключения Azure Cosmos DB указывает имя учетной записи Azure Cosmos DB, имя базы данных, главный ключ учетной записи базы данных и необязательное имя области для `OPENROWSET` работы. Строка подключения имеет следующий формат:
+Строка подключения Azure Cosmos DB указывает имя учетной записи Azure Cosmos DB, имя базы данных, главный ключ учетной записи базы данных и необязательное имя области для `OPENROWSET` работы. 
+
+> [!IMPORTANT]
+> Убедитесь, что используется псевдоним после `OPENROWSET` . Существует [известная ошибка](#known-issues) , которая вызывает проблемы с подключением к синапсе КОНЕЧНОЙ точке SQL без сервера, если не указать псевдоним после `OPENROWSET` функции.
+
+Строка подключения имеет следующий формат:
 ```sql
 'account=<database account name>;database=<database name>;region=<region name>;key=<database account master key>'
 ```
@@ -245,13 +250,20 @@ FROM
 | Логическое значение | bit |
 | Целое число | BIGINT |
 | Decimal | FLOAT |
-| Строковый тип | varchar (параметры сортировки базы данных UTF8) |
+| Строка | varchar (параметры сортировки базы данных UTF8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
 | Дата и время (метка времени Unix) | BIGINT |
 | NULL | `any SQL type` 
 | Вложенный объект или массив | varchar (max) (параметры сортировки базы данных UTF8), сериализованный как текст JSON |
 
 Для запроса Azure Cosmos DB учетных записей типа API Mongo DB вы можете узнать больше о полном представлении схемы точности в аналитическом хранилище и именах расширенных свойств, которые будут использоваться [здесь](../../cosmos-db/analytical-store-introduction.md#analytical-schema).
+
+## <a name="known-issues"></a>Известные проблемы
+
+- Псевдоним **должен** быть указан после `OPENROWSET` функции (например, `OPENROWSET (...) AS function_alias` ). Пропуск псевдонима может вызвать проблемы с подключением и синапсе конечную точку SQL без сервера, которая может быть временно недоступна. Эта проблема будет устранена в 2020 ноября.
+- Синапсе SQL без сервера в настоящее время не поддерживает [Azure Cosmos DB схему полной точности](../../cosmos-db/analytical-store-introduction.md#schema-representation). Синапсе SQL Server можно использовать только для доступа к четко определенной схеме Cosmos DB.
+
+Вы можете сообщить о предложениях и проблемах на [странице отзывов о службе Azure синапсе](https://feedback.azure.com/forums/307516-azure-synapse-analytics?category_id=387862).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 65cd35dd60ed05da51b6da56882af4522b1b7573
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 369f79a436d76e6a1bf1a1ce64f7754f25a5abc5
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043461"
+ms.locfileid: "92058052"
 ---
 # <a name="distributed-transactions-across-cloud-databases-preview"></a>Распределенные транзакции между облачными базами данных (Предварительная версия)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -145,14 +145,14 @@ Azure включает несколько предложений для разм
     -- Configure the Linked Server
     -- Add one Azure SQL Managed Instance as Linked Server
     EXEC sp_addlinkedserver
-        @server='managedinstance02', -- Linked server name
+        @server='RemoteServer', -- Linked server name
         @srvproduct='',
         @provider='sqlncli', -- SQL Server Native Client
-        @datasrc='sql-managed-instance-02.48ea8fd5ac90.database.windows.net' -- Managed Instance endpoint
+        @datasrc='managed-instance-server.46e7afd5bc81.database.windows.net' -- Managed Instance endpoint
 
     -- Add credentials and options to this Linked Server
     EXEC sp_addlinkedsrvlogin
-        @rmtsrvname = 'managedinstance02', -- Linked server name
+        @rmtsrvname = 'RemoteServer', -- Linked server name
         @useself = 'false',
         @rmtuser = '<login_name>',         -- login
         @rmtpassword = '<secure_password>' -- password
@@ -244,7 +244,7 @@ Azure включает несколько предложений для разм
 
 ## <a name="transactions-across-multiple-servers-for-azure-sql-managed-instance"></a>Транзакции на нескольких серверах для Управляемый экземпляр Azure SQL
 
-Распределенные транзакции поддерживаются на разных серверах в Управляемый экземпляр SQL Azure. Когда транзакции пересекают границы Управляемый экземпляр, экземпляры, участвующие в ней, сначала должны быть указаны в взаимной взаимосвязи безопасности и связи. Это можно сделать, настроив [группу доверия серверов](https://aka.ms/mitrusted-groups), которая может быть выполнена на портал Azure.
+Распределенные транзакции поддерживаются на разных серверах в Управляемый экземпляр SQL Azure. Когда транзакции пересекают границы Управляемый экземпляр, экземпляры, участвующие в ней, сначала должны быть указаны в взаимной взаимосвязи безопасности и связи. Это можно сделать, создав [группу доверия серверов](https://aka.ms/mitrusted-groups), которая может быть выполнена на портал Azure. Если управляемые экземпляры находятся не в одной виртуальной сети, необходимо настроить [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) , а правила входящего и исходящего трафика группы безопасности сети должны разрешить порты 5024 и 11000-12000 для всех участвующих виртуальных сетей.
 
   ![Группы доверия сервера на портале Azure][3]
 

@@ -17,12 +17,12 @@ ms.workload: media
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: mvc
-ms.openlocfilehash: b11cd602850d23ac6ec37a9be51912adceb9afbc
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 58a142f0be87bb56f9ded9ace5a5143931740e93
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89267621"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019869"
 ---
 # <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -33,7 +33,7 @@ ms.locfileid: "89267621"
 Пакеты SDK Служб мультимедиа версии 3 разработаны на основе [спецификации OpenAPI (Swagger) для Служб мультимедиа версии 3](https://aka.ms/ams-v3-rest-sdk).
 
 > [!NOTE]
-> В настоящее время вы можете использовать [портал Azure](https://portal.azure.com/) для: управления [трансляциями](live-events-outputs-concept.md) в Службах мультимедиа версии 3, просмотра (без управления) [активов](assets-concept.md) версии 3, а также [получения сведений о доступе к интерфейсам API](./access-api-howto.md). Для всех других задач управления (например, [преобразований и заданий](transforms-jobs-concept.md), а также [защиты содержимого](content-protection-overview.md)) следует использовать [REST API](/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> В настоящее время вы можете использовать [портал Azure](https://portal.azure.com/) для: управления [трансляциями](live-events-outputs-concept.md) в Службах мультимедиа версии 3, просмотра (без управления) [активов](assets-concept.md) версии 3, а также [получения сведений о доступе к интерфейсам API](./access-api-howto.md). Для всех других задач управления (например, [преобразований и заданий](transforms-jobs-concept.md), а также [защиты содержимого](content-protection-overview.md)) следует использовать [REST API](/rest/api/media/), [CLI](/cli/azure/ams) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

@@ -4,12 +4,12 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 8813794d44803a32bc6e156d3ca76360d84604c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51c54aa732259180a5393488891b21956553f581
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91370833"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92056724"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "91370833"
 
 При создании виртуальной машины можно включить резервное копирование для виртуальных машин, работающих под управлением [поддерживаемых операционных систем](backup-support-matrix-iaas.md#supported-backup-actions).
 
-### <a name="why-initial-backup-is-taking-lot-of-time-to-complete"></a>Зачем нужно выполнять начальное резервное копирование?
+### <a name="why-initial-backup-is-taking-lot-of-time-to-complete"></a>Почему выполнение начального резервного копирования занимает много времени?
 
 Начальное резервное копирование всегда является полной резервной копией и зависит от размера данных и времени обработки резервной копии. <br>
 Чтобы повысить производительность резервного копирования, ознакомьтесь с рекомендациями по [резервному копированию](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction#best-practices). [Вопросы резервного копирования](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction#backup-and-restore-considerations) и [производительность резервного копирования](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction#backup-performance)<br>
@@ -79,7 +79,7 @@ ms.locfileid: "91370833"
 
 ### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>Поддерживает ли Azure Backup стандартные диски, управляемые SSD?
 
-Да, Azure Backup поддерживает [стандартные управляемые диски SSD](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/).
+Да, Azure Backup поддерживает [стандартные управляемые диски SSD](https://docs.microsoft.com/azure/virtual-machines/disks-types#standard-ssd).
 
 ### <a name="can-we-back-up-a-vm-with-a-write-accelerator-wa-enabled-disk"></a>Можно ли создавать резервную копию виртуальной машины с диском с поддержкой ускорителя записи?
 

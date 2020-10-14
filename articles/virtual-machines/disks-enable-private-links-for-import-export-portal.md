@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: ab861b3ed265da9060e2367bdfdeeeee7047c584
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 95c4464d1ab8416f609f75f2b59fb85a578ef5b7
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88815867"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979059"
 ---
 # <a name="use-the-azure-portal-to-restrict-importexport-access-for-managed-disks-with-private-links"></a>Использование портала Azure для ограничения доступа на импорт и экспорт управляемых дисков с помощью Приватного канала
 
@@ -30,12 +30,6 @@ ms.locfileid: "88815867"
 ## <a name="regional-availability"></a>Доступность по регионам
 
 [!INCLUDE [virtual-machines-disks-private-links-regions](../../includes/virtual-machines-disks-private-links-regions.md)]
-
-## <a name="prerequisites"></a>Предварительные требования
-
-Чтобы использовать частные конечные точки для экспорта и импорта управляемых дисков, в подписке должна быть включена эта возможность. Для этого отправьте электронное письмо на адрес mdprivatelinks@microsoft.com и укажите идентификаторы нужных подписок.
-
-Запишите имя виртуальной сети, к которой подключена виртуальная машина с нужными дисками. Эта виртуальная сеть потребуется при настройке частной конечной точки.
 
 ## <a name="create-a-disk-access-resource"></a>Создание ресурса доступа к диску
 
@@ -101,4 +95,4 @@ ms.locfileid: "88815867"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вопросы и ответы о Приватных каналах](./faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
-- [Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell](scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-storage-account.md)
+- [Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell](./scripts/virtual-machines-powershell-sample-copy-snapshot-to-storage-account.md)

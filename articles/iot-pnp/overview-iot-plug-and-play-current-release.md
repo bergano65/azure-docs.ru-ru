@@ -8,12 +8,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: c7ebcdac3174f7eb497ae3e976386ab92212e1ba
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4bd1bb93c9ce0f491c5bf1153917491b88d55109
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91715569"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043720"
 ---
 # <a name="whats-in-the-current-iot-plug-and-play-release"></a>Чем является текущий выпуск IoT Plug and Play
 
@@ -41,10 +41,7 @@ ms.locfileid: "91715569"
 
 - Расширение Интернета вещей для Azure CLI версии 0.10.0.
 
-    Дополнительные сведения см. в статье [Установка и использование расширения Интернета вещей Azure для Azure CLI](howto-use-iot-pnp-cli.md).
-
-    > [!TIP]
-    > Расширение Интернета вещей Azure содержит команды, помогающие сертифицировать устройства. См. раздел `az iot product -h`.
+    Расширение Интернета вещей Azure содержит команды, помогающие сертифицировать устройства. См. раздел `az iot product -h`.
 
 ## <a name="libraries-and-sdks"></a>Библиотеки и пакеты SDK
 
@@ -64,7 +61,7 @@ ms.locfileid: "91715569"
 
 ## <a name="rest-apis"></a>Интерфейсы REST API
 
-REST API [30.09.2020](https://docs.microsoft.com/rest/api/iothub).
+REST API [30.09.2020](/rest/api/iothub).
 
 Дополнительные сведения см. в статье [Руководство для разработчиков IoT Plug and Play](concepts-developer-guide-service.md).
 

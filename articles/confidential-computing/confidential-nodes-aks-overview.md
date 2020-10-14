@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 9/22/2020
 ms.author: amgowda
-ms.openlocfilehash: ae3090689f9999c9ea6aa65447dadbdd7b0b2026
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2aa30f86b32005b9c85664b5bb2d0772a6e5f443
+ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90998543"
+ms.lasthandoff: 10/11/2020
+ms.locfileid: "91940775"
 ---
 # <a name="confidential-computing-nodes-on-azure-kubernetes-service-public-preview"></a>Узлы конфиденциальных вычислений для Службы Azure Kubernetes (общедоступная предварительная версия)
 
@@ -40,7 +40,7 @@ ms.locfileid: "90998543"
 
 #### <a name="sgx-device-plugin"></a>Подключаемый модуль устройства SGX <a id="sgx-plugin"></a>
 
-Подключаемый модуль устройства SGX реализует интерфейс подключаемого модуля устройства Kubernetes для памяти EPC. Фактически этот подключаемый модуль предоставляет память EPC как дополнительный тип ресурса в Kubernetes. Пользователи могут указать для этого ресурса ограничения так же, как для любых других ресурсов. Помимо функции планирования, подключаемый модуль устройства помогает назначить разрешения драйвера устройства SGX для конфиденциальных контейнеров рабочей нагрузки. Пример реализации развертывания на основе памяти EPC (`kubernetes.azure.com/sgx_epc_mem_in_MiB`) вы можете изучить [здесь](https://github.com/azure-samples/confidential-computing/blob/main/containersamples/helloworld/helloworld.yaml).
+Подключаемый модуль устройства SGX реализует интерфейс подключаемого модуля устройства Kubernetes для памяти EPC. Фактически этот подключаемый модуль предоставляет память EPC как дополнительный тип ресурса в Kubernetes. Пользователи могут указать для этого ресурса ограничения так же, как для любых других ресурсов. Помимо функции планирования, подключаемый модуль устройства помогает назначить разрешения драйвера устройства SGX для конфиденциальных контейнеров рабочей нагрузки. Пример реализации развертывания на основе памяти EPC (`kubernetes.azure.com/sgx_epc_mem_in_MiB`) вы можете изучить [здесь](https://github.com/Azure-Samples/confidential-computing/blob/main/containersamples/helloworld/helm/templates/helloworld.yaml).
 
 #### <a name="sgx-quote-helper-service"></a>Вспомогательная служба цитирования SGX <a id="sgx-quote"></a>
 

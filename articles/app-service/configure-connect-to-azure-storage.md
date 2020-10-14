@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 18e3f29a90ae2c6c66858e14ee91fb447a4a0045
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d435a33ba45daf2c8a6a42e51c3e0d58f3abc23b
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968656"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057762"
 ---
 # <a name="access-azure-storage-as-a-network-share-from-a-container-in-app-service"></a>Доступ к хранилищу Azure в качестве сетевой папки из контейнера в Службе приложений
 
@@ -90,7 +90,7 @@ az webapp config storage-account add --resource-group <group-name> --name <app-n
 
 После создания [учетной записи хранения Azure, общей папки и каталога](#prerequisites)вы можете настроить приложение в службе хранилища Azure.
 
-Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке, которую вы хотите подключить из службы хранилища Azure. Если задать для него значение "/", будет подключена вся служба хранилища Azure.
+Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке в контейнере, которую необходимо подключить к службе хранилища Azure. Если задать для него значение "/", весь контейнер будет подключен к службе хранилища Azure.
 
 
 > [!CAUTION]

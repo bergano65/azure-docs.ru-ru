@@ -2,18 +2,18 @@
 title: Создание индекса службы "Поиск Azure" на портале Azure
 titleSuffix: Azure Cognitive Search
 description: В этом кратком руководстве по порталу Azure приводятся сведения об использовании мастера импорта данных для создания, загрузки и запроса первого индекса поиска службы "Когнитивный поиск Azure".
-author: tchristiani
 manager: nitinme
-ms.author: terrychr
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 09/16/2020
-ms.openlocfilehash: 460c37107ac2dbd8bc3377d3716e708331db9904
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: b783366958380f391dc76583c42988badc9915c8
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91740939"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92056486"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 

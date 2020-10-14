@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 4328d1da8c82bc09aa8353838d08c31ea77f58aa
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: ebbdd103350e1de36d45ecf84acf15d477fa34db
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043397"
+ms.locfileid: "92058137"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -98,6 +98,8 @@ ms.locfileid: "92043397"
 
 |Проблема  |Дата обнаружения  |Состояние  |Дата разрешения  |
 |---------|---------|---------|---------|
+|[Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Sep 2020|Есть обходной путь||
+|[Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Sep 2020|Есть обходной путь||
 |[BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql) в Azure SQL и `BACKUP` / `RESTORE` инструкции в управляемый экземпляр не могут использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
 |[Субъект-служба не может получить доступ к Azure AD и AKV](#service-principal-cannot-access-azure-ad-and-akv)|Авг 2020|Есть обходной путь||
 |[Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой](#restoring-manual-backup-without-checksum-might-fail)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|
@@ -127,6 +129,14 @@ ms.locfileid: "92043397"
 |Компонент Database Mail с внешними (не Azure) почтовыми серверами с использованием безопасного подключения||"Разрешено"|Октябрь 2019|
 |Автономные базы данных не поддерживаются в SQL Управляемый экземпляр||"Разрешено"|Авг 2019|
 
+### <a name="distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group"></a>Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера
+
+[Группы доверия сервера](https://docs.microsoft.com/azure/azure-sql/managed-instance/server-trust-group-overview) используются для установления отношений доверия между управляемыми экземплярами, необходимыми для выполнения [распределенных транзакций](https://docs.microsoft.com/azure/azure-sql/database/elastic-transactions-overview). После удаления Управляемый экземпляр из группы доверия серверов или удаления группы вы по-прежнему можете выполнять распределенные транзакции. Существует обходной путь, который можно применить, чтобы убедиться, что распределенные транзакции отключены и [инициируются пользователем вручную при отработке отказа](https://docs.microsoft.com/azure/azure-sql/managed-instance/user-initiated-failover) управляемый экземпляр.
+
+### <a name="distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation"></a>Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования
+
+Управляемый экземпляр операции масштабирования, включающие изменение уровня служб или виртуальных ядер, будут сбрасывать параметры группы доверия сервера на серверной части и отключать выполнение [распределенных транзакций](https://docs.microsoft.com/azure/azure-sql/database/elastic-transactions-overview). В качестве обходного решения удалите и создайте новую [группу доверия серверов](https://docs.microsoft.com/azure/azure-sql/managed-instance/server-trust-group-overview) на портал Azure.
+
 ### <a name="bulk-insert-and-backuprestore-statements-cannot-use-managed-identity-to-access-azure-storage"></a>Инструкции BULK INSERT и BACKUP/Restore не могут использовать управляемое удостоверение для доступа к службе хранилища Azure
 
 Инструкция инструкции reinsert не может использовать `DATABASE SCOPED CREDENTIAL` с управляемым удостоверением для проверки подлинности в службе хранилища Azure. В качестве обходного решения переключитесь на проверку подлинности ПОДПИСАНного URL-доступа. Следующий пример не будет работать в Azure SQL (база данных и Управляемый экземпляр):
@@ -146,7 +156,7 @@ BULK INSERT Sales.Invoices FROM 'inv-2017-12-08.csv' WITH (DATA_SOURCE = 'MyAzur
 
 В некоторых обстоятельствах может существовать ошибка субъекта-службы, используемого для доступа к службам Azure AD и Azure Key Vault (AKV). В результате эта проблема влияет на использование проверки подлинности Azure AD и прозрачного шифрования базы данных (TDE) с помощью SQL Управляемый экземпляр. Это может быть вызвано нерегулярной проблемой подключения или невозможностью выполнения таких инструкций, как создание имени входа или пользователя от внешнего поставщика или выполнение от имени входа или пользователя. Настройка TDE с помощью управляемого клиентом ключа на новом Управляемый экземпляр Azure SQL может также не работать в некоторых обстоятельствах.
 
-**Обходное решение**. чтобы предотвратить возникновение этой проблемы в управляемый экземпляр SQL перед выполнением каких-либо команд обновления или на тот случай, если эта проблема уже возникла после выполнения команд UPDATE, перейдите на портал Azure, откройте [колонку администратора](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#azure-portal)SQL управляемый экземпляр Active Directory. Убедитесь, что отображается сообщение об ошибке "Управляемый экземпляр требуется субъект-служба для доступа к Azure Active Directory. Щелкните здесь, чтобы создать субъект-службу. Если вы столкнулись с этим сообщением об ошибке, щелкните его и выполните пошаговые инструкции, указанные до устранения этой ошибки.
+**Решение**. чтобы предотвратить возникновение этой проблемы в управляемый экземпляр SQL перед выполнением каких-либо команд обновления или на тот случай, если эта проблема уже возникла после выполнения команд UPDATE, перейдите в колонку портал Azure, доступ к [колонке администрирования](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#azure-portal)SQL управляемый экземпляр Active Directory. Убедитесь, что отображается сообщение об ошибке "Управляемый экземпляр требуется субъект-служба для доступа к Azure Active Directory. Щелкните здесь, чтобы создать субъект-службу. Если вы столкнулись с этим сообщением об ошибке, щелкните его и выполните пошаговые инструкции, указанные до устранения этой ошибки.
 
 ### <a name="restoring-manual-backup-without-checksum-might-fail"></a>Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой
 

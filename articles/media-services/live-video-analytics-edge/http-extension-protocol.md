@@ -3,12 +3,12 @@ title: Протокол расширения HTTP (Azure)
 description: Из этой статьи вы узнаете об использовании протокола расширения HTTP для отправки сообщений между модулем службы "Аналитика видеотрансляций" и модулем для искусственного интеллекта или компьютерного зрения.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: bfc8672185d284abc8f2985b44cea92000bc73db
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f1e1fb0e8fe63b3a83c59a4ec48abdac7f22096a
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89448093"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92016660"
 ---
 # <a name="http-extension-protocol"></a>Протокол расширения HTTP
 
@@ -100,4 +100,4 @@ Date: Fri, 17 Apr 2020 04:44:01 GMT
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-[Контракт данных gRPC](grpc-data-contract.md)
+[Контракт данных gRPC](./grpc-extension-protocol.md)

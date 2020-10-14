@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: duau
-ms.openlocfilehash: dbb28726d1c2eaf887ced818284d4b1e0298f8db
-ms.sourcegitcommit: d9ba60f15aa6eafc3c5ae8d592bacaf21d97a871
+ms.openlocfilehash: e25ebd181d0017885a24310e3dac3ff30a59a21e
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91767809"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91973365"
 ---
 # <a name="quickstart-create-and-modify-an-expressroute-circuit"></a>Краткое руководство. Создание и изменение канала ExpressRoute
 
@@ -158,7 +158,7 @@ ms.locfileid: "91767809"
 >* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
 
 
-## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Цепь ExpressRoute можно удалить, щелкнув **соответствующий** значок. 
 

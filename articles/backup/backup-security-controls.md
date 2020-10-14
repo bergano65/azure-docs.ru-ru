@@ -3,12 +3,12 @@ title: Средства управления безопасностью
 description: Сведения об элементах управления безопасностью, используемых в службе Azure Backup. Эти элементы управления помогают службе предотвращать, обнаруживать и отвечать на уязвимости системы безопасности.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 7ff3ff5c1b024a228778b0214e67239d3c8ab721
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40bd35bdf83d336aebd37cdda0a0b59164ac9f7a
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89418761"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92055891"
 ---
 # <a name="security-controls-for-azure-backup"></a>Элементы управления безопасностью для Azure Backup
 
@@ -30,7 +30,7 @@ ms.locfileid: "89418761"
 
 | Управление безопасностью | Да/нет | Примечания| Документация
 |---|---|--|--|
-| Поддержка мониторинга Azure (например, log Analytics, App Insights)| Да | Log Analytics поддерживается через журналы ресурсов. Дополнительные сведения см. в статье [мониторинг Azure Backup защищенных рабочих нагрузок с помощью log Analytics](https://azure.microsoft.com/blog/monitor-all-azure-backup-protected-workloads-using-log-analytics/). |  |
+| Поддержка мониторинга Azure (например, log Analytics, App Insights)| Да | Log Analytics поддерживается через журналы ресурсов. Дополнительные сведения см. в статье [мониторинг Azure Backup защищенных рабочих нагрузок с помощью log Analytics](backup-azure-diagnostics-mode-data-model.md). |  |
 | Ведение журнала и аудит в плоскости управления и управления| Да | Все действия, активированные клиентом на портале Azure, регистрируются в журналах действий. |  |
 | Ведение журнала и аудит в плоскости данных| Нет | К плоскости данных Azure Backup невозможно обратиться напрямую.  |  |
 
@@ -57,6 +57,6 @@ ms.locfileid: "89418761"
 |---|---|--|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да|  |  |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

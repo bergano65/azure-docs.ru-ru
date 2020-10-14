@@ -8,12 +8,12 @@ ms.author: mbullwin
 ms.date: 06/26/2019
 ms.reviewer: daviste
 ms.custom: mvc
-ms.openlocfilehash: 0539dcecbbbfe28817122e0f47e813182a9abd9d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 27b74f99d926bf72bc22f153a8d76deb56646987
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87322148"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993889"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 
@@ -124,7 +124,7 @@ Application Insights может выполнять запросы, сегмен�
    1. Выберите запрос, щелкнув в любом месте запроса в текстовом редакторе.
    2. Затем щелкните **Начать**, чтобы выполнить запрос. 
 
-   Узнайте больше об [аналитике Application Insights](../log-query/log-query-overview.md) и [языке запросов Log Analytics](https://aka.ms/LogAnalyticsLanguageReference).
+   Узнайте больше об [аналитике Application Insights](../log-query/log-query-overview.md) и [языке запросов Log Analytics](/azure/data-explorer/kusto/query/).
 
 
 2. **Сегментирование и фильтрация данных телеметрии пользовательских событий.** На странице **Обзор** Application Insights выберите **Пользователи** в оглавлении.
@@ -168,4 +168,3 @@ Application Insights может выполнять запросы, сегмен�
 
 > [!div class="nextstepaction"]
 > [Узнайте, как пользователи используют ваше приложение](../app/usage-overview.md)
-
