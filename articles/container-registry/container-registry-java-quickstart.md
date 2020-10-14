@@ -6,12 +6,12 @@ ms.custom: devx-track-java, devx-track-azurecli
 ms.author: karler
 ms.topic: quickstart
 ms.date: 02/26/2020
-ms.openlocfilehash: 42200fe61b0ac73a63b9f8a3317687fac60c5c02
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9e400ee0bae2690a84f9cfd3f6a76359e08eabc2
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88078586"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018344"
 ---
 # <a name="quickstart-build-and-push-java-container-images-to-azure-container-registry"></a>Краткое руководство. Сборка и отправка образов контейнера Java в Реестр контейнеров Azure
 
@@ -177,5 +177,5 @@ docker pull <your registry name>.azurecr.io/gs-spring-boot-docker
 * [Working with Azure DevOps and Java](/azure/devops/java) (Работа с Azure DevOps и Java)
 * [Spring Boot on Docker Getting Started](https://spring.io/guides/gs/spring-boot-docker)
 * [Spring Initializr](https://start.spring.io)
-* [Развертывание приложения Spring Boot Application в службе приложений Azure](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin)
+* [Развертывание приложения Spring Boot Application в службе приложений Azure](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-on-linux#configure-maven-to-build-image-to-your-azure-container-registry)
 * [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux](../app-service/tutorial-custom-container.md)

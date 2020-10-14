@@ -10,12 +10,12 @@ ms.author: dobett
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 73eb0b3164a386bb270e42ceba56d5dc7045af1c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6ecc79eb52acbe393ac2777a0ec388e538a7f8fd
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81729005"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91978906"
 ---
 # <a name="what-is-azure-internet-of-things-iot"></a>Что такое Интернет вещей Azure
 
@@ -74,6 +74,8 @@ Azure IoT — это коллекция управляемых корпорац�
 
 Реальные примеры использования Интернета вещей в компаниях см. [здесь](https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured). 
 
+Подробное рассмотрение архитектуры Интернета вещей см. в документе [Microsoft Azure IoT Reference Architecture](https://aka.ms/iotrefarchitecture) (Эталонная архитектура Microsoft Azure IoT).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о бизнес-моделях и используемой архитектуре см. [здесь](https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured).
@@ -81,5 +83,3 @@ Azure IoT — это коллекция управляемых корпорац�
 Некоторые примеры проектов, которые можно опробовать с IoT DevKit, см. в [каталоге проекта IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/projects/). 
 
 Более подробное объяснение работы разных служб и их использования см. в статье о [технологиях и решениях Интернета вещей Azure](iot-services-and-technologies.md).
-
-Подробное рассмотрение архитектуры Интернета вещей см. в документе [Microsoft Azure IoT Reference Architecture](https://aka.ms/iotrefarchitecture) (Эталонная архитектура Microsoft Azure IoT).

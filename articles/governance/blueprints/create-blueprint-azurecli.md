@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы с помощью Azure CLI
 description: В рамках этого краткого руководства вы будете использовать Azure Blueprints для создания, определения и развертывания артефактов с помощью Azure CLI.
-ms.date: 06/02/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 3dfb74469bc186c25b918bfe87c7ce6f1930f2e1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 790e23897a24ea06565572163b8226af88e0bb7c
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91667713"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057966"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Краткое руководство. Определение и назначение схемы Azure с помощью Azure CLI
 

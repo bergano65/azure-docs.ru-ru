@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/02/2020
-ms.openlocfilehash: cf48e26133326d43754b38df6f3b2caaf7a587ab
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c9a7ba63246f747a132c315e22452ca9c7144448
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978094"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92058188"
 ---
 # <a name="operationalinsights-api-version-retirement"></a>Прекращение использования версии API OperationalInsights
 Корпорация Майкрософт предоставляет уведомление не менее чем за 12 месяцев до прекращения использования API для сглаживания перехода до более новой или поддерживаемой версии. Мы выпустили новую версию (2020-08-01) для API поставщика ресурсов **OperationalInsights** и запустим более ранние версии API до 31 октября 2023 г. Поскольку новые функции и функции и оптимизации добавляются только к текущему API, следует как можно раньше выполнить обновление до последней версии API.
@@ -67,4 +67,4 @@ ms.locfileid: "91978094"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [Справочник по API OperationalInsights](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/allversions).
+- См. [Справочник по API рабочей области OperationalInsights](https://docs.microsoft.com/rest/api/loganalytics/workspaces).

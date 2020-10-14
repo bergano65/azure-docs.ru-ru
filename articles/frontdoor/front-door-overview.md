@@ -12,18 +12,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/27/2020
 ms.author: duau
-ms.openlocfilehash: bf0d802dc4ea4d18122a12b107dfb0cc0af80d63
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: e5b8e5059d4d7df8d7061698ea29d7a6785236f9
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91773456"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91825650"
 ---
 # <a name="what-is-azure-front-door"></a>Что такое Azure Front Door?
 
 Azure Front Door — это глобальная масштабируемая точка входа, которая использует глобальную промежуточную подсеть Майкрософт для создания быстрых, безопасных и масштабируемых веб-приложений. С помощью службы Front Door вы можете преобразовать глобальные пользовательские и корпоративные приложения в современные, надежные, высокопроизводительные и персонализированные приложения с содержимым, которое охватывает глобальную аудиторию с помощью Azure.
 
-:::image type="content" source="media/front-door-overview/front-door-visual-diagram.png#center" alt-text="Архитектура Front Door":::
+<p align="center">
+  <img src="./media/front-door-overview/front-door-visual-diagram.png" alt="Front Door architecture" width="600" title="Azure Front Door">
+</p>
 
 Служба Front Door работает на протоколах 7-го уровня (уровня HTTP/HTTPS), используя протокол произвольной передачи с разделенным протоколом TCP, а также глобальную сеть Майкрософт, чтобы улучшить возможность глобального подключения. Основываясь на методе маршрутизации, вы можете убедиться, что служба Front Door будет направлять клиентские запросы в самую быструю и доступную серверную часть приложения. Серверная часть приложения — это любая служба, размещенная в среде Azure или за ее пределами, с доступом в Интернет. Служба Front Door предоставляет целый ряд [методов маршрутизации трафика](front-door-routing-methods.md) и [параметров мониторинга работоспособности сервера](front-door-health-probes.md), подходящих для приложений с различными потребностями и сценариями автоматического перехода на другой ресурс. Так же как и [Диспетчер трафика](../traffic-manager/traffic-manager-overview.md), служба Front Door устойчива к сбоям, в том числе к сбоям всего региона Azure.
 

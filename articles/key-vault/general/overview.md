@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 10/01/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a9886b005c5459456e005273dd11e2c3c183176f
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 856c5f106f164a98b60fdb3eeda31d6099d5b7bd
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91744242"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932011"
 ---
 # <a name="about-azure-key-vault"></a>Об Azure Key Vault
 
@@ -25,7 +25,7 @@ Azure Key Vault помогает в решении следующих пробл
 - **Управление ключами.** Azure Key Vault также может использоваться как решение по управлению ключами. Эта служба позволяет легко создавать и контролировать ключи шифрования, используемые для шифрования данных. 
 - **Управление сертификатами.** С помощью службы Azure Key Vault можно с легкостью подготавливать, администрировать и развертывать общедоступные и частные сертификаты TLS/SSL для использования в Azure и внутренних подключенных ресурсах.
 
-Azure Key Vault предлагает два уровня служб: "Стандартный" (шифруется с использованием программного ключа) и "Премиум" (включает защищенные модулем HSM ключи). Сравнение этих уровней см. на [странице цен Azure Key Vault](/pricing/details/key-vault).
+Azure Key Vault предлагает два уровня служб: "Стандартный" (шифруется с использованием программного ключа) и "Премиум" (включает защищенные модулем HSM ключи). Сравнение этих уровней см. на [странице цен Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
 
 ## <a name="why-use-azure-key-vault"></a>Использование Azure Key Vault
 
