@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/20/2020
 ms.author: jeedes
-ms.openlocfilehash: 52b45bf7457a81b605df91e63a7c6ad539309dd8
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 5f7e85cc37d5a899681b5dd1466c216f1be39a61
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88538660"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708809"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-8x8"></a>Руководство по Интеграция единого входа Azure Active Directory с 8x8
 
@@ -147,11 +147,11 @@ ms.locfileid: "88538660"
 
 1. На домашней странице щелкните **Identity Management** (Управление идентификаторами).
 
-    ![8x8 Configuration Manager](./media/8x8virtualoffice-tutorial/configure1.png)
+    ![Снимок экрана с выделенной плиткой Identity Management (Управление удостоверениями).](./media/8x8virtualoffice-tutorial/configure1.png)
 
 1. Установите флажок **Single Sign On (SSO)** (Единый вход) и выберите **Microsoft Azure AD**.
 
-    ![8x8 Configuration Manager](./media/8x8virtualoffice-tutorial/configure2.png)
+    ![Снимок экрана: параметры Single Sign On (SSO) (Единый вход) и Microsoft Azure AD.](./media/8x8virtualoffice-tutorial/configure2.png)
 
 1. Скопируйте три URL-адреса и сертификат подписи со страницы **Настройка единого входа с помощью SAML** в Azure AD в раздел **Microsoft Azure AD SAML Settings** (Параметры SAML для Microsoft Azure AD) в 8x8 Configuration Manager.
 
@@ -173,23 +173,23 @@ ms.locfileid: "88538660"
 
 1. На панели приложения выберите **Virtual Office Account Mgr** (Диспетчер учетных записей Virtual Office).
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_001.png)
+    ![Снимок экрана: плитка Virtual Office Account Mgr (Диспетчер учетных записей Virtual Office).](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_001.png)
 
 1. Выберите в качестве учетной записи, которой нужно управлять, **Business** (Рабочая) и нажмите кнопку **Sign In** (Вход).
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_002.png)
+    ![Снимок экрана: параметр Business (Рабочая) и кнопка Sign In (Вход).](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_002.png)
 
 1. В списке меню щелкните вкладку **ACCOUNTS** (Учетные записи).
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_003.png)
+    ![Снимок экрана: вкладка ACCOUNTS (Учетные записи) в списке меню.](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_003.png)
 
 1. В списке Accounts (Учетные записи) щелкните **Single Sign On** (Единый вход).
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_004.png)
+    ![Снимок экрана: параметр Single Sign On (Единый вход)](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_004.png)
 
 1. В разделе "Authentication methods" (Методы аутентификации) установите флажок **Signle Sign On** (Единый вход), а затем щелкните **SAML**.
 
-    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_005.png)
+    ![Снимок экрана: параметры SAML и Signle Sign On (Единый вход).](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_005.png)
 
 1. В разделе **SAML Single Sign on** (Единый вход SAML) выполните следующие действия.
 

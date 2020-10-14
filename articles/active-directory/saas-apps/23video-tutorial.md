@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/07/2019
 ms.author: jeedes
-ms.openlocfilehash: d4271c2d298744f339ac577a0db585dd8c309b16
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 1dc2aba6241ef498cd6802c7490e46552e7737ab
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88538843"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708821"
 ---
 # <a name="tutorial-integrate-23-video-with-azure-active-directory"></a>Руководство по интеграции 23 Video с Azure Active Directory
 
@@ -138,11 +138,11 @@ ms.locfileid: "88538843"
 
 3. В разделе **Users** (Пользователи) щелкните **Configure** (Настройка).
 
-    ![Назначение пользователя](./media/23video-tutorial/tutorial-23video-10.png)
+    ![Снимок экрана: выделенный раздел "Пользователи".](./media/23video-tutorial/tutorial-23video-10.png)
 
 4. Щелкните **Add a new user**(Добавить нового пользователя).
 
-    ![Назначение пользователя](./media/23video-tutorial/tutorial-23video-11.png)
+    ![Снимок экрана: выделенная кнопка "Добавить нового пользователя".](./media/23video-tutorial/tutorial-23video-11.png)
 
 5. В разделе **Invite someone to join this site** (Пригласить присоединиться к сайту) выполните следующие действия.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 1bdda60d3b6f5e763bd31b25ab0fd8c2783f978d
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: cd07370c75ac64fa8e3806fed50a64db90122c76
+ms.sourcegitcommit: 19dce034650c654b656f44aab44de0c7a8bd7efe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88537939"
+ms.lasthandoff: 10/04/2020
+ms.locfileid: "91708328"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Руководство по интеграции единого входа Azure Active Directory с AcquireIO
 
@@ -134,15 +134,15 @@ ms.locfileid: "88537939"
 
 1. В левой части меню щелкните **App Store**.
 
-     ![Конфигурация AcquireIO](./media/acquireio-tutorial/config01.png)
+     ![Снимок экрана: выделенный элемент "App Store".](./media/acquireio-tutorial/config01.png)
 
 1. Прокрутите страницу вниз до **Active Directory** и щелкните **Install** (Установить).
 
-    ![Конфигурация AcquireIO](./media/acquireio-tutorial/config02.png)
+    ![Снимок экрана: выделенный раздел Active Directory и кнопка "Установить".](./media/acquireio-tutorial/config02.png)
 
 1. Во всплывающем элементе "Active Directory" выполните следующие действия.
 
-    ![Конфигурация AcquireIO](./media/acquireio-tutorial/config03.png)
+    ![Снимок экрана: экран Active Directory.](./media/acquireio-tutorial/config03.png)
 
     а. Щелкните **Copy** (Копировать), чтобы скопировать URL-адрес ответа для своего экземпляра, и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -162,7 +162,7 @@ ms.locfileid: "88537939"
 
 1. В левой части меню щелкните **Profiles** (Профили) и выберите **Add Profile** (Добавить профиль).
 
-     ![Конфигурация AcquireIO](./media/acquireio-tutorial/config04.png)
+     ![Снимок экрана: выделенный элемент "Профили" в меню в левой части экрана и выделенный параметр "Добавить профиль".](./media/acquireio-tutorial/config04.png)
 
 1. Во всплывающем элементе **Add customer** (Добавление клиента) выполните следующие действия.
 

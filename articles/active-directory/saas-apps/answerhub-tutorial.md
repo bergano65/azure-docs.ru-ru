@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: d453cc5300dc658e4b33bb0591100deae5f34aef
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 69ebc238d36223a4287ae1de668f60f9c2db014a
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88544746"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713589"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Руководство. Интеграция Azure Active Directory с AnswerHub
 
@@ -140,7 +140,7 @@ ms.locfileid: "88544746"
 
 4. На вкладке **IDP Config** (Настройка поставщика удостоверений) выполните следующие действия.
 
-    ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785172.png "Настройка SAML")  
+    ![На снимке экрана показана страница AnswerHub с выбранной вкладкой "Пользователи и группы".](./media/answerhub-tutorial/ic785172.png "Настройка SAML")  
   
     а. В поле **IDP Login URL** (URL-адрес для входа через поставщик удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
   
@@ -231,7 +231,7 @@ ms.locfileid: "88544746"
 
 4. На панели слева, в области **Manage Users** (Управление пользователями) выберите **Create or import users** (Создать или импортировать пользователей), а затем **Users and groups** (Пользователи и группы).
 
-   ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785175.png "Пользователи и группы")
+   ![На снимке экрана показана страница AnswerHub с выбранной вкладкой "Пользователи и группы", а также ссылкой "Создать или импортировать пользователей".](./media/answerhub-tutorial/ic785175.png "Пользователи и группы")
 
 5. В соответствующих полях введите **адрес электронной почты**, **имя пользователя** и **пароль** существующей учетной записи AAD, которую вы хотите добавить, а затем щелкните **Save** (Сохранить).
 

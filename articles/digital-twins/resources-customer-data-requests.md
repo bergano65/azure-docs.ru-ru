@@ -8,12 +8,12 @@ ms.date: 05/05/2020
 ms.topic: conceptual
 ms.service: digital-twins
 services: digital-twins
-ms.openlocfilehash: 31da6a6b5375571f53cd7b478e957cc350ef591c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60aa6ed3f1b66d88d05751fdee2444120705f8d2
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86522352"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047698"
 ---
 # <a name="azure-digital-twins-customer-data-request-features"></a>Функции запроса данных клиентов Azure Digital двойников
 
@@ -35,7 +35,7 @@ Azure Digital двойников считает *персональные дан
 
 ## <a name="deleting-customer-data"></a>Удаление данных клиента
 
-Администраторы Digital двойников могут использовать портал Azure для удаления данных, связанных с пользователями. Кроме того, можно выполнять операции удаления для отдельных цифровых двойников с помощью интерфейсов API-интерфейса Azure Digital двойников. Дополнительные сведения о доступных интерфейсах API см. в [документации по API-интерфейсам двойников для цифровых технологий Azure Digital](https://docs.microsoft.com/rest/api/azure-digitaltwins/).
+Администраторы Digital двойников могут использовать портал Azure для удаления данных, связанных с пользователями. Кроме того, можно выполнять операции удаления для отдельных цифровых двойников с помощью интерфейсов API-интерфейса Azure Digital двойников. Дополнительные сведения о доступных интерфейсах API см. в [документации по API-интерфейсам двойников для цифровых технологий Azure Digital](/rest/api/azure-digitaltwins/).
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 
@@ -45,4 +45,4 @@ Azure Digital двойников считает *персональные дан
 
 ## <a name="links-to-additional-documentation"></a>Ссылки на дополнительную документацию
 
-Полный список API-интерфейсов службы Digital двойников для Azure см. в [документации по API-интерфейсам Azure Digital двойников](https://docs.microsoft.com/rest/api/azure-digitaltwins/).
+Полный список API-интерфейсов службы Digital двойников для Azure см. в [документации по API-интерфейсам Azure Digital двойников](/rest/api/azure-digitaltwins/).
