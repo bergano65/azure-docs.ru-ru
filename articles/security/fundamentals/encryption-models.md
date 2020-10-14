@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 836e01d3cd8fb25dda1616803d8b6f3e9ff4e06f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b92c84234432320aa08017a15fbf8a5a4630eb3
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89645756"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92019738"
 ---
 # <a name="data-encryption-models"></a>Модели шифрования данных
 
@@ -149,7 +149,7 @@ ms.locfileid: "89645756"
 | Когнитивный поиск Azure           | Да                | Да                | -                  |
 | Azure Cognitive Services         | Да                | Да                | -                  |
 | Машинное обучение Azure           | Да                | Да                | -                  |
-| Студия машинного обучения Azure    | Да                | 2048-разрядный RSA (предварительная версия) | -               |
+| Машинное обучение Azure Studio (классическая модель) | Да         | 2048-разрядный RSA (предварительная версия) | -               |
 | Content Moderator                | Да                | Да                | -                  |
 | Распознавание лиц                             | Да                | Да                | -                  |
 | Распознавание речи           | Да                | Да                | -                  |
@@ -164,7 +164,7 @@ ms.locfileid: "89645756"
 | Функции                        | Да                | Да                | -                  |
 | Службы Azure Analysis Services          | Да                | -                  | -                  |
 | Каталог данных Azure               | Да                | -                  | -                  |
-| Azure HDInsight                  | Да                | All                | -                  |
+| Azure HDInsight                  | Да                | Все                | -                  |
 | Azure Monitor Application Insights | Да                | Да                | -                  |
 | Azure Monitor Log Analytics      | Да                | Да                | -                  |
 | Azure Data Explorer              | Да                | Да                | -                  |
@@ -242,7 +242,7 @@ ms.locfileid: "89645756"
 
 \*\* Эта служба поддерживает хранение данных в собственной Key Vault, учетной записи хранения или другой сохраняемой службе данных, которая уже поддерживает Server-Sideное шифрование с помощью ключа Customer-Managed.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте [, как используется шифрование в Azure](encryption-overview.md).
 - Узнайте, как Azure использует [двойное шифрование](double-encryption.md) для устранения угроз, поступающих от шифрования данных.
