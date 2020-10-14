@@ -8,12 +8,12 @@ ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 8ccd9120937148043590d30232acd6b556b09dc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56f98d41fc73cdd2be0923de66a5af09c875a050
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87015278"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92013599"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "87015278"
 *  **Процесс**. Пользователи могут подключаться к базе данных и выполнять операции обработки, а также анализировать данные шаблона базы данных.
 *  **Чтение**. Пользователи могут использовать клиентское приложение, чтобы подключиться к шаблону базы данных и анализировать его данные.
 
-При создании проекта табличной модели вы создаете роли и добавляете пользователей или группы в эти роли с помощью диспетчера ролей в Visual Studio с Analysis Services проектами. При развертывании на сервере используйте SQL Server Management Studio (SSMS), [Analysis Services командлеты PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference)или [язык сценариев табличных моделей](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) для добавления и удаления ролей и членов пользователей.
+При создании проекта табличной модели вы создаете роли и добавляете пользователей или группы в эти роли с помощью диспетчера ролей в Visual Studio с Analysis Services проектами. При развертывании на сервере используйте SQL Server Management Studio (SSMS), [Analysis Services командлеты PowerShell](/analysis-services/powershell/analysis-services-powershell-reference)или [язык сценариев табличных моделей](/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) для добавления и удаления ролей и членов пользователей.
 
 При добавлении **группы безопасности**используйте `obj:groupid@tenantid` .
 
@@ -85,7 +85,7 @@ ms.locfileid: "87015278"
 
 ## <a name="to-add-roles-and-users-by-using-a-tmsl-script"></a>Добавление ролей и пользователей с помощью сценария TMSL
 
-Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](https://docs.microsoft.com/analysis-services/tmsl/createorreplace-command-tmsl) и объект [Роли](https://docs.microsoft.com/analysis-services/tmsl/roles-object-tmsl).
+Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](/analysis-services/tmsl/createorreplace-command-tmsl) и объект [Роли](/analysis-services/tmsl/roles-object-tmsl).
 
 **Пример скрипта TMSL**
 
@@ -119,13 +119,13 @@ ms.locfileid: "87015278"
 
 ## <a name="to-add-roles-and-users-by-using-powershell"></a>Добавление ролей и пользователей с помощью PowerShell
 
-Модуль [SqlServer](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Следующие командлеты используются для управления ролями базы данных и пользователями.
+Модуль [SqlServer](/analysis-services/powershell/analysis-services-powershell-reference) предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Следующие командлеты используются для управления ролями базы данных и пользователями.
   
 |Командлет|Описание|
 |------------|-----------------| 
-|[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
-|[Remove-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
-|[Invoke-ASCmd](https://docs.microsoft.com/powershell/module/sqlserver/invoke-ascmd)|Выполнение сценария TMSL.|
+|[Add-RoleMember](/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
+|[Remove-RoleMember](/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
+|[Invoke-ASCmd](/powershell/module/sqlserver/invoke-ascmd)|Выполнение сценария TMSL.|
 
 ## <a name="row-filters"></a>Фильтры строк  
 
@@ -151,5 +151,4 @@ ms.locfileid: "87015278"
 
   [Управление администраторами сервера](analysis-services-server-admins.md)   
   [Управление службами Azure Analysis Services с помощью PowerShell](analysis-services-powershell.md)  
-  [Справочник по языку TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference)
-
+  [Справочник по языку TMSL](/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference)

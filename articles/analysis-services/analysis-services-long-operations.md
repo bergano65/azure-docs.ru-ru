@@ -6,12 +6,12 @@ ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: owend
-ms.openlocfilehash: 5195d63180d45ad408256264e3cf10174e55cd96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e069effae0cb7f834b2c3dac696d05304d841a7
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87551954"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014840"
 ---
 # <a name="best-practices-for-long-running-operations"></a>Рекомендации по выполнению длительных операций
 
@@ -45,10 +45,9 @@ REST API допускает такую перезагрузку, но не по�
 Используя реплики запросов только для чтения, а обновления выполняются в пакетах, пользователи клиентских приложений могут продолжать запрашивать старый моментальный снимок данных в репликах только для чтения. После завершения обновления можно выполнить операцию синхронизации, чтобы перевести реплики, доступные только для чтения, в актуальное состоянии.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Asynchronous refresh with the REST API](analysis-services-async-refresh.md) (Асинхронное обновление с помощью REST API)  
 [Azure Analysis Services scale-out](analysis-services-scale-out.md) (Горизонтальное масштабирование служб Azure Analysis Services)  
 [Высокая доступность служб Analysis Services](analysis-services-bcdr.md)  
-[Руководство по повторным попыткам для служб Azure](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific)   
-
+[Руководство по повторным попыткам для служб Azure](/azure/architecture/best-practices/retry-service-specific)

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/28/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 76d1fd91053216103ef6ace0e56979c57eca569f
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: bf39bd0c787ed64d573cc2a257442b4d3bb8ab7d
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92002652"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015120"
 ---
 # <a name="convert-industry-standard-models-to-dtdl-for-azure-digital-twins"></a>Преобразование стандартных отраслевых моделей в ДТДЛ для Azure Digital двойников
 
@@ -31,8 +31,8 @@ ms.locfileid: "92002652"
 | Вертикальная отрасль | Модель |
 | --- | --- | 
 | Здания и управление ссудами | [реалестатекоре](https://www.realestatecore.io/)<br>[Схема модуля](https://brickschema.org/ontology/1.1/)<br>[Создание топологии Онтологи (BOT)](https://w3c-lbd-cg.github.io/bot/)<br>[Сеть семантического датчика](https://www.w3.org/TR/vocab-ssn/)<br>[Классы Буилдингсмарт Industry Foundation (ИФК)](https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/) |
-| Интеллектуальные города | [ЕТСИ НГСИ-LD](https://www.etsi.org/deliver/etsi_gr/CIM/001_099/008/01.01.01_60/gr_CIM008v010101p.pdf)<br>[Справочник по интеллектуальным приложениям (САРЕФ)](https://saref.etsi.org/) |
-| Сетка энергии | [Модель CIM](https://cimug.ucaiug.org/) / [IEC 61968](https://en.wikipedia.org/wiki/IEC_61968) | 
+| Интеллектуальные города | [ЕТСИ НГСИ-LD](https://www.etsi.org/deliver/etsi_gr/CIM/001_099/008/01.01.01_60/gr_CIM008v010101p.pdf)<br>[Справочник по интеллектуальным приложениям (САРЕФ)](https://saref.etsi.org/)<br>[фиваре](https://www.fiware.org/)<br>[Открытие & гибких смарт-городов (ОАСК)](https://oascities.org/) |
+| Сетка энергии | [Модель CIM](https://cimug.ucaiug.org/) / [IEC 61968](https://en.wikipedia.org/wiki/IEC_61968)<br>[Модели адрм](http://www.adrm.com/) для торговли энергии и товара | 
 
 В зависимости от потребностей можно также использовать ДТДЛ для настройки или расширения отраслевых моделей или разработки собственной настраиваемой модели с нуля. 
 

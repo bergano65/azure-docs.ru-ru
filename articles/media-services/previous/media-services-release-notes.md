@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4d335affa5a06bdb8e5c733c871654cf58947581
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd4f50365ced61e35ae6d10a9763a0f9815098d7
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652964"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014109"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -53,10 +53,10 @@ ms.locfileid: "91652964"
 
 Следующие свойства v2 больше не будут заполнены данными о ходе выполнения задания с предысторией:
 
-* [хисторикалевентс](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.historicalevents)
-* [перфмессаже](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.perfmessage)
+* [хисторикалевентс](/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.historicalevents)
+* [перфмессаже](/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.perfmessage)
 
-Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения см. в разделе:
+Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения можно найти в разделе
 
 * [Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-queues.md)
 * [Использование веб-перехватчиков Azure для мониторинга уведомлений о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-webhooks.md)
@@ -81,7 +81,7 @@ ms.locfileid: "91652964"
 
 Мы сообщаем о прекращении использования обработчиков мультимедиа *Windows Azure Media Encoder* (ВАМЕ) и *кодировщика мультимедиа Azure* (AME). Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md).
 
-Дополнительные сведения см. в разделах [Переход с ВАМЕ на стандартный кодировщик Служб мультимедиа](https://go.microsoft.com/fwlink/?LinkId=2101334) и [Переход с AME на стандартный кодировщик Служб мультимедиа](https://go.microsoft.com/fwlink/?LinkId=2101335).
+Дополнительные сведения см. в разделах [Переход с ВАМЕ на стандартный кодировщик Служб мультимедиа](./migrate-windows-azure-media-encoder.md) и [Переход с AME на стандартный кодировщик Служб мультимедиа](./migrate-azure-media-encoder.md).
 
 ## <a name="march-2019"></a>Март 2019 г.
 
@@ -198,7 +198,7 @@ ms.locfileid: "91652964"
 
 ## <a name="april-2016-release"></a><a id="apr_changes16"></a>Выпуск: апрель 2016 г.
 ### <a name="media-analytics"></a>Аналитика мультимедиа
- В службах мультимедиа появилась возможность аналитики мультимедиа для интеллектуальной работы с видео. Дополнительные сведения см. в статье [Медиа-аналитика на платформе служб мультимедиа](media-services-analytics-overview.md).
+ В службах мультимедиа появилась возможность аналитики мультимедиа для интеллектуальной работы с видео. Дополнительные сведения см. в статье [Медиа-аналитика на платформе служб мультимедиа](./legacy-components.md).
 
 ### <a name="apple-fairplay-preview"></a>Apple FairPlay (предварительная версия)
 С помощью служб мультимедиа теперь можно выполнить динамическое шифрование содержимого HTTP Live Streaming (HLS) с помощью Apple FairPlay. Кроме того, вы можете использовать службу доставки лицензий для служб мультимедиа для доставки клиентам лицензий FairPlay. Подробные сведения см. в статье об использовании служб мультимедиа Azure для потоковой передачи содержимого HLS, защищенного с помощью Apple FairPlay.
@@ -275,7 +275,7 @@ Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfi
 ## <a name="july-2015-release"></a><a id="july_changes_15"></a>Выпуск: июль 2015 г.
 * Media Encoder Standard стал общедоступным. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
   
-    В Media Encoder Standard используются предустановки, описанные в [этой](https://go.microsoft.com/fwlink/?LinkId=618336) статье. Если вы используете предустановку для кодирования видео в формате 4K, вам необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в [обзоре масштабирования обработки мультимедиа](media-services-scale-media-processing-overview.md).
+    В Media Encoder Standard используются предустановки, описанные в [этой](./media-services-mes-presets-overview.md) статье. Если вы используете предустановку для кодирования видео в формате 4K, вам необходимы зарезервированные единицы типа "Премиум". Дополнительные сведения см. в [обзоре масштабирования обработки мультимедиа](media-services-scale-media-processing-overview.md).
 * Интерактивные субтитры в режиме реального времени использовались в службах и Проигрывателе мультимедиа. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/).
 
 ### <a name="media-services-net-sdk-updates"></a>Обновления пакета SDK служб мультимедиа для .NET

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 28947d1fa4ece5d6285651ef07342cae06ad8bc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d114017d5e5dfecfe20afc69849763a87aadd41
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86077377"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015325"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -33,8 +33,8 @@ Analysis Services также поддерживает операции, выпо
 
 Учетные данные и сертификаты субъектов-служб могут храниться в службе автоматизации Azure для выполнения операций с модулями runbook. Дополнительные сведения см. на следующих ресурсах:
 
-[Ресурсы учетных данных в службе автоматизации Azure](../automation/automation-credentials.md)   
-[Сертификация активов в службе автоматизации Azure](../automation/automation-certificates.md)
+[Ресурсы учетных данных в службе автоматизации Azure](../automation/shared-resources/credentials.md)   
+[Сертификация активов в службе автоматизации Azure](../automation/shared-resources/certificates.md)
 
 ## <a name="add-service-principals-to-server-admin-role"></a>Добавление субъектов-служб к роли администратора сервера
 
@@ -92,7 +92,7 @@ Invoke-ProcessTable -Server "asazure://westcentralus.asazure.windows.net/myserve
 
 ### <a name="amo-and-adomd"></a>Объекты AMO и ADOMD 
 
-При подключении к клиентским приложениям и веб-приложениям устанавливаемые пакеты от NuGet [клиентских библиотек AMO и ADOMD](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current) версии 15.0.2 и выше поддерживают субъекты-службы в строках подключения с помощью следующего синтаксиса: `app:AppID` и пароль или `cert:thumbprint`. 
+При подключении к клиентским приложениям и веб-приложениям устанавливаемые пакеты от NuGet [клиентских библиотек AMO и ADOMD](/analysis-services/client-libraries?view=azure-analysis-services-current) версии 15.0.2 и выше поддерживают субъекты-службы в строках подключения с помощью следующего синтаксиса: `app:AppID` и пароль или `cert:thumbprint`. 
 
 В следующем примере `appID` и `password` используются для выполнения операции обновления шаблона базы данных:
 
@@ -109,8 +109,8 @@ db.Model.SaveChanges();
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
+[Sign in with Azure PowerShell](/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
 [Обновление с помощью Logic Apps](analysis-services-refresh-logic-app.md)  
 [Refresh with Azure Automation](analysis-services-refresh-azure-automation.md) (Обновление с помощью службы автоматизации Azure)  
 [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)  
-[Автоматизация задач по управлению рабочими областями Premium и наборами данных с помощью субъектов-служб](https://docs.microsoft.com/power-bi/admin/service-premium-service-principal) 
+[Автоматизация задач по управлению рабочими областями Premium и наборами данных с помощью субъектов-служб](/power-bi/admin/service-premium-service-principal)

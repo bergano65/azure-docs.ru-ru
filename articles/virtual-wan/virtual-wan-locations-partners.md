@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
-ms.openlocfilehash: d1655b42b57edaeeaaaada802a248f56e0ba1470
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c689c83e50a42885900f62d1a65d0aa75f36f2ec
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91801466"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014038"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Расположения партнеров и виртуального концентратора Виртуальной глобальной сети
 
@@ -40,7 +40,7 @@ ms.locfileid: "91801466"
 
 [!INCLUDE [partners](../../includes/virtual-wan-partners-include.md)]
 
-Следующие партнеры посвящены нашей стратегии в ближайшем будущем: 128 технологии, Ариста, Cisco Systems (Виптела), сети F5, Oracle SD-WAN и Шарплинк.
+Следующие партнеры посвящены нашему плану, основанный на терминах, подписанных между компаниями, которые указывают область действия для автоматизации подключения IPsec между устройством партнера и VPN-шлюзами виртуальной сети Azure: 128 Technologies, Ариста, F5 Networks, Oracle SD-WAN (талари) и Шарплинк.
 
 ## <a name="partners-with-integrated-virtual-hub-offerings"></a>Партнеры с интегрированными предложениями виртуальных концентраторов
 Помимо автоматического подключения по протоколу IPSec в филиалах, некоторые партнеры предлагают **Виртуальные сетевые устройства (NVA)** , которые можно интегрировать непосредственно в виртуальный концентратор глобальной сети Azure.  Благодаря этому клиенты могут прерывать подключения филиалов в совместимом устройстве сторонних производителей в виртуальном концентраторе.  
@@ -66,7 +66,7 @@ ms.locfileid: "91801466"
 
 [!INCLUDE [regions](../../includes/virtual-wan-regions-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в статье [Часто задаваемые вопросы по виртуальным глобальным сетям (предварительная версия)](virtual-wan-faq.md).
 

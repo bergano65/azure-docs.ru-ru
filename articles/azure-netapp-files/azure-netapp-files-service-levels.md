@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/06/2020
+ms.date: 10/12/2020
 ms.author: b-juche
-ms.openlocfilehash: 1c64bd10b34b61797cb3bf3de0cd7d2aa819e795
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7eac6a40476cffe875a03de49c9c9311ffbf4d39
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777142"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92016048"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
 Уровни обслуживания являются атрибутами пула ресурсов. Уровни обслуживания определяются и отличаются максимально допустимой пропускной способностью для тома в пуле ресурсов на основе квоты, назначенной тому.
@@ -49,7 +49,7 @@ Azure NetApp Files поддерживает три уровня обслужив
 
 ### <a name="throughput-limit-examples-of-volumes-in-an-auto-qos-capacity-pool"></a>Ограничения пропускной способности примеры томов в пуле ресурсов автоматического качества обслуживания
 
-На схеме ниже показаны примеры пределов пропускной способности для томов в пуле ресурсов автоматического качества обслуживания:
+На следующей схеме показаны примеры пределов пропускной способности для томов в пуле ресурсов автоматического качества обслуживания:
 
 ![Иллюстрация уровня обслуживания](../media/azure-netapp-files/azure-netapp-files-service-levels.png)
 
@@ -61,22 +61,22 @@ Azure NetApp Files поддерживает три уровня обслужив
 
 Если вы используете пул ресурсов QoS вручную, можно назначить емкость и пропускную способность для тома независимо. При создании тома в пуле ресурсов ручного обслуживания вручную можно указать значение пропускной способности (MiB/с). Общая пропускная способность, назначенная томам в пуле ресурсов ручного обслуживания вручную, зависит от размера пула и уровня обслуживания. Он ограничивается (размером пула ресурсов на уровне обслуживания Тиб x пропускной способности или Тиб). Например, Тиб пул емкости с уровнем Ultra Service имеет общий объем пропускной способности 1280 MiB/s (10 Тиб x 128 MiB/s/Тиб), доступных для томов.
 
-Для SAP HANAной системы этот пул ресурсов можно использовать для создания следующих томов. Каждый том предоставляет индивидуальный размер и пропускную способность в соответствии с требованиями приложения:
+Например, для SAP HANA системы этот пул ресурсов можно использовать для создания следующих томов. Каждый том предоставляет индивидуальный размер и пропускную способность в соответствии с требованиями приложения:
 
 * SAP HANA объем данных: размер 4 Тиб с 704 MiB/с
 * SAP HANA том журнала: size 0,5 Тиб с размером до 256 MiB/с
 * SAP HANA общего тома: size 1 Тиб до 64 MiB/с
 * SAP HANA объем резервной копии: size 4,5 Тиб с размером до 256 MiB/с
 
-На схеме ниже показаны сценарии для SAP HANAных томов:
+На следующей схеме показаны сценарии для SAP HANAных томов:
 
 ![Сценарии для корпоративных SAP HANA качества по](../media/azure-netapp-files/qos-sap-hana-volume-scenarios.png) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
 - [Модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md) 
-- [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
+- [Создание пула ресурсов](azure-netapp-files-set-up-capacity-pool.md)
 - [Соглашение об уровне обслуживания (SLA) для Azure NetApp Files](https://azure.microsoft.com/support/legal/sla/netapp/)
 - [Динамическое изменение уровня обслуживания тома](dynamic-change-volume-service-level.md) 
 - [Цели уровня обслуживания для репликации между регионами](cross-region-replication-introduction.md#service-level-objectives)

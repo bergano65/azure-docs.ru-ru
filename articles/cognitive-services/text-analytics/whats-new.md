@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: aahi
-ms.openlocfilehash: 17c9797935612c8697d30455e28cc91321b84772
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: f79152dbfa5a0576cd13484f9b3704eaed3901ea
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91999682"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92015930"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -24,6 +24,7 @@ API анализа текста обновляется на постоянной
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
 * Поддержка хинди для анализ тональности v3. x, начиная с версии модели `2020-04-01` . 
+* Модель версии `2020-09-01` для конечной точки/лангуажес v3, которая расширяет возможности определения и точности языка.
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
 
@@ -191,9 +192,9 @@ API анализа текста v3 теперь общедоступен со с
 
 #### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
-* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionPii) для распознавания типов сущностей личных сведений (только на английском языке)
+* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesRecognitionPii) для распознавания типов сущностей личных сведений (только на английском языке)
 
-* Разделяйте конечные точки для [распознавания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral) и [связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesLinking).
+* Разделяйте конечные точки для [распознавания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesRecognitionGeneral) и [связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/EntitiesLinking).
 
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
     * Расширенное обнаружение и классификация сущностей, найденных в тексте. 
@@ -205,7 +206,7 @@ API анализа текста v3 теперь общедоступен со с
 
 #### <a name="sentiment-analysis-v3-public-preview"></a>Общедоступная предварительная версия 3 анализа тональности
 
-* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/Sentiment) для анализа тональности.
+* [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-2/operations/Sentiment) для анализа тональности.
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
 
     * Значительные улучшения в точности и подробностях классификации и оценки текста API.

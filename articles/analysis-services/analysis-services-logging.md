@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7e1eab20a8e315b977c21de46dd4f6ea2fec9f5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5537079341823275ba521c9d44139a0e0305286
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83701487"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014954"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. Службы Azure Analysis Services интегрированы с Azure Monitor. С помощью [журналов ресурсов Azure Monitor](../azure-monitor/platform/platform-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
+Важной частью любого решения Analysis Services является мониторинг работы серверов. Службы Azure Analysis Services интегрированы с Azure Monitor. С помощью [журналов ресурсов Azure Monitor](../azure-monitor/platform/platform-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [журналы Azure Monitor](../azure-monitor/overview.md).
 
 ![Ведение журнала ресурсов в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -28,7 +28,7 @@ ms.locfileid: "83701487"
 
 ### <a name="engine"></a>Подсистема
 
-При выборе категории **Подсистема** в журнале регистрируется все события [xEvent](https://docs.microsoft.com/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Невозможно будет выбрать отдельные события. 
+При выборе категории **Подсистема** в журнале регистрируется все события [xEvent](/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Невозможно будет выбрать отдельные события. 
 
 |Категории событий xEvent |Имя события  |
 |---------|---------|
@@ -80,7 +80,7 @@ ms.locfileid: "83701487"
 
     * **Имя**. Введите имя для создаваемых журналов.
 
-    * **Archive to a storage account** (Архивировать в учетной записи хранения). Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md). Следуйте указаниям для создания диспетчера ресурсов и учетной записи общего назначения, а затем выберите учетную запись хранения, вернувшись к этой странице портала. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
+    * **Archive to a storage account** (Архивировать в учетной записи хранения). Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-account-create.md). Следуйте указаниям для создания диспетчера ресурсов и учетной записи общего назначения, а затем выберите учетную запись хранения, вернувшись к этой странице портала. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
     * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
     * **Отправка в Azure Monitor (рабочую область Log Analytics)** . Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. См. дополнительные сведения о [просмотре журналов в рабочей области Log Analytics](#view-logs-in-log-analytics-workspace).
 
@@ -90,7 +90,7 @@ ms.locfileid: "83701487"
 
 3. Выберите команду **Сохранить**.
 
-    Если появится сообщение об ошибке "не удалось обновить диагностику для \<workspace name> . Подписка \<subscription id> не зарегистрирована для использования Microsoft. Insights. " следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
+    Если появится сообщение об ошибке "не удалось обновить диагностику для \<workspace name> . Подписка \<subscription id> не зарегистрирована для использования Microsoft. Insights. " следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](../azure-monitor/platform/resource-logs.md), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
     Если вы хотите изменить способ сохранения журналов ресурсов в дальнейшем, можно в любое время вернуться на эту страницу, чтобы изменить параметры.
 
@@ -136,11 +136,11 @@ ms.locfileid: "83701487"
 
 ### <a name="rest-api"></a>REST API
 
-Узнайте, как [изменить параметры диагностики с помощью REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/). 
+Узнайте, как [изменить параметры диагностики с помощью REST API Azure Monitor](/rest/api/monitor/). 
 
 ### <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Узнайте, как [включить параметры диагностики при создании ресурса из шаблона Resource Manager](../azure-monitor/platform/diagnostic-settings-template.md). 
+Узнайте, как [включить параметры диагностики при создании ресурса из шаблона Resource Manager](../azure-monitor/samples/resource-manager-diagnostic-settings.md). 
 
 ## <a name="manage-your-logs"></a>Управление журналами
 
@@ -328,4 +328,4 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 
 См. сведения [о ведении журнала ресурсов Azure Monitor](../azure-monitor/platform/platform-logs-overview.md).
 
-Ознакомьтесь с описанием [Set-AzDiagnosticSetting](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.
+Ознакомьтесь с описанием [Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.

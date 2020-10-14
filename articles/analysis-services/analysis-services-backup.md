@@ -8,16 +8,16 @@ ms.date: 07/13/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 66d09c2faa52cee3e94402be708d654b548c0de1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af1850f77c1d13c761bfc2a143074b5067b349b4
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86507001"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92014058"
 ---
 # <a name="analysis-services-database-backup-and-restore"></a>Analysis Services резервного копирования и восстановления базы данных
 
-Архивация баз данных табличной модели в Azure Analysis Services во многом аналогична процедуре для локальных служб Analysis Services. Основное различие заключается в расположении для хранения архивных файлов. Архивные файлы следует сохранять в контейнер в [учетной записи хранения Azure](../storage/common/storage-create-storage-account.md). Можно использовать уже имеющиеся учетную запись хранения и контейнер либо создать их при настройке параметров хранилища для сервера.
+Архивация баз данных табличной модели в Azure Analysis Services во многом аналогична процедуре для локальных служб Analysis Services. Основное различие заключается в расположении для хранения архивных файлов. Архивные файлы следует сохранять в контейнер в [учетной записи хранения Azure](../storage/common/storage-account-create.md). Можно использовать уже имеющиеся учетную запись хранения и контейнер либо создать их при настройке параметров хранилища для сервера.
 
 > [!NOTE]
 > Создание учетной записи хранения может привести к дополнительным расходам. Дополнительные сведения см. на [странице с ценами на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/blobs/).
@@ -75,10 +75,10 @@ ms.locfileid: "86507001"
 
 
 ### <a name="powershell"></a>PowerShell
-Используйте командлет [Backup-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase).
+Используйте командлет [Backup-ASDatabase](/powershell/module/sqlserver/backup-asdatabase).
 
 ## <a name="restore"></a>Восстановить
-При восстановлении файл архивной копии должен находиться в учетной записи хранения, настроенной для вашего сервера. Если нужно переместить файл архивной копии из локального расположения в учетную запись хранилища, используйте [обозреватель хранилищ Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer) или служебную программу командной строки [AzCopy](../storage/common/storage-use-azcopy.md). 
+При восстановлении файл архивной копии должен находиться в учетной записи хранения, настроенной для вашего сервера. Если нужно переместить файл архивной копии из локального расположения в учетную запись хранилища, используйте [обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) или служебную программу командной строки [AzCopy](../storage/common/storage-use-azcopy-v10.md). 
 
 
 
@@ -102,11 +102,11 @@ ms.locfileid: "86507001"
 
 ### <a name="powershell"></a>PowerShell
 
-Используйте командлет [Restore-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/restore-asdatabase).
+Используйте командлет [Restore-ASDatabase](/powershell/module/sqlserver/restore-asdatabase).
 
 
 ## <a name="related-information"></a>Дополнительные сведения
 
-[Учетные записи хранения Azure](../storage/common/storage-create-storage-account.md)  
+[Учетные записи хранения Azure](../storage/common/storage-account-create.md)  
 [Высокий уровень доступности](analysis-services-bcdr.md)      
 [Analysis Services часто задаваемые вопросы о сетевом подключении](analysis-services-network-faq.md)
