@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a0ab8f8ff3f2134c205338dfe8e6f2e887a5a053
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 8c698cdf5b26cb1682eec2828922517cf4272275
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91949621"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048446"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -237,7 +237,7 @@ static async Task<bool> CreateFloorOrBuilding(string id, bool makeFloor=true)
 
 Рассмотрим следующую таблицу данных, описывающую набор цифровых двойников и связей, которые будут созданы.
 
-| Моделирование    | ID | Parent | Имя связи | Другие данные |
+| Модель    | ID | Parent | Имя связи | Другие данные |
 | --- | --- | --- | --- | --- |
 | floor    | Floor01 | | | … |
 | комната    | Room10 | Floor01 | содержит | … |
@@ -247,7 +247,7 @@ static async Task<bool> CreateFloorOrBuilding(string id, bool makeFloor=true)
 | комната    | Room21 | Floor02 | содержит | … |
 | комната    | Room22 | Floor02 | содержит | … |
 
-В следующем примере кода используется [API Microsoft Graph](https://docs.microsoft.com/graph/overview) для чтения электронной таблицы и создания графа Двойникаов Azure Digital двойников на основе результатов.
+В следующем примере кода используется [API Microsoft Graph](/graph/overview) для чтения электронной таблицы и создания графа Двойникаов Azure Digital двойников на основе результатов.
 
 ```csharp
 var range = msftGraphClient.Me.Drive.Items["BuildingsWorkbook"].Workbook.Worksheets["Building"].usedRange;

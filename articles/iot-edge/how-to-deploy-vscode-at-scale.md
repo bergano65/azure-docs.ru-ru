@@ -9,16 +9,16 @@ ms.date: 1/8/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: dc059cae927c1aaa057080172313f5720f483bdb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7f6e90edc0503326dc9dbb06abfcf59fa2d51e1e
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972583"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043822"
 ---
 # <a name="deploy-iot-edge-modules-at-scale-using-visual-studio-code"></a>Развертывание модулей IoT Edge в масштабе с помощью Visual Studio Code
 
-Вы можете создать **IOT Edge автоматическое развертывание** с помощью Visual Studio Code, чтобы управлять текущими развертываниями для нескольких устройств одновременно. Автоматические развертывания для IoT Edge входят в состав функции [автоматического управления устройствами](/azure/iot-hub/iot-hub-automatic-device-management) в Центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах. Кроме того, можно отвести наблюдение за состоянием и работоспособностью модулей, а также при необходимости вносить изменения.
+Вы можете создать **IOT Edge автоматическое развертывание** с помощью Visual Studio Code, чтобы управлять текущими развертываниями для нескольких устройств одновременно. Автоматические развертывания для IoT Edge входят в состав функции [автоматического управления устройствами](../iot-hub/iot-hub-automatic-device-management.md) в Центре Интернета вещей. Развертывания — это динамические процессы, которые позволяют развертывать несколько модулей на нескольких устройствах. Кроме того, можно отвести наблюдение за состоянием и работоспособностью модулей, а также при необходимости вносить изменения.
 
 Дополнительные сведения см. в статье [Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в большом масштабе](module-deployment-monitoring.md).
 
@@ -60,13 +60,16 @@ ms.locfileid: "91972583"
 
 Вот пример простого манифеста развертывания с одним модулем.
 
+>[!NOTE]
+>Этот пример манифеста развертывания использует схему версии 1,1 для агента IoT Edge и концентратора. Версия схемы 1,1 была выпущена вместе с IoT Edge версии 1.0.10 и включает такие функции, как порядок запуска модуля и определение приоритетов маршрутов.
+
 ```json
 {
   "content": {
     "modulesContent": {
       "$edgeAgent": {
         "properties.desired": {
-          "schemaVersion": "1.0",
+          "schemaVersion": "1.1",
           "runtime": {
             "type": "docker",
             "settings": {
@@ -95,7 +98,7 @@ ms.locfileid: "91972583"
           },
           "modules": {
             "SimulatedTemperatureSensor": {
-              "version": "1.0",
+              "version": "1.1",
               "type": "docker",
               "status": "running",
               "restartPolicy": "always",

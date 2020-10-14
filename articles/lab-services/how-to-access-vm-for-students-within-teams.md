@@ -3,12 +3,12 @@ title: Доступ к виртуальной машине (представле
 description: Узнайте, как получить доступ к виртуальной машине (представление учащихся) в лаборатории Azure из групп.
 ms.topic: article
 ms.date: 10/07/2020
-ms.openlocfilehash: f121486c361b3b4cbf0b79da5dab7ddc5822a075
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 346f4bcd75356b0466b1eea46e1da74aa2c63784
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946803"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043451"
 ---
 # <a name="access-a-vm-student-view-in-azure-lab-from-teams"></a>Доступ к виртуальной машине (представление учащихся) в лаборатории Azure из рабочих групп
 
@@ -16,7 +16,7 @@ ms.locfileid: "91946803"
 
 ## <a name="view-labs"></a>Просмотреть лаборатории
 
-Если лаборатория опубликована, студенты увидят следующее и сможет подключиться к лаборатории:
+Если лаборатория еще не опубликована или вы еще не активировали синхронизацию после добавления в группу, то для учащихся будет отображаться аналогичный обмен сообщениями. Если вы еще не опубликовали лабораторию или еще не активировали синхронизацию после добавления в группу, для участников команды будет отображаться аналогичный обмен сообщениями.
 
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/how-to-access-vm-for-students-within-teams/lab.png" alt-text="Лаборатория служб лаборатории Azure":::
@@ -31,7 +31,7 @@ ms.locfileid: "91946803"
 См. следующие статьи:
 
 - [Обзор использования служб лаборатории Azure в рабочих группах](lab-services-within-teams-overview.md)
-- [Приступая к работе и создание лабораторной работы в команде](how-to-get-started-create-lab-within-teams.md)
-- [Управление списками пользователей](how-to-manage-user-lists-within-teams.md)
-- [Управление пулом виртуальных машин](how-to-manage-vm-pool-within-teams.md)
-- [Создание расписаний](how-to-create-schedules-within-teams.md)
+- [Приступая к работе и создание лабораторной работы в группах](how-to-get-started-create-lab-within-teams.md)
+- [Управление списками пользователей лабораторий в командах](how-to-manage-user-lists-within-teams.md)
+- [Управление пулом виртуальных машин лаборатории в рамках команд](how-to-manage-vm-pool-within-teams.md)
+- [Создание и управление расписаниями лаборатории в рабочих группах](how-to-create-schedules-within-teams.md)

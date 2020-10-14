@@ -10,18 +10,18 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: b5d2156707d8a4c308ed577b7407d5eae30edc65
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f5f2a9800d3796d217294e757076d6ff706281d1
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979688"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044204"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Получение журналов из IoT Edge развертываний
 
 Получение журналов из IoT Edge развертываний без необходимости физического или SSH-доступа к устройству с помощью прямых методов, входящих в модуль агента IoT Edge. Прямые методы реализуются на устройстве, а затем могут быть вызваны из облака. Агент IoT Edge содержит прямые методы, помогающие удаленно отслеживать IoT Edge устройства и управлять ими. Прямые методы, описанные в этой статье, общедоступны в выпуске 1.0.10.
 
-Дополнительные сведения о прямых методах, способах их использования и их реализации в собственных модулях см. в разделе [изучение и вызов прямых методов из центра Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-direct-methods).
+Дополнительные сведения о прямых методах, способах их использования и их реализации в собственных модулях см. в разделе [изучение и вызов прямых методов из центра Интернета вещей](../iot-hub/iot-hub-devguide-direct-methods.md).
 
 Имена этих прямых методов обрабатываются с учетом регистра.
 
@@ -63,17 +63,17 @@ ms.locfileid: "91979688"
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | schemaVersion | строка | Установите значение `1.0` |
 | items | Массив JSON | Массив с `id` `filter` кортежами и. |
-| ID | строка | Регулярное выражение, предоставляющее имя модуля. Он может сопоставлять несколько модулей на пограничном устройстве. Ожидается формат [регулярных выражений .NET](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions) . |
+| ID | строка | Регулярное выражение, предоставляющее имя модуля. Он может сопоставлять несколько модулей на пограничном устройстве. Ожидается формат [регулярных выражений .NET](/dotnet/standard/base-types/regular-expressions) . |
 | фильтр | Раздел JSON | Фильтры журналов, применяемые к модулям, соответствующим `id` регулярному выражению в кортеже. |
 | односторонне | Целое число | Число строк журнала в прошлом для получения, начиная с последнего. OPTIONAL. |
 | since | Целое число | Возвращать только журналы, начиная с этого времени, как продолжительность (1 d, 90 м, 2 дня 3 часа, 2 минуты), rfc3339 отметка времени или отметка времени UNIX.  Если `tail` указаны и `since` , и, журналы извлекаются с использованием `since` значения First. Затем `tail` значение применяется к результату, и возвращается окончательный результат. OPTIONAL. |
 | until | Целое число | Возвращать журналы только до указанного времени, в виде метки времени rfc3339, метки времени UNIX или длительности (1 d, 90 м, 2 дня 3 часа 2 минуты). OPTIONAL. |
 | уровень ведения журнала | Целое число | Фильтровать строки журнала, которые меньше или равны указанному уровню ведения журнала. Строки журнала должны следовать рекомендуемому формату ведения журнала и использовать стандарт [уровня серьезности syslog](https://en.wikipedia.org/wiki/Syslog#Severity_level) . OPTIONAL. |
-| regex | строка | Фильтрация строк журнала, имеющих содержимое, совпадающее с указанным регулярным выражением, с использованием формата [регулярных выражений .NET](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions) . OPTIONAL. |
+| regex | строка | Фильтрация строк журнала, имеющих содержимое, совпадающее с указанным регулярным выражением, с использованием формата [регулярных выражений .NET](/dotnet/standard/base-types/regular-expressions) . OPTIONAL. |
 | encoding | строка | `gzip` или `none`. Значение по умолчанию — `none`. |
 | сontentType | строка | `json` или `text`. Значение по умолчанию — `text`. |
 
@@ -82,7 +82,7 @@ ms.locfileid: "91979688"
 
 Успешный выбор журналов возвращает **"Status": 200** , за которыми следуют полезные данные, содержащие журналы, полученные из модуля, отфильтрованные по параметрам, указанным в запросе.
 
-Пример:
+Например.
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -123,7 +123,7 @@ az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <
 
 ![Вызов прямого метода "Жетмодулелогс" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-get-module-logs.png)
 
-Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Пример:
+Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Например.
 
 ```azurecli
 az iot hub invoke-module-method \
@@ -164,9 +164,9 @@ az iot hub invoke-module-method \
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
-| sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/). |
+| sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer). |
 
 Успешный запрос на отправку журналов возвращает **"Status": 200** , за которым следуют полезные данные со следующей схемой:
 
@@ -178,13 +178,13 @@ az iot hub invoke-module-method \
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Пример:
+Например.
 
 Следующий вызов передает последние строки журнала 100 из всех модулей в сжатом формате JSON:
 
@@ -259,7 +259,7 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
 
 ## <a name="upload-support-bundle-diagnostics"></a>Отправка диагностики пакета поддержки
 
-Используйте прямой метод **уплоадсуппортбундле** для объединения и передачи ZIP-файла IOT Edge журналов модулей в доступный контейнер хранилища BLOB-объектов Azure. Этот прямой метод запускает [`iotedge support-bundle`](https://docs.microsoft.com/azure/iot-edge/troubleshoot#gather-debug-information-with-support-bundle-command) команду на устройстве IOT Edge для получения журналов.
+Используйте прямой метод **уплоадсуппортбундле** для объединения и передачи ZIP-файла IOT Edge журналов модулей в доступный контейнер хранилища BLOB-объектов Azure. Этот прямой метод запускает [`iotedge support-bundle`](./troubleshoot.md#gather-debug-information-with-support-bundle-command) команду на устройстве IOT Edge для получения журналов.
 
 Этот метод принимает полезные данные JSON со следующей схемой:
 
@@ -273,10 +273,10 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | schemaVersion | строка | Установите значение `1.0` |
-| sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/) |
+| sasURL | строка (URI) | [URL-адрес подписи общего доступа с доступом на запись к контейнеру хранилища BLOB-объектов Azure](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer) |
 | since | Целое число | Возвращать только журналы, начиная с этого времени, как продолжительность (1 d, 90 м, 2 дня 3 часа, 2 минуты), rfc3339 отметка времени или отметка времени UNIX. OPTIONAL. |
 | until | Целое число | Возвращать журналы только до указанного времени, в виде метки времени rfc3339, метки времени UNIX или длительности (1 d, 90 м, 2 дня 3 часа 2 минуты). OPTIONAL. |
 | еджерунтимеонли | Логическое | Если значение — true, возвращаются только журналы из агента ребра, пограничной концентратора и управляющей программы пограничной системы безопасности. По умолчанию: false.  OPTIONAL. |
@@ -294,13 +294,13 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Пример:
+Например.
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -352,13 +352,13 @@ az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name
     }
 ```
 
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 |-|-|-|
 | status | строка | Один из `NotStarted` ,,, `Running` `Completed` `Failed` или `Unknown` . |
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Пример:
+Например.
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'GetTaskStatus' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \

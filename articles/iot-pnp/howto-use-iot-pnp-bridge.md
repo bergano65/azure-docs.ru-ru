@@ -7,12 +7,12 @@ ms.date: 09/22/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 4c84fbb131809c92d597b46d18c53e46b636f8ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6670f654685f8d5cdcaf55d2b1679738a57ecab4
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613481"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042802"
 ---
 # <a name="how-to-connect-an--iot-plug-and-play-bridge-sample-running-on-linux-or-windows-to-iot-hub"></a>Как подключить пример моста IoT Plug and Play под управлением Linux или Windows в центр Интернета вещей
 
@@ -48,7 +48,7 @@ gcc --version
 
 Для работы с этим кратким руководством в Windows необходимо установить следующее программное обеспечение в локальной среде:
 
-* [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). При [установке](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019&preserve-view=true) Visual Studio обязательно добавьте рабочую нагрузку **Разработка классических приложений на C++** .
+* [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). При [установке](/cpp/build/vscpp-step-0-installation?preserve-view=true&view=vs-2019) Visual Studio обязательно добавьте рабочую нагрузку **Разработка классических приложений на C++** .
 * [Git](https://git-scm.com/download/).
 * [CMake](https://cmake.org/download/).
 
@@ -149,7 +149,7 @@ git submodule update --init --recursive
 
 Перейдите в папку *пнпбридже* в каталоге репозитория.
 
-Для Windows выполните следующие действия в [Командная строка разработчика для Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs):
+Для Windows выполните следующие действия в [Командная строка разработчика для Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs):
 
 ```cmd
 cd scripts\windows

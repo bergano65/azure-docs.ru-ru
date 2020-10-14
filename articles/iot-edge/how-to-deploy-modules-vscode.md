@@ -4,17 +4,17 @@ description: Используйте Visual Studio Code с Azure IoT Tools, чт�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 01/8/2019
+ms.date: 10/13/2020
 ms.topic: conceptual
 ms.reviewer: ''
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: bb3c03b16ae05d3e5e78378e88b9337842e3d98d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ccc87b1b3103e799a5974542de602090df8e1e4b
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972634"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048395"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-visual-studio-code"></a>Развертывание модулей Azure IoT Edge из Visual Studio Code
 
@@ -40,12 +40,15 @@ ms.locfileid: "91972634"
 
 Вот пример простого манифеста развертывания с одним модулем.
 
+>[!NOTE]
+>Этот пример манифеста развертывания использует схему версии 1,1 для агента IoT Edge и концентратора. Версия схемы 1,1 была выпущена вместе с IoT Edge версии 1.0.10 и включает такие функции, как порядок запуска модуля и определение приоритетов маршрутов.
+
    ```json
    {
      "modulesContent": {
        "$edgeAgent": {
          "properties.desired": {
-           "schemaVersion": "1.0",
+           "schemaVersion": "1.1",
            "runtime": {
              "type": "docker",
              "settings": {
@@ -88,7 +91,7 @@ ms.locfileid: "91972634"
        },
        "$edgeHub": {
          "properties.desired": {
-           "schemaVersion": "1.0",
+           "schemaVersion": "1.1",
            "routes": {
                "route": "FROM /messages/* INTO $upstream"
            },

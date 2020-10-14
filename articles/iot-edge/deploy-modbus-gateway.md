@@ -8,12 +8,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: kgremban
-ms.openlocfilehash: 23fbbd87230ea0a0147dc9d90c77729f4d531e98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d07a1d1ab0d3b1f4315c09f1c403126139b34612
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76511150"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043907"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
 
@@ -35,7 +35,7 @@ ms.locfileid: "76511150"
 
 Если вы хотите протестировать функции шлюза Modbus, корпорация Майкрософт предлагает использовать пример модуля. Вы можете получить доступ к модулю из Azure Marketplace, [Modbus](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft_iot.edge-modbus?tab=Overview)или с помощью URI образа `mcr.microsoft.com/azureiotedge/modbus:1.0` .
 
-Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте GitHub можно найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Чтобы создать образ контейнера, см. статью [Разработка модулей C# в Visual Studio](how-to-visual-studio-develop-csharp-module.md) или [разработка модулей в Visual Studio Code](how-to-vs-code-develop-module.md). В этих статьях содержатся инструкции по созданию новых модулей и публикации образов контейнеров в реестре.
+Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте GitHub можно найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Чтобы создать образ контейнера, см. статью [Разработка модулей C# в Visual Studio](./how-to-visual-studio-develop-module.md) или [разработка модулей в Visual Studio Code](how-to-vs-code-develop-module.md). В этих статьях содержатся инструкции по созданию новых модулей и публикации образов контейнеров в реестре.
 
 ## <a name="try-the-solution"></a>Попробуйте решение
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: bf2894cc30873e3cbf7f379e22078dbb863ac179
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d81d26c4cf975a20f31b4b4546c1477ed1a630e0
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970441"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92048327"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -200,7 +200,7 @@ az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(fu
 ```azurecli 
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"
 ```
-Наконец, можно сделать так, чтобы URL-адрес вашего экземпляра Azure Digital двойников был доступен для вашей функции, задав переменную среды. Дополнительные сведения о настройке переменных среды см. в разделе [*переменные среды*](https://docs.microsoft.com/sandbox/functions-recipes/environment-variables). 
+Наконец, можно сделать так, чтобы URL-адрес вашего экземпляра Azure Digital двойников был доступен для вашей функции, задав переменную среды. Дополнительные сведения о настройке переменных среды см. в разделе [*переменные среды*](/sandbox/functions-recipes/environment-variables). 
 
 > [!TIP]
 > URL-адрес экземпляра Azure Digital двойников создается путем добавления *https://* в начало *имени узла*для цифрового двойникова Azure. Чтобы просмотреть имя узла, а также все свойства экземпляра, можно запустить `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
@@ -249,7 +249,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 ### <a name="configure-application-settings-using-azure-portal"></a>Настройка параметров приложения с помощью портал Azure
 
-Чтобы сделать URL-адрес своего экземпляра Digital двойников доступным для вашей функции, можно задать переменную среды. Дополнительные сведения об этом см. в разделе [*переменные среды*](https://docs.microsoft.com/sandbox/functions-recipes/environment-variables). Параметры приложения предоставляются как переменные среды для доступа к экземпляру Digital двойников. 
+Чтобы сделать URL-адрес своего экземпляра Digital двойников доступным для вашей функции, можно задать переменную среды. Дополнительные сведения об этом см. в разделе [*переменные среды*](/sandbox/functions-recipes/environment-variables). Параметры приложения предоставляются как переменные среды для доступа к экземпляру Digital двойников. 
 
 Для создания параметра приложения потребуются ADT_INSTANCE_URL.
 

@@ -7,16 +7,16 @@ ms.author: baanders
 ms.date: 8/14/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: c68cb8cc0ecf759b9af0e313e09663cdbc327917
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d50c273e50a7faf2d8c24982fbd39cecdff0bf7f
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89067711"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044383"
 ---
 # <a name="query-units-in-azure-digital-twins"></a>Единицы запросов в цифровом двойников Azure 
 
-Модуль запроса цифровых двойников Azure **(qu)** — это единица вычислений по требованию, которая используется для выполнения [запросов к цифровым двойников Azure](how-to-query-graph.md) с помощью [API запросов](https://docs.microsoft.com/rest/api/digital-twins/dataplane/query). 
+Модуль запроса цифровых двойников Azure **(qu)** — это единица вычислений по требованию, которая используется для выполнения [запросов к цифровым двойников Azure](how-to-query-graph.md) с помощью [API запросов](/rest/api/digital-twins/dataplane/query). 
 
 Он абстрагирует системные ресурсы, такие как ЦП, операции ввода-вывода и память, необходимые для выполнения операций запросов, поддерживаемых цифровым двойников Azure, что позволяет отключать использование в единицах запросов.
 
@@ -28,7 +28,7 @@ ms.locfileid: "89067711"
 
 ## <a name="find-the-query-unit-consumption-in-azure-digital-twins"></a>Поиск потребления единиц запросов в Azure Digital двойников 
 
-При выполнении запроса с помощью [API запросов](https://docs.microsoft.com/rest/api/digital-twins/dataplane/query)к цифровым двойников Azure можно просмотреть заголовок ответа, чтобы отвести количество кус, потребляемых запросом. В ответе, отправленном из Azure Digital двойников, выполните поиск по запросу "плата за запрос". 
+При выполнении запроса с помощью [API запросов](/rest/api/digital-twins/dataplane/query)к цифровым двойников Azure можно просмотреть заголовок ответа, чтобы отвести количество кус, потребляемых запросом. В ответе, отправленном из Azure Digital двойников, выполните поиск по запросу "плата за запрос". 
 
 [Пакеты SDK](how-to-use-apis-sdks.md) для цифровых двойников Azure позволяют извлекать заголовку запроса из отклика с поддержкой страничных запросов. В этом разделе показано, как запросить цифровые двойников и как выполнить итерацию по отбираемому отклику, чтобы извлечь заголовок расхода запросов. 
 
@@ -63,11 +63,11 @@ await foreach (Page<string> page in asyncPageableResponseWithCharge.AsPages())
 } 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о запросах Azure Digital двойников см. по адресу:
 * [*Основные понятия: язык запросов*](concepts-query-language.md)
 * [*Пошаговое руководство. запрос графа двойника*](how-to-query-graph.md)
-* [Справочная документация по API запроса](https://docs.microsoft.com/rest/api/digital-twins/dataplane/query/querytwins)
+* [Справочная документация по API запроса](/rest/api/digital-twins/dataplane/query/querytwins)
 
 Базовые ограничения для запросов Azure Digital двойников см. в статье [*ограничения службы в общедоступной предварительной версии*](reference-service-limits.md).

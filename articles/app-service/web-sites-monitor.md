@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/23/2020
 ms.author: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 888118d227529110c209d7c8d5a3bb79cfcf3a9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 327abb2e67f21c2893fc652b0e30c640980914c2
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88959797"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044536"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Мониторинг приложений в службе приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) предоставляет встроенные функции мониторинга для веб-приложений, мобильных устройств и приложений API в [портал Azure](https://portal.azure.com).
@@ -58,7 +58,7 @@ ms.locfileid: "88959797"
 ## <a name="understand-metrics"></a>Общие сведения о метриках
 
 > [!NOTE]
-> **Использование файловой системы** — это новая метрика, которая создается глобально. Если вы не предоставили доступ к закрытой предварительной версии, данные не ожидаются.
+> **Использование файловой системы** — это новая метрика, которая создается глобально. Если приложение не размещено в среда службы приложений, данные не ожидаются.
 > 
 
 > [!IMPORTANT]

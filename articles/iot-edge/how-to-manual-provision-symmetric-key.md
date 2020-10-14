@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 10/06/2020
 ms.author: kgremban
-ms.openlocfilehash: 9e288bcbebe4118bfc8cfa7cff46c79d7075555a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f5371539c1b45c14b519729c7c07003bf74847a0
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979715"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043873"
 ---
 # <a name="set-up-an-azure-iot-edge-device-with-symmetric-key-authentication"></a>Настройка Azure IoT Edge устройства с проверкой подлинности с помощью симметричного ключа
 
@@ -141,12 +141,12 @@ ms.locfileid: "91979715"
 ### <a name="prerequisites-for-the-azure-cli"></a>Необходимые условия для использования Azure CLI
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Версия Azure CLI должна быть как минимум 2.0.70 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
+* [Интерфейс командной строки Azure](/cli/azure/install-azure-cli) в вашей среде. Версия Azure CLI должна быть как минимум 2.0.70 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
 * [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ### <a name="create-an-iot-edge-device-with-the-azure-cli"></a>Создание устройства IoT Edge с помощью Azure CLI
 
-Для создания нового удостоверения устройства в центре Интернета вещей используйте команду [az iot hub device-identity create](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create). Пример:
+Для создания нового удостоверения устройства в центре Интернета вещей используйте команду [az iot hub device-identity create](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create). Пример:
 
    ```azurecli
    az iot hub device-identity create --device-id [device id] --hub-name [hub name] --edge-enabled
@@ -162,7 +162,7 @@ ms.locfileid: "91979715"
 
 ### <a name="view-iot-edge-devices-with-the-azure-cli"></a>Просмотр устройств IoT Edge в Azure CLI
 
-Для просмотра всех устройств в центре Интернета вещей используйте команду [az iot hub device-identity list](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-list). Пример:
+Для просмотра всех устройств в центре Интернета вещей используйте команду [az iot hub device-identity list](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-list). Пример:
 
    ```azurecli
    az iot hub device-identity list --hub-name [hub name]
@@ -172,7 +172,7 @@ ms.locfileid: "91979715"
 
 ### <a name="retrieve-the-connection-string-with-the-azure-cli"></a>Получение строки подключения с помощью Azure CLI
 
-Когда все будет готово к настройке устройства, вам понадобится строка подключения, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей. Чтобы вернуть строку подключения для одного устройства, используйте команду [az iot hub device-identity show-connection-string](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-show-connection-string).
+Когда все будет готово к настройке устройства, вам понадобится строка подключения, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей. Чтобы вернуть строку подключения для одного устройства, используйте команду [az iot hub device-identity show-connection-string](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-show-connection-string).
 
    ```azurecli
    az iot hub device-identity show-connection-string --device-id [device id] --hub-name [hub name]

@@ -11,18 +11,22 @@ ms.topic: how-to
 ms.date: 04/29/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another resource group.
-ms.openlocfilehash: fe8051d551077666c06ac033f22303fd643ac602
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ea152e1d78ab1ea610eee5420394c89524673993
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88585739"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042388"
 ---
 # <a name="moving-an-azure-key-vault-across-resource-groups"></a>Перемещение Azure Key Vault между группами ресурсов
 
 ## <a name="overview"></a>Обзор
 
 Перемещение хранилища ключей между группами ресурсов является поддерживаемой функцией хранилища ключей. Перемещение хранилища ключей между группами ресурсов не повлияет на конфигурацию брандмауэра хранилища ключей или политики доступа. Подключенные приложения и субъекты-службы должны по-прежнему работать правильно.
+
+> [!IMPORTANT]
+> **Хранилища ключей, используемые для шифрования дисков, невозможно переместить.**
+> Если вы используете хранилище ключей с шифрованием дисков для виртуальной машины, хранилище ключей нельзя переместить в другую группу ресурсов или подписку, пока включено шифрование дисков. Необходимо отключить шифрование дисков перед перемещением хранилища ключей в новую группу ресурсов или подписку. 
 
 ## <a name="design-considerations"></a>Вопросы проектирования
 

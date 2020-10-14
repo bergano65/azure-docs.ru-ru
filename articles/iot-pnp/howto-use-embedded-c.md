@@ -7,16 +7,16 @@ ms.date: 09/23/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: edcfcda8de1fade605c409537155231d90d5849e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d61ca10612a0935f8483745d164835d7498280c0
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91610081"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042819"
 ---
 # <a name="implement-iot-plug-and-play-on-constrained-devices"></a>Реализация Plug and Play Интернета вещей на ограниченных устройствах
 
-Если вы разрабатываете для *ограниченного использования устройств*, вы можете использовать IOT Plug and Play с [пакетом Azure SDK для внедренных клиентских библиотек IOT C](https://aka.ms/embeddedcsdk) или [Azure RTO](https://docs.microsoft.com/azure/rtos/overview-rtos). Эта статья содержит ссылки и ресурсы для этих ограниченных сценариев.
+Если вы разрабатываете для *ограниченного использования устройств*, вы можете использовать IOT Plug and Play с [пакетом Azure SDK для внедренных клиентских библиотек IOT C](https://aka.ms/embeddedcsdk) или [Azure RTO](/azure/rtos/overview-rtos). Эта статья содержит ссылки и ресурсы для этих ограниченных сценариев.
 
 ## <a name="use-the-sdk-for-embedded-c"></a>Использование пакета SDK для Embedded C
 
@@ -39,7 +39,7 @@ ms.locfileid: "91610081"
 
 ## <a name="using-azure-rtos"></a>Использование Azure RTO
 
-Azure RTO включает упрощенный слой, который добавляет собственное подключение к облачным службам Azure IoT. Этот уровень предоставляет простой механизм подключения ограниченных устройств к Azure IoT с использованием дополнительных функций Azure RTO. Дополнительные сведения см. в разделе [что такое Microsoft Azure RTO](https://docs.microsoft.com/azure/rtos/overview-rtos).
+Azure RTO включает упрощенный слой, который добавляет собственное подключение к облачным службам Azure IoT. Этот уровень предоставляет простой механизм подключения ограниченных устройств к Azure IoT с использованием дополнительных функций Azure RTO. Дополнительные сведения см. в разделе [что такое Microsoft Azure RTO](/azure/rtos/overview-rtos).
 
 ### <a name="toolchains"></a>Цепочек инструментов
 
@@ -51,11 +51,11 @@ Azure RTO включает упрощенный слой, который доб�
 - STM32Cube: [Интегрированная среда разработки Стмикроелектроник STM32Cube](https://www.st.com/en/development-tools/stm32cubeide.html)
 - МПЛАБ: [Интегрированная среда разработки Мплаб X](https://www.microchip.com/mplab/mplab-x-ide) в микросхеме
 
-### <a name="samples"></a>Примеры
+### <a name="samples"></a>примеры
 
 Примеры, в которых показано, как приступить к работе на разных устройствах с помощью Azure RTO и IoT Plug and Play, см. в следующей таблице:
 
-Изготовитель | Устройство | Примеры |
+Изготовитель | Устройство | примеры |
 | --- | --- | --- |
 | Микросхемы | [ATSAME54 — КСПРО](https://www.microchip.com/developmenttools/productdetails/atsame54-xpro) | [GCC/CMAK](https://github.com/azure-rtos/getting-started/tree/master/Microchip/ATSAME54-XPRO) • [ИАР](https://aka.ms/azrtos-sample/e54-iar) • [мплаб](https://aka.ms/azrtos-sample/e54-mplab)
 | MXCHIP | [AZ3166](https://aka.ms/iot-devkit) | [GCC или CMak](https://github.com/azure-rtos/getting-started/tree/master/MXChip/AZ3166)
@@ -64,6 +64,6 @@ Azure RTO включает упрощенный слой, который доб�
 | стмикроелектроникс | [B-L475E-IOT01](https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html) | [GCC/CMAK](https://github.com/azure-rtos/getting-started/tree/master/STMicroelectronics/STM32L4_L4%2B) • [ИАР](https://aka.ms/azrtos-sample/l4s5-iar) • [STM32Cube](https://aka.ms/azrtos-sample/l4s5-cubeide)
 | стмикроелектроникс | [B-L4S5I-IOT01](https://www.st.com/en/evaluation-tools/b-l4s5i-iot01a.html) | [GCC/CMAK](https://github.com/azure-rtos/getting-started/tree/master/STMicroelectronics/STM32L4_L4%2B) • [ИАР](https://aka.ms/azrtos-sample/l4s5-iar) • [STM32Cube](https://aka.ms/azrtos-sample/l4s5-cubeide)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о вариантах реализации Plug and Play Интернета вещей на ограниченных устройствах, рекомендуем следующий шаг — узнать о [соглашениях Plug and Play IOT](concepts-convention.md).

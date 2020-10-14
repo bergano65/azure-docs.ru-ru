@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: pdecarlo
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 95fd10ab7de4885d3630b5defe4080fe0203b62f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d14ef742c19556a9df2bd193a54bfaa1672d5964
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91296983"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92044230"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -50,7 +50,7 @@ ms.locfileid: "91296983"
 
     **Имя пользователя администратора**: имя пользователя, которому будут предоставлены привилегии root при развертывании.
 
-    **Строка подключения устройства**. [строка подключения](how-to-register-device.md) устройства, созданного в нужном [центре Интернета вещей](../iot-hub/about-iot-hub.md).
+    **Строка подключения устройства**. [строка подключения](./how-to-manual-provision-symmetric-key.md) устройства, созданного в нужном [центре Интернета вещей](../iot-hub/about-iot-hub.md).
 
     **Размер виртуальной машины**: [Размер](../cloud-services/cloud-services-sizes-specs.md) развертываемой виртуальной машины.
 
@@ -159,7 +159,7 @@ ms.locfileid: "91296983"
 
 1. Если вы хотите установить подключение по протоколу SSH к этой виртуальной машине после установки, используйте соответствующее **DNS-имя** с помощью команды:  `ssh <adminUsername>@<DNS_Name>`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

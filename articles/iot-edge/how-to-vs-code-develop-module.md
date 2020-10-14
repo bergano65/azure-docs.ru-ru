@@ -9,12 +9,12 @@ ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
 ms.custom: devx-track-js
-ms.openlocfilehash: 2fcb389736df8bedb2602919e986f7d65e8f3024
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ebc12e6d64d015267497497bebc22c8586adf999
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91296915"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043737"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge
 
@@ -51,13 +51,13 @@ ms.locfileid: "91296915"
 
 - Node.js: [Node.js](https://nodejs.org). Вам также нужно установить [Yeoman](https://www.npmjs.com/package/yo) и [генератор модулей Azure IoT Edge Node.js](https://www.npmjs.com/package/generator-azure-iot-edge-module).
 
-- Java: [пакет SDK для Java SE 10](https://aka.ms/azure-jdks) и [Maven](https://maven.apache.org/). Вам нужно будет [установить переменную среды `JAVA_HOME`](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/), которая указывает на эту установку JDK.
+- Java: [пакет SDK для Java SE 10](/azure/developer/java/fundamentals/java-jdk-long-term-support) и [Maven](https://maven.apache.org/). Вам нужно будет [установить переменную среды `JAVA_HOME`](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/), которая указывает на эту установку JDK.
 
 Чтобы создать и развернуть образ модуля, вам потребуется DOCKER для создания образа модуля и реестра контейнеров для хранения образа модуля:
 
 - [Docker Community Edition](https://docs.docker.com/install/) на компьютере, на котором ведется разработка.
 
-- [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) или [DOCKER Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags)
+- [Реестр контейнеров Azure](../container-registry/index.yml) или [DOCKER Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags)
 
     > [!TIP]
     > Вместо облачного реестра можно использовать локальный реестр Docker для создания прототипов и тестирования.
@@ -364,7 +364,7 @@ Visual Studio Code принимает предоставленные сведе�
 
 Дополнительные сведения и пошаговые инструкции см. в [Запись в блоге разработчиков Интернета вещей](https://devblogs.microsoft.com/iotdev/easily-build-and-debug-iot-edge-modules-on-your-remote-device-with-azure-iot-edge-for-vs-code-1-9-0/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания модуля узнайте, как [развернуть модули Azure IoT Edge в Visual Studio Code](how-to-deploy-modules-vscode.md).
 

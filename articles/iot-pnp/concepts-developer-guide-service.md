@@ -7,12 +7,12 @@ ms.date: 10/01/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 2a61eefc9c065253bdac11665f0135e493584c0d
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 431ea692ac734a875e27cb8ed4b015155e0e9b91
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945113"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042428"
 ---
 # <a name="iot-plug-and-play-service-developer-guide"></a>Руководством для разработчиков служб IoT Plug and Play
 
@@ -34,10 +34,10 @@ IoT Plug and Play позволяет использовать устройств
 
 | Платформа | Клиент службы центра Интернета вещей | Клиент службы Digital двойников |
 | -------- | ---------------------- | ---------------------------- |
-| .NET     | [Документация](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices) <br/> [Примеры](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/PnpServiceSamples)| [Примеры](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/DigitalTwinClientSamples) |
-| Java     | [Документация](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.service.devicetwin.devicetwindevice?view=azure-java-stable&preserve-view=true) <br/> [Примеры](https://github.com/Azure/azure-iot-sdk-java/blob/master/service/iot-service-samples/pnp-service-sample)| [Примеры](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/digitaltwin-service-samples) |
-| Node.js  | [Документация](https://docs.microsoft.com/javascript/api/azure-iothub/twin?view=azure-node-latest&preserve-view=true) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/twin.js)| [Документация](https://docs.microsoft.com/javascript/api/azure-iot-digitaltwins-service/?view=azure-node-latest&preserve-view=true) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/get_digital_twin.js) |
-| Python   | [Документация](https://docs.microsoft.com/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager?view=azure-python&preserve-view=true) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/iothub_registry_manager_method_sample.py)| [Документация](https://docs.microsoft.com/python/api/azure-iot-hub/azure.iot.hub.iothubdigitaltwinmanager?view=azure-python&preserve-view=true) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/get_digital_twin_sample.py) |
+| .NET     | [Документация](/dotnet/api/microsoft.azure.devices) <br/> [Примеры](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/PnpServiceSamples)| [Примеры](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/DigitalTwinClientSamples) |
+| Java     | [Документация](/java/api/com.microsoft.azure.sdk.iot.service.devicetwin.devicetwindevice?preserve-view=true&view=azure-java-stable) <br/> [Примеры](https://github.com/Azure/azure-iot-sdk-java/blob/master/service/iot-service-samples/pnp-service-sample)| [Примеры](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/digitaltwin-service-samples) |
+| Node.js  | [Документация](/javascript/api/azure-iothub/twin?preserve-view=true&view=azure-node-latest) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/twin.js)| [Документация](/javascript/api/azure-iot-digitaltwins-service/?preserve-view=true&view=azure-node-latest) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/get_digital_twin.js) |
+| Python   | [Документация](/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager?preserve-view=true&view=azure-python) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/iothub_registry_manager_method_sample.py)| [Документация](/python/api/azure-iot-hub/azure.iot.hub.iothubdigitaltwinmanager?preserve-view=true&view=azure-python) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/get_digital_twin_sample.py) |
 
 ## <a name="iot-hub-service-client-examples"></a>Примеры клиентов службы центра Интернета вещей
 
@@ -588,12 +588,12 @@ System properties (set by IoT Hub):
         content-encoding: utf-8
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о моделировании устройств, ниже приведены некоторые дополнительные ресурсы.
 
 - [Язык определения цифровых двойников (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
-- [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
-- [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)
+- [Пакет SDK для устройств для C](/azure/iot-hub/iot-c-sdk-ref/)
+- [REST API IoT](/rest/api/iothub/device)
 - [Компоненты модели](./concepts-components.md)
 - [Установка и использование средств разработки ДТДЛ](howto-use-dtdl-authoring-tools.md)

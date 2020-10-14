@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 3950cc16cd8661ee4e509cf14d12f561cb29c4ea
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 4328d1da8c82bc09aa8353838d08c31ea77f58aa
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91940711"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92043397"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -64,15 +64,16 @@ ms.locfileid: "91940711"
 
 | Компонент | Сведения |
 | ---| --- |
+| <a href="/azure/azure-sql/database/elastic-transactions-overview">Распределенные транзакции</a> | Распределенные транзакции между управляемыми экземплярами. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
 | <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена для входа на уровне экземпляра, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени входа из внешнего поставщика</a> . |
-| [репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
+| [Репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
 | Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в Azure SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).|
 | Долгосрочное хранение резервных копий | Дополнительные сведения см. в статье [Настройка долгосрочного резервного копирования в Azure SQL управляемый экземпляр](../managed-instance/long-term-backup-retention-configure.md), которая в настоящее время ограничена общедоступной предварительной версией. | 
 
 ---
 
-## <a name="new-features"></a>Новые функции
+## <a name="new-features"></a>новые функции;
 
 ### <a name="sql-managed-instance-h2-2019-updates"></a>Обновления SQL Управляемый экземпляр H2 2019
 
