@@ -2,18 +2,18 @@
 title: Краткое руководство по использованию клиентской библиотеки Детектора аномалий (Python)
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: aahill
+author: mrbullwinkle
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/22/2020
-ms.author: aahi
-ms.openlocfilehash: ec13ee65595ccb0bdca1656522a7cd5f21b49a10
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.author: mbullwin
+ms.openlocfilehash: c0c766753fe7c865fe15af992817379b3a7f6e13
+ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91319284"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92018469"
 ---
 Приступите к работе с клиентской библиотекой Детектора аномалий для Python. Выполните следующие действия, чтобы установить пакет и приступить к использованию алгоритмов, предоставляемых службой. Служба Детектора аномалий позволяет находить аномалии в данных временных рядов, автоматически применяя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
 

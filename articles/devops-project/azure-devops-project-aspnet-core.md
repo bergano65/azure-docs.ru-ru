@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: c434abdac19c0afd3a76256c27fc3316a8b09940
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 99be6dc42a9b644166054d61e88a1e0ac329d2ad
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88163702"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91854729"
 ---
 # <a name="create-a-cicd-pipeline-for-net-with-azure-devops-starter"></a>Создание конвейера CI/CD для приложения .NET в службе Azure DevOps Starter
 
@@ -133,7 +133,7 @@ DevOps Starter создаст конвейер выпуска для управ�
 Чтобы узнать больше об изменении определений сборки и выпуска в соответствии с потребностями вашей команды, см. следующее руководство.
 
 > [!div class="nextstepaction"]
-> [Define your multi-stage continuous deployment (CD) process](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Определение многоэтапного процесса непрерывного развертывания)
+> [Define your multi-stage continuous deployment (CD) process](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Определение многоэтапного процесса непрерывного развертывания)
 
 ## <a name="videos"></a>Видео
 

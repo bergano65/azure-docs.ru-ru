@@ -5,23 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 05/21/2020
+ms.date: 10/12/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.custom: contperfq4
-ms.openlocfilehash: 7285325d92949a331833968b8f71fbeffd6543f4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.custom: contperfq4, azuread-video-2020
+ms.openlocfilehash: b0dec57a67053c3791e68fb40e28d83d5b97777b
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89437910"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91962162"
 ---
 # <a name="what-is-conditional-access"></a>Что собой представляет условный доступ
 
 Современные периметры безопасности теперь выходят за пределы сети организации, чтобы включить удостоверение пользователя и устройства. Организации могут использовать эти сигналы идентификации как часть решений по управлению доступом. 
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Azure-AD-Conditional-Access/player]
 
 Условный доступ — это средство, используемое Azure Active Directory для объединения сигналов, принятия решений и применения политик организации. Условный доступ является основой новой плоскости управления, управляемой удостоверениями.
 

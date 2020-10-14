@@ -1,15 +1,15 @@
 ---
 title: Краткое руководство. Ваш первый запрос .NET Core
 description: В этом кратком руководстве показано, как включить пакеты NuGet Resource Graph для .NET Core и выполнить первый запрос.
-ms.date: 06/29/2020
+ms.date: 10/14/2020
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0470f100b6323f760bc48af70e8a6c11b94dfb3c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5f825b22712956c0b94531ddb163301167f30f00
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89005876"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057473"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-net-core"></a>Краткое руководство. Первый запрос Resource Graph с помощью .NET Core
 

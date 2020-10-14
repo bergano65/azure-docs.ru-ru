@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 09/17/2020
 ms.author: pafarley
-ms.openlocfilehash: 382a04021053bef0b5d3378231e38453885b0ef2
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1154bf3ddde67ba5074517ab4f96ed6764edf6a5
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323010"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91859292"
 ---
 В этом руководстве показано, как начать работу с клиентской библиотекой API Распознавания лиц для Go. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
@@ -24,7 +24,6 @@ ms.locfileid: "91323010"
 * [поиск похожих лиц](#find-similar-faces);
 * [создание и обучение на основе изображения группы людей](#create-and-train-a-person-group);
 * [опознание лица](#identify-a-face);
-* [создание моментального снимка для переноса данных](#take-a-snapshot-for-data-migration).
 
 [Справочная документация](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v1.0/face) | [Скачивание пакета SDK](https://github.com/Azure/azure-sdk-for-go)
 
@@ -109,7 +108,6 @@ touch sample-app.go
 * [поиск похожих лиц](#find-similar-faces);
 * [создание и обучение на основе изображения группы людей](#create-and-train-a-person-group);
 * [опознание лица](#identify-a-face);
-* [создание моментального снимка для переноса данных](#take-a-snapshot-for-data-migration).
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -246,53 +244,6 @@ touch sample-app.go
 
 [!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_ver)]
 
-
-## <a name="take-a-snapshot-for-data-migration"></a>создание моментального снимка для переноса данных.
-
-Функция моментальных снимков позволяет перемещать сохраненные данные о лицах, например обученный объект **PersonGroup**, в другую подписку Azure Cognitive Services. Эту функцию можно использовать, если вы, например, создали объект **PersonGroup** в бесплатной подписке и теперь хотите перенести его в платную подписку. Подробный обзор функции создания моментальных снимков см. в руководстве по [переносу данных о лицах](../../Face-API-How-to-Topics/how-to-migrate-face-data.md).
-
-В этом примере выполняется перенос объекта **PersonGroup**, созданного при выполнении инструкций из раздела [Создание и обучение на основе изображения группы людей](#create-and-train-a-person-group). Вы можете сначала выполнить эти инструкции или использовать собственные конструкции API Распознавания лиц.
-
-### <a name="set-up-target-subscription"></a>Создание целевой подписки
-
-Во-первых, у вас должна быть вторая подписка Azure с ресурсом Распознавания лиц. Для этого выполните инструкции из раздела [Настройка](#setting-up). 
-
-Затем создайте следующие переменные в верхней части метода **main**. Вам также потребуется создать новые переменные среды для идентификатора подписки учетной записи Azure, ключ, конечную точку и идентификатор подписки для новой (целевой) учетной записи.
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_target_client)]
-
-Затем поместите значение идентификатора подписки в массив для следующих шагов.
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_snap_target_id)]
-
-### <a name="authenticate-target-client"></a>Проверка подлинности целевого клиента
-
-Далее в скрипте сохраните свой исходный объект клиента в качестве исходного клиента, а затем проверьте подлинность нового объекта клиента для целевой подписки. 
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_snap_target_auth)]
-
-### <a name="take-a-snapshot"></a>Создание моментального снимка
-
-Следующий шаг предусматривает создание моментального снимка с помощью операции **[Take](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face#SnapshotClient.Take)** , которая сохраняет данные о лицах из исходной подписки во временном облачном расположении. Этот метод возвращает идентификатор, который используется для запроса состояния операции.
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_snap_take)]
-
-Затем запрашивайте идентификатор, пока операция не завершится.
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_snap_query)]
-
-### <a name="apply-the-snapshot"></a>Применение снимка
-
-Выполните операцию **[Apply](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face#SnapshotClient.Apply)** для записи только что отправленных данных о лицах в целевую подписку. Этот метод также возвращает идентификатор.
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_snap_apply)]
-
-Снова запрашивайте идентификатор, пока операция не завершится.
-
-[!code-go[](~/cognitive-services-quickstart-code/go/Face/FaceQuickstart.go?name=snippet_snap_apply_query)]
-
-После выполнения этих действий вы сможете получать доступ к конструкциям данных о лицах из новой (целевой) подписки.
-
 ## <a name="run-the-application"></a>Выполнение приложения
 
 Запустите приложение распознавания лиц из каталога приложения с помощью команды `go run <app-name>`.
@@ -308,7 +259,7 @@ go run sample-app.go
 * [Портал](../../../cognitive-services-apis-create-account.md#clean-up-resources)
 * [Azure CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-При изучении этого краткого руководства вы создали объект **PersonGroup**. Если хотите его удалить, вызовите метод **[Delete](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face#PersonGroupClient.Delete)** . Если при изучении этого краткого руководства вы перенесли данные с помощью функции создания моментальных снимков, вам также нужно удалить объект **PersonGroup**, сохраненный в целевой подписке.
+При изучении этого краткого руководства вы создали объект **PersonGroup**. Если хотите его удалить, вызовите метод **[Delete](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face#PersonGroupClient.Delete)** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

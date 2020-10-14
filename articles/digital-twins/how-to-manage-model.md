@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a7fcd32335b5d9e04986355adeea473cf77b970e
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 5fd297545e7f07844e28a1f56e724a7f61916bee
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048208"
+ms.locfileid: "92057745"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
@@ -148,19 +148,19 @@ client.CreateModels(dtdlStrings);
 // 'client' is a valid DigitalTwinsClient object
 
 // Get a single model, metadata and data
-DigitalTwinsModelData md1 = client.GetModel(id);
+ModelData md1 = client.GetModel(id);
 
 // Get a list of the metadata of all available models
-Pageable<DigitalTwinsModelData> pmd2 = client.GetModels();
+Pageable<ModelData> pmd2 = client.GetModels();
 
 // Get a list of metadata and full model definitions
-Pageable<DigitalTwinsModelData> pmd3 = client.GetModels(null, true);
+Pageable<ModelData> pmd3 = client.GetModels(null, true);
 
 // Get models and metadata for a model ID, including all dependencies (models that it inherits from, components it references)
-Pageable<DigitalTwinsModelData> pmd4 = client.GetModels(new string[] { modelId }, true);
+Pageable<ModelData> pmd4 = client.GetModels(new string[] { modelId }, true);
 ```
 
-Вызовы API для получения моделей все возвращаемые `DigitalTwinsModelData` объекты. `DigitalTwinsModelData` содержит метаданные о модели, хранящейся в экземпляре Azure Digital двойников, например имя, ДТМИ и дату создания модели. `DigitalTwinsModelData`Объект также может включать саму модель. В зависимости от параметров можно использовать вызовы получения для получения только метаданных (что бывает полезно в сценариях, где требуется отобразить список доступных средств, например) или всю модель.
+Вызовы API для получения моделей все возвращаемые `ModelData` объекты. `ModelData` содержит метаданные о модели, хранящейся в экземпляре Azure Digital двойников, например имя, ДТМИ и дату создания модели. `ModelData`Объект также может включать саму модель. В зависимости от параметров можно использовать вызовы получения для получения только метаданных (что бывает полезно в сценариях, где требуется отобразить список доступных средств, например) или всю модель.
 
 `RetrieveModelWithDependencies`Вызов возвращает не только запрошенную модель, но и все модели, от которых зависит запрошенная модель.
 
@@ -224,7 +224,7 @@ client.DecommissionModel(dtmiOfPlanetInterface);
 //...
 ```
 
-Состояние списания модели включается в `DigitalTwinsModelData` записи, возвращаемые API-интерфейсами извлечения модели.
+Состояние списания модели включается в `ModelData` записи, возвращаемые API-интерфейсами извлечения модели.
 
 #### <a name="deletion"></a>Удаление
 

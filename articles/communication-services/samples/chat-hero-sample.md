@@ -2,19 +2,19 @@
 title: Главный пример функции группового чата
 titleSuffix: An Azure Communication Services sample overview
 description: Обзор главного примера функции чата с использованием Служб коммуникации Azure, который предоставит разработчикам дополнительные сведения о том, как работает этот пример, и о том, как его изменить.
-author: ddematheu
+author: ddematheu2
 manager: nimag
 services: azure-communication-services
 ms.author: dademath
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b97b80927739d9a8658213a00b415c0bf321528b
-ms.sourcegitcommit: a0c4499034c405ebc576e5e9ebd65084176e51e4
+ms.openlocfilehash: 51b985cd67e1b540e2f24f2f37b19f9bff4223db
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91460566"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91962995"
 ---
 # <a name="get-started-with-the-group-chat-hero-sample"></a>Начало работы с главным примером функции чата
 
@@ -77,7 +77,6 @@ ms.locfileid: "91460566"
 2. `git clone https://github.com/Azure/Communication.git`
 3. Получите `Connection String` с помощью портала Azure. Дополнительные сведения о строках подключения см. в статье [Создание ресурсов Служб коммуникации Azure и управление ими](../quickstarts/create-communication-resource.md).
 4. После получения `Connection String` добавьте строку подключения в файл **Chat/appsettings.json**, расположенный в папке Chat. Сохраните строку подключения в переменную: `ResourceConnectionString`.
-5. Измените ENVIRONMENT_URL в `./Chat/ClientApp/src/constants.tsx`, указав расположение ресурса (например, https://<RESOURCE_NAME>.communication.azure.com).
 
 ### <a name="local-run"></a>Локальный запуск
 
@@ -114,6 +113,6 @@ ms.locfileid: "91460566"
 
 - [Службы коммуникации Azure (GitHub)](https://github.com/Azure/communication) — дополнительные примеры и сведения на официальной странице GitHub
 - [Redux](https://redux.js.org/) — управление состоянием на стороне клиента
-- [FluentUI](https://developer.microsoft.com/fluentui#/) — библиотека пользовательского интерфейса, поддерживаемая корпорацией Майкрософт
+- [FluentUI](https://aka.ms/fluent-ui) — библиотека пользовательского интерфейса, поддерживаемая корпорацией Майкрософт
 - [React](https://reactjs.org/) — библиотека для создания пользовательских интерфейсов
 - [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1&preserve-view=true) — платформа для создания веб-приложений

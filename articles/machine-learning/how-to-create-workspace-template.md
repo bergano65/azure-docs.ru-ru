@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: 20fa52febaa42850609f3f793d6f4aa4ae2704a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1978cfe6ea117a0d30df938c9e4ba1aeb48314fc
+ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91626332"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92057847"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -31,13 +31,6 @@ ms.locfileid: "91626332"
 * **Подписка Azure**. Если у вас ее нет, используйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
 * Чтобы использовать шаблон из командной строки, вам потребуется [Azure PowerShell](https://docs.microsoft.com/powershell/azure/?view=azps-1.2.0) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
-
-* Для некоторых сценариев требуется открыть запрос в службу поддержки. Они приведены ниже.
-
-    * __Рабочая область с включенной частной связью с ключом, управляемым клиентом (CMK)__
-    * __Реестр контейнеров Azure для рабочей области, расположенной за виртуальной сетью__
-
-    Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
 
 * Для некоторых сценариев требуется открыть запрос в службу поддержки. Они приведены ниже.
 
@@ -554,7 +547,7 @@ New-AzResourceGroupDeployment `
    * Регион: Выберите регион Azure, в котором будут создаваться ресурсы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
-1. Выберите __Review + create__ (Просмотреть и создать).
+1. Выберите __Review + create__ (Просмотреть и создать).
 1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__.
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).

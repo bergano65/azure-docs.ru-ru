@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4277007938f664592432080ec9799b5b64d98f5c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6732fe364ba67bb2c4ea8fb2543c576166f8a110
+ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88684323"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91829278"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>Изучение и изменение образцов файлов
 
@@ -72,9 +72,19 @@ ms.locfileid: "88684323"
 
 ### <a name="prepare-to-monitor-events"></a>Подготовка к мониторингу событий
 
-Щелкните правой кнопкой мыши устройство Аналитики видеотрансляции и выберите **Запуск мониторинга встроенной конечной точки события**. Этот шаг необходим для мониторинга событий Центра Интернета вещей в окне **ВЫХОДНЫЕ ДАННЫЕ** в Visual Studio Code. 
+1. В Visual Studio Code откройте вкладку **Расширения** (или нажмите клавиши CTRL+SHIFT+X) и найдите Центр Интернета вещей Azure.
+1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
 
-![Запуск мониторинга](../../../media/quickstarts/start-monitoring-iothub-events.png) 
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="../../../media/run-program/extensions-tab.png" alt-text="Параметры расширения&quot;:::
+1. Найдите и включите параметр &quot;Show Verbose Message" (Показывать подробное сообщение).
+
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Параметры расширения&quot;:::
+1. Найдите и включите параметр &quot;Show Verbose Message"::: (Показывать подробное сообщение)
+1. Щелкните правой кнопкой мыши устройство Аналитики видеотрансляции и выберите **Запуск мониторинга встроенной конечной точки события**. Этот шаг необходим для мониторинга событий Центра Интернета вещей в окне **ВЫХОДНЫЕ ДАННЫЕ** в Visual Studio Code. 
+
+   ![Запуск мониторинга](../../../media/quickstarts/start-monitoring-iothub-events.png) 
 
 ### <a name="run-the-sample-program"></a>Запуск примера программы
 

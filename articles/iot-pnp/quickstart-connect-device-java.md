@@ -7,12 +7,12 @@ ms.date: 07/14/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b63e1c0bba4d6ac250119c2ac0d9a1cd0e4ee362
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: 6dfd63f92b8c420a3c5281ee2962b211b8779dd1
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91577022"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045063"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-running-on-windows-to-iot-hub-java"></a>Краткое руководство. Подключение примера приложения устройства IoT Plug and Play в Windows к Центру Интернета вещей (Java)
 
@@ -26,7 +26,7 @@ ms.locfileid: "91577022"
 
 Для работы с этим кратким руководством в Windows необходимо установить следующее программное обеспечение в локальной среде:
 
-* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
+* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](/java/azure/jdk/?preserve-view=true&view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
 * [Apache Maven 3](https://maven.apache.org/download.cgi).
 
 ## <a name="download-the-code"></a>Загрузка кода
@@ -119,4 +119,4 @@ Date since = new Gson().fromJson(jsonRequest, Date.class);
 Из этого краткого руководства вы узнали, как подключить устройство IoT Plug and Play к Центру Интернета вещей. Дополнительные сведения о создании решения, взаимодействующего с устройствами IoT Plug and Play, см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Практическое руководство. Connect to and interact with an IoT Plug and Play Preview device](howto-develop-solution.md) (Подключение к устройству IoT Plug and Play (предварительная версия) и взаимодействие с ним)
+> [Практическое руководство. Connect to and interact with an IoT Plug and Play Preview device](./quickstart-service-node.md) (Подключение к устройству IoT Plug and Play (предварительная версия) и взаимодействие с ним)
