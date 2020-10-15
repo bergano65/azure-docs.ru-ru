@@ -1,10 +1,11 @@
-- name: Документация по VPN-шлюзу
+- name: Документация по VPN-шлюзам
   href: index.yml
 - name: Обзор
   items:
     - name: Сведения о VPN-шлюзе
       href: vpn-gateway-about-vpngateways.md
 - name: Учебники
+  expanded: true
   items:
     - name: Создание и администрирование VPN-шлюза
       href: vpn-gateway-tutorial-create-gateway-powershell.md

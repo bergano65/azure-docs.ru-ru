@@ -555,6 +555,8 @@
           href: client-images.md
         - name: Скачивание существующего диска
           href: download-vhd.md
+        - name: Создание управляемого диска на основе определенной версии образа
+          href: ../managed-disk-from-image-version.md
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
