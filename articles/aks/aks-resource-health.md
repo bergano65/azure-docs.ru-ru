@@ -6,17 +6,17 @@ author: yunjchoi
 ms.topic: troubleshooting
 ms.date: 08/18/2020
 ms.author: yunjchoi
-ms.openlocfilehash: f830debafb1a9b6b303ee6af987c7cd4fbf34aea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a409ac944c51d893fc344f82ae83d97559e055ef
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358259"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070662"
 ---
 # <a name="check-for-resource-health-events-impacting-your-aks-cluster-preview"></a>Проверка Работоспособность ресурсов событий, влияющих на кластер AKS (Предварительная версия)
 
 
-При выполнении рабочих нагрузок контейнера на AKS необходимо обеспечить возможность устранения неполадок и устранения проблем, как только они возникнут, чтобы снизить влияние на доступность рабочих нагрузок. [Работоспособность ресурсов Azure](https://docs.microsoft.com/azure/service-health/resource-health-overview) позволяет видеть различные события работоспособности, которые могут привести к недоступности кластера AKS.
+При выполнении рабочих нагрузок контейнера на AKS необходимо обеспечить возможность устранения неполадок и устранения проблем, как только они возникнут, чтобы снизить влияние на доступность рабочих нагрузок. [Работоспособность ресурсов Azure](../service-health/resource-health-overview.md) позволяет видеть различные события работоспособности, которые могут привести к недоступности кластера AKS.
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
@@ -49,12 +49,12 @@ ms.locfileid: "91358259"
 
 - **Снижено**. при наличии проблемы работоспособности, которая требует вашего действия, работоспособность ресурсов сообщает кластеру состояние " *снижено*".
 
-Дополнительные сведения о том, что означает каждое состояние работоспособности, см. в [работоспособность ресурсов обзор](https://docs.microsoft.com/azure/service-health/resource-health-overview#health-status).
+Дополнительные сведения о том, что означает каждое состояние работоспособности, см. в [работоспособность ресурсов обзор](../service-health/resource-health-overview.md#health-status).
 
 ### <a name="view-historical-data"></a>Просмотр исторических данных
 
 В разделе **Журнал работоспособности** также можно просмотреть данные за последние 30 дней с предысторией работоспособность ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Выполните проверки в кластере, чтобы устранить неполадки кластера с помощью [AKS Diagnostics](https://docs.microsoft.com/azure/aks/concepts-diagnostics).
+Выполните проверки в кластере, чтобы устранить неполадки кластера с помощью [AKS Diagnostics](./concepts-diagnostics.md).

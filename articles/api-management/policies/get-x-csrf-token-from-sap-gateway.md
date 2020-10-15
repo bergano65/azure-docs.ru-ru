@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 14ea9113bf5712d6ffce356d02abb7224c21771a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc6f60397c2d432dd6547a8be34280fcf3acd05d
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70067721"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078414"
 ---
 # <a name="implement-x-csrf-pattern"></a>Реализация шаблона X-CSRF
 
-В этой статье на примере политики службы управления API Azure показано, как реализовать шаблон X-CSRF, который используется во многих интерфейсах API. Этот пример относится только к шлюзу SAP. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
+В этой статье на примере политики службы управления API Azure показано, как реализовать шаблон X-CSRF, который используется во многих интерфейсах API. Этот пример относится только к шлюзу SAP. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-reference.md).
 
 ## <a name="policy"></a>Политика
 
@@ -34,5 +34,4 @@ ms.locfileid: "70067721"
 Подробнее о политиках службы управления API:
 
 + [Политики преобразования](../api-management-transformation-policies.md)
-+ [Примеры политик](../policy-samples.md).
-
++ [Примеры политик](../policy-reference.md).

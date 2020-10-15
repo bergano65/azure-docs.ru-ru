@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a57473a26d5fe809274f14c8767356914e0d4962
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d3f04777983d24d5219c55c5309b7d12c214594
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400523"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070696"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Базовый уровень безопасности Azure для автоматизации
 
@@ -84,7 +84,7 @@ ms.locfileid: "89400523"
 
 * [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
 * [Общие сведения о адаптивной защите сети в центре безопасности Azure](../security-center/security-center-adaptive-network-hardening.md)
 
@@ -150,7 +150,7 @@ ms.locfileid: "89400523"
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](../governance/policy/samples/built-in-policies.md#network)
 
 * [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
@@ -520,7 +520,7 @@ ms.locfileid: "89400523"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -720,7 +720,7 @@ ms.locfileid: "89400523"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -752,7 +752,7 @@ ms.locfileid: "89400523"
 
 * [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-reference.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -854,7 +854,7 @@ ms.locfileid: "89400523"
 
 * [Обзор брандмауэра веб-приложения Azure](../web-application-firewall/overview.md)
 
-* [Группы безопасности сети](../virtual-network/security-overview.md)
+* [Группы безопасности сети](../virtual-network/network-security-groups-overview.md)
 
 * [Обзор виртуальной сети Azure](../virtual-network/virtual-networks-overview.md)
 
@@ -882,7 +882,7 @@ ms.locfileid: "89400523"
 
 * [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](../governance/policy/tutorials/create-and-manage.md)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-reference.md)
 
 * [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
@@ -920,7 +920,7 @@ ms.locfileid: "89400523"
 
 * [Развертывание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./quickstart-create-automation-account-template.md#deploy-the-template)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-reference.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -984,7 +984,7 @@ ms.locfileid: "89400523"
 
 * [Использование псевдонимов](../governance/policy/concepts/definition-structure.md#aliases)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-reference.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1014,7 +1014,7 @@ ms.locfileid: "89400523"
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-reference.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

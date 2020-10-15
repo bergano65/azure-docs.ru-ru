@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/07/2020
 ms.author: jeedes
 ms.openlocfilehash: 3bb03444062a5652e4e0aad24560b90acd2ce2d2
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "88544824"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-syxsense"></a>Руководство по Интеграция единого входа Azure Active Directory со Syxsense

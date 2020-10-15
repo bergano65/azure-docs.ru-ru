@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 10/02/2018
 ms.topic: conceptual
 ms.custom: devx-track-js
-ms.openlocfilehash: e585bc52121943102522f8c44291a4f9453d6214
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e54cd0e3c5b9499a3bc1a499ae4cef62c73160e
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318404"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070713"
 ---
 # <a name="add-a-custom-page-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -155,7 +155,7 @@ npm start
 
 1. Разверните **базовый** экземпляр акселератора решений с помощью CLI **PCS**. Запишите имя развертывания и учетные данные, указанные для виртуальной машины. Дополнительные сведения см. в статье [Развертывание предварительно настроенного решения для удаленного мониторинга с помощью интерфейса командной строки](iot-accelerators-remote-monitoring-deploy-cli.md).
 
-1. Используйте портал Azure или [AZ CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы включить доступ по ПРОТОКОЛу SSH к виртуальной машине, на которой размещены микрослужбы в решении. Пример:
+1. Используйте портал Azure или [AZ CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы включить доступ по ПРОТОКОЛу SSH к виртуальной машине, на которой размещены микрослужбы в решении. Например.
 
     ```azurecli
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
@@ -163,7 +163,7 @@ npm start
 
     Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если вы включили протокол SSH, [то следует отключить его снова как можно скорее](../security/fundamentals/network-best-practices.md).
 
-1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Пример:
+1. Используя портал Azure или [командную строку Azure](/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Например.
 
     ```azurecli
     az resource list --resource-group {your solution name} -o table
@@ -188,7 +188,7 @@ npm start
     REACT_APP_BASE_SERVICE_URL=https://{your solution name}.azurewebsites.net/
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решения для удаленного мониторинга.
 
