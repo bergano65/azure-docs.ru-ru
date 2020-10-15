@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 05/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 8cda46a011ae92f26a15a4e9a918559801ce299c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c90062f1968cc7be5a742a67363f57b9632fdfa
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906863"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090681"
 ---
 # <a name="java-and-base-os-for-spring-microservice-apps"></a>Java и базовая операционная система для приложений микрослужбы Spring
 
@@ -46,7 +46,7 @@ Azul системы постоянно сканирует изменения б�
     * Ubuntu 20,04 LTS (фокус Фосса). Приложения продолжат поддерживать последнюю версию LTS Ubuntu.
     * См. раздел [Ubuntu 20,04 LTS (фокус Фосса)](http://releases.ubuntu.com/focal/) .
 * Как скачать поддерживаемую среду выполнения Java для локального разработки? 
-    * См. статью [Установка JDK для Azure и Azure Stack](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install)
+    * См. статью [Установка JDK для Azure и Azure Stack](/azure/developer/java/fundamentals/java-jdk-install)
 * Как можно получить поддержку проблем на уровне среды выполнения Java?
     * Откройте запрос в службу поддержки Azure.
  
@@ -54,7 +54,7 @@ Azul системы постоянно сканирует изменения б�
 
 > ![Развертывание по умолчанию](media/spring-cloud-principles/spring-cloud-default-deployment.png)
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
-* [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support)
+* [Долгосрочная поддержка Java для Azure и Azure Stack](/azure/developer/java/fundamentals/java-jdk-long-term-support)

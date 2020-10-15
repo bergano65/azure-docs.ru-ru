@@ -43,7 +43,19 @@
         - name: Репозиторий образцов пакетной службы
           href: 'https://github.com/Azure/azure-batch-samples'
     - name: Azure CLI
-      href: cli-samples.md
+      items:
+        - name: Создание учетной записи пакетной службы в режиме пакетной службы
+          href: ./scripts/batch-cli-sample-create-account.md
+        - name: Создание учетной записи пакетной службы в режиме подписки пользователя
+          href: ./scripts/batch-cli-sample-create-user-subscription-account.md
+        - name: Добавление приложения в учетную запись пакетной службы Azure
+          href: ./scripts/batch-cli-sample-add-application.md
+        - name: Создание пула Linux и управление им
+          href: ./scripts/batch-cli-sample-manage-linux-pool.md
+        - name: Создание пула Windows и управление им
+          href: ./scripts/batch-cli-sample-manage-windows-pool.md
+        - name: Выполнение заданий и задач
+          href: ./scripts/batch-cli-sample-run-job.md
 - name: Основные понятия
   items:
     - name: Безопасность

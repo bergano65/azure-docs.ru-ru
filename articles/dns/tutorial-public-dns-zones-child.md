@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 7/16/2020
 ms.author: jonbeck
 ms.openlocfilehash: 3f35d39634470ccacffa4d35c272a82725e9001c
-ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "89081374"
 ---
 # <a name="tutorial-creating-a-new-child-dns-zone"></a>Руководство по Создание новой дочерней зоны DNS
@@ -74,14 +74,14 @@ ms.locfileid: "89081374"
 1.  На портале Azure в разделе **Все ресурсы** откройте зону DNS *contoso.com* в группе ресурсов **MyResourceGroup**. Чтобы упростить поиск, можно ввести *contoso.com* в поле **Фильтровать по имени**.
 1.  На странице обзорных сведений о зоне DNS нажмите кнопку **+Child Zone** (Добавить дочернюю зону).
 
-      :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-child-zone-inline.png" alt-text="Снимок экрана с кнопкой создания дочерней зоны." border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-child-zone-expanded.png":::
+      :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-child-zone-inline.png" alt-text="Снимок экрана со страницей создания зоны DNS." border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-child-zone-expanded.png":::
 
 1.  Откроется страница создания зоны DNS. На этой странице уже установлен флажок, который помечает эту зону как дочернюю, и внесены сведения о подписке и имени родительской зоны.
 1.  Для нашего примера введите строку *child* в качестве имени. Обратите внимание, что имя родительской зоны DNS (contoso.com) автоматически добавляется к введенному имени.
 1.  По завершении выберите **Next: Теги** , а затем **Далее: Отзыв и создание**.
 1.  На вкладке **Просмотр и создание** проверьте сводную информацию, устраните возможные ошибки и щелкните **Создать**.
 
-    :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-inline.png" alt-text="Снимок экрана с выбранной дочерней зоной" border="true"  lightbox="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-expanded.png":::
+    :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-inline.png" alt-text="Снимок экрана со страницей создания зоны DNS." border="true"  lightbox="./media/dns-delegate-domain-azure-dns/create-dns-zone-child-expanded.png":::
 ## <a name="verify-child-dns-zone"></a>Проверка дочерней зоны DNS
 Итак, вы создали новую дочернюю зону DNS с именем *subdomain.contoso.com*. Чтобы проверить успешность делегирования, попробуйте обратиться к записям NS сервера имен о дочерней зоне, размещенным в родительской зоне, как описано ниже.  
 
@@ -90,7 +90,7 @@ ms.locfileid: "89081374"
 1.  На портале Azure в разделе **Все ресурсы** откройте зону DNS *subdomain.contoso.com* в группе ресурсов **MyResourceGroup**. Чтобы упростить поиск, можно ввести *subdomain.contoso.com* в поле **Фильтровать по имени**.
 1.  Сведения о серверах имен отобразятся на странице обзорных данных о зоне DNS. В нашем примере зоне contoso.com присвоены серверы имен *ns1-08.azure-dns.com, ns2-08.azure-dns.net, ns3-08.azure-dns.org* и *ns4-08.azure-dns.info*:
 
-      :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-inline.png" alt-text="Снимок экрана с информацией о серверах имен для дочерней зоны" border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-expanded.png":::
+      :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-inline.png" alt-text="Снимок экрана со страницей создания зоны DNS." border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-expanded.png":::
 **Проверка записи NS в родительской зоне DNS**
 
 На этом этапе мы обратимся к родительской зоне DNS (*contoso.com*) и убедимся, что в ее записи NS есть информация о серверах имен для только что созданной дочерней зоны.
@@ -99,7 +99,7 @@ ms.locfileid: "89081374"
 1.  На странице обзорных сведений о зонах DNS для домена *contoso.com* изучите все наборы записей.
 1.  Вы увидите, что в родительской зоне DNS уже создан набор записей с типом NS и поддомен имен. Убедитесь, что значения для этого набора записей похожи на тот список серверов имен, который мы получили для дочерней зоны DNS на предыдущем этапе.
 
-     :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-validate-inline.png" alt-text="Снимок экрана с информацией для проверки серверов имен для дочерней зоны" border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-validate-expanded.png":::
+     :::image type="content" source="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-validate-inline.png" alt-text="Снимок экрана со страницей создания зоны DNS." border="true" lightbox="./media/dns-delegate-domain-azure-dns/create-child-zone-ns-validate-expanded.png":::
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если вы больше не нуждаетесь в ресурсах, созданных в рамках этого руководства, избавьтесь от них, удалив группу ресурсов **MyResourceGroup**. Откройте группу ресурсов **MyResourceGroup** и нажмите **Удалить группу ресурсов**.
 

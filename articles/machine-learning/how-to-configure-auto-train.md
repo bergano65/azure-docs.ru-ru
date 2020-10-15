@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1
-ms.openlocfilehash: 6d05f5fa20b5deee14b1a2fada389d869d48908a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fc5b958813ea1107d98525b6dfc1b0b56c9c5400
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91709093"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091208"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -343,7 +343,7 @@ run = experiment.submit(automl_config, show_output=True)
 
 Просмотреть результаты обучения можно в мини-приложении или во встроенном окне при работе с записной книжкой. Ознакомьтесь с разделом [Просмотр сведений о выполнении](how-to-monitor-view-training-logs.md#monitor-automated-machine-learning-runs), чтобы получить дополнительные сведения.
 
-Определения и примеры диаграмм производительности и метрик, предоставляемых для каждого запуска, см. в разделе Общие сведения об [автоматизированных результатах машинного обучения](how-to-understand-automated-ml.md) . 
+Определения и примеры диаграмм производительности и метрик, предоставляемых для каждого запуска, см. в разделе [Оценка результатов автоматического эксперимента по машинному обучению](how-to-understand-automated-ml.md) . 
 
 Чтобы получить сводку Добавление признаков и понять, какие функции были добавлены в определенную модель, см. раздел [прозрачность Добавление признаков](how-to-configure-auto-features.md#featurization-transparency). 
 

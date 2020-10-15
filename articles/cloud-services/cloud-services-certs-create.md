@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: tagore
-ms.openlocfilehash: 08ce69856dd36b6029297109fcb8610b856c8b98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8650b8670c61cab15b26163dd5108145b8509434
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88142372"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072430"
 ---
 # <a name="certificates-overview-for-azure-cloud-services"></a>Общие сведения о сертификатах для облачных служб Azure
 Сертификаты используются в Azure для облачных служб ([сертификаты службы](#what-are-service-certificates)), а также для аутентификации с помощью службы управления API ([сертификаты управления](#what-are-management-certificates)). В этой статье приводится общий обзор этих двух типов сертификатов, а также описывается процесс их [создания](#create) и развертывания в Azure.
@@ -76,7 +76,7 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 > Если вы хотите использовать сертификат, указав IP-адрес, а не домен, задайте этот IP-адрес в параметре -DnsName.
 
 
-Если вы хотите использовать этот [сертификат на портале управления](../azure-api-management-certs.md), экспортируйте его в **CER-файл** .
+Если вы хотите использовать этот [сертификат на портале управления](/previous-versions/azure/azure-api-management-certs), экспортируйте его в **CER-файл** .
 
 ```powershell
 Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
@@ -88,11 +88,7 @@ Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
 ### <a name="linux"></a>Linux
 В [этой](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) статье рассматривается создание сертификатов с использованием SSH.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Передача сертификата службы на портал Azure](cloud-services-configure-ssl-certificate-portal.md).
 
-Передайте на портал Azure [сертификат API управления](../azure-api-management-certs.md).
-
-
-
-
+Передайте на портал Azure [сертификат API управления](/previous-versions/azure/azure-api-management-certs).

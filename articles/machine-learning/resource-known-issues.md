@@ -8,15 +8,15 @@ ms.author: keli19
 ms.reviewer: mldocs
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.custom: troubleshooting, contperfq4
 ms.date: 10/02/2020
-ms.openlocfilehash: c4250be15b1c4fdc5df81c0f0ba3623dedf6488f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 365d38eedd327bb50bbbea01a6847738c482b1bd
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667271"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091191"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -482,7 +482,7 @@ az aks get-credentials -g <rg> -n <aks cluster name>
 
 Дополнительные сведения см. в статье [Управление доступом к рабочей области Машинного обучения Azure](how-to-assign-roles.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. Дополнительные статьи по устранению неполадок Машинное обучение Azure:
 

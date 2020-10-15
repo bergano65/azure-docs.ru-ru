@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 3383971b9984e6f565feebc3bdfb968fb77cbe85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6fb4d1459584e8dd2b230a424f043ad086f2570d
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91311110"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089457"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -41,11 +41,11 @@ ms.locfileid: "91311110"
 В следующей таблице описаны распространенные сценарии проверки подлинности и авторизации в Azure Maps. В таблице представлено сравнение типов защиты, предлагаемых каждым сценарием.
 
 > [!IMPORTANT]
-> Корпорация Майкрософт рекомендует реализовать Azure Active Directory (Azure AD) с управлением доступом на основе ролей (RBAC) для рабочих приложений.
+> Корпорация Майкрософт рекомендует реализовать Azure Active Directory (Azure AD) с помощью управления доступом на основе ролей Azure (Azure RBAC) для рабочих приложений.
 
 | Сценарий                                                                                    | Аутентификация | Авторизация | Усилия по разработке | Рабочие усилия |
 | ------------------------------------------------------------------------------------------- | -------------- | ------------- | ------------------ | ------------------ |
-| [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Общий ключ     | Недоступно           | Средний             | Высокий               |
+| [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Общий ключ     | Н/Д           | Средний             | Высокий               |
 | [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Azure AD       | Высокий          | Низкий                | Средний             |
 | [Одностраничное веб-приложение с интерактивным единым входом](./how-to-secure-spa-users.md) | Azure AD       | Высокий          | Средний             | Средн.             |
 | [Одностраничное приложение Web с неинтерактивным входом](./how-to-secure-spa-app.md)      | Azure AD       | Высокий          | Средний             | Средн.             |
@@ -63,10 +63,10 @@ ms.locfileid: "91311110"
 
 ## <a name="view-role-assignments"></a>Просмотр назначений ролей
 
-Чтобы просмотреть пользователей и приложения, которым было предоставлено значение RBAC для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **назначения ролей**, а затем выполните фильтрацию по **Azure Maps**.
+Чтобы просмотреть пользователей и приложения, которым был предоставлен доступ к Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **назначения ролей**, а затем выполните фильтрацию по **Azure Maps**.
 
 > [!div class="mx-imgBorder"]
-> ![Просмотр пользователей и приложений, которым было предоставлено разрешение RBAC](./media/how-to-manage-authentication/how-to-view-amrbac.png)
+> ![Просмотр пользователей и приложений, которым был предоставлен доступ](./media/how-to-manage-authentication/how-to-view-amrbac.png)
 
 ## <a name="request-tokens-for-azure-maps"></a>Запрос маркеров для Azure Maps
 
@@ -79,7 +79,7 @@ ms.locfileid: "91311110"
 
 Дополнительные сведения о запросе маркеров доступа из Azure AD для пользователей и субъектов-служб см. в статье [сценарии проверки подлинности для Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios) и просмотрите конкретные сценарии в таблице [сценариев](./how-to-manage-authentication.md#determine-authentication-and-authorization).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Azure AD и Azure Maps веб-пакет SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
 
