@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 98740153def94742a8bbba1ee6f4f022b614ecfa
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 12c0647e0244464966c52bafe8c976eb4a35ddda
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88537130"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91741216"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-benselect"></a>Руководство по Интеграция единого входа Azure Active Directory с BenSelect
 
@@ -89,15 +89,15 @@ ms.locfileid: "88537130"
 
 1. Приложение BenSelect ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана: раздел "Атрибуты пользователя" с атрибутами по умолчанию, такими как "givenname: user.givenname" и "emailaddress: user.mail".](common/edit-attribute.png)
 
 1. Щелкните значок **Изменить**, чтобы изменить параметр **Значение идентификатора имени**.
 
-    ![Изображение](media/benselect-tutorial/mail-prefix1.png)
+    ![Снимок экрана: панель "Атрибуты и утверждения пользователя" с выделенным значком "Изменить".](media/benselect-tutorial/mail-prefix1.png)
 
 1. В разделе **Управление утверждениями пользователя** выполните следующие действия.
 
-    ![Изображение](media/benselect-tutorial/mail-prefix2.png)
+    ![Снимок экрана: раздел "Управление утверждениями пользователя", где можно ввести описанные на этом шаге значения.](media/benselect-tutorial/mail-prefix2.png)
 
     а. Выберите значение **Преобразование** для параметра **Источник**.
 

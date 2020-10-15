@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: aahi
-ms.openlocfilehash: da1ada27b9420643f6f0b15f0986c245ba585acd
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.openlocfilehash: a07365dd313f75a844e41b71427d8ddcf78ded85
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
-ms.locfileid: "85921942"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91742508"
 ---
 # <a name="tutorial-build-a-custom-search-web-page"></a>Руководство по Создание веб-страницы пользовательского поиска
 
@@ -118,7 +118,7 @@ ms.locfileid: "85921942"
   
 5. Выберите ключи подписки из раскрывающихся списков. Или можно ввести ключ подписки вручную.
   
-   ![Снимок экрана: дополнительные параметры конфигурации на вкладке Hosted UI (размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-subscription-key.png)
+   ![Снимок экрана: ключ подписки размещенного пользовательского интерфейса](./media/custom-search-hosted-ui-subscription-key.png)
 
 [!INCLUDE [publish or revert](../includes/publish-revert.md)]
 
@@ -144,7 +144,7 @@ ms.locfileid: "85921942"
   
 4. В окне **Веб-приложение ASP.NET Core** выберите **Веб-приложение** и нажмите кнопку **ОК**.  
   
-   ![Снимок экрана: окно "Новый проект"](./media/custom-search-new-webapp.png)  
+   ![Снимок экрана: окно нового веб-приложения](./media/custom-search-new-webapp.png)  
 
 ## <a name="edit-indexcshtml"></a>Изменение файла Index.cshtml
 

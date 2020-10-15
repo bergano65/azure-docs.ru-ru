@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 0e9ccb3f4308a1a75a715a16ab4c1a2887b0a915
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4ffaad77a34be66d06f8f0033731d0496e444e52
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88522089"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91715877"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей)
 
@@ -132,11 +132,11 @@ ms.locfileid: "88522089"
 
 1. На вкладке **Пользователи и группы** выберите u2 из списка пользователей и щелкните **Выбрать**. Затем щелкните **Назначить**.
 
-    ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test01.png)
+    ![Снимок экрана: панель "Добавление назначения" для Alibaba без выбранных пользователей и групп.](./media/alibaba-cloud-service-role-based-sso-tutorial/test01.png)
 
 1. Просмотрите назначенную роль и протестируйте приложение Alibaba Cloud Service (единый вход на основе ролей).
 
-    ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test02.png)
+    ![Снимок экрана: роль, назначенная пользователю u2.](./media/alibaba-cloud-service-role-based-sso-tutorial/test02.png)
 
     >[!NOTE]
     >После назначения пользователя (u2) созданная роль будет автоматически связана с пользователем. Если вы создали несколько ролей, при необходимости свяжите соответствующую роль с пользователем. Если вы хотите реализовать единый вход Azure AD на основе ролей для нескольких учетных записей Alibaba Cloud, повторите предыдущие шаги.
@@ -164,25 +164,25 @@ ms.locfileid: "88522089"
 
     b. Нажмите кнопку **Изменить разрешения**, чтобы получить необходимые разрешения для создания роли.
 
-    ![Конфигурация Graph](./media/alibaba-cloud-service-role-based-sso-tutorial/graph01.png)
+    ![Снимок экрана: окно проверки подлинности обозревателя Graph с ссылкой "Изменить разрешения".](./media/alibaba-cloud-service-role-based-sso-tutorial/graph01.png)
 
     c. Выберите указанные ниже разрешения в списке и нажмите кнопку **Изменить разрешения**, как показано на следующем рисунке.
 
-    ![Конфигурация Graph](./media/alibaba-cloud-service-role-based-sso-tutorial/graph02.png)
+    ![Снимок экрана: доступные для выбора разрешения — Directory.AccessAsUser.All, Directory.Read.All и Directory.ReadWrite.All.](./media/alibaba-cloud-service-role-based-sso-tutorial/graph02.png)
 
     >[!NOTE]
     >После предоставления разрешений повторно войдите в обозреватель Graph.
 
     d. На странице обозревателя Graph выберите **GET** в первом раскрывающемся списке и **beta** во втором. Затем введите `https://graph.microsoft.com/beta/servicePrincipals` в поле рядом с раскрывающимися списками и щелкните **Выполнить запрос**.
 
-    ![Конфигурация Graph](./media/alibaba-cloud-service-role-based-sso-tutorial/graph03.png)
+    ![Снимок экрана: обозреватель Graph с выбранными элементами "GET" и "beta" и выделенной кнопкой "Выполнить запрос".](./media/alibaba-cloud-service-role-based-sso-tutorial/graph03.png)
 
     >[!NOTE]
     >Если вы используете несколько каталогов, в поле запроса можно ввести `https://graph.microsoft.com/beta/contoso.com/servicePrincipals`.
 
     д) В разделе **Предварительный просмотр ответа** извлеките свойство appRoles из субъекта-службы для последующего использования.
 
-    ![Конфигурация Graph](./media/alibaba-cloud-service-role-based-sso-tutorial/graph05.png)
+    ![Снимок экрана: открытый текст в разделе "Предварительный просмотр ответа", где можно получить свойство appRoles.](./media/alibaba-cloud-service-role-based-sso-tutorial/graph05.png)
 
     >[!NOTE]
     >Свойство appRoles можно найти, введя `https://graph.microsoft.com/beta/servicePrincipals/<objectID>` в поле запроса. Обратите внимание, что `objectID` является идентификатором объекта, который вы скопировали на странице **Свойства** Azure AD.
@@ -234,19 +234,19 @@ ms.locfileid: "88522089"
 
 1. На портале Azure перейдите на страницу **Alibaba Cloud Service (единый вход на основе ролей)** , выберите **Единый вход** и нажмите **Тест**.
 
-    ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test03.png)
+    ![Снимок экрана: проверка единого входа в облачную службу Alibaba и кнопка "Тест".](./media/alibaba-cloud-service-role-based-sso-tutorial/test03.png)
 
 2. Щелкните **Войдите от имени текущего пользователя**.
 
-    ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test04.png)
+    ![Снимок экрана: ссылка "Войдите от имени текущего пользователя".](./media/alibaba-cloud-service-role-based-sso-tutorial/test04.png)
 
 3. На странице выбора учетной записи выберите u2.
 
-    ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test05.png)
+    ![Снимок экрана: вариант единого входа с выбранным пользователем u2.](./media/alibaba-cloud-service-role-based-sso-tutorial/test05.png)
 
 4. Отобразится следующая страница с указанием того, что единый вход на основе ролей успешно выполнен.
 
-    ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test06.png)
+    ![Снимок экрана: страница "Продукты и службы", означающая успешное выполнение теста. ](./media/alibaba-cloud-service-role-based-sso-tutorial/test06.png)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

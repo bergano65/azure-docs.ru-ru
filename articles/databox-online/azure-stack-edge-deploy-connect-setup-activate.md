@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 5a89125edf6082bbbcbaf139a648c9edc2debf81
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: 8a143dadffb3f89ef67dc20a2038bb3c9bf5a0e4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90894256"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91743341"
 ---
 # <a name="tutorial-connect-set-up-and-activate-azure-stack-edge-pro"></a>Руководство по Подключение, настройка и активация Azure Stack Edge Pro 
 
@@ -146,7 +146,7 @@ ms.locfileid: "90894256"
 
     4. После завершения обновления вам, возможно, придется подождать несколько минут. Страница будет обновлена с указанием того, что устройство успешно активировано.
 
-        ![Обновленная страница "Настройки облака" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-deploy-connect-setup-activate/set-up-activate-8.png)
+        ![Обновленная страница "Настройки облака" в локальном пользовательском веб-интерфейсе (2)](./media/azure-stack-edge-deploy-connect-setup-activate/set-up-activate-8.png)
 
 Настройка устройства завершена. Теперь в него можно добавить общие папки.
 

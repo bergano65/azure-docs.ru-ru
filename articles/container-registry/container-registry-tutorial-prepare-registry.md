@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 06/30/2020
 ms.custom: seodec18, mvc
 ms.openlocfilehash: 780a16d691e0d8afe62cd06f37a37fc3f6445ea6
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "86259524"
 ---
 # <a name="tutorial-prepare-a-geo-replicated-azure-container-registry"></a>Руководство по Подготовка геореплицированного реестра контейнеров Azure
@@ -57,7 +57,7 @@ Azure Cloud Shell не включает в себя компоненты Docker,
 
 Выберите **Проверка и создание** и **Создать**, чтобы создать экземпляр реестра.
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-02.png" alt-text="Настройка реестра контейнеров на портале Azure":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-02.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 В этом руководстве будет использоваться имя `<acrName>` как заполнитель выбранного **имени реестра контейнеров**.
 
@@ -70,19 +70,19 @@ Azure Cloud Shell не включает в себя компоненты Docker,
 
 Перейдите в новый реестр контейнеров на портале Azure и в разделе **Службы** выберите **Репликации**:
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-03.png" alt-text="Репликации в пользовательском интерфейсе реестра контейнеров на портале Azure":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-03.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 Отобразится карта, на которой показаны зеленые шестиугольники, отображающие регионы Azure, доступные для георепликации:
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-map-01.png" alt-text="Карта регионов на портале Azure":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-map-01.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 Реплицируйте свой реестр в регион "Восточная часть США". Для этого выберите его зеленый шестиугольник, а затем в разделе **Create replication** (Создать репликацию) нажмите кнопку **Создать**.
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-04.png" alt-text="Пользовательский интерфейс создания репликации на портале Azure":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-04.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 По завершении репликации на портале отобразится состояние *Готово* для обоих регионов. С помощью кнопки **Обновить** можно обновить состояние репликации. Чтобы создать и синхронизировать реплики, может потребоваться несколько минут.
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-05.png" alt-text="Пользовательский интерфейс состояния репликации на портале Azure":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-05.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 
 ## <a name="enable-admin-account"></a>Включение учетной записи администратора
@@ -91,7 +91,7 @@ Azure Cloud Shell не включает в себя компоненты Docker,
 
 Перейдите в новый реестр контейнеров на портале Azure и в разделе **Параметры** выберите **Ключи доступа**. В разделе **Пользователь-администратор** выберите **Включить**.
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-06.png" alt-text="Включение учетной записи администратора на портале Azure":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-portal-06.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 
 ## <a name="container-registry-login"></a>Вход в реестр контейнеров
@@ -110,7 +110,7 @@ az acr login --name <acrName>
 
 Пример в этом руководстве включает небольшое веб-приложение, созданное с помощью [ASP.NET Core][aspnet-core]. Приложение обслуживает страницу HTML, отображающую регион, из которого был развернут образ с помощью реестра контейнеров Azure.
 
-:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-app-01.png" alt-text="Приложение из руководства, отображающееся в браузере":::
+:::image type="content" source="./media/container-registry-tutorial-prepare-registry/tut-app-01.png" alt-text="Создание реестра контейнеров на портале Azure":::
 
 Выполните указанную ниже команду git, чтобы загрузить пример в локальный каталог. Или выполните команду `cd`, чтобы загрузить пример в обычный каталог.
 

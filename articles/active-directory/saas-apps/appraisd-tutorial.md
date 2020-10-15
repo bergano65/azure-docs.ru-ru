@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 2b8e8a6df2fc355ad6a8ef50d801dc7457e97c63
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2e355241191a4bdcab12c7c0b6527706b044a70c
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88547789"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91714472"
 ---
 # <a name="tutorial-integrate-appraisd-with-azure-active-directory"></a>Руководство по Интеграция Appraisd с Azure Active Directory
 
@@ -86,7 +86,7 @@ ms.locfileid: "88547789"
 
 1. Приложение Appraisd ожидает проверочные утверждения SAML в определенном формате, поэтому необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Appraisd ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![Изображение](common/edit-attribute.png)
+    ![Снимок экрана: панель "Атрибуты и утверждения пользователя" с выделенным значком "Изменить".](common/edit-attribute.png)
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -110,15 +110,15 @@ ms.locfileid: "88547789"
 
 4. В верхнем правом углу страницы щелкните значок **Параметры**, затем перейдите на экран **Конфигурация**.
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_sett.png)
+    ![Снимок экрана: выделенная ссылка "Конфигурация".](./media/appraisd-tutorial/tutorial_appraisd_sett.png)
 
 5. В левой части меню щелкните на **Единый вход SAML**.
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_single.png)
+    ![Снимок экрана: параметры конфигурации с выделенным параметром "Единый вход SAML".](./media/appraisd-tutorial/tutorial_appraisd_single.png)
 
 6. На странице **SAML 2.0 Single Sign-On configuration** (Конфигурация единого входа SAML 2.0) выполните следующие действия.
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_saml.png)
+    ![Снимок экрана: страница "Конфигурации единого входа SAML 2.0", на которой можно изменить состояние ретрансляции по умолчанию и URL-адрес входа, инициируемого службой.](./media/appraisd-tutorial/tutorial_appraisd_saml.png)
 
     а. Скопируйте значение **Default Relay State** (Состояние ретрансляции по умолчанию) и вставьте его в текстовое поле **Состояние ретранслятора** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -126,7 +126,7 @@ ms.locfileid: "88547789"
 
 7. Прокрутите эту страницу вниз до раздела **Идентификация пользователей** и выполните следующие действия.
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_identifying.png)
+    ![Снимок экрана: раздел "Идентификация пользователей", в котором можно ввести значения из этого шага.](./media/appraisd-tutorial/tutorial_appraisd_identifying.png)
 
     а. В текстовое поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure. Нажмите кнопку **Save** (Сохранить).
 
@@ -174,15 +174,15 @@ ms.locfileid: "88547789"
 
 2. В верхнем правом углу страницы щелкните значок **Settings** (Параметры), затем перейдите на экран **Administration centre** (Центр администрирования).
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_admin.png)
+    ![Снимок экрана: страница параметров, на которой можно выбрать Центр администрирования.](./media/appraisd-tutorial/tutorial_appraisd_admin.png)
 
 3. На панели инструментов в верхней части страницы щелкните **People** (Пользователи), затем выберите **Add a new user** (Добавить нового пользователя).
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_user.png)
+    ![Снимок экрана: страница Appraisd с выделенным элементом "Люди" и выделенной кнопкой "Добавить нового пользователя".](./media/appraisd-tutorial/tutorial_appraisd_user.png)
 
 4. На странице **Add a new user** (Добавление нового пользователя) выполните следующие действия.
 
-    ![Изображение](./media/appraisd-tutorial/tutorial_appraisd_newuser.png)
+    ![Снимок экрана: страница "Добавление нового пользователя".](./media/appraisd-tutorial/tutorial_appraisd_newuser.png)
 
     а. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 

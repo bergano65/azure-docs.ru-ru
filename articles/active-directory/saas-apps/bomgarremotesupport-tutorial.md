@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/30/2019
 ms.author: jeedes
-ms.openlocfilehash: ecaeea625bc4891c95614292a44d31b616d39eb2
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: a70216286e6f19f565d189c1c16f8862494e3aef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88549302"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91743086"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-beyondtrust-remote-support"></a>Руководство по интеграции единого входа Azure Active Directory с BeyondTrust Remote Support
 
@@ -155,7 +155,7 @@ ms.locfileid: "88549302"
 
 1. Перейдите в меню **STATUS** (Состояние), скопируйте **идентификатор**, **URL-адрес ответа** и **URL-адрес входа** и используйте эти значения в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка BeyondTrust Remote Support](./media/bomgarremotesupport-tutorial/config-url-values.png)
+    ![Снимок экрана: меню "Состояние" в BeyondTrust Remote Support, где можно получить эти сведения.](./media/bomgarremotesupport-tutorial/config-url-values.png)
 
 1. Перейдите в `https://support.example.com/login`интерфейс входа в BeyondTrust Remote Support, где **support.example.com** — это основное имя устройства, и выполните проверку подлинности с использованием учетных данных администратора.
 
@@ -165,20 +165,20 @@ ms.locfileid: "88549302"
 
 1. В разделе Identity Provider Settings (Параметры поставщика удостоверений) можно отправить метаданные поставщика удостоверений. Перейдите к XML-файлу метаданных, скачанному на портале Azure, и нажмите кнопку **Upload** (Отправить). **Идентификатор сущности**, **URL-адрес службы единого входа** и сертификат будут автоматически отправлены, а для параметра **Protocol Binding** (Привязка протокола) потребуется изменить значение на **HTTP POST**. Просмотрите указанный ниже снимок экрана.
 
-    ![Настройка BeyondTrust Remote Support](./media/bomgarremotesupport-tutorial/config-uploadfile.png)
+    ![Снимок экрана: раздел "Параметры поставщика удостоверений", где выполняются эти действия.](./media/bomgarremotesupport-tutorial/config-uploadfile.png)
 
 ### <a name="create-beyondtrust-remote-support-test-user"></a>Создание тестового пользователя в BeyondTrust Remote Support
 
 В этом разделе вы настроите параметры подготовки пользователей. Используемые здесь значения будут упомянуты в разделе **Утверждения и атрибуты пользователя** на портале Azure. Мы оставили значения по умолчанию, которые уже импортированы во время создания, однако при необходимости их можно настроить.
 
-![Создание пользователя](./media/bomgarremotesupport-tutorial/config-user1.png)
+![Снимок экрана: раздел "Параметры подготовки пользователя", где можно настроить значения пользователя.](./media/bomgarremotesupport-tutorial/config-user1.png)
 
 > [!NOTE]
 > Для этой реализации атрибуты "Группы" и "Электронная почта" не требуются. Если вы используете группы Azure AD и назначаете им групповые политики BeyondTrust Remote Support для предоставления разрешений, необходимо ссылаться на идентификатор объекта этой группы с помощью его свойств на портале Azure и поместить эту группу в раздел "Доступные группы". После завершения идентификатор объекта и группа AD будут доступны для назначения групповой политике, определяющей разрешения.
 
-![Создание пользователя](./media/bomgarremotesupport-tutorial/config-user2.png)
+![Снимок экрана: раздел "IT", где указаны тип членства, источник, тип и ИД объекта.](./media/bomgarremotesupport-tutorial/config-user2.png)
 
-![Создание пользователя](./media/bomgarremotesupport-tutorial/config-user3.png)
+![Снимок экрана: страница "Основные параметры" для групповой политики.](./media/bomgarremotesupport-tutorial/config-user3.png)
 
 > [!NOTE]
 > Кроме того, можно настроить групповую политику по умолчанию для поставщика безопасности SAML2. Если задать этот параметр, всем пользователям, прошедшим проверку подлинности через SAML, будут назначены разрешения, указанные в групповой политике. Политика General Members (Общие участники) включена в группу привилегированного удаленного доступа к BeyondTrust Remote Support с ограниченными разрешениями, которые можно использовать для проверки подлинности и назначения пользователям правильных политик. Пользователи не попадут в список пользователей SAML2, выполнив вход на вкладке Users & Security (Пользователи и безопасность), пока не совершат первую успешную попытку проверки подлинности. Дополнительные сведения о групповых политиках см. по следующей ссылке: `https://www.beyondtrust.com/docs/remote-support/getting-started/admin/group-policies.htm`

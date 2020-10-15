@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 07/15/2020
+ms.date: 10/05/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 27437ae1db0ff3a205108638670b058eaaea04bd
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 202a7f6b01423045fe7c72db5b42c29ae58f648d
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91280731"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91739669"
 ---
 # <a name="tutorial-add-autocomplete-and-suggestions-using-the-net-sdk"></a>Руководство по Добавление автозаполнения и предложений с помощью пакета SDK для .NET
 
@@ -27,11 +27,19 @@ ms.locfileid: "91280731"
 > * Добавление автозаполнения
 > * Объединение функций автозаполнения и предложений
 
+## <a name="overview"></a>Обзор
+
+Это руководство добавляет функции автозаполнения и показа предложений в предыдущее руководство по [добавлению разбиения на страницы в результаты поиска](tutorial-csharp-paging.md).
+
+Готовую версию кода для этого руководства можно найти в следующем проекте:
+
+* [3-add-typeahead (GitHub)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v11/3-add-typeahead)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-Это руководство является частью серии руководств и основано на проекте разбиения на страницы (процесс создания см.в [Руководстве по C#. Разбиение результатов поиска на страницы — Когнитивный поиск Azure](tutorial-csharp-paging.md)).
+* Решение [2a-add-paging (GitHub)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v11/2a-add-paging). Это может быть ваш собственный проект, созданный в рамках предыдущего руководства, или копия с GitHub.
 
-Кроме того, вы можете скачать уже готовое решение из этого репозитория GitHub: [3-add-typeahead](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10/3-add-typeahead).
+Это руководство было обновлено для использования пакета [Azure.Search.Documents (версия 11)](https://www.nuget.org/packages/Azure.Search.Documents/). Сведения о более ранней версии пакета SDK для .NET приведены в [примере кода для Microsoft.Azure.Search (версия 10)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10).
 
 ## <a name="add-suggestions"></a>Добавление предложений
 
@@ -43,12 +51,12 @@ ms.locfileid: "91280731"
      @Html.TextBoxFor(m => m.searchText, new { @class = "searchBox", @id = "azureautosuggest" }) <input value="" class="searchBoxSubmit" type="submit">
     ```
 
-2. В конце этой инструкции после закрывающего **&lt;/div&gt;** введите приведенный ниже скрипт. В этом скрипте используется [мини-приложение Autocomplete](https://api.jqueryui.com/autocomplete/) из библиотеки с открытым кодом jQuery UI для представления раскрывающегося списка предлагаемых результатов. 
+1. В конце этой инструкции после закрывающего **&lt;/div&gt;** введите приведенный ниже скрипт. В этом скрипте используется [мини-приложение Autocomplete](https://api.jqueryui.com/autocomplete/) из библиотеки с открытым кодом jQuery UI для представления раскрывающегося списка предлагаемых результатов.
 
     ```javascript
     <script>
         $("#azureautosuggest").autocomplete({
-            source: "/Home/Suggest?highlights=false&fuzzy=false",
+            source: "/Home/SuggestAsync?highlights=false&fuzzy=false",
             minLength: 2,
             position: {
                 my: "left top",
@@ -58,13 +66,13 @@ ms.locfileid: "91280731"
     </script>
     ```
 
-    Идентификатор azureautosuggest используется для подключения указанного выше скрипта к полю поиска. Параметру source мини-приложения присваивается Suggest. Этот метод вызывает API Suggest с двумя параметрами запроса — **highlights** и **fuzzy**. Этим параметрам в данном экземпляре присвоено значение false. Кроме того, для активации функции поиска нужно не менее двух символов.
+    Идентификатор `"azureautosuggest"` используется для подключения указанного выше скрипта к полю поиска. Параметру source мини-приложения присваивается Suggest. Этот метод вызывает API Suggest с двумя параметрами запроса — **highlights** и **fuzzy**. Этим параметрам в данном экземпляре присвоено значение false. Кроме того, для активации функции поиска нужно не менее двух символов.
 
 ### <a name="add-references-to-jquery-scripts-to-the-view"></a>Добавление ссылок на скрипты jQuery в представление
 
 1. Чтобы получить доступ к библиотеке jQuery, замените код в разделе &lt;head&gt; файла представления на приведенный ниже код.
 
-    ```cs
+    ```html
     <head>
         <meta charset="utf-8">
         <title>Typeahead</title>
@@ -91,42 +99,42 @@ ms.locfileid: "91280731"
 
 ### <a name="add-the-suggest-action-to-the-controller"></a>Добавление действия Suggest в контроллер
 
-1. Добавьте действие **Suggest** в контроллер Home, например, после действия **Page**.
+1. Добавьте действие **SuggestAsync** в контроллер Home, например после действия **PageAsync**.
 
     ```cs
-        public async Task<ActionResult> Suggest(bool highlights, bool fuzzy, string term)
+    public async Task<ActionResult> SuggestAsync(bool highlights, bool fuzzy, string term)
+    {
+        InitSearch();
+
+        // Setup the suggest parameters.
+        var options = new SuggestOptions()
         {
-            InitSearch();
+            UseFuzzyMatching = fuzzy,
+            Size = 8,
+        };
 
-            // Setup the suggest parameters.
-            var parameters = new SuggestParameters()
-            {
-                UseFuzzyMatching = fuzzy,
-                Top = 8,
-            };
-
-            if (highlights)
-            {
-                parameters.HighlightPreTag = "<b>";
-                parameters.HighlightPostTag = "</b>";
-            }
-
-            // Only one suggester can be specified per index. It is defined in the index schema.
-            // The name of the suggester is set when the suggester is specified by other API calls.
-            // The suggester for the hotel database is called "sg", and simply searches the hotel name.
-            DocumentSuggestResult<Hotel> suggestResult = await _indexClient.Documents.SuggestAsync<Hotel>(term, "sg", parameters);
-
-            // Convert the suggest query results to a list that can be displayed in the client.
-            List<string> suggestions = suggestResult.Results.Select(x => x.Text).ToList();
-
-            // Return the list of suggestions.
-            return new JsonResult(suggestions);
+        if (highlights)
+        {
+            options.HighlightPreTag = "<b>";
+            options.HighlightPostTag = "</b>";
         }
+
+        // Only one suggester can be specified per index. It is defined in the index schema.
+        // The name of the suggester is set when the suggester is specified by other API calls.
+        // The suggester for the hotel database is called "sg", and simply searches the hotel name.
+        var suggestResult = await _searchClient.SuggestAsync<Hotel>(term, "sg", options).ConfigureAwait(false);
+
+        // Convert the suggested query results to a list that can be displayed in the client.
+        List<string> suggestions = suggestResult.Value.Results.Select(x => x.Text).ToList();
+
+        // Return the list of suggestions.
+        return new JsonResult(suggestions);
+    }
     ```
 
-    Параметр **Top** указывает количество результатов для возврата (если параметр не задан, значение по умолчанию равно 5). Объект _средство подбора_ указывается в индексе Azure, который выполняется при настройке данных, а не клиентским приложением, как в этом руководстве. В этом случае средство подбора называется sg, и оно выполняет поиск только в поле **HotelName**. 
+    Параметр **Size** указывает количество результатов для возврата (если параметр не задан, значение по умолчанию равно 5). При создании индекса в индексе поиска указывается _средство подбора_. В примере индекса отелей от корпорации Майкрософт средству подбора задано имя "sg", и оно ищет предлагаемые совпадения исключительно в поле **HotelName**.
 
-    Нечеткое соответствие позволяет также включать в выходные данные "промахи" величиной до одного редакционного расстояния. Если для параметра **highlights** задано значение true, то в выходные данные добавляются полужирные метки HTML. В рамках следующего раздела мы установим значение true для этих двух параметров.
+    Нечеткое соответствие позволяет также включать в выходные данные "промахи" величиной до одного редакционного расстояния. Если для параметра **highlights** задано значение true, то в выходные данные добавляются полужирные метки HTML. В следующем разделе мы установим значение true для этих двух параметров.
 
 2. Могут возникнуть некоторые синтаксические ошибки. Если они возникли, добавьте в начало файла две приведенные ниже инструкции **using**.
 
@@ -137,13 +145,13 @@ ms.locfileid: "91280731"
 
 3. Запустите приложение. Вы видите список предложенных вариантов при вводе, например, "po"? Теперь попробуйте ввести "pa".
 
-    ![При вводе "po" отображаются два предложения](./media/tutorial-csharp-create-first-app/azure-search-suggest-po.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-po.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
 
     Обратите внимание на то, что введенные буквы _должны_ находиться в начале слова, а не в какой-либо другой его части.
 
-4. В скрипте представления задайте для параметра **&fuzzy** значение true и снова запустите приложение. Теперь введите "po". Обратите внимание: при поиске предполагается, что одна буква неправильная!
+4. В скрипте представления задайте для параметра **&fuzzy** значение true и снова запустите приложение. Теперь введите "po". Обратите внимание: при поиске предполагается, что одна буква неправильная.
  
-    ![Ввод "pa", когда для fuzzy задано значение true](./media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
 
     Подробные сведения о логике, используемой в поиске по нечетким соответствиям, приведены в статье о [синтаксисе запросов Lucene в службе "Когнитивный поиск Azure"](./query-lucene-syntax.md).
 
@@ -151,7 +159,7 @@ ms.locfileid: "91280731"
 
 Мы можем улучшить вид предложений для пользователя, задав для параметра **highlights** значение true. Но сначала необходимо добавить код в представление, чтобы отобразить текст полужирным шрифтом.
 
-1. В представлении (index.cshtml) добавьте приведенный ниже скрипт после скрипта **azureautosuggest**, введенного выше.
+1. В представлении (index.cshtml) добавьте приведенный ниже скрипт после скрипта `"azureautosuggest"`, описанного выше.
 
     ```javascript
     <script>
@@ -180,19 +188,19 @@ ms.locfileid: "91280731"
     </script>
     ```
 
-2. Теперь измените идентификатор текстового поля таким образом, чтобы оно выглядело, как показано ниже.
+1. Теперь измените идентификатор текстового поля таким образом, чтобы оно выглядело, как показано ниже.
 
     ```cs
     @Html.TextBoxFor(m => m.searchText, new { @class = "searchBox", @id = "azuresuggesthighlights" }) <input value="" class="searchBoxSubmit" type="submit">
     ```
 
-3. Снова запустите приложение. В предложениях отобразится введенный текст, выделенный полужирным. Введите, например, "ра".
+1. Снова запустите приложение. В предложениях отобразится введенный текст, выделенный полужирным. Попробуйте ввести "pa".
  
-    ![Ввод "pa" с выделением](./media/tutorial-csharp-create-first-app/azure-search-suggest-highlight.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-highlight.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
 
-4. Логика, используемая в приведенном выше скрипте выделения, не защищена от случайных ошибок. Если ввести термин, который отображается дважды в одном и том же имени, выделенные полужирным шрифтом результаты будут не совсем такими, как хотелось бы. Попробуйте ввести "mo".
+   Логика, используемая в приведенном выше скрипте выделения, не защищена от случайных ошибок. Если ввести термин, который отображается дважды в одном и том же имени, выделенные полужирным шрифтом результаты будут не совсем такими, как хотелось бы. Попробуйте ввести "mo".
 
-    Одним из вопросов, на которые должен ответить разработчик, является следующий: когда скрипт работает "достаточно хорошо", а когда нужно устранять его ошибки. В этом руководстве мы не будем больше касаться темы выделения. Но если оно неэффективно для ваших данных, рекомендуем найти более точный алгоритм. Дополнительные сведения см. в разделе [Выделение совпадений](search-pagination-page-layout.md#hit-highlighting).
+   Одним из вопросов, на которые должен ответить разработчик, является следующий: когда скрипт работает "достаточно хорошо", а когда нужно устранять его ошибки. В этом руководстве мы не будем больше касаться темы выделения. Но если оно неэффективно для ваших данных, рекомендуем найти более точный алгоритм. Дополнительные сведения см. в разделе [Выделение совпадений](search-pagination-page-layout.md#hit-highlighting).
 
 ## <a name="add-autocomplete"></a>Добавление автозаполнения
 
@@ -213,103 +221,103 @@ ms.locfileid: "91280731"
     </script>
     ```
 
-2. Теперь измените идентификатор текстового поля таким образом, чтобы оно выглядело, как показано ниже.
+1. Теперь измените идентификатор текстового поля таким образом, чтобы оно выглядело, как показано ниже.
 
     ```cs
     @Html.TextBoxFor(m => m.searchText, new { @class = "searchBox", @id = "azureautocompletebasic" }) <input value="" class="searchBoxSubmit" type="submit">
     ```
 
-3. В контроллере Home необходимо внести действие **Autocomplete**, например, после действия **Suggest**.
+1. Добавьте действие **AutocompleteAsync** в контроллер Home, например после действия **SuggestAsync**.
 
     ```cs
-        public async Task<ActionResult> AutoComplete(string term)
+    public async Task<ActionResult> AutoCompleteAsync(string term)
+    {
+        InitSearch();
+
+        // Setup the autocomplete parameters.
+        var ap = new AutocompleteOptions()
         {
-            InitSearch();
+            Mode = AutocompleteMode.OneTermWithContext,
+            Size = 6
+        };
+        var autocompleteResult = await _searchClient.AutocompleteAsync(term, "sg", ap).ConfigureAwait(false);
 
-            // Setup the autocomplete parameters.
-            var ap = new AutocompleteParameters()
-            {
-                AutocompleteMode = AutocompleteMode.OneTermWithContext,
-                Top = 6
-            };
-            AutocompleteResult autocompleteResult = await _indexClient.Documents.AutocompleteAsync(term, "sg", ap);
+        // Convert the autocompleteResult results to a list that can be displayed in the client.
+        List<string> autocomplete = autocompleteResult.Value.Results.Select(x => x.Text).ToList();
 
-            // Convert the results to a list that can be displayed in the client.
-            List<string> autocomplete = autocompleteResult.Results.Select(x => x.Text).ToList();
-
-            // Return the list.
-            return new JsonResult(autocomplete);
-        }
+        return new JsonResult(autocomplete);
+    }
     ```
 
     Обратите внимание на то, что при автозаполнении используется та же функция *средства подбора* с именем "sg", что и для предложений (здесь мы пытаемся автоматически заполнить поле именем отеля).
 
     Есть ряд настроек **AutocompleteMode**. Здесь мы используем **OneTermWithContext**. Описание дополнительных параметров см. в разделе об [API автозавершения](/rest/api/searchservice/autocomplete).
 
-4. Запустите приложение. Обратите внимание на то, что варианты, которые отображаются в раскрывающемся списке, являются отдельными словами. Введите слова, начинающиеся с "re". Обратите внимание на то, что количество предлагаемых вариантов уменьшается по мере набора букв.
+1. Запустите приложение. Обратите внимание на то, что варианты, которые отображаются в раскрывающемся списке, являются отдельными словами. Введите слова, начинающиеся с "re". Обратите внимание на то, что количество предлагаемых вариантов уменьшается по мере набора букв.
 
-    ![Ввод при базовых настройках автозаполнения](./media/tutorial-csharp-create-first-app/azure-search-suggest-autocompletebasic.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocompletebasic.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
 
-    В сущности, скрипт предложений, который вы выполняли ранее, вероятно, более полезен, чем этот скрипт автозаполнения. Чтобы пользователю было удобнее работать с автозаполнением, лучше всего добавить его в поиск предложений.
+    В сущности, скрипт предложений, который вы выполняли ранее, вероятно, более полезен, чем этот скрипт автозаполнения. Чтобы сделать автозаполнение более понятным для пользователей, рекомендуется использовать его с предложенными результатами.
 
 ## <a name="combine-autocompletion-and-suggestions"></a>Объединение функций автозаполнения и предложений
 
 Объединение функций автозаполнения и предложений является самой сложной задачей и, возможно, обеспечивает максимальное удобство для пользователя. Нам необходимо, чтобы по мере набора текста отображался лучший вариант автозавершения из Когнитивного поиска Azure. Кроме того, мы хотим увидеть несколько предложений в виде раскрывающегося списка.
 
-Есть библиотеки с этим функционалом, которые чаще всего называются "встроенное автозаполнение" или имеют подобное название. Но мы собираемся реализовать эту функцию как собственную, чтобы можно было видеть, что происходит. Сначала мы поработаем над контроллером в этом примере.
+Есть библиотеки с этим функционалом, которые чаще всего называются "встроенное автозаполнение" или имеют подобное название. Но мы собираемся реализовать эту функцию как собственную, чтобы вы могли изучить API-интерфейсы. Сначала мы поработаем над контроллером в этом примере.
 
-1. Нам нужно добавить контроллеру действие, которое возвращает только один результат автозаполнения вместе с указанным количеством предложений. Назовем это действие **AutocompleteAndSuggest**. В контроллере Home добавьте указанное ниже действие после других новых действий.
+1. Добавьте в контроллер действие, которое возвращает только один результат автозаполнения вместе с указанным количеством предложений. Назовем это действие **AutoCompleteAndSuggestAsync**. В контроллере Home добавьте указанное ниже действие после других новых действий.
 
     ```cs
-        public async Task<ActionResult> AutocompleteAndSuggest(string term)
+    public async Task<ActionResult> AutoCompleteAndSuggestAsync(string term)
+    {
+        InitSearch();
+
+        // Setup the type-ahead search parameters.
+        var ap = new AutocompleteOptions()
         {
-            InitSearch();
+            Mode = AutocompleteMode.OneTermWithContext,
+            Size = 1,
+        };
+        var autocompleteResult = await _searchClient.AutocompleteAsync(term, "sg", ap);
 
-            // Setup the type-ahead search parameters.
-            var ap = new AutocompleteParameters()
-            {
-                AutocompleteMode = AutocompleteMode.OneTermWithContext,
-                Top = 1,
-            };
-            AutocompleteResult autocompleteResult = await _indexClient.Documents.AutocompleteAsync(term, "sg", ap);
+        // Setup the suggest search parameters.
+        var sp = new SuggestOptions()
+        {
+            Size = 8,
+        };
 
-            // Setup the suggest search parameters.
-            var sp = new SuggestParameters()
-            {
-                Top = 8,
-            };
+        // Only one suggester can be specified per index. The name of the suggester is set when the suggester is specified by other API calls.
+        // The suggester for the hotel database is called "sg" and simply searches the hotel name.
+        var suggestResult = await _searchClient.SuggestAsync<Hotel>(term, "sg", sp).ConfigureAwait(false);
 
-            // Only one suggester can be specified per index. The name of the suggester is set when the suggester is specified by other API calls.
-            // The suggester for the hotel database is called "sg", and it searches only the hotel name.
-            DocumentSuggestResult<Hotel> suggestResult = await _indexClient.Documents.SuggestAsync<Hotel>(term, "sg", sp);
+        // Create an empty list.
+        var results = new List<string>();
 
-            // Create an empty list.
-            var results = new List<string>();
-
-            if (autocompleteResult.Results.Count > 0)
-            {
-                // Add the top result for type-ahead.
-                results.Add(autocompleteResult.Results[0].Text);
-            }
-            else
-            {
-                // There were no type-ahead suggestions, so add an empty string.
-                results.Add("");
-            }
-            for (int n = 0; n < suggestResult.Results.Count; n++)
-            {
-                // Now add the suggestions.
-                results.Add(suggestResult.Results[n].Text);
-            }
-
-            // Return the list.
-            return new JsonResult(results);
+        if (autocompleteResult.Value.Results.Count > 0)
+        {
+            // Add the top result for type-ahead.
+            results.Add(autocompleteResult.Value.Results[0].Text);
         }
+        else
+        {
+            // There were no type-ahead suggestions, so add an empty string.
+            results.Add("");
+        }
+
+        for (int n = 0; n < suggestResult.Value.Results.Count; n++)
+        {
+            // Now add the suggestions.
+            results.Add(suggestResult.Value.Results[n].Text);
+        }
+
+        // Return the list.
+        return new JsonResult(results);
+    }
     ```
 
     В верхней части списка **results** отображается один вариант автозаполнения, а затем приведены остальные предложения.
 
-2. В представлении мы сначала реализуем прием, чтобы светло-серое слово автозаполнения отображалось прямо под полужирным текстом, который вводит пользователь. Для этой цели в HTML предусмотрено относительное размещение. Измените инструкцию **TextBoxFor** (и окружающие ее инструкции &lt;div&gt;) на приведенные ниже. Обратите внимание на то, что второе поле поиска, обозначенное как **underneath**, находится прямо под полем обычного поиска, которое сдвинуто на 39 пикселей от своей позиции по умолчанию.
+1. В представлении мы сначала реализуем прием, чтобы светло-серое слово автозаполнения отображалось прямо под полужирным текстом, который вводит пользователь. Для этой цели в HTML предусмотрено относительное размещение. Измените инструкцию **TextBoxFor** (и окружающие ее инструкции &lt;div&gt;) на приведенные ниже. Обратите внимание на то, что второе поле поиска, обозначенное как **underneath**, находится прямо под полем обычного поиска, которое сдвинуто на 39 пикселей от своей позиции по умолчанию.
 
     ```cs
     <div id="underneath" class="searchBox" style="position: relative; left: 0; top: 0">
@@ -322,7 +330,7 @@ ms.locfileid: "91280731"
 
     Обратите внимание на то, что мы снова изменяем идентификатор: в этом примере на **azureautocomplete**.
 
-3. Кроме того, введите в представлении приведенный ниже скрипт после всех скриптов, которые ввели ранее. Скрипт довольно длинный.
+1. Кроме того, введите в представлении приведенный ниже скрипт после всех скриптов, которые ввели ранее. Скрипт является длительным и сложным из-за множества различных поведений входных данных, которые он обрабатывает.
 
     ```javascript
     <script>
@@ -336,7 +344,7 @@ ms.locfileid: "91280731"
 
             // Use Ajax to set up a "success" function.
             source: function (request, response) {
-                var controllerUrl = "/Home/AutoCompleteAndSuggest?term=" + $("#azureautocomplete").val();
+                var controllerUrl = "/Home/AutoCompleteAndSuggestAsync?term=" + $("#azureautocomplete").val();
                 $.ajax({
                     url: controllerUrl,
                     dataType: "json",
@@ -431,21 +439,21 @@ ms.locfileid: "91280731"
     </script>
     ```
 
-    Обратите внимание на продуманное использование функции **interval**. Она позволяет удалять основной текст, когда он больше не соответствует введенному, а также задавать тот же регистр (верхний или нижний), что и в тексте, который вводит пользователь (так как во время поиска "pa" соответствует "PA", "pA", "Pa"). После этого наложенный текст отображается должным образом.
+    Обратите на использование функции **interval**. Она позволяет удалять основной текст, когда он больше не соответствует введенному, а также задавать тот же регистр (верхний или нижний), что и в тексте, который вводит пользователь (так как во время поиска "pa" соответствует "PA", "pA", "Pa"). После этого наложенный текст отображается должным образом.
 
     Ознакомьтесь с комментариями в скрипте, чтобы получить полное представление о нем.
 
-4. В конце нам нужно немного скорректировать два класса HTML, чтобы сделать их прозрачными. Добавьте приведенную ниже строку к классам **searchBoxForm** и **searchBox** в файле hotels.css.
+1. В конце нам нужно немного скорректировать два класса HTML, чтобы сделать их прозрачными. Добавьте приведенную ниже строку к классам **searchBoxForm** и **searchBox** в файле hotels.css.
 
     ```html
-        background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0);
     ```
 
-5. Теперь запустите приложение. Введите "pa" в поле поиска. Происходит ли автозаполнение словом "palace" вместе с предложением двух отелей, в названии которых содержится "pa"?
+1. Теперь запустите приложение. Введите "pa" в поле поиска. Происходит ли автозаполнение словом "palace" вместе с предложением двух отелей, в названии которых содержится "pa"?
 
-    ![Ввод со встроенным автозаполнением и предложениями](./media/tutorial-csharp-create-first-app/azure-search-suggest-autocomplete.png)
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocomplete.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
 
-6. Попробуйте выполнить переход, чтобы принять предложение автозаполнения, а также попробуйте выбрать предложения, используя клавиши со стрелками и клавишу Tab, и повторите попытку с помощью одного щелчка мышью. Убедитесь, что скрипт работает должным образом во всех этих ситуациях.
+1. Попробуйте выполнить переход, чтобы принять предложение автозаполнения, а также попробуйте выбрать предложения, используя клавиши со стрелками и клавишу Tab, и повторите попытку с помощью одного щелчка мышью. Убедитесь, что скрипт работает должным образом во всех этих ситуациях.
 
     Возможно, вы решите, что для вас будет проще загрузить библиотеку с соответствующим функционалом. Но теперь вы знаете как минимум один способ добавить функцию встроенного автозаполнения.
 

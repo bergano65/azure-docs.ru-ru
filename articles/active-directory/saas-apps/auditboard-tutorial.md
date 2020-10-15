@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
-ms.openlocfilehash: 1020dec2069d609cf5f919c5802da906ae172ed2
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 2b4d3e75f6e2f3e6313541b0b146ff64cc403ce5
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88550247"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91713821"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-auditboard"></a>Руководство по Интеграция Azure Active Directory с AuditBoard
 
@@ -99,7 +99,7 @@ ms.locfileid: "88550247"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для AuditBoard](common/idp-intiated.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.auditboardapp.com/api/v1/sso/saml/metadata.xml`.
 
@@ -109,7 +109,7 @@ ms.locfileid: "88550247"
 
     d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.auditboardapp.com/`.
 
-    ![Сведения о домене и URL-адресах единого входа для AuditBoard](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана: параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа.](common/metadata-upload-additional-signon.png)
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов AuditBoard](mailto:support@auditboard.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
