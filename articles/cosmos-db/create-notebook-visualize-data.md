@@ -8,10 +8,10 @@ ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
 ms.openlocfilehash: 9b2ef5ddb56e3d0422a2a876993ddda0bd97e4ff
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85961104"
 ---
 # <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
@@ -30,11 +30,11 @@ ms.locfileid: "85961104"
 
 1. Перейдите на вкладку **Записная книжка**, выберите `…` рядом с **Мои записные книжки** и создайте **Новую записную книжку**. Выберите **Python 3** в качестве ядра по умолчанию.
 
-   :::image type="content" source="./media/create-notebook-visualize-data/create-new-notebook.png" alt-text="Создание записной книжки":::
+   :::image type="content" source="./media/create-notebook-visualize-data/create-new-notebook.png" alt-text="Создание записной книжки&quot;:::
 
 1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
 
-1. Далее необходимо создать базу данных с именем "RetailDemo" и контейнер с именем "WebsiteData" для хранения розничных данных. В качестве ключа секции можно использовать /CartID. Скопируйте и вставьте следующий код в новую ячейку записной книжки и запустите ее.
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData" для хранения розничных данных. В качестве ключа секции можно использовать /CartID. Скопируйте и вставьте следующий код в новую ячейку записной книжки и запустите ее.
 
    ```python
    import azure.cosmos
@@ -49,7 +49,11 @@ ms.locfileid: "85961104"
 
    Чтобы запустить ячейку, выберите `Shift + Enter` или выделите ячейку и выберите параметр **Запустить активную ячейку** на панели навигации обозревателя данных.
 
-   :::image type="content" source="./media/create-notebook-visualize-data/run-active-cell.png" alt-text="Запуск активной ячейки":::
+   :::image type="content" source="./media/create-notebook-visualize-data/run-active-cell.png" alt-text="Создание записной книжки&quot;:::
+
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
+
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData":::
 
    База данных и контейнер создаются в текущей учетной записи Azure Cosmos. Контейнер подготавливается с 400 единицами запросов в секунду. После создания базы данных и контейнера вы увидите следующие выходные данные. 
 
@@ -60,23 +64,11 @@ ms.locfileid: "85961104"
 
    Вы также можете обновить вкладку **Данные** и просмотреть только что созданные ресурсы.
 
-   :::image type="content" source="media/create-notebook-visualize-data/refresh-data-tab.png" alt-text="Обновление вкладки Данные для просмотра нового контейнера":::
+   :::image type="content" source="media/create-notebook-visualize-data/refresh-data-tab.png" alt-text="Создание записной книжки&quot;:::
 
-1. Далее вы импортируете примеры розничных данных в контейнер Azure Cosmos. Ниже приведен формат элемента из данных розничной торговли.
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
 
-   ```json
-    {
-       "CartID":5399,
-       "Action":"Viewed",
-       "Item":"Cosmos T-shirt",
-       "Price":350,
-       "UserName":"Demo.User10",
-       "Country":"Iceland",
-       "EventDate":"2015-06-25T00:00:00",
-       "Year":2015,"Latitude":-66.8673,
-       "Longitude":-29.8214,
-       "Address":"852 Modesto Loop, Port Ola, Iceland",
-       "id":"00ffd39c-7e98-4451-9b91-b2bcf2f9a32d"
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData"
     }
    ```
 
@@ -135,7 +127,11 @@ SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c
 df_cosmos.head(10)
 ```
 
-:::image type="content" source="./media/create-notebook-visualize-data/run-query-get-top10-items.png" alt-text="Выполнение запроса для получения первых десяти элементов":::
+:::image type="content" source="./media/create-notebook-visualize-data/run-query-get-top10-items.png" alt-text="Создание записной книжки&quot;:::
+
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
+
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData":::
 
 ## <a name="run-queries-and-analyze-your-data"></a>Выполнение запросов и анализ данных
 
@@ -148,7 +144,11 @@ df_cosmos.head(10)
    display(df_revenue.head(5))
    ```
 
-   :::image type="content" source="./media/create-notebook-visualize-data/total-sales-revenue-output.png" alt-text="Сумма дохода от продаж в выходных данных":::
+   :::image type="content" source="./media/create-notebook-visualize-data/total-sales-revenue-output.png" alt-text="Создание записной книжки&quot;:::
+
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
+
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData":::
 
 * **Запрос 2**. Чтобы получить список первых пяти приобретенных элементов, откройте новую ячейку записной книжки и выполните приведенный ниже код.
 
@@ -159,7 +159,11 @@ df_cosmos.head(10)
    pd.DataFrame(df_cosmos[df_cosmos['Action']=='Purchased'].groupby('Item').size().sort_values(ascending=False).head(5), columns=['Count'])
    ```
 
-   :::image type="content" source="./media/create-notebook-visualize-data/top5-purchased-items.png" alt-text="Пять ведущих товаров по объему продаж":::
+   :::image type="content" source="./media/create-notebook-visualize-data/top5-purchased-items.png" alt-text="Создание записной книжки&quot;:::
+
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
+
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData":::
 
 ## <a name="visualize-your-data"></a>Визуализация данных  
 
@@ -235,7 +239,11 @@ df_cosmos.head(10)
 
    В выходных данных отображается геосхема мира с различными цветами. Более светлое цветовое значение представляет страны или регионы от наибольшего до наименьшего дохода.
 
-   :::image type="content" source="./media/create-notebook-visualize-data/countries-revenue-map-visualization.png" alt-text="Визуализация дохода для стран или регионов":::
+   :::image type="content" source="./media/create-notebook-visualize-data/countries-revenue-map-visualization.png" alt-text="Создание записной книжки&quot;:::
+
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
+
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData":::
 
 1. Рассмотрим еще один вариант визуализации данных. Контейнер WebsiteData содержит записи о пользователях, которые просмотрели товар, добавили его в корзину и приобрели элемент. Давайте построим график коэффициента конверсии приобретенных товаров. Выполните следующий код в новой ячейке, чтобы визуализировать коэффициент конверсии для каждого элемента:
 
@@ -286,7 +294,11 @@ df_cosmos.head(10)
    show(p)
    ```
 
-   :::image type="content" source="./media/create-notebook-visualize-data/visualize-purchase-conversion-rate.png" alt-text="Визуализация коэффициента конверсии покупок":::
+   :::image type="content" source="./media/create-notebook-visualize-data/visualize-purchase-conversion-rate.png" alt-text="Создание записной книжки&quot;:::
+
+1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
+
+1. Далее необходимо создать базу данных с именем &quot;RetailDemo&quot; и контейнер с именем &quot;WebsiteData":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
