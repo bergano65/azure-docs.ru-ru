@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: cbdc81789fcd996774090f12523e7404c0aa0111
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ddee5991efd5bde3bd139257ad154f02f5d0371
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86205854"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071308"
 ---
 # <a name="automatically-scale-an-azure-api-management-instance"></a>Автоматическое масштабирование экземпляра службы управления API Azure  
 
@@ -82,7 +82,7 @@ ms.locfileid: "86205854"
     | Имя метрики           | Capacity          | Метрика емкости — это метрика управления API Azure, отражающая использование ресурсов экземпляра управления API Azure.                                                                                                                                                            |
     | Статистика интервала времени  | Средняя           |                                                                                                                                                                                                                                                                                 |
     | Оператор              | Больше      |                                                                                                                                                                                                                                                                                 |
-    | Пороговое значение             | 80 %               | Пороговое значение для среднего показателя емкости.                                                                                                                                                                                                                                 |
+    | Пороговое значение             | 80 %               | Пороговое значение для среднего показателя емкости.                                                                                                                                                                                                                                 |
     | Продолжительность (в минутах) | 30                | Временный диапазон для определения среднего значения емкости зависит от шаблонов использования. Чем дольше период времени, тем более плавной будет реакция. Прерывистые пики будут иметь меньше влияния на решение развертывания. Тем не менее также произойдет задержка триггера развертывания. |
     | *Действие*              |                   |                                                                                                                                                                                                                                                                                 |
     | Операция             | Увеличить счетчик на |                                                                                                                                                                                                                                                                                 |
@@ -132,4 +132,4 @@ ms.locfileid: "86205854"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
-- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
