@@ -52,10 +52,12 @@
           items:
             - name: Варианты миграции для виртуальных машин VMware
               href: server-migrate-overview.md
-            - name: Перенос виртуальных машин VMware без агента
+            - name: Перенос виртуальных машин VMware без агента (портал Azure)
               href: tutorial-migrate-vmware.md
             - name: Перенос виртуальных машин VMware на основе агента
               href: tutorial-migrate-vmware-agent.md
+            - name: Перенос виртуальных машин VMware без агента (PowerShell)
+              href: tutorial-migrate-vmware-powershell.md
         - name: Перенос виртуальных машин Hyper-V
           href: tutorial-migrate-hyper-v.md
         - name: Перенос физических серверов

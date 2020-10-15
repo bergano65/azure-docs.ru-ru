@@ -7,18 +7,18 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: lcozzens
-ms.openlocfilehash: 21eba653bcd853db9550d0d3781aacd281884605
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e127a11f3821325602a78d46c69b2330bfb8293
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88588081"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074623"
 ---
 # <a name="import-or-export-configuration-data"></a>Импорт и экспорт данных конфигурации
 
 Конфигурация приложений Azure поддерживает операции импорта и экспорта данных. Используйте эти операции для работы с данными конфигурации в процессе упаковки и обмена данными между хранилищем конфигурации приложения и проектом кода. Например, можно настроить одно хранилище конфигурации приложений для тестирования, а другое — для рабочей среды. Вы можете скопировать параметры приложения между ними, чтобы не вводить данные дважды.
 
-В этой статье содержится руководство по импорту и экспорту данных с помощью конфигурации приложения. Если вы хотите настроить постоянную синхронизацию с репозиторием GitHub, ознакомьтесь с нашим [действием GitHub](https://aka.ms/azconfig-gha1).
+В этой статье содержится руководство по импорту и экспорту данных с помощью конфигурации приложения. Если вы хотите настроить постоянную синхронизацию с репозиторием GitHub, ознакомьтесь с нашим [действием GitHub](./concept-github-action.md).
 
 ## <a name="import-data"></a>Импорт данных
 
@@ -62,7 +62,7 @@ ms.locfileid: "88588081"
 
     ![Экспорт файла завершен](./media/export-file-complete.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание веб-приложения ASP.NET Core](./quickstart-aspnet-core-app.md)  
+> [Создание веб-приложения ASP.NET Core](./quickstart-aspnet-core-app.md)

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 734c898dae10233463fbf783802ffae4c6a3add8
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 3a2087c83ec48b0b732ce1cb954f78fad9b46fef
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88997937"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91857441"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство. Создание и развертывание пользовательских модулей IoT Edge
 
@@ -809,14 +809,6 @@ ms.locfileid: "88997937"
 В этой статье описано, как создать в Visual Studio Code решение IoT Edge со следующими тремя модулями: классификатор, маршрутизатор, а также средство записи и отправки файлов. Мы настроили маршруты, чтобы модули на пограничном устройстве могли взаимодействовать друг с другом . Мы изменили конфигурацию пограничного устройства и обновили файлы Dockerfile, чтобы установить зависимости и добавить привязки BIND к контейнерам модулей. 
 
 Затем мы обновили конфигурацию Центра Интернета вещей, чтобы передавать сообщения с учетом их типа и обрабатывать отправленные файлы. После этого мы развернули модули на устройстве IoT Edge и убедились, что эти модули работают правильно.
-
-Дополнительные руководства см. в следующих статьях:
-
-* [Сведения о развертывании модулей и настройке маршрутов в IoT Edge](module-composition.md)
-* [Синтаксис запросов маршрутизации сообщений Центра Интернета вещей](../iot-hub/iot-hub-devguide-routing-query-syntax.md)
-* [Маршрутизация сообщений с помощью Центра Интернета вещей (маршрутизация по тексту сообщений)](https://azure.microsoft.com/blog/iot-hub-message-routing-now-with-routing-on-message-body/)
-* [Отправка файлов с помощью Центра Интернета вещей](../iot-hub/iot-hub-devguide-file-upload.md)
-* [Передача файлов с устройства в облако с помощью Центра Интернета вещей](../iot-hub/iot-hub-python-python-file-upload.md)
 
 Теперь вы можете перейти к следующей статье, в которой описано, как отправлять данные и проверять работу решения.
 
