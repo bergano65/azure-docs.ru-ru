@@ -7,12 +7,12 @@ ms.date: 10/01/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 431ea692ac734a875e27cb8ed4b015155e0e9b91
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 7523dd39303a211772dd39eef811f55739336ff0
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042428"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093707"
 ---
 # <a name="iot-plug-and-play-service-developer-guide"></a>Руководством для разработчиков служб IoT Plug and Play
 
@@ -30,14 +30,14 @@ IoT Plug and Play позволяет использовать устройств
 
 - Клиент службы центра Интернета вещей. Эта служба предоставляет идентификатор модели в качестве свойства двойникаа устройства.
 
-- Клиент службы Digital двойников. Новый API Digital двойников работает с конструкциями модели на [языке двойников Definition Language (дтдл)](concepts-digital-twin.md) , такими как компоненты, свойства и команды. Интерфейсы API Digital двойника упрощают создание решений IoT Plug and Play решениями для сборщиков решений.
+- Клиент Digital двойников. Новый API Digital двойников работает с конструкциями модели на [языке двойников Definition Language (дтдл)](concepts-digital-twin.md) , такими как компоненты, свойства и команды. Интерфейсы API Digital двойника упрощают создание решений IoT Plug and Play решениями для сборщиков решений.
 
-| Платформа | Клиент службы центра Интернета вещей | Клиент службы Digital двойников |
-| -------- | ---------------------- | ---------------------------- |
-| .NET     | [Документация](/dotnet/api/microsoft.azure.devices) <br/> [Примеры](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/PnpServiceSamples)| [Примеры](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/DigitalTwinClientSamples) |
-| Java     | [Документация](/java/api/com.microsoft.azure.sdk.iot.service.devicetwin.devicetwindevice?preserve-view=true&view=azure-java-stable) <br/> [Примеры](https://github.com/Azure/azure-iot-sdk-java/blob/master/service/iot-service-samples/pnp-service-sample)| [Примеры](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/digitaltwin-service-samples) |
-| Node.js  | [Документация](/javascript/api/azure-iothub/twin?preserve-view=true&view=azure-node-latest) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/twin.js)| [Документация](/javascript/api/azure-iot-digitaltwins-service/?preserve-view=true&view=azure-node-latest) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/get_digital_twin.js) |
-| Python   | [Документация](/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager?preserve-view=true&view=azure-python) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/iothub_registry_manager_method_sample.py)| [Документация](/python/api/azure-iot-hub/azure.iot.hub.iothubdigitaltwinmanager?preserve-view=true&view=azure-python) <br/> [Образец](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/get_digital_twin_sample.py) |
+| Платформа | Документация | Примеры |
+| -------- | ------------- | ------- |
+| .NET     | [Ссылки](/dotnet/api/microsoft.azure.devices) | [Клиент службы](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/PnpServiceSamples) </br> [Digital Twins](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/DigitalTwinClientSamples) |
+| Java     | [Ссылки](/java/api/com.microsoft.azure.sdk.iot.service.devicetwin.devicetwindevice?preserve-view=true&view=azure-java-stable) <br/> | [Клиент службы](https://github.com/Azure/azure-iot-sdk-java/blob/master/service/iot-service-samples/pnp-service-sample) </br>[Digital Twins](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/digitaltwin-service-samples) |
+| Node.js  | [Ссылки](/javascript/api/azure-iothub?preserve-view=true&view=azure-node-latest) | [Клиент службы](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/twin.js) </br> [Digital Twins](https://github.com/Azure/azure-iot-sdk-node/blob/master/service/samples/javascript/get_digital_twin.js) |
+| Python   | [Ссылки](/python/api/azure-iot-hub/azure.iot.hub?preserve-view=true&view=azure-python) <br/> | [Клиент службы](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/iothub_registry_manager_method_sample.py) </br> [Digital Twins](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-hub/samples/get_digital_twin_sample.py) |
 
 ## <a name="iot-hub-service-client-examples"></a>Примеры клиентов службы центра Интернета вещей
 
@@ -161,7 +161,7 @@ catch (DeviceNotFoundException)
 }
 ```
 
-## <a name="digital-twin-examples"></a>Примеры цифровых двойника
+## <a name="iot-hub-digital-twin-examples"></a>Примеры цифровых двойника в центре Интернета вещей
 
 Для взаимодействия с состоянием устройства с помощью цифрового двойников используется класс **дигиталтвинклиент** . Модель [дтдл](concepts-digital-twin.md) для устройства определяет свойства и команды, реализуемые устройством.
 
@@ -369,43 +369,6 @@ catch (HttpOperationException e)
         Console.WriteLine("Unable to execute command getMaxMinReport on component thermostat1.");
     }
 }
-```
-
-## <a name="rest-api"></a>REST API
-
-В следующих примерах для взаимодействия с подключенным устройством IoT Plug and Play используется REST API центра Интернета вещей. Текущая версия API — `2020-09-30` . Присоединитесь `?api-version=2020-09-30` к вызовам остальных PI.
-
-> [!NOTE]
-> Двойников модуля в настоящее время не поддерживаются `digitalTwins` API.
-
-При вызове устройства термостата `t-123` вы получаете все свойства всех интерфейсов, реализованных устройством, с помощью вызова REST API Get:
-
-```REST
-GET /digitalTwins/t-123
-```
-
-Этот вызов будет включать свойство JSON `$metadata.$model` с идентификатором модели, объявленным устройством.
-
-Доступ ко всем свойствам всех интерфейсов осуществляется с помощью `GET /DigitalTwin/{device-id}` шаблона REST API, где `{device-id}` — это идентификатор устройства:
-
-```REST
-GET /digitalTwins/{device-id}
-```
-
-Вы можете напрямую вызывать команды для устройств IoT Plug and Play. Если у `Thermostat` компонента на `t-123` устройстве есть `restart` команда, ее можно вызвать с помощью вызова REST API POST:
-
-```REST
-POST /digitalTwins/t-123/components/Thermostat/commands/restart
-```
-
-В общем случае команды можно вызывать с помощью этого шаблона REST API:
-
-- `device-id`— идентификатор устройства.
-- `component-name`: имя интерфейса из раздела Implements модели возможностей устройства.
-- `command-name`: имя команды.
-
-```REST
-/digitalTwins/{device-id}/components/{component-name}/commands/{command-name}
 ```
 
 ## <a name="read-device-telemetry"></a>Чтение телеметрии устройства

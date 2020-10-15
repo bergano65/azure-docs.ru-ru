@@ -8,12 +8,12 @@ ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 03/24/2020
 author: mlearned
-ms.openlocfilehash: e40eb9cc22cdc071381cc847b49a01d4d713653d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a1af644bbd88af5c513ed9a43ce154f285c06df
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85318630"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856013"
 ---
 # <a name="tutorial-deploy-your-aspnet-app-and-azure-sql-database-code-by-using-azure-devops-starter"></a>Руководство по Развертывание кода базы данных SQL Azure и приложения ASP.NET с помощью Azure DevOps Starter
 
@@ -190,7 +190,7 @@ DevOps Starter автоматически создает и настраивае
 См. дополнительные сведения о конвейере CI/CD:
 
 > [!div class="nextstepaction"]
-> [Define your multi-stage continuous deployment (CD) pipeline](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания)
+> [Define your multi-stage continuous deployment (CD) pipeline](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Настройка многоэтапного конвейера для непрерывного развертывания)
 
 ## <a name="videos"></a>Видео
 

@@ -1,17 +1,17 @@
 ---
 title: Создание и развертывание веб-приложения на базе нескольких служб в Сетке Service Fabric
 description: В рамках этого руководства вы создадите приложение Сетки Azure Service Fabric на базе нескольких служб, состоящее из веб-сайта ASP.NET Core, который взаимодействует с серверной веб-службой, выполните отладку приложения локально и опубликуете его в Azure.
-author: dkkapur
+author: georgewallace
 ms.topic: tutorial
 ms.date: 09/18/2018
-ms.author: dekapur
+ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-csharp
-ms.openlocfilehash: 4a64d1999f13ee09cf92633fd188bfc7ed0e4856
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: fa15432072f6478100a378fdbdb697556fdf1dc9
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89011215"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91842552"
 ---
 # <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>Руководство по Создание, отладка, развертывание и обновление приложения на базе нескольких служб в Сетке Service Fabric
 
@@ -59,7 +59,7 @@ ms.locfileid: "89011215"
 
 Установите флажок **Create directory for solution** (Создать каталог для решения) и нажмите кнопку **ОК**, чтобы создать проект службы "Сетка Service Fabric".
 
-![Диалоговое окно нового проекта службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-new-project.png)
+![Снимок экрана: создание проекта Сетки Service Fabric.](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-new-project.png)
 
 Затем откроется диалоговое окно **Служба структуры для новой службы**.
 
@@ -73,7 +73,7 @@ ms.locfileid: "89011215"
 
 После этого откроется диалоговое окно Веб-приложение ASP.NET Core. Выберите **Веб-приложение** и нажмите кнопку **ОК**.
 
-![Новое приложение ASP.NET Core в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-new-aspnetcore-app.png)
+![Снимок экрана: выделенный шаблон веб-приложения.](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-new-aspnetcore-app.png)
 
 Теперь у вас есть приложение Сетки Service Fabric. Создайте модель для сведений о задачах.
 
