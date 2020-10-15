@@ -9,12 +9,12 @@ ms.service: industrial-iot
 ms.custom: devx-track-azurecli
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 657373bdc899cb53c8dd934d18d144fe37eb370b
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 075f6f83e5af43cde3886f637a8ee326309e4218
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874335"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071512"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание модуля и зависимостей OPC двойника с нуля
 
@@ -25,8 +25,8 @@ ms.locfileid: "91874335"
 
 Существует несколько вариантов развертывания модулей в шлюзе [Azure IOT Edge](https://azure.microsoft.com/services/iot-edge/) .
 
-- [Развертывание из колонки IoT Edge портал Azure](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-modules-portal)
-- [Развертывание с помощью AZ CLI](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor-cli)
+- [Развертывание из колонки IoT Edge портал Azure](../iot-edge/how-to-deploy-modules-portal.md)
+- [Развертывание с помощью AZ CLI](../iot-edge/how-to-deploy-cli-at-scale.md)
 
 > [!NOTE]
 > Дополнительные сведения о развертывании и инструкциях см. в [репозитории](https://github.com/Azure/azure-iiot-components)GitHub.
@@ -117,7 +117,7 @@ ms.locfileid: "91874335"
 
 1. Развернуть [зависимости](howto-opc-twin-deploy-dependencies.md) OPC двойника и получить получившийся `.env` файл. Обратите внимание на развернутую `hub name` `PCS_IOTHUBREACT_HUB_NAME` переменную в результирующем `.env` файле.
 
-2. Зарегистрируйте и запустите шлюз [Linux](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) или [Windows](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-windows) IOT EDGE и запишите его `device id` .
+2. Зарегистрируйте и запустите шлюз [Linux](../iot-edge/how-to-install-iot-edge-linux.md) или [Windows](../iot-edge/how-to-install-iot-edge-windows.md) IOT EDGE и запишите его `device id` .
 
 ### <a name="deploy-to-an-edge-device"></a>Развертывание на пограничном устройстве
 
@@ -143,7 +143,7 @@ ms.locfileid: "91874335"
    {"NetworkingConfig": {"EndpointsConfig": {"host": {}}}, "HostConfig": {"NetworkMode": "host" }}
    ```
 
-   При желании заполните необязательные поля. Дополнительные сведения о возможностях при создании контейнера, политике перезапуска и требуемом состоянии см. в разделе [Требуемые свойства EdgeAgent](https://docs.microsoft.com/azure/iot-edge/module-edgeagent-edgehub#edgeagent-desired-properties). Подробные сведения о двойниках модулей см. в разделе [Определение или обновление требуемых свойств](https://docs.microsoft.com/azure/iot-edge/module-composition#define-or-update-desired-properties).
+   При желании заполните необязательные поля. Дополнительные сведения о возможностях при создании контейнера, политике перезапуска и требуемом состоянии см. в разделе [Требуемые свойства EdgeAgent](../iot-edge/module-edgeagent-edgehub.md#edgeagent-desired-properties). Подробные сведения о двойниках модулей см. в разделе [Определение или обновление требуемых свойств](../iot-edge/module-composition.md#define-or-update-desired-properties).
 
 7. Выберите **сохранить** и повторите шаг **5**.  
 
@@ -182,7 +182,7 @@ ms.locfileid: "91874335"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-1. Установите последнюю версию [интерфейса командной строки Azure (AZ)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) [отсюда](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+1. Установите последнюю версию [интерфейса командной строки Azure (AZ)](/cli/azure/?view=azure-cli-latest) [отсюда](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ### <a name="quickstart"></a>Краткое руководство
 
@@ -195,7 +195,7 @@ ms.locfileid: "91874335"
    ```
 
    `device id`Параметр учитывает регистр. Параметр content указывает на сохраненный ранее файл манифеста развертывания. 
-    ![AZ IoT Edge Set-modules Output](https://docs.microsoft.com/azure/iot-edge/media/how-to-deploy-cli/set-modules.png)
+    ![AZ IoT Edge Set-modules Output](/azure/iot-edge/media/how-to-deploy-cli/set-modules.png)
 
 3. Завершив развертывание модулей на устройстве, вы можете просмотреть их список с помощью следующей команды:
 
@@ -203,7 +203,7 @@ ms.locfileid: "91874335"
    az iot hub module-identity list --device-id [device id] --hub-name [hub name]
    ```
 
-   В параметре идентификатора устройства учитывается регистр. ![Выходные данные команды az iot hub module-identity list](https://docs.microsoft.com/azure/iot-edge/media/how-to-deploy-cli/list-modules.png)
+   В параметре идентификатора устройства учитывается регистр. ![Выходные данные команды az iot hub module-identity list](/azure/iot-edge/media/how-to-deploy-cli/list-modules.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

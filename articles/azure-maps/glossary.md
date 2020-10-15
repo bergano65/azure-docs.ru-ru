@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 4c3e6216c172b0ba1273fea1690c030a05f4c456
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 831fc28711a181d45a8c69e3f46056604b30649e
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83742214"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089474"
 ---
 # <a name="glossary"></a>Глоссарий
 
@@ -53,7 +53,7 @@ ms.locfileid: "83742214"
 
 <a name="azure-location-based-services-lbs"></a> **Azure Location Based Services (LBS)** . Прежнее название Azure Maps на период предварительной версии.
 
-<a name="azure-active-directory"></a> **Azure Active Directory (Azure AD)** . Azure Active Directory (Azure AD) — это облачная служба управления удостоверениями и доступом от корпорации Майкрософт. Интеграция Azure Maps Azure AD сейчас доступна в предварительной версии для всех API Azure Maps. Azure AD поддерживает управление доступом на основе ролей для детального управления доступом к ресурсам Azure Maps. Дополнительные сведения об интеграции Azure Maps Azure AD см. в разделе [Azure Maps и Azure AD](azure-maps-authentication.md), а также [Управление аутентификацией в Azure Maps](how-to-manage-authentication.md).
+<a name="azure-active-directory"></a> **Azure Active Directory (Azure AD)** . Azure Active Directory (Azure AD) — это облачная служба управления удостоверениями и доступом от корпорации Майкрософт. Интеграция Azure Maps Azure AD сейчас доступна в предварительной версии для всех API Azure Maps. Azure AD поддерживает управление доступом на основе ролей Azure (Azure RBAC), чтобы обеспечить детальный доступ к Azure Maps ресурсам. Дополнительные сведения об интеграции Azure Maps Azure AD см. в разделе [Azure Maps и Azure AD](azure-maps-authentication.md), а также [Управление аутентификацией в Azure Maps](how-to-manage-authentication.md).
 
 <a name="azure-maps-key"></a> **Ключ Azure Maps**. См. [Проверка подлинности на основе общего ключа](#shared-key-authentication).
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
-ms.openlocfilehash: bddb4ea3759d19d1e122739fb69cf9bf96c66635
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3b6f90d0aa26b478c0f2fcefac55dcd509da437
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86243551"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070951"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Обработка ошибок в политиках управления API
 
@@ -190,4 +190,4 @@ ms.locfileid: "86243551"
 -   [Политики в управлении API](api-management-howto-policies.md)
 -   [Преобразование API-интерфейсов](transform-api.md).
 -   Полный перечень операторов политик и их параметров см. в [справочнике по политикам](./api-management-policies.md).
--   [Примеры политик](policy-samples.md).
+-   [Примеры политик](./policy-reference.md).

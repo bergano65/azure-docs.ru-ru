@@ -6,15 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/02/2020
-ms.openlocfilehash: c9a7ba63246f747a132c315e22452ca9c7144448
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: a03b7bd63385b7cc16e4dafb5cd12ccd212dc959
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058188"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089389"
 ---
 # <a name="operationalinsights-api-version-retirement"></a>Прекращение использования версии API OperationalInsights
-Корпорация Майкрософт предоставляет уведомление не менее чем за 12 месяцев до прекращения использования API для сглаживания перехода до более новой или поддерживаемой версии. Мы выпустили новую версию (2020-08-01) для API поставщика ресурсов **OperationalInsights** и запустим более ранние версии API до 31 октября 2023 г. Поскольку новые функции и функции и оптимизации добавляются только к текущему API, следует как можно раньше выполнить обновление до последней версии API.
+Корпорация Майкрософт предоставляет уведомление не менее чем за 12 месяцев до прекращения использования API для сглаживания перехода до более новой или поддерживаемой версии. Мы выпустили новую версию (2020-08-01) для API поставщика ресурсов **OperationalInsights** и запустим более ранние версии API до 31 октября 2023 г.
+
+Мы рекомендуем начать использовать версию 2020-08-01, чтобы получить преимущества новых функций, таких как [выделенный кластер](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters), [управляемые клиентом ключи](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys), [Частная связь](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security) и [Экспорт данных](https://docs.microsoft.com/azure/azure-monitor/platform/logs-data-export). Кроме того, новые функции и функции и оптимизации добавляются только к текущему API.
 
 После 31 октября 2023 Azure Monitor больше не будет поддерживать более ранние версии API, чем 2020-08-01. Если вы предпочитаете не выполнять обновление, запросы, отправленные более ранними версиями, будут по прежнему обслуживаться Azure Monitorной службой до 31 октября 2023 г.
 
