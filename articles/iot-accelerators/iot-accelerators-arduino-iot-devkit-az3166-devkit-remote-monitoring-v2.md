@@ -9,12 +9,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: isacabe
-ms.openlocfilehash: ed14d4cb79cb5794fa666f1bb96e062d69128d0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a9285ebe2e749f5ac7f248a2703518c8ac237bc
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87337676"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071682"
 ---
 # <a name="connect-an-iot-devkit-device-to-the-remote-monitoring-solution-accelerator"></a>Подключение устройства IoT DevKit к акселератору решения для удаленного мониторинга
 
@@ -28,7 +28,7 @@ ms.locfileid: "87337676"
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Подготовьте DevKit по инструкциям из статьи [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started).
+* Подготовьте DevKit по инструкциям из статьи [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](../iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md).
 
 ## <a name="open-sample-project"></a>Открытие примера проекта
 
@@ -128,5 +128,5 @@ ms.locfileid: "87337676"
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решения для удаленного мониторинга. Выполните следующие шаги в рамках дальнейшего обучения:
 
-* [Обзор акселераторов решений для Интернета вещей Azure](https://docs.microsoft.com/azure/iot-accelerators/)
+* [Обзор акселераторов решений для Интернета вещей Azure](./index.yml)
 * [Настройка пользовательского интерфейса](iot-accelerators-remote-monitoring-customize.md)

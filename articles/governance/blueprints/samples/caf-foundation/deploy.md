@@ -4,10 +4,10 @@ description: Процедура развертывания для образца
 ms.date: 05/06/2020
 ms.topic: sample
 ms.openlocfilehash: a2d3090e5e9fe265683c077d7056ebf2b108352d
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "82871644"
 ---
 # <a name="deploy-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Развертывание примера схемы Microsoft Cloud Adoption Framework для Azure Foundation

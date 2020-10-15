@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: philmea
-ms.openlocfilehash: 8309b625a590131c5f521335e180967ab2c2667c
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 57d2ac4f1e80c24a750e0e5f8eb22850718594a1
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91363160"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071036"
 ---
 # <a name="tutorial-manage-your-connected-devices-in-bulk"></a>Руководство по управлению подключенными устройствами в пакетном режиме
 
@@ -59,7 +59,7 @@ If this is going to be a tutorial - we need to split this include into two so th
 * Убедитесь, что версия [загрузчика на вашем устройстве IoT DevKit — 1.4.0 или более поздняя](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Убедитесь, что версия пакета SDK для IoT DevKit совпадает с версией загрузчика. Обновить пакет SDK для IoT DevKit можно с помощью Azure IoT Workbench в VS Code. Откройте палитру команд и введите **Arduino: Board Manager** (Диспетчер плат Arduino). Дополнительные сведения см. в разделе [Подготовка среды разработки](../iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md#prepare-the-development-environment).
 
-Вам также необходимо подключить по крайней мере одно устройство IoT DevKit к акселератору решений для удаленного мониторинга. Если вы еще не подключили устройство IoT DevKit, обратитесь к статье [Подключение устройства IoT DevKit к акселератору решений удаленного мониторинга](iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringV2.md).
+Вам также необходимо подключить по крайней мере одно устройство IoT DevKit к акселератору решений для удаленного мониторинга. Если вы еще не подключили устройство IoT DevKit, обратитесь к статье [Подключение устройства IoT DevKit к акселератору решений удаленного мониторинга](./iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md).
 
 ## <a name="navigate-to-the-dashboard"></a>Перейдите к панели мониторинга.
 
@@ -274,4 +274,4 @@ If this is going to be a tutorial - we need to split this include into two so th
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве показано, как обновить встроенное ПО группы устройств, подключенных к решению. Для обновления устройств в вашем решении используется автоматическое управление устройствами. Дополнительные сведения о возможности автоматического управления устройствами в основном центре Интернета вещей вашего решения см. в статье [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-auto-device-config.md).
+В этом руководстве показано, как обновить встроенное ПО группы устройств, подключенных к решению. Для обновления устройств в вашем решении используется автоматическое управление устройствами. Дополнительные сведения о возможности автоматического управления устройствами в основном центре Интернета вещей вашего решения см. в статье [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-automatic-device-management.md).
