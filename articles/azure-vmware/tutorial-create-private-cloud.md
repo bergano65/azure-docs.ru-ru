@@ -3,12 +3,12 @@ title: Руководство. Развертывание кластера vSphe
 description: Узнайте, как развернуть в Azure кластер vSphere с помощью Решения Azure VMWare
 ms.topic: tutorial
 ms.date: 09/21/2020
-ms.openlocfilehash: 3fab49640364ef1b2e68953d366b20f77556b486
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: b673a67fac734c9cb63e96b6a0c3dc9182f4b994
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91578328"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952290"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Руководство по Развертывание частного облака Решения Azure VMware в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "91578328"
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Вместо создания частного облака Решения Azure VMware на портале Azure можно использовать Azure CLI в Azure Cloud Shell.  Список команд, которые можно использовать с Решением Azure VMware, см. в статье [Команды Azure VMware](https://docs.microsoft.com/cli/azure/ext/vmware/vmware).
+Вместо создания частного облака Решения Azure VMware на портале Azure можно использовать Azure CLI в Azure Cloud Shell.  Список команд, которые можно использовать с Решением Azure VMware, см. в статье [Команды Azure VMware](/cli/azure/ext/vmware/vmware).
 
 #### <a name="open-azure-cloud-shell"></a>Открытие Azure Cloud Shell
 
@@ -96,7 +96,7 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
 
 ## <a name="azure-vmware-commands"></a>Команды Azure VMware
 
-Список команд, которые можно использовать с Решением Azure VMware, см. в статье [Команды Azure VMware](https://docs.microsoft.com/cli/azure/ext/vmware/vmware).
+Список команд, которые можно использовать с Решением Azure VMware, см. в статье [Команды Azure VMware](/cli/azure/ext/vmware/vmware).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

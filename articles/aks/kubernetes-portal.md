@@ -6,12 +6,12 @@ author: laurenhughes
 ms.topic: article
 ms.date: 09/21/2020
 ms.author: lahugh
-ms.openlocfilehash: 6a9567669445cb5aa94c1108051c961a216fabad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce51e76829c19def1c1603b1a88592d1e683ccae
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335608"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070645"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
 
@@ -20,7 +20,7 @@ ms.locfileid: "91335608"
 Представление ресурсов Kubernetes из портал Azure заменяет [надстройку панели мониторинга AKS][kubernetes-dashboard], которая задается для устаревания.
 
 >[!NOTE]
->В настоящее время капабилти не поддерживается в [частных кластерах службы Kubernetes Azure](https://docs.microsoft.com/azure/aks/private-clusters).
+>В настоящее время капабилти не поддерживается в [частных кластерах службы Kubernetes Azure](./private-clusters.md).
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
@@ -65,7 +65,7 @@ ms.locfileid: "91335608"
 >[!WARNING]
 > Выполнять прямые изменения рабочей среды через пользовательский интерфейс или CLI не рекомендуется, вы должны использовать [рекомендации по непрерывной интеграции (CI) и непрерывному развертыванию (CD)](kubernetes-action.md). Возможности управления Kubernetes портала Azure и редактор YAML созданы для обучения и создания новых развертываний в параметрах разработки и тестирования.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 В этом разделе рассматриваются распространенные проблемы и действия по устранению неполадок.
 
@@ -93,7 +93,7 @@ az aks update -g $RG -n $AKSNAME --api-server-authorized-ip-ranges $CURRENT_IP/3
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье показано, как получить доступ к ресурсам Kubernetes для кластера AKS. Дополнительные сведения о ресурсах кластера и файлах YAML, доступ к которым осуществляется с помощью средства просмотра ресурсов Kubernetes, см. в разделе [развертывания и манифесты YAML][deployments] .
 

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: e525029ae8eab086d11126a4e18958423e207aa1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: df72ae5e9a1471e1387539d2c89a1eca0b09d866
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70067505"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078618"
 ---
 # <a name="add-a-forwarded-header"></a>Добавление заголовка перенаправления
 
-В этой статье на примере политики службы управления API Azure показано, как добавить заголовок перенаправления во входящий запрос, чтобы обеспечить создание серверным API правильных URL-адресов. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
+В этой статье на примере политики службы управления API Azure показано, как добавить заголовок перенаправления во входящий запрос, чтобы обеспечить создание серверным API правильных URL-адресов. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-reference.md).
 
 ## <a name="code"></a>Код
 
@@ -34,4 +34,4 @@ ms.locfileid: "70067505"
 Подробнее о политиках службы управления API:
 
 + [Политики преобразования](../api-management-transformation-policies.md)
-+ [Примеры политик](../policy-samples.md).
++ [Примеры политик](../policy-reference.md).

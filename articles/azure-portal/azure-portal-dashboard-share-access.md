@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 03/23/2020
 ms.author: mblythe
-ms.openlocfilehash: b478272ff790121d914a51f8ee4c5cf250134f4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89c2b90b12a4fc16dd48571c00ff46dc62168d42
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87923889"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077887"
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей
 
@@ -85,7 +85,7 @@ ms.locfileid: "87923889"
 
 1. Завершив добавление пользователей или групп, нажмите кнопку **сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Список ролей см. [в статье встроенные роли Azure](../role-based-access-control/built-in-roles.md).
-* Дополнительные сведения об управлении ресурсами см. [в статье Управление ресурсами Azure с помощью портал Azure](resource-group-portal.md).
+* Дополнительные сведения об управлении ресурсами см. [в статье Управление ресурсами Azure с помощью портал Azure](../azure-resource-manager/management/manage-resources-portal.md).

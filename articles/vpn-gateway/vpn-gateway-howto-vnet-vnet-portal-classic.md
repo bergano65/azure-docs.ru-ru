@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: cherylmc
-ms.openlocfilehash: 9ca190ae9e5679ce7622f89b39507d69d87f5b88
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 4b1007fe89cf455b6af8ebba00f24e8019ad8013
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875586"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078295"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Настройка подключения между виртуальными сетями (классическая модель)
 
@@ -32,8 +32,6 @@ ms.locfileid: "91875586"
 >
 
 ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-portal-classic/v2vclassic.png)
-
-
 
 ## <a name="about-vnet-to-vnet-connections"></a>О подключениях "виртуальная сеть — виртуальная сеть"
 
@@ -61,7 +59,7 @@ ms.locfileid: "91875586"
 
 См. дополнительные сведения в разделе с [часто задаваемыми вопросами о подключениях типа "виртуальная сеть — виртуальная сеть"](#faq) в конце этой статьи.
 
-### <a name="working-with-azure-powershell"></a><a name="powershell"></a>Работа с Azure PowerShell
+## <a name="prerequisites"></a>Предварительные требования
 
 Мы используем портал для большинства операций, но для создания подключений между виртуальными сетями нужно использовать PowerShell. Создать соединения с помощью портала Azure невозможно. [!INCLUDE [vpn-gateway-classic-powershell](../../includes/vpn-gateway-powershell-classic-locally.md)]
 
@@ -87,7 +85,7 @@ ms.locfileid: "91875586"
 Имя: TestVNet1<br>
 Адресное пространство: 10.11.0.0/16, 10.12.0.0/16 (необязательно)<br>
 Имя подсети: по умолчанию<br>
-Диапазон адресов подсети: 10.11.0.1/24<br>
+Диапазон адресов подсети: 10.11.0.0/24.<br>
 Группа ресурсов: ClassicRG<br>
 Расположение: восточная часть США<br>
 Подсеть шлюза: 10.11.1.0/27
@@ -244,5 +242,5 @@ ms.locfileid: "91875586"
 * Все туннели VPN виртуальной сети, включая VPN-подключения типа "точка — сеть", совместно используют доступную пропускную способность VPN-шлюза Azure и регулируются одним соглашением об уровне обслуживания, определяющим время работы VPN-шлюзов в Azure.
 * Трафик между виртуальными сетями проходит через магистральную сеть Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Проверьте подключения. Дополнительные сведения см. в статье [Проверка подключения VPN-шлюза](vpn-gateway-verify-connection-resource-manager.md).
