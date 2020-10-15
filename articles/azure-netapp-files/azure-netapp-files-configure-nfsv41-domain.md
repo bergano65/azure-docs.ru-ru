@@ -11,14 +11,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/08/2019
+ms.date: 10/14/2020
 ms.author: b-juche
-ms.openlocfilehash: e749f27875612136c50938712fded6a371f8c7ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3c853190d5f63bbe9012727d8b7b7ac91da135f
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91325629"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072158"
 ---
 # <a name="configure-nfsv41-default-domain-for-azure-netapp-files"></a>Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files
 
@@ -26,11 +26,11 @@ ms.locfileid: "91325629"
 
 ## <a name="default-behavior-of-usergroup-mapping"></a>Поведение по умолчанию при сопоставлении пользователей и групп
 
-Корневое сопоставление по умолчанию `nobody` имеет значение User, так как для домена NFSv4 задан параметр `localdomain` . При подключении тома Azure NetApp Files Нфсв 4.1 в качестве привилегированного пользователя вы увидите разрешения для файлов следующим образом:  
+Корневое сопоставление по умолчанию `nobody` имеет значение User, так как домен NFSv4 по `localdomain` умолчанию установлен в. При подключении тома Azure NetApp Files Нфсв 4.1 в качестве привилегированного пользователя вы увидите разрешения для файлов следующим образом:  
 
 ![Поведение по умолчанию сопоставления пользователей и групп для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-default-behavior-user-group-mapping.png)
 
-Как показано в приведенном выше примере, пользователь `file1` должен быть `root` , но по умолчанию сопоставлен с ним `nobody` .  В этой статье показано, как задать `file1` для пользователя значение `root` .  
+Как показано в приведенном выше примере, пользователь `file1` должен быть `root` , но по умолчанию сопоставлен с ним `nobody` .  В этой статье показано, как задать `file1` пользователю `root` , изменив `idmap Domain` значение параметра на `defaultv4iddomain.com` .  
 
 ## <a name="steps"></a>Шаги 
 

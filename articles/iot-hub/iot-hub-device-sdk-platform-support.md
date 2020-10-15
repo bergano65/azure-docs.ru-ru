@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: aef468d919e6f09722045f98c68383785d10b137
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4081fe8ba97ba2dd27680cf5f0fa60abd59e44a9
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87423088"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072277"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Поддержка платформ SDK для устройств Azure IoT
 
@@ -60,7 +60,7 @@ ms.locfileid: "87423088"
 | OS                  | Компилятор                          |
 |---------------------|-----------------------------------|
 | Linux               | Python 2,7. *, 3,5 или более поздней версии |
-| MacOS High Sierra   | Python 2,7. *, 3,5 или более поздней версии |
+| macOS High Sierra;   | Python 2,7. *, 3,5 или более поздней версии |
 | Семейство Windows 10   | Python 2,7. *, 3,5 или более поздней версии |
 
 Только Python версии 3.5.3 или более поздней поддерживают асинхронные API-интерфейсы, рекомендуется использовать версию 3,7 или более позднюю.
@@ -99,7 +99,7 @@ ms.locfileid: "87423088"
 
 Корпорация Майкрософт работает с различными партнерами, предоставляющими наборы средств разработки для нескольких архитектур микропроцессора. Эти партнеры перестроили пакет SDK для Azure IoT C на свою платформу. Партнеры создают и поддерживают уровень абстракции платформы (PAL) пакета SDK. Корпорация Майкрософт работает с этими партнерами для предоставления расширенной поддержки.
 
-| Партнер             | Устройства                            | Ссылка                     | Поддержка |
+| Партнер             | .                            | Ссылка                     | Поддержка |
 |---------------------|------------------------------------|--------------------------|---------|
 | Espressif           | ESP32 <br/> ESP8266                              | [ESP-azure](https://github.com/espressif/esp-azure)                | [GitHub](https://github.com/espressif/esp-azure)  
 | Qualcomm            | Модем Qualcomm MDM9206 LTE IoT     | [Qualcomm LTE для пакета SDK IoT](https://developer.qualcomm.com/software/lte-iot-sdk) | [Форум](https://developer.qualcomm.com/forums/software/lte-iot-sdk)   |
@@ -120,7 +120,7 @@ ms.locfileid: "87423088"
 
 ## <a name="connecting-to-iot-hub-without-an-sdk"></a>Подключение к центру Интернета вещей без пакета SDK
 
-Если вы не можете использовать один из пакетов SDK для устройств центра Интернета вещей, вы можете подключиться непосредственно к центру Интернета вещей с помощью [API-интерфейсов RESTful центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/) из любого приложения, поддерживающего отправку и получение HTTPS-запросов и ответов.
+Если вы не можете использовать один из пакетов SDK для устройств центра Интернета вещей, вы можете подключиться непосредственно к центру Интернета вещей с помощью поддерживаемого протокола связи. Дополнительные сведения см. в статье [Разработка без пакета SDK для Azure IOT](iot-hub-devguide-no-sdk.md).
 
 ## <a name="support-and-other-resources"></a>Поддержка и другие ресурсы
 
@@ -144,7 +144,7 @@ ms.locfileid: "87423088"
 
 **Запросы функций** . запросы к функциям Интернета вещей Azure отправляются с помощью [веб-страницы пользователя](https://feedback.azure.com/forums/321918-azure-iot)продукта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пакеты SDK для устройств и служб](iot-hub-devguide-sdks.md)
 * [Руководство по переносу](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)
