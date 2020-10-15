@@ -8,12 +8,12 @@ ms.date: 08/20/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 88255e60593403951db5b984bb9c69b1060a93c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db9ba3efe60af830c0e15310b6127c18130f00b9
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540580"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076255"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств
 
@@ -21,7 +21,7 @@ ms.locfileid: "91540580"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для дальнейших действий, описанных в этом руководстве, вам потребуется активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Для дальнейших действий, описанных в этом руководстве, вам потребуется активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 Действия в этом руководстве предполагают, что вы развернули акселератор решений для имитации устройств в подписке Azure. Если акселератор решений еще не развернут, выполните действия, описанные в кратком руководстве [по развертыванию и запуску облачного решения для имитации устройств](quickstart-device-simulation-deploy.md).
 
@@ -113,7 +113,7 @@ ms.locfileid: "91540580"
 1. Нажмите кнопку **Создать**.
 
 > [!NOTE]
-> Вы можете [предоставить другим пользователям доступ](../../articles/time-series-insights/time-series-insights-data-access.md#grant-data-access) к обозревателю среды "Аналитика временных рядов Azure".
+> Вы можете [предоставить другим пользователям доступ](../time-series-insights/concepts-access-policies.md#grant-data-access) к обозревателю среды "Аналитика временных рядов Azure".
 
 ## <a name="start-a-simulation"></a>Запуск имитации
 
