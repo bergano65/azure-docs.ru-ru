@@ -8,10 +8,10 @@ ms.author: lagayhar
 ms.date: 09/30/2020
 ms.custom: mvc, contperfq1
 ms.openlocfilehash: 1a83385c7f384f7727a0fd10e238c6511950abfe
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "91612720"
 ---
 # <a name="create-custom-kpi-dashboards-using-azure-application-insights"></a>Создание настраиваемых панелей мониторинга ключевых показателей эффективности с помощью Azure Application Insights
@@ -125,7 +125,7 @@ ms.locfileid: "91612720"
 
     [![Кольцевая диаграмма с вышеуказанным запросом](media/tutorial-app-dashboards/logs-doughnut.png)](media/tutorial-app-dashboards/logs-doughnut.png#lightbox)
 
-6. Нажмите значок закрепления, ![Значок "Закрепить"](media/tutorial-app-dashboards/pushpin.png) в правом верхнем углу для закрепления диаграммы на панели мониторинга, а затем вернитесь на свою панель мониторинга.
+6. Нажмите значок закрепления, ![Значок закрепления](media/tutorial-app-dashboards/pushpin.png) в правом верхнем углу для закрепления диаграммы на панели мониторинга, а затем вернитесь на свою панель мониторинга.
 7. Теперь результаты запросов будут добавлены на панель мониторинга в выбранном формате. Щелкните и перетащите их в нужное место, а затем выберите **Настройка выполнена**.
 8. Выберите значок "Карандаш" ![Значок "Карандаш"](media/tutorial-app-dashboards/pencil.png) в каждом заголовке для создания поясняющего заголовка.
 
@@ -133,7 +133,7 @@ ms.locfileid: "91612720"
 
 1. В верхней части панели мониторинга выберите **Поделиться**, чтобы опубликовать изменения.
 2. При необходимости можно задать определенных пользователей, которые будут иметь доступ к панели мониторинга. Дополнительные сведения см. в статье [Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей](../../azure-portal/azure-portal-dashboard-share-access.md).
-3. Нажмите кнопку **Опубликовать**.
+3. Нажмите **Публиковать**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
