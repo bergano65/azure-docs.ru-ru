@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 6fb8117a3e834dec71b9dbc98b4a34512a43f646
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: c032d8a5dc6cbfe181dccc6c7b4fd1db35a9a3a9
+ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88540819"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91741561"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bersin"></a>Руководство. Интеграция Azure Active Directory с Bersin
 
@@ -98,7 +98,7 @@ ms.locfileid: "88540819"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующее действие.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Bersin](common/idp-identifier-relay.png)
+    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-identifier-relay.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.bersin.com/shibboleth`.
 
@@ -108,7 +108,7 @@ ms.locfileid: "88540819"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Bersin](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана: параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа.](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.bersin.com/Login.aspx`.
 
