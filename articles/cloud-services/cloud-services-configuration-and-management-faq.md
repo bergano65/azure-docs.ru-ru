@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: 477f38e18f1bee881e4a9df23dd37048f39549be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 219c0b90bceb2a123d2e4af21ac7fa1edea58d54
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092751"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92070016"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -77,7 +77,7 @@ ms.locfileid: "87092751"
 
 ### <a name="why-is-the-certificate-chain-of-my-cloud-service-tlsssl-certificate-incomplete"></a>Почему цепочка сертификатов TLS или SSL-сертификат облачной службы не является полной?
     
-Корпорация Майкрософт рекомендует пользователям установить полную цепочку сертификатов (конечный сертификат, промежуточные сертификаты и корневой сертификат) вместо только конечного сертификата. При установке только конечного сертификата вы зависите от того, как Windows построит цепочку сертификатов, проходя список доверия сертификатов. Если при попытке Windows проверить сертификат происходит перебой в сети или проблема DNS, сертификат может посчитаться недействительным. Установив полную цепочку сертификатов, можно избежать этой проблемы. В публикации в блоге [Как установить связанный в цепочку SSL-сертификат](https://blogs.msdn.microsoft.com/azuredevsupport/2010/02/24/how-to-install-a-chained-ssl-certificate/) показано, как это сделать.
+Корпорация Майкрософт рекомендует пользователям установить полную цепочку сертификатов (конечный сертификат, промежуточные сертификаты и корневой сертификат) вместо только конечного сертификата. При установке только конечного сертификата вы зависите от того, как Windows построит цепочку сертификатов, проходя список доверия сертификатов. Если при попытке Windows проверить сертификат происходит перебой в сети или проблема DNS, сертификат может посчитаться недействительным. Установив полную цепочку сертификатов, можно избежать этой проблемы. В публикации в блоге [Как установить связанный в цепочку SSL-сертификат](/archive/blogs/azuredevsupport/how-to-install-a-chained-ssl-certificate) показано, как это сделать.
 
 ### <a name="what-is-the-purpose-of-the-windows-azure-tools-encryption-certificate-for-extensions"></a>В чем заключается цель сертификата шифрования Microsoft Azure Tools для расширений?
 
@@ -111,11 +111,11 @@ Get-AzurePublishSettingsFile
 
 ### <a name="what-is-the-purpose-of-the-microsoft-azure-service-management-for-machinekey-certificate"></a>Каково назначение сертификата «Управление службами Microsoft Azure для MachineKey»?
 
-Этот сертификат используется для шифрования ключей компьютера на веб-ролях Azure. Чтобы узнать больше, ознакомьтесь с [этой рекомендацией](https://docs.microsoft.com/security-updates/securityadvisories/2018/4092731).
+Этот сертификат используется для шифрования ключей компьютера на веб-ролях Azure. Чтобы узнать больше, ознакомьтесь с [этой рекомендацией](/security-updates/securityadvisories/2018/4092731).
 
 Дополнительные сведения см. в следующих статьях:
-- [Настройка и запуск задач запуска для облачной службы](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks)
-- [Стандартные задачи запуска в облачной службе](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks-common)
+- [Настройка и запуск задач запуска для облачной службы](./cloud-services-startup-tasks.md)
+- [Стандартные задачи запуска в облачной службе](./cloud-services-startup-tasks-common.md)
 
 ## <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
 
@@ -139,16 +139,16 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 * Увеличьте квоту для локальных ресурсов.
 
 Дополнительные сведения см. в следующих документах:
-* [Хранение и просмотр диагностических данных в службе хранилища Azure](/azure/storage/common/storage-introduction)
-* [IIS Logs stop writing in Cloud Service](https://blogs.msdn.microsoft.com/cie/2013/12/21/iis-logs-stops-writing-in-cloud-service/) (Журналы IIS прекращают запись в облачной службе)
+* [Хранение и просмотр диагностических данных в службе хранилища Azure](../storage/common/storage-introduction.md)
+* [IIS Logs stop writing in Cloud Service](/archive/blogs/cie/iis-logs-stops-writing-in-cloud-service) (Журналы IIS прекращают запись в облачной службе)
 
 ### <a name="how-do-i-enable-wad-logging-for-cloud-services"></a>Как включить ведение журнала WAD для облачных служб?
 Вы можете включить ведение журнала Диагностики Azure для Windows (WAD) такими способами:
-1. [С помощью Visual Studio](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
-2. [Включить с помощью кода .NET](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-diagnostics)
-3. [С помощью PowerShell](https://docs.microsoft.com/azure/cloud-services/cloud-services-diagnostics-powershell).
+1. [С помощью Visual Studio](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
+2. [Включить с помощью кода .NET](./cloud-services-dotnet-diagnostics.md)
+3. [С помощью PowerShell](./cloud-services-diagnostics-powershell.md).
 
-Чтобы получить текущие параметры WAD облачной службы, можно использовать команду PS [Get-AzureServiceDiagnosticsExtensions](https://docs.microsoft.com/azure/cloud-services/cloud-services-diagnostics-powershell#get-current-diagnostics-extension-configuration) или просмотреть их на портале в колонке "Облачные службы --> Расширения".
+Чтобы получить текущие параметры WAD облачной службы, можно использовать команду PS [Get-AzureServiceDiagnosticsExtensions](./cloud-services-diagnostics-powershell.md#get-current-diagnostics-extension-configuration) или просмотреть их на портале в колонке "Облачные службы --> Расширения".
 
 
 ## <a name="network-configuration"></a>Сетевая конфигурация
@@ -198,7 +198,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 5. Перезапустите сервер.
 6. Перейдите к **веб-сайту по умолчанию** и в разделе **Привязки** создайте новую привязку TLS с только что созданным самозаверяющим сертификатом. 
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 - [HTTP/2 в IIS](https://blogs.iis.net/davidso/http2)
 - [Video: HTTP/2 in Windows 10: Browser, Apps and Web Server](https://channel9.msdn.com/Events/Build/2015/3-88) (Видео: HTTP/2 в Windows 10 для браузера, приложений и веб-сервера)
@@ -248,7 +248,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 
 Дополнительные сведения о том, как интегрировать систему диагностики Azure с Application Insights для облачных служб, см. в статье [Send Cloud Service, Virtual Machine, or Service Fabric diagnostic data to Application Insights](../azure-monitor/platform/diagnostics-extension-to-application-insights.md) (Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric).
 
-Дополнительные сведения о том, как включить Application Insights для облачных служб, см. в статье [Application Insights для облачных служб Azure](https://docs.microsoft.com/azure/application-insights/app-insights-cloudservices).
+Дополнительные сведения о том, как включить Application Insights для облачных служб, см. в статье [Application Insights для облачных служб Azure](../azure-monitor/app/cloudservices.md).
 
 Дополнительные сведения о том, как включить ведение журнала диагностики Azure для облачных служб, см. в разделе [Включение диагностики в проектах облачных служб перед их развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
 
@@ -313,7 +313,7 @@ Azure ничего не будет записывать на диск %approot%.
 New-WebBinding -Name $WebsiteName -Protocol "https" -Port 443 -IPAddress $IPAddress -HostHeader $HostHeader -SslFlags $sslFlags
 ```
 
-Как описано [здесь](https://technet.microsoft.com/library/ee790567.aspx), $sslFlags может принимать одно из следующих значений.
+Как описано [здесь](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee790567(v=technet.10)), $sslFlags может принимать одно из следующих значений.
 
 |Значение|Значение|
 ------|------
@@ -324,7 +324,7 @@ New-WebBinding -Name $WebsiteName -Protocol "https" -Port 443 -IPAddress $IPAddr
  
 **Метод 2: Использование кода**
 
-Также привязку с указанием имени сервера можно настроить, выполняя программный код при запуске роли, как описано в этой [записи блога](https://blogs.msdn.microsoft.com/jianwu/2014/12/17/expose-ssl-service-to-multi-domains-from-the-same-cloud-service/):
+Также привязку с указанием имени сервера можно настроить, выполняя программный код при запуске роли, как описано в этой [записи блога](/archive/blogs/jianwu/expose-ssl-service-to-multi-domains-from-the-same-cloud-service):
 
 ```csharp
 //<code snip> 
@@ -356,7 +356,6 @@ Get-AzureService -ServiceName "<Cloud Service name>" | Get-AzureDeployment | Whe
 
 Чтобы снизить затраты, не теряя выделенный для вашей службы IP-адрес, выполните следующие действия.
 
-1. [Зарезервируйте IP-адрес](../virtual-network/virtual-networks-reserved-public-ip.md), а затем удалите развертывание.  Теперь вы будете оплачивать только IP-адрес. Дополнительные сведения о выставлении счетов за IP-адреса вы найдете на странице [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
+1. [Зарезервируйте IP-адрес](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip), а затем удалите развертывание.  Теперь вы будете оплачивать только IP-адрес. Дополнительные сведения о выставлении счетов за IP-адреса вы найдете на странице [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
 2. Удалите развертывание. Не удаляйте домен xxx.cloudapp.net, чтобы его можно было использовать в будущем.
 3. Когда вы решите повторно развернуть облачную службу, применив для нее зарезервированный в подписке IP-адрес, воспользуйтесь инструкциями из статьи [Reserved IP addresses for Cloud Services and Virtual Machines](https://azure.microsoft.com/blog/reserved-ip-addresses/) (Зарезервированные IP-адреса для облачных служб и виртуальных машин).
-
