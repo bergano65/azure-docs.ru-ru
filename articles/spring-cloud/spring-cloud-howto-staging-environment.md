@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d36c185272b7b67ffb8a21a77cc3a64f22d0df5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 72cf5553bec5985ba0310b4a347b0d2c60da6924
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888468"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090715"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Настройка промежуточной среды в облаке Azure весны
 
@@ -22,7 +22,7 @@ ms.locfileid: "90888468"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что вы уже развернули приложение Пиггиметрикс из нашего [руководства по запуску облачного приложения Azure весны](spring-cloud-quickstart-launch-app-portal.md). Пиггиметрикс состоит из трех приложений: "шлюз", "учетная запись-служба" и "auth-Service".  
+В этой статье предполагается, что вы уже развернули приложение Пиггиметрикс из нашего [руководства по запуску облачного приложения Azure весны](./spring-cloud-quickstart.md). Пиггиметрикс состоит из трех приложений: "шлюз", "учетная запись-служба" и "auth-Service".  
 
 Если вы хотите использовать другое приложение в этом примере, необходимо внести простое изменение в общедоступную часть приложения.  Это изменение отличает промежуточное развертывание от развертывания в рабочей среде.
 
@@ -106,6 +106,6 @@ az spring-cloud app deploy  -g <resource-group-name> -s <service-instance-name> 
 az spring-cloud app deployment delete -n <staging-deployment-name> -g <resource-group-name> -s <service-instance-name> --app gateway
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)

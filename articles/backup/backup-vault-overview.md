@@ -3,12 +3,12 @@ title: Общие сведения о резервных хранилищах
 description: Общие сведения о резервных хранилищах.
 ms.topic: conceptual
 ms.date: 08/17/2020
-ms.openlocfilehash: 773152212ed831c0083cfdf912f45ece578d079f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c189997ecc4814917182246b35003649d317ac77
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90997259"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091293"
 ---
 # <a name="backup-vaults-overview"></a>Общие сведения о резервных хранилищах
 
@@ -16,7 +16,7 @@ ms.locfileid: "90997259"
 
 - **Улучшенные возможности защиты данных резервного копирования**. с помощью резервных хранилищ Azure Backup предоставляет возможности безопасности для защиты облачных резервных копий. Эти функции безопасности гарантируют защиту резервных копий и безопасное восстановление данных даже при компрометации рабочих и резервных серверов. [Дополнительные сведения](backup-azure-security-feature.md)
 
-- **Управление доступом на основе ролей (RBAC)**: обеспечивает точное управление доступом в Azure. [Azure предоставляет различные встроенные роли](../role-based-access-control/built-in-roles.md), кроме того, в службе архивации Azure доступны три [встроенные роли для управления точками восстановления](backup-rbac-rs-vault.md). Резервные хранилища совместимы с RBAC, что позволяет ограничивать доступ резервного копирования и восстановления к определенному набору ролей пользователей. [Дополнительные сведения](backup-rbac-rs-vault.md)
+- **Управление доступом на основе ролей Azure (Azure RBAC)**. Azure RBAC обеспечивает детальный контроль управления доступом в Azure. [Azure предоставляет различные встроенные роли](../role-based-access-control/built-in-roles.md), кроме того, в службе архивации Azure доступны три [встроенные роли для управления точками восстановления](backup-rbac-rs-vault.md). Резервные хранилища совместимы с Azure RBAC, что позволяет ограничивать доступ резервного копирования и восстановления к определенному набору ролей пользователей. [Дополнительные сведения](backup-rbac-rs-vault.md)
 
 ## <a name="storage-settings-in-the-backup-vault"></a>Параметры хранилища в хранилище службы архивации
 
@@ -118,6 +118,6 @@ ms.locfileid: "90997259"
 
 ![Задания резервного копирования](./media/backup-vault-overview/backup-jobs.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка резервного копирования в базах данных Azure PostgreSQL](backup-azure-database-postgresql.md#configure-backup-on-azure-postgresql-databases)

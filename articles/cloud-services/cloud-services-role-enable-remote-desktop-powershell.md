@@ -9,12 +9,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: 13d5be5b1e0bcdf84001f21a45364296d67a5da4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7742267f5ce199f3a5bffc52200374d2323f0622
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87013903"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072464"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-powershell"></a>Включение подключения к удаленному рабочему столу для роли в облачных службах Azure с помощью PowerShell
 
@@ -30,7 +30,7 @@ ms.locfileid: "87013903"
 ## <a name="configure-remote-desktop-from-powershell"></a>Настройка удаленного рабочего стола с помощью PowerShell
 Командлет [Set-AzureServiceRemoteDesktopExtension](/powershell/module/servicemanagement/azure.service/set-azureserviceremotedesktopextension?view=azuresmps-3.7.0) позволяет включить удаленный рабочий стол для всех или некоторых ролей в развернутой облачной службе. Он позволяет указать имя и пароль пользователя удаленного рабочего стола с помощью параметра *Credential* , который принимает объект PSCredential.
 
-Если вы используете PowerShell в интерактивном режиме, то можете задать объект PSCredential, вызвав командлет [Get-Credentials](https://technet.microsoft.com/library/hh849815.aspx) .
+Если вы используете PowerShell в интерактивном режиме, то можете задать объект PSCredential, вызвав командлет [Get-Credentials](/powershell/module/microsoft.powershell.security/get-credential) .
 
 ```powershell
 $remoteusercredentials = Get-Credential
@@ -38,7 +38,7 @@ $remoteusercredentials = Get-Credential
 
 Эта команда открывает диалоговое окно, в котором вы сможете в защищенном режиме указать имя и пароль удаленного пользователя.
 
-Так как PowerShell используется в сценариях автоматизации, объект **PSCredential** можно настроить так, чтобы участие пользователя не требовалось. Сначала необходимо задать надежный пароль. Для начала нужно придумать текстовый пароль и преобразовать его в защищенную строку с помощью командлета [ConvertTo-SecureString](https://technet.microsoft.com/library/hh849818.aspx). Далее следует преобразовать защищенную строку в зашифрованную стандартную строку, используя командлет [ConvertFrom-SecureString](https://technet.microsoft.com/library/hh849814.aspx). После этого вы можете сохранить зашифрованную стандартную строку в файл с помощью командлета [Set-Content](https://technet.microsoft.com/library/ee176959.aspx).
+Так как PowerShell используется в сценариях автоматизации, объект **PSCredential** можно настроить так, чтобы участие пользователя не требовалось. Сначала необходимо задать надежный пароль. Для начала нужно придумать текстовый пароль и преобразовать его в защищенную строку с помощью командлета [ConvertTo-SecureString](/powershell/module/microsoft.powershell.security/convertto-securestring). Далее следует преобразовать защищенную строку в зашифрованную стандартную строку, используя командлет [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring). После этого вы можете сохранить зашифрованную стандартную строку в файл с помощью командлета [Set-Content](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176959(v=technet.10)).
 
 Можно также создать файл с надежным паролем, чтобы не нужно было каждый раз вводить пароль. Кроме того, файл с надежным паролем безопаснее, чем обычный текстовый файл. Для создания файла надежного пароля используйте эту команду PowerShell:
 
@@ -47,9 +47,9 @@ ConvertTo-SecureString -String "Password123" -AsPlainText -Force | ConvertFrom-S
 ```
 
 > [!IMPORTANT]
-> При выборе пароля убедитесь, что соблюдены [требования к сложности](https://technet.microsoft.com/library/cc786468.aspx).
+> При выборе пароля убедитесь, что соблюдены [требования к сложности](/previous-versions/windows/it-pro/windows-server-2003/cc786468(v=ws.10)).
 
-Чтобы создать объект учетных данных из файла с надежным паролем, необходимо считать содержимое файла и преобразовать его обратно в защищенную строку с помощью командлета [ConvertTo-SecureString](https://technet.microsoft.com/library/hh849818.aspx).
+Чтобы создать объект учетных данных из файла с надежным паролем, необходимо считать содержимое файла и преобразовать его обратно в защищенную строку с помощью командлета [ConvertTo-SecureString](/powershell/module/microsoft.powershell.security/convertto-securestring).
 
 Командлет [Set-AzureServiceRemoteDesktopExtension](/powershell/module/servicemanagement/azure.service/set-azureserviceremotedesktopextension?view=azuresmps-3.7.0) принимает также параметр *Expiration* , который указывает значение **DateTime** , определяющее дату и время истечения срока действия учетной записи пользователя. Например, можно задать срок действия учетной записи, который истечет через несколько дней.
 
@@ -101,5 +101,3 @@ Remove-AzureServiceRemoteDesktopExtension -ServiceName $servicename -UninstallCo
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 [Настройка облачных служб](cloud-services-how-to-configure-portal.md)
-
-

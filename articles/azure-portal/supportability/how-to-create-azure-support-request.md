@@ -9,12 +9,12 @@ ms.service: azure-supportability
 ms.topic: how-to
 ms.date: 06/25/2020
 ms.author: mblythe
-ms.openlocfilehash: b44b38e52b50dd7994326f09bebbb775c93c0e2e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 0831cc40c7d6b25e1db78c84a7adfa644497d486
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073705"
+ms.locfileid: "92091446"
 ---
 # <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
@@ -39,7 +39,7 @@ Azure предоставляет неограниченную поддержку
 
 На портале Azure выберите **Справка и поддержка**. Этот пункт доступен в меню портала Azure, в глобальном заголовке или в меню ресурсов для службы. Для отправки запрос в службу поддержки необходимы соответствующие разрешения.
 
-### <a name="role-based-access-control"></a>Управление доступом на основе ролей
+### <a name="azure-role-based-access-control"></a>Управление доступом на основе ролей в Azure
 
 Чтобы создать запрос в службу поддержки, необходимо быть [Владельцем](../../role-based-access-control/built-in-roles.md#owner), [Участником](../../role-based-access-control/built-in-roles.md#contributor) или быть назначенным роли [Участник запроса на поддержку](../../role-based-access-control/built-in-roles.md#support-request-contributor) на уровне подписки. Чтобы создать запрос в службу поддержки без подписки, например Azure Active Directory сценарий, необходимо быть [администратором](../../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 

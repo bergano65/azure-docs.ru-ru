@@ -169,15 +169,15 @@
           href: update-regulatory-compliance-packages.md
     - name: Использование Azure Defender для серверов
       items:
-        - name: Проверка уязвимостей в виртуальных машинах
+        - name: Сканирование уязвимостей
           items:
-            - name: Проверка виртуальных машин с помощью интегрированного решения VA
-              displayName: 'qualys, vulnerability'
+            - name: Встроенное средство проверки VA для компьютеров
+              displayName: 'qualys, vulnerability, arc'
               href: deploy-vulnerability-assessment-vm.md
             - name: Проверка виртуальных машин с помощью решения VA с использованием собственной лицензии
               displayName: 'qualys, rapid7, vulnerability'
               href: deploy-vulnerability-assessment-byol-vm.md
-            - name: Проверка и устранение уязвимостей на виртуальных машинах
+            - name: Анализ и исправление уязвимостей
               displayName: 'qualys, rapid7, vulnerability'
               href: remediate-vulnerability-findings-vm.md
             - name: Отключение результатов оценки для определенных уязвимостей

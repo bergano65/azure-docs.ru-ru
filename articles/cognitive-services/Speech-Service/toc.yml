@@ -26,10 +26,6 @@
       href: get-started-speech-to-text.md
     - name: Практические руководства
       items:
-        - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
-          href: quickstarts/from-blob.md
-        - name: Выбор режима распознавания речи
-          href: how-to-choose-recognition-mode.md
         - name: Изменение исходного языка при распознавании речи
           href: how-to-specify-source-language.md
         - name: Повышение точности с помощью пользовательского распознавания речи
@@ -37,8 +33,6 @@
         - name: Использование форматов сжатых входных звуковых данных
           href: how-to-use-codec-compressed-audio-input-streams.md
           displayName: 'codec,codecs,compression,compressed,mp3,flac,mulaw,alaw,mp4,mp4a,wav,opus,ogg,pcm,silk'
-        - name: Повышение точности с помощью списков фраз
-          href: how-to-phrase-lists.md
         - name: Выбор устройства для ввода с микрофона
           href: how-to-select-audio-input-devices.md
         - name: Использование автоматического определения исходного языка
@@ -47,6 +41,8 @@
           href: batch-transcription.md
     - name: Учебники
       items:
+        - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
+          href: quickstarts/from-blob.md
         - name: Повышение точности с помощью моделей клиентов
           href: tutorial-tenant-model.md
     - name: Настройка

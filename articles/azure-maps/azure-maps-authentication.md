@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 4a923fd34391137f2064cb338ea180ae3782f5e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ad4724280039f2820611a621186d8174e9af986
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88036850"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091412"
 ---
 # <a name="authentication-with-azure-maps"></a>Аутентификация в Azure Maps
 
@@ -51,7 +51,7 @@ Azure Maps создает *уникальный идентификатор (ид
 
 ### <a name="managed-identities-for-azure-resources-and-azure-maps"></a>Управляемые удостоверения для ресурсов Azure и Azure Maps
 
-[Управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) предоставляют службы Azure с автоматически управляемым участником безопасности на основе приложений, который может проходить проверку подлинности в Azure AD. С помощью управления доступом на основе ролей (RBAC) участник безопасности управляемого удостоверения может иметь право доступа к службам Azure Maps. Примеры управляемых удостоверений: служба приложений Azure, функции Azure и виртуальные машины Azure. Список управляемых удостоверений см. в статье [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities).
+[Управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) предоставляют службы Azure с автоматически управляемым участником безопасности на основе приложений, который может проходить проверку подлинности в Azure AD. С помощью управления доступом на основе ролей Azure (Azure RBAC) участник безопасности управляемого удостоверения может иметь право доступа к службам Azure Maps. Примеры управляемых удостоверений: служба приложений Azure, функции Azure и виртуальные машины Azure. Список управляемых удостоверений см. в статье [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities).
 
 ### <a name="configuring-application-azure-ad-authentication"></a>Настройка проверки подлинности приложения Azure AD
 
@@ -82,7 +82,7 @@ Authorization: Bearer eyJ0e….HNIVN
 
 Azure Maps поддерживает доступ ко всем типам участников для [управления доступом на основе ролей Azure (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) , включая отдельных пользователей Azure AD, группы, приложения, ресурсы Azure и управляемые удостоверения Azure. Типам субъектов предоставляется набор разрешений, также известных как определение роли. Определение роли предоставляет разрешения на REST API действий. Применение доступа к одной или нескольким учетным записям Azure Maps называется областью. При применении участника, определения роли и области создается назначение роли. 
 
-В следующих разделах обсуждаются основные понятия и компоненты Azure Maps интеграции с контролем доступа на основе ролей Azure AD. В рамках процесса настройки учетной записи Azure Maps каталог Azure AD связывается с подпиской Azure, в которой находится учетная запись Azure Maps. 
+В следующих разделах обсуждаются основные понятия и компоненты интеграции Azure Maps с Azure RBAC. В рамках процесса настройки учетной записи Azure Maps каталог Azure AD связывается с подпиской Azure, в которой находится учетная запись Azure Maps. 
 
 При настройке Azure RBAC вы выбираете субъект безопасности и применяете его к назначению роли. Дополнительные сведения о добавлении назначений ролей в портал Azure см. в статье [Добавление и удаление назначений ролей Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 
@@ -104,7 +104,7 @@ Azure Maps поддерживает доступ ко всем типам уча
 | Автор            | Участник данных Azure Maps |
 | Пространственные данные            | Участник данных Azure Maps |
 
-Сведения о просмотре параметров RBAC см. в статье [Управление аутентификацией в Azure Maps](https://aka.ms/amrbac).
+Сведения о просмотре параметров Azure RBAC см. [в статье Настройка Azure RBAC для Azure Maps](https://aka.ms/amrbac).
 
 #### <a name="custom-role-definitions"></a>Пользовательские определения ролей
 
@@ -129,11 +129,11 @@ Azure Maps поддерживает доступ ко всем типам уча
 > [!TIP]
 > Общей рекомендацией корпорации Майкрософт является назначение доступа к области учетной записи Azure Maps, так как она предотвращает **непреднамеренное обращение к другим учетным записям Azure Maps** , существующим в той же подписке Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о RBAC см. в разделе
+Дополнительные сведения об Azure RBAC см. в разделе
 > [!div class="nextstepaction"]
-> [Управление доступом на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview)
+> [Управление доступом на основе ролей в Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
 Дополнительные сведения о проверке подлинности приложения с помощью Azure AD и Azure Maps см. в разделе
 > [!div class="nextstepaction"]
