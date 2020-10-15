@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 7c4c832819f61d208d0722823d0a74354960f182
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 496f2e812a102e85fea92a535552daaaadf5f31e
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904262"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093435"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Квоты и планы обслуживания для Azure Веснного облака
 
@@ -30,6 +30,6 @@ vCPU | 1 на экземпляр службы | 4 на экземпляр слу
 Всего экземпляров приложений на экземпляр службы Azure Spring Cloud | 25 | 500
 Постоянные тома | 1 ГБ/приложение x 10 приложений | 50 ГБ/приложение x 10 приложений
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Некоторые ограничения по умолчанию можно увеличить. Если для установки требуется увеличение, [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+Некоторые ограничения по умолчанию можно увеличить. Если для установки требуется увеличение, [Создайте запрос в службу поддержки](../azure-portal/supportability/how-to-create-azure-support-request.md).

@@ -310,10 +310,10 @@
       href: 'https://azure.microsoft.com/updates/?category=storage'
     - name: Заметки о выпуске службы "Синхронизация файлов Azure"
       href: storage-files-release-notes.md
-    - name: Служба хранилища Azure в Microsoft Q&A
+    - name: Служба "Файлы Azure" на сайте Microsoft Q&A
       href: 'https://docs.microsoft.com/answers/topics/azure-files.html'
-    - name: Служба хранилища Azure на форуме Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
+    - name: Служба "Файлы Azure" на форуме Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-files'
     - name: Цены на Файлы Azure
       href: 'https://azure.microsoft.com/pricing/details/storage/files/'
     - name: Калькулятор цен Azure
