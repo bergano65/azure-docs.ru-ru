@@ -6,18 +6,11 @@
     - name: Что собой представляет подготовка приложения?
       href: user-provisioning.md
 - name: Учебники
+  expanded: true
   items:
-    - name: G Suite
-      href: ../saas-apps/google-apps-provisioning-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
-    - name: ServiceNow
-      href: ../saas-apps/servicenow-provisioning-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
-    - name: "Amazon Web Services (AWS)\_— подготовка ролей"
-      href: ../saas-apps/amazon-web-service-tutorial.md?context=azure/active-directory/app-provisioning/context/app-provisioning-context#configure-azure-ad-sso
-    - name: Workday
-      href: ../saas-apps/workday-inbound-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
-    - name: SAP SuccessFactors
-      href: ../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
-    - name: Все интегрированные приложения из коллекции
+    - name: Создание конечной точки SCIM и настройка подготовки
+      href: use-scim-to-provision-users-and-groups.md
+    - name: Руководства по подготовке определенных приложений
       href: /azure/active-directory/saas-apps
 - name: Основные понятия
   expanded: true
@@ -28,17 +21,15 @@
       href: plan-auto-user-provisioning.md
     - name: Планирование развертывания для подготовки облачного приложения по управлению персоналом
       href: plan-cloud-hr-provision.md
+    - name: Общие сведения о ведении журналов с использованием Azure Monitor
+      href: application-provisioning-log-analytics.md
 - name: Практические руководства
   expanded: true
   items:
     - name: Настройка подготовки для приложения из коллекции
       href: configure-automatic-user-provisioning-portal.md
-    - name: Изменение сопоставлений атрибутов
-      items:
-        - name: Настройка сопоставлений атрибутов
-          href: customize-application-attributes.md
-        - name: Написание выражений для сопоставления атрибутов
-          href: functions-for-customizing-application-data.md
+    - name: Настройка сопоставлений атрибутов
+      href: customize-application-attributes.md
     - name: Включение и пользователей и групп в область и их исключение оттуда
       items:
         - name: Фильтрация подготавливаемых пользователей или групп по областям
@@ -57,6 +48,8 @@
           href: export-import-provisioning-configuration.md
         - name: Отчеты о подготовке к работе
           href: ../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
+    - name: Автоматизация настройки с помощью MS Graph
+      href: 'https://docs.microsoft.com/graph/application-provisioning-configure-api'
     - name: Устранение неполадок при подготовке приложений
       items:
         - name: Известные проблемы
@@ -65,26 +58,20 @@
           href: application-provisioning-config-problem.md
         - name: Состояние карантина
           href: application-provisioning-quarantine-status.md
-        - name: Ошибка с авторизацией (не удалось сохранить учетные данные администратора)
-          href: application-provisioning-config-problem-storage-limit.md
         - name: Не удается подготовить пользователей
           href: application-provisioning-config-problem-no-users-provisioned.md
-        - name: Подготовлены не те пользователи
-          href: application-provisioning-config-problem-wrong-users-provisioned.md
         - name: Отсутствует исходный атрибут
           href: user-provisioning-sync-attributes-for-mapping.md
         - name: Подготовка журналов
           href: ../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
-    - name: Создание конечной точки SCIM и настройка подготовки
-      href: use-scim-to-provision-users-and-groups.md
-    - name: Автоматизация настройки с помощью MS Graph
-      href: 'https://docs.microsoft.com/graph/application-provisioning-configure-api'
 - name: Справочник
   items:
     - name: "Соответствие протоколу SCIM\_2.0"
       href: application-provisioning-config-problem-scim-compatibility.md
     - name: Сценарии использования SCIM и Graph
       href: scim-graph-scenarios.md
+    - name: Справочник по функциям для записи выражений для сопоставления атрибутов
+      href: functions-for-customizing-application-data.md
     - name: Подготовка к управлению кадрами
       items:
         - name: Интеграция SuccessFactors
@@ -93,8 +80,6 @@
           href: sap-successfactors-attribute-reference.md
         - name: Справочник по атрибутам Workday
           href: workday-attribute-reference.md
-    - name: "Агент подготовки Azure\_AD Connect"
-      items:
         - name: Журнал версий агента подготовки
           href: provisioning-agent-release-version-history.md
 - name: Ресурсы

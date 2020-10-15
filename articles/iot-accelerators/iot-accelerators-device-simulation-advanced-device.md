@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 101bd9ce351ea830688fc18affdf21ce527ba43a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3295815be035544d27da52926e5271c2c5551f28
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91261436"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076051"
 ---
 # <a name="create-an-advanced-device-model"></a>Создание расширенной модели устройства
 
@@ -520,4 +520,4 @@ function main(context, state) {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом практическом руководстве вы познакомились с файлами модели устройства, которые используются симулятором устройств, и научились создавать расширенную модель устройства. Теперь вы можете перейти к руководству [Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств](https://docs.microsoft.com/azure/iot-accelerators/iot-accelerators-device-simulation-time-series-insights)
+В этом практическом руководстве вы познакомились с файлами модели устройства, которые используются симулятором устройств, и научились создавать расширенную модель устройства. Теперь вы можете перейти к руководству [Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств](./iot-accelerators-device-simulation-time-series-insights.md)

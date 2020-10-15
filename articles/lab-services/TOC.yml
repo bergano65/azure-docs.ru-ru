@@ -64,7 +64,9 @@
               href: how-to-manage-user-lists-within-teams.md
             - name: Управление пулом виртуальных машин
               href: how-to-manage-vm-pool-within-teams.md
-            - name: Создание расписаний
+            - name: Удаление лабораторий
+              href: how-to-get-started-create-lab-within-teams.md#deleting-classroom-labs
+            - name: Расписания и параметры
               href: how-to-create-schedules-within-teams.md
             - name: Доступ к виртуальной машине (представление для учащихся)
               href: how-to-access-vm-for-students-within-teams.md
