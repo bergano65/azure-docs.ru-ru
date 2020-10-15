@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 9526a1569a5d8320dd59272ca97f5b48ec1dac1c
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: 6e148adfe6db62e6fdaea53165a5c23d9a08efba
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88999127"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92042394"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство по Развертывание Функций Azure как модулей IoT Edge
 
@@ -42,7 +42,7 @@ ms.locfileid: "88999127"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * [устройство Linux, на котором выполняется Azure IoT Edge](quickstart-linux.md);
-* реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
+* реестр контейнеров, например [Реестр контейнеров Azure](../container-registry/index.yml);
 * средство [Visual Studio Code](https://code.visualstudio.com/), настроенное с помощью [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools);
 * выпуск [Docker CE](https://docs.docker.com/install/), настроенный для выполнения контейнеров Linux.
 
