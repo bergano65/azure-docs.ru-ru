@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, sstein
 ms.date: 07/22/2020
-ms.openlocfilehash: 30107c99f16b1b2f7c91ce8a662f44a041410d01
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84d11f350c82fa09abf0803e795a92fdb373c36c
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119374"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097615"
 ---
 # <a name="features-comparison-azure-sql-database-and-azure-sql-managed-instance"></a>Сравнение функций: база данных SQL Azure и Управляемый экземпляр Azure SQL
 
@@ -179,12 +179,12 @@ Azure управляет вашими базами данных и гарант�
 | Отдельная база данных | **Автономно:** [файл BACPAC (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp | **Автономно:** [файл BACPAC (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp |
 | Управляемый экземпляр SQL | В **сети:** [репликация транзакций](../managed-instance/replication-transactional-overview.md) <br/> **Вне сети:** [файл BACPAC (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp, [репликация моментальных снимков](../managed-instance/replication-transactional-overview.md) | В **сети:** [репликация транзакций](../managed-instance/replication-transactional-overview.md) <br/> **Вне сети:** Восстановление на момент времени между экземплярами ([Azure PowerShell](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase?#examples) или [Azure CLI](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Cross-instance-point-in-time-restore-in-Azure-SQL-Database/ba-p/386208)), [встроенное резервное копирование и восстановление](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started-restore), [файл BACPAC (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp, [репликация моментальных снимков](../managed-instance/replication-transactional-overview.md) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Корпорация Майкрософт продолжает расширять возможности Базы данных SQL Azure. Посетите веб-страницу обновлений служб для Azure, чтобы получить последние обновления с помощью приведенных ниже фильтров.
 
 - Отфильтровано в [базе данных SQL Azure](https://azure.microsoft.com/updates/?service=sql-database).
-- Фильтруйте обновления по [объявлениям об общедоступных версиях](https://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) функций базы данных SQL.
+- Отфильтрованы [общедоступные \( \) объявления](https://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) о функциях базы данных SQL.
 
 Дополнительные сведения о базе данных SQL Azure и Управляемый экземпляр Azure SQL см. в следующих статьях:
 

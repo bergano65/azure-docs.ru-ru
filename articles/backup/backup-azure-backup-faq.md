@@ -3,12 +3,12 @@ title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: 50cbd1d28ca3f04b8963c58b443765d4280b14ed
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 72a4f805b34ba8a536cd398efd5e6809bd66f0d4
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058086"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096629"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -57,6 +57,10 @@ ms.locfileid: "92058086"
 
 - Восстановление на уровне элементов поддерживается для виртуальных машин Azure, резервные копии которых были созданы с помощью соответствующей функции Azure. Дополнительные сведения см. в этой [статье](backup-azure-restore-files-from-vm.md).
 - ILR не поддерживается для точек оперативного восстановления локальных виртуальных машин, резервная копия которых создана с помощью Azure Backup Server (MABS) или System Center DPM.
+
+### <a name="how-can-i-move-data-from-the-recovery-services-vault-to-on-premises"></a>Как переместить данные из хранилища служб восстановления в локальную среду?
+
+Экспорт данных непосредственно из хранилища служб восстановления в локальную среду с помощью Data Box не поддерживается. Данные необходимо восстановить в учетную запись хранения, после чего их можно переместить в локальную среду с помощью [Data Box](https://docs.microsoft.com/azure/databox/data-box-overview) или [импорта и экспорта](https://docs.microsoft.com/azure/storage/common/storage-import-export-service).
 
 ## <a name="azure-backup-agent"></a>Агент Azure Backup
 

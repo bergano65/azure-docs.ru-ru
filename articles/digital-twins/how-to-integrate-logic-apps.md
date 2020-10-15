@@ -8,12 +8,12 @@ ms.date: 9/11/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 4e9b9a7fb6e739b3bd288557457d1c152e372e26
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: cbd8c91391cc1e3afe930094f34e5015ea3c3450
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045301"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097530"
 ---
 # <a name="integrate-with-logic-apps-using-a-custom-connector"></a>Интеграция с Logic Apps с помощью настраиваемого соединителя
 
@@ -91,9 +91,9 @@ ms.locfileid: "92045301"
 
 Далее вы настроите созданный соединитель для доступа к Azure Digital двойников.
 
-Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте образец **пользовательских Swagger Azure Digital двойников** по [**этой ссылке**](/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_Custom_Swaggers.zip* и распакуйте ее. 
+Сначала скачайте пользовательский файл Swagger Microsoft Azure Digital двойников, который был изменен для работы с Logic Apps. Скачайте пример **настраиваемого соединителя Swagger (Logic Apps) Azure Digital двойников** по [**этой ссылке**](/samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/) , нажав кнопку *скачать ZIP-файл* . Перейдите к скачанной папке *Azure_Digital_Twins_custom_Swaggers__Logic_Apps_connector_.zip* и распакуйте ее. 
 
-Пользовательский Swagger для этого учебника находится в папке _**Azure_Digital_Twins_Custom_Swaggers \логикаппс**_ . Эта папка содержит вложенные папки, которые называются *стабильными* и *предварительными*версиями, оба из которых содержат различные версии Swagger, упорядоченные по датам. Папка с самой последней датой будет содержать последнюю копию Swagger. В зависимости от выбранного варианта файл Swagger называется _**digitaltwins.js**_.
+Пользовательский Swagger для этого учебника находится в папке _* * Azure_Digital_Twins_custom_Swaggers__Logic_Apps_connector_\логикаппс **_. Эта папка содержит вложенные папки, которые называются *стабильными* и *предварительными*версиями, оба из которых содержат различные версии Swagger, упорядоченные по датам. Папка с самой последней датой будет содержать последнюю копию Swagger. Независимо от того, какая версия выбрана, файл Swagger имеет имя _** digitaltwins.jsв * * _.
 
 > [!NOTE]
 > Если вы не работаете с предварительной версией функции, обычно рекомендуется использовать самую последнюю *стабильную* версию Swagger. Тем не менее предыдущие версии и предварительные версии Swagger также поддерживаются. 

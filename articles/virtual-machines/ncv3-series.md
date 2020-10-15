@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: ab08d23fe7448e50db42ea126e8158ad284b3320
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 854c988346bce9be06811d386b3798d2d0427dd7
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653474"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92095931"
 ---
 # <a name="ncv3-series"></a>Серия NCv3
 
@@ -25,8 +25,9 @@ ms.locfileid: "91653474"
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 
 > [!IMPORTANT]
-> Для этой серии виртуальных машин квота виртуальных ЦП (Core) в вашей подписке изначально равна 0 в каждом регионе. [Запросите увеличение квоты виртуальных ЦП](../azure-portal/supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/).
+> Для этой серии виртуальных машин квота виртуальных ЦП (Core) в вашей подписке изначально равна 0 в каждом регионе. [Запросите увеличение квоты виртуальных ЦП](../azure-portal/supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/). Эти номера SKU недоступны для пробной версии или подписки Azure для подписчиков Visual Studio. Ваш уровень подписки может не поддерживать выбор или развертывание этих номеров SKU. 
 >
+
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное число сетевых адаптеров |
 |---|---|---|---|---|---|---|---|---|
 | Standard_NC6s_v3    | 6  | 112 | 736  | 1 | 16 | 12 | 20000/200 | 4 |

@@ -9,19 +9,16 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: c326aed172bb8159185829f80d66e8e00496aad2
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 0cc2c04208c4800a883848896a0f1659e8bf72e9
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057813"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92097258"
 ---
 # <a name="query-azure-cosmos-db-data-using-sql-serverless-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью SQL Server не в связи с Azure синапсе (Предварительная версия)
 
 Синапсе SQL Server (ранее по запросу) позволяет анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью [ссылки Azure синапсе](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из [аналитического хранилища](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL.
-
-> [!NOTE]
-> Поддержка запросов Azure Cosmos DB аналитического хранилища с SQL Server в настоящее время находится в режиме предварительной версии. Общедоступная Предварительная версия будет объявлена на странице [обновлений службы Azure](https://azure.microsoft.com/updates/?status=nowavailable&category=databases) .
 
 Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , включая большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure, или Azure Data Lake Storage использовать [команду создать внешнюю таблицу как SELECT](develop-tables-cetas.md#cetas-in-sql-on-demand). В настоящее время нельзя хранить результаты запросов SQL Server, чтобы Azure Cosmos DB с помощью [CETAS](develop-tables-cetas.md#cetas-in-sql-on-demand).
 
@@ -262,6 +259,15 @@ FROM
 
 - Псевдоним **должен** быть указан после `OPENROWSET` функции (например, `OPENROWSET (...) AS function_alias` ). Пропуск псевдонима может вызвать проблемы с подключением и синапсе конечную точку SQL без сервера, которая может быть временно недоступна. Эта проблема будет устранена в 2020 ноября.
 - Синапсе SQL без сервера в настоящее время не поддерживает [Azure Cosmos DB схему полной точности](../../cosmos-db/analytical-store-introduction.md#schema-representation). Синапсе SQL Server можно использовать только для доступа к четко определенной схеме Cosmos DB.
+
+Список возможных ошибок и действий по устранению неполадок приведен в следующей таблице.
+
+| Ошибка | Первопричина |
+| --- | --- |
+| Синтаксические ошибки:<br/> — Неправильный синтаксис рядом с "OPENROWSET"<br/> - `...` не является распознаваемым параметром поставщика BULK OPENROWSET.<br/> — Неправильный синтаксис рядом с `...` | Возможные основные причины<br/> -Не использовать "CosmosDB" в качестве первого параметра,<br/> — Использование строкового литерала вместо идентификатора в третьем параметре;<br/> -Не указывать третий параметр (имя контейнера) |
+| Ошибка в строке подключения CosmosDB | -Account, база данных, ключ не указан <br/> -В строке подключения есть несколько параметров, которые не распознаются.<br/> -Точка с запятой `;` размещается в конце строки соединения |
+| Сбой разрешения пути CosmosDB с ошибкой "неправильная учетная запись или имя базы данных" | Не удается найти указанное имя учетной записи или имя базы данных. |
+| Сбой разрешения пути CosmosDB с ошибкой "секретное значение секрета" является неопределенным или пустым " | Ключ учетной записи не является допустимым или отсутствует. |
 
 Вы можете сообщить о предложениях и проблемах на [странице отзывов о службе Azure синапсе](https://feedback.azure.com/forums/307516-azure-synapse-analytics?category_id=387862).
 

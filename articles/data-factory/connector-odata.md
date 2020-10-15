@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/05/2020
+ms.date: 10/14/2020
 ms.author: jingwang
-ms.openlocfilehash: 10121243961d4c81ecc67d7453019c26743fe610
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 146f9ea918f75e0521209d9db712bdcab76a8e7e
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87845771"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096595"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -59,7 +59,8 @@ ms.locfileid: "87845771"
 |:--- |:--- |:--- |
 | type | Для свойства **type** необходимо задать значение **OData**. |Да |
 | url | Корневой URL-адрес службы OData. |Да |
-| authenticationType | Тип проверки подлинности, используемый для подключения к источнику OData. Допустимые значения: **anonymous**, **Basic**, **Windows**и **аадсервицепринЦипал**. OAuth на основе пользователя не поддерживается. | Да |
+| authenticationType | Тип проверки подлинности, используемый для подключения к источнику OData. Допустимые значения: **anonymous**, **Basic**, **Windows**и **аадсервицепринЦипал**. OAuth на основе пользователя не поддерживается. Кроме того, можно настроить заголовки проверки подлинности в `authHeader` свойстве.| Да |
+| аусхеадерс | Дополнительные заголовки HTTP-запросов для проверки подлинности.<br/> Например, чтобы использовать проверку подлинности с помощью ключа API, можно выбрать тип проверки подлинности "Анонимный" и указать ключ API в заголовке. | Нет |
 | userName | Укажите **имя пользователя**, если вы используете проверку подлинности типа "Обычная" или "Windows". | Нет |
 | password | Введите **пароль** для учетной записи пользователя, указанной для **имени пользователя**. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
 | servicePrincipalId | Укажите идентификатор клиента приложения Azure Active Directory. | Нет |
@@ -193,6 +194,31 @@ ms.locfileid: "87845771"
     "connectVia": {
         "referenceName": "<name of Integration Runtime>",
         "type": "IntegrationRuntimeReference"
+    }
+}
+```
+
+**Пример 6. Использование проверки подлинности ключа API**
+
+```json
+{
+    "name": "ODataLinkedService",
+    "properties": {
+        "type": "OData",
+        "typeProperties": {
+            "url": "<endpoint of OData source>",
+            "authenticationType": "Anonymous",
+            "authHeader": {
+                "APIKey": {
+                    "type": "SecureString",
+                    "value": "<API key>"
+                }
+            }
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
     }
 }
 ```

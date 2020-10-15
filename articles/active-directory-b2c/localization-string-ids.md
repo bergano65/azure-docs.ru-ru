@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/14/2020
+ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 87d56f32877fbe5b817dab5d9ad98e1f1f71386c
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: f75fbf286741fcc122332574332a30ad7fa23644
+ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92054752"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92096204"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -343,7 +343,42 @@ ms.locfileid: "92054752"
 
 ## <a name="verification-display-control-user-interface-elements"></a>Элементы пользовательского интерфейса элемента управления отображением проверки
 
-Ниже приведены идентификаторы для [элемента управления отображением проверки](display-control-verification.md)
+Ниже приведены идентификаторы для [элемента управления отображением проверки](display-control-verification.md) с [макетом страницы](page-layout.md) 2.1.0 или более поздней версии.
+
+| ID | Значение по умолчанию |
+| -- | ------------- |
+|intro_msg| Проверка не требуется. Нажмите кнопку "Отправить".|
+|success_send_code_msg | Код проверки отправлен на ваш адрес. Скопируйте его в поле ввода ниже.|
+|failure_send_code_msg | Возникли проблемы с проверкой адреса электронной почты. Введите допустимый адрес электронной почты и повторите попытку.|
+|success_verify_code_msg | Адрес электронной почты проверен. Вы можете продолжать работу.|
+|failure_verify_code_msg | Возникли проблемы с проверкой адреса электронной почты. Повторите попытку.|
+|but_send_code | Отправить код проверки|
+|but_verify_code | Проверить код|
+|but_send_new_code | Отправить новый код|
+|but_change_claims | Изменить адрес электронной почты|
+
+### <a name="verification-display-control-example"></a>Пример контрольного представления проверки
+
+```xml
+<LocalizedResources Id="api.localaccountsignup.en">
+  <LocalizedStrings>
+   <!-- Display control UI elements-->
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="intro_msg">Verification is necessary. Please click Send button.</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="success_send_code_msg">Verification code has been sent to your inbox. Please copy it to the input box below.</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="failure_send_code_msg">We are having trouble verifying your email address. Please enter a valid email address and try again.</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="success_verify_code_msg">E-mail address verified. You can now continue.</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="failure_verify_code_msg">We are having trouble verifying your email address. Please try again.</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="but_send_code">Send verification code</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="but_verify_code">Verify code</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="but_send_new_code">Send new code</LocalizedString>
+    <LocalizedString ElementType="DisplayControl" ElementId="emailVerificationControl" StringId="but_change_claims">Change e-mail</LocalizedString>
+  </LocalizedStrings>
+</LocalizedResources>
+```
+
+## <a name="verification-display-control-user-interface-elements-deprecated"></a>Элементы пользовательского интерфейса элемента управления отображением проверки (не рекомендуется)
+
+Ниже приведены идентификаторы для [элемента управления отображением проверки](display-control-verification.md) с [разметкой страницы версии](page-layout.md) 2.0.0.
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
@@ -355,7 +390,7 @@ ms.locfileid: "92054752"
 |verification_control_but_verify_code |Проверить код |
 |verification_control_code_sent| Код проверки отправлен. Скопируйте его в поле ввода ниже. |
 
-### <a name="verification-display-control-example"></a>Пример контрольного представления проверки
+### <a name="verification-display-control-example-deprecated"></a>Пример контрольного представления проверки (не рекомендуется)
 
 ```xml
 <LocalizedResources Id="api.localaccountsignup.en">
@@ -468,8 +503,8 @@ ms.locfileid: "92054752"
 ```xml
 <LocalizedResources Id="api.localaccountsignup.en">
   <LocalizedStrings>
-    <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfSessionDoesNotExist">You have exceed the maximum time allowed.</LocalizedString>
-    <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfMaxRetryAttempted">You have exceed the number of retries allowed.</LocalizedString>
+    <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfSessionDoesNotExist">You have exceeded the maximum time allowed.</LocalizedString>
+    <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfMaxRetryAttempted">You have exceeded the number of retries allowed.</LocalizedString>
     <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidCode">You have entered the wrong code.</LocalizedString>
     <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfSessionConflict">Cannot verify the code, please try again later.</LocalizedString>
    <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfVerificationFailedRetryAllowed">That code is incorrect. Please try again.</LocalizedString>
