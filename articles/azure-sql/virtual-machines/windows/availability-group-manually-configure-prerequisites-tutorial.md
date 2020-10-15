@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 278e5feb327c1376b7644050f414f680334d5c50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 812fb35f404092453ad35b2f70c4a5b1697fbfe0
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91263238"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075711"
 ---
 # <a name="prerequisites-for-creating-always-on-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Необходимые условия для создания группы доступности Always On на SQL Server на виртуальных машинах Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "91263238"
    ![Группа ресурсов](./media/availability-group-manually-configure-prerequisites-tutorial-/01-resourcegroupsymbol.png)
 
 4. Выберите **Группа ресурсов**.
-5. Нажмите кнопку **создания**.
+5. Нажмите кнопку **Создать**.
 6. В разделе **Имя группы ресурсов** введите имя для группы ресурсов. Например, введите **sql-ha-rg**.
 7. При наличии нескольких подписок Azure выберите ту, в которой необходимо создать группу доступности.
 8. Выберите расположение. Расположение — это регион Azure, где необходимо создать группу доступности. В этой статье все ресурсы созданы в одном расположении Azure.
@@ -99,7 +99,7 @@ ms.locfileid: "91263238"
 
    В примере используется имя подсети **admin**. Эта подсеть для контроллеров домена.
 
-5. Нажмите кнопку **создания**.
+5. Нажмите кнопку **Создать**.
 
    ![Настройка виртуальной сети](./media/availability-group-manually-configure-prerequisites-tutorial-/06-configurevirtualnetwork.png)
 
@@ -420,6 +420,10 @@ Azure создаст виртуальные машины.
 7. Когда появится сообщение "Добро пожаловать в corp.contoso.com домен", нажмите кнопку **ОК**.
 8. Нажмите кнопку **Закрыть**, а затем в диалоговом окне всплывающее окно выберите **перезагрузить** .
 
+## <a name="add-accounts"></a>Добавление учетных записей
+
+Добавьте учетную запись установки в качестве администратора на каждой виртуальной машине, предоставьте разрешения учетной записи установки и локальных учетных записей в SQL Server и обновите учетную запись службы SQL Server. 
+
 ### <a name="add-the-corpinstall-user-as-an-administrator-on-each-cluster-vm"></a>Добавление пользователя Corp\Install в качестве администратора на каждой виртуальной машине кластера
 
 После того как каждая виртуальная машина будет перезапущена и войдет в состав домена, добавьте **CORP\Install** как участника группы локальных администраторов.
@@ -438,16 +442,6 @@ Azure создаст виртуальные машины.
 7. Нажмите кнопку **ОК** , чтобы закрыть диалоговое окно **Свойства администратора** .
 8. Повторите описанные выше шаги для **sqlserver-1** и **cluster-fsw**.
 
-### <a name="set-the-sql-server-service-accounts"></a><a name="setServiceAccount"></a>Настройка учетных записей службы SQL Server
-
-На каждой виртуальной машине SQL Server настройте учетную запись службы SQL Server. Используйте учетные записи, созданные при настройке учетных записей домена.
-
-1. Откройте **Диспетчер конфигурации SQL Server**.
-2. Щелкните правой кнопкой мыши службу SQL Server и выберите пункт **Свойства**.
-3. Настройте учетную запись и задайте пароль.
-4. Повторите эти действия на другой виртуальной машине SQL Server.  
-
-Для групп доступности SQL Server каждая виртуальная машине SQL Server должна запускаться как учетная запись домена.
 
 ### <a name="create-a-sign-in-on-each-sql-server-vm-for-the-installation-account"></a>Создание на каждой виртуальной машине SQL Server имени для входа для учетной записи установки
 
@@ -467,13 +461,54 @@ Azure создаст виртуальные машины.
 
 1. Введите сетевые учетные данные администратора домена.
 
-1. Используйте учетную запись установки.
+1. Используйте учетную запись установки (CORP\install).
 
 1. Сделайте имя для входа участником фиксированной роли сервера **sysadmin**.
 
 1. Щелкните **ОК**.
 
 Повторите эти действия на другой виртуальной машине SQL Server.
+
+### <a name="configure-system-account-permissions"></a>Настройка разрешений системной учетной записи
+
+Чтобы создать учетную запись для системной учетной записи и предоставить соответствующие разрешения, выполните указанные ниже действия в каждом экземпляре SQL Server.
+
+1. Создайте учетную запись для `[NT AUTHORITY\SYSTEM]` в каждом экземпляре SQL Server. Для этого используйте следующий сценарий.
+
+   ```sql
+   USE [master]
+   GO
+   CREATE LOGIN [NT AUTHORITY\SYSTEM] FROM WINDOWS WITH DEFAULT_DATABASE=[master]
+   GO 
+   ```
+
+1. Предоставьте указанные ниже разрешения для `[NT AUTHORITY\SYSTEM]` в каждом экземпляре SQL Server.
+
+   - `ALTER ANY AVAILABILITY GROUP`
+   - `CONNECT SQL`
+   - `VIEW SERVER STATE`
+
+   Для этого используйте следующий сценарий.
+
+   ```sql
+   GRANT ALTER ANY AVAILABILITY GROUP TO [NT AUTHORITY\SYSTEM]
+   GO
+   GRANT CONNECT SQL TO [NT AUTHORITY\SYSTEM]
+   GO
+   GRANT VIEW SERVER STATE TO [NT AUTHORITY\SYSTEM]
+   GO 
+   ```
+
+### <a name="set-the-sql-server-service-accounts"></a><a name="setServiceAccount"></a>Настройка учетных записей службы SQL Server
+
+На каждой виртуальной машине SQL Server настройте учетную запись службы SQL Server. Используйте учетные записи, созданные при настройке учетных записей домена.
+
+1. Откройте **Диспетчер конфигурации SQL Server**.
+2. Щелкните правой кнопкой мыши службу SQL Server и выберите пункт **Свойства**.
+3. Настройте учетную запись и задайте пароль.
+4. Повторите эти действия на другой виртуальной машине SQL Server.  
+
+Для групп доступности SQL Server каждая виртуальная машине SQL Server должна запускаться как учетная запись домена.
 
 ## <a name="add-failover-clustering-features-to-both-sql-server-vms"></a>Добавление функций отказоустойчивого кластера на обеих виртуальных машинах SQL Server
 
@@ -524,35 +559,6 @@ Azure создаст виртуальные машины.
 
 Повторите эти действия на второй виртуальной машине SQL Server.
 
-## <a name="configure-system-account-permissions"></a>Настройка разрешений системной учетной записи
-
-Чтобы создать учетную запись для системной учетной записи и предоставить соответствующие разрешения, выполните указанные ниже действия в каждом экземпляре SQL Server.
-
-1. Создайте учетную запись для `[NT AUTHORITY\SYSTEM]` в каждом экземпляре SQL Server. Для этого используйте следующий сценарий.
-
-   ```sql
-   USE [master]
-   GO
-   CREATE LOGIN [NT AUTHORITY\SYSTEM] FROM WINDOWS WITH DEFAULT_DATABASE=[master]
-   GO 
-   ```
-
-1. Предоставьте указанные ниже разрешения для `[NT AUTHORITY\SYSTEM]` в каждом экземпляре SQL Server.
-
-   - `ALTER ANY AVAILABILITY GROUP`
-   - `CONNECT SQL`
-   - `VIEW SERVER STATE`
-
-   Для этого используйте следующий сценарий.
-
-   ```sql
-   GRANT ALTER ANY AVAILABILITY GROUP TO [NT AUTHORITY\SYSTEM]
-   GO
-   GRANT CONNECT SQL TO [NT AUTHORITY\SYSTEM]
-   GO
-   GRANT VIEW SERVER STATE TO [NT AUTHORITY\SYSTEM]
-   GO 
-   ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

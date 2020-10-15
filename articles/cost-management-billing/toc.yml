@@ -180,8 +180,10 @@
               href: manage/pay-by-invoice.md
             - name: Создание дополнительных подписок
               href: manage/create-subscription.md
-            - name: Создание подписок программными средствами
+            - name: Создание подписок программными средствами с помощью API последней версии
               href: manage/programmatically-create-subscription.md
+            - name: Создание подписок программными средствами с помощью API предварительной версии
+              href: manage/programmatically-create-subscription-preview.md
             - name: Предоставление доступа для создания подписок EA
               href: manage/grant-access-to-create-subscription.md
             - name: Экспорт сведений о подписке
@@ -338,6 +340,12 @@
               href: reservations/reservation-renew.md?toc=/azure/cost-management-billing/toc.json
     - name: Диагностика
       items:
+        - name: Устранение проблем с выставлением счетов EA с помощью файлов использования
+          href: manage/troubleshoot-ea-billing-issues-usage-file-pivot-tables.md
+        - name: Устранение проблем с выставлением счетов MCA с помощью файлов использования
+          href: manage/troubleshoot-customer-agreement-billing-issues-usage-file-pivot-tables.md
+        - name: Устранение проблем с выставлением счетов CSP с помощью файлов использования
+          href: manage/troubleshoot-csp-billing-issues-usage-file-pivot-tables.md
         - name: Подписки не найдены
           href: manage/no-subscriptions-found.md
         - name: Проблемы с оплатой

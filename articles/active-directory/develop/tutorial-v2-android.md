@@ -1,6 +1,7 @@
 ---
-title: Вход, выход пользователей и вызов Microsoft Graph (Android) — платформа удостоверений Майкрософт | Azure
-description: Получение маркера доступа и вызов Microsoft Graph или API, которые требуют маркеры доступа от платформы удостоверений Майкрософт (Android)
+title: Руководство по Создание приложения Android, которое использует платформу удостоверений Майкрософт для аутентификации | Azure
+titleSuffix: Microsoft identity platform
+description: В этом учебнике показано, как создать приложение Android, которое использует платформу удостоверений Майкрософт для реализации входа пользователей, и как получить маркер доступа для вызова API Microsoft Graph от имени пользователей.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -12,30 +13,29 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b4de8a5e96466ea324475030df1f00eb6bb5cf1a
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: a1a82d5f2a2e0b5cc9dba4e83fa1063cb6089375
+ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88118294"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91611220"
 ---
-# <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения Android 
+# <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-application"></a>Руководство по Вход пользователей и вызов API Microsoft Graph из приложения Android
 
->[!NOTE]
->В этом учебнике представлены упрощенные примеры работы с MSAL для Android. Для простоты здесь используется режим одной учетной записи. Вы также можете открыть репозиторий и клонировать [предварительно настроенный пример приложения](https://github.com/Azure-Samples/ms-identity-android-java/) для изучения более сложных сценариев. Дополнительные сведения о примере приложения, конфигурации и регистрации вы найдете в [этом кратком руководстве](./quickstart-v2-android.md). 
-
-Из этого руководства вы узнаете, как интегрировать приложение Android с платформой удостоверений Майкрософт с помощью библиотеки проверки подлинности Майкрософт для Android. Вы потренируетесь обрабатывать вход и выход пользователя, получать маркер доступа для вызова API Microsoft Graph и выполнять запрос к API Graph. 
-
-> [!div class="checklist"]
-> * Интеграция приложения Android с платформой удостоверений Майкрософт 
-> * Вход пользователя 
-> * Получение маркера доступа для вызова API Microsoft Graph 
-> * Вызов API Microsoft Graph 
-> * Выход пользователя 
+Из этого руководства вы узнаете, как интегрировать приложение Android с платформой удостоверений Майкрософт с помощью библиотеки проверки подлинности Майкрософт для Android (MSAL). Вы потренируетесь обрабатывать вход и выход пользователя, получать маркер доступа и выполнять запрос к API Microsoft Graph.
 
 Когда вы завершите работу с этим руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и др.), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+> [!div class="checklist"]
+> * создание проекта приложения Android в *Android Studio*;
+> * регистрация приложения на портале Azure;
+> * добавление кода для поддержки входа и выхода пользователей;
+> * добавление кода для вызова API Microsoft Graph.
+> * Тестирование приложения
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Android Studio 3.5 и более поздних версий
 
 ## <a name="how-this-tutorial-works"></a>Как работает это руководство
 
@@ -53,14 +53,13 @@ ms.locfileid: "88118294"
 
 В этом примере используется библиотека проверки подлинности Майкрософт для Android (MSAL), [com.microsoft.identity.client](https://javadoc.io/doc/com.microsoft.identity.client/msal), которая помогает реализовать проверку подлинности.
 
- MSAL автоматически обновляет маркеры, обеспечивает единый вход для других приложений на устройстве, а также управляет учетными записями.
+MSAL автоматически обновляет маркеры, обеспечивает единый вход для других приложений на устройстве, а также управляет учетными записями.
 
-### <a name="prerequisites"></a>Предварительные требования
-
-* Для работы с этим учебником требуется Android Studio версии 3.5 или более новой.
+> [!NOTE]
+> В этом учебнике представлены упрощенные примеры работы с MSAL для Android. Для простоты здесь используется режим только одной учетной записи. Более сложные сценарии см. в готовом [примере кода](https://github.com/Azure-Samples/ms-identity-android-java/) на сайте GitHub.
 
 ## <a name="create-a-project"></a>Создание проекта
-Если у вас еще нет приложения Android, выполните следующие действия, чтобы настроить новый проект. 
+Если у вас еще нет приложения Android, выполните следующие действия, чтобы настроить новый проект.
 
 1. Запустите Android Studio и выберите **Start a new Android Studio project** (Создать проект Android Studio).
 2. Выберите **Basic Activity** (Базовое действие) и щелкните **Next** (Далее).
@@ -70,35 +69,35 @@ ms.locfileid: "88118294"
 6. Присвойте параметру **Minimum API level** (Минимальный уровень API) задайте **API 19** или выше и щелкните **Finish** (Готово).
 7. В представлении проекта в раскрывающемся списке выберите **Project** (Проект), чтобы отобразить исходные и другие файлы проекта, откройте **app/build.gradle** и задайте параметру `targetSdkVersion` значение `28`.
 
-## <a name="integrate-with-microsoft-authentication-library"></a>Интеграция с библиотекой проверки подлинности Майкрософт 
+## <a name="integrate-with-microsoft-authentication-library"></a>Интеграция с библиотекой проверки подлинности Майкрософт
 
 ### <a name="register-your-application"></a>Регистрация приложения
 
 1. Перейдите на [портал Azure](https://aka.ms/MobileAppReg).
 2. На панели [Регистрация приложений](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) щелкните **+Новая регистрация**.
 3. Введите **Имя** приложения, а затем, **не указывая** URI перенаправления, щелкните **Зарегистрировать**.
-4. На панели в открывшемся разделе **Управление** выберите **Аутентификация** >  **+Добавить платформу** > **Android**. (Чтобы увидеть этот раздел, возможно, потребуется выбрать Switch to the new experience (Переключиться на новый интерфейс) рядом с верхней частью колонки).
+4. На панели в открывшемся разделе **Управление** выберите **Аутентификация** > **+Добавить платформу** > **Android**. (Чтобы увидеть этот раздел, возможно, потребуется выбрать Switch to the new experience (Переключиться на новый интерфейс) рядом с верхней частью колонки).
 5. Введите имя пакета проекта. Если вы скачали код, это будет значение `com.azuresamples.msalandroidapp`.
 6. В разделе **Хэш подписи** на странице **Настройка приложения Android** щелкните **Generating a development Signature Hash** (Создания хэша подписи для разработки) и скопируйте команду KeyTool для использования с вашей платформой.
 
    > [!Note]
-   > KeyTool. exe устанавливается как часть пакета средств разработки Java (JDK). Необходимо также установить средство OpenSSL для выполнения команды KeyTool. Дополнительные сведения см. в [документации Android по созданию ключа](https://developer.android.com/studio/publish/app-signing#generate-key). 
+   > KeyTool. exe устанавливается как часть пакета средств разработки Java (JDK). Необходимо также установить средство OpenSSL для выполнения команды KeyTool. Дополнительные сведения см. в [документации Android по созданию ключа](https://developer.android.com/studio/publish/app-signing#generate-key).
 
 7. Введите **хэш подписи**, созданный с помощью KeyTool.
-8. Щелкните `Configure` и сохраните **конфигурацию MSAL**, отображаемую на странице **Настройка Android**, чтобы указать ее при последующей настройке приложения.  Нажмите кнопку **Done**(Готово).
+8. Щелкните `Configure` и сохраните **конфигурацию MSAL**, отображаемую на странице **Настройка Android**, чтобы указать ее при последующей настройке приложения.  Нажмите кнопку **Готово**.
 
-### <a name="configure-your-application"></a>Настройка приложения 
+### <a name="configure-your-application"></a>Настройка приложения
 
 1. На панели проекта Android Studio перейдите к **app\src\main\res**.
 2. Щелкните правой кнопкой мыши **res** и выберите **New** (Создать)  > **Directory** (Каталог). Введите `raw` в качестве имени каталога и нажмите кнопку **ОК**.
-3. В расположении**app** > **src** > **main** > **res** > **raw** создайте файл JSON с именем `auth_config_single_account.json` и вставьте в него ранее сохраненную конфигурацию MSAL. 
+3. В расположении**app** > **src** > **main** > **res** > **raw** создайте файл JSON с именем `auth_config_single_account.json` и вставьте в него ранее сохраненную конфигурацию MSAL.
 
-    Поместите следующие данные под URI перенаправления: 
+    Поместите следующие данные под URI перенаправления:
     ```json
       "account_mode" : "SINGLE",
     ```
-    Теперь файл конфигурации должен выглядеть примерно так: 
-    ```json   
+    Теперь файл конфигурации должен выглядеть примерно так:
+    ```json
     {
       "client_id" : "0984a7b6-bc13-4141-8b0d-8f767e136bb7",
       "authorization_user_agent" : "DEFAULT",
@@ -115,10 +114,10 @@ ms.locfileid: "88118294"
       ]
     }
    ```
-    
+
    >[!NOTE]
    >В этом учебнике настройка приложения демонстрируется только в режиме одной учетной записи. В документации вы найдете дополнительные сведения [о режимах одной и нескольких учетных записей](./single-multi-account.md) и [о настройке приложения](./msal-configuration.md).
-   
+
 4. В **app** > **src** > **main** > **AndroidManifest.xml** добавьте действие `BrowserTabActivity` в код приложения, как показано ниже. Эта запись позволяет корпорации Майкрософт выполнять обратный вызов приложения после завершения проверки подлинности:
 
     ```xml
@@ -137,33 +136,33 @@ ms.locfileid: "88118294"
     ```
 
     Замените имя пакета, зарегистрированного на портале Azure, значением `android:host=`.
-    Замените хэш ключа, зарегистрированный на портале Azure, значением `android:path=`. **Недопустимо** применять к хэшу подписи кодирование по правилам для URL-адреса. Убедитесь, что в начале хэша подписи присутствует символ `/`. 
+    Замените хэш ключа, зарегистрированный на портале Azure, значением `android:path=`. **Недопустимо** применять к хэшу подписи кодирование по правилам для URL-адреса. Убедитесь, что в начале хэша подписи присутствует символ `/`.
     >[!NOTE]
-    >Заполнитель "Package Name" (Имя пакета) вы замените значением `android:host` примерно такого вида: "com.azuresamples.msalandroidapp", а заполнитель "Signature Hash" — значением `android:path` такого вида: "/1wIqXSqBj7w+h11ZifsnqwgyKrY=". Эти же значения можно найти в колонке "Аутентификация" в регистрации приложения. Обратите внимание, что URI перенаправления будет выглядеть следующим образом: "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D". Несмотря на то, что к хэшу подписи в конце этого значения применяется кодирование по правилам для URL-адреса, в значении `android:path` хэш подписи должен быть указан **без** этого кодирования. 
+    >Заполнитель "Package Name" (Имя пакета) вы замените значением `android:host` примерно такого вида: "com.azuresamples.msalandroidapp", а заполнитель "Signature Hash" — значением `android:path` такого вида: "/1wIqXSqBj7w+h11ZifsnqwgyKrY=". Эти же значения можно найти в колонке "Аутентификация" в регистрации приложения. Обратите внимание, что URI перенаправления будет выглядеть следующим образом: "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D". Несмотря на то, что к хэшу подписи в конце этого значения применяется кодирование по правилам для URL-адреса, в значении `android:path` хэш подписи должен быть указан **без** этого кодирования.
 
-## <a name="use-msal"></a>Использование MSAL 
+## <a name="use-msal"></a>Использование MSAL
 
 ### <a name="add-msal-to-your-project"></a>Добавление MSAL в проект
 
-1. В окне проекта Android Studio перейдите к **app** > **src** > **build.gradle** и выполните следующее. 
+1. В окне проекта Android Studio перейдите к **app** > **src** > **build.gradle** и выполните следующее.
 
     ```gradle
     repositories{
         jcenter()
-    }  
+    }
     dependencies{
         implementation 'com.microsoft.identity.client:msal:1.+'
         implementation 'com.microsoft.graph:microsoft-graph:1.5.+'
     }
     packagingOptions{
-        exclude("META-INF/jersey-module-version") 
+        exclude("META-INF/jersey-module-version")
     }
     ```
     [Подробнее о пакете средства разработки Microsoft Graph](https://github.com/microsoftgraph/msgraph-sdk-java/)
 
-### <a name="required-imports"></a>Необходимые операторы import 
+### <a name="required-imports"></a>Необходимые операторы import
 
-Добавьте представленный ниже текст в начало файла **app** > **src** > **main**> **java** > **com.example(yourapp)**  > **MainActivity.java** 
+Добавьте представленный ниже текст в начало файла **app** > **src** > **main**> **java** > **com.example(yourapp)**  > **MainActivity.java**
 
 ```java
 import android.os.Bundle;
@@ -188,7 +187,7 @@ import com.microsoft.identity.client.exception.*;
 ```
 
 ## <a name="instantiate-publicclientapplication"></a>Создание экземпляра PublicClientApplication
-#### <a name="initialize-variables"></a>Инициализация переменных 
+#### <a name="initialize-variables"></a>Инициализация переменных
 ```java
 private final static String[] SCOPES = {"Files.Read"};
 /* Azure AD v2 Configs */
@@ -232,10 +231,10 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-### <a name="loadaccount"></a>loadAccount 
+### <a name="loadaccount"></a>loadAccount
 
 ```java
-//When app comes to the foreground, load existing account to determine if user is signed in 
+//When app comes to the foreground, load existing account to determine if user is signed in
 private void loadAccount() {
     if (mSingleAccountApp == null) {
         return;
@@ -247,7 +246,7 @@ private void loadAccount() {
             // You can use the account data to update your UI or your app database.
             updateUI(activeAccount);
         }
-        
+
         @Override
         public void onAccountChanged(@Nullable IAccount priorAccount, @Nullable IAccount currentAccount) {
             if (currentAccount == null) {
@@ -265,7 +264,7 @@ private void loadAccount() {
 ```
 
 ### <a name="initializeui"></a>initializeUI
-Ожидайте нажатия кнопок, а затем вызывайте методы или регистрируйте ошибки соответствующим образом. 
+Ожидайте нажатия кнопок, а затем вызывайте методы или регистрируйте ошибки соответствующим образом.
 ```java
 private void initializeUI(){
         signInButton = findViewById(R.id.signIn);
@@ -274,8 +273,8 @@ private void initializeUI(){
         signOutButton = findViewById(R.id.clearCache);
         logTextView = findViewById(R.id.txt_log);
         currentUserTextView = findViewById(R.id.current_user);
-        
-        //Sign in user 
+
+        //Sign in user
         signInButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 if (mSingleAccountApp == null) {
@@ -284,7 +283,7 @@ private void initializeUI(){
                 mSingleAccountApp.signIn(MainActivity.this, null, SCOPES, getAuthInteractiveCallback());
             }
         });
-        
+
         //Sign out user
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -305,8 +304,8 @@ private void initializeUI(){
                 });
             }
         });
-        
-        //Interactive 
+
+        //Interactive
         callGraphApiInteractiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -331,12 +330,12 @@ private void initializeUI(){
 ```
 
 > [!Important]
-> Если функция выхода реализована с помощью MSAL, из приложения удаляется вся известная информация о пользователе, но сеанс на устройстве пользователя продолжает быть активным. Если пользователь пытается снова выполнить вход, может отобразиться интерфейс входа, в котором может не потребоваться повторно вводить учетные данные, так как сеанс на устройстве остается активным. 
+> Если функция выхода реализована с помощью MSAL, из приложения удаляется вся известная информация о пользователе, но сеанс на устройстве пользователя продолжает быть активным. Если пользователь пытается снова выполнить вход, может отобразиться интерфейс входа, в котором может не потребоваться повторно вводить учетные данные, так как сеанс на устройстве остается активным.
 
 ### <a name="getauthinteractivecallback"></a>getAuthInteractiveCallback
 Обратный вызов, используемый для интерактивных запросов.
 
-```java 
+```java
 private AuthenticationCallback getAuthInteractiveCallback() {
     return new AuthenticationCallback() {
         @Override
@@ -365,8 +364,8 @@ private AuthenticationCallback getAuthInteractiveCallback() {
 ```
 
 ### <a name="getauthsilentcallback"></a>getAuthSilentCallback
-Обратный вызов, используемый для запросов без уведомления. 
-```java 
+Обратный вызов, используемый для запросов без уведомления.
+```java
 private SilentAuthenticationCallback getAuthSilentCallback() {
     return new SilentAuthenticationCallback() {
         @Override
@@ -383,11 +382,11 @@ private SilentAuthenticationCallback getAuthSilentCallback() {
 }
 ```
 
-## <a name="call-microsoft-graph-api"></a>Вызов API Microsoft Graph 
+## <a name="call-microsoft-graph-api"></a>Вызов API Microsoft Graph
 
-В следующем примере кода показано, как обращаться к GraphAPI через пакет средств разработки Graph. 
+В следующем примере кода показано, как обращаться к GraphAPI через пакет средств разработки Graph.
 
-### <a name="callgraphapi"></a>callGraphAPI 
+### <a name="callgraphapi"></a>callGraphAPI
 
 ```java
 private void callGraphAPI(IAuthenticationResult authenticationResult) {
@@ -425,12 +424,12 @@ private void callGraphAPI(IAuthenticationResult authenticationResult) {
 ```
 
 ## <a name="add-ui"></a>Добавление пользовательского интерфейса
-### <a name="activity"></a>Действие 
+### <a name="activity"></a>Действие
 Если вы хотите создать пользовательский интерфейс на основе примера из этого учебника, изучите следующие методы для понимания процессов обновления текста и прослушивания кнопок.
 
 #### <a name="updateui"></a>updateUI
-Включение и отключение кнопок на основе состояния входа и заданного текста.  
-```java 
+Включение и отключение кнопок на основе состояния входа и заданного текста.
+```java
 private void updateUI(@Nullable final IAccount account) {
     if (account != null) {
         signInButton.setEnabled(false);
@@ -449,7 +448,7 @@ private void updateUI(@Nullable final IAccount account) {
 }
 ```
 #### <a name="displayerror"></a>displayError
-```java 
+```java
 private void displayError(@NonNull final Exception exception) {
        logTextView.setText(exception.toString());
    }
@@ -463,7 +462,7 @@ private void displayGraphResult(@NonNull final JsonObject graphResponse) {
   }
 ```
 #### <a name="performoperationonsignout"></a>performOperationOnSignOut
-Метод для обновления текста в пользовательском интерфейсе в соответствии с выходом. 
+Метод для обновления текста в пользовательском интерфейсе в соответствии с выходом.
 
 ```java
 private void performOperationOnSignOut() {
@@ -473,11 +472,11 @@ private void performOperationOnSignOut() {
             .show();
 }
 ```
-### <a name="layout"></a>Макет 
+### <a name="layout"></a>Layout
 
-Пример файла `activity_main.xml` для вывода кнопок и текстовых полей. 
+Пример файла `activity_main.xml` для вывода кнопок и текстовых полей.
 
-```xml 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -571,15 +570,20 @@ private void performOperationOnSignOut() {
 Выполните сборку и развертывание приложения на тестовом устройстве или в эмуляторе. При этом должен выполняться вход в приложение и получение маркеров для учетных записей Azure AD или личных учетных записей Майкрософт.
 
 После выполнения входа в приложении будут отображаться данные, возвращенные из конечной точки Microsoft Graph `/me`.
-
+PR 4
 ### <a name="consent"></a>Согласие на предоставление разрешений
 
-При первом входе любого пользователя в приложение от платформы удостоверений Майкрософт появится запрос на предоставление согласия на запрашиваемые разрешения. Некоторые арендаторы Azure AD отключили согласие пользователей, что предусматривает получение согласия администраторов от имени всех пользователей. Для поддержки этого сценария вам придется создать собственный клиент или получить согласие администратора. 
+При первом входе любого пользователя в приложение от платформы удостоверений Майкрософт появится запрос на предоставление согласия на запрашиваемые разрешения. Некоторые арендаторы Azure AD отключили согласие пользователей, что предусматривает получение согласия администраторов от имени всех пользователей. Для поддержки этого сценария вам придется создать собственный клиент или получить согласие администратора.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Удалите ненужный объект приложения, созданный на шаге [Регистрация приложения](#register-your-application).
 
-## <a name="get-help"></a>Получить справку
+[!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](./developer-support-help-options.md).
+## <a name="next-steps"></a>Дальнейшие действия
+
+Из нашей серии сценариев узнайте, как создавать мобильные приложения, вызывающие защищенные веб-API.
+
+> [!div class="nextstepaction"]
+> [Scenario: Создание мобильного приложения, которое вызывает веб-API](scenario-mobile-overview.md)

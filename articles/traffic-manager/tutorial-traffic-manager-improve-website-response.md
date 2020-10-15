@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/23/2018
 ms.author: duau
-ms.openlocfilehash: e79dde0178c74965bde14956203e31e82e80d93e
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+ms.openlocfilehash: 4f646cdb4a3f000df219f627cbd7e7c841ed68ab
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89398415"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91651247"
 ---
 # <a name="tutorial-improve-website-response-using-traffic-manager"></a>Руководство по Улучшение отклика веб-сайта с помощью диспетчера трафика
 
@@ -203,7 +203,7 @@ ms.locfileid: "89398415"
 5. При входе в систему может появиться предупреждение о сертификате. Если вы получили предупреждение, выберите **Да** или **Продолжить**.
 1. В веб-браузере на виртуальной машине *myVMEastUS* введите DNS-имя вашего профиля диспетчера трафика, чтобы просмотреть веб-сайт. Так как виртуальная машина находится в **восточной части США**, вы будете направлены к ближайшему веб-сайту, размещенному на ближайшем сервере IIS *myIISVMEastUS*, расположенном в **восточной части США**.
 
-   ![Тестирование профиля диспетчера трафика](./media/tutorial-traffic-manager-improve-website-response/eastus-traffic-manager-test.png)
+   ![Снимок экрана: профиль диспетчера трафика в веб-браузере.](./media/tutorial-traffic-manager-improve-website-response/eastus-traffic-manager-test.png)
 
 2. Затем подключитесь к виртуальной машине *myVMWestEurope*, расположенной в **Западной Европе**, выполнив шаги 1–5, и перейдите к доменному имени профиля диспетчера трафика с этой виртуальной машины. Так как виртуальная машина находится в **Западной Европе**, вы будете перенаправлены на веб-сайт, размещенный на ближайшем сервере IIS *myIISVMWestEurope*, расположенном в **Западной Европе**.
 

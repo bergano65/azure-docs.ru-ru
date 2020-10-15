@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 07b5b81dd7e23f25e7bfba90bbab7083090724d4
-ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.openlocfilehash: ce38fd1a9c49a1715562b59fb14667a88ce44181
+ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89018864"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91653168"
 ---
 # <a name="tutorial-manipulating-models"></a>Руководство по Манипулирование моделями
 
@@ -161,7 +161,7 @@ ms.locfileid: "89018864"
 
 1. Повторный запуск приложения Вскоре после загрузки модели отобразятся границы для удаленного объекта. Вы увидите примерно следующие значения:
 
-     ![Обновление границ](./media/updated-bounds.png)
+     ![Снимок экрана: пример границ для удаленного объекта.](./media/updated-bounds.png)
 
 Теперь у нас есть локальный коллайдер **BoxCollider**, настроенный по точным границам объекта Unity. Границы обеспечивают визуализацию и взаимодействие с использованием тех же стратегий, которые применяются для объекта, преобразовываемого для просмотра локально. Например, с помощью скриптов, которые изменяют преобразование, физику и многое другое.
 
