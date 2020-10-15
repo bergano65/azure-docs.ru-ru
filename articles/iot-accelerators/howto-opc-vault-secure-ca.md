@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 01213cd4d04783d0d877b4565493f06fa3718f8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f54467c03a67797d52ac499ca9ba455c0f75e240
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399641"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071461"
 ---
 # <a name="run-the-opc-vault-certificate-management-service-securely"></a>Безопасное выполнение службы управления сертификатами хранилища OPC
 
@@ -97,7 +97,7 @@ ms.locfileid: "91399641"
 Подпишитесь на или реализуйте соответствующий мониторинг безопасности. Например, подпишитесь на центральное решение мониторинга (например, центр безопасности Azure или решение для мониторинга Microsoft 365) и настройте его соответствующим образом, чтобы обеспечить передачу событий безопасности в решение для мониторинга.
 
 > [!IMPORTANT]
-> По умолчанию служба хранилища OPC развертывается с [Application Insights Azure](https://docs.microsoft.com/azure/azure-monitor/app/devops) в качестве решения для мониторинга. Настоятельно рекомендуется добавить решение для обеспечения безопасности, такое как [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/) .
+> По умолчанию служба хранилища OPC развертывается с [Application Insights Azure](../azure-monitor/app/devops.md) в качестве решения для мониторинга. Настоятельно рекомендуется добавить решение для обеспечения безопасности, такое как [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/) .
 
 ### <a name="assess-the-security-of-open-source-software-components"></a>Оценка безопасности программных компонентов с открытым исходным кодом
 
@@ -145,7 +145,7 @@ ms.locfileid: "91399641"
 
 ### <a name="document-the-standard-operating-procedure-for-securely-deleting-cryptographic-keys"></a>Документирование стандартной операционной процедуры для безопасного удаления криптографических ключей
 
-В течение времени существования ЦС удаление ключа может происходить только редко. Именно поэтому у пользователя нет Key Vault назначено право на удаление сертификата и почему нет интерфейсов API для удаления сертификата ЦС поставщика. Ручная стандартная процедура безопасного удаления криптографических ключей центра сертификации доступна только путем прямого доступа к Key Vault в портал Azure. Также можно удалить группу сертификатов в Key Vault. Чтобы обеспечить немедленное удаление, отключите функцию [Key Vault обратимого удаления](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete) .
+В течение времени существования ЦС удаление ключа может происходить только редко. Именно поэтому у пользователя нет Key Vault назначено право на удаление сертификата и почему нет интерфейсов API для удаления сертификата ЦС поставщика. Ручная стандартная процедура безопасного удаления криптографических ключей центра сертификации доступна только путем прямого доступа к Key Vault в портал Azure. Также можно удалить группу сертификатов в Key Vault. Чтобы обеспечить немедленное удаление, отключите функцию [Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md) .
 
 ## <a name="certificates"></a>Сертификаты
 
@@ -240,7 +240,7 @@ ms.locfileid: "91399641"
   - Подготовка материалов для хранения.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как безопасно управлять хранилищем OPC, вы можете:
 
