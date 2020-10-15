@@ -6,12 +6,12 @@ ms.subservice: shared-capabilities
 ms.date: 01/13/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: 39085aa7967ffeac3416b61f32146ac023b46dfe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a3cff616f814b8e5209b15f9d3f7439533452ca
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186662"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071767"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Управление подключениями в службе автоматизации Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "86186662"
 
 |Внутренний командлет|Описание|
 |---|---|
-|`Get-AutomationConnection` | Извлекает значения различных полей в подключении и возвращает их в виде [хэш-таблицы](https://go.microsoft.com/fwlink/?LinkID=324844). Затем эту хэш-таблицу можно использовать с соответствующими командами в модуле runbook или конфигурации DSC.|
+|`Get-AutomationConnection` | Извлекает значения различных полей в подключении и возвращает их в виде [хэш-таблицы](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Затем эту хэш-таблицу можно использовать с соответствующими командами в модуле runbook или конфигурации DSC.|
 
 >[!NOTE]
 >Не следует использовать переменные с параметром `Name` командлета `Get-AutomationConnection`. Использование переменных в таком случае может усложнить обнаружение зависимостей между модулями runbook или конфигурациями DSC и ресурсами подключения во время разработки.
