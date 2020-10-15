@@ -10,16 +10,16 @@ ms.date: 08/27/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fb57e7260a056afe023455149f610ff492c98c12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44ea49d7ed0cec6fc56cb2462a25d38866ce9a76
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89226137"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093690"
 ---
 # <a name="create-and-manage-a-blob-snapshot-in-net"></a>Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 
-Моментальный снимок — это версия BLOB-объекта только для чтения, сделанная в определенный момент времени. В этой статье показано, как создавать моментальные снимки BLOB-объектов и управлять ими с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
+Моментальный снимок — это версия BLOB-объекта только для чтения, сделанная в определенный момент времени. В этой статье показано, как создавать моментальные снимки BLOB-объектов и управлять ими с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage).
 
 Дополнительные сведения о моментальных снимках BLOB-объектов в службе хранилища Azure см. в разделе [моментальные снимки BLOB-объектов](snapshots-overview.md).
 
@@ -159,7 +159,7 @@ await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моментальные снимки BLOB-объектов](snapshots-overview.md)
 - [Версии BLOB-объектов](versioning-overview.md)

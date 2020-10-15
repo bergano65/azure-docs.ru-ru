@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: cba3f47015072f16112ef981d2f59d0c73cb69c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d82b7223c2b392e6b9aebffdc545dc38b38ca2f
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88142491"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074232"
 ---
 # <a name="troubleshooting-allocation-failure-when-you-deploy-cloud-services-in-azure"></a>Устранение ошибки выделения при развертывании облачных служб в Azure
 ## <a name="summary"></a>Итоги
@@ -70,4 +70,4 @@ ms.locfileid: "88142491"
      ```
    * Выполните описанный выше пункт 2 и убедитесь, что в CSCFG службы указан новый адрес ReservedIP.
 4. Удалите территориальную группу для новых развертываний. Использовать территориальные группы больше не рекомендуются. Выполните описанный выше пункт 1, чтобы развернуть новую облачную службу. Убедитесь, что облачная служба не входит в территориальную группу.
-5. Сведения о выполнении преобразования в региональную виртуальную сеть см. в статье [Переход от территориальных групп к региональной виртуальной сети](../virtual-network/virtual-networks-migrate-to-regional-vnet.md).
+5. Сведения о выполнении преобразования в региональную виртуальную сеть см. в статье [Переход от территориальных групп к региональной виртуальной сети](/previous-versions/azure/virtual-network/virtual-networks-migrate-to-regional-vnet).
