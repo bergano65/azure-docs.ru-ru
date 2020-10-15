@@ -4,10 +4,10 @@ description: Узнайте, как настроить учетную запис
 ms.topic: tutorial
 ms.date: 06/26/2020
 ms.openlocfilehash: fba4dbc5386407bd796606d86a5b7bdc7c10fd61
-ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "85445072"
 ---
 # <a name="tutorial-set-up-a-lab-account-with-azure-lab-services"></a>Руководство по Настройка учетной записи лаборатории с помощью Служб лабораторий Azure

@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: beebe60d70b7e4908bd3e9348fe815036d6955c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77cea7ebd333b958675438aaeb5e0e2a326a5866
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85920069"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075184"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
 В этой статье приведены некоторые примеры стандартных задач запуска, которые можно выполнить в облачной службе. С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса. 
@@ -52,7 +52,7 @@ ms.locfileid: "85920069"
 
 
 ## <a name="configure-iis-startup-with-appcmdexe"></a>Настройка запуска IIS с помощью AppCmd.exe
-С помощью программы командной строки [AppCmd.exe](https://technet.microsoft.com/library/jj635852.aspx) можно управлять параметрами IIS при запуске в Azure. *AppCmd.exe* предоставляет удобный доступ из командной строки к параметрам конфигурации, используемым в задачах запуска в Azure. С помощью *AppCmd.exe*можно добавить, изменить или удалить параметры веб-сайта для приложений и сайтов.
+С помощью программы командной строки [AppCmd.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635852(v=ws.11)) можно управлять параметрами IIS при запуске в Azure. *AppCmd.exe* предоставляет удобный доступ из командной строки к параметрам конфигурации, используемым в задачах запуска в Azure. С помощью *AppCmd.exe*можно добавить, изменить или удалить параметры веб-сайта для приложений и сайтов.
 
 Однако следует знать о некоторых особенностях использования *AppCmd.exe* в качестве задачи запуска:
 
@@ -499,14 +499,14 @@ EXIT %ERRORLEVEL%
 [Создайте и разверните](cloud-services-how-to-create-deploy-portal.md) свой пакет облачной службы.
 
 [ServiceDefinition. csdef]: cloud-services-model-and-package.md#csdef
-[Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
-[Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
-[Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
-[RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
-[RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
-[Конечные точки]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
-[LocalStorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
-[LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
-[RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
+[Задача]: /previous-versions/azure/reference/gg557552(v=azure.100)#Task
+[Startup]: /previous-versions/azure/reference/gg557552(v=azure.100)#Startup
+[Runtime]: /previous-versions/azure/reference/gg557552(v=azure.100)#Runtime
+[Среда]: /previous-versions/azure/reference/gg557552(v=azure.100)#Environment
+[Переменная]: /previous-versions/azure/reference/gg557552(v=azure.100)#Variable
+[RoleInstanceValue]: /previous-versions/azure/reference/gg557552(v=azure.100)#RoleInstanceValue
+[RoleEnvironment]: /previous-versions/azure/reference/ee773173(v=azure.100)
+[Конечные точки]: /previous-versions/azure/reference/gg557552(v=azure.100)#Endpoints
+[LocalStorage]: /previous-versions/azure/reference/gg557552(v=azure.100)#LocalStorage
+[LocalResources]: /previous-versions/azure/reference/gg557552(v=azure.100)#LocalResources
+[RoleInstanceValue]: /previous-versions/azure/reference/gg557552(v=azure.100)#RoleInstanceValue

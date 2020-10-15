@@ -9,10 +9,10 @@ ms.devlang: php
 ms.date: 9/21/2020
 ms.custom: mvc
 ms.openlocfilehash: 1bad9a7da6f0604f910ce1095b734043be8cf3c3
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90929764"
 ---
 # <a name="tutorial-build-a-php-laravel-and-mysql-flexible-server-preview-app-in-azure-app-service"></a>Руководство по созданию приложения PHP (Laravel) и гибкого сервера MySQL (предварительная версия) в Службе приложений Azure
@@ -134,7 +134,7 @@ php artisan serve
 
 Откройте браузер и перейдите по адресу `http://localhost:8000`. Добавьте несколько задач на странице.
 
-:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="Приложение PHP успешно подключается к базе данных MySQL":::
+:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="Веб-приложение PHP в Azure с гибким сервером":::
 
 Чтобы остановить приложение PHP, введите `Ctrl + C` в окне терминала.
 
@@ -257,7 +257,7 @@ php artisan serve --env=production
 
 Добавьте несколько задач на странице.
 
-:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="Подключение приложения PHP к Базе данных Azure для MySQL":::
+:::image type="content" source="media/tutorial-php-database-app/mysql-connect-success.png" alt-text="Веб-приложение PHP в Azure с гибким сервером":::
 
 Чтобы остановить приложение PHP, введите `Ctrl + C` в окне терминала.
 
@@ -414,7 +414,7 @@ remote: Running deployment command...
 
 Перейдите по адресу `http://<app-name>.azurewebsites.net` и добавьте несколько задач в список.
 
-:::image type="content" source="media/tutorial-php-database-app/php-mysql-in-azure.png" alt-text="Веб-приложение PHP в Azure":::
+:::image type="content" source="media/tutorial-php-database-app/php-mysql-in-azure.png" alt-text="Веб-приложение PHP в Azure с гибким сервером":::
 
 Вы запустили управляемое данными приложение PHP в службе приложений Azure.
 
@@ -534,7 +534,7 @@ php artisan serve
 
 Чтобы увидеть, как изменится состояние задачи, перейдите по адресу `http://localhost:8000` и установите флажок.
 
-:::image type="content" source="media/tutorial-php-database-app/complete-checkbox.png" alt-text="Добавлен флажок для задачи":::
+:::image type="content" source="media/tutorial-php-database-app/complete-checkbox.png" alt-text="Веб-приложение PHP в Azure с гибким сервером":::
 
 Чтобы остановить приложение PHP, введите `Ctrl + C` в окне терминала.
 
@@ -556,7 +556,7 @@ git push azure master
 
 После выполнения команды `git push` перейдите в приложение Azure и проверьте новые функции.
 
-:::image type="content" source="media/tutorial-php-database-app/complete-checkbox-published.png" alt-text="Изменения модели и базы данных, опубликованные в Azure":::
+:::image type="content" source="media/tutorial-php-database-app/complete-checkbox-published.png" alt-text="Веб-приложение PHP в Azure с гибким сервером":::
 
 Добавленные задачи сохраняются в базе данных. Изменения в схеме данных не влияют на имеющиеся данные.
 

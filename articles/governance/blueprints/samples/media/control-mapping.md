@@ -1,14 +1,14 @@
 ---
 title: Элементы управления примера схемы Media
-description: Сопоставление элементов управления на примере схемы Media. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
+description: Сопоставление элементов управления на примере схемы Media. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
 ms.date: 08/13/2020
 ms.topic: sample
-ms.openlocfilehash: 4101b9030425c22b8806870d467581521870d639
-ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
+ms.openlocfilehash: ec4850b4e3061d267610bfd9c2c0e33c670472b4
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88208467"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91931875"
 ---
 # <a name="control-mapping-of-the-media-blueprint-sample"></a>Сопоставление элементов управления на примере схемы Media
 
