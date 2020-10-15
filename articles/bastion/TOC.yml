@@ -1,10 +1,11 @@
-- name: Документация по Бастиону
+- name: Документация по службе "Бастион"
   href: index.yml
 - name: Обзор
   items:
     - name: Что такое Бастион Azure
       href: bastion-overview.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание узла с использованием параметров виртуальной машины
       href: quickstart-host-portal.md
@@ -69,7 +70,7 @@
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/networking'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/en-us/answers/topics/azure-virtual-network.html'
+      href: /answers/topics/azure-virtual-network.html
     - name: Соглашение об уровне обслуживания для предварительной версии
       href: 'https://azure.microsoft.com/support/legal/preview-supplemental-terms'
     - name: Соглашение об уровне обслуживания

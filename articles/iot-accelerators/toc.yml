@@ -198,31 +198,31 @@
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
-      href: /azure/iot-fundamentals/iot-support-help
+      href: ../iot-fundamentals/iot-support-help.md
     - name: Службы Azure IoT
       items:
         - name: Центр Интернета вещей
-          href: /azure/iot-hub
+          href: ../iot-hub/index.yml
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
+          href: ../iot-dps/index.yml
         - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+          href: /microsoft-iot-central/
         - name: IoT Edge
-          href: /azure/iot-edge
+          href: ../iot-edge/index.yml
         - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
+          href: ./index.yml
         - name: IoT Plug and Play
-          href: /azure/iot-pnp
+          href: ../iot-pnp/index.yml
         - name: Azure Maps
-          href: /azure/azure-maps
+          href: ../azure-maps/index.yml
         - name: Аналитика временных рядов
-          href: /azure/time-series-insights
+          href: ../time-series-insights/index.yml
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
     - name: удаленный мониторинг;
       items:
         - name: Справочник разработчика (.NET)
@@ -252,9 +252,9 @@
     - name: Репозиторий GitHub для прогнозного обслуживания
       href: 'https://github.com/Azure/azure-iot-predictive-maintenance'
     - name: Эталонная архитектура
-      href: iot-accelerators-architecture-overview.md
+      href: /azure/architecture/reference-architectures/iot
       items:
-        - name: Скачать
+        - name: Скачивание
           href: 'https://aka.ms/iotrefarchitecture'
         - name: Варианты партнерских реализаций
           items:
@@ -264,9 +264,9 @@
               href: 'https://www.azureiotsolutions.com/Accelerators#description/edge-dynamometer-analysis'
             - name: Digital Signage Solution
               href: 'https://www.azureiotsolutions.com/Accelerators#description/digital-signage-solution'
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: iot-accelerators-faq.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'
     - name: "Удаленный мониторинг (версия\_1)"
-      href: 'https://docs.microsoft.com/previous-versions/azure/iot-suite/'
+      href: /previous-versions/azure/iot-suite/

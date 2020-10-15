@@ -166,6 +166,8 @@
               href: how-to-setup-authentication.md
             - name: управление пользователями и ролями;
               href: how-to-assign-roles.md
+            - name: Использование управляемых удостоверений для управления доступом
+              href: how-to-use-managed-identities.md
             - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
               href: how-to-use-azure-ad-identity.md
         - name: Безопасность сети

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 75603593e8c290b6bcb059207858d663ab5c96d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68daec6bb6682d2b488abacb2f79bdfadc4ae628
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89460122"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92076578"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
 Ниже приведены некоторые распространенные проблемы и решения на случай, если роли облачной службы Azure не запускаются.
@@ -77,7 +77,7 @@ ms.locfileid: "89460122"
 * Описание: произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
 * Сведения об исключении: System.IO.FIleNotFoundException: не удалось загрузить файл, сборку Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35 или какую-то их зависимость. Системе не удается найти указанный файл.
 
-Пример:
+Например.
 
 ![Явная ошибка сервера в приложении «/».](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503389.png)
 
@@ -121,7 +121,7 @@ ms.locfileid: "89460122"
 
 Убедившись, что все ошибки исправлены, вы можете развернуть службу, не устанавливая флажок **Включить IntelliTrace для ролей .NET 4** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Просмотрите дополнительные [статьи об устранении неполадок](https://azure.microsoft.com/documentation/articles/?tag=top-support-issue&product=cloud-services) в облачных службах.
+## <a name="next-steps"></a>Дальнейшие действия
+Просмотрите дополнительные [статьи об устранении неполадок](../index.yml?product=cloud-services&tag=top-support-issue) в облачных службах.
 
-Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](https://docs.microsoft.com/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data).
+Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data).
