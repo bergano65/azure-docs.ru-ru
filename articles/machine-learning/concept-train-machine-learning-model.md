@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 1714c1c3c9efb0e78d137ed042420f1c7ba2139f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4394cc4cb21b288215c75e484cb6446f0321158b
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91330117"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079077"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -118,11 +118,6 @@ ms.locfileid: "91330117"
 
 + [Что такое конструктор Машинного обучения Azure (предварительная версия)?](concept-designer.md)
 + [Учебник. Прогнозирование цены автомобилей](tutorial-designer-automobile-price-train-score.md)
-+ [Регрессия. Прогнозирование цены](how-to-designer-sample-regression-automobile-price-basic.md)
-+ [Классификация. Прогнозирование дохода](how-to-designer-sample-classification-predict-income.md)
-+ [Классификация. Прогнозирование сопутствующих продаж, стремления и оттока клиентов](how-to-designer-sample-classification-churn.md)
-+ [Классификация с помощью пользовательского скрипта R: прогнозирование задержки рейсов](how-to-designer-sample-classification-flight-delay.md)
-+ [Классификация текстов: набор данных Wikipedia SP 500](how-to-designer-sample-text-classification.md)
 
 ## <a name="many-models-solution-accelerator"></a>Акселератор решений многих моделей
 
@@ -147,6 +142,6 @@ ms.locfileid: "91330117"
 
 Вы можете использовать расширение VS Code для запуска заданий обучения и управления ими. Дополнительные сведения см. в разделе [руководство по управлению ресурсами VS Code](how-to-manage-resources-vscode.md#experiments) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить обучающий запуск](how-to-set-up-training-targets.md).

@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: ebbdd103350e1de36d45ecf84acf15d477fa34db
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 027a816e846996aa7c61a1747327128f9a0feed0
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058137"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079213"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -98,8 +98,8 @@ ms.locfileid: "92058137"
 
 |Проблема  |Дата обнаружения  |Состояние  |Дата разрешения  |
 |---------|---------|---------|---------|
-|[Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Sep 2020|Есть обходной путь||
-|[Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Sep 2020|Есть обходной путь||
+|[Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Октябрь 2020|Есть обходной путь||
+|[Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Октябрь 2020|Есть обходной путь||
 |[BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql) в Azure SQL и `BACKUP` / `RESTORE` инструкции в управляемый экземпляр не могут использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
 |[Субъект-служба не может получить доступ к Azure AD и AKV](#service-principal-cannot-access-azure-ad-and-akv)|Авг 2020|Есть обходной путь||
 |[Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой](#restoring-manual-backup-without-checksum-might-fail)|Май 2020 г.|"Разрешено"|Июнь 2020 г.|

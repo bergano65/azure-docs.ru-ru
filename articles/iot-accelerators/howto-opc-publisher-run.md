@@ -11,12 +11,12 @@ manager: philmea
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 6a4b65195488f101d36aaf73956f1422bfccbbf9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7d6581a1892ebd74a1adba5c09c0af9d3cf9d43
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282142"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079009"
 ---
 # <a name="run-opc-publisher"></a>Выполнение издателя OPC
 
@@ -370,7 +370,7 @@ docker run mcr.microsoft.com/iotedge/opc-publisher <applicationname> [<IoT Hubco
 
 ## <a name="run-as-an-azure-iot-edge-module"></a>Выполнение в виде модуля Azure IoT Edge
 
-Издатель OPC может использоваться в виде модуля [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge). При использовании издателя OPC в виде модуля IoT Edge поддерживаются только транспортные протоколы **Amqp_Tcp_Only** и **Mqtt_Tcp_Only**.
+Издатель OPC может использоваться в виде модуля [Azure IoT Edge](../iot-edge/index.yml). При использовании издателя OPC в виде модуля IoT Edge поддерживаются только транспортные протоколы **Amqp_Tcp_Only** и **Mqtt_Tcp_Only**.
 
 Чтобы добавить издателя OPC в виде модуля в развертывание IoT Edge, перейдите к параметрам Центра Интернета вещей на портале Azure и выполните следующие действия:
 
@@ -716,6 +716,6 @@ current working set in MB: 90
 
 Он реализует несколько тегов, которые генерируют случайные данные и теги с аномальными результатами. Этот пример можно расширить, если потребуется имитировать значения других тегов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как запускать издателя OPC, мы рекомендуем перейти к изучению [двойника OPC](overview-opc-twin.md) и [хранилища OPC](overview-opc-vault.md).

@@ -2,21 +2,21 @@
 title: Работа с виртуальными машинами и группы безопасности сети в Azure бастиона
 description: Группы безопасности сети можно использовать с Azure бастиона. Сведения о подсетях, необходимых для этой конфигурации.
 services: bastion
-author: charwen
+author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.author: charwen
-ms.openlocfilehash: a69aa8d8a6dc324d6fe28219316c36ac2ec816a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: cherylmc
+ms.openlocfilehash: 7853ac3ece01057282bc6cb421018020e15273b5
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987699"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079196"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 
-При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/security-overview.md).
+При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/network-security-groups-overview.md).
 
 :::image type="content" source="./media/bastion-nsg/figure-1.png" alt-text="Группа безопасности сети (NSG)":::
 
@@ -58,6 +58,6 @@ Azure бастиона развертывается специально для 
    * **Входящий трафик из Azure бастиона:** Azure бастиона будет обращаться к целевой виртуальной машине через частный IP-адрес. Порты RDP/SSH (порты 3389/22 соответственно) должны быть открыты на стороне целевой виртуальной машины через частный IP-адрес. В этом правиле рекомендуется добавить диапазон IP-адресов подсети бастиона для Azure, чтобы разрешить только бастиона открывать эти порты на целевых виртуальных машинах в вашей целевой подсети виртуальной машины.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure бастиона см. в разделе [часто задаваемые вопросы](bastion-faq.md).

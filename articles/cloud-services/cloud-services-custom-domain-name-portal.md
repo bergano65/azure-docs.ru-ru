@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
-ms.openlocfilehash: 37189df6b1c9bf3f9fca185226f2ee3eeb3ddd7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 012801d0aada8ee55bb0eb05eaf75caa95878765
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092734"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92069931"
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Настройка пользовательского доменного имени для облачной службы Azure
 При создании облачной службы Azure ей назначается поддомен **cloudapp.net**. Например, если имя облачной службы — contoso, пользователи будут иметь доступ к приложению по такому URL-адресу: `http://contoso.cloudapp.net`. Azure также назначает виртуальный IP-адрес.
@@ -119,7 +119,7 @@ ms.locfileid: "87092734"
 В этом примере показано создание записи А для корневого домена. Если вы хотите создать запись с подстановочными знаками, чтобы охватить все поддомены, введите "*****" в качестве поддомена.
 
 > [!WARNING]
-> IP-адреса в Azure по умолчанию являются динамическими. Чтобы ваш IP-адрес не изменялся, вы можете использовать [зарезервированный IP-адрес](../virtual-network/virtual-networks-reserved-public-ip.md) .
+> IP-адреса в Azure по умолчанию являются динамическими. Чтобы ваш IP-адрес не изменялся, вы можете использовать [зарезервированный IP-адрес](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) .
 > 
 > 
 
@@ -138,6 +138,3 @@ ms.locfileid: "87092734"
 [Портал Azure]: https://portal.azure.com
 [vip]: ./media/cloud-services-custom-domain-name-portal/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
-
-
-

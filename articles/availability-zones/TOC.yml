@@ -3,11 +3,11 @@
     - name: Страница компонента "Устойчивость в Azure"
       href: 'https://azure.microsoft.com/features/resiliency'
     - name: Проектирование устойчивых приложений для Azure
-      href: 'https://docs.microsoft.com/azure/architecture/resiliency/'
+      href: /azure/architecture/resiliency/
 - name: Высокий уровень доступности
   items:
     - name: Обеспечение высокой доступности для приложений Azure
-      href: 'https://docs.microsoft.com/azure/architecture/resiliency/high-availability-azure-applications'
+      href: /azure/architecture/resiliency/high-availability-azure-applications
     - name: Регионы и зоны доступности
       href: az-overview.md
     - name: Документация по Зонам доступности
@@ -39,34 +39,34 @@
             - name: Load Balancer (цен. категория "Стандартный") и Зоны доступности
               href: ../load-balancer/load-balancer-standard-availability-zones.md
             - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный")
-              href: ../load-balancer/load-balancer-get-started-internet-az-portal.md
+              href: ../load-balancer/quickstart-load-balancer-standard-public-portal.md
               items:
                 - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный") (PowerShell)
-                  href: ../load-balancer/load-balancer-get-started-internet-az-powershell.md
+                  href: ../load-balancer/quickstart-load-balancer-standard-public-powershell.md
                 - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный") (CLI)
-                  href: ../load-balancer/load-balancer-get-started-internet-az-cli.md
+                  href: ../load-balancer/quickstart-load-balancer-standard-public-cli.md
             - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный")
-              href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-portal.md
+              href: ../load-balancer/quickstart-load-balancer-standard-public-portal.md
               items:
                 - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный") (PowerShell)
-                  href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-powershell.md
+                  href: ../load-balancer/quickstart-load-balancer-standard-public-powershell.md
                 - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный") (CLI)
-                  href: ../load-balancer/load-balancer-get-started-internet-availability-zones-zonal-cli.md
+                  href: ../load-balancer/quickstart-load-balancer-standard-public-cli.md
             - name: Распределение нагрузки виртуальных машин в пределах зон доступности
-              href: ../load-balancer/load-balancer-standard-public-availability-zones-portal.md
+              href: ../load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal.md
               items:
                 - name: "Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Azure\_CLI"
-                  href: ../load-balancer/load-balancer-standard-public-zone-redundant-cli.md
+                  href: ../load-balancer/quickstart-load-balancer-standard-public-cli.md
         - name: Общедоступный IP-адрес
           href: ../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address
         - name: База данных SQL
           items:
             - name: Использование зон доступности с Базой данных SQL
-              href: ../sql-database/sql-database-high-availability.md#zone-redundant-configuration
+              href: ../azure-sql/database/high-availability-sla.md#zone-redundant-configuration
         - name: Память
           items:
             - name: 'Хранилище, избыточное между зонами'
-              href: ../storage/common/storage-redundancy-zrs.md
+              href: ../storage/common/storage-redundancy.md
         - name: Центры событий
           items:
             - name: Географическое аварийное восстановление в Центрах событий
@@ -102,11 +102,11 @@
 - name: Аварийное восстановление
   items:
     - name: Использование Azure Site Recovery
-      href: 'https://docs.microsoft.com/azure/site-recovery/'
+      href: ../site-recovery/index.yml
 - name: Azure Backup
   items:
     - name: Использование Azure Backup
-      href: 'https://docs.microsoft.com/azure/backup/'
+      href: ../backup/index.yml
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

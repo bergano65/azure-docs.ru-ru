@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: ae0e18a2dfbce52e50b4a8b58d478a46dff12922
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42024fc506de7befed7c44ebcc410756b6f43a35
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282108"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078992"
 ---
 # <a name="deploying-dependencies-for-local-development"></a>Развертывание зависимостей для локальной разработки
 
@@ -24,7 +24,7 @@ ms.locfileid: "91282108"
 
 ## <a name="deploy-azure-platform-services"></a>Развертывание служб платформы Azure
 
-1. Убедитесь, что установлены расширения PowerShell PowerShell и [AzureRM](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) .  Откройте командную строку или терминал и выполните следующую команду:
+1. Убедитесь, что установлены расширения PowerShell PowerShell и [AzureRM](/powershell/azure/azurerm/install-azurerm-ps) .  Откройте командную строку или терминал и выполните следующую команду:
 
    ```bash
    git clone https://github.com/Azure/azure-iiot-components
@@ -53,7 +53,7 @@ ms.locfileid: "91282108"
 2. Кроме того, можно развернуть частный клиент Azure AD, перезапустить сценарий и выбрать его для использования.
 3. Продолжить без проверки подлинности.  Так как вы используете микрослужбы локально, это приемлемо, но не имитирует рабочие среды.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда службы двойника OPC успешно развернуты в существующем проекте, мы предлагаем следующий шаг:
 
