@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 50706e1b525a3e3a39701ef2135d44c02c35077e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70329d07a9966a5cbdafcd64000470c4edcbca9e
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89181142"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072056"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -273,8 +273,8 @@ public class Person : TableEntity
 ```
 
 ```csharp
-#r "Microsoft.Azure.Cosmos"
-using Microsoft.Azure.Cosmos.Table;
+#r "Microsoft.WindowsAzure.Storage"
+using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -561,10 +561,10 @@ public Person[] get(
 |**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании привязки на портале Azure. |
 |**name** | Недоступно | Имя переменной, представляющей таблицу или сущность в коде функции. | 
 |**tableName** | **TableName** | Имя таблицы.| 
-|**partitionKey** | **PartitionKey** |Необязательный параметр. Ключ раздела сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**rowKey** |**RowKey** | Необязательный параметр. Ключ строки сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**take** |**Take** | Необязательный параметр. Максимальное количество считываемых сущностей в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**filter** |**Filter** | Необязательный параметр. Выражение фильтра OData для входных данных таблицы в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**partitionKey** | **PartitionKey** |Необязательный элемент. Ключ раздела сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**rowKey** |**RowKey** | Необязательный элемент. Ключ строки сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**take** |**Take** | Необязательный элемент. Максимальное количество считываемых сущностей в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**filter** |**Filter** | Необязательный элемент. Выражение фильтра OData для входных данных таблицы в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
 |**connection**; |**Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Параметр может быть именем предопределенного параметра приложения "AzureWebJobs" или именем строки подключения. Например, если имя параметра — "Азуревебжобсмистораже", можно указать "MyStorage" здесь. Среда выполнения функций будет автоматически искать параметр приложения с именем «Азуревебжобсмистораже». Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -914,7 +914,7 @@ public static MyPoco TableOutput(
 }
 ```
 
-Полный пример см. в разделе [пример выходных данных C#](#output).
+Полный пример см. в разделе [Пример выходных данных C#](#output).
 
 Чтобы указать учетную запись хранения на уровне класса, метода или параметра, можно использовать атрибут `StorageAccount`. Дополнительные сведения см. в разделе [Входные атрибуты](#input---attributes-and-annotations).
 
@@ -976,9 +976,9 @@ public static MyPoco TableOutput(
 
 Существует два варианта вывода сообщения строки табличного хранилища из функции.
 
-- **Возвращаемое значение**: установите `name` свойство в *function.jsна* `$return` . В этой конфигурации возвращаемое значение функции сохраняется как строка хранилища таблицы.
+- **Возвращаемое значение** — задайте для свойства `name` в файле *function.json* значение `$return`. В этой конфигурации возвращаемое значение функции сохраняется как строка хранилища таблицы.
 
-- **Императив**: передайте значение в метод [Set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set` , сохраняется как сообщение концентратора событий.
+- **Императив** — передайте значение методу [set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного с типом [Out](/python/api/azure-functions/azure.functions.out?view=azure-python). Значение, переданное `set`, сохраняется как сообщение концентратора событий.
 
 # <a name="java"></a>[Java](#tab/java)
 

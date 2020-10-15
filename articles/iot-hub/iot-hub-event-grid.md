@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: c1dc3b5fe4eecea42baf7073b9c806eea1648cff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af1e47c61977d0bc5d03f8cdb87393ed2014e736
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90056172"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072311"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -73,6 +73,8 @@ ms.locfileid: "90056172"
   "metadataVersion": "1"
 }]
 ```
+
+
 
 ### <a name="device-telemetry-schema"></a>Схема телеметрии устройства
 
@@ -164,6 +166,10 @@ ms.locfileid: "90056172"
 }]
 ```
 
+
+> [!WARNING]
+> *Данные двойника* , связанные с событием создания устройства, являются конфигурацией по умолчанию и не *должны* полагаться на фактические `authenticationType` и другие свойства устройства в новом устройстве. Для `authenticationType` и других свойств устройства в созданном устройстве используйте API диспетчера регистрации, предоставленный в пакетах SDK для Azure IOT.
+
 Подробное описание каждого свойства см. в статье [схема событий службы "Сетка событий Azure" для центра Интернета вещей](../event-grid/event-schema-iot-hub.md).
 
 ## <a name="filter-events"></a>События фильтра
@@ -204,7 +210,7 @@ devices/{deviceId}
 
 * Сообщения могут поступать не по порядку или с некоторой задержкой. Используйте поле eTag, чтобы узнать, являются ли сведения об объектах актуальными для событий создания или удаления устройства.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps)
 

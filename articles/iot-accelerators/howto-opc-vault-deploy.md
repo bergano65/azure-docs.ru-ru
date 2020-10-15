@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 365cb0912d84f0664b2a5432cd54cd553df62466
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98dc9345d2c8b392fd094458b612857d6d454739
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282029"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92071495"
 ---
 # <a name="build-and-deploy-the-opc-vault-certificate-management-service"></a>Создание и развертывание службы управления сертификатами хранилища OPC
 
@@ -31,7 +31,7 @@ ms.locfileid: "91282029"
 
 В настоящее время операция сборки и развертывания ограничена Windows.
 Примеры написаны для .NET Standard C#, для которых необходимо создать службу и примеры для развертывания.
-Все средства, необходимые для .NET Standard, входят в состав средств .NET Core. См. статью Начало [работы с .NET Core](https://docs.microsoft.com/dotnet/articles/core/getting-started).
+Все средства, необходимые для .NET Standard, входят в состав средств .NET Core. См. статью Начало [работы с .NET Core](/dotnet/articles/core/getting-started).
 
 1. [Установите .NET Core 2.1 +][dotnet-install].
 2. [Установите DOCKER][docker-url] (необязательно, только если требуется локальная сборка DOCKER).
@@ -177,7 +177,7 @@ cd azure-iiot-opc-vault-service
 [docker-url]: https://www.docker.com/
 [dotnet-install]: https://www.microsoft.com/net/learn/get-started
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как развертывать хранилище OPC с нуля, вы можете:
 
