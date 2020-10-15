@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: b-juche
-ms.openlocfilehash: aa33106f200b2edb3b710c6b0e08208bd4da8ace
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 4c578f99e22e35871f0c52440c3b73a636ef958b
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932266"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089321"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -80,9 +80,9 @@ ms.locfileid: "91932266"
 
 Нет, в настоящее время нельзя применять группы безопасности сети к делегированной подсети Azure NetApp Files или к сетевым интерфейсам, созданным службой.
 
-### <a name="can-i-use-azure-iam-with-azure-netapp-files"></a>Можно ли использовать Azure IAM с Azure NetApp Files?
+### <a name="can-i-use-azure-rbac-with-azure-netapp-files"></a>Можно ли использовать Azure RBAC с Azure NetApp Files?
 
-Да, Azure NetApp Files поддерживает функции RBAC с помощью Azure IAM.
+Да, Azure NetApp Files поддерживает функции Azure RBAC.
 
 ## <a name="performance-faqs"></a>Вопросы и ответы по производительности
 
@@ -255,7 +255,7 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 Нет. Служба импорта и экспорта Azure не поддерживает Azure NetApp Files в настоящее время.
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Microsoft Azure ExpressRoute часто задаваемые вопросы](../expressroute/expressroute-faqs.md)
 - [Вопросы и ответы по виртуальная сеть Microsoft Azure](../virtual-network/virtual-networks-faq.md)
