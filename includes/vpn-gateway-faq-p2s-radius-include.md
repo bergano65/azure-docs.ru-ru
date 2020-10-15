@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: b802cab7d52fd886770c326e97d0378a0da64762
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "75752005"
 ---
 [!INCLUDE [P2S FAQ All](vpn-gateway-faq-p2s-all-include.md)]
@@ -51,6 +51,6 @@ ms.locfileid: "75752005"
 
 Да, аутентификация RADIUS поддерживается для IKEv2 и SSTP для VPN. 
 
-### <a name="does-radius-authentication-work-with-the-openvpn-client"></a>Работает ли проверка подлинности RADIUS с клиентом Опенвпн?
+### <a name="does-radius-authentication-work-with-the-openvpn-client"></a>Работает ли аутентификация RADIUS с клиентом OpenVPN?
 
-Проверка подлинности RADIUS поддерживается только для протокола Опенвпн с помощью PowerShell.
+Протокол OpenVPN поддерживает аутентификацию RADIUS только с использованием PowerShell.

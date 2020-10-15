@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 345b4950e25f48eb1a48c5e583908d0f771771ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ceb8fd154e8ad533f4bf6bc9eb0ec3900749f8b
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86206249"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92075371"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
@@ -131,7 +131,7 @@ ms.locfileid: "86206249"
 Необходимо включить CORS (общий доступ к ресурсам между источниками) в API, чтобы посетители портала протестируют API через встроенную интерактивную консоль. Дополнительные сведения см. в [этой статье документации](api-management-howto-developer-portal.md#cors) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
 
 Дополнительные сведения о портале разработчика:
 
