@@ -2,21 +2,21 @@
 title: 'Копирование и вставка в виртуальную машину и из нее: Azure бастиона'
 description: Из этой статьи вы узнаете, как копировать и вставлять в виртуальную машину Azure и из нее с помощью бастиона.
 services: bastion
-author: charwen
+author: cherylmc
 ms.service: bastion
 ms.topic: how-to
 ms.date: 05/04/2020
-ms.author: charwen
-ms.openlocfilehash: 6835c5e1ecbf0fc99a14754d17bb6e6380eda6c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: cherylmc
+ms.openlocfilehash: 50f7906992aa19daa205a30f71ce21456bafe558
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91445353"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079162"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копирование и вставка на виртуальную машину: Azure бастиона
 
-Эта статья поможет вам скопировать и вставить текст в виртуальные машины и из них при использовании Azure бастиона. Перед началом работы с виртуальной машиной убедитесь, что выполнены действия по [созданию узла бастиона](bastion-create-host-portal.md). Затем подключитесь к виртуальной машине, которую вы хотите использовать, с помощью [RDP](bastion-connect-vm-rdp.md) или [SSH](bastion-connect-vm-ssh.md).
+Эта статья поможет вам скопировать и вставить текст в виртуальные машины и из них при использовании Azure бастиона. Перед началом работы с виртуальной машиной убедитесь, что выполнены действия по [созданию узла бастиона](./tutorial-create-host-portal.md). Затем подключитесь к виртуальной машине, которую вы хотите использовать, с помощью [RDP](bastion-connect-vm-rdp.md) или [SSH](bastion-connect-vm-ssh.md).
 
 Для браузеров, поддерживающих расширенный доступ к API буфера обмена, можно копировать и вставлять текст между локальным устройством и удаленным сеансом так же, как и при копировании и вставке между приложениями на локальном устройстве. Для других браузеров можно использовать палитру средства доступа к буферу обмена бастиона.
 
