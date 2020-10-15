@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 0cd6797bcdfadca807e25f8b3decf34bd553fc56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9eac34d643ba0df4be79a064858c580c884de727
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89470057"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078567"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-restore"></a>Создание восстановления приложения кластера Azure Red Hat OpenShift 4
 
@@ -23,7 +23,7 @@ ms.locfileid: "89470057"
 > * Настройка необходимых компонентов и установка необходимых средств
 > * Создание приложения Azure Red Hat OpenShift 4 для восстановления
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -45,7 +45,7 @@ oc get backups -n velero
 После создания резервной копии, которую вы хотите восстановить, необходимо выполнить восстановление с помощью следующей команды:
 
 ```bash
-velero restore create --from-backup <name of backup from above output list>
+velero restore create <name of restore> --from-backup <name of backup from above output list>
 ```
 
 На этом шаге будут созданы объекты Kubernetes, которые были созданы из предыдущего шага при создании резервной копии.
@@ -57,14 +57,36 @@ oc get restore -n velero <name of restore created previously> -o yaml
 ```
 На этом этапе `Completed` необходимо восстановить приложение Azure Red Hat 4.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="restore-an-azure-red-hat-openshift-4-application-with-included-snapshots"></a>Восстановление приложения Azure Red Hat OpenShift 4 с добавленными моментальными снимками
+
+
+Чтобы создать восстановление приложения Azure Red Hat OpenShift 4 с постоянными томами с помощью Велеро, необходимо выполнить восстановление с помощью следующей команды:
+
+```bash
+velero restore create <name of the restore> --from-backup <name of backup from above output list> --exclude-resources="nodes,events,events.events.k8s.io,backups.ark.heptio.com,backups.velero.io,restores.ark.heptio.com,restores.velero.io"
+```
+На этом шаге будут созданы объекты Kubernetes, которые были созданы из предыдущего шага при создании резервной копии.
+
+Чтобы просмотреть состояние восстановления, выполните следующий шаг:
+
+```bash
+oc get restore -n velero <name of restore created previously> -o yaml
+```
+На этом этапе `Completed` необходимо восстановить приложение Azure Red Hat 4.
+
+Дополнительные сведения о создании резервных копий и восстановлении с помощью Велеро см. [в статье резервное копирование ресурсов OpenShift в собственном виде](https://www.openshift.com/blog/backup-openshift-resources-the-native-way) .
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье было восстановлено приложение кластера Azure Red Hat OpenShift 4. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание восстановления приложения кластера OpenShift v4 с помощью Велеро
+> * Создание восстановления приложения кластера OpenShift v4 с помощью моментальных снимков с использованием Велеро
 
 
 Перейдите к следующей статье, чтобы узнать о поддерживаемых ресурсах Azure Red Hat OpenShift 4.
 
 * [Поддерживаемые ресурсы Azure Red Hat OpenShift v4](supported-resources.md)
+
+

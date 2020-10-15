@@ -10,18 +10,21 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: shresha
-ms.openlocfilehash: 30c3fa837f84ff318e9a03a8a11ef6259890f4bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1effb62619f9767cc90c99e037445e7a95981460
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653746"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078244"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Переход на новые версии API службы "аналитика временных рядов Azure Gen2"
 
 ## <a name="overview"></a>Обзор
 
-Если вы создали среду Gen2 "аналитика временных рядов Azure" в общедоступной предварительной версии (до 16 июля, 2020), обновите среду TSI, чтобы использовать новые общедоступные версии API, выполнив действия, описанные в этой статье.
+Если вы создали среду Gen2 "аналитика временных рядов Azure" в общедоступной предварительной версии (до 16 июля, 2020), обновите среду TSI, чтобы использовать новые общедоступные версии API, выполнив действия, описанные в этой статье. Это изменение не влияет на пользователей, которые используют Gen1 версию службы "аналитика временных рядов Azure".
+
+> [!IMPORTANT]
+> Обновления, описанные в этой статье, будут обновлять только версии API, используемые средой TSI. Это изменение не связано с новыми [правилами плоской обработки и экранирования JSON,](https://docs.microsoft.com/azure/time-series-insights/concepts-json-flattening-escaping-rules) появившимися в средах Gen2.
 
 Новая версия API — `2020-07-31` и использует обновленный [синтаксис выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax).
 

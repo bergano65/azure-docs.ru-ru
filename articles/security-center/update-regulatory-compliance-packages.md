@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 306a4773563b829ecad09a021f6763192e8246f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: adac0d460753f24d06bffc72f9b2b38c2a3306d7
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91445851"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078108"
 ---
 # <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
 
@@ -84,6 +84,31 @@ ms.locfileid: "91445851"
     > Стандарт, добавленный на панель мониторинга соответствия, может отобразиться через несколько часов.
 
     [![Панель мониторинга соответствия нормативным требованиям, где отображаются старые и новые представления Azure CIS](media/update-regulatory-compliance-packages/regulatory-compliance-dashboard-with-benchmark-small.png)](media/update-regulatory-compliance-packages/regulatory-compliance-dashboard-with-benchmark.png#lightbox)
+
+
+## <a name="removing-a-standard-from-your-dashboard"></a>Удаление стандарта из панели мониторинга
+
+Если какой-либо из представленных нормативных требований не относится к вашей организации, это простой процесс просто удалить их из пользовательского интерфейса. Это позволяет дополнительно настроить панель мониторинга соответствия нормативным требованиям и сосредоточиться только на тех применимых к вам стандартам.
+
+Чтобы удалить стандартный:
+
+1. В меню центра безопасности выберите пункт **Политика безопасности**.
+
+1. Выберите подходящую подписку, из которой необходимо удалить стандарт.
+
+    > [!NOTE]
+    > Вы можете удалить стандарт из подписки, но не из группы управления. 
+
+    Откроется страница Политика безопасности. Для выбранной подписки отображается политика по умолчанию, отраслевые и нормативные стандарты, а также все созданные пользовательские инициативы.
+
+    :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard.png" alt-text="Удаление нормативного стандарта с панели мониторинга соответствия нормативным требованиям в центре безопасности Azure":::
+
+1. Для стандартного, который требуется удалить, выберите **Отключить**. Появится окно подтверждения.
+
+    :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard-confirm.png" alt-text="Удаление нормативного стандарта с панели мониторинга соответствия нормативным требованиям в центре безопасности Azure":::
+
+1. Выберите ответ **Да**. Стандартный будет удален. 
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

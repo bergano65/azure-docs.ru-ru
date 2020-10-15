@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 24229c331d0c7c4b2327e8e609e9d75b6654868f
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 127fd9a9e47a85479018524998e33f44b0a65ba8
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931991"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078482"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -75,6 +75,64 @@ JOIN LightBulb RELATED LightPanel.contains
 WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1')  
 AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1')  
 AND Room.$dtId IN ['room1', 'room2'] 
+```
+
+### <a name="specify-return-set-with-projections"></a>Указание возвращаемого набора с проекциями
+
+С помощью проекций можно выбрать, какие столбцы будут возвращены запросом. 
+
+>[!NOTE]
+>В настоящее время сложные свойства не поддерживаются. Чтобы обеспечить допустимость свойств проекции, объедините проекции с помощью `IS_PRIMITIVE` проверки. 
+
+Ниже приведен пример запроса, который использует проекцию для возврата двойников и связей. Следующий запрос проецирует *потребитель*, *фабрику* и *ребро* из сценария, в котором *фабрика* с идентификатором *ABC* связана с *потребителем* через связь *фабрики. Customer*, и эта связь представлена в качестве *границы*.
+
+```sql
+SELECT Consumer, Factory, Edge 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+```
+
+Можно также использовать проекцию для возвращения свойства двойника. Следующий запрос проецирует свойство *Name* объектов- *получателей* , связанных с *фабрикой* , с идентификатором *ABC* с помощью связи *фабрики. Customer*. 
+
+```sql
+SELECT Consumer.name 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Consumer.name)
+```
+
+Можно также использовать проекцию для возврата свойства связи. Как и в предыдущем примере, следующий запрос проецирует свойство *Name* *потребителей* , связанных с *фабрикой* , с идентификатором *ABC* через связь *Factory. Customer*; но теперь он также возвращает два свойства этой связи: *Prop1* и *Prop2*. Это достигается путем именования *границы* связи и сбора ее свойств.  
+
+```sql
+SELECT Consumer.name, Edge.prop1, Edge.prop2, Factory.area 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) AND IS_PRIMITIVE(Edge.prop1) AND IS_PRIMITIVE(Edge.prop2)
+```
+
+Можно также использовать псевдонимы для упрощения запросов с помощью проекции.
+
+Следующий запрос выполняет те же операции, что и предыдущий пример, но присваивает имена свойств `consumerName` , `first` `second` и `factoryArea` . 
+ 
+```sql
+SELECT Consumer.name AS consumerName, Edge.prop1 AS first, Edge.prop2 AS second, Factory.area AS factoryArea 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) AND IS_PRIMITIVE(Edge.prop1) AND IS_PRIMITIVE(Edge.prop2)" 
+```
+
+Вот похожий запрос, который запрашивает тот же набор, что и приведенный выше, но проецирует только свойство *Consumer.Name* как и `consumerName` проецирует готовую *фабрику* как двойника. 
+
+```sql
+SELECT Consumer.name AS consumerName, Factory 
+FROM DIGITALTWINS Factory 
+JOIN Consumer RELATED Factory.customer Edge 
+WHERE Factory.$dtId = 'ABC' 
+AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) 
 ```
 
 ### <a name="query-by-property"></a>Запрос по свойству
@@ -210,7 +268,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Любой из приведенных выше типов запросов можно **объединить** с помощью сочетаний операторов, чтобы включить более подробные сведения в один запрос. Ниже приведены некоторые дополнительные примеры составных запросов, которые одновременно запрашивают более одного типа дескриптора двойника.
 
-| Description | Запрос |
+| Описание | Запрос |
 | --- | --- |
 | На устройствах, которые имеют *место 123* , возвращаются устройства MxChip, обслуживающие роль оператора. | `SELECT device`<br>`FROM DigitalTwins space`<br>`JOIN device RELATED space.has`<br>`WHERE space.$dtid = 'Room 123'`<br>`AND device.$metadata.model = 'dtmi:contosocom:DigitalTwins:MxChip:3'`<br>`AND has.role = 'Operator'` |
 | Получить двойников, имеющую связь с именем, которая *содержит* другой ДВОЙНИКА с идентификатором *id1* | `SELECT Room`<br>`FROM DIGITALTWINS Room`<br>`JOIN Thermostat RELATED Room.Contains`<br>`WHERE Thermostat.$dtId = 'id1'` |
@@ -224,7 +282,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Поддерживаются следующие операторы:
 
-| Family | Операторы |
+| Семейство | Операторы |
 | --- | --- |
 | Логические |AND, OR, NOT |
 | Сравнение |=,! =, <, >, <=, >= |
@@ -234,7 +292,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Поддерживаются следующие функции проверки и приведения типов:
 
-| Компонент | Description |
+| Функция | Описание |
 | -------- | ----------- |
 | IS_DEFINED | Возвращает логическое значение, указывающее, назначено ли свойству значение. Это поддерживается только в том случае, если значение является типом-примитивом. Типы-примитивы включают строку, логическое значение, число или `null` . DateTime, типы объектов и массивы не поддерживаются. |
 | IS_OF_MODEL | Возвращает логическое значение, указывающее, соответствует ли указанный двойника указанному типу модели. |
@@ -247,7 +305,7 @@ AND Room.$dtId IN ['room1', 'room2']
 
 Поддерживаются следующие строковые функции:
 
-| Компонент | Description |
+| Функция | Описание |
 | -------- | ----------- |
 | STARTSWITH (x, y) | Возвращает значение логического типа, указывающее, начинается ли первое строковое выражение вторым. |
 | ENDSWITH (x, y) | Возвращает значение логического типа, указывающее, заканчивается ли первое строковое выражение вторым. |
@@ -328,6 +386,6 @@ catch (RequestFailedException e)
         ```
 * В именах и значениях свойств учитывается регистр, поэтому следует использовать точные имена, определенные в моделях. Если имена свойств написаны с ошибками или имеют неправильный регистр, результирующий набор будет пустым без возвращаемых ошибок.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [API-интерфейсах и пакетах SDK для цифровых двойников Azure](how-to-use-apis-sdks.md), включая API запросов, который используется для выполнения запросов из этой статьи.

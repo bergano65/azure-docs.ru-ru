@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 09/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3357cb40ff476a3cc0bce259930068aeccf2c10c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0849eb0c421883ecb0510451ff81b604538c9cc3
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91767465"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92069897"
 ---
 # <a name="manage-an-azure-automation-run-as-account"></a>Управление учетной записью запуска от имени службы автоматизации Azure
 
@@ -218,7 +218,7 @@ $roleDefinition | Set-AzRoleDefinition
 * Предоставьте разрешения для Key Vault.
 * Настройте политику доступа.
 
-Вы можете использовать сценарий [Extend-AutomationRunAsAccountRoleAssignmentToKeyVault.ps1](https://aka.ms/AA5hugb) из коллекция PowerShell, чтобы предоставить учетной записи запуска от имени разрешения для Key Vault. Дополнительные сведения о настройке разрешений для Key Vault см. в разделе [Назначение политики доступа Key Vault](/azure/key-vault/general/assign-access-policy-powershell) .
+Вы можете использовать сценарий [Extend-AutomationRunAsAccountRoleAssignmentToKeyVault.ps1](https://aka.ms/AA5hugb) из коллекция PowerShell, чтобы предоставить учетной записи запуска от имени разрешения для Key Vault. Дополнительные сведения о настройке разрешений для Key Vault см. в разделе [Назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-powershell.md) .
 
 ## <a name="resolve-misconfiguration-issues-for-run-as-accounts"></a>Устранение проблем из-за неправильной конфигурации учетных записей запуска от имени
 

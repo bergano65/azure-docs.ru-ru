@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: 0c8739dff39490f14b613af483f769ac031c1bd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6acea560c3a02420b15aff84475ab58e642116c
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82792383"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078261"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
 
@@ -125,7 +125,7 @@ IP-адрес можно удалить двумя вариантами.
 
 ### <a name="how-can-i-check-if-the-simulation-is-sending-data-to-the-cloud"></a>Как проверить, отправляет ли симуляция данные в облако?
 
-С помощью [обозревателя Интернета вещей Azure](https://github.com/Azure/azure-iot-explorer) или команды [Monitor-Events интерфейса командной строки Azure IOT](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events) можно проверить данные, отправляемые в центр Интернета вещей с определенных устройств. Чтобы использовать эти инструменты, требуется знать строку подключения к Центру Интернета вещей в вашем развертывании. Дополнительные сведения см. в разделе [Как найти строку подключения Центра Интернета вещей, используемого моим решением?](#how-do-i-find-out-the-connection-string-of-the-iot-hub-used-by-my-solution)
+С помощью [обозревателя Интернета вещей Azure](https://github.com/Azure/azure-iot-explorer) или команды [Monitor-Events интерфейса командной строки Azure IOT](/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events) можно проверить данные, отправляемые в центр Интернета вещей с определенных устройств. Чтобы использовать эти инструменты, требуется знать строку подключения к Центру Интернета вещей в вашем развертывании. Дополнительные сведения см. в разделе [Как найти строку подключения Центра Интернета вещей, используемого моим решением?](#how-do-i-find-out-the-connection-string-of-the-iot-hub-used-by-my-solution)
 
 Проверьте данные, отправленные одним из устройств издателя:
 
@@ -194,6 +194,6 @@ IP-адрес можно удалить двумя вариантами.
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
+* [Обзор акселератора решений для прогнозного обслуживания](./iot-accelerators-predictive-walkthrough.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
-* [Все аспекты безопасности Интернета вещей](/azure/iot-fundamentals/iot-security-ground-up)
+* [Все аспекты безопасности Интернета вещей](../iot-fundamentals/iot-security-ground-up.md)

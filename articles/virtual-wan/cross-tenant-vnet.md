@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: wellee
-ms.openlocfilehash: 881f955014032d18fec447784a879fbf4f0e24fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 875fd40fea315269f7fe72032942c40551a6b144
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91571485"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078975"
 ---
 # <a name="connect-cross-tenant-vnets-to-a-virtual-wan-hub"></a>Подключение виртуальных сетей между клиентами к виртуальному концентратору глобальной сети
 
@@ -54,7 +54,7 @@ ms.locfileid: "91571485"
 1. Затем добавьте подписку удаленного клиента и родительскую подписку клиента в текущий сеанс PowerShell. Выполните следующую команду. Если вы вошли в родительский узел, необходимо выполнить команду только для удаленного клиента.
 
    ```azurepowershell-interactive
-   Add-AzAccount “xxxxx-b34a-4df9-9451-4402dcaecc5b”
+   Add-AzAccount "xxxxx-b34a-4df9-9451-4402dcaecc5b"
    ```
 
 1. Убедитесь, что назначение роли прошло успешно, войдя в Azure PowerShell с помощью родительских учетных данных, и выполните следующую команду:
@@ -72,25 +72,25 @@ ms.locfileid: "91571485"
 1. Убедитесь, что вы являетесь в контексте удаленной учетной записи, выполнив следующую команду:
 
    ```azurepowershell-interactive
-   Select-AzSubscription -SubscriptionId “[remote ID]”
+   Select-AzSubscription -SubscriptionId "[remote ID]"
    ```
 
 1. Создайте локальную переменную для хранения метаданных виртуальной сети, которую необходимо подключить к концентратору.
 
    ```azurepowershell-interactive
-   $remote = Get-AzVirtualNetwork -Name "[v-net name]" -ResourceGroupName "[resource group name]"
+   $remote = Get-AzVirtualNetwork -Name "[vnet name]" -ResourceGroupName "[resource group name]"
    ```
 
 1. Переключитесь обратно на родительскую учетную запись.
 
    ```azurepowershell-interactive
-   Select-AzSubscription -SubscriptionId “[parent ID]”
+   Select-AzSubscription -SubscriptionId "[parent ID]"
    ```
 
 1. Подключите виртуальную сеть к концентратору.
 
    ```azurepowershell-interactive
-   New-AzVirtualHubVnetConnection -ResourceGroupName "[Parent Resource Group Name]" -VirtualHubName "[virtual hub name]" -Name "[name of connection]" -RemoteVirtualNetwork $[local variable name]
+   New-AzVirtualHubVnetConnection -ResourceGroupName "[parent resource group name]" -VirtualHubName "[virtual hub name]" -Name "[name of connection]" -RemoteVirtualNetwork $[local variable name]
    ```
 
 1. Новое подключение можно просмотреть либо в PowerShell, либо в портал Azure.
@@ -98,13 +98,13 @@ ms.locfileid: "91571485"
    * **PowerShell:** Если соединение было успешно сформировано, метаданные из вновь сформированного соединения будут отображаться в консоли PowerShell.
    * **Портал Azure:** Перейдите к виртуальным сетевым концентраторам, подключениям **> подключения к виртуальной сети**. Можно просмотреть указатель на соединение. Чтобы просмотреть фактический ресурс, вам понадобятся соответствующие разрешения.
    
-## <a name="troubleshooting"></a><a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshooting"></a><a name="troubleshoot"></a>Диагностика
 
 * Убедитесь, что метаданные в $remote (из предыдущего [раздела](#connect)) соответствуют сведениям из портал Azure.
 * Разрешения можно проверить с помощью параметров IAM группы ресурсов удаленного клиента или с помощью команд Azure PowerShell (Get-Азсубскриптион).
 * Заключите в кавычки имена групп ресурсов или любых других переменных, зависящих от среды (например, "VirtualHub1" или "VirtualNetwork1").
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о виртуальной глобальной сети см. в следующих статьях:
 
