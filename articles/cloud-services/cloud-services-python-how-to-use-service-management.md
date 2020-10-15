@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/30/2017
 ms.author: tagore
 ms.custom: devx-track-python
-ms.openlocfilehash: 35d0f77d5f4dde9e156d22e64881ba674189d327
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef155116904ee0d3ecab250a254010e2f7664757
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87851517"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073994"
 ---
 # <a name="use-service-management-from-python"></a>Использование управления службами в Python
 В этом руководстве показано, как программными средствами Python выполнять общие задачи управления службами. Класс **ServiceManagementService** в [пакете SDK Azure для Python](https://github.com/Azure/azure-sdk-for-python) поддерживает программный доступ к большинству функций, связанных с управлением службами, которые доступны на [портале Azure][management-portal]. Эти функции можно использовать для создания, обновления и удаления облачных служб, развернутых служб, служб управления данными и виртуальных машин. Эта возможность может быть полезна при создании приложений, которым требуется программный доступ к управлению службами.
@@ -127,7 +127,7 @@ for location in result:
 * Восточная часть США
 * Восточная Япония
 * Западная Япония
-* Южная Бразилия
+* Brazil South
 * Восточная Австралия
 * Юго-Восточная часть Австралии
 
@@ -194,7 +194,7 @@ sms.delete_deployment('myhostedservice', 'v1')
 ```
 
 ## <a name="create-a-storage-service"></a><a name="CreateStorageService"> </a>Создание службы хранения
-Служба [хранения](../storage/common/storage-create-storage-account.md) предоставляет доступ к [большим двоичным объектам](../storage/blobs/storage-python-how-to-use-blob-storage.md), [таблицам](../cosmos-db/table-storage-how-to-use-python.md) и [запросам](../storage/queues/storage-python-how-to-use-queue-storage.md) Azure. Для создания службы хранения требуется указать ее имя (длиной от 3 до 24 символов нижнего регистра, оно должно быть уникальным в пределах Azure). Также необходимо добавить описание, метку (не более 100 символов, автоматически кодируется в base64) и расположение службы. В следующем примере показано, как создать службу хранения путем указания расположения.
+Служба [хранения](../storage/common/storage-account-create.md) предоставляет доступ к [большим двоичным объектам](../storage/blobs/storage-quickstart-blobs-python.md), [таблицам](../cosmos-db/table-storage-how-to-use-python.md) и [запросам](../storage/queues/storage-python-how-to-use-queue-storage.md) Azure. Для создания службы хранения требуется указать ее имя (длиной от 3 до 24 символов нижнего регистра, оно должно быть уникальным в пределах Azure). Также необходимо добавить описание, метку (не более 100 символов, автоматически кодируется в base64) и расположение службы. В следующем примере показано, как создать службу хранения путем указания расположения.
 
 ```python
 from azure import *
@@ -446,9 +446,9 @@ sms.create_virtual_machine_deployment(service_name=name,
     vm_image_name = image_name)
 ```
 
-Дополнительные сведения о записи образа виртуальной машины Linux в классической модели развертывания см. в статье [Запись классической виртуальной машины Linux в виде образа](../virtual-machines/linux/classic/capture-image-classic.md).
+Дополнительные сведения о записи образа виртуальной машины Linux в классической модели развертывания см. в статье [Запись классической виртуальной машины Linux в виде образа](/previous-versions/azure/virtual-machines/linux/classic/capture-image-classic).
 
-Дополнительные сведения о записи образа виртуальной машины Windows в классической модели развертывания см. в статье [Запись образа виртуальной машины Azure Windows, созданной с использованием классической модели развертывания](../virtual-machines/windows/classic/capture-image-classic.md).
+Дополнительные сведения о записи образа виртуальной машины Windows в классической модели развертывания см. в статье [Запись образа виртуальной машины Azure Windows, созданной с использованием классической модели развертывания](/previous-versions/azure/virtual-machines/windows/classic/capture-image-classic).
 
 ## <a name="next-steps"></a><a name="What's Next"> </a>Дальнейшие действия
 Теперь, когда вы узнали основы управления службами, вы можете получить доступ к [полной справочной документации по API для пакета SDK для Azure Python](https://azure-sdk-for-python.readthedocs.org/) и легко выполнять сложные задачи для управления приложением Python.
@@ -474,7 +474,7 @@ sms.create_virtual_machine_deployment(service_name=name,
 [Delete a virtual machine]: #DeleteVM
 [Next steps]: #NextSteps
 [management-portal]: https://portal.azure.com/
-[svc-mgmt-rest-api]: https://msdn.microsoft.com/library/windowsazure/ee460799.aspx
+[svc-mgmt-rest-api]: /previous-versions/azure/ee460799(v=azure.100)
 
 
 [cloud service]:/azure/cloud-services/

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: ed371cf230df3070ce1a545895831ae56d320d99
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 22025e7be9a0ff276336511a906055dc31a67230
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92000184"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089729"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -72,7 +72,7 @@ ms.locfileid: "92000184"
 
 ### <a name="access-control-iam"></a>Управление доступом (IAM)
 
-В разделе **Управление доступом (IAM)** обеспечивается поддержка управления доступом на основе ролей (RBAC) на портале Azure. Эта конфигурация помогает организациям просто и точно выполнять требования к управлению доступом. Дополнительные сведения см. в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../role-based-access-control/role-assignments-portal.md).
+В разделе **Управление доступом (IAM)** представлена поддержка управления доступом на основе ролей Azure (Azure RBAC) в портал Azure. Эта конфигурация помогает организациям просто и точно выполнять требования к управлению доступом. Дополнительные сведения см. [в разделе Управление доступом на основе ролей Azure в портал Azure](../role-based-access-control/role-assignments-portal.md).
 
 ### <a name="tags"></a>Теги
 

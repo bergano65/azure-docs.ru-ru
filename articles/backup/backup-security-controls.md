@@ -3,12 +3,12 @@ title: Средства управления безопасностью
 description: Сведения об элементах управления безопасностью, используемых в службе Azure Backup. Эти элементы управления помогают службе предотвращать, обнаруживать и отвечать на уязвимости системы безопасности.
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 40bd35bdf83d336aebd37cdda0a0b59164ac9f7a
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 96899c0669f3063232c36ad3ae1fec76a90e0a5c
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92055891"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090868"
 ---
 # <a name="security-controls-for-azure-backup"></a>Элементы управления безопасностью для Azure Backup
 
@@ -39,7 +39,7 @@ ms.locfileid: "92055891"
 | Управление безопасностью | Да/нет | Примечания| Документация
 |---|---|--|--|
 | Аутентификация| Да | Аутентификация выполняется с помощью Azure Active Directory. |  |
-| Авторизация| Да | Используются созданные клиентом и встроенные роли Azure. Дополнительные сведения см. [в разделе использование Role-Based управления доступом для управления Azure Backup точками восстановления](./backup-rbac-rs-vault.md). |  |
+| Авторизация| Да | Используются созданные клиентом и встроенные роли Azure. Дополнительные сведения см. [в статье Использование управления доступом на основе ролей в Azure для управления Azure Backup точек восстановления](./backup-rbac-rs-vault.md). |  |
 
 ## <a name="data-protection"></a>Защита данных
 

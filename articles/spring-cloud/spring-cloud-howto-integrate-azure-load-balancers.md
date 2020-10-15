@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 02772f153cdda7e3f3c866c727d589e755e19033
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd0b9d1369fb1c0e662de83b7056da0ff7c83bd1
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906935"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090834"
 ---
 # <a name="integrate-azure-spring-cloud-with-azure-load-balance-solutions"></a>Интеграция Azure Spring Cloud с решениями Azure для распределения нагрузки
 
@@ -28,10 +28,10 @@ Azure уже предоставляет различные решения бал
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Azure Веснного облака: [как создать облачную службу Azure весны](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart)
-* Диспетчер трафика Azure: [Создание диспетчера трафика](https://docs.microsoft.com/azure/traffic-manager/quickstart-create-traffic-manager-profile/)
-* Шлюз приложений Azure: [Создание шлюза приложения](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
-* Передняя дверца Azure: [Создание передней дверцы](https://docs.microsoft.com/azure/frontdoor/quickstart-create-front-door)
+* Azure Веснного облака: [как создать облачную службу Azure весны](./spring-cloud-quickstart.md)
+* Диспетчер трафика Azure: [Создание диспетчера трафика](../traffic-manager/quickstart-create-traffic-manager-profile.md)
+* Шлюз приложений Azure: [Создание шлюза приложения](../application-gateway/quick-create-portal.md)
+* Передняя дверца Azure: [Создание передней дверцы](../frontdoor/quickstart-create-front-door.md)
 
 ## <a name="integrate-azure-spring-cloud-with-azure-traffic-manager"></a>Интеграция Azure Веснного облака с диспетчером трафика Azure
 
@@ -91,7 +91,7 @@ Azure уже предоставляет различные решения бал
 
     ![Передняя дверь 2](media/spring-cloud-load-balancers/front-door-2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* [Создание диспетчера трафика](https://docs.microsoft.com/azure/traffic-manager/quickstart-create-traffic-manager-profile/)
-* [Создание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
-* [Создание передней дверцы](https://docs.microsoft.com/azure/frontdoor/quickstart-create-front-door)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Создание диспетчера трафика](../traffic-manager/quickstart-create-traffic-manager-profile.md)
+* [Создание шлюза приложений](../application-gateway/quick-create-portal.md)
+* [Создание передней дверцы](../frontdoor/quickstart-create-front-door.md)

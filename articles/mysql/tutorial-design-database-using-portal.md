@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 3/20/2020
 ms.custom: mvc
 ms.openlocfilehash: d34be152a0d104e688abd6e53c97353b69012670
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
+ms.lasthandoff: 10/09/2020
 ms.locfileid: "90906552"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-database-using-the-azure-portal"></a>Руководство по Разработка базы данных в службе "База данных Azure для MySQL" с помощью портала Azure
@@ -47,7 +47,7 @@ ms.locfileid: "90906552"
 
 3. Щелкните плитку **База данных Azure для MySQL**. Заполните Базу данных Azure для формы MySQL.
    
-   :::image type="content" source="./media/tutorial-design-database-using-portal/2-create-form.png" alt-text="Создание формы":::
+   :::image type="content" source="./media/tutorial-design-database-using-portal/2-create-form.png" alt-text="Переход к службе MySQL":::
 
     **Параметр** | **Рекомендуемое значение** | **Описание поля**
     ---|---|---
@@ -62,7 +62,7 @@ ms.locfileid: "90906552"
     Версия | *Последняя версия*| Последняя версия (если нет особых требований использовать другую версию).
     Ценовая категория | **Общего назначения**, **Поколение 5**, **2 виртуальных ядра**, **5 ГБ**, **7 дней**, **Геоизбыточное хранилище** | Конфигурации вычислительных ресурсов, хранилища и резервного копирования для нового сервера. Выберите **ценовую категорию**. Затем выберите вкладку **Общего назначения**. *Поколение 5*, *2 виртуальных ядра*, *5 ГБ*, и *7 дней* — это значения по умолчанию для параметров **Поколение вычислительных ресурсов**, **Виртуальное ядро**, **Хранилище** и **Срок хранения резервных копий**. Можно оставить эти ползунки как есть. Чтобы включить резервные копии сервера в географически избыточном хранилище, выберите **Геоизбыточное хранилище** в **параметрах избыточности резервного копирования**. Щелкните **ОК**, чтобы сохранить ценовую категорию. На следующем снимке экрана показаны выбранные параметры.
 
-   :::image type="content" source="./media/tutorial-design-database-using-portal/3-pricing-tier.png" alt-text="Ценовая категория":::
+   :::image type="content" source="./media/tutorial-design-database-using-portal/3-pricing-tier.png" alt-text="Переход к службе MySQL":::
 
    > [!TIP]
    > Функция **автоматического увеличения** позволяет серверу нарастить объем хранения при приближении к предельному значению без последствий для рабочей нагрузки.
@@ -75,7 +75,7 @@ ms.locfileid: "90906552"
 
 1. Щелкните созданный сервер и выберите **Безопасность подключения**.
 
-   :::image type="content" source="./media/tutorial-design-database-using-portal/1-Connection-security.png" alt-text="Безопасность подключения":::
+   :::image type="content" source="./media/tutorial-design-database-using-portal/1-Connection-security.png" alt-text="Переход к службе MySQL":::
 2. Здесь вы можете **добавить свой IP-адрес** или настроить правила брандмауэра. Не забудьте щелкнуть **Сохранить** после создания правил.
 Теперь вы можете подключиться к серверу с помощью программы командной строки MySQL или с помощью инструмента с графическим пользовательским интерфейсом MySQL Workbench.
 
@@ -89,7 +89,7 @@ ms.locfileid: "90906552"
 1. На [портале Azure](https://portal.azure.com/) в меню слева щелкните **Все ресурсы**, введите имя и найдите свой сервер базы данных Azure для MySQL. Выберите имя сервера, чтобы просмотреть сведения о нем.
 
 2. На странице **Обзор** запишите **имя сервера** и **имя для входа администратора сервера**. Вы можете нажать кнопку "Копировать" рядом с каждым полем, чтобы скопировать его значение в буфер обмена.
-   :::image type="content" source="./media/tutorial-design-database-using-portal/2-server-properties.png" alt-text="4.2. Свойства сервера":::
+   :::image type="content" source="./media/tutorial-design-database-using-portal/2-server-properties.png" alt-text="Переход к службе MySQL":::
 
 В этом примере серверу присвоено имя *mydemoserver.mysql.database.azure.com*, а имя для входа администратора сервера — *myadmin\@mydemoserver*.
 
@@ -168,11 +168,11 @@ SELECT * FROM inventory;
 
 1. На портале Azure найдите базу данных Azure для MySQL. На странице **Обзор** на панели инструментов щелкните **Восстановить**. Откроется страница "Восстановление".
 
-   :::image type="content" source="./media/tutorial-design-database-using-portal/1-restore-a-db.png" alt-text="10.1. Восстановление базы данных":::
+   :::image type="content" source="./media/tutorial-design-database-using-portal/1-restore-a-db.png" alt-text="Переход к службе MySQL":::
 
 2. Заполните форму **Восстановление**, указав следующие сведения.
 
-   :::image type="content" source="./media/tutorial-design-database-using-portal/2-restore-form.png" alt-text="10.2. Форма восстановления":::
+   :::image type="content" source="./media/tutorial-design-database-using-portal/2-restore-form.png" alt-text="Переход к службе MySQL":::
 
    - **Точка восстановления.** Выберите точку во времени, до которой требуется восстановить данные, в пределах указанного периода времени. Обязательно преобразуйте свое местное время в формат UTC.
    - **Восстановить на новом сервере**. Укажите новое имя сервера, который нужно восстановить.

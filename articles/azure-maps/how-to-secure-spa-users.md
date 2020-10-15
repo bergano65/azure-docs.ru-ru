@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: 0ba2e23e8121a76ec281b5e411819ee7d450cbe0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bfd38f03601f7c4ebfbb5dde4fd7587e78df9efc
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319696"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090290"
 ---
 # <a name="secure-a-single-page-application-with-user-sign-in"></a>Защита одностраничного приложения с помощью входа пользователя
 
@@ -67,11 +67,11 @@ ms.locfileid: "91319696"
         </script>   
     ```
 
-7. Настройте управление доступом на основе ролей Azure для пользователей или групп. Сведения о [включении RBAC](#grant-role-based-access-for-users-to-azure-maps)см. в следующих разделах.
+7. Настройте управление доступом на основе ролей Azure (Azure RBAC) для пользователей или групп. Сведения о [включении Azure RBAC](#grant-role-based-access-for-users-to-azure-maps)см. в следующих разделах.
    
 [!INCLUDE [grant role access to users](./includes/grant-rbac-users.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дальнейшее понимание сценария одностраничного приложения:
 > [!div class="nextstepaction"]

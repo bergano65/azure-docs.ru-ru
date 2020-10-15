@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 206768604c6d08a32c0caaf9b53a1417cfa1344b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: adb9bf48800062d2cc6976a88ec48c1993858dec
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85385337"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089542"
 ---
 # <a name="secure-your-restful-services"></a>Защита служб с поддержкой RESTful 
 
@@ -312,7 +312,7 @@ Authorization: Bearer <token>
 
 ### <a name="add-the-oauth2-bearer-token-policy-key"></a>Добавление ключа политики маркера носителя OAuth2
 
-Создайте ключ политики для хранения значения маркера носителя.
+Чтобы настроить REST API технический профиль с токеном носителя OAuth2, получите маркер доступа от владельца REST API. Затем создайте следующий криптографический ключ для хранения токена носителя.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог Azure AD B2C.

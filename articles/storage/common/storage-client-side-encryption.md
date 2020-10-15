@@ -10,18 +10,18 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f54b91ab1ea4521c17a3b40c88214f5637ab47a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2cf137eae9e026f4854034efe1565dc8f7f0b35d
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021618"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92091667"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## <a name="overview"></a>Обзор
-[Клиентская библиотека службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet) поддерживает шифрование данных в клиентских приложениях перед отправкой в службу хранилища Azure и расшифровку данных при скачивании на клиент. Библиотека также поддерживает интеграцию с [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) для управления ключами учетной записи хранения.
+[Клиентская библиотека службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage) поддерживает шифрование данных в клиентских приложениях перед отправкой в службу хранилища Azure и расшифровку данных при скачивании на клиент. Библиотека также поддерживает интеграцию с [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) для управления ключами учетной записи хранения.
 
 Подробный учебник, в котором последовательно описывается процесс шифрования больших двоичных объектов на стороне клиента с помощью хранилища ключей Azure, приведен в разделе [Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](../blobs/storage-encrypt-decrypt-blobs-key-vault.md).
 
@@ -108,7 +108,7 @@ ms.locfileid: "89021618"
 > 
 > Чтобы выполнять операции запроса, следует указать сопоставитель ключа, который способен распознавать все ключи в результирующем наборе. Если сущность в результате запроса не может быть разрешена для поставщика, клиентская библиотека выдаст ошибку. Для запроса, который обращается к серверу, по умолчанию клиентская библиотека добавляет к выбранным столбцам специальные свойства метаданных шифрования (_ClientEncryptionMetadata1 и _ClientEncryptionMetadata2).
 
-## <a name="azure-key-vault"></a>Хранилище ключей Azure;
+## <a name="azure-key-vault"></a>Azure Key Vault
 Хранилище ключей Azure помогает защитить криптографические ключи и секреты, используемые облачными приложениями и службами. Хранилище ключей Azure позволяет шифровать ключи и секреты (например, ключи проверки подлинности, ключи учетных записей хранения, ключи шифрования данных, PFX-файлы и пароли), используя ключи, защищенные аппаратными модулями безопасности. Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 
 Клиентская библиотека хранилища использует основную библиотеку хранилища ключей для обеспечения общей платформы для управления ключами в Azure. Пользователи также получают дополнительное преимущество от использования библиотеки хранилища ключей. Библиотека расширений предоставляет полезные функции для локальных и облачных поставщиков ключей с простым и симметричным алгоритмом (RSA), а также функции агрегирования и кэширования.
@@ -244,7 +244,7 @@ ms.locfileid: "89021618"
 ## <a name="encryption-and-performance"></a>Шифрование и производительность
 Обратите внимание, что шифрование результатов анализа данных хранилища отрицательно влияет на производительность. Ключ содержимого и вектор инициализации необходимо создать, само содержимое — зашифровать, а дополнительные метаданные — отформатировать и передать. Эти издержки зависят от объема шифруемых данных. Мы рекомендуем клиентам всегда тестировать свои приложения для повышения производительности во время разработки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
 * Скачайте [Azure Storage Client Library for .NET NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage)
 * Скачайте пакеты NuGet [Core](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/) и [Extensions](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) для хранилища ключей Azure.  

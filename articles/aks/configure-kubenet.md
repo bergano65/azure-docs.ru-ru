@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: c30b82e44833e413c1576bf64e8fef263c58b246
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3bc245fa02f57a433a76a316caac67ed5d884fe9
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91264615"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92072753"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -56,7 +56,7 @@ Azure поддерживает не более 400 маршрутов в UDR, �
 * В отличие от кластеров Azure CNI, несколько кластеров кубенет не могут совместно использовать подсеть.
 * Функции, **не поддерживаемые в кубенет** , включают:
    * [Политики сети Azure](use-network-policies.md#create-an-aks-cluster-and-enable-network-policy), но Калико сетевые политики поддерживаются в кубенет
-   * [Пулы узлов Windows](windows-node-limitations.md)
+   * [Пулы узлов Windows](./windows-faq.md)
    * [Надстройка виртуальных узлов](virtual-nodes-portal.md#known-limitations)
 
 ### <a name="ip-address-availability-and-exhaustion"></a>Доступность и исчерпание IP-адресов
@@ -244,7 +244,7 @@ az network vnet subnet list --resource-group
 az aks create -g MyResourceGroup -n MyManagedCluster --vnet-subnet-id MySubnetID
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Приступите к [созданию приложений с помощью Azure dev Spaces][dev-spaces], [развертыванию существующих приложений с помощью Helm][use-helm]или [созданию новых приложений с помощью Helm][develop-helm].
 

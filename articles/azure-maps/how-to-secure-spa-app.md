@@ -1,7 +1,7 @@
 ---
 title: Как защитить одностраничное приложение с помощью неинтерактивного входа
 titleSuffix: Azure Maps
-description: Настройка одностраничного приложения с помощью неинтерактивного контроля доступа на основе ролей Azure AD и Azure Maps веб-пакета SDK.
+description: Как настроить одностраничное приложение с неинтерактивным управлением доступом на основе ролей Azure (Azure RBAC) и Azure Maps веб-пакетом SDK.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 06/12/2020
@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: e49954065f8a4ec03eb54d7333a3fff34bafb143
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 000f6a80a2cee14abc3d954de479dd87b1edf876
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319662"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92090256"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Как защитить одностраничное приложение с помощью неинтерактивного входа
 
@@ -36,7 +36,7 @@ ms.locfileid: "91319662"
 
 3. Добавьте в функцию Azure [удостоверение, назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) , чтобы разрешить создание субъекта-службы для проверки подлинности в Azure AD.  
 
-4. Предоставьте учетной записи Azure Maps доступ на основе ролей для назначенного системой удостоверения. Дополнительные сведения см. в разделе [предоставление доступа на основе ролей](#grant-role-based-access) .
+4. Предоставить учетной записи Azure Maps доступ на основе ролей для назначенного системой удостоверения. Дополнительные сведения см. в разделе [предоставление доступа на основе ролей](#grant-role-based-access) .
 
 5. Напишите код для функции Azure, чтобы получить Azure Maps маркеры доступа, используя назначенное системой удостоверение с одним из поддерживаемых механизмов или протоколом RESTFUL. См. статью [получение маркеров для ресурсов Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) .
 
@@ -116,7 +116,7 @@ ms.locfileid: "91319662"
 > [!WARNING]
 > Azure Maps определения встроенных ролей предоставляют очень большие разрешения на доступ к множеству Azure Maps интерфейсов API. Чтобы ограничить доступ через API к минимуму, см. раздел [Создание пользовательского определения роли и назначение назначенного системой удостоверения](https://docs.microsoft.com/azure/role-based-access-control/custom-roles) пользовательскому определению роли. Это обеспечит минимальный уровень привилегий, необходимых приложению для доступа к Azure Maps.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дальнейшее понимание сценария одностраничного приложения:
 > [!div class="nextstepaction"]
