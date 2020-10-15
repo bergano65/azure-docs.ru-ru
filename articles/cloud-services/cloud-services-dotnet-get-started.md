@@ -11,12 +11,12 @@ ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: 0d00db9909f05028b55505400d0810b00e0114c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4598cb1d54fbbeb09e3bc5f58f0cce949b3c848
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88932548"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073807"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -33,7 +33,7 @@ ms.locfileid: "88932548"
 Приложение использует [рабочий шаблон на основе очередей](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
 ## <a name="alternative-architecture-app-service-and-webjobs"></a>Альтернативная архитектура: служба приложений и веб-задания
-Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](/azure/architecture/guide/technology-choices/compute-decision-tree).
+Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](../app-service/index.yml) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](/azure/architecture/guide/technology-choices/compute-decision-tree).
 
 ## <a name="what-youll-learn"></a>Что вы узнаете
 * Как подготовить компьютер к разработке для Azure путем установки пакета Azure SDK.
@@ -169,7 +169,7 @@ ms.locfileid: "88932548"
 
 4. В раскрывающемся списке **Репликация** установите значение **Locally redundant storage** (Локально избыточное хранилище).
 
-    При включении георепликации для учетной записи хранения хранящиеся данные реплицируются в дополнительный центр обработки данных для обеспечения возможности отработки отказа в случае крупной аварии в основном расположении. Георепликация может потребовать дополнительных затрат. Для учетных записей тестирования и разработки оплачивать георепликацию обычно не требуется. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md).
+    При включении георепликации для учетной записи хранения хранящиеся данные реплицируются в дополнительный центр обработки данных для обеспечения возможности отработки отказа в случае крупной аварии в основном расположении. Георепликация может потребовать дополнительных затрат. Для учетных записей тестирования и разработки оплачивать георепликацию обычно не требуется. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-account-create.md).
 
 5. В разделе **Группа ресурсов** щелкните **Использовать существующий** и выберите группу ресурсов, используемую для облачной службы.
 6. В раскрывающемся списке **Расположение** выберите тот же регион, который выбрали для облачной службы.
@@ -290,7 +290,7 @@ ms.locfileid: "88932548"
 
     ![Этап настроек](./media/cloud-services-dotnet-get-started/pubsettings.png)
 
-    Заданные на вкладке **Дополнительно** значения по умолчанию подходят для работы с этим руководством. Дополнительные сведения о вкладке "Дополнительно" см. в разделе о [мастере публикации приложения Azure](https://docs.microsoft.com/azure/vs-azure-tools-publish-azure-application-wizard).
+    Заданные на вкладке **Дополнительно** значения по умолчанию подходят для работы с этим руководством. Дополнительные сведения о вкладке "Дополнительно" см. в разделе о [мастере публикации приложения Azure](/visualstudio/azure/vs-azure-tools-publish-azure-application-wizard).
 4. На этапе **Сводка** щелкните **Опубликовать**.
 
     ![Сводка действий](./media/cloud-services-dotnet-get-started/pubsummary.png)
@@ -776,5 +776,5 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 * [Облачные службы Azure, часть 1: Введение](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Управление облачными службами](cloud-services-how-to-manage-portal.md)
-* [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
+* [Хранилище Azure](../storage/index.yml)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)

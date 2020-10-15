@@ -1,6 +1,6 @@
 ---
-title: Совместное использование панелей мониторинга портал Azure с помощью Role-Based контроля доступа
-description: В этой статье описывается, как предоставить общий доступ к панели мониторинга на портале Azure с помощью управления доступом на основе ролей.
+title: Совместное использование панелей мониторинга портал Azure с помощью управления доступом на основе ролей в Azure
+description: В этой статье объясняется, как предоставить общий доступ к панели мониторинга в портал Azure с помощью управления доступом на основе ролей Azure.
 services: azure-portal
 documentationcenter: ''
 author: mgblythe
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 03/23/2020
 ms.author: mblythe
-ms.openlocfilehash: 89c2b90b12a4fc16dd48571c00ff46dc62168d42
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: b74cae439ce351a4d720f215679cc0802eebe898
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077887"
+ms.locfileid: "92092211"
 ---
-# <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей
+# <a name="share-azure-dashboards-by-using-azure-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей в Azure
 
 После настройки панели мониторинга ее можно опубликовать и использовать совместно с другими пользователями в организации. Вы разрешаете другим пользователям просматривать панель мониторинга с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/role-assignments-portal.md). Назначение роли пользователю или группе пользователей. Эта роль определяет, могут ли пользователи просматривать или изменять опубликованную панель мониторинга.
 
@@ -33,7 +33,7 @@ ms.locfileid: "92077887"
 
 ## <a name="understanding-access-control-for-dashboards"></a>Общие сведения о контроле доступа для панелей мониторинга
 
-С помощью управления доступом на основе ролей пользователям можно назначать роли на трех разных уровнях:
+С помощью управления доступом на основе ролей Azure (Azure RBAC) можно назначать роли пользователям на трех разных уровнях области:
 
 * Подписка
 * resource group

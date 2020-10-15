@@ -8,19 +8,19 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8100914e9a1d1489cb80de55a689e17f6d28a941
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 266e31ae9865c8fb427e06e89cd755e7ff38b27f
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61443451"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92073875"
 ---
 # <a name="import-an-automatic-device-management-package-into-your-remote-monitoring-solution-accelerator"></a>Импорт пакета автоматического управления устройствами в акселератор решения для удаленного мониторинга
 
 Конфигурация автоматического управления устройствами определяет изменения конфигурации для развертывания в группу устройств. В этой статье предполагается, что разработчик в вашей организации уже создал конфигурацию автоматического управления устройствами. Дополнительные сведения о том, как разработчику создать конфигурацию, см. в одной из следующих статей с инструкциями, посвященных Центру Интернета вещей:
 
-- [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-auto-device-config.md)
-- [Настройка и мониторинг устройств Центра Интернета вещей в масштабе с помощью Azure CLI](../iot-hub/iot-hub-auto-device-config-cli.md)
+- [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-automatic-device-management.md)
+- [Настройка и мониторинг устройств Центра Интернета вещей в масштабе с помощью Azure CLI](../iot-hub/iot-hub-automatic-device-management-cli.md)
 
 Разработчик создает и тестирует конфигурацию автоматического управления устройствами в среде разработки. Когда вы будете готовы, можно импортировать конфигурацию в акселератор решения для удаленного мониторинга.
 
