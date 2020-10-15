@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: apimpm
-ms.openlocfilehash: ac9554ae5ca151a377395d3b16598f7070c87d10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 06d114c500722259d02a940633a76d043b83064a
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87386050"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077496"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Использование службы управления API Azure совместно с внутренней виртуальной сетью
 Служба управления API Azure в сочетании с виртуальными сетями Azure позволяет работать с интерфейсами API, которые недоступны из Интернета. Подключение можно создать с применением разных технологий VPN. Управление API можно развернуть в виртуальной сети в одном из двух основных режимов:
@@ -51,7 +51,7 @@ ms.locfileid: "87386050"
 + При развертывании службы управления API в виртуальной сети используется [список портов](./api-management-using-with-vnet.md#required-ports) , которые необходимо открыть. 
 
 ## <a name="creating-an-api-management-in-an-internal-virtual-network"></a><a name="enable-vpn"> </a>Создание управления API во внутренней виртуальной сети
-Служба управления API во внутренней виртуальной сети размещена за [внутренней подсистемой балансировки нагрузки (классическая модель)](/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это единственный доступный параметр, и его нельзя изменить.
+Служба управления API во внутренней виртуальной сети размещена за [внутренней подсистемой балансировки нагрузки (классическая модель)](/previous-versions/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это единственный доступный параметр, и его нельзя изменить.
 
 ### <a name="enable-a-virtual-network-connection-using-the-azure-portal"></a>Настройка подключения к виртуальной сети с помощью портала Azure
 
@@ -143,4 +143,4 @@ ms.locfileid: "87386050"
 [Create API Management service]: get-started-create-service-instance.md
 [Common network configuration problems]: api-management-using-with-vnet.md#network-configuration-issues
 
-[ServiceTags]: ../virtual-network/security-overview.md#service-tags
+[ServiceTags]: ../virtual-network/network-security-groups-overview.md#service-tags
