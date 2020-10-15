@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a05c7a6f9c3752507705e1c4242becfe1d65ffd6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24bdb192ddfe1759cb1d70fff9936979f5e28143
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334843"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093367"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Базовые показатели безопасности Azure для резервного копирования
 
@@ -486,7 +486,7 @@ Azure Backup предоставляет три встроенных роли д�
 
 - [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
-- [Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure](./backup-rbac-rs-vault.md)
+- [Использование управления доступом на основе ролей в Azure для управления Azure Backup точками восстановления](./backup-rbac-rs-vault.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
