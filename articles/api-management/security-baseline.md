@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4db7727558d0b7f4c26aba3ffa823bebb07862f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6b94c30f00765164385987ed0ea9b201044f248
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91713783"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077445"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Базовый план безопасности Azure для Управления API
 
@@ -100,7 +100,7 @@ ms.locfileid: "91713783"
 
 * [Настройка службы Защита от атак DDoS Azure уровня "Стандартный"](../virtual-network/manage-ddos-protection.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -588,7 +588,7 @@ ms.locfileid: "91713783"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -774,7 +774,7 @@ ms.locfileid: "91713783"
 
 * [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](../governance/management-groups/create.md)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -838,7 +838,7 @@ ms.locfileid: "91713783"
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1114,7 +1114,7 @@ ms.locfileid: "91713783"
 
 Включите обратимое удаление в Key Vault для защиты ключей от случайного или злонамеренного удаления.
 
-* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
+* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

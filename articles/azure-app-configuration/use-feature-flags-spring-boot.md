@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/26/2019
 ms.author: mametcal
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 83c437cb613e3dad04dee17f0f67040532066c3b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 0dcf85add4e1c9f1d701c4ce4a122c8d6b31382a
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326602"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077836"
 ---
 # <a name="tutorial-use-feature-flags-in-a-spring-boot-app"></a>Руководство по Использование флагов компонентов в приложении Spring Boot
 
@@ -185,5 +185,5 @@ public String getOldFeature() {
 
 Из этого руководства вы узнали, как с помощью библиотек `spring-cloud-azure-feature-management-web` реализовать флаги функций в приложении Spring Boot. Подробные сведения о поддержке управления функциями в службе "Конфигурация приложений" и Spring Boot см. по следующим ссылкам:
 
-* [Пример кода для флага функции Spring Boot](/azure/azure-app-configuration/quickstart-feature-flag-spring-boot)
+* [Пример кода для флага функции Spring Boot](./quickstart-feature-flag-spring-boot.md)
 * [Управление флагами компонентов](./manage-feature-flags.md)

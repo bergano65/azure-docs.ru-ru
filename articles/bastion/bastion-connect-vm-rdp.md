@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 10/12/2020
 ms.author: cherylmc
-ms.openlocfilehash: 9c9bac20beb415f8bc29ca63d530e5cd8492d2d3
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 8ffb2d2f52e1bdfece7fe1bdcd04dcf9b1b600f3
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997011"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077649"
 ---
 # <a name="connect-to-a-windows-virtual-machine-using-azure-bastion"></a>Подключение к виртуальной машине Windows с помощью Azure бастиона
 
@@ -20,7 +20,7 @@ ms.locfileid: "91997011"
 
 Azure бастиона обеспечивает безопасное подключение ко всем виртуальным машинам в виртуальной сети, в которых она подготовлена. Бастион Azure позволяет защитить порты RDP и SSH ваших виртуальных машин от внешних проникновений, обеспечивая при этом безопасный доступ с использованием этих протоколов. Дополнительные сведения см. в статье [что такое Azure бастиона?](bastion-overview.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что выполнены следующие условия.
 

@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mialdrid
-ms.openlocfilehash: 182195190fed70b46185f98f595de6b6c32bbffe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 515a6f7175aee23c6f720258b7fdaefe76b3b5d6
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80619396"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92077955"
 ---
 # <a name="working-remotely-using-azure-bastion"></a>Работа в удаленном режиме с помощью Azure бастиона
 
@@ -26,10 +26,10 @@ Azure бастиона играет роль сводной роли в подд
 
 В частности, Azure бастиона обеспечивает безопасное и эффективное подключение по протоколу RDP или SSH к виртуальным машинам в виртуальной сети Azure непосредственно в портал Azure без использования общедоступного IP-адреса. Дополнительные сведения об архитектуре Azure бастиона и основных возможностях см. в статье [что такое Azure бастиона](bastion-overview.md).
 
-Azure бастиона развертывается для каждой виртуальной сети. Это означает, что компании могут настраивать один бастиона Azure и управлять им для быстрой поддержки удаленного доступа пользователей к виртуальным машинам в виртуальной сети Azure. Инструкции по созданию бастиона Azure и управлению ими см. в статье [Создание узла бастиона](bastion-create-host-portal.md).
+Azure бастиона развертывается для каждой виртуальной сети. Это означает, что компании могут настраивать один бастиона Azure и управлять им для быстрой поддержки удаленного доступа пользователей к виртуальным машинам в виртуальной сети Azure. Инструкции по созданию бастиона Azure и управлению ими см. в статье [Создание узла бастиона](./tutorial-create-host-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Настройте Azure бастиона с помощью [портал Azure](bastion-create-host-portal.md), [PowerShell](bastion-create-host-powershell.md)или Azure CLI.
+* Настройте Azure бастиона с помощью [портал Azure](./tutorial-create-host-portal.md), [PowerShell](bastion-create-host-powershell.md)или Azure CLI.
 
 * Дополнительные сведения см. в статье [вопросы и ответы по бастиона](bastion-faq.md) .

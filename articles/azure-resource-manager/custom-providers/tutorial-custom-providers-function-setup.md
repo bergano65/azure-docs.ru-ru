@@ -5,12 +5,12 @@ author: jjbfour
 ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
-ms.openlocfilehash: b6984bfdf7ec078d02999bccf77f3592cfbcab27
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6e11e08d861538ddf395f522495798546e04ca7c
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75648681"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91948958"
 ---
 # <a name="set-up-azure-functions-for-azure-custom-providers"></a>Настройка Функций Azure для настраиваемых поставщиков Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "75648681"
 > [!NOTE]
 > Если в каталоге проекта отсутствует файл проекта C#, его можно добавить вручную. Он также автоматически появится после установки расширения Microsoft.Azure.WebJobs.Extensions.Storage для приложения-функции.
 
-Затем обновите файл проекта C#, подключив библиотеки NuGet. Эти библиотеки упрощают анализ входящих запросов от настраиваемых поставщиков. Выполните действия, описанные в статье о[добавлении расширений на портале](../../azure-functions/install-update-binding-extensions-manual.md), и обновите файл проекта C#, добавив в него следующие ссылки на пакеты:
+Затем обновите файл проекта C#, подключив библиотеки NuGet. Эти библиотеки упрощают анализ входящих запросов от настраиваемых поставщиков. Выполните действия, описанные в статье о[добавлении расширений на портале](../../azure-functions/functions-bindings-register.md), и обновите файл проекта C#, добавив в него следующие ссылки на пакеты:
 
 ```xml
 <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.4" />
@@ -80,4 +80,3 @@ ms.locfileid: "75648681"
 При работе с этим руководством вы настроили приложение-функцию Azure в качестве конечной точки настраиваемого поставщика.
 
 Сведения о том, как создать конечную точку RESTful для настраиваемого поставщика,см. в [этом руководстве](./tutorial-custom-providers-function-authoring.md).
-
