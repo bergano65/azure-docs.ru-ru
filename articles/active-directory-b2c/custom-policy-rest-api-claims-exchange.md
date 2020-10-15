@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 05/18/2020
+ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e22a6028f5b7fa8cf81ddf0e3e2a550859aad0ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b34d5cdd95f44082d05153390209de5145e56d3f
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259600"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92089576"
 ---
 # <a name="walkthrough-add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Пошаговое руководство. Добавление возможности обмена утверждениями REST API в настраиваемые политики в Azure Active Directory B2C
 
@@ -75,7 +75,7 @@ Azure Active Directory B2C (Azure AD B2C) позволяет разработч�
 </ClaimType>
 ```
 
-## <a name="configure-the-restful-api-technical-profile"></a>Настройка технического профиля RESTful API 
+## <a name="add-the-restful-api-technical-profile"></a>Добавление технического профиля RESTFUL API 
 
 [Технический профиль RESTful](restful-technical-profile.md) обеспечивает поддержку взаимодействия с вашей собственной службой RESTFUL. Azure AD B2C отправляет данные в службу RESTful в виде коллекции `InputClaims` ответы в виде коллекции `OutputClaims`. Найдите элемент **ClaimsProviders** в файле <em> **`TrustFrameworkExtensions.xml`**</em> и добавьте новый поставщик утверждений, как показано ниже.
 
@@ -87,6 +87,7 @@ Azure Active Directory B2C (Azure AD B2C) позволяет разработч�
       <DisplayName>Get user extended profile Azure Function web hook</DisplayName>
       <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
+        <!-- Set the ServiceUrl with your own REST API endpoint -->
         <Item Key="ServiceUrl">https://your-account.azurewebsites.net/api/GetProfile?code=your-code</Item>
         <Item Key="SendClaimsIn">Body</Item>
         <!-- Set AuthenticationType to Basic or ClientCertificate in production environments -->
@@ -107,9 +108,20 @@ Azure Active Directory B2C (Azure AD B2C) позволяет разработч�
     </TechnicalProfile>
   </TechnicalProfiles>
 </ClaimsProvider>
-```
+``` 
 
 В этом примере `userLanguage` отправляется в службу REST как `lang` в полезных данных JSON. Значение утверждения `userLanguage` содержит текущий идентификатор языка пользователя. Дополнительные сведения см. в статье об [арбитрах утверждений](claim-resolver-overview.md).
+
+### <a name="configure-the-restful-api-technical-profile"></a>Настройка технического профиля RESTful API 
+
+После развертывания REST API Задайте метаданные `REST-ValidateProfile` технического профиля в соответствии с собственными REST API, включая:
+
+- **ServiceURL**. Задайте URL-адрес конечной точки REST API.
+- **Сендклаимсин**. Укажите, как входящие утверждения отправляются поставщику утверждений RESTFUL.
+- **AuthenticationType**. Задайте тип проверки подлинности, выполняемой поставщиком утверждений RESTFUL. 
+- **Алловинсекуреаусинпродуктион**. Убедитесь, что в рабочей среде для этих метаданных задано значение `true`
+    
+Дополнительные конфигурации см. в [метаданных технического профиля RESTful](restful-technical-profile.md#metadata) .
 
 В комментариях над `AuthenticationType` и `AllowInsecureAuthInProduction` указаны изменения, которые следует внести при переходе в рабочую среду. Сведения о защите RESTful API для рабочей среды см. в [этой статье](secure-rest-api.md).
 
