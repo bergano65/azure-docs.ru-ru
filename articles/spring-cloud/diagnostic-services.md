@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: ce8dbe017e3cc80588cd1aa37ad02a82199ccc10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aec8448cb82480397f561e095420bbd49982d4b2
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90892576"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92093044"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с помощью параметров диагностики
 
@@ -27,7 +27,7 @@ ms.locfileid: "90892576"
 Выберите категорию журнала и категорию метрик, которые требуется отслеживать.
 
 > [!TIP]
-> Просто хотите выполнить потоковую передачу журналов? Ознакомьтесь с этой [командой Azure CLI](https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud/app?view=azure-cli-latest&preserve-view=true#ext-spring-cloud-az-spring-cloud-app-logs)!
+> Просто хотите выполнить потоковую передачу журналов? Ознакомьтесь с этой [командой Azure CLI](/cli/azure/ext/spring-cloud/spring-cloud/app?preserve-view=true&view=azure-cli-latest#ext-spring-cloud-az-spring-cloud-app-logs)!
 
 ## <a name="logs"></a>Журналы
 
@@ -38,7 +38,7 @@ ms.locfileid: "90892576"
 
 ## <a name="metrics"></a>Метрики
 
-Полный список метрик см. в разделе [метрики пружинного облака](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-concept-metrics#user-metrics-options).
+Полный список метрик см. в разделе [метрики пружинного облака](./spring-cloud-concept-metrics.md#user-metrics-options).
 
 Чтобы начать работу, включите одну из этих служб для получения данных. Дополнительные сведения о настройке Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
 
@@ -110,7 +110,7 @@ ms.locfileid: "90892576"
 > [!NOTE]
 > `==` учитывает регистр, но `=~` не имеет.
 
-Дополнительные сведения о языке запросов, который используется в Log Analytics, см. в разделе [Azure Monitor запросы журналов](../azure-monitor/log-query/query-language.md).
+Дополнительные сведения о языке запросов, который используется в Log Analytics, см. в разделе [Azure Monitor запросы журналов](/azure/data-explorer/kusto/query/).
 
 ### <a name="use-your-storage-account"></a>Использование учетной записи хранения
 
@@ -131,7 +131,7 @@ ms.locfileid: "90892576"
 1. Чтобы просмотреть журналы приложений, выполните поиск концентратора событий с именем **Insights-Logs-аппликатионконсоле**.
 1. Чтобы просмотреть метрики приложения, выполните поиск концентратора событий с именем **Insights-метрики-pt1m**.
 
-Дополнительные сведения об отправке диагностических сведений в концентратор событий см. в статье [потоковая передача система диагностики Azure данных в критическом пути с помощью концентраторов событий](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-stream-event-hubs).
+Дополнительные сведения об отправке диагностических сведений в концентратор событий см. в статье [потоковая передача система диагностики Azure данных в критическом пути с помощью концентраторов событий](../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md).
 
 ## <a name="analyze-the-logs"></a>Анализ журналов
 
@@ -206,6 +206,6 @@ AppPlatformLogsforSpring
 ```
 Вы можете использовать ту же стратегию для других библиотек журналов Java.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)

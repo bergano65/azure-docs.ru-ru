@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 50cc53e7e8a5f39b53d6dcd39de61894cbbb3842
-ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.openlocfilehash: 4d325eb0dbd5d30e94df07ebad21ff30316bcbb4
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88518983"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91858155"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-maxxpoint"></a>Руководство. Интеграция Azure Active Directory с MaxxPoint
 
@@ -99,11 +99,11 @@ ms.locfileid: "88518983"
 
 4. Если нужно настроить приложение в инициируемом режиме **выдающей точки распространения** в разделе **Базовые настройки SAML**, то пользователю для этого не нужно ничего делать, так как это приложение уже предварительно интегрировано в Azure.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения MaxxPoint](common/preintegrated.png)
+    ![Снимок экрана, на котором показана базовая конфигурация SAML](common/preintegrated.png)
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения MaxxPoint](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://maxxpoint.westipc.com/default/sso/login/entity/<customer-id>-azure`
 
