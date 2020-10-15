@@ -4,12 +4,12 @@ description: Сведения о встроенной инициативе по 
 ms.date: 10/07/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 9f3dcdb14ce3d2a9d8353f87a2233fca1c3c8a47
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: ed486a520033b9022abdf1f795e125d1740e3de9
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91822558"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91929268"
 ---
 # <a name="details-of-the-hipaa-hitrust-92-regulatory-compliance-built-in-initiative"></a>Сведения о встроенной инициативе по соответствию требованиям стандарта HIPAA HITRUST 9.2
 

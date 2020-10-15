@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 08/25/2020
+ms.date: 10/09/2020
 ms.author: aahi
-ms.openlocfilehash: a0557c3ccf6510ab3ee2ae29cbef1fc754473345
-ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
+ms.openlocfilehash: 570a21a307d60ab1e2c02d6481746576f5dcf0e3
+ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88933024"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91930294"
 ---
 # <a name="how-to-detect-sentiment-using-the-text-analytics-api"></a>Руководство. Определение тональность с помощью API Анализа текста
 
@@ -78,13 +78,13 @@ ms.locfileid: "88933024"
 
 Создайте запрос POST. Вы можете использовать [средство Postman](text-analytics-how-to-call-api.md) или **консоль тестирования API**, доступные по следующим ссылкам, чтобы быстро оформить и отправить запрос. 
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
-
-[Справочник по анализу тональности версии 3](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment)
-
 #### <a name="version-31-preview1"></a>[Версия 3.1 — предварительная версия 1](#tab/version-3-1)
 
 [Справочные материалы по анализу тональности версии 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Sentiment)
+
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
+
+[Справочник по анализу тональности версии 3](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment)
 
 ---
 
@@ -95,10 +95,6 @@ ms.locfileid: "88933024"
 > [!NOTE]
 > Ключ и конечную точку для ресурса Анализа текста можно найти на портале Azure. Они находятся на странице ресурса **Быстрый запуск** в разделе **Управление ресурсами**. 
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
-
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment`
-
 #### <a name="version-31-preview1"></a>[Версия 3.1 — предварительная версия 1](#tab/version-3-1)
 
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/sentiment`
@@ -108,6 +104,10 @@ ms.locfileid: "88933024"
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/sentiment?opinionMining=true`
 
 По умолчанию этот параметр имеет значение `false`. 
+
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
+
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment`
 
 ---
 
@@ -141,44 +141,6 @@ API Анализа текста не учитывает состояние. Ни
 Анализ тональности возвращает метку тональности и оценку достоверности для всего документа и каждого предложения внутри него. Оценки, близкие к 1, указывают на более высокую достоверность в классификации метки, а более низкие оценки указывают на более низкую достоверность. Документ может содержать несколько предложений, а оценки достоверности в каждом документе или предложении в сумме составляют 1.
 
 Вывод возвращается немедленно. Результаты можно передать в приложение, которое принимает JSON, или сохранить результаты в файл в локальной системе. Затем импортируйте выходные данные в приложение, которое можно использовать для сортировки, поиска и управления данными. В связи с поддержкой многоязычности и эмодзи, ответ может содержать смещения текста. Дополнительные сведения см. в статье [Смещение текста в выводе API Анализа текста](../concepts/text-offsets.md).
-
-#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
-
-### <a name="sentiment-analysis-v30-example-response"></a>Пример ответа от API анализа тональности версии 3.0
-
-Ответы от API анализа тональности версии 3 содержат метки и оценки тональности для каждого проанализированного предложения и документа.
-
-```json
-{
-    "documents": [
-        {
-            "id": "1",
-            "sentiment": "positive",
-            "confidenceScores": {
-                "positive": 1.0,
-                "neutral": 0.0,
-                "negative": 0.0
-            },
-            "sentences": [
-                {
-                    "sentiment": "positive",
-                    "confidenceScores": {
-                        "positive": 1.0,
-                        "neutral": 0.0,
-                        "negative": 0.0
-                    },
-                    "offset": 0,
-                    "length": 58,
-                    "text": "The restaurant had great food and our waiter was friendly."
-                }
-            ],
-            "warnings": []
-        }
-    ],
-    "errors": [],
-    "modelVersion": "2020-04-01"
-}
-```
 
 #### <a name="version-31-preview1"></a>[Версия 3.1 — предварительная версия 1](#tab/version-3-1)
 
@@ -266,6 +228,44 @@ API Анализа текста не учитывает состояние. Ни
                             "isNegated": false
                         }
                     ]
+                }
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2020-04-01"
+}
+```
+
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
+
+### <a name="sentiment-analysis-v30-example-response"></a>Пример ответа от API анализа тональности версии 3.0
+
+Ответы от API анализа тональности версии 3 содержат метки и оценки тональности для каждого проанализированного предложения и документа.
+
+```json
+{
+    "documents": [
+        {
+            "id": "1",
+            "sentiment": "positive",
+            "confidenceScores": {
+                "positive": 1.0,
+                "neutral": 0.0,
+                "negative": 0.0
+            },
+            "sentences": [
+                {
+                    "sentiment": "positive",
+                    "confidenceScores": {
+                        "positive": 1.0,
+                        "neutral": 0.0,
+                        "negative": 0.0
+                    },
+                    "offset": 0,
+                    "length": 58,
+                    "text": "The restaurant had great food and our waiter was friendly."
                 }
             ],
             "warnings": []

@@ -8,12 +8,12 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 22628af5b3e62edfc96699ad051b6a00cf9c1429
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 99a0805239ee2437ad6ec9ceb40cf45496a07850
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078935"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92047664"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
@@ -26,7 +26,7 @@ ms.locfileid: "87078935"
 
 Этот шаг обычно выполняет разработчик облачных решений. Некоторое программное обеспечение, возможно, будет полезным также для специалиста по обработке и анализу данных.
 
-Мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md).
+Мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](../virtual-machines/windows/nested-virtualization.md). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md).
 
 На виртуальной машине для разработки будут настроены следующие инструменты:
 
@@ -38,7 +38,7 @@ ms.locfileid: "87078935"
 * [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/)
 * [Python 3](https://www.python.org/);
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Azure PowerShell](https://docs.microsoft.com/powershell/azure/?view=azps-1.1.0)
+* [Azure PowerShell](/powershell/azure/?view=azps-1.1.0)
 * [расширения VS Code](https://marketplace.visualstudio.com/search?target=VSCode):
   * [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -82,7 +82,7 @@ ms.locfileid: "87078935"
 
    Скрипт будет выполнять следующие действия в течение нескольких минут:
 
-    1. Установка [модуля Az для Azure PowerShell](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.1.0).
+    1. Установка [модуля Az для Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-1.1.0).
     1. Отображение запроса на вход в Azure.
     1. Подтверждение сведений для создания виртуальной машины. Нажмите клавишу **Y** или **ВВОД**, чтобы продолжить.
     1. Создание группы ресурсов, если она не существует.
@@ -215,7 +215,7 @@ ms.locfileid: "87078935"
 
 Дополнительные сведения о шагах, описанных в этой части руководства "Машинное обучение на IoT Edge", см. в следующих статьях:
 
-* [Принципы работы Azure IoT](https://docs.microsoft.com/azure/iot-fundamentals/)
+* [Принципы работы Azure IoT](../iot-fundamentals/index.yml)
 * [Настройка маршрутизации сообщений с использованием Центра Интернета вещей](../iot-hub/tutorial-routing.md)
 * [Create an IoT hub using the Azure portal](../iot-hub/iot-hub-create-through-portal.md) (Создание Центра Интернета вещей с помощью портала Azure)
 
