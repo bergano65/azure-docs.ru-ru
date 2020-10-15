@@ -4,12 +4,12 @@ description: Узнайте, как создать несколько пулов
 services: container-service
 ms.topic: article
 ms.date: 04/08/2020
-ms.openlocfilehash: 128b8d07a3fb18ecd70f6ce5a37f41ad0fdd3db1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 024b7adb254980ec87084b4794a9ced3eaea95eb
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87563183"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92074521"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление такими пулами узлов
 
@@ -148,7 +148,7 @@ az aks nodepool add \
 ## <a name="upgrade-a-node-pool"></a>Обновление пула узлов
 
 > [!NOTE]
-> Операции обновления и масштабирования в кластере или пуле узлов не могут выполняться одновременно, если была возвращена ошибка. Вместо этого каждый тип операции должен быть завершен в целевом ресурсе до следующего запроса к этому же ресурсу. Дополнительные сведения см. в нашем [руководство по устранению неполадок](https://aka.ms/aks-pending-upgrade).
+> Операции обновления и масштабирования в кластере или пуле узлов не могут выполняться одновременно, если была возвращена ошибка. Вместо этого каждый тип операции должен быть завершен в целевом ресурсе до следующего запроса к этому же ресурсу. Дополнительные сведения см. в нашем [руководство по устранению неполадок](./troubleshooting.md#im-receiving-errors-when-trying-to-upgrade-or-scale-that-state-my-cluster-is-being-upgraded-or-has-failed-upgrade).
 
 Команды в этом разделе объясняют, как обновить отдельный пул узлов. Связь между обновлением Kubernetes версии плоскости управления и пулом узлов описывается в [разделе ниже](#upgrade-a-cluster-control-plane-with-multiple-node-pools).
 
@@ -818,7 +818,7 @@ az group delete --name myResourceGroup --yes --no-wait
 az group delete --name myResourceGroup2 --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [пулах системных узлов][use-system-pool].
 

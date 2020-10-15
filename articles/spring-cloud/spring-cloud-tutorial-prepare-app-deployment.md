@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: c9d4356f5dc0b1eace586b741593b9c718c35caf
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 31e25fb8c67e3d271bc37eb4b0d28c67d94a664f
+ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945453"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92092806"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
@@ -23,7 +23,7 @@ Azure Веснное облако предоставляет надежные с
 В этой статье объясняются зависимости, конфигурация и код, необходимые для запуска приложения .NET Core Стилтое в Azure Веснного облака. Сведения о том, как развернуть приложение в Azure Веснного облака, см. в статье [развертывание первого облачного приложения Azure весны](spring-cloud-quickstart.md).
 
 >[!Note]
-> В настоящее время поддержка Steeltoe для Azure Spring Cloud предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+> В настоящее время поддержка Steeltoe для Azure Spring Cloud предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](../azure-portal/supportability/how-to-create-azure-support-request.md).
 
 ##  <a name="supported-versions"></a>Поддерживаемые версии
 
@@ -99,7 +99,7 @@ using (var client = new HttpClient(discoveryHandler, false))
 
 В Azure Spring Cloud могут работать только приложения Spring/Java.
 
-Azure Spring Cloud поддерживает Java 8 и 11. Среда размещения содержит последнюю версию Azul Zulu OpenJDK для Azure. Дополнительные сведения об Azul Zulu OpenJDK для Azure см. в [статье об установке JDK](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install).
+Azure Spring Cloud поддерживает Java 8 и 11. Среда размещения содержит последнюю версию Azul Zulu OpenJDK для Azure. Дополнительные сведения об Azul Zulu OpenJDK для Azure см. в [статье об установке JDK](/azure/developer/java/fundamentals/java-jdk-install).
 
 ## <a name="spring-boot-and-spring-cloud-versions"></a>Версии Spring Boot и Spring Cloud
 
@@ -305,9 +305,9 @@ public class GatewayApplication {
  Также вам нужно включить экземпляр Azure Application Insights для работы с экземпляром службы Azure Spring Cloud. Сведения об использовании Application Insights с Azure Веснным облаком см. в [документации по распределенной трассировке](spring-cloud-tutorial-distributed-tracing.md).
 
 ## <a name="see-also"></a>См. также раздел
-* [Анализ журналов и метрик приложений](https://docs.microsoft.com/azure/spring-cloud/diagnostic-services)
-* [Настройка сервера конфигурации](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-config-server)
-* [Использование распределенной трассировки в Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-distributed-tracing)
+* [Анализ журналов и метрик приложений](./diagnostic-services.md)
+* [Настройка сервера конфигурации](./spring-cloud-tutorial-config-server.md)
+* [Использование распределенной трассировки в Azure Spring Cloud](./spring-cloud-tutorial-distributed-tracing.md)
 * [Краткое руководство по Spring](https://spring.io/quickstart)
 * [Документация по Spring Boot](https://spring.io/projects/spring-boot)
 
