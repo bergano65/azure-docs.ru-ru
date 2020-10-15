@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: 817bc7624bb3a6b69d56265e40681287b7fc09fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 364b88966aa5ae6e1455156c2928713cac3b5b86
+ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90969584"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92078074"
 ---
 # <a name="configure-role-based-access-control-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решений для удаленного мониторинга
 
@@ -94,7 +94,7 @@ ms.locfileid: "90969584"
 
     ![Регистрация приложения](media/iot-accelerators-remote-monitoring-rbac/app-registration-2.png)
 
-1. Выберите свое приложение и щелкните **Манифест**. Отобразятся две имеющиеся [роли приложения](https://docs.microsoft.com/azure/architecture/multitenant-identity/app-roles), определенные для приложения:
+1. Выберите свое приложение и щелкните **Манифест**. Отобразятся две имеющиеся [роли приложения](/azure/architecture/multitenant-identity/app-roles), определенные для приложения:
 
     ![Просмотр манифеста](media/iot-accelerators-remote-monitoring-rbac/view-manifest.png)
 

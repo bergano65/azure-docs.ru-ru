@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: a0bc934d32a2d09fcd6b52ec1f186855bf0da92c
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: 0728e5d12b13164d127941a49603836ff92fd515
+ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91449612"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92045794"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Руководство по разработке модулей IoT Edge для устройств с Windows
 
@@ -87,13 +87,13 @@ ms.locfileid: "91449612"
 
 1. Подготовьте Visual Studio 2019 на компьютере для разработки.
 
-   * Если у вас еще нет Visual Studio на компьютере для разработки, [установите Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) со следующими рабочими нагрузками:
+   * Если у вас еще нет Visual Studio на компьютере для разработки, [установите Visual Studio 2019](/visualstudio/install/install-visual-studio) со следующими рабочими нагрузками:
 
       * Разработка Azure.
       * разработка классических приложений на C++;
       * Кроссплатформенная разработка .NET Core.
 
-   * Если у вас уже есть Visual Studio 2019 на компьютере для разработки, выполните шаги, приведенные в статье [Изменение Visual Studio путем добавления или удаления рабочих нагрузок и компонентов](https://docs.microsoft.com/visualstudio/install/modify-visual-studio), чтобы добавить требуемые рабочие нагрузки.
+   * Если у вас уже есть Visual Studio 2019 на компьютере для разработки, выполните шаги, приведенные в статье [Изменение Visual Studio путем добавления или удаления рабочих нагрузок и компонентов](/visualstudio/install/modify-visual-studio), чтобы добавить требуемые рабочие нагрузки.
 
 2. Скачайте и установите расширение [Средства Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) для Visual Studio 2019.
 
@@ -181,17 +181,17 @@ ms.locfileid: "91449612"
 
 Каждый модуль может содержать несколько очередей *ввода* и *вывода*, объявленных в своем коде. Центр IoT Edge, работающий на устройстве, направляет сообщения из ввода одного модуля в вывод одного или нескольких модулей. Конкретный код для объявления входных и выходных данных варьируется в зависимости от языка, но принцип одинаков для всех модулей. Дополнительные сведения о маршрутизации между модулями см. в разделе [Объявление маршрутов](module-composition.md#declare-routes).
 
-В примере кода C#, который поставляется с шаблоном проекта, используется [класс ModuleClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet) из пакета SDK для Центра Интернета вещей для .NET.
+В примере кода C#, который поставляется с шаблоном проекта, используется [класс ModuleClient](/dotnet/api/microsoft.azure.devices.client.moduleclient) из пакета SDK для Центра Интернета вещей для .NET.
 
 1. В файле **program.cs** найдите метод **SetInputMessageHandlerAsync**.
 
-2. Метод [SetInputMessageHandlerAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient.setinputmessagehandlerasync?view=azure-dotnet) настраивает очередь ввода для получения входящих сообщений. Проверьте этот метод на инициализацию очереди ввода с названием **input1**.
+2. Метод [SetInputMessageHandlerAsync](/dotnet/api/microsoft.azure.devices.client.moduleclient.setinputmessagehandlerasync) настраивает очередь ввода для получения входящих сообщений. Проверьте этот метод на инициализацию очереди ввода с названием **input1**.
 
    ![Поиск входного имени в конструкторе SetInputMessageHandlserAsync](./media/tutorial-develop-for-windows/declare-input-queue.png)
 
 3. Затем найдите метод **SendEventAsync**.
 
-4. Метод [SendEventAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient.sendeventasync?view=azure-dotnet) обрабатывает полученные сообщения и настраивает очередь вывода, чтобы передать их вместе. Проверьте этот метод на инициализацию очереди вывода с названием **output1**.
+4. Метод [SendEventAsync](/dotnet/api/microsoft.azure.devices.client.moduleclient.sendeventasync) обрабатывает полученные сообщения и настраивает очередь вывода, чтобы передать их вместе. Проверьте этот метод на инициализацию очереди вывода с названием **output1**.
 
    ![Поиск выходного имени в конструкторе SendEventAsync](./media/tutorial-develop-for-windows/declare-output-queue.png)
 
