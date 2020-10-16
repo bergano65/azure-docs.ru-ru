@@ -168,6 +168,7 @@
         - name: Подготовка заданий и выполнение задач
           href: batch-job-prep-release.md
         - name: Параллельные задачи узла
+          displayName: concurrent
           href: batch-parallel-node-tasks.md
         - name: Зависимости задачи
           href: batch-task-dependencies.md

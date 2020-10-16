@@ -92,6 +92,10 @@
           href: vrealize-operations-for-azure-vmware-solution.md
         - name: Развертывание VMware Horizon
           href: azure-vmware-solution-horizon.md
+    - name: Экосистема VMware
+      items:
+        - name: Решения для резервного копирования виртуальных машин
+          href: ecosystem-back-up-vms.md
 - name: Ресурсы
   items:
     - name: Устранение неполадок

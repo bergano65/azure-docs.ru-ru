@@ -40,7 +40,7 @@
     - name: Подготовка экземпляра Azure Spring Cloud с помощью Terraform
       href: spring-cloud-tutorial-provision-azure-spring-cloud-instance-terraform.md
     - name: Использование CI/CD с Jenkins
-      href: /azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service
+      href: /azure/developer/jenkins/deploy-to-azure-spring-cloud-using-azure-cli
     - name: Использование управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
       href: spring-cloud-tutorial-managed-identities-key-vault.md
     - name: Развертывание Azure Spring Cloud в виртуальной сети
@@ -114,15 +114,15 @@
 - name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"
-      href: 'https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud'
+      href: /cli/azure/ext/spring-cloud/spring-cloud
     - name: Azure PowerShell
-      href: 'https://docs.microsoft.com/powershell/module/az.springcloud'
+      href: /powershell/module/az.springcloud
     - name: Ресурсы
       href: spring-cloud-resources.md
     - name: Часто задаваемые вопросы
       href: spring-cloud-faq.md
     - name: Справочник по REST API
-      href: 'https://docs.microsoft.com/rest/api/azurespringclould/'
+      href: /rest/api/azurespringclould/
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md

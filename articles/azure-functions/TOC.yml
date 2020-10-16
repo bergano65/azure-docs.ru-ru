@@ -494,7 +494,16 @@
               href: functions-bindings-signalr-service-output.md
               displayName: SignalR Service
         - name: Хранилище таблиц
-          href: functions-bindings-storage-table.md
+          items:
+            - name: Обзор
+              href: functions-bindings-storage-table.md
+              displayName: Table storage
+            - name: Входные данные
+              href: functions-bindings-storage-table-input.md
+              displayName: Table storage
+            - name: Выходные данные
+              href: functions-bindings-storage-table-output.md
+              displayName: Table storage
         - name: Таймер
           href: functions-bindings-timer.md
         - name: Twilio
