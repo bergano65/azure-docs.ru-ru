@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/15/2020
+ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: eca75ac4fefcf7164c247c4da4b58ccf7c03334c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 708ec35524f25314ca568944b738ba2cdf60d55c
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90564905"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132080"
 ---
 # <a name="define-an-id-token-hint-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля указания маркера идентификации в настраиваемой политике Azure Active Directory B2C
 
@@ -87,13 +87,13 @@ Id_token_hint должен быть допустимым маркером JWT. �
 | issuer | Да | Идентифицирует службу маркеров безопасности (поставщик маркеров). Это значение должно совпадать с `iss` утверждением в утверждении маркера JWT. | 
 | IdTokenAudience | Да | Определяет целевого получателя маркера. Должно быть идентично `aud` утверждению с утверждением маркера JWT. | 
 
-При использовании симметричного ключа важны следующие метаданные. 
+При использовании асимметричного ключа важны следующие метаданные. 
 
 | attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | METADATA| Да | URL-адрес, указывающий на документ конфигурации издателя маркера, который также называется OpenID Connect хорошо известной конечной точкой конфигурации.   |
 | issuer | Нет | Идентифицирует службу маркеров безопасности (поставщик маркеров). Это значение можно использовать для перезаписи значения, настроенного в метаданных, и должно совпадать с `iss` утверждением в утверждении токена JWT. |  
-| IdTokenAudience | Нет | Определяет целевого получателя маркера. Это значение можно использовать для перезаписи значения, настроенного в метаданных, и должно совпадать с `aud` утверждением в утверждении токена JWT. |  
+| IdTokenAudience | Нет | Определяет целевого получателя маркера. Должно быть идентично `aud` утверждению с утверждением маркера JWT. |  
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
@@ -219,7 +219,7 @@ New-SelfSignedCertificate `
       <Metadata>
         <!-- Replace with your endpoint location -->
         <Item Key="METADATA">https://your-app.azurewebsites.net/.well-known/openid-configuration</Item>
-        <!-- <Item Key="IdTokenAudience">your_optional_audience_override</Item> -->
+        <Item Key="IdTokenAudience">your_optional_audience</Item> -->
         <!-- <Item Key="issuer">your_optional_token_issuer_override</Item> -->
       </Metadata>
       <OutputClaims>
@@ -282,6 +282,6 @@ New-SelfSignedCertificate `
 https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/authorize?client_id=63ba0d17-c4ba-47fd-89e9-31b3c2734339&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login&id_token_hint=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6IiBKb2huIFNtaXRoIiwidXNlcklkIjoiam9obi5zQGNvbnRvc28uY29tIiwibmJmIjoxNTk5NDgyNTE1LCJleHAiOjE2MDAwODczMTUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0IiwiYXVkIjoiYTQ4OWZjNDQtM2NjMC00YTc4LTkyZjYtZTQxM2NkODUzZWFlIn0.nPmLXydI83PQCk5lRBYUZRu_aX58pL1khahHyQuupig
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Проверьте [регистрацию с помощью решения "пригласить электронное письмо](https://github.com/azure-ad-b2c/samples/blob/master/policies/invite/README.md) " в репозитории сообщества GitHub Azure AD B2C.

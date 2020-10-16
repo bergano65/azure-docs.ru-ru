@@ -6,16 +6,16 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/21/2020
+ms.date: 10/16/2020
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: 081d19cc845750f1392e2c1a14229a51d0df4cbc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1bb523c1b5aa595a714930962bbbe4e7e04de517
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91276473"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131400"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "91276473"
 При создании связанной службы в пользовательском интерфейсе фабрика данных предоставляет встроенные возможности параметризации для соединителей следующих типов. В колонке создание и изменение связанной службы можно найти параметры для новых параметров и добавить динамическое содержимое.
 
 - Amazon Redshift
+- Amazon S3
 - Azure Cosmos DB (API SQL)
 - База данных Azure для MySQL
 - База данных SQL Azure

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: cc49bec71f6c591ca3036592b0949e3fc7cef48e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 466851ce04a047f3edabcf33b45dba9cab0db20e
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91263782"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132709"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Общие сведения об агенте Azure Monitor (Предварительная версия)
 Агент Azure Monitor (АМА) собирает данные мониторинга из гостевой операционной системы виртуальных машин и доставляет их в Azure Monitor. В этой статье содержатся общие сведения об агенте Azure Monitor, включая инструкции по его установке и настройке сбора данных.
@@ -76,7 +76,7 @@ Azure Monitor агент сосуществовать с [общедоступн
 
 Агент Azure Monitor отправляет данные в метрики Azure Monitor или в Log Analytics рабочую область, поддерживающую журналы Azure Monitor.
 
-| источника данных | Назначения | Описание |
+| Источник данных | Назначения | Описание |
 |:---|:---|:---|
 | Производительность        | Метрики Azure Monitor<br>Рабочая область Log Analytics | Числовые значения, представляющие собой оценки производительности разных элементов операционной системы и рабочих нагрузок. |
 | Журналы событий Windows | Рабочая область Log Analytics | Информация, отправляемая системой ведения журналов событий Windows. |
@@ -84,7 +84,7 @@ Azure Monitor агент сосуществовать с [общедоступн
 
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
-Список версий операционных систем Windows и Linux, которые в настоящее время поддерживаются агентом Log Analytics, см. в разделе [Поддерживаемые операционные системы](agents-overview.md#supported-operating-systems) .
+Список версий операционных систем Windows и Linux, которые в настоящее время поддерживаются агентом Azure Monitor, см. в разделе [Поддерживаемые операционные системы](agents-overview.md#supported-operating-systems) .
 
 
 

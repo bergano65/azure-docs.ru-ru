@@ -10,18 +10,18 @@ ms.date: 08/26/2020
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 62a6bb807f01fd19a92c3dc4edf797171dd5ebc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8083d42d9ce79bcf31e3875f2ff5d5f06970a7ff
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91713411"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131519"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование PowerShell для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
 В этой статье показано, как использовать PowerShell для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими. 
 
-[Справочные материалы](https://docs.microsoft.com/powershell/module/Az.Storage/?view=azps-4.5.0)  |  Сопоставление Gen1 с [Gen2](#gen1-gen2-map)  |  [Отправить отзыв](https://github.com/Azure/azure-powershell/issues)
+[Справочные материалы](https://docs.microsoft.com/powershell/module/Az.Storage/)  |  Сопоставление Gen1 с [Gen2](#gen1-gen2-map)  |  [Отправить отзыв](https://github.com/Azure/azure-powershell/issues)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,7 +39,7 @@ ms.locfileid: "91713411"
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) .
+   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) .
     
 2. Установите **AZ. Storage** Module.
 
@@ -47,7 +47,7 @@ ms.locfileid: "91713411"
    Install-Module Az.Storage -Repository PSGallery -Force  
    ```
 
-   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0) .
+   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) .
 
 ## <a name="connect-to-the-account"></a>Подключение к учетной записи
 
@@ -266,9 +266,9 @@ Remove-AzDataLakeGen2Item  -Context $ctx -FileSystem $filesystemName -Path $file
 
 С помощью параметра можно `-Force` удалить файл без запроса.
 
-## <a name="manage-access-permissions"></a>Управление разрешениями на доступ
+## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
 
-Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам. Эти разрешения фиксируются в списках управления доступом (ACL).
+Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам.
 
 > [!NOTE]
 > Если вы используете Azure Active Directory для авторизации команд, убедитесь, что субъекту безопасности назначена [роль владельца данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).

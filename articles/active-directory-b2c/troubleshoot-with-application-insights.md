@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 10/12/2020
+ms.date: 10/16/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ddc0dc433a5d8c09c692e6304647fb391694e8c8
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 1628d78c9d1e4db1f59982d696dcc886646fe604
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993175"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132063"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
@@ -26,7 +26,7 @@ ms.locfileid: "91993175"
 Подробные журналы действий, описанные здесь, должны быть включены **только** во время разработки пользовательских политик.
 
 > [!WARNING]
-> Не включайте режим разработки в рабочей среде. Журналы собираются все утверждения, отправленные поставщикам удостоверений и от них. Разработчик несет ответственность за любые персональные данные, собранные в журналах Application Insights. Эти подробные журналы собираются только в том случае, если политика помещается в **режим разработчика**.
+> Не устанавливайте параметр `DeploymentMode` в `Developer` в рабочей среде. Журналы собираются все утверждения, отправленные поставщикам удостоверений и от них. Разработчик несет ответственность за любые персональные данные, собранные в журналах Application Insights. Эти подробные журналы собираются только в том случае, если политика помещается в **режим разработчика**.
 
 ## <a name="set-up-application-insights"></a>Настройка Application Insights
 
@@ -58,7 +58,7 @@ ms.locfileid: "91993175"
     <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
     ```
 
-    * `DeveloperMode="true"` сообщает ApplicationInsights, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Подходит для разработки, но ограничена большими объемами томов.
+    * `DeveloperMode="true"` сообщает ApplicationInsights, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Подходит для разработки, но ограничена большими объемами томов. В рабочей среде присвойте свойству значение `DeveloperMode` `false` .
     * `ClientEnabled="true"` отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. При установке `ClientEnabled= "true"` вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и СБОЯХ AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по `false` умолчанию имеет значение.
     * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
 
@@ -102,6 +102,31 @@ ms.locfileid: "91993175"
 Записи могут быть длинными. Выполните экспорт в CSV-файл, чтобы изучить их подробнее.
 
 Дополнительные сведения о запросах см. [в разделе Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+
+## <a name="configure-application-insights-in-production"></a>Настройка Application Insights в рабочей среде
+
+Чтобы повысить производительность рабочей среды и улучшить взаимодействие с пользователем, важно настроить политику так, чтобы она игнорировала неважные сообщения. Используйте следующую конфигурацию для отправки в Application Insights только критических сообщений об ошибках. 
+
+1. Установите `DeploymentMode` атрибут [TrustFrameworkPolicy](trustframeworkpolicy.md) в значение `Production` . 
+
+   ```xml
+   <TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0"
+   TenantId="yourtenant.onmicrosoft.com"
+   PolicyId="B2C_1A_signup_signin"
+   PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_signup_signin"
+   DeploymentMode="Production"
+   UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights">
+   ```
+
+1. Задайте `DeveloperMode` для параметра [жаурнэйинсигхтс](relyingparty.md#journeyinsights) значение `false` .
+
+   ```xml
+   <UserJourneyBehaviors>
+     <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="false" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
+   </UserJourneyBehaviors>
+   ```
+   
+1. Отправьте и протестируйте политику.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

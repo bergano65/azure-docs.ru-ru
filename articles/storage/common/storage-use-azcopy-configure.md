@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 9742f97832c1fc931a1679132e262f92c9f11225
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a54c77844498beb4fd052153cbcf8cbe498cdb75
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037190"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92132216"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configure, optimize, and troubleshoot AzCopy (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -21,9 +21,9 @@ AzCopy — это служебная программа командной ст
 
 > [!NOTE]
 > Если вы ищете содержимое, которое поможет приступить к работе с AzCopy, ознакомьтесь со следующими статьями:
-> - [Начало работы с AzCopy](storage-use-azcopy-v10.md)
+> - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 > - [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
-> - [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
+> - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 > - [Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)
 
 ## <a name="configure-proxy-settings"></a>Настройка параметров прокси

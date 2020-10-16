@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 9/15/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e53a7f5e76a6161016cbbb6b3566de4cad923f6a
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: ba19b7255be5ae24b3c4475f4195b84441b6c777
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048055"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131502"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>Прием данных телеметрии центра Интернета вещей в Azure Digital двойников
 
@@ -242,7 +242,7 @@ namespace IotHubtoTwins
 
 ## <a name="send-simulated-iot-data"></a>Отправка смоделированных данных IoT
 
-Чтобы протестировать новую функцию, используйте симулятор устройств из руководства по [*подключению комплексного решения*](./tutorial-end-to-end.md). Этот учебник основан на примере проекта, написанного на языке C#. Пример кода расположен здесь: [примеры цифровых двойников Azure](/samples/azure-samples/digital-twins-samples/digital-twins-samples). Вы будете использовать проект **девицесимулатор** в этом репозитории.
+Чтобы протестировать новую функцию, используйте симулятор устройств из руководства по [*подключению комплексного решения*](./tutorial-end-to-end.md). Этот учебник основан на примере проекта, написанного на языке C#. Пример кода расположен здесь: [Azure Digital двойников Samples](/samples/azure-samples/digital-twins-samples/digital-twins-samples). Вы будете использовать проект **девицесимулатор** в этом репозитории.
 
 В сквозном руководстве выполните следующие действия.
 1. [*Регистрация имитированного устройства в Центре Интернета вещей*](./tutorial-end-to-end.md#register-the-simulated-device-with-iot-hub)

@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: ant
 ms.topic: conceptual
-ms.openlocfilehash: 6fa959b1c9ed021a97031ba03822ae89fbbb7bbb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 483d261a8cc107d01cfb7a405eac43667d7efcc6
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82983080"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131842"
 ---
 # <a name="troubleshoot-web-application-firewall-waf-for-azure-application-gateway"></a>Устранение неполадок брандмауэра веб-приложения (WAF) для шлюза приложений Azure
 
@@ -174,7 +174,7 @@ ms.locfileid: "82983080"
 
 В этом примере видно, что поле, в котором была введена строка *1 = 1* , называется **Text1**.
 
-![Fiddler](../media/web-application-firewall-troubleshoot/fiddler-1.png)
+:::image type="content" source="../media/web-application-firewall-troubleshoot/fiddler-1.png" alt-text="Снимок экрана с веб-отладчиком Progress Telerik Fiddler. На вкладке необработанное значение 1 = 1 отображается после имени Text1." border="false":::
 
 Это поле, которое можно исключить. Дополнительные сведения о списках исключений см. в статье [ограничения размера запроса брандмауэра веб-приложения и списки исключений](application-gateway-waf-configuration.md#waf-exclusion-lists). Вы можете исключить оценку в этом случае, настроив следующие исключения:
 
@@ -299,7 +299,7 @@ ms.locfileid: "82983080"
 
 Fiddler — это удобное средство для поиска имен заголовков запросов. На следующем снимке экрана показаны заголовки для этого запроса GET, которые включают *тип содержимого*, *Агент пользователя*и т. д.
 
-![Fiddler](../media/web-application-firewall-troubleshoot/fiddler-2.png)
+:::image type="content" source="../media/web-application-firewall-troubleshoot/fiddler-2.png" alt-text="Снимок экрана с веб-отладчиком Progress Telerik Fiddler. На вкладке RAW перечислены сведения заголовка запроса, такие как соединение, тип содержимого и агент пользователя." border="false":::
 
 Другим способом просмотра заголовков запросов и ответов является поиск в средствах разработчика Chrome. Можно нажать клавишу F12 или щелкнуть правой кнопкой мыши > **проверить**  ->  **средства для разработчиков**и выбрать вкладку **сеть** . Загрузите веб-страницу и щелкните запрос, который требуется проверить.
 

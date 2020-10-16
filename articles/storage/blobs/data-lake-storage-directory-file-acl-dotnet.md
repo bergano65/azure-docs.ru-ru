@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6533809be614210a88bfa605e24209d094bb679d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b0a7dd87caca227f96a0df8ca84634355d18021
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019306"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131587"
 ---
 # <a name="use-net-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование .NET для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -172,42 +172,6 @@ public void DeleteDirectory(DataLakeFileSystemClient fileSystemClient)
 }
 ```
 
-## <a name="manage-a-directory-acl"></a>Управление ACL каталога
-
-Получите список управления доступом (ACL) каталога, вызвав метод [даталакедиректориклиент. жетакцессконтроласинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakedirectoryclient.getaccesscontrolasync) и ЗАДАВ список ACL, вызвав метод [даталакедиректориклиент. сетакцессконтроллист](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakedirectoryclient.setaccesscontrollist) .
-
-> [!NOTE]
-> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
-
-Этот пример возвращает и задает список ACL для каталога с именем `my-directory` . Эта строка `user::rwx,group::r-x,other::rw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
-
-```cs
-public async Task ManageDirectoryACLs(DataLakeFileSystemClient fileSystemClient)
-{
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.GetDirectoryClient("my-directory");
-
-    PathAccessControl directoryAccessControl =
-        await directoryClient.GetAccessControlAsync();
-
-    foreach (var item in directoryAccessControl.AccessControlList)
-    {
-        Console.WriteLine(item.ToString());
-    }
-
-
-    IList<PathAccessControlItem> accessControlList
-        = PathAccessControlExtensions.ParseAccessControlList
-        ("user::rwx,group::r-x,other::rw-");
-
-    directoryClient.SetAccessControlList(accessControlList);
-
-}
-
-```
-
-Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, передайте в `""` метод [Даталакефилесистемклиент. жетдиректориклиент](/dotnet/api/azure.storage.files.datalake.datalakefilesystemclient.getdirectoryclient) пустую строку ().
-
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог
 
 Сначала создайте ссылку на файл в целевом каталоге, создав экземпляр класса [даталакефилеклиент](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient) . Отправьте файл, вызвав метод [даталакефилеклиент. аппендасинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.appendasync) . Обязательно завершите передачу, вызвав метод [даталакефилеклиент. FlushAsync](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.flushasync) .
@@ -235,13 +199,13 @@ public async Task UploadFile(DataLakeFileSystemClient fileSystemClient)
 ```
 
 > [!TIP]
-> Если размер файла большой, код должен выполнить несколько вызовов [даталакефилеклиент. аппендасинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.appendasync). Вместо этого рекомендуется использовать метод [даталакефилеклиент. UploadAsync](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.uploadasync?view=azure-dotnet#Azure_Storage_Files_DataLake_DataLakeFileClient_UploadAsync_System_IO_Stream_) . Таким образом, вы можете передать весь файл в одном вызове. 
+> Если размер файла большой, код должен выполнить несколько вызовов [даталакефилеклиент. аппендасинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.appendasync). Вместо этого рекомендуется использовать метод [даталакефилеклиент. UploadAsync](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.uploadasync#Azure_Storage_Files_DataLake_DataLakeFileClient_UploadAsync_System_IO_Stream_) . Таким образом, вы можете передать весь файл в одном вызове. 
 >
 > Пример см. в следующем разделе.
 
 ## <a name="upload-a-large-file-to-a-directory"></a>Отправка большого файла в каталог
 
-Используйте метод [даталакефилеклиент. UploadAsync](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.uploadasync?view=azure-dotnet#Azure_Storage_Files_DataLake_DataLakeFileClient_UploadAsync_System_IO_Stream_) для отправки больших файлов без выполнения нескольких вызовов к методу [даталакефилеклиент. аппендасинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.appendasync) .
+Используйте метод [даталакефилеклиент. UploadAsync](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.uploadasync#Azure_Storage_Files_DataLake_DataLakeFileClient_UploadAsync_System_IO_Stream_) для отправки больших файлов без выполнения нескольких вызовов к методу [даталакефилеклиент. аппендасинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.appendasync) .
 
 ```cs
 public async Task UploadFileBulk(DataLakeFileSystemClient fileSystemClient)
@@ -258,40 +222,6 @@ public async Task UploadFileBulk(DataLakeFileSystemClient fileSystemClient)
 
 }
 
-```
-
-## <a name="manage-a-file-acl"></a>Управление ACL файла
-
-Получите список управления доступом (ACL) файла, вызвав метод [даталакефилеклиент. жетакцессконтроласинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.getaccesscontrolasync) и ЗАДАВ список ACL, вызвав метод [даталакефилеклиент. сетакцессконтроллист](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.setaccesscontrollist) .
-
-> [!NOTE]
-> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
-
-Этот пример возвращает и задает список управления доступом для файла с именем `my-file.txt` . Эта строка `user::rwx,group::r-x,other::rw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
-
-```cs
-public async Task ManageFileACLs(DataLakeFileSystemClient fileSystemClient)
-{
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.GetDirectoryClient("my-directory");
-
-    DataLakeFileClient fileClient = 
-        directoryClient.GetFileClient("hello.txt");
-
-    PathAccessControl FileAccessControl =
-        await fileClient.GetAccessControlAsync();
-
-    foreach (var item in FileAccessControl.AccessControlList)
-    {
-        Console.WriteLine(item.ToString());
-    }
-
-    IList<PathAccessControlItem> accessControlList
-        = PathAccessControlExtensions.ParseAccessControlList
-        ("user::rwx,group::r-x,other::rw-");
-
-    fileClient.SetAccessControlList(accessControlList);
-}
 ```
 
 ## <a name="download-from-a-directory"></a>Скачивание из каталога 
@@ -364,11 +294,88 @@ public async Task ListFilesInDirectory(DataLakeFileSystemClient fileSystemClient
 }
 ```
 
-## <a name="set-an-acl-recursively-preview"></a>Рекурсивное задание списка ACL (Предварительная версия)
+## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
+
+Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам.
+
+> [!NOTE]
+> Если вы используете Azure Active Directory (Azure AD) для авторизации доступа, убедитесь, что участнику безопасности назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
+
+### <a name="manage-a-directory-acl"></a>Управление ACL каталога
+
+Получите список управления доступом (ACL) каталога, вызвав метод [даталакедиректориклиент. жетакцессконтроласинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakedirectoryclient.getaccesscontrolasync) и ЗАДАВ список ACL, вызвав метод [даталакедиректориклиент. сетакцессконтроллист](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakedirectoryclient.setaccesscontrollist) .
+
+> [!NOTE]
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+
+Этот пример возвращает и задает список ACL для каталога с именем `my-directory` . Эта строка `user::rwx,group::r-x,other::rw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
+
+```cs
+public async Task ManageDirectoryACLs(DataLakeFileSystemClient fileSystemClient)
+{
+    DataLakeDirectoryClient directoryClient =
+        fileSystemClient.GetDirectoryClient("my-directory");
+
+    PathAccessControl directoryAccessControl =
+        await directoryClient.GetAccessControlAsync();
+
+    foreach (var item in directoryAccessControl.AccessControlList)
+    {
+        Console.WriteLine(item.ToString());
+    }
+
+
+    IList<PathAccessControlItem> accessControlList
+        = PathAccessControlExtensions.ParseAccessControlList
+        ("user::rwx,group::r-x,other::rw-");
+
+    directoryClient.SetAccessControlList(accessControlList);
+
+}
+
+```
+
+Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, передайте в `""` метод [Даталакефилесистемклиент. жетдиректориклиент](/dotnet/api/azure.storage.files.datalake.datalakefilesystemclient.getdirectoryclient) пустую строку ().
+
+### <a name="manage-a-file-acl"></a>Управление ACL файла
+
+Получите список управления доступом (ACL) файла, вызвав метод [даталакефилеклиент. жетакцессконтроласинк](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.getaccesscontrolasync) и ЗАДАВ список ACL, вызвав метод [даталакефилеклиент. сетакцессконтроллист](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake.datalakefileclient.setaccesscontrollist) .
+
+> [!NOTE]
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+
+Этот пример возвращает и задает список управления доступом для файла с именем `my-file.txt` . Эта строка `user::rwx,group::r-x,other::rw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляя группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
+
+```cs
+public async Task ManageFileACLs(DataLakeFileSystemClient fileSystemClient)
+{
+    DataLakeDirectoryClient directoryClient =
+        fileSystemClient.GetDirectoryClient("my-directory");
+
+    DataLakeFileClient fileClient = 
+        directoryClient.GetFileClient("hello.txt");
+
+    PathAccessControl FileAccessControl =
+        await fileClient.GetAccessControlAsync();
+
+    foreach (var item in FileAccessControl.AccessControlList)
+    {
+        Console.WriteLine(item.ToString());
+    }
+
+    IList<PathAccessControlItem> accessControlList
+        = PathAccessControlExtensions.ParseAccessControlList
+        ("user::rwx,group::r-x,other::rw-");
+
+    fileClient.SetAccessControlList(accessControlList);
+}
+```
+
+### <a name="set-an-acl-recursively-preview"></a>Рекурсивное задание списка ACL (Предварительная версия)
 
 Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочная документация по API](https://docs.microsoft.com/dotnet/api/azure.storage.files.datalake)
 * [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files.DataLake)

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 4ef53b2249f8ce57255c13126c9310f1c889d64f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94a84220b276edf8eaf539151964715675693dec
+ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855061"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92131383"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -46,9 +46,9 @@ Data Lake Storage 2-го поколения использует модель у
 
 RBAC использует назначения ролей для эффективного применения наборов разрешений для пользователей, групп и субъектов-служб для ресурсов Azure. Как правило, ресурсы Azure ограничены ресурсами верхнего уровня (например, учетными записями хранилища BLOB-объектов Azure). Для хранилища BLOB-объектов Azure, а также Data Lake Storage 2-го поколения этот механизм был расширен до ресурса файловой системы.
 
-Дополнительные сведения о разрешениях для файлов с помощью RBAC см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../storage/blobs/data-lake-storage-access-control.md#azure-role-based-access-control-rbac).
+Дополнительные сведения о разрешениях для файлов с помощью RBAC см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control).
 
-Дополнительные сведения о разрешениях для файлов с помощью ACL см. [в разделе списки управления доступом к файлам и каталогам](../storage/blobs/data-lake-storage-access-control.md#access-control-lists-on-files-and-directories).
+Дополнительные сведения о разрешениях для файлов с помощью ACL см. [в разделе списки управления доступом к файлам и каталогам](../storage/blobs/data-lake-storage-access-control.md).
 
 ### <a name="how-do-i-control-access-to-my-data-in-data-lake-storage-gen2"></a>Разделы справки управлять доступом к моим данным в Data Lake Storage 2-го поколения?
 
@@ -141,7 +141,7 @@ LOCATION 'abfs:///example/data/';
 LOCATION '/example/data/';
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure HDInsight integration with Data Lake Storage Gen2 preview - ACL and security update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/) (Интеграция Azure HDInsight с Data Lake Storage 2-го поколения (предварительная версия) — обновление списка управления доступом и системы безопасности)
 * [Общие сведения об Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)
