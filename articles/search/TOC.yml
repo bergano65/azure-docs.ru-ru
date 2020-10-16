@@ -116,7 +116,7 @@
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
-        - name: Защита ресурсов индексатора
+        - name: Доступ к защищенному содержимому
           href: search-indexer-securing-resources.md
         - name: Базовые средства безопасности
           href: security-baseline.md

@@ -21,7 +21,7 @@
           href: quick-create-template.md
 - name: Основные понятия
   items:
-    - name: Предоставление общего доступа с управлением доступом на основе ролей
+    - name: Предоставление общего доступа с использованием управления доступом на основе ролей Azure
       href: azure-portal-dashboard-share-access.md
     - name: Создание панелей мониторинга Azure программными средствами
       href: azure-portal-dashboards-create-programmatically.md

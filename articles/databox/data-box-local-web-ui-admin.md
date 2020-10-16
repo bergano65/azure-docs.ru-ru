@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 09/23/2020
 ms.author: alkohli
-ms.openlocfilehash: 8455fafe9ce2465df450e9556e8b2442b01e4e23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f4f9f65b562b01466aec69cd541ea77f443f803
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449696"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127530"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Использование локального веб-интерфейса для администрирования Data Box и Data Box Heavy
 
@@ -206,7 +206,7 @@ ms.locfileid: "91449696"
 
 Пользователи пользовательского веб-интерфейса имеют права оператора резервного копирования в общих ресурсах SMB по умолчанию. Если это не требуется, используйте **права доступа оператора "включить оператор** ", чтобы отключить или включить привилегии.
 
-Дополнительные сведения см. в разделе операторы резервного копирования в [Active Directory группах безопасности](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-security-groups#backup-operators).
+Дополнительные сведения см. в разделе операторы резервного копирования в [Active Directory группах безопасности](/windows/security/identity-protection/access-control/active-directory-security-groups#backup-operators).
 
 Чтобы включить права оператора резервного копирования на устройстве Azure, сделайте следующее:
 

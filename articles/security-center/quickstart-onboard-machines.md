@@ -7,23 +7,26 @@ ms.date: 10/01/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: df780e4e55bb5c119320d4b33502d50a95da1eaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+zone_pivot_groups: non-azure-machines
+ms.openlocfilehash: bf31c2d4a90abeec62d785d0294a9c50f3b675ab
+ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612223"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91993617"
 ---
 #  <a name="connect-your-non-azure-machines-to-security-center"></a>Подключение компьютеров, не связанных с Azure, к Центру безопасности
 
-Центр безопасности может отслеживать состояние безопасности компьютеров, не относящихся к Azure. Однако сначала необходимо подключить эти ресурсы. 
+Центр безопасности может отслеживать состояние безопасности компьютеров, не относящихся к Azure, но сначала их необходимо подключить к Azure. 
 
-Добавить компьютеры, не относящиеся к Azure, можно одним из следующих способов:
+Подключить компьютеры, не относящиеся к Azure, можно одним из следующих способов:
 
 - с помощью Azure Arc (**рекомендуется**);
 - на страницах Центра безопасности на портале Azure (элементы **Начало работы** и **Учет**).
 
-Каждый из этих способов описан ниже.
+Каждый из этих способов описан на этой странице.
+
+::: zone pivot="azure-arc"
 
 ## <a name="add-non-azure-machines-with-azure-arc"></a>Добавление компьютеров, не связанных с Azure, с помощью Azure Arc
 
@@ -43,7 +46,11 @@ ms.locfileid: "91612223"
 > [!TIP]
 > Если вы подключите компьютеры AWS, соединитель Центра безопасности для AWS прозрачно обработает развертывание Azure Arc. Дополнительные сведения см. в статье [Подключение учетных записей AWS к Центру безопасности Azure](quickstart-onboard-aws.md).
 
-## <a name="add-non-azure-machines-from-security-centers-portal-pages"></a>Добавление компьютеров, не относящихся к Azure, на страницах Центра безопасности на портале
+::: zone-end
+
+::: zone pivot="azure-portal"
+
+## <a name="add-non-azure-machines-from-the-azure-portal"></a>Добавление компьютеров, не относящихся к Azure, на портале Azure
 
 1. В меню Центра безопасности откройте страницу **Начало работы**.
 1. Выберите вкладку **Начало работы**.
@@ -114,6 +121,7 @@ ms.locfileid: "91612223"
 
 Дополнительные сведения об установке и настройке агента см. в разделе о [подключении компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard).
 
+::: zone-end
 
 ## <a name="verifying"></a>Проверка
 Поздравляем! Теперь ваши компьютеры Azure и другие компьютеры отображаются в одном расположении. Откройте страницу [инвентаризации ресурсов](asset-inventory.md) и отфильтруйте соответствующие типы ресурсов. Типы можно различить с помощью значков:

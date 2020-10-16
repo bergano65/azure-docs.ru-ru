@@ -7,24 +7,24 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d8a1b2192784c26ed17b31be262b22efbf935d84
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36d3fdbe05a4fac63415e34aea879a9ef576b725
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89225610"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127103"
 ---
 # <a name="azure-security-baseline-for-azure-data-box"></a>Базовый план безопасности Azure для Azure Data Box
 
 Базовый план безопасности Azure для Azure Data Box содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
@@ -70,9 +70,9 @@ ms.locfileid: "89225610"
 
 **Руководство**. рекомендации. конечные точки, используемые Azure Data Box, управляются корпорацией Майкрософт. Вы несете ответственность за любые дополнительные элементы управления, которые вы хотите развернуть в локальных системах.
 
-* [Общие сведения о безопасности Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-security)
+* [Общие сведения о безопасности Azure Data Box](./data-box-security.md)
 
-* [Сведения о порте для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-system-requirements#port-requirements)
+* [Сведения о порте для Azure Data Box](./data-box-system-requirements.md#port-requirements)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -120,7 +120,7 @@ ms.locfileid: "89225610"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
@@ -134,7 +134,7 @@ ms.locfileid: "89225610"
 
 **Рекомендации**. соответствующие каждому шагу в заказе Data Box, можно выполнить несколько действий по управлению доступом к заказу, аудиту событий, отслеживанию порядка и интерпретации различных формируемых журналов.
 
-* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-logs)
+* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](./data-box-logs.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -144,7 +144,7 @@ ms.locfileid: "89225610"
 
 **Рекомендации**. соответствующие каждому шагу в заказе Data Box, можно выполнить несколько действий по управлению доступом к заказу, аудиту событий, отслеживанию порядка и интерпретации различных формируемых журналов.
 
-* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-logs)
+* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](./data-box-logs.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -170,7 +170,7 @@ ms.locfileid: "89225610"
 
 **Рекомендации**. соответствующие каждому шагу в заказе Data Box, можно выполнить несколько действий по управлению доступом к заказу, аудиту событий, отслеживанию порядка и интерпретации различных формируемых журналов.
 
-* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-logs)
+* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](./data-box-logs.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -180,7 +180,7 @@ ms.locfileid: "89225610"
 
 **Рекомендации**. соответствующие каждому шагу в заказе Data Box, можно выполнить несколько действий по управлению доступом к заказу, аудиту событий, отслеживанию порядка и интерпретации различных формируемых журналов.
 
-* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-logs)
+* [Общие сведения о мониторинге и ведении журнала событий для Azure Data Box](./data-box-logs.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -212,17 +212,17 @@ ms.locfileid: "89225610"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
 **Руководство**. поддержание инвентаризации учетных записей пользователей, имеющих административный доступ к вашей Azure Data Box. Вы можете использовать область управления доступом и удостоверениями (IAM) в портал Azure для подписки, чтобы настроить управление доступом на основе ролей Azure (Azure RBAC). Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory. Вы можете контролировать, кто имеет доступ к вашему заказу при первом создании заказа. Настройте роли Azure в различных областях для управления доступом к Data Boxму заказу. Роль Azure определяет тип доступа — доступ для чтения и записи, доступный только для чтения и для чтения и записи в подмножестве операций.
 
-* [Общие сведения о пользовательских ролях](https://docs.microsoft.com/azure/role-based-access-control/custom-roles)
+* [Общие сведения о пользовательских ролях](../role-based-access-control/custom-roles.md)
 
-* [Настройка Azure RBAC для книг](https://docs.microsoft.com/azure/sentinel/quickstart-get-visibility)
+* [Настройка Azure RBAC для книг](../sentinel/quickstart-get-visibility.md)
 
-* [Узнайте, как настроить контроль доступа в заказе.](https://docs.microsoft.com/azure/databox/data-box-logs#set-up-access-control-on-the-order)
+* [Узнайте, как настроить контроль доступа в заказе.](./data-box-logs.md#set-up-access-control-on-the-order)
 
 **Мониторинг центра безопасности Azure**: нет
 
@@ -245,9 +245,9 @@ ms.locfileid: "89225610"
 - Устаревшие учетные записи с разрешениями владельца следует удалять из подписки.
 - Внешние учетные записи с разрешениями владельца следует удалять из подписки.
 
-* [Использование Центра безопасности Azure для мониторинга идентификации и доступа (предварительная версия)](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Использование Центра безопасности Azure для мониторинга идентификации и доступа (предварительная версия)](../security-center/security-center-identity-access.md)
 
-* [Использование Политики Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Использование Политики Azure](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -273,9 +273,9 @@ ms.locfileid: "89225610"
 
 **Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации Azure (MFA) для входа и настройки заказов на Azure Data Box.
 
-* [Рабочие станции c привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [Планирование развертывания облачной службы Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Планирование развертывания облачной службы Многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -287,9 +287,9 @@ ms.locfileid: "89225610"
 
 Кроме того, используйте обнаружение рисков Azure AD для просмотра оповещений и отчетов об опасном поведении пользователя.
 
-* [Развертывание Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+* [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-* [Общие сведения об обнаружении рисков в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+* [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -299,7 +299,7 @@ ms.locfileid: "89225610"
 
 **Руководство**. Используйте именованные расположения с условным доступом, чтобы разрешить доступ к порталу Azure только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-* [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -309,7 +309,7 @@ ms.locfileid: "89225610"
 
 **Руководство**. Используйте Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации, где это применимо. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -321,9 +321,9 @@ ms.locfileid: "89225610"
 
 Для Data Box устройства это не поддерживается в режиме реального времени. Журналы можно просматривать в конце задания.
 
-* [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+* [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-* [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -339,9 +339,9 @@ ms.locfileid: "89225610"
 
 Azure Data Box журналы служб не записываются в Log Analytics рабочую область.
 
-* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -351,11 +351,11 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Руководство**. для учетной записи отклонения в поведении имени входа в плоскости управления (например, портал Azure) используйте функции обнаружения Защита идентификации Azure AD и риска, чтобы настроить автоматические ответы на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
 
-* [Как просмотреть рискованный вход в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+* [Как просмотреть рискованный вход в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+* [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -365,7 +365,7 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Рекомендации**: защищенное хранилище в настоящее время не поддерживается для Azure Data Box.
 
-* [Список поддерживаемых служб защищенного хранилища](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+* [Список поддерживаемых служб защищенного хранилища](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -373,7 +373,7 @@ Azure Data Box журналы служб не записываются в Log An
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
@@ -389,7 +389,7 @@ Azure Data Box журналы служб не записываются в Log An
 
 Во время передачи данных в Azure устройство Data Box и служба, используемая для передачи данных, изолируются.
 
-* [Как приступить к работе с Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-quickstart-portal)
+* [Как приступить к работе с Azure Data Box](./data-box-quickstart-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -399,7 +399,7 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Руководство**. Корпорация Майкрософт управляет базовой инфраструктурой для Azure Data Box и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента. Если Data Box находится на сайте клиента, следуйте рекомендациям по обеспечению защиты конфиденциальных данных.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -409,9 +409,9 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Руководство**. Корпорация Майкрософт управляет базовой инфраструктурой для Azure Data Box и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента. Если Data Box находится на сайте клиента, следуйте рекомендациям по обеспечению защиты конфиденциальных данных.
 
-* [Общие сведения о переносе данных в Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-faq)
+* [Общие сведения о переносе данных в Azure Data Box](./data-box-faq.md)
 
-* [Общие сведения о безопасности Data Box](https://docs.microsoft.com/azure/databox/data-box-security)
+* [Общие сведения о безопасности Data Box](./data-box-security.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -421,7 +421,7 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Руководство**: Сейчас недоступно; функции защиты идентификации, классификации и предотвращения потери данных еще не доступны для Azure Data Box. Корпорация Майкрософт управляет базовой инфраструктурой для Azure Data Box и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -431,9 +431,9 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Руководство**. Убедитесь, что у вас есть права владельца или участника подписки на создание Data Box заказа. Можно также определить Data Box читатель и Data Box роли участников на уровне ресурса.
 
-* [Узнайте, как приступить к работе с Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-quickstart-portal)
+* [Узнайте, как приступить к работе с Azure Data Box](./data-box-quickstart-portal.md)
 
-* [Сведения о настройке контроля доступа](https://docs.microsoft.com/azure/databox/data-box-logs#set-up-access-control-on-the-order)
+* [Сведения о настройке контроля доступа](./data-box-logs.md#set-up-access-control-on-the-order)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -443,7 +443,7 @@ Azure Data Box журналы служб не записываются в Log An
 
 **Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов. Майкрософт управляет базовой инфраструктурой для Azure Data Box и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Защита данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Защита данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -455,9 +455,9 @@ Azure Data Box журналы служб не записываются в Log An
 
 Azure Data Box реализует шифрование AES 256-bit для неактивных данных. Кроме того, Azure Data Box защищает ключ разблокировки устройства (также называемый паролем устройства), который используется для блокировки устройства с помощью ключа шифрования. По умолчанию ключ разблокировки устройства для заказа Data Box шифруется с помощью управляемого корпорацией Майкрософт ключа. Для дополнительного контроля над ключом разблокировки устройства можно также предоставить ключ, управляемый клиентом. Управляемые клиентом ключи должны быть созданы и сохранены в Azure Key Vault.
 
-* [Общие сведения о защите данных Data Box](https://docs.microsoft.com/azure/databox/data-box-security)
+* [Общие сведения о защите данных Data Box](./data-box-security.md)
 
-* [Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-customer-managed-encryption-key-portal)
+* [Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box](./data-box-customer-managed-encryption-key-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -467,7 +467,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются для Azure Data Box, а также для других важных или связанных ресурсов.
 
-* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -475,7 +475,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
@@ -519,7 +519,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
@@ -605,7 +605,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. Настройте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure".
 
-* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -629,7 +629,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
@@ -715,7 +715,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. ключи, управляемые клиентом, должны быть созданы и сохранены в Azure Key Vault.
 
-* [Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-customer-managed-encryption-key-portal)
+* [Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box](./data-box-customer-managed-encryption-key-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -725,7 +725,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**: неприменимо; Azure Data Box не использует управляемые удостоверения.
 
-* [Службы Azure, поддерживающие управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)
+* [Службы Azure, поддерживающие управляемые удостоверения](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -743,7 +743,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -773,7 +773,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
@@ -809,7 +809,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
@@ -831,9 +831,9 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 Кроме того, четко помечайте подписки тегами (например, рабочие, нерабочие) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure, особенно обрабатывающие конфиденциальные данные. Вы несете ответственность за назначение приоритета оповещениям, требующим действий по исправлению, в зависимости от важности ресурсов Azure и среды, в которой произошел инцидент.
 
-* [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+* [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-* [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -853,7 +853,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-* [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -863,9 +863,9 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. Экспортируйте оповещения и рекомендации Центра безопасности Azure с помощью функции непрерывного экспорта с целью выявления рисков для ресурсов Azure. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-* [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+* [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
-* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -875,7 +875,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. Использование функции автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях системы безопасности и рекомендациях по защите ресурсов Azure.
 
-* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -883,7 +883,7 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -899,5 +899,5 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

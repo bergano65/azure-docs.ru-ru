@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 6807f3d4ef0596b4dbb51f6bc8c0348901e78d0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2969c963b491e4b08a0959d548e43ba11276d28a
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91439945"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92126555"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mysql"></a>Подключение SSL/TLS в базе данных Azure для MySQL
 
@@ -20,8 +20,11 @@ ms.locfileid: "91439945"
 > [!NOTE]
 > Обновление `require_secure_transport` значения параметра сервера не влияет на поведение службы MySQL. Используйте функции принудительного применения SSL и TLS, описанные в этой статье, для защиты подключений к базе данных.
 
+>[!NOTE]
+> Основываясь на отзывах клиентов, мы расширили устаревший корневой сертификат для нашего существующего корневого ЦС Baltimore до 15 февраля 2021 (02/15/2021).
+
 > [!IMPORTANT] 
-> Срок действия корневого сертификата SSL истекает, начиная с октября 26th, 2020 (10/26/2020). Обновите приложение, чтобы использовать [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem). Дополнительные сведения см. в разделе [запланированные обновления сертификатов](concepts-certificate-rotation.md) .
+> Срок действия корневого сертификата SSL истекает 15 февраля 2021 (02/15/2021). Обновите приложение, чтобы использовать [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem). Дополнительные сведения см. в разделе [запланированные обновления сертификатов](concepts-certificate-rotation.md) .
 
 ## <a name="ssl-default-settings"></a>Параметры SSL по умолчанию
 

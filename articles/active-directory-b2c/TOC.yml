@@ -180,7 +180,7 @@
           href: basic-age-gating.md
         - name: Определение настраиваемых атрибутов
           href: user-flow-custom-attributes.md
-        - name: Соединители API
+        - name: Соединители API (предварительная версия)
           items:
             - name: Обзор
               href: api-connectors-overview.md

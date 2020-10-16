@@ -118,6 +118,10 @@
       items:
         - name: Возобновление резервирования
           href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Диагностика
+      items:
+        - name: Нет соответствующих подписок
+          href: troubleshoot-no-eligible-subscriptions.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: Справочник
   items:
     - name: "Резервирования\_— REST API"

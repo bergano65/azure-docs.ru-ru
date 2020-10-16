@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 368c594352b59f7ec6d04b12ca44e0cd492dc907
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 99a038b23eb0978b6e1d8a65b061c2f744852def
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92082231"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92126809"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -141,10 +141,10 @@ call = callAgent.join(context, groupCallContext, joinCallOptions);
 ### <a name="overview"></a>Обзор
 Мобильные push-уведомления — это всплывающие уведомления, отображаемые на мобильных устройствах. Для вызова мы будем сосредоточиться на push-уведомлениях VoIP (голосовой через Интернет). Мы будем регистрироваться для получения push-уведомлений, обработайте push-уведомления, а затем отменяют регистрацию push-уведомлений.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
-Чтобы завершить работу с этим разделом, создайте учетную запись Firebase и включите облачные службы обмена сообщениями (FCM). Убедитесь, что Firebase Cloud Messaging подключен к экземпляру центра уведомлений Azure (АНХ). Инструкции см. [в статье Connect Firebase to Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started) .
-В этом разделе также предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.
+Учетная запись Firebase, настроенная с включенной облачной службой обмена сообщениями (FCM), и с Firebase облачной службы обмена сообщениями, подключенной к экземпляру центра уведомлений Azure. Дополнительные сведения см. в разделе [уведомления служб связи](https://docs.microsoft.com/azure/communication-services/concepts/notifications) .
+Кроме того, в учебнике предполагается, что вы используете Android Studio версии 3,6 или более поздней для создания приложения.
 
 Для приложения Android требуется набор разрешений, чтобы получать уведомления от Firebase Cloud Messaging. В `AndroidManifest.xml` файле добавьте следующий набор разрешений сразу после * манифеста<... >* или под *</application>* тегом.
 
@@ -195,21 +195,21 @@ import com.google.firebase.iid.InstanceIdResult;
                     @Override
                     public void onComplete(@NonNull Task<InstanceIdResult> task) {
                         if (!task.isSuccessful()) {
-                            Log.w(TAG, "getInstanceId failed", task.getException());
+                            Log.w("PushNotification", "getInstanceId failed", task.getException());
                             return;
                         }
 
                         // Get new Instance ID token
                         String deviceToken = task.getResult().getToken();
                         // Log
-                        Log.d(TAG, "Device Registration token retrieved successfully");
+                        Log.d("PushNotification", "Device Registration token retrieved successfully");
                     }
                 });
 ```
 Зарегистрируйте маркер регистрации устройства в клиентской библиотеке вызывающих служб для входящих push-уведомлений о вызовах:
 
 ```java
-String deviceRegistrationToken = "some_token";
+String deviceRegistrationToken = "<Device Token from previous section>";
 try {
     callAgent.registerPushNotification(deviceRegistrationToken).get();
 }
@@ -226,16 +226,16 @@ catch(Exception e) {
 
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-    private java.util.Map<String, String> pushNotificationMessageData;
+    private java.util.Map<String, String> pushNotificationMessageDataFromFCM;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
-            Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            Log.d("PushNotification", "Message Notification Body: " + remoteMessage.getNotification().getBody());
         }
         else {
-            pushNotificationMessageData = serializeDictionaryAsJson(remoteMessage.getData());
+            pushNotificationMessageDataFromFCM = remoteMessage.getData();
         }
     }
 }
@@ -252,10 +252,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         </service>
 ```
 
-После получения полезных данных их можно передать в клиентскую библиотеку служб Communication Services, чтобы обработать ее путем вызова `handlePushNotification` метода в `CallAgent` экземпляре.
+- После извлечения полезных данных их можно передать в клиентскую библиотеку *служб Communication Services* , вызвав метод *хандлепушнотификатион* в экземпляре *каллажент* . `CallAgent`Экземпляр создается путем вызова `createCallAgent(...)` метода для `CallClient` класса.
 
 ```java
-java.util.Map<String, String> pushNotificationMessageDataFromFCM = remoteMessage.getData();
 try {
     callAgent.handlePushNotification(pushNotificationMessageDataFromFCM).get();
 }

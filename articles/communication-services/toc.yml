@@ -34,6 +34,8 @@
           href: quickstarts/voice-video-calling/getting-started-with-calling.md
         - name: Использование клиентской библиотеки для вызовов
           href: quickstarts/voice-video-calling/calling-client-samples.md
+        - name: Подключение приложения для звонков к собранию в Teams
+          href: quickstarts/voice-video-calling/get-started-teams-interop.md
 - name: Учебники
   expanded: false
   items:
@@ -62,6 +64,8 @@
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Основные понятия голосовой связи и видеосвязи
           href: concepts/voice-video-calling/about-call-types.md
+        - name: Взаимодействие с Teams
+          href: concepts/voice-video-calling/teams-interop.md
     - name: Клиентская и серверная архитектура
       href: concepts/client-and-server-architecture.md
     - name: Потоки вызовов

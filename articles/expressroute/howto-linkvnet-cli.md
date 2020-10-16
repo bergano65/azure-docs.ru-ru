@@ -1,22 +1,22 @@
 ---
-title: 'Azure ExpressRoute: связывание виртуальной сети с цепью: CLI'
-description: В этой статье показано, как связать виртуальные сети с каналами ExpressRoute с помощью модели развертывания Resource Manager и Azure CLI.
+title: Руководство по Связывание виртуальной сети с каналом ExpressRoute с помощью Azure CLI
+description: В этом руководстве показано, как связать виртуальные сети с каналами ExpressRoute с помощью модели развертывания Resource Manager и Azure CLI.
 services: expressroute
 author: duongau
 ms.service: expressroute
-ms.topic: how-to
-ms.date: 07/27/2020
+ms.topic: tutorial
+ms.date: 10/08/2020
 ms.author: duau
-ms.openlocfilehash: ac36e303cbeaf5167b5bbec3cea503c37b276058
-ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
-ms.translationtype: MT
+ms.openlocfilehash: 41bb72ba4c220a0dd2ebb93f2bd313a15d108faa
+ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89393213"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91856285"
 ---
-# <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
+# <a name="tutorial-connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Руководство по Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
-Эта статья поможет вам связать виртуальные сети с каналами Azure ExpressRoute с помощью CLI. С помощью Azure CLI можно связывать только виртуальные сети, созданные по модели развертывания с помощью Resource Manager. Они могут входить в одну и ту же подписку или в разные подписки. Для подключения виртуальной сети к каналу ExpressRoute можно использовать другие методы, информация о которых приводится в статьях из следующего списка:
+Это руководство поможет вам связать виртуальные сети с каналами Azure ExpressRoute с помощью Azure CLI. С помощью Azure CLI можно связывать только виртуальные сети, созданные по модели развертывания с помощью Resource Manager. Они могут входить в одну и ту же подписку или в разные подписки. Для подключения виртуальной сети к каналу ExpressRoute можно использовать другие методы, информация о которых приводится в статьях из следующего списка:
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
@@ -26,29 +26,31 @@ ms.locfileid: "89393213"
 > * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
 > 
 
-## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
+В этом руководстве описано следующее:
+> [!div class="checklist"]
+> - Подключение к каналу виртуальной сети в той же подписке
+> - Подключение к каналу виртуальной сети в другой подписке
+> - Изменение подключения к виртуальной сети
+> - Настройка ExpressRoute FastPath
+
+## <a name="prerequisites"></a>Предварительные требования
 
 * Требуется последняя версия интерфейса командной строки (CLI). Дополнительные сведения см. в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
-
-* Прежде чем приступить к настройке, необходимо изучить [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
-
+* Прежде чем приступить к настройке, изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 * Вам потребуется активный канал ExpressRoute. 
   * Следуйте инструкциям, чтобы [создать канал ExpressRoute](howto-circuit-cli.md) и включить его на стороне поставщика услуг подключения. 
   * Убедитесь, что для вашего канала настроен частный пиринг Azure. Инструкции по маршрутизации см. в статье [Настройка маршрутизации](howto-routing-cli.md). 
-  * Убедитесь, что настроен частный пиринг Azure. Для создания сквозного подключения потребуется также пиринг BGP между вашей сетью и сетью Майкрософт.
+  * Убедитесь, что настроен частный пиринг Azure. Кроме того, для создания сквозного подключения потребуется пиринг BGP между вашей сетью и сетью Майкрософт.
   * Вам необходимо создать и полностью подготовить виртуальную сеть и шлюз виртуальной сети. Следуйте инструкциям по [созданию шлюза виртуальной сети для ExpressRoute](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli). Обязательно используйте `--gateway-type ExpressRoute`.
-
 * К стандартному каналу ExpressRoute можно подключить не более 10 виртуальных сетей. Если используется стандартный канал ExpressRoute, все виртуальные сети должны находиться в одном геополитическом регионе. 
-
 * Отдельную виртуальную сеть можно связать не более чем с четырьмя каналами ExpressRoute. Для создания объекта подключения для каждого канала ExpressRoute, к которому вы подключаетесь, используйте процесс, описанный ниже. Каналы ExpressRoute могут быть размещены в той же подписке, в других подписках или и там, и там.
-
-* Если вы включите надстройку ExpressRoute Premium, вы сможете подключить к каналу ExpressRoute больше виртуальных сетей или подключить сеть из другого геополитического региона. Дополнительные сведения о надстройке версии Premium см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
+* Если вы включите надстройку ExpressRoute Premium, вы сможете подключить к каналу ExpressRoute виртуальные сети из другого геополитического региона. Надстройка Premium также позволяет подключить к каналу ExpressRoute более 10 виртуальных сетей (в зависимости от выбранной пропускной способности). Дополнительную информацию о надстройке Premium см. в разделе [Вопросы и ответы](expressroute-faqs.md).
 
 ## <a name="connect-a-virtual-network-in-the-same-subscription-to-a-circuit"></a>Подключение к каналу виртуальной сети в той же подписке
 
 Вы можете связать шлюз виртуальной сети с каналом ExpressRoute, используя приведенный ниже пример. Прежде чем выполнять эту команду, убедитесь, что шлюз виртуальной сети существует и готов к связыванию.
 
-```azurecli
+```azurecli-interactive
 az network vpn-connection create --name ERConnection --resource-group ExpressRouteResourceGroup --vnet-gateway1 VNet1GW --express-route-circuit2 MyCircuit
 ```
 
@@ -56,7 +58,7 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 
 Канал ExpressRoute может совместно использоваться несколькими подписками. На рисунке ниже схематично показан способ совместного использования каналов ExpressRoute несколькими подписками.
 
-Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети. Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации могут использовать канал ExpressRoute.
+Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, подразделения могут совместно использовать один канал ExpressRoute для подключения к локальной сети. Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации также могут использовать канал ExpressRoute.
 
 > [!NOTE]
 > Плата за подключение и использование пропускной способности выделенного канала взимается с владельца канала ExpressRoute. Полоса пропускания распределяется между всеми виртуальными сетями.
@@ -67,7 +69,7 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 
 ### <a name="administration---circuit-owners-and-circuit-users"></a>Администрирование: владельцы и пользователи канала
 
-Владельцем канала считается уполномоченный опытный пользователь ресурса канала ExpressRoute. Владелец канала может создавать разрешения, которые будут использовать пользователи канала. Пользователями канала считаются владельцы шлюзов виртуальных сетей, не включенных в подписку, к которой относится канал ExpressRoute. Пользователи канала могут использовать разрешения (по одному разрешению на виртуальную сеть).
+Владельцем канала считается уполномоченный опытный пользователь ресурса канала ExpressRoute. Владелец канала может создавать разрешения, которые будут использовать пользователи канала. Пользователи канала являются владельцами шлюзов виртуальных сетей, не включенных в подписку, к которой относится канал ExpressRoute. Пользователи канала могут использовать разрешения (по одному разрешению на виртуальную сеть).
 
 Владелец канала имеет право в любой момент изменить или отменить эти разрешения. Отмена разрешения приводит к удалению всех связывающих подключений из подписки, для которой был отменен доступ.
 
@@ -75,11 +77,11 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 
 **Создание разрешения**
 
-Владелец канала создает разрешение, в результате чего создается ключ, с помощью которого пользователь канала сможет подключить шлюзы виртуальной сети к каналу ExpressRoute. Разрешение действительно только для одного подключения.
+Владелец канала создает разрешение, в результате чего создается ключ авторизации, с помощью которого пользователь канала сможет подключить шлюзы виртуальной сети к каналу ExpressRoute. Разрешение действительно только для одного подключения.
 
 В следующем примере показано, как создать разрешение.
 
-```azurecli
+```azurecli-interactive
 az network express-route auth create --circuit-name MyCircuit -g ExpressRouteResourceGroup -n MyAuthorization
 ```
 
@@ -99,7 +101,7 @@ az network express-route auth create --circuit-name MyCircuit -g ExpressRouteRes
 
 Владелец канала может просмотреть все разрешения, выданные для определенного канала, выполнив команду из следующего примера.
 
-```azurecli
+```azurecli-interactive
 az network express-route auth list --circuit-name MyCircuit -g ExpressRouteResourceGroup
 ```
 
@@ -107,7 +109,7 @@ az network express-route auth list --circuit-name MyCircuit -g ExpressRouteResou
 
 Владелец канала может добавлять разрешения с помощью следующей команды.
 
-```azurecli
+```azurecli-interactive
 az network express-route auth create --circuit-name MyCircuit -g ExpressRouteResourceGroup -n MyAuthorization1
 ```
 
@@ -115,7 +117,7 @@ az network express-route auth create --circuit-name MyCircuit -g ExpressRouteRes
 
 Владелец канала может отменять и удалять разрешения, выданные пользователю, как показано в следующем примере.
 
-```azurecli
+```azurecli-interactive
 az network express-route auth delete --circuit-name MyCircuit -g ExpressRouteResourceGroup -n MyAuthorization1
 ```
 
@@ -123,15 +125,15 @@ az network express-route auth delete --circuit-name MyCircuit -g ExpressRouteRes
 
 Пользователь канала должен получить идентификатор однорангового узла и ключ разрешения от владельца канала. Ключ разрешения представляет собой идентификатор GUID.
 
-```powershell
-Get-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
+```azurecli-interactive
+az network express-route show -n MyCircuit -g ExpressRouteResourceGroup
 ```
 
 **Активация разрешения на подключение**
 
 Пользователь канала может активировать разрешение на подключение, выполнив следующую команду.
 
-```azurecli
+```azurecli-interactive
 az network vpn-connection create --name ERConnection --resource-group ExpressRouteResourceGroup --vnet-gateway1 VNet1GW --express-route-circuit2 MyCircuit --authorization-key "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 ```
 
@@ -146,27 +148,37 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 
 Виртуальная сеть может подключаться к нескольким каналам ExpressRoute. Одинаковый префикс может быть получен из нескольких каналов ExpressRoute. Чтобы выбрать подключение для отправки трафика, предназначенного для этого префикса, можно изменить значение *RoutingWeight* подключения. Трафик будет отправляться через подключение с самым высоким значением *RoutingWeight*.
 
-```azurecli
+```azurecli-interactive
 az network vpn-connection update --name ERConnection --resource-group ExpressRouteResourceGroup --routing-weight 100
 ```
 
 Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
-## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
-Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если шлюз виртуальной сети имеет значение Ultra Performance или ErGw3AZ. Фастпас улучшает предсоответствие пути к данным, например количество пакетов в секунду и количество подключений в секунду между локальной сетью и виртуальной сетью. 
+## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
+Вы можете включить [ExpressRoute FastPath](expressroute-about-virtual-network-gateways.md), если используете сверхвысокопроизводительный шлюз или шлюз ErGw3AZ. FastPath повышает производительность передачи данных, то есть такие показатели, как количество пакетов в секунду и подключений в секунду между локальной и виртуальной сетями. 
 
-**Настройка Фастпас для нового подключения**
+**Настройка FastPath для нового подключения**
 
-```azurecli
+```azurecli-interactive
 az network vpn-connection create --name ERConnection --resource-group ExpressRouteResourceGroup --express-route-gateway-bypass true --vnet-gateway1 VNet1GW --express-route-circuit2 MyCircuit
 ```
 
-**Обновление существующего подключения для включения Фастпас**
+**Обновление существующего подключения для включения FastPath**
 
-```azurecli
+```azurecli-interactive
 az network vpn-connection update --name ERConnection --resource-group ExpressRouteResourceGroup --express-route-gateway-bypass true
 ```
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-## <a name="next-steps"></a>Дальнейшие действия
+Если вам больше не нужно подключение ExpressRoute, выполните команду `az network vpn-connection delete` из подписки, в которой расположен шлюз, чтобы удалить подключение между шлюзом и каналом.
 
-Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
+```azurecli-interactive
+az network vpn-connection delete --name ERConnection --resource-group ExpressRouteResourceGroup
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Из этого руководства вы узнали, как подключить виртуальную сеть к каналу в одной или разных подписках. Дополнительные сведения о шлюзе ExpressRoute см. в следующих статьях: 
+
+> [!div class="nextstepaction"]
+> [Сведения о шлюзах виртуальных сетей ExpressRoute](expressroute-about-virtual-network-gateways.md)

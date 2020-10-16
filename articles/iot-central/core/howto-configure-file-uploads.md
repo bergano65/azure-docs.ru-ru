@@ -7,12 +7,12 @@ ms.author: dobett
 ms.date: 08/06/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.openlocfilehash: 6b717fd15b25ae4abd2af3520dba2e72f8f9f3a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6fbf84ec3822195f62970dbf08115059ffb7e4a
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88556376"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92122608"
 ---
 # <a name="upload-files-from-your-devices-to-the-cloud"></a>Передача файлов с устройств в облако
 
@@ -20,7 +20,7 @@ ms.locfileid: "88556376"
 
 IoT Central позволяет отправлять мультимедиа и другие файлы с подключенных устройств в облачное хранилище. Вы настраиваете возможность отправки файлов в приложении IoT Central, а затем реализуете отправку файлов в коде устройства.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для настройки отправки файлов требуются права администратора в приложении IoT Central.
 
@@ -50,11 +50,11 @@ IoT Central позволяет отправлять мультимедиа и д
 
 1. Выберите **Отправка файла устройства**.
 
-1. Выберите команду **Удалить**.
+1. Выберите **Удалить**.
 
 ## <a name="upload-a-file-from-a-device"></a>Отправка файла с устройства
 
-IoT Central использует функцию отправки файлов в центре Интернета вещей, чтобы разрешить устройствам отправлять файлы. Пример кода, демонстрирующий передачу файлов с устройства, см. в разделе [пример устройства загрузки файлов IOT Central](https://docs.microsoft.com/samples/iot-for-all/iotc-file-upload-device/iotc-file-upload-device/).
+IoT Central использует функцию отправки файлов в центре Интернета вещей, чтобы разрешить устройствам отправлять файлы. Пример кода, демонстрирующий передачу файлов с устройства, см. в разделе [пример устройства загрузки файлов IOT Central](/samples/iot-for-all/iotc-file-upload-device/iotc-file-upload-device/).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

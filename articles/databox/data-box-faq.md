@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 7fbc69100a2cc5c23150fcc0c19e6c38ba6d438d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b65d1be9fa3ddb28a216d51e91ce2a8b20f15e6
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89051174"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127188"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -236,8 +236,8 @@ A.  Копируемые на устройство Data Box передаются
 
 ### <a name="q-i-just-noticed-that-i-did-not-follow-the-azure-naming-requirements-for-my-containers-will-my-data-fail-to-upload-to-azure"></a>У. Как оказалось, требования к именованию Azure для контейнеров не были соблюдены. Будут ли мои данные отправлены в Azure?
 A.  Если в именах контейнеров есть прописные буквы, такие имена автоматически преобразуются в нижний регистр. Если имена не совместимы иным образом (специальные символы, другие языки и т. д.), передача завершается ошибкой. Дополнительные рекомендации по именованию общих папок, контейнеров и файлов см. в статьях:
-- [Именование общих папок и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata)
-- [Соглашения по блочным и страничным BLOB-объектам](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
+- [Именование общих папок и ссылка на них](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata)
+- [Соглашения по блочным и страничным BLOB-объектам](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs).
 
 ### <a name="q-how-do-i-verify-the-data-i-copied-onto-data-box"></a>У. Как мне проверить данные, скопированные на Data Box?
 A.  Данные автоматически проверяются после копирования, когда вы запускаете процесс **Подготовка к отправке**. В процессе этой проверки Data Box создает список файлов и контрольные суммы. Вы можете скачать этот список файлов и сравнить его с исходными файлами. Дополнительные сведения см. в разделе о [подготовке к отправке](data-box-deploy-picked-up.md#prepare-to-ship).

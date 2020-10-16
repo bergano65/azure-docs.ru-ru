@@ -5,16 +5,16 @@ author: philmea
 ms.author: phil
 ms.service: iot-fundamentals
 services: iot-fundamentals
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 6/10/2020
-ms.openlocfilehash: ea4ecbbeaa4ad016e32aa9301d6f6ac49a6d342e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 23381a45d045e8f96e989bce9f52d627f5a88255
+ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91330185"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91979076"
 ---
-# <a name="azure-iot-support-and-help-options"></a>Параметры справки и поддержки Azure IoT
+# <a name="what-are-the-azure-iot-support-and-help-options"></a>Какие существуют возможности получения поддержки и справки по Интернету вещей Azure?
 
 Ниже приведены рекомендации по началу работы при разработке решений Интернета вещей.
 
@@ -101,5 +101,4 @@ ms.locfileid: "91330185"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Что такое Интернет вещей Azure](iot-introduction.md)
+[Что такое Интернет вещей Azure](iot-introduction.md)

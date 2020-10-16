@@ -12,12 +12,12 @@ metadata:
   author: mblythe
   ms.author: mblythe
   ms.date: 08/05/2020
-  ms.openlocfilehash: f45fc98073dcc6eeee10c691fe9f93860e0fb654
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 4a491a2924af90afc43ddb4aa097f9967c8f156a
+  ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "88212087"
+  ms.lasthandoff: 10/15/2020
+  ms.locfileid: "92089287"
 landingContent:
 - title: О портале Azure
   linkLists:
@@ -43,15 +43,15 @@ landingContent:
     links:
     - text: Добавление URL-адресов портала Azure в список надежных адресов
       url: azure-portal-safelist-urls.md
-    - text: Управление доступом на основе ролей для панелей мониторинга
+    - text: Управление доступом на основе ролей Azure для панелей мониторинга
       url: azure-portal-dashboard-share-access.md
   - linkListType: learn
     links:
     - text: Управление ресурсами в Azure
       url: /learn/paths/manage-resources-in-azure/
-    - text: Защита ресурсов Azure с помощью управления доступом на основе ролей (RBAC)
+    - text: Обеспечение безопасности ресурсов Azure с помощью управления доступом на основе ролей Azure (Azure RBAC)
       url: /learn//modules/secure-azure-resources-with-rbac/
-- title: Начало работы
+- title: Приступая к работе
   linkLists:
   - linkListType: quickstart
     links:
@@ -63,7 +63,7 @@ landingContent:
       url: azure-portal-video-series.md
   - linkListType: learn
     links:
-    - text: Основы Azure
+    - text: Основные понятия Azure
       url: /learn/paths/azure-fundamentals/
     - text: Основные понятия, связанные с облачными вычислениями — принципы облачных вычислений
       url: /learn/modules/principles-cloud-computing/

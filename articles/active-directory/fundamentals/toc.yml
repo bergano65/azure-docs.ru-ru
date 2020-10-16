@@ -49,6 +49,34 @@
           href: active-directory-architecture.md
         - name: "Интеграция всех приложений с Azure\_AD"
           href: five-steps-to-full-application-integration-with-azure-ad.md
+        - name: Протоколы проверки подлинности и подготовки
+          items:
+            - name: Обзор
+              href: auth-sync-overview.md
+            - name: Проверка подлинности на основе заголовков
+              href: auth-header-based.md
+            - name: Проверка подлинности LDAP
+              href: auth-ldap.md
+            - name: Проверка подлинности OAuth 2.0
+              href: auth-oauth2.md
+            - name: Проверка подлинности Open ID Connect
+              href: auth-oidc.md
+            - name: Аутентификация на основе пароля
+              href: auth-password-based-sso.md
+            - name: Проверка подлинности RADIUS
+              href: auth-radius.md
+            - name: Проверка подлинности с помощью шлюза удаленного рабочего стола
+              href: auth-remote-desktop-gateway.md
+            - name: Проверка подлинности SAML
+              href: auth-saml.md
+            - name: Проверка подлинности Windows (KCD)
+              href: auth-kcd.md
+            - name: Синхронизация каталогов
+              href: sync-directory.md
+            - name: Синхронизация LDAP
+              href: sync-ldap.md
+            - name: Синхронизация SCIM
+              href: sync-scim.md
     - name: Руководство по развертыванию
       items:
         - name: 'Развертывание 30, 90 и выше'

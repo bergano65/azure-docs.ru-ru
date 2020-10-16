@@ -7,12 +7,12 @@ ms.author: dobett
 ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
-ms.openlocfilehash: 2bf48b6808fccb1f4344e66a2b8f1fc2d4c52ef6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34a9350f830171a137ca3a63ecae2203edec92b2
+ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89322455"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92127375"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, при которых данные с устройств не отображаются в Azure IoT Central
 
@@ -34,9 +34,9 @@ ms.locfileid: "89322455"
 
 Установите средство и расширение, если вы еще этого не сделали `az cli` `azure-iot` .
 
-Сведения об установке см. в `az cli` разделе [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Сведения об установке см. в `az cli` разделе [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-Чтобы [установить](https://docs.microsoft.com/cli/azure/azure-cli-reference-for-IoT?view=azure-cli-latest#extension-reference-installation) `azure-iot` расширение, выполните следующую команду:
+Чтобы [установить](/cli/azure/azure-cli-reference-for-IoT?view=azure-cli-latest#extension-reference-installation) `azure-iot` расширение, выполните следующую команду:
 
 ```cmd/bash
 az extension add --name azure-iot
@@ -131,7 +131,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 
 | Состояние подготовки устройства | Описание | Возможное устранение рисков |
 | - | - | - |
-| Подготовлено | Не удается немедленно распознать ошибку. | Недоступно |
+| Подготовлено | Не удается немедленно распознать ошибку. | Н/Д |
 | Зарегистрировано | Устройство еще не подключено к IoT Central. | Проверьте журналы устройств на наличие проблем с подключением. |
 | Блокировано | Устройству запрещено подключаться к IoT Central. | Устройству запрещено подключаться к IoT Central приложению. Разблокируйте устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [блочные устройства](concepts-get-connected.md#device-status-values). |
 | Неутвержденные | Устройство не утверждено. | Устройство не утверждено для подключения к IoT Central приложению. Утвердите устройство в IoT Central и повторите попытку. Дополнительные сведения см. в разделе [утверждение устройств](concepts-get-connected.md#connect-without-registering-devices) . |
@@ -155,7 +155,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 | 401 | Не удается проверить маркер авторизации. Например, срок действия истек или не применяется к URI запроса. Этот код ошибки также возвращается на устройства как часть потока аттестации доверенного платформенного модуля. | Убедитесь, что устройство имеет правильные учетные данные. |
 | 404 | Экземпляр службы подготовки устройств или ресурс, например регистрация, не существует. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). |
 | 412 | `ETag`В запросе не совпадает с `ETag` именем существующего ресурса согласно rfc7232). | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). |
-| 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | Уменьшение частоты сообщений, разделение обязанностей между несколькими устройствами. |
+| 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](../../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | Уменьшение частоты сообщений, разделение обязанностей между несколькими устройствами. |
 | 500 | Внутренняя ошибка. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , чтобы узнать, могут ли они помочь вам. |
 
 ## <a name="payload-shape-issues"></a>Проблемы с фигурами полезных данных

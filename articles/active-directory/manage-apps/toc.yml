@@ -230,12 +230,8 @@
               href: application-sign-in-problem-application-error.md
             - name: Проблема при входе в приложение Майкрософт
               href: application-sign-in-problem-first-party-microsoft.md
-            - name: Проблема при федеративном едином входе в приложение не из коллекции
-              href: application-sign-in-problem-federated-sso-non-gallery.md
-            - name: Проблема при федеративном едином входе в приложение из коллекции
+            - name: Проблема с единым входом
               href: application-sign-in-problem-federated-sso-gallery.md
-            - name: Проблемы со специально разработанным приложением
-              href: application-sign-in-problem-custom-dev.md
         - name: Устранение неполадок с локальными приложениями
           items:
             - name: Устранение неполадок с прокси приложения
