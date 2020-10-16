@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: cff2e918c7b67f6d3bccb9b56366cbf034ed1bb5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7acd287964d25cc7e98c11ec1986c73d8ae265da
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89300108"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92104144"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным журнала и рабочим областям в Azure Monitor
 
@@ -48,7 +48,7 @@ Azure Monitor хранят данные [журнала](data-platform-logs.md) 
 
 ![Изменение режима доступа к рабочей области](media/manage-access/change-access-control-mode.png)
 
-### <a name="using-powershell"></a>Использование PowerShell
+### <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 Чтобы проверить режим управления доступом для всех рабочих областей в подписке, используйте следующую команду:
 
@@ -243,7 +243,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 На **уровне таблицы RBAC** можно определить более детализированный контроль над данными в log Analytics рабочей области в дополнение к другим разрешениям. Этот элемент управления позволяет определять конкретные типы данных, доступные только для определенного набора пользователей.
 
-Вы реализуете управление доступом к таблицам с помощью [настраиваемых ролей Azure](../../role-based-access-control/custom-roles.md) , чтобы предоставить доступ к конкретным [таблицам](../log-query/logs-structure.md) в рабочей области. Эти роли применяются к рабочим областям с [режимами управления доступом к](design-logs-deployment.md#access-control-mode) рабочей области или контекстом ресурсов независимо от [режима доступа](design-logs-deployment.md#access-mode)пользователя.
+Вы реализуете управление доступом к таблицам с помощью [настраиваемых ролей Azure](../../role-based-access-control/custom-roles.md) , чтобы предоставить доступ к конкретным [таблицам](./data-platform-logs.md) в рабочей области. Эти роли применяются к рабочим областям с [режимами управления доступом к](design-logs-deployment.md#access-control-mode) рабочей области или контекстом ресурсов независимо от [режима доступа](design-logs-deployment.md#access-mode)пользователя.
 
 Создайте [пользовательскую роль](../../role-based-access-control/custom-roles.md) со следующими действиями, чтобы определить доступ к управлению доступом к таблицам.
 
@@ -308,7 +308,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 * Владельцы рабочих областей рассматриваются как другие пользователи для управления доступом на основе таблиц.
 * Рекомендуется назначать роли группам безопасности, а не отдельным пользователям, чтобы сократить количество назначений. Это также позволит использовать существующие средства управления группами для настройки и проверки доступа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](./log-analytics-agent.md).
 

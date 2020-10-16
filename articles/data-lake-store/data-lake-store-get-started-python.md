@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: devx-track-python
-ms.openlocfilehash: 57414828394e7f241cd33b7d56190a3ce9a7eab2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 35e71b80c6f47bb13f7a2b490b493b0cb42acf04
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87876006"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92103515"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием Python
 > [!div class="op_single_selector"]
@@ -38,7 +38,7 @@ ms.locfileid: "87876006"
 
 * Модуль `azure-mgmt-resource`, который включает в себя модули Azure для Active Directory и т. д.
 * Модуль `azure-mgmt-datalake-store`, который включает в себя операции по управлению учетной записью Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю управления Azure Data Lake Storage 1-го поколения](/python/api/azure-mgmt-datalake-store/).
-* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю файловой системы Azure Data Lake Store](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core/).
+* Модуль `azure-datalake-store`, который включает в себя операции с файловой системой Azure Data Lake Storage 1-го поколения. Дополнительные сведения см. в [справочнике по модулю файловой системы Azure Data Lake Store](/python/api/azure-datalake-store/azure.datalake.store.core/).
 
 Чтобы установить модули, используйте следующие команды.
 
@@ -131,10 +131,10 @@ adlsAcctClient.account.delete(adlsAccountName)
 ```
     
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-data-operations-python.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-* [Справочник по azure-datalake-store для Python. Файловая система](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core)
+* [Справочник по azure-datalake-store для Python. Файловая система](/python/api/azure-datalake-store/azure.datalake.store.core)
 * [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)

@@ -3,12 +3,12 @@ title: Защита Функций Azure
 description: Узнайте, как улучшить защиту кода функций, выполняемых в Azure, от распространенных атак.
 ms.date: 4/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: 470ee517b929b7327df76963e21c88db21d363da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd97193fdf6549e667578e36f0be9104e4381d30
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761419"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102312"
 ---
 # <a name="securing-azure-functions"></a>Защита Функций Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "91761419"
 
 ### <a name="security-center"></a>Центр безопасности
 
-Центр безопасности интегрируется с приложением-функцией на портале. Он бесплатно предоставляет быструю оценку возможных уязвимостей в конфигурации. За отдельную плату для приложений-функций, выполняющихся в выделенном плане, можно также использовать возможности защиты Центра безопасности в режиме реального времени. Дополнительные сведения см. в статье [Защита веб-приложений и API Службы приложений Azure](https://docs.microsoft.com/azure/security-center/defender-for-app-service-introduction). 
+Центр безопасности интегрируется с приложением-функцией на портале. Он бесплатно предоставляет быструю оценку возможных уязвимостей в конфигурации. За отдельную плату для приложений-функций, выполняющихся в выделенном плане, можно также использовать возможности защиты Центра безопасности в режиме реального времени. Дополнительные сведения см. в статье [Защита веб-приложений и API Службы приложений Azure](../security-center/defender-for-app-service-introduction.md). 
 
 ### <a name="log-and-monitor"></a>Ведение журнала и мониторинг
 
@@ -80,7 +80,7 @@ ms.locfileid: "91761419"
 |---------|---------|---------|---------|
 |Другая учетная запись хранения     |  `AzureWebJobsSecretStorageSas`       | `<BLOB_SAS_URL` | Сохраняет ключи в хранилище BLOB-объектов второй учетной записи хранения на основе предоставленного URL-адреса SAS. Ключи шифруются перед сохранением с использованием секрета, уникального для приложения-функции. |
 |Файловая система   | `AzureWebJobsSecretStorageType`   |  `files`       | Ключи сохраняются в файловой системе, зашифрованные перед хранилищем, с использованием секрета, уникального для вашего приложения-функции. |
-|Хранилище ключей Azure;  | `AzureWebJobsSecretStorageType`<br/>`AzureWebJobsSecretStorageKeyVaultName` | `keyvault`<br/>`<VAULT_NAME>` | Хранилище должно иметь политику доступа, соответствующую управляемому системой удостоверению ресурса размещения. Политика доступа должна предоставить удостоверению следующие разрешения секрета: `Get` , `Set` , `List` и `Delete` . <br/>При локальном запуске используется удостоверение разработчика, а параметры должны находиться в [local.settings.jsв файле](functions-run-local.md#local-settings-file). | 
+|Azure Key Vault  | `AzureWebJobsSecretStorageType`<br/>`AzureWebJobsSecretStorageKeyVaultName` | `keyvault`<br/>`<VAULT_NAME>` | Хранилище должно иметь политику доступа, соответствующую управляемому системой удостоверению ресурса размещения. Политика доступа должна предоставить удостоверению следующие разрешения секрета: `Get` , `Set` , `List` и `Delete` . <br/>При локальном запуске используется удостоверение разработчика, а параметры должны находиться в [local.settings.jsв файле](functions-run-local.md#local-settings-file). | 
 |Секреты Kubernetes  |`AzureWebJobsSecretStorageType`<br/>Среда `AzureWebJobsKubernetesSecretName` (необязательно) | `kubernetes`<br/>`<SECRETS_RESOURCE>` | Поддерживается только при выполнении среды выполнения функций в Kubernetes. Если `AzureWebJobsKubernetesSecretName` параметр не установлен, репозиторий считается доступен только для чтения. В этом случае перед развертыванием необходимо создать значения. Azure Functions Core Tools автоматически создает значения при развертывании в Kubernetes.|
 
 ### <a name="authenticationauthorization"></a>Проверка подлинности и авторизация

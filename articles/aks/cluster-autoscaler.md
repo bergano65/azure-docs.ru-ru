@@ -4,12 +4,12 @@ description: Узнайте, как использовать средство а
 services: container-service
 ms.topic: article
 ms.date: 07/18/2019
-ms.openlocfilehash: 9f1dcc64569e9822e3703312740450e2528479dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7368745d3b6bf9731f987d6f4fc36b81d354fed8
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88257513"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92103872"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Автоматическое масштабирование кластера в соответствии с требованиями приложения в Службе контейнеров Azure
 
@@ -135,18 +135,8 @@ az aks update \
 
 > [!IMPORTANT]
 > Профиль средства автомасштабирования кластера влияет на все пулы узлов, которые используют это средство. Такой профиль нельзя задать отдельно для каждого пула узлов.
-
-### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
-
-Чтобы задать профиль параметров средства автомасштабирования кластера, требуется расширение CLI *aks-preview* версии 0.4.30 или более поздней. Установите расширение Azure CLI *aks-preview* с помощью команды [az extension add][az-extension-add], а затем проверьте наличие доступных обновлений с помощью команды [az extension update][az-extension-update].
-
-```azurecli-interactive
-# Install the aks-preview extension
-az extension add --name aks-preview
-
-# Update the extension to make sure you have the latest version installed
-az extension update --name aks-preview
-```
+>
+> Для профиля автомасштабирования кластера требуется версия *2.11.1* или более поздняя Azure CLI. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ### <a name="set-the-cluster-autoscaler-profile-on-an-existing-aks-cluster"></a>Назначение профиля средства автомасштабирования кластера имеющемуся кластеру AKS
 

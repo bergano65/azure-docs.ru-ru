@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: c3ce12a91a0cf13bda000f7f729f6249fd04600c
-ms.sourcegitcommit: 53acd9895a4a395efa6d7cd41d7f78e392b9cfbe
+ms.openlocfilehash: a6b72c9e6cc366d04937598f653f8ba887ce1b85
+ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90894058"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91952188"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-pro-with-gpu"></a>Руководство по настройке параметров сети для Azure Stack Edge Pro с GPU
 
@@ -78,7 +78,7 @@ ms.locfileid: "90894058"
 
     После настройки сети для устройства эта страница обновится, как показано ниже.
 
-    ![Страница "Параметры сети" в локальном веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/network-2.png)
+    ![Страница "Параметры сети" в локальном веб-интерфейсе (2)](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/network-2.png)
 
 
      >[!NOTE]
@@ -149,7 +149,7 @@ ms.locfileid: "90894058"
 
     4. Чтобы проверить и применить настроенные параметры веб-прокси, выберите **Применить**.
     
-   ![Страница "Параметры веб-прокси" в локальном пользовательском веб-интерфейсе](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/web-proxy-2.png)
+   ![Страница "Параметры веб-прокси" в локальном пользовательском веб-интерфейсе (2)](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/web-proxy-2.png)
 
 2. Когда завершится применение параметров, щелкните **Next: Device** (Устройство IoT Workbench).
 

@@ -3,12 +3,12 @@ title: Рекомендации
 description: Ознакомьтесь с рекомендациями и полезными советами по разработке решения пакетной службы Azure.
 ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 695f213c0683bd158539b97719f2c2d8c0210edf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0663d1910e2b67b8302e41a96509bdd84cd1a3a0
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849495"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102784"
 ---
 # <a name="azure-batch-best-practices"></a>Рекомендации для пакетной службы Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "91849495"
 
 ### <a name="third-party-images"></a>Сторонние образы
 
-Пулы можно создавать с помощью сторонних образов, опубликованных в Azure Marketplace. При использовании учетных записей пакетной службы в режиме пользовательской подписки может появиться сообщение об ошибке "сбой выделения из-за проверки допустимости покупки Marketplace" при создании пула с определенными сторонними образами. Чтобы устранить эту ошибку, примите условия, заданные издателем образа. Это можно сделать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.marketplaceordering/set-azurermmarketplaceterms) или [Azure CLI](https://docs.microsoft.com/cli/azure/vm/image/terms).
+Пулы можно создавать с помощью сторонних образов, опубликованных в Azure Marketplace. При использовании учетных записей пакетной службы в режиме пользовательской подписки может появиться сообщение об ошибке "сбой выделения из-за проверки допустимости покупки Marketplace" при создании пула с определенными сторонними образами. Чтобы устранить эту ошибку, примите условия, заданные издателем образа. Это можно сделать с помощью [Azure PowerShell](/powershell/module/azurerm.marketplaceordering/set-azurermmarketplaceterms) или [Azure CLI](/cli/azure/vm/image/terms).
 
 ### <a name="azure-region-dependency"></a>Зависимость от региона Azure
 

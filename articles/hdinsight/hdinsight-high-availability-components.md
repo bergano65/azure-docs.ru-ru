@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: ac63846e2679e9b4a51cb26b32415eb81a4b76ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26c7029e710479b8785e06b1d65ff7b5270aeab0
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842586"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102937"
 ---
 # <a name="high-availability-services-supported-by-azure-hdinsight"></a>Службы высокого уровня доступности, поддерживаемые Azure HDInsight
 
@@ -56,13 +56,13 @@ HDInsight предоставляет настраиваемую инфрастр
 
 | Служба | Узлы кластера | Типы кластера | Назначение |
 |---|---|---|---|
-| Сервер Apache Ambari| Активные головного узла | All | Отслеживает кластер и управляет им.|
+| Сервер Apache Ambari| Активные головного узла | Все | Отслеживает кластер и управляет им.|
 | временная шкала приложения Server для Apache YARN | Активные головного узла | Все, Кроме Kafka | Хранит сведения об отладке заданий YARN, выполняющихся в кластере.|
 | Сервер журнала заданий для Hadoop MapReduce | Активные головного узла | Все, Кроме Kafka | Поддерживает данные отладки для заданий MapReduce.|
 | Apache Livy | Активные головного узла | Spark | Обеспечивает простое взаимодействие с кластером Spark через интерфейс RESTFUL |
 
 >[!Note]
-> Кластеры HDInsight Корпоративный пакет безопасности (ESP) в настоящее время обеспечивают высокий уровень доступности сервера Ambari.
+> Кластеры HDInsight Корпоративный пакет безопасности (ESP) в настоящее время обеспечивают высокий уровень доступности сервера Ambari. Сервер временная шкала приложения, сервер журнала заданий и Livy работают только в headnode0 и не отработки отказа в headnode1 при Ambari фаилсовер. База данных временной шкалы приложения также находится на headnode0, а не на Ambari SQL Server.
 
 ### <a name="architecture"></a>Architecture
 
@@ -137,7 +137,7 @@ ResourceManager YARN использует внедренный *активест
 
 Кластеры HDInsight HBase поддерживают HBase Master высокий уровень доступности. В отличие от других служб высокой доступности, которые выполняются на головных узлах, образцы HBase выполняются на трех узлах Zookeeper, где один из них является активным, а два других — в режиме ожидания. Как и в NameNode, HBase Master координаты с помощью Apache Zookeeper для выборов и выполняет автоматическую отработку отказа, если на текущем активном хозяине возникают проблемы. В любой момент времени имеется только одна активная HBase Master.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Доступность и надежность кластеров Apache Hadoop в HDInsight](hdinsight-high-availability-linux.md)
 - [Архитектура виртуальной сети Azure HDInsight](hdinsight-virtual-network-architecture.md)

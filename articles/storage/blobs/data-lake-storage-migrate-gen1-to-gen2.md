@@ -8,12 +8,12 @@ ms.date: 03/11/2020
 ms.service: storage
 ms.reviewer: rukmani-msft
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: bc6d4a60c3db6b2537a0f300562db1df5e249b43
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0b85164042ef8ba0dda5f83dbfe49f585a11f7c
+ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91716139"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92102648"
 ---
 # <a name="migrate-azure-data-lake-storage-from-gen1-to-gen2"></a>Перенос Azure Data Lake Storage из Gen1 в Gen2
 
@@ -93,7 +93,7 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 В этой таблице сравниваются возможности Gen1 и Gen2.
 
-|Область |Поколение 1   |Поколение 2 |
+|С областями |Поколение 1   |Поколение 2 |
 |---|---|---|
 |Упорядочение данных|[Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)<br>Поддержка файлов и папок|[Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)<br>Поддержка контейнеров, файлов и папок |
 |Геоизбыточность| [LRS](../common/storage-redundancy.md#locally-redundant-storage)| [LRS](../common/storage-redundancy.md#locally-redundant-storage), [ZRS](../common/storage-redundancy.md#zone-redundant-storage), [GRS](../common/storage-redundancy.md#geo-redundant-storage), [RA-GRS](../common/storage-redundancy.md#read-access-to-data-in-the-secondary-region) |
@@ -122,7 +122,7 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
  
 ### <a name="lift-and-shift-pattern"></a>Шаблон точности и сдвига
 
-Это самый простой шаблон.
+Это самый простой шаблон. 
 
 1. Останавливает все операции записи в Gen1.
 
@@ -131,6 +131,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 3. Укажите, что операции и рабочие нагрузки принимают Gen2.
 
 4. Списание Gen1.
+
+Ознакомьтесь с нашим образцом кода для шаблона "прогноз" и "сдвиг" в [примере миграции "прогноз" и "сдвиг](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Lift%20and%20Shift/README.md)".
 
 > [!div class="mx-imgBorder"]
 > ![шаблон точности и сдвига](./media/data-lake-storage-migrate-gen1-to-gen2/lift-and-shift.png)
@@ -153,6 +155,9 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Списание Gen1.
 
+Ознакомьтесь с нашим образцом кода для шаблона добавочного копирования в нашем [примере миграции добавочных копий](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/README.md).
+
+
 > [!div class="mx-imgBorder"]
 > ![Шаблон добавочного копирования](./media/data-lake-storage-migrate-gen1-to-gen2/incremental-copy.png)
 
@@ -174,6 +179,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Останавливает все операции записи в Gen1, а затем списание Gen1.
 
+Ознакомьтесь с нашим образцом кода для шаблона двойного конвейера в нашем [примере переноса двух конвейеров](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Dual%20pipeline/README.md).
+
 > [!div class="mx-imgBorder"]
 > ![Шаблон двойного конвейера](./media/data-lake-storage-migrate-gen1-to-gen2/dual-pipeline.png)
 
@@ -193,6 +200,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Списание Gen1.
 
+Ознакомьтесь с примером кода для шаблона двунаправленной синхронизации в нашем [примере переноса двунаправленной синхронизации](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Bi-directional/README.md).
+
 > [!div class="mx-imgBorder"]
 > ![Шаблон двунаправленного письма](./media/data-lake-storage-migrate-gen1-to-gen2/bidirectional-sync.png)
 
@@ -202,7 +211,7 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 : heavy_check_mark: высокая интенсивность миграции, но она обеспечивает параллельную поддержку Gen1 и Gen2.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о различных частях настройки безопасности для учетной записи хранения. Ознакомьтесь с [руководством по безопасности службы хранилища Azure](../common/storage-security-guide.md).
 - Оптимизируйте производительность Data Lake Store. См. раздел [оптимизация Azure Data Lake Storage 2-го поколения для повышения производительности](data-lake-storage-performance-tuning-guidance.md) .
